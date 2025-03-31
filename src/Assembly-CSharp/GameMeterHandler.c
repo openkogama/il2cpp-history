@@ -54,44 +54,41 @@ void Assembly-CSharp.dll::GameMeterHandler::GameMeterHandler_Awake
     pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (pMVar4 != (MVNetworkGame *)0x0) {
       pGVar5 = (pMVar4->fields).gameStatCounterManager;
-      pUVar6 = (UnityAction_2_System_Object_System_Object_ *)
+      pEVar6 = (EventHandler_1_Object_ *)
                func_?(TypeInfo__System__EventHandler<OnCounterTypeChangedArgs>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                (pUVar6,(Object *)this,
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                (pEVar6,(Object *)this,
                  MethodInfo__GameMeterHandler__CounterChanged_System__Object__OnCounterTypeChangedArgs_
                  ,(MethodInfo *)0x0);
       if (pGVar5 != (GameStatCounterManager *)0x0) {
         MVWorldObject.dll::GameStatCounterManager::GameStatCounterManager_add_OnCounterTypeChanged
-                  (pGVar5,(EventHandler_1_OnCounterTypeChangedArgs_ *)pUVar6,(MethodInfo *)0x0);
+                  (pGVar5,(EventHandler_1_OnCounterTypeChangedArgs_ *)pEVar6,(MethodInfo *)0x0);
         pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
         if (pMVar4 != (MVNetworkGame *)0x0) {
           pGVar5 = (pMVar4->fields).gameStatCounterManager;
-          pUVar6 = (UnityAction_2_System_Object_System_Object_ *)
+          pEVar6 = (EventHandler_1_Object_ *)
                    func_?(TypeInfo__System__EventHandler<OnCounterTypeChangedArgs>);
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
-                    (pUVar6,(Object *)this,
+          mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                    (pEVar6,(Object *)this,
                      MethodInfo__GameMeterHandler__OnGameStatUpdated_System__Object__OnCounterTypeChangedArgs_
                      ,(MethodInfo *)0x0);
           if (pGVar5 != (GameStatCounterManager *)0x0) {
             MVWorldObject.dll::GameStatCounterManager::
             GameStatCounterManager_add_OnCounterTypeChanged
-                      (pGVar5,(EventHandler_1_OnCounterTypeChangedArgs_ *)pUVar6,(MethodInfo *)0x0);
+                      (pGVar5,(EventHandler_1_OnCounterTypeChangedArgs_ *)pEVar6,(MethodInfo *)0x0);
             pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
             if (pMVar4 != (MVNetworkGame *)0x0) {
               this_00 = (pMVar4->fields)._WinningConditionManager_k__BackingField;
-              pUVar6 = (UnityAction_2_System_Object_System_Object_ *)
+              pEVar6 = (EventHandler_1_Object_ *)
                        func_?(TypeInfo__System__EventHandler<System::EventArgs>);
-              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-              Object]::UnityAction_2_System_Object_System_Object___ctor
-                        (pUVar6,(Object *)this,
+              mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                        (pEVar6,(Object *)this,
                          MethodInfo__GameMeterHandler__ConditionCountChanged_System__Object__System__EventArgs_
                          ,(MethodInfo *)0x0);
               if (this_00 != (WinningConditionManager *)0x0) {
                 MVWorldObject.dll::WinningConditionManager::
                 WinningConditionManager_add_OnWinningConditionAddedOrRemoved
-                          (this_00,(EventHandler_1_EventArgs_ *)pUVar6,(MethodInfo *)0x0);
+                          (this_00,(EventHandler_1_EventArgs_ *)pEVar6,(MethodInfo *)0x0);
                 pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
                 if ((pMVar4 != (MVNetworkGame *)0x0) &&
                    (pMVar7 = (pMVar4->fields).playerContainer, pMVar7 != (MVPlayerContainer *)0x0))
@@ -257,42 +254,39 @@ void Assembly-CSharp.dll::GameMeterHandler::GameMeterHandler_OnDestroy
   pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if (pMVar2 != (MVNetworkGame *)0x0) {
     pGVar3 = (pMVar2->fields).gameStatCounterManager;
-    pUVar4 = (UnityAction_2_System_Object_System_Object_ *)
+    pEVar4 = (EventHandler_1_Object_ *)
              func_?(TypeInfo__System__EventHandler<OnCounterTypeChangedArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              (pUVar4,unaff_EBX,
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+              (pEVar4,unaff_EBX,
                MethodInfo__GameMeterHandler__CounterChanged_System__Object__OnCounterTypeChangedArgs_
                ,(MethodInfo *)0x0);
     if (pGVar3 != (GameStatCounterManager *)0x0) {
       MVWorldObject.dll::GameStatCounterManager::GameStatCounterManager_remove_OnCounterTypeChanged
-                (pGVar3,(EventHandler_1_OnCounterTypeChangedArgs_ *)pUVar4,(MethodInfo *)0x0);
+                (pGVar3,(EventHandler_1_OnCounterTypeChangedArgs_ *)pEVar4,(MethodInfo *)0x0);
       pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
       if (pMVar2 != (MVNetworkGame *)0x0) {
         pGVar3 = (pMVar2->fields).gameStatCounterManager;
-        pUVar4 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  (pUVar4,unaff_EBX,
+        pEVar4 = (EventHandler_1_Object_ *)func_?();
+        mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                  (pEVar4,unaff_EBX,
                    MethodInfo__GameMeterHandler__OnGameStatUpdated_System__Object__OnCounterTypeChangedArgs_
                    ,(MethodInfo *)0x0);
         if (pGVar3 != (GameStatCounterManager *)0x0) {
           MVWorldObject.dll::GameStatCounterManager::
           GameStatCounterManager_remove_OnCounterTypeChanged
-                    (pGVar3,(EventHandler_1_OnCounterTypeChangedArgs_ *)pUVar4,(MethodInfo *)0x0);
+                    (pGVar3,(EventHandler_1_OnCounterTypeChangedArgs_ *)pEVar4,(MethodInfo *)0x0);
           pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
           if (pMVar2 != (MVNetworkGame *)0x0) {
             this_00 = (pMVar2->fields)._WinningConditionManager_k__BackingField;
-            pUVar4 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-            Object]::UnityAction_2_System_Object_System_Object___ctor
-                      (pUVar4,unaff_EBX,
+            pEVar4 = (EventHandler_1_Object_ *)func_?();
+            mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                      (pEVar4,unaff_EBX,
                        MethodInfo__GameMeterHandler__ConditionCountChanged_System__Object__System__EventArgs_
                        ,(MethodInfo *)0x0);
             if (this_00 != (WinningConditionManager *)0x0) {
               MVWorldObject.dll::WinningConditionManager::
               WinningConditionManager_remove_OnWinningConditionAddedOrRemoved
-                        (this_00,(EventHandler_1_EventArgs_ *)pUVar4,(MethodInfo *)0x0);
+                        (this_00,(EventHandler_1_EventArgs_ *)pEVar4,(MethodInfo *)0x0);
               pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
               object = TypeInfo__System__Action;
               if ((pMVar2 != (MVNetworkGame *)0x0) &&

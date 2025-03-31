@@ -1,9 +1,9 @@
 
-/* Void ActivateCulling(GameObject, GameObject[]) */
+/* Void ActivateCulling(GameObject, GameObject[], Boolean) */
 
 void Assembly-CSharp.dll::DynamicCullingHandler::DynamicCullingHandler_ActivateCulling
                (DynamicCullingHandler *this,GameObject *cullingObject,
-               GameObject__Array *cullingGroup,MethodInfo *method)
+               GameObject__Array *cullingGroup,bool keepRootAlive,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -27,6 +27,7 @@ void Assembly-CSharp.dll::DynamicCullingHandler::DynamicCullingHandler_ActivateC
   (value->fields).overrideDistanceBandIndex = -1;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,unaff_EDI);
+  (value->fields).keepRootAlive = keepRootAlive;
   (value->fields).cullingBandIndex = 3;
   (value->fields).root = cullingObject;
   func_?(&(value->fields).root,cullingObject);
@@ -46,7 +47,7 @@ void Assembly-CSharp.dll::DynamicCullingHandler::DynamicCullingHandler_ActivateC
     if ((pBVar3 != (BoundingSphere__Array *)0x0) &&
        (pTVar2 = (value->fields).rootTransform, pTVar2 != (Transform *)0x0)) {
       pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                         ((Vector3 *)&stack0xffffffec,pTVar2,(MethodInfo *)0x0);
+                         ((Vector3 *)&stack0xfffffff0,pTVar2,(MethodInfo *)0x0);
       fVar6 = pVVar5->y;
       fVar7 = pVVar5->z;
       if (pBVar3->max_length <= uVar4) goto code_?;

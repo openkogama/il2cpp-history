@@ -498,7 +498,7 @@ void Assembly-CSharp.dll::KoGaMaPackageClient::KoGaMaPackageClient_HandleDeseria
                     (returnData,(this->fields).worldObjects,(this->fields).prototypes,
                      (MethodInfo *)0x0);
   if ((value != (MVWorldObjectClient *)0x0) &&
-     (this_00 = (this->fields).worldObjects,
+     (this_00 = (this->fields).worldObjects, this = (KoGaMaPackageClient *)returnData,
      this_00 != (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0)) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
     Dictionary_2_System_Int32_System_Object__Add
@@ -511,13 +511,22 @@ void Assembly-CSharp.dll::KoGaMaPackageClient::KoGaMaPackageClient_HandleDeseria
   uVar1 = func_?();
   uVar2 = (ushort)((uint6)uVar1 >> 0x20);
   puVar3 = (ushort *)uVar1;
+  out(((Dictionary_2_System_Object_System_Object_ *)this)->klass,uVar2);
   sVar4 = (uVar2 & 3) - (*puVar3 & 3);
   *puVar3 = *puVar3 + (ushort)(0 < sVar4) * sVar4;
+  puVar5 = (uint *)(unaff_EDI + 99);
+  puVar6 = (undefined1 *)*puVar5;
+  *puVar5 = *puVar5 - (int)&stack0xfffffffc;
+  pcVar7 = (char *)((int)&(((Dictionary_2_System_Object_System_Object_ *)((int)this + 0x60))->fields
+                          )._count + 3);
+  *pcVar7 = *pcVar7 + unaff_BH + (puVar6 < &stack0xfffffffc);
   sVar4 = (uVar2 & 3) - (*puVar3 & 3);
   *puVar3 = *puVar3 + (ushort)(0 < sVar4) * sVar4;
-  *(byte *)((int)puVar3 + 99) = *(byte *)((int)puVar3 + 99) & (byte)((uint6)uVar1 >> 0x20);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  out(((Dictionary_2_System_Object_System_Object_ *)this)->monitor,uVar2);
+  sVar4 = (uVar2 & 3) - (*puVar3 & 3);
+  *puVar3 = *puVar3 + (ushort)(0 < sVar4) * sVar4;
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -1250,159 +1259,159 @@ code_?:
       MVGamePoint::MVGamePoint__ctor(this_58,this,worldObjects,(MethodInfo *)0x0);
       return (MVWorldObjectClient *)this_58;
     case 0x83:
-      pMVar13 = (MVWorldObjectClient *)func_?(TypeInfo__MVGamePassProgressionDataObject);
+      this_59 = (MVWorldObjectClient *)func_?(TypeInfo__MVGamePassProgressionDataObject);
       MVGamePassProgressionDataObject::MVGamePassProgressionDataObject__ctor
-                ((MVGamePassProgressionDataObject *)pMVar13,this,worldObjects,(MethodInfo *)0x0);
-      return pMVar13;
+                ((MVGamePassProgressionDataObject *)this_59,this,worldObjects,(MethodInfo *)0x0);
+      return this_59;
     case 0x85:
       goto code_?;
     case 0x86:
-      this_61 = (MVAvatarSpawnRoleCreator *)func_?(TypeInfo__MVAvatarSpawnRoleCreator);
+      this_62 = (MVAvatarSpawnRoleCreator *)func_?(TypeInfo__MVAvatarSpawnRoleCreator);
       MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator__ctor
-                (this_61,this,worldObjects,(MethodInfo *)0x0);
-      return (MVWorldObjectClient *)this_61;
-    case 0x87:
-      this_62 = (MVGameOptionDataObject *)func_?(TypeInfo__MVGameOptionDataObject);
-      MVGameOptionDataObject::MVGameOptionDataObject__ctor
                 (this_62,this,worldObjects,(MethodInfo *)0x0);
       return (MVWorldObjectClient *)this_62;
+    case 0x87:
+      this_63 = (MVGameOptionDataObject *)func_?(TypeInfo__MVGameOptionDataObject);
+      MVGameOptionDataObject::MVGameOptionDataObject__ctor
+                (this_63,this,worldObjects,(MethodInfo *)0x0);
+      return (MVWorldObjectClient *)this_63;
     case 0x88:
-      this_63 = (MVObjectTransparency *)
+      this_64 = (MVObjectTransparency *)
                 func_?(
                                TypeInfo__WorldObjectTypes__MVObjectTransparency__MVObjectTransparency
                                );
       WorldObjectTypes::MVObjectTransparency::MVObjectTransparency::MVObjectTransparency__ctor
-                (this_63,this,worldObjects,(MethodInfo *)0x0);
-      return (MVWorldObjectClient *)this_63;
-    case 0x91:
-      this_64 = (MVCameraSettings *)func_?(TypeInfo__MVCameraSettings);
-      MVCameraSettings::MVCameraSettings__ctor(this_64,this,worldObjects,(MethodInfo *)0x0);
+                (this_64,this,worldObjects,(MethodInfo *)0x0);
       return (MVWorldObjectClient *)this_64;
-    case 0x92:
-      this_65 = (MVGravityCube *)func_?(TypeInfo__MVGravityCube);
-      MVGravityCube::MVGravityCube__ctor(this_65,this,worldObjects,(MethodInfo *)0x0);
+    case 0x91:
+      this_65 = (MVCameraSettings *)func_?(TypeInfo__MVCameraSettings);
+      MVCameraSettings::MVCameraSettings__ctor(this_65,this,worldObjects,(MethodInfo *)0x0);
       return (MVWorldObjectClient *)this_65;
-    case 0x94:
-      this_66 = (MVGameCoin *)func_?(TypeInfo__MVGameCoin);
-      MVGameCoin::MVGameCoin__ctor(this_66,this,worldObjects,(MethodInfo *)0x0);
+    case 0x92:
+      this_66 = (MVGravityCube *)func_?(TypeInfo__MVGravityCube);
+      MVGravityCube::MVGravityCube__ctor(this_66,this,worldObjects,(MethodInfo *)0x0);
       return (MVWorldObjectClient *)this_66;
-    case 0x95:
-      this_67 = (MVGameCoinChest *)func_?(TypeInfo__MVGameCoinChest);
-      MVGameCoinChest::MVGameCoinChest__ctor(this_67,this,worldObjects,(MethodInfo *)0x0);
+    case 0x94:
+      this_67 = (MVGameCoin *)func_?(TypeInfo__MVGameCoin);
+      MVGameCoin::MVGameCoin__ctor(this_67,this,worldObjects,(MethodInfo *)0x0);
       return (MVWorldObjectClient *)this_67;
-    case 0x96:
-      this_68 = (ThemeWorldObject *)func_?(TypeInfo__ThemeWorldObject);
-      ThemeWorldObject::ThemeWorldObject__ctor(this_68,this,worldObjects,(MethodInfo *)0x0);
+    case 0x95:
+      this_68 = (MVGameCoinChest *)func_?(TypeInfo__MVGameCoinChest);
+      MVGameCoinChest::MVGameCoinChest__ctor(this_68,this,worldObjects,(MethodInfo *)0x0);
       return (MVWorldObjectClient *)this_68;
-    case 0x97:
-      this_69 = (MVDoor *)func_?(TypeInfo__WorldObjectTypes__MVDoor__MVDoor);
-      WorldObjectTypes::MVDoor::MVDoor::MVDoor__ctor(this_69,this,worldObjects,(MethodInfo *)0x0);
+    case 0x96:
+      this_69 = (ThemeWorldObject *)func_?(TypeInfo__ThemeWorldObject);
+      ThemeWorldObject::ThemeWorldObject__ctor(this_69,this,worldObjects,(MethodInfo *)0x0);
       return (MVWorldObjectClient *)this_69;
+    case 0x97:
+      this_70 = (MVDoor *)func_?(TypeInfo__WorldObjectTypes__MVDoor__MVDoor);
+      WorldObjectTypes::MVDoor::MVDoor::MVDoor__ctor(this_70,this,worldObjects,(MethodInfo *)0x0);
+      return (MVWorldObjectClient *)this_70;
     case 0x98:
-      this_70 = (MVDoorBlueprint *)
+      this_71 = (MVDoorBlueprint *)
                 func_?(TypeInfo__WorldObjectTypes__MVDoor__MVDoorBlueprint);
       WorldObjectTypes::MVDoor::MVDoorBlueprint::MVDoorBlueprint__ctor
-                (this_70,this,worldObjects,(MethodInfo *)0x0);
-      return (MVWorldObjectClient *)this_70;
+                (this_71,this,worldObjects,(MethodInfo *)0x0);
+      return (MVWorldObjectClient *)this_71;
     case 0x99:
-      this_71 = (MVMeleeWeaponBase *)
+      this_72 = (MVMeleeWeaponBase *)
                 func_?(
                                TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MVMeleeWeaponBase
                                );
       Assets::Scripts::WorldObjectTypes::MeleeWeapon::MVMeleeWeaponBase::MVMeleeWeaponBase__ctor
-                (this_71,this,worldObjects,(MethodInfo *)0x0);
-      return (MVWorldObjectClient *)this_71;
+                (this_72,this,worldObjects,(MethodInfo *)0x0);
+      return (MVWorldObjectClient *)this_72;
     case 0x9a:
-      pMVar14 = (MVCostumeBaseBlueprint *)
+      pMVar13 = (MVCostumeBaseBlueprint *)
                 func_?(
                                TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MVMeleeWeaponBaseBlueprint
                                );
       Assets::Scripts::WorldObjectTypes::Costume::MVCostumeBaseBlueprint::
-      MVCostumeBaseBlueprint__ctor(pMVar14,this,worldObjects,(MethodInfo *)0x0);
-      return (MVWorldObjectClient *)pMVar14;
+      MVCostumeBaseBlueprint__ctor(pMVar13,this,worldObjects,(MethodInfo *)0x0);
+      return (MVWorldObjectClient *)pMVar13;
     case 0x9b:
-      this_72 = (MVCostumeBase *)
+      this_73 = (MVCostumeBase *)
                 func_?(TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__MVCostumeBase)
       ;
       Assets::Scripts::WorldObjectTypes::Costume::MVCostumeBase::MVCostumeBase__ctor
-                (this_72,this,worldObjects,(MethodInfo *)0x0);
-      return (MVWorldObjectClient *)this_72;
+                (this_73,this,worldObjects,(MethodInfo *)0x0);
+      return (MVWorldObjectClient *)this_73;
     case 0x9c:
-      pMVar14 = (MVCostumeBaseBlueprint *)
+      pMVar13 = (MVCostumeBaseBlueprint *)
                 func_?(
                                TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__MVCostumeBaseBlueprint
                                );
       Assets::Scripts::WorldObjectTypes::Costume::MVCostumeBaseBlueprint::
-      MVCostumeBaseBlueprint__ctor(pMVar14,this,worldObjects,(MethodInfo *)0x0);
-      return (MVWorldObjectClient *)pMVar14;
+      MVCostumeBaseBlueprint__ctor(pMVar13,this,worldObjects,(MethodInfo *)0x0);
+      return (MVWorldObjectClient *)pMVar13;
     case 0x9d:
-      this_73 = (MVCustomGunBase *)
+      this_74 = (MVCustomGunBase *)
                 func_?(
                                TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__MVCustomGunBase
                                );
       Assets::Scripts::WorldObjectTypes::CustomGun::MVCustomGunBase::MVCustomGunBase__ctor
-                (this_73,this,worldObjects,(MethodInfo *)0x0);
-      return (MVWorldObjectClient *)this_73;
+                (this_74,this,worldObjects,(MethodInfo *)0x0);
+      return (MVWorldObjectClient *)this_74;
     case 0x9e:
-      this_74 = (MVCustomGunBlueprint *)
+      this_75 = (MVCustomGunBlueprint *)
                 func_?(
                                TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__MVCustomGunBlueprint
                                );
       Assets::Scripts::WorldObjectTypes::CustomGun::MVCustomGunBlueprint::MVCustomGunBlueprint__ctor
-                (this_74,this,worldObjects,(MethodInfo *)0x0);
-      return (MVWorldObjectClient *)this_74;
-    case 0xa1:
-      this_75 = (TeamEditor *)func_?(TypeInfo__TeamEditor);
-      TeamEditor::TeamEditor__ctor(this_75,this,worldObjects,(MethodInfo *)0x0);
+                (this_75,this,worldObjects,(MethodInfo *)0x0);
       return (MVWorldObjectClient *)this_75;
-    case 0xa2:
-      this_76 = (TriggerCube *)func_?(TypeInfo__TriggerCube);
-      TriggerCube::TriggerCube__ctor(this_76,this,worldObjects,(MethodInfo *)0x0);
+    case 0xa1:
+      this_76 = (TeamEditor *)func_?(TypeInfo__TeamEditor);
+      TeamEditor::TeamEditor__ctor(this_76,this,worldObjects,(MethodInfo *)0x0);
       return (MVWorldObjectClient *)this_76;
+    case 0xa2:
+      this_77 = (TriggerCube *)func_?(TypeInfo__TriggerCube);
+      TriggerCube::TriggerCube__ctor(this_77,this,worldObjects,(MethodInfo *)0x0);
+      return (MVWorldObjectClient *)this_77;
     case 0xa4:
-      this_77 = (CollectTheItemCollectableInstance *)
+      this_78 = (CollectTheItemCollectableInstance *)
                 func_?(TypeInfo__CollectTheItemCollectableInstance);
       CollectTheItemCollectableInstance::CollectTheItemCollectableInstance__ctor
-                (this_77,this,worldObjects,(MethodInfo *)0x0);
-      return (MVWorldObjectClient *)this_77;
-    case 0xa5:
-      this_78 = (ShootableButton *)func_?(TypeInfo__ShootableButton);
-      ShootableButton::ShootableButton__ctor(this_78,this,worldObjects,(MethodInfo *)0x0);
+                (this_78,this,worldObjects,(MethodInfo *)0x0);
       return (MVWorldObjectClient *)this_78;
-    case 0xa6:
-      this_79 = (UseLever *)func_?(TypeInfo__UseLever);
-      UseLever::UseLever__ctor(this_79,this,worldObjects,(MethodInfo *)0x0);
+    case 0xa5:
+      this_79 = (ShootableButton *)func_?(TypeInfo__ShootableButton);
+      ShootableButton::ShootableButton__ctor(this_79,this,worldObjects,(MethodInfo *)0x0);
       return (MVWorldObjectClient *)this_79;
-    case 0xa7:
-      this_80 = (CollectTheItemDropOff *)func_?(TypeInfo__CollectTheItemDropOff);
-      CollectTheItemDropOff::CollectTheItemDropOff__ctor
-                (this_80,this,worldObjects,(MethodInfo *)0x0);
+    case 0xa6:
+      this_80 = (UseLever *)func_?(TypeInfo__UseLever);
+      UseLever::UseLever__ctor(this_80,this,worldObjects,(MethodInfo *)0x0);
       return (MVWorldObjectClient *)this_80;
-    case 0xa8:
-      this_81 = (CollectTheItemCollectable *)func_?(TypeInfo__CollectTheItemCollectable);
-      CollectTheItemCollectable::CollectTheItemCollectable__ctor
+    case 0xa7:
+      this_81 = (CollectTheItemDropOff *)func_?(TypeInfo__CollectTheItemDropOff);
+      CollectTheItemDropOff::CollectTheItemDropOff__ctor
                 (this_81,this,worldObjects,(MethodInfo *)0x0);
       return (MVWorldObjectClient *)this_81;
-    case 0xa9:
-      this_82 = (CollectTheItem *)func_?(TypeInfo__CollectTheItem);
-      CollectTheItem::CollectTheItem__ctor(this_82,this,worldObjects,(MethodInfo *)0x0);
+    case 0xa8:
+      this_82 = (CollectTheItemCollectable *)func_?(TypeInfo__CollectTheItemCollectable);
+      CollectTheItemCollectable::CollectTheItemCollectable__ctor
+                (this_82,this,worldObjects,(MethodInfo *)0x0);
       return (MVWorldObjectClient *)this_82;
-    case 0xaa:
-      this_83 = (WindTurbine *)func_?(TypeInfo__WindTurbine);
-      WindTurbine::WindTurbine__ctor(this_83,this,worldObjects,(MethodInfo *)0x0);
+    case 0xa9:
+      this_83 = (CollectTheItem *)func_?(TypeInfo__CollectTheItem);
+      CollectTheItem::CollectTheItem__ctor(this_83,this,worldObjects,(MethodInfo *)0x0);
       return (MVWorldObjectClient *)this_83;
-    case 0xab:
-      this_84 = (MVGlobalSoundEmitter *)func_?(TypeInfo__MVGlobalSoundEmitter);
-      MVGlobalSoundEmitter::MVGlobalSoundEmitter__ctor(this_84,this,worldObjects,(MethodInfo *)0x0);
+    case 0xaa:
+      this_84 = (WindTurbine *)func_?(TypeInfo__WindTurbine);
+      WindTurbine::WindTurbine__ctor(this_84,this,worldObjects,(MethodInfo *)0x0);
       return (MVWorldObjectClient *)this_84;
-    case 0xb4:
-      this_85 = (TimeAttackFlag *)func_?(TypeInfo__TimeAttackFlag);
-      TimeAttackFlag::TimeAttackFlag__ctor(this_85,this,worldObjects,(MethodInfo *)0x0);
+    case 0xab:
+      this_85 = (MVGlobalSoundEmitter *)func_?(TypeInfo__MVGlobalSoundEmitter);
+      MVGlobalSoundEmitter::MVGlobalSoundEmitter__ctor(this_85,this,worldObjects,(MethodInfo *)0x0);
       return (MVWorldObjectClient *)this_85;
-    case 0xb5:
-      this_86 = (MVGamePointChest *)func_?(TypeInfo__MVGamePointChest);
-      MVGamePointChest::MVGamePointChest__ctor(this_86,this,worldObjects,(MethodInfo *)0x0);
+    case 0xb4:
+      this_86 = (TimeAttackFlag *)func_?(TypeInfo__TimeAttackFlag);
+      TimeAttackFlag::TimeAttackFlag__ctor(this_86,this,worldObjects,(MethodInfo *)0x0);
       return (MVWorldObjectClient *)this_86;
+    case 0xb5:
+      this_87 = (MVGamePointChest *)func_?(TypeInfo__MVGamePointChest);
+      MVGamePointChest::MVGamePointChest__ctor(this_87,this,worldObjects,(MethodInfo *)0x0);
+      return (MVWorldObjectClient *)this_87;
     }
   }
 code_?:
@@ -1413,19 +1422,9 @@ code_?:
   pIVar3 = extraout_ECX;
 code_?:
   func_?(unaff_ESI.m_Index,pIVar3);
-  sVar15 = (extraout_DX & 3) - (*(ushort *)&((String *)unaff_ESI.m_Index)->klass & 3);
-  *(ushort *)&((String *)unaff_ESI.m_Index)->klass =
-       *(short *)&((String *)unaff_ESI.m_Index)->klass + (ushort)(0 < sVar15) * sVar15;
-  sVar15 = (extraout_DX & 3) - (*(ushort *)&((String *)unaff_ESI.m_Index)->klass & 3);
-  *(ushort *)&((String *)unaff_ESI.m_Index)->klass =
-       *(short *)&((String *)unaff_ESI.m_Index)->klass + (ushort)(0 < sVar15) * sVar15;
-  sVar15 = (extraout_DX & 3) - (*(ushort *)&((String *)unaff_ESI.m_Index)->klass & 3);
-  *(ushort *)&((String *)unaff_ESI.m_Index)->klass =
-       *(short *)&((String *)unaff_ESI.m_Index)->klass + (ushort)(0 < sVar15) * sVar15;
-                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-  pMVar13 = (MVWorldObjectClient *)(**(code **)((int)&this[2].klass + 3))();
-  return pMVar13;
+  do {
+                    /* WARNING: Do nothing block with infinite loop */
+  } while( true );
 code_?:
   worldObjectData = (Dictionary_2_System_Object_System_Object_ *)CONCAT13(9,worldObjectData._0_3_);
   pOVar1 = (Object *)
@@ -1442,21 +1441,21 @@ code_?:
   if (((pMVar7 != (MVNetworkGame *)0x0) &&
       (pMVar8 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar7,(MethodInfo *)0x0),
       pMVar8 != (MVLocalPlayer *)0x0)) &&
-     (iVar16 = (pMVar8->fields)._._ActorNr_k__BackingField, unaff_ESI.m_Index != 0)) {
+     (iVar14 = (pMVar8->fields)._._ActorNr_k__BackingField, unaff_ESI.m_Index != 0)) {
     pIVar3 = TypeInfo__System__Int32;
     if (*(Il2CppClass **)(*(int *)unaff_ESI.m_Index + 0x20) ==
         (TypeInfo__System__Int32->_0).element_class) {
       piVar6 = (int *)func_?(unaff_ESI.m_Index);
-      if (*piVar6 != iVar16) {
-        this_59 = (MVBuildModeAvatarRemote *)func_?(TypeInfo__MVBuildModeAvatarRemote);
+      if (*piVar6 != iVar14) {
+        this_60 = (MVBuildModeAvatarRemote *)func_?(TypeInfo__MVBuildModeAvatarRemote);
         MVBuildModeAvatarRemote::MVBuildModeAvatarRemote__ctor
-                  (this_59,this,worldObjects,(MethodInfo *)0x0);
-        return (MVWorldObjectClient *)this_59;
+                  (this_60,this,worldObjects,(MethodInfo *)0x0);
+        return (MVWorldObjectClient *)this_60;
       }
-      this_60 = (MVBuildModeAvatarLocal *)func_?(TypeInfo__MVBuildModeAvatarLocal);
+      this_61 = (MVBuildModeAvatarLocal *)func_?(TypeInfo__MVBuildModeAvatarLocal);
       MVBuildModeAvatarLocal::MVBuildModeAvatarLocal__ctor
-                (this_60,this,worldObjects,(MethodInfo *)0x0);
-      return (MVWorldObjectClient *)this_60;
+                (this_61,this,worldObjects,(MethodInfo *)0x0);
+      return (MVWorldObjectClient *)this_61;
     }
     goto code_?;
   }

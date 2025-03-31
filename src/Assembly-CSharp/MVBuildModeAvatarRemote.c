@@ -55,7 +55,7 @@ code_?:
       func_?();
       if (this_02 != (DynamicCullingHandler *)0x0) {
         DynamicCullingHandler::DynamicCullingHandler_ActivateCulling
-                  (this_02,(GameObject *)0x0,(GameObject__Array *)unaff_EDI,(MethodInfo *)0x0);
+                  (this_02,(GameObject *)0x0,(GameObject__Array *)unaff_EDI,0,(MethodInfo *)0x0);
         return;
       }
       goto code_?;
@@ -230,7 +230,7 @@ void Assembly-CSharp.dll::MVBuildModeAvatarRemote::MVBuildModeAvatarRemote_Handl
       func_?(cullingGroup->vector,pGVar3);
       if (this_00 != (DynamicCullingHandler *)0x0) {
         DynamicCullingHandler::DynamicCullingHandler_ActivateCulling
-                  (this_00,pGVar1,cullingGroup,(MethodInfo *)0x0);
+                  (this_00,pGVar1,cullingGroup,0,(MethodInfo *)0x0);
         return;
       }
     }

@@ -1914,11 +1914,11 @@ void Assembly-CSharp.dll::Extensions::Extensions_LogError
       func_?(method);
     }
   }
-  this = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-         func_?(TypeInfo__System__Action<System::String>);
-  Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-  SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-  SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+  this = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+          *)func_?(TypeInfo__System__Action<System::String>);
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             (this,(Object *)0x0,MethodInfo__UnityEngine__Debug__LogError_System__Object_,
              (MethodInfo *)0x0);
   if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
@@ -1943,11 +1943,11 @@ void Assembly-CSharp.dll::Extensions::Extensions_LogErrorRecursive
     func_?(&TypeInfo__Extensions);
     cRam_? = '\x01';
   }
-  this = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-         func_?(TypeInfo__System__Action<System::String>);
-  Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-  SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-  SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+  this = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+          *)func_?(TypeInfo__System__Action<System::String>);
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             (this,(Object *)0x0,MethodInfo__UnityEngine__Debug__LogError_System__Object_,
              (MethodInfo *)0x0);
   if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
@@ -1973,11 +1973,11 @@ void Assembly-CSharp.dll::Extensions::Extensions_LogRecursive
     func_?(&TypeInfo__Extensions);
     cRam_? = '\x01';
   }
-  this = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-         func_?(TypeInfo__System__Action<System::String>);
-  Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-  SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-  SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+  this = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+          *)func_?(TypeInfo__System__Action<System::String>);
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             (this,(Object *)0x0,MethodInfo__UnityEngine__Debug__Log_System__Object_,
              (MethodInfo *)0x0);
   if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
@@ -2050,11 +2050,11 @@ void Assembly-CSharp.dll::Extensions::Extensions_LogWarning
       func_?(method);
     }
   }
-  this = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-         func_?(TypeInfo__System__Action<System::String>);
-  Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-  SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-  SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+  this = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+          *)func_?(TypeInfo__System__Action<System::String>);
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             (this,(Object *)0x0,MethodInfo__UnityEngine__Debug__LogWarning_System__Object_,
              (MethodInfo *)0x0);
   if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
@@ -2079,11 +2079,11 @@ void Assembly-CSharp.dll::Extensions::Extensions_LogWarningRecursive
     func_?(&TypeInfo__Extensions);
     cRam_? = '\x01';
   }
-  this = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-         func_?(TypeInfo__System__Action<System::String>);
-  Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-  SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-  SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+  this = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+          *)func_?(TypeInfo__System__Action<System::String>);
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             (this,(Object *)0x0,MethodInfo__UnityEngine__Debug__LogWarning_System__Object_,
              (MethodInfo *)0x0);
   if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
@@ -2113,11 +2113,11 @@ void Assembly-CSharp.dll::Extensions::Extensions_Log_1
       func_?(method);
     }
   }
-  this = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-         func_?(TypeInfo__System__Action<System::String>);
-  Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-  SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-  SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+  this = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+          *)func_?(TypeInfo__System__Action<System::String>);
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             (this,(Object *)0x0,MethodInfo__UnityEngine__Debug__Log_System__Object_,
              (MethodInfo *)0x0);
   if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {

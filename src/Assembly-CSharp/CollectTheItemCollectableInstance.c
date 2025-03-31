@@ -187,30 +187,28 @@ bool Assembly-CSharp.dll::CollectTheItemCollectableInstance::
         pTVar3 = (pCVar2->fields).triggerBoxEvents;
         pUVar4 = (this->fields).useInteractor;
         piVar5 = (int *)&UNK_?;
-        pUVar6 = (UnityAction_2_System_Object_System_Object_ *)
+        pEVar6 = (EventHandler_1_Object_ *)
                  func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  (pUVar6,(Object *)pUVar4,
+        mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                  (pEVar6,(Object *)pUVar4,
                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                    ,(MethodInfo *)0x0);
         if (pTVar3 != (TriggerBoxEvents *)0x0) {
           TriggerBoxEvents::TriggerBoxEvents_remove_TriggerEnter
-                    (pTVar3,(EventHandler_1_TriggerEventArgs_ *)pUVar6,(MethodInfo *)0x0);
+                    (pTVar3,(EventHandler_1_TriggerEventArgs_ *)pEVar6,(MethodInfo *)0x0);
           pCVar2 = (this->fields).collectTheItemObject;
           if (pCVar2 != (CollectTheItemObject *)0x0) {
             pTVar3 = (pCVar2->fields).triggerBoxEvents;
             pUVar4 = (this->fields).useInteractor;
-            pUVar6 = (UnityAction_2_System_Object_System_Object_ *)
+            pEVar6 = (EventHandler_1_Object_ *)
                      func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-            Object]::UnityAction_2_System_Object_System_Object___ctor
-                      (pUVar6,(Object *)pUVar4,
+            mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                      (pEVar6,(Object *)pUVar4,
                        MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                        ,(MethodInfo *)0x0);
             if (pTVar3 != (TriggerBoxEvents *)0x0) {
               TriggerBoxEvents::TriggerBoxEvents_remove_TriggerExit
-                        (pTVar3,(EventHandler_1_TriggerEventArgs_ *)pUVar6,(MethodInfo *)0x0);
+                        (pTVar3,(EventHandler_1_TriggerEventArgs_ *)pEVar6,(MethodInfo *)0x0);
               if (piVar5 == (int *)0x0) {
                 return 0;
               }
@@ -779,10 +777,9 @@ void Assembly-CSharp.dll::CollectTheItemCollectableInstance::
     pCVar4 = (this->fields).collectTheItemObject;
     if (pCVar4 != (CollectTheItemObject *)0x0) {
       this_00 = (pCVar4->fields).triggerBoxEvents;
-      this_03 = (UnityAction_2_System_Object_System_Object_ *)
+      this_03 = (EventHandler_1_Object_ *)
                 func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                 (this_03,(Object *)this,
                  MethodInfo__CollectTheItemCollectableInstance__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                  ,(MethodInfo *)0x0);
@@ -866,9 +863,8 @@ void Assembly-CSharp.dll::CollectTheItemCollectableInstance::
         pCVar1 = (this->fields).collectTheItemObject;
         if (pCVar1 != (CollectTheItemObject *)0x0) {
           this_03 = (pCVar1->fields).triggerBoxEvents;
-          this_04 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
+          this_04 = (EventHandler_1_Object_ *)func_?();
+          mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                     (this_04,(Object *)this,
                      MethodInfo__CollectTheItemCollectableInstance__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                      ,(MethodInfo *)0x0);
@@ -1023,10 +1019,12 @@ void Assembly-CSharp.dll::CollectTheItemCollectableInstance::CollectTheItemColle
             ppMStack4 =
                  (MethodInfo **)
                  TypeInfo__System__Action<GreyOutObjectScript::PickupOriginalMaterials>;
-            this_02 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
-            Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-            SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-            SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+            this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                       *)func_?();
+            DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::
+            Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
+            __Il2CppFullySharedGenericType]::
+            DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
                       (this_02,(Object *)0x0,
                        MethodInfo__GreyOutObjectScript__GreyInExec_GreyOutObjectScript__PickupOriginalMaterials_
                        ,(MethodInfo *)0x0);
@@ -1619,30 +1617,28 @@ void Assembly-CSharp.dll::CollectTheItemCollectableInstance::
       if (pLVar3 != (List_1_MV_WorldObject_Link_ *)0x0) {
         pTVar2 = (TriggerBoxEvents *)pLVar3[1].fields._version;
         pLVar4 = wo[1].fields._.objectLinkRefs;
-        pUVar5 = (UnityAction_2_System_Object_System_Object_ *)
+        pEVar5 = (EventHandler_1_Object_ *)
                  func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  (pUVar5,(Object *)pLVar4,
+        mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                  (pEVar5,(Object *)pLVar4,
                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                    ,(MethodInfo *)0x0);
         if (pTVar2 != (TriggerBoxEvents *)0x0) {
           TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
-                    (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pUVar5,(MethodInfo *)0x0);
+                    (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pEVar5,(MethodInfo *)0x0);
           pLVar3 = wo[1].fields._.outputLinkRefs;
           if (pLVar3 != (List_1_MV_WorldObject_Link_ *)0x0) {
             pTVar2 = (TriggerBoxEvents *)pLVar3[1].fields._version;
             pLVar4 = wo[1].fields._.objectLinkRefs;
-            pUVar5 = (UnityAction_2_System_Object_System_Object_ *)
+            pEVar5 = (EventHandler_1_Object_ *)
                      func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-            Object]::UnityAction_2_System_Object_System_Object___ctor
-                      (pUVar5,(Object *)pLVar4,
+            mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                      (pEVar5,(Object *)pLVar4,
                        MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                        ,(MethodInfo *)0x0);
             if (pTVar2 != (TriggerBoxEvents *)0x0) {
               TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
-                        (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pUVar5,(MethodInfo *)0x0);
+                        (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pEVar5,(MethodInfo *)0x0);
               return;
             }
           }

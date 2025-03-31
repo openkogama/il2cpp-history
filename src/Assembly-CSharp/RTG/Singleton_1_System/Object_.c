@@ -9,7 +9,7 @@ void Assembly-CSharp.dll::RTG::Singleton`1[System::Object]::Singleton_1_System_O
   if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
     pIVar1 = (Il2CppClass *)func_?(pIVar1);
   }
-  pOVar2 = mscorlib.dll::System::Activator::Activator_CreateInstance_10
+  pOVar2 = mscorlib.dll::System::Activator::Activator_CreateInstance_11
                      (pIVar1->rgctx_data[3].method);
   pIVar1 = method->klass;
   if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {

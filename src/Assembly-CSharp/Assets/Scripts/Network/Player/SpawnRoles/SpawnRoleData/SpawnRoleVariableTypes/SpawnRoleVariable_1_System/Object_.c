@@ -83,6 +83,35 @@ bool Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
 }
 
 
+/* Int32 GetHashCode() */
+
+int32_t Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
+        SpawnRoleVariableTypes::SpawnRoleVariable`1[System::Object]::
+        SpawnRoleVariable_1_System_Object__GetHashCode
+                  (SpawnRoleVariable_1_System_Object_ *this,MethodInfo *method)
+
+{
+  bVar1 = SubscribableVariableBase`1[System::Object]::
+          SubscribableVariableBase_1_System_Object__op_Inequality_2
+                    ((SubscribableVariableBase_1_System_Object_ *)
+                     (this->fields).subscribableVariable,
+                     (SubscribableVariableBase_1_System_Object_ *)0x0,
+                     method->klass->rgctx_data[3].method);
+  if (bVar1 == 0) {
+    return 0;
+  }
+  pSVar2 = (this->fields).subscribableVariable;
+  if (pSVar2 != (SubscribableVariable_1_System_Object_ *)0x0) {
+    iVar3 = (*(code *)(pSVar2->klass->vtable).GetHashCode.method)(pSVar2);
+    return iVar3;
+  }
+  func_?();
+  pcVar4 = (code *)swi(3);
+  iVar3 = (*pcVar4)();
+  return iVar3;
+}
+
+
 /* Void SubscribableVariableOnOnChange(Object) */
 
 void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
@@ -110,50 +139,41 @@ void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
 {
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-  method_00 = method->klass->rgctx_data[2].method;
-  if ((method_00[3].slot & 0x100) == 0) {
-    method_00 = (MethodInfo *)func_?(method_00);
+  pIVar1 = method->klass->rgctx_data[2].klass;
+  if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
+    pIVar1 = (Il2CppClass *)func_?(pIVar1);
   }
-  pSVar1 = (SubscribableVariable_1_System_Object_ *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)pSVar1,ExceptionArgument__Enum_obj,method_00);
-  (pSVar1->fields)._.value = value;
-  func_?(&pSVar1->fields,value);
-  (this->fields).subscribableVariable = pSVar1;
-  func_?(&this->fields,pSVar1);
-  pSVar1 = (this->fields).subscribableVariable;
-  pIVar2 = method->klass->rgctx_data[0xc].klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
-  }
-  this_00 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?(pIVar2);
-  SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-  SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
-            (this_00,(Object *)this,method->klass->rgctx_data[0xb].rgctxDataDummy,
-             method->klass->rgctx_data[0xd].method);
-  if (pSVar1 != (SubscribableVariable_1_System_Object_ *)0x0) {
-    a = (pSVar1->fields)._.OnChange;
-    method = method->klass->rgctx_data[0xe].method;
-    while( true ) {
-      pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)a,(Delegate *)this_00,(MethodInfo *)0x0);
-      pAVar4 = a;
-      if (((uint)(method->klass->rgctx_data[7].klass)->vtable[0].methodPtr & 0x100) == 0) {
-        func_?();
-        pAVar4 = a;
-      }
-      if ((pDVar3 != (Delegate *)0x0) && (iVar5 = func_?(), iVar5 == 0)) break;
-      method = (MethodInfo *)0x0;
-      a = (Action_1_Object_ *)func_?();
-      if (a == pAVar4) {
-        return;
-      }
-    }
+  this_01 = (SubscribableVariable_1_System_Object_ *)func_?(pIVar1);
+  System.dll::System::Collections::Generic::SortedList`2[TKey,TValue]+ValueList[Unity::IL2CPP::
+  Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]
+  ::
+  SortedList_2_TKey_TValue_ValueList_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((SortedList_2_TKey_TValue_ValueList_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+              *)this_01,
+             (SortedList_2_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+              *)value,method->klass->rgctx_data[10].method);
+  (this->fields).subscribableVariable = this_01;
+  func_?(&this->fields,this_01);
+  this_00 = (SubscribableVariableBase_1_System_Single_ *)(this->fields).subscribableVariable;
+  if (((uint)(method->klass->rgctx_data[0xc].klass)->vtable[0].methodPtr & 0x100) == 0) {
     func_?();
   }
+  this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+             *)func_?();
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            (this_02,(Object *)this,method->klass->rgctx_data[0xb].rgctxDataDummy,
+             method->klass->rgctx_data[0xd].method);
+  if (this_00 != (SubscribableVariableBase_1_System_Single_ *)0x0) {
+    SubscribableVariableBase`1[System::Single]::
+    SubscribableVariableBase_1_System_Single__add_OnChange
+              (this_00,(Action_1_Single_ *)this_02,method->klass->rgctx_data[0xe].method);
+    return;
+  }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

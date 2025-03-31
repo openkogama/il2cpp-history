@@ -672,21 +672,21 @@ void Assembly-CSharp.dll::GUILoginHandler::GUILoginHandler_SetValuesToPrefOrDefa
                    (Object *)StringLiteral_serverIP,(Object *)pSVar2,
                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__set_Item_System__String__System__Object_
                   );
-        pSVar1 = StringLiteral__1;
-        pSVar2 = StringLiteral_Dev_planetId;
+        pSVar1 = StringLiteral_Dev_planetId;
+        pSVar2 = StringLiteral__1;
         pDVar5 = (this->fields).gameSessionData;
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
         }
-        pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::PlayerPrefs::PlayerPrefs_GetString
-                           (pSVar2,::StringLiteral__,(MethodInfo *)0x0);
+        pSVar1 = UnityEngine.CoreModule.dll::UnityEngine::PlayerPrefs::PlayerPrefs_GetString
+                           (pSVar1,::StringLiteral__,(MethodInfo *)0x0);
         bVar3 = mscorlib.dll::System::String::String_op_Inequality
-                          (pSVar2,::StringLiteral__,(MethodInfo *)0x0);
+                          (pSVar1,::StringLiteral__,(MethodInfo *)0x0);
         if (bVar3 != 0) {
-          pSVar1 = pSVar2;
+          pSVar2 = pSVar1;
         }
-        mscorlib.dll::System::Convert::Convert_ToInt32_14(pSVar1,(MethodInfo *)0x0);
+        mscorlib.dll::System::Convert::Convert_ToInt32_14(pSVar2,(MethodInfo *)0x0);
         pOVar4 = (Object *)func_?();
         if (pDVar5 != (Dictionary_2_System_String_System_Object_ *)0x0) {
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::

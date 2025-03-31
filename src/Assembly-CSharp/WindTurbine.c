@@ -1039,29 +1039,27 @@ code_?:
           *(uint *)((int)&(this->fields)._._.interactionFlags + 4) = uVar9 | 0x38;
           if (pWVar3 != (WindTurbineObject *)0x0) {
             pTVar11 = (pWVar3->fields).triggerBoxEvents;
-            pUVar12 = (UnityAction_2_System_Object_System_Object_ *)
+            pEVar12 = (EventHandler_1_Object_ *)
                       func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-            Object]::UnityAction_2_System_Object_System_Object___ctor
-                      (pUVar12,(Object *)this,
+            mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                      (pEVar12,(Object *)this,
                        MethodInfo__WindTurbine__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                        ,(MethodInfo *)0x0);
             if (pTVar11 != (TriggerBoxEvents *)0x0) {
               TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
-                        (pTVar11,(EventHandler_1_TriggerEventArgs_ *)pUVar12,(MethodInfo *)0x0);
+                        (pTVar11,(EventHandler_1_TriggerEventArgs_ *)pEVar12,(MethodInfo *)0x0);
               pWVar3 = (this->fields).windTurbineObject;
               if (pWVar3 != (WindTurbineObject *)0x0) {
                 pTVar11 = (pWVar3->fields).triggerBoxEvents;
-                pUVar12 = (UnityAction_2_System_Object_System_Object_ *)
+                pEVar12 = (EventHandler_1_Object_ *)
                           func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-                UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System
-                ::Object]::UnityAction_2_System_Object_System_Object___ctor
-                          (pUVar12,(Object *)this,
+                mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                          (pEVar12,(Object *)this,
                            MethodInfo__WindTurbine__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                            ,(MethodInfo *)0x0);
                 if (pTVar11 != (TriggerBoxEvents *)0x0) {
                   TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
-                            (pTVar11,(EventHandler_1_TriggerEventArgs_ *)pUVar12,(MethodInfo *)0x0);
+                            (pTVar11,(EventHandler_1_TriggerEventArgs_ *)pEVar12,(MethodInfo *)0x0);
                   this_01 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_
                              *)func_?(
                                               TypeInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>

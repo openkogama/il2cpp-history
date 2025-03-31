@@ -85,6 +85,34 @@ code_?:
 }
 
 
+/* Int32 GetHashCode() */
+
+int32_t Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
+        SpawnRoleVariableTypes::SpawnRoleVariable`1[System::Int32]::
+        SpawnRoleVariable_1_System_Int32__GetHashCode
+                  (SpawnRoleVariable_1_System_Int32_ *this,MethodInfo *method)
+
+{
+  bVar1 = SubscribableVariableBase`1[System::Int32]::
+          SubscribableVariableBase_1_System_Int32__op_Inequality_2
+                    ((SubscribableVariableBase_1_System_Int32_ *)(this->fields).subscribableVariable
+                     ,(SubscribableVariableBase_1_System_Int32_ *)0x0,
+                     method->klass->rgctx_data[3].method);
+  if (bVar1 == 0) {
+    return 0;
+  }
+  pSVar2 = (this->fields).subscribableVariable;
+  if (pSVar2 != (SubscribableVariable_1_System_Int32_ *)0x0) {
+    iVar3 = (*(code *)(pSVar2->klass->vtable).GetHashCode.method)(pSVar2);
+    return iVar3;
+  }
+  func_?();
+  pcVar4 = (code *)swi(3);
+  iVar3 = (*pcVar4)();
+  return iVar3;
+}
+
+
 /* Boolean op_Equality(Int32, SpawnRoleVariable`1[System.Int32]) */
 
 bool Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::

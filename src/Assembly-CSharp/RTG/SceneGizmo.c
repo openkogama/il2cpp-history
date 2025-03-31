@@ -163,8 +163,8 @@ code_?:
     pGVar8 = (this->fields)._._gizmo;
     pGVar12 = (GizmoPreHandlePickedHandler *)
               func_?(TypeInfo__RTG__GizmoPreHandlePickedHandler);
-    mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor
-              ((Action_2_Object_Int32Enum_ *)pGVar12,(Object *)pSVar7,
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+              ((EventHandler_1_Object_ *)pGVar12,(Object *)pSVar7,
                MethodInfo__RTG__SceneGizmoMidCap__OnGizmoHandlePicked_RTG__Gizmo__int_,
                (MethodInfo *)0x0);
     if (pGVar8 == (Gizmo *)0x0) goto code_?;
@@ -360,8 +360,8 @@ code_?:
                 pGVar8 = (this->fields)._._gizmo;
                 pGVar12 = (GizmoPreHandlePickedHandler *)
                           func_?(TypeInfo__RTG__GizmoPreHandlePickedHandler);
-                mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor
-                          ((Action_2_Object_Int32Enum_ *)pGVar12,(Object *)value_00,
+                mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                          ((EventHandler_1_Object_ *)pGVar12,(Object *)value_00,
                            MethodInfo__RTG__SceneGizmoCamPrjSwitchLabel__OnGizmoHandlePicked_RTG__Gizmo__int_
                            ,(MethodInfo *)0x0);
                 if (pGVar8 != (Gizmo *)0x0) {

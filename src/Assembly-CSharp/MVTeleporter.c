@@ -49,30 +49,28 @@ code_?:
       }
       pTVar3 = (pMVar1->fields).triggerBoxEvents;
       pUVar4 = (this->fields).useInteractor;
-      pUVar5 = (UnityAction_2_System_Object_System_Object_ *)
+      pEVar5 = (EventHandler_1_Object_ *)
                func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                (pUVar5,(Object *)pUVar4,
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                (pEVar5,(Object *)pUVar4,
                  MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                  ,(MethodInfo *)0x0);
       if (pTVar3 == (TriggerBoxEvents *)0x0) goto code_?;
       TriggerBoxEvents::TriggerBoxEvents_remove_TriggerEnter
-                (pTVar3,(EventHandler_1_TriggerEventArgs_ *)pUVar5,(MethodInfo *)0x0);
+                (pTVar3,(EventHandler_1_TriggerEventArgs_ *)pEVar5,(MethodInfo *)0x0);
       pMVar1 = (this->fields).teleportObject;
       if (pMVar1 == (MVTeleporterObject *)0x0) goto code_?;
       pTVar3 = (pMVar1->fields).triggerBoxEvents;
       pUVar4 = (this->fields).useInteractor;
-      pUVar5 = (UnityAction_2_System_Object_System_Object_ *)
+      pEVar5 = (EventHandler_1_Object_ *)
                func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                (pUVar5,(Object *)pUVar4,
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                (pEVar5,(Object *)pUVar4,
                  MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                  ,(MethodInfo *)0x0);
       if (pTVar3 == (TriggerBoxEvents *)0x0) goto code_?;
       TriggerBoxEvents::TriggerBoxEvents_remove_TriggerExit
-                (pTVar3,(EventHandler_1_TriggerEventArgs_ *)pUVar5,(MethodInfo *)0x0);
+                (pTVar3,(EventHandler_1_TriggerEventArgs_ *)pEVar5,(MethodInfo *)0x0);
       pUVar4 = (this->fields).useInteractor;
       if (pUVar4 == (UseInteractor *)0x0) goto code_?;
       UseInteractor::UseInteractor_OnDestroy(pUVar4,(this->fields)._._._.data,(MethodInfo *)0x0);
@@ -416,35 +414,33 @@ void Assembly-CSharp.dll::MVTeleporter::MVTeleporter_SetupUseInteractor
                                 if (pMVar1 != (MVTeleporterObject *)0x0) {
                                   pTVar3 = (pMVar1->fields).triggerBoxEvents;
                                   pUVar4 = (this->fields).useInteractor;
-                                  pUVar5 = (UnityAction_2_System_Object_System_Object_ *)
+                                  pEVar5 = (EventHandler_1_Object_ *)
                                            func_?(
                                                   TypeInfo__System__EventHandler<TriggerEventArgs>);
-                                  UnityEngine.CoreModule.dll::UnityEngine::Events::
-                                  UnityAction`2[System::Object,System::Object]::
-                                  UnityAction_2_System_Object_System_Object___ctor
-                                            (pUVar5,(Object *)pUVar4,
+                                  mscorlib.dll::System::EventHandler`1[Object]::
+                                  EventHandler_1_Object___ctor
+                                            (pEVar5,(Object *)pUVar4,
                                              MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                                              ,(MethodInfo *)0x0);
                                   if (pTVar3 != (TriggerBoxEvents *)0x0) {
                                     TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
-                                              (pTVar3,(EventHandler_1_TriggerEventArgs_ *)pUVar5,
+                                              (pTVar3,(EventHandler_1_TriggerEventArgs_ *)pEVar5,
                                                (MethodInfo *)0x0);
                                     pMVar1 = (this->fields).teleportObject;
                                     if (pMVar1 != (MVTeleporterObject *)0x0) {
                                       pTVar3 = (pMVar1->fields).triggerBoxEvents;
                                       pUVar4 = (this->fields).useInteractor;
-                                      pUVar5 = (UnityAction_2_System_Object_System_Object_ *)
+                                      pEVar5 = (EventHandler_1_Object_ *)
                                                func_?(
                                                   TypeInfo__System__EventHandler<TriggerEventArgs>);
-                                      UnityEngine.CoreModule.dll::UnityEngine::Events::
-                                      UnityAction`2[System::Object,System::Object]::
-                                      UnityAction_2_System_Object_System_Object___ctor
-                                                (pUVar5,(Object *)pUVar4,
+                                      mscorlib.dll::System::EventHandler`1[Object]::
+                                      EventHandler_1_Object___ctor
+                                                (pEVar5,(Object *)pUVar4,
                                                  MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                                                  ,(MethodInfo *)0x0);
                                       if (pTVar3 != (TriggerBoxEvents *)0x0) {
                                         TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
-                                                  (pTVar3,(EventHandler_1_TriggerEventArgs_ *)pUVar5
+                                                  (pTVar3,(EventHandler_1_TriggerEventArgs_ *)pEVar5
                                                    ,(MethodInfo *)0x0);
                                         return;
                                       }
@@ -565,29 +561,27 @@ void Assembly-CSharp.dll::MVTeleporter::MVTeleporter__ctor
       pMVar2 = (this->fields).teleportObject;
       if (pMVar2 != (MVTeleporterObject *)0x0) {
         pTVar4 = (pMVar2->fields).triggerBoxEvents;
-        pUVar5 = (UnityAction_2_System_Object_System_Object_ *)
+        pEVar5 = (EventHandler_1_Object_ *)
                  func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  (pUVar5,(Object *)this,
+        mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                  (pEVar5,(Object *)this,
                    MethodInfo__MVTeleporter__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                    ,(MethodInfo *)0x0);
         if (pTVar4 != (TriggerBoxEvents *)0x0) {
           TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
-                    (pTVar4,(EventHandler_1_TriggerEventArgs_ *)pUVar5,(MethodInfo *)0x0);
+                    (pTVar4,(EventHandler_1_TriggerEventArgs_ *)pEVar5,(MethodInfo *)0x0);
           pMVar2 = (this->fields).teleportObject;
           if (pMVar2 != (MVTeleporterObject *)0x0) {
             pTVar4 = (pMVar2->fields).triggerBoxEvents;
-            pUVar5 = (UnityAction_2_System_Object_System_Object_ *)
+            pEVar5 = (EventHandler_1_Object_ *)
                      func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-            Object]::UnityAction_2_System_Object_System_Object___ctor
-                      (pUVar5,(Object *)this,
+            mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                      (pEVar5,(Object *)this,
                        MethodInfo__MVTeleporter__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                        ,(MethodInfo *)0x0);
             if (pTVar4 != (TriggerBoxEvents *)0x0) {
               TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
-                        (pTVar4,(EventHandler_1_TriggerEventArgs_ *)pUVar5,(MethodInfo *)0x0);
+                        (pTVar4,(EventHandler_1_TriggerEventArgs_ *)pEVar5,(MethodInfo *)0x0);
               iVar6 = (this->fields)._._.interactionFlags;
               *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) =
                    *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);

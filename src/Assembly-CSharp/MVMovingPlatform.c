@@ -71,10 +71,9 @@ void Assembly-CSharp.dll::MVMovingPlatform::MVMovingPlatform_Initialize
         *(undefined4 *)((int)&(pMVar6->fields)._._.interactionFlags + 4) =
              *(undefined4 *)((int)&(pMVar6->fields)._._.interactionFlags + 4);
         pMVar6 = (this->fields)._._CubeModel_k__BackingField;
-        this_00 = (UnityAction_2_System_Object_System_Object_ *)
+        this_00 = (EventHandler_1_Object_ *)
                   func_?(TypeInfo__System__EventHandler<EditStateEventArgs>);
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
+        mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                   (this_00,(Object *)this,
                    MethodInfo__MVMovingPlatform__MVCubeModelBase_BeingEditedChanged_System__Object__EditStateEventArgs_
                    ,(MethodInfo *)0x0);

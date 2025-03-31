@@ -73,14 +73,14 @@ code_?:
   }
   else {
     pAVar2 = (pBVar1->fields).OnAnimationChange;
-    pSVar3 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-             func_?(TypeInfo__System__Action<System::String>);
-    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-    SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-    SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
-              (pSVar3,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
+    pDVar3 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+              *)func_?(TypeInfo__System__Action<System::String>);
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              (pDVar3,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
     pDVar4 = mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)pAVar2,(Delegate *)pSVar3,(MethodInfo *)0x0);
+                       ((Delegate *)pAVar2,(Delegate *)pDVar3,(MethodInfo *)0x0);
     if (pDVar4 == (Delegate *)0x0) {
       (pBVar1->fields).OnAnimationChange = (Action_1_String_ *)0x0;
 code_?:
@@ -90,14 +90,14 @@ code_?:
          (pAVar6 = (pMVar5->fields).limbManager, pAVar6 == (AvatarLimbManager *)0x0))
       goto code_?;
       pAVar2 = (pAVar6->fields).OnEmoteStart;
-      pSVar3 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-               func_?(TypeInfo__System__Action<System::String>);
-      Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-      SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-      SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
-                (pSVar3,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
+      pDVar3 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                *)func_?(TypeInfo__System__Action<System::String>);
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                (pDVar3,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
       pDVar4 = mscorlib.dll::System::Delegate::Delegate_Remove
-                         ((Delegate *)pAVar2,(Delegate *)pSVar3,(MethodInfo *)0x0);
+                         ((Delegate *)pAVar2,(Delegate *)pDVar3,(MethodInfo *)0x0);
       if (pDVar4 == (Delegate *)0x0) {
         (pAVar6->fields).OnEmoteStart = (Action_1_String_ *)0x0;
         func_?();
@@ -195,13 +195,14 @@ code_?:
        || (pBVar4 = MVBody::MVBody_get_Animation(this_00,(MethodInfo *)0x0),
           pBVar4 == (BoneAnimation *)0x0)) goto code_?;
     pAVar5 = (pBVar4->fields).OnAnimationChange;
-    pSVar6 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
-    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-    SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-    SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
-              (pSVar6,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
+    pDVar6 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+              *)func_?();
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              (pDVar6,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
     pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pAVar5,(Delegate *)pSVar6,(MethodInfo *)0x0);
+                       ((Delegate *)pAVar5,(Delegate *)pDVar6,(MethodInfo *)0x0);
     if (pDVar7 == (Delegate *)0x0) {
       (pAVar5->fields)._._.m_target = (Object *)0x0;
 code_?:
@@ -211,13 +212,14 @@ code_?:
          (pAVar8 = (pMVar3->fields).limbManager, pAVar8 == (AvatarLimbManager *)0x0))
       goto code_?;
       pAVar5 = (pAVar8->fields).OnEmoteStart;
-      pSVar6 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
-      Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-      SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-      SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
-                (pSVar6,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
+      pDVar6 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                *)func_?();
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                (pDVar6,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
       pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)pAVar5,(Delegate *)pSVar6,(MethodInfo *)0x0);
+                         ((Delegate *)pAVar5,(Delegate *)pDVar6,(MethodInfo *)0x0);
       if (pDVar7 == (Delegate *)0x0) {
         (pAVar5->fields)._._.invoke_impl = (void *)0x0;
         func_?();

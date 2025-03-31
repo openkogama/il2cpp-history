@@ -49,11 +49,11 @@ void Assembly-CSharp.dll::TeamRequirementSettings::TeamRequirementSettings_Initi
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
           ;
           bVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                  Object,UnityEngine::UIElements::TextureId]::
-                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                            (this_00,(Object *)StringLiteral_team,
-                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                            );
+                   Object,UnityEngine::UIElements::TextureId]::
+                   Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                             (this_00,(Object *)StringLiteral_team,
+                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                             );
           if (bVar5 == 0) {
             method = (MethodInfo *)&this;
             this = (TeamRequirementSettings *)0x5;
@@ -288,6 +288,7 @@ void Assembly-CSharp.dll::TeamRequirementSettings::TeamRequirementSettings_Initi
                                           iVar2 = mscorlib.dll::System::Convert::Convert_ToInt32
                                                              (pOVar6,(MethodInfo *)0x0);
                                           bVar3 = 0;
+                                          pTVar1 = (TeamRequirementSettings *)0x0;
                                           if (pSVar15 != (SettingsButton *)0x0) {
                                             SettingsButton::SettingsButton_Initialize
                                                       (pSVar15,StringLiteral_team,iVar2,
@@ -317,19 +318,16 @@ void Assembly-CSharp.dll::TeamRequirementSettings::TeamRequirementSettings_Initi
       }
     }
   }
-  uVar16 = func_?();
-  pbVar17 = (byte *)((ulonglong)uVar16 >> 0x20);
-  bVar18 = (byte)uVar16;
-  bVar19 = CARRY1(*pbVar17,bVar18) || CARRY1(*pbVar17 + bVar18,bVar3);
-  *pbVar17 = *pbVar17 + bVar18 + bVar3;
-  bVar3 = *(byte *)&this_03->klass;
-  bVar20 = *(char *)&this_03->klass + bVar18;
-  *(byte *)&this_03->klass = bVar20 + bVar19;
-  (&stack0xffffffea)[(int)uVar16 * 2] =
-       (&stack0xffffffea)[(int)uVar16 * 2] + extraout_CL +
-       (CARRY1(bVar3,bVar18) || CARRY1(bVar20,bVar19));
-  pcVar21 = (code *)swi(3);
-  (*pcVar21)();
+  bVar16 = func_?();
+  sVar17 = ((ushort)this_03 & 3) - (*(ushort *)&pTVar1->klass & 3);
+  *(ushort *)&pTVar1->klass = *(short *)&pTVar1->klass + (ushort)(0 < sVar17) * sVar17;
+  bVar18 = *extraout_EDX;
+  bVar19 = *extraout_EDX;
+  *extraout_EDX = bVar19 + bVar16 + bVar3;
+  *(byte *)&this_03->klass =
+       *(char *)&this_03->klass + bVar16 + (CARRY1(bVar18,bVar16) || CARRY1(bVar19 + bVar16,bVar3));
+  pcVar20 = (code *)swi(3);
+  (*pcVar20)();
   return;
 }
 
@@ -352,15 +350,15 @@ void Assembly-CSharp.dll::TeamRequirementSettings::TeamRequirementSettings_OnSet
   if (pOVar2 != (Outline *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
               ((Behaviour *)pOVar2,0,(MethodInfo *)0x0);
-    unaff_EDI = value;
+    pOVar4 = value;
     bVar3 = 0;
     if (value != (Object *)0x0) {
-      pIVar4 = (value->klass->_0).element_class;
-      pIVar5 = (TypeInfo__MV__WorldObject__MVTeam->_0).element_class;
-      bVar3 = pIVar4 < pIVar5;
-      if (pIVar4 == pIVar5) {
-        puVar6 = (undefined4 *)func_?(value);
-        switch(*puVar6) {
+      pIVar5 = (value->klass->_0).element_class;
+      pIVar6 = (TypeInfo__MV__WorldObject__MVTeam->_0).element_class;
+      bVar3 = pIVar5 < pIVar6;
+      if (pIVar5 == pIVar6) {
+        puVar7 = (undefined4 *)func_?(value);
+        switch(*puVar7) {
         case 0:
           pOVar2 = (pTVar1->fields).outlineTeamBlue;
           break;
@@ -381,7 +379,6 @@ void Assembly-CSharp.dll::TeamRequirementSettings::TeamRequirementSettings_OnSet
         pOVar2 = (pTVar1->fields).currentOutline;
         bVar3 = 0;
         if (pOVar2 != (Outline *)0x0) {
-          pOVar7 = (Object *)0x0;
           UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
                     ((Behaviour *)pOVar2,1,(MethodInfo *)0x0);
           this_00 = (pTVar1->fields).settingsBase;
@@ -391,16 +388,15 @@ void Assembly-CSharp.dll::TeamRequirementSettings::TeamRequirementSettings_OnSet
             func_?();
           }
           key = (String *)0x0;
-          this = (TeamRequirementSettings *)unaff_EDI;
-          mscorlib.dll::System::Convert::Convert_ToInt32(unaff_EDI,(MethodInfo *)0x0);
+          this = (TeamRequirementSettings *)pOVar4;
+          mscorlib.dll::System::Convert::Convert_ToInt32(pOVar4,(MethodInfo *)0x0);
           key = (String *)&this;
           this = (TeamRequirementSettings *)TypeInfo__System__Int32;
-          unaff_EDI = pOVar7;
-          pOVar7 = (Object *)func_?();
+          pOVar4 = (Object *)func_?();
           bVar3 = 0;
           pTVar1 = (TeamRequirementSettings *)0x0;
           if (this_00 != (SettingsBase *)0x0) {
-            SettingsBase::SettingsBase_OnSettingChanged(this_00,key,pOVar7,(MethodInfo *)0x0);
+            SettingsBase::SettingsBase_OnSettingChanged(this_00,key,pOVar4,(MethodInfo *)0x0);
             return;
           }
         }
@@ -410,20 +406,20 @@ void Assembly-CSharp.dll::TeamRequirementSettings::TeamRequirementSettings_OnSet
       }
     }
   }
-  iVar8 = func_?();
-  pbVar9 = (byte *)((int)&unaff_EDI[8].klass + iVar8 * 2);
-  bVar10 = *pbVar9 + (byte)extraout_ECX;
-  bVar11 = CARRY1(*pbVar9,(byte)extraout_ECX) || CARRY1(bVar10,bVar3);
-  *pbVar9 = bVar10 + bVar3;
-  pbVar9 = (byte *)(extraout_ECX + 0x47);
-  bVar3 = *pbVar9;
-  bVar10 = *pbVar9;
-  *pbVar9 = bVar10 + extraout_DL + bVar11;
-  pcVar12 = (char *)((int)&(pTVar1->fields).outlineTeamGreen + 3);
-  *pcVar12 = *pcVar12 + extraout_DL +
-            (CARRY1(bVar3,extraout_DL) || CARRY1(bVar10 + extraout_DL,bVar11));
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  func_?();
+  pbVar8 = (byte *)segment(in_DS,(short)pTVar1 + 0x67);
+  bVar9 = *pbVar8 + (byte)extraout_ECX;
+  bVar10 = CARRY1(*pbVar8,(byte)extraout_ECX) || CARRY1(bVar9,bVar3);
+  *pbVar8 = bVar9 + bVar3;
+  pbVar8 = (byte *)(extraout_ECX + 0x67);
+  bVar3 = *pbVar8;
+  bVar9 = *pbVar8;
+  *pbVar8 = bVar9 + extraout_DL + bVar10;
+  pcVar11 = (char *)((int)&pTVar1[1].fields.buttonTeamNone + 3);
+  *pcVar11 = *pcVar11 + extraout_DL +
+            (CARRY1(bVar3,extraout_DL) || CARRY1(bVar9 + extraout_DL,bVar10));
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 

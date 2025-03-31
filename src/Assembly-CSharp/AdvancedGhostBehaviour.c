@@ -635,11 +635,12 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour::AdvancedGhostBehaviour_InitBod
               (pAVar4->fields).weaponHitSound = pAVar5;
               func_?(&(pAVar4->fields).weaponHitSound,pAVar5);
               pAVar6 = (body->fields).Changed;
-              this_00 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-                        func_?(TypeInfo__System__Action<CubeModelChangedEventArgs>);
-              Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-              SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-              SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+              this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                         *)func_?(TypeInfo__System__Action<CubeModelChangedEventArgs>);
+              DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::
+              Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
+              __Il2CppFullySharedGenericType]::
+              DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
                         (this_00,(Object *)pAVar4,
                          MethodInfo__AdvancedGhostBodyRotateWeapon__body_Changed_CubeModelChangedEventArgs_
                          ,(MethodInfo *)0x0);

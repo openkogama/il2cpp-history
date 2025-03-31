@@ -161,19 +161,17 @@ code_?:
       }
       pLVar2 = (skillDataManager->fields).skillDataList;
       if (pLVar2 == (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) break;
-      pUVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::UIR::
-                UIRenderDevice+AllocToFree]::
-                List_1_UnityEngine_UIElements_UIR_UIRenderDevice_AllocToFree__get_Item
-                          ((UIRenderDevice_AllocToFree *)&_Stack_48,
-                           (List_1_UnityEngine_UIElements_UIR_UIRenderDevice_AllocToFree_ *)pLVar2,
-                           (int32_t)unaff_EDI,
+      pMVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal
+                ::MultiColumnCollectionHeader+ViewState+ColumnState]::
+                List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__get_Item
+                          ((MultiColumnCollectionHeader_ViewState_ColumnState *)&_Stack_48,
+                           (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                            *)pLVar2,(int32_t)unaff_EDI,
                            MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Item_int_
                           );
-      uStack_12._0_4_ = pUVar11->page;
-      uStack_12._4_1_ = pUVar11->vertices;
-      uStack_12._5_3_ = *(undefined3 *)&pUVar11->field_0x15;
+      uStack_12 = *(undefined8 *)&(pMVar11->width).m_Unit;
       bVar13 = mscorlib.dll::System::String::String_op_Equality
-                        (skill,(String *)(pUVar11->alloc).start,(MethodInfo *)0x0);
+                        (skill,(String *)pMVar11->index,(MethodInfo *)0x0);
       pLVar2 = (skillDataManager->fields).skillDataList;
       if (bVar13 != 0) {
         if (pLVar2 != (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) {
@@ -197,19 +195,17 @@ code_?:
   while( true ) {
     pLVar2 = (this_00->fields).skillDataList;
     if (pLVar2 == (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) break;
-    pUVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::UIR::
-              UIRenderDevice+AllocToFree]::
-              List_1_UnityEngine_UIElements_UIR_UIRenderDevice_AllocToFree__get_Item
-                        ((UIRenderDevice_AllocToFree *)&_Stack_48,
-                         (List_1_UnityEngine_UIElements_UIR_UIRenderDevice_AllocToFree_ *)pLVar2,
-                         (int32_t)unaff_EDI,
+    pMVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
+              MultiColumnCollectionHeader+ViewState+ColumnState]::
+              List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__get_Item
+                        ((MultiColumnCollectionHeader_ViewState_ColumnState *)&_Stack_48,
+                         (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                          *)pLVar2,(int32_t)unaff_EDI,
                          MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Item_int_
                         );
-    uStack_12._0_4_ = pUVar11->page;
-    uStack_12._4_1_ = pUVar11->vertices;
-    uStack_12._5_3_ = *(undefined3 *)&pUVar11->field_0x15;
+    uStack_12 = *(undefined8 *)&(pMVar11->width).m_Unit;
     bVar13 = mscorlib.dll::System::String::String_op_Equality
-                      (skill,(String *)(pUVar11->alloc).start,(MethodInfo *)0x0);
+                      (skill,(String *)pMVar11->index,(MethodInfo *)0x0);
     pLVar2 = (this_00->fields).skillDataList;
     if (bVar13 != 0) {
       if (pLVar2 != (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) {
@@ -434,19 +430,17 @@ code_?:
   while( true ) {
     pLVar2 = (this_00->fields).skillDataList;
     if (pLVar2 == (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) break;
-    pUVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::UIR::
-              UIRenderDevice+AllocToFree]::
-              List_1_UnityEngine_UIElements_UIR_UIRenderDevice_AllocToFree__get_Item
-                        ((UIRenderDevice_AllocToFree *)&_Stack_48,
-                         (List_1_UnityEngine_UIElements_UIR_UIRenderDevice_AllocToFree_ *)pLVar2,
-                         (int32_t)skillSetting,
+    pMVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
+              MultiColumnCollectionHeader+ViewState+ColumnState]::
+              List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__get_Item
+                        ((MultiColumnCollectionHeader_ViewState_ColumnState *)&_Stack_48,
+                         (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                          *)pLVar2,(int32_t)skillSetting,
                          MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Item_int_
                         );
-    uStack_12._0_4_ = pUVar11->page;
-    uStack_12._4_1_ = pUVar11->vertices;
-    uStack_12._5_3_ = *(undefined3 *)&pUVar11->field_0x15;
+    uStack_12 = *(undefined8 *)&(pMVar11->width).m_Unit;
     bVar13 = mscorlib.dll::System::String::String_op_Equality
-                      (skill,(String *)(pUVar11->alloc).start,(MethodInfo *)0x0);
+                      (skill,(String *)pMVar11->index,(MethodInfo *)0x0);
     pLVar2 = (this_00->fields).skillDataList;
     if (bVar13 != 0) {
       if (pLVar2 != (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) {

@@ -212,10 +212,11 @@ code_?:
       pvVar10 = (this_01->fields)._._.method;
       if (pvVar10 == (void *)0x0) goto code_?;
       pDVar9 = *(Delegate **)((int)pvVar10 + 0x18);
-      this_03 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
-      Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-      SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-      SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+      this_03 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                 *)func_?();
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
                 (this_03,(Object *)this_01,
                  MethodInfo__AvatarLimbManager__OnStartEmote_System__String_,(MethodInfo *)0x0);
       pDVar9 = mscorlib.dll::System::Delegate::Delegate_Combine

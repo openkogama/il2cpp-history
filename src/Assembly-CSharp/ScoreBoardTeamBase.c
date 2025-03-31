@@ -497,11 +497,11 @@ void Assembly-CSharp.dll::ScoreBoardTeamBase::ScoreBoardTeamBase_UnSubscribeToCa
         goto code_?;
       }
       pAVar3 = (pMVar2->fields).OnWinningConditionFulfilled;
-      this_00 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-                func_?(TypeInfo__System__Action<IWinningCondition>);
-      Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-      SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-      SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+      this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                 *)func_?(TypeInfo__System__Action<IWinningCondition>);
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
                 (this_00,(Object *)this,
                  MethodInfo__ScoreBoardBase__OnWinningConditionFulfilled_IWinningCondition_,
                  (MethodInfo *)0x0);

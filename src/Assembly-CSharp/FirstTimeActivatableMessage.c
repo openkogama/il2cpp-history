@@ -74,11 +74,11 @@ void Assembly-CSharp.dll::FirstTimeActivatableMessage::FirstTimeActivatableMessa
     cRam_? = '\x01';
   }
   this_00 = (this->fields).firstTimeEventMessage;
-  this_02 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-            func_?(TypeInfo__System__Action<UnityEngine::GameObject>);
-  Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-  SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-  SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+  this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+             *)func_?(TypeInfo__System__Action<UnityEngine::GameObject>);
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             (this_02,(Object *)this,
              MethodInfo__FirstTimeActivatableMessage__OnFinished_UnityEngine__GameObject_,
              (MethodInfo *)0x0);

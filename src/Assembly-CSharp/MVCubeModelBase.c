@@ -6,7 +6,7 @@ void Assembly-CSharp.dll::MVCubeModelBase::MVCubeModelBase_AddCube
 
 {
   if (cRam_? == '\0') {
-    func_?(0x827c);
+    func_?(0x6a64);
     func_?(&TypeInfo__Cube);
     func_?(&
                     MethodInfo__System__Collections__Generic__Queue<CubeModelChangedEventArgs>__Enqueue_CubeModelChangedEventArgs_
@@ -378,13 +378,13 @@ void Assembly-CSharp.dll::MVCubeModelBase::MVCubeModelBase_Destroy
   }
   else {
     pAVar2 = (pRVar1->fields).DirtyChunksRegenerated;
-    this_00 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-              func_?(
-                             TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>
-                             );
-    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-    SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-    SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+    this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+               *)func_?(
+                                TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>
+                                );
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
               (this_00,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
     unaff_ESI = mscorlib.dll::System::Delegate::Delegate_Remove
                           ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
@@ -1454,7 +1454,7 @@ void Assembly-CSharp.dll::MVCubeModelBase::MVCubeModelBase_ReplaceCube
 
 {
   if (cRam_? == '\0') {
-    func_?(0x827c);
+    func_?(0x6a64);
     func_?(&
                     MethodInfo__System__Collections__Generic__Queue<CubeModelChangedEventArgs>__Enqueue_CubeModelChangedEventArgs_
                    );
@@ -1636,7 +1636,7 @@ Assembly-CSharp.dll::MVCubeModelBase::MVCubeModelBase___ctor_b__28_0
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__ModelingDynamicBoxConstraint);
-    func_?(0x5414);
+    func_?(0x3e3c);
     cRam_? = '\x01';
   }
   if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
@@ -1779,10 +1779,11 @@ code_?:
     pRVar3 = (this->fields).prototypeCubeModel;
     if (pRVar3 == (RuntimePrototypeCubeModel *)0x0) goto code_?;
     a = (pRVar3->fields).DirtyChunksRegenerated;
-    this_03 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
-    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-    SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-    SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+    this_03 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+               *)func_?();
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
               (this_03,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
     pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
                         ((Delegate *)a,(Delegate *)this_03,(MethodInfo *)0x0);
@@ -2266,16 +2267,16 @@ code_?:
   }
   else {
     pAVar2 = (pRVar1->fields).DirtyChunksRegenerated;
-    pSVar3 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-             func_?(
-                            TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>
-                            );
-    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-    SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-    SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
-              (pSVar3,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
+    pDVar3 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+              *)func_?(
+                               TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>
+                               );
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              (pDVar3,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
     pDVar4 = mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)pAVar2,(Delegate *)pSVar3,(MethodInfo *)0x0);
+                       ((Delegate *)pAVar2,(Delegate *)pDVar3,(MethodInfo *)0x0);
     if (pDVar4 == (Delegate *)0x0) {
       (pRVar1->fields).DirtyChunksRegenerated =
            (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector_ *)0x0;
@@ -2287,16 +2288,16 @@ code_?:
       pRVar1 = (this->fields).prototypeCubeModel;
       if (pRVar1 == (RuntimePrototypeCubeModel *)0x0) goto code_?;
       pAVar2 = (pRVar1->fields).DirtyChunksRegenerated;
-      pSVar3 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-               func_?(
-                              TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>
-                              );
-      Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-      SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-      SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
-                (pSVar3,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
+      pDVar3 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                *)func_?(
+                                 TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>
+                                 );
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                (pDVar3,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
       pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)pAVar2,(Delegate *)pSVar3,(MethodInfo *)0x0);
+                         ((Delegate *)pAVar2,(Delegate *)pDVar3,(MethodInfo *)0x0);
       if (pDVar4 == (Delegate *)0x0) {
         (pRVar1->fields).DirtyChunksRegenerated =
              (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector_ *)0x0;

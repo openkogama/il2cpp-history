@@ -739,11 +739,11 @@ code_?:
     pOVar13 = pOVar7[0xc].klass;
     if (pOVar13 == (Object__Class *)0x0) goto code_?;
     pDVar14 = (Delegate *)pOVar13[1]._0.byval_arg.data.typeHandle;
-    this_03 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-              func_?(TypeInfo__System__Action<CubeModelChangedEventArgs>);
-    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-    SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-    SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+    this_03 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+               *)func_?(TypeInfo__System__Action<CubeModelChangedEventArgs>);
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
               (this_03,object_00,
                MethodInfo__ModelingDynamicBoxConstraint__CubeModel_Changed_CubeModelChangedEventArgs_
                ,(MethodInfo *)0x0);
@@ -767,16 +767,6 @@ code_?:
   func_?();
   pcVar16 = (code *)swi(3);
   (*pcVar16)();
-  return;
-}
-
-
-/* Void Exit() */
-
-void Assembly-CSharp.dll::ESCubeEdit::ESCubeEdit_Exit_1(ESCubeEdit *this,MethodInfo *method)
-
-{
-  (this->fields).exiting = 1;
   return;
 }
 

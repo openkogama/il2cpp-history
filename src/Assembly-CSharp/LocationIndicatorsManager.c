@@ -423,8 +423,11 @@ void Assembly-CSharp.dll::LocationIndicatorsManager::LocationIndicatorsManager_O
                (LocationIndicatorsManager *this,MethodInfo *method)
 
 {
-  puVar1 = (undefined *)*unaff_FS_OFFSET;
+  this_03 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+             *)*unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &stack0xfffffff0;
+  pMVar1 = (MVNetworkGame *)&stack0xffffffbc;
+  this_02 = (MVNetworkGame *)&stack0xffffffbc;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Action<MV::WorldObject::OwnershipData::PlanetOwnershipsData>)
     ;
@@ -451,23 +454,26 @@ void Assembly-CSharp.dll::LocationIndicatorsManager::LocationIndicatorsManager_O
                    );
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
+    this_02 = pMVar1;
   }
-  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (pMVar2 != (MVNetworkGame *)0x0) {
-    in_stack_3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    this_02 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
-    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-    SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-    SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
-              (this_02,(Object *)0x0,
-               MethodInfo__LocationIndicatorsManager__RecievedPlanetOwnershipsDataCallback_MV__WorldObject__OwnershipData__PlanetOwnershipsData_
-               ,(MethodInfo *)0x0);
-    if (in_stack_3 == (MVNetworkGame *)0x0) goto code_?;
-    puVar1 = (undefined *)0x0;
-    MVNetworkGame::MVNetworkGame_remove_ReceivedPlanetOwnershipData
-              (in_stack_3,
-               (Action_1_MV_WorldObject_OwnershipData_PlanetOwnershipsData_ *)this_02,
-               (MethodInfo *)0x0);
+  bVar2 = MVGameControllerBase::MVGameControllerBase_get_IsAlive((MethodInfo *)0x0);
+  if (bVar2 != 0) {
+    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (pMVar1 != (MVNetworkGame *)0x0) {
+      this_02 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      this_03 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                 *)func_?();
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                (this_03,(Object *)0x0,
+                 MethodInfo__LocationIndicatorsManager__RecievedPlanetOwnershipsDataCallback_MV__WorldObject__OwnershipData__PlanetOwnershipsData_
+                 ,(MethodInfo *)0x0);
+      if (this_02 == (MVNetworkGame *)0x0) goto code_?;
+      MVNetworkGame::MVNetworkGame_remove_ReceivedPlanetOwnershipData
+                (this_02,(Action_1_MV_WorldObject_OwnershipData_PlanetOwnershipsData_ *)this_03,
+                 (MethodInfo *)0x0);
+    }
   }
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StopCoroutine
             ((MonoBehaviour *)this,(this->fields).updateCoroutine,(MethodInfo *)0x0);
@@ -476,28 +482,28 @@ void Assembly-CSharp.dll::LocationIndicatorsManager::LocationIndicatorsManager_O
   if (this_00 !=
       (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
        *)0x0) {
-    this_03 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+    this_04 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
               StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
               Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Keys
                         (this_00,
                          MethodInfo__System__Collections__Generic__Dictionary<int,_LocationIndicator>__get_Keys__
                         );
-    if (this_03 !=
+    if (this_04 !=
         (Dictionary_2_TKey_TValue_KeyCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
          *)0x0) {
-      mscorlib.dll::System::Collections::Generic::
-      Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
-      StyleSheetCache+SheetHandleKey,System::Object]::
-      Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
-                ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                  *)&stack0xffffffd8,
-                 (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                  *)this_03,
-                 MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___KeyCollection<int,_LocationIndicator>__GetEnumerator__
-                );
+      pDVar3 = mscorlib.dll::System::Collections::Generic::
+               Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
+               StyleSheetCache+SheetHandleKey,System::Object]::
+               Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
+                         ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                           *)&stack0xffffffd8,
+                          (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                           *)this_04,
+                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___KeyCollection<int,_LocationIndicator>__GetEnumerator__
+                         );
+      key = (Action_1_MV_WorldObject_OwnershipData_PlanetOwnershipsData_ *)pDVar3->_currentValue;
       while( true ) {
-        key = &UNK_?;
-        bVar4 = mscorlib.dll::System::Collections::Generic::
+        bVar2 = mscorlib.dll::System::Collections::Generic::
                 Dictionary`2[TKey,TValue]+KeyCollection[TKey,TValue]+Enumerator[System::
                 UInt32,System::Object]::
                 Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
@@ -505,31 +511,32 @@ void Assembly-CSharp.dll::LocationIndicatorsManager::LocationIndicatorsManager_O
                             *)&stack0xffffffc8,
                            MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<int,_LocationIndicator>__MoveNext__
                           );
-        if (bVar4 == 0) {
+        if (bVar2 == 0) {
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                     ((Object *)&stack0xffffffc8,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<int,_LocationIndicator>__Dispose__
-                     ,(MethodInfo *)in_stack_3);
-          *unaff_FS_OFFSET = puVar1;
+                     ,(MethodInfo *)this_02);
+          *unaff_FS_OFFSET = this_03;
           return;
         }
         this_01 = (this->fields).indicators;
         if (this_01 == (Dictionary_2_System_Int32_LocationIndicator_ *)0x0) break;
-        this_04 = (Component *)
-                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
-                  Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                            ((Dictionary_2_System_Int32_System_Object_ *)this_01,(int32_t)key,
-                             MethodInfo__System__Collections__Generic__Dictionary<int,_LocationIndicator>__get_Item_int_
-                            );
-        if (this_04 == (Component *)0x0) break;
-        in_stack_3 = (MVNetworkGame *)&UNK_?;
+        this_03 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                   *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+                     Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                               ((Dictionary_2_System_Int32_System_Object_ *)this_01,(int32_t)key,
+                                MethodInfo__System__Collections__Generic__Dictionary<int,_LocationIndicator>__get_Item_int_
+                               );
+        if (this_03 ==
+            (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+             *)0x0) break;
+        this_02 = (MVNetworkGame *)&UNK_?;
         obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                        (this_04,(MethodInfo *)0x0);
+                        ((Component *)this_03,(MethodInfo *)0x0);
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        puVar1 = &UNK_?;
         UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
                   ((Object_1 *)obj,(MethodInfo *)0x0);
       }
@@ -537,8 +544,8 @@ void Assembly-CSharp.dll::LocationIndicatorsManager::LocationIndicatorsManager_O
   }
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -806,13 +813,13 @@ void Assembly-CSharp.dll::LocationIndicatorsManager::LocationIndicatorsManager_S
     func_?(&(this->fields).indicators,this_01);
     (this->fields).isPlanetOwnershipsRequestPending = 1;
     this_02 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    this_03 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-              func_?(
-                             TypeInfo__System__Action<MV::WorldObject::OwnershipData::PlanetOwnershipsData>
-                             );
-    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-    SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-    SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+    this_03 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+               *)func_?(
+                                TypeInfo__System__Action<MV::WorldObject::OwnershipData::PlanetOwnershipsData>
+                                );
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
               (this_03,(Object *)0x0,
                MethodInfo__LocationIndicatorsManager__RecievedPlanetOwnershipsDataCallback_MV__WorldObject__OwnershipData__PlanetOwnershipsData_
                ,(MethodInfo *)0x0);

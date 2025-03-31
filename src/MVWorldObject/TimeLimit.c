@@ -145,68 +145,18 @@ MVWorldObject.dll::TimeLimit::TimeLimit_GetHighScores(TimeLimit *this,MethodInfo
       return pHVar2;
     }
   }
-  bVar3 = 0;
-  uVar4 = func_?();
-  uVar5 = (undefined4)uVar4;
-  *(char *)&unaff_EDI->klass = (char)uVar4;
-  out((short)((ulonglong)uVar4 >> 0x20),uVar5);
-  bVar6 = (byte)((ulonglong)uVar4 >> 0x20);
-  bVar7 = bVar6 + extraout_CH;
-  bVar8 = CARRY1(bVar6,extraout_CH) || CARRY1(bVar7,bVar3);
-  uVar9 = (undefined3)((ulonglong)uVar4 >> 0x28);
-  bVar7 = bVar7 + bVar3;
-  pbVar10 = (byte *)CONCAT31(uVar9,bVar7);
-  out((short)pbVar10,uVar5);
-  bVar11 = *pbVar10;
-  bVar12 = *pbVar10 + extraout_CH;
-  bVar13 = CARRY1(*pbVar10,extraout_CH) || CARRY1(bVar12,bVar8);
-  *pbVar10 = bVar12 + bVar8;
-  bVar6 = *pbVar10;
-  bVar14 = *pbVar10;
-  bVar3 = *pbVar10;
-  out((short)pbVar10,uVar5);
-  bVar15 = bVar7 + extraout_CH;
-  bVar16 = CARRY1(bVar7,extraout_CH) || CARRY1(bVar15,bVar13);
-  bVar17 = bVar15 + bVar13;
-  out((short)CONCAT31(uVar9,bVar17),uVar5);
-  bVar18 = bVar17 + extraout_CH;
-  bVar19 = CARRY1(bVar17,extraout_CH) || CARRY1(bVar18,bVar16);
-  bVar20 = bVar18 + bVar16;
-  uVar21 = (undefined2)CONCAT31(uVar9,bVar20);
-  out(uVar21,uVar5);
-  pbVar10 = (byte *)(CONCAT31(uVar9,bVar20) + -100);
-  bVar22 = CARRY1(*pbVar10,extraout_CH) || CARRY1(*pbVar10 + extraout_CH,bVar19);
-  *pbVar10 = *pbVar10 + extraout_CH + bVar19;
-  out(uVar21,uVar5);
-  iVar23 = CONCAT31(uVar9,bVar20 + extraout_CH + bVar22);
-  out((short)iVar23,uVar5);
-  pcVar24 = (char *)(iVar23 + -0x33ef1064);
-  *pcVar24 = *pcVar24 + extraout_CH +
-            (CARRY1(bVar20,extraout_CH) || CARRY1(bVar20 + extraout_CH,bVar22));
-  pcVar25 = (code *)swi(3);
-  pHVar2 = (HighScores *)
-           (*pcVar25)((uint)(in_NT & 1) * 0x4000 |
-                     (uint)(SCARRY1(bVar17,extraout_CH) != SCARRY1(bVar18,bVar16)) * 0x800 |
-                     (uint)(in_IF & 1) * 0x200 | (uint)(in_TF & 1) * 0x100 |
-                     (uint)((char)bVar20 < '\0') * 0x80 | (uint)(bVar20 == 0) * 0x40 |
-                     (uint)(in_AF & 1) * 0x10 | (uint)((POPCOUNT(bVar20) & 1U) == 0) * 4 |
-                     (uint)bVar19 | (uint)(in_ID & 1) * 0x200000 | (uint)(in_VIP & 1) * 0x100000 |
-                     (uint)(in_VIF & 1) * 0x80000 | (uint)(in_AC & 1) * 0x40000,
-                     (uint)(in_NT & 1) * 0x4000 |
-                     (uint)(SCARRY1(bVar7,extraout_CH) != SCARRY1(bVar15,bVar13)) * 0x800 |
-                     (uint)(in_IF & 1) * 0x200 | (uint)(in_TF & 1) * 0x100 |
-                     (uint)((char)bVar17 < '\0') * 0x80 | (uint)(bVar17 == 0) * 0x40 |
-                     (uint)(in_AF & 1) * 0x10 | (uint)((POPCOUNT(bVar17) & 1U) == 0) * 4 |
-                     (uint)bVar16 | (uint)(in_ID & 1) * 0x200000 | (uint)(in_VIP & 1) * 0x100000 |
-                     (uint)(in_VIF & 1) * 0x80000 | (uint)(in_AC & 1) * 0x40000,
-                     (uint)(in_NT & 1) * 0x4000 |
-                     (uint)(SCARRY1(bVar11,extraout_CH) != SCARRY1(bVar12,bVar8)) * 0x800 |
-                     (uint)(in_IF & 1) * 0x200 | (uint)(in_TF & 1) * 0x100 |
-                     (uint)((char)bVar6 < '\0') * 0x80 | (uint)(bVar14 == 0) * 0x40 |
-                     (uint)(in_AF & 1) * 0x10 | (uint)((POPCOUNT(bVar3) & 1U) == 0) * 4 |
-                     (uint)bVar13 | (uint)(in_ID & 1) * 0x200000 | (uint)(in_VIP & 1) * 0x100000 |
-                     (uint)(in_VIF & 1) * 0x80000 | (uint)(in_AC & 1) * 0x40000);
-  return pHVar2;
+  func_?();
+  bVar3 = extraout_CL | *(byte *)&unaff_EDI[-0x3217f88].fields.statsToRemoveOnActorLeave;
+  LOCK();
+  pbVar4 = (byte *)(extraout_EDX + 0x4a10f08f);
+  bVar5 = *pbVar4;
+  *pbVar4 = *pbVar4 + bVar3;
+  UNLOCK();
+  LOCK();
+  *(char *)(extraout_EDX + -0x70) = *(char *)(extraout_EDX + -0x70) + bVar3 + CARRY1(bVar5,bVar3);
+  UNLOCK();
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 
@@ -336,67 +286,17 @@ MVWorldObject.dll::TimeLimit::TimeLimit_get_HighScores(TimeLimit *this,MethodInf
       return pHVar2;
     }
   }
-  bVar3 = 0;
-  uVar4 = func_?();
-  uVar5 = (undefined4)uVar4;
-  *(char *)&unaff_EDI->klass = (char)uVar4;
-  out((short)((ulonglong)uVar4 >> 0x20),uVar5);
-  bVar6 = (byte)((ulonglong)uVar4 >> 0x20);
-  bVar7 = bVar6 + extraout_CH;
-  bVar8 = CARRY1(bVar6,extraout_CH) || CARRY1(bVar7,bVar3);
-  uVar9 = (undefined3)((ulonglong)uVar4 >> 0x28);
-  bVar7 = bVar7 + bVar3;
-  pbVar10 = (byte *)CONCAT31(uVar9,bVar7);
-  out((short)pbVar10,uVar5);
-  bVar11 = *pbVar10;
-  bVar12 = *pbVar10 + extraout_CH;
-  bVar13 = CARRY1(*pbVar10,extraout_CH) || CARRY1(bVar12,bVar8);
-  *pbVar10 = bVar12 + bVar8;
-  bVar6 = *pbVar10;
-  bVar14 = *pbVar10;
-  bVar3 = *pbVar10;
-  out((short)pbVar10,uVar5);
-  bVar15 = bVar7 + extraout_CH;
-  bVar16 = CARRY1(bVar7,extraout_CH) || CARRY1(bVar15,bVar13);
-  bVar17 = bVar15 + bVar13;
-  out((short)CONCAT31(uVar9,bVar17),uVar5);
-  bVar18 = bVar17 + extraout_CH;
-  bVar19 = CARRY1(bVar17,extraout_CH) || CARRY1(bVar18,bVar16);
-  bVar20 = bVar18 + bVar16;
-  uVar21 = (undefined2)CONCAT31(uVar9,bVar20);
-  out(uVar21,uVar5);
-  pbVar10 = (byte *)(CONCAT31(uVar9,bVar20) + -100);
-  bVar22 = CARRY1(*pbVar10,extraout_CH) || CARRY1(*pbVar10 + extraout_CH,bVar19);
-  *pbVar10 = *pbVar10 + extraout_CH + bVar19;
-  out(uVar21,uVar5);
-  iVar23 = CONCAT31(uVar9,bVar20 + extraout_CH + bVar22);
-  out((short)iVar23,uVar5);
-  pcVar24 = (char *)(iVar23 + -0x33ef1064);
-  *pcVar24 = *pcVar24 + extraout_CH +
-            (CARRY1(bVar20,extraout_CH) || CARRY1(bVar20 + extraout_CH,bVar22));
-  pcVar25 = (code *)swi(3);
-  pHVar2 = (HighScores *)
-           (*pcVar25)((uint)(in_NT & 1) * 0x4000 |
-                     (uint)(SCARRY1(bVar17,extraout_CH) != SCARRY1(bVar18,bVar16)) * 0x800 |
-                     (uint)(in_IF & 1) * 0x200 | (uint)(in_TF & 1) * 0x100 |
-                     (uint)((char)bVar20 < '\0') * 0x80 | (uint)(bVar20 == 0) * 0x40 |
-                     (uint)(in_AF & 1) * 0x10 | (uint)((POPCOUNT(bVar20) & 1U) == 0) * 4 |
-                     (uint)bVar19 | (uint)(in_ID & 1) * 0x200000 | (uint)(in_VIP & 1) * 0x100000 |
-                     (uint)(in_VIF & 1) * 0x80000 | (uint)(in_AC & 1) * 0x40000,
-                     (uint)(in_NT & 1) * 0x4000 |
-                     (uint)(SCARRY1(bVar7,extraout_CH) != SCARRY1(bVar15,bVar13)) * 0x800 |
-                     (uint)(in_IF & 1) * 0x200 | (uint)(in_TF & 1) * 0x100 |
-                     (uint)((char)bVar17 < '\0') * 0x80 | (uint)(bVar17 == 0) * 0x40 |
-                     (uint)(in_AF & 1) * 0x10 | (uint)((POPCOUNT(bVar17) & 1U) == 0) * 4 |
-                     (uint)bVar16 | (uint)(in_ID & 1) * 0x200000 | (uint)(in_VIP & 1) * 0x100000 |
-                     (uint)(in_VIF & 1) * 0x80000 | (uint)(in_AC & 1) * 0x40000,
-                     (uint)(in_NT & 1) * 0x4000 |
-                     (uint)(SCARRY1(bVar11,extraout_CH) != SCARRY1(bVar12,bVar8)) * 0x800 |
-                     (uint)(in_IF & 1) * 0x200 | (uint)(in_TF & 1) * 0x100 |
-                     (uint)((char)bVar6 < '\0') * 0x80 | (uint)(bVar14 == 0) * 0x40 |
-                     (uint)(in_AF & 1) * 0x10 | (uint)((POPCOUNT(bVar3) & 1U) == 0) * 4 |
-                     (uint)bVar13 | (uint)(in_ID & 1) * 0x200000 | (uint)(in_VIP & 1) * 0x100000 |
-                     (uint)(in_VIF & 1) * 0x80000 | (uint)(in_AC & 1) * 0x40000);
-  return pHVar2;
+  func_?();
+  bVar3 = extraout_CL | *(byte *)&unaff_EDI[-0x3217f88].fields.statsToRemoveOnActorLeave;
+  LOCK();
+  pbVar4 = (byte *)(extraout_EDX + 0x4a10f08f);
+  bVar5 = *pbVar4;
+  *pbVar4 = *pbVar4 + bVar3;
+  UNLOCK();
+  LOCK();
+  *(char *)(extraout_EDX + -0x70) = *(char *)(extraout_EDX + -0x70) + bVar3 + CARRY1(bVar5,bVar3);
+  UNLOCK();
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 

@@ -111,8 +111,7 @@ String * Assembly-CSharp.dll::WinningConditionControl::WinningConditionControl_M
     pSVar5 = mscorlib.dll::System::String::String_Concat_3
                        (::StringLiteral__,StringLiteral__0,(MethodInfo *)0x0);
   }
-  pSVar6 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff4,(MethodInfo *)0x0)
-  ;
+  pSVar6 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff4,(MethodInfo *)0x0);
   pSVar6 = mscorlib.dll::System::String::String_Concat_3(pSVar5,pSVar6,(MethodInfo *)0x0);
   pSVar5 = ::StringLiteral__;
   if (IVar3.m_value < 10) {
@@ -120,8 +119,7 @@ String * Assembly-CSharp.dll::WinningConditionControl::WinningConditionControl_M
     pSVar5 = mscorlib.dll::System::String::String_Concat_3
                        (::StringLiteral__,StringLiteral__0,(MethodInfo *)0x0);
   }
-  pSVar7 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff0,(MethodInfo *)0x0)
-  ;
+  pSVar7 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff0,(MethodInfo *)0x0);
   IVar2.m_value = 0;
   pSVar7 = mscorlib.dll::System::String::String_Concat_3(pSVar5,pSVar7,(MethodInfo *)0x0);
   pSVar5 = ::StringLiteral__;
@@ -158,26 +156,13 @@ String * Assembly-CSharp.dll::WinningConditionControl::WinningConditionControl_M
     return pSVar1;
   }
   uVar13 = func_?();
-  uVar14 = (uint)((ulonglong)uVar13 >> 0x20);
-  puVar15 = (uint *)uVar13;
-  uVar16 = *puVar15;
-  *puVar15 = *puVar15 - uVar14;
-  bVar17 = (byte)((uint)extraout_ECX >> 8);
-  *extraout_ECX = bVar17;
-  puVar18 = puVar15 + -0x15fbf59e;
-  bVar19 = (byte)*puVar18 + bVar17;
-  bVar20 = CARRY1((byte)*puVar18,bVar17) || CARRY1(bVar19,uVar16 < uVar14);
-  *(byte *)puVar18 = bVar19 + (uVar16 < uVar14);
-  *extraout_ECX = bVar17;
-  puVar15 = puVar15 + -0x15fbf59e;
-  uVar16 = *puVar15;
-  bVar19 = (byte)*puVar15 + bVar17;
-  *(byte *)puVar15 = bVar19 + bVar20;
-  *extraout_ECX = bVar17;
-  cRam_? = cRam_? + (char)((uint)pSVar7 >> 8) +
-                 (CARRY1((byte)uVar16,bVar17) || CARRY1(bVar19,bVar20));
-  pcVar21 = (code *)swi(3);
-  pSVar1 = (String *)(*pcVar21)();
+  piVar14 = (int *)uVar13;
+  *piVar14 = *piVar14 - (int)((ulonglong)uVar13 >> 0x20);
+  *(char *)(piVar14 + -0x15fbf596) = (char)piVar14[-0x15fbf596] + extraout_CH;
+  *(char *)(piVar14 + -0x15fbf596) = (char)piVar14[-0x15fbf596] + extraout_CH;
+  cRam_? = cRam_? + (char)((uint)pSVar7 >> 8);
+  pcVar15 = (code *)swi(3);
+  pSVar1 = (String *)(*pcVar15)();
   return pSVar1;
 }
 

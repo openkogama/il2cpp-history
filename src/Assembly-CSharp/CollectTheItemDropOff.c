@@ -334,15 +334,14 @@ code_?:
     pCVar4 = (this->fields).triggerObject;
     if (pCVar4 == (CollectTheItemDropOffObject *)0x0) goto code_?;
     this_00 = (pCVar4->fields).triggerBoxEvents;
-    pUVar5 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              (pUVar5,(Object *)this,
+    pEVar5 = (EventHandler_1_Object_ *)func_?();
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+              (pEVar5,(Object *)this,
                MethodInfo__CollectTheItemDropOff__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                ,(MethodInfo *)0x0);
     if (this_00 == (TriggerBoxEvents *)0x0) goto code_?;
     TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
-              (this_00,(EventHandler_1_TriggerEventArgs_ *)pUVar5,(MethodInfo *)0x0);
+              (this_00,(EventHandler_1_TriggerEventArgs_ *)pEVar5,(MethodInfo *)0x0);
     pGVar6 = (this->fields)._._._.outputConnectorObject;
     if (pGVar6 == (GameObject *)0x0) goto code_?;
     pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
@@ -416,9 +415,9 @@ code_?:
     value_03.currentCryptoKey = uVar23;
     uVar26 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
              ObscuredShort_op_Implicit_1(value_03,(MethodInfo *)0x0);
-    this_08 = (IntVector *)&stack0xffffffd4;
+    this_09 = (IntVector *)&stack0xffffffd4;
     MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-              (this_08,0,(uint)uVar20,(uint)uVar26,(MethodInfo *)0x0);
+              (this_09,0,(uint)uVar20,(uint)uVar26,(MethodInfo *)0x0);
     uVar27 = (this->fields).maxBounds.x.inited;
     uVar28 = (this->fields).maxBounds.x.field_0x7;
     value_04._7_1_ = uVar28;
@@ -429,7 +428,7 @@ code_?:
     value_04.fakeValue = uVar31;
     value_04.hiddenValue = uVar30;
     value_04.currentCryptoKey = uVar29;
-    uVar32 = CONCAT44(&UNK_?,this_08);
+    uVar32 = CONCAT44(&UNK_?,this_09);
     uVar20 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
              ObscuredShort_op_Implicit_1(value_04,(MethodInfo *)0x0);
     uVar26 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
@@ -548,15 +547,14 @@ code_?:
       pEVar50 = (this->fields).editableCubeModelWrapper;
       if (pEVar50 == (EditableCubeModelWrapper *)0x0) goto code_?;
       this_02 = (pEVar50->fields).cubeModelBase;
-      pUVar5 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                (pUVar5,(Object *)this,
+      pEVar5 = (EventHandler_1_Object_ *)func_?();
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                (pEVar5,(Object *)this,
                  MethodInfo__CollectTheItemDropOff__OnChunkEditReset_System__Object__EditStateEventArgs_
                  ,(MethodInfo *)0x0);
       if (this_02 == (MVCubeModelInstance *)0x0) goto code_?;
       MVCubeModelBase::MVCubeModelBase_add_BeingEditedChanged
-                ((MVCubeModelBase *)this_02,(EventHandler_1_EditStateEventArgs_ *)pUVar5,
+                ((MVCubeModelBase *)this_02,(EventHandler_1_EditStateEventArgs_ *)pEVar5,
                  (MethodInfo *)0x0);
     }
     bVar51 = CollectTheItemDropOff_get_DoOnce(this,(MethodInfo *)0x0);
@@ -593,36 +591,36 @@ code_?:
       (this->fields).cullingSubscriberBase = this_05;
       func_?();
       pUVar54 = (this->fields)._._._.PositionChanged;
-      pUVar5 = (UnityAction_2_System_Object_System_Object_ *)func_?();
+      this_06 = (UnityAction_2_System_Object_System_Object_ *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
-                (pUVar5,(Object *)this,
+                (this_06,(Object *)this,
                  MethodInfo__CollectTheItemDropOff__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_
                  ,(MethodInfo *)0x0);
       pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine
-                          ((Delegate *)pUVar54,(Delegate *)pUVar5,(MethodInfo *)0x0);
+                          ((Delegate *)pUVar54,(Delegate *)this_06,(MethodInfo *)0x0);
       if (pDVar3 == (Delegate *)0x0) {
         (this->fields)._._._.PositionChanged =
              (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
 code_?:
         func_?();
-        this_06 = (Action_3_Int32_Int32_ByteEnum_ *)func_?();
+        this_07 = (Action_3_Int32_Int32_ByteEnum_ *)func_?();
         mscorlib.dll::System::Action`3[Int32,Int32,ByteEnum]::Action_3_Int32_Int32_ByteEnum___ctor
-                  (this_06,(Object *)this,
+                  (this_07,(Object *)this,
                    MethodInfo__CollectTheItemDropOff__SignalCallback_bool__bool__LogicObjectManager_
                    ,(MethodInfo *)0x0);
         pIVar55 = LogicClientsideFactory::LogicClientsideFactory_CreateInputSignalReceiver
                             ((MVWorldObject *)this,0,
-                             (Action_3_Boolean_Boolean_LogicObjectManager_ *)this_06,
+                             (Action_3_Boolean_Boolean_LogicObjectManager_ *)this_07,
                              (MethodInfo *)0x0);
         (this->fields)._InputSignalReceiver_k__BackingField = pIVar55;
         func_?();
         iVar36 = (this->fields)._._._._.id;
-        this_07 = (WorldObjectClientRef_1_System_Object_ *)
+        this_08 = (WorldObjectClientRef_1_System_Object_ *)
                   func_?(TypeInfo__OutputSignalTransmitter);
         WorldObjectClientRef`1[System::Object]::WorldObjectClientRef_1_System_Object___ctor
-                  (this_07,iVar36,(MethodInfo *)0x0);
-        (this->fields).outputSignalTransmitter = (OutputSignalTransmitter *)this_07;
+                  (this_08,iVar36,(MethodInfo *)0x0);
+        (this->fields).outputSignalTransmitter = (OutputSignalTransmitter *)this_08;
         func_?();
         return;
       }

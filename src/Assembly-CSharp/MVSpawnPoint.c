@@ -178,21 +178,22 @@ void Assembly-CSharp.dll::MVSpawnPoint::MVSpawnPoint_Initialize
           TVar5 = TVar4;
         }
         if (TVar5.m_Index != 0) {
-          if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) !=
-              (TypeInfo__System__Boolean->_0).element_class) goto code_?;
+          pIVar6 = (TypeInfo__System__Boolean->_0).element_class;
+          bVar7 = *(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) < pIVar6;
+          if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) != pIVar6) goto code_?;
           method = (MethodInfo *)&UNK_?;
-          piVar6 = (int8_t *)func_?();
+          piVar8 = (int8_t *)func_?();
           this = (MVSpawnPoint *)((uint)this & 0xffff0000);
           mscorlib.dll::System::Nullable`1[SByte]::Nullable_1_SByte___ctor
-                    ((Nullable_1_SByte_ *)&this,*piVar6,
+                    ((Nullable_1_SByte_ *)&this,*piVar8,
                      MethodInfo__System__Nullable<bool>__Nullable_bool_);
           (pMVar1->fields).spawnPointOnlyFirstDeath = this._0_2_;
         }
       }
     }
-    pMVar7 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar7 != (MVNetworkGame *)0x0) {
-      this_00 = (MethodInfo *)(pMVar7->fields).teamManager;
+    pMVar9 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (pMVar9 != (MVNetworkGame *)0x0) {
+      this_00 = (MethodInfo *)(pMVar9->fields).teamManager;
       switch((pMVar1->fields)._._._.type) {
       case 0x27:
         team = MVTeam__Enum_Red;
@@ -219,21 +220,32 @@ void Assembly-CSharp.dll::MVSpawnPoint::MVSpawnPoint_Initialize
     }
   }
 code_?:
+  bVar7 = 0;
   func_?();
   TVar4.m_Index = (int32_t)extraout_EDX;
 code_?:
   this = (MVSpawnPoint *)&UNK_?;
   method = (MethodInfo *)TVar4.m_Index;
   func_?();
-  in(extraout_DX);
-  switch(this) {
-  case (MVSpawnPoint *)0x27:
+  bVar10 = (byte)((uint)in_stack_11 >> 8);
+  bVar12 = (byte)((uint)in_stack_13 >> 8);
+  bVar14 = (byte)((uint)in_stack_15 >> 8);
+  *(char *)(in_stack_16 + -0x75) =
+       *(char *)(in_stack_16 + -0x75) + (char)in_stack_17 +
+       (CARRY1(in_stack_18,bVar14) ||
+       CARRY1(in_stack_18 + bVar14,
+              CARRY1(bVar10,bVar12) ||
+              CARRY1(bVar10 + bVar12,
+                     CARRY1(extraout_CH,extraout_AH) || CARRY1(extraout_CH + extraout_AH,bVar7))));
+  in(in_stack_17);
+  switch(*(undefined4 *)(in_stack_16 + 8)) {
+  case 0x27:
     return;
-  case (MVSpawnPoint *)0x28:
+  case 0x28:
     return;
-  case (MVSpawnPoint *)0x29:
+  case 0x29:
     return;
-  case (MVSpawnPoint *)0x2a:
+  case 0x2a:
     return;
   default:
     return;

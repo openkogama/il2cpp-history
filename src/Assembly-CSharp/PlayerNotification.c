@@ -186,13 +186,14 @@ void Assembly-CSharp.dll::PlayerNotification::PlayerNotification_Initialize
                 pMVar4 = (object->fields).player;
                 if (pMVar4 == (MVPlayer *)0x0) goto code_?;
                 iVar7 = (pMVar4->fields).level;
-                this_03 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-                          func_?(
-                                         TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>
-                                         );
-                Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes
-                ::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-                SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+                this_03 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                           *)func_?(
+                                            TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>
+                                            );
+                DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::
+                Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
+                __Il2CppFullySharedGenericType]::
+                DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
                           (this_03,(Object *)object,
                            MethodInfo__PlayerNotification__BadgeCallback_UnityEngine__Networking__UnityWebRequest_
                            ,(MethodInfo *)0x0);
@@ -235,11 +236,11 @@ void Assembly-CSharp.dll::PlayerNotification::PlayerNotification_OnDestroy
                    );
     cRam_? = '\x01';
   }
-  this_00 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-            func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-  Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-  SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-  SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+             *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             (this_00,(Object *)this,
              MethodInfo__PlayerNotification__BadgeCallback_UnityEngine__Networking__UnityWebRequest_
              ,(MethodInfo *)0x0);

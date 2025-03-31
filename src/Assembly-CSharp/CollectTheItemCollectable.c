@@ -470,28 +470,28 @@ code_?:
     pCVar3 = (this->fields).collectableInstance;
     if (pCVar3 == (CollectTheItemCollectableInstance *)0x0) goto code_?;
     a = (pCVar3->fields)._._._.PositionChanged;
-    pUVar6 = (UnityAction_2_System_Object_System_Object_ *)
-             func_?(
-                            TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
-                            );
+    this_01 = (UnityAction_2_System_Object_System_Object_ *)
+              func_?(
+                             TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
+                             );
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
-              (pUVar6,(Object *)this,
+              (this_01,(Object *)this,
                MethodInfo__CollectTheItemCollectable__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_
                ,(MethodInfo *)0x0);
-    pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine
-                        ((Delegate *)a,(Delegate *)pUVar6,(MethodInfo *)0x0);
-    if (pDVar7 == (Delegate *)0x0) {
+    pDVar6 = mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)a,(Delegate *)this_01,(MethodInfo *)0x0);
+    if (pDVar6 == (Delegate *)0x0) {
       (pCVar3->fields)._._._.PositionChanged =
            (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
     }
     else {
-      puVar8 = &UNK_?;
-      iVar9 = func_?();
-      if (iVar9 == 0) goto code_?;
-      *(int *)(puVar8 + 0x6c) = iVar9;
-      iVar9 = func_?();
-      if (iVar9 == 0) goto code_?;
+      puVar7 = &UNK_?;
+      iVar8 = func_?();
+      if (iVar8 == 0) goto code_?;
+      *(int *)(puVar7 + 0x6c) = iVar8;
+      iVar8 = func_?();
+      if (iVar8 == 0) goto code_?;
     }
     func_?();
     value_00 = (this->fields).minBounds.x;
@@ -499,69 +499,68 @@ code_?:
         cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    uVar10 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
+    uVar9 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
             ObscuredShort_op_Implicit_1(value_00,(MethodInfo *)0x0);
-    uVar11 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
-            ObscuredShort_op_Implicit_1((this->fields).minBounds.y,(MethodInfo *)0x0);
-    uVar12 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
-            ObscuredShort_op_Implicit_1((this->fields).minBounds.z,(MethodInfo *)0x0);
-    uStack_13._0_2_ = 0;
-    uStack_13._2_2_ = 0;
-    uStack_13._4_4_ = &UNK_?;
-    MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-              ((IntVector *)&uStack_13,(uint)uVar10,(uint)uVar11,(uint)uVar12,(MethodInfo *)0x0);
-    pOVar14 = &(this->fields).maxBounds;
-    pMVar1 = *(MVCubeModelInstance **)&pOVar14->x;
     uVar10 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
-            ObscuredShort_op_Implicit_1(pOVar14->x,(MethodInfo *)0x0);
+            ObscuredShort_op_Implicit_1((this->fields).minBounds.y,(MethodInfo *)0x0);
     uVar11 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
-            ObscuredShort_op_Implicit_1((this->fields).maxBounds.y,(MethodInfo *)0x0);
-    uVar12 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
-            ObscuredShort_op_Implicit_1((this->fields).maxBounds.z,(MethodInfo *)0x0);
-    uVar15._0_2_ = 0;
-    uVar15._2_2_ = 0;
-    iVar16 = 0;
+            ObscuredShort_op_Implicit_1((this->fields).minBounds.z,(MethodInfo *)0x0);
+    uStack_12._0_2_ = 0;
+    uStack_12._2_2_ = 0;
+    uStack_12._4_4_ = &UNK_?;
     MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-              ((IntVector *)&stack0xfffffff0,(uint)uVar10,(uint)uVar11,(uint)uVar12,(MethodInfo *)0x0);
+              ((IntVector *)&uStack_12,(uint)uVar9,(uint)uVar10,(uint)uVar11,(MethodInfo *)0x0);
+    pOVar13 = &(this->fields).maxBounds;
+    pMVar1 = *(MVCubeModelInstance **)&pOVar13->x;
+    uVar9 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
+            ObscuredShort_op_Implicit_1(pOVar13->x,(MethodInfo *)0x0);
+    uVar10 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
+            ObscuredShort_op_Implicit_1((this->fields).maxBounds.y,(MethodInfo *)0x0);
+    uVar11 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
+            ObscuredShort_op_Implicit_1((this->fields).maxBounds.z,(MethodInfo *)0x0);
+    uVar14._0_2_ = 0;
+    uVar14._2_2_ = 0;
+    iVar15 = 0;
+    MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
+              ((IntVector *)&stack0xfffffff0,(uint)uVar9,(uint)uVar10,(uint)uVar11,(MethodInfo *)0x0);
     iVar4 = (this->fields).minCubes.currentCryptoKey;
-    iVar17 = (this->fields).minCubes.hiddenValue;
-    iVar18 = (this->fields).minCubes.fakeValue;
-    uVar19 = *(undefined4 *)&(this->fields).minCubes.inited;
+    iVar16 = (this->fields).minCubes.hiddenValue;
+    iVar17 = (this->fields).minCubes.fakeValue;
+    uVar18 = *(undefined4 *)&(this->fields).minCubes.inited;
     if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor
         == 0) {
       func_?();
     }
-    value.hiddenValue = iVar17;
+    value.hiddenValue = iVar16;
     value.currentCryptoKey = iVar4;
-    value.fakeValue = iVar18;
-    value._12_4_ = uVar19;
+    value.fakeValue = iVar17;
+    value._12_4_ = uVar18;
     iVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
             ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
-    pEVar20 = (EditableCubeModelWrapper *)func_?();
-    min.z = uStack_13._4_2_;
-    min.x = (int16_t)uStack_13;
-    min.y = uStack_13._2_2_;
-    max.z = iVar16;
-    max.x = (int16_t)uVar15;
-    max.y = SUB42(uVar15,2);
+    pEVar19 = (EditableCubeModelWrapper *)func_?();
+    min.z = uStack_12._4_2_;
+    min.x = (int16_t)uStack_12;
+    min.y = uStack_12._2_2_;
+    max.z = iVar15;
+    max.x = (int16_t)uVar14;
+    max.y = SUB42(uVar14,2);
     EditableCubeModelWrapper::EditableCubeModelWrapper__ctor_1
-              (pEVar20,pMVar1,min,max,iVar4,(MethodInfo *)0x0);
-    (this->fields).editableCubeModelWrapper = pEVar20;
+              (pEVar19,pMVar1,min,max,iVar4,(MethodInfo *)0x0);
+    (this->fields).editableCubeModelWrapper = pEVar19;
     func_?();
-    pEVar20 = (this->fields).editableCubeModelWrapper;
-    if (pEVar20 != (EditableCubeModelWrapper *)0x0) {
-      pMVar1 = (pEVar20->fields).cubeModelBase;
+    pEVar19 = (this->fields).editableCubeModelWrapper;
+    if (pEVar19 != (EditableCubeModelWrapper *)0x0) {
+      pMVar1 = (pEVar19->fields).cubeModelBase;
       pCVar3 = (this->fields).collectableInstance;
-      pUVar6 = (UnityAction_2_System_Object_System_Object_ *)
-               func_?(TypeInfo__System__EventHandler<EditStateEventArgs>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                (pUVar6,(Object *)pCVar3,
+      this_02 = (EventHandler_1_Object_ *)
+                func_?(TypeInfo__System__EventHandler<EditStateEventArgs>);
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                (this_02,(Object *)pCVar3,
                  MethodInfo__CollectTheItemCollectableInstance__SetupGreyoutScript_System__Object__EditStateEventArgs_
                  ,(MethodInfo *)0x0);
       if (pMVar1 != (MVCubeModelInstance *)0x0) {
         MVCubeModelBase::MVCubeModelBase_add_BeingEditedChanged
-                  ((MVCubeModelBase *)pMVar1,(EventHandler_1_EditStateEventArgs_ *)pUVar6,
+                  ((MVCubeModelBase *)pMVar1,(EventHandler_1_EditStateEventArgs_ *)this_02,
                    (MethodInfo *)0x0);
         return;
       }
@@ -591,8 +590,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar21 = (code *)swi(3);
-  (*pcVar21)();
+  pcVar20 = (code *)swi(3);
+  (*pcVar20)();
   return;
 }
 

@@ -1955,27 +1955,24 @@ void Assembly-CSharp.dll::SendMessageControl::SendMessageControl_SanitizeMessage
           pSVar1 = mscorlib.dll::System::String::String_CreateString_3
                              ((String *)0x0,val,startIndex,(uVar2 + 1) - startIndex,
                               (MethodInfo *)0x0);
-          if (val->max_length <= startIndex + 1) goto code_?;
-          if (val->vector[startIndex + 1] != 0x20) {
-            if (pSVar1 == (String *)0x0) break;
-            bVar4 = mscorlib.dll::System::String::String_Contains
-                              (pSVar1,tagToSanitize,(MethodInfo *)0x0);
-            if (bVar4 != 0) {
-              if (pSVar1->klass == (String__Class *)0x0) break;
-              tagToSanitize = (String *)&UNK_?;
-              pSVar5 = (String__Class *)
-                       mscorlib.dll::System::String::String_Remove
-                                 ((String *)pSVar1->klass,startIndex,(uVar2 + 1) - startIndex,
-                                  (MethodInfo *)0x0);
-              pSVar1->klass = pSVar5;
-              func_?();
-              if ((pSVar1->klass == (String__Class *)0x0) ||
-                 (pSVar1 = mscorlib.dll::System::String::String_ToLower
-                                     ((String *)pSVar1->klass,(MethodInfo *)0x0),
-                 pSVar1 == (String *)0x0)) break;
-              val = mscorlib.dll::System::String::String_ToCharArray(pSVar1,(MethodInfo *)0x0);
-              uVar2 = startIndex - 1;
-            }
+          if (pSVar1 == (String *)0x0) break;
+          bVar4 = mscorlib.dll::System::String::String_Contains
+                            (pSVar1,tagToSanitize,(MethodInfo *)0x0);
+          if (bVar4 != 0) {
+            if (pSVar1->klass == (String__Class *)0x0) break;
+            tagToSanitize = (String *)&UNK_?;
+            pSVar5 = (String__Class *)
+                     mscorlib.dll::System::String::String_Remove
+                               ((String *)pSVar1->klass,startIndex,(uVar2 + 1) - startIndex,
+                                (MethodInfo *)0x0);
+            pSVar1->klass = pSVar5;
+            func_?();
+            if ((pSVar1->klass == (String__Class *)0x0) ||
+               (pSVar1 = mscorlib.dll::System::String::String_ToLower
+                                   ((String *)pSVar1->klass,(MethodInfo *)0x0),
+               pSVar1 == (String *)0x0)) break;
+            val = mscorlib.dll::System::String::String_ToCharArray(pSVar1,(MethodInfo *)0x0);
+            uVar2 = startIndex - 1;
           }
         }
         uVar2 = uVar2 + 1;
@@ -1997,16 +1994,17 @@ void Assembly-CSharp.dll::SendMessageControl::SendMessageControl_Send
                (SendMessageControl *this,MethodInfo *method)
 
 {
-  this_01 = this;
   if (cRam_? == '\0') {
     func_?(&MethodInfo__System__Collections__Generic__List<float>__Add_float_);
     func_?(&MethodInfo__System__Collections__Generic__List<float>__Remove_float_);
     func_?(&MethodInfo__System__Collections__Generic__List<float>__get_Count__);
     func_?(&MethodInfo__System__Collections__Generic__List<float>__get_Item_int_);
     func_?(&TypeInfo__System__Text__RegularExpressions__Regex);
+    func_?(&StringLiteral_quad);
     func_?(&StringLiteral_size);
     func_?(&StringLiteral__r_n___n);
     func_?(&::StringLiteral__);
+    func_?(&StringLiteral_width);
     cRam_? = '\x01';
   }
   fVar1 = (this->fields).sendMessageCooldownTime;
@@ -2025,164 +2023,105 @@ void Assembly-CSharp.dll::SendMessageControl::SendMessageControl_Send
     }
     pSVar4 = System.dll::System::Text::RegularExpressions::Regex::Regex_Replace
                         (pSVar4,StringLiteral__r_n___n,::StringLiteral__,(MethodInfo *)0x0);
-    if (pSVar4 != (String *)0x0) {
-      pSVar5 = (String *)&UNK_?;
-      pSVar4 = mscorlib.dll::System::String::String_ToLower(pSVar4,(MethodInfo *)0x0);
-      if (pSVar4 != (String *)0x0) {
-        input = (String *)&UNK_?;
-        val = mscorlib.dll::System::String::String_ToCharArray(pSVar4,(MethodInfo *)0x0);
-        pSVar4 = (String *)0x0;
-        pSVar6 = (String *)0x0;
-        pSVar7 = (String *)0x0;
-        if (val != (Char__Array *)0x0) {
-          this._3_1_ = 0;
-          do {
-            if ((int)val->max_length <= (int)pSVar7) {
-              pIVar3 = (this_01->fields).inputField;
-              if (pIVar3 != (InputField *)0x0) {
-                UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_set_text
-                          (pIVar3,::StringLiteral__,(MethodInfo *)0x0);
-                this_00 = (this_01->fields).whiteSpaceCheck;
-                if ((this_00 != (Regex *)0x0) &&
-                   (pMVar8 = System.dll::System::Text::RegularExpressions::Regex::Regex_Match
-                                        (this_00,input,(MethodInfo *)0x0), pMVar8 != (Match *)0x0))
-                {
-                  if ((pMVar8->fields)._._._Length_k__BackingField < 1) {
-                    pUVar9 = (this_01->fields).DoSend;
-                    if (pUVar9 == (UnityAction_1_System_Boolean_ *)0x0) {
-                      return;
-                    }
-                    (*(pUVar9->fields)._._.invoke_impl)();
-                    return;
-                  }
-                  pLVar10 = (this_01->fields).spamList;
-                  index = 0;
-                  if (pLVar10 != (List_1_System_Single_ *)0x0) goto code_?;
-                }
-              }
-              break;
-            }
-            if ((String *)val->max_length <= pSVar7) goto code_?;
-            if ((val->vector[(int)pSVar7] == 0x3c) && (this._3_1_ == 0)) {
-              this._3_1_ = 1;
-              pSVar4 = pSVar7;
-              pSVar6 = pSVar7;
-            }
-            pSVar11 = pSVar5;
-            if ((this._3_1_ & val->vector[(int)pSVar7] == 0x3e) != 0) {
-              this._3_1_ = 0;
-              this_02 = mscorlib.dll::System::String::String_CreateString_3
-                                  ((String *)0x0,val,(int32_t)pSVar4,
-                                   (int)pSVar7 + (1 - (int)pSVar4),(MethodInfo *)0x0);
-              pSVar4 = pSVar6;
-              if ((undefined1 *)val->max_length <= (undefined1 *)((int)&pSVar4->klass + 1U))
-              goto code_?;
-              pSVar11 = pSVar5;
-              pSVar6 = pSVar4;
-              if (val->vector[(int)((int)&pSVar4->klass + 1)] != 0x20) {
-                if (this_02 == (String *)0x0) break;
-                pSVar11 = (String *)&UNK_?;
-                pSVar4 = this_02;
-                bVar12 = mscorlib.dll::System::String::String_Contains
-                                   (this_02,pSVar5,(MethodInfo *)0x0);
-                pSVar6 = pSVar4;
-                input = pSVar5;
-                if (bVar12 != 0) {
-                  if (pSVar5 == (String *)0x0) break;
-                  input = mscorlib.dll::System::String::String_Remove
-                                    (pSVar5,(int32_t)pSVar4,(int)pSVar7 + (1 - (int)pSVar4),
-                                     (MethodInfo *)0x0);
-                  this._3_1_ = (byte)((uint)&stack0xfffffff8 >> 0x18);
-                  func_?();
-                  if ((input == (String *)0x0) ||
-                     (pSVar5 = mscorlib.dll::System::String::String_ToLower
-                                          (input,(MethodInfo *)0x0), pSVar5 == (String *)0x0))
-                  break;
-                  val = mscorlib.dll::System::String::String_ToCharArray(pSVar5,(MethodInfo *)0x0);
-                  pSVar7 = (String *)&pSVar4[-1].fields.field_0x7;
-                  pSVar6 = pSVar4;
-                }
-              }
-            }
-            pSVar7 = (String *)((int)&pSVar7->klass + 1);
-            pSVar5 = pSVar11;
-          } while (val != (Char__Array *)0x0);
-        }
-      }
-    }
-  }
-  goto code_?;
-  while( true ) {
-    fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_timeSinceLevelLoad
-                       ((MethodInfo *)0x0);
-    pLVar10 = (this_01->fields).spamList;
-    if (pLVar10 == (List_1_System_Single_ *)0x0) break;
-    fVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Single]::
-             List_1_System_Single__get_Item
-                       (pLVar10,index,
-                        MethodInfo__System__Collections__Generic__List<float>__get_Item_int_);
-    pfVar13 = &(this_01->fields).intervalForMessages;
-    if (*pfVar13 <= fVar1 - fVar2 && fVar1 - fVar2 != *pfVar13) {
-      pLVar10 = (this_01->fields).spamList;
-      if (pLVar10 == (List_1_System_Single_ *)0x0) break;
-      fVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Single]::
-               List_1_System_Single__get_Item
-                         (pLVar10,index,
-                          MethodInfo__System__Collections__Generic__List<float>__get_Item_int_);
-      input = (String *)&UNK_?;
-      mscorlib.dll::System::Collections::Generic::List`1[System::Single]::
-      List_1_System_Single__Remove
-                (pLVar10,fVar1,MethodInfo__System__Collections__Generic__List<float>__Remove_float_
-                );
-    }
-    pLVar10 = (this_01->fields).spamList;
-    index = index + 1;
-    if (pLVar10 == (List_1_System_Single_ *)0x0) break;
-code_?:
-    if ((pLVar10->fields)._size <= index) {
-      pLVar10 = (this_01->fields).spamList;
-      if (pLVar10 != (List_1_System_Single_ *)0x0) {
-        if ((this_01->fields).maxMessagesPerInterval < (pLVar10->fields)._size) {
-          pUVar14 = (this_01->fields).SpamWarning;
-          if (pUVar14 == (UnityAction *)0x0) {
+    SendMessageControl_SanitizeMessage
+              ((String **)&stack0xfffffff8,StringLiteral_size,(MethodInfo *)0x0);
+    SendMessageControl_SanitizeMessage
+              ((String **)&stack0xfffffff8,StringLiteral_width,(MethodInfo *)0x0);
+    SendMessageControl_SanitizeMessage
+              ((String **)&stack0xfffffff8,StringLiteral_quad,(MethodInfo *)0x0);
+    pIVar3 = (this->fields).inputField;
+    if (pIVar3 != (InputField *)0x0) {
+      UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_set_text
+                (pIVar3,::StringLiteral__,(MethodInfo *)0x0);
+      this_00 = (this->fields).whiteSpaceCheck;
+      if ((this_00 != (Regex *)0x0) &&
+         (pMVar5 = System.dll::System::Text::RegularExpressions::Regex::Regex_Match
+                              (this_00,pSVar4,(MethodInfo *)0x0), pMVar5 != (Match *)0x0)) {
+        if ((pMVar5->fields)._._._Length_k__BackingField < 1) {
+          pUVar6 = (this->fields).DoSend;
+          if (pUVar6 == (UnityAction_1_System_Boolean_ *)0x0) {
             return;
           }
-          (*(pUVar14->fields)._._.invoke_impl)
-                    ((pUVar14->fields)._._.method_code,(pUVar14->fields)._._.method);
+          pvStack7 = (pUVar6->fields)._._.method;
+          uStack8 = 0;
+          pvStack9 = (pUVar6->fields)._._.method_code;
+          (*(pUVar6->fields)._._.invoke_impl)();
           return;
         }
-        pLVar10 = (this_01->fields).spamList;
-        fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_timeSinceLevelLoad
-                           ((MethodInfo *)0x0);
-        pMVar15 = MethodInfo__System__Collections__Generic__List<float>__Add_float_;
-        piVar16 = &(pLVar10->fields)._version;
-        *piVar16 = *piVar16 + 1;
-        pSVar17 = (pLVar10->fields)._items;
-        if (pSVar17 != (Single__Array *)0x0) {
-          uVar18 = (pLVar10->fields)._size;
-          if (uVar18 < pSVar17->max_length) {
-            (pLVar10->fields)._size = uVar18 + 1;
-            if (pSVar17->max_length <= uVar18) goto code_?;
-            pSVar17->vector[uVar18] = fVar1;
+        index = (String *)0x0;
+        pLVar10 = (this->fields).spamList;
+        while (pLVar10 != (List_1_System_Single_ *)0x0) {
+          if ((pLVar10->fields)._size <= (int)index) {
+            pLVar10 = (this->fields).spamList;
+            if (pLVar10 != (List_1_System_Single_ *)0x0) {
+              if ((this->fields).maxMessagesPerInterval < (pLVar10->fields)._size) {
+                pUVar11 = (this->fields).SpamWarning;
+                if (pUVar11 == (UnityAction *)0x0) {
+                  return;
+                }
+                (*(pUVar11->fields)._._.invoke_impl)
+                          ((pUVar11->fields)._._.method_code,(pUVar11->fields)._._.method);
+                return;
+              }
+              pLVar10 = (this->fields).spamList;
+              fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_timeSinceLevelLoad
+                                 ((MethodInfo *)0x0);
+              pMVar12 = MethodInfo__System__Collections__Generic__List<float>__Add_float_;
+              piVar13 = &(pLVar10->fields)._version;
+              *piVar13 = *piVar13 + 1;
+              pSVar14 = (pLVar10->fields)._items;
+              if (pSVar14 != (Single__Array *)0x0) {
+                uVar15 = (pLVar10->fields)._size;
+                if (uVar15 < pSVar14->max_length) {
+                  (pLVar10->fields)._size = uVar15 + 1;
+                  if (pSVar14->max_length <= uVar15) goto code_?;
+                  pSVar14->vector[uVar15] = fVar1;
+                }
+                else {
+                  mscorlib.dll::System::Collections::Generic::List`1[System::Single]::
+                  List_1_System_Single__AddWithResize
+                            (pLVar10,fVar1,pMVar12->klass->rgctx_data[0xe].method);
+                }
+                SendMessageControl_SendChatMessage(this,pSVar4,(MethodInfo *)0x0);
+                return;
+              }
+            }
+            break;
           }
-          else {
+          fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_timeSinceLevelLoad
+                             ((MethodInfo *)0x0);
+          pLVar10 = (this->fields).spamList;
+          if (pLVar10 == (List_1_System_Single_ *)0x0) break;
+          fVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Single]::
+                   List_1_System_Single__get_Item
+                             (pLVar10,(int32_t)index,
+                              MethodInfo__System__Collections__Generic__List<float>__get_Item_int_);
+          pfVar16 = &(this->fields).intervalForMessages;
+          if (*pfVar16 <= fVar1 - fVar2 && fVar1 - fVar2 != *pfVar16) {
+            pLVar10 = (this->fields).spamList;
+            if (pLVar10 == (List_1_System_Single_ *)0x0) break;
+            pSVar4 = index;
+            fVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Single]::
+                     List_1_System_Single__get_Item
+                               (pLVar10,(int32_t)index,
+                                MethodInfo__System__Collections__Generic__List<float>__get_Item_int_
+                               );
             mscorlib.dll::System::Collections::Generic::List`1[System::Single]::
-            List_1_System_Single__AddWithResize
-                      (pLVar10,fVar1,pMVar15->klass->rgctx_data[0xe].method);
+            List_1_System_Single__Remove
+                      (pLVar10,fVar1,
+                       MethodInfo__System__Collections__Generic__List<float>__Remove_float_);
           }
-          SendMessageControl_SendChatMessage(this_01,input,(MethodInfo *)0x0);
-          return;
+          index = (String *)((int)&index->klass + 1);
+          pLVar10 = (this->fields).spamList;
         }
       }
-      break;
     }
   }
-code_?:
   func_?();
 code_?:
   func_?();
-  pcVar19 = (code *)swi(3);
-  (*pcVar19)();
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
   return;
 }
 

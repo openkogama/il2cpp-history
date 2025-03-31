@@ -1139,9 +1139,8 @@ void Assembly-CSharp.dll::SelectionController::SelectionController__ctor
     object = TypeInfo__SelectionController____c->static_fields->__9;
     this_03 = (EventHandler_1_WorldObjectDestroyedEventArgs_ *)
               func_?(TypeInfo__System__EventHandler<WorldObjectDestroyedEventArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)this_03,(Object *)object,
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+              ((EventHandler_1_Object_ *)this_03,(Object *)object,
                MethodInfo__SelectionController____c____ctor_b__19_0_System__Object__WorldObjectDestroyedEventArgs_
                ,(MethodInfo *)0x0);
     TypeInfo__SelectionController____c->static_fields->__9__19_0 = this_03;

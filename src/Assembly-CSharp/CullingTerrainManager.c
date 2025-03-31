@@ -10,7 +10,7 @@ void Assembly-CSharp.dll::CullingTerrainManager::CullingTerrainManager_ChunkInst
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__Remove_MV__WorldObject__IntVector_
                    );
-    func_?(0xd4a4);
+    func_?(0xcda4);
     cRam_? = '\x01';
   }
   if (chunkInstancesChanged == (ChunkInstancesChanged *)0x0) goto code_?;
@@ -325,7 +325,7 @@ void Assembly-CSharp.dll::CullingTerrainManager::CullingTerrainManager_OnChanged
     func_?(&
                     MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<MV::WorldObject::IntVector>__MoveNext__
                    );
-    func_?(0x1bcc);
+    func_?(0x11b8);
     func_?(&
                     MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::IntVector>__GetEnumerator__
                    );
@@ -531,10 +531,9 @@ void Assembly-CSharp.dll::CullingTerrainManager::CullingTerrainManager__ctor
   (this->fields).chunkInstances = chunkInstances;
   func_?(&this->fields,chunkInstances);
   this_00 = (this->fields).chunkInstances;
-  this_02 = (UnityAction_2_System_Object_System_Object_ *)
+  this_02 = (EventHandler_1_Object_ *)
             func_?(TypeInfo__System__EventHandler<ChunkInstancesChanged>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-  UnityAction_2_System_Object_System_Object___ctor
+  mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
             (this_02,(Object *)this,
              MethodInfo__CullingTerrainManager__ChunkInstancesOnChanged_System__Object__ChunkInstancesChanged_
              ,(MethodInfo *)0x0);
@@ -545,10 +544,11 @@ void Assembly-CSharp.dll::CullingTerrainManager::CullingTerrainManager__ctor
     func_?();
     if (cubeModelBase != (MVCubeModelBase *)0x0) {
       pAVar4 = (cubeModelBase->fields).ChunksChanged;
-      this_03 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
-      Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-      SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-      SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+      this_03 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                 *)func_?();
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
                 (this_03,(Object *)this,
                  MethodInfo__CullingTerrainManager__OnChanged_System__Collections__Generic__HashSet<MV::WorldObject::IntVector>_
                  ,(MethodInfo *)0x0);

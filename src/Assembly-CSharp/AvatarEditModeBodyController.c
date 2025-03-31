@@ -122,10 +122,9 @@ void Assembly-CSharp.dll::AvatarEditModeBodyController::AvatarEditModeBodyContro
     pWVar2 = (pMVar1->fields).worldNetwork;
     if (pWVar2 != (WorldNetwork *)0x0) {
       pEVar3 = (pWVar2->fields)._.InitializedGameQueryData;
-      this_00 = (UnityAction_2_System_Object_System_Object_ *)
+      this_00 = (EventHandler_1_Object_ *)
                 func_?(TypeInfo__System__EventHandler<InitializedGameQueryDataEventArgs>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                 (this_00,(Object *)this,
                  MethodInfo__AvatarEditModeBodyController__ResetCallback_System__Object__InitializedGameQueryDataEventArgs_
                  ,(MethodInfo *)0x0);
@@ -771,9 +770,8 @@ void Assembly-CSharp.dll::AvatarEditModeBodyController::
   if ((pMVar4 == (MVNetworkGame *)0x0) ||
      (pWVar5 = (pMVar4->fields).worldNetwork, pWVar5 == (WorldNetwork *)0x0)) goto code_?;
   pEVar6 = (pWVar5->fields)._.InitializedGameQueryData;
-  this_00 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-  UnityAction_2_System_Object_System_Object___ctor
+  this_00 = (EventHandler_1_Object_ *)func_?();
+  mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
             (this_00,(Object *)this,
              MethodInfo__AvatarEditModeBodyController__InitializedPurchasedAvatar_System__Object__InitializedGameQueryDataEventArgs_
              ,(MethodInfo *)0x0);
@@ -1087,10 +1085,9 @@ void Assembly-CSharp.dll::AvatarEditModeBodyController::
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  this_01 = (UnityAction_2_System_Object_System_Object_ *)
+  this_01 = (EventHandler_1_Object_ *)
             func_?(TypeInfo__System__EventHandler<ScreenshotUploadedEventArgs>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-  UnityAction_2_System_Object_System_Object___ctor
+  mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
             (this_01,(Object *)this,
              MethodInfo__AvatarEditModeBodyController__MVNetworGame_ScreenshotUploadedHandler_System__Object__ScreenshotUploadedEventArgs_
              ,(MethodInfo *)0x0);
@@ -1520,10 +1517,9 @@ code_?:
          (pWVar7 = (pMVar1->fields).worldNetwork, pWVar7 == (WorldNetwork *)0x0))
       goto code_?;
       pEVar8 = (pWVar7->fields)._.InitializedGameQueryData;
-      this_01 = (UnityAction_2_System_Object_System_Object_ *)
+      this_01 = (EventHandler_1_Object_ *)
                 func_?(TypeInfo__System__EventHandler<InitializedGameQueryDataEventArgs>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                 (this_01,(Object *)pCVar4,
                  MethodInfo__AvatarEditModeBodyController__InitializedPurchasedAvatar_System__Object__InitializedGameQueryDataEventArgs_
                  ,(MethodInfo *)0x0);
@@ -1718,9 +1714,8 @@ void Assembly-CSharp.dll::AvatarEditModeBodyController::
       if ((pMVar4 != (MVNetworkGame *)0x0) &&
          (pWVar8 = (pMVar4->fields).worldNetwork, pWVar8 != (WorldNetwork *)0x0)) {
         pEVar9 = (pWVar8->fields)._.InitializedGameQueryData;
-        this_01 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
+        this_01 = (EventHandler_1_Object_ *)func_?();
+        mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                   (this_01,(Object *)0x0,
                    MethodInfo__AvatarEditModeBodyController__InitializedPurchasedAvatar_System__Object__InitializedGameQueryDataEventArgs_
                    ,(MethodInfo *)0x0);
@@ -1873,9 +1868,8 @@ code_?:
     pWVar7 = (pMVar4->fields).worldNetwork;
     if (pWVar7 == (WorldNetwork *)0x0) goto code_?;
     pEVar8 = (pWVar7->fields)._.InitializedGameQueryData;
-    this_03 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
+    this_03 = (EventHandler_1_Object_ *)func_?();
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
               (this_03,(Object *)this,
                MethodInfo__AvatarEditModeBodyController__ResetCallback_System__Object__InitializedGameQueryDataEventArgs_
                ,(MethodInfo *)0x0);
@@ -2278,10 +2272,9 @@ void Assembly-CSharp.dll::AvatarEditModeBodyController::
             cRam_? = '\x01';
           }
           pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-          this_03 = (UnityAction_2_System_Object_System_Object_ *)
+          this_03 = (EventHandler_1_Object_ *)
                     func_?(TypeInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>);
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
+          mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                     (this_03,(Object *)pOVar1,
                      MethodInfo__ResetAvatarHandler__GameOnReceivedItemFromQuery_System__Object__ReceivedItemFromQueryEventArgs_
                      ,(MethodInfo *)0x0);
@@ -2938,10 +2931,9 @@ void Assembly-CSharp.dll::AvatarEditModeBodyController::
     cRam_? = '\x01';
   }
   this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  this_01 = (UnityAction_2_System_Object_System_Object_ *)
+  this_01 = (EventHandler_1_Object_ *)
             func_?(TypeInfo__System__EventHandler<ScreenshotUploadedEventArgs>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-  UnityAction_2_System_Object_System_Object___ctor
+  mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
             (this_01,(Object *)this,
              MethodInfo__AvatarEditModeBodyController__MVNetworGame_ScreenshotUploadedHandler_System__Object__ScreenshotUploadedEventArgs_
              ,(MethodInfo *)0x0);

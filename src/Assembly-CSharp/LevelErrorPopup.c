@@ -17,19 +17,19 @@ void Assembly-CSharp.dll::LevelErrorPopup::LevelErrorPopup_Initialize
                    );
     cRam_? = '\x01';
   }
-  pSVar1 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-           func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-  Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-  SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-  SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
-            (pSVar1,(Object *)this,
+  pDVar1 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+            *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            (pDVar1,(Object *)this,
              MethodInfo__LevelErrorPopup__OnLevelRequirementLoaded_UnityEngine__Networking__UnityWebRequest_
              ,(MethodInfo *)0x0);
   if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__BadgeManager);
   }
   BadgeManager::BadgeManager_GetBadgeTexture
-            (requiredLevel,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)pSVar1,
+            (requiredLevel,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)pDVar1,
              (MethodInfo *)0x0);
   this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if (this_00 != (MVNetworkGame *)0x0) {
@@ -37,15 +37,16 @@ void Assembly-CSharp.dll::LevelErrorPopup::LevelErrorPopup_Initialize
     if (pMVar2 != (MVLocalPlayer *)0x0) {
       pAStack3 = TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>;
       level = (UnityAction *)(pMVar2->fields)._.level;
-      pSVar1 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
-      Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-      SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-      SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
-                (pSVar1,(Object *)this,
+      pDVar1 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                *)func_?();
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                (pDVar1,(Object *)this,
                  MethodInfo__LevelErrorPopup__OnPlayerLevelLoaded_UnityEngine__Networking__UnityWebRequest_
                  ,(MethodInfo *)0x0);
       BadgeManager::BadgeManager_GetBadgeTexture
-                ((int32_t)level,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)pSVar1,
+                ((int32_t)level,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)pDVar1,
                  (MethodInfo *)0x0);
       (this->fields).resultCallback = level;
       func_?();
@@ -139,29 +140,30 @@ void Assembly-CSharp.dll::LevelErrorPopup::LevelErrorPopup_OnDestroy
                    );
     cRam_? = '\x01';
   }
-  pSVar1 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-           func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-  Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-  SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-  SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
-            (pSVar1,(Object *)this,
+  pDVar1 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+            *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            (pDVar1,(Object *)this,
              MethodInfo__LevelErrorPopup__OnLevelRequirementLoaded_UnityEngine__Networking__UnityWebRequest_
              ,(MethodInfo *)0x0);
   if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
   BadgeManager::BadgeManager_UnsubscribeGetBadgeRequest
-            ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)pSVar1,(MethodInfo *)0x0);
+            ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)pDVar1,(MethodInfo *)0x0);
   object = TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>;
-  pSVar1 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
-  Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-  SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-  SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
-            (pSVar1,(Object *)object,
+  pDVar1 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+            *)func_?();
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            (pDVar1,(Object *)object,
              MethodInfo__LevelErrorPopup__OnPlayerLevelLoaded_UnityEngine__Networking__UnityWebRequest_
              ,(MethodInfo *)0x0);
   BadgeManager::BadgeManager_UnsubscribeGetBadgeRequest
-            ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)pSVar1,(MethodInfo *)0x0);
+            ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)pDVar1,(MethodInfo *)0x0);
   return;
 }
 

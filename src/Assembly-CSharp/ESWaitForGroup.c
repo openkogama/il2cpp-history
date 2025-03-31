@@ -84,9 +84,8 @@ void Assembly-CSharp.dll::ESWaitForGroup::ESWaitForGroup_CreateGroup
     if ((pMVar6 != (MVNetworkGame *)0x0) &&
        (pWVar7 = (pMVar6->fields).worldNetwork, pWVar7 != (WorldNetwork *)0x0)) {
       a = (pWVar7->fields)._.InitializedGameQueryData;
-      this_01 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
+      this_01 = (EventHandler_1_Object_ *)func_?();
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                 (this_01,(Object *)this,
                  MethodInfo__ESWaitForGroup__WOCM_InitializedGameQueryData_System__Object__InitializedGameQueryDataEventArgs_
                  ,(MethodInfo *)0x0);
@@ -230,10 +229,9 @@ code_?:
     if (pEStack_9 == (EventHandler_1_OnHierarchyLockedEventArgs___Class *)0x0)
     goto code_?;
     pDVar10 = (Delegate *)(pEStack_9->_0).fields;
-    this_00 = (UnityAction_2_System_Object_System_Object_ *)
+    this_00 = (EventHandler_1_Object_ *)
               func_?(TypeInfo__System__EventHandler<OnHierarchyLockedEventArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
               (this_00,(Object *)this,
                MethodInfo__ESWaitForGroup__WOCM_OnHierarchyLockedResponse_System__Object__OnHierarchyLockedEventArgs_
                ,(MethodInfo *)0x0);
@@ -407,9 +405,8 @@ code_?:
   }
   else {
     a = *(Delegate **)((int)RVar9 + 0x44);
-    this_02 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
+    this_02 = (EventHandler_1_Object_ *)func_?();
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
               (this_02,(Object *)this,
                MethodInfo__ESWaitForGroup__WOCM_OnTransferWosResponse_System__Object__OnTransferWosResponseEventArgs_
                ,(MethodInfo *)0x0);
@@ -566,11 +563,10 @@ void Assembly-CSharp.dll::ESWaitForGroup::ESWaitForGroup_WOCM_InitializedGameQue
       if ((pMVar1 != (MVNetworkGame *)0x0) &&
          (pWVar4 = (pMVar1->fields).worldNetwork, pWVar4 != (WorldNetwork *)0x0)) {
         pEVar5 = (pWVar4->fields)._.InitializedGameQueryData;
-        this_00 = (UnityAction_2_System_Object_System_Object_ *)
+        this_00 = (EventHandler_1_Object_ *)
                   func_?(TypeInfo__System__EventHandler<InitializedGameQueryDataEventArgs>)
         ;
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
+        mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                   (this_00,(Object *)unaff_ESI,
                    MethodInfo__ESWaitForGroup__WOCM_InitializedGameQueryData_System__Object__InitializedGameQueryDataEventArgs_
                    ,(MethodInfo *)0x0);
@@ -712,15 +708,14 @@ code_?:
             MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
         if ((MVWorldObjectClientManager *)e != (MVWorldObjectClientManager *)0x0) {
           pEVar11 = (((MVWorldObjectClientManager *)e)->fields).OnHierarchyLockedResponse;
-          pUVar12 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
-                    (pUVar12,(Object *)this,
+          pEVar12 = (EventHandler_1_Object_ *)func_?();
+          mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                    (pEVar12,(Object *)this,
                      MethodInfo__ESWaitForGroup__WOCM_OnHierarchyLockedResponse_System__Object__OnHierarchyLockedEventArgs_
                      ,(MethodInfo *)0x0);
           unaff_EDI = (RegexCharClass_SingleRange)
                       mscorlib.dll::System::Delegate::Delegate_Remove
-                                ((Delegate *)pEVar11,(Delegate *)pUVar12,(MethodInfo *)0x0);
+                                ((Delegate *)pEVar11,(Delegate *)pEVar12,(MethodInfo *)0x0);
           if (unaff_EDI != (RegexCharClass_SingleRange)0x0) goto code_?;
 code_?:
           LStack_8._version = 0;
@@ -746,15 +741,14 @@ code_?:
         MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
     if ((MVWorldObjectClientManager *)e == (MVWorldObjectClientManager *)0x0) goto code_?;
     pEVar11 = (((MVWorldObjectClientManager *)e)->fields).OnHierarchyLockedResponse;
-    pUVar12 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              (pUVar12,(Object *)this,
+    pEVar12 = (EventHandler_1_Object_ *)func_?();
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+              (pEVar12,(Object *)this,
                MethodInfo__ESWaitForGroup__WOCM_OnHierarchyLockedResponse_System__Object__OnHierarchyLockedEventArgs_
                ,(MethodInfo *)0x0);
     unaff_EDI = (RegexCharClass_SingleRange)
                 mscorlib.dll::System::Delegate::Delegate_Remove
-                          ((Delegate *)pEVar11,(Delegate *)pUVar12,(MethodInfo *)0x0);
+                          ((Delegate *)pEVar11,(Delegate *)pEVar12,(MethodInfo *)0x0);
     if (unaff_EDI == (RegexCharClass_SingleRange)0x0) goto code_?;
 code_?:
     unaff_ESI = (RegexCharClass_SingleRange)e;
@@ -813,10 +807,9 @@ void Assembly-CSharp.dll::ESWaitForGroup::ESWaitForGroup_WOCM_OnTransferWosRespo
   }
   else {
     pEVar2 = (pMVar1->fields).OnTransferWosResponse;
-    this_00 = (UnityAction_2_System_Object_System_Object_ *)
+    this_00 = (EventHandler_1_Object_ *)
               func_?(TypeInfo__System__EventHandler<OnTransferWosResponseEventArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
               (this_00,(Object *)this,
                MethodInfo__ESWaitForGroup__WOCM_OnTransferWosResponse_System__Object__OnTransferWosResponseEventArgs_
                ,(MethodInfo *)0x0);

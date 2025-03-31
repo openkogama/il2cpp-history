@@ -95,10 +95,11 @@ code_?:
       }
       func_?();
       pAVar6 = (this_00->fields).onOutOfRange;
-      pAVar7 = (Action_1_UnityEngine_UIElements_UIR_UIRenderDevice_AllocToFree_ *)func_?()
-      ;
-      mscorlib.dll::System::Action`1[UnityEngine::UIElements::UIR::UIRenderDevice+AllocToFree]::
-      Action_1_UnityEngine_UIElements_UIR_UIRenderDevice_AllocToFree___ctor
+      pAVar7 = (Action_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                 *)func_?();
+      mscorlib.dll::System::Action`1[UnityEngine::UIElements::Internal::
+      MultiColumnCollectionHeader+ViewState+ColumnState]::
+      Action_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor
                 (pAVar7,(Object *)this,
                  MethodInfo__PickupItemBazooka__OnHitMaxRangeLocal_UnityEngine__Ray_,
                  (MethodInfo *)0x0);
@@ -233,9 +234,11 @@ code_?:
       goto code_?;
     }
     pAVar6 = (this_00->fields).onOutOfRange;
-    pAVar7 = (Action_1_UnityEngine_UIElements_UIR_UIRenderDevice_AllocToFree_ *)func_?();
-    mscorlib.dll::System::Action`1[UnityEngine::UIElements::UIR::UIRenderDevice+AllocToFree]::
-    Action_1_UnityEngine_UIElements_UIR_UIRenderDevice_AllocToFree___ctor
+    pAVar7 = (Action_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+               *)func_?();
+    mscorlib.dll::System::Action`1[UnityEngine::UIElements::Internal::
+    MultiColumnCollectionHeader+ViewState+ColumnState]::
+    Action_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor
               (pAVar7,(Object *)this,
                MethodInfo__PickupItemBazooka__OnHitMaxRangeRemote_UnityEngine__Ray_,
                (MethodInfo *)0x0);

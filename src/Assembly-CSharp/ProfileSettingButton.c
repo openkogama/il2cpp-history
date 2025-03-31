@@ -181,20 +181,21 @@ void Assembly-CSharp.dll::ProfileSettingButton::ProfileSettingButton_OnClick
       return;
     }
   }
-  uVar4 = func_?(uVar4);
-  puVar19 = (uint *)uVar4;
-  if ((bool)uVar7 || cVar5 != cVar6) {
-    uVar20 = (uint)((ulonglong)uVar4 >> 0x20) & *puVar19;
-    bVar21 = *unaff_EBX;
-    bVar22 = (byte)((ulonglong)uVar4 >> 8);
-    *unaff_EBX = *unaff_EBX + bVar22;
-    (&UNK_? + (int)puVar19)[uVar20] =
-         (&UNK_? + (int)puVar19)[uVar20] + (char)(uVar20 >> 8) + CARRY1(bVar21,bVar22);
-    out(0x10,(char)uVar4);
+  puVar19 = (undefined4 *)func_?(uVar4);
+  if (!(bool)uVar7 && cVar5 == cVar6) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(code *)puVar19[-0x1e])();
+    return;
   }
-  (*(code *)*puVar19)();
-  pcVar23 = (code *)swi(3);
-  (*pcVar23)();
+  uVar20 = *puVar19;
+  *unaff_EBX = *unaff_EBX ^ (byte)((uint)puVar19 >> 8);
+  pcVar21 = (char *)((int)puVar19 +
+                   (int)((int)&pPVar1[0x138539a].fields.profileSettingButtonType + 3));
+  *pcVar21 = *pcVar21 + (extraout_DH & (byte)((uint)uVar20 >> 8));
+  out(0x30,(char)puVar19);
+  pcVar22 = (code *)swi(3);
+  (*pcVar22)();
   return;
 }
 
@@ -232,11 +233,11 @@ void Assembly-CSharp.dll::ProfileSettingButton::ProfileSettingButton_OnDestroy
                        ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,key,
                         MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
                        );
-    this_01 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-              func_?(TypeInfo__System__Action<System::Object>);
-    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-    SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-    SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+    this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+               *)func_?(TypeInfo__System__Action<System::Object>);
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
               (this_01,(Object *)this,MethodInfo__ProfileSettingButton__OnChange_System__Object_,
                (MethodInfo *)0x0);
     pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
@@ -478,11 +479,11 @@ code_?:
                        ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,key,
                         MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
                        );
-    this_01 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-              func_?(TypeInfo__System__Action<System::Object>);
-    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-    SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-    SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+    this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+               *)func_?(TypeInfo__System__Action<System::Object>);
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
               (this_01,(Object *)this,MethodInfo__ProfileSettingButton__OnChange_System__Object_,
                (MethodInfo *)0x0);
     pAVar7 = unaff_EDI;

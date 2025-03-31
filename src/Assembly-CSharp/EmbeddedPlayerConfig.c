@@ -134,23 +134,23 @@ code_?:
     while (pLVar11 = (this->fields).siteData, pLVar11 != (List_1_EmbeddedSiteConfigData_ *)0x0) {
       if ((pLVar11->fields)._size <= (int)index) goto code_?;
       if (pLVar11 == (List_1_EmbeddedSiteConfigData_ *)0x0) break;
-      pMVar12 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal
-               ::MultiColumnCollectionHeader+ViewState+ColumnState]::
-               List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__get_Item
-                         ((MultiColumnCollectionHeader_ViewState_ColumnState *)&puStack_13,
-                          (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+      pIVar12 = mscorlib.dll::System::Collections::Generic::List`1[System::Linq::Expressions::
+               Interpreter::InstructionList+DebugView+InstructionView]::
+               List_1_System_Linq_Expressions_Interpreter_InstructionList_DebugView_InstructionView__get_Item
+                         ((InstructionList_DebugView_InstructionView *)&puStack_13,
+                          (List_1_System_Linq_Expressions_Interpreter_InstructionList_DebugView_InstructionView_
                            *)pLVar11,(int32_t)index,
                           MethodInfo__System__Collections__Generic__List<EmbeddedSiteConfigData>__get_Item_int_
                          );
       if ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-           *)pMVar12->index ==
+           *)pIVar12->_index ==
           (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
            *)0x0) break;
       pMVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal
                ::MultiColumnCollectionHeader+ViewState+ColumnState]::
                List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray
                          ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                           *)pMVar12->index,
+                           *)pIVar12->_index,
                           MethodInfo__System__Collections__Generic__List<System::String>__ToArray__)
       ;
       bVar4 = EmbeddedPlayerConfig_IsValidHost(host,(String__Array *)pMVar5,(MethodInfo *)0x0);
@@ -439,23 +439,23 @@ code_?:
     while (pLVar11 = (this->fields).siteData, pLVar11 != (List_1_EmbeddedSiteConfigData_ *)0x0) {
       if ((pLVar11->fields)._size <= (int)index) goto code_?;
       if (pLVar11 == (List_1_EmbeddedSiteConfigData_ *)0x0) break;
-      pMVar12 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal
-               ::MultiColumnCollectionHeader+ViewState+ColumnState]::
-               List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__get_Item
-                         ((MultiColumnCollectionHeader_ViewState_ColumnState *)&puStack_13,
-                          (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+      pIVar12 = mscorlib.dll::System::Collections::Generic::List`1[System::Linq::Expressions::
+               Interpreter::InstructionList+DebugView+InstructionView]::
+               List_1_System_Linq_Expressions_Interpreter_InstructionList_DebugView_InstructionView__get_Item
+                         ((InstructionList_DebugView_InstructionView *)&puStack_13,
+                          (List_1_System_Linq_Expressions_Interpreter_InstructionList_DebugView_InstructionView_
                            *)pLVar11,(int32_t)index,
                           MethodInfo__System__Collections__Generic__List<EmbeddedSiteConfigData>__get_Item_int_
                          );
       if ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-           *)pMVar12->index ==
+           *)pIVar12->_index ==
           (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
            *)0x0) break;
       pMVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal
                ::MultiColumnCollectionHeader+ViewState+ColumnState]::
                List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray
                          ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                           *)pMVar12->index,
+                           *)pIVar12->_index,
                           MethodInfo__System__Collections__Generic__List<System::String>__ToArray__)
       ;
       bVar4 = EmbeddedPlayerConfig_IsValidHost(host,(String__Array *)pMVar5,(MethodInfo *)0x0);

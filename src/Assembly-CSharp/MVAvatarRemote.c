@@ -61,7 +61,7 @@ code_?:
     if (unaff_EBX == (UnityAction_2_MVWorldObjectClient_ScaleChangedEventArgs___Class *)0x0)
     goto code_?;
     DynamicCullingHandler::DynamicCullingHandler_ActivateCulling
-              ((DynamicCullingHandler *)unaff_EBX,pGVar2,(GameObject__Array *)unaff_EDI,
+              ((DynamicCullingHandler *)unaff_EBX,pGVar2,(GameObject__Array *)unaff_EDI,1,
                (MethodInfo *)0x0);
     pUVar6 = TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_ScaleChangedEventArgs>;
     a = (this->fields)._._._.ScaleChanged;
@@ -332,9 +332,8 @@ Assembly-CSharp.dll::MVAvatarRemote::MVAvatarRemote_CreateTriggerCollider
                                       (this_00,
                                        TriggerBoxEvents_MethodInfo__UnityEngine__GameObject__AddComponent<TriggerBoxEvents>__
                                       );
-                  this_03 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-                  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::
-                  Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor
+                  this_03 = (EventHandler_1_Object_ *)func_?();
+                  mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                             (this_03,(Object *)&UNK_?,
                              MethodInfo__MVAvatarRemote__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                              ,(MethodInfo *)0x0);
@@ -1473,7 +1472,7 @@ void Assembly-CSharp.dll::MVAvatarRemote::MVAvatarRemote_VisualizeBulletImpact
           if (pAVar5 != (Avatar *)0x0) {
             voxelHit_00.point.z = (float)pOVar3;
             voxelHit_00.point.x = 0.0;
-            voxelHit_00.point.y = 3.433868e-29;
+            voxelHit_00.point.y = 3.4363333e-29;
             voxelHit_00.normal.x = voxelHit.normal.x;
             voxelHit_00.normal.y = voxelHit.normal.y;
             voxelHit_00.normal.z = voxelHit.normal.z;

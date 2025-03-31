@@ -512,12 +512,11 @@ void Assembly-CSharp.dll::ThemePreviewSettingsMenu::ThemePreviewSettingsMenu_OnP
               mscorlib.dll::System::Delegate::Delegate_Remove
                         ((Delegate *)source,(Delegate *)this_02,(MethodInfo *)0x0);
   if (unaff_EDI == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-    unaff_EBX[2].fields.previewTheme = (Theme *)0x0;
+    *(undefined4 *)(unaff_EBX + 0xbc) = 0;
     iVar2 = 0;
 code_?:
     func_?();
     this_00 = (this->fields).openPopup;
-    unaff_EBX = this;
     if (this_00 != (ConfirmationPopup *)0x0) {
       ConfirmationPopup::ConfirmationPopup_Pop(this_00,(MethodInfo *)0x0);
       switch(iVar2) {
@@ -557,13 +556,13 @@ code_?:
         if (this_03 != (ThemeRepository *)0x0) {
           pTVar5 = ThemeRepository::ThemeRepository_get_CurrentTheme(this_03,(MethodInfo *)0x0);
           if (pTVar5 == (ThemeWorldObject *)0x0) {
-            pTVar6 = (Theme *)0x0;
+            theme = (Theme *)0x0;
           }
           else {
-            pTVar6 = (pTVar5->fields)._Visualization_k__BackingField;
+            theme = (pTVar5->fields)._Visualization_k__BackingField;
           }
           if (this_01 != (ThemeMenuController *)0x0) {
-            ThemeMenuController::ThemeMenuController_OpenSettings(this_01,pTVar6,(MethodInfo *)0x0);
+            ThemeMenuController::ThemeMenuController_OpenSettings(this_01,theme,(MethodInfo *)0x0);
             pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                                ((Component *)this,(MethodInfo *)0x0);
             if ((TypeInfo__ThemePreviewSettingsMenu____c->_1).cctor_finished_or_no_cctor == 0) {
@@ -679,35 +678,22 @@ code_?:
     func_?();
   }
   else {
-    pTVar7 = unaff_EBX;
-    pTVar6 = (Theme *)func_?();
-    unaff_EBX = this;
-    if (pTVar6 == (Theme *)0x0) goto code_?;
-    pTVar7[2].fields.previewTheme = pTVar6;
+    iVar2 = func_?();
+    if (iVar2 == 0) goto code_?;
+    *(int *)(unaff_EBX + 0xbc) = iVar2;
     iVar2 = func_?();
     if (iVar2 != 0) goto code_?;
   }
   func_?();
 code_?:
-  uVar8 = func_?();
-  in_AF = 9 < ((byte)uVar8 & 0xf) | in_AF;
-  uVar9 = CONCAT31((int3)((uint)uVar8 >> 8),(byte)uVar8 + in_AF * -6) & 0xffffff0f;
-  puVar10 = (uint *)CONCAT22((short)(uVar9 >> 0x10),
-                            CONCAT11((char)((uint)uVar8 >> 8) * '\x02' - in_AF,(char)uVar9));
-  uVar9 = *puVar10;
-  bVar11 = (byte)((uint)unaff_EBX >> 8);
-  *(byte *)puVar10 = (byte)*puVar10 + bVar11;
-  *(byte *)&unaff_EBX->klass = *(char *)&unaff_EBX->klass + bVar11 + CARRY1((byte)uVar9,bVar11);
-  uVar9 = *puVar10;
-  *puVar10 = (int)&((ExecuteEvents_EventFunction_1_System_Object_ *)unaff_EDI)->klass + *puVar10;
-  *(byte *)&unaff_EBX->klass = *(char *)&unaff_EBX->klass + bVar11 + CARRY4(uVar9,(uint)unaff_EDI);
-  uVar9 = *puVar10;
-  *puVar10 = (int)&((ExecuteEvents_EventFunction_1_System_Object_ *)unaff_EDI)->klass + *puVar10;
-  *(byte *)&unaff_EBX->klass = *(char *)&unaff_EBX->klass + bVar11 + CARRY4(uVar9,(uint)unaff_EDI);
-  uVar9 = *puVar10;
-  *puVar10 = (int)&((ExecuteEvents_EventFunction_1_System_Object_ *)unaff_EDI)->klass + *puVar10;
-  *(char *)(extraout_ECX + 2) =
-       *(char *)(extraout_ECX + 2) + (char)extraout_ECX + CARRY4(uVar9,(uint)unaff_EDI);
+  uVar6 = func_?();
+  uVar7 = in(0x20);
+  puVar8 = (uint *)CONCAT31(CONCAT21((short)((uint)uVar6 >> 0x10),
+                                     (char)((uint)uVar6 >> 8) - (9 < ((byte)uVar6 & 0xf) | in_AF)),
+                            uVar7);
+  *puVar8 = *puVar8 & (uint)unaff_EDI;
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

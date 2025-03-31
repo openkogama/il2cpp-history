@@ -50,16 +50,15 @@ code_?:
         pMVar1 = (this->fields).collectibleObject;
         if (pMVar1 == (MVCollectibleObject *)0x0) goto code_?;
         pTVar2 = (pMVar1->fields).triggerBoxEvents;
-        pUVar6 = (UnityAction_2_System_Object_System_Object_ *)
+        pEVar6 = (EventHandler_1_Object_ *)
                   func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  (pUVar6,(Object *)this,
+        mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                  (pEVar6,(Object *)this,
                    MethodInfo__MVCollectible__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                    ,(MethodInfo *)0x0);
         if (pTVar2 == (TriggerBoxEvents *)0x0) goto code_?;
         TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
-                  (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pUVar6,(MethodInfo *)0x0);
+                  (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pEVar6,(MethodInfo *)0x0);
       }
       pMVar1 = (this->fields).collectibleObject;
       if (pMVar1 != (MVCollectibleObject *)0x0) {
@@ -96,16 +95,15 @@ code_?:
           pMVar1 = (this->fields).collectibleObject;
           if (pMVar1 != (MVCollectibleObject *)0x0) {
             pAVar7 = (pMVar1->fields).allWorldObjectTriggerBoxEvents;
-            pUVar6 = (UnityAction_2_System_Object_System_Object_ *)
+            pEVar6 = (EventHandler_1_Object_ *)
                       func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-            Object]::UnityAction_2_System_Object_System_Object___ctor
-                      (pUVar6,(Object *)this,
+            mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                      (pEVar6,(Object *)this,
                        MethodInfo__MVCollectible__allWorldObjectTriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                        ,(MethodInfo *)0x0);
             if (pAVar7 != (AllWorldObjectTriggerBoxEvents *)0x0) {
               AllWorldObjectTriggerBoxEvents::AllWorldObjectTriggerBoxEvents_add_TriggerEnter
-                        (pAVar7,(EventHandler_1_TriggerEventArgs_ *)pUVar6,(MethodInfo *)0x0);
+                        (pAVar7,(EventHandler_1_TriggerEventArgs_ *)pEVar6,(MethodInfo *)0x0);
               goto code_?;
             }
           }
@@ -202,10 +200,11 @@ code_?:
       pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
       if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
       pAVar4 = (pMVar1->fields).OnWinningConditionFulfilled;
-      this_01 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
-      Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-      SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-      SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+      this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                 *)func_?();
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
                 (this_01,(Object *)&UNK_?,
                  MethodInfo__MVCollectible__OnWinningConditionFulfilled_IWinningCondition_,
                  (MethodInfo *)0x0);
@@ -407,11 +406,11 @@ code_?:
                   MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
       if (pAStack_6 != (Action_1_IWinningCondition___Class *)0x0) {
         a = (Delegate *)(pAStack_6->vtable).Equals.method;
-        this_03 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-                  func_?(TypeInfo__System__Action<IWinningCondition>);
-        Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-        SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-        SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+        this_03 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                   *)func_?(TypeInfo__System__Action<IWinningCondition>);
+        DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata
+        ::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+        DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
                   (this_03,(Object *)this,
                    MethodInfo__MVCollectible__OnWinningConditionFulfilled_IWinningCondition_,
                    (MethodInfo *)0x0);
@@ -685,10 +684,11 @@ void Assembly-CSharp.dll::MVCollectible::MVCollectible_OnTakenByListChange
           cRam_? = '\x01';
         }
         pAStack6 = TypeInfo__System__Action<GreyOutObjectScript::PickupOriginalMaterials>;
-        this_02 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
-        Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-        SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-        SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+        this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                   *)func_?();
+        DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata
+        ::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+        DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
                   (this_02,(Object *)in_stack_7,
                    MethodInfo__GreyOutObjectScript__GreyOutExec_GreyOutObjectScript__PickupOriginalMaterials_
                    ,(MethodInfo *)0x0);
@@ -840,10 +840,12 @@ void Assembly-CSharp.dll::MVCollectible::MVCollectible_Reset(MVCollectible *this
             cRam_? = '\x01';
           }
           pAStack6 = TypeInfo__System__Action<GreyOutObjectScript::PickupOriginalMaterials>;
-          this_02 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
-          Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-          SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-          SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+          this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                     *)func_?();
+          DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::
+          Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
+          __Il2CppFullySharedGenericType]::
+          DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
                     (this_02,(Object *)in_stack_7,
                      MethodInfo__GreyOutObjectScript__GreyOutExec_GreyOutObjectScript__PickupOriginalMaterials_
                      ,(MethodInfo *)0x0);

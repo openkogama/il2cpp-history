@@ -193,35 +193,34 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::VehicleEnergyContaine
   (this->fields).counter = iVar6;
   if (0x32 < iVar6) {
     (this->fields).counter = 0;
-    this_00 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+    this_00 = (List_1_System_Linq_Expressions_Interpreter_InstructionList_DebugView_InstructionView_
                *)System.Core.dll::System::Linq::Enumerable::Enumerable_ToList_1
                            ((IEnumerable_1_KeyValuePair_2_System_Int32_WorldObjectTypes_VehicleEnergy_VehicleEnergyRefillPrediction_
                              *)(this->fields).predictions,
                             System__Collections__Generic__List<System::Collections::Generic::KeyValuePair<int,_WorldObjectTypes::VehicleEnergy::VehicleEnergyRefillPrediction>_>_MethodInfo__System__Linq__Enumerable__ToList<System::Collections::Generic::KeyValuePair<int,_WorldObjectTypes::VehicleEnergy::VehicleEnergyRefillPrediction>_>_System__Collections__Generic__IEnumerable<System::Collections::Generic::KeyValuePair<int,_WorldObjectTypes::VehicleEnergy::VehicleEnergyRefillPrediction>_>_
                            );
     if (this_00 ==
-        (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *
-        )0x0) {
+        (List_1_System_Linq_Expressions_Interpreter_InstructionList_DebugView_InstructionView_ *)0x0
+       ) {
       func_?();
       func_?();
       pcVar7 = (code *)swi(3);
       (*pcVar7)();
       return;
     }
-    pLVar8 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
-             MultiColumnCollectionHeader+ViewState+ColumnState]::
-             List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__GetEnumerator
-                       ((List_1_T_Enumerator_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                         *)auStack_9,this_00,
+    pLVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Linq::Expressions::
+             Interpreter::InstructionList+DebugView+InstructionView]::
+             List_1_System_Linq_Expressions_Interpreter_InstructionList_DebugView_InstructionView__GetEnumerator
+                       (&LStack_9,this_00,
                         MethodInfo__System__Collections__Generic__List<System::Collections::Generic::KeyValuePair<int,_WorldObjectTypes::VehicleEnergy::VehicleEnergyRefillPrediction>_>__GetEnumerator__
                        );
     uStack_10 = 0;
-    method_00 = (MethodInfo *)(pLVar8->_current).name;
-    fVar11 = (pLVar8->_current).actualWidth;
-    fVar12 = (pLVar8->_current).width;
-    fVar13 = *(float *)&(pLVar8->_current).visible;
+    method_00 = (MethodInfo *)(pLVar8->_current)._stackDepth;
+    iVar11 = (pLVar8->_current)._continuationsDepth;
+    pSVar12 = (pLVar8->_current)._name;
+    pIVar13 = (pLVar8->_current)._instruction;
     uStack_1 = 1;
-    fVar14 = (float)(pLVar8->_current).index;
+    pSVar14 = (String *)(pLVar8->_current)._index;
     pOStack_15 = (Object *)&stack0xffffffa0;
     while( true ) {
       bVar16 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[TranslateSoundData]::
@@ -230,22 +229,22 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::VehicleEnergyContaine
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<System::Collections::Generic::KeyValuePair<int,_WorldObjectTypes::VehicleEnergy::VehicleEnergyRefillPrediction>_>__MoveNext__
                         );
       if (bVar16 == 0) break;
-      fVar17 = 0.0;
-      auStack_9._12_4_ = fVar14;
-      auStack_9._16_4_ = method_00;
-      auStack_9._20_4_ = fVar11;
-      auStack_9._24_4_ = fVar12;
-      auStack_9._28_4_ = fVar13;
+      pSVar17 = (String *)0x0;
+      LStack_9._current._index = (int32_t)pSVar14;
+      LStack_9._current._stackDepth = (int32_t)method_00;
+      LStack_9._current._continuationsDepth = iVar11;
+      LStack_9._current._name = pSVar12;
+      LStack_9._current._instruction = pIVar13;
       fVar18 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      fVar14 = fVar17;
-      if (_UNK_? < fVar18 - (float)auStack_9._28_4_) {
+      pSVar14 = pSVar17;
+      if (_UNK_? < fVar18 - (float)LStack_9._current._instruction) {
         method_00 = (MethodInfo *)0x0;
-        vehicleEnergyRefill._4_4_ = auStack_9._20_4_;
-        vehicleEnergyRefill.spawnerId = auStack_9._16_4_;
-        vehicleEnergyRefill.amount = (float)auStack_9._24_4_;
-        fVar14 = (float)auStack_9._24_4_;
+        vehicleEnergyRefill._4_4_ = LStack_9._current._continuationsDepth;
+        vehicleEnergyRefill.spawnerId = LStack_9._current._stackDepth;
+        vehicleEnergyRefill.amount = (float)LStack_9._current._name;
+        pSVar14 = LStack_9._current._name;
         VehicleEnergyContainer_DoRollback
-                  (this,auStack_9._12_4_,vehicleEnergyRefill,(MethodInfo *)0x0);
+                  (this,LStack_9._current._index,vehicleEnergyRefill,(MethodInfo *)0x0);
       }
     }
     uStack_1 = 0xffffffff;

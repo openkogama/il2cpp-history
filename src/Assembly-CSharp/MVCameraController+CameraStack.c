@@ -122,9 +122,8 @@ void Assembly-CSharp.dll::MVCameraController+CameraStack::
     pMVar2 = MVCameraController_CameraStack_get_CurCamera(this,(MethodInfo *)0x0);
     this_02 = (EventHandler_1_OnIgnoreInputTypesArgs___Class *)
               func_?(TypeInfo__System__EventHandler<OnIgnoreInputTypesArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)this_02,(Object *)pMVar2,
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+              ((EventHandler_1_Object_ *)this_02,(Object *)pMVar2,
                MethodInfo__MVCameraBase__camController_onIgnoreInputTypes_System__Object__OnIgnoreInputTypesArgs_
                ,(MethodInfo *)0x0);
     unaff_EDI = (MainCameraManager *)0x0;
@@ -259,10 +258,9 @@ void Assembly-CSharp.dll::MVCameraController+CameraStack::MVCameraController_Cam
                         (pLVar2,index,
                          MethodInfo__System__Collections__Generic__List<MVCameraBase>__get_Item_int_
                         );
-      this_01 = (UnityAction_2_System_Object_System_Object_ *)
+      this_01 = (EventHandler_1_Object_ *)
                 func_?(TypeInfo__System__EventHandler<OnIgnoreInputTypesArgs>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                 (this_01,(Object *)RVar3,
                  MethodInfo__MVCameraBase__camController_onIgnoreInputTypes_System__Object__OnIgnoreInputTypesArgs_
                  ,(MethodInfo *)0x0);
@@ -428,10 +426,9 @@ void Assembly-CSharp.dll::MVCameraController+CameraStack::MVCameraController_Cam
                         (pLVar2,index,
                          MethodInfo__System__Collections__Generic__List<MVCameraBase>__get_Item_int_
                         );
-      this_01 = (UnityAction_2_System_Object_System_Object_ *)
+      this_01 = (EventHandler_1_Object_ *)
                 func_?(TypeInfo__System__EventHandler<OnIgnoreInputTypesArgs>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                 (this_01,(Object *)RVar3,
                  MethodInfo__MVCameraBase__camController_onIgnoreInputTypes_System__Object__OnIgnoreInputTypesArgs_
                  ,(MethodInfo *)0x0);
@@ -726,10 +723,9 @@ void Assembly-CSharp.dll::MVCameraController+CameraStack::
       func_?(10,RVar4,cameraController);
       this_00 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
       object = MVCameraController_CameraStack_get_CurCamera(this,(MethodInfo *)0x0);
-      this_01 = (UnityAction_2_System_Object_System_Object_ *)
+      this_01 = (EventHandler_1_Object_ *)
                 func_?(TypeInfo__System__EventHandler<OnIgnoreInputTypesArgs>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                 (this_01,(Object *)object,
                  MethodInfo__MVCameraBase__camController_onIgnoreInputTypes_System__Object__OnIgnoreInputTypesArgs_
                  ,(MethodInfo *)0x0);
@@ -851,10 +847,9 @@ void Assembly-CSharp.dll::MVCameraController+CameraStack::MVCameraController_Cam
                         (pLVar2,index,
                          MethodInfo__System__Collections__Generic__List<MVCameraBase>__get_Item_int_
                         );
-      this_01 = (UnityAction_2_System_Object_System_Object_ *)
+      this_01 = (EventHandler_1_Object_ *)
                 func_?(TypeInfo__System__EventHandler<OnIgnoreInputTypesArgs>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                 (this_01,(Object *)RVar3,
                  MethodInfo__MVCameraBase__camController_onIgnoreInputTypes_System__Object__OnIgnoreInputTypesArgs_
                  ,(MethodInfo *)0x0);

@@ -150,25 +150,23 @@ void Assembly-CSharp.dll::ForceField::ForceField_Awake(ForceField *this,MethodIn
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).triggerBoxEvents;
-  pUVar2 = (UnityAction_2_System_Object_System_Object_ *)
+  pEVar2 = (EventHandler_1_Object_ *)
            func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-  UnityAction_2_System_Object_System_Object___ctor
-            (pUVar2,(Object *)this,MethodInfo__ForceField__OnEnter_System__Object__TriggerEventArgs_
+  mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+            (pEVar2,(Object *)this,MethodInfo__ForceField__OnEnter_System__Object__TriggerEventArgs_
              ,(MethodInfo *)0x0);
   if (pTVar1 != (TriggerBoxEvents *)0x0) {
     TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
-              (pTVar1,(EventHandler_1_TriggerEventArgs_ *)pUVar2,(MethodInfo *)0x0);
+              (pTVar1,(EventHandler_1_TriggerEventArgs_ *)pEVar2,(MethodInfo *)0x0);
     pTVar1 = (this->fields).triggerBoxEvents;
-    pUVar2 = (UnityAction_2_System_Object_System_Object_ *)
+    pEVar2 = (EventHandler_1_Object_ *)
              func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              (pUVar2,(Object *)this,
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+              (pEVar2,(Object *)this,
                MethodInfo__ForceField__OnExit_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
     if (pTVar1 != (TriggerBoxEvents *)0x0) {
       TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
-                (pTVar1,(EventHandler_1_TriggerEventArgs_ *)pUVar2,(MethodInfo *)0x0);
+                (pTVar1,(EventHandler_1_TriggerEventArgs_ *)pEVar2,(MethodInfo *)0x0);
       return;
     }
   }

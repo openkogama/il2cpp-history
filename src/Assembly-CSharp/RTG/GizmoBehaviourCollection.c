@@ -273,20 +273,19 @@ Assembly-CSharp.dll::RTG::GizmoBehaviourCollection::GizmoBehaviourCollection_Get
   if (((uint)((Il2CppClass *)OStack_4.klass)->vtable[0].methodPtr & 0x100) == 0) {
     OStack_4.klass = (Object__Class *)func_?();
   }
-  RStack_7 = (RegexCharClass_SingleRange)func_?();
+  pMVar7 = (MethodInfo *)func_?();
   mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
   MultiColumnCollectionHeader+ViewState+ColumnState]::
   List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
             ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-              *)RStack_7,iVar5,(method->field7_0x1c).rgctx_data[2].method);
+              *)pMVar7,iVar5,(method->field7_0x1c).rgctx_data[2].method);
   handle = (method->field7_0x1c).rgctx_data[3];
   if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
   OStack_4.monitor = (MonitorData *)&UNK_?;
-  RStack_8 = (RegexCharClass_SingleRange)
-              mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                        ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
+  pMStack_8 = (MethodInfo *)
+               mscorlib.dll::System::Type::Type_GetTypeFromHandle(handle.method,(MethodInfo *)0x0);
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
             (this->fields)._behaviours;
   if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
@@ -310,60 +309,61 @@ code_?:
   OStack_4.monitor = (MonitorData *)pLVar10->_index;
   this_01 = pLVar10->_current;
   uStack_1 = 1;
+  pMStack_11 = pMVar7;
 code_?:
-  bVar11 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+  bVar12 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
           List_1_T_Enumerator_System_Object__MoveNext
                     ((List_1_T_Enumerator_System_Object_ *)&OStack_4,
                      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::IGizmoBehaviour>__MoveNext__
                     );
-  if (bVar11 == 0) {
+  if (bVar12 == 0) {
     uStack_1 = 0xffffffff;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
               (&OStack_4,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::IGizmoBehaviour>__Dispose__
-               ,(MethodInfo *)in_stack_12);
+               ,in_stack_13);
     *unaff_FS_OFFSET = uStack_3;
-    return (List_1_System_Object_ *)RStack_7;
+    return (List_1_System_Object_ *)pMVar7;
   }
   if (this_01 != (RegexCharClass_SingleRange)0x0) {
-    lhs = (RegexCharClass_SingleRange)
-          mscorlib.dll::System::Object::Object_GetType((Object *)this_01,(MethodInfo *)0x0);
+    pMVar7 = (MethodInfo *)
+             mscorlib.dll::System::Object::Object_GetType((Object *)this_01,(MethodInfo *)0x0);
     if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    in_stack_12 = RStack_8;
-    bVar11 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
+    in_stack_13 = pMStack_8;
+    bVar12 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
             UnsafeUtility_EnumEquals
-                      ((Int32Enum__Enum)lhs,(Int32Enum__Enum)RStack_8,(MethodInfo *)0x0);
-    this_02 = in_stack_12;
-    if (bVar11 != 0) goto code_?;
-    if (lhs != (RegexCharClass_SingleRange)0x0) goto code_?;
+                      ((Int32Enum__Enum)pMVar7,(Int32Enum__Enum)pMStack_8,(MethodInfo *)0x0);
+    pMVar14 = in_stack_13;
+    if (bVar12 != 0) goto code_?;
+    if (pMVar7 != (MethodInfo *)0x0) goto code_?;
   }
   goto code_?;
 code_?:
-  RStack_8.First = 0x15;
-  RStack_8.Last = 0;
-  cVar13 = func_?();
-  this_02 = in_stack_12;
-  RStack_7 = lhs;
-  if (cVar13 != '\0') {
+  pMStack_8 = (MethodInfo *)0x15;
+  cVar15 = func_?();
+  pMVar14 = in_stack_13;
+  pMStack_11 = pMVar7;
+  if (cVar15 != '\0') {
 code_?:
-    if (RStack_7 == (RegexCharClass_SingleRange)0x0) goto code_?;
-    method_00 = (method->field7_0x1c).rgctx_data[5].method;
+    if (pMStack_11 == (MethodInfo *)0x0) goto code_?;
     func_?();
     func_?();
-    in_stack_12 = this_02;
-    iVar14 = func_?();
-    item = (Object *)0x0;
-    if (iVar14 != 0) {
-      item = (Object *)func_?();
-      if (item == (Object *)0x0) goto code_?;
+    in_stack_13 = pMVar14;
+    pMVar7 = (MethodInfo *)func_?();
+    pMVar16 = (MethodInfo *)0x0;
+    pMStack_11 = pMVar14;
+    if (pMVar7 != (MethodInfo *)0x0) {
+      pMVar16 = (MethodInfo *)func_?();
+      pMStack_11 = pMVar7;
+      if (pMVar16 == (MethodInfo *)0x0) goto code_?;
     }
-    this_01 = this_02;
-    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-              ((List_1_System_Object_ *)this_02,item,method_00);
-    RStack_7 = this_02;
+    pMStack_8 = pMStack_11;
+    func_?();
+    pMVar7 = pMStack_11;
+    pMStack_11 = pMVar16;
   }
   goto code_?;
 }

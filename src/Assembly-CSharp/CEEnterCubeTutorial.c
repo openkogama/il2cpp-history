@@ -57,10 +57,9 @@ code_?:
     if (pEStack_4 == (EventHandler_1_InitializedGameQueryDataEventArgs___Class *)0x0)
     goto code_?;
     a = *(Delegate **)&(pEStack_4->_0).byval_arg.attrs;
-    this_02 = (UnityAction_2_System_Object_System_Object_ *)
+    this_02 = (EventHandler_1_Object_ *)
               func_?(TypeInfo__System__EventHandler<InitializedGameQueryDataEventArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
               (this_02,(Object *)this,
                MethodInfo__CEEnterCubeTutorial__WOCM_InitializedGameQueryData_System__Object__InitializedGameQueryDataEventArgs_
                ,(MethodInfo *)0x0);
@@ -268,10 +267,9 @@ void Assembly-CSharp.dll::CEEnterCubeTutorial::CEEnterCubeTutorial_WOCM_Initiali
   if ((pMVar1 != (MVNetworkGame *)0x0) &&
      (pWVar2 = (pMVar1->fields).worldNetwork, pWVar2 != (WorldNetwork *)0x0)) {
     pEVar3 = (pWVar2->fields)._.InitializedGameQueryData;
-    this_00 = (UnityAction_2_System_Object_System_Object_ *)
+    this_00 = (EventHandler_1_Object_ *)
               func_?(TypeInfo__System__EventHandler<InitializedGameQueryDataEventArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
               (this_00,(Object *)this,
                MethodInfo__CEEnterCubeTutorial__WOCM_InitializedGameQueryData_System__Object__InitializedGameQueryDataEventArgs_
                ,(MethodInfo *)0x0);

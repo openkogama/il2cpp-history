@@ -324,26 +324,24 @@ void Assembly-CSharp.dll::MVWorldObjectSpawnerVehicle::MVWorldObjectSpawnerVehic
         func_?();
         pTVar2 = (this->fields)._.triggerBoxEvents;
         pUVar3 = (this->fields)._.useInteractor;
-        pUVar4 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  (pUVar4,(Object *)pUVar3,
+        pEVar4 = (EventHandler_1_Object_ *)func_?();
+        mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                  (pEVar4,(Object *)pUVar3,
                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                    ,(MethodInfo *)0x0);
         if (pTVar2 != (TriggerBoxEvents *)0x0) {
           TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnterOverride
-                    (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pUVar4,(MethodInfo *)0x0);
+                    (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pEVar4,(MethodInfo *)0x0);
           this_00 = (this->fields)._.triggerBoxEvents;
           pUVar3 = (this->fields)._.useInteractor;
-          pUVar4 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
-                    (pUVar4,(Object *)pUVar3,
+          pEVar4 = (EventHandler_1_Object_ *)func_?();
+          mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                    (pEVar4,(Object *)pUVar3,
                      MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                      ,(MethodInfo *)0x0);
           if (this_00 != (TriggerBoxEvents *)0x0) {
             TriggerBoxEvents::TriggerBoxEvents_add_TriggerExitOverride
-                      (this_00,(EventHandler_1_TriggerEventArgs_ *)pUVar4,(MethodInfo *)0x0);
+                      (this_00,(EventHandler_1_TriggerEventArgs_ *)pEVar4,(MethodInfo *)0x0);
             MVWorldObjectSpawnerVehicle_InitializeCommon(this,(MethodInfo *)0x0);
             pSVar5 = (this->fields).spawnerObject;
             if (pSVar5 != (SpawnerObject *)0x0) {

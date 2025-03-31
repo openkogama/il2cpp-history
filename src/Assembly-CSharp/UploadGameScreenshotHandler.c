@@ -51,10 +51,9 @@ void Assembly-CSharp.dll::UploadGameScreenshotHandler::
   pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
   if (pMVar1 != (MVGameControllerBase *)0x0) {
     this_00 = (pMVar1->fields).game;
-    this_01 = (UnityAction_2_System_Object_System_Object_ *)
+    this_01 = (EventHandler_1_Object_ *)
               func_?(TypeInfo__System__EventHandler<ScreenshotUploadedEventArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
               (this_01,(Object *)this,
                MethodInfo__UploadGameScreenshotHandler__OnScreenShotUploaded_System__Object__ScreenshotUploadedEventArgs_
                ,(MethodInfo *)0x0);
@@ -228,11 +227,11 @@ void Assembly-CSharp.dll::UploadGameScreenshotHandler::UploadGameScreenshotHandl
                         (this_00,
                          GenerateTextureData_MethodInfo__UnityEngine__GameObject__AddComponent<GenerateTextureData>__
                         );
-    this_02 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-              func_?(TypeInfo__System__Action<System::Byte_[]>);
-    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-    SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-    SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+    this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+               *)func_?(TypeInfo__System__Action<System::Byte_[]>);
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
               (this_02,(Object *)this,
                MethodInfo__UploadGameScreenshotHandler__OnScreenshotReady_System__Byte____,
                (MethodInfo *)0x0);
@@ -314,9 +313,8 @@ void Assembly-CSharp.dll::UploadGameScreenshotHandler::UploadGameScreenshotHandl
   pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
   if (pMVar1 != (MVGameControllerBase *)0x0) {
     pMVar2 = (pMVar1->fields).game;
-    this_01 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
+    this_01 = (EventHandler_1_Object_ *)func_?();
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
               (this_01,(Object *)object_00,
                MethodInfo__UploadGameScreenshotHandler__OnScreenShotUploaded_System__Object__ScreenshotUploadedEventArgs_
                ,(MethodInfo *)0x0);

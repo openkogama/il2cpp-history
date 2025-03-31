@@ -1861,16 +1861,16 @@ code_?:
           Gizmo::Gizmo_add_PreUpdateBegin(pGVar6,value_02,(MethodInfo *)0x0);
           pGVar6 = (Gizmo *)(this->fields)._scaleDragOrigin.z;
           value_03 = (GizmoPreDragBeginAttemptHandler *)func_?();
-          mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor
-                    ((Action_2_Object_Int32Enum_ *)value_03,(Object *)planeSlider,
+          mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                    ((EventHandler_1_Object_ *)value_03,(Object *)planeSlider,
                      MethodInfo__RTG__GizmoPlaneSlider2D__OnGizmoAttemptHandleDragBegin_RTG__Gizmo__int_
                      ,(MethodInfo *)0x0);
           if (pGVar6 != (Gizmo *)0x0) {
             Gizmo::Gizmo_add_PreDragBeginAttempt(pGVar6,value_03,(MethodInfo *)0x0);
             pGVar6 = (Gizmo *)(this->fields)._scaleDragOrigin.z;
             value_04 = (GizmoPreDragUpdateHandler *)func_?();
-            mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor
-                      ((Action_2_Object_Int32Enum_ *)value_04,(Object *)planeSlider,
+            mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                      ((EventHandler_1_Object_ *)value_04,(Object *)planeSlider,
                        MethodInfo__RTG__GizmoPlaneSlider2D__OnGizmoHandleDragUpdate_RTG__Gizmo__int_
                        ,(MethodInfo *)0x0);
             if (pGVar6 != (Gizmo *)0x0) {

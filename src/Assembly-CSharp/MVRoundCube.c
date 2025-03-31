@@ -23,10 +23,9 @@ code_?:
   }
   else {
     pEVar2 = (pMVar1->fields).OnResetWorldDone;
-    this_00 = (UnityAction_2_System_Object_System_Object_ *)
+    this_00 = (EventHandler_1_Object_ *)
               func_?(TypeInfo__System__EventHandler<System::EventArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
               (this_00,(Object *)this,
                MethodInfo__MVRoundCube__OnResetWorldDone_System__Object__System__EventArgs_,
                (MethodInfo *)0x0);
@@ -151,10 +150,9 @@ void Assembly-CSharp.dll::MVRoundCube::MVRoundCube_Initialize(MVRoundCube *this,
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
   if (pMVar1 != (MVWorldObjectClientManager *)0x0) {
     pEVar2 = (pMVar1->fields).OnResetWorldDone;
-    this_01 = (UnityAction_2_System_Object_System_Object_ *)
+    this_01 = (EventHandler_1_Object_ *)
               func_?(TypeInfo__System__EventHandler<System::EventArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
               (this_01,(Object *)this,
                MethodInfo__MVRoundCube__OnResetWorldDone_System__Object__System__EventArgs_,
                (MethodInfo *)0x0);

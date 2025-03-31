@@ -70,7 +70,7 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble
               pRVar2 = ChatBubble::ChatBubble_get_rectTransform(pCVar1,(MethodInfo *)0x0);
               if (pRVar2 != (RectTransform *)0x0) {
                 pRVar10 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
-                         RectTransform_get_rect((Rect *)&stack0xffffffd0,pRVar2,(MethodInfo *)0x0);
+                          RectTransform_get_rect((Rect *)&stack0xffffffd0,pRVar2,(MethodInfo *)0x0);
                 fVar11 = pRVar10->m_Width;
                 pCVar1 = (this->fields).AttachedBubble;
                 if ((pCVar1 != (ChatBubble *)0x0) &&
@@ -96,8 +96,8 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble
                        (pRVar14 = ChatBubble::ChatBubble_get_rectTransform(pCVar1,(MethodInfo *)0x0)
                        , pRVar14 != (RectTransform *)0x0)) {
                       pRVar10 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
-                               RectTransform_get_rect
-                                         ((Rect *)&stack0xffffffd0,pRVar14,(MethodInfo *)0x0);
+                                RectTransform_get_rect
+                                          ((Rect *)&stack0xffffffd0,pRVar14,(MethodInfo *)0x0);
                       fVar7 = pRVar10->m_Height;
                       pCVar1 = (this->fields).AttachedBubble;
                       if ((pCVar1 != (ChatBubble *)0x0) &&
@@ -125,8 +125,9 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble
                                                   (pCVar1,(MethodInfo *)0x0),
                              pRVar14 != (RectTransform *)0x0)) {
                             pRVar10 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
-                                     RectTransform_get_rect
-                                               ((Rect *)&stack0xffffffd0,pRVar14,(MethodInfo *)0x0);
+                                      RectTransform_get_rect
+                                                ((Rect *)&stack0xffffffd0,pRVar14,(MethodInfo *)0x0)
+                            ;
                             fVar11 = pRVar10->m_Height;
                             pCVar1 = (this->fields).AttachedBubble;
                             if ((pCVar1 != (ChatBubble *)0x0) &&
@@ -153,8 +154,8 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble
                                 if ((this->fields).KeepInView != 0) {
                                   adjustedPosition.x = (float)&UNK_?;
                                   puVar5 = puVar9;
-                                  if ((3.557527e-29 < (float)puVar9) ||
-                                     (puVar5 = puVar15, (float)puVar15 < 3.557527e-29)) {
+                                  if ((3.559992e-29 < (float)puVar9) ||
+                                     (puVar5 = puVar15, (float)puVar15 < 3.559992e-29)) {
                                     adjustedPosition.x = (float)puVar5;
                                   }
                                   adjustedPosition.y = fVar7;
@@ -220,11 +221,19 @@ Vector3 * Assembly-CSharp.dll::ChatAnchor::ChatAnchor_HandleOfScreenChatBubble
   }
 code_?:
   uVar19 = func_?();
-  *(char *)(extraout_ECX + 0x66) =
-       *(char *)(extraout_ECX + 0x66) + (char)uVar19 +
-       ((byte)((ushort)uVar19 >> 8) < *(byte *)&(this->fields).previousAdjustedPosition.z);
-  pcVar20 = (code *)swi(3);
-  pVVar12 = (Vector3 *)(*pcVar20)();
+  uVar20 = (uint)uVar19 ^ 0x10;
+  LOCK();
+  puVar21 = (undefined1 *)(uVar20 + (int)((ulonglong)uVar19 >> 0x20));
+  uVar22 = *puVar21;
+  *puVar21 = (char)((ulonglong)uVar19 >> 0x28);
+  UNLOCK();
+  LOCK();
+  *(undefined1 *)
+   (uVar20 + CONCAT22((short)((ulonglong)uVar19 >> 0x30),
+                      CONCAT11(uVar22,(char)((ulonglong)uVar19 >> 0x20)))) = uVar22;
+  UNLOCK();
+  pcVar23 = (code *)swi(3);
+  pVVar12 = (Vector3 *)(*pcVar23)();
   return pVVar12;
 }
 

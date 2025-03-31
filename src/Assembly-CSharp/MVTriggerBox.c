@@ -15,27 +15,25 @@ void Assembly-CSharp.dll::MVTriggerBox::MVTriggerBox_Destroy(MVTriggerBox *this,
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).triggerBoxEvents;
-  pUVar2 = (UnityAction_2_System_Object_System_Object_ *)
+  pEVar2 = (EventHandler_1_Object_ *)
            func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-  UnityAction_2_System_Object_System_Object___ctor
-            (pUVar2,(Object *)this,
+  mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+            (pEVar2,(Object *)this,
              MethodInfo__MVTriggerBox__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
              ,(MethodInfo *)0x0);
   if (pTVar1 != (TriggerBoxEvents *)0x0) {
     TriggerBoxEvents::TriggerBoxEvents_remove_TriggerEnter
-              (pTVar1,(EventHandler_1_TriggerEventArgs_ *)pUVar2,(MethodInfo *)0x0);
+              (pTVar1,(EventHandler_1_TriggerEventArgs_ *)pEVar2,(MethodInfo *)0x0);
     pTVar1 = (this->fields).triggerBoxEvents;
-    pUVar2 = (UnityAction_2_System_Object_System_Object_ *)
+    pEVar2 = (EventHandler_1_Object_ *)
              func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              (pUVar2,(Object *)this,
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+              (pEVar2,(Object *)this,
                MethodInfo__MVTriggerBox__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                ,(MethodInfo *)0x0);
     if (pTVar1 != (TriggerBoxEvents *)0x0) {
       TriggerBoxEvents::TriggerBoxEvents_remove_TriggerExit
-                (pTVar1,(EventHandler_1_TriggerEventArgs_ *)pUVar2,(MethodInfo *)0x0);
+                (pTVar1,(EventHandler_1_TriggerEventArgs_ *)pEVar2,(MethodInfo *)0x0);
       MVLogicObject::MVLogicObject_Destroy((MVLogicObject *)this,(MethodInfo *)0x0);
       return;
     }
@@ -319,29 +317,27 @@ void Assembly-CSharp.dll::MVTriggerBox::MVTriggerBox__ctor
       (this->fields).triggerBoxEvents = (TriggerBoxEvents *)unaff_EDI[1].monitor;
       func_?(&(this->fields).triggerBoxEvents);
       pTVar3 = (this->fields).triggerBoxEvents;
-      pUVar4 = (UnityAction_2_System_Object_System_Object_ *)
+      pEVar4 = (EventHandler_1_Object_ *)
                func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                (pUVar4,(Object *)this,
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                (pEVar4,(Object *)this,
                  MethodInfo__MVTriggerBox__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                  ,(MethodInfo *)0x0);
       unaff_EDI = (ObjectPrefab *)0x0;
       if (pTVar3 != (TriggerBoxEvents *)0x0) {
         TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
-                  (pTVar3,(EventHandler_1_TriggerEventArgs_ *)pUVar4,(MethodInfo *)0x0);
+                  (pTVar3,(EventHandler_1_TriggerEventArgs_ *)pEVar4,(MethodInfo *)0x0);
         pTVar3 = (this->fields).triggerBoxEvents;
-        pUVar4 = (UnityAction_2_System_Object_System_Object_ *)
+        pEVar4 = (EventHandler_1_Object_ *)
                  func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  (pUVar4,(Object *)this,
+        mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                  (pEVar4,(Object *)this,
                    MethodInfo__MVTriggerBox__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                    ,(MethodInfo *)0x0);
         unaff_EDI = (ObjectPrefab *)0x0;
         if (pTVar3 != (TriggerBoxEvents *)0x0) {
           TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
-                    (pTVar3,(EventHandler_1_TriggerEventArgs_ *)pUVar4,(MethodInfo *)0x0);
+                    (pTVar3,(EventHandler_1_TriggerEventArgs_ *)pEVar4,(MethodInfo *)0x0);
           return;
         }
       }

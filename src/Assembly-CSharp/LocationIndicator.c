@@ -631,7 +631,7 @@ bool Assembly-CSharp.dll::LocationIndicator::LocationIndicator_SetIndicatorPosit
     screenPoint.x = (float)this;
     VVar7 = LocationIndicator_get_Max(this,(MethodInfo *)0x0);
     puVar8 = &UNK_?;
-    if (VVar7.y < 3.7113055e-29) {
+    if (VVar7.y < 3.7137707e-29) {
       iVar1 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height((MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height((MethodInfo *)0x0);
       screenPoint.z = (float)&UNK_?;
@@ -702,20 +702,22 @@ void Assembly-CSharp.dll::LocationIndicator::LocationIndicator_SetOwnership
   case PlanetOwnershipType__Enum_Spectator:
     pSVar2 = TM::TM__(StringLiteral_Spectator,(MethodInfo *)0x0);
   }
+  bVar3 = 0;
   if (pTVar1 != (Text *)0x0) {
     (*(code *)(pTVar1->klass->vtable).set_text.method)
               (pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     return;
   }
-  uVar3 = func_?();
-  *(char *)uVar3 = *(char *)uVar3 << 1;
-  uVar4 = in(0x30);
-  pbVar5 = (byte *)(CONCAT31((int3)((ulonglong)uVar3 >> 8),uVar4) + (int)((ulonglong)uVar3 >> 0x20))
+  uVar4 = func_?();
+  pbVar5 = (byte *)((int)uVar4 + 0x3c);
+  bVar6 = *pbVar5;
+  *pbVar5 = bVar6 << 1 | bVar3;
+  *(byte *)(extraout_ECX + 0x3c) = *(byte *)(extraout_ECX + 0x3c) & (byte)((ulonglong)uVar4 >> 0x20)
   ;
-  *pbVar5 = *pbVar5 ^ unaff_BH;
-  *extraout_ECX = *extraout_ECX & (byte)((ulonglong)uVar3 >> 0x28);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (char *)(extraout_ECX + (int)((ulonglong)uVar4 >> 0x20) * 2);
+  *pcVar7 = *pcVar7 + (char)extraout_ECX;
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)(CONCAT11((char)((ulonglong)uVar4 >> 8) * '\x02' + ((bVar6 & 0x80) != 0),(char)uVar4));
   return;
 }
 

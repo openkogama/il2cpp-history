@@ -87,7 +87,7 @@ void Assembly-CSharp.dll::EditCubes::EditCubes_Execute
     func_?();
     func_?();
     func_?();
-    in_stack_12 = 0x11b2;
+    in_stack_12 = 0x11b4;
     func_?();
     func_?();
     func_?();
@@ -2247,13 +2247,23 @@ code_?:
   func_?();
   func_?();
 code_?:
-  bVar106 = func_?();
-  bVar107 = (byte)((ushort)extraout_DX >> 8);
-  *(char *)&unaff_ESI->klass =
-       *(char *)&unaff_ESI->klass + (char)extraout_DX +
-       (CARRY1(bVar107,bVar106) || CARRY1(bVar107 + bVar106,bVar72));
-  pcVar108 = (code *)swi(3);
-  (*pcVar108)();
+  uVar106 = func_?();
+  bVar107 = (byte)((uint6)uVar106 >> 8);
+  bVar108 = (byte)((uint6)uVar106 >> 0x28);
+  bVar37 = CARRY1(bVar108,bVar107) || CARRY1(bVar108 + bVar107,bVar72);
+  bVar108 = (byte)((uint6)uVar106 >> 0x20);
+  bVar72 = *(char *)&unaff_ESI->klass + bVar108;
+  bVar109 = CARRY1(*(byte *)&unaff_ESI->klass,bVar108) || CARRY1(bVar72,bVar37);
+  *(byte *)&unaff_ESI->klass = bVar72 + bVar37;
+  pbVar110 = (byte *)((int)uVar106 + -5);
+  bVar72 = *pbVar110;
+  bVar108 = *pbVar110;
+  *pbVar110 = bVar108 + bVar107 + bVar109;
+  *(char *)(extraout_ECX + -0x33efba01) =
+       *(char *)(extraout_ECX + -0x33efba01) + (char)((uint)extraout_ECX >> 8) +
+       (CARRY1(bVar72,bVar107) || CARRY1(bVar108 + bVar107,bVar109));
+  pcVar111 = (code *)swi(3);
+  (*pcVar111)();
   return;
 }
 

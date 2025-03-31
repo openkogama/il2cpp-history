@@ -322,7 +322,6 @@ void Assembly-CSharp.dll::WinningConditionNotificationManager::
 }
 
 
-/* WARNING (jumptable): Unable to track spacebase fully for stack */
 /* Boolean ShouldShowNotification(Int32, GameStatCounterType, Int32, NotificationType ByRef) */
 
 bool Assembly-CSharp.dll::WinningConditionNotificationManager::
@@ -340,6 +339,7 @@ bool Assembly-CSharp.dll::WinningConditionNotificationManager::
   if (bVar3 == 0) {
     return 0;
   }
+  unaff_ESI = (byte *)actorNumber;
   switch(counterType & 0xff) {
   case GameStatCounterType__Enum_Kill:
   case GameStatCounterType__Enum_Collectible:
@@ -354,7 +354,6 @@ bool Assembly-CSharp.dll::WinningConditionNotificationManager::
       return 0;
     }
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    unaff_EBX = (int *)scoreLeftToWin;
     if ((pMVar1 == (MVNetworkGame *)0x0) ||
        (pMVar2 = (pMVar1->fields).playerContainer, pMVar2 == (MVPlayerContainer *)0x0))
     goto code_?;
@@ -373,15 +372,20 @@ bool Assembly-CSharp.dll::WinningConditionNotificationManager::
        (pMVar5 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0),
        pMVar5 == (MVLocalPlayer *)0x0)) {
 code_?:
-      func_?();
-      *unaff_EBX = *unaff_EBX - extraout_EDX;
-      uVar6 = (uint)unaff_EBX & 0x1e102994;
-      *(undefined2 *)(uVar6 - 4) = in_DS;
-      *(int *)(uVar6 - 4) = *(int *)(uVar6 - 4) - extraout_EDX;
-      uVar6 = uVar6 - 4 & 0x1e102994;
-      *(int *)(uVar6 + 1) = *(int *)(uVar6 + 1) - extraout_EDX;
-      pcVar7 = (code *)swi(3);
-      bVar3 = (*pcVar7)();
+      uVar6 = func_?();
+      bVar7 = (byte)((uVar6 & 0xd31029b4) >> 8);
+      bVar8 = CARRY1(bRam_?,bVar7);
+      bRam_? = bRam_? + bVar7;
+      bVar9 = 0xd6 < *unaff_ESI || CARRY1(*unaff_ESI + 0x29,bVar8);
+      *unaff_ESI = *unaff_ESI + 0x29 + bVar8;
+      bVar8 = 0xd6 < bRam_?;
+      bVar7 = bRam_? + 0x29;
+      bRam_? = bVar7 + bVar9;
+      (&stack0x00000039)[(int)unaff_ESI * 4] =
+           (&stack0x00000039)[(int)unaff_ESI * 4] + (char)(uVar6 & 0xd31029b4) +
+           (bVar8 || CARRY1(bVar7,bVar9));
+      pcVar10 = (code *)swi(3);
+      bVar3 = (*pcVar10)();
       return bVar3;
     }
     if ((pMVar5->fields)._._ActorNr_k__BackingField == actorNumber) {
@@ -391,7 +395,6 @@ code_?:
       return 0;
     }
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    unaff_EBX = (int *)scoreLeftToWin;
     if ((pMVar1 == (MVNetworkGame *)0x0) ||
        (pMVar2 = (pMVar1->fields).playerContainer, pMVar2 == (MVPlayerContainer *)0x0))
     goto code_?;
@@ -482,17 +485,26 @@ void Assembly-CSharp.dll::WinningConditionNotificationManager::
     return;
   }
 code_?:
-  func_?();
-  *(int *)(unaff_ESI + -0x6a3befd7) = *(int *)(unaff_ESI + -0x6a3befd7) - extraout_EDX;
-  uVar6 = (undefined3)((uint)&stack0xfffffffc >> 8);
-  piVar7 = (int *)CONCAT31(uVar6,(char)&stack0xfffffffc + 'j');
-  *piVar7 = *piVar7 - extraout_EDX;
-  piVar7 = (int *)CONCAT31(uVar6,(char)&stack0xfffffffc + -0x2c);
-  *piVar7 = *piVar7 - extraout_EDX;
-  *(int *)(unaff_ESI + -0x69d3efd7) = *(int *)(unaff_ESI + -0x69d3efd7) + extraout_EDX;
-  *piVar7 = *piVar7 - extraout_EDX;
-  *(int *)(unaff_ESI + -0x6985efd7) = *(int *)(unaff_ESI + -0x6985efd7) - extraout_EDX;
-  *piVar7 = *piVar7 - extraout_EDX;
+  bVar6 = 0;
+  uVar7 = func_?();
+  pbVar8 = (byte *)CONCAT22((short)((uint)extraout_ECX >> 0x10),CONCAT11(0x29,(char)extraout_ECX));
+  bVar9 = 0xd6 < *pbVar8 || CARRY1(*pbVar8 + 0x29,bVar6);
+  *pbVar8 = *pbVar8 + 0x29 + bVar6;
+  iVar10 = CONCAT22((short)((ulonglong)uVar7 >> 0x30),
+                   CONCAT11(0x29,(char)((ulonglong)uVar7 >> 0x20)));
+  bVar11 = (byte)uVar7;
+  bVar12 = (byte)((ulonglong)uVar7 >> 8);
+  bVar6 = bVar12 + bVar11;
+  piVar13 = (int *)CONCAT22((short)((ulonglong)uVar7 >> 0x10),CONCAT11(bVar6 + bVar9,bVar11));
+  *(char *)(unaff_ESI * 5) =
+       *(char *)(unaff_ESI * 5) + ')' + (CARRY1(bVar12,bVar11) || CARRY1(bVar6,bVar9));
+  *piVar13 = *piVar13 - iVar10;
+  piVar13 = (int *)CONCAT31((int3)((uint)piVar13 >> 8),bVar11 + 0x4a);
+  *piVar13 = *piVar13 - iVar10;
+  *(int *)(unaff_ESI + -0x49d3efd7) = *(int *)(unaff_ESI + -0x49d3efd7) + unaff_ESI;
+  *piVar13 = *piVar13 - iVar10;
+  *(int *)(unaff_ESI + -0x4985efd7) = *(int *)(unaff_ESI + -0x4985efd7) - unaff_ESI;
+  *piVar13 = *piVar13 - iVar10;
                     /* WARNING: Bad instruction - Truncating control flow here */
   halt_baddata();
 }

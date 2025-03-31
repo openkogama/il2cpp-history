@@ -223,7 +223,7 @@ Object * Assembly-CSharp.dll::RTG::Gizmo::Gizmo_AddBehaviour_1(Gizmo *this,Metho
     func_?(method);
   }
   behaviour = (IGizmoBehaviour *)
-              mscorlib.dll::System::Activator::Activator_CreateInstance_10
+              mscorlib.dll::System::Activator::Activator_CreateInstance_11
                         (((method->field7_0x1c).rgctx_data)->method);
   Gizmo_AddBehaviour(this,behaviour,(MethodInfo *)0x0);
   return (Object *)behaviour;
@@ -595,28 +595,14 @@ Object * Assembly-CSharp.dll::RTG::Gizmo::Gizmo_GetFirstBehaviourOfType_1
   }
   this_00 = (this->fields)._behaviours;
   if (this_00 != (GizmoBehaviourCollection *)0x0) {
-    iVar1 = *(int *)(method->field7_0x1c).methodMetadataHandle;
-    if (*(int *)(iVar1 + 0x1c) == 0) {
-      func_?(iVar1);
-    }
-    this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-              GizmoBehaviourCollection::GizmoBehaviourCollection_GetBehavioursOfType_1
-                        (this_00,(MethodInfo *)**(undefined4 **)(iVar1 + 0x1c));
-    if (this_01 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-      if ((this_01->fields)._size == 0) {
-        return (Object *)0x0;
-      }
-      RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-              RegexCharClass+SingleRange]::
-              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                        (this_01,0,*(MethodInfo **)(*(int *)(iVar1 + 0x1c) + 0xc));
-      return (Object *)RVar2;
-    }
+    pOVar1 = GizmoBehaviourCollection::GizmoBehaviourCollection_GetFirstBehaviourOfType_1
+                       (this_00,((method->field7_0x1c).rgctx_data)->method);
+    return pOVar1;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  pOVar4 = (Object *)(*pcVar3)();
-  return pOVar4;
+  pcVar2 = (code *)swi(3);
+  pOVar1 = (Object *)(*pcVar2)();
+  return pOVar1;
 }
 
 

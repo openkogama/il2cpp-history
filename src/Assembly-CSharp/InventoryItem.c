@@ -113,7 +113,6 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__cctor(MethodInfo *method
     func_?(&StringLiteral_Crystal_Vein);
     func_?(&StringLiteral_Allows_for_scripted_events_in_a_);
     func_?(&StringLiteral_Records_the_time_it_took_for_a_p);
-    func_?(&StringLiteral_This_jetpack_offers_unprecedente);
     func_?(&StringLiteral_Adds_a_global_sound_to_the_game_);
     func_?(&StringLiteral_A_modifiable_projectile_weapon_);
     func_?(&StringLiteral_This_logic_cube_sends_signals_in);
@@ -176,6 +175,7 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__cctor(MethodInfo *method
     func_?(&StringLiteral_A_pair_consisting_of_a_pickup_an);
     func_?(&StringLiteral_Throw_a_line_of_shurikens__and_s);
     func_?(&StringLiteral_Red_Team_Spawn_Point);
+    func_?(&StringLiteral_This_jetpack_offers_unprecedente);
     func_?(&StringLiteral_Frost_sentries_serve_as_stationa);
     func_?(&StringLiteral_Make_your_enemies_bigger_targets);
     func_?(&StringLiteral_Coin_Chest);

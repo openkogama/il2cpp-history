@@ -680,15 +680,18 @@ void Assembly-CSharp.dll::JetPackCamera::JetPackCamera_UpdateCamera
 
 {
   JetPackCamera_HandleInput(this,camController,(MethodInfo *)0x0);
-  fVar1 = (float10)func_?((this->fields).xAxis,(this->fields).xAxisTarget,
-                                   &(this->fields).xAxisVelocity,(this->fields).rotationSmoothTime);
-  (this->fields).xAxis = (float)fVar1;
-  fVar1 = (float10)func_?((this->fields).yAxis,(this->fields).yAxisTarget,
-                                   &(this->fields).yAxisVelocity,(this->fields).rotationSmoothTime);
-  (this->fields).yAxis = (float)fVar1;
+  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_SmoothDampAngle
+                    ((this->fields).xAxis,(this->fields).xAxisTarget,&(this->fields).xAxisVelocity,
+                     (this->fields).rotationSmoothTime,(MethodInfo *)0x0);
+  (this->fields).xAxis = fVar1;
+  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_SmoothDampAngle
+                    ((this->fields).yAxis,(this->fields).yAxisTarget,&(this->fields).yAxisVelocity,
+                     (this->fields).rotationSmoothTime,(MethodInfo *)0x0);
+  (this->fields).yAxis = fVar1;
   pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                      ((Component *)this,(MethodInfo *)0x0);
-  euler.y = (this->fields).yAxis * _UNK_?;
+  camController_00 = (MVCameraController *)((this->fields).yAxis * _UNK_?);
+  euler.y = (float)camController_00;
   euler.x = (this->fields).xAxis * _UNK_?;
   euler.z = 0.0;
   pQVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
@@ -713,7 +716,8 @@ void Assembly-CSharp.dll::JetPackCamera::JetPackCamera_UpdateCamera
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                   (this_00,value,(MethodInfo *)0x0);
         MVCameraBase::MVCameraBase_UpdateCamera
-                  ((MVCameraBase *)this,camController,targetTransform,(MethodInfo *)0x0);
+                  ((MVCameraBase *)this,camController_00,(ProtectedTransform *)&UNK_?,
+                   (MethodInfo *)0x0);
         return;
       }
     }

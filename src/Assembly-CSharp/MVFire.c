@@ -1551,29 +1551,27 @@ void Assembly-CSharp.dll::MVFire::MVFire__ctor
         pFVar3 = (this->fields).fireObject;
         if (pFVar3 != (FireObject *)0x0) {
           pTVar5 = (pFVar3->fields).triggerBoxEvents;
-          pUVar6 = (UnityAction_2_System_Object_System_Object_ *)
+          pEVar6 = (EventHandler_1_Object_ *)
                    func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
-                    (pUVar6,(Object *)this,
+          mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                    (pEVar6,(Object *)this,
                      MethodInfo__MVFire__TriggerAreaEnter_System__Object__TriggerEventArgs_,
                      (MethodInfo *)0x0);
           if (pTVar5 != (TriggerBoxEvents *)0x0) {
             TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
-                      (pTVar5,(EventHandler_1_TriggerEventArgs_ *)pUVar6,(MethodInfo *)0x0);
+                      (pTVar5,(EventHandler_1_TriggerEventArgs_ *)pEVar6,(MethodInfo *)0x0);
             pFVar3 = (this->fields).fireObject;
             if (pFVar3 != (FireObject *)0x0) {
               pTVar5 = (pFVar3->fields).triggerBoxEvents;
-              pUVar6 = (UnityAction_2_System_Object_System_Object_ *)
+              pEVar6 = (EventHandler_1_Object_ *)
                        func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-              Object]::UnityAction_2_System_Object_System_Object___ctor
-                        (pUVar6,(Object *)this,
+              mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                        (pEVar6,(Object *)this,
                          MethodInfo__MVFire__TriggerAreaExit_System__Object__TriggerEventArgs_,
                          (MethodInfo *)0x0);
               if (pTVar5 != (TriggerBoxEvents *)0x0) {
                 TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
-                          (pTVar5,(EventHandler_1_TriggerEventArgs_ *)pUVar6,(MethodInfo *)0x0);
+                          (pTVar5,(EventHandler_1_TriggerEventArgs_ *)pEVar6,(MethodInfo *)0x0);
                 return;
               }
             }

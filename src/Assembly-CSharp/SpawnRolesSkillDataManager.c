@@ -59,17 +59,17 @@ Assembly-CSharp.dll::SpawnRolesSkillDataManager::SpawnRolesSkillDataManager_GetI
     func_?(&StringLiteral_SkillDataManager_can_not_create_);
     cRam_? = '\x01';
   }
-  pOVar1 = (Object *)0x0;
-  pLVar2 = (this->fields).skillDataList;
+  index = 0.0;
+  pLVar1 = (this->fields).skillDataList;
   do {
-    if (pLVar2 == (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) {
+    if (pLVar1 == (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) {
 code_?:
       func_?();
-      pcVar3 = (code *)swi(3);
-      pSVar4 = (SpawnRoleSkillIconController *)(*pcVar3)();
-      return pSVar4;
+      pcVar2 = (code *)swi(3);
+      pSVar3 = (SpawnRoleSkillIconController *)(*pcVar2)();
+      return pSVar3;
     }
-    if ((pLVar2->fields)._size <= (int)pOVar1) {
+    if ((pLVar1->fields)._size <= (int)index) {
       message = mscorlib.dll::System::String::String_Concat_4
                           (StringLiteral_SkillDataManager_can_not_create_,skillType,
                            StringLiteral__because_it_is_not_in_the_dataLi,(MethodInfo *)0x0);
@@ -80,59 +80,59 @@ code_?:
                 ((Object *)message,(MethodInfo *)0x0);
       return (SpawnRoleSkillIconController *)0x0;
     }
-    pLVar2 = (this->fields).skillDataList;
-    if (pLVar2 == (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) goto code_?;
-    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::UIR::
-             UIRenderDevice+AllocToFree]::
-             List_1_UnityEngine_UIElements_UIR_UIRenderDevice_AllocToFree__get_Item
-                       ((UIRenderDevice_AllocToFree *)&stack0xffffffcc,
-                        (List_1_UnityEngine_UIElements_UIR_UIRenderDevice_AllocToFree_ *)pLVar2,
-                        (int32_t)pOVar1,
+    pLVar1 = (this->fields).skillDataList;
+    if (pLVar1 == (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) goto code_?;
+    pMVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
+             MultiColumnCollectionHeader+ViewState+ColumnState]::
+             List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__get_Item
+                       ((MultiColumnCollectionHeader_ViewState_ColumnState *)&stack0xffffffcc,
+                        (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                         *)pLVar1,(int32_t)index,
                         MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Item_int_
                        );
-    CStack_6._8_8_ = *(undefined8 *)&pUVar5->page;
-    bVar7 = mscorlib.dll::System::String::String_op_Equality
-                      (skillType,(String *)(pUVar5->alloc).start,(MethodInfo *)0x0);
-    pLVar2 = (this->fields).skillDataList;
-    if (bVar7 != 0) {
-      if (pLVar2 != (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) {
-        pOStack_8 = pOVar1;
-        iVar9 = func_?();
-        pOStack_8 = *(Object **)(iVar9 + 8);
-        pOVar1 = *(Object **)(iVar9 + 0xc);
+    CStack_5._8_8_ = *(undefined8 *)&(pMVar4->width).m_Unit;
+    bVar6 = mscorlib.dll::System::String::String_op_Equality
+                      (skillType,(String *)pMVar4->index,(MethodInfo *)0x0);
+    pLVar1 = (this->fields).skillDataList;
+    if (bVar6 != 0) {
+      if (pLVar1 != (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) {
+        puStack_7 = (undefined *)index;
+        iVar8 = func_?();
+        puStack_7 = *(undefined **)(iVar8 + 8);
+        original = *(Object **)(iVar8 + 0xc);
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
-        pSVar4 = (SpawnRoleSkillIconController *)
+        pSVar3 = (SpawnRoleSkillIconController *)
                  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                           (pOVar1,
+                           (original,
                             SpawnRoleSkillIconController_MethodInfo__UnityEngine__Object__Instantiate<SpawnRoleSkillIconController>_SpawnRoleSkillIconController_
                            );
         if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__Styles);
         }
-        pCVar10 = Styles::Styles_GetColor(&CStack_6,iconColorStyle,(MethodInfo *)0x0);
-        CStack_6.r = pCVar10->r;
-        CStack_6.g = pCVar10->g;
-        CStack_6.b = pCVar10->b;
-        CStack_6.a = pCVar10->a;
-        pCVar10 = Styles::Styles_GetColor
-                           ((Color *)&pOStack_8,iconBackgroundColorStyle,(MethodInfo *)0x0);
-        if (pSVar4 != (SpawnRoleSkillIconController *)0x0) {
-          newIconColor.g = CStack_6.g;
-          newIconColor.r = CStack_6.r;
-          newIconColor.b = CStack_6.b;
-          newIconColor.a = CStack_6.a;
+        pCVar9 = Styles::Styles_GetColor(&CStack_5,iconColorStyle,(MethodInfo *)0x0);
+        CStack_5.r = pCVar9->r;
+        CStack_5.g = pCVar9->g;
+        CStack_5.b = pCVar9->b;
+        CStack_5.a = pCVar9->a;
+        pCVar9 = Styles::Styles_GetColor
+                           ((Color *)&puStack_7,iconBackgroundColorStyle,(MethodInfo *)0x0);
+        if (pSVar3 != (SpawnRoleSkillIconController *)0x0) {
+          newIconColor.g = CStack_5.g;
+          newIconColor.r = CStack_5.r;
+          newIconColor.b = CStack_5.b;
+          newIconColor.a = CStack_5.a;
           SpawnRoleSkillIconController::SpawnRoleSkillIconController_ChangeColor
-                    (pSVar4,newIconColor,*pCVar10,(MethodInfo *)0x0);
+                    (pSVar3,newIconColor,*pCVar9,(MethodInfo *)0x0);
           SpawnRoleSkillIconController::SpawnRoleSkillIconController_ChangeSize
-                    (pSVar4,imageWidth,imageHeight,(MethodInfo *)0x0);
-          return pSVar4;
+                    (pSVar3,imageWidth,imageHeight,(MethodInfo *)0x0);
+          return pSVar3;
         }
       }
       goto code_?;
     }
-    pOVar1 = (Object *)((int)&pOVar1->klass + 1);
+    index = (float)((int)index + 1);
   } while( true );
 }
 
@@ -179,16 +179,16 @@ code_?:
     }
     pLVar2 = (this->fields).skillDataList;
     if (pLVar2 == (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) goto code_?;
-    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::UIR::
-             UIRenderDevice+AllocToFree]::
-             List_1_UnityEngine_UIElements_UIR_UIRenderDevice_AllocToFree__get_Item
-                       (&UStack_6,
-                        (List_1_UnityEngine_UIElements_UIR_UIRenderDevice_AllocToFree_ *)pLVar2,
-                        iVar1,
+    pMVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
+             MultiColumnCollectionHeader+ViewState+ColumnState]::
+             List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__get_Item
+                       (&MStack_6,
+                        (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                         *)pLVar2,iVar1,
                         MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Item_int_
                        );
     bVar7 = mscorlib.dll::System::String::String_op_Equality
-                      (skillType,(String *)(pUVar5->alloc).start,(MethodInfo *)0x0);
+                      (skillType,(String *)pMVar5->index,(MethodInfo *)0x0);
     pLVar2 = (this->fields).skillDataList;
     if (bVar7 != 0) {
       if (pLVar2 != (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) {
@@ -247,17 +247,17 @@ code_?:
     }
     pLVar2 = (this->fields).skillDataList;
     if (pLVar2 == (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) goto code_?;
-    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::UIR::
-             UIRenderDevice+AllocToFree]::
-             List_1_UnityEngine_UIElements_UIR_UIRenderDevice_AllocToFree__get_Item
-                       ((UIRenderDevice_AllocToFree *)&stack0xffffffcc,
-                        (List_1_UnityEngine_UIElements_UIR_UIRenderDevice_AllocToFree_ *)pLVar2,
-                        iVar1,
+    pMVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
+             MultiColumnCollectionHeader+ViewState+ColumnState]::
+             List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__get_Item
+                       ((MultiColumnCollectionHeader_ViewState_ColumnState *)&stack0xffffffcc,
+                        (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                         *)pLVar2,iVar1,
                         MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Item_int_
                        );
-    CStack_6._8_8_ = *(undefined8 *)&pUVar5->page;
+    CStack_6._8_8_ = *(undefined8 *)&(pMVar5->width).m_Unit;
     bVar7 = mscorlib.dll::System::String::String_op_Equality
-                      (skillType,(String *)(pUVar5->alloc).start,(MethodInfo *)0x0);
+                      (skillType,(String *)pMVar5->index,(MethodInfo *)0x0);
     pLVar2 = (this->fields).skillDataList;
     if (bVar7 != 0) {
       if (pLVar2 != (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) {
@@ -393,31 +393,31 @@ code_?:
     }
     pLVar1 = (this->fields).skillDataList;
     if (pLVar1 == (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) goto code_?;
-    pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::UIR::
-             UIRenderDevice+AllocToFree]::
-             List_1_UnityEngine_UIElements_UIR_UIRenderDevice_AllocToFree__get_Item
-                       (&UStack_5,
-                        (List_1_UnityEngine_UIElements_UIR_UIRenderDevice_AllocToFree_ *)pLVar1,
-                        index,
+    pMVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
+             MultiColumnCollectionHeader+ViewState+ColumnState]::
+             List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__get_Item
+                       (&MStack_5,
+                        (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                         *)pLVar1,index,
                         MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Item_int_
                        );
     bVar6 = mscorlib.dll::System::String::String_op_Equality
-                      (skillType,(String *)(pUVar4->alloc).start,(MethodInfo *)0x0);
+                      (skillType,(String *)pMVar4->index,(MethodInfo *)0x0);
     pLVar1 = (this->fields).skillDataList;
     if (bVar6 != 0) {
       if (pLVar1 != (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) {
-        puVar7 = (uint32_t *)func_?();
-        UStack_5.alloc.start = *puVar7;
-        UStack_5.alloc.size = puVar7[1];
-        UStack_5.alloc.handle = (Object *)puVar7[2];
-        UStack_5.alloc._12_4_ = puVar7[3];
-        UStack_5._16_8_ = *(undefined8 *)(puVar7 + 4);
+        piVar7 = (int32_t *)func_?();
+        MStack_5.index = *piVar7;
+        MStack_5.name = (String *)piVar7[1];
+        MStack_5.actualWidth = (float)piVar7[2];
+        MStack_5.width.m_Value = (float)piVar7[3];
+        MStack_5._16_8_ = *(undefined8 *)(piVar7 + 4);
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
         pSVar3 = (SkillSettingBase *)
                  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                           ((Object *)UStack_5.page,
+                           ((Object *)MStack_5.width.m_Unit,
                             SkillSettingBase_MethodInfo__UnityEngine__Object__Instantiate<SkillSettingBase>_SkillSettingBase_
                            );
         return pSVar3;
@@ -513,16 +513,16 @@ code_?:
     }
     pLVar2 = (this->fields).skillDataList;
     if (pLVar2 == (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) goto code_?;
-    pUVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::UIR::
-             UIRenderDevice+AllocToFree]::
-             List_1_UnityEngine_UIElements_UIR_UIRenderDevice_AllocToFree__get_Item
-                       ((UIRenderDevice_AllocToFree *)auStack_6,
-                        (List_1_UnityEngine_UIElements_UIR_UIRenderDevice_AllocToFree_ *)pLVar2,
-                        iVar1,
+    pMVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
+             MultiColumnCollectionHeader+ViewState+ColumnState]::
+             List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__get_Item
+                       ((MultiColumnCollectionHeader_ViewState_ColumnState *)auStack_6,
+                        (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                         *)pLVar2,iVar1,
                         MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Item_int_
                        );
     bVar7 = mscorlib.dll::System::String::String_op_Equality
-                      (skillType,(String *)(pUVar5->alloc).start,(MethodInfo *)0x0);
+                      (skillType,(String *)pMVar5->index,(MethodInfo *)0x0);
     pLVar2 = (this->fields).skillDataList;
     if (bVar7 != 0) {
       if (pLVar2 != (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) {

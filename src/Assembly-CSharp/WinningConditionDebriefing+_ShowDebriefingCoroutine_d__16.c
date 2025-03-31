@@ -19,37 +19,27 @@ bool Assembly-CSharp.dll::WinningConditionDebriefing+<ShowDebriefingCoroutine>d_
   switch((this->fields).__1__state) {
   case 0:
     (this->fields).__1__state = -1;
-    bVar1 = (POPCOUNT((uint)this_00 & 0xff) & 1U) == 0;
-    if (this_00 != (Object__Class *)0x0) {
-      pIVar2 = (this_00->_0).castClass;
-      bVar1 = (POPCOUNT((uint)pIVar2 & 0xff) & 1U) == 0;
-      if (pIVar2 != (Il2CppClass *)0x0) {
-        piVar3 = *(int **)&(pIVar2->byval_arg).attrs;
-        bVar1 = (POPCOUNT((uint)piVar3 & 0xff) & 1U) == 0;
-        if (piVar3 != (int *)0x0) {
-          (**(code **)(*piVar3 + 0x318))(piVar3,::StringLiteral__,*(undefined4 *)(*piVar3 + 0x31c));
-          this_01 = (UnityAction_1_System_Single_ *)func_?(TypeInfo__System__Action<float>)
-          ;
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Single]::
-          UnityAction_1_System_Single___ctor
-                    (this_01,(Object *)this_00,
-                     MethodInfo__WinningConditionDebriefing___ShowDebriefingCoroutine_b__16_0_float_
-                     ,(MethodInfo *)0x0);
-          pIVar4 = pTween::pTween_To(0.3,0.0,1.0,(Action_1_Single_ *)this_01,(MethodInfo *)0x0);
-          pCVar5 = UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
-                   MonoBehaviour_StartCoroutine_Auto
-                             ((MonoBehaviour *)this_00,pIVar4,(MethodInfo *)0x0);
-          (this->fields).__2__current = (Object *)pCVar5;
-          func_?(&(this->fields).__2__current,pCVar5);
-          (this->fields).__1__state = 1;
-          return 1;
-        }
-      }
+    if (((this_00 != (Object__Class *)0x0) &&
+        (pIVar1 = (this_00->_0).castClass, pIVar1 != (Il2CppClass *)0x0)) &&
+       (piVar2 = *(int **)&(pIVar1->byval_arg).attrs, piVar2 != (int *)0x0)) {
+      (**(code **)(*piVar2 + 0x318))(piVar2,::StringLiteral__,*(undefined4 *)(*piVar2 + 0x31c));
+      this_01 = (UnityAction_1_System_Single_ *)func_?(TypeInfo__System__Action<float>);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Single]::
+      UnityAction_1_System_Single___ctor
+                (this_01,(Object *)this_00,
+                 MethodInfo__WinningConditionDebriefing___ShowDebriefingCoroutine_b__16_0_float_,
+                 (MethodInfo *)0x0);
+      pIVar3 = pTween::pTween_To(0.3,0.0,1.0,(Action_1_Single_ *)this_01,(MethodInfo *)0x0);
+      pCVar4 = UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
+               MonoBehaviour_StartCoroutine_Auto((MonoBehaviour *)this_00,pIVar3,(MethodInfo *)0x0);
+      (this->fields).__2__current = (Object *)pCVar4;
+      func_?(&(this->fields).__2__current,pCVar4);
+      (this->fields).__1__state = 1;
+      return 1;
     }
     break;
   case 1:
     (this->fields).__1__state = -1;
-    bVar1 = (POPCOUNT((uint)this_00 & 0xff) & 1U) == 0;
     if (this_00 != (Object__Class *)0x0) {
       if (cRam_? == '\0') {
         func_?(&TypeInfo__WinningConditionDebriefing___WaitForFadeOut_d__19);
@@ -62,11 +52,11 @@ bool Assembly-CSharp.dll::WinningConditionDebriefing+<ShowDebriefingCoroutine>d_
       value[1].klass = (Object__Class *)0x0;
       value[2].klass = this_00;
       func_?(value + 2,this_00);
-      pCVar5 = UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
+      pCVar4 = UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
                MonoBehaviour_StartCoroutine_Auto
                          ((MonoBehaviour *)this_00,(IEnumerator *)value,(MethodInfo *)0x0);
-      (this->fields).__2__current = (Object *)pCVar5;
-      func_?(&(this->fields).__2__current,pCVar5);
+      (this->fields).__2__current = (Object *)pCVar4;
+      func_?(&(this->fields).__2__current,pCVar4);
       (this->fields).__1__state = 2;
       return 1;
     }
@@ -79,14 +69,14 @@ bool Assembly-CSharp.dll::WinningConditionDebriefing+<ShowDebriefingCoroutine>d_
               (unaff_ESI,(Object *)this_00,
                MethodInfo__WinningConditionDebriefing___ShowDebriefingCoroutine_b__16_1_float_,
                (MethodInfo *)0x0);
-    pIVar4 = pTween::pTween_To(0.3,1.0,0.0,(Action_1_Single_ *)unaff_ESI,(MethodInfo *)0x0);
-    bVar1 = (POPCOUNT((uint)this_00 & 0xff) & 1U) == 0;
+    pIVar3 = pTween::pTween_To(0.3,1.0,0.0,(Action_1_Single_ *)unaff_ESI,(MethodInfo *)0x0);
     if (this_00 != (Object__Class *)0x0) {
-      pCVar5 = UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
-               MonoBehaviour_StartCoroutine_Auto((MonoBehaviour *)this_00,pIVar4,(MethodInfo *)0x0);
-      (this->fields).__2__current = (Object *)pCVar5;
-      func_?(&(this->fields).__2__current,pCVar5);
-      goto code_?;
+      pCVar4 = UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
+               MonoBehaviour_StartCoroutine_Auto((MonoBehaviour *)this_00,pIVar3,(MethodInfo *)0x0);
+      (this->fields).__2__current = (Object *)pCVar4;
+      func_?(&(this->fields).__2__current,pCVar4);
+      (this->fields).__1__state = 3;
+      return 1;
     }
     break;
   case 3:
@@ -94,20 +84,17 @@ bool Assembly-CSharp.dll::WinningConditionDebriefing+<ShowDebriefingCoroutine>d_
   default:
     return 0;
   }
-  cVar6 = '\0';
-  uVar7 = 0x104b;
-  fVar8 = (float10)func_?();
-  if (!bVar1) {
-    *(char *)&unaff_ESI->klass = *(char *)&unaff_ESI->klass + (char)this_00 + -1 + cVar6;
-    *(longlong *)((int)&(this_00->_0).namespaze + 3) = (longlong)fVar8;
-    func_?(CONCAT22(uVar7,in_CS));
-    pcVar9 = (code *)swi(3);
-    bVar10 = (*pcVar9)();
-    return bVar10;
-  }
-code_?:
-  (this->fields).__1__state = 3;
-  return 1;
+  bVar5 = 0;
+  func_?();
+  bVar6 = *(byte *)&unaff_ESI->klass;
+  bVar7 = *(char *)&unaff_ESI->klass + extraout_CL;
+  *(byte *)&unaff_ESI->klass = bVar7 + bVar5;
+  *(char *)(extraout_EDX + 0x104bfc) =
+       *(char *)(extraout_EDX + 0x104bfc) + extraout_CL +
+       (CARRY1(bVar6,extraout_CL) || CARRY1(bVar7,bVar5));
+  pcVar8 = (code *)swi(3);
+  bVar9 = (*pcVar8)();
+  return bVar9;
 }
 
 

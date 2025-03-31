@@ -120,12 +120,11 @@ code_?:
                   func_?(&(this->fields).inventoryItemData,this_01);
                   (this->fields).internalState = 1;
                   pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-                  this_02 = (UnityAction_2_System_Object_System_Object_ *)
+                  this_02 = (EventHandler_1_Object_ *)
                             func_?(
                                            TypeInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>
                                            );
-                  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::
-                  Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor
+                  mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                             (this_02,(Object *)this,
                              MethodInfo__ESAddToMarketPlaceState__WOCM_ReceivedItemFromQuery_System__Object__ReceivedItemFromQueryEventArgs_
                              ,(MethodInfo *)0x0);
@@ -310,10 +309,9 @@ void Assembly-CSharp.dll::ESAddToMarketPlaceState::
     cRam_? = '\x01';
   }
   this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  this_01 = (UnityAction_2_System_Object_System_Object_ *)
+  this_01 = (EventHandler_1_Object_ *)
             func_?(TypeInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-  UnityAction_2_System_Object_System_Object___ctor
+  mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
             (this_01,(Object *)this,
              MethodInfo__ESAddToMarketPlaceState__WOCM_ReceivedItemFromQuery_System__Object__ReceivedItemFromQueryEventArgs_
              ,(MethodInfo *)0x0);

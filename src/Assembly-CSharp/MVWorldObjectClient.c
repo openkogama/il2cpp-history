@@ -702,9 +702,9 @@ Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_CreateBox
             uVar4 = (pVVar3->oneVector).x;
             uVar5 = (pVVar3->oneVector).y;
             if (pTVar2 != (Transform *)0x0) {
-              value.y = (float)uVar5 * 4.527528e-29;
-              value.x = (float)uVar4 * 4.527528e-29;
-              value.z = (pVVar3->oneVector).z * 4.527528e-29;
+              value.y = (float)uVar5 * 4.53007e-29;
+              value.x = (float)uVar4 * 4.53007e-29;
+              value.z = (pVVar3->oneVector).z * 4.53007e-29;
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
                         (pTVar2,value,(MethodInfo *)0x0);
               return pGVar1;

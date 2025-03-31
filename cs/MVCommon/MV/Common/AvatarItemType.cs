@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-// Image 24: MVCommon.dll - Assembly: MVCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// Image 25: MVCommon.dll - Assembly: MVCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 [assembly: AssemblyCompany("Microsoft")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCopyright("Copyright \u00A9 Microsoft 2011")]

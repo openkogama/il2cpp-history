@@ -610,9 +610,8 @@ code_?:
           func_?();
           pTVar15 = (this->fields).triggerBoxEvents;
           pUVar16 = (this->fields).useInteractor;
-          this_03 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
+          this_03 = (EventHandler_1_Object_ *)func_?();
+          mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                     (this_03,(Object *)pUVar16,
                      MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                      ,(MethodInfo *)0x0);
@@ -623,9 +622,8 @@ code_?:
             pUVar16 = (this->fields).useInteractor;
             unaff_EDI = (RegexCharClass_SingleRange)
                         func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-            Object]::UnityAction_2_System_Object_System_Object___ctor
-                      ((UnityAction_2_System_Object_System_Object_ *)unaff_EDI,(Object *)pUVar16,
+            mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                      ((EventHandler_1_Object_ *)unaff_EDI,(Object *)pUVar16,
                        MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                        ,(MethodInfo *)0x0);
             if (((pTVar15 != (TriggerBoxEvents *)0x0) &&

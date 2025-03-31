@@ -526,7 +526,7 @@ code_?:
   return (pGVar1->fields)._raTriangleYLength * (pGVar1->fields)._scale * zoomFactor * fVar6;
 }
 
-/* decompilation failed: Exception while decompiling 1058b050: Decompiler process died */
+/* decompilation failed: Exception while decompiling 1058cf20: Decompiler process died */
 
 
 /* Void MakeSliderPlane(GizmoTransform, PlaneId, GizmoLineSlider3D, GizmoLineSlider3D, Camera) */
@@ -2214,8 +2214,8 @@ code_?:
     Gizmo::Gizmo_add_PreUpdateBegin(pGVar4,value_05,(MethodInfo *)0x0);
     pGVar4 = _UNK_?;
     value_06 = (GizmoPreDragBeginAttemptHandler *)func_?();
-    mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor
-              ((Action_2_Object_Int32Enum_ *)value_06,(Object *)&UNK_?,
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+              ((EventHandler_1_Object_ *)value_06,(Object *)&UNK_?,
                MethodInfo__RTG__GizmoPlaneSlider3D__OnGizmoAttemptHandleDragBegin_RTG__Gizmo__int_,
                (MethodInfo *)0x0);
     if (pGVar4 == (Gizmo *)0x0) goto code_?;

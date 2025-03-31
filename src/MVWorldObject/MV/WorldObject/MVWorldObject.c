@@ -1192,6 +1192,19 @@ MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_get_WorldRotati
 }
 
 
+/* Void set_Data(Dictionary`2[System.Object,System.Object]) */
+
+void MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_set_Data
+               (MVWorldObject *this,Dictionary_2_System_Object_System_Object_ *value,
+               MethodInfo *method)
+
+{
+  (this->fields).data = value;
+  func_?(&(this->fields).data,value);
+  return;
+}
+
+
 /* Void set_Position(Vector3) */
 
 void MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_set_Position
@@ -1201,17 +1214,6 @@ void MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_set_Positi
   (this->fields).position.x = value.x;
   (this->fields).position.y = value.y;
   (this->fields).position.z = value.z;
-  return;
-}
-
-
-/* Void set_PreviewOwnerProfileId(Int32) */
-
-void MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_set_PreviewOwnerProfileId
-               (MVWorldObject *this,int32_t value,MethodInfo *method)
-
-{
-  (this->fields).previewOwnerProfileId = value;
   return;
 }
 
@@ -1230,19 +1232,6 @@ void MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_set_Rotati
 }
 
 
-/* Void set_RunTimeData(Dictionary`2[System.Object,System.Object]) */
-
-void MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_set_RunTimeData
-               (MVWorldObject *this,Dictionary_2_System_Object_System_Object_ *value,
-               MethodInfo *method)
-
-{
-  (this->fields).runTimeData = value;
-  func_?(&(this->fields).runTimeData,value);
-  return;
-}
-
-
 /* Void set_Scale(Vector3) */
 
 void MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_set_Scale
@@ -1252,6 +1241,17 @@ void MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_set_Scale
   (this->fields).scale.x = value.x;
   (this->fields).scale.y = value.y;
   (this->fields).scale.z = value.z;
+  return;
+}
+
+
+/* Void set_WorldObjectType(WorldObjectType) */
+
+void MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_set_WorldObjectType
+               (MVWorldObject *this,WorldObjectType__Enum value,MethodInfo *method)
+
+{
+  (this->fields).type = value;
   return;
 }
 

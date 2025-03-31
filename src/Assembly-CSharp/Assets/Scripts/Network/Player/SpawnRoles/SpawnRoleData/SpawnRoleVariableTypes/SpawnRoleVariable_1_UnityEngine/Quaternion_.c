@@ -100,6 +100,35 @@ code_?:
 }
 
 
+/* Int32 GetHashCode() */
+
+int32_t Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
+        SpawnRoleVariableTypes::SpawnRoleVariable`1[UnityEngine::Quaternion]::
+        SpawnRoleVariable_1_UnityEngine_Quaternion__GetHashCode
+                  (SpawnRoleVariable_1_UnityEngine_Quaternion_ *this,MethodInfo *method)
+
+{
+  bVar1 = SubscribableVariableBase`1[UnityEngine::Quaternion]::
+          SubscribableVariableBase_1_UnityEngine_Quaternion__op_Inequality_2
+                    ((SubscribableVariableBase_1_UnityEngine_Quaternion_ *)
+                     (this->fields).subscribableVariable,
+                     (SubscribableVariableBase_1_UnityEngine_Quaternion_ *)0x0,
+                     method->klass->rgctx_data[3].method);
+  if (bVar1 == 0) {
+    return 0;
+  }
+  pSVar2 = (this->fields).subscribableVariable;
+  if (pSVar2 != (SubscribableVariable_1_UnityEngine_Quaternion_ *)0x0) {
+    iVar3 = (*(code *)(pSVar2->klass->vtable).GetHashCode.method)(pSVar2);
+    return iVar3;
+  }
+  func_?();
+  pcVar4 = (code *)swi(3);
+  iVar3 = (*pcVar4)();
+  return iVar3;
+}
+
+
 /* Void SubscribableVariableOnOnChange(Quaternion) */
 
 void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
@@ -130,51 +159,34 @@ void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
 {
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-  pMVar1 = method->klass->rgctx_data[2].method;
-  if ((pMVar1[3].slot & 0x100) == 0) {
-    pMVar1 = (MethodInfo *)func_?(pMVar1);
+  pIVar1 = method->klass->rgctx_data[2].klass;
+  if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
+    pIVar1 = (Il2CppClass *)func_?(pIVar1);
   }
-  pSVar2 = (SubscribableVariable_1_UnityEngine_Quaternion_ *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)pSVar2,ExceptionArgument__Enum_obj,pMVar1);
-  (pSVar2->fields)._.value.x = value.x;
-  (pSVar2->fields)._.value.y = value.y;
-  (pSVar2->fields)._.value.z = value.z;
-  (pSVar2->fields)._.value.w = value.w;
-  (this->fields).subscribableVariable = pSVar2;
-  func_?(&this->fields,pSVar2);
-  pSVar2 = (this->fields).subscribableVariable;
-  pIVar3 = method->klass->rgctx_data[0xc].klass;
-  if (((uint)pIVar3->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar3 = (Il2CppClass *)func_?(pIVar3);
-  }
-  this_00 = (UnityAction_1_UnityEngine_Color_ *)func_?(pIVar3);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Color]::
-  UnityAction_1_UnityEngine_Color___ctor
-            (this_00,(Object *)this,method->klass->rgctx_data[0xb].rgctxDataDummy,
-             method->klass->rgctx_data[0xd].method);
-  if (pSVar2 != (SubscribableVariable_1_UnityEngine_Quaternion_ *)0x0) {
-    a = (pSVar2->fields)._.OnChange;
-    pMVar1 = method->klass->rgctx_data[0xe].method;
-    while( true ) {
-      pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)a,(Delegate *)this_00,(MethodInfo *)0x0);
-      pAVar5 = a;
-      if (((uint)(pMVar1->klass->rgctx_data[7].klass)->vtable[0].methodPtr & 0x100) == 0) {
-        func_?();
-        pAVar5 = a;
-      }
-      if ((pDVar4 != (Delegate *)0x0) && (iVar6 = func_?(), iVar6 == 0)) break;
-      a = (Action_1_UnityEngine_Quaternion_ *)func_?();
-      if (a == pAVar5) {
-        return;
-      }
-    }
+  this_01 = (SubscribableVariable_1_UnityEngine_Quaternion_ *)func_?(pIVar1);
+  SubscribableVariable`1[UnityEngine::Quaternion]::
+  SubscribableVariable_1_UnityEngine_Quaternion___ctor
+            (this_01,value,method->klass->rgctx_data[10].method);
+  (this->fields).subscribableVariable = this_01;
+  func_?(&this->fields,this_01);
+  if (((uint)(method->klass->rgctx_data[0xc].klass)->vtable[0].methodPtr & 0x100) == 0) {
     func_?();
   }
+  this_02 = (UnityAction_1_UnityEngine_Color_ *)func_?();
+  this_00 = method->klass->rgctx_data[0xb].method;
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Color]::
+  UnityAction_1_UnityEngine_Color___ctor
+            (this_02,(Object *)this,this_00,method->klass->rgctx_data[0xd].method);
+  if (this_00 != (MethodInfo *)0x0) {
+    SubscribableVariableBase`1[UnityEngine::Quaternion]::
+    SubscribableVariableBase_1_UnityEngine_Quaternion__add_OnChange
+              ((SubscribableVariableBase_1_UnityEngine_Quaternion_ *)this_00,
+               (Action_1_UnityEngine_Quaternion_ *)this_02,method->klass->rgctx_data[0xe].method);
+    return;
+  }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

@@ -44,50 +44,51 @@ KogamaSettingsFactory_KogamaSettingValueFactory
                         (kogamaSettingBasePrototype,kogamaSettingBasePrototype->klass[1]._0.image),
      iVar1 == 0)) goto code_?;
   uVar2 = func_?(2,
-                          TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__IKogamaSetting
-                          ,iVar1);
+                           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__IKogamaSetting
+                           ,iVar1);
   switch(uVar2) {
   case 0:
     pSVar3 = (kogamaSettingBasePrototype->fields)._.key;
-    this = (KogamaSettingBoolBase *)
-           func_?(
-                          TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingBoolBase
-                          );
+    unaff_EDI = (KogamaSettingValueWrapperBase__Class *)
+                func_?(
+                               TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingBoolBase
+                               );
     kogamaSettingBasePrototype = (KogamaSettingValueWrapperBase *)TypeInfo__System__Boolean;
     if (valuePair.value == (Object *)0x0) break;
     if (((valuePair.value)->klass->_0).element_class ==
         (TypeInfo__System__Boolean->_0).element_class) {
       pbVar4 = (bool *)func_?(valuePair.value);
       KogamaSettingTypes::KogamaSettingBoolBase::KogamaSettingBoolBase__ctor
-                (this,pSVar3,*pbVar4,parent,(MethodInfo *)0x0);
-      return (KogamaSettingValueWrapperBase *)this;
+                ((KogamaSettingBoolBase *)unaff_EDI,pSVar3,*pbVar4,parent,(MethodInfo *)0x0);
+      return (KogamaSettingValueWrapperBase *)unaff_EDI;
     }
     goto code_?;
   case 1:
+    unaff_EDI = kogamaSettingBasePrototype->klass;
     pKVar5 = (KogamaSettingNumericBase_1_System_Int32___Class *)
               TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
     ;
-    if (((kogamaSettingBasePrototype->klass->_1).naturalAligment <
+    if (((unaff_EDI->_1).naturalAligment <
          (
          TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
          ->_1).naturalAligment) ||
-       ((kogamaSettingBasePrototype->klass->_1).typeHierarchy
+       ((unaff_EDI->_1).typeHierarchy
         [(
          TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
          ->_1).naturalAligment - 1] !=
         (Il2CppClass *)
         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
        )) goto code_?;
-    pSVar3 = (kogamaSettingBasePrototype->fields)._.key;
+    unaff_EDI = (KogamaSettingValueWrapperBase__Class *)(kogamaSettingBasePrototype->fields)._.key;
     if ((kogamaSettingBasePrototype[1].klass != (KogamaSettingValueWrapperBase__Class *)0x0) &&
        (pIVar6 = ((kogamaSettingBasePrototype[1].klass)->_0).byval_arg.data.array,
        pIVar6 != (Il2CppArrayType *)0x0)) {
       piVar7 = pIVar6->sizes;
       piVar8 = (((kogamaSettingBasePrototype[1].klass)->_0).byval_arg.data.array)->lobounds;
-      this_00 = (KogamaSettingNumericBase_1_System_Single_ *)
-                func_?(
-                               TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
-                               );
+      this = (KogamaSettingNumericBase_1_System_Single_ *)
+             func_?(
+                            TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
+                            );
       pMVar9 = 
       MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>__KogamaSettingNumericBase_System__String__float__float__float__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase_
       ;
@@ -98,22 +99,23 @@ KogamaSettingsFactory_KogamaSettingValueFactory
           pfVar10 = (float *)func_?(valuePair.value);
           KogamaSettingTypes::KogamaSettingNumericBase`1[System::Single]::
           KogamaSettingNumericBase_1_System_Single___ctor
-                    (this_00,pSVar3,*pfVar10,(float)piVar7,(float)piVar8,parent,pMVar9);
-          return (KogamaSettingValueWrapperBase *)this_00;
+                    (this,(String *)unaff_EDI,*pfVar10,(float)piVar7,(float)piVar8,parent,pMVar9);
+          return (KogamaSettingValueWrapperBase *)this;
         }
         goto code_?;
       }
     }
     break;
   case 2:
+    unaff_EDI = kogamaSettingBasePrototype->klass;
     pKVar5 = 
     TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
     ;
-    if (((kogamaSettingBasePrototype->klass->_1).naturalAligment <
+    if (((unaff_EDI->_1).naturalAligment <
          (
          TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
          ->_1).naturalAligment) ||
-       ((kogamaSettingBasePrototype->klass->_1).typeHierarchy
+       ((unaff_EDI->_1).typeHierarchy
         [(
          TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
          ->_1).naturalAligment - 1] !=
@@ -126,10 +128,10 @@ KogamaSettingsFactory_KogamaSettingValueFactory
        pIVar6 != (Il2CppArrayType *)0x0)) {
       piVar7 = pIVar6->sizes;
       piVar8 = (((kogamaSettingBasePrototype[1].klass)->_0).byval_arg.data.array)->lobounds;
-      this_01 = (KogamaSettingNumericBase_1_System_Int32_ *)
-                func_?(
-                               TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
-                               );
+      unaff_EDI = (KogamaSettingValueWrapperBase__Class *)
+                  func_?(
+                                 TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
+                                 );
       pMVar9 = 
       MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>__KogamaSettingNumericBase_System__String__int__int__int__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase_
       ;
@@ -140,8 +142,9 @@ KogamaSettingsFactory_KogamaSettingValueFactory
           piVar11 = (int32_t *)func_?(valuePair.value);
           KogamaSettingTypes::KogamaSettingNumericBase`1[System::Int32]::
           KogamaSettingNumericBase_1_System_Int32___ctor
-                    (this_01,pSVar3,*piVar11,(int32_t)piVar7,(int32_t)piVar8,parent,pMVar9);
-          return (KogamaSettingValueWrapperBase *)this_01;
+                    ((KogamaSettingNumericBase_1_System_Int32_ *)unaff_EDI,pSVar3,*piVar11,
+                     (int32_t)piVar7,(int32_t)piVar8,parent,pMVar9);
+          return (KogamaSettingValueWrapperBase *)unaff_EDI;
         }
         goto code_?;
       }
@@ -150,14 +153,15 @@ KogamaSettingsFactory_KogamaSettingValueFactory
   default:
     return (KogamaSettingValueWrapperBase *)0x0;
   case 4:
+    unaff_EDI = kogamaSettingBasePrototype->klass;
     pKVar5 = (KogamaSettingNumericBase_1_System_Int32___Class *)
               TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingEnumBase
     ;
-    if (((kogamaSettingBasePrototype->klass->_1).naturalAligment <
+    if (((unaff_EDI->_1).naturalAligment <
          (
          TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingEnumBase
          ->_1).naturalAligment) ||
-       ((kogamaSettingBasePrototype->klass->_1).typeHierarchy
+       ((unaff_EDI->_1).typeHierarchy
         [(
          TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingEnumBase
          ->_1).naturalAligment - 1] !=
@@ -170,19 +174,19 @@ KogamaSettingsFactory_KogamaSettingValueFactory
        pIVar6 != (Il2CppArrayType *)0x0)) {
       piVar7 = pIVar6->sizes;
       piVar8 = (((kogamaSettingBasePrototype[1].klass)->_0).byval_arg.data.array)->lobounds;
-      this_02 = (KogamaSettingEnumBase *)
-                func_?(
-                               TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingEnumBase
-                               );
+      unaff_EDI = (KogamaSettingValueWrapperBase__Class *)
+                  func_?(
+                                 TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingEnumBase
+                                 );
       kogamaSettingBasePrototype = (KogamaSettingValueWrapperBase *)TypeInfo__System__Int32;
       if (valuePair.value != (Object *)0x0) {
         if (((valuePair.value)->klass->_0).element_class ==
             (TypeInfo__System__Int32->_0).element_class) {
           piVar11 = (int32_t *)func_?(valuePair.value);
           KogamaSettingTypes::KogamaSettingEnumBase::KogamaSettingEnumBase__ctor
-                    (this_02,pSVar3,*piVar11,(int32_t)piVar7,(int32_t)piVar8,parent,
-                     (MethodInfo *)0x0);
-          return (KogamaSettingValueWrapperBase *)this_02;
+                    ((KogamaSettingEnumBase *)unaff_EDI,pSVar3,*piVar11,(int32_t)piVar7,
+                     (int32_t)piVar8,parent,(MethodInfo *)0x0);
+          return (KogamaSettingValueWrapperBase *)unaff_EDI;
         }
         goto code_?;
       }
@@ -195,8 +199,12 @@ code_?:
   func_?(valuePair.value,kogamaSettingBasePrototype);
   pKVar5 = extraout_EDX_00;
 code_?:
-  uRam_? = func_?(kogamaSettingBasePrototype,pKVar5);
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  bVar12 = func_?(kogamaSettingBasePrototype,pKVar5);
+  pcVar13 = (char *)((int)&(((Single__Class *)kogamaSettingBasePrototype)->_0).events + 3);
+  *pcVar13 = *pcVar13 + extraout_DL +
+            CARRY1(bVar12,*(undefined1 *)((int)&unaff_EDI[-1].vtable.get_Key.methodPtr + 1));
+  pcVar14 = (code *)swi(1);
+  pKVar15 = (KogamaSettingValueWrapperBase *)(*pcVar14)();
+  return pKVar15;
 }
 

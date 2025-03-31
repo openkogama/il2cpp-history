@@ -378,27 +378,25 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVWorldObjectSpawnerV
       (this_02->vtable).GetMethodImpl.methodPtr = (Il2CppMethodPointer)pUVar3;
       func_?();
       pMVar4 = (this_02->vtable).GetObjectData_1.method;
-      pUVar5 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                (pUVar5,(Object *)this_02,
+      pEVar5 = (EventHandler_1_Object_ *)func_?();
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                (pEVar5,(Object *)this_02,
                  MethodInfo__WorldObjectTypes__VehicleEnergy__MVWorldObjectSpawnerVehicleEnergy__OnEnterTriggerBox_System__Object__TriggerEventArgs_
                  ,(MethodInfo *)0x0);
       if (pMVar4 != (MethodInfo *)0x0) {
         TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnterOverride
-                  ((TriggerBoxEvents *)pMVar4,(EventHandler_1_TriggerEventArgs_ *)pUVar5,
+                  ((TriggerBoxEvents *)pMVar4,(EventHandler_1_TriggerEventArgs_ *)pEVar5,
                    (MethodInfo *)0x0);
         pMVar4 = (this_02->vtable).GetObjectData_1.method;
         object = (Object *)(this_02->vtable).GetMethodImpl.methodPtr;
-        pUVar5 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  (pUVar5,object,
+        pEVar5 = (EventHandler_1_Object_ *)func_?();
+        mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                  (pEVar5,object,
                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                    ,(MethodInfo *)0x0);
         if (pMVar4 != (MethodInfo *)0x0) {
           TriggerBoxEvents::TriggerBoxEvents_add_TriggerExitOverride
-                    ((TriggerBoxEvents *)pMVar4,(EventHandler_1_TriggerEventArgs_ *)pUVar5,
+                    ((TriggerBoxEvents *)pMVar4,(EventHandler_1_TriggerEventArgs_ *)pEVar5,
                      (MethodInfo *)0x0);
           MVWorldObjectSpawnerVehicleEnergy_InitializeCommon
                     ((MVWorldObjectSpawnerVehicleEnergy *)this_02,(MethodInfo *)0x0);

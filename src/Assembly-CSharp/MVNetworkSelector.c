@@ -562,9 +562,8 @@ void Assembly-CSharp.dll::MVNetworkSelector::MVNetworkSelector__ctor
   }
   else {
     pEVar2 = (pMVar1->fields).OnWorldObjectTransferOwnershipResponse;
-    this_01 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
+    this_01 = (EventHandler_1_Object_ *)func_?();
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
               (this_01,(Object *)this,
                MethodInfo__MVNetworkSelector__Instance_OnWorldObjectTransferOwnershipResponse_System__Object__OnTransferOwnershipResponseEventArgs_
                ,(MethodInfo *)0x0);

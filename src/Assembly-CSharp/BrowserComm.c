@@ -229,18 +229,20 @@ void Assembly-CSharp.dll::BrowserComm::BrowserComm_PublishPlanetFromWeb
   if ((TypeInfo__BrowserComm____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__BrowserComm____c);
   }
-  this_01 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-            TypeInfo__BrowserComm____c->static_fields->__9__12_0;
-  if (this_01 == (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)0x0) {
+  this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+             *)TypeInfo__BrowserComm____c->static_fields->__9__12_0;
+  if (this_01 ==
+      (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+       *)0x0) {
     if ((TypeInfo__BrowserComm____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__BrowserComm____c);
     }
     object = TypeInfo__BrowserComm____c->static_fields->__9;
-    this_01 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-              func_?(TypeInfo__System__Action<System::String>);
-    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-    SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-    SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+    this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+               *)func_?(TypeInfo__System__Action<System::String>);
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
               (this_01,(Object *)object,
                MethodInfo__BrowserComm____c___PublishPlanetFromWeb_b__12_0_System__String_,
                (MethodInfo *)0x0);

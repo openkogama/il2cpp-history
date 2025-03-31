@@ -373,7 +373,7 @@ void Assembly-CSharp.dll::MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_Ini
                                  ((Component *)pMVar11,(MethodInfo *)0x0);
               this_03 = (CullingSubscriberDynamic *)func_?();
               CullingSubscriberDynamic::CullingSubscriberDynamic__ctor
-                        (this_03,4.0,3,pGVar12,(GameObject__Array *)0x0,(MethodInfo *)0x0);
+                        (this_03,4.0,3,pGVar12,(GameObject__Array *)0x0,0,(MethodInfo *)0x0);
               (this->fields).cullingSubscriberDynamic = this_03;
               func_?();
               pMVar13 = MVAvatarSpawnRoleCreator_get_AvatarPrototype(this,(MethodInfo *)0x0);
@@ -1075,34 +1075,35 @@ void Assembly-CSharp.dll::MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator__ct
     (this->fields).settingsReporter = pSVar2;
     func_?();
     pSVar2 = (this->fields).settingsReporter;
-    pSVar3 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
-    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-    SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-    SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
-              (pSVar3,(Object *)this,
+    pDVar3 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+              *)func_?();
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              (pDVar3,(Object *)this,
                MethodInfo__MVAvatarSpawnRoleCreator__SettingsReporterOnOnValueChangedLocal_System__Collections__Generic__Dictionary<System::Object,_System::Object>_
                ,(MethodInfo *)0x0);
     if (pSVar2 != (SettingsReporter *)0x0) {
       MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Client::
       SettingsReporter::SettingsReporter_add_OnValueChangedLocal
                 (pSVar2,(Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
-                         *)pSVar3,(MethodInfo *)0x0);
+                         *)pDVar3,(MethodInfo *)0x0);
       pSVar2 = (this->fields).settingsReporter;
-      pSVar3 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-               func_?(
-                              TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
-                              );
-      Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-      SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-      SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
-                (pSVar3,(Object *)this,
+      pDVar3 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                *)func_?(
+                                 TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
+                                 );
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                (pDVar3,(Object *)this,
                  MethodInfo__MVAvatarSpawnRoleCreator__SettingsReporterOnOnValueRemovedLocal_System__Collections__Generic__Dictionary<System::Object,_System::Object>_
                  ,(MethodInfo *)0x0);
       if (pSVar2 != (SettingsReporter *)0x0) {
         MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Client::
         SettingsReporter::SettingsReporter_add_OnValueRemovedLocal
                   (pSVar2,(Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
-                           *)pSVar3,(MethodInfo *)0x0);
+                           *)pDVar3,(MethodInfo *)0x0);
         piVar4 = &(this->fields)._._._.interactionFlags;
         *(uint *)piVar4 = (uint)*piVar4 | 0x8000;
         piVar4 = &(this->fields)._._._.interactionFlags;

@@ -122,11 +122,11 @@ code_?:
     if (pDVar2 == (DesktopCubeModelingToolsController *)0x0) goto code_?;
     (pDVar2->fields).cubeModelingStateMachine = cubeModelingStateMachine;
     func_?(&(pDVar2->fields).cubeModelingStateMachine,cubeModelingStateMachine);
-    this_00 = (Action_2_Object_Int32Enum_ *)
+    this_00 = (EventHandler_1_Object_ *)
               func_?(
                              TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
                              );
-    mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
               (this_00,(Object *)this,
                MethodInfo__DesktopCubeModelingControllerCubeTutorial__OnFirstTimeState_MV__WorldObject__MetaData__FirstTimeState__MV__WorldObject__MetaData__FirstTimeEvent_
                ,(MethodInfo *)0x0);
@@ -245,11 +245,11 @@ void Assembly-CSharp.dll::DesktopCubeModelingControllerCubeTutorial::
   }
   (this->fields).cubeModelingStateMachine = (CubeModelingStateMachine *)0x0;
   func_?(&(this->fields).cubeModelingStateMachine,0);
-  this_00 = (Action_2_Object_Int32Enum_ *)
+  this_00 = (EventHandler_1_Object_ *)
             func_?(
                            TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
                            );
-  mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor
+  mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
             (this_00,(Object *)this,
              MethodInfo__DesktopCubeModelingControllerCubeTutorial__OnFirstTimeState_MV__WorldObject__MetaData__FirstTimeState__MV__WorldObject__MetaData__FirstTimeEvent_
              ,(MethodInfo *)0x0);

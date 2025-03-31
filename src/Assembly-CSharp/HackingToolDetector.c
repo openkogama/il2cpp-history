@@ -314,11 +314,11 @@ void Assembly-CSharp.dll::HackingToolDetector::HackingToolDetector_Start
   }
   TypeInfo__HackingToolDetector->static_fields->instance = this;
   func_?(&TypeInfo__HackingToolDetector->static_fields->instance,this);
-  this_00 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-            func_?(TypeInfo__System__Action<HackingToolDetector::HackingToolReport>);
-  Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-  SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-  SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+             *)func_?(TypeInfo__System__Action<HackingToolDetector::HackingToolReport>);
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             (this_00,(Object *)this,
              MethodInfo__HackingToolDetector__TemporaryReportHandler_HackingToolDetector__HackingToolReport_
              ,(MethodInfo *)0x0);
@@ -410,7 +410,6 @@ code_?:
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
               ((Object *)pSVar1,(MethodInfo *)0x0);
-    a = (HackingToolDetector_HackingToolReport *)pSVar1;
     goto code_?;
   }
   func_?(1,pSVar1);
@@ -422,8 +421,7 @@ code_?:
     pSVar1 = StringLiteral___detected_;
 code_?:
     func_?(uVar4,pSVar1);
-    a = (HackingToolDetector_HackingToolReport *)
-        mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
+    pSVar1 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
 code_?:
     if ((TypeInfo__HackingToolDetector->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__HackingToolDetector);
@@ -436,18 +434,18 @@ code_?:
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Debug);
         }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)a,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                  ((Object *)pSVar1,(MethodInfo *)0x0);
         EStack_7.klass = (Enum__Class *)TypeInfo__HackingToolDetector__ReportCategory;
         EStack_7.monitor = (MonitorData *)0xffffffff;
         iStack_8 = index;
         pSVar1 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_7,(MethodInfo *)0x0);
-        a = (HackingToolDetector_HackingToolReport *)
-            mscorlib.dll::System::String::String_Concat_3
-                      (StringLiteral_cheatDetected_ReportCategory_,pSVar1,(MethodInfo *)0x0);
+        pSVar1 = mscorlib.dll::System::String::String_Concat_3
+                            (StringLiteral_cheatDetected_ReportCategory_,pSVar1,(MethodInfo *)0x0);
         if ((TypeInfo__StatHatWrapper->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__StatHatWrapper);
         }
-        StatHatWrapper::StatHatWrapper_Count((String *)a,1,(MethodInfo *)0x0);
+        StatHatWrapper::StatHatWrapper_Count(pSVar1,1,(MethodInfo *)0x0);
         pBVar5 = (this->fields).alreadyReported;
         if (pBVar5 == (BitArray *)0x0) goto code_?;
         mscorlib.dll::System::Collections::BitArray::BitArray_set_Item
@@ -473,11 +471,15 @@ code_?:
 code_?:
   bVar9 = 0;
   bVar10 = func_?();
-  pcVar11 = (char *)(CONCAT31((int3)((uint)extraout_EDX >> 8),0x22) + -0x4cbcefde + (int)a * 4);
-  *pcVar11 = *pcVar11 + (char)((uint)extraout_EDX >> 8) + (0x99 < bVar10 | bVar9);
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
-  return;
+  bVar11 = (byte)extraout_ECX & 0x1f;
+  cVar12 = *extraout_EDX;
+  *extraout_EDX = *extraout_EDX << bVar11;
+  bVar13 = (extraout_ECX & 0x1f) == 0;
+  pcVar14 = (char *)((int)extraout_EDX * 9 + -0x2cbcefde);
+  *pcVar14 = *pcVar14 + (char)((uint)extraout_EDX >> 8) +
+            (bVar13 * (0x99 < bVar10 | bVar9) | !bVar13 * ((char)(cVar12 << bVar11 - 1) < '\0'));
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 

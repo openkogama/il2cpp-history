@@ -498,10 +498,9 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts_OnRewarde
   case RewardedAdResult__Enum_ErrorClient:
   case RewardedAdResult__Enum_ErrorInternal:
   case RewardedAdResult__Enum_RewardNotUnlocked:
-    method_00 = unaff_EDI;
     unaff_ESI = (Object *)func_?(TypeInfo__ReviveUIHandlerBoosts____c__DisplayClass17_0);
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (unaff_ESI,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+              (unaff_ESI,ExceptionArgument__Enum_obj,unaff_EDI);
     if (unaff_ESI != (Object *)0x0) {
       unaff_ESI[1].monitor = (MonitorData *)this;
       func_?(&unaff_ESI[1].monitor,this);
@@ -518,7 +517,6 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts_OnRewarde
       func_?(unaff_ESI + 1,pOVar1);
       unaff_EBX = unaff_ESI[1].klass;
       pIVar2 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
-      unaff_EDI = this;
       if (pIVar2 != (IAdManager *)0x0) {
         text = (String *)
                func_?(0,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar2);
@@ -565,13 +563,9 @@ void Assembly-CSharp.dll::ReviveUIHandlerBoosts::ReviveUIHandlerBoosts_OnRewarde
     return;
   }
   sVar4 = func_?();
-  pOVar1 = unaff_ESI->klass;
-  *(char *)(sVar4 + 0x6f103e03) =
-       *(char *)(sVar4 + 0x6f103e03) + (char)unaff_EBX +
-       CARRY4((uint)unaff_EDI,(uint)unaff_ESI->klass);
-  pcVar5 = (char *)((int)&unaff_ESI[-0xcfdf840].klass + 3);
-  *pcVar5 = *pcVar5 + extraout_DL +
-            CARRY4((int)&unaff_EDI->klass + (int)pOVar1,(uint)unaff_ESI->klass);
+  *(char *)(sVar4 + 0x6f103e23) = *(char *)(sVar4 + 0x6f103e23) + (char)unaff_EBX;
+  pcVar5 = (char *)((int)&unaff_ESI[-0xcfdf83c].klass + 3);
+  *pcVar5 = *pcVar5 + extraout_DL;
   pcVar6 = (code *)swi(3);
   (*pcVar6)();
   return;

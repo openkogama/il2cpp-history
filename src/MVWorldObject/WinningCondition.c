@@ -204,10 +204,9 @@ void MVWorldObject.dll::WinningCondition::WinningCondition__ctor
   (this->fields)._IsBriefingNode_k__BackingField = isBriefingNode;
   (this->fields).gameStatCounterType = (undefined1)gameStatCounterType;
   (this->fields).winningConditionPresentStyle = (undefined1)winningConditionPresentStyle;
-  this_00 = (UnityAction_2_System_Object_System_Object_ *)
+  this_00 = (EventHandler_1_Object_ *)
             func_?(TypeInfo__System__EventHandler<OnCounterTypeChangedArgs>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-  UnityAction_2_System_Object_System_Object___ctor
+  mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
             (this_00,(Object *)this,
              MethodInfo__WinningCondition__GameCountersQuery_OnCounterTypeChangedGameStatCounterTypeOnly_System__Object__OnCounterTypeChangedArgs_
              ,(MethodInfo *)0x0);

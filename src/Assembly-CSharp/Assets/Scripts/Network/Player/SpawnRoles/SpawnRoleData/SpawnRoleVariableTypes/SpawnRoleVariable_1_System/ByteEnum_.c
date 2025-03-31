@@ -96,6 +96,35 @@ code_?:
 }
 
 
+/* Int32 GetHashCode() */
+
+int32_t Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
+        SpawnRoleVariableTypes::SpawnRoleVariable`1[System::ByteEnum]::
+        SpawnRoleVariable_1_System_ByteEnum__GetHashCode
+                  (SpawnRoleVariable_1_System_ByteEnum_ *this,MethodInfo *method)
+
+{
+  bVar1 = SubscribableVariableBase`1[System::ByteEnum]::
+          SubscribableVariableBase_1_System_ByteEnum__op_Inequality_2
+                    ((SubscribableVariableBase_1_System_ByteEnum_ *)
+                     (this->fields).subscribableVariable,
+                     (SubscribableVariableBase_1_System_ByteEnum_ *)0x0,
+                     method->klass->rgctx_data[3].method);
+  if (bVar1 == 0) {
+    return 0;
+  }
+  pSVar2 = (this->fields).subscribableVariable;
+  if (pSVar2 != (SubscribableVariable_1_System_ByteEnum_ *)0x0) {
+    iVar3 = (*(code *)(pSVar2->klass->vtable).GetHashCode.method)(pSVar2);
+    return iVar3;
+  }
+  func_?();
+  pcVar4 = (code *)swi(3);
+  iVar3 = (*pcVar4)();
+  return iVar3;
+}
+
+
 /* SpawnRoleVariable`1[System.ByteEnum](ByteEnum) */
 
 void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
@@ -106,49 +135,33 @@ void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
 {
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-  method_00 = method->klass->rgctx_data[2].method;
-  if ((method_00[3].slot & 0x100) == 0) {
-    method_00 = (MethodInfo *)func_?(method_00);
+  pIVar1 = method->klass->rgctx_data[2].klass;
+  if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
+    pIVar1 = (Il2CppClass *)func_?(pIVar1);
   }
-  pSVar1 = (SubscribableVariable_1_System_ByteEnum_ *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)pSVar1,ExceptionArgument__Enum_obj,method_00);
-  (pSVar1->fields)._.value = (undefined1)value;
-  (this->fields).subscribableVariable = pSVar1;
-  func_?(&this->fields,pSVar1);
-  pSVar1 = (this->fields).subscribableVariable;
-  pIVar2 = method->klass->rgctx_data[0xc].klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
-  }
-  value = func_?(pIVar2);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-  UnityAction_1_System_Int32Enum___ctor
-            ((UnityAction_1_System_Int32Enum_ *)value,(Object *)this,
-             method->klass->rgctx_data[0xb].rgctxDataDummy,method->klass->rgctx_data[0xd].method);
-  if (pSVar1 != (SubscribableVariable_1_System_ByteEnum_ *)0x0) {
-    a = (pSVar1->fields)._.OnChange;
-    while( true ) {
-      pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-      pAVar4 = a;
-      if ((*(byte *)(*(int *)&(((((UnityAction_1_System_Int32Enum_ *)value)->fields)._._.m_target
-                                [0xc].klass)->_0).this_arg.attrs + 0xbd) & 1) == 0) {
-        func_?();
-        pAVar4 = a;
-      }
-      if ((pDVar3 != (Delegate *)0x0) && (iVar5 = func_?(), iVar5 == 0)) break;
-      value = (ByteEnum__Enum)&UNK_?;
-      a = (Action_1_ByteEnum_ *)func_?();
-      if (a == pAVar4) {
-        return;
-      }
-    }
+  this_01 = (SubscribableVariable_1_System_ByteEnum_ *)func_?(pIVar1);
+  SubscribableVariable`1[System::ByteEnum]::SubscribableVariable_1_System_ByteEnum___ctor
+            (this_01,value,method->klass->rgctx_data[10].method);
+  (this->fields).subscribableVariable = this_01;
+  func_?(&this->fields,this_01);
+  this_00 = (SubscribableVariableBase_1_System_Single_ *)(this->fields).subscribableVariable;
+  if (((uint)(method->klass->rgctx_data[0xc].klass)->vtable[0].methodPtr & 0x100) == 0) {
     func_?();
   }
+  this_02 = (UnityAction_1_System_Int32Enum_ *)func_?();
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+  UnityAction_1_System_Int32Enum___ctor
+            (this_02,(Object *)this,method->klass->rgctx_data[0xb].rgctxDataDummy,
+             method->klass->rgctx_data[0xd].method);
+  if (this_00 != (SubscribableVariableBase_1_System_Single_ *)0x0) {
+    SubscribableVariableBase`1[System::Single]::
+    SubscribableVariableBase_1_System_Single__add_OnChange
+              (this_00,(Action_1_Single_ *)this_02,method->klass->rgctx_data[0xe].method);
+    return;
+  }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

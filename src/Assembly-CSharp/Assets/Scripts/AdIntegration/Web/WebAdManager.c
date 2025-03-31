@@ -39,7 +39,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager::Web
     pDStack_1 = (Debug_2__Class *)e;
     ppIStack_2 = (ILogger_1__Class **)0x3;
     pIStack_4 = pIVar3;
-    func_?(5,TypeInfo__UnityEngine__ILogger);
+    func_?(6,TypeInfo__UnityEngine__ILogger);
     return;
   }
   pDStack_1 = (Debug_2__Class *)&stack0xfffffffc;
@@ -91,7 +91,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager::Web
     pDStack_1 = (Debug_2__Class *)msg;
     ppIStack_2 = (ILogger_1__Class **)0x3;
     pIStack_4 = pIVar3;
-    func_?(5,TypeInfo__UnityEngine__ILogger);
+    func_?(6,TypeInfo__UnityEngine__ILogger);
     return;
   }
   pDStack_1 = (Debug_2__Class *)&stack0xfffffffc;

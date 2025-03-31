@@ -322,10 +322,10 @@ void Assembly-CSharp.dll::SpawnRoleEditorMenu::SpawnRoleEditorMenu_ChangeTeamIma
   if (pIVar1 == (Image *)0x0) {
     CStack_3.g = (float)&UNK_?;
     uVar4 = func_?();
-    *(char *)(unaff_EDI + 0xe) =
-         *(char *)(unaff_EDI + 0xe) + extraout_CH +
-         ((CONCAT31((int3)(uVar4 >> 8),*(undefined1 *)(unaff_EBX + (uVar4 & 0xff))) | 0xe2f103d) <
-         0x3d0e4f10);
+    *(char *)(unaff_EDI + 0x2e) =
+         *(char *)(unaff_EDI + 0x2e) + extraout_CH +
+         (CONCAT31((int3)(uVar4 >> 8),*(undefined1 *)(unaff_EBX + (uVar4 & 0xff))) + 0xd1d0efc3U <
+         0x3d2e4f10);
     pcVar5 = (code *)swi(3);
     (*pcVar5)();
     return;

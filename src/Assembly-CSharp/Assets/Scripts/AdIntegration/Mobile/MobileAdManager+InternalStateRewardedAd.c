@@ -262,10 +262,12 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
         (pMVar2->fields).loadingAd = 0;
         if ((this->fields).isHandlingRequest != 0) {
           this_00 = (this->fields).rewardedAd;
-          this_01 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
-          Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-          SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-          SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+          this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                     *)func_?();
+          DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::
+          Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
+          __Il2CppFullySharedGenericType]::
+          DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
                     (this_01,(Object *)this,
                      MethodInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateRewardedAd__UserRewardEarnedCallback_GoogleMobileAds__Api__Reward_
                      ,(MethodInfo *)0x0);
@@ -429,17 +431,18 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
       GoogleMobileAds.dll::GoogleMobileAds::Api::RewardedAd::
       RewardedAd_remove_OnAdFullScreenContentClosed(pRVar1,(Action *)pNVar2,(MethodInfo *)0x0);
       pRVar1 = (this->fields).rewardedAd;
-      pSVar3 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
-      Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-      SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-      SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
-                (pSVar3,(Object *)this,
+      pDVar3 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                *)func_?();
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                (pDVar3,(Object *)this,
                  MethodInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateRewardedAd__RewardedAdOnOnAdFullScreenContentFailed_GoogleMobileAds__Api__AdError_
                  ,(MethodInfo *)0x0);
       if (pRVar1 != (RewardedAd *)0x0) {
         GoogleMobileAds.dll::GoogleMobileAds::Api::RewardedAd::
         RewardedAd_remove_OnAdFullScreenContentFailed
-                  (pRVar1,(Action_1_GoogleMobileAds_Api_AdError_ *)pSVar3,(MethodInfo *)0x0);
+                  (pRVar1,(Action_1_GoogleMobileAds_Api_AdError_ *)pDVar3,(MethodInfo *)0x0);
         pRVar1 = (this->fields).rewardedAd;
         pNVar2 = (NavMesh_OnNavMeshPreUpdate *)func_?();
         UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
@@ -451,16 +454,18 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
           GoogleMobileAds.dll::GoogleMobileAds::Api::RewardedAd::RewardedAd_remove_OnAdClicked
                     (pRVar1,(Action *)pNVar2,(MethodInfo *)0x0);
           pRVar1 = (this->fields).rewardedAd;
-          pSVar3 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
-          Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-          SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-          SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
-                    (pSVar3,(Object *)this,
+          pDVar3 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                    *)func_?();
+          DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::
+          Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
+          __Il2CppFullySharedGenericType]::
+          DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                    (pDVar3,(Object *)this,
                      MethodInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateRewardedAd__RewardedAdOnOnAdPaid_GoogleMobileAds__Api__AdValue_
                      ,(MethodInfo *)0x0);
           if (pRVar1 != (RewardedAd *)0x0) {
             GoogleMobileAds.dll::GoogleMobileAds::Api::RewardedAd::RewardedAd_remove_OnAdPaid
-                      (pRVar1,(Action_1_GoogleMobileAds_Api_AdValue_ *)pSVar3,(MethodInfo *)0x0);
+                      (pRVar1,(Action_1_GoogleMobileAds_Api_AdValue_ *)pDVar3,(MethodInfo *)0x0);
             pRVar1 = (this->fields).rewardedAd;
             pNVar2 = (NavMesh_OnNavMeshPreUpdate *)func_?();
             UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
@@ -526,11 +531,11 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
   }
   else {
     this_00 = (this->fields).rewardedAd;
-    this_01 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-              func_?(TypeInfo__System__Action<GoogleMobileAds::Api::Reward>);
-    Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-    SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-    SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+    this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+               *)func_?(TypeInfo__System__Action<GoogleMobileAds::Api::Reward>);
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
               (this_01,(Object *)this,
                MethodInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateRewardedAd__UserRewardEarnedCallback_GoogleMobileAds__Api__Reward_
                ,(MethodInfo *)0x0);
@@ -831,17 +836,18 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
       GoogleMobileAds.dll::GoogleMobileAds::Api::RewardedAd::
       RewardedAd_add_OnAdFullScreenContentClosed(pRVar1,(Action *)pNVar2,(MethodInfo *)0x0);
       pRVar1 = (this->fields).rewardedAd;
-      pSVar3 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
-      Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-      SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-      SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
-                (pSVar3,(Object *)this,
+      pDVar3 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                *)func_?();
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                (pDVar3,(Object *)this,
                  MethodInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateRewardedAd__RewardedAdOnOnAdFullScreenContentFailed_GoogleMobileAds__Api__AdError_
                  ,(MethodInfo *)0x0);
       if (pRVar1 != (RewardedAd *)0x0) {
         GoogleMobileAds.dll::GoogleMobileAds::Api::RewardedAd::
         RewardedAd_add_OnAdFullScreenContentFailed
-                  (pRVar1,(Action_1_GoogleMobileAds_Api_AdError_ *)pSVar3,(MethodInfo *)0x0);
+                  (pRVar1,(Action_1_GoogleMobileAds_Api_AdError_ *)pDVar3,(MethodInfo *)0x0);
         pRVar1 = (this->fields).rewardedAd;
         pNVar2 = (NavMesh_OnNavMeshPreUpdate *)func_?();
         UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
@@ -853,16 +859,18 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
           GoogleMobileAds.dll::GoogleMobileAds::Api::RewardedAd::RewardedAd_add_OnAdClicked
                     (pRVar1,(Action *)pNVar2,(MethodInfo *)0x0);
           pRVar1 = (this->fields).rewardedAd;
-          pSVar3 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
-          Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-          SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-          SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
-                    (pSVar3,(Object *)this,
+          pDVar3 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                    *)func_?();
+          DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::
+          Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
+          __Il2CppFullySharedGenericType]::
+          DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                    (pDVar3,(Object *)this,
                      MethodInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateRewardedAd__RewardedAdOnOnAdPaid_GoogleMobileAds__Api__AdValue_
                      ,(MethodInfo *)0x0);
           if (pRVar1 != (RewardedAd *)0x0) {
             GoogleMobileAds.dll::GoogleMobileAds::Api::RewardedAd::RewardedAd_add_OnAdPaid
-                      (pRVar1,(Action_1_GoogleMobileAds_Api_AdValue_ *)pSVar3,(MethodInfo *)0x0);
+                      (pRVar1,(Action_1_GoogleMobileAds_Api_AdValue_ *)pDVar3,(MethodInfo *)0x0);
             pRVar1 = (this->fields).rewardedAd;
             pNVar2 = (NavMesh_OnNavMeshPreUpdate *)func_?();
             UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::

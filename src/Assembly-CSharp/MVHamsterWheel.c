@@ -230,7 +230,7 @@ code_?:
           unaff_EDI.m_Index = func_?(TypeInfo__CullingSubscriberDynamic);
           CullingSubscriberDynamic::CullingSubscriberDynamic__ctor
                     ((CullingSubscriberDynamic *)unaff_EDI.m_Index,4.0,3,(GameObject *)unaff_ESI,
-                     (GameObject__Array *)0x0,(MethodInfo *)0x0);
+                     (GameObject__Array *)0x0,0,(MethodInfo *)0x0);
           (this->fields).cullingSubscriberDynamic = (CullingSubscriberDynamic *)unaff_EDI.m_Index;
           func_?(&(this->fields).cullingSubscriberDynamic,unaff_EDI.m_Index);
           UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled

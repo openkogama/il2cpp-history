@@ -472,7 +472,7 @@ void Assembly-CSharp.dll::FullScreenController::FullScreenController_PrintLog
     func_?();
   }
   if (TypeInfo__UnityEngine__Debug->static_fields->s_Logger != (ILogger_1 *)0x0) {
-    func_?(5,TypeInfo__UnityEngine__ILogger);
+    func_?(6,TypeInfo__UnityEngine__ILogger);
     return;
   }
   uVar2 = func_?(&stack0xfffffffc);

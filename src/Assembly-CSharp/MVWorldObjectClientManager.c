@@ -335,7 +335,8 @@ Object * Assembly-CSharp.dll::MVWorldObjectClientManager::
   }
   if (gameObject != (GameObject *)0x0) {
     this = (Behaviour *)
-           func_?(gameObject,((method->field7_0x1c).rgctx_data)->rgctxDataDummy);
+           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                     (gameObject,((method->field7_0x1c).rgctx_data)->method);
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
@@ -908,12 +909,13 @@ int32_t Assembly-CSharp.dll::MVWorldObjectClientManager::
                   (MVWorldObjectClientManager *this,int32_t woId,MethodInfo *method)
 
 {
+  pMVar1 = method;
   if (((method->field7_0x1c).rgctx_data == (Il2CppRGCTXData *)0x0) &&
      (func_?(&TypeInfo__UnityEngine__Object),
      (method->field7_0x1c).rgctx_data == (Il2CppRGCTXData *)0x0)) {
     func_?(method);
   }
-  puStack_1 = (undefined *)0xffffffff;
+  method = (MethodInfo *)0xffffffff;
   do {
     pMVar2 = MVWorldObjectClientManager_GetWorldObject(this,woId,(MethodInfo *)0x0);
     if ((pMVar2 == (MVWorldObject *)0x0) ||
@@ -923,31 +925,20 @@ int32_t Assembly-CSharp.dll::MVWorldObjectClientManager::
       iVar4 = (*pcVar3)();
       return iVar4;
     }
-    iVar5 = *(int *)(method->field7_0x1c).methodMetadataHandle;
-    if ((*(int *)(iVar5 + 0x1c) == 0) &&
-       (func_?(&TypeInfo__System__Type), *(int *)(iVar5 + 0x1c) == 0)) {
-      func_?(iVar5);
-    }
-    uStack_6 = 0;
-    handle.value = *(void **)(*(int *)(iVar5 + 0x1c) + 4);
-    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__Type);
-    }
-    type = mscorlib.dll::System::Type::Type_GetTypeFromHandle(handle,(MethodInfo *)0x0);
-    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentFastPath
-              ((GameObject *)this_00,type,(void *)((int)&uStack_6 + 4),(MethodInfo *)0x0);
+    x = (Object_1 *)
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                  ((GameObject *)this_00,((pMVar1->field7_0x1c).rgctx_data)->method);
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    this = (MVWorldObjectClientManager *)0x0;
-    bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      ((Object_1 *)uStack_6,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar7 != 0) {
-      puStack_1 = (undefined *)(pMVar2->fields).id;
+    bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      (x,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar5 != 0) {
+      method = (MethodInfo *)(pMVar2->fields).id;
     }
     woId = (pMVar2->fields).groupId;
   } while (woId != -1);
-  return (int32_t)puStack_1;
+  return (int32_t)method;
 }
 
 

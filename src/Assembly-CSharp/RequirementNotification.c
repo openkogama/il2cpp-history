@@ -41,18 +41,20 @@ void Assembly-CSharp.dll::RequirementNotification::RequirementNotification_Initi
   if ((TypeInfo__RequirementNotification____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__RequirementNotification____c);
   }
-  this_03 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-            TypeInfo__RequirementNotification____c->static_fields->__9__11_0;
-  if (this_03 == (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)0x0) {
+  this_03 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+             *)TypeInfo__RequirementNotification____c->static_fields->__9__11_0;
+  if (this_03 ==
+      (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+       *)0x0) {
     if ((TypeInfo__RequirementNotification____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__RequirementNotification____c);
     }
     object = TypeInfo__RequirementNotification____c->static_fields->__9;
-    this_03 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-              func_?(TypeInfo__System__Action<UnityEngine::GameObject>);
-    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-    SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-    SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+    this_03 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+               *)func_?(TypeInfo__System__Action<UnityEngine::GameObject>);
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
               (this_03,(Object *)object,
                MethodInfo__RequirementNotification____c___Initialize_b__11_0_UnityEngine__GameObject_
                ,(MethodInfo *)0x0);

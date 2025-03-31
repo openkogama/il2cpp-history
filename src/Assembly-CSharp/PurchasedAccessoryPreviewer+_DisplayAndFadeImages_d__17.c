@@ -196,15 +196,15 @@ code_?:
     return 0;
   }
   iVar6 = func_?();
-  pbVar11 = (byte *)(iVar6 + 0x45);
+  pbVar11 = (byte *)(iVar6 + 0x65);
   bVar12 = CARRY1(*pbVar11,extraout_DL) || CARRY1(*pbVar11 + extraout_DL,bVar2);
   *pbVar11 = *pbVar11 + extraout_DL + bVar2;
-  pbVar11 = (byte *)(unaff_EBX + 0x48);
+  pbVar11 = (byte *)(unaff_EBX + 0x68);
   bVar2 = *pbVar11;
   bVar13 = *pbVar11 + (byte)iVar6;
   *pbVar11 = bVar13 + bVar12;
-  *(char *)(extraout_ECX + 0x48) =
-       *(char *)(extraout_ECX + 0x48) + extraout_DL +
+  *(char *)(extraout_ECX + 0x68) =
+       *(char *)(extraout_ECX + 0x68) + extraout_DL +
        (CARRY1(bVar2,(byte)iVar6) || CARRY1(bVar13,bVar12));
   pcVar14 = (code *)swi(3);
   bVar15 = (*pcVar14)();

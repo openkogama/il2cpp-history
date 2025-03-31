@@ -37,11 +37,12 @@ void Assembly-CSharp.dll::MVSoundEmitter::MVSoundEmitter_Destroy
                      );
       cRam_? = '\x01';
     }
-    this_00 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-              func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-    SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-    SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+    this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+               *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>)
+    ;
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
               (this_00,in_stack_1,
                MethodInfo__SoundLoader__OnDownloadFinished_UnityEngine__Networking__UnityWebRequest_
                ,(MethodInfo *)0x0);
@@ -320,30 +321,34 @@ code_?:
             pSVar14 = mscorlib.dll::System::String::String_Concat_3
                                 (pSVar14,(String *)pOVar10,(MethodInfo *)0x0);
             StreamingAsset::StreamingAsset_DBUrlToServerUrl(pSVar14,(MethodInfo *)0x0);
-            pSVar15 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
-            Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-            SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-            SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
-                      (pSVar15,in_stack_9,
+            pDVar15 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                       *)func_?();
+            DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::
+            Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
+            __Il2CppFullySharedGenericType]::
+            DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                      (pDVar15,in_stack_9,
                        MethodInfo__SoundLoader__OnDownloadFinished_UnityEngine__Networking__UnityWebRequest_
                        ,(MethodInfo *)0x0);
             if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
             AsyncWWWManager::AsyncWWWManager_UnsubscribeWWWRequest
-                      ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)pSVar15,(MethodInfo *)0x0
+                      ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)pDVar15,(MethodInfo *)0x0
                       );
-            pSVar15 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
-            Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-            SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-            SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
-                      (pSVar15,in_stack_9,
+            pDVar15 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                       *)func_?();
+            DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::
+            Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
+            __Il2CppFullySharedGenericType]::
+            DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                      (pDVar15,in_stack_9,
                        MethodInfo__SoundLoader__OnDownloadFinished_UnityEngine__Networking__UnityWebRequest_
                        ,(MethodInfo *)0x0);
             this_03 = (AssetBundleRequest *)func_?();
             AssetBundleRequest::AssetBundleRequest__ctor
                       (this_03,(String *)0x0,
-                       (Action_1_UnityEngine_Networking_UnityWebRequest_ *)pSVar15,
+                       (Action_1_UnityEngine_Networking_UnityWebRequest_ *)pDVar15,
                        WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,(MethodInfo *)0x0);
             AsyncWWWManager::AsyncWWWManager_WWWRequest
                       ((AsyncWebRequest *)this_03,(MethodInfo *)0x0);
@@ -704,29 +709,33 @@ code_?:
           pSVar12 = mscorlib.dll::System::String::String_Concat_3
                               (pSVar12,(String *)pOVar8,(MethodInfo *)0x0);
           StreamingAsset::StreamingAsset_DBUrlToServerUrl(pSVar12,(MethodInfo *)0x0);
-          pSVar13 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
-          Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-          SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-          SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
-                    (pSVar13,in_stack_7,
+          pDVar13 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                     *)func_?();
+          DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::
+          Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
+          __Il2CppFullySharedGenericType]::
+          DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                    (pDVar13,in_stack_7,
                      MethodInfo__SoundLoader__OnDownloadFinished_UnityEngine__Networking__UnityWebRequest_
                      ,(MethodInfo *)0x0);
           if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
           AsyncWWWManager::AsyncWWWManager_UnsubscribeWWWRequest
-                    ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)pSVar13,(MethodInfo *)0x0);
-          pSVar13 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
-          Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-          SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-          SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
-                    (pSVar13,in_stack_7,
+                    ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)pDVar13,(MethodInfo *)0x0);
+          pDVar13 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                     *)func_?();
+          DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::
+          Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
+          __Il2CppFullySharedGenericType]::
+          DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                    (pDVar13,in_stack_7,
                      MethodInfo__SoundLoader__OnDownloadFinished_UnityEngine__Networking__UnityWebRequest_
                      ,(MethodInfo *)0x0);
           this_01 = (AssetBundleRequest *)func_?();
           AssetBundleRequest::AssetBundleRequest__ctor
                     (this_01,(String *)0x0,
-                     (Action_1_UnityEngine_Networking_UnityWebRequest_ *)pSVar13,
+                     (Action_1_UnityEngine_Networking_UnityWebRequest_ *)pDVar13,
                      WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,(MethodInfo *)0x0);
           AsyncWWWManager::AsyncWWWManager_WWWRequest((AsyncWebRequest *)this_01,(MethodInfo *)0x0);
           return;

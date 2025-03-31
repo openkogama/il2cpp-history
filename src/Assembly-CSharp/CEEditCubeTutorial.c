@@ -43,7 +43,7 @@ bool Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial_DoReset
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__CubeBase);
     func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
-    func_?(0x817c);
+    func_?(0x6964);
     cRam_? = '\x01';
   }
   pCVar1 = (this->fields).resettingBookkeeping;
@@ -254,8 +254,8 @@ code_?:
     }
     func_?();
     this_02 = (MVCubeModelBase__Class *)func_?();
-    mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor
-              ((Action_2_Object_Int32Enum_ *)this_02,(Object *)this,
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+              ((EventHandler_1_Object_ *)this_02,(Object *)this,
                MethodInfo__CEEditCubeTutorial__SetFirstTimeEventsHappened_MV__WorldObject__MetaData__FirstTimeState__MV__WorldObject__MetaData__FirstTimeEvent_
                ,(MethodInfo *)0x0);
     FirstTimeEventManager::FirstTimeEventManager_SubscribeToFirstTimeState
@@ -751,11 +751,11 @@ void Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial_Exit
                 (this->fields).selectedInstance = (MVCubeModelInstance *)0x0;
                 func_?(&(this->fields).selectedInstance,0);
                 EditorStateMachine::EditorStateMachine_DeSelectAll(esm,(MethodInfo *)0x0);
-                this_03 = (Action_2_Object_Int32Enum_ *)
+                this_03 = (EventHandler_1_Object_ *)
                           func_?(
                                          TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
                                          );
-                mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor
+                mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                           (this_03,(Object *)this,
                            MethodInfo__CEEditCubeTutorial__SetFirstTimeEventsHappened_MV__WorldObject__MetaData__FirstTimeState__MV__WorldObject__MetaData__FirstTimeEvent_
                            ,(MethodInfo *)0x0);

@@ -317,28 +317,26 @@ code_?:
     pUVar5 = pURam00000108;
     if (iRam_? == 0) goto code_?;
     pTVar6 = *(TriggerBoxEvents **)(iRam_? + 0x2c);
-    pUVar7 = (UnityAction_2_System_Object_System_Object_ *)
+    pEVar7 = (EventHandler_1_Object_ *)
              func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              (pUVar7,(Object *)pUVar5,
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+              (pEVar7,(Object *)pUVar5,
                MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                ,(MethodInfo *)0x0);
     if ((pTVar6 == (TriggerBoxEvents *)0x0) ||
        (TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
-                  (pTVar6,(EventHandler_1_TriggerEventArgs_ *)pUVar7,(MethodInfo *)0x0),
+                  (pTVar6,(EventHandler_1_TriggerEventArgs_ *)pEVar7,(MethodInfo *)0x0),
        pUVar5 = pURam00000108, iRam_? == 0)) goto code_?;
     pTVar6 = *(TriggerBoxEvents **)(iRam_? + 0x2c);
-    pUVar7 = (UnityAction_2_System_Object_System_Object_ *)
+    pEVar7 = (EventHandler_1_Object_ *)
              func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              (pUVar7,(Object *)pUVar5,
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+              (pEVar7,(Object *)pUVar5,
                MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                ,(MethodInfo *)0x0);
     if ((pTVar6 == (TriggerBoxEvents *)0x0) ||
        (TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
-                  (pTVar6,(EventHandler_1_TriggerEventArgs_ *)pUVar7,(MethodInfo *)0x0),
+                  (pTVar6,(EventHandler_1_TriggerEventArgs_ *)pEVar7,(MethodInfo *)0x0),
        iRam_? == 0)) goto code_?;
     pGVar4 = *(GameObject **)(iRam_? + 0x1c);
     this_01 = (GameCoinLogic *)func_?(TypeInfo__GameCoinLogic);

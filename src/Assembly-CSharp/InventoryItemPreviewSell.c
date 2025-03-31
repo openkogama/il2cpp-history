@@ -291,12 +291,11 @@ void Assembly-CSharp.dll::InventoryItemPreviewSell::InventoryItemPreviewSell_Ini
                       else {
                         pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game
                                            ((MethodInfo *)0x0);
-                        this_01 = (UnityAction_2_System_Object_System_Object_ *)
+                        this_01 = (EventHandler_1_Object_ *)
                                   func_?(
                                                  TypeInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>
                                                  );
-                        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::
-                        Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor
+                        mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                                   (this_01,(Object *)this,
                                    MethodInfo__InventoryItemPreviewSell__OnLoadMarketPlaceItem_System__Object__ReceivedItemFromQueryEventArgs_
                                    ,(MethodInfo *)0x0);
@@ -619,10 +618,9 @@ void Assembly-CSharp.dll::InventoryItemPreviewSell::InventoryItemPreviewSell_OnL
     cRam_? = '\x01';
   }
   this_03 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  this_04 = (UnityAction_2_System_Object_System_Object_ *)
+  this_04 = (EventHandler_1_Object_ *)
             func_?(TypeInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-  UnityAction_2_System_Object_System_Object___ctor
+  mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
             (this_04,(Object *)this,
              MethodInfo__InventoryItemPreviewSell__OnLoadMarketPlaceItem_System__Object__ReceivedItemFromQueryEventArgs_
              ,(MethodInfo *)0x0);

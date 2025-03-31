@@ -108,21 +108,24 @@ int32_t Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::Spawn
                   (SpawnRoleVariable_1_System_Boolean_ *this,MethodInfo *method)
 
 {
-  pIStack_1 = (method->klass->rgctx_data[3].method)->klass;
-  if (((uint)pIStack_1->vtable[0].methodPtr & 0x100) == 0) {
-    func_?();
+  bVar1 = SubscribableVariableBase`1[System::Boolean]::
+          SubscribableVariableBase_1_System_Boolean__op_Inequality_2
+                    ((SubscribableVariableBase_1_System_Boolean_ *)
+                     (this->fields).subscribableVariable,
+                     (SubscribableVariableBase_1_System_Boolean_ *)0x0,
+                     method->klass->rgctx_data[3].method);
+  if (bVar1 == 0) {
+    return 0;
   }
-  if (cRam_? == '\0') {
-    pIStack_1 = (Il2CppClass *)&TypeInfo__System__Boolean;
-    func_?();
-    cRam_? = '\x01';
+  pSVar2 = (this->fields).subscribableVariable;
+  if (pSVar2 != (SubscribableVariable_1_System_Boolean_ *)0x0) {
+    iVar3 = (*(code *)(pSVar2->klass->vtable).GetHashCode.method)(pSVar2);
+    return iVar3;
   }
-  pIStack_1 = (Il2CppClass *)&stack0xfffffffc;
-  uVar2 = func_?(auStack_3);
-  func_?(uVar2);
+  func_?();
   pcVar4 = (code *)swi(3);
-  iVar5 = (*pcVar4)();
-  return iVar5;
+  iVar3 = (*pcVar4)();
+  return iVar3;
 }
 
 

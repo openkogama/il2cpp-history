@@ -355,11 +355,11 @@ void Assembly-CSharp.dll::AccessoryView::AccessoryView_Destroy
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  this_00 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-            func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-  Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-  SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-  SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+             *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             (this_00,(Object *)this,
              MethodInfo__AccessoryView__OnLevelRequirementLoaded_UnityEngine__Networking__UnityWebRequest_
              ,(MethodInfo *)0x0);
@@ -1272,12 +1272,12 @@ void Assembly-CSharp.dll::AccessoryView::AccessoryView_Initialize
                                             pSVar10 = (accessoryData->fields)._.url;
                                             this_03 = (object->fields).accessoryLoader;
                                             this_07 = (
-                                                  SpawnRoleVariable_1_T_SubDelegate_System_Object_ *
-                                                  )func_?();
-                                            Assets::Scripts::Network::Player::SpawnRoles::
-                                            SpawnRoleData::SpawnRoleVariableTypes::
-                                            SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-                                            SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+                                                  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                                                  *)func_?();
+                                            DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity
+                                            ::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity
+                                            ::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+                                            DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
                                                       (this_07,(Object *)object,
                                                                                                               
                                                   MethodInfo__AccessoryView__AvatarAccessoryCreateHandler_AvatarAccessory_
@@ -2300,13 +2300,14 @@ void Assembly-CSharp.dll::AccessoryView::AccessoryView_SetShowPrices
                               pAVar6 = (this->fields).accessoryDataClient;
                               if (pAVar6 != (AccessoryDataClient *)0x0) {
                                 level = (pAVar6->fields)._.lvl;
-                                this_02 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-                                          func_?(
+                                this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                                           *)func_?(
                                                   TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>
                                                   );
-                                Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
-                                SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::
-                                Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+                                DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity
+                                ::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::
+                                Metadata::__Il2CppFullySharedGenericType]::
+                                DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
                                           (this_02,(Object *)this,
                                            MethodInfo__AccessoryView__OnLevelRequirementLoaded_UnityEngine__Networking__UnityWebRequest_
                                            ,(MethodInfo *)0x0);
@@ -2412,11 +2413,11 @@ void Assembly-CSharp.dll::AccessoryView::AccessoryView__Initialize_b__39_0
     func_?(&TypeInfo__UnityEngine__EventSystems__IGetCurrentBody);
     cRam_? = '\x01';
   }
-  this_00 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-            func_?(TypeInfo__System__Action<MVBody>);
-  Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-  SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-  SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+             *)func_?(TypeInfo__System__Action<MVBody>);
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             (this_00,(Object *)this,MethodInfo__AccessoryView__HandlePreviewing_MVBody_,
              (MethodInfo *)0x0);
   if (x == (IGetCurrentBody *)0x0) {

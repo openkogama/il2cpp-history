@@ -11,7 +11,7 @@ Assembly-CSharp.dll::CubeModelingStateMachine::CubeModelingStateMachine_AddCube
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__CubeBase);
     func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
-    func_?(0x817c);
+    func_?(0x6964);
     cRam_? = '\x01';
   }
   pCVar4 = (this->fields)._SelectedCube_k__BackingField;
@@ -50,7 +50,7 @@ code_?:
             IVar14.x = uVar12;
             this._2_2_ = (pCVar4->fields).iLocalPos.z;
             if (cRam_? == '\0') {
-              this._2_2_ = 0x11b2;
+              this._2_2_ = 0x11b3;
               func_?();
               func_?();
               cRam_? = '\x01';
@@ -444,7 +444,7 @@ void Assembly-CSharp.dll::CubeModelingStateMachine::CubeModelingStateMachine_Han
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__AudioEventHandler);
-    func_?(0x81fc);
+    func_?(0x69e4);
     cRam_? = '\x01';
   }
   if (action == AudioActions__Enum_CubeAdded) {

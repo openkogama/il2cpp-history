@@ -32,12 +32,12 @@ void Assembly-CSharp.dll::FirstTimeActivatableElementBase::FirstTimeActivatableE
     cRam_? = '\x01';
   }
   FirstTimeActivatableElementBase_UnRegister(this,(MethodInfo *)0x0);
-  this_00 = (Action_2_Object_Int32Enum_ *)
+  this_00 = (EventHandler_1_Object_ *)
             func_?(
                            TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
                            );
   if (this != (FirstTimeActivatableElementBase *)0x0) {
-    mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
               (this_00,(Object *)this,(this->klass->vtable).OnDestroy.methodPtr,(MethodInfo *)0x0);
     FirstTimeEventManager::FirstTimeEventManager_UnSubscribeToFirstTimeState
               ((Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
@@ -257,11 +257,11 @@ void Assembly-CSharp.dll::FirstTimeActivatableElementBase::FirstTimeActivatableE
       return;
     }
   }
-  this_00 = (Action_2_Object_Int32Enum_ *)
+  this_00 = (EventHandler_1_Object_ *)
             func_?(
                            TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
                            );
-  mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor
+  mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
             (this_00,(Object *)this,(this->klass->vtable).OnDestroy.methodPtr,(MethodInfo *)0x0);
   FirstTimeEventManager::FirstTimeEventManager_SubscribeToFirstTimeState
             ((Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_

@@ -11,35 +11,35 @@ void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
   pMVar1 = method->klass->rgctx_data[3].method;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-  method_00 = pMVar1->klass->rgctx_data[2].method;
-  if ((method_00[3].slot & 0x100) == 0) {
-    method_00 = (MethodInfo *)func_?(method_00);
+  pIVar2 = pMVar1->klass->rgctx_data[2].klass;
+  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
+    pIVar2 = (Il2CppClass *)func_?(pIVar2);
   }
-  pSVar2 = (SubscribableVariable_1_UnityEngine_Vector3_ *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)pSVar2,ExceptionArgument__Enum_obj,method_00);
-  (pSVar2->fields)._.value.x = (float)(int)value._0_8_;
-  (pSVar2->fields)._.value.y = (float)(int)((ulonglong)value._0_8_ >> 0x20);
-  (pSVar2->fields)._.value.z = value.z;
-  (this->fields)._.subscribableVariable = pSVar2;
-  func_?(&this->fields,pSVar2);
-  pSVar2 = (this->fields)._.subscribableVariable;
-  pIVar3 = pMVar1->klass->rgctx_data[0xc].klass;
-  if (((uint)pIVar3->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar3 = (Il2CppClass *)func_?(pIVar3);
+  this_01 = (SubscribableVariable_1_UnityEngine_Vector3_ *)func_?(pIVar2);
+  SubscribableVariable`1[UnityEngine::Vector3]::SubscribableVariable_1_UnityEngine_Vector3___ctor
+            (this_01,value,pMVar1->klass->rgctx_data[10].method);
+  (this->fields)._.subscribableVariable = this_01;
+  func_?(&this->fields,this_01);
+  this_00 = (SubscribableVariableBase_1_UnityEngine_Vector3_ *)(this->fields)._.subscribableVariable
+  ;
+  if (((uint)(pMVar1->klass->rgctx_data[0xc].klass)->vtable[0].methodPtr & 0x100) == 0) {
+    func_?();
   }
-  this_00 = (SpawnRoleVariable_1_T_SubDelegate_UnityEngine_Vector3_ *)func_?(pIVar3);
+  this_02 = (SpawnRoleVariable_1_T_SubDelegate_UnityEngine_Vector3_ *)func_?();
   SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[UnityEngine::Vector3]::
   SpawnRoleVariable_1_T_SubDelegate_UnityEngine_Vector3___ctor
-            (this_00,(Object *)this,pMVar1->klass->rgctx_data[0xb].rgctxDataDummy,
+            (this_02,(Object *)this,pMVar1->klass->rgctx_data[0xb].rgctxDataDummy,
              pMVar1->klass->rgctx_data[0xd].method);
-  if (pSVar2 != (SubscribableVariable_1_UnityEngine_Vector3_ *)0x0) {
-    func_?();
+  if (this_00 != (SubscribableVariableBase_1_UnityEngine_Vector3_ *)0x0) {
+    SubscribableVariableBase`1[UnityEngine::Vector3]::
+    SubscribableVariableBase_1_UnityEngine_Vector3__add_OnChange
+              (this_00,(Action_1_UnityEngine_Vector3_ *)this_02,
+               pMVar1->klass->rgctx_data[0xe].method);
     return;
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

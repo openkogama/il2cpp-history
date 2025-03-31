@@ -166,43 +166,41 @@ code_?:
   unaff_ESI = 0;
   if (pAVar2 == (AvatarModifier *)0x0) {
 code_?:
-    func_?();
-    pbVar3 = (byte *)(extraout_EDX + -0x65adefd2);
-    bVar4 = *pbVar3;
-    bVar5 = (byte)unaff_EBX;
-    *pbVar3 = *pbVar3 - bVar5;
-    pbVar3 = (byte *)(extraout_ECX + -100);
-    bVar6 = *pbVar3 + (byte)extraout_EDX;
-    bVar7 = CARRY1(*pbVar3,(byte)extraout_EDX) || CARRY1(bVar6,bVar4 < bVar5);
-    *pbVar3 = bVar6 + (bVar4 < bVar5);
-    pbVar3 = (byte *)(extraout_EDX + 0x2e + unaff_EBX * 4);
-    bVar4 = *pbVar3;
-    bVar5 = (byte)((uint)unaff_EBX >> 8);
-    bVar6 = *pbVar3 + bVar5;
-    *pbVar3 = bVar6 + bVar7;
-    *(char *)(unaff_ESI + -0x2fefd166) =
-         *(char *)(unaff_ESI + -0x2fefd166) + extraout_AH +
-         (CARRY1(bVar4,bVar5) || CARRY1(bVar6,bVar7));
-    uVar8 = func_?();
-    uVar9 = (uint)uVar8 & 0xffffff9b;
-    pbVar3 = (byte *)(unaff_ESI + -0x65);
-    bVar4 = *pbVar3;
-    bVar6 = (byte)extraout_ECX_00;
-    *pbVar3 = *pbVar3 + bVar6;
-    pbVar3 = (byte *)(unaff_ESI + -0x30efd165);
-    bVar7 = CARRY1(*pbVar3,bVar6) || CARRY1(*pbVar3 + bVar6,CARRY1(bVar4,bVar6));
-    *pbVar3 = *pbVar3 + bVar6 + CARRY1(bVar4,bVar6);
-    bVar5 = (byte)((uint)extraout_ECX_00 >> 8);
-    bVar10 = (byte)((ulonglong)uVar8 >> 0x28);
-    bVar4 = bVar10 + bVar5;
-    piVar11 = (int *)CONCAT22((short)((ulonglong)uVar8 >> 0x30),
-                             CONCAT11(bVar4 + bVar7,(char)((ulonglong)uVar8 >> 0x20)));
-    cRam_? = cRam_? + bVar6 + (CARRY1(bVar10,bVar5) || CARRY1(bVar4,bVar7));
-    *piVar11 = *piVar11 + uVar9;
-    *(char *)piVar11 = (char)*piVar11 + (char)uVar9 + (char)*piVar11 + (char)*piVar11;
-    *extraout_ECX_00 = *extraout_ECX_00 | bVar6;
-    pcVar12 = (code *)swi(3);
-    pAVar2 = (AvatarModifier *)(*pcVar12)();
+    uVar3 = func_?();
+    iVar1 = (int)((ulonglong)uVar3 >> 0x20);
+    pbVar4 = (byte *)(iVar1 + -0x45adefd2);
+    bVar5 = *pbVar4;
+    bVar6 = (byte)((uint)unaff_EBX >> 8);
+    *pbVar4 = *pbVar4 - bVar6;
+    pbVar4 = extraout_ECX + -0x44;
+    bVar7 = (byte)((ulonglong)uVar3 >> 0x20);
+    bVar8 = *pbVar4 + bVar7;
+    bVar9 = CARRY1(*pbVar4,bVar7) || CARRY1(bVar8,bVar5 < bVar6);
+    *pbVar4 = bVar8 + (bVar5 < bVar6);
+    pbVar4 = (byte *)(iVar1 + 0x2e + unaff_EDI * 4);
+    bVar10 = CARRY1(*pbVar4,bVar6) || CARRY1(*pbVar4 + bVar6,bVar9);
+    *pbVar4 = *pbVar4 + bVar6 + bVar9;
+    pbVar4 = (byte *)(unaff_ESI + -0x2fefd146);
+    bVar5 = (byte)((ulonglong)uVar3 >> 8);
+    bVar9 = CARRY1(*pbVar4,bVar5) || CARRY1(*pbVar4 + bVar5,bVar10);
+    *pbVar4 = *pbVar4 + bVar5 + bVar10;
+    pbVar4 = (byte *)(unaff_EBX + unaff_EDI * 4);
+    bVar10 = CARRY1(*pbVar4,bVar5) || CARRY1(*pbVar4 + bVar5,bVar9);
+    *pbVar4 = *pbVar4 + bVar5 + bVar9;
+    pbVar4 = (byte *)(unaff_ESI + -0x45);
+    bVar7 = (byte)extraout_ECX;
+    bVar9 = CARRY1(*pbVar4,bVar7) || CARRY1(*pbVar4 + bVar7,bVar10);
+    *pbVar4 = *pbVar4 + bVar7 + bVar10;
+    pbVar4 = (byte *)(unaff_ESI + -0x30efd145);
+    bVar5 = *pbVar4;
+    bVar8 = *pbVar4;
+    *pbVar4 = bVar8 + bVar7 + bVar9;
+    cRam_? = cRam_? + bVar7 + (CARRY1(bVar5,bVar7) || CARRY1(bVar8 + bVar7,bVar9));
+    iVar1 = iRam_? + (int)uVar3;
+    iRam_? = CONCAT31((int3)((uint)iVar1 >> 8),(char)uVar3 + (char)iVar1 * '\x03');
+    *extraout_ECX = *extraout_ECX | bVar7;
+    pcVar11 = (code *)swi(3);
+    pAVar2 = (AvatarModifier *)(*pcVar11)();
     return pAVar2;
   }
 code_?:

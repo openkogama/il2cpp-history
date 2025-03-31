@@ -106,8 +106,8 @@ void Assembly-CSharp.dll::FirstTimeActivatablePopupParentToGameobject::
   }
   FirstTimeActivatableElementBase::FirstTimeActivatableElementBase_UnRegister
             ((FirstTimeActivatableElementBase *)this,(MethodInfo *)0x0);
-  this_00 = (Action_2_Object_Int32Enum_ *)func_?();
-  mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor
+  this_00 = (EventHandler_1_Object_ *)func_?();
+  mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
             (this_00,(Object *)this,(this->klass->vtable).OnDestroy.methodPtr,(MethodInfo *)0x0);
   FirstTimeEventManager::FirstTimeEventManager_UnSubscribeToFirstTimeState
             ((Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_

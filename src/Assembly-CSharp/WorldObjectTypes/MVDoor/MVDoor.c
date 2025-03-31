@@ -369,30 +369,28 @@ void Assembly-CSharp.dll::WorldObjectTypes::MVDoor::MVDoor::MVDoor_DestroyUseInt
   if (pMVar1 != (MVDoorObject *)0x0) {
     pTVar2 = (pMVar1->fields).triggerBoxEvents;
     pUVar3 = (this->fields).useInteractor;
-    pUVar4 = (UnityAction_2_System_Object_System_Object_ *)
+    pEVar4 = (EventHandler_1_Object_ *)
              func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              (pUVar4,(Object *)pUVar3,
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+              (pEVar4,(Object *)pUVar3,
                MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                ,(MethodInfo *)0x0);
     if (pTVar2 != (TriggerBoxEvents *)0x0) {
       TriggerBoxEvents::TriggerBoxEvents_remove_TriggerEnter
-                (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pUVar4,(MethodInfo *)0x0);
+                (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pEVar4,(MethodInfo *)0x0);
       pMVar1 = (this->fields).doorObject;
       if (pMVar1 != (MVDoorObject *)0x0) {
         pTVar2 = (pMVar1->fields).triggerBoxEvents;
         pUVar3 = (this->fields).useInteractor;
-        pUVar4 = (UnityAction_2_System_Object_System_Object_ *)
+        pEVar4 = (EventHandler_1_Object_ *)
                  func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  (pUVar4,(Object *)pUVar3,
+        mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                  (pEVar4,(Object *)pUVar3,
                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                    ,(MethodInfo *)0x0);
         if (pTVar2 != (TriggerBoxEvents *)0x0) {
           TriggerBoxEvents::TriggerBoxEvents_remove_TriggerExit
-                    (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pUVar4,(MethodInfo *)0x0);
+                    (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pEVar4,(MethodInfo *)0x0);
           pUVar3 = (this->fields).useInteractor;
           if (pUVar3 != (UseInteractor *)0x0) {
             UseInteractor::UseInteractor_OnDestroy
@@ -1450,30 +1448,28 @@ code_?:
     if (pMVar2 == (MVDoorObject *)0x0) goto code_?;
     pTVar4 = (pMVar2->fields).triggerBoxEvents;
     pUVar1 = (this->fields).useInteractor;
-    pUVar5 = (UnityAction_2_System_Object_System_Object_ *)
+    pEVar5 = (EventHandler_1_Object_ *)
              func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              (pUVar5,(Object *)pUVar1,
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+              (pEVar5,(Object *)pUVar1,
                MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                ,(MethodInfo *)0x0);
     if (pTVar4 == (TriggerBoxEvents *)0x0) goto code_?;
     TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
-              (pTVar4,(EventHandler_1_TriggerEventArgs_ *)pUVar5,(MethodInfo *)0x0);
+              (pTVar4,(EventHandler_1_TriggerEventArgs_ *)pEVar5,(MethodInfo *)0x0);
     pMVar2 = (this->fields).doorObject;
     if (pMVar2 == (MVDoorObject *)0x0) goto code_?;
     pTVar4 = (pMVar2->fields).triggerBoxEvents;
     pUVar1 = (this->fields).useInteractor;
-    pUVar5 = (UnityAction_2_System_Object_System_Object_ *)
+    pEVar5 = (EventHandler_1_Object_ *)
              func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              (pUVar5,(Object *)pUVar1,
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+              (pEVar5,(Object *)pUVar1,
                MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                ,(MethodInfo *)0x0);
     if (pTVar4 == (TriggerBoxEvents *)0x0) goto code_?;
     TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
-              (pTVar4,(EventHandler_1_TriggerEventArgs_ *)pUVar5,(MethodInfo *)0x0);
+              (pTVar4,(EventHandler_1_TriggerEventArgs_ *)pEVar5,(MethodInfo *)0x0);
     pMVar2 = (this->fields).doorObject;
     if (pMVar2 == (MVDoorObject *)0x0) goto code_?;
     pGVar3 = (pMVar2->fields).useInteractionRotator;

@@ -466,7 +466,7 @@ code_?:
                             this_04 = (CullingSubscriberDynamic *)
                                       func_?(TypeInfo__CullingSubscriberDynamic);
                             CullingSubscriberDynamic::CullingSubscriberDynamic__ctor
-                                      (this_04,4.0,3,pGVar13,(GameObject__Array *)0x0,
+                                      (this_04,4.0,3,pGVar13,(GameObject__Array *)0x0,0,
                                        (MethodInfo *)0x0);
                             (this->fields).cullingSubscriberDynamic = this_04;
                             func_?();

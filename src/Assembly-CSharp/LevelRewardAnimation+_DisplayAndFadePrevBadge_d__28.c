@@ -226,7 +226,7 @@ code_?:
   }
 code_?:
   iVar15 = func_?();
-  *(char *)(iVar15 + 0x3010400c) = *(char *)(iVar15 + 0x3010400c) + extraout_DL;
+  *(char *)(iVar15 + 0x3010402c) = *(char *)(iVar15 + 0x3010402c) + extraout_DL;
   pcVar16 = (code *)swi(3);
   bVar17 = (*pcVar16)();
   return bVar17;

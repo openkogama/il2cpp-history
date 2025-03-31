@@ -209,11 +209,9 @@ code_?:
       return;
     }
   }
-  iRam_? = func_?();
-  *(char *)(iRam_? + -0x33efcb59) = *(char *)(iRam_? + -0x33efcb59) + extraout_CH;
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
-  return;
+  func_?();
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 

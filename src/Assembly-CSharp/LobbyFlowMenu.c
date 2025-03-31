@@ -478,8 +478,8 @@ void Assembly-CSharp.dll::LobbyFlowMenu::LobbyFlowMenu_GoToMenu
     }
   }
   bVar6 = func_?();
-  pbVar7 = (byte *)segment(in_SS,(short)&stack0xfffffffc + (short)value + 0x10);
-  *pbVar7 = *pbVar7 | (byte)extraout_ECX;
+  pcVar7 = (char *)segment(in_SS,(short)&stack0xfffffffc + (short)value + 0x10);
+  *pcVar7 = *pcVar7 - (char)extraout_ECX;
   puVar8 = (undefined4 *)&stack0x00000014;
   cVar9 = '\x0f';
   do {
@@ -488,15 +488,16 @@ void Assembly-CSharp.dll::LobbyFlowMenu::LobbyFlowMenu_GoToMenu
     *puVar8 = *puVar1;
     cVar9 = cVar9 + -1;
   } while ('\0' < cVar9);
-  bVar10 = bVar6 < *(byte *)&((ExecuteEvents_EventFunction_1_System_Object_ *)this)->klass;
-  pOVar11 = value + 1;
+  bVar10 = 0x99 < bVar6 ||
+          bVar6 < *(byte *)&((ExecuteEvents_EventFunction_1_System_Object_ *)this)->klass;
+  pOVar11 = value + 5;
   bVar6 = *(byte *)&pOVar11->klass;
-  bVar12 = (byte)(extraout_ECX >> 8);
+  bVar12 = (byte)((uint)extraout_ECX >> 8);
   bVar13 = *(char *)&pOVar11->klass + bVar12;
   *(byte *)&pOVar11->klass = bVar13 + bVar10;
   *(byte *)&value->klass =
        *(char *)&value->klass + bVar12 + (CARRY1(bVar6,bVar12) || CARRY1(bVar13,bVar10));
-  *(uint *)(extraout_EDX + 0xe) = *(uint *)(extraout_EDX + 0xe) | extraout_ECX;
+  *(int *)(extraout_EDX + 0xe) = *(int *)(extraout_EDX + 0xe) - extraout_ECX;
   pcVar14 = (code *)swi(3);
   (*pcVar14)();
   return;

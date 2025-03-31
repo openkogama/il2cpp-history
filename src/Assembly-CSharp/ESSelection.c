@@ -165,11 +165,10 @@ void Assembly-CSharp.dll::ESSelection::ESSelection_Enter
       pEVar17 = (this->fields).editorStateMachine;
       if (pEVar17 != (EditorStateMachine *)0x0) {
         pSVar18 = (pEVar17->fields).selectionController;
-        this_04 = (UnityAction_2_System_Object_System_Object_ *)
+        this_04 = (EventHandler_1_Object_ *)
                   func_?(TypeInfo__System__EventHandler<WorldObjectDestroyedEventArgs>);
         VStack_13.z = (float)this_04;
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
+        mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                   (this_04,(Object *)this,
                    MethodInfo__ESSelection__SelectionController_SelectedWorldObjectDeletedHandler_System__Object__WorldObjectDestroyedEventArgs_
                    ,(MethodInfo *)0x0);
@@ -641,9 +640,8 @@ code_?:
   pEVar3 = (this->fields).editorStateMachine;
   if (pEVar3 != (EditorStateMachine *)0x0) {
     pSVar4 = (pEVar3->fields).selectionController;
-    this_01 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
+    this_01 = (EventHandler_1_Object_ *)func_?();
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
               (this_01,(Object *)this,
                MethodInfo__ESSelection__SelectionController_SelectedWorldObjectDeletedHandler_System__Object__WorldObjectDestroyedEventArgs_
                ,(MethodInfo *)0x0);

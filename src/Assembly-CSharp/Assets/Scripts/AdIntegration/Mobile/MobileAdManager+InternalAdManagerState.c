@@ -300,11 +300,12 @@ code_?:
           }
           else {
             this_00 = (pMVar3->fields).rewardedAd;
-            this_01 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-                      func_?(TypeInfo__System__Action<GoogleMobileAds::Api::Reward>);
-            Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-            SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-            SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+            this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                       *)func_?(TypeInfo__System__Action<GoogleMobileAds::Api::Reward>);
+            DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::
+            Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
+            __Il2CppFullySharedGenericType]::
+            DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
                       (this_01,(Object *)pMVar3,
                        MethodInfo__Assets__Scripts__AdIntegration__Mobile__MobileAdManager__InternalStateRewardedAd__UserRewardEarnedCallback_GoogleMobileAds__Api__Reward_
                        ,(MethodInfo *)0x0);

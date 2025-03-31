@@ -8,7 +8,7 @@ void Assembly-CSharp.dll::ModelingBoxConstraint::ModelingBoxConstraint_ChangeBox
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__ConstraintBoxChangedEventArgs);
-    func_?(0xa594);
+    func_?(0x9260);
     cRam_? = '\x01';
   }
   uVar1 = 0;
@@ -159,10 +159,10 @@ void Assembly-CSharp.dll::ModelingBoxConstraint::ModelingBoxConstraint__ctor
   uVar1 = (undefined2)((uint)in_stack_2 >> 0x10);
   uVar3 = (undefined2)((uint)unaff_EDI >> 0x10);
   if (cRam_? == '\0') {
-    func_?(0xa8fc);
-    in_stack_4 = 0x11b3;
-    func_?(0xa594);
-    func_?(0xf99c);
+    func_?(0x90e4);
+    in_stack_4 = 0x11b5;
+    func_?(0x9260);
+    func_?(0x8cb4);
     cRam_? = '\x01';
   }
   if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
@@ -232,9 +232,8 @@ void Assembly-CSharp.dll::ModelingBoxConstraint::ModelingBoxConstraint__ctor_1
     object = TypeInfo__ModelingBoxConstraint____c->static_fields->__9;
     this_00 = (EventHandler_1_ConstraintBoxChangedEventArgs_ *)
               func_?(TypeInfo__System__EventHandler<ConstraintBoxChangedEventArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)this_00,(Object *)object,
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+              ((EventHandler_1_Object_ *)this_00,(Object *)object,
                MethodInfo__ModelingBoxConstraint____c____ctor_b__24_0_System__Object__ConstraintBoxChangedEventArgs_
                ,(MethodInfo *)0x0);
     TypeInfo__ModelingBoxConstraint____c->static_fields->__9__24_0 = this_00;
@@ -254,7 +253,7 @@ void Assembly-CSharp.dll::ModelingBoxConstraint::ModelingBoxConstraint__ctor_1
     IStack_2.z = minCorner.z;
     if (cRam_? == '\0') {
       func_?(&TypeInfo__ConstraintBoxChangedEventArgs);
-      func_?(0xa594);
+      func_?(0x9260);
       cRam_? = '\x01';
     }
     uVar3 = 0;

@@ -65,17 +65,20 @@ void Assembly-CSharp.dll::AvatarPictureTakerUGUI::AvatarPictureTakerUGUI_OnPostR
     if ((TypeInfo__AvatarPictureTakerUGUI____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    this_01 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-              TypeInfo__AvatarPictureTakerUGUI____c->static_fields->__9__7_0;
-    if (this_01 == (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)0x0) {
+    this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+               *)TypeInfo__AvatarPictureTakerUGUI____c->static_fields->__9__7_0;
+    if (this_01 ==
+        (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+         *)0x0) {
       if ((TypeInfo__AvatarPictureTakerUGUI____c->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       object = TypeInfo__AvatarPictureTakerUGUI____c->static_fields->__9;
-      this_01 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
-      Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-      SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-      SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+      this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                 *)func_?();
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
                 (this_01,(Object *)object,
                  MethodInfo__AvatarPictureTakerUGUI____c___OnPostRender_b__7_0_UnityEngine__MeshRenderer_
                  ,(MethodInfo *)0x0);
@@ -155,17 +158,20 @@ void Assembly-CSharp.dll::AvatarPictureTakerUGUI::AvatarPictureTakerUGUI_OnPreCu
       if ((TypeInfo__AvatarPictureTakerUGUI____c->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      this_01 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-                TypeInfo__AvatarPictureTakerUGUI____c->static_fields->__9__6_0;
-      if (this_01 == (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)0x0) {
+      this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                 *)TypeInfo__AvatarPictureTakerUGUI____c->static_fields->__9__6_0;
+      if (this_01 ==
+          (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+           *)0x0) {
         if ((TypeInfo__AvatarPictureTakerUGUI____c->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
         object = TypeInfo__AvatarPictureTakerUGUI____c->static_fields->__9;
-        this_01 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
-        Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-        SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-        SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+        this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                   *)func_?();
+        DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata
+        ::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+        DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
                   (this_01,(Object *)object,
                    MethodInfo__AvatarPictureTakerUGUI____c___OnPreCull_b__6_0_UnityEngine__MeshRenderer_
                    ,(MethodInfo *)0x0);
@@ -346,21 +352,24 @@ void Assembly-CSharp.dll::AvatarPictureTakerUGUI::AvatarPictureTakerUGUI_TakePic
                             == 0) {
                           func_?();
                         }
-                        this_02 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-                                  TypeInfo__AvatarPictureTakerUGUI____c->static_fields->__9__5_0;
-                        if (this_02 == (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)0x0) {
+                        this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                                   *)TypeInfo__AvatarPictureTakerUGUI____c->static_fields->__9__5_0;
+                        if (this_02 ==
+                            (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                             *)0x0) {
                           if ((TypeInfo__AvatarPictureTakerUGUI____c->_1).cctor_finished_or_no_cctor
                               == 0) {
                             func_?(TypeInfo__AvatarPictureTakerUGUI____c);
                           }
                           object = TypeInfo__AvatarPictureTakerUGUI____c->static_fields->__9;
-                          this_02 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-                                    func_?(
+                          this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                                     *)func_?(
                                                   TypeInfo__System__Action<UnityEngine::MeshRenderer>
                                                   );
-                          Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
-                          SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]
-                          ::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
+                          DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity
+                          ::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata
+                          ::__Il2CppFullySharedGenericType]::
+                          DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
                                     (this_02,(Object *)object,
                                      MethodInfo__AvatarPictureTakerUGUI____c___TakePicture_b__5_0_UnityEngine__MeshRenderer_
                                      ,(MethodInfo *)0x0);

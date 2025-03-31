@@ -173,21 +173,21 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::Avatar::Accessories
       object[1].monitor = (MonitorData *)0x0;
       func_?(&object[1].monitor,0);
       method_00 = (MethodInfo *)&UNK_?;
-      pSStack_12 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)
-                   func_?(
-                                  TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>
-                                  );
-      Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-      SpawnRoleVariable`1[T]+SubDelegate[System::Object]::
-      SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor
-                (pSStack_12,object,
+      pDStack_12 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                    *)func_?(
+                                     TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>
+                                     );
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                (pDStack_12,object,
                  MethodInfo__Assets__Scripts__WorldObjectTypes__Avatar__Accessories__AccessoryLoader__AccessoryLoaderRequest__Callback_UnityEngine__Networking__UnityWebRequest_
                  ,(MethodInfo *)0x0);
       if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__AsyncWWWManager);
       }
       AsyncWWWManager::AsyncWWWManager_UnsubscribeWWWRequest
-                ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)pSStack_12,(MethodInfo *)0x0);
+                ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)pDStack_12,(MethodInfo *)0x0);
     }
     uStack_1 = 0xffffffff;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57

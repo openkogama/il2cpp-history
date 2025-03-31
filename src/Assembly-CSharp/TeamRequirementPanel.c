@@ -49,10 +49,10 @@ void Assembly-CSharp.dll::TeamRequirementPanel::TeamRequirementPanel_OnToggleEna
   }
 code_?:
   func_?();
-  *(char *)(extraout_ECX + -0x56efc1be) =
-       *(char *)(extraout_ECX + -0x56efc1be) + (char)((uint)(extraout_ECX + 1) >> 8);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  *(char *)(in_stack_6 + -0x56efc19f) =
+       *(char *)(in_stack_6 + -0x56efc19f) + (char)((uint)in_stack_6 >> 8);
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

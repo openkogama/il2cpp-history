@@ -351,7 +351,7 @@ void Assembly-CSharp.dll::AndroidVehicleCamera::AndroidVehicleCamera_UpdateCamer
               targetPosition.z = fVar17;
               bVar21 = CameraCollision::CameraCollision_Collide_1
                                  (this_00,(VoxelHit *)&stack0xffffff50,(Vector3 *)&stack0xffffffd4,
-                                  (float)this_03,3.1957762e-29,targetPosition,*pVVar10,
+                                  (float)this_03,3.1982414e-29,targetPosition,*pVVar10,
                                   (this->fields).ignoreAvatarId,(MethodInfo *)0x0);
               if (bVar21 != 0) {
                 pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::

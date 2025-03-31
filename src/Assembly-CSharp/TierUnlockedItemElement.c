@@ -606,21 +606,26 @@ code_?:
     return;
   }
 code_?:
+  bVar9 = 0;
   CStack_7.g = (float)&UNK_?;
-  bVar9 = func_?();
-  *extraout_ECX = *extraout_ECX + unaff_BH + (bVar9 < 0x86);
-  LOCK();
-  pcVar10 = (char *)((int)&(this->fields).objectPreviewerPrefab + 1);
-  cVar11 = *pcVar10;
-  *pcVar10 = bVar9 + 0x7a;
-  UNLOCK();
-  CStack_7.g = (float)team;
-  LOCK();
-  *(char *)((int)&(this->fields).objectPreviewerPrefab + 1) = cVar11;
-  UNLOCK();
-  *(undefined2 *)(team + 0x86731047) = in_ES;
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  func_?();
+  pbVar10 = (byte *)(team + MVTeam__Enum_Server);
+  this->klass = *(TierUnlockedItemElement__Class **)team;
+  bVar11 = *pbVar10;
+  bVar12 = *pbVar10;
+  *pbVar10 = bVar12 + unaff_BL + bVar9;
+  *extraout_ECX =
+       *extraout_ECX + unaff_BH + (CARRY1(bVar11,unaff_BL) || CARRY1(bVar12 + unaff_BL,bVar9));
+  bVar13 = *pbVar10 < *(byte *)((int)&this->monitor + 2);
+  pbVar10 = (byte *)(team - 0x55);
+  bVar11 = *pbVar10;
+  bVar12 = *pbVar10;
+  *pbVar10 = bVar12 + extraout_DL + bVar13;
+  *(char *)(team + 0xa673104c) =
+       *(char *)(team + 0xa673104c) + (char)extraout_ECX +
+       (CARRY1(bVar11,extraout_DL) || CARRY1(bVar12 + extraout_DL,bVar13));
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 

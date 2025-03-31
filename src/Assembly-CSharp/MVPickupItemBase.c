@@ -63,29 +63,27 @@ void Assembly-CSharp.dll::MVPickupItemBase::MVPickupItemBase_Destroy
   pMVar1 = (this->fields)._BaseObject_k__BackingField;
   if (pMVar1 != (MVPickupItemBaseObject *)0x0) {
     pTVar2 = (pMVar1->fields).triggerBoxEvents;
-    pUVar3 = (UnityAction_2_System_Object_System_Object_ *)
+    pEVar3 = (EventHandler_1_Object_ *)
              func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              (pUVar3,(Object *)this,
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+              (pEVar3,(Object *)this,
                MethodInfo__MVPickupItemBase__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                ,(MethodInfo *)0x0);
     if (pTVar2 != (TriggerBoxEvents *)0x0) {
       TriggerBoxEvents::TriggerBoxEvents_remove_TriggerEnter
-                (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pUVar3,(MethodInfo *)0x0);
+                (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pEVar3,(MethodInfo *)0x0);
       pMVar1 = (this->fields)._BaseObject_k__BackingField;
       if (pMVar1 != (MVPickupItemBaseObject *)0x0) {
         pTVar2 = (pMVar1->fields).triggerBoxEvents;
-        pUVar3 = (UnityAction_2_System_Object_System_Object_ *)
+        pEVar3 = (EventHandler_1_Object_ *)
                  func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  (pUVar3,(Object *)this,
+        mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                  (pEVar3,(Object *)this,
                    MethodInfo__MVPickupItemBase__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                    ,(MethodInfo *)0x0);
         if (pTVar2 != (TriggerBoxEvents *)0x0) {
           TriggerBoxEvents::TriggerBoxEvents_remove_TriggerExit
-                    (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pUVar3,(MethodInfo *)0x0);
+                    (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pEVar3,(MethodInfo *)0x0);
           if ((this->fields).useInteractor == (UseInteractor *)0x0) {
 code_?:
             if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
@@ -100,30 +98,28 @@ code_?:
           if (pMVar1 != (MVPickupItemBaseObject *)0x0) {
             pTVar2 = (pMVar1->fields).triggerBoxEvents;
             pUVar4 = (this->fields).useInteractor;
-            pUVar3 = (UnityAction_2_System_Object_System_Object_ *)
+            pEVar3 = (EventHandler_1_Object_ *)
                      func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-            Object]::UnityAction_2_System_Object_System_Object___ctor
-                      (pUVar3,(Object *)pUVar4,
+            mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                      (pEVar3,(Object *)pUVar4,
                        MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                        ,(MethodInfo *)0x0);
             if (pTVar2 != (TriggerBoxEvents *)0x0) {
               TriggerBoxEvents::TriggerBoxEvents_remove_TriggerEnter
-                        (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pUVar3,(MethodInfo *)0x0);
+                        (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pEVar3,(MethodInfo *)0x0);
               pMVar1 = (this->fields)._BaseObject_k__BackingField;
               if (pMVar1 != (MVPickupItemBaseObject *)0x0) {
                 pTVar2 = (pMVar1->fields).triggerBoxEvents;
                 pUVar4 = (this->fields).useInteractor;
-                pUVar3 = (UnityAction_2_System_Object_System_Object_ *)
+                pEVar3 = (EventHandler_1_Object_ *)
                          func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-                UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System
-                ::Object]::UnityAction_2_System_Object_System_Object___ctor
-                          (pUVar3,(Object *)pUVar4,
+                mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                          (pEVar3,(Object *)pUVar4,
                            MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                            ,(MethodInfo *)0x0);
                 if (pTVar2 != (TriggerBoxEvents *)0x0) {
                   TriggerBoxEvents::TriggerBoxEvents_remove_TriggerExit
-                            (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pUVar3,(MethodInfo *)0x0);
+                            (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pEVar3,(MethodInfo *)0x0);
                   pUVar4 = (this->fields).useInteractor;
                   if (pUVar4 != (UseInteractor *)0x0) {
                     UseInteractor::UseInteractor_OnDestroy
@@ -639,27 +635,25 @@ void Assembly-CSharp.dll::MVPickupItemBase::MVPickupItemBase_Initialize
           pMVar1 = (this->fields)._BaseObject_k__BackingField;
           if (pMVar1 != (MVPickupItemBaseObject *)0x0) {
             pTVar5 = (pMVar1->fields).triggerBoxEvents;
-            pUVar6 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-            Object]::UnityAction_2_System_Object_System_Object___ctor
-                      (pUVar6,(Object *)this,
+            pEVar6 = (EventHandler_1_Object_ *)func_?();
+            mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                      (pEVar6,(Object *)this,
                        MethodInfo__MVPickupItemBase__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                        ,(MethodInfo *)0x0);
             if (pTVar5 != (TriggerBoxEvents *)0x0) {
               TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
-                        (pTVar5,(EventHandler_1_TriggerEventArgs_ *)pUVar6,(MethodInfo *)0x0);
+                        (pTVar5,(EventHandler_1_TriggerEventArgs_ *)pEVar6,(MethodInfo *)0x0);
               pMVar1 = (this->fields)._BaseObject_k__BackingField;
               if (pMVar1 != (MVPickupItemBaseObject *)0x0) {
                 pTVar5 = (pMVar1->fields).triggerBoxEvents;
-                pUVar6 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-                UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System
-                ::Object]::UnityAction_2_System_Object_System_Object___ctor
-                          (pUVar6,(Object *)this,
+                pEVar6 = (EventHandler_1_Object_ *)func_?();
+                mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                          (pEVar6,(Object *)this,
                            MethodInfo__MVPickupItemBase__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                            ,(MethodInfo *)0x0);
                 if (pTVar5 != (TriggerBoxEvents *)0x0) {
                   TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
-                            (pTVar5,(EventHandler_1_TriggerEventArgs_ *)pUVar6,(MethodInfo *)0x0);
+                            (pTVar5,(EventHandler_1_TriggerEventArgs_ *)pEVar6,(MethodInfo *)0x0);
                   this_03 = PrefabPool::PrefabPool_get_PickupPrefabLUT((MethodInfo *)0x0);
                   if (this_03 != (Dictionary_2_MV_Common_AvatarItemType_EquipableData_ *)0x0) {
                     GVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
@@ -954,33 +948,31 @@ void Assembly-CSharp.dll::MVPickupItemBase::MVPickupItemBase_SetupUseInteractor
                         pUVar2 = pURam402000fc;
                         if (iRam_? != 0) {
                           pTVar1 = *(TriggerBoxEvents **)(iRam_? + 0x18);
-                          pUVar4 = (UnityAction_2_System_Object_System_Object_ *)
+                          pEVar4 = (EventHandler_1_Object_ *)
                                    func_?(TypeInfo__System__EventHandler<TriggerEventArgs>)
                           ;
-                          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::
-                          Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor
-                                    (pUVar4,(Object *)pUVar2,
+                          mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                                    (pEVar4,(Object *)pUVar2,
                                      MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                                      ,(MethodInfo *)0x0);
                           if (pTVar1 != (TriggerBoxEvents *)0x0) {
                             TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
-                                      (pTVar1,(EventHandler_1_TriggerEventArgs_ *)pUVar4,
+                                      (pTVar1,(EventHandler_1_TriggerEventArgs_ *)pEVar4,
                                        (MethodInfo *)0x0);
                             pUVar2 = pURam402000fc;
                             if (iRam_? != 0) {
                               pTVar1 = *(TriggerBoxEvents **)(iRam_? + 0x18);
-                              pUVar4 = (UnityAction_2_System_Object_System_Object_ *)
+                              pEVar4 = (EventHandler_1_Object_ *)
                                        func_?(
                                                   TypeInfo__System__EventHandler<TriggerEventArgs>);
-                              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System
-                              ::Object,System::Object]::
-                              UnityAction_2_System_Object_System_Object___ctor
-                                        (pUVar4,(Object *)pUVar2,
+                              mscorlib.dll::System::EventHandler`1[Object]::
+                              EventHandler_1_Object___ctor
+                                        (pEVar4,(Object *)pUVar2,
                                          MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                                          ,(MethodInfo *)0x0);
                               if (pTVar1 != (TriggerBoxEvents *)0x0) {
                                 TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
-                                          (pTVar1,(EventHandler_1_TriggerEventArgs_ *)pUVar4,
+                                          (pTVar1,(EventHandler_1_TriggerEventArgs_ *)pEVar4,
                                            (MethodInfo *)0x0);
                                 return;
                               }

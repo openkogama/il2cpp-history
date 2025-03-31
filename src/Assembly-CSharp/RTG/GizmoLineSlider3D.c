@@ -552,7 +552,7 @@ code_?:
   return (float)fVar10;
 }
 
-/* decompilation failed: Exception while decompiling 105867a0: Decompiler process died */
+/* decompilation failed: Exception while decompiling 10588660: Decompiler process died */
 
 
 /* Boolean IsScalerHandleRegistered(Int32) */
@@ -2502,24 +2502,24 @@ code_?:
           Gizmo::Gizmo_add_PreUpdateBegin(pGVar14,value_04,(MethodInfo *)0x0);
           pGVar14 = (this->fields)._._gizmo;
           value_05 = (GizmoPreDragBeginAttemptHandler *)func_?();
-          mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor
-                    ((Action_2_Object_Int32Enum_ *)value_05,(Object *)this,
+          mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                    ((EventHandler_1_Object_ *)value_05,(Object *)this,
                      MethodInfo__RTG__GizmoLineSlider3D__OnGizmoAttemptHandleDragBegin_RTG__Gizmo__int_
                      ,(MethodInfo *)0x0);
           if (pGVar14 != (Gizmo *)0x0) {
             Gizmo::Gizmo_add_PreDragBeginAttempt(pGVar14,value_05,(MethodInfo *)0x0);
             pGVar14 = (this->fields)._._gizmo;
             value_06 = (GizmoPreHoverEnterHandler *)func_?();
-            mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor
-                      ((Action_2_Object_Int32Enum_ *)value_06,(Object *)this,
+            mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                      ((EventHandler_1_Object_ *)value_06,(Object *)this,
                        MethodInfo__RTG__GizmoLineSlider3D__OnGizmoHandleHoverEnter_RTG__Gizmo__int_,
                        (MethodInfo *)0x0);
             if (pGVar14 != (Gizmo *)0x0) {
               Gizmo::Gizmo_add_PreHoverEnter(pGVar14,value_06,(MethodInfo *)0x0);
               pGVar14 = (this->fields)._._gizmo;
               value_07 = (GizmoPreHoverExitHandler *)func_?();
-              mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor
-                        ((Action_2_Object_Int32Enum_ *)value_07,(Object *)this,
+              mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                        ((EventHandler_1_Object_ *)value_07,(Object *)this,
                          MethodInfo__RTG__GizmoLineSlider3D__OnGizmoHandleHoverExit_RTG__Gizmo__int_
                          ,(MethodInfo *)0x0);
               if (pGVar14 != (Gizmo *)0x0) {

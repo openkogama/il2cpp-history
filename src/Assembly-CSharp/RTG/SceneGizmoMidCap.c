@@ -136,8 +136,8 @@ void Assembly-CSharp.dll::RTG::SceneGizmoMidCap::SceneGizmoMidCap__ctor
       pGVar1 = (sceneGizmo->fields)._._gizmo;
       value = (GizmoPreHandlePickedHandler *)
               func_?(TypeInfo__RTG__GizmoPreHandlePickedHandler);
-      mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor
-                ((Action_2_Object_Int32Enum_ *)value,(Object *)this,
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                ((EventHandler_1_Object_ *)value,(Object *)this,
                  MethodInfo__RTG__SceneGizmoMidCap__OnGizmoHandlePicked_RTG__Gizmo__int_,
                  (MethodInfo *)0x0);
       if (pGVar1 != (Gizmo *)0x0) {
