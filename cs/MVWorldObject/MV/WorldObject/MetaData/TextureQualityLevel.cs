@@ -15,6 +15,7 @@ namespace MV.WorldObject.MetaData
 {
 	public enum TextureQualityLevel
 	{
+		VeryLow = -1,
 		Low = 0,
 		Medium = 1,
 		High = 2

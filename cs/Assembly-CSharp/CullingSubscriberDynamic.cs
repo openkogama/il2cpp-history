@@ -14,6 +14,7 @@ public class CullingSubscriberDynamic : IUpdatecontrollerSubscriberUpdate, ICull
 	// Fields
 	private readonly int cullingBandIndex;
 	private readonly int overrideDistanceBandIndex;
+	private readonly bool keepRootAlive;
 	private readonly GameObject root;
 	private readonly GameObject[] cullingGroup;
 	private readonly Transform rootTransform;
@@ -24,10 +25,12 @@ public class CullingSubscriberDynamic : IUpdatecontrollerSubscriberUpdate, ICull
 	public int CullingIndex { [CompilerGenerated] get; [CompilerGenerated] set; }
 
 	// Constructors
-	public CullingSubscriberDynamic(float radius, int cullingBandIndex, GameObject root, GameObject[] cullingGroup = null);
+	public CullingSubscriberDynamic(float radius, int cullingBandIndex, GameObject root, GameObject[] cullingGroup = null, bool keepRootAlive = false);
 
 	// Methods
 	public void OnStateChanged(CullingGroupEvent cullingGroupEvent);
+	private void SetStateRoot(bool visible);
+	private void SetStateCullingGroupUpdate(bool visible);
 	public void UpdateControllerUpdate();
 	public void SetCullingRadius(float radius);
 	public void UpdateControllerFixedUpdate();
