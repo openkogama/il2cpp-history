@@ -294,19 +294,19 @@ code_?:
       pDVar11 = pDRam33eb0150;
       iVar3 = 0x33eb0000;
       this_08 = (Action_3_Single_Object_ByteEnum_ *)func_?(TypeInfo__System__Action<float,_MVPlayer,_MV::Common::PlayerKilledByType>);
-      mscorlib.dll::System::Action`3[Single,Object,ByteEnum]::Action_3_Single_Object_ByteEnum___ctor(this_08,(Object *)0x3d8b00c6,MethodInfo__DamageIndicator__ShowDamage_float__MVPlayer__MV__Common__PlayerKilledByType_,(MethodInfo *)0x0);
+      mscorlib.dll::System::Action`3[Single,Object,ByteEnum]::Action_3_Single_Object_ByteEnum___ctor(this_08,(Object *)0x3d8b00c7,MethodInfo__DamageIndicator__ShowDamage_float__MVPlayer__MV__Common__PlayerKilledByType_,(MethodInfo *)0x0);
       pDVar11 = mscorlib.dll::System::Delegate::Delegate_Remove(pDVar11,(Delegate *)this_08,(MethodInfo *)0x0);
       if (pDVar11 == (Delegate *)0x0) {
         *(undefined4 *)(iVar3 + 0x150) = 0;
 code_?:
         func_?();
-        DamageIndicator::DamageIndicator_ResetIndicators((DamageIndicator *)0x3d8b00c6,(MethodInfo *)0x0);
+        DamageIndicator::DamageIndicator_ResetIndicators((DamageIndicator *)0x3d8b00c7,(MethodInfo *)0x0);
         bVar12 = 0;
         this = (FirstPersonCamera *)0x0;
         do {
-          if (TypeInfo__Mono__Unity__UnityTls__unitytls_error_code == (UnityTls_unitytls_error_code__Enum__Class *)0x0) goto code_?;
-          if ((TypeInfo__Mono__Unity__UnityTls__unitytls_error_code->_0).namespaze <= (char *)(uint)bVar12) goto code_?;
-          pIVar13 = (&(TypeInfo__Mono__Unity__UnityTls__unitytls_error_code->_0).byval_arg.data)[(int)(uint)bVar12].generic_class;
+          if (TypeInfo__UnityEngine__UIElements__TwoPaneSplitView__UxmlFactory == (TwoPaneSplitView_UxmlFactory__Class *)0x0) goto code_?;
+          if ((TypeInfo__UnityEngine__UIElements__TwoPaneSplitView__UxmlFactory->_0).namespaze <= (char *)(uint)bVar12) goto code_?;
+          pIVar13 = (&(TypeInfo__UnityEngine__UIElements__TwoPaneSplitView__UxmlFactory->_0).byval_arg.data)[(int)(uint)bVar12].generic_class;
           if ((pIVar13 == (Il2CppGenericClass *)0x0) || (this_03 = pIVar13->cached_class, this_03 == (Il2CppClass *)0x0)) goto code_?;
           UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled((Behaviour *)this_03,0,(MethodInfo *)0x0);
           bVar12 = this._3_1_ + 1;

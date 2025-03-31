@@ -137,8 +137,8 @@ code_?:
     MVLocalPlayer::MVLocalPlayer_SetupPlayerWorldObjects(unaff_ESI,*piVar4,spawnRolesRuntimeData,(MethodInfo *)0x0);
     if (iRam_? == 0) goto code_?;
     a = *(Delegate **)(iRam_? + 0x14);
-    this_00 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_00,(Object *)0x0,MethodInfo__MVNetworkGame__WOCM_InitializedGameQueryDataHandler_System__Object__InitializedGameQueryDataEventArgs_,(MethodInfo *)0x0);
+    this_00 = (EventHandler_1_Object_ *)func_?();
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_00,(Object *)0x0,MethodInfo__MVNetworkGame__WOCM_InitializedGameQueryDataHandler_System__Object__InitializedGameQueryDataEventArgs_,(MethodInfo *)0x0);
     unaff_ESI = (MVLocalPlayer *)mscorlib.dll::System::Delegate::Delegate_Combine(a,(Delegate *)this_00,(MethodInfo *)0x0);
     if (unaff_ESI == (MVLocalPlayer *)0x0) {
 code_?:
@@ -322,8 +322,8 @@ code_?:
   }
   else {
     a = (pWVar1->fields)._.InitializedGameQueryData;
-    this_00 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<InitializedGameQueryDataEventArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_00,(Object *)this,MethodInfo__MVNetworkGame__OnGameCreated_System__Object__InitializedGameQueryDataEventArgs_,(MethodInfo *)0x0);
+    this_00 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<InitializedGameQueryDataEventArgs>);
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_00,(Object *)this,MethodInfo__MVNetworkGame__OnGameCreated_System__Object__InitializedGameQueryDataEventArgs_,(MethodInfo *)0x0);
     pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,(Delegate *)this_00,(MethodInfo *)0x0);
     if (pDVar2 == (Delegate *)0x0) {
       (pWVar1->fields)._.InitializedGameQueryData = (EventHandler_1_InitializedGameQueryDataEventArgs_ *)0x0;
@@ -993,16 +993,16 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_InitializeManagers(MVNetw
     func_?();
     pMVar4 = (this->fields).teamManager;
     pGVar5 = (this->fields).gameStatCounterManager;
-    pUVar6 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(pUVar6,(Object *)pGVar5,MethodInfo__GameStatCounterManager__OnTeamAdded_System__Object__MV__WorldObject__TeamEventArgs_,(MethodInfo *)0x0);
+    pEVar6 = (EventHandler_1_Object_ *)func_?();
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(pEVar6,(Object *)pGVar5,MethodInfo__GameStatCounterManager__OnTeamAdded_System__Object__MV__WorldObject__TeamEventArgs_,(MethodInfo *)0x0);
     if (pMVar4 != (MVTeamManager *)0x0) {
-      MVTeamManager::MVTeamManager_add_OnTeamAdded(pMVar4,(EventHandler_1_MV_WorldObject_TeamEventArgs_ *)pUVar6,(MethodInfo *)0x0);
+      MVTeamManager::MVTeamManager_add_OnTeamAdded(pMVar4,(EventHandler_1_MV_WorldObject_TeamEventArgs_ *)pEVar6,(MethodInfo *)0x0);
       pMVar4 = (this->fields).teamManager;
       pGVar5 = (this->fields).gameStatCounterManager;
-      pUVar6 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(pUVar6,(Object *)pGVar5,MethodInfo__GameStatCounterManager__OnTeamRemoved_System__Object__MV__WorldObject__TeamEventArgs_,(MethodInfo *)0x0);
+      pEVar6 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>);
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(pEVar6,(Object *)pGVar5,MethodInfo__GameStatCounterManager__OnTeamRemoved_System__Object__MV__WorldObject__TeamEventArgs_,(MethodInfo *)0x0);
       if (pMVar4 != (MVTeamManager *)0x0) {
-        MVTeamManager::MVTeamManager_add_OnTeamRemoved(pMVar4,(EventHandler_1_MV_WorldObject_TeamEventArgs_ *)pUVar6,(MethodInfo *)0x0);
+        MVTeamManager::MVTeamManager_add_OnTeamRemoved(pMVar4,(EventHandler_1_MV_WorldObject_TeamEventArgs_ *)pEVar6,(MethodInfo *)0x0);
         pWVar7 = (WinningConditionManager *)func_?(TypeInfo__WinningConditionManagerClient);
         ThemeAttributes::ThemeAttribute`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::ThemeAttribute_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((ThemeAttribute_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pWVar7,(MethodInfo *)0x0);
         (this->fields)._WinningConditionManager_k__BackingField = pWVar7;
@@ -1869,8 +1869,8 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_OnGameCreated(MVNetworkGa
   }
   else {
     pEVar2 = (pWVar1->fields)._.InitializedGameQueryData;
-    this_00 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<InitializedGameQueryDataEventArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_00,(Object *)this,MethodInfo__MVNetworkGame__OnGameCreated_System__Object__InitializedGameQueryDataEventArgs_,(MethodInfo *)0x0);
+    this_00 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<InitializedGameQueryDataEventArgs>);
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_00,(Object *)this,MethodInfo__MVNetworkGame__OnGameCreated_System__Object__InitializedGameQueryDataEventArgs_,(MethodInfo *)0x0);
     pDVar3 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)pEVar2,(Delegate *)this_00,(MethodInfo *)0x0);
     if (pDVar3 == (Delegate *)0x0) {
       (pWVar1->fields)._.InitializedGameQueryData = (EventHandler_1_InitializedGameQueryDataEventArgs_ *)0x0;
@@ -5456,8 +5456,8 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_TransferBodyResponseHandl
     pMVar1 = (((this->fields).worldNetwork)->fields)._.worldObjectClientManager;
     if (pMVar1 != (MVWorldObjectClientManagerNetwork *)0x0) {
       pEVar2 = (pMVar1->fields)._.OnTransferWosResponse;
-      this_00 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<OnTransferWosResponseEventArgs>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_00,(Object *)this,MethodInfo__MVNetworkGame__TransferBodyResponseHandler_System__Object__OnTransferWosResponseEventArgs_,(MethodInfo *)0x0);
+      this_00 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<OnTransferWosResponseEventArgs>);
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_00,(Object *)this,MethodInfo__MVNetworkGame__TransferBodyResponseHandler_System__Object__OnTransferWosResponseEventArgs_,(MethodInfo *)0x0);
       pDVar3 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)pEVar2,(Delegate *)this_00,(MethodInfo *)0x0);
       if (pDVar3 == (Delegate *)0x0) {
         (pMVar1->fields)._.OnTransferWosResponse = (EventHandler_1_OnTransferWosResponseEventArgs_ *)0x0;
@@ -5665,8 +5665,8 @@ code_?:
   }
   else {
     pEVar3 = (pWVar1->fields)._.InitializedGameQueryData;
-    this_01 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<InitializedGameQueryDataEventArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_01,(Object *)this,MethodInfo__MVNetworkGame__WOCM_InitializedGameQueryDataHandler_System__Object__InitializedGameQueryDataEventArgs_,(MethodInfo *)0x0);
+    this_01 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<InitializedGameQueryDataEventArgs>);
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_01,(Object *)this,MethodInfo__MVNetworkGame__WOCM_InitializedGameQueryDataHandler_System__Object__InitializedGameQueryDataEventArgs_,(MethodInfo *)0x0);
     pDVar4 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)pEVar3,(Delegate *)this_01,(MethodInfo *)0x0);
     if (pDVar4 == (Delegate *)0x0) {
       (pWVar1->fields)._.InitializedGameQueryData = (EventHandler_1_InitializedGameQueryDataEventArgs_ *)0x0;
@@ -5864,8 +5864,8 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame__ctor(MVNetworkGame *this
             (this->fields)._NetworkGameStateListener_k__BackingField = pMVar3;
             func_?();
             pMVar3 = (this->fields)._NetworkGameStateListener_k__BackingField;
-            this_14 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_14,(Object *)this,MethodInfo__MVNetworkGame__networkGameStateListener_OnGameStateChanged_System__Object__GameStateChangeEventArgs_,(MethodInfo *)0x0);
+            this_14 = (EventHandler_1_Object_ *)func_?();
+            mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_14,(Object *)this,MethodInfo__MVNetworkGame__networkGameStateListener_OnGameStateChanged_System__Object__GameStateChangeEventArgs_,(MethodInfo *)0x0);
             if (pMVar3 != (MVNetworkGameStateListener *)0x0) {
               MVNetworkGameStateListener::MVNetworkGameStateListener_add_OnGameStateChanged(pMVar3,(EventHandler_1_GameStateChangeEventArgs_ *)this_14,(MethodInfo *)0x0);
               return;

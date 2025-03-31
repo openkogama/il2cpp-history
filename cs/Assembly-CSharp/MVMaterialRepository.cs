@@ -70,6 +70,7 @@ public class MVMaterialRepository
 	public void GenerateMaterialButtonTextures();
 	[IteratorStateMachine(typeof(_GenerateMaterialButtonTextureRoutine_d__26))]
 	private IEnumerator GenerateMaterialButtonTextureRoutine();
+	private void ForceGenerateMaterialButtonTextures();
 	public void AddMaterial(string name, string description, string path, MaterialSound materialSound, AvatarModifierPackageType modifierPackageType, int priceGold, bool isUnlocked, float[] physicalProperties, MaterialButtonTextureGenerator materialButtonTextureGenerator);
 	public MVMaterial GetMaterial(byte materialId);
 	public PhysicalProperties GetMaterialPhysicalProperties(byte materialId);

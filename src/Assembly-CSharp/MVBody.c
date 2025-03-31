@@ -285,7 +285,7 @@ void Assembly-CSharp.dll::MVBody::MVBody_Attach(MVBody *this,MVAvatar *mvAvatar,
         (pAVar4->fields)._.visible = (this->fields).visible;
         pMVar1 = (this->fields).bodyObject;
         if ((pMVar1 == (MVBodyObject *)0x0) || (pAVar4 = (pMVar1->fields).avatarBlinker, pAVar4 == (AvatarBlinker *)0x0)) goto code_?;
-        UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::ColumnLayout::ColumnLayout_OnColumnResized((ColumnLayout *)pAVar4,(Column *)0x0,in_stack_5);
+        ContextMenuController::ContextMenuController_PointerIsDown((ContextMenuController *)pAVar4,(MethodInfo *)0x0);
       }
       MVBody_set_CollidersEnabled(this,0,(MethodInfo *)0x0);
       pMVar1 = (this->fields).bodyObject;
@@ -297,8 +297,8 @@ void Assembly-CSharp.dll::MVBody::MVBody_Attach(MVBody *this,MVAvatar *mvAvatar,
   }
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -2174,8 +2174,8 @@ code_?:
             }
 code_?:
             pMVar16 = this_05;
-            this_04 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
-            Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor(this_04,(Object *)pIVar11,MethodInfo__BodyAccessoriesController____c__DisplayClass25_0___RefreshAccessories_b__0_AvatarAccessory_,(MethodInfo *)0x0);
+            this_04 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?();
+            DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_04,(Object *)pIVar11,MethodInfo__BodyAccessoriesController____c__DisplayClass25_0___RefreshAccessories_b__0_AvatarAccessory_,(MethodInfo *)0x0);
             if (this_05 == (MethodInfo *)0x0) break;
             pIVar3 = (Il2CppClass *)0x0;
             Assets::Scripts::WorldObjectTypes::Avatar::Accessories::AccessoryLoader::AccessoryLoader_LoadAccessory((AccessoryLoader *)this_05,(String *)TVar20.m_Index,(Action_1_AvatarAccessory_ *)pIVar11,(MethodInfo *)0x0);

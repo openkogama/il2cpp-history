@@ -187,8 +187,8 @@ void Assembly-CSharp.dll::ShootableButton::ShootableButton_Initialize(ShootableB
     if (pGVar1 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1(pGVar1,ClientSideLogicInteractionHandler_MethodInfo__UnityEngine__GameObject__AddComponent<ClientSideLogicInteractionHandler>__);
       pLVar2 = (this->fields).interactable;
-      this_01 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<TakeDamageEventArgs>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_01,(Object *)this,MethodInfo__ShootableButton__Activate_System__Object__TakeDamageEventArgs_,(MethodInfo *)0x0);
+      this_01 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<TakeDamageEventArgs>);
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_01,(Object *)this,MethodInfo__ShootableButton__Activate_System__Object__TakeDamageEventArgs_,(MethodInfo *)0x0);
       if (pLVar2 != (LogicInteractable *)0x0) {
         LogicInteractable::LogicInteractable_add_OnDamageEvent(pLVar2,(EventHandler_1_TakeDamageEventArgs_ *)this_01,(MethodInfo *)0x0);
         if (cRam_? == '\0') {
@@ -253,8 +253,8 @@ void Assembly-CSharp.dll::ShootableButton::ShootableButton_Initialize(ShootableB
                     func_?(&MethodInfo__GreyOutObjectScript__GreyOutExec_GreyOutObjectScript__PickupOriginalMaterials_);
                     cRam_? = '\x01';
                   }
-                  this_00 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?(TypeInfo__System__Action<GreyOutObjectScript::PickupOriginalMaterials>,puVar11);
-                  Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor(this_00,(Object *)in_stack_6,MethodInfo__GreyOutObjectScript__GreyOutExec_GreyOutObjectScript__PickupOriginalMaterials_,(MethodInfo *)0x0);
+                  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?(TypeInfo__System__Action<GreyOutObjectScript::PickupOriginalMaterials>,puVar11);
+                  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_00,(Object *)in_stack_6,MethodInfo__GreyOutObjectScript__GreyOutExec_GreyOutObjectScript__PickupOriginalMaterials_,(MethodInfo *)0x0);
                   GreyOutObjectScript::GreyOutObjectScript_ExecuteOnMaterials(in_stack_6,(Action_1_GreyOutObjectScript_PickupOriginalMaterials_ *)this_00,(MethodInfo *)0x0);
                   (in_stack_6->fields).isGreyedIn = 0;
                   return;
@@ -381,8 +381,8 @@ void Assembly-CSharp.dll::ShootableButton::ShootableButton_Reset(ShootableButton
         cRam_? = '\x01';
       }
       ppMStack2 = (MethodInfo **)TypeInfo__System__Action<GreyOutObjectScript::PickupOriginalMaterials>;
-      this_01 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
-      Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor(this_01,(Object *)0x0,MethodInfo__GreyOutObjectScript__GreyInExec_GreyOutObjectScript__PickupOriginalMaterials_,(MethodInfo *)0x0);
+      this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?();
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_01,(Object *)0x0,MethodInfo__GreyOutObjectScript__GreyInExec_GreyOutObjectScript__PickupOriginalMaterials_,(MethodInfo *)0x0);
       GreyOutObjectScript::GreyOutObjectScript_ExecuteOnMaterials(in_stack_3,(Action_1_GreyOutObjectScript_PickupOriginalMaterials_ *)this_01,(MethodInfo *)0x0);
       (in_stack_3->fields).isGreyedIn = 1;
       return;
@@ -410,8 +410,8 @@ void Assembly-CSharp.dll::ShootableButton::ShootableButton_SetToDownState(Shoota
         func_?();
         cRam_? = '\x01';
       }
-      this_01 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?(TypeInfo__System__Action<GreyOutObjectScript::PickupOriginalMaterials>);
-      Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor(this_01,(Object *)in_stack_2,MethodInfo__GreyOutObjectScript__GreyOutExec_GreyOutObjectScript__PickupOriginalMaterials_,(MethodInfo *)0x0);
+      this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?(TypeInfo__System__Action<GreyOutObjectScript::PickupOriginalMaterials>);
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_01,(Object *)in_stack_2,MethodInfo__GreyOutObjectScript__GreyOutExec_GreyOutObjectScript__PickupOriginalMaterials_,(MethodInfo *)0x0);
       GreyOutObjectScript::GreyOutObjectScript_ExecuteOnMaterials(in_stack_2,(Action_1_GreyOutObjectScript_PickupOriginalMaterials_ *)this_01,(MethodInfo *)0x0);
       (in_stack_2->fields).isGreyedIn = 0;
       return;
@@ -439,8 +439,8 @@ void Assembly-CSharp.dll::ShootableButton::ShootableButton_SetToUpState(Shootabl
         func_?();
         cRam_? = '\x01';
       }
-      this_01 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
-      Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor(this_01,(Object *)0x0,MethodInfo__GreyOutObjectScript__GreyInExec_GreyOutObjectScript__PickupOriginalMaterials_,(MethodInfo *)0x0);
+      this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?();
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_01,(Object *)0x0,MethodInfo__GreyOutObjectScript__GreyInExec_GreyOutObjectScript__PickupOriginalMaterials_,(MethodInfo *)0x0);
       GreyOutObjectScript::GreyOutObjectScript_ExecuteOnMaterials(in_stack_2,(Action_1_GreyOutObjectScript_PickupOriginalMaterials_ *)this_01,(MethodInfo *)0x0);
       (in_stack_2->fields).isGreyedIn = 1;
       return;

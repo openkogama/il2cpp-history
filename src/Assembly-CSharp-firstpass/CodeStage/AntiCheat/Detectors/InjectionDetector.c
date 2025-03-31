@@ -56,7 +56,7 @@ bool Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::InjectionDe
             iVar5 = *(int *)((int)pIVar8->vector + iVar1 + -0x10);
             if (iVar5 == 0) break;
             bVar9 = mscorlib.dll::System::String::String_op_Equality(*(String **)(iVar5 + 8),b,(MethodInfo *)0x0);
-            if ((bVar9 != 0) && (iVar10 = mscorlib.dll::System::Array::Array_IndexOf_3(*(Int32__Array **)(iVar5 + 0xc),((int)(uVar3 * 9) >> 0xb ^ uVar3 * 9) * 0x8001,int_MethodInfo__System__Array__IndexOf<int>_System__Int32_____int_), iVar10 != -1)) {
+            if ((bVar9 != 0) && (iVar10 = mscorlib.dll::System::Array::Array_IndexOf_4(*(Int32__Array **)(iVar5 + 0xc),((int)(uVar3 * 9) >> 0xb ^ uVar3 * 9) * 0x8001,int_MethodInfo__System__Array__IndexOf<int>_System__Int32_____int_), iVar10 != -1)) {
               return 1;
             }
             uVar7 = uVar7 + 1;

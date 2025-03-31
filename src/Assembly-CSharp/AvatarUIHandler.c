@@ -68,17 +68,17 @@ code_?:
     pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (pMVar4 != (MVNetworkGame *)0x0) {
       pMVar8 = (pMVar4->fields).teamManager;
-      pUVar9 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(pUVar9,(Object *)this,MethodInfo__AvatarUIHandler__HandleTeamChange_System__Object__MV__WorldObject__TeamEventArgs_,(MethodInfo *)0x0);
+      pEVar9 = (EventHandler_1_Object_ *)func_?();
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(pEVar9,(Object *)this,MethodInfo__AvatarUIHandler__HandleTeamChange_System__Object__MV__WorldObject__TeamEventArgs_,(MethodInfo *)0x0);
       if (pMVar8 != (MVTeamManager *)0x0) {
-        MVTeamManager::MVTeamManager_add_OnTeamAdded(pMVar8,(EventHandler_1_MV_WorldObject_TeamEventArgs_ *)pUVar9,(MethodInfo *)0x0);
+        MVTeamManager::MVTeamManager_add_OnTeamAdded(pMVar8,(EventHandler_1_MV_WorldObject_TeamEventArgs_ *)pEVar9,(MethodInfo *)0x0);
         pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
         if (pMVar4 != (MVNetworkGame *)0x0) {
           pMVar8 = (pMVar4->fields).teamManager;
-          pUVar9 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(pUVar9,(Object *)this,MethodInfo__AvatarUIHandler__HandleTeamChange_System__Object__MV__WorldObject__TeamEventArgs_,(MethodInfo *)0x0);
+          pEVar9 = (EventHandler_1_Object_ *)func_?();
+          mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(pEVar9,(Object *)this,MethodInfo__AvatarUIHandler__HandleTeamChange_System__Object__MV__WorldObject__TeamEventArgs_,(MethodInfo *)0x0);
           if (pMVar8 != (MVTeamManager *)0x0) {
-            MVTeamManager::MVTeamManager_add_OnTeamRemoved(pMVar8,(EventHandler_1_MV_WorldObject_TeamEventArgs_ *)pUVar9,(MethodInfo *)0x0);
+            MVTeamManager::MVTeamManager_add_OnTeamRemoved(pMVar8,(EventHandler_1_MV_WorldObject_TeamEventArgs_ *)pEVar9,(MethodInfo *)0x0);
             return;
           }
         }
@@ -169,7 +169,7 @@ code_?:
     if ((pMVar8 == (MVNetworkGame *)0x0) || (pMVar9 = (pMVar8->fields).playerContainer, pMVar9 == (MVPlayerContainer *)0x0)) goto code_?;
     pAVar5 = (pMVar9->fields).OnPlayerListChanged;
     pNVar6 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(pNVar6,(Object *)&UNK_?,pvRamefd8168f,(MethodInfo *)0x0);
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(pNVar6,(Object *)&UNK_?,pvRamd6ec168f,(MethodInfo *)0x0);
     pAVar5 = (Action *)mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)pAVar5,(Delegate *)pNVar6,(MethodInfo *)0x0);
     if (pAVar5 == (Action *)0x0) {
       (pMVar9->fields).OnPlayerListChanged = (Action *)0x0;
@@ -178,17 +178,17 @@ code_?:
       pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
       if (pMVar8 != (MVNetworkGame *)0x0) {
         pMVar10 = (pMVar8->fields).teamManager;
-        pUVar11 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(pUVar11,(Object *)&UNK_?,MethodInfo__AvatarUIHandler__HandleTeamChange_System__Object__MV__WorldObject__TeamEventArgs_,(MethodInfo *)0x0);
+        pEVar11 = (EventHandler_1_Object_ *)func_?();
+        mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(pEVar11,(Object *)&UNK_?,MethodInfo__AvatarUIHandler__HandleTeamChange_System__Object__MV__WorldObject__TeamEventArgs_,(MethodInfo *)0x0);
         if (pMVar10 != (MVTeamManager *)0x0) {
-          MVTeamManager::MVTeamManager_remove_OnTeamAdded(pMVar10,(EventHandler_1_MV_WorldObject_TeamEventArgs_ *)pUVar11,(MethodInfo *)0x0);
+          MVTeamManager::MVTeamManager_remove_OnTeamAdded(pMVar10,(EventHandler_1_MV_WorldObject_TeamEventArgs_ *)pEVar11,(MethodInfo *)0x0);
           pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
           if (pMVar8 != (MVNetworkGame *)0x0) {
             pMVar10 = (pMVar8->fields).teamManager;
-            pUVar11 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(pUVar11,(Object *)&UNK_?,MethodInfo__AvatarUIHandler__HandleTeamChange_System__Object__MV__WorldObject__TeamEventArgs_,(MethodInfo *)0x0);
+            pEVar11 = (EventHandler_1_Object_ *)func_?();
+            mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(pEVar11,(Object *)&UNK_?,MethodInfo__AvatarUIHandler__HandleTeamChange_System__Object__MV__WorldObject__TeamEventArgs_,(MethodInfo *)0x0);
             if (pMVar10 != (MVTeamManager *)0x0) {
-              MVTeamManager::MVTeamManager_remove_OnTeamRemoved(pMVar10,(EventHandler_1_MV_WorldObject_TeamEventArgs_ *)pUVar11,(MethodInfo *)0x0);
+              MVTeamManager::MVTeamManager_remove_OnTeamRemoved(pMVar10,(EventHandler_1_MV_WorldObject_TeamEventArgs_ *)pEVar11,(MethodInfo *)0x0);
               return;
             }
           }

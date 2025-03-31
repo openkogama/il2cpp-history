@@ -1652,22 +1652,22 @@ code_?:
                                   Gizmo::Gizmo_add_PreUpdateBegin(pGVar4,value_01,(MethodInfo *)0x0);
                                   pGVar4 = (this->fields)._._gizmo;
                                   value_02 = (GizmoPreDragUpdateHandler *)func_?();
-                                  mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor((Action_2_Object_Int32Enum_ *)value_02,(Object *)this,MethodInfo__RTG__GizmoLineSlider2D__OnGizmoHandleDragUpdate_RTG__Gizmo__int_,(MethodInfo *)0x0);
+                                  mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor((EventHandler_1_Object_ *)value_02,(Object *)this,MethodInfo__RTG__GizmoLineSlider2D__OnGizmoHandleDragUpdate_RTG__Gizmo__int_,(MethodInfo *)0x0);
                                   if (pGVar4 != (Gizmo *)0x0) {
                                     Gizmo::Gizmo_add_PreDragUpdate(pGVar4,value_02,(MethodInfo *)0x0);
                                     pGVar4 = (this->fields)._._gizmo;
                                     value_03 = (GizmoPreDragBeginAttemptHandler *)func_?();
-                                    mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor((Action_2_Object_Int32Enum_ *)value_03,(Object *)this,MethodInfo__RTG__GizmoLineSlider2D__OnGizmoAttemptHandleDragBegin_RTG__Gizmo__int_,(MethodInfo *)0x0);
+                                    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor((EventHandler_1_Object_ *)value_03,(Object *)this,MethodInfo__RTG__GizmoLineSlider2D__OnGizmoAttemptHandleDragBegin_RTG__Gizmo__int_,(MethodInfo *)0x0);
                                     if (pGVar4 != (Gizmo *)0x0) {
                                       Gizmo::Gizmo_add_PreDragBeginAttempt(pGVar4,value_03,(MethodInfo *)0x0);
                                       pGVar4 = (this->fields)._._gizmo;
                                       value_04 = (GizmoPreHoverEnterHandler *)func_?();
-                                      mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor((Action_2_Object_Int32Enum_ *)value_04,(Object *)this,MethodInfo__RTG__GizmoLineSlider2D__OnGizmoHandleHoverEnter_RTG__Gizmo__int_,(MethodInfo *)0x0);
+                                      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor((EventHandler_1_Object_ *)value_04,(Object *)this,MethodInfo__RTG__GizmoLineSlider2D__OnGizmoHandleHoverEnter_RTG__Gizmo__int_,(MethodInfo *)0x0);
                                       if (pGVar4 != (Gizmo *)0x0) {
                                         Gizmo::Gizmo_add_PreHoverEnter(pGVar4,value_04,(MethodInfo *)0x0);
                                         pGVar4 = (this->fields)._._gizmo;
                                         value_05 = (GizmoPreHoverExitHandler *)func_?();
-                                        mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor((Action_2_Object_Int32Enum_ *)value_05,(Object *)this,MethodInfo__RTG__GizmoLineSlider2D__OnGizmoHandleHoverExit_RTG__Gizmo__int_,(MethodInfo *)0x0);
+                                        mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor((EventHandler_1_Object_ *)value_05,(Object *)this,MethodInfo__RTG__GizmoLineSlider2D__OnGizmoHandleHoverExit_RTG__Gizmo__int_,(MethodInfo *)0x0);
                                         if (pGVar4 != (Gizmo *)0x0) {
                                           Gizmo::Gizmo_add_PreHoverExit(pGVar4,value_05,(MethodInfo *)0x0);
                                           pGVar4 = (this->fields)._._gizmo;

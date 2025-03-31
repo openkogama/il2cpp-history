@@ -173,8 +173,8 @@ void Assembly-CSharp.dll::DesktopCubeModelingController::DesktopCubeModelingCont
       pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
       if ((pMVar1 != (MVGameControllerBase *)0x0) && (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) {
         this_00 = (pMVar2->fields).operationRequests;
-        this_02 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?(TypeInfo__System__Action<System::String>);
-        Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor(this_02,(Object *)this,MethodInfo__DesktopCubeModelingController___PublishCallback_b__11_1_System__String_,(MethodInfo *)0x0);
+        this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?(TypeInfo__System__Action<System::String>);
+        DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_02,(Object *)this,MethodInfo__DesktopCubeModelingController___PublishCallback_b__11_1_System__String_,(MethodInfo *)0x0);
         if (this_00 != (MVNetworkGame_OperationRequests *)0x0) {
           MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_PublishPlanet(this_00,(Action_1_String_ *)this_02,(MethodInfo *)0x0);
           return;

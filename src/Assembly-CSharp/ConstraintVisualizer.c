@@ -435,8 +435,8 @@ void Assembly-CSharp.dll::ConstraintVisualizer::ConstraintVisualizer_Init(Constr
                   fVar7 = (float)constraint[10].monitor;
                   VVar8 = (Vector3)CONCAT84(uVar9,pIVar10);
                   UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position(pTVar2,VVar8,(MethodInfo *)0x0);
-                  this_01 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-                  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_01,(Object *)this_00,MethodInfo__ConstraintVisualizer__Constraint_BoxChanged_System__Object__ConstraintBoxChangedEventArgs_,(MethodInfo *)0x0);
+                  this_01 = (EventHandler_1_Object_ *)func_?();
+                  mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_01,(Object *)this_00,MethodInfo__ConstraintVisualizer__Constraint_BoxChanged_System__Object__ConstraintBoxChangedEventArgs_,(MethodInfo *)0x0);
                   if (cRam_? == '\0') {
                     func_?();
                     cRam_? = '\x01';
@@ -487,8 +487,8 @@ void Assembly-CSharp.dll::ConstraintVisualizer::ConstraintVisualizer_OnDestroy(C
   }
   pIVar1 = (this->fields).constraint;
   if (((pIVar1 != (IModelingConstraint *)0x0) && ((TypeInfo__ModelingDynamicBoxConstraint->_1).naturalAligment <= (pIVar1->klass->_1).naturalAligment)) && ((pIVar1->klass->_1).typeHierarchy[(TypeInfo__ModelingDynamicBoxConstraint->_1).naturalAligment - 1] == (Il2CppClass *)TypeInfo__ModelingDynamicBoxConstraint)) {
-    this_00 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<ConstraintBoxChangedEventArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_00,(Object *)this,MethodInfo__ConstraintVisualizer__Constraint_BoxChanged_System__Object__ConstraintBoxChangedEventArgs_,(MethodInfo *)0x0);
+    this_00 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<ConstraintBoxChangedEventArgs>);
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_00,(Object *)this,MethodInfo__ConstraintVisualizer__Constraint_BoxChanged_System__Object__ConstraintBoxChangedEventArgs_,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
       func_?(&TypeInfo__System__EventHandler<ConstraintBoxChangedEventArgs>);
       cRam_? = '\x01';
@@ -503,7 +503,7 @@ void Assembly-CSharp.dll::ConstraintVisualizer::ConstraintVisualizer_OnDestroy(C
         (*pcVar4)();
         return;
       }
-      this_00 = (UnityAction_2_System_Object_System_Object_ *)&UNK_?;
+      this_00 = (EventHandler_1_Object_ *)&UNK_?;
       pDVar5 = (Delegate *)&pIVar1[0xb].monitor;
       pDVar2 = (Delegate *)func_?(&pIVar1[0xb].monitor,iVar3);
     } while (pDVar2 != pDVar5);

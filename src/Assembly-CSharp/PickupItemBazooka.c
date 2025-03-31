@@ -81,8 +81,8 @@ code_?:
       }
       func_?();
       pAVar6 = (this_00->fields).onOutOfRange;
-      pAVar7 = (Action_1_UnityEngine_UIElements_UIR_UIRenderDevice_AllocToFree_ *)func_?();
-      mscorlib.dll::System::Action`1[UnityEngine::UIElements::UIR::UIRenderDevice+AllocToFree]::Action_1_UnityEngine_UIElements_UIR_UIRenderDevice_AllocToFree___ctor(pAVar7,(Object *)this,MethodInfo__PickupItemBazooka__OnHitMaxRangeLocal_UnityEngine__Ray_,(MethodInfo *)0x0);
+      pAVar7 = (Action_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)func_?();
+      mscorlib.dll::System::Action`1[UnityEngine::UIElements::Internal::MultiColumnCollectionHeader+ViewState+ColumnState]::Action_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor(pAVar7,(Object *)this,MethodInfo__PickupItemBazooka__OnHitMaxRangeLocal_UnityEngine__Ray_,(MethodInfo *)0x0);
       pDVar8 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pAVar6,(Delegate *)pAVar7,(MethodInfo *)0x0);
       if (pDVar8 != (Delegate *)0x0) {
         pAVar6 = (Action_1_UnityEngine_Ray_ *)func_?();
@@ -185,8 +185,8 @@ code_?:
       goto code_?;
     }
     pAVar6 = (this_00->fields).onOutOfRange;
-    pAVar7 = (Action_1_UnityEngine_UIElements_UIR_UIRenderDevice_AllocToFree_ *)func_?();
-    mscorlib.dll::System::Action`1[UnityEngine::UIElements::UIR::UIRenderDevice+AllocToFree]::Action_1_UnityEngine_UIElements_UIR_UIRenderDevice_AllocToFree___ctor(pAVar7,(Object *)this,MethodInfo__PickupItemBazooka__OnHitMaxRangeRemote_UnityEngine__Ray_,(MethodInfo *)0x0);
+    pAVar7 = (Action_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)func_?();
+    mscorlib.dll::System::Action`1[UnityEngine::UIElements::Internal::MultiColumnCollectionHeader+ViewState+ColumnState]::Action_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor(pAVar7,(Object *)this,MethodInfo__PickupItemBazooka__OnHitMaxRangeRemote_UnityEngine__Ray_,(MethodInfo *)0x0);
     pDVar8 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pAVar6,(Delegate *)pAVar7,(MethodInfo *)0x0);
     if (pDVar8 == (Delegate *)0x0) {
       (this_00->fields).onOutOfRange = (Action_1_UnityEngine_Ray_ *)0x0;

@@ -38,7 +38,7 @@ code_?:
       (unaff_EDI->_0).byval_arg.data = (_union_86)(pMVar4->fields)._._._.gameObject;
       func_?();
       if (this_02 != (DynamicCullingHandler *)0x0) {
-        DynamicCullingHandler::DynamicCullingHandler_ActivateCulling(this_02,(GameObject *)0x0,(GameObject__Array *)unaff_EDI,(MethodInfo *)0x0);
+        DynamicCullingHandler::DynamicCullingHandler_ActivateCulling(this_02,(GameObject *)0x0,(GameObject__Array *)unaff_EDI,0,(MethodInfo *)0x0);
         return;
       }
       goto code_?;
@@ -197,7 +197,7 @@ void Assembly-CSharp.dll::MVBuildModeAvatarRemote::MVBuildModeAvatarRemote_Handl
       cullingGroup->vector[0] = pGVar3;
       func_?(cullingGroup->vector,pGVar3);
       if (this_00 != (DynamicCullingHandler *)0x0) {
-        DynamicCullingHandler::DynamicCullingHandler_ActivateCulling(this_00,pGVar1,cullingGroup,(MethodInfo *)0x0);
+        DynamicCullingHandler::DynamicCullingHandler_ActivateCulling(this_00,pGVar1,cullingGroup,0,(MethodInfo *)0x0);
         return;
       }
     }

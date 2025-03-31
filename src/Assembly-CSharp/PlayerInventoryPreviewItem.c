@@ -466,8 +466,8 @@ void Assembly-CSharp.dll::PlayerInventoryPreviewItem::PlayerInventoryPreviewItem
     cRam_? = '\x01';
   }
   this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  this_01 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_01,(Object *)this,MethodInfo__PlayerInventoryPreviewItem__OnInventoryItemLoaded_System__Object__ReceivedItemFromQueryEventArgs_,(MethodInfo *)0x0);
+  this_01 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>);
+  mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_01,(Object *)this,MethodInfo__PlayerInventoryPreviewItem__OnInventoryItemLoaded_System__Object__ReceivedItemFromQueryEventArgs_,(MethodInfo *)0x0);
   if (this_00 != (MVNetworkGame *)0x0) {
     MVNetworkGame::MVNetworkGame_remove_ReceivedItemFromQuery(this_00,(EventHandler_1_ReceivedItemFromQueryEventArgs_ *)this_01,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
@@ -537,8 +537,8 @@ void Assembly-CSharp.dll::PlayerInventoryPreviewItem::PlayerInventoryPreviewItem
     cRam_? = '\x01';
   }
   this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  this_02 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_02,(Object *)this,MethodInfo__PlayerInventoryPreviewItem__OnInventoryItemLoaded_System__Object__ReceivedItemFromQueryEventArgs_,(MethodInfo *)0x0);
+  this_02 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>);
+  mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_02,(Object *)this,MethodInfo__PlayerInventoryPreviewItem__OnInventoryItemLoaded_System__Object__ReceivedItemFromQueryEventArgs_,(MethodInfo *)0x0);
   if (this_01 != (MVNetworkGame *)0x0) {
     MVNetworkGame::MVNetworkGame_remove_ReceivedItemFromQuery(this_01,(EventHandler_1_ReceivedItemFromQueryEventArgs_ *)this_02,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
@@ -636,8 +636,8 @@ void Assembly-CSharp.dll::PlayerInventoryPreviewItem::PlayerInventoryPreviewItem
     cRam_? = '\x01';
   }
   this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  this_02 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_02,(Object *)this,MethodInfo__PlayerInventoryPreviewItem__OnInventoryItemLoaded_System__Object__ReceivedItemFromQueryEventArgs_,(MethodInfo *)0x0);
+  this_02 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>);
+  mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_02,(Object *)this,MethodInfo__PlayerInventoryPreviewItem__OnInventoryItemLoaded_System__Object__ReceivedItemFromQueryEventArgs_,(MethodInfo *)0x0);
   if (this_01 == (MVNetworkGame *)0x0) {
 code_?:
     func_?();
@@ -863,8 +863,8 @@ code_?:
     if ((this_00 == (Image *)0x0) || (this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this_00,(MethodInfo *)0x0), this_01 == (GameObject *)0x0)) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(this_01,1,(MethodInfo *)0x0);
     this_02 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    this_03 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_03,(Object *)this,MethodInfo__PlayerInventoryPreviewItem__OnInventoryItemLoaded_System__Object__ReceivedItemFromQueryEventArgs_,(MethodInfo *)0x0);
+    this_03 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>);
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_03,(Object *)this,MethodInfo__PlayerInventoryPreviewItem__OnInventoryItemLoaded_System__Object__ReceivedItemFromQueryEventArgs_,(MethodInfo *)0x0);
     if (this_02 == (MVNetworkGame *)0x0) goto code_?;
     MVNetworkGame::MVNetworkGame_add_ReceivedItemFromQuery(this_02,(EventHandler_1_ReceivedItemFromQueryEventArgs_ *)this_03,(MethodInfo *)0x0);
     if (cRam_? == '\0') {

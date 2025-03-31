@@ -13,8 +13,8 @@ void MVWorldObject.dll::WinningConditionGroup::WinningConditionGroup_AddWinnerCo
     this_00 = (this->fields).winnerConditions;
     if (this_00 != (Dictionary_2_System_Int32_IWinningCondition_ *)0x0) {
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Add((Dictionary_2_System_Int32_System_Object_ *)this_00,(winnerCondition->fields).id,(Object *)winnerCondition,MethodInfo__System__Collections__Generic__Dictionary<int,_IWinningCondition>__Add_int__IWinningCondition_);
-      this_01 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<System::EventArgs>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_01,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
+      this_01 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<System::EventArgs>);
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_01,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
       WinningCondition::WinningCondition_add_OnWinningConditionChanged(winnerCondition,(EventHandler_1_EventArgs_ *)this_01,(MethodInfo *)0x0);
       return;
     }
@@ -41,8 +41,8 @@ void MVWorldObject.dll::WinningConditionGroup::WinningConditionGroup_RemoveWinne
   pDVar1 = (this->fields).winnerConditions;
   if (pDVar1 != (Dictionary_2_System_Int32_IWinningCondition_ *)0x0) {
     pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)pDVar1,id,MethodInfo__System__Collections__Generic__Dictionary<int,_IWinningCondition>__get_Item_int_);
-    this_00 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<System::EventArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_00,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
+    this_00 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<System::EventArgs>);
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_00,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
     if (pOVar2 != (Object *)0x0) {
       pOVar3 = pOVar2->klass;
       uVar4 = 0;

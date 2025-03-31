@@ -41,7 +41,7 @@ code_?:
     (unaff_EDI->_0).byval_arg.data = (_union_86)(pMVar5->fields)._._._.gameObject;
     func_?();
     if (unaff_EBX == (UnityAction_2_MVWorldObjectClient_ScaleChangedEventArgs___Class *)0x0) goto code_?;
-    DynamicCullingHandler::DynamicCullingHandler_ActivateCulling((DynamicCullingHandler *)unaff_EBX,pGVar2,(GameObject__Array *)unaff_EDI,(MethodInfo *)0x0);
+    DynamicCullingHandler::DynamicCullingHandler_ActivateCulling((DynamicCullingHandler *)unaff_EBX,pGVar2,(GameObject__Array *)unaff_EDI,1,(MethodInfo *)0x0);
     pUVar6 = TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_ScaleChangedEventArgs>;
     a = (this->fields)._._._.ScaleChanged;
     object = (this->fields).cullingHandler;
@@ -239,8 +239,8 @@ CapsuleCollider * Assembly-CSharp.dll::MVAvatarRemote::MVAvatarRemote_CreateTrig
                   fVar4 = UnityEngine.PhysicsModule.dll::UnityEngine::CapsuleCollider::CapsuleCollider_get_radius(this_01,(MethodInfo *)0x0);
                   UnityEngine.PhysicsModule.dll::UnityEngine::CapsuleCollider::CapsuleCollider_set_radius(pCVar3,fVar4,(MethodInfo *)0x0);
                   this_02 = (TriggerBoxEvents *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1(this_00,TriggerBoxEvents_MethodInfo__UnityEngine__GameObject__AddComponent<TriggerBoxEvents>__);
-                  this_03 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-                  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_03,(Object *)&UNK_?,MethodInfo__MVAvatarRemote__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
+                  this_03 = (EventHandler_1_Object_ *)func_?();
+                  mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_03,(Object *)&UNK_?,MethodInfo__MVAvatarRemote__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
                   if (this_02 != (TriggerBoxEvents *)0x0) {
                     TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter(this_02,(EventHandler_1_TriggerEventArgs_ *)this_03,(MethodInfo *)0x0);
                     return pCVar3;
@@ -790,16 +790,16 @@ code_?:
 code_?:
     func_?();
     pUVar3 = this_00[1].klass;
-    iVar9 = (**(code **)(iRam_? + 0xe0))(0xfe85752,*(undefined4 *)(iRam_? + 0xe4));
+    iVar9 = (**(code **)(iRam_? + 0xe0))(0xcfe85752,*(undefined4 *)(iRam_? + 0xe4));
     unaff_EDI = (MVBody *)0x0;
     if (pUVar3 == (UxmlObjectListAttributeDescription_1_System_Object___Class *)0x0) goto code_?;
     (pUVar3->_0).this_arg.data = (_union_86)(float)iVar9;
-    unaff_EDI = pMRam0fe85772;
+    unaff_EDI = pMRamcfe85772;
     pVVar6 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
     UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::VideoCapture+OnVideoCaptureResourceCreatedCallback::VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor(pVVar6,(Object *)this_00,MethodInfo__MVAvatarRemote____c__DisplayClass23_0___InitializeHealth_b__1_System__Object_,(MethodInfo *)0x0);
     pMVar10 = (MVBody *)mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)unaff_EDI,(Delegate *)pVVar6,(MethodInfo *)0x0);
     if (pMVar10 == (MVBody *)0x0) {
-      pMRam0fe85772 = (MVBody *)0x0;
+      pMRamcfe85772 = (MVBody *)0x0;
       func_?();
       return;
     }
@@ -812,7 +812,7 @@ code_?:
       if (pMVar10->klass == (MVBody__Class *)TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
         pMVar12 = pMVar10;
       }
-      pMRam0fe85772 = pMVar11;
+      pMRamcfe85772 = pMVar11;
       if (pMVar12 != (MVBody *)0x0) {
         func_?();
         return;
@@ -1142,7 +1142,7 @@ void Assembly-CSharp.dll::MVAvatarRemote::MVAvatarRemote_VisualizeBulletImpact(M
           if (pAVar5 != (Avatar *)0x0) {
             voxelHit_00.point.z = (float)pOVar3;
             voxelHit_00.point.x = 0.0;
-            voxelHit_00.point.y = 3.433868e-29;
+            voxelHit_00.point.y = 3.4363333e-29;
             voxelHit_00.normal.x = voxelHit.normal.x;
             voxelHit_00.normal.y = voxelHit.normal.y;
             voxelHit_00.normal.z = voxelHit.normal.z;

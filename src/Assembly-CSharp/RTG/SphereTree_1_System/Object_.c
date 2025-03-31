@@ -39,7 +39,7 @@ void Assembly-CSharp.dll::RTG::SphereTree`1[System::Object]::SphereTree_1_System
     pCVar1 = ColorEx::ColorEx_KeepAllButAlpha((Color *)&stack0xffffffec,color,0.3,(MethodInfo *)0x0);
     MaterialEx::MaterialEx_SetColor(this_01,*pCVar1,(MethodInfo *)0x0);
     UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetPass(this_01,0,(MethodInfo *)0x0);
-    uStack2 = 0x458b0089;
+    uStack2 = 0x458b008a;
     puStack3 = *(undefined **)(*(int *)(this_01[1].monitor + 0x60) + 0x10);
     func_?();
     return;

@@ -769,17 +769,17 @@ code_?:
           *(uint *)((int)&(this->fields)._._.interactionFlags + 4) = uVar8 | 0x38;
           if (pWVar3 != (WindTurbineObject *)0x0) {
             pTVar10 = (pWVar3->fields).triggerBoxEvents;
-            pUVar11 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(pUVar11,(Object *)this,MethodInfo__WindTurbine__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
+            pEVar11 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+            mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(pEVar11,(Object *)this,MethodInfo__WindTurbine__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
             if (pTVar10 != (TriggerBoxEvents *)0x0) {
-              TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter(pTVar10,(EventHandler_1_TriggerEventArgs_ *)pUVar11,(MethodInfo *)0x0);
+              TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter(pTVar10,(EventHandler_1_TriggerEventArgs_ *)pEVar11,(MethodInfo *)0x0);
               pWVar3 = (this->fields).windTurbineObject;
               if (pWVar3 != (WindTurbineObject *)0x0) {
                 pTVar10 = (pWVar3->fields).triggerBoxEvents;
-                pUVar11 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-                UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(pUVar11,(Object *)this,MethodInfo__WindTurbine__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
+                pEVar11 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+                mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(pEVar11,(Object *)this,MethodInfo__WindTurbine__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
                 if (pTVar10 != (TriggerBoxEvents *)0x0) {
-                  TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit(pTVar10,(EventHandler_1_TriggerEventArgs_ *)pUVar11,(MethodInfo *)0x0);
+                  TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit(pTVar10,(EventHandler_1_TriggerEventArgs_ *)pEVar11,(MethodInfo *)0x0);
                   this_01 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>);
                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text::TextResourceManager+FontAssetRef]::Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor(this_01,MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__Dictionary__);
                   (this->fields).affectedBodies = (Dictionary_2_System_Int32_MVRigidBody_ *)this_01;

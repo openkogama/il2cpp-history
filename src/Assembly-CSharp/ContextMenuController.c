@@ -917,6 +917,16 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_OnFailedT
 }
 
 
+/* Void PointerIsDown() */
+
+void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_PointerIsDown(ContextMenuController *this,MethodInfo *method)
+
+{
+  (this->fields).rightClickGizmoSelect = 1;
+  return;
+}
+
+
 /* Void PopGizmos() */
 
 void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_PopGizmos(ContextMenuController *this,MethodInfo *method)

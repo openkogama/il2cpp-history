@@ -144,6 +144,7 @@ void Assembly-CSharp.dll::MaterialLoader::MaterialLoader_Awake(MaterialLoader *t
     cRam_? = '\x01';
   }
   (this_00->fields).isStreamingTexture = 0;
+  (this_00->fields).selectedQuality = -1;
   (this_00->fields).storedTextureQuality = -1;
   if ((TypeInfo__TextureAtlasData->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__TextureAtlasData);
@@ -426,8 +427,8 @@ code_?:
         str3 = StringLiteral__unity3d;
       }
       pSVar6 = mscorlib.dll::System::String::String_Concat_5(str0,StringLiteral_AssetBundles_Atlas_,pSVar6,str3,(MethodInfo *)0x0);
-      this_00 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
-      Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor(this_00,(Object *)this,MethodInfo__MaterialLoader__AtlasCallback_UnityEngine__Networking__UnityWebRequest_,(MethodInfo *)0x0);
+      this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?();
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_00,(Object *)this,MethodInfo__MaterialLoader__AtlasCallback_UnityEngine__Networking__UnityWebRequest_,(MethodInfo *)0x0);
       this_01 = (AssetBundleRequest *)func_?();
       AssetBundleRequest::AssetBundleRequest__ctor(this_01,pSVar6,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,(MethodInfo *)0x0);
       if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
@@ -541,8 +542,8 @@ code_?:
       func_?();
       pSVar6 = MVCommon.dll::MV::Common::Urls::Urls_get_StreamingAssets((MethodInfo *)0x0);
       pSVar6 = mscorlib.dll::System::String::String_Concat_3(pSVar6,StringLiteral_AssetBundles_Textures_noisetextu,(MethodInfo *)0x0);
-      this_00 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
-      Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor(this_00,(Object *)this,MethodInfo__MaterialLoader__NoiseCallback_UnityEngine__Networking__UnityWebRequest_,(MethodInfo *)0x0);
+      this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?();
+      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_00,(Object *)this,MethodInfo__MaterialLoader__NoiseCallback_UnityEngine__Networking__UnityWebRequest_,(MethodInfo *)0x0);
       this_01 = (AssetBundleRequest *)func_?();
       AssetBundleRequest::AssetBundleRequest__ctor(this_01,pSVar6,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,(MethodInfo *)0x0);
       if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
@@ -658,8 +659,8 @@ void Assembly-CSharp.dll::MaterialLoader::MaterialLoader_NoiseCallback(MaterialL
       UnityEngine.AssetBundleModule.dll::UnityEngine::AssetBundle::AssetBundle_Unload(this_00,0,(MethodInfo *)0x0);
       if (this_01 != (Texture *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_filterMode(this_01,FilterMode__Enum_Trilinear,(MethodInfo *)0x0);
-        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetTexture((Material *)0xe721e850,StringLiteral__Noise,this_01,(MethodInfo *)0x0);
-        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetTexture((Material *)0xc48300da,StringLiteral__Noise,this_01,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetTexture((Material *)0xea11e850,StringLiteral__Noise,this_01,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetTexture((Material *)0xc48300db,StringLiteral__Noise,this_01,(MethodInfo *)0x0);
         return;
       }
     }
@@ -691,8 +692,8 @@ void Assembly-CSharp.dll::MaterialLoader::MaterialLoader_OnDestroy(MaterialLoade
   }
   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1((Object_1 *)obj,(MethodInfo *)0x0);
   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1((Object_1 *)(this->fields)._CubeModelMaterialTransp_k__BackingField,(MethodInfo *)0x0);
-  this_00 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-  Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor(this_00,(Object *)this,MethodInfo__MaterialLoader__AtlasCallback_UnityEngine__Networking__UnityWebRequest_,(MethodInfo *)0x0);
+  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_00,(Object *)this,MethodInfo__MaterialLoader__AtlasCallback_UnityEngine__Networking__UnityWebRequest_,(MethodInfo *)0x0);
   if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }

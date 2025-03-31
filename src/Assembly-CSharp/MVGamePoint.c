@@ -33,8 +33,8 @@ code_?:
       pMVar1 = (this->fields).gamePointObject;
       if (pMVar1 != (MVGamePointObject *)0x0) {
         pTVar2 = (pMVar1->fields).triggerBoxEvents;
-        this_00 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_00,(Object *)this,MethodInfo__MVGamePoint__Enter_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
+        this_00 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+        mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_00,(Object *)this,MethodInfo__MVGamePoint__Enter_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
         if (pTVar2 != (TriggerBoxEvents *)0x0) {
           TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter(pTVar2,(EventHandler_1_TriggerEventArgs_ *)this_00,(MethodInfo *)0x0);
           goto code_?;
@@ -74,8 +74,8 @@ void Assembly-CSharp.dll::MVGamePoint::MVGamePoint_Destroy(MVGamePoint *this,Met
       goto code_?;
     }
     pAVar2 = (pMVar1->fields).OnWinningConditionFulfilled;
-    this_00 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?(TypeInfo__System__Action<IWinningCondition>);
-    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor(this_00,(Object *)this,MethodInfo__MVGamePoint__OnWinningConditionFulfilled_IWinningCondition_,(MethodInfo *)0x0);
+    this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?(TypeInfo__System__Action<IWinningCondition>);
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_00,(Object *)this,MethodInfo__MVGamePoint__OnWinningConditionFulfilled_IWinningCondition_,(MethodInfo *)0x0);
     pDVar3 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
     if (pDVar3 == (Delegate *)0x0) {
       (pMVar1->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;
@@ -212,8 +212,8 @@ code_?:
     pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (pMVar2 == (MVNetworkGame *)0x0) goto code_?;
     a = (pMVar2->fields).OnWinningConditionFulfilled;
-    this_00 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
-    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor(this_00,(Object *)this,MethodInfo__MVGamePoint__OnWinningConditionFulfilled_IWinningCondition_,(MethodInfo *)0x0);
+    this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?();
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_00,(Object *)this,MethodInfo__MVGamePoint__OnWinningConditionFulfilled_IWinningCondition_,(MethodInfo *)0x0);
     unaff_ESI = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,(Delegate *)this_00,(MethodInfo *)0x0);
     unaff_EDI = TypeInfo__System__Action<IWinningCondition>;
     if (unaff_ESI == (Delegate *)0x0) {

@@ -167,7 +167,7 @@ code_?:
         if (this_00 != (MVRuntimeDataVariable_OnChangeDelegate__Class *)0x0) {
           unaff_ESI = (MVRuntimeDataVariable_OnChangeDelegate__Class *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this_00,(MethodInfo *)0x0);
           unaff_EDI.m_Index = func_?(TypeInfo__CullingSubscriberDynamic);
-          CullingSubscriberDynamic::CullingSubscriberDynamic__ctor((CullingSubscriberDynamic *)unaff_EDI.m_Index,4.0,3,(GameObject *)unaff_ESI,(GameObject__Array *)0x0,(MethodInfo *)0x0);
+          CullingSubscriberDynamic::CullingSubscriberDynamic__ctor((CullingSubscriberDynamic *)unaff_EDI.m_Index,4.0,3,(GameObject *)unaff_ESI,(GameObject__Array *)0x0,0,(MethodInfo *)0x0);
           (this->fields).cullingSubscriberDynamic = (CullingSubscriberDynamic *)unaff_EDI.m_Index;
           func_?(&(this->fields).cullingSubscriberDynamic,unaff_EDI.m_Index);
           UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled((Behaviour *)this_00,1,(MethodInfo *)0x0);

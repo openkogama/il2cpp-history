@@ -19,8 +19,8 @@ void Assembly-CSharp.dll::TM::TM_Destroy(MethodInfo *method)
     TypeInfo__TM->static_fields->instance = (TM *)0x0;
     func_?(TypeInfo__TM->static_fields,0);
     uStack_1 = 0;
-    this = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor(this,(Object *)0x0,MethodInfo__TM__StreamingAssetCallback_UnityEngine__Networking__UnityWebRequest_,(MethodInfo *)0x0);
+    this = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this,(Object *)0x0,MethodInfo__TM__StreamingAssetCallback_UnityEngine__Networking__UnityWebRequest_,(MethodInfo *)0x0);
     if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
@@ -192,8 +192,8 @@ void Assembly-CSharp.dll::TM::TM_LoadLanguage(String *languageName,MethodInfo *m
         }
         str0 = MVCommon.dll::MV::Common::Urls::Urls_get_StreamingAssets((MethodInfo *)0x0);
         pSVar2 = mscorlib.dll::System::String::String_Concat_3(str0,pSVar2,(MethodInfo *)0x0);
-        this = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
-        Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor(this,(Object *)0x0,MethodInfo__TM__StreamingAssetCallback_UnityEngine__Networking__UnityWebRequest_,(MethodInfo *)0x0);
+        this = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?();
+        DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this,(Object *)0x0,MethodInfo__TM__StreamingAssetCallback_UnityEngine__Networking__UnityWebRequest_,(MethodInfo *)0x0);
         this_00 = (AssetBundleRequest *)func_?();
         AssetBundleRequest::AssetBundleRequest__ctor(this_00,pSVar2,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this,WWWRequestPriority__Enum_ExecuteWhileSyncronizing,(MethodInfo *)0x0);
         if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
@@ -408,8 +408,8 @@ void Assembly-CSharp.dll::TM::TM_TryGetTextAsset(String *fileName,MethodInfo *me
     }
     str0 = MVCommon.dll::MV::Common::Urls::Urls_get_StreamingAssets((MethodInfo *)0x0);
     pSVar2 = mscorlib.dll::System::String::String_Concat_3(str0,pSVar2,(MethodInfo *)0x0);
-    this = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
-    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor(this,(Object *)0x0,MethodInfo__TM__StreamingAssetCallback_UnityEngine__Networking__UnityWebRequest_,(MethodInfo *)0x0);
+    this = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?();
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this,(Object *)0x0,MethodInfo__TM__StreamingAssetCallback_UnityEngine__Networking__UnityWebRequest_,(MethodInfo *)0x0);
     this_00 = (AssetBundleRequest *)func_?(TypeInfo__GetRequest);
     AssetBundleRequest::AssetBundleRequest__ctor(this_00,pSVar2,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this,WWWRequestPriority__Enum_ExecuteWhileSyncronizing,(MethodInfo *)0x0);
     if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {

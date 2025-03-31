@@ -72,18 +72,18 @@ void Assembly-CSharp.dll::TriggerCube::TriggerCube_Initialize(TriggerCube *this,
   pTVar1 = (this->fields).objPrefab;
   if (pTVar1 != (TriggerCubePrefab *)0x0) {
     unaff_ESI = (pTVar1->fields).triggerBoxEvents;
-    pUVar2 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(pUVar2,(Object *)this,MethodInfo__TriggerCube__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
+    pEVar2 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(pEVar2,(Object *)this,MethodInfo__TriggerCube__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
     if (unaff_ESI != (TriggerBoxEvents *)0x0) {
-      TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter(unaff_ESI,(EventHandler_1_TriggerEventArgs_ *)pUVar2,(MethodInfo *)0x0);
+      TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter(unaff_ESI,(EventHandler_1_TriggerEventArgs_ *)pEVar2,(MethodInfo *)0x0);
       pTVar1 = (this->fields).objPrefab;
       if (pTVar1 != (TriggerCubePrefab *)0x0) {
         pTVar3 = (pTVar1->fields).triggerBoxEvents;
-        pUVar2 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(pUVar2,(Object *)this,MethodInfo__TriggerCube__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
+        pEVar2 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+        mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(pEVar2,(Object *)this,MethodInfo__TriggerCube__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
         unaff_ESI = (TriggerBoxEvents *)0x0;
         if (pTVar3 != (TriggerBoxEvents *)0x0) {
-          TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit(pTVar3,(EventHandler_1_TriggerEventArgs_ *)pUVar2,(MethodInfo *)0x0);
+          TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit(pTVar3,(EventHandler_1_TriggerEventArgs_ *)pEVar2,(MethodInfo *)0x0);
           this_00 = (Action_3_Int32_Int32_ByteEnum_ *)func_?(TypeInfo__System__Action<bool,_bool,_LogicObjectManager>);
           mscorlib.dll::System::Action`3[Int32,Int32,ByteEnum]::Action_3_Int32_Int32_ByteEnum___ctor(this_00,(Object *)this,MethodInfo__TriggerCube__Callback_bool__bool__LogicObjectManager_,(MethodInfo *)0x0);
           pIVar4 = LogicClientsideFactory::LogicClientsideFactory_CreateInputSignalReceiver((MVWorldObject *)this,1,(Action_3_Boolean_Boolean_LogicObjectManager_ *)this_00,(MethodInfo *)0x0);

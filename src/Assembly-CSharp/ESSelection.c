@@ -134,9 +134,9 @@ void Assembly-CSharp.dll::ESSelection::ESSelection_Enter(ESSelection *this,Edito
       pEVar17 = (this->fields).editorStateMachine;
       if (pEVar17 != (EditorStateMachine *)0x0) {
         pSVar18 = (pEVar17->fields).selectionController;
-        this_04 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<WorldObjectDestroyedEventArgs>);
+        this_04 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<WorldObjectDestroyedEventArgs>);
         VStack_13.z = (float)this_04;
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_04,(Object *)this,MethodInfo__ESSelection__SelectionController_SelectedWorldObjectDeletedHandler_System__Object__WorldObjectDestroyedEventArgs_,(MethodInfo *)0x0);
+        mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_04,(Object *)this,MethodInfo__ESSelection__SelectionController_SelectedWorldObjectDeletedHandler_System__Object__WorldObjectDestroyedEventArgs_,(MethodInfo *)0x0);
         if (pSVar18 != (SelectionController *)0x0) {
           func_?(0,TypeInfo__ISelectionController,pSVar18,VStack_13.z);
           bVar5 = EditorStateMachine::EditorStateMachine_get_ParentGroupIsRoot(e,(MethodInfo *)0x0);
@@ -539,8 +539,8 @@ code_?:
   pEVar3 = (this->fields).editorStateMachine;
   if (pEVar3 != (EditorStateMachine *)0x0) {
     pSVar4 = (pEVar3->fields).selectionController;
-    this_01 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_01,(Object *)this,MethodInfo__ESSelection__SelectionController_SelectedWorldObjectDeletedHandler_System__Object__WorldObjectDestroyedEventArgs_,(MethodInfo *)0x0);
+    this_01 = (EventHandler_1_Object_ *)func_?();
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_01,(Object *)this,MethodInfo__ESSelection__SelectionController_SelectedWorldObjectDeletedHandler_System__Object__WorldObjectDestroyedEventArgs_,(MethodInfo *)0x0);
     if (pSVar4 != (SelectionController *)0x0) {
       func_?();
       return;

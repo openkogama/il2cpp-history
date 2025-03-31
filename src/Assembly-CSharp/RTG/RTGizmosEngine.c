@@ -784,11 +784,11 @@ void Assembly-CSharp.dll::RTG::RTGizmosEngine::RTGizmosEngine_RegisterGizmo(RTGi
   if (this_00 != (List_1_RTG_Gizmo_ *)0x0) {
     mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add((List_1_System_Object_ *)this_00,(Object *)gizmo,MethodInfo__System__Collections__Generic__List<RTG::Gizmo>__Add_RTG__Gizmo_);
     value = (GizmoPreDragBeginHandler *)func_?(TypeInfo__RTG__GizmoPreDragBeginHandler);
-    mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor((Action_2_Object_Int32Enum_ *)value,(Object *)this,MethodInfo__RTG__RTGizmosEngine__OnGizmoDragBegin_RTG__Gizmo__int_,(MethodInfo *)0x0);
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor((EventHandler_1_Object_ *)value,(Object *)this,MethodInfo__RTG__RTGizmosEngine__OnGizmoDragBegin_RTG__Gizmo__int_,(MethodInfo *)0x0);
     if (gizmo != (Gizmo *)0x0) {
       Gizmo::Gizmo_add_PreDragBegin(gizmo,value,(MethodInfo *)0x0);
       value_00 = (GizmoPreDragEndHandler *)func_?(TypeInfo__RTG__GizmoPreDragEndHandler);
-      mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor((Action_2_Object_Int32Enum_ *)value_00,(Object *)this,MethodInfo__RTG__RTGizmosEngine__OnGizmoDragEnd_RTG__Gizmo__int_,(MethodInfo *)0x0);
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor((EventHandler_1_Object_ *)value_00,(Object *)this,MethodInfo__RTG__RTGizmosEngine__OnGizmoDragEnd_RTG__Gizmo__int_,(MethodInfo *)0x0);
       Gizmo::Gizmo_add_PreDragEnd(gizmo,value_00,(MethodInfo *)0x0);
       return;
     }
@@ -1017,11 +1017,11 @@ void Assembly-CSharp.dll::RTG::RTGizmosEngine::RTGizmosEngine_UnregisterGizmo(RT
     bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Remove((List_1_System_Object_ *)this_00,(Object *)gizmo,MethodInfo__System__Collections__Generic__List<RTG::Gizmo>__Remove_RTG__Gizmo_);
     if (bVar1 != 0) {
       value = (GizmoPreDragBeginHandler *)func_?(TypeInfo__RTG__GizmoPreDragBeginHandler);
-      mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor((Action_2_Object_Int32Enum_ *)value,(Object *)this,MethodInfo__RTG__RTGizmosEngine__OnGizmoDragBegin_RTG__Gizmo__int_,(MethodInfo *)0x0);
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor((EventHandler_1_Object_ *)value,(Object *)this,MethodInfo__RTG__RTGizmosEngine__OnGizmoDragBegin_RTG__Gizmo__int_,(MethodInfo *)0x0);
       if (gizmo == (Gizmo *)0x0) goto code_?;
       Gizmo::Gizmo_remove_PreDragBegin(gizmo,value,(MethodInfo *)0x0);
       value_00 = (GizmoPreDragEndHandler *)func_?(TypeInfo__RTG__GizmoPreDragEndHandler);
-      mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor((Action_2_Object_Int32Enum_ *)value_00,(Object *)this,MethodInfo__RTG__RTGizmosEngine__OnGizmoDragEnd_RTG__Gizmo__int_,(MethodInfo *)0x0);
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor((EventHandler_1_Object_ *)value_00,(Object *)this,MethodInfo__RTG__RTGizmosEngine__OnGizmoDragEnd_RTG__Gizmo__int_,(MethodInfo *)0x0);
       Gizmo::Gizmo_remove_PreDragEnd(gizmo,value_00,(MethodInfo *)0x0);
     }
     return;

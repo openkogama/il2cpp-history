@@ -321,7 +321,7 @@ code_?:
                             (*(code *)(cubeModelBase->klass->vtable).set_Visible.method)(cubeModelBase,1,(short)(cubeModelBase->klass->vtable).GetTargetPosition.methodPtr);
                             pGVar13 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this_03,(MethodInfo *)0x0);
                             this_04 = (CullingSubscriberDynamic *)func_?(TypeInfo__CullingSubscriberDynamic);
-                            CullingSubscriberDynamic::CullingSubscriberDynamic__ctor(this_04,4.0,3,pGVar13,(GameObject__Array *)0x0,(MethodInfo *)0x0);
+                            CullingSubscriberDynamic::CullingSubscriberDynamic__ctor(this_04,4.0,3,pGVar13,(GameObject__Array *)0x0,0,(MethodInfo *)0x0);
                             (this->fields).cullingSubscriberDynamic = this_04;
                             func_?();
                             return;

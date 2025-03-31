@@ -55,7 +55,6 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeGoldIcon>d__30::Le
   default:
     return 0;
   }
-  in_AF = 0;
   if (1.0 <= (pLVar1->fields)._currentTime_5__2 / (pLVar2->fields).rotateUIYAxisTime) {
     pIVar4 = (pLVar2->fields).goldImage;
     if (pIVar4 != (Image *)0x0) {
@@ -84,7 +83,6 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeGoldIcon>d__30::Le
                   UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha(pCVar13,0.0,(MethodInfo *)0x0);
                   (pLVar1->fields)._currentTime_5__2 = 0.0;
 code_?:
-                  in_AF = 0;
                   if (1.0 <= (pLVar1->fields)._currentTime_5__2 / (pLVar2->fields).goldImageDisplayTime) {
                     pAVar5 = (pLVar2->fields).goldBounceEffect;
                     if (pAVar5 != (AnimationCurve *)0x0) {
@@ -172,25 +170,12 @@ code_?:
     }
   }
 code_?:
-  uVar16 = func_?();
-  bVar17 = (byte)((uint)&stack0xfffffffc >> 8) & (byte)((uint6)uVar16 >> 0x20);
-  pcVar18 = (char *)CONCAT22((short)((uint)&stack0xfffffffc >> 0x10),CONCAT11(bVar17,(char)&stack0xfffffffc));
-  in_AF = 9 < ((byte)uVar16 & 0xf) | in_AF;
-  bVar19 = (byte)uVar16 + in_AF * -6 & 0xf;
-  pcVar20 = (char *)((int)&pLVar1[-1].fields.__4__this + 3);
-  *pcVar20 = *pcVar20 + (char)((uint6)uVar16 >> 0x28) + in_AF;
-  bVar21 = 9 < bVar19 | in_AF;
-  cVar22 = ((char)((uint6)uVar16 >> 8) - in_AF) - bVar21;
-  bVar19 = (bVar19 + bVar21 * -6 & 0xf) + cVar22 + bVar21;
-  bVar21 = 9 < (bVar19 & 0xf) | bVar21;
-  uVar23 = CONCAT31((int3)((uint6)uVar16 >> 8),bVar19 + bVar21 * -6) & 0xffff000f;
-  cVar24 = (char)uVar23;
-  *pcVar18 = *pcVar18 + bVar17 + bVar21;
-  pcVar20 = (char *)(CONCAT22((short)(uVar23 >> 0x10),CONCAT11(cVar22 - bVar21,cVar24)) + 0x10);
-  *pcVar20 = *pcVar20 + cVar24;
-  pcVar25 = (code *)swi(3);
-  bVar26 = (*pcVar25)();
-  return bVar26;
+  func_?();
+  pcVar16 = (char *)((int)&pLVar1[1].klass + 3);
+  *pcVar16 = *pcVar16 + extraout_DH;
+  pcVar17 = (code *)swi(3);
+  bVar18 = (*pcVar17)();
+  return bVar18;
 }
 
 

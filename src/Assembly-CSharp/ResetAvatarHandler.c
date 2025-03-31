@@ -16,8 +16,8 @@ void Assembly-CSharp.dll::ResetAvatarHandler::ResetAvatarHandler_GameOnReceivedI
     cRam_? = '\x01';
   }
   this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  this_02 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_02,(Object *)this,MethodInfo__ResetAvatarHandler__GameOnReceivedItemFromQuery_System__Object__ReceivedItemFromQueryEventArgs_,(MethodInfo *)0x0);
+  this_02 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>);
+  mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_02,(Object *)this,MethodInfo__ResetAvatarHandler__GameOnReceivedItemFromQuery_System__Object__ReceivedItemFromQueryEventArgs_,(MethodInfo *)0x0);
   if (this_01 != (MVNetworkGame *)0x0) {
     MVNetworkGame::MVNetworkGame_remove_ReceivedItemFromQuery(this_01,(EventHandler_1_ReceivedItemFromQueryEventArgs_ *)this_02,(MethodInfo *)0x0);
     if (receivedItemFromQueryEventArgs != (ReceivedItemFromQueryEventArgs *)0x0) {
@@ -118,8 +118,8 @@ void Assembly-CSharp.dll::ResetAvatarHandler::ResetAvatarHandler_GetResetAvatarD
     cRam_? = '\x01';
   }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  this_00 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_00,(Object *)this,MethodInfo__ResetAvatarHandler__GameOnReceivedItemFromQuery_System__Object__ReceivedItemFromQueryEventArgs_,(MethodInfo *)0x0);
+  this_00 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>);
+  mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_00,(Object *)this,MethodInfo__ResetAvatarHandler__GameOnReceivedItemFromQuery_System__Object__ReceivedItemFromQueryEventArgs_,(MethodInfo *)0x0);
   if (pMVar1 != (MVNetworkGame *)0x0) {
     MVNetworkGame::MVNetworkGame_add_ReceivedItemFromQuery(pMVar1,(EventHandler_1_ReceivedItemFromQueryEventArgs_ *)this_00,(MethodInfo *)0x0);
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
@@ -219,8 +219,8 @@ void Assembly-CSharp.dll::ResetAvatarHandler::ResetAvatarHandler_OnDestroy(Reset
     cRam_? = '\x01';
   }
   this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  this_01 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_01,(Object *)this,MethodInfo__ResetAvatarHandler__GameOnReceivedItemFromQuery_System__Object__ReceivedItemFromQueryEventArgs_,(MethodInfo *)0x0);
+  this_01 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>);
+  mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_01,(Object *)this,MethodInfo__ResetAvatarHandler__GameOnReceivedItemFromQuery_System__Object__ReceivedItemFromQueryEventArgs_,(MethodInfo *)0x0);
   if (this_00 != (MVNetworkGame *)0x0) {
     MVNetworkGame::MVNetworkGame_remove_ReceivedItemFromQuery(this_00,(EventHandler_1_ReceivedItemFromQueryEventArgs_ *)this_01,(MethodInfo *)0x0);
     pTVar1 = (this->fields).avatarResetToTransform;
@@ -321,8 +321,8 @@ void Assembly-CSharp.dll::ResetAvatarHandler::ResetAvatarHandler_ResetAvatar(Res
       cRam_? = '\x01';
     }
     pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    this_02 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_02,(Object *)this,MethodInfo__ResetAvatarHandler__GameOnReceivedItemFromQuery_System__Object__ReceivedItemFromQueryEventArgs_,(MethodInfo *)0x0);
+    this_02 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>);
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_02,(Object *)this,MethodInfo__ResetAvatarHandler__GameOnReceivedItemFromQuery_System__Object__ReceivedItemFromQueryEventArgs_,(MethodInfo *)0x0);
     if (pMVar3 != (MVNetworkGame *)0x0) {
       MVNetworkGame::MVNetworkGame_add_ReceivedItemFromQuery(pMVar3,(EventHandler_1_ReceivedItemFromQueryEventArgs_ *)this_02,(MethodInfo *)0x0);
       pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);

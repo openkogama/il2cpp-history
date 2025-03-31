@@ -344,7 +344,7 @@ void Assembly-CSharp.dll::MVHoverCraft::MVHoverCraft_Initialize(MVHoverCraft *th
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1(pGVar2,InteractionDataHandler_MethodInfo__UnityEngine__GameObject__AddComponent<InteractionDataHandler>__);
       pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this_00,(MethodInfo *)0x0);
       this_03 = (CullingSubscriberDynamic *)func_?();
-      CullingSubscriberDynamic::CullingSubscriberDynamic__ctor(this_03,4.0,3,pGVar2,(GameObject__Array *)0x0,(MethodInfo *)0x0);
+      CullingSubscriberDynamic::CullingSubscriberDynamic__ctor(this_03,4.0,3,pGVar2,(GameObject__Array *)0x0,0,(MethodInfo *)0x0);
       (this->fields).cullingSubscriberDynamic = this_03;
       func_?();
       if (pMVar1 == (MVWorldObjectClient *)0x0) goto code_?;

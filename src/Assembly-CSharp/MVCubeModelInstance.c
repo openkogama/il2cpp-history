@@ -289,29 +289,29 @@ code_?:
       (this->fields).cullingSubscriberBase = (CullingSubscriberBase *)0x0;
       func_?(&(this->fields).cullingSubscriberBase,0);
     }
-    unaff_EDI = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<EditStateEventArgs>);
-    pUVar2 = unaff_EDI;
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(unaff_EDI,(Object *)0x0,MethodInfo__MVCubeModelInstance__MVCubeModelBase_BeingEditedChanged_System__Object__EditStateEventArgs_,(MethodInfo *)0x0);
+    unaff_EDI = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<EditStateEventArgs>);
+    pEVar2 = unaff_EDI;
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(unaff_EDI,(Object *)0x0,MethodInfo__MVCubeModelInstance__MVCubeModelBase_BeingEditedChanged_System__Object__EditStateEventArgs_,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
       func_?(&TypeInfo__System__EventHandler<EditStateEventArgs>);
       cRam_? = '\x01';
     }
     source_00 = (this->fields)._.BeingEditedChanged;
     do {
-      unaff_EDI = (UnityAction_2_System_Object_System_Object_ *)mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source_00,(Delegate *)unaff_EDI,(MethodInfo *)0x0);
+      unaff_EDI = (EventHandler_1_Object_ *)mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source_00,(Delegate *)unaff_EDI,(MethodInfo *)0x0);
       in_stack_3 = TypeInfo__System__EventHandler<EditStateEventArgs>;
-      if (unaff_EDI == (UnityAction_2_System_Object_System_Object_ *)0x0) {
+      if (unaff_EDI == (EventHandler_1_Object_ *)0x0) {
         iVar4 = 0;
       }
       else {
         iVar4 = func_?(unaff_EDI,TypeInfo__System__EventHandler<EditStateEventArgs>,TypeInfo__System__EventHandler<EditStateEventArgs>);
         if (iVar4 == 0) goto code_?;
       }
-      unaff_EDI = pUVar2;
+      unaff_EDI = pEVar2;
       pEVar5 = (EventHandler_1_EditStateEventArgs_ *)func_?(&(this->fields)._.BeingEditedChanged,iVar4,source_00);
       bVar6 = pEVar5 != source_00;
       source_00 = pEVar5;
-      pUVar2 = unaff_EDI;
+      pEVar2 = unaff_EDI;
     } while (bVar6);
     if (cRam_? == '\0') {
       func_?(&TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>);
@@ -321,10 +321,10 @@ code_?:
     pRVar1 = (this->fields)._.prototypeCubeModel;
     if (pRVar1 == (RuntimePrototypeCubeModel *)0x0) goto code_?;
     source = (pRVar1->fields).DirtyChunksRegenerated;
-    this_00 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?(TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>);
-    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor(this_00,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
-    unaff_EDI = (UnityAction_2_System_Object_System_Object_ *)mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (unaff_EDI == (UnityAction_2_System_Object_System_Object_ *)0x0) {
+    this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?(TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>);
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_00,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
+    unaff_EDI = (EventHandler_1_Object_ *)mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source,(Delegate *)this_00,(MethodInfo *)0x0);
+    if (unaff_EDI == (EventHandler_1_Object_ *)0x0) {
       (pRVar1->fields).DirtyChunksRegenerated = (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector_ *)0x0;
       func_?();
       return;
@@ -631,8 +631,8 @@ void Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_Initialize(MV
               this_03 = (UnityAction_1_UnityEngine_Vector2_ *)func_?(TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>);
               UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Vector2]::UnityAction_1_UnityEngine_Vector2___ctor(this_03,(Object *)this,MethodInfo__MVCubeModelInstance__OnStateChanged_UnityEngine__CullingGroupEvent_,(MethodInfo *)0x0);
               MVCubeModelInstance_SetupCulling(this,(UnityAction_1_UnityEngine_CullingGroupEvent_ *)this_03,(MethodInfo *)0x0);
-              this_04 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<EditStateEventArgs>);
-              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_04,(Object *)0x0,MethodInfo__MVCubeModelInstance__MVCubeModelBase_BeingEditedChanged_System__Object__EditStateEventArgs_,(MethodInfo *)0x0);
+              this_04 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<EditStateEventArgs>);
+              mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_04,(Object *)0x0,MethodInfo__MVCubeModelInstance__MVCubeModelBase_BeingEditedChanged_System__Object__EditStateEventArgs_,(MethodInfo *)0x0);
               MVCubeModelBase::MVCubeModelBase_add_BeingEditedChanged((MVCubeModelBase *)this,(EventHandler_1_EditStateEventArgs_ *)this_04,(MethodInfo *)0x0);
             }
             return;
@@ -1103,8 +1103,8 @@ void Assembly-CSharp.dll::MVCubeModelInstance::MVCubeModelInstance_SetupCulling(
   func_?();
   pUStack7 = (UnityAction_2_MVWorldObjectClient_RotationChangedEventArgs___Class *)TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>;
   pAVar9 = (this->fields)._.ChunksChanged;
-  this_01 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
-  Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor(this_01,(Object *)this,MethodInfo__MVCubeModelInstance__OnChanged_System__Collections__Generic__HashSet<MV::WorldObject::IntVector>_,(MethodInfo *)0x0);
+  this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?();
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_01,(Object *)this,MethodInfo__MVCubeModelInstance__OnChanged_System__Collections__Generic__HashSet<MV::WorldObject::IntVector>_,(MethodInfo *)0x0);
   pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pAVar9,(Delegate *)this_01,(MethodInfo *)0x0);
   pAVar4 = TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>;
   if (pDVar3 == (Delegate *)0x0) {

@@ -810,7 +810,7 @@ code_?:
                 if (pGVar3 != (GizmoCap3D *)0x0) {
                   pGVar2 = (pGVar3->fields)._._gizmo;
                   value_00 = (GizmoPreHandlePickedHandler *)func_?();
-                  mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor((Action_2_Object_Int32Enum_ *)value_00,(Object *)this,MethodInfo__RTG__SceneGizmoAxisCap__OnGizmoHandlePicked_RTG__Gizmo__int_,(MethodInfo *)0x0);
+                  mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor((EventHandler_1_Object_ *)value_00,(Object *)this,MethodInfo__RTG__SceneGizmoAxisCap__OnGizmoHandlePicked_RTG__Gizmo__int_,(MethodInfo *)0x0);
                   if (pGVar2 != (Gizmo *)0x0) {
                     Gizmo::Gizmo_add_PreHandlePicked(pGVar2,value_00,(MethodInfo *)0x0);
                     pSVar7 = (this->fields)._._sceneGizmo;

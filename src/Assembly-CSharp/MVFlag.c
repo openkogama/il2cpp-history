@@ -14,10 +14,10 @@ void Assembly-CSharp.dll::MVFlag::MVFlag_Destroy(MVFlag *this,MethodInfo *method
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).triggerBoxEvents;
-  pUVar2 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(pUVar2,(Object *)this,MethodInfo__MVFlag__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
+  pEVar2 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+  mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(pEVar2,(Object *)this,MethodInfo__MVFlag__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
   if (pTVar1 != (TriggerBoxEvents *)0x0) {
-    TriggerBoxEvents::TriggerBoxEvents_remove_TriggerEnter(pTVar1,(EventHandler_1_TriggerEventArgs_ *)pUVar2,(MethodInfo *)0x0);
+    TriggerBoxEvents::TriggerBoxEvents_remove_TriggerEnter(pTVar1,(EventHandler_1_TriggerEventArgs_ *)pEVar2,(MethodInfo *)0x0);
     if ((this->fields).useInteractor == (UseInteractor *)0x0) {
 code_?:
       if (cRam_? == '\0') {
@@ -53,16 +53,16 @@ code_?:
     else {
       pTVar1 = (this->fields).triggerBoxEvents;
       pUVar8 = (this->fields).useInteractor;
-      pUVar2 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(pUVar2,(Object *)pUVar8,MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
+      pEVar2 = (EventHandler_1_Object_ *)func_?();
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(pEVar2,(Object *)pUVar8,MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
       if (pTVar1 != (TriggerBoxEvents *)0x0) {
-        TriggerBoxEvents::TriggerBoxEvents_remove_TriggerEnter(pTVar1,(EventHandler_1_TriggerEventArgs_ *)pUVar2,(MethodInfo *)0x0);
+        TriggerBoxEvents::TriggerBoxEvents_remove_TriggerEnter(pTVar1,(EventHandler_1_TriggerEventArgs_ *)pEVar2,(MethodInfo *)0x0);
         pTVar1 = (this->fields).triggerBoxEvents;
         pUVar8 = (this->fields).useInteractor;
-        pUVar2 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(pUVar2,(Object *)pUVar8,MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
+        pEVar2 = (EventHandler_1_Object_ *)func_?();
+        mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(pEVar2,(Object *)pUVar8,MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
         if (pTVar1 != (TriggerBoxEvents *)0x0) {
-          TriggerBoxEvents::TriggerBoxEvents_remove_TriggerExit(pTVar1,(EventHandler_1_TriggerEventArgs_ *)pUVar2,(MethodInfo *)0x0);
+          TriggerBoxEvents::TriggerBoxEvents_remove_TriggerExit(pTVar1,(EventHandler_1_TriggerEventArgs_ *)pEVar2,(MethodInfo *)0x0);
           pUVar8 = (this->fields).useInteractor;
           if (pUVar8 != (UseInteractor *)0x0) {
             UseInteractor::UseInteractor_OnDestroy(pUVar8,(this->fields)._._._._.data,(MethodInfo *)0x0);
@@ -238,16 +238,16 @@ void Assembly-CSharp.dll::MVFlag::MVFlag_SetupUseInteractor(MVFlag *this,MethodI
       func_?(&(this->fields).useInteractor,pUVar4);
       pTVar3 = (this->fields).triggerBoxEvents;
       pUVar4 = (this->fields).useInteractor;
-      pUVar5 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(pUVar5,(Object *)pUVar4,MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
+      pEVar5 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(pEVar5,(Object *)pUVar4,MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
       if (pTVar3 != (TriggerBoxEvents *)0x0) {
-        TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter(pTVar3,(EventHandler_1_TriggerEventArgs_ *)pUVar5,(MethodInfo *)0x0);
+        TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter(pTVar3,(EventHandler_1_TriggerEventArgs_ *)pEVar5,(MethodInfo *)0x0);
         pTVar3 = (this->fields).triggerBoxEvents;
         pUVar4 = (this->fields).useInteractor;
-        pUVar5 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(pUVar5,(Object *)pUVar4,MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
+        pEVar5 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+        mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(pEVar5,(Object *)pUVar4,MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
         if (pTVar3 != (TriggerBoxEvents *)0x0) {
-          TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit(pTVar3,(EventHandler_1_TriggerEventArgs_ *)pUVar5,(MethodInfo *)0x0);
+          TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit(pTVar3,(EventHandler_1_TriggerEventArgs_ *)pEVar5,(MethodInfo *)0x0);
           pFVar1 = (this->fields).flagObject;
           if (pFVar1 != (FlagObject *)0x0) {
             pGVar2 = (pFVar1->fields).useInteractionRotator;
@@ -328,8 +328,8 @@ void Assembly-CSharp.dll::MVFlag::MVFlag__ctor(MVFlag *this,Dictionary_2_System_
       (this->fields).triggerBoxEvents = pTVar3;
       func_?(&(this->fields).triggerBoxEvents,pTVar3);
       pTVar3 = (this->fields).triggerBoxEvents;
-      this_00 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_00,(Object *)this,MethodInfo__MVFlag__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
+      this_00 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_00,(Object *)this,MethodInfo__MVFlag__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
       if (pTVar3 != (TriggerBoxEvents *)0x0) {
         TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter(pTVar3,(EventHandler_1_TriggerEventArgs_ *)this_00,(MethodInfo *)0x0);
         piVar4 = &(this->fields)._._._.interactionFlags;

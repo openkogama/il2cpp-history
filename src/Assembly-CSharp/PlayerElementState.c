@@ -121,7 +121,7 @@ void Assembly-CSharp.dll::PlayerElementState::PlayerElementState_OpenUserManagem
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
-        pOVar5 = (Object__Class *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)0xb3e42035,OwnerToolController_MethodInfo__UnityEngine__Object__Instantiate<OwnerToolController>_OwnerToolController_);
+        pOVar5 = (Object__Class *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)0xb5e42435,OwnerToolController_MethodInfo__UnityEngine__Object__Instantiate<OwnerToolController>_OwnerToolController_);
         if (value != (Object *)0x0) {
           value[1].klass = pOVar5;
           func_?(value + 1,pOVar5);

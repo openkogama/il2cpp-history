@@ -424,14 +424,14 @@ code_?:
           func_?();
           pTVar15 = (this->fields).triggerBoxEvents;
           pUVar16 = (this->fields).useInteractor;
-          this_03 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_03,(Object *)pUVar16,MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
+          this_03 = (EventHandler_1_Object_ *)func_?();
+          mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_03,(Object *)pUVar16,MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
           if (pTVar15 != (TriggerBoxEvents *)0x0) {
             TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter(pTVar15,(EventHandler_1_TriggerEventArgs_ *)this_03,(MethodInfo *)0x0);
             pTVar15 = (this->fields).triggerBoxEvents;
             pUVar16 = (this->fields).useInteractor;
             unaff_EDI = (RegexCharClass_SingleRange)func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)unaff_EDI,(Object *)pUVar16,MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
+            mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor((EventHandler_1_Object_ *)unaff_EDI,(Object *)pUVar16,MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
             if (((pTVar15 != (TriggerBoxEvents *)0x0) && (TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit(pTVar15,(EventHandler_1_TriggerEventArgs_ *)unaff_EDI,(MethodInfo *)0x0), wo != (MVVehicleBase *)0x0)) && (pLVar13 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)MVGroup::MVGroup_get_Children((MVGroup *)wo,(MethodInfo *)0x0), pLVar13 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)) {
               pLVar17 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)&stack0xffffffd0,pLVar13,MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__GetEnumerator__);
               method_00 = (MethodInfo *)pLVar17->_version;

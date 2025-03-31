@@ -45,8 +45,8 @@ code_?:
     pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (pMVar6 == (MVNetworkGame *)0x0) goto code_?;
     pAVar7 = (pMVar6->fields).OnWinningConditionFulfilled;
-    this_04 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
-    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor(this_04,(Object *)&UNK_?,MethodInfo__DeathUIController__OnRoundEnd_IWinningCondition_,(MethodInfo *)0x0);
+    this_04 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?();
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_04,(Object *)&UNK_?,MethodInfo__DeathUIController__OnRoundEnd_IWinningCondition_,(MethodInfo *)0x0);
     pDVar8 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pAVar7,(Delegate *)this_04,(MethodInfo *)0x0);
     if (pDVar8 == (Delegate *)0x0) {
       (pMVar6->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;
@@ -65,12 +65,12 @@ code_?:
         return;
       }
       Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::Mediator::SpawnRoleDataMediator::SpawnRoleDataMediator_add_OnSuicide(pSVar1,(Action *)pNVar5,(MethodInfo *)0x0);
-      pDVar8 = pDRam6835ff2c;
+      pDVar8 = pDRam5035ff2c;
       pNVar5 = (NavMesh_OnNavMeshPreUpdate *)func_?();
       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(pNVar5,(Object *)object,MethodInfo__DeathUIController__OnFadeFinished__,(MethodInfo *)0x0);
       pDVar8 = mscorlib.dll::System::Delegate::Delegate_Combine(pDVar8,(Delegate *)pNVar5,(MethodInfo *)0x0);
       if (pDVar8 == (Delegate *)0x0) {
-        pDRam6835ff2c = (Delegate *)0x0;
+        pDRam5035ff2c = (Delegate *)0x0;
         func_?();
         return;
       }
@@ -83,7 +83,7 @@ code_?:
         if ((Action__Class *)pDVar8->klass == TypeInfo__System__Action) {
           pDVar12 = pDVar8;
         }
-        pDRam6835ff2c = pDVar11;
+        pDRam5035ff2c = pDVar11;
         if (pDVar12 != (Delegate *)0x0) {
           func_?();
           return;
@@ -289,9 +289,9 @@ code_?:
     if (pMVar7 == (MVNetworkGame *)0x0) goto code_?;
     pAStack2 = (Action_1_MV_Common_SpawnRoleModeType___Class *)TypeInfo__System__Action<IWinningCondition>;
     a = (pMVar7->fields).OnWinningConditionFulfilled;
-    this_03 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
+    this_03 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?();
     puVar8 = &UNK_?;
-    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor(this_03,(Object *)pNVar5,MethodInfo__DeathUIController__OnRoundEnd_IWinningCondition_,(MethodInfo *)0x0);
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_03,(Object *)pNVar5,MethodInfo__DeathUIController__OnRoundEnd_IWinningCondition_,(MethodInfo *)0x0);
     pDVar9 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,(Delegate *)this_03,(MethodInfo *)0x0);
     if (pDVar9 == (Delegate *)0x0) {
       *(undefined4 *)(puVar8 + 0xc0) = 0;
@@ -450,8 +450,8 @@ code_?:
       object = TypeInfo__System__Action<IWinningCondition>;
       if (pMVar7 != (MVNetworkGame *)0x0) {
         pAVar8 = (pMVar7->fields).OnWinningConditionFulfilled;
-        this_03 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
-        Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor(this_03,(Object *)object,MethodInfo__DeathUIController__OnRoundEnd_IWinningCondition_,(MethodInfo *)0x0);
+        this_03 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?();
+        DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_03,(Object *)object,MethodInfo__DeathUIController__OnRoundEnd_IWinningCondition_,(MethodInfo *)0x0);
         pDVar9 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)pAVar8,(Delegate *)this_03,(MethodInfo *)0x0);
         if (pDVar9 == (Delegate *)0x0) {
           (pMVar7->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;

@@ -25,8 +25,8 @@ void Assembly-CSharp.dll::EditorWorldObjectCreation::EditorWorldObjectCreation_C
   pMVar2 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
   if (pMVar2 == (MVWorldObjectClientManager *)0x0) goto code_?;
   pEVar3 = (pMVar2->fields).CloneWorldObjectTreeResponse;
-  this_01 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<CloneWorldObjectTreeResponseEventArgs>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_01,(Object *)this,MethodInfo__EditorWorldObjectCreation__CloneWorldObjectTreeResponseHandler_System__Object__CloneWorldObjectTreeResponseEventArgs_,(MethodInfo *)0x0);
+  this_01 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<CloneWorldObjectTreeResponseEventArgs>);
+  mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_01,(Object *)this,MethodInfo__EditorWorldObjectCreation__CloneWorldObjectTreeResponseHandler_System__Object__CloneWorldObjectTreeResponseEventArgs_,(MethodInfo *)0x0);
   pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pEVar3,(Delegate *)this_01,(MethodInfo *)0x0);
   if (pDVar4 == (Delegate *)0x0) {
     (pMVar2->fields).CloneWorldObjectTreeResponse = (EventHandler_1_CloneWorldObjectTreeResponseEventArgs_ *)0x0;
@@ -87,8 +87,8 @@ void Assembly-CSharp.dll::EditorWorldObjectCreation::EditorWorldObjectCreation_C
   pMVar4 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
   if (pMVar4 == (MVWorldObjectClientManager *)0x0) goto code_?;
   pEVar5 = (pMVar4->fields).CloneWorldObjectTreeResponse;
-  this_00 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<CloneWorldObjectTreeResponseEventArgs>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_00,(Object *)this,MethodInfo__EditorWorldObjectCreation__CloneWorldObjectTreeResponseHandler_System__Object__CloneWorldObjectTreeResponseEventArgs_,(MethodInfo *)0x0);
+  this_00 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<CloneWorldObjectTreeResponseEventArgs>);
+  mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_00,(Object *)this,MethodInfo__EditorWorldObjectCreation__CloneWorldObjectTreeResponseHandler_System__Object__CloneWorldObjectTreeResponseEventArgs_,(MethodInfo *)0x0);
   pDVar6 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)pEVar5,(Delegate *)this_00,(MethodInfo *)0x0);
   if (pDVar6 == (Delegate *)0x0) {
     (pMVar4->fields).CloneWorldObjectTreeResponse = (EventHandler_1_CloneWorldObjectTreeResponseEventArgs_ *)0x0;
@@ -204,8 +204,8 @@ void Assembly-CSharp.dll::EditorWorldObjectCreation::EditorWorldObjectCreation_I
     pWVar2 = (pMVar1->fields).worldNetwork;
     if (pWVar2 != (WorldNetwork *)0x0) {
       pEVar3 = (pWVar2->fields)._.InitializedGameQueryData;
-      this_00 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<InitializedGameQueryDataEventArgs>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_00,(Object *)this,MethodInfo__EditorWorldObjectCreation__WOCM_InitializedGameQueryData_System__Object__InitializedGameQueryDataEventArgs_,(MethodInfo *)0x0);
+      this_00 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<InitializedGameQueryDataEventArgs>);
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_00,(Object *)this,MethodInfo__EditorWorldObjectCreation__WOCM_InitializedGameQueryData_System__Object__InitializedGameQueryDataEventArgs_,(MethodInfo *)0x0);
       pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pEVar3,(Delegate *)this_00,(MethodInfo *)0x0);
       if (pDVar4 == (Delegate *)0x0) {
         (pWVar2->fields)._.InitializedGameQueryData = (EventHandler_1_InitializedGameQueryDataEventArgs_ *)0x0;

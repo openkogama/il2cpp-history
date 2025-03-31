@@ -161,8 +161,8 @@ code_?:
     if (pIVar5 != (ILogger_1 *)0x0) {
       func_?(1,TypeInfo__UnityEngine__ILogger,pIVar5,(pPVar4->fields).defaultLogHandler);
       pPVar4 = (this->fields).kogamaLogHandler;
-      this_01 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<ProxyLogHandler::LogFormatData>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_01,(Object *)this,MethodInfo__DebugLogHandler__KogamaLogHandlerOnOnLogReceived_System__Object__ProxyLogHandler__LogFormatData_,(MethodInfo *)0x0);
+      this_01 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<ProxyLogHandler::LogFormatData>);
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_01,(Object *)this,MethodInfo__DebugLogHandler__KogamaLogHandlerOnOnLogReceived_System__Object__ProxyLogHandler__LogFormatData_,(MethodInfo *)0x0);
       if (pPVar4 != (ProxyLogHandler *)0x0) {
         ProxyLogHandler::ProxyLogHandler_remove_OnLogReceived(pPVar4,(EventHandler_1_ProxyLogHandler_LogFormatData_ *)this_01,(MethodInfo *)0x0);
         (this->fields).kogamaLogHandler = (ProxyLogHandler *)0x0;
@@ -1008,8 +1008,8 @@ void Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_Initialize(DebugLogHa
     (this->fields).kogamaLogHandler = pPVar1;
     func_?(&(this->fields).kogamaLogHandler,pPVar1);
     pPVar1 = (this->fields).kogamaLogHandler;
-    this_01 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<ProxyLogHandler::LogFormatData>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_01,(Object *)this,MethodInfo__DebugLogHandler__KogamaLogHandlerOnOnLogReceived_System__Object__ProxyLogHandler__LogFormatData_,(MethodInfo *)0x0);
+    this_01 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<ProxyLogHandler::LogFormatData>);
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_01,(Object *)this,MethodInfo__DebugLogHandler__KogamaLogHandlerOnOnLogReceived_System__Object__ProxyLogHandler__LogFormatData_,(MethodInfo *)0x0);
     if (pPVar1 == (ProxyLogHandler *)0x0) goto code_?;
     ProxyLogHandler::ProxyLogHandler_add_OnLogReceived(pPVar1,(EventHandler_1_ProxyLogHandler_LogFormatData_ *)this_01,(MethodInfo *)0x0);
     pPVar1 = (this->fields).kogamaLogHandler;
@@ -1074,18 +1074,18 @@ void Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_KogamaLogHandlerOnOnL
     cRam_? = '\x01';
   }
   pPVar1 = (this->fields).kogamaLogHandler;
-  pUVar2 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<ProxyLogHandler::LogFormatData>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(pUVar2,(Object *)this,MethodInfo__DebugLogHandler__KogamaLogHandlerOnOnLogReceived_System__Object__ProxyLogHandler__LogFormatData_,(MethodInfo *)0x0);
+  pEVar2 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<ProxyLogHandler::LogFormatData>);
+  mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(pEVar2,(Object *)this,MethodInfo__DebugLogHandler__KogamaLogHandlerOnOnLogReceived_System__Object__ProxyLogHandler__LogFormatData_,(MethodInfo *)0x0);
   if (pPVar1 != (ProxyLogHandler *)0x0) {
-    ProxyLogHandler::ProxyLogHandler_remove_OnLogReceived(pPVar1,(EventHandler_1_ProxyLogHandler_LogFormatData_ *)pUVar2,(MethodInfo *)0x0);
+    ProxyLogHandler::ProxyLogHandler_remove_OnLogReceived(pPVar1,(EventHandler_1_ProxyLogHandler_LogFormatData_ *)pEVar2,(MethodInfo *)0x0);
     if (e != (ProxyLogHandler_LogFormatData *)0x0) {
       logString = mscorlib.dll::System::String::String_Format_3((e->fields).format,(e->fields).args,(MethodInfo *)0x0);
       DebugLogHandler_AddLogToLogContext(this,logString,(e->fields).LogType,(MethodInfo *)0x0);
       pPVar1 = (this->fields).kogamaLogHandler;
-      pUVar2 = (UnityAction_2_System_Object_System_Object_ *)func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(pUVar2,(Object *)this,MethodInfo__DebugLogHandler__KogamaLogHandlerOnOnLogReceived_System__Object__ProxyLogHandler__LogFormatData_,(MethodInfo *)0x0);
+      pEVar2 = (EventHandler_1_Object_ *)func_?();
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(pEVar2,(Object *)this,MethodInfo__DebugLogHandler__KogamaLogHandlerOnOnLogReceived_System__Object__ProxyLogHandler__LogFormatData_,(MethodInfo *)0x0);
       if (pPVar1 != (ProxyLogHandler *)0x0) {
-        ProxyLogHandler::ProxyLogHandler_add_OnLogReceived(pPVar1,(EventHandler_1_ProxyLogHandler_LogFormatData_ *)pUVar2,(MethodInfo *)0x0);
+        ProxyLogHandler::ProxyLogHandler_add_OnLogReceived(pPVar1,(EventHandler_1_ProxyLogHandler_LogFormatData_ *)pEVar2,(MethodInfo *)0x0);
         return;
       }
     }

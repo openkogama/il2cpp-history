@@ -843,7 +843,7 @@ void Assembly-CSharp.dll::WinningConditionDebriefing::WinningConditionDebriefing
             DStack_7._version = pDVar17->_version;
             DStack_7._currentValue = pDVar17->_currentValue;
             uStack_1 = 1;
-            fStack_19 = 0.0;
+            pSStack_19 = (String *)0x0;
             pDStack_20 = &DStack_7;
             while (bVar21 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::UInt32,System::Object]::Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext(&DStack_7,MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__), this_05 = (MVPlayer *)DStack_7._currentValue, bVar21 != 0) {
               if ((MVPlayer *)DStack_7._currentValue == (MVPlayer *)0x0) goto code_?;
@@ -887,9 +887,9 @@ void Assembly-CSharp.dll::WinningConditionDebriefing::WinningConditionDebriefing
                   if ((pLVar26->fields)._size <= iVar10) goto code_?;
                   pLVar26 = (pDVar9->fields).winConImages;
                   if (pLVar26 == (List_1_DebriefingWinnerGUI_WinningConditionData_ *)0x0) break;
-                  pMVar27 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::MultiColumnCollectionHeader+ViewState+ColumnState]::List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__get_Item((MultiColumnCollectionHeader_ViewState_ColumnState *)auStack_18,(List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)pLVar26,iVar10,MethodInfo__System__Collections__Generic__List<DebriefingWinnerGUI::WinningConditionData>__get_Item_int_);
-                  pDStack_20 = *(Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_ **)&pMVar27->visible;
-                  if (pMVar27->index == winType) {
+                  pIVar27 = mscorlib.dll::System::Collections::Generic::List`1[System::Linq::Expressions::Interpreter::InstructionList+DebugView+InstructionView]::List_1_System_Linq_Expressions_Interpreter_InstructionList_DebugView_InstructionView__get_Item((InstructionList_DebugView_InstructionView *)auStack_18,(List_1_System_Linq_Expressions_Interpreter_InstructionList_DebugView_InstructionView_ *)pLVar26,iVar10,MethodInfo__System__Collections__Generic__List<DebriefingWinnerGUI::WinningConditionData>__get_Item_int_);
+                  pDStack_20 = (Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)pIVar27->_instruction;
+                  if (pIVar27->_index == winType) {
                     if ((pDVar9->fields).winConImages == (List_1_DebriefingWinnerGUI_WinningConditionData_ *)0x0) break;
                     iVar28 = func_?();
                     if (*(GameObject **)(iVar28 + 0x10) == (GameObject *)0x0) break;
@@ -1284,8 +1284,8 @@ void Assembly-CSharp.dll::WinningConditionDebriefing::WinningConditionDebriefing
   }
   else {
     pAVar2 = (pMVar1->fields).OnWinningConditionFulfilled;
-    this_00 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?(TypeInfo__System__Action<IWinningCondition>);
-    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor(this_00,(Object *)this,MethodInfo__WinningConditionDebriefing__OnWinningConditionReceived_IWinningCondition_,(MethodInfo *)0x0);
+    this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?(TypeInfo__System__Action<IWinningCondition>);
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_00,(Object *)this,MethodInfo__WinningConditionDebriefing__OnWinningConditionReceived_IWinningCondition_,(MethodInfo *)0x0);
     pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
     unaff_EDI = TypeInfo__System__Action<IWinningCondition>;
     if (pDVar3 == (Delegate *)0x0) {

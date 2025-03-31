@@ -28,8 +28,8 @@ void Assembly-CSharp.dll::SpawnRoleAvatarSelectionDataController::SpawnRoleAvata
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning((Object *)StringLiteral_GameOnReceivedAvatarBodiesFromQu,(MethodInfo *)0x0);
   this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  this_01 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_01,(Object *)this,MethodInfo__SpawnRoleAvatarSelectionDataController__GameOnReceivedAvatarBodiesFromQuery_System__Object__ReceivedItemFromQueryEventArgs_,(MethodInfo *)0x0);
+  this_01 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>);
+  mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_01,(Object *)this,MethodInfo__SpawnRoleAvatarSelectionDataController__GameOnReceivedAvatarBodiesFromQuery_System__Object__ReceivedItemFromQueryEventArgs_,(MethodInfo *)0x0);
   if (this_00 != (MVNetworkGame *)0x0) {
     MVNetworkGame::MVNetworkGame_remove_ReceivedAvatarBodiesFromQuery(this_00,(EventHandler_1_ReceivedItemFromQueryEventArgs_ *)this_01,(MethodInfo *)0x0);
     this_02 = (List_1_SpawnRoleAvatarSelectionData_ *)func_?();
@@ -112,8 +112,8 @@ void Assembly-CSharp.dll::SpawnRoleAvatarSelectionDataController::SpawnRoleAvata
   bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsAlive((MethodInfo *)0x0);
   if (bVar1 != 0) {
     this_02 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    this_03 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_03,(Object *)this,MethodInfo__SpawnRoleAvatarSelectionDataController__GameOnReceivedAvatarBodiesFromQuery_System__Object__ReceivedItemFromQueryEventArgs_,(MethodInfo *)0x0);
+    this_03 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>);
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_03,(Object *)this,MethodInfo__SpawnRoleAvatarSelectionDataController__GameOnReceivedAvatarBodiesFromQuery_System__Object__ReceivedItemFromQueryEventArgs_,(MethodInfo *)0x0);
     if (this_02 == (MVNetworkGame *)0x0) goto code_?;
     MVNetworkGame::MVNetworkGame_remove_ReceivedAvatarBodiesFromQuery(this_02,(EventHandler_1_ReceivedItemFromQueryEventArgs_ *)this_03,(MethodInfo *)0x0);
   }
@@ -156,8 +156,8 @@ void Assembly-CSharp.dll::SpawnRoleAvatarSelectionDataController::SpawnRoleAvata
   }
   if ((this->fields).avatarSelectionDataList == (List_1_SpawnRoleAvatarSelectionData_ *)0x0) {
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    this_01 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_01,(Object *)this,MethodInfo__SpawnRoleAvatarSelectionDataController__GameOnReceivedAvatarBodiesFromQuery_System__Object__ReceivedItemFromQueryEventArgs_,(MethodInfo *)0x0);
+    this_01 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<ReceivedItemFromQueryEventArgs>);
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_01,(Object *)this,MethodInfo__SpawnRoleAvatarSelectionDataController__GameOnReceivedAvatarBodiesFromQuery_System__Object__ReceivedItemFromQueryEventArgs_,(MethodInfo *)0x0);
     if (pMVar1 != (MVNetworkGame *)0x0) {
       MVNetworkGame::MVNetworkGame_add_ReceivedAvatarBodiesFromQuery(pMVar1,(EventHandler_1_ReceivedItemFromQueryEventArgs_ *)this_01,(MethodInfo *)0x0);
       pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)(this->fields).onDataRecieved,(Delegate *)onDataReady,(MethodInfo *)0x0);

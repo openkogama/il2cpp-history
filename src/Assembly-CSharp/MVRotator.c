@@ -171,8 +171,8 @@ void Assembly-CSharp.dll::MVRotator::MVRotator_Initialize(MVRotator *this,Method
       *(uint *)piVar4 = (uint)*piVar4 & 0xfffffff7;
       *(undefined4 *)((int)&(pMVar11->fields)._._.interactionFlags + 4) = *(undefined4 *)((int)&(pMVar11->fields)._._.interactionFlags + 4);
       pMVar11 = (this->fields)._._CubeModel_k__BackingField;
-      this_02 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<EditStateEventArgs>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_02,(Object *)this,MethodInfo__MVRotator__MVCubeModelBase_BeingEditedChanged_System__Object__EditStateEventArgs_,(MethodInfo *)0x0);
+      this_02 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<EditStateEventArgs>);
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_02,(Object *)this,MethodInfo__MVRotator__MVCubeModelBase_BeingEditedChanged_System__Object__EditStateEventArgs_,(MethodInfo *)0x0);
       if (pMVar11 != (MVCubeModelInstance *)0x0) {
         MVCubeModelBase::MVCubeModelBase_add_BeingEditedChanged((MVCubeModelBase *)pMVar11,(EventHandler_1_EditStateEventArgs_ *)this_02,(MethodInfo *)0x0);
         bVar12 = MVWorldObjectClient::MVWorldObjectClient_HasInteractionFlag((MVWorldObjectClient *)this,InteractionFlags__Enum_IsPreview,(MethodInfo *)0x0);
@@ -426,8 +426,8 @@ void Assembly-CSharp.dll::MVRotator::MVRotator_SetupCulling(MVRotator *this,Meth
   else {
     pAStack2 = TypeInfo__System__Action<CubeModelChangedEventArgs>;
     a = (MVRotator *)(pMVar1->fields)._.Changed;
-    this_02 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?();
-    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor(this_02,(Object *)this,MethodInfo__MVRotator__Changed_CubeModelChangedEventArgs_,(MethodInfo *)0x0);
+    this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?();
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_02,(Object *)this,MethodInfo__MVRotator__Changed_CubeModelChangedEventArgs_,(MethodInfo *)0x0);
     this_01 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,(Delegate *)this_02,(MethodInfo *)0x0);
     this_00 = TypeInfo__System__Action<CubeModelChangedEventArgs>;
     this = a;

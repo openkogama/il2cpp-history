@@ -341,8 +341,8 @@ void Assembly-CSharp.dll::FirstTimeElementActivator::FirstTimeElementActivator_O
     TypeInfo__FirstTimeEventManager->static_fields->XPRewarded = (Action *)0x0;
 code_?:
     func_?();
-    this_01 = (Action_2_Object_Int32Enum_ *)func_?();
-    mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor(this_01,(Object *)this,MethodInfo__FirstTimeElementActivator__FirstTimeStateReceiver_MV__WorldObject__MetaData__FirstTimeState__MV__WorldObject__MetaData__FirstTimeEvent_,(MethodInfo *)0x0);
+    this_01 = (EventHandler_1_Object_ *)func_?();
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_01,(Object *)this,MethodInfo__FirstTimeElementActivator__FirstTimeStateReceiver_MV__WorldObject__MetaData__FirstTimeState__MV__WorldObject__MetaData__FirstTimeEvent_,(MethodInfo *)0x0);
     FirstTimeEventManager::FirstTimeEventManager_UnSubscribeToFirstTimeState((Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_ *)this_01,(MethodInfo *)0x0);
     this_00 = (this->fields).uiStack;
     pNVar2 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
@@ -588,8 +588,8 @@ code_?:
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(pNVar3,(Object *)this,MethodInfo__FirstTimeElementActivator__OnStackChange__,(MethodInfo *)0x0);
     if (this_00 == (UIStack *)0x0) goto code_?;
     UIStack::UIStack_SubscribeToStackChanges(this_00,(Action *)pNVar3,(MethodInfo *)0x0);
-    this_02 = (Action_2_Object_Int32Enum_ *)func_?();
-    mscorlib.dll::System::Action`2[Object,Int32Enum]::Action_2_Object_Int32Enum___ctor(this_02,(Object *)this,MethodInfo__FirstTimeElementActivator__FirstTimeStateReceiver_MV__WorldObject__MetaData__FirstTimeState__MV__WorldObject__MetaData__FirstTimeEvent_,(MethodInfo *)0x0);
+    this_02 = (EventHandler_1_Object_ *)func_?();
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_02,(Object *)this,MethodInfo__FirstTimeElementActivator__FirstTimeStateReceiver_MV__WorldObject__MetaData__FirstTimeState__MV__WorldObject__MetaData__FirstTimeEvent_,(MethodInfo *)0x0);
     FirstTimeEventManager::FirstTimeEventManager_SubscribeToFirstTimeState((Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_ *)this_02,(MethodInfo *)0x0);
     (this->fields).evaluateActivatableElements = 1;
     pAVar4 = TypeInfo__FirstTimeEventManager->static_fields->XPRewarded;

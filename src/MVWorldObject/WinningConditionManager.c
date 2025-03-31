@@ -32,8 +32,8 @@ code_?:
       }
       if ((winnerCondition != (WinningCondition *)0x0) && (parent[1].klass != (WinningCondition__Class *)0x0)) {
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Add((Dictionary_2_System_Int32_System_Object_ *)parent[1].klass,(winnerCondition->fields).id,(Object *)winnerCondition,MethodInfo__System__Collections__Generic__Dictionary<int,_IWinningCondition>__Add_int__IWinningCondition_);
-        this_00 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<System::EventArgs>);
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_00,(Object *)parent,parent->klass[1]._0.name,(MethodInfo *)0x0);
+        this_00 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<System::EventArgs>);
+        mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_00,(Object *)parent,parent->klass[1]._0.name,(MethodInfo *)0x0);
         WinningCondition::WinningCondition_add_OnWinningConditionChanged(winnerCondition,(EventHandler_1_EventArgs_ *)this_00,(MethodInfo *)0x0);
         return;
       }
@@ -925,8 +925,8 @@ code_?:
       (this_00->fields).winnerConditionsRoot = pWVar5;
       func_?(&this_00->fields,pWVar5);
       pWVar5 = (this_00->fields).winnerConditionsRoot;
-      this_01 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<System::EventArgs>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_01,(Object *)this_00,MethodInfo__WinningConditionManager__winnerConditionsRoot_OnWinningConditionChanged_System__Object__System__EventArgs_,(MethodInfo *)0x0);
+      this_01 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<System::EventArgs>);
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_01,(Object *)this_00,MethodInfo__WinningConditionManager__winnerConditionsRoot_OnWinningConditionChanged_System__Object__System__EventArgs_,(MethodInfo *)0x0);
       if (pWVar5 != (WinningConditionOr *)0x0) {
         WinningCondition::WinningCondition_add_OnWinningConditionChanged((WinningCondition *)pWVar5,(EventHandler_1_EventArgs_ *)this_01,(MethodInfo *)0x0);
         return;
@@ -986,8 +986,8 @@ void MVWorldObject.dll::WinningConditionManager::WinningConditionManager_RemoveW
     pDVar2 = (object->fields)._.winnerConditions;
     if (pDVar2 != (Dictionary_2_System_Int32_IWinningCondition_ *)0x0) {
       pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)pDVar2,id,MethodInfo__System__Collections__Generic__Dictionary<int,_IWinningCondition>__get_Item_int_);
-      this_00 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__System__EventHandler<System::EventArgs>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_00,(Object *)object,object->klass[1]._0.image,(MethodInfo *)0x0);
+      this_00 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<System::EventArgs>);
+      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(this_00,(Object *)object,object->klass[1]._0.image,(MethodInfo *)0x0);
       if (pOVar3 != (Object *)0x0) {
         uVar4 = 0;
         uVar5 = 0;

@@ -12,8 +12,8 @@ void Assembly-CSharp.dll::ThemeSelection::ThemeSelection_Awake(ThemeSelection *t
     func_?(&MethodInfo__ThemeSelection__LocalizeAndSetDescriptionText__);
     cRam_? = '\x01';
   }
-  this_00 = (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)func_?(TypeInfo__System__Action<MV::WorldObject::ThemesData::ThemeData_[]>);
-  Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[System::Object]::SpawnRoleVariable_1_T_SubDelegate_System_Object___ctor(this_00,(Object *)this,MethodInfo__ThemeSelection__CreateThemeButtons_MV__WorldObject__ThemesData__ThemeData____,(MethodInfo *)0x0);
+  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?(TypeInfo__System__Action<MV::WorldObject::ThemesData::ThemeData_[]>);
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_00,(Object *)this,MethodInfo__ThemeSelection__CreateThemeButtons_MV__WorldObject__ThemesData__ThemeData____,(MethodInfo *)0x0);
   TypeInfo__ThemeSelection__CallbackHandler->static_fields->OnThemeDataReceived = (Action_1_MV_WorldObject_ThemesData_ThemeData_ *)this_00;
   func_?(TypeInfo__ThemeSelection__CallbackHandler->static_fields,this_00);
   this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
