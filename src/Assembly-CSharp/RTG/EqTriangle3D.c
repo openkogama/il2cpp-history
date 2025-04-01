@@ -603,34 +603,36 @@ void Assembly-CSharp.dll::RTG::EqTriangle3D::EqTriangle3D_SetPoint
     fVar4 = pointValue.x - (float)uVar2;
     fVar5 = pointValue.y - (float)uVar3;
     fVar6 = pointValue.z - pVVar1->vector[point].z;
-    if (pVVar1->max_length == 0) goto code_?;
-    uVar7 = pVVar1->vector[0].x;
-    uVar8 = pVVar1->vector[0].y;
-    fVar9 = pVVar1->vector[0].z;
-    pVVar1->vector[0].x = (float)uVar7 + fVar4;
-    pVVar1->vector[0].y = (float)uVar8 + fVar5;
-    pVVar1->vector[0].z = fVar9 + fVar6;
-    pVVar1 = (this->fields)._points;
     if (pVVar1 != (Vector3__Array *)0x0) {
-      if (pVVar1->max_length < 2) goto code_?;
-      uVar10 = pVVar1->vector[1].x;
-      uVar11 = pVVar1->vector[1].y;
-      fVar9 = pVVar1->vector[1].z;
-      pVVar1->vector[1].x = (float)uVar10 + fVar4;
-      pVVar1->vector[1].y = (float)uVar11 + fVar5;
-      pVVar1->vector[1].z = fVar9 + fVar6;
+      if (pVVar1->max_length == 0) goto code_?;
+      uVar7 = pVVar1->vector[0].x;
+      uVar8 = pVVar1->vector[0].y;
+      fVar9 = pVVar1->vector[0].z;
+      pVVar1->vector[0].x = (float)uVar7 + fVar4;
+      pVVar1->vector[0].y = (float)uVar8 + fVar5;
+      pVVar1->vector[0].z = fVar9 + fVar6;
       pVVar1 = (this->fields)._points;
       if (pVVar1 != (Vector3__Array *)0x0) {
-        if (2 < pVVar1->max_length) {
-          uVar12 = pVVar1->vector[2].x;
-          uVar13 = pVVar1->vector[2].y;
-          fVar9 = pVVar1->vector[2].z;
-          pVVar1->vector[2].x = (float)uVar12 + fVar4;
-          pVVar1->vector[2].y = (float)uVar13 + fVar5;
-          pVVar1->vector[2].z = fVar9 + fVar6;
-          return;
+        if (pVVar1->max_length < 2) goto code_?;
+        uVar10 = pVVar1->vector[1].x;
+        uVar11 = pVVar1->vector[1].y;
+        fVar9 = pVVar1->vector[1].z;
+        pVVar1->vector[1].x = (float)uVar10 + fVar4;
+        pVVar1->vector[1].y = (float)uVar11 + fVar5;
+        pVVar1->vector[1].z = fVar9 + fVar6;
+        pVVar1 = (this->fields)._points;
+        if (pVVar1 != (Vector3__Array *)0x0) {
+          if (2 < pVVar1->max_length) {
+            uVar12 = pVVar1->vector[2].x;
+            uVar13 = pVVar1->vector[2].y;
+            fVar9 = pVVar1->vector[2].z;
+            pVVar1->vector[2].x = (float)uVar12 + fVar4;
+            pVVar1->vector[2].y = (float)uVar13 + fVar5;
+            pVVar1->vector[2].z = fVar9 + fVar6;
+            return;
+          }
+          goto code_?;
         }
-        goto code_?;
       }
     }
   }
@@ -667,17 +669,16 @@ void Assembly-CSharp.dll::RTG::EqTriangle3D::EqTriangle3D__ctor
   (this->fields)._rotation.z = fVar3;
   (this->fields)._rotation.w = fVar4;
   pVVar5 = (Vector3__Array *)func_?(TypeInfo__UnityEngine__Vector3,3);
-  ppVVar6 = &(this->fields)._points;
-  *ppVVar6 = pVVar5;
-  func_?(ppVVar6,pVVar5);
+  (this->fields)._points = pVVar5;
+  func_?(&(this->fields)._points,pVVar5);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  pVVar7 = TypeInfo__UnityEngine__Vector3->static_fields;
-  fVar3 = (pVVar7->zeroVector).y;
-  fVar2 = (pVVar7->zeroVector).z;
-  (this->fields)._centroid.x = (pVVar7->zeroVector).x;
+  pVVar6 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar3 = (pVVar6->zeroVector).y;
+  fVar2 = (pVVar6->zeroVector).z;
+  (this->fields)._centroid.x = (pVVar6->zeroVector).x;
   (this->fields)._centroid.y = fVar3;
   (this->fields)._centroid.z = fVar2;
   (this->fields)._arePointsDirty = 1;

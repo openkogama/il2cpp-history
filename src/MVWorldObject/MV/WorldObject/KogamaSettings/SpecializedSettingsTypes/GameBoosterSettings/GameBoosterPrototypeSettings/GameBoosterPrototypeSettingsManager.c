@@ -314,9 +314,8 @@ List_1_MV_WorldObject_KogamaSettings_SpecializedSettingsTypes_GameBoosterSetting
              MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>__List__
             );
   if (value != (Object *)0x0) {
-    pOVar1 = value + 1;
-    pOVar1->klass = this;
-    func_?(pOVar1,this);
+    value[1].klass = this;
+    func_?(value + 1);
     this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
                *)func_?(
                                 TypeInfo__System__Action<MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>
@@ -332,12 +331,12 @@ List_1_MV_WorldObject_KogamaSettings_SpecializedSettingsTypes_GameBoosterSetting
               (root,(Action_1_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
                      *)this_00,(MethodInfo *)0x0);
     return (List_1_MV_WorldObject_KogamaSettings_SpecializedSettingsTypes_GameBoosterSettings_GameBoosterSettingTypes_GameBoosterSettingWithGoldSetting_
-            *)pOVar1->klass;
+            *)value[1].klass;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  pLVar3 = (List_1_MV_WorldObject_KogamaSettings_SpecializedSettingsTypes_GameBoosterSettings_GameBoosterSettingTypes_GameBoosterSettingWithGoldSetting_
-            *)(*pcVar2)();
-  return pLVar3;
+  pcVar1 = (code *)swi(3);
+  pLVar2 = (List_1_MV_WorldObject_KogamaSettings_SpecializedSettingsTypes_GameBoosterSettings_GameBoosterSettingTypes_GameBoosterSettingWithGoldSetting_
+            *)(*pcVar1)();
+  return pLVar2;
 }
 

@@ -19,7 +19,7 @@ void Assembly-CSharp.dll::AvatarAccessoryBackAccessories::AvatarAccessoryBackAcc
   pTVar1 = Extensions::Extensions_FindChildRecursively
                      (pTVar1,StringLiteral_WingsAttachPoint,(MethodInfo *)0x0);
   (this->fields).attachPosTfm = pTVar1;
-  func_?();
+  func_?(&(this->fields).attachPosTfm);
   return;
 }
 
@@ -40,22 +40,21 @@ AvatarAccessoryBackAccessories_get_AccessorySettings
     cRam_? = '\x01';
   }
   pAVar1 = (this->fields).wingSettings;
-  ppAVar2 = &(this->fields).wingSettings;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                     ((Object_1 *)pAVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar3 != 0) {
+  if (bVar2 != 0) {
     pAVar1 = (AccessoryBackAccessoriesSettings *)
              UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
                        ((Component *)this,
                         AccessoryBackAccessoriesSettings_MethodInfo__UnityEngine__Component__GetComponent<AccessoryBackAccessoriesSettings>__
                        );
-    *ppAVar2 = pAVar1;
-    func_?(ppAVar2,pAVar1);
+    (this->fields).wingSettings = pAVar1;
+    func_?(&(this->fields).wingSettings,pAVar1);
   }
-  return (AccessorySettings *)*ppAVar2;
+  return (AccessorySettings *)(this->fields).wingSettings;
 }
 
 

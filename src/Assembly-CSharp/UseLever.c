@@ -114,7 +114,7 @@ Vector3 * Assembly-CSharp.dll::UseLever::UseLever_GetClosestGridPoint
   pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
   uVar2 = (pVVar1->oneVector).x;
   uVar3 = (pVVar1->oneVector).y;
-  fVar4 = (float)uVar2 * _UNK_?;
+  pSVar4 = (SharedCubeFunctions__Class *)((float)uVar2 * _UNK_?);
   fVar5 = (float)uVar3 * _UNK_?;
   fVar6 = (pVVar1->oneVector).z * _UNK_?;
   this_00 = (this->fields)._._.gameObject;
@@ -122,38 +122,37 @@ Vector3 * Assembly-CSharp.dll::UseLever::UseLever_GetClosestGridPoint
     this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                         (this_00,(MethodInfo *)0x0);
     if (this_01 != (Transform *)0x0) {
-      uVar7 = 0;
-      pQVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                         ((Quaternion *)&stack0xffffffec,this_01,(MethodInfo *)0x0);
-      fVar4 = pQVar8->z;
-      fVar5 = pQVar8->w;
+      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+                ((Quaternion *)&stack0xffffffe0,this_01,(MethodInfo *)0x0);
+      pSVar7 = TypeInfo__SharedCubeFunctions;
       if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
+        pSVar4 = pSVar7;
       }
       worldPosition.z = position.z;
       worldPosition.x = position.x;
       worldPosition.y = position.y;
-      rotation.y = 0.0;
-      rotation.x = fVar6;
-      rotation.z = fVar4;
-      rotation.w = fVar5;
-      scale.y = (float)uVar7;
-      scale.x = (float)this_01;
+      rotation.y = (float)pSVar4;
+      rotation.x = gridSize;
+      rotation.z = fVar5;
+      rotation.w = fVar6;
+      scale.y = fVar5;
+      scale.x = (float)pSVar4;
       scale.z = fVar6;
-      pVVar9 = SharedCubeFunctions::SharedCubeFunctions_GetClosestGridPoint
+      pVVar8 = SharedCubeFunctions::SharedCubeFunctions_GetClosestGridPoint
                          (&position,worldPosition,rotation,gridSize,scale,(MethodInfo *)0x0);
-      fVar5 = pVVar9->y;
-      fVar4 = pVVar9->z;
-      __return_storage_ptr__->x = pVVar9->x;
+      fVar5 = pVVar8->y;
+      fVar6 = pVVar8->z;
+      __return_storage_ptr__->x = pVVar8->x;
       __return_storage_ptr__->y = fVar5;
-      __return_storage_ptr__->z = fVar4;
+      __return_storage_ptr__->z = fVar6;
       return __return_storage_ptr__;
     }
   }
-  func_?(fVar4,fVar5);
-  pcVar10 = (code *)swi(3);
-  pVVar9 = (Vector3 *)(*pcVar10)();
-  return pVVar9;
+  func_?();
+  pcVar9 = (code *)swi(3);
+  pVVar8 = (Vector3 *)(*pcVar9)();
+  return pVVar8;
 }
 
 
@@ -231,9 +230,8 @@ code_?:
         if (pUVar2 != (UseLeverObject *)0x0) {
           MVLogicObject::MVLogicObject_SetupCulling
                     ((MVLogicObject *)this,(pUVar2->fields).visualRoot,2.0,(MethodInfo *)0x0);
-          this_02 = (Action_3_Boolean_Boolean_Object_ *)func_?();
-          mscorlib.dll::System::Action`3[Boolean,Boolean,Object]::
-          Action_3_Boolean_Boolean_Object___ctor
+          this_02 = (Action_3_Int32_Int32_ByteEnum_ *)func_?();
+          mscorlib.dll::System::Action`3[Int32,Int32,ByteEnum]::Action_3_Int32_Int32_ByteEnum___ctor
                     (this_02,(Object *)this,
                      MethodInfo__UseLever__SignalCallback_bool__bool__LogicObjectManager_,
                      (MethodInfo *)0x0);
@@ -611,9 +609,9 @@ bool Assembly-CSharp.dll::UseLever::UseLever_Use(UseLever *this,int32_t userWoID
       return bVar1;
     }
     MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_LogicActivateRequest
-              (this_00,woID,bVar1 == 0,(MethodInfo *)0x0);
+              (this_00,woID,bVar1 ^ 1,(MethodInfo *)0x0);
     bVar1 = UseLever_get_IsActivated(this,(MethodInfo *)0x0);
-    (this->fields).localIsDown = bVar1 == 0;
+    (this->fields).localIsDown = bVar1 ^ 1;
   }
   return 1;
 }
@@ -657,145 +655,140 @@ void Assembly-CSharp.dll::UseLever::UseLever__ctor
     MVLogicObject::MVLogicObject__ctor
               ((MVLogicObject *)this,data,(ObjectPrefab *)(pPVar1->fields).useLeverPrefab,
                worldObjects,(MethodInfo *)0x0);
-    piVar2 = &(this->fields)._._.interactionFlags;
-    *(uint *)piVar2 = (uint)*piVar2 | 0x8000;
-    piVar2 = &(this->fields)._._.interactionFlags;
-    *(uint *)piVar2 = (uint)*piVar2 | 0x100000;
-    piVar2 = &(this->fields)._._.interactionFlags;
-    *(uint *)piVar2 = (uint)*piVar2 | 0x200000;
-    piVar2 = &(this->fields)._._.interactionFlags;
-    *(uint *)piVar2 = (uint)*piVar2 | 0x400000;
-    piVar2 = &(this->fields)._._.interactionFlags;
-    *(uint *)piVar2 = (uint)*piVar2 | 0xADDR;
-    uVar3 = *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
-    piVar2 = &(this->fields)._._.interactionFlags;
-    *(uint *)piVar2 = (uint)*piVar2 | 0x10000;
-    pUVar4 = (UseLeverObject *)(this->fields)._._.component;
-    *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) = uVar3;
-    puVar5 = (uint *)((int)&(this->fields)._._.interactionFlags + 4);
-    *puVar5 = *puVar5 | 2;
-    *(int *)&(this->fields)._._.interactionFlags = (int)(this->fields)._._.interactionFlags;
-    unaff_EDI = TypeInfo__UseLeverObject;
-    if (pUVar4 == (UseLeverObject *)0x0) {
+    iVar2 = (this->fields)._._.interactionFlags;
+    pUVar3 = (UseLeverObject *)(this->fields)._._.component;
+    *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) =
+         *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
+    uVar4 = *(uint *)((int)&(this->fields)._._.interactionFlags + 4);
+    *(uint *)&(this->fields)._._.interactionFlags = (uint)iVar2 | 0xADDR;
+    *(uint *)((int)&(this->fields)._._.interactionFlags + 4) = uVar4 | 2;
+    unaff_EDI = (UseLever *)TypeInfo__UseLeverObject;
+    if (pUVar3 == (UseLeverObject *)0x0) {
       (this->fields).useLeverObject = (UseLeverObject *)0x0;
     }
     else {
-      bVar6 = (TypeInfo__UseLeverObject->_1).naturalAligment;
-      if (((((ObjectPrefab__Class *)pUVar4->klass)->_1).naturalAligment < bVar6) ||
-         ((((ObjectPrefab__Class *)pUVar4->klass)->_1).typeHierarchy[bVar6 - 1] !=
+      if (((((ObjectPrefab__Class *)pUVar3->klass)->_1).naturalAligment <
+           (TypeInfo__UseLeverObject->_1).naturalAligment) ||
+         ((((ObjectPrefab__Class *)pUVar3->klass)->_1).typeHierarchy
+          [(TypeInfo__UseLeverObject->_1).naturalAligment - 1] !=
           (Il2CppClass *)TypeInfo__UseLeverObject)) goto code_?;
-      (this->fields).useLeverObject = pUVar4;
-      bVar6 = (TypeInfo__UseLeverObject->_1).naturalAligment;
-      unaff_EDI = TypeInfo__UseLeverObject;
-      if (((((ObjectPrefab__Class *)pUVar4->klass)->_1).naturalAligment < bVar6) ||
-         ((((ObjectPrefab__Class *)pUVar4->klass)->_1).typeHierarchy[bVar6 - 1] !=
+      (this->fields).useLeverObject = pUVar3;
+      unaff_EDI = (UseLever *)TypeInfo__UseLeverObject;
+      if (((((ObjectPrefab__Class *)pUVar3->klass)->_1).naturalAligment <
+           (TypeInfo__UseLeverObject->_1).naturalAligment) ||
+         ((((ObjectPrefab__Class *)pUVar3->klass)->_1).typeHierarchy
+          [(TypeInfo__UseLeverObject->_1).naturalAligment - 1] !=
           (Il2CppClass *)TypeInfo__UseLeverObject)) goto code_?;
     }
-    ppUVar7 = &(this->fields).useLeverObject;
-    func_?(ppUVar7,pUVar4);
-    pUVar4 = *ppUVar7;
-    if (pUVar4 != (UseLeverObject *)0x0) {
-      pGVar8 = (pUVar4->fields).useInteractionRotator;
-      triggerCollider = (pUVar4->fields).leverCollider;
+    func_?(&(this->fields).useLeverObject,pUVar3);
+    pUVar3 = (this->fields).useLeverObject;
+    if (pUVar3 != (UseLeverObject *)0x0) {
+      pGVar5 = (pUVar3->fields).useInteractionRotator;
+      triggerCollider = (((this->fields).useLeverObject)->fields).leverCollider;
       this_00 = (Predicate_1_UInt32_ *)func_?(TypeInfo__System__Func<int,_bool>);
       mscorlib.dll::System::Predicate`1[UInt32]::Predicate_1_UInt32___ctor
                 (this_00,(Object *)this,MethodInfo__UseLever__Use_int_,(MethodInfo *)0x0);
-      pUVar9 = (UseInteractor *)func_?(TypeInfo__UseInteractor);
+      pUVar6 = (UseInteractor *)func_?(TypeInfo__UseInteractor);
       UseInteractor::UseInteractor__ctor
-                (pUVar9,(MVWorldObjectClient *)this,pGVar8,0,triggerCollider,
+                (pUVar6,(MVWorldObjectClient *)this,pGVar5,0,triggerCollider,
                  (Func_2_Int32_Boolean_ *)this_00,(Func_3_Int32_MVInteractableBase_Boolean_ *)0x0,
                  2.5,0,(MethodInfo *)0x0);
-      ppUVar10 = &(pUVar4->fields).useInteractor;
-      *ppUVar10 = pUVar9;
-      func_?(ppUVar10,pUVar9);
-      unaff_EDI = (UseLeverObject__Class *)&(this->fields).useLeverObject;
-      pUVar4 = *(UseLeverObject **)unaff_EDI;
-      if (pUVar4 != (UseLeverObject *)0x0) {
-        pTVar11 = (pUVar4->fields).triggerBoxEvents;
-        pUVar9 = (pUVar4->fields).useInteractor;
-        pEVar12 = (EventHandler_1_Object_ *)
-                  func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+      (pUVar3->fields).useInteractor = pUVar6;
+      func_?(&(pUVar3->fields).useInteractor,pUVar6);
+      pUVar3 = (this->fields).useLeverObject;
+      unaff_EDI = this;
+      if (pUVar3 != (UseLeverObject *)0x0) {
+        pTVar7 = (pUVar3->fields).triggerBoxEvents;
+        pUVar6 = (((this->fields).useLeverObject)->fields).useInteractor;
+        pEVar8 = (EventHandler_1_Object_ *)
+                 func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
         mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-                  (pEVar12,(Object *)pUVar9,
+                  (pEVar8,(Object *)pUVar6,
                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                    ,(MethodInfo *)0x0);
-        if (pTVar11 != (TriggerBoxEvents *)0x0) {
+        if (pTVar7 != (TriggerBoxEvents *)0x0) {
           TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
-                    (pTVar11,(EventHandler_1_TriggerEventArgs_ *)pEVar12,(MethodInfo *)0x0);
-          pUVar4 = *(UseLeverObject **)unaff_EDI;
-          if (pUVar4 != (UseLeverObject *)0x0) {
-            pTVar11 = (pUVar4->fields).triggerBoxEvents;
-            pUVar9 = (pUVar4->fields).useInteractor;
-            pEVar12 = (EventHandler_1_Object_ *)
-                      func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+                    (pTVar7,(EventHandler_1_TriggerEventArgs_ *)pEVar8,(MethodInfo *)0x0);
+          pUVar3 = (this->fields).useLeverObject;
+          if (pUVar3 != (UseLeverObject *)0x0) {
+            pTVar7 = (pUVar3->fields).triggerBoxEvents;
+            pUVar6 = (((this->fields).useLeverObject)->fields).useInteractor;
+            pEVar8 = (EventHandler_1_Object_ *)
+                     func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
             mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-                      (pEVar12,(Object *)pUVar9,
+                      (pEVar8,(Object *)pUVar6,
                        MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                        ,(MethodInfo *)0x0);
-            if (pTVar11 != (TriggerBoxEvents *)0x0) {
+            if (pTVar7 != (TriggerBoxEvents *)0x0) {
               TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
-                        (pTVar11,(EventHandler_1_TriggerEventArgs_ *)pEVar12,(MethodInfo *)0x0);
-              if (*(UseLeverObject **)unaff_EDI != (UseLeverObject *)0x0) {
-                pGVar8 = ((*(UseLeverObject **)unaff_EDI)->fields).useInteractionRotator;
-                uVar3 = _UNK_?;
+                        (pTVar7,(EventHandler_1_TriggerEventArgs_ *)pEVar8,(MethodInfo *)0x0);
+              pUVar3 = (this->fields).useLeverObject;
+              if (pUVar3 != (UseLeverObject *)0x0) {
+                pGVar5 = (pUVar3->fields).useInteractionRotator;
+                uVar9 = _UNK_?;
                 this_01 = (GameCoinLogic *)func_?(TypeInfo__GameCoinLogic);
                 displayObjectOffset.y = (float)_UNK_?;
-                displayObjectOffset.x = (float)uVar3;
+                displayObjectOffset.x = (float)uVar9;
                 displayObjectOffset.z = 0.0;
                 GameCoinLogic::GameCoinLogic__ctor_1
-                          (this_01,pGVar8,displayObjectOffset,1,(MethodInfo *)0x0);
-                if ((*(UseLeverObject **)unaff_EDI != (UseLeverObject *)0x0) &&
-                   (pUVar9 = ((*(UseLeverObject **)unaff_EDI)->fields).useInteractor,
-                   pUVar9 != (UseInteractor *)0x0)) {
+                          (this_01,pGVar5,displayObjectOffset,1,(MethodInfo *)0x0);
+                pUVar3 = (this->fields).useLeverObject;
+                if ((pUVar3 != (UseLeverObject *)0x0) &&
+                   (pUVar6 = (pUVar3->fields).useInteractor, pUVar6 != (UseInteractor *)0x0)) {
                   UseInteractor::UseInteractor_AddRequirement
-                            (pUVar9,(UseRequirement *)this_01,(MethodInfo *)0x0);
-                  if (*(UseLeverObject **)unaff_EDI != (UseLeverObject *)0x0) {
-                    pGVar8 = ((*(UseLeverObject **)unaff_EDI)->fields).useInteractionRotator;
+                            (pUVar6,(UseRequirement *)this_01,(MethodInfo *)0x0);
+                  pUVar3 = (this->fields).useLeverObject;
+                  if (pUVar3 != (UseLeverObject *)0x0) {
+                    pGVar5 = (pUVar3->fields).useInteractionRotator;
                     this_02 = (LevelBasedUseRequirement *)
                               func_?(TypeInfo__LevelBasedUseRequirement);
                     LevelBasedUseRequirement::LevelBasedUseRequirement__ctor
-                              (this_02,pGVar8,1,(MethodInfo *)0x0);
-                    if ((*(UseLeverObject **)unaff_EDI != (UseLeverObject *)0x0) &&
-                       (pUVar9 = ((*(UseLeverObject **)unaff_EDI)->fields).useInteractor,
-                       pUVar9 != (UseInteractor *)0x0)) {
+                              (this_02,pGVar5,1,(MethodInfo *)0x0);
+                    pUVar3 = (this->fields).useLeverObject;
+                    if ((pUVar3 != (UseLeverObject *)0x0) &&
+                       (pUVar6 = (pUVar3->fields).useInteractor, pUVar6 != (UseInteractor *)0x0)) {
                       UseInteractor::UseInteractor_AddRequirement
-                                (pUVar9,(UseRequirement *)this_02,(MethodInfo *)0x0);
-                      if (*(UseLeverObject **)unaff_EDI != (UseLeverObject *)0x0) {
-                        pGVar8 = ((*(UseLeverObject **)unaff_EDI)->fields).useInteractionRotator;
+                                (pUVar6,(UseRequirement *)this_02,(MethodInfo *)0x0);
+                      pUVar3 = (this->fields).useLeverObject;
+                      if (pUVar3 != (UseLeverObject *)0x0) {
+                        pGVar5 = (pUVar3->fields).useInteractionRotator;
                         this_03 = (StarRequirement *)func_?(TypeInfo__StarRequirement);
-                        StarRequirement::StarRequirement__ctor(this_03,pGVar8,1,(MethodInfo *)0x0);
-                        if ((*(UseLeverObject **)unaff_EDI != (UseLeverObject *)0x0) &&
-                           (pUVar9 = ((*(UseLeverObject **)unaff_EDI)->fields).useInteractor,
-                           pUVar9 != (UseInteractor *)0x0)) {
+                        StarRequirement::StarRequirement__ctor(this_03,pGVar5,1,(MethodInfo *)0x0);
+                        pUVar3 = (this->fields).useLeverObject;
+                        if ((pUVar3 != (UseLeverObject *)0x0) &&
+                           (pUVar6 = (pUVar3->fields).useInteractor, pUVar6 != (UseInteractor *)0x0)
+                           ) {
                           UseInteractor::UseInteractor_AddRequirement
-                                    (pUVar9,(UseRequirement *)this_03,(MethodInfo *)0x0);
-                          if (*(UseLeverObject **)unaff_EDI != (UseLeverObject *)0x0) {
-                            pGVar8 = ((*(UseLeverObject **)unaff_EDI)->fields).useInteractionRotator
-                            ;
+                                    (pUVar6,(UseRequirement *)this_03,(MethodInfo *)0x0);
+                          pUVar3 = (this->fields).useLeverObject;
+                          if (pUVar3 != (UseLeverObject *)0x0) {
+                            pGVar5 = (pUVar3->fields).useInteractionRotator;
                             this_04 = (GameRankRequirement *)
                                       func_?(TypeInfo__GameRankRequirement);
                             GameRankRequirement::GameRankRequirement__ctor
-                                      (this_04,pGVar8,(MVWorldObjectClient *)this,1,
+                                      (this_04,pGVar5,(MVWorldObjectClient *)this,1,
                                        (MethodInfo *)0x0);
-                            if ((*(UseLeverObject **)unaff_EDI != (UseLeverObject *)0x0) &&
-                               (pUVar9 = ((*(UseLeverObject **)unaff_EDI)->fields).useInteractor,
-                               pUVar9 != (UseInteractor *)0x0)) {
+                            pUVar3 = (this->fields).useLeverObject;
+                            if ((pUVar3 != (UseLeverObject *)0x0) &&
+                               (pUVar6 = (pUVar3->fields).useInteractor,
+                               pUVar6 != (UseInteractor *)0x0)) {
                               UseInteractor::UseInteractor_AddRequirement
-                                        (pUVar9,(UseRequirement *)this_04,(MethodInfo *)0x0);
-                              if (*(UseLeverObject **)unaff_EDI != (UseLeverObject *)0x0) {
-                                pGVar8 = ((*(UseLeverObject **)unaff_EDI)->fields).
-                                         useInteractionRotator;
+                                        (pUVar6,(UseRequirement *)this_04,(MethodInfo *)0x0);
+                              pUVar3 = (this->fields).useLeverObject;
+                              if (pUVar3 != (UseLeverObject *)0x0) {
+                                pGVar5 = (pUVar3->fields).useInteractionRotator;
                                 this_05 = (RewardedAdRequirement *)
                                           func_?(
                                                   TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement
                                                   );
                                 WorldObjectInteractionSystem::UseSystem::RewardedAdRequirement::
-                                RewardedAdRequirement__ctor(this_05,pGVar8,(MethodInfo *)0x0);
-                                if ((*(UseLeverObject **)unaff_EDI != (UseLeverObject *)0x0) &&
-                                   (pUVar9 = ((*(UseLeverObject **)unaff_EDI)->fields).useInteractor
-                                   , pUVar9 != (UseInteractor *)0x0)) {
+                                RewardedAdRequirement__ctor(this_05,pGVar5,(MethodInfo *)0x0);
+                                pUVar3 = (this->fields).useLeverObject;
+                                if ((pUVar3 != (UseLeverObject *)0x0) &&
+                                   (pUVar6 = (pUVar3->fields).useInteractor,
+                                   pUVar6 != (UseInteractor *)0x0)) {
                                   UseInteractor::UseInteractor_AddRequirement
-                                            (pUVar9,(UseRequirement *)this_05,(MethodInfo *)0x0);
+                                            (pUVar6,(UseRequirement *)this_05,(MethodInfo *)0x0);
                                   return;
                                 }
                               }
@@ -814,11 +807,11 @@ void Assembly-CSharp.dll::UseLever::UseLever__ctor
     }
   }
   func_?();
-  pUVar4 = extraout_EDX;
+  pUVar3 = extraout_EDX;
 code_?:
-  func_?(pUVar4,unaff_EDI);
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  func_?(pUVar3,unaff_EDI);
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

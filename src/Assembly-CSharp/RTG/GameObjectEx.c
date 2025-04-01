@@ -6,11 +6,11 @@ void Assembly-CSharp.dll::RTG::GameObjectEx::GameObjectEx_FilterParentsOnly
                List_1_UnityEngine_GameObject_ *parents,MethodInfo *method)
 
 {
-  uStack_1 = 0xff;
-  uStack_2 = 0xffffff;
-  puStack_3 = &DAT_?;
-  uStack_4 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_4;
+  uStack_1._0_1_ = 0xff;
+  uStack_1._1_3_ = 0xffffff;
+  puStack_2 = &DAT_?;
+  uStack_3 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__IDisposable);
     func_?(&TypeInfo__System__Collections__Generic__IEnumerable<UnityEngine::GameObject>);
@@ -27,75 +27,71 @@ void Assembly-CSharp.dll::RTG::GameObjectEx::GameObjectEx_FilterParentsOnly
   }
   if (gameObjects != (IEnumerable_1_UnityEngine_GameObject_ *)0x0) {
     if (parents != (List_1_UnityEngine_GameObject_ *)0x0) {
-      iVar5 = (parents->fields)._size;
-      piVar6 = &(parents->fields)._version;
-      *piVar6 = *piVar6 + 1;
+      iVar4 = (parents->fields)._size;
+      piVar5 = &(parents->fields)._version;
+      *piVar5 = *piVar5 + 1;
       (parents->fields)._size = 0;
-      if (0 < iVar5) {
+      if (0 < iVar4) {
         mscorlib.dll::System::Array::Array_Clear
-                  ((Array *)(parents->fields)._items,0,iVar5,(MethodInfo *)0x0);
+                  ((Array *)(parents->fields)._items,0,iVar4,(MethodInfo *)0x0);
       }
-      iVar5 = func_?(0,
+      iVar4 = func_?(0,
                               TypeInfo__System__Collections__Generic__IEnumerable<UnityEngine::GameObject>
                               ,gameObjects);
-      uStack_2 = 0;
+      uStack_1 = 0;
 code_?:
-      uStack_1 = 1;
-      while (iVar5 != 0) {
-        cVar7 = func_?(0,TypeInfo__System__Collections__IEnumerator,iVar5);
-        if (cVar7 == '\0') {
-          uStack_1 = 0xff;
-          uStack_2 = 0xffffff;
-          if (iVar5 != 0) {
-            func_?(0,TypeInfo__System__IDisposable,iVar5);
+      uStack_1._0_1_ = 1;
+      while (iVar4 != 0) {
+        cVar6 = func_?(0,TypeInfo__System__Collections__IEnumerator,iVar4);
+        if (cVar6 == '\0') {
+          uStack_1._0_1_ = 0xff;
+          uStack_1._1_3_ = 0xffffff;
+          if (iVar4 != 0) {
+            func_?(0,TypeInfo__System__IDisposable,iVar4);
           }
           goto code_?;
         }
-        if (iVar5 == 0) break;
+        if (iVar4 == 0) break;
         this = (GameObject *)
                func_?(0,
                                TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::GameObject>
-                               ,iVar5);
+                               ,iVar4);
         if (this == (GameObject *)0x0) break;
         this_00 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                             (this,(MethodInfo *)0x0);
-        iVar8 = func_?(0);
-        uStack_1 = 3;
+        iVar7 = func_?(0);
+        uStack_1._0_1_ = 3;
         while( true ) {
-          if (iVar8 == 0) goto code_?;
-          cVar7 = func_?(0,TypeInfo__System__Collections__IEnumerator,iVar8);
-          if (cVar7 == '\0') break;
-          if (iVar8 == 0) goto code_?;
+          if (iVar7 == 0) goto code_?;
+          cVar6 = func_?(0,TypeInfo__System__Collections__IEnumerator,iVar7);
+          if (cVar6 == '\0') break;
+          if (iVar7 == 0) goto code_?;
           this_01 = (GameObject *)
                     func_?(0,
                                     TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::GameObject>
-                                    ,iVar8);
+                                    ,iVar7);
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__UnityEngine__Object);
           }
-          bVar9 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+          bVar8 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                             ((Object_1 *)this_01,(Object_1 *)this,(MethodInfo *)0x0);
-          if (bVar9 != 0) {
+          if (bVar8 != 0) {
             if (this_01 == (GameObject *)0x0) goto code_?;
             parent = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                                (this_01,(MethodInfo *)0x0);
             if (this_00 == (Transform *)0x0) goto code_?;
-            bVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_IsChildOf
+            bVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_IsChildOf
                               (this_00,parent,(MethodInfo *)0x0);
-            if (bVar9 != 0) {
-              uStack_1 = 1;
-              if (iVar8 != 0) {
-                func_?();
-              }
+            if (bVar8 != 0) {
+              uStack_1 = CONCAT31(uStack_1._1_3_,1);
+              func_?();
               goto code_?;
             }
           }
         }
-        uStack_1 = 1;
-        if (iVar8 != 0) {
-          func_?(0,TypeInfo__System__IDisposable,iVar8);
-        }
-        uStack_1 = 1;
+        uStack_1._0_1_ = 1;
+        func_?();
+        uStack_1._0_1_ = 1;
         mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
         List_1_System_Object__Add
                   ((List_1_System_Object_ *)parents,(Object *)this,
@@ -104,14 +100,14 @@ code_?:
       }
     }
 code_?:
-    uVar10 = func_?();
-    func_?(uVar10);
-    pcVar11 = (code *)swi(3);
-    (*pcVar11)();
+    uVar9 = func_?();
+    func_?(uVar9);
+    pcVar10 = (code *)swi(3);
+    (*pcVar10)();
     return;
   }
 code_?:
-  *unaff_FS_OFFSET = uStack_4;
+  *unaff_FS_OFFSET = uStack_3;
   return;
 }
 
@@ -127,6 +123,8 @@ Assembly-CSharp.dll::RTG::GameObjectEx::GameObjectEx_FilterParentsOnly_1
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
+  puStack_4 = &stack0xffffffb0;
+  puVar5 = &stack0xffffffb0;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__IDisposable);
     func_?(&TypeInfo__System__Collections__Generic__IEnumerable<UnityEngine::GameObject>);
@@ -143,7 +141,10 @@ Assembly-CSharp.dll::RTG::GameObjectEx::GameObjectEx_FilterParentsOnly_1
     func_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
+    puVar5 = puStack_4;
   }
+  puStack_4 = puVar5;
+  iStack_6 = 0;
   this = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
           *)func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
   if (gameObjects == (IEnumerable_1_UnityEngine_GameObject_ *)0x0) {
@@ -155,71 +156,81 @@ Assembly-CSharp.dll::RTG::GameObjectEx::GameObjectEx_FilterParentsOnly_1
     *unaff_FS_OFFSET = uStack_3;
     return (List_1_UnityEngine_GameObject_ *)this;
   }
+  IStack_7.monitor = (MonitorData *)this;
   mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
   MultiColumnCollectionHeader+ViewState+ColumnState]::
   List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
             (this,10,
              MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List_int_);
-  iVar4 = func_?(0,
-                          TypeInfo__System__Collections__Generic__IEnumerable<UnityEngine::GameObject>
-                          ,gameObjects);
-  uStack_1._1_3_ = 0;
+  IStack_7.klass =
+       (IEnumerable_1_UnityEngine_GameObject___Class *)
+       func_?(0,
+                       TypeInfo__System__Collections__Generic__IEnumerable<UnityEngine::GameObject>,
+                       gameObjects);
+  pIStack_8 = &IStack_7;
+  uStack_1 = 0;
 code_?:
   uStack_1._0_1_ = 1;
-  while (iVar4 != 0) {
-    cVar5 = func_?();
-    if (cVar5 == '\0') {
+  while (IStack_7.klass != (IEnumerable_1_UnityEngine_GameObject___Class *)0x0) {
+    cVar9 = func_?();
+    if (cVar9 == '\0') {
       uStack_1 = 0xffffffff;
-      if (iVar4 == 0) {
+      if (pIStack_8->klass != (IEnumerable_1_UnityEngine_GameObject___Class *)0x0) {
+        func_?();
         *unaff_FS_OFFSET = uStack_3;
         return (List_1_UnityEngine_GameObject_ *)this;
       }
-      func_?();
       *unaff_FS_OFFSET = uStack_3;
       return (List_1_UnityEngine_GameObject_ *)this;
     }
-    if ((iVar4 == 0) || (this_00 = (GameObject *)func_?(), this_00 == (GameObject *)0x0))
-    break;
+    if (IStack_7.klass == (IEnumerable_1_UnityEngine_GameObject___Class *)0x0) break;
+    this_00 = (GameObject *)func_?();
+    uStack_10 = 0;
+    if (this_00 == (GameObject *)0x0) break;
     this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                         (this_00,(MethodInfo *)0x0);
-    iVar6 = func_?();
+    pIStack_8 = gameObjects;
+    iStack_6 = func_?();
     uStack_1._0_1_ = 3;
     while( true ) {
-      if (iVar6 == 0) goto code_?;
-      cVar5 = func_?();
-      if (cVar5 == '\0') break;
-      if (iVar6 == 0) goto code_?;
+      if (iStack_6 == 0) goto code_?;
+      cVar9 = func_?();
+      if (cVar9 == '\0') break;
+      if (iStack_6 == 0) goto code_?;
       this_02 = (GameObject *)func_?();
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+      bVar11 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                         ((Object_1 *)this_02,(Object_1 *)this_00,(MethodInfo *)0x0);
-      if (bVar7 != 0) {
-        if ((this_02 == (GameObject *)0x0) ||
-           (parent = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                               (this_02,(MethodInfo *)0x0), this_01 == (Transform *)0x0))
-        goto code_?;
-        bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_IsChildOf
+      if (bVar11 != 0) {
+        if (this_02 == (GameObject *)0x0) goto code_?;
+        parent = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                           (this_02,(MethodInfo *)0x0);
+        if (this_01 == (Transform *)0x0) goto code_?;
+        bVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_IsChildOf
                           (this_01,parent,(MethodInfo *)0x0);
-        if (bVar7 != 0) {
-          uStack_1._0_1_ = 1;
-          if (iVar6 != 0) {
-            func_?();
-          }
+        if (bVar11 != 0) {
+          uStack_10 = 1;
+          uStack_1 = CONCAT31(uStack_1._1_3_,1);
+          func_?();
+          this = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                  *)IStack_7.monitor;
           goto code_?;
         }
       }
     }
     uStack_1._0_1_ = 1;
-    if (iVar6 != 0) {
-      func_?();
-    }
+    func_?();
+    this = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+            *)IStack_7.monitor;
     uStack_1._0_1_ = 1;
-    if (this == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                 *)0x0) break;
+    if ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *
+        )IStack_7.monitor ==
+        (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *
+        )0x0) break;
     mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-              ((List_1_System_Object_ *)this,(Object *)this_00,
+              ((List_1_System_Object_ *)IStack_7.monitor,(Object *)this_00,
                MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Add_UnityEngine__GameObject_
               );
   }
@@ -227,9 +238,9 @@ code_?:
   func_?();
   func_?();
   func_?();
-  pcVar8 = (code *)swi(3);
-  pLVar9 = (List_1_UnityEngine_GameObject_ *)(*pcVar8)();
-  return pLVar9;
+  pcVar12 = (code *)swi(3);
+  pLVar13 = (List_1_UnityEngine_GameObject_ *)(*pcVar12)();
+  return pLVar13;
 }
 
 
@@ -255,13 +266,12 @@ Assembly-CSharp.dll::RTG::GameObjectEx::GameObjectEx_GetAllChildren
     cRam_? = '\x01';
   }
   if (gameObject != (GameObject *)0x0) {
-    pOStack_1 = (Object_1__Class *)
-                UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                GameObject_GetComponentsInChildren
-                          (gameObject,
-                           UnityEngine__Transform__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::Transform>______
-                          );
-    if (pOStack_1 != (Object_1__Class *)0x0) {
+    pOStack_1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                 GameObject_GetComponentsInChildren
+                           (gameObject,
+                            UnityEngine__Transform__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::Transform>______
+                           );
+    if (pOStack_1 != (Object__Array *)0x0) {
       this_00 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
                  *)func_?(
                                   TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>
@@ -269,46 +279,42 @@ Assembly-CSharp.dll::RTG::GameObjectEx::GameObjectEx_GetAllChildren
       mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
       MultiColumnCollectionHeader+ViewState+ColumnState]::
       List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
-                (this_00,(int32_t)(pOStack_1->_0).namespaze,
+                (this_00,pOStack_1->max_length,
                  MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List_int_)
       ;
-      pcVar2 = (char *)0x0;
-      pIVar3 = &(pOStack_1->_0).byval_arg;
+      ppOVar2 = pOStack_1->vector;
+      uVar3 = 0;
       while( true ) {
-        pcVar4 = (pOStack_1->_0).namespaze;
-        if ((int)pcVar4 <= (int)pcVar2) {
+        if ((int)pOStack_1->max_length <= (int)uVar3) {
           return (List_1_UnityEngine_GameObject_ *)this_00;
         }
-        if (pcVar4 <= pcVar2) break;
-        this = (Component *)(pIVar3->data).typeHandle;
+        if (pOStack_1->max_length <= uVar3) break;
+        this = (Component *)*ppOVar2;
         if (this == (Component *)0x0) goto code_?;
-        pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           (this,(MethodInfo *)0x0);
+        x = (Object_1__Class *)
+            UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                      (this,(MethodInfo *)0x0);
+        pOVar4 = TypeInfo__UnityEngine__Object;
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          pOStack_1 = TypeInfo__UnityEngine__Object;
           func_?();
-          pGVar5 = (GameObject *)&UNK_?;
+          x = pOVar4;
         }
-        bVar6 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                          ((Object_1 *)pGVar5,(Object_1 *)gameObject,(MethodInfo *)0x0);
-        if (bVar6 == 0) {
-          pcVar2 = pcVar2 + 1;
-          pIVar3 = (Il2CppType *)&pIVar3->attrs;
-        }
-        else {
-          pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                             (this,(MethodInfo *)0x0);
+        bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                          ((Object_1 *)x,(Object_1 *)gameObject,(MethodInfo *)0x0);
+        if (bVar5 != 0) {
+          item = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           (this,(MethodInfo *)0x0);
           if (this_00 ==
               (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
                *)0x0) goto code_?;
           mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
           List_1_System_Object__Add
-                    ((List_1_System_Object_ *)this_00,(Object *)pGVar5,
+                    ((List_1_System_Object_ *)this_00,(Object *)item,
                      MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Add_UnityEngine__GameObject_
                     );
-          pcVar2 = pcVar2 + 1;
-          pIVar3 = (Il2CppType *)&pIVar3->attrs;
         }
+        uVar3 = uVar3 + 1;
+        ppOVar2 = ppOVar2 + 1;
       }
       goto code_?;
     }
@@ -317,9 +323,9 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  pLVar8 = (List_1_UnityEngine_GameObject_ *)(*pcVar7)();
-  return pLVar8;
+  pcVar6 = (code *)swi(3);
+  pLVar7 = (List_1_UnityEngine_GameObject_ *)(*pcVar6)();
+  return pLVar7;
 }
 
 
@@ -359,16 +365,16 @@ Assembly-CSharp.dll::RTG::GameObjectEx::GameObjectEx_GetAllChildrenAndSelf
                 (this,pOVar1->max_length,
                  MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List_int_)
       ;
-      uVar2 = 0;
-      ppOVar3 = pOVar1->vector;
+      ppOVar2 = pOVar1->vector;
+      uVar3 = 0;
       while( true ) {
-        if ((int)pOVar1->max_length <= (int)uVar2) {
+        if ((int)pOVar1->max_length <= (int)uVar3) {
           return (List_1_UnityEngine_GameObject_ *)this;
         }
-        if (pOVar1->max_length <= uVar2) break;
-        if ((Component *)*ppOVar3 == (Component *)0x0) goto code_?;
+        if (pOVar1->max_length <= uVar3) break;
+        if ((Component *)*ppOVar2 == (Component *)0x0) goto code_?;
         item = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)*ppOVar3,(MethodInfo *)0x0);
+                         ((Component *)*ppOVar2,(MethodInfo *)0x0);
         if (this == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
                      *)0x0) goto code_?;
         mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
@@ -376,8 +382,8 @@ Assembly-CSharp.dll::RTG::GameObjectEx::GameObjectEx_GetAllChildrenAndSelf
                   ((List_1_System_Object_ *)this,(Object *)item,
                    MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Add_UnityEngine__GameObject_
                   );
-        uVar2 = uVar2 + 1;
-        ppOVar3 = ppOVar3 + 1;
+        uVar3 = uVar3 + 1;
+        ppOVar2 = ppOVar2 + 1;
       }
       goto code_?;
     }
@@ -434,27 +440,31 @@ void Assembly-CSharp.dll::RTG::GameObjectEx::GameObjectEx_GetAllChildrenAndSelf_
     pIVar3 = pIStack_2;
   }
   pIStack_2 = pIVar3;
+  LStack_4._list = (List_1_System_Object_ *)0x0;
+  LStack_4._index = 0;
+  LStack_4._version = 0;
+  LStack_4._current = (Object *)0x0;
   if (childrenAndSelf != (List_1_UnityEngine_GameObject_ *)0x0) {
-    iVar4 = (childrenAndSelf->fields)._size;
-    piVar5 = &(childrenAndSelf->fields)._version;
-    *piVar5 = *piVar5 + 1;
+    iVar5 = (childrenAndSelf->fields)._size;
+    piVar6 = &(childrenAndSelf->fields)._version;
+    *piVar6 = *piVar6 + 1;
     (childrenAndSelf->fields)._size = 0;
-    if (0 < iVar4) {
+    if (0 < iVar5) {
       mscorlib.dll::System::Array::Array_Clear
-                ((Array *)(childrenAndSelf->fields)._items,0,iVar4,(MethodInfo *)0x0);
+                ((Array *)(childrenAndSelf->fields)._items,0,iVar5,(MethodInfo *)0x0);
     }
     if ((TypeInfo__RTG__GameObjectEx->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__RTG__GameObjectEx);
     }
-    pLVar6 = TypeInfo__RTG__GameObjectEx->static_fields->_transformsChildren;
-    if (pLVar6 != (List_1_UnityEngine_Transform_ *)0x0) {
-      iVar4 = (pLVar6->fields)._size;
-      piVar5 = &(pLVar6->fields)._version;
-      *piVar5 = *piVar5 + 1;
-      (pLVar6->fields)._size = 0;
-      if (0 < iVar4) {
+    pLVar7 = TypeInfo__RTG__GameObjectEx->static_fields->_transformsChildren;
+    if (pLVar7 != (List_1_UnityEngine_Transform_ *)0x0) {
+      iVar5 = (pLVar7->fields)._size;
+      piVar6 = &(pLVar7->fields)._version;
+      *piVar6 = *piVar6 + 1;
+      (pLVar7->fields)._size = 0;
+      if (0 < iVar5) {
         mscorlib.dll::System::Array::Array_Clear
-                  ((Array *)(pLVar6->fields)._items,0,iVar4,(MethodInfo *)0x0);
+                  ((Array *)(pLVar7->fields)._items,0,iVar5,(MethodInfo *)0x0);
       }
       if (gameObject != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentsInChildren_3
@@ -467,41 +477,41 @@ void Assembly-CSharp.dll::RTG::GameObjectEx::GameObjectEx_GetAllChildrenAndSelf_
                TypeInfo__RTG__GameObjectEx->static_fields->_transformsChildren;
         if (this != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
           method_00 = (MethodInfo *)&stack0xffffffd8;
-          pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+          pLVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                    RegularExpressions::RegexCharClass+SingleRange]::
                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                              ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
                                *)method_00,this,
                               MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__GetEnumerator__
                              );
-          LStack_8._list = (List_1_System_Object_ *)pLVar7->_list;
-          LStack_8._index = pLVar7->_index;
-          LStack_8._version = pLVar7->_version;
-          LStack_8._current = *(Object **)&pLVar7->_current;
+          LStack_4._list = (List_1_System_Object_ *)pLVar8->_list;
+          LStack_4._index = pLVar8->_index;
+          LStack_4._version = pLVar8->_version;
+          LStack_4._current = *(Object **)&pLVar8->_current;
           pIStack_9 = (InvokerMethod)0x0;
           _Stack_8 = (_union_155)0x1;
-          pLStack_10 = &LStack_8;
+          pLStack_10 = &LStack_4;
           while( true ) {
             bVar11 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]
                     ::List_1_T_Enumerator_System_Object__MoveNext
-                              (&LStack_8,
+                              (&LStack_4,
                                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Transform>__MoveNext__
                               );
             if (bVar11 == 0) {
               _Stack_8 = (_union_155)0xffffffff;
               mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                        ((Object *)&LStack_8,
+                        ((Object *)&LStack_4,
                          (ExceptionArgument__Enum)
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Transform>__Dispose__
                          ,method_00);
               *unaff_FS_OFFSET = ppIStack_1;
               return;
             }
-            if ((RegexCharClass_SingleRange)LStack_8._current == (RegexCharClass_SingleRange)0x0)
+            if ((RegexCharClass_SingleRange)LStack_4._current == (RegexCharClass_SingleRange)0x0)
             break;
             method_00 = (MethodInfo *)
                         UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                  ((Component *)LStack_8._current,(MethodInfo *)0x0);
+                                  ((Component *)LStack_4._current,(MethodInfo *)0x0);
             mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
             List_1_System_Object__Add
                       ((List_1_System_Object_ *)childrenAndSelf,(Object *)method_00,
@@ -1526,9 +1536,9 @@ void Assembly-CSharp.dll::RTG::GameObjectEx::GameObjectEx_SetHierarchyWorldScale
                           ((Vector3 *)&stack0xffffffb8,vector,(MethodInfo *)0x0);
       uVar11 = pVVar3->x;
       uVar12 = pVVar3->y;
-      value.y = pivotPoint.y + (float)uVar12 * fStack_2 * ((float)uVar5 - pivotPoint.y);
-      value.x = fVar10 + (float)uVar11 * fStack_1 * ((float)uVar4 - pivotPoint.x);
-      value.z = pivotPoint.z + pVVar3->z * worldScale.z * (fVar6 - pivotPoint.z);
+      value.y = pivotPoint.y + ((float)uVar5 - pivotPoint.y) * (float)uVar12 * fStack_2;
+      value.x = fVar10 + ((float)uVar4 - pivotPoint.x) * (float)uVar11 * fStack_1;
+      value.z = pivotPoint.z + (fVar6 - pivotPoint.z) * pVVar3->z * worldScale.z;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                 (this,value,(MethodInfo *)0x0);
       return;
@@ -1571,6 +1581,10 @@ void Assembly-CSharp.dll::RTG::GameObjectEx::GameObjectEx_SetStatic
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
+  LStack_6._list = (List_1_System_Object_ *)0x0;
+  LStack_6._index = 0;
+  LStack_6._version = 0;
+  LStack_6._current = (Object *)0x0;
   if (affectChildren == 0) {
     if (gameObject != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_isStatic
@@ -1585,41 +1599,41 @@ void Assembly-CSharp.dll::RTG::GameObjectEx::GameObjectEx_SetStatic
     }
     method_00 = (MethodInfo *)GameObjectEx_GetAllChildrenAndSelf(gameObject,(MethodInfo *)0x0);
     if (method_00 != (MethodInfo *)0x0) {
-      pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+      pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
                RegexCharClass+SingleRange]::
                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                         (&LStack_7,
+                         (&LStack_8,
                           (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                           method_00,
                           MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
                          );
-      LStack_8._list = (List_1_System_Object_ *)pLVar6->_list;
-      LStack_8._index = pLVar6->_index;
-      LStack_8._version = pLVar6->_version;
-      LStack_8._current = *(Object **)&pLVar6->_current;
-      LStack_7._version = 0;
+      LStack_6._list = (List_1_System_Object_ *)pLVar7->_list;
+      LStack_6._index = pLVar7->_index;
+      LStack_6._version = pLVar7->_version;
+      LStack_6._current = *(Object **)&pLVar7->_current;
+      LStack_8._version = 0;
       uStack_1 = 1;
-      LStack_7._current = (RegexCharClass_SingleRange)&LStack_8;
+      LStack_8._current = (RegexCharClass_SingleRange)&LStack_6;
       while( true ) {
         bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
                 List_1_T_Enumerator_System_Object__MoveNext
-                          (&LStack_8,
+                          (&LStack_6,
                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
                           );
         if (bVar9 == 0) {
           uStack_1 = 0xffffffff;
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&LStack_8,
+                    ((Object *)&LStack_6,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
                      ,method_00);
           *unaff_FS_OFFSET = uStack_3;
           return;
         }
-        if ((RegexCharClass_SingleRange)LStack_8._current == (RegexCharClass_SingleRange)0x0)
+        if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0)
         break;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_isStatic
-                  ((GameObject *)LStack_8._current,isStatic,(MethodInfo *)0x0);
+                  ((GameObject *)LStack_6._current,isStatic,(MethodInfo *)0x0);
       }
     }
   }

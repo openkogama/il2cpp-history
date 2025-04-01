@@ -12,8 +12,8 @@ bool Assembly-CSharp.dll::RTG::RTFocusCamera+<DoSmoothOrbit>d__131::
     (this->fields).__1__state = -1;
     if (this_00 == (RTFocusCamera *)0x0) goto code_?;
     VVar2 = RTFocusCamera::RTFocusCamera_CalculateOrbitRotation
-                       (this_00,(this->fields).deviceAxisX,(this->fields).deviceAxisY,
-                        (MethodInfo *)0x0);
+                      (this_00,(this->fields).deviceAxisX,(this->fields).deviceAxisY,
+                       (MethodInfo *)0x0);
     (this->fields)._rotationAmount_5__2.x = in_stack_3;
     (this->fields)._rotationAmount_5__2.y = VVar2.y;
   }
@@ -45,7 +45,7 @@ bool Assembly-CSharp.dll::RTG::RTFocusCamera+<DoSmoothOrbit>d__131::
     else if (_UNK_? < fVar9) {
       fVar9 = _UNK_?;
     }
-    fVar4 = (4.3474032e-29 - fVar4) * fVar9 + fVar4;
+    fVar4 = (4.361549e-29 - fVar4) * fVar9 + fVar4;
     fVar5 = (fVar6 - fVar5) * fVar9 + fVar5;
     (this->fields)._rotationAmount_5__2.x = fVar4;
     (this->fields)._rotationAmount_5__2.y = fVar5;
@@ -66,17 +66,16 @@ bool Assembly-CSharp.dll::RTG::RTFocusCamera+<DoSmoothOrbit>d__131::
     if ((float)((uint)(0.0 - fVar4) & _UNK_?) < fVar6) {
       return 0;
     }
-    ppOVar10 = &(this->fields).__2__current;
-    *ppOVar10 = (Object *)0x0;
-    func_?(ppOVar10);
+    (this->fields).__2__current = (Object *)0x0;
+    func_?(&(this->fields).__2__current);
     (this->fields).__1__state = 1;
     return 1;
   }
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  bVar12 = (*pcVar11)();
-  return bVar12;
+  pcVar10 = (code *)swi(3);
+  bVar11 = (*pcVar10)();
+  return bVar11;
 }
 
 

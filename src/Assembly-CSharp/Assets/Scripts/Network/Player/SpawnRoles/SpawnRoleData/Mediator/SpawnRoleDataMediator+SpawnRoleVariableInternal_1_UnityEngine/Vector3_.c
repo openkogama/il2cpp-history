@@ -18,19 +18,18 @@ void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
   this_01 = (SubscribableVariable_1_UnityEngine_Vector3_ *)func_?(pIVar2);
   SubscribableVariable`1[UnityEngine::Vector3]::SubscribableVariable_1_UnityEngine_Vector3___ctor
             (this_01,value,pMVar1->klass->rgctx_data[10].method);
-  pSVar3 = &this->fields;
-  (pSVar3->_).subscribableVariable = this_01;
-  func_?(pSVar3,this_01);
-  this_00 = (SubscribableVariableBase_1_UnityEngine_Vector3_ *)(pSVar3->_).subscribableVariable;
+  (this->fields)._.subscribableVariable = this_01;
+  func_?(&this->fields,this_01);
+  this_00 = (SubscribableVariableBase_1_UnityEngine_Vector3_ *)(this->fields)._.subscribableVariable
+  ;
   if (((uint)(pMVar1->klass->rgctx_data[0xc].klass)->vtable[0].methodPtr & 0x100) == 0) {
     func_?();
   }
   this_02 = (SpawnRoleVariable_1_T_SubDelegate_UnityEngine_Vector3_ *)func_?();
-  pIVar4 = pMVar1->klass->rgctx_data;
-  method_00 = pIVar4[0xd].method;
   SpawnRoleVariableTypes::SpawnRoleVariable`1[T]+SubDelegate[UnityEngine::Vector3]::
   SpawnRoleVariable_1_T_SubDelegate_UnityEngine_Vector3___ctor
-            (this_02,(Object *)method_00,pIVar4[0xb].rgctxDataDummy,method_00);
+            (this_02,(Object *)this,pMVar1->klass->rgctx_data[0xb].rgctxDataDummy,
+             pMVar1->klass->rgctx_data[0xd].method);
   if (this_00 != (SubscribableVariableBase_1_UnityEngine_Vector3_ *)0x0) {
     SubscribableVariableBase`1[UnityEngine::Vector3]::
     SubscribableVariableBase_1_UnityEngine_Vector3__add_OnChange
@@ -39,8 +38,8 @@ void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
     return;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

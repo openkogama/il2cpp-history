@@ -14,111 +14,126 @@ void Assembly-CSharp.dll::TeleportGroup::TeleportGroup_Initialize
                    );
     cRam_? = '\x01';
   }
-  ppMVar1 = &(this->fields).worldObject;
-  *ppMVar1 = owner;
-  func_?(ppMVar1,owner);
-  if (*ppMVar1 == (MVTeleportGroup *)0x0) {
+  (this->fields).worldObject = owner;
+  func_?(&(this->fields).worldObject,owner);
+  pMVar1 = (this->fields).worldObject;
+  if (pMVar1 == (MVTeleportGroup *)0x0) {
 code_?:
+    pUVar2 = unaff_EDI;
     func_?();
 code_?:
-    pDStack_2 = unaff_ESI;
+    pUStack_3 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)unaff_ESI;
     func_?();
+    unaff_EDI = pUVar2;
 code_?:
-    pDStack_2 = unaff_ESI;
+    pUStack_3 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)unaff_ESI;
     func_?();
   }
   else {
-    pMVar3 = ((*ppMVar1)->fields).teleporter1;
-    if (pMVar3 == (MVTeleporter *)0x0) goto code_?;
-    pUVar4 = (pMVar3->fields)._._.PositionChanged;
-    pUVar5 = (UnityAction_2_System_Object_System_Object_ *)
+    pMVar4 = (pMVar1->fields).teleporter1;
+    if (pMVar4 == (MVTeleporter *)0x0) goto code_?;
+    pUVar5 = (pMVar4->fields)._._.PositionChanged;
+    pUVar6 = (UnityAction_2_System_Object_System_Object_ *)
              func_?(
                             TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
                             );
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
-              (pUVar5,(Object *)this,
+              (pUVar6,(Object *)this,
                MethodInfo__TeleportGroup__PositionChanged_System__Object__PositionChangedEventArgs_,
                (MethodInfo *)0x0);
-    unaff_ESI = mscorlib.dll::System::Delegate::Delegate_Combine
-                          ((Delegate *)pUVar4,(Delegate *)pUVar5,(MethodInfo *)0x0);
-    if (unaff_ESI != (Delegate *)0x0) {
-      pDStack_2 = unaff_ESI;
-      pUVar4 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
-      if (pUVar4 != (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) {
-        (pMVar3->fields)._._.PositionChanged = pUVar4;
-        pDStack_2 = unaff_ESI;
-        iVar6 = func_?();
-        if (iVar6 == 0) goto code_?;
-        goto code_?;
-      }
-      goto code_?;
-    }
-    (pMVar3->fields)._._.PositionChanged =
-         (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
-code_?:
-    pDStack_2 = (Delegate *)&(pMVar3->fields)._._.PositionChanged;
-    func_?();
-    if (*ppMVar1 == (MVTeleportGroup *)0x0) goto code_?;
-    pMVar3 = ((*ppMVar1)->fields).teleporter2;
-    if (pMVar3 == (MVTeleporter *)0x0) goto code_?;
-    pUVar4 = (pMVar3->fields)._._.PositionChanged;
-    pUVar5 = (UnityAction_2_System_Object_System_Object_ *)
-             func_?(
-                            TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
-                            );
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              (pUVar5,(Object *)this,
-               MethodInfo__TeleportGroup__PositionChanged_System__Object__PositionChangedEventArgs_,
-               (MethodInfo *)0x0);
-    unaff_ESI = mscorlib.dll::System::Delegate::Delegate_Combine
-                          ((Delegate *)pUVar4,(Delegate *)pUVar5,(MethodInfo *)0x0);
-    if (unaff_ESI == (Delegate *)0x0) {
-      (pMVar3->fields)._._.PositionChanged =
+    unaff_EDI = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)
+                mscorlib.dll::System::Delegate::Delegate_Combine
+                          ((Delegate *)pUVar5,(Delegate *)pUVar6,(MethodInfo *)0x0);
+    if (unaff_EDI == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)0x0) {
+      (pMVar4->fields)._._.PositionChanged =
            (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
 code_?:
-      pDStack_2 = (Delegate *)&(pMVar3->fields)._._.PositionChanged;
+      pUStack_3 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)
+                  &(pMVar4->fields)._._.PositionChanged;
       func_?();
-      pMVar7 = *ppMVar1;
-      if (pMVar7 == (MVTeleportGroup *)0x0) goto code_?;
-      pUVar4 = (pMVar7->fields)._._._.PositionChanged;
-      pUVar5 = (UnityAction_2_System_Object_System_Object_ *)
+      pMVar1 = (this->fields).worldObject;
+      unaff_ESI = pMVar4;
+      if (pMVar1 == (MVTeleportGroup *)0x0) goto code_?;
+      pMVar4 = (pMVar1->fields).teleporter2;
+      if (pMVar4 == (MVTeleporter *)0x0) goto code_?;
+      pUVar5 = (pMVar4->fields)._._.PositionChanged;
+      pUVar6 = (UnityAction_2_System_Object_System_Object_ *)
                func_?(
                               TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
                               );
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
-                (pUVar5,(Object *)this,
+                (pUVar6,(Object *)this,
                  MethodInfo__TeleportGroup__PositionChanged_System__Object__PositionChangedEventArgs_
                  ,(MethodInfo *)0x0);
-      unaff_ESI = mscorlib.dll::System::Delegate::Delegate_Combine
-                            ((Delegate *)pUVar4,(Delegate *)pUVar5,(MethodInfo *)0x0);
-      if (unaff_ESI == (Delegate *)0x0) {
-        (pMVar7->fields)._._._.PositionChanged =
+      unaff_EDI = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)
+                  mscorlib.dll::System::Delegate::Delegate_Combine
+                            ((Delegate *)pUVar5,(Delegate *)pUVar6,(MethodInfo *)0x0);
+      if (unaff_EDI == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)0x0) {
+        (pMVar4->fields)._._.PositionChanged =
              (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
+      }
+      else {
+        pUStack_3 = unaff_EDI;
+        pUVar5 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
+        if (pUVar5 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0)
+        goto code_?;
+        (pMVar4->fields)._._.PositionChanged = pUVar5;
+        pUStack_3 = unaff_EDI;
+        iVar7 = func_?();
+        if (iVar7 == 0) goto code_?;
+      }
+      pUStack_3 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)
+                  &(pMVar4->fields)._._.PositionChanged;
+      func_?();
+      pUVar2 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)
+               (this->fields).worldObject;
+      unaff_ESI = pMVar4;
+      if (pUVar2 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)0x0)
+      goto code_?;
+      a = (Delegate *)(pUVar2->_1).initializationExceptionGCHandle;
+      pUVar6 = (UnityAction_2_System_Object_System_Object_ *)
+               func_?(
+                              TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
+                              );
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                (pUVar6,(Object *)this,
+                 MethodInfo__TeleportGroup__PositionChanged_System__Object__PositionChangedEventArgs_
+                 ,(MethodInfo *)0x0);
+      unaff_ESI = (MVTeleporter *)
+                  mscorlib.dll::System::Delegate::Delegate_Combine
+                            (a,(Delegate *)pUVar6,(MethodInfo *)0x0);
+      unaff_EDI = 
+      TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
+      if (unaff_ESI == (MVTeleporter *)0x0) {
+        (pUVar2->_1).initializationExceptionGCHandle = 0;
 code_?:
-        pDStack_2 = (Delegate *)&(pMVar7->fields)._._._.PositionChanged;
+        pUStack_3 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)
+                    &(pUVar2->_1).initializationExceptionGCHandle;
         func_?();
-        this_00 = (this->fields).lineRenderer;
-        unaff_ESI = (Delegate *)this;
-        if ((*ppMVar1 != (MVTeleportGroup *)0x0) &&
-           (pMVar3 = ((*ppMVar1)->fields).teleporter1, pMVar3 != (MVTeleporter *)0x0)) {
+        pMVar1 = (this->fields).worldObject;
+        unaff_ESI = (MVTeleporter *)(this->fields).lineRenderer;
+        unaff_EDI = pUVar2;
+        if ((pMVar1 != (MVTeleportGroup *)0x0) &&
+           (pMVar4 = (pMVar1->fields).teleporter1, pMVar4 != (MVTeleporter *)0x0)) {
           pVVar8 = (Vector3 *)
-                   (*(code *)(pMVar3->klass->vtable).get_WorldPosition_1.method)
-                             (auStack_9,pMVar3,(pMVar3->klass->vtable).set_WorldPosition.methodPtr)
+                   (*(code *)(pMVar4->klass->vtable).get_WorldPosition_1.method)
+                             (auStack_9,pMVar4,(pMVar4->klass->vtable).set_WorldPosition.methodPtr)
           ;
-          if (this_00 != (LineRenderer *)0x0) {
+          if (unaff_ESI != (MVTeleporter *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::LineRenderer::LineRenderer_SetPosition
-                      (this_00,0,*pVVar8,(MethodInfo *)0x0);
-            unaff_ESI = (Delegate *)(this->fields).lineRenderer;
-            if ((*ppMVar1 != (MVTeleportGroup *)0x0) &&
-               (pMVar3 = ((*ppMVar1)->fields).teleporter2, pMVar3 != (MVTeleporter *)0x0)) {
+                      ((LineRenderer *)unaff_ESI,0,*pVVar8,(MethodInfo *)0x0);
+            pMVar1 = (this->fields).worldObject;
+            unaff_ESI = (MVTeleporter *)(this->fields).lineRenderer;
+            if ((pMVar1 != (MVTeleportGroup *)0x0) &&
+               (pMVar4 = (pMVar1->fields).teleporter2, pMVar4 != (MVTeleporter *)0x0)) {
               pVVar8 = (Vector3 *)
-                       (*(code *)(pMVar3->klass->vtable).get_WorldPosition_1.method)
-                                 (auStack_9,pMVar3,
-                                  (pMVar3->klass->vtable).set_WorldPosition.methodPtr);
-              if (unaff_ESI != (Delegate *)0x0) {
+                       (*(code *)(pMVar4->klass->vtable).get_WorldPosition_1.method)
+                                 (auStack_9,pMVar4,
+                                  (pMVar4->klass->vtable).set_WorldPosition.methodPtr);
+              if (unaff_ESI != (MVTeleporter *)0x0) {
                 UnityEngine.CoreModule.dll::UnityEngine::LineRenderer::LineRenderer_SetPosition
                           ((LineRenderer *)unaff_ESI,1,*pVVar8,(MethodInfo *)0x0);
                 return;
@@ -128,32 +143,34 @@ code_?:
         }
         goto code_?;
       }
-      pDStack_2 = unaff_ESI;
-      pUVar4 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
-      if (pUVar4 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0)
-      goto code_?;
-      (pMVar7->fields)._._._.PositionChanged = pUVar4;
-      pDStack_2 = unaff_ESI;
-      iVar6 = func_?();
-      if (iVar6 != 0) goto code_?;
+      pUStack_3 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)unaff_ESI;
+      uVar10 = func_?();
+      if (uVar10 != 0) {
+        (pUVar2->_1).initializationExceptionGCHandle = uVar10;
+        pUStack_3 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)unaff_ESI;
+        iVar7 = func_?();
+        if (iVar7 != 0) goto code_?;
+        goto code_?;
+      }
       goto code_?;
     }
-    pDStack_2 = unaff_ESI;
-    pUVar4 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
-    if (pUVar4 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0)
+    pUStack_3 = unaff_EDI;
+    pUVar5 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
+    if (pUVar5 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0)
     goto code_?;
-    (pMVar3->fields)._._.PositionChanged = pUVar4;
-    pDStack_2 = unaff_ESI;
-    iVar6 = func_?();
-    if (iVar6 != 0) goto code_?;
+    (pMVar4->fields)._._.PositionChanged = pUVar5;
+    pUStack_3 = unaff_EDI;
+    iVar7 = func_?();
+    if (iVar7 != 0) goto code_?;
   }
-  pDStack_2 = unaff_ESI;
+code_?:
+  pUStack_3 = unaff_EDI;
   func_?();
 code_?:
-  pDStack_2 = unaff_ESI;
+  pUStack_3 = unaff_EDI;
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -173,81 +190,80 @@ void Assembly-CSharp.dll::TeleportGroup::TeleportGroup_OnDestroy
                    );
     cRam_? = '\x01';
   }
-  pMVar1 = (this->fields).worldObject;
-  if (pMVar1 == (MVTeleportGroup *)0x0) {
+  if ((this->fields).worldObject == (MVTeleportGroup *)0x0) {
     return;
   }
-  pMVar2 = (pMVar1->fields).teleporter1;
-  if (pMVar2 == (MVTeleporter *)0x0) {
+  pMVar1 = (((this->fields).worldObject)->fields).teleporter1;
+  if (pMVar1 == (MVTeleporter *)0x0) {
+code_?:
+    func_?();
 code_?:
     func_?();
   }
   else {
-    pUVar3 = (pMVar2->fields)._._.PositionChanged;
-    pUVar4 = (UnityAction_2_System_Object_System_Object_ *)
+    pUVar2 = (pMVar1->fields)._._.PositionChanged;
+    pUVar3 = (UnityAction_2_System_Object_System_Object_ *)
              func_?(
                             TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
                             );
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
-              (pUVar4,(Object *)this,
+              (pUVar3,(Object *)this,
                MethodInfo__TeleportGroup__PositionChanged_System__Object__PositionChangedEventArgs_,
                (MethodInfo *)0x0);
-    pDVar5 = mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)pUVar3,(Delegate *)pUVar4,(MethodInfo *)0x0);
-    if (pDVar5 == (Delegate *)0x0) {
-      (pMVar2->fields)._._.PositionChanged =
+    pDVar4 = mscorlib.dll::System::Delegate::Delegate_Remove
+                       ((Delegate *)pUVar2,(Delegate *)pUVar3,(MethodInfo *)0x0);
+    if (pDVar4 == (Delegate *)0x0) {
+      (pMVar1->fields)._._.PositionChanged =
            (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
       object = (Object *)0x0;
 code_?:
       func_?();
-      pMVar1 = (this->fields).worldObject;
-      if ((pMVar1 == (MVTeleportGroup *)0x0) ||
-         (pMVar2 = (pMVar1->fields).teleporter2, pMVar2 == (MVTeleporter *)0x0))
+      pMVar5 = (this->fields).worldObject;
+      if ((pMVar5 == (MVTeleportGroup *)0x0) ||
+         (pMVar1 = (pMVar5->fields).teleporter2, pMVar1 == (MVTeleporter *)0x0))
       goto code_?;
-      pUVar3 = (pMVar2->fields)._._.PositionChanged;
-      ppUVar6 = &(pMVar2->fields)._._.PositionChanged;
-      pUVar4 = (UnityAction_2_System_Object_System_Object_ *)
+      pUVar2 = (pMVar1->fields)._._.PositionChanged;
+      pUVar3 = (UnityAction_2_System_Object_System_Object_ *)
                func_?(
                               TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
                               );
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
-                (pUVar4,object,
+                (pUVar3,object,
                  MethodInfo__TeleportGroup__PositionChanged_System__Object__PositionChangedEventArgs_
                  ,(MethodInfo *)0x0);
-      pDVar5 = mscorlib.dll::System::Delegate::Delegate_Remove
-                         ((Delegate *)pUVar3,(Delegate *)pUVar4,(MethodInfo *)0x0);
-      if (pDVar5 == (Delegate *)0x0) {
-        *ppUVar6 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
+      pDVar4 = mscorlib.dll::System::Delegate::Delegate_Remove
+                         ((Delegate *)pUVar2,(Delegate *)pUVar3,(MethodInfo *)0x0);
+      if (pDVar4 == (Delegate *)0x0) {
+        (pMVar1->fields)._._.PositionChanged =
+             (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
         func_?();
         return;
       }
-      pUVar3 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
-      if (pUVar3 != (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) {
-        *ppUVar6 = pUVar3;
-        iVar7 = func_?();
-        if (iVar7 != 0) {
+      pUVar2 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
+      if (pUVar2 != (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) {
+        (pMVar1->fields)._._.PositionChanged = pUVar2;
+        iVar6 = func_?();
+        if (iVar6 != 0) {
           func_?();
           return;
         }
       }
+      goto code_?;
     }
-    else {
-      pUVar3 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
-      if (pUVar3 != (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) {
-        (pMVar2->fields)._._.PositionChanged = pUVar3;
-        object = (Object *)func_?();
-        if (object == (Object *)0x0) goto code_?;
-        goto code_?;
-      }
-    }
+    pUVar2 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
+    if (pUVar2 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0)
+    goto code_?;
+    (pMVar1->fields)._._.PositionChanged = pUVar2;
+    object = (Object *)func_?();
+    if (object != (Object *)0x0) goto code_?;
   }
   func_?();
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

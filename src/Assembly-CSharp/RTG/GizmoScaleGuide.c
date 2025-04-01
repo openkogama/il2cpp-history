@@ -42,8 +42,8 @@ code_?:
         if (pIVar4->interfaceOffsets[uVar5].interfaceType ==
             (Il2CppClass *)
             TypeInfo__System__Collections__Generic__IEnumerable<UnityEngine::GameObject>) {
-          ppMVar7 = &(&pIVar4->vtable)[pIVar4->interfaceOffsets[uVar5].offset].GetEnumerator.
-                      method;
+          ppMVar7 = &(&gameObjects->klass->vtable)
+                      [gameObjects->klass->interfaceOffsets[uVar5].offset].GetEnumerator.method;
           goto code_?;
         }
         uVar5 = uVar5 + 1;
@@ -88,27 +88,30 @@ code_?:
          (this_02 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                               (this_01,(MethodInfo *)0x0), this_02 == (Transform *)0x0)) break;
       pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                          ((Vector3 *)&stack0xffffff44,this_02,(MethodInfo *)0x0);
-      uVar13 = pVVar12->x;
-      uVar14 = pVVar12->y;
+                          ((Vector3 *)&stack0xffffff5c,this_02,(MethodInfo *)0x0);
+      fVar13 = pVVar12->x;
+      fVar14 = pVVar12->y;
       fVar15 = pVVar12->z;
       VVar16 = *pVVar12;
       pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
-                          ((Vector3 *)&stack0xffffff38,this_02,(MethodInfo *)0x0);
+                          ((Vector3 *)&stack0xffffff50,this_02,(MethodInfo *)0x0);
       fVar17 = pVVar12->x;
       fVar18 = pVVar12->y;
       fVar19 = pVVar12->z;
       pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
-                          ((Vector3 *)&stack0xffffff2c,this_02,(MethodInfo *)0x0);
-      fVar20 = pVVar12->x;
-      fVar21 = pVVar12->y;
+                          ((Vector3 *)&stack0xffffff44,this_02,(MethodInfo *)0x0);
+      uVar20 = pVVar12->x;
+      uVar21 = pVVar12->y;
       fVar22 = pVVar12->z;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
-                ((Vector3 *)&stack0xffffff20,this_02,(MethodInfo *)0x0);
-      pGVar23 = (this->fields)._sharedLookAndFeel;
-      if ((pGVar23 == (GizmoScaleGuideLookAndFeel *)0x0) &&
-         (pGVar23 = (this->fields)._lookAndFeel, pGVar23 == (GizmoScaleGuideLookAndFeel *)0x0))
-      break;
+                ((Vector3 *)&stack0xffffff38,this_02,(MethodInfo *)0x0);
+      if ((this->fields)._sharedLookAndFeel == (GizmoScaleGuideLookAndFeel *)0x0) {
+        pGVar23 = (this->fields)._lookAndFeel;
+        if (pGVar23 == (GizmoScaleGuideLookAndFeel *)0x0) break;
+      }
+      else {
+        pGVar23 = (this->fields)._sharedLookAndFeel;
+      }
       fVar24 = _UNK_?;
       if ((pGVar23->fields)._useZoomFactor != 0) {
         if ((TypeInfo__RTG__CameraEx->_1).cctor_finished_or_no_cctor == 0) {
@@ -116,68 +119,78 @@ code_?:
         }
         fVar24 = CameraEx::CameraEx_EstimateZoomFactor(camera,VVar16,(MethodInfo *)0x0);
       }
-      pGVar23 = (this->fields)._sharedLookAndFeel;
-      pGVar25 = pGVar23;
-      if ((pGVar23 == (GizmoScaleGuideLookAndFeel *)0x0) &&
-         (pGVar25 = (this->fields)._lookAndFeel, pGVar25 == (GizmoScaleGuideLookAndFeel *)0x0))
-      goto code_?;
-      fVar24 = (pGVar25->fields)._axisLength * fVar24;
-      fVar19 = fVar19 * fVar24;
-      fVar26 = (float)uVar14 - fVar18 * fVar24;
-      fVar27 = fVar15 - fVar19;
-      fVar19 = fVar15 + fVar19;
-      fVar28 = (float)uVar14 + fVar18 * fVar24;
-      fVar18 = (float)uVar13 + fVar17 * fVar24;
-      if ((pGVar23 == (GizmoScaleGuideLookAndFeel *)0x0) &&
-         (pGVar23 = (this->fields)._lookAndFeel, pGVar23 == (GizmoScaleGuideLookAndFeel *)0x0))
-      goto code_?;
+      if ((this->fields)._sharedLookAndFeel == (GizmoScaleGuideLookAndFeel *)0x0) {
+        pGVar23 = (this->fields)._lookAndFeel;
+        if (pGVar23 == (GizmoScaleGuideLookAndFeel *)0x0) goto code_?;
+      }
+      else {
+        pGVar23 = (this->fields)._sharedLookAndFeel;
+      }
+      fVar24 = (pGVar23->fields)._axisLength * fVar24;
+      fVar25 = fVar15 - fVar19 * fVar24;
+      fVar26 = fVar14 - fVar18 * fVar24;
+      fVar27 = fVar13 - fVar17 * fVar24;
+      fVar19 = fVar15 + fVar19 * fVar24;
+      fVar18 = fVar14 + fVar18 * fVar24;
+      fVar17 = fVar13 + fVar17 * fVar24;
+      if ((this->fields)._sharedLookAndFeel == (GizmoScaleGuideLookAndFeel *)0x0) {
+        pGVar23 = (this->fields)._lookAndFeel;
+        if (pGVar23 == (GizmoScaleGuideLookAndFeel *)0x0) goto code_?;
+      }
+      else {
+        pGVar23 = (this->fields)._sharedLookAndFeel;
+      }
       GizmoLineMaterial::GizmoLineMaterial_SetColor
                 (this_00,(pGVar23->fields)._xAxisColor,(MethodInfo *)0x0);
       GizmoLineMaterial::GizmoLineMaterial_SetPass(this_00,0,(MethodInfo *)0x0);
       VVar16.y = fVar26;
-      VVar16.x = (float)uVar13 - fVar17 * fVar24;
-      VVar16.z = fVar27;
-      endPoint.y = fVar28;
-      endPoint.x = fVar18;
+      VVar16.x = fVar27;
+      VVar16.z = fVar25;
+      endPoint.y = fVar18;
+      endPoint.x = fVar17;
       endPoint.z = fVar19;
       GLRenderer::GLRenderer_DrawLine3D(VVar16,endPoint,(MethodInfo *)0x0);
-      fVar22 = fVar22 * fVar24;
-      fVar19 = fVar15 - fVar22;
-      fVar22 = fVar15 + fVar22;
-      fVar18 = (float)uVar14 + fVar21 * fVar24;
-      fVar17 = (float)uVar13 + fVar20 * fVar24;
-      pGVar23 = (this->fields)._sharedLookAndFeel;
-      if ((pGVar23 == (GizmoScaleGuideLookAndFeel *)0x0) &&
-         (pGVar23 = (this->fields)._lookAndFeel, pGVar23 == (GizmoScaleGuideLookAndFeel *)0x0))
-      goto code_?;
+      fVar18 = fVar14 + fVar24 * (float)uVar21;
+      fVar19 = fVar15 + fVar22 * fVar24;
+      fVar17 = fVar13 + fVar24 * (float)uVar20;
+      if ((this->fields)._sharedLookAndFeel == (GizmoScaleGuideLookAndFeel *)0x0) {
+        pGVar23 = (this->fields)._lookAndFeel;
+        if (pGVar23 == (GizmoScaleGuideLookAndFeel *)0x0) goto code_?;
+      }
+      else {
+        pGVar23 = (this->fields)._sharedLookAndFeel;
+      }
       GizmoLineMaterial::GizmoLineMaterial_SetColor
                 (this_00,(pGVar23->fields)._yAxisColor,(MethodInfo *)0x0);
       GizmoLineMaterial::GizmoLineMaterial_SetPass(this_00,0,(MethodInfo *)0x0);
-      auVar29._4_4_ = fVar19;
-      auVar29._0_4_ = (float)uVar14 - fVar21 * fVar24;
-      auVar29._8_4_ = 0;
+      startPoint.y = fVar18;
+      startPoint.x = fVar17;
+      startPoint.z = fVar19;
       endPoint_00.y = fVar18;
       endPoint_00.x = fVar17;
-      endPoint_00.z = fVar22;
-      GLRenderer::GLRenderer_DrawLine3D((Vector3)(auVar29 << 0x20),endPoint_00,(MethodInfo *)0x0);
-      fVar20 = (float)uVar13 - fVar17 * fVar24;
-      fVar19 = fVar15 + fVar22 * fVar24;
-      fVar21 = (float)uVar14 + fVar18 * fVar24;
-      fVar17 = (float)uVar13 + fVar17 * fVar24;
-      pGVar23 = (this->fields)._sharedLookAndFeel;
-      if ((pGVar23 == (GizmoScaleGuideLookAndFeel *)0x0) &&
-         (pGVar23 = (this->fields)._lookAndFeel, pGVar23 == (GizmoScaleGuideLookAndFeel *)0x0))
-      goto code_?;
+      endPoint_00.z = fVar19;
+      GLRenderer::GLRenderer_DrawLine3D(startPoint,endPoint_00,(MethodInfo *)0x0);
+      fVar22 = fVar13 - fVar24 * fVar17;
+      fVar26 = fVar15 + fVar24 * fVar19;
+      fVar27 = fVar14 + fVar24 * fVar18;
+      fVar13 = fVar13 + fVar24 * fVar17;
+      if ((this->fields)._sharedLookAndFeel == (GizmoScaleGuideLookAndFeel *)0x0) {
+        pGVar23 = (this->fields)._lookAndFeel;
+        if (pGVar23 == (GizmoScaleGuideLookAndFeel *)0x0) goto code_?;
+      }
+      else {
+        pGVar23 = (this->fields)._sharedLookAndFeel;
+      }
       GizmoLineMaterial::GizmoLineMaterial_SetColor
                 (this_00,(pGVar23->fields)._zAxisColor,(MethodInfo *)0x0);
       GizmoLineMaterial::GizmoLineMaterial_SetPass(this_00,0,(MethodInfo *)0x0);
-      startPoint.y = (float)uVar14 - fVar18 * fVar24;
-      startPoint.x = fVar20;
-      startPoint.z = fVar15 - fVar22 * fVar24;
-      endPoint_01.y = fVar21;
-      endPoint_01.x = fVar17;
-      endPoint_01.z = fVar19;
-      GLRenderer::GLRenderer_DrawLine3D(startPoint,endPoint_01,(MethodInfo *)0x0);
+      startPoint_00.y = fVar14 - fVar24 * fVar18;
+      startPoint_00.x = fVar22;
+      startPoint_00.z = fVar15 - fVar24 * fVar19;
+      endPoint_01.y = fVar27;
+      endPoint_01.x = fVar13;
+      endPoint_01.z = fVar26;
+      GLRenderer::GLRenderer_DrawLine3D(startPoint_00,endPoint_01,(MethodInfo *)0x0);
     }
   }
   func_?();
@@ -189,8 +202,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar30 = (code *)swi(3);
-  (*pcVar30)();
+  pcVar28 = (code *)swi(3);
+  (*pcVar28)();
   return;
 }
 
@@ -237,10 +250,24 @@ void Assembly-CSharp.dll::RTG::GizmoScaleGuide::GizmoScaleGuide__ctor
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
   method_00 = (MethodInfo *)&this->fields;
-  ((GizmoScaleGuide__Fields *)method_00)->_lookAndFeel = value;
+  (this->fields)._lookAndFeel = value;
   func_?(method_00,value);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
+}
+
+
+/* GizmoScaleGuideLookAndFeel get_LookAndFeel() */
+
+GizmoScaleGuideLookAndFeel *
+Assembly-CSharp.dll::RTG::GizmoScaleGuide::GizmoScaleGuide_get_LookAndFeel
+          (GizmoScaleGuide *this,MethodInfo *method)
+
+{
+  if ((this->fields)._sharedLookAndFeel == (GizmoScaleGuideLookAndFeel *)0x0) {
+    return (this->fields)._lookAndFeel;
+  }
+  return (this->fields)._sharedLookAndFeel;
 }
 

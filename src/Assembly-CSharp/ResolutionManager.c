@@ -36,8 +36,9 @@ void Assembly-CSharp.dll::ResolutionManager::ResolutionManager_Init
   TypeInfo__ResolutionManager->static_fields->_Initialized_k__BackingField = 1;
   TypeInfo__ResolutionManager->static_fields->canvasScaler = canvasScaler;
   func_?(&TypeInfo__ResolutionManager->static_fields->canvasScaler,canvasScaler);
-  pUVar1 = TypeInfo__ResolutionManager->static_fields->OnReferenceResolution;
-  if (pUVar1 != (UnityAction_1_UnityEngine_Vector2_ *)0x0) {
+  if (TypeInfo__ResolutionManager->static_fields->OnReferenceResolution !=
+      (UnityAction_1_UnityEngine_Vector2_ *)0x0) {
+    pUVar1 = TypeInfo__ResolutionManager->static_fields->OnReferenceResolution;
     if (canvasScaler == (CanvasScaler *)0x0) {
       func_?();
       pcVar2 = (code *)swi(3);

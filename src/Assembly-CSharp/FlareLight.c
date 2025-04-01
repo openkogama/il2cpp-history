@@ -63,9 +63,15 @@ void Assembly-CSharp.dll::FlareLight::FlareLight_Reset(FlareLight *this,MethodIn
                               ((Component *)this,
                                UnityEngine__Light_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Light>__
                               );
-  ppLVar2 = &(this->fields).light;
-  *ppLVar2 = pLVar1;
-  func_?(ppLVar2,&stack0xfffffffc,&UNK_?,ppLVar2,pLVar1);
+  (this->fields).light = pLVar1;
+  func_?(&(this->fields).light,pLVar1);
+  pLVar2 = (LensFlare *)
+           UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
+                     ((Component *)this,
+                      UnityEngine__LensFlare_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::LensFlare>__
+                     );
+  (this->fields).lensFlare = pLVar2;
+  func_?(&(this->fields).lensFlare,pLVar2);
   return;
 }
 

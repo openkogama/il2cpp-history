@@ -88,8 +88,10 @@ void Assembly-CSharp.dll::NotificationTeamRequirementPanel::
   pMVar5 = extraout_ECX;
   team = unaff_EDI;
 code_?:
-  func_?(team,pMVar5);
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  uVar9 = func_?(team,pMVar5);
+  *(undefined1 *)&team->klass = uVar9;
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
+  return;
 }
 

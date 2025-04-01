@@ -14,14 +14,13 @@ void MVWorldObject.dll::FlagReached::FlagReached_GameCountersQuery_OnCounterType
   UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
   UxmlObjectListAttributeDescription`1[System::Object]::
   UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
-  ppOVar1 = &(this->fields)._.instigatorCounterTypeChangedEvent;
   (this->fields)._.forfilled = 1;
-  *ppOVar1 = e;
-  func_?(ppOVar1,e);
-  pEVar2 = (this->fields)._.OnWinningConditionChanged;
-  if (pEVar2 != (EventHandler_1_EventArgs_ *)0x0) {
-    (*(pEVar2->fields)._._.invoke_impl)
-              ((pEVar2->fields)._._.method_code,this,this_00,(pEVar2->fields)._._.method);
+  (this->fields)._.instigatorCounterTypeChangedEvent = e;
+  func_?(&(this->fields)._.instigatorCounterTypeChangedEvent,e);
+  if ((this->fields)._.OnWinningConditionChanged != (EventHandler_1_EventArgs_ *)0x0) {
+    pEVar1 = (this->fields)._.OnWinningConditionChanged;
+    (*(pEVar1->fields)._._.invoke_impl)
+              ((pEVar1->fields)._._.method_code,this,this_00,(pEVar1->fields)._._.method);
   }
   return;
 }

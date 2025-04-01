@@ -34,30 +34,29 @@ Assembly-CSharp.dll::RTG::TexturePool::TexturePool_get_CamOrthoMode
     func_?(&StringLiteral_Textures_CamOrthoMode);
     cRam_? = '\x01';
   }
-  ppTVar1 = &(this->fields)._camOrthoMode;
-  pTVar2 = *ppTVar1;
+  pTVar1 = (this->fields)._camOrthoMode;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)pTVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar3 != 0) {
-    pTVar2 = (Texture2D *)
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)pTVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar2 != 0) {
+    pTVar1 = (Texture2D *)
              UnityEngine.CoreModule.dll::UnityEngine::Resources::Resources_Load
                        (StringLiteral_Textures_CamOrthoMode,(MethodInfo *)0x0);
-    if (pTVar2 == (Texture2D *)0x0) {
-      *ppTVar1 = (Texture2D *)0x0;
+    if (pTVar1 == (Texture2D *)0x0) {
+      (this->fields)._camOrthoMode = (Texture2D *)0x0;
       func_?();
-      return *ppTVar1;
+      return (this->fields)._camOrthoMode;
     }
-    pTVar4 = (Texture2D *)0x0;
-    if (pTVar2->klass == TypeInfo__UnityEngine__Texture2D) {
-      pTVar4 = pTVar2;
+    pTVar3 = (Texture2D *)0x0;
+    if (pTVar1->klass == TypeInfo__UnityEngine__Texture2D) {
+      pTVar3 = pTVar1;
     }
-    *ppTVar1 = pTVar4;
+    (this->fields)._camOrthoMode = pTVar3;
     func_?();
   }
-  return *ppTVar1;
+  return (this->fields)._camOrthoMode;
 }
 
 
@@ -74,30 +73,29 @@ Assembly-CSharp.dll::RTG::TexturePool::TexturePool_get_CamPerspMode
     func_?(&StringLiteral_Textures_CamPerspMode);
     cRam_? = '\x01';
   }
-  ppTVar1 = &(this->fields)._camPerspMode;
-  pTVar2 = *ppTVar1;
+  pTVar1 = (this->fields)._camPerspMode;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)pTVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar3 != 0) {
-    pTVar2 = (Texture2D *)
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)pTVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar2 != 0) {
+    pTVar1 = (Texture2D *)
              UnityEngine.CoreModule.dll::UnityEngine::Resources::Resources_Load
                        (StringLiteral_Textures_CamPerspMode,(MethodInfo *)0x0);
-    if (pTVar2 == (Texture2D *)0x0) {
-      *ppTVar1 = (Texture2D *)0x0;
+    if (pTVar1 == (Texture2D *)0x0) {
+      (this->fields)._camPerspMode = (Texture2D *)0x0;
       func_?();
-      return *ppTVar1;
+      return (this->fields)._camPerspMode;
     }
-    pTVar4 = (Texture2D *)0x0;
-    if (pTVar2->klass == TypeInfo__UnityEngine__Texture2D) {
-      pTVar4 = pTVar2;
+    pTVar3 = (Texture2D *)0x0;
+    if (pTVar1->klass == TypeInfo__UnityEngine__Texture2D) {
+      pTVar3 = pTVar1;
     }
-    *ppTVar1 = pTVar4;
+    (this->fields)._camPerspMode = pTVar3;
     func_?();
   }
-  return *ppTVar1;
+  return (this->fields)._camPerspMode;
 }
 
 
@@ -114,30 +112,29 @@ Assembly-CSharp.dll::RTG::TexturePool::TexturePool_get_XAxisLabel
     func_?(&StringLiteral_Textures_XAxisLabel);
     cRam_? = '\x01';
   }
-  pTVar1 = &this->fields;
-  pTVar2 = pTVar1->_xAxisLabel;
+  pTVar1 = (this->fields)._xAxisLabel;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)pTVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar3 != 0) {
-    pTVar2 = (Texture2D *)
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)pTVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar2 != 0) {
+    pTVar1 = (Texture2D *)
              UnityEngine.CoreModule.dll::UnityEngine::Resources::Resources_Load
                        (StringLiteral_Textures_XAxisLabel,(MethodInfo *)0x0);
-    if (pTVar2 == (Texture2D *)0x0) {
-      pTVar1->_xAxisLabel = (Texture2D *)0x0;
+    if (pTVar1 == (Texture2D *)0x0) {
+      (this->fields)._xAxisLabel = (Texture2D *)0x0;
       func_?();
-      return pTVar1->_xAxisLabel;
+      return (this->fields)._xAxisLabel;
     }
-    pTVar4 = (Texture2D *)0x0;
-    if (pTVar2->klass == TypeInfo__UnityEngine__Texture2D) {
-      pTVar4 = pTVar2;
+    pTVar3 = (Texture2D *)0x0;
+    if (pTVar1->klass == TypeInfo__UnityEngine__Texture2D) {
+      pTVar3 = pTVar1;
     }
-    pTVar1->_xAxisLabel = pTVar4;
+    (this->fields)._xAxisLabel = pTVar3;
     func_?();
   }
-  return pTVar1->_xAxisLabel;
+  return (this->fields)._xAxisLabel;
 }
 
 
@@ -154,30 +151,29 @@ Assembly-CSharp.dll::RTG::TexturePool::TexturePool_get_YAxisLabel
     func_?(&StringLiteral_Textures_YAxisLabel);
     cRam_? = '\x01';
   }
-  ppTVar1 = &(this->fields)._yAxisLabel;
-  pTVar2 = *ppTVar1;
+  pTVar1 = (this->fields)._yAxisLabel;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)pTVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar3 != 0) {
-    pTVar2 = (Texture2D *)
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)pTVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar2 != 0) {
+    pTVar1 = (Texture2D *)
              UnityEngine.CoreModule.dll::UnityEngine::Resources::Resources_Load
                        (StringLiteral_Textures_YAxisLabel,(MethodInfo *)0x0);
-    if (pTVar2 == (Texture2D *)0x0) {
-      *ppTVar1 = (Texture2D *)0x0;
+    if (pTVar1 == (Texture2D *)0x0) {
+      (this->fields)._yAxisLabel = (Texture2D *)0x0;
       func_?();
-      return *ppTVar1;
+      return (this->fields)._yAxisLabel;
     }
-    pTVar4 = (Texture2D *)0x0;
-    if (pTVar2->klass == TypeInfo__UnityEngine__Texture2D) {
-      pTVar4 = pTVar2;
+    pTVar3 = (Texture2D *)0x0;
+    if (pTVar1->klass == TypeInfo__UnityEngine__Texture2D) {
+      pTVar3 = pTVar1;
     }
-    *ppTVar1 = pTVar4;
+    (this->fields)._yAxisLabel = pTVar3;
     func_?();
   }
-  return *ppTVar1;
+  return (this->fields)._yAxisLabel;
 }
 
 
@@ -194,29 +190,28 @@ Assembly-CSharp.dll::RTG::TexturePool::TexturePool_get_ZAxisLabel
     func_?(&StringLiteral_Textures_ZAxisLabel);
     cRam_? = '\x01';
   }
-  ppTVar1 = &(this->fields)._zAxisLabel;
-  pTVar2 = *ppTVar1;
+  pTVar1 = (this->fields)._zAxisLabel;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)pTVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar3 != 0) {
-    pTVar2 = (Texture2D *)
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)pTVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar2 != 0) {
+    pTVar1 = (Texture2D *)
              UnityEngine.CoreModule.dll::UnityEngine::Resources::Resources_Load
                        (StringLiteral_Textures_ZAxisLabel,(MethodInfo *)0x0);
-    if (pTVar2 == (Texture2D *)0x0) {
-      *ppTVar1 = (Texture2D *)0x0;
+    if (pTVar1 == (Texture2D *)0x0) {
+      (this->fields)._zAxisLabel = (Texture2D *)0x0;
       func_?();
-      return *ppTVar1;
+      return (this->fields)._zAxisLabel;
     }
-    pTVar4 = (Texture2D *)0x0;
-    if (pTVar2->klass == TypeInfo__UnityEngine__Texture2D) {
-      pTVar4 = pTVar2;
+    pTVar3 = (Texture2D *)0x0;
+    if (pTVar1->klass == TypeInfo__UnityEngine__Texture2D) {
+      pTVar3 = pTVar1;
     }
-    *ppTVar1 = pTVar4;
+    (this->fields)._zAxisLabel = pTVar3;
     func_?();
   }
-  return *ppTVar1;
+  return (this->fields)._zAxisLabel;
 }
 

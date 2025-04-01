@@ -31,9 +31,9 @@ code_?:
                MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                          (pMVar1,(this->fields).checkpointWOID,(MethodInfo *)0x0);
       if (pMVar3 != (MVCheckpoint *)0x0) {
-        bVar5 = (TypeInfo__MVCheckpoint->_1).naturalAligment;
-        if ((bVar5 <= (pMVar3->klass->_1).naturalAligment) &&
-           ((MVCheckpoint__Class *)(pMVar3->klass->_1).typeHierarchy[bVar5 - 1] ==
+        if (((TypeInfo__MVCheckpoint->_1).naturalAligment <= (pMVar3->klass->_1).naturalAligment) &&
+           ((MVCheckpoint__Class *)
+            (pMVar3->klass->_1).typeHierarchy[(TypeInfo__MVCheckpoint->_1).naturalAligment - 1] ==
             TypeInfo__MVCheckpoint)) {
           return pMVar3;
         }
@@ -119,41 +119,41 @@ bool Assembly-CSharp.dll::MVPlayer::MVPlayer_IsOnSameTeam_1
         iVar3 = (this->fields)._Team_k__BackingField;
         uVar6 = *(ushort *)(*piVar4 + 0xb6);
         if (uVar6 != 0) {
-          iVar7 = *(int *)(*piVar4 + 0x58);
           do {
-            if (*(ITeamInteractorNPC__Class **)(iVar7 + (uint)uVar5 * 8) ==
+            if (*(ITeamInteractorNPC__Class **)(*(int *)(*piVar4 + 0x58) + (uint)uVar5 * 8) ==
                 TypeInfo__ITeamInteractorNPC) {
-              puVar8 = (undefined4 *)(*piVar4 + (*(int *)(iVar7 + 4 + (uint)uVar5 * 8) + 0x18) * 8)
-              ;
+              puVar7 = (undefined4 *)
+                       (*piVar4 +
+                       (*(int *)(*(int *)(*piVar4 + 0x58) + 4 + (uint)uVar5 * 8) + 0x18) * 8);
               goto code_?;
             }
             uVar5 = uVar5 + 1;
           } while (uVar5 < uVar6);
         }
-        puVar8 = (undefined4 *)func_?(piVar4,TypeInfo__ITeamInteractorNPC,0);
+        puVar7 = (undefined4 *)func_?(piVar4,TypeInfo__ITeamInteractorNPC,0);
 code_?:
-        bVar9 = (*(code *)*puVar8)(piVar4,iVar3,puVar8[1]);
-        return bVar9;
+        bVar8 = (*(code *)*puVar7)(piVar4,iVar3,puVar7[1]);
+        return bVar8;
       }
       pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
       if (pMVar2 != (MVNetworkGame *)0x0) {
-        pMVar10 = (pMVar2->fields).playerContainer;
+        pMVar9 = (pMVar2->fields).playerContainer;
         iVar3 = (wo->fields)._.ownerActorNr;
-        if (pMVar10 != (MVPlayerContainer *)0x0) {
+        if (pMVar9 != (MVPlayerContainer *)0x0) {
           if (cRam_? == '\0') {
             func_?(&
                             MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__TryGetValue_int__MVPlayer__
                            );
             cRam_? = '\x01';
           }
-          this_01 = (pMVar10->fields).players;
+          this_01 = (pMVar9->fields).players;
           if (this_01 != (Dictionary_2_System_Int32_MVPlayer_ *)0x0) {
-            bVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+            bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
                     Object]::Dictionary_2_System_Int32_System_Object__TryGetValue
                               ((Dictionary_2_System_Int32_System_Object_ *)this_01,iVar3,&pOStack_1,
                                MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__TryGetValue_int__MVPlayer__
                               );
-            if (bVar9 == 0) {
+            if (bVar8 == 0) {
               return (this->fields)._ActorNr_k__BackingField == (wo->fields)._.ownerActorNr;
             }
             if (pOStack_1 != (Object *)0x0) {
@@ -165,9 +165,9 @@ code_?:
     }
   }
   func_?();
-  pcVar11 = (code *)swi(3);
-  bVar9 = (*pcVar11)();
-  return bVar9;
+  pcVar10 = (code *)swi(3);
+  bVar8 = (*pcVar10)();
+  return bVar8;
 }
 
 
@@ -200,8 +200,8 @@ void Assembly-CSharp.dll::MVPlayer::MVPlayer_NotifyAvatarCreated
                                (this_00,(MethodInfo *)0x0),
           this_01 != (MVWorldObjectClientManager *)0x0)) &&
          (pIVar3 = (ISpawnRoleChangeHandler__Class *)
-                    MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                              (this_01,id,(MethodInfo *)0x0),
+                   MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                             (this_01,id,(MethodInfo *)0x0),
          pIVar3 != (ISpawnRoleChangeHandler__Class *)0x0)) {
         pMVar4 = (MVWorldObject__Class *)(pIVar3->_0).image;
         pIStack_5 = &IStack_6;
@@ -223,10 +223,10 @@ void Assembly-CSharp.dll::MVPlayer::MVPlayer_NotifyAvatarCreated
         pSVar2 = (pSVar1->fields).spawnRolesRuntimeData;
         if (pSVar2 != (SpawnRolesRuntimeData *)0x0) {
           iStack_12 = (pSVar2->fields).activeSpawnRole;
-          (pSVar2->fields).activeSpawnRole = id;
-          pIVar13 = (pSVar1->fields).spawnRoleChangeHandler;
-          if (pIVar13 != (ISpawnRoleChangeHandler *)0x0) {
-            pIStack_14 = pIVar13->klass;
+          (((pSVar1->fields).spawnRolesRuntimeData)->fields).activeSpawnRole = id;
+          pIStack_13 = (pSVar1->fields).spawnRoleChangeHandler;
+          if (pIStack_13 != (ISpawnRoleChangeHandler *)0x0) {
+            pIStack_14 = pIStack_13->klass;
             uVar15 = 0;
             uStack_16 = 0;
             uVar17._0_1_ = (pIStack_14->_1).rank;
@@ -244,18 +244,18 @@ void Assembly-CSharp.dll::MVPlayer::MVPlayer_NotifyAvatarCreated
             }
             IStack_6.monitor = (MonitorData *)0x0;
             IStack_6.klass = TypeInfo__ISpawnRoleChangeHandler;
-            pIStack_5 = pIVar13;
+            pIStack_5 = pIStack_13;
             ppMVar18 = (MethodInfo **)func_?();
 code_?:
             pIVar19 = pIStack_5;
             pIStack_5 = (ISpawnRoleChangeHandler *)ppMVar18[1];
             IStack_6.klass = pIStack_11;
             IStack_6.monitor = (MonitorData *)pIStack_5;
-            (*(code *)*ppMVar18)(pIVar13,iStack_12,id,uStack_8,uStack_9,pIVar19);
-            pAVar20 = (pSVar1->fields).OnSpawnRoleActivated;
-            if (pAVar20 == (Action_1_Int32_ *)0x0) {
+            (*(code *)*ppMVar18)(pIStack_13,iStack_12,id,uStack_8,uStack_9,pIVar19);
+            if ((pSVar1->fields).OnSpawnRoleActivated == (Action_1_Int32_ *)0x0) {
               return;
             }
+            pAVar20 = (pSVar1->fields).OnSpawnRoleActivated;
             IStack_6.monitor = (pAVar20->fields)._._.method;
             IStack_6.klass = (ISpawnRoleChangeHandler__Class *)id;
             pIStack_5 = (pAVar20->fields)._._.method_code;
@@ -268,7 +268,7 @@ code_?:
     IStack_6.monitor = (MonitorData *)&UNK_?;
   }
   IStack_6.klass = (ISpawnRoleChangeHandler__Class *)&stack0xfffffffc;
-  uVar21 = func_?(&stack0xffffffd0);
+  uVar21 = func_?(&stack0xffffffcc);
   func_?(uVar21);
   pcVar22 = (code *)swi(3);
   (*pcVar22)();
@@ -293,9 +293,8 @@ void Assembly-CSharp.dll::MVPlayer::MVPlayer_SetCheckpoint
                       (this_00,woid,WorldObjectType__Enum_CheckPoint,(MethodInfo *)0x0);
     if (bVar1 != 0) {
       (this->fields).checkpointWOID = woid;
-      pUVar2 = (this->fields).OnCheckpointReached;
-      if (pUVar2 != (UnityAction *)0x0) {
-        (*(pUVar2->fields)._._.invoke_impl)();
+      if ((this->fields).OnCheckpointReached != (UnityAction *)0x0) {
+        (*(((this->fields).OnCheckpointReached)->fields)._._.invoke_impl)();
       }
       text = TM::TM__(StringLiteral_Reached_new_checkpoint_,(MethodInfo *)0x0);
       if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
@@ -307,8 +306,8 @@ void Assembly-CSharp.dll::MVPlayer::MVPlayer_SetCheckpoint
     return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -334,8 +333,8 @@ void Assembly-CSharp.dll::MVPlayer::MVPlayer_SetReady(MVPlayer *this,MethodInfo 
     }
   }
   (this->fields).playerState = 1;
-  pUVar1 = (this->fields).OnResume;
-  if (pUVar1 != (UnityAction *)0x0) {
+  if ((this->fields).OnResume != (UnityAction *)0x0) {
+    pUVar1 = (this->fields).OnResume;
     (*(pUVar1->fields)._._.invoke_impl)
               ((pUVar1->fields)._._.method_code,(pUVar1->fields)._._.method);
   }
@@ -360,12 +359,10 @@ void Assembly-CSharp.dll::MVPlayer::MVPlayer_SetupSpawnRoleManager
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   (value->fields).spawnRolesRuntimeData = spawnRolesRuntimeData;
   func_?(&value->fields,spawnRolesRuntimeData);
-  ppIVar1 = &(value->fields).spawnRoleChangeHandler;
-  *ppIVar1 = spawnRoleChangeHandler;
-  func_?(ppIVar1,spawnRoleChangeHandler);
-  ppSVar2 = &(this->fields).spawnRolesManager;
-  *ppSVar2 = value;
-  func_?(ppSVar2,value);
+  (value->fields).spawnRoleChangeHandler = spawnRoleChangeHandler;
+  func_?(&(value->fields).spawnRoleChangeHandler,spawnRoleChangeHandler);
+  (this->fields).spawnRolesManager = value;
+  func_?(&(this->fields).spawnRolesManager,value);
   return;
 }
 
@@ -399,86 +396,76 @@ void Assembly-CSharp.dll::MVPlayer::MVPlayer__ctor
   (this->fields)._ActorNr_k__BackingField = actorNumber;
   (this->fields)._ProfileID_k__BackingField = profileID;
   (this->fields)._BuildTarget_k__BackingField = (undefined1)buildTarget;
-  ppUVar1 = &(this->fields)._UserProfileData_k__BackingField;
-  *ppUVar1 = userProfileData;
-  func_?(ppUVar1,userProfileData);
+  (this->fields)._UserProfileData_k__BackingField = userProfileData;
+  func_?(&(this->fields)._UserProfileData_k__BackingField,userProfileData);
   if ((userProfileData != (UserProfileData *)0x0) &&
-     (pSVar2 = (userProfileData->fields).SubscriptionData, pSVar2 != (SubscriptionData *)0x0)) {
-    subscriptionType = (pSVar2->fields).SubscriptionType;
+     (pSVar1 = (userProfileData->fields).SubscriptionData, pSVar1 != (SubscriptionData *)0x0)) {
+    subscriptionType = (pSVar1->fields).SubscriptionType;
     this_00 = (SubscriptionRulesWrapper *)
               func_?(TypeInfo__MV__WorldObject__Subscription__SubscriptionRulesWrapper);
     MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrapper::
     SubscriptionRulesWrapper__ctor(this_00,subscriptionType,(MethodInfo *)0x0);
-    ppSVar3 = &(this->fields)._SubscriptionRules_k__BackingField;
-    *ppSVar3 = this_00;
-    func_?(ppSVar3,this_00);
+    (this->fields)._SubscriptionRules_k__BackingField = this_00;
+    func_?(&(this->fields)._SubscriptionRules_k__BackingField,this_00);
     if (0 < profileID) {
 code_?:
-      ppSVar4 = &(this->fields)._RegionCode_k__BackingField;
-      *ppSVar4 = regionCode;
-      func_?(ppSVar4,regionCode);
+      (this->fields)._RegionCode_k__BackingField = regionCode;
+      func_?(&(this->fields)._RegionCode_k__BackingField,regionCode);
       if (isReady == 0) {
-        if (observer == 0) {
-          return;
+        if (((observer != 0) && ((this->fields).playerState != 3)) &&
+           ((this->fields).playerState = 3, (this->fields).OnObserve != (UnityAction *)0x0)) {
+          pUVar2 = (this->fields).OnObserve;
+          (*(pUVar2->fields)._._.invoke_impl)
+                    ((pUVar2->fields)._._.method_code,(pUVar2->fields)._._.method);
         }
-        if ((this->fields).playerState == 3) {
-          return;
-        }
-        (this->fields).playerState = 3;
-        pUVar5 = (this->fields).OnObserve;
       }
-      else {
-        if ((this->fields).playerState == 1) {
-          return;
-        }
-        (this->fields).playerState = 1;
-        pUVar5 = (this->fields).OnResume;
-      }
-      if (pUVar5 != (UnityAction *)0x0) {
-        (*(pUVar5->fields)._._.invoke_impl)
-                  ((pUVar5->fields)._._.method_code,(pUVar5->fields)._._.method);
+      else if (((this->fields).playerState != 1) &&
+              ((this->fields).playerState = 1, (this->fields).OnResume != (UnityAction *)0x0)) {
+        pUVar2 = (this->fields).OnResume;
+        (*(pUVar2->fields)._._.invoke_impl)
+                  ((pUVar2->fields)._._.method_code,(pUVar2->fields)._._.method);
+        return;
       }
       return;
     }
-    pUVar6 = (this->fields)._UserProfileData_k__BackingField;
-    if (pUVar6 != (UserProfileData *)0x0) {
-      pSVar7 = (pUVar6->fields).UserName;
+    pUVar3 = (this->fields)._UserProfileData_k__BackingField;
+    if (pUVar3 != (UserProfileData *)0x0) {
+      pSVar4 = (pUVar3->fields).UserName;
       if ((TypeInfo__System__Text__RegularExpressions__Regex->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__System__Text__RegularExpressions__Regex);
       }
-      pSVar8 = System.dll::System::Text::RegularExpressions::Regex::Regex_Split
-                         (pSVar7,StringLiteral___________A_Z__,(MethodInfo *)0x0);
+      pSVar5 = System.dll::System::Text::RegularExpressions::Regex::Regex_Split
+                         (pSVar4,StringLiteral___________A_Z__,(MethodInfo *)0x0);
       if ((TypeInfo__MVLocalPlayerTourist->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__MVLocalPlayerTourist);
       }
       hashtable = TypeInfo__MVLocalPlayerTourist->static_fields->Adjectives;
-      if (pSVar8 != (String__Array *)0x0) {
-        if (pSVar8->max_length == 0) goto code_?;
-        pSVar7 = pSVar8->vector[0];
-        pSVar9 = TM::TM__(StringLiteral_Tourist,(MethodInfo *)0x0);
+      if (pSVar5 != (String__Array *)0x0) {
+        if (pSVar5->max_length == 0) goto code_?;
+        pSVar4 = pSVar5->vector[0];
+        pSVar6 = TM::TM__(StringLiteral_Tourist,(MethodInfo *)0x0);
         if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__Extensions);
         }
-        pSVar7 = (String *)
+        pSVar4 = (String *)
                  Extensions::Extensions_GetTypedValueOrDefault
-                           ((Dictionary_2_System_Object_System_Object_ *)hashtable,(Object *)pSVar7,
-                            (Object *)pSVar9,
+                           ((Dictionary_2_System_Object_System_Object_ *)hashtable,(Object *)pSVar4,
+                            (Object *)pSVar6,
                             System__String_MethodInfo__Extensions__GetTypedValueOrDefault<System::String,_System::String>_System__Collections__Generic__Dictionary<System::String,_System::String>__System__String__System__String_
                            );
-        if (pSVar8->max_length < 2) goto code_?;
-        pSVar9 = (String *)
+        if (pSVar5->max_length < 2) goto code_?;
+        pSVar6 = (String *)
                  Extensions::Extensions_GetTypedValueOrDefault
                            ((Dictionary_2_System_Object_System_Object_ *)
                             TypeInfo__MVLocalPlayerTourist->static_fields->Nouns,
-                            (Object *)pSVar8->vector[1],(Object *)::StringLiteral__,
+                            (Object *)pSVar5->vector[1],(Object *)::StringLiteral__,
                             System__String_MethodInfo__Extensions__GetTypedValueOrDefault<System::String,_System::String>_System__Collections__Generic__Dictionary<System::String,_System::String>__System__String__System__String_
                            );
-        pUVar6 = (this->fields)._UserProfileData_k__BackingField;
-        pSVar7 = mscorlib.dll::System::String::String_Concat_3(pSVar7,pSVar9,(MethodInfo *)0x0);
-        if (pUVar6 != (UserProfileData *)0x0) {
-          ppSVar4 = &(pUVar6->fields).UserName;
-          *ppSVar4 = pSVar7;
-          func_?(ppSVar4,pSVar7);
+        pUVar3 = (this->fields)._UserProfileData_k__BackingField;
+        pSVar4 = mscorlib.dll::System::String::String_Concat_3(pSVar4,pSVar6,(MethodInfo *)0x0);
+        if (pUVar3 != (UserProfileData *)0x0) {
+          (pUVar3->fields).UserName = pSVar4;
+          func_?(&(pUVar3->fields).UserName,pSVar4);
           goto code_?;
         }
       }
@@ -487,8 +474,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -507,9 +494,8 @@ void Assembly-CSharp.dll::MVPlayer::MVPlayer__ctor_1
                  (MethodInfo *)0x0);
   iVar1 = (this->fields).level;
   (this->fields).level = level;
-  if ((iVar1 != level) &&
-     (pUVar2 = (this->fields).OnLevelChanged, pUVar2 != (UnityAction_1_System_Int32_ *)0x0)) {
-    (*(pUVar2->fields)._._.invoke_impl)();
+  if ((iVar1 != level) && ((this->fields).OnLevelChanged != (UnityAction_1_System_Int32_ *)0x0)) {
+    (*(((this->fields).OnLevelChanged)->fields)._._.invoke_impl)();
   }
   (this->fields).playerPlanetDataRemote = playerPlanetDataRemote;
   func_?();
@@ -523,11 +509,10 @@ bool Assembly-CSharp.dll::MVPlayer::MVPlayer_get_IsPlayerStateInWorld
                (MVPlayer *this,MethodInfo *method)
 
 {
-  uVar1 = (this->fields).playerState;
-  if (uVar1 == 1) {
+  if ((this->fields).playerState == 1) {
     return 1;
   }
-  return uVar1 == 2;
+  return (this->fields).playerState == 2;
 }
 
 
@@ -596,8 +581,8 @@ void Assembly-CSharp.dll::MVPlayer::MVPlayer_set_Level
 {
   iVar1 = (this->fields).level;
   (this->fields).level = value;
-  if ((iVar1 != value) &&
-     (pUVar2 = (this->fields).OnLevelChanged, pUVar2 != (UnityAction_1_System_Int32_ *)0x0)) {
+  if ((iVar1 != value) && ((this->fields).OnLevelChanged != (UnityAction_1_System_Int32_ *)0x0)) {
+    pUVar2 = (this->fields).OnLevelChanged;
     (*(pUVar2->fields)._._.invoke_impl)
               ((pUVar2->fields)._._.method_code,value,(pUVar2->fields)._._.method);
   }
@@ -614,18 +599,24 @@ void Assembly-CSharp.dll::MVPlayer::MVPlayer_set_PlayerState
   if ((undefined1)value != (this->fields).playerState) {
     (this->fields).playerState = (undefined1)value;
     if ((undefined1)value == PlayerGameState__Enum_Paused) {
-      pUVar1 = (this->fields).OnPause;
-    }
-    else if ((undefined1)value == PlayerGameState__Enum_Normal) {
-      pUVar1 = (this->fields).OnResume;
-    }
-    else {
-      if ((undefined1)value != PlayerGameState__Enum_Observer) {
+      if ((this->fields).OnPause != (UnityAction *)0x0) {
+        pUVar1 = (this->fields).OnPause;
+        (*(pUVar1->fields)._._.invoke_impl)
+                  ((pUVar1->fields)._._.method_code,(pUVar1->fields)._._.method);
         return;
       }
-      pUVar1 = (this->fields).OnObserve;
     }
-    if (pUVar1 != (UnityAction *)0x0) {
+    else if ((undefined1)value == PlayerGameState__Enum_Normal) {
+      if ((this->fields).OnResume != (UnityAction *)0x0) {
+        pUVar1 = (this->fields).OnResume;
+        (*(pUVar1->fields)._._.invoke_impl)
+                  ((pUVar1->fields)._._.method_code,(pUVar1->fields)._._.method);
+        return;
+      }
+    }
+    else if (((undefined1)value == PlayerGameState__Enum_Observer) &&
+            ((this->fields).OnObserve != (UnityAction *)0x0)) {
+      pUVar1 = (this->fields).OnObserve;
       (*(pUVar1->fields)._._.invoke_impl)
                 ((pUVar1->fields)._._.method_code,(pUVar1->fields)._._.method);
     }

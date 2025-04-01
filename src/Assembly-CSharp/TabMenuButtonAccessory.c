@@ -24,96 +24,93 @@ void Assembly-CSharp.dll::TabMenuButtonAccessory::TabMenuButtonAccessory_Initial
     cRam_? = '\x01';
   }
   method_00 = TypeInfo__TabMenuButtonAccessory____c__DisplayClass11_0;
-  pOVar1 = (Object *)func_?();
-  object = pOVar1;
+  value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (pOVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  if (pOVar1 != (Object *)0x0) {
-    pOVar1[1].klass = (Object__Class *)this;
-    func_?(pOVar1 + 1,this);
-    this_02 = &pOVar1[1].monitor;
-    *this_02 = (MonitorData *)tabId;
-    pLVar2 = (this->fields).layoutElement;
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  if (value != (Object *)0x0) {
+    value[1].klass = (Object__Class *)this;
+    func_?(value + 1,this);
+    value[1].monitor = (MonitorData *)tabId;
+    pLVar1 = (this->fields).layoutElement;
     (this->fields).category = tabId;
-    if (pLVar2 != (LayoutElement *)0x0) {
-      ppMVar3 = this_02;
-      fVar4 = (float10)(*(code *)(pLVar2->klass->vtable).get_minHeight_1.method)
-                                  (pLVar2,(pLVar2->klass->vtable).set_minHeight.methodPtr);
-      (this->fields).defaultHeight = (float)fVar4;
+    if (pLVar1 != (LayoutElement *)0x0) {
+      fVar2 = (float10)(*(code *)(pLVar1->klass->vtable).get_minHeight_1.method)
+                                 (pLVar1,(pLVar1->klass->vtable).set_minHeight.methodPtr);
+      (this->fields).defaultHeight = (float)fVar2;
       TabMenuButtonAccessory_UpdateHighlightState(this,(MethodInfo *)0x0);
-      pLVar5 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+      pLVar3 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
                (this->fields).tabDefs;
-      pOVar1 = (Object *)0x0;
-      while (pLVar5 != (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0) {
-        if ((pLVar5->fields)._size <= (int)pOVar1) {
-          pSVar6 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)this_02,(MethodInfo *)0x0);
-          pSVar6 = mscorlib.dll::System::String::String_Concat_3
-                              (StringLiteral_No_TabDef_exists_for_accessory_c,pSVar6,
-                               (MethodInfo *)0x0);
+      index = 0;
+      while (pLVar3 != (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0) {
+        if ((pLVar3->fields)._size <= index) {
+          pSVar4 = mscorlib.dll::System::Int32::Int32_ToString
+                             ((Int32 *)&value[1].monitor,(MethodInfo *)0x0);
+          pSVar4 = mscorlib.dll::System::String::String_Concat_3
+                             (StringLiteral_No_TabDef_exists_for_accessory_c,pSVar4,
+                              (MethodInfo *)0x0);
           if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__UnityEngine__Debug);
+            func_?();
           }
           UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                    ((Object *)pSVar6,(MethodInfo *)0x0);
+                    ((Object *)pSVar4,(MethodInfo *)0x0);
           return;
         }
-        pLVar5 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+        pXVar5 = (XmlQualifiedName *)value[1].monitor;
+        pLVar3 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
                  (this->fields).tabDefs;
-        IVar7.m_value = (int32_t)*this_02;
-        if (pLVar5 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
+        if (pLVar3 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
         break;
-        XVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
-                 XmlSchemaObjectTable+XmlSchemaObjectEntry]::
-                 List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
-                           (pLVar5,(int32_t)pOVar1,
-                            MethodInfo__System__Collections__Generic__List<TabMenuButtonAccessory::AccessoryTabDef>__get_Item_int_
-                           );
-        pLVar5 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+        XVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
+                XmlSchemaObjectTable+XmlSchemaObjectEntry]::
+                List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
+                          (pLVar3,index,
+                           MethodInfo__System__Collections__Generic__List<TabMenuButtonAccessory::AccessoryTabDef>__get_Item_int_
+                          );
+        pLVar3 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
                  (this->fields).tabDefs;
-        if ((XmlQualifiedName *)IVar7.m_value == XVar8.qname) {
-          if (pLVar5 != (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
+        if (pXVar5 == XVar6.qname) {
+          if (pLVar3 != (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
           {
-            XVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
-                     XmlSchemaObjectTable+XmlSchemaObjectEntry]::
-                     List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
-                               (pLVar5,(int32_t)pOVar1,
-                                MethodInfo__System__Collections__Generic__List<TabMenuButtonAccessory::AccessoryTabDef>__get_Item_int_
-                               );
-            object = pOVar1;
+            XVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
+                    XmlSchemaObjectTable+XmlSchemaObjectEntry]::
+                    List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
+                              (pLVar3,index,
+                               MethodInfo__System__Collections__Generic__List<TabMenuButtonAccessory::AccessoryTabDef>__get_Item_int_
+                              );
             if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-              func_?(TypeInfo__UnityEngine__Object);
-              object = pOVar1;
+              func_?();
             }
-            pGVar9 = (Graphic *)
+            pGVar7 = (Graphic *)
                      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                               ((Object *)XVar8.xso,
+                               ((Object *)XVar6.xso,
                                 UnityEngine__UI__Graphic_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::UI::Graphic>_UnityEngine__UI__Graphic_
                                );
-            ppGVar10 = &(this->fields).icon;
-            *ppGVar10 = pGVar9;
-            func_?(ppGVar10,pGVar9);
-            if (*ppGVar10 != (Graphic *)0x0) {
-              pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                 ((Component *)*ppGVar10,(MethodInfo *)0x0);
+            (this->fields).icon = pGVar7;
+            func_?();
+            pGVar7 = (this->fields).icon;
+            if (pGVar7 != (Graphic *)0x0) {
+              pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                 ((Component *)pGVar7,(MethodInfo *)0x0);
               parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                                  ((Component *)this,(MethodInfo *)0x0);
-              if (pTVar11 != (Transform *)0x0) {
+              if (pTVar8 != (Transform *)0x0) {
                 UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                          (pTVar11,parent,0,(MethodInfo *)0x0);
-                if ((*ppGVar10 != (Graphic *)0x0) &&
-                   (pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                             Component_get_transform((Component *)*ppGVar10,(MethodInfo *)0x0),
-                   pTVar11 != (Transform *)0x0)) {
+                          (pTVar8,parent,0,(MethodInfo *)0x0);
+                pGVar7 = (this->fields).icon;
+                if ((pGVar7 != (Graphic *)0x0) &&
+                   (pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                             Component_get_transform((Component *)pGVar7,(MethodInfo *)0x0),
+                   pTVar8 != (Transform *)0x0)) {
                   UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetAsFirstSibling
-                            (pTVar11,(MethodInfo *)0x0);
-                  pBVar12 = (this->fields).button;
-                  if (pBVar12 != (Button *)0x0) {
-                    this_00 = (UnityEvent *)(pBVar12->fields).m_OnClick;
+                            (pTVar8,(MethodInfo *)0x0);
+                  pBVar9 = (this->fields).button;
+                  if (pBVar9 != (Button *)0x0) {
+                    this_00 = (UnityEvent *)(pBVar9->fields).m_OnClick;
                     this_01 = (NavMesh_OnNavMeshPreUpdate *)
                               func_?(TypeInfo__UnityEngine__Events__UnityAction);
                     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
                     NavMesh_OnNavMeshPreUpdate__ctor
-                              (this_01,object,
+                              (this_01,value,
                                MethodInfo__TabMenuButtonAccessory____c__DisplayClass11_0___Initialize_b__0__
                                ,(MethodInfo *)0x0);
                     if (this_00 != (UnityEvent *)0x0) {
@@ -128,14 +125,13 @@ void Assembly-CSharp.dll::TabMenuButtonAccessory::TabMenuButtonAccessory_Initial
           }
           break;
         }
-        pOVar1 = (Object *)((int)&pOVar1->klass + 1);
-        this_02 = ppMVar3;
+        index = index + 1;
       }
     }
   }
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)(object);
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -155,8 +151,8 @@ Assembly-CSharp.dll::TabMenuButtonAccessory::TabMenuButtonAccessory_LerpToSize
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[1].klass = (Object__Class *)0x0;
   value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
   func_?(value + 2,this);
   value[2].monitor = (MonitorData *)size;
   return (IEnumerator *)value;
@@ -325,84 +321,74 @@ void Assembly-CSharp.dll::TabMenuButtonAccessory::TabMenuButtonAccessory_UpdateH
   if ((TypeInfo__HighlightManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__HighlightManager);
   }
-  pLVar1 = HighlightManager::HighlightManager_GetHighLights
-                     (HighlightType__Enum_Accessory,
-                      System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_>_MethodInfo__HighlightManager__GetHighLights<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_MV__WorldObject__HighlightSystem__HighlightType_
-                     );
-  pLVar2 = pLVar1;
   this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            HighlightManager::HighlightManager_GetHighLights
+                      (HighlightType__Enum_Accessory,
+                       System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_>_MethodInfo__HighlightManager__GetHighLights<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_MV__WorldObject__HighlightSystem__HighlightType_
+                      );
+  pLVar1 = this_01;
+  this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
             AccessoryDataManager::AccessoryDataManager_GetAccessoriesByCategoryId
                       ((this->fields).category,(MethodInfo *)0x0);
-  IVar3.m_value = 0;
-  index_00.m_value = 0;
-  if (pLVar1 != (List_1_Highlight_1_System_Object_ *)0x0) {
-    for (; index_00.m_value < (pLVar1->fields)._size;
-        index_00.m_value = (int)&((MethodInfo *)index_00.m_value)->methodPointer + 1) {
-      index = (TabMenuButtonAccessory *)0x0;
-      pLVar1 = pLVar2;
-      while( true ) {
-        if (this_01 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-        goto code_?;
-        if ((this_01->fields)._size <= (int)index) break;
-        this_02 = MethodInfo__System__Collections__Generic__List<AccessoryDataClient>__get_Item_int_
-        ;
+  IStack_2.m_value = 0;
+  iStack_3 = 0;
+  if (this_01 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    for (; iStack_3 < (this_01->fields)._size; iStack_3 = iStack_3 + 1) {
+      index = 0;
+      this_01 = pLVar1;
+      if (this_02 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+      goto code_?;
+      for (; index < (this_02->fields)._size; index = index + 1) {
         RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                 ::RegexCharClass+SingleRange]::
                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                          (this_01,(int32_t)index,
+                          (this_02,index,
                            MethodInfo__System__Collections__Generic__List<AccessoryDataClient>__get_Item_int_
                           );
         if (RVar4 == (RegexCharClass_SingleRange)0x0) goto code_?;
         iVar5 = *(int *)((int)RVar4 + 8);
-        pLVar1 = (List_1_Highlight_1_System_Object_ *)&UNK_?;
         RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                 ::RegexCharClass+SingleRange]::
                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                          ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                           this_02,index_00.m_value,
+                          (this_01,iStack_3,
                            MethodInfo__System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_>__get_Item_int_
                           );
         if ((RVar4 == (RegexCharClass_SingleRange)0x0) || (*(int *)((int)RVar4 + 0xc) == 0))
         goto code_?;
-        IVar3.m_value = index_00.m_value;
         if (iVar5 == *(int *)(*(int *)((int)RVar4 + 0xc) + 8)) {
           RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                   RegularExpressions::RegexCharClass+SingleRange]::
                   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            (this_01,(int32_t)index,
+                            (this_02,index,
                              MethodInfo__System__Collections__Generic__List<AccessoryDataClient>__get_Item_int_
                             );
           if (RVar4 == (RegexCharClass_SingleRange)0x0) goto code_?;
           bVar6 = MVWorldObject.dll::MV::WorldObject::Accessories::AccessoryData::
                   AccessoryData_GetShowInShop((AccessoryData *)RVar4,(MethodInfo *)0x0);
-          this = index;
-          IVar3.m_value = index_00.m_value;
           if (bVar6 != 0) {
             RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                     RegularExpressions::RegexCharClass+SingleRange]::
                     List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                              (this_01,(int32_t)index,
+                              (this_02,index,
                                MethodInfo__System__Collections__Generic__List<AccessoryDataClient>__get_Item_int_
                               );
             if (RVar4 == (RegexCharClass_SingleRange)0x0) goto code_?;
-            IVar3.m_value = index_00.m_value;
             if (*(char *)((int)RVar4 + 0x30) == '\0') {
-              IVar3.m_value = index_00.m_value + 1;
+              IStack_2.m_value = IStack_2.m_value + 1;
             }
           }
         }
-        index = (TabMenuButtonAccessory *)((int)&index->klass + 1);
-        index_00.m_value = (int32_t)this_02;
       }
-      pLVar2 = pLVar1;
+      pLVar1 = this_01;
     }
     this_00 = (this->fields).redDot;
     if (this_00 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (this_00,0 < IVar3.m_value,(MethodInfo *)0x0);
+                (this_00,0 < IStack_2.m_value,(MethodInfo *)0x0);
       pTVar7 = (this->fields).redDotCount;
-      mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0);
+      mscorlib.dll::System::Int32::Int32_ToString(&IStack_2,(MethodInfo *)0x0);
       if (pTVar7 != (Text *)0x0) {
+        IStack_2.m_value = (int32_t)&UNK_?;
         (*(code *)(pTVar7->klass->vtable).set_text.method)();
         return;
       }

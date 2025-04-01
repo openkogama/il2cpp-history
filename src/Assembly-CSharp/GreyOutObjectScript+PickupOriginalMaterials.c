@@ -64,14 +64,13 @@ void Assembly-CSharp.dll::GreyOutObjectScript+PickupOriginalMaterials::
   if (meshRenderer != (MeshRenderer *)0x0) {
     pMVar1 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_sharedMaterials
                        ((Renderer *)meshRenderer,(MethodInfo *)0x0);
-    ppMVar2 = &(this->fields).originalMaterials;
-    *ppMVar2 = pMVar1;
-    func_?(ppMVar2,pMVar1);
+    (this->fields).originalMaterials = pMVar1;
+    func_?(&(this->fields).originalMaterials,pMVar1);
     return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

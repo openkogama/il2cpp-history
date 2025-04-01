@@ -7,13 +7,14 @@ int32_t Assembly-CSharp.dll::DeterministicSyncedInterval::DeterministicSyncedInt
 
 {
   iVar1 = curTime % range;
-  if (offset < iVar1) {
-    offset = (offset - iVar1) + range;
+  if (iVar1 <= offset) {
+    iVar2 = offset - iVar1;
+    if (offset <= iVar1) {
+      iVar2 = offset;
+    }
+    return iVar2;
   }
-  else if (iVar1 < offset) {
-    return offset - iVar1;
-  }
-  return offset;
+  return (offset - iVar1) + range;
 }
 
 
@@ -56,12 +57,13 @@ bool Assembly-CSharp.dll::DeterministicSyncedInterval::DeterministicSyncedInterv
 
 {
   iVar1 = WaitForTicks::WaitForTicks_GetEnvironmentTick(0,(MethodInfo *)0x0);
-  iVar2 = (this->fields).nextTickThres;
-  if (iVar2 <= iVar1) {
-    iVar3 = (this->fields).range;
-    (this->fields).nextTickThres = (iVar3 - (iVar1 - iVar2) % iVar3) + iVar1;
+  bVar2 = (this->fields).nextTickThres <= iVar1;
+  if (bVar2) {
+    (this->fields).nextTickThres =
+         ((this->fields).range - (iVar1 - (this->fields).nextTickThres) % (this->fields).range) +
+         iVar1;
   }
-  return iVar2 <= iVar1;
+  return bVar2;
 }
 
 

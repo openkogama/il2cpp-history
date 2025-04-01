@@ -31,9 +31,9 @@ code_?:
     }
     this_00 = (this->fields).winnerConditionsResult;
     if (this_00 == (List_1_System_Object_ *)0x0) goto code_?;
-    pMVar2 = method->klass->rgctx_data[3].method;
-    if ((pMVar2[3].slot & 0x100) == 0) {
-      pMVar2 = (MethodInfo *)func_?();
+    pMVar2 = method->klass->rgctx_data[4].method;
+    if (((uint)(method->klass->rgctx_data[3].klass)->vtable[0].methodPtr & 0x100) == 0) {
+      func_?();
     }
     item = (Object *)func_?();
     if (item == (Object *)0x0) goto code_?;
@@ -47,12 +47,8 @@ code_?:
       List_1_System_Object__AddWithResize(this_00,item,pMVar2->klass->rgctx_data[0xe].method);
 code_?:
       pIStack6 = winnerCondtion;
-      pIStack7 = TypeInfo__IWinningCondition;
-      cVar8 = func_?();
-      if (cVar8 == '\0') {
-        return 0;
-      }
-      return 1;
+      cVar7 = func_?();
+      return cVar7 != '\0';
     }
     (this_00->fields)._size = uVar5 + 1;
     if (uVar5 < pOVar4->max_length) {
@@ -64,8 +60,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  bVar1 = (*pcVar9)();
+  pcVar8 = (code *)swi(3);
+  bVar1 = (*pcVar8)();
   return bVar1;
 }
 

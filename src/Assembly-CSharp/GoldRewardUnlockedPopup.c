@@ -78,9 +78,8 @@ void Assembly-CSharp.dll::GoldRewardUnlockedPopup::GoldRewardUnlockedPopup__ctor
     func_?(&StringLiteral__0__GOLD_CLAIMED_);
     cRam_? = '\x01';
   }
-  ppSVar1 = &(this->fields).titleString;
-  *ppSVar1 = StringLiteral__0__GOLD_CLAIMED_;
-  func_?(ppSVar1,StringLiteral__0__GOLD_CLAIMED_);
+  (this->fields).titleString = StringLiteral__0__GOLD_CLAIMED_;
+  func_?(&(this->fields).titleString,StringLiteral__0__GOLD_CLAIMED_);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

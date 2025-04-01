@@ -18,9 +18,8 @@ bool Assembly-CSharp.dll::UGUI::Framework::Scripts::Shared::VehicleUI::
               func_?(TypeInfo__UnityEngine__WaitForSeconds);
     SubscribableVariable`1[System::Single]::SubscribableVariable_1_System_Single___ctor
               (this_00,3.0,(MethodInfo *)0x0);
-    ppOVar3 = &(this->fields).__2__current;
-    *ppOVar3 = (Object *)this_00;
-    func_?(ppOVar3,this_00);
+    (this->fields).__2__current = (Object *)this_00;
+    func_?(&(this->fields).__2__current,this_00);
     (this->fields).__1__state = 1;
     return 1;
   }
@@ -28,9 +27,9 @@ bool Assembly-CSharp.dll::UGUI::Framework::Scripts::Shared::VehicleUI::
     (this->fields).__1__state = -1;
     if (pVVar2 == (VehicleEnergyMeter *)0x0) {
       func_?();
-      pcVar4 = (code *)swi(3);
-      bVar5 = (*pcVar4)();
-      return bVar5;
+      pcVar3 = (code *)swi(3);
+      bVar4 = (*pcVar3)();
+      return bVar4;
     }
     *(undefined4 *)&(pVVar2->fields).currentColor = 0;
     (pVVar2->fields).currentColor.value.r = 0.0;

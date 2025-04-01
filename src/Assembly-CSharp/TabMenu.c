@@ -84,71 +84,77 @@ void Assembly-CSharp.dll::TabMenu::TabMenu_SelectTab
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  pTVar7 = (this->fields).pages;
-  if (pTVar7 != (Text *)0x0) {
-    (*(code *)(pTVar7->klass->vtable).set_text.method)
-              (pTVar7,::StringLiteral__,
-               (pTVar7->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+  DStack_7._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
+  DStack_7._version = 0;
+  DStack_7._index = 0;
+  DStack_7._current.key = 0;
+  DStack_7._current.value = (Object *)0x0;
+  DStack_7._getEnumeratorRetType = 0;
+  pTVar8 = (this->fields).pages;
+  if (pTVar8 != (Text *)0x0) {
+    (*(code *)(pTVar8->klass->vtable).set_text.method)
+              (pTVar8,::StringLiteral__,
+               (pTVar8->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     if (1 < maxPages) {
-      pTStack_8 = (this->fields).pages;
-      fStack_9 = (float)currentPage;
-      pOVar10 = (Object *)func_?(TypeInfo__System__Int32,&fStack_9);
-      iStack_11 = maxPages;
+      pTStack_9 = (this->fields).pages;
+      fStack_10 = (float)currentPage;
+      pOVar11 = (Object *)func_?(TypeInfo__System__Int32,&fStack_10);
+      iStack_12 = maxPages;
       in_stack_6 = (MethodInfo **)&UNK_?;
-      arg1 = (Object *)func_?(TypeInfo__System__Int32,&iStack_11);
-      pSVar12 = mscorlib.dll::System::String::String_Format_1
-                         (StringLiteral__0___1_,pOVar10,arg1,(MethodInfo *)0x0);
-      if (pTStack_8 == (Text *)0x0) goto code_?;
-      (*(code *)(pTStack_8->klass->vtable).set_text.method)
-                (pTStack_8,pSVar12,
-                 (pTStack_8->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+      arg1 = (Object *)func_?(TypeInfo__System__Int32,&iStack_12);
+      pSVar13 = mscorlib.dll::System::String::String_Format_1
+                         (StringLiteral__0___1_,pOVar11,arg1,(MethodInfo *)0x0);
+      if (pTStack_9 == (Text *)0x0) goto code_?;
+      (*(code *)(pTStack_9->klass->vtable).set_text.method)
+                (pTStack_9,pSVar13,
+                 (pTStack_9->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     }
     this_00 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields).buttons;
     if (this_00 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
-      pDVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
+      pDVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
                Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                         (&DStack_14,this_00,
+                         (&DStack_15,this_00,
                           MethodInfo__System__Collections__Generic__Dictionary<int,_TabMenuButtonBase>__GetEnumerator__
                          );
-      fStack_15 = 0.0;
-      DStack_16._dictionary = pDVar13->_dictionary;
-      DStack_16._version = pDVar13->_version;
-      DStack_16._index = pDVar13->_index;
-      DStack_16._current.key = (pDVar13->_current).key;
-      DStack_16._16_8_ = *(undefined8 *)&(pDVar13->_current).value;
+      fStack_16 = 0.0;
+      DStack_7._dictionary = pDVar14->_dictionary;
+      DStack_7._version = pDVar14->_version;
+      DStack_7._index = pDVar14->_index;
+      DStack_7._current.key = (pDVar14->_current).key;
+      DStack_7._16_8_ = *(undefined8 *)&(pDVar14->_current).value;
       pRStack_1 = (RectTransform *)0x1;
-      pTStack_8 = (Text *)&DStack_16;
+      pTStack_9 = (Text *)&DStack_7;
       while( true ) {
         bVar17 = mscorlib.dll::System::Collections::Generic::
                 Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
                 Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                          (&DStack_16,
+                          (&DStack_7,
                            MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_TabMenuButtonBase>__MoveNext__
                           );
         if (bVar17 == 0) break;
-        if ((Material *)DStack_16._current.value == (Material *)0x0) goto code_?;
-        (*(code *)((Material__Class *)(DStack_16._current.value)->klass)[1]._0.namespaze)
-                  (DStack_16._current.value,
-                   ((Material__Class *)(DStack_16._current.value)->klass)[1]._0.byval_arg.data.dummy
+        if ((Material *)DStack_7._current.value == (Material *)0x0) goto code_?;
+        (*(code *)((Material__Class *)(DStack_7._current.value)->klass)[1]._0.namespaze)
+                  (DStack_7._current.value,
+                   ((Material__Class *)(DStack_7._current.value)->klass)[1]._0.byval_arg.data.dummy
                   );
       }
       pRStack_1 = (RectTransform *)0xffffffff;
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                ((Object *)&DStack_16,
+                ((Object *)&DStack_7,
                  (ExceptionArgument__Enum)
                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_TabMenuButtonBase>__Dispose__
                  ,(MethodInfo *)in_stack_6);
       pRStack_1 = (RectTransform *)0xffffffff;
       this_01 = (this->fields).buttons;
       if (this_01 != (Dictionary_2_System_Int32_TabMenuButtonBase_ *)0x0) {
-        pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+        pOVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
                  Object]::Dictionary_2_System_Int32_System_Object__get_Item
                            ((Dictionary_2_System_Int32_System_Object_ *)this_01,tab,
                             MethodInfo__System__Collections__Generic__Dictionary<int,_TabMenuButtonBase>__get_Item_int_
                            );
-        if (pOVar10 != (Object *)0x0) {
-          (**(code **)&pOVar10->klass[1]._0.byval_arg.attrs)
-                    (pOVar10,pOVar10->klass[1]._0.this_arg.data.dummy);
+        if (pOVar11 != (Object *)0x0) {
+          (**(code **)&pOVar11->klass[1]._0.byval_arg.attrs)
+                    (pOVar11,pOVar11->klass[1]._0.this_arg.data.dummy);
           *unaff_FS_OFFSET = fStack_3;
           return;
         }
@@ -186,9 +192,8 @@ void Assembly-CSharp.dll::TabMenu::TabMenu__ctor(TabMenu *this,MethodInfo *metho
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<int,_TabMenuButtonBase>__Dictionary__
             );
-  ppDVar1 = &(this->fields).buttons;
-  *ppDVar1 = (Dictionary_2_System_Int32_TabMenuButtonBase_ *)this_00;
-  func_?(ppDVar1,this_00);
+  (this->fields).buttons = (Dictionary_2_System_Int32_TabMenuButtonBase_ *)this_00;
+  func_?(&(this->fields).buttons,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

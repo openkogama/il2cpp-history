@@ -36,32 +36,31 @@ void Assembly-CSharp.dll::ThemeSettingsMenu::ThemeSettingsMenu_Initialize
                        ((Object *)pTVar1,parent,0,
                         ThemeSettingsSideBar_MethodInfo__UnityEngine__Object__Instantiate<ThemeSettingsSideBar>_ThemeSettingsSideBar__UnityEngine__Transform__bool_
                        );
-    ppTVar2 = &(this->fields).sideBar;
-    *ppTVar2 = pTVar1;
-    func_?(ppTVar2,pTVar1);
-    if (*ppTVar2 != (ThemeSettingsSideBar *)0x0) {
-      ppTVar3 = &(this->fields)._.theme;
-      pRVar4 = ((*ppTVar2)->fields).content;
-      *ppTVar3 = theme;
-      func_?(ppTVar3,theme);
-      ppRVar5 = &(this->fields)._.content;
-      *ppRVar5 = pRVar4;
-      func_?(ppRVar5,pRVar4);
+    (this->fields).sideBar = pTVar1;
+    func_?(&(this->fields).sideBar,pTVar1);
+    pTVar1 = (this->fields).sideBar;
+    if (pTVar1 != (ThemeSettingsSideBar *)0x0) {
+      pRVar2 = (pTVar1->fields).content;
+      (this->fields)._.theme = theme;
+      func_?(&(this->fields)._.theme,theme);
+      (this->fields)._.content = pRVar2;
+      func_?(&(this->fields)._.content,pRVar2);
       if ((theme != (Theme *)0x0) &&
          (this_00 = (theme->fields)._Settings_k__BackingField, this_00 != (SettingsWrapper *)0x0)) {
         ThemeSettings::SettingsWrapper::SettingsWrapper_SubscribeToSettingsUI
                   (this_00,(IMenu *)this,(MethodInfo *)0x0);
-        ppTVar6 = &(this->fields).browseThemesButton;
-        pTVar7 = (TextButton *)
+        pTVar3 = (TextButton *)
                  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
-                           ((Object *)*ppTVar6,(Transform *)(this->fields)._.settingsArea,0,
+                           ((Object *)(this->fields).browseThemesButton,
+                            (Transform *)(this->fields)._.settingsArea,0,
                             TextButton_MethodInfo__UnityEngine__Object__Instantiate<TextButton>_TextButton__UnityEngine__Transform__bool_
                            );
-        *ppTVar6 = pTVar7;
-        func_?(ppTVar6,pTVar7);
-        if ((*ppTVar6 != (TextButton *)0x0) &&
-           (pBVar8 = ((*ppTVar6)->fields).button, pBVar8 != (Button *)0x0)) {
-          this_01 = (UnityEvent *)(pBVar8->fields).m_OnClick;
+        (this->fields).browseThemesButton = pTVar3;
+        func_?(&(this->fields).browseThemesButton,pTVar3);
+        pTVar3 = (this->fields).browseThemesButton;
+        if ((pTVar3 != (TextButton *)0x0) &&
+           (pBVar4 = (pTVar3->fields).button, pBVar4 != (Button *)0x0)) {
+          this_01 = (UnityEvent *)(pBVar4->fields).m_OnClick;
           this_02 = (NavMesh_OnNavMeshPreUpdate *)
                     func_?(TypeInfo__UnityEngine__Events__UnityAction);
           UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
@@ -79,8 +78,8 @@ void Assembly-CSharp.dll::ThemeSettingsMenu::ThemeSettingsMenu_Initialize
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

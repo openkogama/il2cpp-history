@@ -9,41 +9,44 @@ Vector3 * Assembly-CSharp.dll::RTG::TouchInputDevice::TouchInputDevice_GetFrameD
                     ((MethodInfo *)0x0);
   if (iVar1 == 0) {
     if (cRam_? == '\0') {
+      TStack_2.m_FingerId = (int32_t)&TypeInfo__UnityEngine__Vector3;
       func_?();
       cRam_? = '\x01';
     }
-    pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
-    fVar3 = (pVVar2->zeroVector).y;
-    fVar4 = (pVVar2->zeroVector).z;
-    __return_storage_ptr__->x = (pVVar2->zeroVector).x;
-    __return_storage_ptr__->y = fVar3;
-    __return_storage_ptr__->z = fVar4;
+    pVVar3 = TypeInfo__UnityEngine__Vector3->static_fields;
+    fVar4 = (pVVar3->zeroVector).y;
+    fVar5 = (pVVar3->zeroVector).z;
+    __return_storage_ptr__->x = (pVVar3->zeroVector).x;
+    __return_storage_ptr__->y = fVar4;
+    __return_storage_ptr__->z = fVar5;
     return __return_storage_ptr__;
   }
-  pTVar5 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetTouch
-                     ((Touch *)&stack0xffffff68,0,(MethodInfo *)0x0);
-  TStack_6.m_FingerId = pTVar5->m_FingerId;
-  TStack_6.m_Position.x = (pTVar5->m_Position).x;
-  TStack_6.m_Position.y = (pTVar5->m_Position).y;
-  TStack_6.m_RawPosition.x = (pTVar5->m_RawPosition).x;
-  TStack_6.m_RawPosition.y = (pTVar5->m_RawPosition).y;
-  TStack_6.m_PositionDelta.x = (pTVar5->m_PositionDelta).x;
-  TStack_6.m_PositionDelta.y = (pTVar5->m_PositionDelta).y;
-  TStack_6.m_TimeDelta = pTVar5->m_TimeDelta;
-  TStack_6.m_TapCount = pTVar5->m_TapCount;
-  TStack_6.m_Phase = pTVar5->m_Phase;
-  TStack_6.m_Type = pTVar5->m_Type;
-  TStack_6.m_Pressure = pTVar5->m_Pressure;
-  TStack_6.m_maximumPossiblePressure = pTVar5->m_maximumPossiblePressure;
-  TStack_6.m_Radius = pTVar5->m_Radius;
-  TStack_6.m_RadiusVariance = pTVar5->m_RadiusVariance;
-  TStack_6.m_AltitudeAngle = pTVar5->m_AltitudeAngle;
-  TStack_6.m_AzimuthAngle = pTVar5->m_AzimuthAngle;
-  VVar7 = UnityEngine.InputLegacyModule.dll::UnityEngine::Touch::Touch_get_deltaPosition
+  TStack_2.m_FingerId = 0x44;
+  func_?(&TStack_6,0);
+  pTVar7 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetTouch
+                     (&TStack_2,0,(MethodInfo *)0x0);
+  TStack_6.m_FingerId = pTVar7->m_FingerId;
+  TStack_6.m_Position.x = (pTVar7->m_Position).x;
+  TStack_6.m_Position.y = (pTVar7->m_Position).y;
+  TStack_6.m_RawPosition.x = (pTVar7->m_RawPosition).x;
+  TStack_6.m_RawPosition.y = (pTVar7->m_RawPosition).y;
+  TStack_6.m_PositionDelta.x = (pTVar7->m_PositionDelta).x;
+  TStack_6.m_PositionDelta.y = (pTVar7->m_PositionDelta).y;
+  TStack_6.m_TimeDelta = pTVar7->m_TimeDelta;
+  TStack_6.m_TapCount = pTVar7->m_TapCount;
+  TStack_6.m_Phase = pTVar7->m_Phase;
+  TStack_6.m_Type = pTVar7->m_Type;
+  TStack_6.m_Pressure = pTVar7->m_Pressure;
+  TStack_6.m_maximumPossiblePressure = pTVar7->m_maximumPossiblePressure;
+  TStack_6.m_Radius = pTVar7->m_Radius;
+  TStack_6.m_RadiusVariance = pTVar7->m_RadiusVariance;
+  TStack_6.m_AltitudeAngle = pTVar7->m_AltitudeAngle;
+  TStack_6.m_AzimuthAngle = pTVar7->m_AzimuthAngle;
+  VVar8 = UnityEngine.InputLegacyModule.dll::UnityEngine::Touch::Touch_get_deltaPosition
                     (&TStack_6,(MethodInfo *)0x0);
-  fStack_8 = VVar7.x;
-  __return_storage_ptr__->x = fStack_8;
-  __return_storage_ptr__->y = (float)uStack_9;
+  fStack_9 = VVar8.x;
+  __return_storage_ptr__->x = fStack_9;
+  __return_storage_ptr__->y = (float)uStack_10;
   __return_storage_ptr__->z = 0.0;
   return __return_storage_ptr__;
 }
@@ -59,7 +62,7 @@ Vector3 * Assembly-CSharp.dll::RTG::TouchInputDevice::TouchInputDevice_GetPositi
                     ((MethodInfo *)0x0);
   if (iVar1 == 0) {
     if (cRam_? == '\0') {
-      func_?();
+      func_?(&TypeInfo__UnityEngine__Vector3);
       cRam_? = '\x01';
     }
     pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
@@ -70,30 +73,10 @@ Vector3 * Assembly-CSharp.dll::RTG::TouchInputDevice::TouchInputDevice_GetPositi
     __return_storage_ptr__->z = fVar4;
     return __return_storage_ptr__;
   }
-  pTVar5 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetTouch
-                     ((Touch *)&stack0xffffff68,0,(MethodInfo *)0x0);
-  TStack_6.m_FingerId = pTVar5->m_FingerId;
-  TStack_6.m_Position.x = (pTVar5->m_Position).x;
-  TStack_6.m_Position.y = (pTVar5->m_Position).y;
-  TStack_6.m_RawPosition.x = (pTVar5->m_RawPosition).x;
-  TStack_6.m_RawPosition.y = (pTVar5->m_RawPosition).y;
-  TStack_6.m_PositionDelta.x = (pTVar5->m_PositionDelta).x;
-  TStack_6.m_PositionDelta.y = (pTVar5->m_PositionDelta).y;
-  TStack_6.m_TimeDelta = pTVar5->m_TimeDelta;
-  TStack_6.m_TapCount = pTVar5->m_TapCount;
-  TStack_6.m_Phase = pTVar5->m_Phase;
-  TStack_6.m_Type = pTVar5->m_Type;
-  TStack_6.m_Pressure = pTVar5->m_Pressure;
-  TStack_6.m_maximumPossiblePressure = pTVar5->m_maximumPossiblePressure;
-  TStack_6.m_Radius = pTVar5->m_Radius;
-  TStack_6.m_RadiusVariance = pTVar5->m_RadiusVariance;
-  TStack_6.m_AltitudeAngle = pTVar5->m_AltitudeAngle;
-  TStack_6.m_AzimuthAngle = pTVar5->m_AzimuthAngle;
-  VVar7 = UnityEngine.InputLegacyModule.dll::UnityEngine::Touch::Touch_get_position
-                    (&TStack_6,(MethodInfo *)0x0);
-  fStack_8 = VVar7.x;
-  __return_storage_ptr__->x = fStack_8;
-  __return_storage_ptr__->y = (float)uStack_9;
+  VVar5 = RTInput::RTInput_TouchPosition(0,(MethodInfo *)0x0);
+  fStack_6 = VVar5.x;
+  __return_storage_ptr__->x = fStack_6;
+  __return_storage_ptr__->y = (float)uStack_7;
   __return_storage_ptr__->z = 0.0;
   return __return_storage_ptr__;
 }
@@ -119,74 +102,50 @@ Ray * Assembly-CSharp.dll::RTG::TouchInputDevice::TouchInputDevice_GetRay
     cRam_? = '\x01';
   }
   pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
-  VStack_3.x = (pVVar2->zeroVector).x;
-  VStack_3.y = (pVVar2->zeroVector).y;
-  fVar4 = (pVVar2->zeroVector).z;
+  uVar3 = (pVVar2->zeroVector).x;
+  uVar4 = (pVVar2->zeroVector).y;
+  fVar5 = (pVVar2->zeroVector).z;
   if (cVar1 == '\0') {
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
   pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
-  (__return_storage_ptr__->m_Origin).x = VStack_3.x;
-  (__return_storage_ptr__->m_Origin).y = VStack_3.y;
-  (__return_storage_ptr__->m_Origin).z = fVar4;
-  pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                     (&RStack_6.m_Direction,pVVar2->zeroVector,(MethodInfo *)0x0);
-  fVar7 = pVVar5->y;
-  fVar4 = pVVar5->z;
-  (__return_storage_ptr__->m_Direction).x = pVVar5->x;
+  (__return_storage_ptr__->m_Origin).x = (float)uVar3;
+  (__return_storage_ptr__->m_Origin).y = (float)uVar4;
+  (__return_storage_ptr__->m_Origin).z = fVar5;
+  pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                     ((Vector3 *)&stack0xffffffe8,pVVar2->zeroVector,(MethodInfo *)0x0);
+  fVar7 = pVVar6->y;
+  fVar5 = pVVar6->z;
+  (__return_storage_ptr__->m_Direction).x = pVVar6->x;
   (__return_storage_ptr__->m_Direction).y = fVar7;
-  (__return_storage_ptr__->m_Direction).z = fVar4;
+  (__return_storage_ptr__->m_Direction).z = fVar5;
   iVar8 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_get_touchCount
                     ((MethodInfo *)0x0);
   if (iVar8 != 0) {
-    pTVar9 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetTouch
-                       ((Touch *)&puStack_10,0,(MethodInfo *)0x0);
-    TStack_11.m_FingerId = pTVar9->m_FingerId;
-    TStack_11.m_Position.x = (pTVar9->m_Position).x;
-    TStack_11.m_Position.y = (pTVar9->m_Position).y;
-    TStack_11.m_RawPosition.x = (pTVar9->m_RawPosition).x;
-    TStack_11.m_RawPosition.y = (pTVar9->m_RawPosition).y;
-    TStack_11.m_PositionDelta.x = (pTVar9->m_PositionDelta).x;
-    TStack_11.m_PositionDelta.y = (pTVar9->m_PositionDelta).y;
-    TStack_11.m_TimeDelta = pTVar9->m_TimeDelta;
-    TStack_11.m_TapCount = pTVar9->m_TapCount;
-    TStack_11.m_Phase = pTVar9->m_Phase;
-    TStack_11.m_Type = pTVar9->m_Type;
-    TStack_11.m_Pressure = pTVar9->m_Pressure;
-    TStack_11.m_maximumPossiblePressure = pTVar9->m_maximumPossiblePressure;
-    TStack_11.m_Radius = pTVar9->m_Radius;
-    TStack_11.m_RadiusVariance = pTVar9->m_RadiusVariance;
-    TStack_11.m_AltitudeAngle = pTVar9->m_AltitudeAngle;
-    TStack_11.m_AzimuthAngle = pTVar9->m_AzimuthAngle;
-    VVar12 = UnityEngine.InputLegacyModule.dll::UnityEngine::Touch::Touch_get_position
-                       (&TStack_11,(MethodInfo *)0x0);
-    RStack_6.m_Direction.x = VStack_3.x;
-    VStack_3.y = VVar12.y;
-    RStack_6.m_Direction.y = VStack_3.y;
-    RStack_6.m_Direction.z = 0.0;
-    VStack_3 = VVar12;
+    VVar9 = RTInput::RTInput_TouchPosition(0,(MethodInfo *)0x0);
+    fStack_10 = VVar9.y;
     if (camera == (Camera *)0x0) {
       func_?();
-      pcVar13 = (code *)swi(3);
-      pRVar14 = (Ray *)(*pcVar13)();
-      return pRVar14;
+      pcVar11 = (code *)swi(3);
+      pRVar12 = (Ray *)(*pcVar11)();
+      return pRVar12;
     }
-    pos.y = VStack_3.y;
-    pos.x = VStack_3.x;
+    pos.y = fStack_10;
+    pos.x = (float)uVar3;
     pos.z = 0.0;
-    pRVar14 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenPointToRay_2
-                       (&RStack_6,camera,pos,(MethodInfo *)0x0);
-    fVar4 = (pRVar14->m_Origin).y;
-    fVar7 = (pRVar14->m_Origin).z;
-    fVar15 = (pRVar14->m_Direction).x;
-    (__return_storage_ptr__->m_Origin).x = (pRVar14->m_Origin).x;
-    (__return_storage_ptr__->m_Origin).y = fVar4;
+    pRVar12 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenPointToRay_2
+                        ((Ray *)&stack0xffffffdc,camera,pos,(MethodInfo *)0x0);
+    fVar5 = (pRVar12->m_Origin).y;
+    fVar7 = (pRVar12->m_Origin).z;
+    fVar13 = (pRVar12->m_Direction).x;
+    (__return_storage_ptr__->m_Origin).x = (pRVar12->m_Origin).x;
+    (__return_storage_ptr__->m_Origin).y = fVar5;
     (__return_storage_ptr__->m_Origin).z = fVar7;
-    (__return_storage_ptr__->m_Direction).x = fVar15;
-    fVar4 = (pRVar14->m_Direction).z;
-    (__return_storage_ptr__->m_Direction).y = (pRVar14->m_Direction).y;
-    (__return_storage_ptr__->m_Direction).z = fVar4;
+    (__return_storage_ptr__->m_Direction).x = fVar13;
+    fVar5 = (pRVar12->m_Direction).z;
+    (__return_storage_ptr__->m_Direction).y = (pRVar12->m_Direction).y;
+    (__return_storage_ptr__->m_Direction).z = fVar5;
   }
   return __return_storage_ptr__;
 }
@@ -212,8 +171,8 @@ bool Assembly-CSharp.dll::RTG::TouchInputDevice::TouchInputDevice_IsButtonPresse
 {
   iVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_get_touchCount
                     ((MethodInfo *)0x0);
-  if ((buttonIndex < iVar1) && (iVar1 <= (this->fields)._maxNumberOfTouches)) {
-    return 1;
+  if (buttonIndex < iVar1) {
+    return iVar1 <= (this->fields)._maxNumberOfTouches;
   }
   return 0;
 }
@@ -228,32 +187,34 @@ bool Assembly-CSharp.dll::RTG::TouchInputDevice::TouchInputDevice_WasButtonPress
   iVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_get_touchCount
                     ((MethodInfo *)0x0);
   if ((buttonIndex < iVar1) && (iVar1 <= (this->fields)._maxNumberOfTouches)) {
-    pTVar2 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetTouch
-                       ((Touch *)&stack0xffffff74,buttonIndex,(MethodInfo *)0x0);
-    auStack_3._0_4_ = pTVar2->m_FingerId;
-    auStack_3._4_4_ = (pTVar2->m_Position).x;
-    auStack_3._8_4_ = (pTVar2->m_Position).y;
-    fStack_4 = (pTVar2->m_RawPosition).x;
-    fStack_5 = (pTVar2->m_RawPosition).y;
-    pFStack_6 = (Func_2_Single_Single_ *)(pTVar2->m_PositionDelta).x;
-    fStack_7 = (pTVar2->m_PositionDelta).y;
-    pAStack_8 = (Action *)pTVar2->m_TimeDelta;
-    iStack_9 = pTVar2->m_TapCount;
-    pVStack_10 = (VisualElement *)pTVar2->m_Phase;
-    pAStack_11 = (Action_2_UnityEngine_UIElements_VisualElement_UnityEngine_UIElements_Experimental_StyleValues_
-                  *)pTVar2->m_Type;
-    pFStack_12 = (Func_2_UnityEngine_UIElements_VisualElement_UnityEngine_UIElements_Experimental_StyleValues_
-                  *)pTVar2->m_Pressure;
-    pFStack_13 = (Func_4_UnityEngine_UIElements_Experimental_StyleValues_UnityEngine_UIElements_Experimental_StyleValues_Single_UnityEngine_UIElements_Experimental_StyleValues_
-                  *)pTVar2->m_maximumPossiblePressure;
-    SStack_14.m_StyleValues = (StyleValueCollection *)pTVar2->m_Radius;
-    fStack_15 = pTVar2->m_RadiusVariance;
-    SStack_16.m_StyleValues = (StyleValueCollection *)pTVar2->m_AltitudeAngle;
-    fStack_17 = pTVar2->m_AzimuthAngle;
-    pVVar18 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::Experimental::
+    TStack_2.m_FingerId = 0x44;
+    func_?(auStack_3,0);
+    pTVar4 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetTouch
+                       (&TStack_2,buttonIndex,(MethodInfo *)0x0);
+    auStack_3._0_4_ = pTVar4->m_FingerId;
+    auStack_3._4_4_ = (pTVar4->m_Position).x;
+    auStack_3._8_4_ = (pTVar4->m_Position).y;
+    fStack_5 = (pTVar4->m_RawPosition).x;
+    fStack_6 = (pTVar4->m_RawPosition).y;
+    pFStack_7 = (Func_2_Single_Single_ *)(pTVar4->m_PositionDelta).x;
+    fStack_8 = (pTVar4->m_PositionDelta).y;
+    pAStack_9 = (Action *)pTVar4->m_TimeDelta;
+    iStack_10 = pTVar4->m_TapCount;
+    pVStack_11 = (VisualElement *)pTVar4->m_Phase;
+    pAStack_12 = (Action_2_UnityEngine_UIElements_VisualElement_UnityEngine_UIElements_Experimental_StyleValues_
+                  *)pTVar4->m_Type;
+    pFStack_13 = (Func_2_UnityEngine_UIElements_VisualElement_UnityEngine_UIElements_Experimental_StyleValues_
+                  *)pTVar4->m_Pressure;
+    pFStack_14 = (Func_4_UnityEngine_UIElements_Experimental_StyleValues_UnityEngine_UIElements_Experimental_StyleValues_Single_UnityEngine_UIElements_Experimental_StyleValues_
+                  *)pTVar4->m_maximumPossiblePressure;
+    SStack_15.m_StyleValues = (StyleValueCollection *)pTVar4->m_Radius;
+    fStack_16 = pTVar4->m_RadiusVariance;
+    SStack_17.m_StyleValues = (StyleValueCollection *)pTVar4->m_AltitudeAngle;
+    fStack_18 = pTVar4->m_AzimuthAngle;
+    pVVar19 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::Experimental::
              ValueAnimation`1[StyleValues]::ValueAnimation_1_StyleValues__get_owner
                        ((ValueAnimation_1_StyleValues_ *)auStack_3,(MethodInfo *)0x0);
-    return pVVar18 == (VisualElement *)0x0;
+    return pVVar19 == (VisualElement *)0x0;
   }
   return 0;
 }
@@ -268,38 +229,40 @@ bool Assembly-CSharp.dll::RTG::TouchInputDevice::TouchInputDevice_WasButtonRelea
   iVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_get_touchCount
                     ((MethodInfo *)0x0);
   if ((buttonIndex < iVar1) && (iVar1 <= (this->fields)._maxNumberOfTouches)) {
-    pTVar2 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetTouch
-                       ((Touch *)&stack0xffffff74,buttonIndex,(MethodInfo *)0x0);
-    auStack_3._0_4_ = pTVar2->m_FingerId;
-    auStack_3._4_4_ = (pTVar2->m_Position).x;
-    auStack_3._8_4_ = (pTVar2->m_Position).y;
-    fStack_4 = (pTVar2->m_RawPosition).x;
-    fStack_5 = (pTVar2->m_RawPosition).y;
-    pFStack_6 = (Func_2_Single_Single_ *)(pTVar2->m_PositionDelta).x;
-    fStack_7 = (pTVar2->m_PositionDelta).y;
-    pAStack_8 = (Action *)pTVar2->m_TimeDelta;
-    iStack_9 = pTVar2->m_TapCount;
-    pVStack_10 = (VisualElement *)pTVar2->m_Phase;
-    pAStack_11 = (Action_2_UnityEngine_UIElements_VisualElement_UnityEngine_UIElements_Experimental_StyleValues_
-                  *)pTVar2->m_Type;
-    pFStack_12 = (Func_2_UnityEngine_UIElements_VisualElement_UnityEngine_UIElements_Experimental_StyleValues_
-                  *)pTVar2->m_Pressure;
-    pFStack_13 = (Func_4_UnityEngine_UIElements_Experimental_StyleValues_UnityEngine_UIElements_Experimental_StyleValues_Single_UnityEngine_UIElements_Experimental_StyleValues_
-                  *)pTVar2->m_maximumPossiblePressure;
-    SStack_14.m_StyleValues = (StyleValueCollection *)pTVar2->m_Radius;
-    fStack_15 = pTVar2->m_RadiusVariance;
-    SStack_16.m_StyleValues = (StyleValueCollection *)pTVar2->m_AltitudeAngle;
-    fStack_17 = pTVar2->m_AzimuthAngle;
-    pVVar18 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::Experimental::
+    iStack_2 = 0x44;
+    func_?(auStack_3,0);
+    pTVar4 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetTouch
+                       ((Touch *)&iStack_2,buttonIndex,(MethodInfo *)0x0);
+    auStack_3._0_4_ = pTVar4->m_FingerId;
+    auStack_3._4_4_ = (pTVar4->m_Position).x;
+    auStack_3._8_4_ = (pTVar4->m_Position).y;
+    fStack_5 = (pTVar4->m_RawPosition).x;
+    fStack_6 = (pTVar4->m_RawPosition).y;
+    pFStack_7 = (Func_2_Single_Single_ *)(pTVar4->m_PositionDelta).x;
+    fStack_8 = (pTVar4->m_PositionDelta).y;
+    pAStack_9 = (Action *)pTVar4->m_TimeDelta;
+    iStack_10 = pTVar4->m_TapCount;
+    pVStack_11 = (VisualElement *)pTVar4->m_Phase;
+    pAStack_12 = (Action_2_UnityEngine_UIElements_VisualElement_UnityEngine_UIElements_Experimental_StyleValues_
+                  *)pTVar4->m_Type;
+    pFStack_13 = (Func_2_UnityEngine_UIElements_VisualElement_UnityEngine_UIElements_Experimental_StyleValues_
+                  *)pTVar4->m_Pressure;
+    pFStack_14 = (Func_4_UnityEngine_UIElements_Experimental_StyleValues_UnityEngine_UIElements_Experimental_StyleValues_Single_UnityEngine_UIElements_Experimental_StyleValues_
+                  *)pTVar4->m_maximumPossiblePressure;
+    SStack_15.m_StyleValues = (StyleValueCollection *)pTVar4->m_Radius;
+    fStack_16 = pTVar4->m_RadiusVariance;
+    SStack_17.m_StyleValues = (StyleValueCollection *)pTVar4->m_AltitudeAngle;
+    fStack_18 = pTVar4->m_AzimuthAngle;
+    pVVar19 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::Experimental::
              ValueAnimation`1[StyleValues]::ValueAnimation_1_StyleValues__get_owner
                        ((ValueAnimation_1_StyleValues_ *)auStack_3,(MethodInfo *)0x0);
-    if (pVVar18 == (VisualElement *)0x3) {
+    if (pVVar19 == (VisualElement *)0x3) {
       return 1;
     }
-    pVVar18 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::Experimental::
+    pVVar19 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::Experimental::
              ValueAnimation`1[StyleValues]::ValueAnimation_1_StyleValues__get_owner
                        ((ValueAnimation_1_StyleValues_ *)auStack_3,(MethodInfo *)0x0);
-    return pVVar18 == (VisualElement *)0x4;
+    return pVVar19 == (VisualElement *)0x4;
   }
   return 0;
 }

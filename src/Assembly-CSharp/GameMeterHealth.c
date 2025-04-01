@@ -73,18 +73,16 @@ void Assembly-CSharp.dll::GameMeterHealth::GameMeterHealth_Initialize
           if ((pSVar1 != (SpawnRoleDataMediator *)0x0) &&
              (this_00 = (SpawnRoleVariable_1_System_Single_ *)(pSVar1->fields).health,
              this_00 != (SpawnRoleVariable_1_System_Single_ *)0x0)) {
-            ppMVar4 = (MethodInfo **)
-                      Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
-                      SpawnRoleVariableTypes::SpawnRoleVariable`1[System::Single]::
-                      SpawnRoleVariable_1_System_Single__get_Value
-                                (this_00,
-                                 MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<float>__get_Value__
-                                );
+            fVar4 = Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
+                    SpawnRoleVariableTypes::SpawnRoleVariable`1[System::Single]::
+                    SpawnRoleVariable_1_System_Single__get_Value
+                              (this_00,
+                               MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<float>__get_Value__
+                              );
             if (cRam_? == '\0') {
-              ppMVar4 = &
-                        MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__get_Count__
-              ;
-              func_?();
+              func_?(&
+                              MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__get_Count__
+                             );
               func_?(&
                               MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__get_Item_int_
                              );
@@ -92,38 +90,37 @@ void Assembly-CSharp.dll::GameMeterHealth::GameMeterHealth_Initialize
             }
             pPVar5 = (this->fields).progressBar;
             if (pPVar5 != (ProgressBar *)0x0) {
-              value = (float)ppMVar4 / (float)(this->fields).maxValue;
-              if (value < 0.0) {
-                value = 0.0;
+              fVar4 = fVar4 / (float)(this->fields).maxValue;
+              if (fVar4 < 0.0) {
+                fVar4 = 0.0;
               }
-              else if (_UNK_? < value) {
-                value = _UNK_?;
+              else if (_UNK_? < fVar4) {
+                fVar4 = _UNK_?;
               }
-              (pPVar5->fields).progress = value;
+              (pPVar5->fields).progress = fVar4;
               this_01 = (pPVar5->fields).progressBar;
               if (this_01 != (Scrollbar *)0x0) {
                 UnityEngine.UI.dll::UnityEngine::UI::Scrollbar::Scrollbar_set_size
-                          (this_01,value,(MethodInfo *)0x0);
+                          (this_01,fVar4,(MethodInfo *)0x0);
                 index = 0;
-                this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                          (this->fields)._.gameMeterVisualEffects;
-                while (this_02 !=
-                       (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-                  if ((this_02->fields)._size <= index) {
+                pLVar6 = (this->fields)._.gameMeterVisualEffects;
+                while (pLVar6 != (List_1_GameMeterVisuals_GameMeterVisualEffect_ *)0x0) {
+                  if ((pLVar6->fields)._size <= index) {
                     return;
                   }
+                  this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                            (this->fields)._.gameMeterVisualEffects;
                   if ((this_02 ==
                        (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-                     (RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                     (RVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                               RegularExpressions::RegexCharClass+SingleRange]::
                               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                                         (this_02,index,
                                          MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__get_Item_int_
-                                        ), RVar6 == (RegexCharClass_SingleRange)0x0)) break;
-                  (**(code **)(*(int *)RVar6 + 0xe0))();
+                                        ), RVar7 == (RegexCharClass_SingleRange)0x0)) break;
+                  (**(code **)(*(int *)RVar7 + 0xe0))(RVar7,*(undefined4 *)(*(int *)RVar7 + 0xe4));
                   index = index + 1;
-                  this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                            (this->fields)._.gameMeterVisualEffects;
+                  pLVar6 = (this->fields)._.gameMeterVisualEffects;
                 }
               }
             }
@@ -133,8 +130,8 @@ void Assembly-CSharp.dll::GameMeterHealth::GameMeterHealth_Initialize
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -169,29 +166,29 @@ void Assembly-CSharp.dll::GameMeterHealth::GameMeterHealth_OnProgressUpdate
       UnityEngine.UI.dll::UnityEngine::UI::Scrollbar::Scrollbar_set_size
                 (this_00,value,(MethodInfo *)0x0);
       index = 0;
-      this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                (this->fields)._.gameMeterVisualEffects;
-      while (this_01 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-        if ((this_01->fields)._size <= index) {
+      pLVar2 = (this->fields)._.gameMeterVisualEffects;
+      while (pLVar2 != (List_1_GameMeterVisuals_GameMeterVisualEffect_ *)0x0) {
+        if ((pLVar2->fields)._size <= index) {
           return;
         }
+        this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                  (this->fields)._.gameMeterVisualEffects;
         if ((this_01 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-           (RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+           (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                     RegularExpressions::RegexCharClass+SingleRange]::
                     List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                               (this_01,index,
                                MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__get_Item_int_
-                              ), RVar2 == (RegexCharClass_SingleRange)0x0)) break;
-        (**(code **)(*(int *)RVar2 + 0xe0))();
+                              ), RVar3 == (RegexCharClass_SingleRange)0x0)) break;
+        (**(code **)(*(int *)RVar3 + 0xe0))();
         index = index + 1;
-        this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                  (this->fields)._.gameMeterVisualEffects;
+        pLVar2 = (this->fields)._.gameMeterVisualEffects;
       }
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -222,9 +219,8 @@ void Assembly-CSharp.dll::GameMeterHealth::GameMeterHealth__ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__List__
             );
-  ppLVar1 = &(this->fields)._.gameMeterVisualEffects;
-  *ppLVar1 = this_00;
-  func_?(ppLVar1,this_00);
+  (this->fields)._.gameMeterVisualEffects = this_00;
+  func_?(&(this->fields)._.gameMeterVisualEffects,this_00);
   (this->fields)._.meterActive = 1;
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);

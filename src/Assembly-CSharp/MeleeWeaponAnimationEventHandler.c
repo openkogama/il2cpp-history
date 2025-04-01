@@ -58,46 +58,48 @@ void Assembly-CSharp.dll::MeleeWeaponAnimationEventHandler::
            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                      ((Object *)pTVar1,
                       TrailArc_MethodInfo__UnityEngine__Object__Instantiate<TrailArc>_TrailArc_);
-  ppTVar2 = &(this->fields).arcInstance;
-  *ppTVar2 = pTVar1;
-  func_?(ppTVar2,pTVar1);
-  if (*ppTVar2 != (TrailArc *)0x0) {
-    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                       ((Component *)*ppTVar2,(MethodInfo *)0x0);
-    if (pTVar3 != (Transform *)0x0) {
+  (this->fields).arcInstance = pTVar1;
+  func_?(&(this->fields).arcInstance,pTVar1);
+  pTVar1 = (this->fields).arcInstance;
+  if (pTVar1 != (TrailArc *)0x0) {
+    pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)pTVar1,(MethodInfo *)0x0);
+    if (pTVar2 != (Transform *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
-                (pTVar3,(this->fields).target,(MethodInfo *)0x0);
-      if (*ppTVar2 != (TrailArc *)0x0) {
-        pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                           ((Component *)*ppTVar2,(MethodInfo *)0x0);
+                (pTVar2,(this->fields).target,(MethodInfo *)0x0);
+      pTVar1 = (this->fields).arcInstance;
+      if (pTVar1 != (TrailArc *)0x0) {
+        pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                           ((Component *)pTVar1,(MethodInfo *)0x0);
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
         }
-        if (pTVar3 != (Transform *)0x0) {
+        if (pTVar2 != (Transform *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                    (pTVar3,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
+                    (pTVar2,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
                      (MethodInfo *)0x0);
-          if (*ppTVar2 != (TrailArc *)0x0) {
-            pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                               ((Component *)*ppTVar2,(MethodInfo *)0x0);
+          pTVar1 = (this->fields).arcInstance;
+          if (pTVar1 != (TrailArc *)0x0) {
+            pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                               ((Component *)pTVar1,(MethodInfo *)0x0);
             if (cRam_? == '\0') {
               func_?();
               cRam_? = '\x01';
             }
-            if (pTVar3 != (Transform *)0x0) {
+            if (pTVar2 != (Transform *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
-                        (pTVar3,TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion
+                        (pTVar2,TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion
                          ,(MethodInfo *)0x0);
               this_00 = (this->fields).meleeWeaponItem;
-              pTVar1 = *ppTVar2;
+              pTVar1 = (this->fields).arcInstance;
               if (this_00 != (PickupItemMeleeWeapon *)0x0) {
-                pPVar4 = PickupItemMeleeWeapon::PickupItemMeleeWeapon_get_Configuration
+                pPVar3 = PickupItemMeleeWeapon::PickupItemMeleeWeapon_get_Configuration
                                    (this_00,(MethodInfo *)0x0);
-                if ((pPVar4 != (PickupItemMeleeWeapon_MeleeWeaponConfiguration *)0x0) &&
+                if ((pPVar3 != (PickupItemMeleeWeapon_MeleeWeaponConfiguration *)0x0) &&
                    (pTVar1 != (TrailArc *)0x0)) {
                   TrailArc::TrailArc_SetTrailColor
-                            (pTVar1,(pPVar4->fields).trailColor,(MethodInfo *)0x0);
+                            (pTVar1,(pPVar3->fields).trailColor,(MethodInfo *)0x0);
                   return;
                 }
               }
@@ -108,8 +110,8 @@ void Assembly-CSharp.dll::MeleeWeaponAnimationEventHandler::
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

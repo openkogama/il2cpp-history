@@ -24,7 +24,7 @@ void Assembly-CSharp.dll::GamePassesXpRewardInfo::GamePassesXpRewardInfo_ChangeB
         pGVar1 = (this->fields).backgroundTier2;
         if (pGVar1 == (GameObject *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar1,0xc2,(MethodInfo *)0x0);
+                  (pGVar1,0x62,(MethodInfo *)0x0);
       }
       pGVar1 = (this->fields).backgroundTier3;
       if (pGVar1 != (GameObject *)0x0) {
@@ -340,29 +340,28 @@ void Assembly-CSharp.dll::GamePassesXpRewardInfo::GamePassesXpRewardInfo_OnOptio
                       GamePassesXPRewardOption_MethodInfo__UnityEngine__Object__Instantiate<GamePassesXPRewardOption>_GamePassesXPRewardOption_
                      );
   if (value != (Object *)0x0) {
-    pOVar2 = value + 1;
-    pOVar2->klass = pOVar1;
-    func_?(pOVar2);
-    pOVar1 = pOVar2->klass;
-    uVar3 = (this->fields).tier;
-    GStack_4 = CONCAT31(GStack_4._1_3_,uVar3);
+    value[1].klass = pOVar1;
+    func_?(value + 1);
+    pOVar1 = value[1].klass;
+    uVar2 = (this->fields).tier;
+    GStack_3 = CONCAT31(GStack_3._1_3_,uVar2);
     if (pOVar1 != (Object__Class *)0x0) {
-      *(uint8_t *)&(pOVar1->_0).this_arg.attrs = uVar3;
-      pRVar5 = GamePassProgressionController::
-               GamePassProgressionController_GetXPRewardRangeValidator(GStack_4,(MethodInfo *)0x0);
-      if ((pRVar5 != (RangeValidator_1_System_Int32_ *)0x0) &&
-         (pSVar6 = (Slider *)(pOVar1->_0).byval_arg.data.typeHandle, pSVar6 != (Slider *)0x0)) {
+      *(uint8_t *)&(pOVar1->_0).this_arg.attrs = uVar2;
+      pRVar4 = GamePassProgressionController::
+               GamePassProgressionController_GetXPRewardRangeValidator(GStack_3,(MethodInfo *)0x0);
+      if ((pRVar4 != (RangeValidator_1_System_Int32_ *)0x0) &&
+         (pSVar5 = (Slider *)(pOVar1->_0).byval_arg.data.typeHandle, pSVar5 != (Slider *)0x0)) {
         UnityEngine.UI.dll::UnityEngine::UI::Slider::Slider_set_minValue
-                  (pSVar6,(float)(pRVar5->fields).min,(MethodInfo *)0x0);
-        pSVar6 = (Slider *)(pOVar1->_0).byval_arg.data.typeHandle;
-        if (pSVar6 != (Slider *)0x0) {
+                  (pSVar5,(float)(pRVar4->fields).min,(MethodInfo *)0x0);
+        pSVar5 = (Slider *)(pOVar1->_0).byval_arg.data.typeHandle;
+        if (pSVar5 != (Slider *)0x0) {
           UnityEngine.UI.dll::UnityEngine::UI::Slider::Slider_set_maxValue
-                    (pSVar6,(float)(pRVar5->fields).max,(MethodInfo *)0x0);
-          iVar7 = GamePassProgressionController::GamePassProgressionController_GetXPReward
-                            (GStack_4,(MethodInfo *)0x0);
-          pSVar6 = (Slider *)(pOVar1->_0).byval_arg.data.array;
-          if (pSVar6 != (Slider *)0x0) {
-            (*(code *)(pSVar6->klass->vtable).set_value.method)(pSVar6,(float)iVar7);
+                    (pSVar5,(float)(pRVar4->fields).max,(MethodInfo *)0x0);
+          iVar6 = GamePassProgressionController::GamePassProgressionController_GetXPReward
+                            (GStack_3,(MethodInfo *)0x0);
+          pSVar5 = (Slider *)(pOVar1->_0).byval_arg.data.array;
+          if (pSVar5 != (Slider *)0x0) {
+            (*(code *)(pSVar5->klass->vtable).set_value.method)(pSVar5,(float)iVar6);
             this_00 = *(InputField **)&(pOVar1->_0).byval_arg.attrs;
             value_00 = mscorlib.dll::System::Int32::Int32_ToString
                                  ((Int32 *)&stack0xfffffff4,(MethodInfo *)0x0);
@@ -396,8 +395,8 @@ void Assembly-CSharp.dll::GamePassesXpRewardInfo::GamePassesXpRewardInfo_OnOptio
     }
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

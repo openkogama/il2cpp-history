@@ -6,54 +6,63 @@ Vector3 * Assembly-CSharp.dll::ClosestPointSphere::ClosestPointSphere_GetClosest
                     MethodInfo *method)
 
 {
-  fVar1 = (this->fields).offset.z;
-  pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                     ((Component *)this,(MethodInfo *)0x0);
-  if (pTVar2 != (Transform *)0x0) {
-    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale
-                        ((Vector3 *)&stack0xffffffc8,pTVar2,(MethodInfo *)0x0);
-    fVar4 = pVVar3->z;
-    pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                       ((Component *)this,(MethodInfo *)0x0);
-    if (pTVar2 != (Transform *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale
-                ((Vector3 *)&stack0xffffffc8,pTVar2,(MethodInfo *)0x0);
-      pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                         ((Component *)this,(MethodInfo *)0x0);
-      if (pTVar2 != (Transform *)0x0) {
-        pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                            ((Vector3 *)&stack0xffffffc8,pTVar2,(MethodInfo *)0x0);
-        fVar5 = pVVar3->z;
-        fVar6 = 0.0;
-        pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                           ((Component *)this,(MethodInfo *)0x0);
-        if (pTVar2 != (Transform *)0x0) {
-          pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                              ((Vector3 *)&stack0xffffffc8,pTVar2,(MethodInfo *)0x0);
-          uVar7 = pVVar3->x;
-          uVar8 = pVVar3->y;
-          pVVar9 = (Vector3 *)(spectator.x - (float)uVar7);
-          value.y = spectator.y - (float)uVar8;
-          value.x = (float)pVVar9;
-          value.z = spectator.z - pVVar3->z;
-          pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                              ((Vector3 *)&stack0xffffffc8,value,(MethodInfo *)0x0);
-          uVar10 = pVVar3->x;
-          uVar11 = pVVar3->y;
-          fVar6 = fVar6 * (float)this;
-          fVar12 = pVVar3->z;
-          pVVar9->x = (float)uVar10 * fVar6 + (spectator.y - (float)uVar8);
-          pVVar9->y = (float)uVar11 * fVar6 + 3.2514804e-29;
-          pVVar9->z = fVar12 * fVar6 + fVar5 + fVar4 * fVar1;
-          return pVVar9;
+  uVar1._0_4_ = (this->fields).offset.x;
+  uVar1._4_4_ = (this->fields).offset.y;
+  fVar2 = (this->fields).offset.z;
+  pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                      ((Component *)this,(MethodInfo *)0x0);
+  if (pTVar3 != (Transform *)0x0) {
+    pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale
+                        ((Vector3 *)&stack0xffffffa0,pTVar3,(MethodInfo *)0x0);
+    uVar5 = pVVar4->x;
+    uVar6 = pVVar4->y;
+    fVar7 = pVVar4->z;
+    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                        ((Component *)this,(MethodInfo *)0x0);
+    if (pTVar3 != (Transform *)0x0) {
+      pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale
+                          ((Vector3 *)&stack0xffffffa0,pTVar3,(MethodInfo *)0x0);
+      fVar8 = pVVar4->x;
+      pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                          ((Component *)this,(MethodInfo *)0x0);
+      if (pTVar3 != (Transform *)0x0) {
+        pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                            ((Vector3 *)&stack0xffffffa0,pTVar3,(MethodInfo *)0x0);
+        uVar9 = pVVar4->x;
+        uVar10 = pVVar4->y;
+        fVar11 = pVVar4->z;
+        pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                            ((Component *)this,(MethodInfo *)0x0);
+        if (pTVar3 != (Transform *)0x0) {
+          pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                              ((Vector3 *)&stack0xffffffa0,pTVar3,(MethodInfo *)0x0);
+          uVar12 = pVVar4->x;
+          uVar13 = pVVar4->y;
+          fVar14 = 0.0;
+          value.y = spectator.y - (float)uVar13;
+          value.x = spectator.x - (float)uVar12;
+          value.z = spectator.z - pVVar4->z;
+          pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                              ((Vector3 *)&stack0xffffffa0,value,(MethodInfo *)0x0);
+          uVar15 = pVVar4->x;
+          uVar16 = pVVar4->y;
+          fVar8 = fVar8 * fVar14;
+          fVar14 = pVVar4->z;
+          __return_storage_ptr__->x =
+               (float)uVar9 + (float)uVar5 * (float)uVar1 + (float)uVar15 * fVar8;
+          __return_storage_ptr__->y =
+               (float)uVar10 + (float)uVar6 * (float)((ulonglong)uVar1 >> 0x20) +
+               (float)uVar16 * fVar8;
+          __return_storage_ptr__->z = fVar11 + fVar7 * fVar2 + fVar14 * fVar8;
+          return __return_storage_ptr__;
         }
       }
     }
   }
   func_?();
-  pcVar13 = (code *)swi(3);
-  pVVar3 = (Vector3 *)(*pcVar13)();
-  return pVVar3;
+  pcVar17 = (code *)swi(3);
+  pVVar4 = (Vector3 *)(*pcVar17)();
+  return pVVar4;
 }
 
 

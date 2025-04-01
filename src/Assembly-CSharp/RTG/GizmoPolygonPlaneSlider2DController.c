@@ -87,13 +87,13 @@ void Assembly-CSharp.dll::RTG::GizmoPolygonPlaneSlider2DController::
 {
   pGVar1 = (this->fields)._._data;
   if (pGVar1 != (GizmoPlaneSlider2DControllerData *)0x0) {
-    this_00 = (pGVar1->fields).Polygon;
-    this_01 = (pGVar1->fields).Slider;
-    if (this_01 != (GizmoPlaneSlider2D *)0x0) {
-      pGVar2 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_get_Settings(this_01,(MethodInfo *)0x0);
-      if ((pGVar2 != (GizmoPlaneSlider2DSettings *)0x0) && (this_00 != (PolygonShape2D *)0x0)) {
+    this_00 = (pGVar1->fields).Slider;
+    this_01 = (pGVar1->fields).Polygon;
+    if (this_00 != (GizmoPlaneSlider2D *)0x0) {
+      pGVar2 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_get_Settings(this_00,(MethodInfo *)0x0);
+      if ((pGVar2 != (GizmoPlaneSlider2DSettings *)0x0) && (this_01 != (PolygonShape2D *)0x0)) {
         SphereShape3D::SphereShape3D_set_RadiusEps
-                  ((SphereShape3D *)this_00,(pGVar2->fields)._areaHoverEps,(MethodInfo *)0x0);
+                  ((SphereShape3D *)this_01,(pGVar2->fields)._areaHoverEps,(MethodInfo *)0x0);
         return;
       }
     }

@@ -9,66 +9,67 @@ void Assembly-CSharp.dll::PickupItemMeleeWeapon::PickupItemMeleeWeapon_CheckHit
     func_?(&MethodInfo__System__Collections__Generic__List<VoxelHit>__get_Count__);
     cRam_? = '\x01';
   }
-  pPVar1 = PickupItemMeleeWeapon_get_Configuration(this,(MethodInfo *)0x0);
-  if (pPVar1 != (PickupItemMeleeWeapon_MeleeWeaponConfiguration *)0x0) {
-    pEStack_2 = (ExplosionEvent *)(pPVar1->fields)._.radius;
-    pPVar1 = PickupItemMeleeWeapon_get_Configuration(this,(MethodInfo *)0x0);
-    if (pPVar1 != (PickupItemMeleeWeapon_MeleeWeaponConfiguration *)0x0) {
-      fStack_3 = (pPVar1->fields)._.range;
+  uStack_1 = 0;
+  uStack_2 = 0;
+  fStack_3 = 0.0;
+  pPVar4 = PickupItemMeleeWeapon_get_Configuration(this,(MethodInfo *)0x0);
+  if (pPVar4 != (PickupItemMeleeWeapon_MeleeWeaponConfiguration *)0x0) {
+    pEStack_5 = (ExplosionEvent *)(pPVar4->fields)._.radius;
+    pPVar4 = PickupItemMeleeWeapon_get_Configuration(this,(MethodInfo *)0x0);
+    if (pPVar4 != (PickupItemMeleeWeapon_MeleeWeaponConfiguration *)0x0) {
+      fStack_6 = (pPVar4->fields)._.range;
       this_00 = (this->fields)._.weaponHandle;
       if (this_00 != (Transform *)0x0) {
-        pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                            (&VStack_5,this_00,(MethodInfo *)0x0);
-        uVar6 = pVVar4->x;
-        uVar7 = pVVar4->y;
-        pGStack_8 = (GamePassesTextBubble *)pVVar4->z;
-        pMVar9 = (this->fields)._._._.owner;
-        pTStack_10 = (Text *)uVar6;
-        pGStack_11 = (GameObject *)uVar7;
-        if (pMVar9 != (MVPickupOwner *)0x0) {
-          pVVar4 = MVPickupOwner::MVPickupOwner_get_LookDirection
-                              (&VStack_12,pMVar9,(MethodInfo *)0x0);
-          uVar13 = pVVar4->x;
-          uVar14 = pVVar4->y;
-          VStack_5.y = (float)pGStack_11 - (float)uVar14 * (float)pEStack_2;
-          VStack_5.x = (float)pTStack_10 - (float)uVar13 * (float)pEStack_2;
-          VStack_5.z = (float)pGStack_8 - pVVar4->z * (float)pEStack_2;
-          pMVar9 = (this->fields)._._._.owner;
-          if (pMVar9 != (MVPickupOwner *)0x0) {
-            pVVar4 = MVPickupOwner::MVPickupOwner_get_LookDirection
-                                (&VStack_12,pMVar9,(MethodInfo *)0x0);
-            VStack_15.z = VStack_5.z;
-            VStack_15.x = VStack_5.x;
-            VStack_15.y = VStack_5.y;
-            pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                                (&VStack_12,*pVVar4,(MethodInfo *)0x0);
-            uVar16 = pVVar4->x;
-            uVar17 = pVVar4->y;
-            pMVar9 = (this->fields)._._._.owner;
-            pGStack_8 = (GamePassesTextBubble *)pVVar4->z;
-            pTStack_10 = (Text *)uVar16;
-            pGStack_11 = (GameObject *)uVar17;
-            if (pMVar9 != (MVPickupOwner *)0x0) {
+        pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                            (&VStack_8,this_00,(MethodInfo *)0x0);
+        uStack_9._0_4_ = pVVar7->x;
+        uStack_9._4_4_ = pVVar7->y;
+        pGStack_10 = (GamePassesTextBubble *)pVVar7->z;
+        pMVar11 = (this->fields)._._._.owner;
+        if (pMVar11 != (MVPickupOwner *)0x0) {
+          pVVar7 = MVPickupOwner::MVPickupOwner_get_LookDirection
+                              (&VStack_12,pMVar11,(MethodInfo *)0x0);
+          VStack_8.x = pVVar7->x;
+          VStack_8.y = pVVar7->y;
+          VStack_8.z = pVVar7->z;
+          fStack_13 = (float)uStack_9 - VStack_8.x * (float)pEStack_5;
+          fStack_14 = uStack_9._4_4_ - VStack_8.y * (float)pEStack_5;
+          fStack_15 = (float)pGStack_10 - VStack_8.z * (float)pEStack_5;
+          pMVar11 = (this->fields)._._._.owner;
+          if (pMVar11 != (MVPickupOwner *)0x0) {
+            pVVar7 = MVPickupOwner::MVPickupOwner_get_LookDirection
+                                (&VStack_12,pMVar11,(MethodInfo *)0x0);
+            fStack_16 = fStack_13;
+            fStack_17 = fStack_14;
+            fStack_18 = fStack_15;
+            pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                                (&VStack_12,*pVVar7,(MethodInfo *)0x0);
+            uVar19 = pVVar7->x;
+            uVar20 = pVVar7->y;
+            pMVar11 = (this->fields)._._._.owner;
+            fStack_3 = pVVar7->z;
+            uStack_1 = uVar19;
+            uStack_2 = uVar20;
+            if (pMVar11 != (MVPickupOwner *)0x0) {
               ignoreWoIds = (HashSet_1_System_Int32_ *)
-                            (*(code *)(pMVar9->klass->vtable).get_IgnoreWOIDs.method)();
-              ray.m_Direction.z = (float)pGStack_8;
-              ray.m_Direction.y = (float)pGStack_11;
-              ray.m_Origin.z = VStack_15.z;
-              ray.m_Origin.x = VStack_15.x;
-              ray.m_Origin.y = VStack_15.y;
-              ray.m_Direction.x = (float)pTStack_10;
+                            (*(code *)(pMVar11->klass->vtable).get_IgnoreWOIDs.method)();
+              ray.m_Direction.z = fStack_3;
+              ray.m_Direction.y = (float)uStack_2;
+              ray.m_Origin.y = fStack_17;
+              ray.m_Origin.x = fStack_16;
+              ray.m_Origin.z = fStack_18;
+              ray.m_Direction.x = (float)uStack_1;
               this_02 = (List_1_GameTierProgressBar_TierProgressData_ *)
                         CollisionDetection::CollisionDetection_MVSphereCastAll
-                                  (ray,(float)pEStack_2,fStack_3 + (float)pEStack_2,ignoreWoIds,
+                                  (ray,(float)pEStack_5,fStack_6 + (float)pEStack_5,ignoreWoIds,
                                    (this->fields)._.hitLayerMask,(MethodInfo *)0x0);
               if (this_02 != (List_1_GameTierProgressBar_TierProgressData_ *)0x0) {
                 if (((this_02->fields)._size < 1) ||
-                   (lineOfFire.m_Origin.z = VStack_15.z, lineOfFire.m_Origin.x = VStack_15.x,
-                   lineOfFire.m_Origin.y = VStack_15.y, lineOfFire.m_Direction.x = (float)pTStack_10
-                   , lineOfFire.m_Direction.y = (float)pGStack_11,
-                   lineOfFire.m_Direction.z = (float)pGStack_8,
-                   PickupItemMeleeWeapon_OnHit
-                             (this,(List_1_VoxelHit_ *)this_02,lineOfFire,(MethodInfo *)0x0),
+                   (lineOfFire.m_Origin.y = fStack_17, lineOfFire.m_Origin.x = fStack_16,
+                   lineOfFire.m_Origin.z = fStack_18, lineOfFire.m_Direction.x = (float)uStack_1,
+                   lineOfFire.m_Direction.y = (float)uStack_2, lineOfFire.m_Direction.z = fStack_3
+                   , PickupItemMeleeWeapon_OnHit
+                               (this,(List_1_VoxelHit_ *)this_02,lineOfFire,(MethodInfo *)0x0),
                    isLocal == 0)) {
                   return;
                 }
@@ -78,89 +79,89 @@ void Assembly-CSharp.dll::PickupItemMeleeWeapon::PickupItemMeleeWeapon_CheckHit
                   func_?();
                   cRam_? = '\x01';
                 }
-                pMVar18 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-                if ((pMVar18 != (MVNetworkGame *)0x0) &&
-                   (pWVar19 = (pMVar18->fields).worldNetwork, pWVar19 != (WorldNetwork *)0x0)) {
-                  this_01 = (RuntimeEventManager *)(pWVar19->fields)._.runtimeEventManagerNetwork;
-                  pGVar20 = mscorlib.dll::System::Collections::Generic::
+                pMVar21 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+                if ((pMVar21 != (MVNetworkGame *)0x0) &&
+                   (pWVar22 = (pMVar21->fields).worldNetwork, pWVar22 != (WorldNetwork *)0x0)) {
+                  this_01 = (RuntimeEventManager *)(pWVar22->fields)._.runtimeEventManagerNetwork;
+                  pGVar23 = mscorlib.dll::System::Collections::Generic::
                             List`1[GameTierProgressBar+TierProgressData]::
                             List_1_GameTierProgressBar_TierProgressData__get_Item
-                                      ((GameTierProgressBar_TierProgressData *)&stack0xffffff30,
+                                      ((GameTierProgressBar_TierProgressData *)&stack0xffffff14,
                                        this_02,0,
                                        MethodInfo__System__Collections__Generic__List<VoxelHit>__get_Item_int_
                                       );
-                  VStack_15.z = (float)pGVar20->progressBar;
-                  pTStack_10 = pGVar20->progressText;
-                  pGStack_11 = pGVar20->progressDivider;
-                  pGStack_8 = pGVar20->progressBarTextBubble;
-                  pGVar20 = mscorlib.dll::System::Collections::Generic::
+                  pPStack_24 = pGVar23->progressBar;
+                  uStack_9._0_4_ = (float)pGVar23->progressText;
+                  uStack_9._4_4_ = (float)pGVar23->progressDivider;
+                  pGStack_10 = pGVar23->progressBarTextBubble;
+                  pGVar23 = mscorlib.dll::System::Collections::Generic::
                             List`1[GameTierProgressBar+TierProgressData]::
                             List_1_GameTierProgressBar_TierProgressData__get_Item
-                                      ((GameTierProgressBar_TierProgressData *)&stack0xffffff30,
+                                      ((GameTierProgressBar_TierProgressData *)&stack0xffffff14,
                                        this_02,0,
                                        MethodInfo__System__Collections__Generic__List<VoxelHit>__get_Item_int_
                                       );
-                  pGVar21 = pGVar20->progressBarTextBubble;
-                  method_00 = (MethodInfo *)pGVar20->avatarHead;
-                  VStack_12.x = (float)pGVar20->avatarHeadImage;
-                  VStack_12.y = (float)pGVar20->avatarHeadUI;
-                  VStack_12.z = (float)pGVar20->disabledProgressBar;
-                  pEStack_2 = (ExplosionEvent *)func_?();
-                  worldPosition.y = (float)pTStack_10;
-                  worldPosition.x = VStack_15.z;
-                  worldPosition.z = (float)pGStack_11;
+                  pGVar25 = pGVar23->progressBarTextBubble;
+                  method_00 = (MethodInfo *)pGVar23->avatarHead;
+                  VStack_12.x = (float)pGVar23->avatarHeadImage;
+                  VStack_12.y = (float)pGVar23->avatarHeadUI;
+                  VStack_12.z = (float)pGVar23->disabledProgressBar;
+                  pEStack_5 = (ExplosionEvent *)func_?();
+                  worldPosition.y = (float)uStack_9;
+                  worldPosition.x = (float)pPStack_24;
+                  worldPosition.z = uStack_9._4_4_;
                   normal.y = (float)method_00;
-                  normal.x = (float)pGVar21;
+                  normal.x = (float)pGVar25;
                   normal.z = VStack_12.x;
                   MVWorldObject.dll::MV::WorldObject::RuntimeEvents::ExplosionEvent::
                   ExplosionEvent__ctor_1
-                            (pEStack_2,RuntimeEventType__Enum_MeleeWeaponTerrainDestroy,
+                            (pEStack_5,RuntimeEventType__Enum_MeleeWeaponTerrainDestroy,
                              worldPosition,normal,(MethodInfo *)0x0);
                   if (this_01 != (RuntimeEventManager *)0x0) {
                     RuntimeEventManager::RuntimeEventManager_SendRuntimeEvent
-                              (this_01,pEStack_2,(MethodInfo *)0x0);
+                              (this_01,pEStack_5,(MethodInfo *)0x0);
                     for (index = 0; index < (this_02->fields)._size; index = index + 1) {
-                      pGVar20 = mscorlib.dll::System::Collections::Generic::
+                      pGVar23 = mscorlib.dll::System::Collections::Generic::
                                 List`1[GameTierProgressBar+TierProgressData]::
                                 List_1_GameTierProgressBar_TierProgressData__get_Item
-                                          ((GameTierProgressBar_TierProgressData *)&stack0xffffff30,
+                                          ((GameTierProgressBar_TierProgressData *)&stack0xffffff14,
                                            this_02,index,
                                            MethodInfo__System__Collections__Generic__List<VoxelHit>__get_Item_int_
                                           );
-                      uVar22 = pGVar20->LockedTierIcon;
-                      uVar23 = pGVar20->progressText;
-                      uVar24 = pGVar20->progressDivider;
-                      uVar25 = pGVar20->progressBarTextBubble;
-                      uVar26 = pGVar20->avatarHead;
-                      uVar27 = pGVar20->avatarHeadImage;
-                      uVar28 = pGVar20->avatarHeadUI;
-                      uVar29 = pGVar20->disabledProgressBar;
-                      uVar30 = pGVar20->disabledProgressDivider;
-                      uVar31 = pGVar20->disabledBarTextBubble;
-                      uVar32 = pGVar20->tierIconTempUnlock;
-                      uVar33 = pGVar20->tierIconNumber;
-                      uVar34 = pGVar20->endResultProgressBar;
-                      uVar35 = pGVar20->tempProgress;
-                      uVar36 = pGVar20->disabledTempProgress;
-                      uVar37 = pGVar20->freeTryTextBubble;
-                      uVar38 = pGVar20->hoverInputHandler;
-                      voxelHit._60_4_ = uVar38;
-                      voxelHit.transform = (Transform *)uVar37;
-                      voxelHit.collider = (Collider *)uVar36;
-                      voxelHit.distance = (float)uVar35;
-                      voxelHit.cube = (Cube *)uVar34;
-                      voxelHit.woId = uVar33;
-                      voxelHit._36_4_ = uVar32;
-                      voxelHit.face = uVar31;
-                      voxelHit._28_4_ = uVar30;
-                      voxelHit.cubePos._0_4_ = uVar29;
-                      voxelHit.normal.z = (float)uVar28;
-                      voxelHit.normal.y = (float)uVar27;
-                      voxelHit.normal.x = (float)uVar26;
-                      voxelHit.point.z = (float)uVar25;
-                      voxelHit.point.y = (float)uVar24;
-                      voxelHit.point.x = (float)uVar23;
-                      voxelHit.interactionFlags._0_4_ = uVar22;
+                      uVar26 = pGVar23->LockedTierIcon;
+                      uVar27 = pGVar23->progressText;
+                      uVar28 = pGVar23->progressDivider;
+                      uVar29 = pGVar23->progressBarTextBubble;
+                      uVar30 = pGVar23->avatarHead;
+                      uVar31 = pGVar23->avatarHeadImage;
+                      uVar32 = pGVar23->avatarHeadUI;
+                      uVar33 = pGVar23->disabledProgressBar;
+                      uVar34 = pGVar23->disabledProgressDivider;
+                      uVar35 = pGVar23->disabledBarTextBubble;
+                      uVar36 = pGVar23->tierIconTempUnlock;
+                      uVar37 = pGVar23->tierIconNumber;
+                      uVar38 = pGVar23->endResultProgressBar;
+                      uVar39 = pGVar23->tempProgress;
+                      uVar40 = pGVar23->disabledTempProgress;
+                      uVar41 = pGVar23->freeTryTextBubble;
+                      uVar42 = pGVar23->hoverInputHandler;
+                      voxelHit._60_4_ = uVar42;
+                      voxelHit.transform = (Transform *)uVar41;
+                      voxelHit.collider = (Collider *)uVar40;
+                      voxelHit.distance = (float)uVar39;
+                      voxelHit.cube = (Cube *)uVar38;
+                      voxelHit.woId = uVar37;
+                      voxelHit._36_4_ = uVar36;
+                      voxelHit.face = uVar35;
+                      voxelHit._28_4_ = uVar34;
+                      voxelHit.cubePos._0_4_ = uVar33;
+                      voxelHit.normal.z = (float)uVar32;
+                      voxelHit.normal.y = (float)uVar31;
+                      voxelHit.normal.x = (float)uVar30;
+                      voxelHit.point.z = (float)uVar29;
+                      voxelHit.point.y = (float)uVar28;
+                      voxelHit.point.x = (float)uVar27;
+                      voxelHit.interactionFlags._0_4_ = uVar26;
                       voxelHit.interactionFlags._4_4_ = 0;
                       PickupItemMeleeWeapon_OnLocalHit_1(this,voxelHit,method_00);
                     }
@@ -175,8 +176,8 @@ void Assembly-CSharp.dll::PickupItemMeleeWeapon::PickupItemMeleeWeapon_CheckHit
     }
   }
   func_?();
-  pcVar39 = (code *)swi(3);
-  (*pcVar39)();
+  pcVar43 = (code *)swi(3);
+  (*pcVar43)();
   return;
 }
 
@@ -196,8 +197,8 @@ Assembly-CSharp.dll::PickupItemMeleeWeapon::PickupItemMeleeWeapon_CheckHitCorout
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[1].klass = (Object__Class *)0x0;
   value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
   func_?(value + 2,this);
   *(bool *)&value[2].monitor = isLocal;
   return (IEnumerator *)value;
@@ -237,125 +238,124 @@ Assembly-CSharp.dll::PickupItemMeleeWeapon::PickupItemMeleeWeapon_GetDefaultConf
     func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  pPVar2 = &pPVar1->fields;
-  pPVar2->name = ::StringLiteral__;
-  method_00 = (MethodInfo *)pPVar2;
-  func_?(pPVar2,::StringLiteral__);
+  (pPVar1->fields).name = ::StringLiteral__;
+  method_00 = (MethodInfo *)&pPVar1->fields;
+  func_?(method_00,::StringLiteral__);
   (pPVar1->fields).cubeModelId = -1;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)pPVar1,ExceptionArgument__Enum_obj,method_00);
   if ((TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->_1).
       cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData);
+    func_?();
   }
-  pSVar3 = (String *)
+  pSVar2 = (String *)
            Assets::Scripts::WorldObjectTypes::MeleeWeapon::MeleeWeaponData::
            MeleeWeaponData_DefaultValue(StringLiteral_Name,(MethodInfo *)0x0);
-  if (pSVar3 == (String *)0x0) {
-    pPVar2->name = (String *)0x0;
+  if (pSVar2 == (String *)0x0) {
+    (pPVar1->fields).name = (String *)0x0;
   }
   else {
-    pSVar4 = (String *)0x0;
-    if (pSVar3->klass == TypeInfo__System__String) {
-      pSVar4 = pSVar3;
+    pSVar3 = (String *)0x0;
+    if (pSVar2->klass == TypeInfo__System__String) {
+      pSVar3 = pSVar2;
     }
-    if (pSVar4 == (String *)0x0) goto code_?;
-    pPVar2->name = pSVar4;
-    pSVar4 = (String *)0x0;
-    if (pSVar3->klass == TypeInfo__System__String) {
-      pSVar4 = pSVar3;
+    if (pSVar3 == (String *)0x0) goto code_?;
+    (pPVar1->fields).name = pSVar3;
+    pSVar3 = (String *)0x0;
+    if (pSVar2->klass == TypeInfo__System__String) {
+      pSVar3 = pSVar2;
     }
-    if (pSVar4 == (String *)0x0) goto code_?;
+    if (pSVar3 == (String *)0x0) goto code_?;
   }
   func_?();
-  pOVar5 = Assets::Scripts::WorldObjectTypes::MeleeWeapon::MeleeWeaponData::
+  pOVar4 = Assets::Scripts::WorldObjectTypes::MeleeWeapon::MeleeWeaponData::
            MeleeWeaponData_DefaultValue(StringLiteral_Damage,(MethodInfo *)0x0);
-  if (pOVar5 != (Object *)0x0) {
-    if ((pOVar5->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
+  if (pOVar4 != (Object *)0x0) {
+    if ((pOVar4->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
     goto code_?;
-    pfVar6 = (float *)func_?();
-    (pPVar1->fields).damage = *pfVar6;
-    pOVar5 = Assets::Scripts::WorldObjectTypes::MeleeWeapon::MeleeWeaponData::
+    pfVar5 = (float *)func_?();
+    (pPVar1->fields).damage = *pfVar5;
+    pOVar4 = Assets::Scripts::WorldObjectTypes::MeleeWeapon::MeleeWeaponData::
              MeleeWeaponData_DefaultValue(StringLiteral_ImpulseStrength,(MethodInfo *)0x0);
-    if (pOVar5 != (Object *)0x0) {
-      if ((pOVar5->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
+    if (pOVar4 != (Object *)0x0) {
+      if ((pOVar4->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
       goto code_?;
-      pfVar6 = (float *)func_?();
-      (pPVar1->fields).impulseStrength = *pfVar6;
-      pOVar5 = Assets::Scripts::WorldObjectTypes::MeleeWeapon::MeleeWeaponData::
+      pfVar5 = (float *)func_?();
+      (pPVar1->fields).impulseStrength = *pfVar5;
+      pOVar4 = Assets::Scripts::WorldObjectTypes::MeleeWeapon::MeleeWeaponData::
                MeleeWeaponData_DefaultValue(StringLiteral_RecoilStrength,(MethodInfo *)0x0);
-      if (pOVar5 != (Object *)0x0) {
-        if ((pOVar5->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
+      if (pOVar4 != (Object *)0x0) {
+        if ((pOVar4->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
         goto code_?;
-        pfVar6 = (float *)func_?();
-        (pPVar1->fields).recoilStrength = *pfVar6;
-        pOVar5 = Assets::Scripts::WorldObjectTypes::MeleeWeapon::MeleeWeaponData::
+        pfVar5 = (float *)func_?();
+        (pPVar1->fields).recoilStrength = *pfVar5;
+        pOVar4 = Assets::Scripts::WorldObjectTypes::MeleeWeapon::MeleeWeaponData::
                  MeleeWeaponData_DefaultValue(StringLiteral_AttackAnimationTime,(MethodInfo *)0x0);
-        if (pOVar5 != (Object *)0x0) {
-          if ((pOVar5->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
+        if (pOVar4 != (Object *)0x0) {
+          if ((pOVar4->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
           goto code_?;
-          pfVar6 = (float *)func_?();
-          (pPVar1->fields).fireAnimationTime = *pfVar6;
-          pOVar5 = Assets::Scripts::WorldObjectTypes::MeleeWeapon::MeleeWeaponData::
+          pfVar5 = (float *)func_?();
+          (pPVar1->fields).fireAnimationTime = *pfVar5;
+          pOVar4 = Assets::Scripts::WorldObjectTypes::MeleeWeapon::MeleeWeaponData::
                    MeleeWeaponData_DefaultValue(StringLiteral_AttackCooldown,(MethodInfo *)0x0);
-          if (pOVar5 != (Object *)0x0) {
-            if ((pOVar5->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
+          if (pOVar4 != (Object *)0x0) {
+            if ((pOVar4->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
             goto code_?;
-            pfVar6 = (float *)func_?();
-            (pPVar1->fields).attackCooldown = *pfVar6;
-            pOVar5 = Assets::Scripts::WorldObjectTypes::MeleeWeapon::MeleeWeaponData::
+            pfVar5 = (float *)func_?();
+            (pPVar1->fields).attackCooldown = *pfVar5;
+            pOVar4 = Assets::Scripts::WorldObjectTypes::MeleeWeapon::MeleeWeaponData::
                      MeleeWeaponData_DefaultValue(StringLiteral_Range,(MethodInfo *)0x0);
-            if (pOVar5 != (Object *)0x0) {
-              if ((pOVar5->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
+            if (pOVar4 != (Object *)0x0) {
+              if ((pOVar4->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
               goto code_?;
-              pfVar6 = (float *)func_?();
-              (pPVar1->fields).range = *pfVar6;
-              pOVar5 = Assets::Scripts::WorldObjectTypes::MeleeWeapon::MeleeWeaponData::
+              pfVar5 = (float *)func_?();
+              (pPVar1->fields).range = *pfVar5;
+              pOVar4 = Assets::Scripts::WorldObjectTypes::MeleeWeapon::MeleeWeaponData::
                        MeleeWeaponData_DefaultValue(StringLiteral_Radius,(MethodInfo *)0x0);
-              if (pOVar5 != (Object *)0x0) {
-                if ((pOVar5->klass->_0).element_class !=
+              if (pOVar4 != (Object *)0x0) {
+                if ((pOVar4->klass->_0).element_class !=
                     (TypeInfo__System__Single->_0).element_class) goto code_?;
-                pfVar6 = (float *)func_?();
-                (pPVar1->fields).radius = *pfVar6;
-                pOVar5 = Assets::Scripts::WorldObjectTypes::MeleeWeapon::MeleeWeaponData::
+                pfVar5 = (float *)func_?();
+                (pPVar1->fields).radius = *pfVar5;
+                pOVar4 = Assets::Scripts::WorldObjectTypes::MeleeWeapon::MeleeWeaponData::
                          MeleeWeaponData_DefaultValue
                                    (StringLiteral_FireSoundEffect,(MethodInfo *)0x0);
-                if (pOVar5 != (Object *)0x0) {
-                  if ((pOVar5->klass->_0).element_class !=
+                if (pOVar4 != (Object *)0x0) {
+                  if ((pOVar4->klass->_0).element_class !=
                       (TypeInfo__System__Int32->_0).element_class) goto code_?;
-                  piVar7 = (int32_t *)func_?();
-                  (pPVar1->fields).fireSoundEffect = *piVar7;
-                  pOVar5 = Assets::Scripts::WorldObjectTypes::MeleeWeapon::MeleeWeaponData::
+                  piVar6 = (int32_t *)func_?();
+                  (pPVar1->fields).fireSoundEffect = *piVar6;
+                  pOVar4 = Assets::Scripts::WorldObjectTypes::MeleeWeapon::MeleeWeaponData::
                            MeleeWeaponData_DefaultValue
                                      (StringLiteral_HitSoundEffect,(MethodInfo *)0x0);
-                  if (pOVar5 != (Object *)0x0) {
-                    if ((pOVar5->klass->_0).element_class ==
+                  if (pOVar4 != (Object *)0x0) {
+                    if ((pOVar4->klass->_0).element_class ==
                         (TypeInfo__System__Int32->_0).element_class) {
-                      piVar7 = (int32_t *)func_?();
-                      (pPVar1->fields).hitSoundEffect = *piVar7;
-                      pCVar8 = Assets::Scripts::WorldObjectTypes::MeleeWeapon::MeleeWeaponData::
+                      piVar6 = (int32_t *)func_?();
+                      (pPVar1->fields).hitSoundEffect = *piVar6;
+                      pCVar7 = Assets::Scripts::WorldObjectTypes::MeleeWeapon::MeleeWeaponData::
                                 MeleeWeaponData_DefaultColor
                                           ((Color *)&stack0xffffffec,StringLiteral_TrailColor,
                                            (MethodInfo *)0x0);
-                      pMVar9 = (MonitorData *)pCVar8->g;
-                      pSVar3 = (String *)pCVar8->b;
-                      fVar10 = pCVar8->a;
+                      pMVar8 = (MonitorData *)pCVar7->g;
+                      pSVar2 = (String *)pCVar7->b;
+                      fVar9 = pCVar7->a;
                       pPVar1[1].klass =
-                           (PickupItemEditable_EditableItemConfiguration__Class *)pCVar8->r;
-                      pPVar1[1].monitor = pMVar9;
-                      pPVar1[1].fields.name = pSVar3;
-                      pPVar1[1].fields.cubeModelId = (int32_t)fVar10;
-                      pCVar8 = Assets::Scripts::WorldObjectTypes::MeleeWeapon::MeleeWeaponData::
+                           (PickupItemEditable_EditableItemConfiguration__Class *)pCVar7->r;
+                      pPVar1[1].monitor = pMVar8;
+                      pPVar1[1].fields.name = pSVar2;
+                      pPVar1[1].fields.cubeModelId = (int32_t)fVar9;
+                      pCVar7 = Assets::Scripts::WorldObjectTypes::MeleeWeapon::MeleeWeaponData::
                                 MeleeWeaponData_DefaultColor
                                           ((Color *)&stack0xffffffec,StringLiteral_HitEffectColor,
                                            (MethodInfo *)0x0);
-                      fVar10 = pCVar8->g;
-                      fVar11 = pCVar8->b;
-                      fVar12 = pCVar8->a;
-                      pPVar1[1].fields.maxAmmo = pCVar8->r;
-                      pPVar1[1].fields.damage = fVar10;
-                      pPVar1[1].fields.impulseStrength = fVar11;
-                      pPVar1[1].fields.recoilStrength = fVar12;
+                      fVar9 = pCVar7->g;
+                      fVar10 = pCVar7->b;
+                      fVar11 = pCVar7->a;
+                      pPVar1[1].fields.maxAmmo = pCVar7->r;
+                      pPVar1[1].fields.damage = fVar9;
+                      pPVar1[1].fields.impulseStrength = fVar10;
+                      pPVar1[1].fields.recoilStrength = fVar11;
                       return pPVar1;
                     }
                     goto code_?;
@@ -371,8 +371,8 @@ Assembly-CSharp.dll::PickupItemMeleeWeapon::PickupItemMeleeWeapon_GetDefaultConf
   func_?();
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  pPVar1 = (PickupItemEditable_EditableItemConfiguration *)(*pcVar13)();
+  pcVar12 = (code *)swi(3);
+  pPVar1 = (PickupItemEditable_EditableItemConfiguration *)(*pcVar12)();
   return pPVar1;
 }
 
@@ -392,31 +392,29 @@ void Assembly-CSharp.dll::PickupItemMeleeWeapon::PickupItemMeleeWeapon_Initializ
     cRam_? = '\x01';
   }
   pCVar1 = (this->fields)._.fireAudioPlayer;
-  ppCVar2 = &(this->fields)._.fireAudioPlayer;
-  pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+  pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                      ((Component *)this,(MethodInfo *)0x0);
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   pCVar1 = (CustomItemAudioPlayer *)
            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_5
-                     ((Object *)pCVar1,pTVar3,
+                     ((Object *)pCVar1,pTVar2,
                       CustomItemAudioPlayer_MethodInfo__UnityEngine__Object__Instantiate<CustomItemAudioPlayer>_CustomItemAudioPlayer__UnityEngine__Transform_
                      );
-  *ppCVar2 = pCVar1;
-  func_?(ppCVar2,pCVar1);
+  (this->fields)._.fireAudioPlayer = pCVar1;
+  func_?(&(this->fields)._.fireAudioPlayer,pCVar1);
   pCVar1 = (this->fields)._.hitAudioPlayer;
-  ppCVar4 = &(this->fields)._.hitAudioPlayer;
-  pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+  pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                      ((Component *)this,(MethodInfo *)0x0);
   pCVar1 = (CustomItemAudioPlayer *)
            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_5
-                     ((Object *)pCVar1,pTVar3,
+                     ((Object *)pCVar1,pTVar2,
                       CustomItemAudioPlayer_MethodInfo__UnityEngine__Object__Instantiate<CustomItemAudioPlayer>_CustomItemAudioPlayer__UnityEngine__Transform_
                      );
-  *ppCVar4 = pCVar1;
-  func_?(ppCVar4,pCVar1);
-  pCVar1 = *ppCVar2;
+  (this->fields)._.hitAudioPlayer = pCVar1;
+  func_?(&(this->fields)._.hitAudioPlayer,pCVar1);
+  pCVar1 = (this->fields)._.fireAudioPlayer;
   if ((TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->_1).
       cctor_finished_or_no_cctor == 0) {
     func_?();
@@ -425,16 +423,17 @@ void Assembly-CSharp.dll::PickupItemMeleeWeapon::PickupItemMeleeWeapon_Initializ
     CustomItemAudioPlayer::CustomItemAudioPlayer_Initialize
               (pCVar1,TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->
                       static_fields->fireSoundEffects,(MethodInfo *)0x0);
-    if (*ppCVar4 != (CustomItemAudioPlayer *)0x0) {
+    pCVar1 = (this->fields)._.hitAudioPlayer;
+    if (pCVar1 != (CustomItemAudioPlayer *)0x0) {
       CustomItemAudioPlayer::CustomItemAudioPlayer_Initialize
-                (*ppCVar4,TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData
-                          ->static_fields->hitSoundEffects,(MethodInfo *)0x0);
+                (pCVar1,TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->
+                        static_fields->hitSoundEffects,(MethodInfo *)0x0);
       return;
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -449,12 +448,10 @@ void Assembly-CSharp.dll::PickupItemMeleeWeapon::PickupItemMeleeWeapon_Interrupt
   (this->fields)._._.isFiring = 0;
   if (pCVar1 != (CustomItemAudioPlayer *)0x0) {
     CustomItemAudioPlayer::CustomItemAudioPlayer_Stop(pCVar1,(MethodInfo *)0x0);
-    pIVar2 = (this->fields)._.animatorRoutine;
-    ppIVar3 = &(this->fields)._.animatorRoutine;
-    if (pIVar2 != (IEnumerator *)0x0) {
-      Coroutines::Coroutines_Stop(pIVar2,(MethodInfo *)0x0);
-      *ppIVar3 = (IEnumerator *)0x0;
-      func_?(ppIVar3,0);
+    if ((this->fields)._.animatorRoutine != (IEnumerator *)0x0) {
+      Coroutines::Coroutines_Stop((this->fields)._.animatorRoutine,(MethodInfo *)0x0);
+      (this->fields)._.animatorRoutine = (IEnumerator *)0x0;
+      func_?(&(this->fields)._.animatorRoutine,0);
       PickupItemEditable::PickupItemEditable_DisableAnimation
                 ((PickupItemEditable *)this,(MethodInfo *)0x0);
     }
@@ -465,9 +462,8 @@ void Assembly-CSharp.dll::PickupItemMeleeWeapon::PickupItemMeleeWeapon_Interrupt
       pCVar1 = (this->fields)._.fireAudioPlayer;
       if (pCVar1 != (CustomItemAudioPlayer *)0x0) {
         CustomItemAudioPlayer::CustomItemAudioPlayer_Stop(pCVar1,(MethodInfo *)0x0);
-        pIVar2 = (this->fields).checkHitCoroutine;
-        if (pIVar2 != (IEnumerator *)0x0) {
-          Coroutines::Coroutines_Stop(pIVar2,(MethodInfo *)0x0);
+        if ((this->fields).checkHitCoroutine != (IEnumerator *)0x0) {
+          Coroutines::Coroutines_Stop((this->fields).checkHitCoroutine,(MethodInfo *)0x0);
           (this->fields).checkHitCoroutine = (IEnumerator *)0x0;
           func_?();
         }
@@ -476,8 +472,8 @@ void Assembly-CSharp.dll::PickupItemMeleeWeapon::PickupItemMeleeWeapon_Interrupt
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -719,7 +715,7 @@ void Assembly-CSharp.dll::PickupItemMeleeWeapon::PickupItemMeleeWeapon_OnFire
                (PickupItemMeleeWeapon *this,bool isLocal,MethodInfo *method)
 
 {
-  _isLocal = (uint)isLocal;
+  _isLocal = (CustomItemAudioPlayer *)(uint)isLocal;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
@@ -744,13 +740,12 @@ void Assembly-CSharp.dll::PickupItemMeleeWeapon::PickupItemMeleeWeapon_OnFire
       fVar3 = _UNK_?;
     }
     CustomItemAudioPlayer::CustomItemAudioPlayer_SetPitch(pCVar1,fVar3,(MethodInfo *)0x0);
-    pCVar1 = (this->fields)._.fireAudioPlayer;
+    _isLocal = (this->fields)._.fireAudioPlayer;
     pPVar4 = PickupItemMeleeWeapon_get_Configuration(this,(MethodInfo *)0x0);
     if ((pPVar4 == (PickupItemMeleeWeapon_MeleeWeaponConfiguration *)0x0) ||
-       (pCVar1 == (CustomItemAudioPlayer *)0x0)) goto code_?;
-    _isLocal = (pPVar4->fields)._.fireSoundEffect;
+       (_isLocal == (CustomItemAudioPlayer *)0x0)) goto code_?;
     CustomItemAudioPlayer::CustomItemAudioPlayer_PlayClip
-              (pCVar1,_isLocal,0,(Vector3)ZEXT812(0),(MethodInfo *)0x0);
+              (_isLocal,(pPVar4->fields)._.fireSoundEffect,0,(Vector3)ZEXT812(0),(MethodInfo *)0x0);
   }
   if (cRam_? == '\0') {
     func_?();
@@ -772,55 +767,51 @@ void Assembly-CSharp.dll::PickupItemMeleeWeapon::PickupItemMeleeWeapon_OnFire
       if (pAVar5 != (Animator *)0x0) {
         UnityEngine.AnimationModule.dll::UnityEngine::Animator::Animator_Play
                   (pAVar5,stateName,0,0.0,(MethodInfo *)0x0);
-        pIVar6 = (this->fields)._.animatorRoutine;
-        ppIVar7 = &(this->fields)._.animatorRoutine;
-        if (pIVar6 != (IEnumerator *)0x0) {
-          Coroutines::Coroutines_Stop(pIVar6,(MethodInfo *)0x0);
+        if ((this->fields)._.animatorRoutine != (IEnumerator *)0x0) {
+          Coroutines::Coroutines_Stop((this->fields)._.animatorRoutine,(MethodInfo *)0x0);
         }
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
         }
         method_00 = TypeInfo__PickupItemEditable___DisableAnimatorCoroutine_d__39;
-        pOVar8 = (Object *)func_?();
+        pOVar6 = (Object *)func_?();
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  (pOVar8,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-        pOVar8[1].klass = (Object__Class *)0x0;
-        pOVar8[2].klass = (Object__Class *)this;
+                  (pOVar6,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+        pOVar6[1].klass = (Object__Class *)0x0;
+        pOVar6[2].klass = (Object__Class *)this;
         func_?();
-        *ppIVar7 = (IEnumerator *)pOVar8;
+        (this->fields)._.animatorRoutine = (IEnumerator *)pOVar6;
         func_?();
-        Coroutines::Coroutines_Start(*ppIVar7,(MethodInfo *)0x0);
+        Coroutines::Coroutines_Start((this->fields)._.animatorRoutine,(MethodInfo *)0x0);
         goto code_?;
       }
     }
 code_?:
     func_?();
-    pcVar9 = (code *)swi(3);
-    (*pcVar9)();
+    pcVar7 = (code *)swi(3);
+    (*pcVar7)();
     return;
   }
 code_?:
-  pIVar6 = (this->fields).checkHitCoroutine;
-  ppIVar7 = &(this->fields).checkHitCoroutine;
-  if (pIVar6 != (IEnumerator *)0x0) {
-    Coroutines::Coroutines_Stop(pIVar6,(MethodInfo *)0x0);
+  if ((this->fields).checkHitCoroutine != (IEnumerator *)0x0) {
+    Coroutines::Coroutines_Stop((this->fields).checkHitCoroutine,(MethodInfo *)0x0);
   }
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
   }
   method_01 = TypeInfo__PickupItemMeleeWeapon___CheckHitCoroutine_d__28;
-  pOVar8 = (Object *)func_?();
+  pOVar6 = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (pOVar8,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
-  pOVar8[1].klass = (Object__Class *)0x0;
-  pOVar8[2].klass = (Object__Class *)this;
+            (pOVar6,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
+  pOVar6[1].klass = (Object__Class *)0x0;
+  pOVar6[2].klass = (Object__Class *)this;
   func_?();
-  *(bool *)&pOVar8[2].monitor = isLocal;
-  *ppIVar7 = (IEnumerator *)pOVar8;
+  *(bool *)&pOVar6[2].monitor = isLocal;
+  (this->fields).checkHitCoroutine = (IEnumerator *)pOVar6;
   func_?();
-  Coroutines::Coroutines_Start(*ppIVar7,(MethodInfo *)0x0);
+  Coroutines::Coroutines_Start((this->fields).checkHitCoroutine,(MethodInfo *)0x0);
   (this->fields)._._.isFiring = 0;
   return;
 }
@@ -1217,8 +1208,8 @@ void Assembly-CSharp.dll::PickupItemMeleeWeapon::PickupItemMeleeWeapon_OnLocalHi
               pTVar3 = (Transform *)voxelHit._60_4_;
               if (pPVar12 != (PickupItemMeleeWeapon_MeleeWeaponConfiguration *)0x0) {
                 fVar10 = (pPVar12->fields)._.impulseStrength;
-                fVar13 = fVar7 * fVar10;
-                fVar14 = fVar10 * fVar11;
+                fVar13 = fVar10 * fVar11;
+                fVar14 = fVar7 * fVar10;
                 fVar10 = fVar9 * fVar10;
                 voxelHit.interactionFlags._0_4_ = (this_00->fields)._._._.owner;
                 voxelHit.isCubeHit = 0;
@@ -1233,11 +1224,11 @@ void Assembly-CSharp.dll::PickupItemMeleeWeapon::PickupItemMeleeWeapon_OnLocalHi
                   voxelHit.cube = (Cube *)0x0;
                   voxelHit.cubePos._0_4_ = &stack0xffffffd4;
                   voxelHit.normal.z = (float)&UNK_?;
-                  impulse.y = fVar14;
-                  impulse.x = fVar13;
+                  impulse.y = fVar13;
+                  impulse.x = fVar14;
                   impulse.z = fVar10;
-                  voxelHit.face = (int32_t)fVar13;
-                  voxelHit._36_4_ = fVar14;
+                  voxelHit.face = (int32_t)fVar14;
+                  voxelHit._36_4_ = fVar13;
                   voxelHit.woId = (int32_t)fVar10;
                   pIVar15 = MeleeWeaponHitPackage::MeleeWeaponHitPackage_Create
                                       ((InteractionData *)voxelHit.cubePos._0_4_,
@@ -1308,10 +1299,10 @@ void Assembly-CSharp.dll::PickupItemMeleeWeapon::PickupItemMeleeWeapon_OnLocalHi
                       pTVar3 = (Transform *)voxelHit._60_4_;
                       if (pPVar12 != (PickupItemMeleeWeapon_MeleeWeaponConfiguration *)0x0) {
                         fVar7 = (pPVar12->fields)._.recoilStrength;
+                        voxelHit.transform = (Transform *)(fVar7 * fVar11);
                         pTVar2 = (Transform *)
                                   ((float)(MVPickupOwner *)voxelHit.interactionFlags * fVar7);
-                        voxelHit.transform = (Transform *)(fVar11 * fVar7);
-                        voxelHit._60_4_ = fVar9 * fVar7;
+                        voxelHit._60_4_ = fVar7 * fVar9;
                         pTVar3 = voxelHit.transform;
                         voxelHit.interactionFlags._0_4_ = (MVPickupOwner *)voxelHit._60_4_;
                         if (this_03 != (MVRigidBody *)0x0) {
@@ -1736,17 +1727,18 @@ Assembly-CSharp.dll::PickupItemMeleeWeapon::PickupItemMeleeWeapon_get_Configurat
   pPVar1 = (PickupItemMeleeWeapon_MeleeWeaponConfiguration *)
            (this->fields)._._Configuration_k__BackingField;
   if (pPVar1 == (PickupItemMeleeWeapon_MeleeWeaponConfiguration *)0x0) {
-    return pPVar1;
+    return (PickupItemMeleeWeapon_MeleeWeaponConfiguration *)0x0;
   }
-  bVar2 = (TypeInfo__PickupItemMeleeWeapon__MeleeWeaponConfiguration->_1).naturalAligment;
-  if ((bVar2 <= (pPVar1->klass->_1).naturalAligment) &&
-     ((pPVar1->klass->_1).typeHierarchy[bVar2 - 1] ==
+  if (((TypeInfo__PickupItemMeleeWeapon__MeleeWeaponConfiguration->_1).naturalAligment <=
+       (pPVar1->klass->_1).naturalAligment) &&
+     ((pPVar1->klass->_1).typeHierarchy
+      [(TypeInfo__PickupItemMeleeWeapon__MeleeWeaponConfiguration->_1).naturalAligment - 1] ==
       (Il2CppClass *)TypeInfo__PickupItemMeleeWeapon__MeleeWeaponConfiguration)) {
     return pPVar1;
   }
   func_?(pPVar1,TypeInfo__PickupItemMeleeWeapon__MeleeWeaponConfiguration);
-  pcVar3 = (code *)swi(3);
-  pPVar1 = (PickupItemMeleeWeapon_MeleeWeaponConfiguration *)(*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  pPVar1 = (PickupItemMeleeWeapon_MeleeWeaponConfiguration *)(*pcVar2)();
   return pPVar1;
 }
 

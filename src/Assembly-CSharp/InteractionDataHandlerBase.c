@@ -20,19 +20,20 @@ void Assembly-CSharp.dll::InteractionDataHandlerBase::InteractionDataHandlerBase
       cRam_? = '\x01';
     }
     pMVar1 = (this->fields)._.worldObjectParent;
-    ppMVar2 = &(this->fields)._.worldObjectParent;
     (this->fields)._.findWorldObjectParent = 1;
-    pSVar3 = StringLiteral_worldObjectParent_already_set_;
+    pSVar2 = StringLiteral_worldObjectParent_already_set_;
     if (pMVar1 != (MVWorldObjectClient *)0x0) {
+      pMVar1 = (this->fields)._.worldObjectParent;
+      pMVar3 = pMVar1->klass;
       str1 = (String *)
-             (*(code *)(pMVar1->klass->vtable).ToString.method)
-                       (pMVar1,(pMVar1->klass->vtable).get_Position.methodPtr);
-      pSVar3 = mscorlib.dll::System::String::String_Concat_3(pSVar3,str1,(MethodInfo *)0x0);
+             (*(code *)(pMVar3->vtable).ToString.method)
+                       (pMVar1,(pMVar3->vtable).get_Position.methodPtr);
+      pSVar2 = mscorlib.dll::System::String::String_Concat_3(pSVar2,str1,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                ((Object *)pSVar3,(MethodInfo *)0x0);
+                ((Object *)pSVar2,(MethodInfo *)0x0);
     }
     this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
     pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -43,56 +44,55 @@ void Assembly-CSharp.dll::InteractionDataHandlerBase::InteractionDataHandlerBase
        this_00 == (MVWorldObjectClientManager *)0x0)) goto code_?;
     pMVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectByGoId
                        (this_00,goId,(MethodInfo *)0x0);
-    *ppMVar2 = pMVar1;
+    (this->fields)._.worldObjectParent = pMVar1;
     func_?();
-    if (*ppMVar2 == (MVWorldObjectClient *)0x0) {
+    if ((this->fields)._.worldObjectParent == (MVWorldObjectClient *)0x0) {
       pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)this,(MethodInfo *)0x0);
       if (pGVar4 == (GameObject *)0x0) goto code_?;
-      pSVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name
+      pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name
                          ((Object_1 *)pGVar4,(MethodInfo *)0x0);
-      pSVar3 = mscorlib.dll::System::String::String_Concat_3
-                         (pSVar3,StringLiteral___worldobjectParent_not_found_on,(MethodInfo *)0x0);
+      pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                         (pSVar2,StringLiteral___worldobjectParent_not_found_on,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                ((Object *)pSVar3,(MethodInfo *)0x0);
+                ((Object *)pSVar2,(MethodInfo *)0x0);
     }
   }
-  ppCVar5 = &(this->fields).closestPoint;
-  pCVar6 = *ppCVar5;
+  pCVar5 = (this->fields).closestPoint;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)pCVar6,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar7 == 0) {
+  bVar6 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)pCVar5,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar6 == 0) {
     return;
   }
   pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                      ((Component *)this,(MethodInfo *)0x0);
   if (pGVar4 != (GameObject *)0x0) {
-    pCVar6 = (ClosestPointBase *)
+    pCVar5 = (ClosestPointBase *)
              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
                        (pGVar4,
                         ClosestPointPoint_MethodInfo__UnityEngine__GameObject__AddComponent<ClosestPointPoint>__
                        );
-    pCVar8 = (ClosestPointBase__Class *)
+    pCVar7 = (ClosestPointBase__Class *)
              UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                        ((Component *)this,(MethodInfo *)0x0);
-    if (pCVar6 != (ClosestPointBase *)0x0) {
-      pCVar6[1].klass = pCVar8;
+    if (pCVar5 != (ClosestPointBase *)0x0) {
+      pCVar5[1].klass = pCVar7;
       func_?();
-      *ppCVar5 = pCVar6;
+      (this->fields).closestPoint = pCVar5;
       func_?();
       return;
     }
   }
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -197,19 +197,18 @@ void Assembly-CSharp.dll::InteractionDataHandlerBase::InteractionDataHandlerBase
     cRam_? = '\x01';
   }
   pCVar1 = (this->fields).closestPoint;
-  ppCVar2 = &(this->fields).closestPoint;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                     ((Object_1 *)pCVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar3 != 0) {
+  if (bVar2 != 0) {
     this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                         ((Component *)this,(MethodInfo *)0x0);
     if (this_00 == (GameObject *)0x0) {
       func_?();
-      pcVar4 = (code *)swi(3);
-      (*pcVar4)();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
     pCVar1 = (ClosestPointBase *)
@@ -217,8 +216,8 @@ void Assembly-CSharp.dll::InteractionDataHandlerBase::InteractionDataHandlerBase
                        (this_00,
                         ClosestPointBase_MethodInfo__UnityEngine__GameObject__GetComponent<ClosestPointBase>__
                        );
-    *ppCVar2 = pCVar1;
-    func_?(ppCVar2);
+    (this->fields).closestPoint = pCVar1;
+    func_?();
   }
   return;
 }

@@ -17,7 +17,7 @@ void Assembly-CSharp.dll::CollectTheItemLineObject::CollectTheItemLineObject_OnV
                       UnityEngine__LineRenderer_MethodInfo__UnityEngine__Component__GetComponentInChildren<UnityEngine::LineRenderer>__
                      );
   (this->fields).lineRenderer = pLVar1;
-  func_?();
+  func_?(&(this->fields).lineRenderer,pLVar1);
   return;
 }
 

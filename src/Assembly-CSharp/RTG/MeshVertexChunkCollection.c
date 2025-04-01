@@ -336,11 +336,15 @@ MeshVertexChunkCollection_GetWorldChunksHoveredByPoint
     func_?(&TypeInfo__System__Collections__Generic__List<RTG::MeshVertexChunk>);
     cRam_? = '\x01';
   }
-  uVar2._0_4_ = (MethodInfo *)0x0;
-  uVar2._4_4_ = 0.0;
+  LStack_2._list = (List_1_System_Object_ *)0x0;
+  LStack_2._index = 0;
+  LStack_2._version = 0;
+  LStack_2._current = (Object *)0x0;
+  uVar3._0_4_ = (MethodInfo *)0x0;
+  uVar3._4_4_ = 0.0;
   this_01 = (List_1_RTG_MeshVertexChunk_ *)
             func_?(TypeInfo__System__Collections__Generic__List<RTG::MeshVertexChunk>);
-  pLVar3 = this_01;
+  pLVar4 = this_01;
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
@@ -349,53 +353,53 @@ MeshVertexChunkCollection_GetWorldChunksHoveredByPoint
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
             (this->fields)._vertexChunks;
   if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    pLVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
              RegexCharClass+SingleRange]::
              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                        ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                         *)&pLStack_5,this_00,
+                         *)&pLStack_6,this_00,
                         MethodInfo__System__Collections__Generic__List<RTG::MeshVertexChunk>__GetEnumerator__
                        );
-    LStack_6._list = (List_1_System_Object_ *)pLVar4->_list;
-    LStack_6._index = pLVar4->_index;
-    LStack_6._version = pLVar4->_version;
-    LStack_6._current = *(Object **)&pLVar4->_current;
+    LStack_2._list = (List_1_System_Object_ *)pLVar5->_list;
+    LStack_2._index = pLVar5->_index;
+    LStack_2._version = pLVar5->_version;
+    LStack_2._current = *(Object **)&pLVar5->_current;
     while( true ) {
       bVar7 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
               List_1_T_Enumerator_System_Object__MoveNext
-                        (&LStack_6,
+                        (&LStack_2,
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::MeshVertexChunk>__MoveNext__
                         );
-      item = LStack_6._current;
+      item = LStack_2._current;
       if (bVar7 == 0) {
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&LStack_6,
+                  ((Object *)&LStack_2,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::MeshVertexChunk>__Dispose__
-                   ,(MethodInfo *)uVar2);
+                   ,(MethodInfo *)uVar3);
         *unaff_FS_OFFSET = pMVar1;
         return this_01;
       }
-      if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) break;
-      uVar2 = *(undefined8 *)((int)LStack_6._current + 0x1c);
+      if ((RegexCharClass_SingleRange)LStack_2._current == (RegexCharClass_SingleRange)0x0) break;
+      uVar3 = *(undefined8 *)((int)LStack_2._current + 0x1c);
       AABB::AABB_Transform
-                ((AABB *)&stack0xffffff8c,worldMtx,*(MethodInfo **)((int)LStack_6._current + 0x18))
+                ((AABB *)&stack0xffffff8c,worldMtx,*(MethodInfo **)((int)LStack_2._current + 0x18))
       ;
-      this_01 = pLVar3;
+      this_01 = pLVar4;
       pRVar8 = AABB::AABB_GetScreenRectangle
                          (&RStack_9,(AABB *)&stack0xffffff8c,camera,(MethodInfo *)0x0);
-      pLStack_5 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+      pLStack_6 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                    pRVar8->m_XMin;
       fStack_10 = pRVar8->m_YMin;
       puStack_11 = (undefined *)pRVar8->m_Width;
       fVar12 = pRVar8->m_Height;
-      if (((0.0 <= (float)puStack_11) || ((float)pLStack_5 < hoverPoint.x)) ||
-         (hoverPoint.x <= (float)puStack_11 + (float)pLStack_5)) {
-        if (((float)puStack_11 < 0.0) || (hoverPoint.x < (float)pLStack_5)) {
+      if (((0.0 <= (float)puStack_11) || ((float)pLStack_6 < hoverPoint.x)) ||
+         (hoverPoint.x <= (float)puStack_11 + (float)pLStack_6)) {
+        if (((float)puStack_11 < 0.0) || (hoverPoint.x < (float)pLStack_6)) {
           bVar13 = false;
         }
         else {
-          bVar13 = hoverPoint.x < (float)puStack_11 + (float)pLStack_5;
+          bVar13 = hoverPoint.x < (float)puStack_11 + (float)pLStack_6;
         }
       }
       else {
@@ -412,7 +416,7 @@ MeshVertexChunkCollection_GetWorldChunksHoveredByPoint
       else {
         bVar14 = true;
       }
-      pLVar3 = this_01;
+      pLVar4 = this_01;
       if ((bool)(bVar14 & bVar13)) {
         if (this_01 == (List_1_RTG_MeshVertexChunk_ *)0x0) break;
         pMVar1 = 
@@ -429,8 +433,8 @@ MeshVertexChunkCollection_GetWorldChunksHoveredByPoint
   func_?();
   func_?();
   pcVar15 = (code *)swi(3);
-  pLVar3 = (List_1_RTG_MeshVertexChunk_ *)(*pcVar15)();
-  return pLVar3;
+  pLVar4 = (List_1_RTG_MeshVertexChunk_ *)(*pcVar15)();
+  return pLVar4;
 }
 
 
@@ -479,35 +483,39 @@ MeshVertexChunkCollection_GetWorldVertChunkClosestToScreenPt
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-            (this->fields)._vertexChunks;
-  LStack_6._current.y = 0.0;
-  RStack_7.First = 0;
-  RStack_7.Last = 0;
-  LStack_6._list = (List_1_UnityEngine_Vector2_ *)0x0;
+  LStack_6._list = (List_1_System_Object_ *)0x0;
   LStack_6._index = 0;
   LStack_6._version = 0;
-  LStack_6._current.x = 0.0;
-  fStack_8 = _UNK_?;
+  LStack_6._current = (Object *)0x0;
+  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            (this->fields)._vertexChunks;
+  LStack_7._current.y = 0.0;
+  RStack_8.First = 0;
+  RStack_8.Last = 0;
+  LStack_7._list = (List_1_UnityEngine_Vector2_ *)0x0;
+  LStack_7._index = 0;
+  LStack_7._version = 0;
+  LStack_7._current.x = 0.0;
+  fStack_9 = _UNK_?;
   if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar9 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    pLVar10 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
              RegexCharClass+SingleRange]::
              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       (&LStack_10,this_00,
+                       (&LStack_11,this_00,
                         MethodInfo__System__Collections__Generic__List<RTG::MeshVertexChunk>__GetEnumerator__
                        );
-    uStack_11 = 0;
-    LStack_12._list = (List_1_System_Object_ *)pLVar9->_list;
-    LStack_12._index = pLVar9->_index;
-    LStack_12._version = pLVar9->_version;
-    LStack_12._current = *(Object **)&pLVar9->_current;
-    pLStack_13 = &LStack_12;
+    uStack_12 = 0;
+    LStack_6._list = (List_1_System_Object_ *)pLVar10->_list;
+    LStack_6._index = pLVar10->_index;
+    LStack_6._version = pLVar10->_version;
+    LStack_6._current = *(Object **)&pLVar10->_current;
+    pLStack_13 = &LStack_6;
     uStack_1 = 0;
     while( true ) {
       uStack_1._0_1_ = 1;
       bVar14 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
               List_1_T_Enumerator_System_Object__MoveNext
-                        (&LStack_12,
+                        (&LStack_6,
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::MeshVertexChunk>__MoveNext__
                         );
       if (bVar14 == 0) {
@@ -518,11 +526,11 @@ MeshVertexChunkCollection_GetWorldVertChunkClosestToScreenPt
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::MeshVertexChunk>__Dispose__
                    ,in_stack_15);
         *unaff_FS_OFFSET = uStack_3;
-        return (MeshVertexChunk *)RStack_7;
+        return (MeshVertexChunk *)RStack_8;
       }
-      RVar16 = (RegexCharClass_SingleRange)LStack_12._current;
-      if ((RegexCharClass_SingleRange)LStack_12._current == (RegexCharClass_SingleRange)0x0) break;
-      method_00 = *(MethodInfo **)((int)LStack_12._current + 0x14);
+      RVar16 = (RegexCharClass_SingleRange)LStack_6._current;
+      if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) break;
+      method_00 = *(MethodInfo **)((int)LStack_6._current + 0x14);
       AABB::AABB_Transform((AABB *)&stack0xffffff70,worldMtx,(MethodInfo *)0x0);
       this_01 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
                 AABB::AABB_GetScreenCenterAndCornerPoints
@@ -535,31 +543,31 @@ MeshVertexChunkCollection_GetWorldVertChunkClosestToScreenPt
                          (&LStack_18,this_01,
                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__GetEnumerator__
                          );
-      LStack_10._version = 0;
-      LStack_6._list = (List_1_UnityEngine_Vector2_ *)pLVar17->_list;
-      LStack_6._index = pLVar17->_index;
-      LStack_6._version = pLVar17->_version;
-      LStack_6._current.x = (float)(pLVar17->_current).qname;
-      LStack_6._current.y = (float)(pLVar17->_current).xso;
+      LStack_11._version = 0;
+      LStack_7._list = (List_1_UnityEngine_Vector2_ *)pLVar17->_list;
+      LStack_7._index = pLVar17->_index;
+      LStack_7._version = pLVar17->_version;
+      LStack_7._current.x = (float)(pLVar17->_current).qname;
+      LStack_7._current.y = (float)(pLVar17->_current).xso;
       uStack_1._0_1_ = 3;
-      LStack_10._current = (RegexCharClass_SingleRange)&LStack_6;
+      LStack_11._current = (RegexCharClass_SingleRange)&LStack_7;
       while( true ) {
         bVar14 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[UnityEngine::
                 Vector2]::List_1_T_Enumerator_UnityEngine_Vector2__MoveNext
-                          (&LStack_6,
+                          (&LStack_7,
                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector2>__MoveNext__
                           );
         if (bVar14 == 0) break;
-        fVar19 = (LStack_6._current.x - screenPoint.x) * (LStack_6._current.x - screenPoint.x) +
-                (LStack_6._current.y - screenPoint.y) * (LStack_6._current.y - screenPoint.y);
-        if (fVar19 < fStack_8) {
-          RStack_7 = RVar16;
-          fStack_8 = fVar19;
+        fVar19 = (LStack_7._current.x - screenPoint.x) * (LStack_7._current.x - screenPoint.x) +
+                (LStack_7._current.y - screenPoint.y) * (LStack_7._current.y - screenPoint.y);
+        if (fVar19 < fStack_9) {
+          RStack_8 = RVar16;
+          fStack_9 = fVar19;
         }
       }
       uStack_1 = CONCAT31(uStack_1._1_3_,1);
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                ((Object *)&LStack_6,
+                ((Object *)&LStack_7,
                  (ExceptionArgument__Enum)
                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector2>__Dispose__
                  ,method_00);
@@ -634,8 +642,7 @@ void Assembly-CSharp.dll::RTG::MeshVertexChunkCollection::MeshVertexChunkCollect
             (this_00,0x32,
              MethodInfo__System__Collections__Generic__List<RTG::MeshVertexChunk>__List_int_);
   method_00 = (MethodInfo *)&(this->fields)._vertexChunks;
-  *(List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ **)
-   method_00 = this_00;
+  (this->fields)._vertexChunks = (List_1_RTG_MeshVertexChunk_ *)this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);

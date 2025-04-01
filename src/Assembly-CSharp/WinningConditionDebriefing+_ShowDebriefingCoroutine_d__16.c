@@ -32,9 +32,8 @@ bool Assembly-CSharp.dll::WinningConditionDebriefing+<ShowDebriefingCoroutine>d_
       pIVar3 = pTween::pTween_To(0.3,0.0,1.0,(Action_1_Single_ *)this_01,(MethodInfo *)0x0);
       pCVar4 = UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
                MonoBehaviour_StartCoroutine_Auto((MonoBehaviour *)this_00,pIVar3,(MethodInfo *)0x0);
-      ppOVar5 = &(this->fields).__2__current;
-      *ppOVar5 = (Object *)pCVar4;
-      func_?(ppOVar5,pCVar4);
+      (this->fields).__2__current = (Object *)pCVar4;
+      func_?(&(this->fields).__2__current,pCVar4);
       (this->fields).__1__state = 1;
       return 1;
     }
@@ -56,9 +55,8 @@ bool Assembly-CSharp.dll::WinningConditionDebriefing+<ShowDebriefingCoroutine>d_
       pCVar4 = UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
                MonoBehaviour_StartCoroutine_Auto
                          ((MonoBehaviour *)this_00,(IEnumerator *)value,(MethodInfo *)0x0);
-      ppOVar5 = &(this->fields).__2__current;
-      *ppOVar5 = (Object *)pCVar4;
-      func_?(ppOVar5,pCVar4);
+      (this->fields).__2__current = (Object *)pCVar4;
+      func_?(&(this->fields).__2__current,pCVar4);
       (this->fields).__1__state = 2;
       return 1;
     }
@@ -75,9 +73,8 @@ bool Assembly-CSharp.dll::WinningConditionDebriefing+<ShowDebriefingCoroutine>d_
     if (this_00 != (Object__Class *)0x0) {
       pCVar4 = UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
                MonoBehaviour_StartCoroutine_Auto((MonoBehaviour *)this_00,pIVar3,(MethodInfo *)0x0);
-      ppOVar5 = &(this->fields).__2__current;
-      *ppOVar5 = (Object *)pCVar4;
-      func_?(ppOVar5,pCVar4);
+      (this->fields).__2__current = (Object *)pCVar4;
+      func_?(&(this->fields).__2__current,pCVar4);
       (this->fields).__1__state = 3;
       return 1;
     }
@@ -87,16 +84,14 @@ bool Assembly-CSharp.dll::WinningConditionDebriefing+<ShowDebriefingCoroutine>d_
   default:
     return 0;
   }
-  uVar6 = func_?();
-  *(undefined1 *)&this->klass = uVar6;
-  uVar7 = func_?(&TypeInfo__System__NotSupportedException,unaff_ESI,0x694d104b);
-  this_02 = (NotSupportedException *)func_?(uVar7);
-  mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
-            (this_02,(MethodInfo *)0x0);
-  uVar7 = func_?(&
-                          MethodInfo__WinningConditionDebriefing___ShowDebriefingCoroutine_d__16__System_Collections_IEnumerator_Reset__
-                         );
-  func_?(this_02,uVar7);
+  bVar5 = 0;
+  func_?();
+  bVar6 = *(byte *)&unaff_ESI->klass;
+  bVar7 = *(char *)&unaff_ESI->klass + extraout_CL;
+  *(byte *)&unaff_ESI->klass = bVar7 + bVar5;
+  *(char *)(extraout_EDX + 0x104bfc) =
+       *(char *)(extraout_EDX + 0x104bfc) + extraout_CL +
+       (CARRY1(bVar6,extraout_CL) || CARRY1(bVar7,bVar5));
   pcVar8 = (code *)swi(3);
   bVar9 = (*pcVar8)();
   return bVar9;

@@ -46,20 +46,19 @@ void Assembly-CSharp.dll::XPProgress::XPProgress_OnXPLevelLimitsUpdated
             ((Object *)xpLevelLimits,(MethodInfo *)0x0);
   pXVar1 = (this->fields).xpProgressData;
   if (pXVar1 != (XPProgressData *)0x0) {
-    pXVar2 = &pXVar1->fields;
-    pXVar2->xpLevelLimits = xpLevelLimits;
-    func_?(pXVar2,xpLevelLimits);
-    pXVar3 = (this->fields).OnXPProgressData;
-    if (pXVar3 != (XPProgress_OnXPProgressDataDelegate *)0x0) {
-      (*(pXVar3->fields)._._.invoke_impl)
-                ((pXVar3->fields)._._.method_code,(this->fields).xpProgressData,
-                 (pXVar3->fields)._._.method);
+    (pXVar1->fields).xpLevelLimits = xpLevelLimits;
+    func_?(&pXVar1->fields,xpLevelLimits);
+    if ((this->fields).OnXPProgressData != (XPProgress_OnXPProgressDataDelegate *)0x0) {
+      pXVar2 = (this->fields).OnXPProgressData;
+      (*(pXVar2->fields)._._.invoke_impl)
+                ((pXVar2->fields)._._.method_code,(this->fields).xpProgressData,
+                 (pXVar2->fields)._._.method);
     }
     return;
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -84,8 +83,8 @@ void Assembly-CSharp.dll::XPProgress::XPProgress_Update
         pXVar2 = (this->fields).xpProgressData;
         if (pXVar2 != (XPProgressData *)0x0) {
           (pXVar2->fields).memberCount = memberCount;
-          pXVar3 = (this->fields).OnXPProgressData;
-          if (pXVar3 != (XPProgress_OnXPProgressDataDelegate *)0x0) {
+          if ((this->fields).OnXPProgressData != (XPProgress_OnXPProgressDataDelegate *)0x0) {
+            pXVar3 = (this->fields).OnXPProgressData;
             puStack_1 = (pXVar3->fields)._._.method;
             pXStack_4 = (this->fields).xpProgressData;
             pvStack_5 = (pXVar3->fields)._._.method_code;
@@ -205,25 +204,26 @@ void Assembly-CSharp.dll::XPProgress::XPProgress_XPLimitsCallback
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                 ((Object *)message,(MethodInfo *)0x0);
-      pEStack2 = (this_00->fields)._Error_k__BackingField;
-      if (pEStack2 != (ExceptionDispatchInfo *)0x0) {
-        pEStack2 = (ExceptionDispatchInfo *)&pEStack2->fields;
-        ((ExceptionDispatchInfo__Fields *)pEStack2)->m_Exception = message;
-        pEStack3 = message;
+      pEVar2 = (this_00->fields)._Error_k__BackingField;
+      if (pEVar2 != (ExceptionDispatchInfo *)0x0) {
+        (pEVar2->fields).m_Exception = message;
+        pEStack3 = &pEVar2->fields;
+        pEStack4 = message;
         func_?();
-        iVar4 = (this_00->fields)._Status_k__BackingField.value__;
-        if (iVar4 != 0) {
-          pEStack3 = *(Exception **)(iVar4 + 0x14);
-          pEStack2 = (this_00->fields)._Error_k__BackingField;
-          (**(code **)(iVar4 + 0xc))();
+        if ((this_00->fields)._Status_k__BackingField.value__ != 0) {
+          iVar5 = (this_00->fields)._Status_k__BackingField.value__;
+          uStack6 = *(undefined4 *)(iVar5 + 0x14);
+          pEStack4 = (Exception *)(this_00->fields)._Error_k__BackingField;
+          pEStack3 = *(ExceptionDispatchInfo__Fields **)(iVar5 + 0x20);
+          (**(code **)(iVar5 + 0xc))();
         }
         return;
       }
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -253,29 +253,27 @@ void Assembly-CSharp.dll::XPProgress::XPProgress__ctor
     (value->fields).playerCurrentXP = iVar1;
     (value->fields).xpLevelLimits = pXVar2;
     func_?(&value->fields,pXVar2);
-    ppXVar3 = &(this->fields).xpProgressData;
-    *ppXVar3 = value;
-    func_?(ppXVar3,value);
+    (this->fields).xpProgressData = value;
+    func_?(&(this->fields).xpProgressData,value);
     if (player != (MVLocalPlayer *)0x0) {
-      pUVar4 = (player->fields)._.OnLevelChanged;
-      ppUVar5 = &(player->fields)._.OnLevelChanged;
+      pUVar3 = (player->fields)._.OnLevelChanged;
       this_00 = (UnityAction_1_System_Int32Enum_ *)
                 func_?(TypeInfo__UnityEngine__Events__UnityAction<int>);
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
       UnityAction_1_System_Int32Enum___ctor
                 (this_00,(Object *)this,MethodInfo__XPProgress__UpdateLevel_int_,(MethodInfo *)0x0);
-      pDVar6 = mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)pUVar4,(Delegate *)this_00,(MethodInfo *)0x0);
-      if (pDVar6 == (Delegate *)0x0) {
-        *ppUVar5 = (UnityAction_1_System_Int32_ *)0x0;
+      pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
+                         ((Delegate *)pUVar3,(Delegate *)this_00,(MethodInfo *)0x0);
+      if (pDVar4 == (Delegate *)0x0) {
+        (player->fields)._.OnLevelChanged = (UnityAction_1_System_Int32_ *)0x0;
         func_?();
         return;
       }
-      pUVar4 = (UnityAction_1_System_Int32_ *)func_?();
-      if (pUVar4 != (UnityAction_1_System_Int32_ *)0x0) {
-        *ppUVar5 = pUVar4;
-        iVar7 = func_?();
-        if (iVar7 != 0) {
+      pUVar3 = (UnityAction_1_System_Int32_ *)func_?();
+      if (pUVar3 != (UnityAction_1_System_Int32_ *)0x0) {
+        (player->fields)._.OnLevelChanged = pUVar3;
+        iVar5 = func_?();
+        if (iVar5 != 0) {
           func_?();
           return;
         }
@@ -286,8 +284,8 @@ void Assembly-CSharp.dll::XPProgress::XPProgress__ctor
   func_?();
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

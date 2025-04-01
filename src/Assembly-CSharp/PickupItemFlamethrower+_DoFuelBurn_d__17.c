@@ -152,9 +152,8 @@ bool Assembly-CSharp.dll::PickupItemFlamethrower+<DoFuelBurn>d__17::
           if (cVar19 == '\0') {
             fStack_21 = 0.0;
             pOVar24 = (Object *)func_?(TypeInfo__System__Int32,&fStack_21);
-            ppOVar25 = &(this->fields).__2__current;
-            *ppOVar25 = pOVar24;
-            func_?(ppOVar25,pOVar24);
+            (this->fields).__2__current = pOVar24;
+            func_?(&(this->fields).__2__current,pOVar24);
             (this->fields).__1__state = 1;
             return 1;
           }
@@ -184,8 +183,8 @@ bool Assembly-CSharp.dll::PickupItemFlamethrower+<DoFuelBurn>d__17::
   }
 code_?:
   func_?();
-  pcVar26 = (code *)swi(3);
-  bVar12 = (*pcVar26)();
+  pcVar25 = (code *)swi(3);
+  bVar12 = (*pcVar25)();
   return bVar12;
 }
 

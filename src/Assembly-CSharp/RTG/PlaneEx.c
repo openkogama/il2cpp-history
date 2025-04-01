@@ -17,102 +17,59 @@ Plane * Assembly-CSharp.dll::RTG::PlaneEx::PlaneEx_GetCameraFacingAxisSlicePlane
                   MethodInfo *method)
 
 {
-  this = camera;
   if (camera != (Camera *)0x0) {
     pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                        ((Component *)camera,(MethodInfo *)0x0);
     if (pTVar1 != (Transform *)0x0) {
       pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
-                          (&VStack_3,pTVar1,(MethodInfo *)0x0);
-      VStack_3.z = pVVar2->z;
-      VStack_3.x = pVVar2->x;
-      VStack_3.y = pVVar2->y;
-      other.y = axis.y;
-      other.x = axis.x;
-      other.z = axis.z;
-      bVar4 = Vector3Ex::Vector3Ex_IsAligned(*pVVar2,other,0,(MethodInfo *)0x0);
-      if (bVar4 != 0) {
+                         ((Vector3 *)auStack_3,pTVar1,(MethodInfo *)0x0);
+      puStack_4 = (undefined *)pVVar2->z;
+      auStack_3._12_4_ = pVVar2->x;
+      fStack_5 = pVVar2->y;
+      bVar6 = Vector3Ex::Vector3Ex_IsAligned(*pVVar2,axis,0,(MethodInfo *)0x0);
+      if (bVar6 != 0) {
         pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                           ((Component *)this,(MethodInfo *)0x0);
+                           ((Component *)camera,(MethodInfo *)0x0);
         if (pTVar1 == (Transform *)0x0) goto code_?;
         pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
-                            (&axis,pTVar1,(MethodInfo *)0x0);
-        uVar5 = pVVar2->x;
-        uVar6 = pVVar2->y;
-        axis.z = pVVar2->z;
-        axis.x = (float)uVar5;
-        axis.y = (float)uVar6;
+                           ((Vector3 *)auStack_3,pTVar1,(MethodInfo *)0x0);
+        auStack_3._12_4_ = pVVar2->x;
+        fStack_5 = pVVar2->y;
+        puStack_4 = (undefined *)pVVar2->z;
       }
-      pPVar7 = (Plane *)(axis.x * axis.z - axis.x * axis.z);
-      fVar8 = axis.x * axis.y - axis.x * axis.y;
-      value.y = (float)pPVar7;
-      value.x = axis.y * axis.z - axis.z * axis.y;
-      value.z = fVar8;
-      axis.z = fVar8;
+      fVar7 = (float)puStack_4 * axis.y;
+      fVar8 = axis.x * (float)puStack_4;
+      puStack_4 = (undefined *)((float)auStack_3._12_4_ * axis.y - axis.x * fStack_5);
+      value.y = fVar8 - (float)auStack_3._12_4_ * axis.z;
+      value.x = fStack_5 * axis.z - fVar7;
+      value.z = (float)puStack_4;
       pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                          ((Vector3 *)&camera,value,(MethodInfo *)0x0);
-      fVar9 = pVVar2->x;
-      fVar10 = pVVar2->y;
-      fVar11 = pVVar2->z;
-      if (cRam_? == '\0') {
-        camera = (Camera *)&TypeInfo__System__Math;
-        axis.z = (float)&UNK_?;
-        func_?();
-        cRam_? = '\x01';
-      }
-      if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-        camera = (Camera *)TypeInfo__System__Math;
-        axis.z = (float)&UNK_?;
-        func_?();
-      }
-      dVar12 = (double)(fVar10 * fVar10 + fVar9 * fVar9 + fVar11 * fVar11);
-      if (dVar12 < 0.0) {
-        camera = (Camera *)&UNK_?;
-        func_?();
-      }
-      else {
-        dVar12 = SQRT(dVar12);
-      }
-      if (_UNK_? <= (float)dVar12) {
-        fVar13 = axis.z * fVar9;
-        fVar14 = axis.z * fVar10 - axis.y * fVar11;
-        axis.z = axis.y * fVar9 - axis.x * fVar10;
-        axis.y = axis.x * fVar11 - fVar13;
-        camera = (Camera *)0x0;
-        value_00.y = axis.y;
-        value_00.x = fVar14;
-        value_00.z = axis.z;
-        axis.x = fVar14;
+                         ((Vector3 *)auStack_3,value,(MethodInfo *)0x0);
+      auStack_3._12_4_ = pVVar2->x;
+      fStack_5 = pVVar2->y;
+      puStack_4 = (undefined *)pVVar2->z;
+      fVar9 = (float10)func_?();
+      if (_UNK_? <= (float)fVar9) {
+        fVar7 = (float)puStack_4 * axis.y;
+        fVar8 = (float)puStack_4 * 0.0;
+        puStack_4 = (undefined *)((float)auStack_3._12_4_ * axis.y - fStack_5 * 0.0);
+        value_00.y = fVar8 - (float)auStack_3._12_4_ * axis.z;
+        value_00.x = fStack_5 * axis.z - fVar7;
+        value_00.z = (float)puStack_4;
         pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                            ((Vector3 *)&stack0x00000034,value_00,(MethodInfo *)0x0);
-        method = (MethodInfo *)&stack0x00000048;
-        camera = (Camera *)&UNK_?;
-        pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                            ((Vector3 *)method,*pVVar2,(MethodInfo *)0x0);
-        uVar15 = pVVar2->x;
-        uVar16 = pVVar2->y;
-        fVar9 = pVVar2->z;
-        fVar10 = (float)((uint)((float)uVar16 * 4.3350363e-29 + fVar8 * (float)uVar15 +
-                              (float)&stack0x00000034 * fVar9) ^
-                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-        (pPVar7->m_Normal).x = (float)uVar15;
-        (pPVar7->m_Normal).y = (float)uVar16;
-        (pPVar7->m_Normal).z = fVar9;
-        pPVar7->m_Distance = fVar10;
-        return pPVar7;
+                           ((Vector3 *)auStack_3,value_00,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                  ((Vector3 *)auStack_3,*pVVar2,(MethodInfo *)0x0);
+        return (Plane *)auStack_3;
       }
-      (pPVar7->m_Normal).x = 0.0;
-      (pPVar7->m_Normal).y = 0.0;
-      (pPVar7->m_Normal).z = 0.0;
-      pPVar7->m_Distance = 0.0;
-      return pPVar7;
+      return (Plane *)auStack_3;
     }
   }
 code_?:
   func_?();
-  pcVar17 = (code *)swi(3);
-  pPVar7 = (Plane *)(*pcVar17)();
-  return pPVar7;
+  pcVar10 = (code *)swi(3);
+  pPVar11 = (Plane *)(*pcVar10)();
+  return pPVar11;
 }
 
 
@@ -315,21 +272,21 @@ Plane * Assembly-CSharp.dll::RTG::PlaneEx::PlaneEx_InvertNormal
                   (Plane *__return_storage_ptr__,Plane plane,MethodInfo *method)
 
 {
-  VStack_1.z = (float)((uint)plane.m_Normal.z ^
+  uVar1 = (uint)plane.m_Normal.x ^
+          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+  uVar2 = (uint)plane.m_Normal.y ^
+          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+  VStack_3.z = (float)((uint)plane.m_Normal.z ^
                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-  uVar2 = (uint)plane.m_Normal.x ^
-          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
-  uVar3 = (uint)plane.m_Normal.y ^
-          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
   (__return_storage_ptr__->m_Normal).x = 0.0;
   (__return_storage_ptr__->m_Normal).y = 0.0;
   (__return_storage_ptr__->m_Normal).z = 0.0;
   __return_storage_ptr__->m_Distance = 0.0;
-  value.y = (float)uVar3;
-  value.x = (float)uVar2;
-  value.z = VStack_1.z;
+  value.y = (float)uVar2;
+  value.x = (float)uVar1;
+  value.z = VStack_3.z;
   pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                     (&VStack_1,value,(MethodInfo *)0x0);
+                     (&VStack_3,value,(MethodInfo *)0x0);
   fVar5 = pVVar4->y;
   fVar6 = pVVar4->z;
   (__return_storage_ptr__->m_Normal).x = pVVar4->x;
@@ -353,8 +310,8 @@ Assembly-CSharp.dll::RTG::PlaneEx::PlaneEx_ProjectAllPoints
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffa0;
-  puVar5 = &stack0xffffffa0;
+  puStack_4 = &stack0xffffff94;
+  puVar5 = &stack0xffffff94;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__Dispose__
@@ -382,19 +339,25 @@ Assembly-CSharp.dll::RTG::PlaneEx::PlaneEx_ProjectAllPoints
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
+  LStack_6._current.FirstAxisSign = 0;
+  LStack_6._current.SecondAxisSign = 0;
+  LStack_6._list = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0;
+  LStack_6._index = 0;
+  LStack_6._version = 0;
+  LStack_6._current.Quadrant = 0;
   if (points != (List_1_UnityEngine_Vector3_ *)0x0) {
-    capacity = (points->fields)._size;
-    if (capacity == 0) {
-      pLVar6 = (List_1_UnityEngine_Vector3_ *)
+    if ((points->fields)._size == 0) {
+      pLVar7 = (List_1_UnityEngine_Vector3_ *)
                 func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector3>);
       mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
       __Il2CppFullySharedGenericType]::
       LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar6,
+                ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar7,
                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List__);
       *unaff_FS_OFFSET = uStack_3;
-      return pLVar6;
+      return pLVar7;
     }
+    capacity = (points->fields)._size;
     this = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
             *)func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector3>);
     mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
@@ -402,29 +365,29 @@ Assembly-CSharp.dll::RTG::PlaneEx::PlaneEx_ProjectAllPoints
     List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
               (this,capacity,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List_int_);
-    pLStack_7 = this;
-    pLVar8 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+    pLStack_8 = this;
+    pLVar9 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
              VisualTreeAsset+UsingEntry]::
              List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__GetEnumerator
-                       (&LStack_9,
+                       (&LStack_10,
                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)points,
                         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__GetEnumerator__
                        );
-    uStack_10 = 0;
-    LStack_11._list = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar8->_list;
-    LStack_11._index = pLVar8->_index;
-    LStack_11._version = pLVar8->_version;
-    LStack_11._current.Quadrant = (int32_t)(pLVar8->_current).alias;
-    LStack_11._current.FirstAxisSign = (int32_t)(pLVar8->_current).path;
-    LStack_11._current.SecondAxisSign = (int32_t)(pLVar8->_current).asset;
+    uStack_11 = 0;
+    LStack_6._list = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar9->_list;
+    LStack_6._index = pLVar9->_index;
+    LStack_6._version = pLVar9->_version;
+    LStack_6._current.Quadrant = (int32_t)(pLVar9->_current).alias;
+    LStack_6._current.FirstAxisSign = (int32_t)(pLVar9->_current).path;
+    LStack_6._current.SecondAxisSign = (int32_t)(pLVar9->_current).asset;
     uStack_1 = 1;
-    pLStack_12 = &LStack_11;
+    pLStack_12 = &LStack_6;
     while( true ) {
       while( true ) {
         bVar13 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[RTG::
                 PlaneIdHelper+PlaneQuadrantInfo]::
                 List_1_T_Enumerator_RTG_PlaneIdHelper_PlaneQuadrantInfo__MoveNext
-                          (&LStack_11,
+                          (&LStack_6,
                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__MoveNext__
                           );
         pMVar14 = 
@@ -433,7 +396,7 @@ Assembly-CSharp.dll::RTG::PlaneEx::PlaneEx_ProjectAllPoints
         if (bVar13 == 0) {
           uStack_1 = 0xffffffff;
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&LStack_11,
+                    ((Object *)&LStack_6,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__Dispose__
                      ,unaff_EDI);
@@ -441,47 +404,47 @@ Assembly-CSharp.dll::RTG::PlaneEx::PlaneEx_ProjectAllPoints
           return (List_1_UnityEngine_Vector3_ *)this;
         }
         fVar15 = plane.m_Distance +
-                 (float)LStack_11._current.FirstAxisSign * plane.m_Normal.y +
-                 (float)LStack_11._current.Quadrant * plane.m_Normal.x +
-                 (float)LStack_11._current.SecondAxisSign * plane.m_Normal.z;
-        LStack_9._current.asset =
-             (VisualTreeAsset *)
-             ((float)LStack_11._current.SecondAxisSign - plane.m_Normal.z * fVar15);
-        LStack_9._current.path =
-             (String *)((float)LStack_11._current.FirstAxisSign - plane.m_Normal.y * fVar15);
-        LStack_9._current.alias =
-             (String *)((float)LStack_11._current.Quadrant - plane.m_Normal.x * fVar15);
+                 plane.m_Normal.y * (float)LStack_6._current.FirstAxisSign +
+                 plane.m_Normal.x * (float)LStack_6._current.Quadrant +
+                 plane.m_Normal.z * (float)LStack_6._current.SecondAxisSign;
+        pVStack_16 = (VisualTreeAsset *)
+                     ((float)LStack_6._current.SecondAxisSign - plane.m_Normal.z * fVar15);
+        pSStack_17 = (String *)((float)LStack_6._current.FirstAxisSign - plane.m_Normal.y * fVar15)
+        ;
+        pSStack_18 = (String *)((float)LStack_6._current.Quadrant - plane.m_Normal.x * fVar15);
         if (this == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
                      *)0x0) goto code_?;
-        piVar16 = &(this->fields)._version;
-        *piVar16 = *piVar16 + 1;
-        pMVar17 = (this->fields)._items;
-        uVar18 = (this->fields)._size;
-        if (pMVar17 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
+        piVar19 = &(this->fields)._version;
+        *piVar19 = *piVar19 + 1;
+        pMVar20 = (this->fields)._items;
+        uVar21 = (this->fields)._size;
+        if (pMVar20 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
         goto code_?;
-        if (uVar18 < pMVar17->max_length) break;
-        item.FirstAxisSign = (int32_t)LStack_9._current.path;
-        item.Quadrant = (int32_t)LStack_9._current.alias;
-        item.SecondAxisSign = (int32_t)LStack_9._current.asset;
+        if (uVar21 < pMVar20->max_length) break;
+        item.FirstAxisSign = (int32_t)pSStack_17;
+        item.Quadrant = (int32_t)pSStack_18;
+        item.SecondAxisSign = (int32_t)pVStack_16;
         mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
         List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__AddWithResize
                   ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,item,
                    pMVar14->klass->rgctx_data[0xe].method);
       }
-      (this->fields)._size = uVar18 + 1;
-      if (pMVar17->max_length <= uVar18) break;
-      *(ulonglong *)(&pMVar17->vector[0].index + uVar18 * 3) =
-           CONCAT44(LStack_9._current.path,LStack_9._current.alias);
-      (&pMVar17->vector[0].actualWidth)[uVar18 * 3] = (float)LStack_9._current.asset;
+      (this->fields)._size = uVar21 + 1;
+      LStack_10._current.alias = pSStack_18;
+      LStack_10._current.path = pSStack_17;
+      LStack_10._current.asset = pVStack_16;
+      if (pMVar20->max_length <= uVar21) break;
+      *(ulonglong *)(&pMVar20->vector[0].index + uVar21 * 3) = CONCAT44(pSStack_17,pSStack_18);
+      (&pMVar20->vector[0].actualWidth)[uVar21 * 3] = (float)pVStack_16;
     }
     func_?();
   }
 code_?:
-  uVar19 = func_?();
-  func_?(uVar19);
-  pcVar20 = (code *)swi(3);
-  pLVar6 = (List_1_UnityEngine_Vector3_ *)(*pcVar20)();
-  return pLVar6;
+  uVar22 = func_?();
+  func_?(uVar22);
+  pcVar23 = (code *)swi(3);
+  pLVar7 = (List_1_UnityEngine_Vector3_ *)(*pcVar23)();
+  return pLVar7;
 }
 
 

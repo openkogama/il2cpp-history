@@ -64,7 +64,7 @@ void Assembly-CSharp.dll::RTG::GizmoQuad2DBorder::GizmoQuad2DBorder_OnQuadShapeC
       uVar3 = (pGVar2->fields)._quadBorderType;
       if (pIVar1->max_length <= uVar3) goto code_?;
       if (pIVar1->vector[uVar3] != (IGizmoQuad2DBorderController *)0x0) {
-        func_?(2,TypeInfo__RTG__IGizmoQuad2DBorderController);
+        func_?(2,TypeInfo__RTG__IGizmoQuad2DBorderController,pIVar1->vector[uVar3]);
         return;
       }
     }
@@ -247,16 +247,14 @@ void Assembly-CSharp.dll::RTG::GizmoQuad2DBorder::GizmoQuad2DBorder__ctor
   (this->fields)._isHoverable = 1;
   pQVar1 = (QuadShape2D *)func_?(TypeInfo__RTG__QuadShape2D);
   QuadShape2D::QuadShape2D__ctor(pQVar1,(MethodInfo *)0x0);
-  ppQVar2 = &(this->fields)._borderQuad;
-  *ppQVar2 = pQVar1;
-  func_?(ppQVar2,pQVar1);
+  (this->fields)._borderQuad = pQVar1;
+  func_?(&(this->fields)._borderQuad,pQVar1);
   method_01 = TypeInfo__RTG__GizmoQuad2DBorderControllerData;
-  pGVar3 = (GizmoQuad2DBorderControllerData *)func_?();
+  pGVar2 = (GizmoQuad2DBorderControllerData *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)pGVar3,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
-  ppGVar4 = &(this->fields)._controllerData;
-  *ppGVar4 = pGVar3;
-  func_?(ppGVar4,pGVar3);
+            ((Object *)pGVar2,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
+  (this->fields)._controllerData = pGVar2;
+  func_?(&(this->fields)._controllerData,pGVar2);
   handle = TypeRef__RTG__GizmoQuad2DBorderType;
   if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__Type);
@@ -272,68 +270,73 @@ code_?:
     func_?();
   }
   else {
-    pGVar5 = (GizmoHandle *)mscorlib.dll::System::Array::Array_get_Length(this_01,(MethodInfo *)0x0)
+    pGVar3 = (GizmoHandle *)mscorlib.dll::System::Array::Array_get_Length(this_01,(MethodInfo *)0x0)
     ;
-    pIVar6 = TypeInfo__RTG__IGizmoQuad2DBorderController;
-    pIVar7 = (IGizmoQuad2DBorderController__Array *)func_?();
+    pIVar4 = TypeInfo__RTG__IGizmoQuad2DBorderController;
+    pIVar5 = (IGizmoQuad2DBorderController__Array *)func_?();
+    (this->fields)._controllers = pIVar5;
     method_00 = (MethodInfo *)&(this->fields)._controllers;
-    *(IGizmoQuad2DBorderController__Array **)method_00 = pIVar7;
     func_?();
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
               ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-    (this->fields)._planeSlider = (GizmoPlaneSlider2D *)pIVar6;
-    func_?(&this->fields,pIVar6);
-    ppGVar8 = &(this->fields)._targetHandle;
-    *ppGVar8 = pGVar5;
-    func_?(ppGVar8,pGVar5);
-    ppQVar2 = &(this->fields)._targetQuad;
-    *ppQVar2 = targetQuad;
-    func_?(ppQVar2,targetQuad);
-    pGVar9 = (this->fields)._targetHandle;
-    if (pGVar9 == (GizmoHandle *)0x0) goto code_?;
-    iVar10 = GizmoHandle::GizmoHandle_Add2DShape
-                       (pGVar9,(Shape2D *)(this->fields)._borderQuad,(MethodInfo *)0x0);
-    (this->fields)._borderQuadIndex = iVar10;
+    (this->fields)._planeSlider = (GizmoPlaneSlider2D *)pIVar4;
+    func_?(&this->fields,pIVar4);
+    (this->fields)._targetHandle = pGVar3;
+    func_?(&(this->fields)._targetHandle,pGVar3);
+    (this->fields)._targetQuad = targetQuad;
+    func_?(&(this->fields)._targetQuad,targetQuad);
+    pGVar6 = (this->fields)._targetHandle;
+    if (pGVar6 == (GizmoHandle *)0x0) goto code_?;
+    iVar7 = GizmoHandle::GizmoHandle_Add2DShape
+                      (pGVar6,(Shape2D *)(this->fields)._borderQuad,(MethodInfo *)0x0);
+    (this->fields)._borderQuadIndex = iVar7;
     pQVar1 = (this->fields)._borderQuad;
     if (pQVar1 == (QuadShape2D *)0x0) goto code_?;
     (pQVar1->fields)._ptContainMode = 1;
-    if (*ppGVar4 == (GizmoQuad2DBorderControllerData *)0x0) goto code_?;
-    ((*ppGVar4)->fields).Border = this;
+    pGVar2 = (this->fields)._controllerData;
+    if (pGVar2 == (GizmoQuad2DBorderControllerData *)0x0) goto code_?;
+    (pGVar2->fields).Border = this;
     func_?();
-    if (*ppGVar4 == (GizmoQuad2DBorderControllerData *)0x0) goto code_?;
-    ((*ppGVar4)->fields).PlaneSlider = (this->fields)._planeSlider;
+    pGVar2 = (this->fields)._controllerData;
+    if (pGVar2 == (GizmoQuad2DBorderControllerData *)0x0) goto code_?;
+    (pGVar2->fields).PlaneSlider = (this->fields)._planeSlider;
     func_?();
-    if (*ppGVar4 == (GizmoQuad2DBorderControllerData *)0x0) goto code_?;
-    ((*ppGVar4)->fields).BorderQuad = (this->fields)._borderQuad;
+    pGVar2 = (this->fields)._controllerData;
+    if (pGVar2 == (GizmoQuad2DBorderControllerData *)0x0) goto code_?;
+    (pGVar2->fields).BorderQuad = (this->fields)._borderQuad;
     func_?();
-    if ((*ppGVar4 == (GizmoQuad2DBorderControllerData *)0x0) ||
-       (((*ppGVar4)->fields).BorderQuadIndex = (this->fields)._borderQuadIndex,
-       pGVar5 == (GizmoHandle *)0x0)) goto code_?;
-    if (*ppGVar4 == (GizmoQuad2DBorderControllerData *)0x0) goto code_?;
-    ((*ppGVar4)->fields).Gizmo = (pGVar5->fields)._gizmo;
+    pGVar2 = (this->fields)._controllerData;
+    if ((pGVar2 == (GizmoQuad2DBorderControllerData *)0x0) ||
+       ((pGVar2->fields).BorderQuadIndex = (this->fields)._borderQuadIndex,
+       pGVar3 == (GizmoHandle *)0x0)) goto code_?;
+    pGVar2 = (this->fields)._controllerData;
+    if (pGVar2 == (GizmoQuad2DBorderControllerData *)0x0) goto code_?;
+    (pGVar2->fields).Gizmo = (pGVar3->fields)._gizmo;
     func_?();
-    if (*ppGVar4 == (GizmoQuad2DBorderControllerData *)0x0) goto code_?;
-    ((*ppGVar4)->fields).TargetHandle = pGVar5;
+    pGVar2 = (this->fields)._controllerData;
+    if (pGVar2 == (GizmoQuad2DBorderControllerData *)0x0) goto code_?;
+    (pGVar2->fields).TargetHandle = pGVar3;
     func_?();
-    if (*ppGVar4 == (GizmoQuad2DBorderControllerData *)0x0) goto code_?;
-    ((*ppGVar4)->fields).TargetQuad = (this->fields)._targetQuad;
+    pGVar2 = (this->fields)._controllerData;
+    if (pGVar2 == (GizmoQuad2DBorderControllerData *)0x0) goto code_?;
+    (pGVar2->fields).TargetQuad = (this->fields)._targetQuad;
     func_?();
-    pIVar7 = (this->fields)._controllers;
-    pGVar3 = *ppGVar4;
+    pIVar5 = (this->fields)._controllers;
+    pGVar2 = (this->fields)._controllerData;
     value = (Il2CppClass *)func_?();
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar7);
-    value->name = (char *)pGVar3;
+              ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar5);
+    value->name = (char *)pGVar2;
     func_?(&value->name);
-    if (pIVar7 == (IGizmoQuad2DBorderController__Array *)0x0) goto code_?;
-    iVar11 = func_?();
-    if (iVar11 != 0) {
-      if ((char *)pIVar7->max_length == (char *)0x0) goto code_?;
-      pIVar7->vector[0] = (IGizmoQuad2DBorderController *)value;
+    if (pIVar5 == (IGizmoQuad2DBorderController__Array *)0x0) goto code_?;
+    iVar8 = func_?();
+    if (iVar8 != 0) {
+      if ((char *)pIVar5->max_length == (char *)0x0) goto code_?;
+      pIVar5->vector[0] = (IGizmoQuad2DBorderController *)value;
       func_?();
-      pGVar9 = (this->fields)._targetHandle;
-      if (pGVar9 != (GizmoHandle *)0x0) {
-        this_00 = (pGVar9->fields)._gizmo;
+      pGVar6 = (this->fields)._targetHandle;
+      if (pGVar6 != (GizmoHandle *)0x0) {
+        this_00 = (pGVar6->fields)._gizmo;
         value_00 = (GizmoPreUpdateBeginHandler *)func_?();
         UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
         VideoCapture+OnVideoCaptureResourceCreatedCallback::
@@ -353,8 +356,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

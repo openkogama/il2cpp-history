@@ -96,13 +96,13 @@ void Assembly-CSharp.dll::LoadingScreenHandler::LoadingScreenHandler_OnGameMessa
     piVar3 = *(int **)(unaff_ESI + 0x14);
     if (piVar3 != (int *)0x0) {
       (**(code **)(*piVar3 + 0x318))(piVar3,TVar2.m_Index);
-      *(int *)(unaff_ESI + 0x1c) = *(int *)(unaff_ESI + 0x1c) + 1;
+      iVar4 = *(int *)(unaff_ESI + 0x1c) + 1;
+      *(int *)(unaff_ESI + 0x1c) = iVar4;
       *(undefined4 *)(unaff_ESI + 0x24) = 0;
       if (*(int *)(unaff_ESI + 0x10) != 0) {
         *(undefined4 *)(unaff_ESI + 0x24) = *(undefined4 *)(*(int *)(unaff_ESI + 0x10) + 0x14);
         *(undefined4 *)(unaff_ESI + 0x2c) = 0;
-        *(float *)(unaff_ESI + 0x28) =
-             (float)*(int *)(unaff_ESI + 0x1c) / (float)*(int *)(unaff_ESI + 0x20);
+        *(float *)(unaff_ESI + 0x28) = (float)iVar4 / (float)*(int *)(unaff_ESI + 0x20);
         return;
       }
     }
@@ -110,8 +110,8 @@ void Assembly-CSharp.dll::LoadingScreenHandler::LoadingScreenHandler_OnGameMessa
   func_?();
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -289,9 +289,8 @@ void Assembly-CSharp.dll::LoadingScreenHandler::LoadingScreenHandler__ctor
               ((Dictionary_2_System_Int32Enum_System_Int32_ *)this_00,2,0xe,
                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::MVGameMode,_int>__Add_MV__Common__MVGameMode__int_
               );
-    ppDVar1 = &(this->fields).eventCountLookup;
-    *ppDVar1 = (Dictionary_2_MV_Common_MVGameMode_System_Int32_ *)this_00;
-    func_?(ppDVar1,this_00);
+    (this->fields).eventCountLookup = (Dictionary_2_MV_Common_MVGameMode_System_Int32_ *)this_00;
+    func_?(&(this->fields).eventCountLookup,this_00);
     (this->fields).currentEventCount = 1;
     (this->fields).eventsCount = 0x11;
     UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
@@ -299,8 +298,8 @@ void Assembly-CSharp.dll::LoadingScreenHandler::LoadingScreenHandler__ctor
     return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

@@ -417,9 +417,8 @@ void Assembly-CSharp.dll::TM::TM_StreamingAssetCallback(UnityWebRequest *www,Met
               pSVar5 = mscorlib.dll::System::String::String_Replace
                                  (pSVar5,0x5f,0x2d,(MethodInfo *)0x0);
               if (pTVar6 != (TM *)0x0) {
-                ppSVar9 = &(pTVar6->fields).cultureName;
-                *ppSVar9 = pSVar5;
-                func_?(ppSVar9,pSVar5);
+                (pTVar6->fields).cultureName = pSVar5;
+                func_?(&(pTVar6->fields).cultureName,pSVar5);
                 TM_SetLanguageLoadingDone((MethodInfo *)0x0);
                 *unaff_FS_OFFSET = uStack_2;
                 return;
@@ -430,10 +429,10 @@ void Assembly-CSharp.dll::TM::TM_StreamingAssetCallback(UnityWebRequest *www,Met
       }
     }
   }
-  uStack_10 = func_?();
-  func_?(&uStack_10,&UNK_?);
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  uStack_9 = func_?();
+  func_?(&uStack_9,&UNK_?);
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -503,16 +502,15 @@ void Assembly-CSharp.dll::TM::TM_TryGetTextAsset(String *fileName,MethodInfo *me
   }
   pTVar1 = TM_get_Instance((MethodInfo *)0x0);
   if (pTVar1 != (TM *)0x0) {
-    ppSVar2 = &(pTVar1->fields).fileName;
-    *ppSVar2 = fileName;
-    func_?(ppSVar2,fileName);
-    pSVar3 = mscorlib.dll::System::String::String_Concat_4
+    (pTVar1->fields).fileName = fileName;
+    func_?(&(pTVar1->fields).fileName,fileName);
+    pSVar2 = mscorlib.dll::System::String::String_Concat_4
                        (StringLiteral_Languages_,fileName,StringLiteral__txt,(MethodInfo *)0x0);
     if ((TypeInfo__MV__Common__Urls->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     str0 = MVCommon.dll::MV::Common::Urls::Urls_get_StreamingAssets((MethodInfo *)0x0);
-    pSVar3 = mscorlib.dll::System::String::String_Concat_3(str0,pSVar3,(MethodInfo *)0x0);
+    pSVar2 = mscorlib.dll::System::String::String_Concat_3(str0,pSVar2,(MethodInfo *)0x0);
     this = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
             *)func_?();
     DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
@@ -523,7 +521,7 @@ void Assembly-CSharp.dll::TM::TM_TryGetTextAsset(String *fileName,MethodInfo *me
                (MethodInfo *)0x0);
     this_00 = (AssetBundleRequest *)func_?(TypeInfo__GetRequest);
     AssetBundleRequest::AssetBundleRequest__ctor
-              (this_00,pSVar3,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this,
+              (this_00,pSVar2,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this,
                WWWRequestPriority__Enum_ExecuteWhileSyncronizing,(MethodInfo *)0x0);
     if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
@@ -532,8 +530,8 @@ void Assembly-CSharp.dll::TM::TM_TryGetTextAsset(String *fileName,MethodInfo *me
     return;
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -627,9 +625,8 @@ void Assembly-CSharp.dll::TM::TM__ctor(TM *this,MethodInfo *method)
   GNU::Gettext::Catalog::Catalog__ctor(this_00,(MethodInfo *)0x0);
   (this->fields).catalog = this_00;
   func_?(&this->fields,this_00);
-  ppSVar1 = &(this->fields).fileName;
-  *ppSVar1 = ::StringLiteral__;
-  func_?(ppSVar1,::StringLiteral__);
+  (this->fields).fileName = ::StringLiteral__;
+  func_?(&(this->fields).fileName,::StringLiteral__);
   this_01 = (List_1_System_Action_ *)
             func_?(TypeInfo__System__Collections__Generic__List<System::Action>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
@@ -637,11 +634,10 @@ void Assembly-CSharp.dll::TM::TM__ctor(TM *this,MethodInfo *method)
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_01,
              MethodInfo__System__Collections__Generic__List<System::Action>__List__);
-  ppLVar2 = &(this->fields).languageChangedCallback;
-  *ppLVar2 = this_01;
-  func_?(ppLVar2,this_01);
+  (this->fields).languageChangedCallback = this_01;
+  func_?(&(this->fields).languageChangedCallback,this_01);
+  (this->fields).cultureName = StringLiteral_en_US;
   method_00 = (MethodInfo *)&(this->fields).cultureName;
-  *(String **)method_00 = StringLiteral_en_US;
   func_?(method_00,StringLiteral_en_US);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
@@ -673,9 +669,8 @@ TM * Assembly-CSharp.dll::TM::TM_get_Instance(MethodInfo *method)
     GNU::Gettext::Catalog::Catalog__ctor(this,(MethodInfo *)0x0);
     (value->fields).catalog = this;
     func_?(&value->fields,this);
-    ppSVar2 = &(value->fields).fileName;
-    *ppSVar2 = ::StringLiteral__;
-    func_?(ppSVar2,::StringLiteral__);
+    (value->fields).fileName = ::StringLiteral__;
+    func_?(&(value->fields).fileName,::StringLiteral__);
     this_00 = (List_1_System_Action_ *)
               func_?(TypeInfo__System__Collections__Generic__List<System::Action>);
     mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
@@ -683,17 +678,16 @@ TM * Assembly-CSharp.dll::TM::TM_get_Instance(MethodInfo *method)
     LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
               ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
                MethodInfo__System__Collections__Generic__List<System::Action>__List__);
-    ppLVar3 = &(value->fields).languageChangedCallback;
-    *ppLVar3 = this_00;
-    func_?(ppLVar3,this_00);
+    (value->fields).languageChangedCallback = this_00;
+    func_?(&(value->fields).languageChangedCallback,this_00);
+    (value->fields).cultureName = StringLiteral_en_US;
     method_00 = (MethodInfo *)&(value->fields).cultureName;
-    *(String **)method_00 = StringLiteral_en_US;
     func_?(method_00,StringLiteral_en_US);
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
               ((Object *)value,ExceptionArgument__Enum_obj,method_00);
     TypeInfo__TM->static_fields->instance = value;
-    pTStack4 = TypeInfo__TM->static_fields;
-    pTStack5 = value;
+    pTStack2 = TypeInfo__TM->static_fields;
+    pTStack3 = value;
     func_?();
     pTVar1 = TypeInfo__TM->static_fields;
   }

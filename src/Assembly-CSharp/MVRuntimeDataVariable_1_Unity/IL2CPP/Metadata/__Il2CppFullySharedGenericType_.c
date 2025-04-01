@@ -56,17 +56,15 @@ void Assembly-CSharp.dll::MVRuntimeDataVariable`1[Unity::IL2CPP::Metadata::
                _Il2CppFullySharedGenericType *value,MethodInfo *method)
 
 {
-  pIVar1 = method->klass->rgctx_data->klass;
+  pMVar1 = method;
+  uVar2 = method->klass->rgctx_data->klass->actualSize;
   func_?();
-  iVar2._0_2_ = (pIVar1->byval_arg).attrs;
-  iVar2._2_1_ = (pIVar1->byval_arg).type;
-  iVar2._3_1_ = (pIVar1->byval_arg).field_0x7;
   p_Var4 = (_Il2CppFullySharedGenericType *)&value;
-  if (iVar2 < 0) {
+  if ((int)pMVar1->klass->rgctx_data->method->return_type < 0) {
     p_Var4 = value;
   }
-  func_?(&stack0xfffffff4,p_Var4,pIVar1->actualSize);
-  value_00 = (Object *)func_?(method->klass->rgctx_data->rgctxDataDummy,&stack0xfffffff4);
+  func_?(&stack0xfffffff0,p_Var4,uVar2);
+  value_00 = (Object *)func_?(pMVar1->klass->rgctx_data->rgctxDataDummy,&stack0xfffffff0);
   if (this != (MVRuntimeDataVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
     MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value
               ((MVRuntimeDataVariable *)this,value_00,(MethodInfo *)0x0);

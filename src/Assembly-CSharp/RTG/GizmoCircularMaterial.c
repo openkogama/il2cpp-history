@@ -71,25 +71,27 @@ void Assembly-CSharp.dll::RTG::GizmoCircularMaterial::GizmoCircularMaterial_SetC
     cRam_? = '\x01';
   }
   pMVar1 = GizmoCircularMaterial_get_Material(this,(MethodInfo *)0x0);
-  if ((camera != (Camera *)0x0) &&
-     (this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                          ((Component *)camera,(MethodInfo *)0x0), this_00 != (Transform *)0x0)) {
-    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
-                       ((Vector3 *)&stack0xffffffe4,this_00,(MethodInfo *)0x0);
-    if (pMVar1 != (Material *)0x0) {
-      value.w = 0.0;
-      value.x = pVVar2->x;
-      value.y = pVVar2->y;
-      value.z = pVVar2->z;
-      UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
-                (pMVar1,StringLiteral__CamLook,value,(MethodInfo *)0x0);
-      pMVar1 = GizmoCircularMaterial_get_Material(this,(MethodInfo *)0x0);
-      bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_orthographic
-                        (camera,(MethodInfo *)0x0);
+  if (camera != (Camera *)0x0) {
+    this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                        ((Component *)camera,(MethodInfo *)0x0);
+    if (this_00 != (Transform *)0x0) {
+      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
+                         ((Vector3 *)&stack0xffffffe4,this_00,(MethodInfo *)0x0);
       if (pMVar1 != (Material *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetInt
-                  (pMVar1,StringLiteral__OrthoCam,(uint)(bVar3 != 0),(MethodInfo *)0x0);
-        return;
+        value.w = 0.0;
+        value.x = pVVar2->x;
+        value.y = pVVar2->y;
+        value.z = pVVar2->z;
+        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
+                  (pMVar1,StringLiteral__CamLook,value,(MethodInfo *)0x0);
+        pMVar1 = GizmoCircularMaterial_get_Material(this,(MethodInfo *)0x0);
+        bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_orthographic
+                          (camera,(MethodInfo *)0x0);
+        if (pMVar1 != (Material *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetInt
+                    (pMVar1,StringLiteral__OrthoCam,(uint)bVar3,(MethodInfo *)0x0);
+          return;
+        }
       }
     }
   }
@@ -395,14 +397,13 @@ void Assembly-CSharp.dll::RTG::GizmoCircularMaterial::GizmoCircularMaterial_SetT
     func_?();
     cRam_? = '\x01';
   }
-  iVar1 = (this->fields)._circularType;
-  if ((iVar1 == 1) || (iVar1 == 2)) {
+  if (((this->fields)._circularType == 1) || ((this->fields)._circularType == 2)) {
     this_00 = GizmoCircularMaterial_get_Material(this,(MethodInfo *)0x0);
     if (this_00 == (Material *)0x0) {
-      uVar2 = func_?(&stack0xfffffff8);
-      func_?(uVar2);
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
+      uVar1 = func_?(&stack0xfffffff8);
+      func_?(uVar1);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
       return;
     }
     UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetFloat
@@ -619,14 +620,13 @@ Assembly-CSharp.dll::RTG::GizmoCircularMaterial::GizmoCircularMaterial_get_Circl
     func_?(&TypeInfo__RTG__Singleton<RTG::MaterialPool>);
     cRam_? = '\x01';
   }
-  ppMVar1 = &(this->fields)._circleMaterial;
-  pMVar2 = *ppMVar1;
+  pMVar1 = (this->fields)._circleMaterial;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)pMVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar3 != 0) {
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)pMVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar2 != 0) {
     if ((TypeInfo__RTG__Singleton<RTG::MaterialPool>->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__RTG__Singleton<RTG::MaterialPool>);
     }
@@ -635,15 +635,15 @@ Assembly-CSharp.dll::RTG::GizmoCircularMaterial::GizmoCircularMaterial_get_Circl
                         (MethodInfo__RTG__Singleton<RTG::MaterialPool>__get_Get__);
     if (this_00 == (MaterialPool *)0x0) {
       func_?();
-      pcVar4 = (code *)swi(3);
-      pMVar2 = (Material *)(*pcVar4)();
-      return pMVar2;
+      pcVar3 = (code *)swi(3);
+      pMVar1 = (Material *)(*pcVar3)();
+      return pMVar1;
     }
-    pMVar2 = MaterialPool::MaterialPool_get_CircleCull(this_00,(MethodInfo *)0x0);
-    *ppMVar1 = pMVar2;
-    func_?(ppMVar1);
+    pMVar1 = MaterialPool::MaterialPool_get_CircleCull(this_00,(MethodInfo *)0x0);
+    (this->fields)._circleMaterial = pMVar1;
+    func_?(&(this->fields)._circleMaterial);
   }
-  return *ppMVar1;
+  return (this->fields)._circleMaterial;
 }
 
 
@@ -660,14 +660,13 @@ Assembly-CSharp.dll::RTG::GizmoCircularMaterial::GizmoCircularMaterial_get_Cylin
     func_?(&TypeInfo__RTG__Singleton<RTG::MaterialPool>);
     cRam_? = '\x01';
   }
-  ppMVar1 = &(this->fields)._cylindricalTorusMaterial;
-  pMVar2 = *ppMVar1;
+  pMVar1 = (this->fields)._cylindricalTorusMaterial;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)pMVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar3 != 0) {
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)pMVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar2 != 0) {
     if ((TypeInfo__RTG__Singleton<RTG::MaterialPool>->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__RTG__Singleton<RTG::MaterialPool>);
     }
@@ -676,15 +675,15 @@ Assembly-CSharp.dll::RTG::GizmoCircularMaterial::GizmoCircularMaterial_get_Cylin
                         (MethodInfo__RTG__Singleton<RTG::MaterialPool>__get_Get__);
     if (this_00 == (MaterialPool *)0x0) {
       func_?();
-      pcVar4 = (code *)swi(3);
-      pMVar2 = (Material *)(*pcVar4)();
-      return pMVar2;
+      pcVar3 = (code *)swi(3);
+      pMVar1 = (Material *)(*pcVar3)();
+      return pMVar1;
     }
-    pMVar2 = MaterialPool::MaterialPool_get_CylindricalTorusCull(this_00,(MethodInfo *)0x0);
-    *ppMVar1 = pMVar2;
-    func_?(ppMVar1);
+    pMVar1 = MaterialPool::MaterialPool_get_CylindricalTorusCull(this_00,(MethodInfo *)0x0);
+    (this->fields)._cylindricalTorusMaterial = pMVar1;
+    func_?(&(this->fields)._cylindricalTorusMaterial);
   }
-  return *ppMVar1;
+  return (this->fields)._cylindricalTorusMaterial;
 }
 
 
@@ -743,99 +742,91 @@ Assembly-CSharp.dll::RTG::GizmoCircularMaterial::GizmoCircularMaterial_get_Mater
           (GizmoCircularMaterial *this,MethodInfo *method)
 
 {
-  iVar1 = (this->fields)._circularType;
-  if (iVar1 == 0) {
+  if ((this->fields)._circularType == 0) {
     if (cRam_? == '\0') {
       func_?(&TypeInfo__UnityEngine__Object);
       func_?(&MethodInfo__RTG__Singleton<RTG::MaterialPool>__get_Get__);
       func_?(&TypeInfo__RTG__Singleton<RTG::MaterialPool>);
       cRam_? = '\x01';
     }
-    ppMVar2 = &(this->fields)._circleMaterial;
-    pMVar3 = *ppMVar2;
+    pMVar1 = (this->fields)._circleMaterial;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                      ((Object_1 *)pMVar3,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar4 != 0) {
+    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                      ((Object_1 *)pMVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar2 != 0) {
       if ((TypeInfo__RTG__Singleton<RTG::MaterialPool>->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__RTG__Singleton<RTG::MaterialPool>);
       }
-      pMVar5 = (MaterialPool *)
+      pMVar3 = (MaterialPool *)
                Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
                          (MethodInfo__RTG__Singleton<RTG::MaterialPool>__get_Get__);
-      if (pMVar5 != (MaterialPool *)0x0) {
-        pMVar3 = MaterialPool::MaterialPool_get_CircleCull(pMVar5,(MethodInfo *)0x0);
-        *ppMVar2 = pMVar3;
-        func_?(ppMVar2);
-        return *ppMVar2;
+      if (pMVar3 == (MaterialPool *)0x0) goto code_?;
+      pMVar1 = MaterialPool::MaterialPool_get_CircleCull(pMVar3,(MethodInfo *)0x0);
+      (this->fields)._circleMaterial = pMVar1;
+      func_?(&(this->fields)._circleMaterial);
+    }
+    return (this->fields)._circleMaterial;
+  }
+  if ((this->fields)._circularType != 1) {
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__UnityEngine__Object);
+      func_?(&MethodInfo__RTG__Singleton<RTG::MaterialPool>__get_Get__);
+      func_?(&TypeInfo__RTG__Singleton<RTG::MaterialPool>);
+      cRam_? = '\x01';
+    }
+    pMVar1 = (this->fields)._cylindricalTorusMaterial;
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Object);
+    }
+    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                      ((Object_1 *)pMVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar2 != 0) {
+      if ((TypeInfo__RTG__Singleton<RTG::MaterialPool>->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__RTG__Singleton<RTG::MaterialPool>);
       }
+      pMVar3 = (MaterialPool *)
+               Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
+                         (MethodInfo__RTG__Singleton<RTG::MaterialPool>__get_Get__);
+      if (pMVar3 == (MaterialPool *)0x0) {
 code_?:
-      func_?();
-      pcVar6 = (code *)swi(3);
-      pMVar3 = (Material *)(*pcVar6)();
-      return pMVar3;
-    }
-  }
-  else if (iVar1 == 1) {
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Object);
-      func_?(&MethodInfo__RTG__Singleton<RTG::MaterialPool>__get_Get__);
-      func_?(&TypeInfo__RTG__Singleton<RTG::MaterialPool>);
-      cRam_? = '\x01';
-    }
-    ppMVar2 = &(this->fields)._torusMaterial;
-    pMVar3 = *ppMVar2;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                      ((Object_1 *)pMVar3,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar4 != 0) {
-      if ((TypeInfo__RTG__Singleton<RTG::MaterialPool>->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__RTG__Singleton<RTG::MaterialPool>);
+        func_?();
+        pcVar4 = (code *)swi(3);
+        pMVar1 = (Material *)(*pcVar4)();
+        return pMVar1;
       }
-      pMVar5 = (MaterialPool *)
-               Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
-                         (MethodInfo__RTG__Singleton<RTG::MaterialPool>__get_Get__);
-      if (pMVar5 != (MaterialPool *)0x0) {
-        pMVar3 = MaterialPool::MaterialPool_get_TorusCull(pMVar5,(MethodInfo *)0x0);
-        *ppMVar2 = pMVar3;
-        func_?(ppMVar2);
-        return *ppMVar2;
-      }
-      goto code_?;
+      pMVar1 = MaterialPool::MaterialPool_get_CylindricalTorusCull(pMVar3,(MethodInfo *)0x0);
+      (this->fields)._cylindricalTorusMaterial = pMVar1;
+      func_?(&(this->fields)._cylindricalTorusMaterial);
     }
+    return (this->fields)._cylindricalTorusMaterial;
   }
-  else {
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Object);
-      func_?(&MethodInfo__RTG__Singleton<RTG::MaterialPool>__get_Get__);
-      func_?(&TypeInfo__RTG__Singleton<RTG::MaterialPool>);
-      cRam_? = '\x01';
-    }
-    ppMVar2 = &(this->fields)._cylindricalTorusMaterial;
-    pMVar3 = *ppMVar2;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                      ((Object_1 *)pMVar3,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar4 != 0) {
-      if ((TypeInfo__RTG__Singleton<RTG::MaterialPool>->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__RTG__Singleton<RTG::MaterialPool>);
-      }
-      pMVar5 = (MaterialPool *)
-               Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
-                         (MethodInfo__RTG__Singleton<RTG::MaterialPool>__get_Get__);
-      if (pMVar5 == (MaterialPool *)0x0) goto code_?;
-      pMVar3 = MaterialPool::MaterialPool_get_CylindricalTorusCull(pMVar5,(MethodInfo *)0x0);
-      *ppMVar2 = pMVar3;
-      func_?(ppMVar2);
-    }
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&MethodInfo__RTG__Singleton<RTG::MaterialPool>__get_Get__);
+    func_?(&TypeInfo__RTG__Singleton<RTG::MaterialPool>);
+    cRam_? = '\x01';
   }
-  return *ppMVar2;
+  pMVar1 = (this->fields)._torusMaterial;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Object);
+  }
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)pMVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar2 != 0) {
+    if ((TypeInfo__RTG__Singleton<RTG::MaterialPool>->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__RTG__Singleton<RTG::MaterialPool>);
+    }
+    pMVar3 = (MaterialPool *)
+             Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
+                       (MethodInfo__RTG__Singleton<RTG::MaterialPool>__get_Get__);
+    if (pMVar3 == (MaterialPool *)0x0) goto code_?;
+    pMVar1 = MaterialPool::MaterialPool_get_TorusCull(pMVar3,(MethodInfo *)0x0);
+    (this->fields)._torusMaterial = pMVar1;
+    func_?(&(this->fields)._torusMaterial);
+  }
+  return (this->fields)._torusMaterial;
 }
 
 
@@ -852,14 +843,13 @@ Assembly-CSharp.dll::RTG::GizmoCircularMaterial::GizmoCircularMaterial_get_Torus
     func_?(&TypeInfo__RTG__Singleton<RTG::MaterialPool>);
     cRam_? = '\x01';
   }
-  ppMVar1 = &(this->fields)._torusMaterial;
-  pMVar2 = *ppMVar1;
+  pMVar1 = (this->fields)._torusMaterial;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)pMVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar3 != 0) {
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)pMVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar2 != 0) {
     if ((TypeInfo__RTG__Singleton<RTG::MaterialPool>->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__RTG__Singleton<RTG::MaterialPool>);
     }
@@ -868,14 +858,14 @@ Assembly-CSharp.dll::RTG::GizmoCircularMaterial::GizmoCircularMaterial_get_Torus
                         (MethodInfo__RTG__Singleton<RTG::MaterialPool>__get_Get__);
     if (this_00 == (MaterialPool *)0x0) {
       func_?();
-      pcVar4 = (code *)swi(3);
-      pMVar2 = (Material *)(*pcVar4)();
-      return pMVar2;
+      pcVar3 = (code *)swi(3);
+      pMVar1 = (Material *)(*pcVar3)();
+      return pMVar1;
     }
-    pMVar2 = MaterialPool::MaterialPool_get_TorusCull(this_00,(MethodInfo *)0x0);
-    *ppMVar1 = pMVar2;
-    func_?(ppMVar1);
+    pMVar1 = MaterialPool::MaterialPool_get_TorusCull(this_00,(MethodInfo *)0x0);
+    (this->fields)._torusMaterial = pMVar1;
+    func_?(&(this->fields)._torusMaterial);
   }
-  return *ppMVar1;
+  return (this->fields)._torusMaterial;
 }
 

@@ -106,7 +106,8 @@ void Assembly-CSharp.dll::RTG::TerrainGizmoVerticalOffsetDragEndAction::
         bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                           (x,(Object_1 *)0x0,(MethodInfo *)0x0);
       } while (bVar2 == 0);
-      if (*(GameObject **)((int)RVar5 + 8) == (GameObject *)0x0) break;
+      if ((RVar5 == (RegexCharClass_SingleRange)0x0) ||
+         (*(GameObject **)((int)RVar5 + 8) == (GameObject *)0x0)) break;
       this_02 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                           (*(GameObject **)((int)RVar5 + 8),(MethodInfo *)0x0);
       if (this_02 == (Transform *)0x0) break;
@@ -200,7 +201,8 @@ void Assembly-CSharp.dll::RTG::TerrainGizmoVerticalOffsetDragEndAction::
         bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                           (x,(Object_1 *)0x0,(MethodInfo *)0x0);
       } while (bVar2 == 0);
-      if (*(GameObject **)((int)RVar5 + 8) == (GameObject *)0x0) break;
+      if ((RVar5 == (RegexCharClass_SingleRange)0x0) ||
+         (*(GameObject **)((int)RVar5 + 8) == (GameObject *)0x0)) break;
       this_02 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                           (*(GameObject **)((int)RVar5 + 8),(MethodInfo *)0x0);
       if (this_02 == (Transform *)0x0) break;
@@ -237,26 +239,23 @@ void Assembly-CSharp.dll::RTG::TerrainGizmoVerticalOffsetDragEndAction::
   }
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-  ppTVar1 = &(this->fields)._terrain;
-  *ppTVar1 = terrain;
-  func_?(ppTVar1,terrain);
+  (this->fields)._terrain = terrain;
+  func_?(&(this->fields)._terrain,terrain);
   if (preChangeHeights != (Single__Array_1 *)0x0) {
-    pOVar2 = UnityEngine.CoreModule.dll::UnityEngine::Playables::PlayableBehaviour::
+    pOVar1 = UnityEngine.CoreModule.dll::UnityEngine::Playables::PlayableBehaviour::
              PlayableBehaviour_Clone((PlayableBehaviour *)preChangeHeights,(MethodInfo *)0x0);
-    ppSVar3 = &(this->fields)._preChangeHeights;
-    pSVar4 = (Single__Array_1 *)func_?(pOVar2,TypeInfo__System__Single);
-    *ppSVar3 = pSVar4;
-    uVar5 = func_?(pOVar2,TypeInfo__System__Single);
-    func_?(ppSVar3,uVar5);
+    pSVar2 = (Single__Array_1 *)func_?(pOVar1,TypeInfo__System__Single);
+    (this->fields)._preChangeHeights = pSVar2;
+    uVar3 = func_?(pOVar1,TypeInfo__System__Single);
+    func_?(&(this->fields)._preChangeHeights,uVar3);
   }
   if (postChangeHeights != (Single__Array_1 *)0x0) {
-    pOVar2 = UnityEngine.CoreModule.dll::UnityEngine::Playables::PlayableBehaviour::
+    pOVar1 = UnityEngine.CoreModule.dll::UnityEngine::Playables::PlayableBehaviour::
              PlayableBehaviour_Clone((PlayableBehaviour *)postChangeHeights,(MethodInfo *)0x0);
-    ppSVar3 = &(this->fields)._postChangeHeights;
-    pSVar4 = (Single__Array_1 *)func_?(pOVar2,TypeInfo__System__Single);
-    *ppSVar3 = pSVar4;
-    uVar5 = func_?(pOVar2,TypeInfo__System__Single);
-    func_?(ppSVar3,uVar5);
+    pSVar2 = (Single__Array_1 *)func_?(pOVar1,TypeInfo__System__Single);
+    (this->fields)._postChangeHeights = pSVar2;
+    uVar3 = func_?(pOVar1,TypeInfo__System__Single);
+    func_?(&(this->fields)._postChangeHeights,uVar3);
   }
   this_00 = (List_1_RTG_TerrainGizmoAffectedObject_ *)
             func_?(

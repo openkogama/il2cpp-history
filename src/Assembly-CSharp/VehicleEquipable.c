@@ -116,35 +116,36 @@ void Assembly-CSharp.dll::VehicleEquipable::VehicleEquipable_Holster
   }
   pVVar1 = this;
   pMVar2 = (this->fields).currentItem;
-  if (pMVar2 == (MVRuntimeDataVariable *)0x0) {
-code_?:
-    func_?();
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
+  if (pMVar2 != (MVRuntimeDataVariable *)0x0) {
+    this_00 = (Dictionary_2_System_Object_System_Object_ *)
+              MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value(pMVar2,(MethodInfo *)0x0);
+    if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+      if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+           naturalAligment <= (this_00->klass->_1).naturalAligment) &&
+         ((Dictionary_2_System_Object_System_Object___Class *)
+          (this_00->klass->_1).typeHierarchy
+          [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+           naturalAligment - 1] ==
+          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
+        this = (VehicleEquipable *)0x1;
+        value = (Object *)func_?(TypeInfo__System__Int32,&this);
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object__set_Item
+                  (this_00,(Object *)StringLiteral_updateItemState,value,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                  );
+        pMVar2 = (pVVar1->fields).currentItem;
+        if (pMVar2 == (MVRuntimeDataVariable *)0x0) goto code_?;
+        MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value
+                  (pMVar2,(Object *)this_00,(MethodInfo *)0x0);
+      }
+    }
     return;
   }
-  this_00 = (Dictionary_2_System_Object_System_Object_ *)
-            MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value(pMVar2,(MethodInfo *)0x0);
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    bVar4 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1)
-            .naturalAligment;
-    if ((bVar4 <= (this_00->klass->_1).naturalAligment) &&
-       ((Dictionary_2_System_Object_System_Object___Class *)
-        (this_00->klass->_1).typeHierarchy[bVar4 - 1] ==
-        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
-      this = (VehicleEquipable *)0x1;
-      value = (Object *)func_?(TypeInfo__System__Int32,&this);
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__set_Item
-                (this_00,(Object *)StringLiteral_updateItemState,value,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                );
-      pMVar2 = (pVVar1->fields).currentItem;
-      if (pMVar2 == (MVRuntimeDataVariable *)0x0) goto code_?;
-      MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value
-                (pMVar2,(Object *)this_00,(MethodInfo *)0x0);
-    }
-  }
+code_?:
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -206,35 +207,36 @@ void Assembly-CSharp.dll::VehicleEquipable::VehicleEquipable_Unholster
   }
   pVVar1 = this;
   pMVar2 = (this->fields).currentItem;
-  if (pMVar2 == (MVRuntimeDataVariable *)0x0) {
-code_?:
-    func_?();
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
+  if (pMVar2 != (MVRuntimeDataVariable *)0x0) {
+    this_00 = (Dictionary_2_System_Object_System_Object_ *)
+              MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value(pMVar2,(MethodInfo *)0x0);
+    if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+      if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+           naturalAligment <= (this_00->klass->_1).naturalAligment) &&
+         ((Dictionary_2_System_Object_System_Object___Class *)
+          (this_00->klass->_1).typeHierarchy
+          [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+           naturalAligment - 1] ==
+          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
+        this = (VehicleEquipable *)0x2;
+        value = (Object *)func_?(TypeInfo__System__Int32,&this);
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object__set_Item
+                  (this_00,(Object *)StringLiteral_updateItemState,value,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                  );
+        pMVar2 = (pVVar1->fields).currentItem;
+        if (pMVar2 == (MVRuntimeDataVariable *)0x0) goto code_?;
+        MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value
+                  (pMVar2,(Object *)this_00,(MethodInfo *)0x0);
+      }
+    }
     return;
   }
-  this_00 = (Dictionary_2_System_Object_System_Object_ *)
-            MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value(pMVar2,(MethodInfo *)0x0);
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    bVar4 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1)
-            .naturalAligment;
-    if ((bVar4 <= (this_00->klass->_1).naturalAligment) &&
-       ((Dictionary_2_System_Object_System_Object___Class *)
-        (this_00->klass->_1).typeHierarchy[bVar4 - 1] ==
-        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
-      this = (VehicleEquipable *)0x2;
-      value = (Object *)func_?(TypeInfo__System__Int32,&this);
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__set_Item
-                (this_00,(Object *)StringLiteral_updateItemState,value,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                );
-      pMVar2 = (pVVar1->fields).currentItem;
-      if (pMVar2 == (MVRuntimeDataVariable *)0x0) goto code_?;
-      MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value
-                (pMVar2,(Object *)this_00,(MethodInfo *)0x0);
-    }
-  }
+code_?:
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

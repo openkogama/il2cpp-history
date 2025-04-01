@@ -64,7 +64,7 @@ void Assembly-CSharp.dll::AvatarPackages::AvatarPackages__cctor(MethodInfo *meth
               *)this_00,
              MethodInfo__System__Collections__Generic__Dictionary<int,_float>__Dictionary__);
   method_20 = (MethodInfo *)(pOVar1 + 1);
-  method_20->methodPointer = (Il2CppMethodPointer)this_00;
+  pOVar1[1].klass = this_00;
   func_?(method_20,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (pOVar1,ExceptionArgument__Enum_obj,method_20);

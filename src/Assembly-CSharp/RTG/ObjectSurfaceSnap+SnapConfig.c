@@ -6,9 +6,8 @@ bool Assembly-CSharp.dll::RTG::ObjectSurfaceSnap+SnapConfig::
                (ObjectSurfaceSnap_SnapConfig *this,MethodInfo *method)
 
 {
-  iVar1 = this->SurfaceType;
-  if ((iVar1 != 1) && (iVar1 != 3)) {
-    return iVar1 == 2;
+  if ((this->SurfaceType != 1) && (this->SurfaceType != 3)) {
+    return this->SurfaceType == 2;
   }
   return 1;
 }

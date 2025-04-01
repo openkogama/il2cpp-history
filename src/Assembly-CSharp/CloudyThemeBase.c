@@ -684,15 +684,15 @@ void Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase_InitializeComponents
           func_?(&TypeInfo__ThemeTimers__Timer);
           cRam_? = '\x01';
         }
-        fVar1 = *(float *)(in_stack_2 + 0x10);
-        fVar3 = *(float *)(in_stack_2 + 0x14);
-        if (fVar3 <= fVar1) {
-          fVar3 = fVar3 + (_UNK_? - fVar1);
+        fVar1 = *(float *)(in_stack_2 + 0x14);
+        fVar3 = *(float *)(in_stack_2 + 0x10);
+        if (fVar1 <= fVar3) {
+          fVar1 = fVar1 + (_UNK_? - fVar3);
         }
         else {
-          fVar3 = fVar3 - fVar1;
+          fVar1 = fVar1 - fVar3;
         }
-        *(float *)(in_stack_2 + 0x48) = fVar3;
+        *(float *)(in_stack_2 + 0x48) = fVar1;
         fVar1 = *(float *)(in_stack_2 + 0x18) * _UNK_?;
         dVar4 = (double)fVar1;
         func_?();
@@ -727,8 +727,8 @@ void Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase_InitializeComponents
           pDVar7 = DayNightCycleColorPresets::DayNightCycleColorPresets_get_Item
                              (*(DayNightCycleColorPresets **)(in_stack_2 + 0x44),0,
                               (MethodInfo *)0x0);
-          *(undefined4 *)(in_stack_2 + 0x7c) = pDVar7;
-          func_?((undefined4 *)(in_stack_2 + 0x7c),pDVar7);
+          *(DayNightCycleColorPresets_Preset **)(in_stack_2 + 0x7c) = pDVar7;
+          func_?(in_stack_2 + 0x7c,pDVar7);
         }
         if (*(char *)(in_stack_2 + 0x68) == '\0') {
           fVar1 = *(float *)(in_stack_2 + 0x6c);
@@ -745,8 +745,8 @@ void Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase_InitializeComponents
                     ((UxmlObjectListAttributeDescription_1_System_Object_ *)this_01,
                      (MethodInfo *)0x0);
         }
-        *(undefined4 *)(in_stack_2 + 0x70) = this_01;
-        func_?((undefined4 *)(in_stack_2 + 0x70),this_01);
+        *(Timer_1 **)(in_stack_2 + 0x70) = this_01;
+        func_?(in_stack_2 + 0x70,this_01);
         *(undefined1 *)(in_stack_2 + 0x78) = 1;
         return;
       }
@@ -776,15 +776,14 @@ void Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase_ThemeReset
       cycleLength = (pDVar1->fields).cycleLength;
       this_00 = (Timer_1 *)func_?(TypeInfo__ThemeTimers__Timer);
       ThemeTimers::Timer::Timer_1__ctor(this_00,initialTime,cycleLength,(MethodInfo *)0x0);
-      ppIVar2 = &(pDVar1->fields).timer;
-      *ppIVar2 = (ITimer *)this_00;
-      func_?(ppIVar2,this_00);
+      (pDVar1->fields).timer = (ITimer *)this_00;
+      func_?(&(pDVar1->fields).timer,this_00);
     }
     return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -819,7 +818,7 @@ void Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase_ToggleDayNightCycle
       uStack5 = 0xffffffff;
       method = (MethodInfo *)&DAT_?;
       _b = *unaff_FS_OFFSET;
-      *unaff_FS_OFFSET = (int)&b;
+      *unaff_FS_OFFSET = &b;
       if (cRam_? == '\0') {
         func_?(&
                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__Dispose__
@@ -845,11 +844,12 @@ void Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase_ToggleDayNightCycle
                        );
         cRam_? = '\x01';
       }
+      pOStack_6 = (Object__Class *)0x0;
       this_01 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
                  *)func_?(
                                   TypeInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>
                                   );
-      pLVar6 = this_01;
+      pLVar7 = this_01;
       mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
       MultiColumnCollectionHeader+ViewState+ColumnState]::
       List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
@@ -859,7 +859,7 @@ void Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase_ToggleDayNightCycle
       if (*(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)
            (in_stack_4 + 0xc) !=
           (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-        pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+        pLVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                  ::RegexCharClass+SingleRange]::
                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                            ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
@@ -868,32 +868,32 @@ void Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase_ToggleDayNightCycle
                              (in_stack_4 + 0xc),
                             MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__GetEnumerator__
                            );
-        RVar8 = pLVar7->_current;
+        RVar9 = pLVar8->_current;
         uStack5 = 1;
         while( true ) {
-          bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+          bVar10 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
                   List_1_T_Enumerator_System_Object__MoveNext
-                            ((List_1_T_Enumerator_System_Object_ *)&pOStack_10,
+                            ((List_1_T_Enumerator_System_Object_ *)&pOStack_6,
                              MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__MoveNext__
                             );
-          if (bVar9 == 0) break;
-          if (RVar8 == (RegexCharClass_SingleRange)0x0) goto code_?;
-          uVar11 = *(uint *)((int)RVar8 + 0xc);
-          this_01 = pLVar6;
-          if ((uVar11 & in_stack_3) == uVar11 &&
+          if (bVar10 == 0) break;
+          if (RVar9 == (RegexCharClass_SingleRange)0x0) goto code_?;
+          uVar11 = *(uint *)((int)RVar9 + 0xc);
+          this_01 = pLVar7;
+          if ((uVar11 & in_stack_3) == *(uint *)((int)RVar9 + 0xc) &&
               (*(uint *)(in_stack_4 + 0x10) & uVar11) != uVar11) {
-            if (pLVar6 == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+            if (pLVar7 == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
                            *)0x0) goto code_?;
             mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
             List_1_System_Object__Add
-                      ((List_1_System_Object_ *)pLVar6,(Object *)RVar8,
+                      ((List_1_System_Object_ *)pLVar7,(Object *)RVar9,
                        MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__Add_ThemeAttributes__ThemeAttribute_
                       );
           }
         }
         uStack5 = 0xffffffff;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&pOStack_10,
+                  ((Object *)&pOStack_6,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__Dispose__
                    ,(MethodInfo *)method_00.genericMethod);
@@ -902,7 +902,7 @@ void Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase_ToggleDayNightCycle
         if (this_01 !=
             (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
              *)0x0) {
-          pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+          pLVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                    RegularExpressions::RegexCharClass+SingleRange]::
                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                              ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
@@ -911,32 +911,32 @@ void Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase_ToggleDayNightCycle
                               this_01,
                               MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__GetEnumerator__
                              );
-          pOStack_10 = (Object__Class *)pLVar7->_list;
-          RVar8 = pLVar7->_current;
+          pOStack_6 = (Object__Class *)pLVar8->_list;
+          RVar9 = pLVar8->_current;
           uStack5 = 4;
           while( true ) {
-            bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]
+            bVar10 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]
                     ::List_1_T_Enumerator_System_Object__MoveNext
-                              ((List_1_T_Enumerator_System_Object_ *)&pOStack_10,
+                              ((List_1_T_Enumerator_System_Object_ *)&pOStack_6,
                                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__MoveNext__
                               );
-            if (bVar9 == 0) {
+            if (bVar10 == 0) {
               uStack5 = 0xffffffff;
               mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                        ((Object *)&pOStack_10,
+                        ((Object *)&pOStack_6,
                          (ExceptionArgument__Enum)
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__Dispose__
                          ,(MethodInfo *)&stack0xffffffc8);
               uStack5 = 0xffffffff;
               if (*(int *)(in_stack_4 + 0x14) != 0) {
-                _b = *(int *)(in_stack_4 + 0x14);
+                _b = *(undefined4 *)(in_stack_4 + 0x14);
                 func_?();
               }
               *unaff_FS_OFFSET = _b;
               return;
             }
-            if (RVar8 == (RegexCharClass_SingleRange)0x0) break;
-            (**(code **)(*(int *)RVar8 + 0xf0))();
+            if (RVar9 == (RegexCharClass_SingleRange)0x0) break;
+            (**(code **)(*(int *)RVar9 + 0xf0))();
           }
         }
       }
@@ -963,6 +963,7 @@ void Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase_ToggleDayNightCycleUs
                (CloudyThemeBase *this,bool b,MethodInfo *method)
 
 {
+  bVar1 = b;
   this_00 = (this->fields).dayNightCycle;
   if (this_00 != (DayNightCycle *)0x0) {
     if (cRam_? == '\0') {
@@ -975,19 +976,18 @@ void Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase_ToggleDayNightCycleUs
     if (b == 0) {
       initialTime = (this_00->fields).cycleStartTime;
       cycleLength = (this_00->fields).cycleLength;
-      this_01 = (Timer_1 *)func_?(TypeInfo__ThemeTimers__Timer);
-      ThemeTimers::Timer::Timer_1__ctor(this_01,initialTime,cycleLength,(MethodInfo *)0x0);
+      _b = (Timer_1 *)func_?(TypeInfo__ThemeTimers__Timer);
+      ThemeTimers::Timer::Timer_1__ctor(_b,initialTime,cycleLength,(MethodInfo *)0x0);
     }
     else {
-      this_01 = (Timer_1 *)func_?(TypeInfo__ThemeTimers__SystemTimer);
+      _b = (Timer_1 *)func_?(TypeInfo__ThemeTimers__SystemTimer);
       UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
       UxmlObjectListAttributeDescription`1[System::Object]::
       UxmlObjectListAttributeDescription_1_System_Object___ctor
-                ((UxmlObjectListAttributeDescription_1_System_Object_ *)this_01,(MethodInfo *)0x0);
+                ((UxmlObjectListAttributeDescription_1_System_Object_ *)_b,(MethodInfo *)0x0);
     }
-    ppIVar1 = &(this_00->fields).timer;
-    *ppIVar1 = (ITimer *)this_01;
-    func_?(ppIVar1,this_01);
+    (this_00->fields).timer = (ITimer *)_b;
+    func_?(&(this_00->fields).timer,_b);
     if ((this_00->fields).initialized != 0) {
       pIVar2 = (this_00->fields).timer;
       if (pIVar2 == (ITimer *)0x0) goto code_?;
@@ -995,7 +995,7 @@ void Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase_ToggleDayNightCycleUs
       DayNightCycle::DayNightCycle_Update_1(this_00,(float)fVar3,(MethodInfo *)0x0);
     }
     pSVar4 = (this->fields)._._Settings_k__BackingField;
-    if (b == 0) {
+    if (bVar1 == 0) {
       if (pSVar4 != (SettingsWrapper *)0x0) {
         ThemeSettings::SettingsWrapper::SettingsWrapper_DisableAttributeGroups
                   (pSVar4,4,(MethodInfo *)0x0);
@@ -1087,11 +1087,12 @@ void Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase_ToggleFog
         cRam_? = '\x01';
         method_00 = pMVar8;
       }
+      pOStack_9 = (Object__Class *)0x0;
       this_00 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
                  *)func_?(
                                   TypeInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>
                                   );
-      pLVar9 = this_00;
+      pLVar10 = this_00;
       mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
       MultiColumnCollectionHeader+ViewState+ColumnState]::
       List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
@@ -1101,7 +1102,7 @@ void Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase_ToggleFog
       if (*(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)
            (in_stack_7 + 0xc) !=
           (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-        pLVar10 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+        pLVar11 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                  ::RegexCharClass+SingleRange]::
                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                            ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
@@ -1110,33 +1111,33 @@ void Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase_ToggleFog
                              (in_stack_7 + 0xc),
                             MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__GetEnumerator__
                            );
-        RVar11 = pLVar10->_current;
+        RVar12 = pLVar11->_current;
         method = (MethodInfo *)0x1;
         while( true ) {
           bVar1 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
                   List_1_T_Enumerator_System_Object__MoveNext
-                            ((List_1_T_Enumerator_System_Object_ *)&pOStack_12,
+                            ((List_1_T_Enumerator_System_Object_ *)&pOStack_9,
                              MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__MoveNext__
                             );
           if (bVar1 == 0) break;
-          if (RVar11 == (RegexCharClass_SingleRange)0x0) goto code_?;
-          uVar13 = *(uint *)((int)RVar11 + 0xc);
-          this_00 = pLVar9;
-          if ((uVar13 & in_stack_6) == uVar13 &&
+          if (RVar12 == (RegexCharClass_SingleRange)0x0) goto code_?;
+          uVar13 = *(uint *)((int)RVar12 + 0xc);
+          this_00 = pLVar10;
+          if ((uVar13 & in_stack_6) == *(uint *)((int)RVar12 + 0xc) &&
               (*(uint *)(in_stack_7 + 0x10) & uVar13) != uVar13) {
-            if (pLVar9 ==
+            if (pLVar10 ==
                 (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
                  *)0x0) goto code_?;
             mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
             List_1_System_Object__Add
-                      ((List_1_System_Object_ *)pLVar9,(Object *)RVar11,
+                      ((List_1_System_Object_ *)pLVar10,(Object *)RVar12,
                        MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__Add_ThemeAttributes__ThemeAttribute_
                       );
           }
         }
         method = (MethodInfo *)0xffffffff;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&pOStack_12,
+                  ((Object *)&pOStack_9,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__Dispose__
                    ,(MethodInfo *)in_stack_14.genericMethod);
@@ -1145,7 +1146,7 @@ void Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase_ToggleFog
         if (this_00 !=
             (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
              *)0x0) {
-          pLVar10 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+          pLVar11 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                    RegularExpressions::RegexCharClass+SingleRange]::
                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                              ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
@@ -1154,32 +1155,32 @@ void Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase_ToggleFog
                               this_00,
                               MethodInfo__System__Collections__Generic__List<ThemeAttributes::ThemeAttribute>__GetEnumerator__
                              );
-          pOStack_12 = (Object__Class *)pLVar10->_list;
-          RVar11 = pLVar10->_current;
+          pOStack_9 = (Object__Class *)pLVar11->_list;
+          RVar12 = pLVar11->_current;
           method = (MethodInfo *)0x4;
           while( true ) {
             bVar1 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]
                     ::List_1_T_Enumerator_System_Object__MoveNext
-                              ((List_1_T_Enumerator_System_Object_ *)&pOStack_12,
+                              ((List_1_T_Enumerator_System_Object_ *)&pOStack_9,
                                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__MoveNext__
                               );
             if (bVar1 == 0) {
               method = (MethodInfo *)0xffffffff;
               mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                        ((Object *)&pOStack_12,
+                        ((Object *)&pOStack_9,
                          (ExceptionArgument__Enum)
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeAttributes::ThemeAttribute>__Dispose__
                          ,method_00);
               method = (MethodInfo *)0xffffffff;
-              if (*(CloudyThemeBase **)(in_stack_7 + 0x14) != (CloudyThemeBase *)0x0) {
+              if (*(int *)(in_stack_7 + 0x14) != 0) {
                 this = *(CloudyThemeBase **)(in_stack_7 + 0x14);
                 func_?();
               }
               *unaff_FS_OFFSET = this;
               return;
             }
-            if (RVar11 == (RegexCharClass_SingleRange)0x0) break;
-            (**(code **)(*(int *)RVar11 + 0xf0))();
+            if (RVar12 == (RegexCharClass_SingleRange)0x0) break;
+            (**(code **)(*(int *)RVar12 + 0xf0))();
           }
         }
       }
@@ -1215,22 +1216,21 @@ void Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase__InitializeAttributes
     if (this_01 != (DayNightCycleColorPresets *)0x0) {
       pDVar1 = DayNightCycleColorPresets::DayNightCycleColorPresets_get_Item
                          (this_01,i,(MethodInfo *)0x0);
-      ppDVar2 = &(this_00->fields).activeColorPreset;
-      *ppDVar2 = pDVar1;
-      func_?(ppDVar2,pDVar1);
+      (this_00->fields).activeColorPreset = pDVar1;
+      func_?(&(this_00->fields).activeColorPreset,pDVar1);
       if ((this_00->fields).initialized != 0) {
-        pIVar3 = (this_00->fields).timer;
-        if (pIVar3 == (ITimer *)0x0) goto code_?;
-        fVar4 = (float10)func_?(0,TypeInfo__ThemeTimers__ITimer,pIVar3);
-        DayNightCycle::DayNightCycle_Update_1(this_00,(float)fVar4,(MethodInfo *)0x0);
+        pIVar2 = (this_00->fields).timer;
+        if (pIVar2 == (ITimer *)0x0) goto code_?;
+        fVar3 = (float10)func_?(0,TypeInfo__ThemeTimers__ITimer,pIVar2);
+        DayNightCycle::DayNightCycle_Update_1(this_00,(float)fVar3,(MethodInfo *)0x0);
       }
       return;
     }
   }
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -1254,11 +1254,11 @@ void Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase__InitializeAttributes
       cycleLength = (this_00->fields).cycleLength;
       this_01 = (Timer_1 *)func_?(TypeInfo__ThemeTimers__Timer);
       ThemeTimers::Timer::Timer_1__ctor(this_01,(float)fVar1,cycleLength,(MethodInfo *)0x0);
-      ppIVar2 = &(this_00->fields).timer;
-      *ppIVar2 = (ITimer *)this_01;
-      func_?(ppIVar2,this_01);
-      if (*ppIVar2 == (ITimer *)0x0) goto code_?;
-      fVar1 = (float10)func_?(0,TypeInfo__ThemeTimers__ITimer,*ppIVar2);
+      (this_00->fields).timer = (ITimer *)this_01;
+      func_?(&(this_00->fields).timer,this_01);
+      pIVar2 = (this_00->fields).timer;
+      if (pIVar2 == (ITimer *)0x0) goto code_?;
+      fVar1 = (float10)func_?(0,TypeInfo__ThemeTimers__ITimer,pIVar2);
       DayNightCycle::DayNightCycle_Update_1(this_00,(float)fVar1,(MethodInfo *)0x0);
     }
     return;
@@ -1669,24 +1669,24 @@ void Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase__InitializeAttributes
       return;
     }
     pIVar1 = (this_00->fields).timer;
-    ppIVar2 = &(this_00->fields).timer;
     if (pIVar1 != (ITimer *)0x0) {
-      fVar3 = (float10)func_?(0,TypeInfo__ThemeTimers__ITimer,pIVar1);
+      fVar2 = (float10)func_?(0,TypeInfo__ThemeTimers__ITimer,pIVar1);
       cycleLength = (this_00->fields).cycleLength;
       this_01 = (Timer_1 *)func_?(TypeInfo__ThemeTimers__Timer);
-      ThemeTimers::Timer::Timer_1__ctor(this_01,(float)fVar3,cycleLength,(MethodInfo *)0x0);
-      *ppIVar2 = (ITimer *)this_01;
-      func_?(ppIVar2,this_01);
-      if (*ppIVar2 != (ITimer *)0x0) {
-        fVar3 = (float10)func_?(0,TypeInfo__ThemeTimers__ITimer,*ppIVar2);
-        DayNightCycle::DayNightCycle_Update_1(this_00,(float)fVar3,(MethodInfo *)0x0);
+      ThemeTimers::Timer::Timer_1__ctor(this_01,(float)fVar2,cycleLength,(MethodInfo *)0x0);
+      (this_00->fields).timer = (ITimer *)this_01;
+      func_?(&(this_00->fields).timer,this_01);
+      pIVar1 = (this_00->fields).timer;
+      if (pIVar1 != (ITimer *)0x0) {
+        fVar2 = (float10)func_?(0,TypeInfo__ThemeTimers__ITimer,pIVar1);
+        DayNightCycle::DayNightCycle_Update_1(this_00,(float)fVar2,(MethodInfo *)0x0);
         return;
       }
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -1872,17 +1872,17 @@ void Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase__InitializeAttributes
 {
   pTVar1 = (this->fields).skybox;
   if (pTVar1 != (ThemeSkybox *)0x0) {
-    (pTVar1->fields)._moonFlareBrightness = f;
     pFVar2 = (pTVar1->fields)._moon;
+    (pTVar1->fields)._moonFlareBrightness = f;
     if (pFVar2 != (FlareLight *)0x0) {
-      this_00 = (pFVar2->fields).lensFlare;
-      this_01 = (pFVar2->fields).light;
-      if (this_01 != (Light *)0x0) {
+      this_00 = (pFVar2->fields).light;
+      this_01 = (pFVar2->fields).lensFlare;
+      if (this_00 != (Light *)0x0) {
         fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Light::Light_get_intensity
-                          (this_01,(MethodInfo *)0x0);
-        if (this_00 != (LensFlare *)0x0) {
+                          (this_00,(MethodInfo *)0x0);
+        if (this_01 != (LensFlare *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::LensFlare::LensFlare_set_brightness
-                    (this_00,fVar3 * f,(MethodInfo *)0x0);
+                    (this_01,fVar3 * f,(MethodInfo *)0x0);
           return;
         }
       }
@@ -2253,9 +2253,8 @@ void Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase__ctor
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<ThemeComponent>__List__);
-  ppLVar1 = &(this->fields)._.components;
-  *ppLVar1 = this_00;
-  func_?(ppLVar1,this_00);
+  (this->fields)._.components = this_00;
+  func_?(&(this->fields)._.components,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
@@ -2316,21 +2315,21 @@ Assembly-CSharp.dll::CloudyThemeBase::CloudyThemeBase_get_Controllers
       if (this_03 != (Component *)0x0) {
         pCVar2 = (Component__Class *)(this->fields).dayNightCycle;
         this_03[3].klass = pCVar2;
-        func_?(this_03 + 3,pCVar2);
+        func_?(this_03 + 3);
         this_00 = (Toggle *)this_03[1].monitor;
         if ((this_00 != (Toggle *)0x0) && (pCVar2 != (Component__Class *)0x0)) {
-          bVar3 = *(undefined1 *)((int)&(pCVar2->_1).cctor_thread + 1);
-          if ((this_00->fields).m_IsOn == bVar3) {
+          if ((this_00->fields).m_IsOn == *(undefined1 *)((int)&(pCVar2->_1).cctor_thread + 1)) {
             UnityEngine.UI.dll::UnityEngine::UI::Toggle::Toggle_set_isOn
-                      (this_00,bVar3 == 0,(MethodInfo *)0x0);
+                      (this_00,*(undefined1 *)((int)&(pCVar2->_1).cctor_thread + 1) == '\0',
+                       (MethodInfo *)0x0);
 code_?:
-            pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+            pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                                (this_03,(MethodInfo *)0x0);
             if (this_02 !=
                 (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
                  *)0x0) {
               item = (Transform *)0x0;
-              if (pTVar4 == (Transform *)0x0) {
+              if (pTVar3 == (Transform *)0x0) {
 code_?:
                 mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
                 List_1_System_Object__Add
@@ -2339,10 +2338,9 @@ code_?:
                           );
                 return (List_1_UnityEngine_RectTransform_ *)this_02;
               }
-              if (pTVar4->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {
-                item = pTVar4;
+              if (pTVar3->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {
+                item = pTVar3;
               }
-              pRVar5 = TypeInfo__UnityEngine__RectTransform;
               if (item != (Transform *)0x0) goto code_?;
               goto code_?;
             }
@@ -2350,15 +2348,14 @@ code_?:
           else {
             this_01 = this_03[1].fields._.m_CachedPtr;
             if (this_01 != (Behaviour *)0x0) {
-              bVar3 = (this_00->fields).m_IsOn;
-              value = bVar3 == 0;
+              value = (this_00->fields).m_IsOn;
               UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                        (this_01,value,(MethodInfo *)0x0);
+                        (this_01,value == 0,(MethodInfo *)0x0);
               if (this_03[2].klass != (Component__Class *)0x0) {
                 UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                          ((Behaviour *)this_03[2].klass,bVar3,(MethodInfo *)0x0);
+                          ((Behaviour *)this_03[2].klass,value,(MethodInfo *)0x0);
                 if (this_03[3].klass != (Component__Class *)0x0) {
-                  *(undefined1 *)((int)&((this_03[3].klass)->_1).cctor_thread + 1) = value;
+                  *(bool *)((int)&((this_03[3].klass)->_1).cctor_thread + 1) = value == 0;
                   goto code_?;
                 }
               }
@@ -2369,12 +2366,11 @@ code_?:
     }
   }
   func_?();
-  pTVar4 = extraout_ECX;
-  pRVar5 = extraout_EDX;
+  pTVar3 = extraout_ECX;
 code_?:
-  func_?(pTVar4,pRVar5);
-  pcVar6 = (code *)swi(3);
-  pLVar7 = (List_1_UnityEngine_RectTransform_ *)(*pcVar6)();
-  return pLVar7;
+  func_?(pTVar3);
+  pcVar4 = (code *)swi(3);
+  pLVar5 = (List_1_UnityEngine_RectTransform_ *)(*pcVar4)();
+  return pLVar5;
 }
 

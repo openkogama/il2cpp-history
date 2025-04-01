@@ -56,18 +56,18 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_CloseNotifica
   if (pAVar1 != (AnimationCurve *)0x0) {
     fVar2 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
                       (pAVar1,stateProgress,(MethodInfo *)0x0);
-    fVar3 = (this->fields).backgroundOriginalWidth;
     pAVar1 = (this->fields).closeShrinkYEffectCurve;
+    fVar3 = (this->fields).backgroundOriginalWidth;
     fVar4 = (this->fields).backgroundOriginalWidth;
     if (pAVar1 != (AnimationCurve *)0x0) {
       fVar5 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
                         (pAVar1,stateProgress,(MethodInfo *)0x0);
       this_00 = (this->fields).backGround;
       if (this_00 != (RectTransform *)0x0) {
-        value.y = ((this->fields).backgroundOriginalHeigt * fVar5 -
-                  (this->fields).backgroundOriginalHeigt) +
-                  (this->fields).backgroundOriginalSizeDelta.y;
-        value.x = (fVar3 * fVar2 - fVar4) + (this->fields).backgroundOriginalSizeDelta.x;
+        value.y = (this->fields).backgroundOriginalSizeDelta.y +
+                  (fVar5 * (this->fields).backgroundOriginalHeigt -
+                  (this->fields).backgroundOriginalHeigt);
+        value.x = (this->fields).backgroundOriginalSizeDelta.x + (fVar2 * fVar3 - fVar4);
         UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_sizeDelta
                   (this_00,value,(MethodInfo *)0x0);
         return;
@@ -121,7 +121,7 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_HandleClosing
       UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
                 (this_01,value,(MethodInfo *)0x0);
       XPBoostNotification_CloseNotification_1(this,0.0,(MethodInfo *)0x0);
-      if (_UNK_? < 3.9325413e-29) {
+      if (_UNK_? < 3.943466e-29) {
         XPBoostNotification_CloseNotification(this,(MethodInfo *)0x0);
       }
       return;
@@ -163,14 +163,12 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_HandleStartSt
   this_01 = (this->fields).backgroundCanvasGroup;
   if (this_00 != (AnimationCurve *)0x0) {
     value = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                      (this_00,_UNK_? - currentStateTime,
-                       (MethodInfo *)(_UNK_? - currentStateTime));
+                      (this_00,_UNK_? - currentStateTime,(MethodInfo *)0x0);
     if (this_01 != (CanvasGroup *)0x0) {
-      stateProgress = &UNK_?;
       UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
                 (this_01,value,(MethodInfo *)0x0);
-      XPBoostNotification_CloseNotification_1(this,(float)stateProgress,(MethodInfo *)0x0);
-      if (_UNK_? < (float)this) {
+      XPBoostNotification_CloseNotification_1(this,_UNK_? - 0.0,(MethodInfo *)0x0);
+      if (_UNK_? < 3.9435504e-29) {
         XPBoostNotification_StartNextState(this,(MethodInfo *)0x0);
       }
       return;
@@ -190,29 +188,23 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_HandleState
 
 {
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  fVar1 = fVar1 - (this->fields).stateStartTime;
+  stateProgress = (int *)(fVar1 - (this->fields).stateStartTime);
   switch((this->fields).currentState) {
   case 0:
   case 5:
     break;
   case 1:
     pGVar2 = (this->fields).content;
-    if (pGVar2 == (GameObject *)0x0) {
-code_?:
-      func_?();
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
-    }
-    bVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                      (pGVar2,(MethodInfo *)0x0);
-    if (bVar4 != 0) {
-      pGVar2 = (this->fields).content;
-      if (pGVar2 == (GameObject *)0x0) goto code_?;
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar2,0,(MethodInfo *)0x0);
-    }
-    if (_UNK_? < fVar1) {
+    if (pGVar2 != (GameObject *)0x0) {
+      bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+                        (pGVar2,(MethodInfo *)0x0);
+      if (bVar3 != 0) {
+        pGVar2 = (this->fields).content;
+        if (pGVar2 == (GameObject *)0x0) goto code_?;
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                  (pGVar2,0,(MethodInfo *)0x0);
+      }
+      if ((float)stateProgress <= _UNK_?) break;
       (this->fields).currentState = 2;
       fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
       pGVar2 = (this->fields).content;
@@ -220,51 +212,77 @@ code_?:
       if (pGVar2 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                   (pGVar2,1,(MethodInfo *)0x0);
-        (*(code *)(this->klass->vtable).Update.method)();
+        (*(code *)(this->klass->vtable).Update.method)(this);
         return;
       }
+    }
+    goto code_?;
+  case 2:
+    XPBoostNotification_UpdateBoostTextEffect
+              (this,(float)stateProgress - _UNK_?,(MethodInfo *)0x0);
+    pAVar4 = (this->fields).fadeOutCurve;
+    pCVar5 = (this->fields).backgroundCanvasGroup;
+    if ((pAVar4 != (AnimationCurve *)0x0) &&
+       (fVar1 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
+                          (pAVar4,_UNK_? - (float)stateProgress,(MethodInfo *)0x0),
+       pCVar5 != (CanvasGroup *)0x0)) {
+      UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
+                (pCVar5,fVar1,(MethodInfo *)0x0);
+      XPBoostNotification_CloseNotification_1(this,_UNK_? - fVar1,(MethodInfo *)0x0);
+      bVar6 = fVar1 == _UNK_?;
+      bVar7 = fVar1 < _UNK_?;
       goto code_?;
     }
-    break;
-  case 2:
-    XPBoostNotification_UpdateBoostTextEffect(this,fVar1 - _UNK_?,(MethodInfo *)0x0);
-    pAVar5 = (this->fields).fadeOutCurve;
-    pCVar6 = (this->fields).backgroundCanvasGroup;
-    if (pAVar5 == (AnimationCurve *)0x0) goto code_?;
-    fVar1 = _UNK_? - fVar1;
-    value = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                      (pAVar5,fVar1,(MethodInfo *)0x0);
-    if (pCVar6 == (CanvasGroup *)0x0) goto code_?;
-    UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-              (pCVar6,value,(MethodInfo *)0x0);
-    XPBoostNotification_CloseNotification_1(this,fVar1,(MethodInfo *)0x0);
-    bVar7 = _UNK_? == 3.9327336e-29;
-    bVar8 = 3.9327336e-29 < _UNK_?;
-    goto code_?;
+code_?:
+    func_?();
+    if ((GameObject *)stateProgress[0xc] == (GameObject *)0x0) {
+code_?:
+      func_?();
+      pcVar8 = (code *)swi(3);
+      (*pcVar8)();
+      return;
+    }
+    bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+                      ((GameObject *)stateProgress[0xc],(MethodInfo *)0x0);
+    if (bVar3 != 0) {
+      if ((GameObject *)stateProgress[0xc] == (GameObject *)0x0) goto code_?;
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                ((GameObject *)stateProgress[0xc],0,(MethodInfo *)0x0);
+    }
+    if (_UNK_? < (float)method) {
+      *(undefined1 *)(stateProgress + 0x16) = 2;
+      fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+      stateProgress[0x13] = (int)fVar1;
+      if ((GameObject *)stateProgress[0xc] == (GameObject *)0x0) goto code_?;
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                ((GameObject *)stateProgress[0xc],1,(MethodInfo *)0x0);
+      (**(code **)(*stateProgress + 0xf0))();
+    }
+    return;
   case 3:
     if (0 < (this->fields).currentMemberBeingHighlighted) {
-      XPBoostNotification_UpdateBoostTextEffect(this,fVar1,(MethodInfo *)0x0);
-      XPBoostNotification_SwapMemberName(this,fVar1,(MethodInfo *)0x0);
+      XPBoostNotification_UpdateBoostTextEffect(this,(float)stateProgress,(MethodInfo *)0x0);
+      XPBoostNotification_SwapMemberName(this,(float)stateProgress,(MethodInfo *)0x0);
     }
-    bVar7 = fVar1 == _UNK_?;
-    bVar8 = fVar1 < _UNK_?;
+    bVar6 = (float)stateProgress == _UNK_?;
+    bVar7 = (float)stateProgress < _UNK_?;
 code_?:
-    if (!bVar8 && !bVar7) {
+    if (!bVar7 && !bVar6) {
       XPBoostNotification_StartNextState(this,(MethodInfo *)0x0);
     }
     break;
   case 4:
-    XPBoostNotification_UpdateBoostTextEffect(this,fVar1,(MethodInfo *)0x0);
-    pAVar5 = (this->fields).fadeOutCurve;
-    pCVar6 = (this->fields).backgroundCanvasGroup;
-    if ((pAVar5 == (AnimationCurve *)0x0) ||
+    XPBoostNotification_UpdateBoostTextEffect(this,(float)stateProgress,(MethodInfo *)0x0);
+    pAVar4 = (this->fields).fadeOutCurve;
+    pCVar5 = (this->fields).backgroundCanvasGroup;
+    if ((pAVar4 == (AnimationCurve *)0x0) ||
        (fVar1 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                          (pAVar5,fVar1,(MethodInfo *)0x0), pCVar6 == (CanvasGroup *)0x0))
-    goto code_?;
+                          (pAVar4,(float)stateProgress,(MethodInfo *)0x0),
+       pCVar5 == (CanvasGroup *)0x0)) goto code_?;
     UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-              (pCVar6,fVar1,(MethodInfo *)0x0);
-    XPBoostNotification_CloseNotification_1(this,0.0,(MethodInfo *)0x0);
-    if (_UNK_? < 3.9327908e-29) {
+              (pCVar5,fVar1,(MethodInfo *)0x0);
+    XPBoostNotification_CloseNotification_1(this,fVar1,(MethodInfo *)0x0);
+    if (_UNK_? < fVar1) {
       XPBoostNotification_CloseNotification(this,(MethodInfo *)0x0);
       return;
     }
@@ -650,35 +668,34 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_StartNewMembe
     func_?(&MethodInfo__System__Collections__Generic__List<MVPlayer>__get_Item_int_);
     cRam_? = '\x01';
   }
-  piVar1 = &(this->fields).currentMemberBeingHighlighted;
-  *piVar1 = *piVar1 + 1;
-  index = (this->fields).currentMemberBeingHighlighted;
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
             (this->fields).memberList;
+  index = (this->fields).currentMemberBeingHighlighted + 1;
+  (this->fields).currentMemberBeingHighlighted = index;
   if ((index & 1) == 0) {
-    pTVar2 = (this->fields).UserNameText1;
+    pTVar1 = (this->fields).UserNameText1;
   }
   else {
-    pTVar2 = (this->fields).UserNameText2;
+    pTVar1 = (this->fields).UserNameText2;
   }
   if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
             RegexCharClass+SingleRange]::
             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                       (this_00,index,
                        MethodInfo__System__Collections__Generic__List<MVPlayer>__get_Item_int_);
-    if (((RVar3 != (RegexCharClass_SingleRange)0x0) && (*(int *)((int)RVar3 + 0x3c) != 0)) &&
-       (pTVar2 != (Text *)0x0)) {
-      (*(code *)(pTVar2->klass->vtable).set_text.method)
-                (pTVar2,*(undefined4 *)(*(int *)((int)RVar3 + 0x3c) + 0xc),
-                 (pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+    if (((RVar2 != (RegexCharClass_SingleRange)0x0) && (*(int *)((int)RVar2 + 0x3c) != 0)) &&
+       (pTVar1 != (Text *)0x0)) {
+      (*(code *)(pTVar1->klass->vtable).set_text.method)
+                (pTVar1,*(undefined4 *)(*(int *)((int)RVar2 + 0x3c) + 0xc),
+                 (pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
       XPBoostNotification_UpdateBoostAmount(this,(MethodInfo *)0x0);
       return;
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -709,35 +726,34 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_StartNextStat
       func_?(&MethodInfo__System__Collections__Generic__List<MVPlayer>__get_Item_int_);
       cRam_? = '\x01';
     }
-    piVar4 = &(this->fields).currentMemberBeingHighlighted;
-    *piVar4 = *piVar4 + 1;
-    index = (this->fields).currentMemberBeingHighlighted;
     this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
               (this->fields).memberList;
+    index = (this->fields).currentMemberBeingHighlighted + 1;
+    (this->fields).currentMemberBeingHighlighted = index;
     if ((index & 1) == 0) {
-      pTVar5 = (this->fields).UserNameText1;
+      pTVar4 = (this->fields).UserNameText1;
     }
     else {
-      pTVar5 = (this->fields).UserNameText2;
+      pTVar4 = (this->fields).UserNameText2;
     }
     if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-      RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+      RVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
               RegexCharClass+SingleRange]::
               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                         (this_00,index,
                          MethodInfo__System__Collections__Generic__List<MVPlayer>__get_Item_int_);
-      if (((RVar6 != (RegexCharClass_SingleRange)0x0) && (*(int *)((int)RVar6 + 0x3c) != 0)) &&
-         (pTVar5 != (Text *)0x0)) {
-        (*(code *)(pTVar5->klass->vtable).set_text.method)
-                  (pTVar5,*(undefined4 *)(*(int *)((int)RVar6 + 0x3c) + 0xc));
+      if (((RVar5 != (RegexCharClass_SingleRange)0x0) && (*(int *)((int)RVar5 + 0x3c) != 0)) &&
+         (pTVar4 != (Text *)0x0)) {
+        (*(code *)(pTVar4->klass->vtable).set_text.method)
+                  (pTVar4,*(undefined4 *)(*(int *)((int)RVar5 + 0x3c) + 0xc));
         XPBoostNotification_UpdateBoostAmount(this,(MethodInfo *)0x0);
         return;
       }
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -843,29 +859,23 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_Update
 
 {
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  fVar1 = fVar1 - (this->fields).stateStartTime;
+  stateProgress = (int *)(fVar1 - (this->fields).stateStartTime);
   switch((this->fields).currentState) {
   case 0:
   case 5:
     break;
   case 1:
     pGVar2 = (this->fields).content;
-    if (pGVar2 == (GameObject *)0x0) {
-code_?:
-      func_?();
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
-    }
-    bVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                      (pGVar2,(MethodInfo *)0x0);
-    if (bVar4 != 0) {
-      pGVar2 = (this->fields).content;
-      if (pGVar2 == (GameObject *)0x0) goto code_?;
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar2,0,(MethodInfo *)0x0);
-    }
-    if (_UNK_? < fVar1) {
+    if (pGVar2 != (GameObject *)0x0) {
+      bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+                        (pGVar2,(MethodInfo *)0x0);
+      if (bVar3 != 0) {
+        pGVar2 = (this->fields).content;
+        if (pGVar2 == (GameObject *)0x0) goto code_?;
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                  (pGVar2,0,(MethodInfo *)0x0);
+      }
+      if ((float)stateProgress <= _UNK_?) break;
       (this->fields).currentState = 2;
       fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
       pGVar2 = (this->fields).content;
@@ -873,51 +883,77 @@ code_?:
       if (pGVar2 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                   (pGVar2,1,(MethodInfo *)0x0);
-        (*(code *)(this->klass->vtable).Update.method)();
+        (*(code *)(this->klass->vtable).Update.method)(this);
         return;
       }
+    }
+    goto code_?;
+  case 2:
+    XPBoostNotification_UpdateBoostTextEffect
+              (this,(float)stateProgress - _UNK_?,(MethodInfo *)0x0);
+    pAVar4 = (this->fields).fadeOutCurve;
+    pCVar5 = (this->fields).backgroundCanvasGroup;
+    if ((pAVar4 != (AnimationCurve *)0x0) &&
+       (fVar1 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
+                          (pAVar4,_UNK_? - (float)stateProgress,(MethodInfo *)0x0),
+       pCVar5 != (CanvasGroup *)0x0)) {
+      UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
+                (pCVar5,fVar1,(MethodInfo *)0x0);
+      XPBoostNotification_CloseNotification_1(this,_UNK_? - fVar1,(MethodInfo *)0x0);
+      bVar6 = fVar1 == _UNK_?;
+      bVar7 = fVar1 < _UNK_?;
       goto code_?;
     }
-    break;
-  case 2:
-    XPBoostNotification_UpdateBoostTextEffect(this,fVar1 - _UNK_?,(MethodInfo *)0x0);
-    pAVar5 = (this->fields).fadeOutCurve;
-    pCVar6 = (this->fields).backgroundCanvasGroup;
-    if (pAVar5 == (AnimationCurve *)0x0) goto code_?;
-    fVar1 = _UNK_? - fVar1;
-    value = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                      (pAVar5,fVar1,(MethodInfo *)0x0);
-    if (pCVar6 == (CanvasGroup *)0x0) goto code_?;
-    UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-              (pCVar6,value,(MethodInfo *)0x0);
-    XPBoostNotification_CloseNotification_1(this,fVar1,(MethodInfo *)0x0);
-    bVar7 = _UNK_? == 3.9327336e-29;
-    bVar8 = 3.9327336e-29 < _UNK_?;
-    goto code_?;
+code_?:
+    func_?();
+    if ((GameObject *)stateProgress[0xc] == (GameObject *)0x0) {
+code_?:
+      func_?();
+      pcVar8 = (code *)swi(3);
+      (*pcVar8)();
+      return;
+    }
+    bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+                      ((GameObject *)stateProgress[0xc],(MethodInfo *)0x0);
+    if (bVar3 != 0) {
+      if ((GameObject *)stateProgress[0xc] == (GameObject *)0x0) goto code_?;
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                ((GameObject *)stateProgress[0xc],0,(MethodInfo *)0x0);
+    }
+    if (_UNK_? < 0.0) {
+      *(undefined1 *)(stateProgress + 0x16) = 2;
+      fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+      stateProgress[0x13] = (int)fVar1;
+      if ((GameObject *)stateProgress[0xc] == (GameObject *)0x0) goto code_?;
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                ((GameObject *)stateProgress[0xc],1,(MethodInfo *)0x0);
+      (**(code **)(*stateProgress + 0xf0))();
+    }
+    return;
   case 3:
     if (0 < (this->fields).currentMemberBeingHighlighted) {
-      XPBoostNotification_UpdateBoostTextEffect(this,fVar1,(MethodInfo *)0x0);
-      XPBoostNotification_SwapMemberName(this,fVar1,(MethodInfo *)0x0);
+      XPBoostNotification_UpdateBoostTextEffect(this,(float)stateProgress,(MethodInfo *)0x0);
+      XPBoostNotification_SwapMemberName(this,(float)stateProgress,(MethodInfo *)0x0);
     }
-    bVar7 = fVar1 == _UNK_?;
-    bVar8 = fVar1 < _UNK_?;
+    bVar6 = (float)stateProgress == _UNK_?;
+    bVar7 = (float)stateProgress < _UNK_?;
 code_?:
-    if (!bVar8 && !bVar7) {
+    if (!bVar7 && !bVar6) {
       XPBoostNotification_StartNextState(this,(MethodInfo *)0x0);
     }
     break;
   case 4:
-    XPBoostNotification_UpdateBoostTextEffect(this,fVar1,(MethodInfo *)0x0);
-    pAVar5 = (this->fields).fadeOutCurve;
-    pCVar6 = (this->fields).backgroundCanvasGroup;
-    if ((pAVar5 == (AnimationCurve *)0x0) ||
+    XPBoostNotification_UpdateBoostTextEffect(this,(float)stateProgress,(MethodInfo *)0x0);
+    pAVar4 = (this->fields).fadeOutCurve;
+    pCVar5 = (this->fields).backgroundCanvasGroup;
+    if ((pAVar4 == (AnimationCurve *)0x0) ||
        (fVar1 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                          (pAVar5,fVar1,(MethodInfo *)0x0), pCVar6 == (CanvasGroup *)0x0))
-    goto code_?;
+                          (pAVar4,(float)stateProgress,(MethodInfo *)0x0),
+       pCVar5 == (CanvasGroup *)0x0)) goto code_?;
     UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-              (pCVar6,fVar1,(MethodInfo *)0x0);
-    XPBoostNotification_CloseNotification_1(this,0.0,(MethodInfo *)0x0);
-    if (_UNK_? < 3.9327908e-29) {
+              (pCVar5,fVar1,(MethodInfo *)0x0);
+    XPBoostNotification_CloseNotification_1(this,fVar1,(MethodInfo *)0x0);
+    if (_UNK_? < fVar1) {
       XPBoostNotification_CloseNotification(this,(MethodInfo *)0x0);
       return;
     }
@@ -1042,9 +1078,8 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification__ctor
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<MVPlayer>__List__);
-  ppLVar1 = &(this->fields).memberList;
-  *ppLVar1 = this_00;
-  func_?(ppLVar1,this_00);
+  (this->fields).memberList = this_00;
+  func_?(&(this->fields).memberList,this_00);
   (this->fields).currentMemberBeingHighlighted = -1;
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);

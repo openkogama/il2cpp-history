@@ -17,7 +17,7 @@ void Assembly-CSharp.dll::AudioLogicCube::AudioLogicCube_Awake
                       AudioOnOffComponent__MethodInfo__UnityEngine__Component__GetComponents<AudioOnOffComponent>______
                      );
   (this->fields).audioOnOffComponents = pAVar1;
-  func_?();
+  func_?(&(this->fields).audioOnOffComponents,pAVar1);
   return;
 }
 

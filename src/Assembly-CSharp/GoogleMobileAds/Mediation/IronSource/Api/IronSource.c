@@ -67,8 +67,8 @@ void Assembly-CSharp.dll::GoogleMobileAds::Mediation::IronSource::Api::IronSourc
       if (pIVar3->interfaceOffsets[uVar4].interfaceType ==
           (Il2CppClass *)TypeInfo__GoogleMobileAds__Mediation__IronSource__Common__IIronSourceClient
          ) {
-        ppMVar6 = &(&(pIVar1->klass->vtable).SetMetaData)[pIVar3->interfaceOffsets[uVar4].offset].
-                   method;
+        ppMVar6 = &(&(pIVar1->klass->vtable).SetMetaData)
+                   [pIVar1->klass->interfaceOffsets[uVar4].offset].method;
         goto code_?;
       }
       uVar4 = uVar4 + 1;

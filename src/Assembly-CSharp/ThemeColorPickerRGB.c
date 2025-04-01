@@ -68,32 +68,30 @@ void Assembly-CSharp.dll::ThemeColorPickerRGB::ThemeColorPickerRGB_Initialize
         TypeInfo__ThemeColorPickerRGB____c->static_fields->__9__7_0 = this_00;
         func_?(&TypeInfo__ThemeColorPickerRGB____c->static_fields->__9__7_0,this_00);
       }
-      ppAVar2 = &(this->fields).onChange;
-      *ppAVar2 = this_00;
-      func_?(ppAVar2,this_00);
-      pSVar3 = (this->fields).sliderR;
-      if (pSVar3 != (SettingsSlider *)0x0) {
+      (this->fields).onChange = this_00;
+      func_?(&(this->fields).onChange,this_00);
+      pSVar2 = (this->fields).sliderR;
+      if (pSVar2 != (SettingsSlider *)0x0) {
         SettingsSlider::SettingsSlider_Initialize
-                  (pSVar3,StringLiteral_Red,(attrib->fields)._._.value.r,0.0,1.0,(MethodInfo *)0x0);
-        pSVar3 = (this->fields).sliderG;
-        if (pSVar3 != (SettingsSlider *)0x0) {
+                  (pSVar2,StringLiteral_Red,(attrib->fields)._._.value.r,0.0,1.0,(MethodInfo *)0x0);
+        pSVar2 = (this->fields).sliderG;
+        if (pSVar2 != (SettingsSlider *)0x0) {
           SettingsSlider::SettingsSlider_Initialize
-                    (pSVar3,StringLiteral_Green,(attrib->fields)._._.value.g,0.0,1.0,
+                    (pSVar2,StringLiteral_Green,(attrib->fields)._._.value.g,0.0,1.0,
                      (MethodInfo *)0x0);
-          pSVar3 = (this->fields).sliderB;
-          if (pSVar3 != (SettingsSlider *)0x0) {
+          pSVar2 = (this->fields).sliderB;
+          if (pSVar2 != (SettingsSlider *)0x0) {
             SettingsSlider::SettingsSlider_Initialize
-                      (pSVar3,StringLiteral_Blue,(attrib->fields)._._.value.b,0.0,1.0,
+                      (pSVar2,StringLiteral_Blue,(attrib->fields)._._.value.b,0.0,1.0,
                        (MethodInfo *)0x0);
-            pRVar4 = (this->fields).previewImage;
-            if (pRVar4 != (RawImage *)0x0) {
-              (*(code *)(pRVar4->klass->vtable).set_color.method)
-                        (pRVar4,(attrib->fields)._._.value.r,(attrib->fields)._._.value.g,
+            pRVar3 = (this->fields).previewImage;
+            if (pRVar3 != (RawImage *)0x0) {
+              (*(code *)(pRVar3->klass->vtable).set_color.method)
+                        (pRVar3,(attrib->fields)._._.value.r,(attrib->fields)._._.value.g,
                          (attrib->fields)._._.value.b,(attrib->fields)._._.value.a,
-                         (pRVar4->klass->vtable).get_raycastTarget.methodPtr);
-              ppAVar2 = &(this->fields).onChange;
-              *ppAVar2 = onChange;
-              func_?(ppAVar2,onChange);
+                         (pRVar3->klass->vtable).get_raycastTarget.methodPtr);
+              (this->fields).onChange = onChange;
+              func_?(&(this->fields).onChange,onChange);
               return;
             }
           }
@@ -102,8 +100,8 @@ void Assembly-CSharp.dll::ThemeColorPickerRGB::ThemeColorPickerRGB_Initialize
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -116,24 +114,24 @@ void Assembly-CSharp.dll::ThemeColorPickerRGB::ThemeColorPickerRGB_OnSettingChan
 {
   pSVar1 = (this->fields).sliderR;
   if (pSVar1 != (SettingsSlider *)0x0) {
-    fVar2 = SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
+    SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
     pSVar1 = (this->fields).sliderG;
     if (pSVar1 != (SettingsSlider *)0x0) {
-      fVar3 = SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
-      pSVar1 = (this->fields).sliderB;
-      if (pSVar1 != (SettingsSlider *)0x0) {
-        fVar4 = SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
-        pRVar5 = (this->fields).previewImage;
-        if (pRVar5 != (RawImage *)0x0) {
-          uVar6 = 0x3f800000;
-          (*(code *)(pRVar5->klass->vtable).set_color.method)
-                    (pRVar5,fVar2,fVar3,fVar4,0x3f800000,
-                     (pRVar5->klass->vtable).get_raycastTarget.methodPtr);
-          pAVar7 = (this->fields).onChange;
-          if (pAVar7 != (Action_1_UnityEngine_Color_ *)0x0) {
-            (*(pAVar7->fields)._._.invoke_impl)
-                      ((pAVar7->fields)._._.method_code,fVar2,fVar3,fVar4,uVar6,
-                       (pAVar7->fields)._._.method);
+      pSVar1 = (SettingsSlider *)SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
+      if ((this->fields).sliderB != (SettingsSlider *)0x0) {
+        puVar2 = &UNK_?;
+        fVar3 = SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
+        pRVar4 = (this->fields).previewImage;
+        if (pRVar4 != (RawImage *)0x0) {
+          uVar5 = 0x3f800000;
+          (*(code *)(pRVar4->klass->vtable).set_color.method)
+                    (pRVar4,puVar2,pSVar1,fVar3,0x3f800000,
+                     (pRVar4->klass->vtable).get_raycastTarget.methodPtr);
+          pAVar6 = (this->fields).onChange;
+          if (pAVar6 != (Action_1_UnityEngine_Color_ *)0x0) {
+            (*(pAVar6->fields)._._.invoke_impl)
+                      ((pAVar6->fields)._._.method_code,puVar2,pSVar1,fVar3,uVar5,
+                       (pAVar6->fields)._._.method);
             return;
           }
         }
@@ -141,8 +139,8 @@ void Assembly-CSharp.dll::ThemeColorPickerRGB::ThemeColorPickerRGB_OnSettingChan
     }
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -168,14 +166,23 @@ void Assembly-CSharp.dll::ThemeColorPickerRGB::ThemeColorPickerRGB_Reset
   }
   else if (pOVar1->max_length != 0) {
     pSVar2 = (SettingsSlider *)pOVar1->vector[0];
-    ppSVar3 = &(this->fields).sliderR;
-    *ppSVar3 = pSVar2;
-    func_?(ppSVar3,&stack0xfffffffc,&UNK_?,ppSVar3,pSVar2);
-    return;
+    (this->fields).sliderR = pSVar2;
+    func_?(&(this->fields).sliderR,pSVar2);
+    if (1 < pOVar1->max_length) {
+      pSVar2 = (SettingsSlider *)pOVar1->vector[1];
+      (this->fields).sliderG = pSVar2;
+      func_?(&(this->fields).sliderG,pSVar2);
+      if (2 < pOVar1->max_length) {
+        pSVar2 = (SettingsSlider *)pOVar1->vector[2];
+        (this->fields).sliderB = pSVar2;
+        func_?(&(this->fields).sliderB,pSVar2);
+        return;
+      }
+    }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

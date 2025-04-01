@@ -31,12 +31,11 @@ void Assembly-CSharp.dll::AvatarInteractable+DamageSource::AvatarInteractable_Da
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).shooter = shooter;
   func_?(&this->fields,shooter);
-  ppSVar1 = &(this->fields).weaponName;
   (this->fields).damageType = (undefined1)damageType;
-  *ppSVar1 = weaponName;
-  func_?(ppSVar1,weaponName);
-  fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  (this->fields).time = fVar2;
+  (this->fields).weaponName = weaponName;
+  func_?(&(this->fields).weaponName,weaponName);
+  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+  (this->fields).time = fVar1;
   return;
 }
 

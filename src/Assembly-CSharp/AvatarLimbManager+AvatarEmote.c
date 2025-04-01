@@ -6,9 +6,8 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarEmote::AvatarLimbManager_Avata
                float lifeTime,MethodInfo *method)
 
 {
-  ppAVar1 = &(this->fields).limbRotator;
-  *ppAVar1 = limbRotator;
-  func_?(ppAVar1,limbRotator);
+  (this->fields).limbRotator = limbRotator;
+  func_?(&(this->fields).limbRotator,limbRotator);
   (this->fields).lifeTime = lifeTime;
   return;
 }
@@ -32,10 +31,10 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarEmote::AvatarLimbManager_Avata
                (AvatarLimbManager_AvatarEmote *this,MethodInfo *method)
 
 {
-  pAVar1 = (this->fields).OnEmoteEnd;
   (this->fields).duration = 0.0;
   (this->fields).isActive = 0;
-  if (pAVar1 != (Action_1_EmoteTypes_ *)0x0) {
+  if ((this->fields).OnEmoteEnd != (Action_1_EmoteTypes_ *)0x0) {
+    pAVar1 = (this->fields).OnEmoteEnd;
     (*(pAVar1->fields)._._.invoke_impl)
               ((pAVar1->fields)._._.method_code,(this->fields).emote,(pAVar1->fields)._._.method);
   }

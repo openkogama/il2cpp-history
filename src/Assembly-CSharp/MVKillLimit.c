@@ -69,17 +69,16 @@ code_?:
     func_?();
   }
   else {
-    args = (Object__Array *)
-           func_?(TypeInfo__System__Object,1,
-                           (pMVar1->fields)._WinningConditionManager_k__BackingField);
+    this_00 = (pMVar1->fields)._WinningConditionManager_k__BackingField;
+    args = (Object__Array *)func_?(TypeInfo__System__Object,1);
     iStack_2 = MVKillLimit_get_KillLimit(this,(MethodInfo *)0x0);
-    this_00 = (WinningConditionManager *)func_?(TypeInfo__System__Int32,&iStack_2);
+    pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&iStack_2);
     if (args == (Object__Array *)0x0) goto code_?;
-    if (this_00 == (WinningConditionManager *)0x0) {
+    if (pOVar3 == (Object *)0x0) {
 code_?:
       if (args->max_length == 0) goto code_?;
-      args->vector[0] = (Object *)this_00;
-      func_?(args->vector);
+      args->vector[0] = pOVar3;
+      func_?(args->vector,pOVar3);
       if (this_00 != (WinningConditionManager *)0x0) {
         MVWorldObject.dll::WinningConditionManager::WinningConditionManager_CreateWinnerCondition
                   (this_00,args,
@@ -90,15 +89,15 @@ code_?:
       }
       goto code_?;
     }
-    iVar3 = func_?(this_00,(args->klass->_0).element_class);
-    if (iVar3 != 0) goto code_?;
+    iVar4 = func_?(pOVar3,(args->klass->_0).element_class);
+    if (iVar4 != 0) goto code_?;
   }
-  uVar4 = func_?(0);
-  func_?(uVar4);
+  uVar5 = func_?(0);
+  func_?(uVar5);
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

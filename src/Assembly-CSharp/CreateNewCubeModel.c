@@ -41,14 +41,13 @@ void Assembly-CSharp.dll::CreateNewCubeModel::CreateNewCubeModel_OnAddCubeModelP
                       CubeModelPopup_MethodInfo__UnityEngine__Object__Instantiate<CubeModelPopup>_CubeModelPopup_
                      );
   if (value != (Object *)0x0) {
-    pOVar2 = value + 1;
-    pOVar2->klass = pOVar1;
-    func_?(pOVar2,pOVar1);
-    if (pOVar2->klass != (Object__Class *)0x0) {
+    value[1].klass = pOVar1;
+    func_?(value + 1,pOVar1);
+    if (value[1].klass != (Object__Class *)0x0) {
       CubeModelPopup::CubeModelPopup_Initialize
-                ((CubeModelPopup *)pOVar2->klass,(this->fields).currentByteMaterial,-1,
+                ((CubeModelPopup *)value[1].klass,(this->fields).currentByteMaterial,-1,
                  (MethodInfo *)0x0);
-      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+      pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)this,(MethodInfo *)0x0);
       if ((TypeInfo__CreateNewCubeModel____c->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
@@ -74,11 +73,11 @@ void Assembly-CSharp.dll::CreateNewCubeModel::CreateNewCubeModel_OnAddCubeModelP
         func_?();
       }
       UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (pGVar3,(BaseEventData *)0x0,
+                (pGVar2,(BaseEventData *)0x0,
                  (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                 );
-      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+      pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)this,(MethodInfo *)0x0);
       callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
@@ -87,15 +86,15 @@ void Assembly-CSharp.dll::CreateNewCubeModel::CreateNewCubeModel_OnAddCubeModelP
                  MethodInfo__CreateNewCubeModel____c__DisplayClass3_0___OnAddCubeModelPressed_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
       UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (pGVar3,(BaseEventData *)0x0,callbackFunction_00,
+                (pGVar2,(BaseEventData *)0x0,callbackFunction_00,
                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                 );
       return;
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

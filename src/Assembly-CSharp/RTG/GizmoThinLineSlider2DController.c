@@ -8,17 +8,24 @@ void Assembly-CSharp.dll::RTG::GizmoThinLineSlider2DController::
 {
   pGVar1 = (this->fields)._._data;
   if (pGVar1 != (GizmoLineSlider2DControllerData *)0x0) {
-    pGVar2 = (pGVar1->fields).Slider;
     this_00 = (pGVar1->fields).Segment;
-    if ((pGVar2 != (GizmoLineSlider2D *)0x0) &&
-       (((pGVar3 = (pGVar2->fields)._sharedSettings, pGVar3 != (GizmoLineSlider2DSettings *)0x0 ||
-         (pGVar3 = (pGVar2->fields)._settings, pGVar3 != (GizmoLineSlider2DSettings *)0x0)) &&
-        (this_00 != (SegmentShape2D *)0x0)))) {
-      SegmentShape2D::SegmentShape2D_set_PtOnSegmentEps
-                (this_00,(pGVar3->fields)._lineHoverEps,(MethodInfo *)0x0);
-      return;
+    pGVar2 = (((this->fields)._._data)->fields).Slider;
+    if (pGVar2 != (GizmoLineSlider2D *)0x0) {
+      if ((pGVar2->fields)._sharedSettings == (GizmoLineSlider2DSettings *)0x0) {
+        pGVar3 = (pGVar2->fields)._settings;
+        if (pGVar3 == (GizmoLineSlider2DSettings *)0x0) goto code_?;
+      }
+      else {
+        pGVar3 = (pGVar2->fields)._sharedSettings;
+      }
+      if (this_00 != (SegmentShape2D *)0x0) {
+        SegmentShape2D::SegmentShape2D_set_PtOnSegmentEps
+                  (this_00,(pGVar3->fields)._lineHoverEps,(MethodInfo *)0x0);
+        return;
+      }
     }
   }
+code_?:
   uVar4 = func_?(&stack0xfffffff0);
   func_?(uVar4);
   pcVar5 = (code *)swi(3);

@@ -22,10 +22,10 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadePrevBadge>d__28::
     pRVar4 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
                        (pGVar3,(MethodInfo *)0x0);
     if (pRVar4 == (RectTransform *)0x0) goto code_?;
-    value_00.y = (float)(int)this_00->interfaceOffsets;
-    value_00.x = (float)(int)this_00->interfaceOffsets;
+    value.y = (float)(int)this_00->interfaceOffsets;
+    value.x = (float)(int)this_00->interfaceOffsets;
     UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_sizeDelta
-              (pRVar4,value_00,(MethodInfo *)0x0);
+              (pRVar4,value,(MethodInfo *)0x0);
     pCVar5 = (Component *)(this_00->_0).byval_arg.data.typeHandle;
     if (pCVar5 == (Component *)0x0) goto code_?;
     pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
@@ -34,7 +34,7 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadePrevBadge>d__28::
     euler_01.x = (float)pCVar5;
     euler_01.z = 0.0;
     pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
-                        ((Quaternion *)&stack0xffffffd0,euler_01,(MethodInfo *)0x0);
+                        ((Quaternion *)&stack0xffffffc8,euler_01,(MethodInfo *)0x0);
     if (pTVar6 == (Transform *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
               (pTVar6,*pQVar7,(MethodInfo *)0x0);
@@ -47,14 +47,14 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadePrevBadge>d__28::
        (pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                             (pCVar5,(MethodInfo *)0x0), pTVar6 == (Transform *)0x0))
     goto code_?;
-    this = (LevelRewardAnimation_DisplayAndFadePrevBadge_d_28 *)0x3f800000;
-    value.z = 1.0;
-    value.x = 1.0;
-    value.y = 1.0;
+    value_01.z = 1.0;
+    value_01.x = 1.0;
+    value_01.y = 1.0;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-              (pTVar6,value,(MethodInfo *)0x0);
+              (pTVar6,value_01,(MethodInfo *)0x0);
     pBVar8 = (Behaviour *)(this_00->_0).implementedInterfaces;
     if (pBVar8 == (Behaviour *)0x0) goto code_?;
+    this = (LevelRewardAnimation_DisplayAndFadePrevBadge_d_28 *)&UNK_?;
     UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
               (pBVar8,0,(MethodInfo *)0x0);
     this_01 = (this_00->_0).properties;
@@ -97,9 +97,8 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadePrevBadge>d__28::
   default:
     return 0;
   }
-  fVar2 = (pLVar1->fields)._currentTime_5__2;
-  in_AF = 0;
-  if (_UNK_? <= fVar2 / *(float *)&(this_00->_0).byval_arg.attrs) {
+  if (_UNK_? <= (pLVar1->fields)._currentTime_5__2 / *(float *)&(this_00->_0).byval_arg.attrs
+     ) {
     pAVar11 = (AnimationCurve *)(this_00->_0).this_arg.data.typeHandle;
     if (pAVar11 != (AnimationCurve *)0x0) {
       fVar12 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
@@ -108,18 +107,15 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadePrevBadge>d__28::
       if (pGVar3 != (Graphic *)0x0) {
         pRVar4 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
                            (pGVar3,(MethodInfo *)0x0);
-        fVar12 = (float)(int)this_00->interfaceOffsets * fVar12;
         if (pRVar4 != (RectTransform *)0x0) {
           fVar2 = 0.0;
-          value_01.y = fVar12;
-          value_01.x = fVar12;
+          value_00.y = (float)(int)this_00->interfaceOffsets * fVar12;
+          value_00.x = (float)(int)this_00->interfaceOffsets * fVar12;
           UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_sizeDelta
-                    (pRVar4,value_01,(MethodInfo *)0x0);
+                    (pRVar4,value_00,(MethodInfo *)0x0);
           (pLVar1->fields)._currentTime_5__2 = 0.0;
 code_?:
-          fVar12 = (pLVar1->fields)._currentTime_5__2;
-          in_AF = 0;
-          if (_UNK_? <= fVar12 / (float)(this_00->_0).fields) {
+          if (_UNK_? <= (pLVar1->fields)._currentTime_5__2 / (float)(this_00->_0).fields) {
             pCVar5 = (Component *)(this_00->_0).byval_arg.data.typeHandle;
             if (pCVar5 != (Component *)0x0) {
               pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
@@ -129,8 +125,7 @@ code_?:
               euler.z = 0.0;
               pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
                         Quaternion_Internal_FromEulerRad
-                                  ((Quaternion *)&stack0xffffffc0,euler,(MethodInfo *)0x0);
-              pLVar1 = (LevelRewardAnimation_DisplayAndFadePrevBadge_d_28 *)0x0;
+                                  ((Quaternion *)&stack0xffffffb0,euler,(MethodInfo *)0x0);
               if (pTVar6 != (Transform *)0x0) {
                 UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
                           (pTVar6,*pQVar7,(MethodInfo *)0x0);
@@ -158,16 +153,17 @@ code_?:
             }
           }
           else {
+            fVar12 = (pLVar1->fields)._currentTime_5__2;
             fVar14 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
                                ((MethodInfo *)0x0);
-            fVar14 = fVar14 + fVar12;
-            (pLVar1->fields)._currentTime_5__2 = fVar14;
+            (pLVar1->fields)._currentTime_5__2 = fVar14 + fVar12;
             pIVar10 = (this_00->_0).klass;
             if (pIVar10 != (Il2CppClass *)0x0) {
               fVar12 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::
                        AnimationCurve_Evaluate
-                                 ((AnimationCurve *)pIVar10,fVar14 / (float)(this_00->_0).fields,
-                                  (MethodInfo *)0x0);
+                                 ((AnimationCurve *)pIVar10,
+                                  (fVar14 + fVar12) / (float)(this_00->_0).fields,(MethodInfo *)0x0)
+              ;
               pCVar5 = (Component *)(this_00->_0).byval_arg.data.typeHandle;
               if (pCVar5 != (Component *)0x0) {
                 pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::
@@ -177,7 +173,7 @@ code_?:
                 euler_00.z = 0.0;
                 pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
                           Quaternion_Internal_FromEulerRad
-                                    ((Quaternion *)&stack0xffffffc0,euler_00,(MethodInfo *)0x0);
+                                    ((Quaternion *)&stack0xffffffb0,euler_00,(MethodInfo *)0x0);
                 if (pTVar6 != (Transform *)0x0) {
                   UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
                             (pTVar6,*pQVar7,(MethodInfo *)0x0);
@@ -195,14 +191,14 @@ code_?:
     }
   }
   else {
+    fVar2 = (pLVar1->fields)._currentTime_5__2;
     fVar12 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    fVar12 = fVar12 + fVar2;
-    (pLVar1->fields)._currentTime_5__2 = fVar12;
+    (pLVar1->fields)._currentTime_5__2 = fVar12 + fVar2;
     pAVar11 = (AnimationCurve *)(this_00->_0).this_arg.data.typeHandle;
     if (pAVar11 != (AnimationCurve *)0x0) {
       fVar2 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                         (pAVar11,fVar12 / *(float *)&(this_00->_0).byval_arg.attrs,(MethodInfo *)0x0
-                         );
+                         (pAVar11,(fVar12 + fVar2) / *(float *)&(this_00->_0).byval_arg.attrs,
+                          (MethodInfo *)0x0);
       pGVar3 = (Graphic *)(this_00->_0).byval_arg.data.typeHandle;
       if ((pGVar3 != (Graphic *)0x0) &&
          (pRVar4 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
@@ -229,16 +225,11 @@ code_?:
     }
   }
 code_?:
-  func_?();
-  pLVar15 = pLVar1->klass;
-  in_AF = 9 < ((byte)pLVar15 & 0xf) | in_AF;
-  uVar16 = CONCAT31((int3)((uint)pLVar15 >> 8),(byte)pLVar15 + in_AF * -6) & 0xffffff0f;
-  pcVar17 = (char *)CONCAT22((short)(uVar16 >> 0x10),
-                             CONCAT11((char)((uint)pLVar15 >> 8) - in_AF,(char)uVar16));
-  *pcVar17 = *pcVar17 + extraout_CH + in_AF;
-  pcVar18 = (code *)swi(3);
-  bVar19 = (*pcVar18)();
-  return bVar19;
+  iVar15 = func_?();
+  *(char *)(iVar15 + 0x3010402c) = *(char *)(iVar15 + 0x3010402c) + extraout_DL;
+  pcVar16 = (code *)swi(3);
+  bVar17 = (*pcVar16)();
+  return bVar17;
 }
 
 

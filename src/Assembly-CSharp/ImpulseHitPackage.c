@@ -46,7 +46,7 @@ void Assembly-CSharp.dll::ImpulseHitPackage::ImpulseHitPackage_ParseAndHandlePac
                float_MethodInfo__System__Collections__Generic__CollectionExtensions__GetValueOrDefault<int,_float>_System__Collections__Generic__IReadOnlyDictionary<int,_float>__int__float_
               );
     fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedTime((MethodInfo *)0x0);
-    if (_UNK_? < fVar1 - fStack_2) {
+    if (_UNK_? < fVar1 - unaff_retaddr) {
       if ((TypeInfo__MV__WorldObject__InteractionData->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__MV__WorldObject__InteractionData);
       }
@@ -61,24 +61,24 @@ void Assembly-CSharp.dll::ImpulseHitPackage::ImpulseHitPackage_ParseAndHandlePac
         if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__System__Math);
         }
-        dVar3 = (double)fVar1;
-        if (dVar3 < 0.0) {
+        dVar2 = (double)fVar1;
+        if (dVar2 < 0.0) {
           func_?();
         }
         else {
-          dVar3 = SQRT(dVar3);
+          dVar2 = SQRT(dVar2);
         }
-        fVar1 = (float)dVar3;
+        fVar1 = (float)dVar2;
         interactionStruct.impulse.z = (interactionStruct.impulse.z / fVar1) * _UNK_?;
-        uVar4 = CONCAT44((interactionStruct.impulse.y / fVar1) * _UNK_?,
+        uVar3 = CONCAT44((interactionStruct.impulse.y / fVar1) * _UNK_?,
                          (interactionStruct.impulse.x / fVar1) * _UNK_?);
       }
       else {
-        uVar4 = interactionStruct.impulse._0_8_;
+        uVar3 = interactionStruct.impulse._0_8_;
       }
       impulse.z = interactionStruct.impulse.z;
-      impulse.x = (float)(int)uVar4;
-      impulse.y = (float)(int)((ulonglong)uVar4 >> 0x20);
+      impulse.x = (float)(int)uVar3;
+      impulse.y = (float)(int)((ulonglong)uVar3 >> 0x20);
       InteractionPackage::InteractionPackage_HandlePackage_3
                 ((InteractionPackage *)this,worldObjectClient,shooter,impulse,
                  AvatarModifierPackageType__Enum_NoFriction,(MethodInfo *)0x0);
@@ -88,7 +88,7 @@ void Assembly-CSharp.dll::ImpulseHitPackage::ImpulseHitPackage_ParseAndHandlePac
       if (this_00 == (Dictionary_2_System_Int32_System_Single_ *)0x0) goto code_?;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::
       Dictionary_2_System_Int32_System_Single__set_Item
-                (this_00,iStack_5,fVar1,
+                (this_00,key,fVar1,
                  MethodInfo__System__Collections__Generic__Dictionary<int,_float>__set_Item_int__float_
                 );
     }
@@ -96,8 +96,8 @@ void Assembly-CSharp.dll::ImpulseHitPackage::ImpulseHitPackage_ParseAndHandlePac
   }
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -122,8 +122,7 @@ void Assembly-CSharp.dll::ImpulseHitPackage::ImpulseHitPackage__ctor
             (this_00,MethodInfo__System__Collections__Generic__Dictionary<int,_float>__Dictionary__)
   ;
   method_00 = (MethodInfo *)&this->fields;
-  ((ImpulseHitPackage__Fields *)method_00)->lastShotTime =
-       (Dictionary_2_System_Int32_System_Single_ *)this_00;
+  (this->fields).lastShotTime = (Dictionary_2_System_Int32_System_Single_ *)this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);

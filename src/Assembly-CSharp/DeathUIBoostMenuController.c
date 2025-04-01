@@ -83,7 +83,7 @@ void Assembly-CSharp.dll::DeathUIBoostMenuController::DeathUIBoostMenuController
       if (this_02 != (EmbeddedPlayerConfig *)0x0) {
         pEVar8 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData
                             ((EmbeddedSiteConfigData *)&stack0xffffffd0,this_02,(MethodInfo *)0x0);
-        uVar9 = pEVar8->noPlayButtonVideoIcon;
+        cVar9 = pEVar8->noPlayButtonVideoIcon;
         if (value != (Object *)0x0) {
           *(undefined1 *)&value[1].klass = 0;
           pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -105,7 +105,7 @@ void Assembly-CSharp.dll::DeathUIBoostMenuController::DeathUIBoostMenuController
                     (pGVar2,(BaseEventData *)0x0,callbackFunction,
                      UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<IDeathPromotionSelector>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IDeathPromotionSelector>_
                     );
-          if ((uVar9 == '\0') && (cVar11 == '\0')) {
+          if ((cVar9 == '\0') && (cVar11 == '\0')) {
             pIVar12 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
             if (pIVar12 == (IAdManager *)0x0) goto code_?;
             bVar13 = func_?();
@@ -126,16 +126,15 @@ void Assembly-CSharp.dll::DeathUIBoostMenuController::DeathUIBoostMenuController
                 pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                          Component_get_gameObject((Component *)pIVar1,(MethodInfo *)0x0);
                 if (pGVar2 != (GameObject *)0x0) {
-                  bVar13 = bVar13 ^ 1;
                   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                            (pGVar2,bVar13,(MethodInfo *)0x0);
+                            (pGVar2,bVar13 ^ 1,(MethodInfo *)0x0);
                   pIVar1 = (this->fields).readyToPlayTimerFill;
                   if (pIVar1 != (Image *)0x0) {
                     pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                              Component_get_gameObject((Component *)pIVar1,(MethodInfo *)0x0);
                     if (pGVar2 != (GameObject *)0x0) {
                       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                                (pGVar2,bVar13,(MethodInfo *)0x0);
+                                (pGVar2,bVar13 ^ 1,(MethodInfo *)0x0);
                       pPVar14 = (this->fields).respawnButton;
                       pNVar15 = (NavMesh_OnNavMeshPreUpdate *)func_?();
                       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
@@ -307,11 +306,11 @@ void Assembly-CSharp.dll::DeathUIBoostMenuController::DeathUIBoostMenuController
   if ((pGVar1 != (GameEventManager *)0x0) &&
      ((pGVar1->fields).AvatarCommandsPlayMode !=
       (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) {
-    iVar2 = *(int *)(in_stack_3 + 0x14);
-    if (iVar2 != 0) {
-      puStack4 = *(undefined **)(iVar2 + 0x14);
-      uStack5 = *(undefined4 *)(iVar2 + 0x20);
-      (**(code **)(iVar2 + 0xc))();
+    if (*(int *)(in_stack_2 + 0x14) != 0) {
+      iVar3 = *(int *)(in_stack_2 + 0x14);
+      puStack4 = *(undefined **)(iVar3 + 0x14);
+      uStack5 = *(undefined4 *)(iVar3 + 0x20);
+      (**(code **)(iVar3 + 0xc))();
     }
     return;
   }
@@ -644,11 +643,11 @@ void Assembly-CSharp.dll::DeathUIBoostMenuController::DeathUIBoostMenuController
         do {
           if (pIVar5->interfaceOffsets[uVar6].interfaceType == (Il2CppClass *)TypeInfo__IPlayModeUI)
           {
+            pIVar5 = pIVar4->klass;
             iVar9 = pIVar5->interfaceOffsets[uVar6].offset;
             ppMStack3 =
-                 (MVGameControllerBase__Class **)
-                 (&(pIVar4->klass->vtable).get_IsInLobby)[iVar9].methodPtr;
-            (*(code *)(&(pIVar4->klass->vtable).set_IsInPauseMenu)[iVar9].method)();
+                 (MVGameControllerBase__Class **)(&(pIVar5->vtable).get_IsInLobby)[iVar9].methodPtr;
+            (*(code *)(&(pIVar5->vtable).set_IsInPauseMenu)[iVar9].method)();
             return;
           }
           uVar6 = uVar6 + 1;
@@ -989,7 +988,7 @@ void Assembly-CSharp.dll::DeathUIBoostMenuController::DeathUIBoostMenuController
     do {
       if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
           (Il2CppClass *)TypeInfo__IDeathPromotionSelector) {
-        ppMVar5 = &(&(x->klass->vtable).TryShowPromotion)[pIVar2->interfaceOffsets[uVar3].offset].
+        ppMVar5 = &(&(x->klass->vtable).TryShowPromotion)[x->klass->interfaceOffsets[uVar3].offset].
                    method;
         goto code_?;
       }

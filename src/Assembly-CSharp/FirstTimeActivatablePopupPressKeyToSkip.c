@@ -318,15 +318,11 @@ bool Assembly-CSharp.dll::FirstTimeActivatablePopupPressKeyToSkip::
   if (this_00 != (GameObject *)0x0) {
     bVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
                       (this_00,(MethodInfo *)0x0);
-    bVar3 = 0;
-    if (bVar1 == 0) {
-      bVar3 = bVar2;
-    }
-    return bVar3;
+    return bVar2 & (bVar1 ^ 1);
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  bVar1 = (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  bVar1 = (*pcVar3)();
   return bVar1;
 }
 

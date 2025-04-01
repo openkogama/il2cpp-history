@@ -73,15 +73,12 @@ code_?:
                               UnityEngine__Renderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::Renderer>______
                              );
       uVar15 = 0;
-      while( true ) {
-        if (pOStack_14 == (Object__Array *)0x0) goto code_?;
-        unaff_EDI = RVar12;
-        if ((int)pOStack_14->max_length <= (int)uVar15) break;
+      if (pOStack_14 == (Object__Array *)0x0) goto code_?;
+      for (; unaff_EDI = RVar12, (int)uVar15 < (int)pOStack_14->max_length; uVar15 = uVar15 + 1) {
         if (pOStack_14->max_length <= uVar15) goto code_?;
         if ((Renderer *)pOStack_14->vector[uVar15] == (Renderer *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
                   ((Renderer *)pOStack_14->vector[uVar15],0,(MethodInfo *)0x0);
-        uVar15 = uVar15 + 1;
       }
     }
   }
@@ -121,10 +118,8 @@ code_?:
                               UnityEngine__Renderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::Renderer>______
                              );
       uVar15 = 0;
-      while( true ) {
-        if (pOStack_14 == (Object__Array *)0x0) goto code_?;
-        unaff_EDI = RVar12;
-        if ((int)pOStack_14->max_length <= (int)uVar15) break;
+      if (pOStack_14 == (Object__Array *)0x0) goto code_?;
+      for (; unaff_EDI = RVar12, (int)uVar15 < (int)pOStack_14->max_length; uVar15 = uVar15 + 1) {
         if (pOStack_14->max_length <= uVar15) {
           func_?();
           goto code_?;
@@ -132,7 +127,6 @@ code_?:
         if ((Renderer *)pOStack_14->vector[uVar15] == (Renderer *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
                   ((Renderer *)pOStack_14->vector[uVar15],1,(MethodInfo *)0x0);
-        uVar15 = uVar15 + 1;
       }
     }
   }
@@ -224,9 +218,8 @@ void Assembly-CSharp.dll::VehicleVisualizationBase::VehicleVisualizationBase__ct
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__);
-  ppLVar1 = &(this->fields).lodGameObjects;
-  *ppLVar1 = this_00;
-  func_?(ppLVar1,this_00);
+  (this->fields).lodGameObjects = this_00;
+  func_?(&(this->fields).lodGameObjects,this_00);
   (this->fields).disableVisualizationDistance = 40.0;
   (this->fields).cullDistance = 145.0;
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor

@@ -15,9 +15,9 @@ void Assembly-CSharp.dll::NotificationObjectPool::NotificationObjectPool_AddToAc
     mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
               ((List_1_System_Object_ *)this_00,(Object *)notification,
                MethodInfo__System__Collections__Generic__List<Notification>__Add_Notification_);
-    pAVar1 = (this->fields).OnActiveInstancesChanged;
-    if (pAVar1 != (Action *)0x0) {
-      (*(pAVar1->fields)._._.invoke_impl)();
+    if ((this->fields).OnActiveInstancesChanged != (Action *)0x0) {
+      pAVar1 = (this->fields).OnActiveInstancesChanged;
+      (*(pAVar1->fields)._._.invoke_impl)((pAVar1->fields)._._.method_code);
     }
     return;
   }
@@ -38,8 +38,6 @@ void Assembly-CSharp.dll::NotificationObjectPool::NotificationObjectPool_Awake
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffb0;
-  puVar5 = &stack0xffffffb0;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<NotificationObjectPoolElement>__Dispose__
@@ -60,47 +58,41 @@ void Assembly-CSharp.dll::NotificationObjectPool::NotificationObjectPool_Awake
                    );
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
             (this->fields).Elements;
   if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    pLVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
              RegexCharClass+SingleRange]::
              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       (&LStack_7,this_00,
+                       ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                         *)&stack0xffffffcc,this_00,
                         MethodInfo__System__Collections__Generic__List<NotificationObjectPoolElement>__GetEnumerator__
                        );
-    LStack_8._list = (List_1_System_Object_ *)pLVar6->_list;
-    LStack_8._index = pLVar6->_index;
-    LStack_8._version = pLVar6->_version;
-    LStack_8._current = *(Object **)&pLVar6->_current;
-    LStack_7._version = 0;
+    method_00 = (MethodInfo *)pLVar4->_version;
+    RStack_5 = pLVar4->_current;
     uStack_1 = 1;
-    LStack_7._current = (RegexCharClass_SingleRange)&LStack_8;
-    do {
-      bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+    while( true ) {
+      bVar6 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
               List_1_T_Enumerator_System_Object__MoveNext
-                        (&LStack_8,
+                        ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffbc,
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<NotificationObjectPoolElement>__MoveNext__
                         );
-      if (bVar9 == 0) {
+      if (bVar6 == 0) {
         uStack_1 = 0xffffffff;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&LStack_8,
+                  ((Object *)&stack0xffffffbc,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<NotificationObjectPoolElement>__Dispose__
-                   ,unaff_EBX);
+                   ,method_00);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      iStack_10 = 0;
-      RStack_11 = (RegexCharClass_SingleRange)LStack_8._current;
-      while( true ) {
-        if (RStack_11 == (RegexCharClass_SingleRange)0x0) goto code_?;
-        if (*(int *)((int)RStack_11 + 0xc) <= iStack_10) break;
-        pOStack_12 = *(Object **)((int)RStack_11 + 8);
+      iStack_7 = 0;
+      RVar8 = RStack_5;
+      if (RStack_5 == (RegexCharClass_SingleRange)0x0) break;
+      for (; iStack_7 < *(int *)((int)RVar8 + 0xc); iStack_7 = iStack_7 + 1) {
+        original = *(Object **)((int)RVar8 + 8);
         parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                            ((Component *)this,(MethodInfo *)0x0);
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
@@ -108,7 +100,7 @@ void Assembly-CSharp.dll::NotificationObjectPool::NotificationObjectPool_Awake
         }
         this_02 = (Component *)
                   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
-                            (pOStack_12,parent,0,
+                            (original,parent,0,
                              Notification_MethodInfo__UnityEngine__Object__Instantiate<Notification>_Notification__UnityEngine__Transform__bool_
                             );
         if (this_02 == (Component *)0x0) goto code_?;
@@ -118,7 +110,7 @@ void Assembly-CSharp.dll::NotificationObjectPool::NotificationObjectPool_Awake
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                   (this_03,0,(MethodInfo *)0x0);
         this_02[1].fields._.m_CachedPtr = this;
-        unaff_EBX = (MethodInfo *)this;
+        RVar8 = (RegexCharClass_SingleRange)&this_02[1].fields;
         func_?();
         this_01 = (this->fields).Instances;
         if (this_01 == (List_1_Notification_ *)0x0) goto code_?;
@@ -126,14 +118,13 @@ void Assembly-CSharp.dll::NotificationObjectPool::NotificationObjectPool_Awake
         List_1_System_Object__Add
                   ((List_1_System_Object_ *)this_01,(Object *)this_02,
                    MethodInfo__System__Collections__Generic__List<Notification>__Add_Notification_);
-        iStack_10 = iStack_10 + 1;
       }
-    } while( true );
+    }
   }
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -185,14 +176,16 @@ bool Assembly-CSharp.dll::NotificationObjectPool::
       }
       bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit
                         (pOVar3,(MethodInfo *)0x0);
-      if (bVar4 == 0) {
-        pLVar1 = (this->fields).ActiveInstances;
-        pPVar2 = (Predicate_1_Object_ *)func_?();
-        mscorlib.dll::System::Predicate`1[Object]::Predicate_1_Object___ctor
-                  (pPVar2,value,
-                   MethodInfo__NotificationObjectPool____c__DisplayClass6_0___CanInstantiateNotificationType_b__1_Notification_
-                   ,(MethodInfo *)0x0);
-        if (pLVar1 == (List_1_Notification_ *)0x0) goto code_?;
+      if (bVar4 != 0) {
+        return 1;
+      }
+      pLVar1 = (this->fields).ActiveInstances;
+      pPVar2 = (Predicate_1_Object_ *)func_?();
+      mscorlib.dll::System::Predicate`1[Object]::Predicate_1_Object___ctor
+                (pPVar2,value,
+                 MethodInfo__NotificationObjectPool____c__DisplayClass6_0___CanInstantiateNotificationType_b__1_Notification_
+                 ,(MethodInfo *)0x0);
+      if (pLVar1 != (List_1_Notification_ *)0x0) {
         pOVar3 = (Object_1 *)
                  mscorlib.dll::System::Collections::Generic::List`1[System::UInt32]::
                  List_1_System_UInt32__Find
@@ -204,14 +197,10 @@ bool Assembly-CSharp.dll::NotificationObjectPool::
         }
         bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit
                           (pOVar3,(MethodInfo *)0x0);
-        if (bVar4 == 0) {
-          return 0;
-        }
+        return bVar4 != 0;
       }
-      return 1;
     }
   }
-code_?:
   func_?();
   pcVar5 = (code *)swi(3);
   bVar4 = (*pcVar5)();
@@ -288,9 +277,8 @@ Assembly-CSharp.dll::NotificationObjectPool::NotificationObjectPool_CreateTempPa
         return (Notification *)0x0;
       }
       if (pNVar2 != (Notification *)0x0) {
-        ppNVar7 = &(pNVar2->fields).pool;
-        *ppNVar7 = this;
-        func_?(ppNVar7,this);
+        (pNVar2->fields).pool = this;
+        func_?(&(pNVar2->fields).pool,this);
         NotificationObjectPool_AddToActiveInstances(this,pNVar2,(MethodInfo *)0x0);
         this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                             ((Component *)pNVar2,(MethodInfo *)0x0);
@@ -303,8 +291,8 @@ Assembly-CSharp.dll::NotificationObjectPool::NotificationObjectPool_CreateTempPa
     }
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  pNVar2 = (Notification *)(*pcVar8)();
+  pcVar7 = (code *)swi(3);
+  pNVar2 = (Notification *)(*pcVar7)();
   return pNVar2;
 }
 
@@ -403,8 +391,8 @@ Assembly-CSharp.dll::NotificationObjectPool::NotificationObjectPool_GetPanel
                                MethodInfo__System__Collections__Generic__List<Notification>__get_Item_int_
                               );
           if (this_00 != (RegexCharClass_SingleRange)0x0) {
-            *(undefined4 *)((int)this_00 + 0x14) = this;
-            func_?((undefined4 *)((int)this_00 + 0x14),this);
+            *(NotificationObjectPool **)((int)this_00 + 0x14) = this;
+            func_?((int)this_00 + 0x14,this);
             this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                                 ((Component *)this_00,(MethodInfo *)0x0);
             if (this_01 != (GameObject *)0x0) {
@@ -462,9 +450,9 @@ void Assembly-CSharp.dll::NotificationObjectPool::NotificationObjectPool_RemoveF
     mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Remove
               ((List_1_System_Object_ *)this_00,(Object *)notification,
                MethodInfo__System__Collections__Generic__List<Notification>__Remove_Notification_);
-    pAVar1 = (this->fields).OnActiveInstancesChanged;
-    if (pAVar1 != (Action *)0x0) {
-      (*(pAVar1->fields)._._.invoke_impl)();
+    if ((this->fields).OnActiveInstancesChanged != (Action *)0x0) {
+      pAVar1 = (this->fields).OnActiveInstancesChanged;
+      (*(pAVar1->fields)._._.invoke_impl)((pAVar1->fields)._._.method_code);
     }
     return;
   }
@@ -518,9 +506,8 @@ void Assembly-CSharp.dll::NotificationObjectPool::NotificationObjectPool_Return
                     ((List_1_System_Object_ *)pLVar2,(Object *)notification,
                      MethodInfo__System__Collections__Generic__List<Notification>__Remove_Notification_
                     );
-          pAVar3 = (this->fields).OnActiveInstancesChanged;
-          if (pAVar3 != (Action *)0x0) {
-            (*(pAVar3->fields)._._.invoke_impl)();
+          if ((this->fields).OnActiveInstancesChanged != (Action *)0x0) {
+            (*(((this->fields).OnActiveInstancesChanged)->fields)._._.invoke_impl)();
           }
           pLVar2 = (this->fields).Instances;
           if (pLVar2 != (List_1_Notification_ *)0x0) {
@@ -537,8 +524,8 @@ void Assembly-CSharp.dll::NotificationObjectPool::NotificationObjectPool_Return
   }
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -613,8 +600,8 @@ void Assembly-CSharp.dll::NotificationObjectPool::
                 ((List_1_System_Object_ *)pLVar1,(Object *)this_02,
                  MethodInfo__System__Collections__Generic__List<Notification>__Remove_Notification_)
       ;
-      pAVar4 = (this_01->fields).OnActiveInstancesChanged;
-      if (pAVar4 != (Action *)0x0) {
+      if ((this_01->fields).OnActiveInstancesChanged != (Action *)0x0) {
+        pAVar4 = (this_01->fields).OnActiveInstancesChanged;
         (*(pAVar4->fields)._._.invoke_impl)
                   ((pAVar4->fields)._._.method_code,(pAVar4->fields)._._.method);
       }
@@ -657,29 +644,26 @@ void Assembly-CSharp.dll::NotificationObjectPool::NotificationObjectPool__ctor
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<NotificationObjectPoolElement>__List__);
-  ppLVar1 = &(this->fields).Elements;
-  *ppLVar1 = this_00;
-  func_?(ppLVar1,this_00);
-  pLVar2 = (List_1_Notification_ *)
+  (this->fields).Elements = this_00;
+  func_?(&(this->fields).Elements,this_00);
+  pLVar1 = (List_1_Notification_ *)
            func_?(TypeInfo__System__Collections__Generic__List<Notification>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar2,
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar1,
              MethodInfo__System__Collections__Generic__List<Notification>__List__);
-  ppLVar3 = &(this->fields).Instances;
-  *ppLVar3 = pLVar2;
-  func_?(ppLVar3,pLVar2);
-  pLVar2 = (List_1_Notification_ *)
+  (this->fields).Instances = pLVar1;
+  func_?(&(this->fields).Instances,pLVar1);
+  pLVar1 = (List_1_Notification_ *)
            func_?(TypeInfo__System__Collections__Generic__List<Notification>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar2,
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar1,
              MethodInfo__System__Collections__Generic__List<Notification>__List__);
-  ppLVar3 = &(this->fields).ActiveInstances;
-  *ppLVar3 = pLVar2;
-  func_?(ppLVar3,pLVar2);
+  (this->fields).ActiveInstances = pLVar1;
+  func_?(&(this->fields).ActiveInstances,pLVar1);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

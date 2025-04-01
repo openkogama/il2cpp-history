@@ -26,9 +26,8 @@ void Assembly-CSharp.dll::InGameControls::InGameControls_Awake
                      ((Object *)pTVar1,pTVar2,0,
                       TouchButtonsBase_MethodInfo__UnityEngine__Object__Instantiate<TouchButtonsBase>_TouchButtonsBase__UnityEngine__Transform__bool_
                      );
-  ppTVar3 = &(this->fields).InGameButtons;
-  *ppTVar3 = pTVar1;
-  func_?(ppTVar3,pTVar1);
+  (this->fields).InGameButtons = pTVar1;
+  func_?(&(this->fields).InGameButtons,pTVar1);
   original = (this->fields).avatarJoystickPrefab;
   pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                      ((Component *)this,(MethodInfo *)0x0);

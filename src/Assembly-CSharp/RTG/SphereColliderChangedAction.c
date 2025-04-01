@@ -131,9 +131,8 @@ void Assembly-CSharp.dll::RTG::SphereColliderChangedAction::SphereColliderChange
   pSVar1 = (SphereColliderSnapshot *)func_?(TypeInfo__RTG__SphereColliderSnapshot);
   SphereColliderSnapshot::SphereColliderSnapshot__ctor_1
             (pSVar1,postChangeSnapshot,(MethodInfo *)0x0);
-  ppSVar2 = &(this->fields)._postChangeSnapshot;
-  *ppSVar2 = pSVar1;
-  func_?(ppSVar2,pSVar1);
+  (this->fields)._postChangeSnapshot = pSVar1;
+  func_?(&(this->fields)._postChangeSnapshot,pSVar1);
   return;
 }
 

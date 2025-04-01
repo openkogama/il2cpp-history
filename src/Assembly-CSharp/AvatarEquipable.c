@@ -350,62 +350,54 @@ bool Assembly-CSharp.dll::AvatarEquipable::AvatarEquipable_GetIsEquipped
     cRam_? = '\x01';
   }
   this_00 = (this->fields).currentItem;
-  if ((this_00 == (MVRuntimeDataVariable *)0x0) ||
-     (this_01 = (Dictionary_2_System_Object_System_Object___Class *)
-                MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value(this_00,(MethodInfo *)0x0),
-     unaff_ESI = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>,
-     this_01 == (Dictionary_2_System_Object_System_Object___Class *)0x0)) {
+  if (this_00 == (MVRuntimeDataVariable *)0x0) {
 code_?:
     func_?();
   }
   else {
-    pIVar1 = (this_01->_0).image;
-    bVar2 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1)
-            .naturalAligment;
-    unaff_ESI = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
-    if ((*(byte *)&pIVar1[4].assembly < bVar2) ||
-       (*(Dictionary_2_System_Object_System_Object___Class **)
-         ((pIVar1[2].typeCount - 4) + (uint)bVar2 * 4) !=
+    unaff_ESI = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value(this_00,(MethodInfo *)0x0);
+    if (unaff_ESI == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
+    goto code_?;
+    pDVar1 = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
+    if (((unaff_ESI->klass->_1).naturalAligment <
+         (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+         naturalAligment) ||
+       ((Dictionary_2_System_Object_System_Object___Class *)
+        (unaff_ESI->klass->_1).typeHierarchy
+        [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+         naturalAligment - 1] !=
         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
     goto code_?;
-    bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
             UIElements::TextureId]::
             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_01,
-                       (Object *)StringLiteral_type,
+                      (unaff_ESI,(Object *)StringLiteral_type,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
-    pMVar4 = 
-    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-    ;
-    if (bVar3 == 0) {
+    if (bVar2 == 0) {
       return 0;
     }
-    TVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+    TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
             UIElements::TextureId]::
             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_01,
-                       (Object *)StringLiteral_type,
+                      (unaff_ESI,(Object *)StringLiteral_type,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                       );
-    unaff_ESI = this_01;
-    if (TVar5.m_Index == 0) goto code_?;
-    if (*(Il2CppClass **)(*(int *)TVar5.m_Index + 0x20) ==
+    if (TVar3.m_Index == 0) goto code_?;
+    if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) ==
         (TypeInfo__MV__Common__AvatarItemType->_0).element_class) {
-      piVar6 = (int *)func_?();
-      if ((MethodInfo *)*piVar6 != pMVar4) {
-        return 0;
-      }
-      return 1;
+      pAVar4 = (AvatarItemType__Enum *)func_?();
+      return *pAVar4 == type;
     }
   }
   func_?();
-  this_01 = extraout_EDX;
+  pDVar1 = extraout_EDX;
 code_?:
-  func_?(this_01,unaff_ESI);
-  pcVar7 = (code *)swi(3);
-  bVar3 = (*pcVar7)();
-  return bVar3;
+  func_?(unaff_ESI,pDVar1);
+  pcVar5 = (code *)swi(3);
+  bVar2 = (*pcVar5)();
+  return bVar2;
 }
 
 
@@ -428,35 +420,36 @@ void Assembly-CSharp.dll::AvatarEquipable::AvatarEquipable_Holster
   }
   pAVar1 = this;
   pMVar2 = (this->fields).currentItem;
-  if (pMVar2 == (MVRuntimeDataVariable *)0x0) {
-code_?:
-    func_?();
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
+  if (pMVar2 != (MVRuntimeDataVariable *)0x0) {
+    this_00 = (Dictionary_2_System_Object_System_Object_ *)
+              MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value(pMVar2,(MethodInfo *)0x0);
+    if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+      if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+           naturalAligment <= (this_00->klass->_1).naturalAligment) &&
+         ((Dictionary_2_System_Object_System_Object___Class *)
+          (this_00->klass->_1).typeHierarchy
+          [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+           naturalAligment - 1] ==
+          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
+        this = (AvatarEquipable *)0x1;
+        value = (Object *)func_?(TypeInfo__System__Int32,&this);
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object__set_Item
+                  (this_00,(Object *)StringLiteral_updateItemState,value,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                  );
+        pMVar2 = (pAVar1->fields).currentItem;
+        if (pMVar2 == (MVRuntimeDataVariable *)0x0) goto code_?;
+        MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value
+                  (pMVar2,(Object *)this_00,(MethodInfo *)0x0);
+      }
+    }
     return;
   }
-  this_00 = (Dictionary_2_System_Object_System_Object_ *)
-            MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value(pMVar2,(MethodInfo *)0x0);
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    bVar4 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1)
-            .naturalAligment;
-    if ((bVar4 <= (this_00->klass->_1).naturalAligment) &&
-       ((Dictionary_2_System_Object_System_Object___Class *)
-        (this_00->klass->_1).typeHierarchy[bVar4 - 1] ==
-        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
-      this = (AvatarEquipable *)0x1;
-      value = (Object *)func_?(TypeInfo__System__Int32,&this);
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__set_Item
-                (this_00,(Object *)StringLiteral_updateItemState,value,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                );
-      pMVar2 = (pAVar1->fields).currentItem;
-      if (pMVar2 == (MVRuntimeDataVariable *)0x0) goto code_?;
-      MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value
-                (pMVar2,(Object *)this_00,(MethodInfo *)0x0);
-    }
-  }
+code_?:
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -474,25 +467,23 @@ void Assembly-CSharp.dll::AvatarEquipable::AvatarEquipable_Init
     func_?(&StringLiteral_UnableToEquipWeapons);
     cRam_? = '\x01';
   }
-  ppMVar1 = &(this->fields).interactableLocal;
-  *ppMVar1 = interactableLocal;
-  func_?(ppMVar1,interactableLocal);
-  ppMVar2 = &(this->fields).currentItem;
-  *ppMVar2 = currentItem;
-  func_?(ppMVar2,currentItem);
+  (this->fields).interactableLocal = interactableLocal;
+  func_?(&(this->fields).interactableLocal,interactableLocal);
+  (this->fields).currentItem = currentItem;
+  func_?(&(this->fields).currentItem,currentItem);
   if (skillsDataManager != (WorldObjectSkillDataManager *)0x0) {
-    bVar3 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill
+    bVar1 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill
                       (skillsDataManager,StringLiteral_UnableToCollectModifierPickups,
                        (MethodInfo *)0x0);
-    (this->fields).isAbleToCollectPickups = bVar3 == 0;
-    bVar3 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill
+    (this->fields).isAbleToCollectPickups = bVar1 ^ 1;
+    bVar1 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill
                       (skillsDataManager,StringLiteral_UnableToEquipWeapons,(MethodInfo *)0x0);
-    (this->fields).isAbleToEquipWeapons = bVar3 == 0;
+    (this->fields).isAbleToEquipWeapons = bVar1 ^ 1;
     return;
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -528,35 +519,36 @@ void Assembly-CSharp.dll::AvatarEquipable::AvatarEquipable_Unholster
   }
   pAVar1 = this;
   pMVar2 = (this->fields).currentItem;
-  if (pMVar2 == (MVRuntimeDataVariable *)0x0) {
-code_?:
-    func_?();
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
+  if (pMVar2 != (MVRuntimeDataVariable *)0x0) {
+    this_00 = (Dictionary_2_System_Object_System_Object_ *)
+              MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value(pMVar2,(MethodInfo *)0x0);
+    if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+      if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+           naturalAligment <= (this_00->klass->_1).naturalAligment) &&
+         ((Dictionary_2_System_Object_System_Object___Class *)
+          (this_00->klass->_1).typeHierarchy
+          [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+           naturalAligment - 1] ==
+          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
+        this = (AvatarEquipable *)0x2;
+        value = (Object *)func_?(TypeInfo__System__Int32,&this);
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object__set_Item
+                  (this_00,(Object *)StringLiteral_updateItemState,value,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                  );
+        pMVar2 = (pAVar1->fields).currentItem;
+        if (pMVar2 == (MVRuntimeDataVariable *)0x0) goto code_?;
+        MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value
+                  (pMVar2,(Object *)this_00,(MethodInfo *)0x0);
+      }
+    }
     return;
   }
-  this_00 = (Dictionary_2_System_Object_System_Object_ *)
-            MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value(pMVar2,(MethodInfo *)0x0);
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    bVar4 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1)
-            .naturalAligment;
-    if ((bVar4 <= (this_00->klass->_1).naturalAligment) &&
-       ((Dictionary_2_System_Object_System_Object___Class *)
-        (this_00->klass->_1).typeHierarchy[bVar4 - 1] ==
-        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
-      this = (AvatarEquipable *)0x2;
-      value = (Object *)func_?(TypeInfo__System__Int32,&this);
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__set_Item
-                (this_00,(Object *)StringLiteral_updateItemState,value,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                );
-      pMVar2 = (pAVar1->fields).currentItem;
-      if (pMVar2 == (MVRuntimeDataVariable *)0x0) goto code_?;
-      MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value
-                (pMVar2,(Object *)this_00,(MethodInfo *)0x0);
-    }
-  }
+code_?:
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

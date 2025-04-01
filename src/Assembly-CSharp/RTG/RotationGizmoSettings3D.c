@@ -8,9 +8,9 @@ void Assembly-CSharp.dll::RTG::RotationGizmoSettings3D::
 {
   pGStack_1 = (GizmoPlaneSlider2DSettings *)&stack0xfffffffc;
   if (slider != (GizmoPlaneSlider2D *)0x0) {
-    ppGStack_2 = &(slider->fields)._sharedSettings;
     pGStack_1 = (this->fields)._camLookSliderSettings;
-    *ppGStack_2 = pGStack_1;
+    (slider->fields)._sharedSettings = pGStack_1;
+    ppGStack_2 = &(slider->fields)._sharedSettings;
     func_?();
     return;
   }
@@ -226,23 +226,21 @@ void Assembly-CSharp.dll::RTG::RotationGizmoSettings3D::RotationGizmoSettings3D_
   (this->fields)._camUpSnapStep = 15.0;
   pGVar1 = (GizmoPlaneSlider3DSettings__Array *)
            func_?(TypeInfo__RTG__GizmoPlaneSlider3DSettings,3);
-  ppGVar2 = &(this->fields)._sliderSettings;
-  *ppGVar2 = pGVar1;
-  func_?(ppGVar2,pGVar1);
-  this_00 = (GizmoPlaneSlider2DSettings *)func_?(TypeInfo__RTG__GizmoPlaneSlider2DSettings)
-  ;
-  GizmoPlaneSlider2DSettings::GizmoPlaneSlider2DSettings__ctor(this_00,(MethodInfo *)0x0);
-  this_01 = (GizmoPlaneSlider3DSettings *)&(this->fields)._camLookSliderSettings;
-  *(GizmoPlaneSlider2DSettings **)this_01 = this_00;
-  func_?(this_01,this_00);
+  (this->fields)._sliderSettings = pGVar1;
+  func_?(&(this->fields)._sliderSettings,pGVar1);
+  pGVar2 = (GizmoPlaneSlider2DSettings *)func_?(TypeInfo__RTG__GizmoPlaneSlider2DSettings);
+  GizmoPlaneSlider2DSettings::GizmoPlaneSlider2DSettings__ctor(pGVar2,(MethodInfo *)0x0);
+  (this->fields)._camLookSliderSettings = pGVar2;
+  func_?(&(this->fields)._camLookSliderSettings,pGVar2);
   Settings::Settings__ctor((Settings *)this,(MethodInfo *)0x0);
   uVar3 = 0;
-  pGVar1 = *ppGVar2;
+  pGVar1 = (this->fields)._sliderSettings;
   while (pGVar1 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
     if ((int)pGVar1->max_length <= (int)uVar3) {
-      if (this_01->klass != (GizmoPlaneSlider3DSettings__Class *)0x0) {
-        Sphere::Sphere_set_Radius((Sphere *)this_01->klass,7.0,(MethodInfo *)0x0);
-        pGVar1 = *ppGVar2;
+      pGVar2 = (this->fields)._camLookSliderSettings;
+      if (pGVar2 != (GizmoPlaneSlider2DSettings *)0x0) {
+        Sphere::Sphere_set_Radius((Sphere *)pGVar2,7.0,(MethodInfo *)0x0);
+        pGVar1 = (this->fields)._sliderSettings;
         uVar3 = 0;
         if (pGVar1 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
           ppGVar4 = pGVar1->vector;
@@ -251,19 +249,19 @@ void Assembly-CSharp.dll::RTG::RotationGizmoSettings3D::RotationGizmoSettings3D_
       }
       break;
     }
-    pGVar1 = *ppGVar2;
-    this_01 = (GizmoPlaneSlider3DSettings *)
+    pGVar1 = (this->fields)._sliderSettings;
+    this_00 = (GizmoPlaneSlider3DSettings *)
               func_?(TypeInfo__RTG__GizmoPlaneSlider3DSettings);
-    GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings__ctor(this_01,(MethodInfo *)0x0);
+    GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings__ctor(this_00,(MethodInfo *)0x0);
     if (pGVar1 == (GizmoPlaneSlider3DSettings__Array *)0x0) break;
-    if ((this_01 != (GizmoPlaneSlider3DSettings *)0x0) &&
-       (iVar5 = func_?(this_01,(pGVar1->klass->_0).element_class), iVar5 == 0))
+    if ((this_00 != (GizmoPlaneSlider3DSettings *)0x0) &&
+       (iVar5 = func_?(this_00,(pGVar1->klass->_0).element_class), iVar5 == 0))
     goto code_?;
     if (pGVar1->max_length <= uVar3) goto code_?;
-    pGVar1->vector[uVar3] = this_01;
-    func_?(pGVar1->vector + uVar3);
+    pGVar1->vector[uVar3] = this_00;
+    func_?(pGVar1->vector + uVar3,this_00);
     uVar3 = uVar3 + 1;
-    pGVar1 = *ppGVar2;
+    pGVar1 = (this->fields)._sliderSettings;
   }
 code_?:
   func_?();
@@ -284,7 +282,7 @@ code_?:
   ppGVar4 = ppGVar4 + 1;
   goto code_?;
 code_?:
-  pGVar1 = *ppGVar2;
+  pGVar1 = (this->fields)._sliderSettings;
   uVar3 = 0;
   if (pGVar1 != (GizmoPlaneSlider3DSettings__Array *)0x0) {
     ppGVar4 = pGVar1->vector;

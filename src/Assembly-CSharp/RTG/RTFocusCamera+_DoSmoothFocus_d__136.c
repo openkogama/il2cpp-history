@@ -31,7 +31,7 @@ bool Assembly-CSharp.dll::RTG::RTFocusCamera+<DoSmoothFocus>d__136::
     pTVar7 = (this_00->fields)._targetTransform;
     if (pTVar7 == (Transform *)0x0) goto code_?;
     pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                        ((Vector3 *)&stack0xffffffd0,pTVar7,(MethodInfo *)0x0);
+                        ((Vector3 *)&stack0xffffffd4,pTVar7,(MethodInfo *)0x0);
     pCVar2 = (this->fields).focusData;
     if (pCVar2 == (CameraFocus_Data *)0x0) goto code_?;
     uVar9 = (pCVar2->fields)._cameraWorldPosition.x;
@@ -42,7 +42,7 @@ bool Assembly-CSharp.dll::RTG::RTFocusCamera+<DoSmoothFocus>d__136::
     value.x = (float)uVar9 - (float)uVar11;
     value.z = (pCVar2->fields)._cameraWorldPosition.z - pVVar8->z;
     pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                        ((Vector3 *)&stack0xffffffd0,value,(MethodInfo *)0x0);
+                        ((Vector3 *)&stack0xffffffd4,value,(MethodInfo *)0x0);
     fVar5 = pVVar8->y;
     fVar4 = pVVar8->z;
     (this->fields)._camMoveDir_5__3.x = pVVar8->x;
@@ -64,15 +64,14 @@ bool Assembly-CSharp.dll::RTG::RTFocusCamera+<DoSmoothFocus>d__136::
     pTVar7 = (this_00->fields)._targetTransform;
     if (pTVar7 != (Transform *)0x0) {
       pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                          ((Vector3 *)&stack0xffffffd0,pTVar7,(MethodInfo *)0x0);
+                          ((Vector3 *)&stack0xffffffd4,pTVar7,(MethodInfo *)0x0);
       uVar14 = pVVar8->x;
       uVar15 = pVVar8->y;
       pCVar2 = (this->fields).focusData;
       if (pCVar2 != (CameraFocus_Data *)0x0) {
         uVar16 = (pCVar2->fields)._cameraWorldPosition.x;
         uVar17 = (pCVar2->fields)._cameraWorldPosition.y;
-        bVar18 = fVar4 < 0.0;
-        if (bVar18) {
+        if (fVar4 < 0.0) {
           fVar5 = 0.0;
         }
         else {
@@ -88,10 +87,10 @@ bool Assembly-CSharp.dll::RTG::RTFocusCamera+<DoSmoothFocus>d__136::
                   (pTVar7,value_00,(MethodInfo *)0x0);
         pCVar3 = (this_00->fields)._targetCamera;
         if (pCVar3 != (Camera *)0x0) {
-          VStack_19.z = (float)&UNK_?;
+          VStack_18.z = (float)&UNK_?;
           fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_orthographicSize
                              (pCVar3,(MethodInfo *)0x0);
-          if (bVar18) {
+          if (fVar4 < 0.0) {
             fVar4 = 0.0;
           }
           else if (_UNK_? < fVar4) {
@@ -101,25 +100,25 @@ bool Assembly-CSharp.dll::RTG::RTFocusCamera+<DoSmoothFocus>d__136::
                     (pCVar3,((this->fields)._targetOrthoSize_5__2 - fVar5) * fVar4 + fVar5,
                      (MethodInfo *)0x0);
           fVar4 = (this->fields)._elapsedTime_5__4;
-          fVar20 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
+          fVar19 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
                              ((MethodInfo *)0x0);
           fVar5 = (this->fields)._camMoveDir_5__3.z;
           pCVar2 = (this->fields).focusData;
-          uVar21._0_4_ = (this->fields)._camMoveDir_5__3.x;
-          uVar21._4_4_ = (this->fields)._camMoveDir_5__3.y;
-          (this->fields)._elapsedTime_5__4 = fVar20 + fVar4;
+          uVar20._0_4_ = (this->fields)._camMoveDir_5__3.x;
+          uVar20._4_4_ = (this->fields)._camMoveDir_5__3.y;
+          (this->fields)._elapsedTime_5__4 = fVar19 + fVar4;
           if (pCVar2 != (CameraFocus_Data *)0x0) {
-            uVar22 = (pCVar2->fields)._cameraWorldPosition.x;
+            uVar21 = (pCVar2->fields)._cameraWorldPosition.x;
             pTVar7 = (this_00->fields)._targetTransform;
             if (pTVar7 != (Transform *)0x0) {
-              pVVar8 = &VStack_19;
-              pVVar23 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+              pVVar8 = &VStack_18;
+              pVVar22 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
                                   (pVVar8,pTVar7,(MethodInfo *)0x0);
-              uVar24 = pVVar23->x;
-              uVar25 = pVVar23->y;
-              if (0.0 < SUB84(uVar21,4) * (4.34705e-29 - (float)uVar25) +
-                        (float)uVar21 * ((float)uVar22 - (float)uVar24) +
-                        fVar5 * ((float)pVVar8 - pVVar23->z)) {
+              uVar23 = pVVar22->x;
+              uVar24 = pVVar22->y;
+              if (0.0 < (float)uVar20 * ((float)uVar21 - (float)uVar23) +
+                        SUB84(uVar20,4) * (4.3611952e-29 - (float)uVar24) +
+                        fVar5 * ((float)pVVar8 - pVVar22->z)) {
                 (this->fields).__2__current = (Object *)0x0;
                 func_?();
                 (this->fields).__1__state = 1;
@@ -159,9 +158,9 @@ bool Assembly-CSharp.dll::RTG::RTFocusCamera+<DoSmoothFocus>d__136::
   }
 code_?:
   func_?();
-  pcVar26 = (code *)swi(3);
-  bVar27 = (*pcVar26)();
-  return bVar27;
+  pcVar25 = (code *)swi(3);
+  bVar26 = (*pcVar25)();
+  return bVar26;
 }
 
 

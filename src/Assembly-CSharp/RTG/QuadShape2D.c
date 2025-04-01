@@ -5,33 +5,34 @@ void Assembly-CSharp.dll::RTG::QuadShape2D::QuadShape2D_AlignWidth
                (QuadShape2D *this,Vector2 axis,MethodInfo *method)
 
 {
+  pQVar1 = this;
   from = RightAngTriangle2D::RightAngTriangle2D_get_Right
                    ((RightAngTriangle2D *)this,(MethodInfo *)0x0);
-  pQVar1 = QuaternionEx::QuaternionEx_FromToRotation2D
-                     ((Quaternion *)&puStack_2,from,axis,(MethodInfo *)0x0);
-  fVar3 = pQVar1->x;
-  fVar4 = pQVar1->y;
-  fVar5 = pQVar1->z;
-  fVar6 = pQVar1->w;
-  fVar7 = (this->fields)._rotationDegrees;
+  pQVar2 = QuaternionEx::QuaternionEx_FromToRotation2D
+                     ((Quaternion *)&stack0xffffffec,from,axis,(MethodInfo *)0x0);
+  fVar3 = pQVar2->w;
+  fVar4 = (this->fields)._rotationDegrees;
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
   }
-  pQVar1 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
-                     ((Quaternion *)&stack0xffffffa0,fVar7,
-                      TypeInfo__UnityEngine__Vector3->static_fields->forwardVector,(MethodInfo *)0x0
-                     );
-  fVar7 = pQVar1->y;
-  fVar8 = pQVar1->z;
-  fVar9 = pQVar1->w;
-  quat.y = (fVar7 * fVar6 + fVar9 * fVar4 + pQVar1->x * fVar5) - fVar8 * fVar3;
-  quat.x = (pQVar1->x * fVar6 + fVar9 * fVar3 + fVar8 * fVar4) - fVar7 * fVar5;
-  quat.z = (fVar9 * fVar5 + fVar8 * fVar6 + fVar7 * fVar3) - pQVar1->x * fVar4;
-  quat.w = ((fVar9 * fVar6 - pQVar1->x * fVar3) - fVar7 * fVar4) - fVar8 * fVar5;
+  fVar5 = 0.0;
+  pVVar6 = &TypeInfo__UnityEngine__Vector3->static_fields->forwardVector;
+  fVar7 = pVVar6->y;
+  fVar8 = (TypeInfo__UnityEngine__Vector3->static_fields->forwardVector).z;
+  pQVar2 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
+                     ((Quaternion *)&puStack_9,fVar4,*pVVar6,(MethodInfo *)0x0);
+  fVar4 = pQVar2->y;
+  fVar10 = pQVar2->z;
+  fVar11 = pQVar2->w;
+  this = (QuadShape2D *)((fVar10 * fVar3 + fVar5 * fVar11 + fVar4 * fVar7) - pQVar2->x * fVar8);
+  fVar12 = (fVar4 * fVar3 + fVar11 * fVar8 + fVar5 * pQVar2->x) - fVar10 * fVar7;
+  axis.x = ((fVar3 * fVar11 - pQVar2->x * fVar7) - fVar4 * fVar8) - fVar5 * fVar10;
+  quat.x = (fVar3 * pQVar2->x + fVar7 * fVar11 + fVar10 * fVar8) - fVar4 * fVar5;
+  quat = (Quaternion)CONCAT124(quat._0_12_,quat.x);
   QuaternionEx::QuaternionEx_ConvertTo2DRotation(quat,(MethodInfo *)0x0);
-  fVar10 = (float10)func_?();
-  (this->fields)._rotationDegrees = (float)fVar10;
+  fVar13 = (float10)func_?();
+  (pQVar1->fields)._rotationDegrees = (float)fVar13;
   return;
 }
 
@@ -117,8 +118,8 @@ Vector2 Assembly-CSharp.dll::RTG::QuadShape2D::QuadShape2D_GetExtentPoint
     VVar4 = RightAngTriangle2D::RightAngTriangle2D_get_Up
                       ((RightAngTriangle2D *)this,(MethodInfo *)0x0);
     VStack_5.y = VVar4.y;
-    VStack_5.y = fVar3 + VStack_5.y * fVar2;
-    VStack_5.x = fVar1 + VStack_5.x * fVar2;
+    VStack_5.y = VStack_5.y * fVar2 + fVar3;
+    VStack_5.x = VStack_5.x * fVar2 + fVar1;
     return VStack_5;
   case Shape2DExtentPoint__Enum_Right:
     fVar2 = (this->fields)._center.x;
@@ -126,8 +127,8 @@ Vector2 Assembly-CSharp.dll::RTG::QuadShape2D::QuadShape2D_GetExtentPoint
     VVar4 = RightAngTriangle2D::RightAngTriangle2D_get_Right
                       ((RightAngTriangle2D *)this,(MethodInfo *)0x0);
     VStack_5.y = VVar4.y;
-    VStack_5.y = fVar3 + VStack_5.y * fVar1;
-    VStack_5.x = fVar2 + VStack_5.x * fVar1;
+    VStack_5.y = VStack_5.y * fVar1 + fVar3;
+    VStack_5.x = VStack_5.x * fVar1 + fVar2;
     return VStack_5;
   case Shape2DExtentPoint__Enum_Bottom:
     fVar1 = (this->fields)._center.x;

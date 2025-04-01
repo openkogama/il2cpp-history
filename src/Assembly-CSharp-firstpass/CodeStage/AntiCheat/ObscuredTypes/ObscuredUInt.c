@@ -186,9 +186,9 @@ bool Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscure
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredUInt);
     cRam_? = '\x01';
   }
-  uVar1 = this->currentCryptoKey;
-  if (uVar1 != obj.currentCryptoKey) {
-    uVar2 = this->hiddenValue;
+  if (this->currentCryptoKey != obj.currentCryptoKey) {
+    uVar1 = this->hiddenValue;
+    uVar2 = this->currentCryptoKey;
     if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredUInt->_1).cctor_finished_or_no_cctor
         == 0) {
       func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredUInt);
@@ -197,12 +197,12 @@ bool Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscure
       func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredUInt);
       cRam_? = '\x01';
     }
-    if (uVar1 == 0) {
+    if (uVar2 == 0) {
       if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredUInt->_1).
           cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredUInt);
       }
-      uVar1 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredUInt->static_fields->cryptoKey;
+      uVar2 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredUInt->static_fields->cryptoKey;
     }
     if (cRam_? == '\0') {
       func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredUInt);
@@ -216,7 +216,7 @@ bool Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscure
       obj.currentCryptoKey =
            TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredUInt->static_fields->cryptoKey;
     }
-    return (uVar2 ^ uVar1) == (obj.currentCryptoKey ^ obj.hiddenValue);
+    return (uVar1 ^ uVar2) == (obj.currentCryptoKey ^ obj.hiddenValue);
   }
   return this->hiddenValue == obj.hiddenValue;
 }

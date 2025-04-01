@@ -64,12 +64,12 @@ bool Assembly-CSharp.dll::RTG::InputDeviceScreenDragSession::InputDeviceScreenDr
     if (bVar3 != 0) {
       fVar1 = (this->fields)._dragPoint.x - fVar1;
       fVar2 = (this->fields)._dragPoint.y - fVar2;
-      (this->fields)._dragDelta.x = fVar1;
       fVar4 = (this->fields)._accumDrag.x;
-      (this->fields)._dragDelta.y = fVar2;
       fVar5 = (this->fields)._accumDrag.y;
-      (this->fields)._accumDrag.x = fVar1 + fVar4;
-      (this->fields)._accumDrag.y = fVar2 + fVar5;
+      (this->fields)._dragDelta.x = fVar1;
+      (this->fields)._dragDelta.y = fVar2;
+      (this->fields)._accumDrag.x = fVar4 + fVar1;
+      (this->fields)._accumDrag.y = fVar5 + fVar2;
       return 1;
     }
     if (cRam_? == '\0') {
@@ -113,7 +113,7 @@ bool Assembly-CSharp.dll::RTG::InputDeviceScreenDragSession::
           if (pIVar3->interfaceOffsets[uVar4].interfaceType ==
               (Il2CppClass *)TypeInfo__RTG__IInputDevice) {
             ppMVar6 = &(&(pIVar1->klass->vtable).GetPositionYAxisUp)
-                       [pIVar3->interfaceOffsets[uVar4].offset].method;
+                       [pIVar1->klass->interfaceOffsets[uVar4].offset].method;
             goto code_?;
           }
           uVar4 = uVar4 + 1;
@@ -121,18 +121,18 @@ bool Assembly-CSharp.dll::RTG::InputDeviceScreenDragSession::
       }
       ppMVar6 = (MethodInfo **)func_?(pIVar1,TypeInfo__RTG__IInputDevice,7);
 code_?:
-      puVar7 = (undefined8 *)(*(code *)*ppMVar6)(auStack_8,pIVar1,ppMVar6[1]);
-      uVar9 = *puVar7;
-      fStack_10 = (float)uVar9;
-      (this->fields)._dragPoint.x = fStack_10;
-      fStack_11 = (float)((ulonglong)uVar9 >> 0x20);
-      (this->fields)._dragPoint.y = fStack_11;
+      puVar7 = (undefined8 *)(*(code *)*ppMVar6)(&stack0xffffffd8,pIVar1,ppMVar6[1]);
+      uVar8 = *puVar7;
+      fStack_9 = (float)uVar8;
+      (this->fields)._dragPoint.x = fStack_9;
+      fStack_10 = (float)((ulonglong)uVar8 >> 0x20);
+      (this->fields)._dragPoint.y = fStack_10;
       return 1;
     }
   }
   func_?();
-  pcVar12 = (code *)swi(3);
-  bVar13 = (*pcVar12)();
-  return bVar13;
+  pcVar11 = (code *)swi(3);
+  bVar12 = (*pcVar11)();
+  return bVar12;
 }
 

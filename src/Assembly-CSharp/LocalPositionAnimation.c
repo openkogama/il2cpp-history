@@ -44,15 +44,14 @@ void Assembly-CSharp.dll::LocalPositionAnimation::LocalPositionAnimation_Update
   fVar2 = (this->fields).animationTime;
   this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                       ((Component *)this,(MethodInfo *)0x0);
-  uVar3 = (this->fields).startPos.x;
-  uVar4 = (this->fields).startPos.y;
-  fVar5 = (this->fields).startPos.z;
-  fVar6 = (this->fields).endPos.z;
-  uVar7 = (this->fields).endPos.x;
-  uVar8 = (this->fields).endPos.y;
-  dVar9 = (double)(((float)fVar1 / fVar2) * _UNK_?);
+  uVar3 = (this->fields).startPos.y;
+  fVar4 = (this->fields).startPos.z;
+  fVar5 = (this->fields).endPos.z;
+  uVar6 = (this->fields).endPos.x;
+  uVar7 = (this->fields).endPos.y;
+  dVar8 = (double)(((float)fVar1 / fVar2) * _UNK_?);
   func_?();
-  fVar2 = ((float)dVar9 + _UNK_?) * _UNK_?;
+  fVar2 = ((float)dVar8 + _UNK_?) * _UNK_?;
   if (fVar2 < 0.0) {
     fVar2 = 0.0;
   }
@@ -60,16 +59,16 @@ void Assembly-CSharp.dll::LocalPositionAnimation::LocalPositionAnimation_Update
     fVar2 = _UNK_?;
   }
   if (this_00 != (Transform *)0x0) {
-    value.y = ((float)uVar8 - (float)uVar4) * fVar2 + (float)uVar4;
-    value.x = ((float)uVar7 - (float)uVar3) * fVar2 + (float)uVar3;
-    value.z = (fVar6 - fVar5) * fVar2 + fVar5;
+    value.y = ((float)uVar7 - (float)uVar3) * fVar2 + (float)uVar3;
+    value.x = ((float)uVar6 - 3.572645e-29) * fVar2 + 3.572645e-29;
+    value.z = (fVar5 - fVar4) * fVar2 + fVar4;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
               (this_00,value,(MethodInfo *)0x0);
     return;
   }
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

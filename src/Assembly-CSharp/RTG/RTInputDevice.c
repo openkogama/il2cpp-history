@@ -28,9 +28,8 @@ void Assembly-CSharp.dll::RTG::RTInputDevice::RTInputDevice_Awake
   this_00[1].fields._doubleTapDelay = pVVar4->x;
   this_00[1].fields._lastTapTime = fVar5;
   *(float *)&this_00[1].fields._didDoubleTap = fVar2;
-  ppIVar6 = &(this->fields)._inputDevice;
-  *ppIVar6 = (IInputDevice *)this_00;
-  func_?(ppIVar6);
+  (this->fields)._inputDevice = (IInputDevice *)this_00;
+  func_?(&(this->fields)._inputDevice);
   return;
 }
 
@@ -105,9 +104,10 @@ Assembly-CSharp.dll::RTG::RTInputDevice::RTInputDevice_get_DeviceType
       do {
         if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
             (Il2CppClass *)TypeInfo__RTG__IInputDevice) {
+          pIVar2 = pIVar1->klass;
           iVar5 = pIVar2->interfaceOffsets[uVar3].offset;
-          IVar6 = (*(code *)(&(pIVar1->klass->vtable).get_DeviceType)[iVar5].method)
-                            (pIVar1,(&(pIVar1->klass->vtable).GetRay)[iVar5].methodPtr);
+          IVar6 = (*(code *)(&(pIVar2->vtable).get_DeviceType)[iVar5].method)
+                            (pIVar1,(&(pIVar2->vtable).GetRay)[iVar5].methodPtr);
           return IVar6;
         }
         uVar3 = uVar3 + 1;

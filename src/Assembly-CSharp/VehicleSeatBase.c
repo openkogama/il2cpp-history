@@ -50,14 +50,14 @@ void Assembly-CSharp.dll::VehicleSeatBase::VehicleSeatBase_Awake
     func_?(&TypeInfo__MVGameControllerBase);
     cRam_? = '\x01';
   }
-  ppMVar1 = &(this->fields).seatCamera;
   if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
-    *ppMVar1 = (this->fields).DesktopCamera;
+    (this->fields).seatCamera = (this->fields).DesktopCamera;
   }
   else {
-    *ppMVar1 = (this->fields).AndroidCamera;
+    (this->fields).seatCamera = (this->fields).AndroidCamera;
   }
-  func_?(ppMVar1,unaff_EBP);
+  this = (VehicleSeatBase *)&(this->fields).seatCamera;
+  func_?(this,unaff_EBP);
   return;
 }
 
@@ -126,9 +126,9 @@ void Assembly-CSharp.dll::VehicleSeatBase::VehicleSeatBase_RemoveCamera
     if (pMVar2 != (MVAvatar *)0x0) {
       pAVar3 = (pMVar2->fields).avatar;
       if (pAVar3 != (Avatar *)0x0) {
-        bVar4 = (TypeInfo__AvatarLocal->_1).naturalAligment;
-        if (((pAVar3->klass->_1).naturalAligment < bVar4) ||
-           ((pAVar3->klass->_1).typeHierarchy[bVar4 - 1] != (Il2CppClass *)TypeInfo__AvatarLocal)) {
+        if (((pAVar3->klass->_1).naturalAligment < (TypeInfo__AvatarLocal->_1).naturalAligment) ||
+           ((pAVar3->klass->_1).typeHierarchy[(TypeInfo__AvatarLocal->_1).naturalAligment - 1] !=
+            (Il2CppClass *)TypeInfo__AvatarLocal)) {
           func_?(pAVar3,TypeInfo__AvatarLocal);
         }
         else if (pAVar3[1].klass != (Avatar__Class *)0x0) {
@@ -139,8 +139,8 @@ void Assembly-CSharp.dll::VehicleSeatBase::VehicleSeatBase_RemoveCamera
       }
     }
     func_?();
-    pcVar5 = (code *)swi(3);
-    (*pcVar5)();
+    pcVar4 = (code *)swi(3);
+    (*pcVar4)();
     return;
   }
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
@@ -174,7 +174,6 @@ void Assembly-CSharp.dll::VehicleSeatBase::VehicleSeatBase_SetCamera
   }
   bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                     ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-  pIVar2 = TypeInfo__IVehicleCamera;
   if (bVar1 != 0) {
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
@@ -183,72 +182,73 @@ void Assembly-CSharp.dll::VehicleSeatBase::VehicleSeatBase_SetCamera
               ((Object *)StringLiteral_Camera_is_null,(MethodInfo *)0x0);
     return;
   }
-  pAVar3 = (AvatarLocal__Class *)(this->fields).seatCamera;
-  pMVar4 = (this->fields).owner;
-  if (pAVar3 == (AvatarLocal__Class *)0x0) goto code_?;
-  iVar5 = func_?(pAVar3,TypeInfo__IVehicleCamera);
-  pIVar6 = TypeInfo__IVehicleCamera;
+  pAVar2 = (AvatarLocal__Class *)(this->fields).seatCamera;
+  pMVar3 = (this->fields).owner;
+  if (pAVar2 == (AvatarLocal__Class *)0x0) goto code_?;
+  pMVar4 = (MVAvatar *)TypeInfo__IVehicleCamera;
+  iVar5 = func_?(pAVar2,TypeInfo__IVehicleCamera,TypeInfo__IVehicleCamera);
   if (iVar5 == 0) {
 code_?:
-    func_?(pAVar3,pIVar2);
-    pMVar7 = extraout_EDX;
+    func_?(pAVar2,pMVar4);
+    pMVar6 = extraout_EDX;
   }
-  else {
-    if (pMVar4 == (MVAvatar *)0x0) {
-code_?:
-      piVar8 = (int *)func_?(pAVar3,TypeInfo__IVehicleCamera);
-      pIVar2 = pIVar6;
-      if (piVar8 != (int *)0x0) {
-        pIVar6 = (IVehicleCamera__Class *)*piVar8;
-        uVar9 = 0;
-        uVar10._0_1_ = (pIVar6->_1).rank;
-        uVar10._1_1_ = (pIVar6->_1).minimumAlignment;
-        pIVar2 = pIVar6;
-        if (uVar10 != 0) {
-          pIVar2 = (IVehicleCamera__Class *)pIVar6->interfaceOffsets;
-          do {
-            if ((Il2CppClass *)(&(pIVar2->_0).image)[(uint)uVar9 * 2] ==
-                (Il2CppClass *)TypeInfo__IVehicleCamera) {
-              ppMVar11 = &(&(pIVar6->vtable).Initialize)
-                         [(int)(&(pIVar2->_0).gc_desc)[(uint)uVar9 * 2]].method;
-              goto code_?;
-            }
-            uVar9 = uVar9 + 1;
-          } while (uVar9 < uVar10);
-        }
-        ppMVar11 = (MethodInfo **)func_?(piVar8,TypeInfo__IVehicleCamera,2);
-code_?:
-        (*(code *)*ppMVar11)(piVar8,pMVar4,ppMVar11[1]);
-        pAVar3 = TypeInfo__AvatarLocal;
-        pMVar4 = (this->fields).owner;
-        if ((pMVar4 == (MVAvatar *)0x0) ||
-           (pAVar12 = (pMVar4->fields).avatar, pAVar12 == (Avatar *)0x0)) goto code_?;
-        bVar13 = (TypeInfo__AvatarLocal->_1).naturalAligment;
-        if ((bVar13 <= (pAVar12->klass->_1).naturalAligment) &&
-           ((pAVar12->klass->_1).typeHierarchy[bVar13 - 1] == (Il2CppClass *)TypeInfo__AvatarLocal)) {
-          if (pAVar12[1].klass != (Avatar__Class *)0x0) {
-            func_?(5,TypeInfo__IAvatarCameraController,pAVar12[1].klass,
-                            (this->fields).seatCamera);
-            return;
+  else if ((pMVar3 == (MVAvatar *)0x0) ||
+          ((pMVar6 = TypeInfo__MVAvatarLocal,
+           (TypeInfo__MVAvatarLocal->_1).naturalAligment <=
+           *(byte *)&((Il2CppClass_0 *)&pMVar3->klass)->image[4].assembly &&
+           (*(MVAvatarLocal__Class **)
+             ((((Il2CppClass_0 *)&pMVar3->klass)->image[2].typeCount - 4) +
+             (uint)(TypeInfo__MVAvatarLocal->_1).naturalAligment * 4) == TypeInfo__MVAvatarLocal))))
+  {
+    pMVar4 = (MVAvatar *)TypeInfo__IVehicleCamera;
+    piVar7 = (int *)func_?(pAVar2,TypeInfo__IVehicleCamera,TypeInfo__IVehicleCamera);
+    if (piVar7 != (int *)0x0) {
+      iVar5 = *piVar7;
+      uVar8 = 0;
+      uVar9 = *(ushort *)(iVar5 + 0xb6);
+      pMVar4 = (MVAvatar *)(uint)uVar9;
+      if (uVar9 != 0) {
+        do {
+          if (*(IVehicleCamera__Class **)(*(int *)(iVar5 + 0x58) + (uint)uVar8 * 8) ==
+              TypeInfo__IVehicleCamera) {
+            puVar10 = (undefined4 *)
+                     (iVar5 + (*(int *)(*(int *)(iVar5 + 0x58) + 4 + (uint)uVar8 * 8) + 0x1a) * 8);
+            goto code_?;
           }
-          goto code_?;
-        }
-        func_?(pAVar12,TypeInfo__AvatarLocal);
-        pMVar4 = (MVAvatar *)this;
+          uVar8 = uVar8 + 1;
+        } while (uVar8 < uVar9);
       }
-      goto code_?;
+      puVar10 = (undefined4 *)func_?(piVar7,TypeInfo__IVehicleCamera,2);
+code_?:
+      (*(code *)*puVar10)(piVar7,pMVar3,puVar10[1]);
+      pAVar2 = TypeInfo__AvatarLocal;
+      pMVar3 = (this->fields).owner;
+      if ((pMVar3 == (MVAvatar *)0x0) ||
+         (pAVar11 = (pMVar3->fields).avatar, pAVar11 == (Avatar *)0x0)) goto code_?;
+      pMVar12 = (MVAvatar *)pAVar11->klass;
+      pMVar3 = pMVar12;
+      if (((TypeInfo__AvatarLocal->_1).naturalAligment <=
+           (byte)(pMVar12->fields)._._.interactionFlags) &&
+         (pMVar3 = pMVar4,
+         *(AvatarLocal__Class **)
+          ((int)(pMVar12->fields)._._._.OnInputLinkChanged +
+          (uint)(TypeInfo__AvatarLocal->_1).naturalAligment * 4 + -4) == TypeInfo__AvatarLocal)) {
+        if (pAVar11[1].klass != (Avatar__Class *)0x0) {
+          func_?(5,TypeInfo__IAvatarCameraController,pAVar11[1].klass,
+                          (this->fields).seatCamera);
+          return;
+        }
+        goto code_?;
+      }
+      func_?(pAVar11,TypeInfo__AvatarLocal);
     }
-    bVar13 = (TypeInfo__MVAvatarLocal->_1).naturalAligment;
-    pMVar7 = TypeInfo__MVAvatarLocal;
-    if ((bVar13 <= (pMVar4->klass->_1).naturalAligment) &&
-       ((MVAvatarLocal__Class *)(pMVar4->klass->_1).typeHierarchy[bVar13 - 1] ==
-        TypeInfo__MVAvatarLocal)) goto code_?;
+    goto code_?;
   }
-  func_?(pMVar4,pMVar7);
+  func_?(pMVar3,pMVar6);
 code_?:
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

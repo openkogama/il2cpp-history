@@ -28,6 +28,8 @@ bool Assembly-CSharp.dll::RTG::AABB::AABB_ContainsPoint(AABB *this,Vector3 point
   if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__RTG__BoxMath);
   }
+  func_?(&MStack_11,0,0x40);
+  func_?(&MStack_12,0,0x40);
   VStack_3.z = fStack_4 + VStack_3.z;
   pos.z = fVar2;
   pos.x = (float)(undefined4)uStack_1;
@@ -39,44 +41,44 @@ bool Assembly-CSharp.dll::RTG::AABB::AABB_ContainsPoint(AABB *this,Vector3 point
   s.y = VStack_3.y + uStack_10._4_4_;
   s.x = VStack_3.x + (float)uStack_10;
   s.z = VStack_3.z;
-  pMVar11 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
+  pMVar13 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
                      ((Matrix4x4 *)&stack0xffffff0c,pos,q,s,(MethodInfo *)0x0);
-  MStack_12.m00 = pMVar11->m00;
-  MStack_12.m10 = pMVar11->m10;
-  MStack_12.m20 = pMVar11->m20;
-  MStack_12.m30 = pMVar11->m30;
-  MStack_12.m01 = pMVar11->m01;
-  MStack_12.m11 = pMVar11->m11;
-  MStack_12.m21 = pMVar11->m21;
-  MStack_12.m31 = pMVar11->m31;
-  MStack_12.m02 = pMVar11->m02;
-  MStack_12.m12 = pMVar11->m12;
-  MStack_12.m22 = pMVar11->m22;
-  MStack_12.m32 = pMVar11->m32;
-  MStack_12.m03 = pMVar11->m03;
-  MStack_12.m13 = pMVar11->m13;
-  MStack_12.m23 = pMVar11->m23;
-  MStack_12.m33 = pMVar11->m33;
-  pMVar11 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_inverse
-                     ((Matrix4x4 *)&stack0xffffff0c,&MStack_12,(MethodInfo *)0x0);
-  MStack_13.m00 = pMVar11->m00;
-  MStack_13.m10 = pMVar11->m10;
-  MStack_13.m20 = pMVar11->m20;
-  MStack_13.m30 = pMVar11->m30;
-  MStack_13.m01 = pMVar11->m01;
-  MStack_13.m11 = pMVar11->m11;
-  MStack_13.m21 = pMVar11->m21;
-  MStack_13.m31 = pMVar11->m31;
-  MStack_13.m02 = pMVar11->m02;
-  MStack_13.m12 = pMVar11->m12;
-  MStack_13.m22 = pMVar11->m22;
-  MStack_13.m32 = pMVar11->m32;
-  MStack_13.m03 = pMVar11->m03;
-  MStack_13.m13 = pMVar11->m13;
-  MStack_13.m23 = pMVar11->m23;
-  MStack_13.m33 = pMVar11->m33;
+  MStack_11.m00 = pMVar13->m00;
+  MStack_11.m10 = pMVar13->m10;
+  MStack_11.m20 = pMVar13->m20;
+  MStack_11.m30 = pMVar13->m30;
+  MStack_11.m01 = pMVar13->m01;
+  MStack_11.m11 = pMVar13->m11;
+  MStack_11.m21 = pMVar13->m21;
+  MStack_11.m31 = pMVar13->m31;
+  MStack_11.m02 = pMVar13->m02;
+  MStack_11.m12 = pMVar13->m12;
+  MStack_11.m22 = pMVar13->m22;
+  MStack_11.m32 = pMVar13->m32;
+  MStack_11.m03 = pMVar13->m03;
+  MStack_11.m13 = pMVar13->m13;
+  MStack_11.m23 = pMVar13->m23;
+  MStack_11.m33 = pMVar13->m33;
+  pMVar13 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_inverse
+                     ((Matrix4x4 *)&stack0xffffff0c,&MStack_11,(MethodInfo *)0x0);
+  MStack_12.m00 = pMVar13->m00;
+  MStack_12.m10 = pMVar13->m10;
+  MStack_12.m20 = pMVar13->m20;
+  MStack_12.m30 = pMVar13->m30;
+  MStack_12.m01 = pMVar13->m01;
+  MStack_12.m11 = pMVar13->m11;
+  MStack_12.m21 = pMVar13->m21;
+  MStack_12.m31 = pMVar13->m31;
+  MStack_12.m02 = pMVar13->m02;
+  MStack_12.m12 = pMVar13->m12;
+  MStack_12.m22 = pMVar13->m22;
+  MStack_12.m32 = pMVar13->m32;
+  MStack_12.m03 = pMVar13->m03;
+  MStack_12.m13 = pMVar13->m13;
+  MStack_12.m23 = pMVar13->m23;
+  MStack_12.m33 = pMVar13->m33;
   pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyPoint
-                     (&VStack_3,&MStack_13,point,(MethodInfo *)0x0);
+                     (&VStack_3,&MStack_12,point,(MethodInfo *)0x0);
   uVar15 = pVVar14->x;
   uVar16 = pVVar14->y;
   if ((((_UNK_? <= (float)uVar15) && ((float)uVar15 <= _UNK_?)) &&
@@ -99,40 +101,40 @@ void Assembly-CSharp.dll::RTG::AABB::AABB_Encapsulate(AABB *this,Vector3 point,M
   uVar4 = (this->_size).y;
   fVar5 = (float)uVar1 - (float)uVar3 * _UNK_?;
   fVar6 = (float)uVar2 - (float)uVar4 * _UNK_?;
-  fVar7 = (this->_center).z - (this->_size).z * _UNK_?;
+  fStack_7 = (this->_center).z - (this->_size).z * _UNK_?;
   uVar8 = (this->_center).x;
   uVar9 = (this->_center).y;
   uVar10 = (this->_size).x;
   uVar11 = (this->_size).y;
-  fStack_12 = (float)uVar8 + (float)uVar10 * _UNK_?;
-  fStack_13 = (float)uVar9 + (float)uVar11 * _UNK_?;
-  fVar14 = (this->_center).z + (this->_size).z * _UNK_?;
+  fStack_12 = (float)uVar9 + (float)uVar11 * _UNK_?;
+  fVar13 = (float)uVar8 + (float)uVar10 * _UNK_?;
+  fStack_14 = (this->_center).z + (this->_size).z * _UNK_?;
   if (point.x < fVar5) {
     fVar5 = point.x;
   }
-  if (fStack_12 < point.x) {
-    fStack_12 = point.x;
+  if (fVar13 < point.x) {
+    fVar13 = point.x;
   }
   if (point.y < fVar6) {
     fVar6 = point.y;
   }
-  if (fStack_13 < point.y) {
-    fStack_13 = point.y;
+  if (fStack_12 < point.y) {
+    fStack_12 = point.y;
   }
-  if (point.z < fVar7) {
-    fVar7 = point.z;
+  if (point.z < fStack_7) {
+    fStack_7 = point.z;
   }
-  if (fVar14 < point.z) {
-    fVar14 = point.z;
+  if (fStack_14 < point.z) {
+    fStack_14 = point.z;
   }
   this->_isValid = 1;
-  value.z = fVar7;
+  value.z = fStack_7;
   value.x = fVar5;
   value.y = fVar6;
   AABB_set_Min(this,value,(MethodInfo *)0x0);
-  value_00.y = fStack_13;
-  value_00.x = fStack_12;
-  value_00.z = fVar14;
+  value_00.y = fStack_12;
+  value_00.x = fVar13;
+  value_00.z = fStack_14;
   AABB_set_Max(this,value_00,(MethodInfo *)0x0);
   return;
 }
@@ -222,46 +224,46 @@ void Assembly-CSharp.dll::RTG::AABB::AABB_Encapsulate_2(AABB *this,AABB aabb,Met
   uVar4 = (this->_size).y;
   fVar5 = (float)uVar1 - (float)uVar3 * _UNK_?;
   fVar6 = (float)uVar2 - (float)uVar4 * _UNK_?;
-  fVar7 = (this->_center).z - (this->_size).z * _UNK_?;
+  fStack_7 = (this->_center).z - (this->_size).z * _UNK_?;
   uVar8 = (this->_center).x;
   uVar9 = (this->_center).y;
   uVar10 = (this->_size).x;
   uVar11 = (this->_size).y;
-  fStack_12 = (float)uVar8 + (float)uVar10 * _UNK_?;
+  fVar12 = (float)uVar8 + (float)uVar10 * _UNK_?;
   fStack_13 = (float)uVar9 + (float)uVar11 * _UNK_?;
-  fVar14 = (this->_center).z + (this->_size).z * _UNK_?;
+  fStack_14 = (this->_center).z + (this->_size).z * _UNK_?;
   fVar15 = aabb._center.x - aabb._size.x * _UNK_?;
   fVar16 = aabb._center.y - aabb._size.y * _UNK_?;
   fVar17 = aabb._center.z - aabb._size.z * _UNK_?;
-  fVar18 = aabb._center.x + aabb._size.x * _UNK_?;
-  fVar19 = aabb._center.y + aabb._size.y * _UNK_?;
-  fVar20 = aabb._center.z + aabb._size.z * _UNK_?;
+  fVar18 = aabb._center.z + aabb._size.z * _UNK_?;
+  fVar19 = aabb._center.x + aabb._size.x * _UNK_?;
+  fVar20 = aabb._center.y + aabb._size.y * _UNK_?;
   if (fVar15 < fVar5) {
     fVar5 = fVar15;
   }
   if (fVar16 < fVar6) {
     fVar6 = fVar16;
   }
-  if (fVar17 < fVar7) {
-    fVar7 = fVar17;
+  if (fVar17 < fStack_7) {
+    fStack_7 = fVar17;
   }
-  if (fStack_12 < fVar18) {
-    fStack_12 = fVar18;
+  if (fVar12 < fVar19) {
+    fVar12 = fVar19;
   }
-  if (fStack_13 < fVar19) {
-    fStack_13 = fVar19;
+  if (fStack_13 < fVar20) {
+    fStack_13 = fVar20;
   }
-  if (fVar14 < fVar20) {
-    fVar14 = fVar20;
+  if (fStack_14 < fVar18) {
+    fStack_14 = fVar18;
   }
   this->_isValid = 1;
-  value.z = fVar7;
+  value.z = fStack_7;
   value.x = fVar5;
   value.y = fVar6;
   AABB_set_Min(this,value,(MethodInfo *)0x0);
   value_00.y = fStack_13;
-  value_00.x = fStack_12;
-  value_00.z = fVar14;
+  value_00.x = fVar12;
+  value_00.z = fStack_14;
   AABB_set_Max(this,value_00,(MethodInfo *)0x0);
   return;
 }
@@ -376,10 +378,16 @@ Assembly-CSharp.dll::RTG::AABB::AABB_GetScreenCenterAndCornerPoints
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  pLStack_7 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
+  LStack_7._list = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0;
+  LStack_7._index = 0;
+  LStack_7._version = 0;
+  LStack_7._current.Quadrant = 0;
+  LStack_7._current.FirstAxisSign = 0;
+  LStack_7._current.SecondAxisSign = 0;
+  pLStack_8 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
                AABB_GetCenterAndCornerPoints(this,(MethodInfo *)0x0);
-  if (pLStack_7 != (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
-    capacity = (pLStack_7->fields)._size;
+  if (pLStack_8 != (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
+    capacity = (pLStack_8->fields)._size;
     this_00 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
                *)func_?();
     mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
@@ -387,36 +395,36 @@ Assembly-CSharp.dll::RTG::AABB::AABB_GetScreenCenterAndCornerPoints
     List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
               (this_00,capacity,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List_int_);
-    pLStack_8 = this_00;
-    pLVar9 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+    pLStack_9 = this_00;
+    pLVar10 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__GetEnumerator
-                        (&LStack_10,pLStack_7,
+                        (&LStack_11,pLStack_8,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__GetEnumerator__
                         );
-    uStack_11 = 0;
-    LStack_12._list = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar9->_list;
-    LStack_12._index = pLVar9->_index;
-    LStack_12._version = pLVar9->_version;
-    LStack_12._current.Quadrant = (int32_t)(pLVar9->_current).alias;
-    uVar13 = (pLVar9->_current).path;
-    uVar14 = (pLVar9->_current).asset;
+    uStack_12 = 0;
+    LStack_7._list = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar10->_list;
+    LStack_7._index = pLVar10->_index;
+    LStack_7._version = pLVar10->_version;
+    LStack_7._current.Quadrant = (int32_t)(pLVar10->_current).alias;
+    uVar13 = (pLVar10->_current).path;
+    uVar14 = (pLVar10->_current).asset;
     uStack_1 = 1;
-    LStack_12._current.FirstAxisSign = uVar13;
-    LStack_12._current.SecondAxisSign = uVar14;
-    pLStack_15 = &LStack_12;
+    LStack_7._current.FirstAxisSign = uVar13;
+    LStack_7._current.SecondAxisSign = uVar14;
+    pLStack_15 = &LStack_7;
     while( true ) {
       while( true ) {
         bVar16 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[RTG::
                 PlaneIdHelper+PlaneQuadrantInfo]::
                 List_1_T_Enumerator_RTG_PlaneIdHelper_PlaneQuadrantInfo__MoveNext
-                          (&LStack_12,
+                          (&LStack_7,
                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__MoveNext__
                           );
         if (bVar16 == 0) {
           uStack_1 = 0xffffffff;
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&LStack_12,
+                    ((Object *)&LStack_7,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__Dispose__
                      ,(MethodInfo *)in_stack_6);
@@ -424,11 +432,11 @@ Assembly-CSharp.dll::RTG::AABB::AABB_GetScreenCenterAndCornerPoints
           return (List_1_UnityEngine_Vector2_ *)this_00;
         }
         if (camera == (Camera *)0x0) goto code_?;
-        position.y = (float)LStack_12._current.FirstAxisSign;
-        position.x = (float)LStack_12._current.Quadrant;
-        position.z = (float)LStack_12._current.SecondAxisSign;
+        position.y = (float)LStack_7._current.FirstAxisSign;
+        position.x = (float)LStack_7._current.Quadrant;
+        position.z = (float)LStack_7._current.SecondAxisSign;
         pVVar17 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1
-                            ((Vector3 *)&LStack_10._current,camera,position,(MethodInfo *)0x0);
+                            ((Vector3 *)&LStack_11._current,camera,position,(MethodInfo *)0x0);
         pMVar18 = 
         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
         ;
@@ -508,10 +516,16 @@ Assembly-CSharp.dll::RTG::AABB::AABB_GetScreenCornerPoints
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  pLStack_7 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
+  LStack_7._list = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0;
+  LStack_7._index = 0;
+  LStack_7._version = 0;
+  LStack_7._current.Quadrant = 0;
+  LStack_7._current.FirstAxisSign = 0;
+  LStack_7._current.SecondAxisSign = 0;
+  pLStack_8 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
                AABB_GetCornerPoints(this,(MethodInfo *)0x0);
-  if (pLStack_7 != (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
-    capacity = (pLStack_7->fields)._size;
+  if (pLStack_8 != (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
+    capacity = (pLStack_8->fields)._size;
     this_00 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
                *)func_?();
     mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
@@ -519,36 +533,36 @@ Assembly-CSharp.dll::RTG::AABB::AABB_GetScreenCornerPoints
     List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
               (this_00,capacity,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List_int_);
-    pLStack_8 = this_00;
-    pLVar9 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+    pLStack_9 = this_00;
+    pLVar10 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__GetEnumerator
-                        (&LStack_10,pLStack_7,
+                        (&LStack_11,pLStack_8,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__GetEnumerator__
                         );
-    uStack_11 = 0;
-    LStack_12._list = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar9->_list;
-    LStack_12._index = pLVar9->_index;
-    LStack_12._version = pLVar9->_version;
-    LStack_12._current.Quadrant = (int32_t)(pLVar9->_current).alias;
-    uVar13 = (pLVar9->_current).path;
-    uVar14 = (pLVar9->_current).asset;
+    uStack_12 = 0;
+    LStack_7._list = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar10->_list;
+    LStack_7._index = pLVar10->_index;
+    LStack_7._version = pLVar10->_version;
+    LStack_7._current.Quadrant = (int32_t)(pLVar10->_current).alias;
+    uVar13 = (pLVar10->_current).path;
+    uVar14 = (pLVar10->_current).asset;
     uStack_1 = 1;
-    LStack_12._current.FirstAxisSign = uVar13;
-    LStack_12._current.SecondAxisSign = uVar14;
-    pLStack_15 = &LStack_12;
+    LStack_7._current.FirstAxisSign = uVar13;
+    LStack_7._current.SecondAxisSign = uVar14;
+    pLStack_15 = &LStack_7;
     while( true ) {
       while( true ) {
         bVar16 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[RTG::
                 PlaneIdHelper+PlaneQuadrantInfo]::
                 List_1_T_Enumerator_RTG_PlaneIdHelper_PlaneQuadrantInfo__MoveNext
-                          (&LStack_12,
+                          (&LStack_7,
                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__MoveNext__
                           );
         if (bVar16 == 0) {
           uStack_1 = 0xffffffff;
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&LStack_12,
+                    ((Object *)&LStack_7,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__Dispose__
                      ,(MethodInfo *)in_stack_6);
@@ -556,11 +570,11 @@ Assembly-CSharp.dll::RTG::AABB::AABB_GetScreenCornerPoints
           return (List_1_UnityEngine_Vector2_ *)this_00;
         }
         if (camera == (Camera *)0x0) goto code_?;
-        position.y = (float)LStack_12._current.FirstAxisSign;
-        position.x = (float)LStack_12._current.Quadrant;
-        position.z = (float)LStack_12._current.SecondAxisSign;
+        position.y = (float)LStack_7._current.FirstAxisSign;
+        position.x = (float)LStack_7._current.Quadrant;
+        position.z = (float)LStack_7._current.SecondAxisSign;
         pVVar17 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1
-                            ((Vector3 *)&LStack_10._current,camera,position,(MethodInfo *)0x0);
+                            ((Vector3 *)&LStack_11._current,camera,position,(MethodInfo *)0x0);
         pMVar18 = 
         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
         ;
@@ -615,66 +629,64 @@ Rect * Assembly-CSharp.dll::RTG::AABB::AABB_GetScreenRectangle
     cRam_? = '\x01';
   }
   this_00 = AABB_GetScreenCornerPoints(this,camera,(MethodInfo *)0x0);
-  if (this_00 == (List_1_UnityEngine_Vector2_ *)0x0) {
-    func_?();
-    pcVar1 = (code *)swi(3);
-    pRVar2 = (Rect *)(*pcVar1)();
-    return pRVar2;
-  }
-  VVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-          List_1_UnityEngine_Vector2__get_Item
-                    (this_00,0,
-                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                    );
-  fStack_4 = VVar3.y;
-  uVar5 = CONCAT44(fStack_4,pLStack_6);
-  method_00 = (MethodInfo *)0x0;
-  VVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-          List_1_UnityEngine_Vector2__get_Item
-                    (this_00,0,
-                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                    );
-  pLStack_6 = (List_1_UnityEngine_Vector2_ *)VVar3.x;
-  fStack_4 = VVar7.y;
-  fStack_8 = (float)pLStack_6;
-  fStack_9 = fStack_4;
-  for (index = 1; index < (this_00->fields)._size; index = index + 1) {
-    VVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+  if (this_00 != (List_1_UnityEngine_Vector2_ *)0x0) {
+    VVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
             List_1_UnityEngine_Vector2__get_Item
-                      (this_00,index,
+                      (this_00,0,
                        MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
                       );
-    pLStack_6 = (List_1_UnityEngine_Vector2_ *)VVar3.x;
-    this_01 = (List_1_UnityEngine_Vector2_ *)uVar5;
-    if ((float)pLStack_6 <= (float)(List_1_UnityEngine_Vector2_ *)uVar5) {
-      this_01 = pLStack_6;
+    camera = (Camera *)VVar1.x;
+    pMVar2 = (MethodInfo *)VVar1.y;
+    VVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+            List_1_UnityEngine_Vector2__get_Item
+                      (this_00,0,
+                       MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                      );
+    fStack_3 = VVar1.x;
+    index = 1.4013e-45;
+    pLStack_4 = (List_1_UnityEngine_Vector2_ *)VVar1.y;
+    while ((int)index < (this_00->fields)._size) {
+      VVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+              List_1_UnityEngine_Vector2__get_Item
+                        (this_00,(int32_t)index,
+                         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                        );
+      pCVar5 = (Camera *)VVar1.x;
+      if ((float)camera < VVar1.x) {
+        pCVar5 = camera;
+      }
+      camera = pCVar5;
+      fVar6 = index;
+      pMVar2 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_;
+      pLVar7 = this_00;
+      VVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+              List_1_UnityEngine_Vector2__get_Item
+                        (this_00,(int32_t)index,
+                         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                        );
+      fStack_3 = VVar1.x;
+      if (fStack_3 < fVar6) {
+        fStack_3 = fVar6;
+      }
+      pLStack_4 = (List_1_UnityEngine_Vector2_ *)VVar1.y;
+      if ((float)pLVar7 <= (float)pLStack_4) {
+        index = (float)((int)index + 1);
+      }
+      else {
+        index = (float)((int)index + 1);
+        pLStack_4 = pLVar7;
+      }
     }
-    fStack_4 = VVar3.y;
-    fVar10 = (float)((ulonglong)uVar5 >> 0x20);
-    if (fStack_4 <= fVar10) {
-      fVar10 = fStack_4;
-    }
-    if (0.0 <= (float)method_00) {
-      method_00 = (MethodInfo *)0x0;
-    }
-    uVar5 = CONCAT44(fVar10,this_01);
-    VVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-            List_1_UnityEngine_Vector2__get_Item(this_01,(int32_t)fVar10,method_00);
-    fStack_11 = VVar3.x;
-    if (fStack_8 <= fStack_11) {
-      fStack_8 = fStack_11;
-    }
-    fStack_12 = VVar3.y;
-    if (fStack_9 <= fStack_12) {
-      fStack_9 = fStack_12;
-    }
+    __return_storage_ptr__->m_XMin = (float)camera;
+    __return_storage_ptr__->m_YMin = (float)pMVar2;
+    __return_storage_ptr__->m_Width = fStack_3 - (float)camera;
+    __return_storage_ptr__->m_Height = (float)pLStack_4 - (float)pMVar2;
+    return __return_storage_ptr__;
   }
-  fVar10 = (float)((ulonglong)uVar5 >> 0x20);
-  __return_storage_ptr__->m_XMin = (float)uVar5;
-  __return_storage_ptr__->m_YMin = fVar10;
-  __return_storage_ptr__->m_Width = fStack_8 - (float)uVar5;
-  __return_storage_ptr__->m_Height = fStack_9 - fVar10;
-  return __return_storage_ptr__;
+  func_?();
+  pcVar8 = (code *)swi(3);
+  pRVar9 = (Rect *)(*pcVar8)();
+  return pRVar9;
 }
 
 
@@ -770,18 +782,18 @@ Bounds * Assembly-CSharp.dll::RTG::AABB::AABB_ToBounds
                    (Bounds *__return_storage_ptr__,AABB *this,MethodInfo *method)
 
 {
-  fVar1 = _UNK_?;
-  fVar2 = (this->_center).y;
-  fVar3 = (this->_center).z;
+  fVar1 = (this->_center).y;
+  fVar2 = (this->_center).z;
   (__return_storage_ptr__->m_Center).x = (this->_center).x;
-  (__return_storage_ptr__->m_Center).y = fVar2;
-  uVar4 = (this->_size).x;
-  uVar5 = (this->_size).y;
-  (__return_storage_ptr__->m_Center).z = fVar3;
-  fVar3 = (this->_size).z;
-  (__return_storage_ptr__->m_Extents).x = (float)uVar4 * fVar1;
-  (__return_storage_ptr__->m_Extents).y = (float)uVar5 * fVar1;
-  (__return_storage_ptr__->m_Extents).z = fVar3 * fVar1;
+  (__return_storage_ptr__->m_Center).y = fVar1;
+  uVar3 = (this->_size).x;
+  uVar4 = (this->_size).y;
+  (__return_storage_ptr__->m_Center).z = fVar2;
+  fVar2 = (this->_size).z * _UNK_?;
+  fVar1 = (float)uVar4 * _UNK_?;
+  (__return_storage_ptr__->m_Extents).x = (float)uVar3 * _UNK_?;
+  (__return_storage_ptr__->m_Extents).y = fVar1;
+  (__return_storage_ptr__->m_Extents).z = fVar2;
   return __return_storage_ptr__;
 }
 
@@ -829,8 +841,8 @@ void Assembly-CSharp.dll::RTG::AABB::AABB__ctor
 void Assembly-CSharp.dll::RTG::AABB::AABB__ctor_1(AABB *this,Bounds bounds,MethodInfo *method)
 
 {
-  fVar1 = _UNK_?;
   (this->_center).x = bounds.m_Center.x;
+  fVar1 = _UNK_?;
   (this->_center).y = bounds.m_Center.y;
   (this->_center).z = bounds.m_Center.z;
   (this->_size).x = bounds.m_Extents.x * fVar1;
@@ -852,9 +864,9 @@ void Assembly-CSharp.dll::RTG::AABB::AABB__ctor_2
   puStack_3 = &DAT_?;
   uStack_4 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_4;
-  puStack_5 = &stack0xffffff20;
+  puStack_5 = &stack0xffffff40;
   puVar6 = &stack0xfffffffc;
-  puVar7 = &stack0xffffff20;
+  puVar7 = &stack0xffffff40;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__IDisposable);
     func_?(&TypeInfo__System__Collections__Generic__IEnumerable<UnityEngine::Vector3>);
@@ -867,116 +879,107 @@ void Assembly-CSharp.dll::RTG::AABB::AABB__ctor_2
   puStack_5 = puVar7;
   puStack_1 = puVar6;
   fStack_8 = _UNK_?;
-  uStack_9 = 0;
-  uStack_10 = 0;
-  uStack_11 = 0;
+  fStack_9 = _UNK_?;
+  fStack_10 = _UNK_?;
+  fStack_11 = _UNK_?;
   fStack_12 = _UNK_?;
-  uStack_13 = CONCAT44(_UNK_?,_UNK_?);
+  fStack_13 = _UNK_?;
   fStack_14 = _UNK_?;
   fStack_15 = _UNK_?;
   fStack_16 = _UNK_?;
-  uStack_17 = CONCAT44(_UNK_?,_UNK_?);
+  fStack_17 = _UNK_?;
   fStack_18 = _UNK_?;
   fStack_19 = _UNK_?;
-  fStack_20 = _UNK_?;
-  uStack_21 = 0;
-  uStack_22 = 0;
-  uStack_23 = 0;
   if (pointCloud != (IEnumerable_1_UnityEngine_Vector3_ *)0x0) {
-    piStack_24 = (int *)func_?(0,
+    piStack_20 = (int *)func_?(0,
                                         TypeInfo__System__Collections__Generic__IEnumerable<UnityEngine::Vector3>
                                         ,pointCloud);
-    ppiStack_25 = &piStack_24;
-    uStack_26 = 0;
+    ppiStack_21 = &piStack_20;
+    uStack_22 = 0;
     uStack_2 = 1;
-    uVar27 = uStack_28;
-    while (uStack_28 = uVar27, piStack_24 != (int *)0x0) {
-      cVar29 = func_?(0,TypeInfo__System__Collections__IEnumerator,piStack_24);
-      if (cVar29 == '\0') {
+    fVar23 = fStack_18;
+    while (fStack_18 = fVar23, piStack_20 != (int *)0x0) {
+      cVar24 = func_?(0,TypeInfo__System__Collections__IEnumerator,piStack_20);
+      if (cVar24 == '\0') {
         uStack_2 = 0xffffffff;
-        if (piStack_24 != (int *)0x0) {
-          func_?(0,TypeInfo__System__IDisposable,piStack_24);
+        if (piStack_20 != (int *)0x0) {
+          func_?(0,TypeInfo__System__IDisposable,piStack_20);
         }
-        fVar30 = (fStack_14 + fStack_18) * _UNK_?;
-        fVar31 = (fStack_12 + fStack_16) * _UNK_?;
-        (this->_center).x = (fStack_20 + fStack_8) * _UNK_?;
-        (this->_center).y = fVar31;
-        (this->_center).z = fVar30;
-        (this->_size).x = fStack_20 - fStack_8;
-        (this->_size).y = fStack_16 - fStack_12;
-        (this->_size).z = fStack_18 - fStack_14;
+        fVar23 = (fStack_12 + fStack_18) * _UNK_?;
+        fVar25 = (fStack_10 + fStack_16) * _UNK_?;
+        (this->_center).x = (fStack_8 + fStack_14) * _UNK_?;
+        (this->_center).y = fVar25;
+        (this->_center).z = fVar23;
+        (this->_size).x = fStack_14 - fStack_8;
+        (this->_size).y = fStack_16 - fStack_10;
+        (this->_size).z = fStack_18 - fStack_12;
         this->_isValid = 1;
         *unaff_FS_OFFSET = uStack_4;
         return;
       }
-      piStack_32 = piStack_24;
-      if (piStack_24 == (int *)0x0) break;
-      iStack_33 = *piStack_24;
-      uVar34 = 0;
-      uStack_35 = 0;
-      if (*(ushort *)(iStack_33 + 0xb6) != 0) {
+      piStack_26 = piStack_20;
+      if (piStack_20 == (int *)0x0) break;
+      iStack_27 = *piStack_20;
+      uVar28 = 0;
+      uStack_29 = 0;
+      uVar30 = *(ushort *)(iStack_27 + 0xb6);
+      uStack_31 = (uint)uVar30;
+      if (uVar30 != 0) {
         do {
           if (*(IEnumerator_1_UnityEngine_Vector3___Class **)
-               (*(int *)(iStack_33 + 0x58) + (uint)uVar34 * 8) ==
+               (*(int *)(iStack_27 + 0x58) + (uint)uVar28 * 8) ==
               TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::Vector3>) {
-            puVar36 = (undefined4 *)
-                     (iStack_33 + 0xc0 +
-                     *(int *)(*(int *)(iStack_33 + 0x58) + 4 + (uint)uVar34 * 8) * 8);
+            puVar32 = (undefined4 *)
+                     (iStack_27 +
+                     (*(int *)(*(int *)(iStack_27 + 0x58) + 4 + (uint)uVar28 * 8) + 0x18) * 8);
             goto code_?;
           }
-          uVar34 = uVar34 + 1;
-        } while (uVar34 < *(ushort *)(iStack_33 + 0xb6));
+          uVar28 = uVar28 + 1;
+        } while (uVar28 < uVar30);
       }
-      puVar36 = (undefined4 *)
-               func_?(piStack_24,
+      puVar32 = (undefined4 *)
+               func_?(piStack_20,
                                TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::Vector3>
                                ,0);
 code_?:
-      puVar37 = (undefined8 *)(*(code *)*puVar36)(auStack_38,piStack_32,puVar36[1]);
-      uVar27 = *puVar37;
-      fStack_39 = *(float *)(puVar37 + 1);
-      uStack_28._0_4_ = (float)uVar27;
-      if ((float)uStack_28 < fStack_8) {
-        fStack_8 = (float)uStack_28;
+      puVar33 = (undefined8 *)(*(code *)*puVar32)(auStack_34,piStack_26,puVar32[1]);
+      uVar35 = *puVar33;
+      fStack_36 = *(float *)(puVar33 + 1);
+      uStack_37._0_4_ = (float)uVar35;
+      if ((float)uStack_37 < fStack_8) {
+        fStack_8 = (float)uStack_37;
       }
-      uStack_28._4_4_ = (float)((ulonglong)uVar27 >> 0x20);
-      if (uStack_28._4_4_ < fStack_12) {
-        fStack_12 = uStack_28._4_4_;
+      uStack_37._4_4_ = (float)((ulonglong)uVar35 >> 0x20);
+      if (uStack_37._4_4_ < fStack_10) {
+        fStack_10 = uStack_37._4_4_;
       }
-      fStack_40 = fStack_14;
-      if (fStack_39 < fStack_14) {
-        fStack_40 = fStack_39;
+      if (fStack_36 < fStack_12) {
+        fStack_12 = fStack_36;
       }
-      uStack_13 = CONCAT44(fStack_12,fStack_8);
-      if ((float)uStack_28 <= fStack_20) {
-        uStack_28._0_4_ = fStack_20;
+      if (fStack_14 < (float)uStack_37) {
+        fStack_14 = (float)uStack_37;
       }
-      if (uStack_28._4_4_ <= fStack_16) {
-        uStack_28._4_4_ = fStack_16;
+      if (fStack_16 < uStack_37._4_4_) {
+        fStack_16 = uStack_37._4_4_;
       }
-      fStack_41 = fStack_39;
-      if (fStack_39 <= fStack_18) {
-        fStack_41 = fStack_18;
+      uStack_37 = uVar35;
+      fStack_9 = fStack_8;
+      fStack_11 = fStack_10;
+      fStack_13 = fStack_12;
+      fStack_15 = fStack_14;
+      fStack_17 = fStack_16;
+      fStack_19 = fStack_36;
+      fVar23 = fStack_36;
+      if (fStack_36 <= fStack_18) {
+        fStack_19 = fStack_18;
+        fVar23 = fStack_18;
       }
-      uStack_17 = CONCAT44(uStack_28._4_4_,(float)uStack_28);
-      uStack_9 = 0;
-      uStack_10 = 0;
-      uStack_11 = 0;
-      uStack_21 = 0;
-      uStack_22 = 0;
-      uStack_23 = 0;
-      fStack_20 = (float)uStack_28;
-      fStack_19 = fStack_41;
-      fStack_15 = fStack_40;
-      fStack_14 = fStack_40;
-      fStack_18 = fStack_41;
-      fStack_16 = uStack_28._4_4_;
     }
   }
-  uVar42 = func_?();
-  func_?(uVar42);
-  pcVar43 = (code *)swi(3);
-  (*pcVar43)();
+  uVar38 = func_?();
+  func_?(uVar38);
+  pcVar39 = (code *)swi(3);
+  (*pcVar39)();
   return;
 }
 
@@ -1084,8 +1087,8 @@ Vector3 * Assembly-CSharp.dll::RTG::AABB::AABB_get_Max
   fVar6 = (float)uVar5 * _UNK_?;
   fVar7 = (this->_size).z * _UNK_?;
   __return_storage_ptr__->x = (float)uVar1 + (float)uVar4 * _UNK_?;
-  __return_storage_ptr__->y = (float)uVar2 + fVar6;
-  __return_storage_ptr__->z = fVar3 + fVar7;
+  __return_storage_ptr__->y = fVar6 + (float)uVar2;
+  __return_storage_ptr__->z = fVar7 + fVar3;
   return __return_storage_ptr__;
 }
 
@@ -1126,11 +1129,11 @@ void Assembly-CSharp.dll::RTG::AABB::AABB_set_Max(AABB *this,Vector3 value,Metho
     if (value.x <= fVar5) {
       value.x = fVar5;
     }
-    if (value.y <= fVar6) {
-      value.y = fVar6;
-    }
     if (value.z <= fVar7) {
       value.z = fVar7;
+    }
+    if (value.y <= fVar6) {
+      value.y = fVar6;
     }
     uVar8 = (this->_center).x;
     uVar9 = (this->_center).y;
@@ -1139,9 +1142,9 @@ void Assembly-CSharp.dll::RTG::AABB::AABB_set_Max(AABB *this,Vector3 value,Metho
     fVar5 = (float)uVar8 - (float)uVar10 * _UNK_?;
     fVar12 = (float)uVar9 - (float)uVar11 * _UNK_?;
     fVar13 = (this->_center).z - (this->_size).z * _UNK_?;
-    fVar7 = (fVar13 + value.z) * _UNK_?;
-    fVar6 = (fVar12 + value.y) * _UNK_?;
-    (this->_center).x = (fVar5 + value.x) * _UNK_?;
+    fVar7 = (value.z + fVar13) * _UNK_?;
+    fVar6 = (value.y + fVar12) * _UNK_?;
+    (this->_center).x = (value.x + fVar5) * _UNK_?;
     (this->_center).y = fVar6;
     (this->_center).z = fVar7;
     (this->_size).x = value.x - fVar5;
@@ -1181,9 +1184,9 @@ void Assembly-CSharp.dll::RTG::AABB::AABB_set_Min(AABB *this,Vector3 value,Metho
     fVar12 = (float)uVar8 + (float)uVar10 * _UNK_?;
     fVar13 = (float)uVar9 + (float)uVar11 * _UNK_?;
     fVar5 = (this->_center).z + (this->_size).z * _UNK_?;
-    fVar7 = (fVar5 + value.z) * _UNK_?;
-    fVar6 = (fVar13 + value.y) * _UNK_?;
-    (this->_center).x = (fVar12 + value.x) * _UNK_?;
+    fVar7 = (value.z + fVar5) * _UNK_?;
+    fVar6 = (value.y + fVar13) * _UNK_?;
+    (this->_center).x = (value.x + fVar12) * _UNK_?;
     (this->_center).y = fVar6;
     (this->_center).z = fVar7;
     (this->_size).x = fVar12 - value.x;

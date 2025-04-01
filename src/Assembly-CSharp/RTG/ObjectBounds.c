@@ -150,12 +150,7 @@ AABB * Assembly-CSharp.dll::RTG::ObjectBounds::ObjectBounds_CalcHierarchyModelAA
                  ,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xfffffeb4;
-  puVar5 = &stack0xfffffeb4;
+  *unaff_FS_OFFSET = &stack0xfffffff0;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
@@ -172,12 +167,7 @@ AABB * Assembly-CSharp.dll::RTG::ObjectBounds::ObjectBounds_CalcHierarchyModelAA
                    );
     func_?(&TypeInfo__RTG__ObjectBounds);
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  auStack_6._16_4_ = 0.0;
-  auStack_6._20_4_ = 0.0;
-  fStack_7 = 0.0;
   (__return_storage_ptr__->_size).x = 0.0;
   (__return_storage_ptr__->_size).y = 0.0;
   (__return_storage_ptr__->_size).z = 0.0;
@@ -185,164 +175,171 @@ AABB * Assembly-CSharp.dll::RTG::ObjectBounds::ObjectBounds_CalcHierarchyModelAA
   (__return_storage_ptr__->_center).y = 0.0;
   (__return_storage_ptr__->_center).z = 0.0;
   *(undefined4 *)&__return_storage_ptr__->_isValid = 0;
-  auStack_6._0_4_ = 0.0;
-  auStack_6._4_4_ = (undefined *)0x0;
-  auStack_6._8_4_ = (GameObject *)0x0;
-  auStack_6._12_4_ = 0.0;
-  if ((root != (GameObject *)0x0) &&
-     (pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                          (root,(MethodInfo *)0x0), pTVar8 != (Transform *)0x0)) {
-    pMVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localToWorldMatrix
-                        ((Matrix4x4 *)&stack0xffffff00,pTVar8,(MethodInfo *)0x0);
-    fVar10 = pMVar9->m00;
-    fVar11 = pMVar9->m10;
-    fVar12 = pMVar9->m20;
-    fVar13 = pMVar9->m11;
-    fVar14 = pMVar9->m21;
-    fVar15 = pMVar9->m31;
-    if ((TypeInfo__RTG__GameObjectEx->_1).cctor_finished_or_no_cctor == 0) {
-      MStack_16.m10 = (float)TypeInfo__RTG__GameObjectEx;
-      MStack_16.m00 = (float)&UNK_?;
-      func_?();
-    }
-    objectType = GameObjectEx::GameObjectEx_GetGameObjectType(root,(MethodInfo *)0x0);
-    if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    pAVar17 = (AABB *)&stack0xffffffac;
-    pGVar18 = root;
-    puVar19 = (undefined *)queryConfig.ObjectTypes;
-    pAVar20 = (AABB *)queryConfig.NoVolumeSize.x;
-    fVar21 = queryConfig.NoVolumeSize.y;
-    pAVar22 = ObjectBounds_CalcModelAABB(pAVar17,root,queryConfig,objectType,(MethodInfo *)0x0);
-    fVar23 = 0.0;
-    fVar24 = (pAVar22->_size).y;
-    fVar25 = (pAVar22->_size).z;
-    fVar26 = (pAVar22->_center).x;
-    fVar27 = (pAVar22->_center).y;
-    fVar28 = (pAVar22->_center).z;
-    bVar29 = pAVar22->_isValid;
-    uVar30 = *(undefined3 *)&pAVar22->field_0x19;
-    (__return_storage_ptr__->_size).x = (pAVar22->_size).x;
-    (__return_storage_ptr__->_size).y = fVar24;
-    (__return_storage_ptr__->_size).z = fVar25;
-    (__return_storage_ptr__->_center).x = fVar26;
-    (__return_storage_ptr__->_center).y = fVar27;
-    (__return_storage_ptr__->_center).z = fVar28;
-    __return_storage_ptr__->_isValid = bVar29;
-    *(undefined3 *)&__return_storage_ptr__->field_0x19 = uVar30;
-    puVar31 = &UNK_?;
-    this = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-           GameObjectEx::GameObjectEx_GetAllChildren(root,(MethodInfo *)0x0);
-    if (this != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-      RegexCharClass+SingleRange]::
-      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                 &stack0xffffffb8,this,
-                 MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
-                );
-      uStack_1 = 1;
-      while( true ) {
-        do {
-          bVar29 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]
-                   ::List_1_T_Enumerator_System_Object__MoveNext
-                             ((List_1_T_Enumerator_System_Object_ *)&stack0xffffff9c,
-                              MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
-                             );
-          if (bVar29 == 0) {
-            uStack_1 = 0xffffffff;
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                      ((Object *)&stack0xffffff9c,
-                       (ExceptionArgument__Enum)
-                       MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
-                       ,in_stack_32);
-            *unaff_FS_OFFSET = uStack_3;
-            return __return_storage_ptr__;
-          }
-          if ((TypeInfo__RTG__GameObjectEx->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          GStack_33 = GameObjectEx::GameObjectEx_GetGameObjectType
-                                ((GameObject *)&UNK_?,(MethodInfo *)0x0);
-          if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
-            in_stack_32 = (MethodInfo *)&UNK_?;
-            func_?();
-          }
-          pAVar22 = ObjectBounds_CalcModelAABB
-                              ((AABB *)&stack0xffffff40,(GameObject *)&UNK_?,queryConfig,
-                               GStack_33,(MethodInfo *)0x0);
-          auStack_6._0_4_ = (pAVar22->_size).x;
-          auStack_6._4_4_ = (pAVar22->_size).y;
-          auStack_6._8_4_ = (pAVar22->_size).z;
-          auStack_6._12_4_ = (pAVar22->_center).x;
-          auStack_6._16_4_ = (pAVar22->_center).y;
-          auStack_6._20_4_ = (pAVar22->_center).z;
-          fStack_7 = *(float *)&pAVar22->_isValid;
-        } while (SUB41(fStack_7,0) == '\0');
-        pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                            ((GameObject *)&UNK_?,(MethodInfo *)0x0);
-        if (pTVar8 == (Transform *)0x0) break;
-        pMVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                  Transform_get_localToWorldMatrix
-                            ((Matrix4x4 *)&stack0xffffff00,pTVar8,(MethodInfo *)0x0);
-        referenceTransform.m10 = fVar11;
-        referenceTransform.m00 = fVar10;
-        referenceTransform.m20 = fVar12;
-        referenceTransform.m30 = (float)&UNK_?;
-        referenceTransform.m01 = fVar23;
-        referenceTransform.m11 = fVar13;
-        referenceTransform.m21 = fVar14;
-        referenceTransform.m31 = fVar15;
-        referenceTransform.m02 = (float)pAVar20;
-        referenceTransform.m12 = fVar21;
-        referenceTransform.m22 = (float)puVar31;
-        referenceTransform.m32 = (float)root;
-        referenceTransform.m03 = (float)&UNK_?;
-        referenceTransform.m13 = (float)pAVar17;
-        referenceTransform.m23 = (float)pGVar18;
-        referenceTransform.m33 = (float)puVar19;
-        pMVar9 = Matrix4x4Ex::Matrix4x4Ex_GetRelativeTransform
-                            (&MStack_16,*pMVar9,referenceTransform,(MethodInfo *)0x0);
-        MStack_16.m33 = (float)&UNK_?;
-        AABB::AABB_Transform((AABB *)auStack_6,*pMVar9,(MethodInfo *)0x0);
-        if (__return_storage_ptr__->_isValid == 0) {
-          (__return_storage_ptr__->_size).x = (float)auStack_6._0_4_;
-          (__return_storage_ptr__->_size).y = (float)auStack_6._4_4_;
-          (__return_storage_ptr__->_size).z = (float)auStack_6._8_4_;
-          (__return_storage_ptr__->_center).x = (float)auStack_6._12_4_;
-          (__return_storage_ptr__->_center).y = (float)auStack_6._16_4_;
-          (__return_storage_ptr__->_center).z = (float)auStack_6._20_4_;
-          *(float *)&__return_storage_ptr__->_isValid = fStack_7;
-        }
-        else {
+  if (root != (GameObject *)0x0) {
+    pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                        (root,(MethodInfo *)0x0);
+    if (pTVar1 != (Transform *)0x0) {
+      pMVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localToWorldMatrix
+                          ((Matrix4x4 *)(aAStack_3 + 1),pTVar1,(MethodInfo *)0x0);
+      uVar4 = pMVar2->m00;
+      uVar5 = pMVar2->m10;
+      uVar6 = pMVar2->m20;
+      uVar7 = pMVar2->m30;
+      referenceTransform.m30 = (float)uVar7;
+      referenceTransform.m20 = (float)uVar6;
+      referenceTransform.m10 = (float)uVar5;
+      referenceTransform.m00 = (float)uVar4;
+      fVar8 = pMVar2->m01;
+      fVar9 = pMVar2->m11;
+      fVar10 = pMVar2->m21;
+      fVar11 = pMVar2->m31;
+      fVar12 = pMVar2->m02;
+      fVar13 = pMVar2->m12;
+      fVar14 = pMVar2->m22;
+      fVar15 = pMVar2->m32;
+      fVar16 = pMVar2->m03;
+      fVar17 = pMVar2->m13;
+      fVar18 = pMVar2->m23;
+      fVar19 = pMVar2->m33;
+      if ((TypeInfo__RTG__GameObjectEx->_1).cctor_finished_or_no_cctor == 0) {
+        aAStack_3[0]._size.y = (float)TypeInfo__RTG__GameObjectEx;
+        aAStack_3[0]._size.x = (float)&UNK_?;
+        func_?();
+      }
+      GVar20 = GameObjectEx::GameObjectEx_GetGameObjectType(root,(MethodInfo *)0x0);
+      if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      pAVar21 = ObjectBounds_CalcModelAABB
+                          ((AABB *)&puStack_22,root,queryConfig,GVar20,(MethodInfo *)0x0);
+      fVar23 = (pAVar21->_size).y;
+      fVar24 = (pAVar21->_size).z;
+      fVar25 = (pAVar21->_center).x;
+      fVar26 = (pAVar21->_center).y;
+      fVar27 = (pAVar21->_center).z;
+      bVar28 = pAVar21->_isValid;
+      uVar29 = *(undefined3 *)&pAVar21->field_0x19;
+      (__return_storage_ptr__->_size).x = (pAVar21->_size).x;
+      (__return_storage_ptr__->_size).y = fVar23;
+      (__return_storage_ptr__->_size).z = fVar24;
+      (__return_storage_ptr__->_center).x = fVar25;
+      (__return_storage_ptr__->_center).y = fVar26;
+      (__return_storage_ptr__->_center).z = fVar27;
+      __return_storage_ptr__->_isValid = bVar28;
+      *(undefined3 *)&__return_storage_ptr__->field_0x19 = uVar29;
+      this = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+             GameObjectEx::GameObjectEx_GetAllChildren(root,(MethodInfo *)0x0);
+      if (this != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+        pLVar30 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                  RegularExpressions::RegexCharClass+SingleRange]::
+                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                            ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                              *)&stack0xffffffa8,this,
+                             MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
+                            );
+        RVar31 = pLVar30->_current;
+        while( true ) {
+          do {
+            gameObject = RVar31;
+            bVar28 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
+                     Object]::List_1_T_Enumerator_System_Object__MoveNext
+                               ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffbc,
+                                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
+                               );
+            if (bVar28 == 0) {
+              puVar32 = &UNK_?;
+              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                        ((Object *)&stack0xffffffbc,
+                         (ExceptionArgument__Enum)
+                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
+                         ,unaff_EBP);
+              *unaff_FS_OFFSET = puVar32;
+              return __return_storage_ptr__;
+            }
+            RVar31 = gameObject;
+            if ((TypeInfo__RTG__GameObjectEx->_1).cctor_finished_or_no_cctor == 0) {
+              func_?();
+            }
+            GVar20 = GameObjectEx::GameObjectEx_GetGameObjectType
+                               ((GameObject *)gameObject,(MethodInfo *)0x0);
+            if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
+              unaff_EBP = (MethodInfo *)&UNK_?;
+              func_?();
+            }
+            pAVar21 = ObjectBounds_CalcModelAABB
+                                (aAStack_3,(GameObject *)gameObject,queryConfig,GVar20,
+                                 (MethodInfo *)0x0);
+            fVar23 = (pAVar21->_size).x;
+            fVar24 = (pAVar21->_size).y;
+            fVar25 = (pAVar21->_size).z;
+            fVar26 = (pAVar21->_center).x;
+            uVar33._0_4_ = (pAVar21->_center).y;
+            uVar33._4_4_ = (pAVar21->_center).z;
+            RVar34 = *(RegexCharClass_SingleRange *)&pAVar21->_isValid;
+          } while ((char)RVar34.First == '\0');
+          if (gameObject == (RegexCharClass_SingleRange)0x0) break;
+          pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                              ((GameObject *)gameObject,(MethodInfo *)0x0);
+          if (pTVar1 == (Transform *)0x0) break;
+          pMVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                    Transform_get_localToWorldMatrix
+                              ((Matrix4x4 *)(aAStack_3 + 1),pTVar1,(MethodInfo *)0x0);
+          referenceTransform.m01 = fVar8;
+          referenceTransform.m11 = fVar9;
+          referenceTransform.m21 = fVar10;
+          referenceTransform.m31 = fVar11;
+          referenceTransform.m02 = fVar12;
+          referenceTransform.m12 = fVar13;
+          referenceTransform.m22 = fVar14;
+          referenceTransform.m32 = fVar15;
+          referenceTransform.m03 = fVar16;
+          referenceTransform.m13 = fVar17;
+          referenceTransform.m23 = fVar18;
+          referenceTransform.m33 = fVar19;
+          pMVar2 = Matrix4x4Ex::Matrix4x4Ex_GetRelativeTransform
+                              ((Matrix4x4 *)(aAStack_3 + 1),*pMVar2,referenceTransform,
+                               (MethodInfo *)0x0);
           fVar10 = 0.0;
-          fVar13 = (float)auStack_6._16_8_;
-          fVar14 = SUB84(auStack_6._16_8_,4);
-          puVar19 = &UNK_?;
-          aabb._size.y = (float)auStack_6._4_4_;
-          aabb._size.x = (float)auStack_6._0_4_;
-          aabb._size.z = (float)auStack_6._8_4_;
-          aabb._center.x = (float)auStack_6._12_4_;
-          aabb._center.y = fVar13;
-          aabb._center.z = fVar14;
-          aabb._24_4_ = fStack_7;
-          pAVar20 = __return_storage_ptr__;
-          fVar21 = (float)auStack_6._0_4_;
-          puVar31 = (undefined *)auStack_6._4_4_;
-          root = (GameObject *)auStack_6._8_4_;
-          fVar23 = (float)auStack_6._12_4_;
-          fVar15 = fStack_7;
-          AABB::AABB_Encapsulate_2(__return_storage_ptr__,aabb,(MethodInfo *)0x0);
+          fVar16 = pMVar2->m21;
+          fVar17 = pMVar2->m31;
+          fVar18 = pMVar2->m02;
+          fVar19 = pMVar2->m12;
+          fVar12 = pMVar2->m22;
+          fVar13 = pMVar2->m32;
+          fVar14 = pMVar2->m03;
+          fVar15 = pMVar2->m13;
+          fVar8 = pMVar2->m23;
+          fVar9 = pMVar2->m33;
+          AABB::AABB_Transform((AABB *)&stack0xffffffcc,*pMVar2,(MethodInfo *)0x0);
+          if (__return_storage_ptr__->_isValid == 0) {
+            (__return_storage_ptr__->_size).x = fVar23;
+            (__return_storage_ptr__->_size).y = fVar24;
+            (__return_storage_ptr__->_size).z = fVar25;
+            (__return_storage_ptr__->_center).x = fVar26;
+            (__return_storage_ptr__->_center).y = (float)uVar33;
+            (__return_storage_ptr__->_center).z = SUB84(uVar33,4);
+            *(RegexCharClass_SingleRange *)&__return_storage_ptr__->_isValid = RVar34;
+          }
+          else {
+            aabb._size.y = fVar24;
+            aabb._size.x = fVar23;
+            aabb._size.z = fVar25;
+            aabb._center.x = fVar26;
+            aabb._center.y = (float)(MonitorData *)uVar33;
+            aabb._center.z = SUB84(uVar33,4);
+            aabb._24_4_ = RVar34;
+            AABB::AABB_Encapsulate_2(__return_storage_ptr__,aabb,(MethodInfo *)0x0);
+            RVar31 = RVar34;
+          }
         }
       }
     }
   }
-  uVar34 = func_?();
-  func_?(uVar34);
-  pcVar35 = (code *)swi(3);
-  pAVar17 = (AABB *)(*pcVar35)();
-  return pAVar17;
+  uVar35 = func_?();
+  func_?(uVar35);
+  pcVar36 = (code *)swi(3);
+  pAVar21 = (AABB *)(*pcVar36)();
+  return pAVar21;
 }
 
 
@@ -357,19 +354,27 @@ AABB * Assembly-CSharp.dll::RTG::ObjectBounds::ObjectBounds_CalcHierarchyWorldAA
     func_?(&TypeInfo__RTG__ObjectBounds);
     cRam_? = '\x01';
   }
+  AStack_1._size.x = 0.0;
+  AStack_1._size.y = 0.0;
+  AStack_1._size.z = 0.0;
+  AStack_1._center.x = 0.0;
+  AStack_1._isValid = 0;
+  AStack_1._25_3_ = 0;
+  AStack_1._center.y = 0.0;
+  AStack_1._center.z = 0.0;
   if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__RTG__ObjectBounds);
   }
-  pAVar1 = ObjectBounds_CalcHierarchyModelAABB(&AStack_2,root,queryConfig,(MethodInfo *)0x0);
-  AStack_3._size.x = (pAVar1->_size).x;
-  AStack_3._size.y = (pAVar1->_size).y;
-  AStack_3._size.z = (pAVar1->_size).z;
-  AStack_3._center.x = (pAVar1->_center).x;
-  AStack_3._center.y = (pAVar1->_center).y;
-  AStack_3._center.z = (pAVar1->_center).z;
-  AStack_3._isValid = pAVar1->_isValid;
-  AStack_3._25_3_ = *(undefined3 *)&pAVar1->field_0x19;
-  if (AStack_3._isValid != 0) {
+  pAVar2 = ObjectBounds_CalcHierarchyModelAABB(&AStack_3,root,queryConfig,(MethodInfo *)0x0);
+  AStack_1._size.x = (pAVar2->_size).x;
+  AStack_1._size.y = (pAVar2->_size).y;
+  AStack_1._size.z = (pAVar2->_size).z;
+  AStack_1._center.x = (pAVar2->_center).x;
+  AStack_1._center.y = (pAVar2->_center).y;
+  AStack_1._center.z = (pAVar2->_center).z;
+  AStack_1._isValid = pAVar2->_isValid;
+  AStack_1._25_3_ = *(undefined3 *)&pAVar2->field_0x19;
+  if (AStack_1._isValid != 0) {
     if (root != (GameObject *)0x0) {
       this = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                        (root,(MethodInfo *)0x0);
@@ -377,35 +382,35 @@ AABB * Assembly-CSharp.dll::RTG::ObjectBounds::ObjectBounds_CalcHierarchyWorldAA
         pMVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                  Transform_get_localToWorldMatrix
                            ((Matrix4x4 *)&stack0xffffff84,this,(MethodInfo *)0x0);
-        AABB::AABB_Transform(&AStack_3,*pMVar4,(MethodInfo *)0x0);
-        (__return_storage_ptr__->_size).x = AStack_3._size.x;
-        (__return_storage_ptr__->_size).y = AStack_3._size.y;
-        (__return_storage_ptr__->_size).z = AStack_3._size.z;
-        (__return_storage_ptr__->_center).x = AStack_3._center.x;
-        (__return_storage_ptr__->_center).y = AStack_3._center.y;
-        (__return_storage_ptr__->_center).z = AStack_3._center.z;
-        __return_storage_ptr__->_isValid = AStack_3._isValid;
-        *(undefined3 *)&__return_storage_ptr__->field_0x19 = AStack_3._25_3_;
+        AABB::AABB_Transform(&AStack_1,*pMVar4,(MethodInfo *)0x0);
+        (__return_storage_ptr__->_size).x = AStack_1._size.x;
+        (__return_storage_ptr__->_size).y = AStack_1._size.y;
+        (__return_storage_ptr__->_size).z = AStack_1._size.z;
+        (__return_storage_ptr__->_center).x = AStack_1._center.x;
+        (__return_storage_ptr__->_center).y = AStack_1._center.y;
+        (__return_storage_ptr__->_center).z = AStack_1._center.z;
+        __return_storage_ptr__->_isValid = AStack_1._isValid;
+        *(undefined3 *)&__return_storage_ptr__->field_0x19 = AStack_1._25_3_;
         return __return_storage_ptr__;
       }
     }
     func_?();
     pcVar5 = (code *)swi(3);
-    pAVar1 = (AABB *)(*pcVar5)();
-    return pAVar1;
+    pAVar2 = (AABB *)(*pcVar5)();
+    return pAVar2;
   }
-  pAVar1 = AABB::AABB_GetInvalid(&AStack_2,(MethodInfo *)0x0);
-  fVar6 = (pAVar1->_size).y;
-  fVar7 = (pAVar1->_size).z;
-  fVar8 = (pAVar1->_center).x;
-  bVar9 = pAVar1->_isValid;
-  uVar10 = *(undefined3 *)&pAVar1->field_0x19;
-  (__return_storage_ptr__->_size).x = (pAVar1->_size).x;
+  pAVar2 = AABB::AABB_GetInvalid(&AStack_3,(MethodInfo *)0x0);
+  fVar6 = (pAVar2->_size).y;
+  fVar7 = (pAVar2->_size).z;
+  fVar8 = (pAVar2->_center).x;
+  bVar9 = pAVar2->_isValid;
+  uVar10 = *(undefined3 *)&pAVar2->field_0x19;
+  (__return_storage_ptr__->_size).x = (pAVar2->_size).x;
   (__return_storage_ptr__->_size).y = fVar6;
   (__return_storage_ptr__->_size).z = fVar7;
   (__return_storage_ptr__->_center).x = fVar8;
-  fVar6 = (pAVar1->_center).z;
-  (__return_storage_ptr__->_center).y = (pAVar1->_center).y;
+  fVar6 = (pAVar2->_center).z;
+  (__return_storage_ptr__->_center).y = (pAVar2->_center).y;
   (__return_storage_ptr__->_center).z = fVar6;
   __return_storage_ptr__->_isValid = bVar9;
   *(undefined3 *)&__return_storage_ptr__->field_0x19 = uVar10;
@@ -696,11 +701,11 @@ code_?:
         if (this_00 != (TerrainData *)0x0) {
           pBVar2 = UnityEngine.TerrainModule.dll::UnityEngine::TerrainData::TerrainData_get_bounds
                               ((Bounds *)&stack0xffffffd4,this_00,(MethodInfo *)0x0);
+          VStack_11.x = (pBVar2->m_Extents).x;
           uVar14 = (pBVar2->m_Extents).y;
           uVar15 = (pBVar2->m_Extents).z;
-          VStack_11.x = (pBVar2->m_Extents).x;
-          fVar16 = (float)uVar14 * _UNK_?;
-          fVar17 = VStack_11.x * _UNK_?;
+          fVar16 = VStack_11.x * _UNK_?;
+          fVar17 = (float)uVar14 * _UNK_?;
           fVar18 = (float)uVar15 * _UNK_?;
           VStack_11.y = VStack_11.x;
           VStack_11.z = VStack_11.x;
@@ -714,8 +719,8 @@ code_?:
           (__return_storage_ptr__->_center).y = 0.0;
           (__return_storage_ptr__->_center).z = 0.0;
           *(undefined4 *)&__return_storage_ptr__->_isValid = 0;
-          VVar12.y = fVar16;
-          VVar12.x = fVar17;
+          VVar12.y = fVar17;
+          VVar12.x = fVar16;
           VVar12.z = fVar18;
           AABB::AABB__ctor(__return_storage_ptr__,center,VVar12,(MethodInfo *)0x0);
           return __return_storage_ptr__;
@@ -727,12 +732,12 @@ code_?:
   pAVar9 = AABB::AABB_GetInvalid((AABB *)&stack0xffffffd0,(MethodInfo *)0x0);
 code_?:
   fVar16 = (pAVar9->_size).y;
-  fVar18 = (pAVar9->_size).z;
-  fVar17 = (pAVar9->_center).x;
+  fVar17 = (pAVar9->_size).z;
+  fVar18 = (pAVar9->_center).x;
   (__return_storage_ptr__->_size).x = (pAVar9->_size).x;
   (__return_storage_ptr__->_size).y = fVar16;
-  (__return_storage_ptr__->_size).z = fVar18;
-  (__return_storage_ptr__->_center).x = fVar17;
+  (__return_storage_ptr__->_size).z = fVar17;
+  (__return_storage_ptr__->_center).x = fVar18;
   fVar16 = (pAVar9->_center).z;
   (__return_storage_ptr__->_center).y = (pAVar9->_center).y;
   (__return_storage_ptr__->_center).z = fVar16;
@@ -899,6 +904,14 @@ Rect * Assembly-CSharp.dll::RTG::ObjectBounds::ObjectBounds_CalcScreenRect
     func_?(&TypeInfo__RTG__ObjectBounds);
     cRam_? = '\x01';
   }
+  AStack_1._size.x = 0.0;
+  AStack_1._size.y = 0.0;
+  AStack_1._size.z = 0.0;
+  AStack_1._center.x = 0.0;
+  AStack_1._isValid = 0;
+  AStack_1._25_3_ = 0;
+  AStack_1._center.y = 0.0;
+  AStack_1._center.z = 0.0;
   if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__RTG__ObjectBounds);
   }
@@ -906,18 +919,18 @@ Rect * Assembly-CSharp.dll::RTG::ObjectBounds::ObjectBounds_CalcScreenRect
   queryConfig_00.ObjectTypes = queryConfig.ObjectTypes;
   queryConfig_00.NoVolumeSize.y = queryConfig.NoVolumeSize.y;
   queryConfig_00.NoVolumeSize.z = queryConfig.NoVolumeSize.z;
-  pAVar1 = ObjectBounds_CalcWorldAABB
+  pAVar2 = ObjectBounds_CalcWorldAABB
                      ((AABB *)&stack0xffffffc4,gameObject,queryConfig_00,(MethodInfo *)0x0);
-  AStack_2._size.x = (pAVar1->_size).x;
-  AStack_2._size.y = (pAVar1->_size).y;
-  AStack_2._size.z = (pAVar1->_size).z;
-  AStack_2._center.x = (pAVar1->_center).x;
-  AStack_2._center.y = (pAVar1->_center).y;
-  AStack_2._center.z = (pAVar1->_center).z;
-  AStack_2._isValid = pAVar1->_isValid;
-  AStack_2._25_3_ = *(undefined3 *)&pAVar1->field_0x19;
-  if (AStack_2._isValid != 0) {
-    pRVar3 = AABB::AABB_GetScreenRectangle((Rect *)&queryConfig,&AStack_2,camera,(MethodInfo *)0x0)
+  AStack_1._size.x = (pAVar2->_size).x;
+  AStack_1._size.y = (pAVar2->_size).y;
+  AStack_1._size.z = (pAVar2->_size).z;
+  AStack_1._center.x = (pAVar2->_center).x;
+  AStack_1._center.y = (pAVar2->_center).y;
+  AStack_1._center.z = (pAVar2->_center).z;
+  AStack_1._isValid = pAVar2->_isValid;
+  AStack_1._25_3_ = *(undefined3 *)&pAVar2->field_0x19;
+  if (AStack_1._isValid != 0) {
+    pRVar3 = AABB::AABB_GetScreenRectangle((Rect *)&queryConfig,&AStack_1,camera,(MethodInfo *)0x0)
     ;
     fVar4 = pRVar3->m_YMin;
     fVar5 = pRVar3->m_Width;

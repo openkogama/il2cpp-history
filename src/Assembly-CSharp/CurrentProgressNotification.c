@@ -126,25 +126,27 @@ int32_t Assembly-CSharp.dll::CurrentProgressNotification::CurrentProgressNotific
   if ((pMVar1 != (MVNetworkGame *)0x0) &&
      (pMVar2 = (pMVar1->fields)._NetworkGameStateListener_k__BackingField,
      pMVar2 != (MVNetworkGameStateListener *)0x0)) {
-    iVar3 = (this->fields).avatarStartTime;
-    if (iVar3 <= (pMVar2->fields).startTime) {
-      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((pMVar1 == (MVNetworkGame *)0x0) ||
-         (pMVar2 = (pMVar1->fields)._NetworkGameStateListener_k__BackingField,
-         pMVar2 == (MVNetworkGameStateListener *)0x0)) goto code_?;
-      iVar3 = (pMVar2->fields).startTime;
+    if ((pMVar2->fields).startTime < (this->fields).avatarStartTime) {
+      return (this->fields).avatarStartTime;
     }
-    return iVar3;
+    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if ((pMVar1 != (MVNetworkGame *)0x0) &&
+       (pMVar2 = (pMVar1->fields)._NetworkGameStateListener_k__BackingField,
+       pMVar2 != (MVNetworkGameStateListener *)0x0)) {
+      return (pMVar2->fields).startTime;
+    }
   }
-code_?:
-  uVar4 = func_?(&puStack_5);
-  func_?(uVar4);
-  pcVar6 = (code *)swi(3);
-  iVar7 = (*pcVar6)();
-  return iVar7;
+  uVar3 = func_?(&puStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  iVar6 = (*pcVar5)();
+  return iVar6;
 }
 
 
+/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
+    */
+/* WARNING (jumptable): Unable to track spacebase fully for stack */
 /* Void Initialize(Dictionary`2[System.Object,System.Object]) */
 
 void Assembly-CSharp.dll::CurrentProgressNotification::CurrentProgressNotification_Initialize
@@ -152,266 +154,342 @@ void Assembly-CSharp.dll::CurrentProgressNotification::CurrentProgressNotificati
                MethodInfo *method)
 
 {
+  puVar1 = (undefined4 *)&stack0xfffffffc;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action);
-    func_?(&MethodInfo__CurrentProgressNotification__DestroyNotification__);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<MV::WorldObject::MVTeam>__get_Count__
-                   );
-    func_?(&StringLiteral_YOU_HAVE);
-    func_?(&::StringLiteral__);
+    func_?();
+    func_?();
+    func_?();
+    func_?();
+    func_?();
     cRam_? = '\x01';
   }
-  uStack_1 = (undefined *)((uint)uStack_1 & 0xffffff);
-  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  bVar3 = 0;
-  if (pMVar2 == (MVNetworkGame *)0x0) goto code_?;
-  pMVar4 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar2,(MethodInfo *)0x0);
-  bVar3 = 0;
-  if (pMVar4 == (MVLocalPlayer *)0x0) goto code_?;
-  (this->fields).avatarStartTime = (pMVar4->fields).joinTime;
-  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  bVar3 = 0;
-  if (pMVar2 == (MVNetworkGame *)0x0) goto code_?;
-  pMVar4 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar2,(MethodInfo *)0x0);
-  bVar3 = 0;
-  if (pMVar4 == (MVLocalPlayer *)0x0) goto code_?;
-  iVar5 = (pMVar4->fields)._._ActorNr_k__BackingField;
-  puVar6 = &UNK_?;
+  uStack_2 = (Il2CppMethodPointer)((uint)uStack_2 & 0xffffff);
+  pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  bVar4 = 0;
+  cVar5 = '\x01';
+  if (pMVar3 == (MVNetworkGame *)0x0) goto code_?;
+  pMVar6 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar3,(MethodInfo *)0x0);
+  bVar4 = 0;
+  cVar5 = '\x01';
+  if (pMVar6 == (MVLocalPlayer *)0x0) goto code_?;
+  (this->fields).avatarStartTime = (pMVar6->fields).joinTime;
+  pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  bVar4 = 0;
+  cVar5 = '\x01';
+  if (pMVar3 == (MVNetworkGame *)0x0) goto code_?;
+  pMVar6 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar3,(MethodInfo *)0x0);
+  bVar4 = 0;
+  cVar5 = '\x01';
+  if (pMVar6 == (MVLocalPlayer *)0x0) goto code_?;
+  unaff_EDI = (Action__Class *)(pMVar6->fields)._._ActorNr_k__BackingField;
+  puVar7 = &UNK_?;
   WinningConditionControl::WinningConditionControl_TryGetPrioritizedStat
-            ((GameStatCounterType__Enum *)((int)&uStack_1 + 3),(MethodInfo *)0x0);
-  uVar7 = 0;
-  (this->fields).currentDisplayedStatType = uStack_1._3_1_;
-  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  bVar3 = 0;
-  if (pMVar2 == (MVNetworkGame *)0x0) goto code_?;
-  this_04 = (pMVar2->fields).teamManager;
-  bVar3 = 0;
+            ((GameStatCounterType__Enum *)((int)&uStack_2 + 3),(MethodInfo *)0x0);
+  uVar8 = 0;
+  (this->fields).currentDisplayedStatType = uStack_2._3_1_;
+  pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  bVar4 = 0;
+  cVar5 = '\x01';
+  if (pMVar3 == (MVNetworkGame *)0x0) goto code_?;
+  this_04 = (pMVar3->fields).teamManager;
+  bVar4 = 0;
+  cVar5 = '\x01';
   if (this_04 == (MVTeamManager *)0x0) goto code_?;
-  pLVar8 = MVTeamManager::MVTeamManager_GetTeamList(this_04,(MethodInfo *)0x0);
-  bVar3 = 0;
-  if (pLVar8 == (List_1_MV_WorldObject_MVTeam_ *)0x0) goto code_?;
-  if ((pLVar8->fields)._size < 2) {
-    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    bVar3 = 0;
-    if (pMVar2 == (MVNetworkGame *)0x0) goto code_?;
-    pGVar9 = (pMVar2->fields).gameStatCounterManager;
-    GVar10 = CONCAT31((int3)((uint)uVar7 >> 8),uStack_1._3_1_);
-    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    bVar3 = 0;
-    if (pMVar2 == (MVNetworkGame *)0x0) goto code_?;
-    pMVar4 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar2,(MethodInfo *)0x0);
-    bVar3 = 0;
-    if ((pMVar4 == (MVLocalPlayer *)0x0) || (bVar3 = 0, pGVar9 == (GameStatCounterManager *)0x0))
-    goto code_?;
-    MVWorldObject.dll::GameStatCounterManager::GameStatCounterManager_GetActorCount
-              (pGVar9,GVar10,(pMVar4->fields)._._Team_k__BackingField,iVar5,(MethodInfo *)0x0);
+  pLVar9 = MVTeamManager::MVTeamManager_GetTeamList(this_04,(MethodInfo *)0x0);
+  bVar4 = 0;
+  cVar5 = '\x01';
+  if (pLVar9 == (List_1_MV_WorldObject_MVTeam_ *)0x0) goto code_?;
+  if ((pLVar9->fields)._size < 2) {
+    pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    bVar4 = 0;
+    cVar5 = '\x01';
+    if (pMVar3 == (MVNetworkGame *)0x0) goto code_?;
+    unaff_ESI = (Action__Class *)(pMVar3->fields).gameStatCounterManager;
+    GVar10 = CONCAT31((int3)((uint)uVar8 >> 8),uStack_2._3_1_);
+    pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    bVar4 = 0;
+    cVar5 = '\x01';
+    if (pMVar3 == (MVNetworkGame *)0x0) goto code_?;
+    pMVar6 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar3,(MethodInfo *)0x0);
+    bVar4 = 0;
+    cVar5 = '\x01';
+    if (pMVar6 == (MVLocalPlayer *)0x0) goto code_?;
+    bVar4 = 0;
+    cVar5 = '\x01';
+    if (unaff_ESI == (Action__Class *)0x0) goto code_?;
+    unaff_ESI = (Action__Class *)
+                MVWorldObject.dll::GameStatCounterManager::GameStatCounterManager_GetActorCount
+                          ((GameStatCounterManager *)unaff_ESI,GVar10,
+                           (pMVar6->fields)._._Team_k__BackingField,(int32_t)unaff_EDI,
+                           (MethodInfo *)0x0);
   }
   else {
-    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    bVar3 = 0;
-    if (pMVar2 == (MVNetworkGame *)0x0) goto code_?;
-    pGVar9 = (pMVar2->fields).gameStatCounterManager;
-    GVar10 = CONCAT31((int3)((uint)uVar7 >> 8),uStack_1._3_1_);
-    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    bVar3 = 0;
-    if (pMVar2 == (MVNetworkGame *)0x0) goto code_?;
-    pMVar4 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar2,(MethodInfo *)0x0);
-    bVar3 = 0;
-    if ((pMVar4 == (MVLocalPlayer *)0x0) || (bVar3 = 0, pGVar9 == (GameStatCounterManager *)0x0))
-    goto code_?;
-    MVWorldObject.dll::GameStatCounterManager::GameStatCounterManager_GetTeamCount
-              (pGVar9,GVar10,(pMVar4->fields)._._Team_k__BackingField,(MethodInfo *)0x0);
+    pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    bVar4 = 0;
+    cVar5 = '\x01';
+    if (pMVar3 == (MVNetworkGame *)0x0) goto code_?;
+    unaff_ESI = (Action__Class *)(pMVar3->fields).gameStatCounterManager;
+    GVar10 = CONCAT31((int3)((uint)uVar8 >> 8),uStack_2._3_1_);
+    pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    bVar4 = 0;
+    cVar5 = '\x01';
+    if (pMVar3 == (MVNetworkGame *)0x0) goto code_?;
+    pMVar6 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar3,(MethodInfo *)0x0);
+    bVar4 = 0;
+    cVar5 = '\x01';
+    if (pMVar6 == (MVLocalPlayer *)0x0) goto code_?;
+    bVar4 = 0;
+    cVar5 = '\x01';
+    if (unaff_ESI == (Action__Class *)0x0) goto code_?;
+    unaff_ESI = (Action__Class *)
+                MVWorldObject.dll::GameStatCounterManager::GameStatCounterManager_GetTeamCount
+                          ((GameStatCounterManager *)unaff_ESI,GVar10,
+                           (pMVar6->fields)._._Team_k__BackingField,(MethodInfo *)0x0);
   }
-  in_stack_11 = 0;
-  uVar12 = SUB43(this_04,0);
-  bVar3 = uStack_1._3_1_;
+  uVar11 = SUB43(this_04,0);
+  uVar12 = uStack_2._3_1_;
   if (cRam_? == '\0') {
-    func_?(&
-                    AllCollectiblesCollectedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<AllCollectiblesCollectedClient>__
-                   );
-    func_?(&
-                    KillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<KillLimitClient>__
-                   );
-    func_?(&
-                    OculusKillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<OculusKillLimitClient>__
-                   );
+    func_?();
+    func_?();
+    func_?();
     cRam_? = '\x01';
   }
-  if (bVar3 - 1 < 8) {
-    (**(code **)(&UNK_? + (bVar3 - 1) * 4))();
+  unaff_EDI = (Action__Class *)0x0;
+  switch(uVar12) {
+  case 1:
+    pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    bVar4 = 0;
+    cVar5 = '\x01';
+    if (pMVar3 == (MVNetworkGame *)0x0) goto code_?;
+    this_00 = (pMVar3->fields)._WinningConditionManager_k__BackingField;
+    method_00 = 
+    KillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<KillLimitClient>__
+    ;
+    break;
+  case 2:
+  case 8:
+    unaff_EDI = unaff_ESI;
+    goto code_?;
+  case 3:
+    pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    bVar4 = 0;
+    cVar5 = '\x01';
+    if (pMVar3 == (MVNetworkGame *)0x0) goto code_?;
+    this_00 = (pMVar3->fields)._WinningConditionManager_k__BackingField;
+    method_00 = 
+    AllCollectiblesCollectedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<AllCollectiblesCollectedClient>__
+    ;
+    break;
+  default:
+    goto code_?;
+  case 6:
+    pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    bVar4 = 0;
+    cVar5 = '\x01';
+    if (pMVar3 == (MVNetworkGame *)0x0) goto code_?;
+    this_00 = (pMVar3->fields)._WinningConditionManager_k__BackingField;
+    method_00 = 
+    OculusKillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<OculusKillLimitClient>__
+    ;
+  }
+  bVar4 = 0;
+  cVar5 = '\x01';
+  if (this_00 == (WinningConditionManager *)0x0) goto code_?;
+  pOVar13 = MVWorldObject.dll::WinningConditionManager::
+            WinningConditionManager_GetSingletonWinnerConditionByType(this_00,method_00);
+  pOVar14 = (Object__Class *)0x0;
+  if (pOVar13 != (Object *)0x0) {
+    pOVar14 = pOVar13[2].klass;
+  }
+  unaff_EDI = (Action__Class *)((int)pOVar14 - (int)unaff_ESI);
+code_?:
+  pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  bVar4 = 0;
+  cVar5 = '\x01';
+  if (pMVar3 == (MVNetworkGame *)0x0) goto code_?;
+  this_01 = (pMVar3->fields).playerContainer;
+  bVar4 = 0;
+  cVar5 = '\x01';
+  if (this_01 == (MVPlayerContainer *)0x0) goto code_?;
+  bVar15 = MVPlayerContainer::MVPlayerContainer_TryGetValue
+                    (this_01,(int32_t)puVar7,(MVPlayer **)&stack0xffffffec,(MethodInfo *)0x0);
+  if (bVar15 == 0) {
     return;
   }
-  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  bVar3 = 0;
-  if (pMVar2 == (MVNetworkGame *)0x0) goto code_?;
-  this_00 = (pMVar2->fields).playerContainer;
-  bVar3 = 0;
-  if (this_00 == (MVPlayerContainer *)0x0) goto code_?;
-  bVar13 = MVPlayerContainer::MVPlayerContainer_TryGetValue
-                    (this_00,(int32_t)puVar6,(MVPlayer **)&stack0xffffffec,(MethodInfo *)0x0);
-  if (bVar13 == 0) {
-    return;
-  }
-  pTVar14 = (this->fields).currentProgressText;
+  pTVar16 = (this->fields).currentProgressText;
   (this->fields)._.timeSinceStart = 0.0;
-  if (uStack_1._3_1_ == '\x02') {
-    bVar3 = 0;
-    if (pTVar14 == (Text *)0x0) goto code_?;
-    (*(code *)(pTVar14->klass->vtable).set_text.method)
-              (pTVar14,::StringLiteral__,
-               (pTVar14->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-    pTVar14 = (this->fields).scoreText;
-    iVar5 = CurrentProgressNotification_GetStartTime(this,(MethodInfo *)0x0);
+  if (uStack_2._3_1_ == '\x02') {
+    bVar4 = 0;
+    cVar5 = '\x01';
+    if (pTVar16 == (Text *)0x0) goto code_?;
+    uStack_2 = (pTVar16->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
+    (*(code *)(pTVar16->klass->vtable).set_text.method)();
+    unaff_ESI = (Action__Class *)(this->fields).scoreText;
+    iVar17 = CurrentProgressNotification_GetStartTime(this,(MethodInfo *)0x0);
     if ((this->fields).currentDisplayedStatType == 8) {
-      fVar15 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      pFVar16 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl
+      fVar18 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+      pFVar19 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl
                           ((MethodInfo *)0x0);
-      bVar3 = 0;
-      if (pFVar16 == (FlagDebriefingControl *)0x0) goto code_?;
-      iVar17 = CurrentProgressNotification_ConvertSecondsToMilliSeconds
-                         (this,fVar15 - (pFVar16->fields).RunStartTime,(MethodInfo *)0x0);
+      bVar4 = 0;
+      cVar5 = '\x01';
+      if (pFVar19 == (FlagDebriefingControl *)0x0) goto code_?;
+      iVar20 = CurrentProgressNotification_ConvertSecondsToMilliSeconds
+                         (this,fVar18 - (pFVar19->fields).RunStartTime,(MethodInfo *)0x0);
     }
     else {
-      pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      bVar3 = 0;
-      if (pMVar2 == (MVNetworkGame *)0x0) goto code_?;
-      iVar17 = MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds(pMVar2,(MethodInfo *)0x0);
-      iVar17 = iVar17 - iVar5;
+      pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      bVar4 = 0;
+      cVar5 = '\x01';
+      if (pMVar3 == (MVNetworkGame *)0x0) goto code_?;
+      iVar20 = MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds(pMVar3,(MethodInfo *)0x0);
+      iVar20 = iVar20 - iVar17;
     }
-    pSVar18 = WinningConditionControl::WinningConditionControl_MakeIntoScoreText
-                        (iVar17,GameStatCounterType__Enum_Flag,(MethodInfo *)0x0);
+    WinningConditionControl::WinningConditionControl_MakeIntoScoreText
+              (iVar20,GameStatCounterType__Enum_Flag,(MethodInfo *)0x0);
+    pAVar21 = unaff_ESI;
 code_?:
-    bVar3 = 0;
-    if (pTVar14 == (Text *)0x0) goto code_?;
-    (*(code *)(pTVar14->klass->vtable).set_text.method)
-              (pTVar14,pSVar18,(pTVar14->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+    bVar4 = 0;
+    unaff_ESI = (Action__Class *)0x0;
+    cVar5 = '\x01';
+    if (pAVar21 == (Action__Class *)0x0) goto code_?;
+    (*(code *)((Delegate__Class *)(pAVar21->_0).image)[2].vtable.Clone.method)();
     (this->fields).shouldShowCurrentTime = 1;
   }
   else {
-    if (uStack_1._3_1_ == '\b') {
-      bVar3 = 0;
-      if (pTVar14 == (Text *)0x0) goto code_?;
-      (*(code *)(pTVar14->klass->vtable).set_text.method)
-                (pTVar14,::StringLiteral__,
-                 (pTVar14->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-      pTVar14 = (this->fields).scoreText;
-      fVar15 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      pFVar16 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl
+    if (uStack_2._3_1_ == '\b') {
+      bVar4 = 0;
+      cVar5 = '\x01';
+      if (pTVar16 == (Text *)0x0) goto code_?;
+      uStack_2 = (pTVar16->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
+      (*(code *)(pTVar16->klass->vtable).set_text.method)();
+      unaff_ESI = (Action__Class *)(this->fields).scoreText;
+      fVar18 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+      pFVar19 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl
                           ((MethodInfo *)0x0);
-      bVar3 = 0;
-      if (pFVar16 == (FlagDebriefingControl *)0x0) goto code_?;
-      iVar5 = CurrentProgressNotification_ConvertSecondsToMilliSeconds
-                         (this,fVar15 - (pFVar16->fields).RunStartTime,(MethodInfo *)0x0);
-      pSVar18 = WinningConditionControl::WinningConditionControl_MakeIntoScoreText
-                          (iVar5,GameStatCounterType__Enum_TimeAttackFlag,(MethodInfo *)0x0);
+      bVar4 = 0;
+      cVar5 = '\x01';
+      if (pFVar19 == (FlagDebriefingControl *)0x0) goto code_?;
+      iVar17 = CurrentProgressNotification_ConvertSecondsToMilliSeconds
+                         (this,fVar18 - (pFVar19->fields).RunStartTime,(MethodInfo *)0x0);
+      in_stack_22 = 0;
+      WinningConditionControl::WinningConditionControl_MakeIntoScoreText
+                (iVar17,GameStatCounterType__Enum_TimeAttackFlag,(MethodInfo *)0x0);
+      pAVar21 = unaff_ESI;
       goto code_?;
     }
-    bVar3 = 0;
-    if (pTVar14 == (Text *)0x0) goto code_?;
-    (*(code *)(pTVar14->klass->vtable).set_text.method)
-              (pTVar14,StringLiteral_YOU_HAVE,
-               (pTVar14->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-    pTVar14 = (this->fields).scoreText;
-    pSVar18 = WinningConditionControl::WinningConditionControl_MakeIntoScoreText
-                        (0,CONCAT31(uVar12,uStack_1._3_1_),(MethodInfo *)0x0);
-    bVar3 = 0;
-    if (pTVar14 == (Text *)0x0) goto code_?;
-    (*(code *)(pTVar14->klass->vtable).set_text.method)
-              (pTVar14,pSVar18,(pTVar14->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+    bVar4 = 0;
+    cVar5 = '\x01';
+    if (pTVar16 == (Text *)0x0) goto code_?;
+    uStack_2 = (pTVar16->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
+    (*(code *)(pTVar16->klass->vtable).set_text.method)();
+    pTVar16 = (this->fields).scoreText;
+    in_stack_22 = 0;
+    WinningConditionControl::WinningConditionControl_MakeIntoScoreText
+              ((int32_t)unaff_EDI,CONCAT31(uVar11,uStack_2._3_1_),(MethodInfo *)0x0);
+    bVar4 = 0;
+    cVar5 = '\x01';
+    unaff_ESI = (Action__Class *)0x0;
+    if (pTVar16 == (Text *)0x0) goto code_?;
+    (*(code *)(pTVar16->klass->vtable).set_text.method)();
     (this->fields).shouldShowCurrentTime = 0;
   }
-  pNVar19 = (this->fields).fader;
-  bVar3 = 0;
-  if (pNVar19 != (NotificationFade *)0x0) {
-    (pNVar19->fields).pauseAt = (pNVar19->fields).duration;
-    this_01 = (pNVar19->fields).group;
-    (pNVar19->fields).playing = 1;
-    bVar3 = 0;
-    if (this_01 != (CanvasGroup *)0x0) {
+  unaff_ESI = (Action__Class *)(this->fields).fader;
+  bVar4 = 0;
+  cVar5 = '\x01';
+  if (unaff_ESI != (Action__Class *)0x0) {
+    (unaff_ESI->_0).castClass = (Il2CppClass *)(unaff_ESI->_0).this_arg.data;
+    this_02 = (List_1_GameStatCounterType_ *)(unaff_ESI->_0).byval_arg.data.typeHandle;
+    *(undefined1 *)&(unaff_ESI->_0).this_arg.attrs = 1;
+    bVar4 = 0;
+    cVar5 = '\x01';
+    if (this_02 != (List_1_GameStatCounterType_ *)0x0) {
+      puVar7 = &UNK_?;
       UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-                (this_01,0.0,(MethodInfo *)0x0);
-      (pNVar19->fields).currentTime = 0.0;
-      puVar6 = (undefined *)((uint)uStack_1 & 0xff000000);
+                ((CanvasGroup *)this_02,0.0,(MethodInfo *)0x0);
+      (unaff_ESI->_0).element_class = (Il2CppClass *)0x0;
+      puVar23 = (undefined *)((uint)uStack_2 & 0xff000000);
       if (cRam_? == '\0') {
-        func_?(&
-                        MethodInfo__System__Collections__Generic__List<CurrentProgressNotification::WinninConditionImage>__get_Count__
-                       );
-        func_?(&
-                        MethodInfo__System__Collections__Generic__List<CurrentProgressNotification::WinninConditionImage>__get_Item_int_
-                       );
+        func_?();
+        func_?();
         cRam_? = '\x01';
       }
-      iVar20 = 0;
-      pLVar21 = (this->fields).winningConditionImages;
-      puVar22 = uStack_1;
-      while (bVar3 = 0, uStack_1 = puVar22,
-            pLVar21 != (List_1_CurrentProgressNotification_WinninConditionImage_ *)0x0) {
-        cVar23 = (char)((uint)puVar6 >> 0x18);
-        if ((pLVar21->fields)._size <= iVar20) {
-          uStack_1._3_1_ = (uint8_t)((uint)puVar22 >> 0x18);
-          cVar23 = uStack_1._3_1_;
+      in_stack_22 = (byte)puVar7;
+      pLVar24 = (this->fields).winningConditionImages;
+      unaff_ESI = (Action__Class *)0x0;
+      pIVar25 = uStack_2;
+      while( true ) {
+        cVar5 = '\x01';
+        bVar4 = 0;
+        uStack_2 = pIVar25;
+        if (pLVar24 == (List_1_CurrentProgressNotification_WinninConditionImage_ *)0x0) break;
+        in_stack_22 = (byte)puVar7;
+        cVar26 = (char)((uint)puVar23 >> 0x18);
+        if ((pLVar24->fields)._size <= (int)unaff_ESI) {
+          uStack_2._3_1_ = (uint8_t)((uint)pIVar25 >> 0x18);
+          cVar5 = uStack_2._3_1_;
           if (cRam_? == '\0') {
-            func_?(&StringLiteral_S);
-            func_?(&StringLiteral_KILL);
-            func_?(&StringLiteral_STAR);
-            func_?(&StringLiteral__LEFT_);
-            func_?(&::StringLiteral__);
-            func_?(&StringLiteral_CURRENT_TIME);
+            func_?();
+            func_?();
+            func_?();
+            func_?();
+            func_?();
+            func_?();
             cRam_? = '\x01';
-            puVar22 = uStack_1;
+            pIVar25 = uStack_2;
           }
-          uStack_1 = puVar22;
-          if ((cVar23 == '\x01') ||
-             ((pSVar18 = StringLiteral_STAR, cVar23 != '\x03' &&
-              (pSVar18 = ::StringLiteral__, cVar23 == '\x06')))) {
-            pSVar18 = StringLiteral_KILL;
+          uStack_2 = pIVar25;
+          if ((cVar5 == '\x01') ||
+             ((str0 = StringLiteral_STAR, cVar5 != '\x03' &&
+              (str0 = ::StringLiteral__, cVar5 == '\x06')))) {
+            str0 = StringLiteral_KILL;
           }
-          pSVar18 = mscorlib.dll::System::String::String_Concat_3
-                              (pSVar18,StringLiteral__LEFT_,(MethodInfo *)0x0);
-          if ((cVar23 == '\x02') || (cVar23 == '\b')) {
-            pSVar18 = StringLiteral_CURRENT_TIME;
+          if (1 < (int)unaff_EDI) {
+            str0 = mscorlib.dll::System::String::String_Concat_3
+                             (str0,StringLiteral_S,(MethodInfo *)0x0);
           }
-          pTVar14 = (this->fields).warningText;
-          bVar3 = 0;
-          if (pTVar14 != (Text *)0x0) {
-            (*(code *)(pTVar14->klass->vtable).set_text.method)
-                      (pTVar14,pSVar18,
-                       (pTVar14->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-            pNVar19 = (this->fields).fader;
-            bVar3 = 0;
-            if (pNVar19 != (NotificationFade *)0x0) {
-              pAVar24 = (pNVar19->fields).OnFinished;
-              this_03 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+          in_stack_22 = 0x2e;
+          mscorlib.dll::System::String::String_Concat_3(str0,StringLiteral__LEFT_,(MethodInfo *)0x0)
+          ;
+          pTVar16 = (this->fields).warningText;
+          bVar4 = 0;
+          cVar5 = '\x01';
+          if (pTVar16 != (Text *)0x0) {
+            (*(code *)(pTVar16->klass->vtable).set_text.method)();
+            pNVar27 = (this->fields).fader;
+            bVar4 = 0;
+            cVar5 = '\x01';
+            if (pNVar27 != (NotificationFade *)0x0) {
+              unaff_EDI = (Action__Class *)(pNVar27->fields).OnFinished;
+              unaff_ESI = (Action__Class *)func_?();
               UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
               NavMesh_OnNavMeshPreUpdate__ctor
-                        (this_03,(Object *)this,
+                        ((NavMesh_OnNavMeshPreUpdate *)unaff_ESI,(Object *)this,
                          MethodInfo__CurrentProgressNotification__DestroyNotification__,
                          (MethodInfo *)0x0);
-              pAVar24 = (Action *)
+              pAVar28 = (Action *)
                         mscorlib.dll::System::Delegate::Delegate_Combine
-                                  ((Delegate *)pAVar24,(Delegate *)this_03,(MethodInfo *)0x0);
-              if (pAVar24 == (Action *)0x0) {
-                (pNVar19->fields).OnFinished = (Action *)0x0;
+                                  ((Delegate *)unaff_EDI,(Delegate *)unaff_ESI,(MethodInfo *)0x0);
+              if (pAVar28 == (Action *)0x0) {
+                (pNVar27->fields).OnFinished = (Action *)0x0;
                 func_?();
                 return;
               }
-              pAVar25 = (Action *)0x0;
-              if (pAVar24->klass == TypeInfo__System__Action) {
-                pAVar25 = pAVar24;
+              pAVar29 = (Action *)0x0;
+              if (pAVar28->klass == TypeInfo__System__Action) {
+                pAVar29 = pAVar28;
               }
-              bVar3 = 0;
-              if (pAVar25 != (Action *)0x0) {
-                (pNVar19->fields).OnFinished = pAVar25;
-                pAVar25 = (Action *)0x0;
-                if (pAVar24->klass == TypeInfo__System__Action) {
-                  pAVar25 = pAVar24;
+              bVar4 = 0;
+              cVar5 = pAVar29 == (Action *)0x0;
+              if (!(bool)cVar5) {
+                (pNVar27->fields).OnFinished = pAVar29;
+                pAVar29 = (Action *)0x0;
+                if (pAVar28->klass == TypeInfo__System__Action) {
+                  pAVar29 = pAVar28;
                 }
-                bVar3 = 0;
-                if (pAVar25 != (Action *)0x0) {
-                  func_?();
-                  return;
-                }
+                bVar4 = 0;
+                cVar5 = '\x01';
+                unaff_ESI = TypeInfo__System__Action;
+                if (pAVar29 == (Action *)0x0) goto code_?;
                 goto code_?;
               }
               func_?();
@@ -419,67 +497,83 @@ code_?:
           }
           break;
         }
-        pLVar26 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+        pLVar30 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                  (this->fields).winningConditionImages;
-        bVar3 = 0;
-        if (pLVar26 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+        bVar4 = 0;
+        cVar5 = '\x01';
+        if (pLVar30 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
         break;
-        RVar27 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+        RVar31 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                  ::RegexCharClass+SingleRange]::
                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                           (pLVar26,iVar20,
+                           (pLVar30,(int32_t)unaff_ESI,
                             MethodInfo__System__Collections__Generic__List<CurrentProgressNotification::WinninConditionImage>__get_Item_int_
                            );
-        bVar3 = 0;
-        if (RVar27 == (RegexCharClass_SingleRange)0x0) break;
-        pLVar26 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+        in_stack_22 = (byte)puVar7;
+        bVar4 = 0;
+        cVar5 = '\x01';
+        if (RVar31 == (RegexCharClass_SingleRange)0x0) break;
+        pLVar30 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                  (this->fields).winningConditionImages;
-        if (*(char *)((int)RVar27 + 8) == cVar23) {
-          bVar3 = 0;
-          if (pLVar26 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+        if (*(char *)((int)RVar31 + 8) == cVar26) {
+          bVar4 = 0;
+          cVar5 = '\x01';
+          if (pLVar30 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
           break;
-          RVar27 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+          RVar31 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                    RegularExpressions::RegexCharClass+SingleRange]::
                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                             (pLVar26,iVar20,
+                             (pLVar30,(int32_t)unaff_ESI,
                               MethodInfo__System__Collections__Generic__List<CurrentProgressNotification::WinninConditionImage>__get_Item_int_
                              );
-          bVar3 = 0;
-          if (RVar27 == (RegexCharClass_SingleRange)0x0) break;
-          bVar3 = 0;
-          if (*(Component **)((int)RVar27 + 0xc) == (Component *)0x0) break;
-          this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                              (*(Component **)((int)RVar27 + 0xc),(MethodInfo *)0x0);
-          bVar3 = 0;
-          if (this_02 == (GameObject *)0x0) break;
-          bVar13 = 1;
+          in_stack_22 = (byte)puVar7;
+          bVar4 = 0;
+          cVar5 = '\x01';
+          if (RVar31 == (RegexCharClass_SingleRange)0x0) break;
+          bVar4 = 0;
+          cVar5 = '\x01';
+          if (*(Component **)((int)RVar31 + 0xc) == (Component *)0x0) break;
+          this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                              (*(Component **)((int)RVar31 + 0xc),(MethodInfo *)0x0);
+          in_stack_22 = (byte)puVar7;
+          bVar4 = 0;
+          cVar5 = '\x01';
+          if (this_03 == (GameObject *)0x0) break;
+          bVar15 = 1;
         }
         else {
-          bVar3 = 0;
-          if (pLVar26 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+          bVar4 = 0;
+          cVar5 = '\x01';
+          if (pLVar30 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
           break;
-          RVar27 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+          RVar31 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                    RegularExpressions::RegexCharClass+SingleRange]::
                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                             (pLVar26,iVar20,
+                             (pLVar30,(int32_t)unaff_ESI,
                               MethodInfo__System__Collections__Generic__List<CurrentProgressNotification::WinninConditionImage>__get_Item_int_
                              );
-          bVar3 = 0;
-          if (RVar27 == (RegexCharClass_SingleRange)0x0) break;
-          bVar3 = 0;
-          if (*(Component **)((int)RVar27 + 0xc) == (Component *)0x0) break;
-          this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                              (*(Component **)((int)RVar27 + 0xc),(MethodInfo *)0x0);
-          bVar3 = 0;
-          if (this_02 == (GameObject *)0x0) break;
-          bVar13 = 0;
+          in_stack_22 = (byte)puVar7;
+          bVar4 = 0;
+          cVar5 = '\x01';
+          if (RVar31 == (RegexCharClass_SingleRange)0x0) break;
+          bVar4 = 0;
+          cVar5 = '\x01';
+          if (*(Component **)((int)RVar31 + 0xc) == (Component *)0x0) break;
+          this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                              (*(Component **)((int)RVar31 + 0xc),(MethodInfo *)0x0);
+          in_stack_22 = (byte)puVar7;
+          bVar4 = 0;
+          cVar5 = '\x01';
+          if (this_03 == (GameObject *)0x0) break;
+          bVar15 = 0;
         }
-        puVar6 = &UNK_?;
+        puVar23 = &UNK_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (this_02,bVar13,(MethodInfo *)0x0);
-        iVar20 = iVar20 + 1;
-        puVar22 = uStack_1;
-        pLVar21 = (this->fields).winningConditionImages;
+                  (this_03,bVar15,(MethodInfo *)0x0);
+        in_stack_22 = (byte)puVar7;
+        pLVar24 = (this->fields).winningConditionImages;
+        unaff_ESI = (Action__Class *)((int)&(unaff_ESI->_0).image + 1);
+        pIVar25 = uStack_2;
       }
     }
   }
@@ -487,14 +581,52 @@ code_?:
   func_?();
 code_?:
   func_?();
-  iVar20 = in_stack_11 + 1;
-  bVar28 = (byte)((uint)iVar20 >> 8);
-  pcVar29 = (char *)(CONCAT22((short)((uint)iVar20 >> 0x10),
-                             CONCAT11(bVar28 * '\x02' + bVar3,(char)iVar20)) + -0xADDR);
-  *pcVar29 = *pcVar29 + (char)iVar20 + '\x01' +
-            (CARRY1(bVar28,bVar28) || CARRY1(bVar28 * '\x02',bVar3));
-  pcVar30 = (code *)swi(3);
-  (*pcVar30)();
+  pAVar29 = (Action *)(extraout_ECX + -1);
+  if (pAVar29 == (Action *)0x0 || cVar5 == '\0') {
+    bVar32 = (byte)((uint)pAVar29 >> 8);
+    *(byte *)&pAVar29->klass =
+         *(char *)&pAVar29->klass + (byte)pAVar29 +
+         (CARRY1(in_stack_22,bVar32) || CARRY1(in_stack_22 + bVar32,bVar4));
+    pbVar33 = (byte *)((int)&(unaff_ESI->_0).byval_arg.data + 2);
+    *pbVar33 = *pbVar33 << 1 | (char)*pbVar33 < '\0';
+    uVar34 = SUB42(extraout_EDX,0);
+    out(*(undefined4 *)((int)&(unaff_ESI->_0).image + 2),uVar34);
+    pbVar33 = &(unaff_ESI->_0).byval_arg.type;
+    *pbVar33 = *pbVar33 << 1 | (char)*pbVar33 < '\0';
+    out(*(undefined4 *)((int)&(unaff_ESI->_0).gc_desc + 2),uVar34);
+    pbVar33 = (byte *)((int)&(unaff_ESI->_0).this_arg.data + 2);
+    *pbVar33 = *pbVar33 << 1 | (char)*pbVar33 < '\0';
+    pbVar33 = (byte *)((int)&(unaff_ESI->_0).this_arg.data + 2);
+    *pbVar33 = *pbVar33 << 1 | (char)*pbVar33 < '\0';
+    out(*(undefined4 *)((int)&((Delegate__Fields *)&(unaff_ESI->_0).name)->method_ptr + 2),uVar34);
+    pbVar33 = &(unaff_ESI->_0).this_arg.type;
+    *pbVar33 = *pbVar33 << 1 | (char)*pbVar33 < '\0';
+    pDVar35 = (Delegate__Class *)in(uVar34);
+    (unaff_EDI->_0).image = (Il2CppImage *)pDVar35;
+    pbVar33 = &(unaff_ESI->_0).this_arg.type;
+    *pbVar33 = *pbVar33 << 1 | (char)*pbVar33 < '\0';
+    pcVar36 = (code *)swi(3);
+    (*pcVar36)();
+    return;
+  }
+  *(byte *)&(unaff_EDI->_0).image = *(byte *)&(unaff_EDI->_0).image ^ (byte)pAVar29;
+  unaff_0006ba00 = '\x14';
+  unaff_0006be00 = &stack0xfffffffc;
+  puVar37 = (undefined4 *)&stack0xfffffffc;
+  cVar5 = '\x13';
+  do {
+    puVar1 = puVar1 + -1;
+    puVar37 = puVar37 + -1;
+    *puVar37 = *puVar1;
+    cVar5 = cVar5 + -1;
+    pNVar27 = extraout_EDX;
+  } while ('\0' < cVar5);
+code_?:
+  *(undefined1 **)(&stack0xfffffff8 + (uint)(byte)(unaff_0006ba00 - 1) * -4) = unaff_0006be00;
+  pbVar33 = (byte *)((int)&pAVar29[-2].fields._._.invoke_impl + 1);
+  *pbVar33 = *pbVar33 & (byte)pNVar27;
+  auStack_38[-(uint)(byte)(unaff_0006ba00 - 1)] = &UNK_?;
+  func_?();
   return;
 }
 
@@ -518,61 +650,61 @@ void Assembly-CSharp.dll::CurrentProgressNotification::
     cRam_? = '\x01';
   }
   index = 0;
-  pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-           (this->fields).winningConditionImages;
-  if (pLVar2 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+  pLVar2 = (this->fields).winningConditionImages;
+  if (pLVar2 != (List_1_CurrentProgressNotification_WinninConditionImage_ *)0x0) {
     while( true ) {
       if ((pLVar2->fields)._size <= index) {
         return;
       }
-      if ((pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-         (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+      pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+               (pCVar1->fields).winningConditionImages;
+      if ((pLVar3 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
+         (RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                   RegularExpressions::RegexCharClass+SingleRange]::
                   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            (pLVar2,index,
+                            (pLVar3,index,
                              MethodInfo__System__Collections__Generic__List<CurrentProgressNotification::WinninConditionImage>__get_Item_int_
-                            ), RVar3 == (RegexCharClass_SingleRange)0x0)) break;
-      pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                            ), RVar4 == (RegexCharClass_SingleRange)0x0)) break;
+      pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                (pCVar1->fields).winningConditionImages;
-      if (*(char *)((int)RVar3 + 8) == (undefined1)winningConditionType) {
-        if ((((pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-             || (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+      if (*(char *)((int)RVar4 + 8) == (undefined1)winningConditionType) {
+        if ((((pLVar3 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+             || (RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                          RegularExpressions::RegexCharClass+SingleRange]::
                          List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                   (pLVar2,index,
+                                   (pLVar3,index,
                                     MethodInfo__System__Collections__Generic__List<CurrentProgressNotification::WinninConditionImage>__get_Item_int_
-                                   ), RVar3 == (RegexCharClass_SingleRange)0x0)) ||
-            (*(Component **)((int)RVar3 + 0xc) == (Component *)0x0)) ||
+                                   ), RVar4 == (RegexCharClass_SingleRange)0x0)) ||
+            (*(Component **)((int)RVar4 + 0xc) == (Component *)0x0)) ||
            (this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                (*(Component **)((int)RVar3 + 0xc),(MethodInfo *)0x0),
+                                (*(Component **)((int)RVar4 + 0xc),(MethodInfo *)0x0),
            this_00 == (GameObject *)0x0)) break;
         this._0_1_ = 1;
       }
       else {
-        if (((pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-            (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+        if (((pLVar3 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
+            (RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                      RegularExpressions::RegexCharClass+SingleRange]::
                      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                               (pLVar2,index,
+                               (pLVar3,index,
                                 MethodInfo__System__Collections__Generic__List<CurrentProgressNotification::WinninConditionImage>__get_Item_int_
-                               ), RVar3 == (RegexCharClass_SingleRange)0x0)) ||
-           ((*(Component **)((int)RVar3 + 0xc) == (Component *)0x0 ||
+                               ), RVar4 == (RegexCharClass_SingleRange)0x0)) ||
+           ((*(Component **)((int)RVar4 + 0xc) == (Component *)0x0 ||
             (this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                 (*(Component **)((int)RVar3 + 0xc),(MethodInfo *)0x0),
+                                 (*(Component **)((int)RVar4 + 0xc),(MethodInfo *)0x0),
             this_00 == (GameObject *)0x0)))) break;
         this._0_1_ = 0;
       }
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 (this_00,(bool)this,(MethodInfo *)0x0);
-      pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-               (pCVar1->fields).winningConditionImages;
+      pLVar2 = (pCVar1->fields).winningConditionImages;
       index = index + 1;
-      if (pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) break;
+      if (pLVar2 == (List_1_CurrentProgressNotification_WinninConditionImage_ *)0x0) break;
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -631,29 +763,31 @@ void Assembly-CSharp.dll::CurrentProgressNotification::CurrentProgressNotificati
   if ((pMVar2 != (MVNetworkGame *)0x0) &&
      (pMVar3 = (pMVar2->fields)._NetworkGameStateListener_k__BackingField,
      pMVar3 != (MVNetworkGameStateListener *)0x0)) {
-    startTime = (this->fields).avatarStartTime;
-    if (startTime <= (pMVar3->fields).startTime) {
+    if ((pMVar3->fields).startTime < (this->fields).avatarStartTime) {
+      iVar4 = (this->fields).avatarStartTime;
+    }
+    else {
       pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
       if ((pMVar2 == (MVNetworkGame *)0x0) ||
          (pMVar3 = (pMVar2->fields)._NetworkGameStateListener_k__BackingField,
          pMVar3 == (MVNetworkGameStateListener *)0x0)) goto code_?;
-      startTime = (pMVar3->fields).startTime;
+      iVar4 = (pMVar3->fields).startTime;
     }
-    score = CurrentProgressNotification_CalculateCurrentTime(this,startTime,(MethodInfo *)0x0);
-    pSStack4 =
+    iVar4 = CurrentProgressNotification_CalculateCurrentTime(this,iVar4,(MethodInfo *)0x0);
+    pSStack5 =
          WinningConditionControl::WinningConditionControl_MakeIntoScoreText
-                   (score,GameStatCounterType__Enum_Flag,(MethodInfo *)0x0);
+                   (iVar4,GameStatCounterType__Enum_Flag,(MethodInfo *)0x0);
     if (pTVar1 != (Text *)0x0) {
-      pIStack5 = (pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
-      pTStack6 = pTVar1;
+      pIStack6 = (pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
+      pTStack7 = pTVar1;
       (*(code *)(pTVar1->klass->vtable).set_text.method)();
       return;
     }
   }
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

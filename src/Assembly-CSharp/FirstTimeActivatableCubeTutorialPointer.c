@@ -530,16 +530,12 @@ bool Assembly-CSharp.dll::FirstTimeActivatableCubeTutorialPointer::
       bVar3 = MVWorldObject.dll::MV::WorldObject::MetaData::FirstTimeState::
               FirstTimeState_HasFirstTimeEventOccured
                         (this_00,FirstTimeEvent__Enum_BM_CubeTutorialDone,(MethodInfo *)0x0);
-      bVar4 = 0;
-      if (bVar1 == 0) {
-        bVar4 = bVar2;
-      }
-      return bVar3 == 0 & bVar4;
+      return (bVar3 ^ 1) & (bVar1 ^ 1) & bVar2;
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  bVar1 = (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  bVar1 = (*pcVar4)();
   return bVar1;
 }
 

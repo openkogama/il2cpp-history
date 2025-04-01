@@ -14,42 +14,42 @@ int32_t MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_Read7BitEncod
       ;
       cRam_? = '\x01';
     }
-    this_00 = (this->fields)._buffer;
-    if (this_00 == (List_1_System_Byte_ *)0x0) goto code_?;
+    pLVar3 = (this->fields)._buffer;
+    if (pLVar3 == (List_1_System_Byte_ *)0x0) goto code_?;
     index = (this->fields)._position;
-    if (index == (this_00->fields)._size) goto code_?;
+    if (index == (pLVar3->fields)._size) goto code_?;
     (this->fields)._position = index + 1;
-    bVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::SByte]::
+    bVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::SByte]::
             List_1_System_SByte__get_Item
-                      ((List_1_System_SByte_ *)this_00,index,
+                      ((List_1_System_SByte_ *)(this->fields)._buffer,index,
                        MethodInfo__System__Collections__Generic__List<unsigned_char>__get_Item_int_)
     ;
-    uVar1 = uVar1 | (bVar3 & 0x7f) << ((byte)iVar2 & 0x1f);
+    uVar1 = uVar1 | (bVar4 & 0x7f) << ((byte)iVar2 & 0x1f);
     iVar2 = iVar2 + 7;
-    if (-1 < (char)bVar3) {
+    if (-1 < (char)bVar4) {
       return uVar1;
     }
   }
-  uVar4 = func_?(&TypeInfo__System__FormatException);
-  this_01 = (FormatException *)func_?(uVar4);
-  pMVar5 = (MethodInfo *)0x0;
-  pSVar6 = (String *)func_?(&StringLiteral_Error_in_the_byte_stream__too_ma);
-  mscorlib.dll::System::FormatException::FormatException__ctor_1(this_01,pSVar6,pMVar5);
-  uVar4 = func_?(&MethodInfo__MV__WorldObject__BytePacker__Read7BitEncodedInt__);
-  func_?(this_01,uVar4);
+  uVar5 = func_?(&TypeInfo__System__FormatException);
+  this_00 = (FormatException *)func_?(uVar5);
+  pMVar6 = (MethodInfo *)0x0;
+  pSVar7 = (String *)func_?(&StringLiteral_Error_in_the_byte_stream__too_ma);
+  mscorlib.dll::System::FormatException::FormatException__ctor_1(this_00,pSVar7,pMVar6);
+  uVar5 = func_?(&MethodInfo__MV__WorldObject__BytePacker__Read7BitEncodedInt__);
+  func_?(this_00,uVar5);
 code_?:
-  uVar4 = func_?(&TypeInfo__MV__WorldObject__EndOfStreamException);
-  this_02 = (EndOfStreamException_1 *)func_?(uVar4);
-  pMVar5 = (MethodInfo *)0x0;
-  pSVar6 = (String *)func_?(&StringLiteral_The_end_of_the_stream_is_reached);
-  EndOfStreamException::EndOfStreamException_1__ctor_1(this_02,pSVar6,pMVar5);
-  uVar4 = func_?(&MethodInfo__MV__WorldObject__BytePacker__ReadByte__);
-  func_?(this_02,uVar4);
+  uVar5 = func_?(&TypeInfo__MV__WorldObject__EndOfStreamException);
+  this_01 = (EndOfStreamException_1 *)func_?(uVar5);
+  pMVar6 = (MethodInfo *)0x0;
+  pSVar7 = (String *)func_?(&StringLiteral_The_end_of_the_stream_is_reached);
+  EndOfStreamException::EndOfStreamException_1__ctor_1(this_01,pSVar7,pMVar6);
+  uVar5 = func_?(&MethodInfo__MV__WorldObject__BytePacker__ReadByte__);
+  func_?(this_01,uVar5);
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  iVar8 = (*pcVar7)();
-  return iVar8;
+  pcVar8 = (code *)swi(3);
+  iVar9 = (*pcVar8)();
+  return iVar9;
 }
 
 
@@ -75,32 +75,32 @@ uint8_t MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_ReadByte
     func_?(&MethodInfo__System__Collections__Generic__List<unsigned_char>__get_Item_int_);
     cRam_? = '\x01';
   }
-  this_00 = (this->fields)._buffer;
-  if (this_00 == (List_1_System_Byte_ *)0x0) {
+  pLVar1 = (this->fields)._buffer;
+  if (pLVar1 == (List_1_System_Byte_ *)0x0) {
     func_?();
   }
   else {
     index = (this->fields)._position;
-    if (index != (this_00->fields)._size) {
+    if (index != (pLVar1->fields)._size) {
       (this->fields)._position = index + 1;
-      uVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::SByte]::
+      uVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::SByte]::
               List_1_System_SByte__get_Item
-                        ((List_1_System_SByte_ *)this_00,index,
+                        ((List_1_System_SByte_ *)(this->fields)._buffer,index,
                          MethodInfo__System__Collections__Generic__List<unsigned_char>__get_Item_int_
                         );
-      return uVar1;
+      return uVar2;
     }
   }
-  uVar2 = func_?(&TypeInfo__MV__WorldObject__EndOfStreamException);
-  this_01 = (EndOfStreamException_1 *)func_?(uVar2);
+  uVar3 = func_?(&TypeInfo__MV__WorldObject__EndOfStreamException);
+  this_00 = (EndOfStreamException_1 *)func_?(uVar3);
   method_00 = (MethodInfo *)0x0;
   message = (String *)func_?(&StringLiteral_The_end_of_the_stream_is_reached);
-  EndOfStreamException::EndOfStreamException_1__ctor_1(this_01,message,method_00);
+  EndOfStreamException::EndOfStreamException_1__ctor_1(this_00,message,method_00);
   func_?(&MethodInfo__MV__WorldObject__BytePacker__ReadByte__);
-  func_?(this_01);
-  pcVar3 = (code *)swi(3);
-  uVar1 = (*pcVar3)();
-  return uVar1;
+  func_?(this_00);
+  pcVar4 = (code *)swi(3);
+  uVar2 = (*pcVar4)();
+  return uVar2;
 }
 
 
@@ -172,12 +172,12 @@ int16_t MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_ReadInt16
   }
   pLVar1 = (this->fields)._buffer;
   if (pLVar1 != (List_1_System_Byte_ *)0x0) {
+    if ((pLVar1->fields)._size < (this->fields)._position + 2) goto code_?;
     iVar2 = (this->fields)._position;
-    if ((pLVar1->fields)._size < iVar2 + 2) goto code_?;
     (this->fields)._position = iVar2 + 1;
     iVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::SByte]::
             List_1_System_SByte__get_Item
-                      ((List_1_System_SByte_ *)pLVar1,iVar2,
+                      ((List_1_System_SByte_ *)(this->fields)._buffer,iVar2,
                        MethodInfo__System__Collections__Generic__List<unsigned_char>__get_Item_int_)
     ;
     iVar2 = (this->fields)._position;
@@ -220,11 +220,11 @@ int32_t MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_ReadInt32
   }
   pLVar1 = (this->fields)._buffer;
   if (pLVar1 != (List_1_System_Byte_ *)0x0) {
+    if ((pLVar1->fields)._size < (this->fields)._position + 4) goto code_?;
     iVar2 = (this->fields)._position;
-    if ((pLVar1->fields)._size < iVar2 + 4) goto code_?;
     (this->fields)._position = iVar2 + 1;
     mscorlib.dll::System::Collections::Generic::List`1[System::SByte]::List_1_System_SByte__get_Item
-              ((List_1_System_SByte_ *)pLVar1,iVar2,
+              ((List_1_System_SByte_ *)(this->fields)._buffer,iVar2,
                MethodInfo__System__Collections__Generic__List<unsigned_char>__get_Item_int_);
     iVar2 = (this->fields)._position;
     pLVar1 = (this->fields)._buffer;
@@ -286,11 +286,11 @@ int64_t MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_ReadInt64
   }
   pLVar1 = (this->fields)._buffer;
   if (pLVar1 != (List_1_System_Byte_ *)0x0) {
+    if ((pLVar1->fields)._size < (this->fields)._position + 8) goto code_?;
     iVar2 = (this->fields)._position;
-    if ((pLVar1->fields)._size < iVar2 + 8) goto code_?;
     (this->fields)._position = iVar2 + 1;
     mscorlib.dll::System::Collections::Generic::List`1[System::SByte]::List_1_System_SByte__get_Item
-              ((List_1_System_SByte_ *)pLVar1,iVar2,
+              ((List_1_System_SByte_ *)(this->fields)._buffer,iVar2,
                MethodInfo__System__Collections__Generic__List<unsigned_char>__get_Item_int_);
     iVar2 = (this->fields)._position;
     pLVar1 = (this->fields)._buffer;
@@ -453,11 +453,11 @@ uint64_t MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_ReadUInt64
   }
   pLVar1 = (this->fields)._buffer;
   if (pLVar1 != (List_1_System_Byte_ *)0x0) {
+    if ((pLVar1->fields)._size < (this->fields)._position + 8) goto code_?;
     iVar2 = (this->fields)._position;
-    if ((pLVar1->fields)._size < iVar2 + 8) goto code_?;
     (this->fields)._position = iVar2 + 1;
     mscorlib.dll::System::Collections::Generic::List`1[System::SByte]::List_1_System_SByte__get_Item
-              ((List_1_System_SByte_ *)pLVar1,iVar2,
+              ((List_1_System_SByte_ *)(this->fields)._buffer,iVar2,
                MethodInfo__System__Collections__Generic__List<unsigned_char>__get_Item_int_);
     iVar2 = (this->fields)._position;
     pLVar1 = (this->fields)._buffer;
@@ -700,42 +700,42 @@ code_?:
           iVar6 = (this->fields)._position;
           iVar7 = (pLVar5->fields)._size;
           iVar8 = 0;
-          uVar9 = index;
-          if (iVar6 < iVar7) {
-            do {
-              if (count <= iVar8) goto code_?;
-              index_00 = (this->fields)._position;
-              pLVar5 = (this->fields)._buffer;
-              (this->fields)._position = index_00 + 1;
-              if (buffer->max_length <= uVar9) goto code_?;
-              if (pLVar5 == (List_1_System_Byte_ *)0x0) goto code_?;
-              mscorlib.dll::System::Collections::Generic::List`1[System::SByte]::
-              List_1_System_SByte__set_Item
-                        ((List_1_System_SByte_ *)pLVar5,index_00,buffer->vector[uVar9],
-                         MethodInfo__System__Collections__Generic__List<unsigned_char>__set_Item_int__unsigned_char_
-                        );
-              iVar8 = iVar8 + 1;
-              uVar9 = uVar9 + 1;
-            } while ((this->fields)._position < iVar7);
+          iVar9 = (this->fields)._position;
+          uVar10 = index;
+          while (iVar9 < iVar7) {
+            if (count <= iVar8) goto code_?;
+            iVar9 = (this->fields)._position;
+            (this->fields)._position = iVar9 + 1;
+            if (buffer->max_length <= uVar10) goto code_?;
+            pLVar5 = (this->fields)._buffer;
+            if (pLVar5 == (List_1_System_Byte_ *)0x0) goto code_?;
+            mscorlib.dll::System::Collections::Generic::List`1[System::SByte]::
+            List_1_System_SByte__set_Item
+                      ((List_1_System_SByte_ *)pLVar5,iVar9,buffer->vector[uVar10],
+                       MethodInfo__System__Collections__Generic__List<unsigned_char>__set_Item_int__unsigned_char_
+                      );
+            uVar10 = uVar10 + 1;
+            iVar8 = iVar8 + 1;
+            iVar9 = (this->fields)._position;
           }
           if (iVar8 < count) {
-            uVar9 = index + iVar8;
+            uVar10 = iVar8 + index;
             do {
               pMVar4 = 
               MethodInfo__System__Collections__Generic__List<unsigned_char>__Add_unsigned_char_;
               pLVar5 = (this->fields)._buffer;
-              if (buffer->max_length <= uVar9) goto code_?;
-              item = buffer->vector[uVar9];
+              if (buffer->max_length <= uVar10) goto code_?;
+              item = buffer->vector[uVar10];
               if (pLVar5 == (List_1_System_Byte_ *)0x0) goto code_?;
-              piVar10 = &(pLVar5->fields)._version;
-              *piVar10 = *piVar10 + 1;
-              pBVar11 = (pLVar5->fields)._items;
-              if (pBVar11 == (Byte__Array *)0x0) goto code_?;
-              uVar12 = (pLVar5->fields)._size;
-              if (uVar12 < pBVar11->max_length) {
-                (pLVar5->fields)._size = uVar12 + 1;
-                if (pBVar11->max_length <= uVar12) goto code_?;
-                pBVar11->vector[uVar12] = item;
+              piVar11 = &(pLVar5->fields)._version;
+              *piVar11 = *piVar11 + 1;
+              pBVar12 = (pLVar5->fields)._items;
+              if (pBVar12 == (Byte__Array *)0x0) goto code_?;
+              uVar13 = (pLVar5->fields)._size;
+              if (uVar13 < pBVar12->max_length) {
+                (pLVar5->fields)._size = uVar13 + 1;
+                if (pBVar12->max_length <= uVar13) goto code_?;
+                pBVar12->vector[uVar13] = item;
               }
               else {
                 mscorlib.dll::System::Collections::Generic::List`1[System::SByte]::
@@ -744,7 +744,7 @@ code_?:
                            pMVar4->klass->rgctx_data[0xe].method);
               }
               iVar8 = iVar8 + 1;
-              uVar9 = uVar9 + 1;
+              uVar10 = uVar10 + 1;
             } while (iVar8 < count);
           }
 code_?:
@@ -757,26 +757,26 @@ code_?:
     }
   }
   uVar1 = func_?(&TypeInfo__System__ArgumentOutOfRangeException);
-  pAVar13 = (ArgumentOutOfRangeException *)func_?(uVar1);
+  pAVar14 = (ArgumentOutOfRangeException *)func_?(uVar1);
   pSVar2 = (String *)func_?(&StringLiteral_The_count_has_to_be_a_non_negati);
   pSVar3 = (String *)func_?(&StringLiteral_count);
   mscorlib.dll::System::ArgumentOutOfRangeException::ArgumentOutOfRangeException__ctor_2
-            (pAVar13,pSVar3,pSVar2,(MethodInfo *)0x0);
+            (pAVar14,pSVar3,pSVar2,(MethodInfo *)0x0);
   uVar1 = func_?(&MethodInfo__MV__WorldObject__BytePacker__Write_System__Byte_____int__int_
                          );
-  func_?(pAVar13,uVar1);
+  func_?(pAVar14,uVar1);
 code_?:
   uVar1 = func_?(&TypeInfo__System__ArgumentOutOfRangeException);
-  pAVar13 = (ArgumentOutOfRangeException *)func_?(uVar1);
+  pAVar14 = (ArgumentOutOfRangeException *)func_?(uVar1);
   pSVar2 = (String *)func_?(&StringLiteral_The_index_has_to_be_a_non_negati);
   pSVar3 = (String *)func_?(&StringLiteral_index);
   mscorlib.dll::System::ArgumentOutOfRangeException::ArgumentOutOfRangeException__ctor_2
-            (pAVar13,pSVar3,pSVar2,(MethodInfo *)0x0);
+            (pAVar14,pSVar3,pSVar2,(MethodInfo *)0x0);
   uVar1 = func_?(&MethodInfo__MV__WorldObject__BytePacker__Write_System__Byte_____int__int_
                          );
-  func_?(pAVar13,uVar1);
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  func_?(pAVar14,uVar1);
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
