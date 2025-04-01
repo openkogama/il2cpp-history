@@ -77,12 +77,12 @@ code_?:
         uVar11 = 0;
         uVar7 = *(ushort *)(*piVar6 + 0xb6);
         if (uVar7 != 0) {
+          iVar9 = *(int *)(*piVar6 + 0x58);
           do {
-            if (*(ISpawnRoleRemote__Class **)(*(int *)(*piVar6 + 0x58) + (uint)uVar11 * 8) ==
-                TypeInfo__ISpawnRoleRemote) {
-              puVar8 = (undefined4 *)
-                       (*piVar6 + *(int *)(*(int *)(*piVar6 + 0x58) + 4 + (uint)uVar11 * 8) * 8 +
-                       0xc0);
+            if (*(ISpawnRoleRemote__Class **)(iVar9 + (uint)uVar11 * 8) == TypeInfo__ISpawnRoleRemote
+               ) {
+              puVar8 = (undefined4 *)(*piVar6 + (*(int *)(iVar9 + 4 + (uint)uVar11 * 8) + 0x18) * 8)
+              ;
               goto code_?;
             }
             uVar11 = uVar11 + 1;

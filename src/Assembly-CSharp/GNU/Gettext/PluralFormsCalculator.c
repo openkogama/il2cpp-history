@@ -27,19 +27,20 @@ void Assembly-CSharp.dll::GNU::Gettext::PluralFormsCalculator::PluralFormsCalcul
   this_00 = (Object__Class *)func_?(TypeInfo__GNU__Gettext__RecursiveTracer);
   RecursiveTracer::RecursiveTracer__ctor((RecursiveTracer *)this_00,(MethodInfo *)0x0);
   if (value != (Object *)0x0) {
-    value[1].klass = this_00;
-    func_?(value + 1,this_00);
+    pOVar1 = value + 1;
+    pOVar1->klass = this_00;
+    func_?(pOVar1,pOVar1);
     if ((value[1].klass != (Object__Class *)0x0) &&
-       (pSVar1 = (StringBuilder *)((value[1].klass)->_0).namespaze, pSVar1 != (StringBuilder *)0x0))
+       (pSVar2 = (StringBuilder *)((value[1].klass)->_0).namespaze, pSVar2 != (StringBuilder *)0x0))
     {
       mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
-                (pSVar1,(this->fields).expression,(MethodInfo *)0x0);
+                (pSVar2,(this->fields).expression,(MethodInfo *)0x0);
       if ((value[1].klass != (Object__Class *)0x0) &&
-         (pSVar1 = (StringBuilder *)((value[1].klass)->_0).namespaze, pSVar1 != (StringBuilder *)0x0
+         (pSVar2 = (StringBuilder *)((value[1].klass)->_0).namespaze, pSVar2 != (StringBuilder *)0x0
          )) {
         mscorlib.dll::System::Text::StringBuilder::StringBuilder_AppendLine
-                  (pSVar1,(MethodInfo *)0x0);
-        pPVar2 = (this->fields).plural;
+                  (pSVar2,(MethodInfo *)0x0);
+        pPVar3 = (this->fields).plural;
         this_01 = (PluralFormsNode_IterateNodesDelegate *)
                   func_?(TypeInfo__GNU__Gettext__PluralFormsNode__IterateNodesDelegate);
         doBefore = this_01;
@@ -58,32 +59,32 @@ void Assembly-CSharp.dll::GNU::Gettext::PluralFormsCalculator::PluralFormsCalcul
         if (this_01 != (PluralFormsNode_IterateNodesDelegate *)0x0) {
           (*(((UnityAction_1_System_Object___Fields *)&this_01->fields)->_)._.invoke_impl)
                     ((((UnityAction_1_System_Object___Fields *)&this_01->fields)->_)._.method_code,
-                     pPVar2,(((UnityAction_1_System_Object___Fields *)&this_01->fields)->_)._.method
+                     pPVar3,(((UnityAction_1_System_Object___Fields *)&this_01->fields)->_)._.method
                     );
-          uVar3 = 0;
-          if (pPVar2 != (PluralFormsNode *)0x0) {
-            iVar4 = 0x10;
-            while (pPVar5 = (pPVar2->fields).nodes, pPVar5 != (PluralFormsNode__Array *)0x0) {
-              if ((int)pPVar5->max_length <= (int)uVar3) {
+          uVar4 = 0;
+          if (pPVar3 != (PluralFormsNode *)0x0) {
+            iVar5 = 0x10;
+            while (pPVar6 = (pPVar3->fields).nodes, pPVar6 != (PluralFormsNode__Array *)0x0) {
+              if ((int)pPVar6->max_length <= (int)uVar4) {
                 if (doAfter != (PluralFormsNode_IterateNodesDelegate *)0x0) {
-                  pvVar6 = (doAfter->fields)._._.method_code;
-                  (*(doAfter->fields)._._.invoke_impl)(pvVar6,pPVar2,(doAfter->fields)._._.method);
-                  if (*(RecursiveTracer **)((int)pvVar6 + 8) != (RecursiveTracer *)0x0) {
+                  puVar7 = (doAfter->fields)._._.method_code;
+                  (*(doAfter->fields)._._.invoke_impl)(puVar7,pPVar3,(doAfter->fields)._._.method);
+                  if ((RecursiveTracer *)*puVar7 != (RecursiveTracer *)0x0) {
                     RecursiveTracer::RecursiveTracer_SaveToFile
-                              (*(RecursiveTracer **)((int)pvVar6 + 8),fileName,(MethodInfo *)0x0);
+                              ((RecursiveTracer *)*puVar7,fileName,(MethodInfo *)0x0);
                     return;
                   }
                 }
                 break;
               }
-              if (pPVar5->max_length <= uVar3) goto code_?;
-              if (*(int *)((int)pPVar5->vector + iVar4 + -0x10) != 0) {
+              if (pPVar6->max_length <= uVar4) goto code_?;
+              if (*(int *)((int)pPVar6->vector + iVar5 + -0x10) != 0) {
                 PluralFormsNode::PluralFormsNode_IterateNodes
-                          (*(PluralFormsNode **)((int)pPVar5->vector + iVar4 + -0x10),doBefore,
+                          (*(PluralFormsNode **)((int)pPVar6->vector + iVar5 + -0x10),doBefore,
                            doAfter,(MethodInfo *)0x0);
               }
-              uVar3 = uVar3 + 1;
-              iVar4 = iVar4 + 4;
+              uVar4 = uVar4 + 1;
+              iVar5 = iVar5 + 4;
             }
           }
         }
@@ -93,8 +94,8 @@ void Assembly-CSharp.dll::GNU::Gettext::PluralFormsCalculator::PluralFormsCalcul
   func_?();
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -105,10 +106,10 @@ int64_t Assembly-CSharp.dll::GNU::Gettext::PluralFormsCalculator::PluralFormsCal
                   (PluralFormsCalculator *this,int64_t n,bool traceToFile,MethodInfo *method)
 
 {
-  if ((((this->fields).plural != (PluralFormsNode *)0x0) &&
-      (iVar1 = PluralFormsNode::PluralFormsNode_Evaluate
-                         ((this->fields).plural,n & 0xffffffff,unaff_EDI), -1 < iVar1)) &&
-     (iVar1 <= (this->fields).nplurals)) {
+  this_00 = (this->fields).plural;
+  if (((this_00 != (PluralFormsNode *)0x0) &&
+      (iVar1 = PluralFormsNode::PluralFormsNode_Evaluate(this_00,n & 0xffffffff,unaff_EDI),
+      -1 < iVar1)) && (iVar1 <= (this->fields).nplurals)) {
     return iVar1;
   }
   return 0;
@@ -121,10 +122,11 @@ int64_t Assembly-CSharp.dll::GNU::Gettext::PluralFormsCalculator::PluralFormsCal
                   (PluralFormsCalculator *this,int64_t n,MethodInfo *method)
 
 {
-  if ((this->fields).plural == (PluralFormsNode *)0x0) {
+  this_00 = (this->fields).plural;
+  if (this_00 == (PluralFormsNode *)0x0) {
     return 0;
   }
-  iVar1 = PluralFormsNode::PluralFormsNode_Evaluate((this->fields).plural,n & 0xffffffff,unaff_EDI);
+  iVar1 = PluralFormsNode::PluralFormsNode_Evaluate(this_00,n & 0xffffffff,unaff_EDI);
   if ((-1 < iVar1) && (iVar1 <= (this->fields).nplurals)) {
     return iVar1;
   }
@@ -181,15 +183,16 @@ code_?:
     (pPVar3->fields).nplurals = 0;
     (pPVar3->fields).plural = (PluralFormsNode *)0x0;
     func_?();
-    (pPVar3->fields).expression = str;
-    func_?(&(pPVar3->fields).expression);
+    ppSVar4 = &(pPVar3->fields).expression;
+    *ppSVar4 = str;
+    func_?(ppSVar4);
     this = (PluralFormsScanner *)func_?(TypeInfo__GNU__Gettext__PluralFormsScanner);
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)this,ExceptionArgument__Enum_obj,in_stack_4);
+              ((Object *)this,ExceptionArgument__Enum_obj,in_stack_5);
     (this->fields).str = str;
     func_?();
     method_02 = TypeInfo__GNU__Gettext__PluralFormsToken;
@@ -222,11 +225,13 @@ void Assembly-CSharp.dll::GNU::Gettext::PluralFormsCalculator::PluralFormsCalcul
 {
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  ppPVar1 = &(this->fields).plural;
   (this->fields).nplurals = 0;
-  (this->fields).plural = (PluralFormsNode *)0x0;
-  func_?(&(this->fields).plural,0);
-  (this->fields).expression = expression;
-  func_?(&(this->fields).expression,expression);
+  *ppPVar1 = (PluralFormsNode *)0x0;
+  func_?(ppPVar1,0);
+  ppSVar2 = &(this->fields).expression;
+  *ppSVar2 = expression;
+  func_?(ppSVar2,expression);
   return;
 }
 

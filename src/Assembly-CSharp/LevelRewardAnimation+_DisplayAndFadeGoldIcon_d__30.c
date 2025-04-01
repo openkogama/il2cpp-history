@@ -75,7 +75,8 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeGoldIcon>d__30::
   default:
     return 0;
   }
-  if (_UNK_? <= (pLVar1->fields)._currentTime_5__2 / (pLVar2->fields).rotateUIYAxisTime) {
+  fVar6 = (pLVar1->fields)._currentTime_5__2;
+  if (_UNK_? <= fVar6 / (pLVar2->fields).rotateUIYAxisTime) {
     pIVar4 = (pLVar2->fields).goldImage;
     if (pIVar4 != (Image *)0x0) {
       pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
@@ -119,8 +120,8 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeGoldIcon>d__30::
                             (pCVar13,0.0,(MethodInfo *)0x0);
                   (pLVar1->fields)._currentTime_5__2 = 0.0;
 code_?:
-                  if (_UNK_? <=
-                      (pLVar1->fields)._currentTime_5__2 / (pLVar2->fields).goldImageDisplayTime) {
+                  fVar3 = (pLVar1->fields)._currentTime_5__2;
+                  if (_UNK_? <= fVar3 / (pLVar2->fields).goldImageDisplayTime) {
                     pAVar5 = (pLVar2->fields).goldBounceEffect;
                     if (pAVar5 != (AnimationCurve *)0x0) {
                       fVar3 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::
@@ -160,7 +161,6 @@ code_?:
                     }
                   }
                   else {
-                    fVar3 = (pLVar1->fields)._currentTime_5__2;
                     fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
                                        ((MethodInfo *)0x0);
                     (pLVar1->fields)._currentTime_5__2 = fVar6 + fVar3;
@@ -220,7 +220,6 @@ code_?:
     }
   }
   else {
-    fVar6 = (pLVar1->fields)._currentTime_5__2;
     fVar15 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
     (pLVar1->fields)._currentTime_5__2 = fVar15 + fVar6;
     pAVar5 = (pLVar2->fields).rotateUIYAxisIn;
@@ -252,10 +251,10 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar16 = (char *)((int)&pLVar1[1].klass + 3);
-  *pcVar16 = *pcVar16 + extraout_DH;
+  pcVar16 = (char *)((int)&pLVar1[0x8b57fb].fields._currentTime_5__2 + 1);
+  *pcVar16 = *pcVar16 + extraout_AH;
   pcVar17 = (code *)swi(3);
-  bVar18 = (*pcVar17)();
+  bVar18 = (*pcVar17)(extraout_EDX);
   return bVar18;
 }
 

@@ -70,32 +70,33 @@ void Assembly-CSharp.dll::RTG::SegmentShape2D::SegmentShape2D_SetEndPtFromStart
                (SegmentShape2D *this,Vector2 dirDromStart,float offset,MethodInfo *method)
 
 {
-  fVar1 = dirDromStart.x * offset + (this->fields)._startPoint.x;
-  fVar2 = dirDromStart.y * offset + (this->fields)._startPoint.y;
+  fVar1 = (this->fields)._startPoint.x + dirDromStart.x * offset;
+  fVar2 = (this->fields)._startPoint.y + dirDromStart.y * offset;
   (this->fields)._endPoint.x = fVar1;
   fVar3 = (this->fields)._startPoint.x;
   (this->fields)._endPoint.y = fVar2;
   fVar4 = (this->fields)._startPoint.y;
-  (this->fields)._direction.x = fVar1 - fVar3;
+  this_00 = &(this->fields)._direction;
+  this_00->x = fVar1 - fVar3;
   (this->fields)._direction.y = fVar2 - fVar4;
-  fVar5 = (float10)func_?(&(this->fields)._direction,0);
-  (this->fields)._length = (float)fVar5;
-  pVVar6 = &(this->fields)._direction;
-  fVar5 = (float10)func_?(pVVar6,0);
-  fVar3 = (float)fVar5;
-  if (fVar3 <= _UNK_?) {
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Vector2);
-      cRam_? = '\x01';
-    }
-    fVar3 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
-    pVVar6->x = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).x;
-    (this->fields)._direction.y = fVar3;
-    return;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Math);
+    cRam_? = '\x01';
   }
+  fVar3 = this_00->x;
   fVar4 = (this->fields)._direction.y;
-  pVVar6->x = pVVar6->x / fVar3;
-  (this->fields)._direction.y = fVar4 / fVar3;
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Math);
+  }
+  dVar5 = (double)(fVar3 * fVar3 + fVar4 * fVar4);
+  if (dVar5 < 0.0) {
+    func_?();
+  }
+  else {
+    dVar5 = SQRT(dVar5);
+  }
+  (this->fields)._length = (float)dVar5;
+  UnityEngine.CoreModule.dll::UnityEngine::Vector2::Vector2_Normalize(this_00,(MethodInfo *)0x0);
   return;
 }
 
@@ -160,13 +161,17 @@ void Assembly-CSharp.dll::RTG::SegmentShape2D::SegmentShape2D_set_Direction
                (SegmentShape2D *this,Vector2 value,MethodInfo *method)
 
 {
-  VVar1 = (Vector2)func_?(&value,0);
+  VStack_1.x = value.x;
+  VStack_1.y = value.y;
+  UnityEngine.CoreModule.dll::UnityEngine::Vector2::Vector2_Normalize(&VStack_1,(MethodInfo *)0x0);
   fVar2 = (this->fields)._startPoint.x;
-  (this->fields)._direction = VVar1;
-  fVar3 = (this->fields)._length;
-  fVar4 = (this->fields)._startPoint.y;
-  (this->fields)._endPoint.x = fVar2 + VVar1.x * (this->fields)._length;
-  (this->fields)._endPoint.y = VVar1.y * fVar3 + fVar4;
+  fVar3 = (this->fields)._startPoint.y;
+  (this->fields)._direction.x = VStack_1.x;
+  fVar4 = (this->fields)._length;
+  (this->fields)._direction.y = VStack_1.y;
+  fVar5 = (this->fields)._length;
+  (this->fields)._endPoint.x = fVar2 + VStack_1.x * fVar4;
+  (this->fields)._endPoint.y = fVar3 + VStack_1.y * fVar5;
   return;
 }
 
@@ -183,26 +188,27 @@ void Assembly-CSharp.dll::RTG::SegmentShape2D::SegmentShape2D_set_EndPoint
   (this->fields)._endPoint.y = value.y;
   fVar3 = (this->fields)._endPoint.y;
   fVar4 = (this->fields)._startPoint.y;
-  (this->fields)._direction.x = fVar1 - fVar2;
+  this_00 = &(this->fields)._direction;
+  this_00->x = fVar1 - fVar2;
   (this->fields)._direction.y = fVar3 - fVar4;
-  fVar5 = (float10)func_?(&(this->fields)._direction,0);
-  (this->fields)._length = (float)fVar5;
-  pVVar6 = &(this->fields)._direction;
-  fVar5 = (float10)func_?(pVVar6,0);
-  fVar1 = (float)fVar5;
-  if (fVar1 <= _UNK_?) {
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Vector2);
-      cRam_? = '\x01';
-    }
-    fVar1 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
-    pVVar6->x = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).x;
-    (this->fields)._direction.y = fVar1;
-    return;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Math);
+    cRam_? = '\x01';
   }
+  fVar1 = this_00->x;
   fVar2 = (this->fields)._direction.y;
-  pVVar6->x = pVVar6->x / fVar1;
-  (this->fields)._direction.y = fVar2 / fVar1;
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Math);
+  }
+  dVar5 = (double)(fVar1 * fVar1 + fVar2 * fVar2);
+  if (dVar5 < 0.0) {
+    func_?();
+  }
+  else {
+    dVar5 = SQRT(dVar5);
+  }
+  (this->fields)._length = (float)dVar5;
+  UnityEngine.CoreModule.dll::UnityEngine::Vector2::Vector2_Normalize(this_00,(MethodInfo *)0x0);
   return;
 }
 
@@ -228,10 +234,11 @@ void Assembly-CSharp.dll::RTG::SegmentShape2D::SegmentShape2D_set_Length
   fVar1 = (float)((uint)value & _UNK_?);
   fVar2 = (this->fields)._direction.x;
   fVar3 = (this->fields)._direction.y;
+  fVar4 = (this->fields)._startPoint.x;
+  fVar5 = (this->fields)._startPoint.y;
   (this->fields)._length = fVar1;
-  fVar4 = (this->fields)._startPoint.y;
-  (this->fields)._endPoint.x = fVar2 * fVar1 + (this->fields)._startPoint.x;
-  (this->fields)._endPoint.y = fVar3 * fVar1 + fVar4;
+  (this->fields)._endPoint.x = fVar4 + fVar2 * fVar1;
+  (this->fields)._endPoint.y = fVar5 + fVar3 * fVar1;
   return;
 }
 
@@ -269,12 +276,13 @@ void Assembly-CSharp.dll::RTG::SegmentShape2D::SegmentShape2D_set_StartPoint
   fVar1 = (this->fields)._direction.x;
   fVar2 = (this->fields)._direction.y;
   fVar3 = (this->fields)._length;
-  (this->fields)._startPoint.y = value.y;
-  fVar4 = (this->fields)._startPoint.y;
-  fVar5 = (this->fields)._length;
   (this->fields)._startPoint.x = value.x;
-  (this->fields)._endPoint.x = fVar1 * fVar3 + (this->fields)._startPoint.x;
-  (this->fields)._endPoint.y = fVar4 + fVar2 * fVar5;
+  fVar4 = (this->fields)._startPoint.x;
+  fVar5 = (this->fields)._length;
+  (this->fields)._startPoint.y = value.y;
+  fVar6 = (this->fields)._startPoint.y;
+  (this->fields)._endPoint.x = fVar4 + fVar1 * fVar3;
+  (this->fields)._endPoint.y = fVar6 + fVar2 * fVar5;
   return;
 }
 

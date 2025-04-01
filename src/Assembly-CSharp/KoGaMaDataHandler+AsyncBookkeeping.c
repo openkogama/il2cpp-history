@@ -44,16 +44,19 @@ void Assembly-CSharp.dll::KoGaMaDataHandler+AsyncBookkeeping::
   (this->fields).workTime = 1.0;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  (this->fields).bp = bp;
-  func_?(&(this->fields).bp,bp);
-  (this->fields).callBack = callBack;
-  func_?(&(this->fields).callBack,callBack);
+  ppBVar1 = &(this->fields).bp;
+  *ppBVar1 = bp;
+  func_?(ppBVar1,bp);
+  ppUVar2 = &(this->fields).callBack;
+  *ppUVar2 = callBack;
+  func_?(ppUVar2,callBack);
+  ppUVar3 = &(this->fields).doneCallback;
   (this->fields).readRuntimeData = readRuntimeData;
-  (this->fields).doneCallback = doneCallback;
-  func_?(&(this->fields).doneCallback,doneCallback);
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_realtimeSinceStartup
+  *ppUVar3 = doneCallback;
+  func_?(ppUVar3,doneCallback);
+  fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_realtimeSinceStartup
                     ((MethodInfo *)0x0);
-  (this->fields).workStartTime = fVar1;
+  (this->fields).workStartTime = fVar4;
   return;
 }
 

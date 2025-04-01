@@ -29,7 +29,7 @@ void Assembly-CSharp.dll::SoundEmitterSettings+Keys::SoundEmitterSettings_Keys__
         pSVar1->vector[2] = StringLiteral_range;
         func_?(pSVar1->vector + 2,pSVar2);
         method_00 = (MethodInfo *)&this->fields;
-        (this->fields).keys = pSVar1;
+        ((SoundEmitterSettings_Keys__Fields *)method_00)->keys = pSVar1;
         func_?(method_00,pSVar1);
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                   ((Object *)this,ExceptionArgument__Enum_obj,method_00);

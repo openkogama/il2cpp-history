@@ -64,8 +64,9 @@ void Assembly-CSharp.dll::FirstTimeEventSkipPopup::FirstTimeEventSkipPopup_Initi
 
 {
   (this->fields).eventToSkip = firstTimeEvent;
-  (this->fields).targetElement = elementToSkip;
-  func_?(&(this->fields).targetElement,elementToSkip);
+  ppFVar1 = &(this->fields).targetElement;
+  *ppFVar1 = elementToSkip;
+  func_?(ppFVar1,elementToSkip);
   return;
 }
 

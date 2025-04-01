@@ -45,30 +45,30 @@ void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
                void *method_1,MethodInfo *method)
 
 {
+  ppOVar1 = &(this->fields)._._.m_target;
   (this->fields)._._.method_ptr = *(void **)((int)method_1 + 4);
   (this->fields)._._.method = method_1;
-  (this->fields)._._.m_target = object;
-  func_?(&(this->fields)._._.m_target,object);
-  cVar1 = *(char *)((int)method_1 + 0x2e);
+  *ppOVar1 = object;
+  func_?(ppOVar1,object);
+  cVar2 = *(char *)((int)method_1 + 0x2e);
   (this->fields)._._.method_code = this;
-  cVar2 = func_?(method_1);
-  if (cVar2 == '\0') {
+  cVar3 = func_?(method_1);
+  if (cVar3 == '\0') {
     if (object == (Object *)0x0) {
-      uVar3 = func_?(0,&UNK_?,0);
-      func_?(uVar3);
-      pcVar4 = (code *)swi(3);
-      (*pcVar4)();
+      uVar4 = func_?(0,&UNK_?,0);
+      func_?(uVar4);
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
       return;
     }
   }
-  else if (cVar1 == '\x01') {
-    puVar5 = &UNK_?;
-    goto code_?;
+  else if (cVar2 == '\x01') {
+    (this->fields)._._.invoke_impl = &UNK_?;
+    (this->fields)._._.extra_arg = &UNK_?;
+    return;
   }
-  (this->fields)._._.method_code = (this->fields)._._.m_target;
-  puVar5 = (this->fields)._._.method_ptr;
-code_?:
-  (this->fields)._._.invoke_impl = puVar5;
+  (this->fields)._._.method_code = *ppOVar1;
+  (this->fields)._._.invoke_impl = (this->fields)._._.method_ptr;
   (this->fields)._._.extra_arg = &UNK_?;
   return;
 }

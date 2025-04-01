@@ -8,6 +8,7 @@ Assembly-CSharp.dll::RTG::PrimitiveFactory::PrimitiveFactory_Generate2DArcBorder
           int32_t numPoints,MethodInfo *method)
 
 {
+  iVar1 = numPoints;
   if (cRam_? == '\0') {
     func_?();
     func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List_int_
@@ -31,97 +32,93 @@ Assembly-CSharp.dll::RTG::PrimitiveFactory::PrimitiveFactory_Generate2DArcBorder
   List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
             (this,numPoints,
              MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List_int_);
-  fVar1 = (float10)func_?();
-  fVar2 = arcStartPoint.x - arcOrigin.x;
-  fVar3 = arcStartPoint.y - arcOrigin.y;
-  degreesFromStart = (float)fVar1;
+  fVar2 = (float10)func_?();
+  fVar3 = arcStartPoint.x - arcOrigin.x;
+  fVar4 = arcStartPoint.y - arcOrigin.y;
+  fVar5 = (float)fVar2;
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
   }
   UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
-            ((Quaternion *)&stack0xffffffac,degreesFromStart,
+            ((Quaternion *)&stack0xffffffbc,fVar5,
              TypeInfo__UnityEngine__Vector3->static_fields->forwardVector,(MethodInfo *)0x0);
   func_?();
-  fVar1 = (float10)func_?();
-  fVar4 = (float)fVar1;
-  if (_UNK_? < fVar4) {
-    fVar2 = fVar2 / fVar4;
-    puStack_5 = (undefined *)(fVar3 / fVar4);
+  UnityEngine.CoreModule.dll::UnityEngine::Vector2::Vector2_Normalize
+            ((Vector2 *)&stack0xfffffff0,(MethodInfo *)0x0);
+  if (forceShortestArc == 0) {
+    numPoints = (int32_t)(fVar5 / (float)(numPoints + -1));
   }
   else {
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    fVar2 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).x;
-    puStack_5 = (undefined *)(TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
-  }
-  if (forceShortestArc != 0) {
-    degreesFromStart =
-         ArcMath::ArcMath_ConvertToSh2DArcAngle
-                   (arcOrigin,arcStartPoint,degreesFromStart,(MethodInfo *)0x0);
+    fVar5 = ArcMath::ArcMath_ConvertToSh2DArcAngle
+                       (arcOrigin,arcStartPoint,fVar5,(MethodInfo *)0x0);
+    numPoints = (int32_t)(fVar5 / (float)(numPoints + -1));
   }
   iVar6 = 0;
-  __return_storage_ptr__ = (Vector3 *)0x0;
-  fVar3 = degreesFromStart / (float)(numPoints + -1);
+  fVar5 = 0.0;
   while( true ) {
+    fVar7 = fVar3;
+    fVar8 = fVar4;
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
+      fVar7 = fVar3;
+      fVar8 = fVar4;
     }
-    pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
-                       ((Quaternion *)&stack0xffffff9c,(float)iVar6 * fVar3,
+    pQVar9 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
+                       ((Quaternion *)&stack0xffffffac,(float)iVar6 * (float)numPoints,
                         TypeInfo__UnityEngine__Vector3->static_fields->forwardVector,
                         (MethodInfo *)0x0);
-    point.y = (float)puStack_5;
-    point.x = fVar2;
-    point.z = (float)__return_storage_ptr__;
-    pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                        ((Vector3 *)&stack0xffffffbc,*pQVar7,point,(MethodInfo *)0x0);
-    fVar4 = pVVar8->y;
-    fVar3 = 0.0;
-    __return_storage_ptr__ = (Vector3 *)&stack0xffffffb0;
-    pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                        (__return_storage_ptr__,*pVVar8,(MethodInfo *)0x0);
-    pMVar9 = 
+    fVar10 = 0.0;
+    fVar3 = pQVar9->z;
+    fVar4 = pQVar9->w;
+    point.y = fVar8;
+    point.x = fVar7;
+    point.z = fVar5;
+    pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                        ((Vector3 *)&stack0xffffffcc,*pQVar9,point,(MethodInfo *)0x0);
+    numPoints = 0;
+    pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                        ((Vector3 *)&stack0xffffffc0,*pVVar11,(MethodInfo *)0x0);
+    pMVar12 = 
     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_;
-    uVar10 = pVVar8->x;
-    uVar11 = pVVar8->y;
-    fVar12 = arcOrigin.x + (float)uVar10 * fVar4;
-    pSVar13 = (String *)(arcOrigin.y + (float)uVar11 * fVar4);
+    uVar13 = pVVar11->x;
+    uVar14 = pVVar11->y;
+    fVar5 = arcOrigin.x + (float)uVar13 * fVar10;
+    pSVar15 = (String *)((float)uVar14 * fVar10 + 4.3697542e-29);
     if (this == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
                  *)0x0) break;
-    piVar14 = &(this->fields)._version;
-    *piVar14 = *piVar14 + 1;
-    pMVar15 = (this->fields)._items;
-    if (pMVar15 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0) break;
-    uVar16 = (this->fields)._size;
-    if (uVar16 < pMVar15->max_length) {
-      (this->fields)._size = uVar16 + 1;
-      if (pMVar15->max_length <= uVar16) {
+    piVar16 = &(this->fields)._version;
+    *piVar16 = *piVar16 + 1;
+    pMVar17 = (this->fields)._items;
+    if (pMVar17 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0) break;
+    uVar18 = (this->fields)._size;
+    if (uVar18 < pMVar17->max_length) {
+      (this->fields)._size = uVar18 + 1;
+      if (pMVar17->max_length <= uVar18) {
         func_?();
         break;
       }
-      (&pMVar15->vector[0].index)[uVar16 * 2] = (int32_t)fVar12;
-      (&pMVar15->vector[0].name)[uVar16 * 2] = pSVar13;
+      (&pMVar17->vector[0].index)[uVar18 * 2] = (int32_t)fVar5;
+      (&pMVar17->vector[0].name)[uVar18 * 2] = pSVar15;
     }
     else {
-      item.y = (float)pSVar13;
-      item.x = fVar12;
+      item.y = (float)pSVar15;
+      item.x = fVar5;
       mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
       List_1_UnityEngine_Vector2__AddWithResize
-                ((List_1_UnityEngine_Vector2_ *)this,item,pMVar9->klass->rgctx_data[0xe].method);
+                ((List_1_UnityEngine_Vector2_ *)this,item,pMVar12->klass->rgctx_data[0xe].method);
     }
     iVar6 = iVar6 + 1;
-    if (numPoints <= iVar6) {
+    fVar5 = fVar7;
+    if (iVar1 <= iVar6) {
       return (List_1_UnityEngine_Vector2_ *)this;
     }
   }
   func_?();
-  pcVar17 = (code *)swi(3);
-  pLVar18 = (List_1_UnityEngine_Vector2_ *)(*pcVar17)();
-  return pLVar18;
+  pcVar19 = (code *)swi(3);
+  pLVar20 = (List_1_UnityEngine_Vector2_ *)(*pcVar19)();
+  return pLVar20;
 }
 
 
@@ -163,7 +160,7 @@ Assembly-CSharp.dll::RTG::PrimitiveFactory::PrimitiveFactory_Generate2DCircleBor
       pMVar6 = 
       MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
       ;
-      fVar3 = (float)dVar4 * circleRadius + circleCenter.x;
+      fVar3 = circleCenter.x + (float)dVar4 * circleRadius;
       pSVar7 = (String *)(circleCenter.y + (float)dVar5 * circleRadius);
       if (this == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
                    *)0x0) {
@@ -215,8 +212,9 @@ Assembly-CSharp.dll::RTG::PrimitiveFactory::PrimitiveFactory_Generate2DPolyBorde
     func_?(&
                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
                    );
+    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List_int_
+                   );
     func_?();
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List__);
     func_?(&
                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Count__
                    );
@@ -226,354 +224,325 @@ Assembly-CSharp.dll::RTG::PrimitiveFactory::PrimitiveFactory_Generate2DPolyBorde
     func_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
     cRam_? = '\x01';
   }
-  uStack_1 = CONCAT44(uStack_1._4_4_,(undefined *)uStack_1);
-  uStack_2 = CONCAT44(uStack_2._4_4_,(float)uStack_2);
   if (cwPolyPoints != (List_1_UnityEngine_Vector2_ *)0x0) {
-    fVar3 = (float)(cwPolyPoints->fields)._size;
-    uStack_2._4_4_ = fVar3;
+    fStack_1 = (float)(cwPolyPoints->fields)._size;
     if (isClosed == 0) {
-      if ((int)fVar3 < 3) goto code_?;
+      if ((int)fStack_1 < 3) goto code_?;
     }
-    else if ((int)fVar3 < 4) {
+    else if ((int)fStack_1 < 4) {
 code_?:
-      pLVar4 = (List_1_UnityEngine_Vector2_ *)func_?();
+      pLVar2 = (List_1_UnityEngine_Vector2_ *)
+               func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
       mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
       __Il2CppFullySharedGenericType]::
       LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar4,
+                ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar2,
                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List__);
-      return pLVar4;
+      return pLVar2;
     }
-    fStack_5 = _UNK_?;
+    fStack_3 = _UNK_?;
     if (borderDirection == PrimitiveFactory_PolyBorderDirection__Enum_Inward) {
-      fStack_5 = _UNK_?;
+      fStack_3 = _UNK_?;
     }
-    fStack_5 = fStack_5 * borderThickness;
-    this = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-            *)func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
-    VStack_6.y = (float)this;
+    fStack_3 = fStack_3 * borderThickness;
+    pLVar4 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+              *)func_?();
+    pLStack_5 = pLVar4;
     mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
     MultiColumnCollectionHeader+ViewState+ColumnState]::
     List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
-              (this,(int32_t)fVar3,
+              (pLVar4,(int32_t)fStack_1,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List_int_);
+    VVar6 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+             List_1_UnityEngine_Vector2__get_Item
+                       (cwPolyPoints,0,
+                        MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                       );
     if (isClosed == 0) {
-      VStack_7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                  List_1_UnityEngine_Vector2__get_Item
-                            (cwPolyPoints,0,
-                             MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                            );
-      VVar8 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+      VStack_7 = VVar6;
+      VVar6 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
                List_1_UnityEngine_Vector2__get_Item
                          (cwPolyPoints,1,
                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
                          );
-      VStack_9.y = VVar8.y;
-      VStack_10.y = VStack_9.x - VStack_7.x;
-      VStack_10.x = (float)((uint)(VStack_9.y - VStack_7.y) ^
+      VStack_8.y = VVar6.y;
+      VStack_9.y = VStack_8.x - VStack_7.x;
+      VStack_9.x = (float)((uint)(VStack_8.y - VStack_7.y) ^
                            __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
       ;
-      VStack_9 = VVar8;
-      uVar11 = func_?(&VStack_10);
-      VStack_9.x = (float)uVar11 * fStack_5 + VStack_7.x;
-      VStack_9.y = (float)((ulonglong)uVar11 >> 0x20) * fStack_5 + VStack_7.y;
-      uStack_1 = CONCAT44(uStack_1._4_4_,(undefined *)uStack_1);
-      uStack_2 = CONCAT44(uStack_2._4_4_,(float)uStack_2);
-      if (this != (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                   *)0x0) {
-        func_?(this,VStack_9.x,VStack_9.y,
+      VStack_8 = VVar6;
+      UnityEngine.CoreModule.dll::UnityEngine::Vector2::Vector2_Normalize
+                (&VStack_9,(MethodInfo *)0x0);
+      VStack_8.x = VStack_9.x * fStack_3 + VStack_7.x;
+      VStack_8.y = VStack_9.y * fStack_3 + VStack_7.y;
+      if (pLVar4 != (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                     *)0x0) {
+        func_?(pLVar4,VStack_8.x,VStack_8.y,
                         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
                        );
-        iVar12 = 0;
-        VStack_7.y = (float)((int)uStack_2._4_4_ + -2);
-        if (0 < (int)uStack_2._4_4_ + -2) {
+        puStack_10 = (undefined *)((int)fStack_1 + -2);
+        pLStack_5 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                     *)0x0;
+        if (0 < (int)puStack_10) {
           do {
-            VVar8 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                     List_1_UnityEngine_Vector2__get_Item
-                               (cwPolyPoints,iVar12,
-                                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                               );
-            VStack_13 = VVar8;
-            VStack_9 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+            pLVar11 = pLStack_5;
+            VStack_8 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
                         List_1_UnityEngine_Vector2__get_Item
-                                  (cwPolyPoints,iVar12 + 1,
+                                  (cwPolyPoints,(int32_t)pLStack_5,
                                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
                                   );
-            VVar8 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+            VStack_9 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+                        List_1_UnityEngine_Vector2__get_Item
+                                  (cwPolyPoints,(int32_t)((int)&pLVar11->klass + 1),
+                                   MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                                  );
+            VVar6 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
                      List_1_UnityEngine_Vector2__get_Item
-                               ((List_1_UnityEngine_Vector2_ *)this,iVar12,
+                               ((List_1_UnityEngine_Vector2_ *)pLVar4,(int32_t)pLStack_5,
                                 MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
                                );
-            VStack_14 = VVar8;
-            VVar8 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+            fVar12 = VVar6.y;
+            VVar13 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
                      List_1_UnityEngine_Vector2__get_Item
-                               (cwPolyPoints,iVar12 + 2,
+                               (cwPolyPoints,(int32_t)((int)&pLVar11->klass + 2),
                                 MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
                                );
-            fStack_15 = VStack_16.x - VStack_9.x;
-            VStack_16.y = VVar8.y;
-            pMStack_17 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)
-                         ((uint)(VStack_16.y - VStack_9.y) ^
-                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-            ppMVar18 = &pMStack_17;
-            uVar19 = 0;
-            VStack_16 = VVar8;
-            uVar11 = func_?();
-            VStack_6.y = (float)((ulonglong)uVar11 >> 0x20);
-            fStack_20 = (float)uVar11;
-            uStack_21._4_4_ = VStack_16.x + fStack_20 * fStack_5;
-            pMStack_22 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)
-                         (VStack_16.y + VStack_6.y * fStack_5);
-            fStack_23 = VStack_9.x - VStack_13.x;
-            fStack_24 = VStack_9.y - VStack_13.y;
-            uStack_1 = uVar11;
-            fVar25 = (float10)func_?(&stack0xffffff88,0,ppMVar18,uVar19);
-            uStack_2._4_4_ = (float)fVar25;
-            if (_UNK_? < uStack_2._4_4_) {
-              fVar3 = fStack_23 / uStack_2._4_4_;
-              fVar26 = fStack_24 / uStack_2._4_4_;
+            VStack_14.y = VVar13.y;
+            VStack_7.y = VStack_14.x - VStack_9.x;
+            VStack_7.x = (float)((uint)(VStack_14.y - VStack_9.y) ^
+                                 __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                 );
+            VStack_14 = VVar13;
+            UnityEngine.CoreModule.dll::UnityEngine::Vector2::Vector2_Normalize
+                      (&VStack_7,(MethodInfo *)0x0);
+            fStack_1 = VStack_7.x * fStack_3 + VStack_14.x;
+            fStack_15 = VStack_7.y * fStack_3 + VStack_14.y;
+            VStack_16.x = VStack_9.x - VStack_8.x;
+            VStack_16.y = VStack_9.y - VStack_8.y;
+            UnityEngine.CoreModule.dll::UnityEngine::Vector2::Vector2_Normalize
+                      (&VStack_16,(MethodInfo *)0x0);
+            fVar17 = VStack_16.y * VStack_7.y + VStack_16.x * VStack_7.x;
+            if ((_UNK_? <= (float)((uint)fVar17 & _UNK_?)) &&
+               (fVar17 = ((fVar12 - fStack_15) * VStack_7.y + (VVar6.x - fStack_1) * VStack_7.x)
+                         / (float)((uint)fVar17 ^
+                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                  ), 0.0 <= fVar17)) {
+              fVar18 = VStack_16.x * fVar17;
+              VStack_16.x = (float)
+                            MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
+              ;
+              VStack_8.y = VStack_16.y * fVar17 + fVar12;
+              VStack_8.x = fVar18 + VVar6.x;
+              func_?(pLVar4);
             }
-            else {
-              if (cRam_? == '\0') {
-                func_?(&TypeInfo__UnityEngine__Vector2);
-                cRam_? = '\x01';
-              }
-              fVar3 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).x;
-              fVar26 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
-            }
-            fVar27 = VStack_6.y * fVar26 + fStack_20 * fVar3;
-            if ((_UNK_? <= (float)((uint)fVar27 & _UNK_?)) &&
-               (fVar27 = (fStack_20 * (VStack_14.x - uStack_21._4_4_) +
-                         VStack_6.y * (VStack_14.y - (float)pMStack_22)) /
-                         (float)((uint)fVar27 ^
-                                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
-                                ), 0.0 <= fVar27)) {
-              VStack_10.x = VStack_14.x + fVar3 * fVar27;
-              VStack_10.y = VStack_14.y + fVar26 * fVar27;
-              func_?(this,VStack_10.x,VStack_10.y,
-                              MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
-                             );
-            }
-            iVar12 = iVar12 + 1;
-          } while (iVar12 < (int)VStack_7.y);
+            pLStack_5 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                         *)((int)&pLStack_5->klass + 1);
+          } while ((int)pLStack_5 < (int)puStack_10);
         }
-        VStack_10 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                    List_1_UnityEngine_Vector2__get_Item
-                              (cwPolyPoints,(cwPolyPoints->fields)._size + -2,
-                               MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                              );
-        VStack_9 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                    List_1_UnityEngine_Vector2__get_Item
-                              (cwPolyPoints,(cwPolyPoints->fields)._size + -1,
-                               MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                              );
-        uVar11 = func_?();
-        pMVar28 = 
+        VVar6 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+                 List_1_UnityEngine_Vector2__get_Item
+                           (cwPolyPoints,(cwPolyPoints->fields)._size + -2,
+                            MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                           );
+        VVar13 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+                 List_1_UnityEngine_Vector2__get_Item
+                           (cwPolyPoints,(cwPolyPoints->fields)._size + -1,
+                            MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                           );
+        fStack_19 = VVar6.x;
+        VStack_16.y = VStack_9.x - fStack_19;
+        VStack_9.y = VVar13.y;
+        pSStack_20 = (String *)VVar6.y;
+        VStack_16.x = (float)((uint)(VStack_9.y - (float)pSStack_20) ^
+                             __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                             );
+        VStack_9 = VVar13;
+        UnityEngine.CoreModule.dll::UnityEngine::Vector2::Vector2_Normalize
+                  (&VStack_16,(MethodInfo *)0x0);
+        pMVar21 = 
         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
         ;
-        VStack_10.x = VStack_9.x + (float)uVar11 * fStack_5;
-        VStack_10.y = VStack_9.y + (float)((ulonglong)uVar11 >> 0x20) * fStack_5;
-        piVar29 = &(this->fields)._version;
-        *piVar29 = *piVar29 + 1;
-        pMVar30 = (this->fields)._items;
-        if (pMVar30 != (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0) {
-          uVar31 = (this->fields)._size;
-          if (pMVar30->max_length <= uVar31) {
-            item.y = VStack_10.y;
-            item.x = VStack_10.x;
+        fVar12 = VStack_16.x * fStack_3 + VStack_9.x;
+        pSVar22 = (String *)(VStack_16.y * fStack_3 + VStack_9.y);
+        piVar23 = &(pLVar4->fields)._version;
+        *piVar23 = *piVar23 + 1;
+        pMVar24 = (pLVar4->fields)._items;
+        if (pMVar24 != (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0) {
+          uVar25 = (pLVar4->fields)._size;
+          if (pMVar24->max_length <= uVar25) {
+            VVar13.y = (float)pSVar22;
+            VVar13.x = fVar12;
             mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
             List_1_UnityEngine_Vector2__AddWithResize
-                      ((List_1_UnityEngine_Vector2_ *)this,item,
-                       pMVar28->klass->rgctx_data[0xe].method);
-            return (List_1_UnityEngine_Vector2_ *)this;
+                      ((List_1_UnityEngine_Vector2_ *)pLVar4,VVar13,
+                       pMVar21->klass->rgctx_data[0xe].method);
+            return (List_1_UnityEngine_Vector2_ *)pLVar4;
           }
-          (this->fields)._size = uVar31 + 1;
-          if (uVar31 < pMVar30->max_length) {
-            (&pMVar30->vector[0].index)[uVar31 * 2] = (int32_t)VStack_10.x;
-            (&pMVar30->vector[0].name)[uVar31 * 2] = (String *)VStack_10.y;
-            return (List_1_UnityEngine_Vector2_ *)this;
+          (pLVar4->fields)._size = uVar25 + 1;
+          if (uVar25 < pMVar24->max_length) {
+            (&pMVar24->vector[0].index)[uVar25 * 2] = (int32_t)fVar12;
+            (&pMVar24->vector[0].name)[uVar25 * 2] = pSVar22;
+            return (List_1_UnityEngine_Vector2_ *)pLVar4;
           }
           goto code_?;
         }
       }
     }
     else {
-      VVar32 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+      VStack_14 = VVar6;
+      VVar13 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
                List_1_UnityEngine_Vector2__get_Item
-                         (cwPolyPoints,0,
+                         (cwPolyPoints,1,
                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
                          );
-      VStack_16 = VVar32;
-      VStack_10 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                  List_1_UnityEngine_Vector2__get_Item
-                            (cwPolyPoints,1,
-                             MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                            );
-      uStack_21 = func_?(&stack0xffffff88);
-      VStack_7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+      pSStack_20 = (String *)VVar13.y;
+      VStack_7.y = fStack_19 - VStack_14.x;
+      VStack_7.x = (float)((uint)((float)pSStack_20 - VStack_14.y) ^
+                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
+      ;
+      UnityEngine.CoreModule.dll::UnityEngine::Vector2::Vector2_Normalize
+                (&VStack_7,(MethodInfo *)0x0);
+      VStack_9 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
                   List_1_UnityEngine_Vector2__get_Item
                             (cwPolyPoints,(cwPolyPoints->fields)._size + -2,
                              MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
                             );
-      VStack_9 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                  List_1_UnityEngine_Vector2__get_Item
-                            (cwPolyPoints,(cwPolyPoints->fields)._size + -1,
-                             MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                            );
-      VStack_10 = (Vector2)func_?(&stack0xffffff88,0);
-      uStack_1._4_4_ = &stack0xffffff88;
-      VStack_9 = (Vector2)((ulonglong)VStack_9 & 0xffffffff00000000);
-      uStack_1._0_4_ = &UNK_?;
-      VStack_14 = (Vector2)func_?();
-      fVar3 = VStack_6.y;
-      VVar33.y = VStack_6.y;
-      VVar33.x = VStack_6.x;
-      VVar8.y = VStack_13.y;
-      VVar8.x = VStack_13.x;
-      fVar27 = VStack_7.x + VStack_10.x * fStack_5;
-      fVar34 = VStack_7.y + VStack_10.y * fStack_5;
-      VStack_7.y = VStack_16.x + (float)uStack_21 * fStack_5;
-      pMStack_22 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)
-                   (VStack_16.y + uStack_21._4_4_ * fStack_5);
-      fVar26 = uStack_21._4_4_ * VStack_14.y + VStack_14.x * (float)uStack_21;
-      if (((float)((uint)fVar26 & _UNK_?) < _UNK_?) ||
-         (fVar26 = ((fVar34 - (float)pMStack_22) * uStack_21._4_4_ +
-                   (fVar27 - VStack_7.y) * (float)uStack_21) /
-                   (float)((uint)fVar26 ^
+      VVar26 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+               List_1_UnityEngine_Vector2__get_Item
+                         (cwPolyPoints,(cwPolyPoints->fields)._size + -1,
+                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                         );
+      fStack_19 = VVar13.x;
+      VStack_16.y = fStack_19 - VStack_9.x;
+      pSStack_20 = (String *)VVar26.y;
+      fStack_15 = (float)pSStack_20 - VStack_9.y;
+      VStack_16.x = (float)((uint)fStack_15 ^
+                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
+      ;
+      puStack_10 = (undefined *)VStack_16.y;
+      UnityEngine.CoreModule.dll::UnityEngine::Vector2::Vector2_Normalize
+                (&VStack_16,(MethodInfo *)0x0);
+      VStack_8.y = fStack_15;
+      VStack_8.x = (float)puStack_10;
+      UnityEngine.CoreModule.dll::UnityEngine::Vector2::Vector2_Normalize
+                (&VStack_8,(MethodInfo *)0x0);
+      pLVar4 = pLStack_5;
+      fVar12 = VStack_16.x * fStack_3 + VStack_9.x;
+      fVar17 = VStack_16.y * fStack_3 + VStack_9.y;
+      puStack_10 = (undefined *)(VStack_7.y * fStack_3 + VStack_14.y);
+      fVar18 = VStack_8.y * VStack_7.y + VStack_8.x * VStack_7.x;
+      if (((float)((uint)fVar18 & _UNK_?) < _UNK_?) ||
+         (fVar18 = ((fVar17 - (float)puStack_10) * VStack_7.y +
+                   (fVar12 - (VStack_7.x * fStack_3 + VStack_14.x)) * VStack_7.x) /
+                   (float)((uint)fVar18 ^
                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field),
-         fVar26 < 0.0)) {
-        if ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-             *)VStack_6.y !=
+         fVar18 < 0.0)) {
+        if (pLStack_5 !=
             (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
              *)0x0) goto code_?;
       }
-      else {
-        VStack_10.x = VStack_14.x * fVar26 + fVar27;
-        VStack_10.y = VStack_14.y * fVar26 + fVar34;
-        VStack_13 = VVar8;
-        VStack_6 = VVar33;
-        uStack_1 = CONCAT44(uStack_1._4_4_,(undefined *)uStack_1);
-        uStack_2 = CONCAT44(uStack_2._4_4_,(float)uStack_2);
-        if ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-             *)VStack_6.y !=
-            (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-             *)0x0) {
-          VVar32.y = VStack_10.y;
-          VVar32.x = VStack_10.x;
+      else if (pLStack_5 !=
+               (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                *)0x0) {
+        VVar6.y = fVar17 + VStack_8.y * fVar18;
+        VVar6.x = fVar12 + VStack_8.x * fVar18;
 code_?:
-          func_?(VStack_6.y,VVar32,
-                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
-                         );
-          uVar11 = CONCAT44(uStack_2._4_4_,(float)uStack_2);
-          iVar12 = 0;
-          fStack_23 = (float)((int)uStack_2._4_4_ + -2);
-          if (0 < (int)fStack_23) {
-            do {
-              uStack_2 = uVar11;
-              VStack_10 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                          List_1_UnityEngine_Vector2__get_Item
-                                    (cwPolyPoints,iVar12,
-                                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                                    );
-              VStack_16 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                          List_1_UnityEngine_Vector2__get_Item
-                                    (cwPolyPoints,iVar12 + 1,
-                                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                                    );
-              VVar8 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                       List_1_UnityEngine_Vector2__get_Item
-                                 ((List_1_UnityEngine_Vector2_ *)fVar3,iVar12,
-                                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                                 );
-              VStack_6 = VVar8;
-              VStack_9 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                          List_1_UnityEngine_Vector2__get_Item
-                                    (cwPolyPoints,iVar12 + 2,
-                                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                                    );
-              uVar11 = func_?(&stack0xffffff88,0);
-              fStack_20 = (float)uVar11 * fStack_5 + VStack_9.x;
-              fStack_24 = (float)((ulonglong)uVar11 >> 0x20) * fStack_5 + VStack_9.y;
-              pMStack_17 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)
-                           (VStack_16.x - VStack_10.x);
-              fStack_15 = VStack_16.y - VStack_10.y;
-              pMStack_22 = pMStack_17;
-              uStack_21._4_4_ = fStack_15;
-              uStack_2 = uVar11;
-              fVar25 = (float10)func_?(&pMStack_17,0);
-              fVar26 = (float)fVar25;
-              VStack_7.y = fVar26;
-              if (_UNK_? < fVar26) {
-                fVar27 = (float)pMStack_22 / fVar26;
-                fVar26 = uStack_21._4_4_ / fVar26;
-                uVar11 = uStack_2;
-              }
-              else {
-                if (cRam_? == '\0') {
-                  func_?(&TypeInfo__UnityEngine__Vector2);
-                  cRam_? = '\x01';
-                }
-                fVar27 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).x;
-                fVar26 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
-                uVar11 = uStack_2;
-              }
-              uStack_2._4_4_ = (float)((ulonglong)uVar11 >> 0x20);
-              uStack_2._0_4_ = (float)uVar11;
-              fVar34 = fVar26 * uStack_2._4_4_ + fVar27 * (float)uStack_2;
-              if ((_UNK_? <= (float)((uint)fVar34 & _UNK_?)) &&
-                 (fVar34 = ((VStack_6.y - fStack_24) * uStack_2._4_4_ +
-                           (VStack_6.x - fStack_20) * (float)uStack_2) /
-                           (float)((uint)fVar34 ^
-                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
-                                  ), 0.0 <= fVar34)) {
-                VStack_14.y = fVar26 * fVar34 + VStack_6.y;
-                VStack_14.x = fVar27 * fVar34 + VStack_6.x;
-                uStack_2 = uVar11;
-                func_?(fVar3,VStack_14.x,VStack_14.y,
-                                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
+        func_?(pLStack_5,VVar6,
+                        MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
+                       );
+        fStack_1 = (float)((int)fStack_1 + -2);
+        pLStack_5 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                     *)0x0;
+        if (0 < (int)fStack_1) {
+          do {
+            pLVar11 = pLStack_5;
+            VVar6 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+                     List_1_UnityEngine_Vector2__get_Item
+                               (cwPolyPoints,(int32_t)pLStack_5,
+                                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
                                );
-                uVar11 = uStack_2;
-              }
-              iVar12 = iVar12 + 1;
-            } while (iVar12 < (int)fStack_23);
-          }
-          uStack_2 = uVar11;
-          VStack_10 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                      List_1_UnityEngine_Vector2__get_Item
-                                ((List_1_UnityEngine_Vector2_ *)fVar3,0,
-                                 MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                                );
-          pMVar28 = 
-          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
-          ;
-          piVar29 = &((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___Fields
-                      *)((int)fVar3 + 8))->_version;
-          *piVar29 = *piVar29 + 1;
-          pMVar30 = ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___Fields
-                     *)((int)fVar3 + 8))->_items;
-          if (pMVar30 != (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0) {
-            uVar31 = ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___Fields
-                      *)((int)fVar3 + 8))->_size;
-            if (pMVar30->max_length <= uVar31) {
-              mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-              List_1_UnityEngine_Vector2__AddWithResize
-                        ((List_1_UnityEngine_Vector2_ *)fVar3,VStack_10,
-                         pMVar28->klass->rgctx_data[0xe].method);
-              return (List_1_UnityEngine_Vector2_ *)
-                     (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                      *)fVar3;
+            VStack_14 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+                        List_1_UnityEngine_Vector2__get_Item
+                                  (cwPolyPoints,(int32_t)((int)&pLVar11->klass + 1),
+                                   MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                                  );
+            VVar13 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+                     List_1_UnityEngine_Vector2__get_Item
+                               ((List_1_UnityEngine_Vector2_ *)pLVar4,(int32_t)pLStack_5,
+                                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                               );
+            fVar12 = VVar13.y;
+            VVar26 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+                     List_1_UnityEngine_Vector2__get_Item
+                               (cwPolyPoints,(int32_t)((int)&pLVar11->klass + 2),
+                                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                               );
+            VStack_9.y = VVar26.y;
+            VStack_7.y = VStack_9.x - VStack_14.x;
+            VStack_7.x = (float)((uint)(VStack_9.y - VStack_14.y) ^
+                                 __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                 );
+            VStack_9 = VVar26;
+            UnityEngine.CoreModule.dll::UnityEngine::Vector2::Vector2_Normalize
+                      (&VStack_7,(MethodInfo *)0x0);
+            puStack_10 = (undefined *)(VStack_7.x * fStack_3 + VStack_9.x);
+            fStack_15 = VStack_7.y * fStack_3 + VStack_9.y;
+            fStack_19 = VVar6.x;
+            pSStack_20 = (String *)VVar6.y;
+            VStack_8.y = VStack_14.y - (float)pSStack_20;
+            VStack_8.x = VStack_14.x - fStack_19;
+            UnityEngine.CoreModule.dll::UnityEngine::Vector2::Vector2_Normalize
+                      (&VStack_8,(MethodInfo *)0x0);
+            fVar17 = VStack_8.y * VStack_7.y + VStack_8.x * VStack_7.x;
+            if ((_UNK_? <= (float)((uint)fVar17 & _UNK_?)) &&
+               (fVar17 = ((fVar12 - fStack_15) * VStack_7.y +
+                         (VVar13.x - (float)puStack_10) * VStack_7.x) /
+                         (float)((uint)fVar17 ^
+                                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                ), 0.0 <= fVar17)) {
+              VStack_16.x = VVar13.x + VStack_8.x * fVar17;
+              VStack_14.y = (float)
+                            MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
+              ;
+              VStack_14.x = fVar12 + VStack_8.y * fVar17;
+              VStack_9.y = VStack_16.x;
+              VStack_9.x = (float)pLVar4;
+              VStack_16.y = (float)&UNK_?;
+              func_?();
             }
-            ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___Fields
-              *)((int)fVar3 + 8))->_size = uVar31 + 1;
-            if (uVar31 < pMVar30->max_length) {
-              (&pMVar30->vector[0].index)[uVar31 * 2] = (int32_t)VStack_10.x;
-              (&pMVar30->vector[0].name)[uVar31 * 2] = (String *)VStack_10.y;
-              return (List_1_UnityEngine_Vector2_ *)
-                     (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                      *)fVar3;
-            }
-            goto code_?;
+            pLStack_5 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                         *)((int)&pLStack_5->klass + 1);
+          } while ((int)pLStack_5 < (int)fStack_1);
+        }
+        VVar6 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+                 List_1_UnityEngine_Vector2__get_Item
+                           ((List_1_UnityEngine_Vector2_ *)pLVar4,0,
+                            MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                           );
+        pMVar21 = 
+        MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
+        ;
+        piVar23 = &(pLVar4->fields)._version;
+        *piVar23 = *piVar23 + 1;
+        pMVar24 = (pLVar4->fields)._items;
+        if (pMVar24 != (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0) {
+          uVar25 = (pLVar4->fields)._size;
+          if (pMVar24->max_length <= uVar25) {
+            mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+            List_1_UnityEngine_Vector2__AddWithResize
+                      ((List_1_UnityEngine_Vector2_ *)pLVar4,VVar6,
+                       pMVar21->klass->rgctx_data[0xe].method);
+            return (List_1_UnityEngine_Vector2_ *)pLVar4;
           }
+          (pLVar4->fields)._size = uVar25 + 1;
+          if (uVar25 < pMVar24->max_length) {
+            fStack_19 = VVar6.x;
+            (&pMVar24->vector[0].index)[uVar25 * 2] = (int32_t)fStack_19;
+            pSStack_20 = (String *)VVar6.y;
+            (&pMVar24->vector[0].name)[uVar25 * 2] = pSStack_20;
+            return (List_1_UnityEngine_Vector2_ *)pLVar4;
+          }
+          goto code_?;
         }
       }
     }
@@ -581,9 +550,9 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar35 = (code *)swi(3);
-  pLVar4 = (List_1_UnityEngine_Vector2_ *)(*pcVar35)();
-  return pLVar4;
+  pcVar27 = (code *)swi(3);
+  pLVar2 = (List_1_UnityEngine_Vector2_ *)(*pcVar27)();
+  return pLVar2;
 }
 
 
@@ -623,262 +592,265 @@ code_?:
     return pLVar2;
   }
   iVar3 = (cwPolyPoints->fields)._size;
-  if (iVar3 != (cwBorderPts->fields)._size) {
-    pLVar2 = (List_1_UnityEngine_Vector2_ *)func_?();
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
-    __Il2CppFullySharedGenericType]::
-    LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-              ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar2,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List__);
-    return pLVar2;
-  }
-  if (isClosed == 0) {
-    if (2 < iVar3) goto code_?;
-  }
-  else if (3 < iVar3) {
+  if (iVar3 == (cwBorderPts->fields)._size) {
+    if (isClosed == 0) {
+      if (2 < iVar3) goto code_?;
+    }
+    else if (3 < iVar3) {
 code_?:
-    this = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-            *)func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
-    MultiColumnCollectionHeader+ViewState+ColumnState]::
-    List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
-              (this,iVar3 * 4 + -4,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List_int_);
-    iVar3 = 0;
-    if (borderDirection == PrimitiveFactory_PolyBorderDirection__Enum_Outward) {
-      while( true ) {
-        if ((cwPolyPoints->fields)._size + -1 <= iVar3) break;
-        VVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                List_1_UnityEngine_Vector2__get_Item
-                          (cwPolyPoints,iVar3,
-                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                          );
-        pMVar5 = 
-        MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
-        ;
-        if (this == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                     *)0x0) goto code_?;
-        piVar6 = &(this->fields)._version;
-        *piVar6 = *piVar6 + 1;
-        pMVar7 = (this->fields)._items;
-        if (pMVar7 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
-        goto code_?;
-        uVar8 = (this->fields)._size;
-        if (uVar8 < pMVar7->max_length) {
-          (this->fields)._size = uVar8 + 1;
-          if (pMVar7->max_length <= uVar8) goto code_?;
-          (&pMVar7->vector[0].index)[uVar8 * 2] = (int32_t)VVar4.x;
-          (&pMVar7->vector[0].name)[uVar8 * 2] = (String *)VVar4.y;
-        }
-        else {
-          mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-          List_1_UnityEngine_Vector2__AddWithResize
-                    ((List_1_UnityEngine_Vector2_ *)this,VVar4,pMVar5->klass->rgctx_data[0xe].method
-                    );
-        }
-        VVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                List_1_UnityEngine_Vector2__get_Item
-                          (cwBorderPts,iVar3,
-                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                          );
-        pMVar5 = 
-        MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
-        ;
-        piVar6 = &(this->fields)._version;
-        *piVar6 = *piVar6 + 1;
-        pMVar7 = (this->fields)._items;
-        if (pMVar7 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
-        goto code_?;
-        uVar8 = (this->fields)._size;
-        if (uVar8 < pMVar7->max_length) {
-          (this->fields)._size = uVar8 + 1;
-          if (pMVar7->max_length <= uVar8) goto code_?;
-          (&pMVar7->vector[0].index)[uVar8 * 2] = (int32_t)VVar4.x;
-          (&pMVar7->vector[0].name)[uVar8 * 2] = (String *)VVar4.y;
-        }
-        else {
-          mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-          List_1_UnityEngine_Vector2__AddWithResize
-                    ((List_1_UnityEngine_Vector2_ *)this,VVar4,pMVar5->klass->rgctx_data[0xe].method
-                    );
-        }
-        cwPolyPoints = (List_1_UnityEngine_Vector2_ *)(iVar3 + 1);
-        VVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                List_1_UnityEngine_Vector2__get_Item
-                          (cwPolyPoints,(int32_t)cwPolyPoints,
-                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                          );
-        pMVar5 = 
-        MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
-        ;
-        piVar6 = &(this->fields)._version;
-        *piVar6 = *piVar6 + 1;
-        pMVar7 = (this->fields)._items;
-        if (pMVar7 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
-        goto code_?;
-        uVar8 = (this->fields)._size;
-        if (uVar8 < pMVar7->max_length) {
-          (this->fields)._size = uVar8 + 1;
-          if (pMVar7->max_length <= uVar8) goto code_?;
-          (&pMVar7->vector[0].index)[uVar8 * 2] = (int32_t)VVar4.x;
-          (&pMVar7->vector[0].name)[uVar8 * 2] = (String *)VVar4.y;
-          cwBorderPts = cwPolyPoints;
-        }
-        else {
-          cwBorderPts = (List_1_UnityEngine_Vector2_ *)&UNK_?;
-          mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-          List_1_UnityEngine_Vector2__AddWithResize
-                    ((List_1_UnityEngine_Vector2_ *)this,VVar4,pMVar5->klass->rgctx_data[0xe].method
-                    );
-        }
-        VVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                List_1_UnityEngine_Vector2__get_Item
-                          (cwPolyPoints,iVar3 + 1,
-                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                          );
-        pMVar5 = 
-        MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
-        ;
-        piVar6 = &(this->fields)._version;
-        *piVar6 = *piVar6 + 1;
-        pMVar7 = (this->fields)._items;
-        if (pMVar7 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
-        goto code_?;
-        uVar8 = (this->fields)._size;
-        if (uVar8 < pMVar7->max_length) {
-          (this->fields)._size = uVar8 + 1;
-          if (pMVar7->max_length <= uVar8) goto code_?;
-          iVar3 = iVar3 + 1;
-          (&pMVar7->vector[0].index)[uVar8 * 2] = (int32_t)VVar4.x;
-          (&pMVar7->vector[0].name)[uVar8 * 2] = (String *)VVar4.y;
-        }
-        else {
-          mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-          List_1_UnityEngine_Vector2__AddWithResize
-                    ((List_1_UnityEngine_Vector2_ *)this,VVar4,pMVar5->klass->rgctx_data[0xe].method
-                    );
-          iVar3 = iVar3 + 1;
-        }
-      }
-    }
-    else {
-      while( true ) {
-        if ((cwPolyPoints->fields)._size + -1 <= iVar3) break;
-        VVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                List_1_UnityEngine_Vector2__get_Item
-                          (cwPolyPoints,iVar3,
-                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                          );
-        pMVar5 = 
-        MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
-        ;
-        if (this == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                     *)0x0) goto code_?;
-        piVar6 = &(this->fields)._version;
-        *piVar6 = *piVar6 + 1;
-        pMVar7 = (this->fields)._items;
-        if (pMVar7 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
-        goto code_?;
-        uVar8 = (this->fields)._size;
-        if (uVar8 < pMVar7->max_length) {
-          (this->fields)._size = uVar8 + 1;
-          if (pMVar7->max_length <= uVar8) goto code_?;
-          (&pMVar7->vector[0].index)[uVar8 * 2] = (int32_t)VVar4.x;
-          (&pMVar7->vector[0].name)[uVar8 * 2] = (String *)VVar4.y;
-        }
-        else {
-          mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-          List_1_UnityEngine_Vector2__AddWithResize
-                    ((List_1_UnityEngine_Vector2_ *)this,VVar4,pMVar5->klass->rgctx_data[0xe].method
-                    );
-        }
-        VVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                List_1_UnityEngine_Vector2__get_Item
-                          (cwPolyPoints,iVar3 + 1,
-                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                          );
-        pMVar5 = 
-        MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
-        ;
-        piVar6 = &(this->fields)._version;
-        *piVar6 = *piVar6 + 1;
-        pMVar7 = (this->fields)._items;
-        if (pMVar7 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
-        goto code_?;
-        uVar8 = (this->fields)._size;
-        if (uVar8 < pMVar7->max_length) {
-          (this->fields)._size = uVar8 + 1;
-          if (pMVar7->max_length <= uVar8) goto code_?;
-          (&pMVar7->vector[0].index)[uVar8 * 2] = (int32_t)VVar4.x;
-          (&pMVar7->vector[0].name)[uVar8 * 2] = (String *)VVar4.y;
-        }
-        else {
-          mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-          List_1_UnityEngine_Vector2__AddWithResize
-                    ((List_1_UnityEngine_Vector2_ *)this,VVar4,pMVar5->klass->rgctx_data[0xe].method
-                    );
-        }
-        cwPolyPoints = (List_1_UnityEngine_Vector2_ *)(iVar3 + 1);
-        VVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                List_1_UnityEngine_Vector2__get_Item
-                          (cwPolyPoints,(int32_t)cwPolyPoints,
-                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                          );
-        pMVar5 = 
-        MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
-        ;
-        piVar6 = &(this->fields)._version;
-        *piVar6 = *piVar6 + 1;
-        pMVar7 = (this->fields)._items;
-        if (pMVar7 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
-        goto code_?;
-        uVar8 = (this->fields)._size;
-        if (uVar8 < pMVar7->max_length) {
-          (this->fields)._size = uVar8 + 1;
-          if (pMVar7->max_length <= uVar8) goto code_?;
-          (&pMVar7->vector[0].index)[uVar8 * 2] = (int32_t)VVar4.x;
-          pSStack_9 = (String *)VVar4.y;
-          (&pMVar7->vector[0].name)[uVar8 * 2] = pSStack_9;
-          cwBorderPts = cwPolyPoints;
-        }
-        else {
-          cwBorderPts = (List_1_UnityEngine_Vector2_ *)&UNK_?;
-          mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-          List_1_UnityEngine_Vector2__AddWithResize
-                    ((List_1_UnityEngine_Vector2_ *)this,VVar4,pMVar5->klass->rgctx_data[0xe].method
-                    );
-        }
-        VVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                List_1_UnityEngine_Vector2__get_Item
-                          (cwBorderPts,iVar3,
-                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                          );
-        pMVar5 = 
-        MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
-        ;
-        piVar6 = &(this->fields)._version;
-        *piVar6 = *piVar6 + 1;
-        pMVar7 = (this->fields)._items;
-        if (pMVar7 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
-        goto code_?;
-        uVar8 = (this->fields)._size;
-        if (uVar8 < pMVar7->max_length) {
-          (this->fields)._size = uVar8 + 1;
-          if (pMVar7->max_length <= uVar8) goto code_?;
-          iVar3 = iVar3 + 1;
-          (&pMVar7->vector[0].index)[uVar8 * 2] = (int32_t)VVar4.x;
-          (&pMVar7->vector[0].name)[uVar8 * 2] = (String *)VVar4.y;
-        }
-        else {
-          mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-          List_1_UnityEngine_Vector2__AddWithResize
-                    ((List_1_UnityEngine_Vector2_ *)this,VVar4,pMVar5->klass->rgctx_data[0xe].method
-                    );
-          iVar3 = iVar3 + 1;
+      this = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+              *)func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
+      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
+      MultiColumnCollectionHeader+ViewState+ColumnState]::
+      List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
+                (this,iVar3 * 4 + -4,
+                 MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List_int_);
+      index = (MethodInfo *)0x0;
+      if (borderDirection == PrimitiveFactory_PolyBorderDirection__Enum_Outward) {
+        while( true ) {
+          if ((cwPolyPoints->fields)._size + -1 <= (int)index) break;
+          VVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+                  List_1_UnityEngine_Vector2__get_Item
+                            (cwPolyPoints,(int32_t)index,
+                             MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                            );
+          pMVar5 = 
+          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
+          ;
+          if (this == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                       *)0x0) goto code_?;
+          piVar6 = &(this->fields)._version;
+          *piVar6 = *piVar6 + 1;
+          pMVar7 = (this->fields)._items;
+          if (pMVar7 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
+          goto code_?;
+          uVar8 = (this->fields)._size;
+          if (uVar8 < pMVar7->max_length) {
+            (this->fields)._size = uVar8 + 1;
+            if (pMVar7->max_length <= uVar8) goto code_?;
+            (&pMVar7->vector[0].index)[uVar8 * 2] = (int32_t)VVar4.x;
+            (&pMVar7->vector[0].name)[uVar8 * 2] = (String *)VVar4.y;
+          }
+          else {
+            mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+            List_1_UnityEngine_Vector2__AddWithResize
+                      ((List_1_UnityEngine_Vector2_ *)this,VVar4,
+                       pMVar5->klass->rgctx_data[0xe].method);
+          }
+          VVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+                  List_1_UnityEngine_Vector2__get_Item
+                            (cwBorderPts,(int32_t)index,
+                             MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                            );
+          pMVar5 = 
+          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
+          ;
+          piVar6 = &(this->fields)._version;
+          *piVar6 = *piVar6 + 1;
+          pMVar7 = (this->fields)._items;
+          if (pMVar7 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
+          goto code_?;
+          uVar8 = (this->fields)._size;
+          if (uVar8 < pMVar7->max_length) {
+            (this->fields)._size = uVar8 + 1;
+            if (pMVar7->max_length <= uVar8) goto code_?;
+            (&pMVar7->vector[0].index)[uVar8 * 2] = (int32_t)VVar4.x;
+            (&pMVar7->vector[0].name)[uVar8 * 2] = (String *)VVar4.y;
+          }
+          else {
+            mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+            List_1_UnityEngine_Vector2__AddWithResize
+                      ((List_1_UnityEngine_Vector2_ *)this,VVar4,
+                       pMVar5->klass->rgctx_data[0xe].method);
+          }
+          cwBorderPts = (List_1_UnityEngine_Vector2_ *)
+                        MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+          ;
+          index = (MethodInfo *)((int)&index->methodPointer + 1);
+          VVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+                  List_1_UnityEngine_Vector2__get_Item
+                            ((List_1_UnityEngine_Vector2_ *)
+                             MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                             ,(int32_t)index,
+                             MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                            );
+          pMVar5 = 
+          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
+          ;
+          piVar6 = &(this->fields)._version;
+          *piVar6 = *piVar6 + 1;
+          pMVar7 = (this->fields)._items;
+          if (pMVar7 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
+          goto code_?;
+          uVar8 = (this->fields)._size;
+          if (uVar8 < pMVar7->max_length) {
+            (this->fields)._size = uVar8 + 1;
+            if (pMVar7->max_length <= uVar8) goto code_?;
+            (&pMVar7->vector[0].index)[uVar8 * 2] = (int32_t)VVar4.x;
+            (&pMVar7->vector[0].name)[uVar8 * 2] = (String *)VVar4.y;
+            cwPolyPoints = (List_1_UnityEngine_Vector2_ *)index;
+          }
+          else {
+            cwPolyPoints = (List_1_UnityEngine_Vector2_ *)&UNK_?;
+            mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+            List_1_UnityEngine_Vector2__AddWithResize
+                      ((List_1_UnityEngine_Vector2_ *)this,VVar4,
+                       pMVar5->klass->rgctx_data[0xe].method);
+            cwBorderPts = (List_1_UnityEngine_Vector2_ *)this;
+          }
+          VVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+                  List_1_UnityEngine_Vector2__get_Item
+                            (cwPolyPoints,(int32_t)index,
+                             MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                            );
+          pMVar5 = 
+          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
+          ;
+          piVar6 = &(this->fields)._version;
+          *piVar6 = *piVar6 + 1;
+          pMVar7 = (this->fields)._items;
+          if (pMVar7 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
+          goto code_?;
+          uVar8 = (this->fields)._size;
+          if (uVar8 < pMVar7->max_length) {
+            (this->fields)._size = uVar8 + 1;
+            if (pMVar7->max_length <= uVar8) goto code_?;
+            (&pMVar7->vector[0].index)[uVar8 * 2] = (int32_t)VVar4.x;
+            (&pMVar7->vector[0].name)[uVar8 * 2] = (String *)VVar4.y;
+          }
+          else {
+            mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+            List_1_UnityEngine_Vector2__AddWithResize
+                      ((List_1_UnityEngine_Vector2_ *)this,VVar4,
+                       pMVar5->klass->rgctx_data[0xe].method);
+          }
         }
       }
+      else {
+        while( true ) {
+          if ((cwPolyPoints->fields)._size + -1 <= (int)index) break;
+          VVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+                  List_1_UnityEngine_Vector2__get_Item
+                            (cwPolyPoints,(int32_t)index,
+                             MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                            );
+          pMVar5 = 
+          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
+          ;
+          if (this == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                       *)0x0) goto code_?;
+          piVar6 = &(this->fields)._version;
+          *piVar6 = *piVar6 + 1;
+          pMVar7 = (this->fields)._items;
+          if (pMVar7 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
+          goto code_?;
+          uVar8 = (this->fields)._size;
+          if (uVar8 < pMVar7->max_length) {
+            (this->fields)._size = uVar8 + 1;
+            if (pMVar7->max_length <= uVar8) goto code_?;
+            (&pMVar7->vector[0].index)[uVar8 * 2] = (int32_t)VVar4.x;
+            (&pMVar7->vector[0].name)[uVar8 * 2] = (String *)VVar4.y;
+          }
+          else {
+            mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+            List_1_UnityEngine_Vector2__AddWithResize
+                      ((List_1_UnityEngine_Vector2_ *)this,VVar4,
+                       pMVar5->klass->rgctx_data[0xe].method);
+          }
+          pMVar5 = (MethodInfo *)((int)&index->methodPointer + 1);
+          VVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+                  List_1_UnityEngine_Vector2__get_Item
+                            (cwPolyPoints,(int32_t)pMVar5,
+                             MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                            );
+          pMVar9 = 
+          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
+          ;
+          piVar6 = &(this->fields)._version;
+          *piVar6 = *piVar6 + 1;
+          pMVar7 = (this->fields)._items;
+          if (pMVar7 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
+          goto code_?;
+          uVar8 = (this->fields)._size;
+          if (uVar8 < pMVar7->max_length) {
+            (this->fields)._size = uVar8 + 1;
+            if (pMVar7->max_length <= uVar8) goto code_?;
+            (&pMVar7->vector[0].index)[uVar8 * 2] = (int32_t)VVar4.x;
+            (&pMVar7->vector[0].name)[uVar8 * 2] = (String *)VVar4.y;
+            cwPolyPoints = (List_1_UnityEngine_Vector2_ *)pMVar5;
+          }
+          else {
+            cwPolyPoints = (List_1_UnityEngine_Vector2_ *)pMVar9->klass->rgctx_data[0xe].method;
+            mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+            List_1_UnityEngine_Vector2__AddWithResize
+                      ((List_1_UnityEngine_Vector2_ *)this,VVar4,(MethodInfo *)cwPolyPoints);
+          }
+          cwBorderPts = (List_1_UnityEngine_Vector2_ *)
+                        MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+          ;
+          pMVar9 = (MethodInfo *)cwPolyPoints;
+          VVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+                  List_1_UnityEngine_Vector2__get_Item
+                            ((List_1_UnityEngine_Vector2_ *)
+                             MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                             ,(int32_t)cwPolyPoints,
+                             MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                            );
+          pMVar5 = 
+          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
+          ;
+          piVar6 = &(this->fields)._version;
+          *piVar6 = *piVar6 + 1;
+          pMVar7 = (this->fields)._items;
+          if (pMVar7 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
+          goto code_?;
+          uVar8 = (this->fields)._size;
+          if (uVar8 < pMVar7->max_length) {
+            (this->fields)._size = uVar8 + 1;
+            if (pMVar7->max_length <= uVar8) goto code_?;
+            (&pMVar7->vector[0].index)[uVar8 * 2] = (int32_t)VVar4.x;
+            pSStack_10 = (String *)VVar4.y;
+            (&pMVar7->vector[0].name)[uVar8 * 2] = pSStack_10;
+          }
+          else {
+            cwPolyPoints = (List_1_UnityEngine_Vector2_ *)&UNK_?;
+            mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+            List_1_UnityEngine_Vector2__AddWithResize
+                      ((List_1_UnityEngine_Vector2_ *)this,VVar4,
+                       pMVar5->klass->rgctx_data[0xe].method);
+            cwBorderPts = (List_1_UnityEngine_Vector2_ *)this;
+          }
+          VVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+                  List_1_UnityEngine_Vector2__get_Item
+                            (cwBorderPts,(int32_t)index,
+                             MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                            );
+          index = pMVar9;
+          pMVar5 = 
+          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
+          ;
+          piVar6 = &(this->fields)._version;
+          *piVar6 = *piVar6 + 1;
+          pMVar7 = (this->fields)._items;
+          if (pMVar7 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
+          goto code_?;
+          uVar8 = (this->fields)._size;
+          if (uVar8 < pMVar7->max_length) {
+            (this->fields)._size = uVar8 + 1;
+            if (pMVar7->max_length <= uVar8) goto code_?;
+            (&pMVar7->vector[0].index)[uVar8 * 2] = (int32_t)VVar4.x;
+            (&pMVar7->vector[0].name)[uVar8 * 2] = (String *)VVar4.y;
+          }
+          else {
+            mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+            List_1_UnityEngine_Vector2__AddWithResize
+                      ((List_1_UnityEngine_Vector2_ *)this,VVar4,
+                       pMVar5->klass->rgctx_data[0xe].method);
+          }
+        }
+      }
+      return (List_1_UnityEngine_Vector2_ *)this;
     }
-    return (List_1_UnityEngine_Vector2_ *)this;
   }
   pLVar2 = (List_1_UnityEngine_Vector2_ *)
            func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
@@ -900,6 +872,7 @@ Assembly-CSharp.dll::RTG::PrimitiveFactory::PrimitiveFactory_Generate3DArcBorder
           bool forceShortestArc,int32_t numPoints,MethodInfo *method)
 
 {
+  iVar1 = numPoints;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
@@ -925,100 +898,104 @@ Assembly-CSharp.dll::RTG::PrimitiveFactory::PrimitiveFactory_Generate3DArcBorder
   List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
             (this,numPoints,
              MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List_int_);
-  fVar1 = (float10)func_?();
-  degreesFromStart = (float)fVar1;
-  pVVar2 = PlaneEx::PlaneEx_ProjectPoint
-                     ((Vector3 *)&puStack_3,arcPlane,arcOrigin,(MethodInfo *)0x0);
-  fVar4 = pVVar2->z;
-  pVVar2 = PlaneEx::PlaneEx_ProjectPoint
-                     ((Vector3 *)&puStack_3,arcPlane,arcStartPoint,(MethodInfo *)0x0);
-  fVar5 = pVVar2->z;
-  fVar6 = arcPlane.m_Normal.z;
+  fVar2 = (float10)func_?();
+  fVar3 = (float)fVar2;
+  pVVar4 = PlaneEx::PlaneEx_ProjectPoint
+                      ((Vector3 *)&puStack_5,arcPlane,arcOrigin,(MethodInfo *)0x0);
+  uVar6 = pVVar4->x;
+  uVar7 = pVVar4->y;
+  fVar8 = pVVar4->z;
+  pVVar4 = PlaneEx::PlaneEx_ProjectPoint
+                      ((Vector3 *)&stack0xffffffe8,arcPlane,arcStartPoint,(MethodInfo *)0x0);
+  uVar9 = pVVar4->x;
+  uVar10 = pVVar4->y;
+  fVar11 = pVVar4->z;
+  stack0xffffffc8 = (float)&stack0xffffffa8;
+  fVar12 = arcPlane.m_Normal.z;
   UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
-            ((Quaternion *)&stack0xffffff9c,degreesFromStart,arcPlane.m_Normal,(MethodInfo *)0x0);
-  puVar7 = &stack0xffffffc4;
-  fVar1 = (float10)func_?();
-  pVVar2 = (Vector3 *)&stack0xffffffc4;
-  fVar8 = 0.0;
-  fVar9 = (float)fVar1;
-  UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1(pVVar2,(MethodInfo *)0x0);
-  if (forceShortestArc != 0) {
-    fVar6 = 0.0;
-    uVar10 = arcPlane.m_Normal._0_8_;
-    pVVar2 = (Vector3 *)&UNK_?;
-    arcOrigin_00.z = fVar4;
-    arcOrigin_00.x = (float)(int)uVar10;
-    arcOrigin_00.y = (float)(int)((ulonglong)uVar10 >> 0x20);
-    arcStartPoint_00.z = fVar5;
-    arcStartPoint_00.x = (float)(int)uVar10;
-    arcStartPoint_00.y = (float)(int)((ulonglong)uVar10 >> 0x20);
-    fVar8 = arcPlane.m_Normal.x;
-    puVar7 = (undefined1 *)arcPlane.m_Normal.y;
-    fVar9 = degreesFromStart;
-    degreesFromStart =
-         ArcMath::ArcMath_ConvertToSh3DArcAngle
-                   (arcOrigin_00,arcStartPoint_00,arcPlane.m_Normal,degreesFromStart,
-                    (MethodInfo *)0x0);
+            ((Quaternion *)&stack0xffffffa8,fVar3,arcPlane.m_Normal,(MethodInfo *)0x0);
+  ppuVar13 = &puStack_5;
+  fVar2 = (float10)func_?();
+  uVar14 = 0;
+  fVar15 = (float)fVar2;
+  puVar16 = &UNK_?;
+  UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1
+            ((Vector3 *)&puStack_5,(MethodInfo *)0x0);
+  if (forceShortestArc == 0) {
+    numPoints = (int32_t)(fVar3 / (float)(numPoints + -1));
   }
-  iVar11 = 0;
+  else {
+    arcOrigin_00.y = (float)ppuVar13;
+    arcOrigin_00.x = (float)uVar14;
+    arcOrigin_00.z = fVar3;
+    arcStartPoint_00.y = (float)uVar10;
+    arcStartPoint_00.x = (float)uVar9;
+    arcStartPoint_00.z = fVar11;
+    fVar15 = arcPlane.m_Normal.y;
+    fVar3 = ArcMath::ArcMath_ConvertToSh3DArcAngle
+                       (arcOrigin_00,arcStartPoint_00,arcPlane.m_Normal,fVar3,(MethodInfo *)0x0);
+    numPoints = (int32_t)(fVar3 / (float)(numPoints + -1));
+    fVar12 = arcPlane.m_Normal.z;
+  }
+  iVar17 = 0;
   while( true ) {
-    fVar4 = (float)iVar11 * (degreesFromStart / (float)(numPoints + -1));
     axis.y = arcPlane.m_Normal.y;
     axis.x = arcPlane.m_Normal.x;
-    axis.z = fVar6;
-    pQVar12 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
-                        ((Quaternion *)&stack0xffffff8c,fVar4,axis,(MethodInfo *)0x0);
-    arcPlane.m_Normal.x = pQVar12->y;
-    arcPlane.m_Normal.y = pQVar12->z;
-    point.y = fVar8;
-    point.x = (float)pVVar2;
-    point.z = (float)puVar7;
-    pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                        ((Vector3 *)&stack0xffffffac,*pQVar12,point,(MethodInfo *)0x0);
-    pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                        ((Vector3 *)&stack0xffffffa0,*pVVar13,(MethodInfo *)0x0);
-    pMVar14 = 
+    axis.z = fVar12;
+    pQVar18 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
+                        ((Quaternion *)&stack0xffffff98,(float)iVar17 * (float)numPoints,axis,
+                         (MethodInfo *)0x0);
+    numPoints = (int32_t)_puStack_3c;
+    arcPlane.m_Normal.y = (float)&stack0xffffffb8;
+    arcPlane.m_Normal.x = (float)&UNK_?;
+    point.z = (float)puVar16;
+    point.x = (float)puStack_5;
+    point.y = stack0xffffffc8;
+    pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                        ((Vector3 *)arcPlane.m_Normal.y,*pQVar18,point,(MethodInfo *)0x0);
+    pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                        ((Vector3 *)&stack0xffffffac,*pVVar4,(MethodInfo *)0x0);
+    pMVar19 = 
     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_;
-    uVar15 = pVVar13->x;
-    uVar16 = pVVar13->y;
-    puVar17 = (undefined *)((float)uVar15 * fVar9 + 4.3851833e-29);
-    fVar5 = (float)&stack0xffffff8c + (float)uVar16 * fVar9;
-    fVar4 = fVar4 + pVVar13->z * fVar9;
+    uVar20 = pVVar4->x;
+    uVar21 = pVVar4->y;
+    fVar3 = (float)uVar6 + (float)uVar20 * fVar15;
+    fVar11 = (float)uVar7 + (float)uVar21 * fVar15;
+    fVar22 = fVar8 + pVVar4->z * fVar15;
     if (this == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
                  *)0x0) break;
-    piVar18 = &(this->fields)._version;
-    *piVar18 = *piVar18 + 1;
-    pMVar19 = (this->fields)._items;
-    if (pMVar19 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0) break;
-    uVar20 = (this->fields)._size;
-    if (uVar20 < pMVar19->max_length) {
-      (this->fields)._size = uVar20 + 1;
-      puStack_3 = puVar17;
-      if (pMVar19->max_length <= uVar20) {
+    piVar23 = &(this->fields)._version;
+    *piVar23 = *piVar23 + 1;
+    pMVar24 = (this->fields)._items;
+    if (pMVar24 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0) break;
+    uVar25 = (this->fields)._size;
+    if (uVar25 < pMVar24->max_length) {
+      (this->fields)._size = uVar25 + 1;
+      if (pMVar24->max_length <= uVar25) {
         func_?();
         break;
       }
-      *(ulonglong *)(&pMVar19->vector[0].index + uVar20 * 3) = CONCAT44(fVar5,puVar17);
-      (&pMVar19->vector[0].actualWidth)[uVar20 * 3] = fVar4;
+      *(ulonglong *)(&pMVar24->vector[0].index + uVar25 * 3) = CONCAT44(fVar11,fVar3);
+      (&pMVar24->vector[0].actualWidth)[uVar25 * 3] = fVar22;
     }
     else {
-      item.FirstAxisSign = (int32_t)fVar5;
-      item.Quadrant = (int32_t)puVar17;
-      item.SecondAxisSign = (int32_t)fVar4;
+      item.FirstAxisSign = (int32_t)fVar11;
+      item.Quadrant = (int32_t)fVar3;
+      item.SecondAxisSign = (int32_t)fVar22;
       mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
       List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__AddWithResize
                 ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,item,
-                 pMVar14->klass->rgctx_data[0xe].method);
+                 pMVar19->klass->rgctx_data[0xe].method);
     }
-    iVar11 = iVar11 + 1;
-    if (-1 < iVar11) {
+    iVar17 = iVar17 + 1;
+    if (iVar1 <= iVar17) {
       return (List_1_UnityEngine_Vector3_ *)this;
     }
   }
   func_?();
-  pcVar21 = (code *)swi(3);
-  pLVar22 = (List_1_UnityEngine_Vector3_ *)(*pcVar21)();
-  return pLVar22;
+  pcVar26 = (code *)swi(3);
+  pLVar27 = (List_1_UnityEngine_Vector3_ *)(*pcVar26)();
+  return pLVar27;
 }
 
 
@@ -1117,179 +1094,180 @@ Assembly-CSharp.dll::RTG::PrimitiveFactory::PrimitiveFactory_GenerateSphereBorde
 
 {
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
+    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List__);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
+                   );
     func_?(&
                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
                    );
     func_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::Vector3>);
     cRam_? = '\x01';
   }
-  if (2 < numPoints) {
-    if ((camera != (Camera *)0x0) &&
-       (this = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                         ((Component *)camera,(MethodInfo *)0x0), this != (Transform *)0x0)) {
-      pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
-                         (&VStack_2,this,(MethodInfo *)0x0);
-      uStack_3._0_4_ = pVVar1->x;
-      uStack_3._4_4_ = pVVar1->y;
-      fVar4 = pVVar1->z;
-      pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                         (&VStack_2,this,(MethodInfo *)0x0);
-      uStack_5._0_4_ = pVVar1->x;
-      uStack_5._4_4_ = pVVar1->y;
-      fStack_6 = pVVar1->z;
-      value_00.z = fVar4;
-      value_00.x = (float)(undefined4)uStack_3;
-      value_00.y = uStack_3._4_4_;
-      pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                         (&VStack_2,value_00,(MethodInfo *)0x0);
-      uStack_7._0_4_ = pVVar1->x;
-      uStack_7._4_4_ = pVVar1->y;
-      fStack_8 = pVVar1->z;
-      uStack_3 = CONCAT44((uint)(uStack_5._4_4_ * uStack_7._4_4_ +
-                                  (float)uStack_5 * (float)uStack_7 + fStack_6 * fStack_8) ^
-                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field,
-                           (undefined4)uStack_3);
-      uStack_9 = uStack_7;
-      fStack_10 = fStack_8;
-      pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
-                         (&VStack_2,this,(MethodInfo *)0x0);
-      uStack_11._0_4_ = pVVar1->x;
-      uStack_11._4_4_ = pVVar1->y;
-      fVar4 = pVVar1->z;
-      pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
-                         (&VStack_2,this,(MethodInfo *)0x0);
-      circleRight.z = fVar4;
-      circleRight.x = (float)(undefined4)uStack_11;
-      circleRight.y = uStack_11._4_4_;
-      pLStack_12 = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)
-                   PrimitiveFactory_Generate3DCircleBorderPoints
-                             (sphereCenter,sphereRadius,circleRight,*pVVar1,numPoints,
-                              (MethodInfo *)0x0);
-      index = 0;
-      if (pLStack_12 != (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0) {
-        do {
-          pVVar13 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-                   VisualTreeAsset+UsingEntry]::
-                   List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                             (&VStack_14,
-                              (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
-                              pLStack_12,index,
-                              MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                             );
-          uStack_15._0_4_ = pVVar13->alias;
-          uStack_15._4_4_ = (float)pVVar13->path;
-          pVStack_16 = pVVar13->asset;
-          fStack_17 = (float)pVStack_16 - sphereCenter.z;
-          fStack_18 = (float)(undefined4)uStack_15;
-          uStack_19 = 0;
-          uStack_20 = 0;
-          uStack_21 = 0;
-          value.y = uStack_15._4_4_ - sphereCenter.y;
-          value.x = (float)(undefined4)uStack_15 - sphereCenter.x;
-          value.z = fStack_17;
-          pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                             (&VStack_22,value,(MethodInfo *)0x0);
-          uStack_23._0_4_ = pVVar1->x;
-          uStack_23._4_4_ = pVVar1->y;
-          fStack_10 = pVVar1->z;
-          uStack_11 = CONCAT44(fStack_10,(undefined4)uStack_11);
-          uStack_9 = uStack_23;
-          pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                             (&VStack_24,this,(MethodInfo *)0x0);
-          uStack_25._0_4_ = pVVar1->x;
-          uStack_25._4_4_ = pVVar1->y;
-          fStack_26 = pVVar1->z;
-          fStack_27 = (float)pVStack_16 - fStack_26;
-          value_01.y = uStack_15._4_4_ - (float)uStack_25._4_4_;
-          value_01.x = fStack_18 - (float)(undefined4)uStack_25;
-          value_01.z = fStack_27;
-          pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                             (&VStack_28,value_01,(MethodInfo *)0x0);
-          uStack_29._0_4_ = pVVar1->x;
-          uStack_29._4_4_ = pVVar1->y;
-          fStack_30 = pVVar1->z;
-          bVar31 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_orthographic
-                            (camera,(MethodInfo *)0x0);
-          if (bVar31 != 0) {
-            pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
-                               (&VStack_32,this,(MethodInfo *)0x0);
-            uStack_29._0_4_ = pVVar1->x;
-            uStack_29._4_4_ = pVVar1->y;
-            fStack_30 = pVVar1->z;
-          }
-          fStack_33 = (float)uStack_29;
-          fStack_34 = (float)uStack_9;
-          fStack_35 = fStack_30;
-          fStack_36 = fStack_10;
-          fVar4 = (float)uStack_9 * (float)uStack_29 + uStack_9._4_4_ * uStack_29._4_4_ +
-                  fStack_10 * fStack_30;
-          if (_UNK_? < (float)((uint)fVar4 & _UNK_?)) {
-            fStack_37 = MathEx::MathEx_SafeAcos(fVar4,(MethodInfo *)0x0);
-            fStack_38 = fStack_33 * uStack_9._4_4_ - fStack_34 * uStack_29._4_4_;
-            uStack_5 = CONCAT44(fStack_35 * fStack_34 - fStack_36 * fStack_33,
-                                 fStack_36 * uStack_29._4_4_ - fStack_35 * uStack_9._4_4_);
-            fStack_6 = fStack_38;
-            pVVar1 = (Vector3 *)func_?(auStack_39);
-            pQVar40 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
-                               ((Quaternion *)&stack0xfffffe60,
-                                _UNK_? - fStack_37 * _UNK_?,*pVVar1,(MethodInfo *)0x0)
-            ;
-            point.z = uStack_11._4_4_;
-            point.x = (float)(undefined4)uStack_23;
-            point.y = (float)uStack_23._4_4_;
-            pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                               ((Vector3 *)&stack0xfffffe90,*pQVar40,point,(MethodInfo *)0x0);
-            uStack_5._0_4_ = pVVar1->x;
-            uStack_5._4_4_ = pVVar1->y;
-            fStack_6 = pVVar1->z;
-            puVar41 = (undefined8 *)func_?();
-            uVar42 = *puVar41;
-            fStack_43 = *(float *)(puVar41 + 1);
-            uStack_44._0_4_ = (float)uVar42;
-            uStack_44._4_4_ = (float)((ulonglong)uVar42 >> 0x20);
-            VStack_2.z = sphereCenter.z + fStack_43 * sphereRadius;
-            value_02.FirstAxisSign = (int32_t)(sphereCenter.y + uStack_44._4_4_ * sphereRadius);
-            value_02.Quadrant = (int32_t)(sphereCenter.x + (float)uStack_44 * sphereRadius);
-            value_02.SecondAxisSign = (int32_t)VStack_2.z;
-            uStack_44 = uVar42;
-            mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]
-            ::List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-                      (pLStack_12,index,value_02,
-                       MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
-                      );
-            puVar41 = (undefined8 *)func_?();
-            uVar42 = *puVar41;
-            fStack_45 = *(float *)(puVar41 + 1);
-            uStack_46._0_4_ = (float)uVar42;
-            fVar4 = (float)uStack_7 * (float)uStack_46;
-            uStack_46._4_4_ = (float)((ulonglong)uVar42 >> 0x20);
-            fVar47 = uStack_7._4_4_ * uStack_46._4_4_;
-            uStack_46 = uVar42;
-            if (fVar47 + fVar4 + fStack_8 * fStack_45 + uStack_3._4_4_ < 0.0)
-            goto code_?;
-          }
-          index = index + 1;
-          if (numPoints <= index) {
-            return (List_1_UnityEngine_Vector3_ *)pLStack_12;
-          }
-        } while( true );
-      }
-    }
-    func_?();
-    pcVar48 = (code *)swi(3);
-    pLVar49 = (List_1_UnityEngine_Vector3_ *)(*pcVar48)();
-    return pLVar49;
-  }
+  if (numPoints < 3) {
 code_?:
-  pLVar49 = (List_1_UnityEngine_Vector3_ *)func_?();
-  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
-  __Il2CppFullySharedGenericType]::
-  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar49,
-             MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List__);
-  return pLVar49;
+    this_00 = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)
+              func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector3>);
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType]::
+    LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+               MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List__);
+  }
+  else {
+    if ((camera == (Camera *)0x0) ||
+       (this = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                         ((Component *)camera,(MethodInfo *)0x0), this == (Transform *)0x0)) {
+code_?:
+      func_?();
+      pcVar1 = (code *)swi(3);
+      pLVar2 = (List_1_UnityEngine_Vector3_ *)(*pcVar1)();
+      return pLVar2;
+    }
+    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
+                       (&VStack_4,this,(MethodInfo *)0x0);
+    uStack_5._0_4_ = pVVar3->x;
+    uStack_5._4_4_ = pVVar3->y;
+    fVar6 = pVVar3->z;
+    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                       (&VStack_4,this,(MethodInfo *)0x0);
+    uStack_7._0_4_ = pVVar3->x;
+    uStack_7._4_4_ = pVVar3->y;
+    fStack_8 = pVVar3->z;
+    value_00.z = fVar6;
+    value_00.x = (float)(undefined4)uStack_5;
+    value_00.y = uStack_5._4_4_;
+    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                       (&VStack_4,value_00,(MethodInfo *)0x0);
+    uStack_9._0_4_ = pVVar3->x;
+    uStack_9._4_4_ = pVVar3->y;
+    fStack_10 = pVVar3->z;
+    uStack_5 = CONCAT44((uint)(uStack_7._4_4_ * uStack_9._4_4_ +
+                                (float)uStack_7 * (float)uStack_9 + fStack_8 * fStack_10) ^
+                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field,
+                         (undefined4)uStack_5);
+    uStack_11 = uStack_9;
+    fStack_12 = fStack_10;
+    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
+                       (&VStack_4,this,(MethodInfo *)0x0);
+    uStack_13._0_4_ = pVVar3->x;
+    uStack_13._4_4_ = pVVar3->y;
+    fVar6 = pVVar3->z;
+    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
+                       (&VStack_4,this,(MethodInfo *)0x0);
+    circleRight.z = fVar6;
+    circleRight.x = (float)(undefined4)uStack_13;
+    circleRight.y = uStack_13._4_4_;
+    pLStack_14 = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)
+                 PrimitiveFactory_Generate3DCircleBorderPoints
+                           (sphereCenter,sphereRadius,circleRight,*pVVar3,numPoints,
+                            (MethodInfo *)0x0);
+    index = 0;
+    do {
+      if (pLStack_14 == (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0) goto code_?;
+      pVVar15 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+               VisualTreeAsset+UsingEntry]::
+               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
+                         (&VStack_16,
+                          (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)pLStack_14,
+                          index,
+                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
+                         );
+      uStack_17._0_4_ = pVVar15->alias;
+      uStack_17._4_4_ = (float)pVVar15->path;
+      pVStack_18 = pVVar15->asset;
+      fStack_19 = (float)pVStack_18 - sphereCenter.z;
+      fStack_20 = (float)(undefined4)uStack_17;
+      uStack_21 = 0;
+      uStack_22 = 0;
+      uStack_23 = 0;
+      value.y = uStack_17._4_4_ - sphereCenter.y;
+      value.x = (float)(undefined4)uStack_17 - sphereCenter.x;
+      value.z = fStack_19;
+      pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                         ((Vector3 *)&stack0xfffffee0,value,(MethodInfo *)0x0);
+      uStack_24._0_4_ = pVVar3->x;
+      uStack_24._4_4_ = pVVar3->y;
+      fStack_12 = pVVar3->z;
+      uStack_13 = CONCAT44(fStack_12,(undefined4)uStack_13);
+      uStack_11 = uStack_24;
+      pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                         ((Vector3 *)&puStack_25,this,(MethodInfo *)0x0);
+      uStack_26._0_4_ = pVVar3->x;
+      uStack_26._4_4_ = pVVar3->y;
+      fStack_27 = pVVar3->z;
+      fStack_28 = (float)pVStack_18 - fStack_27;
+      value_01.y = uStack_17._4_4_ - (float)uStack_26._4_4_;
+      value_01.x = fStack_20 - (float)(undefined4)uStack_26;
+      value_01.z = fStack_28;
+      pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                         ((Vector3 *)&stack0xfffffec0,value_01,(MethodInfo *)0x0);
+      uStack_29._0_4_ = pVVar3->x;
+      uStack_29._4_4_ = pVVar3->y;
+      fStack_30 = pVVar3->z;
+      bVar31 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_orthographic
+                        (camera,(MethodInfo *)0x0);
+      if (bVar31 != 0) {
+        pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
+                           ((Vector3 *)&stack0xfffffeb0,this,(MethodInfo *)0x0);
+        uStack_29._0_4_ = pVVar3->x;
+        uStack_29._4_4_ = pVVar3->y;
+        fStack_30 = pVVar3->z;
+      }
+      fStack_32 = (float)uStack_29;
+      fStack_33 = (float)uStack_11;
+      fStack_34 = fStack_30;
+      fStack_35 = fStack_12;
+      fVar6 = (float)uStack_11 * (float)uStack_29 + uStack_11._4_4_ * uStack_29._4_4_ +
+              fStack_12 * fStack_30;
+      if (_UNK_? < (float)((uint)fVar6 & _UNK_?)) {
+        fStack_36 = MathEx::MathEx_SafeAcos(fVar6,(MethodInfo *)0x0);
+        fStack_37 = fStack_32 * uStack_11._4_4_ - fStack_33 * uStack_29._4_4_;
+        uStack_7 = CONCAT44(fStack_34 * fStack_33 - fStack_35 * fStack_32,
+                             fStack_35 * uStack_29._4_4_ - fStack_34 * uStack_11._4_4_);
+        fStack_8 = fStack_37;
+        pVVar3 = (Vector3 *)func_?();
+        pQVar38 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
+                           ((Quaternion *)&stack0xfffffe60,_UNK_? - fStack_36 * _UNK_?
+                            ,*pVVar3,(MethodInfo *)0x0);
+        point.z = uStack_13._4_4_;
+        point.x = (float)(undefined4)uStack_24;
+        point.y = (float)uStack_24._4_4_;
+        pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                           ((Vector3 *)&stack0xfffffe90,*pQVar38,point,(MethodInfo *)0x0);
+        uStack_7._0_4_ = pVVar3->x;
+        uStack_7._4_4_ = pVVar3->y;
+        fStack_8 = pVVar3->z;
+        puVar39 = (undefined8 *)func_?();
+        uVar40 = *puVar39;
+        fStack_41 = *(float *)(puVar39 + 1);
+        uStack_42._0_4_ = (float)uVar40;
+        uStack_42._4_4_ = (float)((ulonglong)uVar40 >> 0x20);
+        VStack_4.z = sphereCenter.z + fStack_41 * sphereRadius;
+        value_02.FirstAxisSign = (int32_t)(sphereCenter.y + uStack_42._4_4_ * sphereRadius);
+        value_02.Quadrant = (int32_t)(sphereCenter.x + (float)uStack_42 * sphereRadius);
+        value_02.SecondAxisSign = (int32_t)VStack_4.z;
+        uStack_42 = uVar40;
+        mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
+        List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
+                  (pLStack_14,index,value_02,
+                   MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
+                  );
+        puVar39 = (undefined8 *)func_?();
+        uVar40 = *puVar39;
+        fStack_43 = *(float *)(puVar39 + 1);
+        uStack_44._0_4_ = (float)uVar40;
+        fVar6 = (float)uStack_9 * (float)uStack_44;
+        uStack_44._4_4_ = (float)((ulonglong)uVar40 >> 0x20);
+        fVar45 = uStack_9._4_4_ * uStack_44._4_4_;
+        uStack_44 = uVar40;
+        if (fVar45 + fVar6 + fStack_10 * fStack_43 + uStack_5._4_4_ < 0.0) goto code_?;
+      }
+      index = index + 1;
+      this_00 = pLStack_14;
+    } while (index < numPoints);
+  }
+  return (List_1_UnityEngine_Vector3_ *)this_00;
 }
 
 
@@ -1363,36 +1341,31 @@ Assembly-CSharp.dll::RTG::PrimitiveFactory::PrimitiveFactory_ProjectArcPointsOnP
   VVar9.x = VStack_10.x;
   VVar11.y = VStack_12.y;
   VVar11.x = VStack_12.x;
-  LStack_13._current.y = 0.0;
-  fStack_14 = 0.0;
-  LStack_13._list = (List_1_UnityEngine_Vector2_ *)0x0;
-  LStack_13._index = 0;
-  LStack_13._version = 0;
-  LStack_13._current.x = 0.0;
-  uStack_15 = CONCAT44(uStack_15._4_4_,(undefined4)uStack_15);
+  fStack_13 = 0.0;
+  uStack_14 = CONCAT44(uStack_14._4_4_,(undefined4)uStack_14);
   if (arcPoints == (List_1_UnityEngine_Vector2_ *)0x0) {
 code_?:
-    uVar16 = func_?();
-    func_?(uVar16);
-    pcVar17 = (code *)swi(3);
-    pLVar18 = (List_1_UnityEngine_Vector2_ *)(*pcVar17)();
-    return pLVar18;
+    uVar15 = func_?();
+    func_?(uVar15);
+    pcVar16 = (code *)swi(3);
+    pLVar17 = (List_1_UnityEngine_Vector2_ *)(*pcVar16)();
+    return pLVar17;
   }
-  if (1 < (arcPoints->fields)._size) {
+  iStack_18 = (arcPoints->fields)._size;
+  if (1 < iStack_18) {
     VStack_12 = VVar11;
+    uStack_14 = CONCAT44(uStack_14._4_4_,(undefined4)uStack_14);
     VStack_10 = VVar9;
-    uStack_15 = CONCAT44(uStack_15._4_4_,(undefined4)uStack_15);
     if (clockwisePolyPoints == (List_1_UnityEngine_Vector2_ *)0x0) goto code_?;
-    if (2 < (clockwisePolyPoints->fields)._size) {
-      iStack_19 = (clockwisePolyPoints->fields)._size;
-      capacity = (arcPoints->fields)._size;
+    iStack_19 = (clockwisePolyPoints->fields)._size;
+    if (2 < iStack_19) {
       this = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
               *)func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
       pLStack_20 = this;
       mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
       MultiColumnCollectionHeader+ViewState+ColumnState]::
       List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
-                (this,capacity,
+                (this,iStack_18,
                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List_int_);
       pLStack_21 = this;
       pLVar22 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
@@ -1404,101 +1377,114 @@ code_?:
                           arcPoints,
                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__GetEnumerator__
                          );
-      pLStack_23 = &LStack_13;
-      uStack_24 = 0;
-      LStack_13._list = (List_1_UnityEngine_Vector2_ *)pLVar22->_list;
-      LStack_13._index = pLVar22->_index;
-      LStack_13._version = pLVar22->_version;
-      LStack_13._current.x = (float)(pLVar22->_current).qname;
-      LStack_13._current.y = (float)(pLVar22->_current).xso;
+      pLStack_23 = &LStack_24;
+      uStack_25 = 0;
+      LStack_24._list = (List_1_UnityEngine_Vector2_ *)pLVar22->_list;
+      LStack_24._index = pLVar22->_index;
+      LStack_24._version = pLVar22->_version;
+      LStack_24._current.x = (float)(pLVar22->_current).qname;
+      LStack_24._current.y = (float)(pLVar22->_current).xso;
       uStack_3 = 1;
-      iVar25 = iStack_19;
+      iVar26 = iStack_19;
+code_?:
       do {
-        bVar26 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[UnityEngine::
+        bVar27 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[UnityEngine::
                 Vector2]::List_1_T_Enumerator_UnityEngine_Vector2__MoveNext
-                          (&LStack_13,
+                          (&LStack_24,
                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector2>__MoveNext__
                           );
-        if (bVar26 == 0) {
+        if (bVar27 == 0) {
           uStack_3 = 0xffffffff;
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&LStack_13,
+                    ((Object *)&LStack_24,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector2>__Dispose__
                      ,method_00);
           *unaff_FS_OFFSET = uStack_5;
           return (List_1_UnityEngine_Vector2_ *)this;
         }
-        pXStack_27 = (XmlQualifiedName *)LStack_13._current.x;
-        pXStack_28 = (XmlSchemaObject *)LStack_13._current.y;
-        for (iStack_29 = 0; iStack_29 < iVar25; iStack_29 = iStack_29 + 1) {
-          VVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                   List_1_UnityEngine_Vector2__get_Item
-                             (clockwisePolyPoints,iStack_29,
-                              MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                             );
-          VStack_12 = VVar11;
-          VVar9 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                   List_1_UnityEngine_Vector2__get_Item
-                             (clockwisePolyPoints,(iStack_29 + 1) % iStack_19,
-                              MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                             );
-          fStack_30 = VStack_31.x - VStack_12.x;
-          VStack_31.y = VVar9.y;
-          fStack_32 = VStack_31.y - VStack_12.y;
-          VStack_31 = VVar9;
-          uVar33 = func_?();
-          pMStack_34 = (MethodInfo *)((ulonglong)uVar33 >> 0x20);
-          fStack_35 = (float)uVar33;
-          pPStack_36 = (Plane2D *)func_?();
-          normal.y = (float)pMStack_34;
-          normal.x = fStack_35;
-          method_00 = pMStack_34;
-          Plane2D::Plane2D__ctor_1(pPStack_36,normal,VVar11,(MethodInfo *)0x0);
-          VVar11 = (Vector2)func_?();
-          VStack_10 = VVar11;
-          if (pPStack_36 == (Plane2D *)0x0) goto code_?;
-          bVar26 = Plane2D::Plane2D_Raycast(pPStack_36,arcOrigin,VVar11,&fStack_14,(MethodInfo *)0x0)
-          ;
-          if (bVar26 != 0) {
-            fStack_37 = arcOrigin.y + VStack_10.y * fStack_14;
-            fStack_38 = arcOrigin.x + VStack_10.x * fStack_14;
-            fStack_35 = fStack_38 - VStack_12.x;
-            pPStack_36 = (Plane2D *)(fStack_37 - VStack_12.y);
-            uVar33 = func_?(&fStack_30,0);
-            fStack_35 = (float)((ulonglong)uVar33 >> 0x20) * (float)pPStack_36 +
-                        (float)uVar33 * fStack_35;
-            uStack_15 = uVar33;
-            if (_UNK_? <= fStack_35) {
-              fVar39 = (float10)func_?(&fStack_30,0);
+        pXStack_28 = (XmlQualifiedName *)LStack_24._current.x;
+        pXStack_29 = (XmlSchemaObject *)LStack_24._current.y;
+        iStack_18 = 0;
+        do {
+          do {
+            do {
+              if (iVar26 <= iStack_18) goto code_?;
+              VVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+                       List_1_UnityEngine_Vector2__get_Item
+                                 (clockwisePolyPoints,iStack_18,
+                                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                                 );
+              iStack_18 = iStack_18 + 1;
+              VStack_12 = VVar11;
+              VVar9 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+                       List_1_UnityEngine_Vector2__get_Item
+                                 (clockwisePolyPoints,iStack_18 % iStack_19,
+                                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                                 );
+              fStack_30 = VStack_31.x - VStack_12.x;
+              VStack_31.y = VVar9.y;
+              fStack_32 = VStack_31.y - VStack_12.y;
+              vec.y = fStack_32;
+              vec.x = fStack_30;
+              fStack_33 = fStack_30;
+              fStack_34 = fStack_32;
+              VStack_31 = VVar9;
+              VVar9 = Vector2Ex::Vector2Ex_GetNormal(vec,(MethodInfo *)0x0);
+              fStack_35 = VVar9.y;
+              fStack_36 = VVar9.x;
+              pPStack_37 = (Plane2D *)func_?();
+              method_00 = (MethodInfo *)&UNK_?;
+              normal.y = fStack_35;
+              normal.x = fStack_36;
+              Plane2D::Plane2D__ctor_1(pPStack_37,normal,VVar11,(MethodInfo *)0x0);
+              fStack_38 = (float)pXStack_29 - arcOrigin.y;
+              fStack_39 = (float)pXStack_28 - arcOrigin.x;
+              LStack_24._version = (int32_t)&fStack_39;
+              LStack_24._current.x = 0.0;
+              LStack_24._index = (int32_t)&UNK_?;
+              VVar11 = (Vector2)func_?();
+              VStack_10 = VVar11;
+              if (pPStack_37 == (Plane2D *)0x0) goto code_?;
+              bVar27 = Plane2D::Plane2D_Raycast
+                                (pPStack_37,arcOrigin,VVar11,&fStack_13,(MethodInfo *)0x0);
+              iVar26 = iStack_19;
               this = pLStack_20;
-              pPStack_36 = (Plane2D *)(float)fVar39;
-              if (fStack_35 <= (float)pPStack_36) {
-                if (pLStack_20 ==
-                    (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                     *)0x0) goto code_?;
-                func_?(pLStack_20,fStack_38,fStack_37,
-                                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
-                               );
-                iVar25 = iStack_19;
-                break;
-              }
-            }
-          }
-          iVar25 = iStack_19;
+            } while (bVar27 == 0);
+            fStack_40 = arcOrigin.y + VStack_10.y * fStack_13;
+            fStack_41 = arcOrigin.x + VStack_10.x * fStack_13;
+            pPStack_37 = (Plane2D *)(fStack_40 - VStack_12.y);
+            fStack_36 = fStack_41 - VStack_12.x;
+            uVar42 = func_?(&fStack_30,0);
+            fStack_36 = (float)((ulonglong)uVar42 >> 0x20) * (float)pPStack_37 +
+                        (float)uVar42 * fStack_36;
+            iVar26 = iStack_19;
+            this = pLStack_20;
+            uStack_14 = uVar42;
+          } while (fStack_36 < _UNK_?);
+          fVar43 = (float10)func_?(&fStack_30,0);
           this = pLStack_20;
-        }
+          pPStack_37 = (Plane2D *)(float)fVar43;
+          iVar26 = iStack_19;
+        } while ((float)pPStack_37 < fStack_36);
+        if (pLStack_20 ==
+            (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+             *)0x0) goto code_?;
+        func_?(pLStack_20,fStack_41,fStack_40,
+                        MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
+                       );
+        iVar26 = iStack_19;
       } while( true );
     }
   }
-  pLVar18 = (List_1_UnityEngine_Vector2_ *)
+  pLVar17 = (List_1_UnityEngine_Vector2_ *)
            func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar18,
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar17,
              MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List__);
   *unaff_FS_OFFSET = uStack_5;
-  return pLVar18;
+  return pLVar17;
 }
 

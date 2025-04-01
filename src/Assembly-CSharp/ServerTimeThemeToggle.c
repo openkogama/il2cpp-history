@@ -11,25 +11,27 @@ void Assembly-CSharp.dll::ServerTimeThemeToggle::ServerTimeThemeToggle_Initializ
     func_?(&MethodInfo__ThemeAttributes__ThemeAttribute<bool>__get_Value__);
     cRam_? = '\x01';
   }
-  (this->fields)._.onChange = onChange;
-  func_?(&(this->fields)._.onChange,onChange);
-  if ((attrib != (BoolAttribute *)0x0) && (pTVar1 = (this->fields)._.label, pTVar1 != (Text *)0x0))
+  ppAVar1 = &(this->fields)._.onChange;
+  *ppAVar1 = onChange;
+  func_?(ppAVar1,onChange);
+  if ((attrib != (BoolAttribute *)0x0) && (pTVar2 = (this->fields)._.label, pTVar2 != (Text *)0x0))
   {
-    (*(code *)(pTVar1->klass->vtable).set_text.method)
-              (pTVar1,(attrib->fields)._.name,
-               (pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+    (*(code *)(pTVar2->klass->vtable).set_text.method)
+              (pTVar2,(attrib->fields)._.name,
+               (pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     this_00 = (this->fields)._.toggle;
     if (this_00 != (SettingsToggle *)0x0) {
       SettingsToggle::SettingsToggle_Initialize
                 (this_00,(attrib->fields)._._._._Key_k__BackingField,(attrib->fields)._._.value,
                  (MethodInfo *)0x0);
-      pTVar1 = (this->fields)._.label;
-      if (pTVar1 != (Text *)0x0) {
-        pSVar2 = (String *)
-                 (*(code *)(pTVar1->klass->vtable).get_text.method)
-                           (pTVar1,(pTVar1->klass->vtable).set_text.methodPtr);
-        (this->fields).labelText = pSVar2;
-        func_?(&(this->fields).labelText,pSVar2);
+      pTVar2 = (this->fields)._.label;
+      if (pTVar2 != (Text *)0x0) {
+        pSVar3 = (String *)
+                 (*(code *)(pTVar2->klass->vtable).get_text.method)
+                           (pTVar2,(pTVar2->klass->vtable).set_text.methodPtr);
+        ppSVar4 = &(this->fields).labelText;
+        *ppSVar4 = pSVar3;
+        func_?(ppSVar4,pSVar3);
         UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
                   ((Behaviour *)this,1,(MethodInfo *)0x0);
         return;
@@ -37,8 +39,8 @@ void Assembly-CSharp.dll::ServerTimeThemeToggle::ServerTimeThemeToggle_Initializ
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -97,8 +99,9 @@ void Assembly-CSharp.dll::ServerTimeThemeToggle::ServerTimeThemeToggle__ctor
     func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  (this->fields).labelText = ::StringLiteral__;
-  func_?(&(this->fields).labelText,::StringLiteral__);
+  ppSVar1 = &(this->fields).labelText;
+  *ppSVar1 = ::StringLiteral__;
+  func_?(ppSVar1,::StringLiteral__);
   Borodar::FarlandSkies::CloudyCrownPro::Helpers::Singleton`1[System::Object]::
   Singleton_1_System_Object___ctor((Singleton_1_System_Object_ *)this,(MethodInfo *)0x0);
   return;

@@ -29,7 +29,7 @@ void Assembly-CSharp.dll::FirstTimeActivatablePopupTimed::FirstTimeActivatablePo
                       UnityEngine__CanvasGroup_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::CanvasGroup>_UnityEngine__CanvasGroup_
                      );
   (this->fields).createdPopup = pCVar1;
-  func_?(&(this->fields).createdPopup,pCVar1);
+  func_?();
   return;
 }
 
@@ -361,8 +361,9 @@ void Assembly-CSharp.dll::FirstTimeActivatablePopupTimed::FirstTimeActivatablePo
       fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0)
       ;
       fVar2 = fVar2 + fVar1;
+      fVar1 = (this->fields).visibleDuration;
       (this->fields).currentTime = fVar2;
-      if ((this->fields).visibleDuration <= fVar2) {
+      if (fVar1 <= fVar2) {
         if ((this->fields).destroyCreatedPopup == 0) {
           root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)this,(MethodInfo *)0x0);
@@ -407,20 +408,22 @@ void Assembly-CSharp.dll::FirstTimeActivatablePopupTimed::FirstTimeActivatablePo
         UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
                   ((Object_1 *)this,(MethodInfo *)0x0);
       }
-      else if ((this->fields).visibleDuration - (this->fields).fadeTime <= fVar2) {
-        this_00 = (this->fields).createdPopup;
-        if (this_00 != (CanvasGroup *)0x0) {
-          UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-                    (this_00,_UNK_? -
-                             (fVar2 - ((this->fields).visibleDuration - (this->fields).fadeTime)) /
-                             (this->fields).fadeTime,(MethodInfo *)0x0);
-          (this->fields).isFading = 1;
+      else {
+        fVar3 = (this->fields).fadeTime;
+        fVar1 = fVar1 - fVar3;
+        if (fVar1 <= fVar2) {
+          this_00 = (this->fields).createdPopup;
+          if (this_00 != (CanvasGroup *)0x0) {
+            UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
+                      (this_00,_UNK_? - (fVar2 - fVar1) / fVar3,(MethodInfo *)0x0);
+            (this->fields).isFading = 1;
+            return;
+          }
+          func_?();
+          pcVar4 = (code *)swi(3);
+          (*pcVar4)();
           return;
         }
-        func_?();
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
-        return;
       }
     }
   }

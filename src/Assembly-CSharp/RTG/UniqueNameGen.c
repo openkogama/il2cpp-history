@@ -105,10 +105,12 @@ code_?:
     pSVar17 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_8,(MethodInfo *)0x0);
     pSStack_7 = mscorlib.dll::System::String::String_Concat_3
                            (desiredName,pSVar17,(MethodInfo *)0x0);
-    IStack_8.m_value = IStack_8.m_value + 1;
     uStack_9 = 1;
+    IStack_8.m_value = IStack_8.m_value + 1;
     uStack_1 = 0xffffffff;
-    func_?();
+    if (piStack_6 != (int *)0x0) {
+      func_?();
+    }
     uStack_1 = 0xffffffff;
     if (IStack_8.m_value == 0x7fffffff) {
       *unaff_FS_OFFSET = uStack_3;

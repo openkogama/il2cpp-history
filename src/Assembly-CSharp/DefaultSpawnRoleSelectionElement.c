@@ -64,12 +64,14 @@ void Assembly-CSharp.dll::DefaultSpawnRoleSelectionElement::
                UnityAction_1_System_Int32_ *onActivatedCallback,MethodInfo *method)
 
 {
+  ppUVar1 = &(this->fields).onSelectedCallback;
   (this->fields).spawnRoleIndex = spawnRoleIndex;
   (this->fields).woId = woId;
-  (this->fields).onSelectedCallback = onSelectedCallback;
-  func_?(&(this->fields).onSelectedCallback,onSelectedCallback);
-  (this->fields).onActivatedCallback = onActivatedCallback;
-  func_?(&(this->fields).onActivatedCallback,onActivatedCallback);
+  *ppUVar1 = onSelectedCallback;
+  func_?(ppUVar1,onSelectedCallback);
+  ppUVar1 = &(this->fields).onActivatedCallback;
+  *ppUVar1 = onActivatedCallback;
+  func_?(ppUVar1,onActivatedCallback);
   return;
 }
 
@@ -274,19 +276,21 @@ void Assembly-CSharp.dll::DefaultSpawnRoleSelectionElement::
     func_?(&StringLiteral_SpawnRole);
     cRam_? = '\x01';
   }
-  (this->fields).spawnRolePreviewObject = spawnRoleObject;
-  func_?(&(this->fields).spawnRolePreviewObject,spawnRoleObject);
-  pSVar1 = (this->fields).spawnRolePreviewerPrefab;
+  ppGVar1 = &(this->fields).spawnRolePreviewObject;
+  *ppGVar1 = spawnRoleObject;
+  func_?(ppGVar1,spawnRoleObject);
+  pSVar2 = (this->fields).spawnRolePreviewerPrefab;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  pSVar1 = (SpawnRolePreviewer *)
+  pSVar2 = (SpawnRolePreviewer *)
            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                     ((Object *)pSVar1,
+                     ((Object *)pSVar2,
                       SpawnRolePreviewer_MethodInfo__UnityEngine__Object__Instantiate<SpawnRolePreviewer>_SpawnRolePreviewer_
                      );
-  (this->fields).spawnRolePreviewer = pSVar1;
-  func_?(&(this->fields).spawnRolePreviewer,pSVar1);
+  ppSVar3 = &(this->fields).spawnRolePreviewer;
+  *ppSVar3 = pSVar2;
+  func_?(ppSVar3,pSVar2);
   this_01 = (GameObject *)
             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                       ((Object *)spawnRoleObject,
@@ -302,75 +306,77 @@ void Assembly-CSharp.dll::DefaultSpawnRoleSelectionElement::
     cRam_? = '\x01';
   }
   if (this_01 != (GameObject *)0x0) {
-    pOVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentsInChildren
+    pOVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentsInChildren
                        (this_01,
                         UnityEngine__Renderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::Renderer>______
                        );
-    uVar3 = 0;
-    if (pOVar2 != (Object__Array *)0x0) {
-      ppOVar4 = pOVar2->vector;
-      for (; (int)uVar3 < (int)pOVar2->max_length; uVar3 = uVar3 + 1) {
-        if (pOVar2->max_length <= uVar3) goto code_?;
-        if ((Renderer *)*ppOVar4 == (Renderer *)0x0) goto code_?;
+    uVar5 = 0;
+    if (pOVar4 != (Object__Array *)0x0) {
+      ppOVar6 = pOVar4->vector;
+      for (; (int)uVar5 < (int)pOVar4->max_length; uVar5 = uVar5 + 1) {
+        if (pOVar4->max_length <= uVar5) goto code_?;
+        if ((Renderer *)*ppOVar6 == (Renderer *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
-                  ((Renderer *)*ppOVar4,1,(MethodInfo *)0x0);
-        ppOVar4 = ppOVar4 + 1;
+                  ((Renderer *)*ppOVar6,1,(MethodInfo *)0x0);
+        ppOVar6 = ppOVar6 + 1;
       }
-      pOVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+      pOVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                GameObject_GetComponentsInChildren
                          (this_01,
                           PickupItem__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<PickupItem>______
                          );
-      uVar3 = 0;
-      if (pOVar2 != (Object__Array *)0x0) {
-        ppOVar4 = pOVar2->vector;
-        for (; (int)uVar3 < (int)pOVar2->max_length; uVar3 = uVar3 + 1) {
-          if (pOVar2->max_length <= uVar3) goto code_?;
-          if ((Component *)*ppOVar4 == (Component *)0x0) goto code_?;
-          pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                             ((Component *)*ppOVar4,(MethodInfo *)0x0);
-          if (pGVar5 == (GameObject *)0x0) goto code_?;
+      uVar5 = 0;
+      if (pOVar4 != (Object__Array *)0x0) {
+        ppOVar6 = pOVar4->vector;
+        while( true ) {
+          if ((int)pOVar4->max_length <= (int)uVar5) break;
+          if (pOVar4->max_length <= uVar5) goto code_?;
+          if ((Component *)*ppOVar6 == (Component *)0x0) goto code_?;
+          pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                             ((Component *)*ppOVar6,(MethodInfo *)0x0);
+          if (pGVar7 == (GameObject *)0x0) goto code_?;
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar5,0,(MethodInfo *)0x0);
-          ppOVar4 = ppOVar4 + 1;
+                    (pGVar7,0,(MethodInfo *)0x0);
+          uVar5 = uVar5 + 1;
+          ppOVar6 = ppOVar6 + 1;
         }
-        pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+        pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                            (this_01,(MethodInfo *)0x0);
         if (cRam_? == '\0') {
           func_?(&TypeInfo__UnityEngine__Quaternion);
           cRam_? = '\x01';
         }
-        if (pTVar6 != (Transform *)0x0) {
+        if (pTVar8 != (Transform *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
-                    (pTVar6,TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,
+                    (pTVar8,TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,
                      (MethodInfo *)0x0);
-          pGVar7 = TypeInfo__UnityEngine__GameObject;
-          pGVar5 = (GameObject *)func_?();
+          pGVar9 = TypeInfo__UnityEngine__GameObject;
+          pGVar7 = (GameObject *)func_?();
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor
-                    (pGVar5,StringLiteral_Preview_Root___TierShopItem,(MethodInfo *)0x0);
-          if (pGVar5 != (GameObject *)0x0) {
-            pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                               (pGVar5,(MethodInfo *)0x0);
-            pSVar1 = (this->fields).spawnRolePreviewer;
-            if (pSVar1 != (SpawnRolePreviewer *)0x0) {
+                    (pGVar7,StringLiteral_Preview_Root___TierShopItem,(MethodInfo *)0x0);
+          if (pGVar7 != (GameObject *)0x0) {
+            pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                               (pGVar7,(MethodInfo *)0x0);
+            spawnRoleId = (this->fields).spawnRoleIndex;
+            pSVar2 = (this->fields).spawnRolePreviewer;
+            if (pSVar2 != (SpawnRolePreviewer *)0x0) {
               cameraOffset.y = 1.5;
-              cameraOffset.x = (float)pGVar7;
+              cameraOffset.x = (float)pGVar9;
               cameraOffset.z = -6.0;
-              previewPosition.z =
-                   (float)(this->fields).spawnRoleIndex * _UNK_? + _UNK_?;
+              previewPosition.z = (float)spawnRoleId * _UNK_? + _UNK_?;
               previewPosition.x = 500.0;
               previewPosition.y = 100.0;
               SpawnRolePreviewer::SpawnRolePreviewer_Initialize
-                        (pSVar1,(this->fields).previewWidth,(this->fields).previewHeight,
+                        (pSVar2,(this->fields).previewWidth,(this->fields).previewHeight,
                          CameraClearFlags__Enum_Color,
                          LayerFlags__Enum_CamRotateTarget|LayerFlags__Enum_Default,cameraOffset,
-                         pTVar6,previewPosition,StringLiteral_SpawnRole,
-                         (this->fields).spawnRoleIndex,this_01,(MethodInfo *)0x0);
-              pSVar1 = (this->fields).spawnRolePreviewer;
-              if ((pSVar1 != (SpawnRolePreviewer *)0x0) &&
+                         pTVar8,previewPosition,StringLiteral_SpawnRole,spawnRoleId,this_01,
+                         (MethodInfo *)0x0);
+              pSVar2 = (this->fields).spawnRolePreviewer;
+              if ((pSVar2 != (SpawnRolePreviewer *)0x0) &&
                  (this_00 = (this->fields).spawnRoleImage, this_00 != (RawImage *)0x0)) {
                 UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
-                          (this_00,(Texture *)(pSVar1->fields).previewTexture,(MethodInfo *)0x0);
+                          (this_00,(Texture *)(pSVar2->fields).previewTexture,(MethodInfo *)0x0);
                 return;
               }
             }
@@ -383,8 +389,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

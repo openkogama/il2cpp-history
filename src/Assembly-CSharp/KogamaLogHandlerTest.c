@@ -9,14 +9,15 @@ void Assembly-CSharp.dll::KogamaLogHandlerTest::KogamaLogHandlerTest_KogamaLogHa
   if (e != (ProxyLogHandler_LogFormatData *)0x0) {
     pSVar1 = mscorlib.dll::System::String::String_Format_3
                        ((e->fields).format,(e->fields).args,(MethodInfo *)0x0);
-    (this->fields).s = pSVar1;
-    func_?(&(this->fields).s,pSVar1);
+    ppSVar2 = &(this->fields).s;
+    *ppSVar2 = pSVar1;
+    func_?(ppSVar2,pSVar1);
     (this->fields).logType = (e->fields).LogType;
     return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -39,9 +40,10 @@ void Assembly-CSharp.dll::KogamaLogHandlerTest::KogamaLogHandlerTest_Start
   }
   pPVar1 = (ProxyLogHandler *)func_?(TypeInfo__ProxyLogHandler);
   ProxyLogHandler::ProxyLogHandler__ctor(pPVar1,(MethodInfo *)0x0);
-  (this->fields).kogamaLogHandler = pPVar1;
-  func_?(&(this->fields).kogamaLogHandler,pPVar1);
-  pPVar1 = (this->fields).kogamaLogHandler;
+  ppPVar2 = &(this->fields).kogamaLogHandler;
+  *ppPVar2 = pPVar1;
+  func_?(ppPVar2,pPVar1);
+  pPVar1 = *ppPVar2;
   this_00 = (EventHandler_1_Object_ *)
             func_?(TypeInfo__System__EventHandler<ProxyLogHandler::LogFormatData>);
   mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
@@ -59,8 +61,8 @@ void Assembly-CSharp.dll::KogamaLogHandlerTest::KogamaLogHandlerTest_Start
     return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

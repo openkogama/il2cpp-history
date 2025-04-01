@@ -138,13 +138,15 @@ bool Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscure
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
     cRam_? = '\x01';
   }
-  bVar1 = this->hiddenValue;
-  bVar2 = obj.currentCryptoKey;
-  bVar3 = obj.hiddenValue;
-  if (this->currentCryptoKey == bVar2) {
-    return bVar1 == bVar3;
+  bVar1 = this->currentCryptoKey;
+  bVar2 = this->hiddenValue;
+  uVar3._0_1_ = this->currentCryptoKey;
+  uVar3._1_1_ = this->hiddenValue;
+  bVar4 = obj.currentCryptoKey;
+  bVar5 = obj.hiddenValue;
+  if (bVar1 == bVar4) {
+    return bVar2 == bVar5;
   }
-  bVar4 = this->currentCryptoKey;
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte->_1).cctor_finished_or_no_cctor
       == 0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
@@ -153,27 +155,28 @@ bool Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscure
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
     cRam_? = '\x01';
   }
-  if (bVar4 == 0) {
+  if (bVar1 == 0) {
     if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte->_1).
         cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
     }
-    bVar4 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte->static_fields->cryptoKey;
+    uVar3 = CONCAT11(bVar2,TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte->
+                           static_fields->cryptoKey);
   }
-  bVar1 = bVar1 ^ bVar4;
+  bVar1 = (byte)((ushort)uVar3 >> 8) ^ (byte)uVar3;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
     cRam_? = '\x01';
   }
-  if (bVar2 != 0) {
-    return bVar1 == (bVar2 ^ bVar3);
+  if (bVar4 != 0) {
+    return bVar1 == (bVar4 ^ bVar5);
   }
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte->_1).cctor_finished_or_no_cctor
       == 0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte);
   }
   return bVar1 == (byte)(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredSByte->static_fields
-                         ->cryptoKey ^ bVar3);
+                         ->cryptoKey ^ bVar5);
 }
 
 

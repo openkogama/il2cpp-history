@@ -259,38 +259,35 @@ bool Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscure
       cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredVector3);
   }
-  pVVar1 = ObscuredVector3_InternalDecrypt(&VStack_2,this,(MethodInfo *)0x0);
-  uStack_3._0_4_ = pVVar1->x;
-  uStack_3._4_4_ = pVVar1->y;
-  fStack_4 = pVVar1->z;
+  pVVar1 = ObscuredVector3_InternalDecrypt((Vector3 *)&pOStack_2,this,(MethodInfo *)0x0);
+  uVar3 = pVVar1->x;
+  uVar4 = pVVar1->y;
+  fVar5 = pVVar1->z;
   if (cRam_? == '\0') {
-    VStack_2.z = (float)&TypeInfo__UnityEngine__Vector3;
-    VStack_2.y = (float)&UNK_?;
     func_?();
     cRam_? = '\x01';
   }
   if (other != (Object *)0x0) {
-    pOVar5 = (Object *)0x0;
+    pOVar6 = (Object *)0x0;
     if ((Vector3__Class *)other->klass == TypeInfo__UnityEngine__Vector3) {
-      pOVar5 = other;
+      pOVar6 = other;
     }
-    if (pOVar5 != (Object *)0x0) {
-      if ((other->klass->_0).element_class != (TypeInfo__UnityEngine__Vector3->_0).element_class) {
-        VStack_2.z = (float)TypeInfo__UnityEngine__Vector3;
-        VStack_2.y = (float)other;
-        VStack_2.x = (float)&UNK_?;
+    if (pOVar6 != (Object *)0x0) {
+      if ((((Vector3__Class *)other->klass)->_0).element_class !=
+          (TypeInfo__UnityEngine__Vector3->_0).element_class) {
+        pVStack_7 = TypeInfo__UnityEngine__Vector3;
+        pOStack_2 = other;
         func_?();
-        pcVar6 = (code *)swi(3);
-        bVar7 = (*pcVar6)();
-        return bVar7;
+        pcVar8 = (code *)swi(3);
+        bVar9 = (*pcVar8)();
+        return bVar9;
       }
-      VStack_2.z = (float)other;
-      VStack_2.y = (float)&UNK_?;
-      puVar8 = (undefined8 *)func_?();
-      VStack_2.x = (float)*puVar8;
-      if ((((float)uStack_3 == VStack_2.x) &&
-          (VStack_2.y = (float)((ulonglong)*puVar8 >> 0x20), uStack_3._4_4_ == VStack_2.y)) &&
-         (fStack_4 == *(float *)(puVar8 + 1))) {
+      pVStack_7 = (Vector3__Class *)other;
+      puVar10 = (undefined8 *)func_?();
+      pOStack_2 = (Object *)*puVar10;
+      if ((((float)uVar3 == (float)pOStack_2) &&
+          (pVStack_7 = (Vector3__Class *)((ulonglong)*puVar10 >> 0x20),
+          (float)uVar4 == (float)pVStack_7)) && (fVar5 == *(float *)(puVar10 + 1))) {
         return 1;
       }
     }
@@ -361,20 +358,18 @@ int32_t Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obsc
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredVector3);
     cRam_? = '\x01';
   }
-  uStack_1 = 0;
-  SStack_2.m_value = 0.0;
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredVector3->_1).
       cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredVector3);
   }
-  pVVar3 = ObscuredVector3_InternalDecrypt(&VStack_4,this,(MethodInfo *)0x0);
-  uStack_1._0_4_ = pVVar3->x;
-  uStack_1._4_4_ = pVVar3->y;
-  SStack_2.m_value = pVVar3->z;
-  uVar5 = mscorlib.dll::System::Single::Single_GetHashCode((Single *)&uStack_1,(MethodInfo *)0x0);
+  pVVar1 = ObscuredVector3_InternalDecrypt(&VStack_2,this,(MethodInfo *)0x0);
+  uStack_3._0_4_ = pVVar1->x;
+  uStack_3._4_4_ = pVVar1->y;
+  SStack_4.m_value = pVVar1->z;
+  uVar5 = mscorlib.dll::System::Single::Single_GetHashCode((Single *)&uStack_3,(MethodInfo *)0x0);
   iVar6 = mscorlib.dll::System::Single::Single_GetHashCode
-                    ((Single *)((int)&uStack_1 + 4),(MethodInfo *)0x0);
-  iVar7 = mscorlib.dll::System::Single::Single_GetHashCode(&SStack_2,(MethodInfo *)0x0);
+                    ((Single *)((int)&uStack_3 + 4),(MethodInfo *)0x0);
+  iVar7 = mscorlib.dll::System::Single::Single_GetHashCode(&SStack_4,(MethodInfo *)0x0);
   return iVar7 >> 2 ^ iVar6 * 4 ^ uVar5;
 }
 
@@ -505,15 +500,15 @@ float Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscur
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredVector3);
   }
   uVar1 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredVector3->static_fields->cryptoKey;
-  if (this->currentCryptoKey !=
-      TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredVector3->static_fields->cryptoKey) {
-    uVar1 = this->currentCryptoKey;
+  uVar2 = this->currentCryptoKey;
+  if (this->currentCryptoKey == uVar1) {
+    uVar2 = uVar1;
   }
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_finished_or_no_cctor
       == 0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
   }
-  return (float)(uVar1 ^ encrypted);
+  return (float)(uVar2 ^ encrypted);
 }
 
 
@@ -652,17 +647,15 @@ String * Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obs
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredVector3);
     cRam_? = '\x01';
   }
-  uStack_1 = 0;
-  fStack_2 = 0.0;
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredVector3->_1).
       cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredVector3);
   }
-  pVVar3 = ObscuredVector3_InternalDecrypt(&VStack_4,this,(MethodInfo *)0x0);
-  uStack_1._0_4_ = pVVar3->x;
-  uStack_1._4_4_ = pVVar3->y;
-  fStack_2 = pVVar3->z;
-  pSVar5 = (String *)func_?(&uStack_1,0,0,0);
+  pVVar1 = ObscuredVector3_InternalDecrypt(&VStack_2,this,(MethodInfo *)0x0);
+  uStack_3._0_4_ = pVVar1->x;
+  uStack_3._4_4_ = pVVar1->y;
+  fStack_4 = pVVar1->z;
+  pSVar5 = (String *)func_?(&uStack_3,0,0,0);
   return pSVar5;
 }
 
@@ -677,17 +670,15 @@ String * Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obs
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredVector3);
     cRam_? = '\x01';
   }
-  uStack_1 = 0;
-  fStack_2 = 0.0;
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredVector3->_1).
       cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredVector3);
   }
-  pVVar3 = ObscuredVector3_InternalDecrypt(&VStack_4,this,(MethodInfo *)0x0);
-  uStack_1._0_4_ = pVVar3->x;
-  uStack_1._4_4_ = pVVar3->y;
-  fStack_2 = pVVar3->z;
-  pSVar5 = (String *)func_?(&uStack_1,format,0,0);
+  pVVar1 = ObscuredVector3_InternalDecrypt(&VStack_2,this,(MethodInfo *)0x0);
+  uStack_3._0_4_ = pVVar1->x;
+  uStack_3._4_4_ = pVVar1->y;
+  fStack_4 = pVVar1->z;
+  pSVar5 = (String *)func_?(&uStack_3,format,0,0);
   return pSVar5;
 }
 

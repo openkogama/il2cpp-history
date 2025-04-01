@@ -50,10 +50,12 @@ void Assembly-CSharp.dll::RTG::EditorToolbarTab::EditorToolbarTab__ctor
     func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  (this->fields)._tooltip = ::StringLiteral__;
-  func_?(&this->fields,::StringLiteral__);
-  (this->fields)._text = ::StringLiteral__;
-  func_?(&(this->fields)._text,::StringLiteral__);
+  pEVar1 = &this->fields;
+  pEVar1->_tooltip = ::StringLiteral__;
+  func_?(pEVar1,::StringLiteral__);
+  ppSVar2 = &(this->fields)._text;
+  *ppSVar2 = ::StringLiteral__;
+  func_?(ppSVar2,::StringLiteral__);
   this_00 = (List_1_RTG_Settings_ *)
             func_?(TypeInfo__System__Collections__Generic__List<RTG::Settings>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
@@ -62,17 +64,18 @@ void Assembly-CSharp.dll::RTG::EditorToolbarTab::EditorToolbarTab__ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<RTG::Settings>__List__);
   method_00 = (MethodInfo *)&(this->fields)._targetSettings;
-  (this->fields)._targetSettings = this_00;
+  *(List_1_RTG_Settings_ **)method_00 = this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   if (text != (String *)0x0) {
-    (this->fields)._text = text;
-    func_?(&(this->fields)._text);
+    ppSVar2 = &(this->fields)._text;
+    *ppSVar2 = text;
+    func_?(ppSVar2,text);
   }
   if (tooltip != (String *)0x0) {
-    (this->fields)._tooltip = tooltip;
-    func_?(&this->fields);
+    pEVar1->_tooltip = tooltip;
+    func_?(pEVar1,tooltip);
   }
   return;
 }
@@ -109,8 +112,9 @@ void Assembly-CSharp.dll::RTG::EditorToolbarTab::EditorToolbarTab_set_TargetTool
 
 {
   if (value != (EditorToolbar *)0x0) {
-    (this->fields)._targetToolbar = value;
-    func_?(&(this->fields)._targetToolbar,value);
+    ppEVar1 = &(this->fields)._targetToolbar;
+    *ppEVar1 = value;
+    func_?(ppEVar1,value);
   }
   return;
 }

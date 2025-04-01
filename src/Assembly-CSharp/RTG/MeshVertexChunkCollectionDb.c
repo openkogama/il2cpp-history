@@ -28,7 +28,8 @@ bool Assembly-CSharp.dll::RTG::MeshVertexChunkCollectionDb::
             (this_02,0x32,
              MethodInfo__System__Collections__Generic__List<RTG::MeshVertexChunk>__List_int_);
   method_00 = (MethodInfo *)&(this_01->fields)._vertexChunks;
-  (this_01->fields)._vertexChunks = (List_1_RTG_MeshVertexChunk_ *)this_02;
+  *(List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ **)
+   method_00 = this_02;
   func_?(method_00,this_02);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this_01,ExceptionArgument__Enum_obj,method_00);
@@ -217,10 +218,11 @@ Assembly-CSharp.dll::RTG::MeshVertexChunkCollectionDb::MeshVertexChunkCollection
       List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
                 (this_01,0x32,
                  MethodInfo__System__Collections__Generic__List<RTG::MeshVertexChunk>__List_int_);
-      (pMVar3->fields)._vertexChunks = (List_1_RTG_MeshVertexChunk_ *)this_01;
-      func_?(&(pMVar3->fields)._vertexChunks,this_01);
+      ppLVar4 = &(pMVar3->fields)._vertexChunks;
+      *ppLVar4 = (List_1_RTG_MeshVertexChunk_ *)this_01;
+      func_?(ppLVar4,this_01);
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                ((Object *)pMVar3,ExceptionArgument__Enum_obj,in_stack_4);
+                ((Object *)pMVar3,ExceptionArgument__Enum_obj,in_stack_5);
       bVar2 = MeshVertexChunkCollection::MeshVertexChunkCollection_FromMesh
                         (pMVar3,mesh,(MethodInfo *)0x0);
       if (bVar2 == 0) {
@@ -239,19 +241,19 @@ Assembly-CSharp.dll::RTG::MeshVertexChunkCollectionDb::MeshVertexChunkCollection
     pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
              (this->fields)._meshToVChunkCollection;
     if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-      TVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+      TVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
               UIElements::TextureId]::
               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                         (pDVar1,(Object *)mesh,
                          MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::MeshVertexChunkCollection>__get_Item_UnityEngine__Mesh_
                         );
-      return (MeshVertexChunkCollection *)TVar5.m_Index;
+      return (MeshVertexChunkCollection *)TVar6.m_Index;
     }
   }
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  pMVar3 = (MeshVertexChunkCollection *)(*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  pMVar3 = (MeshVertexChunkCollection *)(*pcVar7)();
   return pMVar3;
 }
 

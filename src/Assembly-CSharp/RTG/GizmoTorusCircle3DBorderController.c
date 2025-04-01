@@ -8,31 +8,24 @@ float Assembly-CSharp.dll::RTG::GizmoTorusCircle3DBorderController::
 {
   puStack_1 = &stack0xfffffffc;
   pGVar2 = (this->fields)._._data;
-  if (((pGVar2 != (GizmoCircle3DBorderControllerData *)0x0) &&
-      (pGVar3 = (pGVar2->fields).Border, pGVar3 != (GizmoCircle3DBorder *)0x0)) &&
-     (pGVar4 = (pGVar3->fields)._planeSlider, pGVar4 != (GizmoPlaneSlider3D *)0x0)) {
-    if ((pGVar4->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-      pGVar5 = (pGVar4->fields)._lookAndFeel;
-      if (pGVar5 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-      fVar6 = (pGVar5->fields)._borderTorusThickness;
-      pGVar5 = (((pGVar3->fields)._planeSlider)->fields)._lookAndFeel;
-    }
-    else {
-      fVar6 = (((pGVar4->fields)._sharedLookAndFeel)->fields)._borderTorusThickness;
-      pGVar5 = (((pGVar3->fields)._planeSlider)->fields)._sharedLookAndFeel;
-    }
-    pCVar7 = (((this->fields)._._data)->fields).TargetCircle;
-    if (pCVar7 != (CircleShape3D *)0x0) {
-      return (pCVar7->fields)._radius - fVar6 * zoomFactor * (pGVar5->fields)._scale * _UNK_?
-      ;
+  if ((((pGVar2 != (GizmoCircle3DBorderControllerData *)0x0) &&
+       (pGVar3 = (pGVar2->fields).Border, pGVar3 != (GizmoCircle3DBorder *)0x0)) &&
+      (pGVar4 = (pGVar3->fields)._planeSlider, pGVar4 != (GizmoPlaneSlider3D *)0x0)) &&
+     ((pGVar5 = (pGVar4->fields)._sharedLookAndFeel, pGVar5 != (GizmoPlaneSlider3DLookAndFeel *)0x0
+      || (pGVar5 = (pGVar4->fields)._lookAndFeel, pGVar5 != (GizmoPlaneSlider3DLookAndFeel *)0x0))))
+  {
+    pCVar6 = (pGVar2->fields).TargetCircle;
+    if (pCVar6 != (CircleShape3D *)0x0) {
+      return (pCVar6->fields)._radius -
+             (pGVar5->fields)._borderTorusThickness * zoomFactor * (pGVar5->fields)._scale *
+             _UNK_?;
     }
   }
-code_?:
-  uVar8 = func_?(auStack_9);
-  func_?(uVar8);
-  pcVar10 = (code *)swi(3);
-  fVar11 = (float10)(*pcVar10)();
-  return (float)fVar11;
+  uVar7 = func_?(auStack_8);
+  func_?(uVar7);
+  pcVar9 = (code *)swi(3);
+  fVar10 = (float10)(*pcVar9)();
+  return (float)fVar10;
 }
 
 
@@ -45,24 +38,17 @@ void Assembly-CSharp.dll::RTG::GizmoTorusCircle3DBorderController::
 {
   pGVar1 = (this->fields)._._data;
   if (pGVar1 != (GizmoCircle3DBorderControllerData *)0x0) {
+    pGVar2 = (pGVar1->fields).PlaneSlider;
     this_00 = (pGVar1->fields).BorderTorus;
-    pGVar2 = (((this->fields)._._data)->fields).PlaneSlider;
-    if (pGVar2 != (GizmoPlaneSlider3D *)0x0) {
-      if ((pGVar2->fields)._sharedSettings == (GizmoPlaneSlider3DSettings *)0x0) {
-        pGVar3 = (pGVar2->fields)._settings;
-        if (pGVar3 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
-      }
-      else {
-        pGVar3 = (pGVar2->fields)._sharedSettings;
-      }
-      if (this_00 != (TorusShape3D *)0x0) {
-        TorusShape3D::TorusShape3D_set_TubeRadiusEps
-                  (this_00,zoomFactor * (pGVar3->fields)._borderTorusHoverEps,(MethodInfo *)0x0);
-        return;
-      }
+    if ((pGVar2 != (GizmoPlaneSlider3D *)0x0) &&
+       (((pGVar3 = (pGVar2->fields)._sharedSettings, pGVar3 != (GizmoPlaneSlider3DSettings *)0x0 ||
+         (pGVar3 = (pGVar2->fields)._settings, pGVar3 != (GizmoPlaneSlider3DSettings *)0x0)) &&
+        (this_00 != (TorusShape3D *)0x0)))) {
+      TorusShape3D::TorusShape3D_set_TubeRadiusEps
+                (this_00,zoomFactor * (pGVar3->fields)._borderTorusHoverEps,(MethodInfo *)0x0);
+      return;
     }
   }
-code_?:
   uVar4 = func_?(&stack0xfffffff0);
   func_?(uVar4);
   pcVar5 = (code *)swi(3);
@@ -115,87 +101,71 @@ void Assembly-CSharp.dll::RTG::GizmoTorusCircle3DBorderController::
 {
   pGVar1 = (this->fields)._._data;
   if (pGVar1 != (GizmoCircle3DBorderControllerData *)0x0) {
-    pGVar2 = (this->fields)._._data;
     this_00 = (pGVar1->fields).BorderTorus;
-    pGVar3 = (pGVar2->fields).Border;
-    pCVar4 = (pGVar2->fields).TargetCircle;
-    if ((pGVar3 != (GizmoCircle3DBorder *)0x0) &&
-       (pGVar5 = (pGVar3->fields)._planeSlider, pGVar5 != (GizmoPlaneSlider3D *)0x0)) {
-      if ((pGVar5->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-        pGVar6 = (pGVar5->fields)._lookAndFeel;
-        if (pGVar6 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-        fVar7 = (pGVar6->fields)._borderTorusThickness;
-        pGVar6 = (((pGVar3->fields)._planeSlider)->fields)._lookAndFeel;
-      }
-      else {
-        fVar7 = (((pGVar5->fields)._sharedLookAndFeel)->fields)._borderTorusThickness;
-        pGVar6 = (((pGVar3->fields)._planeSlider)->fields)._sharedLookAndFeel;
-      }
-      fVar8 = (pGVar6->fields)._scale;
-      if (pCVar4 != (CircleShape3D *)0x0) {
-        fVar9 = (pCVar4->fields)._rotation.x;
-        fVar10 = (pCVar4->fields)._rotation.y;
-        fVar11 = (pCVar4->fields)._rotation.z;
-        fVar12 = (pCVar4->fields)._rotation.w;
-        euler.y = 0.0;
-        euler.z = 0.0;
-        euler.x = (float)_UNK_?;
-        pQVar13 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
-                  Quaternion_Internal_FromEulerRad
-                            ((Quaternion *)&stack0xffffffa0,euler,(MethodInfo *)0x0);
-        fVar14 = pQVar13->x;
-        fVar15 = pQVar13->y;
-        fVar16 = pQVar13->z;
-        fVar17 = pQVar13->w;
-        fVar18 = pQVar13->x;
-        fVar19 = pQVar13->x;
-        if (this_00 != (TorusShape3D *)0x0) {
-          (this_00->fields)._rotation.x =
-               (fVar17 * fVar9 + fVar14 * fVar12 + fVar16 * fVar10) - fVar15 * fVar11;
-          (this_00->fields)._rotation.y =
-               (fVar10 * fVar17 + fVar15 * fVar12 + fVar11 * fVar14) - fVar16 * fVar9;
-          (this_00->fields)._rotation.z =
-               (fVar11 * fVar17 + fVar16 * fVar12 + fVar15 * fVar9) - fVar10 * fVar18;
-          (this_00->fields)._rotation.w =
-               ((fVar17 * fVar12 - fVar9 * fVar19) - fVar15 * fVar10) - fVar11 * fVar16;
-          fVar19 = (pCVar4->fields)._center.y;
-          fVar18 = (pCVar4->fields)._center.z;
-          (this_00->fields)._center.x = (pCVar4->fields)._center.x;
-          (this_00->fields)._center.y = fVar19;
-          (this_00->fields)._center.z = fVar18;
-          pGVar1 = (this->fields)._._data;
-          if (((pGVar1 != (GizmoCircle3DBorderControllerData *)0x0) &&
-              (pGVar3 = (pGVar1->fields).Border, pGVar3 != (GizmoCircle3DBorder *)0x0)) &&
-             (pGVar5 = (pGVar3->fields)._planeSlider, pGVar5 != (GizmoPlaneSlider3D *)0x0)) {
-            if ((pGVar5->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-              pGVar6 = (pGVar5->fields)._lookAndFeel;
-              if (pGVar6 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-              fVar18 = (pGVar6->fields)._borderTorusThickness;
-              pGVar6 = (((pGVar3->fields)._planeSlider)->fields)._lookAndFeel;
-            }
-            else {
-              fVar18 = (((pGVar5->fields)._sharedLookAndFeel)->fields)._borderTorusThickness;
-              pGVar6 = (((pGVar3->fields)._planeSlider)->fields)._sharedLookAndFeel;
-            }
-            pCVar4 = (((this->fields)._._data)->fields).TargetCircle;
-            if (pCVar4 != (CircleShape3D *)0x0) {
-              TorusShape3D::TorusShape3D_set_CoreRadius
-                        (this_00,(pCVar4->fields)._radius -
-                                 fVar18 * zoomFactor * (pGVar6->fields)._scale * _UNK_?,
-                         (MethodInfo *)0x0);
-              TorusShape3D::TorusShape3D_set_TubeRadius
-                        (this_00,fVar7 * zoomFactor * fVar8 * _UNK_?,(MethodInfo *)0x0);
-              return;
-            }
+    pCVar2 = (pGVar1->fields).TargetCircle;
+    pGVar3 = (pGVar1->fields).Border;
+    if ((((pGVar3 != (GizmoCircle3DBorder *)0x0) &&
+         (pGVar4 = (pGVar3->fields)._planeSlider, pGVar4 != (GizmoPlaneSlider3D *)0x0)) &&
+        ((pGVar5 = (pGVar4->fields)._sharedLookAndFeel,
+         pGVar5 != (GizmoPlaneSlider3DLookAndFeel *)0x0 ||
+         (pGVar5 = (pGVar4->fields)._lookAndFeel, pGVar5 != (GizmoPlaneSlider3DLookAndFeel *)0x0))
+        )) && (fVar6 = (pGVar5->fields)._borderTorusThickness, fVar7 = (pGVar5->fields)._scale,
+              pCVar2 != (CircleShape3D *)0x0)) {
+      fVar8 = (pCVar2->fields)._rotation.x;
+      fVar9 = (pCVar2->fields)._rotation.y;
+      fVar10 = (pCVar2->fields)._rotation.z;
+      fVar11 = (pCVar2->fields)._rotation.w;
+      euler.y = 0.0;
+      euler.z = 0.0;
+      euler.x = (float)_UNK_?;
+      pQVar12 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
+                Quaternion_Internal_FromEulerRad
+                          ((Quaternion *)&stack0xffffffa0,euler,(MethodInfo *)0x0);
+      fVar13 = pQVar12->x;
+      fVar14 = pQVar12->y;
+      fVar15 = pQVar12->z;
+      fVar16 = pQVar12->w;
+      fVar17 = pQVar12->x;
+      fVar18 = pQVar12->x;
+      if (this_00 != (TorusShape3D *)0x0) {
+        (this_00->fields)._rotation.x =
+             (fVar16 * fVar8 + fVar13 * fVar11 + fVar15 * fVar9) - fVar14 * fVar10;
+        (this_00->fields)._rotation.y =
+             (fVar16 * fVar9 + fVar14 * fVar11 + fVar13 * fVar10) - fVar15 * fVar8;
+        (this_00->fields)._rotation.z =
+             (fVar16 * fVar10 + fVar15 * fVar11 + fVar14 * fVar8) - fVar17 * fVar9;
+        (this_00->fields)._rotation.w =
+             ((fVar16 * fVar11 - fVar18 * fVar8) - fVar14 * fVar9) - fVar15 * fVar10;
+        fVar17 = (pCVar2->fields)._center.z;
+        fVar13 = (pCVar2->fields)._center.y;
+        (this_00->fields)._center.x = (pCVar2->fields)._center.x;
+        (this_00->fields)._center.y = fVar13;
+        (this_00->fields)._center.z = fVar17;
+        pGVar1 = (this->fields)._._data;
+        if ((((pGVar1 != (GizmoCircle3DBorderControllerData *)0x0) &&
+             (pGVar3 = (pGVar1->fields).Border, pGVar3 != (GizmoCircle3DBorder *)0x0)) &&
+            (pGVar4 = (pGVar3->fields)._planeSlider, pGVar4 != (GizmoPlaneSlider3D *)0x0)) &&
+           ((pGVar5 = (pGVar4->fields)._sharedLookAndFeel,
+            pGVar5 != (GizmoPlaneSlider3DLookAndFeel *)0x0 ||
+            (pGVar5 = (pGVar4->fields)._lookAndFeel,
+            pGVar5 != (GizmoPlaneSlider3DLookAndFeel *)0x0)))) {
+          pCVar2 = (pGVar1->fields).TargetCircle;
+          if (pCVar2 != (CircleShape3D *)0x0) {
+            TorusShape3D::TorusShape3D_set_CoreRadius
+                      (this_00,(pCVar2->fields)._radius -
+                               (pGVar5->fields)._borderTorusThickness * zoomFactor *
+                               (pGVar5->fields)._scale * _UNK_?,(MethodInfo *)0x0);
+            TorusShape3D::TorusShape3D_set_TubeRadius
+                      (this_00,fVar6 * zoomFactor * fVar7 * _UNK_?,(MethodInfo *)0x0);
+            return;
           }
         }
       }
     }
   }
-code_?:
   func_?();
-  pcVar20 = (code *)swi(3);
-  (*pcVar20)();
+  pcVar19 = (code *)swi(3);
+  (*pcVar19)();
   return;
 }
 

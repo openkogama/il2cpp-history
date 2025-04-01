@@ -11,27 +11,25 @@ void Assembly-CSharp.dll::PreviewObject::PreviewObject_Awake(PreviewObject *this
   width = (this->fields).width;
   height = (this->fields).height;
   depth = (this->fields).depth;
-  pRVar1 = (RenderTexture *)func_?(TypeInfo__UnityEngine__RenderTexture);
+  this_01 = (RenderTexture *)func_?(TypeInfo__UnityEngine__RenderTexture);
   UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture__ctor_10
-            (pRVar1,width,height,depth,(MethodInfo *)0x0);
-  (this->fields).renderTexture = pRVar1;
-  func_?(&(this->fields).renderTexture,pRVar1);
-  pRVar1 = (this->fields).renderTexture;
-  if (pRVar1 != (RenderTexture *)0x0) {
+            (this_01,width,height,depth,(MethodInfo *)0x0);
+  ppRVar1 = &(this->fields).renderTexture;
+  *ppRVar1 = this_01;
+  func_?(ppRVar1,this_01);
+  if (*ppRVar1 != (RenderTexture *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_set_antiAliasing
-              (pRVar1,(this->fields).antiAliasing,(MethodInfo *)0x0);
-    pRVar1 = (this->fields).renderTexture;
-    if (pRVar1 != (RenderTexture *)0x0) {
+              (*ppRVar1,(this->fields).antiAliasing,(MethodInfo *)0x0);
+    if (*ppRVar1 != (RenderTexture *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_filterMode
-                ((Texture *)pRVar1,(this->fields).filterMode,(MethodInfo *)0x0);
-      pRVar1 = (this->fields).renderTexture;
-      if (pRVar1 != (RenderTexture *)0x0) {
+                ((Texture *)*ppRVar1,(this->fields).filterMode,(MethodInfo *)0x0);
+      if (*ppRVar1 != (RenderTexture *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_set_hideFlags
-                  ((Object_1 *)pRVar1,HideFlags__Enum_DontSave,(MethodInfo *)0x0);
+                  ((Object_1 *)*ppRVar1,HideFlags__Enum_DontSave,(MethodInfo *)0x0);
         this_00 = (this->fields).previewCamera;
         if (this_00 != (Camera *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_targetTexture
-                    (this_00,(this->fields).renderTexture,(MethodInfo *)0x0);
+                    (this_00,*ppRVar1,(MethodInfo *)0x0);
           return;
         }
       }

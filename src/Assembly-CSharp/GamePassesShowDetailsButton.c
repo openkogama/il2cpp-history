@@ -210,7 +210,7 @@ void Assembly-CSharp.dll::GamePassesShowDetailsButton::
     pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
     if (pGVar2 != (GameObject *)0x0) {
-      value = 0xc4;
+      value = 0x34;
       bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
                         (pGVar2,(MethodInfo *)0x0);
       if (bVar3 != bVar1) {
@@ -234,7 +234,7 @@ void Assembly-CSharp.dll::GamePassesShowDetailsButton::
           pGVar2 = (this->fields).disabledButton;
           if (pGVar2 == (GameObject *)0x0) goto code_?;
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar2,bVar1 ^ 1,(MethodInfo *)0x0);
+                    (pGVar2,bVar1 == 0,(MethodInfo *)0x0);
         }
         return;
       }
@@ -342,7 +342,7 @@ code_?:
                            (in_stack_6,(MethodInfo *)0x0);
         if (pGVar5 == (GameObject *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar5,0xc4,(MethodInfo *)0x0);
+                  (pGVar5,0x34,(MethodInfo *)0x0);
         if (bVar4 != 0) {
           this_00 = in_stack_6[1].fields._.m_CachedPtr;
           if (this_00 == (GamePassesTextBubble *)0x0) goto code_?;
@@ -357,7 +357,7 @@ code_?:
           if ((GameObject *)in_stack_6[1].monitor == (GameObject *)0x0)
           goto code_?;
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    ((GameObject *)in_stack_6[1].monitor,bVar4 ^ 1,(MethodInfo *)0x0);
+                    ((GameObject *)in_stack_6[1].monitor,bVar4 == 0,(MethodInfo *)0x0);
         }
         return;
       }
@@ -417,7 +417,7 @@ void Assembly-CSharp.dll::GamePassesShowDetailsButton::
     pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
     if (pGVar2 != (GameObject *)0x0) {
-      value = 0xc4;
+      value = 0x34;
       bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
                         (pGVar2,(MethodInfo *)0x0);
       if (bVar3 != bVar1) {
@@ -441,7 +441,7 @@ void Assembly-CSharp.dll::GamePassesShowDetailsButton::
           pGVar2 = (this->fields).disabledButton;
           if (pGVar2 == (GameObject *)0x0) goto code_?;
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar2,bVar1 ^ 1,(MethodInfo *)0x0);
+                    (pGVar2,bVar1 == 0,(MethodInfo *)0x0);
         }
         return;
       }

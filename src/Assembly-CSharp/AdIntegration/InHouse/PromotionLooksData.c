@@ -162,8 +162,9 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::PromotionLooksData::
     LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
               ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar1,
                MethodInfo__System__Collections__Generic__List<int>__List__);
-    (this->fields).portalsIndices = pLVar1;
-    func_?(&(this->fields).portalsIndices,pLVar1);
+    ppLVar2 = &(this->fields).portalsIndices;
+    *ppLVar2 = pLVar1;
+    func_?(ppLVar2,pLVar1);
     pLVar1 = (List_1_System_Int32_ *)
              func_?(TypeInfo__System__Collections__Generic__List<int>);
     mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
@@ -171,45 +172,44 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::PromotionLooksData::
     LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
               ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar1,
                MethodInfo__System__Collections__Generic__List<int>__List__);
-    (this->fields).embeddedIndices = pLVar1;
-    func_?(&(this->fields).embeddedIndices,pLVar1);
+    ppLVar3 = &(this->fields).embeddedIndices;
+    *ppLVar3 = pLVar1;
+    func_?(ppLVar3,pLVar1);
     index_00 = 0;
-    pLVar2 = (this->fields).promotionData;
-    while (pLVar2 != (List_1_AdIntegration_InHouse_PromotionLooksData_LooksData_ *)0x0) {
-      if ((pLVar2->fields)._size <= index_00) {
+    pLVar4 = (this->fields).promotionData;
+    while (pLVar4 != (List_1_AdIntegration_InHouse_PromotionLooksData_LooksData_ *)0x0) {
+      if ((pLVar4->fields)._size <= index_00) {
         (this->fields).initialized = 1;
         goto code_?;
       }
-      pLVar2 = (this->fields).promotionData;
-      if (pLVar2 == (List_1_AdIntegration_InHouse_PromotionLooksData_LooksData_ *)0x0) break;
-      pVVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+      pLVar4 = (this->fields).promotionData;
+      if (pLVar4 == (List_1_AdIntegration_InHouse_PromotionLooksData_LooksData_ *)0x0) break;
+      pVVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
                VisualTreeAsset+AssetEntry]::
                List_1_UnityEngine_UIElements_VisualTreeAsset_AssetEntry__get_Item
-                         (&VStack_4,
-                          (List_1_UnityEngine_UIElements_VisualTreeAsset_AssetEntry_ *)pLVar2,
+                         (&VStack_6,
+                          (List_1_UnityEngine_UIElements_VisualTreeAsset_AssetEntry_ *)pLVar4,
                           index_00,
                           MethodInfo__System__Collections__Generic__List<AdIntegration::InHouse::PromotionLooksData::LooksData>__get_Item_int_
                          );
-      if (*(char *)&pVVar3->asset != '\0') {
-        pLVar1 = (this->fields).portalsIndices;
-        if (pLVar1 == (List_1_System_Int32_ *)0x0) break;
-        pMStack_5 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
-        iStack_6 = index_00;
-        func_?(pLVar1);
+      if (*(char *)&pVVar5->asset != '\0') {
+        if (*ppLVar2 == (List_1_System_Int32_ *)0x0) break;
+        apMStack_7[0] = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+        func_?(*ppLVar2,index_00);
       }
-      pLVar2 = (this->fields).promotionData;
-      if (pLVar2 == (List_1_AdIntegration_InHouse_PromotionLooksData_LooksData_ *)0x0) break;
-      iVar7 = func_?(&iStack_6,pLVar2,index_00,
+      pLVar4 = (this->fields).promotionData;
+      if (pLVar4 == (List_1_AdIntegration_InHouse_PromotionLooksData_LooksData_ *)0x0) break;
+      iVar8 = func_?(apMStack_7,pLVar4,index_00,
                               MethodInfo__System__Collections__Generic__List<AdIntegration::InHouse::PromotionLooksData::LooksData>__get_Item_int_
                              );
-      if (*(char *)(iVar7 + 9) != '\0') {
+      if (*(char *)(iVar8 + 9) != '\0') {
         pLVar1 = (this->fields).embeddedIndices;
         if (pLVar1 == (List_1_System_Int32_ *)0x0) break;
         func_?(pLVar1,index_00,
                         MethodInfo__System__Collections__Generic__List<int>__Add_int_);
       }
       index_00 = index_00 + 1;
-      pLVar2 = (this->fields).promotionData;
+      pLVar4 = (this->fields).promotionData;
     }
   }
   else {
@@ -225,18 +225,18 @@ code_?:
     if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
       index = UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_RandomRangeInt
                         (0,(this_00->fields)._size,(MethodInfo *)0x0);
-      RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+      RVar9 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
               RegexCharClass+SingleRange]::
               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                         (this_00,index,
                          MethodInfo__System__Collections__Generic__List<int>__get_Item_int_);
-      (this->fields).promotionIndex = (int32_t)RVar8;
+      (this->fields).promotionIndex = (int32_t)RVar9;
       return;
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

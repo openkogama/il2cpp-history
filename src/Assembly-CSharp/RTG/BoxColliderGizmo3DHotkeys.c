@@ -26,7 +26,7 @@ void Assembly-CSharp.dll::RTG::BoxColliderGizmo3DHotkeys::BoxColliderGizmo3DHotk
       Hotkeys::Hotkeys_set_Key(pHVar2,KeyCode__Enum_None,(MethodInfo *)0x0);
       method_00 = (MethodInfo *)&(this->fields)._scaleFromCenter;
       (pHVar2->fields)._lShift = 1;
-      (this->fields)._scaleFromCenter = pHVar2;
+      *(Hotkeys **)method_00 = pHVar2;
       func_?(method_00,pHVar2);
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                 ((Object *)this,ExceptionArgument__Enum_obj,method_00);

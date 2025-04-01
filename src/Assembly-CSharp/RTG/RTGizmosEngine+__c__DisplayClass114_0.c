@@ -21,8 +21,8 @@ int32_t Assembly-CSharp.dll::RTG::RTGizmosEngine+<>c__DisplayClass114_0::
         pIVar3 = Gizmo::Gizmo_GetHandleById_SystemCall
                             (pGVar1,(h1->fields)._handleId,(MethodInfo *)0x0);
         iVar4 = (h0->fields)._handleDimension;
-        if (iVar4 == (h1->fields)._handleDimension) {
-          if (pIVar2 != (IGizmoHandle *)0x0) {
+        if (pIVar2 != (IGizmoHandle *)0x0) {
+          if (iVar4 == (h1->fields)._handleDimension) {
             if (iVar4 == 1) {
               pPVar5 = (Priority *)func_?(5,TypeInfo__RTG__IGizmoHandle,pIVar2);
               if (pIVar3 != (IGizmoHandle *)0x0) {
@@ -34,18 +34,18 @@ int32_t Assembly-CSharp.dll::RTG::RTGizmosEngine+<>c__DisplayClass114_0::
                   uVar10 = (h0->fields)._hoverPoint.x;
                   uVar11 = (h0->fields)._hoverPoint.y;
                   fVar12 = (this->fields).screenRayOrigin.z - (h0->fields)._hoverPoint.z;
-                  uVar13 = (this->fields).screenRayOrigin.x;
-                  uVar14 = (this->fields).screenRayOrigin.y;
-                  uVar15 = (h1->fields)._hoverPoint.x;
-                  uVar16 = (h1->fields)._hoverPoint.y;
-                  SStack_17.m_value =
-                       ((float)uVar8 - (float)uVar10) * ((float)uVar8 - (float)uVar10) +
+                  SStack_13.m_value =
                        ((float)uVar9 - (float)uVar11) * ((float)uVar9 - (float)uVar11) +
+                       ((float)uVar8 - (float)uVar10) * ((float)uVar8 - (float)uVar10) +
                        fVar12 * fVar12;
+                  uVar14 = (this->fields).screenRayOrigin.x;
+                  uVar15 = (this->fields).screenRayOrigin.y;
+                  uVar16 = (h1->fields)._hoverPoint.x;
+                  uVar17 = (h1->fields)._hoverPoint.y;
                   fVar12 = (this->fields).screenRayOrigin.z - (h1->fields)._hoverPoint.z;
                   iVar18 = mscorlib.dll::System::Single::Single_CompareTo_1
-                                     (&SStack_17,
-                                      ((float)uVar13 - (float)uVar15) * ((float)uVar13 - (float)uVar15)
+                                     (&SStack_13,
+                                      ((float)uVar15 - (float)uVar17) * ((float)uVar15 - (float)uVar17)
                                       + ((float)uVar14 - (float)uVar16) *
                                         ((float)uVar14 - (float)uVar16) + fVar12 * fVar12,
                                       (MethodInfo *)0x0);
@@ -79,20 +79,20 @@ int32_t Assembly-CSharp.dll::RTG::RTGizmosEngine+<>c__DisplayClass114_0::
               }
             }
           }
-        }
-        else if (pIVar2 != (IGizmoHandle *)0x0) {
-          pPVar5 = (Priority *)func_?(4,TypeInfo__RTG__IGizmoHandle,pIVar2);
-          if (pIVar3 != (IGizmoHandle *)0x0) {
-            pPVar6 = (Priority *)func_?(4,TypeInfo__RTG__IGizmoHandle,pIVar3);
-            bVar7 = Priority::Priority_op_Equality(pPVar5,pPVar6,(MethodInfo *)0x0);
-            if (bVar7 != 0) {
-              return (uint)((h0->fields)._handleDimension != 1) * 2 + -1;
-            }
+          else {
             pPVar5 = (Priority *)func_?(4,TypeInfo__RTG__IGizmoHandle,pIVar2);
-            pPVar6 = (Priority *)func_?(4,TypeInfo__RTG__IGizmoHandle,pIVar3);
-            if (pPVar5 != (Priority *)0x0) {
-              iVar18 = Priority::Priority_CompareTo(pPVar5,pPVar6,(MethodInfo *)0x0);
-              return iVar18;
+            if (pIVar3 != (IGizmoHandle *)0x0) {
+              pPVar6 = (Priority *)func_?(4,TypeInfo__RTG__IGizmoHandle,pIVar3);
+              bVar7 = Priority::Priority_op_Equality(pPVar5,pPVar6,(MethodInfo *)0x0);
+              if (bVar7 != 0) {
+                return (uint)((h0->fields)._handleDimension != 1) * 2 + -1;
+              }
+              pPVar5 = (Priority *)func_?(4,TypeInfo__RTG__IGizmoHandle,pIVar2);
+              pPVar6 = (Priority *)func_?(4,TypeInfo__RTG__IGizmoHandle,pIVar3);
+              if (pPVar5 != (Priority *)0x0) {
+                iVar18 = Priority::Priority_CompareTo(pPVar5,pPVar6,(MethodInfo *)0x0);
+                return iVar18;
+              }
             }
           }
         }

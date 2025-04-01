@@ -30,29 +30,28 @@ void Assembly-CSharp.dll::AudioOnOffComponent::AudioOnOffComponent_Awake
                        (pGVar1,
                         UnityEngine__AudioSource_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::AudioSource>__
                        );
-    (this->fields).onOffAudioSource = pAVar2;
-    func_?(&(this->fields).onOffAudioSource,pAVar2);
-    pAVar2 = (this->fields).onOffAudioSource;
-    if (pAVar2 != (AudioSource *)0x0) {
+    ppAVar3 = &(this->fields).onOffAudioSource;
+    *ppAVar3 = pAVar2;
+    func_?(ppAVar3,pAVar2);
+    if (*ppAVar3 != (AudioSource *)0x0) {
       this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                          ((Component *)pAVar2,(MethodInfo *)0x0);
+                          ((Component *)*ppAVar3,(MethodInfo *)0x0);
       value = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                         ((Component *)this,(MethodInfo *)0x0);
       if (this_00 != (Transform *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
                   (this_00,value,(MethodInfo *)0x0);
-        pAVar2 = (this->fields).onOffAudioSource;
-        if (pAVar2 != (AudioSource *)0x0) {
+        if (*ppAVar3 != (AudioSource *)0x0) {
           UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_loop
-                    (pAVar2,(this->fields).loop,(MethodInfo *)0x0);
+                    (*ppAVar3,(this->fields).loop,(MethodInfo *)0x0);
           return;
         }
       }
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -72,8 +71,8 @@ Assembly-CSharp.dll::AudioOnOffComponent::AudioOnOffComponent_Fader
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[2].klass = (Object__Class *)this;
   value[1].klass = (Object__Class *)0x0;
+  value[2].klass = (Object__Class *)this;
   func_?(value + 2,this);
   value[2].monitor = (MonitorData *)minEndPoint;
   value[3].klass = (Object__Class *)maxEndPoint;

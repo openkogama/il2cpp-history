@@ -8,7 +8,6 @@ void Assembly-CSharp.dll::RTG::OBB::OBB_Encapsulate(OBB *this,OBB otherOBB,Metho
     func_?(&TypeInfo__RTG__BoxMath);
     cRam_? = '\x01';
   }
-  func_?(&stack0xffffff90,0,0x40);
   if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__RTG__BoxMath);
   }
@@ -22,63 +21,69 @@ void Assembly-CSharp.dll::RTG::OBB::OBB_Encapsulate(OBB *this,OBB otherOBB,Metho
   boxRotation.x = otherOBB._rotation.x;
   boxRotation.z = otherOBB._rotation.z;
   boxRotation.w = otherOBB._rotation.w;
-  points_00 = BoxMath::BoxMath_CalcBoxCornerPoints(boxCenter,boxSize,boxRotation,(MethodInfo *)0x0);
-  uVar1 = (this->_center).x;
-  uVar2 = (this->_center).y;
-  fVar3 = (this->_center).z;
-  uVar4 = (this->_rotation).x;
-  uVar5 = (this->_rotation).y;
-  uVar6 = (this->_rotation).z;
-  q.z = (float)uVar6;
-  q.y = (float)uVar5;
-  q.x = (float)uVar4;
-  fVar7 = (this->_rotation).w;
-  otherOBB._rotation.w = (float)uVar1;
-  otherOBB._40_4_ = uVar2;
+  pLVar1 = BoxMath::BoxMath_CalcBoxCornerPoints(boxCenter,boxSize,boxRotation,(MethodInfo *)0x0);
+  uVar2 = (this->_center).x;
+  uVar3 = (this->_center).y;
+  fVar4 = (this->_center).z;
+  fVar5 = (this->_rotation).x;
+  fVar6 = (this->_rotation).y;
+  fVar7 = (this->_rotation).z;
+  fVar8 = (this->_rotation).w;
+  otherOBB._rotation.w = (float)uVar2;
+  otherOBB._40_4_ = uVar3;
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
   }
   pos.y = (float)otherOBB._40_4_;
   pos.x = otherOBB._rotation.w;
-  pos.z = fVar3;
-  q.w = fVar7;
+  pos.z = fVar4;
+  q.y = fVar6;
+  q.x = fVar5;
+  q.z = fVar7;
+  q.w = fVar8;
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
             ((Matrix4x4 *)&stack0xffffff50,pos,q,
              TypeInfo__UnityEngine__Vector3->static_fields->oneVector,(MethodInfo *)0x0);
-  pMVar8 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_inverse
+  pMVar9 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_inverse
                       ((Matrix4x4 *)&stack0xffffff50,(Matrix4x4 *)&stack0xffffff90,(MethodInfo *)0x0
                       );
-  Matrix4x4Ex::Matrix4x4Ex_TransformPoints(*pMVar8,points_00,(MethodInfo *)0x0);
+  pLVar1 = Matrix4x4Ex::Matrix4x4Ex_TransformPoints(*pMVar9,pLVar1,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
   }
-  pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
-  points = (IEnumerable_1_UnityEngine_Vector3_ *)(pVVar9->zeroVector).x;
-  method_00 = (MethodInfo *)(pVVar9->zeroVector).y;
-  fVar3 = (pVVar9->zeroVector).z;
-  AABB::AABB_Encapsulate_1((AABB *)&stack0xffffffe0,points,method_00);
-  fVar10 = (this->_rotation).x;
-  fVar11 = (this->_rotation).y;
-  fVar12 = (this->_rotation).z;
-  point.y = (float)method_00;
-  point.x = (float)points;
-  point.z = fVar3;
-  pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                      ((Vector3 *)&otherOBB._rotation.z,this->_rotation,point,(MethodInfo *)0x0);
-  uVar14 = pVVar13->x;
-  uVar15 = pVVar13->y;
-  fVar3 = pVVar13->z;
-  uVar16 = (this->_center).x;
-  uVar17 = (this->_center).y;
-  fVar7 = (this->_center).z;
-  (this->_center).x = (float)uVar16 + (float)uVar14;
-  (this->_center).y = (float)uVar17 + (float)uVar15;
-  (this->_center).z = fVar7 + fVar3;
-  (this->_size).x = fVar10;
-  (this->_size).y = fVar11;
-  (this->_size).z = fVar12;
+  fVar4 = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).x;
+  fVar5 = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).y;
+  VStack_10.z = (this->_size).z;
+  VStack_10.x = (this->_size).x;
+  VStack_10.y = (this->_size).y;
+  puVar11 = &UNK_?;
+  AABB::AABB_Encapsulate_1
+            ((AABB *)&VStack_10,(IEnumerable_1_UnityEngine_Vector3_ *)pLVar1,(MethodInfo *)0x0);
+  fVar6 = (this->_rotation).z;
+  VStack_10.z = (float)&UNK_?;
+  rotation.z._1_2_ = (short)((uint)fVar6 >> 8);
+  rotation._0_9_ = *(unkbyte9 *)&this->_rotation;
+  rotation.z._3_1_ = (char)((uint)fVar6 >> 0x18);
+  rotation.w = (this->_rotation).w;
+  point.y = fVar5;
+  point.x = fVar4;
+  point.z = (float)puVar11;
+  pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                      ((Vector3 *)&otherOBB._rotation.z,rotation,point,(MethodInfo *)0x0);
+  uVar13 = pVVar12->x;
+  uVar14 = pVVar12->y;
+  fVar4 = pVVar12->z;
+  uVar15 = (this->_center).x;
+  uVar16 = (this->_center).y;
+  fVar5 = (this->_center).z;
+  (this->_center).x = (float)uVar15 + (float)uVar13;
+  (this->_center).y = (float)uVar16 + (float)uVar14;
+  (this->_center).z = fVar5 + fVar4;
+  (this->_size).x = VStack_10.x;
+  (this->_size).y = VStack_10.y;
+  (this->_size).z = VStack_10.z;
   return;
 }
 
@@ -212,61 +217,59 @@ Vector3 * Assembly-CSharp.dll::RTG::OBB::OBB_GetPointFaceNormal
     func_?();
     cRam_? = '\x01';
   }
+  uVar15 = 0;
   pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
-  uStack_15._0_4_ = (pVVar1->zeroVector).x;
-  uStack_15._4_4_ = (pVVar1->zeroVector).y;
-  fVar16 = (pVVar1->zeroVector).z;
-  uVar17 = 0;
+  uStack_16._0_4_ = (pVVar1->zeroVector).x;
+  uStack_16._4_4_ = (pVVar1->zeroVector).y;
+  fVar17 = (pVVar1->zeroVector).z;
   uVar18 = _UNK_?;
   puVar19 = _UNK_?;
   fVar20 = _UNK_?;
-  if (pVVar6 == (Vector3__Array *)0x0) {
-    func_?();
-code_?:
-    func_?();
-    this_00 = (IndexOutOfRangeException *)func_?();
-    method_00 = (MethodInfo *)0x0;
-    message = (String *)func_?();
-    mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor_1
-              (this_00,message,method_00);
-    func_?();
-    func_?();
-  }
-  else {
-    while (uVar17 < pVVar6->max_length) {
-      uVar21 = pVVar6->vector[uVar17].x;
-      uVar22 = pVVar6->vector[uVar17].y;
-      f = (float)uVar22 * fVar4 + (float)uVar21 * (float)ppVVar14 +
-          pVVar6->vector[uVar17].z * pointOnFace.z;
-      fVar23 = fVar9;
-      if (((uVar17 != 0) && (fVar23 = fVar10, uVar17 != 1)) && (fVar23 = fVar11, uVar17 != 2))
-      goto code_?;
-      if ((float)((uint)((float)((uint)f & uVar18) - fVar23) & uVar18) < (float)puVar19) {
-        fVar16 = pVVar6->vector[uVar17].z;
-        uStack_15._0_4_ = pVVar6->vector[uVar17].x;
-        uStack_15._4_4_ = pVVar6->vector[uVar17].y;
-        ppVVar14 = (Vector3__Class **)0x0;
-        puVar19 = &UNK_?;
-        fVar20 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Sign(f,(MethodInfo *)0x0);
-        uVar18 = _UNK_?;
-      }
-      uVar17 = uVar17 + 1;
-      if (2 < (int)uVar17) {
-        pointOnFace.z = fVar16 * fVar20;
-        value.y = uStack_15._4_4_ * fVar20;
-        value.x = (float)uStack_15 * fVar20;
-        value.z = pointOnFace.z;
-        pVVar24 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                            (&pointOnFace,value,(MethodInfo *)0x0);
-        fVar9 = pVVar24->y;
-        fVar4 = pVVar24->z;
-        __return_storage_ptr__->x = pVVar24->x;
-        __return_storage_ptr__->y = fVar9;
-        __return_storage_ptr__->z = fVar4;
-        return __return_storage_ptr__;
-      }
+  while (pVVar6 != (Vector3__Array *)0x0) {
+    if (pVVar6->max_length <= uVar15) goto code_?;
+    uVar21 = pVVar6->vector[uVar15].x;
+    uVar22 = pVVar6->vector[uVar15].y;
+    f = (float)uVar22 * fVar4 + (float)uVar21 * (float)ppVVar14 +
+        pVVar6->vector[uVar15].z * pointOnFace.z;
+    fVar23 = fVar9;
+    if (((uVar15 != 0) && (fVar23 = fVar10, uVar15 != 1)) && (fVar23 = fVar11, uVar15 != 2))
+    goto code_?;
+    if ((float)((uint)((float)((uint)f & uVar18) - fVar23) & uVar18) < (float)puVar19) {
+      fVar17 = pVVar6->vector[uVar15].z;
+      uStack_16._0_4_ = pVVar6->vector[uVar15].x;
+      uStack_16._4_4_ = pVVar6->vector[uVar15].y;
+      ppVVar14 = (Vector3__Class **)0x0;
+      puVar19 = &UNK_?;
+      fVar20 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Sign(f,(MethodInfo *)0x0);
+      uVar18 = _UNK_?;
+    }
+    uVar15 = uVar15 + 1;
+    if (2 < (int)uVar15) {
+      pointOnFace.z = fVar17 * fVar20;
+      value.y = uStack_16._4_4_ * fVar20;
+      value.x = (float)uStack_16 * fVar20;
+      value.z = pointOnFace.z;
+      pVVar24 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                          (&pointOnFace,value,(MethodInfo *)0x0);
+      fVar9 = pVVar24->y;
+      fVar4 = pVVar24->z;
+      __return_storage_ptr__->x = pVVar24->x;
+      __return_storage_ptr__->y = fVar9;
+      __return_storage_ptr__->z = fVar4;
+      return __return_storage_ptr__;
     }
   }
+  func_?();
+code_?:
+  func_?();
+  this_00 = (IndexOutOfRangeException *)func_?();
+  method_00 = (MethodInfo *)0x0;
+  message = (String *)func_?();
+  mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor_1
+            (this_00,message,method_00);
+  func_?();
+  func_?();
+code_?:
   func_?();
   pcVar25 = (code *)swi(3);
   pVVar24 = (Vector3 *)(*pcVar25)();
@@ -518,8 +521,8 @@ void Assembly-CSharp.dll::RTG::OBB::OBB__ctor_4
                (OBB *this,Bounds bounds,Quaternion rotation,MethodInfo *method)
 
 {
-  (this->_center).x = bounds.m_Center.x;
   fVar1 = _UNK_?;
+  (this->_center).x = bounds.m_Center.x;
   (this->_center).y = bounds.m_Center.y;
   (this->_center).z = bounds.m_Center.z;
   (this->_size).x = bounds.m_Extents.x * fVar1;

@@ -5,33 +5,34 @@ float Assembly-CSharp.dll::RTG::CameraZoomSettings::CameraZoomSettings_GetZoomSe
                 (CameraZoomSettings *this,Camera *camera,MethodInfo *method)
 
 {
-  if ((this->fields)._zoomMode == 0) {
+  iVar1 = (this->fields)._zoomMode;
+  if (iVar1 == 0) {
     if (camera != (Camera *)0x0) {
-      bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_orthographic
+      bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_orthographic
                         (camera,(MethodInfo *)0x0);
-      if (bVar1 != 0) {
+      if (bVar2 != 0) {
         return (this->fields)._orthoStandardZoomSensitivity;
       }
       return (this->fields)._perspStandardZoomSensitivity;
     }
   }
   else {
-    if ((this->fields)._zoomMode != 1) {
+    if (iVar1 != 1) {
       return 0.0;
     }
     if (camera != (Camera *)0x0) {
-      bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_orthographic
+      bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_orthographic
                         (camera,(MethodInfo *)0x0);
-      if (bVar1 != 0) {
+      if (bVar2 != 0) {
         return (this->fields)._orthoSmoothZoomSensitivity;
       }
       return (this->fields)._perspSmoothZoomSensitivity;
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  fVar3 = (float10)(*pcVar2)();
-  return (float)fVar3;
+  pcVar3 = (code *)swi(3);
+  fVar4 = (float10)(*pcVar3)();
+  return (float)fVar4;
 }
 
 
@@ -77,8 +78,8 @@ void Assembly-CSharp.dll::RTG::CameraZoomSettings::CameraZoomSettings__ctor
   }
   (this->fields)._._canBeDisplayed = 1;
   (this->fields)._._isExpanded = 1;
-  (this->fields)._._foldoutLabel = StringLiteral_Settings;
   method_00 = (MethodInfo *)&(this->fields)._._foldoutLabel;
+  *(String **)method_00 = StringLiteral_Settings;
   func_?(method_00,StringLiteral_Settings);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);

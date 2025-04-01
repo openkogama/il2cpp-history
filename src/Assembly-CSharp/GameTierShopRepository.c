@@ -503,7 +503,7 @@ void Assembly-CSharp.dll::GameTierShopRepository::GameTierShopRepository__ctor
              MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__Dictionary__
             );
   method_00 = (MethodInfo *)&this->fields;
-  (this->fields).tierShopData =
+  ((GameTierShopRepository__Fields *)method_00)->tierShopData =
        (Dictionary_2_MV_Common_GamePassTier_Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_
         *)this_00;
   func_?(method_00,this_00);

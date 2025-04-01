@@ -6,84 +6,60 @@ Assembly-CSharp.dll::RTG::Matrix4x4Ex::Matrix4x4Ex_GetInverse
           (Matrix4x4 *__return_storage_ptr__,Matrix4x4 mtx,MethodInfo *method)
 
 {
-  fVar1 = (((((mtx.m22 * mtx.m33 - mtx.m23 * mtx.m32) * mtx.m11 -
-             (mtx.m21 * mtx.m33 - mtx.m23 * mtx.m31) * mtx.m12) +
-            (mtx.m21 * mtx.m32 - mtx.m22 * mtx.m31) * mtx.m13) * mtx.m00 -
-           (((mtx.m22 * mtx.m33 - mtx.m23 * mtx.m32) * mtx.m10 -
-            (mtx.m20 * mtx.m33 - mtx.m30 * mtx.m23) * mtx.m12) +
-           (mtx.m20 * mtx.m32 - mtx.m30 * mtx.m22) * mtx.m13) * mtx.m01) +
-          ((((mtx.m21 * mtx.m33 - mtx.m23) - mtx.m31) * mtx.m10 -
-           (mtx.m20 * mtx.m33 - mtx.m30 * mtx.m23) * mtx.m11) +
-          (mtx.m20 * mtx.m31 - mtx.m30 * mtx.m21) * mtx.m13) * mtx.m02) -
-          (((mtx.m21 * mtx.m32 - mtx.m22 * mtx.m31) * mtx.m10 -
-           (mtx.m20 * mtx.m32 - mtx.m30 * mtx.m22) * mtx.m11) +
-          (mtx.m20 * mtx.m31 - mtx.m30 * mtx.m21) * mtx.m12) * mtx.m03;
-  if (_UNK_? <= (float)((uint)fVar1 & _UNK_?)) {
-    fVar1 = _UNK_? / fVar1;
-    mtx.m13 = (((mtx.m23 * mtx.m12 - mtx.m22 * mtx.m13) * mtx.m00 -
-               (mtx.m23 * mtx.m02 - mtx.m22 * mtx.m03) * mtx.m10) +
-              (mtx.m13 * mtx.m02 - mtx.m03 * mtx.m12) * mtx.m20) * fVar1;
-    mtx.m20 = (((mtx.m21 * mtx.m33 - mtx.m23 * mtx.m31) * mtx.m10 -
-               (mtx.m33 * mtx.m11 - mtx.m13 * mtx.m31) * mtx.m20) +
-              (mtx.m23 * mtx.m11 - mtx.m21 * mtx.m13) * mtx.m30) * fVar1;
-    mtx.m21 = (((mtx.m21 * mtx.m33 - mtx.m23 * mtx.m31) * mtx.m00 -
-               (mtx.m33 * mtx.m01 - mtx.m31 * mtx.m03) * mtx.m20) +
-              (mtx.m23 * mtx.m01 - mtx.m21 * mtx.m03) * mtx.m30) *
-              (float)((uint)fVar1 ^
-                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-    mtx.m22 = (((mtx.m33 * mtx.m11 - mtx.m13 * mtx.m31) * mtx.m00 -
-               (mtx.m33 * mtx.m01 - mtx.m31 * mtx.m03) * mtx.m10) +
-              (mtx.m13 * mtx.m01 - mtx.m03 * mtx.m11) * mtx.m30) * fVar1;
-    mtx.m23 = (((mtx.m23 * mtx.m11 - mtx.m13 * mtx.m21) * mtx.m00 -
-               (mtx.m23 * mtx.m01 - mtx.m03 * mtx.m21) * mtx.m10) +
-              (mtx.m13 * mtx.m01 - mtx.m03 * mtx.m11) * mtx.m20) *
-              (float)((uint)fVar1 ^
-                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+  fVar1 = mtx.m22 * mtx.m33 - mtx.m23 * mtx.m32;
+  fVar2 = mtx.m21 * mtx.m33 - mtx.m23 * mtx.m31;
+  fVar3 = mtx.m21 * mtx.m32 - mtx.m22 * mtx.m31;
+  fVar4 = mtx.m20 * mtx.m33 - mtx.m30 * mtx.m23;
+  fVar5 = mtx.m20 * mtx.m32 - mtx.m30 * mtx.m22;
+  fVar6 = mtx.m20 * mtx.m31 - mtx.m30 * mtx.m21;
+  fVar4 = ((((fVar1 * mtx.m11 - mtx.m12 * fVar2) + mtx.m13 * fVar3) * mtx.m00 -
+           ((fVar1 * mtx.m10 - mtx.m12 * fVar4) + mtx.m13 * fVar5) * mtx.m01) +
+          ((((mtx.m21 * mtx.m33 - mtx.m23) - mtx.m31) * mtx.m10 - mtx.m11 * fVar4) + mtx.m13 * fVar6
+          ) * mtx.m02) - ((mtx.m10 * fVar3 - mtx.m11 * fVar5) + mtx.m12 * fVar6) * mtx.m03;
+  if (_UNK_? <= (float)((uint)fVar4 & _UNK_?)) {
+    fVar4 = _UNK_? / fVar4;
+    fVar6 = mtx.m12 * mtx.m33 - mtx.m13 * mtx.m32;
+    fVar7 = mtx.m03 * mtx.m32;
+    fVar8 = mtx.m23 * mtx.m02;
+    fVar9 = mtx.m02 * mtx.m33 - fVar7;
+    fVar10 = mtx.m23 * mtx.m12 - mtx.m22 * mtx.m13;
+    fVar11 = (float)((uint)fVar4 ^
+                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+    fVar12 = mtx.m12 * mtx.m03;
+    fVar13 = mtx.m13 * mtx.m02;
+    fVar14 = mtx.m02 * mtx.m33 - fVar7;
+    fVar5 = fVar8 - mtx.m22 * mtx.m03;
+    fVar15 = mtx.m33 * mtx.m11 - mtx.m13 * mtx.m31;
+    fVar3 = mtx.m33 * mtx.m01 - mtx.m31 * mtx.m03;
+    mtx.m21 = ((fVar2 * mtx.m00 - fVar3 * mtx.m20) +
+              (mtx.m23 * mtx.m01 - mtx.m21 * mtx.m03) * mtx.m30) * fVar11;
+    fVar1 = mtx.m13 * mtx.m01 - mtx.m03 * mtx.m11;
+    mtx.m22 = ((fVar15 * mtx.m00 - fVar3 * mtx.m10) + mtx.m30 * fVar1) * fVar4;
+    mtx.m23 = (((mtx.m23 * mtx.m11 - mtx.m21 * mtx.m13) * mtx.m00 -
+               (mtx.m23 * mtx.m01 - mtx.m21 * mtx.m03) * mtx.m10) + fVar1 * mtx.m20) * fVar11;
+    fVar1 = mtx.m22 * mtx.m11 - mtx.m12 * mtx.m21;
+    fVar1 = mtx.m31 * mtx.m12;
     mtx.m30 = (((mtx.m32 * mtx.m21 - mtx.m32 * mtx.m12) * mtx.m10 -
-               (mtx.m32 * mtx.m11 - mtx.m31 * mtx.m12) * mtx.m20) +
-              (mtx.m22 * mtx.m11 - mtx.m12 * mtx.m21) * mtx.m30) *
-              (float)((uint)fVar1 ^
-                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-    mtx.m31 = (((mtx.m32 * mtx.m21 - mtx.m31 * mtx.m12) * mtx.m00 -
-               (mtx.m32 * mtx.m01 - mtx.m31 * mtx.m02) * mtx.m20) +
-              (mtx.m22 * mtx.m01 - mtx.m02 * mtx.m21) * mtx.m30) * fVar1;
-    mtx.m32 = (((mtx.m32 * mtx.m11 - mtx.m12 * mtx.m31) * mtx.m00 -
-               (mtx.m32 * mtx.m01 - mtx.m02 * mtx.m31) * mtx.m10) +
-              (mtx.m12 * mtx.m01 - mtx.m02 * mtx.m11) * mtx.m30) *
-              (float)((uint)fVar1 ^
-                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-    mtx.m33 = (((mtx.m22 * mtx.m11 - mtx.m12 * mtx.m21) * mtx.m00 -
-               (mtx.m22 * mtx.m01 - mtx.m02 * mtx.m21) * mtx.m10) +
-              (mtx.m12 * mtx.m01 - mtx.m02 * mtx.m11) * mtx.m20) * fVar1;
-    mtx.m00 = (((mtx.m22 * mtx.m33 - mtx.m23 * mtx.m32) * mtx.m11 -
-               (mtx.m12 * mtx.m33 - mtx.m13 * mtx.m32) * mtx.m21) +
-              (mtx.m23 * mtx.m12 - mtx.m22 * mtx.m13) * mtx.m31) * fVar1;
-    mtx.m10 = (((mtx.m22 * mtx.m33 - mtx.m23 * mtx.m32) * mtx.m10 -
-               (mtx.m12 * mtx.m33 - mtx.m13 * mtx.m32) * mtx.m20) +
-              (mtx.m23 * mtx.m12 - mtx.m22 * mtx.m13) * mtx.m30) *
-              (float)((uint)fVar1 ^
-                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-    mtx.m01 = (((mtx.m22 * mtx.m33 - mtx.m23 * mtx.m32) * mtx.m01 -
-               (mtx.m02 * mtx.m33 - mtx.m03 * mtx.m32) * mtx.m21) +
-              (mtx.m23 * mtx.m02 - mtx.m03 * mtx.m32) * mtx.m31) *
-              (float)((uint)fVar1 ^
-                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-    mtx.m11 = (((mtx.m22 * mtx.m33 - mtx.m23 * mtx.m32) * mtx.m00 -
-               (mtx.m33 * mtx.m02 - mtx.m32 * mtx.m03) * mtx.m20) +
-              (mtx.m23 * mtx.m02 - mtx.m22 * mtx.m03) * mtx.m30) * fVar1;
-    mtx.m02 = (((mtx.m12 * mtx.m33 - mtx.m13 * mtx.m32) * mtx.m01 -
-               (mtx.m02 * mtx.m33 - mtx.m03 * mtx.m32) * mtx.m11) +
-              (mtx.m13 * mtx.m02 - mtx.m12 * mtx.m03) * mtx.m31) * fVar1;
-    mtx.m12 = (((mtx.m12 * mtx.m33 - mtx.m13 * mtx.m32) * mtx.m00 -
-               (mtx.m33 * mtx.m02 - mtx.m32 * mtx.m03) * mtx.m10) +
-              (mtx.m13 * mtx.m02 - mtx.m12 * mtx.m03) * mtx.m30) *
-              (float)((uint)fVar1 ^
-                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-    mtx.m03 = (((mtx.m23 * mtx.m12 - mtx.m22 * mtx.m13) * mtx.m01 -
-               (mtx.m23 * mtx.m02 - mtx.m22 * mtx.m03) * mtx.m11) +
-              (mtx.m13 * mtx.m02 - mtx.m12 * mtx.m03) * mtx.m21) *
-              (float)((uint)fVar1 ^
-                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+               (mtx.m32 * mtx.m11 - fVar1) * mtx.m20) + mtx.m30 * fVar1) * fVar11;
+    fVar1 = mtx.m22 * mtx.m01 - mtx.m02 * mtx.m21;
+    mtx.m31 = (((mtx.m32 * mtx.m21 - fVar1) * mtx.m00 -
+               (mtx.m32 * mtx.m01 - mtx.m31 * mtx.m02) * mtx.m20) + fVar1 * mtx.m30) * fVar4;
+    fVar1 = mtx.m12 * mtx.m01 - mtx.m02 * mtx.m11;
+    mtx.m32 = (((mtx.m32 * mtx.m11 - fVar1) * mtx.m00 -
+               (mtx.m32 * mtx.m01 - mtx.m31 * mtx.m02) * mtx.m10) + fVar1 * mtx.m30) * fVar11;
+    mtx.m33 = ((fVar1 * mtx.m00 - fVar1 * mtx.m10) + fVar1 * mtx.m20) * fVar4;
+    mtx.m00 = ((fVar1 * mtx.m11 - mtx.m21 * fVar6) + fVar10 * mtx.m31) * fVar4;
+    mtx.m10 = ((fVar1 * mtx.m10 - mtx.m20 * fVar6) + mtx.m30 * fVar10) * fVar11;
+    mtx.m20 = ((fVar2 * mtx.m10 - mtx.m20 * fVar15) +
+              (mtx.m23 * mtx.m11 - mtx.m21 * mtx.m13) * mtx.m30) * fVar4;
+    mtx.m01 = ((fVar1 * mtx.m01 - mtx.m21 * fVar9) + (fVar8 - fVar7) * mtx.m31) * fVar11;
+    mtx.m11 = ((fVar1 * mtx.m00 - mtx.m20 * fVar14) + mtx.m30 * fVar5) * fVar4;
+    mtx.m02 = ((fVar6 * mtx.m01 - mtx.m11 * fVar9) + (fVar13 - fVar12) * mtx.m31) * fVar4;
+    mtx.m12 = ((fVar6 * mtx.m00 - fVar14 * mtx.m10) + (fVar13 - fVar12) * mtx.m30) * fVar11;
+    mtx.m03 = ((fVar10 * mtx.m01 - (fVar8 - mtx.m22 * mtx.m03) * mtx.m11) +
+              (fVar13 - fVar12) * mtx.m21) * fVar11;
+    mtx.m13 = (((mtx.m23 * mtx.m12 - mtx.m22 * mtx.m13) * mtx.m00 - fVar5 * mtx.m10) +
+              (fVar13 - mtx.m03 * mtx.m12) * mtx.m20) * fVar4;
   }
   __return_storage_ptr__->m00 = mtx.m00;
   __return_storage_ptr__->m10 = mtx.m10;
@@ -266,35 +242,70 @@ Vector3 * Assembly-CSharp.dll::RTG::Matrix4x4Ex::Matrix4x4Ex_GetScale
                     (Vector3 *__return_storage_ptr__,Matrix4x4 matrix,MethodInfo *method)
 
 {
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_GetColumn
-                     (&VStack_2,&matrix,0,(MethodInfo *)0x0);
-  puStack_3 = (undefined4 *)pVVar1->x;
-  fStack_4 = pVVar1->y;
-  fStack_5 = pVVar1->z;
-  fStack_6 = fStack_5;
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_GetColumn
-                     (&VStack_2,&matrix,1,(MethodInfo *)0x0);
-  fStack_7 = pVVar1->x;
-  fStack_8 = pVVar1->y;
-  fStack_5 = pVVar1->z;
-  puStack_9 = (undefined *)fStack_5;
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_GetColumn
-                     (&VStack_2,&matrix,2,(MethodInfo *)0x0);
-  fStack_10 = pVVar1->x;
-  fStack_11 = pVVar1->y;
-  VStack_2.w = pVVar1->z;
-  fStack_5 = VStack_2.w;
-  fVar12 = (float10)func_?(&puStack_3,0);
-  fStack_13 = (float)fVar12;
-  fVar12 = (float10)func_?(&fStack_7,0);
-  puStack_3 = &fStack_10;
-  fStack_14 = (float)fVar12;
-  fStack_4 = 0.0;
-  fVar12 = (float10)func_?();
-  __return_storage_ptr__->x = fStack_13;
-  __return_storage_ptr__->y = fStack_14;
-  __return_storage_ptr__->z = (float)fVar12;
-  return __return_storage_ptr__;
+  UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_GetColumn
+            (&VStack_1,&matrix,0,(MethodInfo *)0x0);
+  pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_GetColumn
+                     ((Vector4 *)&fStack_3,&matrix,1,(MethodInfo *)0x0);
+  fStack_3 = pVVar2->x;
+  fVar4 = pVVar2->y;
+  fVar5 = pVVar2->z;
+  pVVar6 = (Vector3 *)pVVar2->w;
+  pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_GetColumn
+                     ((Vector4 *)&matrix,&matrix,2,(MethodInfo *)0x0);
+  matrix.m01 = pVVar2->x;
+  matrix.m11 = pVVar2->y;
+  matrix.m21 = pVVar2->z;
+  matrix.m31 = pVVar2->w;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Math);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Math);
+  }
+  cVar7 = cRam_?;
+  dVar8 = (double)(fVar4 * fVar4 + fStack_3 * fStack_3 + fVar5 * fVar5);
+  if (dVar8 < 0.0) {
+    func_?();
+  }
+  else {
+    dVar8 = SQRT(dVar8);
+  }
+  VStack_1.z = (float)dVar8;
+  if (cVar7 == '\0') {
+    func_?(&TypeInfo__System__Math);
+    cVar7 = '\x01';
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Math);
+    cVar7 = cRam_?;
+  }
+  dVar8 = (double)(matrix.m10 * matrix.m10 + matrix.m00 * matrix.m00 + matrix.m20 * matrix.m20);
+  if (dVar8 < 0.0) {
+    func_?();
+  }
+  else {
+    dVar8 = SQRT(dVar8);
+  }
+  VStack_1.w = (float)dVar8;
+  if (cVar7 == '\0') {
+    func_?(&TypeInfo__System__Math);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Math);
+  }
+  pVVar6->x = VStack_1.z;
+  pVVar6->y = VStack_1.w;
+  dVar8 = (double)(matrix.m11 * matrix.m11 + matrix.m01 * matrix.m01 + matrix.m21 * matrix.m21);
+  if (0.0 <= dVar8) {
+    pVVar6->z = (float)SQRT(dVar8);
+    return pVVar6;
+  }
+  func_?();
+  pVVar6->z = (float)dVar8;
+  return pVVar6;
 }
 
 
@@ -387,7 +398,7 @@ Assembly-CSharp.dll::RTG::Matrix4x4Ex::Matrix4x4Ex_RotationMatrixFromRightUp
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
             (__return_storage_ptr__,6,up.z,(MethodInfo *)0x0);
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
-            (__return_storage_ptr__,8,4.3485765e-29,(MethodInfo *)0x0);
+            (__return_storage_ptr__,8,4.334551e-29,(MethodInfo *)0x0);
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
             (__return_storage_ptr__,9,(float)__return_storage_ptr__,(MethodInfo *)0x0);
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
@@ -437,25 +448,19 @@ Assembly-CSharp.dll::RTG::Matrix4x4Ex::Matrix4x4Ex_TransformPoints
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  LStack_7._current.FirstAxisSign = 0;
-  LStack_7._current.SecondAxisSign = 0;
-  LStack_7._list = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0;
-  LStack_7._index = 0;
-  LStack_7._version = 0;
-  LStack_7._current.Quadrant = 0;
   if (points != (List_1_UnityEngine_Vector3_ *)0x0) {
-    if ((points->fields)._size == 0) {
-      pLVar8 = (List_1_UnityEngine_Vector3_ *)
+    capacity = (points->fields)._size;
+    if (capacity == 0) {
+      pLVar7 = (List_1_UnityEngine_Vector3_ *)
                 func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector3>);
       mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
       __Il2CppFullySharedGenericType]::
       LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar8,
+                ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar7,
                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List__);
       *unaff_FS_OFFSET = uStack_3;
-      return pLVar8;
+      return pLVar7;
     }
-    capacity = (points->fields)._size;
     this = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
             *)func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector3>);
     mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
@@ -463,49 +468,49 @@ Assembly-CSharp.dll::RTG::Matrix4x4Ex::Matrix4x4Ex_TransformPoints
     List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
               (this,capacity,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List_int_);
-    pLStack_9 = this;
-    pLVar10 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+    pLStack_8 = this;
+    pLVar9 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__GetEnumerator
-                        (&LStack_11,
+                        (&LStack_10,
                          (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)points,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__GetEnumerator__
                         );
-    uStack_12 = 0;
-    LStack_7._list = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar10->_list;
-    LStack_7._index = pLVar10->_index;
-    LStack_7._version = pLVar10->_version;
-    LStack_7._current.Quadrant = (int32_t)(pLVar10->_current).alias;
-    uVar13 = (pLVar10->_current).path;
-    uVar14 = (pLVar10->_current).asset;
+    uStack_11 = 0;
+    LStack_12._list = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar9->_list;
+    LStack_12._index = pLVar9->_index;
+    LStack_12._version = pLVar9->_version;
+    LStack_12._current.Quadrant = (int32_t)(pLVar9->_current).alias;
+    uVar13 = (pLVar9->_current).path;
+    uVar14 = (pLVar9->_current).asset;
     uStack_1 = 1;
-    LStack_7._current.FirstAxisSign = uVar13;
-    LStack_7._current.SecondAxisSign = uVar14;
-    pLStack_15 = &LStack_7;
+    LStack_12._current.FirstAxisSign = uVar13;
+    LStack_12._current.SecondAxisSign = uVar14;
+    pLStack_15 = &LStack_12;
     while( true ) {
       while( true ) {
         bVar16 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[RTG::
                  PlaneIdHelper+PlaneQuadrantInfo]::
                  List_1_T_Enumerator_RTG_PlaneIdHelper_PlaneQuadrantInfo__MoveNext
-                           (&LStack_7,
+                           (&LStack_12,
                             MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__MoveNext__
                            );
         if (bVar16 == 0) {
           uStack_1 = 0xffffffff;
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&LStack_7,
+                    ((Object *)&LStack_12,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__Dispose__
                      ,(MethodInfo *)in_stack_6);
           *unaff_FS_OFFSET = uStack_3;
           return (List_1_UnityEngine_Vector3_ *)this;
         }
-        point.y = (float)LStack_7._current.FirstAxisSign;
-        point.x = (float)LStack_7._current.Quadrant;
-        point.z = (float)LStack_7._current.SecondAxisSign;
+        point.y = (float)LStack_12._current.FirstAxisSign;
+        point.x = (float)LStack_12._current.Quadrant;
+        point.z = (float)LStack_12._current.SecondAxisSign;
         pPVar17 = (PlaneIdHelper_PlaneQuadrantInfo *)
                   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyPoint
-                            ((Vector3 *)&LStack_11._current,&matrix,point,(MethodInfo *)0x0);
+                            ((Vector3 *)&LStack_10._current,&matrix,point,(MethodInfo *)0x0);
         pMVar18 = 
         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
         ;
@@ -538,8 +543,8 @@ code_?:
   uVar24 = func_?();
   func_?(uVar24);
   pcVar25 = (code *)swi(3);
-  pLVar8 = (List_1_UnityEngine_Vector3_ *)(*pcVar25)();
-  return pLVar8;
+  pLVar7 = (List_1_UnityEngine_Vector3_ *)(*pcVar25)();
+  return pLVar7;
 }
 
 

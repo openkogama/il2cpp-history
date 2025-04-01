@@ -38,30 +38,31 @@ void Assembly-CSharp.dll::TouristAdStateHandler::TouristAdStateHandler_ShowAd
     func_?(&StringLiteral_showVideoAd);
     cRam_? = '\x01';
   }
-  (this->fields).OnAdShown = OnAdFinished;
-  func_?(&(this->fields).OnAdShown,OnAdFinished);
-  pIVar1 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
-  if (pIVar1 == (IAdManager *)0x0) {
+  ppAVar1 = &(this->fields).OnAdShown;
+  *ppAVar1 = OnAdFinished;
+  func_?(ppAVar1,OnAdFinished);
+  pIVar2 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
+  if (pIVar2 == (IAdManager *)0x0) {
 code_?:
     func_?();
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
     return;
   }
-  cVar3 = func_?(5,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar1);
-  if (cVar3 != '\0') {
-    fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    fVar5 = (this->fields).adRateLimitCurrentTime;
+  cVar4 = func_?(5,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar2);
+  if (cVar4 != '\0') {
+    fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+    fVar6 = (this->fields).adRateLimitCurrentTime;
     if ((TypeInfo__TouristAdStateHandler->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__TouristAdStateHandler);
     }
-    if (TypeInfo__TouristAdStateHandler->static_fields->adRateLimitTimer <= fVar4 - fVar5) {
+    if (TypeInfo__TouristAdStateHandler->static_fields->adRateLimitTimer <= fVar5 - fVar6) {
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                 ((Object *)StringLiteral_showVideoAd,(MethodInfo *)0x0);
-      pIVar1 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
+      pIVar2 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
       this_00 = (UnityAction_1_System_Int32Enum_ *)
                 func_?(
                                TypeInfo__System__Action<Assets::Scripts::AdIntegration::InterstitialAdResult>
@@ -71,18 +72,18 @@ code_?:
                 (this_00,(Object *)this,
                  MethodInfo__TouristAdStateHandler__InterstitialCallback_Assets__Scripts__AdIntegration__InterstitialAdResult_
                  ,(MethodInfo *)0x0);
-      if (pIVar1 != (IAdManager *)0x0) {
-        func_?(7,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar1,this_00,3);
+      if (pIVar2 != (IAdManager *)0x0) {
+        func_?(7,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar2,this_00,3);
         return;
       }
       goto code_?;
     }
   }
-  if ((this->fields).OnAdShown == (Action *)0x0) {
+  pAVar7 = *ppAVar1;
+  if (pAVar7 == (Action *)0x0) {
     return;
   }
-  pAVar6 = (this->fields).OnAdShown;
-  (*(pAVar6->fields)._._.invoke_impl)((pAVar6->fields)._._.method_code,(pAVar6->fields)._._.method);
+  (*(pAVar7->fields)._._.invoke_impl)((pAVar7->fields)._._.method_code,(pAVar7->fields)._._.method);
   return;
 }
 

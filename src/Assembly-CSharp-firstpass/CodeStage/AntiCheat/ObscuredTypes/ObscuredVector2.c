@@ -469,15 +469,15 @@ float Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscur
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredVector2);
   }
   uVar1 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredVector2->static_fields->cryptoKey;
-  if (this->currentCryptoKey !=
-      TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredVector2->static_fields->cryptoKey) {
-    uVar1 = this->currentCryptoKey;
+  uVar2 = this->currentCryptoKey;
+  if (this->currentCryptoKey == uVar1) {
+    uVar2 = uVar1;
   }
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_finished_or_no_cctor
       == 0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
   }
-  return (float)(uVar1 ^ encrypted);
+  return (float)(uVar2 ^ encrypted);
 }
 
 

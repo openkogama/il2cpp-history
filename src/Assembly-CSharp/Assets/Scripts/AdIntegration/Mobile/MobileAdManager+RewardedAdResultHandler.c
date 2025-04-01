@@ -123,11 +123,13 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_MobileAdManager_RewardedAdResult,(MethodInfo *)0x0);
+  ppIVar1 = &(this->fields).adUIManager;
   (this->fields).context = context;
-  (this->fields).adUIManager = adUIManager;
-  func_?(&(this->fields).adUIManager,adUIManager);
-  (this->fields).rewardedAdCallback = rewardedAdCallback;
-  func_?(&(this->fields).rewardedAdCallback,rewardedAdCallback);
+  *ppIVar1 = adUIManager;
+  func_?(ppIVar1,adUIManager);
+  ppAVar2 = &(this->fields).rewardedAdCallback;
+  *ppAVar2 = rewardedAdCallback;
+  func_?(ppAVar2,rewardedAdCallback);
   return;
 }
 

@@ -6,25 +6,36 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarLookDirectionHandler::
                (AvatarLimbManager_AvatarLookDirectionHandler *this,MethodInfo *method)
 
 {
-  uStack_1._0_4_ = (this->fields).localLookDirection.x;
-  uStack_1._4_4_ = (this->fields).localLookDirection.y;
-  uVar2 = (this->fields).previousLookDirection.x;
-  uVar3 = (this->fields).previousLookDirection.y;
-  fStack_4 = (this->fields).localLookDirection.z - (this->fields).previousLookDirection.z;
-  uStack_5 = CONCAT44((float)uStack_1._4_4_ - (float)uVar3,
-                       (float)(undefined4)uStack_1 - (float)uVar2);
-  fStack_6 = fStack_4;
-  fVar7 = (float10)func_?(&uStack_5,0);
-  if ((_UNK_? < (float)fVar7) && ((this->fields).OnRotationChange != (Action *)0x0)) {
-    pAVar8 = (this->fields).OnRotationChange;
-    (*(pAVar8->fields)._._.invoke_impl)
-              ((pAVar8->fields)._._.method_code,(pAVar8->fields)._._.method);
+  uVar1 = (this->fields).localLookDirection.x;
+  uVar2 = (this->fields).localLookDirection.y;
+  uVar3 = (this->fields).previousLookDirection.x;
+  uVar4 = (this->fields).previousLookDirection.y;
+  fVar5 = (this->fields).localLookDirection.z - (this->fields).previousLookDirection.z;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Math);
+    cRam_? = '\x01';
   }
-  fVar9 = (this->fields).localLookDirection.y;
-  fVar10 = (this->fields).localLookDirection.z;
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Math);
+  }
+  dVar6 = (double)(((float)uVar2 - (float)uVar4) * ((float)uVar2 - (float)uVar4) +
+                   ((float)uVar1 - (float)uVar3) * ((float)uVar1 - (float)uVar3) + fVar5 * fVar5);
+  if (dVar6 < 0.0) {
+    func_?();
+  }
+  else {
+    dVar6 = SQRT(dVar6);
+  }
+  if ((_UNK_? < (float)dVar6) &&
+     (pAVar7 = (this->fields).OnRotationChange, pAVar7 != (Action *)0x0)) {
+    (*(pAVar7->fields)._._.invoke_impl)
+              ((pAVar7->fields)._._.method_code,(pAVar7->fields)._._.method);
+  }
+  fVar8 = (this->fields).localLookDirection.y;
+  fVar5 = (this->fields).localLookDirection.z;
   (this->fields).previousLookDirection.x = (this->fields).localLookDirection.x;
-  (this->fields).previousLookDirection.y = fVar9;
-  (this->fields).previousLookDirection.z = fVar10;
+  (this->fields).previousLookDirection.y = fVar8;
+  (this->fields).previousLookDirection.z = fVar5;
   return;
 }
 
@@ -41,84 +52,95 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarLookDirectionHandler::
   if ((pMVar1 != (MVWorldObjectClient *)0x0) &&
      (pTVar2 = (pMVar1->fields).transform, pTVar2 != (Transform *)0x0)) {
     pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                       (&VStack_4,pTVar2,(MethodInfo *)0x0);
-    puStack_5 = (undefined *)pVVar3->x;
-    unique0x0000a404 = pVVar3->y;
-    VStack_4.z = lookDirection.z + pVVar3->z;
-    position.y = lookDirection.y + (float)unique0x0000a404;
-    position.x = lookDirection.x + (float)puStack_5;
-    position.z = VStack_4.z;
+                        ((Vector3 *)&stack0xffffffe8,pTVar2,(MethodInfo *)0x0);
+    uVar4 = pVVar3->x;
+    uVar5 = pVVar3->y;
+    position.y = lookDirection.y + (float)uVar5;
+    position.x = lookDirection.x + (float)uVar4;
+    position.z = lookDirection.z + pVVar3->z;
     pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_InverseTransformPoint
-                       (&VStack_4,pTVar2,position,(MethodInfo *)0x0);
-    fVar6 = pVVar3->y;
-    fVar7 = pVVar3->z;
+                        ((Vector3 *)&puStack_6,pTVar2,position,(MethodInfo *)0x0);
+    fVar7 = pVVar3->y;
+    fVar8 = pVVar3->z;
     (this->fields).localLookDirection.x = pVVar3->x;
-    (this->fields).localLookDirection.y = fVar6;
-    (this->fields).localLookDirection.z = fVar7;
-    pMVar8 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-    if (pMVar8 != (MainCameraManager *)0x0) {
-      _puStack_10 = CONCAT44(pMVar8,&UNK_?);
+    (this->fields).localLookDirection.y = fVar7;
+    (this->fields).localLookDirection.z = fVar8;
+    pMVar9 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+    if (pMVar9 != (MainCameraManager *)0x0) {
       pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                          ((Component *)pMVar8,(MethodInfo *)0x0);
+                          ((Component *)pMVar9,(MethodInfo *)0x0);
       if (pTVar2 != (Transform *)0x0) {
-        _puStack_10 = CONCAT44(&UNK_?,puStack_5);
-        pQVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                            ((Quaternion *)&stack0xffffffdc,pTVar2,(MethodInfo *)0x0);
-        pvStack_10 = (void *)pQVar9->x;
-        _puStack_10 = CONCAT44(&UNK_?,pQVar9->y);
-        iVar11 = func_?();
-        fVar7 = *(float *)(iVar11 + 4);
-        if (fVar7 != (this->fields).previousYaw) {
-          if ((this->fields).OnLookDirectionYawChange != (Action_1_Single_ *)0x0) {
-            pAVar12 = (this->fields).OnLookDirectionYawChange;
-            _puStack_10 = CONCAT44((pAVar12->fields)._._.method,fVar7);
-            pvStack_10 = (pAVar12->fields)._._.method_code;
-            VStack_4.z = (float)&UNK_?;
-            (*(pAVar12->fields)._._.invoke_impl)();
+        pQVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+                            ((Quaternion *)&stack0x00000018,pTVar2,(MethodInfo *)0x0);
+        in_stack_11 = pQVar10->z;
+        in_stack_12 = pQVar10->w;
+        iVar13 = func_?(&uStack14);
+        fVar8 = *(float *)(iVar13 + 4);
+        if (fVar8 != (this->fields).previousYaw) {
+          pAVar15 = (this->fields).OnLookDirectionYawChange;
+          if (pAVar15 != (Action_1_Single_ *)0x0) {
+            (*(pAVar15->fields)._._.invoke_impl)
+                      ((pAVar15->fields)._._.method_code,fVar8,(pAVar15->fields)._._.method);
           }
-          (this->fields).previousYaw = fVar7;
+          (this->fields).previousYaw = fVar8;
         }
-        _puStack_10 = 0xADDR;
-        pMVar8 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0)
-        ;
-        if (pMVar8 != (MainCameraManager *)0x0) {
-          _puStack_10 = CONCAT44(pMVar8,&UNK_?);
+        pMVar9 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
+                            ((MethodInfo *)0x0);
+        if (pMVar9 != (MainCameraManager *)0x0) {
           pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                              ((Component *)pMVar8,(MethodInfo *)0x0);
+                              ((Component *)pMVar9,(MethodInfo *)0x0);
           if (pTVar2 != (Transform *)0x0) {
-            _puStack_10 = CONCAT44(&UNK_?,puStack_5);
-            pQVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                                ((Quaternion *)&stack0xffffffdc,pTVar2,(MethodInfo *)0x0);
-            pvStack_10 = (void *)pQVar9->x;
-            _puStack_10 = CONCAT44(&UNK_?,pQVar9->y);
-            pfVar13 = (float *)func_?();
-            pvVar14 = (void *)*pfVar13;
-            if ((float)pvVar14 != (this->fields).previousPitch) {
-              if ((this->fields).OnLookDirectionPitchChange != (Action_1_Single_ *)0x0) {
-                pAVar12 = (this->fields).OnLookDirectionPitchChange;
-                pvVar14 = (pAVar12->fields)._._.method_code;
-                (*(pAVar12->fields)._._.invoke_impl)();
+            pQVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+                                ((Quaternion *)&stack0x00000018,pTVar2,(MethodInfo *)0x0);
+            in_stack_11 = pQVar10->z;
+            in_stack_12 = pQVar10->w;
+            puVar16 = (undefined4 *)func_?(&uStack14);
+            puVar17 = (undefined *)*puVar16;
+            if ((float)puVar17 != (this->fields).previousPitch) {
+              pAVar15 = (this->fields).OnLookDirectionPitchChange;
+              if (pAVar15 != (Action_1_Single_ *)0x0) {
+                pMStack_18 = (pAVar15->fields)._._.method;
+                puStack_6 = puVar17;
+                (*(pAVar15->fields)._._.invoke_impl)();
               }
-              (this->fields).previousPitch = (float)pvVar14;
+              (this->fields).previousPitch = (float)puVar17;
             }
-            puStack_5 = (undefined *)(this->fields).localLookDirection.x;
-            unique0x0000a404 = (this->fields).localLookDirection.y;
-            uVar15 = (this->fields).previousLookDirection.x;
-            uVar16 = (this->fields).previousLookDirection.y;
-            VStack_4.z = (this->fields).localLookDirection.z -
-                          (this->fields).previousLookDirection.z;
-            VStack_4.y = (float)unique0x0000a404 - (float)uVar16;
-            VStack_4.x = (float)puStack_5 - (float)uVar15;
-            fVar17 = (float10)func_?();
-            if ((_UNK_? < (float)fVar17) &&
-               ((this->fields).OnRotationChange != (Action *)0x0)) {
-              (*(((this->fields).OnRotationChange)->fields)._._.invoke_impl)();
+            uVar19 = (this->fields).localLookDirection.x;
+            uVar20 = (this->fields).localLookDirection.y;
+            in_stack_11 = (this->fields).localLookDirection.z;
+            uStack14._0_4_ = (this->fields).previousLookDirection.x;
+            uStack14._4_4_ = (this->fields).previousLookDirection.y;
+            fVar8 = (float)uVar19 - (float)(undefined4)uStack14;
+            fStack21 = (this->fields).previousLookDirection.z;
+            fVar7 = (float)uVar20 - (float)uStack14._4_4_;
+            fVar22 = in_stack_11 - fStack21;
+            if (cRam_? == '\0') {
+              pMStack_18 = (Math__Class *)&TypeInfo__System__Math;
+              func_?();
+              cRam_? = '\x01';
             }
-            fVar6 = (this->fields).localLookDirection.y;
-            fVar7 = (this->fields).localLookDirection.z;
+            if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+              pMStack_18 = TypeInfo__System__Math;
+              func_?();
+            }
+            dVar23 = (double)(fVar7 * fVar7 + fVar8 * fVar8 + fVar22 * fVar22);
+            if (dVar23 < 0.0) {
+              func_?();
+            }
+            else {
+              dVar23 = SQRT(dVar23);
+            }
+            if ((_UNK_? < (float)dVar23) &&
+               (pAVar24 = (this->fields).OnRotationChange, pAVar24 != (Action *)0x0)) {
+              pMStack_18 = (pAVar24->fields)._._.method;
+              puStack_6 = (pAVar24->fields)._._.method_code;
+              (*(pAVar24->fields)._._.invoke_impl)();
+            }
+            fVar7 = (this->fields).localLookDirection.y;
+            fVar8 = (this->fields).localLookDirection.z;
             (this->fields).previousLookDirection.x = (this->fields).localLookDirection.x;
-            (this->fields).previousLookDirection.y = fVar6;
-            (this->fields).previousLookDirection.z = fVar7;
+            (this->fields).previousLookDirection.y = fVar7;
+            (this->fields).previousLookDirection.z = fVar8;
             return;
           }
         }
@@ -126,8 +148,8 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarLookDirectionHandler::
     }
   }
   func_?();
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
+  pcVar25 = (code *)swi(3);
+  (*pcVar25)();
   return;
 }
 
@@ -149,8 +171,8 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarLookDirectionHandler::
       pfVar1 = (float *)func_?(apvStack_2);
       fStack_3 = *pfVar1;
       if (fStack_3 != (this->fields).previousPitch) {
-        if ((this->fields).OnLookDirectionPitchChange != (Action_1_Single_ *)0x0) {
-          pAVar4 = (this->fields).OnLookDirectionPitchChange;
+        pAVar4 = (this->fields).OnLookDirectionPitchChange;
+        if (pAVar4 != (Action_1_Single_ *)0x0) {
           apvStack_2[0] = (pAVar4->fields)._._.method;
           (*(pAVar4->fields)._._.invoke_impl)();
         }
@@ -183,8 +205,8 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarLookDirectionHandler::
       iVar1 = func_?(apvStack_2);
       fStack_3 = *(float *)(iVar1 + 4);
       if (fStack_3 != (this->fields).previousYaw) {
-        if ((this->fields).OnLookDirectionYawChange != (Action_1_Single_ *)0x0) {
-          pAVar4 = (this->fields).OnLookDirectionYawChange;
+        pAVar4 = (this->fields).OnLookDirectionYawChange;
+        if (pAVar4 != (Action_1_Single_ *)0x0) {
           apvStack_2[0] = (pAVar4->fields)._._.method;
           (*(pAVar4->fields)._._.invoke_impl)();
         }

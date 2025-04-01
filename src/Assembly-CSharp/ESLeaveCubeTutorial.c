@@ -50,22 +50,9 @@ void Assembly-CSharp.dll::ESLeaveCubeTutorial::ESLeaveCubeTutorial__ctor
 {
   pWVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRefNullRef
                      ((MethodInfo *)0x0);
-  (this->fields)._.tintedWo = pWVar1;
-  method_00 = (MethodInfo *)&(this->fields)._.tintedWo;
-  func_?(method_00,pWVar1);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-  this_00 = LoggerManager::LoggerManager_get_Instance((MethodInfo *)0x0);
-  type = mscorlib.dll::System::Object::Object_GetType((Object *)this,(MethodInfo *)0x0);
-  if (this_00 != (LoggerManager *)0x0) {
-    pIVar2 = LoggerManager::LoggerManager_GetLogger(this_00,type,(MethodInfo *)0x0);
-    (this->fields)._.logger = pIVar2;
-    func_?();
-    return;
-  }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  ppWVar2 = &(this->fields)._.tintedWo;
+  *ppWVar2 = pWVar1;
+  func_?(ppWVar2,&stack0xfffffffc,&UNK_?,ppWVar2,pWVar1);
   return;
 }
 

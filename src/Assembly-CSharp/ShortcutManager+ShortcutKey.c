@@ -8,10 +8,11 @@ void Assembly-CSharp.dll::ShortcutManager+ShortcutKey::ShortcutManager_ShortcutK
 {
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  ppUVar1 = &(this->fields).callback;
   (this->fields).kogamaControl = kogamaControl;
   (this->fields).keyState = keyState;
-  (this->fields).callback = callback;
-  func_?(&(this->fields).callback,callback);
+  *ppUVar1 = callback;
+  func_?(ppUVar1,callback);
   return;
 }
 

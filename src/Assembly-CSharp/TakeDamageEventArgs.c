@@ -17,9 +17,10 @@ void Assembly-CSharp.dll::TakeDamageEventArgs::TakeDamageEventArgs__ctor
   UxmlObjectListAttributeDescription`1[System::Object]::
   UxmlObjectListAttributeDescription_1_System_Object___ctor
             ((UxmlObjectListAttributeDescription_1_System_Object_ *)this,(MethodInfo *)0x0);
-  (this->fields).damageSource = damageDealer;
+  ppMVar1 = &(this->fields).damageSource;
   (this->fields).damage = amount;
-  func_?(&(this->fields).damageSource,damageDealer);
+  *ppMVar1 = damageDealer;
+  func_?(ppMVar1,damageDealer);
   (this->fields).damageType = (undefined1)damageType;
   return;
 }

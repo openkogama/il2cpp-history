@@ -41,7 +41,7 @@ bool Assembly-CSharp.dll::CSUACSelfElevation::NativeMethods::NativeMethods_Dupli
     func_?(DuplicateTokenHandle,&pvStack_9);
     return iVar10 != 0;
   }
-  uVar11 = func_?(&UNK_?,0);
+  uVar11 = func_?(&UNK_?);
   func_?(uVar11);
   pcVar12 = (code *)swi(3);
   bVar13 = (*pcVar12)();

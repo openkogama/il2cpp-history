@@ -23,45 +23,46 @@ void Assembly-CSharp.dll::PickupItemSlapGun::PickupItemSlapGun_Awake
     func_?(TypeInfo__MainCameraManager);
   }
   if (TypeInfo__MainCameraManager->static_fields->IsCameraForcedFirstPerson != 0) {
-    pTVar3 = (this->fields)._._.firstPersonTransform;
+    ppTVar3 = &(this->fields)._._.firstPersonTransform;
+    pTVar4 = *ppTVar3;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                      ((Object_1 *)pTVar3,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar4 != 0) {
+    bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                      ((Object_1 *)pTVar4,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar5 != 0) {
       this_00 = (GameObject *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor
                 (this_00,StringLiteral_FirstPersonTransform,(MethodInfo *)0x0);
       if (this_00 != (GameObject *)0x0) {
-        pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+        pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                            (this_00,(MethodInfo *)0x0);
         p = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                      ((Component *)this,(MethodInfo *)0x0);
-        if (pTVar3 != (Transform *)0x0) {
+                      ((Component *)0x0,(MethodInfo *)0x0);
+        if (pTVar4 != (Transform *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent
-                    (pTVar3,p,(MethodInfo *)0x0);
-          pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                    (pTVar4,p,(MethodInfo *)0x0);
+          pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                              (this_00,(MethodInfo *)0x0);
           if (cRam_? == '\0') {
             func_?();
             cRam_? = '\x01';
           }
-          if (pTVar3 != (Transform *)0x0) {
+          if (pTVar4 != (Transform *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                      (pTVar3,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
+                      (pTVar4,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
                        (MethodInfo *)0x0);
-            pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+            pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                                (this_00,(MethodInfo *)0x0);
-            (this->fields)._._.firstPersonTransform = pTVar3;
+            *ppTVar3 = pTVar4;
             func_?();
             return;
           }
         }
       }
       func_?();
-      pcVar5 = (code *)swi(3);
-      (*pcVar5)();
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
       return;
     }
   }
@@ -189,35 +190,34 @@ void Assembly-CSharp.dll::PickupItemSlapGun::PickupItemSlapGun_OnFire
       uVar16 = pVVar6->x;
       uVar17 = pVVar6->y;
       fVar18 = pVVar6->z;
-      unaff_EBX = (IBulletImpactVisualizer__Class *)(this->fields).slapSounds;
-      unaff_ESI = (MVWorldObjectClient *)(this->fields).audioSource;
+      unaff_ESI = (MVWorldObjectClient *)(this->fields).slapSounds;
+      unaff_EBX = (IBulletImpactVisualizer__Class *)(this->fields).audioSource;
       fStack_2 = (float)uVar16;
       fStack_3 = (float)uVar17;
       fStack_4 = fVar18;
-      if (unaff_EBX != (IBulletImpactVisualizer__Class *)0x0) {
-        pcVar19 = (char *)UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_RandomRangeInt
-                                    (0,(int32_t)((unaff_EBX->_0).namespaze + -1),(MethodInfo *)0x0);
+      if (unaff_ESI != (MVWorldObjectClient *)0x0) {
+        uVar19 = UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_RandomRangeInt
+                           (0,(unaff_ESI->fields)._.groupId + -1,(MethodInfo *)0x0);
         pIVar20 = unaff_EBX;
-        if ((unaff_EBX->_0).namespaze <= pcVar19) goto code_?;
-        if (unaff_ESI != (MVWorldObjectClient *)0x0) {
+        if ((uint)(unaff_ESI->fields)._.groupId <= uVar19) goto code_?;
+        if (unaff_EBX != (IBulletImpactVisualizer__Class *)0x0) {
           UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_clip
-                    ((AudioSource *)unaff_ESI,
-                     (AudioClip *)(&(unaff_EBX->_0).byval_arg.data)[(int)pcVar19].typeHandle,
+                    ((AudioSource *)unaff_EBX,(AudioClip *)(&(unaff_ESI->fields)._.itemId)[uVar19],
                      (MethodInfo *)0x0);
-          unaff_ESI = (MVWorldObjectClient *)
+          unaff_EBX = (IBulletImpactVisualizer__Class *)
                       MVGameControllerBase::MVGameControllerBase_get_AudioManager((MethodInfo *)0x0)
           ;
-          unaff_EBX = (IBulletImpactVisualizer__Class *)(this->fields).audioSource;
-          if (unaff_EBX != (IBulletImpactVisualizer__Class *)0x0) {
+          unaff_ESI = (MVWorldObjectClient *)(this->fields).audioSource;
+          if (unaff_ESI != (MVWorldObjectClient *)0x0) {
             pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                ((Component *)unaff_EBX,(MethodInfo *)0x0);
+                                ((Component *)unaff_ESI,(MethodInfo *)0x0);
             if (pTVar5 != (Transform *)0x0) {
               pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
                                   (&VStack_7,pTVar5,(MethodInfo *)0x0);
-              if (unaff_ESI != (MVWorldObjectClient *)0x0) {
+              if (unaff_EBX != (IBulletImpactVisualizer__Class *)0x0) {
                 AudioManager::AudioManager_Play_2
-                          ((AudioManager *)unaff_ESI,StringLiteral_Sound___slapGunFire,
-                           (AudioSource *)unaff_EBX,*pVVar6,(MethodInfo *)0x0);
+                          ((AudioManager *)unaff_EBX,StringLiteral_Sound___slapGunFire,
+                           (AudioSource *)unaff_ESI,*pVVar6,(MethodInfo *)0x0);
                 pMVar10 = (this->fields)._._.owner;
                 if (pMVar10 != (MVPickupOwner *)0x0) {
                   fStack_9 = fStack_4;
@@ -321,8 +321,8 @@ void Assembly-CSharp.dll::PickupItemSlapGun::PickupItemSlapGun_OnFire
                                           (pVVar6,value,(MethodInfo *)0x0);
                       uVar51 = pVVar50->x;
                       uVar52 = pVVar50->y;
-                      fVar53 = pVVar50->z;
                       fVar25 = (pPVar1->fields).slapStrength;
+                      fVar53 = pVVar50->z;
                       if (unaff_ESI == (MVWorldObjectClient *)0x0) goto code_?;
                       unaff_EBX = (IBulletImpactVisualizer__Class *)
                                   MVWorldObjectClient::

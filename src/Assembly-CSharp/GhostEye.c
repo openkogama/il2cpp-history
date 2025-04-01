@@ -26,45 +26,40 @@ void Assembly-CSharp.dll::GhostEye::GhostEye_SetEyeState
   }
   pDVar1 = (Dictionary_2_System_Int32Enum_System_Object_ *)(this->fields).ghostEyeStates;
   (this->fields).currentTransitionTime = 0.0;
-  if (pDVar1 != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) {
-    pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-             Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                       (pDVar1,(this->fields).currentEyeState,
-                        MethodInfo__System__Collections__Generic__Dictionary<GhostEye::GhostEyeState,_GhostEye::IGhostEyeState>__get_Item_GhostEye__GhostEyeState_
-                       );
-    if (pOVar2 != (Object *)0x0) {
-      func_?(2,TypeInfo__GhostEye__IGhostEyeState,pOVar2);
-      pDVar1 = (Dictionary_2_System_Int32Enum_System_Object_ *)(this->fields).ghostEyeStates;
-      if (pDVar1 != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) {
-        pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+  if ((pDVar1 != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) &&
+     (pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+               Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                         (pDVar1,(this->fields).currentEyeState,
+                          MethodInfo__System__Collections__Generic__Dictionary<GhostEye::GhostEyeState,_GhostEye::IGhostEyeState>__get_Item_GhostEye__GhostEyeState_
+                         ), pOVar2 != (Object *)0x0)) {
+    func_?(2,TypeInfo__GhostEye__IGhostEyeState,pOVar2);
+    pDVar1 = (Dictionary_2_System_Int32Enum_System_Object_ *)(this->fields).ghostEyeStates;
+    if ((pDVar1 != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) &&
+       (pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
                  Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
                            (pDVar1,ghostEyeState,
                             MethodInfo__System__Collections__Generic__Dictionary<GhostEye::GhostEyeState,_GhostEye::IGhostEyeState>__get_Item_GhostEye__GhostEyeState_
-                           );
-        if (pOVar2 != (Object *)0x0) {
-          pOVar3 = pOVar2->klass;
-          uVar4 = 0;
-          uVar5._0_1_ = (pOVar3->_1).rank;
-          uVar5._1_1_ = (pOVar3->_1).minimumAlignment;
-          if (uVar5 != 0) {
-            do {
-              if (pOVar3->interfaceOffsets[uVar4].interfaceType ==
-                  (Il2CppClass *)TypeInfo__GhostEye__IGhostEyeState) {
-                ppMVar6 = &(&(pOVar2->klass->vtable).Equals)
-                           [pOVar2->klass->interfaceOffsets[uVar4].offset].method;
-                goto code_?;
-              }
-              uVar4 = uVar4 + 1;
-            } while (uVar4 < uVar5);
+                           ), pOVar2 != (Object *)0x0)) {
+      pOVar3 = pOVar2->klass;
+      uVar4 = 0;
+      uVar5._0_1_ = (pOVar3->_1).rank;
+      uVar5._1_1_ = (pOVar3->_1).minimumAlignment;
+      if (uVar5 != 0) {
+        do {
+          if (pOVar3->interfaceOffsets[uVar4].interfaceType ==
+              (Il2CppClass *)TypeInfo__GhostEye__IGhostEyeState) {
+            ppMVar6 = &(&(pOVar3->vtable).Equals)[pOVar3->interfaceOffsets[uVar4].offset].method;
+            goto code_?;
           }
-          ppMVar6 = (MethodInfo **)
-                    func_?(pOVar2,TypeInfo__GhostEye__IGhostEyeState,0,pOVar2,pOVar3,0);
-code_?:
-          (*(code *)*ppMVar6)(pOVar2,this,ppMVar6[1]);
-          (this->fields).currentEyeState = ghostEyeState;
-          return;
-        }
+          uVar4 = uVar4 + 1;
+        } while (uVar4 < uVar5);
       }
+      ppMVar6 = (MethodInfo **)func_?(pOVar2,TypeInfo__GhostEye__IGhostEyeState,0,pOVar3,0)
+      ;
+code_?:
+      (*(code *)*ppMVar6)(pOVar2,this,ppMVar6[1]);
+      (this->fields).currentEyeState = ghostEyeState;
+      return;
     }
   }
   func_?();
@@ -229,10 +224,9 @@ void Assembly-CSharp.dll::GhostEye::GhostEye_UpdateLookAtTarget
                        );
     unaff_EDI = TypeInfo__GhostEye__LookAtTarget;
     if (pOVar1 != (Object *)0x0) {
-      if (((TypeInfo__GhostEye__LookAtTarget->_1).naturalAligment <=
-           (pOVar1->klass->_1).naturalAligment) &&
-         ((pOVar1->klass->_1).typeHierarchy
-          [(TypeInfo__GhostEye__LookAtTarget->_1).naturalAligment - 1] ==
+      bVar2 = (TypeInfo__GhostEye__LookAtTarget->_1).naturalAligment;
+      if ((bVar2 <= (pOVar1->klass->_1).naturalAligment) &&
+         ((pOVar1->klass->_1).typeHierarchy[bVar2 - 1] ==
           (Il2CppClass *)TypeInfo__GhostEye__LookAtTarget)) {
         pOVar1[1].klass = (Object__Class *)target.x;
         pOVar1[1].monitor = (MonitorData *)target.y;
@@ -249,8 +243,8 @@ void Assembly-CSharp.dll::GhostEye::GhostEye_UpdateLookAtTarget
   pOVar1 = extraout_EDX;
 code_?:
   func_?(pOVar1,unaff_EDI);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

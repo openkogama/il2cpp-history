@@ -57,49 +57,45 @@ void Assembly-CSharp.dll::RTG::ObjectSnap::ObjectSnap_Snap_1
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  LStack_6._list = (List_1_System_Object_ *)0x0;
-  LStack_6._index = 0;
-  LStack_6._version = 0;
-  LStack_6._current = (Object *)0x0;
   if (roots != (List_1_UnityEngine_GameObject_ *)0x0) {
-    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
              RegexCharClass+SingleRange]::
              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                        ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                         *)auStack_8,
+                         *)auStack_7,
                         (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)roots,
                         MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
                        );
-    uStack_9 = 0;
-    LStack_6._list = (List_1_System_Object_ *)pLVar7->_list;
-    LStack_6._index = pLVar7->_index;
-    LStack_6._version = pLVar7->_version;
-    LStack_6._current = *(Object **)&pLVar7->_current;
+    uStack_8 = 0;
+    LStack_9._list = (List_1_System_Object_ *)pLVar6->_list;
+    LStack_9._index = pLVar6->_index;
+    LStack_9._version = pLVar6->_version;
+    LStack_9._current = *(Object **)&pLVar6->_current;
     uStack_1 = 1;
-    pLStack_10 = &LStack_6;
+    pLStack_10 = &LStack_9;
     while( true ) {
       bVar11 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
               List_1_T_Enumerator_System_Object__MoveNext
-                        (&LStack_6,
+                        (&LStack_9,
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
                         );
       if (bVar11 == 0) {
         uStack_1 = 0xffffffff;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&LStack_6,
+                  ((Object *)&LStack_9,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
                    ,(MethodInfo *)roots);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) break;
+      if ((RegexCharClass_SingleRange)LStack_9._current == (RegexCharClass_SingleRange)0x0) break;
       roots = (List_1_UnityEngine_GameObject_ *)
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                        ((GameObject *)LStack_6._current,(MethodInfo *)0x0);
+                        ((GameObject *)LStack_9._current,(MethodInfo *)0x0);
       if ((MethodInfo *)roots == (MethodInfo *)0x0) break;
       pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                         ((Vector3 *)(auStack_8 + 4),(Transform *)roots,(MethodInfo *)0x0);
+                         ((Vector3 *)(auStack_7 + 4),(Transform *)roots,(MethodInfo *)0x0);
       uStack_13._0_4_ = pVVar12->x;
       uStack_13._4_4_ = pVVar12->y;
       fStack_14 = pVVar12->z;

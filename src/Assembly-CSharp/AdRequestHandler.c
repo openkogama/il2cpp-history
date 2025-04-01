@@ -94,20 +94,19 @@ void Assembly-CSharp.dll::AdRequestHandler::AdRequestHandler_GoldAdAvailable
                        (availableJsonString,
                         AdRequestHandler__Available_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<AdRequestHandler::Available>_System__String_
                        );
-    if (TypeInfo__AdRequestHandler->static_fields->OnGoldAdAvailableCallback !=
-        (Action_1_Boolean_ *)0x0) {
+    pAVar2 = TypeInfo__AdRequestHandler->static_fields->OnGoldAdAvailableCallback;
+    if (pAVar2 != (Action_1_Boolean_ *)0x0) {
       if (pOVar1 != (Object *)0x0) {
-        (*(TypeInfo__AdRequestHandler->static_fields->OnGoldAdAvailableCallback->fields)._._.
-          invoke_impl)();
+        (*(pAVar2->fields)._._.invoke_impl)();
         TypeInfo__AdRequestHandler->static_fields->OnGoldAdAvailableCallback =
              (Action_1_Boolean_ *)0x0;
         func_?(&TypeInfo__AdRequestHandler->static_fields->OnGoldAdAvailableCallback,0);
         return;
       }
-      uVar2 = func_?(&stack0xfffffff8);
-      func_?(uVar2);
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
+      uVar3 = func_?(&stack0xfffffff8);
+      func_?(uVar3);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
       return;
     }
   }
@@ -241,10 +240,9 @@ void Assembly-CSharp.dll::AdRequestHandler::AdRequestHandler_ShowGoldVideoAdCall
                 ((Object *)StringLiteral_User_did_not_finish_watching_ad,(MethodInfo *)0x0);
       return;
     }
-    if (TypeInfo__AdRequestHandler->static_fields->OnGoldAdShownCallback != (Action_1_Boolean_ *)0x0
-       ) {
-      (*(TypeInfo__AdRequestHandler->static_fields->OnGoldAdShownCallback->fields)._._.invoke_impl)
-                ();
+    pAVar4 = TypeInfo__AdRequestHandler->static_fields->OnGoldAdShownCallback;
+    if (pAVar4 != (Action_1_Boolean_ *)0x0) {
+      (*(pAVar4->fields)._._.invoke_impl)();
       TypeInfo__AdRequestHandler->static_fields->OnGoldAdShownCallback = (Action_1_Boolean_ *)0x0;
       func_?(&TypeInfo__AdRequestHandler->static_fields->OnGoldAdShownCallback,0);
       return;

@@ -97,10 +97,9 @@ code_?:
                                            ((Quaternion *)&stack0xffffffec,pTVar6,(MethodInfo *)0x0)
                         ;
                         if (this_00 != (LobbyStateCamera *)0x0) {
-                          if (((this_00->klass->_1).naturalAligment <
-                               (TypeInfo__LobbyStateCamera->_1).naturalAligment) ||
-                             ((this_00->klass->_1).typeHierarchy
-                              [(TypeInfo__LobbyStateCamera->_1).naturalAligment - 1] !=
+                          bVar9 = (TypeInfo__LobbyStateCamera->_1).naturalAligment;
+                          if (((this_00->klass->_1).naturalAligment < bVar9) ||
+                             ((this_00->klass->_1).typeHierarchy[bVar9 - 1] !=
                               (Il2CppClass *)TypeInfo__LobbyStateCamera)) goto code_?;
                           LobbyStateCamera::LobbyStateCamera_SetRotation
                                     (this_00,*pQVar7,(MethodInfo *)0x0);
@@ -126,8 +125,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

@@ -390,10 +390,6 @@ void Assembly-CSharp.dll::AccessoryShopController::AccessoryShopController_Clear
                        );
         cRam_? = '\x01';
       }
-      DStack_5._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
-      DStack_5._index = 0;
-      DStack_5._version = 0;
-      DStack_5._currentValue = (Object *)0x0;
       pDVar1 = *(Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                  **)(iVar3 + 0x10);
       if ((pDVar1 != (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
@@ -405,7 +401,7 @@ void Assembly-CSharp.dll::AccessoryShopController::AccessoryShopController_Clear
                            (pDVar1,
                             MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__get_Values__
                            ), this != (AccessoryShopController *)0x0)) {
-        pDVar6 = mscorlib.dll::System::Collections::Generic::
+        pDVar5 = mscorlib.dll::System::Collections::Generic::
                  Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
                  StyleSheetCache+SheetHandleKey,System::Object]::
                  Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
@@ -414,32 +410,32 @@ void Assembly-CSharp.dll::AccessoryShopController::AccessoryShopController_Clear
                              *)this,
                             MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_InventorySlot>__GetEnumerator__
                            );
-        DStack_5._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)pDVar6->_dictionary;
-        DStack_5._index = pDVar6->_index;
-        DStack_5._version = pDVar6->_version;
-        DStack_5._currentValue = pDVar6->_currentValue;
+        DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)pDVar5->_dictionary;
+        DStack_6._index = pDVar5->_index;
+        DStack_6._version = pDVar5->_version;
+        DStack_6._currentValue = pDVar5->_currentValue;
         DStack_2._version = 0;
-        DStack_2._currentValue = (Object *)&DStack_5;
+        DStack_2._currentValue = (Object *)&DStack_6;
         while( true ) {
           bVar7 = mscorlib.dll::System::Collections::Generic::
                   Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
                   UInt32,System::Object]::
                   Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                            (&DStack_5,
+                            (&DStack_6,
                              MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_InventorySlot>__MoveNext__
                             );
-          this_00 = DStack_5._currentValue;
+          this_00 = DStack_6._currentValue;
           if (bVar7 == 0) {
             puVar8 = &UNK_?;
             mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                      ((Object *)&DStack_5,
+                      ((Object *)&DStack_6,
                        (ExceptionArgument__Enum)
                        MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_InventorySlot>__Dispose__
                        ,(MethodInfo *)this);
             *unaff_FS_OFFSET = puVar8;
             return;
           }
-          if ((InventorySlot *)DStack_5._currentValue == (InventorySlot *)0x0) break;
+          if ((InventorySlot *)DStack_6._currentValue == (InventorySlot *)0x0) break;
           if (cRam_? == '\0') {
             func_?();
             cRam_? = '\x01';
@@ -595,8 +591,8 @@ void Assembly-CSharp.dll::AccessoryShopController::AccessoryShopController_Displ
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff8c;
-  puVar5 = &stack0xffffff8c;
+  puStack_4 = &stack0xffffff90;
+  puVar5 = &stack0xffffff90;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<int,_TabState>__Add_int__TabState_
@@ -624,50 +620,44 @@ void Assembly-CSharp.dll::AccessoryShopController::AccessoryShopController_Displ
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
-  DStack_6._version = 0;
-  DStack_6._index = 0;
-  DStack_6._current.key = 0;
-  DStack_6._current.value = (Object *)0x0;
-  DStack_6._getEnumeratorRetType = 0;
   this_01 = (Dictionary_2_System_UInt32_System_Object_ *)
             AccessoryDataManager::AccessoryDataManager_GetAccessoriesCategoryMap((MethodInfo *)0x0);
   if (this_01 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
-    pDVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+    pDVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
              ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
                        ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                        &stack0xffffff98,this_01,
+                        &stack0xffffff9c,this_01,
                         MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AccessoryCategory,_System::Collections::Generic::List<AccessoryDataClient>_>__GetEnumerator__
                        );
-    uStack_8 = 0;
-    DStack_6._dictionary = pDVar7->_dictionary;
-    DStack_6._version = pDVar7->_version;
-    DStack_6._index = pDVar7->_index;
-    DStack_6._current.key = (pDVar7->_current).key;
-    DStack_6._16_8_ = *(undefined8 *)&(pDVar7->_current).value;
+    uStack_7 = 0;
+    DStack_8._dictionary = pDVar6->_dictionary;
+    DStack_8._version = pDVar6->_version;
+    DStack_8._index = pDVar6->_index;
+    DStack_8._current.key = (pDVar6->_current).key;
+    DStack_8._16_8_ = *(undefined8 *)&(pDVar6->_current).value;
     uStack_1 = 1;
-    pDStack_9 = &DStack_6;
+    pDStack_9 = &DStack_8;
     while( true ) {
       bVar10 = mscorlib.dll::System::Collections::Generic::
               Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
               Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                        (&DStack_6,
+                        (&DStack_8,
                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::Common::AccessoryCategory,_System::Collections::Generic::List<AccessoryDataClient>_>__MoveNext__
                         );
       if (bVar10 == 0) {
         uStack_1 = 0xffffffff;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&DStack_6,
+                  ((Object *)&DStack_8,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::Common::AccessoryCategory,_System::Collections::Generic::List<AccessoryDataClient>_>__Dispose__
                    ,in_stack_11);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      AStack_12 = DStack_6._current.key;
+      AStack_12 = DStack_8._current.key;
       pLStack_13 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                   DStack_6._current.value;
-      pSStack_14 = LocalizedEnums::LocalizedEnums___3(DStack_6._current.key,(MethodInfo *)0x0);
+                   DStack_8._current.value;
+      pSStack_14 = LocalizedEnums::LocalizedEnums___3(DStack_8._current.key,(MethodInfo *)0x0);
       slotsPrPage = (this->fields).numberOfSlotsPrPage;
       in_stack_11 = (MethodInfo *)&UNK_?;
       pTStack_15 = (TabState *)func_?();
@@ -682,11 +672,12 @@ void Assembly-CSharp.dll::AccessoryShopController::AccessoryShopController_Displ
         cRam_? = '\x01';
       }
       index = 0;
-      pSStack_14 = (String *)0x0;
-      iStack_16 = 0;
-      if (pLStack_13 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-      break;
-      while (pSStack_14 = (String *)iStack_16, index < (pLStack_13->fields)._size) {
+      pSVar16 = (String *)0;
+      while( true ) {
+        pSStack_14 = pSVar16;
+        if (pLStack_13 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+        goto code_?;
+        if ((pLStack_13->fields)._size <= index) break;
         RVar17 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                 ::RegexCharClass+SingleRange]::
                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
@@ -695,13 +686,13 @@ void Assembly-CSharp.dll::AccessoryShopController::AccessoryShopController_Displ
                           );
         if (RVar17 == (RegexCharClass_SingleRange)0x0) goto code_?;
         index = index + 1;
-        iStack_16 = iStack_16 + 1;
+        pSVar16 = (String *)((int)pSStack_14 + 1);
         if (*(char *)((int)RVar17 + 0x30) == '\0') {
-          iStack_16 = (int32_t)pSStack_14;
+          pSVar16 = pSStack_14;
         }
       }
       if (pTStack_15 == (TabState *)0x0) break;
-      (pTStack_15->fields).highestSlotIndex = iStack_16;
+      (pTStack_15->fields).highestSlotIndex = (int32_t)pSVar16;
       this_00 = (this->fields).tabs;
       if (this_00 == (Dictionary_2_System_Int32_TabState_ *)0x0) break;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
@@ -1346,27 +1337,27 @@ code_?:
                (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
                UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<IEditStateCommands>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IEditStateCommands>_
               );
-    pTVar3 = (this->fields).previewItemsRoot;
+    ppTVar3 = &(this->fields).previewItemsRoot;
+    x = *ppTVar3;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      ((Object_1 *)pTVar3,(Object_1 *)0x0,(MethodInfo *)0x0);
+                      ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
     if (bVar4 == 0) {
 code_?:
-      ppTStack5 = &(this->fields).previewItemsRoot;
-      (this->fields).previewItemsRoot = (Transform *)0x0;
-      uStack6 = 0;
+      uStack5 = 0;
+      *ppTVar3 = (Transform *)0x0;
+      ppTStack6 = ppTVar3;
       func_?();
       UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
                 ((Behaviour *)this,0,(MethodInfo *)0x0);
       AccessoryShopController_SetAccessoriesToSelectable(this,0,(MethodInfo *)0x0);
       return;
     }
-    pTVar3 = (this->fields).previewItemsRoot;
-    if (pTVar3 != (Transform *)0x0) {
+    if (*ppTVar3 != (Transform *)0x0) {
       pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)pTVar3,(MethodInfo *)0x0);
+                         ((Component *)*ppTVar3,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
@@ -1415,8 +1406,8 @@ Assembly-CSharp.dll::AccessoryShopController::AccessoryShopController_OpenAccess
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[2].klass = (Object__Class *)this;
   value[1].klass = (Object__Class *)0x0;
+  value[2].klass = (Object__Class *)this;
   func_?(value + 2,this);
   return (IEnumerator *)value;
 }
@@ -1435,49 +1426,50 @@ void Assembly-CSharp.dll::AccessoryShopController::AccessoryShopController_OpenI
     func_?(&TypeInfo__UnityEngine__Events__UnityAction);
     cRam_? = '\x01';
   }
-  (this->fields).accessoryDataToShow = accessoryData;
-  func_?(&(this->fields).accessoryDataToShow,accessoryData);
+  ppAVar1 = &(this->fields).accessoryDataToShow;
+  *ppAVar1 = accessoryData;
+  func_?(ppAVar1,accessoryData);
   (this->fields).pushOption = pushOption;
-  pUVar1 = TypeInfo__AccessoryDataManager->static_fields->readyCallback;
+  pUVar2 = TypeInfo__AccessoryDataManager->static_fields->readyCallback;
   this_00 = (NavMesh_OnNavMeshPreUpdate *)
             func_?(TypeInfo__UnityEngine__Events__UnityAction);
   UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
   NavMesh_OnNavMeshPreUpdate__ctor
             (this_00,(Object *)this,
              MethodInfo__AccessoryShopController__ReadyCallbackAccessoryView__,(MethodInfo *)0x0);
-  pUVar1 = (UnityAction *)
+  pUVar2 = (UnityAction *)
            mscorlib.dll::System::Delegate::Delegate_Combine
-                     ((Delegate *)pUVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-  if (pUVar1 == (UnityAction *)0x0) {
+                     ((Delegate *)pUVar2,(Delegate *)this_00,(MethodInfo *)0x0);
+  if (pUVar2 == (UnityAction *)0x0) {
     TypeInfo__AccessoryDataManager->static_fields->readyCallback = (UnityAction *)0x0;
-    pUVar2 = (UnityAction *)0x0;
+    pUVar3 = (UnityAction *)0x0;
 code_?:
-    pUStack3 = (UnityAction__Class *)pUVar2;
+    pUStack4 = (UnityAction__Class *)pUVar3;
     func_?();
     AccessoryDataManager::AccessoryDataManager_SetReady((MethodInfo *)0x0);
     return;
   }
-  pUVar2 = (UnityAction *)0x0;
-  if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-    pUVar2 = pUVar1;
+  pUVar3 = (UnityAction *)0x0;
+  if (pUVar2->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+    pUVar3 = pUVar2;
   }
-  if (pUVar2 == (UnityAction *)0x0) {
-    pUStack3 = TypeInfo__UnityEngine__Events__UnityAction;
+  if (pUVar3 == (UnityAction *)0x0) {
+    pUStack4 = TypeInfo__UnityEngine__Events__UnityAction;
     func_?();
-    pUStack3 = extraout_EDX;
+    pUStack4 = extraout_EDX;
   }
   else {
-    TypeInfo__AccessoryDataManager->static_fields->readyCallback = pUVar2;
-    pUVar2 = (UnityAction *)0x0;
-    if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-      pUVar2 = pUVar1;
+    TypeInfo__AccessoryDataManager->static_fields->readyCallback = pUVar3;
+    pUVar3 = (UnityAction *)0x0;
+    if (pUVar2->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+      pUVar3 = pUVar2;
     }
-    pUStack3 = TypeInfo__UnityEngine__Events__UnityAction;
-    if (pUVar2 != (UnityAction *)0x0) goto code_?;
+    pUStack4 = TypeInfo__UnityEngine__Events__UnityAction;
+    if (pUVar3 != (UnityAction *)0x0) goto code_?;
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -1582,27 +1574,26 @@ void Assembly-CSharp.dll::AccessoryShopController::AccessoryShopController_Ready
     func_?(&TypeInfo__UnityEngine__Events__UnityAction);
     cRam_? = '\x01';
   }
-  pOStack_1 = (Object__Class *)0x0;
   (this->fields).selectedTab = (this->fields).startingCategory;
   if ((this->fields).firstTimeSetup != 0) {
     AccessoryShopController_DisplayAllItems(this,(MethodInfo *)0x0);
     (this->fields).firstTimeSetup = 0;
   }
-  pUVar2 = TypeInfo__AccessoryDataManager->static_fields->readyCallback;
+  pUVar1 = TypeInfo__AccessoryDataManager->static_fields->readyCallback;
   this_03 = (NavMesh_OnNavMeshPreUpdate *)
             func_?(TypeInfo__UnityEngine__Events__UnityAction);
   UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
   NavMesh_OnNavMeshPreUpdate__ctor
             (this_03,(Object *)this,MethodInfo__AccessoryShopController__ReadyCallback__,
              (MethodInfo *)0x0);
-  pUVar2 = (UnityAction *)
+  pUVar1 = (UnityAction *)
            mscorlib.dll::System::Delegate::Delegate_Remove
-                     ((Delegate *)pUVar2,(Delegate *)this_03,(MethodInfo *)0x0);
-  if (pUVar2 == (UnityAction *)0x0) {
+                     ((Delegate *)pUVar1,(Delegate *)this_03,(MethodInfo *)0x0);
+  if (pUVar1 == (UnityAction *)0x0) {
     TypeInfo__AccessoryDataManager->static_fields->readyCallback = (UnityAction *)0x0;
 code_?:
     func_?();
-    pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
     if ((TypeInfo__AccessoryShopController____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
@@ -1612,11 +1603,11 @@ code_?:
       if ((TypeInfo__AccessoryShopController____c->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pAVar4 = TypeInfo__AccessoryShopController____c->static_fields->__9;
+      pAVar3 = TypeInfo__AccessoryShopController____c->static_fields->__9;
       callbackFunction = (ExecuteEvents_EventFunction_1_IEditStateCommands_ *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)pAVar4,
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)pAVar3,
                  MethodInfo__AccessoryShopController____c___ReadyCallback_b__25_0_IEditStateCommands__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
       TypeInfo__AccessoryShopController____c->static_fields->__9__25_0 = callbackFunction;
@@ -1626,63 +1617,60 @@ code_?:
       func_?();
     }
     UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              (pGVar3,(BaseEventData *)0x0,
+              (pGVar2,(BaseEventData *)0x0,
                (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
                UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<IEditStateCommands>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IEditStateCommands>_
               );
     (this->fields).currentlyPushOption = (this->fields).pushOption;
     UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
               ((Behaviour *)this,1,(MethodInfo *)0x0);
-    pIVar5 = (this->fields).inventoryControllerPrefab;
+    pIVar4 = (this->fields).inventoryControllerPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pIVar5 = (InventoryController *)
+    pIVar4 = (InventoryController *)
              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                       ((Object *)pIVar5,
+                       ((Object *)pIVar4,
                         InventoryController_MethodInfo__UnityEngine__Object__Instantiate<InventoryController>_InventoryController_
                        );
-    (this->fields).inventoryController = pIVar5;
+    ppIVar5 = &(this->fields).inventoryController;
+    *ppIVar5 = pIVar4;
     func_?();
-    pIVar5 = (this->fields).inventoryController;
-    if (pIVar5 == (InventoryController *)0x0) goto code_?;
-    pUVar6 = (pIVar5->fields).OnPageTurned;
-    pUVar7 = (UnityAction_1_System_Int32Enum_ *)func_?();
+    pIVar4 = *ppIVar5;
+    if (pIVar4 == (InventoryController *)0x0) goto code_?;
+    pUVar6 = (pIVar4->fields).OnPageTurned;
+    pUVar7 = TypeInfo__UnityEngine__Events__UnityAction<int>;
+    pUVar8 = (UnityAction_1_System_Int32Enum_ *)func_?();
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
     UnityAction_1_System_Int32Enum___ctor
-              (pUVar7,(Object *)this,MethodInfo__AccessoryShopController__PageTurned_int_,
+              (pUVar8,(Object *)this,MethodInfo__AccessoryShopController__PageTurned_int_,
                (MethodInfo *)0x0);
-    pDVar8 = mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pUVar6,(Delegate *)pUVar7,(MethodInfo *)0x0);
-    if (pDVar8 == (Delegate *)0x0) {
-      (pIVar5->fields).OnPageTurned = (UnityAction_1_System_Int32_ *)0x0;
+    pDVar9 = mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pUVar6,(Delegate *)pUVar8,(MethodInfo *)0x0);
+    if (pDVar9 == (Delegate *)0x0) {
+      (pIVar4->fields).OnPageTurned = (UnityAction_1_System_Int32_ *)0x0;
 code_?:
       func_?();
-      pIVar5 = (this->fields).inventoryController;
-      if (pIVar5 != (InventoryController *)0x0) {
-        pUVar6 = (pIVar5->fields).OnTabSelected;
-        pUVar7 = (UnityAction_1_System_Int32Enum_ *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-        UnityAction_1_System_Int32Enum___ctor
-                  (pUVar7,(Object *)this,MethodInfo__AccessoryShopController__TabSelected_int_,
-                   (MethodInfo *)0x0);
-        pDVar8 = mscorlib.dll::System::Delegate::Delegate_Combine
-                           ((Delegate *)pUVar6,(Delegate *)pUVar7,(MethodInfo *)0x0);
-        if (pDVar8 == (Delegate *)0x0) {
-          (pIVar5->fields).OnTabSelected = (UnityAction_1_System_Int32_ *)0x0;
-        }
-        else {
-          pUVar6 = (UnityAction_1_System_Int32_ *)func_?();
-          if (pUVar6 == (UnityAction_1_System_Int32_ *)0x0) goto code_?;
-          (pIVar5->fields).OnTabSelected = pUVar6;
-          iVar9 = func_?();
-          if (iVar9 == 0) goto code_?;
-        }
+      pIVar10 = (pUVar7->_0).image;
+      if (pIVar10 == (Il2CppImage *)0x0) goto code_?;
+      pDVar9 = (Delegate *)pIVar10->token;
+      pUVar7 = TypeInfo__UnityEngine__Events__UnityAction<int>;
+      pUVar8 = (UnityAction_1_System_Int32Enum_ *)func_?();
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+      UnityAction_1_System_Int32Enum___ctor
+                (pUVar8,(Object *)this,MethodInfo__AccessoryShopController__TabSelected_int_,
+                 (MethodInfo *)0x0);
+      pDVar9 = mscorlib.dll::System::Delegate::Delegate_Combine
+                         (pDVar9,(Delegate *)pUVar8,(MethodInfo *)0x0);
+      if (pDVar9 == (Delegate *)0x0) {
+        pIVar10->token = 0;
+code_?:
         func_?();
-        pIVar5 = (this->fields).inventoryController;
-        if (pIVar5 != (InventoryController *)0x0) {
+        pIVar10 = (pUVar7->_0).image;
+        if (pIVar10 != (Il2CppImage *)0x0) {
           InventoryController::InventoryController_Initialize
-                    (pIVar5,(this->fields).numberOfSlotsPrPage,(MethodInfo *)0x0);
+                    ((InventoryController *)pIVar10,(this->fields).numberOfSlotsPrPage,
+                     (MethodInfo *)0x0);
           (this->fields).displayShopItems = 1;
           if (cRam_? == '\0') {
             func_?();
@@ -1699,47 +1687,47 @@ code_?:
                       (this_00,
                        MethodInfo__System__Collections__Generic__Dictionary<int,_TabState>__Clear__)
             ;
-            pIVar5 = (this->fields).inventoryController;
-            if (pIVar5 != (InventoryController *)0x0) {
-              InventoryController::InventoryController_Clear(pIVar5,(MethodInfo *)0x0);
+            pIVar10 = (pUVar7->_0).image;
+            if (pIVar10 != (Il2CppImage *)0x0) {
+              InventoryController::InventoryController_Clear
+                        ((InventoryController *)pIVar10,(MethodInfo *)0x0);
               method_00 = this;
               AccessoryShopController_DisplayAllItems(this,(MethodInfo *)0x0);
               this_01 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields).tabs;
               if (this_01 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
-                pDVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                pDVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                           UInt32,System::Object]::
                           Dictionary_2_System_UInt32_System_Object__GetEnumerator
                                     ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_
                                       *)&stack0xffffffac,this_01,
                                      MethodInfo__System__Collections__Generic__Dictionary<int,_TabState>__GetEnumerator__
                                     );
-                pOStack_1 = (Object__Class *)pDVar10->_dictionary;
-                categoryId = (pDVar10->_current).key;
+                pOStack_12 = (Object__Class *)pDVar11->_dictionary;
+                uVar13 = (pDVar11->_current).key;
                 while( true ) {
-                  pOVar11 = (Object *)&UNK_?;
-                  bVar12 = mscorlib.dll::System::Collections::Generic::
+                  pOVar14 = (Object *)&UNK_?;
+                  bVar15 = mscorlib.dll::System::Collections::Generic::
                           Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
                           Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
                                     ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_
-                                      *)&pOStack_1,
+                                      *)&pOStack_12,
                                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_TabState>__MoveNext__
                                     );
-                  if (bVar12 == 0) break;
-                  pIVar5 = (this->fields).inventoryController;
-                  if ((pOVar11 == (Object *)0x0) || (pIVar5 == (InventoryController *)0x0))
+                  if (bVar15 == 0) break;
+                  pIVar4 = (this->fields).inventoryController;
+                  if ((pOVar14 == (Object *)0x0) || (pIVar4 == (InventoryController *)0x0))
                   goto code_?;
                   InventoryController::InventoryController_AddTab
-                            (pIVar5,categoryId,(String *)pOVar11[1].monitor,(MethodInfo *)0x0);
+                            (pIVar4,uVar13,(String *)pOVar14[1].monitor,(MethodInfo *)0x0);
                 }
                 mscorlib.dll::System::ThrowHelper::
                 ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                          ((Object *)&pOStack_1,
+                          ((Object *)&pOStack_12,
                            (ExceptionArgument__Enum)
                            MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_TabState>__Dispose__
                            ,(MethodInfo *)method_00);
-                root = (ExecuteEvents_EventFunction_1_IUIStack_ *)
-                       UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                 ((Component *)this,(MethodInfo *)0x0);
+                pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                         Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
                 if ((TypeInfo__AccessoryShopController____c->_1).cctor_finished_or_no_cctor == 0) {
                   func_?();
                 }
@@ -1750,18 +1738,18 @@ code_?:
                   {
                     func_?();
                   }
-                  pAVar4 = TypeInfo__AccessoryShopController____c->static_fields->__9;
+                  pAVar3 = TypeInfo__AccessoryShopController____c->static_fields->__9;
                   callbackFunction_00 = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?()
                   ;
-                  root = callbackFunction_00;
                   UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::
                   Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor
                             ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,
-                             (Object *)pAVar4,
+                             (Object *)pAVar3,
                              MethodInfo__AccessoryShopController____c___ReadyCallback_b__25_1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                              ,(MethodInfo *)0x0);
                   TypeInfo__AccessoryShopController____c->static_fields->__9__25_1 =
                        callbackFunction_00;
+                  pGVar2 = (GameObject *)&UNK_?;
                   func_?();
                 }
                 if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).
@@ -1770,13 +1758,13 @@ code_?:
                 }
                 UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
                 ExecuteEvents_ExecuteHierarchy
-                          ((GameObject *)root,(BaseEventData *)0x0,
+                          (pGVar2,(BaseEventData *)0x0,
                            (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction_00,
                            UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                           );
-                pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                          Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-                puVar13 = &UNK_?;
+                puVar16 = &UNK_?;
                 callbackFunction_01 =
                      (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
                 UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System
@@ -1787,43 +1775,43 @@ code_?:
                            ,(MethodInfo *)0x0);
                 UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
                 ExecuteEvents_ExecuteHierarchy
-                          (pGVar3,(BaseEventData *)0x0,callbackFunction_01,
+                          (pGVar2,(BaseEventData *)0x0,callbackFunction_01,
                            UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                           );
                 AccessoryShopController_SetAccessoriesToSelectable(this,0,(MethodInfo *)0x0);
                 this_02 = (this->fields).tabs;
                 if (this_02 != (Dictionary_2_System_Int32_TabState_ *)0x0) {
-                  bVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                  bVar15 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                           Int32,System::Single]::
                           Dictionary_2_System_Int32_System_Single__ContainsKey
                                     ((Dictionary_2_System_Int32_System_Single_ *)this_02,0xff,
                                      MethodInfo__System__Collections__Generic__Dictionary<int,_TabState>__ContainsKey_int_
                                     );
-                  if ((bVar12 == 0) || ((this->fields).startingCategory == 0xfe)) {
-                    pIVar5 = (this->fields).inventoryController;
-                    pSVar14 = LocalizedEnums::LocalizedEnums___3
+                  if ((bVar15 == 0) || ((this->fields).startingCategory == 0xfe)) {
+                    pIVar4 = (this->fields).inventoryController;
+                    pSVar17 = LocalizedEnums::LocalizedEnums___3
                                         ((this->fields).selectedTab,(MethodInfo *)0x0);
-                    if (pIVar5 != (InventoryController *)0x0) {
+                    if (pIVar4 != (InventoryController *)0x0) {
                       InventoryController::InventoryController_SetHeaderText
-                                (pIVar5,pSVar14,(MethodInfo *)0x0);
+                                (pIVar4,pSVar17,(MethodInfo *)0x0);
                       AccessoryShopController_UpdateContent(this,(MethodInfo *)0x0);
-                      *unaff_FS_OFFSET = puVar13;
+                      *unaff_FS_OFFSET = puVar16;
                       return;
                     }
                   }
                   else {
                     (this->fields).selectedTab = 0xff;
-                    bVar12 = (this->fields).displayShopItems;
+                    bVar15 = (this->fields).displayShopItems;
                     AccessoryShopController_DisplayPurchasableItems(this,1,(MethodInfo *)0x0);
-                    (this->fields).displayShopItems = bVar12;
-                    pIVar5 = (this->fields).inventoryController;
-                    pSVar14 = LocalizedEnums::LocalizedEnums___3
+                    (this->fields).displayShopItems = bVar15;
+                    pIVar4 = (this->fields).inventoryController;
+                    pSVar17 = LocalizedEnums::LocalizedEnums___3
                                         (AccessoryCategoryClient__Enum_Featured,(MethodInfo *)0x0);
-                    if (pIVar5 != (InventoryController *)0x0) {
-                      uVar15 = 0;
+                    if (pIVar4 != (InventoryController *)0x0) {
+                      uVar18 = 0;
                       InventoryController::InventoryController_SetHeaderText
-                                (pIVar5,pSVar14,(MethodInfo *)0x0);
-                      *unaff_FS_OFFSET = uVar15;
+                                (pIVar4,pSVar17,(MethodInfo *)0x0);
+                      *unaff_FS_OFFSET = uVar18;
                       return;
                     }
                   }
@@ -1832,39 +1820,49 @@ code_?:
             }
           }
         }
+        goto code_?;
       }
+      uVar13 = func_?();
+      if (uVar13 == 0) goto code_?;
+      pIVar10->token = uVar13;
+      iVar19 = func_?();
+      if (iVar19 != 0) goto code_?;
       goto code_?;
     }
     pUVar6 = (UnityAction_1_System_Int32_ *)func_?();
-    if (pUVar6 == (UnityAction_1_System_Int32_ *)0x0) goto code_?;
-    (pIVar5->fields).OnPageTurned = pUVar6;
-    iVar9 = func_?();
-    if (iVar9 != 0) goto code_?;
+    if (pUVar6 != (UnityAction_1_System_Int32_ *)0x0) {
+      (pIVar4->fields).OnPageTurned = pUVar6;
+      iVar19 = func_?();
+      if (iVar19 == 0) goto code_?;
+      goto code_?;
+    }
   }
   else {
-    pUVar16 = (UnityAction *)0x0;
-    if (pUVar2->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-      pUVar16 = pUVar2;
+    pUVar20 = (UnityAction *)0x0;
+    if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+      pUVar20 = pUVar1;
     }
-    if (pUVar16 != (UnityAction *)0x0) {
-      TypeInfo__AccessoryDataManager->static_fields->readyCallback = pUVar16;
-      pUVar16 = (UnityAction *)0x0;
-      if (pUVar2->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-        pUVar16 = pUVar2;
+    if (pUVar20 != (UnityAction *)0x0) {
+      TypeInfo__AccessoryDataManager->static_fields->readyCallback = pUVar20;
+      pUVar20 = (UnityAction *)0x0;
+      if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+        pUVar20 = pUVar1;
       }
-      if (pUVar16 != (UnityAction *)0x0) goto code_?;
+      if (pUVar20 != (UnityAction *)0x0) goto code_?;
     }
     func_?();
 code_?:
     func_?();
+    func_?();
+code_?:
     func_?();
   }
 code_?:
   func_?();
 code_?:
   func_?();
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  pcVar21 = (code *)swi(3);
+  (*pcVar21)();
   return;
 }
 
@@ -2065,156 +2063,67 @@ void Assembly-CSharp.dll::AccessoryShopController::
 
 {
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-    func_?();
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IGetCurrentBody>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IGetCurrentBody>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IGetCurrentBody>_
+                   );
+    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    func_?(&
+                    MethodInfo__AccessoryShopController____c__DisplayClass32_0___SetAccessoriesToSelectable_b__0_UnityEngine__EventSystems__IGetCurrentBody__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&TypeInfo__AccessoryShopController____c__DisplayClass32_0);
     cRam_? = '\x01';
   }
   method_00 = TypeInfo__AccessoryShopController____c__DisplayClass32_0;
-  value = (MethodInfo *)func_?();
+  value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  if (value != (MethodInfo *)0x0) {
-    value->invoker_method = (InvokerMethod)0x0;
-    func_?();
-    MVar1 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-    if (MVar1 == MVGameMode__Enum_CharacterEditor) {
-      pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)this,(MethodInfo *)0x0);
-      callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-      in_stack_3 = value;
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  if (value != (Object *)0x0) {
+    pOVar1 = value + 1;
+    pOVar1->klass = (Object__Class *)0x0;
+    func_?(pOVar1,0);
+    MVar2 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+    if (MVar2 == MVGameMode__Enum_CharacterEditor) {
+      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
+      callbackFunction =
+           (ExecuteEvents_EventFunction_1_System_Object_ *)
+           func_?(
+                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IGetCurrentBody>
+                          );
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)value,
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
                  MethodInfo__AccessoryShopController____c__DisplayClass32_0___SetAccessoriesToSelectable_b__0_UnityEngine__EventSystems__IGetCurrentBody__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
       {
-        func_?();
+        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
       }
-      OStack_4.monitor = (MonitorData *)&UNK_?;
       UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (pGVar2,(BaseEventData *)0x0,callbackFunction,
+                (root,(BaseEventData *)0x0,callbackFunction,
                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IGetCurrentBody>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IGetCurrentBody>_
                 );
     }
     else {
-      this_03 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-      if (this_03 == (MVLocalPlayer *)0x0) goto code_?;
-      pMVar5 = MVLocalPlayer::MVLocalPlayer_get_Body(this_03,(MethodInfo *)0x0);
-      value->invoker_method = (InvokerMethod)pMVar5;
-      func_?();
+      this_00 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
+      if (this_00 == (MVLocalPlayer *)0x0) goto code_?;
+      pMVar3 = MVLocalPlayer::MVLocalPlayer_get_Body(this_00,(MethodInfo *)0x0);
+      pOVar1->klass = (Object__Class *)pMVar3;
+      func_?(pOVar1,pMVar3);
     }
-    if ((value->invoker_method != (InvokerMethod)0x0) &&
-       (this_02 = *(BodyAccessoriesController **)(value->invoker_method + 0xf0),
-       this_02 != (BodyAccessoriesController *)0x0)) {
-      uVar6 = *unaff_FS_OFFSET;
-      *unaff_FS_OFFSET = &stack0xfffffff0;
-      if (cRam_? == '\0') {
-        func_?(&
-                        MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AccessorySlotType,_AvatarAccessory>__GetEnumerator__
-                       );
-        func_?(&
-                        MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::Common::AccessorySlotType,_AvatarAccessory>__Dispose__
-                       );
-        func_?(&
-                        MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::Common::AccessorySlotType,_AvatarAccessory>__MoveNext__
-                       );
-        func_?(&
-                        MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::Common::AccessorySlotType,_AvatarAccessory>__get_Current__
-                       );
-        func_?(&
-                        SelectionHelperAvatarAccessory__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<SelectionHelperAvatarAccessory>_bool_____
-                       );
-        func_?(&
-                        MethodInfo__System__Collections__Generic__KeyValuePair<MV::Common::AccessorySlotType,_AvatarAccessory>__get_Key__
-                       );
-        func_?(&
-                        MethodInfo__System__Collections__Generic__KeyValuePair<MV::Common::AccessorySlotType,_AvatarAccessory>__get_Value__
-                       );
-        func_?(&TypeInfo__UnityEngine__Object);
-        cRam_? = '\x01';
-      }
-      OStack_4.klass = (Object__Class *)0x0;
-      OStack_4.monitor = (MonitorData *)0x0;
-      (this_02->fields).accessoryMoveOverride = selectable;
-      if (selectable == 0) {
-        this_01 = (this_02->fields).bodyData;
-        if ((this_01 != (BodyData *)0x0) &&
-           (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                               ((Component *)this_01,(MethodInfo *)0x0), pGVar2 != (GameObject *)0x0
-           )) {
-          p_Var5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                   GameObject_GetComponentsInChildren_4
-                             (pGVar2,1,
-                              SelectionHelperAvatarAccessory__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<SelectionHelperAvatarAccessory>_bool_____
-                             );
-          uVar7 = 0;
-          if (p_Var5 != (_Il2CppFullySharedGenericType__Array *)0x0) {
-            pp_Var9 = p_Var5->vector;
-            for (; (int)uVar7 < (int)p_Var5->max_length; uVar7 = uVar7 + 1) {
-              if (p_Var5->max_length <= uVar7) {
-                func_?();
-                pcVar8 = (code *)swi(3);
-                (*pcVar8)();
-                return;
-              }
-              if ((Component *)*pp_Var9 == (Component *)0x0) goto code_?;
-              pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                 ((Component *)*pp_Var9,(MethodInfo *)0x0);
-              if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-                func_?();
-              }
-              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                        ((Object_1 *)pGVar2,(MethodInfo *)0x0);
-              pp_Var9 = pp_Var9 + 1;
-            }
-            goto code_?;
-          }
-        }
-      }
-      else {
-        this_00 = (Dictionary_2_System_UInt32_System_Object_ *)(this_02->fields).accessoryMap;
-        if (this_00 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
-          pDVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
-                   Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                             ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                              &stack0xffffffb0,this_00,
-                              MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AccessorySlotType,_AvatarAccessory>__GetEnumerator__
-                             );
-          OStack_4.klass = (Object__Class *)pDVar9->_dictionary;
-          OStack_4.monitor = (MonitorData *)pDVar9->_version;
-          accessorySlot = (pDVar9->_current).key;
-          uVar10 = *(undefined8 *)&(pDVar9->_current).value;
-          while (bVar11 = mscorlib.dll::System::Collections::Generic::
-                         Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
-                         Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                                   ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_
-                                     *)&OStack_4,
-                                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::Common::AccessorySlotType,_AvatarAccessory>__MoveNext__
-                                   ), bVar11 != 0) {
-            BodyAccessoriesController::BodyAccessoriesController_MakeAccessorySelectable
-                      (this_02,(AvatarAccessory *)uVar10,accessorySlot,(MethodInfo *)0x0);
-          }
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    (&OStack_4,
-                     (ExceptionArgument__Enum)
-                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::Common::AccessorySlotType,_AvatarAccessory>__Dispose__
-                     ,in_stack_3);
-code_?:
-          *unaff_FS_OFFSET = uVar6;
-          return;
-        }
-      }
+    if ((MVBody *)pOVar1->klass != (MVBody *)0x0) {
+      MVBody::MVBody_set_AccessoryMoveOverride((MVBody *)pOVar1->klass,selectable,(MethodInfo *)0x0)
+      ;
+      return;
     }
   }
 code_?:
   func_?();
-  func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -2350,64 +2259,64 @@ void Assembly-CSharp.dll::AccessoryShopController::AccessoryShopController_Updat
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).previewItemsRoot;
+  ppTVar2 = &(this->fields).previewItemsRoot;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                     ((Object_1 *)pTVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
-    pTVar1 = (this->fields).previewItemsRoot;
-    if (pTVar1 == (Transform *)0x0) goto code_?;
-    pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)pTVar1,(MethodInfo *)0x0);
+  if (bVar3 != 0) {
+    if (*ppTVar2 == (Transform *)0x0) goto code_?;
+    pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)*ppTVar2,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-              ((Object_1 *)pGVar3,(MethodInfo *)0x0);
+              ((Object_1 *)pGVar4,(MethodInfo *)0x0);
   }
-  pGVar3 = (GameObject *)func_?();
+  pGVar4 = (GameObject *)func_?();
   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor
-            (pGVar3,StringLiteral_Preview_Root___AccessoryShopCont,(MethodInfo *)0x0);
-  if (pGVar3 != (GameObject *)0x0) {
+            (pGVar4,StringLiteral_Preview_Root___AccessoryShopCont,(MethodInfo *)0x0);
+  if (pGVar4 != (GameObject *)0x0) {
     pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                       (pGVar3,(MethodInfo *)0x0);
-    (this->fields).previewItemsRoot = pTVar1;
-    func_?(&(this->fields).previewItemsRoot,pTVar1);
-    pIVar4 = (this->fields).inventoryController;
-    if (pIVar4 != (InventoryController *)0x0) {
-      InventoryController::InventoryController_Clear(pIVar4,(MethodInfo *)0x0);
-      pDVar5 = (this->fields).tabs;
-      if (pDVar5 != (Dictionary_2_System_Int32_TabState_ *)0x0) {
-        bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+                       (pGVar4,(MethodInfo *)0x0);
+    *ppTVar2 = pTVar1;
+    func_?(ppTVar2,pTVar1);
+    pIVar5 = (this->fields).inventoryController;
+    if (pIVar5 != (InventoryController *)0x0) {
+      InventoryController::InventoryController_Clear(pIVar5,(MethodInfo *)0x0);
+      pDVar6 = (this->fields).tabs;
+      if (pDVar6 != (Dictionary_2_System_Int32_TabState_ *)0x0) {
+        bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
                 Single]::Dictionary_2_System_Int32_System_Single__ContainsKey
-                          ((Dictionary_2_System_Int32_System_Single_ *)pDVar5,
+                          ((Dictionary_2_System_Int32_System_Single_ *)pDVar6,
                            (this->fields).selectedTab,
                            MethodInfo__System__Collections__Generic__Dictionary<int,_TabState>__ContainsKey_int_
                           );
-        if (bVar2 == 0) {
+        if (bVar3 == 0) {
           (this->fields).selectedTab = (this->fields).startingCategory;
         }
-        pDVar5 = (this->fields).tabs;
-        if (pDVar5 != (Dictionary_2_System_Int32_TabState_ *)0x0) {
+        pDVar6 = (this->fields).tabs;
+        if (pDVar6 != (Dictionary_2_System_Int32_TabState_ *)0x0) {
           this_00 = (TabState *)
                     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
                     Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                              ((Dictionary_2_System_Int32_System_Object_ *)pDVar5,
+                              ((Dictionary_2_System_Int32_System_Object_ *)pDVar6,
                                (this->fields).selectedTab,
                                MethodInfo__System__Collections__Generic__Dictionary<int,_TabState>__get_Item_int_
                               );
           tabId = (this->fields).selectedTab;
-          pIVar4 = (this->fields).inventoryController;
+          pIVar5 = (this->fields).inventoryController;
           if (this_00 != (TabState *)0x0) {
             currentPage = (this_00->fields).currentPage;
             maxPages = TabState::TabState_get_MaxPages(this_00,(MethodInfo *)0x0);
-            if (pIVar4 != (InventoryController *)0x0) {
+            if (pIVar5 != (InventoryController *)0x0) {
               InventoryController::InventoryController_SelectTab
-                        (pIVar4,tabId,currentPage,maxPages,(MethodInfo *)0x0);
-              MVar6 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-              if (MVar6 == MVGameMode__Enum_CharacterEditor) {
-                pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                        (pIVar5,tabId,currentPage,maxPages,(MethodInfo *)0x0);
+              MVar7 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+              if (MVar7 == MVGameMode__Enum_CharacterEditor) {
+                pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                          Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
                 callbackFunction =
                      (ExecuteEvents_EventFunction_1_System_Object_ *)
@@ -2426,7 +2335,7 @@ void Assembly-CSharp.dll::AccessoryShopController::AccessoryShopController_Updat
                 }
                 UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
                 ExecuteEvents_ExecuteHierarchy
-                          (pGVar3,(BaseEventData *)0x0,callbackFunction,
+                          (pGVar4,(BaseEventData *)0x0,callbackFunction,
                            UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IGetCurrentBody>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IGetCurrentBody>_
                           );
                 return;
@@ -2446,8 +2355,8 @@ void Assembly-CSharp.dll::AccessoryShopController::AccessoryShopController_Updat
   }
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -2677,14 +2586,16 @@ void Assembly-CSharp.dll::AccessoryShopController::AccessoryShopController__ctor
   Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<int,_TabState>__Dictionary__);
-  (this->fields).tabs = (Dictionary_2_System_Int32_TabState_ *)this_00;
-  func_?(&(this->fields).tabs,this_00);
+  ppDVar1 = &(this->fields).tabs;
+  *ppDVar1 = (Dictionary_2_System_Int32_TabState_ *)this_00;
+  func_?(ppDVar1,this_00);
   method_00 = TypeInfo__AccessoryAttacher;
   value = (AccessoryAttacher *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  (this->fields).accessoryAttacher = value;
-  func_?(&(this->fields).accessoryAttacher,value);
+  ppAVar2 = &(this->fields).accessoryAttacher;
+  *ppAVar2 = value;
+  func_?(ppAVar2,value);
   (this->fields).attachingReady = 1;
   (this->fields).startingCategory = 1;
   (this->fields).displayShopItems = 1;

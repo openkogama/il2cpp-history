@@ -18,8 +18,9 @@ bool Assembly-CSharp.dll::WorldObjectTypes::MVDoor::MVDoor+<ServerResponseTimeou
               func_?(TypeInfo__UnityEngine__WaitForSeconds);
     SubscribableVariable`1[System::Single]::SubscribableVariable_1_System_Single___ctor
               (this_00,1.0,(MethodInfo *)0x0);
-    (this->fields).__2__current = (Object *)this_00;
-    func_?(&(this->fields).__2__current,this_00);
+    ppOVar3 = &(this->fields).__2__current;
+    *ppOVar3 = (Object *)this_00;
+    func_?(ppOVar3,this_00);
     (this->fields).__1__state = 1;
     return 1;
   }
@@ -27,12 +28,13 @@ bool Assembly-CSharp.dll::WorldObjectTypes::MVDoor::MVDoor+<ServerResponseTimeou
     (this->fields).__1__state = -1;
     if (pMVar2 == (MVDoor *)0x0) {
       func_?();
-      pcVar3 = (code *)swi(3);
-      bVar4 = (*pcVar3)();
-      return bVar4;
+      pcVar4 = (code *)swi(3);
+      bVar5 = (*pcVar4)();
+      return bVar5;
     }
-    (pMVar2->fields).serverResponseTimeoutRoutine = (IEnumerator *)0x0;
-    func_?(&(pMVar2->fields).serverResponseTimeoutRoutine,0);
+    ppIVar6 = &(pMVar2->fields).serverResponseTimeoutRoutine;
+    *ppIVar6 = (IEnumerator *)0x0;
+    func_?(ppIVar6,0);
   }
   return 0;
 }

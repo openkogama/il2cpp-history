@@ -75,6 +75,7 @@ void Assembly-CSharp.dll::PurchaseSoundManager::PurchaseSoundManager_Start
   }
   else {
     pAVar2 = (pMVar1->fields).PurchaseProductResponseHandler;
+    ppAVar3 = &(pMVar1->fields).PurchaseProductResponseHandler;
     this_00 = (UnityAction_2_System_Int32_System_Int32_ *)
               func_?(
                              TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
@@ -84,19 +85,18 @@ void Assembly-CSharp.dll::PurchaseSoundManager::PurchaseSoundManager_Start
               (this_00,(Object *)this,
                MethodInfo__PurchaseSoundManager__ProductPurchaseResponseHandler_int__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
                ,(MethodInfo *)0x0);
-    pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
+    pAStack4 =
+         (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object___Class
+          *)mscorlib.dll::System::Delegate::Delegate_Combine
+                      ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
     unaff_EDI = 
     TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
     ;
-    if (pDVar3 == (Delegate *)0x0) {
-      (pMVar1->fields).PurchaseProductResponseHandler =
-           (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
-           0x0;
-      pAStack4 =
-           (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object___Class
-            *)0x0;
-code_?:
+    if (pAStack4 ==
+        (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object___Class
+         *)0x0) {
+      *ppAVar3 = (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
+                  *)0x0;
       func_?();
       return;
     }
@@ -107,7 +107,7 @@ code_?:
              func_?();
     if (pAVar2 != (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
                    *)0x0) {
-      (pMVar1->fields).PurchaseProductResponseHandler = pAVar2;
+      *ppAVar3 = pAVar2;
       unaff_EDI = 
       TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
       ;
@@ -119,7 +119,10 @@ code_?:
             *)func_?();
       if (pAStack4 !=
           (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object___Class
-           *)0x0) goto code_?;
+           *)0x0) {
+        func_?();
+        return;
+      }
     }
   }
   pAStack4 = unaff_EDI;

@@ -23,9 +23,8 @@ bool Assembly-CSharp.dll::MVNetworkSelector::MVNetworkSelector_CanRequestOwnerSh
     func_?(&TypeInfo__MVGroup);
     cRam_? = '\x01';
   }
-  pOStack_1 = (Object__Class *)0x0;
-  bVar2 = MVNetworkSelector_OwnershipTest(id,(MethodInfo *)0x0);
-  if (bVar2 == 0) {
+  bVar1 = MVNetworkSelector_OwnershipTest(id,(MethodInfo *)0x0);
+  if (bVar1 == 0) {
 code_?:
     *unaff_FS_OFFSET = method_00;
     return 0;
@@ -36,10 +35,9 @@ code_?:
               MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                         (this_00,id,(MethodInfo *)0x0);
     if (this_01 != (MVGroup *)0x0) {
-      if (((TypeInfo__MVGroup->_1).naturalAligment <= (this_01->klass->_1).naturalAligment) &&
-         ((MVGroup__Class *)
-          (this_01->klass->_1).typeHierarchy[(TypeInfo__MVGroup->_1).naturalAligment - 1] ==
-          TypeInfo__MVGroup)) {
+      bVar2 = (TypeInfo__MVGroup->_1).naturalAligment;
+      if ((bVar2 <= (this_01->klass->_1).naturalAligment) &&
+         ((MVGroup__Class *)(this_01->klass->_1).typeHierarchy[bVar2 - 1] == TypeInfo__MVGroup)) {
         this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                   MVGroup::MVGroup_get_Children(this_01,(MethodInfo *)0x0);
         if (this_02 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
@@ -50,29 +48,29 @@ code_?:
                                *)&stack0xffffffd8,this_02,
                               MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__GetEnumerator__
                              );
-          pOStack_1 = (Object__Class *)pLVar3->_list;
-          RVar4 = pLVar3->_current;
+          pOStack_4 = (Object__Class *)pLVar3->_list;
+          RVar5 = pLVar3->_current;
           do {
-            bVar2 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]
+            bVar1 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]
                     ::List_1_T_Enumerator_System_Object__MoveNext
-                              ((List_1_T_Enumerator_System_Object_ *)&pOStack_1,
+                              ((List_1_T_Enumerator_System_Object_ *)&pOStack_4,
                                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__MoveNext__
                               );
-            if (bVar2 == 0) {
+            if (bVar1 == 0) {
               mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                        ((Object *)&pOStack_1,
+                        ((Object *)&pOStack_4,
                          (ExceptionArgument__Enum)
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__Dispose__
                          ,method_00);
               goto code_?;
             }
-            if (RVar4 == (RegexCharClass_SingleRange)0x0) goto code_?;
-            bVar2 = MVNetworkSelector_CanRequestOwnerShip
-                              (this,*(int32_t *)((int)RVar4 + 8),(MethodInfo *)0x0);
-          } while (bVar2 != 0);
+            if (RVar5 == (RegexCharClass_SingleRange)0x0) goto code_?;
+            bVar1 = MVNetworkSelector_CanRequestOwnerShip
+                              (this,*(int32_t *)((int)RVar5 + 8),(MethodInfo *)0x0);
+          } while (bVar1 != 0);
           method_00 = (MethodInfo *)&UNK_?;
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&pOStack_1,
+                    ((Object *)&pOStack_4,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__Dispose__
                      ,unaff_EBP);
@@ -87,9 +85,9 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  bVar2 = (*pcVar5)();
-  return bVar2;
+  pcVar6 = (code *)swi(3);
+  bVar1 = (*pcVar6)();
+  return bVar1;
 }
 
 
@@ -182,12 +180,6 @@ void Assembly-CSharp.dll::MVNetworkSelector::
     if ((e->fields).success != 0) {
       return;
     }
-    if ((e->fields).ownerActorNr == 0) {
-      return;
-    }
-    if ((e->fields).success != 0) {
-      return;
-    }
     pQVar1 = (this->fields).pendingRequestedOwnershipIds;
     if (pQVar1 != (Queue_1_System_Int32_ *)0x0) {
       mscorlib.dll::System::Collections::Generic::Queue`1[System::Int32]::
@@ -224,16 +216,17 @@ bool Assembly-CSharp.dll::MVNetworkSelector::MVNetworkSelector_OwnershipTest
   if (this != (MVWorldObjectClientManager *)0x0) {
     pMVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                        (this,id,(MethodInfo *)0x0);
-    if ((pMVar1 == (MVWorldObject *)0x0) || ((pMVar1->fields).ownerActorNr == 0)) {
+    if ((pMVar1 == (MVWorldObject *)0x0) || (iVar2 = (pMVar1->fields).ownerActorNr, iVar2 == 0)) {
       return 1;
     }
-    iVar2 = (pMVar1->fields).ownerActorNr;
     this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (this_00 != (MVNetworkGame *)0x0) {
-      pMVar3 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0);
-      if (pMVar3 != (MVLocalPlayer *)0x0) {
-        return iVar2 == (pMVar3->fields)._._ActorNr_k__BackingField;
+    if ((this_00 != (MVNetworkGame *)0x0) &&
+       (pMVar3 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0),
+       pMVar3 != (MVLocalPlayer *)0x0)) {
+      if (iVar2 == (pMVar3->fields)._._ActorNr_k__BackingField) {
+        return 1;
       }
+      return 0;
     }
   }
   func_?();
@@ -441,33 +434,29 @@ void Assembly-CSharp.dll::MVNetworkSelector::MVNetworkSelector_RequestReleaseOwn
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  HStack_6._set = (HashSet_1_System_UInt32_ *)0x0;
-  HStack_6._index = 0;
-  HStack_6._version = 0;
-  HStack_6._current = 0;
   if (selectionSet != (HashSet_1_System_Int32_ *)0x0) {
-    pHVar7 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
+    pHVar6 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
              HashSet_1_System_UInt32__GetEnumerator
-                       (&HStack_8,(HashSet_1_System_UInt32_ *)selectionSet,
+                       (&HStack_7,(HashSet_1_System_UInt32_ *)selectionSet,
                         MethodInfo__System__Collections__Generic__HashSet<int>__GetEnumerator__);
-    HStack_6._set = pHVar7->_set;
-    HStack_6._index = pHVar7->_index;
-    HStack_6._version = pHVar7->_version;
-    HStack_6._current = pHVar7->_current;
-    HStack_8._version = 0;
+    HStack_8._set = pHVar6->_set;
+    HStack_8._index = pHVar6->_index;
+    HStack_8._version = pHVar6->_version;
+    HStack_8._current = pHVar6->_current;
+    HStack_7._version = 0;
     uStack_1 = 1;
-    HStack_8._current = (uint32_t)&HStack_6;
+    HStack_7._current = (uint32_t)&HStack_8;
     while( true ) {
       bVar9 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[System::UInt32]
               ::HashSet_1_T_Enumerator_System_UInt32__MoveNext
-                        (&HStack_6,
+                        (&HStack_8,
                          MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__MoveNext__
                         );
-      id = HStack_6._current;
+      id = HStack_8._current;
       if (bVar9 == 0) {
         uStack_1 = 0xffffffff;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&HStack_6,
+                  ((Object *)&HStack_8,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__Dispose__
                    ,in_stack_10);
@@ -550,7 +539,7 @@ void Assembly-CSharp.dll::MVNetworkSelector::MVNetworkSelector__ctor
             ((ReadOnlyCollectionBuilder_1_System_Object_ *)this_00,
              MethodInfo__System__Collections__Generic__Queue<int>__Queue__);
   method_00 = (MethodInfo *)&(this->fields).pendingRequestedOwnershipIds;
-  (this->fields).pendingRequestedOwnershipIds = (Queue_1_System_Int32_ *)this_00;
+  *(Delegate **)method_00 = this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
@@ -562,6 +551,7 @@ void Assembly-CSharp.dll::MVNetworkSelector::MVNetworkSelector__ctor
   }
   else {
     pEVar2 = (pMVar1->fields).OnWorldObjectTransferOwnershipResponse;
+    ppEVar3 = &(pMVar1->fields).OnWorldObjectTransferOwnershipResponse;
     this_01 = (EventHandler_1_Object_ *)func_?();
     mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
               (this_01,(Object *)this,
@@ -571,35 +561,34 @@ void Assembly-CSharp.dll::MVNetworkSelector::MVNetworkSelector__ctor
                         ((Delegate *)pEVar2,(Delegate *)this_01,(MethodInfo *)0x0);
     unaff_EDI = TypeInfo__System__EventHandler<OnTransferOwnershipResponseEventArgs>;
     if (this_00 == (Delegate *)0x0) {
-      (pMVar1->fields).OnWorldObjectTransferOwnershipResponse =
-           (EventHandler_1_OnTransferOwnershipResponseEventArgs_ *)0x0;
-      pDStack3 = (Delegate *)&(pMVar1->fields).OnWorldObjectTransferOwnershipResponse;
-      pEStack4 = (EventHandler_1_OnTransferOwnershipResponseEventArgs___Class *)this_00;
+      *ppEVar3 = (EventHandler_1_OnTransferOwnershipResponseEventArgs_ *)0x0;
+      pDStack4 = (Delegate *)ppEVar3;
+      pEStack5 = (EventHandler_1_OnTransferOwnershipResponseEventArgs___Class *)this_00;
       func_?();
       return;
     }
-    pEStack4 = TypeInfo__System__EventHandler<OnTransferOwnershipResponseEventArgs>;
-    pDStack3 = this_00;
+    pEStack5 = TypeInfo__System__EventHandler<OnTransferOwnershipResponseEventArgs>;
+    pDStack4 = this_00;
     pEVar2 = (EventHandler_1_OnTransferOwnershipResponseEventArgs_ *)func_?();
     if (pEVar2 != (EventHandler_1_OnTransferOwnershipResponseEventArgs_ *)0x0) {
-      (pMVar1->fields).OnWorldObjectTransferOwnershipResponse = pEVar2;
+      *ppEVar3 = pEVar2;
       unaff_EDI = TypeInfo__System__EventHandler<OnTransferOwnershipResponseEventArgs>;
-      pEStack4 = TypeInfo__System__EventHandler<OnTransferOwnershipResponseEventArgs>;
-      pDStack3 = this_00;
-      pEStack4 =
+      pEStack5 = TypeInfo__System__EventHandler<OnTransferOwnershipResponseEventArgs>;
+      pDStack4 = this_00;
+      pEStack5 =
            (EventHandler_1_OnTransferOwnershipResponseEventArgs___Class *)func_?();
-      if (pEStack4 != (EventHandler_1_OnTransferOwnershipResponseEventArgs___Class *)0x0) {
-        pDStack3 = (Delegate *)&(pMVar1->fields).OnWorldObjectTransferOwnershipResponse;
+      if (pEStack5 != (EventHandler_1_OnTransferOwnershipResponseEventArgs___Class *)0x0) {
+        pDStack4 = (Delegate *)ppEVar3;
         func_?();
         return;
       }
     }
   }
-  pDStack3 = this_00;
-  pEStack4 = unaff_EDI;
+  pDStack4 = this_00;
+  pEStack5 = unaff_EDI;
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

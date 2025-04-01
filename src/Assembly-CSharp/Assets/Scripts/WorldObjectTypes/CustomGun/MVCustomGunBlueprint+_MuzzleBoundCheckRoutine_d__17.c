@@ -69,10 +69,9 @@ bool Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::CustomGun::
     pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                         (pGVar12,(MethodInfo *)0x0);
     if (pTVar13 != (Transform *)0x0) {
-      pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
+      pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
                           ((Vector3 *)&stack0xffffffc0,pTVar13,(MethodInfo *)0x0);
-      pVVar9 = &(this->fields)._max_5__2;
-      if (pVVar9->x <= pVVar14->x && pVVar14->x != pVVar9->x) {
+      if ((this->fields)._max_5__2.x < pVVar9->x) {
         pGVar12 = (this_00->fields).muzzlePoint;
         if (pGVar12 == (GameObject *)0x0) goto code_?;
         pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
@@ -250,8 +249,9 @@ bool Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::CustomGun::
                           fVar11 = (this->fields)._min_5__3.z;
                           if (fVar11 < pVVar9->z || fVar11 == pVVar9->z) {
 code_?:
-                            (this->fields).__2__current = (Object *)0x0;
-                            func_?(&(this->fields).__2__current,0);
+                            ppOVar18 = &(this->fields).__2__current;
+                            *ppOVar18 = (Object *)0x0;
+                            func_?(ppOVar18,0);
                             (this->fields).__1__state = 1;
                             return 1;
                           }
@@ -301,9 +301,9 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar18 = (code *)swi(3);
-  bVar19 = (*pcVar18)();
-  return bVar19;
+  pcVar19 = (code *)swi(3);
+  bVar20 = (*pcVar19)();
+  return bVar20;
 }
 
 

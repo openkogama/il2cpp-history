@@ -136,15 +136,15 @@ Assembly-CSharp.dll::RTG::RTMesh::RTMesh_GetTriangle
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._vertIndices;
-  uVar2 = triangleIndex * 3;
-  if (pIVar1 != (Int32__Array *)0x0) {
-    if (pIVar1->max_length <= uVar2) goto code_?;
-    vertIndex0 = pIVar1->vector[triangleIndex * 3];
-    if (pIVar1->max_length <= uVar2 + 1) goto code_?;
-    vertIndex1 = pIVar1->vector[triangleIndex * 3 + 1];
-    if (pIVar1->max_length <= uVar2 + 2) goto code_?;
-    uVar2 = pIVar1->vector[triangleIndex * 3 + 2];
+  uVar1 = triangleIndex * 3;
+  pIVar2 = (this->fields)._vertIndices;
+  if (pIVar2 != (Int32__Array *)0x0) {
+    if (pIVar2->max_length <= uVar1) goto code_?;
+    vertIndex0 = pIVar2->vector[triangleIndex * 3];
+    if (pIVar2->max_length <= uVar1 + 1) goto code_?;
+    vertIndex1 = pIVar2->vector[triangleIndex * 3 + 1];
+    if (pIVar2->max_length <= uVar1 + 2) goto code_?;
+    uVar1 = pIVar2->vector[triangleIndex * 3 + 2];
     vertices = (Vector3__Array *)func_?(TypeInfo__UnityEngine__Vector3,3);
     pVVar3 = (this->fields)._vertices;
     if (pVVar3 != (Vector3__Array *)0x0) {
@@ -167,16 +167,16 @@ Assembly-CSharp.dll::RTG::RTMesh::RTMesh_GetTriangle
           vertices->vector[1].z = fVar5;
           pVVar3 = (this->fields)._vertices;
           if (pVVar3 != (Vector3__Array *)0x0) {
-            if (uVar2 < pVVar3->max_length) {
-              fVar4 = pVVar3->vector[uVar2].y;
-              fVar5 = pVVar3->vector[uVar2].z;
+            if (uVar1 < pVVar3->max_length) {
+              fVar4 = pVVar3->vector[uVar1].y;
+              fVar5 = pVVar3->vector[uVar1].z;
               if (2 < vertices->max_length) {
-                vertices->vector[2].x = pVVar3->vector[uVar2].x;
+                vertices->vector[2].x = pVVar3->vector[uVar1].x;
                 vertices->vector[2].y = fVar4;
                 vertices->vector[2].z = fVar5;
                 pMVar6 = (MeshTriangle *)func_?(TypeInfo__RTG__MeshTriangle);
                 MeshTriangle::MeshTriangle__ctor
-                          (pMVar6,vertices,triangleIndex,vertIndex0,vertIndex1,uVar2,
+                          (pMVar6,vertices,triangleIndex,vertIndex0,vertIndex1,uVar1,
                            (MethodInfo *)0x0);
                 return pMVar6;
               }
@@ -327,57 +327,59 @@ void Assembly-CSharp.dll::RTG::RTMesh::RTMesh_SetDirty(RTMesh *this,MethodInfo *
   if (pMVar1 != (Mesh *)0x0) {
     pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_vertices
                        (pMVar1,(MethodInfo *)0x0);
-    (this->fields)._vertices = pVVar2;
-    func_?(&(this->fields)._vertices,pVVar2);
+    ppVVar3 = &(this->fields)._vertices;
+    *ppVVar3 = pVVar2;
+    func_?(ppVVar3,pVVar2);
     pMVar1 = (this->fields)._unityMesh;
     if (pMVar1 != (Mesh *)0x0) {
-      pIVar3 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_triangles
+      pIVar4 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_triangles
                          (pMVar1,(MethodInfo *)0x0);
-      (this->fields)._vertIndices = pIVar3;
-      func_?(&(this->fields)._vertIndices,pIVar3);
-      pIVar3 = (this->fields)._vertIndices;
-      if (pIVar3 != (Int32__Array *)0x0) {
-        (this->fields)._numTriangles = (int)pIVar3->max_length / 3;
+      ppIVar5 = &(this->fields)._vertIndices;
+      *ppIVar5 = pIVar4;
+      func_?(ppIVar5,pIVar4);
+      if (*ppIVar5 != (Int32__Array *)0x0) {
+        (this->fields)._numTriangles = (int)(*ppIVar5)->max_length / 3;
         pMVar1 = (this->fields)._unityMesh;
         if (pMVar1 != (Mesh *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_RecalculateBounds
                     (pMVar1,(MethodInfo *)0x0);
           pMVar1 = (this->fields)._unityMesh;
           if (pMVar1 != (Mesh *)0x0) {
-            pBVar4 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_bounds
-                               (&BStack_5,pMVar1,(MethodInfo *)0x0);
-            AStack_6._center.y = 0.0;
-            AStack_6._center.z = 0.0;
-            AStack_6._size.x = 0.0;
-            AStack_6._size.y = 0.0;
-            AStack_6._size.z = 0.0;
-            AStack_6._center.x = 0.0;
-            AStack_6._isValid = 0;
-            AStack_6._25_3_ = 0;
-            AABB::AABB__ctor_1(&AStack_6,*pBVar4,(MethodInfo *)0x0);
-            pMVar7 = (this->fields)._meshTree;
-            (this->fields)._aabb._size.x = AStack_6._size.x;
-            (this->fields)._aabb._size.y = AStack_6._size.y;
-            (this->fields)._aabb._size.z = AStack_6._size.z;
-            (this->fields)._aabb._center.x = AStack_6._center.x;
-            (this->fields)._aabb._center.y = AStack_6._center.y;
-            (this->fields)._aabb._center.z = AStack_6._center.z;
-            (this->fields)._aabb._isValid = AStack_6._isValid;
-            *(undefined3 *)&(this->fields)._aabb.field_0x19 = AStack_6._25_3_;
-            if (pMVar7 != (MeshTree *)0x0) {
+            pBVar6 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_bounds
+                               (&BStack_7,pMVar1,(MethodInfo *)0x0);
+            AStack_8._center.y = 0.0;
+            AStack_8._center.z = 0.0;
+            AStack_8._size.x = 0.0;
+            AStack_8._size.y = 0.0;
+            AStack_8._size.z = 0.0;
+            AStack_8._center.x = 0.0;
+            AStack_8._isValid = 0;
+            AStack_8._25_3_ = 0;
+            AABB::AABB__ctor_1(&AStack_8,*pBVar6,(MethodInfo *)0x0);
+            (this->fields)._aabb._size.x = AStack_8._size.x;
+            (this->fields)._aabb._size.y = AStack_8._size.y;
+            (this->fields)._aabb._size.z = AStack_8._size.z;
+            (this->fields)._aabb._center.x = AStack_8._center.x;
+            (this->fields)._aabb._center.y = AStack_8._center.y;
+            (this->fields)._aabb._center.z = AStack_8._center.z;
+            (this->fields)._aabb._isValid = AStack_8._isValid;
+            *(undefined3 *)&(this->fields)._aabb.field_0x19 = AStack_8._25_3_;
+            pMVar9 = (this->fields)._meshTree;
+            if (pMVar9 != (MeshTree *)0x0) {
               if (cRam_? == '\0') {
                 func_?(&MethodInfo__RTG__SphereTree<RTG::MeshTriangle>__SphereTree__);
                 func_?(&TypeInfo__RTG__SphereTree<RTG::MeshTriangle>);
                 cRam_? = '\x01';
               }
-              (pMVar7->fields)._isBuilt = 0;
+              (pMVar9->fields)._isBuilt = 0;
               this_00 = (SphereTree_1_MeshTriangle_ *)
                         func_?(TypeInfo__RTG__SphereTree<RTG::MeshTriangle>);
               SphereTree`1[System::Object]::SphereTree_1_System_Object___ctor
                         ((SphereTree_1_System_Object_ *)this_00,
                          MethodInfo__RTG__SphereTree<RTG::MeshTriangle>__SphereTree__);
-              (pMVar7->fields)._tree = this_00;
-              func_?(&(pMVar7->fields)._tree,this_00);
+              ppSVar10 = &(pMVar9->fields)._tree;
+              *ppSVar10 = this_00;
+              func_?(ppSVar10,this_00);
               return;
             }
           }
@@ -386,8 +388,8 @@ void Assembly-CSharp.dll::RTG::RTMesh::RTMesh_SetDirty(RTMesh *this,MethodInfo *
     }
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -403,23 +405,23 @@ void Assembly-CSharp.dll::RTG::RTMesh::RTMesh__ctor(RTMesh *this,Mesh *unityMesh
   }
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-  (this->fields)._unityMesh = unityMesh;
-  func_?(&this->fields,unityMesh);
-  pMVar1 = (this->fields)._unityMesh;
-  if (pMVar1 != (Mesh *)0x0) {
+  pRVar1 = &this->fields;
+  pRVar1->_unityMesh = unityMesh;
+  func_?(pRVar1,unityMesh);
+  if (pRVar1->_unityMesh != (Mesh *)0x0) {
     pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_vertices
-                       (pMVar1,(MethodInfo *)0x0);
-    (this->fields)._vertices = pVVar2;
-    func_?(&(this->fields)._vertices,pVVar2);
-    pMVar1 = (this->fields)._unityMesh;
-    if (pMVar1 != (Mesh *)0x0) {
-      pIVar3 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_triangles
-                          (pMVar1,(MethodInfo *)0x0);
-      (this->fields)._vertIndices = pIVar3;
-      func_?(&(this->fields)._vertIndices,pIVar3);
-      pIVar3 = (this->fields)._vertIndices;
-      if (pIVar3 != (Int32__Array *)0x0) {
-        (this->fields)._numTriangles = (int)pIVar3->max_length / 3;
+                        (pRVar1->_unityMesh,(MethodInfo *)0x0);
+    ppVVar3 = &(this->fields)._vertices;
+    *ppVVar3 = pVVar2;
+    func_?(ppVVar3,pVVar2);
+    if (pRVar1->_unityMesh != (Mesh *)0x0) {
+      pIVar4 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_triangles
+                          (pRVar1->_unityMesh,(MethodInfo *)0x0);
+      ppIVar5 = &(this->fields)._vertIndices;
+      *ppIVar5 = pIVar4;
+      func_?(ppIVar5,pIVar4);
+      if (*ppIVar5 != (Int32__Array *)0x0) {
+        (this->fields)._numTriangles = (int)(*ppIVar5)->max_length / 3;
         value = (MeshTree *)func_?(TypeInfo__RTG__MeshTree);
         if (cRam_? == '\0') {
           func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
@@ -445,8 +447,9 @@ void Assembly-CSharp.dll::RTG::RTMesh::RTMesh__ctor(RTMesh *this,Mesh *unityMesh
         SphereTree`1[System::Object]::SphereTree_1_System_Object___ctor
                   ((SphereTree_1_System_Object_ *)this_00,
                    MethodInfo__RTG__SphereTree<RTG::MeshTriangle>__SphereTree__);
-        (value->fields)._tree = this_00;
-        func_?(&(value->fields)._tree,this_00);
+        ppSVar6 = &(value->fields)._tree;
+        *ppSVar6 = this_00;
+        func_?(ppSVar6,this_00);
         this_01 = (List_1_RTG_SphereTreeNode_1_MeshTriangle_ *)
                   func_?(
                                  TypeInfo__System__Collections__Generic__List<RTG::SphereTreeNode<RTG::MeshTriangle>_>
@@ -457,8 +460,9 @@ void Assembly-CSharp.dll::RTG::RTMesh::RTMesh__ctor(RTMesh *this,Mesh *unityMesh
                   ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_01,
                    MethodInfo__System__Collections__Generic__List<RTG::SphereTreeNode<RTG::MeshTriangle>_>__List__
                   );
-        (value->fields)._nodeBuffer = this_01;
-        func_?(&(value->fields)._nodeBuffer,this_01);
+        ppLVar7 = &(value->fields)._nodeBuffer;
+        *ppLVar7 = this_01;
+        func_?(ppLVar7,this_01);
         this_02 = (List_1_RTG_SphereTreeNodeRayHit_1_MeshTriangle_ *)
                   func_?(
                                  TypeInfo__System__Collections__Generic__List<RTG::SphereTreeNodeRayHit<RTG::MeshTriangle>_>
@@ -469,50 +473,51 @@ void Assembly-CSharp.dll::RTG::RTMesh::RTMesh__ctor(RTMesh *this,Mesh *unityMesh
                   ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_02,
                    MethodInfo__System__Collections__Generic__List<RTG::SphereTreeNodeRayHit<RTG::MeshTriangle>_>__List__
                   );
-        (value->fields)._nodeHitBuffer = this_02;
-        func_?(&(value->fields)._nodeHitBuffer,this_02);
+        ppLVar8 = &(value->fields)._nodeHitBuffer;
+        *ppLVar8 = this_02;
+        func_?(ppLVar8,this_02);
         this_03 = (HashSet_1_System_Int32_ *)
                   func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
         System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
         HashSet_1_System_Int32___ctor
                   (this_03,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
         method_00 = (MethodInfo *)&(value->fields)._vertexIndexSet;
-        (value->fields)._vertexIndexSet = this_03;
+        *(HashSet_1_System_Int32_ **)method_00 = this_03;
         func_?();
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                   ((Object *)value,ExceptionArgument__Enum_obj,method_00);
         (value->fields)._mesh = this;
         func_?();
-        (this->fields)._meshTree = value;
-        func_?(&(this->fields)._meshTree);
-        pMVar1 = (this->fields)._unityMesh;
-        if (pMVar1 != (Mesh *)0x0) {
-          pBVar4 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_bounds
-                              (&BStack_5,pMVar1,(MethodInfo *)0x0);
-          fVar6 = (pBVar4->m_Extents).z;
-          uVar7 = (pBVar4->m_Center).x;
-          uVar8 = (pBVar4->m_Center).y;
-          uVar9 = (pBVar4->m_Center).z;
-          bounds.m_Center.z = (float)uVar9;
-          bounds.m_Center.y = (float)uVar8;
-          bounds.m_Center.x = (float)uVar7;
-          uVar10 = (pBVar4->m_Extents).x;
-          uVar11 = (pBVar4->m_Extents).y;
-          bounds.m_Extents.y = (float)uVar11;
-          bounds.m_Extents.x = (float)uVar10;
-          uVar12._0_4_ = 0.0;
-          uVar12._4_4_ = 0.0;
-          fVar13 = 0.0;
-          fVar14 = 0.0;
-          fVar15 = 0.0;
-          bounds.m_Extents.z = fVar6;
+        ppMVar9 = &(this->fields)._meshTree;
+        *ppMVar9 = value;
+        func_?(ppMVar9);
+        if (pRVar1->_unityMesh != (Mesh *)0x0) {
+          pBVar10 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_bounds
+                              (&BStack_11,pRVar1->_unityMesh,(MethodInfo *)0x0);
+          fVar12 = (pBVar10->m_Extents).z;
+          uVar13 = (pBVar10->m_Center).x;
+          uVar14 = (pBVar10->m_Center).y;
+          uVar15 = (pBVar10->m_Center).z;
+          bounds.m_Center.z = (float)uVar15;
+          bounds.m_Center.y = (float)uVar14;
+          bounds.m_Center.x = (float)uVar13;
+          uVar16 = (pBVar10->m_Extents).x;
+          uVar17 = (pBVar10->m_Extents).y;
+          bounds.m_Extents.y = (float)uVar17;
+          bounds.m_Extents.x = (float)uVar16;
+          uVar18._0_4_ = 0.0;
+          uVar18._4_4_ = 0.0;
+          fVar19 = 0.0;
+          fVar20 = 0.0;
+          fVar21 = 0.0;
+          bounds.m_Extents.z = fVar12;
           AABB::AABB__ctor_1((AABB *)&stack0xffffffc8,bounds,(MethodInfo *)0x0);
-          (this->fields)._aabb._size.x = fVar6;
-          (this->fields)._aabb._size.y = fVar13;
-          (this->fields)._aabb._size.z = fVar14;
-          (this->fields)._aabb._center.x = fVar15;
-          (this->fields)._aabb._center.y = (float)uVar12;
-          (this->fields)._aabb._center.z = uVar12._4_4_;
+          (this->fields)._aabb._size.x = fVar12;
+          (this->fields)._aabb._size.y = fVar19;
+          (this->fields)._aabb._size.z = fVar20;
+          (this->fields)._aabb._center.x = fVar21;
+          (this->fields)._aabb._center.y = (float)uVar18;
+          (this->fields)._aabb._center.z = uVar18._4_4_;
           *(undefined4 *)&(this->fields)._aabb._isValid = 0;
           return;
         }
@@ -520,8 +525,8 @@ void Assembly-CSharp.dll::RTG::RTMesh::RTMesh__ctor(RTMesh *this,Mesh *unityMesh
     }
   }
   func_?();
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  pcVar22 = (code *)swi(3);
+  (*pcVar22)();
   return;
 }
 

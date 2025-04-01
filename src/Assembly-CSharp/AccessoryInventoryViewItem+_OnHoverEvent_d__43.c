@@ -48,8 +48,9 @@ bool Assembly-CSharp.dll::AccessoryInventoryViewItem+<OnHoverEvent>d__43::
       UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_sizeDelta
                 (pRVar5,(Vector2)((ulonglong)(uint)((fVar10 - fVar8) + fVar8) << 0x20),
                  (MethodInfo *)0x0);
-      (pAVar1->fields).__2__current = (Object *)0x0;
-      func_?(&(pAVar1->fields).__2__current,0);
+      ppOVar11 = &(pAVar1->fields).__2__current;
+      *ppOVar11 = (Object *)0x0;
+      func_?(ppOVar11,0);
       (pAVar1->fields).__1__state = 2;
       return 1;
     }
@@ -59,17 +60,18 @@ bool Assembly-CSharp.dll::AccessoryInventoryViewItem+<OnHoverEvent>d__43::
     if (pRVar5 != (RectTransform *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_sizeDelta
                 (pRVar5,(Vector2)0x0,(MethodInfo *)0x0);
-      (pAVar1->fields).__2__current = (Object *)0x0;
-      func_?(&(pAVar1->fields).__2__current,0,fVar10,fVar4,fVar9);
+      ppOVar11 = &(pAVar1->fields).__2__current;
+      *ppOVar11 = (Object *)0x0;
+      func_?(ppOVar11,0,fVar10,fVar4,fVar9);
       (pAVar1->fields).__1__state = 1;
       return 1;
     }
   }
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  bVar12 = (*pcVar11)();
-  return bVar12;
+  pcVar12 = (code *)swi(3);
+  bVar13 = (*pcVar12)();
+  return bVar13;
 }
 
 

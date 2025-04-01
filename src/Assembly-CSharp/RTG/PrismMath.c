@@ -17,7 +17,6 @@ Assembly-CSharp.dll::RTG::PrismMath::PrismMath_CalcTriangPrismCornerPoints
     func_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::Vector3>);
     cRam_? = '\x01';
   }
-  func_?(&stack0xffffff60,0,0x40);
   fVar1 = baseWidth * _UNK_?;
   fVar2 = topWidth * _UNK_?;
   fVar3 = baseDepth * _UNK_?;
@@ -52,9 +51,9 @@ Assembly-CSharp.dll::RTG::PrismMath::PrismMath_CalcTriangPrismCornerPoints
   pVVar5 = TypeInfo__UnityEngine__Vector3->static_fields;
   uVar13 = (pVVar5->rightVector).x;
   uVar14 = (pVVar5->rightVector).y;
-  fVar10 = fVar8 + (float)uVar13 * baseWidth;
-  fVar15 = fVar9 + (float)uVar14 * baseWidth;
-  fVar16 = fVar1 + (pVVar5->rightVector).z * baseWidth;
+  fVar10 = (float)uVar13 * baseWidth + fVar8;
+  fVar15 = (float)uVar14 * baseWidth + fVar9;
+  fVar16 = (pVVar5->rightVector).z * baseWidth + fVar1;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
@@ -158,9 +157,9 @@ Assembly-CSharp.dll::RTG::PrismMath::PrismMath_CalcTriangPrismCornerPoints
     UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyPoint
               (&baseCenter,(Matrix4x4 *)&stack0xffffff60,point_03,(MethodInfo *)0x0);
     func_?();
-    point_04.y = fVar30 + (float)uVar32 * topWidth;
-    point_04.x = fVar29 + (float)uVar31 * topWidth;
-    point_04.z = fVar26 + fVar33 * topWidth;
+    point_04.y = (float)uVar32 * topWidth + fVar30;
+    point_04.x = (float)uVar31 * topWidth + fVar29;
+    point_04.z = fVar33 * topWidth + fVar26;
     UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyPoint
               (&baseCenter,(Matrix4x4 *)&stack0xffffff60,point_04,(MethodInfo *)0x0);
     func_?();
@@ -188,8 +187,6 @@ bool Assembly-CSharp.dll::RTG::PrismMath::PrismMath_ContainsPoint
                    );
     cRam_? = '\x01';
   }
-  func_?(&fStack_1,0,0x40);
-  func_?(&stack0xffffff1c,0,0x40);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
@@ -197,23 +194,23 @@ bool Assembly-CSharp.dll::RTG::PrismMath::PrismMath_ContainsPoint
   pos.y = baseCenter.y;
   pos.x = baseCenter.x;
   pos.z = baseCenter.z;
-  pMVar2 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
+  pMVar1 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
                       ((Matrix4x4 *)&stack0xfffffedc,pos,prismRotation,
                        TypeInfo__UnityEngine__Vector3->static_fields->oneVector,(MethodInfo *)0x0);
-  fStack_1 = pMVar2->m00;
-  fStack_3 = pMVar2->m10;
-  fStack_4 = pMVar2->m20;
-  fStack_5 = pMVar2->m30;
-  fStack_6 = pMVar2->m01;
-  fStack_7 = pMVar2->m11;
-  fStack_8 = pMVar2->m21;
-  fStack_9 = pMVar2->m31;
-  fStack_10 = pMVar2->m02;
-  fStack_11 = pMVar2->m12;
-  fStack_12 = pMVar2->m22;
-  puStack_13 = (undefined *)pMVar2->m32;
+  fStack_2 = pMVar1->m00;
+  fStack_3 = pMVar1->m10;
+  fStack_4 = pMVar1->m20;
+  fStack_5 = pMVar1->m30;
+  fStack_6 = pMVar1->m01;
+  fStack_7 = pMVar1->m11;
+  fStack_8 = pMVar1->m21;
+  fStack_9 = pMVar1->m31;
+  fStack_10 = pMVar1->m02;
+  fStack_11 = pMVar1->m12;
+  fStack_12 = pMVar1->m22;
+  puStack_13 = (undefined *)pMVar1->m32;
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_inverse
-            ((Matrix4x4 *)&stack0xfffffedc,(Matrix4x4 *)&fStack_1,(MethodInfo *)0x0);
+            ((Matrix4x4 *)&stack0xfffffedc,(Matrix4x4 *)&fStack_2,(MethodInfo *)0x0);
   pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyPoint
                       (&baseCenter,(Matrix4x4 *)&stack0xffffff1c,point,(MethodInfo *)0x0);
   uVar15 = pVVar14->x;
@@ -385,7 +382,7 @@ bool Assembly-CSharp.dll::RTG::PrismMath::PrismMath_ContainsPoint
             c_00.z = (float)pVVar29;
             UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane__ctor_2
                       ((Plane *)baseCenter.x,a,(Vector3)(auVar50 << 0x20),c_00,(MethodInfo *)0x0);
-            if ((float)puVar44 * fVar26 + (float)this_00 * (float)pVVar33 + fVar32 * 4.387255e-29 +
+            if ((float)puVar44 * fVar26 + (float)this_00 * (float)pVVar33 + fVar32 * 4.3731477e-29 +
                 (float)pVVar24 <= epsilon._ptContainEps) {
               return 1;
             }

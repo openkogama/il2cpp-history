@@ -159,7 +159,7 @@ void Assembly-CSharp.dll::OpenInventoryNotification::
       if (pIVar4->interfaceOffsets[uVar5].interfaceType ==
           (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IPlayerInventory) {
         ppMVar7 = &(&(x->klass->vtable).ActivateAtCategoryWithSlot)
-                   [x->klass->interfaceOffsets[uVar5].offset].method;
+                   [pIVar4->interfaceOffsets[uVar5].offset].method;
         goto code_?;
       }
       uVar5 = uVar5 + 1;

@@ -95,91 +95,99 @@ int32_t Assembly-CSharp.dll::TerrainLODComponent+TriangleCounter::
   if (pHVar6 != (HashSet_1_MV_WorldObject_IntVector_ *)0x0) {
     pHVar7 = System.Core.dll::System::Collections::Generic::HashSet`1[MV::WorldObject::IntVector]::
              HashSet_1_MV_WorldObject_IntVector__GetEnumerator
-                       ((HashSet_1_T_Enumerator_MV_WorldObject_IntVector_ *)&stack0xffffff8c,pHVar6,
+                       ((HashSet_1_T_Enumerator_MV_WorldObject_IntVector_ *)&stack0xffffff88,pHVar6,
                         MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::IntVector>__GetEnumerator__
                        );
-    method_00 = (MethodInfo *)pHVar7->_index;
-    key = pHVar7->_current;
-    IVar8 = pHVar7->_current;
+    uVar8._0_2_ = (pHVar7->_current).x;
+    uVar8._2_2_ = (pHVar7->_current).y;
     uStack_1 = 1;
+    iVar9 = (int16_t)*(undefined4 *)&(pHVar7->_current).z;
     while( true ) {
-      bVar9 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[MV::WorldObject
+      bVar10 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[MV::WorldObject
               ::IntVector]::HashSet_1_T_Enumerator_MV_WorldObject_IntVector__MoveNext
-                        ((HashSet_1_T_Enumerator_MV_WorldObject_IntVector_ *)&stack0xffffffb4,
+                        ((HashSet_1_T_Enumerator_MV_WorldObject_IntVector_ *)&stack0xffffff9c,
                          MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<MV::WorldObject::IntVector>__MoveNext__
                         );
-      if (bVar9 == 0) break;
+      if (bVar10 == 0) break;
       if ((prototypeCubeModel == (RuntimePrototypeCubeModel *)0x0) ||
          (this_00 = (prototypeCubeModel->fields).chunks,
          this_00 == (Dictionary_2_MV_WorldObject_IntVector_CubeModelChunk_ *)0x0))
       goto code_?;
-      bVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
+      IVar11.z = iVar9;
+      IVar11.x = (int16_t)uVar8;
+      IVar11.y = SUB42(uVar8,2);
+      uVar12 = uVar8;
+      iVar13 = iVar9;
+      bVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
               IntVector,System::Object]::
               Dictionary_2_MV_WorldObject_IntVector_System_Object__ContainsKey
-                        ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)this_00,IVar8,
+                        ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)this_00,IVar11,
                          MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__ContainsKey_MV__WorldObject__IntVector_
                         );
-      if (bVar9 == 0) {
+      if (bVar10 == 0) {
         if (pMVar5 == (MethodInfo *)0x0) goto code_?;
-        in_stack_10 = pMVar5;
+        in_stack_14 = pMVar5;
         func_?();
+        uVar8 = uVar12;
+        iVar9 = iVar13;
       }
       else {
-        in_stack_10 = (MethodInfo *)(prototypeCubeModel->fields).chunks;
-        if (in_stack_10 == (MethodInfo *)0x0) goto code_?;
-        pOVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
+        in_stack_14 = (MethodInfo *)(prototypeCubeModel->fields).chunks;
+        if (in_stack_14 == (MethodInfo *)0x0) goto code_?;
+        key.z = iVar9;
+        key.x = (int16_t)uVar8;
+        key.y = SUB42(uVar8,2);
+        pOVar15 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
                  IntVector,System::Object]::
                  Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item
                            ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)
-                            in_stack_10,key,
+                            in_stack_14,key,
                             MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__get_Item_MV__WorldObject__IntVector_
                            );
-        if (pOVar11 == (Object *)0x0) goto code_?;
-        pMVar4 = pMVar4 + (int)pOVar11[7].monitor;
+        if (pOVar15 == (Object *)0x0) goto code_?;
+        pMVar4 = pMVar4 + (int)pOVar15[7].monitor;
+        uVar8 = uVar12;
+        iVar9 = iVar13;
       }
     }
     uStack_1 = 0xffffffff;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)&stack0xffffffb4,
+              ((Object *)&stack0xffffff9c,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<MV::WorldObject::IntVector>__Dispose__
-               ,in_stack_10);
+               ,in_stack_14);
     uStack_1 = 0xffffffff;
     if (pMVar5 != (MethodInfo *)0x0) {
-      pLVar12 = mscorlib.dll::System::Collections::Generic::List`1[MV::WorldObject::IntVector]::
+      pLVar16 = mscorlib.dll::System::Collections::Generic::List`1[MV::WorldObject::IntVector]::
                List_1_MV_WorldObject_IntVector__GetEnumerator
-                         ((List_1_T_Enumerator_MV_WorldObject_IntVector_ *)&stack0xffffff8c,
+                         ((List_1_T_Enumerator_MV_WorldObject_IntVector_ *)&stack0xffffff88,
                           (List_1_MV_WorldObject_IntVector_ *)pMVar5,
                           MethodInfo__System__Collections__Generic__List<MV::WorldObject::IntVector>__GetEnumerator__
                          );
-      iVar13 = (int16_t)*(undefined4 *)&(pLVar12->_current).z;
+      pMVar5 = (MethodInfo *)pLVar16->_index;
+      IVar11 = pLVar16->_current;
       uStack_1 = 4;
       while( true ) {
-        pMVar5 = 
-        MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::IntVector>__MoveNext__
-        ;
-        bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[MV::WorldObject::
+        bVar10 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[MV::WorldObject::
                 IntVector]::List_1_T_Enumerator_MV_WorldObject_IntVector__MoveNext
-                          ((List_1_T_Enumerator_MV_WorldObject_IntVector_ *)&stack0xffffffa0,
+                          ((List_1_T_Enumerator_MV_WorldObject_IntVector_ *)&stack0xffffffb0,
                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::IntVector>__MoveNext__
                           );
-        if (bVar9 == 0) {
+        if (bVar10 == 0) {
           uStack_1 = 0xffffffff;
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&stack0xffffffa0,
+                    ((Object *)&stack0xffffffb0,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::IntVector>__Dispose__
-                     ,method_00);
+                     ,pMVar5);
           *unaff_FS_OFFSET = uStack_3;
           return (int32_t)pMVar4;
         }
         pHVar6 = (this->fields).enabledChunks;
         if (pHVar6 == (HashSet_1_MV_WorldObject_IntVector_ *)0x0) break;
-        IVar8.z = iVar13;
-        IVar8._0_4_ = pMVar5;
         System.Core.dll::System::Collections::Generic::HashSet`1[MV::WorldObject::IntVector]::
         HashSet_1_MV_WorldObject_IntVector__Remove
-                  (pHVar6,IVar8,
+                  (pHVar6,IVar11,
                    MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::IntVector>__Remove_MV__WorldObject__IntVector_
                   );
       }
@@ -189,9 +197,9 @@ code_?:
   func_?();
   func_?();
   func_?();
-  pcVar14 = (code *)swi(3);
-  iVar15 = (*pcVar14)();
-  return iVar15;
+  pcVar17 = (code *)swi(3);
+  iVar18 = (*pcVar17)();
+  return iVar18;
 }
 
 
@@ -247,7 +255,7 @@ void Assembly-CSharp.dll::TerrainLODComponent+TriangleCounter::
              MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::IntVector>__HashSet__
             );
   method_00 = (MethodInfo *)&this->fields;
-  (this->fields).enabledChunks = this_00;
+  ((TerrainLODComponent_TriangleCounter__Fields *)method_00)->enabledChunks = this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);

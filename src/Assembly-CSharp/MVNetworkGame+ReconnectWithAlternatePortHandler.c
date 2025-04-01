@@ -138,8 +138,9 @@ bool Assembly-CSharp.dll::MVNetworkGame+ReconnectWithAlternatePortHandler::
               pSVar2 = mscorlib.dll::System::String::String_Concat_4
                                  (pSVar2,::StringLiteral__,pSVar4,(MethodInfo *)0x0);
               if (pGVar3 != (GameSessionData *)0x0) {
-                (pGVar3->fields).serverIP = pSVar2;
-                func_?(&pGVar3->fields,pSVar2);
+                pGVar6 = &pGVar3->fields;
+                pGVar6->serverIP = pSVar2;
+                func_?(pGVar6,pSVar2);
                 pMVar1 = (this->fields).networkGame;
                 if (pMVar1 != (MVNetworkGame *)0x0) {
                   MVNetworkGame::MVNetworkGame_Join(pMVar1,(MethodInfo *)0x0);
@@ -154,8 +155,8 @@ bool Assembly-CSharp.dll::MVNetworkGame+ReconnectWithAlternatePortHandler::
   }
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  bVar5 = (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  bVar5 = (*pcVar7)();
   return bVar5;
 }
 

@@ -8,18 +8,17 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[System::Object]::
 
 {
   if (other != (SubscribableVariableBase_1_System_Object_ *)0x0) {
-    if ((this->fields).value != (Object *)0x0) {
-      pOVar1 = (this->fields).value;
-      pOVar2 = pOVar1->klass;
-      bVar3 = (*(code *)(pOVar2->vtable).Equals.method)
-                        (pOVar1,(other->fields).value,(pOVar2->vtable).Finalize.methodPtr);
-      return bVar3;
+    pOVar1 = (this->fields).value;
+    if (pOVar1 != (Object *)0x0) {
+      bVar2 = (*(code *)(pOVar1->klass->vtable).Equals.method)
+                        (pOVar1,(other->fields).value,(pOVar1->klass->vtable).Finalize.methodPtr);
+      return bVar2;
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  bVar3 = (*pcVar4)();
-  return bVar3;
+  pcVar3 = (code *)swi(3);
+  bVar2 = (*pcVar3)();
+  return bVar2;
 }
 
 
@@ -60,14 +59,17 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[System::Object]::
        ((obj->klass->_1).typeHierarchy[pIVar2->naturalAligment - 1] != pIVar2)) {
       func_?();
     }
-    else if ((this->fields).value != (Object *)0x0) {
-      bVar1 = (*(code *)(((this->fields).value)->klass->vtable).Equals.method)();
-      return bVar1;
+    else {
+      pOVar3 = (this->fields).value;
+      if (pOVar3 != (Object *)0x0) {
+        bVar1 = (*(code *)(pOVar3->klass->vtable).Equals.method)();
+        return bVar1;
+      }
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  bVar1 = (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  bVar1 = (*pcVar4)();
   return bVar1;
 }
 
@@ -136,8 +138,8 @@ void Assembly-CSharp.dll::SubscribableVariableBase`1[System::Object]::
                (SubscribableVariableBase_1_System_Object_ *this,MethodInfo *method)
 
 {
-  if ((this->fields).OnChange != (Action_1_Object_ *)0x0) {
-    pAVar1 = (this->fields).OnChange;
+  pAVar1 = (this->fields).OnChange;
+  if (pAVar1 != (Action_1_Object_ *)0x0) {
     (*(pAVar1->fields)._._.invoke_impl)
               ((pAVar1->fields)._._.method_code,(this->fields).value,(pAVar1->fields)._._.method);
   }
@@ -198,18 +200,17 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[System::Object]::
 {
   if ((a != (SubscribableVariableBase_1_System_Object_ *)0x0) &&
      (b != (SubscribableVariableBase_1_System_Object_ *)0x0)) {
-    if ((a->fields).value != (Object *)0x0) {
-      pOVar1 = (a->fields).value;
-      pOVar2 = pOVar1->klass;
-      bVar3 = (*(code *)(pOVar2->vtable).Equals.method)
-                        (pOVar1,(b->fields).value,(pOVar2->vtable).Finalize.methodPtr);
-      return bVar3;
+    pOVar1 = (a->fields).value;
+    if (pOVar1 != (Object *)0x0) {
+      bVar2 = (*(code *)(pOVar1->klass->vtable).Equals.method)
+                        (pOVar1,(b->fields).value,(pOVar1->klass->vtable).Finalize.methodPtr);
+      return bVar2;
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  bVar3 = (*pcVar4)();
-  return bVar3;
+  pcVar3 = (code *)swi(3);
+  bVar2 = (*pcVar3)();
+  return bVar2;
 }
 
 
@@ -288,17 +289,16 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[System::Object]::
   }
   if ((a != (SubscribableVariableBase_1_System_Object_ *)0x0) &&
      (b != (SubscribableVariableBase_1_System_Object_ *)0x0)) {
-    if ((a->fields).value != (Object *)0x0) {
-      pOVar1 = (a->fields).value;
-      pOVar2 = pOVar1->klass;
-      cVar3 = (*(code *)(pOVar2->vtable).Equals.method)
-                        (pOVar1,(b->fields).value,(pOVar2->vtable).Finalize.methodPtr);
-      return cVar3 == '\0';
+    pOVar1 = (a->fields).value;
+    if (pOVar1 != (Object *)0x0) {
+      cVar2 = (*(code *)(pOVar1->klass->vtable).Equals.method)
+                        (pOVar1,(b->fields).value,(pOVar1->klass->vtable).Finalize.methodPtr);
+      return cVar2 == '\0';
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  bVar5 = (*pcVar4)();
-  return bVar5;
+  pcVar3 = (code *)swi(3);
+  bVar4 = (*pcVar3)();
+  return bVar4;
 }
 

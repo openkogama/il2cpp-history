@@ -8,32 +8,25 @@ void Assembly-CSharp.dll::RTG::GizmoThinCircle3DBorderController::
 {
   pGVar1 = (this->fields)._._data;
   if (pGVar1 != (GizmoCircle3DBorderControllerData *)0x0) {
-    this_00 = (PolygonShape2D *)(pGVar1->fields).BorderCircle;
     pGVar2 = (pGVar1->fields).PlaneSlider;
-    if (pGVar2 != (GizmoPlaneSlider3D *)0x0) {
-      if ((pGVar2->fields)._sharedSettings == (GizmoPlaneSlider3DSettings *)0x0) {
-        pGVar3 = (pGVar2->fields)._settings;
-        if (pGVar3 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
-      }
-      else {
-        pGVar3 = (pGVar2->fields)._sharedSettings;
-      }
-      if (this_00 != (PolygonShape2D *)0x0) {
-        PolygonShape2D::PolygonShape2D_set_WireEps
-                  (this_00,zoomFactor * (pGVar3->fields)._borderLineHoverEps,(MethodInfo *)0x0);
-        pGVar1 = (this->fields)._._data;
-        if ((pGVar1 != (GizmoCircle3DBorderControllerData *)0x0) &&
-           (this_01 = (Touch *)(pGVar1->fields).BorderCircle, this_01 != (Touch *)0x0)) {
-          value = UnityEngine.InputLegacyModule.dll::UnityEngine::Touch::
-                  Touch_get_maximumPossiblePressure(this_01,(MethodInfo *)0x0);
-          CircleShape3D::CircleShape3D_set_ExtrudeEps
-                    ((CircleShape3D *)this_01,value,(MethodInfo *)0x0);
-          return;
-        }
+    this_00 = (PolygonShape2D *)(pGVar1->fields).BorderCircle;
+    if ((pGVar2 != (GizmoPlaneSlider3D *)0x0) &&
+       (((pGVar3 = (pGVar2->fields)._sharedSettings, pGVar3 != (GizmoPlaneSlider3DSettings *)0x0 ||
+         (pGVar3 = (pGVar2->fields)._settings, pGVar3 != (GizmoPlaneSlider3DSettings *)0x0)) &&
+        (this_00 != (PolygonShape2D *)0x0)))) {
+      PolygonShape2D::PolygonShape2D_set_WireEps
+                (this_00,zoomFactor * (pGVar3->fields)._borderLineHoverEps,(MethodInfo *)0x0);
+      pGVar1 = (this->fields)._._data;
+      if ((pGVar1 != (GizmoCircle3DBorderControllerData *)0x0) &&
+         (this_01 = (Touch *)(pGVar1->fields).BorderCircle, this_01 != (Touch *)0x0)) {
+        value = UnityEngine.InputLegacyModule.dll::UnityEngine::Touch::
+                Touch_get_maximumPossiblePressure(this_01,(MethodInfo *)0x0);
+        CircleShape3D::CircleShape3D_set_ExtrudeEps
+                  ((CircleShape3D *)this_01,value,(MethodInfo *)0x0);
+        return;
       }
     }
   }
-code_?:
   func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();

@@ -90,15 +90,15 @@ void Assembly-CSharp.dll::RTG::Tut_3_TransformSpaces::Tut_3_TransformSpaces_OnSe
       if ((pOVar2 != (ObjectTransformGizmo *)0x0) &&
          (pGVar3 = (pOVar2->fields)._._gizmo, pGVar3 != (Gizmo *)0x0)) {
         Gizmo::Gizmo_SetEnabled(pGVar3,1,(MethodInfo *)0x0);
-        pLVar1 = (this->fields)._selectedObjects;
+        this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                  (this->fields)._selectedObjects;
         pOVar2 = (this->fields)._workGizmo;
-        if ((pLVar1 != (List_1_UnityEngine_GameObject_ *)0x0) &&
+        if ((this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) &&
            ((targetPivotObject =
                   mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                   RegularExpressions::RegexCharClass+SingleRange]::
                   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                             (this->fields)._selectedObjects,(pLVar1->fields)._size + -1,
+                            (this_00,(this_00->fields)._size + -1,
                              MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__get_Item_int_
                             ), pOVar2 != (ObjectTransformGizmo *)0x0 &&
             (ObjectTransformGizmo::ObjectTransformGizmo_SetTargetPivotObject
@@ -124,15 +124,15 @@ void Assembly-CSharp.dll::RTG::Tut_3_TransformSpaces::Tut_3_TransformSpaces_OnSe
               }
             }
             if (*(int *)(in_stack_6 + 8) != 0) {
-              this_00 = *(GizmoTransform **)(*(int *)(in_stack_6 + 8) + 0xf8);
+              this_01 = *(GizmoTransform **)(*(int *)(in_stack_6 + 8) + 0xf8);
               if (*(int *)(in_stack_6 + 0x44) == 0) {
                 if (cRam_? == '\0') {
                   func_?();
                   cRam_? = '\x01';
                 }
-                if (this_00 != (GizmoTransform *)0x0) {
+                if (this_01 != (GizmoTransform *)0x0) {
                   GizmoTransform::GizmoTransform_set_Rotation3D
-                            (this_00,TypeInfo__UnityEngine__Quaternion->static_fields->
+                            (this_01,TypeInfo__UnityEngine__Quaternion->static_fields->
                                      identityQuaternion,(MethodInfo *)0x0);
                   return;
                 }
@@ -146,14 +146,14 @@ void Assembly-CSharp.dll::RTG::Tut_3_TransformSpaces::Tut_3_TransformSpaces_OnSe
                                   (x,(Object_1 *)0x0,(MethodInfo *)0x0);
                 if (bVar7 == 0) {
                   if ((*(GameObject **)(in_stack_6 + 0x1c) == (GameObject *)0x0) ||
-                     (this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                     (this_02 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                                 GameObject_get_transform
                                           (*(GameObject **)(in_stack_6 + 0x1c),
-                                           (MethodInfo *)0x0), this_01 == (Transform *)0x0))
+                                           (MethodInfo *)0x0), this_02 == (Transform *)0x0))
                   goto code_?;
                   pQVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                            Transform_get_rotation
-                                     ((Quaternion *)&stack0x00000018,this_01,(MethodInfo *)0x0);
+                                     ((Quaternion *)&stack0x00000018,this_02,(MethodInfo *)0x0);
                 }
                 else {
                   pQVar8 = MVWorldObject.dll::MV::WorldObject::MVWorldObject::
@@ -161,8 +161,8 @@ void Assembly-CSharp.dll::RTG::Tut_3_TransformSpaces::Tut_3_TransformSpaces_OnSe
                                      ((Quaternion *)&stack0x00000018,(MVWorldObject *)0x0,
                                       (MethodInfo *)&UNK_?);
                 }
-                if (this_00 != (GizmoTransform *)0x0) {
-                  GizmoTransform::GizmoTransform_set_Rotation3D(this_00,*pQVar8,(MethodInfo *)0x0);
+                if (this_01 != (GizmoTransform *)0x0) {
+                  GizmoTransform::GizmoTransform_set_Rotation3D(this_01,*pQVar8,(MethodInfo *)0x0);
                   return;
                 }
               }
@@ -293,15 +293,15 @@ code_?:
     if ((pOVar1 != (ObjectTransformGizmo *)0x0) &&
        (pGVar2 = (pOVar1->fields)._._gizmo, pGVar2 != (Gizmo *)0x0)) {
       Gizmo::Gizmo_SetEnabled(pGVar2,1,(MethodInfo *)0x0);
-      pLVar3 = (this->fields)._selectedObjects;
+      this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                (this->fields)._selectedObjects;
       pOVar1 = (this->fields)._workGizmo;
-      if ((pLVar3 != (List_1_UnityEngine_GameObject_ *)0x0) &&
+      if ((this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) &&
          (targetPivotObject =
                mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
                RegexCharClass+SingleRange]::
                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                         ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                          (this->fields)._selectedObjects,(pLVar3->fields)._size + -1,
+                         (this_00,(this_00->fields)._size + -1,
                           MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__get_Item_int_
                          ), pOVar1 != (ObjectTransformGizmo *)0x0)) {
         ObjectTransformGizmo::ObjectTransformGizmo_SetTargetPivotObject
@@ -337,51 +337,52 @@ void Assembly-CSharp.dll::RTG::Tut_3_TransformSpaces::Tut_3_TransformSpaces_Star
                      (MethodInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>__get_Get__);
   if (pRVar1 != (RTGizmosEngine *)0x0) {
     pOVar2 = RTGizmosEngine::RTGizmosEngine_CreateObjectMoveGizmo(pRVar1,(MethodInfo *)0x0);
-    (this->fields)._objectMoveGizmo = pOVar2;
-    func_?(&(this->fields)._objectMoveGizmo,pOVar2);
+    ppOVar3 = &(this->fields)._objectMoveGizmo;
+    *ppOVar3 = pOVar2;
+    func_?(ppOVar3,pOVar2);
     pRVar1 = (RTGizmosEngine *)
              MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
                        (MethodInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>__get_Get__);
     if (pRVar1 != (RTGizmosEngine *)0x0) {
       pOVar2 = RTGizmosEngine::RTGizmosEngine_CreateObjectRotationGizmo(pRVar1,(MethodInfo *)0x0);
-      (this->fields)._objectRotationGizmo = pOVar2;
-      func_?(&(this->fields)._objectRotationGizmo,pOVar2);
+      ppOVar4 = &(this->fields)._objectRotationGizmo;
+      *ppOVar4 = pOVar2;
+      func_?(ppOVar4,pOVar2);
       pRVar1 = (RTGizmosEngine *)
                MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
                          (MethodInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>__get_Get__);
       if (pRVar1 != (RTGizmosEngine *)0x0) {
         pOVar2 = RTGizmosEngine::RTGizmosEngine_CreateObjectScaleGizmo(pRVar1,(MethodInfo *)0x0);
-        (this->fields)._objectScaleGizmo = pOVar2;
-        func_?(&(this->fields)._objectScaleGizmo,pOVar2);
+        ppOVar4 = &(this->fields)._objectScaleGizmo;
+        *ppOVar4 = pOVar2;
+        func_?(ppOVar4,pOVar2);
         pRVar1 = (RTGizmosEngine *)
                  MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
                            (MethodInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>__get_Get__);
         if (pRVar1 != (RTGizmosEngine *)0x0) {
           pOVar2 = RTGizmosEngine::RTGizmosEngine_CreateObjectUniversalGizmo
                              (pRVar1,(MethodInfo *)0x0);
-          (this->fields)._objectUniversalGizmo = pOVar2;
-          func_?(&(this->fields)._objectUniversalGizmo,pOVar2);
-          pOVar2 = (this->fields)._objectMoveGizmo;
-          if ((pOVar2 != (ObjectTransformGizmo *)0x0) &&
-             (pGVar3 = (pOVar2->fields)._._gizmo, pGVar3 != (Gizmo *)0x0)) {
-            Gizmo::Gizmo_SetEnabled(pGVar3,0,(MethodInfo *)0x0);
+          ppOVar4 = &(this->fields)._objectUniversalGizmo;
+          *ppOVar4 = pOVar2;
+          func_?(ppOVar4,pOVar2);
+          if ((*ppOVar3 != (ObjectTransformGizmo *)0x0) &&
+             (pGVar5 = ((*ppOVar3)->fields)._._gizmo, pGVar5 != (Gizmo *)0x0)) {
+            Gizmo::Gizmo_SetEnabled(pGVar5,0,(MethodInfo *)0x0);
             pOVar2 = (this->fields)._objectRotationGizmo;
             if ((pOVar2 != (ObjectTransformGizmo *)0x0) &&
-               (pGVar3 = (pOVar2->fields)._._gizmo, pGVar3 != (Gizmo *)0x0)) {
-              Gizmo::Gizmo_SetEnabled(pGVar3,0,(MethodInfo *)0x0);
+               (pGVar5 = (pOVar2->fields)._._gizmo, pGVar5 != (Gizmo *)0x0)) {
+              Gizmo::Gizmo_SetEnabled(pGVar5,0,(MethodInfo *)0x0);
               pOVar2 = (this->fields)._objectScaleGizmo;
               if ((pOVar2 != (ObjectTransformGizmo *)0x0) &&
-                 (pGVar3 = (pOVar2->fields)._._gizmo, pGVar3 != (Gizmo *)0x0)) {
-                Gizmo::Gizmo_SetEnabled(pGVar3,0,(MethodInfo *)0x0);
-                pOVar2 = (this->fields)._objectUniversalGizmo;
-                if ((pOVar2 != (ObjectTransformGizmo *)0x0) &&
-                   (pGVar3 = (pOVar2->fields)._._gizmo, pGVar3 != (Gizmo *)0x0)) {
-                  Gizmo::Gizmo_SetEnabled(pGVar3,0,(MethodInfo *)0x0);
-                  pOVar2 = (this->fields)._objectMoveGizmo;
-                  if (pOVar2 != (ObjectTransformGizmo *)0x0) {
+                 (pGVar5 = (pOVar2->fields)._._gizmo, pGVar5 != (Gizmo *)0x0)) {
+                Gizmo::Gizmo_SetEnabled(pGVar5,0,(MethodInfo *)0x0);
+                if ((*ppOVar4 != (ObjectTransformGizmo *)0x0) &&
+                   (pGVar5 = ((*ppOVar4)->fields)._._gizmo, pGVar5 != (Gizmo *)0x0)) {
+                  Gizmo::Gizmo_SetEnabled(pGVar5,0,(MethodInfo *)0x0);
+                  if (*ppOVar3 != (ObjectTransformGizmo *)0x0) {
                     ObjectTransformGizmo::ObjectTransformGizmo_SetTargetObjects
-                              (pOVar2,(IEnumerable_1_UnityEngine_GameObject_ *)
-                                      (this->fields)._selectedObjects,(MethodInfo *)0x0);
+                              (*ppOVar3,(IEnumerable_1_UnityEngine_GameObject_ *)
+                                        (this->fields)._selectedObjects,(MethodInfo *)0x0);
                     pOVar2 = (this->fields)._objectRotationGizmo;
                     if (pOVar2 != (ObjectTransformGizmo *)0x0) {
                       ObjectTransformGizmo::ObjectTransformGizmo_SetTargetObjects
@@ -392,14 +393,13 @@ void Assembly-CSharp.dll::RTG::Tut_3_TransformSpaces::Tut_3_TransformSpaces_Star
                         ObjectTransformGizmo::ObjectTransformGizmo_SetTargetObjects
                                   (pOVar2,(IEnumerable_1_UnityEngine_GameObject_ *)
                                           (this->fields)._selectedObjects,(MethodInfo *)0x0);
-                        pOVar2 = (this->fields)._objectUniversalGizmo;
-                        if (pOVar2 != (ObjectTransformGizmo *)0x0) {
+                        if (*ppOVar4 != (ObjectTransformGizmo *)0x0) {
                           ObjectTransformGizmo::ObjectTransformGizmo_SetTargetObjects
-                                    (pOVar2,(IEnumerable_1_UnityEngine_GameObject_ *)
-                                            (this->fields)._selectedObjects,(MethodInfo *)0x0);
-                          pOVar2 = (this->fields)._objectMoveGizmo;
-                          (this->fields)._workGizmo = pOVar2;
-                          func_?(&(this->fields)._workGizmo,pOVar2);
+                                    (*ppOVar4,(IEnumerable_1_UnityEngine_GameObject_ *)
+                                              (this->fields)._selectedObjects,(MethodInfo *)0x0);
+                          ppOVar4 = &(this->fields)._workGizmo;
+                          *ppOVar4 = *ppOVar3;
+                          func_?(ppOVar4,*ppOVar3);
                           (this->fields)._workGizmoId = 1;
                           return;
                         }
@@ -415,8 +415,8 @@ void Assembly-CSharp.dll::RTG::Tut_3_TransformSpaces::Tut_3_TransformSpaces_Star
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -460,10 +460,9 @@ void Assembly-CSharp.dll::RTG::Tut_3_TransformSpaces::Tut_3_TransformSpaces_Upda
       }
       func_?(&stack0xffffffa8,0,0x2c);
       this_00 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
-      pVVar3 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::DefaultEventSystem+Input
-                ::DefaultEventSystem_Input_get_mousePosition
-                          (&RStack_4.m_Direction,(DefaultEventSystem_Input *)0x0,in_stack_5)
-      ;
+      pVVar3 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::DefaultEventSystem+Input::
+               DefaultEventSystem_Input_get_mousePosition
+                         (&RStack_4.m_Direction,(DefaultEventSystem_Input *)0x0,in_stack_5);
       if (this_00 == (Camera *)0x0) goto code_?;
       pRVar6 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenPointToRay_2
                           (&RStack_4,this_00,*pVVar3,(MethodInfo *)0x0);
@@ -502,13 +501,13 @@ void Assembly-CSharp.dll::RTG::Tut_3_TransformSpaces::Tut_3_TransformSpaces_Upda
       if (bVar1 == 0) {
         pLVar11 = (this->fields)._selectedObjects;
         if (pLVar11 == (List_1_UnityEngine_GameObject_ *)0x0) goto code_?;
-        iVar12 = (pLVar11->fields)._size;
-        piVar13 = &(pLVar11->fields)._version;
-        *piVar13 = *piVar13 + 1;
+        length = (pLVar11->fields)._size;
+        piVar12 = &(pLVar11->fields)._version;
+        *piVar12 = *piVar12 + 1;
         (pLVar11->fields)._size = 0;
-        if (0 < iVar12) {
+        if (0 < length) {
           mscorlib.dll::System::Array::Array_Clear
-                    ((Array *)(pLVar11->fields)._items,0,iVar12,(MethodInfo *)0x0);
+                    ((Array *)(pLVar11->fields)._items,0,length,(MethodInfo *)0x0);
         }
         Tut_3_TransformSpaces_OnSelectionChanged(this,(MethodInfo *)0x0);
         Tut_3_TransformSpaces_OnSelectionChanged(this,(MethodInfo *)0x0);
@@ -520,18 +519,13 @@ void Assembly-CSharp.dll::RTG::Tut_3_TransformSpaces::Tut_3_TransformSpaces_Upda
           if (pLVar11 == (List_1_UnityEngine_GameObject_ *)0x0) {
 code_?:
             func_?();
-            pcVar14 = (code *)swi(3);
-            (*pcVar14)();
+            pcVar13 = (code *)swi(3);
+            (*pcVar13)();
             return;
           }
-          iVar12 = (pLVar11->fields)._size;
-          piVar13 = &(pLVar11->fields)._version;
-          *piVar13 = *piVar13 + 1;
-          (pLVar11->fields)._size = 0;
-          if (0 < iVar12) {
-            mscorlib.dll::System::Array::Array_Clear
-                      ((Array *)(pLVar11->fields)._items,0,iVar12,(MethodInfo *)0x0);
-          }
+          func_?(pLVar11,
+                          MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Clear__
+                         );
           pLVar11 = (this->fields)._selectedObjects;
           if (pLVar11 == (List_1_UnityEngine_GameObject_ *)0x0) goto code_?;
           mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
@@ -632,8 +626,9 @@ void Assembly-CSharp.dll::RTG::Tut_3_TransformSpaces::Tut_3_TransformSpaces__cto
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__);
-  (this->fields)._selectedObjects = this_00;
-  func_?(&(this->fields)._selectedObjects,this_00);
+  ppLVar1 = &(this->fields)._selectedObjects;
+  *ppLVar1 = this_00;
+  func_?(ppLVar1,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

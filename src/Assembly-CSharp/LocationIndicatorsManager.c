@@ -206,8 +206,8 @@ void Assembly-CSharp.dll::LocationIndicatorsManager::
           do {
             if (pDVar8->interfaceOffsets[uVar9].interfaceType ==
                 (Il2CppClass *)TypeInfo__System__Collections__Generic__IEnumerable<MVPlayer>) {
-              ppMVar11 = &(&(pDVar6->klass->vtable).Equals)
-                          [pDVar6->klass->interfaceOffsets[uVar9].offset].method;
+              ppMVar11 = &(&(pDVar8->vtable).Equals)[pDVar8->interfaceOffsets[uVar9].offset].method
+              ;
               goto code_?;
             }
             uVar9 = uVar9 + 1;
@@ -217,9 +217,7 @@ void Assembly-CSharp.dll::LocationIndicatorsManager::
 code_?:
         piVar12 = (int *)(*(code *)*ppMVar11)();
         uStack_1 = 1;
-code_?:
-        do {
-          if (piVar12 == (int *)0x0) break;
+        while (piVar12 != (int *)0x0) {
           uVar9 = 0;
           uVar10 = *(ushort *)(*piVar12 + 0xb6);
           if (uVar10 != 0) {
@@ -296,42 +294,44 @@ code_?:
           if (bVar18 == 0) {
             pMVar19 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
             if (pMVar19 == (MVLocalPlayer *)0x0) break;
-            if (key != (Il2CppClass *)(pMVar19->fields)._._ProfileID_k__BackingField) {
-              original = (this->fields).indicatorPrefab;
-              parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                 ((Component *)this,(MethodInfo *)0x0);
-              if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-                in_stack_20 = TypeInfo__UnityEngine__Object;
-                func_?();
-              }
-              value = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_5
-                                ((Object *)original,parent,
-                                 LocationIndicator_MethodInfo__UnityEngine__Object__Instantiate<LocationIndicator>_LocationIndicator__UnityEngine__Transform_
-                                );
-              if (value == (Object *)0x0) break;
-              value[5].klass = pOVar16;
+            if (key == (Il2CppClass *)(pMVar19->fields)._._ProfileID_k__BackingField)
+            goto code_?;
+            original = (this->fields).indicatorPrefab;
+            parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                               ((Component *)this,(MethodInfo *)0x0);
+            if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+              in_stack_20 = TypeInfo__UnityEngine__Object;
               func_?();
-              if (((pOVar16->_0).klass == (Il2CppClass *)0x0) ||
-                 (value[3].klass == (Object__Class *)0x0)) break;
-              (*(code *)((value[3].klass)->_0).image[0x12].name)();
-              pDVar17 = (this->fields).indicators;
-              if (pDVar17 == (Dictionary_2_System_Int32_LocationIndicator_ *)0x0) break;
-              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]
-              ::Dictionary_2_System_Int32_System_Object__Add
-                        ((Dictionary_2_System_Int32_System_Object_ *)pDVar17,(int32_t)key,value,
-                         MethodInfo__System__Collections__Generic__Dictionary<int,_LocationIndicator>__Add_int__LocationIndicator_
-                        );
-              bVar7 = true;
-              goto code_?;
             }
+            value = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_5
+                              ((Object *)original,parent,
+                               LocationIndicator_MethodInfo__UnityEngine__Object__Instantiate<LocationIndicator>_LocationIndicator__UnityEngine__Transform_
+                              );
+            if (value == (Object *)0x0) break;
+            value[5].klass = pOVar16;
+            func_?();
+            if (((pOVar16->_0).klass == (Il2CppClass *)0x0) ||
+               (value[3].klass == (Object__Class *)0x0)) break;
+            (*(code *)((value[3].klass)->_0).image[0x12].name)();
+            pDVar17 = (this->fields).indicators;
+            if (pDVar17 == (Dictionary_2_System_Int32_LocationIndicator_ *)0x0) break;
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+            Dictionary_2_System_Int32_System_Object__Add
+                      ((Dictionary_2_System_Int32_System_Object_ *)pDVar17,(int32_t)key,value,
+                       MethodInfo__System__Collections__Generic__Dictionary<int,_LocationIndicator>__Add_int__LocationIndicator_
+                      );
+            bVar7 = true;
           }
-          if (this_02 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-          break;
-          mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
-          List_1_System_Int32__Remove
-                    ((List_1_System_Int32_ *)this_02,(int32_t)key,
-                     MethodInfo__System__Collections__Generic__List<int>__Remove_int_);
-        } while( true );
+          else {
+code_?:
+            if (this_02 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+            break;
+            mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
+            List_1_System_Int32__Remove
+                      ((List_1_System_Int32_ *)this_02,(int32_t)key,
+                       MethodInfo__System__Collections__Generic__List<int>__Remove_int_);
+          }
+        }
       }
     }
   }
@@ -364,15 +364,14 @@ code_?:
     return;
   }
   pDVar17 = (this->fields).indicators;
-  if (pDVar17 == (Dictionary_2_System_Int32_LocationIndicator_ *)0x0) goto code_?;
-  RVar22 = key_00;
-  this_03 = (Component *)
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-            Dictionary_2_System_Int32_System_Object__get_Item
-                      ((Dictionary_2_System_Int32_System_Object_ *)pDVar17,(int32_t)key_00,
-                       MethodInfo__System__Collections__Generic__Dictionary<int,_LocationIndicator>__get_Item_int_
-                      );
-  if (this_03 == (Component *)0x0) goto code_?;
+  if ((pDVar17 == (Dictionary_2_System_Int32_LocationIndicator_ *)0x0) ||
+     (RVar22 = key_00,
+     this_03 = (Component *)
+               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+               Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                         ((Dictionary_2_System_Int32_System_Object_ *)pDVar17,(int32_t)key_00,
+                          MethodInfo__System__Collections__Generic__Dictionary<int,_LocationIndicator>__get_Item_int_
+                         ), this_03 == (Component *)0x0)) goto code_?;
   in_stack_20 = (Object_1__Class *)&UNK_?;
   obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                   (this_03,(MethodInfo *)0x0);
@@ -599,41 +598,37 @@ void Assembly-CSharp.dll::LocationIndicatorsManager::
                          );
           cRam_? = '\x01';
         }
-        LStack_2._list = (List_1_System_Object_ *)0x0;
-        LStack_2._index = 0;
-        LStack_2._version = 0;
-        LStack_2._current = (Object *)0x0;
-        pLStack_3 = (LocationIndicator *)0x0;
-        pPVar4 = (((LocationIndicatorsManager *)data)->fields).planetOwnershipsData;
-        if ((pPVar4 != (PlanetOwnershipsData *)0x0) &&
+        pLStack_2 = (LocationIndicator *)0x0;
+        pPVar3 = (((LocationIndicatorsManager *)data)->fields).planetOwnershipsData;
+        if ((pPVar3 != (PlanetOwnershipsData *)0x0) &&
            (this = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                   (pPVar4->fields).planetOwnerships,
+                   (pPVar3->fields).planetOwnerships,
            this != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)) {
           this_00 = (Dictionary_2_System_Int32_LocationIndicator_ *)&UNK_?;
-          pLVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+          pLVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                    RegularExpressions::RegexCharClass+SingleRange]::
                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                             (&LStack_6,this,
+                             (&LStack_5,this,
                               MethodInfo__System__Collections__Generic__List<MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>__GetEnumerator__
                              );
-          LStack_2._list = (List_1_System_Object_ *)pLVar5->_list;
-          LStack_2._index = pLVar5->_index;
-          LStack_2._version = pLVar5->_version;
-          LStack_2._current = *(Object **)&pLVar5->_current;
-          LStack_6._version = 0;
-          LStack_6._current = (RegexCharClass_SingleRange)&LStack_2;
+          LStack_6._list = (List_1_System_Object_ *)pLVar4->_list;
+          LStack_6._index = pLVar4->_index;
+          LStack_6._version = pLVar4->_version;
+          LStack_6._current = *(Object **)&pLVar4->_current;
+          LStack_5._version = 0;
+          LStack_5._current = (RegexCharClass_SingleRange)&LStack_6;
           while( true ) {
             do {
               bVar7 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
                       Object]::List_1_T_Enumerator_System_Object__MoveNext
-                                (&LStack_2,
+                                (&LStack_6,
                                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>__MoveNext__
                                 );
-              pOVar8 = LStack_2._current;
+              pOVar8 = LStack_6._current;
               if (bVar7 == 0) {
                 mscorlib.dll::System::ThrowHelper::
                 ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                          ((Object *)&LStack_2,
+                          ((Object *)&LStack_6,
                            (ExceptionArgument__Enum)
                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>__Dispose__
                            ,method);
@@ -655,17 +650,17 @@ void Assembly-CSharp.dll::LocationIndicatorsManager::
               bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System
                       ::Object]::Dictionary_2_System_Int32_System_Object__TryGetValue
                                 ((Dictionary_2_System_Int32_System_Object_ *)this_00,
-                                 *(int32_t *)((int)pOVar8 + 8),(Object **)&pLStack_3,
+                                 *(int32_t *)((int)pOVar8 + 8),(Object **)&pLStack_2,
                                  MethodInfo__System__Collections__Generic__Dictionary<int,_LocationIndicator>__TryGetValue_int__LocationIndicator__
                                 );
             } while (bVar7 == 0);
             data = (PlanetOwnershipsData *)CONCAT31(data._1_3_,*(undefined1 *)((int)pOVar8 + 0xc));
-            pPVar4 = data;
-            if (pLStack_3 == (LocationIndicator *)0x0) break;
+            pPVar3 = data;
+            if (pLStack_2 == (LocationIndicator *)0x0) break;
             method = (MethodInfo *)data;
-            data = (PlanetOwnershipsData *)pLStack_3;
+            data = (PlanetOwnershipsData *)pLStack_2;
             LocationIndicator::LocationIndicator_SetOwnership
-                      (pLStack_3,(PlanetOwnershipType__Enum)pPVar4,(MethodInfo *)0x0);
+                      (pLStack_2,(PlanetOwnershipType__Enum)pPVar3,(MethodInfo *)0x0);
           }
         }
       }
@@ -809,8 +804,9 @@ void Assembly-CSharp.dll::LocationIndicatorsManager::LocationIndicatorsManager_S
               (this_01,
                MethodInfo__System__Collections__Generic__Dictionary<int,_LocationIndicator>__Dictionary__
               );
-    (this->fields).indicators = (Dictionary_2_System_Int32_LocationIndicator_ *)this_01;
-    func_?(&(this->fields).indicators,this_01);
+    ppDVar1 = &(this->fields).indicators;
+    *ppDVar1 = (Dictionary_2_System_Int32_LocationIndicator_ *)this_01;
+    func_?(ppDVar1,this_01);
     (this->fields).isPlanetOwnershipsRequestPending = 1;
     this_02 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     this_03 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
@@ -828,10 +824,10 @@ void Assembly-CSharp.dll::LocationIndicatorsManager::LocationIndicatorsManager_S
                 (this_02,(Action_1_MV_WorldObject_OwnershipData_PlanetOwnershipsData_ *)this_03,
                  (MethodInfo *)0x0);
       this_04 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
-      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-      if ((pMVar1 != (MVLocalPlayer *)0x0) && (this_04 != (MVNetworkGame_OperationRequests *)0x0)) {
+      pMVar2 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
+      if ((pMVar2 != (MVLocalPlayer *)0x0) && (this_04 != (MVNetworkGame_OperationRequests *)0x0)) {
         MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_GetActorsPlanetOwnerships
-                  (this_04,(pMVar1->fields)._._ProfileID_k__BackingField,(MethodInfo *)0x0);
+                  (this_04,(pMVar2->fields)._._ProfileID_k__BackingField,(MethodInfo *)0x0);
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
@@ -843,17 +839,18 @@ void Assembly-CSharp.dll::LocationIndicatorsManager::LocationIndicatorsManager_S
         value[1].klass = (Object__Class *)0x0;
         value[2].klass = (Object__Class *)this;
         func_?(value + 2,this);
-        (this->fields).updateCoroutine = (IEnumerator *)value;
-        func_?(&(this->fields).updateCoroutine,value);
+        ppIVar3 = &(this->fields).updateCoroutine;
+        *ppIVar3 = (IEnumerator *)value;
+        func_?(ppIVar3,value);
         UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
-                  ((MonoBehaviour *)this,(this->fields).updateCoroutine,(MethodInfo *)0x0);
+                  ((MonoBehaviour *)this,*ppIVar3,(MethodInfo *)0x0);
         return;
       }
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -873,8 +870,8 @@ Assembly-CSharp.dll::LocationIndicatorsManager::LocationIndicatorsManager_Update
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[2].klass = (Object__Class *)this;
   value[1].klass = (Object__Class *)0x0;
+  value[2].klass = (Object__Class *)this;
   func_?(value + 2,this);
   return (IEnumerator *)value;
 }

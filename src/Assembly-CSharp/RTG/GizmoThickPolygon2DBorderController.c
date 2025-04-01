@@ -8,13 +8,13 @@ void Assembly-CSharp.dll::RTG::GizmoThickPolygon2DBorderController::
 {
   pGVar1 = (this->fields)._._data;
   if (pGVar1 != (GizmoPolygon2DBorderControllerData *)0x0) {
-    this_00 = (pGVar1->fields).PlaneSlider;
-    this_01 = (pGVar1->fields).ThickBorderPolygon;
-    if (this_00 != (GizmoPlaneSlider2D *)0x0) {
-      pGVar2 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_get_Settings(this_00,(MethodInfo *)0x0);
-      if ((pGVar2 != (GizmoPlaneSlider2DSettings *)0x0) && (this_01 != (PolygonShape2D *)0x0)) {
+    this_00 = (pGVar1->fields).ThickBorderPolygon;
+    this_01 = (pGVar1->fields).PlaneSlider;
+    if (this_01 != (GizmoPlaneSlider2D *)0x0) {
+      pGVar2 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_get_Settings(this_01,(MethodInfo *)0x0);
+      if ((pGVar2 != (GizmoPlaneSlider2DSettings *)0x0) && (this_00 != (PolygonShape2D *)0x0)) {
         PolygonShape2D::PolygonShape2D_set_ThickWireEps
-                  (this_01,(pGVar2->fields)._thickBorderPolyHoverEps,(MethodInfo *)0x0);
+                  (this_00,(pGVar2->fields)._thickBorderPolyHoverEps,(MethodInfo *)0x0);
         return;
       }
     }
@@ -65,13 +65,13 @@ void Assembly-CSharp.dll::RTG::GizmoThickPolygon2DBorderController::
   pGVar1 = (this->fields)._._data;
   if ((pGVar1 != (GizmoPolygon2DBorderControllerData *)0x0) &&
      (pPVar2 = (pGVar1->fields).ThickBorderPolygon, pPVar2 != (PolygonShape2D *)0x0)) {
-    this_00 = (TorusShape3D *)(pPVar2->fields)._borderRenderDesc;
-    this_01 = (((this->fields)._._data)->fields).PlaneSlider;
-    if (this_01 != (GizmoPlaneSlider2D *)0x0) {
-      pGVar3 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_get_LookAndFeel(this_01,(MethodInfo *)0x0);
-      if ((pGVar3 != (GizmoPlaneSlider2DLookAndFeel *)0x0) && (this_00 != (TorusShape3D *)0x0)) {
+    this_00 = (pGVar1->fields).PlaneSlider;
+    this_01 = (TorusShape3D *)(pPVar2->fields)._borderRenderDesc;
+    if (this_00 != (GizmoPlaneSlider2D *)0x0) {
+      pGVar3 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_get_LookAndFeel(this_00,(MethodInfo *)0x0);
+      if ((pGVar3 != (GizmoPlaneSlider2DLookAndFeel *)0x0) && (this_01 != (TorusShape3D *)0x0)) {
         TorusShape3D::TorusShape3D_set_TubeRadius
-                  (this_00,(pGVar3->fields)._borderPolyThickness,(MethodInfo *)0x0);
+                  (this_01,(pGVar3->fields)._borderPolyThickness,(MethodInfo *)0x0);
         pGVar1 = (this->fields)._._data;
         if ((pGVar1 != (GizmoPolygon2DBorderControllerData *)0x0) &&
            (pPVar2 = (pGVar1->fields).ThickBorderPolygon, pPVar2 != (PolygonShape2D *)0x0)) {

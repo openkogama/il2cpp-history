@@ -19,16 +19,17 @@ int32_t Assembly-CSharp.dll::RTG::GizmoQuad3DBorder+<>c__DisplayClass39_0::
       pSVar4 = (Shape3D *)0x0;
     }
     else {
-      if (((pSVar3->klass->_1).naturalAligment < (TypeInfo__RTG__BoxShape3D->_1).naturalAligment)
-         || ((pSVar3->klass->_1).typeHierarchy[(TypeInfo__RTG__BoxShape3D->_1).naturalAligment - 1]
-             != (Il2CppClass *)TypeInfo__RTG__BoxShape3D)) {
-        bVar5 = false;
+      bVar5 = (TypeInfo__RTG__BoxShape3D->_1).naturalAligment;
+      if (((pSVar3->klass->_1).naturalAligment < bVar5) ||
+         ((pSVar3->klass->_1).typeHierarchy[bVar5 - 1] != (Il2CppClass *)TypeInfo__RTG__BoxShape3D)
+         ) {
+        bVar6 = false;
       }
       else {
-        bVar5 = true;
+        bVar6 = true;
       }
       pSVar4 = (Shape3D *)0x0;
-      if (bVar5) {
+      if (bVar6) {
         pSVar4 = pSVar3;
       }
     }
@@ -37,44 +38,42 @@ int32_t Assembly-CSharp.dll::RTG::GizmoQuad3DBorder+<>c__DisplayClass39_0::
        (pGVar2 = (pGVar1->fields)._targetHandle, pGVar2 != (GizmoHandle *)0x0)) {
       pSVar3 = GizmoHandle::GizmoHandle_Get3DShape(pGVar2,i1,(MethodInfo *)0x0);
       if (pSVar4 != (Shape3D *)0x0) {
-        uVar6 = (this->fields).camPos.x;
-        uVar7 = (this->fields).camPos.y;
-        pSStack_8 = pSVar4[3].klass;
-        pMStack_9 = pSVar4[3].monitor;
-        fVar10 = (float)pSVar4[4].klass - (this->fields).camPos.z;
+        uVar7 = (this->fields).camPos.x;
+        uVar8 = (this->fields).camPos.y;
+        pSStack_9 = pSVar4[3].klass;
+        pMStack_10 = pSVar4[3].monitor;
+        fVar11 = (float)pSVar4[4].klass - (this->fields).camPos.z;
         if (pSVar3 != (Shape3D *)0x0) {
-          if (((TypeInfo__RTG__BoxShape3D->_1).naturalAligment <=
-               (pSVar3->klass->_1).naturalAligment) &&
-             (ppIVar11 = (pSVar3->klass->_1).typeHierarchy,
-             ppIVar11[(TypeInfo__RTG__BoxShape3D->_1).naturalAligment - 1] ==
-             (Il2CppClass *)TypeInfo__RTG__BoxShape3D)) {
+          bVar5 = (TypeInfo__RTG__BoxShape3D->_1).naturalAligment;
+          if ((bVar5 <= (pSVar3->klass->_1).naturalAligment) &&
+             (ppIVar12 = (pSVar3->klass->_1).typeHierarchy,
+             ppIVar12[bVar5 - 1] == (Il2CppClass *)TypeInfo__RTG__BoxShape3D)) {
             pSVar4 = (Shape3D *)0x0;
-            if (ppIVar11[(TypeInfo__RTG__BoxShape3D->_1).naturalAligment - 1] ==
-                (Il2CppClass *)TypeInfo__RTG__BoxShape3D) {
+            if (ppIVar12[bVar5 - 1] == (Il2CppClass *)TypeInfo__RTG__BoxShape3D) {
               pSVar4 = pSVar3;
             }
-            uVar12 = (this->fields).camPos.x;
-            uVar13 = (this->fields).camPos.y;
-            fVar14 = (float)pSVar4[3].klass - (float)uVar12;
-            fVar15 = (float)pSVar4[3].monitor - (float)uVar13;
-            fVar16 = (float)pSVar4[4].klass - (this->fields).camPos.z;
-            SStack_17.m_value = fVar14 * fVar14 + fVar15 * fVar15 + fVar16 * fVar16;
-            iVar18 = mscorlib.dll::System::Single::Single_CompareTo_1
-                               (&SStack_17,
-                                ((float)pSStack_8 - (float)uVar6) *
-                                ((float)pSStack_8 - (float)uVar6) +
-                                ((float)pMStack_9 - (float)uVar7) *
-                                ((float)pMStack_9 - (float)uVar7) + fVar10 * fVar10,
+            uVar13 = (this->fields).camPos.x;
+            uVar14 = (this->fields).camPos.y;
+            fVar15 = (float)pSVar4[3].klass - (float)uVar13;
+            fVar16 = (float)pSVar4[3].monitor - (float)uVar14;
+            fVar17 = (float)pSVar4[4].klass - (this->fields).camPos.z;
+            SStack_18.m_value = fVar16 * fVar16 + fVar15 * fVar15 + fVar17 * fVar17;
+            iVar19 = mscorlib.dll::System::Single::Single_CompareTo_1
+                               (&SStack_18,
+                                ((float)pMStack_10 - (float)uVar8) *
+                                ((float)pMStack_10 - (float)uVar8) +
+                                ((float)pSStack_9 - (float)uVar7) *
+                                ((float)pSStack_9 - (float)uVar7) + fVar11 * fVar11,
                                 (MethodInfo *)0x0);
-            return iVar18;
+            return iVar19;
           }
         }
       }
     }
   }
   func_?();
-  pcVar19 = (code *)swi(3);
-  iVar18 = (*pcVar19)();
-  return iVar18;
+  pcVar20 = (code *)swi(3);
+  iVar19 = (*pcVar20)();
+  return iVar19;
 }
 

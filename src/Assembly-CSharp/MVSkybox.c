@@ -51,53 +51,54 @@ void Assembly-CSharp.dll::MVSkybox::MVSkybox_Initialize(MVSkybox *this,MethodInf
   }
   MVLogicObject::MVLogicObject_Initialize((MVLogicObject *)this,(MethodInfo *)0x0);
   pSVar1 = MVGameControllerBase::MVGameControllerBase_get_SkyboxManager((MethodInfo *)0x0);
-  (this->fields).skybox = pSVar1;
-  func_?(&(this->fields).skybox,pSVar1);
-  pSVar1 = (this->fields).skybox;
-  if (pSVar1 != (SkyboxManager *)0x0) {
-    SkyboxManager::SkyboxManager_Add(pSVar1,this,(MethodInfo *)0x0);
+  ppSVar2 = &(this->fields).skybox;
+  *ppSVar2 = pSVar1;
+  func_?(ppSVar2,pSVar1);
+  if (*ppSVar2 != (SkyboxManager *)0x0) {
+    SkyboxManager::SkyboxManager_Add(*ppSVar2,this,(MethodInfo *)0x0);
     this_00 = (this->fields)._._.gameObject;
     if (this_00 != (GameObject *)0x0) {
-      this_02 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+      this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                           (this_00,(MethodInfo *)0x0);
       if (cRam_? == '\0') {
         func_?();
         cRam_? = '\x01';
       }
-      if (this_02 != (Transform *)0x0) {
+      if (this_01 != (Transform *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-                  (this_02,TypeInfo__UnityEngine__Vector3->static_fields->oneVector,
+                  (this_01,TypeInfo__UnityEngine__Vector3->static_fields->oneVector,
                    (MethodInfo *)0x0);
         MVLogicObject::MVLogicObject_SetupCulling
                   ((MVLogicObject *)this,(this->fields)._._.gameObject,2.0,(MethodInfo *)0x0);
-        this_01 = TypeInfo__System__Action<LogicInputState,_LogicObjectManager>;
-        this_03 = (UnityAction_2_System_Int32_System_Int32_ *)func_?();
+        this_02 = (UnityAction_2_System_Int32_System_Int32_ *)func_?();
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]
         ::UnityAction_2_System_Int32_System_Int32___ctor
-                  (this_03,(Object *)this,
+                  (this_02,(Object *)this,
                    MethodInfo__MVSkybox__InputStateUpdateCallback_LogicInputState__LogicObjectManager_
                    ,(MethodInfo *)0x0);
-        pIVar2 = LogicClientsideFactory::LogicClientsideFactory_CreateStateChangeInputSignalReceiver
+        pIVar3 = LogicClientsideFactory::LogicClientsideFactory_CreateStateChangeInputSignalReceiver
                            ((MVWorldObject *)this,1,
                             (Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,
-                            (Action_2_LogicInputState_LogicObjectManager_ *)this_03,
+                            (Action_2_LogicInputState_LogicObjectManager_ *)this_02,
                             (MethodInfo *)0x0);
-        (this->fields)._InputSignalReceiver_k__BackingField = pIVar2;
+        (this->fields)._InputSignalReceiver_k__BackingField = pIVar3;
         func_?();
-        if ((this->fields).skybox != (SkyboxManager *)0x0) {
+        if (*ppSVar2 != (SkyboxManager *)0x0) {
           if (cRam_? == '\0') {
             func_?();
             cRam_? = '\x01';
           }
-          if (*(char *)&this_01->static_fields != '\0') {
+          if ((in_stack_4->fields).initialized != 0) {
             SkyboxManager::SkyboxManager_ComputeSkyboxSettings
-                      ((SkyboxManager *)this_01,(Color *)&(this_01->_0).events,
-                       (float *)&(this_01->_0).implementedInterfaces,
-                       (float *)&this_01->interfaceOffsets,(MethodInfo *)0x0);
+                      (in_stack_4,&(in_stack_4->fields).targetColor,
+                       &(in_stack_4->fields).targetSunAngle,
+                       &(in_stack_4->fields).targetFogDensity,(MethodInfo *)0x0);
             UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StopCoroutine_2
-                      ((MonoBehaviour *)this_01,StringLiteral_DoAnimate,(MethodInfo *)0x0);
+                      ((MonoBehaviour *)in_stack_4,StringLiteral_DoAnimate,(MethodInfo *)0x0)
+            ;
             UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine
-                      ((MonoBehaviour *)this_01,StringLiteral_DoAnimate,(MethodInfo *)0x0);
+                      ((MonoBehaviour *)in_stack_4,StringLiteral_DoAnimate,(MethodInfo *)0x0)
+            ;
           }
           return;
         }
@@ -105,8 +106,8 @@ void Assembly-CSharp.dll::MVSkybox::MVSkybox_Initialize(MVSkybox *this,MethodInf
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -217,12 +218,14 @@ void Assembly-CSharp.dll::MVSkybox::MVSkybox__ctor
     MVLogicObject::MVLogicObject__ctor
               ((MVLogicObject *)this,data,(pPVar1->fields).mvSkyboxPrefab,worldObjects,
                (MethodInfo *)0x0);
-    uVar2 = (uint)(this->fields)._._.interactionFlags | 0x18000;
-    *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) =
-         *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
-    *(uint *)&(this->fields)._._.interactionFlags = uVar2;
+    piVar2 = &(this->fields)._._.interactionFlags;
+    *(uint *)piVar2 = (uint)*piVar2 | 0x10000;
     uVar3 = *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
-    *(uint *)&(this->fields).defaultInteractionFlags = uVar2;
+    piVar2 = &(this->fields)._._.interactionFlags;
+    *(uint *)piVar2 = (uint)*piVar2 | 0x8000;
+    *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) = uVar3;
+    uVar3 = *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
+    *(int *)&(this->fields).defaultInteractionFlags = (int)(this->fields)._._.interactionFlags;
     *(undefined4 *)((int)&(this->fields).defaultInteractionFlags + 4) = uVar3;
     return;
   }
@@ -354,11 +357,11 @@ code_?:
   }
   else {
     bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                      (pDVar1,(Object *)StringLiteral_color,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                      );
+             UIElements::TextureId]::
+             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                       (pDVar1,(Object *)StringLiteral_color,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                       );
     if (bVar2 == 0) {
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
@@ -392,12 +395,12 @@ code_?:
     if (TVar7.m_Index == 0) goto code_?;
     iVar8 = func_?();
     if (iVar8 == 0) goto code_?;
-    if (((*(int *)(iVar8 + 0xc) != 0) && (1 < *(uint *)(iVar8 + 0xc))) &&
-       (uVar9 = *(undefined4 *)(iVar8 + 0x14), 2 < *(uint *)(iVar8 + 0xc))) {
-      uVar10 = *(undefined4 *)(iVar8 + 0x18);
+    uVar9 = *(uint *)(iVar8 + 0xc);
+    if (((uVar9 != 0) && (1 < uVar9)) && (uVar10 = *(undefined4 *)(iVar8 + 0x14), 2 < uVar9)) {
+      uVar11 = *(undefined4 *)(iVar8 + 0x18);
       *(undefined4 *)TVar7.m_Index = *(undefined4 *)(iVar8 + 0x10);
-      *(undefined4 *)(TVar7.m_Index + 4) = uVar9;
-      *(undefined4 *)(TVar7.m_Index + 8) = uVar10;
+      *(undefined4 *)(TVar7.m_Index + 4) = uVar10;
+      *(undefined4 *)(TVar7.m_Index + 8) = uVar11;
       *(undefined4 *)(TVar7.m_Index + 0xc) = 0x3f800000;
       return (Color *)TVar7.m_Index;
     }
@@ -405,9 +408,9 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  pCVar12 = (Color *)(*pcVar11)();
-  return pCVar12;
+  pcVar12 = (code *)swi(3);
+  pCVar13 = (Color *)(*pcVar12)();
+  return pCVar13;
 }
 
 

@@ -144,9 +144,9 @@ Assembly-CSharp.dll::FallBehindPitch::FallBehindPitch_Update
       QStack_15.y = 0.0;
       QStack_15.z = 0.0;
       QStack_15.w = 0.0;
-      fStack_4 = position.z - (this->fields).prevPosition.z;
+      fStack_5 = position.z - (this->fields).prevPosition.z;
       uStack_16 = CONCAT44(position.y - (float)uVar14,position.x - (float)uVar13);
-      fStack_17 = fStack_4;
+      fStack_17 = fStack_5;
       fVar18 = (float10)func_?(&uStack_16,0);
       fVar19 = (float10)_UNK_?;
       (this->fields).prevPosition.x = QStack_15.x;
@@ -166,10 +166,10 @@ Assembly-CSharp.dll::FallBehindPitch::FallBehindPitch_Update
         }
       }
     }
-    fStack_4 = fStack_9 * _UNK_?;
+    fStack_5 = fStack_9 * _UNK_?;
     euler.y = uStack_8._4_4_ * _UNK_?;
     euler.x = fVar12 * _UNK_?;
-    euler.z = fStack_4;
+    euler.z = fStack_5;
     pQVar20 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
                         (&QStack_15,euler,(MethodInfo *)0x0);
     fVar12 = pQVar20->y;
@@ -197,9 +197,9 @@ Assembly-CSharp.dll::FallBehindPitch::FallBehindPitch_Update
   }
   uVar25 = (this->fields).prevCameraRotatedPosition.x;
   uVar26 = (this->fields).prevCameraRotatedPosition.y;
-  fStack_4 = (this->fields).prevCameraRotatedPosition.z - position.z;
+  fStack_5 = (this->fields).prevCameraRotatedPosition.z - position.z;
   uStack_8 = CONCAT44((float)uVar26 - position.y,(float)uVar25 - position.x);
-  fStack_9 = fStack_4;
+  fStack_9 = fStack_5;
   fVar19 = (float10)func_?(&uStack_8,0);
   if (_UNK_? < (float)fVar19) {
     (this->fields).prevPosition.x = (float)(int)position._0_8_;

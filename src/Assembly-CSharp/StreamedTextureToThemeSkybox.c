@@ -39,33 +39,34 @@ void Assembly-CSharp.dll::StreamedTextureToThemeSkybox::StreamedTextureToThemeSk
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).skybox;
+  ppTVar2 = &(this->fields).skybox;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                     ((Object_1 *)pTVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
+  if (bVar3 != 0) {
     pTVar1 = (ThemeSkybox *)
              UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
                        ((Component *)this,
                         ThemeSkybox_MethodInfo__UnityEngine__Component__GetComponent<ThemeSkybox>__)
     ;
-    (this->fields).skybox = pTVar1;
-    func_?(&(this->fields).skybox,pTVar1);
+    *ppTVar2 = pTVar1;
+    func_?(ppTVar2,pTVar1);
   }
-  pTVar1 = (this->fields).skybox;
+  pTVar1 = *ppTVar2;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                     ((Object_1 *)pTVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
+  if (bVar3 != 0) {
     pTVar1 = (ThemeSkybox *)
              UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentInParent_1
                        ((Component *)this,
                         ThemeSkybox_MethodInfo__UnityEngine__Component__GetComponentInParent<ThemeSkybox>__
                        );
-    (this->fields).skybox = pTVar1;
+    *ppTVar2 = pTVar1;
     func_?();
   }
   return;
@@ -85,8 +86,9 @@ void Assembly-CSharp.dll::StreamedTextureToThemeSkybox::StreamedTextureToThemeSk
     func_?(&StringLiteral__MainTex);
     cRam_? = '\x01';
   }
-  (this->fields).shaderPropertyName = StringLiteral__MainTex;
-  func_?(&(this->fields).shaderPropertyName,StringLiteral__MainTex);
+  ppSVar1 = &(this->fields).shaderPropertyName;
+  *ppSVar1 = StringLiteral__MainTex;
+  func_?(ppSVar1,StringLiteral__MainTex);
   StreamingAsset`2[System::Object,System::Object]::
   StreamingAsset_2_System_Object_System_Object___ctor
             ((StreamingAsset_2_System_Object_System_Object_ *)this,

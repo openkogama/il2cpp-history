@@ -158,8 +158,7 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::
     }
   }
   func_?();
-  uRam_? = uRam_? | extraout_ECX;
-  *extraout_EDX = *extraout_EDX + unaff_BH;
+  *(char *)(extraout_EDX + -0x74) = *(char *)(extraout_EDX + -0x74) + unaff_BL + '\x01';
   pcVar12 = (code *)swi(3);
   (*pcVar12)();
   return;
@@ -206,11 +205,12 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::
 
 {
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  iVar2 = (this->fields).gainEffectTotalAmount;
-  iVar3 = (this->fields).gainEffectAmountReached + 1;
-  iVar4 = (this->fields).startValue;
-  iVar5 = (this->fields).endValue;
-  (this->fields).gainEffectAmountReached = iVar3;
+  piVar2 = &(this->fields).gainEffectAmountReached;
+  *piVar2 = *piVar2 + 1;
+  iVar3 = (this->fields).gainEffectAmountReached;
+  iVar4 = (this->fields).gainEffectTotalAmount;
+  iVar5 = (this->fields).startValue;
+  iVar6 = (this->fields).endValue;
   (this->fields).textEffectStartTime = fVar1;
   if (cRam_? == '\0') {
     func_?();
@@ -219,19 +219,19 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::
   if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  func_?((double)((float)(iVar5 - iVar4) * ((float)iVar3 / (float)iVar2) + (float)iVar4));
-  iVar6 = func_?();
-  pTVar7 = (this->fields).gamePointAmount;
-  (this->fields).currentGamePointAmountDisplayed = iVar6;
-  mscorlib.dll::System::Int32::Int32_ToString
-            ((Int32 *)&(this->fields).currentGamePointAmountDisplayed,(MethodInfo *)0x0);
-  if (pTVar7 != (Text *)0x0) {
-    (*(code *)(pTVar7->klass->vtable).set_text.method)();
+  piVar2 = &(this->fields).currentGamePointAmountDisplayed;
+  func_?((double)((float)(iVar6 - iVar5) * ((float)iVar3 / (float)iVar4) + (float)iVar5));
+  iVar7 = func_?();
+  pTVar8 = (this->fields).gamePointAmount;
+  *piVar2 = iVar7;
+  mscorlib.dll::System::Int32::Int32_ToString((Int32 *)piVar2,(MethodInfo *)0x0);
+  if (pTVar8 != (Text *)0x0) {
+    (*(code *)(pTVar8->klass->vtable).set_text.method)();
     return;
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -244,8 +244,9 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::
 
 {
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+  iVar2 = (this->fields).currentSlideState;
   (this->fields).startSlideOutTime = fVar1 + (this->fields).slideOutDelay;
-  if (((this->fields).currentSlideState == 1) || ((this->fields).currentSlideState == 3)) {
+  if ((iVar2 == 1) || (iVar2 == 3)) {
     (this->fields).currentSlideState = 2;
     fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
     (this->fields).slideStartTime = fVar1;
@@ -288,10 +289,10 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::
     }
     pPVar1 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
     if (pPVar1 == (PlayerPlanetData *)0x0) goto code_?;
+    this_00 = &(this->fields).currentGamePointAmountDisplayed;
     pTVar2 = (this->fields).gamePointAmount;
-    (this->fields).currentGamePointAmountDisplayed = (pPVar1->fields).highScoreGamePoints;
-    pSVar3 = mscorlib.dll::System::Int32::Int32_ToString
-                       ((Int32 *)&(this->fields).currentGamePointAmountDisplayed,(MethodInfo *)0x0);
+    *this_00 = (pPVar1->fields).highScoreGamePoints;
+    pSVar3 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)this_00,(MethodInfo *)0x0);
     if (pTVar2 == (Text *)0x0) goto code_?;
     (*(code *)(pTVar2->klass->vtable).set_text.method)
               (pTVar2,pSVar3,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
@@ -310,12 +311,12 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::
                          (&VStack_6,pTVar4,(MethodInfo *)0x0);
       fStack_9 = pVVar5->y;
       if ((this->fields).transformToSlide != (Transform *)0x0) {
-        this_00 = (Transform *)(fVar7 + fStack_8);
+        this_01 = (Transform *)(fVar7 + fStack_8);
         pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                           (&VStack_6,this_00,method_00);
+                           (&VStack_6,this_01,method_00);
         VStack_6.z = pVVar5->z;
         value.y = fStack_9;
-        value.x = (float)this_00;
+        value.x = (float)this_01;
         value.z = VStack_6.z;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
                   (pTVar4,value,(MethodInfo *)0x0);
@@ -419,10 +420,10 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::
                (GamePointGainEffectCountController *this,int32_t updateToValue,MethodInfo *method)
 
 {
+  this_00 = &(this->fields).currentGamePointAmountDisplayed;
   pTVar1 = (this->fields).gamePointAmount;
-  (this->fields).currentGamePointAmountDisplayed = updateToValue;
-  pSVar2 = mscorlib.dll::System::Int32::Int32_ToString
-                     ((Int32 *)&(this->fields).currentGamePointAmountDisplayed,(MethodInfo *)0x0);
+  *this_00 = updateToValue;
+  pSVar2 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)this_00,(MethodInfo *)0x0);
   if (pTVar1 != (Text *)0x0) {
     (*(code *)(pTVar1->klass->vtable).set_text.method)
               (pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);

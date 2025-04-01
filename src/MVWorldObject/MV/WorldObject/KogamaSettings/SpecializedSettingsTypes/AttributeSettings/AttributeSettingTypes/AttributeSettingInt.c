@@ -142,8 +142,9 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsType
             ((KogamaSettingNumericBase_1_System_Int32_ *)this,key,value,min,max,parent,
              MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>__KogamaSettingNumericBase_System__String__int__int__int__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase_
             );
-  (this->fields).Calculator = calculator;
-  func_?(&(this->fields).Calculator,calculator);
+  ppIVar1 = &(this->fields).Calculator;
+  *ppIVar1 = calculator;
+  func_?(ppIVar1,calculator);
   return;
 }
 
@@ -170,8 +171,9 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsType
             ((KogamaSettingNumericBase_1_System_Int32_ *)this,key,value,min,max,parent,
              MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>__KogamaSettingNumericBase_System__String__int__int__int__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase_
             );
-  (this->fields).Calculator = calculator;
-  func_?(&(this->fields).Calculator,calculator);
+  ppIVar1 = &(this->fields).Calculator;
+  *ppIVar1 = calculator;
+  func_?(ppIVar1,calculator);
   (this->fields)._ExclusivityFlag_k__BackingField = attributeSettingsExclusivityFlag;
   return;
 }
@@ -212,10 +214,9 @@ int32_t MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsT
               (Il2CppClass *)
               TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributePointCalculators__IAttributePointIntCalculator
              ) {
-            pIVar3 = pIVar1->klass;
             iVar6 = pIVar3->interfaceOffsets[uVar4].offset;
-            iVar2 = (*(code *)(&pIVar3->vtable)[iVar6].Calc.method)
-                              (pIVar1,iVar2,(&pIVar3[1]._0.image)[iVar6 * 2]);
+            iVar2 = (*(code *)(&pIVar1->klass->vtable)[iVar6].Calc.method)
+                              (pIVar1,iVar2,(&pIVar1->klass[1]._0.image)[iVar6 * 2]);
             return iVar2;
           }
           uVar4 = uVar4 + 1;

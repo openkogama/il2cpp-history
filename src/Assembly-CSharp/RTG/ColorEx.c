@@ -27,18 +27,18 @@ Assembly-CSharp.dll::RTG::ColorEx::ColorEx_GetFilledColorArray
     cRam_? = '\x01';
   }
   pCVar1 = (Color__Array *)func_?(TypeInfo__UnityEngine__Color,arrayLength);
+  uVar2 = 0;
+  pCVar3 = pCVar1;
   if (0 < arrayLength) {
-    uVar2 = 0;
-    pCVar3 = pCVar1;
-    if (pCVar1 == (Color__Array *)0x0) {
-      func_?();
-code_?:
-      func_?();
-      pcVar4 = (code *)swi(3);
-      pCVar1 = (Color__Array *)(*pcVar4)();
-      return pCVar1;
-    }
     do {
+      if (pCVar1 == (Color__Array *)0x0) {
+        func_?();
+code_?:
+        func_?();
+        pcVar4 = (code *)swi(3);
+        pCVar3 = (Color__Array *)(*pcVar4)();
+        return pCVar3;
+      }
       if (pCVar1->max_length <= uVar2) goto code_?;
       pCVar3->vector[0].r = fillValue.r;
       pCVar3->vector[0].g = fillValue.g;

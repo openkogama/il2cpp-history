@@ -25,16 +25,15 @@ Assembly-CSharp.dll::OwnerToolController::OwnerToolController_GetPlayer
                    );
     cRam_? = '\x01';
   }
-  pOStack_4 = (Object__Class *)0x0;
-  pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar5 != (MVNetworkGame *)0x0) &&
-     (this = (pMVar5->fields).playerContainer, this != (MVPlayerContainer *)0x0)) {
+  pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar4 != (MVNetworkGame *)0x0) &&
+     (this = (pMVar4->fields).playerContainer, this != (MVPlayerContainer *)0x0)) {
     this_00 = (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                *)MVPlayerContainer::MVPlayerContainer_get_Values(this,(MethodInfo *)0x0);
     if (this_00 !=
         (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
          *)0x0) {
-      pDVar6 = mscorlib.dll::System::Collections::Generic::
+      pDVar5 = mscorlib.dll::System::Collections::Generic::
                Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
                StyleSheetCache+SheetHandleKey,System::Object]::
                Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
@@ -43,50 +42,50 @@ Assembly-CSharp.dll::OwnerToolController::OwnerToolController_GetPlayer
                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVPlayer>__GetEnumerator__
                          );
       uStack_1 = 1;
-      pMVar7 = (MVPlayer *)pDVar6->_currentValue;
+      pMVar6 = (MVPlayer *)pDVar5->_currentValue;
       while( true ) {
-        pMVar8 = pMVar7;
-        bVar9 = mscorlib.dll::System::Collections::Generic::
+        pMVar7 = pMVar6;
+        bVar8 = mscorlib.dll::System::Collections::Generic::
                 Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
                 UInt32,System::Object]::
                 Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
                           ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
-                            *)&pOStack_4,
+                            *)&pOStack_9,
                            MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
                           );
-        if (bVar9 == 0) {
+        if (bVar8 == 0) {
           uStack_1 = 0xffffffff;
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&pOStack_4,
+                    ((Object *)&pOStack_9,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__Dispose__
                      ,in_stack_10);
           *unaff_FS_OFFSET = uStack_3;
           return (MVPlayer *)0x0;
         }
-        if ((pMVar8 == (MVPlayer *)0x0) ||
-           (pUVar11 = (pMVar8->fields)._UserProfileData_k__BackingField,
+        if ((pMVar7 == (MVPlayer *)0x0) ||
+           (pUVar11 = (pMVar7->fields)._UserProfileData_k__BackingField,
            pUVar11 == (UserProfileData *)0x0)) break;
-        pMVar7 = (MVPlayer *)userName;
-        bVar9 = mscorlib.dll::System::String::String_op_Equality
+        pMVar6 = (MVPlayer *)userName;
+        bVar8 = mscorlib.dll::System::String::String_op_Equality
                           ((pUVar11->fields).UserName,userName,(MethodInfo *)0x0);
-        if (bVar9 != 0) {
+        if (bVar8 != 0) {
           uStack_1 = 0xffffffff;
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&pOStack_4,
+                    ((Object *)&pOStack_9,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__Dispose__
                      ,in_stack_12);
           *unaff_FS_OFFSET = uStack_3;
-          return pMVar8;
+          return pMVar7;
         }
       }
     }
   }
   func_?();
   pcVar13 = (code *)swi(3);
-  pMVar7 = (MVPlayer *)(*pcVar13)();
-  return pMVar7;
+  pMVar6 = (MVPlayer *)(*pcVar13)();
+  return pMVar6;
 }
 
 

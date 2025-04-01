@@ -156,15 +156,15 @@ void Assembly-CSharp.dll::LinkObjectScript::LinkObjectScript_Initialize
                         (pGVar4,(MethodInfo *)0x0);
     uVar6 = (this->fields)._.startPos.x;
     uVar7 = (this->fields)._.startPos.y;
-    fVar8 = (this->fields)._.startPos.z;
-    uVar9 = (this->fields)._.endPos.x;
-    uVar10 = (this->fields)._.endPos.y;
-    uVar11 = (this->fields)._.startPos.x;
-    uVar12 = (this->fields)._.startPos.y;
+    uVar8 = (this->fields)._.endPos.x;
+    uVar9 = (this->fields)._.endPos.y;
+    uVar10 = (this->fields)._.startPos.x;
+    uVar11 = (this->fields)._.startPos.y;
     if (pTVar5 == (Transform *)0x0) goto code_?;
-    value.y = (float)uVar7 + ((float)uVar10 - (float)uVar12) * _UNK_?;
-    value.x = (float)uVar6 + ((float)uVar9 - (float)uVar11) * _UNK_?;
-    value.z = fVar8 + ((this->fields)._.endPos.z - fVar8) * _UNK_?;
+    value.y = (float)uVar7 + ((float)uVar9 - (float)uVar11) * _UNK_?;
+    value.x = (float)uVar6 + ((float)uVar8 - (float)uVar10) * _UNK_?;
+    value.z = (this->fields)._.startPos.z +
+              ((this->fields)._.endPos.z - (this->fields)._.startPos.z) * _UNK_?;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
               (pTVar5,value,(MethodInfo *)0x0);
     pBVar3 = (this->fields).boxCollider;
@@ -174,12 +174,12 @@ void Assembly-CSharp.dll::LinkObjectScript::LinkObjectScript_Initialize
     goto code_?;
     pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                         (pGVar4,(MethodInfo *)0x0);
-    pVVar13 = (Vector3 *)func_?();
-    pQVar14 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation_1
-                        ((Quaternion *)&stack0xffffffd4,*pVVar13,(MethodInfo *)0x0);
+    pVVar12 = (Vector3 *)func_?();
+    pQVar13 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation_1
+                        ((Quaternion *)&stack0xffffffd4,*pVVar12,(MethodInfo *)0x0);
     if (pTVar5 == (Transform *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
-              (pTVar5,*pQVar14,(MethodInfo *)0x0);
+              (pTVar5,*pQVar13,(MethodInfo *)0x0);
     func_?();
     pBVar3 = (this->fields).boxCollider;
     if ((pBVar3 == (BoxCollider *)0x0) ||
@@ -193,14 +193,14 @@ void Assembly-CSharp.dll::LinkObjectScript::LinkObjectScript_Initialize
               (pTVar5,value_00,(MethodInfo *)0x0);
     pLVar2 = (this->fields).lineRenderer;
     if (pLVar2 == (LineRenderer *)0x0) goto code_?;
-    pMVar15 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+    pMVar14 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
                         ((Renderer *)pLVar2,(MethodInfo *)0x0);
-    fVar16 = (float10)func_?();
-    if (pMVar15 == (Material *)0x0) goto code_?;
-    VVar17.y = 1.0;
-    VVar17.x = (float)(fVar16 * (float10)_UNK_?);
+    fVar15 = (float10)func_?();
+    if (pMVar14 == (Material *)0x0) goto code_?;
+    VVar16.y = 1.0;
+    VVar16.x = (float)(fVar15 * (float10)_UNK_?);
     UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_mainTextureScale
-              (pMVar15,VVar17,(MethodInfo *)0x0);
+              (pMVar14,VVar16,(MethodInfo *)0x0);
   }
   pLVar2 = (this->fields).lineRenderer;
   if (pLVar2 != (LineRenderer *)0x0) {
@@ -213,28 +213,28 @@ void Assembly-CSharp.dll::LinkObjectScript::LinkObjectScript_Initialize
       pLVar2 = (this->fields).lineRenderer;
       if ((link->fields).isSet == 0) {
         if ((pLVar2 != (LineRenderer *)0x0) &&
-           (pMVar15 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
-                                ((Renderer *)pLVar2,(MethodInfo *)0x0), pMVar15 != (Material *)0x0))
+           (pMVar14 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                                ((Renderer *)pLVar2,(MethodInfo *)0x0), pMVar14 != (Material *)0x0))
         {
           value_01.g = (float)_UNK_?;
           value_01.r = (float)_UNK_?;
           value_01.b = (float)_UNK_?;
           value_01.a = _UNK_?;
           UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color
-                    (pMVar15,value_01,(MethodInfo *)0x0);
+                    (pMVar14,value_01,(MethodInfo *)0x0);
           return;
         }
       }
       else if ((pLVar2 != (LineRenderer *)0x0) &&
-              (pMVar15 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+              (pMVar14 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
                                    ((Renderer *)pLVar2,(MethodInfo *)0x0),
-              pMVar15 != (Material *)0x0)) {
+              pMVar14 != (Material *)0x0)) {
         value_02.g = (float)_UNK_?;
         value_02.r = (float)_UNK_?;
         value_02.b = (float)_UNK_?;
         value_02.a = _UNK_?;
         UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color
-                  (pMVar15,value_02,(MethodInfo *)0x0);
+                  (pMVar14,value_02,(MethodInfo *)0x0);
         pBVar3 = (this->fields).boxCollider;
         if ((pBVar3 != (BoxCollider *)0x0) &&
            (((pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -246,24 +246,24 @@ void Assembly-CSharp.dll::LinkObjectScript::LinkObjectScript_Initialize
                                   (pGVar4,
                                    UnityEngine__Renderer_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::Renderer>__
                                   ), this_00 != (Renderer *)0x0)) &&
-            (pMVar15 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
-                                 (this_00,(MethodInfo *)0x0), pMVar15 != (Material *)0x0)))) {
-          VVar17 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_mainTextureOffset
-                             (pMVar15,(MethodInfo *)0x0);
-          fStack_18 = VVar17.x;
-          fStack_19 = VVar17.y;
-          fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
+            (pMVar14 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                                 (this_00,(MethodInfo *)0x0), pMVar14 != (Material *)0x0)))) {
+          VVar16 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_mainTextureOffset
+                             (pMVar14,(MethodInfo *)0x0);
+          fStack_17 = VVar16.x;
+          fStack_18 = VVar16.y;
+          fVar19 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
                              ((MethodInfo *)0x0);
-          fVar8 = fVar8 * _UNK_?;
+          fVar19 = fVar19 * _UNK_?;
           pLVar2 = (this->fields).lineRenderer;
           if ((pLVar2 != (LineRenderer *)0x0) &&
-             (pMVar15 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
-                                  ((Renderer *)pLVar2,(MethodInfo *)0x0), pMVar15 != (Material *)0x0
+             (pMVar14 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                                  ((Renderer *)pLVar2,(MethodInfo *)0x0), pMVar14 != (Material *)0x0
              )) {
-            value_03.y = fStack_19;
-            value_03.x = fStack_18 - fVar8;
+            value_03.y = fStack_18;
+            value_03.x = fStack_17 - fVar19;
             UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_mainTextureOffset
-                      (pMVar15,value_03,(MethodInfo *)0x0);
+                      (pMVar14,value_03,(MethodInfo *)0x0);
             return;
           }
         }
@@ -310,15 +310,15 @@ void Assembly-CSharp.dll::LinkObjectScript::LinkObjectScript_UpdateLinkVisual
                         (pGVar4,(MethodInfo *)0x0);
     uVar6 = (this->fields)._.startPos.x;
     uVar7 = (this->fields)._.startPos.y;
-    fVar8 = (this->fields)._.startPos.z;
-    uVar9 = (this->fields)._.endPos.x;
-    uVar10 = (this->fields)._.endPos.y;
-    uVar11 = (this->fields)._.startPos.x;
-    uVar12 = (this->fields)._.startPos.y;
+    uVar8 = (this->fields)._.endPos.x;
+    uVar9 = (this->fields)._.endPos.y;
+    uVar10 = (this->fields)._.startPos.x;
+    uVar11 = (this->fields)._.startPos.y;
     if (pTVar5 == (Transform *)0x0) goto code_?;
-    value.y = (float)uVar7 + ((float)uVar10 - (float)uVar12) * _UNK_?;
-    value.x = (float)uVar6 + ((float)uVar9 - (float)uVar11) * _UNK_?;
-    value.z = fVar8 + ((this->fields)._.endPos.z - fVar8) * _UNK_?;
+    value.y = (float)uVar7 + ((float)uVar9 - (float)uVar11) * _UNK_?;
+    value.x = (float)uVar6 + ((float)uVar8 - (float)uVar10) * _UNK_?;
+    value.z = (this->fields)._.startPos.z +
+              ((this->fields)._.endPos.z - (this->fields)._.startPos.z) * _UNK_?;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
               (pTVar5,value,(MethodInfo *)0x0);
     pBVar3 = (this->fields).boxCollider;
@@ -328,12 +328,12 @@ void Assembly-CSharp.dll::LinkObjectScript::LinkObjectScript_UpdateLinkVisual
     goto code_?;
     pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                         (pGVar4,(MethodInfo *)0x0);
-    pVVar13 = (Vector3 *)func_?();
-    pQVar14 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation_1
-                        ((Quaternion *)&stack0xffffffd4,*pVVar13,(MethodInfo *)0x0);
+    pVVar12 = (Vector3 *)func_?();
+    pQVar13 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation_1
+                        ((Quaternion *)&stack0xffffffd4,*pVVar12,(MethodInfo *)0x0);
     if (pTVar5 == (Transform *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
-              (pTVar5,*pQVar14,(MethodInfo *)0x0);
+              (pTVar5,*pQVar13,(MethodInfo *)0x0);
     func_?();
     pBVar3 = (this->fields).boxCollider;
     if ((pBVar3 == (BoxCollider *)0x0) ||
@@ -347,14 +347,14 @@ void Assembly-CSharp.dll::LinkObjectScript::LinkObjectScript_UpdateLinkVisual
               (pTVar5,value_00,(MethodInfo *)0x0);
     pLVar2 = (this->fields).lineRenderer;
     if (pLVar2 == (LineRenderer *)0x0) goto code_?;
-    pMVar15 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+    pMVar14 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
                         ((Renderer *)pLVar2,(MethodInfo *)0x0);
-    fVar16 = (float10)func_?();
-    if (pMVar15 == (Material *)0x0) goto code_?;
-    VVar17.y = 1.0;
-    VVar17.x = (float)(fVar16 * (float10)_UNK_?);
+    fVar15 = (float10)func_?();
+    if (pMVar14 == (Material *)0x0) goto code_?;
+    VVar16.y = 1.0;
+    VVar16.x = (float)(fVar15 * (float10)_UNK_?);
     UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_mainTextureScale
-              (pMVar15,VVar17,(MethodInfo *)0x0);
+              (pMVar14,VVar16,(MethodInfo *)0x0);
   }
   pLVar2 = (this->fields).lineRenderer;
   if (pLVar2 != (LineRenderer *)0x0) {
@@ -367,28 +367,28 @@ void Assembly-CSharp.dll::LinkObjectScript::LinkObjectScript_UpdateLinkVisual
       pLVar2 = (this->fields).lineRenderer;
       if ((link->fields).isSet == 0) {
         if ((pLVar2 != (LineRenderer *)0x0) &&
-           (pMVar15 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
-                                ((Renderer *)pLVar2,(MethodInfo *)0x0), pMVar15 != (Material *)0x0))
+           (pMVar14 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                                ((Renderer *)pLVar2,(MethodInfo *)0x0), pMVar14 != (Material *)0x0))
         {
           value_01.g = (float)_UNK_?;
           value_01.r = (float)_UNK_?;
           value_01.b = (float)_UNK_?;
           value_01.a = _UNK_?;
           UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color
-                    (pMVar15,value_01,(MethodInfo *)0x0);
+                    (pMVar14,value_01,(MethodInfo *)0x0);
           return;
         }
       }
       else if ((pLVar2 != (LineRenderer *)0x0) &&
-              (pMVar15 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+              (pMVar14 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
                                    ((Renderer *)pLVar2,(MethodInfo *)0x0),
-              pMVar15 != (Material *)0x0)) {
+              pMVar14 != (Material *)0x0)) {
         value_02.g = (float)_UNK_?;
         value_02.r = (float)_UNK_?;
         value_02.b = (float)_UNK_?;
         value_02.a = _UNK_?;
         UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color
-                  (pMVar15,value_02,(MethodInfo *)0x0);
+                  (pMVar14,value_02,(MethodInfo *)0x0);
         pBVar3 = (this->fields).boxCollider;
         if ((pBVar3 != (BoxCollider *)0x0) &&
            (((pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -400,24 +400,24 @@ void Assembly-CSharp.dll::LinkObjectScript::LinkObjectScript_UpdateLinkVisual
                                   (pGVar4,
                                    UnityEngine__Renderer_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::Renderer>__
                                   ), this_00 != (Renderer *)0x0)) &&
-            (pMVar15 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
-                                 (this_00,(MethodInfo *)0x0), pMVar15 != (Material *)0x0)))) {
-          VVar17 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_mainTextureOffset
-                             (pMVar15,(MethodInfo *)0x0);
-          fStack_18 = VVar17.x;
-          fStack_19 = VVar17.y;
-          fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
+            (pMVar14 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                                 (this_00,(MethodInfo *)0x0), pMVar14 != (Material *)0x0)))) {
+          VVar16 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_mainTextureOffset
+                             (pMVar14,(MethodInfo *)0x0);
+          fStack_17 = VVar16.x;
+          fStack_18 = VVar16.y;
+          fVar19 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
                              ((MethodInfo *)0x0);
-          fVar8 = fVar8 * _UNK_?;
+          fVar19 = fVar19 * _UNK_?;
           pLVar2 = (this->fields).lineRenderer;
           if ((pLVar2 != (LineRenderer *)0x0) &&
-             (pMVar15 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
-                                  ((Renderer *)pLVar2,(MethodInfo *)0x0), pMVar15 != (Material *)0x0
+             (pMVar14 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                                  ((Renderer *)pLVar2,(MethodInfo *)0x0), pMVar14 != (Material *)0x0
              )) {
-            value_03.y = fStack_19;
-            value_03.x = fStack_18 - fVar8;
+            value_03.y = fStack_18;
+            value_03.x = fStack_17 - fVar19;
             UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_mainTextureOffset
-                      (pMVar15,value_03,(MethodInfo *)0x0);
+                      (pMVar14,value_03,(MethodInfo *)0x0);
             return;
           }
         }
@@ -438,44 +438,41 @@ bool Assembly-CSharp.dll::LinkObjectScript::LinkObjectScript_UpdatePositions
                (LinkObjectScript *this,Link *link,MethodInfo *method)
 
 {
-  if (link == (Link *)0x0) goto code_?;
-  iVar1 = (link->fields).outputWOID;
-  if (iVar1 < 1) {
-    if ((link->fields).inputWOID < 1) {
+  if (link != (Link *)0x0) {
+    iVar1 = (link->fields).outputWOID;
+    if ((iVar1 < 1) && ((link->fields).inputWOID < 1)) {
       return 0;
     }
-    iVar1 = (link->fields).outputWOID;
-  }
-  if (iVar1 < 1) {
-    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    if (pMVar2 == (MVWorldObjectClientManager *)0x0) goto code_?;
-    pMVar3 = (MVWorldObjectClient *)
-             MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                       (pMVar2,(link->fields).inputWOID,(MethodInfo *)0x0);
-    if (pMVar3 == (MVWorldObjectClient *)0x0) goto code_?;
-    pVVar4 = MVWorldObjectClient::MVWorldObjectClient_GetInputConnectorPos
-                       ((Vector3 *)&stack0xfffffff0,pMVar3,(MethodInfo *)0x0);
-    pVVar4 = LinkObjectScript_CalculateUnconnectedLinkPos
-                       ((Vector3 *)&stack0xffffffe4,this,*pVVar4,(MethodInfo *)0x0);
-  }
-  else {
-    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    if (pMVar2 == (MVWorldObjectClientManager *)0x0) goto code_?;
-    pMVar3 = (MVWorldObjectClient *)
-             MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                       (pMVar2,(link->fields).outputWOID,(MethodInfo *)0x0);
-    if (pMVar3 == (MVWorldObjectClient *)0x0) goto code_?;
-    pVVar4 = MVWorldObjectClient::MVWorldObjectClient_GetOutputConnectorPos
-                       ((Vector3 *)&stack0xffffffe4,pMVar3,(MethodInfo *)0x0);
-  }
-  fVar5 = pVVar4->z;
-  if ((link->fields).inputWOID < 1) {
-    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    if (pMVar2 != (MVWorldObjectClientManager *)0x0) {
-      pMVar3 = (MVWorldObjectClient *)
-               MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                         (pMVar2,(link->fields).outputWOID,(MethodInfo *)0x0);
-      if (pMVar3 != (MVWorldObjectClient *)0x0) {
+    if (iVar1 < 1) {
+      pMVar2 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+      if ((pMVar2 == (MVWorldObjectClientManager *)0x0) ||
+         (pMVar3 = (MVWorldObjectClient *)
+                   MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                             (pMVar2,(link->fields).inputWOID,(MethodInfo *)0x0),
+         pMVar3 == (MVWorldObjectClient *)0x0)) goto code_?;
+      pVVar4 = MVWorldObjectClient::MVWorldObjectClient_GetInputConnectorPos
+                         ((Vector3 *)&stack0xfffffff0,pMVar3,(MethodInfo *)0x0);
+      pVVar4 = LinkObjectScript_CalculateUnconnectedLinkPos
+                         ((Vector3 *)&stack0xffffffe4,this,*pVVar4,(MethodInfo *)0x0);
+    }
+    else {
+      pMVar2 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+      if ((pMVar2 == (MVWorldObjectClientManager *)0x0) ||
+         (pMVar3 = (MVWorldObjectClient *)
+                   MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                             (pMVar2,(link->fields).outputWOID,(MethodInfo *)0x0),
+         pMVar3 == (MVWorldObjectClient *)0x0)) goto code_?;
+      pVVar4 = MVWorldObjectClient::MVWorldObjectClient_GetOutputConnectorPos
+                         ((Vector3 *)&stack0xffffffe4,pMVar3,(MethodInfo *)0x0);
+    }
+    fVar5 = pVVar4->z;
+    if ((link->fields).inputWOID < 1) {
+      pMVar2 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+      if ((pMVar2 != (MVWorldObjectClientManager *)0x0) &&
+         (pMVar3 = (MVWorldObjectClient *)
+                   MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                             (pMVar2,(link->fields).outputWOID,(MethodInfo *)0x0),
+         pMVar3 != (MVWorldObjectClient *)0x0)) {
         pVVar6 = MVWorldObjectClient::MVWorldObjectClient_GetOutputConnectorPos
                            ((Vector3 *)&stack0xffffffe4,pMVar3,(MethodInfo *)0x0);
         pVVar4 = (Vector3 *)&stack0xffffffe4;
@@ -491,14 +488,13 @@ code_?:
         return bVar8;
       }
     }
-  }
-  else {
-    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    if (pMVar2 != (MVWorldObjectClientManager *)0x0) {
-      pMVar3 = (MVWorldObjectClient *)
-               MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                         (pMVar2,(link->fields).inputWOID,(MethodInfo *)0x0);
-      if (pMVar3 != (MVWorldObjectClient *)0x0) {
+    else {
+      pMVar2 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+      if ((pMVar2 != (MVWorldObjectClientManager *)0x0) &&
+         (pMVar3 = (MVWorldObjectClient *)
+                   MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                             (pMVar2,(link->fields).inputWOID,(MethodInfo *)0x0),
+         pMVar3 != (MVWorldObjectClient *)0x0)) {
         pVVar4 = (Vector3 *)&stack0xffffffe4;
         puVar7 = &UNK_?;
         pVVar6 = MVWorldObjectClient::MVWorldObjectClient_GetInputConnectorPos

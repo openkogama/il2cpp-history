@@ -120,19 +120,20 @@ void Assembly-CSharp.dll::ClosestPointCapsule::ClosestPointCapsule_OnValidate
     cRam_? = '\x01';
   }
   pCVar1 = (this->fields).capsule;
+  ppCVar2 = &(this->fields).capsule;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                     ((Object_1 *)pCVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
+  if (bVar3 != 0) {
     pCVar1 = (CapsuleCollider *)
              UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
                        ((Component *)this,
                         UnityEngine__CapsuleCollider_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::CapsuleCollider>__
                        );
-    (this->fields).capsule = pCVar1;
-    func_?(&(this->fields).capsule,pCVar1);
+    *ppCVar2 = pCVar1;
+    func_?(ppCVar2,pCVar1);
   }
   return;
 }
@@ -146,8 +147,9 @@ void Assembly-CSharp.dll::ClosestPointCapsule::ClosestPointCapsule__ctor
 {
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
-  (this->fields).capsule = c;
-  func_?(&(this->fields).capsule,c);
+  ppCVar1 = &(this->fields).capsule;
+  *ppCVar1 = c;
+  func_?(ppCVar1,c);
   return;
 }
 

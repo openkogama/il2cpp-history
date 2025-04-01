@@ -307,20 +307,21 @@ void Assembly-CSharp.dll::DragSuppress::DragSuppress_OnPointerUp
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
-    value[1].klass = (Object__Class *)eventData;
-    func_?(value + 1,eventData);
-    pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+    pOVar1 = value + 1;
+    pOVar1->klass = (Object__Class *)eventData;
+    func_?(pOVar1,eventData);
+    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
-    if (pGVar1 != (GameObject *)0x0) {
-      pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                         (pGVar1,(MethodInfo *)0x0);
-      if (pTVar2 != (Transform *)0x0) {
-        pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
-                           (pTVar2,(MethodInfo *)0x0);
-        if (pTVar2 != (Transform *)0x0) {
-          pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                             ((Component *)pTVar2,(MethodInfo *)0x0);
-          eventData_00 = value[1].klass;
+    if (pGVar2 != (GameObject *)0x0) {
+      pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                         (pGVar2,(MethodInfo *)0x0);
+      if (pTVar3 != (Transform *)0x0) {
+        pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
+                           (pTVar3,(MethodInfo *)0x0);
+        if (pTVar3 != (Transform *)0x0) {
+          pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                             ((Component *)pTVar3,(MethodInfo *)0x0);
+          eventData_00 = pOVar1->klass;
           callbackFunction =
                (ExecuteEvents_EventFunction_1_System_Object_ *)
                func_?(
@@ -337,7 +338,7 @@ void Assembly-CSharp.dll::DragSuppress::DragSuppress_OnPointerUp
           }
           UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
           ExecuteEvents_ExecuteHierarchy
-                    (pGVar1,(BaseEventData *)eventData_00,callbackFunction,
+                    (pGVar2,(BaseEventData *)eventData_00,callbackFunction,
                      UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IPointerUpHandler>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IPointerUpHandler>_
                     );
           (this->fields).isDragging = 0;
@@ -357,8 +358,8 @@ void Assembly-CSharp.dll::DragSuppress::DragSuppress_OnPointerUp
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

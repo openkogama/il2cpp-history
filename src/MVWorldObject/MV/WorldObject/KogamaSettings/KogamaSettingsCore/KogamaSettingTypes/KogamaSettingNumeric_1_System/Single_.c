@@ -44,14 +44,14 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
   pRVar3 = (RangeValidator_1_System_Single_ *)func_?(pIVar2);
   AntiCheat::RangeValidator`1[System::Single]::RangeValidator_1_System_Single___ctor_1
             (pRVar3,min,max,pMVar1->klass->rgctx_data[5].method);
-  (this->fields).RangeValidator = pRVar3;
-  func_?(&(this->fields).RangeValidator,pRVar3);
-  pRVar3 = (this->fields).RangeValidator;
-  if (pRVar3 != (RangeValidator_1_System_Single_ *)0x0) {
+  ppRVar4 = &(this->fields).RangeValidator;
+  *ppRVar4 = pRVar3;
+  func_?(ppRVar4,pRVar3);
+  if (*ppRVar4 != (RangeValidator_1_System_Single_ *)0x0) {
     AntiCheat::RangeValidator`1[System::Single]::RangeValidator_1_System_Single__Validate
-              (pRVar3,value,0,pMVar1->klass->rgctx_data[4].method);
+              (*ppRVar4,value,0,pMVar1->klass->rgctx_data[4].method);
     value_00 = value;
-    pRVar3 = (this->fields).RangeValidator;
+    pRVar3 = *ppRVar4;
     if (pRVar3 != (RangeValidator_1_System_Single_ *)0x0) {
       pMVar1 = pMVar1->klass->rgctx_data[6].method;
       method = pMVar1->klass->rgctx_data[4].method;
@@ -66,14 +66,14 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
       value = (float)func_?();
       min = 0.0;
       KogamaSettingBase::KogamaSettingBase_set_Value
-                ((KogamaSettingBase *)this,(Object *)value,(MethodInfo *)0x0);
+                ((KogamaSettingBase *)&UNK_?,(Object *)value,(MethodInfo *)0x0);
       return;
     }
   }
   method = (MethodInfo *)&UNK_?;
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

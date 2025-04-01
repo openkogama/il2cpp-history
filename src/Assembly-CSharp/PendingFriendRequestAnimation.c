@@ -53,21 +53,21 @@ void Assembly-CSharp.dll::PendingFriendRequestAnimation::PendingFriendRequestAni
 
 {
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  if ((this->fields).lastDotAnimationTime + (this->fields).dotAnimationCooldown < fVar1) {
+  if ((this->fields).dotAnimationCooldown + (this->fields).lastDotAnimationTime < fVar1) {
+    iVar2 = (this->fields).dotAmount;
     fVar1 = (this->fields).moveAmount;
-    if ((this->fields).currentDot != (this->fields).dotAmount) {
+    if ((this->fields).currentDot != iVar2) {
       PendingFriendRequestAnimation_MoveAnimation(this,fVar1,(MethodInfo *)0x0);
-      piVar2 = &(this->fields).currentDot;
-      *piVar2 = *piVar2 + 1;
+      piVar3 = &(this->fields).currentDot;
+      *piVar3 = *piVar3 + 1;
       fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
       (this->fields).lastDotAnimationTime = fVar1;
       return;
     }
     PendingFriendRequestAnimation_MoveAnimation
-              (this,(float)(this->fields).dotAmount *
-                    (float)((uint)fVar1 ^
+              (this,(float)((uint)fVar1 ^
                            __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
-               ,(MethodInfo *)0x0);
+                    * (float)iVar2,(MethodInfo *)0x0);
     (this->fields).currentDot = 0;
     fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
     (this->fields).lastDotAnimationTime = fVar1;

@@ -50,34 +50,33 @@ code_?:
                        ((Object *)pIVar1,
                         InventoryController_MethodInfo__UnityEngine__Object__Instantiate<InventoryController>_InventoryController_
                        );
-    (this->fields).inventoryController = pIVar1;
-    func_?(&(this->fields).inventoryController,pIVar1);
-    pIVar1 = (this->fields).inventoryController;
-    if (pIVar1 == (InventoryController *)0x0) goto code_?;
+    ppIVar2 = &(this->fields).inventoryController;
+    *ppIVar2 = pIVar1;
+    func_?(ppIVar2,pIVar1);
+    if (*ppIVar2 == (InventoryController *)0x0) goto code_?;
     InventoryController::InventoryController_Initialize
-              (pIVar1,(this->fields).numberOfSlotsPrPage,(MethodInfo *)0x0);
-    pTVar2 = (this->fields).tab;
-    if ((pTVar2 == (TabState *)0x0) ||
-       (pIVar1 = (this->fields).inventoryController, pIVar1 == (InventoryController *)0x0))
+              (*ppIVar2,(this->fields).numberOfSlotsPrPage,(MethodInfo *)0x0);
+    pTVar3 = (this->fields).tab;
+    if ((pTVar3 == (TabState *)0x0) || (*ppIVar2 == (InventoryController *)0x0))
     goto code_?;
     InventoryController::InventoryController_AddTab
-              (pIVar1,0,(pTVar2->fields).name,(MethodInfo *)0x0);
-    pIVar1 = (this->fields).inventoryController;
+              (*ppIVar2,0,(pTVar3->fields).name,(MethodInfo *)0x0);
+    pIVar1 = *ppIVar2;
     if (pIVar1 == (InventoryController *)0x0) goto code_?;
-    pUVar3 = (pIVar1->fields).OnPageTurned;
+    pUVar4 = (pIVar1->fields).OnPageTurned;
     this_00 = (UnityAction_1_System_Int32Enum_ *)
               func_?(TypeInfo__UnityEngine__Events__UnityAction<int>);
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
     UnityAction_1_System_Int32Enum___ctor
               (this_00,(Object *)this,MethodInfo__AvatarShopController__PageTurned_int_,
                (MethodInfo *)0x0);
-    pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pUVar3,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pDVar4 == (Delegate *)0x0) {
+    pDVar5 = mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pUVar4,(Delegate *)this_00,(MethodInfo *)0x0);
+    if (pDVar5 == (Delegate *)0x0) {
       (pIVar1->fields).OnPageTurned = (UnityAction_1_System_Int32_ *)0x0;
 code_?:
       func_?();
-      pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+      pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)this,(MethodInfo *)0x0);
       if ((TypeInfo__AvatarShopController____c->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
@@ -102,11 +101,11 @@ code_?:
         func_?();
       }
       UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (pGVar5,(BaseEventData *)0x0,
+                (pGVar6,(BaseEventData *)0x0,
                  (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                 );
-      pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+      pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)this,(MethodInfo *)0x0);
       callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
@@ -115,23 +114,23 @@ code_?:
                  MethodInfo__AvatarShopController____c__DisplayClass10_0___Activate_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
       UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (pGVar5,(BaseEventData *)0x0,callbackFunction_00,
+                (pGVar6,(BaseEventData *)0x0,callbackFunction_00,
                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                 );
       AvatarShopController_UpdateContent(this,(MethodInfo *)0x0);
       return;
     }
-    pUVar3 = (UnityAction_1_System_Int32_ *)func_?();
-    if (pUVar3 == (UnityAction_1_System_Int32_ *)0x0) goto code_?;
-    (pIVar1->fields).OnPageTurned = pUVar3;
-    iVar6 = func_?();
-    if (iVar6 != 0) goto code_?;
+    pUVar4 = (UnityAction_1_System_Int32_ *)func_?();
+    if (pUVar4 == (UnityAction_1_System_Int32_ *)0x0) goto code_?;
+    (pIVar1->fields).OnPageTurned = pUVar4;
+    iVar7 = func_?();
+    if (iVar7 != 0) goto code_?;
   }
   func_?();
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -328,19 +327,21 @@ void Assembly-CSharp.dll::AvatarShopController::AvatarShopController_Initialize
     func_?(&StringLiteral_Avatars);
     cRam_? = '\x01';
   }
-  (this->fields).avatarEditModeBodyController = editModeBodyController;
-  func_?(&(this->fields).avatarEditModeBodyController,editModeBodyController);
-  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (pMVar1 != (MVNetworkGame *)0x0) {
-    pAVar2 = (pMVar1->fields)._AvatarShopRepository_k__BackingField;
-    (this->fields).avatarRepository = pAVar2;
-    func_?(&(this->fields).avatarRepository,pAVar2);
+  ppAVar1 = &(this->fields).avatarEditModeBodyController;
+  *ppAVar1 = editModeBodyController;
+  func_?(ppAVar1,editModeBodyController);
+  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if (pMVar2 != (MVNetworkGame *)0x0) {
+    pAVar3 = (pMVar2->fields)._AvatarShopRepository_k__BackingField;
+    ppAVar4 = &(this->fields).avatarRepository;
+    *ppAVar4 = pAVar3;
+    func_?(ppAVar4,pAVar3);
     name = TM::TM__(StringLiteral_Avatars,(MethodInfo *)0x0);
-    iVar3 = (this->fields).numberOfSlotsPrPage;
+    iVar5 = (this->fields).numberOfSlotsPrPage;
     this_01 = (TabState *)func_?(TypeInfo__TabState);
-    TabState::TabState__ctor(this_01,1,name,iVar3,(MethodInfo *)0x0);
-    pAVar2 = (this->fields).avatarRepository;
-    if (pAVar2 != (AvatarRepository *)0x0) {
+    TabState::TabState__ctor(this_01,1,name,iVar5,(MethodInfo *)0x0);
+    pAVar3 = *ppAVar4;
+    if (pAVar3 != (AvatarRepository *)0x0) {
       if (cRam_? == '\0') {
         func_?(&
                         MethodInfo__System__Collections__Generic__Dictionary<int,_AvatarRepositoryItem>__get_Count__
@@ -348,28 +349,29 @@ void Assembly-CSharp.dll::AvatarShopController::AvatarShopController_Initialize
         cRam_? = '\x01';
       }
       this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                 *)(pAVar2->fields).avatars;
+                 *)(pAVar3->fields).avatars;
       if (this_00 !=
           (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
            *)0x0) {
-        iVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+        iVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
                 StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
                 Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Count
                           (this_00,
                            MethodInfo__System__Collections__Generic__Dictionary<int,_AvatarRepositoryItem>__get_Count__
                           );
         if (this_01 != (TabState *)0x0) {
-          (this_01->fields).highestSlotIndex = iVar3 + -1;
-          (this->fields).tab = this_01;
-          func_?(&(this->fields).tab,this_01);
+          (this_01->fields).highestSlotIndex = iVar5 + -1;
+          ppTVar6 = &(this->fields).tab;
+          *ppTVar6 = this_01;
+          func_?(ppTVar6,this_01);
           return;
         }
       }
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -452,8 +454,9 @@ void Assembly-CSharp.dll::AvatarShopController::AvatarShopController_PurchaseAva
       func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
       cRam_? = '\x01';
     }
-    (this_00->fields).purchasingItem = item;
-    func_?(&(this_00->fields).purchasingItem,item);
+    ppAVar1 = &(this_00->fields).purchasingItem;
+    *ppAVar1 = item;
+    func_?(ppAVar1,item);
     root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                      ((Component *)this_00,(MethodInfo *)0x0);
     callbackFunction =
@@ -476,8 +479,8 @@ void Assembly-CSharp.dll::AvatarShopController::AvatarShopController_PurchaseAva
     return;
   }
   func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -498,43 +501,43 @@ void Assembly-CSharp.dll::AvatarShopController::AvatarShopController_UpdateConte
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).previewRootTransform;
+  ppTVar2 = &(this->fields).previewRootTransform;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                     ((Object_1 *)pTVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
-    pTVar1 = (this->fields).previewRootTransform;
-    if (pTVar1 == (Transform *)0x0) goto code_?;
-    pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)pTVar1,(MethodInfo *)0x0);
+  if (bVar3 != 0) {
+    if (*ppTVar2 == (Transform *)0x0) goto code_?;
+    pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)*ppTVar2,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-              ((Object_1 *)pGVar3,(MethodInfo *)0x0);
+              ((Object_1 *)pGVar4,(MethodInfo *)0x0);
   }
-  pGVar3 = (GameObject *)func_?();
+  pGVar4 = (GameObject *)func_?();
   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor
-            (pGVar3,StringLiteral_Preview_Root___AvatarShopControl,(MethodInfo *)0x0);
-  if (pGVar3 != (GameObject *)0x0) {
+            (pGVar4,StringLiteral_Preview_Root___AvatarShopControl,(MethodInfo *)0x0);
+  if (pGVar4 != (GameObject *)0x0) {
     pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                       (pGVar3,(MethodInfo *)0x0);
-    (this->fields).previewRootTransform = pTVar1;
-    func_?(&(this->fields).previewRootTransform,pTVar1);
-    pIVar4 = (this->fields).inventoryController;
-    if (pIVar4 != (InventoryController *)0x0) {
-      InventoryController::InventoryController_Clear(pIVar4,(MethodInfo *)0x0);
-      pTVar5 = (this->fields).tab;
-      pIVar4 = (this->fields).inventoryController;
-      if (pTVar5 != (TabState *)0x0) {
-        currentPage = (pTVar5->fields).currentPage;
-        maxPages = TabState::TabState_get_MaxPages(pTVar5,(MethodInfo *)0x0);
-        if (pIVar4 != (InventoryController *)0x0) {
+                       (pGVar4,(MethodInfo *)0x0);
+    *ppTVar2 = pTVar1;
+    func_?(ppTVar2,pTVar1);
+    pIVar5 = (this->fields).inventoryController;
+    if (pIVar5 != (InventoryController *)0x0) {
+      InventoryController::InventoryController_Clear(pIVar5,(MethodInfo *)0x0);
+      pTVar6 = (this->fields).tab;
+      pIVar5 = (this->fields).inventoryController;
+      if (pTVar6 != (TabState *)0x0) {
+        currentPage = (pTVar6->fields).currentPage;
+        maxPages = TabState::TabState_get_MaxPages(pTVar6,(MethodInfo *)0x0);
+        if (pIVar5 != (InventoryController *)0x0) {
           InventoryController::InventoryController_SelectTab
-                    (pIVar4,0,currentPage,maxPages,(MethodInfo *)0x0);
-          pAVar6 = (this->fields).avatarRepository;
-          if (pAVar6 != (AvatarRepository *)0x0) {
+                    (pIVar5,0,currentPage,maxPages,(MethodInfo *)0x0);
+          pAVar7 = (this->fields).avatarRepository;
+          if (pAVar7 != (AvatarRepository *)0x0) {
             if (cRam_? == '\0') {
               func_?(&
                               MethodInfo__System__Collections__Generic__Dictionary<int,_AvatarRepositoryItem>__get_Values__
@@ -553,7 +556,7 @@ void Assembly-CSharp.dll::AvatarShopController::AvatarShopController_UpdateConte
               cRam_? = '\x01';
             }
             this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                       *)(pAVar6->fields).avatars;
+                       *)(pAVar7->fields).avatars;
             if (this_00 !=
                 (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                  *)0x0) {
@@ -589,20 +592,20 @@ void Assembly-CSharp.dll::AvatarShopController::AvatarShopController_UpdateConte
                                      (Func_2_Object_Int32_ *)this_01,
                                      System__Linq__IOrderedEnumerable<AvatarRepositoryItem>_MethodInfo__System__Linq__Enumerable__OrderBy<AvatarRepositoryItem,_int>_System__Collections__Generic__IEnumerable<AvatarRepositoryItem>__System__Func<AvatarRepositoryItem,_int>_
                                     );
-              pLVar7 = System.Core.dll::System::Linq::Enumerable::Enumerable_ToList_8
+              pLVar8 = System.Core.dll::System::Linq::Enumerable::Enumerable_ToList_8
                                  ((IEnumerable_1_System_Object_ *)source_00,
                                   System__Collections__Generic__List<AvatarRepositoryItem>_MethodInfo__System__Linq__Enumerable__ToList<AvatarRepositoryItem>_System__Collections__Generic__IEnumerable<AvatarRepositoryItem>_
                                  );
               slotIndex = 0;
-              if (pLVar7 != (List_1_System_Object_ *)0x0) {
+              if (pLVar8 != (List_1_System_Object_ *)0x0) {
                 while( true ) {
-                  if ((pLVar7->fields)._size <= slotIndex) {
+                  if ((pLVar8->fields)._size <= slotIndex) {
                     return;
                   }
-                  pTVar5 = (this->fields).tab;
-                  if (pTVar5 == (TabState *)0x0) break;
-                  bVar2 = TabState::TabState_SlotIndexIsInRange(pTVar5,slotIndex,(MethodInfo *)0x0);
-                  if (bVar2 != 0) {
+                  pTVar6 = (this->fields).tab;
+                  if (pTVar6 == (TabState *)0x0) break;
+                  bVar3 = TabState::TabState_SlotIndexIsInRange(pTVar6,slotIndex,(MethodInfo *)0x0);
+                  if (bVar3 != 0) {
                     AvatarShopController_AddPreviewObjectForIndex(this,slotIndex,(MethodInfo *)0x0);
                   }
                   slotIndex = slotIndex + 1;
@@ -616,8 +619,8 @@ void Assembly-CSharp.dll::AvatarShopController::AvatarShopController_UpdateConte
   }
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

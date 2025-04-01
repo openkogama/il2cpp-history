@@ -52,13 +52,14 @@ void Assembly-CSharp.dll::RTG::CameraPrjSwitchTransition::CameraPrjSwitchTransit
     value[1].klass = (Object__Class *)0x0;
     value[2].klass = (Object__Class *)this;
     func_?();
-    (this->fields)._transitionCrtn = (IEnumerator *)value;
-    func_?(&(this->fields)._transitionCrtn,value);
+    ppIVar4 = &(this->fields)._transitionCrtn;
+    *ppIVar4 = (IEnumerator *)value;
+    func_?(ppIVar4,value);
     if (pMVar1 == (MonoBehaviour *)0x0) {
 code_?:
       func_?();
-      pcVar4 = (code *)swi(3);
-      (*pcVar4)();
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
       return;
     }
     UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
@@ -83,8 +84,8 @@ Assembly-CSharp.dll::RTG::CameraPrjSwitchTransition::CameraPrjSwitchTransition_D
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[2].klass = (Object__Class *)this;
   value[1].klass = (Object__Class *)0x0;
+  value[2].klass = (Object__Class *)this;
   func_?(value + 2,this);
   return (IEnumerator *)value;
 }
@@ -153,28 +154,28 @@ void Assembly-CSharp.dll::RTG::CameraPrjSwitchTransition::
     func_?(&TypeInfo__RTG__CameraProjectionSwitchBeginHandler);
     cRam_? = '\x01';
   }
-  a = (this->fields).TransitionEnd;
+  ppCVar1 = &(this->fields).TransitionEnd;
+  a = *ppCVar1;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar2 = (Delegate *)0x0;
-    if (pDVar1 != (Delegate *)0x0) {
-      if ((CameraProjectionSwitchBeginHandler__Class *)pDVar1->klass ==
+    pDVar3 = (Delegate *)0x0;
+    if (pDVar2 != (Delegate *)0x0) {
+      if ((CameraProjectionSwitchBeginHandler__Class *)pDVar2->klass ==
           TypeInfo__RTG__CameraProjectionSwitchBeginHandler) {
-        pDVar2 = pDVar1;
+        pDVar3 = pDVar2;
       }
-      if (pDVar2 == (Delegate *)0x0) {
-        func_?(pDVar1,TypeInfo__RTG__CameraProjectionSwitchBeginHandler);
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
+      if (pDVar3 == (Delegate *)0x0) {
+        func_?(pDVar2,TypeInfo__RTG__CameraProjectionSwitchBeginHandler);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pCVar4 = (CameraProjectionSwitchBeginHandler *)
-             func_?(&(this->fields).TransitionEnd,pDVar2,a);
-    bVar5 = pCVar4 == a;
-    a = pCVar4;
-    if (bVar5) {
+    pCVar5 = (CameraProjectionSwitchBeginHandler *)func_?(ppCVar1,pDVar3,a);
+    bVar6 = pCVar5 == a;
+    a = pCVar5;
+    if (bVar6) {
       return;
     }
   } while( true );
@@ -193,28 +194,28 @@ void Assembly-CSharp.dll::RTG::CameraPrjSwitchTransition::
     func_?(&TypeInfo__RTG__CameraProjectionSwitchUpdateHandler);
     cRam_? = '\x01';
   }
-  a = (this->fields).TransitionUpdate;
+  ppCVar1 = &(this->fields).TransitionUpdate;
+  a = *ppCVar1;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar2 = (Delegate *)0x0;
-    if (pDVar1 != (Delegate *)0x0) {
-      if ((CameraProjectionSwitchUpdateHandler__Class *)pDVar1->klass ==
+    pDVar3 = (Delegate *)0x0;
+    if (pDVar2 != (Delegate *)0x0) {
+      if ((CameraProjectionSwitchUpdateHandler__Class *)pDVar2->klass ==
           TypeInfo__RTG__CameraProjectionSwitchUpdateHandler) {
-        pDVar2 = pDVar1;
+        pDVar3 = pDVar2;
       }
-      if (pDVar2 == (Delegate *)0x0) {
-        func_?(pDVar1,TypeInfo__RTG__CameraProjectionSwitchUpdateHandler);
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
+      if (pDVar3 == (Delegate *)0x0) {
+        func_?(pDVar2,TypeInfo__RTG__CameraProjectionSwitchUpdateHandler);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pCVar4 = (CameraProjectionSwitchUpdateHandler *)
-             func_?(&(this->fields).TransitionUpdate,pDVar2,a);
-    bVar5 = pCVar4 == a;
-    a = pCVar4;
-    if (bVar5) {
+    pCVar5 = (CameraProjectionSwitchUpdateHandler *)func_?(ppCVar1,pDVar3,a);
+    bVar6 = pCVar5 == a;
+    a = pCVar5;
+    if (bVar6) {
       return;
     }
   } while( true );
@@ -272,28 +273,28 @@ void Assembly-CSharp.dll::RTG::CameraPrjSwitchTransition::
     func_?(&TypeInfo__RTG__CameraProjectionSwitchBeginHandler);
     cRam_? = '\x01';
   }
-  source = (this->fields).TransitionEnd;
+  ppCVar1 = &(this->fields).TransitionEnd;
+  source = *ppCVar1;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar2 = (Delegate *)0x0;
-    if (pDVar1 != (Delegate *)0x0) {
-      if ((CameraProjectionSwitchBeginHandler__Class *)pDVar1->klass ==
+    pDVar3 = (Delegate *)0x0;
+    if (pDVar2 != (Delegate *)0x0) {
+      if ((CameraProjectionSwitchBeginHandler__Class *)pDVar2->klass ==
           TypeInfo__RTG__CameraProjectionSwitchBeginHandler) {
-        pDVar2 = pDVar1;
+        pDVar3 = pDVar2;
       }
-      if (pDVar2 == (Delegate *)0x0) {
-        func_?(pDVar1,TypeInfo__RTG__CameraProjectionSwitchBeginHandler);
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
+      if (pDVar3 == (Delegate *)0x0) {
+        func_?(pDVar2,TypeInfo__RTG__CameraProjectionSwitchBeginHandler);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pCVar4 = (CameraProjectionSwitchBeginHandler *)
-             func_?(&(this->fields).TransitionEnd,pDVar2,source);
-    bVar5 = pCVar4 == source;
-    source = pCVar4;
-    if (bVar5) {
+    pCVar5 = (CameraProjectionSwitchBeginHandler *)func_?(ppCVar1,pDVar3,source);
+    bVar6 = pCVar5 == source;
+    source = pCVar5;
+    if (bVar6) {
       return;
     }
   } while( true );
@@ -312,28 +313,28 @@ void Assembly-CSharp.dll::RTG::CameraPrjSwitchTransition::
     func_?(&TypeInfo__RTG__CameraProjectionSwitchUpdateHandler);
     cRam_? = '\x01';
   }
-  source = (this->fields).TransitionUpdate;
+  ppCVar1 = &(this->fields).TransitionUpdate;
+  source = *ppCVar1;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar2 = (Delegate *)0x0;
-    if (pDVar1 != (Delegate *)0x0) {
-      if ((CameraProjectionSwitchUpdateHandler__Class *)pDVar1->klass ==
+    pDVar3 = (Delegate *)0x0;
+    if (pDVar2 != (Delegate *)0x0) {
+      if ((CameraProjectionSwitchUpdateHandler__Class *)pDVar2->klass ==
           TypeInfo__RTG__CameraProjectionSwitchUpdateHandler) {
-        pDVar2 = pDVar1;
+        pDVar3 = pDVar2;
       }
-      if (pDVar2 == (Delegate *)0x0) {
-        func_?(pDVar1,TypeInfo__RTG__CameraProjectionSwitchUpdateHandler);
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
+      if (pDVar3 == (Delegate *)0x0) {
+        func_?(pDVar2,TypeInfo__RTG__CameraProjectionSwitchUpdateHandler);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pCVar4 = (CameraProjectionSwitchUpdateHandler *)
-             func_?(&(this->fields).TransitionUpdate,pDVar2,source);
-    bVar5 = pCVar4 == source;
-    source = pCVar4;
-    if (bVar5) {
+    pCVar5 = (CameraProjectionSwitchUpdateHandler *)func_?(ppCVar1,pDVar3,source);
+    bVar6 = pCVar5 == source;
+    source = pCVar5;
+    if (bVar6) {
       return;
     }
   } while( true );
@@ -405,8 +406,9 @@ void Assembly-CSharp.dll::RTG::CameraPrjSwitchTransition::CameraPrjSwitchTransit
     bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                       ((Object_1 *)value,(Object_1 *)0x0,(MethodInfo *)0x0);
     if (bVar1 != 0) {
-      (this->fields)._targetCamera = value;
-      func_?(&(this->fields)._targetCamera,value);
+      ppCVar2 = &(this->fields)._targetCamera;
+      *ppCVar2 = value;
+      func_?(ppCVar2,value);
     }
   }
   return;
@@ -430,8 +432,9 @@ void Assembly-CSharp.dll::RTG::CameraPrjSwitchTransition::CameraPrjSwitchTransit
     bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                       ((Object_1 *)value,(Object_1 *)0x0,(MethodInfo *)0x0);
     if (bVar1 != 0) {
-      (this->fields)._targetMono = value;
-      func_?(&(this->fields)._targetMono,value);
+      ppMVar2 = &(this->fields)._targetMono;
+      *ppMVar2 = value;
+      func_?(ppMVar2,value);
     }
   }
   return;

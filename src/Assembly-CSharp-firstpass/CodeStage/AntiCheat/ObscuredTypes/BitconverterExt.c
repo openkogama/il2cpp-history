@@ -37,7 +37,8 @@ BitconverterExt_GetBytes(Decimal dec,MethodInfo *method)
   uVar3 = 0;
   if (pIVar2 != (Int32__Array *)0x0) {
     piVar4 = pIVar2->vector;
-    for (; (int)uVar3 < (int)pIVar2->max_length; uVar3 = uVar3 + 1) {
+    while( true ) {
+      if ((int)pIVar2->max_length <= (int)uVar3) break;
       if (pIVar2->max_length <= uVar3) goto code_?;
       pBVar5 = mscorlib.dll::System::BitConverter::BitConverter_GetBytes_3
                          (*piVar4,(MethodInfo *)0x0);
@@ -46,6 +47,7 @@ BitconverterExt_GetBytes(Decimal dec,MethodInfo *method)
                 ((List_1_System_Byte_ *)this,(IEnumerable_1_System_Byte_ *)pBVar5,
                  MethodInfo__System__Collections__Generic__List<unsigned_char>__AddRange_System__Collections__Generic__IEnumerable<unsigned_char>_
                 );
+      uVar3 = uVar3 + 1;
       piVar4 = piVar4 + 1;
       pIVar2 = this;
     }

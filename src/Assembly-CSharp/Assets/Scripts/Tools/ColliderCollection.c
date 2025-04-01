@@ -12,10 +12,10 @@ void Assembly-CSharp.dll::Assets::Scripts::Tools::ColliderCollection::ColliderCo
                    );
     cRam_? = '\x01';
   }
+  pCVar1 = TypeInfo__UnityEngine__Collider;
   method_00 = 
   MethodInfo__System__Collections__Generic__LinkedList<UnityEngine::Collider>__CopyTo_UnityEngine__Collider_____int_
   ;
-  pCVar1 = TypeInfo__UnityEngine__Collider;
   this_00 = (this->fields).colliders;
   if (this_00 != (LinkedList_1_UnityEngine_Collider_ *)0x0) {
     if (array == (Array *)0x0) {
@@ -171,14 +171,15 @@ void Assembly-CSharp.dll::Assets::Scripts::Tools::ColliderCollection::
                 ((LinkedList_1_System_Object_ *)pLVar1,(Object *)collider,
                  MethodInfo__System__Collections__Generic__LinkedList<UnityEngine::Collider>__AddLast_UnityEngine__Collider_
                 );
-      (this->fields).activeCollider = collider;
-      func_?(&(this->fields).activeCollider,collider);
+      ppCVar2 = &(this->fields).activeCollider;
+      *ppCVar2 = collider;
+      func_?(ppCVar2,collider);
       return;
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -243,33 +244,36 @@ void Assembly-CSharp.dll::Assets::Scripts::Tools::ColliderCollection::ColliderCo
   }
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-  pLVar1 = (LinkedList_1_UnityEngine_Collider_ *)
-           func_?(TypeInfo__System__Collections__Generic__LinkedList<UnityEngine::Collider>
-                          );
+  this_00 = (LinkedList_1_UnityEngine_Collider_ *)
+            func_?(
+                           TypeInfo__System__Collections__Generic__LinkedList<UnityEngine::Collider>
+                           );
   UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
   UxmlObjectListAttributeDescription`1[System::Object]::
   UxmlObjectListAttributeDescription_1_System_Object___ctor
-            ((UxmlObjectListAttributeDescription_1_System_Object_ *)pLVar1,
+            ((UxmlObjectListAttributeDescription_1_System_Object_ *)this_00,
              MethodInfo__System__Collections__Generic__LinkedList<UnityEngine::Collider>__LinkedList__
             );
-  (this->fields).colliders = pLVar1;
-  func_?(&this->fields,pLVar1);
-  pLVar1 = (this->fields).colliders;
-  if (pLVar1 != (LinkedList_1_UnityEngine_Collider_ *)0x0) {
+  pCVar1 = &this->fields;
+  pCVar1->colliders = this_00;
+  func_?(pCVar1,this_00);
+  if (pCVar1->colliders != (LinkedList_1_UnityEngine_Collider_ *)0x0) {
     System.dll::System::Collections::Generic::LinkedList`1[System::Object]::
     LinkedList_1_System_Object__AddLast
-              ((LinkedList_1_System_Object_ *)pLVar1,(Object *)baseCollider,
+              ((LinkedList_1_System_Object_ *)pCVar1->colliders,(Object *)baseCollider,
                MethodInfo__System__Collections__Generic__LinkedList<UnityEngine::Collider>__AddLast_UnityEngine__Collider_
               );
-    (this->fields).baseCollider = baseCollider;
-    func_?(&(this->fields).baseCollider);
-    (this->fields).activeCollider = baseCollider;
-    func_?(&(this->fields).activeCollider,baseCollider);
+    ppCVar2 = &(this->fields).baseCollider;
+    *ppCVar2 = baseCollider;
+    func_?(ppCVar2,baseCollider);
+    ppCVar2 = &(this->fields).activeCollider;
+    *ppCVar2 = baseCollider;
+    func_?(ppCVar2,baseCollider);
     return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

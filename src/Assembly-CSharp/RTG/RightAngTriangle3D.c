@@ -212,16 +212,16 @@ Assembly-CSharp.dll::RTG::RightAngTriangle3D::RightAngTriangle3D_GetPoints
     cRam_? = '\x01';
   }
   rightAngleCorner = (this->fields)._rightAngleCorner;
-  fVar1 = _UNK_?;
+  fVar1 = (this->fields)._XLength;
+  fVar2 = _UNK_?;
   if ((this->fields)._XLengthSign == 0) {
-    fVar1 = _UNK_?;
+    fVar2 = _UNK_?;
   }
-  fVar2 = (this->fields)._XLength;
-  fVar3 = _UNK_?;
+  fVar3 = (this->fields)._YLength;
+  fVar4 = _UNK_?;
   if ((this->fields)._YLengthSign != 0) {
-    fVar3 = _UNK_?;
+    fVar4 = _UNK_?;
   }
-  fVar4 = (this->fields)._YLength;
   triangleRotation = (this->fields)._rotation;
   if ((TypeInfo__RTG__TriangleMath->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__RTG__TriangleMath);
@@ -454,8 +454,8 @@ void Assembly-CSharp.dll::RTG::RightAngTriangle3D::RightAngTriangle3D_RenderSoli
   if ((this->fields)._YLengthSign != 0) {
     fVar3 = _UNK_?;
   }
-  s.y = fVar3 * (this->fields)._YLength;
-  s.x = fVar2 * (this->fields)._XLength;
+  s.y = (this->fields)._YLength * fVar3;
+  s.x = (this->fields)._XLength * fVar2;
   s.z = 1.0;
   pMVar4 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
                      ((Matrix4x4 *)&stack0xffffff7c,(this->fields)._rightAngleCorner,
@@ -503,8 +503,8 @@ void Assembly-CSharp.dll::RTG::RightAngTriangle3D::RightAngTriangle3D_RenderWire
   if ((this->fields)._YLengthSign != 0) {
     fVar3 = _UNK_?;
   }
-  s.y = fVar3 * (this->fields)._YLength;
-  s.x = fVar2 * (this->fields)._XLength;
+  s.y = (this->fields)._YLength * fVar3;
+  s.x = (this->fields)._XLength * fVar2;
   s.z = 1.0;
   pMVar4 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
                      ((Matrix4x4 *)&stack0xffffff7c,(this->fields)._rightAngleCorner,

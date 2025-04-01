@@ -6,21 +6,21 @@ int32_t MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsT
         APIntCalcZeroValueLinear_Calc(APIntCalcZeroValueLinear *this,int32_t i,MethodInfo *method)
 
 {
-  iVar1 = i - this->zeroValue;
-  if ((float)iVar1 < _UNK_?) {
+  fVar1 = (float)(i - this->zeroValue);
+  if (fVar1 < _UNK_?) {
     fVar2 = this->exchangeRateNegative;
   }
   else {
     fVar2 = this->exchangeRatePositive;
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Math);
+    func_?();
     cRam_? = '\x01';
   }
   if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  fVar3 = (float10)func_?((double)((float)iVar1 * fVar2));
+  fVar3 = (float10)func_?((double)(fVar1 * fVar2));
   return (int)fVar3;
 }
 

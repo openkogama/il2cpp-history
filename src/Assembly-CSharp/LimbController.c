@@ -7,56 +7,53 @@ Assembly-CSharp.dll::LimbController::LimbController_AddAndClampRotations
           Quaternion rotation2,MethodInfo *method)
 
 {
-  __return_storage_ptr__->x = 0.0;
-  __return_storage_ptr__->y = 0.0;
-  __return_storage_ptr__->z = 0.0;
-  __return_storage_ptr__->w = 0.0;
-  fVar1 = (rotation2.w * rotation1.x + rotation2.x * rotation1.w + rotation1.y * rotation2.z) -
+  fVar1 = (rotation1.w * rotation2.x + rotation2.w * rotation1.x + rotation2.z * rotation1.y) -
           rotation1.z * rotation2.y;
-  fVar2 = rotation1.z * rotation2.z;
-  fVar3 = (rotation2.y * rotation1.w + rotation1.y * rotation2.w + rotation1.z * rotation2.x) -
+  fVar2 = (rotation1.w * rotation2.y + rotation2.w * rotation1.y + rotation1.z * rotation2.x) -
           rotation2.z * rotation1.x;
-  rotation2.z = (rotation1.z * rotation2.w + rotation2.z * rotation1.w + rotation2.y * rotation1.x)
-                - rotation1.y * rotation2.x;
-  rotation2.w = ((rotation2.w * rotation1.w - rotation1.x * rotation2.x) - rotation2.y * rotation1.y
-                ) - fVar2;
+  fVar3 = (rotation2.w * rotation1.z + rotation1.w * rotation2.z + rotation2.y * rotation1.x) -
+          rotation1.y * rotation2.x;
+  rotation1.w = rotation2.w * rotation1.w;
+  rotation2.w = ((rotation1.w - rotation2.x * rotation1.x) - rotation2.y * rotation1.y) -
+                rotation2.z * rotation1.z;
   __return_storage_ptr__->x = fVar1;
-  __return_storage_ptr__->y = fVar3;
-  __return_storage_ptr__->z = rotation2.z;
+  __return_storage_ptr__->y = fVar2;
+  __return_storage_ptr__->z = fVar3;
   __return_storage_ptr__->w = rotation2.w;
   rotation2.x = fVar1;
-  rotation2.y = fVar3;
+  rotation2.y = fVar2;
+  rotation2.z = fVar3;
   puVar4 = (undefined8 *)func_?(&rotation1.y,__return_storage_ptr__,0);
   rotation2.y = (float)*puVar4;
   rotation2.z = (float)((ulonglong)*puVar4 >> 0x20);
-  pfVar5 = &(this->fields).maxPitch;
+  fVar3 = (this->fields).maxPitch;
   fVar1 = rotation2.y;
-  if ((*pfVar5 <= rotation2.y && rotation2.y != *pfVar5) && (rotation2.y <= _UNK_?)) {
-    fVar1 = (this->fields).maxPitch;
+  if ((fVar3 < rotation2.y) && (rotation2.y <= _UNK_?)) {
+    fVar1 = fVar3;
   }
-  if ((fVar1 < _UNK_? - (this->fields).maxPitch) && (_UNK_? < fVar1)) {
-    fVar1 = _UNK_? - (this->fields).maxPitch;
+  if ((fVar1 < _UNK_? - fVar3) && (_UNK_? < fVar1)) {
+    fVar1 = _UNK_? - fVar3;
   }
-  pfVar5 = &(this->fields).maxYaw;
-  fVar3 = rotation2.z;
-  if ((*pfVar5 <= rotation2.z && rotation2.z != *pfVar5) && (rotation2.z <= _UNK_?)) {
-    fVar3 = (this->fields).maxYaw;
+  fVar3 = (this->fields).maxYaw;
+  fVar2 = rotation2.z;
+  if ((fVar3 < rotation2.z) && (rotation2.z <= _UNK_?)) {
+    fVar2 = fVar3;
   }
-  if ((fVar3 < _UNK_? - (this->fields).maxYaw) && (_UNK_? < fVar3)) {
-    fVar3 = _UNK_? - (this->fields).maxYaw;
+  if ((fVar2 < _UNK_? - fVar3) && (_UNK_? < fVar2)) {
+    fVar2 = _UNK_? - fVar3;
   }
   rotation2.w = *(float *)(puVar4 + 1) * _UNK_?;
-  euler.y = fVar3 * _UNK_?;
+  euler.y = fVar2 * _UNK_?;
   euler.x = fVar1 * _UNK_?;
   euler.z = rotation2.w;
-  pQVar6 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
+  pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
                      (&rotation2,euler,(MethodInfo *)0x0);
-  fVar1 = pQVar6->y;
-  fVar3 = pQVar6->z;
-  fVar2 = pQVar6->w;
-  __return_storage_ptr__->x = pQVar6->x;
-  __return_storage_ptr__->y = fVar1;
-  __return_storage_ptr__->z = fVar3;
+  fVar3 = pQVar5->y;
+  fVar1 = pQVar5->z;
+  fVar2 = pQVar5->w;
+  __return_storage_ptr__->x = pQVar5->x;
+  __return_storage_ptr__->y = fVar3;
+  __return_storage_ptr__->z = fVar1;
   __return_storage_ptr__->w = fVar2;
   return __return_storage_ptr__;
 }
@@ -252,14 +249,16 @@ void Assembly-CSharp.dll::LimbController::LimbController_Initialize
   }
   (this->fields).avatarWO = avatarWO;
   func_?(&this->fields,avatarWO);
-  (this->fields).blendAnimations = blendAnimations;
+  ppLVar1 = &(this->fields).blendAnimations;
   (this->fields).modelRotationOffset.x = modelRotationOffset.x;
   (this->fields).modelRotationOffset.y = modelRotationOffset.y;
   (this->fields).modelRotationOffset.z = modelRotationOffset.z;
   (this->fields).modelRotationOffset.w = modelRotationOffset.w;
-  func_?(&(this->fields).blendAnimations,blendAnimations);
-  (this->fields).cancelAnimations = cancelAnimations;
-  func_?(&(this->fields).cancelAnimations,cancelAnimations);
+  *ppLVar1 = blendAnimations;
+  func_?(ppLVar1,blendAnimations);
+  ppLVar1 = &(this->fields).cancelAnimations;
+  *ppLVar1 = cancelAnimations;
+  func_?(ppLVar1,cancelAnimations);
   (this->fields).maxYaw = maxYaw;
   (this->fields).maxPitch = maxPitch;
   if (body == (MVBody *)0x0) {
@@ -269,57 +268,57 @@ code_?:
     func_?();
   }
   else {
-    pBVar1 = MVBody::MVBody_get_BodyData(body,(MethodInfo *)0x0);
-    if ((pBVar1 == (BodyData *)0x0) ||
-       (pTVar2 = (pBVar1->fields).PartBones, pTVar2 == (Transform__Array *)0x0))
+    pBVar2 = MVBody::MVBody_get_BodyData(body,(MethodInfo *)0x0);
+    if ((pBVar2 == (BodyData *)0x0) ||
+       (pTVar3 = (pBVar2->fields).PartBones, pTVar3 == (Transform__Array *)0x0))
     goto code_?;
-    if (pTVar2->max_length <= partIndex) goto code_?;
-    if (pTVar2->vector[partIndex] == (Transform *)0x0) goto code_?;
-    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                       ((Component *)pTVar2->vector[partIndex],(MethodInfo *)0x0);
-    (this->fields).limbTransform = pTVar3;
-    func_?(&(this->fields).limbTransform,pTVar3);
-    pTVar3 = (this->fields).limbTransform;
-    if (pTVar3 == (Transform *)0x0) goto code_?;
-    pQVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                       (&modelRotationOffset,pTVar3,(MethodInfo *)0x0);
-    fVar5 = pQVar4->y;
-    fVar6 = pQVar4->z;
-    fVar7 = pQVar4->w;
-    (this->fields).previousLimbRotation.x = pQVar4->x;
-    (this->fields).previousLimbRotation.y = fVar5;
-    (this->fields).previousLimbRotation.z = fVar6;
-    (this->fields).previousLimbRotation.w = fVar7;
+    if (pTVar3->max_length <= partIndex) goto code_?;
+    if (pTVar3->vector[partIndex] == (Transform *)0x0) goto code_?;
+    pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)pTVar3->vector[partIndex],(MethodInfo *)0x0);
+    ppTVar5 = &(this->fields).limbTransform;
+    *ppTVar5 = pTVar4;
+    func_?(ppTVar5,pTVar4);
+    if (*ppTVar5 == (Transform *)0x0) goto code_?;
+    pQVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+                        (&modelRotationOffset,*ppTVar5,(MethodInfo *)0x0);
+    fVar7 = pQVar6->y;
+    fVar8 = pQVar6->z;
+    fVar9 = pQVar6->w;
+    (this->fields).previousLimbRotation.x = pQVar6->x;
+    (this->fields).previousLimbRotation.y = fVar7;
+    (this->fields).previousLimbRotation.z = fVar8;
+    (this->fields).previousLimbRotation.w = fVar9;
     (this->fields).limbsOriginalRotation.x = originalRotation.x;
     (this->fields).limbsOriginalRotation.y = originalRotation.y;
     (this->fields).limbsOriginalRotation.z = originalRotation.z;
     (this->fields).limbsOriginalRotation.w = originalRotation.w;
     if (limbManager == (AvatarLimbManager *)0x0) goto code_?;
-    pAVar8 = (limbManager->fields).OnAvatarRotate;
+    pAVar10 = (limbManager->fields).OnAvatarRotate;
     this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
               (this_00,(Object *)this,MethodInfo__LimbController__FinishInterpolation__,
                (MethodInfo *)0x0);
-    pAVar8 = (Action *)
-             mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pAVar8,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pAVar8 == (Action *)0x0) {
+    pAVar10 = (Action *)
+              mscorlib.dll::System::Delegate::Delegate_Combine
+                        ((Delegate *)pAVar10,(Delegate *)this_00,(MethodInfo *)0x0);
+    if (pAVar10 == (Action *)0x0) {
       (limbManager->fields).OnAvatarRotate = (Action *)0x0;
       func_?();
       return;
     }
-    pAVar9 = (Action *)0x0;
-    if (pAVar8->klass == TypeInfo__System__Action) {
-      pAVar9 = pAVar8;
+    pAVar11 = (Action *)0x0;
+    if (pAVar10->klass == TypeInfo__System__Action) {
+      pAVar11 = pAVar10;
     }
-    if (pAVar9 == (Action *)0x0) goto code_?;
-    (limbManager->fields).OnAvatarRotate = pAVar9;
-    pAVar9 = (Action *)0x0;
-    if (pAVar8->klass == TypeInfo__System__Action) {
-      pAVar9 = pAVar8;
+    if (pAVar11 == (Action *)0x0) goto code_?;
+    (limbManager->fields).OnAvatarRotate = pAVar11;
+    pAVar11 = (Action *)0x0;
+    if (pAVar10->klass == TypeInfo__System__Action) {
+      pAVar11 = pAVar10;
     }
-    if (pAVar9 != (Action *)0x0) {
+    if (pAVar11 != (Action *)0x0) {
       func_?();
       return;
     }
@@ -327,8 +326,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -390,31 +389,31 @@ bool Assembly-CSharp.dll::LimbController::LimbController_IsCancelRotation
     cRam_? = '\x01';
   }
   index = 0;
-  pLVar1 = (this->fields).cancelAnimations;
-  while (pLVar1 != (List_1_System_String_ *)0x0) {
-    if ((pLVar1->fields)._size <= index) {
+  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            (this->fields).cancelAnimations;
+  while (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    if ((this_00->fields)._size <= index) {
       return 0;
     }
-    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-              (this->fields).cancelAnimations;
     if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) break;
     b = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
         RegexCharClass+SingleRange]::
         List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                   (this_00,index,
                    MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_);
-    bVar2 = mscorlib.dll::System::String::String_op_Equality
+    bVar1 = mscorlib.dll::System::String::String_op_Equality
                       (currentAnimation,(String *)b,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
+    if (bVar1 != 0) {
       return 1;
     }
     index = index + 1;
-    pLVar1 = (this->fields).cancelAnimations;
+    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              (this->fields).cancelAnimations;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  bVar2 = (*pcVar3)();
-  return bVar2;
+  pcVar2 = (code *)swi(3);
+  bVar1 = (*pcVar2)();
+  return bVar1;
 }
 
 
@@ -493,31 +492,31 @@ bool Assembly-CSharp.dll::LimbController::LimbController_ShouldBlendWithAnimatio
     return 0;
   }
   index = 0;
-  pLVar1 = (this->fields).blendAnimations;
-  while (pLVar1 != (List_1_System_String_ *)0x0) {
-    if ((pLVar1->fields)._size <= index) {
+  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            (this->fields).blendAnimations;
+  while (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    if ((this_00->fields)._size <= index) {
       return 0;
     }
-    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-              (this->fields).blendAnimations;
     if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) break;
     b = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
         RegexCharClass+SingleRange]::
         List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                   (this_00,index,
                    MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_);
-    bVar2 = mscorlib.dll::System::String::String_op_Equality
+    bVar1 = mscorlib.dll::System::String::String_op_Equality
                       (currentAnimation,(String *)b,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
+    if (bVar1 != 0) {
       return 1;
     }
     index = index + 1;
-    pLVar1 = (this->fields).blendAnimations;
+    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              (this->fields).blendAnimations;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  bVar2 = (*pcVar3)();
-  return bVar2;
+  pcVar2 = (code *)swi(3);
+  bVar1 = (*pcVar2)();
+  return bVar1;
 }
 
 
@@ -536,20 +535,20 @@ void Assembly-CSharp.dll::LimbController::LimbController_StartBlendingWithAnimat
     cRam_? = '\x01';
   }
   index = 0;
-  pLVar1 = (this->fields).blendAnimations;
+  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            (this->fields).blendAnimations;
   do {
-    if (pLVar1 == (List_1_System_String_ *)0x0) {
+    if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
 code_?:
       func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
       return;
     }
-    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-              (this->fields).blendAnimations;
-    if ((pLVar1->fields)._size <= index) {
-      if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-        func_?(this_00,animation,
+    if ((this_00->fields)._size <= index) {
+      pLVar2 = (this->fields).blendAnimations;
+      if (pLVar2 != (List_1_System_String_ *)0x0) {
+        func_?(pLVar2,animation,
                         MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_
                        );
         return;
@@ -568,7 +567,8 @@ code_?:
     if (bVar3 != 0) {
       return;
     }
-    pLVar1 = (this->fields).blendAnimations;
+    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              (this->fields).blendAnimations;
     index = index + 1;
   } while( true );
 }
@@ -587,9 +587,10 @@ void Assembly-CSharp.dll::LimbController::LimbController_StopBlendingWithAnimati
     cRam_? = '\x01';
   }
   index = 0;
-  this_00 = (this->fields).blendAnimations;
+  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            (this->fields).blendAnimations;
   do {
-    if (this_00 == (List_1_System_String_ *)0x0) {
+    if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
 code_?:
       func_?();
       pcVar1 = (code *)swi(3);
@@ -599,20 +600,19 @@ code_?:
     if ((this_00->fields)._size <= index) {
       return;
     }
-    this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-              (this->fields).blendAnimations;
-    if (this_01 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+    if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
     goto code_?;
     a = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
         RegexCharClass+SingleRange]::
         List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                  (this_01,index,
+                  (this_00,index,
                    MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_);
     bVar2 = mscorlib.dll::System::String::String_op_Equality
                       ((String *)a,animation,(MethodInfo *)0x0);
-    this_00 = (this->fields).blendAnimations;
+    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              (this->fields).blendAnimations;
     if (bVar2 != 0) {
-      if (this_00 != (List_1_System_String_ *)0x0) {
+      if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
         mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
         List_1_System_Object__RemoveAt
                   ((List_1_System_Object_ *)this_00,index,
@@ -722,24 +722,24 @@ void Assembly-CSharp.dll::LimbController::LimbController_UpdateInterpolation
     fVar2 = pQVar5->y;
     fVar6 = pQVar5->z;
     fVar7 = pQVar5->w;
-    fVar12 = (fVar1 * fVar11 + fVar7 * fVar8 + fVar6 * fVar9) - fVar2 * fVar10;
-    fVar13 = (fVar2 * fVar11 + fVar7 * fVar9 + fVar1 * fVar10) - fVar6 * fVar8;
-    fVar14 = (fVar6 * fVar11 + fVar7 * fVar10 + fVar2 * fVar8) - fVar1 * fVar9;
-    fVar9 = ((fVar7 * fVar11 - fVar1 * fVar8) - fVar2 * fVar9) - fVar6 * fVar10;
+    fVar12 = (fVar8 * fVar7 + fVar11 * fVar1 + fVar9 * fVar6) - fVar10 * fVar2;
+    fVar13 = (fVar11 * fVar2 + fVar9 * fVar7 + fVar10 * fVar1) - fVar8 * fVar6;
+    fVar14 = (fVar11 * fVar6 + fVar10 * fVar7 + fVar8 * fVar2) - fVar9 * fVar1;
+    fVar10 = ((fVar11 * fVar7 - fVar8 * fVar1) - fVar9 * fVar2) - fVar10 * fVar6;
     fVar1 = (this->fields).modelRotationOffset.x;
     fVar2 = (this->fields).modelRotationOffset.y;
     fVar6 = (this->fields).modelRotationOffset.z;
     fVar7 = (this->fields).modelRotationOffset.w;
-    fVar8 = (fVar7 * fVar12 + fVar1 * fVar9 + fVar6 * fVar13) - fVar2 * fVar14;
-    fVar10 = (fVar7 * fVar13 + fVar2 * fVar9 + fVar1 * fVar14) - fVar6 * fVar12;
-    fVar11 = (fVar7 * fVar14 + fVar6 * fVar9 + fVar2 * fVar12) - fVar1 * fVar13;
-    fVar1 = ((fVar7 * fVar9 - fVar1 * fVar12) - fVar2 * fVar13) - fVar6 * fVar14;
-    a.y = fVar10;
-    a.x = fVar8;
+    fVar9 = (fVar12 * fVar7 + fVar10 * fVar1 + fVar13 * fVar6) - fVar14 * fVar2;
+    fVar8 = (fVar10 * fVar2 + fVar13 * fVar7 + fVar14 * fVar1) - fVar12 * fVar6;
+    fVar11 = (fVar10 * fVar6 + fVar14 * fVar7 + fVar12 * fVar2) - fVar13 * fVar1;
+    fVar1 = ((fVar10 * fVar7 - fVar12 * fVar1) - fVar13 * fVar2) - fVar14 * fVar6;
+    a.y = fVar8;
+    a.x = fVar9;
     a.z = fVar11;
     a.w = fVar1;
-    b.y = fVar10;
-    b.x = fVar8;
+    b.y = fVar8;
+    b.x = fVar9;
     b.z = fVar11;
     b.w = fVar1;
     pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Lerp

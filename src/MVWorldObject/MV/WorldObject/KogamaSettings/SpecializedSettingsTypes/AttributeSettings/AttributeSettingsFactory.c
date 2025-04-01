@@ -11,16 +11,11 @@ AttributeSettingsFactory::AttributeSettingsFactory_KogamaSettingValueFactoryAttr
           KogamaSettingsCollectionBase *parent,MethodInfo *method)
 
 {
+  cVar1 = (char)unaff_EBX;
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingBool
-                   );
-    func_?(&
-                    TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingEnum
-                   );
-    func_?(&
-                    TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
-                   );
+    func_?();
+    func_?();
+    func_?();
     func_?(&
                     TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingInt
                    );
@@ -34,132 +29,97 @@ AttributeSettingsFactory::AttributeSettingsFactory_KogamaSettingValueFactoryAttr
     cRam_? = '\x01';
   }
   if ((kogamaSettingBasePrototype == (KogamaSettingValueWrapperBase *)0x0) ||
-     (iVar1 = (*(code *)(kogamaSettingBasePrototype->klass->vtable).__unknown.method)
-                         (kogamaSettingBasePrototype,kogamaSettingBasePrototype->klass[1]._0.image),
-     iVar1 == 0)) goto code_?;
-  uVar2 = func_?(2,
-                           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__IKogamaSetting
-                           ,iVar1);
-  switch(uVar2) {
+     (iVar2 = (*(code *)(kogamaSettingBasePrototype->klass->vtable).__unknown.method)(), iVar2 == 0)
+     ) goto code_?;
+  uVar3 = func_?();
+  switch(uVar3) {
   case 0:
-    pAVar3 = (AttributeSettingInt__Class *)
-              TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingBool
-    ;
-    if (((
-         TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingBool
-         ->_1).naturalAligment <= (kogamaSettingBasePrototype->klass->_1).naturalAligment) &&
-       ((kogamaSettingBasePrototype->klass->_1).typeHierarchy
-        [(
-         TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingBool
-         ->_1).naturalAligment - 1] ==
+    bVar4 = (
+            TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingBool
+            ->_1).naturalAligment;
+    if ((bVar4 <= (kogamaSettingBasePrototype->klass->_1).naturalAligment) &&
+       ((kogamaSettingBasePrototype->klass->_1).typeHierarchy[bVar4 - 1] ==
         (Il2CppClass *)
         TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingBool
        )) {
-      pKVar4 = kogamaSettingBasePrototype[1].fields._._Parent_k__BackingField;
-      pSVar5 = (kogamaSettingBasePrototype->fields)._.key;
-      unaff_EBX = (AttributeSettingFloat *)kogamaSettingBasePrototype[1].monitor;
-      kogamaSettingBasePrototype =
-           (KogamaSettingValueWrapperBase *)
-           func_?(
-                          TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingBool
-                          );
-      uVar6 = CONCAT44(valuePair.value,TypeInfo__System__Boolean);
+      pKVar5 = kogamaSettingBasePrototype[1].fields._._Parent_k__BackingField;
+      pSVar6 = (kogamaSettingBasePrototype->fields)._.key;
+      unaff_EBX = (KogamaSettingBoolBase__Class *)kogamaSettingBasePrototype[1].monitor;
+      this = (KogamaSettingBoolBase *)func_?();
       if (valuePair.value == (Object *)0x0) goto code_?;
       if (((valuePair.value)->klass->_0).element_class ==
           (TypeInfo__System__Boolean->_0).element_class) {
-        pbVar7 = (bool *)func_?(valuePair.value);
+        pbVar7 = (bool *)func_?();
         KogamaSettingsCore::KogamaSettingTypes::KogamaSettingBoolBase::KogamaSettingBoolBase__ctor
-                  ((KogamaSettingBoolBase *)kogamaSettingBasePrototype,pSVar5,*pbVar7,parent,
-                   (MethodInfo *)0x0);
-        (((Single__Class *)kogamaSettingBasePrototype)->_0).this_arg.data.__klassIndex =
-             (TypeDefinitionIndex)unaff_EBX;
-        *(KogamaSettingsCollectionBase **)
-         &(((Single__Class *)kogamaSettingBasePrototype)->_0).this_arg.attrs = pKVar4;
-        return (KogamaSettingValueWrapperBase *)(Single__Class *)kogamaSettingBasePrototype;
+                  (this,pSVar6,*pbVar7,parent,(MethodInfo *)0x0);
+        this[1].klass = unaff_EBX;
+        this[1].monitor = (MonitorData *)pKVar5;
+        return (KogamaSettingValueWrapperBase *)this;
       }
 code_?:
-      func_?((int)((ulonglong)uVar6 >> 0x20),(int)uVar6);
-      pAVar3 = (AttributeSettingInt__Class *)extraout_EDX;
+      func_?();
     }
     break;
   case 1:
-    pAVar3 = (AttributeSettingInt__Class *)
-              TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
-    ;
-    if (((kogamaSettingBasePrototype->klass->_1).naturalAligment <
-         (
-         TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
-         ->_1).naturalAligment) ||
-       ((kogamaSettingBasePrototype->klass->_1).typeHierarchy
-        [(
-         TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
-         ->_1).naturalAligment - 1] !=
+    bVar4 = (
+            TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
+            ->_1).naturalAligment;
+    if (((kogamaSettingBasePrototype->klass->_1).naturalAligment < bVar4) ||
+       ((kogamaSettingBasePrototype->klass->_1).typeHierarchy[bVar4 - 1] !=
         (Il2CppClass *)
         TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
        )) break;
-    pSVar5 = (kogamaSettingBasePrototype->fields)._.key;
+    pSVar6 = (kogamaSettingBasePrototype->fields)._.key;
     if ((kogamaSettingBasePrototype[1].klass == (KogamaSettingValueWrapperBase__Class *)0x0) ||
        (pIVar8 = ((kogamaSettingBasePrototype[1].klass)->_0).byval_arg.data.array,
        pIVar8 == (Il2CppArrayType *)0x0)) {
 code_?:
-      uVar6 = func_?();
+      func_?();
       goto code_?;
     }
     piVar9 = pIVar8->sizes;
-    piVar10 = (((kogamaSettingBasePrototype[1].klass)->_0).byval_arg.data.array)->lobounds;
     calculator = (IAttributePointFloatCalculator *)kogamaSettingBasePrototype[1].monitor;
-    pKVar4 = kogamaSettingBasePrototype[1].fields._._Parent_k__BackingField;
-    unaff_EBX = (AttributeSettingFloat *)
-                func_?(
-                               TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
-                               );
-    kogamaSettingBasePrototype = (KogamaSettingValueWrapperBase *)TypeInfo__System__Single;
+    piVar10 = pIVar8->lobounds;
+    pKVar5 = kogamaSettingBasePrototype[1].fields._._Parent_k__BackingField;
+    unaff_EBX = (KogamaSettingBoolBase__Class *)func_?();
     if (valuePair.value == (Object *)0x0) goto code_?;
     if (((valuePair.value)->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class
        ) {
-      pfVar11 = (float *)func_?(valuePair.value);
+      pfVar11 = (float *)func_?();
       AttributeSettingTypes::AttributeSettingFloat::AttributeSettingFloat__ctor_1
-                (unaff_EBX,pSVar5,*pfVar11,(float)piVar9,(float)piVar10,calculator,
-                 (AttributeSettingsExclusivityFlag__Enum)pKVar4,parent,(MethodInfo *)0x0);
+                ((AttributeSettingFloat *)unaff_EBX,pSVar6,*pfVar11,(float)piVar9,(float)piVar10,
+                 calculator,(AttributeSettingsExclusivityFlag__Enum)pKVar5,parent,(MethodInfo *)0x0)
+      ;
       return (KogamaSettingValueWrapperBase *)unaff_EBX;
     }
     goto code_?;
   case 2:
-    pAVar3 = 
-    TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingInt
-    ;
-    if (((
-         TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingInt
-         ->_1).naturalAligment <= (kogamaSettingBasePrototype->klass->_1).naturalAligment) &&
-       ((kogamaSettingBasePrototype->klass->_1).typeHierarchy
-        [(
-         TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingInt
-         ->_1).naturalAligment - 1] ==
+    bVar4 = (
+            TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingInt
+            ->_1).naturalAligment;
+    if ((bVar4 <= (kogamaSettingBasePrototype->klass->_1).naturalAligment) &&
+       ((kogamaSettingBasePrototype->klass->_1).typeHierarchy[bVar4 - 1] ==
         (Il2CppClass *)
         TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingInt
        )) {
-      unaff_EBX = (AttributeSettingFloat *)(kogamaSettingBasePrototype->fields)._.key;
-      if ((kogamaSettingBasePrototype[1].klass != (KogamaSettingValueWrapperBase__Class *)0x0) &&
-         (pIVar8 = ((kogamaSettingBasePrototype[1].klass)->_0).byval_arg.data.array,
-         pIVar8 != (Il2CppArrayType *)0x0)) {
+      pKVar12 = kogamaSettingBasePrototype[1].klass;
+      unaff_EBX = (KogamaSettingBoolBase__Class *)(kogamaSettingBasePrototype->fields)._.key;
+      if ((pKVar12 != (KogamaSettingValueWrapperBase__Class *)0x0) &&
+         (pIVar8 = (pKVar12->_0).byval_arg.data.array, pIVar8 != (Il2CppArrayType *)0x0)) {
         piVar9 = pIVar8->sizes;
-        piVar10 = (((kogamaSettingBasePrototype[1].klass)->_0).byval_arg.data.array)->lobounds;
+        piVar10 = ((pKVar12->_0).byval_arg.data.array)->lobounds;
         calculator_00 = (IAttributePointIntCalculator *)kogamaSettingBasePrototype[1].monitor;
-        pKVar4 = kogamaSettingBasePrototype[1].fields._._Parent_k__BackingField;
-        this = (AttributeSettingInt *)
-               func_?(
-                              TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingInt
-                              );
-        kogamaSettingBasePrototype = (KogamaSettingValueWrapperBase *)TypeInfo__System__Int32;
+        pKVar5 = kogamaSettingBasePrototype[1].fields._._Parent_k__BackingField;
+        this_00 = (AttributeSettingInt *)func_?();
         if (valuePair.value != (Object *)0x0) {
           if (((valuePair.value)->klass->_0).element_class ==
               (TypeInfo__System__Int32->_0).element_class) {
-            piVar12 = (int32_t *)func_?(valuePair.value);
+            piVar13 = (int32_t *)func_?();
             AttributeSettingTypes::AttributeSettingInt::AttributeSettingInt__ctor_1
-                      (this,(String *)unaff_EBX,*piVar12,(int32_t)piVar9,(int32_t)piVar10,
-                       calculator_00,(AttributeSettingsExclusivityFlag__Enum)pKVar4,parent,
+                      (this_00,(String *)unaff_EBX,*piVar13,(int32_t)piVar9,(int32_t)piVar10,
+                       calculator_00,(AttributeSettingsExclusivityFlag__Enum)pKVar5,parent,
                        (MethodInfo *)0x0);
-            return (KogamaSettingValueWrapperBase *)this;
+            return (KogamaSettingValueWrapperBase *)this_00;
           }
           goto code_?;
         }
@@ -170,46 +130,35 @@ code_?:
   default:
     goto code_?;
   case 4:
-    pAVar3 = (AttributeSettingInt__Class *)
-              TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingEnum
-    ;
-    if (((
-         TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingEnum
-         ->_1).naturalAligment <= (kogamaSettingBasePrototype->klass->_1).naturalAligment) &&
-       ((kogamaSettingBasePrototype->klass->_1).typeHierarchy
-        [(
-         TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingEnum
-         ->_1).naturalAligment - 1] ==
+    bVar4 = (
+            TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingEnum
+            ->_1).naturalAligment;
+    if ((bVar4 <= (kogamaSettingBasePrototype->klass->_1).naturalAligment) &&
+       ((kogamaSettingBasePrototype->klass->_1).typeHierarchy[bVar4 - 1] ==
         (Il2CppClass *)
         TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingEnum
        )) {
-      unaff_EBX = (AttributeSettingFloat *)(kogamaSettingBasePrototype->fields)._.key;
-      pMVar13 = kogamaSettingBasePrototype[1].monitor;
-      if ((kogamaSettingBasePrototype[1].klass != (KogamaSettingValueWrapperBase__Class *)0x0) &&
-         (pIVar8 = ((kogamaSettingBasePrototype[1].klass)->_0).byval_arg.data.array,
-         pIVar8 != (Il2CppArrayType *)0x0)) {
+      pKVar12 = kogamaSettingBasePrototype[1].klass;
+      unaff_EBX = (KogamaSettingBoolBase__Class *)(kogamaSettingBasePrototype->fields)._.key;
+      pKVar14 = (KogamaSettingEnumBase__Class *)kogamaSettingBasePrototype[1].monitor;
+      if ((pKVar12 != (KogamaSettingValueWrapperBase__Class *)0x0) &&
+         (pIVar8 = (pKVar12->_0).byval_arg.data.array, pIVar8 != (Il2CppArrayType *)0x0)) {
         piVar9 = pIVar8->sizes;
-        piVar10 = (((kogamaSettingBasePrototype[1].klass)->_0).byval_arg.data.array)->lobounds;
-        pKVar4 = kogamaSettingBasePrototype[1].fields._._Parent_k__BackingField;
-        kogamaSettingBasePrototype =
-             (KogamaSettingValueWrapperBase *)
-             func_?(
-                            TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingEnum
-                            );
-        uVar6 = CONCAT44(valuePair.value,TypeInfo__System__Int32);
+        piVar10 = ((pKVar12->_0).byval_arg.data.array)->lobounds;
+        pKVar5 = kogamaSettingBasePrototype[1].fields._._Parent_k__BackingField;
+        this_01 = (KogamaSettingEnumBase *)func_?();
         if (valuePair.value != (Object *)0x0) {
           if (((valuePair.value)->klass->_0).element_class ==
               (TypeInfo__System__Int32->_0).element_class) {
-            piVar12 = (int32_t *)func_?(valuePair.value);
+            piVar13 = (int32_t *)func_?();
             KogamaSettingsCore::KogamaSettingTypes::KogamaSettingEnumBase::
             KogamaSettingEnumBase__ctor
-                      ((KogamaSettingEnumBase *)kogamaSettingBasePrototype,(String *)unaff_EBX,
-                       *piVar12,(int32_t)piVar9,(int32_t)piVar10,parent,(MethodInfo *)0x0);
-            (((Single__Class *)kogamaSettingBasePrototype)->_0).this_arg.data.dummy = pMVar13;
-            func_?(&(((Single__Class *)kogamaSettingBasePrototype)->_0).this_arg,pMVar13);
-            *(KogamaSettingsCollectionBase **)
-             &(((Single__Class *)kogamaSettingBasePrototype)->_0).this_arg.attrs = pKVar4;
-            return (KogamaSettingValueWrapperBase *)(Single__Class *)kogamaSettingBasePrototype;
+                      (this_01,(String *)unaff_EBX,*piVar13,(int32_t)piVar9,(int32_t)piVar10,parent,
+                       (MethodInfo *)0x0);
+            this_01[1].klass = pKVar14;
+            func_?();
+            this_01[1].monitor = (MonitorData *)pKVar5;
+            return (KogamaSettingValueWrapperBase *)this_01;
           }
           goto code_?;
         }
@@ -217,27 +166,19 @@ code_?:
       goto code_?;
     }
   }
-  func_?(kogamaSettingBasePrototype,pAVar3);
-  valuePair.value = extraout_EDX_00;
+  func_?();
 code_?:
-  func_?(valuePair.value,kogamaSettingBasePrototype);
+  cVar1 = (char)unaff_EBX;
+  func_?();
 code_?:
-  uVar2 = func_?(&TypeInfo__System__NotImplementedException);
-  this_00 = (NotImplementedException *)func_?(uVar2);
+  func_?();
+  this_02 = (NotImplementedException *)func_?();
   mscorlib.dll::System::NotImplementedException::NotImplementedException__ctor
-            (this_00,(MethodInfo *)0x0);
-  uVar2 = func_?(&
-                           MethodInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingsFactory__KogamaSettingValueFactoryAttributeSettings_System__Collections__Generic__KeyValuePair<System::Object,_System::Object>__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase_
-                          );
-  fVar14 = (float10)func_?(this_00,uVar2);
-  pbVar15 = (byte *)((int)unaff_EBX * 9 + -0x2373ef10);
-  bVar16 = *pbVar15;
-  bVar17 = *pbVar15;
-  *pbVar15 = bVar17 + extraout_CH + NAN(fVar14);
-  LOCK();
-  cRam_? = cRam_? + extraout_DL +
-                 (CARRY1(bVar16,extraout_CH) || CARRY1(bVar17 + extraout_CH,NAN(fVar14)));
-  UNLOCK();
+            (this_02,(MethodInfo *)0x0);
+  func_?();
+  cVar15 = (undefined1 *)0xffffffeb < &stack0xffffffd8;
+  iVar2 = func_?();
+  *(char *)(iVar2 + 0x6e10eed8) = *(char *)(iVar2 + 0x6e10eed8) + cVar1 + cVar15;
                     /* WARNING: Bad instruction - Truncating control flow here */
   halt_baddata();
 }

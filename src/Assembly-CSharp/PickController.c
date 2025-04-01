@@ -79,22 +79,24 @@ void Assembly-CSharp.dll::PickController::PickController_Initialize
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  ppUVar1 = &(this->fields).pickCallback;
   (this->fields).shouldSetText = setText;
-  (this->fields).pickCallback = onPickCallback;
-  func_?(&(this->fields).pickCallback,onPickCallback);
+  *ppUVar1 = onPickCallback;
+  func_?(ppUVar1,onPickCallback);
   original = (this->fields).pickHelperPrefab;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  pOVar1 = (Object__Class *)
+  pOVar2 = (Object__Class *)
            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                      ((Object *)original,
                       PickHelper_MethodInfo__UnityEngine__Object__Instantiate<PickHelper>_PickHelper_
                      );
   if (value != (Object *)0x0) {
-    value[1].klass = pOVar1;
-    func_?(value + 1,pOVar1);
-    pOVar1 = value[1].klass;
+    pOVar3 = value + 1;
+    pOVar3->klass = pOVar2;
+    func_?(pOVar3,pOVar2);
+    pOVar2 = pOVar3->klass;
     this_00 = (UnityAction_2_System_Object_System_Object_ *)
               func_?(
                              TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_MVWorldObjectClient>
@@ -104,12 +106,13 @@ void Assembly-CSharp.dll::PickController::PickController_Initialize
               (this_00,(Object *)this,
                MethodInfo__PickController__SelectionChanged_MVWorldObjectClient__MVWorldObjectClient_
                ,(MethodInfo *)0x0);
-    if ((pOVar1 != (Object__Class *)0x0) &&
-       (piVar2 = *(int **)&(pOVar1->_0).byval_arg.attrs, piVar2 != (int *)0x0)) {
-      (**(code **)(*piVar2 + 0x318))
-                (piVar2,StringLiteral_Select_wo_,*(undefined4 *)(*piVar2 + 0x31c));
-      (pOVar1->_0).byval_arg.data.typeHandle = (Il2CppMetadataTypeHandle)this_00;
-      func_?(&(pOVar1->_0).byval_arg,this_00);
+    if ((pOVar2 != (Object__Class *)0x0) &&
+       (piVar4 = *(int **)&(pOVar2->_0).byval_arg.attrs, piVar4 != (int *)0x0)) {
+      (**(code **)(*piVar4 + 0x318))
+                (piVar4,StringLiteral_Select_wo_,*(undefined4 *)(*piVar4 + 0x31c));
+      pIVar5 = &(pOVar2->_0).byval_arg;
+      (pIVar5->data).typeHandle = (Il2CppMetadataTypeHandle)this_00;
+      func_?(pIVar5,this_00);
       root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
       callbackFunction =
@@ -134,8 +137,8 @@ void Assembly-CSharp.dll::PickController::PickController_Initialize
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -283,11 +286,11 @@ void Assembly-CSharp.dll::PickController::PickController_SelectionChanged
     cRam_? = '\x01';
   }
   if (wo == (MVWorldObjectClient *)0x0) goto code_?;
-  (this->fields).pickedWoId = (wo->fields)._.id;
+  this_00 = &(this->fields).pickedWoId;
+  *this_00 = (wo->fields)._.id;
   if ((this->fields).shouldSetText != 0) {
     pTVar1 = (this->fields).woIDText;
-    pSVar2 = mscorlib.dll::System::Int32::Int32_ToString
-                       ((Int32 *)&(this->fields).pickedWoId,(MethodInfo *)0x0);
+    pSVar2 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)this_00,(MethodInfo *)0x0);
     if (pTVar1 != (Text *)0x0) {
       (*(code *)(pTVar1->klass->vtable).set_text.method)
                 (pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
@@ -329,11 +332,10 @@ code_?:
     return;
   }
 code_?:
-  if ((this->fields).pickCallback != (UnityAction_1_System_Int32_ *)0x0) {
-    pUVar6 = (this->fields).pickCallback;
+  pUVar6 = (this->fields).pickCallback;
+  if (pUVar6 != (UnityAction_1_System_Int32_ *)0x0) {
     (*(pUVar6->fields)._._.invoke_impl)
-              ((pUVar6->fields)._._.method_code,(this->fields).pickedWoId,
-               (pUVar6->fields)._._.method);
+              ((pUVar6->fields)._._.method_code,*this_00,(pUVar6->fields)._._.method);
   }
   root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                    ((Component *)this,(MethodInfo *)0x0);

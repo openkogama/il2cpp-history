@@ -37,19 +37,20 @@ void Assembly-CSharp.dll::ClosestPointPoint::ClosestPointPoint_OnValidate
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).transform;
+  ppTVar2 = &(this->fields).transform;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                     ((Object_1 *)pTVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
+  if (bVar3 != 0) {
     pTVar1 = (Transform *)
              UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
                        ((Component *)this,
                         UnityEngine__Transform_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Transform>__
                        );
-    (this->fields).transform = pTVar1;
-    func_?(&(this->fields).transform,pTVar1);
+    *ppTVar2 = pTVar1;
+    func_?(ppTVar2,pTVar1);
   }
   return;
 }

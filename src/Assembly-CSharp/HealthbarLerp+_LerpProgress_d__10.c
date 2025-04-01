@@ -23,58 +23,60 @@ bool Assembly-CSharp.dll::HealthbarLerp+<LerpProgress>d__10::
     if ((float)this - (pHVar2->fields).lerpStart < (pHVar2->fields).lerpDelay) {
       this = (HealthbarLerp_LerpProgress_d_10 *)0x0;
       pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&this);
-      (pHVar1->fields).__2__current = pOVar3;
-      func_?(&(pHVar1->fields).__2__current,pOVar3);
+      ppOVar4 = &(pHVar1->fields).__2__current;
+      *ppOVar4 = pOVar3;
+      func_?(ppOVar4,pOVar3);
       (pHVar1->fields).__1__state = 1;
       return 1;
     }
-    fVar4 = 0.0;
+    fVar5 = 0.0;
     break;
   case 2:
-    fVar4 = (this->fields)._progress_5__2;
+    fVar5 = (this->fields)._progress_5__2;
     (this->fields).__1__state = -1;
     this = (HealthbarLerp_LerpProgress_d_10 *)
            UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
     if (pHVar2 == (HealthbarLerp *)0x0) goto code_?;
-    fVar4 = (float)this / (pHVar2->fields).lerpForSeconds + fVar4;
+    fVar5 = (float)this / (pHVar2->fields).lerpForSeconds + fVar5;
     break;
   case 3:
     (this->fields).__1__state = -1;
   default:
     return 0;
   }
-  (pHVar1->fields)._progress_5__2 = fVar4;
-  if (_UNK_? <= fVar4) {
+  (pHVar1->fields)._progress_5__2 = fVar5;
+  if (_UNK_? <= fVar5) {
 code_?:
     this = (HealthbarLerp_LerpProgress_d_10 *)0x0;
     pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&this);
-    (pHVar1->fields).__2__current = pOVar3;
-    func_?(&(pHVar1->fields).__2__current,pOVar3);
+    ppOVar4 = &(pHVar1->fields).__2__current;
+    *ppOVar4 = pOVar3;
+    func_?(ppOVar4,pOVar3);
     (pHVar1->fields).__1__state = 3;
     return 1;
   }
-  pPVar5 = (pHVar2->fields).targetProgressBar;
+  pPVar6 = (pHVar2->fields).targetProgressBar;
   this_00 = (ProgressBarAndroid *)(pHVar2->fields).progressBar;
-  if (pPVar5 != (ProgressBar *)0x0) {
-    fVar4 = (pHVar1->fields)._progress_5__2;
-    fVar6 = (pHVar2->fields).startProgress;
-    if (fVar4 < 0.0) {
-      fVar4 = 0.0;
+  if (pPVar6 != (ProgressBar *)0x0) {
+    fVar7 = (pHVar2->fields).startProgress;
+    if (fVar5 < 0.0) {
+      fVar5 = 0.0;
     }
-    else if (_UNK_? < fVar4) {
-      fVar4 = _UNK_?;
+    else if (_UNK_? < fVar5) {
+      fVar5 = _UNK_?;
     }
     if (this_00 != (ProgressBarAndroid *)0x0) {
       ProgressBarAndroid::ProgressBarAndroid_set_Progress
-                (this_00,((pPVar5->fields).progress - fVar6) * fVar4 + fVar6,(MethodInfo *)0x0);
-      pPVar5 = (pHVar2->fields).progressBar;
-      if ((pPVar5 != (ProgressBar *)0x0) &&
-         (pPVar7 = (pHVar2->fields).targetProgressBar, pPVar7 != (ProgressBar *)0x0)) {
-        if ((pPVar7->fields).progress < (pPVar5->fields).progress) {
+                (this_00,((pPVar6->fields).progress - fVar7) * fVar5 + fVar7,(MethodInfo *)0x0);
+      pPVar6 = (pHVar2->fields).progressBar;
+      if ((pPVar6 != (ProgressBar *)0x0) &&
+         (pPVar8 = (pHVar2->fields).targetProgressBar, pPVar8 != (ProgressBar *)0x0)) {
+        if ((pPVar8->fields).progress < (pPVar6->fields).progress) {
           this = (HealthbarLerp_LerpProgress_d_10 *)0x0;
           pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&this);
-          (pHVar1->fields).__2__current = pOVar3;
-          func_?(&(pHVar1->fields).__2__current,pOVar3);
+          ppOVar4 = &(pHVar1->fields).__2__current;
+          *ppOVar4 = pOVar3;
+          func_?(ppOVar4,pOVar3);
           (pHVar1->fields).__1__state = 2;
           return 1;
         }
@@ -83,19 +85,16 @@ code_?:
     }
   }
 code_?:
-  bVar8 = 0;
+  bVar9 = 0;
   func_?();
-  cVar9 = in(extraout_DX);
-  pbVar10 = (byte *)((int)&pHVar1[4].fields.__1__state + 1);
+  pbVar10 = (byte *)(in_FS + 0xe7f51042);
   bVar11 = *pbVar10;
-  bVar12 = *pbVar10 + (byte)extraout_DX;
-  *pbVar10 = bVar12 + bVar8;
-  *(char *)(unaff_EBX + -0x33efbc94) =
-       *(char *)(unaff_EBX + -0x33efbc94) + cVar9 +
-       (CARRY1(bVar11,(byte)extraout_DX) || CARRY1(bVar12,bVar8));
-  pcVar13 = (code *)swi(3);
-  bVar14 = (*pcVar13)();
-  return bVar14;
+  bVar12 = *pbVar10;
+  *pbVar10 = bVar12 + extraout_CL + bVar9;
+  *unaff_EBX = *unaff_EBX + (char)unaff_EBX +
+               (CARRY1(bVar11,extraout_CL) || CARRY1(bVar12 + extraout_CL,bVar9));
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 

@@ -193,8 +193,8 @@ Vector3 * Assembly-CSharp.dll::MVAdvancedGhost::MVAdvancedGhost_GetTargetPositio
       uVar3._4_4_ = pVVar1->y;
       fVar4 = pVVar1->z;
       if (cRam_? == '\0') {
-        VStack_2.x = 3.3638037e-29;
-        VStack_2.y = 2.8535002e-28;
+        VStack_2.x = 3.3555944e-29;
+        VStack_2.y = 2.8080386e-28;
         func_?();
         cRam_? = '\x01';
       }
@@ -254,160 +254,166 @@ void Assembly-CSharp.dll::MVAdvancedGhost::MVAdvancedGhost_Initialize
     cRam_? = '\x01';
   }
   MVBlueprintBase::MVBlueprintBase_Initialize((MVBlueprintBase *)this,(MethodInfo *)0x0);
-  cubeModelBase =
-       (MVCubeModelInstance *)
-       MVBlueprintBase::MVBlueprintBase_GetChild
-                 ((MVBlueprintBase *)this,StringLiteral_BodyCubeModel,(MethodInfo *)0x0);
-  if ((cubeModelBase != (MVCubeModelInstance *)0x0) &&
-     (((cubeModelBase->klass->_1).naturalAligment <
-       (TypeInfo__MVCubeModelInstance->_1).naturalAligment ||
-      ((MVCubeModelInstance__Class *)
-       (cubeModelBase->klass->_1).typeHierarchy
-       [(TypeInfo__MVCubeModelInstance->_1).naturalAligment - 1] != TypeInfo__MVCubeModelInstance)))
-     ) {
-    func_?(cubeModelBase,TypeInfo__MVCubeModelInstance);
-    goto code_?;
-  }
-  pGVar1 = (this->fields)._._._.gameObject;
-  if (pGVar1 == (GameObject *)0x0) goto code_?;
-  pCVar2 = (ClientSideNPCInteractionHandler *)
-           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
-                     (pGVar1,
-                      ClientSideNPCInteractionHandler_MethodInfo__UnityEngine__GameObject__GetComponent<ClientSideNPCInteractionHandler>__
-                     );
-  (this->fields).interactionHandler = pCVar2;
-  func_?(&(this->fields).interactionHandler,pCVar2);
-  pCVar2 = (this->fields).interactionHandler;
-  if (pCVar2 == (ClientSideNPCInteractionHandler *)0x0) goto code_?;
-  MVComponent::MVComponent_FindWorldObjectParent((MVComponent *)pCVar2,(MethodInfo *)0x0);
-  pCVar2 = (this->fields).interactionHandler;
-  if (pCVar2 == (ClientSideNPCInteractionHandler *)0x0) goto code_?;
-  pGVar1 = (pCVar2->fields).attachmentObjectForHealRay;
-  (this->fields).attachmentObject = pGVar1;
-  func_?(&(this->fields).attachmentObject,pGVar1);
-  pGVar1 = (this->fields)._._._.gameObject;
-  if (pGVar1 == (GameObject *)0x0) goto code_?;
-  pCVar3 = (ClientSideNPCInteractable *)
-           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
-                     (pGVar1,
-                      ClientSideNPCInteractable_MethodInfo__UnityEngine__GameObject__AddComponent<ClientSideNPCInteractable>__
-                     );
-  (this->fields).interactable = pCVar3;
-  func_?(&(this->fields).interactable,pCVar3);
-  pCVar3 = (this->fields).interactable;
-  this_02 = (Action_3_Single_Object_ByteEnum_ *)
-            func_?(
-                           TypeInfo__System__Action<float,_MVPlayer,_MV::Common::PlayerKilledByType>
-                           );
-  mscorlib.dll::System::Action`3[Single,Object,ByteEnum]::Action_3_Single_Object_ByteEnum___ctor
-            (this_02,(Object *)this,
-             MethodInfo__MVAdvancedGhost__ReceiveDamage_float__MVPlayer__MV__Common__PlayerKilledByType_
-             ,(MethodInfo *)0x0);
-  this_03 = (Action_2_Single_Object_ *)func_?(TypeInfo__System__Action<float,_MVPlayer>);
-  mscorlib.dll::System::Action`2[Single,Object]::Action_2_Single_Object___ctor
-            (this_03,(Object *)this,MethodInfo__MVAdvancedGhost__RecieveHealing_float__MVPlayer_,
-             (MethodInfo *)0x0);
-  if (pCVar3 == (ClientSideNPCInteractable *)0x0) goto code_?;
-  ClientSideNPCInteractable::ClientSideNPCInteractable_Init
-            (pCVar3,(Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)this_02,
-             (Action_2_Single_MVPlayer_ *)this_03,(MethodInfo *)0x0);
-  pGVar1 = (this->fields)._._._.gameObject;
-  if (pGVar1 == (GameObject *)0x0) goto code_?;
-  advancedGhostMotor =
-       (AdvancedGhostMotor *)
-       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
-                 (pGVar1,
-                  AdvancedGhostMotor_MethodInfo__UnityEngine__GameObject__AddComponent<AdvancedGhostMotor>__
-                 );
-  pGVar1 = (this->fields)._._._.gameObject;
-  if (pGVar1 == (GameObject *)0x0) goto code_?;
-  pAVar4 = (AdvancedGhostBehaviour *)
-           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentInChildren_1
-                     (pGVar1,
-                      AdvancedGhostBehaviour_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<AdvancedGhostBehaviour>__
-                     );
-  (this->fields).advancedGhostBehaviour = pAVar4;
-  func_?(&(this->fields).advancedGhostBehaviour,pAVar4);
-  pAVar4 = (this->fields).advancedGhostBehaviour;
-  pCVar3 = (this->fields).interactable;
-  this_04 = (Func_1_System_Threading_Tasks_VoidTaskResult_ *)
-            func_?(TypeInfo__System__Func<bool>);
-  mscorlib.dll::System::Func`1[System::Threading::Tasks::VoidTaskResult]::
-  Func_1_System_Threading_Tasks_VoidTaskResult___ctor
-            (this_04,(Object *)pCVar3,MethodInfo__ClientSideNPCInteractable__IsDead__,
-             (MethodInfo *)0x0);
-  if (pAVar4 == (AdvancedGhostBehaviour *)0x0) goto code_?;
-  AdvancedGhostBehaviour::AdvancedGhostBehaviour_Init
-            (pAVar4,(MVCubeModelBase *)cubeModelBase,advancedGhostMotor,(Func_1_Boolean_ *)this_04,
-             (this->fields)._._._._.id,(MethodInfo *)0x0);
-  pAVar4 = (this->fields).advancedGhostBehaviour;
-  if ((pAVar4 == (AdvancedGhostBehaviour *)0x0) ||
-     (this_00 = (pAVar4->fields).GhostVisualization, this_00 == (AdvancedGhostVisualizaton *)0x0))
-  goto code_?;
-  transformParent =
-       UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                 ((Component *)this_00,(MethodInfo *)0x0);
-  this_05 = (AdvancedGhostCubeModelWrapper *)
-            func_?(TypeInfo__AdvancedGhostCubeModelWrapper);
-  AdvancedGhostCubeModelWrapper::AdvancedGhostCubeModelWrapper__ctor
-            (this_05,cubeModelBase,transformParent,(MethodInfo *)0x0);
-  (this->fields).editableCubeModelWrapper = this_05;
-  func_?(&(this->fields).editableCubeModelWrapper,this_05);
-  pAVar4 = (this->fields).advancedGhostBehaviour;
-  if (pAVar4 == (AdvancedGhostBehaviour *)0x0) goto code_?;
-  pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                     ((Component *)pAVar4,(MethodInfo *)0x0);
-  pAVar4 = (this->fields).advancedGhostBehaviour;
-  if ((pAVar4 == (AdvancedGhostBehaviour *)0x0) || (advancedGhostMotor == (AdvancedGhostMotor *)0x0)
-     ) goto code_?;
-  AdvancedGhostMotor::AdvancedGhostMotor_Init
-            (advancedGhostMotor,pGVar1,(MVInteractableBase *)(this->fields).interactable,
-             (pAVar4->fields).cullingSubscriberBase,(MethodInfo *)0x0);
-  MVar5 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-  if (MVar5 == MVGameMode__Enum_Edit) {
-    MVAdvancedGhost_SetupEditorIcon(this,(MVCubeModelBase *)cubeModelBase,1,(MethodInfo *)0x0);
-    pUVar6 = (this->fields)._._._.PositionChanged;
-    this_06 = (UnityAction_2_System_Object_System_Object_ *)
-              func_?(
-                             TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
-                             );
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              (this_06,(Object *)this,
-               MethodInfo__MVAdvancedGhost__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_
-               ,(MethodInfo *)0x0);
-    pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pUVar6,(Delegate *)this_06,(MethodInfo *)0x0);
-    if (pDVar7 != (Delegate *)0x0) {
-      pUVar6 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
-      if (pUVar6 != (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) {
-        (this->fields)._._._.PositionChanged = pUVar6;
-        iVar8 = func_?();
-        if (iVar8 != 0) goto code_?;
-      }
+  pMStack_1 = (MVCubeModelInstance *)
+              MVBlueprintBase::MVBlueprintBase_GetChild
+                        ((MVBlueprintBase *)this,StringLiteral_BodyCubeModel,(MethodInfo *)0x0);
+  if (pMStack_1 == (MVCubeModelInstance *)0x0) {
+    pMStack_1 = (MVCubeModelInstance *)0x0;
 code_?:
+    pGVar2 = (this->fields)._._._.gameObject;
+    if (pGVar2 == (GameObject *)0x0) goto code_?;
+    pCVar3 = (ClientSideNPCInteractionHandler *)
+             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                       (pGVar2,
+                        ClientSideNPCInteractionHandler_MethodInfo__UnityEngine__GameObject__GetComponent<ClientSideNPCInteractionHandler>__
+                       );
+    ppCVar4 = &(this->fields).interactionHandler;
+    *ppCVar4 = pCVar3;
+    func_?(ppCVar4,pCVar3);
+    if (*ppCVar4 == (ClientSideNPCInteractionHandler *)0x0) goto code_?;
+    MVComponent::MVComponent_FindWorldObjectParent((MVComponent *)*ppCVar4,(MethodInfo *)0x0);
+    if (*ppCVar4 == (ClientSideNPCInteractionHandler *)0x0) goto code_?;
+    pGVar2 = ((*ppCVar4)->fields).attachmentObjectForHealRay;
+    ppGVar5 = &(this->fields).attachmentObject;
+    *ppGVar5 = pGVar2;
+    func_?(ppGVar5,pGVar2);
+    pGVar2 = (this->fields)._._._.gameObject;
+    if (pGVar2 == (GameObject *)0x0) goto code_?;
+    pCVar6 = (ClientSideNPCInteractable *)
+             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
+                       (pGVar2,
+                        ClientSideNPCInteractable_MethodInfo__UnityEngine__GameObject__AddComponent<ClientSideNPCInteractable>__
+                       );
+    ppCVar7 = &(this->fields).interactable;
+    *ppCVar7 = pCVar6;
+    func_?(ppCVar7,pCVar6);
+    pCVar6 = *ppCVar7;
+    this_02 = (Action_3_Single_Object_ByteEnum_ *)
+              func_?(
+                             TypeInfo__System__Action<float,_MVPlayer,_MV::Common::PlayerKilledByType>
+                             );
+    mscorlib.dll::System::Action`3[Single,Object,ByteEnum]::Action_3_Single_Object_ByteEnum___ctor
+              (this_02,(Object *)this,
+               MethodInfo__MVAdvancedGhost__ReceiveDamage_float__MVPlayer__MV__Common__PlayerKilledByType_
+               ,(MethodInfo *)0x0);
+    this_03 = (Action_2_Single_Object_ *)func_?(TypeInfo__System__Action<float,_MVPlayer>);
+    mscorlib.dll::System::Action`2[Single,Object]::Action_2_Single_Object___ctor
+              (this_03,(Object *)this,MethodInfo__MVAdvancedGhost__RecieveHealing_float__MVPlayer_,
+               (MethodInfo *)0x0);
+    if (pCVar6 == (ClientSideNPCInteractable *)0x0) goto code_?;
+    ClientSideNPCInteractable::ClientSideNPCInteractable_Init
+              (pCVar6,(Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)this_02,
+               (Action_2_Single_MVPlayer_ *)this_03,(MethodInfo *)0x0);
+    pGVar2 = (this->fields)._._._.gameObject;
+    if (pGVar2 == (GameObject *)0x0) goto code_?;
+    advancedGhostMotor =
+         (AdvancedGhostMotor *)
+         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
+                   (pGVar2,
+                    AdvancedGhostMotor_MethodInfo__UnityEngine__GameObject__AddComponent<AdvancedGhostMotor>__
+                   );
+    pGVar2 = (this->fields)._._._.gameObject;
+    if (pGVar2 == (GameObject *)0x0) goto code_?;
+    pAVar8 = (AdvancedGhostBehaviour *)
+              UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+              GameObject_GetComponentInChildren_1
+                        (pGVar2,
+                         AdvancedGhostBehaviour_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<AdvancedGhostBehaviour>__
+                        );
+    ppAVar9 = &(this->fields).advancedGhostBehaviour;
+    *ppAVar9 = pAVar8;
+    func_?(ppAVar9,pAVar8);
+    pAVar8 = *ppAVar9;
+    pCVar6 = (this->fields).interactable;
+    this_04 = (Func_1_System_Threading_Tasks_VoidTaskResult_ *)
+              func_?(TypeInfo__System__Func<bool>);
+    mscorlib.dll::System::Func`1[System::Threading::Tasks::VoidTaskResult]::
+    Func_1_System_Threading_Tasks_VoidTaskResult___ctor
+              (this_04,(Object *)pCVar6,MethodInfo__ClientSideNPCInteractable__IsDead__,
+               (MethodInfo *)0x0);
+    if (pAVar8 == (AdvancedGhostBehaviour *)0x0) goto code_?;
+    AdvancedGhostBehaviour::AdvancedGhostBehaviour_Init
+              (pAVar8,(MVCubeModelBase *)pMStack_1,advancedGhostMotor,(Func_1_Boolean_ *)this_04,
+               (this->fields)._._._._.id,(MethodInfo *)0x0);
+    pAVar8 = (this->fields).advancedGhostBehaviour;
+    if ((pAVar8 == (AdvancedGhostBehaviour *)0x0) ||
+       (this_00 = (pAVar8->fields).GhostVisualization, this_00 == (AdvancedGhostVisualizaton *)0x0)
+       ) goto code_?;
+    transformParent =
+         UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                   ((Component *)this_00,(MethodInfo *)0x0);
+    this_05 = (AdvancedGhostCubeModelWrapper *)
+              func_?(TypeInfo__AdvancedGhostCubeModelWrapper);
+    AdvancedGhostCubeModelWrapper::AdvancedGhostCubeModelWrapper__ctor
+              (this_05,pMStack_1,transformParent,(MethodInfo *)0x0);
+    ppAVar10 = &(this->fields).editableCubeModelWrapper;
+    *ppAVar10 = this_05;
+    func_?(ppAVar10,this_05);
+    pAVar8 = (this->fields).advancedGhostBehaviour;
+    if (pAVar8 == (AdvancedGhostBehaviour *)0x0) goto code_?;
+    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                        ((Component *)pAVar8,(MethodInfo *)0x0);
+    pAVar8 = (this->fields).advancedGhostBehaviour;
+    if ((pAVar8 == (AdvancedGhostBehaviour *)0x0) ||
+       (advancedGhostMotor == (AdvancedGhostMotor *)0x0)) goto code_?;
+    AdvancedGhostMotor::AdvancedGhostMotor_Init
+              (advancedGhostMotor,pGVar2,(MVInteractableBase *)(this->fields).interactable,
+               (pAVar8->fields).cullingSubscriberBase,(MethodInfo *)0x0);
+    MVar11 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+    if (MVar11 == MVGameMode__Enum_Edit) {
+      MVAdvancedGhost_SetupEditorIcon(this,(MVCubeModelBase *)pMStack_1,1,(MethodInfo *)0x0);
+      pUVar12 = (this->fields)._._._.PositionChanged;
+      this_06 = (UnityAction_2_System_Object_System_Object_ *)
+                func_?(
+                               TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
+                               );
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                (this_06,(Object *)this,
+                 MethodInfo__MVAdvancedGhost__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_
+                 ,(MethodInfo *)0x0);
+      pDVar13 = mscorlib.dll::System::Delegate::Delegate_Combine
+                          ((Delegate *)pUVar12,(Delegate *)this_06,(MethodInfo *)0x0);
+      if (pDVar13 == (Delegate *)0x0) {
+        (this->fields)._._._.PositionChanged =
+             (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
+      }
+      else {
+        pUVar12 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
+        if (pUVar12 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0)
+        goto code_?;
+        (this->fields)._._._.PositionChanged = pUVar12;
+        iVar14 = func_?();
+        if (iVar14 == 0) goto code_?;
+      }
       func_?();
-      goto code_?;
     }
-    (this->fields)._._._.PositionChanged =
-         (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
+    pMVar15 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if ((pMVar15 != (MVNetworkGame *)0x0) &&
+       (this_01 = (pMVar15->fields)._GameStateController_k__BackingField,
+       this_01 != (MVGameModeChangeNotifier *)0x0)) {
+      MVGameModeChangeNotifier::MVGameModeChangeNotifier_AddUpdateObject
+                (this_01,(IGameStateControllerSubscriber *)this,(MethodInfo *)0x0);
+      (*(code *)(this->klass->vtable).OnDataUpdate.method)
+                (this,(this->klass->vtable).OnRunTimeDataUpdate.methodPtr);
+      return;
+    }
+  }
+  else {
+    bVar16 = (TypeInfo__MVCubeModelInstance->_1).naturalAligment;
+    if ((bVar16 <= (pMStack_1->klass->_1).naturalAligment) &&
+       ((MVCubeModelInstance__Class *)(pMStack_1->klass->_1).typeHierarchy[bVar16 - 1] ==
+        TypeInfo__MVCubeModelInstance)) goto code_?;
+    func_?(pMStack_1,TypeInfo__MVCubeModelInstance);
+code_?:
+    func_?();
 code_?:
     func_?();
   }
-  pMVar9 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar9 != (MVNetworkGame *)0x0) &&
-     (this_01 = (pMVar9->fields)._GameStateController_k__BackingField,
-     this_01 != (MVGameModeChangeNotifier *)0x0)) {
-    MVGameModeChangeNotifier::MVGameModeChangeNotifier_AddUpdateObject
-              (this_01,(IGameStateControllerSubscriber *)this,(MethodInfo *)0x0);
-    (*(code *)(this->klass->vtable).OnDataUpdate.method)
-              (this,(this->klass->vtable).OnRunTimeDataUpdate.methodPtr);
-    return;
-  }
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
   return;
 }
 
@@ -436,18 +442,18 @@ void Assembly-CSharp.dll::MVAdvancedGhost::MVAdvancedGhost_InitializeInventory
                        (pGVar1,
                         AdvancedGhostBehaviour_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<AdvancedGhostBehaviour>__
                        );
-    (this->fields).advancedGhostBehaviour = pAVar2;
-    func_?(&(this->fields).advancedGhostBehaviour,pAVar2);
+    ppAVar3 = &(this->fields).advancedGhostBehaviour;
+    *ppAVar3 = pAVar2;
+    func_?(ppAVar3,pAVar2);
     cubeModelBody =
          (MVCubeModelBase *)
          MVBlueprintBase::MVBlueprintBase_GetChild
                    ((MVBlueprintBase *)this,StringLiteral_BodyCubeModel,(MethodInfo *)0x0);
     if (cubeModelBody != (MVCubeModelBase *)0x0) {
-      if (((TypeInfo__MVCubeModelBase->_1).naturalAligment <=
-           (cubeModelBody->klass->_1).naturalAligment) &&
-         ((MVCubeModelBase__Class *)
-          (cubeModelBody->klass->_1).typeHierarchy
-          [(TypeInfo__MVCubeModelBase->_1).naturalAligment - 1] == TypeInfo__MVCubeModelBase)) {
+      bVar4 = (TypeInfo__MVCubeModelBase->_1).naturalAligment;
+      if ((bVar4 <= (cubeModelBody->klass->_1).naturalAligment) &&
+         ((MVCubeModelBase__Class *)(cubeModelBody->klass->_1).typeHierarchy[bVar4 - 1] ==
+          TypeInfo__MVCubeModelBase)) {
         MVAdvancedGhost_SetupEditorIcon(this,cubeModelBody,0,(MethodInfo *)0x0);
         pGVar1 = (cubeModelBody->fields)._.gameObject;
         if (pGVar1 != (GameObject *)0x0) {
@@ -460,10 +466,9 @@ void Assembly-CSharp.dll::MVAdvancedGhost::MVAdvancedGhost_InitializeInventory
             layer = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
                               (StringLiteral_Default,(MethodInfo *)0x0);
             LayerUtil::LayerUtil_SetLayerRecursively_4(pGVar1,layer,(MethodInfo *)0x0);
-            pAVar2 = (this->fields).advancedGhostBehaviour;
-            if (pAVar2 != (AdvancedGhostBehaviour *)0x0) {
+            if (*ppAVar3 != (AdvancedGhostBehaviour *)0x0) {
               pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                 ((Component *)pAVar2,(MethodInfo *)0x0);
+                                 ((Component *)*ppAVar3,(MethodInfo *)0x0);
               if (pGVar1 != (GameObject *)0x0) {
                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                           (pGVar1,0,(MethodInfo *)0x0);
@@ -480,8 +485,8 @@ void Assembly-CSharp.dll::MVAdvancedGhost::MVAdvancedGhost_InitializeInventory
   }
 code_?:
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -768,97 +773,24 @@ bool Assembly-CSharp.dll::MVAdvancedGhost::MVAdvancedGhost_OnEnterObject
 {
   this_00 = (this->fields).advancedGhostIcon;
   if (this_00 != (AdvancedGhostIcon *)0x0) {
-    pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)this_00,(MethodInfo *)0x0);
-    if (pGVar1 != (GameObject *)0x0) {
+    this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                        ((Component *)this_00,(MethodInfo *)0x0);
+    if (this_02 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar1,0,(MethodInfo *)0x0);
+                (this_02,0,(MethodInfo *)0x0);
       this_01 = (this->fields).editableCubeModelWrapper;
-      pTVar2 = (this->fields)._._._.transform;
       if (this_01 != (AdvancedGhostCubeModelWrapper *)0x0) {
-        bVar3 = cRam_? == '\0';
-        (this_01->fields).cubeModelIsBeingEdited = 1;
-        if (bVar3) {
-          func_?();
-          cRam_? = '\x01';
-        }
-        pMVar4 = (this_01->fields)._.cubeModelBase;
-        if ((pMVar4 != (MVCubeModelInstance *)0x0) &&
-           (this_02 = (pMVar4->fields)._._.transform, this_02 != (Transform *)0x0)) {
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
-                    (this_02,pTVar2,(MethodInfo *)0x0);
-          pMVar4 = (this_01->fields)._.cubeModelBase;
-          if (pMVar4 != (MVCubeModelInstance *)0x0) {
-            pTVar2 = (pMVar4->fields)._._.transform;
-            if (cRam_? == '\0') {
-              e = (EditorStateMachine *)&UNK_?;
-              func_?();
-              cRam_? = '\x01';
-            }
-            if (pTVar2 != (Transform *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                        (pTVar2,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
-                         (MethodInfo *)0x0);
-              pMVar4 = (this_01->fields)._.cubeModelBase;
-              if (pMVar4 != (MVCubeModelInstance *)0x0) {
-                pTVar2 = (pMVar4->fields)._._.transform;
-                if (cRam_? == '\0') {
-                  func_?();
-                  cRam_? = '\x01';
-                }
-                if (pTVar2 != (Transform *)0x0) {
-                  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
-                            (pTVar2,TypeInfo__UnityEngine__Quaternion->static_fields->
-                                    identityQuaternion,(MethodInfo *)0x0);
-                  pMVar4 = (this_01->fields)._.cubeModelBase;
-                  if ((pMVar4 != (MVCubeModelInstance *)0x0) &&
-                     (pGVar1 = (pMVar4->fields)._._.gameObject, pGVar1 != (GameObject *)0x0)) {
-                    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                              (pGVar1,1,(MethodInfo *)0x0);
-                    pMVar4 = (this_01->fields)._.cubeModelBase;
-                    if ((pMVar4 != (MVCubeModelInstance *)0x0) &&
-                       (pTVar2 = (pMVar4->fields)._._.transform, pTVar2 != (Transform *)0x0)) {
-                      pOVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                               Component_GetComponents_1
-                                         ((Component *)pTVar2,
-                                          UnityEngine__MonoBehaviour__MethodInfo__UnityEngine__Component__GetComponents<UnityEngine::MonoBehaviour>______
-                                         );
-                      uVar6 = 0;
-                      if (pOVar5 != (Object__Array *)0x0) {
-                        ppOVar7 = pOVar5->vector;
-                        while( true ) {
-                          if ((int)pOVar5->max_length <= (int)uVar6) {
-                            bVar8 = EditableCubeModelWrapper::EditableCubeModelWrapper_OnEnterObject
-                                              ((EditableCubeModelWrapper *)this_01,e,
-                                               (MethodInfo *)0x0);
-                            return bVar8;
-                          }
-                          if (pOVar5->max_length <= uVar6) break;
-                          if ((Behaviour *)*ppOVar7 == (Behaviour *)0x0) goto code_?;
-                          UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                                    ((Behaviour *)*ppOVar7,0,(MethodInfo *)0x0);
-                          uVar6 = uVar6 + 1;
-                          ppOVar7 = ppOVar7 + 1;
-                        }
-                        goto code_?;
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
+        bVar1 = AdvancedGhostCubeModelWrapper::AdvancedGhostCubeModelWrapper_OnEnterObject
+                          (this_01,(EditorStateMachine *)0x0,(this->fields)._._._.transform,
+                           (MethodInfo *)0x0);
+        return bVar1;
       }
     }
   }
-code_?:
   func_?();
-code_?:
-  func_?();
-  pcVar9 = (code *)swi(3);
-  bVar8 = (*pcVar9)();
-  return bVar8;
+  pcVar2 = (code *)swi(3);
+  bVar1 = (*pcVar2)();
+  return bVar1;
 }
 
 
@@ -1208,73 +1140,73 @@ void Assembly-CSharp.dll::MVAdvancedGhost::MVAdvancedGhost_SetTeam_Edit
                (MVAdvancedGhost *this,MVTeam__Enum team,MethodInfo *method)
 
 {
-  pAVar1 = (this->fields).advancedGhostIcon;
-  if (pAVar1 != (AdvancedGhostIcon *)0x0) {
+  if ((this->fields).advancedGhostIcon != (AdvancedGhostIcon *)0x0) {
     if (cRam_? == '\0') {
-      func_?(&
-                      MethodInfo__System__Collections__Generic__List<OculusTeamGameObject>__get_Count__
-                     );
-      func_?(&
-                      MethodInfo__System__Collections__Generic__List<OculusTeamGameObject>__get_Item_int_
-                     );
+      func_?();
+      func_?();
       cRam_? = '\x01';
     }
-    MVar2 = MVTeam__Enum_Server;
-    if (team != MVTeam__Enum_None) {
-      MVar2 = team;
+    iVar1 = 4;
+    if (unaff_EBX != 5) {
+      iVar1 = unaff_EBX;
     }
     index = 0;
-    pLVar3 = (pAVar1->fields).teamIrisObjects;
-    if (pLVar3 != (List_1_OculusTeamGameObject_ *)0x0) {
+    this_00 = *(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)
+               (unaff_ESI + 0x14);
+    if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
       while( true ) {
-        if ((pLVar3->fields)._size <= index) {
+        if ((this_00->fields)._size <= index) {
           return;
         }
-        pLVar4 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                 (pAVar1->fields).teamIrisObjects;
-        if (((pLVar4 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-            (RVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                     RegularExpressions::RegexCharClass+SingleRange]::
-                     List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                               (pLVar4,index,
-                                MethodInfo__System__Collections__Generic__List<OculusTeamGameObject>__get_Item_int_
-                               ), RVar5 == (RegexCharClass_SingleRange)0x0)) ||
-           (*(GameObject **)((int)RVar5 + 0xc) == (GameObject *)0x0)) break;
+        if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+        break;
+        RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+                ::RegexCharClass+SingleRange]::
+                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                          (this_00,index,
+                           MethodInfo__System__Collections__Generic__List<OculusTeamGameObject>__get_Item_int_
+                          );
+        if ((RVar2 == (RegexCharClass_SingleRange)0x0) ||
+           (*(GameObject **)((int)RVar2 + 0xc) == (GameObject *)0x0)) break;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (*(GameObject **)((int)RVar5 + 0xc),0,(MethodInfo *)0x0);
-        pLVar4 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                 (pAVar1->fields).teamIrisObjects;
-        if ((pLVar4 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-           (RVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                  (*(GameObject **)((int)RVar2 + 0xc),0,(MethodInfo *)0x0);
+        if ((*(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)
+              (unaff_ESI + 0x14) ==
+             (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
+           (RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                     RegularExpressions::RegexCharClass+SingleRange]::
                     List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                              (pLVar4,index,
+                              (*(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                 **)(unaff_ESI + 0x14),index,
                                MethodInfo__System__Collections__Generic__List<OculusTeamGameObject>__get_Item_int_
-                              ), RVar5 == (RegexCharClass_SingleRange)0x0)) break;
-        if (*(MVTeam__Enum *)((int)RVar5 + 8) == MVar2) {
-          pLVar4 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                   (pAVar1->fields).teamIrisObjects;
-          if (((pLVar4 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-              || (RVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                          RegularExpressions::RegexCharClass+SingleRange]::
-                          List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                    (pLVar4,index,
-                                     MethodInfo__System__Collections__Generic__List<OculusTeamGameObject>__get_Item_int_
-                                    ), RVar5 == (RegexCharClass_SingleRange)0x0)) ||
-             (*(GameObject **)((int)RVar5 + 0xc) == (GameObject *)0x0)) break;
+                              ), RVar2 == (RegexCharClass_SingleRange)0x0)) break;
+        if (*(int *)((int)RVar2 + 8) == iVar1) {
+          if (((*(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)
+                 (unaff_ESI + 0x14) ==
+                (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
+              (RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                       RegularExpressions::RegexCharClass+SingleRange]::
+                       List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                                 (*(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                    **)(unaff_ESI + 0x14),index,
+                                  MethodInfo__System__Collections__Generic__List<OculusTeamGameObject>__get_Item_int_
+                                 ), RVar2 == (RegexCharClass_SingleRange)0x0)) ||
+             (*(GameObject **)((int)RVar2 + 0xc) == (GameObject *)0x0)) break;
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (*(GameObject **)((int)RVar5 + 0xc),1,(MethodInfo *)0x0);
+                    (*(GameObject **)((int)RVar2 + 0xc),1,(MethodInfo *)0x0);
         }
-        pLVar3 = (pAVar1->fields).teamIrisObjects;
+        this_00 = *(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)
+                   (unaff_ESI + 0x14);
         index = index + 1;
-        if (pLVar3 == (List_1_OculusTeamGameObject_ *)0x0) break;
+        if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+        break;
       }
     }
   }
-  uVar6 = func_?(&stack0xfffffff0);
-  func_?(uVar6);
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  uVar3 = func_?(&puStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -1308,46 +1240,42 @@ void Assembly-CSharp.dll::MVAdvancedGhost::MVAdvancedGhost_SetupEditorIcon
                        ((Object *)pAVar2,
                         AdvancedGhostIcon_MethodInfo__UnityEngine__Object__Instantiate<AdvancedGhostIcon>_AdvancedGhostIcon_
                        );
-    (this->fields).advancedGhostIcon = pAVar2;
-    func_?(&(this->fields).advancedGhostIcon,pAVar2);
-    pAVar2 = (this->fields).advancedGhostIcon;
-    if (pAVar2 != (AdvancedGhostIcon *)0x0) {
-      pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                         ((Component *)pAVar2,(MethodInfo *)0x0);
-      if (pTVar3 != (Transform *)0x0) {
+    ppAVar3 = &(this->fields).advancedGhostIcon;
+    *ppAVar3 = pAVar2;
+    func_?(ppAVar3,pAVar2);
+    if (*ppAVar3 != (AdvancedGhostIcon *)0x0) {
+      pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                         ((Component *)*ppAVar3,(MethodInfo *)0x0);
+      if (pTVar4 != (Transform *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
-                  (pTVar3,(this->fields)._._._.transform,(MethodInfo *)0x0);
-        pAVar2 = (this->fields).advancedGhostIcon;
-        if (pAVar2 != (AdvancedGhostIcon *)0x0) {
-          pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                             ((Component *)pAVar2,(MethodInfo *)0x0);
+                  (pTVar4,(this->fields)._._._.transform,(MethodInfo *)0x0);
+        if (*ppAVar3 != (AdvancedGhostIcon *)0x0) {
+          pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                             ((Component *)*ppAVar3,(MethodInfo *)0x0);
           if (cRam_? == '\0') {
             func_?(&TypeInfo__UnityEngine__Vector3);
             cRam_? = '\x01';
           }
-          if (pTVar3 != (Transform *)0x0) {
+          if (pTVar4 != (Transform *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                      (pTVar3,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
+                      (pTVar4,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
                        (MethodInfo *)0x0);
-            pAVar2 = (this->fields).advancedGhostIcon;
-            if (pAVar2 != (AdvancedGhostIcon *)0x0) {
-              pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                 ((Component *)pAVar2,(MethodInfo *)0x0);
+            if (*ppAVar3 != (AdvancedGhostIcon *)0x0) {
+              pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                 ((Component *)*ppAVar3,(MethodInfo *)0x0);
               if (cRam_? == '\0') {
                 func_?();
                 cRam_? = '\x01';
               }
-              if (pTVar3 != (Transform *)0x0) {
+              if (pTVar4 != (Transform *)0x0) {
                 UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
-                          (pTVar3,TypeInfo__UnityEngine__Quaternion->static_fields->
+                          (pTVar4,TypeInfo__UnityEngine__Quaternion->static_fields->
                                   identityQuaternion,(MethodInfo *)0x0);
-                pAVar2 = (this->fields).advancedGhostIcon;
+                pAVar2 = *ppAVar3;
                 body = (MVCubeModelBase *)MVAdvancedGhost_get_Team(this,(MethodInfo *)0x0);
                 if (pAVar2 != (AdvancedGhostIcon *)0x0) {
-                  cubeModelBody._0_1_ = (bool)body;
                   AdvancedGhostIcon::AdvancedGhostIcon_Init
-                            (pAVar2,this,body,(bool)cubeModelBody,(MVTeam__Enum)body,
-                             (MethodInfo *)0x0);
+                            (pAVar2,this,body,0,(MVTeam__Enum)body,(MethodInfo *)0x0);
                   return;
                 }
               }
@@ -1358,8 +1286,8 @@ void Assembly-CSharp.dll::MVAdvancedGhost::MVAdvancedGhost_SetupEditorIcon
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -1383,41 +1311,38 @@ void Assembly-CSharp.dll::MVAdvancedGhost::MVAdvancedGhost__ctor
   pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
   if (pPVar1 == (PrefabPool *)0x0) {
     func_?();
-    pAVar2 = extraout_EDX;
   }
   else {
     MVBlueprintBase::MVBlueprintBase__ctor_1
               ((MVBlueprintBase *)this,data,(ObjectPrefab *)(pPVar1->fields).mvAdvancedGhostPrefab,
                worldObjects,(MethodInfo *)0x0);
-    piVar3 = &(this->fields)._._._.interactionFlags;
-    *(uint *)piVar3 = (uint)*piVar3 | 0x200b101;
-    pAVar2 = (AdvancedGhostObject *)(this->fields)._._._.component;
+    piVar2 = &(this->fields)._._._.interactionFlags;
+    *(uint *)piVar2 = (uint)*piVar2 | 0x200b101;
+    pAVar3 = (AdvancedGhostObject *)(this->fields)._._._.component;
     *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4) =
          *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4);
-    if (pAVar2 == (AdvancedGhostObject *)0x0) {
+    if (pAVar3 == (AdvancedGhostObject *)0x0) {
       (this->fields).advGhostObject = (AdvancedGhostObject *)0x0;
       func_?();
       return;
     }
-    if (((TypeInfo__AdvancedGhostObject->_1).naturalAligment <=
-         (((ObjectPrefab__Class *)pAVar2->klass)->_1).naturalAligment) &&
-       ((((ObjectPrefab__Class *)pAVar2->klass)->_1).typeHierarchy
-        [(TypeInfo__AdvancedGhostObject->_1).naturalAligment - 1] ==
+    bVar4 = (TypeInfo__AdvancedGhostObject->_1).naturalAligment;
+    if ((bVar4 <= (((ObjectPrefab__Class *)pAVar3->klass)->_1).naturalAligment) &&
+       ((((ObjectPrefab__Class *)pAVar3->klass)->_1).typeHierarchy[bVar4 - 1] ==
         (Il2CppClass *)TypeInfo__AdvancedGhostObject)) {
-      (this->fields).advGhostObject = pAVar2;
-      if (((TypeInfo__AdvancedGhostObject->_1).naturalAligment <=
-           (((ObjectPrefab__Class *)pAVar2->klass)->_1).naturalAligment) &&
-         ((((ObjectPrefab__Class *)pAVar2->klass)->_1).typeHierarchy
-          [(TypeInfo__AdvancedGhostObject->_1).naturalAligment - 1] ==
+      (this->fields).advGhostObject = pAVar3;
+      bVar4 = (TypeInfo__AdvancedGhostObject->_1).naturalAligment;
+      if ((bVar4 <= (((ObjectPrefab__Class *)pAVar3->klass)->_1).naturalAligment) &&
+         ((((ObjectPrefab__Class *)pAVar3->klass)->_1).typeHierarchy[bVar4 - 1] ==
           (Il2CppClass *)TypeInfo__AdvancedGhostObject)) {
         func_?();
         return;
       }
     }
   }
-  func_?(pAVar2);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

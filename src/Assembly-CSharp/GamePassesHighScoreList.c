@@ -169,41 +169,43 @@ void Assembly-CSharp.dll::GamePassesHighScoreList::GamePassesHighScoreList_Creat
   if (pDVar1 != (Dictionary_2_GamePassesHighScoreList_GamePassesHighScoreListState_GamePassesHighScoreList_HighScoreListData_
                  *)0x0) {
     GVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-             Int32Enum,GamePassesHighScoreList+HighScoreListData]::
-             Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData__get_Item
-                       ((Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)
-                        pDVar1,(this->fields).currentState,
-                        MethodInfo__System__Collections__Generic__Dictionary<GamePassesHighScoreList::GamePassesHighScoreListState,_GamePassesHighScoreList::HighScoreListData>__get_Item_GamePassesHighScoreList__GamePassesHighScoreListState_
-                       );
+            Int32Enum,GamePassesHighScoreList+HighScoreListData]::
+            Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData__get_Item
+                      ((Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)
+                       pDVar1,(this->fields).currentState,
+                       MethodInfo__System__Collections__Generic__Dictionary<GamePassesHighScoreList::GamePassesHighScoreListState,_GamePassesHighScoreList::HighScoreListData>__get_Item_GamePassesHighScoreList__GamePassesHighScoreListState_
+                      );
+    puVar3 = (undefined *)GVar2.topRank;
     pDVar1 = (this->fields).highScoreListDatas;
-    pOVar3 = (Object_1__Class *)GVar2.topRank;
     if (pDVar1 != (Dictionary_2_GamePassesHighScoreList_GamePassesHighScoreListState_GamePassesHighScoreList_HighScoreListData_
                    *)0x0) {
       GVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-               Int32Enum,GamePassesHighScoreList+HighScoreListData]::
-               Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData__get_Item
-                         ((Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_
-                           *)pDVar1,(this->fields).currentState,
-                          MethodInfo__System__Collections__Generic__Dictionary<GamePassesHighScoreList::GamePassesHighScoreListState,_GamePassesHighScoreList::HighScoreListData>__get_Item_GamePassesHighScoreList__GamePassesHighScoreListState_
-                         );
+              Int32Enum,GamePassesHighScoreList+HighScoreListData]::
+              Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData__get_Item
+                        ((Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *
+                         )pDVar1,(this->fields).currentState,
+                         MethodInfo__System__Collections__Generic__Dictionary<GamePassesHighScoreList::GamePassesHighScoreListState,_GamePassesHighScoreList::HighScoreListData>__get_Item_GamePassesHighScoreList__GamePassesHighScoreListState_
+                        );
       if (cRam_? == '\0') {
-        func_?();
+        puVar3 = &UNK_?;
+        func_?(&TypeInfo__UnityEngine__Object);
         cRam_? = '\x01';
       }
       pTVar4 = (this->fields).contentList;
       if (pTVar4 != (Transform *)0x0) {
-        iVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_childCount
+        index = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_childCount
                           (pTVar4,(MethodInfo *)0x0);
-        while (iVar5 = iVar5 + -1, -1 < iVar5) {
+        while (index = index + -1, -1 < index) {
           pTVar4 = (this->fields).contentList;
           if ((pTVar4 == (Transform *)0x0) ||
              (pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetChild
-                                 (pTVar4,iVar5,(MethodInfo *)0x0), pTVar4 == (Transform *)0x0))
+                                 (pTVar4,index,(MethodInfo *)0x0), pTVar4 == (Transform *)0x0))
           goto code_?;
+          puVar3 = (undefined *)0x0;
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
                     (pTVar4,(Transform *)0x0,(MethodInfo *)0x0);
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
+            func_?(TypeInfo__UnityEngine__Object);
           }
           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
                     ((Object_1 *)pTVar4,(MethodInfo *)0x0);
@@ -221,146 +223,75 @@ void Assembly-CSharp.dll::GamePassesHighScoreList::GamePassesHighScoreList_Creat
           func_?(&TypeInfo__UnityEngine__Object);
           cRam_? = '\x01';
         }
+        pGVar5 = (GamePassesHighScoreList *)0x0;
         this = (GamePassesHighScoreList *)GVar2.scoreList;
-        iVar5 = 0;
-        if (this != (GamePassesHighScoreList *)0x0) {
-          for (; iVar5 < (int)(this->fields)._.m_CancellationTokenSource; iVar5 = iVar5 + 1) {
+        if ((GamePassesHighScoreList *)GVar2.scoreList != (GamePassesHighScoreList *)0x0) {
+          while( true ) {
+            this_01 = pGVar5;
+            if ((int)(this->fields)._.m_CancellationTokenSource <= (int)this_01) {
+              GamePassesHighScoreList_HandlePlayerNotCentered(this_00,(MethodInfo *)0x0);
+              return;
+            }
             RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                     RegularExpressions::RegexCharClass+SingleRange]::
                     List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                               ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                               this,iVar5,
+                               this,(int32_t)this_01,
                                MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
                               );
-            if (RVar6 == (RegexCharClass_SingleRange)0x0) goto code_?;
-            iVar7 = *(int32_t *)((int)RVar6 + 0x10);
+            if (RVar6 == (RegexCharClass_SingleRange)0x0) break;
+            amountOfGamePoints = *(int32_t *)((int)RVar6 + 0x10);
             RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                     RegularExpressions::RegexCharClass+SingleRange]::
                     List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                               ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                               this,iVar5,
+                               this,(int32_t)this_01,
                                MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
                               );
-            if (RVar6 == (RegexCharClass_SingleRange)0x0) goto code_?;
+            if (RVar6 == (RegexCharClass_SingleRange)0x0) break;
             userName = *(String **)((int)RVar6 + 0xc);
             RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                     RegularExpressions::RegexCharClass+SingleRange]::
                     List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                               ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                               this,iVar5,
+                               this,(int32_t)this_01,
                                MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
                               );
-            if (RVar6 == (RegexCharClass_SingleRange)0x0) goto code_?;
+            if (RVar6 == (RegexCharClass_SingleRange)0x0) break;
             profileID = *(int32_t *)((int)RVar6 + 8);
-            pGVar8 = (this_00->fields).highScoreElementPrefab;
+            pGVar7 = (this_00->fields).highScoreElementPrefab;
             if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-              pOVar3 = TypeInfo__UnityEngine__Object;
               func_?();
             }
-            pGVar8 = (GamePassesHighScoreElement *)
+            pGVar7 = (GamePassesHighScoreElement *)
                      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                               ((Object *)pGVar8,
+                               ((Object *)pGVar7,
                                 GamePassesHighScoreElement_MethodInfo__UnityEngine__Object__Instantiate<GamePassesHighScoreElement>_GamePassesHighScoreElement_
                                );
             RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                     RegularExpressions::RegexCharClass+SingleRange]::
                     List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                               ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                               this,iVar5,
+                               this_01,(int32_t)this_01,
                                MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
                               );
             if ((RVar6 == (RegexCharClass_SingleRange)0x0) ||
-               (pGVar8 == (GamePassesHighScoreElement *)0x0)) goto code_?;
+               (pGVar7 == (GamePassesHighScoreElement *)0x0)) break;
             GamePassesHighScoreElement::GamePassesHighScoreElement_Initialize
-                      (pGVar8,(int)&(pOVar3->_0).image + iVar5,userName,iVar7,profileID,
-                       *(bool *)((int)RVar6 + 0x14),(MethodInfo *)0x0);
+                      (pGVar7,(int32_t)((int)&this_01->klass + (int)puVar3),userName,
+                       amountOfGamePoints,profileID,*(bool *)((int)RVar6 + 0x14),(MethodInfo *)0x0);
             pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                               ((Component *)pGVar8,(MethodInfo *)0x0);
-            if (pTVar4 == (Transform *)0x0) goto code_?;
+                               ((Component *)pGVar7,(MethodInfo *)0x0);
+            if (pTVar4 == (Transform *)0x0) break;
             UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
                       (pTVar4,(this_00->fields).contentList,0,(MethodInfo *)0x0);
-            if (iVar5 == 0) {
+            if (this_01 == (GamePassesHighScoreList *)0x0) {
+              puVar3 = &UNK_?;
               GamePassesHighScoreElement::GamePassesHighScoreElement_DeactivateTopBorder
-                        (pGVar8,(MethodInfo *)0x0);
+                        (pGVar7,(MethodInfo *)0x0);
             }
-          }
-          if (cRam_? == '\0') {
-            func_?(&
-                            MethodInfo__System__Collections__Generic__Dictionary<GamePassesHighScoreList::GamePassesHighScoreListState,_GamePassesHighScoreList::HighScoreListData>__get_Item_GamePassesHighScoreList__GamePassesHighScoreListState_
-                           );
-            func_?(&
-                            MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Count__
-                           );
-            cRam_? = '\x01';
-          }
-          if ((this_00->fields).currentState == 4) {
-            return;
-          }
-          pDVar1 = (this_00->fields).highScoreListDatas;
-          if (pDVar1 != (Dictionary_2_GamePassesHighScoreList_GamePassesHighScoreListState_GamePassesHighScoreList_HighScoreListData_
-                         *)0x0) {
-            GVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                     Int32Enum,GamePassesHighScoreList+HighScoreListData]::
-                     Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData__get_Item
-                               ((Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_
-                                 *)pDVar1,(this_00->fields).currentState,
-                                MethodInfo__System__Collections__Generic__Dictionary<GamePassesHighScoreList::GamePassesHighScoreListState,_GamePassesHighScoreList::HighScoreListData>__get_Item_GamePassesHighScoreList__GamePassesHighScoreListState_
-                               );
-            iVar7 = GamePassesHighScoreList_GetPlayerPosition
-                              (this_00,GVar2.scoreList,(MethodInfo *)0x0);
-            if (iVar7 <= (this_00->fields).scoreElementShowCapacity) {
-              return;
-            }
-            pDVar1 = (this_00->fields).highScoreListDatas;
-            iVar5 = (iVar7 - (this_00->fields).middlePosition) + 1;
-            if (pDVar1 != (Dictionary_2_GamePassesHighScoreList_GamePassesHighScoreListState_GamePassesHighScoreList_HighScoreListData_
-                           *)0x0) {
-              GVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                       Int32Enum,GamePassesHighScoreList+HighScoreListData]::
-                       Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData__get_Item
-                                 ((Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_
-                                   *)pDVar1,(this_00->fields).currentState,
-                                  MethodInfo__System__Collections__Generic__Dictionary<GamePassesHighScoreList::GamePassesHighScoreListState,_GamePassesHighScoreList::HighScoreListData>__get_Item_GamePassesHighScoreList__GamePassesHighScoreListState_
-                                 );
-              if (GVar2.scoreList != (List_1_MV_WorldObject_GamePassSystem_HighScoreEntry_ *)0x0) {
-                iVar9 = ((this_00->fields).middlePosition - ((GVar2.scoreList)->fields)._size) +
-                        iVar7;
-                iVar10 = iVar5;
-                if (-1 < iVar9) {
-                  iVar10 = iVar9;
-                }
-                if (iVar5 < iVar10) {
-                  iVar10 = iVar5;
-                }
-                pTVar4 = (this_00->fields).contentList;
-                if ((pTVar4 != (Transform *)0x0) &&
-                   (pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                             Component_get_transform((Component *)pTVar4,(MethodInfo *)0x0),
-                   pTVar4 != (Transform *)0x0)) {
-                  pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                            Transform_get_localPosition
-                                      ((Vector3 *)&stack0xffffffd8,pTVar4,(MethodInfo *)0x0);
-                  this = (GamePassesHighScoreList *)pVVar11->z;
-                  uVar12 = pVVar11->x;
-                  pTVar4 = (this_00->fields).contentList;
-                  fVar13 = (float)iVar10 * (this_00->fields).moveAmountPerElement +
-                           (this_00->fields).topPadding +
-                           (float)(this_00->fields).middlePosition *
-                           (this_00->fields).moveAmountPerElement;
-                  if ((pTVar4 != (Transform *)0x0) &&
-                     (pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                               Component_get_transform((Component *)pTVar4,(MethodInfo *)0x0),
-                     pTVar4 != (Transform *)0x0)) {
-                    fVar14 = fVar13;
-                    value.x = (float)uVar12;
-                    value = (Vector3)CONCAT84(uVar15,value.x);
-                    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                              (pTVar4,value,(MethodInfo *)0x0);
-                    return;
-                  }
-                }
-              }
-            }
+            pGVar5 = (GamePassesHighScoreList *)((int)&this_01->klass + 1);
+            this = this_01;
           }
         }
       }
@@ -368,8 +299,8 @@ void Assembly-CSharp.dll::GamePassesHighScoreList::GamePassesHighScoreList_Creat
   }
 code_?:
   func_?();
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -386,10 +317,9 @@ void Assembly-CSharp.dll::GamePassesHighScoreList::GamePassesHighScoreList_Creat
                    );
     cRam_? = '\x01';
   }
-  uStack_1 = 0;
   if (newHighScoreData != (HighScoreDatas *)0x0) {
-    pLStack_2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                (newHighScoreData->fields).highScores;
+    RVar1 = (RegexCharClass_SingleRange)(newHighScoreData->fields).highScores;
+    RVar2 = RVar1;
     if (cRam_? == '\0') {
       func_?(&
                       MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__Add_MV__WorldObject__GamePassSystem__HighScoreEntry_
@@ -421,57 +351,69 @@ void Assembly-CSharp.dll::GamePassesHighScoreList::GamePassesHighScoreList_Creat
               ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_01,
                MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__List__
               );
-    iVar3 = 0;
-    if (pLStack_2 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    index = (undefined1 *)0x0;
+    if (RVar1 != (RegexCharClass_SingleRange)0x0) {
 code_?:
-      if (iVar3 < (pLStack_2->fields)._size) {
-        index = 0;
-        if (this_01 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-        goto code_?;
-        for (; index < (this_01->fields)._size; index = index + 1) {
-          RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                  RegularExpressions::RegexCharClass+SingleRange]::
-                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            (pLStack_2,iVar3,
-                             MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
-                            );
-          if (RVar4 == (RegexCharClass_SingleRange)0x0) goto code_?;
-          iStack_5 = *(int *)((int)RVar4 + 0x10);
-          RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                  RegularExpressions::RegexCharClass+SingleRange]::
-                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            (this_01,index,
-                             MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
-                            );
-          if (RVar4 == (RegexCharClass_SingleRange)0x0) goto code_?;
-          if (*(int *)((int)RVar4 + 0x10) < iStack_5) {
-            RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                    RegularExpressions::RegexCharClass+SingleRange]::
-                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                              (pLStack_2,iVar3,
-                               MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
-                              );
+      if ((int)index < *(int *)((int)RVar1 + 0xc)) {
+        iVar3 = 0;
+        while( true ) {
+          if (this_01 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+          goto code_?;
+          if ((this_01->fields)._size <= iVar3) {
+            item = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                   RegularExpressions::RegexCharClass+SingleRange]::
+                   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                             ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                              RVar1,(int32_t)index,
+                              MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
+                             );
             mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-            List_1_System_Object__Insert
-                      ((List_1_System_Object_ *)this_01,index,(Object *)RVar4,
-                       MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__Insert_int__MV__WorldObject__GamePassSystem__HighScoreEntry_
+            List_1_System_Object__Add
+                      ((List_1_System_Object_ *)this_01,(Object *)item,
+                       MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__Add_MV__WorldObject__GamePassSystem__HighScoreEntry_
                       );
-            iVar3 = iVar3 + 1;
+            index = index + 1;
             goto code_?;
           }
+          RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                  RegularExpressions::RegexCharClass+SingleRange]::
+                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                            ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                             RVar1,(int32_t)index,
+                             MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
+                            );
+          if (RVar1 == (RegexCharClass_SingleRange)0x0) goto code_?;
+          iVar4 = *(int *)((int)RVar1 + 0x10);
+          RVar1 = RVar2;
+          RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                  RegularExpressions::RegexCharClass+SingleRange]::
+                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                            (this_01,iVar3,
+                             MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
+                            );
+          if (RVar2 == (RegexCharClass_SingleRange)0x0) goto code_?;
+          if (*(int *)((int)RVar2 + 0x10) < iVar4) break;
+          iVar3 = iVar3 + 1;
+          RVar2 = RVar1;
         }
-        RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+        RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                 ::RegexCharClass+SingleRange]::
                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                          (pLStack_2,iVar3,
+                          ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                           RVar1,(int32_t)
+                                 MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
+                           ,
                            MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
                           );
+        pMVar5 = 
+        MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__Insert_int__MV__WorldObject__GamePassSystem__HighScoreEntry_
+        ;
         mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-        List_1_System_Object__Add
-                  ((List_1_System_Object_ *)this_01,(Object *)RVar4,
-                   MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__Add_MV__WorldObject__GamePassSystem__HighScoreEntry_
+        List_1_System_Object__Insert
+                  ((List_1_System_Object_ *)this_01,iVar3,(Object *)RVar2,
+                   MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__Insert_int__MV__WorldObject__GamePassSystem__HighScoreEntry_
                   );
-        iVar3 = iVar3 + 1;
+        index = (undefined1 *)((int)&pMVar5->methodPointer + 1);
         goto code_?;
       }
       iVar3 = (newHighScoreData->fields).topRank;
@@ -484,15 +426,13 @@ code_?:
                            (MethodInfo *)0x0);
         iVar6 = iVar3 - iVar6;
       }
-      uStack_1 = CONCAT44(uStack_1._4_4_,this_01);
-      func_?(&uStack_1,this_01);
+      func_?(&stack0xffffffec,this_01);
       this_00 = (this->fields).highScoreListDatas;
-      uStack_1 = CONCAT44(iVar6,(List_1_MV_WorldObject_GamePassSystem_HighScoreEntry_ *)uStack_1);
       if (this_00 !=
           (Dictionary_2_GamePassesHighScoreList_GamePassesHighScoreListState_GamePassesHighScoreList_HighScoreListData_
            *)0x0) {
         value.topRank = iVar6;
-        value.scoreList = (List_1_MV_WorldObject_GamePassSystem_HighScoreEntry_ *)uStack_1;
+        value.scoreList = (List_1_MV_WorldObject_GamePassSystem_HighScoreEntry_ *)this_01;
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
         Int32Enum,GamePassesHighScoreList+HighScoreListData]::
         Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData__Add
@@ -633,7 +573,8 @@ void Assembly-CSharp.dll::GamePassesHighScoreList::GamePassesHighScoreList_Handl
                    );
     cRam_? = '\x01';
   }
-  if ((this->fields).currentState == 4) {
+  key = (this->fields).currentState;
+  if (key == 4) {
     return;
   }
   pDVar1 = (this->fields).highScoreListDatas;
@@ -643,7 +584,7 @@ void Assembly-CSharp.dll::GamePassesHighScoreList::GamePassesHighScoreList_Handl
              Int32Enum,GamePassesHighScoreList+HighScoreListData]::
              Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData__get_Item
                        ((Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)
-                        pDVar1,(this->fields).currentState,
+                        pDVar1,key,
                         MethodInfo__System__Collections__Generic__Dictionary<GamePassesHighScoreList::GamePassesHighScoreListState,_GamePassesHighScoreList::HighScoreListData>__get_Item_GamePassesHighScoreList__GamePassesHighScoreListState_
                        );
     iVar3 = GamePassesHighScoreList_GetPlayerPosition(this,GVar2.scoreList,(MethodInfo *)0x0);
@@ -1202,68 +1143,75 @@ Assembly-CSharp.dll::GamePassesHighScoreList::GamePassesHighScoreList_SortHighSc
              MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__List__
             );
   index = 0;
-  if (listToSort == (List_1_MV_WorldObject_GamePassSystem_HighScoreEntry_ *)0x0) {
+  if (listToSort != (List_1_MV_WorldObject_GamePassSystem_HighScoreEntry_ *)0x0) {
 code_?:
-    func_?();
-    pcVar1 = (code *)swi(3);
-    pLVar2 = (List_1_MV_WorldObject_GamePassSystem_HighScoreEntry_ *)(*pcVar1)();
-    return pLVar2;
-  }
-code_?:
-  do {
-    if ((listToSort->fields)._size <= index) {
-      return (List_1_MV_WorldObject_GamePassSystem_HighScoreEntry_ *)this_00;
-    }
-    index_00 = 0;
-    if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-    goto code_?;
-    for (; index_00 < (this_00->fields)._size; index_00 = index_00 + 1) {
-      RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-              RegexCharClass+SingleRange]::
-              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                        ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                         listToSort,index,
-                         MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
-                        );
-      if (RVar3 == (RegexCharClass_SingleRange)0x0) goto code_?;
-      iVar4 = *(int *)((int)RVar3 + 0x10);
-      RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-              RegexCharClass+SingleRange]::
-              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                        (this_00,index_00,
-                         MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
-                        );
-      if (RVar3 == (RegexCharClass_SingleRange)0x0) goto code_?;
-      if (*(int *)((int)RVar3 + 0x10) < iVar4) {
-        RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+    do {
+      if ((listToSort->fields)._size <= index) {
+        return (List_1_MV_WorldObject_GamePassSystem_HighScoreEntry_ *)this_00;
+      }
+      index_00 = 0;
+      while( true ) {
+        if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+        goto code_?;
+        if ((this_00->fields)._size <= index_00) {
+          RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                  RegularExpressions::RegexCharClass+SingleRange]::
+                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                            ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                             listToSort,index,
+                             MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
+                            );
+          mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+          List_1_System_Object__Add
+                    ((List_1_System_Object_ *)this_00,(Object *)RVar1,
+                     MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__Add_MV__WorldObject__GamePassSystem__HighScoreEntry_
+                    );
+          index = index + 1;
+          goto code_?;
+        }
+        RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                 ::RegexCharClass+SingleRange]::
                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                           ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                            listToSort,index,
                            MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
                           );
-        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-        List_1_System_Object__Insert
-                  ((List_1_System_Object_ *)this_00,index_00,(Object *)RVar3,
-                   MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__Insert_int__MV__WorldObject__GamePassSystem__HighScoreEntry_
-                  );
-        index = index + 1;
-        goto code_?;
+        if (RVar1 == (RegexCharClass_SingleRange)0x0) goto code_?;
+        index_01 = *(int32_t *)((int)RVar1 + 0x10);
+        RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+                ::RegexCharClass+SingleRange]::
+                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                          (this_00,index_01,
+                           MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
+                          );
+        if (RVar1 == (RegexCharClass_SingleRange)0x0) goto code_?;
+        if (*(int *)((int)RVar1 + 0x10) < index_01) break;
+        index_00 = index_00 + 1;
       }
-    }
-    RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-            RegexCharClass+SingleRange]::
-            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                      ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                       listToSort,index,
-                       MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
-                      );
-    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-              ((List_1_System_Object_ *)this_00,(Object *)RVar3,
-               MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__Add_MV__WorldObject__GamePassSystem__HighScoreEntry_
-              );
-    index = index + 1;
-  } while( true );
+      RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+              RegexCharClass+SingleRange]::
+              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                        ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                         MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
+                         ,index,
+                         MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__get_Item_int_
+                        );
+      listToSort = (List_1_MV_WorldObject_GamePassSystem_HighScoreEntry_ *)
+                   MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__Insert_int__MV__WorldObject__GamePassSystem__HighScoreEntry_
+      ;
+      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+      List_1_System_Object__Insert
+                ((List_1_System_Object_ *)this_00,index_00,(Object *)RVar1,
+                 MethodInfo__System__Collections__Generic__List<MV::WorldObject::GamePassSystem::HighScoreEntry>__Insert_int__MV__WorldObject__GamePassSystem__HighScoreEntry_
+                );
+      index = index + 1;
+    } while( true );
+  }
+code_?:
+  func_?();
+  pcVar2 = (code *)swi(3);
+  pLVar3 = (List_1_MV_WorldObject_GamePassSystem_HighScoreEntry_ *)(*pcVar2)();
+  return pLVar3;
 }
 
 
@@ -1462,51 +1410,47 @@ code_?:
       else {
         uVar16 = 1;
       }
-      bVar8 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
-      if ((bVar8 & -(uVar16 != 0)) != 0) {
-        value = (Object *)func_?();
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  (value,ExceptionArgument__Enum_obj,method_00);
-        original = (this->fields).touristInformationPopup;
-        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__UnityEngine__Object,uVar14,uVar15);
-        }
-        pOVar17 = (Object__Class *)
-                  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                            ((Object *)original,
-                             GamePassesTouristInformationPopup_MethodInfo__UnityEngine__Object__Instantiate<GamePassesTouristInformationPopup>_GamePassesTouristInformationPopup_
-                            );
-        if (value != (Object *)0x0) {
-          value[1].klass = pOVar17;
-          func_?(value + 1,pOVar17);
-          pGVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                              ((Component *)this,(MethodInfo *)0x0);
-          callbackFunction =
-               (ExecuteEvents_EventFunction_1_System_Object_ *)
-               func_?(
-                              TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                              );
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
-                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
-                     MethodInfo__GamePassesHighScoreList____c__DisplayClass15_0___Start_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                     ,(MethodInfo *)0x0);
-          if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
-              0) {
-            func_?();
-          }
-          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-          ExecuteEvents_ExecuteHierarchy
-                    (pGVar9,(BaseEventData *)0x0,callbackFunction,
-                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                    );
-          return;
-        }
-        goto code_?;
-      }
     }
     else {
-      MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
+      uVar16 = 0;
+    }
+    bVar8 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
+    if ((uVar16 != 0 & bVar8) != 0) {
+      value = (Object *)func_?();
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                (value,ExceptionArgument__Enum_obj,method_00);
+      original = (this->fields).touristInformationPopup;
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Object,uVar14,uVar15);
+      }
+      pOVar17 = (Object__Class *)
+                UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                          ((Object *)original,
+                           GamePassesTouristInformationPopup_MethodInfo__UnityEngine__Object__Instantiate<GamePassesTouristInformationPopup>_GamePassesTouristInformationPopup_
+                          );
+      if (value == (Object *)0x0) goto code_?;
+      value[1].klass = pOVar17;
+      func_?(value + 1,pOVar17);
+      pGVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                          ((Component *)this,(MethodInfo *)0x0);
+      callbackFunction =
+           (ExecuteEvents_EventFunction_1_System_Object_ *)
+           func_?(
+                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                          );
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
+      ::UnityAction_2_System_Object_System_Object___ctor
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+                 MethodInfo__GamePassesHighScoreList____c__DisplayClass15_0___Start_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
+        func_?();
+      }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (pGVar9,(BaseEventData *)0x0,callbackFunction,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                );
     }
     return;
   }
@@ -1547,8 +1491,9 @@ void Assembly-CSharp.dll::GamePassesHighScoreList::GamePassesHighScoreList__ctor
             ((Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)this_00,
              MethodInfo__System__Collections__Generic__Dictionary<GamePassesHighScoreList::GamePassesHighScoreListState,_GamePassesHighScoreList::HighScoreListData>__Dictionary__
             );
-  (this->fields).highScoreListDatas = this_00;
-  func_?(&(this->fields).highScoreListDatas,this_00);
+  ppDVar1 = &(this->fields).highScoreListDatas;
+  *ppDVar1 = this_00;
+  func_?(ppDVar1,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

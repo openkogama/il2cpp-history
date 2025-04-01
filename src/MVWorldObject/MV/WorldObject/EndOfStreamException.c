@@ -19,19 +19,19 @@ void MVWorldObject.dll::MV::WorldObject::EndOfStreamException::EndOfStreamExcept
     cRam_? = '\x01';
   }
   *(undefined4 *)(in_stack_1 + 0xc) = 0;
-  func_?(in_stack_1 + 0xc,0);
+  func_?((undefined4 *)(in_stack_1 + 0xc),0);
   *(undefined4 *)(in_stack_1 + 0x1c) = 0;
-  func_?(in_stack_1 + 0x1c,0);
+  func_?((undefined4 *)(in_stack_1 + 0x1c),0);
   *(undefined4 *)(in_stack_1 + 0x2c) = 0;
-  func_?(in_stack_1 + 0x2c,0);
+  func_?((undefined4 *)(in_stack_1 + 0x2c),0);
   *(undefined4 *)(in_stack_1 + 0x30) = 0x80131500;
   this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
             func_?(TypeInfo__System__Runtime__Serialization__SafeSerializationManager);
   UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
   UxmlObjectListAttributeDescription`1[System::Object]::
   UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
-  *(UxmlObjectListAttributeDescription_1_System_Object_ **)(in_stack_1 + 0x38) = this_00;
-  func_?(in_stack_1 + 0x38,this_00);
+  *(undefined4 *)(in_stack_1 + 0x38) = this_00;
+  func_?((undefined4 *)(in_stack_1 + 0x38),this_00);
   return;
 }
 
@@ -52,8 +52,9 @@ void MVWorldObject.dll::MV::WorldObject::EndOfStreamException::EndOfStreamExcept
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   mscorlib.dll::System::Exception::Exception_Init((Exception *)this,(MethodInfo *)0x0);
-  (this->fields)._._message = message;
-  func_?(&(this->fields)._._message,message);
+  ppSVar1 = &(this->fields)._._message;
+  *ppSVar1 = message;
+  func_?(ppSVar1,message);
   return;
 }
 

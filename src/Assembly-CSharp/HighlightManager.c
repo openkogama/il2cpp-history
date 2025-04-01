@@ -37,66 +37,60 @@ Assembly-CSharp.dll::HighlightManager::HighlightManager_GetHighLights
     }
   }
   puStack_4 = puVar5;
-  DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
-  DStack_6._version = 0;
-  DStack_6._index = 0;
-  DStack_6._current.key = 0;
-  DStack_6._current.value = (Object *)0x0;
-  DStack_6._getEnumeratorRetType = 0;
-  pIVar7 = ((method->field7_0x1c).rgctx_data)->klass;
-  if (((uint)pIVar7->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar7 = (Il2CppClass *)func_?(pIVar7);
+  pIVar6 = ((method->field7_0x1c).rgctx_data)->klass;
+  if (((uint)pIVar6->vtable[0].methodPtr & 0x100) == 0) {
+    pIVar6 = (Il2CppClass *)func_?(pIVar6);
   }
-  pLVar8 = (List_1_Highlight_1_System_Object_ *)func_?(pIVar7);
-  pLStack_9 = pLVar8;
+  pLVar7 = (List_1_Highlight_1_System_Object_ *)func_?(pIVar6);
+  pLStack_8 = pLVar7;
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar8,
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar7,
              (method->field7_0x1c).rgctx_data[1].method);
-  pLStack_10 = pLVar8;
+  pLStack_9 = pLVar7;
   if ((TypeInfo__HighlightManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
   this = (Dictionary_2_System_UInt32_System_Object_ *)
          TypeInfo__HighlightManager->static_fields->highlightDatas;
   if (this != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
-    pDVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+    pDVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
              ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
                        ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
                         &stack0xffffff98,this,
                         MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>__GetEnumerator__
                        );
-    uStack_12 = 0;
-    DStack_6._dictionary = pDVar11->_dictionary;
-    DStack_6._version = pDVar11->_version;
-    DStack_6._index = pDVar11->_index;
-    DStack_6._current.key = (pDVar11->_current).key;
-    DStack_6._16_8_ = *(undefined8 *)&(pDVar11->_current).value;
+    uStack_11 = 0;
+    DStack_12._dictionary = pDVar10->_dictionary;
+    DStack_12._version = pDVar10->_version;
+    DStack_12._index = pDVar10->_index;
+    DStack_12._current.key = (pDVar10->_current).key;
+    DStack_12._16_8_ = *(undefined8 *)&(pDVar10->_current).value;
     uStack_1 = 1;
-    pDStack_13 = &DStack_6;
+    pDStack_13 = &DStack_12;
     while( true ) {
       do {
         bVar14 = mscorlib.dll::System::Collections::Generic::
                 Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
                 Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                          (&DStack_6,
+                          (&DStack_12,
                            MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>__MoveNext__
                           );
         if (bVar14 == 0) {
           uStack_1 = 0xffffffff;
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&DStack_6,
+                    ((Object *)&DStack_12,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MV::WorldObject::HighlightSystem::AvailableHighlightData>__Dispose__
                      ,in_stack_15);
           *unaff_FS_OFFSET = uStack_3;
-          return pLStack_9;
+          return pLStack_8;
         }
-        pOVar16 = DStack_6._current.value;
-        if (DStack_6._current.value == (Object *)0x0) goto code_?;
-      } while (*(undefined1 *)&DStack_6._current.value[2].klass != (undefined1)highlightType);
-      pEStack_17 = (ExceptionDispatchInfo *)DStack_6._current.value[2].monitor;
+        pOVar16 = DStack_12._current.value;
+        if (DStack_12._current.value == (Object *)0x0) goto code_?;
+      } while (*(undefined1 *)&DStack_12._current.value[2].klass != (undefined1)highlightType);
+      pEStack_17 = (ExceptionDispatchInfo *)DStack_12._current.value[2].monitor;
       if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
@@ -108,9 +102,9 @@ Assembly-CSharp.dll::HighlightManager::HighlightManager_GetHighLights
       System.dll::System::Net::WebCompletionSource`1[T]+Result[System::Object]::
       WebCompletionSource_1_T_Result_System_Object___ctor_1
                 (pWStack_19,WStack_18,pEStack_17,(method->field7_0x1c).rgctx_data[5].method);
-      if (pLStack_9 == (List_1_Highlight_1_System_Object_ *)0x0) break;
+      if (pLStack_8 == (List_1_Highlight_1_System_Object_ *)0x0) break;
       mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-                ((List_1_System_Object_ *)pLStack_9,(Object *)pWStack_19,
+                ((List_1_System_Object_ *)pLStack_8,(Object *)pWStack_19,
                  (method->field7_0x1c).rgctx_data[6].method);
     }
   }
@@ -118,8 +112,8 @@ code_?:
   func_?();
   func_?();
   pcVar20 = (code *)swi(3);
-  pLVar8 = (List_1_Highlight_1_System_Object_ *)(*pcVar20)();
-  return pLVar8;
+  pLVar7 = (List_1_Highlight_1_System_Object_ *)(*pcVar20)();
+  return pLVar7;
 }
 
 

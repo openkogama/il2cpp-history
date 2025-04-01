@@ -153,7 +153,7 @@ code_?:
              _UNK_? + collectEps;
     pLVar37 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
               ((float)puVar35 + fVar30 * fVar7);
-    VVar14.y = fVar31 * fVar7 + 4.4729082e-29;
+    VVar14.y = fVar31 * fVar7 + 4.4583124e-29;
     VVar14.x = (float)uVar28 + fVar27 * fVar7;
     VVar14.z = (float)pLVar37;
     VVar10.y = (float)puVar36;

@@ -16,61 +16,61 @@ Assembly-CSharp.dll::PMOWalkMode::PMOWalkMode_CalculateEnterPlayFromObserveState
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
   pMVar2 = TypeInfo__MVLocalPlayerBuilder;
   if (pMVar1 != (MVLocalPlayer *)0x0) {
-    if (((pMVar1->klass->_1).naturalAligment < (TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment)
-       || ((pMVar1->klass->_1).typeHierarchy
-           [(TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment - 1] !=
-           (Il2CppClass *)TypeInfo__MVLocalPlayerBuilder)) goto code_?;
+    bVar3 = (TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment;
+    if (((pMVar1->klass->_1).naturalAligment < bVar3) ||
+       ((pMVar1->klass->_1).typeHierarchy[bVar3 - 1] !=
+        (Il2CppClass *)TypeInfo__MVLocalPlayerBuilder)) goto code_?;
     team = pMVar1[1].klass;
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
     pMVar2 = TypeInfo__MVLocalPlayerBuilder;
     if (pMVar1 != (MVLocalPlayer *)0x0) {
-      if (((pMVar1->klass->_1).naturalAligment <
-           (TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment) ||
-         ((pMVar1->klass->_1).typeHierarchy
-          [(TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment - 1] !=
+      bVar3 = (TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment;
+      if (((pMVar1->klass->_1).naturalAligment < bVar3) ||
+         ((pMVar1->klass->_1).typeHierarchy[bVar3 - 1] !=
           (Il2CppClass *)TypeInfo__MVLocalPlayerBuilder)) goto code_?;
-      pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((pMVar3 != (MVNetworkGame *)0x0) &&
-         (pMVar4 = MVNetworkGame::MVNetworkGame_get_WorldObjectClientManager
-                             (pMVar3,(MethodInfo *)0x0), pMVar4 != (MVWorldObjectClientManager *)0x0
-         )) {
+      pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if ((pMVar4 != (MVNetworkGame *)0x0) &&
+         (pMVar5 = MVNetworkGame::MVNetworkGame_get_WorldObjectClientManager
+                              (pMVar4,(MethodInfo *)0x0),
+         pMVar5 != (MVWorldObjectClientManager *)0x0)) {
         id = 0x86;
-        pLVar5 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectsByType
-                            (pMVar4,WorldObjectType__Enum_AvatarSpawnRoleCreator,(MethodInfo *)0x0);
-        if (pLVar5 != (List_1_MVWorldObjectClient_ *)0x0) {
-          iVar6 = (pLVar5->fields)._size;
-          pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-          if ((pMVar3 != (MVNetworkGame *)0x0) &&
-             (pMVar7 = (pMVar3->fields).teamManager, pMVar7 != (MVTeamManager *)0x0)) {
+        pLVar6 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectsByType
+                            (pMVar5,WorldObjectType__Enum_AvatarSpawnRoleCreator,(MethodInfo *)0x0)
+        ;
+        if (pLVar6 != (List_1_MVWorldObjectClient_ *)0x0) {
+          iVar7 = (pLVar6->fields)._size;
+          pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if ((pMVar4 != (MVNetworkGame *)0x0) &&
+             (pMVar8 = (pMVar4->fields).teamManager, pMVar8 != (MVTeamManager *)0x0)) {
             pMVar2 = (MVLocalPlayerBuilder__Class *)
-                      MVTeamManager::MVTeamManager_TeamCount(pMVar7,(MethodInfo *)0x0);
-            pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-            if ((pMVar3 != (MVNetworkGame *)0x0) &&
-               (pMVar7 = (pMVar3->fields).teamManager, pMVar7 != (MVTeamManager *)0x0)) {
-              bVar8 = MVTeamManager::MVTeamManager_HasTeam(pMVar7,team,(MethodInfo *)0x0);
-              cVar9 = bVar8 == 0 && 1 < (int)pMVar2;
-              pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-              if ((pMVar3 != (MVNetworkGame *)0x0) &&
-                 (pMVar4 = MVNetworkGame::MVNetworkGame_get_WorldObjectClientManager
-                                     (pMVar3,(MethodInfo *)0x0),
-                 pMVar4 != (MVWorldObjectClientManager *)0x0)) {
-                pMVar10 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                                    (pMVar4,id,(MethodInfo *)0x0);
-                pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-                if ((pMVar3 != (MVNetworkGame *)0x0) &&
-                   (pMVar11 = (pMVar3->fields)._NetworkGameStateListener_k__BackingField,
-                   pMVar11 != (MVNetworkGameStateListener *)0x0)) {
-                  iVar12 = (pMVar11->fields).currentGameState;
-                  if (pMVar10 != (MVWorldObject *)0x0 || iVar6 < 1) {
+                      MVTeamManager::MVTeamManager_TeamCount(pMVar8,(MethodInfo *)0x0);
+            pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+            if ((pMVar4 != (MVNetworkGame *)0x0) &&
+               (pMVar8 = (pMVar4->fields).teamManager, pMVar8 != (MVTeamManager *)0x0)) {
+              bVar9 = MVTeamManager::MVTeamManager_HasTeam(pMVar8,team,(MethodInfo *)0x0);
+              cVar10 = bVar9 == 0 && 1 < (int)pMVar2;
+              pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+              if ((pMVar4 != (MVNetworkGame *)0x0) &&
+                 (pMVar5 = MVNetworkGame::MVNetworkGame_get_WorldObjectClientManager
+                                      (pMVar4,(MethodInfo *)0x0),
+                 pMVar5 != (MVWorldObjectClientManager *)0x0)) {
+                pMVar11 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                                    (pMVar5,id,(MethodInfo *)0x0);
+                pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+                if ((pMVar4 != (MVNetworkGame *)0x0) &&
+                   (pMVar12 = (pMVar4->fields)._NetworkGameStateListener_k__BackingField,
+                   pMVar12 != (MVNetworkGameStateListener *)0x0)) {
+                  iVar13 = (pMVar12->fields).currentGameState;
+                  if (pMVar11 != (MVWorldObject *)0x0 || iVar7 < 1) {
 code_?:
-                    if (cVar9 != '\0') {
+                    if (cVar10 != '\0') {
                       return PMOWalkMode_EnterPlayFromObserveState__Enum_SelectTeamOrSpawnRole;
                     }
-                    PVar13 = PMOWalkMode_EnterPlayFromObserveState__Enum_WaitForRoundToStart;
-                    if (iVar12 != 2) {
-                      PVar13 = PMOWalkMode_EnterPlayFromObserveState__Enum_EnterObserveMode;
+                    PVar14 = PMOWalkMode_EnterPlayFromObserveState__Enum_WaitForRoundToStart;
+                    if (iVar13 != 2) {
+                      PVar14 = PMOWalkMode_EnterPlayFromObserveState__Enum_EnterObserveMode;
                     }
-                    return PVar13;
+                    return PVar14;
                   }
                   if (cRam_? == '\0') {
                     func_?();
@@ -80,19 +80,18 @@ code_?:
                                      ((MethodInfo *)0x0);
                   pMVar2 = TypeInfo__MVLocalPlayerBuilder;
                   if (pMVar1 != (MVLocalPlayer *)0x0) {
-                    if (((pMVar1->klass->_1).naturalAligment <
-                         (TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment) ||
-                       ((pMVar1->klass->_1).typeHierarchy
-                        [(TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment - 1] !=
+                    bVar3 = (TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment;
+                    if (((pMVar1->klass->_1).naturalAligment < bVar3) ||
+                       ((pMVar1->klass->_1).typeHierarchy[bVar3 - 1] !=
                         (Il2CppClass *)TypeInfo__MVLocalPlayerBuilder)) goto code_?;
                     pMVar2 = (MVLocalPlayerBuilder__Class *)pMVar1[1].fields._.checkpointWOID;
                     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer
                                        ((MethodInfo *)0x0);
                     if (pMVar1 != (MVLocalPlayer *)0x0) {
-                      pMVar14 = (MVLocalPlayerBuilder__Class *)
+                      pMVar15 = (MVLocalPlayerBuilder__Class *)
                                 MVLocalPlayer::MVLocalPlayer_get_DefaultSpawnRoleId
                                           (pMVar1,(MethodInfo *)0x0);
-                      if (pMVar2 != pMVar14) {
+                      if (pMVar2 != pMVar15) {
                         return PMOWalkMode_EnterPlayFromObserveState__Enum_SelectTeamOrSpawnRole;
                       }
                       goto code_?;
@@ -110,9 +109,9 @@ code_?:
   pMVar1 = extraout_EDX;
 code_?:
   func_?(pMVar1,pMVar2);
-  pcVar15 = (code *)swi(3);
-  PVar13 = (*pcVar15)();
-  return PVar13;
+  pcVar16 = (code *)swi(3);
+  PVar14 = (*pcVar16)();
+  return PVar14;
 }
 
 
@@ -478,41 +477,37 @@ void Assembly-CSharp.dll::PMOWalkMode::PMOWalkMode_OnNewSpawnRoleSelected
     func_?(&TypeInfo__MVLocalPlayerBuilder);
     cRam_? = '\x01';
   }
-  pMVar1 = (MVLocalPlayerBuilder__Class *)
-           MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-  if (pMVar1 == (MVLocalPlayerBuilder__Class *)0x0) {
-code_?:
-    func_?();
-    pMVar2 = extraout_EDX;
-  }
-  else {
-    pIVar3 = (pMVar1->_0).image;
-    pMVar4 = TypeInfo__MVLocalPlayerBuilder;
-    if ((*(byte *)&pIVar3[4].assembly < (TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment) ||
-       (*(MVLocalPlayerBuilder__Class **)
-         ((pIVar3[2].typeCount - 4) + (uint)(TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment * 4
-         ) != TypeInfo__MVLocalPlayerBuilder)) goto code_?;
-    uVar5 = (pMVar1->_1).thread_static_fields_size;
-    uVar6 = (pMVar1->_1).flags;
-    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-    pMVar1 = TypeInfo__MVLocalPlayerBuilder;
-    if (pMVar2 == (MVLocalPlayer *)0x0) goto code_?;
-    if (((TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment <= (pMVar2->klass->_1).naturalAligment
-        ) && ((pMVar2->klass->_1).typeHierarchy
-              [(TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment - 1] ==
-              (Il2CppClass *)TypeInfo__MVLocalPlayerBuilder)) {
-      pMVar2[1].klass = (MVLocalPlayer__Class *)uVar5;
-      pMVar2[1].monitor = (MonitorData *)newSpawnRoleId;
-      pMVar2[1].fields._.checkpointWOID = uVar6;
-      return;
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
+  if (pMVar1 != (MVLocalPlayer *)0x0) {
+    bVar2 = (TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment;
+    pMVar3 = TypeInfo__MVLocalPlayerBuilder;
+    if (((pMVar1->klass->_1).naturalAligment < bVar2) ||
+       ((pMVar1->klass->_1).typeHierarchy[bVar2 - 1] !=
+        (Il2CppClass *)TypeInfo__MVLocalPlayerBuilder)) goto code_?;
+    uVar4 = pMVar1[1].klass;
+    iVar5 = pMVar1[1].fields._.checkpointWOID;
+    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
+    if (pMVar1 != (MVLocalPlayer *)0x0) {
+      bVar2 = (TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment;
+      pMVar3 = TypeInfo__MVLocalPlayerBuilder;
+      if ((bVar2 <= (pMVar1->klass->_1).naturalAligment) &&
+         ((pMVar1->klass->_1).typeHierarchy[bVar2 - 1] ==
+          (Il2CppClass *)TypeInfo__MVLocalPlayerBuilder)) {
+        pMVar1[1].klass = (MVLocalPlayer__Class *)uVar4;
+        pMVar1[1].monitor = (MonitorData *)newSpawnRoleId;
+        pMVar1[1].fields._.checkpointWOID = iVar5;
+        return;
+      }
+      goto code_?;
     }
   }
-  func_?(pMVar2,pMVar1);
-  pMVar4 = extraout_EDX_00;
+  pMVar3 = TypeInfo__MVLocalPlayerBuilder;
+  func_?();
+  pMVar1 = extraout_EDX;
 code_?:
-  func_?(pMVar1,pMVar4);
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  func_?(pMVar1,pMVar3);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -546,6 +541,7 @@ bool Assembly-CSharp.dll::PMOWalkMode::PMOWalkMode_ShouldSelectTeamOrSpawnRole
 
 {
   if (isSpawnRoleValid != 0) {
+code_?:
     return isTeamValid ^ 1;
   }
   if (cRam_? == '\0') {
@@ -554,29 +550,28 @@ bool Assembly-CSharp.dll::PMOWalkMode::PMOWalkMode_ShouldSelectTeamOrSpawnRole
   }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
   if (pMVar1 != (MVLocalPlayer *)0x0) {
-    if (((pMVar1->klass->_1).naturalAligment < (TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment)
-       || ((pMVar1->klass->_1).typeHierarchy
-           [(TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment - 1] !=
-           (Il2CppClass *)TypeInfo__MVLocalPlayerBuilder)) {
+    bVar2 = (TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment;
+    if (((pMVar1->klass->_1).naturalAligment < bVar2) ||
+       ((pMVar1->klass->_1).typeHierarchy[bVar2 - 1] !=
+        (Il2CppClass *)TypeInfo__MVLocalPlayerBuilder)) {
       func_?(pMVar1,TypeInfo__MVLocalPlayerBuilder);
     }
     else {
-      iVar2 = pMVar1[1].fields._.checkpointWOID;
+      iVar3 = pMVar1[1].fields._.checkpointWOID;
       pMVar1 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
       if (pMVar1 != (MVLocalPlayer *)0x0) {
-        iVar3 = MVLocalPlayer::MVLocalPlayer_get_DefaultSpawnRoleId(pMVar1,(MethodInfo *)0x0);
-        bVar4 = isTeamValid ^ 1;
-        if (iVar2 != iVar3) {
-          bVar4 = 1;
+        iVar4 = MVLocalPlayer::MVLocalPlayer_get_DefaultSpawnRoleId(pMVar1,(MethodInfo *)0x0);
+        if (iVar3 != iVar4) {
+          return 1;
         }
-        return bVar4;
+        goto code_?;
       }
     }
   }
   func_?();
   pcVar5 = (code *)swi(3);
-  bVar4 = (*pcVar5)();
-  return bVar4;
+  bVar6 = (*pcVar5)();
+  return bVar6;
 }
 
 
@@ -604,25 +599,25 @@ bool Assembly-CSharp.dll::PMOWalkMode::PMOWalkMode_WasPlayingAsDefaultAvatar
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
   pMVar2 = TypeInfo__MVLocalPlayerBuilder;
   if (pMVar1 != (MVLocalPlayer *)0x0) {
-    if (((pMVar1->klass->_1).naturalAligment < (TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment)
-       || ((pMVar1->klass->_1).typeHierarchy
-           [(TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment - 1] !=
-           (Il2CppClass *)TypeInfo__MVLocalPlayerBuilder)) goto code_?;
+    bVar3 = (TypeInfo__MVLocalPlayerBuilder->_1).naturalAligment;
+    if (((pMVar1->klass->_1).naturalAligment < bVar3) ||
+       ((pMVar1->klass->_1).typeHierarchy[bVar3 - 1] !=
+        (Il2CppClass *)TypeInfo__MVLocalPlayerBuilder)) goto code_?;
     pMVar2 = (MVLocalPlayerBuilder__Class *)pMVar1[1].fields._.checkpointWOID;
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
     if (pMVar1 != (MVLocalPlayer *)0x0) {
-      pMVar3 = (MVLocalPlayerBuilder__Class *)
+      pMVar4 = (MVLocalPlayerBuilder__Class *)
                MVLocalPlayer::MVLocalPlayer_get_DefaultSpawnRoleId(pMVar1,(MethodInfo *)0x0);
-      return pMVar2 == pMVar3;
+      return pMVar2 == pMVar4;
     }
   }
   func_?();
   pMVar1 = extraout_EDX;
 code_?:
   func_?(pMVar1,pMVar2);
-  pcVar4 = (code *)swi(3);
-  bVar5 = (*pcVar4)();
-  return bVar5;
+  pcVar5 = (code *)swi(3);
+  bVar6 = (*pcVar5)();
+  return bVar6;
 }
 
 
