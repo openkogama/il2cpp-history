@@ -67,10 +67,10 @@ code_?:
       pQStack_11 = (this->fields).prevVelocities;
       fStack_12 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
       fStack_13 = fStack_12 * 0.0;
-      uStack_14 = CONCAT44(velocity.y * fStack_12,fStack_13);
+      uStack_14 = CONCAT44(velocity.y * fStack_12,fStack_12 * 0.0);
       if (pQStack_11 != (Queue_1_UnityEngine_Vector3_ *)0x0) {
         item.y = velocity.y * fStack_12;
-        item.x = fStack_13;
+        item.x = fStack_12 * 0.0;
         item.z = fStack_13;
         mscorlib.dll::System::Collections::Generic::Queue`1[UnityEngine::Vector3]::Queue_1_UnityEngine_Vector3__Enqueue(pQStack_11,item,MethodInfo__System__Collections__Generic__Queue<UnityEngine::Vector3>__Enqueue_UnityEngine__Vector3_);
         if (cRam_? == '\0') {
@@ -159,7 +159,7 @@ void Assembly-CSharp.dll::PlaymodeCamera+SmoothLookAt::PlaymodeCamera_SmoothLook
   this_00 = (Queue_1_UnityEngine_Vector3_ *)func_?(TypeInfo__System__Collections__Generic__Queue<UnityEngine::Vector3>);
   System.Core.dll::System::Runtime::CompilerServices::ReadOnlyCollectionBuilder`1[System::Object]::ReadOnlyCollectionBuilder_1_System_Object___ctor((ReadOnlyCollectionBuilder_1_System_Object_ *)this_00,MethodInfo__System__Collections__Generic__Queue<UnityEngine::Vector3>__Queue__);
   method_00 = (MethodInfo *)&this->fields;
-  ((PlaymodeCamera_SmoothLookAt__Fields *)method_00)->prevVelocities = this_00;
+  (this->fields).prevVelocities = this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;

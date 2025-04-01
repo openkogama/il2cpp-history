@@ -131,10 +131,9 @@ void Assembly-CSharp.dll::MVNetworkGame+LogicEventQueue::MVNetworkGame_LogicEven
             uVar7 = 0;
             uVar8 = *(ushort *)(*piVar6 + 0xb6);
             if (uVar8 != 0) {
-              iVar4 = *(int *)(*piVar6 + 0x58);
               do {
-                if (*(IIsLogicObjectFiringEventHandler__Class **)(iVar4 + (uint)uVar7 * 8) == TypeInfo__IIsLogicObjectFiringEventHandler) {
-                  puVar9 = (undefined4 *)(*piVar6 + (*(int *)(iVar4 + 4 + (uint)uVar7 * 8) + 0x18) * 8);
+                if (*(IIsLogicObjectFiringEventHandler__Class **)(*(int *)(*piVar6 + 0x58) + (uint)uVar7 * 8) == TypeInfo__IIsLogicObjectFiringEventHandler) {
+                  puVar9 = (undefined4 *)(*piVar6 + (*(int *)(*(int *)(*piVar6 + 0x58) + 4 + (uint)uVar7 * 8) + 0x18) * 8);
                   goto code_?;
                 }
                 uVar7 = uVar7 + 1;
@@ -172,7 +171,7 @@ code_?:
     if (id == (CollectTheItemDropOff__Class *)0x0) goto code_?;
     iVar4 = func_?(id);
     if (iVar4 == 0) goto code_?;
-    if ((*(uint *)(iVar4 + 0xc) != 0) && (unaff_EDI = *(Int32__Array__Class **)(iVar4 + 0x10), 1 < *(uint *)(iVar4 + 0xc))) {
+    if ((*(int *)(iVar4 + 0xc) != 0) && (unaff_EDI = *(Int32__Array__Class **)(iVar4 + 0x10), 1 < *(uint *)(iVar4 + 0xc))) {
       id = *(CollectTheItemDropOff__Class **)(iVar4 + 0x14);
       this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
       if (this_00 == (MVWorldObjectClientManager *)0x0) {
@@ -185,8 +184,7 @@ code_?:
       this_01 = (CollectTheItemDropOff *)MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(this_00,(int32_t)id,(MethodInfo *)0x0);
       id = TypeInfo__CollectTheItemDropOff;
       if (this_01 == (CollectTheItemDropOff *)0x0) goto code_?;
-      bVar11 = (TypeInfo__CollectTheItemDropOff->_1).naturalAligment;
-      if ((bVar11 <= (this_01->klass->_1).naturalAligment) && ((CollectTheItemDropOff__Class *)(this_01->klass->_1).typeHierarchy[bVar11 - 1] == TypeInfo__CollectTheItemDropOff)) {
+      if (((TypeInfo__CollectTheItemDropOff->_1).naturalAligment <= (this_01->klass->_1).naturalAligment) && ((CollectTheItemDropOff__Class *)(this_01->klass->_1).typeHierarchy[(TypeInfo__CollectTheItemDropOff->_1).naturalAligment - 1] == TypeInfo__CollectTheItemDropOff)) {
         CollectTheItemDropOff::CollectTheItemDropOff_DropWoId(this_01,(int32_t)unaff_EDI,(MethodInfo *)0x0);
         return;
       }
@@ -196,8 +194,8 @@ code_?:
   func_?();
 code_?:
   func_?(id,unaff_EDI);
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -215,7 +213,7 @@ void Assembly-CSharp.dll::MVNetworkGame+LogicEventQueue::MVNetworkGame_LogicEven
   this_00 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::Queue<ExitGames::Client::Photon::EventData>_>);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text::TextResourceManager+FontAssetRef]::Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor(this_00,MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::Queue<ExitGames::Client::Photon::EventData>_>__Dictionary__);
   method_00 = (MethodInfo *)&this->fields;
-  ((MVNetworkGame_LogicEventQueue__Fields *)method_00)->logicEvents = (Dictionary_2_System_Int32_Queue_1_ExitGames_Client_Photon_EventData_ *)this_00;
+  (this->fields).logicEvents = (Dictionary_2_System_Int32_Queue_1_ExitGames_Client_Photon_EventData_ *)this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;

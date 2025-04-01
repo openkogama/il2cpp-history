@@ -4,19 +4,8 @@
 void Assembly-CSharp.dll::AsyncWebRequest::AsyncWebRequest_Dispose(AsyncWebRequest *this,MethodInfo *method)
 
 {
-  this_00 = (this->fields).request;
-  if (this_00 != (UnityWebRequest *)0x0) {
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__System__GC);
-      cRam_? = '\x01';
-    }
-    UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::UnityWebRequest_DisposeHandlers(this_00,(MethodInfo *)0x0);
-    UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::UnityWebRequest_InternalDestroy(this_00,(MethodInfo *)0x0);
-    if ((TypeInfo__System__GC->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    mscorlib.dll::System::GC::GC_1_SuppressFinalize((Object *)this_00,(MethodInfo *)0x0);
-    return;
+  if ((this->fields).request != (UnityWebRequest *)0x0) {
+    UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::UnityWebRequest_Dispose((this->fields).request,(MethodInfo *)0x0);
   }
   return;
 }
@@ -33,9 +22,8 @@ void Assembly-CSharp.dll::AsyncWebRequest::AsyncWebRequest_GotoRunState(AsyncWeb
   uStack_3 = 0;
   pUVar4 = (UnityWebRequest *)(*(code *)(this->klass->vtable).__unknown.method)(this,this->klass[1]._0.image);
   (this->fields).request = pUVar4;
-  ppUVar5 = &(this->fields).request;
-  func_?(ppUVar5,pUVar4);
-  pUVar4 = *ppUVar5;
+  func_?(&(this->fields).request,pUVar4);
+  pUVar4 = (this->fields).request;
   (this->fields).state = 1;
   if (pUVar4 != (UnityWebRequest *)0x0) {
     UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::UnityWebRequest_SendWebRequest(pUVar4,(MethodInfo *)0x0);
@@ -43,8 +31,8 @@ void Assembly-CSharp.dll::AsyncWebRequest::AsyncWebRequest_GotoRunState(AsyncWeb
     return;
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -130,9 +118,9 @@ bool Assembly-CSharp.dll::AsyncWebRequest::AsyncWebRequest_ReadyToDoCallback(Asy
   if ((pUVar8 == (UnityWebRequest *)0x0) || (pSVar9 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::UnityWebRequest_get_error(pUVar8,(MethodInfo *)0x0), pSVar9 == (String *)0x0)) goto code_?;
   if ((pSVar9->fields)._stringLength < 1) {
 code_?:
-    iVar10 = (this->fields).retries;
-    if (0 < iVar10) {
-      (this->fields).retries = iVar10 + -1;
+    if (0 < (this->fields).retries) {
+      piVar10 = &(this->fields).retries;
+      *piVar10 = *piVar10 + -1;
       if ((TypeInfo__System__DateTime->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__System__DateTime);
       }
@@ -176,11 +164,11 @@ code_?:
               args = (Object__Array *)func_?();
               if (args == (Object__Array *)0x0) break;
               pOVar16 = pOVar19;
-              if ((pOStack_21 != (Object *)0x0) && (iVar10 = func_?(pOStack_21,(args->klass->_0).element_class), pOVar16 = pOVar19, iVar10 == 0)) goto code_?;
+              if ((pOStack_21 != (Object *)0x0) && (iVar22 = func_?(pOStack_21,(args->klass->_0).element_class), pOVar16 = pOVar19, iVar22 == 0)) goto code_?;
               if (args->max_length == 0) goto code_?;
               args->vector[0] = pOStack_21;
               func_?(args->vector,pOStack_21);
-              if ((pMStack_20 != (MethodInfo *)0x0) && (iVar10 = func_?(pMStack_20,(args->klass->_0).element_class), iVar10 == 0)) goto code_?;
+              if ((pMStack_20 != (MethodInfo *)0x0) && (iVar22 = func_?(pMStack_20,(args->klass->_0).element_class), iVar22 == 0)) goto code_?;
               if (args->max_length < 2) goto code_?;
               args->vector[1] = (Object *)pMStack_20;
               func_?(args->vector + 1,pMStack_20);
@@ -194,13 +182,13 @@ code_?:
         else {
           func_?();
 code_?:
-          uVar22 = func_?();
-          func_?(uVar22,0);
+          uVar23 = func_?();
+          func_?(uVar23,0);
 code_?:
           func_?();
 code_?:
-          uVar22 = func_?();
-          func_?(uVar22,0);
+          uVar23 = func_?();
+          func_?(uVar23,0);
 code_?:
           func_?();
         }
@@ -211,8 +199,8 @@ code_?:
   else {
     pUVar8 = (this->fields).request;
     if ((pUVar8 == (UnityWebRequest *)0x0) || (pSVar9 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::UnityWebRequest_get_error(pUVar8,(MethodInfo *)0x0), pSVar9 == (String *)0x0)) goto code_?;
-    uVar23 = mscorlib.dll::System::String::String_get_Chars(pSVar9,0,(MethodInfo *)0x0);
-    uStack_7 = (uint)uVar23;
+    uVar24 = mscorlib.dll::System::String::String_get_Chars(pSVar9,0,(MethodInfo *)0x0);
+    uStack_7 = (uint)uVar24;
     if ((TypeInfo__System__Char->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
@@ -239,8 +227,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar24 = (code *)swi(3);
-  bVar18 = (*pcVar24)();
+  pcVar25 = (code *)swi(3);
+  bVar18 = (*pcVar25)();
   return bVar18;
 }
 
@@ -254,10 +242,7 @@ bool Assembly-CSharp.dll::AsyncWebRequest::AsyncWebRequest_Update(AsyncWebReques
   if (iVar1 != 0) {
     if (iVar1 == 1) {
       cVar2 = (*(code *)(this->klass->vtable).UpdateRunningState.method)(this,(this->klass->vtable).__unknown.methodPtr);
-      if (cVar2 == '\0') {
-        return 0;
-      }
-      return 1;
+      return cVar2 != '\0';
     }
     if (iVar1 != 2) {
       return 0;
@@ -316,9 +301,8 @@ bool Assembly-CSharp.dll::AsyncWebRequest::AsyncWebRequest_UpdateRunningState(As
     }
     (this->fields).isDone = 1;
     uStack_1 = 2;
-    pAVar11 = (this->fields).callback;
-    if (pAVar11 != (Action_1_UnityEngine_Networking_UnityWebRequest_ *)0x0) {
-      (*(pAVar11->fields)._._.invoke_impl)();
+    if ((this->fields).callback != (Action_1_UnityEngine_Networking_UnityWebRequest_ *)0x0) {
+      (*(((this->fields).callback)->fields)._._.invoke_impl)();
     }
     uStack_1 = 0xffffffff;
     (this->fields).callback = (Action_1_UnityEngine_Networking_UnityWebRequest_ *)0x0;
@@ -358,10 +342,9 @@ void Assembly-CSharp.dll::AsyncWebRequest::AsyncWebRequest__ctor(AsyncWebRequest
   DVar1 = mscorlib.dll::System::DateTime::DateTime_get_Now((MethodInfo *)0x0);
   (this->fields).retryTime._dateData = DVar1._dateData;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  ppSVar2 = &(this->fields).path;
   (this->fields).requestPriority = requestPriority;
-  *ppSVar2 = path;
-  func_?(ppSVar2,path);
+  (this->fields).path = path;
+  func_?(&(this->fields).path,path);
   (this->fields).callback = callback;
   func_?(&this->fields,callback);
   return;

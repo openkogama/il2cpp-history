@@ -53,7 +53,7 @@ void Assembly-CSharp.dll::ShopRepository::ShopRepository_CreateWorldObjectHierar
       if (*(ushort *)(iVar10 + 0xb6) != 0) {
         do {
           if (*(IEnumerator_1_KeyValuePair_2_System_Int32_MV_WorldObject_MVItem___Class **)(*(int *)(iVar10 + 0x58) + (uint)uVar11 * 8) == TypeInfo__System__Collections__Generic__IEnumerator<System::Collections::Generic::KeyValuePair<int,_MV::WorldObject::MVItem>_>) {
-            puVar12 = (undefined4 *)(iVar10 + 0xc0 + *(int *)(*(int *)(iVar10 + 0x58) + 4 + (uint)uVar11 * 8) * 8);
+            puVar12 = (undefined4 *)(iVar10 + (*(int *)(*(int *)(iVar10 + 0x58) + 4 + (uint)uVar11 * 8) + 0x18) * 8);
             goto code_?;
           }
           uVar11 = uVar11 + 1;
@@ -294,7 +294,8 @@ void Assembly-CSharp.dll::ShopRepository::ShopRepository_ReorganizeItemsByItemTy
         uStack_1 = 0xffffffff;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&stack0xffffffb4,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<int>__Dispose__,(MethodInfo *)method_00);
         uStack_1 = 0xffffffff;
-        if ((notifyOfChange != 0) && (pAVar10 = (this->fields)._.OnRepositoryChange, pAVar10 != (ARepository_OnRepositoryChangeDelegate *)0x0)) {
+        if ((notifyOfChange != 0) && ((this->fields)._.OnRepositoryChange != (ARepository_OnRepositoryChangeDelegate *)0x0)) {
+          pAVar10 = (this->fields)._.OnRepositoryChange;
           LStack_8._list = (pAVar10->fields)._._.method;
           (*(pAVar10->fields)._._.invoke_impl)();
         }
@@ -404,14 +405,12 @@ void Assembly-CSharp.dll::ShopRepository::ShopRepository__ctor(ShopRepository *t
   ARepository::ARepository__ctor((ARepository *)this,(MethodInfo *)0x0);
   this_00 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::MVItem>);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text::TextResourceManager+FontAssetRef]::Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor(this_00,MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::MVItem>__Dictionary__);
-  ppDVar1 = &(this->fields).shopInventory;
-  *ppDVar1 = (Dictionary_2_System_Int32_MV_WorldObject_MVItem_ *)this_00;
-  func_?(ppDVar1,this_00);
+  (this->fields).shopInventory = (Dictionary_2_System_Int32_MV_WorldObject_MVItem_ *)this_00;
+  func_?(&(this->fields).shopInventory,this_00);
   this_01 = (List_1_System_Int32_ *)func_?(TypeInfo__System__Collections__Generic__List<int>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_01,MethodInfo__System__Collections__Generic__List<int>__List__);
-  ppLVar2 = &(this->fields).ItemCategoriesInShop;
-  *ppLVar2 = this_01;
-  func_?(ppLVar2,this_01);
+  (this->fields).ItemCategoriesInShop = this_01;
+  func_?(&(this->fields).ItemCategoriesInShop,this_01);
   return;
 }
 

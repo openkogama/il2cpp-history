@@ -111,14 +111,13 @@ void MVWorldObject.dll::MV::WorldObject::Accessories::AccessoryBundle::Accessory
   (this->fields).accessoryBundleID = -1;
   this_00 = (List_1_MV_WorldObject_Accessories_AccessoryBundleItem_ *)func_?(TypeInfo__System__Collections__Generic__List<MV::WorldObject::Accessories::AccessoryBundleItem>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,MethodInfo__System__Collections__Generic__List<MV::WorldObject::Accessories::AccessoryBundleItem>__List__);
-  ppLVar1 = &(this->fields).accessoryBundleItems;
-  *ppLVar1 = this_00;
-  func_?(ppLVar1,this_00);
+  (this->fields).accessoryBundleItems = this_00;
+  func_?(&(this->fields).accessoryBundleItems,this_00);
   method_01 = TypeInfo__MV__WorldObject__Accessories__AccessoryTimelimit;
   value = (AccessoryTimelimit *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
   method_00 = (MethodInfo *)&(this->fields).timelimit;
-  *(AccessoryTimelimit **)method_00 = value;
+  (this->fields).timelimit = value;
   func_?(method_00,value);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;

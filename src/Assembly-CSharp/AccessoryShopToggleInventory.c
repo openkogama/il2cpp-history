@@ -107,7 +107,7 @@ void Assembly-CSharp.dll::AccessoryShopToggleInventory::AccessoryShopToggleInven
       if (uVar5 != 0) {
         do {
           if (pIVar3->interfaceOffsets[uVar4].interfaceType == (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IAccessoryInventoryControl) {
-            ppMVar6 = &(&(x->klass->vtable).DisplayPurchasableItems)[pIVar3->interfaceOffsets[uVar4].offset].method;
+            ppMVar6 = &(&(x->klass->vtable).DisplayPurchasableItems)[x->klass->interfaceOffsets[uVar4].offset].method;
             goto code_?;
           }
           uVar4 = uVar4 + 1;

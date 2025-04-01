@@ -86,33 +86,34 @@ void Assembly-CSharp.dll::RemoveCubes+RemoveCubesWithinRadius+FallOffValues::Rem
     func_?();
   }
   TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->static_fields->numFallOffValues = (int)fVar2;
-  iVar3 = TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->static_fields->numFallOffValues;
-  iVar4 = 0;
+  iVar3 = 0;
+  iVar4 = TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->static_fields->numFallOffValues;
   while( true ) {
     if ((TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    if (TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->static_fields->numFallOffValues <= iVar4) {
+    if (TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->static_fields->numFallOffValues <= iVar3) {
       return;
     }
-    fStack_5 = (float)(iVar4 + 1) * 1.7320508;
+    fStack_5 = (float)(iVar3 + 1) * 1.7320508;
     if (fVar1 < fStack_5) {
-      fStack_5 = (fVar1 - (float)iVar4 * 1.7320508) + (float)iVar4 * 1.7320508;
+      fStack_5 = (fVar1 - (float)iVar3 * 1.7320508) + (float)iVar3 * 1.7320508;
     }
+    fVar6 = (float)iVar3;
     if ((TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     if (TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->static_fields->fallOffValues == (RemoveCubes_RemoveCubesWithinRadius_FallOffValues_FallOffValue__Array *)0x0) break;
-    pfVar6 = (float *)func_?();
-    *pfVar6 = fStack_5 * fStack_5;
+    pfVar7 = (float *)func_?();
+    *pfVar7 = fStack_5 * fStack_5;
     if (TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->static_fields->fallOffValues == (RemoveCubes_RemoveCubesWithinRadius_FallOffValues_FallOffValue__Array *)0x0) break;
-    iVar7 = func_?();
-    *(float *)(iVar7 + 4) = centerDamage - (float)iVar4 * (centerDamage / (float)iVar3);
-    iVar4 = iVar4 + 1;
+    iVar8 = func_?();
+    iVar3 = iVar3 + 1;
+    *(float *)(iVar8 + 4) = centerDamage - fVar6 * (centerDamage / (float)iVar4);
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

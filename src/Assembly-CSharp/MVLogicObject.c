@@ -38,75 +38,70 @@ Bounds * Assembly-CSharp.dll::MVLogicObject::MVLogicObject_ComputeLocalBounds(Bo
   (__return_storage_ptr__->m_Extents).x = (float)(undefined4)uStack_4 * 0.5;
   (__return_storage_ptr__->m_Extents).y = (float)uStack_4._4_4_ * 0.5;
   (__return_storage_ptr__->m_Extents).z = fStack_5;
-  if (meshRenderers != (Renderer__Array *)0x0) {
-    if (meshRenderers->max_length == 0) {
-      context = (this->fields)._.gameObject;
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Debug);
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning_1((Object *)StringLiteral_Mesh_filters_required_for_correc,(Object_1 *)context,(MethodInfo *)0x0);
-    }
-    else {
-      if (meshRenderers->vector[0] == (Renderer *)0x0) goto code_?;
-      pBVar6 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_bounds(&BStack_7,meshRenderers->vector[0],(MethodInfo *)0x0);
-      fVar3 = (pBVar6->m_Center).y;
-      fVar8 = (pBVar6->m_Extents).x;
-      fVar9 = (pBVar6->m_Extents).y;
-      fVar10 = (pBVar6->m_Extents).z;
-      fStack_5 = (pBVar6->m_Center).z - origin.z;
-      ppRStack_11 = meshRenderers->vector;
-      uStack_12 = 1;
-      (__return_storage_ptr__->m_Center).x = (pBVar6->m_Center).x - origin.x;
-      (__return_storage_ptr__->m_Center).y = fVar3 - origin.y;
-      (__return_storage_ptr__->m_Center).z = fStack_5;
-      (__return_storage_ptr__->m_Extents).x = fVar8;
-      (__return_storage_ptr__->m_Extents).y = fVar9;
-      (__return_storage_ptr__->m_Extents).z = fVar10;
-      while( true ) {
-        ppRStack_11 = ppRStack_11 + 1;
-        uStack_2 = CONCAT44(uStack_12,(undefined4)uStack_2);
-        if ((int)meshRenderers->max_length <= (int)uStack_12) break;
-        if (meshRenderers->max_length <= uStack_12) goto code_?;
-        if (*ppRStack_11 == (Renderer *)0x0) goto code_?;
-        pBVar6 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_bounds(&BStack_7,*ppRStack_11,(MethodInfo *)0x0);
-        fVar3 = (pBVar6->m_Extents).y;
-        fVar8 = (pBVar6->m_Extents).z;
-        fStack_13 = (pBVar6->m_Center).y;
-        BStack_7.m_Center.y = (pBVar6->m_Center).z;
-        fStack_14 = (pBVar6->m_Extents).x;
-        fVar9 = (pBVar6->m_Center).x - origin.x;
-        fStack_15 = fStack_13 - origin.y;
-        BStack_7.m_Center.x = BStack_7.m_Center.y - origin.z;
-        uStack_2 = CONCAT44(fVar9,(undefined4)uStack_2);
-        fStack_5 = BStack_7.m_Center.x - fVar8;
-        point.y = fStack_15 - fVar3;
-        point.x = fVar9 - fStack_14;
-        point.z = fStack_5;
-        BStack_7.m_Center.z = BStack_7.m_Center.y;
-        BStack_7.m_Extents.x = BStack_7.m_Center.y;
-        fStack_16 = fStack_13;
-        fStack_17 = fStack_13;
-        fStack_18 = fStack_14;
-        fStack_19 = fStack_14;
-        fStack_20 = fStack_14;
-        UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds_Encapsulate(__return_storage_ptr__,point,(MethodInfo *)0x0);
-        fStack_21 = fVar8 + BStack_7.m_Center.x;
-        point_00.y = fVar3 + fStack_15;
-        point_00.x = fStack_14 + uStack_2._4_4_;
-        point_00.z = fStack_21;
-        UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds_Encapsulate(__return_storage_ptr__,point_00,(MethodInfo *)0x0);
-        uStack_12 = uStack_12 + 1;
-      }
-    }
-    return __return_storage_ptr__;
+  if (meshRenderers == (Renderer__Array *)0x0) {
+code_?:
+    func_?();
+code_?:
+    func_?();
+    pcVar6 = (code *)swi(3);
+    pBVar7 = (Bounds *)(*pcVar6)();
+    return pBVar7;
   }
-code_?:
-  func_?();
-code_?:
-  func_?();
-  pcVar22 = (code *)swi(3);
-  pBVar6 = (Bounds *)(*pcVar22)();
-  return pBVar6;
+  if (meshRenderers->max_length == 0) {
+    context = (this->fields)._.gameObject;
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Debug);
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning_1((Object *)StringLiteral_Mesh_filters_required_for_correc,(Object_1 *)context,(MethodInfo *)0x0);
+  }
+  else {
+    if (meshRenderers->vector[0] == (Renderer *)0x0) goto code_?;
+    pBVar7 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_bounds(&BStack_8,meshRenderers->vector[0],(MethodInfo *)0x0);
+    fVar3 = (pBVar7->m_Center).y;
+    fVar9 = (pBVar7->m_Extents).x;
+    fVar10 = (pBVar7->m_Extents).y;
+    fVar11 = (pBVar7->m_Extents).z;
+    fStack_5 = (pBVar7->m_Center).z - origin.z;
+    ppRStack_12 = meshRenderers->vector;
+    (__return_storage_ptr__->m_Center).x = (pBVar7->m_Center).x - origin.x;
+    (__return_storage_ptr__->m_Center).y = fVar3 - origin.y;
+    (__return_storage_ptr__->m_Center).z = fStack_5;
+    (__return_storage_ptr__->m_Extents).x = fVar9;
+    (__return_storage_ptr__->m_Extents).y = fVar10;
+    (__return_storage_ptr__->m_Extents).z = fVar11;
+    for (uStack_13 = 1; ppRStack_12 = ppRStack_12 + 1, (int)uStack_13 < (int)meshRenderers->max_length; uStack_13 = uStack_13 + 1) {
+      if (meshRenderers->max_length <= uStack_13) goto code_?;
+      if (*ppRStack_12 == (Renderer *)0x0) goto code_?;
+      pBVar7 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_bounds(&BStack_8,*ppRStack_12,(MethodInfo *)0x0);
+      fVar3 = (pBVar7->m_Extents).y;
+      fVar9 = (pBVar7->m_Extents).z;
+      fStack_14 = (pBVar7->m_Center).y;
+      BStack_8.m_Center.y = (pBVar7->m_Center).z;
+      fStack_15 = (pBVar7->m_Extents).x;
+      fVar10 = (pBVar7->m_Center).x - origin.x;
+      fStack_16 = fStack_14 - origin.y;
+      BStack_8.m_Center.x = BStack_8.m_Center.y - origin.z;
+      uStack_2 = CONCAT44(fVar10,(undefined4)uStack_2);
+      fStack_5 = BStack_8.m_Center.x - fVar9;
+      point.y = fStack_16 - fVar3;
+      point.x = fVar10 - fStack_15;
+      point.z = fStack_5;
+      BStack_8.m_Center.z = BStack_8.m_Center.y;
+      BStack_8.m_Extents.x = BStack_8.m_Center.y;
+      fStack_17 = fStack_14;
+      fStack_18 = fStack_14;
+      fStack_19 = fStack_15;
+      fStack_20 = fStack_15;
+      fStack_21 = fStack_15;
+      UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds_Encapsulate(__return_storage_ptr__,point,(MethodInfo *)0x0);
+      fStack_22 = fVar9 + BStack_8.m_Center.x;
+      point_00.y = fVar3 + fStack_16;
+      point_00.x = fStack_15 + uStack_2._4_4_;
+      point_00.z = fStack_22;
+      UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds_Encapsulate(__return_storage_ptr__,point_00,(MethodInfo *)0x0);
+    }
+  }
+  return __return_storage_ptr__;
 }
 
 
@@ -134,12 +129,10 @@ void Assembly-CSharp.dll::MVLogicObject::MVLogicObject_Destroy(MVLogicObject *th
     func_?(TypeInfo__UpdateController);
   }
   UpdateController::UpdateController_RemoveUpdateObject((IUpdatecontrollerSubscriberUpdate *)this,(MethodInfo *)0x0);
-  this_00 = (this->fields).cullingSubscriberBase;
-  ppCVar1 = &(this->fields).cullingSubscriberBase;
-  if (this_00 != (CullingSubscriberBase *)0x0) {
-    CullingSubscriberBase::CullingSubscriberBase_Destroy(this_00,(MethodInfo *)0x0);
-    *ppCVar1 = (CullingSubscriberBase *)0x0;
-    func_?(ppCVar1,0);
+  if ((this->fields).cullingSubscriberBase != (CullingSubscriberBase *)0x0) {
+    CullingSubscriberBase::CullingSubscriberBase_Destroy((this->fields).cullingSubscriberBase,(MethodInfo *)0x0);
+    (this->fields).cullingSubscriberBase = (CullingSubscriberBase *)0x0;
+    func_?(&(this->fields).cullingSubscriberBase,0);
   }
   MVWorldObjectClient::MVWorldObjectClient_Destroy((MVWorldObjectClient *)this,(MethodInfo *)0x0);
   return;
@@ -386,46 +379,42 @@ CullingSubscriberBase * Assembly-CSharp.dll::MVLogicObject::MVLogicObject_SetupC
       return (CullingSubscriberBase *)0x0;
     }
   }
-  ppGVar2 = &(this->fields).lodGameObject;
-  *ppGVar2 = lodGameObject;
-  func_?(ppGVar2,lodGameObject);
-  pUVar3 = (this->fields)._.PositionChanged;
+  (this->fields).lodGameObject = lodGameObject;
+  func_?(&(this->fields).lodGameObject,lodGameObject);
+  pUVar2 = (this->fields)._.PositionChanged;
   this_00 = (UnityAction_2_System_Object_System_Object_ *)func_?(TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>);
   UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor(this_00,(Object *)this,MethodInfo__MVLogicObject__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_,(MethodInfo *)0x0);
-  pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pUVar3,(Delegate *)this_00,(MethodInfo *)0x0);
-  if (pDVar4 == (Delegate *)0x0) {
+  pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pUVar2,(Delegate *)this_00,(MethodInfo *)0x0);
+  if (pDVar3 == (Delegate *)0x0) {
     (this->fields)._.PositionChanged = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
 code_?:
     func_?();
-    pMStack_5 = this;
-    puVar6 = (undefined8 *)(*(code *)(this->klass->vtable).get_WorldPosition_1.method)(&pMStack_5);
-    fVar7 = *(float *)(puVar6 + 1);
-    uVar8 = (undefined4)*puVar6;
-    uVar9 = (undefined4)((ulonglong)*puVar6 >> 0x20);
+    pMStack_4 = this;
+    puVar5 = (undefined8 *)(*(code *)(this->klass->vtable).get_WorldPosition_1.method)(&pMStack_4);
+    fVar6 = *(float *)(puVar5 + 1);
+    uVar7 = (undefined4)*puVar5;
+    uVar8 = (undefined4)((ulonglong)*puVar5 >> 0x20);
     this_01 = (UnityAction_1_UnityEngine_Vector2_ *)func_?(TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>);
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Vector2]::UnityAction_1_UnityEngine_Vector2___ctor(this_01,(Object *)this,(this->klass->vtable).UpdateControllerUpdate_1.methodPtr,(MethodInfo *)0x0);
-    pCVar10 = (CullingSubscriberBase *)func_?(TypeInfo__CullingSubscriberBase);
-    position.y = (float)uVar9;
-    position.x = (float)uVar8;
-    position.z = fVar7;
-    CullingSubscriberBase::CullingSubscriberBase__ctor_2(pCVar10,cullingRadius,position,(UnityAction_1_UnityEngine_CullingGroupEvent_ *)this_01,(MethodInfo *)0x0);
-    pCRam000000f0 = pCVar10;
+    pCVar9 = (CullingSubscriberBase *)func_?(TypeInfo__CullingSubscriberBase);
+    position.y = (float)uVar8;
+    position.x = (float)uVar7;
+    position.z = fVar6;
+    CullingSubscriberBase::CullingSubscriberBase__ctor_2(pCVar9,cullingRadius,position,(UnityAction_1_UnityEngine_CullingGroupEvent_ *)this_01,(MethodInfo *)0x0);
+    pCRam000000f0 = pCVar9;
     func_?();
     return pCRam000000f0;
   }
-  pUVar3 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
-  if (pUVar3 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) {
-    func_?();
-  }
-  else {
-    (this->fields)._.PositionChanged = pUVar3;
-    iVar11 = func_?();
-    if (iVar11 != 0) goto code_?;
+  pUVar2 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
+  if (pUVar2 != (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) {
+    (this->fields)._.PositionChanged = pUVar2;
+    iVar10 = func_?();
+    if (iVar10 != 0) goto code_?;
   }
   func_?();
-  pcVar12 = (code *)swi(3);
-  pCVar10 = (CullingSubscriberBase *)(*pcVar12)();
-  return pCVar10;
+  pcVar11 = (code *)swi(3);
+  pCVar9 = (CullingSubscriberBase *)(*pcVar11)();
+  return pCVar9;
 }
 
 

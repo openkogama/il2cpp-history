@@ -1,12 +1,38 @@
 
+/* Void KillSelf() */
+
+void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEventManager_AvatarCommandsPlayModeManager_KillSelf(GameEventManager_AvatarCommandsPlayModeManager *this,MethodInfo *method)
+
+{
+  if ((this->fields).OnKillSelf != (Action *)0x0) {
+    pAVar1 = (this->fields).OnKillSelf;
+    (*(pAVar1->fields)._._.invoke_impl)((pAVar1->fields)._._.method_code,(pAVar1->fields)._._.method);
+  }
+  return;
+}
+
+
 /* Void MoveBodyToSafeSpot(Int32) */
 
 void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEventManager_AvatarCommandsPlayModeManager_MoveBodyToSafeSpot(GameEventManager_AvatarCommandsPlayModeManager *this,int32_t index,MethodInfo *method)
 
 {
-  pAVar1 = (this->fields).OnMoveBodyToSafeSpot;
-  if (pAVar1 != (Action_1_Int32_ *)0x0) {
+  if ((this->fields).OnMoveBodyToSafeSpot != (Action_1_Int32_ *)0x0) {
+    pAVar1 = (this->fields).OnMoveBodyToSafeSpot;
     (*(pAVar1->fields)._._.invoke_impl)((pAVar1->fields)._._.method_code,index,(pAVar1->fields)._._.method);
+  }
+  return;
+}
+
+
+/* Void Respawn() */
+
+void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEventManager_AvatarCommandsPlayModeManager_Respawn(GameEventManager_AvatarCommandsPlayModeManager *this,MethodInfo *method)
+
+{
+  if ((this->fields).OnRespawn != (Action *)0x0) {
+    pAVar1 = (this->fields).OnRespawn;
+    (*(pAVar1->fields)._._.invoke_impl)((pAVar1->fields)._._.method_code,(pAVar1->fields)._._.method);
   }
   return;
 }
@@ -17,9 +43,22 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEv
 void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEventManager_AvatarCommandsPlayModeManager_ReviveTimeElapsed(GameEventManager_AvatarCommandsPlayModeManager *this,MethodInfo *method)
 
 {
-  pAVar1 = (this->fields).OnReviveTimeElapsed;
-  if (pAVar1 != (Action *)0x0) {
+  if ((this->fields).OnReviveTimeElapsed != (Action *)0x0) {
+    pAVar1 = (this->fields).OnReviveTimeElapsed;
     (*(pAVar1->fields)._._.invoke_impl)((pAVar1->fields)._._.method_code,(pAVar1->fields)._._.method);
+  }
+  return;
+}
+
+
+/* Void SetIntermediateDebriefing(WinningConditionType) */
+
+void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEventManager_AvatarCommandsPlayModeManager_SetIntermediateDebriefing(GameEventManager_AvatarCommandsPlayModeManager *this,WinningConditionType__Enum winningConditionType,MethodInfo *method)
+
+{
+  if ((this->fields).OnWinningConditionIntermediateDebriefing != (Action_1_WinningConditionType_ *)0x0) {
+    pAVar1 = (this->fields).OnWinningConditionIntermediateDebriefing;
+    (*(pAVar1->fields)._._.invoke_impl)((pAVar1->fields)._._.method_code,winningConditionType,(pAVar1->fields)._._.method);
   }
   return;
 }
@@ -30,8 +69,8 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEv
 void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEventManager_AvatarCommandsPlayModeManager_SetToDeadMode(GameEventManager_AvatarCommandsPlayModeManager *this,MethodInfo *method)
 
 {
-  pAVar1 = (this->fields).OnSetToDeadMode;
-  if (pAVar1 != (Action *)0x0) {
+  if ((this->fields).OnSetToDeadMode != (Action *)0x0) {
+    pAVar1 = (this->fields).OnSetToDeadMode;
     (*(pAVar1->fields)._._.invoke_impl)((pAVar1->fields)._._.method_code,(pAVar1->fields)._._.method);
   }
   return;
@@ -43,8 +82,8 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEv
 void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEventManager_AvatarCommandsPlayModeManager_SpawnAsGhost(GameEventManager_AvatarCommandsPlayModeManager *this,MethodInfo *method)
 
 {
-  pAVar1 = (this->fields).OnSpawnAsGhost;
-  if (pAVar1 != (Action *)0x0) {
+  if ((this->fields).OnSpawnAsGhost != (Action *)0x0) {
+    pAVar1 = (this->fields).OnSpawnAsGhost;
     (*(pAVar1->fields)._._.invoke_impl)((pAVar1->fields)._._.method_code,(pAVar1->fields)._._.method);
   }
   return;
@@ -56,8 +95,8 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEv
 void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEventManager_AvatarCommandsPlayModeManager_SpawnAtSafeSpot(GameEventManager_AvatarCommandsPlayModeManager *this,int32_t safeSpotIndex,MethodInfo *method)
 
 {
-  pAVar1 = (this->fields).OnSpawnAtSafeSpot;
-  if (pAVar1 != (Action_1_Int32_ *)0x0) {
+  if ((this->fields).OnSpawnAtSafeSpot != (Action_1_Int32_ *)0x0) {
+    pAVar1 = (this->fields).OnSpawnAtSafeSpot;
     (*(pAVar1->fields)._._.invoke_impl)((pAVar1->fields)._._.method_code,safeSpotIndex,(pAVar1->fields)._._.method);
   }
   return;
@@ -73,26 +112,25 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEv
     func_?(&TypeInfo__System__Action);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnEnterPlaymode;
-  a = *ppAVar1;
+  a = (this->fields).OnEnterPlaymode;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((Action__Class *)pDVar2->klass == TypeInfo__System__Action) {
-        pDVar3 = pDVar2;
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
+    pDVar2 = (Delegate *)0x0;
+    if (pDVar1 != (Delegate *)0x0) {
+      if ((Action__Class *)pDVar1->klass == TypeInfo__System__Action) {
+        pDVar2 = pDVar1;
       }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__Action);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+      if (pDVar2 == (Delegate *)0x0) {
+        func_?(pDVar1,TypeInfo__System__Action);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
     }
-    pAVar5 = (Action *)func_?(ppAVar1,pDVar3,a);
-    bVar6 = pAVar5 == a;
-    a = pAVar5;
-    if (bVar6) {
+    pAVar4 = (Action *)func_?(&(this->fields).OnEnterPlaymode,pDVar2,a);
+    bVar5 = pAVar4 == a;
+    a = pAVar4;
+    if (bVar5) {
       return;
     }
   } while( true );
@@ -142,25 +180,24 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEv
     func_?(&TypeInfo__System__Action<int>);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnMoveBodyToSafeSpot;
-  a = *ppAVar1;
+  a = (this->fields).OnMoveBodyToSafeSpot;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar3 = TypeInfo__System__Action<int>;
-    iVar4 = 0;
-    if (pDVar2 != (Delegate *)0x0) {
-      iVar4 = func_?(pDVar2,TypeInfo__System__Action<int>);
-      if (iVar4 == 0) {
-        func_?(pDVar2,pAVar3);
-        pcVar5 = (code *)swi(3);
-        (*pcVar5)();
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
+    pAVar2 = TypeInfo__System__Action<int>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__Action<int>);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pAVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pAVar6 = (Action_1_Int32_ *)func_?(ppAVar1,iVar4,a);
-    bVar7 = pAVar6 != a;
-    a = pAVar6;
-  } while (bVar7);
+    pAVar5 = (Action_1_Int32_ *)func_?(&(this->fields).OnMoveBodyToSafeSpot,iVar3,a);
+    bVar6 = pAVar5 != a;
+    a = pAVar5;
+  } while (bVar6);
   return;
 }
 
@@ -174,26 +211,25 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEv
     func_?(&TypeInfo__System__Action);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnReadyScreenShot;
-  a = *ppAVar1;
+  a = (this->fields).OnReadyScreenShot;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((Action__Class *)pDVar2->klass == TypeInfo__System__Action) {
-        pDVar3 = pDVar2;
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
+    pDVar2 = (Delegate *)0x0;
+    if (pDVar1 != (Delegate *)0x0) {
+      if ((Action__Class *)pDVar1->klass == TypeInfo__System__Action) {
+        pDVar2 = pDVar1;
       }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__Action);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+      if (pDVar2 == (Delegate *)0x0) {
+        func_?(pDVar1,TypeInfo__System__Action);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
     }
-    pAVar5 = (Action *)func_?(ppAVar1,pDVar3,a);
-    bVar6 = pAVar5 == a;
-    a = pAVar5;
-    if (bVar6) {
+    pAVar4 = (Action *)func_?(&(this->fields).OnReadyScreenShot,pDVar2,a);
+    bVar5 = pAVar4 == a;
+    a = pAVar4;
+    if (bVar5) {
       return;
     }
   } while( true );
@@ -209,26 +245,25 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEv
     func_?(&TypeInfo__System__Action);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnRemoveFromGame;
-  a = *ppAVar1;
+  a = (this->fields).OnRemoveFromGame;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((Action__Class *)pDVar2->klass == TypeInfo__System__Action) {
-        pDVar3 = pDVar2;
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
+    pDVar2 = (Delegate *)0x0;
+    if (pDVar1 != (Delegate *)0x0) {
+      if ((Action__Class *)pDVar1->klass == TypeInfo__System__Action) {
+        pDVar2 = pDVar1;
       }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__Action);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+      if (pDVar2 == (Delegate *)0x0) {
+        func_?(pDVar1,TypeInfo__System__Action);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
     }
-    pAVar5 = (Action *)func_?(ppAVar1,pDVar3,a);
-    bVar6 = pAVar5 == a;
-    a = pAVar5;
-    if (bVar6) {
+    pAVar4 = (Action *)func_?(&(this->fields).OnRemoveFromGame,pDVar2,a);
+    bVar5 = pAVar4 == a;
+    a = pAVar4;
+    if (bVar5) {
       return;
     }
   } while( true );
@@ -244,26 +279,25 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEv
     func_?(&TypeInfo__System__Action);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnRespawn;
-  a = *ppAVar1;
+  a = (this->fields).OnRespawn;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((Action__Class *)pDVar2->klass == TypeInfo__System__Action) {
-        pDVar3 = pDVar2;
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
+    pDVar2 = (Delegate *)0x0;
+    if (pDVar1 != (Delegate *)0x0) {
+      if ((Action__Class *)pDVar1->klass == TypeInfo__System__Action) {
+        pDVar2 = pDVar1;
       }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__Action);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+      if (pDVar2 == (Delegate *)0x0) {
+        func_?(pDVar1,TypeInfo__System__Action);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
     }
-    pAVar5 = (Action *)func_?(ppAVar1,pDVar3,a);
-    bVar6 = pAVar5 == a;
-    a = pAVar5;
-    if (bVar6) {
+    pAVar4 = (Action *)func_?(&(this->fields).OnRespawn,pDVar2,a);
+    bVar5 = pAVar4 == a;
+    a = pAVar4;
+    if (bVar5) {
       return;
     }
   } while( true );
@@ -279,26 +313,25 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEv
     func_?(&TypeInfo__System__Action);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnReviveTimeElapsed;
-  a = *ppAVar1;
+  a = (this->fields).OnReviveTimeElapsed;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((Action__Class *)pDVar2->klass == TypeInfo__System__Action) {
-        pDVar3 = pDVar2;
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
+    pDVar2 = (Delegate *)0x0;
+    if (pDVar1 != (Delegate *)0x0) {
+      if ((Action__Class *)pDVar1->klass == TypeInfo__System__Action) {
+        pDVar2 = pDVar1;
       }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__Action);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+      if (pDVar2 == (Delegate *)0x0) {
+        func_?(pDVar1,TypeInfo__System__Action);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
     }
-    pAVar5 = (Action *)func_?(ppAVar1,pDVar3,a);
-    bVar6 = pAVar5 == a;
-    a = pAVar5;
-    if (bVar6) {
+    pAVar4 = (Action *)func_?(&(this->fields).OnReviveTimeElapsed,pDVar2,a);
+    bVar5 = pAVar4 == a;
+    a = pAVar4;
+    if (bVar5) {
       return;
     }
   } while( true );
@@ -314,26 +347,25 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEv
     func_?(&TypeInfo__System__Action);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnSetRespawnWhenPossible;
-  a = *ppAVar1;
+  a = (this->fields).OnSetRespawnWhenPossible;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((Action__Class *)pDVar2->klass == TypeInfo__System__Action) {
-        pDVar3 = pDVar2;
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
+    pDVar2 = (Delegate *)0x0;
+    if (pDVar1 != (Delegate *)0x0) {
+      if ((Action__Class *)pDVar1->klass == TypeInfo__System__Action) {
+        pDVar2 = pDVar1;
       }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__Action);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+      if (pDVar2 == (Delegate *)0x0) {
+        func_?(pDVar1,TypeInfo__System__Action);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
     }
-    pAVar5 = (Action *)func_?(ppAVar1,pDVar3,a);
-    bVar6 = pAVar5 == a;
-    a = pAVar5;
-    if (bVar6) {
+    pAVar4 = (Action *)func_?(&(this->fields).OnSetRespawnWhenPossible,pDVar2,a);
+    bVar5 = pAVar4 == a;
+    a = pAVar4;
+    if (bVar5) {
       return;
     }
   } while( true );
@@ -349,26 +381,25 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEv
     func_?(&TypeInfo__System__Action);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnSetToDeadMode;
-  a = *ppAVar1;
+  a = (this->fields).OnSetToDeadMode;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((Action__Class *)pDVar2->klass == TypeInfo__System__Action) {
-        pDVar3 = pDVar2;
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
+    pDVar2 = (Delegate *)0x0;
+    if (pDVar1 != (Delegate *)0x0) {
+      if ((Action__Class *)pDVar1->klass == TypeInfo__System__Action) {
+        pDVar2 = pDVar1;
       }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__Action);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+      if (pDVar2 == (Delegate *)0x0) {
+        func_?(pDVar1,TypeInfo__System__Action);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
     }
-    pAVar5 = (Action *)func_?(ppAVar1,pDVar3,a);
-    bVar6 = pAVar5 == a;
-    a = pAVar5;
-    if (bVar6) {
+    pAVar4 = (Action *)func_?(&(this->fields).OnSetToDeadMode,pDVar2,a);
+    bVar5 = pAVar4 == a;
+    a = pAVar4;
+    if (bVar5) {
       return;
     }
   } while( true );
@@ -384,26 +415,25 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEv
     func_?(&TypeInfo__System__Action);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnSetToSpawnPoint;
-  a = *ppAVar1;
+  a = (this->fields).OnSetToSpawnPoint;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((Action__Class *)pDVar2->klass == TypeInfo__System__Action) {
-        pDVar3 = pDVar2;
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
+    pDVar2 = (Delegate *)0x0;
+    if (pDVar1 != (Delegate *)0x0) {
+      if ((Action__Class *)pDVar1->klass == TypeInfo__System__Action) {
+        pDVar2 = pDVar1;
       }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__Action);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+      if (pDVar2 == (Delegate *)0x0) {
+        func_?(pDVar1,TypeInfo__System__Action);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
     }
-    pAVar5 = (Action *)func_?(ppAVar1,pDVar3,a);
-    bVar6 = pAVar5 == a;
-    a = pAVar5;
-    if (bVar6) {
+    pAVar4 = (Action *)func_?(&(this->fields).OnSetToSpawnPoint,pDVar2,a);
+    bVar5 = pAVar4 == a;
+    a = pAVar4;
+    if (bVar5) {
       return;
     }
   } while( true );
@@ -419,26 +449,25 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEv
     func_?(&TypeInfo__System__Action);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnSpawnAsGhost;
-  a = *ppAVar1;
+  a = (this->fields).OnSpawnAsGhost;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((Action__Class *)pDVar2->klass == TypeInfo__System__Action) {
-        pDVar3 = pDVar2;
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
+    pDVar2 = (Delegate *)0x0;
+    if (pDVar1 != (Delegate *)0x0) {
+      if ((Action__Class *)pDVar1->klass == TypeInfo__System__Action) {
+        pDVar2 = pDVar1;
       }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__Action);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+      if (pDVar2 == (Delegate *)0x0) {
+        func_?(pDVar1,TypeInfo__System__Action);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
     }
-    pAVar5 = (Action *)func_?(ppAVar1,pDVar3,a);
-    bVar6 = pAVar5 == a;
-    a = pAVar5;
-    if (bVar6) {
+    pAVar4 = (Action *)func_?(&(this->fields).OnSpawnAsGhost,pDVar2,a);
+    bVar5 = pAVar4 == a;
+    a = pAVar4;
+    if (bVar5) {
       return;
     }
   } while( true );
@@ -454,25 +483,24 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEv
     func_?(&TypeInfo__System__Action<int>);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnSpawnAtSafeSpot;
-  a = *ppAVar1;
+  a = (this->fields).OnSpawnAtSafeSpot;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar3 = TypeInfo__System__Action<int>;
-    iVar4 = 0;
-    if (pDVar2 != (Delegate *)0x0) {
-      iVar4 = func_?(pDVar2,TypeInfo__System__Action<int>);
-      if (iVar4 == 0) {
-        func_?(pDVar2,pAVar3);
-        pcVar5 = (code *)swi(3);
-        (*pcVar5)();
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
+    pAVar2 = TypeInfo__System__Action<int>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__Action<int>);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pAVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pAVar6 = (Action_1_Int32_ *)func_?(ppAVar1,iVar4,a);
-    bVar7 = pAVar6 != a;
-    a = pAVar6;
-  } while (bVar7);
+    pAVar5 = (Action_1_Int32_ *)func_?(&(this->fields).OnSpawnAtSafeSpot,iVar3,a);
+    bVar6 = pAVar5 != a;
+    a = pAVar5;
+  } while (bVar6);
   return;
 }
 
@@ -486,25 +514,24 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEv
     func_?(&TypeInfo__System__Action<WinningConditionType>);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnWinningConditionIntermediateDebriefing;
-  a = *ppAVar1;
+  a = (this->fields).OnWinningConditionIntermediateDebriefing;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar3 = TypeInfo__System__Action<WinningConditionType>;
-    iVar4 = 0;
-    if (pDVar2 != (Delegate *)0x0) {
-      iVar4 = func_?(pDVar2,TypeInfo__System__Action<WinningConditionType>);
-      if (iVar4 == 0) {
-        func_?(pDVar2,pAVar3);
-        pcVar5 = (code *)swi(3);
-        (*pcVar5)();
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
+    pAVar2 = TypeInfo__System__Action<WinningConditionType>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__Action<WinningConditionType>);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pAVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pAVar6 = (Action_1_WinningConditionType_ *)func_?(ppAVar1,iVar4,a);
-    bVar7 = pAVar6 != a;
-    a = pAVar6;
-  } while (bVar7);
+    pAVar5 = (Action_1_WinningConditionType_ *)func_?(&(this->fields).OnWinningConditionIntermediateDebriefing,iVar3,a);
+    bVar6 = pAVar5 != a;
+    a = pAVar5;
+  } while (bVar6);
   return;
 }
 
@@ -518,26 +545,25 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEv
     func_?(&TypeInfo__System__Action);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnEnterPlaymode;
-  source = *ppAVar1;
+  source = (this->fields).OnEnterPlaymode;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((Action__Class *)pDVar2->klass == TypeInfo__System__Action) {
-        pDVar3 = pDVar2;
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
+    pDVar2 = (Delegate *)0x0;
+    if (pDVar1 != (Delegate *)0x0) {
+      if ((Action__Class *)pDVar1->klass == TypeInfo__System__Action) {
+        pDVar2 = pDVar1;
       }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__Action);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+      if (pDVar2 == (Delegate *)0x0) {
+        func_?(pDVar1,TypeInfo__System__Action);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
     }
-    pAVar5 = (Action *)func_?(ppAVar1,pDVar3,source);
-    bVar6 = pAVar5 == source;
-    source = pAVar5;
-    if (bVar6) {
+    pAVar4 = (Action *)func_?(&(this->fields).OnEnterPlaymode,pDVar2,source);
+    bVar5 = pAVar4 == source;
+    source = pAVar4;
+    if (bVar5) {
       return;
     }
   } while( true );
@@ -587,25 +613,24 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEv
     func_?(&TypeInfo__System__Action<int>);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnMoveBodyToSafeSpot;
-  source = *ppAVar1;
+  source = (this->fields).OnMoveBodyToSafeSpot;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar3 = TypeInfo__System__Action<int>;
-    iVar4 = 0;
-    if (pDVar2 != (Delegate *)0x0) {
-      iVar4 = func_?(pDVar2,TypeInfo__System__Action<int>);
-      if (iVar4 == 0) {
-        func_?(pDVar2,pAVar3);
-        pcVar5 = (code *)swi(3);
-        (*pcVar5)();
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
+    pAVar2 = TypeInfo__System__Action<int>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__Action<int>);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pAVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pAVar6 = (Action_1_Int32_ *)func_?(ppAVar1,iVar4,source);
-    bVar7 = pAVar6 != source;
-    source = pAVar6;
-  } while (bVar7);
+    pAVar5 = (Action_1_Int32_ *)func_?(&(this->fields).OnMoveBodyToSafeSpot,iVar3,source);
+    bVar6 = pAVar5 != source;
+    source = pAVar5;
+  } while (bVar6);
   return;
 }
 
@@ -619,26 +644,25 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEv
     func_?(&TypeInfo__System__Action);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnReadyScreenShot;
-  source = *ppAVar1;
+  source = (this->fields).OnReadyScreenShot;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((Action__Class *)pDVar2->klass == TypeInfo__System__Action) {
-        pDVar3 = pDVar2;
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
+    pDVar2 = (Delegate *)0x0;
+    if (pDVar1 != (Delegate *)0x0) {
+      if ((Action__Class *)pDVar1->klass == TypeInfo__System__Action) {
+        pDVar2 = pDVar1;
       }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__Action);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+      if (pDVar2 == (Delegate *)0x0) {
+        func_?(pDVar1,TypeInfo__System__Action);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
     }
-    pAVar5 = (Action *)func_?(ppAVar1,pDVar3,source);
-    bVar6 = pAVar5 == source;
-    source = pAVar5;
-    if (bVar6) {
+    pAVar4 = (Action *)func_?(&(this->fields).OnReadyScreenShot,pDVar2,source);
+    bVar5 = pAVar4 == source;
+    source = pAVar4;
+    if (bVar5) {
       return;
     }
   } while( true );
@@ -654,26 +678,25 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEv
     func_?(&TypeInfo__System__Action);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnRemoveFromGame;
-  source = *ppAVar1;
+  source = (this->fields).OnRemoveFromGame;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((Action__Class *)pDVar2->klass == TypeInfo__System__Action) {
-        pDVar3 = pDVar2;
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
+    pDVar2 = (Delegate *)0x0;
+    if (pDVar1 != (Delegate *)0x0) {
+      if ((Action__Class *)pDVar1->klass == TypeInfo__System__Action) {
+        pDVar2 = pDVar1;
       }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__Action);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+      if (pDVar2 == (Delegate *)0x0) {
+        func_?(pDVar1,TypeInfo__System__Action);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
     }
-    pAVar5 = (Action *)func_?(ppAVar1,pDVar3,source);
-    bVar6 = pAVar5 == source;
-    source = pAVar5;
-    if (bVar6) {
+    pAVar4 = (Action *)func_?(&(this->fields).OnRemoveFromGame,pDVar2,source);
+    bVar5 = pAVar4 == source;
+    source = pAVar4;
+    if (bVar5) {
       return;
     }
   } while( true );
@@ -689,26 +712,25 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEv
     func_?(&TypeInfo__System__Action);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnRespawn;
-  source = *ppAVar1;
+  source = (this->fields).OnRespawn;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((Action__Class *)pDVar2->klass == TypeInfo__System__Action) {
-        pDVar3 = pDVar2;
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
+    pDVar2 = (Delegate *)0x0;
+    if (pDVar1 != (Delegate *)0x0) {
+      if ((Action__Class *)pDVar1->klass == TypeInfo__System__Action) {
+        pDVar2 = pDVar1;
       }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__Action);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+      if (pDVar2 == (Delegate *)0x0) {
+        func_?(pDVar1,TypeInfo__System__Action);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
     }
-    pAVar5 = (Action *)func_?(ppAVar1,pDVar3,source);
-    bVar6 = pAVar5 == source;
-    source = pAVar5;
-    if (bVar6) {
+    pAVar4 = (Action *)func_?(&(this->fields).OnRespawn,pDVar2,source);
+    bVar5 = pAVar4 == source;
+    source = pAVar4;
+    if (bVar5) {
       return;
     }
   } while( true );
@@ -724,26 +746,25 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEv
     func_?(&TypeInfo__System__Action);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnReviveTimeElapsed;
-  source = *ppAVar1;
+  source = (this->fields).OnReviveTimeElapsed;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((Action__Class *)pDVar2->klass == TypeInfo__System__Action) {
-        pDVar3 = pDVar2;
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
+    pDVar2 = (Delegate *)0x0;
+    if (pDVar1 != (Delegate *)0x0) {
+      if ((Action__Class *)pDVar1->klass == TypeInfo__System__Action) {
+        pDVar2 = pDVar1;
       }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__Action);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+      if (pDVar2 == (Delegate *)0x0) {
+        func_?(pDVar1,TypeInfo__System__Action);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
     }
-    pAVar5 = (Action *)func_?(ppAVar1,pDVar3,source);
-    bVar6 = pAVar5 == source;
-    source = pAVar5;
-    if (bVar6) {
+    pAVar4 = (Action *)func_?(&(this->fields).OnReviveTimeElapsed,pDVar2,source);
+    bVar5 = pAVar4 == source;
+    source = pAVar4;
+    if (bVar5) {
       return;
     }
   } while( true );
@@ -759,26 +780,25 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEv
     func_?(&TypeInfo__System__Action);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnSetRespawnWhenPossible;
-  source = *ppAVar1;
+  source = (this->fields).OnSetRespawnWhenPossible;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((Action__Class *)pDVar2->klass == TypeInfo__System__Action) {
-        pDVar3 = pDVar2;
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
+    pDVar2 = (Delegate *)0x0;
+    if (pDVar1 != (Delegate *)0x0) {
+      if ((Action__Class *)pDVar1->klass == TypeInfo__System__Action) {
+        pDVar2 = pDVar1;
       }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__Action);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+      if (pDVar2 == (Delegate *)0x0) {
+        func_?(pDVar1,TypeInfo__System__Action);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
     }
-    pAVar5 = (Action *)func_?(ppAVar1,pDVar3,source);
-    bVar6 = pAVar5 == source;
-    source = pAVar5;
-    if (bVar6) {
+    pAVar4 = (Action *)func_?(&(this->fields).OnSetRespawnWhenPossible,pDVar2,source);
+    bVar5 = pAVar4 == source;
+    source = pAVar4;
+    if (bVar5) {
       return;
     }
   } while( true );
@@ -794,26 +814,25 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEv
     func_?(&TypeInfo__System__Action);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnSetToDeadMode;
-  source = *ppAVar1;
+  source = (this->fields).OnSetToDeadMode;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((Action__Class *)pDVar2->klass == TypeInfo__System__Action) {
-        pDVar3 = pDVar2;
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
+    pDVar2 = (Delegate *)0x0;
+    if (pDVar1 != (Delegate *)0x0) {
+      if ((Action__Class *)pDVar1->klass == TypeInfo__System__Action) {
+        pDVar2 = pDVar1;
       }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__Action);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+      if (pDVar2 == (Delegate *)0x0) {
+        func_?(pDVar1,TypeInfo__System__Action);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
     }
-    pAVar5 = (Action *)func_?(ppAVar1,pDVar3,source);
-    bVar6 = pAVar5 == source;
-    source = pAVar5;
-    if (bVar6) {
+    pAVar4 = (Action *)func_?(&(this->fields).OnSetToDeadMode,pDVar2,source);
+    bVar5 = pAVar4 == source;
+    source = pAVar4;
+    if (bVar5) {
       return;
     }
   } while( true );
@@ -829,26 +848,25 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEv
     func_?(&TypeInfo__System__Action);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnSetToSpawnPoint;
-  source = *ppAVar1;
+  source = (this->fields).OnSetToSpawnPoint;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((Action__Class *)pDVar2->klass == TypeInfo__System__Action) {
-        pDVar3 = pDVar2;
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
+    pDVar2 = (Delegate *)0x0;
+    if (pDVar1 != (Delegate *)0x0) {
+      if ((Action__Class *)pDVar1->klass == TypeInfo__System__Action) {
+        pDVar2 = pDVar1;
       }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__Action);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+      if (pDVar2 == (Delegate *)0x0) {
+        func_?(pDVar1,TypeInfo__System__Action);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
     }
-    pAVar5 = (Action *)func_?(ppAVar1,pDVar3,source);
-    bVar6 = pAVar5 == source;
-    source = pAVar5;
-    if (bVar6) {
+    pAVar4 = (Action *)func_?(&(this->fields).OnSetToSpawnPoint,pDVar2,source);
+    bVar5 = pAVar4 == source;
+    source = pAVar4;
+    if (bVar5) {
       return;
     }
   } while( true );
@@ -864,26 +882,25 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEv
     func_?(&TypeInfo__System__Action);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnSpawnAsGhost;
-  source = *ppAVar1;
+  source = (this->fields).OnSpawnAsGhost;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((Action__Class *)pDVar2->klass == TypeInfo__System__Action) {
-        pDVar3 = pDVar2;
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
+    pDVar2 = (Delegate *)0x0;
+    if (pDVar1 != (Delegate *)0x0) {
+      if ((Action__Class *)pDVar1->klass == TypeInfo__System__Action) {
+        pDVar2 = pDVar1;
       }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__Action);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+      if (pDVar2 == (Delegate *)0x0) {
+        func_?(pDVar1,TypeInfo__System__Action);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
     }
-    pAVar5 = (Action *)func_?(ppAVar1,pDVar3,source);
-    bVar6 = pAVar5 == source;
-    source = pAVar5;
-    if (bVar6) {
+    pAVar4 = (Action *)func_?(&(this->fields).OnSpawnAsGhost,pDVar2,source);
+    bVar5 = pAVar4 == source;
+    source = pAVar4;
+    if (bVar5) {
       return;
     }
   } while( true );
@@ -899,25 +916,24 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEv
     func_?(&TypeInfo__System__Action<int>);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnSpawnAtSafeSpot;
-  source = *ppAVar1;
+  source = (this->fields).OnSpawnAtSafeSpot;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar3 = TypeInfo__System__Action<int>;
-    iVar4 = 0;
-    if (pDVar2 != (Delegate *)0x0) {
-      iVar4 = func_?(pDVar2,TypeInfo__System__Action<int>);
-      if (iVar4 == 0) {
-        func_?(pDVar2,pAVar3);
-        pcVar5 = (code *)swi(3);
-        (*pcVar5)();
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
+    pAVar2 = TypeInfo__System__Action<int>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__Action<int>);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pAVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pAVar6 = (Action_1_Int32_ *)func_?(ppAVar1,iVar4,source);
-    bVar7 = pAVar6 != source;
-    source = pAVar6;
-  } while (bVar7);
+    pAVar5 = (Action_1_Int32_ *)func_?(&(this->fields).OnSpawnAtSafeSpot,iVar3,source);
+    bVar6 = pAVar5 != source;
+    source = pAVar5;
+  } while (bVar6);
   return;
 }
 
@@ -931,25 +947,24 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::GameEv
     func_?(&TypeInfo__System__Action<WinningConditionType>);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnWinningConditionIntermediateDebriefing;
-  source = *ppAVar1;
+  source = (this->fields).OnWinningConditionIntermediateDebriefing;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar3 = TypeInfo__System__Action<WinningConditionType>;
-    iVar4 = 0;
-    if (pDVar2 != (Delegate *)0x0) {
-      iVar4 = func_?(pDVar2,TypeInfo__System__Action<WinningConditionType>);
-      if (iVar4 == 0) {
-        func_?(pDVar2,pAVar3);
-        pcVar5 = (code *)swi(3);
-        (*pcVar5)();
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
+    pAVar2 = TypeInfo__System__Action<WinningConditionType>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__Action<WinningConditionType>);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pAVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pAVar6 = (Action_1_WinningConditionType_ *)func_?(ppAVar1,iVar4,source);
-    bVar7 = pAVar6 != source;
-    source = pAVar6;
-  } while (bVar7);
+    pAVar5 = (Action_1_WinningConditionType_ *)func_?(&(this->fields).OnWinningConditionIntermediateDebriefing,iVar3,source);
+    bVar6 = pAVar5 != source;
+    source = pAVar5;
+  } while (bVar6);
   return;
 }
 

@@ -28,8 +28,9 @@ String * Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::AdColony::AdColon
     if (uVar4 != 0) {
       do {
         if (pIVar2->interfaceOffsets[uVar3].interfaceType == (Il2CppClass *)TypeInfo__GoogleMobileAds__Mediation__AdColony__Common__IAdColonyAppOptionsClient) {
+          pIVar2 = pIVar1->klass;
           iVar5 = pIVar2->interfaceOffsets[uVar3].offset;
-          pSVar6 = (String *)(*(code *)(&(pIVar1->klass->vtable).GetPrivacyConsentString)[iVar5].method)(pIVar1,privacyFramework,(&(pIVar1->klass->vtable).SetUserId)[iVar5].methodPtr);
+          pSVar6 = (String *)(*(code *)(&(pIVar2->vtable).GetPrivacyConsentString)[iVar5].method)(pIVar1,privacyFramework,(&(pIVar2->vtable).SetUserId)[iVar5].methodPtr);
           return pSVar6;
         }
         uVar3 = uVar3 + 1;
@@ -75,8 +76,9 @@ bool Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::AdColony::AdColonyApp
     if (uVar4 != 0) {
       do {
         if (pIVar2->interfaceOffsets[uVar3].interfaceType == (Il2CppClass *)TypeInfo__GoogleMobileAds__Mediation__AdColony__Common__IAdColonyAppOptionsClient) {
+          pIVar2 = pIVar1->klass;
           iVar5 = pIVar2->interfaceOffsets[uVar3].offset;
-          bVar6 = (*(code *)(&(pIVar1->klass->vtable).GetPrivacyFrameworkRequired)[iVar5].method)(pIVar1,privacyFramework,(&(pIVar1->klass->vtable).SetPrivacyConsentString)[iVar5].methodPtr);
+          bVar6 = (*(code *)(&(pIVar2->vtable).GetPrivacyFrameworkRequired)[iVar5].method)(pIVar1,privacyFramework,(&(pIVar2->vtable).SetPrivacyConsentString)[iVar5].methodPtr);
           return bVar6;
         }
         uVar3 = uVar3 + 1;
@@ -122,8 +124,9 @@ String * Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::AdColony::AdColon
     if (uVar4 != 0) {
       do {
         if (pIVar2->interfaceOffsets[uVar3].interfaceType == (Il2CppClass *)TypeInfo__GoogleMobileAds__Mediation__AdColony__Common__IAdColonyAppOptionsClient) {
+          pIVar2 = pIVar1->klass;
           iVar5 = pIVar2->interfaceOffsets[uVar3].offset;
-          pSVar6 = (String *)(*(code *)(&(pIVar1->klass->vtable).GetUserId)[iVar5].method)(pIVar1,(&(pIVar1->klass->vtable).SetTestMode)[iVar5].methodPtr);
+          pSVar6 = (String *)(*(code *)(&(pIVar2->vtable).GetUserId)[iVar5].method)(pIVar1,(&(pIVar2->vtable).SetTestMode)[iVar5].methodPtr);
           return pSVar6;
         }
         uVar3 = uVar3 + 1;
@@ -251,7 +254,7 @@ void Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::AdColony::AdColonyApp
   if (uVar5 != 0) {
     do {
       if (pIVar3->interfaceOffsets[uVar4].interfaceType == (Il2CppClass *)TypeInfo__GoogleMobileAds__Mediation__AdColony__Common__IAdColonyAppOptionsClient) {
-        ppMVar6 = &(&(pIVar1->klass->vtable).SetPrivacyFrameworkRequired)[pIVar3->interfaceOffsets[uVar4].offset].method;
+        ppMVar6 = &(&(pIVar1->klass->vtable).SetPrivacyFrameworkRequired)[pIVar1->klass->interfaceOffsets[uVar4].offset].method;
         goto code_?;
       }
       uVar4 = uVar4 + 1;

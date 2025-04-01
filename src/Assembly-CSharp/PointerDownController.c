@@ -4,9 +4,8 @@
 void Assembly-CSharp.dll::PointerDownController::PointerDownController_Initialize(PointerDownController *this,UnityAction *pointerDownCallback,MethodInfo *method)
 
 {
-  ppUVar1 = &(this->fields).pointerDownCallback;
-  *ppUVar1 = pointerDownCallback;
-  func_?(ppUVar1,pointerDownCallback);
+  (this->fields).pointerDownCallback = pointerDownCallback;
+  func_?(&(this->fields).pointerDownCallback,pointerDownCallback);
   (this->fields).isInitialized = 1;
   return;
 }

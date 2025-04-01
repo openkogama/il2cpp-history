@@ -39,7 +39,7 @@ bool Assembly-CSharp.dll::RTG::RTFocusCamera+<DoSmoothPan>d__129::RTFocusCamera_
     else if (1.0 < fVar9) {
       fVar9 = 1.0;
     }
-    fVar4 = (4.347583e-29 - fVar4) * fVar9 + fVar4;
+    fVar4 = (4.361729e-29 - fVar4) * fVar9 + fVar4;
     fVar5 = (fVar6 - fVar5) * fVar9 + fVar5;
     (this->fields)._panAmount_5__2.x = fVar4;
     (this->fields)._panAmount_5__2.y = fVar5;
@@ -60,17 +60,16 @@ bool Assembly-CSharp.dll::RTG::RTFocusCamera+<DoSmoothPan>d__129::RTFocusCamera_
     if (ABS(0.0 - fVar4) < fVar6) {
       return 0;
     }
-    ppOVar10 = &(this->fields).__2__current;
-    *ppOVar10 = (Object *)0x0;
-    func_?(ppOVar10);
+    (this->fields).__2__current = (Object *)0x0;
+    func_?(&(this->fields).__2__current);
     (this->fields).__1__state = 1;
     return 1;
   }
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  bVar12 = (*pcVar11)();
-  return bVar12;
+  pcVar10 = (code *)swi(3);
+  bVar11 = (*pcVar10)();
+  return bVar11;
 }
 
 

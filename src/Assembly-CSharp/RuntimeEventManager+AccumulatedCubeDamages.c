@@ -6,7 +6,7 @@ float Assembly-CSharp.dll::RuntimeEventManager+AccumulatedCubeDamages::RuntimeEv
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__RuntimeEventManager_AccumulatedCubeDamages__AccumulatedCubeDamage);
-    func_?(0xeee8);
+    func_?(0xd094);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>__ContainsKey_MV__WorldObject__IntVector_);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>__get_Item_MV__WorldObject__IntVector_);
     cRam_? = '\x01';
@@ -116,7 +116,7 @@ void Assembly-CSharp.dll::RuntimeEventManager+AccumulatedCubeDamages::RuntimeEve
       if (bVar18 == 0) break;
       auStack_9._18_2_ = iVar13;
       auStack_9._16_2_ = iVar12;
-      unique0x100002f0 = (Object *)pMVar15;
+      unique0x100002fc = (Object *)pMVar15;
       pOStack_19 = pOVar16;
       if (pOVar16 == (Object *)0x0) goto code_?;
       iVar12 = 0;
@@ -182,7 +182,7 @@ void Assembly-CSharp.dll::RuntimeEventManager+AccumulatedCubeDamages::RuntimeEve
   this_00 = (Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::IntVector,ChunkInstances+ChunkInstanceVariables]::Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables___ctor(this_00,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>__Dictionary__);
   method_00 = (MethodInfo *)&this->fields;
-  ((RuntimeEventManager_AccumulatedCubeDamages__Fields *)method_00)->accumulatedCubeDamages = (Dictionary_2_MV_WorldObject_IntVector_RuntimeEventManager_AccumulatedCubeDamages_AccumulatedCubeDamage_ *)this_00;
+  (this->fields).accumulatedCubeDamages = (Dictionary_2_MV_WorldObject_IntVector_RuntimeEventManager_AccumulatedCubeDamages_AccumulatedCubeDamage_ *)this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,method_00);
   if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {

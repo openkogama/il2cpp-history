@@ -56,9 +56,7 @@ bool Assembly-CSharp.dll::RTG::RectEx::RectEx_ContainsAllPoints(Rect rect,IEnume
       }
       if (!(bool)(bVar10 & bVar9)) {
         uStack_1 = 0xffffffff;
-        if (iVar4 != 0) {
-          func_?(0,TypeInfo__System__IDisposable,iVar4);
-        }
+        func_?();
         *unaff_FS_OFFSET = uStack_3;
         return 0;
       }
@@ -204,74 +202,71 @@ List_1_UnityEngine_Vector2_ * Assembly-CSharp.dll::RTG::RectEx::RectEx_GetCorner
   pLVar1 = (List_1_UnityEngine_Vector2_ *)func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar1,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List__);
   pMVar2 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_;
-  fVar3 = rect.m_YMin + rect.m_Height;
   if (pLVar1 != (List_1_UnityEngine_Vector2_ *)0x0) {
-    piVar4 = &(pLVar1->fields)._version;
-    *piVar4 = *piVar4 + 1;
-    pVVar5 = (pLVar1->fields)._items;
-    if (pVVar5 != (Vector2__Array *)0x0) {
-      uVar6 = (pLVar1->fields)._size;
-      if (uVar6 < pVVar5->max_length) {
-        (pLVar1->fields)._size = uVar6 + 1;
-        if (pVVar5->max_length <= uVar6) goto code_?;
-        pVVar5->vector[uVar6].x = rect.m_XMin;
-        pVVar5->vector[uVar6].y = fVar3;
+    piVar3 = &(pLVar1->fields)._version;
+    *piVar3 = *piVar3 + 1;
+    pVVar4 = (pLVar1->fields)._items;
+    if (pVVar4 != (Vector2__Array *)0x0) {
+      uVar5 = (pLVar1->fields)._size;
+      if (uVar5 < pVVar4->max_length) {
+        (pLVar1->fields)._size = uVar5 + 1;
+        if (pVVar4->max_length <= uVar5) goto code_?;
+        pVVar4->vector[uVar5].x = rect.m_XMin;
+        pVVar4->vector[uVar5].y = rect.m_YMin + rect.m_Height;
       }
       else {
-        pMVar2 = pMVar2->klass->rgctx_data[0xe].method;
-        item.y = fVar3;
-        item.x = (float)pMVar2;
-        mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__AddWithResize(pLVar1,item,pMVar2);
+        item.y = rect.m_YMin + rect.m_Height;
+        item.x = rect.m_XMin;
+        mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__AddWithResize(pLVar1,item,pMVar2->klass->rgctx_data[0xe].method);
       }
       pMVar2 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_;
-      fVar7 = rect.m_Width + rect.m_XMin;
-      piVar4 = &(pLVar1->fields)._version;
-      *piVar4 = *piVar4 + 1;
-      pVVar5 = (pLVar1->fields)._items;
-      if (pVVar5 != (Vector2__Array *)0x0) {
-        uVar6 = (pLVar1->fields)._size;
-        if (uVar6 < pVVar5->max_length) {
-          (pLVar1->fields)._size = uVar6 + 1;
-          if (pVVar5->max_length <= uVar6) goto code_?;
-          pVVar5->vector[uVar6].x = fVar7;
-          pVVar5->vector[uVar6].y = fVar3;
+      piVar3 = &(pLVar1->fields)._version;
+      *piVar3 = *piVar3 + 1;
+      pVVar4 = (pLVar1->fields)._items;
+      if (pVVar4 != (Vector2__Array *)0x0) {
+        uVar5 = (pLVar1->fields)._size;
+        if (uVar5 < pVVar4->max_length) {
+          (pLVar1->fields)._size = uVar5 + 1;
+          if (pVVar4->max_length <= uVar5) goto code_?;
+          pVVar4->vector[uVar5].x = rect.m_Width + rect.m_XMin;
+          pVVar4->vector[uVar5].y = rect.m_YMin + rect.m_Height;
         }
         else {
-          item_00.y = fVar3;
-          item_00.x = fVar7;
+          item_00.y = rect.m_YMin + rect.m_Height;
+          item_00.x = rect.m_Width + rect.m_XMin;
           mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__AddWithResize(pLVar1,item_00,pMVar2->klass->rgctx_data[0xe].method);
         }
         pMVar2 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_;
-        piVar4 = &(pLVar1->fields)._version;
-        *piVar4 = *piVar4 + 1;
-        pVVar5 = (pLVar1->fields)._items;
-        if (pVVar5 != (Vector2__Array *)0x0) {
-          uVar6 = (pLVar1->fields)._size;
-          if (uVar6 < pVVar5->max_length) {
-            (pLVar1->fields)._size = uVar6 + 1;
-            if (pVVar5->max_length <= uVar6) goto code_?;
-            pVVar5->vector[uVar6].x = fVar7;
-            pVVar5->vector[uVar6].y = rect.m_YMin;
+        piVar3 = &(pLVar1->fields)._version;
+        *piVar3 = *piVar3 + 1;
+        pVVar4 = (pLVar1->fields)._items;
+        if (pVVar4 != (Vector2__Array *)0x0) {
+          uVar5 = (pLVar1->fields)._size;
+          if (uVar5 < pVVar4->max_length) {
+            (pLVar1->fields)._size = uVar5 + 1;
+            if (pVVar4->max_length <= uVar5) goto code_?;
+            pVVar4->vector[uVar5].x = rect.m_Width + rect.m_XMin;
+            pVVar4->vector[uVar5].y = rect.m_YMin;
           }
           else {
             item_01.y = rect.m_YMin;
-            item_01.x = fVar7;
+            item_01.x = rect.m_Width + rect.m_XMin;
             mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__AddWithResize(pLVar1,item_01,pMVar2->klass->rgctx_data[0xe].method);
           }
           pMVar2 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_;
-          piVar4 = &(pLVar1->fields)._version;
-          *piVar4 = *piVar4 + 1;
-          pVVar5 = (pLVar1->fields)._items;
-          if (pVVar5 != (Vector2__Array *)0x0) {
-            uVar6 = (pLVar1->fields)._size;
-            if (pVVar5->max_length <= uVar6) {
+          piVar3 = &(pLVar1->fields)._version;
+          *piVar3 = *piVar3 + 1;
+          pVVar4 = (pLVar1->fields)._items;
+          if (pVVar4 != (Vector2__Array *)0x0) {
+            uVar5 = (pLVar1->fields)._size;
+            if (pVVar4->max_length <= uVar5) {
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__AddWithResize(pLVar1,rect._0_8_,pMVar2->klass->rgctx_data[0xe].method);
               return pLVar1;
             }
-            (pLVar1->fields)._size = uVar6 + 1;
-            if (uVar6 < pVVar5->max_length) {
-              pVVar5->vector[uVar6].x = rect.m_XMin;
-              pVVar5->vector[uVar6].y = rect.m_YMin;
+            (pLVar1->fields)._size = uVar5 + 1;
+            if (uVar5 < pVVar4->max_length) {
+              pVVar4->vector[uVar5].x = rect.m_XMin;
+              pVVar4->vector[uVar5].y = rect.m_YMin;
               return pLVar1;
             }
             goto code_?;
@@ -283,8 +278,8 @@ List_1_UnityEngine_Vector2_ * Assembly-CSharp.dll::RTG::RectEx::RectEx_GetCorner
   func_?();
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  pLVar1 = (List_1_UnityEngine_Vector2_ *)(*pcVar8)();
+  pcVar6 = (code *)swi(3);
+  pLVar1 = (List_1_UnityEngine_Vector2_ *)(*pcVar6)();
   return pLVar1;
 }
 
