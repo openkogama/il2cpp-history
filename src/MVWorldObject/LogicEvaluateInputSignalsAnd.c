@@ -15,7 +15,8 @@ bool MVWorldObject.dll::LogicEvaluateInputSignalsAnd::LogicEvaluateInputSignalsA
 void MVWorldObject.dll::LogicEvaluateInputSignalsAnd::LogicEvaluateInputSignalsAnd_UpdateSignal(LogicEvaluateInputSignalsAnd *this,bool isHot,MethodInfo *method)
 
 {
-  (this->fields).andIsTrue = (this->fields).andIsTrue & isHot;
+  pbVar1 = &(this->fields).andIsTrue;
+  *pbVar1 = *pbVar1 & isHot;
   return;
 }
 

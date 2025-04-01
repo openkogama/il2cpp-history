@@ -10,13 +10,14 @@ void Assembly-CSharp.dll::ToolTipController::ToolTipController_Awake(ToolTipCont
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).toolTipUi;
+  ppTVar2 = &(this->fields).toolTipUi;
   parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   pTVar1 = (ToolTipUI *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6((Object *)pTVar1,parent,0,ToolTipUI_MethodInfo__UnityEngine__Object__Instantiate<ToolTipUI>_ToolTipUI__UnityEngine__Transform__bool_);
-  (this->fields).toolTipUi = pTVar1;
-  func_?(&(this->fields).toolTipUi,pTVar1);
+  *ppTVar2 = pTVar1;
+  func_?(ppTVar2,pTVar1);
   return;
 }
 

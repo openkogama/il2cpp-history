@@ -217,11 +217,7 @@ void Assembly-CSharp.dll::ThemeAttributes::ColorAttribute::ColorAttribute_Initia
       fVar6 = 0.0;
     }
     else if (1.0 < fVar6) {
-      (this->fields)._._.value.r = fVar3;
-      (this->fields)._._.value.g = fVar4;
-      (this->fields)._._.value.b = fVar5;
-      (this->fields)._._.value.a = 1.0;
-      return;
+      fVar6 = 1.0;
     }
     (this->fields)._._.value.r = fVar3;
     (this->fields)._._.value.g = fVar4;

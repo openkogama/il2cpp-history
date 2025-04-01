@@ -22,9 +22,10 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::VehicleEnergyVisuals:
     this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this_01,(MethodInfo *)0x0);
     if (this_02 != (GameObject *)0x0) {
       pRVar1 = (RotateLocal *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1(this_02,RotateLocal_MethodInfo__UnityEngine__GameObject__AddComponent<RotateLocal>__);
-      (this->fields).rotateLocal = pRVar1;
+      ppRVar2 = &(this->fields).rotateLocal;
+      *ppRVar2 = pRVar1;
       func_?();
-      pRVar1 = (this->fields).rotateLocal;
+      pRVar1 = *ppRVar2;
       if (pRVar1 != (RotateLocal *)0x0) {
         (pRVar1->fields).rotationSpeed = 68.0;
         return;
@@ -33,8 +34,8 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::VehicleEnergyVisuals:
   }
 code_?:
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

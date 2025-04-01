@@ -27,8 +27,8 @@ Byte__Array * Assembly-CSharp.dll::StatHat::Post+FormPoster::Post_FormPoster_Cre
   puStack_4 = puVar5;
   pSVar6 = ::StringLiteral__;
   pSStack_7 = ::StringLiteral__;
-  this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_ *)(this->fields).Parameters;
   pSStack_8 = ::StringLiteral__;
+  this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_ *)(this->fields).Parameters;
   if (this_00 != (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_ *)0x0) {
     method_00 = (MethodInfo *)&UNK_?;
     this_02 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Keys(this_00,MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__get_Keys__);
@@ -76,8 +76,8 @@ code_?:
         if (values->max_length < 2) goto code_?;
         values->vector[1] = (String *)DStack_10._dictionary;
         func_?();
-        if (values->max_length < 3) goto code_?;
         DStack_10._dictionary = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_ *)::StringLiteral__;
+        if (values->max_length < 3) goto code_?;
         values->vector[2] = ::StringLiteral__;
         func_?();
         this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields).Parameters;
@@ -98,10 +98,10 @@ code_?:
         if (values->max_length < 4) goto code_?;
         values->vector[3] = (String *)DStack_10._dictionary;
         func_?();
-        if (values->max_length < 5) goto code_?;
         DStack_10._dictionary = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_ *)::StringLiteral__;
-        values->vector[4] = ::StringLiteral__;
+        if (values->max_length < 5) goto code_?;
         pSStack_11 = (String *)(values->vector + 4);
+        pSStack_11->klass = (String__Class *)::StringLiteral__;
         func_?();
         pSVar6 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
         pSStack_8 = pSVar6;
@@ -199,12 +199,14 @@ void Assembly-CSharp.dll::StatHat::Post+FormPoster::Post_FormPoster__ctor(Post_F
 
 {
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  (this->fields).BaseUrl = base_url;
-  func_?(&(this->fields).BaseUrl,base_url);
+  ppSVar1 = &(this->fields).BaseUrl;
+  *ppSVar1 = base_url;
+  func_?(ppSVar1,base_url);
   (this->fields).Parameters = parameters;
   func_?(&this->fields,parameters);
-  (this->fields).RelUrl = rel_url;
-  func_?(&(this->fields).RelUrl,rel_url);
+  ppSVar1 = &(this->fields).RelUrl;
+  *ppSVar1 = rel_url;
+  func_?(ppSVar1,rel_url);
   Post_FormPoster_PostForm(this,(MethodInfo *)0x0);
   return;
 }

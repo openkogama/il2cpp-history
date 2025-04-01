@@ -33,8 +33,9 @@ bool Assembly-CSharp.dll::WinningConditionDebriefing+<WaitForFadeOut>d__19::Winn
           if ((pDVar5 != (DebriefingWinnerGUI *)0x0) && (pTVar6 = (pDVar5->fields).timer, pTVar6 != (Text *)0x0)) {
             (*(code *)(pTVar6->klass->vtable).set_text.method)();
             pOVar7 = (Object *)func_?();
-            (this->fields).__2__current = pOVar7;
-            func_?(&(this->fields).__2__current,pOVar7);
+            ppOVar8 = &(this->fields).__2__current;
+            *ppOVar8 = pOVar7;
+            func_?(ppOVar8,pOVar7);
             (this->fields).__1__state = 1;
             return 1;
           }
@@ -43,9 +44,9 @@ bool Assembly-CSharp.dll::WinningConditionDebriefing+<WaitForFadeOut>d__19::Winn
     }
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  bVar9 = (*pcVar8)();
-  return bVar9;
+  pcVar9 = (code *)swi(3);
+  bVar10 = (*pcVar9)();
+  return bVar10;
 }
 
 

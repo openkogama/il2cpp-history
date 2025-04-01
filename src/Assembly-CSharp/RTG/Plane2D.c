@@ -14,11 +14,13 @@ bool Assembly-CSharp.dll::RTG::Plane2D::Plane2D_Raycast(Plane2D *this,Vector2 ra
 
 {
   *t = 0.0;
-  fVar1 = (this->fields)._normal.x * rayDir.x + (this->fields)._normal.y * rayDir.y;
-  if (1e-05 <= ABS(fVar1)) {
-    fVar1 = -(((this->fields)._normal.x * rayOrigin.x + (this->fields)._normal.y * rayOrigin.y) - (this->fields)._distance) / fVar1;
-    *t = fVar1;
-    return 0.0 <= fVar1;
+  fVar1 = (this->fields)._normal.x;
+  fVar2 = (this->fields)._normal.y;
+  fVar3 = fVar1 * rayDir.x + fVar2 * rayDir.y;
+  if (1e-05 <= ABS(fVar3)) {
+    fVar3 = -((fVar1 * rayOrigin.x + fVar2 * rayOrigin.y) - (this->fields)._distance) / fVar3;
+    *t = fVar3;
+    return 0.0 <= fVar3;
   }
   return 0;
 }
@@ -30,8 +32,11 @@ void Assembly-CSharp.dll::RTG::Plane2D::Plane2D__ctor(Plane2D *this,Vector2 norm
 
 {
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  VVar1 = (Vector2)func_?(&normal,0);
-  (this->fields)._normal = VVar1;
+  VStack_1.x = normal.x;
+  VStack_1.y = normal.y;
+  UnityEngine.CoreModule.dll::UnityEngine::Vector2::Vector2_Normalize(&VStack_1,(MethodInfo *)0x0);
+  (this->fields)._normal.x = VStack_1.x;
+  (this->fields)._normal.y = VStack_1.y;
   (this->fields)._distance = distance;
   return;
 }
@@ -43,9 +48,12 @@ void Assembly-CSharp.dll::RTG::Plane2D::Plane2D__ctor_1(Plane2D *this,Vector2 no
 
 {
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  VVar1 = (Vector2)func_?(&normal,0);
-  (this->fields)._normal = VVar1;
-  (this->fields)._distance = pointOnPlane.y * VVar1.y + pointOnPlane.x * VVar1.x;
+  VStack_1.x = normal.x;
+  VStack_1.y = normal.y;
+  UnityEngine.CoreModule.dll::UnityEngine::Vector2::Vector2_Normalize(&VStack_1,(MethodInfo *)0x0);
+  (this->fields)._normal.x = VStack_1.x;
+  (this->fields)._normal.y = VStack_1.y;
+  (this->fields)._distance = pointOnPlane.y * VStack_1.y + pointOnPlane.x * VStack_1.x;
   return;
 }
 
@@ -55,8 +63,11 @@ void Assembly-CSharp.dll::RTG::Plane2D::Plane2D__ctor_1(Plane2D *this,Vector2 no
 void Assembly-CSharp.dll::RTG::Plane2D::Plane2D_set_Normal(Plane2D *this,Vector2 value,MethodInfo *method)
 
 {
-  VVar1 = (Vector2)func_?(&value,0);
-  (this->fields)._normal = VVar1;
+  VStack_1.x = value.x;
+  VStack_1.y = value.y;
+  UnityEngine.CoreModule.dll::UnityEngine::Vector2::Vector2_Normalize(&VStack_1,(MethodInfo *)0x0);
+  (this->fields)._normal.x = VStack_1.x;
+  (this->fields)._normal.y = VStack_1.y;
   return;
 }
 

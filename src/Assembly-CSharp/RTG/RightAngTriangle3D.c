@@ -182,23 +182,23 @@ List_1_UnityEngine_Vector3_ * Assembly-CSharp.dll::RTG::RightAngTriangle3D::Righ
     cRam_? = '\x01';
   }
   rightAngleCorner = (this->fields)._rightAngleCorner;
-  fVar1 = 1.0;
+  fVar1 = (this->fields)._XLength;
+  fVar2 = 1.0;
   if ((this->fields)._XLengthSign == 0) {
-    fVar2 = 1.0;
+    fVar3 = 1.0;
   }
   else {
-    fVar2 = -1.0;
-  }
-  fVar3 = (this->fields)._XLength;
-  if ((this->fields)._YLengthSign != 0) {
-    fVar1 = -1.0;
+    fVar3 = -1.0;
   }
   fVar4 = (this->fields)._YLength;
+  if ((this->fields)._YLengthSign != 0) {
+    fVar2 = -1.0;
+  }
   triangleRotation = (this->fields)._rotation;
   if ((TypeInfo__RTG__TriangleMath->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__RTG__TriangleMath);
   }
-  pLVar5 = TriangleMath::TriangleMath_CalcRATriangle3DPoints(rightAngleCorner,fVar2 * fVar3,fVar1 * fVar4,triangleRotation,(MethodInfo *)0x0);
+  pLVar5 = TriangleMath::TriangleMath_CalcRATriangle3DPoints(rightAngleCorner,fVar1 * fVar3,fVar4 * fVar2,triangleRotation,(MethodInfo *)0x0);
   return pLVar5;
 }
 
@@ -364,8 +364,8 @@ void Assembly-CSharp.dll::RTG::RightAngTriangle3D::RightAngTriangle3D_RenderSoli
     if ((this->fields)._YLengthSign != 0) {
       fVar1 = -1.0;
     }
-    s.y = fVar1 * (this->fields)._YLength;
-    s.x = fVar2 * (this->fields)._XLength;
+    s.y = (this->fields)._YLength * fVar1;
+    s.x = (this->fields)._XLength * fVar2;
     s.z = 1.0;
     pMVar3 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS((Matrix4x4 *)&stack0xffffff7c,(this->fields)._rightAngleCorner,(this->fields)._rotation,s,(MethodInfo *)0x0);
     matrix = *pMVar3;
@@ -409,8 +409,8 @@ void Assembly-CSharp.dll::RTG::RightAngTriangle3D::RightAngTriangle3D_RenderWire
     if ((this->fields)._YLengthSign != 0) {
       fVar1 = -1.0;
     }
-    s.y = fVar1 * (this->fields)._YLength;
-    s.x = fVar2 * (this->fields)._XLength;
+    s.y = (this->fields)._YLength * fVar1;
+    s.x = (this->fields)._XLength * fVar2;
     s.z = 1.0;
     pMVar3 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS((Matrix4x4 *)&stack0xffffff7c,(this->fields)._rightAngleCorner,(this->fields)._rotation,s,(MethodInfo *)0x0);
     matrix = *pMVar3;

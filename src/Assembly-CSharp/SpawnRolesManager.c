@@ -11,7 +11,7 @@ void Assembly-CSharp.dll::SpawnRolesManager::SpawnRolesManager_ActivateSpawnRole
   pSVar1 = (this->fields).spawnRolesRuntimeData;
   if (pSVar1 != (SpawnRolesRuntimeData *)0x0) {
     iVar2 = (pSVar1->fields).activeSpawnRole;
-    (((this->fields).spawnRolesRuntimeData)->fields).activeSpawnRole = newSpawnRoleId;
+    (pSVar1->fields).activeSpawnRole = newSpawnRoleId;
     pIVar3 = (this->fields).spawnRoleChangeHandler;
     if (pIVar3 != (ISpawnRoleChangeHandler *)0x0) {
       pIVar4 = pIVar3->klass;
@@ -21,7 +21,7 @@ void Assembly-CSharp.dll::SpawnRolesManager::SpawnRolesManager_ActivateSpawnRole
       if (uVar6 != 0) {
         do {
           if (pIVar4->interfaceOffsets[uVar5].interfaceType == (Il2CppClass *)TypeInfo__ISpawnRoleChangeHandler) {
-            ppMVar7 = &(&pIVar3->klass->vtable)[pIVar3->klass->interfaceOffsets[uVar5].offset].ActivateSpawnRole.method;
+            ppMVar7 = &(&pIVar3->klass->vtable)[pIVar4->interfaceOffsets[uVar5].offset].ActivateSpawnRole.method;
             goto code_?;
           }
           uVar5 = uVar5 + 1;
@@ -30,8 +30,8 @@ void Assembly-CSharp.dll::SpawnRolesManager::SpawnRolesManager_ActivateSpawnRole
       ppMVar7 = (MethodInfo **)func_?(pIVar3,TypeInfo__ISpawnRoleChangeHandler,0);
 code_?:
       (*(code *)*ppMVar7)(pIVar3,iVar2,newSpawnRoleId,position._0_8_,position.z,rotation.x,rotation.y,rotation.z,rotation.w,ppMVar7[1]);
-      if ((this->fields).OnSpawnRoleActivated != (Action_1_Int32_ *)0x0) {
-        pAVar8 = (this->fields).OnSpawnRoleActivated;
+      pAVar8 = (this->fields).OnSpawnRoleActivated;
+      if (pAVar8 != (Action_1_Int32_ *)0x0) {
         (*(pAVar8->fields)._._.invoke_impl)((pAVar8->fields)._._.method_code,newSpawnRoleId,(pAVar8->fields)._._.method);
       }
       return;
@@ -111,10 +111,10 @@ void Assembly-CSharp.dll::SpawnRolesManager::SpawnRolesManager_OnAvatarCreated(S
       pSVar1 = (this->fields).spawnRolesRuntimeData;
       if (pSVar1 != (SpawnRolesRuntimeData *)0x0) {
         iStack_11 = (pSVar1->fields).activeSpawnRole;
-        (((this->fields).spawnRolesRuntimeData)->fields).activeSpawnRole = id;
-        pIStack_12 = (this->fields).spawnRoleChangeHandler;
-        if (pIStack_12 != (ISpawnRoleChangeHandler *)0x0) {
-          pIStack_13 = pIStack_12->klass;
+        (pSVar1->fields).activeSpawnRole = id;
+        pIVar12 = (this->fields).spawnRoleChangeHandler;
+        if (pIVar12 != (ISpawnRoleChangeHandler *)0x0) {
+          pIStack_13 = pIVar12->klass;
           uVar14 = 0;
           uStack_15 = 0;
           uVar16._0_1_ = (pIStack_13->_1).rank;
@@ -130,7 +130,7 @@ void Assembly-CSharp.dll::SpawnRolesManager::SpawnRolesManager_OnAvatarCreated(S
           }
           IStack_5.monitor = (MonitorData *)0x0;
           IStack_5.klass = TypeInfo__ISpawnRoleChangeHandler;
-          pIStack_4 = pIStack_12;
+          pIStack_4 = pIVar12;
           ppMVar17 = (MethodInfo **)func_?();
 code_?:
           pIVar2 = IStack_5.klass;
@@ -138,11 +138,11 @@ code_?:
           pIStack_4 = (ISpawnRoleChangeHandler *)ppMVar17[1];
           IStack_5.klass = pIStack_10;
           IStack_5.monitor = (MonitorData *)pIStack_4;
-          (*(code *)*ppMVar17)(pIStack_12,iStack_11,id,uStack_7,uStack_8,pIVar18,pIVar2);
-          if ((this->fields).OnSpawnRoleActivated == (Action_1_Int32_ *)0x0) {
+          (*(code *)*ppMVar17)(pIVar12,iStack_11,id,uStack_7,uStack_8,pIVar18,pIVar2);
+          pAVar19 = (this->fields).OnSpawnRoleActivated;
+          if (pAVar19 == (Action_1_Int32_ *)0x0) {
             return;
           }
-          pAVar19 = (this->fields).OnSpawnRoleActivated;
           IStack_5.monitor = (pAVar19->fields)._._.method;
           IStack_5.klass = (ISpawnRoleChangeHandler__Class *)id;
           pIStack_4 = (pAVar19->fields)._._.method_code;
@@ -169,24 +169,25 @@ void Assembly-CSharp.dll::SpawnRolesManager::SpawnRolesManager_add_OnSpawnRoleAc
     func_?(&TypeInfo__System__Action<int>);
     cRam_? = '\x01';
   }
-  a = (this->fields).OnSpawnRoleActivated;
+  ppAVar1 = &(this->fields).OnSpawnRoleActivated;
+  a = *ppAVar1;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar2 = TypeInfo__System__Action<int>;
-    iVar3 = 0;
-    if (pDVar1 != (Delegate *)0x0) {
-      iVar3 = func_?(pDVar1,TypeInfo__System__Action<int>);
-      if (iVar3 == 0) {
-        func_?(pDVar1,pAVar2);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
+    pAVar3 = TypeInfo__System__Action<int>;
+    iVar4 = 0;
+    if (pDVar2 != (Delegate *)0x0) {
+      iVar4 = func_?(pDVar2,TypeInfo__System__Action<int>);
+      if (iVar4 == 0) {
+        func_?(pDVar2,pAVar3);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
     }
-    pAVar5 = (Action_1_Int32_ *)func_?(&(this->fields).OnSpawnRoleActivated,iVar3,a);
-    bVar6 = pAVar5 != a;
-    a = pAVar5;
-  } while (bVar6);
+    pAVar6 = (Action_1_Int32_ *)func_?(ppAVar1,iVar4,a);
+    bVar7 = pAVar6 != a;
+    a = pAVar6;
+  } while (bVar7);
   return;
 }
 
@@ -200,24 +201,25 @@ void Assembly-CSharp.dll::SpawnRolesManager::SpawnRolesManager_remove_OnSpawnRol
     func_?(&TypeInfo__System__Action<int>);
     cRam_? = '\x01';
   }
-  source = (this->fields).OnSpawnRoleActivated;
+  ppAVar1 = &(this->fields).OnSpawnRoleActivated;
+  source = *ppAVar1;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar2 = TypeInfo__System__Action<int>;
-    iVar3 = 0;
-    if (pDVar1 != (Delegate *)0x0) {
-      iVar3 = func_?(pDVar1,TypeInfo__System__Action<int>);
-      if (iVar3 == 0) {
-        func_?(pDVar1,pAVar2);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
+    pAVar3 = TypeInfo__System__Action<int>;
+    iVar4 = 0;
+    if (pDVar2 != (Delegate *)0x0) {
+      iVar4 = func_?(pDVar2,TypeInfo__System__Action<int>);
+      if (iVar4 == 0) {
+        func_?(pDVar2,pAVar3);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
     }
-    pAVar5 = (Action_1_Int32_ *)func_?(&(this->fields).OnSpawnRoleActivated,iVar3,source);
-    bVar6 = pAVar5 != source;
-    source = pAVar5;
-  } while (bVar6);
+    pAVar6 = (Action_1_Int32_ *)func_?(ppAVar1,iVar4,source);
+    bVar7 = pAVar6 != source;
+    source = pAVar6;
+  } while (bVar7);
   return;
 }
 

@@ -87,28 +87,29 @@ void Assembly-CSharp.dll::MVCountingCube::MVCountingCube_Initialize(MVCountingCu
     this_00 = (UnityAction_2_System_Int32_System_Int32_ *)func_?(TypeInfo__System__Action<LogicInputState,_LogicObjectManager>);
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::UnityAction_2_System_Int32_System_Int32___ctor(this_00,(Object *)this,MethodInfo__MVCountingCube__InputStateUpdateCallback_LogicInputState__LogicObjectManager_,(MethodInfo *)0x0);
     pIVar2 = LogicClientsideFactory::LogicClientsideFactory_CreateStateChangeInputSignalReceiver((MVWorldObject *)this,0,(Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,(Action_2_LogicInputState_LogicObjectManager_ *)this_00,(MethodInfo *)0x0);
-    (this->fields)._InputSignalReceiver_k__BackingField = pIVar2;
-    func_?(&(this->fields)._InputSignalReceiver_k__BackingField,pIVar2);
-    iVar3 = (this->fields)._._._.id;
-    pOStack4 = TypeInfo__OutputSignalTransmitter;
+    ppIVar3 = &(this->fields)._InputSignalReceiver_k__BackingField;
+    *ppIVar3 = pIVar2;
+    func_?(ppIVar3,pIVar2);
+    iVar4 = (this->fields)._._._.id;
+    pOStack5 = TypeInfo__OutputSignalTransmitter;
     this_01 = (WorldObjectClientRef_1_System_Object_ *)func_?();
-    WorldObjectClientRef`1[System::Object]::WorldObjectClientRef_1_System_Object___ctor(this_01,iVar3,(MethodInfo *)0x0);
+    WorldObjectClientRef`1[System::Object]::WorldObjectClientRef_1_System_Object___ctor(this_01,iVar4,(MethodInfo *)0x0);
     (this->fields).outputSignalTransmitter = (OutputSignalTransmitter *)this_01;
     func_?();
-    uVar5 = *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
-    piVar6 = &(this->fields)._._.interactionFlags;
-    *(uint *)piVar6 = (uint)*piVar6 | 0x8000;
-    *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) = uVar5;
+    uVar6 = *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
+    piVar7 = &(this->fields)._._.interactionFlags;
+    *(uint *)piVar7 = (uint)*piVar7 | 0x8000;
+    *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) = uVar6;
     MVCountingCube_SetText(this,(MethodInfo *)0x0);
-    iVar3 = MVCountingCube_get_CurrentValue(this,(MethodInfo *)0x0);
-    if (iVar3 == 0) {
+    iVar4 = MVCountingCube_get_CurrentValue(this,(MethodInfo *)0x0);
+    if (iVar4 == 0) {
       (this->fields).isHot = 1;
     }
     return;
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -314,21 +315,27 @@ void Assembly-CSharp.dll::MVCountingCube::MVCountingCube__ctor(MVCountingCube *t
     pMVar2 = (MVCountingCubeObject *)(this->fields)._._.component;
     *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) = *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
     if (pMVar2 == (MVCountingCubeObject *)0x0) {
-      (this->fields).cubeObject = (MVCountingCubeObject *)0x0;
-code_?:
-      func_?(&(this->fields).cubeObject,pMVar2);
+      ppMVar4 = &(this->fields).cubeObject;
+      *ppMVar4 = (MVCountingCubeObject *)0x0;
+      func_?(ppMVar4,0);
       return;
     }
+    bVar5 = (TypeInfo__MVCountingCubeObject->_1).naturalAligment;
     unaff_EDI = TypeInfo__MVCountingCubeObject;
-    if (((TypeInfo__MVCountingCubeObject->_1).naturalAligment <= (((ObjectPrefab__Class *)pMVar2->klass)->_1).naturalAligment) && ((((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchy[(TypeInfo__MVCountingCubeObject->_1).naturalAligment - 1] == (Il2CppClass *)TypeInfo__MVCountingCubeObject)) {
-      (this->fields).cubeObject = pMVar2;
+    if ((bVar5 <= (((ObjectPrefab__Class *)pMVar2->klass)->_1).naturalAligment) && ((((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchy[bVar5 - 1] == (Il2CppClass *)TypeInfo__MVCountingCubeObject)) {
+      ppMVar4 = &(this->fields).cubeObject;
+      *ppMVar4 = pMVar2;
+      bVar5 = (TypeInfo__MVCountingCubeObject->_1).naturalAligment;
       unaff_EDI = TypeInfo__MVCountingCubeObject;
-      if (((TypeInfo__MVCountingCubeObject->_1).naturalAligment <= (((ObjectPrefab__Class *)pMVar2->klass)->_1).naturalAligment) && ((((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchy[(TypeInfo__MVCountingCubeObject->_1).naturalAligment - 1] == (Il2CppClass *)TypeInfo__MVCountingCubeObject)) goto code_?;
+      if ((bVar5 <= (((ObjectPrefab__Class *)pMVar2->klass)->_1).naturalAligment) && ((((ObjectPrefab__Class *)pMVar2->klass)->_1).typeHierarchy[bVar5 - 1] == (Il2CppClass *)TypeInfo__MVCountingCubeObject)) {
+        func_?(ppMVar4,pMVar2);
+        return;
+      }
     }
   }
   func_?(pMVar2,unaff_EDI);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

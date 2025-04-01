@@ -359,8 +359,9 @@ void Assembly-CSharp.dll::TeamMenu::TeamMenu__ctor(TeamMenu *this,MethodInfo *me
   (this->fields)._.cameraMaskMode = 2;
   this_00 = (List_1_LobbyFlowMenu_LobbyFlowMenuType_ *)func_?(TypeInfo__System__Collections__Generic__List<LobbyFlowMenu::LobbyFlowMenuType>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,MethodInfo__System__Collections__Generic__List<LobbyFlowMenu::LobbyFlowMenuType>__List__);
-  (this->fields)._.menuOrder = this_00;
-  func_?(&(this->fields)._.menuOrder,this_00);
+  ppLVar1 = &(this->fields)._.menuOrder;
+  *ppLVar1 = this_00;
+  func_?(ppLVar1,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }

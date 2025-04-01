@@ -148,7 +148,7 @@ void Assembly-CSharp.dll::RTG::RTCameraBackground::RTCameraBackground_Render_Sys
           dVar6 = (double)(fVar5 * 0.5 * 0.017453292);
           puVar7 = &UNK_?;
           func_?();
-          if ((this_02 != (QuadShape3D *)0x0) && (value.y = (float)dVar6 * (fVar4 + fVar4) + 0.01, value.x = (float)puVar7, QuadShape3D::QuadShape3D_set_Size(this_02,value,(MethodInfo *)0x0), this_01 != (Transform *)0x0)) {
+          if ((this_02 != (QuadShape3D *)0x0) && (value.y = (float)dVar6 * fVar4 * 2.0 + 0.01, value.x = (float)puVar7, QuadShape3D::QuadShape3D_set_Size(this_02,value,(MethodInfo *)0x0), this_01 != (Transform *)0x0)) {
             pQVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation((Quaternion *)&stack0xffffffcc,this_01,(MethodInfo *)0x0);
             fVar4 = pQVar8->y;
             fVar5 = pQVar8->z;
@@ -282,20 +282,23 @@ void Assembly-CSharp.dll::RTG::RTCameraBackground::RTCameraBackground__ctor(RTCa
   }
   (value->fields)._._canBeDisplayed = 1;
   (value->fields)._._isExpanded = 1;
-  (value->fields)._._foldoutLabel = StringLiteral_Settings;
   method_00 = (MethodInfo *)&(value->fields)._._foldoutLabel;
+  *(String **)method_00 = StringLiteral_Settings;
   func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)value,ExceptionArgument__Enum_obj,method_00);
-  (this->fields)._bkSettings = value;
-  func_?(&(this->fields)._bkSettings,value);
+  ppCVar6 = &(this->fields)._bkSettings;
+  *ppCVar6 = value;
+  func_?(ppCVar6,value);
   this_00 = (List_1_UnityEngine_Camera_ *)func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Camera>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,MethodInfo__System__Collections__Generic__List<UnityEngine::Camera>__List__);
-  (this->fields)._renderIgnoreCameras = this_00;
-  func_?(&(this->fields)._renderIgnoreCameras,this_00);
+  ppLVar7 = &(this->fields)._renderIgnoreCameras;
+  *ppLVar7 = this_00;
+  func_?(ppLVar7,this_00);
   this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<UnityEngine::Camera,_RTG::CameraBackgroundSettings>);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::StyleComplexSelector+PseudoStateData]::Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor(this_01,MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Camera,_RTG::CameraBackgroundSettings>__Dictionary__);
-  (this->fields)._cameraToBkSettings = (Dictionary_2_UnityEngine_Camera_RTG_CameraBackgroundSettings_ *)this_01;
-  func_?(&(this->fields)._cameraToBkSettings,this_01);
+  ppDVar8 = &(this->fields)._cameraToBkSettings;
+  *ppDVar8 = (Dictionary_2_UnityEngine_Camera_RTG_CameraBackgroundSettings_ *)this_01;
+  func_?(ppDVar8,this_01);
   if ((TypeInfo__RTG__MonoSingleton<RTG::RTCameraBackground>->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }

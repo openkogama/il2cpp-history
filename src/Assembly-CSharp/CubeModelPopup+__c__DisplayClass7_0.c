@@ -19,9 +19,8 @@ void Assembly-CSharp.dll::CubeModelPopup+<>c__DisplayClass7_0::CubeModelPopup_c_
       if (uVar4 != 0) {
         do {
           if (pIVar2->interfaceOffsets[uVar3].interfaceType == (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IMaterialClicked) {
-            pIVar2 = x->klass;
             iVar5 = pIVar2->interfaceOffsets[uVar3].offset;
-            (*(code *)(&pIVar2->vtable)[iVar5].OnMaterialClicked.method)(x,this,(&pIVar2[1]._0.image)[iVar5 * 2]);
+            (*(code *)(&x->klass->vtable)[iVar5].OnMaterialClicked.method)(x,this,(&x->klass[1]._0.image)[iVar5 * 2]);
             return;
           }
           uVar3 = uVar3 + 1;
@@ -64,7 +63,7 @@ void Assembly-CSharp.dll::CubeModelPopup+<>c__DisplayClass7_0::CubeModelPopup_c_
   if (uVar6 != 0) {
     do {
       if (pIVar5->interfaceOffsets[uVar4].interfaceType == (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__ICreateNewPrototype) {
-        ppMVar7 = &(&x->klass->vtable)[x->klass->interfaceOffsets[uVar4].offset].OnAddNewPrototype.method;
+        ppMVar7 = &(&x->klass->vtable)[pIVar5->interfaceOffsets[uVar4].offset].OnAddNewPrototype.method;
         goto code_?;
       }
       uVar4 = uVar4 + 1;
@@ -98,7 +97,7 @@ void Assembly-CSharp.dll::CubeModelPopup+<>c__DisplayClass7_0::CubeModelPopup_c_
       if (uVar6 != 0) {
         do {
           if (pIVar4->interfaceOffsets[uVar5].interfaceType == (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IChangePrototypeScale) {
-            ppMVar7 = &(&x->klass->vtable)[x->klass->interfaceOffsets[uVar5].offset].OnChangePrototypeScale.method;
+            ppMVar7 = &(&x->klass->vtable)[pIVar4->interfaceOffsets[uVar5].offset].OnChangePrototypeScale.method;
             goto code_?;
           }
           uVar5 = uVar5 + 1;

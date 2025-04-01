@@ -18,7 +18,8 @@ bool MVWorldObject.dll::WinningConditionManager+ForfilledWinnerConditionGenerato
         func_?(&TypeInfo__WinningConditionOr);
         cRam_? = '\x01';
       }
-      if (((winnerCondition->klass->_1).naturalAligment < (TypeInfo__WinningConditionGroup->_1).naturalAligment) || ((winnerCondition->klass->_1).typeHierarchy[(TypeInfo__WinningConditionGroup->_1).naturalAligment - 1] != (Il2CppClass *)TypeInfo__WinningConditionGroup)) {
+      bVar2 = (TypeInfo__WinningConditionGroup->_1).naturalAligment;
+      if (((winnerCondition->klass->_1).naturalAligment < bVar2) || ((winnerCondition->klass->_1).typeHierarchy[bVar2 - 1] != (Il2CppClass *)TypeInfo__WinningConditionGroup)) {
         func_?(0,TypeInfo__IWinningCondition,winnerCondition);
         this_00 = (List_1_System_Object_ *)(this->fields).gameWonWinnerConditions;
         if (this_00 == (List_1_System_Object_ *)0x0) goto code_?;
@@ -29,9 +30,9 @@ bool MVWorldObject.dll::WinningConditionManager+ForfilledWinnerConditionGenerato
   }
 code_?:
   func_?();
-  pcVar2 = (code *)swi(3);
-  bVar3 = (*pcVar2)();
-  return bVar3;
+  pcVar3 = (code *)swi(3);
+  bVar4 = (*pcVar3)();
+  return bVar4;
 }
 
 
@@ -48,26 +49,28 @@ bool MVWorldObject.dll::WinningConditionManager+ForfilledWinnerConditionGenerato
     cRam_? = '\x01';
   }
   if (winnerCondition != (IWinningCondition *)0x0) {
-    if (((TypeInfo__WinningConditionGroup->_1).naturalAligment <= (winnerCondition->klass->_1).naturalAligment) && ((winnerCondition->klass->_1).typeHierarchy[(TypeInfo__WinningConditionGroup->_1).naturalAligment - 1] == (Il2CppClass *)TypeInfo__WinningConditionGroup)) {
+    bVar1 = (TypeInfo__WinningConditionGroup->_1).naturalAligment;
+    if ((bVar1 <= (winnerCondition->klass->_1).naturalAligment) && ((winnerCondition->klass->_1).typeHierarchy[bVar1 - 1] == (Il2CppClass *)TypeInfo__WinningConditionGroup)) {
       return 0;
     }
-    piVar1 = (int *)func_?(0,TypeInfo__IWinningCondition,winnerCondition);
+    piVar2 = (int *)func_?(0,TypeInfo__IWinningCondition,winnerCondition);
     this_00 = (List_1_System_Object_ *)(this->fields).gameWonWinnerConditions;
     if (this_00 != (List_1_System_Object_ *)0x0) {
       mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add(this_00,(Object *)winnerCondition,MethodInfo__System__Collections__Generic__List<IWinningCondition>__Add_IWinningCondition_);
-      if (piVar1 == (int *)0x0) {
+      if (piVar2 == (int *)0x0) {
         return 0;
       }
-      if (((TypeInfo__WinningConditionOr->_1).naturalAligment <= *(byte *)(*piVar1 + 0xb8)) && (*(WinningConditionOr__Class **)(*(int *)(*piVar1 + 100) + -4 + (uint)(TypeInfo__WinningConditionOr->_1).naturalAligment * 4) == TypeInfo__WinningConditionOr)) {
-        return piVar1 != (int *)0x0;
+      bVar1 = (TypeInfo__WinningConditionOr->_1).naturalAligment;
+      if ((bVar1 <= *(byte *)(*piVar2 + 0xb8)) && (*(WinningConditionOr__Class **)(*(int *)(*piVar2 + 100) + -4 + (uint)bVar1 * 4) == TypeInfo__WinningConditionOr)) {
+        return piVar2 != (int *)0x0;
       }
       return 0;
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  bVar3 = (*pcVar2)();
-  return bVar3;
+  pcVar3 = (code *)swi(3);
+  bVar4 = (*pcVar3)();
+  return bVar4;
 }
 
 
@@ -86,7 +89,7 @@ void MVWorldObject.dll::WinningConditionManager+ForfilledWinnerConditionGenerato
   this_00 = (List_1_IWinningCondition_ *)func_?(TypeInfo__System__Collections__Generic__List<IWinningCondition>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,MethodInfo__System__Collections__Generic__List<IWinningCondition>__List__);
   method_00 = (MethodInfo *)&this->fields;
-  (this->fields).gameWonWinnerConditions = this_00;
+  ((WinningConditionManager_ForfilledWinnerConditionGenerator__Fields *)method_00)->gameWonWinnerConditions = this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,method_00);
   this_01 = (Func_2_Object_Boolean_ *)func_?(TypeInfo__System__Func<IWinningCondition,_bool>);

@@ -23,9 +23,9 @@ void Assembly-CSharp.dll::RTG::GizmoDblAxisRotationDrag3D::GizmoDblAxisRotationD
   puVar3 = (undefined8 *)func_?();
   fStack_4 = (float)*puVar3;
   fStack_5 = (float)((ulonglong)*puVar3 >> 0x20);
-  fVar6 = (fStack_4 * (this->fields)._workData.ScreenAxis0.x + fStack_5 * (this->fields)._workData.ScreenAxis0.y) * (this->fields)._._sensitivity;
+  fVar6 = ((this->fields)._workData.ScreenAxis0.y * fStack_5 + (this->fields)._workData.ScreenAxis0.x * fStack_4) * (this->fields)._._sensitivity;
   (this->fields)._relativeRotation0 = fVar6;
-  fVar7 = (fStack_5 * (this->fields)._workData.ScreenAxis1.y + fStack_4 * (this->fields)._workData.ScreenAxis1.x) * (this->fields)._._sensitivity;
+  fVar7 = ((this->fields)._workData.ScreenAxis1.y * fStack_5 + (this->fields)._workData.ScreenAxis1.x * fStack_4) * (this->fields)._._sensitivity;
   (this->fields)._relativeRotation1 = fVar7;
   if ((fVar6 == 0.0) && (fVar7 == 0.0)) {
     if (cRam_? == '\0') {
@@ -42,10 +42,11 @@ void Assembly-CSharp.dll::RTG::GizmoDblAxisRotationDrag3D::GizmoDblAxisRotationD
     (this->fields)._._._relativeDragRotation.w = fVar9;
     return;
   }
+  accumulated = &(this->fields)._accumSnapDrag0;
   if ((this->fields)._._isSnapEnabled == 0) {
     (this->fields)._adjustRotationForAbsSnap = 1;
     (this->fields)._accumSnapDrag1 = 0.0;
-    (this->fields)._accumSnapDrag0 = 0.0;
+    *accumulated = 0.0;
     (this->fields)._totalRotation0 = fVar6 + (this->fields)._totalRotation0;
     (this->fields)._totalRotation1 = fVar7 + (this->fields)._totalRotation1;
     pQVar10 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis((Quaternion *)&stack0xffffffa0,fVar7,(this->fields)._workData.Axis1,(MethodInfo *)0x0);
@@ -64,7 +65,7 @@ void Assembly-CSharp.dll::RTG::GizmoDblAxisRotationDrag3D::GizmoDblAxisRotationD
   }
   else {
     fVar18 = (float10)func_?();
-    (this->fields)._accumSnapDrag0 = (float)fVar18;
+    *accumulated = (float)fVar18;
     fVar18 = (float10)func_?();
     (this->fields)._accumSnapDrag1 = (float)fVar18;
     if (((this->fields)._workData.SnapMode == 1) && ((this->fields)._adjustRotationForAbsSnap != 0)) {
@@ -89,7 +90,7 @@ void Assembly-CSharp.dll::RTG::GizmoDblAxisRotationDrag3D::GizmoDblAxisRotationD
       }
       fVar6 = (float)iVar20 * (this->fields)._workData.SnapStep0 * fVar6;
       (this->fields)._totalRotation0 = fVar6;
-      (this->fields)._accumSnapDrag0 = 0.0;
+      *accumulated = 0.0;
       (this->fields)._relativeRotation0 = fVar6 - fVar7;
       pNVar19 = SnapMath::SnapMath_CalculateNumSnapSteps((NumSnapSteps *)&stack0xffffffa0,(this->fields)._workData.SnapStep1,(this->fields)._totalRotation1,(MethodInfo *)0x0);
       fVar7 = (this->fields)._totalRotation1;
@@ -146,9 +147,9 @@ void Assembly-CSharp.dll::RTG::GizmoDblAxisRotationDrag3D::GizmoDblAxisRotationD
       (this->fields)._._._relativeDragRotation.y = fVar7;
       (this->fields)._._._relativeDragRotation.z = fVar6;
       (this->fields)._._._relativeDragRotation.w = fVar9;
-      bVar24 = SnapMath::SnapMath_CanExtractSnap((this->fields)._workData.SnapStep0,(this->fields)._accumSnapDrag0,(MethodInfo *)0x0);
+      bVar24 = SnapMath::SnapMath_CanExtractSnap((this->fields)._workData.SnapStep0,*accumulated,(MethodInfo *)0x0);
       if (bVar24 != 0) {
-        fVar7 = SnapMath::SnapMath_ExtractSnap((this->fields)._workData.SnapStep0,&(this->fields)._accumSnapDrag0,(MethodInfo *)0x0);
+        fVar7 = SnapMath::SnapMath_ExtractSnap((this->fields)._workData.SnapStep0,accumulated,(MethodInfo *)0x0);
         (this->fields)._relativeRotation0 = fVar7;
         fVar18 = (float10)func_?();
         (this->fields)._totalRotation0 = (float)fVar18;

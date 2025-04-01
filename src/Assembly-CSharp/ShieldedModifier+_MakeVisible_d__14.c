@@ -29,11 +29,9 @@ bool Assembly-CSharp.dll::ShieldedModifier+<MakeVisible>d__14::ShieldedModifier_
     (this->fields)._currColor_5__3.b = fVar7;
     (this->fields)._currColor_5__3.a = fVar8;
 code_?:
-    fVar4 = (this->fields).fadeInTime;
-    pfVar9 = &(this->fields)._i_5__4;
-    if (*pfVar9 <= fVar4 && fVar4 != *pfVar9) {
+    fVar4 = (this->fields)._i_5__4;
+    if (fVar4 < (this->fields).fadeInTime) {
       if (pSVar2 != (ShieldedModifier *)0x0) {
-        fVar4 = (this->fields)._i_5__4;
         pMVar3 = (pSVar2->fields).shieldMat;
         fVar6 = (this->fields)._currRim_5__2;
         if (fVar4 < 0.0) {
@@ -82,9 +80,8 @@ code_?:
     fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
     (this->fields)._i_5__4 = fVar6 / (this->fields).fadeOutTime + fVar4;
   }
-  fVar4 = (this->fields).fadeOutTime;
-  pfVar9 = &(this->fields)._i_5__4;
-  if (fVar4 < *pfVar9 || fVar4 == *pfVar9) {
+  fVar4 = (this->fields)._i_5__4;
+  if ((this->fields).fadeOutTime <= fVar4) {
     (this->fields)._currColor_5__3.a = 0.0;
     if ((pSVar2 != (ShieldedModifier *)0x0) && (pMVar3 = (pSVar2->fields).shieldMat, pMVar3 != (Material *)0x0)) {
       UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector(pMVar3,StringLiteral_m_Color,(Vector4)(this->fields)._currColor_5__3,(MethodInfo *)0x0);
@@ -97,7 +94,6 @@ code_?:
     }
   }
   else if (pSVar2 != (ShieldedModifier *)0x0) {
-    fVar4 = (this->fields)._i_5__4;
     pMVar3 = (pSVar2->fields).shieldMat;
     fVar6 = (pSVar2->fields).targetRimVisibility;
     if (fVar4 < 0.0) {
@@ -129,9 +125,9 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  bVar11 = (*pcVar10)();
-  return bVar11;
+  pcVar9 = (code *)swi(3);
+  bVar10 = (*pcVar9)();
+  return bVar10;
 }
 
 

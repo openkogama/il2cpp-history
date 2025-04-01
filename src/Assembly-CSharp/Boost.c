@@ -5,15 +5,19 @@ void Assembly-CSharp.dll::Boost::Boost__ctor(Boost *this,BoostType__Enum type,St
 
 {
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  ppSVar1 = &(this->fields)._BoostKey_k__BackingField;
   (this->fields)._Type_k__BackingField = type;
-  (this->fields)._BoostKey_k__BackingField = boostKey;
-  func_?(&(this->fields)._BoostKey_k__BackingField,boostKey);
-  (this->fields).description = desc;
-  func_?(&(this->fields).description,desc);
-  (this->fields)._ValueDescription_k__BackingField = valueDesc;
-  func_?(&(this->fields)._ValueDescription_k__BackingField,valueDesc);
-  (this->fields)._EditTitle_k__BackingField = title;
-  func_?(&(this->fields)._EditTitle_k__BackingField,title);
+  *ppSVar1 = boostKey;
+  func_?(ppSVar1,boostKey);
+  ppSVar1 = &(this->fields).description;
+  *ppSVar1 = desc;
+  func_?(ppSVar1,desc);
+  ppSVar1 = &(this->fields)._ValueDescription_k__BackingField;
+  *ppSVar1 = valueDesc;
+  func_?(ppSVar1,valueDesc);
+  ppSVar1 = &(this->fields)._EditTitle_k__BackingField;
+  *ppSVar1 = title;
+  func_?(ppSVar1,title);
   (this->fields)._AllowedForGame_k__BackingField = allowedForGame;
   return;
 }
@@ -65,7 +69,7 @@ Object * Assembly-CSharp.dll::Boost::Boost_get_Value(Boost *this,MethodInfo *met
               }
               RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_02,iVar2,MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>__get_Item_int_);
               if (RVar4 == (RegexCharClass_SingleRange)0x0) goto code_?;
-              bVar5 = mscorlib.dll::System::String::String_op_Equality((String *)0xb5e21835,*(String **)((int)RVar4 + 0xc),(MethodInfo *)0x0);
+              bVar5 = mscorlib.dll::System::String::String_op_Equality((String *)0xb3006c35,*(String **)((int)RVar4 + 0xc),(MethodInfo *)0x0);
               if (bVar5 != 0) break;
               iVar2 = iVar2 + 1;
             }

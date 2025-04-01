@@ -205,8 +205,8 @@ code_?:
                                   else {
                                     pUVar14 = (UxmlObjectListAttributeDescription_1_System_Object___Class *)(this_02->fields).OnSprite;
                                   }
-                                  pUVar13[1].klass = pUVar14;
                                   pUVar22 = pUVar13 + 1;
+                                  pUVar22->klass = pUVar14;
                                   func_?(pUVar22,pUVar14);
                                   pEVar15 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>);
                                   UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)pEVar15,(Object *)pUVar13,MethodInfo__RequirementNotification____c__DisplayClass14_0___ShowTeamRequirement_b__0_INotificationRequirementPanel__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
@@ -321,8 +321,8 @@ code_?:
                           else {
                             pUVar14 = (UxmlObjectListAttributeDescription_1_System_Object___Class *)(this_02->fields).OnSprite;
                           }
-                          pUVar13[1].klass = pUVar14;
                           pUVar22 = pUVar13 + 1;
+                          pUVar22->klass = pUVar14;
                           func_?(pUVar22,pUVar14);
                           pEVar15 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>);
                           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)pEVar15,(Object *)pUVar13,MethodInfo__RequirementNotification____c__DisplayClass12_0___ShowGameCoinRequirement_b__0_INotificationRequirementPanel__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
@@ -621,8 +621,8 @@ void Assembly-CSharp.dll::RequirementNotification::RequirementNotification_ShowS
         else {
           pUStack3 = (UxmlObjectListAttributeDescription_1_System_Object___Class *)(this->fields).OnSprite;
         }
-        this_00[1].klass = pUStack3;
         pUStack4 = this_00 + 1;
+        pUStack4->klass = pUStack3;
         func_?();
         pEStack5 = TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<INotificationRequirementPanel>;
         functor = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
@@ -680,8 +680,8 @@ void Assembly-CSharp.dll::RequirementNotification::RequirementNotification_ShowT
         else {
           pUStack5 = (UxmlObjectListAttributeDescription_1_System_Object___Class *)(this->fields).OnSprite;
         }
-        this_01[1].klass = pUStack5;
         pUStack6 = this_01 + 1;
+        pUStack6->klass = pUStack5;
         func_?();
         functor = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)functor,(Object *)this_01,MethodInfo__RequirementNotification____c__DisplayClass14_0___ShowTeamRequirement_b__0_INotificationRequirementPanel__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
@@ -713,8 +713,9 @@ void Assembly-CSharp.dll::RequirementNotification::RequirementNotification__ctor
   }
   this_00 = (List_1_UnityEngine_GameObject_ *)func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__);
-  (this->fields).PanelsToDestroy = this_00;
-  func_?(&(this->fields).PanelsToDestroy,this_00);
+  ppLVar1 = &(this->fields).PanelsToDestroy;
+  *ppLVar1 = this_00;
+  func_?(ppLVar1,this_00);
   Borodar::FarlandSkies::CloudyCrownPro::Helpers::Singleton`1[System::Object]::Singleton_1_System_Object___ctor((Singleton_1_System_Object_ *)this,(MethodInfo *)0x0);
   return;
 }

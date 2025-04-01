@@ -22,7 +22,7 @@ void Assembly-CSharp.dll::InventorySlot+<>c__DisplayClass11_0::InventorySlot_c_D
         if (uVar6 != 0) {
           do {
             if (pIVar4->interfaceOffsets[uVar5].interfaceType == (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IGameObjectDroppedInSlot) {
-              ppMVar7 = &(&x->klass->vtable)[x->klass->interfaceOffsets[uVar5].offset].SlotChanged.method;
+              ppMVar7 = &(&x->klass->vtable)[pIVar4->interfaceOffsets[uVar5].offset].SlotChanged.method;
               goto code_?;
             }
             uVar5 = uVar5 + 1;

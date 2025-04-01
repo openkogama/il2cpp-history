@@ -233,21 +233,22 @@ void Assembly-CSharp.dll::GamePassesViewCrystalsInInventory::GamePassesViewCryst
       return;
     }
     pLVar2 = (this->fields).buyingItems;
-    iVar3 = 0;
+    returnCode = 0;
     if (pLVar2 != (List_1_ShopItem_ *)0x0) {
-      while (iVar3 < (pLVar2->fields)._size) {
+      while (returnCode < (pLVar2->fields)._size) {
         value_00 = (Object *)func_?(TypeInfo__GamePassesViewCrystalsInInventory____c__DisplayClass10_1);
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value_00,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
         if (value_00 == (Object *)0x0) goto code_?;
-        value_00[1].monitor = (MonitorData *)value;
-        func_?(&value_00[1].monitor,value);
+        ppMVar3 = &value_00[1].monitor;
+        *ppMVar3 = (MonitorData *)value;
+        func_?(ppMVar3,value);
         this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).buyingItems;
         if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) goto code_?;
-        RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_00,iVar3,MethodInfo__System__Collections__Generic__List<ShopItem>__get_Item_int_);
+        RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_00,returnCode,MethodInfo__System__Collections__Generic__List<ShopItem>__get_Item_int_);
         value_00[1].klass = (Object__Class *)RVar4;
         func_?(value_00 + 1,RVar4);
-        if (value_00[1].monitor == (MonitorData *)0x0) goto code_?;
-        if (*(int *)(value_00[1].monitor + 8) == 0) {
+        if (*ppMVar3 == (MonitorData *)0x0) goto code_?;
+        if (*(int *)(*ppMVar3 + 8) == 0) {
           iVar5 = func_?(0);
           if ((iVar5 == 0) || (method_00 = (GamePassesViewCrystalsInInventory_c_DisplayClass10_0__Class *)func_?(4,TypeInfo__IEditModeUI,iVar5), method_00 == (GamePassesViewCrystalsInInventory_c_DisplayClass10_0__Class *)0x0)) goto code_?;
           UGUI::Desktop::Scripts::EditMode::Inventories::PlayerShopInventoryRepository::PlayerShopInventoryRepository_AddPurchasedItem((PlayerShopInventoryRepository *)method_00,(ShopItem *)value_00[1].klass,(MethodInfo *)0x0);
@@ -267,17 +268,17 @@ void Assembly-CSharp.dll::GamePassesViewCrystalsInInventory::GamePassesViewCryst
           UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy(pGVar6,(BaseEventData *)0x0,callbackFunction,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_);
         }
         pLVar2 = (this->fields).buyingItems;
-        iVar3 = iVar3 + 1;
+        returnCode = returnCode + 1;
         if (pLVar2 == (List_1_ShopItem_ *)0x0) goto code_?;
       }
       pLVar2 = (this->fields).buyingItems;
       if (pLVar2 != (List_1_ShopItem_ *)0x0) {
-        iVar3 = (pLVar2->fields)._size;
+        iVar5 = (pLVar2->fields)._size;
         piVar1 = &(pLVar2->fields)._version;
         *piVar1 = *piVar1 + 1;
         (pLVar2->fields)._size = 0;
-        if (0 < iVar3) {
-          mscorlib.dll::System::Array::Array_Clear((Array *)(pLVar2->fields)._items,0,iVar3,(MethodInfo *)0x0);
+        if (0 < iVar5) {
+          mscorlib.dll::System::Array::Array_Clear((Array *)(pLVar2->fields)._items,0,iVar5,(MethodInfo *)0x0);
         }
         pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
         if ((TypeInfo__GamePassesViewCrystalsInInventory____c->_1).cctor_finished_or_no_cctor == 0) {
@@ -454,8 +455,9 @@ void Assembly-CSharp.dll::GamePassesViewCrystalsInInventory::GamePassesViewCryst
   }
   this_00 = (List_1_ShopItem_ *)func_?(TypeInfo__System__Collections__Generic__List<ShopItem>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,MethodInfo__System__Collections__Generic__List<ShopItem>__List__);
-  (this->fields).buyingItems = this_00;
-  func_?(&(this->fields).buyingItems,this_00);
+  ppLVar1 = &(this->fields).buyingItems;
+  *ppLVar1 = this_00;
+  func_?(ppLVar1,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
