@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using MV.WorldObject.OwnershipData;
 using UnityEngine;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -25,6 +26,8 @@ public class MVBuildModeAvatarRemote : MVBuildModeAvatar, ISpawnRoleRemote
 
 	// Methods
 	public override void Initialize();
+	private void InitializeLaserPointerAndEditCube();
+	private void RecievedPlanetOwnershipDataCallback(Dictionary<int, PlanetOwnershipsEntry> planetOwnershipsEntries);
 	private void HandleLaserActive(bool isLocal, bool isActive);
 	public override void Destroy();
 	public void Activate(int idFrom, Vector3 position, Quaternion rotation);
