@@ -10,7 +10,7 @@ void Assembly-CSharp.dll::AudioLogicCube::AudioLogicCube_Awake(AudioLogicCube *t
   }
   pAVar1 = (AudioOnOffComponent__Array *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponents_1((Component *)this,AudioOnOffComponent__MethodInfo__UnityEngine__Component__GetComponents<AudioOnOffComponent>______);
   (this->fields).audioOnOffComponents = pAVar1;
-  func_?(&(this->fields).audioOnOffComponents,pAVar1);
+  func_?();
   return;
 }
 

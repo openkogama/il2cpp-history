@@ -116,8 +116,9 @@ Texture2D * Assembly-CSharp.dll::MaterialButtonTextureGenerator::MaterialButtonT
                   this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
                   if (this_02 != (Transform *)0x0) {
                     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent(this_02,(Transform *)0x0,(MethodInfo *)0x0);
-                    (this->fields).testTexture2D = pTVar3;
-                    func_?(&(this->fields).testTexture2D,pTVar3);
+                    ppTVar8 = &(this->fields).testTexture2D;
+                    *ppTVar8 = pTVar3;
+                    func_?(ppTVar8,pTVar3);
                     return pTVar3;
                   }
                 }
@@ -129,8 +130,8 @@ Texture2D * Assembly-CSharp.dll::MaterialButtonTextureGenerator::MaterialButtonT
     }
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  pTVar3 = (Texture2D *)(*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  pTVar3 = (Texture2D *)(*pcVar9)();
   return pTVar3;
 }
 

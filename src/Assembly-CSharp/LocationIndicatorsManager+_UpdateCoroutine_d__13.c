@@ -1,7 +1,7 @@
 
 /* Boolean MoveNext() */
 
-bool Assembly-CSharp.dll::LocationIndicatorsManager+<UpdateCoroutine>d__15::LocationIndicatorsManager_UpdateCoroutine_d_15_MoveNext(LocationIndicatorsManager_UpdateCoroutine_d_15 *this,MethodInfo *method)
+bool Assembly-CSharp.dll::LocationIndicatorsManager+<UpdateCoroutine>d__13::LocationIndicatorsManager_UpdateCoroutine_d_13_MoveNext(LocationIndicatorsManager_UpdateCoroutine_d_13 *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -18,27 +18,28 @@ bool Assembly-CSharp.dll::LocationIndicatorsManager+<UpdateCoroutine>d__15::Loca
     LocationIndicatorsManager::LocationIndicatorsManager_CreateOrDestroyIndicators(this_00,(MethodInfo *)0x0);
     this_01 = (WaitForSecondsRealtime *)func_?(TypeInfo__UnityEngine__WaitForSecondsRealtime);
     UnityEngine.CoreModule.dll::UnityEngine::WaitForSecondsRealtime::WaitForSecondsRealtime__ctor(this_01,0.5,(MethodInfo *)0x0);
-    (this->fields).__2__current = (Object *)this_01;
-    func_?(&(this->fields).__2__current,this_01);
+    ppOVar2 = &(this->fields).__2__current;
+    *ppOVar2 = (Object *)this_01;
+    func_?(ppOVar2,this_01);
     (this->fields).__1__state = 1;
     return 1;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  bVar3 = (*pcVar2)();
-  return bVar3;
+  pcVar3 = (code *)swi(3);
+  bVar4 = (*pcVar3)();
+  return bVar4;
 }
 
 
 /* Void System.Collections.IEnumerator.Reset() */
 
-void Assembly-CSharp.dll::LocationIndicatorsManager+<UpdateCoroutine>d__15::LocationIndicatorsManager_UpdateCoroutine_d_15_System_Collections_IEnumerator_Reset(LocationIndicatorsManager_UpdateCoroutine_d_15 *this,MethodInfo *method)
+void Assembly-CSharp.dll::LocationIndicatorsManager+<UpdateCoroutine>d__13::LocationIndicatorsManager_UpdateCoroutine_d_13_System_Collections_IEnumerator_Reset(LocationIndicatorsManager_UpdateCoroutine_d_13 *this,MethodInfo *method)
 
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
   this_00 = (NotSupportedException *)func_?(uVar1);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor(this_00,(MethodInfo *)0x0);
-  func_?(&MethodInfo__LocationIndicatorsManager___UpdateCoroutine_d__15__System_Collections_IEnumerator_Reset__);
+  func_?(&MethodInfo__LocationIndicatorsManager___UpdateCoroutine_d__13__System_Collections_IEnumerator_Reset__);
   func_?(this_00);
   pcVar2 = (code *)swi(3);
   (*pcVar2)();

@@ -4,9 +4,10 @@
 RewardStateDataEventArgs * Assembly-CSharp.dll::TimeReward+RewardStateBase::TimeReward_RewardStateBase_get_RewardStateEventArgs(TimeReward_RewardStateBase *this,MethodInfo *method)
 
 {
-  pRVar1 = (this->fields).rewardStateEventArgs;
-  (this->fields).rewardStateEventArgs = (RewardStateDataEventArgs *)0x0;
-  func_?(&this->fields,0);
-  return pRVar1;
+  pTVar1 = &this->fields;
+  pRVar2 = pTVar1->rewardStateEventArgs;
+  pTVar1->rewardStateEventArgs = (RewardStateDataEventArgs *)0x0;
+  func_?(pTVar1,0);
+  return pRVar2;
 }
 

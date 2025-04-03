@@ -49,8 +49,8 @@ void Assembly-CSharp.dll::ClaimGoldRewardPopup::ClaimGoldRewardPopup_ClaimGold(C
     }
     pOStack2 = (Object__Class *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4(original,UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_);
     if (value != (Object *)0x0) {
-      value[1].klass = pOStack2;
       pOStack3 = value + 1;
+      pOStack3->klass = pOStack2;
       func_?();
       pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
       callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
@@ -136,7 +136,7 @@ void Assembly-CSharp.dll::ClaimGoldRewardPopup::ClaimGoldRewardPopup_OnClickClai
     if (uVar4 != 0) {
       do {
         if (pIVar2->interfaceOffsets[uVar3].interfaceType == (Il2CppClass *)TypeInfo__Assets__Scripts__AdIntegration__IAdManager) {
-          ppMVar5 = &(&(pIVar1->klass->vtable).get_ReadyForRewardedAdRequest)[pIVar1->klass->interfaceOffsets[uVar3].offset].method;
+          ppMVar5 = &(&(pIVar1->klass->vtable).get_ReadyForRewardedAdRequest)[pIVar2->interfaceOffsets[uVar3].offset].method;
           goto code_?;
         }
         uVar3 = uVar3 + 1;
@@ -164,7 +164,7 @@ code_?:
         if (uVar3 != 0) {
           do {
             if (pIVar2->interfaceOffsets[uVar4].interfaceType == (Il2CppClass *)TypeInfo__Assets__Scripts__AdIntegration__IAdManager) {
-              ppMVar5 = &(&(pIVar1->klass->vtable).RequestRewardedAd)[pIVar1->klass->interfaceOffsets[uVar4].offset].method;
+              ppMVar5 = &(&(pIVar1->klass->vtable).RequestRewardedAd)[pIVar2->interfaceOffsets[uVar4].offset].method;
               goto code_?;
             }
             uVar4 = uVar4 + 1;
@@ -234,8 +234,8 @@ void Assembly-CSharp.dll::ClaimGoldRewardPopup::ClaimGoldRewardPopup_OnClickClai
     }
     pOStack2 = (Object__Class *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4(original,UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_);
     if (value != (Object *)0x0) {
-      value[1].klass = pOStack2;
       pOStack3 = value + 1;
+      pOStack3->klass = pOStack2;
       func_?();
       pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
       callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();

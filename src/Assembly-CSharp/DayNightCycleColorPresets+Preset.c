@@ -40,9 +40,10 @@ void Assembly-CSharp.dll::DayNightCycleColorPresets+Preset::DayNightCycleColorPr
 void Assembly-CSharp.dll::DayNightCycleColorPresets+Preset::DayNightCycleColorPresets_Preset_LanguageLoadedCallback(DayNightCycleColorPresets_Preset *this,MethodInfo *method)
 
 {
-  pSVar1 = TM::TM__((this->fields).name,(MethodInfo *)0x0);
-  (this->fields).name = pSVar1;
-  func_?(&this->fields,pSVar1);
+  pDVar1 = &this->fields;
+  pSVar2 = TM::TM__(pDVar1->name,(MethodInfo *)0x0);
+  pDVar1->name = pSVar2;
+  func_?(pDVar1,pSVar2);
   return;
 }
 
@@ -57,9 +58,10 @@ void Assembly-CSharp.dll::DayNightCycleColorPresets+Preset::DayNightCycleColorPr
     func_?(&MethodInfo__DayNightCycleColorPresets__Preset__LanguageLoadedCallback__);
     cRam_? = '\x01';
   }
-  pSVar1 = TM::TM__((this->fields).name,(MethodInfo *)0x0);
-  (this->fields).name = pSVar1;
-  func_?(&this->fields,pSVar1);
+  pDVar1 = &this->fields;
+  pSVar2 = TM::TM__(pDVar1->name,(MethodInfo *)0x0);
+  pDVar1->name = pSVar2;
+  func_?(pDVar1,pSVar2);
   this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
   UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(this_00,(Object *)this,MethodInfo__DayNightCycleColorPresets__Preset__LanguageLoadedCallback__,(MethodInfo *)0x0);
   TM::TM_LanguageChanged((Action *)this_00,(MethodInfo *)0x0);

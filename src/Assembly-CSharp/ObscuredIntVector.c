@@ -569,7 +569,7 @@ bool Assembly-CSharp.dll::ObscuredIntVector::ObscuredIntVector_op_Inequality(Obs
     func_?(TypeInfo__ObscuredIntVector);
   }
   bVar2 = ObscuredIntVector_Equals_1(&OStack_1,b,(MethodInfo *)0x0);
-  return bVar2 ^ 1;
+  return bVar2 == 0;
 }
 
 
@@ -603,7 +603,7 @@ ObscuredIntVector * Assembly-CSharp.dll::ObscuredIntVector::ObscuredIntVector_op
   (__return_storage_ptr__->z).fakeValue = 0;
   (__return_storage_ptr__->z).inited = 0;
   (__return_storage_ptr__->z).field_0x7 = 0;
-  ObscuredIntVector__ctor(__return_storage_ptr__,(short)i * iVar1,(int16_t)(i * (uint)uVar2),(int16_t)(i * (uint)uVar3),(MethodInfo *)0x0);
+  ObscuredIntVector__ctor(__return_storage_ptr__,(short)i * iVar1,(int16_t)((i & 0xffffU) * (uint)uVar2),(int16_t)((i & 0xffffU) * (uint)uVar3),(MethodInfo *)0x0);
   return __return_storage_ptr__;
 }
 
@@ -638,7 +638,7 @@ ObscuredIntVector * Assembly-CSharp.dll::ObscuredIntVector::ObscuredIntVector_op
   (__return_storage_ptr__->z).fakeValue = 0;
   (__return_storage_ptr__->z).inited = 0;
   (__return_storage_ptr__->z).field_0x7 = 0;
-  ObscuredIntVector__ctor(__return_storage_ptr__,(short)i * iVar1,(int16_t)(i * (uint)uVar2),(int16_t)(i * (uint)uVar3),(MethodInfo *)0x0);
+  ObscuredIntVector__ctor(__return_storage_ptr__,(short)i * iVar1,(int16_t)((i & 0xffffU) * (uint)uVar2),(int16_t)((i & 0xffffU) * (uint)uVar3),(MethodInfo *)0x0);
   return __return_storage_ptr__;
 }
 

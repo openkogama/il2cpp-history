@@ -26,14 +26,15 @@ void Assembly-CSharp.dll::RTG::PolygonShape2D::PolygonShape2D_CalculateThickBord
   pPVar1 = (this->fields)._borderRenderDesc;
   if (pPVar1 != (PolygonShape2D_BorderRenderDescriptor *)0x0) {
     pLVar2 = PrimitiveFactory::PrimitiveFactory_Generate2DPolyBorderPointsCW((this->fields)._cwPolyPoints,(uint)((pPVar1->fields)._direction != 0),(pPVar1->fields)._thickness,(this->fields)._isClosed,(MethodInfo *)0x0);
-    (this->fields)._thickCwBorderPoints = pLVar2;
-    func_?(&(this->fields)._thickCwBorderPoints,pLVar2);
+    ppLVar3 = &(this->fields)._thickCwBorderPoints;
+    *ppLVar3 = pLVar2;
+    func_?(ppLVar3,pLVar2);
     (this->fields)._isThickBorderDirty = 0;
     return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -111,16 +112,17 @@ void Assembly-CSharp.dll::RTG::PolygonShape2D::PolygonShape2D_CopyPoints(Polygon
       if ((pLVar2->fields)._size != 0) {
         this_00 = (List_1_UnityEngine_Vector2_ *)func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
         mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2___ctor_1(this_00,(IEnumerable_1_UnityEngine_Vector2_ *)pLVar2,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List_System__Collections__Generic__IEnumerable<UnityEngine::Vector2>_);
-        (this->fields)._cwPolyPoints = this_00;
-        func_?(&(this->fields)._cwPolyPoints,this_00);
+        ppLVar3 = &(this->fields)._cwPolyPoints;
+        *ppLVar3 = this_00;
+        func_?(ppLVar3,this_00);
         (this->fields)._isThickBorderDirty = 1;
         (this->fields)._isRectDirty = 1;
         return;
       }
       pLVar2 = (this->fields)._cwPolyPoints;
       if (pLVar2 != (List_1_UnityEngine_Vector2_ *)0x0) {
-        piVar3 = &(pLVar2->fields)._version;
-        *piVar3 = *piVar3 + 1;
+        piVar4 = &(pLVar2->fields)._version;
+        *piVar4 = *piVar4 + 1;
         (pLVar2->fields)._size = 0;
         (this->fields)._isThickBorderDirty = 1;
         (this->fields)._isRectDirty = 1;
@@ -129,8 +131,8 @@ void Assembly-CSharp.dll::RTG::PolygonShape2D::PolygonShape2D_CopyPoints(Polygon
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -252,58 +254,52 @@ void Assembly-CSharp.dll::RTG::PolygonShape2D::PolygonShape2D_MakeSphereBorder(P
     func_?(&TypeInfo__RTG__CameraEx);
     cRam_? = '\x01';
   }
-  worldPoints = PrimitiveFactory::PrimitiveFactory_GenerateSphereBorderPoints(camera,sphereCenter,sphereRadius,numPoints,(MethodInfo *)0x0);
+  this = (PolygonShape2D *)PrimitiveFactory::PrimitiveFactory_GenerateSphereBorderPoints(camera,sphereCenter,sphereRadius,numPoints,(MethodInfo *)0x0);
   if ((TypeInfo__RTG__CameraEx->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  camera = (Camera *)CameraEx::CameraEx_ConvertWorldToScreenPoints(camera,worldPoints,(MethodInfo *)0x0);
-  method = (MethodInfo *)0x0;
+  this_00 = (MethodInfo *)CameraEx::CameraEx_ConvertWorldToScreenPoints(camera,(List_1_UnityEngine_Vector3_ *)this,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     func_?();
     func_?();
-    this = (PolygonShape2D *)&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Count__;
     func_?();
+    this = (PolygonShape2D *)&UNK_?;
     func_?();
     cRam_? = '\x01';
   }
-  if ((List_1_UnityEngine_Vector2_ *)camera != (List_1_UnityEngine_Vector2_ *)0x0) {
-    sphereRadius = (float)(((List_1_UnityEngine_Vector2_ *)camera)->fields)._size;
-    pLVar1 = (this->fields)._cwPolyPoints;
-    if (pLVar1 != (List_1_UnityEngine_Vector2_ *)0x0) {
-      piVar2 = &(pLVar1->fields)._version;
-      *piVar2 = *piVar2 + 1;
-      (pLVar1->fields)._size = 0;
-      numPoints = 0;
-      pLVar1 = (List_1_UnityEngine_Vector2_ *)camera;
-      if (0 < (int)sphereRadius) {
+  if (this_00 != (MethodInfo *)0x0) {
+    pcVar1 = this_00->name;
+    pLVar2 = (this->fields)._cwPolyPoints;
+    if (pLVar2 != (List_1_UnityEngine_Vector2_ *)0x0) {
+      piVar3 = &(pLVar2->fields)._version;
+      *piVar3 = *piVar3 + 1;
+      (pLVar2->fields)._size = 0;
+      camera = (Camera *)0x0;
+      if (0 < (int)pcVar1) {
         do {
-          item = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__get_Item(pLVar1,numPoints,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_);
-          fVar3 = item.y;
-          this = (PolygonShape2D *)camera;
-          mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__get_Item((List_1_UnityEngine_Vector2_ *)camera,(numPoints + 1) % (int)sphereRadius,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_);
+          item = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__get_Item((List_1_UnityEngine_Vector2_ *)this_00,(int32_t)camera,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_);
+          this_00 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_;
+          camera = (Camera *)((int)&camera->klass + 1);
+          mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__get_Item((List_1_UnityEngine_Vector2_ *)MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_,(int)camera % (int)pcVar1,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_);
           pMVar4 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_;
-          pLVar1 = (List_1_UnityEngine_Vector2_ *)camera[2].monitor;
-          if (pLVar1 == (List_1_UnityEngine_Vector2_ *)0x0) goto code_?;
-          piVar2 = &(pLVar1->fields)._version;
-          *piVar2 = *piVar2 + 1;
-          pVVar5 = (pLVar1->fields)._items;
+          pLVar2 = (this->fields)._cwPolyPoints;
+          if (pLVar2 == (List_1_UnityEngine_Vector2_ *)0x0) goto code_?;
+          piVar3 = &(pLVar2->fields)._version;
+          *piVar3 = *piVar3 + 1;
+          pVVar5 = (pLVar2->fields)._items;
           if (pVVar5 == (Vector2__Array *)0x0) goto code_?;
-          uVar6 = (pLVar1->fields)._size;
+          uVar6 = (pLVar2->fields)._size;
           if (uVar6 < pVVar5->max_length) {
-            (pLVar1->fields)._size = uVar6 + 1;
+            (pLVar2->fields)._size = uVar6 + 1;
             if (pVVar5->max_length <= uVar6) goto code_?;
-            pVVar5->vector[uVar6].x = item.x;
-            pVVar5->vector[uVar6].y = fVar3;
+            pVVar5->vector[uVar6].x = (float)this_00;
+            pVVar5->vector[uVar6].y = (float)((int)camera % (int)pcVar1);
           }
           else {
-            sphereRadius = (float)&UNK_?;
-            mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__AddWithResize(pLVar1,item,pMVar4->klass->rgctx_data[0xe].method);
-            numPoints = (int32_t)pLVar1;
-            _camera = item;
+            camera = (Camera *)&UNK_?;
+            mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__AddWithResize(pLVar2,item,pMVar4->klass->rgctx_data[0xe].method);
           }
-          numPoints = numPoints + 1;
-          pLVar1 = (List_1_UnityEngine_Vector2_ *)camera;
-        } while (numPoints < (int)sphereRadius);
+        } while ((int)camera < (int)pcVar1);
       }
       (this->fields)._isRectDirty = 1;
       (this->fields)._isClosed = 1;
@@ -429,7 +425,7 @@ void Assembly-CSharp.dll::RTG::PolygonShape2D::PolygonShape2D_SetClockwisePoints
 {
   if (cRam_? == '\0') {
     func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_);
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Clear__);
+    func_?();
     func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Count__);
     func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_);
     cRam_? = '\x01';
@@ -441,31 +437,32 @@ void Assembly-CSharp.dll::RTG::PolygonShape2D::PolygonShape2D_SetClockwisePoints
       piVar3 = &(pLVar2->fields)._version;
       *piVar3 = *piVar3 + 1;
       (pLVar2->fields)._size = 0;
-      iStack_4 = 0;
+      index = 0;
       if (0 < iVar1) {
         do {
-          item = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__get_Item(cwBorderPoints,iStack_4,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_);
-          VVar5 = item;
-          mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__get_Item(cwBorderPoints,(iStack_4 + 1) % iVar1,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_);
-          pMVar6 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_;
+          item = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__get_Item(cwBorderPoints,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_);
+          index = index + 1;
+          mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__get_Item(cwBorderPoints,index % iVar1,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_);
+          pMVar4 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_;
           pLVar2 = (this->fields)._cwPolyPoints;
           if (pLVar2 == (List_1_UnityEngine_Vector2_ *)0x0) goto code_?;
           piVar3 = &(pLVar2->fields)._version;
           *piVar3 = *piVar3 + 1;
-          pVVar7 = (pLVar2->fields)._items;
-          if (pVVar7 == (Vector2__Array *)0x0) goto code_?;
-          uVar8 = (pLVar2->fields)._size;
-          if (uVar8 < pVVar7->max_length) {
-            (pLVar2->fields)._size = uVar8 + 1;
-            if (pVVar7->max_length <= uVar8) goto code_?;
-            pVVar7->vector[uVar8].x = VVar5.x;
-            pVVar7->vector[uVar8].y = VVar5.y;
+          pVVar5 = (pLVar2->fields)._items;
+          if (pVVar5 == (Vector2__Array *)0x0) goto code_?;
+          uVar6 = (pLVar2->fields)._size;
+          if (uVar6 < pVVar5->max_length) {
+            (pLVar2->fields)._size = uVar6 + 1;
+            if (pVVar5->max_length <= uVar6) goto code_?;
+            fStack_7 = item.x;
+            pVVar5->vector[uVar6].x = fStack_7;
+            fStack_8 = item.y;
+            pVVar5->vector[uVar6].y = fStack_8;
           }
           else {
-            mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__AddWithResize(pLVar2,item,pMVar6->klass->rgctx_data[0xe].method);
+            mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__AddWithResize(pLVar2,item,pMVar4->klass->rgctx_data[0xe].method);
           }
-          iStack_4 = iStack_4 + 1;
-        } while (iStack_4 < iVar1);
+        } while (index < iVar1);
       }
       (this->fields)._isRectDirty = 1;
       (this->fields)._isClosed = isClosed;
@@ -496,21 +493,24 @@ void Assembly-CSharp.dll::RTG::PolygonShape2D::PolygonShape2D__ctor(PolygonShape
   (this->fields)._isRectDirty = 1;
   pLVar1 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
   mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::MultiColumnCollectionHeader+ViewState+ColumnState]::List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2(pLVar1,100,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List_int_);
-  (this->fields)._cwPolyPoints = (List_1_UnityEngine_Vector2_ *)pLVar1;
-  func_?(&(this->fields)._cwPolyPoints,pLVar1);
+  ppLVar2 = &(this->fields)._cwPolyPoints;
+  *ppLVar2 = (List_1_UnityEngine_Vector2_ *)pLVar1;
+  func_?(ppLVar2,pLVar1);
   pLVar1 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
   mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::MultiColumnCollectionHeader+ViewState+ColumnState]::List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2(pLVar1,100,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List_int_);
-  (this->fields)._thickCwBorderPoints = (List_1_UnityEngine_Vector2_ *)pLVar1;
-  func_?(&(this->fields)._thickCwBorderPoints,pLVar1);
+  ppLVar2 = &(this->fields)._thickCwBorderPoints;
+  *ppLVar2 = (List_1_UnityEngine_Vector2_ *)pLVar1;
+  func_?(ppLVar2,pLVar1);
   (this->fields)._isThickBorderDirty = 1;
   method_00 = TypeInfo__RTG__PolygonShape2D__BorderRenderDescriptor;
   value = (PolygonShape2D_BorderRenderDescriptor *)func_?();
   (value->fields)._thickness = 5.0;
   (value->fields)._direction = 1;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  (this->fields)._borderRenderDesc = value;
-  func_?(&(this->fields)._borderRenderDesc,value);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,in_stack_2);
+  ppPVar3 = &(this->fields)._borderRenderDesc;
+  *ppPVar3 = value;
+  func_?(ppPVar3,value);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,in_stack_4);
   return;
 }
 

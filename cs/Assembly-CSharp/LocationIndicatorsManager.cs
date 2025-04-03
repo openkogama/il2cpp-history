@@ -21,16 +21,14 @@ public class LocationIndicatorsManager : MonoBehaviour
 	[SerializeField]
 	private LocationIndicator indicatorPrefab;
 	private Dictionary<int, LocationIndicator> indicators;
-	private bool isPlanetOwnershipsRequestPending;
 	private IEnumerator updateCoroutine;
-	private PlanetOwnershipsData planetOwnershipsData;
 
 	// Properties
 	public static LocationIndicatorsManager Instance { [CompilerGenerated] get; [CompilerGenerated] private set; }
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _UpdateCoroutine_d__15 : IEnumerator<object>
+	private sealed class _UpdateCoroutine_d__13 : IEnumerator<object>
 	{
 		// Fields
 		private int __1__state;
@@ -43,7 +41,7 @@ public class LocationIndicatorsManager : MonoBehaviour
 
 		// Constructors
 		[DebuggerHidden]
-		public _UpdateCoroutine_d__15(int __1__state);
+		public _UpdateCoroutine_d__13(int __1__state);
 
 		// Methods
 		[DebuggerHidden]
@@ -60,12 +58,12 @@ public class LocationIndicatorsManager : MonoBehaviour
 	private void Awake();
 	private void Start();
 	private void JSON_Unstripper();
-	public static void RecievedPlanetOwnershipsDataCallback(PlanetOwnershipsData data);
+	public void RecievedPlanetOwnershipsDataCallback(Dictionary<int, PlanetOwnershipsEntry> data);
 	private void SetIndicatorsOwnership();
-	[IteratorStateMachine(typeof(_UpdateCoroutine_d__15))]
+	[IteratorStateMachine(typeof(_UpdateCoroutine_d__13))]
 	private IEnumerator UpdateCoroutine();
 	private void CreateOrDestroyIndicators();
-	private bool CreateIndicatorIfNotDefined(MVPlayer player, List<int> removeIndicators);
+	private bool CreateIndicatorIfNotDefined(MVPlayer player);
 	private void OnDestroy();
 }
 

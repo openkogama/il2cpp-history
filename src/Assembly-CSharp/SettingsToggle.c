@@ -10,14 +10,15 @@ void Assembly-CSharp.dll::SettingsToggle::SettingsToggle_Initialize(SettingsTogg
     func_?(&MethodInfo__UnityEngine__Events__UnityEvent<bool>__AddListener_UnityEngine__Events__UnityAction<bool>_);
     cRam_? = '\x01';
   }
-  (this->fields).key = key;
-  func_?(&(this->fields).key,key);
-  pTVar1 = (this->fields).toggle;
-  if (pTVar1 != (Toggle *)0x0) {
-    UnityEngine.UI.dll::UnityEngine::UI::Toggle::Toggle_set_isOn(pTVar1,value,(MethodInfo *)0x0);
-    pTVar1 = (this->fields).toggle;
-    if (pTVar1 != (Toggle *)0x0) {
-      this_00 = (UnityEvent_1_UnityEngine_Vector2_ *)(pTVar1->fields).onValueChanged;
+  ppSVar1 = &(this->fields).key;
+  *ppSVar1 = key;
+  func_?(ppSVar1,key);
+  pTVar2 = (this->fields).toggle;
+  if (pTVar2 != (Toggle *)0x0) {
+    UnityEngine.UI.dll::UnityEngine::UI::Toggle::Toggle_set_isOn(pTVar2,value,(MethodInfo *)0x0);
+    pTVar2 = (this->fields).toggle;
+    if (pTVar2 != (Toggle *)0x0) {
+      this_00 = (UnityEvent_1_UnityEngine_Vector2_ *)(pTVar2->fields).onValueChanged;
       this_01 = (UnityAction_1_System_Int32Enum_ *)func_?(TypeInfo__UnityEngine__Events__UnityAction<bool>);
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::UnityAction_1_System_Int32Enum___ctor(this_01,(Object *)this,MethodInfo__SettingsToggle__ValueChanged_bool_,(MethodInfo *)0x0);
       if (this_00 != (UnityEvent_1_UnityEngine_Vector2_ *)0x0) {
@@ -27,8 +28,8 @@ void Assembly-CSharp.dll::SettingsToggle::SettingsToggle_Initialize(SettingsTogg
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
