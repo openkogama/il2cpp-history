@@ -252,38 +252,36 @@ Assembly-CSharp.dll::RTG::GizmoBehaviourCollection::GizmoBehaviourCollection_Get
       func_?(method);
     }
   }
-  OStack_4.klass = (Object__Class *)0x0;
-  OStack_4.monitor = (MonitorData *)0x0;
-  iVar5 = GizmoBehaviourCollection_get_Count(this,(MethodInfo *)0x0);
-  if (iVar5 == 0) {
+  iVar4 = GizmoBehaviourCollection_get_Count(this,(MethodInfo *)0x0);
+  if (iVar4 == 0) {
     if (((uint)((method->field7_0x1c).rgctx_data)->klass->vtable[0].methodPtr & 0x100) == 0) {
       func_?();
     }
-    pLVar6 = (List_1_System_Object_ *)func_?();
+    pLVar5 = (List_1_System_Object_ *)func_?();
     mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
     __Il2CppFullySharedGenericType]::
     LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-              ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar6,
+              ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar5,
                (method->field7_0x1c).rgctx_data[1].method);
     *unaff_FS_OFFSET = uStack_3;
-    return pLVar6;
+    return pLVar5;
   }
-  iVar5 = GizmoBehaviourCollection_get_Count(this,(MethodInfo *)0x0);
-  OStack_4.klass = (Object__Class *)((method->field7_0x1c).rgctx_data)->klass;
-  if (((uint)((Il2CppClass *)OStack_4.klass)->vtable[0].methodPtr & 0x100) == 0) {
-    OStack_4.klass = (Object__Class *)func_?();
+  iVar4 = GizmoBehaviourCollection_get_Count(this,(MethodInfo *)0x0);
+  OStack_6.klass = (Object__Class *)((method->field7_0x1c).rgctx_data)->klass;
+  if (((uint)((Il2CppClass *)OStack_6.klass)->vtable[0].methodPtr & 0x100) == 0) {
+    OStack_6.klass = (Object__Class *)func_?();
   }
   pMVar7 = (MethodInfo *)func_?();
   mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
   MultiColumnCollectionHeader+ViewState+ColumnState]::
   List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
             ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-              *)pMVar7,iVar5,(method->field7_0x1c).rgctx_data[2].method);
+              *)pMVar7,iVar4,(method->field7_0x1c).rgctx_data[2].method);
   handle = (method->field7_0x1c).rgctx_data[3];
   if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  OStack_4.monitor = (MonitorData *)&UNK_?;
+  OStack_6.monitor = (MonitorData *)&UNK_?;
   pMStack_8 = (MethodInfo *)
                mscorlib.dll::System::Type::Type_GetTypeFromHandle(handle.method,(MethodInfo *)0x0);
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
@@ -295,8 +293,8 @@ code_?:
     func_?();
     func_?();
     pcVar9 = (code *)swi(3);
-    pLVar6 = (List_1_System_Object_ *)(*pcVar9)();
-    return pLVar6;
+    pLVar5 = (List_1_System_Object_ *)(*pcVar9)();
+    return pLVar5;
   }
   pLVar10 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
            RegexCharClass+SingleRange]::
@@ -305,21 +303,21 @@ code_?:
                        *)&stack0xffffffc0,this_00,
                       MethodInfo__System__Collections__Generic__List<RTG::IGizmoBehaviour>__GetEnumerator__
                      );
-  OStack_4.klass = (Object__Class *)pLVar10->_list;
-  OStack_4.monitor = (MonitorData *)pLVar10->_index;
+  OStack_6.klass = (Object__Class *)pLVar10->_list;
+  OStack_6.monitor = (MonitorData *)pLVar10->_index;
   this_01 = pLVar10->_current;
   uStack_1 = 1;
   pMStack_11 = pMVar7;
 code_?:
   bVar12 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
           List_1_T_Enumerator_System_Object__MoveNext
-                    ((List_1_T_Enumerator_System_Object_ *)&OStack_4,
+                    ((List_1_T_Enumerator_System_Object_ *)&OStack_6,
                      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::IGizmoBehaviour>__MoveNext__
                     );
   if (bVar12 == 0) {
     uStack_1 = 0xffffffff;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (&OStack_4,
+              (&OStack_6,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::IGizmoBehaviour>__Dispose__
                ,in_stack_13);
@@ -567,7 +565,8 @@ void Assembly-CSharp.dll::RTG::GizmoBehaviourCollection::GizmoBehaviourCollectio
             (this_00,10,
              MethodInfo__System__Collections__Generic__List<RTG::IGizmoBehaviour>__List_int_);
   method_00 = (MethodInfo *)&this->fields;
-  (this->fields)._behaviours = (List_1_RTG_IGizmoBehaviour_ *)this_00;
+  ((GizmoBehaviourCollection__Fields *)method_00)->_behaviours =
+       (List_1_RTG_IGizmoBehaviour_ *)this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);

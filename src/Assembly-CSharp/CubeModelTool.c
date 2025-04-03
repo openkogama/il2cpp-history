@@ -10,13 +10,13 @@ void Assembly-CSharp.dll::CubeModelTool::CubeModelTool_Enter_1
     cRam_? = '\x01';
   }
   if (e != (FSMEntity *)0x0) {
-    if (((e->klass->_1).naturalAligment < (TypeInfo__CubeModelingStateMachine->_1).naturalAligment)
-       || ((e->klass->_1).typeHierarchy
-           [(TypeInfo__CubeModelingStateMachine->_1).naturalAligment - 1] !=
-           (Il2CppClass *)TypeInfo__CubeModelingStateMachine)) {
+    bVar1 = (TypeInfo__CubeModelingStateMachine->_1).naturalAligment;
+    if (((e->klass->_1).naturalAligment < bVar1) ||
+       ((e->klass->_1).typeHierarchy[bVar1 - 1] != (Il2CppClass *)TypeInfo__CubeModelingStateMachine
+       )) {
       func_?(e,TypeInfo__CubeModelingStateMachine);
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
       return;
     }
   }
@@ -37,12 +37,12 @@ void Assembly-CSharp.dll::CubeModelTool::CubeModelTool_Execute
   }
   pCVar1 = TypeInfo__CubeModelTool->static_fields;
   if ((pCVar1->cubeChange != 0) &&
-     (pCVar1->OnEditCubeChange != (Action_2_Int32_EditCubeChange_ *)0x0)) {
-    pAVar2 = pCVar1->OnEditCubeChange;
+     (pAVar2 = pCVar1->OnEditCubeChange, pAVar2 != (Action_2_Int32_EditCubeChange_ *)0x0)) {
     (*(pAVar2->fields)._._.invoke_impl)
               ((pAVar2->fields)._._.method_code,pCVar1->cubeCount,pCVar1->cubeChange,
                (pAVar2->fields)._._.method);
-    pCVar1 = TypeInfo__CubeModelTool->static_fields;
+    TypeInfo__CubeModelTool->static_fields->cubeChange = 0;
+    return;
   }
   pCVar1->cubeChange = 0;
   return;
@@ -60,13 +60,13 @@ void Assembly-CSharp.dll::CubeModelTool::CubeModelTool_Execute_1
     cRam_? = '\x01';
   }
   if (e != (FSMEntity *)0x0) {
-    if (((e->klass->_1).naturalAligment < (TypeInfo__CubeModelingStateMachine->_1).naturalAligment)
-       || ((e->klass->_1).typeHierarchy
-           [(TypeInfo__CubeModelingStateMachine->_1).naturalAligment - 1] !=
-           (Il2CppClass *)TypeInfo__CubeModelingStateMachine)) {
+    bVar1 = (TypeInfo__CubeModelingStateMachine->_1).naturalAligment;
+    if (((e->klass->_1).naturalAligment < bVar1) ||
+       ((e->klass->_1).typeHierarchy[bVar1 - 1] != (Il2CppClass *)TypeInfo__CubeModelingStateMachine
+       )) {
       func_?(e,TypeInfo__CubeModelingStateMachine);
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
       return;
     }
   }
@@ -86,13 +86,13 @@ void Assembly-CSharp.dll::CubeModelTool::CubeModelTool_Exit_1
     cRam_? = '\x01';
   }
   if (e != (FSMEntity *)0x0) {
-    if (((e->klass->_1).naturalAligment < (TypeInfo__CubeModelingStateMachine->_1).naturalAligment)
-       || ((e->klass->_1).typeHierarchy
-           [(TypeInfo__CubeModelingStateMachine->_1).naturalAligment - 1] !=
-           (Il2CppClass *)TypeInfo__CubeModelingStateMachine)) {
+    bVar1 = (TypeInfo__CubeModelingStateMachine->_1).naturalAligment;
+    if (((e->klass->_1).naturalAligment < bVar1) ||
+       ((e->klass->_1).typeHierarchy[bVar1 - 1] != (Il2CppClass *)TypeInfo__CubeModelingStateMachine
+       )) {
       func_?(e,TypeInfo__CubeModelingStateMachine);
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
       return;
     }
   }

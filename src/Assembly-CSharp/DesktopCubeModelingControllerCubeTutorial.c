@@ -106,22 +106,29 @@ void Assembly-CSharp.dll::DesktopCubeModelingControllerCubeTutorial::
     func_?(&TypeInfo__UnityEngine__Events__UnityAction);
     cRam_? = '\x01';
   }
-  (this->fields).materialsController = materialsController;
-  func_?(&(this->fields).materialsController,materialsController);
-  (this->fields).cubeModelingStateMachine = cubeModelingStateMachine;
-  func_?(&(this->fields).cubeModelingStateMachine,cubeModelingStateMachine);
+  ppMVar1 = &(this->fields).materialsController;
+  *ppMVar1 = materialsController;
+  func_?(ppMVar1,materialsController);
+  ppCVar2 = &(this->fields).cubeModelingStateMachine;
+  *ppCVar2 = cubeModelingStateMachine;
+  func_?(ppCVar2,cubeModelingStateMachine);
   if (cubeModelingStateMachine == (CubeModelingStateMachine *)0x0) {
+code_?:
+    func_?();
+code_?:
+    func_?();
 code_?:
     func_?();
   }
   else {
-    uVar1 = CubeModelingStateMachine::CubeModelingStateMachine_get_CurrentMaterialId
+    uVar3 = CubeModelingStateMachine::CubeModelingStateMachine_get_CurrentMaterialId
                       (cubeModelingStateMachine,(MethodInfo *)0x0);
-    (this->fields).defaultMaterial = uVar1;
-    pDVar2 = (this->fields).desktopCubeModelingController;
-    if (pDVar2 == (DesktopCubeModelingToolsController *)0x0) goto code_?;
-    (pDVar2->fields).cubeModelingStateMachine = cubeModelingStateMachine;
-    func_?(&(pDVar2->fields).cubeModelingStateMachine,cubeModelingStateMachine);
+    (this->fields).defaultMaterial = uVar3;
+    pDVar4 = (this->fields).desktopCubeModelingController;
+    if (pDVar4 == (DesktopCubeModelingToolsController *)0x0) goto code_?;
+    ppCVar2 = &(pDVar4->fields).cubeModelingStateMachine;
+    *ppCVar2 = cubeModelingStateMachine;
+    func_?(ppCVar2,cubeModelingStateMachine);
     this_00 = (EventHandler_1_Object_ *)
               func_?(
                              TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
@@ -134,7 +141,8 @@ code_?:
               ((Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
                 *)this_00,(MethodInfo *)0x0);
     if (materialsController == (MaterialsController *)0x0) goto code_?;
-    pUVar3 = (materialsController->fields).materialChange;
+    ppUVar5 = &(materialsController->fields).materialChange;
+    pUVar6 = *ppUVar5;
     this_01 = (UnityAction_1_System_Int32Enum_ *)
               func_?(TypeInfo__UnityEngine__Events__UnityAction<unsigned_char>);
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
@@ -142,55 +150,56 @@ code_?:
               (this_01,(Object *)this,
                MethodInfo__DesktopCubeModelingControllerCubeTutorial__SetMaterial_unsigned_char_,
                (MethodInfo *)0x0);
-    pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pUVar3,(Delegate *)this_01,(MethodInfo *)0x0);
-    if (pDVar4 == (Delegate *)0x0) {
-      (materialsController->fields).materialChange = (UnityAction_1_System_Byte_ *)0x0;
-    }
-    else {
-      pUVar3 = (UnityAction_1_System_Byte_ *)func_?();
-      if (pUVar3 == (UnityAction_1_System_Byte_ *)0x0) goto code_?;
-      (materialsController->fields).materialChange = pUVar3;
-      iVar5 = func_?();
-      if (iVar5 == 0) goto code_?;
-    }
-    func_?();
-    pUVar6 = (materialsController->fields).materialsPop;
-    this_02 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (this_02,(Object *)0x0,
-               MethodInfo__DesktopCubeModelingControllerCubeTutorial__MaterialsPop__,
-               (MethodInfo *)0x0);
-    pUVar6 = (UnityAction *)
-             mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pUVar6,(Delegate *)this_02,(MethodInfo *)0x0);
-    if (pUVar6 == (UnityAction *)0x0) {
-      (materialsController->fields).materialsPop = (UnityAction *)0x0;
+    pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pUVar6,(Delegate *)this_01,(MethodInfo *)0x0);
+    if (pDVar7 == (Delegate *)0x0) {
+      *ppUVar5 = (UnityAction_1_System_Byte_ *)0x0;
+code_?:
       func_?();
-      return;
-    }
-    pUVar7 = (UnityAction *)0x0;
-    if (pUVar6->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-      pUVar7 = pUVar6;
-    }
-    if (pUVar7 != (UnityAction *)0x0) {
-      (materialsController->fields).materialsPop = pUVar7;
-      pUVar7 = (UnityAction *)0x0;
-      if (pUVar6->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-        pUVar7 = pUVar6;
-      }
-      if (pUVar7 != (UnityAction *)0x0) {
+      ppCVar8 = &materialsController[1].fields._.m_CancellationTokenSource;
+      pDVar7 = (Delegate *)*ppCVar8;
+      this_02 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+      NavMesh_OnNavMeshPreUpdate__ctor
+                (this_02,(Object *)this,
+                 MethodInfo__DesktopCubeModelingControllerCubeTutorial__MaterialsPop__,
+                 (MethodInfo *)0x0);
+      pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine
+                         (pDVar7,(Delegate *)this_02,(MethodInfo *)0x0);
+      if (pDVar7 == (Delegate *)0x0) {
+        *ppCVar8 = (CancellationTokenSource *)0x0;
         func_?();
         return;
       }
+      pDVar9 = (Delegate *)0x0;
+      if ((UnityAction__Class *)pDVar7->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+        pDVar9 = pDVar7;
+      }
+      if (pDVar9 != (Delegate *)0x0) {
+        *ppCVar8 = (CancellationTokenSource *)pDVar9;
+        pDVar9 = (Delegate *)0x0;
+        if ((UnityAction__Class *)pDVar7->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+          pDVar9 = pDVar7;
+        }
+        if (pDVar9 != (Delegate *)0x0) {
+          func_?();
+          return;
+        }
+        goto code_?;
+      }
+      goto code_?;
     }
+    pUVar6 = (UnityAction_1_System_Byte_ *)func_?();
+    if (pUVar6 == (UnityAction_1_System_Byte_ *)0x0) goto code_?;
+    *ppUVar5 = pUVar6;
+    iVar10 = func_?();
+    if (iVar10 != 0) goto code_?;
   }
   func_?();
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -243,86 +252,114 @@ void Assembly-CSharp.dll::DesktopCubeModelingControllerCubeTutorial::
     func_?(&TypeInfo__UnityEngine__Events__UnityAction);
     cRam_? = '\x01';
   }
-  (this->fields).cubeModelingStateMachine = (CubeModelingStateMachine *)0x0;
-  func_?(&(this->fields).cubeModelingStateMachine,0);
-  this_00 = (EventHandler_1_Object_ *)
+  ppCVar1 = &(this->fields).cubeModelingStateMachine;
+  *ppCVar1 = (CubeModelingStateMachine *)0x0;
+  func_?(ppCVar1,0);
+  this_02 = (EventHandler_1_Object_ *)
             func_?(
                            TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
                            );
   mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-            (this_00,(Object *)this,
+            (this_02,(Object *)this,
              MethodInfo__DesktopCubeModelingControllerCubeTutorial__OnFirstTimeState_MV__WorldObject__MetaData__FirstTimeState__MV__WorldObject__MetaData__FirstTimeEvent_
              ,(MethodInfo *)0x0);
   FirstTimeEventManager::FirstTimeEventManager_UnSubscribeToFirstTimeState
             ((Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
-              *)this_00,(MethodInfo *)0x0);
-  pMVar1 = (this->fields).materialsController;
-  if (pMVar1 == (MaterialsController *)0x0) {
+              *)this_02,(MethodInfo *)0x0);
+  pUVar2 = TypeInfo__UnityEngine__Events__UnityAction<unsigned_char>;
+  pMVar3 = (this->fields).materialsController;
+  if (pMVar3 == (MaterialsController *)0x0) {
+code_?:
+    func_?();
 code_?:
     func_?();
 code_?:
     func_?();
   }
   else {
-    source = (pMVar1->fields).materialChange;
-    this_01 = (UnityAction_1_System_Int32Enum_ *)func_?();
+    source = (pMVar3->fields).materialChange;
+    this_03 = (UnityAction_1_System_Int32Enum_ *)func_?();
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
     UnityAction_1_System_Int32Enum___ctor
-              (this_01,(Object *)this,
+              (this_03,(Object *)this,
                MethodInfo__DesktopCubeModelingControllerCubeTutorial__SetMaterial_unsigned_char_,
                (MethodInfo *)0x0);
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)source,(Delegate *)this_01,(MethodInfo *)0x0);
-    if (pDVar2 == (Delegate *)0x0) {
-      (this_01->fields)._._.method_code = (void *)0x0;
+    pDVar4 = mscorlib.dll::System::Delegate::Delegate_Remove
+                       ((Delegate *)source,(Delegate *)this_03,(MethodInfo *)0x0);
+    if (pDVar4 == (Delegate *)0x0) {
+      (pUVar2->_0).element_class = (Il2CppClass *)0x0;
 code_?:
       func_?();
-      object = TypeInfo__UnityEngine__Events__UnityAction;
-      pMVar1 = (this->fields).materialsController;
-      if (pMVar1 == (MaterialsController *)0x0) goto code_?;
-      pUVar3 = (pMVar1->fields).materialsPop;
-      this_02 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+      pUVar5 = TypeInfo__UnityEngine__Events__UnityAction;
+      pMVar3 = (this->fields).materialsController;
+      if (pMVar3 == (MaterialsController *)0x0) goto code_?;
+      source_00 = (pMVar3->fields).materialsPop;
+      this_04 = (NavMesh_OnNavMeshPreUpdate *)func_?();
       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
       NavMesh_OnNavMeshPreUpdate__ctor
-                (this_02,(Object *)object,
+                (this_04,(Object *)this,
                  MethodInfo__DesktopCubeModelingControllerCubeTutorial__MaterialsPop__,
                  (MethodInfo *)0x0);
-      pUVar3 = (UnityAction *)
+      pIVar6 = (Il2CppClass *)
                mscorlib.dll::System::Delegate::Delegate_Remove
-                         ((Delegate *)pUVar3,(Delegate *)this_02,(MethodInfo *)0x0);
-      if (pUVar3 == (UnityAction *)0x0) {
-        (pMVar1->fields).materialsPop = (UnityAction *)0x0;
+                         ((Delegate *)source_00,(Delegate *)this_04,(MethodInfo *)0x0);
+      if (pIVar6 == (Il2CppClass *)0x0) {
+        (pUVar5->_0).castClass = (Il2CppClass *)0x0;
 code_?:
         func_?();
-        FirstTimeEventManager::FirstTimeEventManager_SetFirstTimeEvent
-                  (FirstTimeEvent__Enum_BM_CubeTutorialDone,(MethodInfo *)0x0);
+        if (cRam_? == '\0') {
+          func_?();
+          cRam_? = '\x01';
+        }
+        this_00 = TypeInfo__FirstTimeEventManager->static_fields->firstTimeState;
+        if (this_00 != (FirstTimeState *)0x0) {
+          MVWorldObject.dll::MV::WorldObject::MetaData::FirstTimeState::
+          FirstTimeState_SetFirstTimeEvent(this_00,in_stack_7,(MethodInfo *)0x0);
+          pAVar8 = TypeInfo__FirstTimeEventManager->static_fields->firstTimeStatePublisher;
+          if (pAVar8 != (Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
+                         *)0x0) {
+            (*(pAVar8->fields)._._.invoke_impl)();
+          }
+          pMVar9 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if ((pMVar9 != (MVNetworkGame *)0x0) &&
+             (this_01 = (pMVar9->fields).operationRequests,
+             this_01 != (MVNetworkGame_OperationRequests *)0x0)) {
+            MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_SetFirstTimeEvent
+                      (this_01,in_stack_7,(MethodInfo *)0x0);
+            return;
+          }
+        }
+        func_?();
+        pcVar10 = (code *)swi(3);
+        (*pcVar10)();
         return;
       }
-      pUVar4 = (UnityAction *)0x0;
-      if (pUVar3->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-        pUVar4 = pUVar3;
+      pIVar11 = (Il2CppClass *)0x0;
+      if ((UnityAction__Class *)pIVar6->image == TypeInfo__UnityEngine__Events__UnityAction) {
+        pIVar11 = pIVar6;
       }
-      if (pUVar4 != (UnityAction *)0x0) {
-        (pMVar1->fields).materialsPop = pUVar4;
-        pUVar4 = (UnityAction *)0x0;
-        if (pUVar3->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-          pUVar4 = pUVar3;
+      if (pIVar11 != (Il2CppClass *)0x0) {
+        (pUVar5->_0).castClass = pIVar11;
+        pIVar11 = (Il2CppClass *)0x0;
+        if ((UnityAction__Class *)pIVar6->image == TypeInfo__UnityEngine__Events__UnityAction) {
+          pIVar11 = pIVar6;
         }
-        if (pUVar4 != (UnityAction *)0x0) goto code_?;
+        if (pIVar11 != (Il2CppClass *)0x0) goto code_?;
+        goto code_?;
       }
       goto code_?;
     }
-    pvVar5 = (void *)func_?();
-    if (pvVar5 == (void *)0x0) goto code_?;
-    (this_01->fields)._._.method_code = pvVar5;
-    iVar6 = func_?();
-    if (iVar6 != 0) goto code_?;
+    pIVar6 = (Il2CppClass *)func_?();
+    if (pIVar6 == (Il2CppClass *)0x0) goto code_?;
+    (pUVar2->_0).element_class = pIVar6;
+    iVar12 = func_?();
+    if (iVar12 != 0) goto code_?;
   }
   func_?();
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -456,8 +493,8 @@ DesktopCubeModelingControllerCubeTutorial_OverRideIfDefaultMaterial
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[2].klass = (Object__Class *)this;
   value[1].klass = (Object__Class *)0x0;
+  value[2].klass = (Object__Class *)this;
   func_?(value + 2,this);
   return (IEnumerator *)value;
 }
@@ -680,8 +717,8 @@ void Assembly-CSharp.dll::DesktopCubeModelingControllerCubeTutorial::
     do {
       if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
           (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IUIStack) {
-        ppMVar5 = &(&(x->klass->vtable).PopToStackElement)[x->klass->interfaceOffsets[uVar3].offset]
-                   .method;
+        ppMVar5 = &(&(x->klass->vtable).PopToStackElement)[pIVar2->interfaceOffsets[uVar3].offset].
+                   method;
         goto code_?;
       }
       uVar3 = uVar3 + 1;

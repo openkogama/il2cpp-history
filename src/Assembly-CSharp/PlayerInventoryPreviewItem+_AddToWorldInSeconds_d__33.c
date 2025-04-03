@@ -20,8 +20,9 @@ bool Assembly-CSharp.dll::PlayerInventoryPreviewItem+<AddToWorldInSeconds>d__33:
               func_?(TypeInfo__UnityEngine__WaitForSeconds);
     SubscribableVariable`1[System::Single]::SubscribableVariable_1_System_Single___ctor
               (this_01,(float)iVar1,(MethodInfo *)0x0);
-    (this->fields).__2__current = (Object *)this_01;
-    func_?(&(this->fields).__2__current,this_01);
+    ppOVar2 = &(this->fields).__2__current;
+    *ppOVar2 = (Object *)this_01;
+    func_?(ppOVar2,this_01);
     (this->fields).__1__state = 1;
     return 1;
   }
@@ -33,18 +34,18 @@ bool Assembly-CSharp.dll::PlayerInventoryPreviewItem+<AddToWorldInSeconds>d__33:
     func_?(&TypeInfo__MVGameControllerBase);
     cRam_? = '\x01';
   }
-  pIVar2 = TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
-  if (((pIVar2 != (IEditModeUI *)0x0) &&
-      (iVar1 = func_?(4,TypeInfo__IEditModeUI,pIVar2), iVar1 != 0)) &&
+  pIVar3 = TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
+  if (((pIVar3 != (IEditModeUI *)0x0) &&
+      (iVar1 = func_?(4,TypeInfo__IEditModeUI,pIVar3), iVar1 != 0)) &&
      (*(undefined4 *)(iVar1 + 0x18) = 0xff7fffff, this_00 != (PlayerInventoryPreviewItem *)0x0)) {
     PlayerInventoryPreviewItem::PlayerInventoryPreviewItem_AddItemToWorldFromInventory
               (this_00,(MethodInfo *)0x0);
     return 0;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  bVar4 = (*pcVar3)();
-  return bVar4;
+  pcVar4 = (code *)swi(3);
+  bVar5 = (*pcVar4)();
+  return bVar5;
 }
 
 

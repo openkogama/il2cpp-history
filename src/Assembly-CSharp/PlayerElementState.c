@@ -117,7 +117,7 @@ void Assembly-CSharp.dll::PlayerElementState::PlayerElementState_Initialize
                                                (*(Component **)(in_stack_1 + 0x1c),
                                                 (MethodInfo *)0x0), pGVar2 != (GameObject *)0x0)) {
                           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                                    (pGVar2,bVar10 ^ 1,(MethodInfo *)0x0);
+                                    (pGVar2,bVar10 == 0,(MethodInfo *)0x0);
                           if ((*(Component **)(in_stack_1 + 0x18) != (Component *)0x0) &&
                              (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                                        Component_get_gameObject
@@ -125,7 +125,7 @@ void Assembly-CSharp.dll::PlayerElementState::PlayerElementState_Initialize
                                                   (MethodInfo *)0x0), pGVar2 != (GameObject *)0x0))
                           {
                             UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                            GameObject_SetActive(pGVar2,bVar10 ^ 1,(MethodInfo *)0x0);
+                            GameObject_SetActive(pGVar2,bVar10 == 0,(MethodInfo *)0x0);
                             return;
                           }
                         }
@@ -196,42 +196,43 @@ void Assembly-CSharp.dll::PlayerElementState::PlayerElementState_OpenUserManagem
         value = (Object *)func_?();
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                   (value,ExceptionArgument__Enum_obj,pMVar1);
-        original_00 = _UNK_?;
+        pOVar5 = _UNK_?;
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
-        pOVar5 = (Object__Class *)
+        pOVar6 = (Object__Class *)
                   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                            (original_00,
+                            (pOVar5,
                              OwnerToolController_MethodInfo__UnityEngine__Object__Instantiate<OwnerToolController>_OwnerToolController_
                             );
         if (value != (Object *)0x0) {
-          value[1].klass = pOVar5;
-          func_?(value + 1,pOVar5);
-          pOVar5 = value[1].klass;
+          pOVar5 = value + 1;
+          pOVar5->klass = pOVar6;
+          func_?(pOVar5,pOVar6);
+          pOVar6 = pOVar5->klass;
           if ((_UNK_? != (int *)0x0) &&
-             (pSVar6 = (String *)
+             (pSVar7 = (String *)
                         (**(code **)(*_UNK_? + 0x310))
                                   (_UNK_?,*(undefined4 *)(*_UNK_? + 0x314)),
-             pOVar5 != (Object__Class *)0x0)) {
+             pOVar6 != (Object__Class *)0x0)) {
             if (cRam_? == '\0') {
               func_?(&::StringLiteral__);
               func_?(&StringLiteral_will_be_kicked_and_unable_to_rej);
               cRam_? = '\x01';
             }
-            pIVar7 = (pOVar5->_0).byval_arg.data.array;
-            if (pIVar7 != (Il2CppArrayType *)0x0) {
-              pIVar8 = pIVar7->etype;
-              uVar9._0_2_ = pIVar8[99].attrs;
-              uVar9._2_1_ = pIVar8[99].type;
-              uVar9._3_1_ = pIVar8[99].field_0x7;
-              (*(code *)pIVar8[99].data)(pIVar7,pSVar6,uVar9);
-              piVar10 = *(int **)&(pOVar5->_0).byval_arg.attrs;
+            pIVar8 = (pOVar6->_0).byval_arg.data.array;
+            if (pIVar8 != (Il2CppArrayType *)0x0) {
+              pIVar9 = pIVar8->etype;
+              uVar10._0_2_ = pIVar9[99].attrs;
+              uVar10._2_1_ = pIVar9[99].type;
+              uVar10._3_1_ = pIVar9[99].field_0x7;
+              (*(code *)pIVar9[99].data)(pIVar8,pSVar7,uVar10);
+              piVar11 = *(int **)&(pOVar6->_0).byval_arg.attrs;
               str2 = TM::TM__(StringLiteral_will_be_kicked_and_unable_to_rej,(MethodInfo *)0x0);
-              pSVar6 = mscorlib.dll::System::String::String_Concat_4
-                                  (pSVar6,::StringLiteral__,str2,(MethodInfo *)0x0);
-              if (piVar10 != (int *)0x0) {
-                (**(code **)(*piVar10 + 0x318))(piVar10,pSVar6,*(undefined4 *)(*piVar10 + 0x31c));
+              pSVar7 = mscorlib.dll::System::String::String_Concat_4
+                                  (pSVar7,::StringLiteral__,str2,(MethodInfo *)0x0);
+              if (piVar11 != (int *)0x0) {
+                (**(code **)(*piVar11 + 0x318))(piVar11,pSVar7,*(undefined4 *)(*piVar11 + 0x31c));
                 root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                                  ((Component *)&UNK_?,(MethodInfo *)0x0);
                 callbackFunction =
@@ -256,23 +257,24 @@ void Assembly-CSharp.dll::PlayerElementState::PlayerElementState_OpenUserManagem
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
-        pOVar5 = (Object__Class *)
+        pOVar6 = (Object__Class *)
                   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                             ((Object *)original,
                              AdminToolController_MethodInfo__UnityEngine__Object__Instantiate<AdminToolController>_AdminToolController_
                             );
         if (value != (Object *)0x0) {
-          value[1].klass = pOVar5;
-          func_?(value + 1,pOVar5);
-          pTVar11 = (this->fields).playerName;
-          pOVar5 = value[1].klass;
-          if ((pTVar11 != (Text *)0x0) &&
-             (pSVar6 = (String *)
-                        (*(code *)(pTVar11->klass->vtable).get_text.method)
-                                  (pTVar11,(pTVar11->klass->vtable).set_text.methodPtr),
-             pOVar5 != (Object__Class *)0x0)) {
+          pOVar5 = value + 1;
+          pOVar5->klass = pOVar6;
+          func_?(pOVar5,pOVar6);
+          pTVar12 = (this->fields).playerName;
+          pOVar6 = pOVar5->klass;
+          if ((pTVar12 != (Text *)0x0) &&
+             (pSVar7 = (String *)
+                        (*(code *)(pTVar12->klass->vtable).get_text.method)
+                                  (pTVar12,(pTVar12->klass->vtable).set_text.methodPtr),
+             pOVar6 != (Object__Class *)0x0)) {
             AdminToolController::AdminToolController_Initialize
-                      ((AdminToolController *)pOVar5,pSVar6,(MethodInfo *)0x0);
+                      ((AdminToolController *)pOVar6,pSVar7,(MethodInfo *)0x0);
             root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                              ((Component *)this,(MethodInfo *)0x0);
             callbackFunction =
@@ -304,8 +306,8 @@ code_?:
     }
   }
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -432,7 +434,7 @@ void Assembly-CSharp.dll::PlayerElementState::PlayerElementState_SetButtonVisibi
                                      Component_get_gameObject((Component *)pBVar1,(MethodInfo *)0x0)
                            , pGVar2 != (GameObject *)0x0)) {
                           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                                    (pGVar2,bVar10 ^ 1,(MethodInfo *)0x0);
+                                    (pGVar2,bVar10 == 0,(MethodInfo *)0x0);
                           pBVar1 = (this->fields).acceptFriendRequest;
                           if ((pBVar1 != (Button *)0x0) &&
                              (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
@@ -440,7 +442,7 @@ void Assembly-CSharp.dll::PlayerElementState::PlayerElementState_SetButtonVisibi
                                                  ((Component *)pBVar1,(MethodInfo *)0x0),
                              pGVar2 != (GameObject *)0x0)) {
                             UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                            GameObject_SetActive(pGVar2,bVar10 ^ 1,(MethodInfo *)0x0);
+                            GameObject_SetActive(pGVar2,bVar10 == 0,(MethodInfo *)0x0);
                             return;
                           }
                         }

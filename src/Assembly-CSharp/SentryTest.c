@@ -182,9 +182,9 @@ void Assembly-CSharp.dll::SentryTest::SentryTest_Update(SentryTest *this,MethodI
     func_?(&StringLiteral_Frame_number__);
     cRam_? = '\x01';
   }
-  iVar1 = (this->fields)._counter + 1;
-  (this->fields)._counter = iVar1;
-  if (iVar1 % 100 == 0) {
+  piVar1 = &(this->fields)._counter;
+  *piVar1 = *piVar1 + 1;
+  if ((this->fields)._counter % 100 == 0) {
     pSVar2 = mscorlib.dll::System::Int32::Int32_ToString
                        ((Int32 *)&(this->fields)._counter,(MethodInfo *)0x0);
     pSVar2 = mscorlib.dll::System::String::String_Concat_3

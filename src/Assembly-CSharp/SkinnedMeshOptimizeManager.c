@@ -143,8 +143,8 @@ bool Assembly-CSharp.dll::SkinnedMeshOptimizeManager::SkinnedMeshOptimizeManager
           uStack_5._4_4_ = pVVar3->y;
           fStack_6 = pVVar3->z;
           if (fVar9 * fVar9 + fVar8 * fVar8 + fVar10 * fVar10 <
-              (VStack_4.x - (float)uStack_5) * (VStack_4.x - (float)uStack_5) +
               (VStack_4.y - uStack_5._4_4_) * (VStack_4.y - uStack_5._4_4_) +
+              (VStack_4.x - (float)uStack_5) * (VStack_4.x - (float)uStack_5) +
               (VStack_4.z - fStack_6) * (VStack_4.z - fStack_6)) {
             *index = index_00;
             return 1;
@@ -263,23 +263,14 @@ void Assembly-CSharp.dll::SkinnedMeshOptimizeManager::
                    );
     cRam_? = '\x01';
   }
-  index = (MethodInfo *)0x0;
-  pLVar1 = (this->fields).optimizationDataList;
-  if (pLVar1 != (List_1_SkinnedMeshOptimizeManager_SkinnedMeshOptimizationData_ *)0x0) {
-    if ((pLVar1->fields)._size < 1) {
+  RVar1.First = 0;
+  RVar1.Last = 0;
+  pLVar2 = (this->fields).optimizationDataList;
+  if (pLVar2 != (List_1_SkinnedMeshOptimizeManager_SkinnedMeshOptimizationData_ *)0x0) {
+    if ((pLVar2->fields)._size < 1) {
       return;
     }
-    RVar2 = (RegexCharClass_SingleRange)
-            func_?(
-                           TypeInfo__System__Collections__Generic__List<SkinnedMeshOptimizeManager::SkinnedMeshOptimizationData>
-                           );
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
-    __Il2CppFullySharedGenericType]::
-    LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-              ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)RVar2,
-               MethodInfo__System__Collections__Generic__List<SkinnedMeshOptimizeManager::SkinnedMeshOptimizationData>__List__
-              );
-    this_01 = (RegexCharClass_SingleRange)
+    this_01 = (MethodInfo *)
               func_?(
                              TypeInfo__System__Collections__Generic__List<SkinnedMeshOptimizeManager::SkinnedMeshOptimizationData>
                              );
@@ -289,20 +280,30 @@ void Assembly-CSharp.dll::SkinnedMeshOptimizeManager::
               ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_01,
                MethodInfo__System__Collections__Generic__List<SkinnedMeshOptimizeManager::SkinnedMeshOptimizationData>__List__
               );
+    this_02 = (RegexCharClass_SingleRange)
+              func_?(
+                             TypeInfo__System__Collections__Generic__List<SkinnedMeshOptimizeManager::SkinnedMeshOptimizationData>
+                             );
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType]::
+    LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_02,
+               MethodInfo__System__Collections__Generic__List<SkinnedMeshOptimizeManager::SkinnedMeshOptimizationData>__List__
+              );
     iVar3 = 0;
-    pLVar1 = (this->fields).optimizationDataList;
-    while (pLVar1 != (List_1_SkinnedMeshOptimizeManager_SkinnedMeshOptimizationData_ *)0x0) {
-      if ((pLVar1->fields)._size <= iVar3) {
+    pLVar2 = (this->fields).optimizationDataList;
+    while (pLVar2 != (List_1_SkinnedMeshOptimizeManager_SkinnedMeshOptimizationData_ *)0x0) {
+      if ((pLVar2->fields)._size <= iVar3) {
         iVar3 = 0;
-        if (RVar2 != (RegexCharClass_SingleRange)0x0) {
-          for (; iVar3 < *(int32_t *)((int)RVar2 + 0xc); iVar3 = iVar3 + 1) {
+        if (this_01 != (MethodInfo *)0x0) {
+          for (; iVar3 < (int)this_01->name; iVar3 = iVar3 + 1) {
             iVar4 = 0;
             while( true ) {
               XVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
                       XmlSchemaObjectTable+XmlSchemaObjectEntry]::
                       List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
                                 ((List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_
-                                  *)RVar2,iVar3,
+                                  *)this_01,iVar3,
                                  MethodInfo__System__Collections__Generic__List<SkinnedMeshOptimizeManager::SkinnedMeshOptimizationData>__get_Item_int_
                                 );
               if (XVar5.qname == (XmlQualifiedName *)0x0) goto code_?;
@@ -311,28 +312,28 @@ void Assembly-CSharp.dll::SkinnedMeshOptimizeManager::
                       XmlSchemaObjectTable+XmlSchemaObjectEntry]::
                       List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
                                 ((List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_
-                                  *)RVar2,iVar3,
+                                  *)this_01,iVar3,
                                  MethodInfo__System__Collections__Generic__List<SkinnedMeshOptimizeManager::SkinnedMeshOptimizationData>__get_Item_int_
                                 );
               if (((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)XVar5.qname
                    == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-                 (this_01 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                 (this_02 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                             RegularExpressions::RegexCharClass+SingleRange]::
                             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                                       ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
                                         *)XVar5.qname,iVar4,
                                        MethodInfo__System__Collections__Generic__List<UnityEngine::SkinnedMeshRenderer>__get_Item_int_
-                                      ), this_01 == (RegexCharClass_SingleRange)0x0))
+                                      ), this_02 == (RegexCharClass_SingleRange)0x0))
               goto code_?;
               UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
-                        ((Renderer *)this_01,1,(MethodInfo *)0x0);
+                        ((Renderer *)this_02,1,(MethodInfo *)0x0);
               iVar4 = iVar4 + 1;
             }
           }
           iVar3 = 0;
-          if (this_01 != (RegexCharClass_SingleRange)0x0) {
+          if (this_02 != (RegexCharClass_SingleRange)0x0) {
             do {
-              if (*(int *)((int)this_01 + 0xc) <= iVar3) {
+              if (*(int *)((int)this_02 + 0xc) <= iVar3) {
                 return;
               }
               iVar4 = 0;
@@ -341,7 +342,7 @@ void Assembly-CSharp.dll::SkinnedMeshOptimizeManager::
                         XmlSchemaObjectTable+XmlSchemaObjectEntry]::
                         List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
                                   ((List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_
-                                    *)this_01,iVar3,
+                                    *)this_02,iVar3,
                                    MethodInfo__System__Collections__Generic__List<SkinnedMeshOptimizeManager::SkinnedMeshOptimizationData>__get_Item_int_
                                   );
                 if (XVar5.xso == (XmlSchemaObject *)0x0) goto code_?;
@@ -350,20 +351,20 @@ void Assembly-CSharp.dll::SkinnedMeshOptimizeManager::
                         XmlSchemaObjectTable+XmlSchemaObjectEntry]::
                         List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
                                   ((List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_
-                                    *)this_01,iVar3,
+                                    *)this_02,iVar3,
                                    MethodInfo__System__Collections__Generic__List<SkinnedMeshOptimizeManager::SkinnedMeshOptimizationData>__get_Item_int_
                                   );
                 if ((XVar5.xso == (XmlSchemaObject *)0x0) ||
-                   (RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                   (RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                             RegularExpressions::RegexCharClass+SingleRange]::
                             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                                       ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
                                         *)XVar5.xso,iVar4,
                                        MethodInfo__System__Collections__Generic__List<UnityEngine::MeshRenderer>__get_Item_int_
-                                      ), RVar2 == (RegexCharClass_SingleRange)0x0))
+                                      ), RVar1 == (RegexCharClass_SingleRange)0x0))
                 goto code_?;
                 UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
-                          ((Renderer *)RVar2,1,(MethodInfo *)0x0);
+                          ((Renderer *)RVar1,1,(MethodInfo *)0x0);
                 iVar4 = iVar4 + 1;
               }
               iVar3 = iVar3 + 1;
@@ -399,24 +400,24 @@ void Assembly-CSharp.dll::SkinnedMeshOptimizeManager::
                           );
         if (((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)XVar5.qname ==
              (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-           (index = 
+           (this_01 = 
             MethodInfo__System__Collections__Generic__List<UnityEngine::SkinnedMeshRenderer>__get_Item_int_
-           , RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+           , RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                      RegularExpressions::RegexCharClass+SingleRange]::
                      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                                ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *
                                 )XVar5.qname,iVar4,
                                 MethodInfo__System__Collections__Generic__List<UnityEngine::SkinnedMeshRenderer>__get_Item_int_
-                               ), RVar2 == (RegexCharClass_SingleRange)0x0)) goto code_?;
-        this_01 = (RegexCharClass_SingleRange)&UNK_?;
+                               ), RVar1 == (RegexCharClass_SingleRange)0x0)) goto code_?;
+        this_02 = (RegexCharClass_SingleRange)&UNK_?;
         bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_isVisible
-                          ((Renderer *)RVar2,(MethodInfo *)0x0);
+                          ((Renderer *)RVar1,(MethodInfo *)0x0);
         if (bVar7 == 0) {
           pLVar6 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
                    (this_00->fields).optimizationDataList;
           if (pLVar6 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
           goto code_?;
-          RVar2 = (RegexCharClass_SingleRange)&UNK_?;
+          RVar1 = (RegexCharClass_SingleRange)&UNK_?;
           XVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
                   XmlSchemaObjectTable+XmlSchemaObjectEntry]::
                   List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
@@ -443,12 +444,12 @@ code_?:
         }
         iVar4 = iVar4 + 1;
       }
-      RVar8 = RVar2;
+      pMVar9 = this_01;
       if (this._3_1_ != '\0') {
-        if (RVar2 == (RegexCharClass_SingleRange)0x0) break;
+        if (this_01 == (MethodInfo *)0x0) break;
         pLVar6 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
                  (this_00->fields).optimizationDataList;
-        if (*(int32_t *)((int)RVar2 + 0xc) < 5) {
+        if ((int)this_01->name < 5) {
 code_?:
           if (pLVar6 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
           break;
@@ -458,7 +459,7 @@ code_?:
                             (pLVar6,iVar3,
                              MethodInfo__System__Collections__Generic__List<SkinnedMeshOptimizeManager::SkinnedMeshOptimizationData>__get_Item_int_
                             );
-          func_?(RVar2,XVar5.qname,XVar5.xso,
+          func_?(this_01,XVar5.qname,XVar5.xso,
                           MethodInfo__System__Collections__Generic__List<SkinnedMeshOptimizeManager::SkinnedMeshOptimizationData>__Add_SkinnedMeshOptimizeManager__SkinnedMeshOptimizationData_
                          );
         }
@@ -473,31 +474,27 @@ code_?:
                             );
           bVar7 = SkinnedMeshOptimizeManager_IsNewMeshCloser
                             (this_00,(SkinnedMeshOptimizeManager_SkinnedMeshOptimizationData)XVar5,
-                             (List_1_SkinnedMeshOptimizeManager_SkinnedMeshOptimizationData_ *)RVar2
-                             ,(int32_t *)&stack0xfffffff0,(MethodInfo *)0x0);
+                             (List_1_SkinnedMeshOptimizeManager_SkinnedMeshOptimizationData_ *)
+                             this_01,(int32_t *)&stack0xfffffff8,(MethodInfo *)0x0);
           if (bVar7 != 0) {
-            pMVar9 = index;
             mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
             XmlSchemaObjectTable+XmlSchemaObjectEntry]::
             List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
-                      ((List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)RVar8,
-                       (int32_t)index,
+                      ((List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+                       this_01,(int32_t)RVar1,
                        MethodInfo__System__Collections__Generic__List<SkinnedMeshOptimizeManager::SkinnedMeshOptimizationData>__get_Item_int_
                       );
-            if (this_01 != (RegexCharClass_SingleRange)0x0) {
-              RVar2 = RVar8;
+            if (this_02 != (RegexCharClass_SingleRange)0x0) {
               func_?();
-              RVar8 = RVar2;
               mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
               XmlSchemaObjectTable+XmlSchemaObjectEntry]::
               List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__RemoveAt
                         ((List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
-                         RVar2,(int32_t)index,
+                         this_01,(int32_t)RVar1,
                          MethodInfo__System__Collections__Generic__List<SkinnedMeshOptimizeManager::SkinnedMeshOptimizationData>__RemoveAt_int_
                         );
               pLVar6 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
                        (this_00->fields).optimizationDataList;
-              index = pMVar9;
               goto code_?;
             }
             break;
@@ -510,7 +507,7 @@ code_?:
                  List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
                            (pLVar6,iVar3,
                             MethodInfo__System__Collections__Generic__List<SkinnedMeshOptimizeManager::SkinnedMeshOptimizationData>__get_Item_int_
-                           ), this_01 == (RegexCharClass_SingleRange)0x0)) break;
+                           ), this_02 == (RegexCharClass_SingleRange)0x0)) break;
           func_?();
         }
         iVar4 = 0;
@@ -539,19 +536,19 @@ code_?:
                             );
           if (((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)XVar5.qname ==
                (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-             (this_01 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+             (this_02 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                         RegularExpressions::RegexCharClass+SingleRange]::
                         List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                                   ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
                                     *)XVar5.qname,iVar4,
                                    MethodInfo__System__Collections__Generic__List<UnityEngine::SkinnedMeshRenderer>__get_Item_int_
-                                  ), this_01 == (RegexCharClass_SingleRange)0x0))
+                                  ), this_02 == (RegexCharClass_SingleRange)0x0))
           goto code_?;
-          RVar8.First = 0;
-          RVar8.Last = 0;
-          index = (MethodInfo *)&UNK_?;
+          RVar1.First = 0;
+          RVar1.Last = 0;
+          pMVar9 = (MethodInfo *)&UNK_?;
           UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
-                    ((Renderer *)this_01,0,(MethodInfo *)0x0);
+                    ((Renderer *)this_02,0,(MethodInfo *)0x0);
           pLVar6 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
                    (this_00->fields).optimizationDataList;
           if (pLVar6 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
@@ -563,21 +560,21 @@ code_?:
                              MethodInfo__System__Collections__Generic__List<SkinnedMeshOptimizeManager::SkinnedMeshOptimizationData>__get_Item_int_
                             );
           if ((XVar5.xso == (XmlSchemaObject *)0x0) ||
-             (RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+             (RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                       RegularExpressions::RegexCharClass+SingleRange]::
                       List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                                 ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
                                   *)XVar5.xso,iVar4,
                                  MethodInfo__System__Collections__Generic__List<UnityEngine::MeshRenderer>__get_Item_int_
-                                ), RVar2 == (RegexCharClass_SingleRange)0x0)) goto code_?;
+                                ), RVar8 == (RegexCharClass_SingleRange)0x0)) goto code_?;
           UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
-                    ((Renderer *)RVar2,0,(MethodInfo *)0x0);
+                    ((Renderer *)RVar8,0,(MethodInfo *)0x0);
           iVar4 = iVar4 + 1;
         }
       }
       iVar3 = iVar3 + 1;
-      RVar2 = RVar8;
-      pLVar1 = (this_00->fields).optimizationDataList;
+      this_01 = pMVar9;
+      pLVar2 = (this_00->fields).optimizationDataList;
     }
   }
 code_?:
@@ -614,7 +611,7 @@ void Assembly-CSharp.dll::SkinnedMeshOptimizeManager::SkinnedMeshOptimizeManager
              MethodInfo__System__Collections__Generic__List<SkinnedMeshOptimizeManager::SkinnedMeshOptimizationData>__List__
             );
   method_00 = (MethodInfo *)&this->fields;
-  (this->fields).optimizationDataList = this_00;
+  ((SkinnedMeshOptimizeManager__Fields *)method_00)->optimizationDataList = this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);

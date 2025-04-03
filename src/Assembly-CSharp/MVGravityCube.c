@@ -25,7 +25,7 @@ void Assembly-CSharp.dll::MVGravityCube::MVGravityCube_Destroy
   if (pCRam000000f0 != (CullingSubscriberBase *)0x0) {
     CullingSubscriberBase::CullingSubscriberBase_Destroy(pCRam000000f0,(MethodInfo *)0x0);
     pCRam000000f0 = (CullingSubscriberBase *)0x0;
-    func_?(0xf0);
+    func_?(0xf0,0);
   }
   MVWorldObjectClient::MVWorldObjectClient_Destroy((MVWorldObjectClient *)0x0,(MethodInfo *)0x0);
   return;

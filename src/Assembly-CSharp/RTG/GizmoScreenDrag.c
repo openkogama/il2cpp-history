@@ -23,9 +23,10 @@ bool Assembly-CSharp.dll::RTG::GizmoScreenDrag::GizmoScreenDrag_DoBeginSession
     System.dll::System::Collections::Specialized::OrderedDictionary::OrderedDictionary__ctor_3
               ((OrderedDictionary *)this_00,(SerializationInfo *)info,
                (StreamingContext)(ZEXT48(pIVar2) << 0x20),unaff_EDI);
-    (this->fields)._screenDragSession = this_00;
-    func_?(&(this->fields)._screenDragSession,this_00);
-    if ((this->fields)._screenDragSession != (InputDeviceScreenDragSession *)0x0) {
+    ppIVar3 = &(this->fields)._screenDragSession;
+    *ppIVar3 = this_00;
+    func_?(ppIVar3,this_00);
+    if (*ppIVar3 != (InputDeviceScreenDragSession *)0x0) {
       if (bRam_? == '\0') {
         bRam_? = InputDeviceScreenDragSession::InputDeviceScreenDragSession_UpdateDragPoint
                                  ((InputDeviceScreenDragSession *)0x0,(MethodInfo *)0x0);
@@ -35,9 +36,9 @@ bool Assembly-CSharp.dll::RTG::GizmoScreenDrag::GizmoScreenDrag_DoBeginSession
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  bVar4 = (*pcVar3)();
-  return bVar4;
+  pcVar4 = (code *)swi(3);
+  bVar5 = (*pcVar4)();
+  return bVar5;
 }
 
 
@@ -47,16 +48,16 @@ void Assembly-CSharp.dll::RTG::GizmoScreenDrag::GizmoScreenDrag_DoEndSession
                (GizmoScreenDrag *this,MethodInfo *method)
 
 {
-  this_00 = (this->fields)._screenDragSession;
-  if (this_00 != (InputDeviceScreenDragSession *)0x0) {
-    InputDeviceScreenDragSession::InputDeviceScreenDragSession_End(this_00,(MethodInfo *)0x0);
-    (this->fields)._screenDragSession = (InputDeviceScreenDragSession *)0x0;
-    func_?(&(this->fields)._screenDragSession,0);
+  ppIVar1 = &(this->fields)._screenDragSession;
+  if (*ppIVar1 != (InputDeviceScreenDragSession *)0x0) {
+    InputDeviceScreenDragSession::InputDeviceScreenDragSession_End(*ppIVar1,(MethodInfo *)0x0);
+    *ppIVar1 = (InputDeviceScreenDragSession *)0x0;
+    func_?(ppIVar1,0);
     return;
   }
   func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -85,12 +86,12 @@ bool Assembly-CSharp.dll::RTG::GizmoScreenDrag::GizmoScreenDrag_DoUpdateSession
     if (bVar5 != 0) {
       fVar6 = (this_00->fields)._dragPoint.x - fVar6;
       fVar7 = (this_00->fields)._dragPoint.y - (float)puStack_1;
-      fVar8 = (this_00->fields)._accumDrag.x;
-      fVar9 = (this_00->fields)._accumDrag.y;
       (this_00->fields)._dragDelta.x = fVar6;
+      fVar8 = (this_00->fields)._accumDrag.x;
       (this_00->fields)._dragDelta.y = fVar7;
-      (this_00->fields)._accumDrag.x = fVar8 + fVar6;
-      (this_00->fields)._accumDrag.y = fVar9 + fVar7;
+      fVar9 = (this_00->fields)._accumDrag.y;
+      (this_00->fields)._accumDrag.x = fVar6 + fVar8;
+      (this_00->fields)._accumDrag.y = fVar7 + fVar9;
       return 1;
     }
     if (cRam_? == '\0') {
@@ -113,10 +114,11 @@ bool Assembly-CSharp.dll::RTG::GizmoScreenDrag::GizmoScreenDrag_get_IsActive
                (GizmoScreenDrag *this,MethodInfo *method)
 
 {
-  if ((this->fields)._screenDragSession == (InputDeviceScreenDragSession *)0x0) {
+  pIVar1 = (this->fields)._screenDragSession;
+  if (pIVar1 == (InputDeviceScreenDragSession *)0x0) {
     return 0;
   }
-  return (((this->fields)._screenDragSession)->fields)._isActive;
+  return (pIVar1->fields)._isActive;
 }
 
 

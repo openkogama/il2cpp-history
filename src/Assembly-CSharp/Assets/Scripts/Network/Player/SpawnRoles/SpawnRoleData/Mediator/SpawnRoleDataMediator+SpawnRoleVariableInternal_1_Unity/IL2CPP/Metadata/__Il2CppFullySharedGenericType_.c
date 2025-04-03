@@ -11,20 +11,25 @@ void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
 
 {
   pMVar1 = method;
-  uVar2 = (method->klass->rgctx_data[2].klass)->actualSize;
+  pIVar2 = method->klass->rgctx_data[2].klass;
+  uVar3 = pIVar2->actualSize;
   func_?();
-  p_Var4 = (_Il2CppFullySharedGenericType *)&value;
-  if ((int)(pMVar1->klass->rgctx_data[2].method)->return_type < 0) {
-    p_Var4 = value;
+  iVar4._0_2_ = (pIVar2->byval_arg).attrs;
+  iVar4._2_1_ = (pIVar2->byval_arg).type;
+  iVar4._3_1_ = (pIVar2->byval_arg).field_0x7;
+  p_Var6 = (_Il2CppFullySharedGenericType *)&value;
+  if (iVar4 < 0) {
+    p_Var6 = value;
   }
-  func_?(&stack0xfffffff0,p_Var4,uVar2);
+  method = (MethodInfo *)&stack0xfffffff0;
+  func_?(&stack0xfffffff0,p_Var6,uVar3);
+  pIVar5 = pMVar1->klass->rgctx_data;
   value = (_Il2CppFullySharedGenericType *)&stack0xfffffff0;
-  if (-1 < (int)(pMVar1->klass->rgctx_data[2].method)->return_type) {
+  if (-1 < (int)(pIVar5[2].method)->return_type) {
     value = unaff_EDI;
   }
-  pMVar3 = pMVar1->klass->rgctx_data[3].method;
-  (*pMVar3->invoker_method)
-            ((pMVar1->klass->rgctx_data[3].method)->methodPointer,pMVar3,this,&value,value);
+  pMVar1 = pIVar5[3].method;
+  (*pMVar1->invoker_method)(pMVar1->methodPointer,pMVar1,this,&value,value);
   return;
 }
 

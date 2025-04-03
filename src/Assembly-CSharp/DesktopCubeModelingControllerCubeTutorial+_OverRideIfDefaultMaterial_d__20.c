@@ -53,8 +53,9 @@ bool Assembly-CSharp.dll::DesktopCubeModelingControllerCubeTutorial+<OverRideIfD
   (this->fields).__1__state = -1;
   this = pDVar2;
   pOVar7 = (Object *)func_?(TypeInfo__System__Int32,&this);
-  (pDVar1->fields).__2__current = pOVar7;
-  func_?(&(pDVar1->fields).__2__current,pOVar7);
+  ppOVar8 = &(pDVar1->fields).__2__current;
+  *ppOVar8 = pOVar7;
+  func_?(ppOVar8,pOVar7);
   (pDVar1->fields).__1__state = 1;
   return 1;
 }

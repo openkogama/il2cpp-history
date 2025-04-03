@@ -14,40 +14,40 @@ void Assembly-CSharp.dll::HoverInputHandler::HoverInputHandler_OnPointerEnter
                    );
     cRam_? = '\x01';
   }
+  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            (this->fields).hoverInputReceivers;
   iStack_1 = 0;
-  pLVar2 = (this->fields).hoverInputReceivers;
-  while (pLVar2 != (List_1_HoverInputReceiver_ *)0x0) {
-    if ((pLVar2->fields)._size <= iStack_1) {
+  while (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    if ((this_00->fields)._size <= iStack_1) {
       return;
     }
-    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-              (this->fields).hoverInputReceivers;
     if ((this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-       (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+       (RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                 ::RegexCharClass+SingleRange]::
                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                           (this_00,iStack_1,
                            MethodInfo__System__Collections__Generic__List<HoverInputReceiver>__get_Item_int_
-                          ), RVar3 == (RegexCharClass_SingleRange)0x0)) break;
-    uVar4 = 0;
-    uVar5 = *(ushort *)(*(int *)RVar3 + 0xb6);
-    if (uVar5 != 0) {
+                          ), RVar2 == (RegexCharClass_SingleRange)0x0)) break;
+    uVar3 = 0;
+    uVar4 = *(ushort *)(*(int *)RVar2 + 0xb6);
+    if (uVar4 != 0) {
+      iVar5 = *(int *)(*(int *)RVar2 + 0x58);
       do {
-        if (*(HoverInputReceiver__Class **)(*(int *)(*(int *)RVar3 + 0x58) + (uint)uVar4 * 8) ==
-            TypeInfo__HoverInputReceiver) {
+        if (*(HoverInputReceiver__Class **)(iVar5 + (uint)uVar3 * 8) == TypeInfo__HoverInputReceiver
+           ) {
           puVar6 = (undefined4 *)
-                   (*(int *)RVar3 +
-                   (*(int *)(*(int *)(*(int *)RVar3 + 0x58) + 4 + (uint)uVar4 * 8) + 0x18) * 8);
+                   (*(int *)RVar2 + (*(int *)(iVar5 + 4 + (uint)uVar3 * 8) + 0x18) * 8);
           goto code_?;
         }
-        uVar4 = uVar4 + 1;
-      } while (uVar4 < uVar5);
+        uVar3 = uVar3 + 1;
+      } while (uVar3 < uVar4);
     }
-    puVar6 = (undefined4 *)func_?(RVar3,TypeInfo__HoverInputReceiver,0,0);
+    puVar6 = (undefined4 *)func_?(RVar2,TypeInfo__HoverInputReceiver,0);
 code_?:
-    (*(code *)*puVar6)(RVar3,puVar6[1]);
+    (*(code *)*puVar6)(RVar2,puVar6[1]);
     iStack_1 = iStack_1 + 1;
-    pLVar2 = (this->fields).hoverInputReceivers;
+    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              (this->fields).hoverInputReceivers;
   }
   func_?();
   pcVar7 = (code *)swi(3);
@@ -71,40 +71,40 @@ void Assembly-CSharp.dll::HoverInputHandler::HoverInputHandler_OnPointerExit
                    );
     cRam_? = '\x01';
   }
+  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            (this->fields).hoverInputReceivers;
   iStack_1 = 0;
-  pLVar2 = (this->fields).hoverInputReceivers;
-  while (pLVar2 != (List_1_HoverInputReceiver_ *)0x0) {
-    if ((pLVar2->fields)._size <= iStack_1) {
+  while (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    if ((this_00->fields)._size <= iStack_1) {
       return;
     }
-    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-              (this->fields).hoverInputReceivers;
     if ((this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-       (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+       (RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                 ::RegexCharClass+SingleRange]::
                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                           (this_00,iStack_1,
                            MethodInfo__System__Collections__Generic__List<HoverInputReceiver>__get_Item_int_
-                          ), RVar3 == (RegexCharClass_SingleRange)0x0)) break;
-    uVar4 = 0;
-    uVar5 = *(ushort *)(*(int *)RVar3 + 0xb6);
-    if (uVar5 != 0) {
+                          ), RVar2 == (RegexCharClass_SingleRange)0x0)) break;
+    uVar3 = 0;
+    uVar4 = *(ushort *)(*(int *)RVar2 + 0xb6);
+    if (uVar4 != 0) {
+      iVar5 = *(int *)(*(int *)RVar2 + 0x58);
       do {
-        if (*(HoverInputReceiver__Class **)(*(int *)(*(int *)RVar3 + 0x58) + (uint)uVar4 * 8) ==
-            TypeInfo__HoverInputReceiver) {
+        if (*(HoverInputReceiver__Class **)(iVar5 + (uint)uVar3 * 8) == TypeInfo__HoverInputReceiver
+           ) {
           puVar6 = (undefined4 *)
-                   (*(int *)RVar3 +
-                   (*(int *)(*(int *)(*(int *)RVar3 + 0x58) + 4 + (uint)uVar4 * 8) + 0x19) * 8);
+                   (*(int *)RVar2 + (*(int *)(iVar5 + 4 + (uint)uVar3 * 8) + 0x19) * 8);
           goto code_?;
         }
-        uVar4 = uVar4 + 1;
-      } while (uVar4 < uVar5);
+        uVar3 = uVar3 + 1;
+      } while (uVar3 < uVar4);
     }
-    puVar6 = (undefined4 *)func_?(RVar3,TypeInfo__HoverInputReceiver,1,0);
+    puVar6 = (undefined4 *)func_?(RVar2,TypeInfo__HoverInputReceiver,1);
 code_?:
-    (*(code *)*puVar6)(RVar3,puVar6[1]);
+    (*(code *)*puVar6)(RVar2,puVar6[1]);
     iStack_1 = iStack_1 + 1;
-    pLVar2 = (this->fields).hoverInputReceivers;
+    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              (this->fields).hoverInputReceivers;
   }
   func_?();
   pcVar7 = (code *)swi(3);
@@ -183,8 +183,9 @@ void Assembly-CSharp.dll::HoverInputHandler::HoverInputHandler__ctor
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<HoverInputReceiver>__List__);
-  (this->fields).hoverInputReceivers = this_00;
-  func_?(&(this->fields).hoverInputReceivers,this_00);
+  ppLVar1 = &(this->fields).hoverInputReceivers;
+  *ppLVar1 = this_00;
+  func_?(ppLVar1,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

@@ -12,12 +12,12 @@ void Assembly-CSharp.dll::NotificationsManager::NotificationsManager_Instantiate
     func_?(&StringLiteral_Could_not_find_a_notification_ar);
     cRam_? = '\x01';
   }
-  uVar1 = 0;
-  pNVar2 = (this->fields).notificationAreas;
-  if (pNVar2 != (NotificationArea__Array *)0x0) {
+  pNVar1 = (this->fields).notificationAreas;
+  uVar2 = 0;
+  if (pNVar1 != (NotificationArea__Array *)0x0) {
     iStack_3 = 0x10;
     do {
-      if ((int)pNVar2->max_length <= (int)uVar1) {
+      if ((int)pNVar1->max_length <= (int)uVar2) {
         pSVar4 = mscorlib.dll::System::Enum::Enum_ToString
                            ((Enum *)&stack0xffffffe4,(MethodInfo *)0x0);
         pSVar4 = mscorlib.dll::System::String::String_Concat_3
@@ -30,10 +30,9 @@ void Assembly-CSharp.dll::NotificationsManager::NotificationsManager_Instantiate
                   ((Object *)pSVar4,(MethodInfo *)0x0);
         return;
       }
-      pNVar2 = (this->fields).notificationAreas;
-      if (pNVar2 == (NotificationArea__Array *)0x0) break;
-      if (pNVar2->max_length <= uVar1) goto code_?;
-      iVar5 = *(int *)((int)pNVar2->vector + iStack_3 + -0x10);
+      if (pNVar1 == (NotificationArea__Array *)0x0) break;
+      if (pNVar1->max_length <= uVar2) goto code_?;
+      iVar5 = *(int *)((int)pNVar1->vector + iStack_3 + -0x10);
       if ((iVar5 == 0) || (iVar5 = *(int *)(iVar5 + 0x10), iVar5 == 0)) break;
       if (cRam_? == '\0') {
         func_?(&
@@ -76,11 +75,11 @@ void Assembly-CSharp.dll::NotificationsManager::NotificationsManager_Instantiate
                         (pOVar9,(MethodInfo *)0x0);
       if (bVar10 != 0) {
 code_?:
-        pNVar2 = (this->fields).notificationAreas;
-        if (pNVar2 != (NotificationArea__Array *)0x0) {
-          if (pNVar2->max_length <= uVar1) goto code_?;
-          if (pNVar2->vector[uVar1] != (NotificationArea *)0x0) {
-            func_?(4,pNVar2->vector[uVar1],notificationType,data);
+        pNVar1 = (this->fields).notificationAreas;
+        if (pNVar1 != (NotificationArea__Array *)0x0) {
+          if (pNVar1->max_length <= uVar2) goto code_?;
+          if (pNVar1->vector[uVar2] != (NotificationArea *)0x0) {
+            func_?(4,pNVar1->vector[uVar2],notificationType,data);
             return;
           }
         }
@@ -106,10 +105,10 @@ code_?:
       bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit
                         (pOVar9,(MethodInfo *)0x0);
       if (bVar10 != 0) goto code_?;
-      uVar1 = uVar1 + 1;
+      uVar2 = uVar2 + 1;
       iStack_3 = iStack_3 + 4;
-      pNVar2 = (this->fields).notificationAreas;
-    } while (pNVar2 != (NotificationArea__Array *)0x0);
+      pNVar1 = (this->fields).notificationAreas;
+    } while (pNVar1 != (NotificationArea__Array *)0x0);
   }
   func_?();
 code_?:

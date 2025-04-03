@@ -65,9 +65,10 @@ void Assembly-CSharp.dll::ColorStyleObject::ColorStyleObject_Reset
                      ((Component *)this,
                       UnityEngine__UI__Graphic_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Graphic>__
                      );
-  (this->fields).graphic = pGVar1;
-  func_?(&(this->fields).graphic,pGVar1);
-  pGVar1 = (this->fields).graphic;
+  ppGVar2 = &(this->fields).graphic;
+  *ppGVar2 = pGVar1;
+  func_?(ppGVar2,pGVar1);
+  pGVar1 = *ppGVar2;
   colorStyle = (this->fields).imageStyle;
   if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Styles);

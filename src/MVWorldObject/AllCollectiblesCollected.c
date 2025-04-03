@@ -32,20 +32,21 @@ void MVWorldObject.dll::AllCollectiblesCollected::
       UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
       UxmlObjectListAttributeDescription`1[System::Object]::
       UxmlObjectListAttributeDescription_1_System_Object___ctor(this_01,(MethodInfo *)0x0);
+      ppOVar4 = &(pAVar1->fields)._.instigatorCounterTypeChangedEvent;
       (pAVar1->fields)._.forfilled = 1;
-      (pAVar1->fields)._.instigatorCounterTypeChangedEvent = e;
-      func_?(&(pAVar1->fields)._.instigatorCounterTypeChangedEvent,e);
-      if ((pAVar1->fields)._.OnWinningConditionChanged != (EventHandler_1_EventArgs_ *)0x0) {
-        pEVar4 = (pAVar1->fields)._.OnWinningConditionChanged;
-        (*(pEVar4->fields)._._.invoke_impl)((pEVar4->fields)._._.method_code,pAVar1);
+      *ppOVar4 = e;
+      func_?(ppOVar4,e);
+      pEVar5 = (pAVar1->fields)._.OnWinningConditionChanged;
+      if (pEVar5 != (EventHandler_1_EventArgs_ *)0x0) {
+        (*(pEVar5->fields)._._.invoke_impl)((pEVar5->fields)._._.method_code,pAVar1);
       }
     }
     return;
   }
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

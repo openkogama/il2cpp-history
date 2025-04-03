@@ -7,16 +7,11 @@ float Assembly-CSharp.dll::RTG::GizmoQuad3DBorder::GizmoQuad3DBorder_GetRealBoxD
 {
   puStack_1 = &stack0xfffffffc;
   pGVar2 = (this->fields)._planeSlider;
-  if (pGVar2 != (GizmoPlaneSlider3D *)0x0) {
-    if ((pGVar2->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-      return (((pGVar2->fields)._sharedLookAndFeel)->fields)._borderBoxDepth * zoomFactor *
-             (((((this->fields)._planeSlider)->fields)._sharedLookAndFeel)->fields)._scale;
-    }
-    pGVar3 = (pGVar2->fields)._lookAndFeel;
-    if (pGVar3 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-      return (pGVar3->fields)._borderBoxDepth * zoomFactor *
-             (((((this->fields)._planeSlider)->fields)._lookAndFeel)->fields)._scale;
-    }
+  if ((pGVar2 != (GizmoPlaneSlider3D *)0x0) &&
+     ((pGVar3 = (pGVar2->fields)._sharedLookAndFeel, pGVar3 != (GizmoPlaneSlider3DLookAndFeel *)0x0
+      || (pGVar3 = (pGVar2->fields)._lookAndFeel, pGVar3 != (GizmoPlaneSlider3DLookAndFeel *)0x0))))
+  {
+    return (pGVar3->fields)._borderBoxDepth * zoomFactor * (pGVar3->fields)._scale;
   }
   uVar4 = func_?(auStack_5);
   func_?(uVar4);
@@ -34,16 +29,11 @@ float Assembly-CSharp.dll::RTG::GizmoQuad3DBorder::GizmoQuad3DBorder_GetRealBoxH
 {
   puStack_1 = &stack0xfffffffc;
   pGVar2 = (this->fields)._planeSlider;
-  if (pGVar2 != (GizmoPlaneSlider3D *)0x0) {
-    if ((pGVar2->fields)._sharedLookAndFeel != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-      return (((pGVar2->fields)._sharedLookAndFeel)->fields)._borderBoxHeight * zoomFactor *
-             (((((this->fields)._planeSlider)->fields)._sharedLookAndFeel)->fields)._scale;
-    }
-    pGVar3 = (pGVar2->fields)._lookAndFeel;
-    if (pGVar3 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-      return (pGVar3->fields)._borderBoxHeight * zoomFactor *
-             (((((this->fields)._planeSlider)->fields)._lookAndFeel)->fields)._scale;
-    }
+  if ((pGVar2 != (GizmoPlaneSlider3D *)0x0) &&
+     ((pGVar3 = (pGVar2->fields)._sharedLookAndFeel, pGVar3 != (GizmoPlaneSlider3DLookAndFeel *)0x0
+      || (pGVar3 = (pGVar2->fields)._lookAndFeel, pGVar3 != (GizmoPlaneSlider3DLookAndFeel *)0x0))))
+  {
+    return (pGVar3->fields)._borderBoxHeight * zoomFactor * (pGVar3->fields)._scale;
   }
   uVar4 = func_?(auStack_5);
   func_?(uVar4);
@@ -68,14 +58,11 @@ void Assembly-CSharp.dll::RTG::GizmoQuad3DBorder::GizmoQuad3DBorder_OnGizmoPreUp
      ) {
     camera = Gizmo::Gizmo_get_FocusCamera(this_00,(MethodInfo *)0x0);
     pGVar2 = (this->fields)._planeSlider;
-    if (pGVar2 != (GizmoPlaneSlider3D *)0x0) {
-      if ((pGVar2->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-        pGVar3 = (pGVar2->fields)._lookAndFeel;
-        if (pGVar3 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-      }
-      else {
-        pGVar3 = (pGVar2->fields)._sharedLookAndFeel;
-      }
+    if ((pGVar2 != (GizmoPlaneSlider3D *)0x0) &&
+       ((pGVar3 = (pGVar2->fields)._sharedLookAndFeel,
+        pGVar3 != (GizmoPlaneSlider3DLookAndFeel *)0x0 ||
+        (pGVar3 = (pGVar2->fields)._lookAndFeel, pGVar3 != (GizmoPlaneSlider3DLookAndFeel *)0x0))))
+    {
       fVar4 = _UNK_?;
       if ((pGVar3->fields)._useZoomFactor != 0) {
         pGVar1 = (pGVar2->fields)._._handle;
@@ -84,38 +71,29 @@ void Assembly-CSharp.dll::RTG::GizmoQuad3DBorder::GizmoQuad3DBorder_OnGizmoPreUp
       }
       pGVar2 = (this->fields)._planeSlider;
       pIVar5 = (this->fields)._controllers;
-      if (pGVar2 != (GizmoPlaneSlider3D *)0x0) {
-        if ((pGVar2->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-          pGVar3 = (pGVar2->fields)._lookAndFeel;
-          if (pGVar3 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-        }
-        else {
-          pGVar3 = (pGVar2->fields)._sharedLookAndFeel;
-        }
-        if (pIVar5 != (IGizmoQuad3DBorderController__Array *)0x0) {
-          uVar6 = (pGVar3->fields)._quadBorderType;
-          if (pIVar5->max_length <= uVar6) goto code_?;
-          if (pIVar5->vector[uVar6] != (IGizmoQuad3DBorderController *)0x0) {
-            func_?(0,TypeInfo__RTG__IGizmoQuad3DBorderController,pIVar5->vector[uVar6]);
-            pGVar2 = (this->fields)._planeSlider;
-            pIVar5 = (this->fields)._controllers;
-            if (pGVar2 != (GizmoPlaneSlider3D *)0x0) {
-              if ((pGVar2->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-                pGVar3 = (pGVar2->fields)._lookAndFeel;
-                if (pGVar3 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-              }
-              else {
-                pGVar3 = (pGVar2->fields)._sharedLookAndFeel;
-              }
-              if (pIVar5 != (IGizmoQuad3DBorderController__Array *)0x0) {
-                uVar6 = (pGVar3->fields)._quadBorderType;
-                if (pIVar5->max_length <= uVar6) goto code_?;
-                if (pIVar5->vector[uVar6] != (IGizmoQuad3DBorderController *)0x0) {
-                  func_?(1,TypeInfo__RTG__IGizmoQuad3DBorderController,
-                                  pIVar5->vector[uVar6],fVar4);
-                  return;
-                }
-              }
+      if ((pGVar2 != (GizmoPlaneSlider3D *)0x0) &&
+         (((pGVar3 = (pGVar2->fields)._sharedLookAndFeel,
+           pGVar3 != (GizmoPlaneSlider3DLookAndFeel *)0x0 ||
+           (pGVar3 = (pGVar2->fields)._lookAndFeel, pGVar3 != (GizmoPlaneSlider3DLookAndFeel *)0x0))
+          && (pIVar5 != (IGizmoQuad3DBorderController__Array *)0x0)))) {
+        uVar6 = (pGVar3->fields)._quadBorderType;
+        if (pIVar5->max_length <= uVar6) goto code_?;
+        if (pIVar5->vector[uVar6] != (IGizmoQuad3DBorderController *)0x0) {
+          func_?(0,TypeInfo__RTG__IGizmoQuad3DBorderController,pIVar5->vector[uVar6]);
+          pGVar2 = (this->fields)._planeSlider;
+          pIVar5 = (this->fields)._controllers;
+          if (((pGVar2 != (GizmoPlaneSlider3D *)0x0) &&
+              ((pGVar3 = (pGVar2->fields)._sharedLookAndFeel,
+               pGVar3 != (GizmoPlaneSlider3DLookAndFeel *)0x0 ||
+               (pGVar3 = (pGVar2->fields)._lookAndFeel,
+               pGVar3 != (GizmoPlaneSlider3DLookAndFeel *)0x0)))) &&
+             (pIVar5 != (IGizmoQuad3DBorderController__Array *)0x0)) {
+            uVar6 = (pGVar3->fields)._quadBorderType;
+            if (pIVar5->max_length <= uVar6) goto code_?;
+            if (pIVar5->vector[uVar6] != (IGizmoQuad3DBorderController *)0x0) {
+              func_?(1,TypeInfo__RTG__IGizmoQuad3DBorderController,pIVar5->vector[uVar6],
+                              fVar4);
+              return;
             }
           }
         }
@@ -147,14 +125,11 @@ void Assembly-CSharp.dll::RTG::GizmoQuad3DBorder::GizmoQuad3DBorder_OnQuadShapeC
      ) {
     camera = Gizmo::Gizmo_GetWorkCamera(this_00,(MethodInfo *)0x0);
     pGVar2 = (this->fields)._planeSlider;
-    if (pGVar2 != (GizmoPlaneSlider3D *)0x0) {
-      if ((pGVar2->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-        pGVar3 = (pGVar2->fields)._lookAndFeel;
-        if (pGVar3 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-      }
-      else {
-        pGVar3 = (pGVar2->fields)._sharedLookAndFeel;
-      }
+    if ((pGVar2 != (GizmoPlaneSlider3D *)0x0) &&
+       ((pGVar3 = (pGVar2->fields)._sharedLookAndFeel,
+        pGVar3 != (GizmoPlaneSlider3DLookAndFeel *)0x0 ||
+        (pGVar3 = (pGVar2->fields)._lookAndFeel, pGVar3 != (GizmoPlaneSlider3DLookAndFeel *)0x0))))
+    {
       if ((pGVar3->fields)._useZoomFactor != 0) {
         pGVar1 = (pGVar2->fields)._._handle;
         if (pGVar1 == (GizmoHandle *)0x0) goto code_?;
@@ -162,21 +137,16 @@ void Assembly-CSharp.dll::RTG::GizmoQuad3DBorder::GizmoQuad3DBorder_OnQuadShapeC
       }
       pGVar2 = (this->fields)._planeSlider;
       pIVar4 = (this->fields)._controllers;
-      if (pGVar2 != (GizmoPlaneSlider3D *)0x0) {
-        if ((pGVar2->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-          pGVar3 = (pGVar2->fields)._lookAndFeel;
-          if (pGVar3 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-        }
-        else {
-          pGVar3 = (pGVar2->fields)._sharedLookAndFeel;
-        }
-        if (pIVar4 != (IGizmoQuad3DBorderController__Array *)0x0) {
-          uVar5 = (pGVar3->fields)._quadBorderType;
-          if (pIVar4->max_length <= uVar5) goto code_?;
-          if (pIVar4->vector[uVar5] != (IGizmoQuad3DBorderController *)0x0) {
-            func_?(2,TypeInfo__RTG__IGizmoQuad3DBorderController,pIVar4->vector[uVar5]);
-            return;
-          }
+      if ((pGVar2 != (GizmoPlaneSlider3D *)0x0) &&
+         (((pGVar3 = (pGVar2->fields)._sharedLookAndFeel,
+           pGVar3 != (GizmoPlaneSlider3DLookAndFeel *)0x0 ||
+           (pGVar3 = (pGVar2->fields)._lookAndFeel, pGVar3 != (GizmoPlaneSlider3DLookAndFeel *)0x0))
+          && (pIVar4 != (IGizmoQuad3DBorderController__Array *)0x0)))) {
+        uVar5 = (pGVar3->fields)._quadBorderType;
+        if (pIVar4->max_length <= uVar5) goto code_?;
+        if (pIVar4->vector[uVar5] != (IGizmoQuad3DBorderController *)0x0) {
+          func_?(2,TypeInfo__RTG__IGizmoQuad3DBorderController,pIVar4->vector[uVar5]);
+          return;
         }
       }
     }
@@ -243,14 +213,11 @@ code_?:
     return;
   }
   pGVar7 = (this->fields)._planeSlider;
-  if (pGVar7 != (GizmoPlaneSlider3D *)0x0) {
-    if ((pGVar7->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-      pGVar8 = (pGVar7->fields)._lookAndFeel;
-      if (pGVar8 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-    }
-    else {
-      pGVar8 = (pGVar7->fields)._sharedLookAndFeel;
-    }
+  if ((pGVar7 != (GizmoPlaneSlider3D *)0x0) &&
+     ((pGVar8 = (pGVar7->fields)._sharedLookAndFeel,
+      pGVar8 != (GizmoPlaneSlider3DLookAndFeel *)0x0 ||
+      (pGVar8 = (pGVar7->fields)._lookAndFeel, pGVar8 != (GizmoPlaneSlider3DLookAndFeel *)0x0))))
+  {
     auStack_9._0_4_ = (pGVar8->fields)._borderColor.r;
     auStack_9._4_4_ = (pGVar8->fields)._borderColor.g;
     fStack_10 = (pGVar8->fields)._borderColor.b;
@@ -535,50 +502,51 @@ void Assembly-CSharp.dll::RTG::GizmoQuad3DBorder::GizmoQuad3DBorder_SetVisible
     func_?(&TypeInfo__RTG__IGizmoQuad3DBorderController);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._controllers;
+  pGVar1 = (this->fields)._planeSlider;
+  pIVar2 = (this->fields)._controllers;
   (this->fields)._isVisible = isVisible;
-  pGVar2 = (this->fields)._planeSlider;
-  if (pGVar2 != (GizmoPlaneSlider3D *)0x0) {
-    if ((pGVar2->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-      pGVar3 = (pGVar2->fields)._lookAndFeel;
-      if (pGVar3 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-    }
-    else {
-      pGVar3 = (pGVar2->fields)._sharedLookAndFeel;
-    }
-    if (pIVar1 != (IGizmoQuad3DBorderController__Array *)0x0) {
-      uVar4 = (pGVar3->fields)._quadBorderType;
-      if (pIVar1->max_length <= uVar4) goto code_?;
-      if (pIVar1->vector[uVar4] != (IGizmoQuad3DBorderController *)0x0) {
-        func_?(0,TypeInfo__RTG__IGizmoQuad3DBorderController,pIVar1->vector[uVar4]);
-        if ((this->fields)._isVisible == 0) {
-          return;
-        }
-        pGVar5 = (this->fields)._targetHandle;
-        if ((pGVar5 != (GizmoHandle *)0x0) &&
-           (this_00 = (pGVar5->fields)._gizmo, this_00 != (Gizmo *)0x0)) {
-          camera = Gizmo::Gizmo_GetWorkCamera(this_00,(MethodInfo *)0x0);
-          fVar6 = GizmoRATriangle3DBorder::GizmoRATriangle3DBorder_GetZoomFactor
-                            ((GizmoRATriangle3DBorder *)this,camera,(MethodInfo *)0x0);
-          pGVar2 = (this->fields)._planeSlider;
-          pIVar1 = (this->fields)._controllers;
-          if (pGVar2 != (GizmoPlaneSlider3D *)0x0) {
-            if ((pGVar2->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-              pGVar3 = (pGVar2->fields)._lookAndFeel;
-              if (pGVar3 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-            }
-            else {
-              pGVar3 = (pGVar2->fields)._sharedLookAndFeel;
-            }
-            if (pIVar1 != (IGizmoQuad3DBorderController__Array *)0x0) {
-              uVar4 = (pGVar3->fields)._quadBorderType;
-              if (pIVar1->max_length <= uVar4) goto code_?;
-              if (pIVar1->vector[uVar4] != (IGizmoQuad3DBorderController *)0x0) {
-                func_?(1,TypeInfo__RTG__IGizmoQuad3DBorderController,pIVar1->vector[uVar4],
-                                fVar6);
-                GizmoQuad3DBorder_OnQuadShapeChanged(this,(MethodInfo *)0x0);
-                return;
-              }
+  if ((pGVar1 != (GizmoPlaneSlider3D *)0x0) &&
+     (((pGVar3 = (pGVar1->fields)._sharedLookAndFeel, pGVar3 != (GizmoPlaneSlider3DLookAndFeel *)0x0
+       || (pGVar3 = (pGVar1->fields)._lookAndFeel, pGVar3 != (GizmoPlaneSlider3DLookAndFeel *)0x0))
+      && (pIVar2 != (IGizmoQuad3DBorderController__Array *)0x0)))) {
+    uVar4 = (pGVar3->fields)._quadBorderType;
+    if (pIVar2->max_length <= uVar4) goto code_?;
+    if (pIVar2->vector[uVar4] != (IGizmoQuad3DBorderController *)0x0) {
+      func_?(0,TypeInfo__RTG__IGizmoQuad3DBorderController,pIVar2->vector[uVar4]);
+      if ((this->fields)._isVisible == 0) {
+        return;
+      }
+      pGVar5 = (this->fields)._targetHandle;
+      if ((pGVar5 != (GizmoHandle *)0x0) &&
+         (this_00 = (pGVar5->fields)._gizmo, this_00 != (Gizmo *)0x0)) {
+        camera = Gizmo::Gizmo_GetWorkCamera(this_00,(MethodInfo *)0x0);
+        pGVar1 = (this->fields)._planeSlider;
+        if ((pGVar1 != (GizmoPlaneSlider3D *)0x0) &&
+           ((pGVar3 = (pGVar1->fields)._sharedLookAndFeel,
+            pGVar3 != (GizmoPlaneSlider3DLookAndFeel *)0x0 ||
+            (pGVar3 = (pGVar1->fields)._lookAndFeel, pGVar3 != (GizmoPlaneSlider3DLookAndFeel *)0x0)
+            ))) {
+          fVar6 = _UNK_?;
+          if ((pGVar3->fields)._useZoomFactor != 0) {
+            pGVar5 = (pGVar1->fields)._._handle;
+            if (pGVar5 == (GizmoHandle *)0x0) goto code_?;
+            fVar6 = GizmoHandle::GizmoHandle_GetZoomFactor(pGVar5,camera,(MethodInfo *)0x0);
+          }
+          pGVar1 = (this->fields)._planeSlider;
+          pIVar2 = (this->fields)._controllers;
+          if ((pGVar1 != (GizmoPlaneSlider3D *)0x0) &&
+             (((pGVar3 = (pGVar1->fields)._sharedLookAndFeel,
+               pGVar3 != (GizmoPlaneSlider3DLookAndFeel *)0x0 ||
+               (pGVar3 = (pGVar1->fields)._lookAndFeel,
+               pGVar3 != (GizmoPlaneSlider3DLookAndFeel *)0x0)) &&
+              (pIVar2 != (IGizmoQuad3DBorderController__Array *)0x0)))) {
+            uVar4 = (pGVar3->fields)._quadBorderType;
+            if (pIVar2->max_length <= uVar4) goto code_?;
+            if (pIVar2->vector[uVar4] != (IGizmoQuad3DBorderController *)0x0) {
+              func_?(1,TypeInfo__RTG__IGizmoQuad3DBorderController,pIVar2->vector[uVar4],
+                              fVar6);
+              GizmoQuad3DBorder_OnQuadShapeChanged(this,(MethodInfo *)0x0);
+              return;
             }
           }
         }
@@ -623,54 +591,64 @@ void Assembly-CSharp.dll::RTG::GizmoQuad3DBorder::GizmoQuad3DBorder__ctor
   (this->fields)._isHoverable = 1;
   pQVar1 = (QuadShape3D *)func_?(TypeInfo__RTG__QuadShape3D);
   QuadShape3D::QuadShape3D__ctor(pQVar1,(MethodInfo *)0x0);
-  (this->fields)._borderQuad = pQVar1;
-  func_?(&(this->fields)._borderQuad,pQVar1);
-  pBVar2 = (BoxShape3D *)func_?(TypeInfo__RTG__BoxShape3D);
-  BoxShape3D::BoxShape3D__ctor(pBVar2,(MethodInfo *)0x0);
-  (this->fields)._topBox = pBVar2;
-  func_?(&(this->fields)._topBox,pBVar2);
-  pBVar2 = (BoxShape3D *)func_?(TypeInfo__RTG__BoxShape3D);
-  BoxShape3D::BoxShape3D__ctor(pBVar2,(MethodInfo *)0x0);
-  (this->fields)._rightBox = pBVar2;
-  func_?(&(this->fields)._rightBox,pBVar2);
-  pBVar2 = (BoxShape3D *)func_?(TypeInfo__RTG__BoxShape3D);
-  BoxShape3D::BoxShape3D__ctor(pBVar2,(MethodInfo *)0x0);
-  (this->fields)._bottomBox = pBVar2;
+  ppQVar2 = &(this->fields)._borderQuad;
+  *ppQVar2 = pQVar1;
+  func_?(ppQVar2,pQVar1);
+  pBVar3 = (BoxShape3D *)func_?(TypeInfo__RTG__BoxShape3D);
+  BoxShape3D::BoxShape3D__ctor(pBVar3,(MethodInfo *)0x0);
+  ppBVar4 = &(this->fields)._topBox;
+  *ppBVar4 = pBVar3;
+  func_?(ppBVar4,pBVar3);
+  pBVar3 = (BoxShape3D *)func_?(TypeInfo__RTG__BoxShape3D);
+  BoxShape3D::BoxShape3D__ctor(pBVar3,(MethodInfo *)0x0);
+  ppBVar4 = &(this->fields)._rightBox;
+  *ppBVar4 = pBVar3;
+  func_?(ppBVar4,pBVar3);
+  pBVar3 = (BoxShape3D *)func_?(TypeInfo__RTG__BoxShape3D);
+  BoxShape3D::BoxShape3D__ctor(pBVar3,(MethodInfo *)0x0);
+  ppBVar4 = &(this->fields)._bottomBox;
+  *ppBVar4 = pBVar3;
+  func_?(ppBVar4,pBVar3);
+  pBVar3 = (BoxShape3D *)func_?(TypeInfo__RTG__BoxShape3D);
+  BoxShape3D::BoxShape3D__ctor(pBVar3,(MethodInfo *)0x0);
+  ppBVar4 = &(this->fields)._leftBox;
+  *ppBVar4 = pBVar3;
+  func_?(ppBVar4,pBVar3);
+  pBVar3 = (BoxShape3D *)func_?(TypeInfo__RTG__BoxShape3D);
+  BoxShape3D::BoxShape3D__ctor(pBVar3,(MethodInfo *)0x0);
+  ppBVar4 = &(this->fields)._topLeftBox;
+  *ppBVar4 = pBVar3;
+  func_?(ppBVar4,pBVar3);
+  pBVar3 = (BoxShape3D *)func_?(TypeInfo__RTG__BoxShape3D);
+  BoxShape3D::BoxShape3D__ctor(pBVar3,(MethodInfo *)0x0);
+  (this->fields)._topRightBox = pBVar3;
   func_?();
-  pBVar2 = (BoxShape3D *)func_?(TypeInfo__RTG__BoxShape3D);
-  BoxShape3D::BoxShape3D__ctor(pBVar2,(MethodInfo *)0x0);
-  (this->fields)._leftBox = pBVar2;
-  func_?(&(this->fields)._leftBox,pBVar2);
-  pBVar2 = (BoxShape3D *)func_?(TypeInfo__RTG__BoxShape3D);
-  BoxShape3D::BoxShape3D__ctor(pBVar2,(MethodInfo *)0x0);
-  (this->fields)._topLeftBox = pBVar2;
-  func_?(&(this->fields)._topLeftBox,pBVar2);
-  pBVar2 = (BoxShape3D *)func_?(TypeInfo__RTG__BoxShape3D);
-  BoxShape3D::BoxShape3D__ctor(pBVar2,(MethodInfo *)0x0);
-  (this->fields)._topRightBox = pBVar2;
+  pQVar1 = (QuadShape3D *)func_?();
+  BoxShape3D::BoxShape3D__ctor((BoxShape3D *)pQVar1,(MethodInfo *)0x0);
+  ppBVar4 = &(this->fields)._bottomRightBox;
+  *ppBVar4 = (BoxShape3D *)pQVar1;
   func_?();
-  pBVar2 = (BoxShape3D *)func_?();
-  BoxShape3D::BoxShape3D__ctor(pBVar2,(MethodInfo *)0x0);
-  (this->fields)._bottomRightBox = pBVar2;
+  pBVar5 = TypeInfo__RTG__BoxShape3D;
+  pBVar3 = (BoxShape3D *)func_?();
+  BoxShape3D::BoxShape3D__ctor(pBVar3,(MethodInfo *)0x0);
+  (this->fields)._bottomLeftBox = pBVar3;
   func_?();
-  pBVar3 = TypeInfo__RTG__BoxShape3D;
-  pBVar2 = (BoxShape3D *)func_?();
-  BoxShape3D::BoxShape3D__ctor(pBVar2,(MethodInfo *)0x0);
-  (this->fields)._bottomLeftBox = pBVar2;
-  func_?();
-  pLVar4 = (List_1_System_Int32_ *)func_?();
+  pLVar6 = (List_1_System_Int32_ *)
+            func_?(TypeInfo__System__Collections__Generic__List<int>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar4,
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar6,
              MethodInfo__System__Collections__Generic__List<int>__List__);
-  (this->fields)._sortedBoxIndices = pLVar4;
-  func_?(&(this->fields)._sortedBoxIndices);
+  ppLVar7 = &(this->fields)._sortedBoxIndices;
+  *ppLVar7 = pLVar6;
+  func_?(ppLVar7,pLVar6);
   method_00 = TypeInfo__RTG__GizmoQuad3DBorderControllerData;
-  pGVar5 = (GizmoQuad3DBorderControllerData *)func_?();
+  value = (GizmoQuad3DBorderControllerData *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)pGVar5,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  (this->fields)._controllerData = pGVar5;
+            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  ppGVar8 = &(this->fields)._controllerData;
+  *ppGVar8 = value;
   func_?();
   handle = TypeRef__RTG__GizmoQuad3DBorderType;
   if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
@@ -691,335 +669,303 @@ code_?:
   }
   else {
     mscorlib.dll::System::Array::Array_get_Length(this_01,(MethodInfo *)0x0);
-    pIVar6 = (IGizmoQuad3DBorderController__Array *)func_?();
-    (this->fields)._controllers = pIVar6;
-    pMVar7 = (MethodInfo *)&(this->fields)._controllers;
+    pIVar9 = (IGizmoQuad3DBorderController__Array *)func_?();
+    pMVar10 = (MethodInfo *)&(this->fields)._controllers;
+    *(IGizmoQuad3DBorderController__Array **)pMVar10 = pIVar9;
     func_?();
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)this,ExceptionArgument__Enum_obj,pMVar7);
-    (this->fields)._planeSlider = (GizmoPlaneSlider3D *)&(this->fields)._bottomLeftBox;
+              ((Object *)this,ExceptionArgument__Enum_obj,pMVar10);
+    (this->fields)._planeSlider = (GizmoPlaneSlider3D *)pBVar5;
     func_?();
-    (this->fields)._targetHandle = (GizmoHandle *)pBVar2;
+    ppGVar11 = &(this->fields)._targetHandle;
+    *ppGVar11 = (GizmoHandle *)ppBVar4;
     func_?();
-    (this->fields)._targetQuad = (QuadShape3D *)pBVar3;
+    (this->fields)._targetQuad = pQVar1;
     func_?();
-    pGVar8 = (this->fields)._targetHandle;
-    if (pGVar8 == (GizmoHandle *)0x0) goto code_?;
-    iVar9 = GizmoHandle::GizmoHandle_Add3DShape
-                       (pGVar8,(Shape3D *)(this->fields)._borderQuad,(MethodInfo *)0x0);
-    (this->fields)._borderQuadIndex = iVar9;
+    if (*ppGVar11 == (GizmoHandle *)0x0) goto code_?;
+    iVar12 = GizmoHandle::GizmoHandle_Add3DShape
+                       (*ppGVar11,(Shape3D *)(this->fields)._borderQuad,(MethodInfo *)0x0);
+    (this->fields)._borderQuadIndex = iVar12;
     pQVar1 = (this->fields)._borderQuad;
     if (pQVar1 == (QuadShape3D *)0x0) goto code_?;
     (pQVar1->fields)._raycastMode = 1;
-    pGVar8 = (this->fields)._targetHandle;
-    if (pGVar8 == (GizmoHandle *)0x0) goto code_?;
-    iVar9 = GizmoHandle::GizmoHandle_Add3DShape
-                       (pGVar8,(Shape3D *)(this->fields)._topBox,(MethodInfo *)0x0);
-    (this->fields)._topBoxIndex = iVar9;
-    pGVar8 = (this->fields)._targetHandle;
-    if (pGVar8 == (GizmoHandle *)0x0) goto code_?;
-    iVar9 = GizmoHandle::GizmoHandle_Add3DShape
-                       (pGVar8,(Shape3D *)(this->fields)._rightBox,(MethodInfo *)0x0);
-    (this->fields)._rightBoxIndex = iVar9;
-    pGVar8 = (this->fields)._targetHandle;
-    if (pGVar8 == (GizmoHandle *)0x0) goto code_?;
-    iVar9 = GizmoHandle::GizmoHandle_Add3DShape
-                       (pGVar8,(Shape3D *)(this->fields)._bottomBox,(MethodInfo *)0x0);
-    (this->fields)._bottomBoxIndex = iVar9;
-    pGVar8 = (this->fields)._targetHandle;
-    if (pGVar8 == (GizmoHandle *)0x0) goto code_?;
-    iVar9 = GizmoHandle::GizmoHandle_Add3DShape
-                       (pGVar8,(Shape3D *)(this->fields)._leftBox,(MethodInfo *)0x0);
-    (this->fields)._leftBoxIndex = iVar9;
-    pGVar8 = (this->fields)._targetHandle;
-    if (pGVar8 == (GizmoHandle *)0x0) goto code_?;
-    iVar9 = GizmoHandle::GizmoHandle_Add3DShape
-                       (pGVar8,(Shape3D *)(this->fields)._topLeftBox,(MethodInfo *)0x0);
-    (this->fields)._topLeftBoxIndex = iVar9;
-    pGVar8 = (this->fields)._targetHandle;
-    if (pGVar8 == (GizmoHandle *)0x0) goto code_?;
-    iVar9 = GizmoHandle::GizmoHandle_Add3DShape
-                       (pGVar8,(Shape3D *)(this->fields)._topRightBox,(MethodInfo *)0x0);
-    (this->fields)._topRightBoxIndex = iVar9;
-    pGVar8 = (this->fields)._targetHandle;
-    if (pGVar8 == (GizmoHandle *)0x0) goto code_?;
-    iVar9 = GizmoHandle::GizmoHandle_Add3DShape
-                       (pGVar8,(Shape3D *)(this->fields)._bottomRightBox,(MethodInfo *)0x0);
-    (this->fields)._bottomRightBoxIndex = iVar9;
-    pGVar8 = (this->fields)._targetHandle;
-    if (pGVar8 == (GizmoHandle *)0x0) goto code_?;
-    iVar10 = GizmoHandle::GizmoHandle_Add3DShape
-                       (pGVar8,(Shape3D *)(this->fields)._bottomLeftBox,(MethodInfo *)0x0);
-    pLVar4 = (this->fields)._sortedBoxIndices;
-    iVar9 = (this->fields)._topBoxIndex;
-    (this->fields)._bottomLeftBoxIndex = iVar10;
-    pMVar7 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
-    if (pLVar4 == (List_1_System_Int32_ *)0x0) goto code_?;
-    piVar11 = &(pLVar4->fields)._version;
-    *piVar11 = *piVar11 + 1;
-    pIVar12 = (pLVar4->fields)._items;
-    if (pIVar12 == (Int32__Array *)0x0) goto code_?;
-    uVar13 = (pLVar4->fields)._size;
-    if (uVar13 < pIVar12->max_length) {
-      (pLVar4->fields)._size = uVar13 + 1;
-      if (pIVar12->max_length <= uVar13) goto code_?;
-      pIVar12->vector[uVar13] = iVar9;
+    if (*ppGVar11 == (GizmoHandle *)0x0) goto code_?;
+    iVar12 = GizmoHandle::GizmoHandle_Add3DShape
+                       (*ppGVar11,(Shape3D *)(this->fields)._topBox,(MethodInfo *)0x0);
+    (this->fields)._topBoxIndex = iVar12;
+    if (*ppGVar11 == (GizmoHandle *)0x0) goto code_?;
+    iVar12 = GizmoHandle::GizmoHandle_Add3DShape
+                       (*ppGVar11,(Shape3D *)(this->fields)._rightBox,(MethodInfo *)0x0);
+    (this->fields)._rightBoxIndex = iVar12;
+    if (*ppGVar11 == (GizmoHandle *)0x0) goto code_?;
+    iVar12 = GizmoHandle::GizmoHandle_Add3DShape
+                       (*ppGVar11,(Shape3D *)(this->fields)._bottomBox,(MethodInfo *)0x0);
+    (this->fields)._bottomBoxIndex = iVar12;
+    if (*ppGVar11 == (GizmoHandle *)0x0) goto code_?;
+    iVar12 = GizmoHandle::GizmoHandle_Add3DShape
+                       (*ppGVar11,(Shape3D *)(this->fields)._leftBox,(MethodInfo *)0x0);
+    (this->fields)._leftBoxIndex = iVar12;
+    if (*ppGVar11 == (GizmoHandle *)0x0) goto code_?;
+    iVar12 = GizmoHandle::GizmoHandle_Add3DShape
+                       (*ppGVar11,(Shape3D *)(this->fields)._topLeftBox,(MethodInfo *)0x0);
+    (this->fields)._topLeftBoxIndex = iVar12;
+    if (*ppGVar11 == (GizmoHandle *)0x0) goto code_?;
+    iVar12 = GizmoHandle::GizmoHandle_Add3DShape
+                       (*ppGVar11,(Shape3D *)(this->fields)._topRightBox,(MethodInfo *)0x0);
+    (this->fields)._topRightBoxIndex = iVar12;
+    if (*ppGVar11 == (GizmoHandle *)0x0) goto code_?;
+    iVar12 = GizmoHandle::GizmoHandle_Add3DShape
+                       (*ppGVar11,(Shape3D *)(this->fields)._bottomRightBox,(MethodInfo *)0x0);
+    (this->fields)._bottomRightBoxIndex = iVar12;
+    if (*ppGVar11 == (GizmoHandle *)0x0) goto code_?;
+    iVar12 = GizmoHandle::GizmoHandle_Add3DShape
+                       (*ppGVar11,(Shape3D *)(this->fields)._bottomLeftBox,(MethodInfo *)0x0);
+    pLVar6 = (this->fields)._sortedBoxIndices;
+    (this->fields)._bottomLeftBoxIndex = iVar12;
+    pMVar10 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+    iVar12 = (this->fields)._topBoxIndex;
+    if (pLVar6 == (List_1_System_Int32_ *)0x0) goto code_?;
+    piVar13 = &(pLVar6->fields)._version;
+    *piVar13 = *piVar13 + 1;
+    pIVar14 = (pLVar6->fields)._items;
+    if (pIVar14 == (Int32__Array *)0x0) goto code_?;
+    uVar15 = (pLVar6->fields)._size;
+    if (uVar15 < pIVar14->max_length) {
+      (pLVar6->fields)._size = uVar15 + 1;
+      if (pIVar14->max_length <= uVar15) goto code_?;
+      pIVar14->vector[uVar15] = iVar12;
     }
     else {
       mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
-      List_1_System_Int32__AddWithResize(pLVar4,iVar9,pMVar7->klass->rgctx_data[0xe].method);
+      List_1_System_Int32__AddWithResize(pLVar6,iVar12,pMVar10->klass->rgctx_data[0xe].method);
     }
-    pMVar7 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
-    pLVar4 = (this->fields)._sortedBoxIndices;
-    iVar9 = (this->fields)._rightBoxIndex;
-    if (pLVar4 == (List_1_System_Int32_ *)0x0) goto code_?;
-    piVar11 = &(pLVar4->fields)._version;
-    *piVar11 = *piVar11 + 1;
-    pIVar12 = (pLVar4->fields)._items;
-    if (pIVar12 == (Int32__Array *)0x0) goto code_?;
-    uVar13 = (pLVar4->fields)._size;
-    if (uVar13 < pIVar12->max_length) {
-      (pLVar4->fields)._size = uVar13 + 1;
-      if (pIVar12->max_length <= uVar13) goto code_?;
-      pIVar12->vector[uVar13] = iVar9;
-    }
-    else {
-      mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
-      List_1_System_Int32__AddWithResize(pLVar4,iVar9,pMVar7->klass->rgctx_data[0xe].method);
-    }
-    pMVar7 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
-    pLVar4 = (this->fields)._sortedBoxIndices;
-    iVar9 = (this->fields)._bottomBoxIndex;
-    if (pLVar4 == (List_1_System_Int32_ *)0x0) goto code_?;
-    piVar11 = &(pLVar4->fields)._version;
-    *piVar11 = *piVar11 + 1;
-    pIVar12 = (pLVar4->fields)._items;
-    if (pIVar12 == (Int32__Array *)0x0) goto code_?;
-    uVar13 = (pLVar4->fields)._size;
-    if (uVar13 < pIVar12->max_length) {
-      (pLVar4->fields)._size = uVar13 + 1;
-      if (pIVar12->max_length <= uVar13) goto code_?;
-      pIVar12->vector[uVar13] = iVar9;
+    pMVar10 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+    pLVar6 = (this->fields)._sortedBoxIndices;
+    iVar12 = (this->fields)._rightBoxIndex;
+    if (pLVar6 == (List_1_System_Int32_ *)0x0) goto code_?;
+    piVar13 = &(pLVar6->fields)._version;
+    *piVar13 = *piVar13 + 1;
+    pIVar14 = (pLVar6->fields)._items;
+    if (pIVar14 == (Int32__Array *)0x0) goto code_?;
+    uVar15 = (pLVar6->fields)._size;
+    if (uVar15 < pIVar14->max_length) {
+      (pLVar6->fields)._size = uVar15 + 1;
+      if (pIVar14->max_length <= uVar15) goto code_?;
+      pIVar14->vector[uVar15] = iVar12;
     }
     else {
       mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
-      List_1_System_Int32__AddWithResize(pLVar4,iVar9,pMVar7->klass->rgctx_data[0xe].method);
+      List_1_System_Int32__AddWithResize(pLVar6,iVar12,pMVar10->klass->rgctx_data[0xe].method);
     }
-    pMVar7 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
-    pLVar4 = (this->fields)._sortedBoxIndices;
-    iVar9 = (this->fields)._leftBoxIndex;
-    if (pLVar4 == (List_1_System_Int32_ *)0x0) goto code_?;
-    piVar11 = &(pLVar4->fields)._version;
-    *piVar11 = *piVar11 + 1;
-    pIVar12 = (pLVar4->fields)._items;
-    if (pIVar12 == (Int32__Array *)0x0) goto code_?;
-    uVar13 = (pLVar4->fields)._size;
-    if (uVar13 < pIVar12->max_length) {
-      (pLVar4->fields)._size = uVar13 + 1;
-      if (pIVar12->max_length <= uVar13) goto code_?;
-      pIVar12->vector[uVar13] = iVar9;
-    }
-    else {
-      mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
-      List_1_System_Int32__AddWithResize(pLVar4,iVar9,pMVar7->klass->rgctx_data[0xe].method);
-    }
-    pMVar7 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
-    pLVar4 = (this->fields)._sortedBoxIndices;
-    iVar9 = (this->fields)._topLeftBoxIndex;
-    if (pLVar4 == (List_1_System_Int32_ *)0x0) goto code_?;
-    piVar11 = &(pLVar4->fields)._version;
-    *piVar11 = *piVar11 + 1;
-    pIVar12 = (pLVar4->fields)._items;
-    if (pIVar12 == (Int32__Array *)0x0) goto code_?;
-    uVar13 = (pLVar4->fields)._size;
-    if (uVar13 < pIVar12->max_length) {
-      (pLVar4->fields)._size = uVar13 + 1;
-      if (pIVar12->max_length <= uVar13) goto code_?;
-      pIVar12->vector[uVar13] = iVar9;
+    pMVar10 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+    pLVar6 = (this->fields)._sortedBoxIndices;
+    iVar12 = (this->fields)._bottomBoxIndex;
+    if (pLVar6 == (List_1_System_Int32_ *)0x0) goto code_?;
+    piVar13 = &(pLVar6->fields)._version;
+    *piVar13 = *piVar13 + 1;
+    pIVar14 = (pLVar6->fields)._items;
+    if (pIVar14 == (Int32__Array *)0x0) goto code_?;
+    uVar15 = (pLVar6->fields)._size;
+    if (uVar15 < pIVar14->max_length) {
+      (pLVar6->fields)._size = uVar15 + 1;
+      if (pIVar14->max_length <= uVar15) goto code_?;
+      pIVar14->vector[uVar15] = iVar12;
     }
     else {
       mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
-      List_1_System_Int32__AddWithResize(pLVar4,iVar9,pMVar7->klass->rgctx_data[0xe].method);
+      List_1_System_Int32__AddWithResize(pLVar6,iVar12,pMVar10->klass->rgctx_data[0xe].method);
     }
-    pMVar7 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
-    pLVar4 = (this->fields)._sortedBoxIndices;
-    iVar9 = (this->fields)._topRightBoxIndex;
-    if (pLVar4 == (List_1_System_Int32_ *)0x0) goto code_?;
-    piVar11 = &(pLVar4->fields)._version;
-    *piVar11 = *piVar11 + 1;
-    pIVar12 = (pLVar4->fields)._items;
-    if (pIVar12 == (Int32__Array *)0x0) goto code_?;
-    uVar13 = (pLVar4->fields)._size;
-    if (uVar13 < pIVar12->max_length) {
-      (pLVar4->fields)._size = uVar13 + 1;
-      if (pIVar12->max_length <= uVar13) goto code_?;
-      pIVar12->vector[uVar13] = iVar9;
-    }
-    else {
-      mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
-      List_1_System_Int32__AddWithResize(pLVar4,iVar9,pMVar7->klass->rgctx_data[0xe].method);
-    }
-    pMVar7 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
-    pLVar4 = (this->fields)._sortedBoxIndices;
-    iVar9 = (this->fields)._bottomRightBoxIndex;
-    if (pLVar4 == (List_1_System_Int32_ *)0x0) goto code_?;
-    piVar11 = &(pLVar4->fields)._version;
-    *piVar11 = *piVar11 + 1;
-    pIVar12 = (pLVar4->fields)._items;
-    if (pIVar12 == (Int32__Array *)0x0) goto code_?;
-    uVar13 = (pLVar4->fields)._size;
-    if (uVar13 < pIVar12->max_length) {
-      (pLVar4->fields)._size = uVar13 + 1;
-      if (pIVar12->max_length <= uVar13) goto code_?;
-      pIVar12->vector[uVar13] = iVar9;
+    pMVar10 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+    pLVar6 = (this->fields)._sortedBoxIndices;
+    iVar12 = (this->fields)._leftBoxIndex;
+    if (pLVar6 == (List_1_System_Int32_ *)0x0) goto code_?;
+    piVar13 = &(pLVar6->fields)._version;
+    *piVar13 = *piVar13 + 1;
+    pIVar14 = (pLVar6->fields)._items;
+    if (pIVar14 == (Int32__Array *)0x0) goto code_?;
+    uVar15 = (pLVar6->fields)._size;
+    if (uVar15 < pIVar14->max_length) {
+      (pLVar6->fields)._size = uVar15 + 1;
+      if (pIVar14->max_length <= uVar15) goto code_?;
+      pIVar14->vector[uVar15] = iVar12;
     }
     else {
       mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
-      List_1_System_Int32__AddWithResize(pLVar4,iVar9,pMVar7->klass->rgctx_data[0xe].method);
+      List_1_System_Int32__AddWithResize(pLVar6,iVar12,pMVar10->klass->rgctx_data[0xe].method);
     }
-    pMVar7 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
-    pLVar4 = (this->fields)._sortedBoxIndices;
-    iVar9 = (this->fields)._bottomLeftBoxIndex;
-    if (pLVar4 == (List_1_System_Int32_ *)0x0) goto code_?;
-    piVar11 = &(pLVar4->fields)._version;
-    *piVar11 = *piVar11 + 1;
-    pIVar12 = (pLVar4->fields)._items;
-    if (pIVar12 == (Int32__Array *)0x0) goto code_?;
-    uVar13 = (pLVar4->fields)._size;
-    if (uVar13 < pIVar12->max_length) {
-      (pLVar4->fields)._size = uVar13 + 1;
-      if (pIVar12->max_length <= uVar13) goto code_?;
-      pIVar12->vector[uVar13] = iVar9;
+    pMVar10 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+    pLVar6 = (this->fields)._sortedBoxIndices;
+    iVar12 = (this->fields)._topLeftBoxIndex;
+    if (pLVar6 == (List_1_System_Int32_ *)0x0) goto code_?;
+    piVar13 = &(pLVar6->fields)._version;
+    *piVar13 = *piVar13 + 1;
+    pIVar14 = (pLVar6->fields)._items;
+    if (pIVar14 == (Int32__Array *)0x0) goto code_?;
+    uVar15 = (pLVar6->fields)._size;
+    if (uVar15 < pIVar14->max_length) {
+      (pLVar6->fields)._size = uVar15 + 1;
+      if (pIVar14->max_length <= uVar15) goto code_?;
+      pIVar14->vector[uVar15] = iVar12;
     }
     else {
       mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
-      List_1_System_Int32__AddWithResize(pLVar4,iVar9,pMVar7->klass->rgctx_data[0xe].method);
+      List_1_System_Int32__AddWithResize(pLVar6,iVar12,pMVar10->klass->rgctx_data[0xe].method);
     }
-    pGVar5 = (this->fields)._controllerData;
-    if (pGVar5 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
-    (pGVar5->fields).Border = this;
+    pMVar10 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+    pLVar6 = (this->fields)._sortedBoxIndices;
+    iVar12 = (this->fields)._topRightBoxIndex;
+    if (pLVar6 == (List_1_System_Int32_ *)0x0) goto code_?;
+    piVar13 = &(pLVar6->fields)._version;
+    *piVar13 = *piVar13 + 1;
+    pIVar14 = (pLVar6->fields)._items;
+    if (pIVar14 == (Int32__Array *)0x0) goto code_?;
+    uVar15 = (pLVar6->fields)._size;
+    if (uVar15 < pIVar14->max_length) {
+      (pLVar6->fields)._size = uVar15 + 1;
+      if (pIVar14->max_length <= uVar15) goto code_?;
+      pIVar14->vector[uVar15] = iVar12;
+    }
+    else {
+      mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
+      List_1_System_Int32__AddWithResize(pLVar6,iVar12,pMVar10->klass->rgctx_data[0xe].method);
+    }
+    pMVar10 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+    pLVar6 = (this->fields)._sortedBoxIndices;
+    iVar12 = (this->fields)._bottomRightBoxIndex;
+    if (pLVar6 == (List_1_System_Int32_ *)0x0) goto code_?;
+    piVar13 = &(pLVar6->fields)._version;
+    *piVar13 = *piVar13 + 1;
+    pIVar14 = (pLVar6->fields)._items;
+    if (pIVar14 == (Int32__Array *)0x0) goto code_?;
+    uVar15 = (pLVar6->fields)._size;
+    if (uVar15 < pIVar14->max_length) {
+      (pLVar6->fields)._size = uVar15 + 1;
+      if (pIVar14->max_length <= uVar15) goto code_?;
+      pIVar14->vector[uVar15] = iVar12;
+    }
+    else {
+      mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
+      List_1_System_Int32__AddWithResize(pLVar6,iVar12,pMVar10->klass->rgctx_data[0xe].method);
+    }
+    pMVar10 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+    pLVar6 = (this->fields)._sortedBoxIndices;
+    iVar12 = (this->fields)._bottomLeftBoxIndex;
+    if (pLVar6 == (List_1_System_Int32_ *)0x0) goto code_?;
+    piVar13 = &(pLVar6->fields)._version;
+    *piVar13 = *piVar13 + 1;
+    pIVar14 = (pLVar6->fields)._items;
+    if (pIVar14 == (Int32__Array *)0x0) goto code_?;
+    uVar15 = (pLVar6->fields)._size;
+    if (uVar15 < pIVar14->max_length) {
+      (pLVar6->fields)._size = uVar15 + 1;
+      if (pIVar14->max_length <= uVar15) goto code_?;
+      pIVar14->vector[uVar15] = iVar12;
+    }
+    else {
+      mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
+      List_1_System_Int32__AddWithResize(pLVar6,iVar12,pMVar10->klass->rgctx_data[0xe].method);
+    }
+    if (*ppGVar8 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
+    ((*ppGVar8)->fields).Border = this;
     func_?();
-    pGVar5 = (this->fields)._controllerData;
-    if (pGVar5 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
-    (pGVar5->fields).PlaneSlider = (this->fields)._planeSlider;
+    if (*ppGVar8 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
+    ((*ppGVar8)->fields).PlaneSlider = (this->fields)._planeSlider;
     func_?();
-    pGVar8 = (this->fields)._targetHandle;
-    if (pGVar8 == (GizmoHandle *)0x0) goto code_?;
-    pGVar5 = (this->fields)._controllerData;
-    if (pGVar5 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
-    (pGVar5->fields).Gizmo = (pGVar8->fields)._gizmo;
+    if (*ppGVar11 == (GizmoHandle *)0x0) goto code_?;
+    if (*ppGVar8 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
+    ((*ppGVar8)->fields).Gizmo = ((*ppGVar11)->fields)._gizmo;
     func_?();
-    pGVar5 = (this->fields)._controllerData;
-    if (pGVar5 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
-    (pGVar5->fields).TargetHandle = (this->fields)._targetHandle;
+    if (*ppGVar8 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
+    ((*ppGVar8)->fields).TargetHandle = *ppGVar11;
     func_?();
-    pGVar5 = (this->fields)._controllerData;
-    if (pGVar5 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
-    (pGVar5->fields).TargetQuad = (this->fields)._targetQuad;
+    if (*ppGVar8 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
+    ((*ppGVar8)->fields).TargetQuad = (this->fields)._targetQuad;
     func_?();
-    pGVar5 = (this->fields)._controllerData;
-    if (pGVar5 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
-    (pGVar5->fields).BorderQuad = (this->fields)._borderQuad;
+    if (*ppGVar8 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
+    ((*ppGVar8)->fields).BorderQuad = (this->fields)._borderQuad;
     func_?();
-    pGVar5 = (this->fields)._controllerData;
-    if (pGVar5 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
-    (pGVar5->fields).TopBox = (this->fields)._topBox;
+    if (*ppGVar8 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
+    ((*ppGVar8)->fields).TopBox = (this->fields)._topBox;
     func_?();
-    pGVar5 = (this->fields)._controllerData;
-    if (pGVar5 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
-    (pGVar5->fields).RightBox = (this->fields)._rightBox;
+    if (*ppGVar8 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
+    ((*ppGVar8)->fields).RightBox = (this->fields)._rightBox;
     func_?();
-    pGVar5 = (this->fields)._controllerData;
-    if (pGVar5 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
-    (pGVar5->fields).BottomBox = (this->fields)._bottomBox;
+    if (*ppGVar8 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
+    ((*ppGVar8)->fields).BottomBox = (this->fields)._bottomBox;
     func_?();
-    pGVar5 = (this->fields)._controllerData;
-    if (pGVar5 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
-    (pGVar5->fields).LeftBox = (this->fields)._leftBox;
+    if (*ppGVar8 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
+    ((*ppGVar8)->fields).LeftBox = (this->fields)._leftBox;
     func_?();
-    pGVar5 = (this->fields)._controllerData;
-    if (pGVar5 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
-    (pGVar5->fields).TopLeftBox = (this->fields)._topLeftBox;
+    if (*ppGVar8 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
+    ((*ppGVar8)->fields).TopLeftBox = (this->fields)._topLeftBox;
     func_?();
-    pGVar5 = (this->fields)._controllerData;
-    if (pGVar5 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
-    (pGVar5->fields).TopRightBox = (this->fields)._topRightBox;
+    if (*ppGVar8 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
+    ((*ppGVar8)->fields).TopRightBox = (this->fields)._topRightBox;
     func_?();
-    pGVar5 = (this->fields)._controllerData;
-    if (pGVar5 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
-    (pGVar5->fields).BottomRightBox = (this->fields)._bottomRightBox;
+    if (*ppGVar8 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
+    ((*ppGVar8)->fields).BottomRightBox = (this->fields)._bottomRightBox;
     func_?();
-    pGVar5 = (this->fields)._controllerData;
-    if (pGVar5 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
-    (pGVar5->fields).BottomLeftBox = (this->fields)._bottomLeftBox;
+    if (*ppGVar8 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
+    ((*ppGVar8)->fields).BottomLeftBox = (this->fields)._bottomLeftBox;
     func_?();
-    pGVar5 = (this->fields)._controllerData;
-    if (pGVar5 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
-    (pGVar5->fields).BorderQuadIndex = (this->fields)._borderQuadIndex;
-    pGVar5 = (this->fields)._controllerData;
-    if (pGVar5 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
-    (pGVar5->fields).TopBoxIndex = (this->fields)._topBoxIndex;
-    pGVar5 = (this->fields)._controllerData;
-    if (pGVar5 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
-    (pGVar5->fields).RightBoxIndex = (this->fields)._rightBoxIndex;
-    pGVar5 = (this->fields)._controllerData;
-    if (pGVar5 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
-    (pGVar5->fields).BottomBoxIndex = (this->fields)._bottomBoxIndex;
-    pGVar5 = (this->fields)._controllerData;
-    if (pGVar5 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
-    (pGVar5->fields).LeftBoxIndex = (this->fields)._leftBoxIndex;
-    pGVar5 = (this->fields)._controllerData;
-    if (pGVar5 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
-    (pGVar5->fields).TopLeftBoxIndex = (this->fields)._topLeftBoxIndex;
-    pGVar5 = (this->fields)._controllerData;
-    if (pGVar5 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
-    (pGVar5->fields).TopRightBoxIndex = (this->fields)._topRightBoxIndex;
-    pGVar5 = (this->fields)._controllerData;
-    if (pGVar5 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
-    (pGVar5->fields).BottomRightBoxIndex = (this->fields)._bottomRightBoxIndex;
-    pGVar5 = (this->fields)._controllerData;
-    if (pGVar5 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
-    (pGVar5->fields).BottomLeftBoxIndex = (this->fields)._bottomLeftBoxIndex;
-    pIVar6 = (this->fields)._controllers;
-    pOVar14 = (Object__Class *)(this->fields)._controllerData;
+    if (*ppGVar8 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
+    ((*ppGVar8)->fields).BorderQuadIndex = (this->fields)._borderQuadIndex;
+    if (*ppGVar8 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
+    ((*ppGVar8)->fields).TopBoxIndex = (this->fields)._topBoxIndex;
+    if (*ppGVar8 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
+    ((*ppGVar8)->fields).RightBoxIndex = (this->fields)._rightBoxIndex;
+    if (*ppGVar8 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
+    ((*ppGVar8)->fields).BottomBoxIndex = (this->fields)._bottomBoxIndex;
+    if (*ppGVar8 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
+    ((*ppGVar8)->fields).LeftBoxIndex = (this->fields)._leftBoxIndex;
+    if (*ppGVar8 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
+    ((*ppGVar8)->fields).TopLeftBoxIndex = (this->fields)._topLeftBoxIndex;
+    if (*ppGVar8 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
+    ((*ppGVar8)->fields).TopRightBoxIndex = (this->fields)._topRightBoxIndex;
+    if (*ppGVar8 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
+    ((*ppGVar8)->fields).BottomRightBoxIndex = (this->fields)._bottomRightBoxIndex;
+    if (*ppGVar8 == (GizmoQuad3DBorderControllerData *)0x0) goto code_?;
+    ((*ppGVar8)->fields).BottomLeftBoxIndex = (this->fields)._bottomLeftBoxIndex;
+    pIVar9 = (this->fields)._controllers;
+    pOVar16 = (Object__Class *)*ppGVar8;
     method_02 = TypeInfo__RTG__GizmoThinQuad3DBorderController;
-    pOVar15 = (Object *)func_?();
+    pOVar17 = (Object *)func_?();
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar15,ExceptionArgument__Enum_obj,(MethodInfo *)method_02);
-    pOVar15[1].klass = pOVar14;
+              (pOVar17,ExceptionArgument__Enum_obj,(MethodInfo *)method_02);
+    pOVar17[1].klass = pOVar16;
     func_?();
-    if (pIVar6 == (IGizmoQuad3DBorderController__Array *)0x0) goto code_?;
-    iVar16 = func_?();
-    if (iVar16 == 0) goto code_?;
-    if (pIVar6->max_length == 0) goto code_?;
-    pIVar6->vector[0] = (IGizmoQuad3DBorderController *)pOVar15;
+    if (pIVar9 == (IGizmoQuad3DBorderController__Array *)0x0) goto code_?;
+    iVar18 = func_?();
+    if (iVar18 == 0) goto code_?;
+    if (pIVar9->max_length == 0) goto code_?;
+    pIVar9->vector[0] = (IGizmoQuad3DBorderController *)pOVar17;
     func_?();
-    pIVar6 = (this->fields)._controllers;
-    pOVar14 = (Object__Class *)(this->fields)._controllerData;
+    pIVar9 = (this->fields)._controllers;
+    pOVar16 = (Object__Class *)*ppGVar8;
     method_01 = TypeInfo__RTG__GizmoBoxQuad3DBorderController;
-    pOVar15 = (Object *)func_?();
+    pOVar17 = (Object *)func_?();
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar15,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
-    pOVar15[1].klass = pOVar14;
+              (pOVar17,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
+    pOVar17[1].klass = pOVar16;
     func_?();
-    if (pIVar6 == (IGizmoQuad3DBorderController__Array *)0x0) goto code_?;
-    iVar16 = func_?();
-    if (iVar16 != 0) {
-      if (pIVar6->max_length < 2) goto code_?;
-      pIVar6->vector[1] = (IGizmoQuad3DBorderController *)pOVar15;
+    if (pIVar9 == (IGizmoQuad3DBorderController__Array *)0x0) goto code_?;
+    iVar18 = func_?();
+    if (iVar18 != 0) {
+      if (pIVar9->max_length < 2) goto code_?;
+      pIVar9->vector[1] = (IGizmoQuad3DBorderController *)pOVar17;
       func_?();
-      pGVar8 = (this->fields)._targetHandle;
-      if (pGVar8 != (GizmoHandle *)0x0) {
-        this_00 = (pGVar8->fields)._gizmo;
-        value = (GizmoPreUpdateBeginHandler *)func_?();
+      pGVar19 = (this->fields)._targetHandle;
+      if (pGVar19 != (GizmoHandle *)0x0) {
+        this_00 = (pGVar19->fields)._gizmo;
+        value_00 = (GizmoPreUpdateBeginHandler *)func_?();
         UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
         VideoCapture+OnVideoCaptureResourceCreatedCallback::
         VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
-                  ((VideoCapture_OnVideoCaptureResourceCreatedCallback *)value,(Object *)this,
+                  ((VideoCapture_OnVideoCaptureResourceCreatedCallback *)value_00,(Object *)this,
                    MethodInfo__RTG__GizmoQuad3DBorder__OnGizmoPreUpdateBegin_RTG__Gizmo_,
                    (MethodInfo *)0x0);
         if (this_00 != (Gizmo *)0x0) {
-          Gizmo::Gizmo_add_PreUpdateBegin(this_00,value,(MethodInfo *)0x0);
+          Gizmo::Gizmo_add_PreUpdateBegin(this_00,value_00,(MethodInfo *)0x0);
           return;
         }
       }
@@ -1030,8 +976,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  pcVar20 = (code *)swi(3);
+  (*pcVar20)();
   return;
 }
 

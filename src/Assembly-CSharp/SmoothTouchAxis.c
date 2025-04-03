@@ -37,9 +37,9 @@ Vector3 * Assembly-CSharp.dll::SmoothTouchAxis::SmoothTouchAxis_UpdateSmoothVelo
   puStack_3 = &DAT_?;
   uStack_4 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_4;
-  puStack_5 = &stack0xffffff30;
+  puStack_5 = &stack0xffffff40;
   puVar6 = &stack0xfffffffc;
-  puVar7 = &stack0xffffff30;
+  puVar7 = &stack0xffffff40;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__Queue_1_T___Enumerator<UnityEngine::Vector3>__Dispose__
@@ -204,7 +204,7 @@ void Assembly-CSharp.dll::SmoothTouchAxis::SmoothTouchAxis__ctor
             ((ReadOnlyCollectionBuilder_1_System_Object_ *)this_00,
              MethodInfo__System__Collections__Generic__Queue<UnityEngine::Vector3>__Queue__);
   method_00 = (MethodInfo *)&(this->fields).prevVelocities;
-  (this->fields).prevVelocities = this_00;
+  *(Queue_1_UnityEngine_Vector3_ **)method_00 = this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);

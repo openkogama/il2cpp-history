@@ -11,25 +11,26 @@ void Assembly-CSharp.dll::CachedGetRequest::CachedGetRequest_AddToCallback
     cRam_? = '\x01';
   }
   if ((this->fields)._._.isDone == 0) {
-    unaff_EDI = mscorlib.dll::System::Delegate::Delegate_Combine
-                          ((Delegate *)(this->fields)._._.callback,(Delegate *)callbackOther,
+    pCVar1 = &this->fields;
+    unaff_ESI = mscorlib.dll::System::Delegate::Delegate_Combine
+                          ((Delegate *)(pCVar1->_)._.callback,(Delegate *)callbackOther,
                            (MethodInfo *)0x0);
     unaff_EBX = TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>;
-    if (unaff_EDI == (Delegate *)0x0) {
-      (this->fields)._._.callback = (Action_1_UnityEngine_Networking_UnityWebRequest_ *)0x0;
-      func_?(&this->fields,0);
+    if (unaff_ESI == (Delegate *)0x0) {
+      (pCVar1->_)._.callback = (Action_1_UnityEngine_Networking_UnityWebRequest_ *)0x0;
+      func_?(pCVar1,0);
       return;
     }
-    pAVar1 = (Action_1_UnityEngine_Networking_UnityWebRequest_ *)
-             func_?(unaff_EDI,
+    pAVar2 = (Action_1_UnityEngine_Networking_UnityWebRequest_ *)
+             func_?(unaff_ESI,
                              TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-    if (pAVar1 != (Action_1_UnityEngine_Networking_UnityWebRequest_ *)0x0) {
-      (this->fields)._._.callback = pAVar1;
+    if (pAVar2 != (Action_1_UnityEngine_Networking_UnityWebRequest_ *)0x0) {
+      (pCVar1->_)._.callback = pAVar2;
       unaff_EBX = TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>;
-      iVar2 = func_?(unaff_EDI,
+      iVar3 = func_?(unaff_ESI,
                               TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-      if (iVar2 != 0) {
-        func_?(&this->fields,iVar2);
+      if (iVar3 != 0) {
+        func_?(pCVar1,iVar3);
         return;
       }
     }
@@ -43,9 +44,9 @@ void Assembly-CSharp.dll::CachedGetRequest::CachedGetRequest_AddToCallback
     }
     func_?();
   }
-  func_?(unaff_EDI,unaff_EBX);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?(unaff_ESI,unaff_EBX);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -96,11 +97,11 @@ bool Assembly-CSharp.dll::CachedGetRequest::CachedGetRequest_FoundInCache
         }
       }
       else {
-        if ((this->fields)._._.callback == (Action_1_UnityEngine_Networking_UnityWebRequest_ *)0x0)
-        {
+        this = (CachedGetRequest *)(this->fields)._._.callback;
+        if ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)this ==
+            (Action_1_UnityEngine_Networking_UnityWebRequest_ *)0x0) {
           return 1;
         }
-        this = (CachedGetRequest *)(this->fields)._._.callback;
         if (pOStack_1 != (Object *)0x0) {
           if (cRam_? == '\0') {
             pOStack_1 = (Object *)
@@ -116,14 +117,15 @@ bool Assembly-CSharp.dll::CachedGetRequest::CachedGetRequest_FoundInCache
                        method);
             return 1;
           }
+          pOVar4 = pOVar4 + 1;
           this = (CachedGetRequest *)
                  mscorlib.dll::System::Delegate::Delegate_Combine
-                           ((Delegate *)pOVar4[1].klass,(Delegate *)this,(MethodInfo *)0x0);
+                           ((Delegate *)pOVar4->klass,(Delegate *)this,(MethodInfo *)0x0);
           key = TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>;
           if ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)this ==
               (Action_1_UnityEngine_Networking_UnityWebRequest_ *)0x0) {
-            pOVar4[1].klass = (Object__Class *)0x0;
-            func_?(pOVar4 + 1,0);
+            pOVar4->klass = (Object__Class *)0x0;
+            func_?(pOVar4,0);
             return 1;
           }
           pAVar5 = (Action_1_UnityEngine_Networking_UnityWebRequest___Class *)
@@ -131,13 +133,13 @@ bool Assembly-CSharp.dll::CachedGetRequest::CachedGetRequest_FoundInCache
                                    TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>
                                   );
           if (pAVar5 != (Action_1_UnityEngine_Networking_UnityWebRequest___Class *)0x0) {
-            pOVar4[1].klass = (Object__Class *)pAVar5;
+            pOVar4->klass = (Object__Class *)pAVar5;
             key = TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>;
             iVar6 = func_?(this,
                                     TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>
                                    );
             if (iVar6 != 0) {
-              func_?(pOVar4 + 1,iVar6);
+              func_?(pOVar4,iVar6);
               return 1;
             }
           }

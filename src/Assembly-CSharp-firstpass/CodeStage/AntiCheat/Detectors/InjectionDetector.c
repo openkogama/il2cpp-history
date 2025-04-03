@@ -59,7 +59,6 @@ bool Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::InjectionDe
             if ((int)pIVar8->max_length <= (int)uVar7) {
               return 0;
             }
-            pIVar8 = (this->fields).allowedAssemblies;
             if (pIVar8 == (InjectionDetector_AllowedAssembly__Array *)0x0) break;
             if (pIVar8->max_length <= uVar7) goto code_?;
             iVar5 = *(int *)((int)pIVar8->vector + iVar1 + -0x10);
@@ -387,15 +386,12 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::InjectionDe
   systemTypeInstance =
        mscorlib.dll::System::Type::Type_GetTypeFromHandle
                  ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
-  this_00 = (TextAsset *)
+  this_00 = (Tuple_2_Object_Object_ *)
             UnityEngine.CoreModule.dll::UnityEngine::Resources::Resources_Load_1
                       (StringLiteral_fndid,systemTypeInstance,(MethodInfo *)0x0);
-  if ((this_00 == (TextAsset *)0x0) ||
-     (((TypeInfo__UnityEngine__TextAsset->_1).naturalAligment <=
-       (this_00->klass->_1).naturalAligment &&
-      ((this_00->klass->_1).typeHierarchy
-       [(TypeInfo__UnityEngine__TextAsset->_1).naturalAligment - 1] ==
-       (Il2CppClass *)TypeInfo__UnityEngine__TextAsset)))) {
+  if (this_00 == (Tuple_2_Object_Object_ *)0x0) {
+    this_00 = (Tuple_2_Object_Object_ *)0x0;
+code_?:
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
@@ -409,30 +405,35 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::InjectionDe
     pSVar4 = ::StringLiteral__;
     if (iVar3 == 0) goto code_?;
     if (*(int *)(iVar3 + 0xc) != 0) {
-      *(String **)(iVar3 + 0x10) = ::StringLiteral__;
-      func_?(iVar3 + 0x10,pSVar4);
-      if (this_00 != (TextAsset *)0x0) {
+      *(undefined4 *)(iVar3 + 0x10) = ::StringLiteral__;
+      func_?((undefined4 *)(iVar3 + 0x10),pSVar4);
+      if (this_00 != (Tuple_2_Object_Object_ *)0x0) {
         buffer = UnityEngine.CoreModule.dll::UnityEngine::TextAsset::TextAsset_get_bytes
-                           (this_00,(MethodInfo *)0x0);
+                           ((TextAsset *)this_00,(MethodInfo *)0x0);
         this_01 = (MemoryStream *)func_?(TypeInfo__System__IO__MemoryStream);
         mscorlib.dll::System::IO::MemoryStream::MemoryStream__ctor_2
                   (this_01,buffer,(MethodInfo *)0x0);
-        this_02 = (BinaryReader *)func_?(TypeInfo__System__IO__BinaryReader);
+        pSVar5 = (String__Array *)func_?(TypeInfo__System__IO__BinaryReader);
         mscorlib.dll::System::IO::BinaryReader::BinaryReader__ctor
-                  (this_02,(Stream *)this_01,(MethodInfo *)0x0);
-        if (this_02 != (BinaryReader *)0x0) {
-          iVar3 = (*(code *)(this_02->klass->vtable).ReadInt32.method)
-                            (this_02,(this_02->klass->vtable).ReadUInt32.methodPtr);
-          pIVar5 = (InjectionDetector_AllowedAssembly__Array *)
+                  ((BinaryReader *)pSVar5,(Stream *)this_01,(MethodInfo *)0x0);
+        if (pSVar5 != (String__Array *)0x0) {
+          iVar3 = (*(code *)(((BinaryReader__Class *)pSVar5->klass)->vtable).ReadInt32.method)
+                            (pSVar5,(((BinaryReader__Class *)pSVar5->klass)->vtable).ReadUInt32.
+                                    methodPtr);
+          pIVar6 = (InjectionDetector_AllowedAssembly__Array *)
                    func_?(TypeInfo__CodeStage__AntiCheat__Detectors__InjectionDetector__AllowedAssembly
                                    ,iVar3);
-          (this->fields).allowedAssemblies = pIVar5;
-          func_?(&(this->fields).allowedAssemblies,pIVar5);
-          iStack_6 = 0;
+          ppIVar7 = &(this->fields).allowedAssemblies;
+          *ppIVar7 = pIVar6;
+          func_?(ppIVar7,pIVar6);
+          iStack_8 = 0;
           if (0 < iVar3) {
             do {
-              pSVar7 = (String__Array *)(this_02->klass->vtable).ReadChars.methodPtr;
-              pSVar4 = (String *)(*(code *)(this_02->klass->vtable).ReadString.method)(this_02);
+              pSVar9 = pSVar5;
+              pSVar4 = (String *)
+                       (*(code *)(((BinaryReader__Class *)pSVar5->klass)->vtable).ReadString.method)
+                                 (pSVar5,(((BinaryReader__Class *)pSVar5->klass)->vtable).ReadChars.
+                                         methodPtr);
               if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredString->_1).
                   cctor_finished_or_no_cctor == 0) {
                 func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredString);
@@ -440,75 +441,76 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::InjectionDe
               pSVar4 = ObscuredTypes::ObscuredString::ObscuredString_EncryptDecrypt_1
                                  (pSVar4,StringLiteral_Elina,(MethodInfo *)0x0);
               if ((pSVar4 == (String *)0x0) ||
-                 (pSVar7 = mscorlib.dll::System::String::String_Split_4
-                                     (pSVar4,pSVar7,StringSplitOptions__Enum_RemoveEmptyEntries,
-                                      (MethodInfo *)0x0), pSVar7 == (String__Array *)0x0))
+                 (pSVar9 = mscorlib.dll::System::String::String_Split_4
+                                      (pSVar4,pSVar9,StringSplitOptions__Enum_RemoveEmptyEntries,
+                                       (MethodInfo *)0x0), pSVar9 == (String__Array *)0x0))
               goto code_?;
-              iVar8 = pSVar7->max_length;
-              if ((int)iVar8 < 2) {
+              iVar10 = pSVar9->max_length;
+              if ((int)iVar10 < 2) {
                 (this->fields).signaturesAreNotGenuine = 1;
-                func_?(6,this_02);
+                func_?(6,pSVar5);
                 if (this_01 != (MemoryStream *)0x0) {
                   func_?(0x12,this_01);
                   return;
                 }
                 goto code_?;
               }
-              if (iVar8 == 0) goto code_?;
-              pIVar9 = TypeInfo__System__Int32;
-              item2 = (Object *)func_?(TypeInfo__System__Int32,iVar8 - 1);
-              ppSVar10 = pSVar7->vector;
-              pcVar11 = (char *)0x1;
-              pOVar12 = item2 + 2;
+              if (iVar10 == 0) goto code_?;
+              puVar11 = &UNK_?;
+              item2 = (Object *)func_?(TypeInfo__System__Int32,iVar10 - 1);
+              ppSVar12 = pSVar9->vector;
+              uVar13 = 1;
+              pOVar14 = item2 + 2;
               do {
-                ppSVar10 = ppSVar10 + 1;
-                if ((pIVar9->_0).namespaze <= pcVar11) goto code_?;
-                iVar3 = 0;
-                pSVar4 = *ppSVar10;
-                puVar13 = &UNK_?;
-                pOVar14 = (Object__Class *)
-                         mscorlib.dll::System::Int32::Int32_Parse(pSVar4,(MethodInfo *)0x0);
+                ppSVar12 = ppSVar12 + 1;
+                if (*(uint *)(puVar11 + 0xc) <= uVar13) goto code_?;
+                puVar11 = (undefined *)0x0;
+                pSVar4 = *ppSVar12;
+                item1 = (Object *)&UNK_?;
+                pOVar15 = (Object__Class *)
+                          mscorlib.dll::System::Int32::Int32_Parse(pSVar4,(MethodInfo *)0x0);
                 if (item2 == (Object *)0x0) goto code_?;
-                if (item2[1].monitor <= (MonitorData *)(pcVar11 + -1)) goto code_?;
-                pOVar12->klass = pOVar14;
-                pcVar11 = pcVar11 + 1;
-                pOVar12 = (Object *)&pOVar12->monitor;
-              } while ((int)pcVar11 < iVar3);
-              pIVar5 = (this->fields).allowedAssemblies;
-              this_03 = (Tuple_2_Object_Object_ *)
+                if (item2[1].monitor <= (MonitorData *)(uVar13 - 1)) goto code_?;
+                pOVar14->klass = pOVar15;
+                uVar13 = uVar13 + 1;
+                pOVar14 = (Object *)&pOVar14->monitor;
+              } while ((int)uVar13 < (int)pSVar4);
+              pIVar6 = (this->fields).allowedAssemblies;
+              this_00 = (Tuple_2_Object_Object_ *)
                         func_?(
                                        TypeInfo__CodeStage__AntiCheat__Detectors__InjectionDetector__AllowedAssembly
                                        );
               mscorlib.dll::System::Tuple`2[Object,Object]::Tuple_2_Object_Object___ctor
-                        (this_03,(Object *)pSVar4,item2,(MethodInfo *)0x0);
-              if (pIVar5 == (InjectionDetector_AllowedAssembly__Array *)0x0) goto code_?;
-              if ((this_03 != (Tuple_2_Object_Object_ *)0x0) &&
-                 (iVar3 = func_?(this_03,(pIVar5->klass->_0).element_class), iVar3 == 0))
+                        (this_00,item1,item2,(MethodInfo *)0x0);
+              if (pIVar6 == (InjectionDetector_AllowedAssembly__Array *)0x0) goto code_?;
+              if ((this_00 != (Tuple_2_Object_Object_ *)0x0) &&
+                 (iVar16 = func_?(this_00,(pIVar6->klass->_0).element_class), iVar16 == 0))
               goto code_?;
-              func_?(iStack_6,this_03);
-              iStack_6 = iStack_6 + 1;
-            } while (iStack_6 < (int)puVar13);
+              func_?(iStack_8);
+              iStack_8 = iStack_8 + 1;
+            } while (iStack_8 < iVar3);
           }
-          (*(code *)(this_02->klass->vtable).Close.method)
-                    (this_02,(this_02->klass->vtable).Dispose_1.methodPtr);
+          (*(code *)(((BinaryReader__Class *)pSVar5->klass)->vtable).Close.method)
+                    (pSVar5,(((BinaryReader__Class *)pSVar5->klass)->vtable).Dispose_1.methodPtr);
           if (this_01 != (MemoryStream *)0x0) {
             (*(code *)(this_01->klass->vtable).Close.method)
                       (this_01,(this_01->klass->vtable).Dispose_1.methodPtr);
             UnityEngine.CoreModule.dll::UnityEngine::Resources::Resources_UnloadAsset
-                      (unaff_EDI,(MethodInfo *)0x0);
-            pSVar7 = (String__Array *)func_?(TypeInfo__System__String,0x100);
-            (this->fields).hexTable = pSVar7;
-            func_?(&(this->fields).hexTable,pSVar7);
+                      ((Object_1 *)this_00,(MethodInfo *)0x0);
+            pSVar5 = (String__Array *)func_?(TypeInfo__System__String,0x100);
+            ppSVar17 = &(this->fields).hexTable;
+            *ppSVar17 = pSVar5;
+            func_?(ppSVar17,pSVar5);
             IStack_1.m_value = 0;
             while( true ) {
-              IVar15.m_value = IStack_1.m_value;
-              pSVar7 = (this->fields).hexTable;
+              IVar18.m_value = IStack_1.m_value;
+              pSVar5 = *ppSVar17;
               pSVar4 = mscorlib.dll::System::Int32::Int32_ToString_1
                                  (&IStack_1,StringLiteral_x2,(MethodInfo *)0x0);
-              if (pSVar7 == (String__Array *)0x0) break;
-              if (pSVar7->max_length <= (uint)IVar15.m_value) goto code_?;
-              pSVar7->vector[IVar15.m_value] = pSVar4;
-              func_?(pSVar7->vector + IVar15.m_value,pSVar4);
+              if (pSVar5 == (String__Array *)0x0) break;
+              if (pSVar5->max_length <= (uint)IVar18.m_value) goto code_?;
+              pSVar5->vector[IVar18.m_value] = pSVar4;
+              func_?(pSVar5->vector + IVar18.m_value,pSVar4);
               IStack_1.m_value = IStack_1.m_value + 1;
               if (0xff < IStack_1.m_value) {
                 return;
@@ -521,17 +523,21 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::InjectionDe
     }
   }
   else {
+    bVar19 = (TypeInfo__UnityEngine__TextAsset->_1).naturalAligment;
+    if ((bVar19 <= (this_00->klass->_1).naturalAligment) &&
+       ((this_00->klass->_1).typeHierarchy[bVar19 - 1] ==
+        (Il2CppClass *)TypeInfo__UnityEngine__TextAsset)) goto code_?;
     func_?(this_00,TypeInfo__UnityEngine__TextAsset);
 code_?:
-    uVar16 = func_?(0);
-    func_?(uVar16);
+    uVar20 = func_?(0);
+    func_?(uVar20);
   }
 code_?:
   func_?();
 code_?:
   func_?();
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  pcVar21 = (code *)swi(3);
+  (*pcVar21)();
   return;
 }
 
@@ -542,13 +548,13 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::InjectionDe
      InjectionDetector_OnCheatingDetected(InjectionDetector *this,String *cause,MethodInfo *method)
 
 {
-  if ((this->fields).detectionActionWithArgument != (UnityAction_1_System_String_ *)0x0) {
-    pUVar1 = (this->fields).detectionActionWithArgument;
+  pUVar1 = (this->fields).detectionActionWithArgument;
+  if (pUVar1 != (UnityAction_1_System_String_ *)0x0) {
     (*(pUVar1->fields)._._.invoke_impl)
               ((pUVar1->fields)._._.method_code,cause,(pUVar1->fields)._._.method);
   }
-  if ((this->fields)._.detectionAction != (UnityAction *)0x0) {
-    pUVar2 = (this->fields)._.detectionAction;
+  pUVar2 = (this->fields)._.detectionAction;
+  if (pUVar2 != (UnityAction *)0x0) {
     (*(pUVar2->fields)._._.invoke_impl)
               ((pUVar2->fields)._._.method_code,(pUVar2->fields)._._.method);
   }
@@ -763,23 +769,20 @@ String * Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::Injecti
   }
   uVar1 = 0;
   pSVar2 = ::StringLiteral__;
-  if (bytes == (Byte__Array *)0x0) {
-code_?:
-    func_?();
-  }
-  else {
-    while (uVar1 < bytes->max_length) {
-      pSVar3 = (this->fields).hexTable;
-      if (pSVar3 == (String__Array *)0x0) goto code_?;
-      if (pSVar3->max_length <= (uint)bytes->vector[uVar1]) break;
-      pSVar2 = mscorlib.dll::System::String::String_Concat_3
-                         (pSVar2,pSVar3->vector[bytes->vector[uVar1]],(MethodInfo *)0x0);
-      uVar1 = uVar1 + 1;
-      if (7 < (int)uVar1) {
-        return pSVar2;
-      }
+  while (bytes != (Byte__Array *)0x0) {
+    if (bytes->max_length <= uVar1) goto code_?;
+    pSVar3 = (this->fields).hexTable;
+    if (pSVar3 == (String__Array *)0x0) break;
+    if (pSVar3->max_length <= (uint)bytes->vector[uVar1]) goto code_?;
+    pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                       (pSVar2,pSVar3->vector[bytes->vector[uVar1]],(MethodInfo *)0x0);
+    uVar1 = uVar1 + 1;
+    if (7 < (int)uVar1) {
+      return pSVar2;
     }
   }
+  func_?();
+code_?:
   func_?();
   pcVar4 = (code *)swi(3);
   pSVar2 = (String *)(*pcVar4)();
@@ -952,10 +955,12 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::InjectionDe
     return;
   }
 code_?:
-  (this->fields)._.detectionAction = callback;
-  func_?(&(this->fields)._.detectionAction,callback);
-  (this->fields).detectionActionWithArgument = callbackWithArgument;
-  func_?(&(this->fields).detectionActionWithArgument,callbackWithArgument);
+  ppUVar2 = &(this->fields)._.detectionAction;
+  *ppUVar2 = callback;
+  func_?(ppUVar2,callback);
+  ppUVar3 = &(this->fields).detectionActionWithArgument;
+  *ppUVar3 = callbackWithArgument;
+  func_?(ppUVar3,callbackWithArgument);
   (this->fields)._.isRunning = 1;
   (this->fields)._.started = 1;
   if ((this->fields).allowedAssemblies == (InjectionDetector_AllowedAssembly__Array *)0x0) {
@@ -970,54 +975,54 @@ code_?:
     cRam_? = '\x01';
   }
   func_?(&stack0xfffffff8,0);
-  pAVar2 = mscorlib.dll::System::AppDomain::AppDomain_get_CurrentDomain((MethodInfo *)0x0);
-  if (pAVar2 != (AppDomain *)0x0) {
-    pAVar3 = mscorlib.dll::System::AppDomain::AppDomain_GetAssemblies_1(pAVar2,(MethodInfo *)0x0);
-    if (pAVar3 != (Assembly__Array *)0x0) {
-      if (pAVar3->max_length == 0) {
+  pAVar4 = mscorlib.dll::System::AppDomain::AppDomain_get_CurrentDomain((MethodInfo *)0x0);
+  if (pAVar4 != (AppDomain *)0x0) {
+    pAVar5 = mscorlib.dll::System::AppDomain::AppDomain_GetAssemblies_1(pAVar4,(MethodInfo *)0x0);
+    if (pAVar5 != (Assembly__Array *)0x0) {
+      if (pAVar5->max_length == 0) {
         cause = (String *)&UNK_?;
         func_?();
 code_?:
         InjectionDetector_OnCheatingDetected(this,cause,(MethodInfo *)0x0);
         return;
       }
-      uVar4 = 0;
-      ppAVar5 = pAVar3->vector;
+      uVar6 = 0;
+      ppAVar7 = pAVar5->vector;
       while( true ) {
-        if ((int)pAVar3->max_length <= (int)uVar4) break;
-        if (pAVar3->max_length <= uVar4) {
+        if ((int)pAVar5->max_length <= (int)uVar6) break;
+        if (pAVar5->max_length <= uVar6) {
           func_?();
           goto code_?;
         }
-        puVar6 = &UNK_?;
-        bVar1 = InjectionDetector_AssemblyAllowed(this,*ppAVar5,(MethodInfo *)0x0);
+        puVar8 = &UNK_?;
+        bVar1 = InjectionDetector_AssemblyAllowed(this,*ppAVar7,(MethodInfo *)0x0);
         if (bVar1 == 0) {
-          if (puVar6 == (undefined *)0x0) goto code_?;
+          if (puVar8 == (undefined *)0x0) goto code_?;
           cause = (String *)func_?();
           func_?();
           goto code_?;
         }
-        uVar4 = uVar4 + 1;
-        ppAVar5 = ppAVar5 + 1;
+        uVar6 = uVar6 + 1;
+        ppAVar7 = ppAVar7 + 1;
       }
-      pAVar2 = mscorlib.dll::System::AppDomain::AppDomain_get_CurrentDomain((MethodInfo *)0x0);
+      pAVar4 = mscorlib.dll::System::AppDomain::AppDomain_get_CurrentDomain((MethodInfo *)0x0);
       this_00 = (UnityAction_2_System_Object_System_Object_ *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
                 (this_00,(Object *)this,
                  MethodInfo__CodeStage__AntiCheat__Detectors__InjectionDetector__OnNewAssemblyLoaded_System__Object__System__AssemblyLoadEventArgs_
                  ,(MethodInfo *)0x0);
-      if (pAVar2 != (AppDomain *)0x0) {
+      if (pAVar4 != (AppDomain *)0x0) {
         mscorlib.dll::System::AppDomain::AppDomain_add_AssemblyLoad
-                  (pAVar2,(AssemblyLoadEventHandler *)this_00,(MethodInfo *)0x0);
+                  (pAVar4,(AssemblyLoadEventHandler *)this_00,(MethodInfo *)0x0);
         return;
       }
     }
   }
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -1134,10 +1139,12 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::InjectionDe
     }
     mscorlib.dll::System::AppDomain::AppDomain_remove_AssemblyLoad
               (this_00,(AssemblyLoadEventHandler *)this_01,(MethodInfo *)0x0);
-    (this->fields)._.detectionAction = (UnityAction *)0x0;
-    func_?(&(this->fields)._.detectionAction);
-    (this->fields).detectionActionWithArgument = (UnityAction_1_System_String_ *)0x0;
-    func_?(&(this->fields).detectionActionWithArgument,0);
+    ppUVar2 = &(this->fields)._.detectionAction;
+    *ppUVar2 = (UnityAction *)0x0;
+    func_?(ppUVar2);
+    ppUVar3 = &(this->fields).detectionActionWithArgument;
+    *ppUVar3 = (UnityAction_1_System_String_ *)0x0;
+    func_?(ppUVar3,0);
     (this->fields)._.isRunning = 0;
     (this->fields)._.started = 0;
   }

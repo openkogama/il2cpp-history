@@ -26,10 +26,6 @@ void Assembly-CSharp.dll::Theme::Theme_Activate(Theme *this,MethodInfo *method)
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  LStack_6._list = (List_1_System_Object_ *)0x0;
-  LStack_6._index = 0;
-  LStack_6._version = 0;
-  LStack_6._current = (Object *)0x0;
   if ((this->fields).overrideSkyboxManager != 0) {
     this_01 = MVGameControllerBase::MVGameControllerBase_get_SkyboxManager((MethodInfo *)0x0);
     if (this_01 == (SkyboxManager *)0x0) goto code_?;
@@ -39,38 +35,38 @@ void Assembly-CSharp.dll::Theme::Theme_Activate(Theme *this,MethodInfo *method)
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
             (this->fields).components;
   if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
              RegexCharClass+SingleRange]::
              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       (&LStack_8,this_00,
+                       (&LStack_7,this_00,
                         MethodInfo__System__Collections__Generic__List<ThemeComponent>__GetEnumerator__
                        );
-    LStack_6._list = (List_1_System_Object_ *)pLVar7->_list;
-    LStack_6._index = pLVar7->_index;
-    LStack_6._version = pLVar7->_version;
-    LStack_6._current = *(Object **)&pLVar7->_current;
-    LStack_8._version = 0;
+    LStack_8._list = (List_1_System_Object_ *)pLVar6->_list;
+    LStack_8._index = pLVar6->_index;
+    LStack_8._version = pLVar6->_version;
+    LStack_8._current = *(Object **)&pLVar6->_current;
+    LStack_7._version = 0;
     uStack_1 = 1;
-    LStack_8._current = (RegexCharClass_SingleRange)&LStack_6;
+    LStack_7._current = (RegexCharClass_SingleRange)&LStack_8;
     while( true ) {
       bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
               List_1_T_Enumerator_System_Object__MoveNext
-                        (&LStack_6,
+                        (&LStack_8,
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeComponent>__MoveNext__
                         );
       if (bVar9 == 0) {
         uStack_1 = 0xffffffff;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&LStack_6,
+                  ((Object *)&LStack_8,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeComponent>__Dispose__
                    ,unaff_EDI);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) break;
-      (**(code **)(*(int *)LStack_6._current + 0xe0))
-                (LStack_6._current,*(undefined4 *)(*(int *)LStack_6._current + 0xe4));
+      if ((RegexCharClass_SingleRange)LStack_8._current == (RegexCharClass_SingleRange)0x0) break;
+      (**(code **)(*(int *)LStack_8._current + 0xe0))
+                (LStack_8._current,*(undefined4 *)(*(int *)LStack_8._current + 0xe4));
     }
   }
 code_?:
@@ -132,10 +128,6 @@ void Assembly-CSharp.dll::Theme::Theme_Deactivate(Theme *this,MethodInfo *method
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  LStack_6._list = (List_1_System_Object_ *)0x0;
-  LStack_6._index = 0;
-  LStack_6._version = 0;
-  LStack_6._current = (Object *)0x0;
   if ((this->fields).overrideSkyboxManager != 0) {
     this_01 = MVGameControllerBase::MVGameControllerBase_get_SkyboxManager((MethodInfo *)0x0);
     if (this_01 == (SkyboxManager *)0x0) goto code_?;
@@ -146,38 +138,38 @@ void Assembly-CSharp.dll::Theme::Theme_Deactivate(Theme *this,MethodInfo *method
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
             (this->fields).components;
   if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
              RegexCharClass+SingleRange]::
              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       (&LStack_8,this_00,
+                       (&LStack_7,this_00,
                         MethodInfo__System__Collections__Generic__List<ThemeComponent>__GetEnumerator__
                        );
-    LStack_6._list = (List_1_System_Object_ *)pLVar7->_list;
-    LStack_6._index = pLVar7->_index;
-    LStack_6._version = pLVar7->_version;
-    LStack_6._current = *(Object **)&pLVar7->_current;
-    LStack_8._version = 0;
+    LStack_8._list = (List_1_System_Object_ *)pLVar6->_list;
+    LStack_8._index = pLVar6->_index;
+    LStack_8._version = pLVar6->_version;
+    LStack_8._current = *(Object **)&pLVar6->_current;
+    LStack_7._version = 0;
     uStack_1 = 1;
-    LStack_8._current = (RegexCharClass_SingleRange)&LStack_6;
+    LStack_7._current = (RegexCharClass_SingleRange)&LStack_8;
     while( true ) {
       bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
               List_1_T_Enumerator_System_Object__MoveNext
-                        (&LStack_6,
+                        (&LStack_8,
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeComponent>__MoveNext__
                         );
       if (bVar9 == 0) {
         uStack_1 = 0xffffffff;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&LStack_6,
+                  ((Object *)&LStack_8,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ThemeComponent>__Dispose__
                    ,unaff_EDI);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) break;
-      (**(code **)(*(int *)LStack_6._current + 0xe8))
-                (LStack_6._current,*(undefined4 *)(*(int *)LStack_6._current + 0xec));
+      if ((RegexCharClass_SingleRange)LStack_8._current == (RegexCharClass_SingleRange)0x0) break;
+      (**(code **)(*(int *)LStack_8._current + 0xe8))
+                (LStack_8._current,*(undefined4 *)(*(int *)LStack_8._current + 0xec));
     }
   }
 code_?:
@@ -197,22 +189,22 @@ void Assembly-CSharp.dll::Theme::Theme_Initialize(Theme *this,int32_t woid,Metho
     func_?(&TypeInfo__ThemeSettings__SettingsSerialized);
     cRam_? = '\x01';
   }
-  this_01 = (SettingsSerialized *)func_?(TypeInfo__ThemeSettings__SettingsSerialized);
-  ThemeSettings::SettingsSerialized::SettingsSerialized__ctor(this_01,woid,(MethodInfo *)0x0);
-  (this->fields)._Settings_k__BackingField = (SettingsWrapper *)this_01;
-  func_?(&(this->fields)._Settings_k__BackingField,this_01);
+  this_00 = (SettingsSerialized *)func_?(TypeInfo__ThemeSettings__SettingsSerialized);
+  ThemeSettings::SettingsSerialized::SettingsSerialized__ctor(this_00,woid,(MethodInfo *)0x0);
+  ppSVar1 = &(this->fields)._Settings_k__BackingField;
+  *ppSVar1 = (SettingsWrapper *)this_00;
+  func_?(ppSVar1,this_00);
   (*(code *)(this->klass->vtable).__unknown_4.method)
             (this,(this->klass->vtable).get_Controllers.methodPtr);
-  this_00 = (this->fields)._Settings_k__BackingField;
-  if (this_00 != (SettingsWrapper *)0x0) {
-    ThemeSettings::SettingsWrapper::SettingsWrapper_Initialize(this_00,(MethodInfo *)0x0);
+  if (*ppSVar1 != (SettingsWrapper *)0x0) {
+    ThemeSettings::SettingsWrapper::SettingsWrapper_Initialize(*ppSVar1,(MethodInfo *)0x0);
     (*(code *)(this->klass->vtable).__unknown_3.method)
               (this,(this->klass->vtable).__unknown_4.methodPtr);
     return;
   }
   func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -226,22 +218,22 @@ void Assembly-CSharp.dll::Theme::Theme_InitializeForPreview(Theme *this,MethodIn
     func_?(&TypeInfo__ThemeSettings__SettingsPreview);
     cRam_? = '\x01';
   }
-  this_01 = (SettingsPreview *)func_?(TypeInfo__ThemeSettings__SettingsPreview);
-  ThemeSettings::SettingsPreview::SettingsPreview__ctor(this_01,(MethodInfo *)0x0);
-  (this->fields)._Settings_k__BackingField = (SettingsWrapper *)this_01;
-  func_?(&(this->fields)._Settings_k__BackingField,this_01);
+  this_00 = (SettingsPreview *)func_?(TypeInfo__ThemeSettings__SettingsPreview);
+  ThemeSettings::SettingsPreview::SettingsPreview__ctor(this_00,(MethodInfo *)0x0);
+  ppSVar1 = &(this->fields)._Settings_k__BackingField;
+  *ppSVar1 = (SettingsWrapper *)this_00;
+  func_?(ppSVar1,this_00);
   (*(code *)(this->klass->vtable).__unknown_4.method)
             (this,(this->klass->vtable).get_Controllers.methodPtr);
-  this_00 = (this->fields)._Settings_k__BackingField;
-  if (this_00 != (SettingsWrapper *)0x0) {
-    ThemeSettings::SettingsWrapper::SettingsWrapper_Initialize(this_00,(MethodInfo *)0x0);
+  if (*ppSVar1 != (SettingsWrapper *)0x0) {
+    ThemeSettings::SettingsWrapper::SettingsWrapper_Initialize(*ppSVar1,(MethodInfo *)0x0);
     (*(code *)(this->klass->vtable).__unknown_3.method)
               (this,(this->klass->vtable).__unknown_4.methodPtr);
     return;
   }
   func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

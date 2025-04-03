@@ -36,6 +36,7 @@ void Assembly-CSharp.dll::AccessoryUnEquip::
   else {
     method = (MethodInfo *)TypeInfo__System__Action<bool>;
     pAVar2 = (pMVar1->fields).OnSetAvatarAccessoryResponse;
+    ppAVar3 = &(pMVar1->fields).OnSetAvatarAccessoryResponse;
     _setSlotSuccess = &UNK_?;
     this_00 = (UnityAction_1_System_Int32Enum_ *)func_?();
     _setSlotSuccess = (undefined *)0x0;
@@ -51,36 +52,36 @@ void Assembly-CSharp.dll::AccessoryUnEquip::
                         ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
     unaff_EDI = TypeInfo__System__Action<bool>;
     if (message == (Delegate *)0x0) {
-      (pMVar1->fields).OnSetAvatarAccessoryResponse = (Action_1_Boolean_ *)0x0;
-      pAStack3 = (Action_1_Boolean___Class *)0x0;
+      *ppAVar3 = (Action_1_Boolean_ *)0x0;
+      pAStack4 = (Action_1_Boolean___Class *)0x0;
 code_?:
-      pDStack4 = (Delegate *)&(pMVar1->fields).OnSetAvatarAccessoryResponse;
+      pDStack5 = (Delegate *)ppAVar3;
       func_?();
-      if ((this_00->fields)._._.method != (void *)0x0) {
-        pvVar5 = (this_00->fields)._._.method;
-        uStack6 = *(undefined4 *)((int)pvVar5 + 0x14);
-        uStack7 = *(undefined4 *)((int)pvVar5 + 0x20);
-        (**(code **)((int)pvVar5 + 0xc))();
+      pvVar6 = (this_00->fields)._._.method;
+      if (pvVar6 != (void *)0x0) {
+        uStack7 = *(undefined4 *)((int)pvVar6 + 0x14);
+        uStack8 = *(undefined4 *)((int)pvVar6 + 0x20);
+        (**(code **)((int)pvVar6 + 0xc))();
       }
       return;
     }
-    pAStack3 = TypeInfo__System__Action<bool>;
-    pDStack4 = message;
+    pAStack4 = TypeInfo__System__Action<bool>;
+    pDStack5 = message;
     pAVar2 = (Action_1_Boolean_ *)func_?();
     if (pAVar2 != (Action_1_Boolean_ *)0x0) {
-      (pMVar1->fields).OnSetAvatarAccessoryResponse = pAVar2;
+      *ppAVar3 = pAVar2;
       unaff_EDI = TypeInfo__System__Action<bool>;
-      pAStack3 = TypeInfo__System__Action<bool>;
-      pDStack4 = message;
-      pAStack3 = (Action_1_Boolean___Class *)func_?();
-      if (pAStack3 != (Action_1_Boolean___Class *)0x0) goto code_?;
+      pAStack4 = TypeInfo__System__Action<bool>;
+      pDStack5 = message;
+      pAStack4 = (Action_1_Boolean___Class *)func_?();
+      if (pAStack4 != (Action_1_Boolean___Class *)0x0) goto code_?;
     }
   }
-  pDStack4 = message;
-  pAStack3 = unaff_EDI;
+  pDStack5 = message;
+  pAStack4 = unaff_EDI;
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -99,39 +100,43 @@ void Assembly-CSharp.dll::AccessoryUnEquip::AccessoryUnEquip_Initialize
     func_?(&TypeInfo__System__Action<bool>);
     cRam_? = '\x01';
   }
-  (this->fields).AvatarBody = body;
-  func_?(&(this->fields).AvatarBody,body);
+  ppMVar1 = &(this->fields).AvatarBody;
+  *ppMVar1 = body;
+  func_?(ppMVar1,body);
   (this->fields).avatarAccessorySlot = avatarAccessorySlot;
-  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (pMVar1 == (MVNetworkGame *)0x0) {
+  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if (pMVar2 == (MVNetworkGame *)0x0) {
     func_?();
   }
   else {
-    pAVar2 = (pMVar1->fields).OnSetAvatarAccessoryResponse;
+    pAVar3 = (pMVar2->fields).OnSetAvatarAccessoryResponse;
+    ppAVar4 = &(pMVar2->fields).OnSetAvatarAccessoryResponse;
     this_00 = (UnityAction_1_System_Int32Enum_ *)func_?(TypeInfo__System__Action<bool>);
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
     UnityAction_1_System_Int32Enum___ctor
               (this_00,(Object *)this,
                MethodInfo__AccessoryUnEquip__Game_OnSetAvatarAccessorySlotResponseUnequipHandler_bool_
                ,(MethodInfo *)0x0);
-    pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pDVar3 == (Delegate *)0x0) {
-      (pMVar1->fields).OnSetAvatarAccessoryResponse = (Action_1_Boolean_ *)0x0;
-code_?:
+    pDVar5 = mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pAVar3,(Delegate *)this_00,(MethodInfo *)0x0);
+    if (pDVar5 == (Delegate *)0x0) {
+      *ppAVar4 = (Action_1_Boolean_ *)0x0;
       func_?();
       return;
     }
-    pAVar2 = (Action_1_Boolean_ *)func_?();
-    if (pAVar2 != (Action_1_Boolean_ *)0x0) {
-      (pMVar1->fields).OnSetAvatarAccessoryResponse = pAVar2;
-      iVar4 = func_?();
-      if (iVar4 != 0) goto code_?;
+    pAVar3 = (Action_1_Boolean_ *)func_?();
+    if (pAVar3 != (Action_1_Boolean_ *)0x0) {
+      *ppAVar4 = pAVar3;
+      iVar6 = func_?();
+      if (iVar6 != 0) {
+        func_?();
+        return;
+      }
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -149,44 +154,49 @@ void Assembly-CSharp.dll::AccessoryUnEquip::AccessoryUnEquip_OnDestroy
     func_?(&TypeInfo__System__Action<bool>);
     cRam_? = '\x01';
   }
-  (this->fields).OnUnequipFinished = (UnityAction *)0x0;
-  func_?(&(this->fields).OnUnequipFinished,0);
-  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (pMVar1 == (MVNetworkGame *)0x0) {
+  ppUVar1 = &(this->fields).OnUnequipFinished;
+  *ppUVar1 = (UnityAction *)0x0;
+  func_?(ppUVar1,0);
+  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if (pMVar2 == (MVNetworkGame *)0x0) {
     func_?();
   }
   else {
-    pAVar2 = (pMVar1->fields).OnSetAvatarAccessoryResponse;
+    pAVar3 = (pMVar2->fields).OnSetAvatarAccessoryResponse;
+    ppAVar4 = &(pMVar2->fields).OnSetAvatarAccessoryResponse;
     this_00 = (UnityAction_1_System_Int32Enum_ *)func_?(TypeInfo__System__Action<bool>);
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
     UnityAction_1_System_Int32Enum___ctor
               (this_00,(Object *)this,
                MethodInfo__AccessoryUnEquip__Game_OnSetAvatarAccessorySlotResponseUnequipHandler_bool_
                ,(MethodInfo *)0x0);
-    pDVar3 = mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
+    pAStack5 =
+         (Action_1_Boolean___Class *)
+         mscorlib.dll::System::Delegate::Delegate_Remove
+                   ((Delegate *)pAVar3,(Delegate *)this_00,(MethodInfo *)0x0);
     unaff_EDI = TypeInfo__System__Action<bool>;
-    if (pDVar3 == (Delegate *)0x0) {
-      (pMVar1->fields).OnSetAvatarAccessoryResponse = (Action_1_Boolean_ *)0x0;
-      pAStack4 = (Action_1_Boolean___Class *)0x0;
-code_?:
+    if (pAStack5 == (Action_1_Boolean___Class *)0x0) {
+      *ppAVar4 = (Action_1_Boolean_ *)0x0;
       func_?();
       return;
     }
-    pAStack4 = TypeInfo__System__Action<bool>;
-    pAVar2 = (Action_1_Boolean_ *)func_?();
-    if (pAVar2 != (Action_1_Boolean_ *)0x0) {
-      (pMVar1->fields).OnSetAvatarAccessoryResponse = pAVar2;
+    pAStack5 = TypeInfo__System__Action<bool>;
+    pAVar3 = (Action_1_Boolean_ *)func_?();
+    if (pAVar3 != (Action_1_Boolean_ *)0x0) {
+      *ppAVar4 = pAVar3;
       unaff_EDI = TypeInfo__System__Action<bool>;
-      pAStack4 = TypeInfo__System__Action<bool>;
-      pAStack4 = (Action_1_Boolean___Class *)func_?();
-      if (pAStack4 != (Action_1_Boolean___Class *)0x0) goto code_?;
+      pAStack5 = TypeInfo__System__Action<bool>;
+      pAStack5 = (Action_1_Boolean___Class *)func_?();
+      if (pAStack5 != (Action_1_Boolean___Class *)0x0) {
+        func_?();
+        return;
+      }
     }
   }
-  pAStack4 = unaff_EDI;
+  pAStack5 = unaff_EDI;
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -219,15 +229,16 @@ void Assembly-CSharp.dll::AccessoryUnEquip::AccessoryUnEquip_OnUnequipPop
   }
   else {
     pAVar2 = (pMVar1->fields).OnSetAvatarAccessoryResponse;
+    ppAVar3 = &(pMVar1->fields).OnSetAvatarAccessoryResponse;
     this_00 = (UnityAction_1_System_Int32Enum_ *)func_?(TypeInfo__System__Action<bool>);
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
     UnityAction_1_System_Int32Enum___ctor
               (this_00,(Object *)this,MethodInfo__AccessoryUnEquip__OnUnequipPop_bool_,
                (MethodInfo *)0x0);
-    pDVar3 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar4 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pDVar3 == (Delegate *)0x0) {
-      (pMVar1->fields).OnSetAvatarAccessoryResponse = (Action_1_Boolean_ *)0x0;
+    if (pDVar4 == (Delegate *)0x0) {
+      *ppAVar3 = (Action_1_Boolean_ *)0x0;
 code_?:
       func_?();
       root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -263,14 +274,14 @@ code_?:
     }
     pAVar2 = (Action_1_Boolean_ *)func_?();
     if (pAVar2 != (Action_1_Boolean_ *)0x0) {
-      (pMVar1->fields).OnSetAvatarAccessoryResponse = pAVar2;
-      iVar4 = func_?();
-      if (iVar4 != 0) goto code_?;
+      *ppAVar3 = pAVar2;
+      iVar5 = func_?();
+      if (iVar5 != 0) goto code_?;
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

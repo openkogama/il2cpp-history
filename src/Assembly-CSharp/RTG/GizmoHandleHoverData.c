@@ -16,28 +16,30 @@ void Assembly-CSharp.dll::RTG::GizmoHandleHoverData::GizmoHandleHoverData__ctor
     iVar1 = func_?(0,TypeInfo__RTG__IGizmoHandle,gizmoHandle);
     (this->fields)._handleId = iVar1;
     pGVar2 = (Gizmo *)func_?(1,TypeInfo__RTG__IGizmoHandle,gizmoHandle);
-    (this->fields)._gizmo = pGVar2;
-    func_?(&(this->fields)._gizmo,pGVar2);
+    ppGVar3 = &(this->fields)._gizmo;
+    *ppGVar3 = pGVar2;
+    func_?(ppGVar3,pGVar2);
     (this->fields)._handleDimension = 2;
-    (this->fields)._hoverRay.m_Origin.x = hoverRay.m_Origin.x;
+    this_00 = &(this->fields)._hoverRay;
+    (this_00->m_Origin).x = hoverRay.m_Origin.x;
     (this->fields)._hoverRay.m_Origin.y = hoverRay.m_Origin.y;
     (this->fields)._hoverRay.m_Origin.z = hoverRay.m_Origin.z;
     (this->fields)._hoverRay.m_Direction.x = hoverRay.m_Direction.x;
     (this->fields)._hoverRay.m_Direction.y = hoverRay.m_Direction.y;
     (this->fields)._hoverRay.m_Direction.z = hoverRay.m_Direction.z;
     (this->fields)._hoverEnter3D = hoverEnter3D;
-    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
-                       (&VStack_4,&(this->fields)._hoverRay,hoverEnter3D,(MethodInfo *)0x0);
-    fVar5 = pVVar3->y;
-    fVar6 = pVVar3->z;
-    (this->fields)._hoverPoint.x = pVVar3->x;
-    (this->fields)._hoverPoint.y = fVar5;
-    (this->fields)._hoverPoint.z = fVar6;
+    pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
+                       (&VStack_5,this_00,hoverEnter3D,(MethodInfo *)0x0);
+    fVar6 = pVVar4->y;
+    fVar7 = pVVar4->z;
+    (this->fields)._hoverPoint.x = pVVar4->x;
+    (this->fields)._hoverPoint.y = fVar6;
+    (this->fields)._hoverPoint.z = fVar7;
     return;
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -59,8 +61,9 @@ void Assembly-CSharp.dll::RTG::GizmoHandleHoverData::GizmoHandleHoverData__ctor_
     iVar1 = func_?(0,TypeInfo__RTG__IGizmoHandle,gizmoHandle);
     (this->fields)._handleId = iVar1;
     pGVar2 = (Gizmo *)func_?(1,TypeInfo__RTG__IGizmoHandle,gizmoHandle);
-    (this->fields)._gizmo = pGVar2;
-    func_?(&(this->fields)._gizmo,pGVar2);
+    ppGVar3 = &(this->fields)._gizmo;
+    *ppGVar3 = pGVar2;
+    func_?(ppGVar3,pGVar2);
     (this->fields)._handleDimension = 1;
     (this->fields)._hoverRay.m_Origin.x = hoverRay.m_Origin.x;
     (this->fields)._hoverRay.m_Origin.y = hoverRay.m_Origin.y;
@@ -74,8 +77,8 @@ void Assembly-CSharp.dll::RTG::GizmoHandleHoverData::GizmoHandleHoverData__ctor_
     return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

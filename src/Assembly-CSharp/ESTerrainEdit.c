@@ -20,29 +20,31 @@ void Assembly-CSharp.dll::ESTerrainEdit::ESTerrainEdit_Enter
     }
     this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
     if (this_01 != (MVWorldObjectClientManager *)0x0) {
-      pMVar2 = (MVCubeModelPrototypeTerrain *)
+      pDVar2 = (Dictionary_2_System_Int32_System_Action_2_Object_WorldObjectDestroyedEventArgs_ *)
                MVWorldObjectClientManager::MVWorldObjectClientManager_GetSingletonWorldObject
                          (this_01,
                           MVCubeModelPrototypeTerrain_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVCubeModelPrototypeTerrain>__
                          );
-      (this->fields).terrain = pMVar2;
-      func_?(&(this->fields).terrain,pMVar2);
+      ppDVar3 = &(this_01->fields).woDestroyedEventSubscribers;
+      *ppDVar3 = pDVar2;
+      func_?();
       this_00 = (e->fields).cubeModelingStateMachine;
       if (this_00 != (CubeModelingStateMachine *)0x0) {
         CubeModelingStateMachine::CubeModelingStateMachine_StartEdit
-                  (this_00,(MVCubeModelBase *)(this->fields).terrain,(IModelingConstraint *)0x0,
-                   (MethodInfo *)0x0);
-        pWVar3 = MVWorldObjectClientManager::
+                  (this_00,(MVCubeModelBase *)*ppDVar3,(IModelingConstraint *)0x0,(MethodInfo *)0x0)
+        ;
+        pMVar4 = (MVWorldObjectClientManager_WorldObjectMapping *)
+                 MVWorldObjectClientManager::
                  MVWorldObjectClientManager_GetWorldObjectClientRefNullRef((MethodInfo *)0x0);
-        (this->fields)._.tintedWo = pWVar3;
-        func_?(&(this->fields)._.tintedWo,pWVar3);
+        (this_01->fields).worldObjectMapping = pMVar4;
+        func_?();
         return;
       }
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -240,9 +242,8 @@ void Assembly-CSharp.dll::ESTerrainEdit::ESTerrainEdit_Exit
       pGVar2 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) &&
      (this_00 = (pGVar2->fields).LaserCommands,
      this_00 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
-    GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::
-    GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_ChangeState
-              (this_00,LaserPointerState__Enum_Idle,(MethodInfo *)0x0);
+    UnityEngine.AudioModule.dll::UnityEngine::AudioClip::
+    AudioClip_InvokePCMSetPositionCallback_Internal((AudioClip *)this_00,0,(MethodInfo *)0x0);
     if (e != (EditorStateMachine *)0x0) {
       iVar3 = MVJetPack+LocalObjectsJetPack::MVJetPack_LocalObjectsJetPack_get_Id
                         ((MVJetPack_LocalObjectsJetPack *)e,(MethodInfo *)0x0);
@@ -327,12 +328,13 @@ bool Assembly-CSharp.dll::ESTerrainEdit::ESTerrainEdit_ResettingTerrain
     if (pMVar3 == (MVWorldObject *)0x0) {
       return 0;
     }
-    if (((pMVar3->fields).type != 0x20) && ((pMVar3->fields).type != 8)) {
+    iVar4 = (pMVar3->fields).type;
+    if ((iVar4 != 0x20) && (iVar4 != 8)) {
       return 0;
     }
     pMVar2 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
     if (pMVar2 != (MVWorldObjectClientManager *)0x0) {
-      in_stack_4 = &UNK_?;
+      in_stack_5 = &UNK_?;
       this_01 = (MVCubeModelPrototypeTerrain *)
                 MVWorldObjectClientManager::MVWorldObjectClientManager_GetSingletonWorldObject
                           (pMVar2,
@@ -355,10 +357,10 @@ bool Assembly-CSharp.dll::ESTerrainEdit::ESTerrainEdit_ResettingTerrain
             return 0;
           }
         }
-        pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (((pMVar5 != (MVNetworkGame *)0x0) &&
-            (pWVar6 = (pMVar5->fields).worldNetwork, pWVar6 != (WorldNetwork *)0x0)) &&
-           (this_00 = (RuntimeEventManager *)(pWVar6->fields)._.runtimeEventManagerNetwork,
+        pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if (((pMVar6 != (MVNetworkGame *)0x0) &&
+            (pWVar7 = (pMVar6->fields).worldNetwork, pWVar7 != (WorldNetwork *)0x0)) &&
+           (this_00 = (RuntimeEventManager *)(pWVar7->fields)._.runtimeEventManagerNetwork,
            this_00 != (RuntimeEventManager *)0x0)) {
           RuntimeEventManager::RuntimeEventManager_ResetTerrain(this_00,(MethodInfo *)0x0);
           this_03 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
@@ -374,8 +376,8 @@ bool Assembly-CSharp.dll::ESTerrainEdit::ESTerrainEdit_ResettingTerrain
   }
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  bVar1 = (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  bVar1 = (*pcVar8)();
   return bVar1;
 }
 

@@ -15,14 +15,15 @@ void Assembly-CSharp.dll::BundleErrorPopUp::BundleErrorPopUp_Initialize
     if (pTVar1 != (Text *)0x0) {
       (*(code *)(pTVar1->klass->vtable).set_text.method)
                 (pTVar1,header,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-      (this->fields).resultCallback = resultCallback;
-      func_?(&(this->fields).resultCallback,resultCallback);
+      ppUVar2 = &(this->fields).resultCallback;
+      *ppUVar2 = resultCallback;
+      func_?(ppUVar2,resultCallback);
       return;
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

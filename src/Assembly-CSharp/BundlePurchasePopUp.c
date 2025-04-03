@@ -33,8 +33,9 @@ void Assembly-CSharp.dll::BundlePurchasePopUp::BundlePurchasePopUp_HandleNotOwne
   if ((pAVar1 != (AccessoryBundleClient *)0x0) &&
      (pAVar2 = (this->fields).timeLimitDisplayer, pAVar2 != (AccessoryTimeLimitDisplayer *)0x0)) {
     pAVar3 = (pAVar1->fields)._.timelimit;
-    (pAVar2->fields).accessoryTimeLimitData = pAVar3;
-    func_?(&(pAVar2->fields).accessoryTimeLimitData,pAVar3);
+    ppAVar4 = &(pAVar2->fields).accessoryTimeLimitData;
+    *ppAVar4 = pAVar3;
+    func_?(ppAVar4,pAVar3);
     pAVar2 = (this->fields).timeLimitDisplayer;
     if (pAVar2 != (AccessoryTimeLimitDisplayer *)0x0) {
       this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -53,8 +54,8 @@ void Assembly-CSharp.dll::BundlePurchasePopUp::BundlePurchasePopUp_HandleNotOwne
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -77,33 +78,36 @@ void Assembly-CSharp.dll::BundlePurchasePopUp::BundlePurchasePopUp_HandlePrices
   }
   if (bundleDataClient != (AccessoryBundleClient *)0x0) {
     IVar1.m_value = (bundleDataClient->fields)._.discount;
+    this_00 = &(this->fields).originalPrice;
     pTVar2 = (this->fields).originalPriceText;
     if ((pTVar2 != (Text *)0x0) &&
        (pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)pTVar2,(MethodInfo *)0x0), pGVar3 != (GameObject *)0x0)) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 (pGVar3,0 < IVar1.m_value,(MethodInfo *)0x0);
-      this_00.m_value = (int32_t)(this->fields).discountTag;
-      if ((GameObject *)this_00.m_value != (GameObject *)0x0) {
-        IVar4.m_value = (int32_t)(0 < IVar1.m_value);
+      pGVar3 = (this->fields).discountTag;
+      if (pGVar3 != (GameObject *)0x0) {
+        str1.m_value = 0;
+        IVar4.m_value._1_3_ = 0;
+        IVar4.m_value._0_1_ = 0 < IVar1.m_value;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  ((GameObject *)this_00.m_value,0 < IVar1.m_value,(MethodInfo *)0x0);
-        if (0 < IVar4.m_value) {
+                  (pGVar3,0 < IVar1.m_value,(MethodInfo *)0x0);
+        if (0 < str1.m_value) {
           pTVar2 = (this->fields).discountTagText;
           pSVar5 = StringLiteral_FREE;
-          if (IVar4.m_value < 100) {
-            pSVar5 = mscorlib.dll::System::Int32::Int32_ToString
-                               ((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0);
-            IVar4.m_value = (int32_t)::StringLiteral__;
+          if (str1.m_value < 100) {
+            str1.m_value = (int32_t)mscorlib.dll::System::Int32::Int32_ToString
+                                              ((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0);
             pSVar5 = mscorlib.dll::System::String::String_Concat_4
-                               (::StringLiteral__,pSVar5,::StringLiteral__,(MethodInfo *)0x0);
+                               (::StringLiteral__,(String *)str1.m_value,::StringLiteral__,
+                                (MethodInfo *)0x0);
           }
           if (pTVar2 == (Text *)0x0) goto code_?;
           (*(code *)(pTVar2->klass->vtable).set_text.method)
                     (pTVar2,pSVar5,
                      (pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-          iVar6 = (this->fields).originalPrice;
-          fVar7 = (float)IVar4.m_value / _UNK_?;
+          iVar6 = *this_00;
+          fVar7 = (float)str1.m_value / _UNK_?;
           if (cRam_? == '\0') {
             func_?();
             cRam_? = '\x01';
@@ -113,10 +117,9 @@ void Assembly-CSharp.dll::BundlePurchasePopUp::BundlePurchasePopUp_HandlePrices
           }
           fVar8 = (float10)func_?((double)((float)iVar6 * fVar7));
           pTVar2 = (this->fields).originalPriceText;
-          this_00.m_value = (this->fields).originalPrice - (int)fVar8;
+          IVar4.m_value = *this_00 - (int)fVar8;
           pSVar5 = mscorlib.dll::System::Int32::Int32_ToString_1
-                             ((Int32 *)&(this->fields).originalPrice,StringLiteral_N0,
-                              (MethodInfo *)0x0);
+                             ((Int32 *)this_00,StringLiteral_N0,(MethodInfo *)0x0);
           if ((pSVar5 == (String *)0x0) ||
              (pSVar5 = mscorlib.dll::System::String::String_Replace_1
                                  (pSVar5,::StringLiteral__,::StringLiteral__,(MethodInfo *)0x0),
@@ -126,8 +129,8 @@ void Assembly-CSharp.dll::BundlePurchasePopUp::BundlePurchasePopUp_HandlePrices
         pGVar3 = (this->fields).freeLabel;
         if (pGVar3 != (GameObject *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar3,(GameObject *)this_00.m_value == (GameObject *)0x0,(MethodInfo *)0x0);
-          if ((GameObject *)this_00.m_value == (GameObject *)0x0) {
+                    (pGVar3,IVar4.m_value == 0,(MethodInfo *)0x0);
+          if (IVar4.m_value == 0) {
             pTVar2 = (this->fields).originalPriceText;
             if ((pTVar2 == (Text *)0x0) ||
                (pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::
@@ -179,32 +182,33 @@ void Assembly-CSharp.dll::BundlePurchasePopUp::BundlePurchasePopUp_Initialize
                MethodInfo *method)
 
 {
-  (this->fields).bundleDataClient = bundleDataClient;
-  func_?(&(this->fields).bundleDataClient,bundleDataClient);
+  ppAVar1 = &(this->fields).bundleDataClient;
+  *ppAVar1 = bundleDataClient;
+  func_?(ppAVar1,bundleDataClient);
+  ppUVar2 = &(this->fields).resultCallback;
   (this->fields).originalPrice = originalPrice;
-  (this->fields).resultCallback = resultCallback;
-  func_?(&(this->fields).resultCallback,resultCallback);
-  pTVar1 = (this->fields).priceText;
-  pSVar2 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&price,(MethodInfo *)0x0);
-  if (pTVar1 != (Text *)0x0) {
-    (*(code *)(pTVar1->klass->vtable).set_text.method)
-              (pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-    BundlePurchasePopUp_HandlePrices(this,(this->fields).bundleDataClient,(MethodInfo *)0x0);
-    pAVar3 = (this->fields).bundleDataClient;
-    if ((pAVar3 != (AccessoryBundleClient *)0x0) &&
-       (pAVar4 = (this->fields).timeLimitDisplayer, pAVar4 != (AccessoryTimeLimitDisplayer *)0x0)) {
-      pAVar5 = (pAVar3->fields)._.timelimit;
-      (pAVar4->fields).accessoryTimeLimitData = pAVar5;
-      func_?(&(pAVar4->fields).accessoryTimeLimitData,pAVar5);
-      pAVar4 = (this->fields).timeLimitDisplayer;
-      if (pAVar4 != (AccessoryTimeLimitDisplayer *)0x0) {
+  *ppUVar2 = resultCallback;
+  func_?(ppUVar2,resultCallback);
+  pTVar3 = (this->fields).priceText;
+  pSVar4 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&price,(MethodInfo *)0x0);
+  if (pTVar3 != (Text *)0x0) {
+    (*(code *)(pTVar3->klass->vtable).set_text.method)
+              (pTVar3,pSVar4,(pTVar3->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+    BundlePurchasePopUp_HandlePrices(this,*ppAVar1,(MethodInfo *)0x0);
+    if ((*ppAVar1 != (AccessoryBundleClient *)0x0) &&
+       (pAVar5 = (this->fields).timeLimitDisplayer, pAVar5 != (AccessoryTimeLimitDisplayer *)0x0)) {
+      pAVar6 = ((*ppAVar1)->fields)._.timelimit;
+      ppAVar7 = &(pAVar5->fields).accessoryTimeLimitData;
+      *ppAVar7 = pAVar6;
+      func_?(ppAVar7,pAVar6);
+      pAVar5 = (this->fields).timeLimitDisplayer;
+      if (pAVar5 != (AccessoryTimeLimitDisplayer *)0x0) {
         this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                            ((Component *)pAVar4,(MethodInfo *)0x0);
-        pAVar3 = (this->fields).bundleDataClient;
-        if ((pAVar3 != (AccessoryBundleClient *)0x0) &&
-           (pAVar5 = (pAVar3->fields)._.timelimit, pAVar5 != (AccessoryTimelimit *)0x0)) {
+                            ((Component *)pAVar5,(MethodInfo *)0x0);
+        if ((*ppAVar1 != (AccessoryBundleClient *)0x0) &&
+           (pAVar6 = ((*ppAVar1)->fields)._.timelimit, pAVar6 != (AccessoryTimelimit *)0x0)) {
           value = MVWorldObject.dll::MV::WorldObject::Accessories::AccessoryTimelimit::
-                  AccessoryTimelimit_get_IsTimeLimited(pAVar5,(MethodInfo *)0x0);
+                  AccessoryTimelimit_get_IsTimeLimited(pAVar6,(MethodInfo *)0x0);
           if (this_00 != (GameObject *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                       (this_00,value,(MethodInfo *)0x0);
@@ -215,8 +219,8 @@ void Assembly-CSharp.dll::BundlePurchasePopUp::BundlePurchasePopUp_Initialize
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

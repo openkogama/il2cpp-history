@@ -13,27 +13,28 @@ void Assembly-CSharp.dll::SphereVolumeIndicator::SphereVolumeIndicator_CopyMater
   this_00 = (Material *)func_?(TypeInfo__UnityEngine__Material);
   UnityEngine.CoreModule.dll::UnityEngine::Material::Material__ctor_1
             (this_00,source,(MethodInfo *)0x0);
-  (this->fields).materialCopy = this_00;
-  func_?(&(this->fields).materialCopy,this_00);
-  pLVar1 = (this->fields).rangeIndicatorXY;
-  if (pLVar1 != (LineRenderer *)0x0) {
+  ppMVar1 = &(this->fields).materialCopy;
+  *ppMVar1 = this_00;
+  func_?(ppMVar1,this_00);
+  pLVar2 = (this->fields).rangeIndicatorXY;
+  if (pLVar2 != (LineRenderer *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
-              ((Renderer *)pLVar1,(this->fields).materialCopy,(MethodInfo *)0x0);
-    pLVar1 = (this->fields).rangeIndicatorYZ;
-    if (pLVar1 != (LineRenderer *)0x0) {
+              ((Renderer *)pLVar2,*ppMVar1,(MethodInfo *)0x0);
+    pLVar2 = (this->fields).rangeIndicatorYZ;
+    if (pLVar2 != (LineRenderer *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
-                ((Renderer *)pLVar1,(this->fields).materialCopy,(MethodInfo *)0x0);
-      pLVar1 = (this->fields).rangeIndicatorZX;
-      if (pLVar1 != (LineRenderer *)0x0) {
+                ((Renderer *)pLVar2,*ppMVar1,(MethodInfo *)0x0);
+      pLVar2 = (this->fields).rangeIndicatorZX;
+      if (pLVar2 != (LineRenderer *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
-                  ((Renderer *)pLVar1,(this->fields).materialCopy,(MethodInfo *)0x0);
+                  ((Renderer *)pLVar2,*ppMVar1,(MethodInfo *)0x0);
         return;
       }
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -150,11 +151,11 @@ void Assembly-CSharp.dll::SphereVolumeIndicator::SphereVolumeIndicator_SetRadius
       UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
                 ((Quaternion *)&stack0xffffffa0,
                  _UNK_? / (float)(this->fields).circleSergmentCount,axis,(MethodInfo *)0x0);
+      uVar9 = 0;
       if (0 < iVar8) {
         pVVar10 = positions->vector;
-        uVar9 = 0;
-        if (positions == (Vector3__Array *)0x0) goto code_?;
         do {
+          if (positions == (Vector3__Array *)0x0) goto code_?;
           if ((positions->max_length <= uVar9) ||
              (pVVar10->z = pVVar10->x, positions->max_length <= uVar9)) goto code_?;
           uVar9 = uVar9 + 1;
@@ -178,11 +179,11 @@ void Assembly-CSharp.dll::SphereVolumeIndicator::SphereVolumeIndicator_SetRadius
                     ((Quaternion *)&stack0xffffffa0,
                      _UNK_? / (float)(this->fields).circleSergmentCount,axis_00,
                      (MethodInfo *)0x0);
+          uVar9 = 0;
           if (0 < iVar8) {
             pfVar16 = &positions->vector[0].y;
-            uVar9 = 0;
-            if (positions == (Vector3__Array *)0x0) goto code_?;
             do {
+              if (positions == (Vector3__Array *)0x0) goto code_?;
               if ((positions->max_length <= uVar9) ||
                  (((Vector3 *)(pfVar16 + -1))->x = *pfVar16, positions->max_length <= uVar9))
               goto code_?;

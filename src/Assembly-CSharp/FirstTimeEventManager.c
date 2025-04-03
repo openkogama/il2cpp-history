@@ -69,10 +69,9 @@ void Assembly-CSharp.dll::FirstTimeEventManager::FirstTimeEventManager_Initializ
     func_?(TypeInfo__LevelingManager);
   }
   if (TypeInfo__LevelingManager->static_fields->_IsInitialized_k__BackingField != 0) {
-    if (TypeInfo__FirstTimeEventManager->static_fields->firstTimeStatePublisher !=
-        (Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_ *)
-        0x0) {
-      pAVar1 = TypeInfo__FirstTimeEventManager->static_fields->firstTimeStatePublisher;
+    pAVar1 = TypeInfo__FirstTimeEventManager->static_fields->firstTimeStatePublisher;
+    if (pAVar1 != (Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
+                   *)0x0) {
       (*(pAVar1->fields)._._.invoke_impl)
                 ((pAVar1->fields)._._.method_code,firstTimeState,0xffffffff,
                  (pAVar1->fields)._._.method);
@@ -182,62 +181,61 @@ void Assembly-CSharp.dll::FirstTimeEventManager::FirstTimeEventManager_OnLevelin
     func_?(&TypeInfo__UnityEngine__Events__UnityAction);
     cRam_? = '\x01';
   }
-  pFVar1 = TypeInfo__FirstTimeEventManager->static_fields;
-  if (pFVar1->firstTimeStatePublisher !=
-      (Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_ *)0x0
-     ) {
-    pAVar2 = pFVar1->firstTimeStatePublisher;
-    (*(pAVar2->fields)._._.invoke_impl)
-              ((pAVar2->fields)._._.method_code,pFVar1->firstTimeState,0xffffffff,
-               (pAVar2->fields)._._.method);
+  pAVar1 = TypeInfo__FirstTimeEventManager->static_fields->firstTimeStatePublisher;
+  if (pAVar1 != (Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
+                 *)0x0) {
+    (*(pAVar1->fields)._._.invoke_impl)
+              ((pAVar1->fields)._._.method_code,
+               TypeInfo__FirstTimeEventManager->static_fields->firstTimeState,0xffffffff,
+               (pAVar1->fields)._._.method);
   }
   if ((TypeInfo__LevelingManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__LevelingManager);
   }
-  pUVar3 = TypeInfo__LevelingManager->static_fields->OnLevelingInitialized;
+  pUVar2 = TypeInfo__LevelingManager->static_fields->OnLevelingInitialized;
   this = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__UnityEngine__Events__UnityAction);
   UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
   NavMesh_OnNavMeshPreUpdate__ctor
             (this,(Object *)0x0,MethodInfo__FirstTimeEventManager__OnLevelingInitialized__,
              (MethodInfo *)0x0);
-  pUStack4 =
+  pUStack3 =
        (UnityAction *)
        mscorlib.dll::System::Delegate::Delegate_Remove
-                 ((Delegate *)pUVar3,(Delegate *)this,(MethodInfo *)0x0);
-  if (pUStack4 == (UnityAction *)0x0) {
+                 ((Delegate *)pUVar2,(Delegate *)this,(MethodInfo *)0x0);
+  if (pUStack3 == (UnityAction *)0x0) {
     TypeInfo__LevelingManager->static_fields->OnLevelingInitialized = (UnityAction *)0x0;
-    pUStack5 = (UnityAction__Class *)0x0;
-    pUStack4 = (UnityAction *)TypeInfo__LevelingManager->static_fields;
+    pUStack4 = (UnityAction__Class *)0x0;
+    pUStack3 = (UnityAction *)TypeInfo__LevelingManager->static_fields;
     func_?();
     return;
   }
-  pUVar3 = (UnityAction *)0x0;
-  if (pUStack4->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-    pUVar3 = pUStack4;
+  pUVar2 = (UnityAction *)0x0;
+  if (pUStack3->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+    pUVar2 = pUStack3;
   }
-  if (pUVar3 == (UnityAction *)0x0) {
-    pUStack5 = TypeInfo__UnityEngine__Events__UnityAction;
+  if (pUVar2 == (UnityAction *)0x0) {
+    pUStack4 = TypeInfo__UnityEngine__Events__UnityAction;
     func_?();
-    pUStack4 = extraout_ECX;
-    pUStack5 = extraout_EDX;
+    pUStack3 = extraout_ECX;
+    pUStack4 = extraout_EDX;
   }
   else {
-    TypeInfo__LevelingManager->static_fields->OnLevelingInitialized = pUVar3;
-    pUVar3 = (UnityAction *)0x0;
-    if (pUStack4->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-      pUVar3 = pUStack4;
+    TypeInfo__LevelingManager->static_fields->OnLevelingInitialized = pUVar2;
+    pUVar2 = (UnityAction *)0x0;
+    if (pUStack3->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+      pUVar2 = pUStack3;
     }
-    pUStack5 = TypeInfo__UnityEngine__Events__UnityAction;
-    if (pUVar3 != (UnityAction *)0x0) {
-      pUStack4 = (UnityAction *)TypeInfo__LevelingManager->static_fields;
-      pUStack5 = (UnityAction__Class *)pUVar3;
+    pUStack4 = TypeInfo__UnityEngine__Events__UnityAction;
+    if (pUVar2 != (UnityAction *)0x0) {
+      pUStack3 = (UnityAction *)TypeInfo__LevelingManager->static_fields;
+      pUStack4 = (UnityAction__Class *)pUVar2;
       func_?();
       return;
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -262,24 +260,22 @@ void Assembly-CSharp.dll::FirstTimeEventManager::FirstTimeEventManager_OverrideF
        this_00 != (MVNetworkGame_OperationRequests *)0x0)) {
       MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_OverrideFirstTimeEvent
                 (this_00,firstTimeEvent,overrideValue,(MethodInfo *)0x0);
-      pFVar2 = TypeInfo__FirstTimeEventManager->static_fields;
-      if (pFVar2->firstTimeStatePublisher !=
-          (Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_ *
-          )0x0) {
-        pAVar3 = pFVar2->firstTimeStatePublisher;
-        pvStack4 = (pAVar3->fields)._._.method;
-        uStack5 = 0xffffffff;
-        pFStack6 = pFVar2->firstTimeState;
-        pvStack7 = (pAVar3->fields)._._.method_code;
-        (*(pAVar3->fields)._._.invoke_impl)();
+      pAVar2 = TypeInfo__FirstTimeEventManager->static_fields->firstTimeStatePublisher;
+      if (pAVar2 != (Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
+                     *)0x0) {
+        pvStack3 = (pAVar2->fields)._._.method;
+        uStack4 = 0xffffffff;
+        pFStack5 = TypeInfo__FirstTimeEventManager->static_fields->firstTimeState;
+        pvStack6 = (pAVar2->fields)._._.method_code;
+        (*(pAVar2->fields)._._.invoke_impl)();
       }
       return;
     }
   }
-  uVar8 = func_?(&stack0xfffffff0);
-  func_?(uVar8);
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  uVar7 = func_?(&stack0xfffffff0);
+  func_?(uVar7);
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -332,11 +328,10 @@ void Assembly-CSharp.dll::FirstTimeEventManager::FirstTimeEventManager_ResetFirs
            this_00 != (MVNetworkGame_OperationRequests *)0x0)) {
           MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_ResetFirstTimeEvents
                     (this_00,overrideValue,(MethodInfo *)0x0);
-          if (TypeInfo__FirstTimeEventManager->static_fields->firstTimeStatePublisher !=
-              (Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
-               *)0x0) {
-            (*(TypeInfo__FirstTimeEventManager->static_fields->firstTimeStatePublisher->fields)._._.
-              invoke_impl)();
+          pAVar8 = TypeInfo__FirstTimeEventManager->static_fields->firstTimeStatePublisher;
+          if (pAVar8 != (Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
+                         *)0x0) {
+            (*(pAVar8->fields)._._.invoke_impl)();
           }
           *unaff_FS_OFFSET = uStack_3;
           return;
@@ -344,42 +339,42 @@ void Assembly-CSharp.dll::FirstTimeEventManager::FirstTimeEventManager_ResetFirs
         break;
       }
       if (pIVar4 == (IEnumerator *)0x0) break;
-      pIVar8 = pIVar4->klass;
-      uVar9 = 0;
-      uVar10._0_1_ = (pIVar8->_1).rank;
-      uVar10._1_1_ = (pIVar8->_1).minimumAlignment;
-      if (uVar10 != 0) {
+      pIVar9 = pIVar4->klass;
+      uVar10 = 0;
+      uVar11._0_1_ = (pIVar9->_1).rank;
+      uVar11._1_1_ = (pIVar9->_1).minimumAlignment;
+      if (uVar11 != 0) {
         do {
-          if (pIVar8->interfaceOffsets[uVar9].interfaceType ==
+          if (pIVar9->interfaceOffsets[uVar10].interfaceType ==
               (Il2CppClass *)TypeInfo__System__Collections__IEnumerator) {
-            ppMVar11 = &(&(pIVar4->klass->vtable).get_Current)
-                       [pIVar4->klass->interfaceOffsets[uVar9].offset].method;
+            ppMVar12 = &(&(pIVar4->klass->vtable).get_Current)
+                       [pIVar9->interfaceOffsets[uVar10].offset].method;
             goto code_?;
           }
-          uVar9 = uVar9 + 1;
-        } while (uVar9 < uVar10);
+          uVar10 = uVar10 + 1;
+        } while (uVar10 < uVar11);
       }
-      ppMVar11 = (MethodInfo **)func_?();
+      ppMVar12 = (MethodInfo **)func_?();
 code_?:
-      piVar12 = (int *)(*(code *)*ppMVar11)();
-      if (piVar12 == (int *)0x0) break;
-      if (*(Il2CppClass **)(*piVar12 + 0x20) !=
+      piVar13 = (int *)(*(code *)*ppMVar12)();
+      if (piVar13 == (int *)0x0) break;
+      if (*(Il2CppClass **)(*piVar13 + 0x20) !=
           (TypeInfo__MV__WorldObject__MetaData__FirstTimeEvent->_0).element_class)
       goto code_?;
-      pFVar13 = (FirstTimeEvent__Enum *)func_?();
-      if (*pFVar13 != FirstTimeEvent__Enum_NoEvent) {
+      pFVar14 = (FirstTimeEvent__Enum *)func_?();
+      if (*pFVar14 != FirstTimeEvent__Enum_NoEvent) {
         this = TypeInfo__FirstTimeEventManager->static_fields->firstTimeState;
         if (this == (FirstTimeState *)0x0) break;
         MVWorldObject.dll::MV::WorldObject::MetaData::FirstTimeState::
-        FirstTimeState_OverrideFirstTimeEvent(this,*pFVar13,overrideValue,(MethodInfo *)0x0);
+        FirstTimeState_OverrideFirstTimeEvent(this,*pFVar14,overrideValue,(MethodInfo *)0x0);
       }
     }
   }
   func_?();
 code_?:
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -398,13 +393,12 @@ void Assembly-CSharp.dll::FirstTimeEventManager::FirstTimeEventManager_SetFirstT
   if (this != (FirstTimeState *)0x0) {
     MVWorldObject.dll::MV::WorldObject::MetaData::FirstTimeState::FirstTimeState_SetFirstTimeEvent
               (this,firstTimeEvent,(MethodInfo *)0x0);
-    pFVar1 = TypeInfo__FirstTimeEventManager->static_fields;
-    if (pFVar1->firstTimeStatePublisher !=
-        (Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_ *)
-        0x0) {
-      (*(pFVar1->firstTimeStatePublisher->fields)._._.invoke_impl)
-                ((pFVar1->firstTimeStatePublisher->fields)._._.method_code,pFVar1->firstTimeState,
-                 firstTimeEvent);
+    pAVar1 = TypeInfo__FirstTimeEventManager->static_fields->firstTimeStatePublisher;
+    if (pAVar1 != (Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
+                   *)0x0) {
+      (*(pAVar1->fields)._._.invoke_impl)
+                ((pAVar1->fields)._._.method_code,
+                 TypeInfo__FirstTimeEventManager->static_fields->firstTimeState,firstTimeEvent);
     }
     pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if ((pMVar2 != (MVNetworkGame *)0x0) &&
@@ -438,51 +432,51 @@ void Assembly-CSharp.dll::FirstTimeEventManager::FirstTimeEventManager_Subscribe
     func_?(&TypeInfo__FirstTimeEventManager);
     cRam_? = '\x01';
   }
-  if (TypeInfo__FirstTimeEventManager->static_fields->firstTimeState != (FirstTimeState *)0x0) {
+  pFVar1 = TypeInfo__FirstTimeEventManager->static_fields->firstTimeState;
+  if (pFVar1 != (FirstTimeState *)0x0) {
     if (firstTimeStateReceiver ==
         (Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_ *)
         0x0) goto code_?;
     (*(firstTimeStateReceiver->fields)._._.invoke_impl)
-              ((firstTimeStateReceiver->fields)._._.method_code,
-               TypeInfo__FirstTimeEventManager->static_fields->firstTimeState,0xffffffff,
+              ((firstTimeStateReceiver->fields)._._.method_code,pFVar1,0xffffffff,
                (firstTimeStateReceiver->fields)._._.method);
   }
-  pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
+  pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
                      ((Delegate *)
                       TypeInfo__FirstTimeEventManager->static_fields->firstTimeStatePublisher,
                       (Delegate *)firstTimeStateReceiver,(MethodInfo *)0x0);
-  pAVar2 = 
+  pAVar3 = 
   TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
   ;
-  if (pDVar1 == (Delegate *)0x0) {
+  if (pDVar2 == (Delegate *)0x0) {
     TypeInfo__FirstTimeEventManager->static_fields->firstTimeStatePublisher =
          (Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_ *)
          0x0;
-    iVar3 = 0;
+    iVar4 = 0;
 code_?:
-    func_?(TypeInfo__FirstTimeEventManager->static_fields,iVar3);
+    func_?(TypeInfo__FirstTimeEventManager->static_fields,iVar4);
     return;
   }
-  pAVar4 = (Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
-            *)func_?(pDVar1,
+  pAVar5 = (Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
+            *)func_?(pDVar2,
                               TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
                              );
-  if (pAVar4 != (Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
+  if (pAVar5 != (Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
                  *)0x0) {
-    TypeInfo__FirstTimeEventManager->static_fields->firstTimeStatePublisher = pAVar4;
-    pAVar2 = 
+    TypeInfo__FirstTimeEventManager->static_fields->firstTimeStatePublisher = pAVar5;
+    pAVar3 = 
     TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
     ;
-    iVar3 = func_?(pDVar1,
+    iVar4 = func_?(pDVar2,
                             TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
                            );
-    if (iVar3 != 0) goto code_?;
+    if (iVar4 != 0) goto code_?;
   }
-  func_?(pDVar1,pAVar2);
+  func_?(pDVar2,pAVar3);
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

@@ -128,8 +128,8 @@ Assembly-CSharp.dll::RTG::LocalTransformSnapshot::LocalTransformSnapshot_GetSnap
       if (pIVar4->interfaceOffsets[uVar5].interfaceType ==
           (Il2CppClass *)
           TypeInfo__System__Collections__Generic__IEnumerable<UnityEngine::GameObject>) {
-        ppMVar7 = &(&gameObjects->klass->vtable)
-                   [gameObjects->klass->interfaceOffsets[uVar5].offset].GetEnumerator.method;
+        ppMVar7 = &(&gameObjects->klass->vtable)[pIVar4->interfaceOffsets[uVar5].offset].
+                   GetEnumerator.method;
         goto code_?;
       }
       uVar5 = uVar5 + 1;
@@ -239,8 +239,8 @@ bool Assembly-CSharp.dll::RTG::LocalTransformSnapshot::LocalTransformSnapshot_Sa
         pQVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localRotation
                             (__return_storage_ptr__,pTVar1,(MethodInfo *)0x0);
         if (_UNK_? <
-            pQVar10->y * (float)puVar9 + pQVar10->x * fVar3 +
-            pQVar10->z * (float)__return_storage_ptr__ + pQVar10->w * (float)pTVar1) {
+            (float)puVar9 * pQVar10->y + fVar3 * pQVar10->x +
+            (float)__return_storage_ptr__ * pQVar10->z + (float)pTVar1 * pQVar10->w) {
           method_00 = (MethodInfo *)(this->fields)._localScale.z;
           uVar11._0_4_ = (this->fields)._localScale.x;
           uVar11._4_4_ = (this->fields)._localScale.y;
@@ -290,31 +290,32 @@ void Assembly-CSharp.dll::RTG::LocalTransformSnapshot::LocalTransformSnapshot_Sn
     }
     pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
                        (transform,(MethodInfo *)0x0);
-    (this->fields)._parentTransform = pTVar3;
-    func_?(&(this->fields)._parentTransform);
-    pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
+    ppTVar4 = &(this->fields)._parentTransform;
+    *ppTVar4 = pTVar3;
+    func_?(ppTVar4);
+    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
                        ((Vector3 *)&stack0xfffffff0,transform,(MethodInfo *)0x0);
-    fVar5 = pVVar4->y;
-    fVar6 = pVVar4->z;
-    (this->fields)._localPosition.x = pVVar4->x;
-    (this->fields)._localPosition.y = fVar5;
-    (this->fields)._localPosition.z = fVar6;
-    pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localRotation
+    fVar6 = pVVar5->y;
+    fVar7 = pVVar5->z;
+    (this->fields)._localPosition.x = pVVar5->x;
+    (this->fields)._localPosition.y = fVar6;
+    (this->fields)._localPosition.z = fVar7;
+    pQVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localRotation
                        ((Quaternion *)&stack0xffffffec,transform,(MethodInfo *)0x0);
-    fVar6 = pQVar7->y;
-    fVar5 = pQVar7->z;
-    fVar8 = pQVar7->w;
-    (this->fields)._localRotation.x = pQVar7->x;
-    (this->fields)._localRotation.y = fVar6;
-    (this->fields)._localRotation.z = fVar5;
-    (this->fields)._localRotation.w = fVar8;
-    pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
+    fVar7 = pQVar8->y;
+    fVar6 = pQVar8->z;
+    fVar9 = pQVar8->w;
+    (this->fields)._localRotation.x = pQVar8->x;
+    (this->fields)._localRotation.y = fVar7;
+    (this->fields)._localRotation.z = fVar6;
+    (this->fields)._localRotation.w = fVar9;
+    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
                        ((Vector3 *)&stack0xfffffff0,transform,(MethodInfo *)0x0);
-    fVar5 = pVVar4->y;
-    fVar6 = pVVar4->z;
-    (this->fields)._localScale.x = pVVar4->x;
-    (this->fields)._localScale.y = fVar5;
-    (this->fields)._localScale.z = fVar6;
+    fVar6 = pVVar5->y;
+    fVar7 = pVVar5->z;
+    (this->fields)._localScale.x = pVVar5->x;
+    (this->fields)._localScale.y = fVar6;
+    (this->fields)._localScale.z = fVar7;
   }
   return;
 }

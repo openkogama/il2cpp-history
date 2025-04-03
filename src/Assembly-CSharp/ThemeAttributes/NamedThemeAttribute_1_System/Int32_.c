@@ -15,9 +15,10 @@ void Assembly-CSharp.dll::ThemeAttributes::NamedThemeAttribute`1[System::Int32]:
     ThemeAttribute`1[System::Single]::ThemeAttribute_1_System_Single__Initialize
               ((ThemeAttribute_1_System_Single_ *)this,settings,key,groups,
                (Action_1_Single_ *)onChange,method->klass->rgctx_data[2].method);
-    pSVar1 = TM::TM__((this->fields).name,(MethodInfo *)0x0);
-    (this->fields).name = pSVar1;
-    func_?(&(this->fields).name,pSVar1);
+    ppSVar1 = &(this->fields).name;
+    pSVar2 = TM::TM__(*ppSVar1,(MethodInfo *)0x0);
+    *ppSVar1 = pSVar2;
+    func_?(ppSVar1,pSVar2);
     this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
@@ -27,8 +28,8 @@ void Assembly-CSharp.dll::ThemeAttributes::NamedThemeAttribute`1[System::Int32]:
     return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -40,47 +41,48 @@ void Assembly-CSharp.dll::ThemeAttributes::NamedThemeAttribute`1[System::Int32]:
                (NamedThemeAttribute_1_System_Int32_ *this,MethodInfo *method)
 
 {
-  this_00 = (this->fields).name;
+  ppSVar1 = &(this->fields).name;
+  this_00 = *ppSVar1;
   if (cRam_? == '\0') {
     func_?(&::StringLiteral___);
     func_?(&::StringLiteral____);
     cRam_? = '\x01';
   }
   if ((this_00 == (String *)0x0) || (::StringLiteral____ == (String *)0x0)) goto code_?;
-  if ((this_00->fields)._stringLength < (::StringLiteral____->fields)._stringLength) {
+  iVar2 = (::StringLiteral____->fields)._stringLength;
+  if ((this_00->fields)._stringLength < iVar2) {
 code_?:
     this_00 = mscorlib.dll::System::String::String_Concat_3
                         (::StringLiteral____,this_00,(MethodInfo *)0x0);
     if (this_00 == (String *)0x0) goto code_?;
   }
   else {
-    pSVar1 = mscorlib.dll::System::String::String_Substring_1
-                       (this_00,0,(::StringLiteral____->fields)._stringLength,(MethodInfo *)0x0);
-    bVar2 = mscorlib.dll::System::String::String_op_Inequality
-                      (pSVar1,::StringLiteral____,(MethodInfo *)0x0);
-    if (bVar2 != 0) goto code_?;
+    pSVar3 = mscorlib.dll::System::String::String_Substring_1(this_00,0,iVar2,(MethodInfo *)0x0);
+    bVar4 = mscorlib.dll::System::String::String_op_Inequality
+                      (pSVar3,::StringLiteral____,(MethodInfo *)0x0);
+    if (bVar4 != 0) goto code_?;
   }
   if (::StringLiteral___ == (String *)0x0) {
 code_?:
     func_?();
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
+    pcVar5 = (code *)swi(3);
+    (*pcVar5)();
     return;
   }
-  iVar4 = (this_00->fields)._stringLength;
-  if ((::StringLiteral___->fields)._stringLength <= iVar4) {
-    pSVar1 = mscorlib.dll::System::String::String_Substring_1
-                       (this_00,iVar4 - (::StringLiteral___->fields)._stringLength,
-                        (::StringLiteral___->fields)._stringLength,(MethodInfo *)0x0);
-    bVar2 = mscorlib.dll::System::String::String_op_Inequality
-                      (pSVar1,::StringLiteral___,(MethodInfo *)0x0);
-    if (bVar2 == 0) goto code_?;
+  iVar2 = (this_00->fields)._stringLength;
+  length = (::StringLiteral___->fields)._stringLength;
+  if (length <= iVar2) {
+    pSVar3 = mscorlib.dll::System::String::String_Substring_1
+                       (this_00,iVar2 - length,length,(MethodInfo *)0x0);
+    bVar4 = mscorlib.dll::System::String::String_op_Inequality
+                      (pSVar3,::StringLiteral___,(MethodInfo *)0x0);
+    if (bVar4 == 0) goto code_?;
   }
   this_00 = mscorlib.dll::System::String::String_Concat_3
                       (this_00,::StringLiteral___,(MethodInfo *)0x0);
 code_?:
-  (this->fields).name = this_00;
-  func_?(&(this->fields).name,this_00);
+  *ppSVar1 = this_00;
+  func_?(ppSVar1,this_00);
   return;
 }
 
@@ -98,38 +100,38 @@ String * Assembly-CSharp.dll::ThemeAttributes::NamedThemeAttribute`1[System::Int
     cRam_? = '\x01';
   }
   if ((str == (String *)0x0) || (::StringLiteral____ == (String *)0x0)) goto code_?;
-  if ((str->fields)._stringLength < (::StringLiteral____->fields)._stringLength) {
+  iVar1 = (::StringLiteral____->fields)._stringLength;
+  if ((str->fields)._stringLength < iVar1) {
 code_?:
     str = mscorlib.dll::System::String::String_Concat_3(::StringLiteral____,str,(MethodInfo *)0x0);
     if (str == (String *)0x0) goto code_?;
   }
   else {
-    pSVar1 = mscorlib.dll::System::String::String_Substring_1
-                       (str,0,(::StringLiteral____->fields)._stringLength,(MethodInfo *)0x0);
-    bVar2 = mscorlib.dll::System::String::String_op_Inequality
-                      (pSVar1,::StringLiteral____,(MethodInfo *)0x0);
-    if (bVar2 != 0) goto code_?;
+    pSVar2 = mscorlib.dll::System::String::String_Substring_1(str,0,iVar1,(MethodInfo *)0x0);
+    bVar3 = mscorlib.dll::System::String::String_op_Inequality
+                      (pSVar2,::StringLiteral____,(MethodInfo *)0x0);
+    if (bVar3 != 0) goto code_?;
   }
   if (::StringLiteral___ != (String *)0x0) {
-    iVar3 = (str->fields)._stringLength;
-    if ((::StringLiteral___->fields)._stringLength <= iVar3) {
-      pSVar1 = mscorlib.dll::System::String::String_Substring_1
-                         (str,iVar3 - (::StringLiteral___->fields)._stringLength,
-                          (::StringLiteral___->fields)._stringLength,(MethodInfo *)0x0);
-      bVar2 = mscorlib.dll::System::String::String_op_Inequality
-                        (pSVar1,::StringLiteral___,(MethodInfo *)0x0);
-      if (bVar2 == 0) {
+    iVar1 = (str->fields)._stringLength;
+    length = (::StringLiteral___->fields)._stringLength;
+    if (length <= iVar1) {
+      pSVar2 = mscorlib.dll::System::String::String_Substring_1
+                         (str,iVar1 - length,length,(MethodInfo *)0x0);
+      bVar3 = mscorlib.dll::System::String::String_op_Inequality
+                        (pSVar2,::StringLiteral___,(MethodInfo *)0x0);
+      if (bVar3 == 0) {
         return str;
       }
     }
-    pSVar1 = mscorlib.dll::System::String::String_Concat_3(str,::StringLiteral___,(MethodInfo *)0x0)
+    pSVar2 = mscorlib.dll::System::String::String_Concat_3(str,::StringLiteral___,(MethodInfo *)0x0)
     ;
-    return pSVar1;
+    return pSVar2;
   }
 code_?:
   func_?();
   pcVar4 = (code *)swi(3);
-  pSVar1 = (String *)(*pcVar4)();
-  return pSVar1;
+  pSVar2 = (String *)(*pcVar4)();
+  return pSVar2;
 }
 

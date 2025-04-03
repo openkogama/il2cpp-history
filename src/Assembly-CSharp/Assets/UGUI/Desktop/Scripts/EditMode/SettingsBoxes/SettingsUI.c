@@ -18,21 +18,21 @@ SettingsUI_GetAcceptableIndexes(SettingsUI *this,int32_t size,MethodInfo *method
   MultiColumnCollectionHeader+ViewState+ColumnState]::
   List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
             (this_00,size,MethodInfo__System__Collections__Generic__List<int>__List_int_);
+  item = 0;
   if (0 < size) {
-    item = 0;
-    if (this_00 ==
-        (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *
-        )0x0) {
-code_?:
-      func_?();
-code_?:
-      func_?();
-      pcVar1 = (code *)swi(3);
-      pLVar2 = (List_1_System_Int32_ *)(*pcVar1)();
-      return pLVar2;
-    }
     do {
-      pMVar3 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+      pMVar1 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+      if (this_00 ==
+          (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+           *)0x0) {
+code_?:
+        func_?();
+code_?:
+        func_?();
+        pcVar2 = (code *)swi(3);
+        pLVar3 = (List_1_System_Int32_ *)(*pcVar2)();
+        return pLVar3;
+      }
       piVar4 = &(this_00->fields)._version;
       *piVar4 = *piVar4 + 1;
       pMVar5 = (this_00->fields)._items;
@@ -47,7 +47,7 @@ code_?:
       else {
         mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
         List_1_System_Int32__AddWithResize
-                  ((List_1_System_Int32_ *)this_00,item,pMVar3->klass->rgctx_data[0xe].method);
+                  ((List_1_System_Int32_ *)this_00,item,pMVar1->klass->rgctx_data[0xe].method);
       }
       item = item + 1;
     } while (item < size);
@@ -83,19 +83,17 @@ void Assembly-CSharp.dll::Assets::UGUI::Desktop::Scripts::EditMode::SettingsBoxe
                         (this_00,(Object *)key,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                         );
-      if (slider != (SettingsSlider *)0x0) {
-        unaff_ESI = TypeInfo__System__Single;
-        if (TVar2.m_Index != 0) {
-          if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
-              (TypeInfo__System__Single->_0).element_class) {
-            pfVar3 = (float *)func_?(TVar2.m_Index);
-            SettingsSlider::SettingsSlider_Initialize
-                      (slider,key,*pfVar3,(float)(int)uVar1,(float)(int)((ulonglong)uVar1 >> 0x20),
-                       (MethodInfo *)0x0);
-            return;
-          }
-          goto code_?;
+      if ((slider != (SettingsSlider *)0x0) &&
+         (unaff_ESI = TypeInfo__System__Single, TVar2.m_Index != 0)) {
+        if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
+            (TypeInfo__System__Single->_0).element_class) {
+          pfVar3 = (float *)func_?(TVar2.m_Index);
+          SettingsSlider::SettingsSlider_Initialize
+                    (slider,key,*pfVar3,(float)(int)uVar1,(float)(int)((ulonglong)uVar1 >> 0x20),
+                     (MethodInfo *)0x0);
+          return;
         }
+        goto code_?;
       }
     }
   }
@@ -123,43 +121,44 @@ void Assembly-CSharp.dll::Assets::UGUI::Desktop::Scripts::EditMode::SettingsBoxe
   }
   pSVar1 = (this->fields).colorR;
   if (pSVar1 != (SettingsSlider *)0x0) {
-    SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
+    fVar2 = SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
     pSVar1 = (this->fields).colorG;
     if (pSVar1 != (SettingsSlider *)0x0) {
-      SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
+      fVar3 = SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
       pSVar1 = (this->fields).colorB;
       if (pSVar1 != (SettingsSlider *)0x0) {
-        method_00 = (MethodInfo *)SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0)
-        ;
+        fVar4 = SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
         pSVar1 = (this->fields).colorA;
         if (pSVar1 != (SettingsSlider *)0x0) {
-          puVar2 = &UNK_?;
-          puStack_3 = (undefined *)SettingsSlider::SettingsSlider_get_Value(pSVar1,method_00);
+          puStack_5 = (undefined *)
+                       SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
+          ppSVar6 = &(this->fields).editingColorKey;
+          pEStack_7 = (Extensions__Class *)*ppSVar6;
           hashtable = (this->fields).itemData;
-          colorKey = (this->fields).editingColorKey;
           if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__Extensions);
+            pEStack_7 = TypeInfo__Extensions;
+            func_?();
           }
-          color.g = (float)pSVar1;
-          color.r = (float)puVar2;
-          color.b = (float)method_00;
-          color.a = (float)puStack_3;
-          Extensions::Extensions_SetColor(hashtable,colorKey,color,(MethodInfo *)0x0);
+          color.g = fVar3;
+          color.r = fVar2;
+          color.b = fVar4;
+          color.a = (float)puStack_5;
+          Extensions::Extensions_SetColor(hashtable,(String *)pEStack_7,color,(MethodInfo *)0x0);
           this_00 = (this->fields).settingsBase;
           if (this_00 != (SettingsBase *)0x0) {
             SettingsBase::SettingsBase_OnSettingChanged
                       (this_00,StringLiteral_itemData,(Object *)(this->fields).itemData,
                        (MethodInfo *)0x0);
-            (this->fields).editingColorKey = ::StringLiteral__;
-            func_?(&(this->fields).editingColorKey,::StringLiteral__);
-            pGVar4 = (this->fields).content;
-            if (pGVar4 != (GameObject *)0x0) {
+            *ppSVar6 = ::StringLiteral__;
+            func_?(ppSVar6,::StringLiteral__);
+            pGVar8 = (this->fields).content;
+            if (pGVar8 != (GameObject *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                        (pGVar4,1,(MethodInfo *)0x0);
-              pGVar4 = (this->fields).colorPicker;
-              if (pGVar4 != (GameObject *)0x0) {
+                        (pGVar8,1,(MethodInfo *)0x0);
+              pGVar8 = (this->fields).colorPicker;
+              if (pGVar8 != (GameObject *)0x0) {
                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                          (pGVar4,0,(MethodInfo *)0x0);
+                          (pGVar8,0,(MethodInfo *)0x0);
                 this_01 = (this->fields).canvas;
                 value = (Vector2)(*(code *)(this->klass->vtable).get_NormalEditingCanvasSize.method)
                                            (this,(this->klass->vtable).get_ColorEditingCanvasSize.
@@ -177,8 +176,8 @@ void Assembly-CSharp.dll::Assets::UGUI::Desktop::Scripts::EditMode::SettingsBoxe
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -220,7 +219,7 @@ void Assembly-CSharp.dll::Assets::UGUI::Desktop::Scripts::EditMode::SettingsBoxe
       pSVar2 = (this->fields).colorB;
       if (pSVar2 != (SettingsSlider *)0x0) {
         SettingsSlider::SettingsSlider_Initialize
-                  (pSVar2,StringLiteral_colorB,4.122191e-29,0.0,1.0,(MethodInfo *)0x0);
+                  (pSVar2,StringLiteral_colorB,4.1108424e-29,0.0,1.0,(MethodInfo *)0x0);
         pSVar2 = (this->fields).colorA;
         if (pSVar2 != (SettingsSlider *)0x0) {
           SettingsSlider::SettingsSlider_Initialize
@@ -349,17 +348,16 @@ void Assembly-CSharp.dll::Assets::UGUI::Desktop::Scripts::EditMode::SettingsBoxe
     fVar3 = SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
     pSVar1 = (this->fields).colorG;
     if (pSVar1 != (SettingsSlider *)0x0) {
-      SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
+      fVar4 = SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
       pSVar1 = (this->fields).colorB;
       if (pSVar1 != (SettingsSlider *)0x0) {
-        pSVar1 = (SettingsSlider *)
-                 SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
-        if ((this->fields).colorA != (SettingsSlider *)0x0) {
-          puVar4 = &UNK_?;
-          fVar5 = SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
+        fVar5 = SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
+        pSVar1 = (this->fields).colorA;
+        if (pSVar1 != (SettingsSlider *)0x0) {
+          fVar6 = SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
           if (pIVar2 != (Image *)0x0) {
             (*(code *)(pIVar2->klass->vtable).set_color.method)
-                      (pIVar2,fVar3,puVar4,pSVar1,fVar5,
+                      (pIVar2,fVar3,fVar4,fVar5,fVar6,
                        (pIVar2->klass->vtable).get_raycastTarget.methodPtr);
             return;
           }
@@ -368,8 +366,8 @@ void Assembly-CSharp.dll::Assets::UGUI::Desktop::Scripts::EditMode::SettingsBoxe
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -384,8 +382,9 @@ void Assembly-CSharp.dll::Assets::UGUI::Desktop::Scripts::EditMode::SettingsBoxe
     func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  (this->fields).editingColorKey = ::StringLiteral__;
-  func_?(&(this->fields).editingColorKey,::StringLiteral__);
+  ppSVar1 = &(this->fields).editingColorKey;
+  *ppSVar1 = ::StringLiteral__;
+  func_?(ppSVar1,::StringLiteral__);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

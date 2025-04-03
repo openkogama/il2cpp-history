@@ -75,18 +75,28 @@ void Assembly-CSharp.dll::RTG::GizmoRotationArc3D::GizmoRotationArc3D_SetArcData
                float radius,MethodInfo *method)
 
 {
-  UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-            ((Vector3 *)&stack0xfffffff0,rotationAxis,(MethodInfo *)0x0);
+  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                     (&VStack_2,rotationAxis,(MethodInfo *)0x0);
+  uVar3 = pVVar1->x;
+  uVar4 = pVVar1->y;
+  VStack_2.y = pVVar1->z;
   this_00 = (this->fields)._arc;
+  VStack_2.z = (float)((uint)(arcOrigin.y * (float)uVar4 + arcOrigin.x * (float)uVar3 +
+                              arcOrigin.z * VStack_2.y) ^
+                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+  VStack_2.x = (float)uVar4;
   if (this_00 != (ArcShape3D *)0x0) {
-    plane.m_Distance = radius;
-    plane.m_Normal = arcStart;
-    ArcShape3D::ArcShape3D_SetArcData(this_00,plane,arcOrigin,arcStart,radius,(MethodInfo *)0x0);
+    auVar5._4_4_ = VStack_2.y;
+    auVar5._0_4_ = uVar4;
+    auVar5._8_4_ = VStack_2.z;
+    auVar5._12_4_ = 0;
+    ArcShape3D::ArcShape3D_SetArcData
+              (this_00,(Plane)(auVar5 << 0x20),arcOrigin,arcStart,radius,(MethodInfo *)0x0);
     return;
   }
   func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -104,7 +114,7 @@ void Assembly-CSharp.dll::RTG::GizmoRotationArc3D::GizmoRotationArc3D__ctor
   this_00 = (ArcShape3D *)func_?(TypeInfo__RTG__ArcShape3D);
   ArcShape3D::ArcShape3D__ctor(this_00,(MethodInfo *)0x0);
   method_00 = (MethodInfo *)&this->fields;
-  (this->fields)._arc = this_00;
+  ((GizmoRotationArc3D__Fields *)method_00)->_arc = this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);

@@ -72,8 +72,9 @@ Assembly-CSharp.dll::ARepository::ARepository_GetKoGaMaPackageFromItem
               (pDVar2,
                MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__Dictionary__
               );
-    (pKVar1->fields).worldObjects = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)pDVar2;
-    func_?(&(pKVar1->fields).worldObjects,pDVar2);
+    ppDVar3 = &(pKVar1->fields).worldObjects;
+    *ppDVar3 = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)pDVar2;
+    func_?(ppDVar3,pDVar2);
     pDVar2 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_
               *)func_?(
                                TypeInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::Link>
@@ -84,8 +85,9 @@ Assembly-CSharp.dll::ARepository::ARepository_GetKoGaMaPackageFromItem
               (pDVar2,
                MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::Link>__Dictionary__
               );
-    (pKVar1->fields).links = (Dictionary_2_System_Int32_MV_WorldObject_Link_ *)pDVar2;
-    func_?(&(pKVar1->fields).links,pDVar2);
+    ppDVar4 = &(pKVar1->fields).links;
+    *ppDVar4 = (Dictionary_2_System_Int32_MV_WorldObject_Link_ *)pDVar2;
+    func_?(ppDVar4,pDVar2);
     pDVar2 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_
               *)func_?(
                                TypeInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::ObjectLink>
@@ -96,11 +98,11 @@ Assembly-CSharp.dll::ARepository::ARepository_GetKoGaMaPackageFromItem
               (pDVar2,
                MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::ObjectLink>__Dictionary__
               );
-    (pKVar1->fields).objectLinks = (Dictionary_2_System_Int32_MV_WorldObject_ObjectLink_ *)pDVar2;
+    method_00 = &(pKVar1->fields).objectLinks;
+    *method_00 = (Dictionary_2_System_Int32_MV_WorldObject_ObjectLink_ *)pDVar2;
     func_?();
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)pKVar1,ExceptionArgument__Enum_obj,
-               (MethodInfo *)&(pKVar1->fields).objectLinks);
+              ((Object *)pKVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
     this_01 = (UnityAction_2_System_Object_System_ByteEnum_ *)func_?();
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::ByteEnum]
     ::UnityAction_2_System_Object_System_ByteEnum___ctor
@@ -110,10 +112,10 @@ Assembly-CSharp.dll::ARepository::ARepository_GetKoGaMaPackageFromItem
     if ((TypeInfo__KoGaMaDataHandler->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__KoGaMaDataHandler);
     }
-    iVar3 = KoGaMaDataHandler::KoGaMaDataHandler_GetKoGaMaData
+    iVar5 = KoGaMaDataHandler::KoGaMaDataHandler_GetKoGaMaData
                       (this_00,(UnityAction_2_System_Collections_Generic_Dictionary_2_System_Object_System_Object_MV_WorldObject_KogamaDataType_
                                 *)this_01,0,(MethodInfo *)0x0);
-    (pKVar1->fields).worldObjectRoot = iVar3;
+    (pKVar1->fields).worldObjectRoot = iVar5;
     if (cRam_? == '\0') {
       func_?(&
                       MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Item_int_
@@ -136,8 +138,8 @@ Assembly-CSharp.dll::ARepository::ARepository_GetKoGaMaPackageFromItem
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  pKVar1 = (KoGaMaPackageClient *)(*pcVar4)();
+  pcVar6 = (code *)swi(3);
+  pKVar1 = (KoGaMaPackageClient *)(*pcVar6)();
   return pKVar1;
 }
 
@@ -220,8 +222,8 @@ void Assembly-CSharp.dll::ARepository::ARepository_MoveItem
               (this_00,key,value,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
               );
-    if ((pAVar1->fields).OnRepositoryChange != (ARepository_OnRepositoryChangeDelegate *)0x0) {
-      pAVar2 = (pAVar1->fields).OnRepositoryChange;
+    pAVar2 = (pAVar1->fields).OnRepositoryChange;
+    if (pAVar2 != (ARepository_OnRepositoryChangeDelegate *)0x0) {
       (*(pAVar2->fields)._._.invoke_impl)
                 ((pAVar2->fields)._._.method_code,pAVar1,(pAVar2->fields)._._.method);
     }
@@ -240,8 +242,8 @@ void Assembly-CSharp.dll::ARepository::ARepository_NotifyRepositoryChange
                (ARepository *this,MethodInfo *method)
 
 {
-  if ((this->fields).OnRepositoryChange != (ARepository_OnRepositoryChangeDelegate *)0x0) {
-    pAVar1 = (this->fields).OnRepositoryChange;
+  pAVar1 = (this->fields).OnRepositoryChange;
+  if (pAVar1 != (ARepository_OnRepositoryChangeDelegate *)0x0) {
     (*(pAVar1->fields)._._.invoke_impl)
               ((pAVar1->fields)._._.method_code,this,(pAVar1->fields)._._.method);
   }
@@ -272,8 +274,8 @@ void Assembly-CSharp.dll::ARepository::ARepository_RemoveItem
               (this_00,key,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Remove_System__Object_
               );
-    if ((pAVar1->fields).OnRepositoryChange != (ARepository_OnRepositoryChangeDelegate *)0x0) {
-      pAVar2 = (pAVar1->fields).OnRepositoryChange;
+    pAVar2 = (pAVar1->fields).OnRepositoryChange;
+    if (pAVar2 != (ARepository_OnRepositoryChangeDelegate *)0x0) {
       (*(pAVar2->fields)._._.invoke_impl)
                 ((pAVar2->fields)._._.method_code,pAVar1,(pAVar2->fields)._._.method);
     }
@@ -360,9 +362,8 @@ void Assembly-CSharp.dll::ARepository::ARepository_SwapItems
                         (this_00,pOVar4,value,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
                         );
-              if ((pAVar2->fields).OnRepositoryChange !=
-                  (ARepository_OnRepositoryChangeDelegate *)0x0) {
-                pAVar15 = (pAVar2->fields).OnRepositoryChange;
+              pAVar15 = (pAVar2->fields).OnRepositoryChange;
+              if (pAVar15 != (ARepository_OnRepositoryChangeDelegate *)0x0) {
                 pOStack_10 = (pAVar15->fields)._._.method;
                 pAStack_13 = pAVar2;
                 puStack_8 = (pAVar15->fields)._._.method_code;
@@ -413,8 +414,9 @@ void Assembly-CSharp.dll::ARepository::ARepository__ctor(ARepository *this,Metho
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<int,_System::String>__Dictionary__
             );
-  (this->fields).PlanetOwnershipTypes = (Dictionary_2_System_Int32_System_String_ *)this_00;
-  func_?(&(this->fields).PlanetOwnershipTypes,this_00);
+  ppDVar1 = &(this->fields).PlanetOwnershipTypes;
+  *ppDVar1 = (Dictionary_2_System_Int32_System_String_ *)this_00;
+  func_?(ppDVar1,this_00);
   this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
              *)func_?(
                               TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
@@ -425,8 +427,9 @@ void Assembly-CSharp.dll::ARepository::ARepository__ctor(ARepository *this,Metho
             (this_01,
              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
             );
-  (this->fields).itemIDToInventorySlotIndex = (Dictionary_2_System_Object_System_Object_ *)this_01;
-  func_?(&(this->fields).itemIDToInventorySlotIndex,this_01);
+  ppDVar2 = &(this->fields).itemIDToInventorySlotIndex;
+  *ppDVar2 = (Dictionary_2_System_Object_System_Object_ *)this_01;
+  func_?(ppDVar2,this_01);
   return;
 }
 

@@ -36,16 +36,17 @@ bool Assembly-CSharp.dll::PoisonModifier+<DoFadeAndDestroy>d__7::
       return 0;
     }
     pOVar4 = (Object *)func_?(TypeInfo__System__Int32);
-    (this->fields).__2__current = pOVar4;
-    func_?(&(this->fields).__2__current,pOVar4);
+    ppOVar5 = &(this->fields).__2__current;
+    *ppOVar5 = pOVar4;
+    func_?(ppOVar5,pOVar4);
     (this->fields).__1__state = 1;
     return 1;
   }
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  bVar6 = (*pcVar5)();
-  return bVar6;
+  pcVar6 = (code *)swi(3);
+  bVar7 = (*pcVar6)();
+  return bVar7;
 }
 
 

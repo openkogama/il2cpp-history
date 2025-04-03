@@ -17,63 +17,64 @@ void Assembly-CSharp.dll::GameMeterGameCoin::GameMeterGameCoin_Initialize
     pMVar2 = (pMVar1->fields)._GameCoinManager_k__BackingField;
     if (pMVar2 != (MVGameCoinManager *)0x0) {
       pMVar3 = (pMVar2->fields).OnActivationChange;
-      pUVar4 = (UnityAction_1_System_Int32Enum_ *)
+      ppMVar4 = &(pMVar2->fields).OnActivationChange;
+      pUVar5 = (UnityAction_1_System_Int32Enum_ *)
                func_?(TypeInfo__MVGameCoinManager__OnActivationChangeDelegate);
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
       UnityAction_1_System_Int32Enum___ctor
-                (pUVar4,(Object *)this,MethodInfo__GameMeterGameCoin__OnActivationChange_bool_,
+                (pUVar5,(Object *)this,MethodInfo__GameMeterGameCoin__OnActivationChange_bool_,
                  (MethodInfo *)0x0);
       pMVar3 = (MVGameCoinManager_OnActivationChangeDelegate *)
                mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)pMVar3,(Delegate *)pUVar4,(MethodInfo *)0x0);
+                         ((Delegate *)pMVar3,(Delegate *)pUVar5,(MethodInfo *)0x0);
       if (pMVar3 == (MVGameCoinManager_OnActivationChangeDelegate *)0x0) {
-        (pMVar2->fields).OnActivationChange = (MVGameCoinManager_OnActivationChangeDelegate *)0x0;
+        *ppMVar4 = (MVGameCoinManager_OnActivationChangeDelegate *)0x0;
       }
       else {
-        pMVar5 = (MVGameCoinManager_OnActivationChangeDelegate *)0x0;
+        pMVar6 = (MVGameCoinManager_OnActivationChangeDelegate *)0x0;
         if (pMVar3->klass == TypeInfo__MVGameCoinManager__OnActivationChangeDelegate) {
-          pMVar5 = pMVar3;
+          pMVar6 = pMVar3;
         }
-        if (pMVar5 == (MVGameCoinManager_OnActivationChangeDelegate *)0x0) goto code_?;
-        (pMVar2->fields).OnActivationChange = pMVar5;
-        pMVar5 = (MVGameCoinManager_OnActivationChangeDelegate *)0x0;
+        if (pMVar6 == (MVGameCoinManager_OnActivationChangeDelegate *)0x0) goto code_?;
+        *ppMVar4 = pMVar6;
+        pMVar6 = (MVGameCoinManager_OnActivationChangeDelegate *)0x0;
         if (pMVar3->klass == TypeInfo__MVGameCoinManager__OnActivationChangeDelegate) {
-          pMVar5 = pMVar3;
+          pMVar6 = pMVar3;
         }
-        if (pMVar5 == (MVGameCoinManager_OnActivationChangeDelegate *)0x0) goto code_?;
+        if (pMVar6 == (MVGameCoinManager_OnActivationChangeDelegate *)0x0) goto code_?;
       }
       func_?();
       pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
       if ((pMVar1 != (MVNetworkGame *)0x0) &&
          (pMVar2 = (pMVar1->fields)._GameCoinManager_k__BackingField,
          pMVar2 != (MVGameCoinManager *)0x0)) {
-        pMVar6 = (pMVar2->fields).OnGameCoinAmountChange;
-        pUVar4 = (UnityAction_1_System_Int32Enum_ *)
+        pMVar7 = (pMVar2->fields).OnGameCoinAmountChange;
+        ppMVar8 = &(pMVar2->fields).OnGameCoinAmountChange;
+        pUVar5 = (UnityAction_1_System_Int32Enum_ *)
                  func_?(TypeInfo__MVGameCoinManager__OnGameCoinAmountChangeDelegate);
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
         UnityAction_1_System_Int32Enum___ctor
-                  (pUVar4,(Object *)&UNK_?,
+                  (pUVar5,(Object *)&UNK_?,
                    MethodInfo__GameMeterGameCoin__OnGameCoinAmountChanged_int_,(MethodInfo *)0x0);
-        pMVar6 = (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)
+        pMVar7 = (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)
                  mscorlib.dll::System::Delegate::Delegate_Combine
-                           ((Delegate *)pMVar6,(Delegate *)pUVar4,(MethodInfo *)0x0);
-        if (pMVar6 == (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)0x0) {
-          (pMVar2->fields).OnGameCoinAmountChange =
-               (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)0x0;
+                           ((Delegate *)pMVar7,(Delegate *)pUVar5,(MethodInfo *)0x0);
+        if (pMVar7 == (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)0x0) {
+          *ppMVar8 = (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)0x0;
           func_?();
           return;
         }
-        pMVar7 = (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)0x0;
-        if (pMVar6->klass == TypeInfo__MVGameCoinManager__OnGameCoinAmountChangeDelegate) {
-          pMVar7 = pMVar6;
+        pMVar9 = (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)0x0;
+        if (pMVar7->klass == TypeInfo__MVGameCoinManager__OnGameCoinAmountChangeDelegate) {
+          pMVar9 = pMVar7;
         }
-        if (pMVar7 != (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)0x0) {
-          (pMVar2->fields).OnGameCoinAmountChange = pMVar7;
-          pMVar7 = (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)0x0;
-          if (pMVar6->klass == TypeInfo__MVGameCoinManager__OnGameCoinAmountChangeDelegate) {
-            pMVar7 = pMVar6;
+        if (pMVar9 != (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)0x0) {
+          *ppMVar8 = pMVar9;
+          pMVar9 = (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)0x0;
+          if (pMVar7->klass == TypeInfo__MVGameCoinManager__OnGameCoinAmountChangeDelegate) {
+            pMVar9 = pMVar7;
           }
-          if (pMVar7 != (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)0x0) {
+          if (pMVar9 != (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)0x0) {
             func_?();
             return;
           }
@@ -85,8 +86,8 @@ void Assembly-CSharp.dll::GameMeterGameCoin::GameMeterGameCoin_Initialize
   func_?();
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -143,62 +144,63 @@ void Assembly-CSharp.dll::GameMeterGameCoin::GameMeterGameCoin_OnDestroy
      (pMVar3 = (pMVar2->fields)._GameCoinManager_k__BackingField, pMVar3 != (MVGameCoinManager *)0x0
      )) {
     pMVar4 = (pMVar3->fields).OnActivationChange;
-    pUVar5 = (UnityAction_1_System_Int32Enum_ *)
+    ppMVar5 = &(pMVar3->fields).OnActivationChange;
+    pUVar6 = (UnityAction_1_System_Int32Enum_ *)
              func_?(TypeInfo__MVGameCoinManager__OnActivationChangeDelegate);
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
     UnityAction_1_System_Int32Enum___ctor
-              (pUVar5,unaff_EBX,MethodInfo__GameMeterGameCoin__OnActivationChange_bool_,
+              (pUVar6,unaff_EBX,MethodInfo__GameMeterGameCoin__OnActivationChange_bool_,
                (MethodInfo *)0x0);
     pMVar4 = (MVGameCoinManager_OnActivationChangeDelegate *)
              mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)pMVar4,(Delegate *)pUVar5,(MethodInfo *)0x0);
+                       ((Delegate *)pMVar4,(Delegate *)pUVar6,(MethodInfo *)0x0);
     if (pMVar4 == (MVGameCoinManager_OnActivationChangeDelegate *)0x0) {
-      (pMVar3->fields).OnActivationChange = (MVGameCoinManager_OnActivationChangeDelegate *)0x0;
+      *ppMVar5 = (MVGameCoinManager_OnActivationChangeDelegate *)0x0;
     }
     else {
-      pMVar6 = (MVGameCoinManager_OnActivationChangeDelegate *)0x0;
+      pMVar7 = (MVGameCoinManager_OnActivationChangeDelegate *)0x0;
       if (pMVar4->klass == TypeInfo__MVGameCoinManager__OnActivationChangeDelegate) {
-        pMVar6 = pMVar4;
+        pMVar7 = pMVar4;
       }
-      if (pMVar6 == (MVGameCoinManager_OnActivationChangeDelegate *)0x0) goto code_?;
-      (pMVar3->fields).OnActivationChange = pMVar6;
-      pMVar6 = (MVGameCoinManager_OnActivationChangeDelegate *)0x0;
+      if (pMVar7 == (MVGameCoinManager_OnActivationChangeDelegate *)0x0) goto code_?;
+      *ppMVar5 = pMVar7;
+      pMVar7 = (MVGameCoinManager_OnActivationChangeDelegate *)0x0;
       if (pMVar4->klass == TypeInfo__MVGameCoinManager__OnActivationChangeDelegate) {
-        pMVar6 = pMVar4;
+        pMVar7 = pMVar4;
       }
-      if (pMVar6 == (MVGameCoinManager_OnActivationChangeDelegate *)0x0) goto code_?;
+      if (pMVar7 == (MVGameCoinManager_OnActivationChangeDelegate *)0x0) goto code_?;
     }
     func_?();
     pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if ((pMVar2 != (MVNetworkGame *)0x0) &&
        (pMVar3 = (pMVar2->fields)._GameCoinManager_k__BackingField,
        pMVar3 != (MVGameCoinManager *)0x0)) {
-      pMVar7 = (pMVar3->fields).OnGameCoinAmountChange;
-      pUVar5 = (UnityAction_1_System_Int32Enum_ *)func_?();
+      pMVar8 = (pMVar3->fields).OnGameCoinAmountChange;
+      ppMVar9 = &(pMVar3->fields).OnGameCoinAmountChange;
+      pUVar6 = (UnityAction_1_System_Int32Enum_ *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
       UnityAction_1_System_Int32Enum___ctor
-                (pUVar5,unaff_EBX,MethodInfo__GameMeterGameCoin__OnGameCoinAmountChanged_int_,
+                (pUVar6,unaff_EBX,MethodInfo__GameMeterGameCoin__OnGameCoinAmountChanged_int_,
                  (MethodInfo *)0x0);
-      pMVar7 = (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)
+      pMVar8 = (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)
                mscorlib.dll::System::Delegate::Delegate_Remove
-                         ((Delegate *)pMVar7,(Delegate *)pUVar5,(MethodInfo *)0x0);
-      if (pMVar7 == (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)0x0) {
-        (pMVar3->fields).OnGameCoinAmountChange =
-             (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)0x0;
+                         ((Delegate *)pMVar8,(Delegate *)pUVar6,(MethodInfo *)0x0);
+      if (pMVar8 == (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)0x0) {
+        *ppMVar9 = (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)0x0;
         func_?();
         return;
       }
-      pMVar8 = (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)0x0;
-      if (pMVar7->klass == TypeInfo__MVGameCoinManager__OnGameCoinAmountChangeDelegate) {
-        pMVar8 = pMVar7;
+      pMVar10 = (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)0x0;
+      if (pMVar8->klass == TypeInfo__MVGameCoinManager__OnGameCoinAmountChangeDelegate) {
+        pMVar10 = pMVar8;
       }
-      if (pMVar8 != (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)0x0) {
-        (pMVar3->fields).OnGameCoinAmountChange = pMVar8;
-        pMVar8 = (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)0x0;
-        if (pMVar7->klass == TypeInfo__MVGameCoinManager__OnGameCoinAmountChangeDelegate) {
-          pMVar8 = pMVar7;
+      if (pMVar10 != (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)0x0) {
+        *ppMVar9 = pMVar10;
+        pMVar10 = (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)0x0;
+        if (pMVar8->klass == TypeInfo__MVGameCoinManager__OnGameCoinAmountChangeDelegate) {
+          pMVar10 = pMVar8;
         }
-        if (pMVar8 != (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)0x0) {
+        if (pMVar10 != (MVGameCoinManager_OnGameCoinAmountChangeDelegate *)0x0) {
           func_?();
           return;
         }
@@ -209,8 +211,8 @@ void Assembly-CSharp.dll::GameMeterGameCoin::GameMeterGameCoin_OnDestroy
   func_?();
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 

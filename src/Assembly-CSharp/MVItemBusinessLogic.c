@@ -59,12 +59,12 @@ void Assembly-CSharp.dll::MVItemBusinessLogic::MVItemBusinessLogic_AddItemWithNo
     UxmlObjectListAttributeDescription`1[System::Object]::
     UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
     if (this_00 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
+      *(bool *)((int)&this_00[3].monitor + 1) = resellable;
       this_00[1].klass =
            (UxmlObjectListAttributeDescription_1_System_Object___Class *)itemCategoryID;
       this_00[1].monitor = (MonitorData *)itemTypeID;
-      this_00[2].monitor = (MonitorData *)name;
       (this_00->fields)._._defaultValue_k__BackingField = (List_1_System_Object_ *)itemID;
-      *(bool *)((int)&this_00[3].monitor + 1) = resellable;
+      this_00[2].monitor = (MonitorData *)name;
       func_?(&this_00[2].monitor,name);
       pDVar1 = (this->fields).items;
       if (pDVar1 != (Dictionary_2_System_Int32_MV_WorldObject_MVItem_ *)0x0) {
@@ -212,7 +212,8 @@ void Assembly-CSharp.dll::MVItemBusinessLogic::MVItemBusinessLogic__ctor
              MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::MVItem>__Dictionary__
             );
   method_00 = (MethodInfo *)&this->fields;
-  (this->fields).items = (Dictionary_2_System_Int32_MV_WorldObject_MVItem_ *)this_00;
+  ((MVItemBusinessLogic__Fields *)method_00)->items =
+       (Dictionary_2_System_Int32_MV_WorldObject_MVItem_ *)this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);

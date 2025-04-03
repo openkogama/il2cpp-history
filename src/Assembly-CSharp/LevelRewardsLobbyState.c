@@ -25,6 +25,7 @@ void Assembly-CSharp.dll::LevelRewardsLobbyState::LevelRewardsLobbyState_OnDestr
   }
   else {
     pAVar5 = (pLVar3->fields).OnRewardsReturned;
+    ppAVar6 = &(pLVar3->fields).OnRewardsReturned;
     this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
@@ -34,26 +35,25 @@ void Assembly-CSharp.dll::LevelRewardsLobbyState::LevelRewardsLobbyState_OnDestr
              mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)pAVar5,(Delegate *)this_00,(MethodInfo *)0x0);
     uVar4 = CONCAT44(TypeInfo__System__Action,pAVar5);
+    ppAStack7 = ppAVar6;
     if (pAVar5 == (Action *)0x0) {
-      (pLVar3->fields).OnRewardsReturned = (Action *)0x0;
-      ppAStack6 = &(pLVar3->fields).OnRewardsReturned;
-      pAStack7 = (Action *)0x0;
+      pAStack8 = (Action *)0x0;
+      *ppAVar6 = (Action *)0x0;
       func_?();
       return;
     }
-    pAVar8 = (Action *)0x0;
+    pAVar9 = (Action *)0x0;
     if (pAVar5->klass == TypeInfo__System__Action) {
-      pAVar8 = pAVar5;
+      pAVar9 = pAVar5;
     }
-    if (pAVar8 != (Action *)0x0) {
-      (pLVar3->fields).OnRewardsReturned = pAVar8;
+    if (pAVar9 != (Action *)0x0) {
+      *ppAVar6 = pAVar9;
       uVar4 = CONCAT44(TypeInfo__System__Action,pAVar5);
-      pAStack7 = (Action *)0x0;
+      pAStack8 = (Action *)0x0;
       if (pAVar5->klass == TypeInfo__System__Action) {
-        pAStack7 = pAVar5;
+        pAStack8 = pAVar5;
       }
-      if (pAStack7 != (Action *)0x0) {
-        ppAStack6 = &(pLVar3->fields).OnRewardsReturned;
+      if (pAStack8 != (Action *)0x0) {
         func_?();
         return;
       }
@@ -61,8 +61,8 @@ void Assembly-CSharp.dll::LevelRewardsLobbyState::LevelRewardsLobbyState_OnDestr
   }
   _ppAStack00000018 = uVar4;
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -540,6 +540,7 @@ void Assembly-CSharp.dll::LevelRewardsLobbyState::LevelRewardsLobbyState_Start
     if ((pMVar1 != (MVNetworkGame *)0x0) &&
        (pLVar2 = (pMVar1->fields).levelRewardsManager, pLVar2 != (LevelRewardsManager *)0x0)) {
       pAVar10 = (pLVar2->fields).OnRewardsReturned;
+      ppAVar11 = &(pLVar2->fields).OnRewardsReturned;
       this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
       NavMesh_OnNavMeshPreUpdate__ctor
@@ -548,27 +549,26 @@ void Assembly-CSharp.dll::LevelRewardsLobbyState::LevelRewardsLobbyState_Start
       pAVar10 = (Action *)
                mscorlib.dll::System::Delegate::Delegate_Combine
                          ((Delegate *)pAVar10,(Delegate *)this_00,(MethodInfo *)0x0);
-      uVar11 = CONCAT44(TypeInfo__System__Action,pAVar10);
+      uVar12 = CONCAT44(TypeInfo__System__Action,pAVar10);
+      ppAStack13 = ppAVar11;
       if (pAVar10 == (Action *)0x0) {
-        (pLVar2->fields).OnRewardsReturned = (Action *)0x0;
-        ppAStack12 = &(pLVar2->fields).OnRewardsReturned;
-        pAStack13 = (Action *)0x0;
+        pAStack14 = (Action *)0x0;
+        *ppAVar11 = (Action *)0x0;
         func_?();
         return;
       }
-      pAVar14 = (Action *)0x0;
+      pAVar15 = (Action *)0x0;
       if (pAVar10->klass == TypeInfo__System__Action) {
-        pAVar14 = pAVar10;
+        pAVar15 = pAVar10;
       }
-      if (pAVar14 != (Action *)0x0) {
-        (pLVar2->fields).OnRewardsReturned = pAVar14;
-        uVar11 = CONCAT44(TypeInfo__System__Action,pAVar10);
-        pAStack13 = (Action *)0x0;
+      if (pAVar15 != (Action *)0x0) {
+        *ppAVar11 = pAVar15;
+        uVar12 = CONCAT44(TypeInfo__System__Action,pAVar10);
+        pAStack14 = (Action *)0x0;
         if (pAVar10->klass == TypeInfo__System__Action) {
-          pAStack13 = pAVar10;
+          pAStack14 = pAVar10;
         }
-        if (pAStack13 != (Action *)0x0) {
-          ppAStack12 = &(pLVar2->fields).OnRewardsReturned;
+        if (pAStack14 != (Action *)0x0) {
           func_?();
           return;
         }
@@ -576,9 +576,9 @@ void Assembly-CSharp.dll::LevelRewardsLobbyState::LevelRewardsLobbyState_Start
       goto code_?;
     }
   }
-  uVar11 = func_?();
+  uVar12 = func_?();
 code_?:
-  _ppAStack0000001c = uVar11;
+  _ppAStack0000001c = uVar12;
   func_?();
   pcVar9 = (code *)swi(3);
   (*pcVar9)();

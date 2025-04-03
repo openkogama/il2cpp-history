@@ -64,8 +64,9 @@ code_?:
     }
   }
   else if ((this_00->fields).shouldTransitionToNewAnimation != 0) {
-    (this->fields).__2__current = (Object *)0x0;
-    func_?(&(this->fields).__2__current,0);
+    ppOVar7 = &(this->fields).__2__current;
+    *ppOVar7 = (Object *)0x0;
+    func_?(ppOVar7,0);
     (this->fields).__1__state = 1;
     return 1;
   }

@@ -8,9 +8,9 @@ void Assembly-CSharp.dll::RTG::DirectionalLightGizmo3DLookAndFeel::
 {
   pGStack_1 = (GizmoCap2DLookAndFeel *)&stack0xfffffffc;
   if (tick != (GizmoCap2D *)0x0) {
-    pGStack_1 = (this->fields)._dirSnapTickLookAndFeel;
-    (tick->fields)._sharedLookAndFeel = pGStack_1;
     ppGStack_2 = &(tick->fields)._sharedLookAndFeel;
+    pGStack_1 = (this->fields)._dirSnapTickLookAndFeel;
+    *ppGStack_2 = pGStack_1;
     func_?();
     return;
   }
@@ -290,103 +290,102 @@ void Assembly-CSharp.dll::RTG::DirectionalLightGizmo3DLookAndFeel::
   }
   pGVar1 = (GizmoCap2DLookAndFeel *)func_?(TypeInfo__RTG__GizmoCap2DLookAndFeel);
   GizmoCap2DLookAndFeel::GizmoCap2DLookAndFeel__ctor(pGVar1,(MethodInfo *)0x0);
-  (this->fields)._dirSnapTickLookAndFeel = pGVar1;
-  func_?(&this->fields,pGVar1);
-  pCVar2 = ColorEx::ColorEx_FromByteValues(&CStack_3,0xd2,0xd2,0x8a,0xff,(MethodInfo *)0x0);
-  fVar4 = pCVar2->g;
-  fVar5 = pCVar2->b;
-  fVar6 = pCVar2->a;
-  (this->fields)._lightRaysColor.r = pCVar2->r;
-  (this->fields)._lightRaysColor.g = fVar4;
-  (this->fields)._lightRaysColor.b = fVar5;
-  (this->fields)._lightRaysColor.a = fVar6;
-  pCVar2 = ColorEx::ColorEx_FromByteValues(&CStack_3,0xd2,0xd2,0x8a,0xff,(MethodInfo *)0x0);
-  fVar4 = pCVar2->r;
-  fVar5 = pCVar2->g;
-  fVar6 = pCVar2->b;
-  fVar7 = pCVar2->a;
+  pDVar2 = &this->fields;
+  pDVar2->_dirSnapTickLookAndFeel = pGVar1;
+  func_?(pDVar2,pGVar1);
+  pCVar3 = ColorEx::ColorEx_FromByteValues(&CStack_4,0xd2,0xd2,0x8a,0xff,(MethodInfo *)0x0);
+  fVar5 = pCVar3->g;
+  fVar6 = pCVar3->b;
+  fVar7 = pCVar3->a;
+  (this->fields)._lightRaysColor.r = pCVar3->r;
+  (this->fields)._lightRaysColor.g = fVar5;
+  (this->fields)._lightRaysColor.b = fVar6;
+  (this->fields)._lightRaysColor.a = fVar7;
+  pCVar3 = ColorEx::ColorEx_FromByteValues(&CStack_4,0xd2,0xd2,0x8a,0xff,(MethodInfo *)0x0);
+  fVar5 = pCVar3->r;
+  fVar6 = pCVar3->g;
+  fVar7 = pCVar3->b;
+  fVar8 = pCVar3->a;
   (this->fields)._sourceCircleRadius = 2.0;
   (this->fields)._numLightRays = 8;
-  (this->fields)._sourceCircleBorderColor.r = fVar4;
-  (this->fields)._sourceCircleBorderColor.g = fVar5;
-  (this->fields)._sourceCircleBorderColor.b = fVar6;
-  (this->fields)._sourceCircleBorderColor.a = fVar7;
+  (this->fields)._sourceCircleBorderColor.r = fVar5;
+  (this->fields)._sourceCircleBorderColor.g = fVar6;
+  (this->fields)._sourceCircleBorderColor.b = fVar7;
+  (this->fields)._sourceCircleBorderColor.a = fVar8;
   (this->fields)._lightRayLength = 10.0;
+  fVar7 = _UNK_?;
   fVar6 = _UNK_?;
   fVar5 = _UNK_?;
-  fVar4 = _UNK_?;
   (this->fields)._dirSnapSegmentColor.r = _UNK_?;
-  (this->fields)._dirSnapSegmentColor.g = fVar4;
-  (this->fields)._dirSnapSegmentColor.b = fVar5;
-  (this->fields)._dirSnapSegmentColor.a = fVar6;
+  (this->fields)._dirSnapSegmentColor.g = fVar5;
+  (this->fields)._dirSnapSegmentColor.b = fVar6;
+  (this->fields)._dirSnapSegmentColor.a = fVar7;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,in_stack_8);
-  pCVar2 = ColorEx::ColorEx_FromByteValues(&CStack_3,0xd2,0xd2,0x8a,0xff,(MethodInfo *)0x0);
-  pGVar1 = (this->fields)._dirSnapTickLookAndFeel;
-  fVar4 = pCVar2->g;
-  fVar5 = pCVar2->b;
-  fVar6 = pCVar2->a;
+            ((Object *)this,ExceptionArgument__Enum_obj,in_stack_9);
+  pCVar3 = ColorEx::ColorEx_FromByteValues(&CStack_4,0xd2,0xd2,0x8a,0xff,(MethodInfo *)0x0);
+  pGVar1 = pDVar2->_dirSnapTickLookAndFeel;
+  fVar5 = pCVar3->g;
+  fVar6 = pCVar3->b;
+  fVar7 = pCVar3->a;
   if (pGVar1 != (GizmoCap2DLookAndFeel *)0x0) {
-    (pGVar1->fields)._color.r = pCVar2->r;
-    (pGVar1->fields)._color.g = fVar4;
-    (pGVar1->fields)._color.b = fVar5;
-    (pGVar1->fields)._color.a = fVar6;
-    pCVar2 = RTSystemValues::RTSystemValues_get_HoveredAxisColor(&CStack_3,(MethodInfo *)0x0);
-    fVar7 = _UNK_?;
-    uVar9 = _UNK_?;
+    (pGVar1->fields)._color.r = pCVar3->r;
+    (pGVar1->fields)._color.g = fVar5;
+    (pGVar1->fields)._color.b = fVar6;
+    (pGVar1->fields)._color.a = fVar7;
+    pCVar3 = RTSystemValues::RTSystemValues_get_HoveredAxisColor(&CStack_4,(MethodInfo *)0x0);
+    fVar8 = _UNK_?;
     uVar10 = _UNK_?;
     uVar11 = _UNK_?;
-    pGVar1 = (this->fields)._dirSnapTickLookAndFeel;
-    fVar4 = pCVar2->g;
-    fVar5 = pCVar2->b;
-    fVar6 = pCVar2->a;
+    uVar12 = _UNK_?;
+    pGVar1 = pDVar2->_dirSnapTickLookAndFeel;
+    fVar5 = pCVar3->g;
+    fVar6 = pCVar3->b;
+    fVar7 = pCVar3->a;
     if (pGVar1 != (GizmoCap2DLookAndFeel *)0x0) {
-      (pGVar1->fields)._hoveredColor.r = pCVar2->r;
-      (pGVar1->fields)._hoveredColor.g = fVar4;
-      (pGVar1->fields)._hoveredColor.b = fVar5;
-      (pGVar1->fields)._hoveredColor.a = fVar6;
-      color.g = (float)uVar10;
-      color.r = (float)uVar11;
-      color.b = (float)uVar9;
-      color.a = fVar7;
-      pCVar2 = ColorEx::ColorEx_KeepAllButAlpha(&CStack_3,color,0.0,(MethodInfo *)0x0);
-      pGVar1 = (this->fields)._dirSnapTickLookAndFeel;
-      fVar4 = pCVar2->g;
-      fVar5 = pCVar2->b;
-      fVar6 = pCVar2->a;
+      (pGVar1->fields)._hoveredColor.r = pCVar3->r;
+      (pGVar1->fields)._hoveredColor.g = fVar5;
+      (pGVar1->fields)._hoveredColor.b = fVar6;
+      (pGVar1->fields)._hoveredColor.a = fVar7;
+      color.g = (float)uVar11;
+      color.r = (float)uVar12;
+      color.b = (float)uVar10;
+      color.a = fVar8;
+      pCVar3 = ColorEx::ColorEx_KeepAllButAlpha(&CStack_4,color,0.0,(MethodInfo *)0x0);
+      pGVar1 = pDVar2->_dirSnapTickLookAndFeel;
+      fVar5 = pCVar3->g;
+      fVar6 = pCVar3->b;
+      fVar7 = pCVar3->a;
       if (pGVar1 != (GizmoCap2DLookAndFeel *)0x0) {
-        (pGVar1->fields)._borderColor.r = pCVar2->r;
-        (pGVar1->fields)._borderColor.g = fVar4;
-        (pGVar1->fields)._borderColor.b = fVar5;
-        (pGVar1->fields)._borderColor.a = fVar6;
+        (pGVar1->fields)._borderColor.r = pCVar3->r;
+        (pGVar1->fields)._borderColor.g = fVar5;
+        (pGVar1->fields)._borderColor.b = fVar6;
+        (pGVar1->fields)._borderColor.a = fVar7;
         color_00.g = (float)_UNK_?;
         color_00.r = (float)_UNK_?;
         color_00.b = (float)_UNK_?;
         color_00.a = _UNK_?;
-        pCVar2 = ColorEx::ColorEx_KeepAllButAlpha(&CStack_3,color_00,0.0,(MethodInfo *)0x0);
-        pGVar1 = (this->fields)._dirSnapTickLookAndFeel;
-        fVar4 = pCVar2->g;
-        fVar5 = pCVar2->b;
-        fVar6 = pCVar2->a;
+        pCVar3 = ColorEx::ColorEx_KeepAllButAlpha(&CStack_4,color_00,0.0,(MethodInfo *)0x0);
+        pGVar1 = pDVar2->_dirSnapTickLookAndFeel;
+        fVar5 = pCVar3->g;
+        fVar6 = pCVar3->b;
+        fVar7 = pCVar3->a;
         if (pGVar1 != (GizmoCap2DLookAndFeel *)0x0) {
-          (pGVar1->fields)._hoveredBorderColor.r = pCVar2->r;
-          (pGVar1->fields)._hoveredBorderColor.g = fVar4;
-          (pGVar1->fields)._hoveredBorderColor.b = fVar5;
-          (pGVar1->fields)._hoveredBorderColor.a = fVar6;
-          pGVar1 = (this->fields)._dirSnapTickLookAndFeel;
-          if (pGVar1 != (GizmoCap2DLookAndFeel *)0x0) {
+          (pGVar1->fields)._hoveredBorderColor.r = pCVar3->r;
+          (pGVar1->fields)._hoveredBorderColor.g = fVar5;
+          (pGVar1->fields)._hoveredBorderColor.b = fVar6;
+          (pGVar1->fields)._hoveredBorderColor.a = fVar7;
+          if (pDVar2->_dirSnapTickLookAndFeel != (GizmoCap2DLookAndFeel *)0x0) {
             CameraMoveSettings::CameraMoveSettings_set_AccelerationRate
-                      ((CameraMoveSettings *)pGVar1,6.0,(MethodInfo *)0x0);
-            this_00 = (GizmoPlaneSlider3DLookAndFeel *)(this->fields)._dirSnapTickLookAndFeel;
-            if (this_00 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+                      ((CameraMoveSettings *)pDVar2->_dirSnapTickLookAndFeel,6.0,(MethodInfo *)0x0);
+            if ((GizmoPlaneSlider3DLookAndFeel *)pDVar2->_dirSnapTickLookAndFeel !=
+                (GizmoPlaneSlider3DLookAndFeel *)0x0) {
               GizmoPlaneSlider3DLookAndFeel::GizmoPlaneSlider3DLookAndFeel_set_RATriangleXLength
-                        (this_00,6.0,(MethodInfo *)0x0);
-              pGVar1 = (this->fields)._dirSnapTickLookAndFeel;
-              if (pGVar1 != (GizmoCap2DLookAndFeel *)0x0) {
-                (pGVar1->fields)._circleRadius = 3.0;
-                pGVar1 = (this->fields)._dirSnapTickLookAndFeel;
-                if (pGVar1 != (GizmoCap2DLookAndFeel *)0x0) {
-                  (pGVar1->fields)._capType = 0;
+                        ((GizmoPlaneSlider3DLookAndFeel *)pDVar2->_dirSnapTickLookAndFeel,6.0,
+                         (MethodInfo *)0x0);
+              if (pDVar2->_dirSnapTickLookAndFeel != (GizmoCap2DLookAndFeel *)0x0) {
+                (pDVar2->_dirSnapTickLookAndFeel->fields)._circleRadius = 3.0;
+                if (pDVar2->_dirSnapTickLookAndFeel != (GizmoCap2DLookAndFeel *)0x0) {
+                  (pDVar2->_dirSnapTickLookAndFeel->fields)._capType = 0;
                   return;
                 }
               }
@@ -397,8 +396,8 @@ void Assembly-CSharp.dll::RTG::DirectionalLightGizmo3DLookAndFeel::
     }
   }
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

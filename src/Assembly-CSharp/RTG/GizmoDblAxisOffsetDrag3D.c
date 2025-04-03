@@ -44,91 +44,96 @@ void Assembly-CSharp.dll::RTG::GizmoDblAxisOffsetDrag3D::
      GizmoDblAxisOffsetDrag3D_CalculateDragValues(GizmoDblAxisOffsetDrag3D *this,MethodInfo *method)
 
 {
-  pIVar1 = (this->fields)._._planeDragSession;
-  if (pIVar1 == (InputDevicePlaneDragSession3D *)0x0) {
+  pGVar1 = this;
+  pIVar2 = (this->fields)._._planeDragSession;
+  if (pIVar2 == (InputDevicePlaneDragSession3D *)0x0) {
 code_?:
     func_?();
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
     return;
   }
-  fVar3 = Vector3Ex::Vector3Ex_Dot
-                     ((pIVar1->fields)._dragDelta,(this->fields)._workData.Axis0,(MethodInfo *)0x0)
-  ;
-  pIVar1 = (this->fields)._._planeDragSession;
-  if (pIVar1 == (InputDevicePlaneDragSession3D *)0x0) goto code_?;
-  fVar4 = Vector3Ex::Vector3Ex_Dot
-                     ((pIVar1->fields)._dragDelta,(this->fields)._workData.Axis1,(MethodInfo *)0x0)
+  pGVar4 = (GizmoDblAxisOffsetDrag3D *)
+            Vector3Ex::Vector3Ex_Dot
+                      ((pIVar2->fields)._dragDelta,(this->fields)._workData.Axis0,(MethodInfo *)0x0
+                      );
+  pIVar2 = (this->fields)._._planeDragSession;
+  if (pIVar2 == (InputDevicePlaneDragSession3D *)0x0) goto code_?;
+  fVar5 = Vector3Ex::Vector3Ex_Dot
+                     ((pIVar2->fields)._dragDelta,(this->fields)._workData.Axis1,(MethodInfo *)0x0)
   ;
   if ((this->fields)._._isSnapEnabled == 0) {
-    pIVar1 = (this->fields)._._planeDragSession;
+    pIVar2 = (this->fields)._._planeDragSession;
     (this->fields)._accumSnapDrag0 = 0.0;
     (this->fields)._accumSnapDrag1 = 0.0;
-    if (pIVar1 == (InputDevicePlaneDragSession3D *)0x0) goto code_?;
-    uVar5 = (pIVar1->fields)._dragDelta.x;
-    uVar6 = (pIVar1->fields)._dragDelta.y;
-    fVar4 = (this->fields)._._sensitivity;
-    fVar3 = (pIVar1->fields)._dragDelta.z * fVar4;
-    (this->fields)._._._relativeDragOffset.x = (float)uVar5 * fVar4;
-    (this->fields)._._._relativeDragOffset.y = (float)uVar6 * fVar4;
+    if (pIVar2 == (InputDevicePlaneDragSession3D *)0x0) goto code_?;
+    uVar6 = (pIVar2->fields)._dragDelta.x;
+    uVar7 = (pIVar2->fields)._dragDelta.y;
+    fVar8 = (this->fields)._._sensitivity;
+    fVar5 = (pIVar2->fields)._dragDelta.z * fVar8;
+    (this->fields)._._._relativeDragOffset.x = (float)uVar6 * fVar8;
+    (this->fields)._._._relativeDragOffset.y = (float)uVar7 * fVar8;
   }
   else {
+    this = pGVar4;
     if (cRam_? == '\0') {
+      this = (GizmoDblAxisOffsetDrag3D *)&UNK_?;
       func_?();
       cRam_? = '\x01';
     }
-    fVar3 = fVar3 + (this->fields)._accumSnapDrag0;
-    pVVar7 = TypeInfo__UnityEngine__Vector3->static_fields;
-    fVar8 = (pVVar7->zeroVector).y;
-    fVar9 = (pVVar7->zeroVector).z;
-    (this->fields)._._._relativeDragOffset.x = (pVVar7->zeroVector).x;
-    (this->fields)._._._relativeDragOffset.y = fVar8;
-    fVar8 = (this->fields)._accumSnapDrag1;
-    (this->fields)._._._relativeDragOffset.z = fVar9;
-    (this->fields)._accumSnapDrag0 = fVar3;
-    (this->fields)._accumSnapDrag1 = fVar4 + fVar8;
-    bVar10 = SnapMath::SnapMath_CanExtractSnap
-                       ((this->fields)._workData.SnapStep0,fVar3,(MethodInfo *)0x0);
-    if (bVar10 != 0) {
-      fVar8 = SnapMath::SnapMath_ExtractSnap
-                         ((this->fields)._workData.SnapStep0,&(this->fields)._accumSnapDrag0,
-                          (MethodInfo *)0x0);
-      uVar11 = (this->fields)._._._relativeDragOffset.x;
-      uVar12 = (this->fields)._._._relativeDragOffset.y;
-      fVar3 = (this->fields)._._._relativeDragOffset.z;
-      uVar13 = (this->fields)._workData.Axis0.x;
-      uVar14 = (this->fields)._workData.Axis0.y;
-      fVar4 = (this->fields)._workData.Axis0.z;
-      (this->fields)._._._relativeDragOffset.x = (float)uVar11 + (float)uVar13 * fVar8;
-      (this->fields)._._._relativeDragOffset.y = (float)uVar12 + (float)uVar14 * fVar8;
-      (this->fields)._._._relativeDragOffset.z = fVar3 + fVar4 * fVar8;
+    accumulated = &(pGVar1->fields)._accumSnapDrag0;
+    accumulated_00 = &(pGVar1->fields)._accumSnapDrag1;
+    fVar8 = *accumulated;
+    pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
+    fVar10 = (pVVar9->zeroVector).y;
+    fVar11 = (pVVar9->zeroVector).z;
+    (pGVar1->fields)._._._relativeDragOffset.x = (pVVar9->zeroVector).x;
+    (pGVar1->fields)._._._relativeDragOffset.y = fVar10;
+    fVar10 = *accumulated_00;
+    (pGVar1->fields)._._._relativeDragOffset.z = fVar11;
+    *accumulated = (float)this + fVar8;
+    *accumulated_00 = fVar5 + fVar10;
+    bVar12 = SnapMath::SnapMath_CanExtractSnap
+                       ((pGVar1->fields)._workData.SnapStep0,(float)this + fVar8,(MethodInfo *)0x0
+                       );
+    if (bVar12 != 0) {
+      fVar10 = SnapMath::SnapMath_ExtractSnap
+                         ((pGVar1->fields)._workData.SnapStep0,accumulated,(MethodInfo *)0x0);
+      uVar13 = (pGVar1->fields)._._._relativeDragOffset.x;
+      uVar14 = (pGVar1->fields)._._._relativeDragOffset.y;
+      fVar5 = (pGVar1->fields)._._._relativeDragOffset.z;
+      uVar15 = (pGVar1->fields)._workData.Axis0.x;
+      uVar16 = (pGVar1->fields)._workData.Axis0.y;
+      fVar8 = (pGVar1->fields)._workData.Axis0.z;
+      (pGVar1->fields)._._._relativeDragOffset.x = (float)uVar13 + (float)uVar15 * fVar10;
+      (pGVar1->fields)._._._relativeDragOffset.y = (float)uVar14 + (float)uVar16 * fVar10;
+      (pGVar1->fields)._._._relativeDragOffset.z = fVar5 + fVar8 * fVar10;
     }
-    bVar10 = SnapMath::SnapMath_CanExtractSnap
-                       ((this->fields)._workData.SnapStep1,(this->fields)._accumSnapDrag1,
-                        (MethodInfo *)0x0);
-    if (bVar10 == 0) goto code_?;
-    fVar4 = SnapMath::SnapMath_ExtractSnap
-                       ((this->fields)._workData.SnapStep1,&(this->fields)._accumSnapDrag1,
-                        (MethodInfo *)0x0);
-    uVar15 = (this->fields)._._._relativeDragOffset.x;
-    uVar16 = (this->fields)._._._relativeDragOffset.y;
-    uVar17 = (this->fields)._workData.Axis1.x;
-    uVar18 = (this->fields)._workData.Axis1.y;
-    fVar3 = (this->fields)._._._relativeDragOffset.z + (this->fields)._workData.Axis1.z * fVar4;
-    (this->fields)._._._relativeDragOffset.x = (float)uVar15 + (float)uVar17 * fVar4;
-    (this->fields)._._._relativeDragOffset.y = (float)uVar16 + (float)uVar18 * fVar4;
+    bVar12 = SnapMath::SnapMath_CanExtractSnap
+                       ((pGVar1->fields)._workData.SnapStep1,*accumulated_00,(MethodInfo *)0x0);
+    if (bVar12 == 0) goto code_?;
+    fVar8 = SnapMath::SnapMath_ExtractSnap
+                       ((pGVar1->fields)._workData.SnapStep1,accumulated_00,(MethodInfo *)0x0);
+    uVar17 = (pGVar1->fields)._._._relativeDragOffset.x;
+    uVar18 = (pGVar1->fields)._._._relativeDragOffset.y;
+    uVar19 = (pGVar1->fields)._workData.Axis1.x;
+    uVar20 = (pGVar1->fields)._workData.Axis1.y;
+    fVar5 = (pGVar1->fields)._._._relativeDragOffset.z +
+             (pGVar1->fields)._workData.Axis1.z * fVar8;
+    (pGVar1->fields)._._._relativeDragOffset.x = (float)uVar17 + (float)uVar19 * fVar8;
+    (pGVar1->fields)._._._relativeDragOffset.y = (float)uVar18 + (float)uVar20 * fVar8;
   }
-  (this->fields)._._._relativeDragOffset.z = fVar3;
+  (pGVar1->fields)._._._relativeDragOffset.z = fVar5;
 code_?:
-  uVar19 = (this->fields)._._._totalDragOffset.x;
-  uVar20 = (this->fields)._._._totalDragOffset.y;
-  fVar3 = (this->fields)._._._totalDragOffset.z;
-  uVar21 = (this->fields)._._._relativeDragOffset.x;
-  uVar22 = (this->fields)._._._relativeDragOffset.y;
-  fVar4 = (this->fields)._._._relativeDragOffset.z;
-  (this->fields)._._._totalDragOffset.x = (float)uVar21 + (float)uVar19;
-  (this->fields)._._._totalDragOffset.y = (float)uVar22 + (float)uVar20;
-  (this->fields)._._._totalDragOffset.z = fVar4 + fVar3;
+  uVar21 = (pGVar1->fields)._._._totalDragOffset.x;
+  uVar22 = (pGVar1->fields)._._._totalDragOffset.y;
+  fVar5 = (pGVar1->fields)._._._totalDragOffset.z;
+  uVar23 = (pGVar1->fields)._._._relativeDragOffset.x;
+  uVar24 = (pGVar1->fields)._._._relativeDragOffset.y;
+  fVar8 = (pGVar1->fields)._._._relativeDragOffset.z;
+  (pGVar1->fields)._._._totalDragOffset.x = (float)uVar23 + (float)uVar21;
+  (pGVar1->fields)._._._totalDragOffset.y = (float)uVar24 + (float)uVar22;
+  (pGVar1->fields)._._._totalDragOffset.z = fVar8 + fVar5;
   return;
 }
 

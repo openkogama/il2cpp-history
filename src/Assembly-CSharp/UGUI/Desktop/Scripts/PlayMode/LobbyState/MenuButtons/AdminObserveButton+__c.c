@@ -19,10 +19,9 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::PlayMode::LobbyState::MenuButt
       do {
         if (pIVar1->interfaceOffsets[uVar2].interfaceType ==
             (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IUIStack) {
-          pIVar1 = handler->klass;
           iVar4 = pIVar1->interfaceOffsets[uVar2].offset;
-          (*(code *)(&(pIVar1->vtable).Pop)[iVar4].method)
-                    (handler,(&(pIVar1->vtable).PopGroups)[iVar4].methodPtr);
+          (*(code *)(&(handler->klass->vtable).Pop)[iVar4].method)
+                    (handler,(&(handler->klass->vtable).PopGroups)[iVar4].methodPtr);
           return;
         }
         uVar2 = uVar2 + 1;

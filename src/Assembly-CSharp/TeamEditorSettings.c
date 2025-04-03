@@ -87,7 +87,8 @@ void Assembly-CSharp.dll::TeamEditorSettings::TeamEditorSettings_Initialize
                          (this_01,woID,(MethodInfo *)0x0);
       if (pMVar1 != (MVWorldObject *)0x0) {
         pDStack2 = (pMVar1->fields).data;
-        (this->fields).teamData = pDStack2;
+        ppDVar3 = &(this->fields).teamData;
+        *ppDVar3 = pDStack2;
         func_?();
         TeamEditorSettings_InitInputfield
                   (this,(this->fields).blueTeam,(this->fields).blueTeamButton,MVTeam__Enum_Blue,
@@ -101,16 +102,16 @@ void Assembly-CSharp.dll::TeamEditorSettings::TeamEditorSettings_Initialize
         TeamEditorSettings_InitInputfield
                   (this,(this->fields).yellowTeam,(this->fields).yellowTeamButton,
                    MVTeam__Enum_Yellow,(MethodInfo *)0x0);
-        TeamEditorSettings_SetActiveButtons(this,(this->fields).teamData,(MethodInfo *)0x0);
-        (this->fields).teamData = (Dictionary_2_System_Object_System_Object_ *)0x0;
+        TeamEditorSettings_SetActiveButtons(this,*ppDVar3,(MethodInfo *)0x0);
+        *ppDVar3 = (Dictionary_2_System_Object_System_Object_ *)0x0;
         func_?();
         return;
       }
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

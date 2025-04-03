@@ -32,8 +32,9 @@ bool Assembly-CSharp.dll::ActivateSoundOnAnimation+<PlaySound>d__4::
     bVar5 = (*pcVar4)();
     return bVar5;
   }
-  (this->fields).__2__current = (Object *)0x0;
-  func_?(&(this->fields).__2__current,0);
+  ppOVar6 = &(this->fields).__2__current;
+  *ppOVar6 = (Object *)0x0;
+  func_?(ppOVar6,0);
   (this->fields).__1__state = 1;
   return 1;
 }

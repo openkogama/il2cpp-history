@@ -284,18 +284,14 @@ bool Assembly-CSharp.dll::RTG::SceneTree::SceneTree_OverlapBox
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  LStack_6._list = (List_1_System_Object_ *)0x0;
-  LStack_6._index = 0;
-  LStack_6._version = 0;
-  LStack_6._current = (Object *)0x0;
   if (gameObjects != (List_1_UnityEngine_GameObject_ *)0x0) {
-    iVar7 = (gameObjects->fields)._size;
-    piVar8 = &(gameObjects->fields)._version;
-    *piVar8 = *piVar8 + 1;
+    iVar6 = (gameObjects->fields)._size;
+    piVar7 = &(gameObjects->fields)._version;
+    *piVar7 = *piVar7 + 1;
     (gameObjects->fields)._size = 0;
-    if (0 < iVar7) {
+    if (0 < iVar6) {
       mscorlib.dll::System::Array::Array_Clear
-                ((Array *)(gameObjects->fields)._items,0,iVar7,(MethodInfo *)0x0);
+                ((Array *)(gameObjects->fields)._items,0,iVar6,(MethodInfo *)0x0);
     }
     this_00 = (this->fields)._objectTree;
     if (this_00 != (SphereTree_1_UnityEngine_GameObject_ *)0x0) {
@@ -311,21 +307,18 @@ bool Assembly-CSharp.dll::RTG::SceneTree::SceneTree_OverlapBox
       box._rotation.w = obb._rotation.w;
       box._isValid = obb._isValid;
       box._41_3_ = obb._41_3_;
-      bVar9 = SphereTree`1[System::Object]::SphereTree_1_System_Object__OverlapBox
+      bVar8 = SphereTree`1[System::Object]::SphereTree_1_System_Object__OverlapBox
                         ((SphereTree_1_System_Object_ *)this_00,box,
                          (List_1_RTG_SphereTreeNode_1_System_Object_ *)(this->fields)._nodeBuffer,
                          MethodInfo__RTG__SphereTree<UnityEngine::GameObject>__OverlapBox_RTG__OBB__System__Collections__Generic__List<RTG::SphereTreeNode<UnityEngine::GameObject>_>_
                         );
-      if (bVar9 == 0) {
+      if (bVar8 == 0) {
         *unaff_FS_OFFSET = uStack_3;
         return 0;
       }
-      iStack_10 = 0;
-      uStack_11 = 0;
-      fStack_12 = 0.0;
       if ((TypeInfo__RTG__GameObjectTypeHelper->_1).cctor_finished_or_no_cctor == 0) {
-        auStack_13._40_4_ = TypeInfo__RTG__GameObjectTypeHelper;
-        auStack_13._36_4_ = &UNK_?;
+        auStack_9._40_4_ = TypeInfo__RTG__GameObjectTypeHelper;
+        auStack_9._36_4_ = &UNK_?;
         func_?();
       }
       if (cRam_? == '\0') {
@@ -339,71 +332,71 @@ bool Assembly-CSharp.dll::RTG::SceneTree::SceneTree_OverlapBox
       if ((TypeInfo__RTG__SceneTree->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__RTG__SceneTree);
       }
-      pVVar14 = Vector3Ex::Vector3Ex_FromValue
-                         ((Vector3 *)(auStack_15 + 4),
+      pVVar11 = Vector3Ex::Vector3Ex_FromValue
+                         ((Vector3 *)(auStack_12 + 4),
                           TypeInfo__RTG__SceneTree->static_fields->_nonMeshObjectSize,
                           (MethodInfo *)0x0);
-      uStack_11._0_4_ = pVVar14->x;
-      uStack_11._4_4_ = pVVar14->y;
-      fStack_12 = pVVar14->z;
+      uStack_13._0_4_ = pVVar11->x;
+      uStack_13._4_4_ = pVVar11->y;
+      fStack_14 = pVVar11->z;
       this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                 (this->fields)._nodeBuffer;
       if (this_01 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-        pLVar16 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+        pLVar15 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                  ::RegexCharClass+SingleRange]::
                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                            ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                             *)auStack_15,this_01,
+                             *)auStack_12,this_01,
                             MethodInfo__System__Collections__Generic__List<RTG::SphereTreeNode<UnityEngine::GameObject>_>__GetEnumerator__
                            );
-        LStack_6._list = (List_1_System_Object_ *)pLVar16->_list;
-        LStack_6._index = pLVar16->_index;
-        LStack_6._version = pLVar16->_version;
-        LStack_6._current = *(Object **)&pLVar16->_current;
+        LStack_16._list = (List_1_System_Object_ *)pLVar15->_list;
+        LStack_16._index = pLVar15->_index;
+        LStack_16._version = pLVar15->_version;
+        LStack_16._current = *(Object **)&pLVar15->_current;
         iStack_17 = 0;
         uStack_1 = 1;
-        RStack_18 = (RegexCharClass_SingleRange)&LStack_6;
+        RStack_18 = (RegexCharClass_SingleRange)&LStack_16;
         while( true ) {
-          bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+          bVar8 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
                   List_1_T_Enumerator_System_Object__MoveNext
-                            (&LStack_6,
+                            (&LStack_16,
                              MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::SphereTreeNode<UnityEngine::GameObject>_>__MoveNext__
                             );
-          if (bVar9 == 0) {
+          if (bVar8 == 0) {
             uStack_1 = 0xffffffff;
             mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                      ((Object *)&LStack_6,
+                      ((Object *)&LStack_16,
                        (ExceptionArgument__Enum)
                        MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::SphereTreeNode<UnityEngine::GameObject>_>__Dispose__
                        ,unaff_EBX);
-            iVar7 = (gameObjects->fields)._size;
+            iVar6 = (gameObjects->fields)._size;
             *unaff_FS_OFFSET = uStack_3;
-            return iVar7 != 0;
+            return iVar6 != 0;
           }
-          if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0)
+          if ((RegexCharClass_SingleRange)LStack_16._current == (RegexCharClass_SingleRange)0x0)
           break;
-          this_02 = *(GameObject **)((int)LStack_6._current + 0x20);
+          this_02 = *(GameObject **)((int)LStack_16._current + 0x20);
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          bVar9 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+          bVar8 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                             ((Object_1 *)this_02,(Object_1 *)0x0,(MethodInfo *)0x0);
-          if (bVar9 == 0) {
+          if (bVar8 == 0) {
             if (this_02 == (GameObject *)0x0) break;
-            bVar9 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+            bVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                     GameObject_get_activeInHierarchy(this_02,(MethodInfo *)0x0);
-            if (bVar9 != 0) {
+            if (bVar8 != 0) {
               if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
               }
-              queryConfig.NoVolumeSize.x = (float)(undefined4)uStack_11;
+              queryConfig.NoVolumeSize.x = (float)(undefined4)uStack_13;
               queryConfig.ObjectTypes = iStack_10;
-              queryConfig.NoVolumeSize.y = (float)uStack_11._4_4_;
-              queryConfig.NoVolumeSize.z = fStack_12;
+              queryConfig.NoVolumeSize.y = (float)uStack_13._4_4_;
+              queryConfig.NoVolumeSize.z = fStack_14;
               pOVar19 = ObjectBounds::ObjectBounds_CalcWorldOBB
-                                 ((OBB *)auStack_13,this_02,queryConfig,(MethodInfo *)0x0);
-              bVar9 = OBB::OBB_IntersectsOBB(&obb,*pOVar19,(MethodInfo *)0x0);
-              if (bVar9 != 0) {
+                                 ((OBB *)auStack_9,this_02,queryConfig,(MethodInfo *)0x0);
+              bVar8 = OBB::OBB_IntersectsOBB(&obb,*pOVar19,(MethodInfo *)0x0);
+              if (bVar8 != 0) {
                 mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
                 List_1_System_Object__Add
                           ((List_1_System_Object_ *)gameObjects,(Object *)this_02,
@@ -419,8 +412,8 @@ bool Assembly-CSharp.dll::RTG::SceneTree::SceneTree_OverlapBox
   uVar20 = func_?();
   func_?(uVar20);
   pcVar21 = (code *)swi(3);
-  bVar9 = (*pcVar21)();
-  return bVar9;
+  bVar8 = (*pcVar21)();
+  return bVar8;
 }
 
 
@@ -482,31 +475,27 @@ bool Assembly-CSharp.dll::RTG::SceneTree::SceneTree_RaycastAll
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  LStack_6._list = (List_1_System_Object_ *)0x0;
-  LStack_6._index = 0;
-  LStack_6._version = 0;
-  LStack_6._current = (Object *)0x0;
   func_?(&stack0xfffffec8,0,0x2c);
-  afStack_7[0] = 0.0;
-  VStack_8.x = 0.0;
-  VStack_8.y = 0.0;
-  VStack_8.z = 0.0;
-  fStack_9 = 0.0;
+  afStack_6[0] = 0.0;
+  VStack_7.x = 0.0;
+  VStack_7.y = 0.0;
+  VStack_7.z = 0.0;
+  fStack_8 = 0.0;
   if (hits == (List_1_RTG_GameObjectRayHit_ *)0x0) {
 code_?:
     func_?();
     func_?();
-    pcVar10 = (code *)swi(3);
-    bVar11 = (*pcVar10)();
-    return bVar11;
+    pcVar9 = (code *)swi(3);
+    bVar10 = (*pcVar9)();
+    return bVar10;
   }
-  iVar12 = (hits->fields)._size;
-  piVar13 = &(hits->fields)._version;
-  *piVar13 = *piVar13 + 1;
+  iVar11 = (hits->fields)._size;
+  piVar12 = &(hits->fields)._version;
+  *piVar12 = *piVar12 + 1;
   (hits->fields)._size = 0;
-  if (0 < iVar12) {
+  if (0 < iVar11) {
     mscorlib.dll::System::Array::Array_Clear
-              ((Array *)(hits->fields)._items,0,iVar12,(MethodInfo *)0x0);
+              ((Array *)(hits->fields)._items,0,iVar11,(MethodInfo *)0x0);
   }
   this_00 = (this->fields)._objectTree;
   if (this_00 == (SphereTree_1_UnityEngine_GameObject_ *)0x0) goto code_?;
@@ -516,22 +505,19 @@ code_?:
   ray_05.m_Direction.x = ray.m_Direction.x;
   ray_05.m_Direction.y = ray.m_Direction.y;
   ray_05.m_Direction.z = ray.m_Direction.z;
-  bVar11 = SphereTree`1[System::Object]::SphereTree_1_System_Object__RaycastAll
+  bVar10 = SphereTree`1[System::Object]::SphereTree_1_System_Object__RaycastAll
                     ((SphereTree_1_System_Object_ *)this_00,ray_05,
                      (List_1_RTG_SphereTreeNodeRayHit_1_System_Object_ *)
                      (this->fields)._nodeHitBuffer,
                      MethodInfo__RTG__SphereTree<UnityEngine::GameObject>__RaycastAll_UnityEngine__Ray__System__Collections__Generic__List<RTG::SphereTreeNodeRayHit<UnityEngine::GameObject>_>_
                     );
-  if (bVar11 == 0) {
+  if (bVar10 == 0) {
     *unaff_FS_OFFSET = uStack_3;
     return 0;
   }
-  iStack_14 = 0;
-  uStack_15 = 0;
-  fStack_16 = 0.0;
   if ((TypeInfo__RTG__GameObjectTypeHelper->_1).cctor_finished_or_no_cctor == 0) {
-    in_stack_17 = &UNK_?;
-    in_stack_18 = TypeInfo__RTG__GameObjectTypeHelper;
+    in_stack_13 = &UNK_?;
+    in_stack_14 = TypeInfo__RTG__GameObjectTypeHelper;
     func_?();
   }
   if (cRam_? == '\0') {
@@ -541,16 +527,16 @@ code_?:
   if ((TypeInfo__RTG__GameObjectTypeHelper->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  iStack_14 = TypeInfo__RTG__GameObjectTypeHelper->static_fields->_allCombined;
+  iStack_15 = TypeInfo__RTG__GameObjectTypeHelper->static_fields->_allCombined;
   if ((TypeInfo__RTG__SceneTree->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  pVVar19 = Vector3Ex::Vector3Ex_FromValue
-                     (&VStack_8,TypeInfo__RTG__SceneTree->static_fields->_nonMeshObjectSize,
+  pVVar16 = Vector3Ex::Vector3Ex_FromValue
+                     (&VStack_7,TypeInfo__RTG__SceneTree->static_fields->_nonMeshObjectSize,
                       (MethodInfo *)0x0);
-  uStack_15._0_4_ = pVVar19->x;
-  uStack_15._4_4_ = pVVar19->y;
-  fStack_16 = pVVar19->z;
+  uStack_17._0_4_ = pVVar16->x;
+  uStack_17._4_4_ = pVVar16->y;
+  fStack_18 = pVVar16->z;
   if ((TypeInfo__RTG__MonoSingleton<RTG::RTFocusCamera>->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
@@ -558,47 +544,47 @@ code_?:
             MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
                       (MethodInfo__RTG__MonoSingleton<RTG::RTFocusCamera>__get_Get__);
   if (this_01 == (RTFocusCamera *)0x0) goto code_?;
-  pVVar19 = RTFocusCamera::RTFocusCamera_get_Look(&VStack_8,this_01,(MethodInfo *)0x0);
-  uStack_20._0_4_ = pVVar19->x;
-  uStack_20._4_4_ = pVVar19->y;
-  fStack_21 = pVVar19->z;
+  pVVar16 = RTFocusCamera::RTFocusCamera_get_Look(&VStack_7,this_01,(MethodInfo *)0x0);
+  uStack_19._0_4_ = pVVar16->x;
+  uStack_19._4_4_ = pVVar16->y;
+  fStack_20 = pVVar16->z;
   if (raycastPresicion == SceneRaycastPrecision__Enum_BestFit) {
-    pLVar22 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+    pLVar21 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
              (this->fields)._nodeHitBuffer;
-    if (pLVar22 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+    if (pLVar21 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
     goto code_?;
     method_00 = (MethodInfo *)&UNK_?;
-    pMVar23 = 
+    pMVar22 = 
     MethodInfo__System__Collections__Generic__List<RTG::SphereTreeNodeRayHit<UnityEngine::GameObject>_>__GetEnumerator__
     ;
-    pLVar24 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    pLVar23 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
               RegexCharClass+SingleRange]::
               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                         ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                          *)&BStack_25.Plane.m_Distance,pLVar22,
+                          *)&BStack_24.Plane.m_Distance,pLVar21,
                          MethodInfo__System__Collections__Generic__List<RTG::SphereTreeNodeRayHit<UnityEngine::GameObject>_>__GetEnumerator__
                         );
-    pLStack_26 = &LStack_6;
-    afStack_7[1] = 0.0;
-    LStack_6._list = (List_1_System_Object_ *)pLVar24->_list;
-    LStack_6._index = pLVar24->_index;
-    LStack_6._version = pLVar24->_version;
-    LStack_6._current = *(Object **)&pLVar24->_current;
+    pLStack_25 = &LStack_26;
+    afStack_6[1] = 0.0;
+    LStack_26._list = (List_1_System_Object_ *)pLVar23->_list;
+    LStack_26._index = pLVar23->_index;
+    LStack_26._version = pLVar23->_version;
+    LStack_26._current = *(Object **)&pLVar23->_current;
     uStack_1 = 1;
 code_?:
-    this_03 = &LStack_6;
+    this_03 = &LStack_26;
     puVar27 = &UNK_?;
-    bVar11 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+    bVar10 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
             List_1_T_Enumerator_System_Object__MoveNext
                       (this_03,
                        MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::SphereTreeNodeRayHit<UnityEngine::GameObject>_>__MoveNext__
                       );
-    if (bVar11 != 0) {
-      if (((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) ||
-         (*(int *)((int)LStack_6._current + 8) == 0)) goto code_?;
-      pGVar28 = *(GameObject **)(*(int *)((int)LStack_6._current + 8) + 0x20);
-      puVar29 = in_stack_17;
-      pGVar30 = in_stack_18;
+    if (bVar10 != 0) {
+      if (((RegexCharClass_SingleRange)LStack_26._current == (RegexCharClass_SingleRange)0x0) ||
+         (*(int *)((int)LStack_26._current + 8) == 0)) goto code_?;
+      pGVar28 = *(GameObject **)(*(int *)((int)LStack_26._current + 8) + 0x20);
+      puVar29 = in_stack_13;
+      pGVar30 = in_stack_14;
       fVar31 = in_stack_32;
       fVar33 = in_stack_34;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
@@ -608,21 +594,21 @@ code_?:
         fVar31 = in_stack_32;
         fVar33 = in_stack_34;
       }
-      bVar11 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+      bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                         ((Object_1 *)pGVar28,(Object_1 *)0x0,(MethodInfo *)0x0);
-      in_stack_17 = puVar29;
-      in_stack_18 = pGVar30;
+      in_stack_13 = puVar29;
+      in_stack_14 = pGVar30;
       in_stack_32 = fVar31;
       in_stack_34 = fVar33;
-      if (bVar11 == 0) {
+      if (bVar10 == 0) {
         if (pGVar28 == (GameObject *)0x0) goto code_?;
-        bVar11 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+        bVar10 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                 GameObject_get_activeInHierarchy(pGVar28,(MethodInfo *)0x0);
-        in_stack_17 = puVar29;
-        in_stack_18 = pGVar30;
+        in_stack_13 = puVar29;
+        in_stack_14 = pGVar30;
         in_stack_32 = fVar31;
         in_stack_34 = fVar33;
-        if (bVar11 != 0) {
+        if (bVar10 != 0) {
           pOVar35 = (Object_1 *)
                     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
                               (pGVar28,
@@ -634,19 +620,19 @@ code_?:
             pOVar35 = (Object_1 *)uStack_36._4_4_;
           }
           method_00 = (MethodInfo *)0x0;
-          bVar11 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+          bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                             (pOVar35,(Object_1 *)0x0,(MethodInfo *)0x0);
-          if (bVar11 != 0) {
+          if (bVar10 != 0) {
             if (uStack_36._4_4_ == (MethodInfo *)0x0) goto code_?;
             puVar27 = (undefined *)0x0;
-            pMVar23 = uStack_36._4_4_;
-            bVar11 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_isVisible
+            pMVar22 = uStack_36._4_4_;
+            bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_isVisible
                               ((Renderer *)uStack_36._4_4_,(MethodInfo *)0x0);
-            in_stack_17 = puVar29;
-            in_stack_18 = pGVar30;
+            in_stack_13 = puVar29;
+            in_stack_14 = pGVar30;
             in_stack_32 = fVar31;
             in_stack_34 = fVar33;
-            if (bVar11 == 0) goto code_?;
+            if (bVar10 == 0) goto code_?;
           }
           if ((TypeInfo__RTG__GameObjectEx->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__RTG__GameObjectEx);
@@ -672,13 +658,13 @@ code_?:
               if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
                 func_?(TypeInfo__UnityEngine__Object);
               }
-              bVar11 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+              bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                                 ((Object_1 *)this_02,(Object_1 *)0x0,(MethodInfo *)0x0);
-              in_stack_17 = puVar29;
-              in_stack_18 = pGVar30;
+              in_stack_13 = puVar29;
+              in_stack_14 = pGVar30;
               in_stack_32 = fVar31;
               in_stack_34 = fVar33;
-              if (bVar11 != 0) {
+              if (bVar10 != 0) {
                 if (this_02 == (Collider *)0x0) goto code_?;
                 ray_04.m_Origin.y = ray.m_Origin.y;
                 ray_04.m_Origin.x = ray.m_Origin.x;
@@ -686,44 +672,44 @@ code_?:
                 ray_04.m_Direction.x = ray.m_Direction.x;
                 ray_04.m_Direction.y = ray.m_Direction.y;
                 ray_04.m_Direction.z = ray.m_Direction.z;
-                bVar11 = UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_Raycast_1
+                bVar10 = UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_Raycast_1
                                   (this_02,ray_04,(RaycastHit *)&stack0xfffffec8,3.4028235e+38,
                                    (MethodInfo *)0x0);
-                in_stack_17 = puVar29;
-                in_stack_18 = pGVar30;
+                in_stack_13 = puVar29;
+                in_stack_14 = pGVar30;
                 in_stack_32 = fVar31;
                 in_stack_34 = fVar33;
-                if (bVar11 != 0) {
-                  BStack_25.Plane.m_Distance = ray.m_Origin.x;
-                  BStack_25.Center.x = ray.m_Origin.y;
-                  BStack_25.Center.y = ray.m_Origin.z;
-                  BStack_25.Center.z = ray.m_Direction.x;
+                if (bVar10 != 0) {
+                  BStack_24.Plane.m_Distance = ray.m_Origin.x;
+                  BStack_24.Center.x = ray.m_Origin.y;
+                  BStack_24.Center.y = ray.m_Origin.z;
+                  BStack_24.Center.z = ray.m_Direction.x;
                   uStack_39 = CONCAT44(iStack_40,(undefined4)uStack_39);
                   uStack_36 = CONCAT44(ray.m_Direction.z,ray.m_Direction.y);
-                  VStack_8.y = VStack_41.x;
-                  VStack_8.z = VStack_41.y;
+                  VStack_7.y = VStack_41.x;
+                  VStack_7.z = VStack_41.y;
                   pGVar42 = TypeInfo__RTG__GameObjectRayHit;
                   pGVar38 = (GameObjectRayHit *)func_?();
-                  hitRay.m_Origin.y = BStack_25.Center.x;
-                  hitRay.m_Origin.x = BStack_25.Plane.m_Distance;
-                  hitRay.m_Origin.z = BStack_25.Center.y;
-                  hitRay.m_Direction.x = BStack_25.Center.z;
+                  hitRay.m_Origin.y = BStack_24.Center.x;
+                  hitRay.m_Origin.x = BStack_24.Plane.m_Distance;
+                  hitRay.m_Origin.z = BStack_24.Center.y;
+                  hitRay.m_Direction.x = BStack_24.Center.z;
                   hitRay.m_Direction.y = (float)(undefined4)uStack_36;
                   hitRay.m_Direction.z = (float)uStack_36._4_4_;
                   hit3D.m_Point.y = (float)puVar27;
-                  hit3D.m_Point.x = (float)pMVar23;
+                  hit3D.m_Point.x = (float)pMVar22;
                   hit3D.m_Point.z = (float)this_03;
                   hit3D.m_Normal.x = (float)pGVar42;
                   hit3D.m_Normal.y = (float)puVar29;
                   hit3D.m_Normal.z = (float)pGVar30;
                   hit3D.m_FaceID = (uint32_t)fVar31;
                   hit3D.m_Distance = fVar33;
-                  hit3D.m_UV.x = VStack_8.y;
-                  hit3D.m_UV.y = VStack_8.z;
+                  hit3D.m_UV.x = VStack_7.y;
+                  hit3D.m_UV.y = VStack_7.z;
                   hit3D.m_Collider = (int32_t)uStack_39._4_4_;
                   GameObjectRayHit::GameObjectRayHit__ctor(pGVar38,hitRay,hit3D,(MethodInfo *)0x0);
                   method_00 = (MethodInfo *)&UNK_?;
-                  pMVar23 = 
+                  pMVar22 = 
                   MethodInfo__System__Collections__Generic__List<RTG::GameObjectRayHit>__Add_RTG__GameObjectRayHit_
                   ;
                   mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
@@ -739,10 +725,10 @@ code_?:
               if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
                 func_?(TypeInfo__RTG__ObjectBounds);
               }
-              queryConfig.NoVolumeSize.x = (float)(undefined4)uStack_15;
-              queryConfig.ObjectTypes = iStack_14;
-              queryConfig.NoVolumeSize.y = (float)uStack_15._4_4_;
-              queryConfig.NoVolumeSize.z = fStack_16;
+              queryConfig.NoVolumeSize.x = (float)(undefined4)uStack_17;
+              queryConfig.ObjectTypes = iStack_15;
+              queryConfig.NoVolumeSize.y = (float)uStack_17._4_4_;
+              queryConfig.NoVolumeSize.z = fStack_18;
               pOVar43 = ObjectBounds::ObjectBounds_CalcWorldOBB
                                   ((OBB *)&stack0xffffff38,pGVar28,queryConfig,(MethodInfo *)0x0);
               fStack_44 = (pOVar43->_size).x;
@@ -756,23 +742,23 @@ code_?:
               fStack_52 = (pOVar43->_rotation).z;
               fStack_53 = (pOVar43->_rotation).w;
               uStack_54 = *(undefined4 *)&pOVar43->_isValid;
-              in_stack_17 = puVar29;
-              in_stack_18 = pGVar30;
+              in_stack_13 = puVar29;
+              in_stack_14 = pGVar30;
               in_stack_32 = fVar31;
               in_stack_34 = fVar33;
               if ((char)uStack_54 != '\0') {
                 uStack_39 = CONCAT44(ray.m_Direction.z,ray.m_Direction.y);
                 fStack_55 = ray.m_Origin.x;
-                VStack_8.x = ray.m_Origin.y;
-                VStack_8.y = ray.m_Origin.z;
-                VStack_8.z = ray.m_Direction.x;
+                VStack_7.x = ray.m_Origin.y;
+                VStack_7.y = ray.m_Origin.z;
+                VStack_7.z = ray.m_Direction.x;
                 if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
                   func_?();
                 }
-                ray_00.m_Origin.y = VStack_8.x;
+                ray_00.m_Origin.y = VStack_7.x;
                 ray_00.m_Origin.x = fStack_55;
-                ray_00.m_Origin.z = VStack_8.y;
-                ray_00.m_Direction.x = VStack_8.z;
+                ray_00.m_Origin.z = VStack_7.y;
+                ray_00.m_Direction.x = VStack_7.z;
                 ray_00.m_Direction.y = (float)(int)uStack_39;
                 ray_00.m_Direction.z = (float)((ulonglong)uStack_39 >> 0x20);
                 boxCenter.y = fStack_48;
@@ -785,26 +771,26 @@ code_?:
                 boxRotation.x = fStack_50;
                 boxRotation.z = fStack_52;
                 boxRotation.w = fStack_53;
-                bVar11 = BoxMath::BoxMath_Raycast_1
-                                  (ray_00,afStack_7,boxCenter,boxSize,boxRotation,
+                bVar10 = BoxMath::BoxMath_Raycast_1
+                                  (ray_00,afStack_6,boxCenter,boxSize,boxRotation,
                                    (BoxEpsilon)ZEXT812(0),(MethodInfo *)0x0);
-                in_stack_17 = puVar29;
-                in_stack_18 = pGVar30;
+                in_stack_13 = puVar29;
+                in_stack_14 = pGVar30;
                 in_stack_32 = fVar31;
                 in_stack_34 = fVar33;
-                if (bVar11 != 0) {
-                  pVVar19 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
-                                     ((Vector3 *)&stack0xfffffef4,&ray,afStack_7[0],
+                if (bVar10 != 0) {
+                  pVVar16 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
+                                     ((Vector3 *)&stack0xfffffef4,&ray,afStack_6[0],
                                       (MethodInfo *)0x0);
-                  uStack_39._0_4_ = pVVar19->x;
-                  uStack_39._4_4_ = (Object *)pVVar19->y;
-                  uStack_36._4_4_ = (MethodInfo *)pVVar19->z;
+                  uStack_39._0_4_ = pVVar16->x;
+                  uStack_39._4_4_ = (Object *)pVVar16->y;
+                  uStack_36._4_4_ = (MethodInfo *)pVVar16->z;
                   if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
                     func_?();
                   }
                   in_stack_34 = 0.0;
-                  in_stack_17 = (undefined *)uStack_20;
-                  in_stack_18 = (GameObjectTypeHelper__Class *)((ulonglong)uStack_20 >> 0x20);
+                  in_stack_13 = (undefined *)uStack_19;
+                  in_stack_14 = (GameObjectTypeHelper__Class *)((ulonglong)uStack_19 >> 0x20);
                   point.z = (float)uStack_36._4_4_;
                   point.x = (float)(undefined4)uStack_39;
                   point.y = (float)uStack_39._4_4_;
@@ -818,19 +804,19 @@ code_?:
                   boxRotation_01.x = fStack_50;
                   boxRotation_01.z = fStack_52;
                   boxRotation_01.w = fStack_53;
-                  viewVector.z = fStack_21;
-                  viewVector.x = (float)(undefined4)uStack_20;
-                  viewVector.y = (float)uStack_20._4_4_;
-                  in_stack_32 = fStack_21;
+                  viewVector.z = fStack_20;
+                  viewVector.x = (float)(undefined4)uStack_19;
+                  viewVector.y = (float)uStack_19._4_4_;
+                  in_stack_32 = fStack_20;
                   pBVar56 = BoxMath::BoxMath_GetFaceClosestToPoint_1
-                                      (&BStack_25,point,boxCenter_01,boxSize_01,boxRotation_01,
+                                      (&BStack_24,point,boxCenter_01,boxSize_01,boxRotation_01,
                                        viewVector,(MethodInfo *)0x0);
                   fVar31 = (pBVar56->Plane).m_Normal.x;
                   fVar33 = (pBVar56->Plane).m_Normal.y;
                   fVar57 = (pBVar56->Plane).m_Normal.z;
-                  VStack_8.y = ray.m_Direction.y;
-                  VStack_8.z = ray.m_Direction.z;
-                  uStack_36 = CONCAT44(afStack_7[0],(undefined4)uStack_36);
+                  VStack_7.y = ray.m_Direction.y;
+                  VStack_7.z = ray.m_Direction.z;
+                  uStack_36 = CONCAT44(afStack_6[0],(undefined4)uStack_36);
                   puVar27 = &UNK_?;
                   fVar58 = ray.m_Origin.x;
                   fVar59 = ray.m_Origin.y;
@@ -841,8 +827,8 @@ code_?:
                   hitRay_00.m_Origin.x = fVar58;
                   hitRay_00.m_Origin.z = (float)puVar27;
                   hitRay_00.m_Direction.x = (float)pGVar42;
-                  hitRay_00.m_Direction.y = VStack_8.y;
-                  hitRay_00.m_Direction.z = VStack_8.z;
+                  hitRay_00.m_Direction.y = VStack_7.y;
+                  hitRay_00.m_Direction.z = VStack_7.z;
                   hitNormal.y = fVar33;
                   hitNormal.x = fVar31;
                   hitNormal.z = fVar57;
@@ -850,7 +836,7 @@ code_?:
                             (pGVar38,hitRay_00,pGVar28,hitNormal,(float)uStack_36._4_4_,
                              (MethodInfo *)0x0);
                   method_00 = (MethodInfo *)&UNK_?;
-                  pMVar23 = 
+                  pMVar22 = 
                   MethodInfo__System__Collections__Generic__List<RTG::GameObjectRayHit>__Add_RTG__GameObjectRayHit_
                   ;
                   mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
@@ -870,8 +856,8 @@ code_?:
             ray_01.m_Direction.z = ray.m_Direction.z;
             pGVar38 = SceneTree_RaycastSpriteObject(this,ray_01,pGVar28,(MethodInfo *)0x0);
           }
-          in_stack_17 = puVar29;
-          in_stack_18 = pGVar30;
+          in_stack_13 = puVar29;
+          in_stack_14 = pGVar30;
           in_stack_32 = fVar31;
           in_stack_34 = fVar33;
           if (pGVar38 != (GameObjectRayHit *)0x0) {
@@ -883,8 +869,8 @@ code_?:
                       ((List_1_System_Object_ *)hits,(Object *)pGVar38,
                        MethodInfo__System__Collections__Generic__List<RTG::GameObjectRayHit>__Add_RTG__GameObjectRayHit_
                       );
-            in_stack_17 = puVar29;
-            in_stack_18 = pGVar30;
+            in_stack_13 = puVar29;
+            in_stack_14 = pGVar30;
             in_stack_32 = fVar31;
             in_stack_34 = fVar33;
           }
@@ -895,46 +881,46 @@ code_?:
   }
   else {
     if (raycastPresicion != SceneRaycastPrecision__Enum_Box) goto code_?;
-    pLVar22 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+    pLVar21 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
              (this->fields)._nodeHitBuffer;
-    if (pLVar22 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+    if (pLVar21 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
     goto code_?;
     method_00 = (MethodInfo *)&UNK_?;
-    pLVar24 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    pLVar23 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
               RegexCharClass+SingleRange]::
               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                         ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                          *)&BStack_25.Plane.m_Distance,pLVar22,
+                          *)&BStack_24.Plane.m_Distance,pLVar21,
                          MethodInfo__System__Collections__Generic__List<RTG::SphereTreeNodeRayHit<UnityEngine::GameObject>_>__GetEnumerator__
                         );
-    pLStack_26 = &LStack_6;
-    afStack_7[1] = 0.0;
-    LStack_6._list = (List_1_System_Object_ *)pLVar24->_list;
-    LStack_6._index = pLVar24->_index;
-    LStack_6._version = pLVar24->_version;
-    LStack_6._current = *(Object **)&pLVar24->_current;
+    pLStack_25 = &LStack_26;
+    afStack_6[1] = 0.0;
+    LStack_26._list = (List_1_System_Object_ *)pLVar23->_list;
+    LStack_26._index = pLVar23->_index;
+    LStack_26._version = pLVar23->_version;
+    LStack_26._current = *(Object **)&pLVar23->_current;
     uStack_1 = 4;
 code_?:
-    bVar11 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+    bVar10 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
             List_1_T_Enumerator_System_Object__MoveNext
-                      (&LStack_6,
+                      (&LStack_26,
                        MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::SphereTreeNodeRayHit<UnityEngine::GameObject>_>__MoveNext__
                       );
-    if (bVar11 != 0) {
-      if (((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) ||
-         (*(int *)((int)LStack_6._current + 8) == 0)) goto code_?;
-      pGVar28 = *(GameObject **)(*(int *)((int)LStack_6._current + 8) + 0x20);
+    if (bVar10 != 0) {
+      if (((RegexCharClass_SingleRange)LStack_26._current == (RegexCharClass_SingleRange)0x0) ||
+         (*(int *)((int)LStack_26._current + 8) == 0)) goto code_?;
+      pGVar28 = *(GameObject **)(*(int *)((int)LStack_26._current + 8) + 0x20);
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       method_00 = (MethodInfo *)0x0;
-      bVar11 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+      bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                         ((Object_1 *)pGVar28,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar11 == 0) {
+      if (bVar10 == 0) {
         if (pGVar28 == (GameObject *)0x0) goto code_?;
-        bVar11 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+        bVar10 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                 GameObject_get_activeInHierarchy(pGVar28,(MethodInfo *)0x0);
-        if (bVar11 != 0) {
+        if (bVar10 != 0) {
           pOVar35 = (Object_1 *)
                     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
                               (pGVar28,
@@ -945,21 +931,21 @@ code_?:
             func_?();
             pOVar35 = (Object_1 *)uStack_36._4_4_;
           }
-          bVar11 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+          bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                             (pOVar35,(Object_1 *)0x0,(MethodInfo *)0x0);
-          if (bVar11 != 0) {
+          if (bVar10 != 0) {
             if (uStack_36._4_4_ == (MethodInfo *)0x0) goto code_?;
-            bVar11 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_isVisible
+            bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_isVisible
                               ((Renderer *)uStack_36._4_4_,(MethodInfo *)0x0);
-            if (bVar11 == 0) goto code_?;
+            if (bVar10 == 0) goto code_?;
           }
           if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          queryConfig_00.NoVolumeSize.x = (float)(undefined4)uStack_15;
-          queryConfig_00.ObjectTypes = iStack_14;
-          queryConfig_00.NoVolumeSize.y = (float)uStack_15._4_4_;
-          queryConfig_00.NoVolumeSize.z = fStack_16;
+          queryConfig_00.NoVolumeSize.x = (float)(undefined4)uStack_17;
+          queryConfig_00.ObjectTypes = iStack_15;
+          queryConfig_00.NoVolumeSize.y = (float)uStack_17._4_4_;
+          queryConfig_00.NoVolumeSize.z = fStack_18;
           pOVar43 = ObjectBounds::ObjectBounds_CalcWorldOBB
                               ((OBB *)&stack0xffffff38,pGVar28,queryConfig_00,(MethodInfo *)0x0);
           fStack_44 = (pOVar43->_size).x;
@@ -974,21 +960,21 @@ code_?:
           fStack_53 = (pOVar43->_rotation).w;
           uStack_54 = *(undefined4 *)&pOVar43->_isValid;
           if ((char)uStack_54 != '\0') {
-            BStack_25.Plane.m_Distance = ray.m_Origin.x;
-            BStack_25.Center.x = ray.m_Origin.y;
-            BStack_25.Center.y = ray.m_Origin.z;
-            BStack_25.Center.z = ray.m_Direction.x;
-            VStack_8.y = ray.m_Direction.y;
-            VStack_8.z = ray.m_Direction.z;
+            BStack_24.Plane.m_Distance = ray.m_Origin.x;
+            BStack_24.Center.x = ray.m_Origin.y;
+            BStack_24.Center.y = ray.m_Origin.z;
+            BStack_24.Center.z = ray.m_Direction.x;
+            VStack_7.y = ray.m_Direction.y;
+            VStack_7.z = ray.m_Direction.z;
             if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
-            ray_03.m_Origin.y = BStack_25.Center.x;
-            ray_03.m_Origin.x = BStack_25.Plane.m_Distance;
-            ray_03.m_Origin.z = BStack_25.Center.y;
-            ray_03.m_Direction.x = BStack_25.Center.z;
-            ray_03.m_Direction.y = VStack_8.y;
-            ray_03.m_Direction.z = VStack_8.z;
+            ray_03.m_Origin.y = BStack_24.Center.x;
+            ray_03.m_Origin.x = BStack_24.Plane.m_Distance;
+            ray_03.m_Origin.z = BStack_24.Center.y;
+            ray_03.m_Direction.x = BStack_24.Center.z;
+            ray_03.m_Direction.y = VStack_7.y;
+            ray_03.m_Direction.z = VStack_7.z;
             boxCenter_00.y = fStack_48;
             boxCenter_00.x = fStack_47;
             boxCenter_00.z = fStack_49;
@@ -1000,20 +986,20 @@ code_?:
             boxRotation_00.z = fStack_52;
             boxRotation_00.w = fStack_53;
             method_00 = pMStack_51;
-            bVar11 = BoxMath::BoxMath_Raycast_1
-                              (ray_03,&fStack_9,boxCenter_00,boxSize_00,boxRotation_00,
+            bVar10 = BoxMath::BoxMath_Raycast_1
+                              (ray_03,&fStack_8,boxCenter_00,boxSize_00,boxRotation_00,
                                (BoxEpsilon)ZEXT812(0),(MethodInfo *)0x0);
-            if (bVar11 != 0) {
-              pVVar19 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
-                                 ((Vector3 *)&stack0xfffffef4,&ray,fStack_9,(MethodInfo *)0x0);
-              uVar60._0_4_ = pVVar19->x;
-              uVar60._4_4_ = pVVar19->y;
-              VStack_8.y = (float)(undefined4)uVar60;
-              VStack_8.z = (float)uVar60._4_4_;
-              uStack_39._4_4_ = (Object *)pVVar19->z;
+            if (bVar10 != 0) {
+              pVVar16 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
+                                 ((Vector3 *)&stack0xfffffef4,&ray,fStack_8,(MethodInfo *)0x0);
+              uVar60._0_4_ = pVVar16->x;
+              uVar60._4_4_ = pVVar16->y;
+              VStack_7.y = (float)(undefined4)uVar60;
+              VStack_7.z = (float)uVar60._4_4_;
+              uStack_39._4_4_ = (Object *)pVVar16->z;
               if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
-                uVar60 = CONCAT44(VStack_8.z,VStack_8.y);
+                uVar60 = CONCAT44(VStack_7.z,VStack_7.y);
               }
               point_00.z = (float)uStack_39._4_4_;
               point_00.x = (float)(int)uVar60;
@@ -1028,32 +1014,32 @@ code_?:
               boxRotation_02.x = fStack_50;
               boxRotation_02.z = fStack_52;
               boxRotation_02.w = fStack_53;
-              viewVector_00.z = fStack_21;
-              viewVector_00.x = (float)(undefined4)uStack_20;
-              viewVector_00.y = (float)uStack_20._4_4_;
+              viewVector_00.z = fStack_20;
+              viewVector_00.x = (float)(undefined4)uStack_19;
+              viewVector_00.y = (float)uStack_19._4_4_;
               pBVar56 = BoxMath::BoxMath_GetFaceClosestToPoint_1
-                                  (&BStack_25,point_00,boxCenter_02,boxSize_02,boxRotation_02,
+                                  (&BStack_24,point_00,boxCenter_02,boxSize_02,boxRotation_02,
                                    viewVector_00,(MethodInfo *)0x0);
               fVar31 = (pBVar56->Plane).m_Normal.x;
               fVar33 = (pBVar56->Plane).m_Normal.y;
               fVar57 = (pBVar56->Plane).m_Normal.z;
-              BStack_25.Plane.m_Distance = ray.m_Origin.x;
-              BStack_25.Center.x = ray.m_Origin.y;
-              BStack_25.Center.y = ray.m_Origin.z;
-              BStack_25.Center.z = ray.m_Direction.x;
-              VStack_8.y = ray.m_Direction.y;
-              VStack_8.z = ray.m_Direction.z;
-              LStack_6._index = (int32_t)TypeInfo__RTG__GameObjectRayHit;
-              uStack_39 = CONCAT44(fStack_9,(undefined4)uStack_39);
-              LStack_6._list = (List_1_System_Object_ *)&UNK_?;
+              BStack_24.Plane.m_Distance = ray.m_Origin.x;
+              BStack_24.Center.x = ray.m_Origin.y;
+              BStack_24.Center.y = ray.m_Origin.z;
+              BStack_24.Center.z = ray.m_Direction.x;
+              VStack_7.y = ray.m_Direction.y;
+              VStack_7.z = ray.m_Direction.z;
+              LStack_26._index = (int32_t)TypeInfo__RTG__GameObjectRayHit;
+              uStack_39 = CONCAT44(fStack_8,(undefined4)uStack_39);
+              LStack_26._list = (List_1_System_Object_ *)&UNK_?;
               pGVar38 = (GameObjectRayHit *)func_?();
               uStack_36 = CONCAT44(pGVar38,(undefined4)uStack_36);
-              hitRay_01.m_Origin.y = BStack_25.Center.x;
-              hitRay_01.m_Origin.x = BStack_25.Plane.m_Distance;
-              hitRay_01.m_Origin.z = BStack_25.Center.y;
-              hitRay_01.m_Direction.x = BStack_25.Center.z;
-              hitRay_01.m_Direction.y = VStack_8.y;
-              hitRay_01.m_Direction.z = VStack_8.z;
+              hitRay_01.m_Origin.y = BStack_24.Center.x;
+              hitRay_01.m_Origin.x = BStack_24.Plane.m_Distance;
+              hitRay_01.m_Origin.z = BStack_24.Center.y;
+              hitRay_01.m_Direction.x = BStack_24.Center.z;
+              hitRay_01.m_Direction.y = VStack_7.y;
+              hitRay_01.m_Direction.z = VStack_7.z;
               hitNormal_00.y = fVar33;
               hitNormal_00.x = fVar31;
               hitNormal_00.z = fVar57;
@@ -1075,14 +1061,14 @@ code_?:
   }
   uStack_1 = 0xffffffff;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)&LStack_6,
+            ((Object *)&LStack_26,
              (ExceptionArgument__Enum)
              MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::SphereTreeNodeRayHit<UnityEngine::GameObject>_>__Dispose__
              ,method_00);
 code_?:
-  iVar12 = (hits->fields)._size;
+  iVar11 = (hits->fields)._size;
   *unaff_FS_OFFSET = uStack_3;
-  return iVar12 != 0;
+  return iVar11 != 0;
 }
 
 
@@ -1191,7 +1177,6 @@ Assembly-CSharp.dll::RTG::SceneTree::SceneTree_RaycastSpriteObject
     cRam_? = '\x01';
   }
   fStack_1 = 0.0;
-  func_?(&stack0xffffffac,0,0x2c);
   if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__RTG__ObjectBounds);
   }
@@ -1201,20 +1186,20 @@ Assembly-CSharp.dll::RTG::SceneTree::SceneTree_RaycastSpriteObject
   fVar4 = ray.m_Origin.z;
   fVar5 = ray.m_Origin.y;
   fVar6 = ray.m_Origin.x;
+  fStack_7 = (pOVar2->_size).x;
+  fStack_8 = (pOVar2->_size).y;
+  puStack_9 = (undefined *)(pOVar2->_size).z;
   boxSize = pOVar2->_size;
-  uStack_7._0_4_ = (pOVar2->_center).x;
-  uStack_7._4_4_ = (pOVar2->_center).y;
-  fVar8 = (pOVar2->_center).z;
-  fVar9 = (pOVar2->_rotation).w;
-  uVar10 = (pOVar2->_rotation).x;
-  uVar11 = (pOVar2->_rotation).y;
-  uVar12 = (pOVar2->_rotation).z;
-  boxRotation.z = (float)uVar12;
-  boxRotation.y = (float)uVar11;
-  boxRotation.x = (float)uVar10;
+  uStack_10._0_4_ = (pOVar2->_center).x;
+  uStack_10._4_4_ = (pOVar2->_center).y;
+  fVar11 = (pOVar2->_center).z;
+  fVar12 = (pOVar2->_rotation).x;
+  fVar13 = (pOVar2->_rotation).y;
+  fVar14 = (pOVar2->_rotation).z;
+  fVar15 = (pOVar2->_rotation).w;
   if ((char)*(undefined4 *)&pOVar2->_isValid != '\0') {
-    VStack_13.y = ray.m_Direction.y;
-    VStack_13.z = ray.m_Direction.z;
+    VStack_16.y = ray.m_Direction.y;
+    VStack_16.z = ray.m_Direction.z;
     if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
@@ -1222,40 +1207,41 @@ Assembly-CSharp.dll::RTG::SceneTree::SceneTree_RaycastSpriteObject
     ray_00.m_Origin.x = fVar6;
     ray_00.m_Origin.z = fVar4;
     ray_00.m_Direction.x = fVar3;
-    ray_00.m_Direction.y = VStack_13.y;
-    ray_00.m_Direction.z = VStack_13.z;
-    boxCenter.z = fVar8;
-    boxCenter.x = (float)uStack_7;
-    boxCenter.y = uStack_7._4_4_;
-    boxRotation.w = fVar9;
-    bVar14 = BoxMath::BoxMath_Raycast_1
+    ray_00.m_Direction.y = VStack_16.y;
+    ray_00.m_Direction.z = VStack_16.z;
+    boxCenter.z = fVar11;
+    boxCenter.x = (float)uStack_10;
+    boxCenter.y = uStack_10._4_4_;
+    boxRotation.y = fVar13;
+    boxRotation.x = fVar12;
+    boxRotation.z = fVar14;
+    boxRotation.w = fVar15;
+    bVar17 = BoxMath::BoxMath_Raycast_1
                        (ray_00,&fStack_1,boxCenter,boxSize,boxRotation,(BoxEpsilon)ZEXT812(0),
                         (MethodInfo *)0x0);
-    fVar8 = ray.m_Origin.y;
-    fVar9 = ray.m_Origin.x;
-    if (bVar14 != 0) {
-      uStack_7._0_4_ = ray.m_Direction.y;
-      uStack_7._4_4_ = ray.m_Direction.z;
-      __return_storage_ptr__ = (Vector3 *)&stack0xffffffd8;
-      pVVar15 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
-                          (__return_storage_ptr__,&ray,fStack_1,(MethodInfo *)0x0);
-      pVVar15 = OBB::OBB_GetPointFaceNormal
-                          (&VStack_13,(OBB *)&stack0xffffffac,*pVVar15,(MethodInfo *)0x0);
-      uVar16 = pVVar15->y;
-      fVar6 = pVVar15->z;
-      VStack_13.z = fStack_1;
+    if (bVar17 != 0) {
+      uStack_10._0_4_ = ray.m_Direction.y;
+      uStack_10._4_4_ = ray.m_Direction.z;
+      fVar15 = ray.m_Direction.x;
+      pVVar18 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
+                          ((Vector3 *)&stack0xffffffd8,&ray,fStack_1,(MethodInfo *)0x0);
+      pVVar18 = OBB::OBB_GetPointFaceNormal(&VStack_16,(OBB *)&fStack_7,*pVVar18,(MethodInfo *)0x0)
+      ;
+      uVar19 = pVVar18->y;
+      fVar14 = pVVar18->z;
+      VStack_16.z = fStack_1;
       this_00 = (GameObjectRayHit *)func_?();
-      hitRay.m_Origin.y = fVar8;
-      hitRay.m_Origin.x = fVar9;
-      hitRay.m_Origin.z = (float)&UNK_?;
-      hitRay.m_Direction.x = (float)__return_storage_ptr__;
-      hitRay.m_Direction.y = (float)uStack_7;
-      hitRay.m_Direction.z = SUB84(uStack_7,4);
-      auVar17._4_4_ = fVar6;
-      auVar17._0_4_ = uVar16;
-      auVar17._8_4_ = 0;
+      hitRay.m_Origin.y = 0.0;
+      hitRay.m_Origin.x = (float)gameObject;
+      hitRay.m_Origin.z = (float)uVar19;
+      hitRay.m_Direction.x = fVar15;
+      hitRay.m_Direction.y = (float)uStack_10;
+      hitRay.m_Direction.z = SUB84(uStack_10,4);
+      auVar20._4_4_ = fVar14;
+      auVar20._0_4_ = uVar19;
+      auVar20._8_4_ = 0;
       GameObjectRayHit::GameObjectRayHit__ctor_2
-                (this_00,hitRay,gameObject,(Vector3)(auVar17 << 0x20),VStack_13.z,(MethodInfo *)0x0);
+                (this_00,hitRay,gameObject,(Vector3)(auVar20 << 0x20),VStack_16.z,(MethodInfo *)0x0);
       return this_00;
     }
   }
@@ -1344,11 +1330,6 @@ code_?:
           if (bVar2 != 0) {
             return 0;
           }
-          auStack_4._12_4_ = 0.0;
-          auStack_4._16_4_ = 0.0;
-          auStack_4._20_4_ = 0.0;
-          uStack_5._0_1_ = 0;
-          uStack_5._1_3_ = 0;
           if ((TypeInfo__RTG__GameObjectTypeHelper->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__RTG__GameObjectTypeHelper);
           }
@@ -1363,22 +1344,22 @@ code_?:
           if ((TypeInfo__RTG__SceneTree->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__RTG__SceneTree);
           }
-          pVVar6 = Vector3Ex::Vector3Ex_FromValue
-                             (&VStack_7,TypeInfo__RTG__SceneTree->static_fields->_nonMeshObjectSize
+          pVVar5 = Vector3Ex::Vector3Ex_FromValue
+                             (&VStack_6,TypeInfo__RTG__SceneTree->static_fields->_nonMeshObjectSize
                               ,(MethodInfo *)0x0);
-          auStack_4._16_4_ = pVVar6->x;
-          auStack_4._20_4_ = pVVar6->y;
-          uStack_5 = pVVar6->z;
+          auStack_4._16_4_ = pVVar5->x;
+          auStack_4._20_4_ = pVVar5->y;
+          auStack_4._24_4_ = pVVar5->z;
           if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__RTG__ObjectBounds);
           }
           queryConfig.NoVolumeSize.x = (float)auStack_4._16_4_;
           queryConfig.ObjectTypes = auStack_4._12_4_;
           queryConfig.NoVolumeSize.y = (float)auStack_4._20_4_;
-          queryConfig.NoVolumeSize.z = uStack_5;
-          pAVar8 = ObjectBounds::ObjectBounds_CalcWorldAABB
+          queryConfig.NoVolumeSize.z = (float)auStack_4._24_4_;
+          pAVar7 = ObjectBounds::ObjectBounds_CalcWorldAABB
                              ((AABB *)auStack_4,gameObject,queryConfig,(MethodInfo *)0x0);
-          Sphere::Sphere__ctor_1(&SStack_1,*pAVar8,(MethodInfo *)0x0);
+          Sphere::Sphere__ctor_1(&SStack_1,*pAVar7,(MethodInfo *)0x0);
           this_01 = (this->fields)._objectTree;
           if (this_01 != (SphereTree_1_UnityEngine_GameObject_ *)0x0) {
             sphere._center.y = SStack_1._center.y;
@@ -1472,12 +1453,6 @@ void Assembly-CSharp.dll::RTG::SceneTree::SceneTree_RemoveNodesWithNullObjects
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  DStack_6._dictionary = (Dictionary_2_System_Object_System_Object_ *)0x0;
-  DStack_6._version = 0;
-  DStack_6._index = 0;
-  DStack_6._current.key = (Object *)0x0;
-  DStack_6._current.value = (Object *)0x0;
-  DStack_6._getEnumeratorRetType = 0;
   this_03 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
              *)func_?(
                               TypeInfo__System__Collections__Generic__Dictionary<UnityEngine::GameObject,_RTG::SphereTreeNode<UnityEngine::GameObject>_>
@@ -1489,33 +1464,33 @@ void Assembly-CSharp.dll::RTG::SceneTree::SceneTree_RemoveNodesWithNullObjects
              MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::GameObject,_RTG::SphereTreeNode<UnityEngine::GameObject>_>__Dictionary__
             );
   this_00 = (this->fields)._objectToNode;
-  pDStack_7 = this_03;
+  pDStack_6 = this_03;
   if (this_00 !=
       (Dictionary_2_UnityEngine_GameObject_RTG_SphereTreeNode_1_UnityEngine_GameObject_ *)0x0) {
-    pDVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+    pDVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
              ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
                        ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
                         &stack0xffffffa4,(Dictionary_2_System_UInt32_System_Object_ *)this_00,
                         MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::GameObject,_RTG::SphereTreeNode<UnityEngine::GameObject>_>__GetEnumerator__
                        );
-    uStack_9 = 0;
-    DStack_6._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar8->_dictionary;
-    DStack_6._version = pDVar8->_version;
-    DStack_6._index = pDVar8->_index;
-    DStack_6._current.key = (Object *)(pDVar8->_current).key;
-    DStack_6._16_8_ = *(undefined8 *)&(pDVar8->_current).value;
+    uStack_8 = 0;
+    DStack_9._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar7->_dictionary;
+    DStack_9._version = pDVar7->_version;
+    DStack_9._index = pDVar7->_index;
+    DStack_9._current.key = (Object *)(pDVar7->_current).key;
+    DStack_9._16_8_ = *(undefined8 *)&(pDVar7->_current).value;
     uStack_1 = 1;
-    pDStack_10 = &DStack_6;
+    pDStack_10 = &DStack_9;
     while( true ) {
       bVar11 = mscorlib.dll::System::Collections::Generic::
               Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Object]::
               Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
-                        (&DStack_6,
+                        (&DStack_9,
                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<UnityEngine::GameObject,_RTG::SphereTreeNode<UnityEngine::GameObject>_>__MoveNext__
                         );
       if (bVar11 == 0) break;
-      pOStack_12 = (Object_1 *)DStack_6._current.key;
-      pMStack_13 = (MethodInfo *)DStack_6._current.value;
+      pOStack_12 = (Object_1 *)DStack_9._current.key;
+      pMStack_13 = (MethodInfo *)DStack_9._current.value;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
@@ -1545,13 +1520,14 @@ void Assembly-CSharp.dll::RTG::SceneTree::SceneTree_RemoveNodesWithNullObjects
     }
     uStack_1 = 0xffffffff;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)&DStack_6,
+              ((Object *)&DStack_9,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<UnityEngine::GameObject,_RTG::SphereTreeNode<UnityEngine::GameObject>_>__Dispose__
                ,in_stack_14);
     uStack_1 = 0xffffffff;
+    ppDVar15 = &(this->fields)._objectToNode;
     this_02 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-               *)(this->fields)._objectToNode;
+               *)*ppDVar15;
     if (this_02 !=
         (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
          *)0x0) {
@@ -1561,9 +1537,8 @@ void Assembly-CSharp.dll::RTG::SceneTree::SceneTree_RemoveNodesWithNullObjects
                 (this_02,
                  MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::GameObject,_RTG::SphereTreeNode<UnityEngine::GameObject>_>__Clear__
                 );
-      (this->fields)._objectToNode =
-           (Dictionary_2_UnityEngine_GameObject_RTG_SphereTreeNode_1_UnityEngine_GameObject_ *)
-           this_03;
+      *ppDVar15 = (Dictionary_2_UnityEngine_GameObject_RTG_SphereTreeNode_1_UnityEngine_GameObject_ *
+                 )this_03;
       func_?();
       *unaff_FS_OFFSET = uStack_3;
       return;
@@ -1572,8 +1547,8 @@ void Assembly-CSharp.dll::RTG::SceneTree::SceneTree_RemoveNodesWithNullObjects
 code_?:
   func_?();
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 
@@ -1722,8 +1697,9 @@ void Assembly-CSharp.dll::RTG::SceneTree::SceneTree__ctor(SceneTree *this,Method
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_01,
              MethodInfo__System__Collections__Generic__List<RTG::SphereTreeNodeRayHit<UnityEngine::GameObject>_>__List__
             );
-  (this->fields)._nodeHitBuffer = this_01;
-  func_?(&(this->fields)._nodeHitBuffer,this_01);
+  ppLVar1 = &(this->fields)._nodeHitBuffer;
+  *ppLVar1 = this_01;
+  func_?(ppLVar1,this_01);
   this_02 = (List_1_RTG_SphereTreeNode_1_UnityEngine_GameObject_ *)
             func_?(
                            TypeInfo__System__Collections__Generic__List<RTG::SphereTreeNode<UnityEngine::GameObject>_>
@@ -1734,8 +1710,9 @@ void Assembly-CSharp.dll::RTG::SceneTree::SceneTree__ctor(SceneTree *this,Method
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_02,
              MethodInfo__System__Collections__Generic__List<RTG::SphereTreeNode<UnityEngine::GameObject>_>__List__
             );
-  (this->fields)._nodeBuffer = this_02;
-  func_?(&(this->fields)._nodeBuffer,this_02);
+  ppLVar2 = &(this->fields)._nodeBuffer;
+  *ppLVar2 = this_02;
+  func_?(ppLVar2,this_02);
   this_03 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
              *)func_?(
                               TypeInfo__System__Collections__Generic__Dictionary<UnityEngine::GameObject,_RTG::SphereTreeNode<UnityEngine::GameObject>_>
@@ -1746,12 +1723,12 @@ void Assembly-CSharp.dll::RTG::SceneTree::SceneTree__ctor(SceneTree *this,Method
             (this_03,
              MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::GameObject,_RTG::SphereTreeNode<UnityEngine::GameObject>_>__Dictionary__
             );
-  (this->fields)._objectToNode =
-       (Dictionary_2_UnityEngine_GameObject_RTG_SphereTreeNode_1_UnityEngine_GameObject_ *)this_03;
+  method_00 = &(this->fields)._objectToNode;
+  *method_00 = (Dictionary_2_UnityEngine_GameObject_RTG_SphereTreeNode_1_UnityEngine_GameObject_ *)
+               this_03;
   func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,(MethodInfo *)&(this->fields)._objectToNode)
-  ;
+            ((Object *)this,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   return;
 }
 

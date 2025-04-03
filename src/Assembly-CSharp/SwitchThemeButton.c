@@ -151,20 +151,21 @@ void Assembly-CSharp.dll::SwitchThemeButton::SwitchThemeButton_OnLevelTextureRec
             UnityWebRequest_get_error(www,(MethodInfo *)0x0);
     bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty(value,(MethodInfo *)0x0);
     if (bVar1 != 0) {
-      pTRam00000028 =
-           UnityEngine.UnityWebRequestTextureModule.dll::UnityEngine::Networking::
-           DownloadHandlerTexture::DownloadHandlerTexture_GetContent(www,(MethodInfo *)0x0);
-      func_?();
-      if (pRRam00000014 == (RawImage *)0x0) goto code_?;
+      pTVar2 = UnityEngine.UnityWebRequestTextureModule.dll::UnityEngine::Networking::
+               DownloadHandlerTexture::DownloadHandlerTexture_GetContent(www,(MethodInfo *)0x0);
+      puVar3 = (undefined4 *)(unaff_EDI + 0x28);
+      *puVar3 = pTVar2;
+      func_?(puVar3);
+      if (*(RawImage **)(unaff_EDI + 0x14) == (RawImage *)0x0) goto code_?;
       UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
-                (pRRam00000014,(Texture *)pTRam00000028,(MethodInfo *)0x0);
+                (*(RawImage **)(unaff_EDI + 0x14),(Texture *)*puVar3,(MethodInfo *)0x0);
     }
     return;
   }
 code_?:
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -183,19 +184,20 @@ void Assembly-CSharp.dll::SwitchThemeButton::SwitchThemeButton_Reset
     cRam_? = '\x01';
   }
   pBVar1 = (this->fields).button;
+  ppBVar2 = &(this->fields).button;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                     ((Object_1 *)pBVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
+  if (bVar3 != 0) {
     pBVar1 = (Button *)
              UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
                        ((Component *)this,
                         UnityEngine__UI__Button_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Button>__
                        );
-    (this->fields).button = pBVar1;
-    func_?(&(this->fields).button,pBVar1);
+    *ppBVar2 = pBVar1;
+    func_?(ppBVar2,pBVar1);
   }
   return;
 }

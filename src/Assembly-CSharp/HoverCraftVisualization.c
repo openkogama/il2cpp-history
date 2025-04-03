@@ -156,26 +156,25 @@ void Assembly-CSharp.dll::HoverCraftVisualization::HoverCraftVisualization_Anima
     if (pTVar5 != (Transform *)0x0) {
       pQVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
                          ((Quaternion *)&stack0xffffffc0,pTVar5,(MethodInfo *)0x0);
-      pHVar13 = (HoverCraftVisualization *)
+      pHVar13 = (HoverCraftVisualization *)(this->fields).rollMax;
+      pHVar14 = (HoverCraftVisualization *)
                ((uint)(this->fields).angleDiff ^
                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       fVar1 = pQVar6->y;
       fVar2 = pQVar6->z;
       fVar3 = pQVar6->w;
       pTVar5 = (this->fields).hoverCraftHullRoot;
-      pHVar14 = (HoverCraftVisualization *)
-               ((uint)(this->fields).rollMax ^
+      pHVar15 = (HoverCraftVisualization *)
+               ((uint)pHVar13 ^
                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       (this->fields).prevWorldRot.x = pQVar6->x;
       (this->fields).prevWorldRot.y = fVar1;
       (this->fields).prevWorldRot.z = fVar2;
       (this->fields).prevWorldRot.w = fVar3;
-      if (((float)pHVar14 <= (float)pHVar13) &&
-         (pHVar15 = (HoverCraftVisualization *)(this->fields).rollMax, pHVar14 = pHVar13,
-         (float)pHVar15 < (float)pHVar13)) {
-        pHVar14 = pHVar15;
+      this = pHVar15;
+      if (((float)pHVar15 <= (float)pHVar14) && (this = pHVar14, (float)pHVar13 < (float)pHVar14)) {
+        this = pHVar13;
       }
-      this = pHVar14;
       if (cRam_? == '\0') {
         func_?();
         cRam_? = '\x01';
@@ -269,14 +268,15 @@ void Assembly-CSharp.dll::HoverCraftVisualization::HoverCraftVisualization_Anima
     if (pTVar1 != (Transform *)0x0) {
       pQVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localRotation
                          ((Quaternion *)&stack0xffffffb0,pTVar1,(MethodInfo *)0x0);
-      fVar3 = (float)((uint)(this->fields).pitchMax ^
-                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-      fVar4 = pQVar2->x;
-      fVar5 = pQVar2->y;
-      fVar6 = pQVar2->z;
-      fVar16 = pQVar2->w;
-      fStack_14 = (this->fields).smoothPitchFactor;
-      if ((fStack_14 < fVar3) || (fVar3 = (this->fields).pitchMax, fVar3 < fStack_14)) {
+      fVar3 = (this->fields).pitchMax;
+      fStack_14 = (float)((uint)fVar3 ^
+                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+      fVar5 = pQVar2->x;
+      fVar6 = pQVar2->y;
+      fVar16 = pQVar2->z;
+      fVar17 = pQVar2->w;
+      fVar4 = (this->fields).smoothPitchFactor;
+      if ((fStack_14 <= fVar4) && (fStack_14 = fVar4, fVar3 < fVar4)) {
         fStack_14 = fVar3;
       }
       if (cRam_? == '\0') {
@@ -289,15 +289,15 @@ void Assembly-CSharp.dll::HoverCraftVisualization::HoverCraftVisualization_Anima
                           (MethodInfo *)0x0);
       VStack_7.x = pQVar2->x;
       fVar3 = pQVar2->y;
-      fVar17 = pQVar2->z;
+      fVar4 = pQVar2->z;
       VStack_7.y = pQVar2->y;
       VStack_7.z = pQVar2->z;
       fStack_9 = pQVar2->w;
-      fStack_15 = (fStack_9 * fVar4 + VStack_7.x * fVar16 + fVar17 * fVar5) - fVar3 * fVar6;
-      value.y = (fVar5 * fStack_9 + fVar3 * fVar16 + fVar6 * pQVar2->x) - fVar17 * fVar4;
+      fStack_15 = (fStack_9 * fVar5 + VStack_7.x * fVar17 + fVar4 * fVar6) - fVar3 * fVar16;
+      value.y = (fVar6 * fStack_9 + fVar3 * fVar17 + fVar16 * pQVar2->x) - fVar4 * fVar5;
       value.x = fStack_15;
-      value.z = (fVar6 * fStack_9 + fVar17 * fVar16 + fVar3 * fVar4) - fVar5 * pQVar2->x;
-      value.w = ((fStack_9 * fVar16 - fVar4 * VStack_7.x) - fVar3 * fVar5) - fVar6 * fVar17;
+      value.z = (fVar16 * fStack_9 + fVar4 * fVar17 + fVar3 * fVar5) - fVar6 * pQVar2->x;
+      value.w = ((fStack_9 * fVar17 - fVar5 * VStack_7.x) - fVar3 * fVar6) - fVar16 * fVar4;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
                 (pTVar1,value,(MethodInfo *)0x0);
       return;
@@ -329,7 +329,7 @@ void Assembly-CSharp.dll::HoverCraftVisualization::HoverCraftVisualization_Awake
                      (TypeInfo__HoverCraftVisualization->static_fields->DefaultThrustersColor,
                       (MethodInfo *)0x0);
   (this->fields).thrustersColor = pGVar2;
-  func_?(&(this->fields).thrustersColor,pGVar2);
+  func_?();
   return;
 }
 
@@ -349,70 +349,78 @@ void Assembly-CSharp.dll::HoverCraftVisualization::HoverCraftVisualization_Calcu
     uVar3._4_4_ = pVVar1->y;
     fVar4 = pVVar1->z;
     fStack_5 = (this->fields).prevWorldPosition.z;
-    uStack_6._0_4_ = (this->fields).prevWorldPosition.x;
-    uStack_6._4_4_ = (this->fields).prevWorldPosition.y;
-    fVar7 = (float)(undefined4)uVar3 - (float)uStack_6;
-    uStack_8 = uVar3 & 0xffffffff;
-    fStack_9 = 0.0 - uStack_6._4_4_;
-    fStack_10 = fVar4 - fStack_5;
-    fStack_11 = fVar4;
-    fStack_12 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
-                          ((MethodInfo *)0x0);
-    VStack_2.z = fStack_10 / fStack_12;
-    fVar7 = fVar7 / fStack_12;
-    fStack_9 = fStack_9 / fStack_12;
-    uStack_6 = CONCAT44(fStack_9,fVar7);
-    fStack_5 = VStack_2.z;
-    fStack_10 = VStack_2.z;
-    fVar13 = (float10)func_?(&uStack_6,0);
-    fStack_12 = (float)fVar13;
-    (this->fields).moveSpeed = fStack_12;
-    fStack_14 = (this->fields).smoothMoveSpeed;
-    fStack_15 = fStack_14;
-    fStack_16 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
-                          ((MethodInfo *)0x0);
-    fStack_16 = fStack_16 * _UNK_?;
-    if (fStack_16 < 0.0) {
-      fVar17 = 0.0;
+    uVar6 = (this->fields).prevWorldPosition.x;
+    uVar7 = (this->fields).prevWorldPosition.y;
+    fStack_8 = (float)(undefined4)uVar3 - (float)uVar6;
+    VStack_2._0_8_ = uVar3 & 0xffffffff;
+    fStack_9 = 0.0;
+    fVar10 = fVar4 - fStack_5;
+    VStack_2.z = fVar4;
+    fStack_11 = (float)uVar6;
+    uStack_12 = uVar7;
+    fVar13 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+    fStack_9 = fStack_9 / fVar13;
+    fVar10 = fVar10 / fVar13;
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__System__Math);
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__System__Math);
+    }
+    dVar14 = (double)(fVar10 * fVar10 + fStack_9 * fStack_9 +
+                     (fStack_15 / fVar13) * (fStack_15 / fVar13));
+    if (dVar14 < 0.0) {
+      func_?();
     }
     else {
-      fVar17 = fStack_16;
-      if (_UNK_? < fStack_16) {
-        fVar17 = _UNK_?;
-      }
+      dVar14 = SQRT(dVar14);
     }
-    fVar17 = fVar17 * _UNK_? * fVar17 * fVar17 + fVar17 * _UNK_? * fVar17;
-    fStack_5 = (this->fields).smoothVelocity.z;
-    (this->fields).smoothMoveSpeed = (_UNK_? - fVar17) * fStack_15 + fVar17 * fStack_12;
-    uStack_6._0_4_ = (this->fields).smoothVelocity.x;
-    uStack_6._4_4_ = (this->fields).smoothVelocity.y;
-    fStack_15 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
-                          ((MethodInfo *)0x0);
-    fStack_15 = fStack_15 * _UNK_?;
-    if (fStack_15 < 0.0) {
-      fVar17 = 0.0;
+    (this->fields).moveSpeed = (float)dVar14;
+    fVar10 = (this->fields).smoothMoveSpeed;
+    VStack_2.x = (float)dVar14;
+    VStack_2.x = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
+                            ((MethodInfo *)0x0);
+    VStack_2.x = VStack_2.x * _UNK_?;
+    if (VStack_2.x < 0.0) {
+      fVar13 = 0.0;
     }
     else {
-      fVar17 = fStack_15;
-      if (_UNK_? < fStack_15) {
-        fVar17 = _UNK_?;
+      fVar13 = VStack_2.x;
+      if (_UNK_? < VStack_2.x) {
+        fVar13 = _UNK_?;
       }
     }
-    VStack_2.z = (fStack_10 - fStack_5) * fVar17 + fStack_5;
-    fStack_14 = (this->fields).smoothMoveSpeed - fStack_14;
-    (this->fields).smoothVelocity.x = (fVar7 - (float)uStack_6) * fVar17 + (float)uStack_6;
-    (this->fields).smoothVelocity.y = (fStack_9 - uStack_6._4_4_) * fVar17 + uStack_6._4_4_;
-    (this->fields).smoothVelocity.z = VStack_2.z;
-    fVar7 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    (this->fields).prevWorldPosition.x = (float)(undefined4)uStack_8;
-    (this->fields).prevWorldPosition.y = (float)uStack_8._4_4_;
+    fVar13 = fVar13 * _UNK_? * fVar13 * fVar13 + fVar13 * _UNK_? * fVar13;
+    fStack_8 = (this->fields).smoothVelocity.z;
+    (this->fields).smoothMoveSpeed = (_UNK_? - fVar13) * fStack_16 + fVar13 * VStack_2.y;
+    uVar17 = (this->fields).smoothVelocity.x;
+    uVar18 = (this->fields).smoothVelocity.y;
+    fStack_5 = (float)uVar17;
+    fStack_19 = (float)uVar18;
+    fVar13 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+    fVar13 = fVar13 * _UNK_?;
+    if (fVar13 < 0.0) {
+      fVar13 = 0.0;
+    }
+    else if (_UNK_? < fVar13) {
+      fVar13 = _UNK_?;
+    }
+    fStack_9 = (fStack_16 - fStack_9) * fVar13 + fStack_9;
+    VStack_2.z = (this->fields).smoothMoveSpeed - VStack_2.x;
+    (this->fields).smoothVelocity.x = (0.0 - fStack_19) * fVar13 + fStack_19;
+    (this->fields).smoothVelocity.y = (fVar10 - fStack_8) * fVar13 + fStack_8;
+    (this->fields).smoothVelocity.z = fStack_9;
+    fVar10 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+    (this->fields).prevWorldPosition.x = (float)uStack_12;
+    (this->fields).prevWorldPosition.y = fStack_5;
     (this->fields).prevWorldPosition.z = fVar4;
-    (this->fields).signedAcceleration = fStack_14 / fVar7;
+    (this->fields).signedAcceleration = fStack_11 / fVar10;
     return;
   }
   func_?();
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
+  pcVar20 = (code *)swi(3);
+  (*pcVar20)();
   return;
 }
 
@@ -438,10 +446,10 @@ Assembly-CSharp.dll::HoverCraftVisualization::HoverCraftVisualization_CreateGrad
     pGVar3 = pGStack_1->vector;
     pTVar4 = thrustersColor.colors;
     while( true ) {
-      pTStack_5 = (ThrustersColorColorKey__Array *)pTVar4->vector;
+      pTVar5 = pTVar4->vector;
       if ((int)(thrustersColor.colors)->max_length <= (int)uVar2) break;
       if ((thrustersColor.colors)->max_length <= uVar2) goto code_?;
-      fStack_6 = (((ThrustersColorColorKey *)pTStack_5)->color).r;
+      fStack_6 = (pTVar5->color).r;
       fStack_7 = pTVar4->vector[0].color.g;
       VStack_8.Item2 = 1.0;
       VStack_8.Item1 = pTVar4->vector[0].color.b;
@@ -451,9 +459,9 @@ Assembly-CSharp.dll::HoverCraftVisualization::HoverCraftVisualization_CreateGrad
       GStack_9.color.a = 0.0;
       GStack_9.time = 0.0;
       col.a = 1.0;
-      col.r = (((ThrustersColorColorKey *)pTStack_5)->color).r;
-      col.g = (((ThrustersColorColorKey *)pTStack_5)->color).g;
-      col.b = (((ThrustersColorColorKey *)pTStack_5)->color).b;
+      col.r = (pTVar5->color).r;
+      col.g = (pTVar5->color).g;
+      col.b = (pTVar5->color).b;
       UnityEngine.CoreModule.dll::UnityEngine::GradientColorKey::GradientColorKey__ctor
                 (&GStack_9,col,pTVar4->vector[0].time,(MethodInfo *)0x0);
       if (pGStack_1 == (GradientColorKey__Array *)0x0) goto code_?;
@@ -465,28 +473,28 @@ Assembly-CSharp.dll::HoverCraftVisualization::HoverCraftVisualization_CreateGrad
       (pGVar3->color).a = GStack_9.color.a;
       pGVar3->time = GStack_9.time;
       pGVar3 = pGVar3 + 1;
-      pTVar4 = pTStack_5;
+      pTVar4 = (ThrustersColorColorKey__Array *)pTVar5;
     }
     if (thrustersColor.alphas != (ThrustersColorAlphaKey__Array *)0x0) {
-      pTStack_5 = (ThrustersColorColorKey__Array *)
+      piStack_10 = &(thrustersColor.alphas)->max_length;
+      pGStack_11 = (GradientAlphaKey__Array *)
                   func_?(TypeInfo__UnityEngine__GradientAlphaKey,
                                   (thrustersColor.alphas)->max_length);
-      piStack_10 = &(thrustersColor.alphas)->max_length;
-      pTVar11 = (thrustersColor.alphas)->vector;
-      pfVar12 = &pTStack_5->vector[0].color.g;
-      iVar13 = (int)thrustersColor.alphas - (int)pTStack_5;
-      for (fVar14 = 0.0; (int)fVar14 < (int)*piStack_10; fVar14 = (float)((int)fVar14 + 1)) {
-        if (*piStack_10 <= (uint)fVar14) goto code_?;
+      pTVar12 = (thrustersColor.alphas)->vector;
+      iVar13 = (int)thrustersColor.alphas - (int)pGStack_11;
+      pfVar14 = &pGStack_11->vector[0].time;
+      for (uVar2 = 0; (int)uVar2 < (int)*piStack_10; uVar2 = uVar2 + 1) {
+        if (*piStack_10 <= uVar2) goto code_?;
         VStack_8.Item1 = 0.0;
         VStack_8.Item2 = 0.0;
         mscorlib.dll::System::ValueTuple`2[Single,Single]::ValueTuple_2_Single_Single___ctor
-                  (&VStack_8,pTVar11->alpha,*(float *)(iVar13 + (int)pfVar12),(MethodInfo *)0x0);
-        if (pTStack_5 == (ThrustersColorColorKey__Array *)0x0) goto code_?;
-        if (pTStack_5->max_length <= (uint)fVar14) goto code_?;
-        pTVar11 = pTVar11 + 1;
-        (((ThrustersColorColorKey *)(pfVar12 + -1))->color).r = VStack_8.Item1;
-        *pfVar12 = VStack_8.Item2;
-        pfVar12 = pfVar12 + 2;
+                  (&VStack_8,pTVar12->alpha,*(float *)(iVar13 + (int)pfVar14),(MethodInfo *)0x0);
+        if (pGStack_11 == (GradientAlphaKey__Array *)0x0) goto code_?;
+        if (pGStack_11->max_length <= uVar2) goto code_?;
+        ((GradientAlphaKey *)(pfVar14 + -1))->alpha = VStack_8.Item1;
+        pTVar12 = pTVar12 + 1;
+        *pfVar14 = VStack_8.Item2;
+        pfVar14 = pfVar14 + 2;
       }
       pGVar15 = (Gradient *)func_?(TypeInfo__UnityEngine__Gradient);
       UnityEngine.CoreModule.dll::UnityEngine::Gradient::Gradient__ctor(pGVar15,(MethodInfo *)0x0);
@@ -494,7 +502,7 @@ Assembly-CSharp.dll::HoverCraftVisualization::HoverCraftVisualization_CreateGrad
         UnityEngine.CoreModule.dll::UnityEngine::Gradient::Gradient_set_colorKeys
                   (pGVar15,pGStack_1,(MethodInfo *)0x0);
         UnityEngine.CoreModule.dll::UnityEngine::Gradient::Gradient_set_alphaKeys
-                  (pGVar15,(GradientAlphaKey__Array *)pTStack_5,(MethodInfo *)0x0);
+                  (pGVar15,pGStack_11,(MethodInfo *)0x0);
         UnityEngine.CoreModule.dll::UnityEngine::Gradient::Gradient_set_mode
                   (pGVar15,GradientMode__Enum_Blend,(MethodInfo *)0x0);
         return pGVar15;
@@ -606,37 +614,38 @@ code_?:
     if (pTVar1 == (Transform *)0x0) goto code_?;
     pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
                        (&VStack_3,pTVar1,(MethodInfo *)0x0);
-    fVar4 = pVVar2->y;
-    fVar5 = pVVar2->z;
+    ppVVar4 = &(this->fields).vehicleSeatManager;
+    fVar5 = pVVar2->y;
+    fVar6 = pVVar2->z;
     (this->fields).localHoverCraftHullRootBasePosition.x = pVVar2->x;
-    (this->fields).localHoverCraftHullRootBasePosition.y = fVar4;
-    (this->fields).localHoverCraftHullRootBasePosition.z = fVar5;
+    (this->fields).localHoverCraftHullRootBasePosition.y = fVar5;
+    (this->fields).localHoverCraftHullRootBasePosition.z = fVar6;
     (this->fields)._.isInSpawner = inSpawner;
-    (this->fields).vehicleSeatManager = vsm;
-    func_?(&(this->fields).vehicleSeatManager,vsm);
+    *ppVVar4 = vsm;
+    func_?(ppVVar4,vsm);
     if (hoverCraftHull == (Transform *)0x0) goto code_?;
     pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
                        ((Vector3 *)&stack0xffffffe4,hoverCraftHull,(MethodInfo *)0x0);
     VStack_3.y = pVVar2->x;
     VStack_3.z = pVVar2->y;
-    fVar5 = pVVar2->z;
-    pQVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localRotation
+    fVar6 = pVVar2->z;
+    pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localRotation
                        ((Quaternion *)&stack0xffffffe0,hoverCraftHull,(MethodInfo *)0x0);
-    fVar4 = pQVar6->x;
-    fVar7 = pQVar6->y;
-    fVar8 = pQVar6->z;
-    fVar9 = pQVar6->w;
+    fVar5 = pQVar7->x;
+    fVar8 = pQVar7->y;
+    fVar9 = pQVar7->z;
+    fVar10 = pQVar7->w;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
               (hoverCraftHull,(this->fields).hoverCraftHullRoot,(MethodInfo *)0x0);
-    value.z = fVar5;
+    value.z = fVar6;
     value.x = VStack_3.y;
     value.y = VStack_3.z;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
               (hoverCraftHull,value,(MethodInfo *)0x0);
-    value_00.y = fVar7;
-    value_00.x = fVar4;
-    value_00.z = fVar8;
-    value_00.w = fVar9;
+    value_00.y = fVar8;
+    value_00.x = fVar5;
+    value_00.z = fVar9;
+    value_00.w = fVar10;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
               (hoverCraftHull,value_00,(MethodInfo *)0x0);
     pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
@@ -644,27 +653,27 @@ code_?:
     if (pTVar1 == (Transform *)0x0) goto code_?;
     pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
                        ((Vector3 *)&stack0xffffffe4,pTVar1,(MethodInfo *)0x0);
-    fVar4 = pVVar2->y;
-    fVar5 = pVVar2->z;
+    fVar5 = pVVar2->y;
+    fVar6 = pVVar2->z;
     (this->fields).prevWorldPosition.x = pVVar2->x;
-    (this->fields).prevWorldPosition.y = fVar4;
-    (this->fields).prevWorldPosition.z = fVar5;
+    (this->fields).prevWorldPosition.y = fVar5;
+    (this->fields).prevWorldPosition.z = fVar6;
     (this->fields).prevWorldPosition.y = 0.0;
-    pQVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+    pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
                        ((Quaternion *)&stack0xffffffe0,pTVar1,(MethodInfo *)0x0);
-    fVar5 = pQVar6->y;
-    fVar4 = pQVar6->z;
-    fVar7 = pQVar6->w;
-    (this->fields).prevWorldRot.x = pQVar6->x;
-    (this->fields).prevWorldRot.y = fVar5;
-    (this->fields).prevWorldRot.z = fVar4;
-    (this->fields).prevWorldRot.w = fVar7;
+    fVar6 = pQVar7->y;
+    fVar5 = pQVar7->z;
+    fVar8 = pQVar7->w;
+    (this->fields).prevWorldRot.x = pQVar7->x;
+    (this->fields).prevWorldRot.y = fVar6;
+    (this->fields).prevWorldRot.z = fVar5;
+    (this->fields).prevWorldRot.w = fVar8;
     (this->fields).maxHealth = maxHealthVal;
     if (health == (MVRuntimeDataVariableClampedFloat *)0x0) goto code_?;
-    fVar10 = (float10)(*(code *)(health->klass->vtable).get_Value.method)
+    fVar11 = (float10)(*(code *)(health->klass->vtable).get_Value.method)
                                 (health,(health->klass->vtable).set_Value.methodPtr);
-    (this->fields).prevHealth = (float)fVar10;
-    pMVar11 = (health->fields)._._.OnChange;
+    (this->fields).prevHealth = (float)fVar11;
+    pMVar12 = (health->fields)._._.OnChange;
     this_00 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)
               func_?(TypeInfo__MVRuntimeDataVariable__OnChangeDelegate);
     UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
@@ -673,29 +682,30 @@ code_?:
               (this_00,(Object *)this,
                MethodInfo__HoverCraftVisualization___Init_b__44_0_System__Object_,(MethodInfo *)0x0)
     ;
-    pMVar11 = (MVRuntimeDataVariable_OnChangeDelegate *)
-             mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pMVar11,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pMVar11 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
+    pMVar12 = (MVRuntimeDataVariable_OnChangeDelegate *)
+              mscorlib.dll::System::Delegate::Delegate_Combine
+                        ((Delegate *)pMVar12,(Delegate *)this_00,(MethodInfo *)0x0);
+    if (pMVar12 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) {
       (health->fields)._._.OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
 code_?:
       func_?();
-      pVVar12 = (this->fields).vehicleBlinker;
+      pVVar13 = (this->fields).vehicleBlinker;
       this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                           ((Component *)hoverCraftHull,(MethodInfo *)0x0);
       if (this_01 != (GameObject *)0x0) {
-        pMVar13 = (MeshFilter__Array *)
-                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                 GameObject_GetComponentsInChildren
-                           (this_01,
-                            UnityEngine__MeshFilter__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshFilter>______
-                           );
-        if (pVVar12 != (VehicleBlinker *)0x0) {
-          (pVVar12->fields)._.meshFilters = pMVar13;
-          func_?(&(pVVar12->fields)._.meshFilters,pMVar13);
-          pVVar12 = (this->fields).vehicleBlinker;
-          if (pVVar12 != (VehicleBlinker *)0x0) {
-            (pVVar12->fields)._.visible = 1;
+        pMVar14 = (MeshFilter__Array *)
+                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                  GameObject_GetComponentsInChildren
+                            (this_01,
+                             UnityEngine__MeshFilter__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshFilter>______
+                            );
+        if (pVVar13 != (VehicleBlinker *)0x0) {
+          ppMVar15 = &(pVVar13->fields)._.meshFilters;
+          *ppMVar15 = pMVar14;
+          func_?(ppMVar15,pMVar14);
+          pVVar13 = (this->fields).vehicleBlinker;
+          if (pVVar13 != (VehicleBlinker *)0x0) {
+            (pVVar13->fields)._.visible = 1;
             HoverCraftVisualization_UpdateSettings
                       (this,hoverCraftVisualizationSettings,(MethodInfo *)0x0);
             if ((this->fields)._.isInSpawner != 0) {
@@ -708,23 +718,23 @@ code_?:
       }
       goto code_?;
     }
-    pMVar14 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
-    if (pMVar11->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-      pMVar14 = pMVar11;
+    pMVar16 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+    if (pMVar12->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+      pMVar16 = pMVar12;
     }
-    if (pMVar14 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
-    (health->fields)._._.OnChange = pMVar14;
-    pMVar14 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
-    if (pMVar11->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-      pMVar14 = pMVar11;
+    if (pMVar16 == (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
+    (health->fields)._._.OnChange = pMVar16;
+    pMVar16 = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
+    if (pMVar12->klass == TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
+      pMVar16 = pMVar12;
     }
-    if (pMVar14 != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
+    if (pMVar16 != (MVRuntimeDataVariable_OnChangeDelegate *)0x0) goto code_?;
   }
   func_?();
 code_?:
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
   return;
 }
 
@@ -898,7 +908,6 @@ void Assembly-CSharp.dll::HoverCraftVisualization::HoverCraftVisualization_OnHea
   if ((this->fields).maxHealth <= newHealth) {
     pPVar2 = (this->fields).damageSmokeEmitter;
     if (pPVar2 == (ParticleSystem *)0x0) goto code_?;
-    newHealth = 0.0;
     bVar3 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
             ParticleSystem_get_isPlaying(pPVar2,(MethodInfo *)0x0);
     if (bVar3 != 0) {
@@ -918,6 +927,7 @@ void Assembly-CSharp.dll::HoverCraftVisualization::HoverCraftVisualization_OnHea
       }
       goto code_?;
     }
+    newHealth = 0.0;
   }
   fVar4 = (this->fields).prevHealth;
   if (newHealth < fVar4) {
@@ -948,7 +958,7 @@ code_?:
       ParticleSystem_get_collision(pPVar2,(MethodInfo *)0x0);
       UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
       ParticleSystem_MainModule_set_startSizeMultiplier_Injected
-                ((ParticleSystem_MainModule *)&stack0xffffffec,_UNK_? * 3.5064103e-29,
+                ((ParticleSystem_MainModule *)&stack0xffffffec,_UNK_? * 3.4983976e-29,
                  (MethodInfo *)0x0);
       return;
     }
@@ -1109,8 +1119,9 @@ void Assembly-CSharp.dll::HoverCraftVisualization::HoverCraftVisualization_Updat
   }
   pGVar1 = HoverCraftVisualization_CreateGradient
                      (hoverCraftVisualizationSettings.thrustersColor,(MethodInfo *)0x0);
-  (this->fields).thrustersColor = pGVar1;
-  func_?(&(this->fields).thrustersColor,pGVar1);
+  ppGVar2 = &(this->fields).thrustersColor;
+  *ppGVar2 = pGVar1;
+  func_?(ppGVar2,pGVar1);
   HoverCraftVisualization_ActivateThrusters(this,(MethodInfo *)0x0);
   if ((this->fields).useThrusters == 0) {
     (this->fields).HoverAmplitude = 0.0;
@@ -1165,60 +1176,59 @@ void Assembly-CSharp.dll::HoverCraftVisualization::HoverCraftVisualization__ccto
   uVar3 = _UNK_?;
   uVar4 = _UNK_?;
   uVar5 = _UNK_?;
-  uVar6 = _UNK_?;
   if (iVar2 != 0) {
     if (*(int *)(iVar2 + 0xc) == 0) goto code_?;
     *(undefined4 *)(iVar2 + 0x10) = _UNK_?;
     *(undefined4 *)(iVar2 + 0x14) = uVar5;
     *(undefined4 *)(iVar2 + 0x18) = uVar4;
     *(undefined4 *)(iVar2 + 0x1c) = uVar3;
-    uVar6 = 0x3dc8b439;
-    uVar4 = 0x3f760419;
-    uVar3 = 0x3e43c4c5;
+    uVar3 = _UNK_?;
+    uVar4 = _UNK_?;
+    uVar5 = _UNK_?;
     if (*(uint *)(iVar2 + 0xc) < 2) goto code_?;
-    *(undefined4 *)(iVar2 + 0x20) = 0x3dc8b439;
+    *(undefined4 *)(iVar2 + 0x20) = _UNK_?;
     *(undefined4 *)(iVar2 + 0x24) = uVar5;
-    *(undefined4 *)(iVar2 + 0x28) = 0x3f760419;
-    *(undefined4 *)(iVar2 + 0x2c) = 0x3e43c4c5;
-    uVar7 = _UNK_?;
-    uVar8 = _UNK_?;
-    uVar9 = _UNK_?;
+    *(undefined4 *)(iVar2 + 0x28) = uVar4;
+    *(undefined4 *)(iVar2 + 0x2c) = uVar3;
+    uVar3 = _UNK_?;
+    uVar4 = _UNK_?;
+    uVar5 = _UNK_?;
     if (*(uint *)(iVar2 + 0xc) < 3) goto code_?;
     *(undefined4 *)(iVar2 + 0x30) = _UNK_?;
-    *(undefined4 *)(iVar2 + 0x34) = uVar9;
-    *(undefined4 *)(iVar2 + 0x38) = uVar8;
-    *(undefined4 *)(iVar2 + 0x3c) = uVar7;
-    uVar7 = _UNK_?;
-    uVar8 = _UNK_?;
-    uVar9 = _UNK_?;
+    *(undefined4 *)(iVar2 + 0x34) = uVar5;
+    *(undefined4 *)(iVar2 + 0x38) = uVar4;
+    *(undefined4 *)(iVar2 + 0x3c) = uVar3;
+    uVar3 = _UNK_?;
+    uVar4 = _UNK_?;
+    uVar5 = _UNK_?;
     if (*(uint *)(iVar2 + 0xc) < 4) goto code_?;
     *(undefined4 *)(iVar2 + 0x40) = _UNK_?;
-    *(undefined4 *)(iVar2 + 0x44) = uVar9;
-    *(undefined4 *)(iVar2 + 0x48) = uVar8;
-    *(undefined4 *)(iVar2 + 0x4c) = uVar7;
+    *(undefined4 *)(iVar2 + 0x44) = uVar5;
+    *(undefined4 *)(iVar2 + 0x48) = uVar4;
+    *(undefined4 *)(iVar2 + 0x4c) = uVar3;
     uStack_1 = CONCAT44(uStack_1._4_4_,iVar2);
     func_?(&uStack_1,iVar2);
-    pTVar10 = (ThrustersColorAlphaKey__Array *)
+    pTVar6 = (ThrustersColorAlphaKey__Array *)
              func_?(TypeInfo__WorldObjectTypes__HoverCraft__Shared__ThrustersColorAlphaKey,
                              4);
-    if (pTVar10 != (ThrustersColorAlphaKey__Array *)0x0) {
-      if (pTVar10->max_length != 0) {
-        pTVar10->vector[0].alpha = 0.0;
-        pTVar10->vector[0].time = 0.0;
-        if (1 < pTVar10->max_length) {
-          pTVar10->vector[1].alpha = 1.0;
-          pTVar10->vector[1].time = 0.09999237;
-          if (2 < pTVar10->max_length) {
-            pTVar10->vector[2].alpha = 1.0;
-            pTVar10->vector[2].time = 0.4764782;
-            if (3 < pTVar10->max_length) {
-              pTVar10->vector[3].alpha = 0.0;
-              pTVar10->vector[3].time = 1.0;
-              uStack_1._4_4_ = pTVar10;
-              func_?((int)&uStack_1 + 4,pTVar10);
-              pHVar11 = TypeInfo__HoverCraftVisualization->static_fields;
-              (pHVar11->DefaultThrustersColor).colors = (ThrustersColorColorKey__Array *)uStack_1;
-              (pHVar11->DefaultThrustersColor).alphas = uStack_1._4_4_;
+    if (pTVar6 != (ThrustersColorAlphaKey__Array *)0x0) {
+      if (pTVar6->max_length != 0) {
+        pTVar6->vector[0].alpha = 0.0;
+        pTVar6->vector[0].time = 0.0;
+        if (1 < pTVar6->max_length) {
+          pTVar6->vector[1].alpha = 1.0;
+          pTVar6->vector[1].time = 0.09999237;
+          if (2 < pTVar6->max_length) {
+            pTVar6->vector[2].alpha = 1.0;
+            pTVar6->vector[2].time = 0.4764782;
+            if (3 < pTVar6->max_length) {
+              pTVar6->vector[3].alpha = 0.0;
+              pTVar6->vector[3].time = 1.0;
+              uStack_1._4_4_ = pTVar6;
+              func_?((int)&uStack_1 + 4,pTVar6);
+              pHVar7 = TypeInfo__HoverCraftVisualization->static_fields;
+              (pHVar7->DefaultThrustersColor).colors = (ThrustersColorColorKey__Array *)uStack_1;
+              (pHVar7->DefaultThrustersColor).alphas = uStack_1._4_4_;
               func_?(TypeInfo__HoverCraftVisualization->static_fields,0);
               return;
             }
@@ -1228,11 +1238,11 @@ void Assembly-CSharp.dll::HoverCraftVisualization::HoverCraftVisualization__ccto
       goto code_?;
     }
   }
-  func_?(uVar6,uVar5,uVar4,uVar3);
+  func_?();
 code_?:
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -1263,8 +1273,9 @@ void Assembly-CSharp.dll::HoverCraftVisualization::HoverCraftVisualization__ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<WorldObjectTypes::HoverCraft::Shared::HoverCraftThruster>__List__
             );
-  (this->fields).hoverCraftThrusters = this_00;
-  func_?(&(this->fields).hoverCraftThrusters,this_00);
+  ppLVar1 = &(this->fields).hoverCraftThrusters;
+  *ppLVar1 = this_00;
+  func_?(ppLVar1,this_00);
   (this->fields).thrustersSize = 0.872;
   (this->fields).HoverPeriod = 0.8;
   (this->fields).HoverAmplitude = 0.2;
@@ -1279,34 +1290,34 @@ void Assembly-CSharp.dll::HoverCraftVisualization::HoverCraftVisualization__ctor
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
-  fVar2 = (pVVar1->zeroVector).y;
-  fVar3 = (pVVar1->zeroVector).z;
-  (this->fields).hoverOffset.x = (pVVar1->zeroVector).x;
-  (this->fields).hoverOffset.y = fVar2;
-  (this->fields).hoverOffset.z = fVar3;
+  pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar3 = (pVVar2->zeroVector).y;
+  fVar4 = (pVVar2->zeroVector).z;
+  (this->fields).hoverOffset.x = (pVVar2->zeroVector).x;
+  (this->fields).hoverOffset.y = fVar3;
+  (this->fields).hoverOffset.z = fVar4;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Quaternion);
     cRam_? = '\x01';
   }
-  pQVar4 = TypeInfo__UnityEngine__Quaternion->static_fields;
-  fVar3 = (pQVar4->identityQuaternion).y;
-  fVar2 = (pQVar4->identityQuaternion).z;
-  fVar5 = (pQVar4->identityQuaternion).w;
-  (this->fields).prevWorldRot.x = (pQVar4->identityQuaternion).x;
-  (this->fields).prevWorldRot.y = fVar3;
-  (this->fields).prevWorldRot.z = fVar2;
-  (this->fields).prevWorldRot.w = fVar5;
+  pQVar5 = TypeInfo__UnityEngine__Quaternion->static_fields;
+  fVar4 = (pQVar5->identityQuaternion).y;
+  fVar3 = (pQVar5->identityQuaternion).z;
+  fVar6 = (pQVar5->identityQuaternion).w;
+  (this->fields).prevWorldRot.x = (pQVar5->identityQuaternion).x;
+  (this->fields).prevWorldRot.y = fVar4;
+  (this->fields).prevWorldRot.z = fVar3;
+  (this->fields).prevWorldRot.w = fVar6;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
-  fVar2 = (pVVar1->zeroVector).y;
-  fVar3 = (pVVar1->zeroVector).z;
-  (this->fields).smoothVelocity.x = (pVVar1->zeroVector).x;
-  (this->fields).smoothVelocity.y = fVar2;
-  (this->fields).smoothVelocity.z = fVar3;
+  pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar3 = (pVVar2->zeroVector).y;
+  fVar4 = (pVVar2->zeroVector).z;
+  (this->fields).smoothVelocity.x = (pVVar2->zeroVector).x;
+  (this->fields).smoothVelocity.y = fVar3;
+  (this->fields).smoothVelocity.z = fVar4;
   VehicleVisualizationBase::VehicleVisualizationBase__ctor
             ((VehicleVisualizationBase *)this,(MethodInfo *)0x0);
   return;

@@ -78,8 +78,7 @@ float Assembly-CSharp.dll::SettingsInputFieldSlider::SettingsInputFieldSlider_Ge
     value = (float)fVar2 * (pSVar1->fields).interval;
   }
   pSVar3 = (pSVar1->fields).slider;
-  if ((pSVar3 != (Slider *)0x0) &&
-     (pSVar1 = (this->fields).settingsSlider, pSVar1 != (SettingsSlider *)0x0)) {
+  if (pSVar3 != (Slider *)0x0) {
     pSVar4 = (SettingsInputFieldSlider *)(pSVar3->fields).m_MinValue;
     if ((value < (float)pSVar4) ||
        (pSVar4 = (SettingsInputFieldSlider *)(((pSVar1->fields).slider)->fields).m_MaxValue,
@@ -132,20 +131,21 @@ void Assembly-CSharp.dll::SettingsInputFieldSlider::SettingsInputFieldSlider_Ini
         ;
         pSVar4 = (this->fields).settingsSlider;
         if (pSVar4 != (SettingsSlider *)0x0) {
-          (pSVar4->fields).key = key;
-          func_?(&(pSVar4->fields).key,key);
-          pSVar5 = (pSVar4->fields).slider;
-          if (pSVar5 != (Slider *)0x0) {
+          ppSVar5 = &(pSVar4->fields).key;
+          *ppSVar5 = key;
+          func_?(ppSVar5,key);
+          pSVar6 = (pSVar4->fields).slider;
+          if (pSVar6 != (Slider *)0x0) {
             UnityEngine.UI.dll::UnityEngine::UI::Slider::Slider_set_maxValue
-                      (pSVar5,(float)((ulonglong)uVar2 >> 0x20),(MethodInfo *)0x0);
-            pSVar5 = (pSVar4->fields).slider;
-            if (pSVar5 != (Slider *)0x0) {
+                      (pSVar6,(float)((ulonglong)uVar2 >> 0x20),(MethodInfo *)0x0);
+            pSVar6 = (pSVar4->fields).slider;
+            if (pSVar6 != (Slider *)0x0) {
               UnityEngine.UI.dll::UnityEngine::UI::Slider::Slider_set_minValue
-                        (pSVar5,(float)uVar2,(MethodInfo *)0x0);
-              pSVar5 = (pSVar4->fields).slider;
-              if (pSVar5 != (Slider *)0x0) {
-                (*(code *)(pSVar5->klass->vtable).set_value.method)
-                          (pSVar5,value,(pSVar5->klass->vtable).SetValueWithoutNotify.methodPtr);
+                        (pSVar6,(float)uVar2,(MethodInfo *)0x0);
+              pSVar6 = (pSVar4->fields).slider;
+              if (pSVar6 != (Slider *)0x0) {
+                (*(code *)(pSVar6->klass->vtable).set_value.method)
+                          (pSVar6,value,(pSVar6->klass->vtable).SetValueWithoutNotify.methodPtr);
                 SettingsInputFieldSlider_Initialize_1(this,key,value,(MethodInfo *)0x0);
                 return;
               }
@@ -158,8 +158,8 @@ void Assembly-CSharp.dll::SettingsInputFieldSlider::SettingsInputFieldSlider_Ini
   uVar2 = func_?();
 code_?:
   func_?(uVar2);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -171,31 +171,31 @@ void Assembly-CSharp.dll::SettingsInputFieldSlider::SettingsInputFieldSlider_Ini
 
 {
   pSVar1 = this;
-  (this->fields).key = key;
-  func_?(&(this->fields).key,key);
-  pSVar2 = (pSVar1->fields).settingsSlider;
+  ppSVar2 = &(this->fields).key;
+  *ppSVar2 = key;
+  func_?(ppSVar2,key);
+  pSVar3 = (pSVar1->fields).settingsSlider;
   if ((pSVar1->fields).round == 0) {
-    pSVar3 = (SettingsInputFieldSlider *)value;
-    if (pSVar2 == (SettingsSlider *)0x0) goto code_?;
+    pSVar4 = (SettingsInputFieldSlider *)value;
+    if (pSVar3 == (SettingsSlider *)0x0) goto code_?;
   }
   else {
-    if (pSVar2 == (SettingsSlider *)0x0) goto code_?;
-    fVar4 = (float10)func_?(value / (pSVar2->fields).interval);
-    pSVar2 = (pSVar1->fields).settingsSlider;
-    this = (SettingsInputFieldSlider *)(float)fVar4;
-    if (pSVar2 == (SettingsSlider *)0x0) goto code_?;
-    pSVar3 = (SettingsInputFieldSlider *)((float)this * (pSVar2->fields).interval);
+    if (pSVar3 == (SettingsSlider *)0x0) goto code_?;
+    fVar5 = (float10)func_?(value / (pSVar3->fields).interval);
+    pSVar3 = (pSVar1->fields).settingsSlider;
+    this = (SettingsInputFieldSlider *)(float)fVar5;
+    if (pSVar3 == (SettingsSlider *)0x0) goto code_?;
+    pSVar4 = (SettingsInputFieldSlider *)((float)this * (pSVar3->fields).interval);
   }
-  pSVar5 = (pSVar2->fields).slider;
-  if ((pSVar5 != (Slider *)0x0) &&
-     (pSVar2 = (pSVar1->fields).settingsSlider, pSVar2 != (SettingsSlider *)0x0)) {
-    pSVar6 = (SettingsInputFieldSlider *)(pSVar5->fields).m_MinValue;
-    if (((float)pSVar3 < (float)pSVar6) ||
-       (pSVar6 = (SettingsInputFieldSlider *)(((pSVar2->fields).slider)->fields).m_MaxValue,
-       (float)pSVar6 < (float)pSVar3)) {
-      pSVar3 = pSVar6;
+  pSVar6 = (pSVar3->fields).slider;
+  if (pSVar6 != (Slider *)0x0) {
+    pSVar7 = (SettingsInputFieldSlider *)(pSVar6->fields).m_MinValue;
+    if (((float)pSVar4 < (float)pSVar7) ||
+       (pSVar7 = (SettingsInputFieldSlider *)(((pSVar3->fields).slider)->fields).m_MaxValue,
+       (float)pSVar7 < (float)pSVar4)) {
+      pSVar4 = pSVar7;
     }
-    this = pSVar3;
+    this = pSVar4;
     if (cRam_? == '\0') {
       func_?(&TypeInfo__System__Globalization__CultureInfo);
       cRam_? = '\x01';
@@ -216,8 +216,8 @@ void Assembly-CSharp.dll::SettingsInputFieldSlider::SettingsInputFieldSlider_Ini
   }
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -301,7 +301,7 @@ void Assembly-CSharp.dll::SettingsInputFieldSlider::SettingsInputFieldSlider_Res
                       UnityEngine__UI__InputField_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::InputField>__
                      );
   (this->fields).inputField = pIVar1;
-  func_?(&(this->fields).inputField,pIVar1);
+  func_?();
   return;
 }
 
@@ -356,8 +356,7 @@ void Assembly-CSharp.dll::SettingsInputFieldSlider::SettingsInputFieldSlider_Sli
     pSVar4 = (SettingsInputFieldSlider *)((float)this * (pSVar1->fields).interval);
   }
   pSVar2 = (pSVar1->fields).slider;
-  if ((pSVar2 != (Slider *)0x0) &&
-     (pSVar1 = (this_00->fields).settingsSlider, pSVar1 != (SettingsSlider *)0x0)) {
+  if (pSVar2 != (Slider *)0x0) {
     pSVar5 = (SettingsInputFieldSlider *)(pSVar2->fields).m_MinValue;
     if (((float)pSVar4 < (float)pSVar5) ||
        (pSVar5 = (SettingsInputFieldSlider *)(((pSVar1->fields).slider)->fields).m_MaxValue,

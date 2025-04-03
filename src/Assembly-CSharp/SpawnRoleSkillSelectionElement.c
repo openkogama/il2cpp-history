@@ -113,30 +113,33 @@ void Assembly-CSharp.dll::SpawnRoleSkillSelectionElement::SpawnRoleSkillSelectio
   (this->fields).skillCost = skillCost;
   (this->fields).spawnRoleCost = spawnRoleCost;
   (this->fields).spawnRoleTier = (undefined1)spawnRoleTier;
-  (this->fields).skillSetting = skillSetting;
-  func_?(&(this->fields).skillSetting,skillSetting);
-  (this->fields).addSkillCallback = addSkillCallback;
-  func_?(&(this->fields).addSkillCallback,addSkillCallback);
-  (this->fields).cantAddSkillCallback = cantAddSkillCallback;
-  func_?(&(this->fields).cantAddSkillCallback,cantAddSkillCallback);
+  ppKVar1 = &(this->fields).skillSetting;
+  *ppKVar1 = skillSetting;
+  func_?(ppKVar1,skillSetting);
+  ppUVar2 = &(this->fields).addSkillCallback;
+  *ppUVar2 = addSkillCallback;
+  func_?(ppUVar2,addSkillCallback);
+  ppUVar3 = &(this->fields).cantAddSkillCallback;
+  *ppUVar3 = cantAddSkillCallback;
+  func_?(ppUVar3,cantAddSkillCallback);
   spawnRoleTier = (GamePassTier__Enum)(this->fields).nameText;
   if (skillDataManager != (SpawnRolesSkillDataManager *)0x0) {
-    pSVar1 = SpawnRolesSkillDataManager::SpawnRolesSkillDataManager_GetNameText
+    pSVar4 = SpawnRolesSkillDataManager::SpawnRolesSkillDataManager_GetNameText
                        (skillDataManager,skill,(MethodInfo *)0x0);
     if (spawnRoleTier != GamePassTier__Enum_Tier0) {
       (**(code **)(*(int *)spawnRoleTier + 0x318))
-                (spawnRoleTier,pSVar1,*(undefined4 *)(*(int *)spawnRoleTier + 0x31c));
+                (spawnRoleTier,pSVar4,*(undefined4 *)(*(int *)spawnRoleTier + 0x31c));
       spawnRoleTier = (GamePassTier__Enum)(this->fields).spawnRoleCostText;
-      pSVar1 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&skillCost,(MethodInfo *)0x0);
+      pSVar4 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&skillCost,(MethodInfo *)0x0);
       if (spawnRoleTier != GamePassTier__Enum_Tier0) {
         (**(code **)(*(int *)spawnRoleTier + 0x318))
-                  (spawnRoleTier,pSVar1,*(undefined4 *)(*(int *)spawnRoleTier + 0x31c));
+                  (spawnRoleTier,pSVar4,*(undefined4 *)(*(int *)spawnRoleTier + 0x31c));
         spawnRoleTier = (GamePassTier__Enum)(this->fields).spawnRoleCostText;
-        pCVar2 = SpawnRolesSkillDataManager::SpawnRolesSkillDataManager_GetCostColor
-                           (&CStack_3,skillCost,(MethodInfo *)0x0);
+        pCVar5 = SpawnRolesSkillDataManager::SpawnRolesSkillDataManager_GetCostColor
+                           (&CStack_6,skillCost,(MethodInfo *)0x0);
         if (spawnRoleTier != GamePassTier__Enum_Tier0) {
           (**(code **)(*(int *)spawnRoleTier + 0x178))
-                    (spawnRoleTier,pCVar2->r,pCVar2->g,pCVar2->b,pCVar2->a,
+                    (spawnRoleTier,pCVar5->r,pCVar5->g,pCVar5->b,pCVar5->a,
                      *(undefined4 *)(*(int *)spawnRoleTier + 0x17c));
           spawnRoleTier =
                (GamePassTier__Enum)
@@ -144,7 +147,7 @@ void Assembly-CSharp.dll::SpawnRoleSkillSelectionElement::SpawnRoleSkillSelectio
                          (skillDataManager,skill,(this->fields).iconColor,
                           (this->fields).iconBackgroundColor,(this->fields).iconWidth,
                           (this->fields).iconHeight,(MethodInfo *)0x0);
-          pKVar4 = skillSetting;
+          pKVar7 = skillSetting;
           if ((SpawnRoleSkillIconController *)spawnRoleTier != (SpawnRoleSkillIconController *)0x0)
           {
             this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
@@ -161,34 +164,31 @@ void Assembly-CSharp.dll::SpawnRoleSkillSelectionElement::SpawnRoleSkillSelectio
                      UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility
                      ::UnsafeUtility_AsRef_1((Void *)ptr,(MethodInfo *)0x0);
                 if ((GameObject *)spawnRoleTier != (GameObject *)0x0) {
-                  if (pKVar4 == (KogamaSettingValueWrapperBase *)0x0) {
-                    pKVar5 = (KogamaSettingValueWrapperBase *)0x0;
+                  if (pKVar7 == (KogamaSettingValueWrapperBase *)0x0) {
+                    pKVar8 = (KogamaSettingValueWrapperBase *)0x0;
                   }
                   else {
-                    if (((pKVar4->klass->_1).naturalAligment <
-                         (
-                         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingBoolBase
-                         ->_1).naturalAligment) ||
-                       ((pKVar4->klass->_1).typeHierarchy
-                        [(
-                         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingBoolBase
-                         ->_1).naturalAligment - 1] !=
+                    bVar9 = (
+                            TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingBoolBase
+                            ->_1).naturalAligment;
+                    if (((pKVar7->klass->_1).naturalAligment < bVar9) ||
+                       ((pKVar7->klass->_1).typeHierarchy[bVar9 - 1] !=
                         (Il2CppClass *)
                         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingBoolBase
                        )) {
-                      bVar6 = false;
+                      bVar10 = false;
                     }
                     else {
-                      bVar6 = true;
+                      bVar10 = true;
                     }
-                    pKVar5 = (KogamaSettingValueWrapperBase *)0x0;
-                    if (bVar6) {
-                      pKVar5 = pKVar4;
+                    pKVar8 = (KogamaSettingValueWrapperBase *)0x0;
+                    if (bVar10) {
+                      pKVar8 = pKVar7;
                     }
                   }
                   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                             ((GameObject *)spawnRoleTier,
-                             pKVar5 == (KogamaSettingValueWrapperBase *)0x0,(MethodInfo *)0x0);
+                             pKVar8 == (KogamaSettingValueWrapperBase *)0x0,(MethodInfo *)0x0);
                   SpawnRoleSkillSelectionElement_InitializeInfoButton
                             (this,skill,skillDataManager,(MethodInfo *)0x0);
                   return;
@@ -201,8 +201,8 @@ void Assembly-CSharp.dll::SpawnRoleSkillSelectionElement::SpawnRoleSkillSelectio
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -215,7 +215,6 @@ void Assembly-CSharp.dll::SpawnRoleSkillSelectionElement::
                SpawnRolesSkillDataManager *skillDataManager,MethodInfo *method)
 
 {
-  pSVar1 = this;
   if (cRam_? == '\0') {
     func_?(&
                     TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
@@ -233,100 +232,91 @@ void Assembly-CSharp.dll::SpawnRoleSkillSelectionElement::
     func_?(&TypeInfo__System__Single);
     cRam_? = '\x01';
   }
-  this = (SpawnRoleSkillSelectionElement *)0x0;
-  skillValue = (Object *)func_?(TypeInfo__System__Int32,&this);
-  pKVar2 = (pSVar1->fields).skillSetting;
-  if (pKVar2 != (KogamaSettingValueWrapperBase *)0x0) {
-    pKVar3 = pKVar2->klass;
-    if (((pKVar3->_1).naturalAligment <
-         (
-         TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingInt
-         ->_1).naturalAligment) ||
-       ((pKVar3->_1).typeHierarchy
-        [(
-         TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingInt
-         ->_1).naturalAligment - 1] !=
+  uStack_1 = 0;
+  skillValue = (Object *)func_?(TypeInfo__System__Int32,&uStack_1);
+  pSVar2 = this;
+  this_01 = (KogamaSettingNumericBase_1_System_Int32_ *)(this->fields).skillSetting;
+  if (this_01 != (KogamaSettingNumericBase_1_System_Int32_ *)0x0) {
+    bVar3 = (
+            TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingInt
+            ->_1).naturalAligment;
+    if (((this_01->klass->_1).naturalAligment < bVar3) ||
+       ((this_01->klass->_1).typeHierarchy[bVar3 - 1] !=
         (Il2CppClass *)
         TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingInt
        )) {
-      pKVar3 = ((pSVar1->fields).skillSetting)->klass;
-      if (((pKVar3->_1).naturalAligment <
-           (
-           TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
-           ->_1).naturalAligment) ||
-         ((pKVar3->_1).typeHierarchy
-          [(
-           TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
-           ->_1).naturalAligment - 1] !=
+      bVar3 = (
+              TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
+              ->_1).naturalAligment;
+      if (((this_01->klass->_1).naturalAligment < bVar3) ||
+         ((this_01->klass->_1).typeHierarchy[bVar3 - 1] !=
           (Il2CppClass *)
           TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
          )) goto code_?;
-      this_01 = (KogamaSettingNumericBase_1_System_Int32_ *)(pSVar1->fields).skillSetting;
+      bVar3 = (
+              TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
+              ->_1).naturalAligment;
       pAVar4 = 
       TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
       ;
-      if (((this_01->klass->_1).naturalAligment <
-           (
-           TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
-           ->_1).naturalAligment) ||
-         ((this_01->klass->_1).typeHierarchy
-          [(
-           TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
-           ->_1).naturalAligment - 1] !=
+      if (((this_01->klass->_1).naturalAligment < bVar3) ||
+         ((this_01->klass->_1).typeHierarchy[bVar3 - 1] !=
           (Il2CppClass *)
           TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
          )) goto code_?;
-      fStack_5 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
-                 KogamaSettingTypes::KogamaSettingNumericBase`1[System::Single]::
-                 KogamaSettingNumericBase_1_System_Single__get_NumericValue
-                           ((KogamaSettingNumericBase_1_System_Single_ *)this_01,
-                            MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>__get_NumericValue__
-                           );
-      pfVar6 = &fStack_5;
+      pSStack_5 = (SpawnRoleSkillSelectionElement *)
+                  MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
+                  KogamaSettingTypes::KogamaSettingNumericBase`1[System::Single]::
+                  KogamaSettingNumericBase_1_System_Single__get_NumericValue
+                            ((KogamaSettingNumericBase_1_System_Single_ *)this_01,
+                             MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>__get_NumericValue__
+                            );
+      ppSVar6 = &pSStack_5;
       pSVar7 = TypeInfo__System__Single;
     }
     else {
-      this_01 = (KogamaSettingNumericBase_1_System_Int32_ *)(pSVar1->fields).skillSetting;
-      if (this_01 == (KogamaSettingNumericBase_1_System_Int32_ *)0x0) goto code_?;
+      bVar3 = (
+              TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingInt
+              ->_1).naturalAligment;
       pAVar4 = (AttributeSettingFloat__Class *)
                TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingInt
       ;
-      if (((this_01->klass->_1).naturalAligment <
-           (
-           TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingInt
-           ->_1).naturalAligment) ||
-         ((this_01->klass->_1).typeHierarchy
-          [(
-           TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingInt
-           ->_1).naturalAligment - 1] !=
+      if ((((this_01->klass->_1).naturalAligment < bVar3) ||
+          (ppIVar8 = (this_01->klass->_1).typeHierarchy,
+          ppIVar8[bVar3 - 1] !=
           (Il2CppClass *)
           TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingInt
-         )) {
-code_?:
-        func_?(this_01,pAVar4);
-        goto code_?;
-      }
-      fStack_8 = (float)MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
-                        KogamaSettingTypes::KogamaSettingNumericBase`1[System::Int32]::
-                        KogamaSettingNumericBase_1_System_Int32__get_NumericValue
-                                  (this_01,
-                                   MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>__get_NumericValue__
-                                  );
-      pfVar6 = &fStack_8;
+          )) || (ppIVar8[(
+                         TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingInt
+                         ->_1).naturalAligment - 1] !=
+                 (Il2CppClass *)
+                 TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingInt
+                )) goto code_?;
+      this = (SpawnRoleSkillSelectionElement *)
+             MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
+             KogamaSettingTypes::KogamaSettingNumericBase`1[System::Int32]::
+             KogamaSettingNumericBase_1_System_Int32__get_NumericValue
+                       (this_01,
+                        MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>__get_NumericValue__
+                       );
+      ppSVar6 = &this;
       pSVar7 = (Single__Class *)TypeInfo__System__Int32;
     }
-    skillValue = (Object *)func_?(pSVar7,pfVar6);
+    skillValue = (Object *)func_?(pSVar7,ppSVar6);
   }
 code_?:
-  this_00 = (pSVar1->fields).infoButton;
+  this_00 = (pSVar2->fields).infoButton;
   if (this_00 != (SpawnRoleSkillInfoButton *)0x0) {
     SpawnRoleSkillInfoButton::SpawnRoleSkillInfoButton_Initialize
-              (this_00,skill,skillValue,(pSVar1->fields).skillCost,skillDataManager,
+              (this_00,skill,skillValue,(pSVar2->fields).skillCost,skillDataManager,
                (MethodInfo *)0x0);
     return;
   }
-code_?:
   func_?();
+  this_01 = extraout_EDX;
+  pAVar4 = unaff_ESI;
+code_?:
+  func_?(this_01,pAVar4);
   pcVar9 = (code *)swi(3);
   (*pcVar9)();
   return;

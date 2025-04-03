@@ -88,8 +88,9 @@ code_?:
                              ((MethodInfo *)0x0);
           (pRVar1->fields)._t_5__4 = fVar5 + (float)this;
           pOVar15 = (Object *)func_?(TypeInfo__System__Int32,&stack0xfffffff8);
-          (pRVar1->fields).__2__current = pOVar15;
-          func_?(&(pRVar1->fields).__2__current,pOVar15);
+          ppOVar16 = &(pRVar1->fields).__2__current;
+          *ppOVar16 = pOVar15;
+          func_?(ppOVar16,pOVar15);
           (pRVar1->fields).__1__state = 1;
           return 1;
         }
@@ -109,13 +110,14 @@ code_?:
   }
   if ((obj != (RailRay *)0x0) &&
      (this_00 = (obj->fields).particles, this_00 != (ParticleSystem *)0x0)) {
-    bVar16 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+    bVar17 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
              ParticleSystem_get_isPlaying(this_00,(MethodInfo *)0x0);
-    if (bVar16 != 0) {
+    if (bVar17 != 0) {
       this = (RailRay_DoShowRay_d_20 *)0x0;
       pOVar15 = (Object *)func_?(TypeInfo__System__Int32,&this);
-      (pRVar1->fields).__2__current = pOVar15;
-      func_?(&(pRVar1->fields).__2__current,pOVar15);
+      ppOVar16 = &(pRVar1->fields).__2__current;
+      *ppOVar16 = pOVar15;
+      func_?(ppOVar16,pOVar15);
       (pRVar1->fields).__1__state = 2;
       return 1;
     }
@@ -123,9 +125,9 @@ code_?:
       func_?(&TypeInfo__PrefabPool);
       cRam_? = '\x01';
     }
-    pPVar17 = TypeInfo__PrefabPool->static_fields->instance;
-    if ((pPVar17 != (PrefabPool *)0x0) &&
-       (this_02 = (pPVar17->fields).enumPoolManager, this_02 != (EnumPoolManager *)0x0)) {
+    pPVar18 = TypeInfo__PrefabPool->static_fields->instance;
+    if ((pPVar18 != (PrefabPool *)0x0) &&
+       (this_02 = (pPVar18->fields).enumPoolManager, this_02 != (EnumPoolManager *)0x0)) {
       EnumPoolManager::EnumPoolManager_Return
                 (this_02,(MonoBehaviour *)obj,(obj->fields).railEnumType,(MethodInfo *)0x0);
       return 0;
@@ -133,9 +135,9 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar18 = (code *)swi(3);
-  bVar16 = (*pcVar18)();
-  return bVar16;
+  pcVar19 = (code *)swi(3);
+  bVar17 = (*pcVar19)();
+  return bVar17;
 }
 
 

@@ -106,132 +106,131 @@ void Assembly-CSharp.dll::RTG::BoxColliderGizmo3DLookAndFeel::BoxColliderGizmo3D
                (BoxColliderGizmo3DLookAndFeel *this,MethodInfo *method)
 
 {
-  pBVar1 = this;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__RTG__GizmoCap2DLookAndFeel);
     func_?(&TypeInfo__RTG__GizmoCap2DLookAndFeel);
     func_?(&TypeInfo__RTG__GizmoCap3DLookAndFeel);
     cRam_? = '\x01';
   }
-  pCVar2 = ColorEx::ColorEx_FromByteValues
-                      ((Color *)&puStack_3,0x99,0xe8,0x90,0xff,(MethodInfo *)0x0);
-  fVar4 = pCVar2->g;
-  fVar5 = pCVar2->b;
-  fVar6 = pCVar2->a;
-  (this->fields)._wireColor.r = pCVar2->r;
-  (this->fields)._wireColor.g = fVar4;
-  (this->fields)._wireColor.b = fVar5;
-  (this->fields)._wireColor.a = fVar6;
-  pGVar7 = (GizmoCap2DLookAndFeel__Array *)func_?(TypeInfo__RTG__GizmoCap2DLookAndFeel,6);
-  (this->fields)._tickLookAndFeel = pGVar7;
-  func_?(&(this->fields)._tickLookAndFeel,pGVar7);
+  pCVar1 = ColorEx::ColorEx_FromByteValues
+                     ((Color *)&puStack_2,0x99,0xe8,0x90,0xff,(MethodInfo *)0x0);
+  fVar3 = pCVar1->g;
+  fVar4 = pCVar1->b;
+  fVar5 = pCVar1->a;
+  (this->fields)._wireColor.r = pCVar1->r;
+  (this->fields)._wireColor.g = fVar3;
+  (this->fields)._wireColor.b = fVar4;
+  (this->fields)._wireColor.a = fVar5;
+  pGVar6 = (GizmoCap2DLookAndFeel__Array *)func_?(TypeInfo__RTG__GizmoCap2DLookAndFeel,6);
+  ppGVar7 = &(this->fields)._tickLookAndFeel;
+  *ppGVar7 = pGVar6;
+  func_?(ppGVar7,pGVar6);
   pGVar8 = (GizmoCap3DLookAndFeel *)func_?(TypeInfo__RTG__GizmoCap3DLookAndFeel);
   GizmoCap3DLookAndFeel::GizmoCap3DLookAndFeel__ctor(pGVar8,(MethodInfo *)0x0);
   method_00 = (MethodInfo *)&(this->fields)._midCapLookAndFeel;
-  (this->fields)._midCapLookAndFeel = pGVar8;
+  *(GizmoCap3DLookAndFeel **)method_00 = pGVar8;
   func_?(method_00,pGVar8);
   (this->fields)._isMidCapVisible = 1;
   (this->fields)._tickCullAlphaScale = 0.3;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-  puVar9 = (undefined1 *)0x0;
-  pGVar7 = (this->fields)._tickLookAndFeel;
-  this = (BoxColliderGizmo3DLookAndFeel *)TypeInfo__RTG__GizmoCap2DLookAndFeel;
-  while (TypeInfo__RTG__GizmoCap2DLookAndFeel = (GizmoCap2DLookAndFeel__Class *)this,
-        pGVar7 != (GizmoCap2DLookAndFeel__Array *)0x0) {
-    if ((int)pGVar7->max_length <= (int)puVar9) {
-      pCVar2 = ColorEx::ColorEx_FromByteValues
-                          ((Color *)&puStack_3,0x99,0xe8,0x90,0xff,(MethodInfo *)0x0);
-      pGVar7 = (pBVar1->fields)._tickLookAndFeel;
-      fVar4 = pCVar2->r;
-      fVar5 = pCVar2->g;
-      fVar6 = pCVar2->b;
-      fVar10 = pCVar2->a;
-      if (pGVar7 != (GizmoCap2DLookAndFeel__Array *)0x0) {
-        if (pGVar7->max_length == 0) goto code_?;
-        pGVar11 = pGVar7->vector[0];
-        fVar12 = pCVar2->g;
-        fVar13 = pCVar2->b;
-        fVar14 = pCVar2->a;
+  uVar9 = 0;
+  pGVar6 = *ppGVar7;
+  while (pGVar6 != (GizmoCap2DLookAndFeel__Array *)0x0) {
+    if ((int)pGVar6->max_length <= (int)uVar9) {
+      pCVar1 = ColorEx::ColorEx_FromByteValues
+                         ((Color *)&puStack_2,0x99,0xe8,0x90,0xff,(MethodInfo *)0x0);
+      pGVar6 = *ppGVar7;
+      fVar3 = pCVar1->r;
+      fVar4 = pCVar1->g;
+      fVar5 = pCVar1->b;
+      fVar10 = pCVar1->a;
+      if (pGVar6 != (GizmoCap2DLookAndFeel__Array *)0x0) {
+        if (pGVar6->max_length == 0) goto code_?;
+        pGVar11 = pGVar6->vector[0];
+        fVar12 = pCVar1->g;
+        fVar13 = pCVar1->b;
+        fVar14 = pCVar1->a;
         if (pGVar11 != (GizmoCap2DLookAndFeel *)0x0) {
-          (pGVar11->fields)._color.r = pCVar2->r;
+          (pGVar11->fields)._color.r = pCVar1->r;
           (pGVar11->fields)._color.g = fVar12;
           (pGVar11->fields)._color.b = fVar13;
           (pGVar11->fields)._color.a = fVar14;
-          pGVar7 = (pBVar1->fields)._tickLookAndFeel;
-          if (pGVar7 != (GizmoCap2DLookAndFeel__Array *)0x0) {
-            if (pGVar7->max_length < 4) goto code_?;
-            pGVar11 = pGVar7->vector[3];
+          pGVar6 = *ppGVar7;
+          if (pGVar6 != (GizmoCap2DLookAndFeel__Array *)0x0) {
+            if (pGVar6->max_length < 4) goto code_?;
+            pGVar11 = pGVar6->vector[3];
             if (pGVar11 != (GizmoCap2DLookAndFeel *)0x0) {
-              (pGVar11->fields)._color.r = fVar4;
-              (pGVar11->fields)._color.g = fVar5;
-              (pGVar11->fields)._color.b = fVar6;
+              (pGVar11->fields)._color.r = fVar3;
+              (pGVar11->fields)._color.g = fVar4;
+              (pGVar11->fields)._color.b = fVar5;
               (pGVar11->fields)._color.a = fVar10;
-              pCVar2 = ColorEx::ColorEx_FromByteValues
-                                  ((Color *)&puStack_3,0x99,0xe8,0x90,0xff,(MethodInfo *)0x0);
-              pGVar7 = (pBVar1->fields)._tickLookAndFeel;
-              fVar4 = pCVar2->r;
-              fVar5 = pCVar2->g;
-              fVar6 = pCVar2->b;
-              fVar10 = pCVar2->a;
-              if (pGVar7 != (GizmoCap2DLookAndFeel__Array *)0x0) {
-                if (pGVar7->max_length < 2) goto code_?;
-                pGVar11 = pGVar7->vector[1];
-                fVar12 = pCVar2->g;
-                fVar13 = pCVar2->b;
-                fVar14 = pCVar2->a;
+              this = (BoxColliderGizmo3DLookAndFeel *)&UNK_?;
+              pCVar1 = ColorEx::ColorEx_FromByteValues
+                                 ((Color *)&puStack_2,0x99,0xe8,0x90,0xff,(MethodInfo *)0x0);
+              pGVar6 = *ppGVar7;
+              fVar3 = pCVar1->r;
+              fVar4 = pCVar1->g;
+              fVar5 = pCVar1->b;
+              fVar10 = pCVar1->a;
+              if (pGVar6 != (GizmoCap2DLookAndFeel__Array *)0x0) {
+                if (pGVar6->max_length < 2) goto code_?;
+                pGVar11 = pGVar6->vector[1];
+                fVar12 = pCVar1->g;
+                fVar13 = pCVar1->b;
+                fVar14 = pCVar1->a;
                 if (pGVar11 != (GizmoCap2DLookAndFeel *)0x0) {
-                  (pGVar11->fields)._color.r = pCVar2->r;
+                  (pGVar11->fields)._color.r = pCVar1->r;
                   (pGVar11->fields)._color.g = fVar12;
                   (pGVar11->fields)._color.b = fVar13;
                   (pGVar11->fields)._color.a = fVar14;
-                  pGVar7 = (pBVar1->fields)._tickLookAndFeel;
-                  if (pGVar7 != (GizmoCap2DLookAndFeel__Array *)0x0) {
-                    if (pGVar7->max_length < 5) goto code_?;
-                    pGVar11 = pGVar7->vector[4];
+                  pGVar6 = *ppGVar7;
+                  if (pGVar6 != (GizmoCap2DLookAndFeel__Array *)0x0) {
+                    if (pGVar6->max_length < 5) goto code_?;
+                    pGVar11 = pGVar6->vector[4];
                     if (pGVar11 != (GizmoCap2DLookAndFeel *)0x0) {
-                      (pGVar11->fields)._color.r = fVar4;
-                      (pGVar11->fields)._color.g = fVar5;
-                      (pGVar11->fields)._color.b = fVar6;
+                      (pGVar11->fields)._color.r = fVar3;
+                      (pGVar11->fields)._color.g = fVar4;
+                      (pGVar11->fields)._color.b = fVar5;
                       (pGVar11->fields)._color.a = fVar10;
-                      pCVar2 = ColorEx::ColorEx_FromByteValues
-                                          ((Color *)&puStack_3,0x99,0xe8,0x90,0xff,
-                                           (MethodInfo *)0x0);
-                      pGVar7 = (pBVar1->fields)._tickLookAndFeel;
-                      fVar4 = pCVar2->r;
-                      fVar5 = pCVar2->g;
-                      fVar6 = pCVar2->b;
-                      fVar10 = pCVar2->a;
-                      if (pGVar7 != (GizmoCap2DLookAndFeel__Array *)0x0) {
-                        if (pGVar7->max_length < 3) goto code_?;
-                        pGVar11 = pGVar7->vector[2];
-                        fVar12 = pCVar2->g;
-                        fVar13 = pCVar2->b;
-                        fVar14 = pCVar2->a;
+                      pCVar1 = ColorEx::ColorEx_FromByteValues
+                                         ((Color *)&puStack_2,0x99,0xe8,0x90,0xff,(MethodInfo *)0x0
+                                         );
+                      pGVar6 = *ppGVar7;
+                      fVar3 = pCVar1->r;
+                      fVar4 = pCVar1->g;
+                      fVar5 = pCVar1->b;
+                      fVar10 = pCVar1->a;
+                      if (pGVar6 != (GizmoCap2DLookAndFeel__Array *)0x0) {
+                        if (pGVar6->max_length < 3) goto code_?;
+                        pGVar11 = pGVar6->vector[2];
+                        fVar12 = pCVar1->g;
+                        fVar13 = pCVar1->b;
+                        fVar14 = pCVar1->a;
                         if (pGVar11 != (GizmoCap2DLookAndFeel *)0x0) {
-                          (pGVar11->fields)._color.r = pCVar2->r;
+                          (pGVar11->fields)._color.r = pCVar1->r;
                           (pGVar11->fields)._color.g = fVar12;
                           (pGVar11->fields)._color.b = fVar13;
                           (pGVar11->fields)._color.a = fVar14;
-                          pGVar7 = (pBVar1->fields)._tickLookAndFeel;
-                          if (pGVar7 != (GizmoCap2DLookAndFeel__Array *)0x0) {
-                            if (pGVar7->max_length < 6) goto code_?;
-                            pGVar11 = pGVar7->vector[5];
+                          pGVar6 = *ppGVar7;
+                          if (pGVar6 != (GizmoCap2DLookAndFeel__Array *)0x0) {
+                            if (pGVar6->max_length < 6) goto code_?;
+                            pGVar11 = pGVar6->vector[5];
                             if (pGVar11 != (GizmoCap2DLookAndFeel *)0x0) {
-                              (pGVar11->fields)._color.r = fVar4;
-                              (pGVar11->fields)._color.g = fVar5;
-                              (pGVar11->fields)._color.b = fVar6;
+                              (pGVar11->fields)._color.r = fVar3;
+                              (pGVar11->fields)._color.g = fVar4;
+                              (pGVar11->fields)._color.b = fVar5;
                               (pGVar11->fields)._color.a = fVar10;
-                              pCVar2 = RTSystemValues::RTSystemValues_get_HoveredAxisColor
-                                                  ((Color *)&puStack_3,(MethodInfo *)0x0);
-                              pGVar7 = (pBVar1->fields)._tickLookAndFeel;
-                              uVar15 = 0;
-                              fVar4 = pCVar2->r;
-                              fVar5 = pCVar2->g;
-                              fVar6 = pCVar2->b;
-                              fVar10 = pCVar2->a;
-                              if (pGVar7 != (GizmoCap2DLookAndFeel__Array *)0x0) {
-                                ppGVar16 = pGVar7->vector;
+                              pCVar1 = RTSystemValues::RTSystemValues_get_HoveredAxisColor
+                                                 ((Color *)&puStack_2,(MethodInfo *)0x0);
+                              pGVar6 = *ppGVar7;
+                              uVar9 = 0;
+                              fVar3 = pCVar1->r;
+                              fVar4 = pCVar1->g;
+                              fVar5 = pCVar1->b;
+                              fVar10 = pCVar1->a;
+                              if (pGVar6 != (GizmoCap2DLookAndFeel__Array *)0x0) {
+                                ppGVar15 = pGVar6->vector;
                                 goto code_?;
                               }
                             }
@@ -248,33 +247,30 @@ void Assembly-CSharp.dll::RTG::BoxColliderGizmo3DLookAndFeel::BoxColliderGizmo3D
       }
       break;
     }
-    pGVar7 = (pBVar1->fields)._tickLookAndFeel;
+    pGVar6 = *ppGVar7;
     pGVar11 = (GizmoCap2DLookAndFeel *)func_?();
     GizmoCap2DLookAndFeel::GizmoCap2DLookAndFeel__ctor(pGVar11,(MethodInfo *)0x0);
-    if (pGVar7 == (GizmoCap2DLookAndFeel__Array *)0x0) break;
-    if (pGVar11 != (GizmoCap2DLookAndFeel *)0x0) {
-      this = (BoxColliderGizmo3DLookAndFeel *)(pGVar7->klass->_0).element_class;
-      iVar17 = func_?();
-      if (iVar17 == 0) goto code_?;
-    }
-    if ((BoxColliderGizmo3DLookAndFeel *)pGVar7->max_length <= this) goto code_?;
-    pGVar7->vector[(int)this] = pGVar11;
+    if (pGVar6 == (GizmoCap2DLookAndFeel__Array *)0x0) break;
+    if ((pGVar11 != (GizmoCap2DLookAndFeel *)0x0) && (iVar16 = func_?(), iVar16 == 0))
+    goto code_?;
+    if (pGVar6->max_length <= uVar9) goto code_?;
+    pGVar6->vector[uVar9] = pGVar11;
     func_?();
-    puVar9 = (undefined1 *)((int)&this->klass + 1);
-    this = (BoxColliderGizmo3DLookAndFeel *)TypeInfo__RTG__GizmoCap2DLookAndFeel;
-    pGVar7 = (pBVar1->fields)._tickLookAndFeel;
+    uVar9 = uVar9 + 1;
+    ppGVar7 = (GizmoCap2DLookAndFeel__Array **)&(pGVar11->fields)._quadWidth;
+    pGVar6 = *ppGVar7;
   }
   goto code_?;
 code_?:
-  if ((int)pGVar7->max_length <= (int)uVar15) goto code_?;
-  if (pGVar7->max_length <= uVar15) goto code_?;
-  pGVar11 = *ppGVar16;
+  if ((int)pGVar6->max_length <= (int)uVar9) goto code_?;
+  if (pGVar6->max_length <= uVar9) goto code_?;
+  pGVar11 = *ppGVar15;
   if (pGVar11 == (GizmoCap2DLookAndFeel *)0x0) goto code_?;
-  uVar15 = uVar15 + 1;
-  ppGVar16 = ppGVar16 + 1;
-  (pGVar11->fields)._hoveredColor.r = fVar4;
-  (pGVar11->fields)._hoveredColor.g = fVar5;
-  (pGVar11->fields)._hoveredColor.b = fVar6;
+  uVar9 = uVar9 + 1;
+  ppGVar15 = ppGVar15 + 1;
+  (pGVar11->fields)._hoveredColor.r = fVar3;
+  (pGVar11->fields)._hoveredColor.g = fVar4;
+  (pGVar11->fields)._hoveredColor.b = fVar5;
   (pGVar11->fields)._hoveredColor.a = fVar10;
   goto code_?;
 code_?:
@@ -285,133 +281,131 @@ code_?:
   color.r = (float)_UNK_?;
   color.b = (float)_UNK_?;
   color.a = _UNK_?;
-  pCVar2 = ColorEx::ColorEx_KeepAllButAlpha((Color *)&puStack_3,color,0.0,(MethodInfo *)0x0);
-  pGVar7 = (pBVar1->fields)._tickLookAndFeel;
-  uVar15 = 0;
-  fVar4 = pCVar2->r;
-  fVar5 = pCVar2->g;
-  fVar6 = pCVar2->b;
-  fVar10 = pCVar2->a;
-  if (pGVar7 != (GizmoCap2DLookAndFeel__Array *)0x0) {
-    ppGVar16 = pGVar7->vector;
-    for (; (int)uVar15 < (int)pGVar7->max_length; uVar15 = uVar15 + 1) {
-      if (pGVar7->max_length <= uVar15) goto code_?;
-      pGVar11 = *ppGVar16;
+  pCVar1 = ColorEx::ColorEx_KeepAllButAlpha((Color *)&puStack_2,color,0.0,(MethodInfo *)0x0);
+  pGVar6 = *ppGVar7;
+  uVar9 = 0;
+  fVar3 = pCVar1->r;
+  fVar4 = pCVar1->g;
+  fVar5 = pCVar1->b;
+  fVar10 = pCVar1->a;
+  if (pGVar6 != (GizmoCap2DLookAndFeel__Array *)0x0) {
+    ppGVar15 = pGVar6->vector;
+    for (; (int)uVar9 < (int)pGVar6->max_length; uVar9 = uVar9 + 1) {
+      if (pGVar6->max_length <= uVar9) goto code_?;
+      pGVar11 = *ppGVar15;
       if (pGVar11 == (GizmoCap2DLookAndFeel *)0x0) goto code_?;
-      ppGVar16 = ppGVar16 + 1;
-      (pGVar11->fields)._borderColor.r = fVar4;
-      (pGVar11->fields)._borderColor.g = fVar5;
-      (pGVar11->fields)._borderColor.b = fVar6;
+      ppGVar15 = ppGVar15 + 1;
+      (pGVar11->fields)._borderColor.r = fVar3;
+      (pGVar11->fields)._borderColor.g = fVar4;
+      (pGVar11->fields)._borderColor.b = fVar5;
       (pGVar11->fields)._borderColor.a = fVar10;
     }
     color_00.g = (float)_UNK_?;
     color_00.r = (float)_UNK_?;
     color_00.b = (float)_UNK_?;
     color_00.a = _UNK_?;
-    pCVar2 = ColorEx::ColorEx_KeepAllButAlpha((Color *)&puStack_3,color_00,0.0,(MethodInfo *)0x0);
-    pGVar7 = (pBVar1->fields)._tickLookAndFeel;
-    uVar15 = 0;
-    fVar4 = pCVar2->r;
-    fVar5 = pCVar2->g;
-    fVar6 = pCVar2->b;
-    fVar10 = pCVar2->a;
-    if (pGVar7 != (GizmoCap2DLookAndFeel__Array *)0x0) {
-      ppGVar16 = pGVar7->vector;
-      for (; (int)uVar15 < (int)pGVar7->max_length; uVar15 = uVar15 + 1) {
-        if (pGVar7->max_length <= uVar15) goto code_?;
-        pGVar11 = *ppGVar16;
+    pCVar1 = ColorEx::ColorEx_KeepAllButAlpha((Color *)&puStack_2,color_00,0.0,(MethodInfo *)0x0);
+    pGVar6 = *ppGVar7;
+    uVar9 = 0;
+    fVar3 = pCVar1->r;
+    fVar4 = pCVar1->g;
+    fVar5 = pCVar1->b;
+    fVar10 = pCVar1->a;
+    if (pGVar6 != (GizmoCap2DLookAndFeel__Array *)0x0) {
+      ppGVar15 = pGVar6->vector;
+      for (; (int)uVar9 < (int)pGVar6->max_length; uVar9 = uVar9 + 1) {
+        if (pGVar6->max_length <= uVar9) goto code_?;
+        pGVar11 = *ppGVar15;
         if (pGVar11 == (GizmoCap2DLookAndFeel *)0x0) goto code_?;
-        ppGVar16 = ppGVar16 + 1;
-        (pGVar11->fields)._hoveredBorderColor.r = fVar4;
-        (pGVar11->fields)._hoveredBorderColor.g = fVar5;
-        (pGVar11->fields)._hoveredBorderColor.b = fVar6;
+        ppGVar15 = ppGVar15 + 1;
+        (pGVar11->fields)._hoveredBorderColor.r = fVar3;
+        (pGVar11->fields)._hoveredBorderColor.g = fVar4;
+        (pGVar11->fields)._hoveredBorderColor.b = fVar5;
         (pGVar11->fields)._hoveredBorderColor.a = fVar10;
       }
-      this = (BoxColliderGizmo3DLookAndFeel *)(pBVar1->fields)._tickLookAndFeel;
-      uVar15 = 0;
-      if ((GizmoCap2DLookAndFeel__Array *)this != (GizmoCap2DLookAndFeel__Array *)0x0) {
-        ppGVar16 = ((GizmoCap2DLookAndFeel__Array *)this)->vector;
-        for (; (int)uVar15 < (int)((GizmoCap2DLookAndFeel__Array *)this)->max_length;
-            uVar15 = uVar15 + 1) {
-          if (((GizmoCap2DLookAndFeel__Array *)this)->max_length <= uVar15) goto code_?;
-          if (*ppGVar16 == (GizmoCap2DLookAndFeel *)0x0) goto code_?;
+      pGVar6 = *ppGVar7;
+      uVar9 = 0;
+      if (pGVar6 != (GizmoCap2DLookAndFeel__Array *)0x0) {
+        ppGVar15 = pGVar6->vector;
+        for (; (int)uVar9 < (int)pGVar6->max_length; uVar9 = uVar9 + 1) {
+          if (pGVar6->max_length <= uVar9) goto code_?;
+          if (*ppGVar15 == (GizmoCap2DLookAndFeel *)0x0) goto code_?;
           this = (BoxColliderGizmo3DLookAndFeel *)0x0;
           CameraMoveSettings::CameraMoveSettings_set_AccelerationRate
-                    ((CameraMoveSettings *)*ppGVar16,6.0,(MethodInfo *)0x0);
-          ppGVar16 = ppGVar16 + 1;
+                    ((CameraMoveSettings *)*ppGVar15,6.0,(MethodInfo *)0x0);
+          ppGVar15 = ppGVar15 + 1;
         }
-        this = (BoxColliderGizmo3DLookAndFeel *)(pBVar1->fields)._tickLookAndFeel;
-        uVar15 = 0;
-        if ((GizmoCap2DLookAndFeel__Array *)this != (GizmoCap2DLookAndFeel__Array *)0x0) {
-          ppGVar16 = ((GizmoCap2DLookAndFeel__Array *)this)->vector;
-          for (; (int)uVar15 < (int)((GizmoCap2DLookAndFeel__Array *)this)->max_length;
-              uVar15 = uVar15 + 1) {
-            if (((GizmoCap2DLookAndFeel__Array *)this)->max_length <= uVar15) goto code_?;
-            if ((GizmoPlaneSlider3DLookAndFeel *)*ppGVar16 == (GizmoPlaneSlider3DLookAndFeel *)0x0)
+        uVar9 = 0;
+        pGVar6 = (this->fields)._tickLookAndFeel;
+        if (pGVar6 != (GizmoCap2DLookAndFeel__Array *)0x0) {
+          ppGVar15 = pGVar6->vector;
+          for (; (int)uVar9 < (int)pGVar6->max_length; uVar9 = uVar9 + 1) {
+            if (pGVar6->max_length <= uVar9) goto code_?;
+            if ((GizmoPlaneSlider3DLookAndFeel *)*ppGVar15 == (GizmoPlaneSlider3DLookAndFeel *)0x0)
             goto code_?;
             this = (BoxColliderGizmo3DLookAndFeel *)0x0;
             GizmoPlaneSlider3DLookAndFeel::GizmoPlaneSlider3DLookAndFeel_set_RATriangleXLength
-                      ((GizmoPlaneSlider3DLookAndFeel *)*ppGVar16,6.0,(MethodInfo *)0x0);
-            ppGVar16 = ppGVar16 + 1;
+                      ((GizmoPlaneSlider3DLookAndFeel *)*ppGVar15,6.0,(MethodInfo *)0x0);
+            ppGVar15 = ppGVar15 + 1;
           }
-          pGVar7 = (pBVar1->fields)._tickLookAndFeel;
-          uVar15 = 0;
-          if (pGVar7 != (GizmoCap2DLookAndFeel__Array *)0x0) {
-            ppGVar16 = pGVar7->vector;
-            for (; (int)uVar15 < (int)pGVar7->max_length; uVar15 = uVar15 + 1) {
-              if (pGVar7->max_length <= uVar15) goto code_?;
-              if (*ppGVar16 == (GizmoCap2DLookAndFeel *)0x0) goto code_?;
-              ((*ppGVar16)->fields)._circleRadius = 3.0;
-              ppGVar16 = ppGVar16 + 1;
+          uVar9 = 0;
+          pGVar6 = (this->fields)._tickLookAndFeel;
+          if (pGVar6 != (GizmoCap2DLookAndFeel__Array *)0x0) {
+            ppGVar15 = pGVar6->vector;
+            for (; (int)uVar9 < (int)pGVar6->max_length; uVar9 = uVar9 + 1) {
+              if (pGVar6->max_length <= uVar9) goto code_?;
+              if (*ppGVar15 == (GizmoCap2DLookAndFeel *)0x0) goto code_?;
+              ((*ppGVar15)->fields)._circleRadius = 3.0;
+              ppGVar15 = ppGVar15 + 1;
             }
-            pGVar7 = (pBVar1->fields)._tickLookAndFeel;
-            uVar15 = 0;
-            if (pGVar7 != (GizmoCap2DLookAndFeel__Array *)0x0) {
-              ppGVar16 = pGVar7->vector;
-              for (; (int)uVar15 < (int)pGVar7->max_length; uVar15 = uVar15 + 1) {
-                if (pGVar7->max_length <= uVar15) goto code_?;
-                if (*ppGVar16 == (GizmoCap2DLookAndFeel *)0x0) goto code_?;
-                ((*ppGVar16)->fields)._capType = 0;
-                ppGVar16 = ppGVar16 + 1;
+            pGVar6 = (this->fields)._tickLookAndFeel;
+            uVar9 = 0;
+            if (pGVar6 != (GizmoCap2DLookAndFeel__Array *)0x0) {
+              ppGVar15 = pGVar6->vector;
+              for (; (int)uVar9 < (int)pGVar6->max_length; uVar9 = uVar9 + 1) {
+                if (pGVar6->max_length <= uVar9) goto code_?;
+                if (*ppGVar15 == (GizmoCap2DLookAndFeel *)0x0) goto code_?;
+                ((*ppGVar15)->fields)._capType = 0;
+                ppGVar15 = ppGVar15 + 1;
               }
-              pCVar2 = ColorEx::ColorEx_FromByteValues
-                                  ((Color *)&puStack_3,0x99,0xe8,0x90,0xff,(MethodInfo *)0x0);
-              pGVar8 = (pBVar1->fields)._midCapLookAndFeel;
-              fVar4 = pCVar2->g;
-              fVar5 = pCVar2->b;
-              fVar6 = pCVar2->a;
+              pCVar1 = ColorEx::ColorEx_FromByteValues
+                                 ((Color *)&puStack_2,0x99,0xe8,0x90,0xff,(MethodInfo *)0x0);
+              fVar3 = pCVar1->g;
+              fVar4 = pCVar1->b;
+              fVar5 = pCVar1->a;
+              pGVar8 = (this->fields)._midCapLookAndFeel;
               if (pGVar8 != (GizmoCap3DLookAndFeel *)0x0) {
-                (pGVar8->fields)._color.r = pCVar2->r;
-                (pGVar8->fields)._color.g = fVar4;
-                (pGVar8->fields)._color.b = fVar5;
-                (pGVar8->fields)._color.a = fVar6;
-                pCVar2 = RTSystemValues::RTSystemValues_get_HoveredAxisColor
-                                    ((Color *)&puStack_3,(MethodInfo *)0x0);
-                pGVar8 = (pBVar1->fields)._midCapLookAndFeel;
-                fVar4 = pCVar2->g;
-                fVar5 = pCVar2->b;
-                fVar6 = pCVar2->a;
+                (pGVar8->fields)._color.r = pCVar1->r;
+                (pGVar8->fields)._color.g = fVar3;
+                (pGVar8->fields)._color.b = fVar4;
+                (pGVar8->fields)._color.a = fVar5;
+                pCVar1 = RTSystemValues::RTSystemValues_get_HoveredAxisColor
+                                   ((Color *)&puStack_2,(MethodInfo *)0x0);
+                pGVar8 = (this->fields)._midCapLookAndFeel;
+                fVar3 = pCVar1->g;
+                fVar4 = pCVar1->b;
+                fVar5 = pCVar1->a;
                 if (pGVar8 != (GizmoCap3DLookAndFeel *)0x0) {
-                  (pGVar8->fields)._hoveredColor.r = pCVar2->r;
-                  (pGVar8->fields)._hoveredColor.g = fVar4;
-                  (pGVar8->fields)._hoveredColor.b = fVar5;
-                  (pGVar8->fields)._hoveredColor.a = fVar6;
-                  pGVar8 = (pBVar1->fields)._midCapLookAndFeel;
+                  (pGVar8->fields)._hoveredColor.r = pCVar1->r;
+                  (pGVar8->fields)._hoveredColor.g = fVar3;
+                  (pGVar8->fields)._hoveredColor.b = fVar4;
+                  (pGVar8->fields)._hoveredColor.a = fVar5;
+                  pGVar8 = (this->fields)._midCapLookAndFeel;
                   if (pGVar8 != (GizmoCap3DLookAndFeel *)0x0) {
                     (pGVar8->fields)._fillMode = 0;
-                    pGVar8 = (pBVar1->fields)._midCapLookAndFeel;
+                    pGVar8 = (this->fields)._midCapLookAndFeel;
                     if (pGVar8 != (GizmoCap3DLookAndFeel *)0x0) {
                       (pGVar8->fields)._capType = 2;
-                      pGVar8 = (pBVar1->fields)._midCapLookAndFeel;
-                      (pBVar1->fields)._isMidCapVisible = 1;
+                      pGVar8 = (this->fields)._midCapLookAndFeel;
+                      (this->fields)._isMidCapVisible = 1;
                       if (pGVar8 != (GizmoCap3DLookAndFeel *)0x0) {
                         GizmoCap3DLookAndFeel::GizmoCap3DLookAndFeel_set_BoxWidth
                                   (pGVar8,0.7,(MethodInfo *)0x0);
-                        pGVar8 = (pBVar1->fields)._midCapLookAndFeel;
+                        pGVar8 = (this->fields)._midCapLookAndFeel;
                         if (pGVar8 != (GizmoCap3DLookAndFeel *)0x0) {
                           GizmoCap3DLookAndFeel::GizmoCap3DLookAndFeel_set_BoxHeight
                                     (pGVar8,0.7,(MethodInfo *)0x0);
-                          pGVar8 = (pBVar1->fields)._midCapLookAndFeel;
+                          pGVar8 = (this->fields)._midCapLookAndFeel;
                           if (pGVar8 != (GizmoCap3DLookAndFeel *)0x0) {
                             GizmoCap3DLookAndFeel::GizmoCap3DLookAndFeel_set_BoxDepth
                                       (pGVar8,0.7,(MethodInfo *)0x0);
@@ -434,8 +428,8 @@ code_?:
 code_?:
   func_?();
   func_?();
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
   return;
 }
 

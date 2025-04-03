@@ -14,8 +14,8 @@ Assembly-CSharp.dll::RegisteredPromotionPopup::RegisteredPromotionPopup_FadeOutA
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[2].klass = (Object__Class *)this;
   value[1].klass = (Object__Class *)0x0;
+  value[2].klass = (Object__Class *)this;
   func_?(value + 2,this);
   return (IEnumerator *)value;
 }
@@ -250,13 +250,16 @@ void Assembly-CSharp.dll::RegisteredPromotionPopup::RegisteredPromotionPopup_OnD
     cRam_? = '\x01';
   }
   bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsAlive((MethodInfo *)0x0);
-  if (bVar1 != 0) {
-    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar2 == (MVNetworkGame *)0x0) {
-      func_?();
-      goto code_?;
-    }
+  if (bVar1 == 0) {
+    return;
+  }
+  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if (pMVar2 == (MVNetworkGame *)0x0) {
+    func_?();
+  }
+  else {
     pAVar3 = (pMVar2->fields).OnWinningConditionFulfilled;
+    ppAVar4 = &(pMVar2->fields).OnWinningConditionFulfilled;
     this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
                *)func_?(TypeInfo__System__Action<IWinningCondition>);
     DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
@@ -269,32 +272,33 @@ void Assembly-CSharp.dll::RegisteredPromotionPopup::RegisteredPromotionPopup_OnD
                           ((Delegate *)pAVar3,(Delegate *)this_00,(MethodInfo *)0x0);
     unaff_EDI = TypeInfo__System__Action<IWinningCondition>;
     if (unaff_ESI == (Delegate *)0x0) {
-      (pMVar2->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;
-      pAStack4 = (Action_1_IWinningCondition___Class *)0x0;
+      *ppAVar4 = (Action_1_IWinningCondition_ *)0x0;
+      pDStack5 = (Delegate *)ppAVar4;
+      pAStack6 = (Action_1_IWinningCondition___Class *)unaff_ESI;
+      func_?();
+      return;
     }
-    else {
-      pAStack4 = TypeInfo__System__Action<IWinningCondition>;
+    pAStack6 = TypeInfo__System__Action<IWinningCondition>;
+    pDStack5 = unaff_ESI;
+    pAVar3 = (Action_1_IWinningCondition_ *)func_?();
+    if (pAVar3 != (Action_1_IWinningCondition_ *)0x0) {
+      *ppAVar4 = pAVar3;
+      unaff_EDI = TypeInfo__System__Action<IWinningCondition>;
+      pAStack6 = TypeInfo__System__Action<IWinningCondition>;
       pDStack5 = unaff_ESI;
-      pAVar3 = (Action_1_IWinningCondition_ *)func_?();
-      if (pAVar3 == (Action_1_IWinningCondition_ *)0x0) {
-code_?:
-        pDStack5 = unaff_ESI;
-        pAStack4 = unaff_EDI;
+      pAStack6 = (Action_1_IWinningCondition___Class *)func_?();
+      if (pAStack6 != (Action_1_IWinningCondition___Class *)0x0) {
+        pDStack5 = (Delegate *)ppAVar4;
         func_?();
-        pcVar6 = (code *)swi(3);
-        (*pcVar6)();
         return;
       }
-      (pMVar2->fields).OnWinningConditionFulfilled = pAVar3;
-      unaff_EDI = TypeInfo__System__Action<IWinningCondition>;
-      pAStack4 = TypeInfo__System__Action<IWinningCondition>;
-      pDStack5 = unaff_ESI;
-      pAStack4 = (Action_1_IWinningCondition___Class *)func_?();
-      if (pAStack4 == (Action_1_IWinningCondition___Class *)0x0) goto code_?;
     }
-    pDStack5 = (Delegate *)&(pMVar2->fields).OnWinningConditionFulfilled;
-    func_?();
   }
+  pDStack5 = unaff_ESI;
+  pAStack6 = unaff_EDI;
+  func_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

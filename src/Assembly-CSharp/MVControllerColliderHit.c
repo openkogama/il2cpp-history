@@ -11,10 +11,7 @@ void Assembly-CSharp.dll::MVControllerColliderHit::MVControllerColliderHit__ctor
     func_?(&TypeInfo__MV__WorldObject__CubeBase);
     cRam_? = '\x01';
   }
-  VStack_2.x = 0.0;
-  VStack_2.y = 0.0;
-  VStack_2.z = 0.0;
-  (this->hit).point.x = in_stack_3;
+  (this->hit).point.x = in_stack_2;
   (this->hit).point.y = hit.point.x;
   (this->hit).point.z = hit.point.y;
   (this->hit).normal.x = hit.point.z;
@@ -35,55 +32,56 @@ void Assembly-CSharp.dll::MVControllerColliderHit::MVControllerColliderHit__ctor
   value.y = R3Velocity.x;
   value.x = elipsoidRadius.z;
   value.z = R3Velocity.y;
-  pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
                      ((Vector3 *)&stack0xffffffd8,value,(MethodInfo *)0x0);
-  uStack_5._0_4_ = pVVar4->x;
-  uStack_5._4_4_ = pVVar4->y;
-  fStack_6 = pVVar4->z;
-  (pMVar1->moveDirection).x = (float)(undefined4)uStack_5;
-  (pMVar1->moveDirection).y = (float)uStack_5._4_4_;
-  (this->moveDirection).z = fStack_6;
-  fVar7 = hit.interactionFlags._4_4_ + (float)(undefined4)uStack_5 * (float)hit.cube;
-  fVar8 = position.x + (float)uStack_5._4_4_ * (float)hit.cube;
-  fVar9 = position.y + fStack_6 * (float)hit.cube;
-  (pMVar1->positionTouchingHit).x = fVar7;
-  (pMVar1->positionTouchingHit).y = fVar8;
-  position.y = fVar9 - hit.point.y;
-  (this->positionTouchingHit).z = fVar9;
-  value_00.y = fVar8 - hit.point.x;
-  value_00.x = fVar7 - in_stack_3;
+  uStack_4._0_4_ = pVVar3->x;
+  uStack_4._4_4_ = pVVar3->y;
+  fStack_5 = pVVar3->z;
+  (pMVar1->moveDirection).x = (float)(undefined4)uStack_4;
+  (pMVar1->moveDirection).y = (float)uStack_4._4_4_;
+  (this->moveDirection).z = fStack_5;
+  fVar6 = hit.interactionFlags._4_4_ + (float)(undefined4)uStack_4 * (float)hit.cube;
+  fVar7 = position.x + (float)uStack_4._4_4_ * (float)hit.cube;
+  fVar8 = position.y + fStack_5 * (float)hit.cube;
+  (pMVar1->positionTouchingHit).x = fVar6;
+  (pMVar1->positionTouchingHit).y = fVar7;
+  position.y = fVar8 - hit.point.y;
+  (this->positionTouchingHit).z = fVar8;
+  value_00.y = fVar7 - hit.point.x;
+  value_00.x = fVar6 - in_stack_2;
   value_00.z = position.y;
-  pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+  pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
                      ((Vector3 *)((int)&hit.interactionFlags + 4),value_00,(MethodInfo *)0x0);
-  fVar8 = pVVar4->y;
-  fVar9 = pVVar4->z;
-  (pMVar1->elipsoidNormal).x = pVVar4->x;
-  (pMVar1->elipsoidNormal).y = fVar8;
-  (this->elipsoidNormal).z = fVar9;
-  pVVar4 = MathFunctions::MathFunctions_DivideVector
-                     ((Vector3 *)((int)&hit.interactionFlags + 4),&this->elipsoidNormal,
-                      (Vector3 *)&position.z,(MethodInfo *)0x0);
-  VStack_2.x = pVVar4->x;
-  VStack_2.y = pVVar4->y;
-  VStack_2.z = pVVar4->z;
-  pVVar10 = MathFunctions::MathFunctions_DivideVector
-                     ((Vector3 *)((int)&hit.interactionFlags + 4),&VStack_2,(Vector3 *)&position.z,
+  fVar7 = pVVar9->y;
+  pVVar3 = &this->elipsoidNormal;
+  fVar8 = pVVar9->z;
+  pVVar3->x = pVVar9->x;
+  pVVar3->y = fVar7;
+  (this->elipsoidNormal).z = fVar8;
+  pVVar3 = MathFunctions::MathFunctions_DivideVector
+                     ((Vector3 *)((int)&hit.interactionFlags + 4),pVVar3,(Vector3 *)&position.z,
                       (MethodInfo *)0x0);
-  uVar11 = pVVar10->x;
-  uVar12 = pVVar10->y;
-  hit.point.y = pVVar10->z;
+  VStack_10.x = pVVar3->x;
+  VStack_10.y = pVVar3->y;
+  VStack_10.z = pVVar3->z;
+  pVVar9 = MathFunctions::MathFunctions_DivideVector
+                     ((Vector3 *)((int)&hit.interactionFlags + 4),&VStack_10,(Vector3 *)&position.z,
+                      (MethodInfo *)0x0);
+  uVar11 = pVVar9->x;
+  uVar12 = pVVar9->y;
+  hit.point.y = pVVar9->z;
   hit.point.z = 0.0;
-  pVVar4 = (Vector3 *)((int)&hit.interactionFlags + 4);
-  in_stack_3 = (float)uVar11;
+  pVVar3 = (Vector3 *)((int)&hit.interactionFlags + 4);
+  in_stack_2 = (float)uVar11;
   hit.point.x = (float)uVar12;
-  pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                     (pVVar4,*pVVar10,(MethodInfo *)0x0);
-  fVar8 = pVVar10->y;
-  fVar9 = pVVar10->z;
-  (pMVar1->slopeNormal).x = pVVar10->x;
-  (pMVar1->slopeNormal).y = fVar8;
+  pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                     (pVVar3,*pVVar9,(MethodInfo *)0x0);
+  fVar7 = pVVar9->y;
+  fVar8 = pVVar9->z;
+  (pMVar1->slopeNormal).x = pVVar9->x;
+  (pMVar1->slopeNormal).y = fVar7;
   hit.point.z = 0.0;
-  (this->slopeNormal).z = fVar9;
+  (this->slopeNormal).z = fVar8;
   hit.point.y = (float)&UNK_?;
   pMVar13 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if (pMVar13 != (MVNetworkGame *)0x0) {
@@ -99,7 +97,7 @@ void Assembly-CSharp.dll::MVControllerColliderHit::MVControllerColliderHit__ctor
     hit.normal.z = (float)&UNK_?;
     materialId = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_GetMaterial
                            ((CubeBase *)hit.woId,hit._28_4_,(MethodInfo *)0x0);
-    this = (MVControllerColliderHit *)CONCAT31((int3)((uint)pVVar4 >> 8),materialId);
+    this = (MVControllerColliderHit *)CONCAT31((int3)((uint)pVVar3 >> 8),materialId);
     if (this_00 != (MVMaterialRepository *)0x0) {
       hit.cube = (Cube *)0x0;
       hit.woId = (int32_t)this;
@@ -107,18 +105,18 @@ void Assembly-CSharp.dll::MVControllerColliderHit::MVControllerColliderHit__ctor
       hit._36_4_ = this_00;
       hit.cube = (Cube *)MVMaterialRepository::MVMaterialRepository_GetMaterial
                                    (this_00,materialId,(MethodInfo *)0x0);
-      pMVar1->material = (MVMaterial *)hit.cube;
       hit.woId = (int32_t)&pMVar1->material;
+      *(Cube **)hit.woId = hit.cube;
       hit._36_4_ = &UNK_?;
       func_?();
       hit.isCubeHit = 0;
       hit._37_3_ = 0;
       hit.face = (int32_t)&UNK_?;
-      fVar9 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0)
+      fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0)
       ;
-      (pMVar1->impactVelocity).x = elipsoidRadius.z / fVar9;
-      (pMVar1->impactVelocity).y = R3Velocity.x / fVar9;
-      (pMVar1->impactVelocity).z = R3Velocity.y / fVar9;
+      (pMVar1->impactVelocity).x = elipsoidRadius.z / fVar8;
+      (pMVar1->impactVelocity).y = R3Velocity.x / fVar8;
+      (pMVar1->impactVelocity).z = R3Velocity.y / fVar8;
       pMVar1->testWithOutMoving = R3Velocity.z._0_1_;
       return;
     }

@@ -12,9 +12,10 @@ void Assembly-CSharp.dll::SpawnRoleTierSettings::SpawnRoleTierSettings_Initializ
                    );
     cRam_? = '\x01';
   }
-  (this->fields).OnChangeTierCallback = OnChangeTierCallback;
+  ppUVar1 = &(this->fields).OnChangeTierCallback;
+  *ppUVar1 = OnChangeTierCallback;
   (this->fields).canSelectTier0 = canSelectTier0;
-  func_?(&(this->fields).OnChangeTierCallback,OnChangeTierCallback);
+  func_?(ppUVar1,OnChangeTierCallback);
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
             (this->fields).tierSelectedEffectObjects;
   if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
@@ -27,22 +28,22 @@ void Assembly-CSharp.dll::SpawnRoleTierSettings::SpawnRoleTierSettings_Initializ
     if (this_01 != (RegexCharClass_SingleRange)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 ((GameObject *)this_01,1,(MethodInfo *)0x0);
-      pGVar1 = (this->fields).tierZero;
-      if (pGVar1 != (GameObject *)0x0) {
+      pGVar2 = (this->fields).tierZero;
+      if (pGVar2 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar1,canSelectTier0,(MethodInfo *)0x0);
-        pGVar1 = (this->fields).tierZeroGray;
-        if (pGVar1 != (GameObject *)0x0) {
+                  (pGVar2,canSelectTier0,(MethodInfo *)0x0);
+        pGVar2 = (this->fields).tierZeroGray;
+        if (pGVar2 != (GameObject *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar1,canSelectTier0 ^ 1,(MethodInfo *)0x0);
+                    (pGVar2,canSelectTier0 ^ 1,(MethodInfo *)0x0);
           return;
         }
       }
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

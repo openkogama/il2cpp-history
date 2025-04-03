@@ -11,9 +11,9 @@ bool Assembly-CSharp.dll::JetPackCamera+<>c::
     cRam_? = '\x01';
   }
   if (wo != (MVWorldObjectClient *)0x0) {
-    if (((TypeInfo__MVSpawnPointBlue->_1).naturalAligment <= (wo->klass->_1).naturalAligment) &&
-       ((MVSpawnPointBlue__Class *)
-        (wo->klass->_1).typeHierarchy[(TypeInfo__MVSpawnPointBlue->_1).naturalAligment - 1] ==
+    bVar1 = (TypeInfo__MVSpawnPointBlue->_1).naturalAligment;
+    if ((bVar1 <= (wo->klass->_1).naturalAligment) &&
+       ((MVSpawnPointBlue__Class *)(wo->klass->_1).typeHierarchy[bVar1 - 1] ==
         TypeInfo__MVSpawnPointBlue)) {
       return wo != (MVWorldObjectClient *)0x0;
     }

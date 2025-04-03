@@ -29,7 +29,8 @@ bool Assembly-CSharp.dll::DesktopDefaultKeyboardMapping::
     pMVar4 = (MonitorData *)0x0;
     if (pOVar3 != (Object *)0x0) {
       pOVar5 = pOVar3 + 2;
-      for (; (int)pMVar4 < (int)pOVar3[1].monitor; pMVar4 = pMVar4 + 1) {
+      while( true ) {
+        if ((int)pOVar3[1].monitor <= (int)pMVar4) break;
         if (pOVar3[1].monitor <= pMVar4) goto code_?;
         bVar6 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKeyDown
                           ((KeyCode__Enum)pOVar5->klass,(MethodInfo *)0x0);
@@ -43,6 +44,7 @@ bool Assembly-CSharp.dll::DesktopDefaultKeyboardMapping::
                     (pBVar9,control,1,(MethodInfo *)0x0);
           goto code_?;
         }
+        pMVar4 = pMVar4 + 1;
         pOVar5 = (Object *)&pOVar5->monitor;
       }
       uVar7 = 0;
@@ -76,8 +78,8 @@ code_?:
               uVar12 = (undefined2)((uint)ppMVar10 >> 0x10);
               if ((int)pOVar3[1].monitor <= (int)pMVar4) goto code_?;
               if (pOVar3[1].monitor <= pMVar4) goto code_?;
-              key = (Object__Class *)(pOVar11->_0).image;
               pDVar8 = (pDVar1->fields).controlDown;
+              key = (Object__Class *)(pOVar11->_0).image;
               if ((pDVar8 == (DesktopDefaultKeyboardMapping_ControlBitArray *)0x0) ||
                  (pBVar9 = (pDVar8->fields).controlDown, pBVar9 == (BitArray *)0x0)) break;
               bVar6 = mscorlib.dll::System::Collections::BitArray::BitArray_get_Item
@@ -108,7 +110,7 @@ code_?:
                 pOVar11 = key;
                 bVar6 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKey
                                   ((KeyCode__Enum)key,(MethodInfo *)0x0);
-                if (bVar6 == 1) goto code_?;
+                if (bVar6 != 0) goto code_?;
               }
               this = (DesktopDefaultKeyboardMapping *)0x1000000;
               pMVar4 = pMVar4 + 1;
@@ -257,7 +259,7 @@ code_?:
           pOVar1 = key;
           bVar6 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKey
                             ((KeyCode__Enum)key,(MethodInfo *)0x0);
-          if (bVar6 == 1) goto code_?;
+          if (bVar6 != 0) goto code_?;
         }
         pOVar1 = (Object__Class *)0x1000000;
         pMVar3 = pMVar3 + 1;
@@ -327,12 +329,12 @@ void Assembly-CSharp.dll::DesktopDefaultKeyboardMapping::DesktopDefaultKeyboardM
   this_00 = (BitArray *)func_?(TypeInfo__System__Collections__BitArray);
   mscorlib.dll::System::Collections::BitArray::BitArray__ctor(this_00,0x36,(MethodInfo *)0x0);
   pMVar1 = (MethodInfo *)&value->fields;
-  (value->fields).controlDown = this_00;
+  ((DesktopDefaultKeyboardMapping_ControlBitArray__Fields *)pMVar1)->controlDown = this_00;
   func_?(pMVar1,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,pMVar1);
   pMVar1 = (MethodInfo *)&(this->fields).controlDown;
-  (this->fields).controlDown = value;
+  *(DesktopDefaultKeyboardMapping_ControlBitArray **)pMVar1 = value;
   func_?(pMVar1,value);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,pMVar1);

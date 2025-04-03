@@ -137,40 +137,42 @@ float Assembly-CSharp.dll::RTG::Vector2Ex::Vector2Ex_GetDistanceToSegment
                 (Vector2 point,Vector2 point0,Vector2 point1,MethodInfo *method)
 
 {
-  fVar1 = point1.x - point0.x;
+  VStack_1.x = point1.x - point0.x;
   fVar2 = point1.y - point0.y;
-  fStack_3 = fVar1;
-  fStack_4 = fVar2;
-  fVar5 = (float10)func_?(&fStack_3,0);
-  fVar6 = (float10)func_?(&fStack_3,0);
-  fStack_4 = (float)fVar6;
-  if (_UNK_? < fStack_4) {
-    fVar1 = fVar1 / fStack_4;
-    fVar2 = fVar2 / fStack_4;
+  VStack_1.y = fVar2;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Math);
+    cRam_? = '\x01';
   }
-  else {
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Vector2);
-      cRam_? = '\x01';
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Math);
+  }
+  UnityEngine.CoreModule.dll::UnityEngine::Vector2::Vector2_Normalize(&VStack_1,(MethodInfo *)0x0);
+  fStack_3 = point.x - point0.x;
+  VStack_1.y = fStack_4 * (point.y - point0.y) + fStack_5 * fStack_3;
+  if (0.0 <= VStack_1.y) {
+    dVar6 = (double)(fStack_7 * fStack_7 + VStack_1.x * VStack_1.x);
+    if (dVar6 < 0.0) {
+      func_?(fVar2);
     }
-    fVar1 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).x;
-    fVar2 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
+    else {
+      dVar6 = SQRT(dVar6);
+    }
+    if (VStack_1.y <= (float)dVar6) {
+      fStack_5 = (point0.x + fStack_5 * VStack_1.y) - point.x;
+      fStack_4 = (point0.y + fStack_4 * VStack_1.y) - point.y;
+      fVar8 = (float10)func_?(&fStack_5,0);
+      return (float)fVar8;
+    }
   }
-  fVar7 = (point.x - point0.x) * fVar1 + (point.y - point0.y) * fVar2;
-  if ((0.0 <= fVar7) && (fVar7 <= (float)fVar5)) {
-    point0.y = (point0.y + fVar2 * fVar7) - point.y;
-    point0.x = (point0.x + fVar1 * fVar7) - point.x;
-    fVar5 = (float10)func_?(&point0,0);
-    return (float)fVar5;
+  if (VStack_1.y < 0.0) {
+    fVar8 = (float10)func_?(&fStack_3,0);
+    return (float)fVar8;
   }
-  point0.x = point.x - point0.x;
-  point0.y = point.y - point0.y;
-  if (0.0 <= fVar7) {
-    point0.x = point1.x - point.x;
-    point0.y = point1.y - point.y;
-  }
-  fVar5 = (float10)func_?(&point0,0);
-  return (float)fVar5;
+  fStack_5 = point1.x - point.x;
+  fStack_4 = point1.y - point.y;
+  fVar8 = (float10)func_?(&fStack_5,0);
+  return (float)fVar8;
 }
 
 
@@ -179,11 +181,12 @@ float Assembly-CSharp.dll::RTG::Vector2Ex::Vector2Ex_GetDistanceToSegment
 Vector2 Assembly-CSharp.dll::RTG::Vector2Ex::Vector2Ex_GetNormal(Vector2 vec,MethodInfo *method)
 
 {
-  fVar1 = (float)((uint)vec.y ^
-                 __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-  vec.y = vec.x;
-  vec.x = fVar1;
-  VVar2 = (Vector2)func_?(&vec,0);
+  VStack_1.x = (float)((uint)vec.y ^
+                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+  VStack_1.y = vec.x;
+  UnityEngine.CoreModule.dll::UnityEngine::Vector2::Vector2_Normalize(&VStack_1,(MethodInfo *)0x0);
+  VVar2.y = VStack_1.y;
+  VVar2.x = VStack_1.x;
   return VVar2;
 }
 
@@ -214,8 +217,8 @@ int32_t Assembly-CSharp.dll::RTG::Vector2Ex::Vector2Ex_GetPointClosestToPoint
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
                         );
       VStack_4.y = VVar3.y;
-      fVar5 = (VStack_4.y - pt.y) * (VStack_4.y - pt.y) +
-              (VStack_4.x - pt.x) * (VStack_4.x - pt.x);
+      fVar5 = (VStack_4.x - pt.x) * (VStack_4.x - pt.x) +
+              (VStack_4.y - pt.y) * (VStack_4.y - pt.y);
       iVar6 = index;
       if (fStack_2 <= fVar5) {
         iVar6 = iVar1;

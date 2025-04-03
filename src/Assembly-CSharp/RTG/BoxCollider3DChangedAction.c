@@ -142,10 +142,10 @@ void Assembly-CSharp.dll::RTG::BoxCollider3DChangedAction::BoxCollider3DChangedA
     value->klass = (Il2CppClass *)fVar2;
     value->return_type = pIVar3;
     fVar2 = (preChangeSnapshot->fields)._localSize.y;
-    _Var3 = (_union_155)(preChangeSnapshot->fields)._localSize.z;
+    _Var4 = (_union_155)(preChangeSnapshot->fields)._localSize.z;
     value->parameters = (Il2CppType **)(preChangeSnapshot->fields)._localSize.x;
     value->field7_0x1c = (_union_154)fVar2;
-    value->field8_0x20 = _Var3;
+    value->field8_0x20 = _Var4;
     (this->fields)._preChangeSnapshot = (BoxCollider3DSnapshot *)value;
     func_?(&this->fields,value);
     value_00 = (BoxCollider3DSnapshot *)func_?(TypeInfo__RTG__BoxCollider3DSnapshot);
@@ -165,14 +165,15 @@ void Assembly-CSharp.dll::RTG::BoxCollider3DChangedAction::BoxCollider3DChangedA
       (value_00->fields)._localSize.x = (postChangeSnapshot->fields)._localSize.x;
       (value_00->fields)._localSize.y = fVar4;
       (value_00->fields)._localSize.z = fVar2;
-      (this->fields)._postChangeSnapshot = value_00;
-      func_?(&(this->fields)._postChangeSnapshot,value_00);
+      ppBVar5 = &(this->fields)._postChangeSnapshot;
+      *ppBVar5 = value_00;
+      func_?(ppBVar5,value_00);
       return;
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

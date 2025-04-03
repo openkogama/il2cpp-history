@@ -63,16 +63,16 @@ bool Assembly-CSharp.dll::RTG::CylinderShape3D::CylinderShape3D_ContainsPoint
   cylinderAxisPt0 = pCVar2->_baseCenter;
   pVVar5 = TorusShape3D::TorusShape3D_get_Up
                      ((Vector3 *)&stack0xffffffd0,(TorusShape3D *)this,(MethodInfo *)0x0);
+  cylinderHeight = (this->fields)._height;
   uVar6 = pVVar5->x;
   uVar7 = pVVar5->y;
-  fVar8 = (this->fields)._height;
-  cylinderAxisPt1.y = (float)uVar4 + (float)uVar7 * fVar8;
-  cylinderAxisPt1.x = (float)uVar3 + (float)uVar6 * fVar8;
-  cylinderAxisPt1.z = fVar1 + pVVar5->z * fVar8;
-  bVar9 = CylinderMath::CylinderMath_ContainsPoint_1
-                    (point,cylinderAxisPt0,cylinderAxisPt1,(this->fields)._radius,
-                     (this->fields)._height,(this->fields)._epsilon,(MethodInfo *)0x0);
-  return bVar9;
+  cylinderAxisPt1.y = (float)uVar4 + (float)uVar7 * cylinderHeight;
+  cylinderAxisPt1.x = (float)uVar3 + (float)uVar6 * cylinderHeight;
+  cylinderAxisPt1.z = fVar1 + pVVar5->z * cylinderHeight;
+  bVar8 = CylinderMath::CylinderMath_ContainsPoint_1
+                    (point,cylinderAxisPt0,cylinderAxisPt1,(this->fields)._radius,cylinderHeight,
+                     (this->fields)._epsilon,(MethodInfo *)0x0);
+  return bVar8;
 }
 
 
@@ -107,10 +107,10 @@ AABB * Assembly-CSharp.dll::RTG::CylinderShape3D::CylinderShape3D_GetAABB
     cRam_? = '\x01';
   }
   pVVar5 = TypeInfo__UnityEngine__Vector3->static_fields;
-  uStack_8._0_4_ = (pVVar5->upVector).x;
-  uStack_8._4_4_ = (pVVar5->upVector).y;
-  fVar9 = (this->fields)._height;
-  fVar10 = (pVVar5->upVector).z * fVar9;
+  fVar8 = (this->fields)._height;
+  uStack_9._0_4_ = (pVVar5->upVector).x;
+  uStack_9._4_4_ = (pVVar5->upVector).y;
+  fVar10 = (pVVar5->upVector).z * fVar8;
   fStack_11 = fStack_7 + fVar10 + fVar10;
   fStack_7 = fStack_1;
   AStack_12._size.x = 0.0;
@@ -121,11 +121,11 @@ AABB * Assembly-CSharp.dll::RTG::CylinderShape3D::CylinderShape3D_GetAABB
   AStack_12._25_3_ = 0;
   AStack_12._center.y = 0.0;
   AStack_12._center.z = 0.0;
-  center.y = uStack_6._4_4_ + (float)uStack_8._4_4_ * fVar9 + (float)uStack_8._4_4_ * fVar9;
+  center.y = uStack_6._4_4_ + (float)uStack_9._4_4_ * fVar8 + (float)uStack_9._4_4_ * fVar8;
   center.x = (float)uStack_6 +
-             (float)(undefined4)uStack_8 * fVar9 + (float)(undefined4)uStack_8 * fVar9;
+             (float)(undefined4)uStack_9 * fVar8 + (float)(undefined4)uStack_9 * fVar8;
   center.z = fStack_11;
-  size.y = (this->fields)._height;
+  size.y = fVar8;
   size.x = fStack_1;
   size.z = fStack_1;
   AABB::AABB__ctor(&AStack_12,center,size,(MethodInfo *)0x0);
@@ -137,8 +137,8 @@ AABB * Assembly-CSharp.dll::RTG::CylinderShape3D::CylinderShape3D_GetAABB
   (__return_storage_ptr__->_center).z = AStack_12._center.z;
   __return_storage_ptr__->_isValid = AStack_12._isValid;
   *(undefined3 *)&__return_storage_ptr__->field_0x19 = AStack_12._25_3_;
-  uStack_8._0_4_ = (this->fields)._baseCenter.x;
-  uStack_8._4_4_ = (this->fields)._baseCenter.y;
+  uStack_9._0_4_ = (this->fields)._baseCenter.x;
+  uStack_9._4_4_ = (this->fields)._baseCenter.y;
   fStack_13 = (this->fields)._baseCenter.z;
   fStack_1 = (this->fields)._rotation.x;
   fStack_2 = (this->fields)._rotation.y;
@@ -149,8 +149,8 @@ AABB * Assembly-CSharp.dll::RTG::CylinderShape3D::CylinderShape3D_GetAABB
     cRam_? = '\x01';
   }
   pos.z = fStack_13;
-  pos.x = (float)(undefined4)uStack_8;
-  pos.y = (float)uStack_8._4_4_;
+  pos.x = (float)(undefined4)uStack_9;
+  pos.y = (float)uStack_9._4_4_;
   q.y = fStack_2;
   q.x = fStack_1;
   q.z = fStack_3;
@@ -198,21 +198,20 @@ AABB * Assembly-CSharp.dll::RTG::CylinderShape3D::CylinderShape3D_GetModelAABB
     cRam_? = '\x01';
   }
   pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
-  uVar6 = (pVVar2->upVector).x;
-  uVar7 = (pVVar2->upVector).y;
-  fVar8 = (this->fields)._height;
-  fVar9 = (pVVar2->upVector).z * fVar8;
-  fVar10 = (this->fields)._height;
+  fVar6 = (this->fields)._height;
+  uVar7 = (pVVar2->upVector).x;
+  uVar8 = (pVVar2->upVector).y;
+  fVar9 = (pVVar2->upVector).z * fVar6;
   (__return_storage_ptr__->_size).x = 0.0;
   (__return_storage_ptr__->_size).y = 0.0;
   (__return_storage_ptr__->_size).z = 0.0;
   (__return_storage_ptr__->_center).x = 0.0;
-  size.y = fVar10;
+  size.y = fVar6;
   size.x = fVar1;
   (__return_storage_ptr__->_center).y = 0.0;
   (__return_storage_ptr__->_center).z = 0.0;
-  center.y = (float)uVar4 + (float)uVar7 * fVar8 + (float)uVar7 * fVar8;
-  center.x = (float)uVar3 + (float)uVar6 * fVar8 + (float)uVar6 * fVar8;
+  center.y = (float)uVar4 + (float)uVar8 * fVar6 + (float)uVar8 * fVar6;
+  center.x = (float)uVar3 + (float)uVar7 * fVar6 + (float)uVar7 * fVar6;
   *(undefined4 *)&__return_storage_ptr__->_isValid = 0;
   center.z = fVar5 + fVar9 + fVar9;
   size.z = fVar1;
@@ -258,16 +257,16 @@ bool Assembly-CSharp.dll::RTG::CylinderShape3D::CylinderShape3D_Raycast
   cylinderAxisPt0 = pCVar2->_baseCenter;
   pVVar5 = TorusShape3D::TorusShape3D_get_Up
                      ((Vector3 *)&stack0xffffffd0,(TorusShape3D *)this,(MethodInfo *)0x0);
+  cylinderHeight = (this->fields)._height;
   uVar6 = pVVar5->x;
   uVar7 = pVVar5->y;
-  fVar8 = (this->fields)._height;
-  cylinderAxisPt1.y = (float)uVar4 + (float)uVar7 * fVar8;
-  cylinderAxisPt1.x = (float)uVar3 + (float)uVar6 * fVar8;
-  cylinderAxisPt1.z = fVar1 + pVVar5->z * fVar8;
-  bVar9 = CylinderMath::CylinderMath_Raycast_1
-                    (ray,t,cylinderAxisPt0,cylinderAxisPt1,(this->fields)._radius,
-                     (this->fields)._height,(this->fields)._epsilon,(MethodInfo *)0x0);
-  return bVar9;
+  cylinderAxisPt1.y = (float)uVar4 + (float)uVar7 * cylinderHeight;
+  cylinderAxisPt1.x = (float)uVar3 + (float)uVar6 * cylinderHeight;
+  cylinderAxisPt1.z = fVar1 + pVVar5->z * cylinderHeight;
+  bVar8 = CylinderMath::CylinderMath_Raycast_1
+                    (ray,t,cylinderAxisPt0,cylinderAxisPt1,(this->fields)._radius,cylinderHeight,
+                     (this->fields)._epsilon,(MethodInfo *)0x0);
+  return bVar8;
 }
 
 
@@ -343,50 +342,50 @@ void Assembly-CSharp.dll::RTG::CylinderShape3D::CylinderShape3D_RenderSolid
     s.x = (float)uVar10;
     s.z = (this->fields)._radius;
     pMVar12 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
-                       ((Matrix4x4 *)&fStack_13,(this->fields)._baseCenter,(this->fields)._rotation,
-                        s,(MethodInfo *)0x0);
-    fStack_13 = pMVar12->m00;
-    fStack_14 = pMVar12->m10;
-    fStack_15 = pMVar12->m20;
-    fStack_16 = pMVar12->m30;
-    fVar1 = pMVar12->m01;
-    fVar2 = pMVar12->m11;
-    fVar3 = pMVar12->m21;
-    fVar4 = pMVar12->m31;
-    fStack_17 = pMVar12->m02;
-    fStack_18 = pMVar12->m12;
-    fStack_19 = pMVar12->m22;
-    fStack_20 = pMVar12->m32;
-    fStack_21 = pMVar12->m03;
-    fStack_22 = pMVar12->m13;
-    fStack_23 = pMVar12->m23;
-    fStack_24 = pMVar12->m33;
+                        ((Matrix4x4 *)&fStack_13,(this->fields)._baseCenter,(this->fields)._rotation
+                         ,s,(MethodInfo *)0x0);
+    uVar14 = pMVar12->m00;
+    uVar15 = pMVar12->m10;
+    uVar16 = pMVar12->m20;
+    uVar17 = pMVar12->m30;
+    matrix.m30 = (float)uVar17;
+    matrix.m20 = (float)uVar16;
+    matrix.m10 = (float)uVar15;
+    matrix.m00 = (float)uVar14;
+    fStack_13 = pMVar12->m01;
+    fStack_18 = pMVar12->m11;
+    fStack_19 = pMVar12->m21;
+    fStack_20 = pMVar12->m31;
+    fStack_21 = pMVar12->m02;
+    fStack_22 = pMVar12->m12;
+    fStack_23 = pMVar12->m22;
+    fStack_24 = pMVar12->m32;
+    fStack_25 = pMVar12->m03;
+    fStack_26 = pMVar12->m13;
+    fStack_27 = pMVar12->m23;
+    fStack_28 = pMVar12->m33;
     if ((TypeInfo__UnityEngine__Graphics->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Graphics);
     }
-    matrix.m10 = fStack_14;
-    matrix.m00 = fStack_13;
-    matrix.m20 = fStack_15;
-    matrix.m30 = fStack_16;
-    matrix.m01 = fVar1;
-    matrix.m11 = fVar2;
-    matrix.m21 = fVar3;
-    matrix.m31 = fVar4;
-    matrix.m02 = fStack_17;
-    matrix.m12 = fStack_18;
-    matrix.m22 = fStack_19;
-    matrix.m32 = fStack_20;
-    matrix.m03 = fStack_21;
-    matrix.m13 = fStack_22;
-    matrix.m23 = fStack_23;
-    matrix.m33 = fStack_24;
+    matrix.m01 = fStack_13;
+    matrix.m11 = fStack_18;
+    matrix.m21 = fStack_19;
+    matrix.m31 = fStack_20;
+    matrix.m02 = fStack_21;
+    matrix.m12 = fStack_22;
+    matrix.m22 = fStack_23;
+    matrix.m32 = fStack_24;
+    matrix.m03 = fStack_25;
+    matrix.m13 = fStack_26;
+    matrix.m23 = fStack_27;
+    matrix.m33 = fStack_28;
     UnityEngine.CoreModule.dll::UnityEngine::Graphics::Graphics_DrawMeshNow_3
               (mesh,matrix,(MethodInfo *)0x0);
     return;
   }
   func_?();
-  pcVar25 = (code *)swi(3);
-  (*pcVar25)();
+  pcVar29 = (code *)swi(3);
+  (*pcVar29)();
   return;
 }
 
@@ -498,7 +497,7 @@ void Assembly-CSharp.dll::RTG::CylinderShape3D::CylinderShape3D_RenderWire
       fVar5 = (this->fields)._height;
       pos.y = (float)pVVar20 + (float)uVar28 * fVar5;
       pos.x = (float)pSVar19 + (float)uVar27 * fVar5;
-      pos.z = fVar1;
+      pos.z = 1.0;
       q_00.y = fVar11;
       q_00.x = fVar10;
       q_00.z = fVar12;

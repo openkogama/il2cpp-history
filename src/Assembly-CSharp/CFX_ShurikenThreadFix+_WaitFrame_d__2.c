@@ -10,9 +10,10 @@ bool Assembly-CSharp.dll::CFX_ShurikenThreadFix+<WaitFrame>d__2::
   iVar2 = (this->fields).__1__state;
   pCVar3 = (this->fields).__4__this;
   if (iVar2 == 0) {
-    (this->fields).__2__current = (Object *)0x0;
+    ppOVar4 = &(this->fields).__2__current;
     (this->fields).__1__state = -1;
-    func_?(&(this->fields).__2__current,0);
+    *ppOVar4 = (Object *)0x0;
+    func_?(ppOVar4,0);
     (this->fields).__1__state = 1;
     return 1;
   }
@@ -21,16 +22,16 @@ bool Assembly-CSharp.dll::CFX_ShurikenThreadFix+<WaitFrame>d__2::
   }
   (this->fields).__1__state = -1;
   if (pCVar3 != (CFX_ShurikenThreadFix *)0x0) {
-    pPVar4 = (pCVar3->fields).systems;
-    uVar5 = 0;
-    if (pPVar4 != (ParticleSystem__Array *)0x0) {
-      ppPVar6 = pPVar4->vector;
+    pPVar5 = (pCVar3->fields).systems;
+    uVar6 = 0;
+    if (pPVar5 != (ParticleSystem__Array *)0x0) {
+      ppPVar7 = pPVar5->vector;
       while( true ) {
-        if ((int)pPVar4->max_length <= (int)uVar5) {
+        if ((int)pPVar5->max_length <= (int)uVar6) {
           return 0;
         }
-        if (pPVar4->max_length <= uVar5) break;
-        this_00 = *ppPVar6;
+        if (pPVar5->max_length <= uVar6) break;
+        this_00 = *ppPVar7;
         if (this_00 == (ParticleSystem *)0x0) goto code_?;
         PStack_1.m_ParticleSystem =
              (ParticleSystem *)
@@ -40,17 +41,17 @@ bool Assembly-CSharp.dll::CFX_ShurikenThreadFix+<WaitFrame>d__2::
         ParticleSystem_EmissionModule_set_enabled_Injected(&PStack_1,1,(MethodInfo *)0x0);
         UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Play
                   (this_00,1,(MethodInfo *)0x0);
-        uVar5 = uVar5 + 1;
-        ppPVar6 = ppPVar6 + 1;
+        uVar6 = uVar6 + 1;
+        ppPVar7 = ppPVar7 + 1;
       }
       func_?();
     }
   }
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  bVar8 = (*pcVar7)();
-  return bVar8;
+  pcVar8 = (code *)swi(3);
+  bVar9 = (*pcVar8)();
+  return bVar9;
 }
 
 

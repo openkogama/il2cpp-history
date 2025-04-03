@@ -8,8 +8,8 @@ void Assembly-CSharp.dll::FlagDebriefingControl::FlagDebriefingControl_EndFlagCo
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
   (this->fields).RunStartTime = fVar1;
   (this->fields).IsInFlagDebriefing = 0;
-  if ((this->fields).OnFlagCountDownEnd != (Action *)0x0) {
-    pAVar2 = (this->fields).OnFlagCountDownEnd;
+  pAVar2 = (this->fields).OnFlagCountDownEnd;
+  if (pAVar2 != (Action *)0x0) {
     (*(pAVar2->fields)._._.invoke_impl)
               ((pAVar2->fields)._._.method_code,(pAVar2->fields)._._.method);
   }
@@ -49,8 +49,8 @@ void Assembly-CSharp.dll::FlagDebriefingControl::FlagDebriefingControl_StartFlag
                (FlagDebriefingControl *this,MethodInfo *method)
 
 {
-  if ((this->fields).OnFlagCountDown != (Action *)0x0) {
-    pAVar1 = (this->fields).OnFlagCountDown;
+  pAVar1 = (this->fields).OnFlagCountDown;
+  if (pAVar1 != (Action *)0x0) {
     (*(pAVar1->fields)._._.invoke_impl)
               ((pAVar1->fields)._._.method_code,(pAVar1->fields)._._.method);
   }
@@ -66,8 +66,8 @@ void Assembly-CSharp.dll::FlagDebriefingControl::FlagDebriefingControl_StartFlag
 
 {
   (this->fields).IsInFlagDebriefing = 1;
-  if ((this->fields).OnFlagDebriefing != (Action_1_Int32_ *)0x0) {
-    pAVar1 = (this->fields).OnFlagDebriefing;
+  pAVar1 = (this->fields).OnFlagDebriefing;
+  if (pAVar1 != (Action_1_Int32_ *)0x0) {
     (*(pAVar1->fields)._._.invoke_impl)
               ((pAVar1->fields)._._.method_code,captureTime,(pAVar1->fields)._._.method);
   }

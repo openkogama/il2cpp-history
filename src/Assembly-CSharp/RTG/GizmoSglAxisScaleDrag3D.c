@@ -53,52 +53,65 @@ void Assembly-CSharp.dll::RTG::GizmoSglAxisScaleDrag3D::GizmoSglAxisScaleDrag3D_
                (GizmoSglAxisScaleDrag3D *this,MethodInfo *method)
 
 {
-  pIVar1 = (this->fields)._._planeDragSession;
-  if (pIVar1 == (InputDevicePlaneDragSession3D *)0x0) {
+  pGVar1 = this;
+  pIVar2 = (this->fields)._._planeDragSession;
+  if (pIVar2 == (InputDevicePlaneDragSession3D *)0x0) {
     func_?();
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
     return;
   }
-  fVar3 = Vector3Ex::Vector3Ex_Dot
-                    ((pIVar1->fields)._dragDelta,(this->fields)._workData.Axis,(MethodInfo *)0x0);
+  pGVar4 = (GizmoSglAxisScaleDrag3D *)
+           Vector3Ex::Vector3Ex_Dot
+                     ((pIVar2->fields)._dragDelta,(this->fields)._workData.Axis,(MethodInfo *)0x0);
   if ((this->fields)._._isSnapEnabled == 0) {
-    fVar3 = fVar3 * (this->fields)._._sensitivity;
+    fVar5 = (this->fields)._._sensitivity;
     (this->fields)._accumSnapDrag = 0.0;
+    fVar6 = (this->fields)._scale;
+    method = (MethodInfo *)0x0;
+    fVar5 = (float)pGVar4 * fVar5 + fVar6;
+    (this->fields)._scale = fVar5;
+    pGVar4 = (GizmoSglAxisScaleDrag3D *)(fVar5 / fVar6);
+    (this->fields)._totalScale = fVar5 / (this->fields)._workData.EntityScale;
+    (this->fields)._relativeScale = (float)pGVar4;
+    index = (undefined *)(this->fields)._workData.AxisIndex;
+    this = pGVar4;
   }
   else {
+    this = pGVar4;
     if (cRam_? == '\0') {
+      this = (GizmoSglAxisScaleDrag3D *)&UNK_?;
       func_?();
       cRam_? = '\x01';
     }
-    fVar3 = fVar3 + (this->fields)._accumSnapDrag;
-    pVVar4 = TypeInfo__UnityEngine__Vector3->static_fields;
-    fVar5 = (pVVar4->oneVector).y;
-    fVar6 = (pVVar4->oneVector).z;
-    (this->fields)._._._relativeDragScale.x = (pVVar4->oneVector).x;
-    (this->fields)._._._relativeDragScale.y = fVar5;
-    (this->fields)._._._relativeDragScale.z = fVar6;
-    (this->fields)._accumSnapDrag = fVar3;
-    bVar7 = SnapMath::SnapMath_CanExtractSnap
-                      ((this->fields)._workData.SnapStep,fVar3,(MethodInfo *)0x0);
-    if (bVar7 == 0) goto code_?;
-    fVar3 = SnapMath::SnapMath_ExtractSnap
-                      ((this->fields)._workData.SnapStep,&(this->fields)._accumSnapDrag,
-                       (MethodInfo *)0x0);
+    accumulated = &(pGVar1->fields)._accumSnapDrag;
+    method = (MethodInfo *)((float)this + *accumulated);
+    pVVar7 = TypeInfo__UnityEngine__Vector3->static_fields;
+    fVar6 = (pVVar7->oneVector).y;
+    fVar5 = (pVVar7->oneVector).z;
+    (pGVar1->fields)._._._relativeDragScale.x = (pVVar7->oneVector).x;
+    (pGVar1->fields)._._._relativeDragScale.y = fVar6;
+    (pGVar1->fields)._._._relativeDragScale.z = fVar5;
+    *accumulated = (float)method;
+    index = &UNK_?;
+    bVar8 = SnapMath::SnapMath_CanExtractSnap
+                      ((pGVar1->fields)._workData.SnapStep,(float)method,(MethodInfo *)0x0);
+    if (bVar8 == 0) goto code_?;
+    this = (GizmoSglAxisScaleDrag3D *)
+           SnapMath::SnapMath_ExtractSnap
+                     ((pGVar1->fields)._workData.SnapStep,accumulated,(MethodInfo *)0x0);
+    fVar5 = (pGVar1->fields)._scale;
+    fVar6 = fVar5 + (float)this;
+    (pGVar1->fields)._scale = fVar6;
+    (pGVar1->fields)._totalScale = fVar6 / (pGVar1->fields)._workData.EntityScale;
+    (pGVar1->fields)._relativeScale = fVar6 / fVar5;
   }
-  fVar6 = (this->fields)._scale;
-  fVar3 = fVar3 + fVar6;
-  (this->fields)._scale = fVar3;
-  fVar6 = fVar3 / fVar6;
-  (this->fields)._totalScale = fVar3 / (this->fields)._workData.EntityScale;
-  (this->fields)._relativeScale = fVar6;
   UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_set_Item
-            (&(this->fields)._._._relativeDragScale,(this->fields)._workData.AxisIndex,fVar6,
-             (MethodInfo *)0x0);
+            (&(pGVar1->fields)._._._relativeDragScale,(int32_t)index,(float)this,method);
 code_?:
   UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_set_Item
-            (&(this->fields)._._._totalDragScale,(this->fields)._workData.AxisIndex,
-             (this->fields)._totalScale,(MethodInfo *)0x0);
+            (&(pGVar1->fields)._._._totalDragScale,(pGVar1->fields)._workData.AxisIndex,
+             (pGVar1->fields)._totalScale,(MethodInfo *)0x0);
   return;
 }
 

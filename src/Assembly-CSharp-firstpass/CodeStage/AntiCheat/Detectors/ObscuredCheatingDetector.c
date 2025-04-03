@@ -314,8 +314,9 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ObscuredChe
                 ((Object *)StringLiteral__ACTk__Obscured_Cheating_Detecto,(Object_1 *)this,
                  (MethodInfo *)0x0);
     }
-    (this->fields)._.detectionAction = callback;
-    func_?(&(this->fields)._.detectionAction,callback);
+    ppUVar2 = &(this->fields)._.detectionAction;
+    *ppUVar2 = callback;
+    func_?(ppUVar2,callback);
     (this->fields)._.isRunning = 1;
     (this->fields)._.started = 1;
     return;

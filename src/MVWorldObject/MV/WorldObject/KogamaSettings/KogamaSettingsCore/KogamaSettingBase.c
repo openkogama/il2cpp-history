@@ -15,29 +15,30 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
                    );
     cRam_? = '\x01';
   }
-  a = (this->fields).OnValueChange;
+  ppAVar1 = &(this->fields).OnValueChange;
+  a = *ppAVar1;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar2 = 
+    pAVar3 = 
     TypeInfo__System__Action<MV::WorldObject::KogamaSettings::KogamaSettingsCore::IKogamaSetting>;
-    iVar3 = 0;
-    if (pDVar1 != (Delegate *)0x0) {
-      iVar3 = func_?(pDVar1,
+    iVar4 = 0;
+    if (pDVar2 != (Delegate *)0x0) {
+      iVar4 = func_?(pDVar2,
                               TypeInfo__System__Action<MV::WorldObject::KogamaSettings::KogamaSettingsCore::IKogamaSetting>
                              );
-      if (iVar3 == 0) {
-        func_?(pDVar1,pAVar2);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+      if (iVar4 == 0) {
+        func_?(pDVar2,pAVar3);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
     }
-    pAVar5 = (Action_1_MV_WorldObject_KogamaSettings_KogamaSettingsCore_IKogamaSetting_ *)
-             func_?(&(this->fields).OnValueChange,iVar3,a);
-    bVar6 = pAVar5 != a;
-    a = pAVar5;
-  } while (bVar6);
+    pAVar6 = (Action_1_MV_WorldObject_KogamaSettings_KogamaSettingsCore_IKogamaSetting_ *)
+             func_?(ppAVar1,iVar4,a);
+    bVar7 = pAVar6 != a;
+    a = pAVar6;
+  } while (bVar7);
   return;
 }
 
@@ -59,29 +60,30 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
                    );
     cRam_? = '\x01';
   }
-  source = (this->fields).OnValueChange;
+  ppAVar1 = &(this->fields).OnValueChange;
+  source = *ppAVar1;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar2 = 
+    pAVar3 = 
     TypeInfo__System__Action<MV::WorldObject::KogamaSettings::KogamaSettingsCore::IKogamaSetting>;
-    iVar3 = 0;
-    if (pDVar1 != (Delegate *)0x0) {
-      iVar3 = func_?(pDVar1,
+    iVar4 = 0;
+    if (pDVar2 != (Delegate *)0x0) {
+      iVar4 = func_?(pDVar2,
                               TypeInfo__System__Action<MV::WorldObject::KogamaSettings::KogamaSettingsCore::IKogamaSetting>
                              );
-      if (iVar3 == 0) {
-        func_?(pDVar1,pAVar2);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+      if (iVar4 == 0) {
+        func_?(pDVar2,pAVar3);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
     }
-    pAVar5 = (Action_1_MV_WorldObject_KogamaSettings_KogamaSettingsCore_IKogamaSetting_ *)
-             func_?(&(this->fields).OnValueChange,iVar3,source);
-    bVar6 = pAVar5 != source;
-    source = pAVar5;
-  } while (bVar6);
+    pAVar6 = (Action_1_MV_WorldObject_KogamaSettings_KogamaSettingsCore_IKogamaSetting_ *)
+             func_?(ppAVar1,iVar4,source);
+    bVar7 = pAVar6 != source;
+    source = pAVar6;
+  } while (bVar7);
   return;
 }
 
@@ -94,9 +96,8 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
 {
   (this->fields).value = value;
   func_?(&this->fields,value);
-  if ((this->fields).OnValueChange !=
-      (Action_1_MV_WorldObject_KogamaSettings_KogamaSettingsCore_IKogamaSetting_ *)0x0) {
-    pAVar1 = (this->fields).OnValueChange;
+  pAVar1 = (this->fields).OnValueChange;
+  if (pAVar1 != (Action_1_MV_WorldObject_KogamaSettings_KogamaSettingsCore_IKogamaSetting_ *)0x0) {
     (*(pAVar1->fields)._._.invoke_impl)
               ((pAVar1->fields)._._.method_code,this,(pAVar1->fields)._._.method);
   }

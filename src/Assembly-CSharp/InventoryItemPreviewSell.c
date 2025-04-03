@@ -193,64 +193,66 @@ void Assembly-CSharp.dll::InventoryItemPreviewSell::InventoryItemPreviewSell_Ini
     if (this_00 != (RawImage *)0x0) {
       UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
                 (this_00,value,(MethodInfo *)0x0);
-      (this->fields).previewItem = item;
-      func_?(&(this->fields).previewItem,item);
+      ppIVar1 = &(this->fields).previewItem;
+      *ppIVar1 = item;
+      func_?(ppIVar1,item);
       if ((item != (InventoryItem *)0x0) &&
-         (pIVar1 = (this->fields).itemName, pIVar1 != (InputField *)0x0)) {
+         (pIVar2 = (this->fields).itemName, pIVar2 != (InputField *)0x0)) {
         UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_set_text
-                  (pIVar1,(item->fields).name,(MethodInfo *)0x0);
-        pIVar1 = (this->fields).description;
-        if (pIVar1 != (InputField *)0x0) {
+                  (pIVar2,(item->fields).name,(MethodInfo *)0x0);
+        pIVar2 = (this->fields).description;
+        if (pIVar2 != (InputField *)0x0) {
           UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_set_text
-                    (pIVar1,::StringLiteral__,(MethodInfo *)0x0);
-          bVar2 = mscorlib.dll::System::String::String_IsNullOrEmpty
+                    (pIVar2,::StringLiteral__,(MethodInfo *)0x0);
+          bVar3 = mscorlib.dll::System::String::String_IsNullOrEmpty
                             ((item->fields).description,(MethodInfo *)0x0);
-          if (bVar2 == 0) {
-            pIVar1 = (this->fields).description;
-            if (pIVar1 == (InputField *)0x0) goto code_?;
+          if (bVar3 == 0) {
+            pIVar2 = (this->fields).description;
+            if (pIVar2 == (InputField *)0x0) goto code_?;
             UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_set_text
-                      (pIVar1,(item->fields).description,(MethodInfo *)0x0);
+                      (pIVar2,(item->fields).description,(MethodInfo *)0x0);
           }
-          pBVar3 = (this->fields).sellButton;
-          if (pBVar3 != (Button *)0x0) {
-            pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                               ((Component *)pBVar3,(MethodInfo *)0x0);
-            if (pGVar4 != (GameObject *)0x0) {
+          pBVar4 = (this->fields).sellButton;
+          if (pBVar4 != (Button *)0x0) {
+            pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                               ((Component *)pBVar4,(MethodInfo *)0x0);
+            if (pGVar5 != (GameObject *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                        (pGVar4,0,(MethodInfo *)0x0);
-              pBVar3 = (this->fields).removeFromMarketButton;
-              if (pBVar3 != (Button *)0x0) {
-                pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                         Component_get_gameObject((Component *)pBVar3,(MethodInfo *)0x0);
-                if (pGVar4 != (GameObject *)0x0) {
+                        (pGVar5,0,(MethodInfo *)0x0);
+              pBVar4 = (this->fields).removeFromMarketButton;
+              if (pBVar4 != (Button *)0x0) {
+                pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                         Component_get_gameObject((Component *)pBVar4,(MethodInfo *)0x0);
+                if (pGVar5 != (GameObject *)0x0) {
                   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                            (pGVar4,0,(MethodInfo *)0x0);
+                            (pGVar5,0,(MethodInfo *)0x0);
                   if ((item->fields).shopInventoryID != 0) {
-                    iVar5 = (item->fields).authorProfileID;
-                    pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-                    if (pMVar6 == (MVNetworkGame *)0x0) goto code_?;
-                    pMVar7 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar6,(MethodInfo *)0x0);
-                    if (pMVar7 == (MVLocalPlayer *)0x0) goto code_?;
-                    if (iVar5 == (pMVar7->fields)._._ProfileID_k__BackingField) {
-                      pTVar8 = (this->fields).sellButtonText;
+                    iVar6 = (item->fields).authorProfileID;
+                    pMVar7 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+                    if (pMVar7 == (MVNetworkGame *)0x0) goto code_?;
+                    pMVar8 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar7,(MethodInfo *)0x0)
+                    ;
+                    if (pMVar8 == (MVLocalPlayer *)0x0) goto code_?;
+                    if (iVar6 == (pMVar8->fields)._._ProfileID_k__BackingField) {
+                      pTVar9 = (this->fields).sellButtonText;
                       TM::TM__(StringLiteral_Update,(MethodInfo *)0x0);
-                      if (pTVar8 != (Text *)0x0) {
-                        (*(code *)(pTVar8->klass->vtable).set_text.method)();
-                        pBVar3 = (this->fields).removeFromMarketButton;
-                        if (pBVar3 != (Button *)0x0) {
-                          pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                                   Component_get_gameObject((Component *)pBVar3,(MethodInfo *)0x0);
-                          if (pGVar4 != (GameObject *)0x0) {
+                      if (pTVar9 != (Text *)0x0) {
+                        (*(code *)(pTVar9->klass->vtable).set_text.method)();
+                        pBVar4 = (this->fields).removeFromMarketButton;
+                        if (pBVar4 != (Button *)0x0) {
+                          pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                   Component_get_gameObject((Component *)pBVar4,(MethodInfo *)0x0);
+                          if (pGVar5 != (GameObject *)0x0) {
                             UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                            GameObject_SetActive(pGVar4,1,(MethodInfo *)0x0);
-                            pBVar3 = (this->fields).sellButton;
-                            if (pBVar3 != (Button *)0x0) {
-                              pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                            GameObject_SetActive(pGVar5,1,(MethodInfo *)0x0);
+                            pBVar4 = (this->fields).sellButton;
+                            if (pBVar4 != (Button *)0x0) {
+                              pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                                        Component_get_gameObject
-                                                 ((Component *)pBVar3,(MethodInfo *)0x0);
-                              if (pGVar4 != (GameObject *)0x0) {
+                                                 ((Component *)pBVar4,(MethodInfo *)0x0);
+                              if (pGVar5 != (GameObject *)0x0) {
                                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                GameObject_SetActive(pGVar4,1,(MethodInfo *)0x0);
+                                GameObject_SetActive(pGVar5,1,(MethodInfo *)0x0);
                                 (this->fields).addingToMarket = 0;
                                 return;
                               }
@@ -261,27 +263,28 @@ void Assembly-CSharp.dll::InventoryItemPreviewSell::InventoryItemPreviewSell_Ini
                       goto code_?;
                     }
                   }
-                  iVar5 = (item->fields).authorProfileID;
-                  pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-                  if (pMVar6 != (MVNetworkGame *)0x0) {
-                    pMVar7 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar6,(MethodInfo *)0x0);
-                    if (pMVar7 != (MVLocalPlayer *)0x0) {
-                      if (iVar5 == (pMVar7->fields)._._ProfileID_k__BackingField) {
-                        pTVar8 = (this->fields).sellButtonText;
-                        pSVar9 = TM::TM__(StringLiteral_Sell,(MethodInfo *)0x0);
-                        if (pTVar8 != (Text *)0x0) {
-                          (*(code *)(pTVar8->klass->vtable).set_text.method)
-                                    (pTVar8,pSVar9,
-                                     (pTVar8->klass->vtable).CalculateLayoutInputHorizontal_1.
+                  iVar6 = (item->fields).authorProfileID;
+                  pMVar7 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+                  if (pMVar7 != (MVNetworkGame *)0x0) {
+                    pMVar8 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar7,(MethodInfo *)0x0)
+                    ;
+                    if (pMVar8 != (MVLocalPlayer *)0x0) {
+                      if (iVar6 == (pMVar8->fields)._._ProfileID_k__BackingField) {
+                        pTVar9 = (this->fields).sellButtonText;
+                        pSVar10 = TM::TM__(StringLiteral_Sell,(MethodInfo *)0x0);
+                        if (pTVar9 != (Text *)0x0) {
+                          (*(code *)(pTVar9->klass->vtable).set_text.method)
+                                    (pTVar9,pSVar10,
+                                     (pTVar9->klass->vtable).CalculateLayoutInputHorizontal_1.
                                      methodPtr);
-                          pBVar3 = (this->fields).sellButton;
-                          if (pBVar3 != (Button *)0x0) {
-                            pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                                     Component_get_gameObject((Component *)pBVar3,(MethodInfo *)0x0)
+                          pBVar4 = (this->fields).sellButton;
+                          if (pBVar4 != (Button *)0x0) {
+                            pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                     Component_get_gameObject((Component *)pBVar4,(MethodInfo *)0x0)
                             ;
-                            if (pGVar4 != (GameObject *)0x0) {
+                            if (pGVar5 != (GameObject *)0x0) {
                               UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                              GameObject_SetActive(pGVar4,1,(MethodInfo *)0x0);
+                              GameObject_SetActive(pGVar5,1,(MethodInfo *)0x0);
                               (this->fields).addingToMarket = 1;
                               return;
                             }
@@ -289,7 +292,7 @@ void Assembly-CSharp.dll::InventoryItemPreviewSell::InventoryItemPreviewSell_Ini
                         }
                       }
                       else {
-                        pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game
+                        pMVar7 = MVGameControllerBase::MVGameControllerBase_get_Game
                                            ((MethodInfo *)0x0);
                         this_01 = (EventHandler_1_Object_ *)
                                   func_?(
@@ -299,9 +302,9 @@ void Assembly-CSharp.dll::InventoryItemPreviewSell::InventoryItemPreviewSell_Ini
                                   (this_01,(Object *)this,
                                    MethodInfo__InventoryItemPreviewSell__OnLoadMarketPlaceItem_System__Object__ReceivedItemFromQueryEventArgs_
                                    ,(MethodInfo *)0x0);
-                        if (pMVar6 != (MVNetworkGame *)0x0) {
+                        if (pMVar7 != (MVNetworkGame *)0x0) {
                           MVNetworkGame::MVNetworkGame_add_ReceivedItemFromQuery
-                                    (pMVar6,(EventHandler_1_ReceivedItemFromQueryEventArgs_ *)
+                                    (pMVar7,(EventHandler_1_ReceivedItemFromQueryEventArgs_ *)
                                             this_01,(MethodInfo *)0x0);
                           this_02 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
                                               ((MethodInfo *)0x0);
@@ -325,8 +328,8 @@ void Assembly-CSharp.dll::InventoryItemPreviewSell::InventoryItemPreviewSell_Ini
   }
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -403,21 +406,23 @@ code_?:
         pSVar5 = (pIVar4->fields).m_Text;
         pIVar6 = (this->fields).previewItem;
         if (pIVar6 != (InventoryItem *)0x0) {
-          (pIVar6->fields).name = pSVar5;
-          func_?(&(pIVar6->fields).name,pSVar5);
+          ppSVar7 = &(pIVar6->fields).name;
+          *ppSVar7 = pSVar5;
+          func_?(ppSVar7,pSVar5);
           pIVar4 = (this->fields).description;
           if (pIVar4 != (InputField *)0x0) {
             pSVar5 = (pIVar4->fields).m_Text;
             pIVar6 = (this->fields).previewItem;
             if (pIVar6 != (InventoryItem *)0x0) {
-              (pIVar6->fields).description = pSVar5;
-              func_?(&(pIVar6->fields).description,pSVar5);
+              ppSVar7 = &(pIVar6->fields).description;
+              *ppSVar7 = pSVar5;
+              func_?(ppSVar7,pSVar5);
               if (success == 0) {
-                pOVar7 = (Object *)
+                pOVar8 = (Object *)
                          func_?(TypeInfo__InventoryItemPreviewSell____c__DisplayClass16_1);
                 mscorlib.dll::System::ThrowHelper::
                 ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                          (pOVar7,ExceptionArgument__Enum_obj,pMVar3);
+                          (pOVar8,ExceptionArgument__Enum_obj,pMVar3);
                 pSVar5 = StringLiteral_Failed_to_update__0__in_your_sho;
                 if ((this->fields).addingToMarket != 0) {
                   pSVar5 = StringLiteral_Failed_to_add__0__to_your_shop_;
@@ -425,13 +430,13 @@ code_?:
                 pSVar5 = TM::TM__(pSVar5,(MethodInfo *)0x0);
                 pIVar6 = (this->fields).previewItem;
                 if ((pIVar6 != (InventoryItem *)0x0) &&
-                   (pOVar8 = (Object__Class *)
-                             mscorlib.dll::System::String::String_Format
-                                       (pSVar5,(Object *)(pIVar6->fields).name,(MethodInfo *)0x0),
-                   pOVar7 != (Object *)0x0)) {
-                  pOVar7[1].klass = pOVar8;
-                  func_?(pOVar7 + 1,pOVar8);
-                  pEVar9 = (ExecuteEvents_EventFunction_1_IUIStack_ *)
+                   (pOVar9 = (Object__Class *)
+                              mscorlib.dll::System::String::String_Format
+                                        (pSVar5,(Object *)(pIVar6->fields).name,(MethodInfo *)0x0),
+                   pOVar8 != (Object *)0x0)) {
+                  pOVar8[1].klass = pOVar9;
+                  func_?(pOVar8 + 1,pOVar9);
+                  pEVar10 = (ExecuteEvents_EventFunction_1_IUIStack_ *)
                             UnityEngine.CoreModule.dll::UnityEngine::Component::
                             Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
                   if ((TypeInfo__InventoryItemPreviewSell____c->_1).cctor_finished_or_no_cctor == 0)
@@ -445,7 +450,7 @@ code_?:
                         0) {
                       func_?(TypeInfo__InventoryItemPreviewSell____c);
                     }
-                    pIVar10 = TypeInfo__InventoryItemPreviewSell____c->static_fields->__9;
+                    pIVar11 = TypeInfo__InventoryItemPreviewSell____c->static_fields->__9;
                     callbackFunction =
                          (ExecuteEvents_EventFunction_1_IUIStack_ *)
                          func_?(
@@ -454,12 +459,12 @@ code_?:
                     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::
                     Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor
                               ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,
-                               (Object *)pIVar10,
+                               (Object *)pIVar11,
                                MethodInfo__InventoryItemPreviewSell____c___OnAddToMarketplaceReturn_b__16_2_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                                ,(MethodInfo *)0x0);
                     TypeInfo__InventoryItemPreviewSell____c->static_fields->__9__16_2 =
                          callbackFunction;
-                    pEVar9 = callbackFunction;
+                    pEVar10 = callbackFunction;
                     func_?(&TypeInfo__InventoryItemPreviewSell____c->static_fields->
                                      __9__16_2);
                   }
@@ -469,11 +474,11 @@ code_?:
                   }
                   UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
                   ExecuteEvents_ExecuteHierarchy
-                            ((GameObject *)pEVar9,(BaseEventData *)0x0,
+                            ((GameObject *)pEVar10,(BaseEventData *)0x0,
                              (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
                              UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                             );
-                  pGVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                  pGVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                             Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
                   callbackFunction_00 =
                        (ExecuteEvents_EventFunction_1_System_Object_ *)
@@ -493,7 +498,7 @@ code_?:
                              (Object *)pMVar3,method_1,(MethodInfo *)0x0);
                   UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
                   ExecuteEvents_ExecuteHierarchy
-                            (pGVar11,(BaseEventData *)0x0,callbackFunction_00,
+                            (pGVar12,(BaseEventData *)0x0,callbackFunction_00,
                              UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
                             );
                   return;
@@ -502,7 +507,7 @@ code_?:
               else {
                 value = (Object *)
                         func_?(TypeInfo__InventoryItemPreviewSell____c__DisplayClass16_0);
-                pOVar7 = value;
+                pOVar8 = value;
                 mscorlib.dll::System::ThrowHelper::
                 ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                           (value,ExceptionArgument__Enum_obj,pMVar3);
@@ -513,39 +518,39 @@ code_?:
                 pSVar5 = TM::TM__(pSVar5,(MethodInfo *)0x0);
                 pIVar6 = (this->fields).previewItem;
                 if ((pIVar6 != (InventoryItem *)0x0) &&
-                   (pOVar8 = (Object__Class *)
-                             mscorlib.dll::System::String::String_Format
-                                       (pSVar5,(Object *)(pIVar6->fields).name,(MethodInfo *)0x0),
+                   (pOVar9 = (Object__Class *)
+                              mscorlib.dll::System::String::String_Format
+                                        (pSVar5,(Object *)(pIVar6->fields).name,(MethodInfo *)0x0),
                    value != (Object *)0x0)) {
-                  value[1].klass = pOVar8;
-                  func_?(value + 1,pOVar8,pOVar7);
-                  pGVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                  value[1].klass = pOVar9;
+                  func_?(value + 1,pOVar9,pOVar8);
+                  pGVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                             Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
                   if ((TypeInfo__InventoryItemPreviewSell____c->_1).cctor_finished_or_no_cctor == 0)
                   {
                     func_?(TypeInfo__InventoryItemPreviewSell____c);
                   }
-                  pEVar9 = TypeInfo__InventoryItemPreviewSell____c->static_fields->__9__16_0;
-                  if (pEVar9 == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+                  pEVar10 = TypeInfo__InventoryItemPreviewSell____c->static_fields->__9__16_0;
+                  if (pEVar10 == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
                     if ((TypeInfo__InventoryItemPreviewSell____c->_1).cctor_finished_or_no_cctor ==
                         0) {
                       func_?(TypeInfo__InventoryItemPreviewSell____c);
                     }
-                    pIVar10 = TypeInfo__InventoryItemPreviewSell____c->static_fields->__9;
-                    pEVar9 = (ExecuteEvents_EventFunction_1_IUIStack_ *)
+                    pIVar11 = TypeInfo__InventoryItemPreviewSell____c->static_fields->__9;
+                    pEVar10 = (ExecuteEvents_EventFunction_1_IUIStack_ *)
                               func_?(
                                              TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                                              );
                     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::
                     Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor
-                              ((UnityAction_2_System_Object_System_Object_ *)pEVar9,
-                               (Object *)pIVar10,
+                              ((UnityAction_2_System_Object_System_Object_ *)pEVar10,
+                               (Object *)pIVar11,
                                MethodInfo__InventoryItemPreviewSell____c___OnAddToMarketplaceReturn_b__16_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                                ,(MethodInfo *)0x0);
-                    TypeInfo__InventoryItemPreviewSell____c->static_fields->__9__16_0 = pEVar9;
-                    pGVar11 = (GameObject *)
+                    TypeInfo__InventoryItemPreviewSell____c->static_fields->__9__16_0 = pEVar10;
+                    pGVar12 = (GameObject *)
                               &TypeInfo__InventoryItemPreviewSell____c->static_fields->__9__16_0;
-                    func_?(pGVar11,pEVar9);
+                    func_?(pGVar12,pEVar10);
                   }
                   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).
                       cctor_finished_or_no_cctor == 0) {
@@ -553,11 +558,11 @@ code_?:
                   }
                   UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
                   ExecuteEvents_ExecuteHierarchy
-                            (pGVar11,(BaseEventData *)0x0,
-                             (ExecuteEvents_EventFunction_1_System_Object_ *)pEVar9,
+                            (pGVar12,(BaseEventData *)0x0,
+                             (ExecuteEvents_EventFunction_1_System_Object_ *)pEVar10,
                              UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                             );
-                  pGVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                  pGVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                             Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
                   callbackFunction_00 =
                        (ExecuteEvents_EventFunction_1_System_Object_ *)
@@ -577,23 +582,23 @@ code_?:
       }
       goto code_?;
     }
-    pMVar12 = (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0;
+    pMVar13 = (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0;
     if (pMVar2->klass == TypeInfo__MVNetworkGame__OnMarketPlaceActionCompleteDelegate) {
-      pMVar12 = pMVar2;
+      pMVar13 = pMVar2;
     }
-    if (pMVar12 == (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0) goto code_?;
-    (pMVar1->fields).OnMarketPlaceActionComplete = pMVar12;
-    pMVar12 = (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0;
+    if (pMVar13 == (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0) goto code_?;
+    (pMVar1->fields).OnMarketPlaceActionComplete = pMVar13;
+    pMVar13 = (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0;
     if (pMVar2->klass == TypeInfo__MVNetworkGame__OnMarketPlaceActionCompleteDelegate) {
-      pMVar12 = pMVar2;
+      pMVar13 = pMVar2;
     }
-    if (pMVar12 != (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0) goto code_?;
+    if (pMVar13 != (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0) goto code_?;
   }
   func_?();
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -649,8 +654,8 @@ void Assembly-CSharp.dll::InventoryItemPreviewSell::InventoryItemPreviewSell_OnL
             KoGaMaPackageClient::KoGaMaPackageClient_Destroy(this_07,(MethodInfo *)0x0);
             pPVar3 = (this->fields).compareSlider;
             if (pPVar3 != (ProgressBarAndroid *)0x0) {
-              ProgressBarAndroid::ProgressBarAndroid_set_Progress
-                        (pPVar3,_UNK_? - fVar2,(MethodInfo *)0x0);
+              fVar2 = _UNK_? - fVar2;
+              ProgressBarAndroid::ProgressBarAndroid_set_Progress(pPVar3,fVar2,(MethodInfo *)0x0);
               if ((TypeInfo__MV__Common__CommonValues->_1).cctor_finished_or_no_cctor == 0) {
                 func_?(TypeInfo__MV__Common__CommonValues);
               }
@@ -676,7 +681,7 @@ void Assembly-CSharp.dll::InventoryItemPreviewSell::InventoryItemPreviewSell_OnL
                       fVar4 = MVCommon.dll::MV::Common::CommonValues::
                               CommonValues_get_CompareThreshold((MethodInfo *)0x0);
                       pTVar7 = (this->fields).compareText;
-                      if (_UNK_? - fVar2 <= 1.0 - fVar4) {
+                      if (fVar2 <= 1.0 - fVar4) {
                         TM::TM__(StringLiteral_Item_is_not_different_enough_fro,(MethodInfo *)0x0);
                         if (pTVar7 != (Text *)0x0) {
                           (*(code *)(pTVar7->klass->vtable).set_text.method)();
@@ -753,16 +758,16 @@ void Assembly-CSharp.dll::InventoryItemPreviewSell::InventoryItemPreviewSell_OnR
     cRam_? = '\x01';
   }
   method_00 = TypeInfo__InventoryItemPreviewSell____c__DisplayClass15_0;
-  value = (Object *)func_?();
+  pOVar1 = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (pMVar1 == (MVNetworkGame *)0x0) {
+            (pOVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if (pMVar2 == (MVNetworkGame *)0x0) {
 code_?:
     func_?();
   }
   else {
-    pMVar2 = (pMVar1->fields).OnMarketPlaceActionComplete;
+    source = (pMVar2->fields).OnMarketPlaceActionComplete;
     this_00 = (UnityAction_1_System_Int32Enum_ *)
               func_?(TypeInfo__MVNetworkGame__OnMarketPlaceActionCompleteDelegate);
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
@@ -770,23 +775,24 @@ code_?:
               (this_00,(Object *)this,
                MethodInfo__InventoryItemPreviewSell__OnRemoveFromMarketplace_bool_,(MethodInfo *)0x0
               );
-    pMVar2 = (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)
-             mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)pMVar2,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pMVar2 == (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0) {
-      (pMVar1->fields).OnMarketPlaceActionComplete =
-           (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0;
+    pDVar3 = mscorlib.dll::System::Delegate::Delegate_Remove
+                       ((Delegate *)source,(Delegate *)this_00,(MethodInfo *)0x0);
+    if (pDVar3 == (Delegate *)0x0) {
+      *(undefined4 *)(unaff_ESI + 0xdc) = 0;
 code_?:
       func_?();
-      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+      pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)this,(MethodInfo *)0x0);
+      pGVar5 = pGVar4;
       if ((TypeInfo__InventoryItemPreviewSell____c->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__InventoryItemPreviewSell____c);
       }
       callbackFunction = TypeInfo__InventoryItemPreviewSell____c->static_fields->__9__15_0;
       if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+        pGVar4 = pGVar5;
         if ((TypeInfo__InventoryItemPreviewSell____c->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__InventoryItemPreviewSell____c);
+          pGVar4 = pGVar5;
         }
         object = TypeInfo__InventoryItemPreviewSell____c->static_fields->__9;
         callbackFunction =
@@ -808,83 +814,90 @@ code_?:
         func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
       }
       UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (pGVar3,(BaseEventData *)0x0,
+                (pGVar4,(BaseEventData *)0x0,
                  (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                 );
-      pSVar4 = TM::TM__(StringLiteral_Failed_to_remove__0__from_your_s,(MethodInfo *)0x0);
-      pIVar5 = (this->fields).itemName;
-      if ((pIVar5 != (InputField *)0x0) &&
-         (pOVar6 = (Object__Class *)
-                   mscorlib.dll::System::String::String_Format
-                             (pSVar4,(Object *)(pIVar5->fields).m_Text,(MethodInfo *)0x0),
-         value != (Object *)0x0)) {
-        value[1].klass = pOVar6;
-        func_?(value + 1,pOVar6);
-        pSVar4 = TM::TM__(StringLiteral_Successfully_removed__0__from_yo,(MethodInfo *)0x0);
-        pIVar5 = (this->fields).itemName;
-        if (pIVar5 != (InputField *)0x0) {
-          pOVar6 = (Object__Class *)
-                   mscorlib.dll::System::String::String_Format
-                             (pSVar4,(Object *)(pIVar5->fields).m_Text,(MethodInfo *)0x0);
-          value[1].klass = pOVar6;
-          func_?();
-          if (cRam_? == '\0') {
-            func_?(&TypeInfo__MVGameControllerBase);
-            cRam_? = '\x01';
+      pSVar6 = TM::TM__(StringLiteral_Failed_to_remove__0__from_your_s,(MethodInfo *)0x0);
+      pIVar7 = (this->fields).itemName;
+      if (pIVar7 != (InputField *)0x0) {
+        pOVar8 = (Object__Class *)
+                  mscorlib.dll::System::String::String_Format
+                            (pSVar6,(Object *)(pIVar7->fields).m_Text,(MethodInfo *)0x0);
+        if (unaff_EDI != (Object *)0x0) {
+          pOVar1 = unaff_EDI + 1;
+          pOVar1->klass = pOVar8;
+          func_?(pOVar1,pOVar8);
+          if ((char)unaff_ESI == '$') {
+code_?:
+            pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                               ((Component *)this,(MethodInfo *)0x0);
+            callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
+            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+            Object]::UnityAction_2_System_Object_System_Object___ctor
+                      ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,unaff_EDI,
+                       MethodInfo__InventoryItemPreviewSell____c__DisplayClass15_0___OnRemoveFromMarketplace_b__1_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
+                       ,(MethodInfo *)0x0);
+            if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor
+                == 0) {
+              func_?();
+            }
+            UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+            ExecuteEvents_ExecuteHierarchy
+                      (pGVar4,(BaseEventData *)0x0,callbackFunction_00,
+                       UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
+                      );
+            return;
           }
-          pIVar7 = TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
-          if (pIVar7 != (IEditModeUI *)0x0) {
-            this_01 = (PlayerShopInventoryRepository *)
-                      func_?(4,TypeInfo__IEditModeUI,pIVar7);
-            pIVar8 = (this->fields).previewItem;
-            if ((pIVar8 != (InventoryItem *)0x0) &&
-               (this_01 != (PlayerShopInventoryRepository *)0x0)) {
-              UGUI::Desktop::Scripts::EditMode::Inventories::PlayerShopInventoryRepository::
-              PlayerShopInventoryRepository_UpdatePlayerShopInventoryID
-                        (this_01,(pIVar8->fields).itemID,0,(MethodInfo *)0x0);
-              pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                 ((Component *)this,(MethodInfo *)0x0);
-              callbackFunction_00 =
-                   (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-              Object]::UnityAction_2_System_Object_System_Object___ctor
-                        ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,
-                         MethodInfo__InventoryItemPreviewSell____c__DisplayClass15_0___OnRemoveFromMarketplace_b__1_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
-                         ,(MethodInfo *)0x0);
-              if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).
-                  cctor_finished_or_no_cctor == 0) {
-                func_?();
+          pSVar6 = TM::TM__(StringLiteral_Successfully_removed__0__from_yo,(MethodInfo *)0x0);
+          pIVar7 = (this->fields).itemName;
+          if (pIVar7 != (InputField *)0x0) {
+            pOVar8 = (Object__Class *)
+                      mscorlib.dll::System::String::String_Format
+                                (pSVar6,(Object *)(pIVar7->fields).m_Text,(MethodInfo *)0x0);
+            pOVar1->klass = pOVar8;
+            func_?();
+            if (cRam_? == '\0') {
+              func_?(&TypeInfo__MVGameControllerBase);
+              cRam_? = '\x01';
+            }
+            pIVar9 = TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
+            if (pIVar9 != (IEditModeUI *)0x0) {
+              this_01 = (PlayerShopInventoryRepository *)
+                        func_?(4,TypeInfo__IEditModeUI,pIVar9);
+              pIVar10 = (this->fields).previewItem;
+              if ((pIVar10 != (InventoryItem *)0x0) &&
+                 (this_01 != (PlayerShopInventoryRepository *)0x0)) {
+                UGUI::Desktop::Scripts::EditMode::Inventories::PlayerShopInventoryRepository::
+                PlayerShopInventoryRepository_UpdatePlayerShopInventoryID
+                          (this_01,(pIVar10->fields).itemID,0,(MethodInfo *)0x0);
+                goto code_?;
               }
-              UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-              ExecuteEvents_ExecuteHierarchy
-                        (pGVar3,(BaseEventData *)0x0,callbackFunction_00,
-                         UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
-                        );
-              return;
             }
           }
         }
       }
       goto code_?;
     }
-    pMVar9 = (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0;
-    if (pMVar2->klass == TypeInfo__MVNetworkGame__OnMarketPlaceActionCompleteDelegate) {
-      pMVar9 = pMVar2;
+    pDVar11 = (Delegate *)0x0;
+    if ((MVNetworkGame_OnMarketPlaceActionCompleteDelegate__Class *)pDVar3->klass ==
+        TypeInfo__MVNetworkGame__OnMarketPlaceActionCompleteDelegate) {
+      pDVar11 = pDVar3;
     }
-    if (pMVar9 == (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0) goto code_?;
-    (pMVar1->fields).OnMarketPlaceActionComplete = pMVar9;
-    pMVar9 = (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0;
-    if (pMVar2->klass == TypeInfo__MVNetworkGame__OnMarketPlaceActionCompleteDelegate) {
-      pMVar9 = pMVar2;
+    if (pDVar11 == (Delegate *)0x0) goto code_?;
+    *(Delegate **)(unaff_ESI + 0xdc) = pDVar11;
+    pDVar11 = (Delegate *)0x0;
+    if ((MVNetworkGame_OnMarketPlaceActionCompleteDelegate__Class *)pDVar3->klass ==
+        TypeInfo__MVNetworkGame__OnMarketPlaceActionCompleteDelegate) {
+      pDVar11 = pDVar3;
     }
-    if (pMVar9 != (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0) goto code_?;
+    if (pDVar11 != (Delegate *)0x0) goto code_?;
   }
   func_?();
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -903,6 +916,7 @@ void Assembly-CSharp.dll::InventoryItemPreviewSell::InventoryItemPreviewSell_Rem
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if (pMVar1 != (MVNetworkGame *)0x0) {
     pMVar2 = (pMVar1->fields).OnMarketPlaceActionComplete;
+    ppMVar3 = &(pMVar1->fields).OnMarketPlaceActionComplete;
     this_00 = (UnityAction_1_System_Int32Enum_ *)
               func_?(TypeInfo__MVNetworkGame__OnMarketPlaceActionCompleteDelegate);
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
@@ -914,29 +928,28 @@ void Assembly-CSharp.dll::InventoryItemPreviewSell::InventoryItemPreviewSell_Rem
              mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)pMVar2,(Delegate *)this_00,(MethodInfo *)0x0);
     if (pMVar2 == (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0) {
-      (pMVar1->fields).OnMarketPlaceActionComplete =
-           (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0;
+      *ppMVar3 = (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0;
     }
     else {
-      pMVar3 = (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0;
+      pMVar4 = (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0;
       if (pMVar2->klass == TypeInfo__MVNetworkGame__OnMarketPlaceActionCompleteDelegate) {
-        pMVar3 = pMVar2;
+        pMVar4 = pMVar2;
       }
-      if (pMVar3 == (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0) goto code_?;
-      (pMVar1->fields).OnMarketPlaceActionComplete = pMVar3;
-      pMVar3 = (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0;
+      if (pMVar4 == (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0) goto code_?;
+      *ppMVar3 = pMVar4;
+      pMVar4 = (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0;
       if (pMVar2->klass == TypeInfo__MVNetworkGame__OnMarketPlaceActionCompleteDelegate) {
-        pMVar3 = pMVar2;
+        pMVar4 = pMVar2;
       }
-      if (pMVar3 == (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0) goto code_?;
+      if (pMVar4 == (MVNetworkGame_OnMarketPlaceActionCompleteDelegate *)0x0) goto code_?;
     }
     func_?();
     this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
-    pIVar4 = (this->fields).previewItem;
-    if ((pIVar4 != (InventoryItem *)0x0) && (this_01 != (MVNetworkGame_OperationRequests *)0x0)) {
+    if ((_InventoryItemPreview_Initialize != 0) &&
+       (this_01 != (MVNetworkGame_OperationRequests *)0x0)) {
       MVNetworkGame+OperationRequests::
       MVNetworkGame_OperationRequests_RequestRemoveItemFromMarketPlace
-                (this_01,(pIVar4->fields).itemID,(MethodInfo *)0x0);
+                (this_01,*(int32_t *)(_InventoryItemPreview_Initialize + 8),(MethodInfo *)0x0);
       return;
     }
   }

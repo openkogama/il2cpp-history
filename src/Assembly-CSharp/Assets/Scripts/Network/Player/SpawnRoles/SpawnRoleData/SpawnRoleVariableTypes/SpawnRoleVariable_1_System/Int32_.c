@@ -60,27 +60,28 @@ bool Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
     if (bVar1 != 0) {
       return 0;
     }
-    pMVar2 = method->klass->rgctx_data[1].method;
-    pIVar3 = method->klass->rgctx_data->klass;
-    if (((uint)pIVar3->vtable[0].methodPtr & 0x100) == 0) {
-      pIVar3 = (Il2CppClass *)func_?();
+    pIVar2 = method->klass->rgctx_data;
+    pMVar3 = pIVar2[1].method;
+    pIVar4 = pIVar2->klass;
+    if (((uint)pIVar4->vtable[0].methodPtr & 0x100) == 0) {
+      pIVar4 = (Il2CppClass *)func_?();
     }
-    if (((obj->klass->_1).naturalAligment < pIVar3->naturalAligment) ||
-       ((obj->klass->_1).typeHierarchy[pIVar3->naturalAligment - 1] != pIVar3))
+    if (((obj->klass->_1).naturalAligment < pIVar4->naturalAligment) ||
+       ((obj->klass->_1).typeHierarchy[pIVar4->naturalAligment - 1] != pIVar4))
     goto code_?;
     if (((this->fields).subscribableVariable != (SubscribableVariable_1_System_Int32_ *)0x0) &&
        (obj[1].klass != (Object__Class *)0x0)) {
       obj_00 = (Object *)func_?();
       bVar1 = mscorlib.dll::System::Int32::Int32_Equals
-                        ((Int32 *)&stack0xfffffff4,obj_00,pMVar2->klass->rgctx_data[0x10].method);
+                        ((Int32 *)&stack0xfffffff8,obj_00,pMVar3->klass->rgctx_data[0x10].method);
       return bVar1;
     }
   }
   func_?();
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  bVar1 = (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  bVar1 = (*pcVar5)();
   return bVar1;
 }
 
@@ -261,7 +262,7 @@ bool Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
       }
       bVar4 = mscorlib.dll::System::Int32::Int32_Equals
                         ((Int32 *)&b,obj,pIVar3->rgctx_data[0x10].method);
-      return bVar4 ^ 1;
+      return bVar4 == 0;
     }
   }
   func_?();
@@ -298,7 +299,7 @@ bool Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
       }
       bVar4 = mscorlib.dll::System::Int32::Int32_Equals
                         ((Int32 *)&b,obj,pIVar3->rgctx_data[0x10].method);
-      return bVar4 ^ 1;
+      return bVar4 == 0;
     }
   }
   func_?();
@@ -347,7 +348,7 @@ bool Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
       }
       bVar4 = mscorlib.dll::System::Int32::Int32_Equals
                         ((Int32 *)&a,obj,pIVar1->rgctx_data[0x10].method);
-      return bVar4 ^ 1;
+      return bVar4 == 0;
     }
   }
   func_?();

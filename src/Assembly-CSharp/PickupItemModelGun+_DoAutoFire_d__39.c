@@ -76,18 +76,19 @@ code_?:
 code_?:
         this = (PickupItemModelGun_DoAutoFire_d_39 *)0x0;
         pOVar12 = (Object *)func_?(TypeInfo__System__Int32,&this);
-        (pPVar1->fields).__2__current = pOVar12;
-        func_?(&(pPVar1->fields).__2__current,pOVar12);
+        ppOVar13 = &(pPVar1->fields).__2__current;
+        *ppOVar13 = pOVar12;
+        func_?(ppOVar13,pOVar12);
         (pPVar1->fields).__1__state = 1;
         return 1;
       }
-      pTVar13 = (this_00->fields).chargeObject;
-      if ((pTVar13 != (Transform *)0x0) &&
-         (pGVar14 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                              ((Component *)pTVar13,(MethodInfo *)0x0), pGVar14 != (GameObject *)0x0)
+      pTVar14 = (this_00->fields).chargeObject;
+      if ((pTVar14 != (Transform *)0x0) &&
+         (pGVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                              ((Component *)pTVar14,(MethodInfo *)0x0), pGVar15 != (GameObject *)0x0)
          ) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar14,1,(MethodInfo *)0x0);
+                  (pGVar15,1,(MethodInfo *)0x0);
         goto code_?;
       }
       goto code_?;
@@ -130,20 +131,20 @@ code_?:
       (this_00->fields).waitingToFire = 1;
       this = (PickupItemModelGun_DoAutoFire_d_39 *)0x0;
       pOVar12 = (Object *)func_?(TypeInfo__System__Int32,&this);
-      (pPVar1->fields).__2__current = pOVar12;
-      func_?(&(pPVar1->fields).__2__current,pOVar12);
+      ppOVar13 = &(pPVar1->fields).__2__current;
+      *ppOVar13 = pOVar12;
+      func_?(ppOVar13,pOVar12);
       (pPVar1->fields).__1__state = 2;
       return 1;
     }
     if ((this_00->fields).fireMain != 0) {
-      pMVar15 = (this_00->fields)._._.owner;
-      if (pMVar15 == (MVPickupOwner *)0x0) goto code_?;
+      pMVar16 = (this_00->fields)._._.owner;
+      if (pMVar16 == (MVPickupOwner *)0x0) goto code_?;
       (*(code *)(this_00->klass->vtable).OnFire.method)
-                (this_00,(pMVar15->fields)._IsLocal_k__BackingField,
+                (this_00,(pMVar16->fields)._IsLocal_k__BackingField,
                  (this_00->klass->vtable).OnDestroy.methodPtr);
-      this = (PickupItemModelGun_DoAutoFire_d_39 *)
-             UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      (this_00->fields).prevFireTime = (float)this;
+      fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+      (this_00->fields).prevFireTime = fVar3;
     }
     if ((this_00->fields).fireSecondary == 0) {
 code_?:
@@ -152,28 +153,27 @@ code_?:
       (this_00->fields).waitingToFire = 0;
       return 0;
     }
-    pMVar15 = (this_00->fields)._._.owner;
-    if (pMVar15 != (MVPickupOwner *)0x0) {
+    pMVar16 = (this_00->fields)._._.owner;
+    if (pMVar16 != (MVPickupOwner *)0x0) {
       PickupItemModelGun::PickupItemModelGun_OnFireSecondary
-                (this_00,(pMVar15->fields)._IsLocal_k__BackingField,(MethodInfo *)0x0);
-      this = (PickupItemModelGun_DoAutoFire_d_39 *)
-             UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      pTVar13 = (this_00->fields).chargeObject;
-      (this_00->fields).prevFireTime = (float)this;
-      if ((pTVar13 != (Transform *)0x0) &&
-         (pGVar14 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                              ((Component *)pTVar13,(MethodInfo *)0x0), pGVar14 != (GameObject *)0x0)
+                (this_00,(pMVar16->fields)._IsLocal_k__BackingField,(MethodInfo *)0x0);
+      fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+      pTVar14 = (this_00->fields).chargeObject;
+      (this_00->fields).prevFireTime = fVar3;
+      if ((pTVar14 != (Transform *)0x0) &&
+         (pGVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                              ((Component *)pTVar14,(MethodInfo *)0x0), pGVar15 != (GameObject *)0x0)
          ) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar14,0,(MethodInfo *)0x0);
+                  (pGVar15,0,(MethodInfo *)0x0);
         goto code_?;
       }
     }
   }
 code_?:
   func_?();
-  pcVar16 = (code *)swi(3);
-  bVar8 = (*pcVar16)();
+  pcVar17 = (code *)swi(3);
+  bVar8 = (*pcVar17)();
   return bVar8;
 }
 

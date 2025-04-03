@@ -10,12 +10,13 @@ void Assembly-CSharp.dll::SettingsButton::SettingsButton_Initialize
     func_?(&TypeInfo__UnityEngine__Events__UnityAction);
     cRam_? = '\x01';
   }
-  (this->fields).key = key;
-  func_?(&(this->fields).key,key);
-  pBVar1 = (this->fields).button;
+  ppSVar1 = &(this->fields).key;
+  *ppSVar1 = key;
+  func_?(ppSVar1,key);
+  pBVar2 = (this->fields).button;
   (this->fields).value = value;
-  if (pBVar1 != (Button *)0x0) {
-    this_00 = (UnityEvent *)(pBVar1->fields).m_OnClick;
+  if (pBVar2 != (Button *)0x0) {
+    this_00 = (UnityEvent *)(pBVar2->fields).m_OnClick;
     this_01 = (NavMesh_OnNavMeshPreUpdate *)
               func_?(TypeInfo__UnityEngine__Events__UnityAction);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
@@ -28,8 +29,8 @@ void Assembly-CSharp.dll::SettingsButton::SettingsButton_Initialize
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

@@ -8,10 +8,11 @@ void Assembly-CSharp.dll::InventoryItemData::InventoryItemData__ctor
 {
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  ppSVar1 = &(this->fields).name;
   (this->fields).slotIndex = slotIndex;
   (this->fields).categoryId = categoryId;
-  (this->fields).name = name;
-  func_?(&(this->fields).name,name);
+  *ppSVar1 = name;
+  func_?(ppSVar1,name);
   (this->fields).id = id;
   return;
 }

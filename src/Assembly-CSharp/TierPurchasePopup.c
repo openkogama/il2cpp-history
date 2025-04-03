@@ -104,27 +104,28 @@ void Assembly-CSharp.dll::TierPurchasePopup::TierPurchasePopup_Initialize
 
 {
   GVar1 = tierToPurchase;
+  ppUVar2 = &(this->fields).OnPurchaseSuccessful;
   (this->fields).price = price;
-  (this->fields).OnPurchaseSuccessful = OnPurchaseSuccessful;
   (this->fields).tierToPurchase = (undefined1)tierToPurchase;
-  func_?(&(this->fields).OnPurchaseSuccessful,OnPurchaseSuccessful);
-  pTVar2 = (this->fields).tierText;
+  *ppUVar2 = OnPurchaseSuccessful;
+  func_?(ppUVar2,OnPurchaseSuccessful);
+  pTVar3 = (this->fields).tierText;
   tierToPurchase = GVar1 & 0xff;
-  pSVar3 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&tierToPurchase,(MethodInfo *)0x0);
-  if (pTVar2 != (Text *)0x0) {
-    (*(code *)(pTVar2->klass->vtable).set_text.method)
-              (pTVar2,pSVar3,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-    pTVar2 = (this->fields).priceText;
-    pSVar3 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&price,(MethodInfo *)0x0);
-    if (pTVar2 != (Text *)0x0) {
-      (*(code *)(pTVar2->klass->vtable).set_text.method)
-                (pTVar2,pSVar3,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+  pSVar4 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&tierToPurchase,(MethodInfo *)0x0);
+  if (pTVar3 != (Text *)0x0) {
+    (*(code *)(pTVar3->klass->vtable).set_text.method)
+              (pTVar3,pSVar4,(pTVar3->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+    pTVar3 = (this->fields).priceText;
+    pSVar4 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&price,(MethodInfo *)0x0);
+    if (pTVar3 != (Text *)0x0) {
+      (*(code *)(pTVar3->klass->vtable).set_text.method)
+                (pTVar3,pSVar4,(pTVar3->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
       return;
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -174,8 +175,8 @@ void Assembly-CSharp.dll::TierPurchasePopup::TierPurchasePopup_ProductPurchaseRe
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
-    value[1].monitor = (MonitorData *)this;
     value[1].klass = (Object__Class *)returnCode;
+    value[1].monitor = (MonitorData *)this;
     func_?(&value[1].monitor,this);
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
     if (pMVar1 != (MVNetworkGame *)0x0) {
@@ -396,27 +397,27 @@ void Assembly-CSharp.dll::TierPurchasePopup::TierPurchasePopup_Purchase
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if (pMVar1 != (MVNetworkGame *)0x0) {
     pAVar2 = (pMVar1->fields).PurchaseProductResponseHandler;
+    ppAVar3 = &(pMVar1->fields).PurchaseProductResponseHandler;
     this_00 = (UnityAction_2_System_Int32_System_Int32_ *)func_?();
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
     UnityAction_2_System_Int32_System_Int32___ctor
               (this_00,(Object *)0x0,
                MethodInfo__TierPurchasePopup__ProductPurchaseResponseHandler_int__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
                ,(MethodInfo *)0x0);
-    pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pDVar3 == (Delegate *)0x0) {
-      (pMVar1->fields).PurchaseProductResponseHandler =
-           (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
-           0x0;
+    if (pDVar4 == (Delegate *)0x0) {
+      *ppAVar3 = (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
+                  *)0x0;
     }
     else {
       pAVar2 = (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
                 *)func_?();
       if (pAVar2 == (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
                      *)0x0) goto code_?;
-      (pMVar1->fields).PurchaseProductResponseHandler = pAVar2;
-      iVar4 = func_?();
-      if (iVar4 == 0) goto code_?;
+      *ppAVar3 = pAVar2;
+      iVar5 = func_?();
+      if (iVar5 == 0) goto code_?;
     }
     func_?();
     this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
@@ -429,8 +430,8 @@ void Assembly-CSharp.dll::TierPurchasePopup::TierPurchasePopup_Purchase
   func_?();
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

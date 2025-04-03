@@ -25,7 +25,7 @@ void Assembly-CSharp.dll::UGUI::Framework::Scripts::Shared::PlayerList::Admin::
         do {
           if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
               (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IUIStack) {
-            ppMVar5 = &(&(x->klass->vtable).Push)[x->klass->interfaceOffsets[uVar3].offset].method;
+            ppMVar5 = &(&(x->klass->vtable).Push)[pIVar2->interfaceOffsets[uVar3].offset].method;
             goto code_?;
           }
           uVar3 = uVar3 + 1;

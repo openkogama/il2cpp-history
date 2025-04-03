@@ -76,736 +76,673 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Custo
     }
     pDVar1 = Assets::Scripts::WorldObjectTypes::CustomGun::CustomGunData::CustomGunData_DefaultData
                        ((MethodInfo *)0x0);
-    (this->fields)._.data = pDVar1;
-    func_?(&(this->fields)._.data,pDVar1);
-    pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields)._.data;
-    if (pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
-    goto code_?;
+    ppDVar2 = &(this->fields)._.data;
+    *ppDVar2 = pDVar1;
+    func_?(ppDVar2,pDVar1);
+    if ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)*ppDVar2 ==
+        (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) goto code_?;
     TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
              UIElements::TextureId]::
              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                       (pDVar2,(Object *)StringLiteral_itemData,
+                       ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)*ppDVar2,
+                        (Object *)StringLiteral_itemData,
                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                        );
-    unaff_EDI.m_Index =
-         (int32_t)TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-    ;
     if (TVar3.m_Index == 0) {
       (this->fields)._.itemData = (Dictionary_2_System_Object_System_Object_ *)0x0;
-    }
-    else {
-      if ((*(byte *)(*(int *)TVar3.m_Index + 0xb8) <
-           (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-           naturalAligment) ||
-         (*(Dictionary_2_System_Object_System_Object___Class **)
-           (*(int *)(*(int *)TVar3.m_Index + 100) + -4 +
-           (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                 ->_1).naturalAligment * 4) !=
-          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
-      goto code_?;
-      (this->fields)._.itemData = (Dictionary_2_System_Object_System_Object_ *)TVar3.m_Index;
-      if ((*(byte *)(*(int *)TVar3.m_Index + 0xb8) <
-           (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-           naturalAligment) ||
-         (unaff_EDI.m_Index =
-               (int32_t)
-               TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>,
-         *(Dictionary_2_System_Object_System_Object___Class **)
-          (*(int *)(*(int *)TVar3.m_Index + 100) + -4 +
-          (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                ->_1).naturalAligment * 4) !=
-         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
-      goto code_?;
-    }
 code_?:
-    func_?();
-    pCVar4 = (this->fields).fireAudioPlayer;
-    pCVar5 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
-    if (pCVar5 == (Camera *)0x0) goto code_?;
-    pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                       ((Component *)pCVar5,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      ppDVar2 = &(this->fields)._.itemData;
       func_?();
-    }
-    pCVar4 = (CustomItemAudioPlayer *)
-              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_5
-                        ((Object *)pCVar4,pTVar6,
-                         CustomItemAudioPlayer_MethodInfo__UnityEngine__Object__Instantiate<CustomItemAudioPlayer>_CustomItemAudioPlayer__UnityEngine__Transform_
-                        );
-    (this->fields).fireAudioPlayer = pCVar4;
-    func_?();
-    unaff_EDI.m_Index = (int32_t)(this->fields).chargeAudioPlayer;
-    pCVar5 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
-    if (pCVar5 == (Camera *)0x0) goto code_?;
-    pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                       ((Component *)pCVar5,(MethodInfo *)0x0);
-    pCVar4 = (CustomItemAudioPlayer *)
-              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_5
-                        ((Object *)unaff_EDI.m_Index,pTVar6,
-                         CustomItemAudioPlayer_MethodInfo__UnityEngine__Object__Instantiate<CustomItemAudioPlayer>_CustomItemAudioPlayer__UnityEngine__Transform_
-                        );
-    (this->fields).chargeAudioPlayer = pCVar4;
-    func_?(&(this->fields).chargeAudioPlayer);
-    unaff_EDI.m_Index = (int32_t)(this->fields).hitAudioPlayer;
-    pCVar5 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
-    if (pCVar5 == (Camera *)0x0) goto code_?;
-    pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                       ((Component *)pCVar5,(MethodInfo *)0x0);
-    pCVar4 = (CustomItemAudioPlayer *)
-              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_5
-                        ((Object *)unaff_EDI.m_Index,pTVar6,
-                         CustomItemAudioPlayer_MethodInfo__UnityEngine__Object__Instantiate<CustomItemAudioPlayer>_CustomItemAudioPlayer__UnityEngine__Transform_
-                        );
-    (this->fields).hitAudioPlayer = pCVar4;
-    func_?(&(this->fields).hitAudioPlayer);
-    unaff_EDI.m_Index = (int32_t)(this->fields).fireAudioPlayer;
-    if ((TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->_1).
-        cctor_finished_or_no_cctor == 0) {
+      pCVar4 = (this->fields).fireAudioPlayer;
+      woID = (int32_t)&(this->fields).fireAudioPlayer;
+      pCVar5 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
+      if (pCVar5 == (Camera *)0x0) goto code_?;
+      pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                          ((Component *)pCVar5,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      pCVar4 = (CustomItemAudioPlayer *)
+                UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_5
+                          ((Object *)pCVar4,pTVar6,
+                           CustomItemAudioPlayer_MethodInfo__UnityEngine__Object__Instantiate<CustomItemAudioPlayer>_CustomItemAudioPlayer__UnityEngine__Transform_
+                          );
+      *(CustomItemAudioPlayer **)woID = pCVar4;
       func_?();
-    }
-    if ((Dictionary_2_System_Object_System_Object___Class *)unaff_EDI.m_Index ==
-        (Dictionary_2_System_Object_System_Object___Class *)0x0) goto code_?;
-    CustomItemAudioPlayer::CustomItemAudioPlayer_Initialize
-              ((CustomItemAudioPlayer *)unaff_EDI.m_Index,
-               TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->static_fields
-               ->fireSoundEffects,(MethodInfo *)0x0);
-    pCVar4 = (this->fields).chargeAudioPlayer;
-    if (pCVar4 == (CustomItemAudioPlayer *)0x0) goto code_?;
-    CustomItemAudioPlayer::CustomItemAudioPlayer_Initialize
-              (pCVar4,TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->
-                       static_fields->chargeSoundEffects,(MethodInfo *)0x0);
-    pCVar4 = (this->fields).hitAudioPlayer;
-    if (pCVar4 == (CustomItemAudioPlayer *)0x0) goto code_?;
-    CustomItemAudioPlayer::CustomItemAudioPlayer_Initialize
-              (pCVar4,TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->
-                       static_fields->hitSoundEffects,(MethodInfo *)0x0);
-    this_00 = (this->fields)._.settingsBase;
-    if (this_00 == (SettingsBase *)0x0) goto code_?;
-    SettingsBase::SettingsBase_Initialize
-              (this_00,woID,(GameObject *)0x0,MVWorldObjectDocumentationType__Enum_CustomGun,
-               (MethodInfo *)0x0);
-    pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-             (this->fields)._.itemData;
-    unaff_EDI.m_Index = (int32_t)(this->fields).nameInputField;
-    if (pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
-    goto code_?;
-    TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-             UIElements::TextureId]::
-             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                       (pDVar2,(Object *)StringLiteral_Name,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    if ((Dictionary_2_System_Object_System_Object___Class *)unaff_EDI.m_Index ==
-        (Dictionary_2_System_Object_System_Object___Class *)0x0) goto code_?;
-    value.m_Index = 0;
-    if (TVar3.m_Index == 0) {
-code_?:
-      SettingsInputField::SettingsInputField_Initialize
-                ((SettingsInputField *)unaff_EDI.m_Index,StringLiteral_Name,(String *)value.m_Index,
-                 (MethodInfo *)0x0);
-      pDVar1 = (this->fields)._.itemData;
-      pSVar7 = (this->fields).weaponDamageInputSlider;
-      pFVar8 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
-      mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
-      Func_2_Object_ValueTuple_2_Single_Single___ctor
-                (pFVar8,(Object *)0x0,
-                 MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
-                 ,(MethodInfo *)0x0);
-      unaff_EDI.m_Index = 0;
-      if (pSVar7 == (SettingsInputFieldSlider *)0x0) goto code_?;
-      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
-                (pSVar7,StringLiteral_Damage,pDVar1,
-                 (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar8,(MethodInfo *)0x0);
-      pDVar1 = (this->fields)._.itemData;
-      pSVar7 = (this->fields).maxAmmoInputSlider;
-      pFVar8 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
-      mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
-      Func_2_Object_ValueTuple_2_Single_Single___ctor
-                (pFVar8,(Object *)0x0,
-                 MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
-                 ,(MethodInfo *)0x0);
-      unaff_EDI.m_Index = 0;
-      if (pSVar7 == (SettingsInputFieldSlider *)0x0) goto code_?;
-      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
-                (pSVar7,StringLiteral_MaxAmmo,pDVar1,
-                 (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar8,(MethodInfo *)0x0);
-      pDVar1 = (this->fields)._.itemData;
-      pSVar7 = (this->fields).impulseStrengthInputSlider;
-      pFVar8 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
-      mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
-      Func_2_Object_ValueTuple_2_Single_Single___ctor
-                (pFVar8,(Object *)0x0,
-                 MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
-                 ,(MethodInfo *)0x0);
-      unaff_EDI.m_Index = 0;
-      if (pSVar7 == (SettingsInputFieldSlider *)0x0) goto code_?;
-      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
-                (pSVar7,StringLiteral_ImpulseStrength,pDVar1,
-                 (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar8,(MethodInfo *)0x0);
-      pDVar1 = (this->fields)._.itemData;
-      pSVar7 = (this->fields).recoilStrengthInputSlider;
-      pFVar8 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
-      mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
-      Func_2_Object_ValueTuple_2_Single_Single___ctor
-                (pFVar8,(Object *)0x0,
-                 MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
-                 ,(MethodInfo *)0x0);
-      unaff_EDI.m_Index = 0;
-      if (pSVar7 == (SettingsInputFieldSlider *)0x0) goto code_?;
-      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
-                (pSVar7,StringLiteral_RecoilStrength,pDVar1,
-                 (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar8,(MethodInfo *)0x0);
-      pDVar1 = (this->fields)._.itemData;
-      pSVar7 = (this->fields).attackAnimationInputSlider;
-      pFVar8 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
-      mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
-      Func_2_Object_ValueTuple_2_Single_Single___ctor
-                (pFVar8,(Object *)0x0,
-                 MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
-                 ,(MethodInfo *)0x0);
-      unaff_EDI.m_Index = 0;
-      if (pSVar7 == (SettingsInputFieldSlider *)0x0) goto code_?;
-      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
-                (pSVar7,StringLiteral_AttackAnimationTime,pDVar1,
-                 (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar8,(MethodInfo *)0x0);
-      pDVar1 = (this->fields)._.itemData;
-      pSVar7 = (this->fields).attackCooldownInputSlider;
-      pFVar8 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
-      mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
-      Func_2_Object_ValueTuple_2_Single_Single___ctor
-                (pFVar8,(Object *)0x0,
-                 MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
-                 ,(MethodInfo *)0x0);
-      unaff_EDI.m_Index = 0;
-      if (pSVar7 == (SettingsInputFieldSlider *)0x0) goto code_?;
-      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
-                (pSVar7,StringLiteral_AttackCooldown,pDVar1,
-                 (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar8,(MethodInfo *)0x0);
-      pDVar1 = (this->fields)._.itemData;
-      pSVar7 = (this->fields).spreadInputSlider;
-      pFVar8 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
-      mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
-      Func_2_Object_ValueTuple_2_Single_Single___ctor
-                (pFVar8,(Object *)0x0,
-                 MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
-                 ,(MethodInfo *)0x0);
-      unaff_EDI.m_Index = 0;
-      if (pSVar7 == (SettingsInputFieldSlider *)0x0) goto code_?;
-      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
-                (pSVar7,StringLiteral_Radius,pDVar1,
-                 (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar8,(MethodInfo *)0x0);
-      pDVar1 = (this->fields)._.itemData;
-      pSVar7 = (this->fields).fireSoundVolumeInputSlider;
-      pFVar8 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
-      mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
-      Func_2_Object_ValueTuple_2_Single_Single___ctor
-                (pFVar8,(Object *)0x0,
-                 MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
-                 ,(MethodInfo *)0x0);
-      unaff_EDI.m_Index = 0;
-      if (pSVar7 == (SettingsInputFieldSlider *)0x0) goto code_?;
-      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
-                (pSVar7,StringLiteral_FireSoundEffectVolume,pDVar1,
-                 (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar8,(MethodInfo *)0x0);
-      pDVar1 = (this->fields)._.itemData;
-      pSVar7 = (this->fields).hitSoundVolumeInputSlider;
-      pFVar8 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
-      mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
-      Func_2_Object_ValueTuple_2_Single_Single___ctor
-                (pFVar8,(Object *)0x0,
-                 MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
-                 ,(MethodInfo *)0x0);
-      unaff_EDI.m_Index = 0;
-      if (pSVar7 == (SettingsInputFieldSlider *)0x0) goto code_?;
-      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
-                (pSVar7,StringLiteral_HitSoundEffectVolume,pDVar1,
-                 (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar8,(MethodInfo *)0x0);
-      pDVar1 = (this->fields)._.itemData;
-      pSVar7 = (this->fields).movementSpeedInputSlider;
-      pFVar8 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
-      mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
-      Func_2_Object_ValueTuple_2_Single_Single___ctor
-                (pFVar8,(Object *)0x0,
-                 MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
-                 ,(MethodInfo *)0x0);
-      unaff_EDI.m_Index = 0;
-      if (pSVar7 == (SettingsInputFieldSlider *)0x0) goto code_?;
-      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
-                (pSVar7,StringLiteral_MovementSpeedWhileHeld,pDVar1,
-                 (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar8,(MethodInfo *)0x0);
-      pDVar1 = (this->fields)._.itemData;
-      pSVar7 = (this->fields).shotsPerBurstInputSlider;
-      pFVar8 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
-      mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
-      Func_2_Object_ValueTuple_2_Single_Single___ctor
-                (pFVar8,(Object *)0x0,
-                 MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
-                 ,(MethodInfo *)0x0);
-      unaff_EDI.m_Index = 0;
-      if (pSVar7 == (SettingsInputFieldSlider *)0x0) goto code_?;
-      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
-                (pSVar7,StringLiteral_ShotsPerBurst,pDVar1,
-                 (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar8,(MethodInfo *)0x0);
-      pDVar1 = (this->fields)._.itemData;
-      pSVar7 = (this->fields).burstCooldownBetweenShotsInputSlider;
-      pFVar8 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
-      mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
-      Func_2_Object_ValueTuple_2_Single_Single___ctor
-                (pFVar8,(Object *)0x0,
-                 MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
-                 ,(MethodInfo *)0x0);
-      unaff_EDI.m_Index = 0;
-      if (pSVar7 == (SettingsInputFieldSlider *)0x0) goto code_?;
-      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
-                (pSVar7,StringLiteral_BurstCooldownBetweenShots,pDVar1,
-                 (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar8,(MethodInfo *)0x0);
-      pDVar1 = (this->fields)._.itemData;
-      pSVar7 = (this->fields).muzzleFlareSizeInputSlider;
-      pFVar8 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
-      mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
-      Func_2_Object_ValueTuple_2_Single_Single___ctor
-                (pFVar8,(Object *)0x0,
-                 MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
-                 ,(MethodInfo *)0x0);
-      unaff_EDI.m_Index = 0;
-      if (pSVar7 == (SettingsInputFieldSlider *)0x0) goto code_?;
-      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
-                (pSVar7,StringLiteral_MuzzleFlareSize,pDVar1,
-                 (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar8,(MethodInfo *)0x0);
-      pDVar1 = (this->fields)._.itemData;
-      pSVar7 = (this->fields).projectilesPerShotInputSlider;
-      pFVar8 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
-      mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
-      Func_2_Object_ValueTuple_2_Single_Single___ctor
-                (pFVar8,(Object *)0x0,
-                 MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
-                 ,(MethodInfo *)0x0);
-      unaff_EDI.m_Index = 0;
-      if (pSVar7 == (SettingsInputFieldSlider *)0x0) goto code_?;
-      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
-                (pSVar7,StringLiteral_ProjectilesPerShot,pDVar1,
-                 (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar8,(MethodInfo *)0x0);
-      pDVar1 = (this->fields)._.itemData;
-      pSVar7 = (this->fields).chargeTimeInputSlider;
-      pFVar8 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
-      mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
-      Func_2_Object_ValueTuple_2_Single_Single___ctor
-                (pFVar8,(Object *)0x0,
-                 MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
-                 ,(MethodInfo *)0x0);
-      unaff_EDI.m_Index = 0;
-      if (pSVar7 == (SettingsInputFieldSlider *)0x0) goto code_?;
-      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
-                (pSVar7,StringLiteral_ChargeTime,pDVar1,
-                 (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar8,(MethodInfo *)0x0);
-      pDVar1 = (this->fields)._.itemData;
-      pSVar7 = (this->fields).chargeSoundVolumeInputSlider;
-      pFVar8 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
-      mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
-      Func_2_Object_ValueTuple_2_Single_Single___ctor
-                (pFVar8,(Object *)0x0,
-                 MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
-                 ,(MethodInfo *)0x0);
-      unaff_EDI.m_Index = 0;
-      if (pSVar7 == (SettingsInputFieldSlider *)0x0) goto code_?;
-      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
-                (pSVar7,StringLiteral_ChargeSoundEffectVolume,pDVar1,
-                 (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar8,(MethodInfo *)0x0);
-      pDVar1 = (this->fields)._.itemData;
-      pSVar7 = (this->fields).chargeZoomAmmountInputSlider;
-      pFVar8 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
-      mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
-      Func_2_Object_ValueTuple_2_Single_Single___ctor
-                (pFVar8,(Object *)0x0,
-                 MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
-                 ,(MethodInfo *)0x0);
-      unaff_EDI.m_Index = 0;
-      if (pSVar7 == (SettingsInputFieldSlider *)0x0) goto code_?;
-      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
-                (pSVar7,StringLiteral_ChargeZoomAmmount,pDVar1,
-                 (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar8,(MethodInfo *)0x0);
-      pDVar1 = (this->fields)._.itemData;
-      pSVar7 = (this->fields).chargeZoomTimeInputSlider;
-      pFVar8 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
-      mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
-      Func_2_Object_ValueTuple_2_Single_Single___ctor
-                (pFVar8,(Object *)0x0,
-                 MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
-                 ,(MethodInfo *)0x0);
-      unaff_EDI.m_Index = 0;
-      if (pSVar7 == (SettingsInputFieldSlider *)0x0) goto code_?;
-      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
-                (pSVar7,StringLiteral_ChargeZoomTime,pDVar1,
-                 (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar8,(MethodInfo *)0x0);
-      pDVar1 = (this->fields)._.itemData;
-      pSVar7 = (this->fields).chargeParticlesSizeInputSlider;
-      pFVar8 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
-      mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
-      Func_2_Object_ValueTuple_2_Single_Single___ctor
-                (pFVar8,(Object *)0x0,
-                 MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
-                 ,(MethodInfo *)0x0);
-      unaff_EDI.m_Index = 0;
-      if (pSVar7 == (SettingsInputFieldSlider *)0x0) goto code_?;
-      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
-                (pSVar7,StringLiteral_ChargeParticlesSize,pDVar1,
-                 (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar8,(MethodInfo *)0x0);
-      pDVar1 = (this->fields)._.itemData;
-      pSVar7 = (this->fields).rangeInputSlider;
-      pFVar8 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
-      mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
-      Func_2_Object_ValueTuple_2_Single_Single___ctor
-                (pFVar8,(Object *)0x0,
-                 MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
-                 ,(MethodInfo *)0x0);
-      unaff_EDI.m_Index = 0;
-      if (pSVar7 == (SettingsInputFieldSlider *)0x0) goto code_?;
-      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
-                (pSVar7,StringLiteral_Range,pDVar1,
-                 (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar8,(MethodInfo *)0x0);
-      pDVar1 = (this->fields)._.itemData;
-      pSVar7 = (this->fields).projectileSpeedInputSlider;
-      pFVar8 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
-      mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
-      Func_2_Object_ValueTuple_2_Single_Single___ctor
-                (pFVar8,(Object *)0x0,
-                 MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
-                 ,(MethodInfo *)0x0);
-      unaff_EDI.m_Index = 0;
-      if (pSVar7 == (SettingsInputFieldSlider *)0x0) goto code_?;
-      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
-                (pSVar7,StringLiteral_ProjectileSpeed,pDVar1,
-                 (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar8,(MethodInfo *)0x0);
-      pDVar1 = (this->fields)._.itemData;
-      pSVar7 = (this->fields).projectileSizeInputSlider;
-      pFVar8 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
-      mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
-      Func_2_Object_ValueTuple_2_Single_Single___ctor
-                (pFVar8,(Object *)0x0,
-                 MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
-                 ,(MethodInfo *)0x0);
-      unaff_EDI.m_Index = 0;
-      if (pSVar7 == (SettingsInputFieldSlider *)0x0) goto code_?;
-      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
-                (pSVar7,StringLiteral_ProjectileSize,pDVar1,
-                 (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar8,(MethodInfo *)0x0);
-      pDVar1 = (this->fields)._.itemData;
-      unaff_EDI.m_Index = (int32_t)(this->fields).sparksSizeInputSlider;
-      pFVar8 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
-      mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
-      Func_2_Object_ValueTuple_2_Single_Single___ctor
-                (pFVar8,(Object *)0x0,
-                 MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
-                 ,(MethodInfo *)0x0);
-      if ((Dictionary_2_System_Object_System_Object___Class *)unaff_EDI.m_Index ==
-          (Dictionary_2_System_Object_System_Object___Class *)0x0) goto code_?;
-      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
-                ((SettingsInputFieldSlider *)unaff_EDI.m_Index,StringLiteral_SparksSize,pDVar1,
-                 (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar8,(MethodInfo *)0x0);
-      pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-               (this->fields)._.itemData;
-      pSVar9 = (this->fields).fireModeDropdown;
-      if (pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
+      pCVar4 = (this->fields).chargeAudioPlayer;
+      pCVar5 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
+      if (pCVar5 == (Camera *)0x0) goto code_?;
+      pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                          ((Component *)pCVar5,(MethodInfo *)0x0);
+      pCVar4 = (CustomItemAudioPlayer *)
+                UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_5
+                          ((Object *)pCVar4,pTVar6,
+                           CustomItemAudioPlayer_MethodInfo__UnityEngine__Object__Instantiate<CustomItemAudioPlayer>_CustomItemAudioPlayer__UnityEngine__Transform_
+                          );
+      ppCVar7 = &(this->fields).chargeAudioPlayer;
+      *ppCVar7 = pCVar4;
+      func_?(ppCVar7);
+      pCVar4 = (this->fields).hitAudioPlayer;
+      pCVar5 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
+      if (pCVar5 == (Camera *)0x0) goto code_?;
+      pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                          ((Component *)pCVar5,(MethodInfo *)0x0);
+      pCVar4 = (CustomItemAudioPlayer *)
+                UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_5
+                          ((Object *)pCVar4,pTVar6,
+                           CustomItemAudioPlayer_MethodInfo__UnityEngine__Object__Instantiate<CustomItemAudioPlayer>_CustomItemAudioPlayer__UnityEngine__Transform_
+                          );
+      ppCVar7 = &(this->fields).hitAudioPlayer;
+      *ppCVar7 = pCVar4;
+      func_?(ppCVar7);
+      woID = *(int32_t *)woID;
+      if ((TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->_1).
+          cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      if ((CustomItemAudioPlayer *)woID == (CustomItemAudioPlayer *)0x0) goto code_?;
+      CustomItemAudioPlayer::CustomItemAudioPlayer_Initialize
+                ((CustomItemAudioPlayer *)woID,
+                 TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->
+                 static_fields->fireSoundEffects,(MethodInfo *)0x0);
+      pCVar4 = (this->fields).chargeAudioPlayer;
+      if (pCVar4 == (CustomItemAudioPlayer *)0x0) goto code_?;
+      CustomItemAudioPlayer::CustomItemAudioPlayer_Initialize
+                (pCVar4,TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->
+                         static_fields->chargeSoundEffects,(MethodInfo *)0x0);
+      pCVar4 = (this->fields).hitAudioPlayer;
+      if (pCVar4 == (CustomItemAudioPlayer *)0x0) goto code_?;
+      CustomItemAudioPlayer::CustomItemAudioPlayer_Initialize
+                (pCVar4,TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->
+                         static_fields->hitSoundEffects,(MethodInfo *)0x0);
+      this_00 = (this->fields)._.settingsBase;
+      if (this_00 == (SettingsBase *)0x0) goto code_?;
+      SettingsBase::SettingsBase_Initialize
+                (this_00,0,root,MVWorldObjectDocumentationType__Enum_CustomGun,(MethodInfo *)0x0);
+      woID = (int32_t)(this->fields).nameInputField;
+      if (((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)*ppDVar2 ==
+           (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
+         (TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                   Object,UnityEngine::UIElements::TextureId]::
+                   Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                             ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                              *ppDVar2,(Object *)StringLiteral_Name,
+                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                             ), (CustomItemAudioPlayer *)woID == (CustomItemAudioPlayer *)0x0))
       goto code_?;
-      unaff_EDI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                  Object,UnityEngine::UIElements::TextureId]::
-                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                            (pDVar2,(Object *)StringLiteral_FireMode,
-                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                            );
-      pSVar10 = TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->static_fields
-                ->fireModes;
-      if (pSVar10 == (String__Array *)0x0) goto code_?;
-      pLVar11 = Assets::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::SettingsUI::
-                SettingsUI_GetAcceptableIndexes
-                          ((SettingsUI *)this,pSVar10->max_length,(MethodInfo *)0x0);
-      if ((pSVar9 == (SettingsDropdown *)0x0) || (unaff_EDI.m_Index == 0)) goto code_?;
-      if (*(Il2CppClass **)(*(int *)unaff_EDI.m_Index + 0x20) ==
-          (TypeInfo__System__Int32->_0).element_class) {
-        piVar12 = (int32_t *)func_?();
-        SettingsDropdown::SettingsDropdown_Initialize
-                  (pSVar9,StringLiteral_FireMode,*piVar12,pSVar10,pLVar11,(MethodInfo *)0x0);
-        pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                 (this->fields)._.itemData;
-        pSVar9 = (this->fields).chargeSoundEffectDropdown;
-        if (pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
+      value.m_Index = 0;
+      if (TVar3.m_Index == 0) {
+code_?:
+        SettingsInputField::SettingsInputField_Initialize
+                  ((SettingsInputField *)woID,StringLiteral_Name,(String *)value.m_Index,
+                   (MethodInfo *)0x0);
+        pDVar1 = *ppDVar2;
+        pSVar8 = (this->fields).weaponDamageInputSlider;
+        pFVar9 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
+        mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
+        Func_2_Object_ValueTuple_2_Single_Single___ctor
+                  (pFVar9,(Object *)0x0,
+                   MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
+                   ,(MethodInfo *)0x0);
+        woID = 0;
+        if (pSVar8 == (SettingsInputFieldSlider *)0x0) goto code_?;
+        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
+                  (pSVar8,StringLiteral_Damage,pDVar1,
+                   (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar9,(MethodInfo *)0x0);
+        pDVar1 = *ppDVar2;
+        pSVar8 = (this->fields).maxAmmoInputSlider;
+        pFVar9 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
+        mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
+        Func_2_Object_ValueTuple_2_Single_Single___ctor
+                  (pFVar9,(Object *)0x0,
+                   MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
+                   ,(MethodInfo *)0x0);
+        woID = 0;
+        if (pSVar8 == (SettingsInputFieldSlider *)0x0) goto code_?;
+        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
+                  (pSVar8,StringLiteral_MaxAmmo,pDVar1,
+                   (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar9,(MethodInfo *)0x0);
+        pDVar1 = *ppDVar2;
+        pSVar8 = (this->fields).impulseStrengthInputSlider;
+        pFVar9 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
+        mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
+        Func_2_Object_ValueTuple_2_Single_Single___ctor
+                  (pFVar9,(Object *)0x0,
+                   MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
+                   ,(MethodInfo *)0x0);
+        woID = 0;
+        if (pSVar8 == (SettingsInputFieldSlider *)0x0) goto code_?;
+        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
+                  (pSVar8,StringLiteral_ImpulseStrength,pDVar1,
+                   (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar9,(MethodInfo *)0x0);
+        pDVar1 = *ppDVar2;
+        pSVar8 = (this->fields).recoilStrengthInputSlider;
+        pFVar9 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
+        mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
+        Func_2_Object_ValueTuple_2_Single_Single___ctor
+                  (pFVar9,(Object *)0x0,
+                   MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
+                   ,(MethodInfo *)0x0);
+        woID = 0;
+        if (pSVar8 == (SettingsInputFieldSlider *)0x0) goto code_?;
+        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
+                  (pSVar8,StringLiteral_RecoilStrength,pDVar1,
+                   (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar9,(MethodInfo *)0x0);
+        pDVar1 = *ppDVar2;
+        pSVar8 = (this->fields).attackAnimationInputSlider;
+        pFVar9 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
+        mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
+        Func_2_Object_ValueTuple_2_Single_Single___ctor
+                  (pFVar9,(Object *)0x0,
+                   MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
+                   ,(MethodInfo *)0x0);
+        woID = 0;
+        if (pSVar8 == (SettingsInputFieldSlider *)0x0) goto code_?;
+        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
+                  (pSVar8,StringLiteral_AttackAnimationTime,pDVar1,
+                   (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar9,(MethodInfo *)0x0);
+        pDVar1 = *ppDVar2;
+        pSVar8 = (this->fields).attackCooldownInputSlider;
+        pFVar9 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
+        mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
+        Func_2_Object_ValueTuple_2_Single_Single___ctor
+                  (pFVar9,(Object *)0x0,
+                   MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
+                   ,(MethodInfo *)0x0);
+        woID = 0;
+        if (pSVar8 == (SettingsInputFieldSlider *)0x0) goto code_?;
+        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
+                  (pSVar8,StringLiteral_AttackCooldown,pDVar1,
+                   (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar9,(MethodInfo *)0x0);
+        pDVar1 = *ppDVar2;
+        pSVar8 = (this->fields).spreadInputSlider;
+        pFVar9 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
+        mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
+        Func_2_Object_ValueTuple_2_Single_Single___ctor
+                  (pFVar9,(Object *)0x0,
+                   MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
+                   ,(MethodInfo *)0x0);
+        woID = 0;
+        if (pSVar8 == (SettingsInputFieldSlider *)0x0) goto code_?;
+        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
+                  (pSVar8,StringLiteral_Radius,pDVar1,
+                   (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar9,(MethodInfo *)0x0);
+        pDVar1 = *ppDVar2;
+        pSVar8 = (this->fields).fireSoundVolumeInputSlider;
+        pFVar9 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
+        mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
+        Func_2_Object_ValueTuple_2_Single_Single___ctor
+                  (pFVar9,(Object *)0x0,
+                   MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
+                   ,(MethodInfo *)0x0);
+        woID = 0;
+        if (pSVar8 == (SettingsInputFieldSlider *)0x0) goto code_?;
+        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
+                  (pSVar8,StringLiteral_FireSoundEffectVolume,pDVar1,
+                   (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar9,(MethodInfo *)0x0);
+        pDVar1 = *ppDVar2;
+        pSVar8 = (this->fields).hitSoundVolumeInputSlider;
+        pFVar9 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
+        mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
+        Func_2_Object_ValueTuple_2_Single_Single___ctor
+                  (pFVar9,(Object *)0x0,
+                   MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
+                   ,(MethodInfo *)0x0);
+        woID = 0;
+        if (pSVar8 == (SettingsInputFieldSlider *)0x0) goto code_?;
+        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
+                  (pSVar8,StringLiteral_HitSoundEffectVolume,pDVar1,
+                   (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar9,(MethodInfo *)0x0);
+        pDVar1 = *ppDVar2;
+        pSVar8 = (this->fields).movementSpeedInputSlider;
+        pFVar9 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
+        mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
+        Func_2_Object_ValueTuple_2_Single_Single___ctor
+                  (pFVar9,(Object *)0x0,
+                   MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
+                   ,(MethodInfo *)0x0);
+        woID = 0;
+        if (pSVar8 == (SettingsInputFieldSlider *)0x0) goto code_?;
+        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
+                  (pSVar8,StringLiteral_MovementSpeedWhileHeld,pDVar1,
+                   (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar9,(MethodInfo *)0x0);
+        pDVar1 = *ppDVar2;
+        pSVar8 = (this->fields).shotsPerBurstInputSlider;
+        pFVar9 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
+        mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
+        Func_2_Object_ValueTuple_2_Single_Single___ctor
+                  (pFVar9,(Object *)0x0,
+                   MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
+                   ,(MethodInfo *)0x0);
+        woID = 0;
+        if (pSVar8 == (SettingsInputFieldSlider *)0x0) goto code_?;
+        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
+                  (pSVar8,StringLiteral_ShotsPerBurst,pDVar1,
+                   (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar9,(MethodInfo *)0x0);
+        pDVar1 = *ppDVar2;
+        pSVar8 = (this->fields).burstCooldownBetweenShotsInputSlider;
+        pFVar9 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
+        mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
+        Func_2_Object_ValueTuple_2_Single_Single___ctor
+                  (pFVar9,(Object *)0x0,
+                   MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
+                   ,(MethodInfo *)0x0);
+        woID = 0;
+        if (pSVar8 == (SettingsInputFieldSlider *)0x0) goto code_?;
+        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
+                  (pSVar8,StringLiteral_BurstCooldownBetweenShots,pDVar1,
+                   (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar9,(MethodInfo *)0x0);
+        pDVar1 = *ppDVar2;
+        pSVar8 = (this->fields).muzzleFlareSizeInputSlider;
+        pFVar9 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
+        mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
+        Func_2_Object_ValueTuple_2_Single_Single___ctor
+                  (pFVar9,(Object *)0x0,
+                   MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
+                   ,(MethodInfo *)0x0);
+        woID = 0;
+        if (pSVar8 == (SettingsInputFieldSlider *)0x0) goto code_?;
+        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
+                  (pSVar8,StringLiteral_MuzzleFlareSize,pDVar1,
+                   (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar9,(MethodInfo *)0x0);
+        pDVar1 = *ppDVar2;
+        pSVar8 = (this->fields).projectilesPerShotInputSlider;
+        pFVar9 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
+        mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
+        Func_2_Object_ValueTuple_2_Single_Single___ctor
+                  (pFVar9,(Object *)0x0,
+                   MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
+                   ,(MethodInfo *)0x0);
+        woID = 0;
+        if (pSVar8 == (SettingsInputFieldSlider *)0x0) goto code_?;
+        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
+                  (pSVar8,StringLiteral_ProjectilesPerShot,pDVar1,
+                   (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar9,(MethodInfo *)0x0);
+        pDVar1 = *ppDVar2;
+        pSVar8 = (this->fields).chargeTimeInputSlider;
+        pFVar9 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
+        mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
+        Func_2_Object_ValueTuple_2_Single_Single___ctor
+                  (pFVar9,(Object *)0x0,
+                   MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
+                   ,(MethodInfo *)0x0);
+        woID = 0;
+        if (pSVar8 == (SettingsInputFieldSlider *)0x0) goto code_?;
+        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
+                  (pSVar8,StringLiteral_ChargeTime,pDVar1,
+                   (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar9,(MethodInfo *)0x0);
+        pDVar1 = *ppDVar2;
+        pSVar8 = (this->fields).chargeSoundVolumeInputSlider;
+        pFVar9 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
+        mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
+        Func_2_Object_ValueTuple_2_Single_Single___ctor
+                  (pFVar9,(Object *)0x0,
+                   MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
+                   ,(MethodInfo *)0x0);
+        woID = 0;
+        if (pSVar8 == (SettingsInputFieldSlider *)0x0) goto code_?;
+        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
+                  (pSVar8,StringLiteral_ChargeSoundEffectVolume,pDVar1,
+                   (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar9,(MethodInfo *)0x0);
+        pDVar1 = *ppDVar2;
+        pSVar8 = (this->fields).chargeZoomAmmountInputSlider;
+        pFVar9 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
+        mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
+        Func_2_Object_ValueTuple_2_Single_Single___ctor
+                  (pFVar9,(Object *)0x0,
+                   MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
+                   ,(MethodInfo *)0x0);
+        woID = 0;
+        if (pSVar8 == (SettingsInputFieldSlider *)0x0) goto code_?;
+        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
+                  (pSVar8,StringLiteral_ChargeZoomAmmount,pDVar1,
+                   (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar9,(MethodInfo *)0x0);
+        pDVar1 = *ppDVar2;
+        pSVar8 = (this->fields).chargeZoomTimeInputSlider;
+        pFVar9 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
+        mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
+        Func_2_Object_ValueTuple_2_Single_Single___ctor
+                  (pFVar9,(Object *)0x0,
+                   MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
+                   ,(MethodInfo *)0x0);
+        woID = 0;
+        if (pSVar8 == (SettingsInputFieldSlider *)0x0) goto code_?;
+        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
+                  (pSVar8,StringLiteral_ChargeZoomTime,pDVar1,
+                   (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar9,(MethodInfo *)0x0);
+        pDVar1 = *ppDVar2;
+        pSVar8 = (this->fields).chargeParticlesSizeInputSlider;
+        pFVar9 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
+        mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
+        Func_2_Object_ValueTuple_2_Single_Single___ctor
+                  (pFVar9,(Object *)0x0,
+                   MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
+                   ,(MethodInfo *)0x0);
+        woID = 0;
+        if (pSVar8 == (SettingsInputFieldSlider *)0x0) goto code_?;
+        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
+                  (pSVar8,StringLiteral_ChargeParticlesSize,pDVar1,
+                   (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar9,(MethodInfo *)0x0);
+        pDVar1 = *ppDVar2;
+        pSVar8 = (this->fields).rangeInputSlider;
+        pFVar9 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
+        mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
+        Func_2_Object_ValueTuple_2_Single_Single___ctor
+                  (pFVar9,(Object *)0x0,
+                   MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
+                   ,(MethodInfo *)0x0);
+        woID = 0;
+        if (pSVar8 == (SettingsInputFieldSlider *)0x0) goto code_?;
+        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
+                  (pSVar8,StringLiteral_Range,pDVar1,
+                   (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar9,(MethodInfo *)0x0);
+        pDVar1 = *ppDVar2;
+        pSVar8 = (this->fields).projectileSpeedInputSlider;
+        pFVar9 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
+        mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
+        Func_2_Object_ValueTuple_2_Single_Single___ctor
+                  (pFVar9,(Object *)0x0,
+                   MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
+                   ,(MethodInfo *)0x0);
+        woID = 0;
+        if (pSVar8 == (SettingsInputFieldSlider *)0x0) goto code_?;
+        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
+                  (pSVar8,StringLiteral_ProjectileSpeed,pDVar1,
+                   (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar9,(MethodInfo *)0x0);
+        pDVar1 = *ppDVar2;
+        pSVar8 = (this->fields).projectileSizeInputSlider;
+        pFVar9 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
+        mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
+        Func_2_Object_ValueTuple_2_Single_Single___ctor
+                  (pFVar9,(Object *)0x0,
+                   MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
+                   ,(MethodInfo *)0x0);
+        woID = 0;
+        if (pSVar8 == (SettingsInputFieldSlider *)0x0) goto code_?;
+        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
+                  (pSVar8,StringLiteral_ProjectileSize,pDVar1,
+                   (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar9,(MethodInfo *)0x0);
+        pDVar1 = *ppDVar2;
+        woID = (int32_t)(this->fields).sparksSizeInputSlider;
+        pFVar9 = (Func_2_Object_ValueTuple_2_Single_Single_ *)func_?();
+        mscorlib.dll::System::Func`2[Object,ValueTuple`2[Single,Single]]::
+        Func_2_Object_ValueTuple_2_Single_Single___ctor
+                  (pFVar9,(Object *)0x0,
+                   MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData__MinMaxValue_System__String_
+                   ,(MethodInfo *)0x0);
+        if ((CustomItemAudioPlayer *)woID == (CustomItemAudioPlayer *)0x0) goto code_?;
+        SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize
+                  ((SettingsInputFieldSlider *)woID,StringLiteral_SparksSize,pDVar1,
+                   (Func_2_String_ValueTuple_2_Single_Single_ *)pFVar9,(MethodInfo *)0x0);
+        pSVar10 = (this->fields).fireModeDropdown;
+        if ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)*ppDVar2 ==
+            (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
         goto code_?;
-        unaff_EDI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                    Object,UnityEngine::UIElements::TextureId]::
-                    Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                              (pDVar2,(Object *)StringLiteral_ChargeSoundEffect,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                              );
-        pSVar10 = TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->
-                  static_fields->chargeSoundEffects;
-        if (pSVar10 == (String__Array *)0x0) goto code_?;
-        pLVar11 = Assets::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::SettingsUI::
-                  SettingsUI_GetAcceptableIndexes
-                            ((SettingsUI *)this,pSVar10->max_length,(MethodInfo *)0x0);
-        if ((pSVar9 == (SettingsDropdown *)0x0) || (unaff_EDI.m_Index == 0)) goto code_?;
-        if (*(Il2CppClass **)(*(int *)unaff_EDI.m_Index + 0x20) !=
-            (TypeInfo__System__Int32->_0).element_class) goto code_?;
-        piVar12 = (int32_t *)func_?();
-        SettingsDropdown::SettingsDropdown_Initialize
-                  (pSVar9,StringLiteral_ChargeSoundEffect,*piVar12,pSVar10,pLVar11,(MethodInfo *)0x0
-                  );
-        pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                 (this->fields)._.itemData;
-        pSVar9 = (this->fields).fireSoundEffectDropdown;
-        if (pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
-        goto code_?;
-        unaff_EDI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                    Object,UnityEngine::UIElements::TextureId]::
-                    Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                              (pDVar2,(Object *)StringLiteral_FireSoundEffect,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                              );
-        pSVar10 = TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->
-                  static_fields->fireSoundEffects;
-        if (pSVar10 == (String__Array *)0x0) goto code_?;
-        pLVar11 = Assets::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::SettingsUI::
-                  SettingsUI_GetAcceptableIndexes
-                            ((SettingsUI *)this,pSVar10->max_length,(MethodInfo *)0x0);
-        if ((pSVar9 == (SettingsDropdown *)0x0) || (unaff_EDI.m_Index == 0)) goto code_?;
-        if (*(Il2CppClass **)(*(int *)unaff_EDI.m_Index + 0x20) !=
-            (TypeInfo__System__Int32->_0).element_class) goto code_?;
-        piVar12 = (int32_t *)func_?();
-        SettingsDropdown::SettingsDropdown_Initialize
-                  (pSVar9,StringLiteral_FireSoundEffect,*piVar12,pSVar10,pLVar11,(MethodInfo *)0x0);
-        pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                 (this->fields)._.itemData;
-        pSVar9 = (this->fields).hitSoundEffectDropdown;
-        if (pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
-        goto code_?;
-        unaff_EDI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                    Object,UnityEngine::UIElements::TextureId]::
-                    Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                              (pDVar2,(Object *)StringLiteral_HitSoundEffect,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                              );
-        pSVar10 = TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->
-                  static_fields->hitSoundEffects;
-        if (pSVar10 == (String__Array *)0x0) goto code_?;
-        pLVar11 = Assets::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::SettingsUI::
-                  SettingsUI_GetAcceptableIndexes
-                            ((SettingsUI *)this,pSVar10->max_length,(MethodInfo *)0x0);
-        if ((pSVar9 == (SettingsDropdown *)0x0) || (unaff_EDI.m_Index == 0)) goto code_?;
-        if (*(Il2CppClass **)(*(int *)unaff_EDI.m_Index + 0x20) !=
-            (TypeInfo__System__Int32->_0).element_class) goto code_?;
-        piVar12 = (int32_t *)func_?();
-        SettingsDropdown::SettingsDropdown_Initialize
-                  (pSVar9,StringLiteral_HitSoundEffect,*piVar12,pSVar10,pLVar11,(MethodInfo *)0x0);
-        pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                 (this->fields)._.itemData;
-        unaff_EDI.m_Index = (int32_t)(this->fields).thirdPersonCameraToggle;
-        if (pDVar2 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
-        goto code_?;
-        TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                 ::UIElements::TextureId]::
-                 Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                           (pDVar2,(Object *)StringLiteral_ThirdPersonCamera,
-                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                           );
-        if (((Dictionary_2_System_Object_System_Object___Class *)unaff_EDI.m_Index ==
-             (Dictionary_2_System_Object_System_Object___Class *)0x0) || (TVar3.m_Index == 0))
-        goto code_?;
-        if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) ==
-            (TypeInfo__System__Boolean->_0).element_class) {
-          pbVar13 = (bool *)func_?();
-          SettingsToggle::SettingsToggle_Initialize
-                    ((SettingsToggle *)unaff_EDI.m_Index,StringLiteral_ThirdPersonCamera,*pbVar13,
+        woID = (int32_t)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                        Object,UnityEngine::UIElements::TextureId]::
+                        Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                  ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                                   *ppDVar2,(Object *)StringLiteral_FireMode,
+                                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                  );
+        pSVar11 = TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->
+                  static_fields->fireModes;
+        if (((pSVar11 == (String__Array *)0x0) ||
+            (pLVar12 = Assets::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::SettingsUI::
+                       SettingsUI_GetAcceptableIndexes
+                                 ((SettingsUI *)this,pSVar11->max_length,(MethodInfo *)0x0),
+            pSVar10 == (SettingsDropdown *)0x0)) || (woID == 0)) goto code_?;
+        if (*(Il2CppClass **)(*(int *)woID + 0x20) == (TypeInfo__System__Int32->_0).element_class) {
+          piVar13 = (int32_t *)func_?();
+          SettingsDropdown::SettingsDropdown_Initialize
+                    (pSVar10,StringLiteral_FireMode,*piVar13,pSVar11,pLVar12,(MethodInfo *)0x0);
+          pSVar10 = (this->fields).chargeSoundEffectDropdown;
+          if ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)*ppDVar2 ==
+              (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
+          goto code_?;
+          woID = (int32_t)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                          Object,UnityEngine::UIElements::TextureId]::
+                          Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                    ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *
+                                     )*ppDVar2,(Object *)StringLiteral_ChargeSoundEffect,
+                                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                    );
+          pSVar11 = TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->
+                    static_fields->chargeSoundEffects;
+          if (((pSVar11 == (String__Array *)0x0) ||
+              (pLVar12 = Assets::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::SettingsUI::
+                         SettingsUI_GetAcceptableIndexes
+                                   ((SettingsUI *)this,pSVar11->max_length,(MethodInfo *)0x0),
+              pSVar10 == (SettingsDropdown *)0x0)) || (woID == 0)) goto code_?;
+          if (*(Il2CppClass **)(*(int *)woID + 0x20) != (TypeInfo__System__Int32->_0).element_class)
+          goto code_?;
+          piVar13 = (int32_t *)func_?();
+          SettingsDropdown::SettingsDropdown_Initialize
+                    (pSVar10,StringLiteral_ChargeSoundEffect,*piVar13,pSVar11,pLVar12,
                      (MethodInfo *)0x0);
-          pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                   (this->fields)._.itemData;
-          unaff_EDI.m_Index = (int32_t)(this->fields).muzzleFlareOnFireToggle;
-          if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-            TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                     Object,UnityEngine::UIElements::TextureId]::
-                     Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                               (pDVar2,(Object *)StringLiteral_MuzzleFlareOnFire,
-                                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                               );
-            if (((Dictionary_2_System_Object_System_Object___Class *)unaff_EDI.m_Index !=
-                 (Dictionary_2_System_Object_System_Object___Class *)0x0) && (TVar3.m_Index != 0))
-            {
+          pSVar10 = (this->fields).fireSoundEffectDropdown;
+          if ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)*ppDVar2 ==
+              (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
+          goto code_?;
+          woID = (int32_t)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                          Object,UnityEngine::UIElements::TextureId]::
+                          Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                    ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *
+                                     )*ppDVar2,(Object *)StringLiteral_FireSoundEffect,
+                                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                    );
+          pSVar11 = TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->
+                    static_fields->fireSoundEffects;
+          if (((pSVar11 == (String__Array *)0x0) ||
+              (pLVar12 = Assets::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::SettingsUI::
+                         SettingsUI_GetAcceptableIndexes
+                                   ((SettingsUI *)this,pSVar11->max_length,(MethodInfo *)0x0),
+              pSVar10 == (SettingsDropdown *)0x0)) || (woID == 0)) goto code_?;
+          if (*(Il2CppClass **)(*(int *)woID + 0x20) != (TypeInfo__System__Int32->_0).element_class)
+          goto code_?;
+          piVar13 = (int32_t *)func_?();
+          SettingsDropdown::SettingsDropdown_Initialize
+                    (pSVar10,StringLiteral_FireSoundEffect,*piVar13,pSVar11,pLVar12,(MethodInfo *)0x0
+                    );
+          pSVar10 = (this->fields).hitSoundEffectDropdown;
+          if ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)*ppDVar2 ==
+              (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
+          goto code_?;
+          woID = (int32_t)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                          Object,UnityEngine::UIElements::TextureId]::
+                          Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                    ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *
+                                     )*ppDVar2,(Object *)StringLiteral_HitSoundEffect,
+                                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                    );
+          pSVar11 = TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->
+                    static_fields->hitSoundEffects;
+          if (((pSVar11 == (String__Array *)0x0) ||
+              (pLVar12 = Assets::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::SettingsUI::
+                         SettingsUI_GetAcceptableIndexes
+                                   ((SettingsUI *)this,pSVar11->max_length,(MethodInfo *)0x0),
+              pSVar10 == (SettingsDropdown *)0x0)) || (woID == 0)) goto code_?;
+          if (*(Il2CppClass **)(*(int *)woID + 0x20) != (TypeInfo__System__Int32->_0).element_class)
+          goto code_?;
+          piVar13 = (int32_t *)func_?();
+          SettingsDropdown::SettingsDropdown_Initialize
+                    (pSVar10,StringLiteral_HitSoundEffect,*piVar13,pSVar11,pLVar12,(MethodInfo *)0x0)
+          ;
+          woID = (int32_t)(this->fields).thirdPersonCameraToggle;
+          if ((((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)*ppDVar2 ==
+                (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
+              (TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                        Object,UnityEngine::UIElements::TextureId]::
+                        Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                  ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                                   *ppDVar2,(Object *)StringLiteral_ThirdPersonCamera,
+                                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                  ), (CustomItemAudioPlayer *)woID == (CustomItemAudioPlayer *)0x0))
+             || (TVar3.m_Index == 0)) goto code_?;
+          if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) ==
+              (TypeInfo__System__Boolean->_0).element_class) {
+            pbVar14 = (bool *)func_?();
+            SettingsToggle::SettingsToggle_Initialize
+                      ((SettingsToggle *)woID,StringLiteral_ThirdPersonCamera,*pbVar14,
+                       (MethodInfo *)0x0);
+            woID = (int32_t)(this->fields).muzzleFlareOnFireToggle;
+            if ((((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)*ppDVar2 !=
+                  (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) &&
+                (TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                          Object,UnityEngine::UIElements::TextureId]::
+                          Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                    ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *
+                                     )*ppDVar2,(Object *)StringLiteral_MuzzleFlareOnFire,
+                                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                    ), (CustomItemAudioPlayer *)woID != (CustomItemAudioPlayer *)0x0
+                )) && (TVar3.m_Index != 0)) {
               if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) !=
                   (TypeInfo__System__Boolean->_0).element_class) goto code_?;
-              pbVar13 = (bool *)func_?();
+              pbVar14 = (bool *)func_?();
               SettingsToggle::SettingsToggle_Initialize
-                        ((SettingsToggle *)unaff_EDI.m_Index,StringLiteral_MuzzleFlareOnFire,
-                         *pbVar13,(MethodInfo *)0x0);
-              pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                       (this->fields)._.itemData;
-              unaff_EDI.m_Index = (int32_t)(this->fields).smokeOnFireToggle;
-              if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-                TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                         Object,UnityEngine::UIElements::TextureId]::
-                         Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                   (pDVar2,(Object *)StringLiteral_SmokeOnFire,
-                                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                   );
-                if (((Dictionary_2_System_Object_System_Object___Class *)unaff_EDI.m_Index !=
-                     (Dictionary_2_System_Object_System_Object___Class *)0x0) &&
+                        ((SettingsToggle *)woID,StringLiteral_MuzzleFlareOnFire,*pbVar14,
+                         (MethodInfo *)0x0);
+              woID = (int32_t)(this->fields).smokeOnFireToggle;
+              if ((((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)*ppDVar2 !=
+                    (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) &&
+                  (TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                            Object,UnityEngine::UIElements::TextureId]::
+                            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_
+                                        *)*ppDVar2,(Object *)StringLiteral_SmokeOnFire,
+                                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                      ),
+                  (CustomItemAudioPlayer *)woID != (CustomItemAudioPlayer *)0x0)) &&
+                 (TVar3.m_Index != 0)) {
+                if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) !=
+                    (TypeInfo__System__Boolean->_0).element_class) goto code_?;
+                pbVar14 = (bool *)func_?();
+                SettingsToggle::SettingsToggle_Initialize
+                          ((SettingsToggle *)woID,StringLiteral_SmokeOnFire,*pbVar14,
+                           (MethodInfo *)0x0);
+                woID = (int32_t)(this->fields).chargeEnabledToggle;
+                if ((((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)*ppDVar2 !=
+                      (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) &&
+                    (TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                              Object,UnityEngine::UIElements::TextureId]::
+                              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_
+                                          *)*ppDVar2,(Object *)StringLiteral_ChargeEnabled,
+                                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                        ),
+                    (CustomItemAudioPlayer *)woID != (CustomItemAudioPlayer *)0x0)) &&
                    (TVar3.m_Index != 0)) {
                   if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) !=
                       (TypeInfo__System__Boolean->_0).element_class) goto code_?;
-                  pbVar13 = (bool *)func_?();
+                  pbVar14 = (bool *)func_?();
                   SettingsToggle::SettingsToggle_Initialize
-                            ((SettingsToggle *)unaff_EDI.m_Index,StringLiteral_SmokeOnFire,*pbVar13,
+                            ((SettingsToggle *)woID,StringLiteral_ChargeEnabled,*pbVar14,
                              (MethodInfo *)0x0);
-                  pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                           (this->fields)._.itemData;
-                  unaff_EDI.m_Index = (int32_t)(this->fields).chargeEnabledToggle;
-                  if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
-                  {
-                    TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                             Object,UnityEngine::UIElements::TextureId]::
-                             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                       (pDVar2,(Object *)StringLiteral_ChargeEnabled,
-                                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                       );
-                    if (((Dictionary_2_System_Object_System_Object___Class *)unaff_EDI.m_Index !=
-                         (Dictionary_2_System_Object_System_Object___Class *)0x0) &&
+                  woID = (int32_t)(this->fields).chargeParticlesToggle;
+                  if ((((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)*ppDVar2 !=
+                        (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) &&
+                      (TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                                Object,UnityEngine::UIElements::TextureId]::
+                                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_
+                                            *)*ppDVar2,
+                                           (Object *)StringLiteral_ChargeParticlesEnabled,
+                                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                          ),
+                      (CustomItemAudioPlayer *)woID != (CustomItemAudioPlayer *)0x0)) &&
+                     (TVar3.m_Index != 0)) {
+                    if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) !=
+                        (TypeInfo__System__Boolean->_0).element_class) goto code_?;
+                    pbVar14 = (bool *)func_?();
+                    SettingsToggle::SettingsToggle_Initialize
+                              ((SettingsToggle *)woID,StringLiteral_ChargeParticlesEnabled,*pbVar14,
+                               (MethodInfo *)0x0);
+                    woID = (int32_t)(this->fields).chargeZoomToggle;
+                    if ((((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)*ppDVar2
+                          != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) &&
+                        (TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                                  Object,UnityEngine::UIElements::TextureId]::
+                                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                            ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_
+                                              *)*ppDVar2,(Object *)StringLiteral_ChargeZoomEnabled,
+                                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                            ),
+                        (CustomItemAudioPlayer *)woID != (CustomItemAudioPlayer *)0x0)) &&
                        (TVar3.m_Index != 0)) {
                       if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) !=
                           (TypeInfo__System__Boolean->_0).element_class) goto code_?;
-                      pbVar13 = (bool *)func_?();
+                      pbVar14 = (bool *)func_?();
                       SettingsToggle::SettingsToggle_Initialize
-                                ((SettingsToggle *)unaff_EDI.m_Index,StringLiteral_ChargeEnabled,
-                                 *pbVar13,(MethodInfo *)0x0);
-                      pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                               (this->fields)._.itemData;
-                      unaff_EDI.m_Index = (int32_t)(this->fields).chargeParticlesToggle;
-                      if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                                    0x0) {
-                        TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                                 Object,UnityEngine::UIElements::TextureId]::
-                                 Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                           (pDVar2,(Object *)StringLiteral_ChargeParticlesEnabled,
-                                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                           );
-                        if (((Dictionary_2_System_Object_System_Object___Class *)unaff_EDI.m_Index
-                             != (Dictionary_2_System_Object_System_Object___Class *)0x0) &&
-                           (TVar3.m_Index != 0)) {
-                          if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) !=
-                              (TypeInfo__System__Boolean->_0).element_class) goto code_?;
-                          pbVar13 = (bool *)func_?();
-                          SettingsToggle::SettingsToggle_Initialize
-                                    ((SettingsToggle *)unaff_EDI.m_Index,
-                                     StringLiteral_ChargeParticlesEnabled,*pbVar13,(MethodInfo *)0x0
-                                    );
-                          pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                                   (this->fields)._.itemData;
-                          unaff_EDI.m_Index = (int32_t)(this->fields).chargeZoomToggle;
-                          if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_
-                                         *)0x0) {
-                            TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System
-                                     ::Object,UnityEngine::UIElements::TextureId]::
-                                     Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                               (pDVar2,(Object *)StringLiteral_ChargeZoomEnabled,
-                                                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                               );
-                            if (((Dictionary_2_System_Object_System_Object___Class *)
-                                 unaff_EDI.m_Index !=
-                                 (Dictionary_2_System_Object_System_Object___Class *)0x0) &&
-                               (TVar3.m_Index != 0)) {
-                              if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) !=
-                                  (TypeInfo__System__Boolean->_0).element_class)
-                              goto code_?;
-                              pbVar13 = (bool *)func_?();
-                              SettingsToggle::SettingsToggle_Initialize
-                                        ((SettingsToggle *)unaff_EDI.m_Index,
-                                         StringLiteral_ChargeZoomEnabled,*pbVar13,(MethodInfo *)0x0)
-                              ;
-                              pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_
-                                        *)(this->fields)._.itemData;
-                              unaff_EDI.m_Index = (int32_t)(this->fields).sparksOnHitToggle;
-                              if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_
-                                             *)0x0) {
-                                TVar3 = mscorlib.dll::System::Collections::Generic::
-                                         Dictionary`2[System::Object,UnityEngine::UIElements::
-                                         TextureId]::
-                                         Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                                   (pDVar2,(Object *)StringLiteral_SparksOnHit,
-                                                                                                        
-                                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                                  );
-                                if (((Dictionary_2_System_Object_System_Object___Class *)
-                                     unaff_EDI.m_Index !=
-                                     (Dictionary_2_System_Object_System_Object___Class *)0x0) &&
-                                   (TVar3.m_Index != 0)) {
-                                  if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) !=
-                                      (TypeInfo__System__Boolean->_0).element_class)
-                                  goto code_?;
-                                  pbVar13 = (bool *)func_?();
-                                  SettingsToggle::SettingsToggle_Initialize
-                                            ((SettingsToggle *)unaff_EDI.m_Index,
-                                             StringLiteral_SparksOnHit,*pbVar13,(MethodInfo *)0x0);
-                                  pIVar14 = (this->fields).muzzleFlareColorImage;
-                                  pDVar1 = (this->fields)._.itemData;
-                                  if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
-                                    func_?(TypeInfo__Extensions);
-                                  }
-                                  pCVar15 = Extensions::Extensions_GetColor
-                                                      ((Color *)&stack0xffffffe8,pDVar1,
-                                                       StringLiteral_MuzzleFlareColor,
-                                                       (MethodInfo *)0x0);
-                                  unaff_EDI.m_Index = 0;
-                                  if (pIVar14 != (Image *)0x0) {
-                                    (*(code *)(pIVar14->klass->vtable).set_color.method)
-                                              (pIVar14,pCVar15->r,pCVar15->g,pCVar15->b,pCVar15->a);
-                                    pIVar14 = (this->fields).chargeParticlesColorImage;
-                                    pCVar15 = Extensions::Extensions_GetColor
-                                                        ((Color *)&stack0xffffffe8,
-                                                         (this->fields)._.itemData,
-                                                         StringLiteral_ChargeParticlesColor,
-                                                         (MethodInfo *)0x0);
-                                    unaff_EDI.m_Index = 0;
-                                    if (pIVar14 != (Image *)0x0) {
-                                      (*(code *)(pIVar14->klass->vtable).set_color.method)
-                                                (pIVar14,pCVar15->r,pCVar15->g,pCVar15->b,pCVar15->a)
-                                      ;
-                                      pIVar14 = (this->fields).projectileColorImage;
-                                      pCVar15 = Extensions::Extensions_GetColor
-                                                          ((Color *)&stack0xffffffe8,
-                                                           (this->fields)._.itemData,
-                                                           StringLiteral_ProjectileColor,
-                                                           (MethodInfo *)0x0);
-                                      unaff_EDI.m_Index = 0;
-                                      if (pIVar14 != (Image *)0x0) {
-                                        (*(code *)(pIVar14->klass->vtable).set_color.method)
-                                                  (pIVar14,pCVar15->r,pCVar15->g,pCVar15->b,
-                                                   pCVar15->a);
-                                        pIVar14 = (this->fields).projectileTrailColorImage;
-                                        pCVar15 = Extensions::Extensions_GetColor
-                                                            ((Color *)&stack0xffffffe8,
-                                                             (this->fields)._.itemData,
-                                                             StringLiteral_ProjectileTrailColor,
-                                                             (MethodInfo *)0x0);
-                                        unaff_EDI.m_Index = 0;
-                                        if (pIVar14 != (Image *)0x0) {
-                                          (*(code *)(pIVar14->klass->vtable).set_color.method)
-                                                    (pIVar14,pCVar15->r,pCVar15->g,pCVar15->b,
-                                                     pCVar15->a);
-                                          pIVar14 = (this->fields).sparksColorImage;
-                                          pCVar15 = Extensions::Extensions_GetColor
-                                                              ((Color *)&stack0xffffffe8,
-                                                               (this->fields)._.itemData,
-                                                               StringLiteral_SparksColor,
-                                                               (MethodInfo *)0x0);
-                                          unaff_EDI.m_Index = 0;
-                                          if (pIVar14 != (Image *)0x0) {
-                                            (*(code *)(pIVar14->klass->vtable).set_color.method)
-                                                      (pIVar14,pCVar15->r,pCVar15->g,pCVar15->b,
-                                                       pCVar15->a);
-                                            CustomGunSettings_OnSettingsChangedStateUpdate
-                                                      (this,(MethodInfo *)0x0);
-                                            return;
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
+                                ((SettingsToggle *)woID,StringLiteral_ChargeZoomEnabled,*pbVar14,
+                                 (MethodInfo *)0x0);
+                      woID = (int32_t)(this->fields).sparksOnHitToggle;
+                      if ((((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                            *ppDVar2 !=
+                            (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) &&
+                          (TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System
+                                    ::Object,UnityEngine::UIElements::TextureId]::
+                                    Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                              ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_
+                                                *)*ppDVar2,(Object *)StringLiteral_SparksOnHit,
+                                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                              ),
+                          (CustomItemAudioPlayer *)woID != (CustomItemAudioPlayer *)0x0)) &&
+                         (TVar3.m_Index != 0)) {
+                        if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) !=
+                            (TypeInfo__System__Boolean->_0).element_class) goto code_?;
+                        pbVar14 = (bool *)func_?();
+                        SettingsToggle::SettingsToggle_Initialize
+                                  ((SettingsToggle *)woID,StringLiteral_SparksOnHit,*pbVar14,
+                                   (MethodInfo *)0x0);
+                        pDVar1 = *ppDVar2;
+                        pIVar15 = (this->fields).muzzleFlareColorImage;
+                        if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
+                          func_?(TypeInfo__Extensions);
+                        }
+                        pCVar16 = Extensions::Extensions_GetColor
+                                            ((Color *)&stack0xffffffe4,pDVar1,
+                                             StringLiteral_MuzzleFlareColor,(MethodInfo *)0x0);
+                        woID = 0;
+                        if (pIVar15 != (Image *)0x0) {
+                          (*(code *)(pIVar15->klass->vtable).set_color.method)
+                                    (pIVar15,pCVar16->r,pCVar16->g,pCVar16->b,pCVar16->a);
+                          pIVar15 = (this->fields).chargeParticlesColorImage;
+                          pCVar16 = Extensions::Extensions_GetColor
+                                              ((Color *)&stack0xffffffe4,*ppDVar2,
+                                               StringLiteral_ChargeParticlesColor,(MethodInfo *)0x0)
+                          ;
+                          woID = 0;
+                          if (pIVar15 != (Image *)0x0) {
+                            (*(code *)(pIVar15->klass->vtable).set_color.method)
+                                      (pIVar15,pCVar16->r,pCVar16->g,pCVar16->b,pCVar16->a);
+                            pIVar15 = (this->fields).projectileColorImage;
+                            pCVar16 = Extensions::Extensions_GetColor
+                                                ((Color *)&stack0xffffffe4,*ppDVar2,
+                                                 StringLiteral_ProjectileColor,(MethodInfo *)0x0);
+                            woID = 0;
+                            if (pIVar15 != (Image *)0x0) {
+                              (*(code *)(pIVar15->klass->vtable).set_color.method)
+                                        (pIVar15,pCVar16->r,pCVar16->g,pCVar16->b,pCVar16->a);
+                              pIVar15 = (this->fields).projectileTrailColorImage;
+                              pCVar16 = Extensions::Extensions_GetColor
+                                                  ((Color *)&stack0xffffffe4,*ppDVar2,
+                                                   StringLiteral_ProjectileTrailColor,
+                                                   (MethodInfo *)0x0);
+                              woID = 0;
+                              if (pIVar15 != (Image *)0x0) {
+                                (*(code *)(pIVar15->klass->vtable).set_color.method)
+                                          (pIVar15,pCVar16->r,pCVar16->g,pCVar16->b,pCVar16->a);
+                                pIVar15 = (this->fields).sparksColorImage;
+                                pCVar16 = Extensions::Extensions_GetColor
+                                                    ((Color *)&stack0xffffffe4,*ppDVar2,
+                                                     StringLiteral_SparksColor,(MethodInfo *)0x0);
+                                woID = 0;
+                                if (pIVar15 != (Image *)0x0) {
+                                  (*(code *)(pIVar15->klass->vtable).set_color.method)
+                                            (pIVar15,pCVar16->r,pCVar16->g,pCVar16->b,pCVar16->a);
+                                  CustomGunSettings_OnSettingsChangedStateUpdate
+                                            (this,(MethodInfo *)0x0);
+                                  return;
                                 }
                               }
                             }
@@ -817,47 +754,63 @@ code_?:
                 }
               }
             }
+            goto code_?;
           }
           goto code_?;
         }
         goto code_?;
       }
+      if (*(String__Class **)TVar3.m_Index == TypeInfo__System__String) {
+        value = TVar3;
+      }
+      if ((String *)value.m_Index != (String *)0x0) goto code_?;
       goto code_?;
     }
-    if (*(String__Class **)TVar3.m_Index == TypeInfo__System__String) {
-      value = TVar3;
-    }
-    if ((String *)value.m_Index != (String *)0x0) goto code_?;
+    bVar17 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1)
+            .naturalAligment;
+    if ((*(byte *)(*(int *)TVar3.m_Index + 0xb8) < bVar17) ||
+       (*(Dictionary_2_System_Object_System_Object___Class **)
+         (*(int *)(*(int *)TVar3.m_Index + 100) + -4 + (uint)bVar17 * 4) !=
+        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
+    goto code_?;
+    (this->fields)._.itemData = (Dictionary_2_System_Object_System_Object_ *)TVar3.m_Index;
+    bVar17 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1)
+            .naturalAligment;
+    if ((bVar17 <= *(byte *)(*(int *)TVar3.m_Index + 0xb8)) &&
+       (*(Dictionary_2_System_Object_System_Object___Class **)
+         (*(int *)(*(int *)TVar3.m_Index + 100) + -4 + (uint)bVar17 * 4) ==
+        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
+    goto code_?;
   }
   else {
     this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    if (this_01 != (MVWorldObjectClientManager *)0x0) {
-      pMVar16 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                         (this_01,woID,(MethodInfo *)0x0);
-      if (pMVar16 != (MVWorldObject *)0x0) {
-        (this->fields)._.data = (pMVar16->fields).data;
-        func_?(&(this->fields)._.data);
-        pDVar1 = (Dictionary_2_System_Object_System_Object_ *)
-                 (*(code *)(this->klass->vtable).ReadWorldObjectItemData.method)
-                           (this,(this->fields)._.data,
-                            (this->klass->vtable).OnSettingChanged_1.methodPtr);
-        (this->fields)._.itemData = pDVar1;
-        goto code_?;
-      }
+    if ((this_01 != (MVWorldObjectClientManager *)0x0) &&
+       (pMVar18 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                           (this_01,woID,(MethodInfo *)0x0), pMVar18 != (MVWorldObject *)0x0)) {
+      ppDVar2 = &(this->fields)._.data;
+      *ppDVar2 = (pMVar18->fields).data;
+      func_?(ppDVar2);
+      pDVar1 = (Dictionary_2_System_Object_System_Object_ *)
+               (*(code *)(this->klass->vtable).ReadWorldObjectItemData.method)
+                         (this,*ppDVar2,(this->klass->vtable).OnSettingChanged_1.methodPtr);
+      (this->fields)._.itemData = pDVar1;
+      goto code_?;
     }
 code_?:
     TVar3.m_Index = func_?();
 code_?:
     func_?(TVar3.m_Index);
 code_?:
-    func_?(unaff_EDI.m_Index);
+    func_?(woID);
     TVar3.m_Index = extraout_ECX;
+code_?:
+    func_?(TVar3.m_Index);
   }
-  func_?(TVar3.m_Index);
+  func_?();
 code_?:
   func_?();
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  pcVar19 = (code *)swi(3);
+  (*pcVar19)();
   return;
 }
 
@@ -1087,7 +1040,9 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Custo
             this_02 = (NotImplementedException *)func_?();
             mscorlib.dll::System::NotImplementedException::NotImplementedException__ctor
                       (this_02,(MethodInfo *)0x0);
-            func_?();
+            func_?(&
+                            MethodInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__CustomGuns__CustomGunSettings__OnColorEdited__
+                           );
             func_?();
             goto code_?;
           }
@@ -1138,17 +1093,18 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Custo
                       (pGVar4,0,(MethodInfo *)0x0);
             this_00 = (this->fields)._.canvas;
             if (this_00 != (RectTransform *)0x0) {
-              uVar9 = 0;
               UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_sizeDelta
                         (this_00,value,(MethodInfo *)0x0);
+              ppSVar9 = &(this->fields)._.editingColorKey;
+              pSVar1 = *ppSVar9;
               hashtable = (this->fields)._.itemData;
-              pSVar1 = (this->fields)._.editingColorKey;
+              puVar10 = &UNK_?;
               if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
                 puVar8 = &UNK_?;
                 func_?(TypeInfo__Extensions);
               }
               color.g = fVar6;
-              color.r = (float)uVar9;
+              color.r = (float)puVar10;
               color.b = fVar7;
               color.a = (float)puVar8;
               Extensions::Extensions_SetColor(hashtable,pSVar1,color,(MethodInfo *)0x0);
@@ -1157,7 +1113,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Custo
                 SettingsBase::SettingsBase_OnSettingChanged
                           (this_01,StringLiteral_itemData,(Object *)(this->fields)._.itemData,
                            (MethodInfo *)0x0);
-                (this->fields)._.editingColorKey = ::StringLiteral__;
+                *ppSVar9 = ::StringLiteral__;
                 func_?();
                 return;
               }
@@ -1169,8 +1125,8 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Custo
   }
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -1218,7 +1174,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Custo
       pSVar2 = (this->fields)._.colorB;
       if (pSVar2 != (SettingsSlider *)0x0) {
         SettingsSlider::SettingsSlider_Initialize
-                  (pSVar2,StringLiteral_colorB,4.008292e-29,0.0,1.0,(MethodInfo *)0x0);
+                  (pSVar2,StringLiteral_colorB,3.9973142e-29,0.0,1.0,(MethodInfo *)0x0);
         pSVar2 = (this->fields)._.colorA;
         if (pSVar2 != (SettingsSlider *)0x0) {
           SettingsSlider::SettingsSlider_Initialize
@@ -2226,28 +2182,27 @@ Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::CustomGuns
     func_?(&StringLiteral_itemData);
     cRam_? = '\x01';
   }
-  pOStack_2 = (Object__Class *)0x0;
   this_00 = (RegexCharClass_SingleRange)
             (*(code *)(this->klass->vtable).get_DefaultItemData.method)
                       (this,(this->klass->vtable).set_DefaultItemData.methodPtr);
   if (woData != (Dictionary_2_System_Object_System_Object_ *)0x0) {
     method_00 = this_00;
-    bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
             UIElements::TextureId]::
             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                       ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)woData,
                        (Object *)StringLiteral_itemData,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
-    if (bVar3 == 0) {
+    if (bVar2 == 0) {
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
                 (woData,(Object *)StringLiteral_itemData,(Object *)(this->fields)._.itemData,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                 );
-      pDVar4 = (this->fields)._.itemData;
+      pDVar3 = (this->fields)._.itemData;
       *unaff_FS_OFFSET = puVar1;
-      return pDVar4;
+      return pDVar3;
     }
     hashtable = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
                 ::UIElements::TextureId]::
@@ -2256,16 +2211,15 @@ Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::CustomGuns
                            (Object *)StringLiteral_itemData,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                           );
-    if ((hashtable.m_Index != 0) &&
-       ((*(byte *)(*(int *)hashtable.m_Index + 0xb8) <
-         (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-         naturalAligment ||
-        (*(Dictionary_2_System_Object_System_Object___Class **)
-          (*(int *)(*(int *)hashtable.m_Index + 100) + -4 +
-          (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                ->_1).naturalAligment * 4) !=
-         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))))
-    goto code_?;
+    if (hashtable.m_Index != 0) {
+      bVar4 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
+              _1).naturalAligment;
+      if ((*(byte *)(*(int *)hashtable.m_Index + 0xb8) < bVar4) ||
+         (*(Dictionary_2_System_Object_System_Object___Class **)
+           (*(int *)(*(int *)hashtable.m_Index + 100) + -4 + (uint)bVar4 * 4) !=
+          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
+      goto code_?;
+    }
     this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
               Assets::Scripts::WorldObjectTypes::CustomGun::CustomGunData+Keys::
               CustomGunData_Keys_GetKeys((MethodInfo *)0x0);
@@ -2277,19 +2231,19 @@ Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::CustomGuns
                            *)&pLStack_6,this_01,
                           MethodInfo__System__Collections__Generic__List<System::String>__GetEnumerator__
                          );
-      pOStack_2 = (Object__Class *)pLVar5->_list;
+      pOStack_7 = (Object__Class *)pLVar5->_list;
       key = pLVar5->_current;
       while( true ) {
         pLStack_6 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                      &UNK_?;
-        bVar3 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+        bVar2 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
                 List_1_T_Enumerator_System_Object__MoveNext
-                          ((List_1_T_Enumerator_System_Object_ *)&pOStack_2,
+                          ((List_1_T_Enumerator_System_Object_ *)&pOStack_7,
                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<System::String>__MoveNext__
                           );
-        if (bVar3 == 0) {
+        if (bVar2 == 0) {
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&pOStack_2,
+                    ((Object *)&pOStack_7,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<System::String>__Dispose__
                      ,(MethodInfo *)method_00);
@@ -2297,7 +2251,7 @@ Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::CustomGuns
           return (Dictionary_2_System_Object_System_Object_ *)this_00;
         }
         if (method_00 == (RegexCharClass_SingleRange)0x0) break;
-        RVar7 = key;
+        RVar8 = key;
         defaultValue = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                        Object,UnityEngine::UIElements::TextureId]::
                        Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
@@ -2321,7 +2275,7 @@ Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::CustomGuns
                   ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)key,value,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
                   );
-        key = RVar7;
+        key = RVar8;
       }
     }
   }
@@ -2329,9 +2283,9 @@ Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::CustomGuns
   func_?();
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  pDVar4 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar8)();
-  return pDVar4;
+  pcVar9 = (code *)swi(3);
+  pDVar3 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar9)();
+  return pDVar3;
 }
 
 
@@ -2345,8 +2299,9 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Custo
     func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  (this->fields)._.editingColorKey = ::StringLiteral__;
-  func_?(&(this->fields)._.editingColorKey,::StringLiteral__);
+  ppSVar1 = &(this->fields)._.editingColorKey;
+  *ppSVar1 = ::StringLiteral__;
+  func_?(ppSVar1,::StringLiteral__);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

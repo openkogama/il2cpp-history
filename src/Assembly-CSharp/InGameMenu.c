@@ -26,13 +26,14 @@ void Assembly-CSharp.dll::InGameMenu::InGameMenu_Initialize(InGameMenu *this,Met
     bVar3 = false;
   }
   this_00 = (this->fields).playReward;
-  if ((this_00 == (TimedPlayReward *)0x0) ||
-     (pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)this_00,(MethodInfo *)0x0), pGVar4 == (GameObject *)0x0)) {
+  if (this_00 == (TimedPlayReward *)0x0) {
 code_?:
     func_?();
   }
   else {
+    pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this_00,(MethodInfo *)0x0);
+    if (pGVar4 == (GameObject *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
               (pGVar4,0,(MethodInfo *)0x0);
     if (bVar1 == 0) {
@@ -66,29 +67,26 @@ code_?:
               (pGVar4,value,(MethodInfo *)0x0);
     if (cVar6 == '\0') {
       if (bVar1 == 0) {
-        this._0_1_ = 1;
+        bVar1 = 1;
       }
       else {
-        this._0_1_ = 0;
-        if (uVar7 != 0) {
-          this._0_1_ = bVar1;
-        }
+        bVar1 = -(uVar7 != 0) & bVar1;
       }
     }
     else {
-      this._0_1_ = 0;
+      bVar1 = 0;
     }
     pGVar4 = (this_02->fields).accessoryShopButton;
     if (pGVar4 == (GameObject *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (pGVar4,(bool)this,(MethodInfo *)0x0);
+              (pGVar4,bVar1,(MethodInfo *)0x0);
     pGVar4 = (this_02->fields).adminObserveButton;
     this_03 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (((this_03 == (MVNetworkGame *)0x0) ||
-        (this_04 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_03,(MethodInfo *)0x0),
-        this_04 == (MVLocalPlayer *)0x0)) ||
-       (MVLocalPlayer::MVLocalPlayer_get_IsAdmin(this_04,(MethodInfo *)0x0),
-       pGVar4 == (GameObject *)0x0)) goto code_?;
+    if (this_03 == (MVNetworkGame *)0x0) goto code_?;
+    this_04 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_03,(MethodInfo *)0x0);
+    if (this_04 == (MVLocalPlayer *)0x0) goto code_?;
+    MVLocalPlayer::MVLocalPlayer_get_IsAdmin(this_04,(MethodInfo *)0x0);
+    if (pGVar4 == (GameObject *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
               (pGVar4,0,(MethodInfo *)0x0);
     if (!bVar3) {
@@ -97,42 +95,49 @@ code_?:
         func_?(&TypeInfo__GamePassesManager);
         cRam_? = '\x01';
       }
-      if (TypeInfo__GamePassesManager->static_fields->_GamePassesActive_k__BackingField != 0) {
-        pGVar8 = (this_02->fields).gamePassesUIPrefab;
-        pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                           ((Component *)this_02,(MethodInfo *)0x0);
+      if (TypeInfo__GamePassesManager->static_fields->_GamePassesActive_k__BackingField == 0) {
+code_?:
+        pGVar4 = (this_02->fields).winningConditionDebriefing;
+        if (pGVar4 != (GameObject *)0x0) {
+          pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                              (pGVar4,(MethodInfo *)0x0);
+          if (pTVar8 != (Transform *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetAsLastSibling
+                      (pTVar8,(MethodInfo *)0x0);
+            return;
+          }
+        }
+      }
+      else {
+        pGVar9 = (this_02->fields).gamePassesUIPrefab;
+        pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                            ((Component *)this_02,(MethodInfo *)0x0);
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
-        pGVar8 = (GamePassesUI *)
+        pGVar9 = (GamePassesUI *)
                   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
-                            ((Object *)pGVar8,pTVar9,0,
+                            ((Object *)pGVar9,pTVar8,0,
                              GamePassesUI_MethodInfo__UnityEngine__Object__Instantiate<GamePassesUI>_GamePassesUI__UnityEngine__Transform__bool_
                             );
-        (this_02->fields).gamePassesUI = pGVar8;
-        func_?(&(this_02->fields).gamePassesUI,pGVar8);
-        pGVar8 = (this_02->fields).gamePassesUI;
-        if (pGVar8 == (GamePassesUI *)0x0) goto code_?;
-        GamePassesUI::GamePassesUI_Initialize(pGVar8,(MethodInfo *)0x0);
-        bVar1 = GamePassProgressionController::
-                GamePassProgressionController_get_IsProgressionEnabled((MethodInfo *)0x0);
-        if (bVar1 == 0) {
-          pGVar8 = (this_02->fields).gamePassesUI;
-          if ((pGVar8 == (GamePassesUI *)0x0) ||
-             (pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                 ((Component *)pGVar8,(MethodInfo *)0x0),
-             pGVar4 == (GameObject *)0x0)) goto code_?;
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar4,0,(MethodInfo *)0x0);
+        ppGVar10 = &(this_02->fields).gamePassesUI;
+        *ppGVar10 = pGVar9;
+        func_?(ppGVar10,pGVar9);
+        if (*ppGVar10 != (GamePassesUI *)0x0) {
+          GamePassesUI::GamePassesUI_Initialize(*ppGVar10,(MethodInfo *)0x0);
+          bVar1 = GamePassProgressionController::
+                  GamePassProgressionController_get_IsProgressionEnabled((MethodInfo *)0x0);
+          if (bVar1 != 0) goto code_?;
+          if (*ppGVar10 != (GamePassesUI *)0x0) {
+            pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                               ((Component *)*ppGVar10,(MethodInfo *)0x0);
+            if (pGVar4 != (GameObject *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                        (pGVar4,0,(MethodInfo *)0x0);
+              goto code_?;
+            }
+          }
         }
-      }
-      pGVar4 = (this_02->fields).winningConditionDebriefing;
-      if ((pGVar4 != (GameObject *)0x0) &&
-         (pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                             (pGVar4,(MethodInfo *)0x0), pTVar9 != (Transform *)0x0)) {
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetAsLastSibling
-                  (pTVar9,(MethodInfo *)0x0);
-        return;
       }
       goto code_?;
     }
@@ -152,10 +157,10 @@ code_?:
     NavMesh_OnNavMeshPreUpdate__ctor
               (this_05,(Object *)this,MethodInfo__TimedPlayReward__OnCollectedChanged__,
                (MethodInfo *)0x0);
-    pAVar10 = (Action *)
+    pAVar11 = (Action *)
              mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)this_05,(MethodInfo *)0x0);
-    if (pAVar10 == (Action *)0x0) {
+    if (pAVar11 == (Action *)0x0) {
       TypeInfo__TimedPlayReward__RewardTracker->static_fields->CollectedChanged = (Action *)0x0;
 code_?:
       func_?();
@@ -179,23 +184,23 @@ code_?:
       }
       goto code_?;
     }
-    pAVar11 = (Action *)0x0;
-    if (pAVar10->klass == TypeInfo__System__Action) {
-      pAVar11 = pAVar10;
+    pAVar12 = (Action *)0x0;
+    if (pAVar11->klass == TypeInfo__System__Action) {
+      pAVar12 = pAVar11;
     }
-    if (pAVar11 == (Action *)0x0) goto code_?;
-    TypeInfo__TimedPlayReward__RewardTracker->static_fields->CollectedChanged = pAVar11;
-    pAVar11 = (Action *)0x0;
-    if (pAVar10->klass == TypeInfo__System__Action) {
-      pAVar11 = pAVar10;
+    if (pAVar12 == (Action *)0x0) goto code_?;
+    TypeInfo__TimedPlayReward__RewardTracker->static_fields->CollectedChanged = pAVar12;
+    pAVar12 = (Action *)0x0;
+    if (pAVar11->klass == TypeInfo__System__Action) {
+      pAVar12 = pAVar11;
     }
-    if (pAVar11 != (Action *)0x0) goto code_?;
+    if (pAVar12 != (Action *)0x0) goto code_?;
   }
   func_?();
 code_?:
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

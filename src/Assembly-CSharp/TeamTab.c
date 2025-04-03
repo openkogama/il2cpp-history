@@ -101,11 +101,10 @@ code_?:
   fVar18 = pCVar11->g;
   fVar19 = pCVar11->b;
   fVar20 = pCVar11->a;
-  pLVar21 = (this->fields).teamColoredImages;
-  if (pLVar21 != (List_1_UnityEngine_UI_Image_ *)0x0) {
-    while (iVar16 < (pLVar21->fields)._size) {
-      pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-               (this->fields).teamColoredImages;
+  pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+           (this->fields).teamColoredImages;
+  if (pLVar3 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    while (iVar16 < (pLVar3->fields)._size) {
       if ((pLVar3 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
          (RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                    RegularExpressions::RegexCharClass+SingleRange]::
@@ -115,27 +114,32 @@ code_?:
                              ), RVar4 == (RegexCharClass_SingleRange)0x0)) goto code_?;
       (**(code **)(*(int *)RVar4 + 0x178))
                 (RVar4,fVar12,fVar13,fVar14,fVar15,*(undefined4 *)(*(int *)RVar4 + 0x17c));
-      pLVar21 = (this->fields).teamColoredImages;
+      pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+               (this->fields).teamColoredImages;
       iVar16 = iVar16 + 1;
-      if (pLVar21 == (List_1_UnityEngine_UI_Image_ *)0x0) goto code_?;
+      if (pLVar3 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+      goto code_?;
     }
-    pLVar21 = (this->fields).darkTeamColoredImages;
+    pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+             (this->fields).darkTeamColoredImages;
     iVar16 = 0;
-    if (pLVar21 != (List_1_UnityEngine_UI_Image_ *)0x0) goto code_?;
+    if (pLVar3 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+    goto code_?;
   }
 code_?:
   func_?();
-  pcVar22 = (code *)swi(3);
-  (*pcVar22)();
+  pcVar21 = (code *)swi(3);
+  (*pcVar21)();
   return;
   while( true ) {
     (**(code **)(*(int *)RVar4 + 0x178))
               (RVar4,fVar17,fVar18,fVar19,fVar20,*(undefined4 *)(*(int *)RVar4 + 0x17c));
-    pLVar21 = (this->fields).darkTeamColoredImages;
+    pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+             (this->fields).darkTeamColoredImages;
     iVar16 = iVar16 + 1;
-    if (pLVar21 == (List_1_UnityEngine_UI_Image_ *)0x0) break;
+    if (pLVar3 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) break;
 code_?:
-    if ((pLVar21->fields)._size <= iVar16) {
+    if ((pLVar3->fields)._size <= iVar16) {
       image = (this->fields).teamImage;
       if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__Styles);
@@ -143,8 +147,6 @@ code_?:
       Styles::Styles_TeamToSprite(image,team,(MethodInfo *)0x0);
       return;
     }
-    pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-             (this->fields).darkTeamColoredImages;
     if ((pLVar3 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
        (RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                  ::RegexCharClass+SingleRange]::

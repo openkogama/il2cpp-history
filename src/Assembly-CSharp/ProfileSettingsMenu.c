@@ -28,6 +28,7 @@ void Assembly-CSharp.dll::ProfileSettingsMenu::ProfileSettingsMenu_MouseSensitiv
                (ProfileSettingsMenu *this,MethodInfo *method)
 
 {
+  ppIVar1 = &(this->fields).mouseSenseSetRoutine;
   if ((this->fields).mouseSenseSetRoutine == (IEnumerator *)0x0) {
     if (cRam_? == '\0') {
       func_?(&TypeInfo__ProfileSettingsMenu___MouseSetRoutine_d__12);
@@ -40,9 +41,9 @@ void Assembly-CSharp.dll::ProfileSettingsMenu::ProfileSettingsMenu_MouseSensitiv
     value[1].klass = (Object__Class *)0x0;
     value[2].klass = (Object__Class *)this;
     func_?(value + 2,this);
-    (this->fields).mouseSenseSetRoutine = (IEnumerator *)value;
-    func_?(&(this->fields).mouseSenseSetRoutine,value);
-    Coroutines::Coroutines_Start((this->fields).mouseSenseSetRoutine,(MethodInfo *)0x0);
+    *ppIVar1 = (IEnumerator *)value;
+    func_?(ppIVar1,value);
+    Coroutines::Coroutines_Start(*ppIVar1,(MethodInfo *)0x0);
   }
   return;
 }
@@ -63,8 +64,8 @@ Assembly-CSharp.dll::ProfileSettingsMenu::ProfileSettingsMenu_MouseSetRoutine
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[2].klass = (Object__Class *)this;
   value[1].klass = (Object__Class *)0x0;
+  value[2].klass = (Object__Class *)this;
   func_?(value + 2,this);
   return (IEnumerator *)value;
 }
@@ -89,8 +90,9 @@ void Assembly-CSharp.dll::ProfileSettingsMenu::ProfileSettingsMenu_OnDestroy
     cRam_? = '\x01';
   }
   LobbyFlowMenu::LobbyFlowMenu_OnDestroy((LobbyFlowMenu *)this,(MethodInfo *)0x0);
-  if ((this->fields).mouseSenseSetRoutine != (IEnumerator *)0x0) {
-    Coroutines::Coroutines_Stop((this->fields).mouseSenseSetRoutine,(MethodInfo *)0x0);
+  coroutine = (this->fields).mouseSenseSetRoutine;
+  if (coroutine != (IEnumerator *)0x0) {
+    Coroutines::Coroutines_Stop(coroutine,(MethodInfo *)0x0);
   }
   if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
       cctor_finished_or_no_cctor == 0) {
@@ -318,23 +320,23 @@ void Assembly-CSharp.dll::ProfileSettingsMenu::ProfileSettingsMenu_Update
     }
     pIVar2 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
     if (pIVar2 == (IPlayModeUI *)0x0) goto code_?;
-    bVar3 = func_?(5,TypeInfo__IPlayModeUI,pIVar2);
-    bVar3 = bVar3 ^ 1;
+    cVar3 = func_?(5,TypeInfo__IPlayModeUI,pIVar2);
+    bVar4 = cVar3 == '\0';
   }
   else {
-    bVar3 = 0;
+    bVar4 = false;
   }
   MVar1 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
   if (MVar1 == MVGameMode__Enum_Edit) {
-    bVar3 = 1;
+    bVar4 = true;
   }
-  if (bVar3 != 0) {
+  if (bVar4) {
     this_00 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
     if (this_00 == (MainCameraManager *)0x0) {
 code_?:
       func_?();
-      pcVar4 = (code *)swi(3);
-      (*pcVar4)();
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
       return;
     }
     MainCameraManager::MainCameraManager_set_CamMaskMode

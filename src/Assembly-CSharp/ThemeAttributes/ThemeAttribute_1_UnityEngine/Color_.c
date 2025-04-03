@@ -24,13 +24,14 @@ void Assembly-CSharp.dll::ThemeAttributes::ThemeAttribute`1[UnityEngine::Color]:
   if (this != (ThemeAttribute_1_UnityEngine_Color_ *)0x0) {
     ThemeAttribute::ThemeAttribute_Initialize
               ((ThemeAttribute *)this,settings,key,groups,(MethodInfo *)0x0);
-    (this->fields).themeCallback = onChange;
-    func_?(&(this->fields).themeCallback,onChange);
+    ppAVar1 = &(this->fields).themeCallback;
+    *ppAVar1 = onChange;
+    func_?(ppAVar1,onChange);
     return;
   }
   func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

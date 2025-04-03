@@ -25,9 +25,6 @@ void Assembly-CSharp.dll::DeltaCubes::DeltaCubes_Clear(DeltaCubes *this,MethodIn
 }
 
 
-/* WARNING (jumptable): Unable to track spacebase fully for stack */
-/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
-    */
 /* Byte[] Dequeue(RuntimePrototypeCubeModel) */
 
 Byte__Array *
@@ -43,7 +40,7 @@ Assembly-CSharp.dll::DeltaCubes::DeltaCubes_Dequeue
     func_?(&
                     MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_MV::WorldObject::CubeAction>__get_Key__
                    );
-    func_?(0x4954);
+    func_?(0x7b20);
     func_?(&
                     MethodInfo__System__Collections__Generic__Queue<System::Collections::Generic::KeyValuePair<MV::WorldObject::IntVector,_MV::WorldObject::CubeAction>_>__Dequeue__
                    );
@@ -152,13 +149,15 @@ Assembly-CSharp.dll::DeltaCubes::DeltaCubes_Dequeue
       }
     }
   }
-  iVar8 = func_?();
-  if (iVar8 == -0x2ef9576) {
-    bRam_? = bRam_? << 6 | bRam_? >> 2;
-    return (Byte__Array *)0x0;
-  }
-  pcVar9 = (code *)swi(3);
-  pBVar4 = (Byte__Array *)(*pcVar9)(0x10,0x10);
+  func_?();
+  pbVar8 = (byte *)(in_GS_OFFSET + extraout_ECX + 0x10);
+  bVar9 = (byte)extraout_ECX;
+  *pbVar8 = *pbVar8 >> (bVar9 & 0x1f);
+  *(byte *)(extraout_ECX + 0x10) = *(byte *)(extraout_ECX + 0x10) >> (bVar9 & 0x1f);
+  *(byte *)(extraout_ECX + 0x10) = *(byte *)(extraout_ECX + 0x10) >> (bVar9 & 0x1f);
+  *(byte *)(extraout_ECX + 0x10) = *(byte *)(extraout_ECX + 0x10) >> (bVar9 & 0x1f);
+  pcVar10 = (code *)swi(3);
+  pBVar4 = (Byte__Array *)(*pcVar10)();
   return pBVar4;
 }
 
@@ -236,7 +235,7 @@ void Assembly-CSharp.dll::DeltaCubes::DeltaCubes__ctor(DeltaCubes *this,MethodIn
              MethodInfo__System__Collections__Generic__Queue<System::Collections::Generic::KeyValuePair<MV::WorldObject::IntVector,_MV::WorldObject::CubeAction>_>__Queue__
             );
   method_00 = (MethodInfo *)&this->fields;
-  (this->fields).cubeChange = this_00;
+  ((DeltaCubes__Fields *)method_00)->cubeChange = this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
@@ -266,7 +265,7 @@ void Assembly-CSharp.dll::DeltaCubes::DeltaCubes__ctor_1
     func_?(&
                     TypeInfo__System__Collections__Generic__IEnumerator<System::Collections::Generic::KeyValuePair<MV::WorldObject::IntVector,_MV::WorldObject::CubeAction>_>
                    );
-    func_?(0x4644);
+    func_?(0x75bc);
     func_?(&
                     MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_MV::WorldObject::CubeAction>__get_Key__
                    );
@@ -292,47 +291,50 @@ void Assembly-CSharp.dll::DeltaCubes::DeltaCubes__ctor_1
             ((ReadOnlyCollectionBuilder_1_System_Object_ *)this_01,
              MethodInfo__System__Collections__Generic__Queue<System::Collections::Generic::KeyValuePair<MV::WorldObject::IntVector,_MV::WorldObject::CubeAction>_>__Queue__
             );
-  method_00 = (MethodInfo *)&this->fields;
-  (this->fields).cubeChange = this_01;
-  func_?(method_00,this_01);
+  pDVar6 = &this->fields;
+  pDVar6->cubeChange = this_01;
+  method_00 = (MethodInfo *)pDVar6;
+  func_?(pDVar6,this_01);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   if (cubeChangeOriginal !=
       (IEnumerable_1_KeyValuePair_2_MV_WorldObject_IntVector_MV_WorldObject_CubeAction_ *)0x0) {
-    piStack_6 = (int *)func_?();
+    piStack_7 = (int *)func_?();
     uStack_1 = 1;
-    while (piStack_6 != (int *)0x0) {
-      cVar7 = func_?();
-      if (cVar7 == '\0') {
+    while (piStack_7 != (int *)0x0) {
+      cVar8 = func_?();
+      if (cVar8 == '\0') {
         uStack_1 = 0xffffffff;
-        if (piStack_6 != (int *)0x0) {
+        if (piStack_7 != (int *)0x0) {
           func_?();
         }
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      uStack_8._4_4_ = piStack_6;
-      if (piStack_6 == (int *)0x0) break;
-      iStack_9 = *piStack_6;
+      if (piStack_7 == (int *)0x0) break;
+      iVar9 = *piStack_7;
       uVar10 = 0;
-      if (*(ushort *)(iStack_9 + 0xb6) != 0) {
+      uStack_11 = 0;
+      uVar12 = *(ushort *)(iVar9 + 0xb6);
+      KStack_13.key.z = uVar12;
+      KStack_13._6_2_ = 0;
+      if (uVar12 != 0) {
         do {
           if (*(IEnumerator_1_KeyValuePair_2_MV_WorldObject_IntVector_MV_WorldObject_CubeAction___Class
-                **)(*(int *)(iStack_9 + 0x58) + (uint)uVar10 * 8) ==
+                **)(*(int *)(iVar9 + 0x58) + (uint)uVar10 * 8) ==
               TypeInfo__System__Collections__Generic__IEnumerator<System::Collections::Generic::KeyValuePair<MV::WorldObject::IntVector,_MV::WorldObject::CubeAction>_>
              ) {
-            puVar11 = (undefined4 *)
-                     (*piStack_6 +
-                     (*(int *)(*(int *)(*piStack_6 + 0x58) + 4 + (uint)uVar10 * 8) + 0x18) * 8);
+            puVar14 = (undefined4 *)
+                     (iVar9 + (*(int *)(*(int *)(iVar9 + 0x58) + 4 + (uint)uVar10 * 8) + 0x18) * 8);
             goto code_?;
           }
           uVar10 = uVar10 + 1;
-        } while (uVar10 < *(ushort *)(iStack_9 + 0xb6));
+        } while (uVar10 < uVar12);
       }
-      puVar11 = (undefined4 *)func_?();
+      puVar14 = (undefined4 *)func_?();
 code_?:
-      uVar12 = (*(code *)*puVar11)();
-      BStack_13 = CONCAT31(BStack_13._1_3_,(char)((ulonglong)uVar12 >> 0x30));
+      uVar15 = (*(code *)*puVar14)();
+      BStack_16 = CONCAT31(BStack_16._1_3_,(char)((ulonglong)uVar15 >> 0x30));
       if (cRam_? == '\0') {
         func_?(&
                         MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_MV::WorldObject::CubeAction>__KeyValuePair_MV__WorldObject__IntVector__MV__WorldObject__CubeAction_
@@ -342,31 +344,30 @@ code_?:
                        );
         cRam_? = '\x01';
       }
-      uStack_8._0_2_ = 0;
-      uStack_8._2_2_ = 0;
-      uStack_8._4_2_ = 0;
-      uStack_8._6_1_ = 0;
-      uStack_8._7_1_ = 0;
+      KStack_13.key.x = 0;
+      KStack_13.key.y = 0;
+      KStack_13.key.z = 0;
+      KStack_13.value = 0;
+      KStack_13._7_1_ = 0;
       this_00 = (Queue_1_KeyValuePair_2_MV_WorldObject_IntVector_System_ByteEnum_ *)
-                (this->fields).cubeChange;
+                pDVar6->cubeChange;
       mscorlib.dll::System::Collections::Generic::KeyValuePair`2[MV::WorldObject::IntVector,System::
       ByteEnum]::KeyValuePair_2_MV_WorldObject_IntVector_System_ByteEnum___ctor
-                ((KeyValuePair_2_MV_WorldObject_IntVector_System_ByteEnum_ *)&uStack_8,
-                 SUB86(uVar12,0),BStack_13,
+                (&KStack_13,SUB86(uVar15,0),BStack_16,
                  MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_MV::WorldObject::CubeAction>__KeyValuePair_MV__WorldObject__IntVector__MV__WorldObject__CubeAction_
                 );
       if (this_00 == (Queue_1_KeyValuePair_2_MV_WorldObject_IntVector_System_ByteEnum_ *)0x0) break;
       mscorlib.dll::System::Collections::Generic::Queue`1[KeyValuePair`2[MV::WorldObject::
       IntVector,System::ByteEnum]]::
       Queue_1_KeyValuePair_2_MV_WorldObject_IntVector_System_ByteEnum__Enqueue
-                (this_00,uStack_8,
+                (this_00,KStack_13,
                  MethodInfo__System__Collections__Generic__Queue<System::Collections::Generic::KeyValuePair<MV::WorldObject::IntVector,_MV::WorldObject::CubeAction>_>__Enqueue_System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_MV::WorldObject::CubeAction>_
                 );
     }
   }
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
   return;
 }
 

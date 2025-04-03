@@ -63,7 +63,7 @@ void Assembly-CSharp.dll::ChatControllerUGUI::ChatControllerUGUI_ChatFocusChange
     }
     if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField ==
         (IEditModeUI *)0x0) {
-      bVar1 = 0;
+      bVar1 = false;
     }
     else {
       if (cRam_? == '\0') {
@@ -72,45 +72,45 @@ void Assembly-CSharp.dll::ChatControllerUGUI::ChatControllerUGUI_ChatFocusChange
       }
       pIVar2 = TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
       if (pIVar2 == (IEditModeUI *)0x0) goto code_?;
-      bVar1 = func_?(1,TypeInfo__IEditModeUI,pIVar2);
-      bVar1 = bVar1 ^ 1;
+      cVar3 = func_?(1,TypeInfo__IEditModeUI,pIVar2);
+      bVar1 = cVar3 == '\0';
     }
-    pSVar3 = (this->fields)._._MessageController_k__BackingField;
-    if (pSVar3 != (SendMessageControl *)0x0) {
+    pSVar4 = (this->fields)._._MessageController_k__BackingField;
+    if (pSVar4 != (SendMessageControl *)0x0) {
       SendMessageControl::SendMessageControl_SetSayChatBubbleVisibleIfActive
-                (pSVar3,0,(MethodInfo *)0x0);
-      bVar4 = bVar1;
+                (pSVar4,0,(MethodInfo *)0x0);
+      bVar5 = bVar1;
       if ((this->fields).currentlyInLobbyState == 0) {
-        bVar4 = 1;
+        bVar5 = true;
       }
-      if (bVar4 == 0) {
+      if (bVar5 == false) {
 code_?:
         (this->fields).shouldUpdateFade = 1;
         ChatControllerUGUI_UpdateFadeTime(this,(MethodInfo *)0x0);
-        MVar5 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-        if (MVar5 == MVGameMode__Enum_Play) {
+        MVar6 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+        if (MVar6 == MVGameMode__Enum_Play) {
           (this->fields).shouldUpdateFade = (this->fields).currentlyInLobbyState == 0;
         }
         return;
       }
-      pIVar6 = (this->fields).inputField;
-      if (pIVar6 != (InputField *)0x0) {
+      pIVar7 = (this->fields).inputField;
+      if (pIVar7 != (InputField *)0x0) {
         UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_DeactivateInputField
-                  (pIVar6,(MethodInfo *)0x0);
-        pRVar7 = (this->fields).inputAreaDeactivated;
-        if ((pRVar7 != (RectTransform *)0x0) &&
-           (pGVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                               ((Component *)pRVar7,(MethodInfo *)0x0), pGVar8 != (GameObject *)0x0)
+                  (pIVar7,(MethodInfo *)0x0);
+        pRVar8 = (this->fields).inputAreaDeactivated;
+        if ((pRVar8 != (RectTransform *)0x0) &&
+           (pGVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                               ((Component *)pRVar8,(MethodInfo *)0x0), pGVar9 != (GameObject *)0x0)
            ) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar8,bVar1 ^ 1,(MethodInfo *)0x0);
-          pRVar7 = (this->fields)._._InputAreaRoot_k__BackingField;
-          if ((pRVar7 != (RectTransform *)0x0) &&
-             (pGVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                 ((Component *)pRVar7,(MethodInfo *)0x0),
-             pGVar8 != (GameObject *)0x0)) {
+                    (pGVar9,bVar1 ^ 1,(MethodInfo *)0x0);
+          pRVar8 = (this->fields)._._InputAreaRoot_k__BackingField;
+          if ((pRVar8 != (RectTransform *)0x0) &&
+             (pGVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                 ((Component *)pRVar8,(MethodInfo *)0x0),
+             pGVar9 != (GameObject *)0x0)) {
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                      (pGVar8,0x41,(MethodInfo *)0x0);
+                      (pGVar9,0xe3,(MethodInfo *)0x0);
             goto code_?;
           }
         }
@@ -118,27 +118,27 @@ code_?:
     }
   }
   else {
-    pRVar7 = (this->fields)._._InputAreaRoot_k__BackingField;
-    if ((pRVar7 != (RectTransform *)0x0) &&
-       (pGVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)pRVar7,(MethodInfo *)0x0), pGVar8 != (GameObject *)0x0)) {
+    pRVar8 = (this->fields)._._InputAreaRoot_k__BackingField;
+    if ((pRVar8 != (RectTransform *)0x0) &&
+       (pGVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)pRVar8,(MethodInfo *)0x0), pGVar9 != (GameObject *)0x0)) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar8,(this->fields)._.chatLocked == 0,(MethodInfo *)0x0);
-      pRVar7 = (this->fields).inputAreaDeactivated;
-      if ((pRVar7 != (RectTransform *)0x0) &&
-         (pGVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                             ((Component *)pRVar7,(MethodInfo *)0x0), pGVar8 != (GameObject *)0x0))
+                (pGVar9,(this->fields)._.chatLocked == 0,(MethodInfo *)0x0);
+      pRVar8 = (this->fields).inputAreaDeactivated;
+      if ((pRVar8 != (RectTransform *)0x0) &&
+         (pGVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                             ((Component *)pRVar8,(MethodInfo *)0x0), pGVar9 != (GameObject *)0x0))
       {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar8,(this->fields)._.chatLocked,(MethodInfo *)0x0);
-        pIVar6 = (this->fields).inputField;
-        if (pIVar6 != (InputField *)0x0) {
+                  (pGVar9,(this->fields)._.chatLocked,(MethodInfo *)0x0);
+        pIVar7 = (this->fields).inputField;
+        if (pIVar7 != (InputField *)0x0) {
           UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_ActivateInputField
-                    (pIVar6,(MethodInfo *)0x0);
-          pSVar3 = (this->fields)._._MessageController_k__BackingField;
-          if (pSVar3 != (SendMessageControl *)0x0) {
+                    (pIVar7,(MethodInfo *)0x0);
+          pSVar4 = (this->fields)._._MessageController_k__BackingField;
+          if (pSVar4 != (SendMessageControl *)0x0) {
             SendMessageControl::SendMessageControl_SetSayChatBubbleVisibleIfActive
-                      (pSVar3,1,(MethodInfo *)0x0);
+                      (pSVar4,1,(MethodInfo *)0x0);
             goto code_?;
           }
         }
@@ -147,8 +147,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -292,6 +292,7 @@ code_?:
       pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
                          ((Delegate *)a_00,(Delegate *)this_02,(MethodInfo *)0x0);
       if (pDVar2 == (Delegate *)0x0) {
+        _UNK_? = (Delegate *)0x0;
 code_?:
         func_?();
         pSVar1 = (this->fields)._._MessageController_k__BackingField;
@@ -323,28 +324,29 @@ code_?:
         pDVar4 = pDVar2;
       }
       if (pDVar4 != (Delegate *)0x0) {
-        pDVar4 = (Delegate *)0x0;
+        pDVar5 = (Delegate *)0x0;
         if ((UnityAction__Class *)pDVar2->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-          pDVar4 = pDVar2;
+          pDVar5 = pDVar2;
         }
-        if (pDVar4 != (Delegate *)0x0) goto code_?;
+        _UNK_? = pDVar4;
+        if (pDVar5 != (Delegate *)0x0) goto code_?;
         goto code_?;
       }
     }
     func_?();
   }
   else {
-    iVar5 = func_?();
-    if (iVar5 == 0) goto code_?;
-    _UNK_? = iVar5;
-    iVar5 = func_?();
-    if (iVar5 != 0) goto code_?;
+    iVar6 = func_?();
+    if (iVar6 == 0) goto code_?;
+    _UNK_? = iVar6;
+    iVar6 = func_?();
+    if (iVar6 != 0) goto code_?;
   }
   func_?();
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -499,31 +501,31 @@ void Assembly-CSharp.dll::ChatControllerUGUI::ChatControllerUGUI_OnLobbyStateCha
                (ChatControllerUGUI *this,bool cursorLocked,MethodInfo *method)
 
 {
-  (this->fields).currentlyInLobbyState = cursorLocked ^ 1;
+  bVar1 = cursorLocked ^ 1;
+  (this->fields).currentlyInLobbyState = bVar1;
   ChatControllerUGUI_UpdateFadeTime(this,(MethodInfo *)0x0);
   (this->fields).shouldUpdateFade = cursorLocked;
   ChatControllerUGUI_ChatFocusChanged(this,0,(MethodInfo *)0x0);
   this_01 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
   if (this_01 != (MVLocalPlayer *)0x0) {
-    bVar1 = MVLocalPlayer::MVLocalPlayer_get_IsChatLocked(this_01,(MethodInfo *)0x0);
-    pRVar2 = (this->fields)._._InputAreaRoot_k__BackingField;
-    value = 0;
-    if (bVar1 == 0) {
-      value = cursorLocked ^ 1;
+    bVar2 = MVLocalPlayer::MVLocalPlayer_get_IsChatLocked(this_01,(MethodInfo *)0x0);
+    if (bVar2 != 0) {
+      bVar1 = 0;
     }
-    if (pRVar2 != (RectTransform *)0x0) {
-      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)pRVar2,(MethodInfo *)0x0);
-      if (pGVar3 != (GameObject *)0x0) {
+    pRVar3 = (this->fields)._._InputAreaRoot_k__BackingField;
+    if (pRVar3 != (RectTransform *)0x0) {
+      pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)pRVar3,(MethodInfo *)0x0);
+      if (pGVar4 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar3,value,(MethodInfo *)0x0);
-        pRVar2 = (this->fields).inputAreaDeactivated;
-        if (pRVar2 != (RectTransform *)0x0) {
-          pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                             ((Component *)pRVar2,(MethodInfo *)0x0);
-          if (pGVar3 != (GameObject *)0x0) {
+                  (pGVar4,0xb6,(MethodInfo *)0x0);
+        pRVar3 = (this->fields).inputAreaDeactivated;
+        if (pRVar3 != (RectTransform *)0x0) {
+          pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                             ((Component *)pRVar3,(MethodInfo *)0x0);
+          if (pGVar4 != (GameObject *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                      (pGVar3,value ^ 1,(MethodInfo *)0x0);
+                      (pGVar4,bVar1 ^ 1,(MethodInfo *)0x0);
             this_00 = (this->fields)._._ScrollRect_k__BackingField;
             if (this_00 != (ScrollRect *)0x0) {
               UnityEngine.UI.dll::UnityEngine::UI::ScrollRect::
@@ -536,8 +538,8 @@ void Assembly-CSharp.dll::ChatControllerUGUI::ChatControllerUGUI_OnLobbyStateCha
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -819,8 +821,8 @@ void Assembly-CSharp.dll::ChatControllerUGUI::ChatControllerUGUI__DoStart_b__13_
     do {
       if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
           (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IShortcutKeyRegister) {
-        ppMVar5 = &(&x->klass->vtable)[x->klass->interfaceOffsets[uVar3].offset].RegisterShortcutKey
-                   .method;
+        ppMVar5 = &(&x->klass->vtable)[pIVar2->interfaceOffsets[uVar3].offset].RegisterShortcutKey.
+                   method;
         goto code_?;
       }
       uVar3 = uVar3 + 1;
@@ -859,8 +861,9 @@ void Assembly-CSharp.dll::ChatControllerUGUI::ChatControllerUGUI__ctor
   ReadOnlyCollectionBuilder_1_System_Object___ctor
             ((ReadOnlyCollectionBuilder_1_System_Object_ *)this_00,
              MethodInfo__System__Collections__Generic__Queue<UnityEngine::UI::Text>__Queue__);
-  (this->fields)._.lines = this_00;
-  func_?(&(this->fields)._.lines,this_00);
+  ppQVar4 = &(this->fields)._.lines;
+  *ppQVar4 = this_00;
+  func_?(ppQVar4,this_00);
   (this->fields)._.promptRegisterForChat = 1;
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
