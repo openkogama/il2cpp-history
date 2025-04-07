@@ -1361,11 +1361,11 @@ code_?:
     snapConfig.SurfaceHitPoint.x._1_2_ = (undefined2)((uint)fVar8 >> 8);
     snapConfig.SurfaceHitPoint.x._3_1_ = (undefined1)((uint)fVar8 >> 0x18);
     if (snapConfig.SurfaceHitPoint.x._0_1_ == '\0') goto code_?;
-    fVar146 = (float)snapConfig._0_4_;
     fVar147 = (float)snapConfig.AlignmentAxis;
+    fVar146 = (float)snapConfig._0_4_;
     snapConfig.SurfaceType = (int32_t)fVar11;
-    snapConfig.SurfaceHitNormal.x = fVar7;
     snapConfig.SurfaceHitNormal.y = fVar9;
+    snapConfig.SurfaceHitNormal.x = fVar7;
     snapConfig.OffsetFromSurface = fVar89;
     fVar144 = fVar10;
     if (in_stack_166 == '\0') {
