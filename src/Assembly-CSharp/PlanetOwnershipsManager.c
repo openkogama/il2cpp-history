@@ -173,21 +173,25 @@ void Assembly-CSharp.dll::PlanetOwnershipsManager::PlanetOwnershipsManager__Awak
     func_?(&MethodInfo__PlanetOwnershipsManager__RecievedPlanetOwnershipsDataCallback_MV__WorldObject__OwnershipData__PlanetOwnershipsData_);
     cRam_? = '\x01';
   }
+  MVar1 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+  if (MVar1 == MVGameMode__Enum_CharacterEditor) {
+    return;
+  }
   this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?(TypeInfo__System__Action<MV::WorldObject::OwnershipData::PlanetOwnershipsData>);
   DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_01,(Object *)this,MethodInfo__PlanetOwnershipsManager__RecievedPlanetOwnershipsDataCallback_MV__WorldObject__OwnershipData__PlanetOwnershipsData_,(MethodInfo *)0x0);
   if (this_00 != (MVNetworkGame *)0x0) {
     MVNetworkGame::MVNetworkGame_add_ReceivedPlanetOwnershipData(this_00,(Action_1_MV_WorldObject_OwnershipData_PlanetOwnershipsData_ *)this_01,(MethodInfo *)0x0);
     this_02 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
-    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-    if ((pMVar1 != (MVLocalPlayer *)0x0) && (this_02 != (MVNetworkGame_OperationRequests *)0x0)) {
-      MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_GetActorsPlanetOwnerships(this_02,(pMVar1->fields)._._ProfileID_k__BackingField,(MethodInfo *)0x0);
+    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
+    if ((pMVar2 != (MVLocalPlayer *)0x0) && (this_02 != (MVNetworkGame_OperationRequests *)0x0)) {
+      MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_GetActorsPlanetOwnerships(this_02,(pMVar2->fields)._._ProfileID_k__BackingField,(MethodInfo *)0x0);
       return;
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
