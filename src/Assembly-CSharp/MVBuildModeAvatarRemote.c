@@ -399,58 +399,9 @@ code_?:
                     if (this_03 != (MVPlayer *)0x0) {
                       MVPlayer::MVPlayer_NotifyAvatarCreated
                                 (this_03,(this->fields)._._._._.id,(MethodInfo *)0x0);
-                      if (cRam_? == '\0') {
-                        func_?();
-                        func_?();
-                        cRam_? = '\x01';
-                      }
-                      if (cRam_? == '\0') {
-                        func_?();
-                        cRam_? = '\x01';
-                      }
-                      pPVar12 = TypeInfo__PlanetOwnershipsManager->static_fields->
-                               _Instance_k__BackingField;
-                      if (pPVar12 != (PlanetOwnershipsManager *)0x0) {
-                        if ((pPVar12->fields)._RecievedPlanetOwnershipData_k__BackingField == 0) {
-                          if (cRam_? == '\0') {
-                            func_?();
-                            cRam_? = '\x01';
-                          }
-                          pPVar12 = TypeInfo__PlanetOwnershipsManager->static_fields->
-                                   _Instance_k__BackingField;
-                          this_04 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                                     *)func_?();
-                          DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity
-                          ::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata
-                          ::__Il2CppFullySharedGenericType]::
-                          DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                                    (this_04,(Object *)this,
-                                     MethodInfo__MVBuildModeAvatarRemote__RecievedPlanetOwnershipDataCallback_System__Collections__Generic__Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>_
-                                     ,(MethodInfo *)0x0);
-                          if (pPVar12 != (PlanetOwnershipsManager *)0x0) {
-                            PlanetOwnershipsManager::
-                            PlanetOwnershipsManager_add_OnReceivedPlanetOwnershipData
-                                      (pPVar12,(Action_1_System_Collections_Generic_Dictionary_2_System_Int32_MV_WorldObject_OwnershipData_PlanetOwnershipsEntry_
-                                               *)this_04,(MethodInfo *)0x0);
-                            return;
-                          }
-                        }
-                        else {
-                          if (cRam_? == '\0') {
-                            func_?();
-                            cRam_? = '\x01';
-                          }
-                          pPVar12 = TypeInfo__PlanetOwnershipsManager->static_fields->
-                                   _Instance_k__BackingField;
-                          if (pPVar12 != (PlanetOwnershipsManager *)0x0) {
-                            MVBuildModeAvatarRemote_RecievedPlanetOwnershipDataCallback
-                                      (this,(pPVar12->fields).
-                                            _PlanetOwnershipsEntries_k__BackingField,
-                                       (MethodInfo *)0x0);
-                            return;
-                          }
-                        }
-                      }
+                      MVBuildModeAvatarRemote_InitializeLaserPointerAndEditCube
+                                (this,(MethodInfo *)0x0);
+                      return;
                     }
                   }
                 }
@@ -465,14 +416,14 @@ code_?:
     if (pUVar4 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0)
     goto code_?;
     (this->fields)._._._.PositionChanged = pUVar4;
-    iVar13 = func_?();
-    if (iVar13 != 0) goto code_?;
+    iVar12 = func_?();
+    if (iVar12 != 0) goto code_?;
   }
   func_?();
 code_?:
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -488,57 +439,113 @@ void Assembly-CSharp.dll::MVBuildModeAvatarRemote::
     func_?(&
                     TypeInfo__System__Action<System::Collections::Generic::Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>_>
                    );
+    func_?(&TypeInfo__System__Action<bool,_bool>);
+    func_?(&MethodInfo__MVBuildModeAvatarRemote__HandleLaserActive_bool__bool_);
     func_?(&
                     MethodInfo__MVBuildModeAvatarRemote__RecievedPlanetOwnershipDataCallback_System__Collections__Generic__Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>_
                    );
     cRam_? = '\x01';
   }
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__PlanetOwnershipsManager);
-    cRam_? = '\x01';
-  }
-  pPVar1 = TypeInfo__PlanetOwnershipsManager->static_fields->_Instance_k__BackingField;
-  if (pPVar1 != (PlanetOwnershipsManager *)0x0) {
-    if ((pPVar1->fields)._RecievedPlanetOwnershipData_k__BackingField == 0) {
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__PlanetOwnershipsManager);
-        cRam_? = '\x01';
-      }
-      pPVar1 = TypeInfo__PlanetOwnershipsManager->static_fields->_Instance_k__BackingField;
-      this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                 *)func_?(
-                                  TypeInfo__System__Action<System::Collections::Generic::Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>_>
-                                  );
-      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+  MVar1 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+  if (MVar1 == MVGameMode__Enum_CharacterEditor) {
+    pLVar2 = MVBuildModeAvatar::MVBuildModeAvatar_InitLaser
+                       ((MVBuildModeAvatar *)this,0,(MethodInfo *)0x0);
+    unaff_ESI = (Delegate *)&(this->fields).laserPointer;
+    *(LaserPointer **)unaff_ESI = pLVar2;
+    func_?(unaff_ESI,pLVar2);
+    pLVar2 = *(LaserPointer **)unaff_ESI;
+    if (pLVar2 != (LaserPointer *)0x0) {
+      pAVar3 = (pLVar2->fields).OnLaserActive;
+      ppAVar4 = &(pLVar2->fields).OnLaserActive;
+      this_00 = (UnityAction_2_System_Int32_System_Int32_ *)
+                func_?(TypeInfo__System__Action<bool,_bool>);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
+      UnityAction_2_System_Int32_System_Int32___ctor
                 (this_00,(Object *)this,
-                 MethodInfo__MVBuildModeAvatarRemote__RecievedPlanetOwnershipDataCallback_System__Collections__Generic__Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>_
-                 ,(MethodInfo *)0x0);
-      if (pPVar1 != (PlanetOwnershipsManager *)0x0) {
-        PlanetOwnershipsManager::PlanetOwnershipsManager_add_OnReceivedPlanetOwnershipData
-                  (pPVar1,(Action_1_System_Collections_Generic_Dictionary_2_System_Int32_MV_WorldObject_OwnershipData_PlanetOwnershipsEntry_
-                           *)this_00,(MethodInfo *)0x0);
+                 MethodInfo__MVBuildModeAvatarRemote__HandleLaserActive_bool__bool_,
+                 (MethodInfo *)0x0);
+      unaff_ESI = mscorlib.dll::System::Delegate::Delegate_Combine
+                            ((Delegate *)pAVar3,(Delegate *)this_00,(MethodInfo *)0x0);
+      unaff_EDI = TypeInfo__System__Action<bool,_bool>;
+      if (unaff_ESI == (Delegate *)0x0) {
+        *ppAVar4 = (Action_2_Boolean_Boolean_ *)0x0;
+        pDStack5 = (Delegate *)ppAVar4;
+        pAStack6 = (Action_2_Boolean_Boolean___Class *)unaff_ESI;
+        func_?();
         return;
       }
+      pAStack6 = TypeInfo__System__Action<bool,_bool>;
+      pDStack5 = unaff_ESI;
+      pAVar3 = (Action_2_Boolean_Boolean_ *)func_?();
+      if (pAVar3 != (Action_2_Boolean_Boolean_ *)0x0) {
+        *ppAVar4 = pAVar3;
+        unaff_EDI = TypeInfo__System__Action<bool,_bool>;
+        pAStack6 = TypeInfo__System__Action<bool,_bool>;
+        pDStack5 = unaff_ESI;
+        pAStack6 = (Action_2_Boolean_Boolean___Class *)func_?();
+        if (pAStack6 != (Action_2_Boolean_Boolean___Class *)0x0) {
+          pDStack5 = (Delegate *)ppAVar4;
+          func_?();
+          return;
+        }
+      }
+      goto code_?;
     }
-    else {
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__PlanetOwnershipsManager);
-        cRam_? = '\x01';
+  }
+  else {
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__PlanetOwnershipsManager);
+      cRam_? = '\x01';
+    }
+    pPVar7 = TypeInfo__PlanetOwnershipsManager->static_fields->_Instance_k__BackingField;
+    if (pPVar7 != (PlanetOwnershipsManager *)0x0) {
+      if ((pPVar7->fields)._RecievedPlanetOwnershipData_k__BackingField == 0) {
+        if (cRam_? == '\0') {
+          func_?(&TypeInfo__PlanetOwnershipsManager);
+          cRam_? = '\x01';
+        }
+        pPVar7 = TypeInfo__PlanetOwnershipsManager->static_fields->_Instance_k__BackingField;
+        unaff_EDI = (Action_2_Boolean_Boolean___Class *)
+                    func_?(
+                                   TypeInfo__System__Action<System::Collections::Generic::Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>_>
+                                   );
+        DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata
+        ::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+        DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                  ((DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                    *)unaff_EDI,(Object *)this,
+                   MethodInfo__MVBuildModeAvatarRemote__RecievedPlanetOwnershipDataCallback_System__Collections__Generic__Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>_
+                   ,(MethodInfo *)0x0);
+        unaff_ESI = (Delegate *)0x0;
+        if (pPVar7 != (PlanetOwnershipsManager *)0x0) {
+          PlanetOwnershipsManager::PlanetOwnershipsManager_add_OnReceivedPlanetOwnershipData
+                    (pPVar7,(Action_1_System_Collections_Generic_Dictionary_2_System_Int32_MV_WorldObject_OwnershipData_PlanetOwnershipsEntry_
+                             *)unaff_EDI,(MethodInfo *)0x0);
+          return;
+        }
       }
-      pPVar1 = TypeInfo__PlanetOwnershipsManager->static_fields->_Instance_k__BackingField;
-      if (pPVar1 != (PlanetOwnershipsManager *)0x0) {
-        MVBuildModeAvatarRemote_RecievedPlanetOwnershipDataCallback
-                  (this,(pPVar1->fields)._PlanetOwnershipsEntries_k__BackingField,(MethodInfo *)0x0)
-        ;
-        return;
+      else {
+        if (cRam_? == '\0') {
+          func_?(&TypeInfo__PlanetOwnershipsManager);
+          cRam_? = '\x01';
+        }
+        pPVar7 = TypeInfo__PlanetOwnershipsManager->static_fields->_Instance_k__BackingField;
+        if (pPVar7 != (PlanetOwnershipsManager *)0x0) {
+          MVBuildModeAvatarRemote_RecievedPlanetOwnershipDataCallback
+                    (this,(pPVar7->fields)._PlanetOwnershipsEntries_k__BackingField,
+                     (MethodInfo *)0x0);
+          return;
+        }
       }
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+code_?:
+  pDStack5 = unaff_ESI;
+  pAStack6 = unaff_EDI;
+  func_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

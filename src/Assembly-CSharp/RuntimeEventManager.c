@@ -363,7 +363,7 @@ bool Assembly-CSharp.dll::RuntimeEventManager::RuntimeEventManager_SendRemoveOne
           }
         }
         if ((this_03->_0).implementedInterfaces == (Il2CppClass **)0x8) {
-          in_stack_9 = 0x3ae;
+          in_stack_9 = 0x3be;
           in_stack_10 = 0x1067;
           worldPos_00.y = (float)in_stack_6;
           worldPos_00.x = (float)&stack0xffffffe8;
