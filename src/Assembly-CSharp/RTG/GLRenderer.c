@@ -43,13 +43,13 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawCircle2D(Vector2 circl
         fVar10 = pVVar9->z;
         circleCenter.x = (float)&UNK_?;
         UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(*pVVar9,(MethodInfo *)0x0);
-        numPoints = (int)fVar10 + 1;
-        VVar8 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__get_Item(this,numPoints,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_);
+        VVar8 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__get_Item(this,(int)fVar10 + 1,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_);
         position.y = VVar8.y;
         position.x = circleCenter.y;
         position.z = (float)puVar6;
         pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenToViewportPoint((Vector3 *)&stack0xffffffb4,camera,position,(MethodInfo *)0x0);
         UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(*pVVar9,(MethodInfo *)0x0);
+        numPoints = (int)fVar10 + 2;
       } while (numPoints < iVar1);
       UnityEngine.CoreModule.dll::UnityEngine::GL::GL_End((MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::GL::GL_PopMatrix((MethodInfo *)0x0);
@@ -93,12 +93,12 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawCircle3D(Vector2 circl
         circleUp.y = (float)uVar3;
         circleUp.z = (float)uVar4;
         UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex((Vector3)*pVVar2,(MethodInfo *)0x0);
-        index = index + 1;
         circleUp.y = (float)&circleRight;
         circleUp.x = (float)&UNK_?;
         circleUp.z = (float)this;
-        pVVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)circleUp.y,this,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+        pVVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)circleUp.y,this,index + 1,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
         UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex((Vector3)*pVVar2,(MethodInfo *)0x0);
+        index = index + 1;
       } while (index < iVar1);
       UnityEngine.CoreModule.dll::UnityEngine::GL::GL_End((MethodInfo *)0x0);
     }
@@ -192,12 +192,10 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawLineLoop2D(List_1_Unit
       UnityEngine.CoreModule.dll::UnityEngine::GL::GL_PushMatrix((MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::GL::GL_LoadOrtho((MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Begin(1,(MethodInfo *)0x0);
-      index = 0;
-      while (index < (linePoints->fields)._size) {
+      for (index = 0; index < (linePoints->fields)._size; index = index + 1) {
         VVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__get_Item(linePoints,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_);
         VStack_2.y = VVar1.y;
-        index = index + 1;
-        VVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__get_Item(linePoints,index % (linePoints->fields)._size,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_);
+        VVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__get_Item(linePoints,(index + 1) % (linePoints->fields)._size,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_);
         VStack_4.y = VVar3.y;
         if (camera == (Camera *)0x0) goto code_?;
         position.y = VStack_2.y;
@@ -252,12 +250,10 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawLineLoop2D_1(List_1_Un
       UnityEngine.CoreModule.dll::UnityEngine::GL::GL_PushMatrix((MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::GL::GL_LoadOrtho((MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Begin(1,(MethodInfo *)0x0);
-      index = 0;
-      while (index < (linePoints->fields)._size) {
+      for (index = 0; index < (linePoints->fields)._size; index = index + 1) {
         VVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__get_Item(linePoints,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_);
         VStack_2.y = VVar1.y;
-        index = index + 1;
-        VVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__get_Item(linePoints,index % (linePoints->fields)._size,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_);
+        VVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__get_Item(linePoints,(index + 1) % (linePoints->fields)._size,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_);
         VStack_4.y = VVar3.y;
         if (camera == (Camera *)0x0) goto code_?;
         position.y = translation.y + scale.y * VStack_2.y;
@@ -310,14 +306,12 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawLineLoop3D(List_1_Unit
   if (linePoints != (List_1_UnityEngine_Vector3_ *)0x0) {
     if (1 < (linePoints->fields)._size) {
       UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Begin(1,(MethodInfo *)0x0);
-      index = 0;
-      while (index < (linePoints->fields)._size) {
+      for (index = 0; index < (linePoints->fields)._size; index = index + 1) {
         pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe0,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)linePoints,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-        index = index + 1;
         uVar2 = pVVar1->alias;
         uVar3 = pVVar1->path;
         pVVar4 = pVVar1->asset;
-        pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item(&VStack_5,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)linePoints,index % (linePoints->fields)._size,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+        pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item(&VStack_5,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)linePoints,(index + 1) % (linePoints->fields)._size,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
         method_00 = (MethodInfo *)pVVar1->alias;
         uVar6 = pVVar1->path;
         pVVar7 = pVVar1->asset;
@@ -355,8 +349,7 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawLineLoop3D_1(List_1_Un
   if (linePoints != (List_1_UnityEngine_Vector3_ *)0x0) {
     if (1 < (linePoints->fields)._size) {
       UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Begin(1,(MethodInfo *)0x0);
-      index = 0;
-      while (index < (linePoints->fields)._size) {
+      for (index = 0; index < (linePoints->fields)._size; index = index + 1) {
         pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item(aVStack_2,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)linePoints,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
         uStack_3._0_4_ = pVVar1->alias;
         uStack_3._4_4_ = pVVar1->path;
@@ -364,21 +357,20 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawLineLoop3D_1(List_1_Un
         fVar5 = pointOffset.x + (float)(undefined4)uStack_3;
         fStack_6 = pointOffset.y + (float)uStack_3._4_4_;
         fStack_7 = pointOffset.z + (float)pVStack_4;
-        index = index + 1;
-        pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item(&VStack_8,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)linePoints,index % (linePoints->fields)._size,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-        uStack_9._0_4_ = pVVar1->alias;
-        uStack_9._4_4_ = pVVar1->path;
-        pVStack_10 = pVVar1->asset;
-        fVar11 = pointOffset.x + (float)(undefined4)uStack_9;
-        fStack_12 = pointOffset.y + (float)uStack_9._4_4_;
-        fStack_13 = pointOffset.z + (float)pVStack_10;
+        pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffff90,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)linePoints,(index + 1) % (linePoints->fields)._size,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+        uStack_8._0_4_ = pVVar1->alias;
+        uStack_8._4_4_ = pVVar1->path;
+        pVStack_9 = pVVar1->asset;
+        fVar10 = pointOffset.x + (float)(undefined4)uStack_8;
+        fStack_11 = pointOffset.y + (float)uStack_8._4_4_;
+        fStack_12 = pointOffset.z + (float)pVStack_9;
         v.y = fStack_6;
         v.x = fVar5;
         v.z = fStack_7;
         UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(v,(MethodInfo *)0x0);
-        v_00.y = fStack_12;
-        v_00.x = fVar11;
-        v_00.z = fStack_13;
+        v_00.y = fStack_11;
+        v_00.x = fVar10;
+        v_00.z = fStack_12;
         UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(v_00,(MethodInfo *)0x0);
       }
       UnityEngine.CoreModule.dll::UnityEngine::GL::GL_End((MethodInfo *)0x0);
@@ -386,8 +378,8 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawLineLoop3D_1(List_1_Un
     return;
   }
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -403,26 +395,25 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawLinePairs3D(List_1_Uni
     cRam_? = '\x01';
   }
   if (pairPoints != (List_1_UnityEngine_Vector3_ *)0x0) {
-    uVar1 = (pairPoints->fields)._size;
-    if ((1 < (int)uVar1) && ((uVar1 & 1) == 0)) {
+    if ((1 < (pairPoints->fields)._size) && (((pairPoints->fields)._size & 1) == 0)) {
       UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Begin(1,(MethodInfo *)0x0);
       for (index = 0; index < (pairPoints->fields)._size; index = index + 2) {
-        pVVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe0,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)pairPoints,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-        uVar3 = pVVar2->alias;
-        uVar4 = pVVar2->path;
-        pVVar5 = pVVar2->asset;
-        pVVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item(&VStack_6,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)pairPoints,index + 1,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-        method_00 = (MethodInfo *)pVVar2->alias;
-        uVar7 = pVVar2->path;
-        pVVar8 = pVVar2->asset;
-        v.y = (float)uVar4;
-        v.x = (float)uVar3;
-        VStack_6.asset = (VisualTreeAsset *)&UNK_?;
-        v.z = (float)pVVar5;
+        pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe0,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)pairPoints,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+        uVar2 = pVVar1->alias;
+        uVar3 = pVVar1->path;
+        pVVar4 = pVVar1->asset;
+        pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item(&VStack_5,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)pairPoints,index + 1,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+        method_00 = (MethodInfo *)pVVar1->alias;
+        uVar6 = pVVar1->path;
+        pVVar7 = pVVar1->asset;
+        v.y = (float)uVar3;
+        v.x = (float)uVar2;
+        VStack_5.asset = (VisualTreeAsset *)&UNK_?;
+        v.z = (float)pVVar4;
         UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(v,method_00);
-        v_00.y = (float)uVar7;
+        v_00.y = (float)uVar6;
         v_00.x = (float)method_00;
-        v_00.z = (float)pVVar8;
+        v_00.z = (float)pVVar7;
         UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(v_00,(MethodInfo *)0x0);
       }
       UnityEngine.CoreModule.dll::UnityEngine::GL::GL_End((MethodInfo *)0x0);
@@ -430,8 +421,8 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawLinePairs3D(List_1_Uni
     return;
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -449,12 +440,10 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawLineStrip3D(List_1_Uni
   if (linePoints != (List_1_UnityEngine_Vector3_ *)0x0) {
     if (1 < (linePoints->fields)._size) {
       UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Begin(1,(MethodInfo *)0x0);
-      index = 0;
-      while (index < (linePoints->fields)._size + -1) {
+      for (index = 0; index < (linePoints->fields)._size + -1; index = index + 1) {
         pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xfffffff0,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)linePoints,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
         UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex((Vector3)*pVVar1,(MethodInfo *)0x0);
-        index = index + 1;
-        pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe4,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)linePoints,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+        pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe4,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)linePoints,index + 1,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
         UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex((Vector3)*pVVar1,(MethodInfo *)0x0);
       }
       UnityEngine.CoreModule.dll::UnityEngine::GL::GL_End((MethodInfo *)0x0);
@@ -483,12 +472,10 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawLines2D(List_1_UnityEn
       UnityEngine.CoreModule.dll::UnityEngine::GL::GL_PushMatrix((MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::GL::GL_LoadOrtho((MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Begin(1,(MethodInfo *)0x0);
-      index = 0;
-      while (index < (linePoints->fields)._size + -1) {
+      for (index = 0; index < (linePoints->fields)._size + -1; index = index + 1) {
         VVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__get_Item(linePoints,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_);
         VStack_2.y = VVar1.y;
-        index = index + 1;
-        VVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__get_Item(linePoints,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_);
+        VVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__get_Item(linePoints,index + 1,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_);
         VStack_4.y = VVar3.y;
         if (camera == (Camera *)0x0) goto code_?;
         position.y = VStack_2.y;
@@ -543,12 +530,10 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawLines2D_1(List_1_Unity
       UnityEngine.CoreModule.dll::UnityEngine::GL::GL_PushMatrix((MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::GL::GL_LoadOrtho((MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Begin(1,(MethodInfo *)0x0);
-      index = 0;
-      while (index < (linePoints->fields)._size + -1) {
+      for (index = 0; index < (linePoints->fields)._size + -1; index = index + 1) {
         VVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__get_Item(linePoints,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_);
         VStack_2.y = VVar1.y;
-        index = index + 1;
-        VVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__get_Item(linePoints,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_);
+        VVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__get_Item(linePoints,index + 1,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_);
         VStack_4.y = VVar3.y;
         if (camera == (Camera *)0x0) goto code_?;
         position.y = translation.y + scale.y * VStack_2.y;
@@ -601,14 +586,12 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawLines3D(List_1_UnityEn
   if (linePoints != (List_1_UnityEngine_Vector3_ *)0x0) {
     if (1 < (linePoints->fields)._size) {
       UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Begin(1,(MethodInfo *)0x0);
-      index = 0;
-      while (index < (linePoints->fields)._size + -1) {
+      for (index = 0; index < (linePoints->fields)._size + -1; index = index + 1) {
         pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe0,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)linePoints,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-        index = index + 1;
         uVar2 = pVVar1->alias;
         uVar3 = pVVar1->path;
         pVVar4 = pVVar1->asset;
-        pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item(&VStack_5,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)linePoints,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+        pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item(&VStack_5,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)linePoints,index + 1,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
         method_00 = (MethodInfo *)pVVar1->alias;
         uVar6 = pVVar1->path;
         pVVar7 = pVVar1->asset;
@@ -866,8 +849,8 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawTriangleFan2D(Vector2 
       UnityEngine.CoreModule.dll::UnityEngine::GL::GL_LoadOrtho((MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Begin(4,(MethodInfo *)0x0);
       if (camera == (Camera *)0x0) goto code_?;
-      position_00.y = translation.y + origin.y * scale.y;
-      position_00.x = translation.x + origin.x * scale.x;
+      position_00.y = translation.y + scale.y * origin.y;
+      position_00.x = translation.x + scale.x * origin.x;
       position_00.z = 0.0;
       pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenToViewportPoint((Vector3 *)&stack0xffffffc4,camera,position_00,(MethodInfo *)0x0);
       fVar3 = pVVar2->x;
@@ -891,15 +874,16 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawTriangleFan2D(Vector2 
         in_stack_8 = (undefined1 *)((int)&points->klass + 1);
         puVar10 = &UNK_?;
         VVar6 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__get_Item(this,(int32_t)in_stack_8,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_);
-        points = (List_1_UnityEngine_Vector2_ *)(translation.y + scale.y * VVar6.y);
+        fVar11 = translation.y + scale.y * VVar6.y;
         translation.y = 0.0;
-        position.y = (float)points;
+        position.y = fVar11;
         position.x = translation.x + scale.x * (float)puVar10;
         position.z = (float)pVVar2;
         pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenToViewportPoint((Vector3 *)&stack0xffffffac,camera,position,(MethodInfo *)0x0);
         scale.y = (float)&UNK_?;
         fVar3 = fVar5;
         UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(*pVVar9,(MethodInfo *)0x0);
+        points = (List_1_UnityEngine_Vector2_ *)((int)fVar11 + 1);
         translation.x = (float)pVVar2;
         fVar5 = fVar7;
       } while ((int)points < iVar1);
@@ -910,8 +894,8 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawTriangleFan2D(Vector2 
   }
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -958,13 +942,13 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawTriangleFan2D_1(Vector
         in_stack_8 = (undefined1 *)((int)&points->klass + 1);
         puVar10 = &UNK_?;
         VVar6 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__get_Item(this,(int32_t)in_stack_8,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_);
-        points = (List_1_UnityEngine_Vector2_ *)VVar6.y;
-        position.y = (float)points;
+        position.y = VVar6.y;
         position.x = (float)puVar10;
         position.z = (float)pVVar2;
         pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenToViewportPoint((Vector3 *)&stack0xffffffac,camera,position,(MethodInfo *)0x0);
         fVar3 = fVar5;
         UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(*pVVar2,(MethodInfo *)0x0);
+        points = (List_1_UnityEngine_Vector2_ *)((int)VVar6.y + 1);
         fVar5 = fVar7;
       } while ((int)points < iVar1);
       UnityEngine.CoreModule.dll::UnityEngine::GL::GL_End((MethodInfo *)0x0);
@@ -994,12 +978,12 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawTriangleFan3D(Vector3 
     iVar1 = (points->fields)._size + -1;
     if (0 < iVar1) {
       UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Begin(4,(MethodInfo *)0x0);
-      fVar2 = translation.x + origin.x * scale.x;
+      fVar2 = translation.x + scale.x * origin.x;
       index = 0;
       do {
-        v.y = translation.y + origin.y * scale.y;
+        v.y = translation.y + scale.y * origin.y;
         v.x = fVar2;
-        v.z = translation.z + origin.z * scale.z;
+        v.z = translation.z + scale.z * origin.z;
         UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(v,(MethodInfo *)0x0);
         pVVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffb4,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)points,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
         uVar4 = pVVar3->alias;
@@ -1009,15 +993,15 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawTriangleFan3D(Vector3 
         v_00.x = translation.x + scale.x * (float)uVar4;
         v_00.z = translation.z + scale.z * (float)pVVar3->asset;
         UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(v_00,(MethodInfo *)0x0);
-        index = index + 1;
         VStack_6.asset = (VisualTreeAsset *)&UNK_?;
-        pVVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item(&VStack_6,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)points,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+        pVVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item(&VStack_6,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)points,index + 1,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
         uVar7 = pVVar3->alias;
         uVar8 = pVVar3->path;
         v_01.y = translation.y + scale.y * (float)uVar8;
         v_01.x = translation.x + scale.x * (float)uVar7;
         v_01.z = translation.z + scale.z * (float)pVVar3->asset;
         UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(v_01,(MethodInfo *)0x0);
+        index = index + 1;
       } while (index < iVar1);
       UnityEngine.CoreModule.dll::UnityEngine::GL::GL_End((MethodInfo *)0x0);
     }
@@ -1053,11 +1037,11 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawTriangleFan3D_1(Vector
         pVVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xfffffff0,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)points,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
         VStack_3.asset = (VisualTreeAsset *)&UNK_?;
         UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex((Vector3)*pVVar2,(MethodInfo *)0x0);
-        index = index + 1;
         VStack_3.asset = (VisualTreeAsset *)&UNK_?;
-        pVVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item(&VStack_3,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)points,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+        pVVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item(&VStack_3,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)points,index + 1,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
         origin.z = (float)&UNK_?;
         UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex((Vector3)*pVVar2,(MethodInfo *)0x0);
+        index = index + 1;
       } while (index < iVar1);
       UnityEngine.CoreModule.dll::UnityEngine::GL::GL_End((MethodInfo *)0x0);
     }

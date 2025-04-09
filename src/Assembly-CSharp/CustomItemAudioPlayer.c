@@ -9,20 +9,19 @@ void Assembly-CSharp.dll::CustomItemAudioPlayer::CustomItemAudioPlayer_Initializ
     cRam_? = '\x01';
   }
   pAVar1 = (AudioSource *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1((Component *)this,UnityEngine__AudioSource_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::AudioSource>__);
-  ppAVar2 = &(this->fields).audioSource;
-  *ppAVar2 = pAVar1;
-  func_?(ppAVar2,pAVar1);
-  if (*ppAVar2 != (AudioSource *)0x0) {
-    fVar3 = UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_get_volume(*ppAVar2,(MethodInfo *)0x0);
-    ppSVar4 = &(this->fields).clipNames;
-    (this->fields).baseVolume = fVar3;
-    *ppSVar4 = clipNames;
-    func_?(ppSVar4,clipNames);
+  (this->fields).audioSource = pAVar1;
+  func_?(&(this->fields).audioSource,pAVar1);
+  pAVar1 = (this->fields).audioSource;
+  if (pAVar1 != (AudioSource *)0x0) {
+    fVar2 = UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_get_volume(pAVar1,(MethodInfo *)0x0);
+    (this->fields).clipNames = clipNames;
+    (this->fields).baseVolume = fVar2;
+    func_?(&(this->fields).clipNames,clipNames);
     return;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -158,11 +157,11 @@ void Assembly-CSharp.dll::CustomItemAudioPlayer::CustomItemAudioPlayer_PlayClipF
         UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_loop(pAVar1,0,(MethodInfo *)0x0);
         pAVar1 = (this->fields).audioSource;
         if (pAVar1 != (AudioSource *)0x0) {
-          UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_PlayScheduled(pAVar1,1.33733838224134e-315,in_stack_6);
+          UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_PlayScheduled(pAVar1,1.33747948738979e-315,in_stack_6);
           pAVar1 = (this->fields).audioSource;
           if (pAVar1 != (AudioSource *)0x0) {
-            uStack7 = SUB84(dStack_5 + 3.199888667322536e-29,0);
-            UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_SetScheduledEndTime(pAVar1,(double)((ulonglong)(dStack_5 + 3.199888667322536e-29) >> 0x20),in_stack_8);
+            uStack7 = SUB84(dStack_5 + 3.208483129699364e-29,0);
+            UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_SetScheduledEndTime(pAVar1,(double)((ulonglong)(dStack_5 + 3.208483129699364e-29) >> 0x20),in_stack_8);
             return;
           }
         }

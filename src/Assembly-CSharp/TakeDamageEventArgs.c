@@ -12,10 +12,9 @@ void Assembly-CSharp.dll::TakeDamageEventArgs::TakeDamageEventArgs__ctor(TakeDam
     func_?(TypeInfo__System__EventArgs);
   }
   UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::UxmlObjectListAttributeDescription`1[System::Object]::UxmlObjectListAttributeDescription_1_System_Object___ctor((UxmlObjectListAttributeDescription_1_System_Object_ *)this,(MethodInfo *)0x0);
-  ppMVar1 = &(this->fields).damageSource;
+  (this->fields).damageSource = damageDealer;
   (this->fields).damage = amount;
-  *ppMVar1 = damageDealer;
-  func_?(ppMVar1,damageDealer);
+  func_?(&(this->fields).damageSource,damageDealer);
   (this->fields).damageType = (undefined1)damageType;
   return;
 }

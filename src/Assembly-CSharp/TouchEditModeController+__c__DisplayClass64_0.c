@@ -24,7 +24,7 @@ void Assembly-CSharp.dll::TouchEditModeController+<>c__DisplayClass64_0::TouchEd
   if (uVar6 != 0) {
     do {
       if (pIVar5->interfaceOffsets[uVar4].interfaceType == (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IModalPopupCreator) {
-        ppMVar7 = &(&(x->klass->vtable).CreateErrorNotificationPopup)[pIVar5->interfaceOffsets[uVar4].offset].method;
+        ppMVar7 = &(&(x->klass->vtable).CreateErrorNotificationPopup)[x->klass->interfaceOffsets[uVar4].offset].method;
         goto code_?;
       }
       uVar4 = uVar4 + 1;

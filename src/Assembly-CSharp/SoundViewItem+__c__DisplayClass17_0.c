@@ -24,7 +24,7 @@ void Assembly-CSharp.dll::SoundViewItem+<>c__DisplayClass17_0::SoundViewItem_c_D
   if (uVar6 != 0) {
     do {
       if (pIVar5->interfaceOffsets[uVar4].interfaceType == (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IHandleSettingChanged) {
-        ppMVar7 = &(&handler->klass->vtable)[pIVar5->interfaceOffsets[uVar4].offset].OnSettingChanged.method;
+        ppMVar7 = &(&handler->klass->vtable)[handler->klass->interfaceOffsets[uVar4].offset].OnSettingChanged.method;
         goto code_?;
       }
       uVar4 = uVar4 + 1;

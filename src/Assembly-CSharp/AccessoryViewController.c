@@ -135,15 +135,17 @@ code_?:
     ppAVar17 = (AccessoryViewController **)in_stack_12;
   }
   in_stack_12 = (MethodInfo *)ppAVar17;
-  if (*(char *)(in_stack_18 + 0x10) != '\0') {
+  iStack18 = 0;
+  if (*(char *)(in_stack_19 + 0x10) != '\0') {
     pSVar4 = MVGameControllerBase::MVGameControllerBase_get_SkyboxManager((MethodInfo *)0x0);
     if (pSVar4 == (SkyboxManager *)0x0) goto code_?;
     this = (AccessoryViewController *)0x0;
     SkyboxManager::SkyboxManager_Disable(pSVar4,(MethodInfo *)0x0);
   }
-  if (*(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)(in_stack_18 + 0x18) != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar19 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)&stack0x00000020,*(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)(in_stack_18 + 0x18),MethodInfo__System__Collections__Generic__List<ThemeComponent>__GetEnumerator__);
-    RVar20 = pLVar19->_current;
+  if (*(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)(in_stack_19 + 0x18) != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    pLVar20 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)&stack0x00000020,*(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)(in_stack_19 + 0x18),MethodInfo__System__Collections__Generic__List<ThemeComponent>__GetEnumerator__);
+    iStack18 = pLVar20->_version;
+    RVar21 = pLVar20->_current;
     in_stack_10 = (WorldObjectClientRef_1_System_Object_ *)0x0;
     in_stack_14 = (MethodInfo *)0x1;
     in_stack_9 = (RegexCharClass_SingleRange)&stack0x00000010;
@@ -155,8 +157,8 @@ code_?:
         *unaff_FS_OFFSET = uStack16;
         return;
       }
-      if (RVar20 == (RegexCharClass_SingleRange)0x0) break;
-      (**(code **)(*(int *)RVar20 + 0xe0))(RVar20);
+      if (RVar21 == (RegexCharClass_SingleRange)0x0) break;
+      (**(code **)(*(int *)RVar21 + 0xe0))(RVar21);
     }
   }
 code_?:
@@ -174,10 +176,9 @@ void Assembly-CSharp.dll::AccessoryViewController::AccessoryViewController_OpenA
 {
   pAVar1 = (this->fields).accessoryView;
   if (pAVar1 != (AccessoryView *)0x0) {
-    pAVar2 = (pAVar1->fields).accessoryDataClient;
-    if (pAVar2 != (AccessoryDataClient *)0x0) {
+    if ((pAVar1->fields).accessoryDataClient != (AccessoryDataClient *)0x0) {
       if (accessoryData == (AccessoryDataClient *)0x0) goto code_?;
-      if ((pAVar2->fields)._.aMDID == (accessoryData->fields)._.aMDID) {
+      if ((((pAVar1->fields).accessoryDataClient)->fields)._.aMDID == (accessoryData->fields)._.aMDID) {
         return;
       }
     }
@@ -191,12 +192,12 @@ void Assembly-CSharp.dll::AccessoryViewController::AccessoryViewController_OpenA
         this_00 = (this->fields).backbackController;
         if (this_00 != (AccessoryShopToggleInventory *)0x0) {
           AccessoryShopToggleInventory::AccessoryShopToggleInventory_SetBackpackIconIsEnabled(this_00,0,(MethodInfo *)0x0);
-          pAVar3 = (this->fields).previewer;
-          if (pAVar3 != (AvatarAccessoryPreviewer *)0x0) {
-            AvatarAccessoryPreviewer::AvatarAccessoryPreviewer_OnRestartAnimation(pAVar3,(MethodInfo *)0x0);
-            pAVar3 = (this->fields).previewer;
-            if (pAVar3 != (AvatarAccessoryPreviewer *)0x0) {
-              AvatarAccessoryPreviewer::AvatarAccessoryPreviewer_ResetPreviewTransform(pAVar3,(MethodInfo *)0x0);
+          pAVar2 = (this->fields).previewer;
+          if (pAVar2 != (AvatarAccessoryPreviewer *)0x0) {
+            AvatarAccessoryPreviewer::AvatarAccessoryPreviewer_OnRestartAnimation(pAVar2,(MethodInfo *)0x0);
+            pAVar2 = (this->fields).previewer;
+            if (pAVar2 != (AvatarAccessoryPreviewer *)0x0) {
+              AvatarAccessoryPreviewer::AvatarAccessoryPreviewer_ResetPreviewTransform(pAVar2,(MethodInfo *)0x0);
               return;
             }
           }
@@ -206,8 +207,8 @@ void Assembly-CSharp.dll::AccessoryViewController::AccessoryViewController_OpenA
   }
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -315,63 +316,62 @@ void Assembly-CSharp.dll::AccessoryViewController::AccessoryViewController_ShowB
   pBVar1 = (this->fields).bundlePurchaseOptions;
   if (pBVar1 != (BundleView *)0x0) {
     pAVar2 = AccessoryDataManager::AccessoryDataManager_get_AccessoryBundleClient((MethodInfo *)0x0);
-    ppAVar3 = &(pBVar1->fields).bundleData;
-    *ppAVar3 = pAVar2;
+    (pBVar1->fields).bundleData = pAVar2;
     func_?();
     this_02 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (((this_02 != (MVNetworkGame *)0x0) && (pMVar4 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_02,(MethodInfo *)0x0), pMVar4 != (MVLocalPlayer *)0x0)) && (pAVar2 = *ppAVar3, pAVar2 != (AccessoryBundleClient *)0x0)) {
-      if ((pMVar4->fields)._.level < (pAVar2->fields)._.level) {
+    if (((this_02 != (MVNetworkGame *)0x0) && (pMVar3 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_02,(MethodInfo *)0x0), pMVar3 != (MVLocalPlayer *)0x0)) && (pAVar2 = (pBVar1->fields).bundleData, pAVar2 != (AccessoryBundleClient *)0x0)) {
+      if ((pMVar3->fields)._.level < (pAVar2->fields)._.level) {
         BundleView::BundleView_HandleLevel(pBVar1,pAVar2,(MethodInfo *)0x0);
       }
       else {
         BundleView::BundleView_HandlePrices(pBVar1,pAVar2,(MethodInfo *)0x0);
       }
       pBVar1 = (this->fields).bundlePurchaseOptions;
-      if ((pBVar1 != (BundleView *)0x0) && (pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pBVar1,(MethodInfo *)0x0), pGVar5 != (GameObject *)0x0)) {
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar5,1,(MethodInfo *)0x0);
-        pGVar5 = (this->fields).inventoryView;
-        if (pGVar5 != (GameObject *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar5,1,(MethodInfo *)0x0);
+      if ((pBVar1 != (BundleView *)0x0) && (pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pBVar1,(MethodInfo *)0x0), pGVar4 != (GameObject *)0x0)) {
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar4,1,(MethodInfo *)0x0);
+        pGVar4 = (this->fields).inventoryView;
+        if (pGVar4 != (GameObject *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar4,1,(MethodInfo *)0x0);
           this_00 = (this->fields).backbackController;
           if (this_00 != (AccessoryShopToggleInventory *)0x0) {
             AccessoryShopToggleInventory::AccessoryShopToggleInventory_SetBackpackIconIsEnabled(this_00,0,(MethodInfo *)0x0);
-            pAVar6 = (this->fields).previewer;
-            if (pAVar6 != (AvatarAccessoryPreviewer *)0x0) {
-              if ((pAVar6->fields).imagesReady == 0) {
+            pAVar5 = (this->fields).previewer;
+            if (pAVar5 != (AvatarAccessoryPreviewer *)0x0) {
+              if ((pAVar5->fields).imagesReady == 0) {
                 return;
               }
-              pGVar5 = (pAVar6->fields).bodyClone;
-              if (pGVar5 != (GameObject *)0x0) {
-                this_03 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar5,(MethodInfo *)0x0);
+              pGVar4 = (pAVar5->fields).bodyClone;
+              if (pGVar4 != (GameObject *)0x0) {
+                this_03 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar4,(MethodInfo *)0x0);
                 if (cRam_? == '\0') {
                   func_?(&TypeInfo__UnityEngine__Quaternion);
                   cRam_? = '\x01';
                 }
-                pQVar7 = TypeInfo__UnityEngine__Quaternion->static_fields;
-                fVar8 = (pQVar7->identityQuaternion).x;
-                fVar9 = (pQVar7->identityQuaternion).y;
-                fVar10 = (pQVar7->identityQuaternion).z;
-                fVar11 = (pQVar7->identityQuaternion).w;
-                pQVar12 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad((Quaternion *)&stack0xffffffa4,(Vector3)ZEXT812(0x40490fdb00000000),(MethodInfo *)0x0);
-                fVar13 = pQVar12->y;
-                fVar14 = pQVar12->z;
-                fVar15 = pQVar12->w;
+                pQVar6 = TypeInfo__UnityEngine__Quaternion->static_fields;
+                fVar7 = (pQVar6->identityQuaternion).x;
+                fVar8 = (pQVar6->identityQuaternion).y;
+                fVar9 = (pQVar6->identityQuaternion).z;
+                fVar10 = (pQVar6->identityQuaternion).w;
+                pQVar11 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad((Quaternion *)&stack0xffffffa4,(Vector3)ZEXT812(0x40490fdb00000000),(MethodInfo *)0x0);
+                fVar12 = pQVar11->y;
+                fVar13 = pQVar11->z;
+                fVar14 = pQVar11->w;
                 if (this_03 != (Transform *)0x0) {
-                  value.y = (fVar13 * fVar11 + fVar15 * fVar9 + pQVar12->x * fVar10) - fVar14 * fVar8;
-                  value.x = (pQVar12->x * fVar11 + fVar15 * fVar8 + fVar14 * fVar9) - fVar13 * fVar10;
-                  value.z = (fVar14 * fVar11 + fVar15 * fVar10 + fVar13 * fVar8) - pQVar12->x * fVar9;
-                  value.w = ((fVar15 * fVar11 - pQVar12->x * fVar8) - fVar13 * fVar9) - fVar14 * fVar10;
+                  value.y = (fVar8 * fVar14 + fVar12 * fVar10 + fVar9 * pQVar11->x) - fVar13 * fVar7;
+                  value.x = (fVar14 * fVar7 + pQVar11->x * fVar10 + fVar13 * fVar8) - fVar12 * fVar9;
+                  value.z = (fVar9 * fVar14 + fVar13 * fVar10 + fVar12 * fVar7) - fVar8 * pQVar11->x;
+                  value.w = ((fVar14 * fVar10 - fVar7 * pQVar11->x) - fVar12 * fVar8) - fVar9 * fVar13;
                   UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation(this_03,value,(MethodInfo *)0x0);
-                  pAVar16 = (pAVar6->fields).toPreviewer;
-                  if ((pAVar16 != (AvatarPreviewer *)0x0) && (this_01 = (pAVar16->fields).previewCam, this_01 != (Camera *)0x0)) {
-                    UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_fieldOfView(this_01,(pAVar6->fields).startFov,(MethodInfo *)0x0);
+                  pAVar15 = (pAVar5->fields).toPreviewer;
+                  if ((pAVar15 != (AvatarPreviewer *)0x0) && (this_01 = (pAVar15->fields).previewCam, this_01 != (Camera *)0x0)) {
+                    UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_fieldOfView(this_01,(pAVar5->fields).startFov,(MethodInfo *)0x0);
                     return;
                   }
                 }
               }
               func_?();
-              pcVar17 = (code *)swi(3);
-              (*pcVar17)();
+              pcVar16 = (code *)swi(3);
+              (*pcVar16)();
               return;
             }
           }
@@ -380,8 +380,8 @@ void Assembly-CSharp.dll::AccessoryViewController::AccessoryViewController_ShowB
     }
   }
   func_?();
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 

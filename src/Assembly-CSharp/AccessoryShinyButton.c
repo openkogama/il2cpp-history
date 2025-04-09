@@ -11,15 +11,14 @@ void Assembly-CSharp.dll::AccessoryShinyButton::AccessoryShinyButton_Start(Acces
   this_00 = (this->fields).buttonShine;
   if (this_00 != (Transform *)0x0) {
     pRVar1 = (RectTransform *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1((Component *)this_00,UnityEngine__RectTransform_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::RectTransform>__);
-    ppRVar2 = &(this->fields).shine;
-    *ppRVar2 = pRVar1;
-    func_?(ppRVar2,pRVar1);
+    (this->fields).shine = pRVar1;
+    func_?(&(this->fields).shine,pRVar1);
     (this->fields).currentProgress = 0.0;
     return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

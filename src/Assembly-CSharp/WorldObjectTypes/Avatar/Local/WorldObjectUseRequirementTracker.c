@@ -45,7 +45,7 @@ void Assembly-CSharp.dll::WorldObjectTypes::Avatar::Local::WorldObjectUseRequire
       if (uVar4 != 0) {
         do {
           if (pIVar2->interfaceOffsets[uVar3].interfaceType == (Il2CppClass *)TypeInfo__Assets__Scripts__AdIntegration__IAdManager) {
-            ppMVar5 = &(&(pIVar1->klass->vtable).get_ReadyForRewardedAdRequest)[pIVar2->interfaceOffsets[uVar3].offset].method;
+            ppMVar5 = &(&(pIVar1->klass->vtable).get_ReadyForRewardedAdRequest)[pIVar1->klass->interfaceOffsets[uVar3].offset].method;
             goto code_?;
           }
           uVar3 = uVar3 + 1;
@@ -61,7 +61,6 @@ code_?:
         }
       }
       else {
-        ppUVar7 = &(this->fields).onAdFinishedCallback;
         if ((this->fields).onAdFinishedCallback != (UnityAction_1_System_Boolean_ *)0x0) {
           if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__UnityEngine__Debug);
@@ -69,8 +68,8 @@ code_?:
           UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError((Object *)StringLiteral_An_ad_is_already_on_going,(MethodInfo *)0x0);
           return;
         }
-        *ppUVar7 = onAdFinished;
-        func_?(ppUVar7,onAdFinished);
+        (this->fields).onAdFinishedCallback = onAdFinished;
+        func_?(&(this->fields).onAdFinishedCallback,onAdFinished);
         pIVar1 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
         this_00 = (UnityAction_1_System_Int32Enum_ *)func_?(TypeInfo__System__Action<Assets::Scripts::AdIntegration::RewardedAdResult>);
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::UnityAction_1_System_Int32Enum___ctor(this_00,(Object *)this,MethodInfo__WorldObjectTypes__Avatar__Local__WorldObjectUseRequirementTracker__RewardedAdCallback_Assets__Scripts__AdIntegration__RewardedAdResult_,(MethodInfo *)0x0);
@@ -82,7 +81,7 @@ code_?:
           if (uVar3 != 0) {
             do {
               if (pIVar2->interfaceOffsets[uVar4].interfaceType == (Il2CppClass *)TypeInfo__Assets__Scripts__AdIntegration__IAdManager) {
-                ppMVar5 = &(&(pIVar1->klass->vtable).RequestRewardedAd)[pIVar2->interfaceOffsets[uVar4].offset].method;
+                ppMVar5 = &(&(pIVar1->klass->vtable).RequestRewardedAd)[pIVar1->klass->interfaceOffsets[uVar4].offset].method;
                 goto code_?;
               }
               uVar4 = uVar4 + 1;
@@ -101,8 +100,8 @@ code_?:
     return;
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -112,13 +111,12 @@ code_?:
 void Assembly-CSharp.dll::WorldObjectTypes::Avatar::Local::WorldObjectUseRequirementTracker::WorldObjectUseRequirementTracker_RewardedAdCallback(WorldObjectUseRequirementTracker *this,RewardedAdResult__Enum obj,MethodInfo *method)
 
 {
-  ppUVar1 = &(this->fields).onAdFinishedCallback;
-  pUVar2 = *ppUVar1;
-  if (pUVar2 != (UnityAction_1_System_Boolean_ *)0x0) {
-    (*(pUVar2->fields)._._.invoke_impl)((pUVar2->fields)._._.method_code,obj == RewardedAdResult__Enum_RewardUnlocked,(pUVar2->fields)._._.method);
+  pUVar1 = (this->fields).onAdFinishedCallback;
+  if (pUVar1 != (UnityAction_1_System_Boolean_ *)0x0) {
+    (*(pUVar1->fields)._._.invoke_impl)((pUVar1->fields)._._.method_code,obj == RewardedAdResult__Enum_RewardUnlocked,(pUVar1->fields)._._.method);
   }
-  *ppUVar1 = (UnityAction_1_System_Boolean_ *)0x0;
-  func_?(ppUVar1,0);
+  (this->fields).onAdFinishedCallback = (UnityAction_1_System_Boolean_ *)0x0;
+  func_?(&(this->fields).onAdFinishedCallback,0);
   return;
 }
 
@@ -163,15 +161,14 @@ void Assembly-CSharp.dll::WorldObjectTypes::Avatar::Local::WorldObjectUseRequire
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,GamePassesHighScoreList+HighScoreListData]::Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData___ctor(this_00,MethodInfo__System__Collections__Generic__Dictionary<UseRequirementType,_float>__Dictionary__);
   if (this_00 != (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)0x0) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Single]::Dictionary_2_System_Int32Enum_System_Single__Add((Dictionary_2_System_Int32Enum_System_Single_ *)this_00,5,15.0,MethodInfo__System__Collections__Generic__Dictionary<UseRequirementType,_float>__Add_UseRequirementType__float_);
-    ppDVar1 = &(this->fields).timeouts;
-    *ppDVar1 = (Dictionary_2_UseRequirementType_System_Single_ *)this_00;
-    func_?(ppDVar1,this_00);
+    (this->fields).timeouts = (Dictionary_2_UseRequirementType_System_Single_ *)this_00;
+    func_?(&(this->fields).timeouts,this_00);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text::TextResourceManager+FontAssetRef]::Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor((Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *)this,MethodInfo__System__Collections__Generic__Dictionary<int,_float>__Dictionary__);
     return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

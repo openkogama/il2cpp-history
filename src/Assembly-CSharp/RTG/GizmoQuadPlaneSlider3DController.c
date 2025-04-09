@@ -6,24 +6,41 @@ void Assembly-CSharp.dll::RTG::GizmoQuadPlaneSlider3DController::GizmoQuadPlaneS
 {
   pGVar1 = (this->fields)._._data;
   if (pGVar1 != (GizmoPlaneSlider3DControllerData *)0x0) {
-    pGVar2 = (pGVar1->fields).Slider;
-    pQVar3 = (pGVar1->fields).Quad;
-    if ((pGVar2 != (GizmoPlaneSlider3D *)0x0) && ((pGVar4 = (pGVar2->fields)._sharedSettings, pGVar4 != (GizmoPlaneSlider3DSettings *)0x0 || (pGVar4 = (pGVar2->fields)._settings, pGVar4 != (GizmoPlaneSlider3DSettings *)0x0)))) {
+    pQVar2 = (pGVar1->fields).Quad;
+    pGVar3 = (pGVar1->fields).Slider;
+    if (pGVar3 != (GizmoPlaneSlider3D *)0x0) {
+      if ((pGVar3->fields)._sharedSettings == (GizmoPlaneSlider3DSettings *)0x0) {
+        pGVar4 = (pGVar3->fields)._settings;
+        if (pGVar4 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
+      }
+      else {
+        pGVar4 = (pGVar3->fields)._sharedSettings;
+      }
       value = Vector2Ex::Vector2Ex_FromValue(zoomFactor * (pGVar4->fields)._areaHoverEps,(MethodInfo *)0x0);
-      if (pQVar3 != (QuadShape3D *)0x0) {
-        QuadShape3D::QuadShape3D_set_SizeEps(pQVar3,value,(MethodInfo *)0x0);
+      if (pQVar2 != (QuadShape3D *)0x0) {
+        QuadShape3D::QuadShape3D_set_SizeEps(pQVar2,value,(MethodInfo *)0x0);
         pGVar1 = (this->fields)._._data;
         if (pGVar1 != (GizmoPlaneSlider3DControllerData *)0x0) {
-          pQVar3 = (pGVar1->fields).Quad;
-          pGVar2 = (pGVar1->fields).Slider;
-          if ((pGVar2 != (GizmoPlaneSlider3D *)0x0) && (((pGVar4 = (pGVar2->fields)._sharedSettings, pGVar4 != (GizmoPlaneSlider3DSettings *)0x0 || (pGVar4 = (pGVar2->fields)._settings, pGVar4 != (GizmoPlaneSlider3DSettings *)0x0)) && (pQVar3 != (QuadShape3D *)0x0)))) {
-            QuadShape3D::QuadShape3D_set_ExtrudeEps(pQVar3,zoomFactor * (pGVar4->fields)._extrudeHoverEps,(MethodInfo *)0x0);
-            return;
+          pQVar2 = (pGVar1->fields).Quad;
+          pGVar3 = (((this->fields)._._data)->fields).Slider;
+          if (pGVar3 != (GizmoPlaneSlider3D *)0x0) {
+            if ((pGVar3->fields)._sharedSettings == (GizmoPlaneSlider3DSettings *)0x0) {
+              pGVar4 = (pGVar3->fields)._settings;
+              if (pGVar4 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
+            }
+            else {
+              pGVar4 = (pGVar3->fields)._sharedSettings;
+            }
+            if (pQVar2 != (QuadShape3D *)0x0) {
+              QuadShape3D::QuadShape3D_set_ExtrudeEps(pQVar2,zoomFactor * (pGVar4->fields)._extrudeHoverEps,(MethodInfo *)0x0);
+              return;
+            }
           }
         }
       }
     }
   }
+code_?:
   func_?();
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
@@ -93,35 +110,43 @@ void Assembly-CSharp.dll::RTG::GizmoQuadPlaneSlider3DController::GizmoQuadPlaneS
           (this_00->fields)._rotation.y = fVar5;
           (this_00->fields)._rotation.z = fVar4;
           (this_00->fields)._rotation.w = fVar6;
-          pGVar7 = (pGVar2->fields)._sharedLookAndFeel;
-          if ((pGVar7 != (GizmoPlaneSlider3DLookAndFeel *)0x0) || (pGVar7 = (pGVar2->fields)._lookAndFeel, pGVar7 != (GizmoPlaneSlider3DLookAndFeel *)0x0)) {
-            if ((pGVar7->fields)._useZoomFactor == 0) {
-              zoomFactor = 1.0;
+          if ((pGVar2->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+            pGVar7 = (pGVar2->fields)._lookAndFeel;
+            if (pGVar7 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
+          }
+          else {
+            pGVar7 = (pGVar2->fields)._sharedLookAndFeel;
+          }
+          if ((pGVar7->fields)._useZoomFactor == 0) {
+            zoomFactor = 1.0;
+          }
+          pGVar8 = (pGVar2->fields)._scaleDrag;
+          if (pGVar8 != (GizmoDblAxisScaleDrag3D *)0x0) {
+            cVar9 = (*(code *)(pGVar8->klass->vtable).get_IsActive_1.method)(pGVar8,(pGVar8->klass->vtable).get_DragChannel_1.methodPtr);
+            if (cVar9 == '\0') {
+              fVar5 = 1.0;
+              fVar4 = 1.0;
             }
-            pGVar8 = (pGVar2->fields)._scaleDrag;
-            if (pGVar8 != (GizmoDblAxisScaleDrag3D *)0x0) {
-              cVar9 = (*(code *)(pGVar8->klass->vtable).get_IsActive_1.method)(pGVar8,(pGVar8->klass->vtable).get_DragChannel_1.methodPtr);
-              if (cVar9 == '\0') {
-                fVar5 = 1.0;
-                fVar4 = 1.0;
-              }
-              else {
-                pGVar8 = (pGVar2->fields)._scaleDrag;
-                if (pGVar8 == (GizmoDblAxisScaleDrag3D *)0x0) goto code_?;
-                fVar5 = (pGVar8->fields)._totalScale0;
-                fVar4 = (pGVar8->fields)._totalScale1;
-              }
+            else {
+              pGVar8 = (pGVar2->fields)._scaleDrag;
+              if (pGVar8 == (GizmoDblAxisScaleDrag3D *)0x0) goto code_?;
+              fVar5 = (pGVar8->fields)._totalScale0;
+              fVar4 = (pGVar8->fields)._totalScale1;
+            }
+            if ((pGVar2->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+              pGVar7 = (pGVar2->fields)._lookAndFeel;
+              if (pGVar7 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
+            }
+            else {
               pGVar7 = (pGVar2->fields)._sharedLookAndFeel;
-              if ((pGVar7 != (GizmoPlaneSlider3DLookAndFeel *)0x0) || (pGVar7 = (pGVar2->fields)._lookAndFeel, pGVar7 != (GizmoPlaneSlider3DLookAndFeel *)0x0)) {
-                value.y = (pGVar7->fields)._quadHeight * (pGVar7->fields)._scale * zoomFactor * fVar4;
-                value.x = (pGVar7->fields)._scale * (pGVar7->fields)._quadWidth * zoomFactor * fVar5;
-                QuadShape3D::QuadShape3D_set_Size(this_00,value,(MethodInfo *)0x0);
-                pGVar1 = (this->fields)._._data;
-                if ((pGVar1 != (GizmoPlaneSlider3DControllerData *)0x0) && (this_01 = (pGVar1->fields).QuadBorder, this_01 != (GizmoQuad3DBorder *)0x0)) {
-                  GizmoQuad3DBorder::GizmoQuad3DBorder_OnQuadShapeChanged(this_01,(MethodInfo *)0x0);
-                  return;
-                }
-              }
+            }
+            value.y = (pGVar7->fields)._quadHeight * (pGVar7->fields)._scale * zoomFactor * fVar4;
+            value.x = (pGVar7->fields)._scale * (pGVar7->fields)._quadWidth * zoomFactor * fVar5;
+            QuadShape3D::QuadShape3D_set_Size(this_00,value,(MethodInfo *)0x0);
+            pGVar1 = (this->fields)._._data;
+            if ((pGVar1 != (GizmoPlaneSlider3DControllerData *)0x0) && (this_01 = (pGVar1->fields).QuadBorder, this_01 != (GizmoQuad3DBorder *)0x0)) {
+              GizmoQuad3DBorder::GizmoQuad3DBorder_OnQuadShapeChanged(this_01,(MethodInfo *)0x0);
+              return;
             }
           }
         }

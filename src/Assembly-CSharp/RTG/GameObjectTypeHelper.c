@@ -110,7 +110,7 @@ void Assembly-CSharp.dll::RTG::GameObjectTypeHelper::GameObjectTypeHelper__cctor
       if (uVar10 != 0) {
         do {
           if (pIVar8->interfaceOffsets[uVar9].interfaceType == (Il2CppClass *)TypeInfo__System__Collections__IEnumerator) {
-            ppMVar11 = &(&(pIVar5->klass->vtable).get_Current)[pIVar8->interfaceOffsets[uVar9].offset].method;
+            ppMVar11 = &(&(pIVar5->klass->vtable).get_Current)[pIVar5->klass->interfaceOffsets[uVar9].offset].method;
             goto code_?;
           }
           uVar9 = uVar9 + 1;

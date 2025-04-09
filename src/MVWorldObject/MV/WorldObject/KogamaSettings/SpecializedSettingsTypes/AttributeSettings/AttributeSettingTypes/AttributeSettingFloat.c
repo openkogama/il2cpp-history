@@ -101,9 +101,8 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsType
     cRam_? = '\x01';
   }
   KogamaSettingsCore::KogamaSettingTypes::KogamaSettingNumericBase`1[System::Single]::KogamaSettingNumericBase_1_System_Single___ctor((KogamaSettingNumericBase_1_System_Single_ *)this,key,value,min,max,parent,MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>__KogamaSettingNumericBase_System__String__float__float__float__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase_);
-  ppIVar1 = &(this->fields).Calculator;
-  *ppIVar1 = calculator;
-  func_?(ppIVar1,calculator);
+  (this->fields).Calculator = calculator;
+  func_?(&(this->fields).Calculator,calculator);
   return;
 }
 
@@ -118,9 +117,8 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsType
     cRam_? = '\x01';
   }
   KogamaSettingsCore::KogamaSettingTypes::KogamaSettingNumericBase`1[System::Single]::KogamaSettingNumericBase_1_System_Single___ctor((KogamaSettingNumericBase_1_System_Single_ *)this,key,value,min,max,parent,MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>__KogamaSettingNumericBase_System__String__float__float__float__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase_);
-  ppIVar1 = &(this->fields).Calculator;
-  *ppIVar1 = calculator;
-  func_?(ppIVar1,calculator);
+  (this->fields).Calculator = calculator;
+  func_?(&(this->fields).Calculator,calculator);
   (this->fields)._ExclusivityFlag_k__BackingField = attributeSettingsExclusivityFlag;
   return;
 }
@@ -148,7 +146,7 @@ int32_t MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsT
       if (uVar5 != 0) {
         do {
           if (pIVar3->interfaceOffsets[uVar4].interfaceType == (Il2CppClass *)TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributePointCalculators__IAttributePointFloatCalculator) {
-            ppMVar6 = &(&pIVar1->klass->vtable)[pIVar3->interfaceOffsets[uVar4].offset].Calc.method;
+            ppMVar6 = &(&pIVar1->klass->vtable)[pIVar1->klass->interfaceOffsets[uVar4].offset].Calc.method;
             goto code_?;
           }
           uVar4 = uVar4 + 1;

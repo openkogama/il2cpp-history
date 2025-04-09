@@ -108,12 +108,11 @@ void Assembly-CSharp.dll::OperationResponsePendingManager::OperationResponsePend
   this_00 = (HashSet_1_System_ByteEnum_ *)func_?(TypeInfo__System__Collections__Generic__HashSet<MV::Common::MVOperationCodes>);
   System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::HashSet_1_System_ByteEnum___ctor(this_00,MethodInfo__System__Collections__Generic__HashSet<MV::Common::MVOperationCodes>__HashSet__);
   method_00 = (MethodInfo *)&this->fields;
-  ((OperationResponsePendingManager__Fields *)method_00)->pendingOperations = (HashSet_1_MV_Common_MVOperationCodes_ *)this_00;
+  (this->fields).pendingOperations = (HashSet_1_MV_Common_MVOperationCodes_ *)this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,method_00);
-  ppPVar1 = &(this->fields).peer;
-  *ppPVar1 = peer;
-  func_?(ppPVar1,peer);
+  (this->fields).peer = peer;
+  func_?(&(this->fields).peer,peer);
   return;
 }
 

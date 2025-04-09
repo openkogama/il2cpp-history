@@ -57,51 +57,71 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DCollection::GizmoPlaneSlider3DC
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
+  LStack_6._list = (List_1_System_Object_ *)0x0;
+  LStack_6._index = 0;
+  LStack_6._version = 0;
+  LStack_6._current = (Object *)0x0;
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields)._sliders;
   if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator(&LStack_7,this_00,MethodInfo__System__Collections__Generic__List<RTG::GizmoPlaneSlider3D>__GetEnumerator__);
-    LStack_8._list = (List_1_System_Object_ *)pLVar6->_list;
-    LStack_8._index = pLVar6->_index;
-    LStack_8._version = pLVar6->_version;
-    LStack_8._current = *(Object **)&pLVar6->_current;
-    LStack_7._version = 0;
+    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator(&LStack_8,this_00,MethodInfo__System__Collections__Generic__List<RTG::GizmoPlaneSlider3D>__GetEnumerator__);
+    LStack_6._list = (List_1_System_Object_ *)pLVar7->_list;
+    LStack_6._index = pLVar7->_index;
+    LStack_6._version = pLVar7->_version;
+    LStack_6._current = *(Object **)&pLVar7->_current;
+    LStack_8._version = 0;
     uStack_1 = 1;
-    LStack_7._current = (RegexCharClass_SingleRange)&LStack_8;
-    while( true ) {
+    LStack_8._current = (RegexCharClass_SingleRange)&LStack_6;
+    do {
       do {
-        bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext(&LStack_8,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoPlaneSlider3D>__MoveNext__);
-        pOVar10 = LStack_8._current;
+        bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext(&LStack_6,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoPlaneSlider3D>__MoveNext__);
+        pOVar10 = LStack_6._current;
         if (bVar9 == 0) {
           uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&LStack_8,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoPlaneSlider3D>__Dispose__,unaff_EBX);
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&LStack_6,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoPlaneSlider3D>__Dispose__,unaff_EBX);
           *unaff_FS_OFFSET = uStack_3;
           return;
         }
-        if ((RegexCharClass_SingleRange)LStack_8._current == (RegexCharClass_SingleRange)0x0) goto code_?;
+        if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) goto code_?;
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
         }
+        if (*(int *)((int)pOVar10 + 0x74) == 0) {
+          iVar11 = *(int *)((int)pOVar10 + 0x70);
+          if (iVar11 == 0) goto code_?;
+        }
+        else {
+          iVar11 = *(int *)((int)pOVar10 + 0x74);
+        }
+      } while (*(char *)(iVar11 + 0x10) == '\0');
+      if (*(int *)((int)pOVar10 + 0x74) == 0) {
+        iVar11 = *(int *)((int)pOVar10 + 0x70);
+        if (iVar11 == 0) break;
+      }
+      else {
         iVar11 = *(int *)((int)pOVar10 + 0x74);
-        iVar12 = iVar11;
-        if ((iVar11 == 0) && (iVar12 = *(int *)((int)pOVar10 + 0x70), *(int *)((int)pOVar10 + 0x70) == 0)) goto code_?;
-      } while (*(char *)(iVar12 + 0x10) == '\0');
-      if ((iVar11 == 0) && (iVar11 = *(int *)((int)pOVar10 + 0x70), iVar11 == 0)) break;
+      }
       if (*(char *)(iVar11 + 0x10) == '\0') {
-        fVar13 = 1.0;
+        fVar12 = 1.0;
       }
       else {
         if (*(GizmoHandle **)((int)pOVar10 + 8) == (GizmoHandle *)0x0) break;
-        fVar13 = GizmoHandle::GizmoHandle_GetZoomFactor(*(GizmoHandle **)((int)pOVar10 + 8),camera,(MethodInfo *)0x0);
+        fVar12 = GizmoHandle::GizmoHandle_GetZoomFactor(*(GizmoHandle **)((int)pOVar10 + 8),camera,(MethodInfo *)0x0);
       }
-      iVar11 = *(int *)((int)pOVar10 + 0x74);
-      iVar12 = *(int *)((int)pOVar10 + 100);
-      if (((iVar11 == 0) && (iVar11 = *(int *)((int)pOVar10 + 0x70), iVar11 == 0)) || (iVar12 == 0)) break;
-      if (*(uint *)(iVar12 + 0xc) <= *(uint *)(iVar11 + 8)) goto code_?;
-      iVar11 = *(int *)(iVar12 + 0x10 + *(uint *)(iVar11 + 8) * 4);
+      iVar11 = *(int *)((int)pOVar10 + 100);
+      if (*(int *)((int)pOVar10 + 0x74) == 0) {
+        iVar13 = *(int *)((int)pOVar10 + 0x70);
+        if (iVar13 == 0) break;
+      }
+      else {
+        iVar13 = *(int *)((int)pOVar10 + 0x74);
+      }
       if (iVar11 == 0) break;
-      func_?(1,TypeInfo__RTG__IGizmoPlaneSlider3DController,iVar11,fVar13);
-    }
+      if (*(uint *)(iVar11 + 0xc) <= *(uint *)(iVar13 + 8)) goto code_?;
+      iVar11 = *(int *)(iVar11 + 0x10 + *(uint *)(iVar13 + 8) * 4);
+      if (iVar11 == 0) break;
+      func_?(1,TypeInfo__RTG__IGizmoPlaneSlider3DController,iVar11,fVar12);
+    } while( true );
   }
 code_?:
   func_?();
@@ -225,26 +245,30 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DCollection::GizmoPlaneSlider3DC
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
+  LStack_6._list = (List_1_System_Object_ *)0x0;
+  LStack_6._index = 0;
+  LStack_6._version = 0;
+  LStack_6._current = (Object *)0x0;
   method_00 = (MethodInfo *)(this->fields)._sliders;
   if (method_00 != (MethodInfo *)0x0) {
-    pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator(&LStack_7,(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)method_00,MethodInfo__System__Collections__Generic__List<RTG::GizmoPlaneSlider3D>__GetEnumerator__);
-    LStack_8._list = (List_1_System_Object_ *)pLVar6->_list;
-    LStack_8._index = pLVar6->_index;
-    LStack_8._version = pLVar6->_version;
-    LStack_8._current = *(Object **)&pLVar6->_current;
-    LStack_7._version = 0;
+    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator(&LStack_8,(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)method_00,MethodInfo__System__Collections__Generic__List<RTG::GizmoPlaneSlider3D>__GetEnumerator__);
+    LStack_6._list = (List_1_System_Object_ *)pLVar7->_list;
+    LStack_6._index = pLVar7->_index;
+    LStack_6._version = pLVar7->_version;
+    LStack_6._current = *(Object **)&pLVar7->_current;
+    LStack_8._version = 0;
     uStack_1 = 1;
-    LStack_7._current = (RegexCharClass_SingleRange)&LStack_8;
+    LStack_8._current = (RegexCharClass_SingleRange)&LStack_6;
     while( true ) {
-      bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext(&LStack_8,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoPlaneSlider3D>__MoveNext__);
+      bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext(&LStack_6,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoPlaneSlider3D>__MoveNext__);
       if (bVar9 == 0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&LStack_8,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoPlaneSlider3D>__Dispose__,method_00);
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&LStack_6,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoPlaneSlider3D>__Dispose__,method_00);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      if ((RegexCharClass_SingleRange)LStack_8._current == (RegexCharClass_SingleRange)0x0) break;
-      this_00 = GizmoSlider::GizmoSlider_get_HoverPriority3D((GizmoSlider *)LStack_8._current,(MethodInfo *)0x0);
+      if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) break;
+      this_00 = GizmoSlider::GizmoSlider_get_HoverPriority3D((GizmoSlider *)LStack_6._current,(MethodInfo *)0x0);
       if (this_00 == (Priority *)0x0) break;
       method_00 = (MethodInfo *)priority;
       Priority::Priority_MakeHigherThan(this_00,priority,(MethodInfo *)0x0);
@@ -277,26 +301,30 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DCollection::GizmoPlaneSlider3DC
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
+  LStack_6._list = (List_1_System_Object_ *)0x0;
+  LStack_6._index = 0;
+  LStack_6._version = 0;
+  LStack_6._current = (Object *)0x0;
   method_00 = (MethodInfo *)(this->fields)._sliders;
   if (method_00 != (MethodInfo *)0x0) {
-    pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator(&LStack_7,(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)method_00,MethodInfo__System__Collections__Generic__List<RTG::GizmoPlaneSlider3D>__GetEnumerator__);
-    LStack_8._list = (List_1_System_Object_ *)pLVar6->_list;
-    LStack_8._index = pLVar6->_index;
-    LStack_8._version = pLVar6->_version;
-    LStack_8._current = *(Object **)&pLVar6->_current;
-    LStack_7._version = 0;
+    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator(&LStack_8,(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)method_00,MethodInfo__System__Collections__Generic__List<RTG::GizmoPlaneSlider3D>__GetEnumerator__);
+    LStack_6._list = (List_1_System_Object_ *)pLVar7->_list;
+    LStack_6._index = pLVar7->_index;
+    LStack_6._version = pLVar7->_version;
+    LStack_6._current = *(Object **)&pLVar7->_current;
+    LStack_8._version = 0;
     uStack_1 = 1;
-    LStack_7._current = (RegexCharClass_SingleRange)&LStack_8;
+    LStack_8._current = (RegexCharClass_SingleRange)&LStack_6;
     while( true ) {
-      bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext(&LStack_8,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoPlaneSlider3D>__MoveNext__);
+      bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext(&LStack_6,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoPlaneSlider3D>__MoveNext__);
       if (bVar9 == 0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&LStack_8,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoPlaneSlider3D>__Dispose__,method_00);
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&LStack_6,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoPlaneSlider3D>__Dispose__,method_00);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      if ((RegexCharClass_SingleRange)LStack_8._current == (RegexCharClass_SingleRange)0x0) break;
-      this_00 = GizmoSlider::GizmoSlider_get_HoverPriority3D((GizmoSlider *)LStack_8._current,(MethodInfo *)0x0);
+      if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) break;
+      this_00 = GizmoSlider::GizmoSlider_get_HoverPriority3D((GizmoSlider *)LStack_6._current,(MethodInfo *)0x0);
       if (this_00 == (Priority *)0x0) break;
       method_00 = (MethodInfo *)priority;
       Priority::Priority_MakeLowerThan(this_00,priority,(MethodInfo *)0x0);
@@ -367,26 +395,30 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DCollection::GizmoPlaneSlider3DC
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
+  LStack_6._list = (List_1_System_Object_ *)0x0;
+  LStack_6._index = 0;
+  LStack_6._version = 0;
+  LStack_6._current = (Object *)0x0;
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields)._sliders;
   if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator(&LStack_7,this_00,MethodInfo__System__Collections__Generic__List<RTG::GizmoPlaneSlider3D>__GetEnumerator__);
-    LStack_8._list = (List_1_System_Object_ *)pLVar6->_list;
-    LStack_8._index = pLVar6->_index;
-    LStack_8._version = pLVar6->_version;
-    LStack_8._current = *(Object **)&pLVar6->_current;
-    LStack_7._version = 0;
+    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator(&LStack_8,this_00,MethodInfo__System__Collections__Generic__List<RTG::GizmoPlaneSlider3D>__GetEnumerator__);
+    LStack_6._list = (List_1_System_Object_ *)pLVar7->_list;
+    LStack_6._index = pLVar7->_index;
+    LStack_6._version = pLVar7->_version;
+    LStack_6._current = *(Object **)&pLVar7->_current;
+    LStack_8._version = 0;
     uStack_1 = 1;
-    LStack_7._current = (RegexCharClass_SingleRange)&LStack_8;
+    LStack_8._current = (RegexCharClass_SingleRange)&LStack_6;
     while( true ) {
-      bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext(&LStack_8,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoPlaneSlider3D>__MoveNext__);
+      bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext(&LStack_6,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoPlaneSlider3D>__MoveNext__);
       if (bVar9 == 0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&LStack_8,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoPlaneSlider3D>__Dispose__,unaff_EDI);
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&LStack_6,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoPlaneSlider3D>__Dispose__,unaff_EDI);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      if ((RegexCharClass_SingleRange)LStack_8._current == (RegexCharClass_SingleRange)0x0) break;
-      GizmoPlaneSlider3D::GizmoPlaneSlider3D_SetBorderHoverable((GizmoPlaneSlider3D *)LStack_8._current,isHoverable,(MethodInfo *)0x0);
+      if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) break;
+      GizmoPlaneSlider3D::GizmoPlaneSlider3D_SetBorderHoverable((GizmoPlaneSlider3D *)LStack_6._current,isHoverable,(MethodInfo *)0x0);
     }
   }
   func_?();
@@ -416,38 +448,48 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DCollection::GizmoPlaneSlider3DC
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
+  LStack_6._list = (List_1_System_Object_ *)0x0;
+  LStack_6._index = 0;
+  LStack_6._version = 0;
+  LStack_6._current = (Object *)0x0;
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields)._sliders;
   if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator(&LStack_7,this_00,MethodInfo__System__Collections__Generic__List<RTG::GizmoPlaneSlider3D>__GetEnumerator__);
-    LStack_8._list = (List_1_System_Object_ *)pLVar6->_list;
-    LStack_8._index = pLVar6->_index;
-    LStack_8._version = pLVar6->_version;
-    LStack_8._current = *(Object **)&pLVar6->_current;
-    LStack_7._version = 0;
+    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator(&LStack_8,this_00,MethodInfo__System__Collections__Generic__List<RTG::GizmoPlaneSlider3D>__GetEnumerator__);
+    LStack_6._list = (List_1_System_Object_ *)pLVar7->_list;
+    LStack_6._index = pLVar7->_index;
+    LStack_6._version = pLVar7->_version;
+    LStack_6._current = *(Object **)&pLVar7->_current;
+    LStack_8._version = 0;
     uStack_1 = 1;
-    LStack_7._current = (RegexCharClass_SingleRange)&LStack_8;
+    LStack_8._current = (RegexCharClass_SingleRange)&LStack_6;
     while( true ) {
       do {
-        bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext(&LStack_8,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoPlaneSlider3D>__MoveNext__);
-        pOVar10 = LStack_8._current;
+        bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext(&LStack_6,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoPlaneSlider3D>__MoveNext__);
+        pOVar10 = LStack_6._current;
         if (bVar9 == 0) {
           uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&LStack_8,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoPlaneSlider3D>__Dispose__,unaff_EBX);
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&LStack_6,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoPlaneSlider3D>__Dispose__,unaff_EBX);
           *unaff_FS_OFFSET = uStack_3;
           return;
         }
-        if ((RegexCharClass_SingleRange)LStack_8._current == (RegexCharClass_SingleRange)0x0) goto code_?;
+        if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) goto code_?;
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
         }
       } while (isVisible == *(bool *)((int)pOVar10 + 0x39));
-      iVar11 = *(int *)((int)pOVar10 + 0x74);
+      iVar11 = *(int *)((int)pOVar10 + 100);
       *(bool *)((int)pOVar10 + 0x39) = isVisible;
-      iVar12 = *(int *)((int)pOVar10 + 100);
-      if (((iVar11 == 0) && (iVar11 = *(int *)((int)pOVar10 + 0x70), iVar11 == 0)) || (iVar12 == 0)) goto code_?;
-      if (*(uint *)(iVar12 + 0xc) <= *(uint *)(iVar11 + 8)) break;
-      iVar11 = *(int *)(iVar12 + 0x10 + *(uint *)(iVar11 + 8) * 4);
+      if (*(int *)((int)pOVar10 + 0x74) == 0) {
+        iVar12 = *(int *)((int)pOVar10 + 0x70);
+        if (iVar12 == 0) goto code_?;
+      }
+      else {
+        iVar12 = *(int *)((int)pOVar10 + 0x74);
+      }
+      if (iVar11 == 0) goto code_?;
+      if (*(uint *)(iVar11 + 0xc) <= *(uint *)(iVar12 + 8)) break;
+      iVar11 = *(int *)(iVar11 + 0x10 + *(uint *)(iVar12 + 8) * 4);
       if (iVar11 == 0) goto code_?;
       func_?(0,TypeInfo__RTG__IGizmoPlaneSlider3DController,iVar11);
     }
@@ -561,26 +603,30 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DCollection::GizmoPlaneSlider3DC
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
+  LStack_6._list = (List_1_System_Object_ *)0x0;
+  LStack_6._index = 0;
+  LStack_6._version = 0;
+  LStack_6._current = (Object *)0x0;
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields)._sliders;
   if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator(&LStack_7,this_00,MethodInfo__System__Collections__Generic__List<RTG::GizmoPlaneSlider3D>__GetEnumerator__);
-    LStack_8._list = (List_1_System_Object_ *)pLVar6->_list;
-    LStack_8._index = pLVar6->_index;
-    LStack_8._version = pLVar6->_version;
-    LStack_8._current = *(Object **)&pLVar6->_current;
-    LStack_7._version = 0;
+    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator(&LStack_8,this_00,MethodInfo__System__Collections__Generic__List<RTG::GizmoPlaneSlider3D>__GetEnumerator__);
+    LStack_6._list = (List_1_System_Object_ *)pLVar7->_list;
+    LStack_6._index = pLVar7->_index;
+    LStack_6._version = pLVar7->_version;
+    LStack_6._current = *(Object **)&pLVar7->_current;
+    LStack_8._version = 0;
     uStack_1 = 1;
-    LStack_7._current = (RegexCharClass_SingleRange)&LStack_8;
+    LStack_8._current = (RegexCharClass_SingleRange)&LStack_6;
     while( true ) {
-      bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext(&LStack_8,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoPlaneSlider3D>__MoveNext__);
+      bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext(&LStack_6,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoPlaneSlider3D>__MoveNext__);
       if (bVar9 == 0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&LStack_8,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoPlaneSlider3D>__Dispose__,unaff_EDI);
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&LStack_6,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoPlaneSlider3D>__Dispose__,unaff_EDI);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      if ((RegexCharClass_SingleRange)LStack_8._current == (RegexCharClass_SingleRange)0x0) break;
-      (**(code **)(*(int *)LStack_8._current + 0x128))(LStack_8._current,_isEnabled,*(undefined4 *)(*(int *)LStack_8._current + 300));
+      if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) break;
+      (**(code **)(*(int *)LStack_6._current + 0x128))(LStack_6._current,_isEnabled,*(undefined4 *)(*(int *)LStack_6._current + 300));
     }
   }
   func_?();
@@ -690,26 +736,30 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DCollection::GizmoPlaneSlider3DC
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
+  LStack_6._list = (List_1_System_Object_ *)0x0;
+  LStack_6._index = 0;
+  LStack_6._version = 0;
+  LStack_6._current = (Object *)0x0;
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields)._sliders;
   if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator(&LStack_7,this_00,MethodInfo__System__Collections__Generic__List<RTG::GizmoPlaneSlider3D>__GetEnumerator__);
-    LStack_8._list = (List_1_System_Object_ *)pLVar6->_list;
-    LStack_8._index = pLVar6->_index;
-    LStack_8._version = pLVar6->_version;
-    LStack_8._current = *(Object **)&pLVar6->_current;
-    LStack_7._version = 0;
+    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator(&LStack_8,this_00,MethodInfo__System__Collections__Generic__List<RTG::GizmoPlaneSlider3D>__GetEnumerator__);
+    LStack_6._list = (List_1_System_Object_ *)pLVar7->_list;
+    LStack_6._index = pLVar7->_index;
+    LStack_6._version = pLVar7->_version;
+    LStack_6._current = *(Object **)&pLVar7->_current;
+    LStack_8._version = 0;
     uStack_1 = 1;
-    LStack_7._current = (RegexCharClass_SingleRange)&LStack_8;
+    LStack_8._current = (RegexCharClass_SingleRange)&LStack_6;
     while( true ) {
-      bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext(&LStack_8,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoPlaneSlider3D>__MoveNext__);
+      bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::List_1_T_Enumerator_System_Object__MoveNext(&LStack_6,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoPlaneSlider3D>__MoveNext__);
       if (bVar9 == 0) {
         uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&LStack_8,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoPlaneSlider3D>__Dispose__,unaff_EDI);
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&LStack_6,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoPlaneSlider3D>__Dispose__,unaff_EDI);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      if (((RegexCharClass_SingleRange)LStack_8._current == (RegexCharClass_SingleRange)0x0) || (*(GizmoHandle **)((int)LStack_8._current + 8) == (GizmoHandle *)0x0)) break;
-      GizmoHandle::GizmoHandle_SetZoomFactorTransform(*(GizmoHandle **)((int)LStack_8._current + 8),zoomFactorTransform,(MethodInfo *)0x0);
+      if (((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) || (*(GizmoHandle **)((int)LStack_6._current + 8) == (GizmoHandle *)0x0)) break;
+      GizmoHandle::GizmoHandle_SetZoomFactorTransform(*(GizmoHandle **)((int)LStack_6._current + 8),zoomFactorTransform,(MethodInfo *)0x0);
     }
   }
   func_?();
@@ -738,7 +788,7 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DCollection::GizmoPlaneSlider3DC
   this_01 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_RTG::GizmoPlaneSlider3D>);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text::TextResourceManager+FontAssetRef]::Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor(this_01,MethodInfo__System__Collections__Generic__Dictionary<int,_RTG::GizmoPlaneSlider3D>__Dictionary__);
   method_00 = (MethodInfo *)&(this->fields)._handleIdToSlider;
-  *(Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ **)method_00 = this_01;
+  (this->fields)._handleIdToSlider = (Dictionary_2_System_Int32_RTG_GizmoPlaneSlider3D_ *)this_01;
   func_?(method_00,this_01);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;

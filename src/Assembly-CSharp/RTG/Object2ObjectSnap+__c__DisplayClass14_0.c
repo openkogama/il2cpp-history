@@ -23,7 +23,7 @@ bool Assembly-CSharp.dll::RTG::Object2ObjectSnap+<>c__DisplayClass14_0::Object2O
             layerBits = (this->fields).snapConfig.DestinationLayers;
             layerNumber = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_layer(item,(MethodInfo *)0x0);
             bVar1 = LayerEx::LayerEx_IsLayerBitSet(layerBits,layerNumber,(MethodInfo *)0x0);
-            return bVar1 == 0;
+            return bVar1 ^ 1;
           }
         }
         return 1;

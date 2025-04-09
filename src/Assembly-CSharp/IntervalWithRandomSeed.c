@@ -28,13 +28,12 @@ bool Assembly-CSharp.dll::IntervalWithRandomSeed::IntervalWithRandomSeed_Update(
 void Assembly-CSharp.dll::IntervalWithRandomSeed::IntervalWithRandomSeed_WrapDeltaTime(IntervalWithRandomSeed *this,MethodInfo *method)
 
 {
-  fVar1 = (this->fields).range;
-  fVar2 = (this->fields).currentDeltaTime - fVar1;
-  if (0.0 < fVar2) {
+  fVar1 = (this->fields).currentDeltaTime - (this->fields).range;
+  if (0.0 < fVar1) {
     do {
-      (this->fields).currentDeltaTime = fVar2;
-      fVar2 = fVar2 - fVar1;
-    } while (0.0 < fVar2);
+      (this->fields).currentDeltaTime = fVar1;
+      fVar1 = fVar1 - (this->fields).range;
+    } while (0.0 < fVar1);
     (this->fields).newIteration = 1;
   }
   return;

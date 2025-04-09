@@ -55,7 +55,7 @@ bool MVCommon.dll::MV::Common::Urls::Urls_StreamingAssetUrlReady(MethodInfo *met
     func_?(TypeInfo__MV__Common__Urls);
   }
   bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty(TypeInfo__MV__Common__Urls->static_fields->streamingAssets,(MethodInfo *)0x0);
-  return bVar1 == 0;
+  return bVar1 ^ 1;
 }
 
 
