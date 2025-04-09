@@ -47,7 +47,7 @@ void Assembly-CSharp.dll::ESAddLink::ESAddLink_Enter
     if ((pPVar2 != (PrefabPool *)0x0) &&
        (pMVar3 = (pPVar2->fields).logicCubeConnectorRedMaterial, pMVar3 != (Material *)0x0)) {
       pCVar4 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_color
-                          ((Color *)&stack0xffffffec,pMVar3,(MethodInfo *)0x0);
+                         ((Color *)&stack0xffffffec,pMVar3,(MethodInfo *)0x0);
       fVar5 = pCVar4->g;
       fVar6 = pCVar4->b;
       fVar7 = pCVar4->a;
@@ -63,7 +63,7 @@ void Assembly-CSharp.dll::ESAddLink::ESAddLink_Enter
       if ((pPVar2 != (PrefabPool *)0x0) &&
          (pMVar3 = (pPVar2->fields).logicCubeConnectorBlueMaterial, pMVar3 != (Material *)0x0)) {
         pCVar4 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_color
-                            ((Color *)&stack0xffffffec,pMVar3,(MethodInfo *)0x0);
+                           ((Color *)&stack0xffffffec,pMVar3,(MethodInfo *)0x0);
         fVar5 = pCVar4->g;
         fVar6 = pCVar4->b;
         fVar7 = pCVar4->a;
@@ -84,23 +84,21 @@ void Assembly-CSharp.dll::ESAddLink::ESAddLink_Enter
         MVWorldObject.dll::MV::WorldObject::Link::Link__ctor_1(pLVar8,(MethodInfo *)0x0);
         (this->fields).tempLink = pLVar8;
         func_?();
-        iVar9 = (pMVar1->fields).selectedConnector;
-        if (iVar9 == 1) {
+        if ((pMVar1->fields).selectedConnector == 1) {
           pLVar8 = (this->fields).tempLink;
-          pMVar10 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO
-                              (esm,(MethodInfo *)0x0);
-          if ((pMVar10 == (MVWorldObjectClient *)0x0) || (pLVar8 == (Link *)0x0))
+          pMVar9 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO
+                             (esm,(MethodInfo *)0x0);
+          if ((pMVar9 == (MVWorldObjectClient *)0x0) || (pLVar8 == (Link *)0x0))
           goto code_?;
-          (pLVar8->fields).inputWOID = (pMVar10->fields)._.id;
+          (pLVar8->fields).inputWOID = (pMVar9->fields)._.id;
           if (cRam_? == '\0') {
             func_?();
             cRam_? = '\x01';
           }
           pPVar2 = TypeInfo__PrefabPool->static_fields->instance;
           if (pPVar2 == (PrefabPool *)0x0) goto code_?;
-          ppMVar11 = &(this->fields).materialToPulse;
-          *ppMVar11 = (pPVar2->fields).logicCubeConnectorBlueMaterial;
-          func_?(ppMVar11);
+          (this->fields).materialToPulse = (pPVar2->fields).logicCubeConnectorBlueMaterial;
+          func_?(&(this->fields).materialToPulse);
           if (cRam_? == '\0') {
             func_?();
             cRam_? = '\x01';
@@ -110,7 +108,7 @@ void Assembly-CSharp.dll::ESAddLink::ESAddLink_Enter
           pMVar3 = (pPVar2->fields).logicCubeConnectorBlueMaterial;
         }
         else {
-          if (iVar9 != 2) {
+          if ((pMVar1->fields).selectedConnector != 2) {
             if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
               func_?(TypeInfo__UnityEngine__Debug);
             }
@@ -120,20 +118,19 @@ void Assembly-CSharp.dll::ESAddLink::ESAddLink_Enter
             return;
           }
           pLVar8 = (this->fields).tempLink;
-          pMVar10 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO
-                              (esm,(MethodInfo *)0x0);
-          if ((pMVar10 == (MVWorldObjectClient *)0x0) || (pLVar8 == (Link *)0x0))
+          pMVar9 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO
+                             (esm,(MethodInfo *)0x0);
+          if ((pMVar9 == (MVWorldObjectClient *)0x0) || (pLVar8 == (Link *)0x0))
           goto code_?;
-          (pLVar8->fields).outputWOID = (pMVar10->fields)._.id;
+          (pLVar8->fields).outputWOID = (pMVar9->fields)._.id;
           if (cRam_? == '\0') {
             func_?();
             cRam_? = '\x01';
           }
           pPVar2 = TypeInfo__PrefabPool->static_fields->instance;
           if (pPVar2 == (PrefabPool *)0x0) goto code_?;
-          ppMVar11 = &(this->fields).materialToPulse;
-          *ppMVar11 = (pPVar2->fields).logicCubeConnectorRedMaterial;
-          func_?(ppMVar11);
+          (this->fields).materialToPulse = (pPVar2->fields).logicCubeConnectorRedMaterial;
+          func_?(&(this->fields).materialToPulse);
           if (cRam_? == '\0') {
             func_?();
             cRam_? = '\x01';
@@ -144,7 +141,7 @@ void Assembly-CSharp.dll::ESAddLink::ESAddLink_Enter
         }
         if (pMVar3 != (Material *)0x0) {
           pCVar4 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_color
-                              ((Color *)&stack0xffffffec,pMVar3,(MethodInfo *)0x0);
+                             ((Color *)&stack0xffffffec,pMVar3,(MethodInfo *)0x0);
           fVar5 = pCVar4->g;
           fVar6 = pCVar4->b;
           fVar7 = pCVar4->a;
@@ -157,21 +154,20 @@ void Assembly-CSharp.dll::ESAddLink::ESAddLink_Enter
           (this->fields).startColor.g = 0.6;
           (this->fields).startColor.b = fVar5;
           (this->fields).startColor.a = 1.0;
-          pMVar12 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
+          pMVar10 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
                               ((MethodInfo *)0x0);
-          if ((pMVar12 != (MainCameraManager *)0x0) &&
-             (this_00 = (pMVar12->fields).lineDrawManager, this_00 != (LineDrawManager *)0x0)) {
+          if ((pMVar10 != (MainCameraManager *)0x0) &&
+             (this_00 = (pMVar10->fields).lineDrawManager, this_00 != (LineDrawManager *)0x0)) {
             LineDrawManager::LineDrawManager_SetTempLink
                       (this_00,(this->fields).tempLink,(MethodInfo *)0x0);
             (*(code *)(pMVar1->klass->vtable).HighlightConnector.method)();
             this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
             if (this_01 != (MVWorldObjectClientManager *)0x0) {
-              pWVar13 = MVWorldObjectClientManager::
+              pWVar11 = MVWorldObjectClientManager::
                         MVWorldObjectClientManager_GetWorldObjectClientRef
                                   (this_01,(pMVar1->fields)._.id,(MethodInfo *)0x0);
-              ppWVar14 = &(this->fields).woRef;
-              *ppWVar14 = pWVar13;
-              func_?(ppWVar14);
+              (this->fields).woRef = pWVar11;
+              func_?(&(this->fields).woRef);
               return;
             }
           }
@@ -181,8 +177,8 @@ void Assembly-CSharp.dll::ESAddLink::ESAddLink_Enter
   }
 code_?:
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -544,9 +540,22 @@ void Assembly-CSharp.dll::ESAddLink::ESAddLink__ctor(ESAddLink *this,MethodInfo 
   (this->fields).FadeDuration = 0.7;
   pWVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRefNullRef
                      ((MethodInfo *)0x0);
-  ppWVar2 = &(this->fields)._.tintedWo;
-  *ppWVar2 = pWVar1;
-  func_?(ppWVar2,&stack0xfffffffc,&UNK_?,ppWVar2,pWVar1);
+  (this->fields)._.tintedWo = pWVar1;
+  method_00 = (MethodInfo *)&(this->fields)._.tintedWo;
+  func_?(method_00,pWVar1);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  this_00 = LoggerManager::LoggerManager_get_Instance((MethodInfo *)0x0);
+  type = mscorlib.dll::System::Object::Object_GetType((Object *)this,(MethodInfo *)0x0);
+  if (this_00 != (LoggerManager *)0x0) {
+    pIVar2 = LoggerManager::LoggerManager_GetLogger(this_00,type,(MethodInfo *)0x0);
+    (this->fields)._.logger = pIVar2;
+    func_?();
+    return;
+  }
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

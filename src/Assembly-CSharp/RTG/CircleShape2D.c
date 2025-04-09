@@ -12,9 +12,8 @@ void Assembly-CSharp.dll::RTG::CircleShape2D::CircleShape2D_CalcModelBorderPoint
   pLVar1 = PrimitiveFactory::PrimitiveFactory_Generate2DCircleBorderPointsCW
                      (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector,1.0,
                       (this->fields)._numBorderPoints,(MethodInfo *)0x0);
-  ppLVar2 = &(this->fields)._modelBorderPoints;
-  *ppLVar2 = pLVar1;
-  func_?(ppLVar2,pLVar1);
+  (this->fields)._modelBorderPoints = pLVar1;
+  func_?(&(this->fields)._modelBorderPoints,pLVar1);
   (this->fields)._areModelBorderPointsDirty = 0;
   return;
 }
@@ -88,8 +87,8 @@ Vector2 Assembly-CSharp.dll::RTG::CircleShape2D::CircleShape2D_GetExtentPoint
     VVar2 = CircleShape2D_get_Right(this,(MethodInfo *)0x0);
     fVar3 = VVar2.y;
 code_?:
-    VStack_4.y = fStack_1 + fVar3 * (this->fields)._radius;
-    VStack_4.x = (float)extentPt + VStack_4.x * (this->fields)._radius;
+    VStack_4.y = fVar3 * (this->fields)._radius + fStack_1;
+    VStack_4.x = VStack_4.x * (this->fields)._radius + (float)extentPt;
     return VStack_4;
   case Shape2DExtentPoint__Enum_Bottom:
     extentPt = (Shape2DExtentPoint__Enum)(this->fields)._center.x;
@@ -192,7 +191,7 @@ void Assembly-CSharp.dll::RTG::CircleShape2D::CircleShape2D__ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List__);
   method_00 = (MethodInfo *)&(this->fields)._modelBorderPoints;
-  *(List_1_UnityEngine_Vector2_ **)method_00 = this_00;
+  (this->fields)._modelBorderPoints = this_00;
   func_?(method_00,this_00);
   (this->fields)._areModelBorderPointsDirty = 1;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57

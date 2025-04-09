@@ -32,9 +32,9 @@ void Assembly-CSharp.dll::BadgeUrlData::BadgeUrlData__ctor(BadgeUrlData *this,Me
     func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  method_00 = (MethodInfo *)&(this->fields).url;
   (this->fields).level = -1;
-  *(String **)method_00 = ::StringLiteral__;
+  (this->fields).url = ::StringLiteral__;
+  method_00 = (MethodInfo *)&(this->fields).url;
   func_?(method_00,::StringLiteral__);
   (this->fields).friendsLimit = 200;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
@@ -53,17 +53,16 @@ void Assembly-CSharp.dll::BadgeUrlData::BadgeUrlData__ctor_1
     func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  ppSVar1 = &(this->fields).url;
   (this->fields).level = -1;
-  *ppSVar1 = ::StringLiteral__;
-  method_00 = (MethodInfo *)ppSVar1;
-  func_?(ppSVar1,::StringLiteral__);
+  (this->fields).url = ::StringLiteral__;
+  method_00 = (MethodInfo *)&(this->fields).url;
+  func_?(method_00,::StringLiteral__);
   (this->fields).friendsLimit = 200;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   (this->fields).level = level;
-  *ppSVar1 = url;
-  func_?(ppSVar1,url);
+  (this->fields).url = url;
+  func_?(&(this->fields).url,url);
   return;
 }
 

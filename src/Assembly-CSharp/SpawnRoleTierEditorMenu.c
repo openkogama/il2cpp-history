@@ -6,9 +6,8 @@ void Assembly-CSharp.dll::SpawnRoleTierEditorMenu::SpawnRoleTierEditorMenu_Initi
                UnityAction_1_MV_Common_GamePassTier_ *ChangeTierRequirement,MethodInfo *method)
 
 {
-  ppUVar1 = &(this->fields).ChangeTierRequirement;
-  *ppUVar1 = ChangeTierRequirement;
-  func_?(ppUVar1,ChangeTierRequirement);
+  (this->fields).ChangeTierRequirement = ChangeTierRequirement;
+  func_?(&(this->fields).ChangeTierRequirement,ChangeTierRequirement);
   (this->fields).spawnRoleCost = newspawnRoleCost;
   SpawnRoleTierEditorMenu_UpdateTier(this,newTier,(MethodInfo *)0x0);
   return;
@@ -74,11 +73,10 @@ void Assembly-CSharp.dll::SpawnRoleTierEditorMenu::SpawnRoleTierEditorMenu_Selec
                       SpawnRoleTierSettings_MethodInfo__UnityEngine__Object__Instantiate<SpawnRoleTierSettings>_SpawnRoleTierSettings_
                      );
   if (value_00 != (Object *)0x0) {
-    pOVar2 = value_00 + 1;
-    pOVar2->klass = pOVar1;
-    func_?(pOVar2,pOVar1);
-    bVar3 = (this->fields).currentTier;
-    pOVar1 = pOVar2->klass;
+    value_00[1].klass = pOVar1;
+    func_?(value_00 + 1,pOVar1);
+    bVar2 = (this->fields).currentTier;
+    pOVar1 = value_00[1].klass;
     value = (this->fields).canSelectTier0;
     this_01 = (MethodInfo **)
               func_?(TypeInfo__UnityEngine__Events__UnityAction<MV::Common::GamePassTier>);
@@ -96,30 +94,29 @@ void Assembly-CSharp.dll::SpawnRoleTierEditorMenu::SpawnRoleTierEditorMenu_Selec
         cRam_? = '\x01';
       }
       *(bool *)&(pOVar1->_0).this_arg.attrs = value;
-      ppIVar4 = &(pOVar1->_0).element_class;
-      *ppIVar4 = (Il2CppClass *)this_01;
-      func_?(ppIVar4,this_01);
+      (pOVar1->_0).element_class = (Il2CppClass *)this_01;
+      func_?(&(pOVar1->_0).element_class,this_01);
       this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                 (pOVar1->_0).byval_arg.data.typeHandle;
       if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
         this_02 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                   RegularExpressions::RegexCharClass+SingleRange]::
                   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            (this_00,(uint)bVar3,
+                            (this_00,(uint)bVar2,
                              MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__get_Item_int_
                             );
         if (this_02 != (RegexCharClass_SingleRange)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                     ((GameObject *)this_02,1,(MethodInfo *)0x0);
-          pGVar5 = *(GameObject **)&(pOVar1->_0).byval_arg.attrs;
-          if (pGVar5 != (GameObject *)0x0) {
+          pGVar3 = *(GameObject **)&(pOVar1->_0).byval_arg.attrs;
+          if (pGVar3 != (GameObject *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                      (pGVar5,value,(MethodInfo *)0x0);
-            pGVar5 = (GameObject *)(pOVar1->_0).this_arg.data.typeHandle;
-            if (pGVar5 != (GameObject *)0x0) {
+                      (pGVar3,value,(MethodInfo *)0x0);
+            pGVar3 = (GameObject *)(pOVar1->_0).this_arg.data.typeHandle;
+            if (pGVar3 != (GameObject *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                        (pGVar5,value == 0,(MethodInfo *)0x0);
-              pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                        (pGVar3,value == 0,(MethodInfo *)0x0);
+              pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                                  ((Component *)this,(MethodInfo *)0x0);
               callbackFunction =
                    (ExecuteEvents_EventFunction_1_System_Object_ *)
@@ -137,7 +134,7 @@ void Assembly-CSharp.dll::SpawnRoleTierEditorMenu::SpawnRoleTierEditorMenu_Selec
               }
               UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
               ExecuteEvents_ExecuteHierarchy
-                        (pGVar5,(BaseEventData *)0x0,callbackFunction,
+                        (pGVar3,(BaseEventData *)0x0,callbackFunction,
                          UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                         );
               return;
@@ -148,8 +145,8 @@ void Assembly-CSharp.dll::SpawnRoleTierEditorMenu::SpawnRoleTierEditorMenu_Selec
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -164,41 +161,44 @@ void Assembly-CSharp.dll::SpawnRoleTierEditorMenu::SpawnRoleTierEditorMenu_Updat
     func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  this_00 = &(this->fields).spawnRoleCost;
   IStack_1.m_value = 100;
-  *this_00 = newspawnRoleCost;
-  this_01 = (ProgressBarAndroid *)(this->fields).progressBar;
+  this_00 = (ProgressBarAndroid *)(this->fields).progressBar;
+  (this->fields).spawnRoleCost = newspawnRoleCost;
   if ((this->fields).currentTier == 0) {
-    if (this_01 != (ProgressBarAndroid *)0x0) {
+    if (this_00 != (ProgressBarAndroid *)0x0) {
       ProgressBarAndroid::ProgressBarAndroid_set_Progress
-                (this_01,(float)newspawnRoleCost / _UNK_?,(MethodInfo *)0x0);
+                (this_00,(float)newspawnRoleCost / _UNK_?,(MethodInfo *)0x0);
       pTVar2 = (this->fields).progressBarText;
-      pSVar3 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)this_00,(MethodInfo *)0x0);
+      str0 = mscorlib.dll::System::Int32::Int32_ToString
+                       ((Int32 *)&(this->fields).spawnRoleCost,(MethodInfo *)0x0);
       str2 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_1,(MethodInfo *)0x0);
-      mscorlib.dll::System::String::String_Concat_4(pSVar3,::StringLiteral__,str2,(MethodInfo *)0x0)
-      ;
+      pSStack3 =
+           mscorlib.dll::System::String::String_Concat_4
+                     (str0,::StringLiteral__,str2,(MethodInfo *)0x0);
       if (pTVar2 != (Text *)0x0) {
         pTVar4 = pTVar2->klass;
-        goto code_?;
+        pIStack5 = (pTVar4->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
+        (*(code *)(pTVar4->vtable).set_text.method)();
+        (this->fields).canSelectTier0 = (this->fields).spawnRoleCost <= IStack_1.m_value;
+        return;
       }
     }
   }
-  else if (this_01 != (ProgressBarAndroid *)0x0) {
-    ProgressBarAndroid::ProgressBarAndroid_set_Progress(this_01,1.0,(MethodInfo *)0x0);
+  else if (this_00 != (ProgressBarAndroid *)0x0) {
+    ProgressBarAndroid::ProgressBarAndroid_set_Progress(this_00,1.0,(MethodInfo *)0x0);
     pTVar2 = (this->fields).progressBarText;
-    pSVar3 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)this_00,(MethodInfo *)0x0);
+    mscorlib.dll::System::Int32::Int32_ToString
+              ((Int32 *)&(this->fields).spawnRoleCost,(MethodInfo *)0x0);
     if (pTVar2 != (Text *)0x0) {
-      pTVar4 = pTVar2->klass;
-      IStack_1.m_value = (int32_t)pSVar3;
-code_?:
-      (*(code *)(pTVar4->vtable).set_text.method)();
-      (this->fields).canSelectTier0 = *this_00 <= IStack_1.m_value;
+      IStack_1.m_value = (int32_t)pTVar2;
+      (*(code *)(pTVar2->klass->vtable).set_text.method)();
+      (this->fields).canSelectTier0 = (this->fields).spawnRoleCost <= IStack_1.m_value;
       return;
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -218,50 +218,51 @@ void Assembly-CSharp.dll::SpawnRoleTierEditorMenu::SpawnRoleTierEditorMenu_Updat
     (*(code *)(pTVar2->klass->vtable).set_text.method)
               (pTVar2,pSVar3,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     iVar4 = (pSVar1->fields).spawnRoleCost;
-    this_00 = &(pSVar1->fields).spawnRoleCost;
     if (cRam_? == '\0') {
       func_?(&::StringLiteral__);
       cRam_? = '\x01';
     }
-    this_01 = (ProgressBarAndroid *)(pSVar1->fields).progressBar;
-    *this_00 = iVar4;
+    this_00 = (ProgressBarAndroid *)(pSVar1->fields).progressBar;
+    (pSVar1->fields).spawnRoleCost = iVar4;
     newTier = 100;
     if ((pSVar1->fields).currentTier == 0) {
-      if (this_01 != (ProgressBarAndroid *)0x0) {
+      if (this_00 != (ProgressBarAndroid *)0x0) {
         ProgressBarAndroid::ProgressBarAndroid_set_Progress
-                  (this_01,(float)iVar4 / _UNK_?,(MethodInfo *)0x0);
+                  (this_00,(float)iVar4 / _UNK_?,(MethodInfo *)0x0);
         pTVar2 = (pSVar1->fields).progressBarText;
-        pSVar3 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)this_00,(MethodInfo *)0x0);
+        pSVar3 = mscorlib.dll::System::Int32::Int32_ToString
+                           ((Int32 *)&(pSVar1->fields).spawnRoleCost,(MethodInfo *)0x0);
         str2 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&newTier,(MethodInfo *)0x0);
-        in_stack_5 =
+        pSStack5 =
              mscorlib.dll::System::String::String_Concat_4
                        (pSVar3,::StringLiteral__,str2,(MethodInfo *)0x0);
         if (pTVar2 != (Text *)0x0) {
-          pTVar6 = pTVar2->klass;
-          in_stack_7 = (pTVar6->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
-          in_stack_8 = pTVar2;
-          goto code_?;
+          pIStack6 = (pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
+          pTStack7 = pTVar2;
+          (*(code *)(pTVar2->klass->vtable).set_text.method)();
+          (pSVar1->fields).canSelectTier0 = (pSVar1->fields).spawnRoleCost <= (int)newTier;
+          return;
         }
       }
     }
-    else if (this_01 != (ProgressBarAndroid *)0x0) {
-      ProgressBarAndroid::ProgressBarAndroid_set_Progress(this_01,1.0,(MethodInfo *)0x0);
+    else if (this_00 != (ProgressBarAndroid *)0x0) {
+      ProgressBarAndroid::ProgressBarAndroid_set_Progress(this_00,1.0,(MethodInfo *)0x0);
       pTVar2 = (pSVar1->fields).progressBarText;
-      mscorlib.dll::System::Int32::Int32_ToString((Int32 *)this_00,(MethodInfo *)0x0);
+      pSVar3 = mscorlib.dll::System::Int32::Int32_ToString
+                         ((Int32 *)&(pSVar1->fields).spawnRoleCost,(MethodInfo *)0x0);
       if (pTVar2 != (Text *)0x0) {
-        pTVar6 = pTVar2->klass;
-        this = (SpawnRoleTierEditorMenu *)
-               (pTVar6->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
-code_?:
-        (*(code *)(pTVar6->vtable).set_text.method)();
-        (pSVar1->fields).canSelectTier0 = *this_00 <= (int)newTier;
+        method = (MethodInfo *)(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
+        this = (SpawnRoleTierEditorMenu *)pTVar2;
+        newTier = (GamePassTier__Enum)pSVar3;
+        (*(code *)(pTVar2->klass->vtable).set_text.method)();
+        (pSVar1->fields).canSelectTier0 = (pSVar1->fields).spawnRoleCost <= (int)newTier;
         return;
       }
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

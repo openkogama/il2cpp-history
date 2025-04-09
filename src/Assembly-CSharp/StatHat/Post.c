@@ -67,12 +67,12 @@ void Assembly-CSharp.dll::StatHat::Post::Post_Counter
          (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
          &UNK_?;
     func_?();
+    (this_00->fields).Parameters = (Dictionary_2_System_String_System_String_ *)this;
     pPStack6 = &this_00->fields;
-    pPStack6->Parameters = (Dictionary_2_System_String_System_String_ *)this;
     pDStack5 = this;
     func_?();
     ppSStack7 = &(this_00->fields).RelUrl;
-    *ppSStack7 = pSVar1;
+    (this_00->fields).RelUrl = pSVar1;
     pSStack8 = pSVar1;
     func_?();
     method = (MethodInfo *)&UNK_?;
@@ -155,12 +155,12 @@ void Assembly-CSharp.dll::StatHat::Post::Post_Counter_1
          (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
          &UNK_?;
     func_?();
+    (this_00->fields).Parameters = (Dictionary_2_System_String_System_String_ *)this;
     pPStack6 = &this_00->fields;
-    pPStack6->Parameters = (Dictionary_2_System_String_System_String_ *)this;
     pDStack5 = this;
     func_?();
     ppSStack7 = &(this_00->fields).RelUrl;
-    *ppSStack7 = pSVar1;
+    (this_00->fields).RelUrl = pSVar1;
     pSStack8 = pSVar1;
     func_?();
     method = (MethodInfo *)&UNK_?;
@@ -243,12 +243,12 @@ void Assembly-CSharp.dll::StatHat::Post::Post_EzCounter
          (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
          &UNK_?;
     func_?();
+    (this_00->fields).Parameters = (Dictionary_2_System_String_System_String_ *)this;
     pPStack6 = &this_00->fields;
-    pPStack6->Parameters = (Dictionary_2_System_String_System_String_ *)this;
     pDStack5 = this;
     func_?();
     ppSStack7 = &(this_00->fields).RelUrl;
-    *ppSStack7 = pSVar1;
+    (this_00->fields).RelUrl = pSVar1;
     pSStack8 = pSVar1;
     func_?();
     method = (MethodInfo *)&UNK_?;
@@ -330,12 +330,12 @@ void Assembly-CSharp.dll::StatHat::Post::Post_EzCounter_1
          (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
          &UNK_?;
     func_?();
+    (this_00->fields).Parameters = (Dictionary_2_System_String_System_String_ *)this;
     pPStack6 = &this_00->fields;
-    pPStack6->Parameters = (Dictionary_2_System_String_System_String_ *)this;
     pDStack5 = this;
     func_?();
     ppSStack7 = &(this_00->fields).RelUrl;
-    *ppSStack7 = pSVar1;
+    (this_00->fields).RelUrl = pSVar1;
     pSStack8 = pSVar1;
     func_?();
     method = (MethodInfo *)&UNK_?;
@@ -417,12 +417,12 @@ void Assembly-CSharp.dll::StatHat::Post::Post_EzValue
          (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
          &UNK_?;
     func_?();
+    (this_00->fields).Parameters = (Dictionary_2_System_String_System_String_ *)this;
     pPStack6 = &this_00->fields;
-    pPStack6->Parameters = (Dictionary_2_System_String_System_String_ *)this;
     pDStack5 = this;
     func_?();
     ppSStack7 = &(this_00->fields).RelUrl;
-    *ppSStack7 = pSVar1;
+    (this_00->fields).RelUrl = pSVar1;
     pSStack8 = pSVar1;
     func_?();
     method = (MethodInfo *)&UNK_?;
@@ -505,12 +505,12 @@ void Assembly-CSharp.dll::StatHat::Post::Post_EzValue_1
          (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
          &UNK_?;
     func_?();
+    (this_00->fields).Parameters = (Dictionary_2_System_String_System_String_ *)this;
     pPStack6 = &this_00->fields;
-    pPStack6->Parameters = (Dictionary_2_System_String_System_String_ *)this;
     pDStack5 = this;
     func_?();
     ppSStack7 = &(this_00->fields).RelUrl;
-    *ppSStack7 = pSVar1;
+    (this_00->fields).RelUrl = pSVar1;
     pSStack8 = pSVar1;
     func_?();
     method = (MethodInfo *)&UNK_?;
@@ -593,12 +593,12 @@ void Assembly-CSharp.dll::StatHat::Post::Post_Value
          (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
          &UNK_?;
     func_?();
+    (this_00->fields).Parameters = (Dictionary_2_System_String_System_String_ *)this;
     pPStack6 = &this_00->fields;
-    pPStack6->Parameters = (Dictionary_2_System_String_System_String_ *)this;
     pDStack5 = this;
     func_?();
     ppSStack7 = &(this_00->fields).RelUrl;
-    *ppSStack7 = pSVar1;
+    (this_00->fields).RelUrl = pSVar1;
     pSStack8 = pSVar1;
     func_?();
     method = (MethodInfo *)&UNK_?;
@@ -680,12 +680,12 @@ void Assembly-CSharp.dll::StatHat::Post::Post_Value_1
          (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
          &UNK_?;
     func_?();
+    (this_00->fields).Parameters = (Dictionary_2_System_String_System_String_ *)this;
     pPStack6 = &this_00->fields;
-    pPStack6->Parameters = (Dictionary_2_System_String_System_String_ *)this;
     pDStack5 = this;
     func_?();
     ppSStack7 = &(this_00->fields).RelUrl;
-    *ppSStack7 = pSVar1;
+    (this_00->fields).RelUrl = pSVar1;
     pSStack8 = pSVar1;
     func_?();
     method = (MethodInfo *)&UNK_?;

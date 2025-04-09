@@ -409,21 +409,17 @@ void Assembly-CSharp.dll::MeshDataPool::MeshDataPool_Create(MethodInfo *method)
     cRam_? = '\x01';
   }
   pVVar1 = (Vector3__Array *)func_?(TypeInfo__UnityEngine__Vector3,0xc0000);
-  ppVVar2 = &(value->fields).vertices;
-  *ppVVar2 = pVVar1;
-  func_?(ppVVar2,pVVar1);
-  pVVar3 = (Vector2__Array *)func_?(TypeInfo__UnityEngine__Vector2,0xc0000);
-  ppVVar4 = &(value->fields).uvs;
-  *ppVVar4 = pVVar3;
-  func_?(ppVVar4,pVVar3);
-  pCVar5 = (Color__Array *)func_?(TypeInfo__UnityEngine__Color,0xc0000);
-  ppCVar6 = &(value->fields).colors;
-  *ppCVar6 = pCVar5;
-  func_?(ppCVar6,pCVar5);
-  pIVar7 = (Int32__Array *)func_?(TypeInfo__System__Int32,0x120000);
-  ppIVar8 = &(value->fields).indices;
-  *ppIVar8 = pIVar7;
-  func_?(ppIVar8,pIVar7);
+  (value->fields).vertices = pVVar1;
+  func_?(&(value->fields).vertices,pVVar1);
+  pVVar2 = (Vector2__Array *)func_?(TypeInfo__UnityEngine__Vector2,0xc0000);
+  (value->fields).uvs = pVVar2;
+  func_?(&(value->fields).uvs,pVVar2);
+  pCVar3 = (Color__Array *)func_?(TypeInfo__UnityEngine__Color,0xc0000);
+  (value->fields).colors = pCVar3;
+  func_?(&(value->fields).colors,pCVar3);
+  pIVar4 = (Int32__Array *)func_?(TypeInfo__System__Int32,0x120000);
+  (value->fields).indices = pIVar4;
+  func_?(&(value->fields).indices,pIVar4);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,unaff_ESI);
   TypeInfo__MeshDataPool->static_fields->instance = value;
@@ -684,21 +680,17 @@ void Assembly-CSharp.dll::MeshDataPool::MeshDataPool__ctor(MeshDataPool *this,Me
     cRam_? = '\x01';
   }
   pVVar1 = (Vector3__Array *)func_?(TypeInfo__UnityEngine__Vector3,0xc0000);
-  ppVVar2 = &(this->fields).vertices;
-  *ppVVar2 = pVVar1;
-  func_?(ppVVar2,pVVar1);
-  pVVar3 = (Vector2__Array *)func_?(TypeInfo__UnityEngine__Vector2,0xc0000);
-  ppVVar4 = &(this->fields).uvs;
-  *ppVVar4 = pVVar3;
-  func_?(ppVVar4,pVVar3);
-  pCVar5 = (Color__Array *)func_?(TypeInfo__UnityEngine__Color,0xc0000);
-  ppCVar6 = &(this->fields).colors;
-  *ppCVar6 = pCVar5;
-  func_?(ppCVar6,pCVar5);
-  pIVar7 = (Int32__Array *)func_?(TypeInfo__System__Int32,0x120000);
-  ppIVar8 = &(this->fields).indices;
-  *ppIVar8 = pIVar7;
-  func_?(ppIVar8,pIVar7);
+  (this->fields).vertices = pVVar1;
+  func_?(&(this->fields).vertices,pVVar1);
+  pVVar2 = (Vector2__Array *)func_?(TypeInfo__UnityEngine__Vector2,0xc0000);
+  (this->fields).uvs = pVVar2;
+  func_?(&(this->fields).uvs,pVVar2);
+  pCVar3 = (Color__Array *)func_?(TypeInfo__UnityEngine__Color,0xc0000);
+  (this->fields).colors = pCVar3;
+  func_?(&(this->fields).colors,pCVar3);
+  pIVar4 = (Int32__Array *)func_?(TypeInfo__System__Int32,0x120000);
+  (this->fields).indices = pIVar4;
+  func_?(&(this->fields).indices,pIVar4);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   return;

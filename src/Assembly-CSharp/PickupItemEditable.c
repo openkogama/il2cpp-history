@@ -68,8 +68,8 @@ Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_DisableAnimatorCorou
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[1].klass = (Object__Class *)0x0;
   value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
   func_?(value + 2,this);
   return (IEnumerator *)value;
 }
@@ -99,58 +99,56 @@ void Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_Initialize
     func_?(TypeInfo__MainCameraManager);
   }
   if (TypeInfo__MainCameraManager->static_fields->IsCameraForcedFirstPerson != 0) {
-    ppTVar3 = &(this->fields)._._.firstPersonTransform;
-    pTVar4 = *ppTVar3;
+    pTVar3 = (this->fields)._._.firstPersonTransform;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                      ((Object_1 *)pTVar4,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar5 != 0) {
+    bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                      ((Object_1 *)pTVar3,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar4 != 0) {
       this_00 = (GameObject *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor
                 (this_00,StringLiteral_FirstPersonTransform,(MethodInfo *)0x0);
       if (this_00 != (GameObject *)0x0) {
-        pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+        pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                            (this_00,(MethodInfo *)0x0);
         p = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                       ((Component *)this,(MethodInfo *)0x0);
-        if (pTVar4 != (Transform *)0x0) {
+        if (pTVar3 != (Transform *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent
-                    (pTVar4,p,(MethodInfo *)0x0);
-          pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                    (pTVar3,p,(MethodInfo *)0x0);
+          pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                              (this_00,(MethodInfo *)0x0);
           if (cRam_? == '\0') {
             func_?();
             cRam_? = '\x01';
           }
-          if (pTVar4 != (Transform *)0x0) {
+          if (pTVar3 != (Transform *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                      (pTVar4,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
+                      (pTVar3,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
                        (MethodInfo *)0x0);
-            pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+            pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                                (this_00,(MethodInfo *)0x0);
-            *ppTVar3 = pTVar4;
+            (this->fields)._._.firstPersonTransform = pTVar3;
             func_?();
             goto code_?;
           }
         }
       }
       func_?();
-      pcVar6 = (code *)swi(3);
-      (*pcVar6)();
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
       return;
     }
   }
 code_?:
   (*(code *)(this->klass->vtable).__unknown_4.method)
             (this,(this->klass->vtable).Initialize.methodPtr);
-  pPVar7 = (PickupItemEditable_EditableItemConfiguration *)
+  pPVar6 = (PickupItemEditable_EditableItemConfiguration *)
            (*(code *)(this->klass->vtable).__unknown_3.method)
                      (this,(this->klass->vtable).__unknown_4.methodPtr);
-  ppPVar8 = &(this->fields)._Configuration_k__BackingField;
-  *ppPVar8 = pPVar7;
-  func_?(ppPVar8,pPVar7);
+  (this->fields)._Configuration_k__BackingField = pPVar6;
+  func_?(&(this->fields)._Configuration_k__BackingField,pPVar6);
   (*(code *)(this->klass->vtable).SetValuesBasedOnConfiguration.method)
             (this,(this->klass->vtable).OnPickupNewEditableItem.methodPtr);
   return;
@@ -167,19 +165,17 @@ void Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_InterruptFire
   (this->fields)._.isFiring = 0;
   if (this_00 != (CustomItemAudioPlayer *)0x0) {
     CustomItemAudioPlayer::CustomItemAudioPlayer_Stop(this_00,(MethodInfo *)0x0);
-    coroutine = (this->fields).animatorRoutine;
-    ppIVar1 = &(this->fields).animatorRoutine;
-    if (coroutine != (IEnumerator *)0x0) {
-      Coroutines::Coroutines_Stop(coroutine,(MethodInfo *)0x0);
-      *ppIVar1 = (IEnumerator *)0x0;
-      func_?(ppIVar1,0);
+    if ((this->fields).animatorRoutine != (IEnumerator *)0x0) {
+      Coroutines::Coroutines_Stop((this->fields).animatorRoutine,(MethodInfo *)0x0);
+      (this->fields).animatorRoutine = (IEnumerator *)0x0;
+      func_?(&(this->fields).animatorRoutine,0);
       PickupItemEditable_DisableAnimation(this,(MethodInfo *)0x0);
     }
     return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -237,40 +233,41 @@ void Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_OnCubeModelStat
   pPVar1 = (this->fields)._Configuration_k__BackingField;
   if ((pPVar1 != (PickupItemEditable_EditableItemConfiguration *)0x0) &&
      (this_00 != (MVWorldObjectClientManager *)0x0)) {
-    pMVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                       (this_00,(pPVar1->fields).cubeModelId,(MethodInfo *)0x0);
-    if (pMVar2 == (MVWorldObject *)0x0) {
+    cmb = (MVCubeModelInstance *)
+          MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                    (this_00,(pPVar1->fields).cubeModelId,(MethodInfo *)0x0);
+    if (cmb == (MVCubeModelInstance *)0x0) {
       return;
     }
-    pGVar3 = (this->fields).cubeModelObject;
-    ppGVar4 = &(this->fields).cubeModelObject;
+    pGVar2 = (this->fields).cubeModelObject;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    cmb = (MVCubeModelInstance *)0x0;
-    bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      ((Object_1 *)pGVar3,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar5 != 0) {
+    bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      ((Object_1 *)pGVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar3 != 0) {
+      pGVar2 = (this->fields).cubeModelObject;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                ((Object_1 *)0x0,(MethodInfo *)0x0);
-      *ppGVar4 = (GameObject *)0x0;
+                ((Object_1 *)pGVar2,(MethodInfo *)0x0);
+      (this->fields).cubeModelObject = (GameObject *)0x0;
       func_?();
     }
-    bVar6 = (TypeInfo__MVCubeModelInstance->_1).naturalAligment;
-    if (((pMVar2->klass->_1).naturalAligment < bVar6) ||
-       ((MVCubeModelInstance__Class *)(pMVar2->klass->_1).typeHierarchy[bVar6 - 1] !=
+    if (((cmb->klass->_1).naturalAligment < (TypeInfo__MVCubeModelInstance->_1).naturalAligment) ||
+       ((MVCubeModelInstance__Class *)
+        (cmb->klass->_1).typeHierarchy[(TypeInfo__MVCubeModelInstance->_1).naturalAligment - 1] !=
         TypeInfo__MVCubeModelInstance)) goto code_?;
-    iVar7 = MVCubeModelBase::MVCubeModelBase_get_Pid((MVCubeModelBase *)cmb,(MethodInfo *)0x0);
-    (this->fields)._CubeModelPid_k__BackingField = iVar7;
-    pGVar3 = PickupItem::PickupItem_CloneCubeModelInstance(cmb,1,(MethodInfo *)0x0);
-    *ppGVar4 = pGVar3;
+    iVar4 = MVCubeModelBase::MVCubeModelBase_get_Pid((MVCubeModelBase *)cmb,(MethodInfo *)0x0);
+    (this->fields)._CubeModelPid_k__BackingField = iVar4;
+    pGVar2 = PickupItem::PickupItem_CloneCubeModelInstance(cmb,1,(MethodInfo *)0x0);
+    (this->fields).cubeModelObject = pGVar2;
     func_?();
-    if ((*ppGVar4 != (GameObject *)0x0) &&
+    pGVar2 = (this->fields).cubeModelObject;
+    if ((pGVar2 != (GameObject *)0x0) &&
        (this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                            (*ppGVar4,(MethodInfo *)0x0), this_01 != (Transform *)0x0)) {
+                            (pGVar2,(MethodInfo *)0x0), this_01 != (Transform *)0x0)) {
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent
                 (this_01,(this->fields).cubeModelParent,(MethodInfo *)0x0);
       if (cRam_? == '\0') {
@@ -284,6 +281,8 @@ void Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_OnCubeModelStat
         func_?();
         cRam_? = '\x01';
       }
+      puStack5 =
+           (undefined *)(TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion).w;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
                 (this_01,TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,
                  (MethodInfo *)0x0);
@@ -300,8 +299,8 @@ void Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_OnCubeModelStat
   func_?();
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -471,10 +470,8 @@ void Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_PlayAnimation
     if (pAVar1 != (Animator *)0x0) {
       UnityEngine.AnimationModule.dll::UnityEngine::Animator::Animator_Play
                 (pAVar1,stateName,0,0.0,(MethodInfo *)0x0);
-      coroutine = (this->fields).animatorRoutine;
-      ppIVar3 = &(this->fields).animatorRoutine;
-      if (coroutine != (IEnumerator *)0x0) {
-        Coroutines::Coroutines_Stop(coroutine,(MethodInfo *)0x0);
+      if ((this->fields).animatorRoutine != (IEnumerator *)0x0) {
+        Coroutines::Coroutines_Stop((this->fields).animatorRoutine,(MethodInfo *)0x0);
       }
       if (cRam_? == '\0') {
         func_?();
@@ -487,15 +484,15 @@ void Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_PlayAnimation
       value[1].klass = (Object__Class *)0x0;
       value[2].klass = (Object__Class *)this;
       func_?();
-      *ppIVar3 = (IEnumerator *)value;
+      (this->fields).animatorRoutine = (IEnumerator *)value;
       func_?();
-      Coroutines::Coroutines_Start(*ppIVar3,(MethodInfo *)0x0);
+      Coroutines::Coroutines_Start((this->fields).animatorRoutine,(MethodInfo *)0x0);
       return;
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

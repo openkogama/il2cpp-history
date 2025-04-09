@@ -56,9 +56,8 @@ void Assembly-CSharp.dll::RTG::RTGApp::RTGApp_OnBeginCameraRendering
                (RTGApp *this,ScriptableRenderContext context,Camera *camera,MethodInfo *method)
 
 {
-  ppCVar1 = &(this->fields)._renderCamera;
-  *ppCVar1 = camera;
-  func_?(ppCVar1,camera);
+  (this->fields)._renderCamera = camera;
+  func_?(&(this->fields)._renderCamera,camera);
   return;
 }
 
@@ -257,20 +256,19 @@ void Assembly-CSharp.dll::RTG::RTGApp::RTGApp_OnRenderObject(RTGApp *this,Method
   }
   if ((this->fields)._renderPipelineId == 0) {
     pCVar1 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_current((MethodInfo *)0x0);
-    ppCVar2 = &(this->fields)._renderCamera;
-    *ppCVar2 = pCVar1;
-    func_?(ppCVar2,pCVar1);
+    (this->fields)._renderCamera = pCVar1;
+    func_?(&(this->fields)._renderCamera,pCVar1);
   }
   if ((TypeInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>);
   }
-  pRVar3 = (RTGizmosEngine *)
+  pRVar2 = (RTGizmosEngine *)
            MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
                      (MethodInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>__get_Get__);
-  if (pRVar3 != (RTGizmosEngine *)0x0) {
-    bVar4 = RTGizmosEngine::RTGizmosEngine_IsSceneGizmoCamera
-                      (pRVar3,(this->fields)._renderCamera,(MethodInfo *)0x0);
-    if (bVar4 == 0) {
+  if (pRVar2 != (RTGizmosEngine *)0x0) {
+    bVar3 = RTGizmosEngine::RTGizmosEngine_IsSceneGizmoCamera
+                      (pRVar2,(this->fields)._renderCamera,(MethodInfo *)0x0);
+    if (bVar3 == 0) {
       if ((TypeInfo__RTG__MonoSingleton<RTG::RTCameraBackground>->_1).cctor_finished_or_no_cctor ==
           0) {
         func_?();
@@ -281,9 +279,9 @@ void Assembly-CSharp.dll::RTG::RTGApp::RTGApp_OnRenderObject(RTGApp *this,Method
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+      bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                         (x,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar4 != 0) {
+      if (bVar3 != 0) {
         if ((TypeInfo__RTG__MonoSingleton<RTG::RTCameraBackground>->_1).cctor_finished_or_no_cctor
             == 0) {
           func_?();
@@ -308,19 +306,19 @@ void Assembly-CSharp.dll::RTG::RTGApp::RTGApp_OnRenderObject(RTGApp *this,Method
     if ((TypeInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pRVar3 = (RTGizmosEngine *)
+    pRVar2 = (RTGizmosEngine *)
              MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
                        (MethodInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>__get_Get__);
-    if (pRVar3 != (RTGizmosEngine *)0x0) {
+    if (pRVar2 != (RTGizmosEngine *)0x0) {
       RTGizmosEngine::RTGizmosEngine_Render_SystemCall
-                (pRVar3,(this->fields)._renderCamera,(MethodInfo *)0x0);
+                (pRVar2,(this->fields)._renderCamera,(MethodInfo *)0x0);
       return;
     }
   }
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -485,7 +483,7 @@ void Assembly-CSharp.dll::RTG::RTGApp::RTGApp_Start(RTGApp *this,MethodInfo *met
     if (((pRVar1 == (RenderPipelineAsset *)0x0) ||
         (pTVar3 = mscorlib.dll::System::Object::Object_GetType((Object *)pRVar1,(MethodInfo *)0x0),
         pTVar3 == (Type *)0x0)) ||
-       (this_00 = (String *)(*(code *)(pTVar3->klass->vtable).ToString.method)(),
+       (this_00 = (String *)(*(code *)(pTVar3->klass->vtable).ToString.method)(pTVar3),
        this_00 == (String *)0x0)) goto code_?;
     bVar2 = mscorlib.dll::System::String::String_Contains
                       (this_00,StringLiteral_Universal,(MethodInfo *)0x0);
@@ -520,58 +518,64 @@ void Assembly-CSharp.dll::RTG::RTGApp::RTGApp_Start(RTGApp *this,MethodInfo *met
   }
   pOVar4 = MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
                      (MethodInfo__RTG__MonoSingleton<RTG::RTFocusCamera>__get_Get__);
-  pDVar5 = (Delegate *)func_?();
-  this = (RTGApp *)MethodInfo__RTG__RTGApp__OnCanCameraProcessInput_RTG__YesNoAnswer_;
-  (pDVar5->fields).method_ptr =
+  b = (Delegate *)func_?();
+  pMVar5 = MethodInfo__RTG__RTGApp__OnCanCameraProcessInput_RTG__YesNoAnswer_;
+  (b->fields).method_ptr =
        MethodInfo__RTG__RTGApp__OnCanCameraProcessInput_RTG__YesNoAnswer_->virtualMethodPointer;
-  (pDVar5->fields).method = this;
-  (pDVar5->fields).m_target = (Object *)0x0;
+  object = &(b->fields).m_target;
+  (b->fields).method = pMVar5;
+  (b->fields).m_target = (Object *)this;
   func_?();
-  uVar6 = ((MethodInfo *)this)->parameters_count;
-  (pDVar5->fields).method_code = pDVar5;
+  uVar6 = pMVar5->parameters_count;
+  (b->fields).method_code = b;
   cVar7 = func_?();
   if (cVar7 == '\0') {
-    if (uVar6 != 0) goto code_?;
-    if ((pDVar5->fields).method_is_virtual == 0) {
-      puVar8 = &UNK_?;
-    }
-    else {
-      cVar7 = func_?();
-      if (cVar7 == '\0') {
-        cVar7 = func_?();
+    if (uVar6 == 0) {
+      if ((b->fields).method_is_virtual == 0) {
         puVar8 = &UNK_?;
-        if (cVar7 != '\0') {
-          puVar8 = &UNK_?;
-        }
       }
       else {
         cVar7 = func_?();
-        puVar8 = &UNK_?;
-        if (cVar7 != '\0') {
+        if (cVar7 == '\0') {
+          cVar7 = func_?();
+          if (cVar7 == '\0') {
+            puVar8 = &UNK_?;
+          }
+          else {
+            puVar8 = &UNK_?;
+          }
+        }
+        else {
+          cVar7 = func_?();
           puVar8 = &UNK_?;
+          if (cVar7 == '\0') {
+            puVar8 = &UNK_?;
+          }
         }
       }
+    }
+    else {
+      puVar8 = (b->fields).method_ptr;
+      (b->fields).method_code = (b->fields).m_target;
     }
   }
   else if (uVar6 == 1) {
     puVar8 = &UNK_?;
   }
   else {
-code_?:
-    puVar8 = (pDVar5->fields).method_ptr;
-    (pDVar5->fields).method_code = (pDVar5->fields).m_target;
+    puVar8 = (b->fields).method_ptr;
+    (b->fields).method_code = (b->fields).m_target;
   }
-  (pDVar5->fields).invoke_impl = puVar8;
-  (pDVar5->fields).extra_arg = &UNK_?;
+  (b->fields).invoke_impl = puVar8;
+  (b->fields).extra_arg = &UNK_?;
   if (pOVar4 == (Object *)0x0) goto code_?;
   if (cRam_? == '\0') {
-    this = (RTGApp *)&TypeInfo__RTG__CameraCanProcessInputHandler;
     func_?();
     cRam_? = '\x01';
   }
   pDVar9 = (Delegate *)pOVar4[3].monitor;
   do {
-    pDVar10 = mscorlib.dll::System::Delegate::Delegate_Combine(pDVar9,pDVar5,(MethodInfo *)0x0);
+    pDVar10 = mscorlib.dll::System::Delegate::Delegate_Combine(pDVar9,b,(MethodInfo *)0x0);
     pDVar11 = (Delegate *)0x0;
     if (pDVar10 != (Delegate *)0x0) {
       if ((CameraCanProcessInputHandler__Class *)pDVar10->klass ==
@@ -582,96 +586,102 @@ code_?:
       ;
       if (pDVar11 == (Delegate *)0x0) goto code_?;
     }
-    pDVar11 = (Delegate *)func_?(&(pDVar11->fields).extra_arg);
+    pDVar11 = (Delegate *)func_?(&(pDVar9->fields).extra_arg,pDVar11);
     bVar13 = pDVar11 != pDVar9;
     pDVar9 = pDVar11;
   } while (bVar13);
   pOVar4 = MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
                      (MethodInfo__RTG__MonoSingleton<RTG::RTFocusCamera>__get_Get__);
-  pDVar5 = (Delegate *)func_?(TypeInfo__RTG__CameraCanUseScrollWheelHandler);
-  pMVar14 = MethodInfo__RTG__RTGApp__OnCanCameraUseScrollWheel_RTG__YesNoAnswer_;
-  ppOVar15 = &(pDVar5->fields).m_target;
-  (pDVar5->fields).method_ptr =
+  pDVar9 = (Delegate *)func_?(TypeInfo__RTG__CameraCanUseScrollWheelHandler);
+  pMVar5 = MethodInfo__RTG__RTGApp__OnCanCameraUseScrollWheel_RTG__YesNoAnswer_;
+  (pDVar9->fields).method_ptr =
        MethodInfo__RTG__RTGApp__OnCanCameraUseScrollWheel_RTG__YesNoAnswer_->virtualMethodPointer;
-  (pDVar5->fields).method = pMVar14;
-  *ppOVar15 = (Object *)this;
-  func_?(ppOVar15,this);
-  uVar6 = pMVar14->parameters_count;
-  (pDVar5->fields).method_code = pDVar5;
-  cVar7 = func_?(pMVar14);
+  (pDVar9->fields).method = pMVar5;
+  (pDVar9->fields).m_target = (Object *)object;
+  func_?(&(pDVar9->fields).m_target,object);
+  uVar6 = pMVar5->parameters_count;
+  (pDVar9->fields).method_code = pDVar9;
+  cVar7 = func_?(pMVar5);
   if (cVar7 == '\0') {
-    if (uVar6 != 0) goto code_?;
-    if ((pDVar5->fields).method_is_virtual == 0) {
-      puVar8 = &UNK_?;
-    }
-    else {
-      cVar7 = func_?();
-      this = (RTGApp *)pMVar14;
-      if (cVar7 == '\0') {
-        cVar7 = func_?();
+    if (uVar6 == 0) {
+      if ((pDVar9->fields).method_is_virtual == 0) {
         puVar8 = &UNK_?;
-        if (cVar7 != '\0') {
-          puVar8 = &UNK_?;
-        }
       }
       else {
         cVar7 = func_?();
-        puVar8 = &UNK_?;
-        if (cVar7 != '\0') {
+        if (cVar7 == '\0') {
+          cVar7 = func_?();
+          if (cVar7 == '\0') {
+            puVar8 = &UNK_?;
+          }
+          else {
+            puVar8 = &UNK_?;
+          }
+        }
+        else {
+          cVar7 = func_?();
           puVar8 = &UNK_?;
+          if (cVar7 == '\0') {
+            puVar8 = &UNK_?;
+          }
         }
       }
+    }
+    else {
+      puVar8 = (pDVar9->fields).method_ptr;
+      (pDVar9->fields).method_code = (pDVar9->fields).m_target;
     }
   }
   else if (uVar6 == 1) {
     puVar8 = &UNK_?;
   }
   else {
-code_?:
-    puVar8 = (pDVar5->fields).method_ptr;
-    (pDVar5->fields).method_code = (pDVar5->fields).m_target;
+    puVar8 = (pDVar9->fields).method_ptr;
+    (pDVar9->fields).method_code = (pDVar9->fields).m_target;
   }
-  (pDVar5->fields).invoke_impl = puVar8;
-  (pDVar5->fields).extra_arg = &UNK_?;
+  (pDVar9->fields).invoke_impl = puVar8;
+  (pDVar9->fields).extra_arg = &UNK_?;
   if (pOVar4 == (Object *)0x0) goto code_?;
   if (cRam_? == '\0') {
-    this = (RTGApp *)&TypeInfo__RTG__CameraCanUseScrollWheelHandler;
     func_?();
     cRam_? = '\x01';
   }
-  pOVar16 = pOVar4[4].klass;
+  pOVar14 = pOVar4[4].klass;
   do {
     pDVar10 = mscorlib.dll::System::Delegate::Delegate_Combine
-                        ((Delegate *)pOVar16,pDVar5,(MethodInfo *)0x0);
-    pDVar9 = (Delegate *)0x0;
+                        ((Delegate *)pOVar14,pDVar9,(MethodInfo *)0x0);
+    pDVar11 = (Delegate *)0x0;
     if (pDVar10 != (Delegate *)0x0) {
       if ((CameraCanUseScrollWheelHandler__Class *)pDVar10->klass ==
           TypeInfo__RTG__CameraCanUseScrollWheelHandler) {
-        pDVar9 = pDVar10;
+        pDVar11 = pDVar10;
       }
       pCVar12 = TypeInfo__RTG__CameraCanUseScrollWheelHandler;
-      if (pDVar9 == (Delegate *)0x0) goto code_?;
+      if (pDVar11 == (Delegate *)0x0) goto code_?;
     }
-    pOVar17 = (Object__Class *)func_?(&(pDVar9->fields).method_code);
-    bVar13 = pOVar17 != pOVar16;
-    pOVar16 = pOVar17;
+    ppIVar15 = &(pOVar14->_0).element_class;
+    pOVar16 = (Object__Class *)func_?(ppIVar15,pDVar11);
+    bVar13 = pOVar16 != pOVar14;
+    pOVar14 = pOVar16;
   } while (bVar13);
   if ((TypeInfo__RTG__Singleton<RTG::RTCameraViewports>->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__RTG__Singleton<RTG::RTCameraViewports>);
   }
   pOVar4 = Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
                      (MethodInfo__RTG__Singleton<RTG::RTCameraViewports>__get_Get__);
-  pDVar5 = (Delegate *)func_?(TypeInfo__RTG__RTCameraViewports__CameraAddedHandler);
-  pMVar14 = MethodInfo__RTG__RTGApp__OnViewportsCameraAdded_UnityEngine__Camera_;
-  ppOVar15 = &(pDVar5->fields).m_target;
-  (pDVar5->fields).method_ptr =
-       MethodInfo__RTG__RTGApp__OnViewportsCameraAdded_UnityEngine__Camera_->virtualMethodPointer;
-  (pDVar5->fields).method = pMVar14;
-  *ppOVar15 = (Object *)this;
-  func_?(ppOVar15,this);
-  uVar6 = pMVar14->parameters_count;
-  (pDVar5->fields).method_code = pDVar5;
-  cVar7 = func_?(pMVar14);
+  pDVar9 = (Delegate *)
+            func_?(TypeInfo__RTG__RTCameraViewports__CameraAddedHandler,ppIVar15,pDVar11,
+                            pOVar4);
+  pMVar5 = MethodInfo__RTG__RTGApp__OnViewportsCameraAdded_UnityEngine__Camera_;
+  pIVar17 = MethodInfo__RTG__RTGApp__OnViewportsCameraAdded_UnityEngine__Camera_->
+           virtualMethodPointer;
+  (pDVar9->fields).m_target = (Object *)object;
+  (pDVar9->fields).method_ptr = pIVar17;
+  (pDVar9->fields).method = pMVar5;
+  func_?(&(pDVar9->fields).m_target,object);
+  uVar6 = pMVar5->parameters_count;
+  (pDVar9->fields).method_code = pDVar9;
+  cVar7 = func_?(pMVar5);
   if (cVar7 == '\0') {
     if (uVar6 != 0) goto code_?;
     puVar8 = &UNK_?;
@@ -681,48 +691,50 @@ code_?:
   }
   else {
 code_?:
-    (pDVar5->fields).method_code = *ppOVar15;
-    puVar8 = (pDVar5->fields).method_ptr;
+    (pDVar9->fields).method_code = (pDVar9->fields).m_target;
+    puVar8 = (pDVar9->fields).method_ptr;
   }
-  (pDVar5->fields).invoke_impl = puVar8;
-  (pDVar5->fields).extra_arg = &UNK_?;
+  (pDVar9->fields).invoke_impl = puVar8;
+  (pDVar9->fields).extra_arg = &UNK_?;
   if (pOVar4 == (Object *)0x0) goto code_?;
   if (cRam_? == '\0') {
-    this = (RTGApp *)&TypeInfo__RTG__RTCameraViewports__CameraAddedHandler;
     func_?();
     cRam_? = '\x01';
   }
-  pOVar16 = pOVar4[1].klass;
+  pOVar14 = pOVar4[1].klass;
   do {
     pDVar10 = mscorlib.dll::System::Delegate::Delegate_Combine
-                        ((Delegate *)pOVar16,pDVar5,(MethodInfo *)0x0);
-    pDVar9 = (Delegate *)0x0;
+                        ((Delegate *)pOVar14,pDVar9,(MethodInfo *)0x0);
+    pDVar11 = (Delegate *)0x0;
     if (pDVar10 != (Delegate *)0x0) {
       if ((RTCameraViewports_CameraAddedHandler__Class *)pDVar10->klass ==
           TypeInfo__RTG__RTCameraViewports__CameraAddedHandler) {
-        pDVar9 = pDVar10;
+        pDVar11 = pDVar10;
       }
       pCVar12 = (CameraCanUseScrollWheelHandler__Class *)
                 TypeInfo__RTG__RTCameraViewports__CameraAddedHandler;
-      if (pDVar9 == (Delegate *)0x0) goto code_?;
+      if (pDVar11 == (Delegate *)0x0) goto code_?;
     }
-    pOVar17 = (Object__Class *)func_?(&pDVar9->fields);
-    bVar13 = pOVar17 != pOVar16;
-    pOVar16 = pOVar17;
+    ppcVar18 = &(pOVar14->_0).name;
+    pOVar16 = (Object__Class *)func_?(ppcVar18,pDVar11);
+    bVar13 = pOVar16 != pOVar14;
+    pOVar14 = pOVar16;
   } while (bVar13);
   pOVar4 = Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
                      (MethodInfo__RTG__Singleton<RTG::RTCameraViewports>__get_Get__);
-  pDVar5 = (Delegate *)func_?(TypeInfo__RTG__RTCameraViewports__CameraRemovedHandler);
-  pMVar14 = MethodInfo__RTG__RTGApp__OnViewportCameraRemoved_UnityEngine__Camera_;
-  ppOVar15 = &(pDVar5->fields).m_target;
-  (pDVar5->fields).method_ptr =
-       MethodInfo__RTG__RTGApp__OnViewportCameraRemoved_UnityEngine__Camera_->virtualMethodPointer;
-  (pDVar5->fields).method = pMVar14;
-  *ppOVar15 = (Object *)this;
-  func_?(ppOVar15,this);
-  uVar6 = pMVar14->parameters_count;
-  (pDVar5->fields).method_code = pDVar5;
-  cVar7 = func_?(pMVar14);
+  pDVar9 = (Delegate *)
+            func_?(TypeInfo__RTG__RTCameraViewports__CameraRemovedHandler,ppcVar18,pDVar11,
+                            pOVar4);
+  pMVar5 = MethodInfo__RTG__RTGApp__OnViewportCameraRemoved_UnityEngine__Camera_;
+  pIVar17 = MethodInfo__RTG__RTGApp__OnViewportCameraRemoved_UnityEngine__Camera_->
+           virtualMethodPointer;
+  (pDVar9->fields).m_target = (Object *)object;
+  (pDVar9->fields).method_ptr = pIVar17;
+  (pDVar9->fields).method = pMVar5;
+  func_?(&(pDVar9->fields).m_target,object);
+  uVar6 = pMVar5->parameters_count;
+  (pDVar9->fields).method_code = pDVar9;
+  cVar7 = func_?(pMVar5);
   if (cVar7 == '\0') {
     if (uVar6 != 0) goto code_?;
     puVar8 = &UNK_?;
@@ -732,32 +744,32 @@ code_?:
   }
   else {
 code_?:
-    (pDVar5->fields).method_code = *ppOVar15;
-    puVar8 = (pDVar5->fields).method_ptr;
+    (pDVar9->fields).method_code = (pDVar9->fields).m_target;
+    puVar8 = (pDVar9->fields).method_ptr;
   }
-  (pDVar5->fields).invoke_impl = puVar8;
-  (pDVar5->fields).extra_arg = &UNK_?;
+  (pDVar9->fields).invoke_impl = puVar8;
+  (pDVar9->fields).extra_arg = &UNK_?;
   if (pOVar4 != (Object *)0x0) {
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
-    pDVar9 = (Delegate *)pOVar4[1].monitor;
+    pDVar11 = (Delegate *)pOVar4[1].monitor;
     do {
-      pDVar10 = mscorlib.dll::System::Delegate::Delegate_Combine(pDVar9,pDVar5,(MethodInfo *)0x0);
-      pDVar11 = (Delegate *)0x0;
+      pDVar10 = mscorlib.dll::System::Delegate::Delegate_Combine(pDVar11,pDVar9,(MethodInfo *)0x0);
+      pDVar19 = (Delegate *)0x0;
       if (pDVar10 != (Delegate *)0x0) {
         if ((RTCameraViewports_CameraRemovedHandler__Class *)pDVar10->klass ==
             TypeInfo__RTG__RTCameraViewports__CameraRemovedHandler) {
-          pDVar11 = pDVar10;
+          pDVar19 = pDVar10;
         }
         pCVar12 = (CameraCanUseScrollWheelHandler__Class *)
                   TypeInfo__RTG__RTCameraViewports__CameraRemovedHandler;
-        if (pDVar11 == (Delegate *)0x0) goto code_?;
+        if (pDVar19 == (Delegate *)0x0) goto code_?;
       }
-      pDVar11 = (Delegate *)func_?(&(pDVar11->fields).invoke_impl,pDVar11,pDVar9);
-      bVar13 = pDVar11 != pDVar9;
-      pDVar9 = pDVar11;
+      pDVar10 = (Delegate *)func_?(&(pDVar11->fields).invoke_impl,pDVar19);
+      bVar13 = pDVar10 != pDVar11;
+      pDVar11 = pDVar10;
     } while (bVar13);
     if ((TypeInfo__RTG__MonoSingleton<RTG::RTScene>->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__RTG__MonoSingleton<RTG::RTScene>);
@@ -774,31 +786,30 @@ code_?:
       RTScene::RTScene_RegisterHoverableSceneEntityContainer
                 (this_02,(IHoverableSceneEntityContainer *)pOVar4,(MethodInfo *)0x0);
       if ((TypeInfo__RTG__MonoSingleton<RTG::RTSceneGrid>->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+        func_?(TypeInfo__RTG__MonoSingleton<RTG::RTSceneGrid>);
       }
       this_03 = (RTSceneGrid *)
                 MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
                           (MethodInfo__RTG__MonoSingleton<RTG::RTSceneGrid>__get_Get__);
       if (this_03 != (RTSceneGrid *)0x0) {
         RTSceneGrid::RTSceneGrid_Initialize_SystemCall(this_03,(MethodInfo *)0x0);
-        pRVar18 = (RTGizmosEngine *)
+        pRVar20 = (RTGizmosEngine *)
                   MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
                             (MethodInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>__get_Get__);
-        object = TypeInfo__RTG__GizmoEngineCanDoHoverUpdateHandler;
         value_00 = (GizmoEngineCanDoHoverUpdateHandler *)func_?();
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
         UnityAction_1_System_Object___ctor
                   ((UnityAction_1_System_Object_ *)value_00,(Object *)object,
                    MethodInfo__RTG__RTGApp__OnCanDoGizmoHoverUpdate_RTG__YesNoAnswer_,
                    (MethodInfo *)0x0);
-        if (pRVar18 != (RTGizmosEngine *)0x0) {
-          RTGizmosEngine::RTGizmosEngine_add_CanDoHoverUpdate(pRVar18,value_00,(MethodInfo *)0x0);
-          if ((object->_0).this_arg.data.dummy == (void *)0x0) {
+        if (pRVar20 != (RTGizmosEngine *)0x0) {
+          RTGizmosEngine::RTGizmosEngine_add_CanDoHoverUpdate(pRVar20,value_00,(MethodInfo *)0x0);
+          if ((b->fields).interp_invoke_impl == (void *)0x0) {
             if ((TypeInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>->_1).cctor_finished_or_no_cctor
                 == 0) {
               func_?(TypeInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>);
             }
-            pRVar18 = (RTGizmosEngine *)
+            pRVar20 = (RTGizmosEngine *)
                       MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
                                 (MethodInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>__get_Get__);
             if ((TypeInfo__RTG__MonoSingleton<RTG::RTFocusCamera>->_1).cctor_finished_or_no_cctor ==
@@ -807,38 +818,38 @@ code_?:
             }
             pOVar4 = MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
                                (MethodInfo__RTG__MonoSingleton<RTG::RTFocusCamera>__get_Get__);
-            if ((pOVar4 == (Object *)0x0) || (pRVar18 == (RTGizmosEngine *)0x0))
+            if ((pOVar4 == (Object *)0x0) || (pRVar20 == (RTGizmosEngine *)0x0))
             goto code_?;
             RTGizmosEngine::RTGizmosEngine_CreateSceneGizmo
-                      (pRVar18,(Camera *)pOVar4[4].monitor,(MethodInfo *)0x0);
+                      (pRVar20,(Camera *)pOVar4[4].monitor,(MethodInfo *)0x0);
           }
           if ((TypeInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>->_1).cctor_finished_or_no_cctor ==
               0) {
             func_?(TypeInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>);
           }
-          pRVar18 = (RTGizmosEngine *)
+          pRVar20 = (RTGizmosEngine *)
                     MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
                               (MethodInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>__get_Get__);
           if ((TypeInfo__RTG__MonoSingleton<RTG::RTFocusCamera>->_1).cctor_finished_or_no_cctor == 0
              ) {
-            func_?();
+            func_?(TypeInfo__RTG__MonoSingleton<RTG::RTFocusCamera>);
           }
           pOVar4 = MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
                              (MethodInfo__RTG__MonoSingleton<RTG::RTFocusCamera>__get_Get__);
-          if ((pOVar4 != (Object *)0x0) && (pRVar18 != (RTGizmosEngine *)0x0)) {
+          if ((pOVar4 != (Object *)0x0) && (pRVar20 != (RTGizmosEngine *)0x0)) {
             RTGizmosEngine::RTGizmosEngine_AddRenderCamera
-                      (pRVar18,(Camera *)pOVar4[4].monitor,(MethodInfo *)0x0);
+                      (pRVar20,(Camera *)pOVar4[4].monitor,(MethodInfo *)0x0);
             RTMeshCompiler::RTMeshCompiler_CompileEntireScene((MethodInfo *)0x0);
-            if ((object->_0).this_arg.data.dummy != (void *)0x0) {
-              pAStack19 =
+            if ((b->fields).interp_invoke_impl != (void *)0x0) {
+              pAStack21 =
                    TypeInfo__System__Action<UnityEngine::Rendering::ScriptableRenderContext,_UnityEngine::Camera>
               ;
-              pUVar20 = (UnityAction_2_UnityEngine_SceneManagement_Scene_System_Int32Enum_ *)
+              pUVar22 = (UnityAction_2_UnityEngine_SceneManagement_Scene_System_Int32Enum_ *)
                         func_?();
               UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
               SceneManagement::Scene,System::Int32Enum]::
               UnityAction_2_UnityEngine_SceneManagement_Scene_System_Int32Enum___ctor
-                        (pUVar20,(Object *)object,
+                        (pUVar22,(Object *)object,
                          MethodInfo__RTG__RTGApp__OnBeginCameraRendering_UnityEngine__Rendering__ScriptableRenderContext__UnityEngine__Camera_
                          ,(MethodInfo *)0x0);
               if ((TypeInfo__UnityEngine__Rendering__RenderPipelineManager->_1).
@@ -848,31 +859,26 @@ code_?:
               UnityEngine.CoreModule.dll::UnityEngine::Rendering::RenderPipelineManager::
               RenderPipelineManager_add_beginCameraRendering
                         ((Action_2_UnityEngine_Rendering_ScriptableRenderContext_UnityEngine_Camera_
-                          *)pUVar20,(MethodInfo *)0x0);
-              pUVar20 = (UnityAction_2_UnityEngine_SceneManagement_Scene_System_Int32Enum_ *)
+                          *)pUVar22,(MethodInfo *)0x0);
+              pUVar22 = (UnityAction_2_UnityEngine_SceneManagement_Scene_System_Int32Enum_ *)
                         func_?();
               UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[UnityEngine::
               SceneManagement::Scene,System::Int32Enum]::
               UnityAction_2_UnityEngine_SceneManagement_Scene_System_Int32Enum___ctor
-                        (pUVar20,(Object *)object,
+                        (pUVar22,(Object *)object,
                          MethodInfo__RTG__RTGApp__OnEndCameraRendering_UnityEngine__Rendering__ScriptableRenderContext__UnityEngine__Camera_
                          ,(MethodInfo *)0x0);
               UnityEngine.CoreModule.dll::UnityEngine::Rendering::RenderPipelineManager::
               RenderPipelineManager_add_endCameraRendering
                         ((Action_2_UnityEngine_Rendering_ScriptableRenderContext_UnityEngine_Camera_
-                          *)pUVar20,(MethodInfo *)0x0);
+                          *)pUVar22,(MethodInfo *)0x0);
             }
-            pIVar21 = (object->_0).byval_arg.data.array;
-            if (pIVar21 != (Il2CppArrayType *)0x0) {
-              puStack22._0_1_ = pIVar21[1].rank;
-              puStack22._1_1_ = pIVar21[1].numsizes;
-              puStack22._2_1_ = pIVar21[1].numlobounds;
-              puStack22._3_1_ = pIVar21[1].field_0x7;
-              pIStack23 = pIVar21[2].etype;
-              pAStack19 =
-                   (Action_2_UnityEngine_Rendering_ScriptableRenderContext_UnityEngine_Camera___Class
-                    *)&UNK_?;
-              (*(code *)pIVar21->lobounds)();
+            if ((b->fields).method_code != (void *)0x0) {
+              pvVar23 = (b->fields).method_code;
+              pAStack21 =
+                   *(Action_2_UnityEngine_Rendering_ScriptableRenderContext_UnityEngine_Camera___Class
+                     **)((int)pvVar23 + 0x14);
+              (**(code **)((int)pvVar23 + 0xc))();
             }
             return;
           }
@@ -923,19 +929,17 @@ void Assembly-CSharp.dll::RTG::RTGApp::RTGApp_Update(RTGApp *this,MethodInfo *me
   if ((TypeInfo__RTG__MonoSingleton<RTG::RTFocusCamera>->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  method_00 = (MethodInfo *)&UNK_?;
   this_00 = (RTFocusCamera *)
             MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
                       (MethodInfo__RTG__MonoSingleton<RTG::RTFocusCamera>__get_Get__);
   if (this_00 == (RTFocusCamera *)0x0) goto code_?;
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__RTG__MonoSingleton<RTG::RTInputDevice>__get_Get__);
-    method_00 = (MethodInfo *)&UNK_?;
-    func_?(&TypeInfo__RTG__MonoSingleton<RTG::RTInputDevice>);
+    func_?();
+    func_?();
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__YesNoAnswer);
+    func_?();
     cRam_? = '\x01';
   }
   pCVar2 = (this_00->fields)._settings;
@@ -946,16 +950,21 @@ void Assembly-CSharp.dll::RTG::RTGApp::RTGApp_Update(RTGApp *this,MethodInfo *me
     if (((pCVar3->fields)._transitionType == 0) && ((this_00->fields)._isDoingRotationSwitch == 0))
     {
       if ((this_00->fields).CanProcessInput != (CameraCanProcessInputHandler *)0x0) {
-        value = (Object *)func_?(TypeInfo__RTG__YesNoAnswer);
+        method_00 = (MethodInfo *)&UNK_?;
+        value = (Object *)func_?();
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                   (value,ExceptionArgument__Enum_obj,method_00);
         pCVar4 = (this_00->fields).CanProcessInput;
         if (pCVar4 == (CameraCanProcessInputHandler *)0x0) goto code_?;
-        (*(pCVar4->fields)._._.invoke_impl)
-                  ((pCVar4->fields)._._.method_code,value,(pCVar4->fields)._._.method);
+        (*(pCVar4->fields)._._.invoke_impl)();
         if (value == (Object *)0x0) goto code_?;
-        if ((*(char *)&value[1].klass == '\0') || (*(char *)((int)&value[1].klass + 1) != '\0'))
-        goto code_?;
+        if (*(char *)&value[1].klass == '\0') {
+          bVar5 = false;
+        }
+        else {
+          bVar5 = *(char *)((int)&value[1].klass + 1) == '\0';
+        }
+        if (!bVar5) goto code_?;
       }
       if ((TypeInfo__RTG__MonoSingleton<RTG::RTInputDevice>->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__RTG__MonoSingleton<RTG::RTInputDevice>);
@@ -964,23 +973,23 @@ void Assembly-CSharp.dll::RTG::RTGApp::RTGApp_Update(RTGApp *this,MethodInfo *me
                MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
                          (MethodInfo__RTG__MonoSingleton<RTG::RTInputDevice>__get_Get__);
       if (pRVar1 == (RTInputDevice *)0x0) goto code_?;
-      IVar5 = RTInputDevice::RTInputDevice_get_DeviceType(pRVar1,(MethodInfo *)0x0);
-      if (IVar5 == InputDeviceType__Enum_Mouse) {
+      IVar6 = RTInputDevice::RTInputDevice_get_DeviceType(pRVar1,(MethodInfo *)0x0);
+      if (IVar6 == InputDeviceType__Enum_Mouse) {
         RTFocusCamera::RTFocusCamera_HandleMouseAndKeyboardInput(this_00,(MethodInfo *)0x0);
       }
     }
   }
 code_?:
-  pWVar6 = (this_00->fields)._worldTransformSnapshot;
-  if (pWVar6 != (WorldTransformSnapshot *)0x0) {
-    bVar7 = WorldTransformSnapshot::WorldTransformSnapshot_SameAs
-                      (pWVar6,(this_00->fields)._targetTransform,(MethodInfo *)0x0);
-    if (bVar7 == 0) {
-      pWVar6 = (this_00->fields)._worldTransformSnapshot;
+  pWVar7 = (this_00->fields)._worldTransformSnapshot;
+  if (pWVar7 != (WorldTransformSnapshot *)0x0) {
+    bVar8 = WorldTransformSnapshot::WorldTransformSnapshot_SameAs
+                      (pWVar7,(this_00->fields)._targetTransform,(MethodInfo *)0x0);
+    if (bVar8 == 0) {
+      pWVar7 = (this_00->fields)._worldTransformSnapshot;
       (this_00->fields)._isObjectVisibilityDirty = 1;
-      if (pWVar6 == (WorldTransformSnapshot *)0x0) goto code_?;
+      if (pWVar7 == (WorldTransformSnapshot *)0x0) goto code_?;
       WorldTransformSnapshot::WorldTransformSnapshot_Snaphot
-                (pWVar6,(this_00->fields)._targetTransform,(MethodInfo *)0x0);
+                (pWVar7,(this_00->fields)._targetTransform,(MethodInfo *)0x0);
     }
     if ((TypeInfo__RTG__MonoSingleton<RTG::RTScene>->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__RTG__MonoSingleton<RTG::RTScene>);
@@ -1008,7 +1017,7 @@ code_?:
         if (this_03 != (RTGizmosEngine *)0x0) {
           RTGizmosEngine::RTGizmosEngine_Update_SystemCall(this_03,(MethodInfo *)0x0);
           if ((TypeInfo__RTG__MonoSingleton<RTG::RTUndoRedo>->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__RTG__MonoSingleton<RTG::RTUndoRedo>);
+            func_?();
           }
           this_04 = (RTUndoRedo *)
                     MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
@@ -1023,8 +1032,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -1060,28 +1069,27 @@ void Assembly-CSharp.dll::RTG::RTGApp::RTGApp_add_Initialized
     func_?(&TypeInfo__RTG__RTGAppInitializedHandler);
     cRam_? = '\x01';
   }
-  ppRVar1 = &(this->fields).Initialized;
-  a = *ppRVar1;
+  a = (this->fields).Initialized;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((RTGAppInitializedHandler__Class *)pDVar2->klass ==
+    pDVar2 = (Delegate *)0x0;
+    if (pDVar1 != (Delegate *)0x0) {
+      if ((RTGAppInitializedHandler__Class *)pDVar1->klass ==
           TypeInfo__RTG__RTGAppInitializedHandler) {
-        pDVar3 = pDVar2;
+        pDVar2 = pDVar1;
       }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__RTG__RTGAppInitializedHandler);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+      if (pDVar2 == (Delegate *)0x0) {
+        func_?(pDVar1,TypeInfo__RTG__RTGAppInitializedHandler);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
     }
-    pRVar5 = (RTGAppInitializedHandler *)func_?(ppRVar1,pDVar3,a);
-    bVar6 = pRVar5 == a;
-    a = pRVar5;
-    if (bVar6) {
+    pRVar4 = (RTGAppInitializedHandler *)func_?(&(this->fields).Initialized,pDVar2,a);
+    bVar5 = pRVar4 == a;
+    a = pRVar4;
+    if (bVar5) {
       return;
     }
   } while( true );
@@ -1098,28 +1106,27 @@ void Assembly-CSharp.dll::RTG::RTGApp::RTGApp_remove_Initialized
     func_?(&TypeInfo__RTG__RTGAppInitializedHandler);
     cRam_? = '\x01';
   }
-  ppRVar1 = &(this->fields).Initialized;
-  source = *ppRVar1;
+  source = (this->fields).Initialized;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((RTGAppInitializedHandler__Class *)pDVar2->klass ==
+    pDVar2 = (Delegate *)0x0;
+    if (pDVar1 != (Delegate *)0x0) {
+      if ((RTGAppInitializedHandler__Class *)pDVar1->klass ==
           TypeInfo__RTG__RTGAppInitializedHandler) {
-        pDVar3 = pDVar2;
+        pDVar2 = pDVar1;
       }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__RTG__RTGAppInitializedHandler);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+      if (pDVar2 == (Delegate *)0x0) {
+        func_?(pDVar1,TypeInfo__RTG__RTGAppInitializedHandler);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
     }
-    pRVar5 = (RTGAppInitializedHandler *)func_?(ppRVar1,pDVar3,source);
-    bVar6 = pRVar5 == source;
-    source = pRVar5;
-    if (bVar6) {
+    pRVar4 = (RTGAppInitializedHandler *)func_?(&(this->fields).Initialized,pDVar2,source);
+    bVar5 = pRVar4 == source;
+    source = pRVar4;
+    if (bVar5) {
       return;
     }
   } while( true );

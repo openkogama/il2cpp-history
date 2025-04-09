@@ -63,44 +63,45 @@ void Assembly-CSharp.dll::FirstTimeActivatableMessageStayForSeconds::
                      ((Object *)pFVar1,
                       FirstTimeEventMessage_MethodInfo__UnityEngine__Object__Instantiate<FirstTimeEventMessage>_FirstTimeEventMessage_
                      );
-  ppFVar2 = &(this->fields)._.firstTimeEventMessage;
-  *ppFVar2 = pFVar1;
-  func_?(ppFVar2,pFVar1);
-  ppTVar3 = &(this->fields)._.firstTimeMessageParentTransform;
-  bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)*ppTVar3,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar4 != 0) {
+  (this->fields)._.firstTimeEventMessage = pFVar1;
+  func_?(&(this->fields)._.firstTimeEventMessage,pFVar1);
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)(this->fields)._.firstTimeMessageParentTransform,(Object_1 *)0x0,
+                     (MethodInfo *)0x0);
+  if (bVar2 != 0) {
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
               ((Object *)StringLiteral_firstTimeMessageParentTransform_,(MethodInfo *)0x0);
-    pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                        ((Component *)this,(MethodInfo *)0x0);
-    *ppTVar3 = pTVar5;
-    func_?(ppTVar3);
+    (this->fields)._.firstTimeMessageParentTransform = pTVar3;
+    func_?();
   }
-  if (*ppFVar2 != (FirstTimeEventMessage *)0x0) {
-    pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                       ((Component *)*ppFVar2,(MethodInfo *)0x0);
-    if (pTVar5 != (Transform *)0x0) {
+  pFVar1 = (this->fields)._.firstTimeEventMessage;
+  if (pFVar1 != (FirstTimeEventMessage *)0x0) {
+    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)pFVar1,(MethodInfo *)0x0);
+    if (pTVar3 != (Transform *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                (pTVar5,*ppTVar3,0,(MethodInfo *)0x0);
-      if ((*ppFVar2 != (FirstTimeEventMessage *)0x0) &&
-         (pFVar6 = ((*ppFVar2)->fields).fader, pFVar6 != (FirstTimeFadeHandler *)0x0)) {
-        this_00 = (pFVar6->fields).canvasGroup;
-        (pFVar6->fields).fadingIn = 1;
+                (pTVar3,(this->fields)._.firstTimeMessageParentTransform,0,(MethodInfo *)0x0);
+      pFVar1 = (this->fields)._.firstTimeEventMessage;
+      if ((pFVar1 != (FirstTimeEventMessage *)0x0) &&
+         (pFVar4 = (pFVar1->fields).fader, pFVar4 != (FirstTimeFadeHandler *)0x0)) {
+        this_00 = (pFVar4->fields).canvasGroup;
+        (pFVar4->fields).fadingIn = 1;
         if (this_00 != (CanvasGroup *)0x0) {
           UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
                     (this_00,0.0,(MethodInfo *)0x0);
-          (pFVar6->fields).currentFadeInTime = 0.0;
-          pFVar1 = *ppFVar2;
-          pSStack7 = TM::TM__((this->fields).messageText,(MethodInfo *)0x0);
+          (pFVar4->fields).currentFadeInTime = 0.0;
+          pFVar1 = (this->fields)._.firstTimeEventMessage;
+          pSStack5 = TM::TM__((this->fields).messageText,(MethodInfo *)0x0);
           if ((pFVar1 != (FirstTimeEventMessage *)0x0) &&
-             (pTStack8 = (pFVar1->fields).message, pTStack8 != (Text *)0x0)) {
-            pIStack9 =
-                 (pTStack8->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
-            (*(code *)(pTStack8->klass->vtable).set_text.method)();
+             (pTStack6 = (pFVar1->fields).message, pTStack6 != (Text *)0x0)) {
+            pIStack7 =
+                 (pTStack6->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
+            (*(code *)(pTStack6->klass->vtable).set_text.method)();
             (this->fields).isShown = 1;
             return;
           }
@@ -109,8 +110,8 @@ void Assembly-CSharp.dll::FirstTimeActivatableMessageStayForSeconds::
     }
   }
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

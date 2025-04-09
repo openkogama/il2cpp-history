@@ -116,32 +116,30 @@ void MVWorldObject.dll::MV::WorldObject::MetaData::ProfileMetaData::ProfileMetaD
   }
   this_00 = (BitArray *)func_?(TypeInfo__System__Collections__BitArray);
   mscorlib.dll::System::Collections::BitArray::BitArray__ctor(this_00,0,(MethodInfo *)0x0);
-  method_01 = (MethodInfo *)&value->fields;
-  ((FirstTimeState__Fields *)method_01)->bitArray = this_00;
-  func_?(method_01,this_00);
+  method_00 = (MethodInfo *)&value->fields;
+  (value->fields).bitArray = this_00;
+  func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,method_01);
-  ppFVar1 = &(this->fields).FirstTimeState;
-  *ppFVar1 = value;
-  func_?(ppFVar1,value);
+            ((Object *)value,ExceptionArgument__Enum_obj,method_00);
+  (this->fields).FirstTimeState = value;
+  func_?(&(this->fields).FirstTimeState,value);
   this_01 = (ProfileHighlightState *)
             func_?(
                            TypeInfo__MV__WorldObject__HighlightSystem__HighlightPayloads__ProfileHighlightState
                            );
   HighlightSystem::HighlightPayloads::ProfileHighlightState::ProfileHighlightState__ctor
             (this_01,(MethodInfo *)0x0);
-  ppPVar2 = &(this->fields).ProfileHighlightState;
-  *ppPVar2 = this_01;
-  func_?(ppPVar2,this_01);
+  (this->fields).ProfileHighlightState = this_01;
+  func_?(&(this->fields).ProfileHighlightState,this_01);
   this_02 = (ProfileSettingsState *)
             func_?(TypeInfo__MV__WorldObject__MetaData__ProfileSettingsState);
   ProfileSettingsState::ProfileSettingsState__ctor(this_02,(MethodInfo *)0x0);
-  method_00 = &(this->fields).ProfileSettingsState;
-  *method_00 = this_02;
+  (this->fields).ProfileSettingsState = this_02;
   func_?();
   (this->fields).serializeFlags = 0x7f;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+            ((Object *)this,ExceptionArgument__Enum_obj,
+             (MethodInfo *)&(this->fields).ProfileSettingsState);
   return;
 }
 
@@ -168,32 +166,30 @@ void MVWorldObject.dll::MV::WorldObject::MetaData::ProfileMetaData::ProfileMetaD
   }
   this_00 = (BitArray *)func_?(TypeInfo__System__Collections__BitArray);
   mscorlib.dll::System::Collections::BitArray::BitArray__ctor(this_00,0,(MethodInfo *)0x0);
-  method_01 = (MethodInfo *)&value->fields;
-  ((FirstTimeState__Fields *)method_01)->bitArray = this_00;
-  func_?(method_01,this_00);
+  method_00 = (MethodInfo *)&value->fields;
+  (value->fields).bitArray = this_00;
+  func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,method_01);
-  ppFVar1 = &(this->fields).FirstTimeState;
-  *ppFVar1 = value;
-  func_?(ppFVar1,value);
+            ((Object *)value,ExceptionArgument__Enum_obj,method_00);
+  (this->fields).FirstTimeState = value;
+  func_?(&(this->fields).FirstTimeState,value);
   this_01 = (ProfileHighlightState *)
             func_?(
                            TypeInfo__MV__WorldObject__HighlightSystem__HighlightPayloads__ProfileHighlightState
                            );
   HighlightSystem::HighlightPayloads::ProfileHighlightState::ProfileHighlightState__ctor
             (this_01,(MethodInfo *)0x0);
-  ppPVar2 = &(this->fields).ProfileHighlightState;
-  *ppPVar2 = this_01;
-  func_?(ppPVar2,this_01);
+  (this->fields).ProfileHighlightState = this_01;
+  func_?(&(this->fields).ProfileHighlightState,this_01);
   this_02 = (ProfileSettingsState *)
             func_?(TypeInfo__MV__WorldObject__MetaData__ProfileSettingsState);
   ProfileSettingsState::ProfileSettingsState__ctor(this_02,(MethodInfo *)0x0);
-  method_00 = &(this->fields).ProfileSettingsState;
-  *method_00 = this_02;
+  (this->fields).ProfileSettingsState = this_02;
   func_?();
   (this->fields).serializeFlags = 0x7f;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+            ((Object *)this,ExceptionArgument__Enum_obj,
+             (MethodInfo *)&(this->fields).ProfileSettingsState);
   isInitialized = (bool)this_02;
   (this->fields).IsInitialized = isInitialized;
   return;

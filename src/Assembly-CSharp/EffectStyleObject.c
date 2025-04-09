@@ -70,33 +70,29 @@ void Assembly-CSharp.dll::EffectStyleObject::EffectStyleObject_Reset
                      ((Component *)this,
                       UnityEngine__UI__Graphic_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Graphic>__
                      );
-  ppGVar2 = &(this->fields).graphic;
-  *ppGVar2 = pGVar1;
-  func_?(ppGVar2,pGVar1);
-  pSVar3 = (ShadowEffect *)
+  (this->fields).graphic = pGVar1;
+  func_?(&(this->fields).graphic,pGVar1);
+  pSVar2 = (ShadowEffect *)
            UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
                      ((Component *)this,
                       ShadowEffect_MethodInfo__UnityEngine__Component__GetComponent<ShadowEffect>__)
   ;
-  ppSVar4 = &(this->fields).shadow;
-  *ppSVar4 = pSVar3;
-  func_?(ppSVar4,pSVar3);
-  pOVar5 = (Outline *)
+  (this->fields).shadow = pSVar2;
+  func_?(&(this->fields).shadow,pSVar2);
+  pOVar3 = (Outline *)
            UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
                      ((Component *)this,
                       UnityEngine__UI__Outline_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Outline>__
                      );
-  ppOVar6 = &(this->fields).outline;
-  *ppOVar6 = pOVar5;
-  func_?(ppOVar6,pOVar5);
-  pGVar7 = (GradientEffect *)
+  (this->fields).outline = pOVar3;
+  func_?(&(this->fields).outline,pOVar3);
+  pGVar4 = (GradientEffect *)
            UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
                      ((Component *)this,
                       Gamestrap__GradientEffect_MethodInfo__UnityEngine__Component__GetComponent<Gamestrap::GradientEffect>__
                      );
-  ppGVar8 = &(this->fields).gradient;
-  *ppGVar8 = pGVar7;
-  func_?(ppGVar8,pGVar7);
+  (this->fields).gradient = pGVar4;
+  func_?(&(this->fields).gradient,pGVar4);
   effectStyle = (this->fields).effectStyle;
   if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
     func_?();

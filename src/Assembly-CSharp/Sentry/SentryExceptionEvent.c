@@ -43,9 +43,8 @@ void Assembly-CSharp.dll::Sentry::SentryExceptionEvent::SentryExceptionEvent__ct
   value = (Object__Class *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
-  ppcVar2 = &(value->_0).name;
-  *ppcVar2 = (char *)stackTrace;
-  func_?(ppcVar2,stackTrace);
+  (value->_0).name = (char *)stackTrace;
+  func_?(&(value->_0).name,stackTrace);
   pOVar1[2].klass = value;
   func_?(pOVar1 + 2,value);
   if (this_00 != (Object__Class *)0x0) {
@@ -64,8 +63,8 @@ void Assembly-CSharp.dll::Sentry::SentryExceptionEvent::SentryExceptionEvent__ct
     return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

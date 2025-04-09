@@ -19,61 +19,64 @@ void Assembly-CSharp.dll::CellTraverser::CellTraverser_DebugAll
     func_?(&StringLiteral_stepY_);
     cRam_? = '\x01';
   }
-  pSVar1 = (String *)func_?(&stack0xffffffd0,0,0,0);
-  pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                     (StringLiteral_intersectRay_,pSVar1,(MethodInfo *)0x0);
+  IStack_1.x = 0;
+  IStack_1.y = 0;
+  IStack_1.z = 0;
+  pSVar2 = (String *)func_?(&stack0xffffffd0,0,0,0);
+  pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                     (StringLiteral_intersectRay_,pSVar2,(MethodInfo *)0x0);
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);
-  pSVar1 = (String *)func_?(&stack0xffffffe8,0,0);
-  pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                     (StringLiteral_tMax_,pSVar1,(MethodInfo *)0x0);
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);
-  IStack_2.x = (this->fields).localChunkSpaceVoxelPos.x;
-  IStack_2.y = (this->fields).localChunkSpaceVoxelPos.y;
-  IStack_2.z = (this->fields).localChunkSpaceVoxelPos.z;
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar2,(MethodInfo *)0x0);
+  pSVar2 = (String *)func_?(&stack0xffffffe8,0,0);
+  pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                     (StringLiteral_tMax_,pSVar2,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar2,(MethodInfo *)0x0);
+  IStack_1.x = (this->fields).localChunkSpaceVoxelPos.x;
+  IStack_1.y = (this->fields).localChunkSpaceVoxelPos.y;
+  IStack_1.z = (this->fields).localChunkSpaceVoxelPos.z;
   if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  pSVar1 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_ToString
-                     (&IStack_2,(MethodInfo *)0x0);
-  pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                     (StringLiteral_localChunkSpaceVoxelPos_,pSVar1,(MethodInfo *)0x0);
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);
-  pSVar1 = mscorlib.dll::System::Int32::Int32_ToString
+  pSVar2 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_ToString
+                     (&IStack_1,(MethodInfo *)0x0);
+  pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                     (StringLiteral_localChunkSpaceVoxelPos_,pSVar2,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar2,(MethodInfo *)0x0);
+  pSVar2 = mscorlib.dll::System::Int32::Int32_ToString
                      ((Int32 *)&(this->fields).stepX,(MethodInfo *)0x0);
-  pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                     (StringLiteral_stepX_,pSVar1,(MethodInfo *)0x0);
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);
-  pSVar1 = mscorlib.dll::System::Int32::Int32_ToString
+  pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                     (StringLiteral_stepX_,pSVar2,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar2,(MethodInfo *)0x0);
+  pSVar2 = mscorlib.dll::System::Int32::Int32_ToString
                      ((Int32 *)&(this->fields).stepY,(MethodInfo *)0x0);
-  pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                     (StringLiteral_stepY_,pSVar1,(MethodInfo *)0x0);
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);
-  pSVar1 = mscorlib.dll::System::Int32::Int32_ToString
+  pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                     (StringLiteral_stepY_,pSVar2,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar2,(MethodInfo *)0x0);
+  pSVar2 = mscorlib.dll::System::Int32::Int32_ToString
                      ((Int32 *)&(this->fields).stepZ,(MethodInfo *)0x0);
-  pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                     (StringLiteral_stepZ_,pSVar1,(MethodInfo *)0x0);
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);
+  pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                     (StringLiteral_stepZ_,pSVar2,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar2,(MethodInfo *)0x0);
   puStack3 = &stack0xffffffe8;
-  pSVar1 = (String *)func_?();
-  pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                     (StringLiteral_tDelta_,pSVar1,(MethodInfo *)0x0);
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);
-  IStack_2.x = (this->fields).stepDir.x;
-  IStack_2.y = (this->fields).stepDir.y;
-  IStack_2.z = (this->fields).stepDir.z;
-  pSVar1 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_ToString
-                     (&IStack_2,(MethodInfo *)0x0);
-  pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                     (StringLiteral_stepDir_,pSVar1,(MethodInfo *)0x0);
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);
+  pSVar2 = (String *)func_?();
+  pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                     (StringLiteral_tDelta_,pSVar2,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar2,(MethodInfo *)0x0);
+  IStack_1.x = (this->fields).stepDir.x;
+  IStack_1.y = (this->fields).stepDir.y;
+  IStack_1.z = (this->fields).stepDir.z;
+  pSVar2 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_ToString
+                     (&IStack_1,(MethodInfo *)0x0);
+  pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                     (StringLiteral_stepDir_,pSVar2,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar2,(MethodInfo *)0x0);
   puStack4 = &stack0xffffffe8;
-  pSVar1 = (String *)func_?();
-  pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                     (StringLiteral_initialtMax_,pSVar1,(MethodInfo *)0x0);
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);
+  pSVar2 = (String *)func_?();
+  pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                     (StringLiteral_initialtMax_,pSVar2,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar2,(MethodInfo *)0x0);
   return;
 }
 
@@ -102,7 +105,7 @@ void Assembly-CSharp.dll::CellTraverser::CellTraverser_Init
         if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
             (Il2CppClass *)TypeInfo__ICubeModelCollider) {
           ppMVar5 = &(&((collisionState.cmb)->klass->vtable).get_PrototypeCubeModel)
-                      [pIVar2->interfaceOffsets[uVar3].offset].method;
+                      [(collisionState.cmb)->klass->interfaceOffsets[uVar3].offset].method;
           goto code_?;
         }
         uVar3 = uVar3 + 1;
@@ -135,50 +138,47 @@ code_?:
                CubeMathFunctions_LocalPosToLocalIntVector
                          (localPos,(MethodInfo *)(this->fields).intersectRay.m_Origin.z);
       iVar14 = collisionState.scanAxis;
-      pIVar15 = &(this->fields).voxelPos;
-      pIStack_16 = (ICubeModelCollider *)collisionState.scanAxis;
-      uVar17 = *IVar13._0_4_;
-      iVar18 = *(int16_t *)(IVar13._0_4_ + 1);
-      pIVar15->x = (short)uVar17;
-      pIVar15->y = (short)((uint)uVar17 >> 0x10);
-      (this->fields).voxelPos.z = iVar18;
+      uVar15 = *IVar13._0_4_;
+      iVar16 = *(int16_t *)(IVar13._0_4_ + 1);
+      (this->fields).voxelPos.x = (short)uVar15;
+      (this->fields).voxelPos.y = (short)((uint)uVar15 >> 0x10);
+      (this->fields).voxelPos.z = iVar16;
+      VStack_8.z = (float)collisionState.scanAxis;
       if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__MV__WorldObject__IntVector);
       }
-      iVar19 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_get_Item
-                         (pIVar15,iVar14,(MethodInfo *)0x0);
-      iVar18 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_get_Item
+      iVar17 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_get_Item
+                         (&(this->fields).voxelPos,iVar14,(MethodInfo *)0x0);
+      iVar16 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_get_Item
                          (&collisionState.minBounds,collisionState.scanAxis,(MethodInfo *)0x0);
-      iVar20 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_get_Item
+      iVar18 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_get_Item
                          (&collisionState.maxBounds,collisionState.scanAxis,(MethodInfo *)0x0);
-      if ((iVar18 <= iVar19) && (iVar18 = iVar19, iVar20 < iVar19)) {
-        iVar18 = iVar20;
+      if ((iVar16 <= iVar17) && (iVar16 = iVar17, iVar18 < iVar17)) {
+        iVar16 = iVar18;
       }
-      pIVar15 = &(this->fields).voxelPos;
       MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_set_Item
-                (pIVar15,(int32_t)pIStack_16,iVar18,(MethodInfo *)0x0);
-      uStack_21 = (ulonglong)uVar22;
-      uStack_23 = (uint)uStack_23._2_2_ << 0x10;
+                (&(this->fields).voxelPos,(int32_t)VStack_8.z,iVar16,(MethodInfo *)0x0);
+      uStack_19 = (ulonglong)uVar20;
+      uStack_21 = (uint)uStack_21._2_2_ << 0x10;
       MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                ((IntVector *)&fStack_24,(uint)(ushort)pIVar15->x,
+                ((IntVector *)&fStack_22,(uint)(ushort)(this->fields).voxelPos.x,
                  (uint)(ushort)(this->fields).voxelPos.y,(uint)(ushort)(this->fields).voxelPos.z,
                  (MethodInfo *)0x0);
-      *(float *)&(this->fields).localChunkSpaceVoxelPos = fStack_24;
-      (this->fields).localChunkSpaceVoxelPos.z = (int16_t)uStack_23;
-      pIStack_16 = collisionState.cmb;
+      pIVar1 = collisionState.cmb;
+      *(float *)&(this->fields).localChunkSpaceVoxelPos = fStack_22;
+      (this->fields).localChunkSpaceVoxelPos.z = (int16_t)uStack_21;
+      VStack_8.z = (float)collisionState.cmb;
       if (collisionState.cmb != (ICubeModelCollider *)0x0) {
-        VStack_8.z = (float)(collisionState.cmb)->klass;
+        pIVar2 = (collisionState.cmb)->klass;
         uVar4 = 0;
-        uStack_25 = 0;
-        uVar3._0_1_ = (((ICubeModelCollider__Class *)VStack_8.z)->_1).rank;
-        uVar3._1_1_ = (((ICubeModelCollider__Class *)VStack_8.z)->_1).minimumAlignment;
+        uVar3._0_1_ = (pIVar2->_1).rank;
+        uVar3._1_1_ = (pIVar2->_1).minimumAlignment;
         if (uVar3 != 0) {
           do {
-            if (((ICubeModelCollider__Class *)VStack_8.z)->interfaceOffsets[uVar4].interfaceType
-                == (Il2CppClass *)TypeInfo__ICubeModelCollider) {
-              ppMVar5 = &(&(((ICubeModelCollider__Class *)VStack_8.z)->vtable).CubePosToChunkPos)
-                          [((ICubeModelCollider__Class *)VStack_8.z)->interfaceOffsets[uVar4].
-                           offset].method;
+            if (pIVar2->interfaceOffsets[uVar4].interfaceType ==
+                (Il2CppClass *)TypeInfo__ICubeModelCollider) {
+              ppMVar5 = &(&((collisionState.cmb)->klass->vtable).CubePosToChunkPos)
+                          [(collisionState.cmb)->klass->interfaceOffsets[uVar4].offset].method;
               goto code_?;
             }
             uVar4 = uVar4 + 1;
@@ -187,7 +187,7 @@ code_?:
         ppMVar5 = (MethodInfo **)func_?(collisionState.cmb,TypeInfo__ICubeModelCollider,9)
         ;
 code_?:
-        (*(code *)*ppMVar5)(pIStack_16,&(this->fields).localChunkSpaceVoxelPos,ppMVar5[1]);
+        (*(code *)*ppMVar5)(pIVar1,&(this->fields).localChunkSpaceVoxelPos,ppMVar5[1]);
         VStack_8.z = (this->fields).intersectRay.m_Direction.z;
         VStack_8.x = (this->fields).intersectRay.m_Direction.x;
         VStack_8.y = (this->fields).intersectRay.m_Direction.y;
@@ -204,38 +204,38 @@ code_?:
         VStack_8.x = (this->fields).intersectRay.m_Direction.x;
         VStack_8.y = (this->fields).intersectRay.m_Direction.y;
         VStack_8.z = (this->fields).intersectRay.m_Direction.z;
-        uStack_21 = uStack_21 & 0xffffffff00000000;
+        uStack_19 = uStack_19 & 0xffffffff00000000;
         iVar14 = mscorlib.dll::System::Math::Math_Sign_2(VStack_8.z,(MethodInfo *)0x0);
         (this->fields).stepZ = iVar14;
-        uVar17 = _UNK_?;
-        sVar26 = (this->fields).voxelPos.x;
+        uVar15 = _UNK_?;
+        sVar23 = (this->fields).voxelPos.x;
         iVar6 = (this->fields).stepX;
-        sVar27 = (this->fields).voxelPos.y;
-        iVar28 = (this->fields).stepY;
-        sVar29 = (this->fields).voxelPos.z;
+        sVar24 = (this->fields).voxelPos.z;
+        iVar25 = (this->fields).stepY;
+        sVar26 = (this->fields).voxelPos.y;
         (this->fields).tMax.x = (float)_UNK_?;
-        (this->fields).tMax.y = (float)uVar17;
+        (this->fields).tMax.y = (float)uVar15;
         (this->fields).tMax.z = INFINITY;
         fVar10 = _UNK_?;
-        uVar30 = (this->fields).intersectRay.m_Direction.x;
-        if ((float)uVar30 != 0.0) {
-          uVar31 = (this->fields).intersectRay.m_Origin.x;
-          uVar32 = (this->fields).intersectRay.m_Direction.x;
+        uVar27 = (this->fields).intersectRay.m_Direction.x;
+        if ((float)uVar27 != 0.0) {
+          uVar28 = (this->fields).intersectRay.m_Origin.x;
+          uVar29 = (this->fields).intersectRay.m_Direction.x;
           (this->fields).tMax.x =
-               ((float)(int)((uint)(0 < iVar6) + (int)sVar26) - ((float)uVar31 + _UNK_?)) /
-               (float)uVar32;
+               ((float)(int)((int)sVar23 + (uint)(0 < iVar6)) - ((float)uVar28 + _UNK_?)) /
+               (float)uVar29;
         }
-        uVar33 = (this->fields).intersectRay.m_Direction.y;
-        if ((float)uVar33 != 0.0) {
-          uVar34 = (this->fields).intersectRay.m_Origin.y;
-          uVar35 = (this->fields).intersectRay.m_Direction.y;
+        uVar30 = (this->fields).intersectRay.m_Direction.y;
+        if ((float)uVar30 != 0.0) {
+          uVar31 = (this->fields).intersectRay.m_Origin.y;
+          uVar32 = (this->fields).intersectRay.m_Direction.y;
           (this->fields).tMax.y =
-               ((float)(int)((uint)(0 < iVar28) + (int)sVar27) - ((float)uVar34 + fVar10)) /
-               (float)uVar35;
+               ((float)(int)((uint)(0 < iVar25) + (int)sVar26) - ((float)uVar31 + fVar10)) /
+               (float)uVar32;
         }
         if ((this->fields).intersectRay.m_Direction.z != 0.0) {
           (this->fields).tMax.z =
-               ((float)(int)((uint)(0 < iVar14) + (int)sVar29) -
+               ((float)(int)((uint)(0 < iVar14) + (int)sVar24) -
                ((this->fields).intersectRay.m_Origin.z + fVar10)) /
                (this->fields).intersectRay.m_Direction.z;
         }
@@ -244,18 +244,18 @@ code_?:
         (this->fields).initialtMax.x = (this->fields).tMax.x;
         (this->fields).initialtMax.y = fVar9;
         (this->fields).initialtMax.z = fVar10;
-        (this->fields).tDelta.x = (float)uVar17;
-        (this->fields).tDelta.y = (float)uVar17;
+        (this->fields).tDelta.x = (float)uVar15;
+        (this->fields).tDelta.y = (float)uVar15;
         (this->fields).tDelta.z = INFINITY;
-        uVar36 = (this->fields).intersectRay.m_Direction.x;
-        if ((float)uVar36 != 0.0) {
-          uVar37 = (this->fields).intersectRay.m_Direction.x;
-          (this->fields).tDelta.x = (float)(this->fields).stepX / (float)uVar37;
+        uVar33 = (this->fields).intersectRay.m_Direction.x;
+        if ((float)uVar33 != 0.0) {
+          uVar34 = (this->fields).intersectRay.m_Direction.x;
+          (this->fields).tDelta.x = (float)(this->fields).stepX / (float)uVar34;
         }
-        uVar38 = (this->fields).intersectRay.m_Direction.y;
-        if ((float)uVar38 != 0.0) {
-          uVar39 = (this->fields).intersectRay.m_Direction.y;
-          (this->fields).tDelta.y = (float)(this->fields).stepY / (float)uVar39;
+        uVar35 = (this->fields).intersectRay.m_Direction.y;
+        if ((float)uVar35 != 0.0) {
+          uVar36 = (this->fields).intersectRay.m_Direction.y;
+          (this->fields).tDelta.y = (float)(this->fields).stepY / (float)uVar36;
         }
         if ((this->fields).intersectRay.m_Direction.z != 0.0) {
           (this->fields).tDelta.z =
@@ -266,8 +266,8 @@ code_?:
     }
   }
   func_?();
-  pcVar40 = (code *)swi(3);
-  (*pcVar40)();
+  pcVar37 = (code *)swi(3);
+  (*pcVar37)();
   return;
 }
 
@@ -278,32 +278,36 @@ bool Assembly-CSharp.dll::CellTraverser::CellTraverser_Step(CellTraverser *this,
 
 {
   bVar1 = 1;
-  fVar2 = (this->fields).tMax.x;
-  fVar3 = (this->fields).tMax.y;
-  if ((fVar2 < fVar3) && (fVar2 < (this->fields).tMax.z)) {
+  fVar2 = (this->fields).tMax.y;
+  pVVar3 = &(this->fields).tMax;
+  if ((pVVar3->x <= fVar2 && fVar2 != pVVar3->x) &&
+     (fVar2 = (this->fields).tMax.z, pVVar3 = &(this->fields).tMax,
+     pVVar3->x <= fVar2 && fVar2 != pVVar3->x)) {
     pIVar4 = &(this->fields).localChunkSpaceVoxelPos;
     pIVar4->x = pIVar4->x + (short)(this->fields).stepX;
     pIVar4 = &(this->fields).voxelPos;
     pIVar4->x = pIVar4->x + (short)(this->fields).stepX;
-    (this->fields).tMax.x = (this->fields).tDelta.x + fVar2;
-    sVar5 = (this->fields).localChunkSpaceVoxelPos.x;
-    if (((int)sVar5 == (this->fields).chunkSize) || (sVar5 < 0)) {
+    (this->fields).tMax.x = (this->fields).tDelta.x + (this->fields).tMax.x;
+    if (((int)(this->fields).localChunkSpaceVoxelPos.x == (this->fields).chunkSize) ||
+       ((this->fields).localChunkSpaceVoxelPos.x < 0)) {
       bVar1 = 0;
     }
-    iVar6 = (this->fields).stepX;
+    iVar5 = (this->fields).stepX;
     (this->fields).stepDir.y = 0;
     (this->fields).stepDir.z = 0;
-    (this->fields).stepDir.x = (int16_t)iVar6;
+    (this->fields).stepDir.x = (int16_t)iVar5;
     return bVar1;
   }
-  if ((this->fields).tMax.z <= fVar3) {
+  fVar2 = (this->fields).tMax.z;
+  pfVar6 = &(this->fields).tMax.y;
+  if (fVar2 < *pfVar6 || fVar2 == *pfVar6) {
     piVar7 = &(this->fields).localChunkSpaceVoxelPos.z;
     *piVar7 = *piVar7 + (short)(this->fields).stepZ;
     piVar7 = &(this->fields).voxelPos.z;
     *piVar7 = *piVar7 + (short)(this->fields).stepZ;
     (this->fields).tMax.z = (this->fields).tDelta.z + (this->fields).tMax.z;
-    sVar5 = (this->fields).localChunkSpaceVoxelPos.z;
-    if (((int)sVar5 == (this->fields).chunkSize) || (sVar5 < 0)) {
+    if (((int)(this->fields).localChunkSpaceVoxelPos.z == (this->fields).chunkSize) ||
+       ((this->fields).localChunkSpaceVoxelPos.z < 0)) {
       bVar1 = 0;
     }
     (this->fields).stepDir.x = 0;
@@ -315,9 +319,9 @@ bool Assembly-CSharp.dll::CellTraverser::CellTraverser_Step(CellTraverser *this,
   *piVar7 = *piVar7 + (short)(this->fields).stepY;
   piVar7 = &(this->fields).voxelPos.y;
   *piVar7 = *piVar7 + (short)(this->fields).stepY;
-  (this->fields).tMax.y = (this->fields).tDelta.y + fVar3;
-  sVar5 = (this->fields).localChunkSpaceVoxelPos.y;
-  if (((int)sVar5 == (this->fields).chunkSize) || (sVar5 < 0)) {
+  (this->fields).tMax.y = (this->fields).tDelta.y + (this->fields).tMax.y;
+  if (((int)(this->fields).localChunkSpaceVoxelPos.y == (this->fields).chunkSize) ||
+     ((this->fields).localChunkSpaceVoxelPos.y < 0)) {
     bVar1 = 0;
   }
   (this->fields).stepDir.x = 0;

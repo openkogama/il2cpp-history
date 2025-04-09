@@ -42,13 +42,12 @@ void Assembly-CSharp.dll::CubeModelChangedEventArgs::CubeModelChangedEventArgs__
   UxmlObjectListAttributeDescription`1[System::Object]::
   UxmlObjectListAttributeDescription_1_System_Object___ctor
             ((UxmlObjectListAttributeDescription_1_System_Object_ *)this,(MethodInfo *)0x0);
-  ppMVar1 = &(this->fields).Sender;
   (this->fields).Action = (undefined1)action;
   (this->fields).Pos.x = pos.x;
   (this->fields).Pos.y = pos.y;
   (this->fields).Pos.z = pos.z;
-  *ppMVar1 = sender;
-  func_?(ppMVar1,sender);
+  (this->fields).Sender = sender;
+  func_?(&(this->fields).Sender,sender);
   return;
 }
 

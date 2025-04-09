@@ -7,8 +7,25 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsBuildModeManager::
                Object *eventData,MethodInfo *method)
 
 {
-  pAVar1 = (this->fields).OnEnterBuildStateEvent;
-  if (pAVar1 != (Action_2_EditorEvent_Object_ *)0x0) {
+  if ((this->fields).OnEnterBuildStateEvent != (Action_2_EditorEvent_Object_ *)0x0) {
+    pAVar1 = (this->fields).OnEnterBuildStateEvent;
+    (*(pAVar1->fields)._._.invoke_impl)
+              ((pAVar1->fields)._._.method_code,editorEvent,eventData,(pAVar1->fields)._._.method);
+  }
+  return;
+}
+
+
+/* Void ExitBuildStateEvent(EditorEvent, Object) */
+
+void Assembly-CSharp.dll::GameEventManager+AvatarCommandsBuildModeManager::
+     GameEventManager_AvatarCommandsBuildModeManager_ExitBuildStateEvent
+               (GameEventManager_AvatarCommandsBuildModeManager *this,EditorEvent__Enum editorEvent,
+               Object *eventData,MethodInfo *method)
+
+{
+  if ((this->fields).OnExitBuildStateEvent != (Action_2_EditorEvent_Object_ *)0x0) {
+    pAVar1 = (this->fields).OnExitBuildStateEvent;
     (*(pAVar1->fields)._._.invoke_impl)
               ((pAVar1->fields)._._.method_code,editorEvent,eventData,(pAVar1->fields)._._.method);
   }
@@ -24,8 +41,8 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsBuildModeManager::
                Quaternion rotation,MethodInfo *method)
 
 {
-  pAVar1 = (this->fields).OnSetSpawn;
-  if (pAVar1 != (Action_2_UnityEngine_Vector3_UnityEngine_Quaternion_ *)0x0) {
+  if ((this->fields).OnSetSpawn != (Action_2_UnityEngine_Vector3_UnityEngine_Quaternion_ *)0x0) {
+    pAVar1 = (this->fields).OnSetSpawn;
     (*(pAVar1->fields)._._.invoke_impl)
               ((pAVar1->fields)._._.method_code,position._0_8_,position.z,rotation.x,rotation.y,
                rotation.z,rotation.w,(pAVar1->fields)._._.method);
@@ -51,7 +68,7 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsBuildModeManager::
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
   method_00 = (MethodInfo *)&(this->fields).LaserCommands;
-  *(GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager **)method_00 = value;
+  (this->fields).LaserCommands = value;
   func_?(method_00,value);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
@@ -106,26 +123,26 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsBuildModeManager::
     func_?(&TypeInfo__System__Action<EditorEvent,_System::Object>);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnExitBuildStateEvent;
-  a = *ppAVar1;
+  a = (this->fields).OnExitBuildStateEvent;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar3 = TypeInfo__System__Action<EditorEvent,_System::Object>;
-    iVar4 = 0;
-    if (pDVar2 != (Delegate *)0x0) {
-      iVar4 = func_?(pDVar2,TypeInfo__System__Action<EditorEvent,_System::Object>);
-      if (iVar4 == 0) {
-        func_?(pDVar2,pAVar3);
-        pcVar5 = (code *)swi(3);
-        (*pcVar5)();
+    pAVar2 = TypeInfo__System__Action<EditorEvent,_System::Object>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__Action<EditorEvent,_System::Object>);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pAVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pAVar6 = (Action_2_EditorEvent_Object_ *)func_?(ppAVar1,iVar4,a);
-    bVar7 = pAVar6 != a;
-    a = pAVar6;
-  } while (bVar7);
+    pAVar5 = (Action_2_EditorEvent_Object_ *)
+             func_?(&(this->fields).OnExitBuildStateEvent,iVar3,a);
+    bVar6 = pAVar5 != a;
+    a = pAVar5;
+  } while (bVar6);
   return;
 }
 
@@ -142,29 +159,28 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsBuildModeManager::
     func_?(&TypeInfo__System__Action<UnityEngine::Vector3,_UnityEngine::Quaternion>);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnSetSpawn;
-  a = *ppAVar1;
+  a = (this->fields).OnSetSpawn;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar3 = TypeInfo__System__Action<UnityEngine::Vector3,_UnityEngine::Quaternion>;
-    iVar4 = 0;
-    if (pDVar2 != (Delegate *)0x0) {
-      iVar4 = func_?(pDVar2,
+    pAVar2 = TypeInfo__System__Action<UnityEngine::Vector3,_UnityEngine::Quaternion>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,
                               TypeInfo__System__Action<UnityEngine::Vector3,_UnityEngine::Quaternion>
                              );
-      if (iVar4 == 0) {
-        func_?(pDVar2,pAVar3);
-        pcVar5 = (code *)swi(3);
-        (*pcVar5)();
+      if (iVar3 == 0) {
+        func_?(pDVar1,pAVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pAVar6 = (Action_2_UnityEngine_Vector3_UnityEngine_Quaternion_ *)
-             func_?(ppAVar1,iVar4,a);
-    bVar7 = pAVar6 != a;
-    a = pAVar6;
-  } while (bVar7);
+    pAVar5 = (Action_2_UnityEngine_Vector3_UnityEngine_Quaternion_ *)
+             func_?(&(this->fields).OnSetSpawn,iVar3,a);
+    bVar6 = pAVar5 != a;
+    a = pAVar5;
+  } while (bVar6);
   return;
 }
 
@@ -181,27 +197,26 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsBuildModeManager::
     func_?(&TypeInfo__System__Action);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnSetToEditMode;
-  a = *ppAVar1;
+  a = (this->fields).OnSetToEditMode;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((Action__Class *)pDVar2->klass == TypeInfo__System__Action) {
-        pDVar3 = pDVar2;
+    pDVar2 = (Delegate *)0x0;
+    if (pDVar1 != (Delegate *)0x0) {
+      if ((Action__Class *)pDVar1->klass == TypeInfo__System__Action) {
+        pDVar2 = pDVar1;
       }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__Action);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+      if (pDVar2 == (Delegate *)0x0) {
+        func_?(pDVar1,TypeInfo__System__Action);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
     }
-    pAVar5 = (Action *)func_?(ppAVar1,pDVar3,a);
-    bVar6 = pAVar5 == a;
-    a = pAVar5;
-    if (bVar6) {
+    pAVar4 = (Action *)func_?(&(this->fields).OnSetToEditMode,pDVar2,a);
+    bVar5 = pAVar4 == a;
+    a = pAVar4;
+    if (bVar5) {
       return;
     }
   } while( true );
@@ -255,26 +270,26 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsBuildModeManager::
     func_?(&TypeInfo__System__Action<EditorEvent,_System::Object>);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnExitBuildStateEvent;
-  source = *ppAVar1;
+  source = (this->fields).OnExitBuildStateEvent;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar3 = TypeInfo__System__Action<EditorEvent,_System::Object>;
-    iVar4 = 0;
-    if (pDVar2 != (Delegate *)0x0) {
-      iVar4 = func_?(pDVar2,TypeInfo__System__Action<EditorEvent,_System::Object>);
-      if (iVar4 == 0) {
-        func_?(pDVar2,pAVar3);
-        pcVar5 = (code *)swi(3);
-        (*pcVar5)();
+    pAVar2 = TypeInfo__System__Action<EditorEvent,_System::Object>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__Action<EditorEvent,_System::Object>);
+      if (iVar3 == 0) {
+        func_?(pDVar1,pAVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pAVar6 = (Action_2_EditorEvent_Object_ *)func_?(ppAVar1,iVar4,source);
-    bVar7 = pAVar6 != source;
-    source = pAVar6;
-  } while (bVar7);
+    pAVar5 = (Action_2_EditorEvent_Object_ *)
+             func_?(&(this->fields).OnExitBuildStateEvent,iVar3,source);
+    bVar6 = pAVar5 != source;
+    source = pAVar5;
+  } while (bVar6);
   return;
 }
 
@@ -291,29 +306,28 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsBuildModeManager::
     func_?(&TypeInfo__System__Action<UnityEngine::Vector3,_UnityEngine::Quaternion>);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnSetSpawn;
-  source = *ppAVar1;
+  source = (this->fields).OnSetSpawn;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar3 = TypeInfo__System__Action<UnityEngine::Vector3,_UnityEngine::Quaternion>;
-    iVar4 = 0;
-    if (pDVar2 != (Delegate *)0x0) {
-      iVar4 = func_?(pDVar2,
+    pAVar2 = TypeInfo__System__Action<UnityEngine::Vector3,_UnityEngine::Quaternion>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,
                               TypeInfo__System__Action<UnityEngine::Vector3,_UnityEngine::Quaternion>
                              );
-      if (iVar4 == 0) {
-        func_?(pDVar2,pAVar3);
-        pcVar5 = (code *)swi(3);
-        (*pcVar5)();
+      if (iVar3 == 0) {
+        func_?(pDVar1,pAVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pAVar6 = (Action_2_UnityEngine_Vector3_UnityEngine_Quaternion_ *)
-             func_?(ppAVar1,iVar4,source);
-    bVar7 = pAVar6 != source;
-    source = pAVar6;
-  } while (bVar7);
+    pAVar5 = (Action_2_UnityEngine_Vector3_UnityEngine_Quaternion_ *)
+             func_?(&(this->fields).OnSetSpawn,iVar3,source);
+    bVar6 = pAVar5 != source;
+    source = pAVar5;
+  } while (bVar6);
   return;
 }
 
@@ -330,27 +344,26 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsBuildModeManager::
     func_?(&TypeInfo__System__Action);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnSetToEditMode;
-  source = *ppAVar1;
+  source = (this->fields).OnSetToEditMode;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((Action__Class *)pDVar2->klass == TypeInfo__System__Action) {
-        pDVar3 = pDVar2;
+    pDVar2 = (Delegate *)0x0;
+    if (pDVar1 != (Delegate *)0x0) {
+      if ((Action__Class *)pDVar1->klass == TypeInfo__System__Action) {
+        pDVar2 = pDVar1;
       }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__System__Action);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+      if (pDVar2 == (Delegate *)0x0) {
+        func_?(pDVar1,TypeInfo__System__Action);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
     }
-    pAVar5 = (Action *)func_?(ppAVar1,pDVar3,source);
-    bVar6 = pAVar5 == source;
-    source = pAVar5;
-    if (bVar6) {
+    pAVar4 = (Action *)func_?(&(this->fields).OnSetToEditMode,pDVar2,source);
+    bVar5 = pAVar4 == source;
+    source = pAVar4;
+    if (bVar5) {
       return;
     }
   } while( true );

@@ -12,44 +12,45 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::InHouseAdController::InHouseAd
   }
   pIVar1 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
   if (pIVar1 != (IAdManager *)0x0) {
-    bVar2 = (TypeInfo__AdIntegration__InHouse__InHouseAdManager->_1).naturalAligment;
-    if ((bVar2 <= (pIVar1->klass->_1).naturalAligment) &&
-       ((pIVar1->klass->_1).typeHierarchy[bVar2 - 1] ==
+    if (((TypeInfo__AdIntegration__InHouse__InHouseAdManager->_1).naturalAligment <=
+         (pIVar1->klass->_1).naturalAligment) &&
+       ((pIVar1->klass->_1).typeHierarchy
+        [(TypeInfo__AdIntegration__InHouse__InHouseAdManager->_1).naturalAligment - 1] ==
         (Il2CppClass *)TypeInfo__AdIntegration__InHouse__InHouseAdManager)) {
-      ppMVar3 = &pIVar1[1].monitor;
-      *ppMVar3 = (MonitorData *)this;
-      func_?(ppMVar3,this);
-      pMVar4 = *ppMVar3;
-      pMVar5 = pIVar1[4].monitor;
-      if (pMVar4 != (MonitorData *)0x0) {
-        bVar6 = cRam_? == '\0';
-        pMVar4[0x28] = *(MonitorData *)&pIVar1[4].klass;
-        *(MonitorData **)(pMVar4 + 0x2c) = pMVar5;
-        if (bVar6) {
+      pIVar1[1].monitor = (MonitorData *)this;
+      func_?(&pIVar1[1].monitor,this);
+      pMVar2 = pIVar1[1].monitor;
+      pMVar3 = pIVar1[4].monitor;
+      if (pMVar2 != (MonitorData *)0x0) {
+        bVar4 = cRam_? == '\0';
+        pMVar2[0x28] = *(MonitorData *)&pIVar1[4].klass;
+        *(MonitorData **)(pMVar2 + 0x2c) = pMVar3;
+        if (bVar4) {
           func_?(&TypeInfo__UnityEngine__Object);
           cRam_? = '\x01';
         }
-        x = (Object_1 *)*ppMVar3;
+        x = (Object_1 *)pIVar1[1].monitor;
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
-        bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+        bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                           (x,(Object_1 *)0x0,(MethodInfo *)0x0);
-        *(bool *)&pIVar1[1].klass = bVar7;
+        *(bool *)&pIVar1[1].klass = bVar5;
         return;
       }
       func_?();
-      pcVar8 = (code *)swi(3);
-      (*pcVar8)();
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
       return;
     }
   }
   this_00 = (WebAdManager *)
             MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
   if (this_00 != (WebAdManager *)0x0) {
-    bVar2 = (TypeInfo__Assets__Scripts__AdIntegration__Web__WebAdManager->_1).naturalAligment;
-    if ((bVar2 <= (this_00->klass->_1).naturalAligment) &&
-       ((this_00->klass->_1).typeHierarchy[bVar2 - 1] ==
+    if (((TypeInfo__Assets__Scripts__AdIntegration__Web__WebAdManager->_1).naturalAligment <=
+         (this_00->klass->_1).naturalAligment) &&
+       ((this_00->klass->_1).typeHierarchy
+        [(TypeInfo__Assets__Scripts__AdIntegration__Web__WebAdManager->_1).naturalAligment - 1] ==
         (Il2CppClass *)TypeInfo__Assets__Scripts__AdIntegration__Web__WebAdManager)) {
       Assets::Scripts::AdIntegration::Web::WebAdManager::WebAdManager_InitializeInHouse
                 (this_00,this,(MethodInfo *)0x0);
@@ -80,14 +81,15 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::InHouseAdController::
 
 {
   pAVar1 = (this->fields).callback;
-  ppAVar2 = &(this->fields).callback;
   if (pAVar1 != (Action_1_Boolean_ *)0x0) {
     (*(pAVar1->fields)._._.invoke_impl)
               ((pAVar1->fields)._._.method_code,1,(pAVar1->fields)._._.method);
   }
   (this->fields)._Showing_k__BackingField = 0;
-  *ppAVar2 = (Action_1_Boolean_ *)0x0;
-  func_?(ppAVar2,&stack0xfffffffc,&UNK_?,ppAVar2,0);
+  (this->fields).callback = (Action_1_Boolean_ *)0x0;
+  func_?(&(this->fields).callback,0);
+  (this->fields).generalPromotionAd = (GeneralPromotionAd *)0x0;
+  func_?(&(this->fields).generalPromotionAd,0);
   return;
 }
 
@@ -152,39 +154,35 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::InHouseAdController::
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).callback;
-  *ppAVar1 = onPromotionFinished;
+  (this->fields).callback = onPromotionFinished;
   (this->fields)._Showing_k__BackingField = 1;
-  func_?(ppAVar1,onPromotionFinished);
-  pGVar2 = (this->fields).generalPromotionAdPrefab;
+  func_?(&(this->fields).callback,onPromotionFinished);
+  pGVar1 = (this->fields).generalPromotionAdPrefab;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  pGVar2 = (GeneralPromotionAd *)
+  pGVar1 = (GeneralPromotionAd *)
            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                     ((Object *)pGVar2,
+                     ((Object *)pGVar1,
                       AdIntegration__InHouse__GeneralPromotionAd_MethodInfo__UnityEngine__Object__Instantiate<AdIntegration::InHouse::GeneralPromotionAd>_AdIntegration__InHouse__GeneralPromotionAd_
                      );
-  ppGVar3 = &(this->fields).generalPromotionAd;
-  *ppGVar3 = pGVar2;
-  func_?(ppGVar3,pGVar2);
-  iStack_4 = 0;
-  uStack_5 = 0;
-  bVar6 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
-  if (bVar6 == 0) {
-    pPStack_7 = (this->fields).registeredLooksData;
+  (this->fields).generalPromotionAd = pGVar1;
+  func_?(&(this->fields).generalPromotionAd,pGVar1);
+  _uStack_c = 0;
+  bVar2 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
+  if (bVar2 == 0) {
+    pPStack_3 = (this->fields).registeredLooksData;
   }
   else {
-    pPStack_7 = (this->fields).touristLooksData;
+    pPStack_3 = (this->fields).touristLooksData;
   }
-  func_?(&pPStack_7,pPStack_7);
-  pGVar2 = *ppGVar3;
-  iStack_4 = timeout;
-  uStack_5 = uStack_5 & 0xffffff00;
-  if (pGVar2 != (GeneralPromotionAd *)0x0) {
+  func_?(&pPStack_3,pPStack_3);
+  pGVar1 = (this->fields).generalPromotionAd;
+  uStack_4 = (uint5)(uint)timeout;
+  if (pGVar1 != (GeneralPromotionAd *)0x0) {
     GeneralPromotionAd::GeneralPromotionAd_Initialize
-              (pGVar2,pPStack_7,GeneralPromotionType__Enum_BlockedWithTimer,0,(MethodInfo *)0x0);
-    (pGVar2->fields).secondsToWait = (float)timeout;
+              (pGVar1,pPStack_3,GeneralPromotionType__Enum_BlockedWithTimer,0,(MethodInfo *)0x0);
+    (pGVar1->fields).secondsToWait = (float)timeout;
     root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                      ((Component *)this,(MethodInfo *)0x0);
     callbackFunction =
@@ -207,8 +205,8 @@ void Assembly-CSharp.dll::AdIntegration::InHouse::InHouseAdController::
     return;
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

@@ -8,13 +8,13 @@ void Assembly-CSharp.dll::RTG::GizmoThinCircle2DBorderController::
 {
   pGVar1 = (this->fields)._._data;
   if (pGVar1 != (GizmoCircle2DBorderControllerData *)0x0) {
-    this_00 = (pGVar1->fields).BorderCircle;
-    this_01 = (pGVar1->fields).PlaneSlider;
-    if (this_01 != (GizmoPlaneSlider2D *)0x0) {
-      pGVar2 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_get_Settings(this_01,(MethodInfo *)0x0);
-      if ((pGVar2 != (GizmoPlaneSlider2DSettings *)0x0) && (this_00 != (CircleShape2D *)0x0)) {
+    this_00 = (pGVar1->fields).PlaneSlider;
+    this_01 = (pGVar1->fields).BorderCircle;
+    if (this_00 != (GizmoPlaneSlider2D *)0x0) {
+      pGVar2 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_get_Settings(this_00,(MethodInfo *)0x0);
+      if ((pGVar2 != (GizmoPlaneSlider2DSettings *)0x0) && (this_01 != (CircleShape2D *)0x0)) {
         CircleShape2D::CircleShape2D_set_WireEps
-                  (this_00,(pGVar2->fields)._borderLineHoverEps,(MethodInfo *)0x0);
+                  (this_01,(pGVar2->fields)._borderLineHoverEps,(MethodInfo *)0x0);
         return;
       }
     }

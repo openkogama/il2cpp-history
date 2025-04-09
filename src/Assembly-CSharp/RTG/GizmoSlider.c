@@ -33,19 +33,19 @@ void Assembly-CSharp.dll::RTG::GizmoSlider::GizmoSlider__ctor
   (this->fields)._isVisible = 1;
   (this->fields)._isHoverable = 1;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-  ppGVar1 = &(this->fields)._gizmo;
-  *ppGVar1 = gizmo;
-  func_?(ppGVar1,gizmo);
-  if (*ppGVar1 != (Gizmo *)0x0) {
-    pGVar2 = Gizmo::Gizmo_CreateHandle(*ppGVar1,handleId,(MethodInfo *)0x0);
-    (this->fields)._handle = pGVar2;
-    func_?(&this->fields,pGVar2);
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  (this->fields)._gizmo = gizmo;
+  func_?(&(this->fields)._gizmo,gizmo);
+  this_00 = (this->fields)._gizmo;
+  if (this_00 != (Gizmo *)0x0) {
+    pGVar1 = Gizmo::Gizmo_CreateHandle(this_00,handleId,(MethodInfo *)0x0);
+    (this->fields)._handle = pGVar1;
+    func_?(&this->fields,pGVar1);
     return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

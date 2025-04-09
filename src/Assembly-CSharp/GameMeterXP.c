@@ -508,9 +508,8 @@ void Assembly-CSharp.dll::GameMeterXP::GameMeterXP__ctor(GameMeterXP *this,Metho
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<GameMeterVisuals::GameMeterVisualEffect>__List__
             );
-  ppLVar1 = &(this->fields)._.gameMeterVisualEffects;
-  *ppLVar1 = this_00;
-  func_?(ppLVar1,this_00);
+  (this->fields)._.gameMeterVisualEffects = this_00;
+  func_?(&(this->fields)._.gameMeterVisualEffects,this_00);
   (this->fields)._.meterActive = 1;
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);

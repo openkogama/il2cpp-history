@@ -14,9 +14,9 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour+Dead::AdvancedGhostBehaviour_De
     if (this_01 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 (this_01,0,(MethodInfo *)0x0);
-      iVar1 = (ghostBehaviour->fields).lives;
-      if (0 < iVar1) {
-        (ghostBehaviour->fields).lives = iVar1 + -1;
+      if (0 < (ghostBehaviour->fields).lives) {
+        piVar1 = &(ghostBehaviour->fields).lives;
+        *piVar1 = *piVar1 + -1;
       }
       return;
     }

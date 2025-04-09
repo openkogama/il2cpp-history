@@ -40,28 +40,27 @@ void Assembly-CSharp.dll::AnimatedSpriteSheetTexture::AnimatedSpriteSheetTexture
     this_00 = (Material *)func_?(TypeInfo__UnityEngine__Material);
     UnityEngine.CoreModule.dll::UnityEngine::Material::Material__ctor_1
               (this_00,pMVar2,(MethodInfo *)0x0);
-    ppMVar3 = &(this->fields).materialCopy;
-    *ppMVar3 = this_00;
-    func_?(ppMVar3,this_00);
+    (this->fields).materialCopy = this_00;
+    func_?(&(this->fields).materialCopy,this_00);
     pRVar1 = (this->fields).textureRenderer;
     if (pRVar1 != (Renderer *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
-                (pRVar1,*ppMVar3,(MethodInfo *)0x0);
-      iVar4 = (this->fields).spriteHeight;
-      iVar5 = (this->fields).spriteWidth;
+                (pRVar1,(this->fields).materialCopy,(MethodInfo *)0x0);
       (this->fields).cellHeightMultiplier =
-           (float)(iVar4 - (this->fields).spriteUnusedPixelHeight) / (float)iVar4;
+           (float)((this->fields).spriteHeight - (this->fields).spriteUnusedPixelHeight) /
+           (float)(this->fields).spriteHeight;
       pRVar1 = (this->fields).textureRenderer;
       (this->fields).cellWidthMultiplier =
-           (float)(iVar5 - (this->fields).spriteUnusedPixelWidth) / (float)iVar5;
-      fVar6 = _UNK_? / (float)(this->fields).Columns;
-      fVar7 = _UNK_? / (float)(this->fields).Rows;
+           (float)((this->fields).spriteWidth - (this->fields).spriteUnusedPixelWidth) /
+           (float)(this->fields).spriteWidth;
+      fVar3 = _UNK_? / (float)(this->fields).Columns;
+      fVar4 = _UNK_? / (float)(this->fields).Rows;
       if (pRVar1 != (Renderer *)0x0) {
         pMVar2 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
                            (pRVar1,(MethodInfo *)0x0);
         if (pMVar2 != (Material *)0x0) {
-          value.y = fVar7;
-          value.x = fVar6;
+          value.y = fVar4;
+          value.x = fVar3;
           UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetTextureScale
                     (pMVar2,StringLiteral__MainTex,value,(MethodInfo *)0x0);
           return;
@@ -70,8 +69,8 @@ void Assembly-CSharp.dll::AnimatedSpriteSheetTexture::AnimatedSpriteSheetTexture
     }
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -91,8 +90,8 @@ Assembly-CSharp.dll::AnimatedSpriteSheetTexture::AnimatedSpriteSheetTexture_Upda
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[1].klass = (Object__Class *)0x0;
   value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
   func_?(value + 2,this);
   return (IEnumerator *)value;
 }

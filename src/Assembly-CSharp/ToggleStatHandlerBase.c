@@ -40,7 +40,7 @@ void Assembly-CSharp.dll::ToggleStatHandlerBase::ToggleStatHandlerBase_Reset
                       UnityEngine__UI__Button_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Button>__
                      );
   (this->fields).button = pBVar1;
-  func_?();
+  func_?(&(this->fields).button,pBVar1);
   return;
 }
 
@@ -56,12 +56,13 @@ void Assembly-CSharp.dll::ToggleStatHandlerBase::ToggleStatHandlerBase_Start
     func_?(&TypeInfo__UnityEngine__Events__UnityAction);
     cRam_? = '\x01';
   }
-  pTVar1 = (this->fields).OnStartSetValue;
-  if (pTVar1 == (ToggleStateHandlerOnStartSetValue *)0x0) {
+  if ((this->fields).OnStartSetValue == (ToggleStateHandlerOnStartSetValue *)0x0) {
     (*(code *)(this->klass->vtable).__unknown.method)
               (this,(this->klass->vtable).CurrentToggleState.methodPtr);
   }
   else {
+    pTVar1 = (this->fields).OnStartSetValue;
+    if (pTVar1 == (ToggleStateHandlerOnStartSetValue *)0x0) goto code_?;
     value = (*(pTVar1->fields)._._.invoke_impl)
                       ((pTVar1->fields)._._.method_code,(pTVar1->fields)._._.method);
     ToggleStatHandlerBase_set_ToggleState(this,value,(MethodInfo *)0x0);
@@ -81,6 +82,7 @@ void Assembly-CSharp.dll::ToggleStatHandlerBase::ToggleStatHandlerBase_Start
       return;
     }
   }
+code_?:
   func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
@@ -167,9 +169,11 @@ Image * Assembly-CSharp.dll::ToggleStatHandlerBase::ToggleStatHandlerBase_get_Cu
   }
   pIVar5 = (Image *)(pBVar1->fields)._.m_TargetGraphic;
   if (pIVar5 != (Image *)0x0) {
-    bVar6 = (TypeInfo__UnityEngine__UI__Image->_1).naturalAligment;
-    if ((bVar6 <= (pIVar5->klass->_1).naturalAligment) &&
-       ((Image__Class *)(pIVar5->klass->_1).typeHierarchy[bVar6 - 1] ==
+    if (((TypeInfo__UnityEngine__UI__Image->_1).naturalAligment <=
+         (pIVar5->klass->_1).naturalAligment) &&
+       ((Image__Class *)
+        (pIVar5->klass->_1).typeHierarchy
+        [(TypeInfo__UnityEngine__UI__Image->_1).naturalAligment - 1] ==
         TypeInfo__UnityEngine__UI__Image)) {
       return pIVar5;
     }

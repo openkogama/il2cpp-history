@@ -43,19 +43,18 @@ void Assembly-CSharp.dll::ImageScaleAnimator::ImageScaleAnimator_Update
     fVar2 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
                       (this_00,(this->fields).scaleSpeed * fVar1,(MethodInfo *)0x0);
     fVar1 = (this->fields).startSize.x;
-    fVar3 = (this->fields).startSize.y;
     this_01 = (this->fields).scaleTarget;
     if (this_01 != (RectTransform *)0x0) {
-      value.y = fVar3 + fVar2 * fVar3;
-      value.x = fVar1 + fVar1 * fVar2;
+      value.y = fVar2 * (this->fields).startSize.y + (this->fields).startSize.y;
+      value.x = fVar1 + fVar2 * fVar1;
       UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_sizeDelta
                 (this_01,value,(MethodInfo *)0x0);
       return;
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

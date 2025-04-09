@@ -45,75 +45,81 @@ Assembly-CSharp.dll::DllProtector::DllProtector_GetCRCData(MethodInfo *method)
     uStack_8 = 8;
     pcRam_? = (code *)func_?(&puStack_9);
   }
-  puVar10 = (uint8_t *)0x0;
-  if (pBVar1 != (Byte__Array *)0x0) {
-    puVar10 = pBVar1->vector;
+  uVar10 = (*pcRam_?)(-(uint)(pBVar1 != (Byte__Array *)0x0) & (uint)pBVar1->vector,0x2800);
+  this = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+          *)0x0;
+  uStack_11 = uVar10;
+  if (uVar10 < 0x2801) {
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__System__Byte);
+      func_?(&TypeInfo__MV__WorldObject__AntiCheat__FileData);
+      func_?(&
+                      MethodInfo__System__Collections__Generic__List<MV::WorldObject::AntiCheat::FileData>__Add_MV__WorldObject__AntiCheat__FileData_
+                     );
+      func_?(&
+                      MethodInfo__System__Collections__Generic__List<MV::WorldObject::AntiCheat::FileData>__List_int_
+                     );
+      func_?(&
+                      TypeInfo__System__Collections__Generic__List<MV::WorldObject::AntiCheat::FileData>
+                     );
+      cRam_? = '\x01';
+    }
+    this = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+            *)func_?(
+                             TypeInfo__System__Collections__Generic__List<MV::WorldObject::AntiCheat::FileData>
+                             );
+    pLStack_12 = this;
+    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
+    MultiColumnCollectionHeader+ViewState+ColumnState]::
+    List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
+              (this,0x10,
+               MethodInfo__System__Collections__Generic__List<MV::WorldObject::AntiCheat::FileData>__List_int_
+              );
+    startIndex = 0;
+    if (uVar10 != 0) {
+      while( true ) {
+        do {
+          uVar13 = mscorlib.dll::System::BitConverter::BitConverter_ToUInt16
+                            (pBStack_2,startIndex,(MethodInfo *)0x0);
+          uVar10 = (uint)uVar13;
+          pBVar1 = (Byte__Array *)func_?(TypeInfo__System__Byte,uVar10);
+          mscorlib.dll::System::Array::Array_Copy_3
+                    ((Array *)pBStack_2,startIndex + 2,(Array *)pBVar1,0,uVar10,(MethodInfo *)0x0);
+          startIndex_00 = startIndex + 2 + uVar10;
+          startIndex = startIndex_00 + 4;
+          crc = mscorlib.dll::System::BitConverter::BitConverter_ToUInt32
+                          (pBStack_2,startIndex_00,(MethodInfo *)0x0);
+          pFStack_14 = (FileData *)func_?(TypeInfo__MV__WorldObject__AntiCheat__FileData);
+          MVWorldObject.dll::MV::WorldObject::AntiCheat::FileData::FileData__ctor
+                    (pFStack_14,pBVar1,crc,(MethodInfo *)0x0);
+          this = pLStack_12;
+          if (pLStack_12 ==
+              (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+               *)0x0) {
+            func_?();
+            pcVar15 = (code *)swi(3);
+            pLVar16 = (List_1_MV_WorldObject_AntiCheat_FileData_ *)(*pcVar15)();
+            return pLVar16;
+          }
+          mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+          List_1_System_Object__Add
+                    ((List_1_System_Object_ *)pLStack_12,(Object *)pFStack_14,
+                     MethodInfo__System__Collections__Generic__List<MV::WorldObject::AntiCheat::FileData>__Add_MV__WorldObject__AntiCheat__FileData_
+                    );
+        } while ((int)startIndex >> 0x1f < 0);
+        if ((int)startIndex < 0) break;
+        if (uStack_11 <= startIndex) {
+          return (List_1_MV_WorldObject_AntiCheat_FileData_ *)this;
+        }
+      }
+    }
   }
-  uStack_11 = (*pcRam_?)(puVar10,0x2800);
-  if (0x2800 < uStack_11) {
+  else {
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
               ((Object *)StringLiteral_Buffer_is_too_small__causing_und,(MethodInfo *)0x0);
-    return (List_1_MV_WorldObject_AntiCheat_FileData_ *)0x0;
-  }
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Byte);
-    func_?(&TypeInfo__MV__WorldObject__AntiCheat__FileData);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<MV::WorldObject::AntiCheat::FileData>__Add_MV__WorldObject__AntiCheat__FileData_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<MV::WorldObject::AntiCheat::FileData>__List_int_
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__List<MV::WorldObject::AntiCheat::FileData>
-                   );
-    cRam_? = '\x01';
-  }
-  this = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-          *)func_?(
-                           TypeInfo__System__Collections__Generic__List<MV::WorldObject::AntiCheat::FileData>
-                           );
-  pLStack_12 = this;
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
-  MultiColumnCollectionHeader+ViewState+ColumnState]::
-  List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
-            (this,0x10,
-             MethodInfo__System__Collections__Generic__List<MV::WorldObject::AntiCheat::FileData>__List_int_
-            );
-  startIndex = 0;
-  if (uStack_11 != 0) {
-    do {
-      uVar13 = mscorlib.dll::System::BitConverter::BitConverter_ToUInt16
-                        (pBVar1,startIndex,(MethodInfo *)0x0);
-      length = (uint)uVar13;
-      pBVar1 = (Byte__Array *)func_?(TypeInfo__System__Byte,length);
-      mscorlib.dll::System::Array::Array_Copy_3
-                ((Array *)pBStack_2,startIndex + 2,(Array *)pBVar1,0,length,(MethodInfo *)0x0);
-      startIndex_00 = startIndex + 2 + length;
-      startIndex = startIndex_00 + 4;
-      crc = mscorlib.dll::System::BitConverter::BitConverter_ToUInt32
-                      (pBStack_2,startIndex_00,(MethodInfo *)0x0);
-      pFStack_14 = (FileData *)func_?(TypeInfo__MV__WorldObject__AntiCheat__FileData);
-      MVWorldObject.dll::MV::WorldObject::AntiCheat::FileData::FileData__ctor
-                (pFStack_14,pBVar1,crc,(MethodInfo *)0x0);
-      this = pLStack_12;
-      if (pLStack_12 ==
-          (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-           *)0x0) {
-        func_?();
-        pcVar15 = (code *)swi(3);
-        pLVar16 = (List_1_MV_WorldObject_AntiCheat_FileData_ *)(*pcVar15)();
-        return pLVar16;
-      }
-      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-                ((List_1_System_Object_ *)pLStack_12,(Object *)pFStack_14,
-                 MethodInfo__System__Collections__Generic__List<MV::WorldObject::AntiCheat::FileData>__Add_MV__WorldObject__AntiCheat__FileData_
-                );
-      pBVar1 = pBStack_2;
-    } while (((int)startIndex >> 0x1f < 0) || ((-1 < (int)startIndex && (startIndex < uStack_11))));
   }
   return (List_1_MV_WorldObject_AntiCheat_FileData_ *)this;
 }

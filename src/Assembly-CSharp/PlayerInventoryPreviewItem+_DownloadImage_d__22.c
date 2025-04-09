@@ -19,13 +19,13 @@ bool Assembly-CSharp.dll::PlayerInventoryPreviewItem+<DownloadImage>d__22::
     pUVar3 = UnityEngine.UnityWebRequestTextureModule.dll::UnityEngine::Networking::
              UnityWebRequestTexture::UnityWebRequestTexture_GetTexture
                        ((this->fields).url,(MethodInfo *)0x0);
-    ppUVar4 = &(this->fields)._request_5__2;
-    *ppUVar4 = pUVar3;
-    func_?(ppUVar4,pUVar3);
-    if (*ppUVar4 != (UnityWebRequest *)0x0) {
-      pUVar5 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
-               UnityWebRequest_SendWebRequest(*ppUVar4,(MethodInfo *)0x0);
-      (this->fields).__2__current = (Object *)pUVar5;
+    (this->fields)._request_5__2 = pUVar3;
+    func_?(&(this->fields)._request_5__2,pUVar3);
+    pUVar3 = (this->fields)._request_5__2;
+    if (pUVar3 != (UnityWebRequest *)0x0) {
+      pUVar4 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
+               UnityWebRequest_SendWebRequest(pUVar3,(MethodInfo *)0x0);
+      (this->fields).__2__current = (Object *)pUVar4;
       func_?();
       (this->fields).__1__state = 1;
       return 1;
@@ -38,9 +38,9 @@ bool Assembly-CSharp.dll::PlayerInventoryPreviewItem+<DownloadImage>d__22::
     pUVar3 = (this->fields)._request_5__2;
     (this->fields).__1__state = -1;
     if (pUVar3 != (UnityWebRequest *)0x0) {
-      UVar6 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
+      UVar5 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
               UnityWebRequest_get_result(pUVar3,(MethodInfo *)0x0);
-      if (UVar6 == UnityWebRequest_Result__Enum_ConnectionError) {
+      if (UVar5 == UnityWebRequest_Result__Enum_ConnectionError) {
 code_?:
         message = mscorlib.dll::System::String::String_Concat_3
                             (StringLiteral_Could_not_download_image__,(this->fields).url,
@@ -70,32 +70,32 @@ code_?:
       else {
         pUVar3 = (this->fields)._request_5__2;
         if (pUVar3 != (UnityWebRequest *)0x0) {
-          UVar6 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
+          UVar5 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
                   UnityWebRequest_get_result(pUVar3,(MethodInfo *)0x0);
-          if (UVar6 == UnityWebRequest_Result__Enum_ProtocolError) goto code_?;
+          if (UVar5 == UnityWebRequest_Result__Enum_ProtocolError) goto code_?;
           if (pPVar2 != (PlayerInventoryPreviewItem *)0x0) {
             pUVar3 = (this->fields)._request_5__2;
             this_02 = (pPVar2->fields).previewImage;
             if ((pUVar3 != (UnityWebRequest *)0x0) &&
-               (pDVar7 = (DownloadHandlerTexture *)
+               (pDVar6 = (DownloadHandlerTexture *)
                          System.dll::System::Net::WebCompletionSource`1[Unity::IL2CPP::Metadata::
                          __Il2CppFullySharedGenericType]::
                          WebCompletionSource_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__get_CurrentResult
                                    ((WebCompletionSource_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
                                      *)pUVar3,(MethodInfo *)0x0),
-               pDVar7 != (DownloadHandlerTexture *)0x0)) {
-              pDVar8 = (DownloadHandlerTexture *)0x0;
-              if (pDVar7->klass == TypeInfo__UnityEngine__Networking__DownloadHandlerTexture) {
-                pDVar8 = pDVar7;
+               pDVar6 != (DownloadHandlerTexture *)0x0)) {
+              pDVar7 = (DownloadHandlerTexture *)0x0;
+              if (pDVar6->klass == TypeInfo__UnityEngine__Networking__DownloadHandlerTexture) {
+                pDVar7 = pDVar6;
               }
-              if (pDVar8 == (DownloadHandlerTexture *)0x0) goto code_?;
-              pDVar8 = (DownloadHandlerTexture *)0x0;
-              if (pDVar7->klass == TypeInfo__UnityEngine__Networking__DownloadHandlerTexture) {
-                pDVar8 = pDVar7;
+              if (pDVar7 == (DownloadHandlerTexture *)0x0) goto code_?;
+              pDVar7 = (DownloadHandlerTexture *)0x0;
+              if (pDVar6->klass == TypeInfo__UnityEngine__Networking__DownloadHandlerTexture) {
+                pDVar7 = pDVar6;
               }
               value = UnityEngine.UnityWebRequestTextureModule.dll::UnityEngine::Networking::
                       DownloadHandlerTexture::DownloadHandlerTexture_InternalGetTextureNative
-                                (pDVar8,(MethodInfo *)0x0);
+                                (pDVar7,(MethodInfo *)0x0);
               if (this_02 == (RawImage *)0x0) goto code_?;
               goto code_?;
             }
@@ -108,9 +108,9 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  bVar10 = (*pcVar9)();
-  return bVar10;
+  pcVar8 = (code *)swi(3);
+  bVar9 = (*pcVar8)();
+  return bVar9;
 }
 
 

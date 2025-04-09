@@ -9,7 +9,7 @@ void Assembly-CSharp.dll::FirstTimeCubeModelBlinker::FirstTimeCubeModelBlinker_B
   if (this_00 != (MVCubeModelBase *)0x0) {
     pMVar1 = MVCubeModelBase::MVCubeModelBase_get_MeshFilters(this_00,(MethodInfo *)0x0);
     (this->fields)._.meshFilters = pMVar1;
-    func_?();
+    func_?(&(this->fields)._.meshFilters,pMVar1);
     return;
   }
   func_?();
@@ -38,18 +38,15 @@ void Assembly-CSharp.dll::FirstTimeCubeModelBlinker::FirstTimeCubeModelBlinker_I
     func_?(&StringLiteral_CamRotateTarget);
     cRam_? = '\x01';
   }
-  ppMVar1 = &(this->fields).targetCubeModelBase;
-  *ppMVar1 = targetCubeModelBase;
-  func_?(ppMVar1);
-  ppCVar2 = &(this->fields)._.targetCamera;
-  *ppCVar2 = targetCamera;
-  func_?(ppCVar2,targetCamera);
-  iVar3 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+  (this->fields).targetCubeModelBase = targetCubeModelBase;
+  func_?(&(this->fields).targetCubeModelBase);
+  (this->fields)._.targetCamera = targetCamera;
+  func_?(&(this->fields)._.targetCamera,targetCamera);
+  iVar1 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
                     (StringLiteral_CamRotateTarget,(MethodInfo *)0x0);
-  (this->fields)._.layerMask = iVar3;
-  ppMVar4 = &(this->fields)._.blinkMaterial;
-  *ppMVar4 = material;
-  func_?(ppMVar4,material);
+  (this->fields)._.layerMask = iVar1;
+  (this->fields)._.blinkMaterial = material;
+  func_?(&(this->fields)._.blinkMaterial,material);
   this_00 = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)
             func_?(TypeInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
@@ -58,7 +55,7 @@ void Assembly-CSharp.dll::FirstTimeCubeModelBlinker::FirstTimeCubeModelBlinker_I
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__Dictionary__)
   ;
-  m = *ppMVar4;
+  m = (this->fields)._.blinkMaterial;
   this_01 = (Blinker *)func_?(TypeInfo__Blinker);
   color.g = (float)_UNK_?;
   color.r = (float)_UNK_?;
@@ -76,8 +73,8 @@ void Assembly-CSharp.dll::FirstTimeCubeModelBlinker::FirstTimeCubeModelBlinker_I
     return;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

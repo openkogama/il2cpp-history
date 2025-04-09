@@ -64,7 +64,7 @@ void Assembly-CSharp.dll::RTG::GizmoPolygon2DBorder::GizmoPolygon2DBorder_OnPoly
       uVar3 = (pGVar2->fields)._polygonBorderType;
       if (pIVar1->max_length <= uVar3) goto code_?;
       if (pIVar1->vector[uVar3] != (IGizmoPolygon2DBorderController *)0x0) {
-        func_?(2,TypeInfo__RTG__IGizmoPolygon2DBorderController);
+        func_?(2,TypeInfo__RTG__IGizmoPolygon2DBorderController,pIVar1->vector[uVar3]);
         return;
       }
     }
@@ -276,21 +276,18 @@ void Assembly-CSharp.dll::RTG::GizmoPolygon2DBorder::GizmoPolygon2DBorder__ctor
   (this->fields)._isHoverable = 1;
   pPVar1 = (PolygonShape2D *)func_?(TypeInfo__RTG__PolygonShape2D);
   PolygonShape2D::PolygonShape2D__ctor(pPVar1,(MethodInfo *)0x0);
-  ppPVar2 = &(this->fields)._borderPolygon;
-  *ppPVar2 = pPVar1;
-  func_?(ppPVar2,pPVar1);
+  (this->fields)._borderPolygon = pPVar1;
+  func_?(&(this->fields)._borderPolygon,pPVar1);
   pPVar1 = (PolygonShape2D *)func_?(TypeInfo__RTG__PolygonShape2D);
   PolygonShape2D::PolygonShape2D__ctor(pPVar1,(MethodInfo *)0x0);
-  ppPVar2 = &(this->fields)._thickBorderPolygon;
-  *ppPVar2 = pPVar1;
-  func_?(ppPVar2,pPVar1);
+  (this->fields)._thickBorderPolygon = pPVar1;
+  func_?(&(this->fields)._thickBorderPolygon,pPVar1);
   method_03 = TypeInfo__RTG__GizmoPolygon2DBorderControllerData;
-  pGVar3 = (GizmoPolygon2DBorderControllerData *)func_?();
+  pGVar2 = (GizmoPolygon2DBorderControllerData *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)pGVar3,ExceptionArgument__Enum_obj,(MethodInfo *)method_03);
-  ppGVar4 = &(this->fields)._controllerData;
-  *ppGVar4 = pGVar3;
-  func_?(ppGVar4,pGVar3);
+            ((Object *)pGVar2,ExceptionArgument__Enum_obj,(MethodInfo *)method_03);
+  (this->fields)._controllerData = pGVar2;
+  func_?(&(this->fields)._controllerData,pGVar2);
   handle = TypeRef__RTG__GizmoPolygon2DBorderType;
   if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
@@ -309,115 +306,119 @@ code_?:
     func_?();
   }
   else {
-    pPVar1 = (PolygonShape2D *)
-             mscorlib.dll::System::Array::Array_get_Length(this_01,(MethodInfo *)0x0);
-    pIVar5 = TypeInfo__RTG__IGizmoPolygon2DBorderController;
-    pGVar6 = (GizmoPlaneSlider2D *)func_?();
+    mscorlib.dll::System::Array::Array_get_Length(this_01,(MethodInfo *)0x0);
+    pIVar3 = TypeInfo__RTG__IGizmoPolygon2DBorderController;
+    pIVar4 = (IGizmoPolygon2DBorderController__Array *)func_?();
+    (this->fields)._controllers = pIVar4;
     method_00 = &(this->fields)._controllers;
-    *method_00 = (IGizmoPolygon2DBorderController__Array *)pGVar6;
     func_?();
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
               ((Object *)this,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-    (this->fields)._planeSlider = pGVar6;
-    func_?(&this->fields);
-    ppGVar7 = &(this->fields)._targetHandle;
-    *ppGVar7 = (GizmoHandle *)pIVar5;
-    func_?(ppGVar7,pIVar5);
-    ppPVar2 = &(this->fields)._targetPolygon;
-    *ppPVar2 = pPVar1;
-    func_?(ppPVar2,pPVar1);
-    if (*ppGVar7 == (GizmoHandle *)0x0) goto code_?;
-    iVar8 = GizmoHandle::GizmoHandle_Add2DShape
-                       (*ppGVar7,(Shape2D *)(this->fields)._borderPolygon,(MethodInfo *)0x0);
-    (this->fields)._borderPolygonIndex = iVar8;
+    (this->fields)._planeSlider = (GizmoPlaneSlider2D *)method_00;
+    func_?();
+    (this->fields)._targetHandle = (GizmoHandle *)pIVar4;
+    func_?(&(this->fields)._targetHandle,pIVar4);
+    (this->fields)._targetPolygon = (PolygonShape2D *)pIVar3;
+    func_?(&(this->fields)._targetPolygon,pIVar3);
+    pGVar5 = (this->fields)._targetHandle;
+    if (pGVar5 == (GizmoHandle *)0x0) goto code_?;
+    iVar6 = GizmoHandle::GizmoHandle_Add2DShape
+                      (pGVar5,(Shape2D *)(this->fields)._borderPolygon,(MethodInfo *)0x0);
+    (this->fields)._borderPolygonIndex = iVar6;
     pPVar1 = (this->fields)._borderPolygon;
     if (pPVar1 == (PolygonShape2D *)0x0) goto code_?;
     (pPVar1->fields)._ptContainMode = 1;
-    if (*ppGVar7 == (GizmoHandle *)0x0) goto code_?;
-    iVar8 = GizmoHandle::GizmoHandle_Add2DShape
-                       (*ppGVar7,(Shape2D *)(this->fields)._thickBorderPolygon,(MethodInfo *)0x0);
-    (this->fields)._thickBorderPolygonIndex = iVar8;
+    pGVar5 = (this->fields)._targetHandle;
+    if (pGVar5 == (GizmoHandle *)0x0) goto code_?;
+    iVar6 = GizmoHandle::GizmoHandle_Add2DShape
+                      (pGVar5,(Shape2D *)(this->fields)._thickBorderPolygon,(MethodInfo *)0x0);
+    (this->fields)._thickBorderPolygonIndex = iVar6;
     pPVar1 = (this->fields)._thickBorderPolygon;
     if (pPVar1 == (PolygonShape2D *)0x0) goto code_?;
     (pPVar1->fields)._ptContainMode = 1;
     pPVar1 = (this->fields)._thickBorderPolygon;
     if ((pPVar1 == (PolygonShape2D *)0x0) ||
-       (pPVar9 = (pPVar1->fields)._borderRenderDesc,
-       pPVar9 == (PolygonShape2D_BorderRenderDescriptor *)0x0)) goto code_?;
-    (pPVar9->fields)._borderType = 1;
+       (pPVar7 = (pPVar1->fields)._borderRenderDesc,
+       pPVar7 == (PolygonShape2D_BorderRenderDescriptor *)0x0)) goto code_?;
+    (pPVar7->fields)._borderType = 1;
     pPVar1 = (this->fields)._thickBorderPolygon;
     if ((pPVar1 == (PolygonShape2D *)0x0) ||
-       (pPVar9 = (pPVar1->fields)._borderRenderDesc,
-       pPVar9 == (PolygonShape2D_BorderRenderDescriptor *)0x0)) goto code_?;
-    (pPVar9->fields)._direction = 1;
-    if (*ppGVar4 == (GizmoPolygon2DBorderControllerData *)0x0) goto code_?;
-    ((*ppGVar4)->fields).Border = this;
+       (pPVar7 = (pPVar1->fields)._borderRenderDesc,
+       pPVar7 == (PolygonShape2D_BorderRenderDescriptor *)0x0)) goto code_?;
+    (pPVar7->fields)._direction = 1;
+    pGVar2 = (this->fields)._controllerData;
+    if (pGVar2 == (GizmoPolygon2DBorderControllerData *)0x0) goto code_?;
+    (pGVar2->fields).Border = this;
     func_?();
-    if (*ppGVar4 == (GizmoPolygon2DBorderControllerData *)0x0) goto code_?;
-    ((*ppGVar4)->fields).PlaneSlider = (this->fields)._planeSlider;
+    pGVar2 = (this->fields)._controllerData;
+    if (pGVar2 == (GizmoPolygon2DBorderControllerData *)0x0) goto code_?;
+    (pGVar2->fields).PlaneSlider = (this->fields)._planeSlider;
     func_?();
-    if (*ppGVar4 == (GizmoPolygon2DBorderControllerData *)0x0) goto code_?;
-    ((*ppGVar4)->fields).BorderPolygon = (this->fields)._borderPolygon;
+    pGVar2 = (this->fields)._controllerData;
+    if (pGVar2 == (GizmoPolygon2DBorderControllerData *)0x0) goto code_?;
+    (pGVar2->fields).BorderPolygon = (this->fields)._borderPolygon;
     func_?();
-    if (*ppGVar4 == (GizmoPolygon2DBorderControllerData *)0x0) goto code_?;
-    ((*ppGVar4)->fields).BorderPolygonIndex = (this->fields)._borderPolygonIndex;
-    pGVar3 = *ppGVar4;
-    if (pGVar3 == (GizmoPolygon2DBorderControllerData *)0x0) goto code_?;
-    ppPVar2 = &(pGVar3->fields).ThickBorderPolygon;
-    *ppPVar2 = (this->fields)._thickBorderPolygon;
+    pGVar2 = (this->fields)._controllerData;
+    if (pGVar2 == (GizmoPolygon2DBorderControllerData *)0x0) goto code_?;
+    (pGVar2->fields).BorderPolygonIndex = (this->fields)._borderPolygonIndex;
+    pGVar2 = (this->fields)._controllerData;
+    if (pGVar2 == (GizmoPolygon2DBorderControllerData *)0x0) goto code_?;
+    (pGVar2->fields).ThickBorderPolygon = (this->fields)._thickBorderPolygon;
     func_?();
-    if (*ppGVar4 == (GizmoPolygon2DBorderControllerData *)0x0) goto code_?;
-    ((*ppGVar4)->fields).ThickBorderPolygonIndex = (this->fields)._thickBorderPolygonIndex;
-    if (ppPVar2 == (PolygonShape2D **)0x0) goto code_?;
-    if (*ppGVar4 == (GizmoPolygon2DBorderControllerData *)0x0) goto code_?;
-    ((*ppGVar4)->fields).Gizmo = (Gizmo *)pGVar3[1].monitor;
+    pGVar2 = (this->fields)._controllerData;
+    if ((pGVar2 == (GizmoPolygon2DBorderControllerData *)0x0) ||
+       ((pGVar2->fields).ThickBorderPolygonIndex = (this->fields)._thickBorderPolygonIndex,
+       pIVar4 == (IGizmoPolygon2DBorderController__Array *)0x0)) goto code_?;
+    pGVar2 = (this->fields)._controllerData;
+    if (pGVar2 == (GizmoPolygon2DBorderControllerData *)0x0) goto code_?;
+    (pGVar2->fields).Gizmo = (Gizmo *)pIVar4->vector[0];
     func_?();
-    if (*ppGVar4 == (GizmoPolygon2DBorderControllerData *)0x0) goto code_?;
-    ((*ppGVar4)->fields).TargetHandle = (GizmoHandle *)ppPVar2;
+    pGVar2 = (this->fields)._controllerData;
+    if (pGVar2 == (GizmoPolygon2DBorderControllerData *)0x0) goto code_?;
+    (pGVar2->fields).TargetHandle = (GizmoHandle *)pIVar4;
     func_?();
-    if (*ppGVar4 == (GizmoPolygon2DBorderControllerData *)0x0) goto code_?;
-    ((*ppGVar4)->fields).TargetPolygon = (this->fields)._targetPolygon;
+    pGVar2 = (this->fields)._controllerData;
+    if (pGVar2 == (GizmoPolygon2DBorderControllerData *)0x0) goto code_?;
+    (pGVar2->fields).TargetPolygon = (this->fields)._targetPolygon;
     func_?();
     method_02 = TypeInfo__RTG__GizmoThinPolygon2DBorderController;
-    pIVar10 = (this->fields)._controllers;
-    pOVar11 = (Object__Class *)*ppGVar4;
-    value = (Object *)func_?();
+    pGVar2 = (this->fields)._controllerData;
+    pOVar8 = (Object *)func_?();
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (value,(ExceptionArgument__Enum)value,(MethodInfo *)method_02);
-    value[1].klass = pOVar11;
+              (pOVar8,ExceptionArgument__Enum_obj,(MethodInfo *)method_02);
+    pOVar8[1].klass = (Object__Class *)pGVar2;
     func_?();
-    if (pIVar10 == (IGizmoPolygon2DBorderController__Array *)0x0) goto code_?;
-    iVar12 = func_?();
-    if (iVar12 == 0) goto code_?;
-    if (pIVar10->max_length == 0) goto code_?;
-    pIVar10->vector[0] = (IGizmoPolygon2DBorderController *)pOVar11;
+    if (pOVar8 == (Object *)0xfffffff8) goto code_?;
+    iVar9 = func_?();
+    if (iVar9 == 0) goto code_?;
+    if (pOVar8[2].monitor == (MonitorData *)0x0) goto code_?;
+    pOVar8[3].klass = (Object__Class *)pOVar8;
     func_?();
     method_01 = TypeInfo__RTG__GizmoThickPolygon2DBorderController;
-    pGVar13 = (GizmoHandleCanHoverHandler *)*ppGVar4;
-    pGVar14 = (GizmoHandle *)func_?();
+    pOVar10 = (Object__Class *)(this->fields)._controllerData;
+    pOVar8 = (Object *)func_?();
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)pGVar14,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
-    (pGVar14->fields).CanHover = pGVar13;
+              (pOVar8,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
+    pOVar8[1].klass = pOVar10;
     func_?();
-    if (pGVar13 == (GizmoHandleCanHoverHandler *)0x0) goto code_?;
-    iVar12 = func_?();
-    if (iVar12 != 0) {
-      if (((GizmoPolygon2DBorderControllerData__Fields *)&pGVar13->fields)->PlaneSlider <
-          (GizmoPlaneSlider2D *)0x2) goto code_?;
-      ((GizmoPolygon2DBorderControllerData__Fields *)&pGVar13->fields)->TargetHandle = pGVar14;
+    if (pOVar8 == (Object *)0xfffffff8) goto code_?;
+    iVar9 = func_?();
+    if (iVar9 != 0) {
+      if (pOVar8[2].monitor < (MonitorData *)0x2) goto code_?;
+      pOVar8[3].monitor = (MonitorData *)pOVar8;
       func_?();
-      pGVar14 = (this->fields)._targetHandle;
-      if (pGVar14 != (GizmoHandle *)0x0) {
-        this_00 = (pGVar14->fields)._gizmo;
-        value_00 = (GizmoPreUpdateBeginHandler *)func_?();
+      pGVar5 = (this->fields)._targetHandle;
+      if (pGVar5 != (GizmoHandle *)0x0) {
+        this_00 = (pGVar5->fields)._gizmo;
+        value = (GizmoPreUpdateBeginHandler *)func_?();
         UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
         VideoCapture+OnVideoCaptureResourceCreatedCallback::
         VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
-                  ((VideoCapture_OnVideoCaptureResourceCreatedCallback *)value_00,(Object *)this,
+                  ((VideoCapture_OnVideoCaptureResourceCreatedCallback *)value,(Object *)this,
                    MethodInfo__RTG__GizmoPolygon2DBorder__OnGizmoPreUpdateBegin_RTG__Gizmo_,
                    (MethodInfo *)0x0);
         if (this_00 != (Gizmo *)0x0) {
-          Gizmo::Gizmo_add_PreUpdateBegin(this_00,value_00,(MethodInfo *)0x0);
+          Gizmo::Gizmo_add_PreUpdateBegin(this_00,value,(MethodInfo *)0x0);
           return;
         }
       }
@@ -428,8 +429,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 

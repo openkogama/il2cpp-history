@@ -344,25 +344,34 @@ void Assembly-CSharp.dll::InventoryPointerController::InventoryPointerController
   if (pIVar1 != (IEditModeUI *)0x0) {
     iVar2 = func_?(4,TypeInfo__IEditModeUI,pIVar1);
     if (iVar2 != 0) {
-      pDVar3 = *(Delegate **)(iVar2 + 0x14);
+      a = *(Delegate **)(iVar2 + 0x14);
       this_00 = (Action_3_Int32_Int32_ByteEnum_ *)
                 func_?(TypeInfo__System__Action<int,_int,_bool>);
       mscorlib.dll::System::Action`3[Int32,Int32,ByteEnum]::Action_3_Int32_Int32_ByteEnum___ctor
                 (this_00,(Object *)this,
                  MethodInfo__InventoryPointerController__CreateBubble_int__int__bool_,
                  (MethodInfo *)0x0);
-      pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine
-                         (pDVar3,(Delegate *)this_00,(MethodInfo *)0x0);
-      if (pDVar3 == (Delegate *)0x0) {
-        *(int *)(iVar2 + 0x14) = 0;
+      unaff_ESI = mscorlib.dll::System::Delegate::Delegate_Combine
+                            (a,(Delegate *)this_00,(MethodInfo *)0x0);
+      unaff_EDI = TypeInfo__System__Action<int,_int,_bool>;
+      if (unaff_ESI == (Delegate *)0x0) {
+        *(undefined4 *)(iVar2 + 0x14) = 0;
+        pDStack3 = (Delegate *)(iVar2 + 0x14);
+        pAStack4 = (Action_3_Int32_Int32_Boolean___Class *)unaff_ESI;
         func_?();
         return;
       }
-      iVar4 = func_?();
-      if (iVar4 != 0) {
-        *(int *)(iVar2 + 0x14) = iVar4;
-        iVar2 = func_?();
-        if (iVar2 != 0) {
+      pAStack4 = TypeInfo__System__Action<int,_int,_bool>;
+      pDStack3 = unaff_ESI;
+      iVar5 = func_?();
+      if (iVar5 != 0) {
+        *(int *)(iVar2 + 0x14) = iVar5;
+        unaff_EDI = TypeInfo__System__Action<int,_int,_bool>;
+        pAStack4 = TypeInfo__System__Action<int,_int,_bool>;
+        pDStack3 = unaff_ESI;
+        pAStack4 = (Action_3_Int32_Int32_Boolean___Class *)func_?();
+        if (pAStack4 != (Action_3_Int32_Int32_Boolean___Class *)0x0) {
+          pDStack3 = (Delegate *)(iVar2 + 0x14);
           func_?();
           return;
         }
@@ -372,9 +381,11 @@ void Assembly-CSharp.dll::InventoryPointerController::InventoryPointerController
   }
   func_?();
 code_?:
+  pDStack3 = unaff_ESI;
+  pAStack4 = unaff_EDI;
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -446,15 +457,15 @@ void Assembly-CSharp.dll::InventoryPointerController::
         func_?();
       }
       pBVar10 = (Button *)
-                UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                          ((Object *)pBVar10,
-                           UnityEngine__UI__Button_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::UI::Button>_UnityEngine__UI__Button_
-                          );
-      ppBVar11 = &(this->fields).open;
-      *ppBVar11 = pBVar10;
+               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                         ((Object *)pBVar10,
+                          UnityEngine__UI__Button_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::UI::Button>_UnityEngine__UI__Button_
+                         );
+      (this->fields).open = pBVar10;
       func_?();
-      if (*ppBVar11 != (Button *)0x0) {
-        this_00 = (UnityEvent *)((*ppBVar11)->fields).m_OnClick;
+      pBVar10 = (this->fields).open;
+      if (pBVar10 != (Button *)0x0) {
+        this_00 = (UnityEvent *)(pBVar10->fields).m_OnClick;
         this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?();
         UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
         NavMesh_OnNavMeshPreUpdate__ctor
@@ -463,19 +474,20 @@ void Assembly-CSharp.dll::InventoryPointerController::
         if (this_00 != (UnityEvent *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
                     (this_00,(UnityAction *)this_01,(MethodInfo *)0x0);
+          pBVar10 = (this->fields).open;
           iVar9 = (this->fields).bubbleId;
-          if (*ppBVar11 != (Button *)0x0) {
-            pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                ((Component *)*ppBVar11,(MethodInfo *)0x0);
+          if (pBVar10 != (Button *)0x0) {
+            pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                ((Component *)pBVar10,(MethodInfo *)0x0);
             pTVar1 = (Transform *)0x0;
-            if (pTVar12 == (Transform *)0x0) {
+            if (pTVar11 == (Transform *)0x0) {
 code_?:
               TextBubbleController::TextBubbleController_AddElement
                         (x,iVar9,(RectTransform *)pTVar1,(MethodInfo *)0x0);
               return;
             }
-            if (pTVar12->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {
-              pTVar1 = pTVar12;
+            if (pTVar11->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {
+              pTVar1 = pTVar11;
             }
             if (pTVar1 != (Transform *)0x0) goto code_?;
             goto code_?;
@@ -487,8 +499,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 

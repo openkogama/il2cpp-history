@@ -21,19 +21,18 @@ bool Assembly-CSharp.dll::KeyFrameCallback::KeyFrameCallback_Evaluate
       if (timePassedSincePlay < fVar3) {
         return 0;
       }
-      pAVar4 = (this->fields).callbacks;
       (this->fields).fired = 1;
-      if (pAVar4 != (Action *)0x0) {
-        (*(pAVar4->fields)._._.invoke_impl)();
+      if ((this->fields).callbacks != (Action *)0x0) {
+        (*(((this->fields).callbacks)->fields)._._.invoke_impl)();
       }
       return 1;
     }
     func_?();
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  bVar6 = (*pcVar5)();
-  return bVar6;
+  pcVar4 = (code *)swi(3);
+  bVar5 = (*pcVar4)();
+  return bVar5;
 }
 
 

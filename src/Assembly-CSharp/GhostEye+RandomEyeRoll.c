@@ -6,63 +6,59 @@ Assembly-CSharp.dll::GhostEye+RandomEyeRoll::GhostEye_RandomEyeRoll_GetEyeRollRo
           (Quaternion *__return_storage_ptr__,GhostEye_RandomEyeRoll *this,MethodInfo *method)
 
 {
-  fStack_1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0)
-  ;
+  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
   fVar2 = _UNK_?;
-  fVar3 = fStack_1 * (this->fields)._.direction * (this->fields)._.rotatationPrSecond *
-          _UNK_? + (this->fields)._.wrappedTime;
+  fVar3 = fVar1 * (this->fields)._.direction * (this->fields)._.rotatationPrSecond * _UNK_?
+           + (this->fields)._.wrappedTime;
   (this->fields)._.wrappedTime = fVar3;
-  fVar4 = _UNK_?;
-  while (_UNK_? = fVar4, fVar2 <= fVar3) {
+  fVar1 = _UNK_?;
+  while (_UNK_? = fVar1, fVar2 <= fVar3) {
     fVar3 = (this->fields)._.wrappedTime - fVar2;
     (this->fields)._.wrappedTime = fVar3;
-    fVar4 = _UNK_?;
+    fVar1 = _UNK_?;
   }
-  pfVar5 = &(this->fields)._.wrappedTime;
-  if (*pfVar5 <= fVar4 && fVar4 != *pfVar5) {
+  pfVar4 = &(this->fields)._.wrappedTime;
+  if (*pfVar4 <= fVar1 && fVar1 != *pfVar4) {
     do {
       fVar3 = (this->fields)._.wrappedTime + fVar2;
       (this->fields)._.wrappedTime = fVar3;
-    } while (fVar3 < fVar4);
+    } while (fVar3 < fVar1);
   }
-  dVar6 = (double)(this->fields)._.wrappedTime;
+  dVar5 = (double)(this->fields)._.wrappedTime;
   func_?();
-  fStack_1 = (float)dVar6 * (this->fields)._.radiusPitch;
+  fVar1 = (this->fields)._.radiusPitch;
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
   }
-  pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
-                     (&QStack_8,fStack_1,
-                      TypeInfo__UnityEngine__Vector3->static_fields->rightVector,(MethodInfo *)0x0);
-  fStack_9 = pQVar7->x;
-  fStack_10 = pQVar7->y;
-  fStack_11 = pQVar7->z;
-  fStack_12 = pQVar7->w;
-  dVar6 = (double)(this->fields)._.wrappedTime;
+  pQVar6 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
+                      ((Quaternion *)&stack0xffffffd8,(float)dVar5 * fVar1,
+                       TypeInfo__UnityEngine__Vector3->static_fields->rightVector,(MethodInfo *)0x0)
+  ;
+  fVar2 = pQVar6->x;
+  fVar3 = pQVar6->y;
+  fVar7 = pQVar6->z;
+  fVar8 = pQVar6->w;
+  dVar5 = (double)(this->fields)._.wrappedTime;
   func_?();
-  fStack_1 = (float)dVar6 * (this->fields)._.radiusYaw;
+  fVar1 = (this->fields)._.radiusYaw;
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
   }
-  pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
-                     ((Quaternion *)&stack0xffffffb0,fStack_1,
-                      TypeInfo__UnityEngine__Vector3->static_fields->upVector,(MethodInfo *)0x0);
-  fVar13 = pQVar7->y;
-  fVar14 = pQVar7->z;
-  fVar15 = pQVar7->w;
-  fVar4 = pQVar7->x;
-  fVar2 = pQVar7->x;
-  fVar3 = pQVar7->x;
-  __return_storage_ptr__->x =
-       (fVar15 * fStack_9 + fStack_12 * pQVar7->x + fStack_11 * fVar13) - fVar14 * fStack_10;
-  __return_storage_ptr__->y =
-       (fVar15 * fStack_10 + fStack_12 * fVar13 + fVar14 * fStack_9) - fStack_11 * fVar4;
-  __return_storage_ptr__->z =
-       (fVar15 * fStack_11 + fStack_12 * fVar14 + fStack_10 * fVar2) - fVar13 * fStack_9;
-  __return_storage_ptr__->w =
-       ((fStack_12 * fVar15 - fStack_9 * fVar3) - fStack_10 * fVar13) - fStack_11 * fVar14;
+  pQVar6 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
+                      ((Quaternion *)&stack0xffffffc8,(float)dVar5 * fVar1,
+                       TypeInfo__UnityEngine__Vector3->static_fields->upVector,(MethodInfo *)0x0);
+  fVar9 = pQVar6->x;
+  fVar10 = pQVar6->y;
+  fVar11 = pQVar6->z;
+  fVar12 = pQVar6->w;
+  fVar13 = pQVar6->x;
+  fVar1 = pQVar6->x;
+  __return_storage_ptr__->x = (fVar2 * fVar12 + fVar8 * fVar9 + fVar7 * fVar10) - fVar3 * fVar11;
+  __return_storage_ptr__->y = (fVar3 * fVar12 + fVar8 * fVar10 + fVar2 * fVar11) - fVar7 * fVar13;
+  __return_storage_ptr__->z = (fVar8 * fVar11 + fVar7 * fVar12 + fVar3 * fVar1) - fVar2 * fVar10;
+  __return_storage_ptr__->w = ((fVar8 * fVar12 - fVar2 * fVar9) - fVar3 * fVar10) - fVar7 * fVar11;
   return __return_storage_ptr__;
 }
 

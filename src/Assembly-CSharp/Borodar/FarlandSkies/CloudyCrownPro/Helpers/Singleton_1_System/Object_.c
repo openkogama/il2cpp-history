@@ -56,13 +56,16 @@ Object * Assembly-CSharp.dll::Borodar::FarlandSkies::CloudyCrownPro::Helpers::Si
                        (pIVar1->rgctx_data[3].method);
     if (pOVar3 == (Object__Array *)0x0) {
       func_?();
+code_?:
+      func_?();
       pcVar4 = (code *)swi(3);
       pOVar5 = (Object *)(*pcVar4)();
       return pOVar5;
     }
     if (pOVar3->max_length == 1) {
-      pOVar5 = pOVar3->vector[0];
+      if (pOVar3->max_length == 0) goto code_?;
       pIVar1 = method->klass;
+      pOVar5 = pOVar3->vector[0];
       if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
         pIVar1 = (Il2CppClass *)func_?(pIVar1);
       }

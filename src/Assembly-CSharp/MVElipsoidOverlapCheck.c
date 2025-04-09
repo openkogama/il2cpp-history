@@ -43,10 +43,11 @@ bool Assembly-CSharp.dll::MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_DoDetai
          CONCAT44(localPos.y + fStack_7,localPos.x + fStack_6);
     *(float *)((int)&pVVar3->vector[0].z + iVar2) = fStack_8;
     cube = (Cube *)TypeInfo__MVElipsoidOverlapCheck->static_fields->cachedCorners;
-    if ((Vector3__Array *)cube == (Vector3__Array *)0x0) goto code_?;
-    if (((Vector3__Array *)cube)->max_length <= uVar1) goto code_?;
-    point.z = *(float *)((int)&((Vector3__Array *)cube)->vector[0].z + iVar2);
-    point._0_8_ = *(undefined8 *)((int)&((Vector3__Array *)cube)->vector[0].x + iVar2);
+    pVVar3 = TypeInfo__MVElipsoidOverlapCheck->static_fields->cachedCorners;
+    if (pVVar3 == (Vector3__Array *)0x0) goto code_?;
+    if (pVVar3->max_length <= uVar1) goto code_?;
+    point.z = *(float *)((int)&pVVar3->vector[0].z + iVar2);
+    point._0_8_ = *(undefined8 *)((int)&pVVar3->vector[0].x + iVar2);
     pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyPoint
                         (&VStack_10,
                          &TypeInfo__MVElipsoidOverlapCheck->static_fields->localToElipsoidSpace,
@@ -108,12 +109,14 @@ code_?:
       uVar15 = pVVar3->vector[0].x;
       uVar16 = pVVar3->vector[0].y;
       fStack_17 = pVVar3->vector[0].z;
+      pVVar3 = TypeInfo__MVElipsoidOverlapCheck->static_fields->cachedFace;
       fStack_7 = (float)uVar15;
       fStack_5 = (float)uVar16;
       if (pVVar3->max_length < 4) break;
       uStack_18._0_4_ = pVVar3->vector[3].x;
       uStack_18._4_4_ = pVVar3->vector[3].y;
       fStack_19 = pVVar3->vector[3].z;
+      pVVar3 = TypeInfo__MVElipsoidOverlapCheck->static_fields->cachedFace;
       uStack_20._0_4_ = pVVar3->vector[2].x;
       uStack_20._4_4_ = pVVar3->vector[2].y;
       fStack_21 = pVVar3->vector[2].z;
@@ -269,10 +272,10 @@ bool Assembly-CSharp.dll::MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_Elipsoi
                           (this,0,
                            MethodInfo__System__Collections__Generic__List<MVOverlapResult>__get_Item_int_
                           );
-        if (XVar1.xso == (XmlSchemaObject *)0x0) goto code_?;
-        if (((XVar1.xso)->fields).linePos != 0) {
-          return 1;
+        if (XVar1.xso != (XmlSchemaObject *)0x0) {
+          return ((XVar1.xso)->fields).linePos != 0;
         }
+        goto code_?;
       }
     }
     return 0;
@@ -321,10 +324,10 @@ bool Assembly-CSharp.dll::MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_Elipsoi
                           (this,0,
                            MethodInfo__System__Collections__Generic__List<MVOverlapResult>__get_Item_int_
                           );
-        if (XVar1.xso == (XmlSchemaObject *)0x0) goto code_?;
-        if (((XVar1.xso)->fields).linePos != 0) {
-          return 1;
+        if (XVar1.xso != (XmlSchemaObject *)0x0) {
+          return ((XVar1.xso)->fields).linePos != 0;
         }
+        goto code_?;
       }
     }
     return 0;
@@ -365,7 +368,7 @@ code_?:
                             ((Component *)chunk,(MethodInfo *)0x0), pTVar3 == (Transform *)0x0))
     goto code_?;
     pMVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localToWorldMatrix
-                        ((Matrix4x4 *)&stack0xffffff10,pTVar3,(MethodInfo *)0x0);
+                        ((Matrix4x4 *)&stack0xfffffef0,pTVar3,(MethodInfo *)0x0);
     fStack_5 = pMVar4->m00;
     puStack_6 = (undefined *)pMVar4->m10;
     fVar7 = pMVar4->m20;
@@ -406,7 +409,7 @@ code_?:
                         ((Component *)chunk,(MethodInfo *)0x0);
     if (pTVar3 == (Transform *)0x0) goto code_?;
     pMVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_worldToLocalMatrix
-                        ((Matrix4x4 *)&stack0xffffff10,pTVar3,(MethodInfo *)0x0);
+                        ((Matrix4x4 *)&stack0xfffffef0,pTVar3,(MethodInfo *)0x0);
     fVar13 = pMVar4->m10;
     fVar14 = pMVar4->m20;
     fVar15 = pMVar4->m30;
@@ -440,7 +443,7 @@ code_?:
     (pMVar21->worldToLocal).m23 = fVar12;
     (pMVar21->worldToLocal).m33 = fVar22;
     pMVar4 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
-                        ((Matrix4x4 *)&stack0xffffff10,position,rotation,radius,(MethodInfo *)0x0);
+                        ((Matrix4x4 *)&stack0xfffffef0,position,rotation,radius,(MethodInfo *)0x0);
     fVar13 = pMVar4->m10;
     fVar14 = pMVar4->m20;
     fVar15 = pMVar4->m30;
@@ -474,7 +477,7 @@ code_?:
     (pMVar21->elipsoidSpaceToWorld).m23 = fVar12;
     (pMVar21->elipsoidSpaceToWorld).m33 = fVar22;
     pMVar4 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_inverse
-                        ((Matrix4x4 *)&stack0xffffff10,
+                        ((Matrix4x4 *)&stack0xfffffef0,
                          &TypeInfo__MVElipsoidOverlapCheck->static_fields->elipsoidSpaceToWorld,
                          (MethodInfo *)0x0);
     fVar13 = pMVar4->m10;
@@ -510,7 +513,7 @@ code_?:
     (pMVar21->worldToElipsoidSpace).m23 = fVar12;
     (pMVar21->worldToElipsoidSpace).m33 = fVar22;
     pMVar4 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_op_Multiply
-                        ((Matrix4x4 *)&stack0xffffff10,
+                        ((Matrix4x4 *)&stack0xfffffef0,
                          TypeInfo__MVElipsoidOverlapCheck->static_fields->worldToElipsoidSpace,
                          TypeInfo__MVElipsoidOverlapCheck->static_fields->localToWorld,
                          (MethodInfo *)0x0);
@@ -569,7 +572,7 @@ code_?:
     s.x = radius.x + fVar25;
     s.z = radius.z + fVar26;
     pMVar4 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
-                        ((Matrix4x4 *)&stack0xffffff10,position,rotation,s,(MethodInfo *)0x0);
+                        ((Matrix4x4 *)&stack0xfffffef0,position,rotation,s,(MethodInfo *)0x0);
     fVar13 = pMVar4->m10;
     fVar14 = pMVar4->m20;
     fVar15 = pMVar4->m30;
@@ -603,7 +606,7 @@ code_?:
     (pMVar21->radiusExtendedElipsoidSpaceToWorld).m23 = fVar12;
     (pMVar21->radiusExtendedElipsoidSpaceToWorld).m33 = fVar22;
     pMVar4 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_inverse
-                        ((Matrix4x4 *)&stack0xffffff10,
+                        ((Matrix4x4 *)&stack0xfffffef0,
                          &TypeInfo__MVElipsoidOverlapCheck->static_fields->
                           radiusExtendedElipsoidSpaceToWorld,(MethodInfo *)0x0);
     fVar13 = pMVar4->m10;
@@ -639,7 +642,7 @@ code_?:
     (pMVar21->worldToRadiusExtendedElipsoidSpace).m23 = fVar12;
     (pMVar21->worldToRadiusExtendedElipsoidSpace).m33 = fVar22;
     pMVar4 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_op_Multiply
-                        ((Matrix4x4 *)&stack0xffffff10,
+                        ((Matrix4x4 *)&stack0xfffffef0,
                          TypeInfo__MVElipsoidOverlapCheck->static_fields->
                          worldToRadiusExtendedElipsoidSpace,
                          TypeInfo__MVElipsoidOverlapCheck->static_fields->localToWorld,
@@ -678,6 +681,7 @@ code_?:
     (pMVar21->localToRadiusExtendedElipsoidSpace).m33 = fVar22;
     if (((fStack_5 - fVar25 <= 0.0) || (radius.y - fVar27 <= 0.0)) || (radius.z - fVar26 <= 0.0)) {
       if ((TypeInfo__MVElipsoidOverlapCheck->_1).cctor_finished_or_no_cctor == 0) {
+        cmb = (ICubeModelCollider *)&UNK_?;
         func_?();
       }
       TypeInfo__MVElipsoidOverlapCheck->static_fields->reducedElipsoidSpaceExists = 0;
@@ -687,7 +691,7 @@ code_?:
       s_00.x = fStack_5 - fVar25;
       s_00.z = radius.z - fVar26;
       pMVar4 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
-                          ((Matrix4x4 *)&stack0xffffff10,position,rotation,s_00,(MethodInfo *)0x0);
+                          ((Matrix4x4 *)&stack0xfffffef0,position,rotation,s_00,(MethodInfo *)0x0);
       fStack_5 = pMVar4->m00;
       puStack_6 = (undefined *)pMVar4->m10;
       fVar7 = pMVar4->m20;
@@ -725,7 +729,7 @@ code_?:
       (pMVar21->radiusReducedElipsoidSpaceToWorld).m23 = fVar19;
       (pMVar21->radiusReducedElipsoidSpaceToWorld).m33 = fVar20;
       pMVar4 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_inverse
-                          ((Matrix4x4 *)&stack0xffffff10,
+                          ((Matrix4x4 *)&stack0xfffffef0,
                            &TypeInfo__MVElipsoidOverlapCheck->static_fields->
                             radiusReducedElipsoidSpaceToWorld,(MethodInfo *)0x0);
       fVar13 = pMVar4->m10;
@@ -760,11 +764,12 @@ code_?:
       (pMVar21->worldToRadiusReducedElipsoidSpace).m13 = fVar11;
       (pMVar21->worldToRadiusReducedElipsoidSpace).m23 = fVar12;
       (pMVar21->worldToRadiusReducedElipsoidSpace).m33 = fVar22;
-      pMVar21 = TypeInfo__MVElipsoidOverlapCheck->static_fields;
-      cmb = (ICubeModelCollider *)(pMVar21->worldToRadiusReducedElipsoidSpace).m22;
+      pMVar4 = &TypeInfo__MVElipsoidOverlapCheck->static_fields->localToWorld;
+      cmb = (ICubeModelCollider *)pMVar4->m00;
       pMVar4 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_op_Multiply
-                          ((Matrix4x4 *)&stack0xffffff10,pMVar21->worldToRadiusReducedElipsoidSpace,
-                           pMVar21->localToWorld,(MethodInfo *)0x0);
+                          ((Matrix4x4 *)&stack0xfffffef0,
+                           TypeInfo__MVElipsoidOverlapCheck->static_fields->
+                           worldToRadiusReducedElipsoidSpace,*pMVar4,(MethodInfo *)0x0);
       fVar13 = pMVar4->m10;
       fVar14 = pMVar4->m20;
       fVar15 = pMVar4->m30;
@@ -819,10 +824,9 @@ code_?:
                          &TypeInfo__MVElipsoidOverlapCheck->static_fields->localToWorld,
                          TypeInfo__UnityEngine__Vector3->static_fields->rightVector,
                          (MethodInfo *)0x0);
-    fVar13 = pVVar23->x;
-    fVar14 = pVVar23->y;
-    fVar15 = pVVar23->z;
-    fVar16 = fVar15;
+    uVar28 = pVVar23->x;
+    uVar29 = pVVar23->y;
+    fVar13 = pVVar23->z;
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
@@ -831,9 +835,9 @@ code_?:
                         ((Vector3 *)&stack0xffffffb8,
                          &TypeInfo__MVElipsoidOverlapCheck->static_fields->localToWorld,
                          TypeInfo__UnityEngine__Vector3->static_fields->upVector,(MethodInfo *)0x0);
-    fVar17 = pVVar23->x;
-    fVar18 = pVVar23->y;
-    fVar19 = pVVar23->z;
+    uVar30 = pVVar23->x;
+    uVar31 = pVVar23->y;
+    fVar14 = pVVar23->z;
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
@@ -843,118 +847,118 @@ code_?:
                          &TypeInfo__MVElipsoidOverlapCheck->static_fields->localToWorld,
                          TypeInfo__UnityEngine__Vector3->static_fields->forwardVector,
                          (MethodInfo *)0x0);
-    uVar28 = pVVar23->x;
-    uVar29 = pVVar23->y;
-    fVar20 = pVVar23->z;
-    iVar30 = func_?();
-    tangent0.y = fVar14;
-    tangent0.x = fVar13;
-    tangent0.z = fVar15;
-    tangent1.y = (float)uVar29;
-    tangent1.x = (float)uVar28;
-    tangent1.z = fVar20;
-    iVar1 = iVar30;
+    uVar32 = pVVar23->x;
+    uVar33 = pVVar23->y;
+    fVar15 = pVVar23->z;
+    iVar34 = func_?();
+    tangent0.y = (float)uVar29;
+    tangent0.x = (float)uVar28;
+    tangent0.z = fVar13;
+    tangent1.y = (float)uVar33;
+    tangent1.x = (float)uVar32;
+    tangent1.z = fVar15;
+    iVar1 = iVar34;
     pVVar23 = MVElipsoidOverlapCheck_GetTangentNormal
                         ((Vector3 *)&stack0xffffffb8,tangent0,tangent1,(MethodInfo *)0x0);
-    if (iVar30 == 0) goto code_?;
-    fVar7 = pVVar23->y;
-    fVar15 = pVVar23->z;
-    if (*(int *)(iVar30 + 0xc) != 0) {
-      pVVar31 = (Vector3 *)(iVar30 + 0x10);
-      pVVar31->x = pVVar23->x;
-      pVVar31->y = fVar7;
-      *(float *)(iVar30 + 0x18) = fVar15;
-      tangent0_00.y = fVar18;
-      tangent0_00.x = fVar17;
-      tangent0_00.z = fVar19;
-      tangent1_00.y = (float)uVar29;
-      tangent1_00.x = (float)uVar28;
-      tangent1_00.z = fVar20;
+    if (iVar34 == 0) goto code_?;
+    fVar16 = pVVar23->z;
+    if (*(int *)(iVar34 + 0xc) != 0) {
+      *(undefined8 *)(iVar34 + 0x10) = *(undefined8 *)pVVar23;
+      *(float *)(iVar34 + 0x18) = fVar16;
+      tangent0_00.y = (float)uVar31;
+      tangent0_00.x = (float)uVar30;
+      tangent0_00.z = fVar14;
+      tangent1_00.y = (float)uVar33;
+      tangent1_00.x = (float)uVar32;
+      tangent1_00.z = fVar15;
       pVVar23 = MVElipsoidOverlapCheck_GetTangentNormal
                           ((Vector3 *)&stack0xffffffb8,tangent0_00,tangent1_00,(MethodInfo *)0x0);
       fVar15 = pVVar23->z;
-      if (1 < *(uint *)(iVar30 + 0xc)) {
-        *(undefined8 *)(iVar30 + 0x1c) = *(undefined8 *)pVVar23;
-        *(float *)(iVar30 + 0x24) = fVar15;
-        tangent0_01.y = fVar18;
-        tangent0_01.x = fVar17;
-        tangent0_01.z = fVar19;
-        tangent1_01.y = fVar14;
-        tangent1_01.x = fVar13;
-        tangent1_01.z = fVar16;
+      if (1 < *(uint *)(iVar34 + 0xc)) {
+        *(undefined8 *)(iVar34 + 0x1c) = *(undefined8 *)pVVar23;
+        *(float *)(iVar34 + 0x24) = fVar15;
+        tangent0_01.y = (float)uVar31;
+        tangent0_01.x = (float)uVar30;
+        tangent0_01.z = fVar14;
+        tangent1_01.y = (float)uVar29;
+        tangent1_01.x = (float)uVar28;
+        tangent1_01.z = fVar13;
         pVVar23 = MVElipsoidOverlapCheck_GetTangentNormal
                             ((Vector3 *)&stack0xffffffb8,tangent0_01,tangent1_01,(MethodInfo *)0x0);
         fVar13 = pVVar23->z;
-        if (2 < *(uint *)(iVar30 + 0xc)) {
-          bVar32 = cRam_? == '\0';
-          *(undefined8 *)(iVar30 + 0x28) = *(undefined8 *)pVVar23;
-          *(float *)(iVar30 + 0x30) = fVar13;
-          if (bVar32) {
+        if (2 < *(uint *)(iVar34 + 0xc)) {
+          bVar35 = cRam_? == '\0';
+          *(undefined8 *)(iVar34 + 0x28) = *(undefined8 *)pVVar23;
+          *(float *)(iVar34 + 0x30) = fVar13;
+          if (bVar35) {
             func_?();
             cRam_? = '\x01';
           }
-          for (uVar33 = 0; (int)uVar33 < *(int *)(iVar30 + 0xc); uVar33 = uVar33 + 1) {
+          pVVar23 = (Vector3 *)(iVar34 + 0x10);
+          for (uVar36 = 0; (int)uVar36 < *(int *)(iVar34 + 0xc); uVar36 = uVar36 + 1) {
             if ((TypeInfo__MVElipsoidOverlapCheck->_1).cctor_finished_or_no_cctor == 0) {
               func_?(TypeInfo__MVElipsoidOverlapCheck);
             }
-            if (*(uint *)(iVar30 + 0xc) <= uVar33) goto code_?;
-            pVVar23 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyVector
+            if (*(uint *)(iVar34 + 0xc) <= uVar36) goto code_?;
+            pVVar37 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyVector
                                 ((Vector3 *)&fStack_5,
                                  &TypeInfo__MVElipsoidOverlapCheck->static_fields->worldToLocal,
-                                 *pVVar31,(MethodInfo *)0x0);
-            fVar14 = pVVar23->y;
-            fVar13 = pVVar23->z;
-            if (*(uint *)(iVar30 + 0xc) <= uVar33) goto code_?;
-            pVVar31->x = pVVar23->x;
-            pVVar31->y = fVar14;
-            pVVar31->z = fVar13;
-            pVVar31 = pVVar31 + 1;
+                                 *pVVar23,(MethodInfo *)0x0);
+            fVar14 = pVVar37->y;
+            fVar13 = pVVar37->z;
+            if (*(uint *)(iVar34 + 0xc) <= uVar36) goto code_?;
+            pVVar23->x = pVVar37->x;
+            pVVar23->y = fVar14;
+            pVVar23->z = fVar13;
+            pVVar23 = pVVar23 + 1;
           }
           if ((TypeInfo__MVElipsoidOverlapCheck->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__MVElipsoidOverlapCheck);
           }
-          fStack_34 = 0.0;
-          fStack_35 = 0.0;
-          uVar33 = 0;
-          fStack_36 = 0.0;
+          fStack_38 = 0.0;
+          fStack_39 = 0.0;
+          uVar36 = 0;
+          fStack_40 = 0.0;
           fVar13 = 0.0;
-          fVar14 = 0.0;
+          fStack_41 = 0.0;
           while( true ) {
-            if ((int)*(uint *)(iVar1 + 0xc) <= (int)uVar33) {
+            if (*(int *)(iVar34 + 0xc) <= (int)uVar36) {
               pVVar23 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyPoint
                                   ((Vector3 *)&fStack_5,
                                    &TypeInfo__MVElipsoidOverlapCheck->static_fields->worldToLocal,
                                    position,(MethodInfo *)0x0);
-              localElipsoidBounds.m_Extents.x = fStack_36;
+              localElipsoidBounds.m_Extents.x = fStack_40;
               localElipsoidBounds.m_Center = *pVVar23;
-              localElipsoidBounds.m_Extents.y = fStack_34;
-              localElipsoidBounds.m_Extents.z = fStack_35;
-              bVar37 = MVElipsoidOverlapCheck_ScanElipsoidBounds
+              localElipsoidBounds.m_Extents.y = fStack_38;
+              localElipsoidBounds.m_Extents.z = fStack_39;
+              bVar42 = MVElipsoidOverlapCheck_ScanElipsoidBounds
                                  (localElipsoidBounds,chunk,cmb,elipsoidOverlapResult,
                                   (MethodInfo *)0x0);
-              return bVar37;
+              return bVar42;
             }
-            if (*(uint *)(iVar1 + 0xc) <= uVar33) break;
-            iVar30 = 0;
+            if (*(uint *)(iVar34 + 0xc) <= uVar36) break;
+            index = 0;
+            iVar34 = iVar1;
             do {
+              fVar14 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
+                                 ((Vector3 *)&stack0xffffffbc,index,(MethodInfo *)0x0);
               fVar15 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
-                                 ((Vector3 *)&stack0xffffffbc,iVar30,(MethodInfo *)0x0);
-              fVar16 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
-                                 ((Vector3 *)&stack0xffffff94,iVar30,(MethodInfo *)0x0);
-              if (fVar15 < (float)((uint)fVar16 & _UNK_?)) {
-                fVar15 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
-                                   ((Vector3 *)&stack0xffffff94,iVar30,(MethodInfo *)0x0);
-                fStack_36 = fVar13;
-                fStack_34 = fVar14;
+                                 ((Vector3 *)&stack0xffffff64,index,(MethodInfo *)0x0);
+              if (fVar14 < (float)((uint)fVar15 & _UNK_?)) {
+                fVar14 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
+                                   ((Vector3 *)&stack0xffffff64,index,(MethodInfo *)0x0);
+                fStack_40 = fVar13;
+                fStack_38 = fStack_41;
                 UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_set_Item
-                          ((Vector3 *)&stack0xffffffd4,iVar30,(float)((uint)fVar15 & _UNK_?),
+                          ((Vector3 *)&stack0xffffff84,index,(float)((uint)fVar14 & _UNK_?),
                            (MethodInfo *)0x0);
-                fVar13 = fStack_36;
-                fVar14 = fStack_34;
+                fVar13 = fStack_40;
+                fStack_41 = fStack_38;
               }
-              iVar30 = iVar30 + 1;
-            } while (iVar30 < 3);
-            uVar33 = uVar33 + 1;
+              index = index + 1;
+            } while (index < 3);
+            uVar36 = uVar36 + 1;
+            iVar1 = iVar34;
           }
         }
       }
@@ -969,9 +973,9 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar38 = (code *)swi(3);
-  bVar37 = (*pcVar38)();
-  return bVar37;
+  pcVar43 = (code *)swi(3);
+  bVar42 = (*pcVar43)();
+  return bVar42;
 }
 
 
@@ -1171,56 +1175,55 @@ Bounds * Assembly-CSharp.dll::MVElipsoidOverlapCheck::
   }
   else {
     pVVar2 = vectors->vector;
-    pVStack_3 = pVVar2;
     for (; (int)uVar1 < (int)vectors->max_length; uVar1 = uVar1 + 1) {
       if ((TypeInfo__MVElipsoidOverlapCheck->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__MVElipsoidOverlapCheck);
       }
       if (vectors->max_length <= uVar1) goto code_?;
-      pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyVector
-                         (&VStack_5,&TypeInfo__MVElipsoidOverlapCheck->static_fields->worldToLocal,
+      pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyVector
+                         (&VStack_4,&TypeInfo__MVElipsoidOverlapCheck->static_fields->worldToLocal,
                           *pVVar2,(MethodInfo *)0x0);
-      fVar6 = pVVar4->y;
-      fVar7 = pVVar4->z;
+      fVar5 = pVVar3->y;
+      fVar6 = pVVar3->z;
       if (vectors->max_length <= uVar1) goto code_?;
-      pVVar2->x = pVVar4->x;
-      pVVar2->y = fVar6;
-      pVVar2->z = fVar7;
+      pVVar2->x = pVVar3->x;
+      pVVar2->y = fVar5;
+      pVVar2->z = fVar6;
       pVVar2 = pVVar2 + 1;
     }
     if ((TypeInfo__MVElipsoidOverlapCheck->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__MVElipsoidOverlapCheck);
     }
-    pVVar2 = vectors->vector;
+    pVStack_7 = vectors->vector;
     fVar8 = 0.0;
     fStack_9 = 0.0;
     uStack_10 = 0;
     puVar11 = (undefined *)0x0;
-    pVVar4 = (Vector3 *)0x0;
-    fVar7 = 0.0;
+    pVVar2 = (Vector3 *)0x0;
     fVar6 = 0.0;
+    fVar5 = 0.0;
     VStack_12.x = 0.0;
     VStack_12.y = 0.0;
     while( true ) {
       if ((int)vectors->max_length <= (int)uStack_10) {
         (__return_storage_ptr__->m_Center).x = (float)puVar11;
-        (__return_storage_ptr__->m_Center).y = (float)pVVar4;
-        (__return_storage_ptr__->m_Center).z = fVar7;
-        (__return_storage_ptr__->m_Extents).x = fVar6;
+        (__return_storage_ptr__->m_Center).y = (float)pVVar2;
+        (__return_storage_ptr__->m_Center).z = fVar6;
+        (__return_storage_ptr__->m_Extents).x = fVar5;
         (__return_storage_ptr__->m_Extents).y = fVar8;
         (__return_storage_ptr__->m_Extents).z = fStack_9;
         return __return_storage_ptr__;
       }
       if (vectors->max_length <= uStack_10) break;
-      VStack_13.x = pVVar2->x;
-      VStack_13.y = pVVar2->y;
+      VStack_13.x = pVStack_7->x;
+      VStack_13.y = pVStack_7->y;
       index = 0.0;
-      VStack_13.z = pVVar2->z;
+      VStack_13.z = pVStack_7->z;
       do {
-        VStack_5._0_8_ = VStack_12._0_8_;
-        VStack_5.z = fStack_9;
+        VStack_4._0_8_ = VStack_12._0_8_;
+        VStack_4.z = fStack_9;
         VStack_12.z = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
-                                (&VStack_5,(int32_t)index,(MethodInfo *)0x0);
+                                (&VStack_4,(int32_t)index,(MethodInfo *)0x0);
         fStack_14 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
                               (&VStack_13,(int32_t)index,(MethodInfo *)0x0);
         if (VStack_12.z < (float)((uint)fStack_14 & _UNK_?)) {
@@ -1229,23 +1232,22 @@ Bounds * Assembly-CSharp.dll::MVElipsoidOverlapCheck::
           VStack_15.z = fStack_9;
           VStack_12.z = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
                                   (&VStack_13,(int32_t)index,(MethodInfo *)0x0);
-          pVVar4 = &VStack_15;
+          pVVar2 = &VStack_15;
           puVar11 = &UNK_?;
-          fVar7 = index;
+          fVar6 = index;
           UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_set_Item
-                    (pVVar4,(int32_t)index,(float)((uint)VStack_12.z & _UNK_?),
+                    (pVVar2,(int32_t)index,(float)((uint)VStack_12.z & _UNK_?),
                      (MethodInfo *)0x0);
           VStack_12.x = VStack_15.x;
           VStack_12.y = VStack_15.y;
-          fVar6 = VStack_15.x;
+          fVar5 = VStack_15.x;
           fVar8 = VStack_15.y;
           fStack_9 = VStack_15.z;
         }
         index = (float)((int)index + 1);
       } while ((int)index < 3);
       uStack_10 = uStack_10 + 1;
-      pVVar2 = pVStack_3 + 1;
-      pVStack_3 = pVVar2;
+      pVStack_7 = pVStack_7 + 1;
     }
   }
 code_?:
@@ -1490,7 +1492,7 @@ bool Assembly-CSharp.dll::MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_HandleC
 
 {
   if (cRam_? == '\0') {
-    func_?(0x9924);
+    func_?(0x7ab0);
     func_?(&TypeInfo__ICubeModelCollider);
     func_?(&TypeInfo__MVElipsoidOverlapCheck);
     cRam_? = '\x01';
@@ -1586,69 +1588,72 @@ bool Assembly-CSharp.dll::MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_HandleT
       (B.y - C.y) * (B.y - C.y) + (B.x - C.x) * (B.x - C.x) + (B.z - C.z) * (B.z - C.z))) {
     fStack_1 = A.x - P.x;
     fStack_2 = A.y - P.y;
-    fVar3 = A.z - P.z;
-    fStack_4 = B.y - P.y;
+    fStack_3 = A.z - P.z;
+    fVar4 = B.z - P.z;
     fStack_5 = B.x - P.x;
-    fVar6 = B.z - P.z;
-    fStack_7 = C.y - P.y;
-    fStack_8 = C.x - P.x;
+    fStack_6 = B.y - P.y;
+    fVar7 = C.x - P.x;
+    fStack_8 = C.y - P.y;
     fStack_9 = C.z - P.z;
-    fStack_10 = fStack_4 - fStack_2;
-    fStack_11 = fStack_5 - fStack_1;
-    fStack_12 = fVar6 - fVar3;
-    fVar13 = r * r;
-    fStack_14 = (fStack_7 - fStack_2) * fStack_11 - (fStack_8 - fStack_1) * fStack_10;
-    uStack_15 = CONCAT44((fStack_8 - fStack_1) * fStack_12 - (fStack_9 - fVar3) * fStack_11,
-                         (fStack_9 - fVar3) * fStack_10 - (fStack_7 - fStack_2) * fStack_12);
-    fStack_16 = fStack_14;
-    puVar17 = (undefined8 *)func_?(auStack_18,&uStack_15,0);
-    fVar19 = *(float *)(puVar17 + 1);
-    fStack_20 = (float)*puVar17;
-    fStack_21 = (float)((ulonglong)*puVar17 >> 0x20);
-    fVar22 = fStack_21 * fStack_2 + fStack_20 * fStack_1 + fVar19 * fVar3;
-    fVar23 = fStack_2 * fStack_2 + fStack_1 * fStack_1 + fVar3 * fVar3;
-    fVar24 = fStack_4 * fStack_2 + fStack_5 * fStack_1 + fVar6 * fVar3;
-    fVar25 = fStack_7 * fStack_2 + fStack_8 * fStack_1 + fStack_9 * fVar3;
-    fVar26 = fStack_4 * fStack_4 + fStack_5 * fStack_5 + fVar6 * fVar6;
-    fVar27 = fStack_7 * fStack_4 + fStack_8 * fStack_5 + fStack_9 * fVar6;
-    fVar28 = fStack_7 * fStack_7 + fStack_8 * fStack_8 + fStack_9 * fStack_9;
-    fVar29 = fStack_8 - fStack_5;
-    fVar30 = fStack_7 - fStack_4;
-    fVar31 = fStack_9 - fVar6;
-    fVar32 = fStack_1 - fStack_8;
-    fVar33 = fStack_2 - fStack_7;
-    fVar34 = fVar3 - fStack_9;
-    fVar35 = fStack_10 * fStack_10 + fStack_11 * fStack_11 + fStack_12 * fStack_12;
+    fVar10 = r * r;
+    fStack_11 = (fStack_5 - fStack_1) * (fStack_8 - fStack_2) -
+                (fStack_6 - fStack_2) * (fVar7 - fStack_1);
+    uStack_12 = CONCAT44((fVar4 - fStack_3) * (fVar7 - fStack_1) -
+                         (fStack_5 - fStack_1) * (fStack_9 - fStack_3),
+                         (fStack_6 - fStack_2) * (fStack_9 - fStack_3) -
+                         (fVar4 - fStack_3) * (fStack_8 - fStack_2));
+    fStack_13 = fStack_11;
+    puVar14 = (undefined8 *)func_?(auStack_15,&uStack_12,0);
+    fVar16 = *(float *)(puVar14 + 1);
+    fStack_17 = (float)((ulonglong)*puVar14 >> 0x20);
+    fStack_18 = (float)*puVar14;
+    fVar19 = fStack_2 * fStack_17 + fStack_1 * fStack_18 + fStack_3 * fVar16;
+    fVar20 = fStack_2 * fStack_2 + fStack_1 * fStack_1 + fStack_3 * fStack_3;
+    fVar21 = fStack_6 * fStack_2 + fStack_5 * fStack_1 + fVar4 * fStack_3;
+    fVar22 = fStack_8 * fStack_2 + fVar7 * fStack_1 + fStack_9 * fStack_3;
+    fVar23 = fStack_6 * fStack_6 + fStack_5 * fStack_5 + fVar4 * fVar4;
+    fVar24 = fStack_8 * fStack_6 + fVar7 * fStack_5 + fStack_9 * fVar4;
+    fVar25 = fStack_8 * fStack_8 + fVar7 * fVar7 + fStack_9 * fStack_9;
+    fVar26 = fStack_5 - fStack_1;
+    fVar27 = fVar4 - fStack_3;
+    fVar28 = fStack_6 - fStack_2;
+    fVar29 = fStack_8 - fStack_6;
+    fVar30 = fVar7 - fStack_5;
+    fVar31 = fStack_9 - fVar4;
+    fVar32 = fStack_2 - fStack_8;
+    fVar33 = fStack_1 - fVar7;
+    fVar34 = fStack_3 - fStack_9;
+    fVar35 = fVar26 * fVar26 + fVar28 * fVar28 + fVar27 * fVar27;
     fVar36 = fVar30 * fVar30 + fVar29 * fVar29 + fVar31 * fVar31;
     fVar37 = fVar33 * fVar33 + fVar32 * fVar32 + fVar34 * fVar34;
-    fVar38 = fVar24 - fVar23;
-    fVar39 = fStack_1 * fVar35 - fStack_11 * fVar38;
-    fVar40 = fStack_2 * fVar35 - fStack_10 * fVar38;
-    fVar38 = fVar3 * fVar35 - fStack_12 * fVar38;
-    fVar41 = fVar27 - fVar26;
-    fVar42 = fStack_4 * fVar36 - fVar30 * fVar41;
-    fVar29 = fStack_5 * fVar36 - fVar29 * fVar41;
-    fVar31 = fVar6 * fVar36 - fVar31 * fVar41;
-    fVar41 = fVar25 - fVar28;
-    fVar32 = fStack_8 * fVar37 - fVar32 * fVar41;
-    fVar30 = fStack_7 * fVar37 - fVar33 * fVar41;
-    fVar41 = fStack_9 * fVar37 - fVar34 * fVar41;
-    fStack_43 = (float)((ulonglong)*puVar17 >> 0x20);
-    fStack_44 = (float)*puVar17;
-    return ((((fStack_43 * fStack_21 + fStack_44 * fStack_20 + fVar19 * fVar19) * fVar13 <
-              fVar22 * fVar22 ||
-             ((fVar37 * fVar13 * fVar37 < fVar30 * fVar30 + fVar32 * fVar32 + fVar41 * fVar41 &&
-               0.0 < (fStack_4 * fVar37 - fVar30) * fVar30 + (fStack_5 * fVar37 - fVar32) * fVar32
-                     + (fVar6 * fVar37 - fVar41) * fVar41 ||
-              fVar36 * fVar13 * fVar36 < fVar42 * fVar42 + fVar29 * fVar29 + fVar31 * fVar31 &&
-              0.0 < (fStack_2 * fVar36 - fVar42) * fVar42 + (fStack_1 * fVar36 - fVar29) * fVar29
-                    + (fVar3 * fVar36 - fVar31) * fVar31) ||
-             fVar35 * fVar13 * fVar35 < fVar40 * fVar40 + fVar39 * fVar39 + fVar38 * fVar38 &&
-             0.0 < (fStack_7 * fVar35 - fVar40) * fVar40 + (fStack_8 * fVar35 - fVar39) * fVar39 +
-                   (fStack_9 * fVar35 - fVar38) * fVar38)) ||
-            fVar13 < fVar28 && (fVar28 < fVar27 && fVar28 < fVar25)) ||
-           fVar13 < fVar26 && (fVar26 < fVar27 && fVar26 < fVar24)) ||
-           fVar13 < fVar23 && (fVar23 < fVar25 && fVar23 < fVar24);
+    fVar38 = fVar21 - fVar20;
+    fVar39 = fStack_1 * fVar35 - fVar38 * fVar26;
+    fVar26 = fStack_2 * fVar35 - fVar38 * fVar28;
+    fVar38 = fStack_3 * fVar35 - fVar38 * fVar27;
+    fVar28 = fVar24 - fVar23;
+    fVar27 = fStack_6 * fVar36 - fVar28 * fVar29;
+    fVar29 = fStack_5 * fVar36 - fVar28 * fVar30;
+    fVar30 = fVar4 * fVar36 - fVar28 * fVar31;
+    fVar28 = fVar22 - fVar25;
+    fVar33 = fVar7 * fVar37 - fVar28 * fVar33;
+    fVar32 = fStack_8 * fVar37 - fVar28 * fVar32;
+    fVar34 = fStack_9 * fVar37 - fVar28 * fVar34;
+    fStack_40 = (float)((ulonglong)*puVar14 >> 0x20);
+    fStack_41 = (float)*puVar14;
+    return ((((fStack_40 * fStack_17 + fStack_41 * fStack_18 + fVar16 * fVar16) * fVar10 <
+              fVar19 * fVar19 ||
+             ((fVar37 * fVar10 * fVar37 < fVar32 * fVar32 + fVar33 * fVar33 + fVar34 * fVar34 &&
+               0.0 < (fStack_6 * fVar37 - fVar32) * fVar32 + (fStack_5 * fVar37 - fVar33) * fVar33 +
+                     (fVar4 * fVar37 - fVar34) * fVar34 ||
+              fVar35 * fVar10 * fVar35 < fVar26 * fVar26 + fVar39 * fVar39 + fVar38 * fVar38 &&
+              0.0 < (fStack_8 * fVar35 - fVar26) * fVar26 + (fVar7 * fVar35 - fVar39) * fVar39 +
+                    (fStack_9 * fVar35 - fVar38) * fVar38) ||
+             fVar36 * fVar10 * fVar36 < fVar27 * fVar27 + fVar29 * fVar29 + fVar30 * fVar30 &&
+             0.0 < (fStack_2 * fVar36 - fVar27) * fVar27 + (fStack_1 * fVar36 - fVar29) * fVar29 +
+                   (fStack_3 * fVar36 - fVar30) * fVar30)) ||
+            fVar10 < fVar25 && (fVar25 < fVar24 && fVar25 < fVar22)) ||
+           fVar10 < fVar23 && (fVar23 < fVar24 && fVar23 < fVar21)) ||
+           fVar10 < fVar20 && (fVar20 < fVar22 && fVar20 < fVar21);
   }
   return 1;
 }
@@ -1665,7 +1670,7 @@ bool Assembly-CSharp.dll::MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_IsCente
     func_?(&TypeInfo__MVElipsoidOverlapCheck);
     cRam_? = '\x01';
   }
-  bVar1 = 0;
+  iStack_1 = 0;
   if ((TypeInfo__MVElipsoidOverlapCheck->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVElipsoidOverlapCheck);
   }
@@ -1698,8 +1703,10 @@ bool Assembly-CSharp.dll::MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_IsCente
         func_?(TypeInfo__MV__WorldObject__CubeBase);
       }
       uVar2 = 0;
-      pFStack_6 = TypeInfo__MV__WorldObject__CubeBase->static_fields->faceFlagsArray;
-      if (pFStack_6 != (FaceFlags__Enum__Array *)0x0) goto code_?;
+      pFVar6 = TypeInfo__MV__WorldObject__CubeBase->static_fields->faceFlagsArray;
+      if (pFVar6 == (FaceFlags__Enum__Array *)0x0) goto code_?;
+      iVar3 = 0;
+      iVar7 = iStack_1;
       goto code_?;
     }
     if ((TypeInfo__MVElipsoidOverlapCheck->_1).cctor_finished_or_no_cctor == 0) {
@@ -1725,15 +1732,16 @@ bool Assembly-CSharp.dll::MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_IsCente
   }
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  bVar8 = (*pcVar7)();
-  return bVar8;
+  pcVar8 = (code *)swi(3);
+  bVar9 = (*pcVar8)();
+  return bVar9;
 code_?:
-  if ((int)pFStack_6->max_length <= (int)uVar2) {
-    return bVar1 & 1;
+  iStack_1 = iVar7;
+  if ((int)pFVar6->max_length <= (int)uVar2) {
+    return (byte)iVar3 & 1;
   }
-  if (pFStack_6->max_length <= uVar2) goto code_?;
-  cube = (Cube *)CONCAT31(cube._1_3_,*(undefined1 *)((int)pFStack_6->vector + uVar2));
+  if (pFVar6->max_length <= uVar2) goto code_?;
+  cube = (Cube *)CONCAT31(cube._1_3_,*(undefined1 *)((int)pFVar6->vector + uVar2));
   if ((TypeInfo__MVElipsoidOverlapCheck->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVElipsoidOverlapCheck);
   }
@@ -1745,57 +1753,61 @@ code_?:
   MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_GetFace
             (&TypeInfo__MVElipsoidOverlapCheck->static_fields->cachedCorners,
              &TypeInfo__MVElipsoidOverlapCheck->static_fields->cachedFace,face,(MethodInfo *)0x0);
-  pMVar9 = TypeInfo__MVElipsoidOverlapCheck->static_fields;
-  fStack_10 = (pMVar9->localElipsoidPosition).x + _UNK_?;
-  pVVar4 = pMVar9->cachedFace;
-  fStack_11 = (pMVar9->localElipsoidPosition).y;
-  fStack_12 = (pMVar9->localElipsoidPosition).z;
+  pMStack_10 = TypeInfo__MVElipsoidOverlapCheck->static_fields;
+  fStack_11 = (pMStack_10->localElipsoidPosition).x + _UNK_?;
+  pVVar4 = pMStack_10->cachedFace;
+  fStack_12 = (pMStack_10->localElipsoidPosition).y;
+  fStack_13 = (pMStack_10->localElipsoidPosition).z;
   if (pVVar4 == (Vector3__Array *)0x0) goto code_?;
   if ((pVVar4->max_length == 0) || (pVVar4->max_length < 4)) goto code_?;
-  p2_00.y = fStack_11;
-  p2_00.x = fStack_10;
-  p2_00.z = fStack_12;
-  bVar8 = MathFunctions::MathFunctions_LineFacet
-                    (pMVar9->localElipsoidPosition,p2_00,pVVar4->vector[0],pVVar4->vector[3],
+  p2_00.y = fStack_12;
+  p2_00.x = fStack_11;
+  p2_00.z = fStack_13;
+  bVar9 = MathFunctions::MathFunctions_LineFacet
+                    (pMStack_10->localElipsoidPosition,p2_00,pVVar4->vector[0],pVVar4->vector[3],
                      pVVar4->vector[2],&VStack_5,(MethodInfo *)0x0);
-  if (bVar8 != 0) {
-    bVar1 = bVar1 + 1;
+  iVar3 = iStack_1 + 1;
+  if (bVar9 == 0) {
+    iVar3 = iStack_1;
   }
+  iStack_1 = iVar3;
   if ((TypeInfo__MVElipsoidOverlapCheck->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVElipsoidOverlapCheck);
   }
-  pMVar9 = TypeInfo__MVElipsoidOverlapCheck->static_fields;
-  uStack_13._0_4_ = (pMVar9->localElipsoidPosition).x;
-  uStack_13._4_4_ = (pMVar9->localElipsoidPosition).y;
-  fVar14 = (pMVar9->localElipsoidPosition).z;
-  if (pMVar9->cachedFace == (Vector3__Array *)0x0) goto code_?;
-  func_?(&uStack_15,2);
-  if (TypeInfo__MVElipsoidOverlapCheck->static_fields->cachedFace == (Vector3__Array *)0x0)
+  pMVar14 = TypeInfo__MVElipsoidOverlapCheck->static_fields;
+  uStack_15._0_4_ = (pMVar14->localElipsoidPosition).x;
+  uStack_15._4_4_ = (pMVar14->localElipsoidPosition).y;
+  pMStack_10 = (MVElipsoidOverlapCheck__StaticFields *)(pMVar14->localElipsoidPosition).z;
+  if (((TypeInfo__MVElipsoidOverlapCheck->static_fields->cachedFace == (Vector3__Array *)0x0) ||
+      (func_?(&uStack_16,2),
+      TypeInfo__MVElipsoidOverlapCheck->static_fields->cachedFace == (Vector3__Array *)0x0)) ||
+     (func_?(&uStack_17,1),
+     TypeInfo__MVElipsoidOverlapCheck->static_fields->cachedFace == (Vector3__Array *)0x0))
   goto code_?;
-  func_?(&uStack_16,1);
-  if (TypeInfo__MVElipsoidOverlapCheck->static_fields->cachedFace == (Vector3__Array *)0x0)
-  goto code_?;
-  func_?(&uStack_17,0);
-  p2.y = fStack_11;
-  p2.x = fStack_10;
-  p1.z = fVar14;
-  p1.x = (float)(undefined4)uStack_13;
-  p1.y = (float)uStack_13._4_4_;
-  p2.z = fStack_12;
-  pa.z = fStack_18;
-  pa.x = (float)(undefined4)uStack_15;
-  pa.y = (float)uStack_15._4_4_;
-  pb.z = fStack_19;
-  pb.x = (float)(undefined4)uStack_16;
-  pb.y = (float)uStack_16._4_4_;
-  pc.z = fStack_20;
-  pc.x = (float)(undefined4)uStack_17;
-  pc.y = (float)uStack_17._4_4_;
-  bVar8 = MathFunctions::MathFunctions_LineFacet(p1,p2,pa,pb,pc,&VStack_5,(MethodInfo *)0x0);
-  if (bVar8 != 0) {
-    bVar1 = bVar1 + 1;
-  }
+  func_?(&uStack_18,0);
   uVar2 = uVar2 + 1;
+  p2.y = fStack_12;
+  p2.x = fStack_11;
+  p1.z = (float)pMStack_10;
+  p1.x = (float)(undefined4)uStack_15;
+  p1.y = (float)uStack_15._4_4_;
+  p2.z = fStack_13;
+  pa.z = fStack_19;
+  pa.x = (float)(undefined4)uStack_16;
+  pa.y = (float)uStack_16._4_4_;
+  pb.z = fStack_20;
+  pb.x = (float)(undefined4)uStack_17;
+  pb.y = (float)uStack_17._4_4_;
+  pc.z = fStack_21;
+  pc.x = (float)(undefined4)uStack_18;
+  pc.y = (float)uStack_18._4_4_;
+  bVar9 = MathFunctions::MathFunctions_LineFacet(p1,p2,pa,pb,pc,&VStack_5,(MethodInfo *)0x0);
+  iVar3 = iStack_1 + 1;
+  iVar7 = iStack_1 + 1;
+  if (bVar9 == 0) {
+    iVar3 = iStack_1;
+    iVar7 = iStack_1;
+  }
   goto code_?;
 code_?:
   func_?();
@@ -1828,37 +1840,41 @@ bool Assembly-CSharp.dll::MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_ScanEli
   IStack_1.x = 0;
   IStack_1.y = 0;
   IStack_1.z = 0;
+  IStack_2.x = 0;
+  IStack_2.y = 0;
+  IStack_2.z = 0;
+  puStack_3 = (undefined *)0x0;
+  uStack_4 = (SharedCollisionFunctions__Class *)((uint)uStack_4._2_2_ << 0x10);
   if ((TypeInfo__MVElipsoidOverlapCheck->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVElipsoidOverlapCheck);
   }
-  pLVar2 = TypeInfo__MVElipsoidOverlapCheck->static_fields->cachedIntVectors;
-  if (pLVar2 != (List_1_MV_WorldObject_IntVector_ *)0x0) {
-    piVar3 = &(pLVar2->fields)._version;
-    *piVar3 = *piVar3 + 1;
-    (pLVar2->fields)._size = 0;
-    VStack_4.x = localElipsoidBounds.m_Extents.x;
-    VStack_4.y = 0.0;
-    VStack_4.z = 0.0;
-    uStack_5 = 0;
-    VStack_6.z = localElipsoidBounds.m_Center.z - localElipsoidBounds.m_Extents.z;
+  pLVar5 = TypeInfo__MVElipsoidOverlapCheck->static_fields->cachedIntVectors;
+  if (pLVar5 != (List_1_MV_WorldObject_IntVector_ *)0x0) {
+    piVar6 = &(pLVar5->fields)._version;
+    *piVar6 = *piVar6 + 1;
+    (pLVar5->fields)._size = 0;
+    VStack_7.x = localElipsoidBounds.m_Extents.x;
+    VStack_7.y = 0.0;
+    VStack_7.z = 0.0;
+    uStack_8 = 0;
+    VStack_9.z = localElipsoidBounds.m_Center.z - localElipsoidBounds.m_Extents.z;
     localPos.y = localElipsoidBounds.m_Center.x - localElipsoidBounds.m_Extents.x;
-    localPos.x = (float)&VStack_6.y;
+    localPos.x = (float)&VStack_9.y;
     localPos.z = localElipsoidBounds.m_Center.y - localElipsoidBounds.m_Extents.y;
-    IVar7 = MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::
-             CubeMathFunctions_LocalPosToLocalIntVector(localPos,(MethodInfo *)VStack_6.z);
-    uStack_8 = (undefined *)*IVar7._0_4_;
-    pSStack_9 = (SharedCollisionFunctions__Class *)
-                 CONCAT22(pSStack_9._2_2_,*(undefined2 *)(IVar7._0_4_ + 1));
-    VStack_6.z = localElipsoidBounds.m_Extents.z + localElipsoidBounds.m_Center.z;
-    localPos_00.y = VStack_4.x + localElipsoidBounds.m_Center.x;
-    localPos_00.x = (float)&VStack_6.y;
+    IVar10 = MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::
+             CubeMathFunctions_LocalPosToLocalIntVector(localPos,(MethodInfo *)VStack_9.z);
+    IStack_1._0_4_ = *IVar10._0_4_;
+    IStack_1.z = *(int16_t *)(IVar10._0_4_ + 1);
+    VStack_9.z = localElipsoidBounds.m_Extents.z + localElipsoidBounds.m_Center.z;
+    localPos_00.y = VStack_7.x + localElipsoidBounds.m_Center.x;
+    localPos_00.x = (float)&VStack_9.y;
     localPos_00.z._0_2_ = SUB42(localElipsoidBounds.m_Extents.y + localElipsoidBounds.m_Center.y,0);
     localPos_00.z._2_2_ =
          (short)((uint)(localElipsoidBounds.m_Extents.y + localElipsoidBounds.m_Center.y) >> 0x10);
-    IVar7 = MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::
-             CubeMathFunctions_LocalPosToLocalIntVector(localPos_00,(MethodInfo *)VStack_6.z);
-    IStack_10._0_4_ = *IVar7._0_4_;
-    IStack_10.z = *(int16_t *)(IVar7._0_4_ + 1);
+    IVar10 = MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::
+             CubeMathFunctions_LocalPosToLocalIntVector(localPos_00,(MethodInfo *)VStack_9.z);
+    IStack_2._0_4_ = *IVar10._0_4_;
+    IStack_2.z = *(int16_t *)(IVar10._0_4_ + 1);
     IStack_11.x = 0;
     IStack_11.y = 0;
     IStack_11.z = 0;
@@ -1867,108 +1883,102 @@ bool Assembly-CSharp.dll::MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_ScanEli
     IStack_12.z = 0;
     if (chunk != (BoxCollider *)0x0) {
       pVVar13 = UnityEngine.PhysicsModule.dll::UnityEngine::BoxCollider::BoxCollider_get_center
-                         (&VStack_6,chunk,(MethodInfo *)0x0);
+                         (&VStack_9,chunk,(MethodInfo *)0x0);
       uVar14._0_4_ = pVVar13->x;
       uVar14._4_4_ = pVVar13->y;
       puVar15 = &UNK_?;
       pVVar13 = UnityEngine.PhysicsModule.dll::UnityEngine::BoxCollider::BoxCollider_get_size
-                         (&VStack_4,chunk,(MethodInfo *)0x0);
-      VStack_6.x = pVVar13->x;
-      VStack_6.y = pVVar13->y;
-      fVar16 = pVVar13->z * _UNK_?;
-      fVar17 = VStack_6.x * _UNK_?;
-      fVar18 = VStack_6.y * _UNK_?;
-      VStack_6.z = fVar16;
+                         (&VStack_7,chunk,(MethodInfo *)0x0);
+      VStack_9.x = pVVar13->x;
+      VStack_9.y = pVVar13->y;
+      VStack_9.z = pVVar13->z;
+      fVar16 = VStack_9.x * _UNK_?;
+      fVar17 = VStack_9.y * _UNK_?;
+      fVar18 = VStack_9.z * _UNK_?;
       if ((TypeInfo__SharedCollisionFunctions->_1).cctor_finished_or_no_cctor == 0) {
-        pSStack_9 = TypeInfo__SharedCollisionFunctions;
+        uStack_4 = TypeInfo__SharedCollisionFunctions;
         func_?();
       }
-      localSpaceBounds.m_Extents.z = fVar16;
-      localSpaceBounds.m_Extents.y = fVar18;
+      localSpaceBounds.m_Extents.z = fVar18;
+      localSpaceBounds.m_Extents.y = fVar17;
       localSpaceBounds.m_Center.z = (float)puVar15;
       localSpaceBounds.m_Center.x = (float)(int)uVar14;
       localSpaceBounds.m_Center.y = (float)(int)((ulonglong)uVar14 >> 0x20);
-      localSpaceBounds.m_Extents.x = fVar17;
+      localSpaceBounds.m_Extents.x = fVar16;
       SharedCollisionFunctions::SharedCollisionFunctions_GetVoxelBounds
                 (&IStack_11,&IStack_12,localSpaceBounds,(MethodInfo *)0x0);
-      IVar7.z = IStack_11.z;
-      IVar7.x = IStack_11.x;
-      IVar7.y = IStack_11.y;
+      IVar10.z = IStack_11.z;
+      IVar10.x = IStack_11.x;
+      IVar10.y = IStack_11.y;
       max.z = IStack_12.z;
       max.x = IStack_12.x;
       max.y = IStack_12.y;
-      MathFunctions::MathFunctions_ClampIntVector
-                ((IntVector *)&uStack_8,IVar7,max,(MethodInfo *)0x0);
+      MathFunctions::MathFunctions_ClampIntVector(&IStack_1,IVar10,max,(MethodInfo *)0x0);
       min.z = IStack_11.z;
       min.x = IStack_11.x;
       min.y = IStack_11.y;
       max_00.z = IStack_12.z;
       max_00.x = IStack_12.x;
       max_00.y = IStack_12.y;
-      MathFunctions::MathFunctions_ClampIntVector(&IStack_10,min,max_00,(MethodInfo *)0x0);
-      x = (int)(short)uStack_8;
+      MathFunctions::MathFunctions_ClampIntVector(&IStack_2,min,max_00,(MethodInfo *)0x0);
+      x = (int)IStack_1.x;
       bStack_19 = 0;
-      if (x <= IStack_10.x) {
-        iVar20 = IStack_10.z;
-        iVar21 = IStack_10.y;
+      if (x <= IStack_2.x) {
+        iVar20 = IStack_2.z;
+        iVar21 = IStack_2.y;
         do {
-          VStack_6.z = (float)(int)uStack_8._2_2_;
+          VStack_9.z = (float)(int)IStack_1.y;
           iStack_22 = x;
-          if ((int)VStack_6.z <= (int)iVar21) {
+          if ((int)VStack_9.z <= (int)iVar21) {
             do {
-              z = (int)(short)pSStack_9;
+              z = (int)IStack_1.z;
               if (z <= iVar20) {
                 do {
-                  fVar16 = VStack_6.z;
+                  fVar18 = VStack_9.z;
                   if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
                     func_?(TypeInfo__MV__WorldObject__IntVector);
                     x = iStack_22;
                   }
                   MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                            (&IStack_1,x,(int32_t)fVar16,z,(MethodInfo *)0x0);
-                  uVar23 = IStack_1._0_4_;
-                  iStack_24 = IStack_1.z;
+                            ((IntVector *)&puStack_3,x,(int32_t)fVar18,z,(MethodInfo *)0x0);
+                  puVar15 = puStack_3;
+                  iStack_23 = (int16_t)uStack_4;
                   if ((TypeInfo__MVElipsoidOverlapCheck->_1).cctor_finished_or_no_cctor == 0) {
                     func_?(TypeInfo__MVElipsoidOverlapCheck);
                   }
-                  uVar25 = IStack_1._0_4_;
-                  cubePos.z = iStack_24;
-                  IStack_1.x = (int16_t)uVar23;
-                  IStack_1.y = SUB42(uVar23,2);
-                  cubePos.x = IStack_1.x;
-                  cubePos.y = IStack_1.y;
-                  IStack_1._0_4_ = uVar25;
-                  bVar26 = MVElipsoidOverlapCheck_HandleCube
+                  cubePos.z = iStack_23;
+                  cubePos._0_4_ = puVar15;
+                  bVar24 = MVElipsoidOverlapCheck_HandleCube
                                     (cubePos,cmb,elipsoidOverlapResult,(MethodInfo *)0x0);
-                  if (bVar26 != 0) {
+                  if (bVar24 != 0) {
                     bStack_19 = 1;
                     if ((TypeInfo__MVElipsoidOverlapCheck->_1).cctor_finished_or_no_cctor == 0) {
-                      VStack_4.y = (float)TypeInfo__MVElipsoidOverlapCheck;
-                      VStack_4.x = (float)&UNK_?;
+                      VStack_7.y = (float)TypeInfo__MVElipsoidOverlapCheck;
+                      VStack_7.x = (float)&UNK_?;
                       func_?();
                     }
-                    pLVar2 = TypeInfo__MVElipsoidOverlapCheck->static_fields->cachedIntVectors;
-                    if (pLVar2 == (List_1_MV_WorldObject_IntVector_ *)0x0) goto code_?;
-                    func_?(pLVar2,IStack_1._0_4_,IStack_1.z,
+                    pLVar5 = TypeInfo__MVElipsoidOverlapCheck->static_fields->cachedIntVectors;
+                    if (pLVar5 == (List_1_MV_WorldObject_IntVector_ *)0x0) goto code_?;
+                    func_?(pLVar5,puStack_3,(uint)uStack_4 & 0xffff,
                                     MethodInfo__System__Collections__Generic__List<MV::WorldObject::IntVector>__Add_MV__WorldObject__IntVector_
                                    );
                     if (TypeInfo__MVElipsoidOverlapCheck->static_fields->checkType == 0) {
                       if ((TypeInfo__MVElipsoidOverlapCheck->_1).cctor_finished_or_no_cctor == 0) {
                         func_?(TypeInfo__MVElipsoidOverlapCheck);
                       }
-                      pLVar27 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                      pLVar25 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
                                 *)TypeInfo__MVElipsoidOverlapCheck->static_fields->cachedIntVectors;
-                      if (pLVar27 != (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                      if (pLVar25 != (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
                                      *)0x0) {
-                        pMVar28 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
+                        pMVar26 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::
                                  UIElements::Internal::
                                  MultiColumnCollectionHeader+ViewState+ColumnState]::
                                  List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray
-                                           (pLVar27,
+                                           (pLVar25,
                                             MethodInfo__System__Collections__Generic__List<MV::WorldObject::IntVector>__ToArray__
                                            );
-                        elipsoidOverlapResult->localCubePos = (IntVector__Array *)pMVar28;
-                        func_?(&elipsoidOverlapResult->localCubePos,pMVar28);
+                        elipsoidOverlapResult->localCubePos = (IntVector__Array *)pMVar26;
+                        func_?(&elipsoidOverlapResult->localCubePos,pMVar26);
                         return 1;
                       }
                       goto code_?;
@@ -1976,32 +1986,32 @@ bool Assembly-CSharp.dll::MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_ScanEli
                   }
                   z = z + 1;
                   x = iStack_22;
-                  iVar20 = IStack_10.z;
-                } while (z <= IStack_10.z);
+                  iVar20 = IStack_2.z;
+                } while (z <= IStack_2.z);
               }
-              VStack_6.z = (float)((int)&((MethodInfo *)VStack_6.z)->methodPointer + 1);
-              iVar21 = IStack_10.y;
-            } while ((int)VStack_6.z <= (int)IStack_10.y);
+              VStack_9.z = (float)((int)&((MethodInfo *)VStack_9.z)->methodPointer + 1);
+              iVar21 = IStack_2.y;
+            } while ((int)VStack_9.z <= (int)IStack_2.y);
           }
           x = x + 1;
-        } while (x <= IStack_10.x);
+        } while (x <= IStack_2.x);
         if (bStack_19 != 0) {
           iStack_22 = x;
           if ((TypeInfo__MVElipsoidOverlapCheck->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__MVElipsoidOverlapCheck);
           }
-          pLVar27 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+          pLVar25 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
                     *)TypeInfo__MVElipsoidOverlapCheck->static_fields->cachedIntVectors;
-          if (pLVar27 == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+          if (pLVar25 == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
                          *)0x0) goto code_?;
-          pMVar28 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+          pMVar26 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
                    Internal::MultiColumnCollectionHeader+ViewState+ColumnState]::
                    List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray
-                             (pLVar27,
+                             (pLVar25,
                               MethodInfo__System__Collections__Generic__List<MV::WorldObject::IntVector>__ToArray__
                              );
-          elipsoidOverlapResult->localCubePos = (IntVector__Array *)pMVar28;
-          func_?(&elipsoidOverlapResult->localCubePos,pMVar28);
+          elipsoidOverlapResult->localCubePos = (IntVector__Array *)pMVar26;
+          func_?(&elipsoidOverlapResult->localCubePos,pMVar26);
         }
       }
       return bStack_19;
@@ -2009,9 +2019,9 @@ bool Assembly-CSharp.dll::MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_ScanEli
   }
 code_?:
   func_?();
-  pcVar29 = (code *)swi(3);
-  bVar26 = (*pcVar29)();
-  return bVar26;
+  pcVar27 = (code *)swi(3);
+  bVar24 = (*pcVar27)();
+  return bVar24;
 }
 
 

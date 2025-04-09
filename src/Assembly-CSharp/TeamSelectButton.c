@@ -33,94 +33,98 @@ void Assembly-CSharp.dll::TeamSelectButton::TeamSelectButton_Initialize
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  ppTVar6 = &(this->fields).teamData;
-  *ppTVar6 = teamData;
-  func_?(ppTVar6,teamData);
-  ppUVar7 = &(this->fields).OnTeamSelected;
-  *ppUVar7 = OnTeamSelected;
-  func_?(ppUVar7,OnTeamSelected);
-  pIVar8 = (this->fields).buttonImage;
+  DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
+  DStack_6._version = 0;
+  DStack_6._index = 0;
+  DStack_6._current.key = 0;
+  (this->fields).teamData = teamData;
+  DStack_6._current.value = (Object *)0x0;
+  DStack_6._getEnumeratorRetType = 0;
+  func_?(&(this->fields).teamData,teamData);
+  (this->fields).OnTeamSelected = OnTeamSelected;
+  func_?(&(this->fields).OnTeamSelected,OnTeamSelected);
+  pIVar7 = (this->fields).buttonImage;
   if (teamData != (TeamData *)0x0) {
     team = (teamData->fields).team;
     if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__Styles);
     }
-    pCVar9 = Styles::Styles_GetTeamColor((Color *)(auStack_10 + 8),team,0,(MethodInfo *)0x0);
-    if (pIVar8 != (Image *)0x0) {
-      DStack_11._dictionary =
+    pCVar8 = Styles::Styles_GetTeamColor((Color *)(auStack_9 + 8),team,0,(MethodInfo *)0x0);
+    if (pIVar7 != (Image *)0x0) {
+      DStack_6._dictionary =
            (Dictionary_2_System_UInt32_System_Object_ *)
-           (pIVar8->klass->vtable).get_raycastTarget.methodPtr;
-      (*(code *)(pIVar8->klass->vtable).set_color.method)(pIVar8,pCVar9->r);
-      pTVar12 = (this->fields).teamName;
-      if (pTVar12 != (Text *)0x0) {
-        (*(code *)(pTVar12->klass->vtable).set_text.method)
-                  (pTVar12,(teamData->fields).representedName,
-                   (pTVar12->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-        pTVar12 = (this->fields).playerCountText;
-        pMVar13 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if ((pMVar13 != (MVNetworkGame *)0x0) &&
-           (this_00 = (pMVar13->fields).teamManager, this_00 != (MVTeamManager *)0x0)) {
-          IStack_14.m_value =
+           (pIVar7->klass->vtable).get_raycastTarget.methodPtr;
+      (*(code *)(pIVar7->klass->vtable).set_color.method)(pIVar7,pCVar8->r);
+      pTVar10 = (this->fields).teamName;
+      if (pTVar10 != (Text *)0x0) {
+        (*(code *)(pTVar10->klass->vtable).set_text.method)
+                  (pTVar10,(teamData->fields).representedName,
+                   (pTVar10->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+        pTVar10 = (this->fields).playerCountText;
+        pMVar11 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if ((pMVar11 != (MVNetworkGame *)0x0) &&
+           (this_00 = (pMVar11->fields).teamManager, this_00 != (MVTeamManager *)0x0)) {
+          IStack_12.m_value =
                MVTeamManager::MVTeamManager_GetNoOfPlayersInTeam
                          (this_00,(teamData->fields).team,(MethodInfo *)0x0);
-          pSVar15 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_14,(MethodInfo *)0x0);
-          if (pTVar12 != (Text *)0x0) {
+          pSVar13 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_12,(MethodInfo *)0x0);
+          if (pTVar10 != (Text *)0x0) {
             method_00 = (MethodInfo *)&UNK_?;
-            (*(code *)(pTVar12->klass->vtable).set_text.method)
-                      (pTVar12,pSVar15,
-                       (pTVar12->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-            pMVar13 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-            if ((pMVar13 != (MVNetworkGame *)0x0) &&
-               (this_01 = (pMVar13->fields)._Friends_k__BackingField, this_01 != (FriendList *)0x0))
+            (*(code *)(pTVar10->klass->vtable).set_text.method)
+                      (pTVar10,pSVar13,
+                       (pTVar10->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+            pMVar11 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+            if ((pMVar11 != (MVNetworkGame *)0x0) &&
+               (this_01 = (pMVar11->fields)._Friends_k__BackingField, this_01 != (FriendList *)0x0))
             {
               this_03 = (Dictionary_2_System_UInt32_System_Object_ *)
                         FriendList::FriendList_GetOnlineFriends(this_01,(MethodInfo *)0x0);
-              IStack_16.m_value = 0;
+              IStack_14.m_value = 0;
               if (this_03 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
-                pDVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                          UInt32,System::Object]::
-                          Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                                    ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_
-                                      *)auStack_10,this_03,
-                                     MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__GetEnumerator__
-                                    );
-                DStack_11._dictionary = pDVar17->_dictionary;
-                DStack_11._version = pDVar17->_version;
-                DStack_11._index = pDVar17->_index;
-                DStack_11._current.key = (pDVar17->_current).key;
-                DStack_11._16_8_ = *(undefined8 *)&(pDVar17->_current).value;
-                pOStack_18 = (Object *)0x0;
+                pDVar15 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                         UInt32,System::Object]::
+                         Dictionary_2_System_UInt32_System_Object__GetEnumerator
+                                   ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_
+                                     *)auStack_9,this_03,
+                                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__GetEnumerator__
+                                   );
+                DStack_6._dictionary = pDVar15->_dictionary;
+                DStack_6._version = pDVar15->_version;
+                DStack_6._index = pDVar15->_index;
+                DStack_6._current.key = (pDVar15->_current).key;
+                DStack_6._16_8_ = *(undefined8 *)&(pDVar15->_current).value;
+                pOStack_16 = (Object *)0x0;
                 uStack_1 = 1;
-                pDStack_19 = &DStack_11;
+                pDStack_17 = &DStack_6;
                 while( true ) {
-                  bVar20 = mscorlib.dll::System::Collections::Generic::
+                  bVar18 = mscorlib.dll::System::Collections::Generic::
                           Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
                           Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                                    (&DStack_11,
+                                    (&DStack_6,
                                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
                                     );
-                  if (bVar20 == 0) break;
-                  if (DStack_11._current.value == (Object *)0x0) goto code_?;
-                  if (DStack_11._current.value[9].klass == (Object__Class *)(teamData->fields).team)
+                  if (bVar18 == 0) break;
+                  if (DStack_6._current.value == (Object *)0x0) goto code_?;
+                  if (DStack_6._current.value[9].klass == (Object__Class *)(teamData->fields).team)
                   {
-                    IStack_16.m_value = IStack_16.m_value + 1;
+                    IStack_14.m_value = IStack_14.m_value + 1;
                   }
                 }
                 uStack_1 = 0xffffffff;
                 mscorlib.dll::System::ThrowHelper::
                 ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                          ((Object *)&DStack_11,
+                          ((Object *)&DStack_6,
                            (ExceptionArgument__Enum)
                            MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>__Dispose__
                            ,method_00);
                 uStack_1 = 0xffffffff;
-                pTVar12 = (this->fields).friendCountText;
-                pSVar15 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_16,(MethodInfo *)0x0);
-                if (pTVar12 != (Text *)0x0) {
-                  (*(code *)(pTVar12->klass->vtable).set_text.method)
-                            (pTVar12,pSVar15,
-                             (pTVar12->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-                  if (IStack_16.m_value == 0) {
+                pTVar10 = (this->fields).friendCountText;
+                pSVar13 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_14,(MethodInfo *)0x0);
+                if (pTVar10 != (Text *)0x0) {
+                  (*(code *)(pTVar10->klass->vtable).set_text.method)
+                            (pTVar10,pSVar13,
+                             (pTVar10->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+                  if (IStack_14.m_value == 0) {
                     this_02 = (this->fields).friendIcon;
                     if (this_02 == (GameObject *)0x0) goto code_?;
                     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
@@ -138,8 +142,8 @@ void Assembly-CSharp.dll::TeamSelectButton::TeamSelectButton_Initialize
   }
 code_?:
   func_?();
-  pcVar21 = (code *)swi(3);
-  (*pcVar21)();
+  pcVar19 = (code *)swi(3);
+  (*pcVar19)();
   return;
 }
 

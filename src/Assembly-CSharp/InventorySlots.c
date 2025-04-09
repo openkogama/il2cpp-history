@@ -173,45 +173,51 @@ Assembly-CSharp.dll::InventorySlots::InventorySlots_GetSlotBasedOnAbsolute
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
+  DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
+  DStack_6._version = 0;
+  DStack_6._index = 0;
+  DStack_6._current.key = 0;
+  DStack_6._current.value = (Object *)0x0;
+  DStack_6._getEnumeratorRetType = 0;
   this_00 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields).inventorySlots;
   if (this_00 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
-    pDVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+    pDVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
              ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                       (&DStack_7,this_00,
+                       (&DStack_8,this_00,
                         MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__GetEnumerator__
                        );
-    uStack_8 = 0;
-    DStack_9._dictionary = pDVar6->_dictionary;
-    DStack_9._version = pDVar6->_version;
-    DStack_9._index = pDVar6->_index;
-    DStack_9._current.key = (pDVar6->_current).key;
-    DStack_9._16_8_ = *(undefined8 *)&(pDVar6->_current).value;
+    uStack_9 = 0;
+    DStack_6._dictionary = pDVar7->_dictionary;
+    DStack_6._version = pDVar7->_version;
+    DStack_6._index = pDVar7->_index;
+    DStack_6._current.key = (pDVar7->_current).key;
+    DStack_6._16_8_ = *(undefined8 *)&(pDVar7->_current).value;
     uStack_1 = 1;
-    pDStack_10 = &DStack_9;
+    pDStack_10 = &DStack_6;
     while( true ) {
       bVar11 = mscorlib.dll::System::Collections::Generic::
               Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
               Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                        (&DStack_9,
+                        (&DStack_6,
                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_InventorySlot>__MoveNext__
                         );
       if (bVar11 == 0) {
         uStack_1 = 0xffffffff;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&DStack_9,
+                  ((Object *)&DStack_6,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_InventorySlot>__Dispose__
                    ,unaff_EDI);
         *unaff_FS_OFFSET = uStack_3;
         return (InventorySlot *)0x0;
       }
-      pOVar12 = DStack_9._current.value;
-      if ((InventorySlot *)DStack_9._current.value == (InventorySlot *)0x0) break;
-      if (((InventorySlot__Fields *)((int)DStack_9._current.value + 8))->
+      pOVar12 = DStack_6._current.value;
+      if ((InventorySlot *)DStack_6._current.value == (InventorySlot *)0x0) break;
+      if (((InventorySlot__Fields *)((int)DStack_6._current.value + 8))->
           _AbsoluteSlot_k__BackingField == absoluteSlotIndex) {
         uStack_1 = 0xffffffff;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&DStack_9,
+                  ((Object *)&DStack_6,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_InventorySlot>__Dispose__
                    ,unaff_EDI);
@@ -472,41 +478,47 @@ void Assembly-CSharp.dll::InventorySlots::InventorySlots_UpdateAbsoluteSlotValue
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
+  DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
+  DStack_6._version = 0;
+  DStack_6._index = 0;
+  DStack_6._current.key = 0;
+  DStack_6._current.value = (Object *)0x0;
+  DStack_6._getEnumeratorRetType = 0;
   this_00 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields).inventorySlots;
   if (this_00 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
-    pDVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+    pDVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
              ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                       (&DStack_7,this_00,
+                       (&DStack_8,this_00,
                         MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__GetEnumerator__
                        );
-    uStack_8 = 0;
-    DStack_9._dictionary = pDVar6->_dictionary;
-    DStack_9._version = pDVar6->_version;
-    DStack_9._index = pDVar6->_index;
-    DStack_9._current.key = (pDVar6->_current).key;
-    DStack_9._16_8_ = *(undefined8 *)&(pDVar6->_current).value;
+    uStack_9 = 0;
+    DStack_6._dictionary = pDVar7->_dictionary;
+    DStack_6._version = pDVar7->_version;
+    DStack_6._index = pDVar7->_index;
+    DStack_6._current.key = (pDVar7->_current).key;
+    DStack_6._16_8_ = *(undefined8 *)&(pDVar7->_current).value;
     uStack_1 = 1;
-    pDStack_10 = &DStack_9;
+    pDStack_10 = &DStack_6;
     while( true ) {
       bVar11 = mscorlib.dll::System::Collections::Generic::
               Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
               Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                        (&DStack_9,
+                        (&DStack_6,
                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_InventorySlot>__MoveNext__
                         );
       if (bVar11 == 0) {
         uStack_1 = 0xffffffff;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&DStack_9,
+                  ((Object *)&DStack_6,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_InventorySlot>__Dispose__
                    ,unaff_EDI);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      if (DStack_9._current.value == (Object *)0x0) break;
-      DStack_9._current.value[2].klass =
-           (Object__Class *)((page + -1) * numberOfSlots + DStack_9._current.key);
+      if (DStack_6._current.value == (Object *)0x0) break;
+      DStack_6._current.value[2].klass =
+           (Object__Class *)((page + -1) * numberOfSlots + DStack_6._current.key);
     }
   }
   func_?();
@@ -538,9 +550,8 @@ void Assembly-CSharp.dll::InventorySlots::InventorySlots__ctor
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__Dictionary__)
   ;
-  ppDVar1 = &(this->fields).inventorySlots;
-  *ppDVar1 = (Dictionary_2_System_Int32_InventorySlot_ *)this_00;
-  func_?(ppDVar1,this_00);
+  (this->fields).inventorySlots = (Dictionary_2_System_Int32_InventorySlot_ *)this_00;
+  func_?(&(this->fields).inventorySlots,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

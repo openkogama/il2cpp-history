@@ -111,24 +111,24 @@ code_?:
   bVar4 = (undefined1 *)0xffffffbf < &stack0xffffffd8;
   pFStack5 = this_00;
   uVar6 = func_?();
-  piVar7 = (int *)((ulonglong)uVar6 >> 0x20);
-  pcVar8 = (char *)uVar6;
-  bVar1 = CARRY4(in_stack_9,(uint)this_00) ||
-           CARRY4((int)&this_00->klass + in_stack_9,(uint)bVar4);
-  puVar10 = &pSVar2[-1].fields.field_0x7;
-  bVar11 = (byte)((uint)extraout_ECX >> 8);
-  bVar12 = CARRY1(*puVar10,bVar11) || CARRY1(*puVar10 + bVar11,bVar1);
-  *puVar10 = *puVar10 + bVar11 + bVar1;
-  pbVar13 = (byte *)(pcVar8 + -0x43);
-  bVar4 = *pbVar13;
-  bVar14 = *pbVar13;
-  *pbVar13 = bVar14 + bVar11 + bVar12;
-  *pcVar8 = *pcVar8 + (char)uVar6 + (CARRY1(bVar4,bVar11) || CARRY1(bVar14 + bVar11,bVar12));
-  *extraout_ECX = (int)(pcVar8 + *extraout_ECX);
-  *piVar7 = (int)(pcVar8 + *piVar7);
-  text->klass = (String__Class *)(pcVar8 + (int)text->klass);
-  *(int *)((int)extraout_ECX + (int)pcVar8) =
-       (int)(pcVar8 + *(int *)((int)extraout_ECX + (int)pcVar8));
+  piStack7 = (int *)((ulonglong)uVar6 >> 0x20);
+  piVar8 = (int *)uVar6;
+  pbVar9 = (byte *)((int)piStack7 + -0x51efb0ad);
+  bVar10 = (byte)text;
+  bVar1 = CARRY1(*pbVar9,bVar10) || CARRY1(*pbVar9 + bVar10,bVar4);
+  *pbVar9 = *pbVar9 + bVar10 + bVar4;
+  bVar4 = bVar10 + (byte)uVar6;
+  bVar11 = CARRY1(bVar10,(byte)uVar6) || CARRY1(bVar4,bVar1);
+  piVar12 = (int *)CONCAT31((int3)((uint)text >> 8),bVar4 + bVar1);
+  bVar10 = (byte)((ulonglong)uVar6 >> 8);
+  bVar4 = (byte)extraout_ECX + bVar10;
+  cVar13 = bVar4 + bVar11;
+  pcVar14 = (char *)CONCAT31((int3)((uint)extraout_ECX >> 8),cVar13);
+  *pcVar14 = *pcVar14 + cVar13 + (CARRY1((byte)extraout_ECX,bVar10) || CARRY1(bVar4,bVar11));
+  *piVar8 = (int)(pcVar14 + *piVar8);
+  *piStack7 = (int)(pcVar14 + *piStack7);
+  *piVar12 = (int)(pcVar14 + *piVar12);
+  *(int *)((int)piVar8 + (int)pcVar14) = (int)(pcVar14 + *(int *)((int)piVar8 + (int)pcVar14));
   pcVar15 = (code *)swi(3);
   pSVar2 = (String *)(*pcVar15)();
   return pSVar2;
@@ -460,20 +460,25 @@ code_?:
   uVar3 = func_?(&TypeInfo__System__Char,&stack0xfffffff8);
   arg0 = (Object *)func_?(uVar3);
   method_00 = (MethodInfo *)0x0;
-  pSVar2 = text;
-  format = (String *)func_?(&StringLiteral_Invalid_character___0___in_trans);
-  pSVar2 = mscorlib.dll::System::String::String_Format_1(format,arg0,(Object *)pSVar2,method_00);
+  pSVar2 = (String *)func_?(&StringLiteral_Invalid_character___0___in_trans);
+  pSVar2 = mscorlib.dll::System::String::String_Format_1(pSVar2,arg0,(Object *)text,method_00);
   uVar3 = func_?(&TypeInfo__System__FormatException);
   this_00 = (FormatException *)func_?(uVar3);
   mscorlib.dll::System::FormatException::FormatException__ctor_1(this_00,pSVar2,(MethodInfo *)0x0);
-  uStack4 =
+  iStack4 =
        func_?(&MethodInfo__GNU__Gettext__StringEscaping__ToGettextFormat_System__String_);
-  text = (String *)&UNK_?;
-  method = (MethodInfo *)this_00;
-  func_?();
-  text = (String *)CONCAT22(text._2_2_,in_DS);
-  pcVar5 = (code *)swi(3);
-  pSVar2 = (String *)(*pcVar5)(&pSVar2[-1].fields.field_0x7,&stack0xfffffffc,&text,index);
+  uVar5 = func_?();
+  bVar6 = (uVar5 & 0x100) != 0;
+  piVar7 = &this_00[0x123c836].fields._._._remoteStackIndex;
+  iVar8 = *piVar7;
+  bVar9 = (byte)((uint)index >> 8);
+  bVar10 = (char)*piVar7 + bVar9;
+  *(byte *)piVar7 = bVar10 + bVar6;
+  *(char *)(iStack4 + 0x5a) =
+       *(char *)(iStack4 + 0x5a) + (char)iStack4 +
+       (CARRY1((byte)iVar8,bVar9) || CARRY1(bVar10,bVar6));
+  pcVar11 = (code *)swi(3);
+  pSVar2 = (String *)(*pcVar11)();
   return pSVar2;
 }
 
@@ -497,21 +502,28 @@ String * Assembly-CSharp.dll::GNU::Gettext::StringEscaping::StringEscaping_UnEsc
     }
     this = (StringBuilder *)func_?(TypeInfo__System__Text__StringBuilder);
     mscorlib.dll::System::Text::StringBuilder::StringBuilder__ctor(this,(MethodInfo *)0x0);
-    pSVar1 = text;
-    index = 0;
+    this_00 = (Exception *)text;
+    index = (Enum__Class *)0x0;
+    bVar2 = 0;
     if (text != (String *)0x0) {
-      for (; index < (pSVar1->fields)._stringLength; index = index + 1) {
-        uVar2 = mscorlib.dll::System::String::String_get_Chars(pSVar1,index,(MethodInfo *)0x0);
-        mode = (StringEscaping_EscapeMode__Enum)uVar2;
+      for (; (int)index < (((String *)this_00)->fields)._stringLength;
+          index = (Enum__Class *)((int)&(index->_0).image + 1)) {
+        uVar3 = mscorlib.dll::System::String::String_get_Chars
+                          ((String *)this_00,(int32_t)index,(MethodInfo *)0x0);
+        mode = (StringEscaping_EscapeMode__Enum)uVar3;
         if (mode == 0x22) {
-          index = index + 1;
-          uVar2 = mscorlib.dll::System::String::String_get_Chars(pSVar1,index,(MethodInfo *)0x0);
-          if (uVar2 != 0x22) goto code_?;
+          index = (Enum__Class *)((int)&(index->_0).image + 1);
+          in_stack_4 = index;
+          uVar3 = mscorlib.dll::System::String::String_get_Chars
+                            ((String *)this_00,(int32_t)index,(MethodInfo *)0x0);
+          if (uVar3 != 0x22) goto code_?;
         }
+        bVar2 = 0;
         if (this == (StringBuilder *)0x0) goto code_?;
         mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_6
                   (this,(uint16_t)mode,(MethodInfo *)0x0);
       }
+      bVar2 = 0;
       if (this != (StringBuilder *)0x0) {
         pSVar1 = (String *)(*(code *)(this->klass->vtable).ToString.method)(this);
         return pSVar1;
@@ -522,32 +534,43 @@ String * Assembly-CSharp.dll::GNU::Gettext::StringEscaping::StringEscaping_UnEsc
     pSVar1 = StringEscaping_FromXml(text,(MethodInfo *)0x0);
     return pSVar1;
   default:
-    uVar3 = func_?(&TypeInfo__GNU__Gettext__StringEscaping__EscapeMode,&mode);
-    func_?(uVar3);
+    uVar5 = func_?(&TypeInfo__GNU__Gettext__StringEscaping__EscapeMode,&mode);
+    func_?(uVar5);
     pSVar1 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&stack0xfffffff0,(MethodInfo *)0x0);
     str2 = (String *)func_?(&::StringLiteral__);
     str0 = (String *)func_?(&StringLiteral_Unknown_string_escaping_mode__);
     pSVar1 = mscorlib.dll::System::String::String_Concat_4(str0,pSVar1,str2,(MethodInfo *)0x0);
-    uVar3 = func_?(&TypeInfo__System__Exception);
-    this_00 = (Exception *)func_?(uVar3);
+    uVar5 = func_?(&TypeInfo__System__Exception);
+    this_00 = (Exception *)func_?(uVar5);
     mscorlib.dll::System::Exception::Exception__ctor_1(this_00,pSVar1,(MethodInfo *)0x0);
     func_?(&
                     MethodInfo__GNU__Gettext__StringEscaping__UnEscape_GNU__Gettext__StringEscaping__EscapeMode__System__String_
                    );
     func_?();
 code_?:
-    uVar3 = func_?();
-    this_01 = (FormatException *)func_?(uVar3);
+    uVar5 = func_?();
+    in_stack_4 = (Enum__Class *)func_?(uVar5);
     method_00 = (MethodInfo *)0x0;
     pSVar1 = (String *)func_?(&StringLiteral_Unescaped___character_in_C__verb);
-    mscorlib.dll::System::FormatException::FormatException__ctor_1(this_01,pSVar1,method_00);
+    mscorlib.dll::System::FormatException::FormatException__ctor_1
+              ((FormatException *)in_stack_4,pSVar1,method_00);
     func_?();
+    bVar2 = (undefined1 *)0xffffffef < &stack0xffffffe8;
     func_?();
   }
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  pSVar1 = (String *)(*pcVar4)();
+  pbVar6 = (byte *)((int)in_stack_4 * 3 + 0x4f);
+  bVar7 = CARRY1(*pbVar6,extraout_AH) || CARRY1(*pbVar6 + extraout_AH,bVar2);
+  *pbVar6 = *pbVar6 + extraout_AH + bVar2;
+  pbVar6 = (byte *)((int)&this_00[1].fields._data + 2);
+  bVar2 = *pbVar6;
+  bVar8 = (byte)((uint)extraout_EDX >> 8);
+  bVar9 = *pbVar6;
+  *pbVar6 = bVar9 + bVar8 + bVar7;
+  *extraout_EDX = *extraout_EDX + bVar8 + (CARRY1(bVar2,bVar8) || CARRY1(bVar9 + bVar8,bVar7));
+  pcVar10 = (code *)swi(3);
+  pSVar1 = (String *)(*pcVar10)();
   return pSVar1;
 }
 

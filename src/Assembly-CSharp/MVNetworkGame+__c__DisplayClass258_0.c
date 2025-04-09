@@ -20,14 +20,16 @@ void Assembly-CSharp.dll::MVNetworkGame+<>c__DisplayClass258_0::
                        (this_00,0x28,
                         MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
                        );
-    if ((wo != (MVWorldObjectClient *)0x0) &&
-       (unaff_ESI = TypeInfo__System__Int32, pOVar1 != (Object *)0x0)) {
-      if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
-        piVar2 = (int32_t *)func_?(pOVar1);
-        (wo->fields)._.itemId = *piVar2;
-        return;
+    if (wo != (MVWorldObjectClient *)0x0) {
+      unaff_ESI = TypeInfo__System__Int32;
+      if (pOVar1 != (Object *)0x0) {
+        if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
+          piVar2 = (int32_t *)func_?();
+          (wo->fields)._.itemId = *piVar2;
+          return;
+        }
+        goto code_?;
       }
-      goto code_?;
     }
   }
   func_?();

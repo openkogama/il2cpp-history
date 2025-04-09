@@ -10,7 +10,7 @@ Assembly-CSharp.dll::RTG::AxisDescriptor::AxisDescriptor_GetAssociatedBoxFace
   if ((this->fields)._sign == 1) {
     if (iVar1 != 0) {
       BVar2 = BoxFace__Enum_Bottom;
-      if (iVar1 != 1) {
+      if ((this->fields)._index != 1) {
         BVar2 = BoxFace__Enum_Front;
       }
       return BVar2;
@@ -18,7 +18,7 @@ Assembly-CSharp.dll::RTG::AxisDescriptor::AxisDescriptor_GetAssociatedBoxFace
     return BoxFace__Enum_Left;
   }
   if (iVar1 != 0) {
-    return (uint)(iVar1 == 1) * 4 + BoxFace__Enum_Back;
+    return (uint)((this->fields)._index == 1) * 4 + BoxFace__Enum_Back;
   }
   return BoxFace__Enum_Right;
 }

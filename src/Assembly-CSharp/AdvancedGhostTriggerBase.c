@@ -206,9 +206,8 @@ void Assembly-CSharp.dll::AdvancedGhostTriggerBase::AdvancedGhostTriggerBase__ct
   System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
   HashSet_1_System_Int32___ctor
             (this_00,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-  ppHVar1 = &(this->fields).attackTargets;
-  *ppHVar1 = this_00;
-  func_?(ppHVar1,this_00);
+  (this->fields).attackTargets = this_00;
+  func_?(&(this->fields).attackTargets,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

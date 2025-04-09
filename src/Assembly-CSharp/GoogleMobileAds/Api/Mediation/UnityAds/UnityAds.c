@@ -38,7 +38,7 @@ void Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::UnityAds::UnityAds::
     do {
       if (pIVar3->interfaceOffsets[uVar4].interfaceType ==
           (Il2CppClass *)TypeInfo__GoogleMobileAds__Mediation__UnityAds__Common__IUnityAdsClient) {
-        ppMVar6 = &(&pIVar1->klass->vtable)[pIVar3->interfaceOffsets[uVar4].offset].
+        ppMVar6 = &(&pIVar1->klass->vtable)[pIVar1->klass->interfaceOffsets[uVar4].offset].
                    SetConsentMetaData.method;
         goto code_?;
       }

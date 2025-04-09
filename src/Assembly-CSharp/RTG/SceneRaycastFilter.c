@@ -83,7 +83,7 @@ bool Assembly-CSharp.dll::RTG::SceneRaycastFilter::SceneRaycastFilter__FilterHit
           layerNumber = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_layer
                                   (pGVar1,(MethodInfo *)0x0);
           bVar2 = LayerEx::LayerEx_IsLayerBitSet(layerBits,layerNumber,(MethodInfo *)0x0);
-          return bVar2 == 0;
+          return bVar2 ^ 1;
         }
       }
     }
@@ -126,7 +126,7 @@ void Assembly-CSharp.dll::RTG::SceneRaycastFilter::SceneRaycastFilter__ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_01,
              MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__);
   method_00 = (MethodInfo *)&(this->fields)._ignoreObjects;
-  *(List_1_UnityEngine_GameObject_ **)method_00 = this_01;
+  (this->fields)._ignoreObjects = this_01;
   func_?(method_00,this_01);
   (this->fields)._layerMask = -1;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57

@@ -16,10 +16,10 @@ Assembly-CSharp.dll::pTween::pTween_RealtimeTo
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   value[2].klass = (Object__Class *)duration;
+  value[2].monitor = (MonitorData *)callback;
   value[3].klass = (Object__Class *)startValue;
   value[1].klass = (Object__Class *)0x0;
   value[3].monitor = (MonitorData *)endValue;
-  value[2].monitor = (MonitorData *)callback;
   func_?(&value[2].monitor,callback);
   return (IEnumerator *)value;
 }
@@ -42,10 +42,10 @@ Assembly-CSharp.dll::pTween::pTween_To
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   value[2].klass = (Object__Class *)duration;
+  value[2].monitor = (MonitorData *)callback;
   value[3].klass = (Object__Class *)startValue;
   value[1].klass = (Object__Class *)0x0;
   value[3].monitor = (MonitorData *)endValue;
-  value[2].monitor = (MonitorData *)callback;
   func_?(&value[2].monitor,callback);
   return (IEnumerator *)value;
 }
@@ -66,11 +66,11 @@ Assembly-CSharp.dll::pTween::pTween_To_1
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  value[2].monitor = (MonitorData *)callback;
   value[1].klass = (Object__Class *)0x0;
   value[2].klass = (Object__Class *)duration;
   value[3].klass = (Object__Class *)0x0;
   value[3].monitor = (MonitorData *)0x3f800000;
-  value[2].monitor = (MonitorData *)callback;
   func_?(&value[2].monitor,callback);
   return (IEnumerator *)value;
 }
@@ -107,9 +107,9 @@ void Assembly-CSharp.dll::pTween::pTween_WorkerTo
       value[2].klass = this_00;
       func_?(value + 2,this_00);
       value[2].monitor = (MonitorData *)duration;
+      value[4].klass = (Object__Class *)callback;
       value[3].klass = (Object__Class *)startValue;
       value[3].monitor = (MonitorData *)endValue;
-      value[4].klass = (Object__Class *)callback;
       func_?(value + 4,callback);
       UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
                 ((MonoBehaviour *)this_00,(IEnumerator *)value,(MethodInfo *)0x0);
@@ -152,10 +152,10 @@ void Assembly-CSharp.dll::pTween::pTween_WorkerTo_1
       value[1].klass = (Object__Class *)0x0;
       value[2].klass = this_00;
       func_?(value + 2,this_00);
+      value[4].klass = (Object__Class *)callback;
       value[2].monitor = (MonitorData *)duration;
       value[3].klass = (Object__Class *)0x0;
       value[3].monitor = (MonitorData *)0x3f800000;
-      value[4].klass = (Object__Class *)callback;
       func_?(value + 4,callback);
       UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
                 ((MonoBehaviour *)this_00,(IEnumerator *)value,(MethodInfo *)0x0);

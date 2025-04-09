@@ -54,7 +54,8 @@ void Assembly-CSharp.dll::ConsoleDragAndTapHandler::ConsoleDragAndTapHandler_OnE
   (this->fields).dragging = 0;
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
   if ((fVar1 - (this->fields).dragStart < _UNK_?) &&
-     (pUVar2 = (this->fields).OnClick, pUVar2 != (UnityAction *)0x0)) {
+     ((this->fields).OnClick != (UnityAction *)0x0)) {
+    pUVar2 = (this->fields).OnClick;
     (*(pUVar2->fields)._._.invoke_impl)
               ((pUVar2->fields)._._.method_code,(pUVar2->fields)._._.method);
   }
@@ -77,8 +78,8 @@ void Assembly-CSharp.dll::ConsoleDragAndTapHandler::ConsoleDragAndTapHandler_OnP
                (ConsoleDragAndTapHandler *this,PointerEventData *eventData,MethodInfo *method)
 
 {
-  if (((this->fields).dragging == 0) &&
-     (pUVar1 = (this->fields).OnClick, pUVar1 != (UnityAction *)0x0)) {
+  if (((this->fields).dragging == 0) && ((this->fields).OnClick != (UnityAction *)0x0)) {
+    pUVar1 = (this->fields).OnClick;
     (*(pUVar1->fields)._._.invoke_impl)
               ((pUVar1->fields)._._.method_code,(pUVar1->fields)._._.method);
   }

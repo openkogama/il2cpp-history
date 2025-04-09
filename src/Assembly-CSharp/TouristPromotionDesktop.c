@@ -239,7 +239,6 @@ void Assembly-CSharp.dll::TouristPromotionDesktop::TouristPromotionDesktop_OnDes
   }
   else {
     pAVar2 = (pMVar1->fields).OnWinningConditionFulfilled;
-    ppAVar3 = &(pMVar1->fields).OnWinningConditionFulfilled;
     this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
                *)func_?(TypeInfo__System__Action<IWinningCondition>);
     DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
@@ -248,27 +247,24 @@ void Assembly-CSharp.dll::TouristPromotionDesktop::TouristPromotionDesktop_OnDes
               (this_00,(Object *)this,
                MethodInfo__TouristPromotionDesktop__OnWinningConditionFulfilled_IWinningCondition_,
                (MethodInfo *)0x0);
-    pAStack4 =
-         (Action_1_IWinningCondition___Class *)
-         mscorlib.dll::System::Delegate::Delegate_Remove
-                   ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
+    pDVar3 = mscorlib.dll::System::Delegate::Delegate_Remove
+                       ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
     unaff_EDI = TypeInfo__System__Action<IWinningCondition>;
-    if (pAStack4 == (Action_1_IWinningCondition___Class *)0x0) {
-      *ppAVar3 = (Action_1_IWinningCondition_ *)0x0;
+    if (pDVar3 == (Delegate *)0x0) {
+      (pMVar1->fields).OnWinningConditionFulfilled = (Action_1_IWinningCondition_ *)0x0;
+      pAStack4 = (Action_1_IWinningCondition___Class *)0x0;
+code_?:
       func_?();
       return;
     }
     pAStack4 = TypeInfo__System__Action<IWinningCondition>;
     pAVar2 = (Action_1_IWinningCondition_ *)func_?();
     if (pAVar2 != (Action_1_IWinningCondition_ *)0x0) {
-      *ppAVar3 = pAVar2;
+      (pMVar1->fields).OnWinningConditionFulfilled = pAVar2;
       unaff_EDI = TypeInfo__System__Action<IWinningCondition>;
       pAStack4 = TypeInfo__System__Action<IWinningCondition>;
       pAStack4 = (Action_1_IWinningCondition___Class *)func_?();
-      if (pAStack4 != (Action_1_IWinningCondition___Class *)0x0) {
-        func_?();
-        return;
-      }
+      if (pAStack4 != (Action_1_IWinningCondition___Class *)0x0) goto code_?;
     }
   }
   pAStack4 = unaff_EDI;

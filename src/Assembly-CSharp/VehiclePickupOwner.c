@@ -10,9 +10,8 @@ void Assembly-CSharp.dll::VehiclePickupOwner::VehiclePickupOwner_Init
   MVPickupOwner::MVPickupOwner_Init
             ((MVPickupOwner *)this,currentItemRuntimeVariable,isFiringRuntimeVariable,
              (MethodInfo *)0x0);
-  ppTVar1 = &(this->fields).mountTransform;
-  *ppTVar1 = mountTransform;
-  func_?(ppTVar1,mountTransform);
+  (this->fields).mountTransform = mountTransform;
+  func_?(&(this->fields).mountTransform,mountTransform);
   return;
 }
 
@@ -104,37 +103,38 @@ void Assembly-CSharp.dll::VehiclePickupOwner::VehiclePickupOwner_Unequip
     cRam_? = '\x01';
   }
   pPVar1 = (this->fields)._.currentItem;
-  ppPVar2 = &(this->fields)._.currentItem;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                     ((Object_1 *)pPVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar3 == 0) {
-    pPVar1 = *ppPVar2;
+  if (bVar2 == 0) {
+    pPVar1 = (this->fields)._.currentItem;
     if (pPVar1 == (PickupItem *)0x0) {
 code_?:
       func_?();
-      pcVar4 = (code *)swi(3);
-      (*pcVar4)();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
     if ((pPVar1->fields)._IsHolstered_k__BackingField == 0) {
       (*(code *)(pPVar1->klass->vtable).OnUnequip.method)
                 (pPVar1,(pPVar1->klass->vtable).ResetAmmo.methodPtr);
-      if (*ppPVar2 == (PickupItem *)0x0) goto code_?;
+      pPVar1 = (this->fields)._.currentItem;
+      if (pPVar1 == (PickupItem *)0x0) goto code_?;
       obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                      ((Component *)*ppPVar2,(MethodInfo *)0x0);
+                      ((Component *)pPVar1,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
                 ((Object_1 *)obj,(MethodInfo *)0x0);
-      *ppPVar2 = (PickupItem *)0x0;
-      func_?(ppPVar2);
-      pMVar5 = (this->fields)._.onUnequipItem;
-      if (pMVar5 != (MVPickupOwner_OnUnequipItemDelegate *)0x0) {
-        (*(pMVar5->fields)._._.invoke_impl)();
+      (this->fields)._.currentItem = (PickupItem *)0x0;
+      func_?();
+      pMVar4 = (this->fields)._.onUnequipItem;
+      if (pMVar4 != (MVPickupOwner_OnUnequipItemDelegate *)0x0) {
+        pvStack5 = (pMVar4->fields)._._.method;
+        (*(pMVar4->fields)._._.invoke_impl)();
       }
     }
   }

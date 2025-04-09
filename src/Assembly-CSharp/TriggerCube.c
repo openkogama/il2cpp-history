@@ -104,10 +104,9 @@ void Assembly-CSharp.dll::TriggerCube::TriggerCube_Initialize(TriggerCube *this,
         if (pTVar3 != (TriggerBoxEvents *)0x0) {
           TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
                     (pTVar3,(EventHandler_1_TriggerEventArgs_ *)pEVar2,(MethodInfo *)0x0);
-          this_00 = (Action_3_Boolean_Boolean_Object_ *)
+          this_00 = (Action_3_Int32_Int32_ByteEnum_ *)
                     func_?(TypeInfo__System__Action<bool,_bool,_LogicObjectManager>);
-          mscorlib.dll::System::Action`3[Boolean,Boolean,Object]::
-          Action_3_Boolean_Boolean_Object___ctor
+          mscorlib.dll::System::Action`3[Int32,Int32,ByteEnum]::Action_3_Int32_Int32_ByteEnum___ctor
                     (this_00,(Object *)this,
                      MethodInfo__TriggerCube__Callback_bool__bool__LogicObjectManager_,
                      (MethodInfo *)0x0);
@@ -115,9 +114,8 @@ void Assembly-CSharp.dll::TriggerCube::TriggerCube_Initialize(TriggerCube *this,
                              ((MVWorldObject *)this,1,
                               (Action_3_Boolean_Boolean_LogicObjectManager_ *)this_00,
                               (MethodInfo *)0x0);
-          ppIVar5 = &(this->fields)._InputSignalReceiver_k__BackingField;
-          *ppIVar5 = pIVar4;
-          func_?(ppIVar5,pIVar4);
+          (this->fields)._InputSignalReceiver_k__BackingField = pIVar4;
+          func_?(&(this->fields)._InputSignalReceiver_k__BackingField,pIVar4);
           woId = (this->fields)._._._.id;
           this_01 = (WorldObjectClientRef_1_System_Object_ *)
                     func_?(TypeInfo__OutputSignalTransmitter);
@@ -138,14 +136,14 @@ void Assembly-CSharp.dll::TriggerCube::TriggerCube_Initialize(TriggerCube *this,
             func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool);
           }
           if (unaff_ESI != (TriggerBoxEvents *)0x0) {
-            pOVar6 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool;
+            pOVar5 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool;
             if ((unaff_ESI->klass->_0).element_class !=
                 (TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_0).element_class)
             goto code_?;
-            pOVar7 = (ObscuredBool *)func_?(unaff_ESI);
-            bVar8 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool
-                    ::ObscuredBool_op_Implicit_1(*pOVar7,(MethodInfo *)0x0);
-            (this->fields).isDown = bVar8;
+            pOVar6 = (ObscuredBool *)func_?(unaff_ESI);
+            bVar7 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredBool
+                    ::ObscuredBool_op_Implicit_1(*pOVar6,(MethodInfo *)0x0);
+            (this->fields).isDown = bVar7;
             pTVar1 = (this->fields).objPrefab;
             if (pTVar1 != (TriggerCubePrefab *)0x0) {
               lodGameObject =
@@ -202,11 +200,11 @@ void Assembly-CSharp.dll::TriggerCube::TriggerCube_Initialize(TriggerCube *this,
     }
   }
   func_?();
-  pOVar6 = extraout_ECX;
+  pOVar5 = extraout_ECX;
 code_?:
-  func_?(unaff_ESI,pOVar6);
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  func_?(unaff_ESI,pOVar5);
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -271,7 +269,6 @@ void Assembly-CSharp.dll::TriggerCube::TriggerCube_OnIsFiringChanged
 void Assembly-CSharp.dll::TriggerCube::TriggerCube_SetScale(TriggerCube *this,MethodInfo *method)
 
 {
-  object = this;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__CullingSubscriberBase);
     func_?(&
@@ -293,11 +290,11 @@ code_?:
   }
   else {
     TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-             UIElements::TextureId]::
-             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                       (pDVar1,(Object *)StringLiteral_scaleX,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      (pDVar1,(Object *)StringLiteral_scaleX,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
     uVar3 = CONCAT44(TypeInfo__System__Single,TVar2.m_Index);
     if (TVar2.m_Index == 0) goto code_?;
     if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
@@ -309,130 +306,125 @@ code_?:
     if (pDVar1 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
     goto code_?;
     TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-             UIElements::TextureId]::
-             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                       (pDVar1,(Object *)StringLiteral_scaleY,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      (pDVar1,(Object *)StringLiteral_scaleY,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
     uVar3 = CONCAT44(TypeInfo__System__Single,TVar2.m_Index);
     if (TVar2.m_Index == 0) goto code_?;
     if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
         (TypeInfo__System__Single->_0).element_class) goto code_?;
-    pfVar4 = (float *)func_?(TVar2.m_Index);
-    fVar6 = *pfVar4;
+    puVar6 = (undefined4 *)func_?(TVar2.m_Index);
+    uVar7 = *puVar6;
     pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
              (this->fields)._._._.data;
     if (pDVar1 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
     goto code_?;
     TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-             UIElements::TextureId]::
-             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                       (pDVar1,(Object *)StringLiteral_scaleZ,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      (pDVar1,(Object *)StringLiteral_scaleZ,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
     uVar3 = CONCAT44(TypeInfo__System__Single,TVar2.m_Index);
     if (TVar2.m_Index == 0) goto code_?;
     if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
         (TypeInfo__System__Single->_0).element_class) goto code_?;
     pfVar4 = (float *)func_?(TVar2.m_Index);
-    fVar7 = *pfVar4;
-    pTVar8 = (this->fields).objPrefab;
-    if (((pTVar8 == (TriggerCubePrefab *)0x0) ||
-        (this_00 = (pTVar8->fields).triggerBoxEvents, this_00 == (TriggerBoxEvents *)0x0)) ||
-       (fVar9 = fVar5, fVar10 = fVar6, fVar11 = fVar7,
-       pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                           ((Component *)this_00,(MethodInfo *)0x0), pTVar12 == (Transform *)0x0))
+    fVar8 = *pfVar4;
+    pTVar9 = (this->fields).objPrefab;
+    if (((pTVar9 == (TriggerCubePrefab *)0x0) ||
+        (this_00 = (pTVar9->fields).triggerBoxEvents, this_00 == (TriggerBoxEvents *)0x0)) ||
+       (fVar10 = fVar5, uVar11 = uVar7, fVar12 = fVar8,
+       pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                           ((Component *)this_00,(MethodInfo *)0x0), pTVar13 == (Transform *)0x0))
     goto code_?;
-    VVar13.y = fVar10;
-    VVar13.x = fVar9;
-    VVar13.z = fVar11;
+    VVar14.y = (float)uVar11;
+    VVar14.x = fVar10;
+    VVar14.z = fVar12;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-              (pTVar12,VVar13,(MethodInfo *)0x0);
+              (pTVar13,VVar14,(MethodInfo *)0x0);
     this_01 = (this->fields)._._.outputConnectorObject;
     (this->fields).outputConnectorOffset.x = fVar5 * _UNK_? + _UNK_?;
     if ((this_01 == (GameObject *)0x0) ||
-       (pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                            (this_01,(MethodInfo *)0x0), pTVar12 == (Transform *)0x0))
+       (pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                            (this_01,(MethodInfo *)0x0), pTVar13 == (Transform *)0x0))
     goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-              (pTVar12,(this->fields).outputConnectorOffset,(MethodInfo *)0x0);
+              (pTVar13,(this->fields).outputConnectorOffset,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
     if ((TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField ==
          (IEditModeUI *)0x0) ||
-       (cVar14 = (*(code *)(this->klass->vtable).get_HasVisualsInPlaymode.method)(), cVar14 == '\0')
-       ) {
+       (cVar15 = (*(code *)(this->klass->vtable).get_HasVisualsInPlaymode.method)(), cVar15 == '\0'))
+    {
       return;
     }
-    iVar15 = func_?();
-    if (iVar15 == 0) goto code_?;
-    if ((*(int *)(iVar15 + 0xc) != 0) &&
-       (*(float *)(iVar15 + 0x10) = fVar5, 1 < *(uint *)(iVar15 + 0xc))) {
-      pfVar4 = (float *)(iVar15 + 0x14);
-      *pfVar4 = fVar6;
-      if ((2 < *(uint *)(iVar15 + 0xc)) &&
-         (*(float *)(iVar15 + 0x18) = fVar7, 3 < *(uint *)(iVar15 + 0xc))) {
-        *(undefined4 *)(iVar15 + 0x1c) = 0x40000000;
-        uVar16 = *(uint *)(iVar15 + 0xc);
-        if (uVar16 == 0) {
-          this = (TriggerCube *)0x0;
-        }
-        else {
-          pTVar17 = *(TriggerCube **)(iVar15 + 0x10);
-          uVar18 = 1;
-          this = pTVar17;
-          if (1 < (int)uVar16) {
-            bVar19 = 1 < uVar16;
-            do {
-              if (!bVar19) goto code_?;
-              pTVar20 = (TriggerCube *)*pfVar4;
-              if ((float)pTVar17 < (float)pTVar20) {
-                pTVar17 = pTVar20;
-                this = pTVar20;
-              }
-              uVar18 = uVar18 + 1;
-              pfVar4 = pfVar4 + 1;
-              bVar19 = uVar18 < uVar16;
-            } while ((int)uVar18 < (int)uVar16);
-          }
-        }
-        ppCVar21 = &(object->fields)._.cullingSubscriberBase;
-        pCVar22 = *ppCVar21;
-        if (pCVar22 != (CullingSubscriberBase *)0x0) {
-          CullingSubscriberBase::CullingSubscriberBase_Destroy(pCVar22,(MethodInfo *)0x0);
-          pVVar23 = (Vector3 *)
-                    (*(code *)(object->klass->vtable).get_WorldPosition_1.method)
-                              (&stack0xffffffe4,object,
-                               (object->klass->vtable).set_WorldPosition.methodPtr);
-          VVar13 = *pVVar23;
-          this_02 = (UnityAction_1_UnityEngine_Vector2_ *)
-                    func_?(
-                                   TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>
-                                   );
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Vector2]::
-          UnityAction_1_UnityEngine_Vector2___ctor
-                    (this_02,(Object *)object,
-                     (object->klass->vtable).UpdateControllerUpdate_1.methodPtr,(MethodInfo *)0x0);
-          pCVar22 = (CullingSubscriberBase *)func_?(TypeInfo__CullingSubscriberBase);
-          CullingSubscriberBase::CullingSubscriberBase__ctor_2
-                    (pCVar22,(float)this,VVar13,
-                     (UnityAction_1_UnityEngine_CullingGroupEvent_ *)this_02,(MethodInfo *)0x0);
-          *ppCVar21 = pCVar22;
-          func_?();
-          return;
-        }
-        goto code_?;
+    iVar16 = func_?();
+    if (iVar16 == 0) goto code_?;
+    if ((((*(int *)(iVar16 + 0xc) != 0) &&
+         (*(float *)(iVar16 + 0x10) = fVar5, 1 < *(uint *)(iVar16 + 0xc))) &&
+        (*(undefined4 *)(iVar16 + 0x14) = uVar7, 2 < *(uint *)(iVar16 + 0xc))) &&
+       (*(float *)(iVar16 + 0x18) = fVar8, 3 < *(uint *)(iVar16 + 0xc))) {
+      *(undefined4 *)(iVar16 + 0x1c) = 0x40000000;
+      uVar17 = *(uint *)(iVar16 + 0xc);
+      if (uVar17 == 0) {
+        fStack_18 = 0.0;
       }
+      else {
+        fVar5 = *(float *)(iVar16 + 0x10);
+        uVar19 = 1;
+        fStack_18 = fVar5;
+        if (1 < (int)uVar17) {
+          pfVar4 = (float *)(iVar16 + 0x14);
+          do {
+            if (uVar17 <= uVar19) goto code_?;
+            fVar8 = *pfVar4;
+            if (fVar5 < fVar8) {
+              fVar5 = fVar8;
+              fStack_18 = fVar8;
+            }
+            uVar19 = uVar19 + 1;
+            pfVar4 = pfVar4 + 1;
+          } while ((int)uVar19 < (int)uVar17);
+        }
+      }
+      pCVar20 = (this->fields)._.cullingSubscriberBase;
+      if (pCVar20 != (CullingSubscriberBase *)0x0) {
+        CullingSubscriberBase::CullingSubscriberBase_Destroy(pCVar20,(MethodInfo *)0x0);
+        pVVar21 = (Vector3 *)
+                  (*(code *)(this->klass->vtable).get_WorldPosition_1.method)
+                            (&stack0xffffffe0,this,(this->klass->vtable).set_WorldPosition.methodPtr
+                            );
+        VVar14 = *pVVar21;
+        this_02 = (UnityAction_1_UnityEngine_Vector2_ *)
+                  func_?(
+                                 TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>
+                                 );
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Vector2]::
+        UnityAction_1_UnityEngine_Vector2___ctor
+                  (this_02,(Object *)this,(this->klass->vtable).UpdateControllerUpdate_1.methodPtr,
+                   (MethodInfo *)0x0);
+        pCVar20 = (CullingSubscriberBase *)func_?(TypeInfo__CullingSubscriberBase);
+        CullingSubscriberBase::CullingSubscriberBase__ctor_2
+                  (pCVar20,fStack_18,VVar14,(UnityAction_1_UnityEngine_CullingGroupEvent_ *)this_02,
+                   (MethodInfo *)0x0);
+        (this->fields)._.cullingSubscriberBase = pCVar20;
+        func_?();
+        return;
+      }
+      goto code_?;
     }
   }
 code_?:
   uVar3 = func_?();
 code_?:
   func_?(uVar3);
-  pcVar24 = (code *)swi(3);
-  (*pcVar24)();
+  pcVar22 = (code *)swi(3);
+  (*pcVar22)();
   return;
 }
 
@@ -476,31 +468,29 @@ void Assembly-CSharp.dll::TriggerCube::TriggerCube__ctor
     *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) =
          *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
     if (pTVar3 == (TriggerCubePrefab *)0x0) {
-      ppTVar5 = &(this->fields).objPrefab;
-      *ppTVar5 = (TriggerCubePrefab *)0x0;
-      func_?(ppTVar5,0);
+      (this->fields).objPrefab = (TriggerCubePrefab *)0x0;
+code_?:
+      func_?(&(this->fields).objPrefab,pTVar3);
       return;
     }
-    bVar6 = (TypeInfo__TriggerCubePrefab->_1).naturalAligment;
     unaff_EDI = TypeInfo__TriggerCubePrefab;
-    if ((bVar6 <= (((ObjectPrefab__Class *)pTVar3->klass)->_1).naturalAligment) &&
-       ((((ObjectPrefab__Class *)pTVar3->klass)->_1).typeHierarchy[bVar6 - 1] ==
+    if (((TypeInfo__TriggerCubePrefab->_1).naturalAligment <=
+         (((ObjectPrefab__Class *)pTVar3->klass)->_1).naturalAligment) &&
+       ((((ObjectPrefab__Class *)pTVar3->klass)->_1).typeHierarchy
+        [(TypeInfo__TriggerCubePrefab->_1).naturalAligment - 1] ==
         (Il2CppClass *)TypeInfo__TriggerCubePrefab)) {
-      ppTVar5 = &(this->fields).objPrefab;
-      *ppTVar5 = pTVar3;
-      bVar6 = (TypeInfo__TriggerCubePrefab->_1).naturalAligment;
+      (this->fields).objPrefab = pTVar3;
       unaff_EDI = TypeInfo__TriggerCubePrefab;
-      if ((bVar6 <= (((ObjectPrefab__Class *)pTVar3->klass)->_1).naturalAligment) &&
-         ((((ObjectPrefab__Class *)pTVar3->klass)->_1).typeHierarchy[bVar6 - 1] ==
-          (Il2CppClass *)TypeInfo__TriggerCubePrefab)) {
-        func_?(ppTVar5,pTVar3);
-        return;
-      }
+      if (((TypeInfo__TriggerCubePrefab->_1).naturalAligment <=
+           (((ObjectPrefab__Class *)pTVar3->klass)->_1).naturalAligment) &&
+         ((((ObjectPrefab__Class *)pTVar3->klass)->_1).typeHierarchy
+          [(TypeInfo__TriggerCubePrefab->_1).naturalAligment - 1] ==
+          (Il2CppClass *)TypeInfo__TriggerCubePrefab)) goto code_?;
     }
   }
   func_?(pTVar3,unaff_EDI);
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

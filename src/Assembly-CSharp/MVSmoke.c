@@ -338,8 +338,9 @@ code_?:
                UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
                ParticleSystem_get_collision(pPVar2,(MethodInfo *)0x0), iVar19 == 0))
       goto code_?;
-      uVar20 = *(uint *)(iVar19 + 0xc);
-      if ((uVar20 != 0) && (((1 < uVar20 && (2 < uVar20)) && (3 < uVar20)))) {
+      if ((*(int *)(iVar19 + 0xc) != 0) &&
+         (((1 < *(uint *)(iVar19 + 0xc) && (2 < *(uint *)(iVar19 + 0xc))) &&
+          (3 < *(uint *)(iVar19 + 0xc))))) {
         QStack_12.w = *(float *)(iVar19 + 0x1c);
         color.g = *(float *)(iVar19 + 0x14);
         color.r = *(float *)(iVar19 + 0x10);
@@ -348,31 +349,31 @@ code_?:
         QStack_12.x = *(float *)(iVar19 + 0x10);
         QStack_12.y = *(float *)(iVar19 + 0x14);
         QStack_12.z = *(float *)(iVar19 + 0x18);
-        pPVar21 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MinMaxGradient::
+        pPVar20 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MinMaxGradient::
                   ParticleSystem_MinMaxGradient_op_Implicit
                             ((ParticleSystem_MinMaxGradient *)&stack0xffffffac,color,
                              (MethodInfo *)0x0);
-        uVar22 = (pPVar21->m_ColorMax).b;
-        uVar23 = pPVar21->m_Mode;
-        uVar24 = pPVar21->m_GradientMin;
-        uVar25 = pPVar21->m_GradientMax;
-        uVar26 = (pPVar21->m_ColorMin).r;
-        uVar27 = (pPVar21->m_ColorMin).g;
-        uVar28 = (pPVar21->m_ColorMin).b;
-        uVar29 = (pPVar21->m_ColorMin).a;
-        value.m_ColorMin.a = (float)uVar29;
-        value.m_ColorMin.b = (float)uVar28;
-        value.m_ColorMin.g = (float)uVar27;
-        value.m_ColorMin.r = (float)uVar26;
-        uVar30 = (pPVar21->m_ColorMax).r;
-        uVar31 = (pPVar21->m_ColorMax).g;
-        value.m_ColorMax.g = (float)uVar31;
-        value.m_ColorMax.r = (float)uVar30;
-        value.m_GradientMax = (Gradient *)uVar25;
-        value.m_GradientMin = (Gradient *)uVar24;
-        value.m_Mode = uVar23;
-        value.m_ColorMax.b = (float)uVar22;
-        value.m_ColorMax.a = (pPVar21->m_ColorMax).a;
+        uVar21 = (pPVar20->m_ColorMax).b;
+        uVar22 = pPVar20->m_Mode;
+        uVar23 = pPVar20->m_GradientMin;
+        uVar24 = pPVar20->m_GradientMax;
+        uVar25 = (pPVar20->m_ColorMin).r;
+        uVar26 = (pPVar20->m_ColorMin).g;
+        uVar27 = (pPVar20->m_ColorMin).b;
+        uVar28 = (pPVar20->m_ColorMin).a;
+        value.m_ColorMin.a = (float)uVar28;
+        value.m_ColorMin.b = (float)uVar27;
+        value.m_ColorMin.g = (float)uVar26;
+        value.m_ColorMin.r = (float)uVar25;
+        uVar29 = (pPVar20->m_ColorMax).r;
+        uVar30 = (pPVar20->m_ColorMax).g;
+        value.m_ColorMax.g = (float)uVar30;
+        value.m_ColorMax.r = (float)uVar29;
+        value.m_GradientMax = (Gradient *)uVar24;
+        value.m_GradientMin = (Gradient *)uVar23;
+        value.m_Mode = uVar22;
+        value.m_ColorMax.b = (float)uVar21;
+        value.m_ColorMax.a = (pPVar20->m_ColorMax).a;
         UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
         ParticleSystem_MainModule_set_startColor(&PStack_1,value,(MethodInfo *)0x0);
         goto code_?;
@@ -385,8 +386,8 @@ code_?:
   uVar7 = func_?(unaff_EBX.m_Index,this);
 code_?:
   func_?(uVar7);
-  pcVar32 = (code *)swi(3);
-  (*pcVar32)();
+  pcVar31 = (code *)swi(3);
+  (*pcVar31)();
   return;
 }
 
@@ -403,13 +404,13 @@ Assembly-CSharp.dll::MVSmoke::MVSmoke_SetupSmokeCulling
     func_?(&TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>);
     cRam_? = '\x01';
   }
-  ppCVar1 = &(this->fields)._.cullingSubscriberBase;
-  if (*ppCVar1 != (CullingSubscriberBase *)0x0) {
-    CullingSubscriberBase::CullingSubscriberBase_Destroy(*ppCVar1,(MethodInfo *)0x0);
+  if ((this->fields)._.cullingSubscriberBase != (CullingSubscriberBase *)0x0) {
+    CullingSubscriberBase::CullingSubscriberBase_Destroy
+              ((this->fields)._.cullingSubscriberBase,(MethodInfo *)0x0);
   }
-  pVVar2 = (Vector3 *)
+  pVVar1 = (Vector3 *)
            (*(code *)(this->klass->vtable).get_WorldPosition_1.method)(&stack0xffffffe8,this);
-  position = *pVVar2;
+  position = *pVVar1;
   this_00 = (UnityAction_1_UnityEngine_Vector2_ *)
             func_?(
                            TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>
@@ -422,9 +423,9 @@ Assembly-CSharp.dll::MVSmoke::MVSmoke_SetupSmokeCulling
   CullingSubscriberBase::CullingSubscriberBase__ctor_2
             (this_01,radius,position,(UnityAction_1_UnityEngine_CullingGroupEvent_ *)this_00,
              (MethodInfo *)0x0);
-  *ppCVar1 = this_01;
+  (this->fields)._.cullingSubscriberBase = this_01;
   func_?();
-  return *ppCVar1;
+  return (this->fields)._.cullingSubscriberBase;
 }
 
 
@@ -494,7 +495,7 @@ void Assembly-CSharp.dll::MVSmoke::MVSmoke__ctor
       pGVar5 = (this_00->fields)._._.gameObject;
       if (pGVar5 != (GameObject *)0x0) {
         pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                            (pGVar5,(MethodInfo *)0x0);
+                           (pGVar5,(MethodInfo *)0x0);
         if (pTVar6 != (Transform *)0x0) {
           pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
                               ((Vector3 *)&stack0xffffffe8,pTVar6,(MethodInfo *)0x0);
@@ -522,12 +523,12 @@ void Assembly-CSharp.dll::MVSmoke::MVSmoke__ctor
                               ((Object *)pPVar4,position,rotation,
                                UnityEngine__ParticleSystem_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::ParticleSystem>_UnityEngine__ParticleSystem__UnityEngine__Vector3__UnityEngine__Quaternion_
                               );
-          ppPVar13 = &(this_00->fields).particleSystem;
-          *ppPVar13 = pPVar4;
-          func_?(ppPVar13);
-          if (*ppPVar13 != (ParticleSystem *)0x0) {
+          (this_00->fields).particleSystem = pPVar4;
+          func_?(&(this_00->fields).particleSystem);
+          pPVar4 = (this_00->fields).particleSystem;
+          if (pPVar4 != (ParticleSystem *)0x0) {
             pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                ((Component *)*ppPVar13,(MethodInfo *)0x0);
+                               ((Component *)pPVar4,(MethodInfo *)0x0);
             pGVar5 = (this_00->fields)._._.gameObject;
             if (pGVar5 != (GameObject *)0x0) {
               value = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
@@ -535,13 +536,15 @@ void Assembly-CSharp.dll::MVSmoke::MVSmoke__ctor
               if (pTVar6 != (Transform *)0x0) {
                 UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
                           (pTVar6,value,(MethodInfo *)0x0);
-                if (*ppPVar13 != (ParticleSystem *)0x0) {
+                pPVar4 = (this_00->fields).particleSystem;
+                if (pPVar4 != (ParticleSystem *)0x0) {
                   UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-                  ParticleSystem_Stop_2(*ppPVar13,(MethodInfo *)0x0);
-                  if (*ppPVar13 != (ParticleSystem *)0x0) {
+                  ParticleSystem_Stop_2(pPVar4,(MethodInfo *)0x0);
+                  pPVar4 = (this_00->fields).particleSystem;
+                  if (pPVar4 != (ParticleSystem *)0x0) {
                     this = (MVSmoke *)
                            UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-                           ParticleSystem_get_collision(*ppPVar13,(MethodInfo *)0x0);
+                           ParticleSystem_get_collision(pPVar4,(MethodInfo *)0x0);
                     UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmissionModule
                     ::ParticleSystem_EmissionModule_set_enabled_Injected
                               ((ParticleSystem_EmissionModule *)&this,0,(MethodInfo *)0x0);
@@ -556,8 +559,8 @@ void Assembly-CSharp.dll::MVSmoke::MVSmoke__ctor
     }
   }
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

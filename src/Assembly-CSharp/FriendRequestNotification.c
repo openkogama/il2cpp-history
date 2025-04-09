@@ -81,8 +81,8 @@ void Assembly-CSharp.dll::FriendRequestNotification::FriendRequestNotification_I
     cRam_? = '\x01';
   }
   pFVar1 = this;
-  (this->fields)._.timeSinceStart = 0.0;
   this = (FriendRequestNotification *)CONCAT13(1,this._0_3_);
+  (pFVar1->fields)._.timeSinceStart = 0.0;
   pOVar2 = (Object *)func_?(TypeInfo__System__Byte,(int)&this + 3);
   this_00 = data;
   if (data == (Dictionary_2_System_Object_System_Object_ *)0x0) {

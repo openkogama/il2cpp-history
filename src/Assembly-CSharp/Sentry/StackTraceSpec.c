@@ -98,16 +98,15 @@ void Assembly-CSharp.dll::Sentry::StackTraceSpec::StackTraceSpec__ctor
     func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
+  (this->fields).module = ::StringLiteral__;
   method_00 = (MethodInfo *)&(this->fields).module;
-  *(String **)method_00 = ::StringLiteral__;
   func_?(method_00,::StringLiteral__);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   (this->fields).filename = filename;
   func_?(&this->fields,filename);
-  ppSVar1 = &(this->fields).function;
-  *ppSVar1 = function;
-  func_?(ppSVar1,function);
+  (this->fields).function = function;
+  func_?(&(this->fields).function,function);
   (this->fields).lineno = lineNo;
   (this->fields).in_app = inApp;
   return;

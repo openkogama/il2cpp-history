@@ -15,9 +15,12 @@ void Assembly-CSharp.dll::Assets::Scripts::Subscription::AdOrSubscriptionButton:
                               ((Component *)this,
                                UnityEngine__UI__Image_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Image>__
                               );
-  ppIVar2 = &(this->fields).buttonBackgroundImage;
-  *ppIVar2 = pIVar1;
-  func_?(ppIVar2,&stack0xfffffffc,&UNK_?,ppIVar2,pIVar1);
+  (this->fields).buttonBackgroundImage = pIVar1;
+  func_?(&(this->fields).buttonBackgroundImage,pIVar1);
+  pSVar2 = MVGameControllerBase::MVGameControllerBase_get_SubscriberCooldownsManager
+                     ((MethodInfo *)0x0);
+  (this->fields).subCooldowns = pSVar2;
+  func_?(&(this->fields).subCooldowns,pSVar2);
   return;
 }
 
@@ -29,38 +32,38 @@ void Assembly-CSharp.dll::Assets::Scripts::Subscription::AdOrSubscriptionButton:
 
 {
   if ((this->fields).isSubscriber == 0) {
-    unityEventBase = (InvokableCall__Class *)(this->fields).onAdClick;
+    pUVar1 = (this->fields).onAdClick;
   }
   else if ((this->fields).isClickReady == 0) {
-    unityEventBase = (InvokableCall__Class *)(this->fields).onSubscriberInCooldownClick;
+    pUVar1 = (this->fields).onSubscriberInCooldownClick;
   }
   else {
-    pSVar1 = (this->fields).subCooldowns;
-    if (pSVar1 == (SubscriberCooldownsManager *)0x0) {
+    pSVar2 = (this->fields).subCooldowns;
+    if (pSVar2 == (SubscriberCooldownsManager *)0x0) {
 code_?:
       func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
-    uVar3 = (this->fields).cooldownType;
-    pSVar4 = (pSVar1->fields).cooldowns;
+    pSVar4 = (pSVar2->fields).cooldowns;
+    uVar5 = (this->fields).cooldownType;
     if (pSVar4 == (SubscriberCooldownsManager_Cooldown__Array *)0x0) goto code_?;
-    fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    if (pSVar4->max_length <= uVar3) {
+    fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+    if (pSVar4->max_length <= uVar5) {
       func_?();
       goto code_?;
     }
-    pSVar4->vector[uVar3].LastUseTime = fVar5;
-    unityEventBase = (InvokableCall__Class *)(this->fields).onSubscriberReadyClick;
+    pSVar4->vector[uVar5].LastUseTime = fVar6;
+    pUVar1 = (this->fields).onSubscriberReadyClick;
     in_ECX = extraout_ECX;
-    unaff_EBP = unaff_retaddr;
   }
-  if (unityEventBase == (InvokableCall__Class *)0x0) {
+  if (pUVar1 == (UnityEvent *)0x0) {
     return;
   }
+  method = (MethodInfo *)0x0;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Events__InvokableCall,in_ECX,unaff_EBP);
+    func_?(&TypeInfo__UnityEngine__Events__InvokableCall,in_ECX);
     func_?(&
                     MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Count__
                    );
@@ -70,17 +73,15 @@ code_?:
     func_?(&TypeInfo__System__Object);
     cRam_? = '\x01';
   }
-  if (*(bool *)&(unityEventBase->_0).byval_arg.data != 0) {
-    this_00 = (PersistentCallGroup *)(unityEventBase->_0).namespaze;
-    if (this_00 == (PersistentCallGroup *)0x0) goto code_?;
+  if (cRam_? != '\0') {
+    if (pPRam0000000c == (PersistentCallGroup *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Events::PersistentCallGroup::
     PersistentCallGroup_Initialize
-              (this_00,((UnityEventBase__Fields *)&(unityEventBase->_0).name)->m_Calls,
-               (UnityEventBase *)unityEventBase,(MethodInfo *)0x0);
-    *(bool *)&(unityEventBase->_0).byval_arg.data = 0;
+              (pPRam0000000c,pIRam00000008,(UnityEventBase *)0x0,(MethodInfo *)0x0);
+    cRam_? = '\0';
   }
-  pIVar6 = ((UnityEventBase__Fields *)&(unityEventBase->_0).name)->m_Calls;
-  if (pIVar6 == (InvokableCallList *)0x0) goto code_?;
+  pIVar7 = pIRam00000008;
+  if (pIRam00000008 == (InvokableCallList *)0x0) goto code_?;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__AddRange_System__Collections__Generic__IEnumerable<UnityEngine::Events::BaseInvokableCall>_
@@ -90,106 +91,103 @@ code_?:
                    );
     cRam_? = '\x01';
   }
-  this = (AdOrSubscriptionButton *)unityEventBase;
-  if ((pIVar6->fields).m_NeedsUpdate != 0) {
-    pLVar7 = (pIVar6->fields).m_ExecutingCalls;
-    if (pLVar7 == (List_1_UnityEngine_Events_BaseInvokableCall_ *)0x0) goto code_?;
-    iVar8 = (pLVar7->fields)._size;
-    piVar9 = &(pLVar7->fields)._version;
-    *piVar9 = *piVar9 + 1;
-    (pLVar7->fields)._size = 0;
-    if (0 < iVar8) {
+  if ((pIVar7->fields).m_NeedsUpdate != 0) {
+    pLVar8 = (pIVar7->fields).m_ExecutingCalls;
+    if (pLVar8 == (List_1_UnityEngine_Events_BaseInvokableCall_ *)0x0) goto code_?;
+    iVar9 = (pLVar8->fields)._size;
+    piVar10 = &(pLVar8->fields)._version;
+    *piVar10 = *piVar10 + 1;
+    (pLVar8->fields)._size = 0;
+    if (0 < iVar9) {
       mscorlib.dll::System::Array::Array_Clear
-                ((Array *)(pLVar7->fields)._items,0,iVar8,(MethodInfo *)0x0);
+                ((Array *)(pLVar8->fields)._items,0,iVar9,(MethodInfo *)0x0);
     }
-    pLVar10 = (List_1_System_Object_ *)(pIVar6->fields).m_ExecutingCalls;
-    if (pLVar10 == (List_1_System_Object_ *)0x0) goto code_?;
+    pLVar11 = (List_1_System_Object_ *)(pIVar7->fields).m_ExecutingCalls;
+    if (pLVar11 == (List_1_System_Object_ *)0x0) goto code_?;
     mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
     List_1_System_Object__AddRange
-              (pLVar10,(IEnumerable_1_System_Object_ *)(pIVar6->fields).m_PersistentCalls,
+              (pLVar11,(IEnumerable_1_System_Object_ *)(pIVar7->fields).m_PersistentCalls,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__AddRange_System__Collections__Generic__IEnumerable<UnityEngine::Events::BaseInvokableCall>_
               );
-    pLVar10 = (List_1_System_Object_ *)(pIVar6->fields).m_ExecutingCalls;
-    if (pLVar10 == (List_1_System_Object_ *)0x0) goto code_?;
-    this = (AdOrSubscriptionButton *)
-           MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__AddRange_System__Collections__Generic__IEnumerable<UnityEngine::Events::BaseInvokableCall>_
+    pLVar11 = (List_1_System_Object_ *)(pIVar7->fields).m_ExecutingCalls;
+    if (pLVar11 == (List_1_System_Object_ *)0x0) goto code_?;
+    method = 
+    MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__AddRange_System__Collections__Generic__IEnumerable<UnityEngine::Events::BaseInvokableCall>_
     ;
     mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
     List_1_System_Object__AddRange
-              (pLVar10,(IEnumerable_1_System_Object_ *)(pIVar6->fields).m_RuntimeCalls,
+              (pLVar11,(IEnumerable_1_System_Object_ *)(pIVar7->fields).m_RuntimeCalls,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__AddRange_System__Collections__Generic__IEnumerable<UnityEngine::Events::BaseInvokableCall>_
               );
-    (pIVar6->fields).m_NeedsUpdate = 0;
+    (pIVar7->fields).m_NeedsUpdate = 0;
   }
   this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-            (pIVar6->fields).m_ExecutingCalls;
-  iVar8 = 0;
+            (pIVar7->fields).m_ExecutingCalls;
+  iVar9 = 0;
+  pMVar12 = (MethodInfo *)0x0;
   if (this_01 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    do {
+    while( true ) {
       while( true ) {
-        if ((this_01->fields)._size <= iVar8) {
-          return;
+        while( true ) {
+          pMVar13 = method;
+          if ((this_01->fields)._size <= iVar9) {
+            return;
+          }
+          RVar14 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                   RegularExpressions::RegexCharClass+SingleRange]::
+                   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                             (this_01,iVar9,
+                              MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
+                             );
+          if (((RVar14 == (RegexCharClass_SingleRange)0x0) ||
+              (*(byte *)(*(int *)RVar14 + 0xb8) <
+               (TypeInfo__UnityEngine__Events__InvokableCall->_1).naturalAligment)) ||
+             (pMVar12 = method,
+             *(InvokableCall__Class **)
+              (*(int *)(*(int *)RVar14 + 100) + -4 +
+              (uint)(TypeInfo__UnityEngine__Events__InvokableCall->_1).naturalAligment * 4) !=
+             TypeInfo__UnityEngine__Events__InvokableCall)) break;
+          method = (MethodInfo *)0x0;
+          UnityEngine.CoreModule.dll::UnityEngine::Events::InvokableCall::InvokableCall_Invoke_1
+                    ((InvokableCall *)RVar14,(MethodInfo *)0x0);
+          iVar9 = iVar9 + 1;
+          pMVar12 = pMVar13;
         }
-        RVar11 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
-                 ::RegexCharClass+SingleRange]::
-                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                           (this_01,iVar8,
-                            MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
-                           );
-        if (RVar11 == (RegexCharClass_SingleRange)0x0) break;
-        bVar12 = (TypeInfo__UnityEngine__Events__InvokableCall->_1).naturalAligment;
-        unityEventBase = (InvokableCall__Class *)this;
-        if (((*(byte *)(*(int *)RVar11 + 0xb8) < bVar12) ||
-            (*(InvokableCall__Class **)(*(int *)(*(int *)RVar11 + 100) + -4 + (uint)bVar12 * 4) !=
-             TypeInfo__UnityEngine__Events__InvokableCall)) ||
-           (RVar11 == (RegexCharClass_SingleRange)0x0)) break;
-code_?:
+        mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+        RegexCharClass+SingleRange]::
+        List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                  (this_01,iVar9,
+                   MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
+                  );
+        method = (MethodInfo *)TypeInfo__UnityEngine__Events__InvokableCall;
+        this_00 = (InvokableCall *)func_?();
+        if (this_00 == (InvokableCall *)0x0) break;
         UnityEngine.CoreModule.dll::UnityEngine::Events::InvokableCall::InvokableCall_Invoke_1
-                  ((InvokableCall *)RVar11,(MethodInfo *)0x0);
-        iVar8 = iVar8 + 1;
-        unityEventBase = (InvokableCall__Class *)this;
+                  (this_00,(MethodInfo *)0x0);
+        iVar9 = iVar9 + 1;
       }
-      mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-      RegexCharClass+SingleRange]::
-      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                (this_01,iVar8,
-                 MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
-                );
-      pIVar13 = TypeInfo__UnityEngine__Events__InvokableCall;
-      this = (AdOrSubscriptionButton *)TypeInfo__UnityEngine__Events__InvokableCall;
-      RVar11 = (RegexCharClass_SingleRange)func_?();
-      if (RVar11 != (RegexCharClass_SingleRange)0x0) goto code_?;
-      RVar11 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+      RVar14 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
                RegexCharClass+SingleRange]::
                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                         (this_01,iVar8,
+                         (this_01,iVar9,
                           MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
                          );
-      iVar14._0_2_ = (unityEventBase->_0).byval_arg.attrs;
-      iVar14._2_1_ = (unityEventBase->_0).byval_arg.type;
-      iVar14._3_1_ = (unityEventBase->_0).byval_arg.field_0x7;
-      if (iVar14 == 0) {
-        RVar11.First = 0;
-        RVar11.Last = 0;
-        uVar15 = func_?(TypeInfo__System__Object);
-        (unityEventBase->_0).byval_arg.attrs = (short)uVar15;
-        (unityEventBase->_0).byval_arg.type = (char)((uint)uVar15 >> 0x10);
-        (unityEventBase->_0).byval_arg.field_0x7 = (char)((uint)uVar15 >> 0x18);
-        func_?(&(unityEventBase->_0).byval_arg.attrs,uVar15);
+      if (pMVar12->return_type == (Il2CppType *)0x0) {
+        pIVar15 = (Il2CppType *)func_?(TypeInfo__System__Object,0);
+        pMVar12->return_type = pIVar15;
+        func_?(&pMVar12->return_type,pIVar15);
       }
-      if (RVar11 == (RegexCharClass_SingleRange)0x0) break;
-      uVar15._0_2_ = (unityEventBase->_0).byval_arg.attrs;
-      uVar15._2_1_ = (unityEventBase->_0).byval_arg.type;
-      uVar15._3_1_ = (unityEventBase->_0).byval_arg.field_0x7;
-      func_?(4,RVar11,uVar15);
-      iVar8 = iVar8 + 1;
-      unityEventBase = pIVar13;
-    } while( true );
+      if (RVar14 == (RegexCharClass_SingleRange)0x0) break;
+      this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                pMVar12->return_type;
+      func_?(4,RVar14);
+      iVar9 = iVar9 + 1;
+    }
   }
 code_?:
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -247,32 +245,29 @@ void Assembly-CSharp.dll::Assets::Scripts::Subscription::AdOrSubscriptionButton:
                     func_?();
                     cRam_? = '\x01';
                   }
-                  fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
-                                    ((MethodInfo *)0x0);
-                  pSVar6 = (pSVar4->fields).cooldowns;
-                  if (pSVar6 != (SubscriberCooldownsManager_Cooldown__Array *)0x0) {
-                    if (pSVar6->max_length <= key) goto code_?;
-                    fVar7 = pSVar6->vector[key].LastUseTime;
+                  puVar6 = (undefined *)
+                           UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
+                                     ((MethodInfo *)0x0);
+                  pSVar7 = (pSVar4->fields).cooldowns;
+                  if (pSVar7 != (SubscriberCooldownsManager_Cooldown__Array *)0x0) {
+                    if (pSVar7->max_length <= key) goto code_?;
+                    fVar5 = pSVar7->vector[key].LastUseTime;
                     if ((TypeInfo__Assets__Scripts__Subscription__SubscriberCooldownsManager->_1).
                         cctor_finished_or_no_cctor == 0) {
+                      puVar6 = &UNK_?;
                       func_?();
                     }
-                    this_00 = TypeInfo__Assets__Scripts__Subscription__SubscriberCooldownsManager->
-                              static_fields->cooldownTimes;
-                    if (this_00 !=
-                        (Dictionary_2_Assets_Scripts_Subscription_CooldownType_System_Single_ *)0x0)
-                    {
-                      pIVar2 = (Image *)
-                                MethodInfo__System__Collections__Generic__Dictionary<Assets::Scripts::Subscription::CooldownType,_float>__get_Item_Assets__Scripts__Subscription__CooldownType_
-                      ;
+                    pIVar2 = (Image *)TypeInfo__Assets__Scripts__Subscription__SubscriberCooldownsManager
+                                       ->static_fields->cooldownTimes;
+                    if (pIVar2 != (Image *)0x0) {
                       fVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                              Int32Enum,System::Single]::
-                              Dictionary_2_System_Int32Enum_System_Single__get_Item
-                                        ((Dictionary_2_System_Int32Enum_System_Single_ *)this_00,key
-                                         ,
-                                         MethodInfo__System__Collections__Generic__Dictionary<Assets::Scripts::Subscription::CooldownType,_float>__get_Item_Assets__Scripts__Subscription__CooldownType_
-                                        );
-                      fVar8 = (fVar5 - fVar7) / fVar8;
+                               Int32Enum,System::Single]::
+                               Dictionary_2_System_Int32Enum_System_Single__get_Item
+                                         ((Dictionary_2_System_Int32Enum_System_Single_ *)pIVar2,
+                                          key,
+                                          MethodInfo__System__Collections__Generic__Dictionary<Assets::Scripts::Subscription::CooldownType,_float>__get_Item_Assets__Scripts__Subscription__CooldownType_
+                                         );
+                      fVar8 = ((float)puVar6 - fVar5) / fVar8;
                       if (_UNK_? <= fVar8) {
                         fVar8 = _UNK_?;
                       }
@@ -287,7 +282,10 @@ void Assembly-CSharp.dll::Assets::Scripts::Subscription::AdOrSubscriptionButton:
                           mscorlib.dll::System::Int32::Int32_ToString
                                     ((Int32 *)&stack0xfffffff0,(MethodInfo *)0x0);
                           if (pTVar9 != (Text *)0x0) {
-                            (*(code *)(pTVar9->klass->vtable).set_text.method)();
+                            pTVar10 = pTVar9->klass;
+                            pIStack11 =
+                                 (pTVar10->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
+                            (*(code *)(pTVar10->vtable).set_text.method)();
                             return;
                           }
                         }
@@ -327,8 +325,8 @@ void Assembly-CSharp.dll::Assets::Scripts::Subscription::AdOrSubscriptionButton:
   func_?();
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 

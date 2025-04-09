@@ -377,41 +377,43 @@ Vector3 * Assembly-CSharp.dll::BodyData::BodyData_GetVectorFromObscuredFloatArra
   }
   else {
     if (values->max_length != 3) goto code_?;
-    iVar1 = values->vector[0].currentCryptoKey;
-    AVar2 = values->vector[0].hiddenValue;
-    pBVar3 = values->vector[0].hiddenValueOld;
-    fVar4 = values->vector[0].fakeValue;
-    if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).
-        cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
-    }
-    value.hiddenValue = AVar2;
-    value.currentCryptoKey = iVar1;
-    value.hiddenValueOld = pBVar3;
-    value.fakeValue = fVar4;
-    value.inited = values->vector[0].inited;
-    value._17_3_ = *(undefined3 *)&values->vector[0].field_0x11;
-    Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-    ObscuredFloat_op_Implicit_1(value,(MethodInfo *)0x0);
-    if (1 < values->max_length) {
-      fVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-              ObscuredFloat_op_Implicit_1(values->vector[1],(MethodInfo *)0x0);
-      fStack_5 = fVar4;
-      if (2 < values->max_length) {
-        pOVar6 = values->vector + 2;
-        IStack_7.m_value = pOVar6->currentCryptoKey;
-        unique0x100003c8 = (pOVar6->hiddenValue).b1;
-        unique0x100003c9 = (pOVar6->hiddenValue).b2;
-        unique0x100003ca = (pOVar6->hiddenValue).b3;
-        unique0x100003cb = (pOVar6->hiddenValue).b4;
-        unique0x100003cc = pOVar6->hiddenValueOld;
-        pVVar8 = *(Vector3 **)&values->vector[2].inited;
+    if (values->max_length != 0) {
+      iVar1 = values->vector[0].currentCryptoKey;
+      AVar2 = values->vector[0].hiddenValue;
+      pBVar3 = values->vector[0].hiddenValueOld;
+      fVar4 = values->vector[0].fakeValue;
+      if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).
+          cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+      }
+      value.hiddenValue = AVar2;
+      value.currentCryptoKey = iVar1;
+      value.hiddenValueOld = pBVar3;
+      value.fakeValue = fVar4;
+      value.inited = values->vector[0].inited;
+      value._17_3_ = *(undefined3 *)&values->vector[0].field_0x11;
+      Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+      ObscuredFloat_op_Implicit_1(value,(MethodInfo *)0x0);
+      if (1 < values->max_length) {
         fVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-                ObscuredFloat_op_Implicit_1(*pOVar6,(MethodInfo *)0x0);
-        pVVar8->x = 0.0;
-        pVVar8->y = fStack_5;
-        pVVar8->z = fVar4;
-        return pVVar8;
+                ObscuredFloat_op_Implicit_1(values->vector[1],(MethodInfo *)0x0);
+        fStack_5 = fVar4;
+        if (2 < values->max_length) {
+          pOVar6 = values->vector + 2;
+          IStack_7.m_value = pOVar6->currentCryptoKey;
+          unique0x100003cd = (pOVar6->hiddenValue).b1;
+          unique0x100003ce = (pOVar6->hiddenValue).b2;
+          unique0x100003cf = (pOVar6->hiddenValue).b3;
+          unique0x100003d0 = (pOVar6->hiddenValue).b4;
+          unique0x100003d1 = pOVar6->hiddenValueOld;
+          pVVar8 = *(Vector3 **)&values->vector[2].inited;
+          fVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat
+                  ::ObscuredFloat_op_Implicit_1(*pOVar6,(MethodInfo *)0x0);
+          pVVar8->x = 0.0;
+          pVVar8->y = fStack_5;
+          pVVar8->z = fVar4;
+          return pVVar8;
+        }
       }
     }
   }
@@ -452,7 +454,7 @@ void Assembly-CSharp.dll::BodyData::BodyData_InitVariables(BodyData *this,Method
     cRam_? = '\x01';
   }
   pOVar1 = (ObscuredFloat__Array__Array *)
-            func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat,8);
+           func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat,8);
   pOVar2 = (ObscuredFloat__Array *)
             func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat,3);
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_finished_or_no_cctor
@@ -887,12 +889,11 @@ void Assembly-CSharp.dll::BodyData::BodyData_InitVariables(BodyData *this,Method
                     if (pOVar1->max_length < 8) goto code_?;
                     pOVar1->vector[7] = pOVar2;
                     func_?(pOVar1->vector + 7,pOVar2);
-                    ppOVar10 = &(this->fields).PartConstraintsBoxMin;
-                    *ppOVar10 = pOVar1;
-                    func_?(ppOVar10,pOVar1);
+                    (this->fields).PartConstraintsBoxMin = pOVar1;
+                    func_?(&(this->fields).PartConstraintsBoxMin,pOVar1);
                     pOVar1 = (ObscuredFloat__Array__Array *)
-                              func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat
-                                              ,8);
+                             func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat
+                                             ,8);
                     pOVar2 = (ObscuredFloat__Array *)
                               func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat
                                               ,3);
@@ -1363,10 +1364,9 @@ void Assembly-CSharp.dll::BodyData::BodyData_InitVariables(BodyData *this,Method
                                       if (pOVar1->max_length < 8) goto code_?;
                                       pOVar1->vector[7] = pOVar2;
                                       func_?(pOVar1->vector + 7,pOVar2);
-                                      ppOVar10 = &(this->fields).PartConstraintsBoxMax;
-                                      *ppOVar10 = pOVar1;
-                                      func_?(ppOVar10,pOVar1);
-                                      pOVar11 = (ObscuredInt__Array *)
+                                      (this->fields).PartConstraintsBoxMax = pOVar1;
+                                      func_?(&(this->fields).PartConstraintsBoxMax,pOVar1);
+                                      pOVar10 = (ObscuredInt__Array *)
                                                 func_?(
                                                   TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt
                                                   ,8);
@@ -1377,148 +1377,149 @@ void Assembly-CSharp.dll::BodyData::BodyData_InitVariables(BodyData *this,Method
                                                   TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt
                                                   );
                                       }
-                                      pOVar12 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat
+                                      pOVar11 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat
                                                 ::ObscuredTypes::ObscuredInt::
                                                 ObscuredInt_op_Implicit
                                                           ((ObscuredInt *)(auStack_4 + 4),0x14,
                                                            (MethodInfo *)0x0);
-                                      if (pOVar11 != (ObscuredInt__Array *)0x0) {
-                                        iVar13 = pOVar12->hiddenValue;
-                                        iVar14 = pOVar12->fakeValue;
-                                        bVar8 = pOVar12->inited;
-                                        uVar9 = *(undefined3 *)&pOVar12->field_0xd;
-                                        if (pOVar11->max_length != 0) {
-                                          pOVar11->vector[0].currentCryptoKey =
-                                               pOVar12->currentCryptoKey;
-                                          pOVar11->vector[0].hiddenValue = iVar13;
-                                          pOVar11->vector[0].fakeValue = iVar14;
-                                          pOVar11->vector[0].inited = bVar8;
-                                          *(undefined3 *)&pOVar11->vector[0].field_0xd = uVar9;
-                                          pOVar12 = Assembly-CSharp-firstpass.dll::CodeStage::
+                                      if (pOVar10 != (ObscuredInt__Array *)0x0) {
+                                        iVar12 = pOVar11->hiddenValue;
+                                        iVar13 = pOVar11->fakeValue;
+                                        bVar8 = pOVar11->inited;
+                                        uVar9 = *(undefined3 *)&pOVar11->field_0xd;
+                                        if (pOVar10->max_length != 0) {
+                                          pOVar10->vector[0].currentCryptoKey =
+                                               pOVar11->currentCryptoKey;
+                                          pOVar10->vector[0].hiddenValue = iVar12;
+                                          pOVar10->vector[0].fakeValue = iVar13;
+                                          pOVar10->vector[0].inited = bVar8;
+                                          *(undefined3 *)&pOVar10->vector[0].field_0xd = uVar9;
+                                          pOVar11 = Assembly-CSharp-firstpass.dll::CodeStage::
                                                     AntiCheat::ObscuredTypes::ObscuredInt::
                                                     ObscuredInt_op_Implicit
                                                               ((ObscuredInt *)(auStack_4 + 4),0x14,
                                                                (MethodInfo *)0x0);
-                                          iVar13 = pOVar12->hiddenValue;
-                                          iVar14 = pOVar12->fakeValue;
-                                          bVar8 = pOVar12->inited;
-                                          uVar9 = *(undefined3 *)&pOVar12->field_0xd;
-                                          if (1 < pOVar11->max_length) {
-                                            pOVar11->vector[1].currentCryptoKey =
-                                                 pOVar12->currentCryptoKey;
-                                            pOVar11->vector[1].hiddenValue = iVar13;
-                                            pOVar11->vector[1].fakeValue = iVar14;
-                                            pOVar11->vector[1].inited = bVar8;
-                                            *(undefined3 *)&pOVar11->vector[1].field_0xd = uVar9;
-                                            pOVar12 = Assembly-CSharp-firstpass.dll::CodeStage::
+                                          iVar12 = pOVar11->hiddenValue;
+                                          iVar13 = pOVar11->fakeValue;
+                                          bVar8 = pOVar11->inited;
+                                          uVar9 = *(undefined3 *)&pOVar11->field_0xd;
+                                          if (1 < pOVar10->max_length) {
+                                            pOVar10->vector[1].currentCryptoKey =
+                                                 pOVar11->currentCryptoKey;
+                                            pOVar10->vector[1].hiddenValue = iVar12;
+                                            pOVar10->vector[1].fakeValue = iVar13;
+                                            pOVar10->vector[1].inited = bVar8;
+                                            *(undefined3 *)&pOVar10->vector[1].field_0xd = uVar9;
+                                            pOVar11 = Assembly-CSharp-firstpass.dll::CodeStage::
                                                       AntiCheat::ObscuredTypes::ObscuredInt::
                                                       ObscuredInt_op_Implicit
                                                                 ((ObscuredInt *)(auStack_4 + 4),3,
                                                                  (MethodInfo *)0x0);
-                                            iVar13 = pOVar12->hiddenValue;
-                                            iVar14 = pOVar12->fakeValue;
-                                            bVar8 = pOVar12->inited;
-                                            uVar9 = *(undefined3 *)&pOVar12->field_0xd;
-                                            if (2 < pOVar11->max_length) {
-                                              pOVar11->vector[2].currentCryptoKey =
-                                                   pOVar12->currentCryptoKey;
-                                              pOVar11->vector[2].hiddenValue = iVar13;
-                                              pOVar11->vector[2].fakeValue = iVar14;
-                                              pOVar11->vector[2].inited = bVar8;
-                                              *(undefined3 *)&pOVar11->vector[2].field_0xd = uVar9;
-                                              pOVar12 = Assembly-CSharp-firstpass.dll::CodeStage::
+                                            iVar12 = pOVar11->hiddenValue;
+                                            iVar13 = pOVar11->fakeValue;
+                                            bVar8 = pOVar11->inited;
+                                            uVar9 = *(undefined3 *)&pOVar11->field_0xd;
+                                            if (2 < pOVar10->max_length) {
+                                              pOVar10->vector[2].currentCryptoKey =
+                                                   pOVar11->currentCryptoKey;
+                                              pOVar10->vector[2].hiddenValue = iVar12;
+                                              pOVar10->vector[2].fakeValue = iVar13;
+                                              pOVar10->vector[2].inited = bVar8;
+                                              *(undefined3 *)&pOVar10->vector[2].field_0xd = uVar9;
+                                              pOVar11 = Assembly-CSharp-firstpass.dll::CodeStage::
                                                         AntiCheat::ObscuredTypes::ObscuredInt::
                                                         ObscuredInt_op_Implicit
                                                                   ((ObscuredInt *)(auStack_4 + 4),3
                                                                    ,(MethodInfo *)0x0);
-                                              iVar13 = pOVar12->hiddenValue;
-                                              iVar14 = pOVar12->fakeValue;
-                                              bVar8 = pOVar12->inited;
-                                              uVar9 = *(undefined3 *)&pOVar12->field_0xd;
-                                              if (3 < pOVar11->max_length) {
-                                                pOVar11->vector[3].currentCryptoKey =
-                                                     pOVar12->currentCryptoKey;
-                                                pOVar11->vector[3].hiddenValue = iVar13;
-                                                pOVar11->vector[3].fakeValue = iVar14;
-                                                pOVar11->vector[3].inited = bVar8;
-                                                *(undefined3 *)&pOVar11->vector[3].field_0xd =
-                                                     uVar9;
-                                                pOVar12 = Assembly-CSharp-firstpass.dll::CodeStage::
+                                              iVar12 = pOVar11->hiddenValue;
+                                              iVar13 = pOVar11->fakeValue;
+                                              bVar8 = pOVar11->inited;
+                                              uVar9 = *(undefined3 *)&pOVar11->field_0xd;
+                                              if (3 < pOVar10->max_length) {
+                                                pOVar10->vector[3].currentCryptoKey =
+                                                     pOVar11->currentCryptoKey;
+                                                pOVar10->vector[3].hiddenValue = iVar12;
+                                                pOVar10->vector[3].fakeValue = iVar13;
+                                                pOVar10->vector[3].inited = bVar8;
+                                                *(undefined3 *)&pOVar10->vector[3].field_0xd = uVar9
+                                                ;
+                                                pOVar11 = Assembly-CSharp-firstpass.dll::CodeStage::
                                                           AntiCheat::ObscuredTypes::ObscuredInt::
                                                           ObscuredInt_op_Implicit
                                                                     ((ObscuredInt *)(auStack_4 + 4)
                                                                      ,3,(MethodInfo *)0x0);
-                                                iVar13 = pOVar12->hiddenValue;
-                                                iVar14 = pOVar12->fakeValue;
-                                                bVar8 = pOVar12->inited;
-                                                uVar9 = *(undefined3 *)&pOVar12->field_0xd;
-                                                if (4 < pOVar11->max_length) {
-                                                  pOVar11->vector[4].currentCryptoKey =
-                                                       pOVar12->currentCryptoKey;
-                                                  pOVar11->vector[4].hiddenValue = iVar13;
-                                                  pOVar11->vector[4].fakeValue = iVar14;
-                                                  pOVar11->vector[4].inited = bVar8;
-                                                  *(undefined3 *)&pOVar11->vector[4].field_0xd =
+                                                iVar12 = pOVar11->hiddenValue;
+                                                iVar13 = pOVar11->fakeValue;
+                                                bVar8 = pOVar11->inited;
+                                                uVar9 = *(undefined3 *)&pOVar11->field_0xd;
+                                                if (4 < pOVar10->max_length) {
+                                                  pOVar10->vector[4].currentCryptoKey =
+                                                       pOVar11->currentCryptoKey;
+                                                  pOVar10->vector[4].hiddenValue = iVar12;
+                                                  pOVar10->vector[4].fakeValue = iVar13;
+                                                  pOVar10->vector[4].inited = bVar8;
+                                                  *(undefined3 *)&pOVar10->vector[4].field_0xd =
                                                        uVar9;
-                                                  pOVar12 = Assembly-CSharp-firstpass.dll::CodeStage
+                                                  pOVar11 = Assembly-CSharp-firstpass.dll::CodeStage
                                                             ::AntiCheat::ObscuredTypes::ObscuredInt
                                                             ::ObscuredInt_op_Implicit
                                                                       ((ObscuredInt *)
                                                                        (auStack_4 + 4),3,
                                                                        (MethodInfo *)0x0);
-                                                  iVar13 = pOVar12->hiddenValue;
-                                                  iVar14 = pOVar12->fakeValue;
-                                                  bVar8 = pOVar12->inited;
-                                                  uVar9 = *(undefined3 *)&pOVar12->field_0xd;
-                                                  if (5 < pOVar11->max_length) {
-                                                    pOVar11->vector[5].currentCryptoKey =
-                                                         pOVar12->currentCryptoKey;
-                                                    pOVar11->vector[5].hiddenValue = iVar13;
-                                                    pOVar11->vector[5].fakeValue = iVar14;
-                                                    pOVar11->vector[5].inited = bVar8;
-                                                    *(undefined3 *)&pOVar11->vector[5].field_0xd =
+                                                  iVar12 = pOVar11->hiddenValue;
+                                                  iVar13 = pOVar11->fakeValue;
+                                                  bVar8 = pOVar11->inited;
+                                                  uVar9 = *(undefined3 *)&pOVar11->field_0xd;
+                                                  if (5 < pOVar10->max_length) {
+                                                    pOVar10->vector[5].currentCryptoKey =
+                                                         pOVar11->currentCryptoKey;
+                                                    pOVar10->vector[5].hiddenValue = iVar12;
+                                                    pOVar10->vector[5].fakeValue = iVar13;
+                                                    pOVar10->vector[5].inited = bVar8;
+                                                    *(undefined3 *)&pOVar10->vector[5].field_0xd =
                                                          uVar9;
-                                                    pOVar12 = Assembly-CSharp-firstpass.dll::
+                                                    pOVar11 = Assembly-CSharp-firstpass.dll::
                                                               CodeStage::AntiCheat::ObscuredTypes::
                                                               ObscuredInt::ObscuredInt_op_Implicit
                                                                         ((ObscuredInt *)
                                                                          (auStack_4 + 4),3,
                                                                          (MethodInfo *)0x0);
-                                                    iVar13 = pOVar12->hiddenValue;
-                                                    iVar14 = pOVar12->fakeValue;
-                                                    bVar8 = pOVar12->inited;
-                                                    uVar9 = *(undefined3 *)&pOVar12->field_0xd;
-                                                    if (6 < pOVar11->max_length) {
-                                                      pOVar11->vector[6].currentCryptoKey =
-                                                           pOVar12->currentCryptoKey;
-                                                      pOVar11->vector[6].hiddenValue = iVar13;
-                                                      pOVar11->vector[6].fakeValue = iVar14;
-                                                      pOVar11->vector[6].inited = bVar8;
-                                                      *(undefined3 *)&pOVar11->vector[6].field_0xd =
+                                                    iVar12 = pOVar11->hiddenValue;
+                                                    iVar13 = pOVar11->fakeValue;
+                                                    bVar8 = pOVar11->inited;
+                                                    uVar9 = *(undefined3 *)&pOVar11->field_0xd;
+                                                    if (6 < pOVar10->max_length) {
+                                                      pOVar10->vector[6].currentCryptoKey =
+                                                           pOVar11->currentCryptoKey;
+                                                      pOVar10->vector[6].hiddenValue = iVar12;
+                                                      pOVar10->vector[6].fakeValue = iVar13;
+                                                      pOVar10->vector[6].inited = bVar8;
+                                                      *(undefined3 *)&pOVar10->vector[6].field_0xd =
                                                            uVar9;
-                                                      pOVar12 = Assembly-CSharp-firstpass.dll::
+                                                      pOVar11 = Assembly-CSharp-firstpass.dll::
                                                                 CodeStage::AntiCheat::ObscuredTypes
                                                                 ::ObscuredInt::
                                                                 ObscuredInt_op_Implicit
                                                                           ((ObscuredInt *)
                                                                            (auStack_4 + 4),3,
                                                                            (MethodInfo *)0x0);
-                                                      iVar13 = pOVar12->hiddenValue;
-                                                      iVar14 = pOVar12->fakeValue;
-                                                      bVar8 = pOVar12->inited;
-                                                      uVar9 = *(undefined3 *)&pOVar12->field_0xd;
-                                                      if (7 < pOVar11->max_length) {
-                                                        ppOVar15 = &(this->fields).
-                                                                   PartConstraintsMinCubes;
-                                                        pOVar11->vector[7].currentCryptoKey =
-                                                             pOVar12->currentCryptoKey;
-                                                        pOVar11->vector[7].hiddenValue = iVar13;
-                                                        pOVar11->vector[7].fakeValue = iVar14;
-                                                        pOVar11->vector[7].inited = bVar8;
-                                                        *(undefined3 *)&pOVar11->vector[7].field_0xd
+                                                      iVar12 = pOVar11->hiddenValue;
+                                                      iVar13 = pOVar11->fakeValue;
+                                                      bVar8 = pOVar11->inited;
+                                                      uVar9 = *(undefined3 *)&pOVar11->field_0xd;
+                                                      if (7 < pOVar10->max_length) {
+                                                        pOVar10->vector[7].currentCryptoKey =
+                                                             pOVar11->currentCryptoKey;
+                                                        pOVar10->vector[7].hiddenValue = iVar12;
+                                                        pOVar10->vector[7].fakeValue = iVar13;
+                                                        pOVar10->vector[7].inited = bVar8;
+                                                        *(undefined3 *)&pOVar10->vector[7].field_0xd
                                                              = uVar9;
-                                                        *ppOVar15 = pOVar11;
-                                                        func_?(ppOVar15,pOVar11);
+                                                        (this->fields).PartConstraintsMinCubes =
+                                                             pOVar10;
+                                                        func_?(&(this->fields).
+                                                                         PartConstraintsMinCubes,
+                                                                        pOVar10);
                                                         return;
                                                       }
                                                     }
@@ -1551,8 +1552,8 @@ void Assembly-CSharp.dll::BodyData::BodyData_InitVariables(BodyData *this,Method
   func_?();
 code_?:
   func_?();
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -1618,46 +1619,44 @@ void Assembly-CSharp.dll::BodyData::BodyData__ctor(BodyData *this,MethodInfo *me
     if (pSVar1->max_length < 9) goto code_?;
     pSVar1->vector[8] = StringLiteral_Holster;
     func_?(pSVar1->vector + 8,pSVar2);
-    ppSVar3 = &(this->fields).PartNames;
-    *ppSVar3 = pSVar1;
-    func_?(ppSVar3,pSVar1);
-    pVVar4 = (Vector3__Array *)func_?(TypeInfo__UnityEngine__Vector3,8);
-    if (pVVar4 != (Vector3__Array *)0x0) {
-      if (pVVar4->max_length != 0) {
-        pVVar4->vector[0].x = 0.0;
-        pVVar4->vector[0].y = -7.7;
-        pVVar4->vector[0].z = -1.5;
-        if (1 < pVVar4->max_length) {
-          pVVar4->vector[1].x = 0.0;
-          pVVar4->vector[1].y = -2.8;
-          pVVar4->vector[1].z = -1.5;
-          if (2 < pVVar4->max_length) {
-            pVVar4->vector[2].x = 0.5;
-            pVVar4->vector[2].y = -7.5;
-            pVVar4->vector[2].z = 2.0;
-            if (3 < pVVar4->max_length) {
-              pVVar4->vector[3].x = 0.5;
-              pVVar4->vector[3].y = -7.5;
-              pVVar4->vector[3].z = 2.0;
-              if (4 < pVVar4->max_length) {
-                pVVar4->vector[4].x = -1.0;
-                pVVar4->vector[4].y = -1.5;
-                pVVar4->vector[4].z = 0.0;
-                if (5 < pVVar4->max_length) {
-                  pVVar4->vector[5].x = -1.0;
-                  pVVar4->vector[5].y = -1.5;
-                  pVVar4->vector[5].z = 0.0;
-                  if (6 < pVVar4->max_length) {
-                    pVVar4->vector[6].x = -1.0;
-                    pVVar4->vector[6].y = -1.5;
-                    pVVar4->vector[6].z = 0.0;
-                    if (7 < pVVar4->max_length) {
-                      pVVar4->vector[7].x = -1.0;
-                      pVVar4->vector[7].y = -1.5;
-                      pVVar4->vector[7].z = 0.0;
-                      ppVVar5 = &(this->fields).PartBoneSpacePosition;
-                      *ppVVar5 = pVVar4;
-                      func_?(ppVVar5,pVVar4);
+    (this->fields).PartNames = pSVar1;
+    func_?(&(this->fields).PartNames,pSVar1);
+    pVVar3 = (Vector3__Array *)func_?(TypeInfo__UnityEngine__Vector3,8);
+    if (pVVar3 != (Vector3__Array *)0x0) {
+      if (pVVar3->max_length != 0) {
+        pVVar3->vector[0].x = 0.0;
+        pVVar3->vector[0].y = -7.7;
+        pVVar3->vector[0].z = -1.5;
+        if (1 < pVVar3->max_length) {
+          pVVar3->vector[1].x = 0.0;
+          pVVar3->vector[1].y = -2.8;
+          pVVar3->vector[1].z = -1.5;
+          if (2 < pVVar3->max_length) {
+            pVVar3->vector[2].x = 0.5;
+            pVVar3->vector[2].y = -7.5;
+            pVVar3->vector[2].z = 2.0;
+            if (3 < pVVar3->max_length) {
+              pVVar3->vector[3].x = 0.5;
+              pVVar3->vector[3].y = -7.5;
+              pVVar3->vector[3].z = 2.0;
+              if (4 < pVVar3->max_length) {
+                pVVar3->vector[4].x = -1.0;
+                pVVar3->vector[4].y = -1.5;
+                pVVar3->vector[4].z = 0.0;
+                if (5 < pVVar3->max_length) {
+                  pVVar3->vector[5].x = -1.0;
+                  pVVar3->vector[5].y = -1.5;
+                  pVVar3->vector[5].z = 0.0;
+                  if (6 < pVVar3->max_length) {
+                    pVVar3->vector[6].x = -1.0;
+                    pVVar3->vector[6].y = -1.5;
+                    pVVar3->vector[6].z = 0.0;
+                    if (7 < pVVar3->max_length) {
+                      pVVar3->vector[7].x = -1.0;
+                      pVVar3->vector[7].y = -1.5;
+                      pVVar3->vector[7].z = 0.0;
+                      (this->fields).PartBoneSpacePosition = pVVar3;
+                      func_?(&(this->fields).PartBoneSpacePosition,pVVar3);
                       this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                                  *)func_?(
                                                   TypeInfo__System__Collections__Generic__Dictionary<System::String,_int>
@@ -1668,9 +1667,8 @@ void Assembly-CSharp.dll::BodyData::BodyData__ctor(BodyData *this,MethodInfo *me
                                 (this_00,
                                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__Dictionary__
                                 );
-                      ppDVar6 = &(this->fields).partMap;
-                      *ppDVar6 = (Dictionary_2_System_String_System_Int32_ *)this_00;
-                      func_?(ppDVar6,this_00);
+                      (this->fields).partMap = (Dictionary_2_System_String_System_Int32_ *)this_00;
+                      func_?(&(this->fields).partMap,this_00);
                       UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
                                 ((MonoBehaviour *)this,(MethodInfo *)0x0);
                       return;
@@ -1688,8 +1686,8 @@ void Assembly-CSharp.dll::BodyData::BodyData__ctor(BodyData *this,MethodInfo *me
   func_?();
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

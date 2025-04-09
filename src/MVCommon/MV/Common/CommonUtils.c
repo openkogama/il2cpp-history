@@ -62,20 +62,26 @@ void MVCommon.dll::MV::Common::CommonUtils::CommonUtils_PartialRemoveFromHashtab
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
+  DStack_6._current.value = (Object *)0x0;
+  DStack_6._getEnumeratorRetType = 0;
+  DStack_6._dictionary = (Dictionary_2_System_Object_System_Object_ *)0x0;
+  DStack_6._version = 0;
+  DStack_6._index = 0;
+  DStack_6._current.key = (Object *)0x0;
   if (source != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pDVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+    pDVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
              ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                       (&DStack_7,(Dictionary_2_System_UInt32_System_Object_ *)source,
+                       (&DStack_8,(Dictionary_2_System_UInt32_System_Object_ *)source,
                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__GetEnumerator__
                        );
-    uStack_8 = 0;
-    DStack_9._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar6->_dictionary;
-    DStack_9._version = pDVar6->_version;
-    DStack_9._index = pDVar6->_index;
-    DStack_9._current.key = (Object *)(pDVar6->_current).key;
-    DStack_9._16_8_ = *(undefined8 *)&(pDVar6->_current).value;
+    uStack_9 = 0;
+    DStack_6._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar7->_dictionary;
+    DStack_6._version = pDVar7->_version;
+    DStack_6._index = pDVar7->_index;
+    DStack_6._current.key = (Object *)(pDVar7->_current).key;
+    DStack_6._16_8_ = *(undefined8 *)&(pDVar7->_current).value;
     uStack_1 = 1;
-    pDStack_10 = &DStack_9;
+    pDStack_10 = &DStack_6;
     do {
       while( true ) {
         while( true ) {
@@ -83,31 +89,31 @@ void MVCommon.dll::MV::Common::CommonUtils::CommonUtils_PartialRemoveFromHashtab
             bVar11 = mscorlib.dll::System::Collections::Generic::
                     Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Object]::
                     Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
-                              (&DStack_9,
+                              (&DStack_6,
                                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__MoveNext__
                               );
-            key = DStack_9._current.key;
+            key = DStack_6._current.key;
             if (bVar11 == 0) {
               uStack_1 = 0xffffffff;
               mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                        ((Object *)&DStack_9,
+                        ((Object *)&DStack_6,
                          (ExceptionArgument__Enum)
                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__Dispose__
                          ,unaff_EDI);
               *unaff_FS_OFFSET = uStack_3;
               return;
             }
-            pMStack_12 = (MethodInfo *)DStack_9._current.key;
-            pOStack_13 = DStack_9._current.value;
-            if (DStack_9._current.value != (Object *)0x0) break;
+            pMStack_12 = (MethodInfo *)DStack_6._current.key;
+            pOStack_13 = DStack_6._current.value;
+            if (DStack_6._current.value != (Object *)0x0) break;
             if (target == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
             ::Dictionary_2_System_Object_System_Object__Remove
-                      (target,DStack_9._current.key,
+                      (target,DStack_6._current.key,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Remove_System__Object_
                       );
           }
-          iStack_14 = func_?(DStack_9._current.value,
+          iStack_14 = func_?(DStack_6._current.value,
                                       TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
                                      );
           if (iStack_14 != 0) break;
@@ -165,13 +171,13 @@ void MVCommon.dll::MV::Common::CommonUtils::CommonUtils_PartialRemoveFromHashtab
     this = (ArgumentException *)func_?();
     mscorlib.dll::System::ArgumentException::ArgumentException__ctor_1
               (this,pSVar19,(MethodInfo *)0x0);
-    DStack_7._version =
+    DStack_8._version =
          (int32_t)&
                   MethodInfo__MV__Common__CommonUtils__PartialRemoveFromHashtable_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__Collections__Generic__Dictionary<System::Object,_System::Object>__bool_
     ;
-    DStack_7._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)&UNK_?;
-    DStack_7._version = func_?();
-    DStack_7._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)this;
+    DStack_8._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)&UNK_?;
+    DStack_8._version = func_?();
+    DStack_8._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)this;
     func_?();
   }
 code_?:
@@ -236,49 +242,55 @@ void MVCommon.dll::MV::Common::CommonUtils::CommonUtils_PartialUpdateHashtable
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
+  DStack_7._current.value = (Object *)0x0;
+  DStack_7._getEnumeratorRetType = 0;
+  DStack_7._dictionary = (Dictionary_2_System_Object_System_Object_ *)0x0;
+  DStack_7._version = 0;
+  DStack_7._index = 0;
+  DStack_7._current.key = (Object *)0x0;
   if (source != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pDVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+    pDVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
              ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
                        ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
                         &stack0xffffff9c,(Dictionary_2_System_UInt32_System_Object_ *)source,
                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__GetEnumerator__
                        );
-    uStack_8 = 0;
-    DStack_9._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar7->_dictionary;
-    DStack_9._version = pDVar7->_version;
-    DStack_9._index = pDVar7->_index;
-    DStack_9._current.key = (Object *)(pDVar7->_current).key;
-    DStack_9._16_8_ = *(undefined8 *)&(pDVar7->_current).value;
+    uStack_9 = 0;
+    DStack_7._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar8->_dictionary;
+    DStack_7._version = pDVar8->_version;
+    DStack_7._index = pDVar8->_index;
+    DStack_7._current.key = (Object *)(pDVar8->_current).key;
+    DStack_7._16_8_ = *(undefined8 *)&(pDVar8->_current).value;
     uStack_1 = 1;
-    pDStack_10 = &DStack_9;
+    pDStack_10 = &DStack_7;
     while( true ) {
       bVar11 = mscorlib.dll::System::Collections::Generic::
               Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Object]::
               Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
-                        (&DStack_9,
+                        (&DStack_7,
                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__MoveNext__
                         );
-      key = (MethodInfo *)DStack_9._current.key;
+      key = (MethodInfo *)DStack_7._current.key;
       if (bVar11 == 0) {
         uStack_1 = 0xffffffff;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&DStack_9,
+                  ((Object *)&DStack_7,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__Dispose__
                    ,(MethodInfo *)in_stack_6);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      pOVar12 = DStack_9._current.value;
-      pMStack_13 = (MethodInfo *)DStack_9._current.key;
-      pOStack_14 = DStack_9._current.value;
-      if (DStack_9._current.value == (Object *)0x0) break;
+      pOVar12 = DStack_7._current.value;
+      pMStack_13 = (MethodInfo *)DStack_7._current.key;
+      pOStack_14 = DStack_7._current.value;
+      if (DStack_7._current.value == (Object *)0x0) break;
       if (target == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
       bVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
               UIElements::TextureId]::
               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                         ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)target,
-                         DStack_9._current.key,
+                         DStack_7._current.key,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                         );
       if (bVar11 == 0) {
@@ -457,8 +469,8 @@ bool MVCommon.dll::MV::Common::CommonUtils::CommonUtils_PruneEmptyDictionaries
     cRam_? = '\x01';
   }
   pOStack_4 = (Object__Class *)0x0;
-  this = (MethodInfo *)func_?(TypeInfo__System__Collections__Generic__List<System::String>)
-  ;
+  this = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+         func_?(TypeInfo__System__Collections__Generic__List<System::String>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
@@ -471,66 +483,49 @@ bool MVCommon.dll::MV::Common::CommonUtils::CommonUtils_PruneEmptyDictionaries
                         &stack0xffffffb8,(Dictionary_2_System_UInt32_System_Object_ *)target,
                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__GetEnumerator__
                        );
-    method_00 = (MethodInfo *)(pDVar5->_current).value;
+    uVar6 = *(undefined8 *)&(pDVar5->_current).value;
     uStack_1 = 1;
-    pMVar6 = (MethodInfo *)(pDVar5->_current).key;
-    while (pMVar7 = pMVar6,
-          bVar8 = mscorlib.dll::System::Collections::Generic::
-                  Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Object]::
-                  Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
-                            ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
-                             &stack0xffffff90,
-                             MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__MoveNext__
-                            ), bVar8 != 0) {
-      pMVar6 = pMVar7;
-      if (method_00 != (MethodInfo *)0x0) {
-        cVar9 = (code)(
-                      TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                      ->_1).naturalAligment;
-        if (((byte)method_00->methodPointer[0xb8] < (byte)cVar9) ||
-           (*(Dictionary_2_System_Object_System_Object___Class **)
-             (*(int *)(method_00->methodPointer + 100) + -4 + (uint)(byte)cVar9 * 4) !=
-            TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
-          bVar10 = false;
-        }
-        else {
-          bVar10 = true;
-        }
-        pMVar11 = (MethodInfo *)0x0;
-        if (bVar10) {
-          pMVar11 = method_00;
-        }
-        if (pMVar11 != (MethodInfo *)0x0) {
-          cVar9 = (code)(
-                        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                        ->_1).naturalAligment;
-          if ((((byte)method_00->methodPointer[0xb8] < (byte)cVar9) ||
-              (*(Dictionary_2_System_Object_System_Object___Class **)
-                (*(int *)(method_00->methodPointer + 100) + -4 + (uint)(byte)cVar9 * 4) !=
-               TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
-             || (method_00 == (MethodInfo *)0x0)) goto code_?;
-          pMVar6 = (MethodInfo *)0x0;
-          bVar8 = CommonUtils_PruneEmptyDictionaries
-                            ((Dictionary_2_System_Object_System_Object_ *)method_00,
-                             (MethodInfo *)0x0);
-          if (bVar8 != 0) {
-            if (this == (MethodInfo *)0x0) goto code_?;
-            method_00 = (MethodInfo *)0x0;
-            if (pMVar7 != (MethodInfo *)0x0) {
-              if ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange___Class *)
-                  pMVar7->methodPointer ==
-                  (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange___Class *)
-                  TypeInfo__System__String) {
-                method_00 = pMVar7;
-              }
-              if (method_00 == (MethodInfo *)0x0) {
-                func_?();
-                goto code_?;
-              }
+    pDVar7 = (Dictionary_2_System_Object_System_Object___Class *)(pDVar5->_current).key;
+    while( true ) {
+      pDVar8 = pDVar7;
+      bVar9 = mscorlib.dll::System::Collections::Generic::
+              Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Object]::
+              Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
+                        ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
+                         &stack0xffffff90,
+                         MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__MoveNext__
+                        );
+      method_00 = (MethodInfo *)uVar6;
+      if (bVar9 == 0) break;
+      pDVar7 = pDVar8;
+      if ((((method_00 != (MethodInfo *)0x0) &&
+           ((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1)
+            .naturalAligment <= (byte)method_00->methodPointer[0xb8])) &&
+          (*(Dictionary_2_System_Object_System_Object___Class **)
+            (*(int *)(method_00->methodPointer + 100) + -4 +
+            (uint)(
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                  ->_1).naturalAligment * 4) ==
+           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) &&
+         (method_00 != (MethodInfo *)0x0)) {
+        pDVar7 = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
+        target_00 = (Dictionary_2_System_Object_System_Object_ *)func_?();
+        if (target_00 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+        bVar9 = CommonUtils_PruneEmptyDictionaries(target_00,(MethodInfo *)0x0);
+        if (bVar9 != 0) {
+          if (this == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+          goto code_?;
+          if (pDVar8 != (Dictionary_2_System_Object_System_Object___Class *)0x0) {
+            pDVar10 = (Dictionary_2_System_Object_System_Object___Class *)0x0;
+            if ((String__Class *)(pDVar8->_0).image == TypeInfo__System__String) {
+              pDVar10 = pDVar8;
             }
-            pMVar6 = this;
-            func_?();
+            if (pDVar10 == (Dictionary_2_System_Object_System_Object___Class *)0x0) {
+              func_?();
+              goto code_?;
+            }
           }
+          func_?();
         }
       }
     }
@@ -541,24 +536,23 @@ bool MVCommon.dll::MV::Common::CommonUtils::CommonUtils_PruneEmptyDictionaries
                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__Dispose__
                ,method_00);
     uStack_1 = 0xffffffff;
-    if (this != (MethodInfo *)0x0) {
-      pLVar12 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    if (this != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+      pLVar11 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
                RegexCharClass+SingleRange]::
                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                          ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                           *)&stack0xffffffc0,
-                          (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)this,
+                           *)&stack0xffffffc0,this,
                           MethodInfo__System__Collections__Generic__List<System::String>__GetEnumerator__
                          );
-      key = pLVar12->_current;
+      key = pLVar11->_current;
       uStack_1 = 4;
       while( true ) {
-        bVar8 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+        bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
                 List_1_T_Enumerator_System_Object__MoveNext
                           ((List_1_T_Enumerator_System_Object_ *)&pOStack_4,
                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<System::String>__MoveNext__
                           );
-        if (bVar8 == 0) break;
+        if (bVar9 == 0) break;
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
         Dictionary_2_System_Object_System_Object__Remove
                   (target,(Object *)key,
@@ -570,9 +564,9 @@ bool MVCommon.dll::MV::Common::CommonUtils::CommonUtils_PruneEmptyDictionaries
                 ((Object *)&pOStack_4,
                  (ExceptionArgument__Enum)
                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<System::String>__Dispose__
-                 ,in_stack_13);
+                 ,in_stack_12);
       uStack_1 = 0xffffffff;
-      iVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+      iVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
               StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
               Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Count
                         ((Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
@@ -580,17 +574,17 @@ bool MVCommon.dll::MV::Common::CommonUtils::CommonUtils_PruneEmptyDictionaries
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Count__
                         );
       *unaff_FS_OFFSET = uStack_3;
-      return iVar14 == 0;
+      return iVar13 == 0;
     }
   }
 code_?:
   func_?();
 code_?:
   func_?();
-  func_?();
-  func_?();
+  uVar14 = func_?();
+  func_?(uVar14);
   pcVar15 = (code *)swi(3);
-  bVar8 = (*pcVar15)();
-  return bVar8;
+  bVar9 = (*pcVar15)();
+  return bVar9;
 }
 

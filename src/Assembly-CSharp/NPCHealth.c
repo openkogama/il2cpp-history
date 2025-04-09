@@ -10,17 +10,18 @@ void Assembly-CSharp.dll::NPCHealth::NPCHealth_Interact
     func_?(&StringLiteral_hit__);
     cRam_? = '\x01';
   }
-  this_00 = &(this->fields).curHealth;
-  fVar1 = *this_00;
-  fVar2 = (this->fields).MaxHealth;
-  *this_00 = amount + fVar1;
-  if (fVar2 < amount + fVar1) {
-    *this_00 = fVar2;
+  fVar1 = amount + (this->fields).curHealth;
+  pfVar2 = &(this->fields).MaxHealth;
+  (this->fields).curHealth = fVar1;
+  if (*pfVar2 <= fVar1 && fVar1 != *pfVar2) {
+    (this->fields).curHealth = (this->fields).MaxHealth;
   }
-  if (*this_00 <= 0.0 && *this_00 != 0.0) {
-    *this_00 = 0.0;
+  pfVar2 = &(this->fields).curHealth;
+  if (*pfVar2 <= 0.0 && *pfVar2 != 0.0) {
+    (this->fields).curHealth = 0.0;
   }
-  pSVar3 = mscorlib.dll::System::Single::Single_ToString((Single *)this_00,(MethodInfo *)0x0);
+  pSVar3 = mscorlib.dll::System::Single::Single_ToString
+                     ((Single *)&(this->fields).curHealth,(MethodInfo *)0x0);
   pSVar3 = mscorlib.dll::System::String::String_Concat_3
                      (StringLiteral_hit__,pSVar3,(MethodInfo *)0x0);
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {

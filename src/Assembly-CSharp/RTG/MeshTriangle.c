@@ -16,63 +16,62 @@ void Assembly-CSharp.dll::RTG::MeshTriangle::MeshTriangle__ctor
   if (vertices != (Vector3__Array *)0x0) {
     pOVar1 = UnityEngine.CoreModule.dll::UnityEngine::Playables::PlayableBehaviour::
              PlayableBehaviour_Clone((PlayableBehaviour *)vertices,(MethodInfo *)0x0);
-    pMVar2 = &this->fields;
-    pVVar3 = (Vector3__Array *)func_?(pOVar1,TypeInfo__UnityEngine__Vector3);
-    pMVar2->_vertices = pVVar3;
-    uVar4 = func_?(pOVar1,TypeInfo__UnityEngine__Vector3);
-    func_?(pMVar2,uVar4);
+    pVVar2 = (Vector3__Array *)func_?(pOVar1,TypeInfo__UnityEngine__Vector3);
+    (this->fields)._vertices = pVVar2;
+    uVar3 = func_?(pOVar1,TypeInfo__UnityEngine__Vector3);
+    func_?(&this->fields,uVar3);
     (this->fields)._triangleIndex = triangleIndex;
-    pIVar5 = (Int32__Array *)func_?(TypeInfo__System__Int32,3);
-    ppIVar6 = &(this->fields)._vertIndices;
-    *ppIVar6 = pIVar5;
-    func_?(ppIVar6,pIVar5);
-    pIVar5 = *ppIVar6;
-    if (pIVar5 != (Int32__Array *)0x0) {
-      if (pIVar5->max_length == 0) goto code_?;
-      pIVar5->vector[0] = vertIndex0;
-      pIVar5 = *ppIVar6;
-      if (pIVar5 != (Int32__Array *)0x0) {
-        if (pIVar5->max_length < 2) goto code_?;
-        pIVar5->vector[1] = vertIndex1;
-        pIVar5 = *ppIVar6;
-        if (pIVar5 != (Int32__Array *)0x0) {
-          if (pIVar5->max_length < 3) goto code_?;
-          pIVar5->vector[2] = vertIndex2;
-          pVVar3 = pMVar2->_vertices;
-          if (pVVar3 != (Vector3__Array *)0x0) {
-            if (1 < pVVar3->max_length) {
-              VStack_7.x = pVVar3->vector[0].x;
-              VStack_7.y = pVVar3->vector[0].y;
-              VStack_7.z = pVVar3->vector[0].z;
-              uStack_8._0_4_ = pVVar3->vector[1].x;
-              uStack_8._4_4_ = pVVar3->vector[1].y;
-              fStack_9 = pVVar3->vector[1].z;
-              fVar10 = (float)(undefined4)uStack_8 - VStack_7.x;
-              fVar11 = (float)uStack_8._4_4_ - VStack_7.y;
-              fVar12 = fStack_9 - VStack_7.z;
-              if (2 < pVVar3->max_length) {
-                uStack_8._0_4_ = pVVar3->vector[0].x;
-                uStack_8._4_4_ = pVVar3->vector[0].y;
-                fStack_9 = pVVar3->vector[0].z;
-                VStack_7.x = pVVar3->vector[2].x;
-                VStack_7.y = pVVar3->vector[2].y;
-                fVar13 = pVVar3->vector[2].z - fStack_9;
-                VStack_7.z = (VStack_7.y - (float)uStack_8._4_4_) * fVar10 -
-                              (VStack_7.x - (float)(undefined4)uStack_8) * fVar11;
-                value.y = (VStack_7.x - (float)(undefined4)uStack_8) * fVar12 - fVar13 * fVar10;
-                value.x = fVar13 * fVar11 - (VStack_7.y - (float)uStack_8._4_4_) * fVar12;
-                value.z = VStack_7.z;
-                pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                                   (&VStack_7,value,(MethodInfo *)0x0);
-                fVar11 = pVVar14->y;
-                fVar10 = pVVar14->z;
-                (this->fields)._normal.x = pVVar14->x;
-                (this->fields)._normal.y = fVar11;
-                (this->fields)._normal.z = fVar10;
+    pIVar4 = (Int32__Array *)func_?(TypeInfo__System__Int32,3);
+    (this->fields)._vertIndices = pIVar4;
+    func_?(&(this->fields)._vertIndices,pIVar4);
+    pIVar4 = (this->fields)._vertIndices;
+    if (pIVar4 != (Int32__Array *)0x0) {
+      if (pIVar4->max_length == 0) goto code_?;
+      pIVar4->vector[0] = vertIndex0;
+      pIVar4 = (this->fields)._vertIndices;
+      if (pIVar4 != (Int32__Array *)0x0) {
+        if (pIVar4->max_length < 2) goto code_?;
+        pIVar4->vector[1] = vertIndex1;
+        pIVar4 = (this->fields)._vertIndices;
+        if (pIVar4 != (Int32__Array *)0x0) {
+          if (pIVar4->max_length < 3) goto code_?;
+          pIVar4->vector[2] = vertIndex2;
+          pVVar2 = (this->fields)._vertices;
+          if (pVVar2 != (Vector3__Array *)0x0) {
+            if ((pVVar2->max_length < 2) || (pVVar2->max_length == 0)) goto code_?;
+            VStack_5.x = pVVar2->vector[0].x;
+            VStack_5.y = pVVar2->vector[0].y;
+            VStack_5.z = pVVar2->vector[0].z;
+            uStack_6._0_4_ = pVVar2->vector[1].x;
+            uStack_6._4_4_ = pVVar2->vector[1].y;
+            fStack_7 = pVVar2->vector[1].z;
+            fVar8 = (float)(undefined4)uStack_6 - VStack_5.x;
+            fVar9 = (float)uStack_6._4_4_ - VStack_5.y;
+            fVar10 = fStack_7 - VStack_5.z;
+            if (pVVar2 != (Vector3__Array *)0x0) {
+              if ((2 < pVVar2->max_length) && (pVVar2->max_length != 0)) {
+                uStack_6._0_4_ = pVVar2->vector[0].x;
+                uStack_6._4_4_ = pVVar2->vector[0].y;
+                fStack_7 = pVVar2->vector[0].z;
+                VStack_5.x = pVVar2->vector[2].x;
+                VStack_5.y = pVVar2->vector[2].y;
+                fVar11 = pVVar2->vector[2].z - fStack_7;
+                VStack_5.z = fVar8 * (VStack_5.y - (float)uStack_6._4_4_) -
+                              fVar9 * (VStack_5.x - (float)(undefined4)uStack_6);
+                value.y = fVar10 * (VStack_5.x - (float)(undefined4)uStack_6) - fVar8 * fVar11;
+                value.x = fVar9 * fVar11 - fVar10 * (VStack_5.y - (float)uStack_6._4_4_);
+                value.z = VStack_5.z;
+                pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                                   (&VStack_5,value,(MethodInfo *)0x0);
+                fVar10 = pVVar12->y;
+                fVar8 = pVVar12->z;
+                (this->fields)._normal.x = pVVar12->x;
+                (this->fields)._normal.y = fVar10;
+                (this->fields)._normal.z = fVar8;
                 return;
               }
+              goto code_?;
             }
-            goto code_?;
           }
         }
       }
@@ -81,8 +80,8 @@ void Assembly-CSharp.dll::RTG::MeshTriangle::MeshTriangle__ctor
   func_?();
 code_?:
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

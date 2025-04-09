@@ -57,7 +57,6 @@ void Assembly-CSharp.dll::SpawnRolePreviewer::SpawnRolePreviewer_Initialize
                String *name,int32_t spawnRoleId,GameObject *woGameObjectCopy,MethodInfo *method)
 
 {
-  pSVar1 = this;
   if (cRam_? == '\0') {
     func_?(&
                     MVBodyObject_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<MVBodyObject>__
@@ -74,207 +73,215 @@ void Assembly-CSharp.dll::SpawnRolePreviewer::SpawnRolePreviewer_Initialize
   }
   (this->fields).layersToRender = layersToRender | LayerFlags__Enum_Hidden;
   if (previewSpawnRoleRoot != (Transform *)0x0) {
-    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+    pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                         ((Component *)previewSpawnRoleRoot,(MethodInfo *)0x0);
-    ppGVar3 = &(this->fields).rootObject;
-    *ppGVar3 = pGVar2;
-    func_?(ppGVar3,pGVar2);
-    (this->fields).previewCamOffset.x = (float)(int)cameraOffset._0_8_;
-    (this->fields).previewCamOffset.y = (float)(int)((ulonglong)cameraOffset._0_8_ >> 0x20);
+    (this->fields).rootObject = pGVar1;
+    func_?(&(this->fields).rootObject,pGVar1);
+    (this->fields).previewCamOffset.x = cameraOffset.x;
+    (this->fields).previewCamOffset.y = cameraOffset.y;
     (this->fields).previewCamOffset.z = cameraOffset.z;
-    pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+    pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                         ((Component *)this,(MethodInfo *)0x0);
-    if (pTVar4 != (Transform *)0x0) {
+    if (pTVar2 != (Transform *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
-                (pTVar4,previewSpawnRoleRoot,(MethodInfo *)0x0);
-      pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                (pTVar2,previewSpawnRoleRoot,(MethodInfo *)0x0);
+      pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                           ((Component *)this,(MethodInfo *)0x0);
-      pSVar5 = mscorlib.dll::System::String::String_Format
+      pSVar3 = mscorlib.dll::System::String::String_Format
                           (StringLiteral_Preview__0__RenderCam,(Object *)name,(MethodInfo *)0x0);
-      if (pGVar2 != (GameObject *)0x0) {
+      if (pGVar1 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_set_name
-                  ((Object_1 *)pGVar2,pSVar5,(MethodInfo *)0x0);
-        pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                  ((Object_1 *)pGVar1,pSVar3,(MethodInfo *)0x0);
+        pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                             ((Component *)this,(MethodInfo *)0x0);
-        iVar6 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+        iVar4 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
                            (StringLiteral_Preview,(MethodInfo *)0x0);
-        if (pGVar2 != (GameObject *)0x0) {
+        if (pGVar1 != (GameObject *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer
-                    (pGVar2,iVar6,(MethodInfo *)0x0);
-          pRVar7 = UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::
+                    (pGVar1,iVar4,(MethodInfo *)0x0);
+          pRVar5 = UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::
                     RenderTexture_GetTemporary_4
                               (textureWidth,textureHeight,0x10,RenderTextureFormat__Enum_ARGB32,
                                RenderTextureReadWrite__Enum_Default,2,(MethodInfo *)0x0);
-          ppRVar8 = &(this->fields).previewTexture;
-          *ppRVar8 = pRVar7;
-          func_?(ppRVar8,pRVar7);
-          if (*ppRVar8 != (RenderTexture *)0x0) {
+          (this->fields).previewTexture = pRVar5;
+          func_?(&(this->fields).previewTexture,pRVar5);
+          pRVar5 = (this->fields).previewTexture;
+          if (pRVar5 != (RenderTexture *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_set_name
-                      ((Object_1 *)*ppRVar8,name,(MethodInfo *)0x0);
-            if (*ppRVar8 != (RenderTexture *)0x0) {
+                      ((Object_1 *)pRVar5,name,(MethodInfo *)0x0);
+            pRVar5 = (this->fields).previewTexture;
+            if (pRVar5 != (RenderTexture *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_filterMode
-                        ((Texture *)*ppRVar8,FilterMode__Enum_Bilinear,(MethodInfo *)0x0);
-              if (*ppRVar8 != (RenderTexture *)0x0) {
+                        ((Texture *)pRVar5,FilterMode__Enum_Bilinear,(MethodInfo *)0x0);
+              pRVar5 = (this->fields).previewTexture;
+              if (pRVar5 != (RenderTexture *)0x0) {
                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_set_hideFlags
-                          ((Object_1 *)*ppRVar8,HideFlags__Enum_DontSave,(MethodInfo *)0x0);
-                pCVar9 = (this->fields).previewCam;
-                if (pCVar9 != (Camera *)0x0) {
+                          ((Object_1 *)pRVar5,HideFlags__Enum_DontSave,(MethodInfo *)0x0);
+                pCVar6 = (this->fields).previewCam;
+                if (pCVar6 != (Camera *)0x0) {
                   UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_targetTexture
-                            (pCVar9,*ppRVar8,(MethodInfo *)0x0);
-                  ppGVar3 = &(this->fields)._PreviewGameObject_k__BackingField;
-                  *ppGVar3 = woGameObjectCopy;
-                  func_?(ppGVar3,woGameObjectCopy);
-                  pGVar2 = *ppGVar3;
-                  pSVar5 = mscorlib.dll::System::Int32::Int32_ToString
+                            (pCVar6,(this->fields).previewTexture,(MethodInfo *)0x0);
+                  (this->fields)._PreviewGameObject_k__BackingField = woGameObjectCopy;
+                  func_?(&(this->fields)._PreviewGameObject_k__BackingField,
+                                  woGameObjectCopy);
+                  pGVar1 = (this->fields)._PreviewGameObject_k__BackingField;
+                  pSVar3 = mscorlib.dll::System::Int32::Int32_ToString
                                       ((Int32 *)&spawnRoleId,(MethodInfo *)0x0);
-                  pSVar5 = mscorlib.dll::System::String::String_Concat_5
-                                      (StringLiteral_Preview_,name,::StringLiteral__,pSVar5,
+                  pSVar3 = mscorlib.dll::System::String::String_Concat_5
+                                      (StringLiteral_Preview_,name,::StringLiteral__,pSVar3,
                                        (MethodInfo *)0x0);
-                  if (pGVar2 != (GameObject *)0x0) {
+                  if (pGVar1 != (GameObject *)0x0) {
                     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_set_name
-                              ((Object_1 *)pGVar2,pSVar5,(MethodInfo *)0x0);
-                    if ((*ppGVar3 != (GameObject *)0x0) &&
-                       (pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                  GameObject_get_transform(*ppGVar3,(MethodInfo *)0x0),
-                       pTVar4 != (Transform *)0x0)) {
+                              ((Object_1 *)pGVar1,pSVar3,(MethodInfo *)0x0);
+                    pGVar1 = (this->fields)._PreviewGameObject_k__BackingField;
+                    if ((pGVar1 != (GameObject *)0x0) &&
+                       (pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                                  GameObject_get_transform(pGVar1,(MethodInfo *)0x0),
+                       pTVar2 != (Transform *)0x0)) {
                       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
-                                (pTVar4,previewSpawnRoleRoot,(MethodInfo *)0x0);
-                      if (*ppGVar3 != (GameObject *)0x0) {
-                        pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                  GameObject_get_transform(*ppGVar3,(MethodInfo *)0x0);
+                                (pTVar2,previewSpawnRoleRoot,(MethodInfo *)0x0);
+                      pGVar1 = (this->fields)._PreviewGameObject_k__BackingField;
+                      if (pGVar1 != (GameObject *)0x0) {
+                        pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                                  GameObject_get_transform(pGVar1,(MethodInfo *)0x0);
                         if (cRam_? == '\0') {
                           func_?(&TypeInfo__UnityEngine__Quaternion);
                           cRam_? = '\x01';
                         }
-                        if (pTVar4 != (Transform *)0x0) {
+                        if (pTVar2 != (Transform *)0x0) {
                           UnityEngine.CoreModule.dll::UnityEngine::Transform::
                           Transform_set_localRotation
-                                    (pTVar4,TypeInfo__UnityEngine__Quaternion->static_fields->
+                                    (pTVar2,TypeInfo__UnityEngine__Quaternion->static_fields->
                                              identityQuaternion,(MethodInfo *)0x0);
-                          if ((*ppGVar3 != (GameObject *)0x0) &&
-                             (pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                        GameObject_get_transform(*ppGVar3,(MethodInfo *)0x0),
-                             pTVar4 != (Transform *)0x0)) {
+                          pGVar1 = (this->fields)._PreviewGameObject_k__BackingField;
+                          if ((pGVar1 != (GameObject *)0x0) &&
+                             (pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                                        GameObject_get_transform(pGVar1,(MethodInfo *)0x0),
+                             pTVar2 != (Transform *)0x0)) {
                             UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                            Transform_set_position(pTVar4,previewPosition,(MethodInfo *)0x0);
-                            if (*ppGVar3 != (GameObject *)0x0) {
-                              pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                        GameObject_get_transform(*ppGVar3,(MethodInfo *)0x0);
-                              uVar10._0_4_ = (this->fields).pivotPoint.x;
-                              uVar10._4_4_ = (this->fields).pivotPoint.y;
-                              fVar11 = (this->fields).pivotPoint.z;
+                            Transform_set_position(pTVar2,previewPosition,(MethodInfo *)0x0);
+                            pGVar1 = (this->fields)._PreviewGameObject_k__BackingField;
+                            if (pGVar1 != (GameObject *)0x0) {
+                              pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                                        GameObject_get_transform(pGVar1,(MethodInfo *)0x0);
+                              uVar7._0_4_ = (this->fields).pivotPoint.x;
+                              uVar7._4_4_ = (this->fields).pivotPoint.y;
+                              fVar8 = (this->fields).pivotPoint.z;
                               if (cRam_? == '\0') {
                                 func_?();
                                 cRam_? = '\x01';
                               }
-                              if (pTVar4 != (Transform *)0x0) {
-                                VVar12.z = fVar11;
-                                VVar12.x = (float)(int)uVar10;
-                                VVar12.y = (float)(int)((ulonglong)uVar10 >> 0x20);
+                              if (pTVar2 != (Transform *)0x0) {
+                                point.z = fVar8;
+                                point.x = (float)(int)uVar7;
+                                point.y = (float)(int)((ulonglong)uVar7 >> 0x20);
                                 UnityEngine.CoreModule.dll::UnityEngine::Transform::
                                 Transform_RotateAround
-                                          (pTVar4,VVar12,
+                                          (pTVar2,point,
                                            TypeInfo__UnityEngine__Vector3->static_fields->upVector,
                                            180.0,(MethodInfo *)0x0);
-                                pCVar9 = (this->fields).previewCam;
-                                if (pCVar9 != (Camera *)0x0) {
-                                  pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                pCVar6 = (this->fields).previewCam;
+                                if (pCVar6 != (Camera *)0x0) {
+                                  pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                                             Component_get_transform
-                                                      ((Component *)pCVar9,(MethodInfo *)0x0);
-                                  if ((*ppGVar3 != (GameObject *)0x0) &&
-                                     (pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::GameObject
+                                                      ((Component *)pCVar6,(MethodInfo *)0x0);
+                                  pGVar1 = (this->fields)._PreviewGameObject_k__BackingField;
+                                  if ((pGVar1 != (GameObject *)0x0) &&
+                                     (pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::GameObject
                                                 ::GameObject_get_transform
-                                                          (*ppGVar3,(MethodInfo *)0x0),
-                                     pTVar13 != (Transform *)0x0)) {
-                                    pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                                                          (pGVar1,(MethodInfo *)0x0),
+                                     pTVar9 != (Transform *)0x0)) {
+                                    pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                                               Transform_get_position
-                                                        ((Vector3 *)&stack0xffffffd8,pTVar13,
+                                                        ((Vector3 *)&stack0xfffffff0,pTVar9,
                                                          (MethodInfo *)0x0);
-                                    uVar15 = pVVar14->x;
-                                    uVar16 = pVVar14->y;
-                                    uVar17 = (this->fields).previewCamOffset.x;
-                                    uVar18 = (this->fields).previewCamOffset.y;
-                                    if (pTVar4 != (Transform *)0x0) {
-                                      this = (SpawnRolePreviewer *)
-                                             ((this->fields).previewCamOffset.z + pVVar14->z);
-                                      fVar19 = (float)uVar18 + (float)uVar16;
-                                      VVar12.x = (float)uVar17 + (float)uVar15;
-                                      VVar12 = (Vector3)CONCAT84(uVar20,VVar12.x);
+                                    uVar11 = pVVar10->x;
+                                    uVar12 = pVVar10->y;
+                                    uVar13 = (this->fields).previewCamOffset.x;
+                                    uVar14 = (this->fields).previewCamOffset.y;
+                                    if (pTVar2 != (Transform *)0x0) {
+                                      value.y = (float)uVar14 + (float)uVar12;
+                                      value.x = (float)uVar13 + (float)uVar11;
+                                      value.z = (this->fields).previewCamOffset.z + pVVar10->z;
                                       UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                                      Transform_set_position(pTVar4,VVar12,(MethodInfo *)0x0);
-                                      pGVar2 = (pSVar1->fields).blobShadowPrefab;
+                                      Transform_set_position(pTVar2,value,(MethodInfo *)0x0);
+                                      pGVar1 = (this->fields).blobShadowPrefab;
                                       if ((TypeInfo__UnityEngine__Object->_1).
                                           cctor_finished_or_no_cctor == 0) {
                                         func_?();
                                       }
-                                      pGVar2 = (GameObject *)
+                                      pGVar1 = (GameObject *)
                                                 UnityEngine.CoreModule.dll::UnityEngine::Object::
                                                 Object_1_Instantiate_4
-                                                          ((Object *)pGVar2,
+                                                          ((Object *)pGVar1,
                                                                                                                       
                                                   UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
                                                   );
-                                      if (pGVar2 != (GameObject *)0x0) {
-                                        pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::
+                                      if (pGVar1 != (GameObject *)0x0) {
+                                        pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::
                                                   GameObject::GameObject_get_transform
-                                                            (pGVar2,(MethodInfo *)0x0);
-                                        if ((*ppGVar3 != (GameObject *)0x0) &&
-                                           (pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::
+                                                            (pGVar1,(MethodInfo *)0x0);
+                                        this_00 = (this->fields)._PreviewGameObject_k__BackingField;
+                                        if ((this_00 != (GameObject *)0x0) &&
+                                           (pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::
                                                       GameObject::GameObject_get_transform
-                                                                (*ppGVar3,(MethodInfo *)0x0),
-                                           pTVar4 != (Transform *)0x0)) {
+                                                                (this_00,(MethodInfo *)0x0),
+                                           pTVar2 != (Transform *)0x0)) {
                                           UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                                          Transform_SetParent_1(pTVar4,pTVar13,0,(MethodInfo *)0x0)
+                                          Transform_SetParent_1(pTVar2,pTVar9,0,(MethodInfo *)0x0)
                                           ;
-                                          pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::
+                                          pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::
                                                     GameObject::GameObject_get_transform
-                                                              (pGVar2,(MethodInfo *)0x0);
+                                                              (pGVar1,(MethodInfo *)0x0);
                                           if (cRam_? == '\0') {
                                             func_?(&TypeInfo__UnityEngine__Vector3);
                                             cRam_? = '\x01';
                                           }
-                                          if (pTVar4 != (Transform *)0x0) {
+                                          if (pTVar2 != (Transform *)0x0) {
                                             UnityEngine.CoreModule.dll::UnityEngine::Transform::
                                             Transform_set_localPosition
-                                                      (pTVar4,TypeInfo__UnityEngine__Vector3->
+                                                      (pTVar2,TypeInfo__UnityEngine__Vector3->
                                                                static_fields->zeroVector,
                                                        (MethodInfo *)0x0);
-                                            pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::
+                                            pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::
                                                       GameObject::GameObject_get_transform
-                                                                (pGVar2,(MethodInfo *)0x0);
-                                            if (pTVar4 != (Transform *)0x0) {
-                                              value.z = 0.2;
-                                              value.x = 0.2;
-                                              value.y = 0.1;
+                                                                (pGVar1,(MethodInfo *)0x0);
+                                            if (pTVar2 != (Transform *)0x0) {
+                                              value_00.z = 0.2;
+                                              value_00.x = 0.2;
+                                              value_00.y = 0.1;
                                               UnityEngine.CoreModule.dll::UnityEngine::Transform::
                                               Transform_set_localScale
-                                                        (pTVar4,value,(MethodInfo *)0x0);
-                                              if (*ppGVar3 != (GameObject *)0x0) {
-                                                pMVar21 = (MVBodyObject *)
+                                                        (pTVar2,value_00,(MethodInfo *)0x0);
+                                              pGVar1 = (this->fields).
+                                                        _PreviewGameObject_k__BackingField;
+                                              if (pGVar1 != (GameObject *)0x0) {
+                                                pMVar15 = (MVBodyObject *)
                                                           UnityEngine.CoreModule.dll::UnityEngine::
                                                           GameObject::
                                                           GameObject_GetComponentInChildren_1
-                                                                    (*ppGVar3,
+                                                                    (pGVar1,
                                                   MVBodyObject_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<MVBodyObject>__
                                                   );
-                                                ppMVar22 = &(pSVar1->fields).body;
-                                                *ppMVar22 = pMVar21;
+                                                (this->fields).body = pMVar15;
                                                 func_?();
-                                                if (*ppGVar3 != (GameObject *)0x0) {
-                                                  pTVar4 = UnityEngine.CoreModule.dll::UnityEngine
+                                                pGVar1 = (this->fields).
+                                                          _PreviewGameObject_k__BackingField;
+                                                if (pGVar1 != (GameObject *)0x0) {
+                                                  pTVar2 = UnityEngine.CoreModule.dll::UnityEngine
                                                             ::GameObject::GameObject_get_transform
-                                                                      (*ppGVar3,(MethodInfo *)0x0);
-                                                  iVar6 = UnityEngine.CoreModule.dll::UnityEngine::
+                                                                      (pGVar1,(MethodInfo *)0x0);
+                                                  iVar4 = UnityEngine.CoreModule.dll::UnityEngine::
                                                            LayerMask::LayerMask_NameToLayer
                                                                      (StringLiteral_Preview,
                                                                       (MethodInfo *)0x0);
                                                   LayerUtil::LayerUtil_SetLayerRecursively
-                                                            (pTVar4,iVar6,(MethodInfo *)0x0);
-                                                  this_00 = (pSVar1->fields).grayScaleEffect;
-                                                  if (this_00 != (GrayscaleEffect *)0x0) {
+                                                            (pTVar2,iVar4,(MethodInfo *)0x0);
+                                                  this_01 = (this->fields).grayScaleEffect;
+                                                  if (this_01 != (GrayscaleEffect *)0x0) {
                                                     UnityEngine.CoreModule.dll::UnityEngine::
                                                     Behaviour::Behaviour_set_enabled
-                                                              ((Behaviour *)this_00,0,
+                                                              ((Behaviour *)this_01,0,
                                                                (MethodInfo *)0x0);
                                                     if (cRam_? == '\0') {
                                                       func_?(&TypeInfo__UnityEngine__Object
@@ -282,37 +289,38 @@ void Assembly-CSharp.dll::SpawnRolePreviewer::SpawnRolePreviewer_Initialize
                                                       func_?(&StringLiteral_Idle);
                                                       cRam_? = '\x01';
                                                     }
-                                                    pMVar21 = *ppMVar22;
+                                                    pMVar15 = (this->fields).body;
                                                     if ((TypeInfo__UnityEngine__Object->_1).
                                                         cctor_finished_or_no_cctor == 0) {
                                                       func_?(TypeInfo__UnityEngine__Object)
                                                       ;
                                                     }
-                                                    bVar23 = UnityEngine.CoreModule.dll::UnityEngine
-                                                             ::Object::Object_1_op_Inequality
-                                                                       ((Object_1 *)pMVar21,
-                                                                        (Object_1 *)0x0,
-                                                                        (MethodInfo *)0x0);
-                                                    if (bVar23 == 0) {
+                                                    bVar16 = UnityEngine.CoreModule.dll::UnityEngine
+                                                            ::Object::Object_1_op_Inequality
+                                                                      ((Object_1 *)pMVar15,
+                                                                       (Object_1 *)0x0,
+                                                                       (MethodInfo *)0x0);
+                                                    if (bVar16 == 0) {
                                                       return;
                                                     }
-                                                    iVar6 = UnityEngine.CoreModule.dll::UnityEngine
+                                                    iVar4 = UnityEngine.CoreModule.dll::UnityEngine
                                                              ::Random::Random_1_RandomRangeInt
                                                                        (0,80000,(MethodInfo *)0x0);
-                                                    this_02 = MVGameControllerBase::
+                                                    this_03 = MVGameControllerBase::
                                                               MVGameControllerBase_get_Game
                                                                         ((MethodInfo *)0x0);
-                                                    if (this_02 != (MVNetworkGame *)0x0) {
-                                                      iVar24 = MVNetworkGame::
+                                                    if (this_03 != (MVNetworkGame *)0x0) {
+                                                      iVar17 = MVNetworkGame::
                                                                                                                               
                                                   MVNetworkGame_get_ServerTimeInMilliSeconds
-                                                            (this_02,(MethodInfo *)0x0);
-                                                  if ((*ppMVar22 != (MVBodyObject *)0x0) &&
-                                                     (this_01 = ((*ppMVar22)->fields).boneAnimation,
-                                                     this_01 != (BoneAnimation *)0x0)) {
+                                                            (this_03,(MethodInfo *)0x0);
+                                                  pMVar15 = (this->fields).body;
+                                                  if ((pMVar15 != (MVBodyObject *)0x0) &&
+                                                     (this_02 = (pMVar15->fields).boneAnimation,
+                                                     this_02 != (BoneAnimation *)0x0)) {
                                                     BoneAnimation::BoneAnimation_StartAnimation
-                                                              (this_01,StringLiteral_Idle,
-                                                               (iVar24 - iVar6) + -500,
+                                                              (this_02,StringLiteral_Idle,
+                                                               (iVar17 - iVar4) + -500,
                                                                (MethodInfo *)0x0);
                                                     return;
                                                   }
@@ -343,8 +351,8 @@ void Assembly-CSharp.dll::SpawnRolePreviewer::SpawnRolePreviewer_Initialize
     }
   }
   func_?();
-  pcVar25 = (code *)swi(3);
-  (*pcVar25)();
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 
@@ -371,15 +379,15 @@ void Assembly-CSharp.dll::SpawnRolePreviewer::SpawnRolePreviewer_OnDestroy
     UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_targetTexture
               (pCVar1,(RenderTexture *)0x0,(MethodInfo *)0x0);
   }
-  ppRVar3 = &(this->fields).previewTexture;
-  x = *ppRVar3;
+  pRVar3 = (this->fields).previewTexture;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
   bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                    ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
+                    ((Object_1 *)pRVar3,(Object_1 *)0x0,(MethodInfo *)0x0);
   if (bVar2 != 0) {
-    if (*ppRVar3 == (RenderTexture *)0x0) {
+    pRVar3 = (this->fields).previewTexture;
+    if (pRVar3 == (RenderTexture *)0x0) {
 code_?:
       func_?();
       pcVar4 = (code *)swi(3);
@@ -387,10 +395,10 @@ code_?:
       return;
     }
     UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_DiscardContents_1
-              (*ppRVar3,(MethodInfo *)0x0);
+              (pRVar3,(MethodInfo *)0x0);
     UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_ReleaseTemporary
-              (*ppRVar3,(MethodInfo *)0x0);
-    *ppRVar3 = (RenderTexture *)0x0;
+              ((this->fields).previewTexture,(MethodInfo *)0x0);
+    (this->fields).previewTexture = (RenderTexture *)0x0;
     func_?();
   }
   obj = (this->fields)._PreviewGameObject_k__BackingField;

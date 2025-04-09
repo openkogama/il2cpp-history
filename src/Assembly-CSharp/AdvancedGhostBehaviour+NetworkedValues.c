@@ -13,8 +13,9 @@ Vector3 * Assembly-CSharp.dll::AdvancedGhostBehaviour+NetworkedValues::
     cRam_? = '\x01';
   }
   fVar1 = radius + radius;
-  iVar2 = (int)(((fVar1 + fVar1) / (speed * _UNK_?)) * _UNK_?);
-  fVar3 = ((float)(serverTimeInMilliSeconds % iVar2) / (float)iVar2) * (fVar1 + fVar1);
+  fVar2 = radius + radius + radius + radius;
+  iVar3 = (int)((fVar2 / (speed * _UNK_?)) * _UNK_?);
+  fVar2 = ((float)(serverTimeInMilliSeconds % iVar3) / (float)iVar3) * fVar2;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
@@ -22,107 +23,126 @@ Vector3 * Assembly-CSharp.dll::AdvancedGhostBehaviour+NetworkedValues::
   pVVar4 = TypeInfo__UnityEngine__Vector3->static_fields;
   uVar5 = (pVVar4->backVector).x;
   uVar6 = (pVVar4->backVector).y;
-  fVar7 = (pVVar4->backVector).z * radius;
-  fVar8 = (float)uVar5 * radius;
-  fVar9 = (float)uVar6 * radius;
-  if (fVar1 < fVar3) {
+  fVar7 = (float)uVar5 * radius;
+  fVar8 = (float)uVar6 * radius;
+  fVar9 = (pVVar4->backVector).z * radius;
+  VStack_10.y = 0.0;
+  VStack_10.z = 0.0;
+  fStack_11 = 0.0;
+  VStack_10.x = fVar7;
+  if (fVar1 < fVar2) {
     func_?();
-    fVar7 = (float)((uint)fVar7 ^
+    fVar9 = (float)((uint)fVar9 ^
+                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+    fVar7 = (float)((uint)VStack_10.x ^
                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     fVar8 = (float)((uint)fVar8 ^
                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-    fVar9 = (float)((uint)fVar9 ^
-                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   }
-  func_?(&stack0xffffff90,&stack0xffffffbc,0);
+  puVar12 = (undefined8 *)func_?(&stack0xffffff90,&stack0xffffffbc,0);
+  fVar2 = (float)((uint)*puVar12 ^
+                 __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+  fVar1 = (float)((uint)((ulonglong)*puVar12 >> 0x20) ^
+                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+  fVar13 = (float)(*(uint *)(puVar12 + 1) ^
+                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
   if (transform != (Transform *)0x0) {
-    position_00.y = fVar9;
-    position_00.x = fVar8;
-    position_00.z = fVar7;
-    pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_TransformPoint
+    position_00.y = fVar8;
+    position_00.x = fVar7;
+    position_00.z = fVar9;
+    pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_TransformPoint
                         ((Vector3 *)&stack0xffffff90,transform,position_00,(MethodInfo *)0x0);
-    uVar11 = pVVar10->x;
-    uVar12 = pVVar10->y;
-    fVar3 = pVVar10->z;
+    uVar15 = pVVar14->x;
+    uVar16 = pVVar14->y;
+    fVar8 = pVVar14->z;
     position_01.y = 0.0;
-    position_01.x = fVar8;
-    position_01.z = fVar7;
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_TransformPoint
-              ((Vector3 *)&stack0xffffff90,transform,position_01,(MethodInfo *)0x0);
+    position_01.x = fVar7;
+    position_01.z = fVar9;
+    pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_TransformPoint
+                        ((Vector3 *)&stack0xffffff90,transform,position_01,(MethodInfo *)0x0);
+    uVar17 = pVVar14->x;
+    uVar18 = pVVar14->y;
+    fStack_11 = pVVar14->z;
+    VStack_10.x = (float)uVar17 + fVar2;
+    VStack_10.y = (float)uVar18 + fVar1;
+    VStack_10.z = fStack_11 + fVar13;
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    fVar9 = 0.5;
-    start.y = (float)uVar12;
-    start.x = (float)uVar11;
-    start.z = fVar3;
-    end.y = _UNK_?;
-    end.x = (float)_UNK_?;
-    end.z = 0.5;
+    start.y = (float)uVar16;
+    start.x = (float)uVar15;
+    start.z = fVar8;
+    end.y = VStack_10.y;
+    end.x = VStack_10.x;
+    end.z = VStack_10.z;
     color.g = _UNK_?;
     color.r = _UNK_?;
     color.b = (float)_UNK_?;
     color.a = _UNK_?;
-    fVar3 = _UNK_?;
+    fVar2 = VStack_10.y;
+    fVar1 = VStack_10.z;
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_DrawLine
               (start,end,color,0.5,(MethodInfo *)0x0);
-    position_02.y = fVar9;
-    position_02.x = fVar3;
-    position_02.z = fVar7;
-    pTVar13 = transform;
-    fVar1 = fVar3;
-    fVar8 = fVar9;
-    pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_TransformPoint
+    position_02.y = fVar1;
+    position_02.x = fVar2;
+    position_02.z = fVar9;
+    pTVar19 = transform;
+    fVar7 = fVar2;
+    fVar8 = fVar1;
+    pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_TransformPoint
                         ((Vector3 *)&stack0xffffff90,transform,position_02,(MethodInfo *)0x0);
-    uVar14 = pVVar10->x;
-    puVar15 = &UNK_?;
-    position_03.y = fVar9;
-    position_03.x = fVar3;
-    position_03.z = fVar7;
-    pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_TransformPoint
-                        ((Vector3 *)&stack0xffffff90,transform,position_03,(MethodInfo *)0x0);
-    uVar16 = pVVar10->x;
-    uVar17 = pVVar10->y;
-    fVar3 = pVVar10->z;
+    uVar20 = pVVar14->x;
+    puVar21 = &UNK_?;
+    position_03.y = fVar1;
+    position_03.x = fVar2;
+    position_03.z = fVar9;
+    pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_TransformPoint
+                        (&VStack_10,transform,position_03,(MethodInfo *)0x0);
+    fVar2 = pVVar14->x;
+    fVar1 = pVVar14->y;
+    fVar9 = pVVar14->z;
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
     pVVar4 = TypeInfo__UnityEngine__Vector3->static_fields;
-    uVar18 = (pVVar4->rightVector).x;
-    uVar19 = (pVVar4->rightVector).y;
-    fVar20 = (float)uVar19 + (float)uVar17;
-    fVar3 = (pVVar4->rightVector).z + fVar3;
-    start_00.y = (float)puVar15;
-    start_00.x = (float)uVar14;
-    start_00.z = (float)uVar18 + (float)uVar16;
-    end_00.y = fVar20;
-    end_00.x = (float)uVar18 + (float)uVar16;
-    end_00.z = fVar3;
+    uVar22 = (pVVar4->rightVector).x;
+    uVar23 = (pVVar4->rightVector).y;
+    fStack_11 = (pVVar4->rightVector).z;
+    fVar1 = (float)uVar23 + fVar1;
+    fVar9 = fStack_11 + fVar9;
+    start_00.y = (float)puVar21;
+    start_00.x = (float)uVar20;
+    start_00.z = (float)uVar22 + fVar2;
+    end_00.y = fVar1;
+    end_00.x = (float)uVar22 + fVar2;
+    end_00.z = fVar9;
     color_00.g = _UNK_?;
     color_00.r = _UNK_?;
     color_00.b = (float)_UNK_?;
     color_00.a = _UNK_?;
-    fVar7 = _UNK_?;
-    fVar9 = _UNK_?;
+    VStack_10.y = (float)uVar22;
+    VStack_10.z = (float)uVar23;
+    fVar2 = _UNK_?;
+    fVar13 = _UNK_?;
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_DrawLine
               (start_00,end_00,color_00,0.5,(MethodInfo *)0x0);
-    position.y = fVar1 + fVar3 * fVar9;
-    position.x = (float)pTVar13 + fVar7 * fVar9;
-    position.z = fVar8 + fVar20 * fVar9;
-    pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_TransformPoint
+    position.y = fVar7 + fVar9 * fVar13;
+    position.x = (float)pTVar19 + fVar2 * fVar13;
+    position.z = fVar8 + fVar1 * fVar13;
+    pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_TransformPoint
                         ((Vector3 *)&stack0xffffff90,transform,position,(MethodInfo *)0x0);
-    fVar1 = pVVar10->y;
-    fVar3 = pVVar10->z;
-    __return_storage_ptr__->x = pVVar10->x;
+    fVar1 = pVVar14->y;
+    fVar2 = pVVar14->z;
+    __return_storage_ptr__->x = pVVar14->x;
     __return_storage_ptr__->y = fVar1;
-    __return_storage_ptr__->z = fVar3;
+    __return_storage_ptr__->z = fVar2;
     return __return_storage_ptr__;
   }
   func_?();
-  pcVar21 = (code *)swi(3);
-  pVVar10 = (Vector3 *)(*pcVar21)();
-  return pVVar10;
+  pcVar24 = (code *)swi(3);
+  pVVar14 = (Vector3 *)(*pcVar24)();
+  return pVVar14;
 }
 
 
@@ -529,9 +549,8 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour+NetworkedValues::
   (this->fields).minLookDeltaOffset = 0.1;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-  ppAVar1 = &(this->fields).ghostBehaviour;
-  *ppAVar1 = ghostBehaviour;
-  func_?(ppAVar1,ghostBehaviour);
+  (this->fields).ghostBehaviour = ghostBehaviour;
+  func_?(&(this->fields).ghostBehaviour,ghostBehaviour);
   this_00 = (Func_5_Int32_Single_Single_Object_UnityEngine_Vector3_ *)
             func_?(
                            TypeInfo__System__Func<int,_float,_float,_UnityEngine::Transform,_UnityEngine::Vector3>
@@ -541,9 +560,9 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour+NetworkedValues::
             (this_00,(Object *)this,
              MethodInfo__AdvancedGhostBehaviour__NetworkedValues__EaseInEaseOutBackAndForward_int__float__float__UnityEngine__Transform_
              ,(MethodInfo *)0x0);
-  ppFVar2 = &(this->fields).patrolPattern;
-  *ppFVar2 = (Func_5_Int32_Single_Single_UnityEngine_Transform_UnityEngine_Vector3_ *)this_00;
-  func_?(ppFVar2,this_00);
+  (this->fields).patrolPattern =
+       (Func_5_Int32_Single_Single_UnityEngine_Transform_UnityEngine_Vector3_ *)this_00;
+  func_?(&(this->fields).patrolPattern,this_00);
   AdvancedGhostBehaviour_NetworkedValues_Update(this,(MethodInfo *)0x0);
   return;
 }

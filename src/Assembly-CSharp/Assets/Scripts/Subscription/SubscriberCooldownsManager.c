@@ -281,9 +281,8 @@ void Assembly-CSharp.dll::Assets::Scripts::Subscription::SubscriberCooldownsMana
            func_?(TypeInfo__Assets__Scripts__Subscription__SubscriberCooldownsManager__Cooldown
                            ,TypeInfo__Assets__Scripts__Subscription__SubscriberCooldownsManager->
                             static_fields->nrOfCooldownTypes);
-  ppSVar2 = &(this->fields).cooldowns;
-  *ppSVar2 = pSVar1;
-  func_?(ppSVar2,pSVar1);
+  (this->fields).cooldowns = pSVar1;
+  func_?(&(this->fields).cooldowns,pSVar1);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

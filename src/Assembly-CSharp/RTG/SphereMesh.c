@@ -14,133 +14,131 @@ Mesh * Assembly-CSharp.dll::RTG::SphereMesh::SphereMesh_CreateSphere
   if (((radius < _UNK_?) || (numSlices < 3)) || (numStacks < 2)) {
     return (Mesh *)0x0;
   }
-  iStack_1 = numSlices + 1;
-  iVar2 = iStack_1 * (numStacks + 1);
+  iStack_1 = numStacks + 1;
+  iVar2 = (numSlices + 1) * iStack_1;
   iStack_3 = iVar2;
   pVVar4 = (Vector3__Array *)func_?(TypeInfo__UnityEngine__Vector3,iVar2);
   pVStack_5 = pVVar4;
   pVStack_6 = (Vector3__Array *)func_?(TypeInfo__UnityEngine__Vector3,iVar2);
   iVar2 = 0;
-  iStack_7 = numSlices;
-  iStack_8 = 0;
-  fStack_9 = _UNK_? / (float)numSlices;
-  fStack_10 = (float)numStacks;
+  iStack_7 = 0;
+  fStack_8 = _UNK_? / (float)numSlices;
+  fStack_9 = (float)(iStack_1 + -1);
   do {
-    fStack_11 = ((float)iStack_8 * _UNK_?) / fStack_10;
-    dVar12 = (double)fStack_11;
+    fStack_10 = ((float)iStack_7 * _UNK_?) / fStack_9;
+    dVar11 = (double)fStack_10;
     func_?();
-    pIStack_13 = (Int32__Array *)(float)dVar12;
-    dVar12 = (double)fStack_11;
+    fStack_12 = (float)dVar11;
+    dVar11 = (double)fStack_10;
     func_?();
-    fStack_14 = (float)dVar12;
-    iVar15 = 0;
-    if (0 < iStack_1) {
+    iVar13 = 0;
+    pIStack_14 = (Int32__Array *)(float)dVar11;
+    if (numSlices != -1 && -1 < numSlices + 1) {
       do {
-        fStack_11 = (float)iVar15 * fStack_9 * _UNK_?;
-        pVVar16 = TriangPrismShape3D::TriangPrismShape3D_get_ModelRight(&VStack_17,(MethodInfo *)0x0)
+        fStack_10 = (float)iVar13 * fStack_8 * _UNK_?;
+        pVVar15 = TriangPrismShape3D::TriangPrismShape3D_get_ModelRight(&VStack_16,(MethodInfo *)0x0)
         ;
-        uStack_18._0_4_ = pVVar16->x;
-        uStack_18._4_4_ = pVVar16->y;
-        fStack_19 = pVVar16->z;
-        dVar12 = (double)fStack_11;
+        uStack_17._0_4_ = pVVar15->x;
+        uStack_17._4_4_ = pVVar15->y;
+        fStack_18 = pVVar15->z;
+        dVar11 = (double)fStack_10;
         func_?();
-        fStack_20 = (float)dVar12;
-        fStack_21 = (float)uStack_18 * fStack_20;
-        fStack_22 = uStack_18._4_4_ * fStack_20;
-        fStack_20 = fStack_19 * fStack_20;
-        pVVar16 = TriangPrismShape3D::TriangPrismShape3D_get_ModelLook
-                           ((Vector3 *)&stack0xffffff70,(MethodInfo *)0x0);
-        uStack_23._0_4_ = pVVar16->x;
-        uStack_23._4_4_ = pVVar16->y;
-        fStack_24 = pVVar16->z;
-        dVar12 = (double)fStack_11;
+        fStack_19 = (float)dVar11;
+        fStack_20 = (float)uStack_17 * fStack_19;
+        fStack_21 = uStack_17._4_4_ * fStack_19;
+        fStack_19 = fStack_18 * fStack_19;
+        pVVar15 = TriangPrismShape3D::TriangPrismShape3D_get_ModelLook
+                           ((Vector3 *)&stack0xffffff74,(MethodInfo *)0x0);
+        uStack_22._0_4_ = pVVar15->x;
+        uStack_22._4_4_ = pVVar15->y;
+        fStack_23 = pVVar15->z;
+        dVar11 = (double)fStack_10;
         func_?();
-        fVar25 = (float)dVar12;
-        fVar26 = fStack_24 * fVar25 + fStack_20;
-        fStack_20 = ((float)uStack_23 * fVar25 + fStack_21) * fStack_14 * radius;
-        fStack_22 = (uStack_23._4_4_ * fVar25 + fStack_22) * fStack_14 * radius;
-        fStack_21 = fVar26 * fStack_14 * radius;
-        pVVar16 = TriangPrismShape3D::TriangPrismShape3D_get_ModelUp
-                           ((Vector3 *)&stack0xffffff64,(MethodInfo *)0x0);
-        uStack_27._0_4_ = pVVar16->x;
-        uStack_27._4_4_ = pVVar16->y;
-        fStack_28 = pVVar16->z;
-        fStack_29 = (float)(undefined4)uStack_27 * (float)pIStack_13 * radius + fStack_20;
-        fStack_30 = (float)uStack_27._4_4_ * (float)pIStack_13 * radius + fStack_22;
-        fStack_31 = fStack_28 * (float)pIStack_13 * radius + fStack_21;
+        fVar24 = (float)dVar11;
+        fStack_20 = (fStack_20 + (float)uStack_22 * fVar24) * (float)pIStack_14 * radius;
+        fStack_21 = (fStack_21 + uStack_22._4_4_ * fVar24) * (float)pIStack_14 * radius;
+        fStack_19 = (fStack_19 + fStack_23 * fVar24) * (float)pIStack_14 * radius;
+        pVVar15 = TriangPrismShape3D::TriangPrismShape3D_get_ModelUp
+                           ((Vector3 *)&stack0xffffff68,(MethodInfo *)0x0);
+        uStack_25._0_4_ = pVVar15->x;
+        uStack_25._4_4_ = pVVar15->y;
+        fStack_26 = pVVar15->z;
+        fStack_27 = (float)(undefined4)uStack_25 * fStack_12 * radius + fStack_20;
+        fStack_28 = (float)uStack_25._4_4_ * fStack_12 * radius + fStack_21;
+        fStack_29 = fStack_26 * fStack_12 * radius + fStack_19;
         if (pVVar4 == (Vector3__Array *)0x0) goto code_?;
         func_?(iVar2);
-        func_?(&uStack_32,iVar2);
-        value.z = fStack_33;
-        value.x = (float)(undefined4)uStack_32;
-        value.y = (float)uStack_32._4_4_;
+        func_?(&uStack_30,iVar2);
+        value.z = fStack_31;
+        value.x = (float)(undefined4)uStack_30;
+        value.y = (float)uStack_30._4_4_;
         UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                  ((Vector3 *)&stack0xffffff58,value,(MethodInfo *)0x0);
+                  ((Vector3 *)&stack0xffffff5c,value,(MethodInfo *)0x0);
         if (pVStack_6 == (Vector3__Array *)0x0) goto code_?;
         func_?(iVar2);
-        iVar15 = iVar15 + 1;
+        iVar13 = iVar13 + 1;
         iVar2 = iVar2 + 1;
-      } while (iVar15 < iStack_1);
+      } while (iVar13 < numSlices + 1);
     }
-    iStack_8 = iStack_8 + 1;
-  } while (iStack_8 < numStacks + 1);
-  uVar34 = 0;
+    iStack_7 = iStack_7 + 1;
+  } while (iStack_7 < iStack_1);
+  pIVar32 = (Int32__Array *)func_?(TypeInfo__System__Int32,numStacks * numSlices * 6);
   radius = 0.0;
-  iStack_8 = 0;
-  pIVar35 = (Int32__Array *)func_?(TypeInfo__System__Int32,numSlices * numStacks * 6);
-  fStack_11 = (float)numStacks;
+  fStack_10 = (float)(iStack_1 + -1);
+  iStack_7 = 0;
+  fStack_9 = (float)numSlices;
+  uVar33 = 0;
   do {
-    iVar15 = 0;
-    iVar2 = (int)radius + 1 + iStack_1;
-    fVar25 = radius;
-    uVar36 = uVar34;
+    iVar13 = iStack_7 + numSlices + 2;
+    iVar34 = 0;
+    iVar2 = iStack_7;
+    if (pIVar32 == (Int32__Array *)0x0) goto code_?;
     do {
-      if (pIVar35 == (Int32__Array *)0x0) goto code_?;
-      if (pIVar35->max_length <= uVar36) {
+      if (pIVar32->max_length <= uVar33) {
 code_?:
         func_?();
         goto code_?;
       }
-      pIVar35->vector[uVar36] = (int32_t)fVar25;
-      if (pIVar35->max_length <= uVar36 + 1) goto code_?;
-      pIVar35->vector[uVar36 + 1] = iVar2 + -1;
-      if (pIVar35->max_length <= uVar36 + 2) goto code_?;
-      pIVar35->vector[uVar36 + 2] = iVar2;
-      if (pIVar35->max_length <= uVar36 + 3) goto code_?;
-      pIVar35->vector[uVar36 + 3] = iVar2;
-      if (pIVar35->max_length <= uVar36 + 4) goto code_?;
-      pIVar35->vector[uVar36 + 4] = (int)fVar25 + 1;
-      uVar34 = uVar36 + 6;
-      if (pIVar35->max_length <= uVar36 + 5) goto code_?;
-      pIVar35->vector[uVar36 + 5] = (int32_t)fVar25;
-      iVar15 = iVar15 + 1;
-      fVar25 = (float)((int)fVar25 + 1);
+      pIVar32->vector[uVar33] = iVar2;
+      if (pIVar32->max_length <= uVar33 + 1) goto code_?;
+      pIVar32->vector[uVar33 + 1] = iVar13 + -1;
+      if (pIVar32->max_length <= uVar33 + 2) goto code_?;
+      pIVar32->vector[uVar33 + 2] = iVar13;
+      if (pIVar32->max_length <= uVar33 + 3) goto code_?;
+      pIVar32->vector[uVar33 + 3] = iVar13;
+      if (pIVar32->max_length <= uVar33 + 4) goto code_?;
+      pIVar32->vector[uVar33 + 4] = iVar2 + 1;
+      uVar35 = uVar33 + 6;
+      if (pIVar32->max_length <= uVar33 + 5) goto code_?;
+      pIVar32->vector[uVar33 + 5] = iVar2;
+      iVar34 = iVar34 + 1;
+      iVar13 = iVar13 + 1;
       iVar2 = iVar2 + 1;
-      uVar36 = uVar34;
-    } while (iVar15 < iStack_7);
-    iStack_8 = iStack_8 + 1;
-    radius = (float)((int)radius + iStack_1);
-    pIStack_13 = pIVar35;
-  } while (iStack_8 < numStacks);
-  pMVar37 = (Mesh *)func_?();
-  UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh__ctor(pMVar37,(MethodInfo *)0x0);
-  if (pMVar37 != (Mesh *)0x0) {
+      uVar33 = uVar35;
+    } while (iVar34 < numSlices);
+    radius = (float)((int)radius + 1);
+    iStack_7 = iStack_7 + numSlices + 1;
+    pIStack_14 = pIVar32;
+  } while ((int)radius < (int)fStack_10);
+  pMVar36 = (Mesh *)func_?();
+  UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh__ctor(pMVar36,(MethodInfo *)0x0);
+  if (pMVar36 != (Mesh *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_vertices
-              (pMVar37,pVStack_5,(MethodInfo *)0x0);
+              (pMVar36,pVStack_5,(MethodInfo *)0x0);
     UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_normals
-              (pMVar37,pVStack_6,(MethodInfo *)0x0);
+              (pMVar36,pVStack_6,(MethodInfo *)0x0);
     value_00 = ColorEx::ColorEx_GetFilledColorArray(iStack_3,color,(MethodInfo *)0x0);
     UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_colors
-              (pMVar37,value_00,(MethodInfo *)0x0);
+              (pMVar36,value_00,(MethodInfo *)0x0);
     UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_SetIndices
-              (pMVar37,pIStack_13,MeshTopology__Enum_Triangles,0,(MethodInfo *)0x0);
-    UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_UploadMeshData(pMVar37,0,(MethodInfo *)0x0);
-    return pMVar37;
+              (pMVar36,pIStack_14,MeshTopology__Enum_Triangles,0,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_UploadMeshData(pMVar36,0,(MethodInfo *)0x0);
+    return pMVar36;
   }
 code_?:
   func_?();
-  pcVar38 = (code *)swi(3);
-  pMVar37 = (Mesh *)(*pcVar38)();
-  return pMVar37;
+  pcVar37 = (code *)swi(3);
+  pMVar36 = (Mesh *)(*pcVar37)();
+  return pMVar36;
 }
 

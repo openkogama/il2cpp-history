@@ -113,7 +113,7 @@ void Assembly-CSharp.dll::TerrainLODComponent::TerrainLODComponent_ChangeLODTerr
     func_?(&
                     MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__set_Item_int__MVTerrainLOD_
                    );
-    func_?(0x2a20);
+    func_?(0xbb0);
     func_?(&StringLiteral_dynamicLodDistance_CurrentRadius);
     cRam_? = '\x01';
   }
@@ -192,41 +192,40 @@ code_?:
     }
   }
   iVar22 = (int)dVar20;
+  iVar23 = 0;
   if (iVar22 < 1) {
     iVar22 = 1;
   }
-  iVar23 = 0;
   do {
     pLVar1 = (this->fields).LODBookkeeping;
     if (pLVar1 == (List_1_MVTerrainLOD_ *)0x0) goto code_?;
     if ((pLVar1->fields)._size == 0) {
       return;
     }
-    iVar24 = (this->fields).currentLODPosition;
-    if ((pLVar1->fields)._size <= iVar24) {
+    if ((pLVar1->fields)._size <= (this->fields).currentLODPosition) {
       (this->fields).currentLODPosition = 0;
-      iVar24 = (this->fields).currentLODPosition;
     }
-    puVar25 = (undefined8 *)
-             func_?(auStack_26,pLVar1,iVar24,
+    if (pLVar1 == (List_1_MVTerrainLOD_ *)0x0) goto code_?;
+    puVar24 = (undefined8 *)
+             func_?(auStack_25,pLVar1,(this->fields).currentLODPosition,
                              MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__get_Item_int_
                             );
     this_00 = (this->fields).chunkInstances;
-    uStack_5._0_4_ = *(undefined4 *)puVar25;
-    uStack_5._4_4_ = *(undefined4 *)((int)puVar25 + 4);
-    uStack_6 = *(undefined4 *)(puVar25 + 1);
-    uStack_7 = *(undefined4 *)((int)puVar25 + 0xc);
-    fStack_2 = *(float *)(puVar25 + 2);
-    uStack_27 = *puVar25;
-    auStack_9._0_4_ = *(undefined4 *)(puVar25 + 1);
-    auStack_9._4_4_ = *(undefined4 *)((int)puVar25 + 0xc);
+    uStack_5._0_4_ = *(undefined4 *)puVar24;
+    uStack_5._4_4_ = *(undefined4 *)((int)puVar24 + 4);
+    uStack_6 = *(undefined4 *)(puVar24 + 1);
+    uStack_7 = *(undefined4 *)((int)puVar24 + 0xc);
+    fStack_2 = *(float *)(puVar24 + 2);
+    uStack_26 = *puVar24;
+    auStack_9._0_4_ = *(undefined4 *)(puVar24 + 1);
+    auStack_9._4_4_ = *(undefined4 *)((int)puVar24 + 0xc);
     if (this_00 == (ChunkInstances *)0x0) goto code_?;
-    bVar28 = ChunkInstances::ChunkInstances_TryGetValue
-                      (this_00,SUB86(uStack_27,0),
+    bVar27 = ChunkInstances::ChunkInstances_TryGetValue
+                      (this_00,SUB86(uStack_26,0),
                        (ChunkInstances_ChunkInstanceVariables *)&stack0xffffff80,(MethodInfo *)0x0);
     this_01 = (List_1_UnityEngine_UIElements_UIR_Implementation_UIRStylePainter_RepeatRectUV_ *)
               (this->fields).LODBookkeeping;
-    if (bVar28 == 0) {
+    if (bVar27 == 0) {
       if (this_01 ==
           (List_1_UnityEngine_UIElements_UIR_Implementation_UIRStylePainter_RepeatRectUV_ *)0x0)
       goto code_?;
@@ -240,11 +239,11 @@ code_?:
       if (this_01 ==
           (List_1_UnityEngine_UIElements_UIR_Implementation_UIRStylePainter_RepeatRectUV_ *)0x0)
       goto code_?;
-      iVar24 = func_?(auStack_26,(short)this_01,(this->fields).currentLODPosition,
+      iVar28 = func_?(auStack_25,(short)this_01,(this->fields).currentLODPosition,
                                MethodInfo__System__Collections__Generic__List<MVTerrainLOD>__get_Item_int_
                               );
-      fVar15 = (float10)func_?(*(undefined4 *)(iVar24 + 8),*(undefined4 *)(iVar24 + 0xc),
-                                        *(undefined4 *)(iVar24 + 0x10),(int)uStack_10,
+      fVar15 = (float10)func_?(*(undefined4 *)(iVar28 + 8),*(undefined4 *)(iVar28 + 0xc),
+                                        *(undefined4 *)(iVar28 + 0x10),(int)uStack_10,
                                         (short)((ulonglong)uStack_10 >> 0x20),fStack_11,0);
       pDVar29 = (this->fields).dynamicLodDistance;
       if (pDVar29 == (DynamicLODDistance *)0x0) goto code_?;
@@ -393,35 +392,32 @@ void Assembly-CSharp.dll::TerrainLODComponent::TerrainLODComponent__ctor
              MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::IntVector>__HashSet__
             );
   pMVar4 = (MethodInfo *)&value->fields;
-  ((TerrainLODComponent_TriangleCounter__Fields *)pMVar4)->enabledChunks = this_01;
+  (value->fields).enabledChunks = this_01;
   func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,pMVar4);
   pMVar4 = (MethodInfo *)&(this->fields).triangleCounter;
-  *(TerrainLODComponent_TriangleCounter **)pMVar4 = value;
+  (this->fields).triangleCounter = value;
   func_?(pMVar4,value);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,pMVar4);
-  ppRVar5 = &(this->fields).prototypeCubeModel;
-  *ppRVar5 = prototypeCubeModel;
-  func_?(ppRVar5,prototypeCubeModel);
-  ppCVar6 = &(this->fields).chunkInstances;
-  *ppCVar6 = chunkInstances;
-  func_?(ppCVar6,chunkInstances);
-  ppDVar7 = &(this->fields).dynamicLodDistance;
-  *ppDVar7 = dynamicLodDistance;
-  func_?(ppDVar7,dynamicLodDistance);
+  (this->fields).prototypeCubeModel = prototypeCubeModel;
+  func_?(&(this->fields).prototypeCubeModel,prototypeCubeModel);
+  (this->fields).chunkInstances = chunkInstances;
+  func_?(&(this->fields).chunkInstances,chunkInstances);
+  (this->fields).dynamicLodDistance = dynamicLodDistance;
+  func_?(&(this->fields).dynamicLodDistance,dynamicLodDistance);
   (this->fields).scale = scale;
   (this->fields).debug = debug;
   if (chunkInstances != (ChunkInstances *)0x0) {
-    piVar8 = (int *)func_?();
+    piVar5 = (int *)func_?();
     uStack_1 = 1;
-    while (piVar8 != (int *)0x0) {
-      cVar9 = func_?();
-      if (cVar9 == '\0') {
+    while (piVar5 != (int *)0x0) {
+      cVar6 = func_?();
+      if (cVar6 == '\0') {
         uStack_1 = 0xffffffff;
-        iVar10 = func_?();
-        if (iVar10 != 0) {
+        iVar7 = func_?();
+        if (iVar7 != 0) {
           func_?();
         }
         uStack_1 = 0xffffffff;
@@ -436,38 +432,39 @@ void Assembly-CSharp.dll::TerrainLODComponent::TerrainLODComponent__ctor
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      if (piVar8 == (int *)0x0) break;
-      iVar10 = *piVar8;
-      uVar11 = 0;
-      if (*(ushort *)(iVar10 + 0xb6) != 0) {
+      if (piVar5 == (int *)0x0) break;
+      uVar8 = 0;
+      uVar9 = *(ushort *)(*piVar5 + 0xb6);
+      if (uVar9 != 0) {
         do {
-          if (*(IEnumerator__Class **)(*(int *)(iVar10 + 0x58) + (uint)uVar11 * 8) ==
+          if (*(IEnumerator__Class **)(*(int *)(*piVar5 + 0x58) + (uint)uVar8 * 8) ==
               TypeInfo__System__Collections__IEnumerator) {
-            puVar12 = (undefined4 *)
-                     (iVar10 + 200 + *(int *)(*(int *)(iVar10 + 0x58) + 4 + (uint)uVar11 * 8) * 8);
+            puVar10 = (undefined4 *)
+                     (*piVar5 +
+                     (*(int *)(*(int *)(*piVar5 + 0x58) + 4 + (uint)uVar8 * 8) + 0x19) * 8);
             goto code_?;
           }
-          uVar11 = uVar11 + 1;
-        } while (uVar11 < *(ushort *)(iVar10 + 0xb6));
+          uVar8 = uVar8 + 1;
+        } while (uVar8 < uVar9);
       }
-      puVar12 = (undefined4 *)func_?();
+      puVar10 = (undefined4 *)func_?();
 code_?:
-      piVar13 = (int *)(*(code *)*puVar12)();
-      if (piVar13 == (int *)0x0) break;
-      if (*(Il2CppClass **)(*piVar13 + 0x20) !=
+      piVar11 = (int *)(*(code *)*puVar10)();
+      if (piVar11 == (int *)0x0) break;
+      if (*(Il2CppClass **)(*piVar11 + 0x20) !=
           (
           TypeInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>
           ->_0).element_class) {
         func_?();
         break;
       }
-      pIVar14 = (IntVector *)func_?();
-      TerrainLODComponent_AddToLOD(this,*pIVar14,(MethodInfo *)0x0);
+      pIVar12 = (IntVector *)func_?();
+      TerrainLODComponent_AddToLOD(this,*pIVar12,(MethodInfo *)0x0);
     }
   }
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

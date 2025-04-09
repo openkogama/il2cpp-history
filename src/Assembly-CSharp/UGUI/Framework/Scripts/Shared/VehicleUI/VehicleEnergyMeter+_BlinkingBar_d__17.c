@@ -27,9 +27,8 @@ bool Assembly-CSharp.dll::UGUI::Framework::Scripts::Shared::VehicleUI::
                  func_?(TypeInfo__UnityEngine__WaitForSeconds);
         SubscribableVariable`1[System::Single]::SubscribableVariable_1_System_Single___ctor
                   (pSVar4,0.3,(MethodInfo *)0x0);
-        ppOVar5 = &(this->fields).__2__current;
-        *ppOVar5 = (Object *)pSVar4;
-        func_?(ppOVar5,pSVar4);
+        (this->fields).__2__current = (Object *)pSVar4;
+        func_?(&(this->fields).__2__current,pSVar4);
         (this->fields).__1__state = 2;
         return 1;
       }
@@ -45,30 +44,29 @@ bool Assembly-CSharp.dll::UGUI::Framework::Scripts::Shared::VehicleUI::
       return 0;
     }
     pIVar3 = (pVVar2->fields).progressBarImage;
-    pRVar6 = mscorlib.dll::System::Nullable`1[UnityEngine::Rect]::
+    pRVar5 = mscorlib.dll::System::Nullable`1[UnityEngine::Rect]::
              Nullable_1_UnityEngine_Rect__get_Value
                        ((Rect *)&stack0xffffffec,
                         (Nullable_1_UnityEngine_Rect_ *)&(pVVar2->fields).currentColor,
                         MethodInfo__System__Nullable<UnityEngine::Color>__get_Value__);
     if (pIVar3 != (Image *)0x0) {
       (*(code *)(pIVar3->klass->vtable).set_color.method)
-                (pIVar3,pRVar6->m_XMin,pRVar6->m_YMin,pRVar6->m_Width,pRVar6->m_Height);
+                (pIVar3,pRVar5->m_XMin,pRVar5->m_YMin,pRVar5->m_Width,pRVar5->m_Height);
       pSVar4 = (SubscribableVariable_1_System_Single_ *)
                func_?(TypeInfo__UnityEngine__WaitForSeconds);
       SubscribableVariable`1[System::Single]::SubscribableVariable_1_System_Single___ctor
                 (pSVar4,0.3,(MethodInfo *)0x0);
-      ppOVar5 = &(this->fields).__2__current;
-      *ppOVar5 = (Object *)pSVar4;
-      func_?(ppOVar5);
+      (this->fields).__2__current = (Object *)pSVar4;
+      func_?(&(this->fields).__2__current);
       (this->fields).__1__state = 1;
       return 1;
     }
   }
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  bVar8 = (*pcVar7)();
-  return bVar8;
+  pcVar6 = (code *)swi(3);
+  bVar7 = (*pcVar6)();
+  return bVar7;
 }
 
 

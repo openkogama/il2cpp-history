@@ -100,33 +100,32 @@ void Assembly-CSharp.dll::GameMeterCollectible::GameMeterCollectible_SetGameMete
                        (this_00,
                         AllCollectiblesCollectedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<AllCollectiblesCollectedClient>__
                        );
-    ppAVar4 = &(this->fields).collectedClient;
-    *ppAVar4 = pAVar3;
-    func_?(ppAVar4,pAVar3);
+    (this->fields).collectedClient = pAVar3;
+    func_?(&(this->fields).collectedClient,pAVar3);
     WinningConditionControl::WinningConditionControl_TryGetPrioritizedWinCondition
               (&WStack_1,(MethodInfo *)0x0);
     if (WStack_1 == WinningConditionType__Enum_Collectible) {
-      pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+      pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)this,(MethodInfo *)0x0);
-      if (pGVar5 != (GameObject *)0x0) {
+      if (pGVar4 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar5,1,(MethodInfo *)0x0);
+                  (pGVar4,1,(MethodInfo *)0x0);
         return;
       }
     }
     else {
-      pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+      pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)this,(MethodInfo *)0x0);
-      if (pGVar5 != (GameObject *)0x0) {
+      if (pGVar4 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar5,0,(MethodInfo *)0x0);
+                  (pGVar4,0,(MethodInfo *)0x0);
         return;
       }
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

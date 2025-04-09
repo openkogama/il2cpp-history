@@ -14,7 +14,7 @@ void Assembly-CSharp.dll::CullingSubscriberBase::CullingSubscriberBase_Destroy
   }
   CullingApiWrapper::CullingApiWrapper_UnSubscribe((ICullingSubscriber *)this,(MethodInfo *)0x0);
   (this->fields).callback = (UnityAction_1_UnityEngine_CullingGroupEvent_ *)0x0;
-  func_?();
+  func_?(&this->fields,0);
   return;
 }
 
@@ -153,12 +153,11 @@ void Assembly-CSharp.dll::CullingSubscriberBase::CullingSubscriberBase__ctor
       if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__CullingApiWrapper);
       }
-      array = &TypeInfo__CullingApiWrapper->static_fields->spheres;
-      pBVar1 = *array;
+      pBVar1 = TypeInfo__CullingApiWrapper->static_fields->spheres;
       if (pBVar1 != (BoundingSphere__Array *)0x0) {
         mscorlib.dll::System::Array::Array_Resize_86
-                  ((BindingRestrictions_TestBuilder_AndNode__Array **)array,
-                   pBVar1->max_length + 1000,
+                  ((BindingRestrictions_TestBuilder_AndNode__Array **)
+                   &TypeInfo__CullingApiWrapper->static_fields->spheres,pBVar1->max_length + 1000,
                    void_MethodInfo__System__Array__Resize<UnityEngine::BoundingSphere>_UnityEngine__BoundingSphere___int_
                   );
         pCVar2 = TypeInfo__CullingApiWrapper->static_fields->cullingGroup;

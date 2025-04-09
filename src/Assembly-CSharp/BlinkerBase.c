@@ -40,98 +40,102 @@ void Assembly-CSharp.dll::BlinkerBase::BlinkerBase_DoBlinking(BlinkerBase *this,
     cRam_? = '\x01';
   }
   if (((this->fields).visible != 0) &&
-     (pDVar4 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                *)(this->fields).blinkers,
-     pDVar4 != (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                *)0x0)) {
-    pDVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+     ((this->fields).blinkers != (Dictionary_2_BlinkType_Blinker_ *)0x0)) {
+    pDVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
              StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
              Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Values
-                       (pDVar4,
+                       ((Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                         *)(this->fields).blinkers,
                         MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__get_Values__
                        );
-    if (pDVar5 != (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+    if (pDVar4 != (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                    *)0x0) {
-      pDVar4 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                *)(this->fields).blinkers;
-      if (pDVar4 != (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                     *)0x0) {
-        pDVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+      this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                 *)(this->fields).blinkers;
+      if (this_00 !=
+          (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+           *)0x0) {
+        pDVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
                  StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
                  Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Values
-                           (pDVar4,
+                           (this_00,
                             MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__get_Values__
                            );
-        if (pDVar5 != (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+        if (pDVar4 != (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                        *)0x0) {
           mscorlib.dll::System::Collections::Generic::
           Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
           StyleSheetCache+SheetHandleKey,System::Object]::
           Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
                     ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                      *)&stack0xffffffc8,pDVar5,
+                      *)&stack0xffffffc8,pDVar4,
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BlinkType,_Blinker>__GetEnumerator__
                     );
           method_00 = (MethodInfo *)0x0;
           uStack_1 = 1;
-          while( true ) {
-            this_02 = 
-            MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BlinkType,_Blinker>__MoveNext__
-            ;
-            bVar6 = mscorlib.dll::System::Collections::Generic::
-                    Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
-                    UInt32,System::Object]::
-                    Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                              ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
-                                *)&stack0xffffffb8,
-                               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BlinkType,_Blinker>__MoveNext__
-                              );
-            if (bVar6 == 0) break;
-            if (this_02 == (MethodInfo *)0x0) goto code_?;
-            pcVar7 = this_02->name;
-            pIVar8 = this_02->klass;
-            fVar9 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
+code_?:
+          this_03 = 
+          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BlinkType,_Blinker>__MoveNext__
+          ;
+          bVar5 = mscorlib.dll::System::Collections::Generic::
+                  Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
+                  UInt32,System::Object]::
+                  Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                            ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
+                              *)&stack0xffffffb8,
+                             MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BlinkType,_Blinker>__MoveNext__
+                            );
+          if (bVar5 != 0) {
+            if (this_03 == (MethodInfo *)0x0) goto code_?;
+            pcVar6 = this_03->name;
+            pIVar7 = this_03->klass;
+            fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
                               ((MethodInfo *)0x0);
-            if (fVar9 <= (float)pcVar7 + (float)pIVar8) {
+            if (fVar8 <= (float)pIVar7 + (float)pcVar6) {
               method_00 = (MethodInfo *)this;
               func_?();
-              pMVar10 = (this->fields).meshFilters;
-              if (pMVar10 != (MeshFilter__Array *)0x0) {
-                uVar11 = 0;
-                while( true ) {
-                  if ((int)pMVar10->max_length <= (int)uVar11) break;
-                  if (pMVar10->max_length <= uVar11) {
+              if ((this->fields).meshFilters != (MeshFilter__Array *)0x0) {
+                pMVar9 = (this->fields).meshFilters;
+                uVar10 = 0;
+code_?:
+                do {
+                  uVar11 = pMVar9->max_length;
+                  if ((int)uVar11 <= (int)uVar10) break;
+                  if (uVar11 <= uVar10) {
                     func_?();
                     goto code_?;
                   }
-                  this_00 = pMVar10->vector[uVar11];
+                  this_01 = pMVar9->vector[uVar10];
                   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
                     func_?();
                   }
-                  bVar6 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                                    ((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
-                  if (bVar6 == 0) {
-                    if (this_00 == (MeshFilter *)0x0) goto code_?;
-                    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                              Component_get_gameObject((Component *)this_00,(MethodInfo *)0x0);
-                    if (this_01 == (GameObject *)0x0) goto code_?;
-                    bVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                            GameObject_get_activeInHierarchy(this_01,(MethodInfo *)0x0);
-                    if (bVar6 != 0) {
+                  bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                                    ((Object_1 *)this_01,(Object_1 *)0x0,(MethodInfo *)0x0);
+                  if (bVar5 == 0) {
+                    if (this_01 == (MeshFilter *)0x0) goto code_?;
+                    this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                              Component_get_gameObject((Component *)this_01,(MethodInfo *)0x0);
+                    if (this_02 == (GameObject *)0x0) goto code_?;
+                    bVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                            GameObject_get_activeInHierarchy(this_02,(MethodInfo *)0x0);
+                    if (bVar5 != 0) {
                       tfm = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                            Component_get_transform((Component *)this_00,(MethodInfo *)0x0);
+                            Component_get_transform((Component *)this_01,(MethodInfo *)0x0);
                       mesh = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::
-                             MeshFilter_get_sharedMesh(this_00,(MethodInfo *)0x0);
-                      if (this_02 == (MethodInfo *)0x0) goto code_?;
+                             MeshFilter_get_sharedMesh(this_01,(MethodInfo *)0x0);
+                      if (this_03 == (MethodInfo *)0x0) goto code_?;
                       Blinker::Blinker_Draw
-                                ((Blinker *)this_02,mesh,tfm,(this->fields).targetCamera,
+                                ((Blinker *)this_03,mesh,tfm,(this->fields).targetCamera,
                                  (this->fields).layerMask,(MethodInfo *)0x0);
+                      uVar10 = uVar10 + 1;
+                      goto code_?;
                     }
                   }
-                  uVar11 = uVar11 + 1;
-                }
+                  uVar10 = uVar10 + 1;
+                } while( true );
               }
             }
+            goto code_?;
           }
           uStack_1 = 0xffffffff;
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
@@ -186,6 +190,10 @@ void Assembly-CSharp.dll::BlinkerBase::BlinkerBase_OnDestroy(BlinkerBase *this,M
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
+  DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
+  DStack_6._index = 0;
+  DStack_6._version = 0;
+  DStack_6._currentValue = (Object *)0x0;
   this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
              *)(this->fields).blinkers;
   if (this_00 !=
@@ -199,42 +207,42 @@ void Assembly-CSharp.dll::BlinkerBase::BlinkerBase_OnDestroy(BlinkerBase *this,M
                            MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__get_Values__
                           );
     if (method_00 != (MethodInfo *)0x0) {
-      pDVar6 = mscorlib.dll::System::Collections::Generic::
+      pDVar7 = mscorlib.dll::System::Collections::Generic::
                Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
                StyleSheetCache+SheetHandleKey,System::Object]::
                Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
-                         (&DStack_7,
+                         (&DStack_8,
                           (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                            *)method_00,
                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BlinkType,_Blinker>__GetEnumerator__
                          );
-      DStack_8._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)pDVar6->_dictionary;
-      DStack_8._index = pDVar6->_index;
-      DStack_8._version = pDVar6->_version;
-      DStack_8._currentValue = pDVar6->_currentValue;
-      DStack_7._version = 0;
+      DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)pDVar7->_dictionary;
+      DStack_6._index = pDVar7->_index;
+      DStack_6._version = pDVar7->_version;
+      DStack_6._currentValue = pDVar7->_currentValue;
+      DStack_8._version = 0;
       uStack_1 = 1;
-      DStack_7._currentValue = (Object *)&DStack_8;
+      DStack_8._currentValue = (Object *)&DStack_6;
       while( true ) {
         bVar9 = mscorlib.dll::System::Collections::Generic::
                 Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
                 UInt32,System::Object]::
                 Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                          (&DStack_8,
+                          (&DStack_6,
                            MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BlinkType,_Blinker>__MoveNext__
                           );
-        pOVar10 = DStack_8._currentValue;
+        pOVar10 = DStack_6._currentValue;
         if (bVar9 == 0) {
           uStack_1 = 0xffffffff;
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&DStack_8,
+                    ((Object *)&DStack_6,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BlinkType,_Blinker>__Dispose__
                      ,method_00);
           *unaff_FS_OFFSET = uStack_3;
           return;
         }
-        if (DStack_8._currentValue == (Object *)0x0) break;
+        if (DStack_6._currentValue == (Object *)0x0) break;
         if (cRam_? == '\0') {
           func_?(&TypeInfo__UnityEngine__Object);
           cRam_? = '\x01';

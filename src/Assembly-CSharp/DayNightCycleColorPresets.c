@@ -51,10 +51,9 @@ void Assembly-CSharp.dll::DayNightCycleColorPresets::DayNightCycleColorPresets_T
         func_?(&MethodInfo__DayNightCycleColorPresets__Preset__LanguageLoadedCallback__);
         cRam_? = '\x01';
       }
-      pDVar3 = &object->fields;
-      pSVar4 = TM::TM__(pDVar3->name,(MethodInfo *)0x0);
-      pDVar3->name = pSVar4;
-      func_?(pDVar3,pSVar4);
+      pSVar3 = TM::TM__((object->fields).name,(MethodInfo *)0x0);
+      (object->fields).name = pSVar3;
+      func_?(&object->fields,pSVar3);
       this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
       NavMesh_OnNavMeshPreUpdate__ctor
@@ -69,8 +68,8 @@ void Assembly-CSharp.dll::DayNightCycleColorPresets::DayNightCycleColorPresets_T
   }
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

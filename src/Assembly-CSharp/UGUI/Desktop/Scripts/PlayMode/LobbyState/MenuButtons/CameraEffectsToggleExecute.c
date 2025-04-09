@@ -29,81 +29,56 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::PlayMode::LobbyState::MenuButt
     func_?(TypeInfo__MainCameraManager);
   }
   if (TypeInfo__MainCameraManager->static_fields->gameHasCameraEffects == 0) {
-    this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                         ((Component *)this,(MethodInfo *)0x0);
-    if (this_02 != (GameObject *)0x0) {
+    if (this_01 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (this_02,0,(MethodInfo *)0x0);
+                (this_01,0,(MethodInfo *)0x0);
       return;
     }
-code_?:
-    func_?();
-code_?:
-    func_?();
   }
   else {
     pTVar1 = (this->fields).toggleStateHandler;
     (this->fields).hasCallbacks = 1;
-    if (pTVar1 == (ToggleStateHandler *)0x0) goto code_?;
-    pTVar2 = (pTVar1->fields)._.OnStartSetValue;
-    this_00 = (Func_1_System_Threading_Tasks_VoidTaskResult_ *)
-              func_?(TypeInfo__ToggleStateHandlerOnStartSetValue);
-    mscorlib.dll::System::Func`1[System::Threading::Tasks::VoidTaskResult]::
-    Func_1_System_Threading_Tasks_VoidTaskResult___ctor
-              (this_00,(Object *)0x0,
-               MethodInfo__UGUI__Desktop__Scripts__PlayMode__LobbyState__MenuButtons__CameraEffectsToggleExecute__StartSetValue__
-               ,(MethodInfo *)0x0);
-    pTVar2 = (ToggleStateHandlerOnStartSetValue *)
-             mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pTVar2,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pTVar2 == (ToggleStateHandlerOnStartSetValue *)0x0) {
-      (pTVar1->fields)._.OnStartSetValue = (ToggleStateHandlerOnStartSetValue *)0x0;
-code_?:
-      func_?();
-      if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      pAVar3 = TypeInfo__MainCameraManager->static_fields->OnCameraEffectsChange;
-      this_01 = (UnityAction_1_System_Int32Enum_ *)func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-      UnityAction_1_System_Int32Enum___ctor
-                (this_01,(Object *)this,
-                 MethodInfo__UGUI__Desktop__Scripts__PlayMode__LobbyState__MenuButtons__CameraEffectsToggleExecute__CamEffectsUpdate_bool_
+    if (pTVar1 != (ToggleStateHandler *)0x0) {
+      pTVar2 = (pTVar1->fields)._.OnStartSetValue;
+      this_00 = (Func_1_System_Threading_Tasks_VoidTaskResult_ *)
+                func_?(TypeInfo__ToggleStateHandlerOnStartSetValue);
+      mscorlib.dll::System::Func`1[System::Threading::Tasks::VoidTaskResult]::
+      Func_1_System_Threading_Tasks_VoidTaskResult___ctor
+                (this_00,(Object *)0x0,
+                 MethodInfo__UGUI__Desktop__Scripts__PlayMode__LobbyState__MenuButtons__CameraEffectsToggleExecute__StartSetValue__
                  ,(MethodInfo *)0x0);
-      pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)pAVar3,(Delegate *)this_01,(MethodInfo *)0x0);
-      if (pDVar4 == (Delegate *)0x0) {
-        TypeInfo__MainCameraManager->static_fields->OnCameraEffectsChange = (Action_1_Boolean_ *)0x0
-        ;
+      pTVar2 = (ToggleStateHandlerOnStartSetValue *)
+               mscorlib.dll::System::Delegate::Delegate_Combine
+                         ((Delegate *)pTVar2,(Delegate *)this_00,(MethodInfo *)0x0);
+      if (pTVar2 == (ToggleStateHandlerOnStartSetValue *)0x0) {
+        (pTVar1->fields)._.OnStartSetValue = (ToggleStateHandlerOnStartSetValue *)0x0;
 code_?:
-        func_?();
+        func_?(&(pTVar1->fields)._.OnStartSetValue);
         return;
       }
-      pAVar3 = (Action_1_Boolean_ *)func_?();
-      if (pAVar3 != (Action_1_Boolean_ *)0x0) {
-        TypeInfo__MainCameraManager->static_fields->OnCameraEffectsChange = pAVar3;
-        iVar5 = func_?();
-        if (iVar5 != 0) goto code_?;
+      pTVar3 = (ToggleStateHandlerOnStartSetValue *)0x0;
+      if (pTVar2->klass == TypeInfo__ToggleStateHandlerOnStartSetValue) {
+        pTVar3 = pTVar2;
+      }
+      if (pTVar3 != (ToggleStateHandlerOnStartSetValue *)0x0) {
+        (pTVar1->fields)._.OnStartSetValue = pTVar3;
+        pTVar3 = (ToggleStateHandlerOnStartSetValue *)0x0;
+        if (pTVar2->klass == TypeInfo__ToggleStateHandlerOnStartSetValue) {
+          pTVar3 = pTVar2;
+        }
+        if (pTVar3 != (ToggleStateHandlerOnStartSetValue *)0x0) goto code_?;
       }
       goto code_?;
     }
-    pTVar6 = (ToggleStateHandlerOnStartSetValue *)0x0;
-    if (pTVar2->klass == TypeInfo__ToggleStateHandlerOnStartSetValue) {
-      pTVar6 = pTVar2;
-    }
-    if (pTVar6 == (ToggleStateHandlerOnStartSetValue *)0x0) goto code_?;
-    (pTVar1->fields)._.OnStartSetValue = pTVar6;
-    pTVar6 = (ToggleStateHandlerOnStartSetValue *)0x0;
-    if (pTVar2->klass == TypeInfo__ToggleStateHandlerOnStartSetValue) {
-      pTVar6 = pTVar2;
-    }
-    if (pTVar6 != (ToggleStateHandlerOnStartSetValue *)0x0) goto code_?;
   }
+  func_?();
   func_?();
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -234,7 +209,6 @@ code_?:
         pTVar3 = pTVar2;
       }
       if (pTVar3 != (ToggleStateHandlerOnStartSetValue *)0x0) goto code_?;
-      func_?();
     }
     func_?();
   }

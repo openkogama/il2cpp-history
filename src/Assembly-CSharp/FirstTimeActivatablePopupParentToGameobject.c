@@ -185,9 +185,8 @@ void Assembly-CSharp.dll::FirstTimeActivatablePopupParentToGameobject::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<UIPushOption>__List__);
-  ppLVar1 = &(this->fields)._.pushOptions;
-  *ppLVar1 = this_00;
-  func_?(ppLVar1,this_00);
+  (this->fields)._.pushOptions = this_00;
+  func_?(&(this->fields)._.pushOptions,this_00);
   (this->fields)._.skipAllowed = 1;
   (this->fields)._._.onShowSound = 3;
   (this->fields)._._.prerequisiteEvent = -1;

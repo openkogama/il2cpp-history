@@ -47,10 +47,9 @@ void Assembly-CSharp.dll::RTG::GizmoScalerHandle::GizmoScalerHandle__ctor
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar1,
              MethodInfo__System__Collections__Generic__List<int>__List__);
-  ppLVar2 = &(this->fields)._scaleDragAxisIndices;
-  *ppLVar2 = pLVar1;
-  method_00 = (MethodInfo *)ppLVar2;
-  func_?(ppLVar2,pLVar1);
+  method_00 = (MethodInfo *)&(this->fields)._scaleDragAxisIndices;
+  (this->fields)._scaleDragAxisIndices = pLVar1;
+  func_?(method_00,pLVar1);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   (this->fields)._handleId = handleId;
@@ -60,8 +59,8 @@ void Assembly-CSharp.dll::RTG::GizmoScalerHandle::GizmoScalerHandle__ctor
             (pLVar1,scaleDragAxisIndices,
              MethodInfo__System__Collections__Generic__List<int>__List_System__Collections__Generic__IEnumerable<int>_
             );
-  *ppLVar2 = pLVar1;
-  func_?(ppLVar2,pLVar1);
+  (this->fields)._scaleDragAxisIndices = pLVar1;
+  func_?(&(this->fields)._scaleDragAxisIndices,pLVar1);
   return;
 }
 

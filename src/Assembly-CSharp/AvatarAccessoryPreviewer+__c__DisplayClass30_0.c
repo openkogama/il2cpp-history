@@ -21,9 +21,10 @@ void Assembly-CSharp.dll::AvatarAccessoryPreviewer+<>c__DisplayClass30_0::
       do {
         if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
             (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IAccessoryClicked) {
+          pIVar2 = x->klass;
           iVar5 = pIVar2->interfaceOffsets[uVar3].offset;
-          (*(code *)(&(x->klass->vtable).OpenAccessoryManagementScreen)[iVar5].method)
-                    (x,pAVar1,(&(x->klass->vtable).OpenCategoryScreen)[iVar5].methodPtr);
+          (*(code *)(&(pIVar2->vtable).OpenAccessoryManagementScreen)[iVar5].method)
+                    (x,pAVar1,(&(pIVar2->vtable).OpenCategoryScreen)[iVar5].methodPtr);
           return;
         }
         uVar3 = uVar3 + 1;

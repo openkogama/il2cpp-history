@@ -31,102 +31,126 @@ void Assembly-CSharp.dll::BoostParticlesActivationEffect::
     pBVar5 = mscorlib.dll::System::Collections::Generic::
               List`1[BoostParticlesActivationEffect+BoosterColors]::
               List_1_BoostParticlesActivationEffect_BoosterColors__get_Item
-                        ((BoostParticlesActivationEffect_BoosterColors *)(auStack_6 + 8),pLVar3,
-                         index,
+                        (&BStack_6,pLVar3,index,
                          MethodInfo__System__Collections__Generic__List<BoostParticlesActivationEffect::BoosterColors>__get_Item_int_
                         );
+    fStack_7 = (pBVar5->rayColor).a;
+    fStack_8 = (pBVar5->bubbleColor).r;
+    fStack_9 = (pBVar5->bubbleColor).g;
+    fStack_10 = (pBVar5->bubbleColor).b;
+    fStack_11 = (pBVar5->bubbleColor).a;
     if (pBVar5->type == typeToActivate) {
-      pPVar7 = (this->fields).rayParticles;
-      if (pPVar7 == (ParticleSystem *)0x0) break;
-      PStack_1.m_ParticleSystem =
-           (ParticleSystem *)
-           UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-           ParticleSystem_get_collision(pPVar7,(MethodInfo *)0x0);
-      pLVar3 = (this->fields).boostColors;
-      if (pLVar3 == (List_1_BoostParticlesActivationEffect_BoosterColors_ *)0x0) break;
-      iVar8 = func_?(auStack_6 + 8,pLVar3,index,
-                               MethodInfo__System__Collections__Generic__List<BoostParticlesActivationEffect::BoosterColors>__get_Item_int_
-                              );
-      pPVar9 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MinMaxGradient::
+      pPVar12 = (this->fields).rayParticles;
+      if ((pPVar12 == (ParticleSystem *)0x0) ||
+         (PStack_1.m_ParticleSystem =
+               (ParticleSystem *)
+               UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+               ParticleSystem_get_collision(pPVar12,(MethodInfo *)0x0),
+         (this->fields).boostColors == (List_1_BoostParticlesActivationEffect_BoosterColors_ *)0x0))
+      break;
+      apMStack_13[0] =
+           MethodInfo__System__Collections__Generic__List<BoostParticlesActivationEffect::BoosterColors>__get_Item_int_
+      ;
+      piVar14 = (int32_t *)func_?(apMStack_13);
+      BStack_6.type = *piVar14;
+      BStack_6.rayColor.r = ((Color *)(piVar14 + 1))->r;
+      BStack_6.rayColor.g = (float)piVar14[2];
+      BStack_6.rayColor.b = (float)piVar14[3];
+      BStack_6.rayColor.a = (float)piVar14[4];
+      BStack_6.bubbleColor.r = (float)piVar14[5];
+      BStack_6.bubbleColor.g = (float)piVar14[6];
+      BStack_6.bubbleColor.b = (float)piVar14[7];
+      BStack_6.bubbleColor.a = (float)piVar14[8];
+      pPVar15 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MinMaxGradient::
                 ParticleSystem_MinMaxGradient_op_Implicit
-                          ((ParticleSystem_MinMaxGradient *)auStack_6,*(Color *)(iVar8 + 4),
-                           (MethodInfo *)0x0);
-      uVar10 = (pPVar9->m_ColorMax).b;
-      uVar11 = pPVar9->m_Mode;
-      uVar12 = pPVar9->m_GradientMin;
-      uVar13 = pPVar9->m_GradientMax;
-      uVar14 = (pPVar9->m_ColorMin).r;
-      uVar15 = (pPVar9->m_ColorMin).g;
-      uVar16 = (pPVar9->m_ColorMin).b;
-      uVar17 = (pPVar9->m_ColorMin).a;
-      value.m_ColorMin.a = (float)uVar17;
-      value.m_ColorMin.b = (float)uVar16;
-      value.m_ColorMin.g = (float)uVar15;
-      value.m_ColorMin.r = (float)uVar14;
-      uVar18 = (pPVar9->m_ColorMax).r;
-      uVar19 = (pPVar9->m_ColorMax).g;
-      value.m_ColorMax.g = (float)uVar19;
-      value.m_ColorMax.r = (float)uVar18;
-      value.m_GradientMax = (Gradient *)uVar13;
-      value.m_GradientMin = (Gradient *)uVar12;
-      value.m_Mode = uVar11;
-      value.m_ColorMax.b = (float)uVar10;
-      value.m_ColorMax.a = (pPVar9->m_ColorMax).a;
+                          ((ParticleSystem_MinMaxGradient *)&stack0xffffff80,*(Color *)(piVar14 + 1)
+                           ,(MethodInfo *)0x0);
+      uVar16 = (pPVar15->m_ColorMax).b;
+      uVar17 = pPVar15->m_Mode;
+      uVar18 = pPVar15->m_GradientMin;
+      uVar19 = pPVar15->m_GradientMax;
+      uVar20 = (pPVar15->m_ColorMin).r;
+      uVar21 = (pPVar15->m_ColorMin).g;
+      uVar22 = (pPVar15->m_ColorMin).b;
+      uVar23 = (pPVar15->m_ColorMin).a;
+      value.m_ColorMin.a = (float)uVar23;
+      value.m_ColorMin.b = (float)uVar22;
+      value.m_ColorMin.g = (float)uVar21;
+      value.m_ColorMin.r = (float)uVar20;
+      uVar24 = (pPVar15->m_ColorMax).r;
+      uVar25 = (pPVar15->m_ColorMax).g;
+      value.m_ColorMax.g = (float)uVar25;
+      value.m_ColorMax.r = (float)uVar24;
+      value.m_GradientMax = (Gradient *)uVar19;
+      value.m_GradientMin = (Gradient *)uVar18;
+      value.m_Mode = uVar17;
+      value.m_ColorMax.b = (float)uVar16;
+      value.m_ColorMax.a = (pPVar15->m_ColorMax).a;
       UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
       ParticleSystem_MainModule_set_startColor(&PStack_1,value,(MethodInfo *)0x0);
-      pPVar7 = (this->fields).rayParticles;
-      if (pPVar7 == (ParticleSystem *)0x0) break;
+      pPVar12 = (this->fields).rayParticles;
+      if (pPVar12 == (ParticleSystem *)0x0) break;
       UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Play_1
-                (pPVar7,(MethodInfo *)0x0);
-      pPVar7 = (this->fields).bubbleParticles;
-      if (pPVar7 == (ParticleSystem *)0x0) break;
+                (pPVar12,(MethodInfo *)0x0);
+      pPVar12 = (this->fields).bubbleParticles;
+      if (pPVar12 == (ParticleSystem *)0x0) break;
       PStack_2.m_ParticleSystem =
            (ParticleSystem *)
            UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-           ParticleSystem_get_collision(pPVar7,(MethodInfo *)0x0);
+           ParticleSystem_get_collision(pPVar12,(MethodInfo *)0x0);
       pLVar3 = (this->fields).boostColors;
       if (pLVar3 == (List_1_BoostParticlesActivationEffect_BoosterColors_ *)0x0) break;
-      iVar8 = func_?(auStack_6 + 8,pLVar3,index,
-                               MethodInfo__System__Collections__Generic__List<BoostParticlesActivationEffect::BoosterColors>__get_Item_int_
-                              );
-      pPVar9 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MinMaxGradient::
+      puVar26 = (undefined4 *)
+                func_?(apMStack_13,pLVar3,index,
+                                MethodInfo__System__Collections__Generic__List<BoostParticlesActivationEffect::BoosterColors>__get_Item_int_
+                               );
+      uStack_27 = *puVar26;
+      uStack_28 = puVar26[1];
+      uStack_29 = puVar26[2];
+      uStack_30 = puVar26[3];
+      fStack_7 = (float)puVar26[4];
+      fStack_8 = ((Color *)(puVar26 + 5))->r;
+      fStack_9 = (float)puVar26[6];
+      fStack_10 = (float)puVar26[7];
+      fStack_11 = (float)puVar26[8];
+      pPVar15 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MinMaxGradient::
                 ParticleSystem_MinMaxGradient_op_Implicit
-                          ((ParticleSystem_MinMaxGradient *)auStack_6,*(Color *)(iVar8 + 0x14),
-                           (MethodInfo *)0x0);
-      uVar20 = (pPVar9->m_ColorMax).b;
-      uVar21 = pPVar9->m_Mode;
-      uVar22 = pPVar9->m_GradientMin;
-      uVar23 = pPVar9->m_GradientMax;
-      uVar24 = (pPVar9->m_ColorMin).r;
-      uVar25 = (pPVar9->m_ColorMin).g;
-      uVar26 = (pPVar9->m_ColorMin).b;
-      uVar27 = (pPVar9->m_ColorMin).a;
-      value_00.m_ColorMin.a = (float)uVar27;
-      value_00.m_ColorMin.b = (float)uVar26;
-      value_00.m_ColorMin.g = (float)uVar25;
-      value_00.m_ColorMin.r = (float)uVar24;
-      uVar28 = (pPVar9->m_ColorMax).r;
-      uVar29 = (pPVar9->m_ColorMax).g;
-      value_00.m_ColorMax.g = (float)uVar29;
-      value_00.m_ColorMax.r = (float)uVar28;
-      value_00.m_GradientMax = (Gradient *)uVar23;
-      value_00.m_GradientMin = (Gradient *)uVar22;
-      value_00.m_Mode = uVar21;
-      value_00.m_ColorMax.b = (float)uVar20;
-      value_00.m_ColorMax.a = (pPVar9->m_ColorMax).a;
+                          ((ParticleSystem_MinMaxGradient *)&stack0xffffff80,*(Color *)(puVar26 + 5)
+                           ,(MethodInfo *)0x0);
+      uVar31 = (pPVar15->m_ColorMax).b;
+      uVar32 = pPVar15->m_Mode;
+      uVar33 = pPVar15->m_GradientMin;
+      uVar34 = pPVar15->m_GradientMax;
+      uVar35 = (pPVar15->m_ColorMin).r;
+      uVar36 = (pPVar15->m_ColorMin).g;
+      uVar37 = (pPVar15->m_ColorMin).b;
+      uVar38 = (pPVar15->m_ColorMin).a;
+      value_00.m_ColorMin.a = (float)uVar38;
+      value_00.m_ColorMin.b = (float)uVar37;
+      value_00.m_ColorMin.g = (float)uVar36;
+      value_00.m_ColorMin.r = (float)uVar35;
+      uVar39 = (pPVar15->m_ColorMax).r;
+      uVar40 = (pPVar15->m_ColorMax).g;
+      value_00.m_ColorMax.g = (float)uVar40;
+      value_00.m_ColorMax.r = (float)uVar39;
+      value_00.m_GradientMax = (Gradient *)uVar34;
+      value_00.m_GradientMin = (Gradient *)uVar33;
+      value_00.m_Mode = uVar32;
+      value_00.m_ColorMax.b = (float)uVar31;
+      value_00.m_ColorMax.a = (pPVar15->m_ColorMax).a;
       UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
       ParticleSystem_MainModule_set_startColor(&PStack_2,value_00,(MethodInfo *)0x0);
-      pPVar7 = (this->fields).bubbleParticles;
-      if (pPVar7 == (ParticleSystem *)0x0) break;
+      pPVar12 = (this->fields).bubbleParticles;
+      if (pPVar12 == (ParticleSystem *)0x0) break;
       UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Play_1
-                (pPVar7,(MethodInfo *)0x0);
+                (pPVar12,(MethodInfo *)0x0);
     }
     index = index + 1;
     pLVar3 = (this->fields).boostColors;
   }
   func_?();
-  pcVar30 = (code *)swi(3);
-  (*pcVar30)();
+  pcVar41 = (code *)swi(3);
+  (*pcVar41)();
   return;
 }
 
@@ -139,8 +163,7 @@ void Assembly-CSharp.dll::BoostParticlesActivationEffect::
                MethodInfo *method)
 
 {
-  iVar1 = (this->fields).previousMode;
-  if ((iVar1 != 4) && (iVar1 != 2)) {
+  if (((this->fields).previousMode != 4) && ((this->fields).previousMode != 2)) {
     (this->fields).previousMode = newMode;
     return;
   }
@@ -430,9 +453,8 @@ void Assembly-CSharp.dll::BoostParticlesActivationEffect::BoostParticlesActivati
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<BoostType>__List__);
-  ppLVar1 = &(this->fields).boostsToActivate;
-  *ppLVar1 = this_00;
-  func_?(ppLVar1,this_00);
+  (this->fields).boostsToActivate = this_00;
+  func_?(&(this->fields).boostsToActivate,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

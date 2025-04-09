@@ -12,18 +12,17 @@ void Assembly-CSharp.dll::FlagTintObject::FlagTintObject_Awake
   pMVar1 = (this->fields).meshRenderer;
   pMVar2 = (Material__Array *)func_?(TypeInfo__UnityEngine__Material,2);
   pMVar3 = (this->fields).materialToTint;
-  ppMVar4 = &(this->fields).materialToTint;
   if (pMVar2 == (Material__Array *)0x0) {
 code_?:
     func_?();
 code_?:
-    uVar5 = func_?(0);
-    func_?(uVar5);
+    uVar4 = func_?(0);
+    func_?(uVar4);
   }
   else {
     if (pMVar3 != (Material *)0x0) {
-      iVar6 = func_?(pMVar3,(pMVar2->klass->_0).element_class);
-      if (iVar6 != 0) goto code_?;
+      iVar5 = func_?(pMVar3,(pMVar2->klass->_0).element_class);
+      if (iVar5 != 0) goto code_?;
       goto code_?;
     }
 code_?:
@@ -46,8 +45,8 @@ code_?:
           if (pMVar2 != (Material__Array *)0x0) {
             if (pMVar2->max_length != 0) {
               pMVar3 = pMVar2->vector[0];
-              *ppMVar4 = pMVar3;
-              func_?(ppMVar4,pMVar3);
+              (this->fields).materialToTint = pMVar3;
+              func_?(&(this->fields).materialToTint,pMVar3);
               return;
             }
             goto code_?;
@@ -56,15 +55,15 @@ code_?:
       }
       goto code_?;
     }
-    iVar6 = func_?(pMVar3,(pMVar2->klass->_0).element_class);
-    if (iVar6 != 0) goto code_?;
+    iVar5 = func_?(pMVar3,(pMVar2->klass->_0).element_class);
+    if (iVar5 != 0) goto code_?;
   }
-  uVar5 = func_?(0);
-  func_?(uVar5);
+  uVar4 = func_?(0);
+  func_?(uVar4);
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

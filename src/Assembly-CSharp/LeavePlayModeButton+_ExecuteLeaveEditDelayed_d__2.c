@@ -27,9 +27,8 @@ bool Assembly-CSharp.dll::LeavePlayModeButton+<ExecuteLeaveEditDelayed>d__2::
     (this->fields).__1__state = -1;
     this = (LeavePlayModeButton_ExecuteLeaveEditDelayed_d_2 *)0x0;
     pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&this);
-    ppOVar4 = &(pLVar1->fields).__2__current;
-    *ppOVar4 = pOVar3;
-    func_?(ppOVar4,pOVar3);
+    (pLVar1->fields).__2__current = pOVar3;
+    func_?(&(pLVar1->fields).__2__current,pOVar3);
     (pLVar1->fields).__1__state = 1;
     return 1;
   }
@@ -37,9 +36,8 @@ bool Assembly-CSharp.dll::LeavePlayModeButton+<ExecuteLeaveEditDelayed>d__2::
     (this->fields).__1__state = -1;
     this = (LeavePlayModeButton_ExecuteLeaveEditDelayed_d_2 *)0x0;
     pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&this);
-    ppOVar4 = &(pLVar1->fields).__2__current;
-    *ppOVar4 = pOVar3;
-    func_?(ppOVar4,pOVar3);
+    (pLVar1->fields).__2__current = pOVar3;
+    func_?(&(pLVar1->fields).__2__current,pOVar3);
     (pLVar1->fields).__1__state = 2;
     return 1;
   }
@@ -85,9 +83,9 @@ bool Assembly-CSharp.dll::LeavePlayModeButton+<ExecuteLeaveEditDelayed>d__2::
     return 0;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  bVar6 = (*pcVar5)();
-  return bVar6;
+  pcVar4 = (code *)swi(3);
+  bVar5 = (*pcVar4)();
+  return bVar5;
 }
 
 

@@ -9,10 +9,9 @@ bool Assembly-CSharp.dll::WorldObjectTypes::MVDoor::MVDoor+<BeginOpenCoroutine>d
   iVar1 = (this->fields).__1__state;
   pMVar2 = (this->fields).__4__this;
   if (iVar1 == 0) {
-    ppOVar3 = &(this->fields).__2__current;
     (this->fields).__1__state = -1;
-    *ppOVar3 = (Object *)0x0;
-    func_?(ppOVar3,0);
+    (this->fields).__2__current = (Object *)0x0;
+    func_?(&(this->fields).__2__current,0);
     (this->fields).__1__state = 1;
     return 1;
   }
@@ -34,9 +33,9 @@ bool Assembly-CSharp.dll::WorldObjectTypes::MVDoor::MVDoor+<BeginOpenCoroutine>d
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  bVar5 = (*pcVar4)();
-  return bVar5;
+  pcVar3 = (code *)swi(3);
+  bVar4 = (*pcVar3)();
+  return bVar4;
 }
 
 

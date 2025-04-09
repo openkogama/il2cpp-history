@@ -41,14 +41,13 @@ void Assembly-CSharp.dll::RTG::SceneGizmoCap::SceneGizmoCap__ctor
     gizmo = (sceneGizmo->fields)._._gizmo;
     this_00 = (GizmoCap3D *)func_?(TypeInfo__RTG__GizmoCap3D);
     GizmoCap3D::GizmoCap3D__ctor(this_00,gizmo,capHandleId,(MethodInfo *)0x0);
-    ppGVar1 = &(this->fields)._cap;
-    *ppGVar1 = this_00;
-    func_?(ppGVar1,this_00);
+    (this->fields)._cap = this_00;
+    func_?(&(this->fields)._cap,this_00);
     return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

@@ -12,7 +12,6 @@ void Assembly-CSharp.dll::TeleporterTintObject::TeleporterTintObject_Awake
   pMVar1 = (this->fields).meshRendererToTint;
   pMVar2 = (Material__Array *)func_?(TypeInfo__UnityEngine__Material,1);
   pMVar3 = (this->fields).materialCylinderToTint;
-  ppMVar4 = &(this->fields).materialCylinderToTint;
   if (pMVar2 == (Material__Array *)0x0) {
 code_?:
     func_?();
@@ -33,8 +32,8 @@ code_?:
           if (pMVar2 != (Material__Array *)0x0) {
             if (pMVar2->max_length != 0) {
               pMVar3 = pMVar2->vector[0];
-              *ppMVar4 = pMVar3;
-              func_?(ppMVar4,pMVar3);
+              (this->fields).materialCylinderToTint = pMVar3;
+              func_?(&(this->fields).materialCylinderToTint,pMVar3);
               return;
             }
             goto code_?;
@@ -43,15 +42,15 @@ code_?:
       }
       goto code_?;
     }
-    iVar5 = func_?(pMVar3,(pMVar2->klass->_0).element_class);
-    if (iVar5 != 0) goto code_?;
+    iVar4 = func_?(pMVar3,(pMVar2->klass->_0).element_class);
+    if (iVar4 != 0) goto code_?;
   }
-  uVar6 = func_?(0);
-  func_?(uVar6);
+  uVar5 = func_?(0);
+  func_?(uVar5);
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -111,31 +110,33 @@ void Assembly-CSharp.dll::TeleporterTintObject::TeleporterTintObject_Tint
                (TeleporterTintObject *this,Color c,MethodInfo *method)
 
 {
+  PStack_1.m_ParticleSystem = (ParticleSystem *)0x0;
   this_00 = (this->fields).materialCylinderToTint;
   if (this_00 != (Material *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color
               (this_00,c,(MethodInfo *)0x0);
     this_01 = (this->fields).particleCircleToTint;
-    fStack_1 = c.r * _UNK_?;
-    fVar2 = c.g * _UNK_?;
-    fVar3 = c.b * _UNK_?;
+    fVar2 = c.r * _UNK_?;
+    fVar3 = c.g * _UNK_?;
+    fVar4 = c.b * _UNK_?;
     if (this_01 != (ParticleSystem *)0x0) {
-      PStack_4.m_ParticleSystem =
+      PStack_1.m_ParticleSystem =
            (ParticleSystem *)
            UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
            ParticleSystem_get_collision(this_01,(MethodInfo *)0x0);
-      color.g = fVar2;
-      color.r = fStack_1;
-      color.b = fVar3;
+      color.g = fVar3;
+      color.r = fVar2;
+      color.b = fVar4;
       color.a = 1.0;
       pPVar5 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MinMaxGradient::
                ParticleSystem_MinMaxGradient_op_Implicit
-                         ((ParticleSystem_MinMaxGradient *)&stack0xffffff80,color,(MethodInfo *)0x0)
+                         ((ParticleSystem_MinMaxGradient *)&stack0xffffffbc,color,(MethodInfo *)0x0)
       ;
       UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
-      ParticleSystem_MainModule_set_startColor(&PStack_4,*pPVar5,(MethodInfo *)0x0);
+      ParticleSystem_MainModule_set_startColor(&PStack_1,*pPVar5,(MethodInfo *)0x0);
       this_02 = (this->fields).lightToTint;
       if (this_02 != (Light *)0x0) {
+        fStack6 = c.a;
         UnityEngine.CoreModule.dll::UnityEngine::Light::Light_set_color(this_02,c,(MethodInfo *)0x0)
         ;
         return;
@@ -143,8 +144,8 @@ void Assembly-CSharp.dll::TeleporterTintObject::TeleporterTintObject_Tint
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

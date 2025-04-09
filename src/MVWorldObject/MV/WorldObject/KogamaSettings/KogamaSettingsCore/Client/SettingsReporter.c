@@ -16,7 +16,6 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Cli
                    );
     cRam_? = '\x01';
   }
-  ppDVar1 = &(this->fields).DeltaData;
   if ((this->fields).DeltaData == (Dictionary_2_System_Object_System_Object_ *)0x0) {
     this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                *)func_?(
@@ -28,25 +27,24 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Cli
               (this_00,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
               );
-    *ppDVar1 = (Dictionary_2_System_Object_System_Object_ *)this_00;
-    func_?(ppDVar1,this_00);
+    (this->fields).DeltaData = (Dictionary_2_System_Object_System_Object_ *)this_00;
+    func_?(&(this->fields).DeltaData,this_00);
   }
   MVCommon.dll::MV::Common::CommonUtils::CommonUtils_PartialUpdateHashtable
-            (*ppDVar1,deltaChange,(MethodInfo *)0x0);
-  pMVar2 = (this->fields).worldObject;
-  if (pMVar2 != (MVWorldObject *)0x0) {
+            ((this->fields).DeltaData,deltaChange,(MethodInfo *)0x0);
+  pMVar1 = (this->fields).worldObject;
+  if (pMVar1 != (MVWorldObject *)0x0) {
     MVCommon.dll::MV::Common::CommonUtils::CommonUtils_PartialUpdateHashtable
-              ((pMVar2->fields).data,deltaChange,(MethodInfo *)0x0);
-    pAVar3 = (this->fields).OnValueChangedLocal;
-    if (pAVar3 != (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
-                  0x0) {
-      (*(pAVar3->fields)._._.invoke_impl)((pAVar3->fields)._._.method_code);
+              ((pMVar1->fields).data,deltaChange,(MethodInfo *)0x0);
+    if ((this->fields).OnValueChangedLocal !=
+        (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)0x0) {
+      (*(((this->fields).OnValueChangedLocal)->fields)._._.invoke_impl)();
     }
     return;
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -68,7 +66,6 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Cli
                    );
     cRam_? = '\x01';
   }
-  ppDVar1 = &(this->fields).DeltaRemovalData;
   if ((this->fields).DeltaRemovalData == (Dictionary_2_System_Object_System_Object_ *)0x0) {
     this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                *)func_?(
@@ -80,25 +77,24 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Cli
               (this_00,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
               );
-    *ppDVar1 = (Dictionary_2_System_Object_System_Object_ *)this_00;
-    func_?(ppDVar1,this_00);
+    (this->fields).DeltaRemovalData = (Dictionary_2_System_Object_System_Object_ *)this_00;
+    func_?(&(this->fields).DeltaRemovalData,this_00);
   }
   MVCommon.dll::MV::Common::CommonUtils::CommonUtils_PartialUpdateHashtable
-            (*ppDVar1,deltaChange,(MethodInfo *)0x0);
-  pMVar2 = (this->fields).worldObject;
-  if (pMVar2 != (MVWorldObject *)0x0) {
+            ((this->fields).DeltaRemovalData,deltaChange,(MethodInfo *)0x0);
+  pMVar1 = (this->fields).worldObject;
+  if (pMVar1 != (MVWorldObject *)0x0) {
     MVCommon.dll::MV::Common::CommonUtils::CommonUtils_PartialRemoveFromHashtable
-              ((pMVar2->fields).data,*ppDVar1,(MethodInfo *)0x0);
-    pAVar3 = (this->fields).OnValueRemovedLocal;
-    if (pAVar3 != (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
-                  0x0) {
-      (*(pAVar3->fields)._._.invoke_impl)();
+              ((pMVar1->fields).data,(this->fields).DeltaRemovalData,(MethodInfo *)0x0);
+    if ((this->fields).OnValueRemovedLocal !=
+        (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)0x0) {
+      (*(((this->fields).OnValueRemovedLocal)->fields)._._.invoke_impl)();
     }
     return;
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -109,39 +105,35 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Cli
      SettingsReporter::SettingsReporter_Submit(SettingsReporter *this,MethodInfo *method)
 
 {
-  pDVar1 = (this->fields).DeltaData;
-  ppDVar2 = &(this->fields).DeltaData;
-  if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pMVar3 = (this->fields).worldObject;
-    if ((pMVar3 == (MVWorldObject *)0x0) ||
-       (pAVar4 = (this->fields).partialDataUpdate,
-       pAVar4 == (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
+  if ((this->fields).DeltaData != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    pMVar1 = (this->fields).worldObject;
+    if ((pMVar1 == (MVWorldObject *)0x0) ||
+       (pAVar2 = (this->fields).partialDataUpdate,
+       pAVar2 == (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
                   *)0x0)) goto code_?;
-    (*(pAVar4->fields)._._.invoke_impl)
-              ((pAVar4->fields)._._.method_code,(pMVar3->fields).id,pDVar1,
-               (pAVar4->fields)._._.method);
-    *ppDVar2 = (Dictionary_2_System_Object_System_Object_ *)0x0;
-    func_?(ppDVar2,0);
+    (*(pAVar2->fields)._._.invoke_impl)
+              ((pAVar2->fields)._._.method_code,(pMVar1->fields).id,(this->fields).DeltaData,
+               (pAVar2->fields)._._.method);
+    (this->fields).DeltaData = (Dictionary_2_System_Object_System_Object_ *)0x0;
+    func_?(&(this->fields).DeltaData,0);
   }
-  pDVar1 = (this->fields).DeltaRemovalData;
-  ppDVar2 = &(this->fields).DeltaRemovalData;
-  if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pMVar3 = (this->fields).worldObject;
-    if ((pMVar3 == (MVWorldObject *)0x0) ||
-       (pAVar4 = (this->fields).partialDataRemove,
-       pAVar4 == (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
+  if ((this->fields).DeltaRemovalData != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    pMVar1 = (this->fields).worldObject;
+    if ((pMVar1 == (MVWorldObject *)0x0) ||
+       (pAVar2 = (this->fields).partialDataRemove,
+       pAVar2 == (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
                   *)0x0)) {
 code_?:
       func_?();
-      pcVar5 = (code *)swi(3);
-      (*pcVar5)();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
-    (*(pAVar4->fields)._._.invoke_impl)
-              ((pAVar4->fields)._._.method_code,(pMVar3->fields).id,pDVar1,
-               (pAVar4->fields)._._.method);
-    *ppDVar2 = (Dictionary_2_System_Object_System_Object_ *)0x0;
-    func_?(ppDVar2,0);
+    (*(pAVar2->fields)._._.invoke_impl)
+              ((pAVar2->fields)._._.method_code,(pMVar1->fields).id,(this->fields).DeltaRemovalData,
+               (pAVar2->fields)._._.method);
+    (this->fields).DeltaRemovalData = (Dictionary_2_System_Object_System_Object_ *)0x0;
+    func_?(&(this->fields).DeltaRemovalData,0);
   }
   return;
 }
@@ -164,12 +156,10 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Cli
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).worldObject = worldObject;
   func_?(&this->fields,worldObject);
-  ppAVar1 = &(this->fields).partialDataUpdate;
-  *ppAVar1 = partialDataUpdate;
-  func_?(ppAVar1,partialDataUpdate);
-  ppAVar1 = &(this->fields).partialDataRemove;
-  *ppAVar1 = partialDataRemove;
-  func_?(ppAVar1,partialDataRemove);
+  (this->fields).partialDataUpdate = partialDataUpdate;
+  func_?(&(this->fields).partialDataUpdate,partialDataUpdate);
+  (this->fields).partialDataRemove = partialDataRemove;
+  func_?(&(this->fields).partialDataRemove,partialDataRemove);
   return;
 }
 
@@ -191,31 +181,30 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Cli
                    );
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnValueChangedLocal;
-  a = *ppAVar1;
+  a = (this->fields).OnValueChangedLocal;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar3 = 
+    pAVar2 = 
     TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
     ;
-    iVar4 = 0;
-    if (pDVar2 != (Delegate *)0x0) {
-      iVar4 = func_?(pDVar2,
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,
                               TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
                              );
-      if (iVar4 == 0) {
-        func_?(pDVar2,pAVar3);
-        pcVar5 = (code *)swi(3);
-        (*pcVar5)();
+      if (iVar3 == 0) {
+        func_?(pDVar1,pAVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pAVar6 = (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
-             func_?(ppAVar1,iVar4,a);
-    bVar7 = pAVar6 != a;
-    a = pAVar6;
-  } while (bVar7);
+    pAVar5 = (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
+             func_?(&(this->fields).OnValueChangedLocal,iVar3,a);
+    bVar6 = pAVar5 != a;
+    a = pAVar5;
+  } while (bVar6);
   return;
 }
 
@@ -237,31 +226,30 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Cli
                    );
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnValueRemovedLocal;
-  a = *ppAVar1;
+  a = (this->fields).OnValueRemovedLocal;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar3 = 
+    pAVar2 = 
     TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
     ;
-    iVar4 = 0;
-    if (pDVar2 != (Delegate *)0x0) {
-      iVar4 = func_?(pDVar2,
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,
                               TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
                              );
-      if (iVar4 == 0) {
-        func_?(pDVar2,pAVar3);
-        pcVar5 = (code *)swi(3);
-        (*pcVar5)();
+      if (iVar3 == 0) {
+        func_?(pDVar1,pAVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pAVar6 = (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
-             func_?(ppAVar1,iVar4,a);
-    bVar7 = pAVar6 != a;
-    a = pAVar6;
-  } while (bVar7);
+    pAVar5 = (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
+             func_?(&(this->fields).OnValueRemovedLocal,iVar3,a);
+    bVar6 = pAVar5 != a;
+    a = pAVar5;
+  } while (bVar6);
   return;
 }
 
@@ -283,31 +271,30 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Cli
                    );
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnValueChangedLocal;
-  source = *ppAVar1;
+  source = (this->fields).OnValueChangedLocal;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar3 = 
+    pAVar2 = 
     TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
     ;
-    iVar4 = 0;
-    if (pDVar2 != (Delegate *)0x0) {
-      iVar4 = func_?(pDVar2,
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,
                               TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
                              );
-      if (iVar4 == 0) {
-        func_?(pDVar2,pAVar3);
-        pcVar5 = (code *)swi(3);
-        (*pcVar5)();
+      if (iVar3 == 0) {
+        func_?(pDVar1,pAVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pAVar6 = (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
-             func_?(ppAVar1,iVar4,source);
-    bVar7 = pAVar6 != source;
-    source = pAVar6;
-  } while (bVar7);
+    pAVar5 = (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
+             func_?(&(this->fields).OnValueChangedLocal,iVar3,source);
+    bVar6 = pAVar5 != source;
+    source = pAVar5;
+  } while (bVar6);
   return;
 }
 
@@ -329,31 +316,30 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Cli
                    );
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnValueRemovedLocal;
-  source = *ppAVar1;
+  source = (this->fields).OnValueRemovedLocal;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar3 = 
+    pAVar2 = 
     TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
     ;
-    iVar4 = 0;
-    if (pDVar2 != (Delegate *)0x0) {
-      iVar4 = func_?(pDVar2,
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,
                               TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
                              );
-      if (iVar4 == 0) {
-        func_?(pDVar2,pAVar3);
-        pcVar5 = (code *)swi(3);
-        (*pcVar5)();
+      if (iVar3 == 0) {
+        func_?(pDVar1,pAVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pAVar6 = (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
-             func_?(ppAVar1,iVar4,source);
-    bVar7 = pAVar6 != source;
-    source = pAVar6;
-  } while (bVar7);
+    pAVar5 = (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
+             func_?(&(this->fields).OnValueRemovedLocal,iVar3,source);
+    bVar6 = pAVar5 != source;
+    source = pAVar5;
+  } while (bVar6);
   return;
 }
 

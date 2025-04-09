@@ -26,8 +26,8 @@ void Assembly-CSharp.dll::AccessoryPreviewPopup+<>c__DisplayClass6_0::
     do {
       if (pIVar3->interfaceOffsets[uVar4].interfaceType ==
           (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IAccessoryPopupHandler) {
-        ppMVar6 = &(&x->klass->vtable)[pIVar3->interfaceOffsets[uVar4].offset].OpenInventoryAtItem.
-                   method;
+        ppMVar6 = &(&x->klass->vtable)[x->klass->interfaceOffsets[uVar4].offset].OpenInventoryAtItem
+                   .method;
         goto code_?;
       }
       uVar4 = uVar4 + 1;

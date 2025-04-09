@@ -60,8 +60,8 @@ bool Assembly-CSharp.dll::RTG::SphereMath::SphereMath_ContainsPoint
                MethodInfo *method)
 
 {
-  return (point.y - sphereCenter.y) * (point.y - sphereCenter.y) +
-         (point.x - sphereCenter.x) * (point.x - sphereCenter.x) +
+  return (point.x - sphereCenter.x) * (point.x - sphereCenter.x) +
+         (point.y - sphereCenter.y) * (point.y - sphereCenter.y) +
          (point.z - sphereCenter.z) * (point.z - sphereCenter.z) <=
          (epsilon._radiusEps + sphereRadius) * (epsilon._radiusEps + sphereRadius);
 }
@@ -79,11 +79,11 @@ bool Assembly-CSharp.dll::RTG::SphereMath::SphereMath_Raycast
   fVar3 = ray.m_Origin.x - sphereCenter.x;
   fVar4 = ray.m_Origin.y - sphereCenter.y;
   fVar5 = ray.m_Origin.z - sphereCenter.z;
-  fVar6 = ray.m_Direction.y * fVar4 + ray.m_Direction.x * fVar3 + ray.m_Direction.z * fVar5;
+  fVar6 = ray.m_Direction.x * fVar3 + ray.m_Direction.y * fVar4 + ray.m_Direction.z * fVar5;
   bVar7 = MathEx::MathEx_SolveQuadratic
                     (ray.m_Direction.x * ray.m_Direction.x + ray.m_Direction.y * ray.m_Direction.y +
                      ray.m_Direction.z * ray.m_Direction.z,fVar6 + fVar6,
-                     (fVar4 * fVar4 + fVar3 * fVar3 + fVar5 * fVar5) -
+                     (fVar3 * fVar3 + fVar4 * fVar4 + fVar5 * fVar5) -
                      (epsilon._radiusEps + sphereRadius) * (epsilon._radiusEps + sphereRadius),
                      &fStack_1,&fStack_2,(MethodInfo *)0x0);
   if ((bVar7 != 0) && ((0.0 <= fStack_1 || (0.0 <= fStack_2)))) {
@@ -140,8 +140,9 @@ bool Assembly-CSharp.dll::RTG::SphereMath::SphereMath_Raycast_2
                      (fVar1 * fVar1 + fVar2 * fVar2 + fVar3 * fVar3) -
                      (epsilon._radiusEps + sphereRadius) * (epsilon._radiusEps + sphereRadius),t0,t1
                      ,(MethodInfo *)0x0);
-  if ((bVar5 != 0) && ((fVar4 = *t0, 0.0 <= fVar4 || (0.0 < *t1 || *t1 == 0.0)))) {
-    if (*t1 < fVar4) {
+  if ((bVar5 != 0) && ((0.0 < *t0 || *t0 == 0.0 || (0.0 < *t1 || *t1 == 0.0)))) {
+    fVar4 = *t0;
+    if (*t1 <= fVar4 && fVar4 != *t1) {
       *t0 = *t1;
       *t1 = fVar4;
     }

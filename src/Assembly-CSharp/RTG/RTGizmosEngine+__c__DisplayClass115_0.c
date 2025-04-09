@@ -19,13 +19,13 @@ int32_t Assembly-CSharp.dll::RTG::RTGizmosEngine+<>c__DisplayClass115_0::
       uVar9 = (this->fields).camPos.x;
       uVar10 = (this->fields).camPos.y;
       fVar11 = (pGVar1->fields)._position3D.z - (this->fields).camPos.z;
-      g0 = (Gizmo *)(((float)uVar8 - (float)uVar10) * ((float)uVar8 - (float)uVar10) +
-                     ((float)uVar7 - (float)uVar9) * ((float)uVar7 - (float)uVar9) + fVar11 * fVar11
+      g0 = (Gizmo *)(((float)uVar7 - (float)uVar9) * ((float)uVar7 - (float)uVar9) +
+                     ((float)uVar8 - (float)uVar10) * ((float)uVar8 - (float)uVar10) + fVar11 * fVar11
                     );
       iVar12 = mscorlib.dll::System::Single::Single_CompareTo_1
                          ((Single *)&g0,
-                          ((float)uVar3 - (float)uVar5) * ((float)uVar3 - (float)uVar5) +
                           ((float)uVar2 - (float)uVar4) * ((float)uVar2 - (float)uVar4) +
+                          ((float)uVar3 - (float)uVar5) * ((float)uVar3 - (float)uVar5) +
                           fVar6 * fVar6,(MethodInfo *)0x0);
       return iVar12;
     }
