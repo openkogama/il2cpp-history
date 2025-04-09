@@ -14,8 +14,8 @@ void Assembly-CSharp.dll::BriefingPlayButtonTouch::BriefingPlayButtonTouch_OnCon
     pMVar5 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
     if (pMVar5 != (MVLocalPlayer *)0x0) {
       if ((iVar3 != 2) && ((pMVar5->fields).respawnTime <= fVar4)) {
-        if ((this->fields)._.OnPlayButtonPressed != (Action *)0x0) {
-          pAVar6 = (this->fields)._.OnPlayButtonPressed;
+        pAVar6 = (this->fields)._.OnPlayButtonPressed;
+        if (pAVar6 != (Action *)0x0) {
           (*(pAVar6->fields)._._.invoke_impl)((pAVar6->fields)._._.method_code);
         }
         return;

@@ -18,10 +18,9 @@ void Assembly-CSharp.dll::ESSelection+<>c::ESSelection_c__HandleDeleteSelection_
       do {
         if (pIVar1->interfaceOffsets[uVar2].interfaceType ==
             (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IUIStack) {
-          pIVar1 = x->klass;
           iVar4 = pIVar1->interfaceOffsets[uVar2].offset;
-          (*(code *)(&(pIVar1->vtable).PopGroups)[iVar4].method)
-                    (x,0x12,(&(pIVar1->vtable).PopToGroup)[iVar4].methodPtr);
+          (*(code *)(&(x->klass->vtable).PopGroups)[iVar4].method)
+                    (x,0x12,(&(x->klass->vtable).PopToGroup)[iVar4].methodPtr);
           return;
         }
         uVar2 = uVar2 + 1;

@@ -101,8 +101,9 @@ void Assembly-CSharp.dll::DesktopFirstPersonCamera::DesktopFirstPersonCamera__ct
   List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
             (this_00,0x20,
              MethodInfo__System__Collections__Generic__List<UnityEngine::MeshRenderer>__List_int_);
-  (this->fields)._.vehiclesHiddenMeshRenderers = (List_1_UnityEngine_MeshRenderer_ *)this_00;
-  func_?(&(this->fields)._.vehiclesHiddenMeshRenderers,this_00);
+  ppLVar2 = &(this->fields)._.vehiclesHiddenMeshRenderers;
+  *ppLVar2 = (List_1_UnityEngine_MeshRenderer_ *)this_00;
+  func_?(ppLVar2,this_00);
   (this->fields)._._.cameraRadius = 0.3;
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);

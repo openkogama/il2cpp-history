@@ -212,11 +212,12 @@ void Assembly-CSharp.dll::LobbyStateController::LobbyStateController_ShowBoostMe
                       BoostMenuController_MethodInfo__UnityEngine__Object__Instantiate<BoostMenuController>_BoostMenuController_
                      );
   if (value != (Object *)0x0) {
-    value[1].klass = pOVar1;
-    func_?(value + 1,pOVar1);
-    if (value[1].klass != (Object__Class *)0x0) {
+    pOVar2 = value + 1;
+    pOVar2->klass = pOVar1;
+    func_?(pOVar2,pOVar1);
+    if (pOVar2->klass != (Object__Class *)0x0) {
       BoostMenuController::BoostMenuController_Initialize
-                ((BoostMenuController *)value[1].klass,(MethodInfo *)0x0);
+                ((BoostMenuController *)pOVar2->klass,(MethodInfo *)0x0);
       root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
       callbackFunction =
@@ -237,9 +238,9 @@ void Assembly-CSharp.dll::LobbyStateController::LobbyStateController_ShowBoostMe
                 (root,(BaseEventData *)0x0,callbackFunction,
                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                 );
-      pLVar2 = (this->fields).playButton;
-      if ((pLVar2 != (LobbyStateButton *)0x0) &&
-         (this_00 = (pLVar2->fields).lobbyStateButton, this_00 != (Button *)0x0)) {
+      pLVar3 = (this->fields).playButton;
+      if ((pLVar3 != (LobbyStateButton *)0x0) &&
+         (this_00 = (pLVar3->fields).lobbyStateButton, this_00 != (Button *)0x0)) {
         UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_set_interactable
                   ((Selectable *)this_00,1,(MethodInfo *)0x0);
         return;
@@ -247,8 +248,8 @@ void Assembly-CSharp.dll::LobbyStateController::LobbyStateController_ShowBoostMe
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -259,7 +260,6 @@ void Assembly-CSharp.dll::LobbyStateController::LobbyStateController_Start
                (LobbyStateController *this,MethodInfo *method)
 
 {
-  this_01 = this;
   if (cRam_? == '\0') {
     func_?(&
                     GamePassesUI_MethodInfo__UnityEngine__Object__Instantiate<GamePassesUI>_GamePassesUI__UnityEngine__Transform__bool_
@@ -301,30 +301,27 @@ void Assembly-CSharp.dll::LobbyStateController::LobbyStateController_Start
             (pGVar6,value,(MethodInfo *)0x0);
   if (uVar5 == '\0') {
     if (bVar1 == 0) {
-      this._0_1_ = 1;
+      bVar1 = 1;
     }
     else {
-      this._0_1_ = 0;
-      if (uVar4 != 0) {
-        this._0_1_ = bVar1;
-      }
+      bVar1 = -(uVar4 != 0) & bVar1;
     }
   }
   else {
-    this._0_1_ = 0;
+    bVar1 = 0;
   }
-  pGVar6 = (this_01->fields).accessoryShop;
+  pGVar6 = (this->fields).accessoryShop;
   if (pGVar6 == (GameObject *)0x0) goto code_?;
   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-            (pGVar6,(bool)this,(MethodInfo *)0x0);
+            (pGVar6,bVar1,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
   }
   if (TypeInfo__GamePassesManager->static_fields->_GamePassesActive_k__BackingField != 0) {
-    pGVar7 = (this_01->fields).gamePassesUIPrefab;
+    pGVar7 = (this->fields).gamePassesUIPrefab;
     parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                       ((Component *)this_01,(MethodInfo *)0x0);
+                       ((Component *)this,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
@@ -333,14 +330,13 @@ void Assembly-CSharp.dll::LobbyStateController::LobbyStateController_Start
                        ((Object *)pGVar7,parent,0,
                         GamePassesUI_MethodInfo__UnityEngine__Object__Instantiate<GamePassesUI>_GamePassesUI__UnityEngine__Transform__bool_
                        );
-    (this_01->fields).gamePassesUI = pGVar7;
-    func_?(&(this_01->fields).gamePassesUI,pGVar7);
-    pGVar7 = (this_01->fields).gamePassesUI;
-    if (pGVar7 == (GamePassesUI *)0x0) goto code_?;
-    GamePassesUI::GamePassesUI_Initialize(pGVar7,(MethodInfo *)0x0);
-    pGVar7 = (this_01->fields).gamePassesUI;
-    if (pGVar7 == (GamePassesUI *)0x0) goto code_?;
-    GamePassesUI::GamePassesUI_TryShowWelcomeReward(pGVar7,(MethodInfo *)0x0);
+    ppGVar8 = &(this->fields).gamePassesUI;
+    *ppGVar8 = pGVar7;
+    func_?(ppGVar8,pGVar7);
+    if (*ppGVar8 == (GamePassesUI *)0x0) goto code_?;
+    GamePassesUI::GamePassesUI_Initialize(*ppGVar8,(MethodInfo *)0x0);
+    if (*ppGVar8 == (GamePassesUI *)0x0) goto code_?;
+    GamePassesUI::GamePassesUI_TryShowWelcomeReward(*ppGVar8,(MethodInfo *)0x0);
     bVar1 = GamePassProgressionController::GamePassProgressionController_get_IsProgressionEnabled
                       ((MethodInfo *)0x0);
     if (bVar1 != 0) {
@@ -351,31 +347,30 @@ void Assembly-CSharp.dll::LobbyStateController::LobbyStateController_Start
       if (TypeInfo__GamePassesManager->static_fields->_GamePassesActive_k__BackingField != 0)
       goto code_?;
     }
-    pGVar7 = (this_01->fields).gamePassesUI;
-    if ((pGVar7 == (GamePassesUI *)0x0) ||
+    if ((*ppGVar8 == (GamePassesUI *)0x0) ||
        (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)pGVar7,(MethodInfo *)0x0), pGVar6 == (GameObject *)0x0))
+                           ((Component *)*ppGVar8,(MethodInfo *)0x0), pGVar6 == (GameObject *)0x0))
     goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
               (pGVar6,0,(MethodInfo *)0x0);
   }
 code_?:
-  pGVar8 = MVGameControllerBase::MVGameControllerBase_get_GoldRewardManager((MethodInfo *)0x0);
-  if (pGVar8 != (GoldRewardManager *)0x0) {
-    bVar1 = GoldRewardManager::GoldRewardManager_CanGetGoldReward(pGVar8,(MethodInfo *)0x0);
+  pGVar9 = MVGameControllerBase::MVGameControllerBase_get_GoldRewardManager((MethodInfo *)0x0);
+  if (pGVar9 != (GoldRewardManager *)0x0) {
+    bVar1 = GoldRewardManager::GoldRewardManager_CanGetGoldReward(pGVar9,(MethodInfo *)0x0);
     if (bVar1 == 0) {
       return;
     }
-    pGVar8 = MVGameControllerBase::MVGameControllerBase_get_GoldRewardManager((MethodInfo *)0x0);
-    if (pGVar8 != (GoldRewardManager *)0x0) {
-      if ((pGVar8->fields).isCountingDownGoldReward != 0) {
+    pGVar9 = MVGameControllerBase::MVGameControllerBase_get_GoldRewardManager((MethodInfo *)0x0);
+    if (pGVar9 != (GoldRewardManager *)0x0) {
+      if ((pGVar9->fields).isCountingDownGoldReward != 0) {
         return;
       }
-      pGVar8 = MVGameControllerBase::MVGameControllerBase_get_GoldRewardManager((MethodInfo *)0x0);
-      if (pGVar8 != (GoldRewardManager *)0x0) {
+      pGVar9 = MVGameControllerBase::MVGameControllerBase_get_GoldRewardManager((MethodInfo *)0x0);
+      if (pGVar9 != (GoldRewardManager *)0x0) {
         GoldRewardManager::GoldRewardManager_StartGoldRewardCountdownWhenReady
-                  (pGVar8,(MethodInfo *)0x0);
-        pGVar6 = (this_01->fields).goldIconOnPlayButton;
+                  (pGVar9,(MethodInfo *)0x0);
+        pGVar6 = (this->fields).goldIconOnPlayButton;
         if (pGVar6 != (GameObject *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                     (pGVar6,1,(MethodInfo *)0x0);
@@ -386,8 +381,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -417,8 +412,9 @@ void Assembly-CSharp.dll::LobbyStateController::LobbyStateController__ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<LobbyFlowMenu::LobbyFlowMenuType>__List__
             );
-  (this->fields)._.menuOrder = this_00;
-  func_?(&(this->fields)._.menuOrder,this_00);
+  ppLVar1 = &(this->fields)._.menuOrder;
+  *ppLVar1 = this_00;
+  func_?(ppLVar1,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

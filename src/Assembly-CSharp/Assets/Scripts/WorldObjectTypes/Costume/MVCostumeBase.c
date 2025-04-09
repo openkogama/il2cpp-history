@@ -91,7 +91,7 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::Costume::MVCostumeB
   key = (Object *)
         func_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,(int)&worldObjects + 3)
   ;
-  this_00.m_Index = 0;
+  pDVar1 = (Dictionary_2_System_Object_System_Object___Class *)0x0;
   if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
     this_00 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
               UIElements::TextureId]::
@@ -99,28 +99,26 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::Costume::MVCostumeB
                         ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,key,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                         );
+    pDVar1 = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
     if (this_00.m_Index != 0) {
-      method = (MethodInfo *)
-               TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
-      if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-           naturalAligment <= *(byte *)(*(int *)this_00.m_Index + 0xb8)) &&
+      bVar2 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
+              _1).naturalAligment;
+      if ((bVar2 <= *(byte *)(*(int *)this_00.m_Index + 0xb8)) &&
          (*(Dictionary_2_System_Object_System_Object___Class **)
-           (*(int *)(*(int *)this_00.m_Index + 100) + -4 +
-           (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                 ->_1).naturalAligment * 4) ==
+           (*(int *)(*(int *)this_00.m_Index + 100) + -4 + (uint)bVar2 * 4) ==
           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
         method = 
         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
         ;
         worldObjects = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)StringLiteral_itemData;
-        bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+        bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
                 ::UIElements::TextureId]::
                 Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                           ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
                            this_00.m_Index,(Object *)StringLiteral_itemData,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                           );
-        if (bVar1 == 0) {
+        if (bVar3 == 0) {
           if ((TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->_1).
               cctor_finished_or_no_cctor == 0) {
             func_?();
@@ -142,12 +140,13 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::Costume::MVCostumeB
   }
   method = (MethodInfo *)&UNK_?;
   func_?();
-  method = (MethodInfo *)extraout_EDX;
+  this_00.m_Index = (int32_t)extraout_EDX;
 code_?:
   worldObjects = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)this_00.m_Index;
+  method = (MethodInfo *)pDVar1;
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

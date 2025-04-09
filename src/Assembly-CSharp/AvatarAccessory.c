@@ -11,25 +11,26 @@ void Assembly-CSharp.dll::AvatarAccessory::AvatarAccessory_Awake
                    );
     cRam_? = '\x01';
   }
+  ppCVar1 = &(this->fields)._colliders;
   if ((this->fields)._colliders == (Collider__Array *)0x0) {
-    pCVar1 = (Collider__Array *)
+    pCVar2 = (Collider__Array *)
              UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentsInChildren
                        ((Component *)this,
                         UnityEngine__Collider__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::Collider>______
                        );
-    (this->fields)._colliders = pCVar1;
-    func_?(&(this->fields)._colliders,pCVar1);
+    *ppCVar1 = pCVar2;
+    func_?(ppCVar1,pCVar2);
   }
-  pCVar1 = (this->fields)._colliders;
-  uVar2 = 0;
-  if (pCVar1 != (Collider__Array *)0x0) {
-    ppCVar3 = pCVar1->vector;
-    for (; (int)uVar2 < (int)pCVar1->max_length; uVar2 = uVar2 + 1) {
-      if (pCVar1->max_length <= uVar2) goto code_?;
-      if (*ppCVar3 == (Collider *)0x0) goto code_?;
+  pCVar2 = *ppCVar1;
+  uVar3 = 0;
+  if (pCVar2 != (Collider__Array *)0x0) {
+    ppCVar4 = pCVar2->vector;
+    for (; (int)uVar3 < (int)pCVar2->max_length; uVar3 = uVar3 + 1) {
+      if (pCVar2->max_length <= uVar3) goto code_?;
+      if (*ppCVar4 == (Collider *)0x0) goto code_?;
       UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_enabled
-                (*ppCVar3,0,(MethodInfo *)0x0);
-      ppCVar3 = ppCVar3 + 1;
+                (*ppCVar4,0,(MethodInfo *)0x0);
+      ppCVar4 = ppCVar4 + 1;
     }
     if (cRam_? == '\0') {
       func_?(&
@@ -37,29 +38,30 @@ void Assembly-CSharp.dll::AvatarAccessory::AvatarAccessory_Awake
                      );
       cRam_? = '\x01';
     }
+    ppRVar5 = &(this->fields)._renderers;
     if ((this->fields)._renderers == (Renderer__Array *)0x0) {
-      pRVar4 = (Renderer__Array *)
+      pRVar6 = (Renderer__Array *)
                UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentsInChildren
                          ((Component *)this,
                           UnityEngine__Renderer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::Renderer>______
                          );
-      (this->fields)._renderers = pRVar4;
-      func_?(&(this->fields)._renderers,pRVar4);
+      *ppRVar5 = pRVar6;
+      func_?(ppRVar5,pRVar6);
     }
-    pRVar4 = (this->fields)._renderers;
-    uVar2 = 0;
-    if (pRVar4 != (Renderer__Array *)0x0) {
-      ppRVar5 = pRVar4->vector;
+    pRVar6 = *ppRVar5;
+    uVar3 = 0;
+    if (pRVar6 != (Renderer__Array *)0x0) {
+      ppRVar7 = pRVar6->vector;
       while( true ) {
-        if ((int)pRVar4->max_length <= (int)uVar2) {
+        if ((int)pRVar6->max_length <= (int)uVar3) {
           return;
         }
-        if (pRVar4->max_length <= uVar2) break;
-        if (*ppRVar5 == (Renderer *)0x0) goto code_?;
+        if (pRVar6->max_length <= uVar3) break;
+        if (*ppRVar7 == (Renderer *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
-                  (*ppRVar5,(this->fields)._visible,(MethodInfo *)0x0);
-        uVar2 = uVar2 + 1;
-        ppRVar5 = ppRVar5 + 1;
+                  (*ppRVar7,(this->fields)._visible,(MethodInfo *)0x0);
+        uVar3 = uVar3 + 1;
+        ppRVar7 = ppRVar7 + 1;
       }
 code_?:
       func_?();
@@ -67,8 +69,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -153,50 +155,51 @@ Bounds * Assembly-CSharp.dll::AvatarAccessory::AvatarAccessory_GetWorldBounds
                    );
     cRam_? = '\x01';
   }
+  ppRVar2 = &(this->fields)._renderers;
   if ((this->fields)._renderers == (Renderer__Array *)0x0) {
-    pRVar2 = (Renderer__Array *)
+    pRVar3 = (Renderer__Array *)
              UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentsInChildren
                        ((Component *)this,
                         UnityEngine__Renderer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::Renderer>______
                        );
-    (this->fields)._renderers = pRVar2;
-    func_?(&(this->fields)._renderers,pRVar2);
+    *ppRVar2 = pRVar3;
+    func_?(ppRVar2,pRVar3);
   }
-  pRVar2 = (this->fields)._renderers;
-  uVar3 = 0;
-  if (pRVar2 == (Renderer__Array *)0x0) {
+  pRVar3 = *ppRVar2;
+  uVar4 = 0;
+  if (pRVar3 == (Renderer__Array *)0x0) {
 code_?:
     func_?();
   }
   else {
-    ppRVar4 = pRVar2->vector;
+    ppRVar5 = pRVar3->vector;
     while( true ) {
-      if ((int)pRVar2->max_length <= (int)uVar3) {
+      if ((int)pRVar3->max_length <= (int)uVar4) {
         return __return_storage_ptr__;
       }
-      if (pRVar2->max_length <= uVar3) break;
-      if (*ppRVar4 == (Renderer *)0x0) goto code_?;
-      pBVar5 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_bounds
-                         (&BStack_6,*ppRVar4,(MethodInfo *)0x0);
-      fVar7 = (pBVar5->m_Center).y;
-      fVar8 = (pBVar5->m_Center).z;
-      fVar9 = (pBVar5->m_Extents).x;
-      fVar10 = (pBVar5->m_Extents).y;
-      fVar11 = (pBVar5->m_Extents).z;
-      (__return_storage_ptr__->m_Center).x = (pBVar5->m_Center).x;
-      (__return_storage_ptr__->m_Center).y = fVar7;
-      (__return_storage_ptr__->m_Center).z = fVar8;
-      (__return_storage_ptr__->m_Extents).x = fVar9;
-      (__return_storage_ptr__->m_Extents).y = fVar10;
-      (__return_storage_ptr__->m_Extents).z = fVar11;
-      uVar3 = uVar3 + 1;
-      ppRVar4 = ppRVar4 + 1;
+      if (pRVar3->max_length <= uVar4) break;
+      if (*ppRVar5 == (Renderer *)0x0) goto code_?;
+      pBVar6 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_bounds
+                         (&BStack_7,*ppRVar5,(MethodInfo *)0x0);
+      fVar8 = (pBVar6->m_Center).y;
+      fVar9 = (pBVar6->m_Center).z;
+      fVar10 = (pBVar6->m_Extents).x;
+      fVar11 = (pBVar6->m_Extents).y;
+      fVar12 = (pBVar6->m_Extents).z;
+      (__return_storage_ptr__->m_Center).x = (pBVar6->m_Center).x;
+      (__return_storage_ptr__->m_Center).y = fVar8;
+      (__return_storage_ptr__->m_Center).z = fVar9;
+      (__return_storage_ptr__->m_Extents).x = fVar10;
+      (__return_storage_ptr__->m_Extents).y = fVar11;
+      (__return_storage_ptr__->m_Extents).z = fVar12;
+      uVar4 = uVar4 + 1;
+      ppRVar5 = ppRVar5 + 1;
     }
   }
   func_?();
-  pcVar12 = (code *)swi(3);
-  pBVar5 = (Bounds *)(*pcVar12)();
-  return pBVar5;
+  pcVar13 = (code *)swi(3);
+  pBVar6 = (Bounds *)(*pcVar13)();
+  return pBVar6;
 }
 
 
@@ -210,11 +213,11 @@ void Assembly-CSharp.dll::AvatarAccessory::AvatarAccessory_InitAccessory
     func_?(&StringLiteral_Accessory_);
     cRam_? = '\x01';
   }
-  (this->fields)._AssetPath_k__BackingField = assetReqPath;
-  func_?(&(this->fields)._AssetPath_k__BackingField,assetReqPath);
+  ppSVar1 = &(this->fields)._AssetPath_k__BackingField;
+  *ppSVar1 = assetReqPath;
+  func_?(ppSVar1,assetReqPath);
   value = mscorlib.dll::System::String::String_Concat_3
-                    (StringLiteral_Accessory_,(this->fields)._AssetPath_k__BackingField,
-                     (MethodInfo *)0x0);
+                    (StringLiteral_Accessory_,*ppSVar1,(MethodInfo *)0x0);
   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_set_name
             ((Object_1 *)this,value,(MethodInfo *)0x0);
   return;
@@ -234,16 +237,17 @@ Assembly-CSharp.dll::AvatarAccessory::AvatarAccessory_get_Colliders
                    );
     cRam_? = '\x01';
   }
+  ppCVar1 = &(this->fields)._colliders;
   if ((this->fields)._colliders == (Collider__Array *)0x0) {
-    pCVar1 = (Collider__Array *)
+    pCVar2 = (Collider__Array *)
              UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentsInChildren
                        ((Component *)this,
                         UnityEngine__Collider__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::Collider>______
                        );
-    (this->fields)._colliders = pCVar1;
-    func_?(&(this->fields)._colliders,pCVar1);
+    *ppCVar1 = pCVar2;
+    func_?(ppCVar1,pCVar2);
   }
-  return (this->fields)._colliders;
+  return *ppCVar1;
 }
 
 
@@ -260,16 +264,17 @@ Assembly-CSharp.dll::AvatarAccessory::AvatarAccessory_get_Renderers
                    );
     cRam_? = '\x01';
   }
+  ppRVar1 = &(this->fields)._renderers;
   if ((this->fields)._renderers == (Renderer__Array *)0x0) {
-    pRVar1 = (Renderer__Array *)
+    pRVar2 = (Renderer__Array *)
              UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentsInChildren
                        ((Component *)this,
                         UnityEngine__Renderer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::Renderer>______
                        );
-    (this->fields)._renderers = pRVar1;
-    func_?(&(this->fields)._renderers,pRVar1);
+    *ppRVar1 = pRVar2;
+    func_?(ppRVar1,pRVar2);
   }
-  return (this->fields)._renderers;
+  return *ppRVar1;
 }
 
 
@@ -285,18 +290,19 @@ Assembly-CSharp.dll::AvatarAccessory::AvatarAccessory_get_Transform
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields)._transform;
+  ppTVar2 = &(this->fields)._transform;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                     ((Object_1 *)pTVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
+  if (bVar3 != 0) {
     pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                        ((Component *)this,(MethodInfo *)0x0);
-    (this->fields)._transform = pTVar1;
-    func_?(&(this->fields)._transform,pTVar1);
+    *ppTVar2 = pTVar1;
+    func_?(ppTVar2,pTVar1);
   }
-  return (this->fields)._transform;
+  return *ppTVar2;
 }
 
 
@@ -313,33 +319,34 @@ void Assembly-CSharp.dll::AvatarAccessory::AvatarAccessory_set_Visible
                      );
       cRam_? = '\x01';
     }
+    ppRVar1 = &(this->fields)._renderers;
     if ((this->fields)._renderers == (Renderer__Array *)0x0) {
-      pRVar1 = (Renderer__Array *)
+      pRVar2 = (Renderer__Array *)
                UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentsInChildren
                          ((Component *)this,
                           UnityEngine__Renderer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::Renderer>______
                          );
-      (this->fields)._renderers = pRVar1;
-      func_?(&(this->fields)._renderers,pRVar1);
+      *ppRVar1 = pRVar2;
+      func_?(ppRVar1,pRVar2);
     }
-    pRVar1 = (this->fields)._renderers;
-    uVar2 = 0;
-    if (pRVar1 == (Renderer__Array *)0x0) {
+    pRVar2 = *ppRVar1;
+    uVar3 = 0;
+    if (pRVar2 == (Renderer__Array *)0x0) {
 code_?:
       func_?();
 code_?:
       func_?();
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
       return;
     }
-    ppRVar4 = pRVar1->vector;
-    for (; (int)uVar2 < (int)pRVar1->max_length; uVar2 = uVar2 + 1) {
-      if (pRVar1->max_length <= uVar2) goto code_?;
-      if (*ppRVar4 == (Renderer *)0x0) goto code_?;
+    ppRVar5 = pRVar2->vector;
+    for (; (int)uVar3 < (int)pRVar2->max_length; uVar3 = uVar3 + 1) {
+      if (pRVar2->max_length <= uVar3) goto code_?;
+      if (*ppRVar5 == (Renderer *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
-                (*ppRVar4,value,(MethodInfo *)0x0);
-      ppRVar4 = ppRVar4 + 1;
+                (*ppRVar5,value,(MethodInfo *)0x0);
+      ppRVar5 = ppRVar5 + 1;
     }
     (this->fields)._visible = value;
   }

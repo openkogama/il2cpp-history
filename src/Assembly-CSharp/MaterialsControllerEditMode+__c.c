@@ -20,10 +20,9 @@ void Assembly-CSharp.dll::MaterialsControllerEditMode+<>c::
       do {
         if (pIVar1->interfaceOffsets[uVar2].interfaceType ==
             (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IShortcutKeyUnRegister) {
-          pIVar1 = x->klass;
           iVar4 = pIVar1->interfaceOffsets[uVar2].offset;
-          (*(code *)(&pIVar1->vtable)[iVar4].UnRegisterShortcutKey.method)
-                    (x,0x16,0,(&pIVar1[1]._0.image)[iVar4 * 2]);
+          (*(code *)(&x->klass->vtable)[iVar4].UnRegisterShortcutKey.method)
+                    (x,0x16,0,(&x->klass[1]._0.image)[iVar4 * 2]);
           return;
         }
         uVar2 = uVar2 + 1;
@@ -62,10 +61,9 @@ void Assembly-CSharp.dll::MaterialsControllerEditMode+<>c::
       do {
         if (pIVar1->interfaceOffsets[uVar2].interfaceType ==
             (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IUIStack) {
-          pIVar1 = handler->klass;
           iVar4 = pIVar1->interfaceOffsets[uVar2].offset;
-          (*(code *)(&(pIVar1->vtable).PopGroups)[iVar4].method)
-                    (handler,0x12,(&(pIVar1->vtable).PopToGroup)[iVar4].methodPtr);
+          (*(code *)(&(handler->klass->vtable).PopGroups)[iVar4].method)
+                    (handler,0x12,(&(handler->klass->vtable).PopToGroup)[iVar4].methodPtr);
           return;
         }
         uVar2 = uVar2 + 1;

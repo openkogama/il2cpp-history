@@ -13,15 +13,16 @@ void Assembly-CSharp.dll::SettingsInputField::SettingsInputField_Initialize
                    );
     cRam_? = '\x01';
   }
-  (this->fields).key = key;
-  func_?(&(this->fields).key,key);
-  pIVar1 = (this->fields).inputField;
-  if (pIVar1 != (InputField *)0x0) {
+  ppSVar1 = &(this->fields).key;
+  *ppSVar1 = key;
+  func_?(ppSVar1,key);
+  pIVar2 = (this->fields).inputField;
+  if (pIVar2 != (InputField *)0x0) {
     UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_set_text
-              (pIVar1,value,(MethodInfo *)0x0);
-    pIVar1 = (this->fields).inputField;
-    if (pIVar1 != (InputField *)0x0) {
-      this_00 = (UnityEvent_1_UnityEngine_Vector2_ *)(pIVar1->fields).m_OnValueChanged;
+              (pIVar2,value,(MethodInfo *)0x0);
+    pIVar2 = (this->fields).inputField;
+    if (pIVar2 != (InputField *)0x0) {
+      this_00 = (UnityEvent_1_UnityEngine_Vector2_ *)(pIVar2->fields).m_OnValueChanged;
       this_01 = (UnityAction_1_System_Object_ *)
                 func_?(TypeInfo__UnityEngine__Events__UnityAction<System::String>);
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
@@ -39,8 +40,8 @@ void Assembly-CSharp.dll::SettingsInputField::SettingsInputField_Initialize
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -63,7 +64,7 @@ void Assembly-CSharp.dll::SettingsInputField::SettingsInputField_Reset
                       UnityEngine__UI__InputField_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::InputField>__
                      );
   (this->fields).inputField = pIVar1;
-  func_?(&(this->fields).inputField,pIVar1);
+  func_?();
   return;
 }
 

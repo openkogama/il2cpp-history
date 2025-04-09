@@ -113,36 +113,34 @@ void Assembly-CSharp.dll::PlayerElement::PlayerElement_Initialize
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if (((pMVar1 != (MVNetworkGame *)0x0) && (player != (MVPlayer *)0x0)) &&
      (pFVar2 = (pMVar1->fields)._Friends_k__BackingField, pFVar2 != (FriendList *)0x0)) {
-    pFVar3 = FriendList::FriendList_GetFriendByProfileID
-                       (pFVar2,(player->fields)._ProfileID_k__BackingField,(MethodInfo *)0x0);
+    value = FriendList::FriendList_GetFriendByProfileID
+                      (pFVar2,(player->fields)._ProfileID_k__BackingField,(MethodInfo *)0x0);
     this_00 = (this->fields).underline;
     if ((this_00 != (Image *)0x0) &&
-       (pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                            ((Component *)this_00,(MethodInfo *)0x0), pGVar4 != (GameObject *)0x0))
-    {
+       (pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)this_00,(MethodInfo *)0x0), pGVar3 != (GameObject *)0x0)) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar4,0,(MethodInfo *)0x0);
-      pBVar5 = (this->fields).dotsImage;
-      if ((pBVar5 != (Button *)0x0) &&
-         (pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                              ((Component *)pBVar5,(MethodInfo *)0x0), pGVar4 != (GameObject *)0x0)
-         ) {
-        value = (Object *)&UNK_?;
+                (pGVar3,0,(MethodInfo *)0x0);
+      pBVar4 = (this->fields).dotsImage;
+      if ((pBVar4 != (Button *)0x0) &&
+         (pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                             ((Component *)pBVar4,(MethodInfo *)0x0), pGVar3 != (GameObject *)0x0))
+      {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar4,1,(MethodInfo *)0x0);
-        pBVar5 = (this->fields).incomingFriendRequestRedDot;
-        if ((pBVar5 != (Button *)0x0) &&
-           (pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                ((Component *)pBVar5,(MethodInfo *)0x0),
-           pGVar4 != (GameObject *)0x0)) {
+                  (pGVar3,1,(MethodInfo *)0x0);
+        pBVar4 = (this->fields).incomingFriendRequestRedDot;
+        if ((pBVar4 != (Button *)0x0) &&
+           (pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                               ((Component *)pBVar4,(MethodInfo *)0x0), pGVar3 != (GameObject *)0x0)
+           ) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar4,0,(MethodInfo *)0x0);
-          if (pFVar3 == (Friend *)0x0) {
-            isFriend = false;
+                    (pGVar3,0,(MethodInfo *)0x0);
+          if (value == (Friend *)0x0) {
+            uVar5 = 0;
           }
           else {
-            isFriend = (pFVar3->fields).status == 2;
-            if (value[2].klass == (Object__Class *)0x1) {
+            uVar5 = (uint)((value->fields).status == 2);
+            if ((value->fields).status == 1) {
               pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
               if (((pMVar1 == (MVNetworkGame *)0x0) ||
                   (pFVar2 = (pMVar1->fields)._Friends_k__BackingField, pFVar2 == (FriendList *)0x0))
@@ -151,44 +149,47 @@ void Assembly-CSharp.dll::PlayerElement::PlayerElement_Initialize
               goto code_?;
               bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System
                       ::Object]::Dictionary_2_System_UInt32_System_Object__ContainsValue
-                                (this_01,value,
+                                (this_01,(Object *)value,
                                  MethodInfo__System__Collections__Generic__Dictionary<int,_Friend>__ContainsValue_Friend_
                                 );
-              pBVar5 = (this->fields).dotsImage;
-              if ((pBVar5 == (Button *)0x0) ||
-                 (pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                            Component_get_gameObject((Component *)pBVar5,(MethodInfo *)0x0),
-                 pGVar7 == (GameObject *)0x0)) goto code_?;
+              pBVar4 = (this->fields).dotsImage;
+              if ((pBVar4 == (Button *)0x0) ||
+                 (bVar7 = bVar6,
+                 pGVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                           Component_get_gameObject((Component *)pBVar4,(MethodInfo *)0x0),
+                 pGVar8 == (GameObject *)0x0)) goto code_?;
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                        (pGVar7,bVar6,(MethodInfo *)0x0);
-              pBVar5 = (this->fields).incomingFriendRequestRedDot;
-              if ((pBVar5 == (Button *)0x0) ||
-                 (pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                            Component_get_gameObject((Component *)pBVar5,(MethodInfo *)0x0),
-                 pGVar7 == (GameObject *)0x0)) goto code_?;
+                        (pGVar8,bVar7,(MethodInfo *)0x0);
+              pBVar4 = (this->fields).incomingFriendRequestRedDot;
+              if ((pBVar4 == (Button *)0x0) ||
+                 (pGVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                            Component_get_gameObject((Component *)pBVar4,(MethodInfo *)0x0),
+                 pGVar8 == (GameObject *)0x0)) goto code_?;
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                        (pGVar7,bVar6 ^ 1,(MethodInfo *)0x0);
+                        (pGVar8,bVar6 == 0,(MethodInfo *)0x0);
             }
           }
           pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
           if (pMVar1 != (MVNetworkGame *)0x0) {
-            pMVar8 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
-            if ((MVLocalPlayer *)player == pMVar8) {
-              iVar9 = 0;
-              pLVar10 = (this->fields).backgrounds;
-              while (pLVar10 != (List_1_UnityEngine_UI_Image_ *)0x0) {
-                if ((pLVar10->fields)._size <= iVar9) {
+            pMVar9 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
+            bVar6 = (bool)uVar5;
+            if ((MVLocalPlayer *)player == pMVar9) {
+              iVar10 = 0;
+              this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                        (this->fields).backgrounds;
+              while (this_02 !=
+                     (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+                bVar6 = (bool)uVar5;
+                if ((this_02->fields)._size <= iVar10) {
                   player = (MVPlayer *)&UNK_?;
                   goto code_?;
                 }
-                this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                          (this->fields).backgrounds;
                 if (this_02 ==
                     (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) break;
                 RVar11 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                          RegularExpressions::RegexCharClass+SingleRange]::
                          List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                   (this_02,iVar9,
+                                   (this_02,iVar10,
                                     MethodInfo__System__Collections__Generic__List<UnityEngine::UI::Image>__get_Item_int_
                                    );
                 if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
@@ -199,27 +200,28 @@ void Assembly-CSharp.dll::PlayerElement::PlayerElement_Initialize
                            (MethodInfo *)0x0);
                 if (RVar11 == (RegexCharClass_SingleRange)0x0) break;
                 (**(code **)(*(int *)RVar11 + 0x178))();
-                iVar9 = iVar9 + 1;
-                pLVar10 = (this->fields).backgrounds;
+                iVar10 = iVar10 + 1;
+                this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                          (this->fields).backgrounds;
               }
             }
             else {
 code_?:
               this_03 = (((MVLocalPlayer *)player)->fields)._._SubscriptionRules_k__BackingField;
               if (this_03 != (SubscriptionRulesWrapper *)0x0) {
-                bVar6 = MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrapper::
+                bVar7 = MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrapper::
                         SubscriptionRulesWrapper_HasBenefit
                                   (this_03,SubscriptionBenefit__Enum_XPBoost,(MethodInfo *)0x0);
-                if (bVar6 == 0) {
-                  pGVar7 = (this->fields).memberUI;
-                  if (pGVar7 == (GameObject *)0x0) goto code_?;
+                if (bVar7 == 0) {
+                  pGVar8 = (this->fields).memberUI;
+                  if (pGVar8 == (GameObject *)0x0) goto code_?;
                   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                            (pGVar7,0,(MethodInfo *)0x0);
+                            (pGVar8,0,(MethodInfo *)0x0);
                 }
                 else {
-                  PlayerElement_ActivateSubscriberUI(this,isFriend,(MethodInfo *)0x0);
+                  PlayerElement_ActivateSubscriberUI(this,bVar6,(MethodInfo *)0x0);
                 }
-                if (isFriend != 0) {
+                if (bVar6 != 0) {
                   pTVar12 = (this->fields).playerName;
                   if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
                     func_?();
@@ -238,59 +240,58 @@ code_?:
                   if (pTVar12 != (Text *)0x0) {
                     (*(code *)(pTVar12->klass->vtable).set_text.method)();
                     pTVar12 = (this->fields).score;
-                    typeToDisplay._0_1_ = SUB41(pGVar4,0);
+                    typeToDisplay._0_1_ = SUB41(pGVar3,0);
                     if ((undefined1)typeToDisplay == GameStatCounterType__Enum_None) {
                       if ((pTVar12 == (Text *)0x0) ||
-                         (pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                                    Component_get_gameObject((Component *)pTVar12,(MethodInfo *)0x0),
-                         pGVar4 == (GameObject *)0x0)) goto code_?;
+                         (pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                   Component_get_gameObject((Component *)pTVar12,(MethodInfo *)0x0),
+                         pGVar3 == (GameObject *)0x0)) goto code_?;
                       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                                (pGVar4,0,(MethodInfo *)0x0);
+                                (pGVar3,0,(MethodInfo *)0x0);
                     }
                     else {
                       if ((pTVar12 == (Text *)0x0) ||
-                         (pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                         (pGVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                                     Component_get_gameObject((Component *)pTVar12,(MethodInfo *)0x0),
-                         pGVar7 == (GameObject *)0x0)) goto code_?;
+                         pGVar8 == (GameObject *)0x0)) goto code_?;
                       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                                (pGVar7,1,(MethodInfo *)0x0);
+                                (pGVar8,1,(MethodInfo *)0x0);
                       pTVar12 = (this->fields).score;
                       WinningConditionControl::WinningConditionControl_MakeIntoScoreText
-                                (0,(GameStatCounterType__Enum)pGVar4,(MethodInfo *)0x0);
+                                (0,(GameStatCounterType__Enum)pGVar3,(MethodInfo *)0x0);
                       if (pTVar12 == (Text *)0x0) goto code_?;
                       (*(code *)(pTVar12->klass->vtable).set_text.method)();
                     }
-                    iVar9 = (((MVLocalPlayer *)player)->fields)._._ProfileID_k__BackingField;
-                    (this->fields).profileId = iVar9;
-                    if (iVar9 != 0) {
+                    iVar10 = (((MVLocalPlayer *)player)->fields)._._ProfileID_k__BackingField;
+                    (this->fields).profileId = iVar10;
+                    if (iVar10 != 0) {
                       pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game
                                          ((MethodInfo *)0x0);
                       if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
-                      pMVar8 = MVNetworkGame::MVNetworkGame_get_LocalPlayer
+                      pMVar9 = MVNetworkGame::MVNetworkGame_get_LocalPlayer
                                           (pMVar1,(MethodInfo *)0x0);
-                      if ((MVLocalPlayer *)player != pMVar8) {
+                      if ((MVLocalPlayer *)player != pMVar9) {
                         return;
                       }
                     }
-                    pBVar5 = (this->fields).playerNameAndScoreButton;
-                    if (pBVar5 != (Button *)0x0) {
+                    pBVar4 = (this->fields).playerNameAndScoreButton;
+                    if (pBVar4 != (Button *)0x0) {
                       UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_set_interactable
-                                ((Selectable *)pBVar5,0,(MethodInfo *)0x0);
-                      pBVar5 = (this->fields).dotsImage;
-                      if ((pBVar5 != (Button *)0x0) &&
-                         (pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                                    Component_get_gameObject((Component *)pBVar5,(MethodInfo *)0x0),
-                         pGVar4 != (GameObject *)0x0)) {
+                                ((Selectable *)pBVar4,0,(MethodInfo *)0x0);
+                      pBVar4 = (this->fields).dotsImage;
+                      if ((pBVar4 != (Button *)0x0) &&
+                         (pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                   Component_get_gameObject((Component *)pBVar4,(MethodInfo *)0x0),
+                         pGVar3 != (GameObject *)0x0)) {
                         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                                  (pGVar4,0,(MethodInfo *)0x0);
-                        pBVar5 = (this->fields).incomingFriendRequestRedDot;
-                        if ((pBVar5 != (Button *)0x0) &&
-                           (pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                                      Component_get_gameObject
-                                                ((Component *)pBVar5,(MethodInfo *)0x0),
-                           pGVar4 != (GameObject *)0x0)) {
+                                  (pGVar3,0,(MethodInfo *)0x0);
+                        pBVar4 = (this->fields).incomingFriendRequestRedDot;
+                        if ((pBVar4 != (Button *)0x0) &&
+                           (pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                     Component_get_gameObject((Component *)pBVar4,(MethodInfo *)0x0)
+                           , pGVar3 != (GameObject *)0x0)) {
                           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                                    (pGVar4,0,(MethodInfo *)0x0);
+                                    (pGVar3,0,(MethodInfo *)0x0);
                           return;
                         }
                       }
@@ -350,11 +351,12 @@ void Assembly-CSharp.dll::PlayerElement::PlayerElement_OnPlayerClicked
                       PlayerSocialPopup_MethodInfo__UnityEngine__Object__Instantiate<PlayerSocialPopup>_PlayerSocialPopup_
                      );
   if (value != (Object *)0x0) {
-    value[1].klass = pOVar1;
-    func_?(value + 1,pOVar1);
-    if (value[1].klass != (Object__Class *)0x0) {
+    pOVar2 = value + 1;
+    pOVar2->klass = pOVar1;
+    func_?(pOVar2,pOVar1);
+    if (pOVar2->klass != (Object__Class *)0x0) {
       PlayerSocialPopup::PlayerSocialPopup_Initialize
-                ((PlayerSocialPopup *)value[1].klass,(this->fields).profileId,
+                ((PlayerSocialPopup *)pOVar2->klass,(this->fields).profileId,
                  (this->fields).realPlayerName,(this->fields).subscriber,(MethodInfo *)0x0);
       root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
@@ -380,8 +382,8 @@ void Assembly-CSharp.dll::PlayerElement::PlayerElement_OnPlayerClicked
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

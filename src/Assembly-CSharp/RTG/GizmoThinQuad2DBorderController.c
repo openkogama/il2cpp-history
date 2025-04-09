@@ -8,13 +8,13 @@ void Assembly-CSharp.dll::RTG::GizmoThinQuad2DBorderController::
 {
   pGVar1 = (this->fields)._._data;
   if (pGVar1 != (GizmoQuad2DBorderControllerData *)0x0) {
-    this_00 = (pGVar1->fields).PlaneSlider;
-    this_01 = (pGVar1->fields).BorderQuad;
-    if (this_00 != (GizmoPlaneSlider2D *)0x0) {
-      pGVar2 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_get_Settings(this_00,(MethodInfo *)0x0);
-      if ((pGVar2 != (GizmoPlaneSlider2DSettings *)0x0) && (this_01 != (QuadShape2D *)0x0)) {
+    this_00 = (pGVar1->fields).BorderQuad;
+    this_01 = (pGVar1->fields).PlaneSlider;
+    if (this_01 != (GizmoPlaneSlider2D *)0x0) {
+      pGVar2 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_get_Settings(this_01,(MethodInfo *)0x0);
+      if ((pGVar2 != (GizmoPlaneSlider2DSettings *)0x0) && (this_00 != (QuadShape2D *)0x0)) {
         QuadShape2D::QuadShape2D_set_WireEps
-                  (this_01,(pGVar2->fields)._borderLineHoverEps,(MethodInfo *)0x0);
+                  (this_00,(pGVar2->fields)._borderLineHoverEps,(MethodInfo *)0x0);
         return;
       }
     }
@@ -58,17 +58,19 @@ void Assembly-CSharp.dll::RTG::GizmoThinQuad2DBorderController::
 
 {
   pGVar1 = (this->fields)._._data;
-  if ((pGVar1 != (GizmoQuad2DBorderControllerData *)0x0) &&
-     (pQVar2 = (pGVar1->fields).TargetQuad, pQVar2 != (QuadShape2D *)0x0)) {
-    this_00 = (pGVar1->fields).BorderQuad;
-    fVar3 = (pQVar2->fields)._center.y;
-    if (this_00 != (QuadShape2D *)0x0) {
-      (this_00->fields)._center.x = (pQVar2->fields)._center.x;
-      (this_00->fields)._center.y = fVar3;
-      QuadShape2D::QuadShape2D_set_RotationDegrees
-                (this_00,(pQVar2->fields)._rotationDegrees,(MethodInfo *)0x0);
-      QuadShape2D::QuadShape2D_set_Size(this_00,(pQVar2->fields)._size,(MethodInfo *)0x0);
-      return;
+  if (pGVar1 != (GizmoQuad2DBorderControllerData *)0x0) {
+    pQVar2 = (pGVar1->fields).TargetQuad;
+    if (pQVar2 != (QuadShape2D *)0x0) {
+      this_00 = (pGVar1->fields).BorderQuad;
+      fVar3 = (pQVar2->fields)._center.y;
+      if (this_00 != (QuadShape2D *)0x0) {
+        (this_00->fields)._center.x = (pQVar2->fields)._center.x;
+        (this_00->fields)._center.y = fVar3;
+        QuadShape2D::QuadShape2D_set_RotationDegrees
+                  (this_00,(pQVar2->fields)._rotationDegrees,(MethodInfo *)0x0);
+        QuadShape2D::QuadShape2D_set_Size(this_00,(pQVar2->fields)._size,(MethodInfo *)0x0);
+        return;
+      }
     }
   }
   func_?();

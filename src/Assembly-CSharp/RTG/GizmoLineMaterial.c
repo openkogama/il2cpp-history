@@ -210,13 +210,14 @@ Assembly-CSharp.dll::RTG::GizmoLineMaterial::GizmoLineMaterial_get_Material
     func_?(&TypeInfo__RTG__Singleton<RTG::MaterialPool>);
     cRam_? = '\x01';
   }
-  pMVar1 = (this->fields)._material;
+  pGVar1 = &this->fields;
+  pMVar2 = pGVar1->_material;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)pMVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)pMVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar3 != 0) {
     if ((TypeInfo__RTG__Singleton<RTG::MaterialPool>->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__RTG__Singleton<RTG::MaterialPool>);
     }
@@ -225,14 +226,14 @@ Assembly-CSharp.dll::RTG::GizmoLineMaterial::GizmoLineMaterial_get_Material
                         (MethodInfo__RTG__Singleton<RTG::MaterialPool>__get_Get__);
     if (this_00 == (MaterialPool *)0x0) {
       func_?();
-      pcVar3 = (code *)swi(3);
-      pMVar1 = (Material *)(*pcVar3)();
-      return pMVar1;
+      pcVar4 = (code *)swi(3);
+      pMVar2 = (Material *)(*pcVar4)();
+      return pMVar2;
     }
-    pMVar1 = MaterialPool::MaterialPool_get_SimpleColor(this_00,(MethodInfo *)0x0);
-    (this->fields)._material = pMVar1;
-    func_?(&this->fields);
+    pMVar2 = MaterialPool::MaterialPool_get_SimpleColor(this_00,(MethodInfo *)0x0);
+    pGVar1->_material = pMVar2;
+    func_?(pGVar1);
   }
-  return (this->fields)._material;
+  return pGVar1->_material;
 }
 

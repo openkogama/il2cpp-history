@@ -73,8 +73,8 @@ code_?:
   }
   pGVar5 = pGVar2->vector[axisIndex];
   if (axisCap != (GizmoCap3D *)0x0) {
-    (axisCap->fields)._sharedLookAndFeel = pGVar5;
     ppGStack_3 = &(axisCap->fields)._sharedLookAndFeel;
+    *ppGStack_3 = pGVar5;
     pGStack_1 = pGVar5;
     func_?();
     return;
@@ -514,7 +514,6 @@ void Assembly-CSharp.dll::RTG::SceneGizmoLookAndFeel::SceneGizmoLookAndFeel__cto
                (SceneGizmoLookAndFeel *this,MethodInfo *method)
 
 {
-  this_00 = this;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__RTG__GizmoCap3DLookAndFeel);
     func_?(&TypeInfo__RTG__GizmoCap3DLookAndFeel);
@@ -522,149 +521,150 @@ void Assembly-CSharp.dll::RTG::SceneGizmoLookAndFeel::SceneGizmoLookAndFeel__cto
   }
   pGVar1 = (GizmoCap3DLookAndFeel *)func_?(TypeInfo__RTG__GizmoCap3DLookAndFeel);
   GizmoCap3DLookAndFeel::GizmoCap3DLookAndFeel__ctor(pGVar1,(MethodInfo *)0x0);
-  (this->fields)._midCapLookAndFeel = pGVar1;
-  func_?(&(this->fields)._midCapLookAndFeel,pGVar1);
-  pGVar2 = (GizmoCap3DLookAndFeel__Array *)func_?(TypeInfo__RTG__GizmoCap3DLookAndFeel,6);
-  (this->fields)._axesCapsLookAndFeel = pGVar2;
-  func_?(&(this->fields)._axesCapsLookAndFeel,pGVar2);
+  ppGVar2 = &(this->fields)._midCapLookAndFeel;
+  *ppGVar2 = pGVar1;
+  func_?(ppGVar2,pGVar1);
+  pGVar3 = (GizmoCap3DLookAndFeel__Array *)func_?(TypeInfo__RTG__GizmoCap3DLookAndFeel,6);
+  ppGVar4 = &(this->fields)._axesCapsLookAndFeel;
+  *ppGVar4 = pGVar3;
+  func_?(ppGVar4,pGVar3);
   (this->fields)._screenCorner = 1;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Vector2);
     cRam_? = '\x01';
   }
-  fVar3 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
+  fVar5 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
   (this->fields)._screenOffset.x = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).x;
-  fVar4 = _UNK_?;
-  fVar5 = _UNK_?;
   fVar6 = _UNK_?;
   fVar7 = _UNK_?;
-  (this->fields)._screenOffset.y = fVar3;
+  fVar8 = _UNK_?;
+  fVar9 = _UNK_?;
+  (this->fields)._screenOffset.y = fVar5;
   (this->fields)._screenSize = 90.0;
-  (this->fields)._axesLabelTint.r = fVar7;
-  (this->fields)._axesLabelTint.g = fVar6;
-  (this->fields)._axesLabelTint.b = fVar5;
-  (this->fields)._axesLabelTint.a = fVar4;
+  (this->fields)._axesLabelTint.r = fVar9;
+  (this->fields)._axesLabelTint.g = fVar8;
+  (this->fields)._axesLabelTint.b = fVar7;
+  (this->fields)._axesLabelTint.a = fVar6;
   color.g = _UNK_?;
   color.r = _UNK_?;
   color.b = _UNK_?;
   color.a = _UNK_?;
-  pCVar8 = ColorEx::ColorEx_KeepAllButAlpha((Color *)&stack0xffffffec,color,0.7,(MethodInfo *)0x0);
-  fVar3 = pCVar8->r;
-  fVar7 = pCVar8->g;
-  fVar6 = pCVar8->b;
-  fVar5 = pCVar8->a;
+  pCVar10 = ColorEx::ColorEx_KeepAllButAlpha((Color *)&stack0xffffffe8,color,0.7,(MethodInfo *)0x0);
+  fVar5 = pCVar10->r;
+  fVar9 = pCVar10->g;
+  fVar8 = pCVar10->b;
+  fVar7 = pCVar10->a;
   (this->fields)._isCamPrjSwitchLabelVisible = 1;
-  (this->fields)._camPrjSwitchLabelTint.r = fVar3;
-  (this->fields)._camPrjSwitchLabelTint.g = fVar7;
-  (this->fields)._camPrjSwitchLabelTint.b = fVar6;
-  (this->fields)._camPrjSwitchLabelTint.a = fVar5;
+  (this->fields)._camPrjSwitchLabelTint.r = fVar5;
+  (this->fields)._camPrjSwitchLabelTint.g = fVar9;
+  (this->fields)._camPrjSwitchLabelTint.b = fVar8;
+  (this->fields)._camPrjSwitchLabelTint.a = fVar7;
   Settings::Settings__ctor((Settings *)this,(MethodInfo *)0x0);
-  puVar9 = (undefined1 *)0x0;
-  pGVar2 = (this->fields)._axesCapsLookAndFeel;
-  while (pGVar2 != (GizmoCap3DLookAndFeel__Array *)0x0) {
-    if ((int)pGVar2->max_length <= (int)puVar9) {
-      pCVar8 = RTSystemValues::RTSystemValues_get_CenterAxisColor
-                         ((Color *)&stack0xffffffec,(MethodInfo *)0x0);
-      pGVar1 = (this_00->fields)._midCapLookAndFeel;
-      fVar3 = pCVar8->g;
-      fVar7 = pCVar8->b;
-      fVar6 = pCVar8->a;
+  uVar11 = 0;
+  pGVar3 = *ppGVar4;
+  while (pGVar3 != (GizmoCap3DLookAndFeel__Array *)0x0) {
+    if ((int)pGVar3->max_length <= (int)uVar11) {
+      pGVar1 = *ppGVar2;
+      pCVar10 = RTSystemValues::RTSystemValues_get_CenterAxisColor
+                         ((Color *)&stack0xffffffe8,(MethodInfo *)0x0);
+      fVar5 = pCVar10->g;
+      fVar9 = pCVar10->b;
+      fVar8 = pCVar10->a;
       if (pGVar1 != (GizmoCap3DLookAndFeel *)0x0) {
-        (pGVar1->fields)._color.r = pCVar8->r;
-        (pGVar1->fields)._color.g = fVar3;
-        (pGVar1->fields)._color.b = fVar7;
-        (pGVar1->fields)._color.a = fVar6;
-        pGVar1 = (this_00->fields)._midCapLookAndFeel;
-        if (pGVar1 != (GizmoCap3DLookAndFeel *)0x0) {
-          (pGVar1->fields)._capType = 2;
-          pCVar8 = RTSystemValues::RTSystemValues_get_XAxisColor
-                             ((Color *)&stack0xffffffec,(MethodInfo *)0x0);
-          pGVar2 = (this_00->fields)._axesCapsLookAndFeel;
-          if (pGVar2 != (GizmoCap3DLookAndFeel__Array *)0x0) {
-            if (pGVar2->max_length == 0) goto code_?;
-            pGVar1 = pGVar2->vector[0];
-            fVar3 = pCVar8->g;
-            fVar7 = pCVar8->b;
-            fVar6 = pCVar8->a;
+        (pGVar1->fields)._color.r = pCVar10->r;
+        (pGVar1->fields)._color.g = fVar5;
+        (pGVar1->fields)._color.b = fVar9;
+        (pGVar1->fields)._color.a = fVar8;
+        if (*ppGVar2 != (GizmoCap3DLookAndFeel *)0x0) {
+          ((*ppGVar2)->fields)._capType = 2;
+          pCVar10 = RTSystemValues::RTSystemValues_get_XAxisColor
+                             ((Color *)&stack0xffffffe8,(MethodInfo *)0x0);
+          pGVar3 = *ppGVar4;
+          if (pGVar3 != (GizmoCap3DLookAndFeel__Array *)0x0) {
+            if (pGVar3->max_length == 0) goto code_?;
+            pGVar1 = pGVar3->vector[0];
+            fVar5 = pCVar10->g;
+            fVar9 = pCVar10->b;
+            fVar8 = pCVar10->a;
             if (pGVar1 != (GizmoCap3DLookAndFeel *)0x0) {
-              (pGVar1->fields)._color.r = pCVar8->r;
-              (pGVar1->fields)._color.g = fVar3;
-              (pGVar1->fields)._color.b = fVar7;
-              (pGVar1->fields)._color.a = fVar6;
-              pCVar8 = RTSystemValues::RTSystemValues_get_YAxisColor
-                                 ((Color *)&stack0xffffffec,(MethodInfo *)0x0);
-              pGVar2 = (this_00->fields)._axesCapsLookAndFeel;
-              if (pGVar2 != (GizmoCap3DLookAndFeel__Array *)0x0) {
-                if (pGVar2->max_length < 2) goto code_?;
-                pGVar1 = pGVar2->vector[1];
-                fVar3 = pCVar8->g;
-                fVar7 = pCVar8->b;
-                fVar6 = pCVar8->a;
+              (pGVar1->fields)._color.r = pCVar10->r;
+              (pGVar1->fields)._color.g = fVar5;
+              (pGVar1->fields)._color.b = fVar9;
+              (pGVar1->fields)._color.a = fVar8;
+              pCVar10 = RTSystemValues::RTSystemValues_get_YAxisColor
+                                 ((Color *)&stack0xffffffe8,(MethodInfo *)0x0);
+              pGVar3 = *ppGVar4;
+              if (pGVar3 != (GizmoCap3DLookAndFeel__Array *)0x0) {
+                if (pGVar3->max_length < 2) goto code_?;
+                pGVar1 = pGVar3->vector[1];
+                fVar5 = pCVar10->g;
+                fVar9 = pCVar10->b;
+                fVar8 = pCVar10->a;
                 if (pGVar1 != (GizmoCap3DLookAndFeel *)0x0) {
-                  (pGVar1->fields)._color.r = pCVar8->r;
-                  (pGVar1->fields)._color.g = fVar3;
-                  (pGVar1->fields)._color.b = fVar7;
-                  (pGVar1->fields)._color.a = fVar6;
-                  pCVar8 = RTSystemValues::RTSystemValues_get_ZAxisColor
-                                     ((Color *)&stack0xffffffec,(MethodInfo *)0x0);
-                  pGVar2 = (this_00->fields)._axesCapsLookAndFeel;
-                  if (pGVar2 != (GizmoCap3DLookAndFeel__Array *)0x0) {
-                    if (pGVar2->max_length < 3) goto code_?;
-                    pGVar1 = pGVar2->vector[2];
-                    fVar3 = pCVar8->g;
-                    fVar7 = pCVar8->b;
-                    fVar6 = pCVar8->a;
+                  (pGVar1->fields)._color.r = pCVar10->r;
+                  (pGVar1->fields)._color.g = fVar5;
+                  (pGVar1->fields)._color.b = fVar9;
+                  (pGVar1->fields)._color.a = fVar8;
+                  pCVar10 = RTSystemValues::RTSystemValues_get_ZAxisColor
+                                     ((Color *)&stack0xffffffe8,(MethodInfo *)0x0);
+                  pGVar3 = *ppGVar4;
+                  if (pGVar3 != (GizmoCap3DLookAndFeel__Array *)0x0) {
+                    if (pGVar3->max_length < 3) goto code_?;
+                    pGVar1 = pGVar3->vector[2];
+                    fVar5 = pCVar10->g;
+                    fVar9 = pCVar10->b;
+                    fVar8 = pCVar10->a;
                     if (pGVar1 != (GizmoCap3DLookAndFeel *)0x0) {
-                      (pGVar1->fields)._color.r = pCVar8->r;
-                      (pGVar1->fields)._color.g = fVar3;
-                      (pGVar1->fields)._color.b = fVar7;
-                      (pGVar1->fields)._color.a = fVar6;
-                      pCVar8 = RTSystemValues::RTSystemValues_get_CenterAxisColor
-                                         ((Color *)&stack0xffffffec,(MethodInfo *)0x0);
-                      pGVar2 = (this_00->fields)._axesCapsLookAndFeel;
-                      if (pGVar2 != (GizmoCap3DLookAndFeel__Array *)0x0) {
-                        if (pGVar2->max_length < 4) goto code_?;
-                        pGVar1 = pGVar2->vector[3];
-                        fVar3 = pCVar8->g;
-                        fVar7 = pCVar8->b;
-                        fVar6 = pCVar8->a;
+                      (pGVar1->fields)._color.r = pCVar10->r;
+                      (pGVar1->fields)._color.g = fVar5;
+                      (pGVar1->fields)._color.b = fVar9;
+                      (pGVar1->fields)._color.a = fVar8;
+                      pCVar10 = RTSystemValues::RTSystemValues_get_CenterAxisColor
+                                         ((Color *)&stack0xffffffe8,(MethodInfo *)0x0);
+                      pGVar3 = *ppGVar4;
+                      if (pGVar3 != (GizmoCap3DLookAndFeel__Array *)0x0) {
+                        if (pGVar3->max_length < 4) goto code_?;
+                        pGVar1 = pGVar3->vector[3];
+                        fVar5 = pCVar10->g;
+                        fVar9 = pCVar10->b;
+                        fVar8 = pCVar10->a;
                         if (pGVar1 != (GizmoCap3DLookAndFeel *)0x0) {
-                          (pGVar1->fields)._color.r = pCVar8->r;
-                          (pGVar1->fields)._color.g = fVar3;
-                          (pGVar1->fields)._color.b = fVar7;
-                          (pGVar1->fields)._color.a = fVar6;
-                          pCVar8 = RTSystemValues::RTSystemValues_get_CenterAxisColor
-                                             ((Color *)&stack0xffffffec,(MethodInfo *)0x0);
-                          pGVar2 = (this_00->fields)._axesCapsLookAndFeel;
-                          if (pGVar2 != (GizmoCap3DLookAndFeel__Array *)0x0) {
-                            if (pGVar2->max_length < 5) goto code_?;
-                            pGVar1 = pGVar2->vector[4];
-                            fVar3 = pCVar8->g;
-                            fVar7 = pCVar8->b;
-                            fVar6 = pCVar8->a;
+                          (pGVar1->fields)._color.r = pCVar10->r;
+                          (pGVar1->fields)._color.g = fVar5;
+                          (pGVar1->fields)._color.b = fVar9;
+                          (pGVar1->fields)._color.a = fVar8;
+                          pCVar10 = RTSystemValues::RTSystemValues_get_CenterAxisColor
+                                             ((Color *)&stack0xffffffe8,(MethodInfo *)0x0);
+                          pGVar3 = *ppGVar4;
+                          if (pGVar3 != (GizmoCap3DLookAndFeel__Array *)0x0) {
+                            if (pGVar3->max_length < 5) goto code_?;
+                            pGVar1 = pGVar3->vector[4];
+                            fVar5 = pCVar10->g;
+                            fVar9 = pCVar10->b;
+                            fVar8 = pCVar10->a;
                             if (pGVar1 != (GizmoCap3DLookAndFeel *)0x0) {
-                              (pGVar1->fields)._color.r = pCVar8->r;
-                              (pGVar1->fields)._color.g = fVar3;
-                              (pGVar1->fields)._color.b = fVar7;
-                              (pGVar1->fields)._color.a = fVar6;
-                              pCVar8 = RTSystemValues::RTSystemValues_get_CenterAxisColor
-                                                 ((Color *)&stack0xffffffec,(MethodInfo *)0x0);
-                              pGVar2 = (this_00->fields)._axesCapsLookAndFeel;
-                              if (pGVar2 != (GizmoCap3DLookAndFeel__Array *)0x0) {
-                                if (pGVar2->max_length < 6) goto code_?;
-                                pGVar1 = pGVar2->vector[5];
-                                fVar3 = pCVar8->g;
-                                fVar7 = pCVar8->b;
-                                fVar6 = pCVar8->a;
+                              (pGVar1->fields)._color.r = pCVar10->r;
+                              (pGVar1->fields)._color.g = fVar5;
+                              (pGVar1->fields)._color.b = fVar9;
+                              (pGVar1->fields)._color.a = fVar8;
+                              pCVar10 = RTSystemValues::RTSystemValues_get_CenterAxisColor
+                                                 ((Color *)&stack0xffffffe8,(MethodInfo *)0x0);
+                              pGVar3 = *ppGVar4;
+                              if (pGVar3 != (GizmoCap3DLookAndFeel__Array *)0x0) {
+                                if (pGVar3->max_length < 6) goto code_?;
+                                pGVar1 = pGVar3->vector[5];
+                                fVar5 = pCVar10->g;
+                                fVar9 = pCVar10->b;
+                                fVar8 = pCVar10->a;
                                 if (pGVar1 != (GizmoCap3DLookAndFeel *)0x0) {
-                                  (pGVar1->fields)._color.r = pCVar8->r;
-                                  (pGVar1->fields)._color.g = fVar3;
-                                  (pGVar1->fields)._color.b = fVar7;
-                                  (pGVar1->fields)._color.a = fVar6;
-                                  pGVar2 = (this_00->fields)._axesCapsLookAndFeel;
-                                  uVar10 = 0;
-                                  if (pGVar2 != (GizmoCap3DLookAndFeel__Array *)0x0) {
-                                    ppGVar11 = pGVar2->vector;
+                                  (pGVar1->fields)._color.r = pCVar10->r;
+                                  (pGVar1->fields)._color.g = fVar5;
+                                  (pGVar1->fields)._color.b = fVar9;
+                                  (pGVar1->fields)._color.a = fVar8;
+                                  pGVar3 = *ppGVar4;
+                                  uVar11 = 0;
+                                  if (pGVar3 != (GizmoCap3DLookAndFeel__Array *)0x0) {
+                                    ppGVar2 = pGVar3->vector;
                                     goto code_?;
                                   }
                                 }
@@ -683,19 +683,19 @@ void Assembly-CSharp.dll::RTG::SceneGizmoLookAndFeel::SceneGizmoLookAndFeel__cto
       }
       break;
     }
-    pGVar2 = (this_00->fields)._axesCapsLookAndFeel;
-    this = (SceneGizmoLookAndFeel *)&UNK_?;
+    pGVar3 = *ppGVar4;
     pGVar1 = (GizmoCap3DLookAndFeel *)func_?();
+    ppGVar2 = (GizmoCap3DLookAndFeel **)0x0;
     GizmoCap3DLookAndFeel::GizmoCap3DLookAndFeel__ctor(pGVar1,(MethodInfo *)0x0);
-    if (pGVar2 == (GizmoCap3DLookAndFeel__Array *)0x0) break;
-    if ((pGVar1 != (GizmoCap3DLookAndFeel *)0x0) &&
-       (iVar12 = func_?(), this = (SceneGizmoLookAndFeel *)pGVar1, iVar12 == 0))
+    if (pGVar3 == (GizmoCap3DLookAndFeel__Array *)0x0) break;
+    if ((pGVar1 != (GizmoCap3DLookAndFeel *)0x0) && (iVar12 = func_?(), iVar12 == 0))
     goto code_?;
-    if ((SceneGizmoLookAndFeel *)pGVar2->max_length <= this) goto code_?;
-    pGVar2->vector[(int)this] = pGVar1;
+    if (pGVar3->max_length <= uVar11) goto code_?;
+    pGVar3->vector[uVar11] = pGVar1;
     func_?();
-    puVar9 = (undefined1 *)((int)&this->klass + 1);
-    pGVar2 = (this_00->fields)._axesCapsLookAndFeel;
+    uVar11 = uVar11 + 1;
+    ppGVar4 = (GizmoCap3DLookAndFeel__Array **)&(pGVar1->fields)._useZoomFactor;
+    pGVar3 = *ppGVar4;
   }
 code_?:
   func_?();
@@ -706,15 +706,16 @@ code_?:
   (*pcVar13)();
   return;
 code_?:
-  if ((int)pGVar2->max_length <= (int)uVar10) {
-    SceneGizmoLookAndFeel_OnScreenSizeChanged(this_00,(MethodInfo *)0x0);
+  if ((int)pGVar3->max_length <= (int)uVar11) {
+    SceneGizmoLookAndFeel_OnScreenSizeChanged
+              ((SceneGizmoLookAndFeel *)&UNK_?,(MethodInfo *)0x0);
     return;
   }
-  if (pGVar2->max_length <= uVar10) goto code_?;
-  if (*ppGVar11 == (GizmoCap3DLookAndFeel *)0x0) goto code_?;
-  uVar10 = uVar10 + 1;
-  ((*ppGVar11)->fields)._capType = 0;
-  ppGVar11 = ppGVar11 + 1;
+  if (pGVar3->max_length <= uVar11) goto code_?;
+  if (*ppGVar2 == (GizmoCap3DLookAndFeel *)0x0) goto code_?;
+  uVar11 = uVar11 + 1;
+  ((*ppGVar2)->fields)._capType = 0;
+  ppGVar2 = ppGVar2 + 1;
   goto code_?;
 code_?:
   func_?();

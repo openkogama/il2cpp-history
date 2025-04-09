@@ -40,7 +40,7 @@ void Assembly-CSharp.dll::AwayMonitor::AwayMonitor_CheckAndResolvePendingKick
     if ((pAVar2->fields).state != 2) {
       return;
     }
-    pAVar3 = (TypeInfo__AwayMonitor->static_fields->instance->fields).idleKickTimes;
+    pAVar3 = (pAVar2->fields).idleKickTimes;
     if (pAVar3 != (AwayMonitor_IdleKickTimes *)0x0) {
       iStack_1 = (pAVar3->fields).idleKickTimeMinutes;
       arg0 = (Object *)func_?(TypeInfo__System__Int32,&iStack_1);
@@ -108,13 +108,13 @@ void Assembly-CSharp.dll::AwayMonitor::AwayMonitor_HandleIdle
                  (d1,(DateTime)(this->fields).latestMouseMoveTime._dateData,(MethodInfo *)0x0);
   pAVar1 = (this->fields).idleKickTimes;
   if (pAVar1 != (AwayMonitor_IdleKickTimes *)0x0) {
-    uVar2 = (undefined4)(pAVar1->fields).warningTimeSpan._ticks;
+    iVar2 = (pAVar1->fields).warningTimeSpan._ticks;
     uVar3 = *(undefined4 *)((int)&(pAVar1->fields).warningTimeSpan._ticks + 4);
     if ((TypeInfo__System__TimeSpan->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     t2_00._ticks._4_4_ = uVar3;
-    t2_00._ticks._0_4_ = uVar2;
+    t2_00._ticks._0_4_ = (int)iVar2;
     bVar4 = mscorlib.dll::System::TimeSpan::TimeSpan_op_LessThan(t1,t2_00,(MethodInfo *)0x0);
     if (bVar4 != 0) {
       (this->fields).state = 0;
@@ -122,13 +122,13 @@ void Assembly-CSharp.dll::AwayMonitor::AwayMonitor_HandleIdle
     }
     pAVar1 = (this->fields).idleKickTimes;
     if (pAVar1 != (AwayMonitor_IdleKickTimes *)0x0) {
-      iVar5 = (pAVar1->fields).warningTimeSpan._ticks;
-      uVar2 = *(undefined4 *)((int)&(pAVar1->fields).warningTimeSpan._ticks + 4);
+      iVar2 = (pAVar1->fields).warningTimeSpan._ticks;
+      uVar3 = *(undefined4 *)((int)&(pAVar1->fields).warningTimeSpan._ticks + 4);
       if ((TypeInfo__System__TimeSpan->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      t2._ticks._4_4_ = uVar2;
-      t2._ticks._0_4_ = (int)iVar5;
+      t2._ticks._4_4_ = uVar3;
+      t2._ticks._0_4_ = (int)iVar2;
       bVar4 = mscorlib.dll::System::TimeSpan::TimeSpan_op_GreaterThan(t1,t2,(MethodInfo *)0x0);
       if ((bVar4 != 0) && ((this->fields).state != 1)) {
         if (fromBackgroundUpdate == 0) {
@@ -146,13 +146,13 @@ void Assembly-CSharp.dll::AwayMonitor::AwayMonitor_HandleIdle
       }
       pAVar1 = (this->fields).idleKickTimes;
       if (pAVar1 != (AwayMonitor_IdleKickTimes *)0x0) {
-        iVar5 = (pAVar1->fields).idleKickTimeSpan._ticks;
-        uVar2 = *(undefined4 *)((int)&(pAVar1->fields).idleKickTimeSpan._ticks + 4);
+        iVar2 = (pAVar1->fields).idleKickTimeSpan._ticks;
+        uVar3 = *(undefined4 *)((int)&(pAVar1->fields).idleKickTimeSpan._ticks + 4);
         if ((TypeInfo__System__TimeSpan->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        t2_01._ticks._4_4_ = uVar2;
-        t2_01._ticks._0_4_ = (int)iVar5;
+        t2_01._ticks._4_4_ = uVar3;
+        t2_01._ticks._0_4_ = (int)iVar2;
         bVar4 = mscorlib.dll::System::TimeSpan::TimeSpan_op_GreaterThan(t1,t2_01,(MethodInfo *)0x0);
         if (bVar4 == 0) {
           return;
@@ -167,8 +167,8 @@ void Assembly-CSharp.dll::AwayMonitor::AwayMonitor_HandleIdle
   }
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -244,7 +244,7 @@ code_?:
             (this,warnAfterMinutes,mode,(MethodInfo *)0x0);
   if (pAVar1 != (AwayMonitor *)0x0) {
     ppAStack6 = &(pAVar1->fields).idleKickTimes;
-    (pAVar1->fields).idleKickTimes = this;
+    *ppAStack6 = this;
     pAStack7 = this;
     func_?();
     return;

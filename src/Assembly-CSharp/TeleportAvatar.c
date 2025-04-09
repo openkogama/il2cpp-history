@@ -115,8 +115,8 @@ Assembly-CSharp.dll::TeleportAvatar::TeleportAvatar_Start(TeleportAvatar *this,M
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[2].klass = (Object__Class *)this;
   value[1].klass = (Object__Class *)0x0;
+  value[2].klass = (Object__Class *)this;
   func_?(value + 2,this);
   return (IEnumerator *)value;
 }

@@ -99,28 +99,25 @@ Mesh * Assembly-CSharp.dll::RTG::PrismMesh::PrismMesh_CreateTriangularPrism
     pVVar13 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                        ((VisualTreeAsset_UsingEntry *)&stack0xffffffb4,this_00,
-                         (int32_t)pVVar13->asset,
-                         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                        );
-    pVVar18 = TypeInfo__UnityEngine__Vector3;
+                        ((VisualTreeAsset_UsingEntry *)&stack0xffffffb4,this_00,4,
+                         (MethodInfo *)pVVar13->asset);
     VStack_15.path = pVVar13->alias;
     VStack_15.asset = (VisualTreeAsset *)pVVar13->path;
-    pVVar19 = pVVar13->asset;
+    pVVar18 = pVVar13->asset;
     value_01 = (Vector3__Array *)func_?();
     if (value_01 != (Vector3__Array *)0x0) {
       if (value_01->max_length == 0) goto code_?;
       value_01->vector[0].x = baseCenter.y;
       value_01->vector[0].y = baseCenter.z;
-      value_01->vector[0].z = (float)&stack0xffffffb4;
+      value_01->vector[0].z = (float)&UNK_?;
       if (value_01->max_length < 2) goto code_?;
       value_01->vector[1].x = (float)VStack_15.path;
       value_01->vector[1].y = (float)VStack_15.asset;
-      value_01->vector[1].z = (float)pVVar19;
+      value_01->vector[1].z = (float)pVVar18;
       if (value_01->max_length < 3) goto code_?;
       value_01->vector[2].x = (float)(String *)uVar16;
       value_01->vector[2].y = (float)pVStack_17;
-      value_01->vector[2].z = (float)pVVar18;
+      value_01->vector[2].z = 2.52234e-44;
       if (value_01->max_length < 4) goto code_?;
       value_01->vector[3].x = (float)pMVar12;
       value_01->vector[3].y = (float)uVar6;
@@ -132,7 +129,7 @@ Mesh * Assembly-CSharp.dll::RTG::PrismMesh::PrismMesh_CreateTriangularPrism
       if (value_01->max_length < 6) goto code_?;
       value_01->vector[5].x = (float)uVar9;
       value_01->vector[5].y = (float)uVar10;
-      value_01->vector[5].z = (float)&UNK_?;
+      value_01->vector[5].z = (float)&stack0xffffffb4;
       if (value_01->max_length < 7) goto code_?;
       value_01->vector[6].x = (float)pMVar12;
       value_01->vector[6].y = (float)uVar6;
@@ -140,11 +137,11 @@ Mesh * Assembly-CSharp.dll::RTG::PrismMesh::PrismMesh_CreateTriangularPrism
       if (value_01->max_length < 8) goto code_?;
       value_01->vector[7].x = baseCenter.y;
       value_01->vector[7].y = baseCenter.z;
-      value_01->vector[7].z = (float)&stack0xffffffb4;
+      value_01->vector[7].z = (float)&UNK_?;
       if (value_01->max_length < 9) goto code_?;
       value_01->vector[8].x = (float)(String *)uVar16;
       value_01->vector[8].y = (float)pVStack_17;
-      value_01->vector[8].z = (float)pVVar18;
+      value_01->vector[8].z = 2.52234e-44;
       if (value_01->max_length < 10) goto code_?;
       value_01->vector[9].x = (float)pVVar5;
       value_01->vector[9].y = (float)pLVar11;
@@ -156,15 +153,15 @@ Mesh * Assembly-CSharp.dll::RTG::PrismMesh::PrismMesh_CreateTriangularPrism
       if (value_01->max_length < 0xc) goto code_?;
       value_01->vector[0xb].x = (float)uVar9;
       value_01->vector[0xb].y = (float)uVar10;
-      value_01->vector[0xb].z = (float)&UNK_?;
+      value_01->vector[0xb].z = (float)&stack0xffffffb4;
       if (value_01->max_length < 0xd) goto code_?;
       value_01->vector[0xc].x = (float)VStack_15.path;
       value_01->vector[0xc].y = (float)VStack_15.asset;
-      value_01->vector[0xc].z = (float)pVVar19;
+      value_01->vector[0xc].z = (float)pVVar18;
       if (value_01->max_length < 0xe) goto code_?;
       value_01->vector[0xd].x = baseCenter.y;
       value_01->vector[0xd].y = baseCenter.z;
-      value_01->vector[0xd].z = (float)&stack0xffffffb4;
+      value_01->vector[0xd].z = (float)&UNK_?;
       if (value_01->max_length < 0xf) goto code_?;
       value_01->vector[0xe].x = (float)pVVar5;
       value_01->vector[0xe].y = (float)pLVar11;
@@ -172,15 +169,15 @@ Mesh * Assembly-CSharp.dll::RTG::PrismMesh::PrismMesh_CreateTriangularPrism
       if (value_01->max_length < 0x10) goto code_?;
       value_01->vector[0xf].x = (float)(String *)uVar16;
       value_01->vector[0xf].y = (float)pVStack_17;
-      value_01->vector[0xf].z = (float)pVVar18;
+      value_01->vector[0xf].z = 2.52234e-44;
       if (value_01->max_length < 0x11) goto code_?;
       value_01->vector[0x10].x = (float)VStack_15.path;
       value_01->vector[0x10].y = (float)VStack_15.asset;
-      value_01->vector[0x10].z = (float)pVVar19;
+      value_01->vector[0x10].z = (float)pVVar18;
       if (value_01->max_length < 0x12) goto code_?;
       value_01->vector[0x11].x = (float)uVar9;
       value_01->vector[0x11].y = (float)uVar10;
-      value_01->vector[0x11].z = (float)&UNK_?;
+      value_01->vector[0x11].z = (float)&stack0xffffffb4;
       indices = (Int32__Array *)func_?();
       mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::
       RuntimeHelpers_InitializeArray_1
@@ -188,187 +185,187 @@ Mesh * Assembly-CSharp.dll::RTG::PrismMesh::PrismMesh_CreateTriangularPrism
                  __905D214FE6019886C36969B7BE09762E54A832D5F0E88FB06B774CE42A8DC642_Field,
                  (MethodInfo *)0x0);
       if (value_01->max_length < 0xc) goto code_?;
-      uVar20 = value_01->vector[10].x;
-      uVar21 = value_01->vector[10].y;
-      uVar22 = value_01->vector[0xb].x;
-      uVar23 = value_01->vector[0xb].y;
+      uVar19 = value_01->vector[10].x;
+      uVar20 = value_01->vector[10].y;
+      uVar21 = value_01->vector[0xb].x;
+      uVar22 = value_01->vector[0xb].y;
       baseCenter.z = value_01->vector[0xb].z;
       fVar1 = baseCenter.z - value_01->vector[10].z;
-      baseCenter.x = (float)uVar22;
-      baseCenter.y = (float)uVar23;
+      baseCenter.x = (float)uVar21;
+      baseCenter.y = (float)uVar22;
       if (value_01->max_length < 0xe) goto code_?;
-      uVar24 = value_01->vector[10].x;
-      uVar25 = value_01->vector[10].y;
-      uVar26 = value_01->vector[0xd].x;
-      uVar27 = value_01->vector[0xd].y;
-      baseCenter.z = value_01->vector[0xd].z;
-      fVar2 = baseCenter.z - value_01->vector[10].z;
-      value.y = fVar1 * ((float)uVar26 - (float)uVar24) - ((float)uVar22 - (float)uVar20) * fVar2;
-      value.x = ((float)uVar23 - (float)uVar21) * fVar2 - fVar1 * ((float)uVar27 - (float)uVar25);
-      value.z = ((float)uVar22 - (float)uVar20) * ((float)uVar27 - (float)uVar25) -
-                ((float)uVar23 - (float)uVar21) * ((float)uVar26 - (float)uVar24);
-      baseCenter.x = (float)uVar26;
-      baseCenter.y = (float)uVar27;
-      pVVar28 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+      uVar23 = value_01->vector[10].x;
+      uVar24 = value_01->vector[10].y;
+      uVar25 = value_01->vector[0xd].x;
+      uVar26 = value_01->vector[0xd].y;
+      fVar2 = value_01->vector[0xd].z - value_01->vector[10].z;
+      baseCenter.z = ((float)uVar26 - (float)uVar24) * ((float)uVar21 - (float)uVar19) -
+                     ((float)uVar25 - (float)uVar23) * ((float)uVar22 - (float)uVar20);
+      value.y = ((float)uVar25 - (float)uVar23) * fVar1 - fVar2 * ((float)uVar21 - (float)uVar19);
+      value.x = fVar2 * ((float)uVar22 - (float)uVar20) - ((float)uVar26 - (float)uVar24) * fVar1;
+      value.z = baseCenter.z;
+      baseCenter.x = (float)uVar25;
+      baseCenter.y = (float)uVar26;
+      pVVar27 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
                           ((Vector3 *)&stack0xffffffb4,value,(MethodInfo *)0x0);
-      uVar29 = pVVar28->x;
-      uVar30 = pVVar28->y;
-      fVar1 = pVVar28->z;
-      baseCenter.y = (float)uVar29;
-      baseCenter.z = (float)uVar30;
+      uVar28 = pVVar27->x;
+      uVar29 = pVVar27->y;
+      fVar1 = pVVar27->z;
+      baseCenter.y = (float)uVar28;
+      baseCenter.z = (float)uVar29;
       if (value_01->max_length < 0x10) goto code_?;
-      uVar31 = value_01->vector[0xe].x;
-      uVar32 = value_01->vector[0xe].y;
-      uVar33 = value_01->vector[0xf].x;
-      uVar34 = value_01->vector[0xf].y;
+      uVar30 = value_01->vector[0xe].x;
+      uVar31 = value_01->vector[0xe].y;
+      uVar32 = value_01->vector[0xf].x;
+      uVar33 = value_01->vector[0xf].y;
       fVar2 = value_01->vector[0xf].z - value_01->vector[0xe].z;
       if (value_01->max_length < 0x12) goto code_?;
-      uVar35 = value_01->vector[0xe].x;
-      uVar36 = value_01->vector[0xe].y;
-      uVar37 = value_01->vector[0x11].x;
-      uVar38 = value_01->vector[0x11].y;
+      uVar34 = value_01->vector[0xe].x;
+      uVar35 = value_01->vector[0xe].y;
+      uVar36 = value_01->vector[0x11].x;
+      uVar37 = value_01->vector[0x11].y;
       fVar3 = value_01->vector[0x11].z - value_01->vector[0xe].z;
-      value_00.y = fVar2 * ((float)uVar37 - (float)uVar35) - ((float)uVar33 - (float)uVar31) * fVar3
+      value_00.y = ((float)uVar36 - (float)uVar34) * fVar2 - fVar3 * ((float)uVar32 - (float)uVar30)
       ;
-      value_00.x = ((float)uVar34 - (float)uVar32) * fVar3 -
-                   fVar2 * ((float)uVar38 - (float)uVar36);
-      value_00.z = ((float)uVar33 - (float)uVar31) * ((float)uVar38 - (float)uVar36) -
-                   ((float)uVar34 - (float)uVar32) * ((float)uVar37 - (float)uVar35);
-      pVVar28 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+      value_00.x = fVar3 * ((float)uVar33 - (float)uVar31) -
+                   ((float)uVar37 - (float)uVar35) * fVar2;
+      value_00.z = ((float)uVar37 - (float)uVar35) * ((float)uVar32 - (float)uVar30) -
+                   ((float)uVar36 - (float)uVar34) * ((float)uVar33 - (float)uVar31);
+      pVVar27 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
                           ((Vector3 *)&stack0xffffffb4,value_00,(MethodInfo *)0x0);
-      uVar39 = pVVar28->x;
-      uVar40 = pVVar28->y;
-      fVar2 = pVVar28->z;
+      uVar38 = pVVar27->x;
+      uVar39 = pVVar27->y;
+      fVar2 = pVVar27->z;
       value_02 = (Vector3__Array *)func_?();
       if (cRam_? == '\0') {
         func_?();
         cRam_? = '\x01';
       }
-      pVVar41 = TypeInfo__UnityEngine__Vector3->static_fields;
+      pVVar40 = TypeInfo__UnityEngine__Vector3->static_fields;
       if (value_02 != (Vector3__Array *)0x0) {
-        fVar4 = (pVVar41->upVector).y;
-        fVar3 = (pVVar41->upVector).z;
+        fVar4 = (pVVar40->upVector).y;
+        fVar3 = (pVVar40->upVector).z;
         if (value_02->max_length == 0) goto code_?;
-        value_02->vector[0].x = (pVVar41->upVector).x;
+        value_02->vector[0].x = (pVVar40->upVector).x;
         value_02->vector[0].y = fVar4;
         value_02->vector[0].z = fVar3;
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
         }
-        pVVar41 = TypeInfo__UnityEngine__Vector3->static_fields;
-        fVar4 = (pVVar41->upVector).y;
-        fVar3 = (pVVar41->upVector).z;
+        pVVar40 = TypeInfo__UnityEngine__Vector3->static_fields;
+        fVar4 = (pVVar40->upVector).y;
+        fVar3 = (pVVar40->upVector).z;
         if (value_02->max_length < 2) goto code_?;
-        value_02->vector[1].x = (pVVar41->upVector).x;
+        value_02->vector[1].x = (pVVar40->upVector).x;
         value_02->vector[1].y = fVar4;
         value_02->vector[1].z = fVar3;
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
         }
-        pVVar41 = TypeInfo__UnityEngine__Vector3->static_fields;
-        fVar4 = (pVVar41->upVector).y;
-        fVar3 = (pVVar41->upVector).z;
+        pVVar40 = TypeInfo__UnityEngine__Vector3->static_fields;
+        fVar4 = (pVVar40->upVector).y;
+        fVar3 = (pVVar40->upVector).z;
         if (value_02->max_length < 3) goto code_?;
-        value_02->vector[2].x = (pVVar41->upVector).x;
+        value_02->vector[2].x = (pVVar40->upVector).x;
         value_02->vector[2].y = fVar4;
         value_02->vector[2].z = fVar3;
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
         }
-        uVar42 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
-        pVVar41 = TypeInfo__UnityEngine__Vector3->static_fields;
-        uVar43 = (pVVar41->upVector).x;
-        uVar44 = (pVVar41->upVector).y;
-        uVar45 = uVar44 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
-        fVar3 = (float)((uint)(pVVar41->upVector).z ^
+        uVar41 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+        pVVar40 = TypeInfo__UnityEngine__Vector3->static_fields;
+        uVar42 = (pVVar40->upVector).x;
+        uVar43 = (pVVar40->upVector).y;
+        uVar44 = uVar43 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+        fVar3 = (float)((uint)(pVVar40->upVector).z ^
                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
         if (value_02->max_length < 4) goto code_?;
         value_02->vector[3].x =
-             (float)(uVar43 ^ 
+             (float)(uVar42 ^ 
                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-        value_02->vector[3].y = (float)uVar45;
+        value_02->vector[3].y = (float)uVar44;
         value_02->vector[3].z = fVar3;
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
-          uVar42 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+          uVar41 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
         }
-        pVVar41 = TypeInfo__UnityEngine__Vector3->static_fields;
-        uVar46 = (pVVar41->upVector).x;
-        uVar47 = (pVVar41->upVector).y;
-        fVar3 = (pVVar41->upVector).z;
+        pVVar40 = TypeInfo__UnityEngine__Vector3->static_fields;
+        uVar45 = (pVVar40->upVector).x;
+        uVar46 = (pVVar40->upVector).y;
+        fVar3 = (pVVar40->upVector).z;
         if (value_02->max_length < 5) goto code_?;
-        value_02->vector[4].x = (float)(uVar46 ^ uVar42);
-        value_02->vector[4].y = (float)(uVar47 ^ uVar42);
-        value_02->vector[4].z = (float)((uint)fVar3 ^ uVar42);
+        value_02->vector[4].x = (float)(uVar45 ^ uVar41);
+        value_02->vector[4].y = (float)(uVar46 ^ uVar41);
+        value_02->vector[4].z = (float)((uint)fVar3 ^ uVar41);
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
-          uVar42 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+          uVar41 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
         }
-        pVVar41 = TypeInfo__UnityEngine__Vector3->static_fields;
-        uVar48 = (pVVar41->upVector).x;
-        uVar49 = (pVVar41->upVector).y;
-        fVar3 = (pVVar41->upVector).z;
+        pVVar40 = TypeInfo__UnityEngine__Vector3->static_fields;
+        uVar47 = (pVVar40->upVector).x;
+        uVar48 = (pVVar40->upVector).y;
+        fVar3 = (pVVar40->upVector).z;
         if (value_02->max_length < 6) goto code_?;
-        value_02->vector[5].x = (float)(uVar48 ^ uVar42);
-        value_02->vector[5].y = (float)(uVar49 ^ uVar42);
-        value_02->vector[5].z = (float)((uint)fVar3 ^ uVar42);
+        value_02->vector[5].x = (float)(uVar47 ^ uVar41);
+        value_02->vector[5].y = (float)(uVar48 ^ uVar41);
+        value_02->vector[5].z = (float)((uint)fVar3 ^ uVar41);
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
-          uVar42 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+          uVar41 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
         }
-        pVVar41 = TypeInfo__UnityEngine__Vector3->static_fields;
-        uVar50 = (pVVar41->forwardVector).x;
-        uVar51 = (pVVar41->forwardVector).y;
-        fVar3 = (pVVar41->forwardVector).z;
+        pVVar40 = TypeInfo__UnityEngine__Vector3->static_fields;
+        uVar49 = (pVVar40->forwardVector).x;
+        uVar50 = (pVVar40->forwardVector).y;
+        fVar3 = (pVVar40->forwardVector).z;
         if (value_02->max_length < 7) goto code_?;
-        value_02->vector[6].x = (float)(uVar50 ^ uVar42);
-        value_02->vector[6].y = (float)(uVar51 ^ uVar42);
-        value_02->vector[6].z = (float)((uint)fVar3 ^ uVar42);
+        value_02->vector[6].x = (float)(uVar49 ^ uVar41);
+        value_02->vector[6].y = (float)(uVar50 ^ uVar41);
+        value_02->vector[6].z = (float)((uint)fVar3 ^ uVar41);
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
-          uVar42 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+          uVar41 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
         }
-        pVVar41 = TypeInfo__UnityEngine__Vector3->static_fields;
-        uVar52 = (pVVar41->forwardVector).x;
-        uVar53 = (pVVar41->forwardVector).y;
-        fVar3 = (pVVar41->forwardVector).z;
+        pVVar40 = TypeInfo__UnityEngine__Vector3->static_fields;
+        uVar51 = (pVVar40->forwardVector).x;
+        uVar52 = (pVVar40->forwardVector).y;
+        fVar3 = (pVVar40->forwardVector).z;
         if (value_02->max_length < 8) goto code_?;
-        value_02->vector[7].x = (float)(uVar52 ^ uVar42);
-        value_02->vector[7].y = (float)(uVar53 ^ uVar42);
-        value_02->vector[7].z = (float)((uint)fVar3 ^ uVar42);
+        value_02->vector[7].x = (float)(uVar51 ^ uVar41);
+        value_02->vector[7].y = (float)(uVar52 ^ uVar41);
+        value_02->vector[7].z = (float)((uint)fVar3 ^ uVar41);
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
-          uVar42 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+          uVar41 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
         }
-        pVVar41 = TypeInfo__UnityEngine__Vector3->static_fields;
-        uVar54 = (pVVar41->forwardVector).x;
-        uVar55 = (pVVar41->forwardVector).y;
-        fVar3 = (pVVar41->forwardVector).z;
+        pVVar40 = TypeInfo__UnityEngine__Vector3->static_fields;
+        uVar53 = (pVVar40->forwardVector).x;
+        uVar54 = (pVVar40->forwardVector).y;
+        fVar3 = (pVVar40->forwardVector).z;
         if (value_02->max_length < 9) goto code_?;
-        value_02->vector[8].x = (float)(uVar54 ^ uVar42);
-        value_02->vector[8].y = (float)(uVar55 ^ uVar42);
-        value_02->vector[8].z = (float)((uint)fVar3 ^ uVar42);
+        value_02->vector[8].x = (float)(uVar53 ^ uVar41);
+        value_02->vector[8].y = (float)(uVar54 ^ uVar41);
+        value_02->vector[8].z = (float)((uint)fVar3 ^ uVar41);
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
-          uVar42 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+          uVar41 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
         }
-        pVVar41 = TypeInfo__UnityEngine__Vector3->static_fields;
-        uVar56 = (pVVar41->forwardVector).x;
-        uVar57 = (pVVar41->forwardVector).y;
-        fVar3 = (pVVar41->forwardVector).z;
+        pVVar40 = TypeInfo__UnityEngine__Vector3->static_fields;
+        uVar55 = (pVVar40->forwardVector).x;
+        uVar56 = (pVVar40->forwardVector).y;
+        fVar3 = (pVVar40->forwardVector).z;
         if (value_02->max_length < 10) goto code_?;
-        value_02->vector[9].x = (float)(uVar56 ^ uVar42);
-        value_02->vector[9].y = (float)(uVar57 ^ uVar42);
-        value_02->vector[9].z = (float)((uint)fVar3 ^ uVar42);
+        value_02->vector[9].x = (float)(uVar55 ^ uVar41);
+        value_02->vector[9].y = (float)(uVar56 ^ uVar41);
+        value_02->vector[9].z = (float)((uint)fVar3 ^ uVar41);
         if (value_02->max_length < 0xb) goto code_?;
         value_02->vector[10].x = baseCenter.y;
         value_02->vector[10].y = baseCenter.z;
@@ -386,37 +383,37 @@ Mesh * Assembly-CSharp.dll::RTG::PrismMesh::PrismMesh_CreateTriangularPrism
         value_02->vector[0xd].y = baseCenter.z;
         value_02->vector[0xd].z = fVar1;
         if (value_02->max_length < 0xf) goto code_?;
-        value_02->vector[0xe].x = (float)uVar39;
-        value_02->vector[0xe].y = (float)uVar40;
+        value_02->vector[0xe].x = (float)uVar38;
+        value_02->vector[0xe].y = (float)uVar39;
         value_02->vector[0xe].z = fVar2;
         if (value_02->max_length < 0x10) goto code_?;
-        value_02->vector[0xf].x = (float)uVar39;
-        value_02->vector[0xf].y = (float)uVar40;
+        value_02->vector[0xf].x = (float)uVar38;
+        value_02->vector[0xf].y = (float)uVar39;
         value_02->vector[0xf].z = fVar2;
         if (value_02->max_length < 0x11) goto code_?;
-        value_02->vector[0x10].x = (float)uVar39;
-        value_02->vector[0x10].y = (float)uVar40;
+        value_02->vector[0x10].x = (float)uVar38;
+        value_02->vector[0x10].y = (float)uVar39;
         value_02->vector[0x10].z = fVar2;
         if (value_02->max_length < 0x12) goto code_?;
-        value_02->vector[0x11].x = (float)uVar39;
-        value_02->vector[0x11].y = (float)uVar40;
+        value_02->vector[0x11].x = (float)uVar38;
+        value_02->vector[0x11].y = (float)uVar39;
         value_02->vector[0x11].z = fVar2;
-        pMVar58 = (Mesh *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh__ctor(pMVar58,(MethodInfo *)0x0);
-        if (pMVar58 != (Mesh *)0x0) {
+        pMVar57 = (Mesh *)func_?();
+        UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh__ctor(pMVar57,(MethodInfo *)0x0);
+        if (pMVar57 != (Mesh *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_vertices
-                    (pMVar58,value_01,(MethodInfo *)0x0);
+                    (pMVar57,value_01,(MethodInfo *)0x0);
           value_03 = ColorEx::ColorEx_GetFilledColorArray
                                (value_01->max_length,color,(MethodInfo *)0x0);
           UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_colors
-                    (pMVar58,value_03,(MethodInfo *)0x0);
+                    (pMVar57,value_03,(MethodInfo *)0x0);
           UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_normals
-                    (pMVar58,value_02,(MethodInfo *)0x0);
+                    (pMVar57,value_02,(MethodInfo *)0x0);
           UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_SetIndices
-                    (pMVar58,indices,MeshTopology__Enum_Triangles,0,(MethodInfo *)0x0);
+                    (pMVar57,indices,MeshTopology__Enum_Triangles,0,(MethodInfo *)0x0);
           UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_UploadMeshData
-                    (pMVar58,0,(MethodInfo *)0x0);
-          return pMVar58;
+                    (pMVar57,0,(MethodInfo *)0x0);
+          return pMVar57;
         }
       }
     }
@@ -424,9 +421,9 @@ Mesh * Assembly-CSharp.dll::RTG::PrismMesh::PrismMesh_CreateTriangularPrism
   func_?();
 code_?:
   func_?();
-  pcVar59 = (code *)swi(3);
-  pMVar58 = (Mesh *)(*pcVar59)();
-  return pMVar58;
+  pcVar58 = (code *)swi(3);
+  pMVar57 = (Mesh *)(*pcVar58)();
+  return pMVar57;
 }
 
 

@@ -14,7 +14,7 @@ bool Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_ContainsPoint
   fVar1 = (this->fields)._baseCenter.y;
   VVar2 = ConeShape2D_get_Right(this,(MethodInfo *)0x0);
   fStack_3 = VVar2.y;
-  fVar1 = fStack_3 * (this->fields)._baseRadius + fVar1;
+  fVar1 = fVar1 + fStack_3 * (this->fields)._baseRadius;
   if ((TypeInfo__RTG__TriangleMath->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__RTG__TriangleMath);
   }
@@ -53,19 +53,20 @@ Rect * Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_GetEncapsulatingRect
   VVar3 = ConeShape2D_get_Right(this,(MethodInfo *)0x0);
   pMVar4 = 
   MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_;
-  fVar1 = fVar1 - (float)puStack_5 * (this->fields)._baseRadius;
-  fVar2 = fVar2 - VVar3.y * (this->fields)._baseRadius;
+  fStack_5 = VVar3.y;
+  fVar1 = fVar1 - fStack_6 * (this->fields)._baseRadius;
+  fVar2 = fVar2 - fStack_5 * (this->fields)._baseRadius;
   if (this_00 != (List_1_UnityEngine_Vector2_ *)0x0) {
-    piVar6 = &(this_00->fields)._version;
-    *piVar6 = *piVar6 + 1;
-    pVVar7 = (this_00->fields)._items;
-    if (pVVar7 != (Vector2__Array *)0x0) {
-      uVar8 = (this_00->fields)._size;
-      if (uVar8 < pVVar7->max_length) {
-        (this_00->fields)._size = uVar8 + 1;
-        if (pVVar7->max_length <= uVar8) goto code_?;
-        pVVar7->vector[uVar8].x = fVar1;
-        pVVar7->vector[uVar8].y = fVar2;
+    piVar7 = &(this_00->fields)._version;
+    *piVar7 = *piVar7 + 1;
+    pVVar8 = (this_00->fields)._items;
+    if (pVVar8 != (Vector2__Array *)0x0) {
+      uVar9 = (this_00->fields)._size;
+      if (uVar9 < pVVar8->max_length) {
+        (this_00->fields)._size = uVar9 + 1;
+        if (pVVar8->max_length <= uVar9) goto code_?;
+        pVVar8->vector[uVar9].x = fVar1;
+        pVVar8->vector[uVar9].y = fVar2;
       }
       else {
         VVar3.y = fVar2;
@@ -74,48 +75,51 @@ Rect * Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_GetEncapsulatingRect
         List_1_UnityEngine_Vector2__AddWithResize
                   (this_00,VVar3,pMVar4->klass->rgctx_data[0xe].method);
       }
-      fVar1 = (this->fields)._baseCenter.x;
-      pMVar4 = (MethodInfo *)(this->fields)._baseCenter.y;
-      VVar3 = ConeShape2D_get_CentralAxis(this,pMVar4);
-      pMVar9 = 
+      fVar2 = (this->fields)._baseCenter.x;
+      this_01 = (ConeShape2D *)(this->fields)._baseCenter.y;
+      VVar3 = ConeShape2D_get_CentralAxis(this_01,(MethodInfo *)0x0);
+      pMVar4 = 
       MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
       ;
-      fVar2 = VVar3.y * (this->fields)._height + (float)pMVar4;
-      puVar10 = (undefined *)(fVar1 + (this->fields)._height * 4.437386e-29);
-      piVar6 = &(this_00->fields)._version;
-      *piVar6 = *piVar6 + 1;
-      pVVar7 = (this_00->fields)._items;
-      if (pVVar7 != (Vector2__Array *)0x0) {
-        uVar8 = (this_00->fields)._size;
-        if (uVar8 < pVVar7->max_length) {
-          (this_00->fields)._size = uVar8 + 1;
-          if (pVVar7->max_length <= uVar8) goto code_?;
-          pVVar7->vector[uVar8].x = (float)puVar10;
-          pVVar7->vector[uVar8].y = fVar2;
-          puStack_5 = puVar10;
+      fStack_5 = VVar3.y;
+      fVar2 = fVar2 + fVar1 * (this->fields)._height;
+      fVar1 = (float)this_01 + fStack_5 * (this->fields)._height;
+      piVar7 = &(this_00->fields)._version;
+      *piVar7 = *piVar7 + 1;
+      pVVar8 = (this_00->fields)._items;
+      if (pVVar8 != (Vector2__Array *)0x0) {
+        uVar9 = (this_00->fields)._size;
+        if (uVar9 < pVVar8->max_length) {
+          (this_00->fields)._size = uVar9 + 1;
+          if (pVVar8->max_length <= uVar9) goto code_?;
+          pVVar8->vector[uVar9].x = fVar2;
+          pVVar8->vector[uVar9].y = fVar1;
         }
         else {
-          item_00.y = fVar2;
-          item_00.x = (float)puVar10;
+          __return_storage_ptr__ = (Rect *)pMVar4->klass->rgctx_data[0xe].method;
+          item_00.y = fVar1;
+          item_00.x = fVar2;
           mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
           List_1_UnityEngine_Vector2__AddWithResize
-                    (this_00,item_00,pMVar9->klass->rgctx_data[0xe].method);
+                    (this_00,item_00,(MethodInfo *)__return_storage_ptr__);
         }
-        fVar1 = (this->fields)._baseCenter.y;
+        fVar1 = (this->fields)._baseCenter.x;
+        fVar10 = (this->fields)._baseCenter.y;
         VVar3 = ConeShape2D_get_Right(this,(MethodInfo *)0x0);
         pMVar4 = 
         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
         ;
-        fVar2 = (float)puStack_5 * (this->fields)._baseRadius + 4.4374347e-29;
-        fVar1 = VVar3.y * (this->fields)._baseRadius + fVar1;
-        piVar6 = &(this_00->fields)._version;
-        *piVar6 = *piVar6 + 1;
-        pVVar7 = (this_00->fields)._items;
-        if (pVVar7 != (Vector2__Array *)0x0) {
-          uVar8 = (this_00->fields)._size;
-          if (pVVar7->max_length <= uVar8) {
-            item.y = fVar1;
-            item.x = fVar2;
+        fStack_5 = VVar3.y;
+        fVar1 = fVar1 + fVar2 * (this->fields)._baseRadius;
+        fVar10 = fVar10 + fStack_5 * (this->fields)._baseRadius;
+        piVar7 = &(this_00->fields)._version;
+        *piVar7 = *piVar7 + 1;
+        pVVar8 = (this_00->fields)._items;
+        if (pVVar8 != (Vector2__Array *)0x0) {
+          uVar9 = (this_00->fields)._size;
+          if (pVVar8->max_length <= uVar9) {
+            item.y = fVar10;
+            item.x = fVar1;
             mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
             List_1_UnityEngine_Vector2__AddWithResize
                       (this_00,item,pMVar4->klass->rgctx_data[0xe].method);
@@ -125,17 +129,17 @@ code_?:
                                 (IEnumerable_1_UnityEngine_Vector2_ *)this_00,(MethodInfo *)0x0);
             fVar1 = pRVar11->m_YMin;
             fVar2 = pRVar11->m_Width;
-            fVar12 = pRVar11->m_Height;
+            fVar10 = pRVar11->m_Height;
             __return_storage_ptr__->m_XMin = pRVar11->m_XMin;
             __return_storage_ptr__->m_YMin = fVar1;
             __return_storage_ptr__->m_Width = fVar2;
-            __return_storage_ptr__->m_Height = fVar12;
+            __return_storage_ptr__->m_Height = fVar10;
             return __return_storage_ptr__;
           }
-          (this_00->fields)._size = uVar8 + 1;
-          if (uVar8 < pVVar7->max_length) {
-            pVVar7->vector[uVar8].x = fVar2;
-            pVVar7->vector[uVar8].y = fVar1;
+          (this_00->fields)._size = uVar9 + 1;
+          if (uVar9 < pVVar8->max_length) {
+            pVVar8->vector[uVar9].x = fVar1;
+            pVVar8->vector[uVar9].y = fVar10;
             goto code_?;
           }
           goto code_?;
@@ -146,8 +150,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  pRVar11 = (Rect *)(*pcVar13)();
+  pcVar12 = (code *)swi(3);
+  pRVar11 = (Rect *)(*pcVar12)();
   return pRVar11;
 }
 
@@ -169,9 +173,9 @@ void Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_RenderArea
   fVar1 = (this->fields)._baseCenter.x;
   fVar2 = (this->fields)._baseCenter.y;
   VVar3 = ConeShape2D_get_Right(this,(MethodInfo *)0x0);
-  fStack_4 = VVar3.y;
-  pMVar5 = (MethodInfo *)(fVar1 - in_stack_6 * (this->fields)._baseRadius);
-  fVar2 = fVar2 - fStack_4 * (this->fields)._baseRadius;
+  fVar4 = VVar3.x;
+  pLVar5 = (List_1_UnityEngine_Vector2_ *)(fVar1 - in_stack_6 * (this->fields)._baseRadius);
+  method_00 = (MethodInfo *)(fVar2 - VVar3.y * (this->fields)._baseRadius);
   this_00 = (List_1_UnityEngine_Vector2_ *)
             func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
@@ -180,13 +184,12 @@ void Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_RenderArea
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List__);
   fVar1 = (this->fields)._baseCenter.x;
-  fVar7 = (this->fields)._baseCenter.y;
-  VVar8 = ConeShape2D_get_CentralAxis(this,(MethodInfo *)0x0);
-  pMVar9 = 
+  fVar2 = (this->fields)._baseCenter.y;
+  VVar3 = ConeShape2D_get_CentralAxis(this,(MethodInfo *)0x0);
+  pMVar7 = 
   MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_;
-  fStack_4 = VVar8.y;
-  method_00 = (MethodInfo *)(VVar3.x * (this->fields)._height + fVar1);
-  fVar7 = fStack_4 * (this->fields)._height + fVar7;
+  fVar8 = (this->fields)._height;
+  pMVar9 = (MethodInfo *)(fVar1 + fVar4 * (this->fields)._height);
   if (this_00 != (List_1_UnityEngine_Vector2_ *)0x0) {
     piVar10 = &(this_00->fields)._version;
     *piVar10 = *piVar10 + 1;
@@ -196,47 +199,49 @@ void Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_RenderArea
       if (uVar12 < pVVar11->max_length) {
         (this_00->fields)._size = uVar12 + 1;
         if (pVVar11->max_length <= uVar12) goto code_?;
-        pVVar11->vector[uVar12].x = (float)method_00;
-        pVVar11->vector[uVar12].y = fVar7;
+        pVVar11->vector[uVar12].x = (float)pMVar9;
+        pVVar11->vector[uVar12].y = fVar2 + VVar3.y * fVar8;
       }
       else {
-        method_00 = pMVar9->klass->rgctx_data[0xe].method;
-        VVar3.y = fVar7;
+        method_00 = pMVar7->klass->rgctx_data[0xe].method;
+        VVar3.y = (float)method_00;
         VVar3.x = (float)method_00;
-        pMVar5 = method_00;
+        pLVar5 = this_00;
+        pMVar9 = method_00;
         mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
         List_1_UnityEngine_Vector2__AddWithResize(this_00,VVar3,method_00);
-        fVar2 = fVar7;
       }
-      fVar1 = (this->fields)._baseCenter.x;
+      fVar1 = (this->fields)._baseCenter.y;
       VVar3 = ConeShape2D_get_Right(this,(MethodInfo *)0x0);
-      pMVar9 = 
+      pMVar7 = 
       MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
       ;
-      fStack_4 = VVar3.y;
-      fVar1 = (float)method_00 * (this->fields)._baseRadius + fVar1;
-      fVar7 = fStack_4 * (this->fields)._baseRadius + 4.437596e-29;
+      fVar2 = (float)pMVar9 * (this->fields)._baseRadius + 0.0;
+      pCVar13 = (Camera *)(fVar1 + VVar3.y * (this->fields)._baseRadius);
       piVar10 = &(this_00->fields)._version;
       *piVar10 = *piVar10 + 1;
       pVVar11 = (this_00->fields)._items;
       if (pVVar11 != (Vector2__Array *)0x0) {
         uVar12 = (this_00->fields)._size;
         if (pVVar11->max_length <= uVar12) {
-          camera = (Camera *)pMVar9->klass->rgctx_data[0xe].method;
-          VVar8.y = fVar7;
-          VVar8.x = fVar1;
+          item.y = (float)pCVar13;
+          item.x = fVar2;
           mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-          List_1_UnityEngine_Vector2__AddWithResize(this_00,VVar8,(MethodInfo *)camera);
+          List_1_UnityEngine_Vector2__AddWithResize
+                    (this_00,item,pMVar7->klass->rgctx_data[0xe].method);
+          camera = pCVar13;
+          pMStack14 = method_00;
 code_?:
-          origin.y = fVar2;
-          origin.x = (float)pMVar5;
+          origin.y = (float)pMStack14;
+          origin.x = (float)pLVar5;
           GLRenderer::GLRenderer_DrawTriangleFan2D_1(origin,this_00,camera,(MethodInfo *)0x0);
           return;
         }
         (this_00->fields)._size = uVar12 + 1;
         if (uVar12 < pVVar11->max_length) {
-          pVVar11->vector[uVar12].x = fVar1;
-          pVVar11->vector[uVar12].y = fVar7;
+          pVVar11->vector[uVar12].x = fVar2;
+          pVVar11->vector[uVar12].y = (float)pCVar13;
+          pMStack14 = method_00;
           goto code_?;
         }
         goto code_?;
@@ -246,8 +251,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -278,9 +283,8 @@ void Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_RenderBorder
   VVar3 = ConeShape2D_get_Right(this,(MethodInfo *)0x0);
   pMVar4 = 
   MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_;
-  fStack_5 = VVar3.y;
+  fVar5 = (this->fields)._baseRadius;
   pMVar6 = (MethodInfo *)(fVar1 - in_stack_7 * (this->fields)._baseRadius);
-  fVar2 = fVar2 - fStack_5 * (this->fields)._baseRadius;
   if (this_00 != (List_1_UnityEngine_Vector2_ *)0x0) {
     piVar8 = &(this_00->fields)._version;
     *piVar8 = *piVar8 + 1;
@@ -291,23 +295,22 @@ void Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_RenderBorder
         (this_00->fields)._size = uVar10 + 1;
         if (pVVar9->max_length <= uVar10) goto code_?;
         pVVar9->vector[uVar10].x = (float)pMVar6;
-        pVVar9->vector[uVar10].y = fVar2;
+        pVVar9->vector[uVar10].y = fVar2 - VVar3.y * fVar5;
       }
       else {
         pMVar6 = pMVar4->klass->rgctx_data[0xe].method;
-        VVar3.y = fVar2;
+        VVar3.y = (float)pMVar6;
         VVar3.x = (float)pMVar6;
         mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
         List_1_UnityEngine_Vector2__AddWithResize(this_00,VVar3,pMVar6);
       }
-      fVar1 = (this->fields)._baseCenter.x;
+      fVar1 = (this->fields)._baseCenter.y;
       VVar3 = ConeShape2D_get_CentralAxis(this,(MethodInfo *)0x0);
       pMVar4 = 
       MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
       ;
-      fStack_5 = VVar3.y;
-      fVar2 = fStack_5 * (this->fields)._height + 4.4377326e-29;
-      fVar1 = fVar1 + (float)pMVar6 * (this->fields)._height;
+      fVar2 = (float)pMVar6 * (this->fields)._height + 0.0;
+      pCVar11 = (Camera *)(fVar1 + VVar3.y * (this->fields)._height);
       piVar8 = &(this_00->fields)._version;
       *piVar8 = *piVar8 + 1;
       pVVar9 = (this_00->fields)._items;
@@ -316,45 +319,45 @@ void Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_RenderBorder
         if (uVar10 < pVVar9->max_length) {
           (this_00->fields)._size = uVar10 + 1;
           if (pVVar9->max_length <= uVar10) goto code_?;
-          pVVar9->vector[uVar10].x = fVar1;
-          pVVar9->vector[uVar10].y = fVar2;
+          pVVar9->vector[uVar10].x = fVar2;
+          pVVar9->vector[uVar10].y = (float)pCVar11;
         }
         else {
-          camera = (Camera *)pMVar4->klass->rgctx_data[0xe].method;
-          item.y = fVar2;
-          item.x = fVar1;
+          item.y = (float)pCVar11;
+          item.x = fVar2;
           mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-          List_1_UnityEngine_Vector2__AddWithResize(this_00,item,(MethodInfo *)camera);
+          List_1_UnityEngine_Vector2__AddWithResize
+                    (this_00,item,pMVar4->klass->rgctx_data[0xe].method);
+          camera = pCVar11;
         }
-        fVar2 = (this->fields)._baseCenter.x;
-        fVar11 = (this->fields)._baseCenter.y;
+        fVar1 = (this->fields)._baseCenter.x;
+        fVar5 = (this->fields)._baseCenter.y;
         VVar3 = ConeShape2D_get_Right(this,(MethodInfo *)0x0);
         pMVar6 = 
         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
         ;
-        fStack_5 = VVar3.y;
-        fVar2 = fVar1 * (this->fields)._baseRadius + fVar2;
-        fVar11 = fStack_5 * (this->fields)._baseRadius + fVar11;
+        fVar1 = fVar1 + fVar2 * (this->fields)._baseRadius;
+        fVar5 = fVar5 + VVar3.y * (this->fields)._baseRadius;
         piVar8 = &(this_00->fields)._version;
         *piVar8 = *piVar8 + 1;
         pVVar9 = (this_00->fields)._items;
         if (pVVar9 != (Vector2__Array *)0x0) {
           uVar10 = (this_00->fields)._size;
           if (pVVar9->max_length <= uVar10) {
-            item_00.y = fVar11;
-            item_00.x = fVar2;
+            item_00.y = fVar5;
+            item_00.x = fVar1;
             mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
             List_1_UnityEngine_Vector2__AddWithResize
                       (this_00,item_00,pMVar6->klass->rgctx_data[0xe].method);
-code_?:
             GLRenderer::GLRenderer_DrawLineLoop2D(this_00,camera,(MethodInfo *)0x0);
             return;
           }
           (this_00->fields)._size = uVar10 + 1;
           if (uVar10 < pVVar9->max_length) {
-            pVVar9->vector[uVar10].x = fVar2;
-            pVVar9->vector[uVar10].y = fVar11;
-            goto code_?;
+            pVVar9->vector[uVar10].x = fVar1;
+            pVVar9->vector[uVar10].y = fVar5;
+            GLRenderer::GLRenderer_DrawLineLoop2D(this_00,camera,(MethodInfo *)0x0);
+            return;
           }
           goto code_?;
         }
@@ -414,7 +417,7 @@ Vector2 Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_get_BaseRight
   fVar2 = (this->fields)._baseCenter.y;
   VVar3 = ConeShape2D_get_Right(this,(MethodInfo *)0x0);
   VStack_4.y = VVar3.y;
-  VStack_4.y = VStack_4.y * (this->fields)._baseRadius + fVar2;
+  VStack_4.y = fVar2 + VStack_4.y * (this->fields)._baseRadius;
   VStack_4.x = fVar1 + VStack_4.x * (this->fields)._baseRadius;
   return VStack_4;
 }
@@ -532,7 +535,7 @@ Vector2 Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_get_Tip
   fVar2 = (this->fields)._baseCenter.y;
   VVar3 = ConeShape2D_get_CentralAxis(this,(MethodInfo *)0x0);
   VStack_4.y = VVar3.y;
-  VStack_4.y = VStack_4.y * (this->fields)._height + fVar2;
+  VStack_4.y = fVar2 + VStack_4.y * (this->fields)._height;
   VStack_4.x = fVar1 + VStack_4.x * (this->fields)._height;
   return VStack_4;
 }

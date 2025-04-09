@@ -191,7 +191,7 @@ bool Assembly-CSharp.dll::AdvancedGhostCubeModelWrapper::AdvancedGhostCubeModelW
                   while( true ) {
                     if ((int)pOVar4->max_length <= (int)uVar5) {
                       bVar7 = EditableCubeModelWrapper::EditableCubeModelWrapper_OnEnterObject
-                                        ((EditableCubeModelWrapper *)0x0,
+                                        ((EditableCubeModelWrapper *)this,
                                          (EditorStateMachine *)&UNK_?,(MethodInfo *)0x0);
                       return bVar7;
                     }
@@ -319,35 +319,41 @@ void Assembly-CSharp.dll::AdvancedGhostCubeModelWrapper::AdvancedGhostCubeModelW
   }
   EditableCubeModelWrapper::EditableCubeModelWrapper__ctor
             ((EditableCubeModelWrapper *)this,cubeModelBase,(MethodInfo *)0x0);
-  (this->fields).transformParent = transformParent;
-  func_?(&(this->fields).transformParent,transformParent);
+  ppTVar4 = &(this->fields).transformParent;
+  *ppTVar4 = transformParent;
+  func_?(ppTVar4,transformParent);
   AdvancedGhostCubeModelWrapper_SetToTransformParent(this,(MethodInfo *)0x0);
-  puStack_4 = (undefined1 *)0x0;
-  uStack_5 = (undefined1 *)((uint)uStack_5._2_2_ << 0x10);
+  puStack_5 = (undefined1 *)0x0;
+  uStack_6 = (undefined1 *)((uint)uStack_6._2_2_ << 0x10);
   MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-            ((IntVector *)&puStack_4,-0xb,-4,-0xb,(MethodInfo *)0x0);
-  piStack_6 = (int *)0x0;
-  iVar7 = 0;
+            ((IntVector *)&puStack_5,-0xb,-4,-0xb,(MethodInfo *)0x0);
+  uStack_7._0_2_ = 0;
+  uStack_7._2_2_ = 0;
+  uStack_7._4_4_ = (undefined *)((uint)uStack_7._6_2_ << 0x10);
   MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-            ((IntVector *)&piStack_6,0xb,4,0xb,(MethodInfo *)0x0);
-  max.z = iVar7;
-  max._0_4_ = piStack_6;
-  min.z = (int16_t)uStack_5;
-  min._0_4_ = puStack_4;
+            ((IntVector *)&uStack_7,0xb,4,0xb,(MethodInfo *)0x0);
+  max.z = uStack_7._4_2_;
+  max.x = (int16_t)uStack_7;
+  max.y = uStack_7._2_2_;
+  min.z = (int16_t)uStack_6;
+  min._0_4_ = puStack_5;
   EditableCubeModelWrapper::EditableCubeModelWrapper_SetConstraints
             ((EditableCubeModelWrapper *)this,min,max,0xb4,(MethodInfo *)0x0);
   if ((cubeModelBase != (MVCubeModelInstance *)0x0) &&
      ((cubeModelBase->fields)._.chunkInstances != (ChunkInstances *)0x0)) {
+    uStack_7._4_4_ = &UNK_?;
     piVar8 = (int *)func_?();
-    puStack_4 = &stack0xffffffe8;
-    uStack_5 = &stack0xffffffe4;
+    puStack_5 = &stack0xffffffe8;
+    uStack_6 = &stack0xffffffe4;
     uStack_1 = 1;
     while (piVar8 != (int *)0x0) {
+      uStack_7._4_4_ = &UNK_?;
       cVar9 = func_?();
       if (cVar9 == '\0') {
         uStack_1 = 0xffffffff;
         iVar10 = func_?();
         if (iVar10 != 0) {
+          uStack_7._4_4_ = &UNK_?;
           func_?();
           *unaff_FS_OFFSET = uStack_3;
           return;
@@ -355,25 +361,24 @@ void Assembly-CSharp.dll::AdvancedGhostCubeModelWrapper::AdvancedGhostCubeModelW
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      piStack_6 = piVar8;
       if (piVar8 == (int *)0x0) break;
+      iVar10 = *piVar8;
       uVar11 = 0;
-      uVar12 = *(ushort *)(*piVar8 + 0xb6);
-      if (uVar12 != 0) {
+      if (*(ushort *)(iVar10 + 0xb6) != 0) {
         do {
-          if (*(IEnumerator__Class **)(*(int *)(*piVar8 + 0x58) + (uint)uVar11 * 8) ==
+          if (*(IEnumerator__Class **)(*(int *)(iVar10 + 0x58) + (uint)uVar11 * 8) ==
               TypeInfo__System__Collections__IEnumerator) {
-            puVar13 = (undefined4 *)
-                     (*piVar8 +
-                     (*(int *)(*(int *)(*piVar8 + 0x58) + 4 + (uint)uVar11 * 8) + 0x19) * 8);
+            puVar12 = (undefined4 *)
+                     (iVar10 + 200 + *(int *)(*(int *)(iVar10 + 0x58) + 4 + (uint)uVar11 * 8) * 8);
             goto code_?;
           }
           uVar11 = uVar11 + 1;
-        } while (uVar11 < uVar12);
+        } while (uVar11 < *(ushort *)(iVar10 + 0xb6));
       }
-      puVar13 = (undefined4 *)func_?();
+      uStack_7._4_4_ = &UNK_?;
+      puVar12 = (undefined4 *)func_?();
 code_?:
-      piVar8 = (int *)(*(code *)*puVar13)();
+      piVar8 = (int *)(*(code *)*puVar12)();
       if (piVar8 == (int *)0x0) break;
       if (*(Il2CppClass **)(*piVar8 + 0x20) !=
           (
@@ -383,6 +388,7 @@ code_?:
       this_00 = (Renderer *)*(undefined8 *)(iVar10 + 0x20);
       if (this_00 == (Renderer *)0x0) break;
       piVar8 = (int *)0x0;
+      uStack_7._4_4_ = &UNK_?;
       UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
                 (this_00,1,(MethodInfo *)0x0);
     }
@@ -390,8 +396,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

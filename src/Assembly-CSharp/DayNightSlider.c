@@ -35,15 +35,16 @@ void Assembly-CSharp.dll::DayNightSlider::DayNightSlider__ctor
   __Il2CppFullySharedGenericType]::
   UnityEvent_4_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             (this_00,MethodInfo__UnityEngine__Events__UnityEvent<float>__UnityEvent__);
-  (this->fields)._.m_OnValueChanged = (Slider_SliderEvent *)this_00;
-  func_?(&(this->fields)._.m_OnValueChanged,this_00);
+  ppSVar1 = &(this->fields)._.m_OnValueChanged;
+  *ppSVar1 = (Slider_SliderEvent *)this_00;
+  func_?(ppSVar1,this_00);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Vector2);
     cRam_? = '\x01';
   }
-  fVar1 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
+  fVar2 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
   (this->fields)._.m_Offset.x = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).x;
-  (this->fields)._.m_Offset.y = fVar1;
+  (this->fields)._.m_Offset.y = fVar2;
   if ((TypeInfo__UnityEngine__UI__Selectable->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__UI__Selectable);
   }

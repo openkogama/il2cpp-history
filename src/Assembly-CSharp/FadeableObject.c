@@ -116,7 +116,6 @@ void Assembly-CSharp.dll::FadeableObject::FadeableObject_Start
   }
   method_00 = TypeInfo__FadeableObject____c__DisplayClass1_0;
   value = (Object *)func_?();
-  object = value;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
@@ -129,7 +128,8 @@ void Assembly-CSharp.dll::FadeableObject::FadeableObject_Start
     uStack_2 = 0;
     if (pOVar1 != (Object__Array *)0x0) {
       ppOVar3 = pOVar1->vector;
-      for (; (int)uStack_2 < (int)pOVar1->max_length; uStack_2 = uStack_2 + 1) {
+      while( true ) {
+        if ((int)pOVar1->max_length <= (int)uStack_2) break;
         if (pOVar1->max_length <= uStack_2) {
 code_?:
           func_?();
@@ -138,32 +138,36 @@ code_?:
         if ((Renderer *)*ppOVar3 == (Renderer *)0x0) goto code_?;
         pMVar4 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_materials
                            ((Renderer *)*ppOVar3,(MethodInfo *)0x0);
-        ppMVar5 = pMVar4->vector;
-        uVar6 = 0;
-        if (pMVar4 == (Material__Array *)0x0) goto code_?;
-        for (; (int)uVar6 < (int)pMVar4->max_length; uVar6 = uVar6 + 1) {
-          if (pMVar4->max_length <= uVar6) goto code_?;
+        uVar5 = 0;
+        ppMVar6 = pMVar4->vector;
+        while( true ) {
+          if (pMVar4 == (Material__Array *)0x0) goto code_?;
+          if ((int)pMVar4->max_length <= (int)uVar5) break;
+          if (pMVar4->max_length <= uVar5) goto code_?;
           pLVar7 = (this->fields).materials;
           if (pLVar7 == (List_1_UnityEngine_Material_ *)0x0) goto code_?;
           mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
           List_1_System_Object__Add
-                    ((List_1_System_Object_ *)pLVar7,(Object *)*ppMVar5,
+                    ((List_1_System_Object_ *)pLVar7,(Object *)*ppMVar6,
                      MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__Add_UnityEngine__Material_
                     );
-          ppMVar5 = ppMVar5 + 1;
+          uVar5 = uVar5 + 1;
+          ppMVar6 = ppMVar6 + 1;
         }
+        uStack_2 = uStack_2 + 1;
         ppOVar3 = ppOVar3 + 1;
       }
-      object[1].monitor = (MonitorData *)0x0;
+      value[1].monitor = (MonitorData *)0x0;
       while( true ) {
         pLVar7 = (this->fields).materials;
         if (pLVar7 == (List_1_UnityEngine_Material_ *)0x0) break;
-        if ((pLVar7->fields)._size <= (int)object[1].monitor) {
+        if ((pLVar7->fields)._size <= (int)value[1].monitor) {
           return;
         }
-        root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)this,(MethodInfo *)0x0);
-        callbackFunction = object[2].klass;
+        UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                  ((Component *)this,(MethodInfo *)0x0);
+        pOVar8 = value + 2;
+        callbackFunction = pOVar8->klass;
         if (callbackFunction == (Object__Class *)0x0) {
           callbackFunction =
                (Object__Class *)
@@ -172,29 +176,31 @@ code_?:
                               );
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
           Object]::UnityAction_2_System_Object_System_Object___ctor
-                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,object,
+                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
                      MethodInfo__FadeableObject____c__DisplayClass1_0___Start_b__0_IFadeParent__UnityEngine__EventSystems__BaseEventData_
                      ,(MethodInfo *)0x0);
-          object[2].klass = callbackFunction;
-          func_?(object + 2,callbackFunction);
+          pOVar8->klass = callbackFunction;
+          func_?(pOVar8,callbackFunction);
         }
         if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
            ) {
           func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
         }
         UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                  (root,(BaseEventData *)0x0,
+                  ((GameObject *)
+                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<IFadeParent>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IFadeParent>_
+                   ,(BaseEventData *)0x0,
                    (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<IFadeParent>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<IFadeParent>_
                   );
-        object[1].monitor = object[1].monitor + 1;
+        value[1].monitor = value[1].monitor + 1;
       }
     }
   }
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -217,8 +223,9 @@ void Assembly-CSharp.dll::FadeableObject::FadeableObject__ctor
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__List__);
-  (this->fields).materials = this_00;
-  func_?(&(this->fields).materials,this_00);
+  ppLVar1 = &(this->fields).materials;
+  *ppLVar1 = this_00;
+  func_?(ppLVar1,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

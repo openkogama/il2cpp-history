@@ -90,31 +90,24 @@ float Assembly-CSharp.dll::RTG::GizmoBoxCap3DController::
   pGVar1 = (this->fields)._._data;
   if ((pGVar1 != (GizmoCap3DControllerData *)0x0) &&
      (pGVar2 = (pGVar1->fields).Cap, pGVar2 != (GizmoCap3D *)0x0)) {
-    fStack_3 = zoomFactor;
-    if ((pGVar2->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
-      pGVar4 = (pGVar2->fields)._lookAndFeel;
-      if (pGVar4 == (GizmoCap3DLookAndFeel *)0x0) goto code_?;
+    pGVar3 = (pGVar2->fields)._sharedLookAndFeel;
+    fStack_4 = zoomFactor;
+    pGVar5 = pGVar3;
+    if ((pGVar3 != (GizmoCap3DLookAndFeel *)0x0) ||
+       (pGVar5 = (pGVar2->fields)._lookAndFeel, pGVar5 != (GizmoCap3DLookAndFeel *)0x0)) {
+      if ((pGVar5->fields)._useZoomFactor == 0) {
+        fStack_4 = 1.0;
+      }
+      if ((pGVar3 != (GizmoCap3DLookAndFeel *)0x0) ||
+         (pGVar3 = (pGVar2->fields)._lookAndFeel, pGVar3 != (GizmoCap3DLookAndFeel *)0x0)) {
+        return (pGVar3->fields)._scale * (pGVar3->fields)._boxWidth * fStack_4;
+      }
     }
-    else {
-      pGVar4 = (pGVar2->fields)._sharedLookAndFeel;
-    }
-    if ((pGVar4->fields)._useZoomFactor == 0) {
-      fStack_3 = 1.0;
-    }
-    if ((pGVar2->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
-      pGVar4 = (pGVar2->fields)._lookAndFeel;
-      if (pGVar4 == (GizmoCap3DLookAndFeel *)0x0) goto code_?;
-    }
-    else {
-      pGVar4 = (pGVar2->fields)._sharedLookAndFeel;
-    }
-    return (pGVar4->fields)._scale * (pGVar4->fields)._boxWidth * fStack_3;
   }
-code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  fVar6 = (float10)(*pcVar5)();
-  return (float)fVar6;
+  pcVar6 = (code *)swi(3);
+  fVar7 = (float10)(*pcVar6)();
+  return (float)fVar7;
 }
 
 
@@ -192,30 +185,25 @@ void Assembly-CSharp.dll::RTG::GizmoBoxCap3DController::GizmoBoxCap3DController_
             pGVar1 = (this->fields)._._data;
             if (pGVar1 != (GizmoCap3DControllerData *)0x0) {
               pBVar2 = (pGVar1->fields).Box;
-              if ((pGVar3->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
-                pGVar7 = (pGVar3->fields)._lookAndFeel;
-                if (pGVar7 == (GizmoCap3DLookAndFeel *)0x0) goto code_?;
-              }
-              else {
-                pGVar7 = (pGVar3->fields)._sharedLookAndFeel;
-              }
-              if ((pGVar7->fields)._useZoomFactor == 0) {
-                zoomFactor = _UNK_?;
-              }
-              if ((pGVar3->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
-                pGVar7 = (pGVar3->fields)._lookAndFeel;
-                if (pGVar7 == (GizmoCap3DLookAndFeel *)0x0) goto code_?;
-              }
-              else {
-                pGVar7 = (pGVar3->fields)._sharedLookAndFeel;
-              }
-              fVar6 = (pGVar7->fields)._scale;
-              if (pBVar2 != (BoxShape3D *)0x0) {
-                value.y = zoomFactor * fVar6 * (pGVar7->fields)._boxHeight;
-                value.x = zoomFactor * fVar6 * (pGVar7->fields)._boxWidth;
-                value.z = zoomFactor * fVar6 * (pGVar7->fields)._boxDepth;
-                BoxShape3D::BoxShape3D_set_Size(pBVar2,value,(MethodInfo *)0x0);
-                return;
+              pGVar7 = (pGVar3->fields)._sharedLookAndFeel;
+              pGVar8 = pGVar7;
+              if ((pGVar7 != (GizmoCap3DLookAndFeel *)0x0) ||
+                 (pGVar8 = (pGVar3->fields)._lookAndFeel, pGVar8 != (GizmoCap3DLookAndFeel *)0x0)) {
+                if ((pGVar8->fields)._useZoomFactor == 0) {
+                  zoomFactor = _UNK_?;
+                }
+                if ((pGVar7 != (GizmoCap3DLookAndFeel *)0x0) ||
+                   (pGVar7 = (pGVar3->fields)._lookAndFeel, pGVar7 != (GizmoCap3DLookAndFeel *)0x0))
+                {
+                  fVar6 = (pGVar7->fields)._scale;
+                  if (pBVar2 != (BoxShape3D *)0x0) {
+                    value.y = fVar6 * (pGVar7->fields)._boxHeight * zoomFactor;
+                    value.x = fVar6 * (pGVar7->fields)._boxWidth * zoomFactor;
+                    value.z = fVar6 * (pGVar7->fields)._boxDepth * zoomFactor;
+                    BoxShape3D::BoxShape3D_set_Size(pBVar2,value,(MethodInfo *)0x0);
+                    return;
+                  }
+                }
               }
             }
           }
@@ -223,10 +211,9 @@ void Assembly-CSharp.dll::RTG::GizmoBoxCap3DController::GizmoBoxCap3DController_
       }
     }
   }
-code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

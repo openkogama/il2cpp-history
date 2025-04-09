@@ -17,58 +17,60 @@ void Assembly-CSharp.dll::MVRoundCube::MVRoundCube_Destroy(MVRoundCube *this,Met
     return;
   }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  if (pMVar1 == (MVWorldObjectClientManager *)0x0) {
+  if (pMVar1 == (MVWorldObjectClientManager *)0x0) goto code_?;
+  pEVar2 = (pMVar1->fields).OnResetWorldDone;
+  this_00 = (EventHandler_1_Object_ *)
+            func_?(TypeInfo__System__EventHandler<System::EventArgs>);
+  mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+            (this_00,(Object *)this,
+             MethodInfo__MVRoundCube__OnResetWorldDone_System__Object__System__EventArgs_,
+             (MethodInfo *)0x0);
+  pDVar3 = mscorlib.dll::System::Delegate::Delegate_Remove
+                     ((Delegate *)pEVar2,(Delegate *)this_00,(MethodInfo *)0x0);
+  if (pDVar3 == (Delegate *)0x0) {
+    (pMVar1->fields).OnResetWorldDone = (EventHandler_1_EventArgs_ *)0x0;
 code_?:
+    func_?();
+    pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if ((pMVar4 == (MVNetworkGame *)0x0) ||
+       (pWVar5 = (pMVar4->fields)._WinningConditionManager_k__BackingField,
+       pWVar5 == (WinningConditionManager *)0x0)) {
+code_?:
+      func_?();
+    }
+    else {
+      pOVar6 = MVWorldObject.dll::WinningConditionManager::
+               WinningConditionManager_GetSingletonWinnerConditionByType
+                         (pWVar5,
+                          TimeLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<TimeLimitClient>__
+                         );
+      if (pOVar6 != (Object *)0x0) {
+        pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if ((pMVar4 != (MVNetworkGame *)0x0) &&
+           (pWVar5 = (pMVar4->fields)._WinningConditionManager_k__BackingField,
+           pWVar5 != (WinningConditionManager *)0x0)) {
+          MVWorldObject.dll::WinningConditionManager::WinningConditionManager_RemoveWinnerCondition
+                    (pWVar5,(int32_t)pOVar6[1].monitor,(MethodInfo *)0x0);
+          return;
+        }
+        goto code_?;
+      }
+    }
+    uVar7 = func_?(&TypeInfo__System__Exception);
+    this_01 = (Exception *)func_?(uVar7);
+    method_00 = (MethodInfo *)0x0;
+    message = (String *)func_?(&StringLiteral_Couldn_t_find_TimeLimit_winning_);
+    mscorlib.dll::System::Exception::Exception__ctor_1(this_01,message,method_00);
+    func_?(&MethodInfo__MVRoundCube__Destroy__);
     func_?();
   }
   else {
-    pEVar2 = (pMVar1->fields).OnResetWorldDone;
-    this_00 = (EventHandler_1_Object_ *)
-              func_?(TypeInfo__System__EventHandler<System::EventArgs>);
-    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-              (this_00,(Object *)this,
-               MethodInfo__MVRoundCube__OnResetWorldDone_System__Object__System__EventArgs_,
-               (MethodInfo *)0x0);
-    pDVar3 = mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)pEVar2,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pDVar3 == (Delegate *)0x0) {
-      (pMVar1->fields).OnResetWorldDone = (EventHandler_1_EventArgs_ *)0x0;
-    }
-    else {
-      pEVar2 = (EventHandler_1_EventArgs_ *)func_?();
-      if (pEVar2 == (EventHandler_1_EventArgs_ *)0x0) goto code_?;
-      (pMVar1->fields).OnResetWorldDone = pEVar2;
-      iVar4 = func_?();
-      if (iVar4 == 0) goto code_?;
-    }
-    func_?();
-    pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if ((pMVar5 == (MVNetworkGame *)0x0) ||
-       (pWVar6 = (pMVar5->fields)._WinningConditionManager_k__BackingField,
-       pWVar6 == (WinningConditionManager *)0x0)) goto code_?;
-    pOVar7 = MVWorldObject.dll::WinningConditionManager::
-             WinningConditionManager_GetSingletonWinnerConditionByType
-                       (pWVar6,
-                        TimeLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<TimeLimitClient>__
-                       );
-    if (pOVar7 != (Object *)0x0) {
-      pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((pMVar5 != (MVNetworkGame *)0x0) &&
-         (pWVar6 = (pMVar5->fields)._WinningConditionManager_k__BackingField,
-         pWVar6 != (WinningConditionManager *)0x0)) {
-        MVWorldObject.dll::WinningConditionManager::WinningConditionManager_RemoveWinnerCondition
-                  (pWVar6,(int32_t)pOVar7[1].monitor,(MethodInfo *)0x0);
-        return;
-      }
-      goto code_?;
-    }
+    pEVar2 = (EventHandler_1_EventArgs_ *)func_?();
+    if (pEVar2 == (EventHandler_1_EventArgs_ *)0x0) goto code_?;
+    (pMVar1->fields).OnResetWorldDone = pEVar2;
+    iVar8 = func_?();
+    if (iVar8 != 0) goto code_?;
   }
-  uVar8 = func_?(&TypeInfo__System__Exception);
-  this_01 = (Exception *)func_?(uVar8);
-  method_00 = (MethodInfo *)0x0;
-  message = (String *)func_?(&StringLiteral_Couldn_t_find_TimeLimit_winning_);
-  mscorlib.dll::System::Exception::Exception__ctor_1(this_01,message,method_00);
-  func_?(&MethodInfo__MVRoundCube__Destroy__);
   func_?();
 code_?:
   func_?();
@@ -148,51 +150,55 @@ void Assembly-CSharp.dll::MVRoundCube::MVRoundCube_Initialize(MVRoundCube *this,
   }
   MVLogicObject::MVLogicObject_Initialize((MVLogicObject *)this,(MethodInfo *)0x0);
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  if (pMVar1 != (MVWorldObjectClientManager *)0x0) {
-    pEVar2 = (pMVar1->fields).OnResetWorldDone;
+  if (pMVar1 == (MVWorldObjectClientManager *)0x0) {
+code_?:
+    func_?();
+  }
+  else {
+    a = (pMVar1->fields).OnResetWorldDone;
     this_01 = (EventHandler_1_Object_ *)
               func_?(TypeInfo__System__EventHandler<System::EventArgs>);
     mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
               (this_01,(Object *)this,
                MethodInfo__MVRoundCube__OnResetWorldDone_System__Object__System__EventArgs_,
                (MethodInfo *)0x0);
-    pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pEVar2,(Delegate *)this_01,(MethodInfo *)0x0);
-    if (pDVar3 == (Delegate *)0x0) {
-      (pMVar1->fields).OnResetWorldDone = (EventHandler_1_EventArgs_ *)0x0;
-    }
-    else {
-      pEVar2 = (EventHandler_1_EventArgs_ *)func_?();
-      if (pEVar2 == (EventHandler_1_EventArgs_ *)0x0) goto code_?;
-      (pMVar1->fields).OnResetWorldDone = pEVar2;
-      iVar4 = func_?();
-      if (iVar4 == 0) goto code_?;
-    }
-    func_?();
-    pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar5 != (MVNetworkGame *)0x0) {
-      this_00 = (pMVar5->fields)._WinningConditionManager_k__BackingField;
-      args = (Object__Array *)
-             func_?(System__Object__MethodInfo__System__Array__Empty<System::Object>______)
-      ;
-      if (this_00 != (WinningConditionManager *)0x0) {
-        MVWorldObject.dll::WinningConditionManager::WinningConditionManager_CreateWinnerCondition
-                  (this_00,args,
-                   TimeLimitClient_MethodInfo__WinningConditionManager__CreateWinnerCondition<TimeLimitClient>_System__Object____
-                  );
-        lodGameObject = (this->fields)._._.gameObject;
-        (this->fields).initializedInWorld = 1;
-        MVLogicObject::MVLogicObject_SetupCulling
-                  ((MVLogicObject *)this,lodGameObject,2.0,(MethodInfo *)0x0);
-        return;
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)a,(Delegate *)this_01,(MethodInfo *)0x0);
+    if (pDVar2 == (Delegate *)0x0) {
+      *(undefined4 *)(unaff_EDI + 0x4c) = 0;
+code_?:
+      func_?();
+      pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if (pMVar3 != (MVNetworkGame *)0x0) {
+        this_00 = (pMVar3->fields)._WinningConditionManager_k__BackingField;
+        args = (Object__Array *)
+               func_?(
+                              System__Object__MethodInfo__System__Array__Empty<System::Object>______
+                              );
+        if (this_00 != (WinningConditionManager *)0x0) {
+          MVWorldObject.dll::WinningConditionManager::WinningConditionManager_CreateWinnerCondition
+                    (this_00,args,
+                     TimeLimitClient_MethodInfo__WinningConditionManager__CreateWinnerCondition<TimeLimitClient>_System__Object____
+                    );
+          (this->fields).initializedInWorld = 1;
+          MVLogicObject::MVLogicObject_SetupCulling
+                    ((MVLogicObject *)this,(this->fields)._._.gameObject,2.0,(MethodInfo *)0x0);
+          return;
+        }
       }
+      goto code_?;
     }
+    iVar4 = func_?();
+    if (iVar4 == 0) goto code_?;
+    *(int *)(unaff_EDI + 0x4c) = iVar4;
+    iVar4 = func_?();
+    if (iVar4 != 0) goto code_?;
   }
   func_?();
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

@@ -18,8 +18,9 @@ void Assembly-CSharp.dll::JoystickVehicleThirdPerson::JoystickVehicleThirdPerson
                           );
   UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager+VirtualAxis::
   CrossPlatformInputManager_VirtualAxis__ctor(pCVar2,pSVar1,(MethodInfo *)0x0);
-  (this->fields).m_HorizontalVirtualAxis = pCVar2;
-  func_?(&(this->fields).m_HorizontalVirtualAxis,pCVar2);
+  ppCVar3 = &(this->fields).m_HorizontalVirtualAxis;
+  *ppCVar3 = pCVar2;
+  func_?(ppCVar3,pCVar2);
   pSVar1 = (this->fields).verticalAxisName;
   pCVar2 = (CrossPlatformInputManager_VirtualAxis *)
            func_?(
@@ -27,8 +28,9 @@ void Assembly-CSharp.dll::JoystickVehicleThirdPerson::JoystickVehicleThirdPerson
                           );
   UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager+VirtualAxis::
   CrossPlatformInputManager_VirtualAxis__ctor(pCVar2,pSVar1,(MethodInfo *)0x0);
-  (this->fields).m_VerticalVirtualAxis = pCVar2;
-  func_?(&(this->fields).m_VerticalVirtualAxis,pCVar2);
+  ppCVar3 = &(this->fields).m_VerticalVirtualAxis;
+  *ppCVar3 = pCVar2;
+  func_?(ppCVar3,pCVar2);
   return;
 }
 
@@ -171,65 +173,74 @@ void Assembly-CSharp.dll::JoystickVehicleThirdPerson::JoystickVehicleThirdPerson
                (JoystickVehicleThirdPerson *this,Vector3 value,MethodInfo *method)
 
 {
-  uVar1 = (this->fields).startPos.x;
-  uVar2 = (this->fields).startPos.y;
-  fVar3 = (this->fields).startPos.z;
-  fVar4 = value.x - (float)uVar1;
-  fVar5 = value.y - (float)uVar2;
-  iVar6 = (this->fields).baseMovementRangeX;
-  VVar7 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
-  iVar8 = (this->fields).baseMovementRangeX;
-  fVar9 = VVar7.x;
-  VVar7 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
-  fStack_10 = (float)((uint)((float)iVar6 * fVar9) ^
+  pJVar1 = this;
+  uVar2 = (this->fields).startPos.x;
+  uVar3 = (this->fields).startPos.y;
+  fVar4 = value.x - (float)uVar2;
+  fVar5 = value.y - (float)uVar3;
+  fVar6 = value.z - (this->fields).startPos.z;
+  iVar7 = (this->fields).baseMovementRangeX;
+  VVar8 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
+  iVar9 = (this->fields).baseMovementRangeX;
+  fVar10 = VVar8.x;
+  VVar8 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
+  value.y = VVar8.x;
+  fStack_11 = (float)((uint)((float)iVar7 * fVar10) ^
                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-  fVar9 = (float)iVar8 * VVar7.x;
-  if ((fStack_10 <= fVar4) && (fStack_10 = fVar4, fVar9 < fVar4)) {
-    fStack_10 = fVar9;
+  fVar10 = (float)iVar9 * value.y;
+  if ((fStack_11 <= fVar4) && (fStack_11 = fVar4, fVar10 < fVar4)) {
+    fStack_11 = fVar10;
   }
-  iVar6 = (this->fields).baseMovementRangeY;
-  VVar7 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
-  iVar8 = (this->fields).baseMovementRangeY;
-  VVar11 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
-  fStack_12 = (float)((uint)((float)iVar6 * VVar7.x) ^
-                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-  fVar4 = (float)iVar8 * VVar11.x;
-  if ((fStack_12 <= fVar5) && (fStack_12 = fVar5, fVar4 < fVar5)) {
-    fStack_12 = fVar4;
+  iVar7 = (this->fields).baseMovementRangeY;
+  VVar8 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
+  iVar9 = (this->fields).baseMovementRangeY;
+  fVar10 = VVar8.x;
+  VVar8 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
+  value.y = VVar8.x;
+  value.z = (float)((uint)((float)iVar7 * fVar10) ^
+                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+  fVar10 = (float)iVar9 * value.y;
+  if ((value.z <= fVar5) && (value.z = fVar5, fVar10 < fVar5)) {
+    value.z = fVar10;
   }
   this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                       ((Component *)this,(MethodInfo *)0x0);
-  uVar13 = (this->fields).startPos.x;
-  uVar14 = (this->fields).startPos.y;
+  uVar12 = (this->fields).startPos.x;
+  uVar13 = (this->fields).startPos.y;
   if (this_00 != (Transform *)0x0) {
-    value_00.y = (float)uVar14 + fStack_12;
-    value_00.x = (float)uVar13 + fStack_10;
-    value_00.z = (this->fields).startPos.z + (value.z - fVar3);
+    value_00.y = (float)uVar13 + value.z;
+    value_00.x = (float)uVar12 + fStack_11;
+    value_00.z = fVar6 + (this->fields).startPos.z;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
               (this_00,value_00,(MethodInfo *)0x0);
-    iVar6 = (this->fields).baseMovementRangeX;
-    pAVar15 = (this->fields).deltaMovementModifierX;
-    VVar7 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
-    if (pAVar15 != (AnimationCurve *)0x0) {
-      fVar3 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                         (pAVar15,(float)((uint)(fStack_10 / ((float)iVar6 * VVar7.x)) &
+    this = (JoystickVehicleThirdPerson *)0x3f800000;
+    if (fStack_11 < 0.0) {
+      this = (JoystickVehicleThirdPerson *)0xbf800000;
+    }
+    method_00 = (MethodInfo *)(pJVar1->fields).baseMovementRangeX;
+    pAVar14 = (pJVar1->fields).deltaMovementModifierX;
+    VVar8 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance(method_00);
+    if (pAVar14 != (AnimationCurve *)0x0) {
+      fVar6 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
+                         (pAVar14,(float)((uint)(fStack_11 / ((float)(int)method_00 * VVar8.x)) &
                                         _UNK_?),(MethodInfo *)0x0);
-      method_00 = (MethodInfo *)(this->fields).baseMovementRangeY;
-      pAVar15 = (this->fields).deltaMovementModifierY;
-      (this->fields).desiredDeltaX = fVar3 * 0.0;
-      VVar7 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance(method_00);
-      if (pAVar15 != (AnimationCurve *)0x0) {
-        fVar4 = (float)((uint)(fStack_12 / ((float)(int)method_00 * VVar7.x)) & _UNK_?);
-        fVar5 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                           (pAVar15,fVar4,(MethodInfo *)0x0);
-        fVar3 = (this->fields).desiredDeltaX;
-        pCVar16 = (this->fields).m_HorizontalVirtualAxis;
-        (this->fields).currentDeltaX = fVar3;
-        if (pCVar16 != (CrossPlatformInputManager_VirtualAxis *)0x0) {
-          (pCVar16->fields).m_Value = fVar3;
-          pCVar16 = (this->fields).m_VerticalVirtualAxis;
-          if (pCVar16 != (CrossPlatformInputManager_VirtualAxis *)0x0) {
-            (pCVar16->fields).m_Value = fVar5 * fVar4;
+      iVar7 = (pJVar1->fields).baseMovementRangeY;
+      pAVar14 = (pJVar1->fields).deltaMovementModifierY;
+      fVar5 = 0.0;
+      (pJVar1->fields).desiredDeltaX = fVar6 * (float)this;
+      VVar8 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
+      if (pAVar14 != (AnimationCurve *)0x0) {
+        fVar10 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
+                           (pAVar14,(float)((uint)(value.z / ((float)iVar7 * VVar8.x)) &
+                                          _UNK_?),(MethodInfo *)0x0);
+        fVar6 = (pJVar1->fields).desiredDeltaX;
+        pCVar15 = (pJVar1->fields).m_HorizontalVirtualAxis;
+        (pJVar1->fields).currentDeltaX = fVar6;
+        if (pCVar15 != (CrossPlatformInputManager_VirtualAxis *)0x0) {
+          (pCVar15->fields).m_Value = fVar6;
+          pCVar15 = (pJVar1->fields).m_VerticalVirtualAxis;
+          if (pCVar15 != (CrossPlatformInputManager_VirtualAxis *)0x0) {
+            (pCVar15->fields).m_Value = fVar10 * fVar5;
             return;
           }
         }
@@ -237,8 +248,8 @@ void Assembly-CSharp.dll::JoystickVehicleThirdPerson::JoystickVehicleThirdPerson
     }
   }
   func_?();
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 
@@ -254,12 +265,14 @@ void Assembly-CSharp.dll::JoystickVehicleThirdPerson::JoystickVehicleThirdPerson
     func_?(&StringLiteral_Horizontal);
     cRam_? = '\x01';
   }
+  ppSVar1 = &(this->fields).horizontalAxisName;
   (this->fields).baseMovementRangeX = 0x28;
   (this->fields).baseMovementRangeY = 0x28;
-  (this->fields).horizontalAxisName = StringLiteral_Horizontal;
-  func_?(&(this->fields).horizontalAxisName,StringLiteral_Horizontal);
-  (this->fields).verticalAxisName = StringLiteral_Vertical;
-  func_?(&(this->fields).verticalAxisName,StringLiteral_Vertical);
+  *ppSVar1 = StringLiteral_Horizontal;
+  func_?(ppSVar1,StringLiteral_Horizontal);
+  ppSVar1 = &(this->fields).verticalAxisName;
+  *ppSVar1 = StringLiteral_Vertical;
+  func_?(ppSVar1,StringLiteral_Vertical);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

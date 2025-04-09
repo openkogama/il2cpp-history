@@ -155,10 +155,11 @@ code_?:
     pOVar3 = (Object *)(*pcVar6)();
     return pOVar3;
   }
-  if (*(int *)(iVar5 + 0xc) != 0) {
-    if (*(int *)(iVar5 + 0xc) < 2) {
-      if (*(int *)(iVar5 + 0xc) != 0) {
-        uVar7 = *(undefined4 *)(iVar5 + 0x10);
+  iVar7 = *(int *)(iVar5 + 0xc);
+  if (iVar7 != 0) {
+    if (iVar7 < 2) {
+      if (iVar7 != 0) {
+        uVar8 = *(undefined4 *)(iVar5 + 0x10);
         pIVar1 = method->klass;
         if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
           pIVar1 = (Il2CppClass *)func_?();
@@ -178,7 +179,7 @@ code_?:
         if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
           pIVar1 = (Il2CppClass *)func_?();
         }
-        *(undefined4 *)((int)pIVar1->static_fields + 4) = uVar7;
+        *(undefined4 *)((int)pIVar1->static_fields + 4) = uVar8;
         pIVar1 = method->klass;
         if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
           pIVar1 = (Il2CppClass *)func_?();
@@ -202,13 +203,13 @@ code_?:
       func_?();
     }
     bVar2 = 0x10;
-    bVar8 = System.dll::System::Collections::Generic::SortedList`2[TKey,TValue]+ValueList[Unity::
+    bVar9 = System.dll::System::Collections::Generic::SortedList`2[TKey,TValue]+ValueList[Unity::
             IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
             __Il2CppFullySharedGenericType]::
             SortedList_2_TKey_TValue_ValueList_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__System_Collections_ICollection_get_IsSynchronized
                       ((SortedList_2_TKey_TValue_ValueList_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
                         *)0x0,method_00);
-    if (bVar8 != 0) {
+    if (bVar9 != 0) {
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         method_00 = (MethodInfo *)&UNK_?;
         func_?();

@@ -25,10 +25,11 @@ void Assembly-CSharp.dll::MVToggleBox::MVToggleBox_Initialize(MVToggleBox *this,
   pIVar1 = LogicClientsideFactory::LogicClientsideFactory_CreateStateChangeInputSignalReceiver
                      ((MVWorldObject *)this,0,(Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,
                       (Action_2_LogicInputState_LogicObjectManager_ *)this_00,(MethodInfo *)0x0);
-  (this->fields)._InputSignalReceiver_k__BackingField = pIVar1;
-  func_?(&(this->fields)._InputSignalReceiver_k__BackingField,pIVar1);
+  ppIVar2 = &(this->fields)._InputSignalReceiver_k__BackingField;
+  *ppIVar2 = pIVar1;
+  func_?(ppIVar2,pIVar1);
   woId = (this->fields)._._._.id;
-  pOStack2 = TypeInfo__OutputSignalTransmitter;
+  pOStack3 = TypeInfo__OutputSignalTransmitter;
   this_01 = (WorldObjectClientRef_1_System_Object_ *)func_?();
   WorldObjectClientRef`1[System::Object]::WorldObjectClientRef_1_System_Object___ctor
             (this_01,woId,(MethodInfo *)0x0);
@@ -50,7 +51,7 @@ void Assembly-CSharp.dll::MVToggleBox::MVToggleBox_InputStateUpdateCallback
 code_?:
     if (logicInputState == LogicInputState__Enum_FromColdToHot) {
       bVar1 = MVToggleBox_get_Toggled(this,(MethodInfo *)0x0);
-      MVToggleBox_set_Toggled(this,bVar1 ^ 1,(MethodInfo *)0x0);
+      MVToggleBox_set_Toggled(this,bVar1 == 0,(MethodInfo *)0x0);
     }
     pOVar2 = (this->fields).outputSignalTransmitter;
     bVar1 = MVToggleBox_get_Toggled(this,(MethodInfo *)0x0);

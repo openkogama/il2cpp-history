@@ -44,43 +44,87 @@ void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarHeadRotationHandlerRemot
   }
   else {
     pAVar5 = (lookDirectionHandler->fields).OnRotationChange;
-    this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+    ppAVar6 = &(lookDirectionHandler->fields).OnRotationChange;
+    pNVar7 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
-              (this_00,(Object *)this,
+              (pNVar7,(Object *)this,
                MethodInfo__AvatarLimbManager__AvatarHeadRotationHandler__ResetIdleTimer__,
                (MethodInfo *)0x0);
     pAVar5 = (Action *)
              mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pAVar5,(Delegate *)this_00,(MethodInfo *)0x0);
+                       ((Delegate *)pAVar5,(Delegate *)pNVar7,(MethodInfo *)0x0);
     if (pAVar5 == (Action *)0x0) {
-      (lookDirectionHandler->fields).OnRotationChange = (Action *)0x0;
+      *ppAVar6 = (Action *)0x0;
 code_?:
       func_?();
-      AvatarLimbManager+AvatarHeadRotationHandler::
-      AvatarLimbManager_AvatarHeadRotationHandler_Initialize
-                ((AvatarLimbManager_AvatarHeadRotationHandler *)lookDirectionHandler,
-                 (AvatarLimbManager *)0x0,
-                 (AvatarLimbManager_LimbRotator *)&(lookDirectionHandler->fields).OnRotationChange,
-                 lookDirectionHandler,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        func_?();
+        func_?();
+        cRam_? = '\x01';
+      }
+      in_stack_8[1].monitor = in_stack_9;
+      func_?();
+      if (in_stack_10 == 0) {
+        func_?();
+        pAStack11 = extraout_EDX;
+      }
+      else {
+        pDVar12 = *(Delegate **)(in_stack_10 + 8);
+        pNVar7 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+        NavMesh_OnNavMeshPreUpdate__ctor
+                  (pNVar7,in_stack_8,
+                   MethodInfo__AvatarLimbManager__AvatarHeadRotationHandler__ResetIdleTimer__,
+                   (MethodInfo *)0x0);
+        pDVar12 = mscorlib.dll::System::Delegate::Delegate_Combine
+                           (pDVar12,(Delegate *)pNVar7,(MethodInfo *)0x0);
+        if (pDVar12 == (Delegate *)0x0) {
+          pAStack11 = (Action__Class *)0x0;
+          *(undefined4 *)(in_stack_10 + 8) = 0;
+          func_?();
+          return;
+        }
+        pDVar13 = (Delegate *)0x0;
+        if ((Action__Class *)pDVar12->klass == TypeInfo__System__Action) {
+          pDVar13 = pDVar12;
+        }
+        pAStack11 = TypeInfo__System__Action;
+        if (pDVar13 != (Delegate *)0x0) {
+          *(undefined4 *)(in_stack_10 + 8) = pDVar13;
+          pDVar13 = (Delegate *)0x0;
+          if ((Action__Class *)pDVar12->klass == TypeInfo__System__Action) {
+            pDVar13 = pDVar12;
+          }
+          pAStack11 = TypeInfo__System__Action;
+          if (pDVar13 != (Delegate *)0x0) {
+            pAStack11 = (Action__Class *)pDVar13;
+            func_?();
+            return;
+          }
+        }
+      }
+      func_?();
+      pcVar14 = (code *)swi(3);
+      (*pcVar14)();
       return;
     }
-    pAVar6 = (Action *)0x0;
+    pAVar15 = (Action *)0x0;
     if (pAVar5->klass == TypeInfo__System__Action) {
-      pAVar6 = pAVar5;
+      pAVar15 = pAVar5;
     }
-    if (pAVar6 != (Action *)0x0) {
-      (lookDirectionHandler->fields).OnRotationChange = pAVar6;
-      pAVar6 = (Action *)0x0;
+    if (pAVar15 != (Action *)0x0) {
+      *ppAVar6 = pAVar15;
+      pAVar15 = (Action *)0x0;
       if (pAVar5->klass == TypeInfo__System__Action) {
-        pAVar6 = pAVar5;
+        pAVar15 = pAVar5;
       }
-      if (pAVar6 != (Action *)0x0) goto code_?;
+      if (pAVar15 != (Action *)0x0) goto code_?;
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 

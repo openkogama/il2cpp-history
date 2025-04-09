@@ -163,23 +163,23 @@ void Assembly-CSharp.dll::ItemPurchasePopup::ItemPurchasePopup_Initialize_1
                (ItemPurchasePopup *this,RawImage *image,ShopItem *shopItem,MethodInfo *method)
 
 {
-  (this->fields).item = shopItem;
-  func_?(&(this->fields).item,shopItem);
-  pSVar1 = (this->fields).item;
-  if (pSVar1 != (ShopItem *)0x0) {
-    nameText = (pSVar1->fields).name;
+  ppSVar1 = &(this->fields).item;
+  *ppSVar1 = shopItem;
+  func_?(ppSVar1,shopItem);
+  pSVar2 = *ppSVar1;
+  if (pSVar2 != (ShopItem *)0x0) {
+    nameText = (pSVar2->fields).name;
     priceGold = mscorlib.dll::System::Int32::Int32_ToString
-                          ((Int32 *)&(pSVar1->fields).priceGold,(MethodInfo *)0x0);
-    pSVar1 = (this->fields).item;
-    if (pSVar1 != (ShopItem *)0x0) {
+                          ((Int32 *)&(pSVar2->fields).priceGold,(MethodInfo *)0x0);
+    if (*ppSVar1 != (ShopItem *)0x0) {
       ItemPurchasePopup_Initialize
-                (this,image,nameText,priceGold,(pSVar1->fields).description,(MethodInfo *)0x0);
+                (this,image,nameText,priceGold,((*ppSVar1)->fields).description,(MethodInfo *)0x0);
       return;
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -200,32 +200,36 @@ void Assembly-CSharp.dll::ItemPurchasePopup::ItemPurchasePopup_Initialize_2
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (invItem != (InventoryItem *)0x0) {
     (value->fields).itemID = (invItem->fields).itemID;
+    ppSVar1 = &(value->fields).name;
     (value->fields).itemCategoryID = (invItem->fields).itemCategoryID;
     (value->fields).itemTypeID = (invItem->fields).itemTypeID;
-    pSVar1 = (invItem->fields).name;
-    (value->fields).name = pSVar1;
-    func_?(&(value->fields).name,pSVar1);
-    pSVar1 = (invItem->fields).description;
-    (value->fields).description = pSVar1;
-    func_?(&(value->fields).description,pSVar1);
-    pBVar2 = (invItem->fields).data;
-    (value->fields).data = pBVar2;
-    func_?(&(value->fields).data,pBVar2);
+    pSVar2 = (invItem->fields).name;
+    *ppSVar1 = pSVar2;
+    func_?(ppSVar1,pSVar2);
+    pSVar2 = (invItem->fields).description;
+    ppSVar1 = &(value->fields).description;
+    *ppSVar1 = pSVar2;
+    func_?(ppSVar1,pSVar2);
+    pBVar3 = (invItem->fields).data;
+    ppBVar4 = &(value->fields).data;
+    *ppBVar4 = pBVar3;
+    func_?(ppBVar4,pBVar3);
+    this_00 = &(invItem->fields).priceGold;
     (value->fields).resellable = (invItem->fields).resellable;
-    (value->fields).priceGold = (invItem->fields).priceGold;
+    (value->fields).priceGold = *this_00;
     (value->fields).slotPosition = (invItem->fields).slotPosition;
-    (this->fields).item = value;
-    func_?(&(this->fields).item,value);
-    pSVar1 = (invItem->fields).name;
-    priceGold = mscorlib.dll::System::Int32::Int32_ToString
-                          ((Int32 *)&(invItem->fields).priceGold,(MethodInfo *)0x0);
+    ppSVar5 = &(this->fields).item;
+    *ppSVar5 = value;
+    func_?(ppSVar5,value);
+    pSVar2 = (invItem->fields).name;
+    priceGold = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)this_00,(MethodInfo *)0x0);
     ItemPurchasePopup_Initialize
-              (this,image,pSVar1,priceGold,(invItem->fields).description,(MethodInfo *)0x0);
+              (this,image,pSVar2,priceGold,(invItem->fields).description,(MethodInfo *)0x0);
     return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -279,7 +283,10 @@ void Assembly-CSharp.dll::ItemPurchasePopup::ItemPurchasePopup_OnPurchaseClicked
       if (bVar2 == 0) {
         pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)this,(MethodInfo *)0x0);
-        pEVar4 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
+        pEVar4 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+                 func_?(
+                                TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IPurchaseClientShopItem>
+                                );
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
                   ((UnityAction_2_System_Object_System_Object_ *)pEVar4,(Object *)this,
@@ -295,7 +302,7 @@ void Assembly-CSharp.dll::ItemPurchasePopup::ItemPurchasePopup_OnPurchaseClicked
                   );
         return;
       }
-      value = (Object *)func_?();
+      value = (Object *)func_?(TypeInfo__ItemPurchasePopup____c__DisplayClass10_0);
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                 (value,ExceptionArgument__Enum_obj,method_00);
       original = (this->fields).confirmationPopup;
@@ -308,8 +315,9 @@ void Assembly-CSharp.dll::ItemPurchasePopup::ItemPurchasePopup_OnPurchaseClicked
                           ItemPurchaseConfirmationPopup_MethodInfo__UnityEngine__Object__Instantiate<ItemPurchaseConfirmationPopup>_ItemPurchaseConfirmationPopup_
                          );
       if (value != (Object *)0x0) {
-        value[1].klass = pOVar5;
-        func_?(value + 1,pOVar5);
+        pOVar6 = value + 1;
+        pOVar6->klass = pOVar5;
+        func_?(pOVar6,pOVar5);
         pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)this,(MethodInfo *)0x0);
         pEVar4 = (ExecuteEvents_EventFunction_1_System_Object_ *)
@@ -329,23 +337,24 @@ void Assembly-CSharp.dll::ItemPurchasePopup::ItemPurchasePopup_OnPurchaseClicked
                   (pGVar3,(BaseEventData *)0x0,pEVar4,
                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                   );
-        pOVar5 = value[1].klass;
+        pOVar5 = pOVar6->klass;
         this_02 = (UnityAction_1_System_Int32Enum_ *)func_?();
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
         UnityAction_1_System_Int32Enum___ctor
                   (this_02,(Object *)this,MethodInfo__ItemPurchasePopup__ConfirmationCallback_bool_,
                    (MethodInfo *)0x0);
         if (pOVar5 != (Object__Class *)0x0) {
-          (pOVar5->_0).byval_arg.data.typeHandle = (Il2CppMetadataTypeHandle)this_02;
-          func_?(&(pOVar5->_0).byval_arg,this_02);
+          pIVar7 = &(pOVar5->_0).byval_arg;
+          (pIVar7->data).typeHandle = (Il2CppMetadataTypeHandle)this_02;
+          func_?(pIVar7,this_02);
           return;
         }
       }
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -370,10 +379,9 @@ void Assembly-CSharp.dll::ItemPurchasePopup::ItemPurchasePopup_PurchaseItem
       do {
         if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
             (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IPurchaseClientShopItem) {
-          pIVar2 = x->klass;
           iVar5 = pIVar2->interfaceOffsets[uVar3].offset;
-          (*(code *)(&pIVar2->vtable)[iVar5].PurchaseItem.method)
-                    (x,pSVar1,(&pIVar2[1]._0.image)[iVar5 * 2]);
+          (*(code *)(&x->klass->vtable)[iVar5].PurchaseItem.method)
+                    (x,pSVar1,(&x->klass[1]._0.image)[iVar5 * 2]);
           return;
         }
         uVar3 = uVar3 + 1;

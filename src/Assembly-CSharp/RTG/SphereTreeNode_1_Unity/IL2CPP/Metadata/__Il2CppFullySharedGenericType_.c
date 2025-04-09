@@ -22,30 +22,27 @@ Assembly-CSharp.dll::RTG::SphereTreeNode`1[Unity::IL2CPP::Metadata::__Il2CppFull
               (iVar2 + 0x10);
     if (node == (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0)
     goto code_?;
-    puVar4 = (undefined8 *)
-             (*(method->klass->rgctx_data[4].method)->methodPointer)
-                       (&uStack_5,node,method->klass->rgctx_data[4].rgctxDataDummy);
-    uStack_6 = *puVar4;
-    fStack_7 = *(float *)(puVar4 + 1);
+    pMVar4 = method->klass->rgctx_data[4].method;
+    puVar5 = (undefined8 *)(*pMVar4->methodPointer)(&uStack_6,node,pMVar4);
+    uStack_7 = *puVar5;
+    fStack_8 = *(float *)(puVar5 + 1);
     piVar1 = (int *)func_?(this,method->klass->rgctx_data->klass->fields + 5);
     iVar2 = *piVar1;
     if (iVar2 == 0) goto code_?;
     if (*(int *)(iVar2 + 0xc) != 0) {
       if (*(int *)(iVar2 + 0x10) == 0) goto code_?;
-      puVar4 = (undefined8 *)
-               (*(method->klass->rgctx_data[4].method)->methodPointer)
-                         (&uStack_5,*(int *)(iVar2 + 0x10),
-                          method->klass->rgctx_data[4].rgctxDataDummy);
-      uVar8 = *puVar4;
-      fStack_9 = *(float *)(puVar4 + 1);
-      uStack_10._0_4_ = (float)uVar8;
-      uStack_10._4_4_ = (float)((ulonglong)uVar8 >> 0x20);
-      fStack_11 = fStack_7 - fStack_9;
-      uStack_6 = CONCAT44(uStack_6._4_4_ - uStack_10._4_4_,(float)uStack_6 - (float)uStack_10);
-      uStack_10 = uVar8;
-      fStack_7 = fStack_11;
-      fVar12 = (float10)func_?(&uStack_6,0);
-      fStack_13 = (float)fVar12;
+      pMVar4 = method->klass->rgctx_data[4].method;
+      puVar5 = (undefined8 *)(*pMVar4->methodPointer)(&uStack_6,*(int *)(iVar2 + 0x10),pMVar4);
+      uVar9 = *puVar5;
+      fStack_10 = *(float *)(puVar5 + 1);
+      uStack_11._0_4_ = (float)uVar9;
+      uStack_11._4_4_ = (float)((ulonglong)uVar9 >> 0x20);
+      fStack_12 = fStack_8 - fStack_10;
+      uStack_7 = CONCAT44(uStack_7._4_4_ - uStack_11._4_4_,(float)uStack_7 - (float)uStack_11);
+      uStack_11 = uVar9;
+      fStack_8 = fStack_12;
+      fVar13 = (float10)func_?(&uStack_7,0);
+      fStack_14 = (float)fVar13;
       piVar1 = (int *)func_?(this,method->klass->rgctx_data->klass->fields + 5);
       iVar2 = *piVar1;
       if (iVar2 == 0) goto code_?;
@@ -53,31 +50,28 @@ Assembly-CSharp.dll::RTG::SphereTreeNode`1[Unity::IL2CPP::Metadata::__Il2CppFull
         if (*(int *)(iVar2 + 0x14) == 0) {
           return pSVar3;
         }
-        puVar4 = (undefined8 *)
-                 (*(method->klass->rgctx_data[4].method)->methodPointer)
-                           (&uStack_5,node,method->klass->rgctx_data[4].rgctxDataDummy);
-        uStack_10 = *puVar4;
-        fStack_9 = *(float *)(puVar4 + 1);
+        pMVar4 = method->klass->rgctx_data[4].method;
+        puVar5 = (undefined8 *)(*pMVar4->methodPointer)(&uStack_6,node,pMVar4);
+        uStack_11 = *puVar5;
+        fStack_10 = *(float *)(puVar5 + 1);
         piVar1 = (int *)func_?(this,method->klass->rgctx_data->klass->fields + 5);
         iVar2 = *piVar1;
         if (iVar2 == 0) goto code_?;
         if (1 < *(uint *)(iVar2 + 0xc)) {
           if (*(int *)(iVar2 + 0x14) == 0) goto code_?;
-          puVar4 = (undefined8 *)
-                   (*(method->klass->rgctx_data[4].method)->methodPointer)
-                             (auStack_14,*(int *)(iVar2 + 0x14),
-                              method->klass->rgctx_data[4].rgctxDataDummy);
-          uVar8 = *puVar4;
-          uStack_5._0_4_ = (float)uVar8;
-          uStack_5._4_4_ = (float)((ulonglong)uVar8 >> 0x20);
-          fStack_11 = fStack_9 - *(float *)(puVar4 + 1);
-          uStack_6 = CONCAT44(uStack_10._4_4_ - uStack_5._4_4_,(float)uStack_10 - (float)uStack_5
+          pMVar4 = method->klass->rgctx_data[4].method;
+          puVar5 = (undefined8 *)(*pMVar4->methodPointer)(auStack_15,*(int *)(iVar2 + 0x14),pMVar4);
+          uVar9 = *puVar5;
+          uStack_6._0_4_ = (float)uVar9;
+          uStack_6._4_4_ = (float)((ulonglong)uVar9 >> 0x20);
+          fStack_12 = fStack_10 - *(float *)(puVar5 + 1);
+          uStack_7 = CONCAT44(uStack_11._4_4_ - uStack_6._4_4_,(float)uStack_11 - (float)uStack_6
                               );
-          uStack_5 = uVar8;
-          fStack_7 = fStack_11;
-          fVar12 = (float10)func_?(&uStack_6,0);
-          fStack_15 = (float)fVar12;
-          if (fStack_13 <= fStack_15) {
+          uStack_6 = uVar9;
+          fStack_8 = fStack_12;
+          fVar13 = (float10)func_?(&uStack_7,0);
+          fStack_16 = (float)fVar13;
+          if (fStack_14 <= fStack_16) {
             return pSVar3;
           }
           piVar1 = (int *)func_?(this,method->klass->rgctx_data->klass->fields + 5);
@@ -94,8 +88,8 @@ Assembly-CSharp.dll::RTG::SphereTreeNode`1[Unity::IL2CPP::Metadata::__Il2CppFull
   func_?();
 code_?:
   func_?();
-  pcVar16 = (code *)swi(3);
-  pSVar3 = (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)(*pcVar16)();
+  pcVar17 = (code *)swi(3);
+  pSVar3 = (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)(*pcVar17)();
   return pSVar3;
 }
 
@@ -210,43 +204,42 @@ void Assembly-CSharp.dll::RTG::SphereTreeNode`1[Unity::IL2CPP::Metadata::
                MethodInfo *method)
 
 {
-  iVar1 = (*(method->klass->rgctx_data[6].method)->methodPointer)
-                    (this,method->klass->rgctx_data[6].rgctxDataDummy);
-  if (iVar1 != 0) {
+  pMVar1 = method->klass->rgctx_data[6].method;
+  iVar2 = (*pMVar1->methodPointer)(this,pMVar1);
+  if (iVar2 != 0) {
     for (; this != (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0;
         this = (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-               (*(method->klass->rgctx_data[9].method)->methodPointer)
-                         (this,method->klass->rgctx_data[9].rgctxDataDummy,pSVar2,fVar3,pMVar4)) {
-      piVar5 = (int *)func_?(this,method->klass->rgctx_data->klass->fields + 5);
-      iVar1 = *piVar5;
-      if (iVar1 == 0) goto code_?;
-      if (*(int *)(iVar1 + 0xc) == 0) goto code_?;
-      iVar1 = *(int *)(iVar1 + 0x10);
-      if (iVar1 == 0) {
+               (*pMVar3->methodPointer)(this,pMVar3,pSVar4,fVar5,pMVar1)) {
+      piVar6 = (int *)func_?(this,method->klass->rgctx_data->klass->fields + 5);
+      iVar2 = *piVar6;
+      if (iVar2 == 0) goto code_?;
+      if (*(int *)(iVar2 + 0xc) == 0) goto code_?;
+      iVar2 = *(int *)(iVar2 + 0x10);
+      if (iVar2 == 0) {
 code_?:
         func_?();
 code_?:
         func_?();
-        pcVar6 = (code *)swi(3);
-        (*pcVar6)();
+        pcVar7 = (code *)swi(3);
+        (*pcVar7)();
         return;
       }
-      pvVar7 = method->klass->rgctx_data[4].rgctxDataDummy;
+      pMVar1 = method->klass->rgctx_data[4].method;
       puVar8 = auStack_9;
-      puVar10 = (undefined8 *)(*(method->klass->rgctx_data[4].method)->methodPointer)();
+      puVar10 = (undefined8 *)(*pMVar1->methodPointer)();
       uStack_11 = *puVar10;
       fStack_12 = *(float *)(puVar10 + 1);
-      piVar5 = (int *)func_?(this,method->klass->rgctx_data->klass->fields + 5,puVar8,iVar1
-                                      ,pvVar7);
-      iVar1 = *piVar5;
-      if (iVar1 == 0) goto code_?;
-      if (*(uint *)(iVar1 + 0xc) < 2) goto code_?;
-      if (*(int *)(iVar1 + 0x14) != 0) {
-        piVar5 = (int *)func_?(this,method->klass->rgctx_data->klass->fields + 5);
-        iVar1 = *piVar5;
-        if (iVar1 != 0) {
-          if (*(uint *)(iVar1 + 0xc) < 2) goto code_?;
-          if (*(int *)(iVar1 + 0x14) != 0) {
+      piVar6 = (int *)func_?(this,method->klass->rgctx_data->klass->fields + 5,puVar8,iVar2
+                                      ,pMVar1);
+      iVar2 = *piVar6;
+      if (iVar2 == 0) goto code_?;
+      if (*(uint *)(iVar2 + 0xc) < 2) goto code_?;
+      if (*(int *)(iVar2 + 0x14) != 0) {
+        piVar6 = (int *)func_?(this,method->klass->rgctx_data->klass->fields + 5);
+        iVar2 = *piVar6;
+        if (iVar2 != 0) {
+          if (*(uint *)(iVar2 + 0xc) < 2) goto code_?;
+          if (*(int *)(iVar2 + 0x14) != 0) {
             puVar10 = (undefined8 *)(*(method->klass->rgctx_data[4].method)->methodPointer)();
             uVar13 = *puVar10;
             fStack_14 = *(float *)(puVar10 + 1);
@@ -265,28 +258,26 @@ code_?:
 code_?:
       if (this == (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0)
       goto code_?;
-      iVar1 = (*(method->klass->rgctx_data[6].method)->methodPointer)
-                        (this,method->klass->rgctx_data[6].rgctxDataDummy);
-      fVar3 = _UNK_? / (float)iVar1;
-      fStack_17 = fStack_12 * fVar3;
-      pMVar4 = method->klass->rgctx_data[7].method;
-      (*pMVar4->methodPointer)
-                (this,CONCAT44(uStack_11._4_4_ * fVar3,(float)uStack_11 * fVar3),fStack_17,pMVar4);
-      piVar5 = (int *)func_?(this,method->klass->rgctx_data->klass->fields + 5);
-      iVar1 = *piVar5;
-      if (iVar1 == 0) goto code_?;
-      if (*(int *)(iVar1 + 0xc) == 0) goto code_?;
-      iVar1 = *(int *)(iVar1 + 0x10);
-      if (iVar1 == 0) goto code_?;
-      pvVar7 = method->klass->rgctx_data[4].rgctxDataDummy;
+      pMVar1 = method->klass->rgctx_data[6].method;
+      iVar2 = (*pMVar1->methodPointer)(this,pMVar1);
+      fVar5 = _UNK_? / (float)iVar2;
+      fStack_17 = fStack_12 * fVar5;
+      pMVar1 = method->klass->rgctx_data[7].method;
+      (*pMVar1->methodPointer)
+                (this,CONCAT44(uStack_11._4_4_ * fVar5,(float)uStack_11 * fVar5),fStack_17,pMVar1);
+      piVar6 = (int *)func_?(this,method->klass->rgctx_data->klass->fields + 5);
+      iVar2 = *piVar6;
+      if (iVar2 == 0) goto code_?;
+      if (*(int *)(iVar2 + 0xc) == 0) goto code_?;
+      iVar2 = *(int *)(iVar2 + 0x10);
+      if (iVar2 == 0) goto code_?;
+      pMVar1 = method->klass->rgctx_data[4].method;
       puVar8 = auStack_18;
-      puVar10 = (undefined8 *)(*(method->klass->rgctx_data[4].method)->methodPointer)();
+      puVar10 = (undefined8 *)(*pMVar1->methodPointer)();
       uStack_19 = *puVar10;
       fStack_20 = *(float *)(puVar10 + 1);
-      puVar10 = (undefined8 *)
-               (*(method->klass->rgctx_data[4].method)->methodPointer)
-                         (auStack_21,this,method->klass->rgctx_data[4].rgctxDataDummy,puVar8,iVar1,
-                          pvVar7);
+      pMVar3 = method->klass->rgctx_data[4].method;
+      puVar10 = (undefined8 *)(*pMVar3->methodPointer)(auStack_21,this,pMVar3,puVar8,iVar2,pMVar1);
       uVar13 = *puVar10;
       fStack_22 = *(float *)(puVar10 + 1);
       uStack_23._0_4_ = (float)uVar13;
@@ -297,35 +288,33 @@ code_?:
       fStack_26 = fStack_24;
       fVar27 = (float10)func_?(&uStack_25,0);
       pIStack_28 = (Il2CppMethodPointer)(float)fVar27;
-      piVar5 = (int *)func_?(this,method->klass->rgctx_data->klass->fields + 5);
-      iVar1 = *piVar5;
-      if (iVar1 == 0) goto code_?;
-      if (*(int *)(iVar1 + 0xc) == 0) goto code_?;
-      if (*(int *)(iVar1 + 0x10) == 0) goto code_?;
-      fVar27 = (float10)(*(method->klass->rgctx_data[5].method)->methodPointer)
-                                 (*(int *)(iVar1 + 0x10),method->klass->rgctx_data[5].rgctxDataDummy
-                                 );
-      fVar3 = (float)(fVar27 + (float10)(float)pIStack_28);
-      piVar5 = (int *)func_?(this);
-      iVar1 = *piVar5;
-      if (iVar1 == 0) goto code_?;
-      if (*(uint *)(iVar1 + 0xc) < 2) goto code_?;
-      if (*(int *)(iVar1 + 0x14) != 0) {
-        piVar5 = (int *)func_?(this,method->klass->rgctx_data->klass->fields + 5);
-        iVar1 = *piVar5;
-        if (iVar1 != 0) {
-          if (*(uint *)(iVar1 + 0xc) < 2) goto code_?;
-          iVar1 = *(int *)(iVar1 + 0x14);
-          if (iVar1 != 0) {
-            pvVar7 = method->klass->rgctx_data[4].rgctxDataDummy;
+      piVar6 = (int *)func_?(this,method->klass->rgctx_data->klass->fields + 5);
+      iVar2 = *piVar6;
+      if (iVar2 == 0) goto code_?;
+      if (*(int *)(iVar2 + 0xc) == 0) goto code_?;
+      if (*(int *)(iVar2 + 0x10) == 0) goto code_?;
+      pMVar1 = method->klass->rgctx_data[5].method;
+      fVar27 = (float10)(*pMVar1->methodPointer)(*(int *)(iVar2 + 0x10),pMVar1);
+      fVar5 = (float)(fVar27 + (float10)(float)pIStack_28);
+      piVar6 = (int *)func_?(this);
+      iVar2 = *piVar6;
+      if (iVar2 == 0) goto code_?;
+      if (*(uint *)(iVar2 + 0xc) < 2) goto code_?;
+      if (*(int *)(iVar2 + 0x14) != 0) {
+        piVar6 = (int *)func_?(this,method->klass->rgctx_data->klass->fields + 5);
+        iVar2 = *piVar6;
+        if (iVar2 != 0) {
+          if (*(uint *)(iVar2 + 0xc) < 2) goto code_?;
+          iVar2 = *(int *)(iVar2 + 0x14);
+          if (iVar2 != 0) {
+            pMVar1 = method->klass->rgctx_data[4].method;
             puVar8 = auStack_29;
-            puVar10 = (undefined8 *)(*(method->klass->rgctx_data[4].method)->methodPointer)();
+            puVar10 = (undefined8 *)(*pMVar1->methodPointer)();
             uStack_30 = *puVar10;
             fStack_31 = *(float *)(puVar10 + 1);
+            pMVar3 = method->klass->rgctx_data[4].method;
             puVar10 = (undefined8 *)
-                     (*(method->klass->rgctx_data[4].method)->methodPointer)
-                               (auStack_32,this,method->klass->rgctx_data[4].rgctxDataDummy,puVar8,
-                                iVar1,pvVar7);
+                     (*pMVar3->methodPointer)(auStack_32,this,pMVar3,puVar8,iVar2,pMVar1);
             uVar13 = *puVar10;
             fStack_33 = *(float *)(puVar10 + 1);
             uStack_34._0_4_ = (float)uVar13;
@@ -337,17 +326,17 @@ code_?:
             fStack_26 = fStack_35;
             fVar27 = (float10)func_?(&uStack_25,0);
             fStack_36 = (float)fVar27;
-            piVar5 = (int *)func_?(this,method->klass->rgctx_data->klass->fields + 5);
-            iVar1 = *piVar5;
-            if (iVar1 != 0) {
-              if (*(uint *)(iVar1 + 0xc) < 2) goto code_?;
-              if (*(int *)(iVar1 + 0x14) != 0) {
-                pIStack_28 = (method->klass->rgctx_data[5].method)->methodPointer;
-                fVar27 = (float10)(*pIStack_28)(*(int *)(iVar1 + 0x14),
-                                              method->klass->rgctx_data[5].rgctxDataDummy);
+            piVar6 = (int *)func_?(this,method->klass->rgctx_data->klass->fields + 5);
+            iVar2 = *piVar6;
+            if (iVar2 != 0) {
+              if (*(uint *)(iVar2 + 0xc) < 2) goto code_?;
+              if (*(int *)(iVar2 + 0x14) != 0) {
+                pMVar1 = method->klass->rgctx_data[5].method;
+                pIStack_28 = pMVar1->methodPointer;
+                fVar27 = (float10)(*pIStack_28)(*(int *)(iVar2 + 0x14),pMVar1);
                 fStack_36 = (float)(fVar27 + (float10)fStack_36);
-                if (fVar3 < fStack_36) {
-                  fVar3 = fStack_36;
+                if (fVar5 < fStack_36) {
+                  fVar5 = fStack_36;
                 }
                 goto code_?;
               }
@@ -357,9 +346,10 @@ code_?:
         goto code_?;
       }
 code_?:
-      pMVar4 = method->klass->rgctx_data[8].method;
-      pSVar2 = this;
-      (*pMVar4->methodPointer)();
+      pMVar1 = method->klass->rgctx_data[8].method;
+      pSVar4 = this;
+      (*pMVar1->methodPointer)();
+      pMVar3 = method->klass->rgctx_data[9].method;
     }
   }
   return;
@@ -379,37 +369,36 @@ bool Assembly-CSharp.dll::RTG::SphereTreeNode`1[Unity::IL2CPP::Metadata::
   if (*piVar1 == 0) {
     return 0;
   }
-  puVar2 = (undefined8 *)
-           (*(method->klass->rgctx_data[4].method)->methodPointer)
-                     (&uStack_3,this,method->klass->rgctx_data[4].rgctxDataDummy);
-  uStack_4 = *puVar2;
-  fStack_5 = *(float *)(puVar2 + 1);
+  pMVar2 = method->klass->rgctx_data[4].method;
+  puVar3 = (undefined8 *)(*pMVar2->methodPointer)(&uStack_4,this,pMVar2);
+  uStack_5 = *puVar3;
+  fStack_6 = *(float *)(puVar3 + 1);
   piVar1 = (int *)func_?(this,method->klass->rgctx_data->klass->fields + 4);
   if (*piVar1 != 0) {
-    puVar2 = (undefined8 *)
-             (*(method->klass->rgctx_data[4].method)->methodPointer)
-                       (auStack_6,*piVar1,method->klass->rgctx_data[4].rgctxDataDummy);
-    uStack_3._0_4_ = (float)*puVar2;
-    uStack_3._4_4_ = (float)((ulonglong)*puVar2 >> 0x20);
-    fStack_7 = fStack_5 - *(float *)(puVar2 + 1);
-    uStack_3 = CONCAT44(uStack_4._4_4_ - uStack_3._4_4_,(float)uStack_4 - (float)uStack_3);
-    fStack_5 = fStack_7;
-    fVar8 = (float10)func_?(&uStack_3,0);
-    fStack_9 = (float)fVar8;
-    fVar8 = (float10)(*(method->klass->rgctx_data[5].method)->methodPointer)
-                               (this,method->klass->rgctx_data[5].rgctxDataDummy);
+    pMVar2 = method->klass->rgctx_data[4].method;
+    puVar3 = (undefined8 *)(*pMVar2->methodPointer)(auStack_7,*piVar1,pMVar2);
+    uStack_4._0_4_ = (float)*puVar3;
+    uStack_4._4_4_ = (float)((ulonglong)*puVar3 >> 0x20);
+    fStack_8 = fStack_6 - *(float *)(puVar3 + 1);
+    uStack_4 = CONCAT44(uStack_5._4_4_ - uStack_4._4_4_,(float)uStack_5 - (float)uStack_4);
+    fStack_6 = fStack_8;
+    fVar9 = (float10)func_?(&uStack_4,0);
+    fStack_10 = (float)fVar9;
+    pMVar2 = method->klass->rgctx_data[5].method;
+    fVar9 = (float10)(*pMVar2->methodPointer)(this,pMVar2);
     piVar1 = (int *)func_?(this,method->klass->rgctx_data->klass->fields + 4);
     if (*piVar1 != 0) {
-      fVar10 = (float)fVar8 + fStack_9;
-      pIStack_11 = (method->klass->rgctx_data[5].method)->methodPointer;
-      fVar8 = (float10)(*pIStack_11)(*piVar1,method->klass->rgctx_data[5].rgctxDataDummy);
-      return (float)fVar8 < fVar10;
+      fVar11 = (float)fVar9 + fStack_10;
+      pMVar2 = method->klass->rgctx_data[5].method;
+      pIStack_12 = pMVar2->methodPointer;
+      fVar9 = (float10)(*pIStack_12)(*piVar1,pMVar2);
+      return (float)fVar9 < fVar11;
     }
   }
   func_?();
-  pcVar12 = (code *)swi(3);
-  bVar13 = (*pcVar12)();
-  return bVar13;
+  pcVar13 = (code *)swi(3);
+  bVar14 = (*pcVar13)();
+  return bVar14;
 }
 
 
@@ -435,96 +424,97 @@ void Assembly-CSharp.dll::RTG::SphereTreeNode`1[Unity::IL2CPP::Metadata::
   if (*piVar1 == 0) {
 code_?:
     pFVar2 = method->klass->rgctx_data->klass->fields;
+    pFVar3 = pFVar2 + 4;
     if (newParent == (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
-      _guard_check_icall(pFVar2 + 4,4);
-      puVar3 = (undefined4 *)func_?(this,pFVar2 + 4);
-      *puVar3 = 0;
-      func_?(pFVar2[4].type,puVar3,0);
+      _guard_check_icall(pFVar3,4);
+      puVar4 = (undefined4 *)func_?(this,pFVar3);
+      *puVar4 = 0;
+      func_?(pFVar2[4].type,puVar4,0);
       return;
     }
-    _guard_check_icall(pFVar2 + 4,4);
-    puVar3 = (undefined4 *)func_?(this,pFVar2 + 4);
-    *puVar3 = newParent;
-    func_?(pFVar2[4].type,puVar3,0);
-    puVar3 = (undefined4 *)func_?(this,method->klass->rgctx_data->klass->fields + 4);
-    piVar1 = (int *)func_?(*puVar3,method->klass->rgctx_data->klass->fields + 5);
+    _guard_check_icall(pFVar3,4);
+    puVar4 = (undefined4 *)func_?(this,pFVar3);
+    *puVar4 = newParent;
+    func_?(pFVar2[4].type,puVar4,0);
+    puVar4 = (undefined4 *)func_?(this,method->klass->rgctx_data->klass->fields + 4);
+    piVar1 = (int *)func_?(*puVar4,method->klass->rgctx_data->klass->fields + 5);
     piVar1 = (int *)*piVar1;
-    piVar4 = (int *)func_?(this,method->klass->rgctx_data->klass->fields + 4);
-    iVar5 = *piVar4;
-    puVar6 = (uint *)func_?(iVar5,method->klass->rgctx_data->klass->fields + 6);
-    uVar7 = *puVar6;
-    if (iVar5 == 0) {
+    piVar5 = (int *)func_?(this,method->klass->rgctx_data->klass->fields + 4);
+    iVar6 = *piVar5;
+    puVar7 = (uint *)func_?(iVar6,method->klass->rgctx_data->klass->fields + 6);
+    uVar8 = *puVar7;
+    if (iVar6 == 0) {
 code_?:
       func_?();
       goto code_?;
     }
-    pFVar2 = method->klass->rgctx_data->klass->fields;
-    pFVar8 = pFVar2 + 6;
-    _guard_check_icall(pFVar8,4);
-    piVar4 = (int *)func_?(iVar5,pFVar8);
-    *piVar4 = uVar7 + 1;
-    func_?(pFVar2[6].type,piVar4,0);
+    pFVar3 = method->klass->rgctx_data->klass->fields;
+    pFVar2 = pFVar3 + 6;
+    _guard_check_icall(pFVar2,4);
+    piVar5 = (int *)func_?(iVar6,pFVar2);
+    *piVar5 = uVar8 + 1;
+    func_?(pFVar3[6].type,piVar5,0);
     if (piVar1 == (int *)0x0) goto code_?;
     if ((this == (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) ||
-       (iVar5 = func_?(this,*(undefined4 *)(*piVar1 + 0x20)), iVar5 != 0)) {
-      if (uVar7 < (uint)piVar1[3]) {
-        piVar1[uVar7 + 4] = (int)this;
-        func_?(piVar1 + uVar7 + 4,this);
+       (iVar6 = func_?(this,*(undefined4 *)(*piVar1 + 0x20)), iVar6 != 0)) {
+      if (uVar8 < (uint)piVar1[3]) {
+        piVar1[uVar8 + 4] = (int)this;
+        func_?(piVar1 + uVar8 + 4,this);
         return;
       }
       goto code_?;
     }
   }
   else {
-    puVar3 = (undefined4 *)func_?(this,method->klass->rgctx_data->klass->fields + 4);
-    piVar1 = (int *)func_?(*puVar3,method->klass->rgctx_data->klass->fields + 5);
-    iVar5 = *piVar1;
-    if (iVar5 == 0) goto code_?;
-    if (*(int *)(iVar5 + 0xc) == 0) goto code_?;
-    pFVar2 = method->klass->rgctx_data->klass->fields + 4;
-    if (*(SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ **)(iVar5 + 0x10) !=
+    puVar4 = (undefined4 *)func_?(this,method->klass->rgctx_data->klass->fields + 4);
+    piVar1 = (int *)func_?(*puVar4,method->klass->rgctx_data->klass->fields + 5);
+    iVar6 = *piVar1;
+    if (iVar6 == 0) goto code_?;
+    if (*(int *)(iVar6 + 0xc) == 0) goto code_?;
+    pFVar3 = method->klass->rgctx_data->klass->fields + 4;
+    if (*(SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ **)(iVar6 + 0x10) !=
         this) {
 code_?:
-      puVar3 = (undefined4 *)func_?(this,pFVar2);
-      piVar1 = (int *)func_?(*puVar3,method->klass->rgctx_data->klass->fields + 5);
+      puVar4 = (undefined4 *)func_?(this,pFVar3);
+      piVar1 = (int *)func_?(*puVar4,method->klass->rgctx_data->klass->fields + 5);
       if (*piVar1 != 0) {
         func_?(1,0);
         piVar1 = (int *)func_?(this,method->klass->rgctx_data->klass->fields + 4);
-        iVar5 = *piVar1;
-        piVar1 = (int *)func_?(iVar5,method->klass->rgctx_data->klass->fields + 6);
+        iVar6 = *piVar1;
+        piVar1 = (int *)func_?(iVar6,method->klass->rgctx_data->klass->fields + 6);
         iVar9 = *piVar1;
-        if (iVar5 != 0) {
-          pFVar2 = method->klass->rgctx_data->klass->fields;
-          pFVar8 = pFVar2 + 6;
-          _guard_check_icall(pFVar8,4);
-          piVar1 = (int *)func_?(iVar5,pFVar8);
+        if (iVar6 != 0) {
+          pFVar3 = method->klass->rgctx_data->klass->fields;
+          pFVar2 = pFVar3 + 6;
+          _guard_check_icall(pFVar2,4);
+          piVar1 = (int *)func_?(iVar6,pFVar2);
           *piVar1 = iVar9 + -1;
-          func_?(pFVar2[6].type,piVar1,0);
-          pFVar2 = method->klass->rgctx_data->klass->fields;
-          pFVar8 = pFVar2 + 4;
-          _guard_check_icall(pFVar8,4);
-          puVar3 = (undefined4 *)func_?(this,pFVar8);
-          *puVar3 = 0;
-          func_?(pFVar2[4].type,puVar3,0);
+          func_?(pFVar3[6].type,piVar1,0);
+          pFVar3 = method->klass->rgctx_data->klass->fields;
+          pFVar2 = pFVar3 + 4;
+          _guard_check_icall(pFVar2,4);
+          puVar4 = (undefined4 *)func_?(this,pFVar2);
+          *puVar4 = 0;
+          func_?(pFVar3[4].type,puVar4,0);
           goto code_?;
         }
       }
       goto code_?;
     }
-    puVar3 = (undefined4 *)func_?(this,pFVar2);
-    piVar1 = (int *)func_?(*puVar3,method->klass->rgctx_data->klass->fields + 5);
+    puVar4 = (undefined4 *)func_?(this,pFVar3);
+    piVar1 = (int *)func_?(*puVar4,method->klass->rgctx_data->klass->fields + 5);
     piVar1 = (int *)*piVar1;
-    puVar3 = (undefined4 *)func_?(this,method->klass->rgctx_data->klass->fields + 4);
-    piVar4 = (int *)func_?(*puVar3,method->klass->rgctx_data->klass->fields + 5);
-    iVar5 = *piVar4;
-    if (iVar5 == 0) goto code_?;
-    if (*(uint *)(iVar5 + 0xc) < 2) goto code_?;
-    iVar5 = *(int *)(iVar5 + 0x14);
+    puVar4 = (undefined4 *)func_?(this,method->klass->rgctx_data->klass->fields + 4);
+    piVar5 = (int *)func_?(*puVar4,method->klass->rgctx_data->klass->fields + 5);
+    iVar6 = *piVar5;
+    if (iVar6 == 0) goto code_?;
+    if (*(uint *)(iVar6 + 0xc) < 2) goto code_?;
+    iVar6 = *(int *)(iVar6 + 0x14);
     if (piVar1 == (int *)0x0) goto code_?;
-    if ((iVar5 == 0) || (iVar9 = func_?(iVar5,*(undefined4 *)(*piVar1 + 0x20)), iVar9 != 0)
+    if ((iVar6 == 0) || (iVar9 = func_?(iVar6,*(undefined4 *)(*piVar1 + 0x20)), iVar9 != 0)
        ) {
-      func_?(0,iVar5);
-      pFVar2 = method->klass->rgctx_data->klass->fields + 4;
+      func_?(0,iVar6);
+      pFVar3 = method->klass->rgctx_data->klass->fields + 4;
       goto code_?;
     }
 code_?:
@@ -605,47 +595,48 @@ void Assembly-CSharp.dll::RTG::SphereTreeNode`1[Unity::IL2CPP::Metadata::
                MethodInfo *method)
 
 {
-  uStack_1 = (method->klass->rgctx_data[2].klass)->actualSize;
-  pIVar2 = method->klass->rgctx_data[3].klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  pIVar1 = method->klass->rgctx_data;
+  uStack_2 = (pIVar1[2].klass)->actualSize;
+  pIVar3 = pIVar1[3].klass;
+  if (((uint)pIVar3->vtable[0].methodPtr & 0x100) == 0) {
+    pIVar3 = (Il2CppClass *)func_?(pIVar3);
   }
-  uVar3 = func_?(pIVar2,2);
-  pFVar4 = method->klass->rgctx_data->klass->fields;
-  pFVar5 = pFVar4 + 5;
-  _guard_check_icall(pFVar5,4);
-  puVar6 = (undefined4 *)func_?(this,pFVar5);
-  *puVar6 = uVar3;
-  method_00 = (MethodInfo *)pFVar4[5].type;
-  func_?(method_00,puVar6,0);
+  uVar4 = func_?(pIVar3,2);
+  pFVar5 = method->klass->rgctx_data->klass->fields;
+  pFVar6 = pFVar5 + 5;
+  _guard_check_icall(pFVar6,4);
+  puVar7 = (undefined4 *)func_?(this,pFVar6);
+  *puVar7 = uVar4;
+  method_00 = (MethodInfo *)pFVar5[5].type;
+  func_?(method_00,puVar7,0);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  SStack_7._center.x = 0.0;
-  SStack_7._center.y = 0.0;
-  SStack_7._center.z = 0.0;
-  SStack_7._radius = 0.0;
+  SStack_8._center.x = 0.0;
+  SStack_8._center.y = 0.0;
+  SStack_8._center.z = 0.0;
+  SStack_8._radius = 0.0;
   Sphere::Sphere__ctor
-            (&SStack_7,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,1.0,
+            (&SStack_8,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,1.0,
              (MethodInfo *)0x0);
-  pFVar4 = method->klass->rgctx_data->klass->fields;
-  pFVar5 = pFVar4 + 2;
-  fVar8 = SStack_7._center.x;
-  fVar9 = SStack_7._center.y;
-  fVar10 = SStack_7._center.z;
-  fVar11 = SStack_7._radius;
-  _guard_check_icall(pFVar5,0x10);
-  pfVar12 = (float *)func_?(this,pFVar5);
-  *pfVar12 = fVar8;
-  pfVar12[1] = fVar9;
-  pfVar12[2] = fVar10;
-  pfVar12[3] = fVar11;
-  func_?(pFVar4[2].type,pfVar12,0);
-  uVar3 = func_?(this,method->klass->rgctx_data->klass->fields + 3,0,uStack_1);
-  func_?(uVar3);
+  pFVar5 = method->klass->rgctx_data->klass->fields;
+  pFVar6 = pFVar5 + 2;
+  fVar9 = SStack_8._center.x;
+  fVar10 = SStack_8._center.y;
+  fVar11 = SStack_8._center.z;
+  fVar12 = SStack_8._radius;
+  _guard_check_icall(pFVar6,0x10);
+  pfVar13 = (float *)func_?(this,pFVar6);
+  *pfVar13 = fVar9;
+  pfVar13[1] = fVar10;
+  pfVar13[2] = fVar11;
+  pfVar13[3] = fVar12;
+  func_?(pFVar5[2].type,pfVar13,0);
+  uVar4 = func_?(this,method->klass->rgctx_data->klass->fields + 3,0,uStack_2);
+  func_?(uVar4);
   return;
 }
 
@@ -660,33 +651,34 @@ void Assembly-CSharp.dll::RTG::SphereTreeNode`1[Unity::IL2CPP::Metadata::
                _Il2CppFullySharedGenericType *data,Sphere sphere,MethodInfo *method)
 
 {
-  uVar1 = (method->klass->rgctx_data[2].klass)->actualSize;
+  pIVar1 = method->klass->rgctx_data;
+  uVar2 = (pIVar1[2].klass)->actualSize;
   func_?();
-  pIVar2 = method->klass->rgctx_data[3].klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  pIVar3 = pIVar1[3].klass;
+  if (((uint)pIVar3->vtable[0].methodPtr & 0x100) == 0) {
+    pIVar3 = (Il2CppClass *)func_?(pIVar3);
   }
-  uVar3 = func_?(pIVar2,2);
-  pFVar4 = method->klass->rgctx_data->klass->fields;
-  pFVar5 = pFVar4 + 5;
-  _guard_check_icall(pFVar5,4);
-  puVar6 = (undefined4 *)func_?(this,pFVar5);
-  *puVar6 = uVar3;
-  method_00 = (MethodInfo *)pFVar4[5].type;
-  func_?(method_00,puVar6,0);
+  uVar4 = func_?(pIVar3,2);
+  pFVar5 = method->klass->rgctx_data->klass->fields;
+  pFVar6 = pFVar5 + 5;
+  _guard_check_icall(pFVar6,4);
+  puVar7 = (undefined4 *)func_?(this,pFVar6);
+  *puVar7 = uVar4;
+  method_00 = (MethodInfo *)pFVar5[5].type;
+  func_?(method_00,puVar7,0);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-  pFVar4 = method->klass->rgctx_data->klass->fields;
-  pFVar5 = pFVar4 + 2;
-  _guard_check_icall(pFVar5,0x10);
-  pfVar7 = (float *)func_?(this,pFVar5);
-  *pfVar7 = sphere._center.x;
-  pfVar7[1] = sphere._center.y;
-  pfVar7[2] = sphere._center.z;
-  pfVar7[3] = sphere._radius;
-  func_?(pFVar4[2].type,pfVar7,0);
+  pFVar5 = method->klass->rgctx_data->klass->fields;
+  pFVar6 = pFVar5 + 2;
+  _guard_check_icall(pFVar6,0x10);
+  pfVar8 = (float *)func_?(this,pFVar6);
+  *pfVar8 = sphere._center.x;
+  pfVar8[1] = sphere._center.y;
+  pfVar8[2] = sphere._center.z;
+  pfVar8[3] = sphere._radius;
+  func_?(pFVar5[2].type,pfVar8,0);
   func_?(&stack0xffffffe8);
-  func_?(this,method->klass->rgctx_data->klass->fields + 3,&stack0xffffffe8,uVar1);
+  func_?(this,method->klass->rgctx_data->klass->fields + 3,&stack0xffffffe8,uVar2);
   return;
 }
 
@@ -734,13 +726,13 @@ Assembly-CSharp.dll::RTG::SphereTreeNode`1[Unity::IL2CPP::Metadata::__Il2CppFull
           MethodInfo *method)
 
 {
-  uVar1 = *(undefined4 *)(*(int *)(*(int *)(*(int *)(in_stack_2 + 0x10) + 0x60) + 8) + 0x84);
+  piVar1 = *(int **)(*(int *)(in_stack_2 + 0x10) + 0x60);
+  uVar3 = *(undefined4 *)(piVar1[2] + 0x84);
   func_?();
-  uVar3 = func_?(this,*(int *)(**(int **)(*(int *)(in_stack_2 + 0x10) + 0x60) + 0x40
-                                       ) + 0x3c);
-  func_?(&stack0xfffffff0,uVar3,uVar1);
-  p_Var3 = (_Il2CppFullySharedGenericType *)func_?(method,&stack0xfffffff0,uVar1);
-  return p_Var3;
+  uVar4 = func_?(this,*(int *)(*piVar1 + 0x40) + 0x3c);
+  func_?(&stack0xfffffff0,uVar4,uVar3);
+  p_Var4 = (_Il2CppFullySharedGenericType *)func_?(method,&stack0xfffffff0,uVar3);
+  return p_Var4;
 }
 
 
@@ -753,12 +745,13 @@ bool Assembly-CSharp.dll::RTG::SphereTreeNode`1[Unity::IL2CPP::Metadata::
                MethodInfo *method)
 
 {
-  uVar1 = (method->klass->rgctx_data[2].klass)->actualSize;
+  pIVar1 = method->klass->rgctx_data;
+  uVar2 = (pIVar1[2].klass)->actualSize;
   func_?();
-  uVar2 = func_?(this,method->klass->rgctx_data->klass->fields + 3);
-  func_?(&stack0xfffffff0,uVar2,uVar1);
-  bVar3 = func_?(method->klass->rgctx_data[2].rgctxDataDummy,&stack0xfffffff0);
-  return bVar3;
+  uVar3 = func_?(this,pIVar1->klass->fields + 3);
+  func_?(&stack0xfffffff0,uVar3,uVar2);
+  bVar4 = func_?(method->klass->rgctx_data[2].rgctxDataDummy,&stack0xfffffff0);
+  return bVar4;
 }
 
 
@@ -851,15 +844,18 @@ void Assembly-CSharp.dll::RTG::SphereTreeNode`1[Unity::IL2CPP::Metadata::
                _Il2CppFullySharedGenericType *value,MethodInfo *method)
 
 {
-  pMVar1 = method;
-  uVar2 = (method->klass->rgctx_data[2].klass)->actualSize;
+  pIVar1 = method->klass->rgctx_data[2].klass;
+  uVar2 = pIVar1->actualSize;
   func_?();
-  p_Var3 = (_Il2CppFullySharedGenericType *)&value;
-  if ((int)(pMVar1->klass->rgctx_data[2].method)->return_type < 0) {
-    p_Var3 = value;
+  iVar3._0_2_ = (pIVar1->byval_arg).attrs;
+  iVar3._2_1_ = (pIVar1->byval_arg).type;
+  iVar3._3_1_ = (pIVar1->byval_arg).field_0x7;
+  p_Var4 = (_Il2CppFullySharedGenericType *)&value;
+  if (iVar3 < 0) {
+    p_Var4 = value;
   }
-  func_?(&stack0xfffffff0,p_Var3,uVar2);
-  func_?(this,pMVar1->klass->rgctx_data->klass->fields + 3,&stack0xfffffff0,uVar2);
+  func_?(&stack0xfffffff0,p_Var4,uVar2);
+  func_?(this,method->klass->rgctx_data->klass->fields + 3,&stack0xfffffff0,uVar2);
   return;
 }
 

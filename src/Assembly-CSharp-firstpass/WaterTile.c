@@ -50,12 +50,13 @@ void Assembly-CSharp-firstpass.dll::WaterTile::WaterTile_AcquireComponents
     (this->fields).reflection = pPVar1;
     func_?();
   }
-  pWVar4 = (this->fields).waterBase;
+  ppWVar4 = &(this->fields).waterBase;
+  pWVar5 = *ppWVar4;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit
-                    ((Object_1 *)pWVar4,(MethodInfo *)0x0);
+                    ((Object_1 *)pWVar5,(MethodInfo *)0x0);
   if (bVar2 != 0) {
     return;
   }
@@ -81,19 +82,19 @@ void Assembly-CSharp-firstpass.dll::WaterTile::WaterTile_AcquireComponents
                          (pTVar3,(MethodInfo *)0x0);
     }
     if (pTVar3 != (Transform *)0x0) {
-      pWVar4 = (WaterBase *)
+      pWVar5 = (WaterBase *)
                UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
                          ((Component *)pTVar3,
                           WaterBase_MethodInfo__UnityEngine__Component__GetComponent<WaterBase>__);
-      (this->fields).waterBase = pWVar4;
+      *ppWVar4 = pWVar5;
       func_?();
       return;
     }
   }
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -211,12 +212,13 @@ void Assembly-CSharp-firstpass.dll::WaterTile::WaterTile_Start(WaterTile *this,M
     (this->fields).reflection = pPVar1;
     func_?();
   }
-  pWVar4 = (this->fields).waterBase;
+  ppWVar4 = &(this->fields).waterBase;
+  pWVar5 = *ppWVar4;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit
-                    ((Object_1 *)pWVar4,(MethodInfo *)0x0);
+                    ((Object_1 *)pWVar5,(MethodInfo *)0x0);
   if (bVar2 != 0) {
     return;
   }
@@ -242,19 +244,19 @@ void Assembly-CSharp-firstpass.dll::WaterTile::WaterTile_Start(WaterTile *this,M
                          (pTVar3,(MethodInfo *)0x0);
     }
     if (pTVar3 != (Transform *)0x0) {
-      pWVar4 = (WaterBase *)
+      pWVar5 = (WaterBase *)
                UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
                          ((Component *)pTVar3,
                           WaterBase_MethodInfo__UnityEngine__Component__GetComponent<WaterBase>__);
-      (this->fields).waterBase = pWVar4;
+      *ppWVar4 = pWVar5;
       func_?();
       return;
     }
   }
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

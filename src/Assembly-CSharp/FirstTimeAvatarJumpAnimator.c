@@ -43,100 +43,103 @@ void Assembly-CSharp.dll::FirstTimeAvatarJumpAnimator::FirstTimeAvatarJumpAnimat
         return;
       }
     }
-    else if ((this->fields).jumps == 1) {
-      pDVar6 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                *)func_?();
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-      UIElements::StyleComplexSelector+PseudoStateData]::
-      Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
-                (pDVar6,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                );
-      if (pDVar6 != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                     *)0x0) {
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-        Dictionary_2_System_Object_System_Object__set_Item
-                  ((Dictionary_2_System_Object_System_Object_ *)pDVar6,(Object *)StringLiteral_state
-                   ,(Object *)StringLiteral_Walk,
-                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+    else {
+      iVar6 = (this->fields).jumps;
+      if (iVar6 == 1) {
+        pDVar7 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                  *)func_?();
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+        UIElements::StyleComplexSelector+PseudoStateData]::
+        Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+                  (pDVar7,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                   );
-        pMVar7 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (pMVar7 != (MVNetworkGame *)0x0) {
-          MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds(pMVar7,(MethodInfo *)0x0);
-          pOVar8 = (Object *)func_?();
+        if (pDVar7 != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                       *)0x0) {
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
           Dictionary_2_System_Object_System_Object__set_Item
-                    ((Dictionary_2_System_Object_System_Object_ *)pDVar6,
-                     (Object *)StringLiteral_timeStamp,pOVar8,
+                    ((Dictionary_2_System_Object_System_Object_ *)pDVar7,
+                     (Object *)StringLiteral_state,(Object *)StringLiteral_Walk,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
                     );
-          pMVar1 = (this->fields).avatarLocal;
-          if (((pMVar1 != (MVAvatarLocal *)0x0) &&
-              (pMVar2 = (pMVar1->fields)._.body, pMVar2 != (MVBody *)0x0)) &&
-             (pBVar3 = MVBody::MVBody_get_Animation(pMVar2,(MethodInfo *)0x0),
-             pBVar3 != (BoneAnimation *)0x0)) {
-            BoneAnimation::BoneAnimation_ComputeBlendAnimation
-                      (pBVar3,(Dictionary_2_System_Object_System_Object_ *)pDVar6,(MethodInfo *)0x0)
-            ;
-            piVar5 = &(this->fields).jumps;
-            *piVar5 = *piVar5 + -1;
-            return;
+          pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if (pMVar8 != (MVNetworkGame *)0x0) {
+            MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds(pMVar8,(MethodInfo *)0x0);
+            pOVar9 = (Object *)func_?();
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+            ::Dictionary_2_System_Object_System_Object__set_Item
+                      ((Dictionary_2_System_Object_System_Object_ *)pDVar7,
+                       (Object *)StringLiteral_timeStamp,pOVar9,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                      );
+            pMVar1 = (this->fields).avatarLocal;
+            if (((pMVar1 != (MVAvatarLocal *)0x0) &&
+                (pMVar2 = (pMVar1->fields)._.body, pMVar2 != (MVBody *)0x0)) &&
+               (pBVar3 = MVBody::MVBody_get_Animation(pMVar2,(MethodInfo *)0x0),
+               pBVar3 != (BoneAnimation *)0x0)) {
+              BoneAnimation::BoneAnimation_ComputeBlendAnimation
+                        (pBVar3,(Dictionary_2_System_Object_System_Object_ *)pDVar7,
+                         (MethodInfo *)0x0);
+              piVar5 = &(this->fields).jumps;
+              *piVar5 = *piVar5 + -1;
+              return;
+            }
           }
         }
       }
-    }
-    else {
-      if ((this->fields).jumps != 0) {
-        return;
-      }
-      pDVar6 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                *)func_?();
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-      UIElements::StyleComplexSelector+PseudoStateData]::
-      Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
-                (pDVar6,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                );
-      if (pDVar6 != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                     *)0x0) {
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-        Dictionary_2_System_Object_System_Object__set_Item
-                  ((Dictionary_2_System_Object_System_Object_ *)pDVar6,(Object *)StringLiteral_state
-                   ,(Object *)StringLiteral_Idle,
-                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+      else {
+        if (iVar6 != 0) {
+          return;
+        }
+        pDVar7 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                  *)func_?();
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+        UIElements::StyleComplexSelector+PseudoStateData]::
+        Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+                  (pDVar7,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                   );
-        pMVar7 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (pMVar7 != (MVNetworkGame *)0x0) {
-          MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds(pMVar7,(MethodInfo *)0x0);
-          pOVar8 = (Object *)func_?();
+        if (pDVar7 != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                       *)0x0) {
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
           Dictionary_2_System_Object_System_Object__set_Item
-                    ((Dictionary_2_System_Object_System_Object_ *)pDVar6,
-                     (Object *)StringLiteral_timeStamp,pOVar8,
+                    ((Dictionary_2_System_Object_System_Object_ *)pDVar7,
+                     (Object *)StringLiteral_state,(Object *)StringLiteral_Idle,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
                     );
-          pMVar1 = (this->fields).avatarLocal;
-          if (((pMVar1 != (MVAvatarLocal *)0x0) &&
-              (pMVar2 = (pMVar1->fields)._.body, pMVar2 != (MVBody *)0x0)) &&
-             (pBVar3 = MVBody::MVBody_get_Animation(pMVar2,(MethodInfo *)0x0),
-             pBVar3 != (BoneAnimation *)0x0)) {
-            BoneAnimation::BoneAnimation_ComputeBlendAnimation
-                      (pBVar3,(Dictionary_2_System_Object_System_Object_ *)pDVar6,(MethodInfo *)0x0)
-            ;
-            if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-              func_?();
+          pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if (pMVar8 != (MVNetworkGame *)0x0) {
+            MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds(pMVar8,(MethodInfo *)0x0);
+            pOVar9 = (Object *)func_?();
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+            ::Dictionary_2_System_Object_System_Object__set_Item
+                      ((Dictionary_2_System_Object_System_Object_ *)pDVar7,
+                       (Object *)StringLiteral_timeStamp,pOVar9,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                      );
+            pMVar1 = (this->fields).avatarLocal;
+            if (((pMVar1 != (MVAvatarLocal *)0x0) &&
+                (pMVar2 = (pMVar1->fields)._.body, pMVar2 != (MVBody *)0x0)) &&
+               (pBVar3 = MVBody::MVBody_get_Animation(pMVar2,(MethodInfo *)0x0),
+               pBVar3 != (BoneAnimation *)0x0)) {
+              BoneAnimation::BoneAnimation_ComputeBlendAnimation
+                        (pBVar3,(Dictionary_2_System_Object_System_Object_ *)pDVar7,
+                         (MethodInfo *)0x0);
+              if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+                func_?();
+              }
+              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
+                        ((Object_1 *)this,(MethodInfo *)0x0);
+              return;
             }
-            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                      ((Object_1 *)this,(MethodInfo *)0x0);
-            return;
           }
         }
       }
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -151,9 +154,10 @@ void Assembly-CSharp.dll::FirstTimeAvatarJumpAnimator::FirstTimeAvatarJumpAnimat
     func_?(&StringLiteral_Jump);
     cRam_? = '\x01';
   }
+  ppSVar1 = &(this->fields).jumpAnimationName;
   (this->fields).jumps = 6;
-  (this->fields).jumpAnimationName = StringLiteral_Jump;
-  func_?(&(this->fields).jumpAnimationName,StringLiteral_Jump);
+  *ppSVar1 = StringLiteral_Jump;
+  func_?(ppSVar1,StringLiteral_Jump);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

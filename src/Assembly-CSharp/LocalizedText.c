@@ -73,25 +73,26 @@ void Assembly-CSharp.dll::LocalizedText::LocalizedText_Reset(LocalizedText *this
                              ((Component *)this,
                               UnityEngine__UI__Text_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Text>__
                              );
-  (this->fields).text = pTVar1;
-  func_?(&(this->fields).text,pTVar1);
-  pTVar1 = (this->fields).text;
+  ppTVar2 = &(this->fields).text;
+  *ppTVar2 = pTVar1;
+  func_?(ppTVar2,pTVar1);
+  pTVar1 = *ppTVar2;
   if (pTVar1 != (Text *)0x0) {
-    pSVar2 = (String *)
+    pSVar3 = (String *)
              (*(code *)(pTVar1->klass->vtable).get_text.method)
                        (pTVar1,(pTVar1->klass->vtable).set_text.methodPtr);
-    bVar3 = mscorlib.dll::System::String::String_op_Equality
-                      (pSVar2,::StringLiteral__,(MethodInfo *)0x0);
-    pTVar1 = (this->fields).text;
-    if (bVar3 == 0) {
+    bVar4 = mscorlib.dll::System::String::String_op_Equality
+                      (pSVar3,::StringLiteral__,(MethodInfo *)0x0);
+    pTVar1 = *ppTVar2;
+    if (bVar4 == 0) {
       if (pTVar1 != (Text *)0x0) {
         arg0 = (Object *)
                (*(code *)(pTVar1->klass->vtable).get_text.method)
                          (pTVar1,(pTVar1->klass->vtable).set_text.methodPtr);
-        pSVar2 = mscorlib.dll::System::String::String_Format
+        pSVar3 = mscorlib.dll::System::String::String_Format
                            (StringLiteral_____0___,arg0,(MethodInfo *)0x0);
         (*(code *)(pTVar1->klass->vtable).set_text.method)
-                  (pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr)
+                  (pTVar1,pSVar3,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr)
         ;
         return;
       }
@@ -104,8 +105,8 @@ void Assembly-CSharp.dll::LocalizedText::LocalizedText_Reset(LocalizedText *this
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

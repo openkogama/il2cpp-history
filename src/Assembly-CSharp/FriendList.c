@@ -68,8 +68,8 @@ void Assembly-CSharp.dll::FriendList::FriendList_AddFriend
             value[2].klass = (Object__Class *)0xffffffff;
             mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                       (value,ExceptionArgument__Enum_obj,method_00);
-            value[1].monitor = (MonitorData *)friendID;
             value[1].klass = (Object__Class *)friendProfileID;
+            value[1].monitor = (MonitorData *)friendID;
             value[2].klass = (Object__Class *)status;
             pDVar10 = (this->fields).friends;
             if (pDVar10 == (Dictionary_2_System_Int32_Friend_ *)0x0) goto code_?;
@@ -80,8 +80,8 @@ void Assembly-CSharp.dll::FriendList::FriendList_AddFriend
                       );
           }
 code_?:
-          if ((this->fields).OnFriendListUpdated != (FriendList_OnFriendListUpdatedDelegate *)0x0) {
-            pFVar12 = (this->fields).OnFriendListUpdated;
+          pFVar12 = (this->fields).OnFriendListUpdated;
+          if (pFVar12 != (FriendList_OnFriendListUpdatedDelegate *)0x0) {
             FStack_6.klass = (pFVar12->fields)._._.method;
             (*(pFVar12->fields)._._.invoke_impl)();
           }
@@ -129,13 +129,14 @@ code_?:
                                 MethodInfo__System__Collections__Generic__List<int>__Add_int_);
                 pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
                 if (((pMVar8 != (MVNetworkGame *)0x0) &&
-                    (this_00 = (pMVar8->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0
-                    )) && (this_01 = (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                                      *)MVPlayerContainer::MVPlayerContainer_get_ActivePlayers
-                                                  (this_00,(MethodInfo *)0x0),
-                          this_01 !=
-                          (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                           *)0x0)) {
+                    (this_00 = (pMVar8->fields).playerContainer,
+                    this_00 != (MVPlayerContainer *)0x0)) &&
+                   (this_01 = (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                               *)MVPlayerContainer::MVPlayerContainer_get_ActivePlayers
+                                           (this_00,(MethodInfo *)0x0),
+                   this_01 !=
+                   (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                    *)0x0)) {
                   pDVar15 = mscorlib.dll::System::Collections::Generic::
                             Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::
                             StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
@@ -161,8 +162,9 @@ code_?:
                     if ((Object *)FStack_6.fields.friendID == (Object *)0x0) goto code_?;
                     if ((((Object *)(FStack_6.fields.friendID + 0x28))->monitor ==
                          (MonitorData *)profileID) &&
-                       ((this->fields).OnFriendRequestReceived != (UnityAction *)0x0)) {
-                      (*(((this->fields).OnFriendRequestReceived)->fields)._._.invoke_impl)();
+                       (pUVar16 = (this->fields).OnFriendRequestReceived,
+                       pUVar16 != (UnityAction *)0x0)) {
+                      (*(pUVar16->fields)._._.invoke_impl)();
                     }
                   }
                   uStack_1 = 0xffffffff;
@@ -183,10 +185,10 @@ code_?:
     }
   }
 code_?:
-  uVar16 = func_?();
-  func_?(uVar16);
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  uVar17 = func_?();
+  func_?(uVar17);
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 
@@ -398,10 +400,9 @@ Assembly-CSharp.dll::FriendList::FriendList_GetOnlineFriends(FriendList *this,Me
           bVar12 = FriendList_IsFriend(this,(int32_t)value[5].monitor,(MethodInfo *)0x0);
           this_01 = pDStack_6;
         } while (bVar12 == 0);
-        if ((value == (Object *)0x0) ||
-           (pDStack_6 ==
+        if (pDStack_6 ==
             (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *
-            )0x0)) break;
+            )0x0) break;
         method_00 = value[6].klass;
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
         Dictionary_2_System_Int32_System_Object__Add
@@ -566,94 +567,90 @@ void Assembly-CSharp.dll::FriendList::FriendList_OnPlayersLoaded
     pIVar5 = pIStack_4;
   }
   pIStack_4 = pIVar5;
-  DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
-  DStack_6._index = 0;
-  DStack_6._version = 0;
-  DStack_6._currentValue = (Object *)0x0;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MVGameControllerBase);
     cRam_? = '\x01';
   }
-  pMVar7 = TypeInfo__MVGameControllerBase->static_fields->instance;
-  if ((pMVar7 != (MVGameControllerBase *)0x0) &&
-     (pMVar8 = (pMVar7->fields).game, pMVar8 != (MVNetworkGame *)0x0)) {
-    DStack_9._currentValue = (Object *)(pMVar8->fields).playerContainer;
-    if ((Il2CppClass *)DStack_9._currentValue != (Il2CppClass *)0x0) {
-      source = (Delegate *)(((Il2CppClass *)DStack_9._currentValue)->this_arg).data.typeHandle;
+  pMVar6 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((pMVar6 != (MVGameControllerBase *)0x0) &&
+     (pMVar7 = (pMVar6->fields).game, pMVar7 != (MVNetworkGame *)0x0)) {
+    DStack_8._currentValue = (Object *)(pMVar7->fields).playerContainer;
+    if ((Il2CppClass *)DStack_8._currentValue != (Il2CppClass *)0x0) {
+      source = (Action *)(((Il2CppClass *)DStack_8._currentValue)->this_arg).data.typeHandle;
       unaff_ESI = (Il2CppClass *)func_?(TypeInfo__System__Action);
       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
       NavMesh_OnNavMeshPreUpdate__ctor
                 ((NavMesh_OnNavMeshPreUpdate *)unaff_ESI,(Object *)this,
                  MethodInfo__FriendList__OnPlayersLoaded__,(MethodInfo *)0x0);
-      DStack_6._version =
+      DStack_9._version =
            (int32_t)mscorlib.dll::System::Delegate::Delegate_Remove
-                              (source,(Delegate *)unaff_ESI,(MethodInfo *)0x0);
-      DStack_6._currentValue = (Object *)0x0;
-      if ((Action__Class *)DStack_6._version == (Action__Class *)0x0) {
-        (((Il2CppType *)((int)DStack_9._currentValue + 0x18))->data).dummy = (void *)0x0;
+                              ((Delegate *)source,(Delegate *)unaff_ESI,(MethodInfo *)0x0);
+      if ((Action__Class *)DStack_9._version == (Action__Class *)0x0) {
+        DStack_9._currentValue = (Object *)0x0;
+        (((Il2CppType *)((int)DStack_8._currentValue + 0x18))->data).dummy = (Action *)0x0;
       }
       else {
-        if ((Action__Class *)(((Action__Class *)DStack_6._version)->_0).image ==
+        pAVar10 = (Action__Class *)0x0;
+        if ((Action__Class *)(((Action__Class *)DStack_9._version)->_0).image ==
             TypeInfo__System__Action) {
-          DStack_6._currentValue = (Object *)DStack_6._version;
+          pAVar10 = (Action__Class *)DStack_9._version;
         }
-        if ((Action__Class *)DStack_6._currentValue == (Action__Class *)0x0) {
-          DStack_6._currentValue = (Object *)TypeInfo__System__Action;
-          DStack_6._index = (int32_t)&UNK_?;
+        if (pAVar10 == (Action__Class *)0x0) {
+          DStack_9._currentValue = (Object *)TypeInfo__System__Action;
+          DStack_9._index = (int32_t)&UNK_?;
           func_?();
           goto code_?;
         }
-        (((Il2CppType *)((int)DStack_9._currentValue + 0x18))->data).dummy =
-             DStack_6._currentValue;
-        DStack_6._currentValue = (Object *)(Action__Class *)0x0;
-        if ((Action__Class *)(((Action__Class *)DStack_6._version)->_0).image ==
+        (((Il2CppType *)((int)DStack_8._currentValue + 0x18))->data).dummy = pAVar10;
+        DStack_9._currentValue = (Object *)(Action__Class *)0x0;
+        if ((Action__Class *)(((Action__Class *)DStack_9._version)->_0).image ==
             TypeInfo__System__Action) {
-          DStack_6._currentValue = (Object *)DStack_6._version;
+          DStack_9._currentValue = (Object *)DStack_9._version;
         }
         unaff_ESI = (Il2CppClass *)TypeInfo__System__Action;
-        if ((Action__Class *)DStack_6._currentValue == (Action__Class *)0x0) goto code_?;
+        if ((Action__Class *)DStack_9._currentValue == (Action__Class *)0x0) goto code_?;
       }
-      DStack_6._version = (int)DStack_9._currentValue + 0x18;
-      DStack_6._index = (int32_t)&UNK_?;
+      DStack_9._version = (int)DStack_8._currentValue + 0x18;
+      DStack_9._index = (int32_t)&UNK_?;
       func_?();
       if (cRam_? == '\0') {
         func_?(&TypeInfo__MVGameControllerBase);
         cRam_? = '\x01';
       }
-      pMVar7 = TypeInfo__MVGameControllerBase->static_fields->instance;
-      if (((pMVar7 != (MVGameControllerBase *)0x0) &&
-          (pMVar8 = (pMVar7->fields).game, pMVar8 != (MVNetworkGame *)0x0)) &&
-         (this_00 = (pMVar8->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) {
+      pMVar6 = TypeInfo__MVGameControllerBase->static_fields->instance;
+      if (((pMVar6 != (MVGameControllerBase *)0x0) &&
+          (pMVar7 = (pMVar6->fields).game, pMVar7 != (MVNetworkGame *)0x0)) &&
+         (this_00 = (pMVar7->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) {
         method_00 = (MethodInfo *)
                     MVPlayerContainer::MVPlayerContainer_get_ActivePlayers
                               (this_00,(MethodInfo *)0x0);
         if (method_00 != (MethodInfo *)0x0) {
-          pDVar10 = mscorlib.dll::System::Collections::Generic::
+          pDVar11 = mscorlib.dll::System::Collections::Generic::
                    Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
                    StyleSheetCache+SheetHandleKey,System::Object]::
                    Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
-                             (&DStack_9,
+                             (&DStack_8,
                               (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                                *)method_00,
                               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVPlayer>__GetEnumerator__
                              );
-          unaff_ESI = (Il2CppClass *)&DStack_6;
-          DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)pDVar10->_dictionary;
-          DStack_6._index = pDVar10->_index;
-          DStack_6._version = pDVar10->_version;
-          DStack_6._currentValue = pDVar10->_currentValue;
-          DStack_9._version = 0;
+          unaff_ESI = (Il2CppClass *)&DStack_9;
+          DStack_9._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)pDVar11->_dictionary;
+          DStack_9._index = pDVar11->_index;
+          DStack_9._version = pDVar11->_version;
+          DStack_9._currentValue = pDVar11->_currentValue;
+          DStack_8._version = 0;
           pIStack_1 = (Il2CppGenericClass *)0x1;
-          DStack_9._currentValue = (Object *)unaff_ESI;
+          DStack_8._currentValue = (Object *)unaff_ESI;
           while( true ) {
-            bVar11 = mscorlib.dll::System::Collections::Generic::
+            bVar12 = mscorlib.dll::System::Collections::Generic::
                     Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
                     UInt32,System::Object]::
                     Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                              (&DStack_6,
+                              (&DStack_9,
                                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
                               );
-            if (bVar11 == 0) {
+            if (bVar12 == 0) {
               pIStack_1 = (Il2CppGenericClass *)0xffffffff;
               mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                         ((Object *)unaff_ESI,
@@ -664,16 +661,17 @@ void Assembly-CSharp.dll::FriendList::FriendList_OnPlayersLoaded
               return;
             }
             this_01 = (this->fields).pendingNotifications;
-            if (((Action__Class *)DStack_6._currentValue == (Action__Class *)0x0) ||
+            if (((Action__Class *)DStack_9._currentValue == (Action__Class *)0x0) ||
                (this_01 == (List_1_System_Int32_ *)0x0)) break;
-            bVar11 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
+            bVar12 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
                     List_1_System_Int32__Contains
-                              (this_01,(int32_t)((Il2CppClass_0 *)&(DStack_6._currentValue)->klass)
+                              (this_01,(int32_t)((Il2CppClass_0 *)&(DStack_9._currentValue)->klass)
                                                 ->parent,
                                MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
-            if ((bVar11 != 0) && ((this->fields).OnFriendRequestReceived != (UnityAction *)0x0)) {
+            if ((bVar12 != 0) &&
+               (pUVar13 = (this->fields).OnFriendRequestReceived, pUVar13 != (UnityAction *)0x0)) {
               method_00 = (MethodInfo *)&UNK_?;
-              (*(((this->fields).OnFriendRequestReceived)->fields)._._.invoke_impl)();
+              (*(pUVar13->fields)._._.invoke_impl)();
             }
           }
         }
@@ -681,14 +679,14 @@ void Assembly-CSharp.dll::FriendList::FriendList_OnPlayersLoaded
     }
   }
 code_?:
-  uVar12 = func_?();
-  DStack_6._version = func_?(uVar12);
+  uVar14 = func_?();
+  DStack_9._version = func_?(uVar14);
 code_?:
-  DStack_6._index = (int32_t)&UNK_?;
-  DStack_6._currentValue = (Object *)unaff_ESI;
+  DStack_9._index = (int32_t)&UNK_?;
+  DStack_9._currentValue = (Object *)unaff_ESI;
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -731,14 +729,13 @@ void Assembly-CSharp.dll::FriendList::FriendList_RemoveFromPendingByProfileID
     cRam_? = '\x01';
   }
   this_03 = (MethodInfo *)func_?(TypeInfo__System__Collections__Generic__List<int>);
-  this_06 = this_03;
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_03,
              MethodInfo__System__Collections__Generic__List<int>__List__);
+  this_06 = this_03;
   this_04 = (MethodInfo *)func_?(TypeInfo__System__Collections__Generic__List<int>);
-  pMVar4 = this_04;
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
@@ -749,6 +746,7 @@ void Assembly-CSharp.dll::FriendList::FriendList_RemoveFromPendingByProfileID
   if (this_00 !=
       (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
        *)0x0) {
+    pMVar4 = this_04;
     this_05 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
               StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
               Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Keys
@@ -763,7 +761,7 @@ void Assembly-CSharp.dll::FriendList::FriendList_RemoveFromPendingByProfileID
       StyleSheetCache+SheetHandleKey,System::Object]::
       Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
                 ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                  *)&stack0xffffffc4,
+                  *)&stack0xffffffbc,
                  (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                   *)this_05,
                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___KeyCollection<int,_Friend>__GetEnumerator__
@@ -775,30 +773,29 @@ void Assembly-CSharp.dll::FriendList::FriendList_RemoveFromPendingByProfileID
                 UInt32,System::Object]::
                 Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
                           ((Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
-                            *)&stack0xffffffb4,
+                            *)&stack0xffffffac,
                            MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<int,_Friend>__MoveNext__
                           );
         if (bVar5 == 0) {
           uStack_1 = 0xffffffff;
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&stack0xffffffb4,
+                    ((Object *)&stack0xffffffac,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<int,_Friend>__Dispose__
                      ,in_stack_6);
           uStack_1 = 0xffffffff;
-          iVar7 = 0;
           if (this_03 != (MethodInfo *)0x0) goto code_?;
           goto code_?;
         }
         this_01 = (this->fields).pending;
         if (this_01 == (Dictionary_2_System_Int32_Friend_ *)0x0) goto code_?;
-        pOVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+        pOVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
                  Object]::Dictionary_2_System_Int32_System_Object__get_Item
                            ((Dictionary_2_System_Int32_System_Object_ *)this_01,0xADDR,
                             MethodInfo__System__Collections__Generic__Dictionary<int,_Friend>__get_Item_int_
                            );
-        if (pOVar8 == (Object *)0x0) goto code_?;
-      } while (pOVar8[1].klass != (Object__Class *)profileID);
+        if (pOVar7 == (Object *)0x0) goto code_?;
+      } while (pOVar7[1].klass != (Object__Class *)profileID);
       if (this_03 != (MethodInfo *)0x0) {
         this_06 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
         func_?();
@@ -807,33 +804,56 @@ void Assembly-CSharp.dll::FriendList::FriendList_RemoveFromPendingByProfileID
           func_?();
           uStack_1 = 0xffffffff;
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&stack0xffffffb4,
+                    ((Object *)&stack0xffffffac,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<int,_Friend>__Dispose__
                      ,(MethodInfo *)profileID);
-          iVar7 = 0;
-          uStack_1 = 0xffffffff;
 code_?:
-          do {
-            if ((int)this_06->name <= iVar7) goto code_?;
+          uStack_1 = 0xffffffff;
+          for (iVar8 = 0; iVar8 < (int)this_06->name; iVar8 = iVar8 + 1) {
             this_06 = (MethodInfo *)(this->fields).pending;
             RVar9 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                     RegularExpressions::RegexCharClass+SingleRange]::
                     List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                               ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                               this_03,iVar7,
+                               this_03,iVar8,
                                MethodInfo__System__Collections__Generic__List<int>__get_Item_int_);
-            if (this_06 == (MethodInfo *)0x0) break;
+            if (this_06 == (MethodInfo *)0x0) goto code_?;
             pMVar4 = (MethodInfo *)&UNK_?;
-            this_04 = MethodInfo__System__Collections__Generic__Dictionary<int,_Friend>__Remove_int_
-            ;
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
             Dictionary_2_System_Int32_System_Object__Remove
                       ((Dictionary_2_System_Int32_System_Object_ *)this_06,(int32_t)RVar9,
                        MethodInfo__System__Collections__Generic__Dictionary<int,_Friend>__Remove_int_
                       );
-            iVar7 = iVar7 + 1;
-          } while( true );
+          }
+          iVar8 = 0;
+          if (this_04 != (MethodInfo *)0x0) {
+            while( true ) {
+              if ((int)pMVar4->name <= iVar8) {
+                pFVar10 = (this->fields).OnFriendListUpdated;
+                if (pFVar10 != (FriendList_OnFriendListUpdatedDelegate *)0x0) {
+                  (*(pFVar10->fields)._._.invoke_impl)();
+                }
+                *unaff_FS_OFFSET = uStack_3;
+                return;
+              }
+              this_02 = (this->fields).pendingNotifications;
+              RVar9 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                      RegularExpressions::RegexCharClass+SingleRange]::
+                      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                                ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                  *)this_04,iVar8,
+                                 MethodInfo__System__Collections__Generic__List<int>__get_Item_int_)
+              ;
+              if (this_02 == (List_1_System_Int32_ *)0x0) break;
+              pMVar4 = MethodInfo__System__Collections__Generic__List<int>__Remove_int_;
+              mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
+              List_1_System_Int32__Remove
+                        (this_02,(int32_t)RVar9,
+                         MethodInfo__System__Collections__Generic__List<int>__Remove_int_);
+              iVar8 = iVar8 + 1;
+            }
+          }
         }
       }
     }
@@ -841,36 +861,9 @@ code_?:
 code_?:
   func_?();
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
-code_?:
-  iVar7 = 0;
-  if (this_04 != (MethodInfo *)0x0) {
-    while( true ) {
-      if ((int)pMVar4->name <= iVar7) {
-        if ((this->fields).OnFriendListUpdated != (FriendList_OnFriendListUpdatedDelegate *)0x0) {
-          (*(((this->fields).OnFriendListUpdated)->fields)._._.invoke_impl)();
-        }
-        *unaff_FS_OFFSET = uStack_3;
-        return;
-      }
-      this_02 = (this->fields).pendingNotifications;
-      RVar9 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-              RegexCharClass+SingleRange]::
-              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                        ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                         this_04,iVar7,
-                         MethodInfo__System__Collections__Generic__List<int>__get_Item_int_);
-      if (this_02 == (List_1_System_Int32_ *)0x0) break;
-      pMVar4 = MethodInfo__System__Collections__Generic__List<int>__Remove_int_;
-      mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::List_1_System_Int32__Remove
-                (this_02,(int32_t)RVar9,
-                 MethodInfo__System__Collections__Generic__List<int>__Remove_int_);
-      iVar7 = iVar7 + 1;
-    }
-  }
-  goto code_?;
 }
 
 
@@ -953,8 +946,9 @@ void Assembly-CSharp.dll::FriendList::FriendList_UpdateFriend
           UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
                     ((Object *)StringLiteral_Tried_updating_friend_that_doesn,(MethodInfo *)0x0);
 code_?:
-          if ((this->fields).OnFriendListUpdated != (FriendList_OnFriendListUpdatedDelegate *)0x0) {
-            (*(((this->fields).OnFriendListUpdated)->fields)._._.invoke_impl)();
+          pFVar12 = (this->fields).OnFriendListUpdated;
+          if (pFVar12 != (FriendList_OnFriendListUpdatedDelegate *)0x0) {
+            (*(pFVar12->fields)._._.invoke_impl)();
           }
           *unaff_FS_OFFSET = uStack_3;
           return;
@@ -971,8 +965,8 @@ code_?:
           }
         }
         else {
-          if ((this->fields).OnFriendRequestAccepted != (FriendList_OnFriendRequestUpdated *)0x0) {
-            pFVar12 = (this->fields).OnFriendRequestAccepted;
+          pFVar13 = (this->fields).OnFriendRequestAccepted;
+          if (pFVar13 != (FriendList_OnFriendRequestUpdated *)0x0) {
             pDVar10 = (this->fields).friends;
             if (pDVar10 == (Dictionary_2_System_Int32_Friend_ *)0x0) goto code_?;
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
@@ -980,39 +974,39 @@ code_?:
                       ((Dictionary_2_System_Int32_System_Object_ *)pDVar10,friendID,
                        MethodInfo__System__Collections__Generic__Dictionary<int,_Friend>__get_Item_int_
                       );
-            (*(pFVar12->fields)._._.invoke_impl)();
+            (*(pFVar13->fields)._._.invoke_impl)();
           }
           pDVar10 = (this->fields).friends;
           if ((pDVar10 != (Dictionary_2_System_Int32_Friend_ *)0x0) &&
-             (pOVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+             (pOVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                         Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item
                                   ((Dictionary_2_System_Int32_System_Object_ *)pDVar10,friendID,
                                    MethodInfo__System__Collections__Generic__Dictionary<int,_Friend>__get_Item_int_
-                                  ), pOVar13 != (Object *)0x0)) {
-            pOVar13[2].klass = (Object__Class *)status;
-            pDStack_14 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                                  ), pOVar14 != (Object *)0x0)) {
+            pOVar14[2].klass = (Object__Class *)status;
+            pDStack_15 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                           *)func_?();
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
             UIElements::StyleComplexSelector+PseudoStateData]::
             Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
-                      (pDStack_14,
+                      (pDStack_15,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                       );
-            DStack_15._currentValue = (Object *)func_?();
+            DStack_16._currentValue = (Object *)func_?();
             pDVar10 = (this->fields).friends;
             if ((pDVar10 != (Dictionary_2_System_Int32_Friend_ *)0x0) &&
-               (pOVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+               (pOVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                           Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item
                                     ((Dictionary_2_System_Int32_System_Object_ *)pDVar10,friendID,
                                      MethodInfo__System__Collections__Generic__Dictionary<int,_Friend>__get_Item_int_
-                                    ), pDVar16 = pDStack_14,
-               pDStack_14 !=
+                                    ), pDVar17 = pDStack_15,
+               pDStack_15 !=
                (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                 *)0x0)) {
               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
               Object]::Dictionary_2_System_Object_System_Object__Add
-                        ((Dictionary_2_System_Object_System_Object_ *)pDStack_14,
-                         DStack_15._currentValue,pOVar13,
+                        ((Dictionary_2_System_Object_System_Object_ *)pDStack_15,
+                         DStack_16._currentValue,pOVar14,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                         );
               if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
@@ -1020,7 +1014,7 @@ code_?:
               }
               NotificationController::NotificationController_OnNotificationReceived
                         (NotificationType__Enum_FriendRequestAccepted,
-                         (Dictionary_2_System_Object_System_Object_ *)pDVar16,(MethodInfo *)0x0);
+                         (Dictionary_2_System_Object_System_Object_ *)pDVar17,(MethodInfo *)0x0);
               goto code_?;
             }
           }
@@ -1030,8 +1024,8 @@ code_?:
     else {
       FriendList_RemoveFromPendingByProfileID(this,profileID,(MethodInfo *)0x0);
       if (status == FriendStatus__Enum_Deleted) goto code_?;
-      if ((this->fields).OnPendingCountChanged != (UnityAction_1_System_Int32_ *)0x0) {
-        pUVar17 = (this->fields).OnPendingCountChanged;
+      pUVar18 = (this->fields).OnPendingCountChanged;
+      if (pUVar18 != (UnityAction_1_System_Int32_ *)0x0) {
         this_01 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                    *)FriendList_GetOnlineFriends(this,(MethodInfo *)0x0);
         if (this_01 ==
@@ -1043,9 +1037,9 @@ code_?:
                   (this_01,
                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__get_Count__)
         ;
-        (*(pUVar17->fields)._._.invoke_impl)();
+        (*(pUVar18->fields)._._.invoke_impl)();
       }
-      pDStack_14 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+      pDStack_15 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                     *)0x0;
       if (cRam_? == '\0') {
         func_?(&TypeInfo__MVGameControllerBase);
@@ -1061,18 +1055,18 @@ code_?:
           this_02 !=
           (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
            *)0x0)))) {
-        pDVar18 = mscorlib.dll::System::Collections::Generic::
+        pDVar19 = mscorlib.dll::System::Collections::Generic::
                   Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
                   StyleSheetCache+SheetHandleKey,System::Object]::
                   Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
-                            (&DStack_15,this_02,
+                            (&DStack_16,this_02,
                              MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVPlayer>__GetEnumerator__
                             );
-        pDVar16 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                   *)pDVar18->_currentValue;
-        DStack_15._version = 0;
+        pDVar17 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                   *)pDVar19->_currentValue;
+        DStack_16._version = 0;
         uStack_1 = 1;
-        DStack_15._currentValue = (Object *)&stack0xffffffc4;
+        DStack_16._currentValue = (Object *)&stack0xffffffc4;
         do {
           bVar11 = mscorlib.dll::System::Collections::Generic::
                   Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
@@ -1092,32 +1086,32 @@ code_?:
             uStack_1 = 0xffffffff;
             goto code_?;
           }
-          if (pDVar16 ==
+          if (pDVar17 ==
               (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                *)0x0) goto code_?;
-        } while ((Object *)profileID != (pDVar16->fields)._syncRoot);
+        } while ((Object *)profileID != (pDVar17->fields)._syncRoot);
         uStack_1 = 0xffffffff;
-        pDStack_14 = pDVar16;
+        pDStack_15 = pDVar17;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                   ((Object *)&stack0xffffffc4,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__Dispose__
                    ,(MethodInfo *)in_stack_6);
         uStack_1 = 0xffffffff;
-        if (pDVar16 !=
+        if (pDVar17 !=
             (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
              *)0x0) {
-          pSVar19 = TM::TM__(StringLiteral_Accepted_friend_request_from__0_,(MethodInfo *)0x0);
-          pDVar20 = pDVar16[1].fields._entries;
-          if (pDVar20 == (Dictionary_2_TKey_TValue_Entry_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___Array
+          pSVar20 = TM::TM__(StringLiteral_Accepted_friend_request_from__0_,(MethodInfo *)0x0);
+          pDVar21 = pDVar17[1].fields._entries;
+          if (pDVar21 == (Dictionary_2_TKey_TValue_Entry_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___Array
                          *)0x0) goto code_?;
-          pSVar19 = mscorlib.dll::System::String::String_Format
-                              (pSVar19,(Object *)pDVar20->max_length,(MethodInfo *)0x0);
+          pSVar20 = mscorlib.dll::System::String::String_Format
+                              (pSVar20,(Object *)pDVar21->max_length,(MethodInfo *)0x0);
           if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
           NotificationController::NotificationController_PushNotification
-                    (pSVar19,(Sprite *)0x0,3,(MethodInfo *)0x0);
+                    (pSVar20,(Sprite *)0x0,3,(MethodInfo *)0x0);
         }
 code_?:
         pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
@@ -1133,10 +1127,10 @@ code_?:
     }
   }
 code_?:
-  uVar21 = func_?();
-  func_?(uVar21);
-  pcVar22 = (code *)swi(3);
-  (*pcVar22)();
+  uVar22 = func_?();
+  func_?(uVar22);
+  pcVar23 = (code *)swi(3);
+  (*pcVar23)();
   return;
 }
 
@@ -1163,8 +1157,9 @@ void Assembly-CSharp.dll::FriendList::FriendList__ctor(FriendList *this,MethodIn
   Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
             (pDVar1,MethodInfo__System__Collections__Generic__Dictionary<int,_Friend>__Dictionary__)
   ;
-  (this->fields).friends = (Dictionary_2_System_Int32_Friend_ *)pDVar1;
-  func_?(&(this->fields).friends,pDVar1);
+  ppDVar2 = &(this->fields).friends;
+  *ppDVar2 = (Dictionary_2_System_Int32_Friend_ *)pDVar1;
+  func_?(ppDVar2,pDVar1);
   pDVar1 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *)
            func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_Friend>);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text
@@ -1172,8 +1167,9 @@ void Assembly-CSharp.dll::FriendList::FriendList__ctor(FriendList *this,MethodIn
   Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
             (pDVar1,MethodInfo__System__Collections__Generic__Dictionary<int,_Friend>__Dictionary__)
   ;
-  (this->fields).pending = (Dictionary_2_System_Int32_Friend_ *)pDVar1;
-  func_?(&(this->fields).pending,pDVar1);
+  ppDVar2 = &(this->fields).pending;
+  *ppDVar2 = (Dictionary_2_System_Int32_Friend_ *)pDVar1;
+  func_?(ppDVar2,pDVar1);
   this_00 = (List_1_System_Int32_ *)
             func_?(TypeInfo__System__Collections__Generic__List<int>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
@@ -1182,7 +1178,7 @@ void Assembly-CSharp.dll::FriendList::FriendList__ctor(FriendList *this,MethodIn
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<int>__List__);
   method_00 = (MethodInfo *)&(this->fields).pendingNotifications;
-  (this->fields).pendingNotifications = this_00;
+  *(List_1_System_Int32_ **)method_00 = this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
@@ -1190,52 +1186,52 @@ void Assembly-CSharp.dll::FriendList::FriendList__ctor(FriendList *this,MethodIn
     func_?();
     cRam_? = '\x01';
   }
-  pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
-  if (((pMVar2 == (MVGameControllerBase *)0x0) ||
-      (pMVar3 = (pMVar2->fields).game, pMVar3 == (MVNetworkGame *)0x0)) ||
-     (pMVar4 = (pMVar3->fields).playerContainer, pMVar4 == (MVPlayerContainer *)0x0)) {
-    uVar5 = func_?();
+  pMVar3 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if (((pMVar3 == (MVGameControllerBase *)0x0) ||
+      (pMVar4 = (pMVar3->fields).game, pMVar4 == (MVNetworkGame *)0x0)) ||
+     (pMVar5 = (pMVar4->fields).playerContainer, pMVar5 == (MVPlayerContainer *)0x0)) {
+    uVar6 = func_?();
   }
   else {
-    pAVar6 = (pMVar4->fields).OnPlayerListLoaded;
+    pAVar7 = (pMVar5->fields).OnPlayerListLoaded;
+    ppAVar8 = &(pMVar5->fields).OnPlayerListLoaded;
     this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?();
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
               (this_01,(Object *)MethodInfo__FriendList__OnPlayersLoaded__,
                MethodInfo__FriendList__OnPlayersLoaded__,(MethodInfo *)0x0);
-    pAVar6 = (Action *)
+    pAVar7 = (Action *)
              mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pAVar6,(Delegate *)this_01,(MethodInfo *)0x0);
-    uVar5 = CONCAT44(TypeInfo__System__Action,pAVar6);
-    if (pAVar6 == (Action *)0x0) {
-      (pMVar4->fields).OnPlayerListLoaded = (Action *)0x0;
-      ppAStack7 = &(pMVar4->fields).OnPlayerListLoaded;
-      pAStack8 = (Action *)0x0;
+                       ((Delegate *)pAVar7,(Delegate *)this_01,(MethodInfo *)0x0);
+    uVar6 = CONCAT44(TypeInfo__System__Action,pAVar7);
+    ppAStack9 = ppAVar8;
+    if (pAVar7 == (Action *)0x0) {
+      pAStack10 = (Action *)0x0;
+      *ppAVar8 = (Action *)0x0;
       func_?();
       return;
     }
-    pAVar9 = (Action *)0x0;
-    if (pAVar6->klass == TypeInfo__System__Action) {
-      pAVar9 = pAVar6;
+    pAVar11 = (Action *)0x0;
+    if (pAVar7->klass == TypeInfo__System__Action) {
+      pAVar11 = pAVar7;
     }
-    if (pAVar9 != (Action *)0x0) {
-      (pMVar4->fields).OnPlayerListLoaded = pAVar9;
-      uVar5 = CONCAT44(TypeInfo__System__Action,pAVar6);
-      pAStack8 = (Action *)0x0;
-      if (pAVar6->klass == TypeInfo__System__Action) {
-        pAStack8 = pAVar6;
+    if (pAVar11 != (Action *)0x0) {
+      *ppAVar8 = pAVar11;
+      uVar6 = CONCAT44(TypeInfo__System__Action,pAVar7);
+      pAStack10 = (Action *)0x0;
+      if (pAVar7->klass == TypeInfo__System__Action) {
+        pAStack10 = pAVar7;
       }
-      if (pAStack8 != (Action *)0x0) {
-        ppAStack7 = &(pMVar4->fields).OnPlayerListLoaded;
+      if (pAStack10 != (Action *)0x0) {
         func_?();
         return;
       }
     }
   }
-  _ppAStack00000028 = uVar5;
+  _ppAStack00000028 = uVar6;
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 

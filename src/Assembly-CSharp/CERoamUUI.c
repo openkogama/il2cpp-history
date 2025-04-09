@@ -32,34 +32,37 @@ void Assembly-CSharp.dll::CERoamUUI::CERoamUUI_Enter
   }
   (this->fields).didExit = 0;
   if (esm != (EditorStateMachine *)0x0) {
-    pTStack_1 = (Transform *)(esm->fields).gameObject;
+    pEStack_1 = (ExecuteEvents_EventFunction_1_IAvatarEditAnimationState_ *)
+                 (esm->fields).gameObject;
     if ((TypeInfo__CERoamUUI____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__CERoamUUI____c);
     }
-    pEStack_2 = TypeInfo__CERoamUUI____c->static_fields->__9__4_0;
-    if (pEStack_2 == (ExecuteEvents_EventFunction_1_IAvatarEditUIState_ *)0x0) {
+    callbackFunction = TypeInfo__CERoamUUI____c->static_fields->__9__4_0;
+    if (callbackFunction == (ExecuteEvents_EventFunction_1_IAvatarEditUIState_ *)0x0) {
       if ((TypeInfo__CERoamUUI____c->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__CERoamUUI____c);
       }
-      pCVar3 = TypeInfo__CERoamUUI____c->static_fields->__9;
-      pEStack_2 = (ExecuteEvents_EventFunction_1_IAvatarEditUIState_ *)
-                   func_?(
-                                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IAvatarEditUIState>
-                                  );
+      pCVar2 = TypeInfo__CERoamUUI____c->static_fields->__9;
+      callbackFunction =
+           (ExecuteEvents_EventFunction_1_IAvatarEditUIState_ *)
+           func_?(
+                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IAvatarEditUIState>
+                          );
+      pEStack_3 = callbackFunction;
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)pEStack_2,(Object *)pCVar3,
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)pCVar2,
                  MethodInfo__CERoamUUI____c___Enter_b__4_0_UnityEngine__EventSystems__IAvatarEditUIState__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
-      TypeInfo__CERoamUUI____c->static_fields->__9__4_0 = pEStack_2;
-      func_?(&TypeInfo__CERoamUUI____c->static_fields->__9__4_0,pEStack_2);
+      TypeInfo__CERoamUUI____c->static_fields->__9__4_0 = callbackFunction;
+      func_?(&TypeInfo__CERoamUUI____c->static_fields->__9__4_0,callbackFunction);
     }
     if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
     }
     UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              ((GameObject *)pTStack_1,(BaseEventData *)0x0,
-               (ExecuteEvents_EventFunction_1_System_Object_ *)pEStack_2,
+              ((GameObject *)pEStack_1,(BaseEventData *)0x0,
+               (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
                UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IAvatarEditUIState>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IAvatarEditUIState>_
               );
     this_00 = (esm->fields).cubeModelingStateMachine;
@@ -67,92 +70,95 @@ void Assembly-CSharp.dll::CERoamUUI::CERoamUUI_Enter
       CubeModelingStateMachine::CubeModelingStateMachine_RemoveCursors(this_00,(MethodInfo *)0x0);
       pWVar4 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRefNullRef
                          ((MethodInfo *)0x0);
-      (this->fields)._.tintedWo = pWVar4;
-      func_?(&(this->fields)._.tintedWo,pWVar4);
-      pMVar5 = EditorStateMachine::EditorStateMachine_get_ParentGroup(esm,(MethodInfo *)0x0);
-      if (pMVar5 != (MVGroup *)0x0) {
-        pTStack_1 = (pMVar5->fields)._.transform;
+      ppWVar5 = &(this->fields)._.tintedWo;
+      *ppWVar5 = pWVar4;
+      func_?(ppWVar5,pWVar4);
+      pMVar6 = EditorStateMachine::EditorStateMachine_get_ParentGroup(esm,(MethodInfo *)0x0);
+      if (pMVar6 != (MVGroup *)0x0) {
+        pTVar7 = (pMVar6->fields)._.transform;
         if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__SharedCubeFunctions);
         }
-        SharedCubeFunctions::SharedCubeFunctions_SetLayerRecursively(pTStack_1,1,(MethodInfo *)0x0)
-        ;
-        pTStack_1 = (Transform *)(esm->fields).gameObject;
+        SharedCubeFunctions::SharedCubeFunctions_SetLayerRecursively(pTVar7,1,(MethodInfo *)0x0);
+        pEStack_3 = (ExecuteEvents_EventFunction_1_IAvatarEditUIState_ *)(esm->fields).gameObject;
         if ((TypeInfo__CERoamUUI____c->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__CERoamUUI____c);
         }
-        pEStack_2 = (ExecuteEvents_EventFunction_1_IAvatarEditUIState_ *)
-                     TypeInfo__CERoamUUI____c->static_fields->__9__4_1;
-        if (pEStack_2 == (ExecuteEvents_EventFunction_1_IAvatarEditUIState_ *)0x0) {
+        callbackFunction_00 = TypeInfo__CERoamUUI____c->static_fields->__9__4_1;
+        if (callbackFunction_00 == (ExecuteEvents_EventFunction_1_IAvatarEditAnimationState_ *)0x0)
+        {
           if ((TypeInfo__CERoamUUI____c->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__CERoamUUI____c);
           }
-          pCVar3 = TypeInfo__CERoamUUI____c->static_fields->__9;
-          pEStack_2 = (ExecuteEvents_EventFunction_1_IAvatarEditUIState_ *)
-                       func_?(
-                                      TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IAvatarEditAnimationState>
-                                      );
+          pCVar2 = TypeInfo__CERoamUUI____c->static_fields->__9;
+          callbackFunction_00 =
+               (ExecuteEvents_EventFunction_1_IAvatarEditAnimationState_ *)
+               func_?(
+                              TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IAvatarEditAnimationState>
+                              );
+          pEStack_1 = callbackFunction_00;
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
           Object]::UnityAction_2_System_Object_System_Object___ctor
-                    ((UnityAction_2_System_Object_System_Object_ *)pEStack_2,(Object *)pCVar3,
+                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,
+                     (Object *)pCVar2,
                      MethodInfo__CERoamUUI____c___Enter_b__4_1_UnityEngine__EventSystems__IAvatarEditAnimationState__UnityEngine__EventSystems__BaseEventData_
                      ,(MethodInfo *)0x0);
-          TypeInfo__CERoamUUI____c->static_fields->__9__4_1 =
-               (ExecuteEvents_EventFunction_1_IAvatarEditAnimationState_ *)pEStack_2;
-          func_?(&TypeInfo__CERoamUUI____c->static_fields->__9__4_1,pEStack_2);
+          TypeInfo__CERoamUUI____c->static_fields->__9__4_1 = callbackFunction_00;
+          func_?(&TypeInfo__CERoamUUI____c->static_fields->__9__4_1,callbackFunction_00);
         }
         if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
            ) {
           func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
         }
         UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                  ((GameObject *)pTStack_1,(BaseEventData *)0x0,
-                   (ExecuteEvents_EventFunction_1_System_Object_ *)pEStack_2,
+                  ((GameObject *)pEStack_3,(BaseEventData *)0x0,
+                   (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction_00,
                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IAvatarEditAnimationState>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IAvatarEditAnimationState>_
                   );
-        pGVar6 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-        if (pGVar6 != (GameEventManager *)0x0) {
-          pGStack_7 = (pGVar6->fields).AvatarCommandsBuildMode;
-          uStack_8._0_4_ = (this->fields).centerPos.x;
-          uStack_8._4_4_ = (this->fields).centerPos.y;
+        pGVar8 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
+        if (pGVar8 != (GameEventManager *)0x0) {
+          this_01 = (pGVar8->fields).AvatarCommandsBuildMode;
           EStack_9 = (this->fields)._.stateType;
-          pEStack_2 = (ExecuteEvents_EventFunction_1_IAvatarEditUIState_ *)
+          uStack_10._0_4_ = (this->fields).centerPos.x;
+          uStack_10._4_4_ = (this->fields).centerPos.y;
+          pEStack_3 = (ExecuteEvents_EventFunction_1_IAvatarEditUIState_ *)
                        (this->fields).centerPos.z;
-          pMVar5 = EditorStateMachine::EditorStateMachine_get_ParentGroup(esm,(MethodInfo *)0x0);
-          if ((pMVar5 != (MVGroup *)0x0) &&
-             (this_01 = (pMVar5->fields)._.transform, this_01 != (Transform *)0x0)) {
-            pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                               (&VStack_11,this_01,(MethodInfo *)0x0);
-            uVar12 = pVVar10->x;
-            uVar13 = pVVar10->y;
-            fVar14 = pVVar10->z;
+          pMVar6 = EditorStateMachine::EditorStateMachine_get_ParentGroup(esm,(MethodInfo *)0x0);
+          if ((pMVar6 != (MVGroup *)0x0) &&
+             (pTVar7 = (pMVar6->fields)._.transform, pTVar7 != (Transform *)0x0)) {
+            pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                                (&VStack_12,pTVar7,(MethodInfo *)0x0);
+            uVar13 = pVVar11->x;
+            uVar14 = pVVar11->y;
+            fVar15 = pVVar11->z;
             if (cRam_? == '\0') {
               func_?(&TypeInfo__UnityEngine__Vector3);
               cRam_? = '\x01';
             }
-            pVVar15 = TypeInfo__UnityEngine__Vector3->static_fields;
-            VStack_11.x = (pVVar15->upVector).x;
-            VStack_11.y = (pVVar15->upVector).y;
-            VStack_11.z = (pVVar15->upVector).z;
-            fVar16 = VStack_11.x + (float)uVar12;
-            pTStack_1 = (Transform *)(VStack_11.y + (float)uVar13);
-            fVar14 = VStack_11.z + fVar14;
+            pVVar16 = TypeInfo__UnityEngine__Vector3->static_fields;
+            VStack_12.x = (pVVar16->upVector).x;
+            VStack_12.y = (pVVar16->upVector).y;
+            VStack_12.z = (pVVar16->upVector).z;
+            fVar17 = VStack_12.x + (float)uVar13;
+            pEStack_1 = (ExecuteEvents_EventFunction_1_IAvatarEditAnimationState_ *)
+                         ((float)uVar14 + VStack_12.y);
+            fVar15 = VStack_12.z + fVar15;
             this_02 = (MVBuildModeAvatarLocal_EditMode_CERoamUUISetupData *)
                       func_?(TypeInfo__MVBuildModeAvatarLocal_EditMode__CERoamUUISetupData)
             ;
-            centerPos.z = (float)pEStack_2;
-            centerPos.x = (float)(undefined4)uStack_8;
-            centerPos.y = (float)uStack_8._4_4_;
-            lookAtPosition.y = (float)pTStack_1;
-            lookAtPosition.x = fVar16;
-            lookAtPosition.z = fVar14;
+            centerPos.z = (float)pEStack_3;
+            centerPos.x = (float)(undefined4)uStack_10;
+            centerPos.y = (float)uStack_10._4_4_;
+            lookAtPosition.y = (float)pEStack_1;
+            lookAtPosition.x = fVar17;
+            lookAtPosition.z = fVar15;
             MVBuildModeAvatarLocal+EditMode+CERoamUUISetupData::
             MVBuildModeAvatarLocal_EditMode_CERoamUUISetupData__ctor
                       (this_02,centerPos,lookAtPosition,(MethodInfo *)0x0);
-            if (pGStack_7 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0) {
+            if (this_01 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0) {
               GameEventManager+AvatarCommandsBuildModeManager::
               GameEventManager_AvatarCommandsBuildModeManager_EnterBuildStateEvent
-                        (pGStack_7,EStack_9,(Object *)this_02,(MethodInfo *)0x0);
+                        (this_01,EStack_9,(Object *)this_02,(MethodInfo *)0x0);
               return;
             }
           }
@@ -161,8 +167,8 @@ void Assembly-CSharp.dll::CERoamUUI::CERoamUUI_Enter
     }
   }
   func_?();
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 
@@ -197,69 +203,73 @@ bool Assembly-CSharp.dll::CERoamUUI::CERoamUUI_EnterObject
       return 0;
     }
     pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(esm,(MethodInfo *)0x0);
-    if (((pMVar1 != (MVWorldObjectClient *)0x0) &&
-        ((TypeInfo__MVCubeModelInstance->_1).naturalAligment <= (pMVar1->klass->_1).naturalAligment)
-        ) && ((MVCubeModelInstance__Class *)
-              (pMVar1->klass->_1).typeHierarchy
-              [(TypeInfo__MVCubeModelInstance->_1).naturalAligment - 1] ==
-              TypeInfo__MVCubeModelInstance)) {
-      pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(esm,(MethodInfo *)0x0);
-      if (pMVar1 == (MVWorldObjectClient *)0x0) goto code_?;
-      iVar2 = (pMVar1->fields)._.groupId;
-      iVar3 = EditorStateMachine::EditorStateMachine_get_ParentGroupID(esm,(MethodInfo *)0x0);
-      if (iVar2 == iVar3) {
-        root = (esm->fields).gameObject;
-        if ((TypeInfo__CERoamUUI____c->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        callbackFunction = TypeInfo__CERoamUUI____c->static_fields->__9__9_0;
-        if (callbackFunction == (ExecuteEvents_EventFunction_1_IAvatarEditAnimationState_ *)0x0) {
+    if (pMVar1 != (MVWorldObjectClient *)0x0) {
+      bVar2 = (TypeInfo__MVCubeModelInstance->_1).naturalAligment;
+      if ((bVar2 <= (pMVar1->klass->_1).naturalAligment) &&
+         ((MVCubeModelInstance__Class *)(pMVar1->klass->_1).typeHierarchy[bVar2 - 1] ==
+          TypeInfo__MVCubeModelInstance)) {
+        pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(esm,(MethodInfo *)0x0);
+        if (pMVar1 == (MVWorldObjectClient *)0x0) goto code_?;
+        iVar3 = (pMVar1->fields)._.groupId;
+        iVar4 = EditorStateMachine::EditorStateMachine_get_ParentGroupID(esm,(MethodInfo *)0x0);
+        if (iVar3 == iVar4) {
+          root = (esm->fields).gameObject;
           if ((TypeInfo__CERoamUUI____c->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          object = TypeInfo__CERoamUUI____c->static_fields->__9;
-          callbackFunction =
-               (ExecuteEvents_EventFunction_1_IAvatarEditAnimationState_ *)func_?();
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
-                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object
-                     ,
-                     MethodInfo__CERoamUUI____c___EnterObject_b__9_0_UnityEngine__EventSystems__IAvatarEditAnimationState__UnityEngine__EventSystems__BaseEventData_
-                     ,(MethodInfo *)0x0);
-          TypeInfo__CERoamUUI____c->static_fields->__9__9_0 = callbackFunction;
-          func_?();
+          callbackFunction = TypeInfo__CERoamUUI____c->static_fields->__9__9_0;
+          if (callbackFunction == (ExecuteEvents_EventFunction_1_IAvatarEditAnimationState_ *)0x0) {
+            if ((TypeInfo__CERoamUUI____c->_1).cctor_finished_or_no_cctor == 0) {
+              func_?();
+            }
+            object = TypeInfo__CERoamUUI____c->static_fields->__9;
+            callbackFunction =
+                 (ExecuteEvents_EventFunction_1_IAvatarEditAnimationState_ *)func_?();
+            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+            Object]::UnityAction_2_System_Object_System_Object___ctor
+                      ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,
+                       (Object *)object,
+                       MethodInfo__CERoamUUI____c___EnterObject_b__9_0_UnityEngine__EventSystems__IAvatarEditAnimationState__UnityEngine__EventSystems__BaseEventData_
+                       ,(MethodInfo *)0x0);
+            TypeInfo__CERoamUUI____c->static_fields->__9__9_0 = callbackFunction;
+            func_?();
+          }
+          if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
+              0) {
+            func_?();
+          }
+          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+          ExecuteEvents_ExecuteHierarchy
+                    (root,(BaseEventData *)0x0,
+                     (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
+                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IAvatarEditAnimationState>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IAvatarEditAnimationState>_
+                    );
+          uRam_? = 1;
+          return 1;
         }
-        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
-           ) {
-          func_?();
-        }
-        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                  (root,(BaseEventData *)0x0,
-                   (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
-                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IAvatarEditAnimationState>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IAvatarEditAnimationState>_
-                  );
-        uRam_? = 1;
-        return 1;
       }
     }
     pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(esm,(MethodInfo *)0x0);
     if (pMVar1 == (MVWorldObjectClient *)0x0) {
       return 0;
     }
-    if ((pMVar1->klass->_1).naturalAligment < (TypeInfo__MVGroup->_1).naturalAligment) {
+    bVar2 = (TypeInfo__MVGroup->_1).naturalAligment;
+    if ((pMVar1->klass->_1).naturalAligment < bVar2) {
       return 0;
     }
-    if ((MVGroup__Class *)
-        (pMVar1->klass->_1).typeHierarchy[(TypeInfo__MVGroup->_1).naturalAligment - 1] !=
-        TypeInfo__MVGroup) {
+    if ((MVGroup__Class *)(pMVar1->klass->_1).typeHierarchy[bVar2 - 1] != TypeInfo__MVGroup) {
       return 0;
     }
     pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(esm,(MethodInfo *)0x0);
-    if ((pMVar1 != (MVWorldObjectClient *)0x0) &&
-       (((pMVar1->klass->_1).naturalAligment < (TypeInfo__MVGroup->_1).naturalAligment ||
-        ((MVGroup__Class *)
-         (pMVar1->klass->_1).typeHierarchy[(TypeInfo__MVGroup->_1).naturalAligment - 1] !=
-         TypeInfo__MVGroup)))) goto code_?;
+    if (pMVar1 == (MVWorldObjectClient *)0x0) {
+      pMVar1 = (MVWorldObjectClient *)0x0;
+    }
+    else {
+      bVar2 = (TypeInfo__MVGroup->_1).naturalAligment;
+      if (((pMVar1->klass->_1).naturalAligment < bVar2) ||
+         ((MVGroup__Class *)(pMVar1->klass->_1).typeHierarchy[bVar2 - 1] != TypeInfo__MVGroup))
+      goto code_?;
+    }
     this_00 = (esm->fields).selectionController;
     if (this_00 != (SelectionController *)0x0) {
       SelectionController::SelectionController_DeSelectAll(this_00,(MethodInfo *)0x0);
@@ -284,9 +294,9 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  bVar5 = (*pcVar4)();
-  return bVar5;
+  pcVar5 = (code *)swi(3);
+  bVar6 = (*pcVar5)();
+  return bVar6;
 }
 
 
@@ -413,9 +423,10 @@ void Assembly-CSharp.dll::CERoamUUI::CERoamUUI_Exit
   if ((pGVar1 != (GameEventManager *)0x0) &&
      (this_00 = (pGVar1->fields).AvatarCommandsBuildMode,
      this_00 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) {
-    GameEventManager+AvatarCommandsBuildModeManager::
-    GameEventManager_AvatarCommandsBuildModeManager_ExitBuildStateEvent
-              (this_00,(this->fields)._.stateType,(Object *)0x0,(MethodInfo *)0x0);
+    UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::KeyboardNavigationManipulator::
+    KeyboardNavigationManipulator_Invoke
+              ((KeyboardNavigationManipulator *)this_00,(this->fields)._.stateType,(EventBase *)0x0,
+               (MethodInfo *)0x0);
     return;
   }
   func_?();

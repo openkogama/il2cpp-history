@@ -12,8 +12,8 @@ void Assembly-CSharp.dll::DataUploadManager::DataUploadManager_HandleDone(Method
        TypeInfo__DataUploadManager->static_fields->id + 1;
   TypeInfo__DataUploadManager->static_fields->bytePacker = (BytePacker *)0x0;
   func_?(&TypeInfo__DataUploadManager->static_fields->bytePacker,0);
-  if (TypeInfo__DataUploadManager->static_fields->doneNotification != (UnityAction *)0x0) {
-    pUVar1 = TypeInfo__DataUploadManager->static_fields->doneNotification;
+  pUVar1 = TypeInfo__DataUploadManager->static_fields->doneNotification;
+  if (pUVar1 != (UnityAction *)0x0) {
     (*(pUVar1->fields)._._.invoke_impl)
               ((pUVar1->fields)._._.method_code,(pUVar1->fields)._._.method);
     TypeInfo__DataUploadManager->static_fields->doneNotification = (UnityAction *)0x0;
@@ -47,9 +47,9 @@ void Assembly-CSharp.dll::DataUploadManager::DataUploadManager_OnUploadBytes(Met
              TypeInfo__DataUploadManager->static_fields->id + 1;
         TypeInfo__DataUploadManager->static_fields->bytePacker = (BytePacker *)0x0;
         func_?();
-        if (TypeInfo__DataUploadManager->static_fields->doneNotification != (UnityAction *)0x0) {
-          (*(TypeInfo__DataUploadManager->static_fields->doneNotification->fields)._._.invoke_impl)
-                    ();
+        pUVar3 = TypeInfo__DataUploadManager->static_fields->doneNotification;
+        if (pUVar3 != (UnityAction *)0x0) {
+          (*(pUVar3->fields)._._.invoke_impl)();
           TypeInfo__DataUploadManager->static_fields->doneNotification = (UnityAction *)0x0;
           func_?();
           return;
@@ -61,10 +61,10 @@ void Assembly-CSharp.dll::DataUploadManager::DataUploadManager_OnUploadBytes(Met
       return;
     }
   }
-  uVar3 = func_?(&puStack_4);
-  func_?(uVar3);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  uVar4 = func_?(&puStack_5);
+  func_?(uVar4);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -105,8 +105,7 @@ void Assembly-CSharp.dll::DataUploadManager::DataUploadManager_SendChunk(MethodI
     if (pBVar2 != (BytePacker *)0x0) {
       if (iVar3 - (pBVar2->fields)._position < 5000) {
         iVar1 = MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_get_Length
-                          (TypeInfo__DataUploadManager->static_fields->bytePacker,(MethodInfo *)0x0)
-        ;
+                          (pBVar2,(MethodInfo *)0x0);
         pBVar2 = TypeInfo__DataUploadManager->static_fields->bytePacker;
         if (pBVar2 == (BytePacker *)0x0) goto code_?;
         iVar1 = iVar1 - (pBVar2->fields)._position;

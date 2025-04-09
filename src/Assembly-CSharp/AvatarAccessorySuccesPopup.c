@@ -10,8 +10,9 @@ void Assembly-CSharp.dll::AvatarAccessorySuccesPopup::AvatarAccessorySuccesPopup
   if (this_00 != (RawImage *)0x0) {
     UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
               (this_00,previewImage,(MethodInfo *)0x0);
-    (this->fields).resultCallback = resultCallback;
-    func_?(&(this->fields).resultCallback,resultCallback);
+    ppUVar1 = &(this->fields).resultCallback;
+    *ppUVar1 = resultCallback;
+    func_?(ppUVar1,resultCallback);
     this_01 = (this->fields).itemBackground;
     if (this_01 != (AccessoryItemBackground *)0x0) {
       AccessoryItemBackground::AccessoryItemBackground_Initialize
@@ -20,8 +21,8 @@ void Assembly-CSharp.dll::AvatarAccessorySuccesPopup::AvatarAccessorySuccesPopup
     }
   }
   func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

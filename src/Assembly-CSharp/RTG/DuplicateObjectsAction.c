@@ -37,15 +37,9 @@ void Assembly-CSharp.dll::RTG::DuplicateObjectsAction::DuplicateObjectsAction_Ex
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  uStack_6 = 0;
-  pTStack_7 = (Transform *)0x0;
-  LStack_8._list = (List_1_System_Object_ *)0x0;
-  LStack_8._index = 0;
-  LStack_8._version = 0;
-  LStack_8._current = (Object *)0x0;
-  pLVar9 = (this->fields)._rootsToDuplicate;
-  if (pLVar9 != (List_1_UnityEngine_GameObject_ *)0x0) {
-    if ((pLVar9->fields)._size == 0) {
+  pLVar6 = (this->fields)._rootsToDuplicate;
+  if (pLVar6 != (List_1_UnityEngine_GameObject_ *)0x0) {
+    if ((pLVar6->fields)._size == 0) {
 code_?:
       *unaff_FS_OFFSET = uStack_3;
       return;
@@ -60,53 +54,51 @@ code_?:
     if ((TypeInfo__RTG__ObjectCloning->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__RTG__ObjectCloning);
     }
-    pOVar10 = TypeInfo__RTG__ObjectCloning->static_fields;
-    uStack_6._0_4_ = (pOVar10->_defaultConfig).Parent;
-    uStack_6._4_4_ = (pOVar10->_defaultConfig).TransformFlags;
-    pTStack_7 = (Transform *)(pOVar10->_defaultConfig).Layer;
+    pOVar7 = TypeInfo__RTG__ObjectCloning->static_fields;
+    uStack_8._0_4_ = (pOVar7->_defaultConfig).Parent;
+    uStack_8._4_4_ = (pOVar7->_defaultConfig).TransformFlags;
+    pTStack_9 = (Transform *)(pOVar7->_defaultConfig).Layer;
     this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
               (this->fields)._rootsToDuplicate;
     if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-      method_00 = (RegexCharClass_SingleRange)auStack_11;
-      pLVar12 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+      method_00 = (RegexCharClass_SingleRange)auStack_10;
+      pLVar11 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
                RegexCharClass+SingleRange]::
                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                          ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
                            *)method_00,this_00,
                           MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
                          );
-      uStack_13 = 0;
-      LStack_8._list = (List_1_System_Object_ *)pLVar12->_list;
-      LStack_8._index = pLVar12->_index;
-      LStack_8._version = pLVar12->_version;
-      LStack_8._current = *(Object **)&pLVar12->_current;
+      uStack_12 = 0;
+      LStack_13._list = (List_1_System_Object_ *)pLVar11->_list;
+      LStack_13._index = pLVar11->_index;
+      LStack_13._version = pLVar11->_version;
+      LStack_13._current = *(Object **)&pLVar11->_current;
       uStack_1 = 1;
-      pLStack_14 = &LStack_8;
+      pLStack_14 = &LStack_13;
       while( true ) {
         bVar15 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
                 List_1_T_Enumerator_System_Object__MoveNext
-                          (&LStack_8,
+                          (&LStack_13,
                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
                           );
-        this_01 = LStack_8._current;
+        this_01 = LStack_13._current;
         if (bVar15 == 0) break;
-        if ((RegexCharClass_SingleRange)LStack_8._current == (RegexCharClass_SingleRange)0x0)
+        if ((RegexCharClass_SingleRange)LStack_13._current == (RegexCharClass_SingleRange)0x0)
         goto code_?;
         pTStack_16 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                               ((GameObject *)LStack_8._current,(MethodInfo *)0x0);
-        if ((RegexCharClass_SingleRange)this_01 == (RegexCharClass_SingleRange)0x0)
-        goto code_?;
+                               ((GameObject *)LStack_13._current,(MethodInfo *)0x0);
         method_00 = (RegexCharClass_SingleRange)this_01;
-        pTStack_7 = (Transform *)
+        pTStack_9 = (Transform *)
                      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_layer
                                ((GameObject *)this_01,(MethodInfo *)0x0);
         if (pTStack_16 == (Transform *)0x0) goto code_?;
         pTVar17 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
                            (pTStack_16,(MethodInfo *)0x0);
-        uStack_6 = CONCAT44(uStack_6._4_4_,pTVar17);
+        uStack_8 = CONCAT44(uStack_8._4_4_,pTVar17);
         func_?();
-        pTStack_16 = pTStack_7;
-        uStack_18 = uStack_6;
+        pTStack_16 = pTStack_9;
+        uStack_18 = uStack_8;
         if ((TypeInfo__RTG__ObjectCloning->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__RTG__ObjectCloning);
         }
@@ -115,17 +107,17 @@ code_?:
         cloneConfig.TransformFlags = uStack_18._4_4_;
         item = ObjectCloning::ObjectCloning_CloneHierarchy
                          ((GameObject *)this_01,cloneConfig,(MethodInfo *)0x0);
-        pLVar9 = (this->fields)._duplicateResult;
-        if (pLVar9 == (List_1_UnityEngine_GameObject_ *)0x0) goto code_?;
+        pLVar6 = (this->fields)._duplicateResult;
+        if (pLVar6 == (List_1_UnityEngine_GameObject_ *)0x0) goto code_?;
         mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
         List_1_System_Object__Add
-                  ((List_1_System_Object_ *)pLVar9,(Object *)item,
+                  ((List_1_System_Object_ *)pLVar6,(Object *)item,
                    MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Add_UnityEngine__GameObject_
                   );
       }
       uStack_1 = 0xffffffff;
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                ((Object *)&LStack_8,
+                ((Object *)&LStack_13,
                  (ExceptionArgument__Enum)
                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
                  ,(MethodInfo *)method_00);
@@ -188,43 +180,39 @@ void Assembly-CSharp.dll::RTG::DuplicateObjectsAction::
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  LStack_6._list = (List_1_System_Object_ *)0x0;
-  LStack_6._index = 0;
-  LStack_6._version = 0;
-  LStack_6._current = (Object *)0x0;
   if ((this->fields)._cleanupOnRemovedFromStack != 0) {
     method_00 = (MethodInfo *)(this->fields)._duplicateResult;
     if (method_00 == (MethodInfo *)0x0) {
 code_?:
-      uVar7 = func_?();
-      func_?(uVar7);
-      pcVar8 = (code *)swi(3);
-      (*pcVar8)();
+      uVar6 = func_?();
+      func_?(uVar6);
+      pcVar7 = (code *)swi(3);
+      (*pcVar7)();
       return;
     }
     if (method_00->name != (char *)0x0) {
-      pLVar9 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+      pLVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
                RegexCharClass+SingleRange]::
                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                         (&LStack_10,
+                         (&LStack_9,
                           (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                           method_00,
                           MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
                          );
-      LStack_6._list = (List_1_System_Object_ *)pLVar9->_list;
-      LStack_6._index = pLVar9->_index;
-      LStack_6._version = pLVar9->_version;
-      LStack_6._current = *(Object **)&pLVar9->_current;
-      LStack_10._version = 0;
+      LStack_10._list = (List_1_System_Object_ *)pLVar8->_list;
+      LStack_10._index = pLVar8->_index;
+      LStack_10._version = pLVar8->_version;
+      LStack_10._current = *(Object **)&pLVar8->_current;
+      LStack_9._version = 0;
       uStack_1 = 1;
-      LStack_10._current = (RegexCharClass_SingleRange)&LStack_6;
+      LStack_9._current = (RegexCharClass_SingleRange)&LStack_10;
       while( true ) {
         bVar11 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
                 List_1_T_Enumerator_System_Object__MoveNext
-                          (&LStack_6,
+                          (&LStack_10,
                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
                           );
-        obj = LStack_6._current;
+        obj = LStack_10._current;
         if (bVar11 == 0) break;
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
@@ -234,7 +222,7 @@ code_?:
       }
       uStack_1 = 0xffffffff;
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                ((Object *)&LStack_6,
+                ((Object *)&LStack_10,
                  (ExceptionArgument__Enum)
                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
                  ,method_00);
@@ -285,17 +273,17 @@ void Assembly-CSharp.dll::RTG::DuplicateObjectsAction::DuplicateObjectsAction_Re
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  if ((this->fields)._duplicateResult != (List_1_UnityEngine_GameObject_ *)0x0) {
+  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            (this->fields)._duplicateResult;
+  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
     pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
              RegexCharClass+SingleRange]::
              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       (&LStack_7,
-                        (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                        (this->fields)._duplicateResult,
+                       (&LStack_7,this_00,
                         MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
                        );
     method_00 = (MethodInfo *)pLVar6->_version;
-    this_00 = pLVar6->_current;
+    this_01 = pLVar6->_current;
     LStack_7._version = 0;
     uStack_1 = 1;
     LStack_7._current = (RegexCharClass_SingleRange)&stack0xffffffc8;
@@ -306,7 +294,7 @@ void Assembly-CSharp.dll::RTG::DuplicateObjectsAction::DuplicateObjectsAction_Re
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
                         );
       if (bVar8 == 0) break;
-      if (this_00 == (RegexCharClass_SingleRange)0x0) {
+      if (this_01 == (RegexCharClass_SingleRange)0x0) {
         func_?();
         func_?();
         pcVar9 = (code *)swi(3);
@@ -314,7 +302,7 @@ void Assembly-CSharp.dll::RTG::DuplicateObjectsAction::DuplicateObjectsAction_Re
         return;
       }
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                ((GameObject *)this_00,1,(MethodInfo *)0x0);
+                ((GameObject *)this_01,1,(MethodInfo *)0x0);
     }
     uStack_1 = 0xffffffff;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
@@ -358,17 +346,17 @@ void Assembly-CSharp.dll::RTG::DuplicateObjectsAction::DuplicateObjectsAction_Un
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  if ((this->fields)._duplicateResult != (List_1_UnityEngine_GameObject_ *)0x0) {
+  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            (this->fields)._duplicateResult;
+  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
     pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
              RegexCharClass+SingleRange]::
              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       (&LStack_7,
-                        (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                        (this->fields)._duplicateResult,
+                       (&LStack_7,this_00,
                         MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
                        );
     method_00 = (MethodInfo *)pLVar6->_version;
-    this_00 = pLVar6->_current;
+    this_01 = pLVar6->_current;
     LStack_7._version = 0;
     uStack_1 = 1;
     LStack_7._current = (RegexCharClass_SingleRange)&stack0xffffffc8;
@@ -379,7 +367,7 @@ void Assembly-CSharp.dll::RTG::DuplicateObjectsAction::DuplicateObjectsAction_Un
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
                         );
       if (bVar8 == 0) break;
-      if (this_00 == (RegexCharClass_SingleRange)0x0) {
+      if (this_01 == (RegexCharClass_SingleRange)0x0) {
         func_?();
         func_?();
         pcVar9 = (code *)swi(3);
@@ -387,7 +375,7 @@ void Assembly-CSharp.dll::RTG::DuplicateObjectsAction::DuplicateObjectsAction_Un
         return;
       }
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                ((GameObject *)this_00,0,(MethodInfo *)0x0);
+                ((GameObject *)this_01,0,(MethodInfo *)0x0);
     }
     uStack_1 = 0xffffffff;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
@@ -424,7 +412,7 @@ void Assembly-CSharp.dll::RTG::DuplicateObjectsAction::DuplicateObjectsAction__c
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar1,
              MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__);
   method_00 = (MethodInfo *)&(this->fields)._duplicateResult;
-  (this->fields)._duplicateResult = pLVar1;
+  *(List_1_UnityEngine_GameObject_ **)method_00 = pLVar1;
   func_?(method_00,pLVar1);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);

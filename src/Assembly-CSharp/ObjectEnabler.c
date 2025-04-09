@@ -49,16 +49,16 @@ void Assembly-CSharp.dll::ObjectEnabler::ObjectEnabler_DrawObject
   }
   uStack_1 = 0;
   if (previewMeshes != (MeshFilter__Array *)0x0) {
-    ppMStack_2 = previewMeshes->vector;
+    ppMVar2 = previewMeshes->vector;
     while( true ) {
       if ((int)previewMeshes->max_length <= (int)uStack_1) {
         return;
       }
       if (previewMeshes->max_length <= uStack_1) break;
-      this_00 = *ppMStack_2;
+      this_00 = *ppMVar2;
       submeshIndex = 0;
-      if (this_00 == (MeshFilter *)0x0) goto code_?;
       while( true ) {
+        if (this_00 == (MeshFilter *)0x0) goto code_?;
         pMVar3 = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::MeshFilter_get_sharedMesh
                            (this_00,(MethodInfo *)0x0);
         if (pMVar3 == (Mesh *)0x0) goto code_?;
@@ -71,58 +71,28 @@ void Assembly-CSharp.dll::ObjectEnabler::ObjectEnabler_DrawObject
                             ((Component *)this_00,(MethodInfo *)0x0);
         if (this_01 == (Transform *)0x0) goto code_?;
         pMVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                 Transform_get_localToWorldMatrix(&MStack_6,this_01,(MethodInfo *)0x0);
-        fStack_7 = pMVar5->m00;
-        fStack_8 = pMVar5->m10;
-        fStack_9 = pMVar5->m20;
-        fStack_10 = pMVar5->m30;
-        fStack_11 = pMVar5->m01;
-        fStack_12 = pMVar5->m11;
-        fStack_13 = pMVar5->m21;
-        fStack_14 = pMVar5->m31;
-        fStack_15 = pMVar5->m02;
-        fStack_16 = pMVar5->m12;
-        fStack_17 = pMVar5->m22;
-        fStack_18 = pMVar5->m32;
-        fStack_19 = pMVar5->m03;
-        fStack_20 = pMVar5->m13;
-        fStack_21 = pMVar5->m23;
-        fStack_22 = pMVar5->m33;
-        pMStack_23 = (this->fields).objectMaterial;
-        iStack_24 = (this->fields).nameToLayer;
-        pCStack_25 = (this->fields).mainCamera;
+                 Transform_get_localToWorldMatrix
+                           ((Matrix4x4 *)&stack0xffffff68,this_01,(MethodInfo *)0x0);
+        matrix = *pMVar5;
+        material = (this->fields).objectMaterial;
+        iVar4 = (this->fields).nameToLayer;
+        camera = (this->fields).mainCamera;
         if ((TypeInfo__UnityEngine__Graphics->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__UnityEngine__Graphics);
+          func_?();
         }
-        matrix.m10 = fStack_8;
-        matrix.m00 = fStack_7;
-        matrix.m20 = fStack_9;
-        matrix.m30 = fStack_10;
-        matrix.m01 = fStack_11;
-        matrix.m11 = fStack_12;
-        matrix.m21 = fStack_13;
-        matrix.m31 = fStack_14;
-        matrix.m02 = fStack_15;
-        matrix.m12 = fStack_16;
-        matrix.m22 = fStack_17;
-        matrix.m32 = fStack_18;
-        matrix.m03 = fStack_19;
-        matrix.m13 = fStack_20;
-        matrix.m23 = fStack_21;
-        matrix.m33 = fStack_22;
         UnityEngine.CoreModule.dll::UnityEngine::Graphics::Graphics_DrawMesh_3
-                  (pMVar3,matrix,pMStack_23,iStack_24,pCStack_25,submeshIndex,(MethodInfo *)0x0);
+                  (pMVar3,matrix,material,iVar4,camera,submeshIndex,(MethodInfo *)0x0);
         submeshIndex = submeshIndex + 1;
       }
       uStack_1 = uStack_1 + 1;
-      ppMStack_2 = ppMStack_2 + 1;
+      ppMVar2 = ppMVar2 + 1;
     }
     func_?();
   }
 code_?:
   func_?();
-  pcVar26 = (code *)swi(3);
-  (*pcVar26)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -149,7 +119,7 @@ void Assembly-CSharp.dll::ObjectEnabler::ObjectEnabler_Initialize
   (this->fields).nameToLayer = iVar1;
   pCVar2 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
   (this->fields).mainCamera = pCVar2;
-  func_?(&(this->fields).mainCamera,pCVar2);
+  func_?();
   return;
 }
 
@@ -255,23 +225,22 @@ void Assembly-CSharp.dll::ObjectEnabler::ObjectEnabler_UpdateControllerUpdate
              (this_01 == (MVWorldObjectClientManager *)0x0)) break;
           pMVar12 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                               (this_01,*(int32_t *)((int)RVar11 + 0x10),(MethodInfo *)0x0);
-          if (((pMVar12 != (MVWorldObject *)0x0) &&
-              ((TypeInfo__MVCubeModelInstance->_1).naturalAligment <=
-               (pMVar12->klass->_1).naturalAligment)) &&
-             ((MVCubeModelInstance__Class *)
-              (pMVar12->klass->_1).typeHierarchy
-              [(TypeInfo__MVCubeModelInstance->_1).naturalAligment - 1] ==
-              TypeInfo__MVCubeModelInstance)) {
-            iVar13 = func_?();
-            if (iVar13 == 0) break;
-            iVar13 = func_?();
-            if (*(char *)(iVar13 + 0xfc) != '\0') {
-              iVar13 = func_?();
-              if (iVar13 == 0) break;
-              this_02 = (MVCubeModelBase *)func_?();
-              previewMeshes = MVCubeModelBase::MVCubeModelBase_get_MeshFilters(this_02,method_00);
-              method_00 = (MethodInfo *)0x0;
-              ObjectEnabler_DrawObject(this,previewMeshes,(MethodInfo *)0x0);
+          if (pMVar12 != (MVWorldObject *)0x0) {
+            bVar13 = (TypeInfo__MVCubeModelInstance->_1).naturalAligment;
+            if ((bVar13 <= (pMVar12->klass->_1).naturalAligment) &&
+               ((MVCubeModelInstance__Class *)(pMVar12->klass->_1).typeHierarchy[bVar13 - 1] ==
+                TypeInfo__MVCubeModelInstance)) {
+              iVar14 = func_?();
+              if (iVar14 == 0) break;
+              iVar14 = func_?();
+              if (*(char *)(iVar14 + 0xfc) != '\0') {
+                iVar14 = func_?();
+                if (iVar14 == 0) break;
+                this_02 = (MVCubeModelBase *)func_?();
+                previewMeshes = MVCubeModelBase::MVCubeModelBase_get_MeshFilters(this_02,method_00);
+                method_00 = (MethodInfo *)0x0;
+                ObjectEnabler_DrawObject(this,previewMeshes,(MethodInfo *)0x0);
+              }
             }
           }
           pMVar9 = (this->fields).woObjectEnabler;
@@ -282,8 +251,8 @@ void Assembly-CSharp.dll::ObjectEnabler::ObjectEnabler_UpdateControllerUpdate
     }
   }
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 

@@ -84,19 +84,20 @@ void Assembly-CSharp.dll::StreamedAudioClipToAudioSource::StreamedAudioClipToAud
     cRam_? = '\x01';
   }
   pAVar1 = (this->fields).audioSource;
+  ppAVar2 = &(this->fields).audioSource;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                     ((Object_1 *)pAVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
+  if (bVar3 != 0) {
     pAVar1 = (AudioSource *)
              UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
                        ((Component *)this,
                         UnityEngine__AudioSource_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::AudioSource>__
                        );
-    (this->fields).audioSource = pAVar1;
-    func_?(&(this->fields).audioSource,pAVar1);
+    *ppAVar2 = pAVar1;
+    func_?(ppAVar2,pAVar1);
   }
   return;
 }

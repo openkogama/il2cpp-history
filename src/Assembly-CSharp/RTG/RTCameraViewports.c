@@ -45,10 +45,10 @@ void Assembly-CSharp.dll::RTG::RTCameraViewports::RTCameraViewports_AddCamera
                   ), camera != (Camera *)0x0)) {
       UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_rect
                 (camera,normViewRect,(MethodInfo *)0x0);
-      if ((this->fields).CameraAdded == (RTCameraViewports_CameraAddedHandler *)0x0) {
+      pRVar3 = (this->fields).CameraAdded;
+      if (pRVar3 == (RTCameraViewports_CameraAddedHandler *)0x0) {
         return;
       }
-      pRVar3 = (this->fields).CameraAdded;
       pvStack4 = (pRVar3->fields)._._.method;
       pCStack5 = camera;
       pvStack6 = (pRVar3->fields)._._.method_code;
@@ -106,8 +106,8 @@ code_?:
                 ((List_1_System_Object_ *)pLVar2,(Object *)camera,
                  MethodInfo__System__Collections__Generic__List<UnityEngine::Camera>__Add_UnityEngine__Camera_
                 );
-      if ((this->fields).CameraAdded != (RTCameraViewports_CameraAddedHandler *)0x0) {
-        pRVar4 = (this->fields).CameraAdded;
+      pRVar4 = (this->fields).CameraAdded;
+      if (pRVar4 != (RTCameraViewports_CameraAddedHandler *)0x0) {
         pvStack5 = (pRVar4->fields)._._.method;
         pCStack6 = camera;
         (*(pRVar4->fields)._._.invoke_impl)();
@@ -175,8 +175,9 @@ void Assembly-CSharp.dll::RTG::RTCameraViewports::RTCameraViewports_RemoveCamera
               ((List_1_System_Object_ *)this_00,(Object *)camera,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Camera>__Remove_UnityEngine__Camera_
               );
-    if ((this->fields).CameraRemoved != (RTCameraViewports_CameraRemovedHandler *)0x0) {
-      (*(((this->fields).CameraRemoved)->fields)._._.invoke_impl)();
+    pRVar3 = (this->fields).CameraRemoved;
+    if (pRVar3 != (RTCameraViewports_CameraRemovedHandler *)0x0) {
+      (*(pRVar3->fields)._._.invoke_impl)();
     }
   }
   return;
@@ -254,9 +255,8 @@ code_?:
                               (MethodInfo__RTG__MonoSingleton<RTG::RTFocusCamera>__get_Get__);
           if (this_02 == (RTFocusCamera *)0x0) goto code_?;
           RTFocusCamera::RTFocusCamera_SetTargetCamera(this_02,(Camera *)camera,(MethodInfo *)0x0);
-          if ((this->fields).FocusCameraChanged !=
-              (RTCameraViewports_FocusCameraChangedHandler *)0x0) {
-            pRVar3 = (this->fields).FocusCameraChanged;
+          pRVar3 = (this->fields).FocusCameraChanged;
+          if (pRVar3 != (RTCameraViewports_FocusCameraChangedHandler *)0x0) {
             RTCameraViewports_get_FocusCamera(this,(MethodInfo *)0x0);
             (*(pRVar3->fields)._._.invoke_impl)();
           }
@@ -314,8 +314,8 @@ code_?:
                           (MethodInfo__RTG__MonoSingleton<RTG::RTFocusCamera>__get_Get__);
       if (this_01 == (RTFocusCamera *)0x0) goto code_?;
       RTFocusCamera::RTFocusCamera_SetTargetCamera(this_01,camera,(MethodInfo *)0x0);
-      if ((this->fields).FocusCameraChanged != (RTCameraViewports_FocusCameraChangedHandler *)0x0) {
-        pRVar3 = (this->fields).FocusCameraChanged;
+      pRVar3 = (this->fields).FocusCameraChanged;
+      if (pRVar3 != (RTCameraViewports_FocusCameraChangedHandler *)0x0) {
         RTCameraViewports_get_FocusCamera(this,(MethodInfo *)0x0);
         (*(pRVar3->fields)._._.invoke_impl)();
       }
@@ -345,8 +345,9 @@ void Assembly-CSharp.dll::RTG::RTCameraViewports::RTCameraViewports__ctor
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<UnityEngine::Camera>__List__);
-  (this->fields)._cameras = this_00;
-  func_?(&(this->fields)._cameras,this_00);
+  ppLVar1 = &(this->fields)._cameras;
+  *ppLVar1 = this_00;
+  func_?(ppLVar1,this_00);
   if ((TypeInfo__RTG__Singleton<RTG::RTCameraViewports>->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__RTG__Singleton<RTG::RTCameraViewports>);
   }
@@ -408,28 +409,28 @@ void Assembly-CSharp.dll::RTG::RTCameraViewports::RTCameraViewports_add_CameraRe
     func_?(&TypeInfo__RTG__RTCameraViewports__CameraRemovedHandler);
     cRam_? = '\x01';
   }
-  a = (this->fields).CameraRemoved;
+  ppRVar1 = &(this->fields).CameraRemoved;
+  a = *ppRVar1;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar2 = (Delegate *)0x0;
-    if (pDVar1 != (Delegate *)0x0) {
-      if ((RTCameraViewports_CameraRemovedHandler__Class *)pDVar1->klass ==
+    pDVar3 = (Delegate *)0x0;
+    if (pDVar2 != (Delegate *)0x0) {
+      if ((RTCameraViewports_CameraRemovedHandler__Class *)pDVar2->klass ==
           TypeInfo__RTG__RTCameraViewports__CameraRemovedHandler) {
-        pDVar2 = pDVar1;
+        pDVar3 = pDVar2;
       }
-      if (pDVar2 == (Delegate *)0x0) {
-        func_?(pDVar1,TypeInfo__RTG__RTCameraViewports__CameraRemovedHandler);
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
+      if (pDVar3 == (Delegate *)0x0) {
+        func_?(pDVar2,TypeInfo__RTG__RTCameraViewports__CameraRemovedHandler);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pRVar4 = (RTCameraViewports_CameraRemovedHandler *)
-             func_?(&(this->fields).CameraRemoved,pDVar2,a);
-    bVar5 = pRVar4 == a;
-    a = pRVar4;
-    if (bVar5) {
+    pRVar5 = (RTCameraViewports_CameraRemovedHandler *)func_?(ppRVar1,pDVar3,a);
+    bVar6 = pRVar5 == a;
+    a = pRVar5;
+    if (bVar6) {
       return;
     }
   } while( true );
@@ -447,28 +448,28 @@ void Assembly-CSharp.dll::RTG::RTCameraViewports::RTCameraViewports_add_FocusCam
     func_?(&TypeInfo__RTG__RTCameraViewports__FocusCameraChangedHandler);
     cRam_? = '\x01';
   }
-  a = (this->fields).FocusCameraChanged;
+  ppRVar1 = &(this->fields).FocusCameraChanged;
+  a = *ppRVar1;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar2 = (Delegate *)0x0;
-    if (pDVar1 != (Delegate *)0x0) {
-      if ((RTCameraViewports_FocusCameraChangedHandler__Class *)pDVar1->klass ==
+    pDVar3 = (Delegate *)0x0;
+    if (pDVar2 != (Delegate *)0x0) {
+      if ((RTCameraViewports_FocusCameraChangedHandler__Class *)pDVar2->klass ==
           TypeInfo__RTG__RTCameraViewports__FocusCameraChangedHandler) {
-        pDVar2 = pDVar1;
+        pDVar3 = pDVar2;
       }
-      if (pDVar2 == (Delegate *)0x0) {
-        func_?(pDVar1,TypeInfo__RTG__RTCameraViewports__FocusCameraChangedHandler);
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
+      if (pDVar3 == (Delegate *)0x0) {
+        func_?(pDVar2,TypeInfo__RTG__RTCameraViewports__FocusCameraChangedHandler);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pRVar4 = (RTCameraViewports_FocusCameraChangedHandler *)
-             func_?(&(this->fields).FocusCameraChanged,pDVar2,a);
-    bVar5 = pRVar4 == a;
-    a = pRVar4;
-    if (bVar5) {
+    pRVar5 = (RTCameraViewports_FocusCameraChangedHandler *)func_?(ppRVar1,pDVar3,a);
+    bVar6 = pRVar5 == a;
+    a = pRVar5;
+    if (bVar6) {
       return;
     }
   } while( true );
@@ -576,28 +577,28 @@ void Assembly-CSharp.dll::RTG::RTCameraViewports::RTCameraViewports_remove_Camer
     func_?(&TypeInfo__RTG__RTCameraViewports__CameraRemovedHandler);
     cRam_? = '\x01';
   }
-  source = (this->fields).CameraRemoved;
+  ppRVar1 = &(this->fields).CameraRemoved;
+  source = *ppRVar1;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar2 = (Delegate *)0x0;
-    if (pDVar1 != (Delegate *)0x0) {
-      if ((RTCameraViewports_CameraRemovedHandler__Class *)pDVar1->klass ==
+    pDVar3 = (Delegate *)0x0;
+    if (pDVar2 != (Delegate *)0x0) {
+      if ((RTCameraViewports_CameraRemovedHandler__Class *)pDVar2->klass ==
           TypeInfo__RTG__RTCameraViewports__CameraRemovedHandler) {
-        pDVar2 = pDVar1;
+        pDVar3 = pDVar2;
       }
-      if (pDVar2 == (Delegate *)0x0) {
-        func_?(pDVar1,TypeInfo__RTG__RTCameraViewports__CameraRemovedHandler);
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
+      if (pDVar3 == (Delegate *)0x0) {
+        func_?(pDVar2,TypeInfo__RTG__RTCameraViewports__CameraRemovedHandler);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pRVar4 = (RTCameraViewports_CameraRemovedHandler *)
-             func_?(&(this->fields).CameraRemoved,pDVar2,source);
-    bVar5 = pRVar4 == source;
-    source = pRVar4;
-    if (bVar5) {
+    pRVar5 = (RTCameraViewports_CameraRemovedHandler *)func_?(ppRVar1,pDVar3,source);
+    bVar6 = pRVar5 == source;
+    source = pRVar5;
+    if (bVar6) {
       return;
     }
   } while( true );
@@ -615,28 +616,28 @@ void Assembly-CSharp.dll::RTG::RTCameraViewports::RTCameraViewports_remove_Focus
     func_?(&TypeInfo__RTG__RTCameraViewports__FocusCameraChangedHandler);
     cRam_? = '\x01';
   }
-  source = (this->fields).FocusCameraChanged;
+  ppRVar1 = &(this->fields).FocusCameraChanged;
+  source = *ppRVar1;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar2 = (Delegate *)0x0;
-    if (pDVar1 != (Delegate *)0x0) {
-      if ((RTCameraViewports_FocusCameraChangedHandler__Class *)pDVar1->klass ==
+    pDVar3 = (Delegate *)0x0;
+    if (pDVar2 != (Delegate *)0x0) {
+      if ((RTCameraViewports_FocusCameraChangedHandler__Class *)pDVar2->klass ==
           TypeInfo__RTG__RTCameraViewports__FocusCameraChangedHandler) {
-        pDVar2 = pDVar1;
+        pDVar3 = pDVar2;
       }
-      if (pDVar2 == (Delegate *)0x0) {
-        func_?(pDVar1,TypeInfo__RTG__RTCameraViewports__FocusCameraChangedHandler);
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
+      if (pDVar3 == (Delegate *)0x0) {
+        func_?(pDVar2,TypeInfo__RTG__RTCameraViewports__FocusCameraChangedHandler);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pRVar4 = (RTCameraViewports_FocusCameraChangedHandler *)
-             func_?(&(this->fields).FocusCameraChanged,pDVar2,source);
-    bVar5 = pRVar4 == source;
-    source = pRVar4;
-    if (bVar5) {
+    pRVar5 = (RTCameraViewports_FocusCameraChangedHandler *)func_?(ppRVar1,pDVar3,source);
+    bVar6 = pRVar5 == source;
+    source = pRVar5;
+    if (bVar6) {
       return;
     }
   } while( true );

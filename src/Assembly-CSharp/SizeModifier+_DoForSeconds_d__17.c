@@ -34,9 +34,9 @@ bool Assembly-CSharp.dll::SizeModifier+<DoForSeconds>d__17::SizeModifier_DoForSe
     }
     (this->fields).__1__state = -1;
   }
-  fVar5 = (this->fields).duration;
-  pfVar6 = &(this->fields)._t_5__2;
-  if (fVar5 < *pfVar6 || fVar5 == *pfVar6) {
+  fVar5 = (this->fields)._t_5__2;
+  fVar6 = (this->fields).duration;
+  if (fVar6 <= fVar5) {
     if ((this_00 != (SizeModifier *)0x0) &&
        (pSVar4 = (this->fields).body, pSVar4 != (SizeModifier_ActionDelegate *)0x0)) {
       (*(pSVar4->fields)._._.invoke_impl)
@@ -49,16 +49,16 @@ bool Assembly-CSharp.dll::SizeModifier+<DoForSeconds>d__17::SizeModifier_DoForSe
     pSVar4 = (this->fields).body;
     if (pSVar4 != (SizeModifier_ActionDelegate *)0x0) {
       (*(pSVar4->fields)._._.invoke_impl)
-                ((pSVar4->fields)._._.method_code,(this->fields)._t_5__2 / (this->fields).duration,
-                 (pSVar4->fields)._._.method);
+                ((pSVar4->fields)._._.method_code,fVar5 / fVar6,(pSVar4->fields)._._.method);
       fVar5 = (this->fields)._t_5__2;
-      fVar7 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0)
+      fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0)
       ;
       pMStack_1 = (MonitorData *)0x0;
-      (this->fields)._t_5__2 = fVar7 + fVar5;
-      pOVar8 = (Object *)func_?(TypeInfo__System__Single,&pMStack_1);
-      (this->fields).__2__current = pOVar8;
-      func_?(&(this->fields).__2__current,pOVar8);
+      (this->fields)._t_5__2 = fVar6 + fVar5;
+      pOVar7 = (Object *)func_?(TypeInfo__System__Single,&pMStack_1);
+      ppOVar8 = &(this->fields).__2__current;
+      *ppOVar8 = pOVar7;
+      func_?(ppOVar8,pOVar7);
       (this->fields).__1__state = 1;
       return 1;
     }

@@ -23,15 +23,16 @@ bool Assembly-CSharp.dll::LocationIndicatorsManager+<UpdateCoroutine>d__13::
               func_?(TypeInfo__UnityEngine__WaitForSecondsRealtime);
     UnityEngine.CoreModule.dll::UnityEngine::WaitForSecondsRealtime::WaitForSecondsRealtime__ctor
               (this_01,0.5,(MethodInfo *)0x0);
-    (this->fields).__2__current = (Object *)this_01;
-    func_?(&(this->fields).__2__current,this_01);
+    ppOVar2 = &(this->fields).__2__current;
+    *ppOVar2 = (Object *)this_01;
+    func_?(ppOVar2,this_01);
     (this->fields).__1__state = 1;
     return 1;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  bVar3 = (*pcVar2)();
-  return bVar3;
+  pcVar3 = (code *)swi(3);
+  bVar4 = (*pcVar3)();
+  return bVar4;
 }
 
 

@@ -9,54 +9,55 @@ void Assembly-CSharp.dll::WaterSplashComponent::WaterSplashComponent_Initialize
     func_?(&TypeInfo__IMovable);
     cRam_? = '\x01';
   }
-  (this->fields).movingObject = obj;
-  func_?(&(this->fields).movingObject,obj);
+  ppIVar1 = &(this->fields).movingObject;
+  *ppIVar1 = obj;
+  func_?(ppIVar1,obj);
   if (obj == (IMovable *)0x0) {
     func_?();
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
-  pIVar2 = obj->klass;
-  uVar3 = 0;
-  uVar4._0_1_ = (pIVar2->_1).rank;
-  uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
-  if (uVar4 != 0) {
+  pIVar3 = obj->klass;
+  uVar4 = 0;
+  uVar5._0_1_ = (pIVar3->_1).rank;
+  uVar5._1_1_ = (pIVar3->_1).minimumAlignment;
+  if (uVar5 != 0) {
     do {
-      if (pIVar2->interfaceOffsets[uVar3].interfaceType == (Il2CppClass *)TypeInfo__IMovable) {
-        ppMVar5 = &(&(obj->klass->vtable).get_Bounds)[obj->klass->interfaceOffsets[uVar3].offset].
+      if (pIVar3->interfaceOffsets[uVar4].interfaceType == (Il2CppClass *)TypeInfo__IMovable) {
+        ppMVar6 = &(&(obj->klass->vtable).get_Bounds)[pIVar3->interfaceOffsets[uVar4].offset].
                     method;
         goto code_?;
       }
-      uVar3 = uVar3 + 1;
-    } while (uVar3 < uVar4);
+      uVar4 = uVar4 + 1;
+    } while (uVar4 < uVar5);
   }
-  ppMVar5 = (MethodInfo **)func_?(obj,TypeInfo__IMovable,1);
+  ppMVar6 = (MethodInfo **)func_?(obj,TypeInfo__IMovable,1);
 code_?:
-  pfVar6 = (float *)(*(code *)*ppMVar5)(auStack_7,obj,ppMVar5[1]);
-  fVar8 = pfVar6[1];
-  fVar9 = pfVar6[2];
-  fVar10 = pfVar6[3];
-  fVar11 = pfVar6[4];
-  fVar12 = pfVar6[5];
-  (this->fields).bounds.m_Center.x = *pfVar6;
-  (this->fields).bounds.m_Center.y = fVar8;
-  (this->fields).bounds.m_Center.z = fVar9;
-  (this->fields).bounds.m_Extents.x = fVar10;
-  (this->fields).bounds.m_Extents.y = fVar11;
-  (this->fields).bounds.m_Extents.z = fVar12;
-  fStack_13 = (this->fields).bounds.m_Center.z;
-  uStack_14._0_4_ = (this->fields).bounds.m_Center.x;
-  uStack_14._4_4_ = (this->fields).bounds.m_Center.y;
-  puVar15 = (undefined8 *)func_?(auStack_16,2,TypeInfo__IMovable,obj);
-  uVar17 = *puVar15;
-  uStack_18._0_4_ = (float)uVar17;
-  uStack_18._4_4_ = (float)((ulonglong)uVar17 >> 0x20);
-  fStack_19 = fStack_13 - *(float *)(puVar15 + 1);
-  (this->fields).offset.x = (float)uStack_14 - (float)uStack_18;
-  (this->fields).offset.y = uStack_14._4_4_ - uStack_18._4_4_;
-  (this->fields).offset.z = fStack_19;
-  uStack_18 = uVar17;
+  pfVar7 = (float *)(*(code *)*ppMVar6)(auStack_8,obj,ppMVar6[1]);
+  fVar9 = pfVar7[1];
+  fVar10 = pfVar7[2];
+  fVar11 = pfVar7[3];
+  fVar12 = pfVar7[4];
+  fVar13 = pfVar7[5];
+  (this->fields).bounds.m_Center.x = *pfVar7;
+  (this->fields).bounds.m_Center.y = fVar9;
+  (this->fields).bounds.m_Center.z = fVar10;
+  (this->fields).bounds.m_Extents.x = fVar11;
+  (this->fields).bounds.m_Extents.y = fVar12;
+  (this->fields).bounds.m_Extents.z = fVar13;
+  fStack_14 = (this->fields).bounds.m_Center.z;
+  uStack_15._0_4_ = (this->fields).bounds.m_Center.x;
+  uStack_15._4_4_ = (this->fields).bounds.m_Center.y;
+  puVar16 = (undefined8 *)func_?(auStack_17,2,TypeInfo__IMovable,obj);
+  uVar18 = *puVar16;
+  uStack_19._0_4_ = (float)uVar18;
+  uStack_19._4_4_ = (float)((ulonglong)uVar18 >> 0x20);
+  fStack_20 = fStack_14 - *(float *)(puVar16 + 1);
+  (this->fields).offset.x = (float)uStack_15 - (float)uStack_19;
+  (this->fields).offset.y = uStack_15._4_4_ - uStack_19._4_4_;
+  (this->fields).offset.z = fStack_20;
+  uStack_19 = uVar18;
   UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
             ((Behaviour *)this,1,(MethodInfo *)0x0);
   return;

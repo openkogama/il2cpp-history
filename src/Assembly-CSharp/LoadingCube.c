@@ -21,7 +21,7 @@ void Assembly-CSharp.dll::LoadingCube::LoadingCube_Awake(LoadingCube *this,Metho
       pMVar1 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
                          (this_01,(MethodInfo *)0x0);
       (this->fields).cubeMaterial = pMVar1;
-      func_?(&(this->fields).cubeMaterial,pMVar1);
+      func_?();
       return;
     }
   }

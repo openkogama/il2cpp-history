@@ -19,125 +19,120 @@ void Assembly-CSharp.dll::RTG::CameraViewVolume::CameraViewVolume_CalculateWorld
         pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
                             (&VStack_6,this_00,(MethodInfo *)0x0);
         method_00 = (MethodInfo *)pVVar5->z;
-        fVar7 = (float)((uint)SUB84(uVar3,4) ^
-                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-        puVar8 = (undefined *)
+        puVar7 = (undefined *)
                   ((uint)fVar4 ^
                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-        value_00.y = fVar7;
+        fVar4 = (float)((uint)SUB84(uVar3,4) ^
+                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+        value_00.y = fVar4;
         value_00.x = (float)((uint)(float)uVar3 ^
                             __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                             );
-        value_00.z = (float)puVar8;
-        VStack_6.z = (float)puVar8;
+        value_00.z = (float)puVar7;
+        VStack_6.z = (float)puVar7;
         pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
                             (&VStack_6,value_00,method_00);
-        uVar9 = pVVar5->x;
-        uVar10 = pVVar5->y;
-        ray_02.m_Origin.y = (float)puVar8;
-        ray_02.m_Origin.x = fVar7;
+        uVar8 = pVVar5->x;
+        uVar9 = pVVar5->y;
+        ray_02.m_Origin.y = (float)puVar7;
+        ray_02.m_Origin.x = fVar4;
         ray_02.m_Origin.z = (float)method_00;
-        ray_02.m_Direction.x = (float)uVar9;
-        ray_02.m_Direction.y = (float)uVar10;
+        ray_02.m_Direction.x = (float)uVar8;
+        ray_02.m_Direction.y = (float)uVar9;
         ray_02.m_Direction.z = pVVar5->z;
-        bVar11 = UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane_Raycast
+        bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane_Raycast
                            ((Plane *)&stack0xffffff9c,ray_02,(float *)&stack0xfffffff8,
                             (MethodInfo *)0x0);
-        if (bVar11 == 0) {
+        if (bVar10 == 0) {
 code_?:
           pPVar2 = (this->fields)._worldPlanes;
           if (pPVar2 != (Plane__Array *)0x0) {
             if (pPVar2->max_length < 5) goto code_?;
-            fVar4 = pPVar2->vector[4].m_Normal.x;
-            fVar7 = pPVar2->vector[4].m_Normal.y;
-            fVar12 = pPVar2->vector[4].m_Normal.z;
-            fVar13 = pPVar2->vector[4].m_Distance;
-            fVar14 = fVar12;
-            fVar15 = fVar4;
-            fVar16 = fVar7;
+            uVar11._0_4_ = pPVar2->vector[4].m_Normal.x;
+            uVar11._4_4_ = pPVar2->vector[4].m_Normal.y;
+            camera = (Camera *)pPVar2->vector[4].m_Normal.z;
+            fVar4 = pPVar2->vector[4].m_Distance;
             pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
                                 ((Vector3 *)&stack0xffffffb8,this_00,(MethodInfo *)0x0);
             VStack_6.x = pVVar5->x;
             VStack_6.y = pVVar5->y;
             VStack_6.z = pVVar5->z;
-            if (fVar16 * VStack_6.y + fVar15 * VStack_6.x + fVar12 * VStack_6.z + fVar13 < 0.0) {
-              uVar17._4_4_ = fVar7;
-              uVar17._0_4_ = fVar4;
-            }
-            else {
-              fVar14 = (float)((uint)fVar12 ^
-                              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
-                              );
-              uVar17._0_4_ = (float)((uint)fVar15 ^
+            fVar12 = SUB84(uVar11,4);
+            if (0.0 <= VStack_6.y * fVar12 + VStack_6.x * (float)uVar11 +
+                       VStack_6.z * (float)camera + fVar4) {
+              camera = (Camera *)
+                       ((uint)camera ^
+                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+              uVar11._0_4_ = (float)((uint)(float)uVar11 ^
                                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                     );
-              uVar17._4_4_ = (float)((uint)fVar16 ^
+              uVar11._4_4_ = (float)((uint)fVar12 ^
                                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                                     );
-              VStack_6.z = fVar14;
+              VStack_6.z = (float)camera;
             }
             pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
                                 (&VStack_6,this_00,(MethodInfo *)0x0);
-            fVar12 = pVVar5->x;
-            fVar15 = pVVar5->y;
+            fVar13 = pVVar5->x;
+            fVar14 = pVVar5->y;
             fVar4 = pVVar5->z;
-            value.z = fVar14;
-            value.x = (float)uVar17;
-            value.y = SUB84(uVar17,4);
+            value.z = (float)camera;
+            value.x = (float)uVar11;
+            value.y = SUB84(uVar11,4);
             pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
                                 (&VStack_6,value,(MethodInfo *)0x0);
-            uVar18 = pVVar5->x;
-            uVar19 = pVVar5->y;
-            ray_01.m_Origin.y = fVar15;
-            ray_01.m_Origin.x = fVar12;
+            uVar15 = pVVar5->x;
+            uVar16 = pVVar5->y;
+            ray_01.m_Origin.y = fVar14;
+            ray_01.m_Origin.x = fVar13;
             ray_01.m_Origin.z = fVar4;
-            ray_01.m_Direction.x = (float)uVar18;
-            ray_01.m_Direction.y = (float)uVar19;
+            ray_01.m_Direction.x = (float)uVar15;
+            ray_01.m_Direction.y = (float)uVar16;
             ray_01.m_Direction.z = pVVar5->z;
-            bVar11 = UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane_Raycast
+            bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane_Raycast
                                ((Plane *)&stack0xffffffd0,ray_01,(float *)&stack0xfffffff8,
                                 (MethodInfo *)0x0);
-            if (bVar11 == 0) {
+            if (bVar10 == 0) {
               return;
             }
             pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
                                 (&VStack_6,(Ray *)&stack0xffffff84,(float)pVVar1,(MethodInfo *)0x0
                                 );
-            fVar14 = pVVar5->x;
-            fVar16 = pVVar5->y;
+            fVar17 = pVVar5->x;
+            fVar18 = pVVar5->y;
             camera = (Camera *)pVVar5->z;
             if (cRam_? == '\0') {
               func_?();
               cRam_? = '\x01';
             }
-            pVVar20 = TypeInfo__UnityEngine__Vector3->static_fields;
-            VStack_6.x = (pVVar20->zeroVector).x;
-            VStack_6.y = (pVVar20->zeroVector).y;
-            VStack_6.z = (pVVar20->zeroVector).z;
+            pVVar19 = TypeInfo__UnityEngine__Vector3->static_fields;
+            VStack_6.x = (pVVar19->zeroVector).x;
+            VStack_6.y = (pVVar19->zeroVector).y;
+            VStack_6.z = (pVVar19->zeroVector).z;
             if (cRam_? == '\0') {
               func_?();
               cRam_? = '\x01';
             }
             pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
                                 ((Vector3 *)&stack0xffffffa0,this_00,(MethodInfo *)0x0);
-            pCVar21 = camera;
+            pCVar20 = camera;
             pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
                                 ((Vector3 *)&stack0xffffffa0,*pVVar5,(MethodInfo *)0x0);
-            fVar22 = pVVar5->x;
-            uVar23 = pVVar5->y;
+            fVar21 = pVVar5->x;
+            uVar22 = pVVar5->y;
             pPVar2 = (this->fields)._worldPlanes;
             if (pPVar2 != (Plane__Array *)0x0) {
               if (pPVar2->max_length < 4) goto code_?;
-              ray_04.m_Origin.y = fVar16;
-              ray_04.m_Origin.x = fVar14;
-              ray_04.m_Origin.z = (float)pCVar21;
-              ray_04.m_Direction.x = fVar22;
-              ray_04.m_Direction.y = (float)uVar23;
+              ray_04.m_Origin.y = fVar18;
+              ray_04.m_Origin.x = fVar17;
+              ray_04.m_Origin.z = (float)pCVar20;
+              ray_04.m_Direction.x = fVar21;
+              ray_04.m_Direction.y = (float)uVar22;
               ray_04.m_Direction.z = pVVar5->z;
-              bVar11 = UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane_Raycast
+              bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane_Raycast
                                  ((Plane *)&stack0xffffff9c,ray_04,(float *)&stack0xfffffff8,
                                   (MethodInfo *)0x0);
-              if (bVar11 != 0) {
+              if (bVar10 != 0) {
                 camera = (Camera *)&UNK_?;
                 pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
                                     ((Vector3 *)&stack0xffffffa0,(Ray *)&stack0xffffff84,
@@ -150,121 +145,121 @@ code_?:
                                   ((Vector3 *)&stack0xffffffa0,this_00,(MethodInfo *)0x0);
               pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
                                   ((Vector3 *)&stack0xffffffa0,*pVVar5,(MethodInfo *)0x0);
-              uVar24 = pVVar5->x;
-              uVar25 = pVVar5->y;
+              uVar23 = pVVar5->x;
+              uVar24 = pVVar5->y;
               pPVar2 = (this->fields)._worldPlanes;
               if (pPVar2 != (Plane__Array *)0x0) {
                 if (pPVar2->max_length < 2) goto code_?;
-                ray_00.m_Origin.y = fVar22;
-                ray_00.m_Origin.x = (float)pCVar21;
+                ray_00.m_Origin.y = fVar21;
+                ray_00.m_Origin.x = (float)pCVar20;
                 ray_00.m_Origin.z = (float)camera;
-                ray_00.m_Direction.x = (float)uVar24;
-                ray_00.m_Direction.y = (float)uVar25;
+                ray_00.m_Direction.x = (float)uVar23;
+                ray_00.m_Direction.y = (float)uVar24;
                 ray_00.m_Direction.z = pVVar5->z;
-                bVar11 = UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane_Raycast
+                bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane_Raycast
                                    ((Plane *)&stack0xffffff9c,ray_00,(float *)&stack0xfffffff8,
                                     (MethodInfo *)0x0);
-                if (bVar11 != 0) {
+                if (bVar10 != 0) {
                   UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
                             ((Vector3 *)&stack0xffffffa0,(Ray *)&stack0xffffff84,(float)pVVar1,
                              (MethodInfo *)0x0);
                 }
-                fVar26 = (float10)func_?();
-                VStack_6.z = VStack_6.z - fVar16;
-                fVar4 = (float)fVar26;
-                fVar26 = (float10)func_?();
-                pVVar27 = (this->fields)._worldPoints;
+                fVar25 = (float10)func_?();
+                VStack_6.z = VStack_6.z - fVar18;
+                fVar4 = (float)fVar25;
+                fVar25 = (float10)func_?();
+                pVVar26 = (this->fields)._worldPoints;
                 fVar14 = 0.0;
-                fVar7 = (float)fVar26;
-                pTVar28 = this_00;
+                fVar12 = (float)fVar25;
+                pTVar27 = this_00;
                 pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
                                     ((Vector3 *)&stack0xffffffa0,this_00,(MethodInfo *)0x0);
                 VStack_6.x = pVVar1->x;
                 VStack_6.y = pVVar1->y;
                 VStack_6.z = pVVar1->z;
-                fVar15 = (float)pTVar28 - VStack_6.x * fVar4;
+                fVar17 = (float)pTVar27 - VStack_6.x * fVar4;
                 fVar14 = fVar14 - VStack_6.y * fVar4;
-                fVar12 = fVar16 - VStack_6.z * fVar4;
-                fVar13 = 0.0;
-                pTVar28 = this_00;
+                fVar13 = fVar18 - VStack_6.z * fVar4;
+                fVar28 = 0.0;
+                pTVar27 = this_00;
                 pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
                                     ((Vector3 *)&stack0xffffffa0,this_00,(MethodInfo *)0x0);
                 uVar29 = pVVar1->x;
                 uVar30 = pVVar1->y;
-                VStack_6.x = fVar15 + (float)uVar29 * fVar7;
-                VStack_6.y = fVar14 + (float)uVar30 * fVar7;
-                VStack_6.z = fVar12 + pVVar1->z * fVar7;
-                if (pVVar27 != (Vector3__Array *)0x0) {
-                  if (pVVar27->max_length == 0) goto code_?;
-                  pVVar27->vector[0].x = VStack_6.x;
-                  pVVar27->vector[0].y = VStack_6.y;
-                  pVVar27->vector[0].z = VStack_6.z;
-                  pVVar27 = (this->fields)._worldPoints;
+                VStack_6.x = (float)uVar29 * fVar12 + fVar17;
+                VStack_6.y = (float)uVar30 * fVar12 + fVar14;
+                VStack_6.z = pVVar1->z * fVar12 + fVar13;
+                if (pVVar26 != (Vector3__Array *)0x0) {
+                  if (pVVar26->max_length == 0) goto code_?;
+                  pVVar26->vector[0].x = VStack_6.x;
+                  pVVar26->vector[0].y = VStack_6.y;
+                  pVVar26->vector[0].z = VStack_6.z;
+                  pVVar26 = (this->fields)._worldPoints;
                   pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
                                       ((Vector3 *)&stack0xffffffa0,this_00,(MethodInfo *)0x0);
                   VStack_6.x = pVVar1->x;
                   VStack_6.y = pVVar1->y;
                   VStack_6.z = pVVar1->z;
-                  fVar14 = (float)pTVar28 + VStack_6.x * fVar4;
-                  fVar7 = fVar13 + VStack_6.y * fVar4;
-                  fVar12 = fVar16 + VStack_6.z * fVar4;
-                  puVar8 = &UNK_?;
+                  fVar12 = VStack_6.x * fVar4 + (float)pTVar27;
+                  fVar13 = VStack_6.y * fVar4 + fVar28;
+                  fVar14 = VStack_6.z * fVar4 + fVar18;
+                  puVar7 = &UNK_?;
                   pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
                                       ((Vector3 *)&stack0xffffffa0,this_00,(MethodInfo *)0x0);
                   uVar31 = pVVar1->x;
                   uVar32 = pVVar1->y;
-                  VStack_6.x = fVar14 + (float)uVar31 * (float)puVar8;
-                  VStack_6.y = fVar7 + (float)uVar32 * (float)puVar8;
-                  VStack_6.z = fVar12 + pVVar1->z * (float)puVar8;
-                  if (pVVar27 != (Vector3__Array *)0x0) {
-                    if (pVVar27->max_length < 2) goto code_?;
-                    pVVar27->vector[1].x = VStack_6.x;
-                    pVVar27->vector[1].y = VStack_6.y;
-                    pVVar27->vector[1].z = VStack_6.z;
-                    pVVar27 = (this->fields)._worldPoints;
+                  VStack_6.x = (float)uVar31 * (float)puVar7 + fVar12;
+                  VStack_6.y = (float)uVar32 * (float)puVar7 + fVar13;
+                  VStack_6.z = pVVar1->z * (float)puVar7 + fVar14;
+                  if (pVVar26 != (Vector3__Array *)0x0) {
+                    if (pVVar26->max_length < 2) goto code_?;
+                    pVVar26->vector[1].x = VStack_6.x;
+                    pVVar26->vector[1].y = VStack_6.y;
+                    pVVar26->vector[1].z = VStack_6.z;
+                    pVVar26 = (this->fields)._worldPoints;
                     pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                               Transform_get_right((Vector3 *)&stack0xffffffa0,this_00,
                                                   (MethodInfo *)0x0);
                     VStack_6.x = pVVar1->x;
                     VStack_6.y = pVVar1->y;
                     VStack_6.z = pVVar1->z;
-                    fVar14 = (float)pTVar28 + VStack_6.x * fVar4;
-                    fVar7 = fVar13 + VStack_6.y * fVar4;
-                    fVar12 = fVar16 + VStack_6.z * fVar4;
+                    fVar12 = VStack_6.x * fVar4 + (float)pTVar27;
+                    fVar13 = VStack_6.y * fVar4 + fVar28;
+                    fVar14 = VStack_6.z * fVar4 + fVar18;
                     pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
                                         ((Vector3 *)&stack0xffffffa0,this_00,(MethodInfo *)0x0);
                     uVar33 = pVVar1->x;
                     uVar34 = pVVar1->y;
-                    VStack_6.x = fVar14 - (float)uVar33 * (float)puVar8;
-                    VStack_6.y = fVar7 - (float)uVar34 * (float)puVar8;
-                    VStack_6.z = fVar12 - pVVar1->z * (float)puVar8;
-                    if (pVVar27 != (Vector3__Array *)0x0) {
-                      if (pVVar27->max_length < 3) goto code_?;
-                      pVVar27->vector[2].x = VStack_6.x;
-                      pVVar27->vector[2].y = VStack_6.y;
-                      pVVar27->vector[2].z = VStack_6.z;
-                      pVVar27 = (this->fields)._worldPoints;
+                    VStack_6.x = fVar12 - (float)uVar33 * (float)puVar7;
+                    VStack_6.y = fVar13 - (float)uVar34 * (float)puVar7;
+                    VStack_6.z = fVar14 - pVVar1->z * (float)puVar7;
+                    if (pVVar26 != (Vector3__Array *)0x0) {
+                      if (pVVar26->max_length < 3) goto code_?;
+                      pVVar26->vector[2].x = VStack_6.x;
+                      pVVar26->vector[2].y = VStack_6.y;
+                      pVVar26->vector[2].z = VStack_6.z;
+                      pVVar26 = (this->fields)._worldPoints;
                       pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                                 Transform_get_right((Vector3 *)&stack0xffffffa0,this_00,
                                                     (MethodInfo *)0x0);
                       VStack_6.x = pVVar1->x;
                       VStack_6.y = pVVar1->y;
                       VStack_6.z = pVVar1->z;
-                      fVar7 = VStack_6.x * fVar4;
-                      fVar13 = fVar13 - VStack_6.y * fVar4;
-                      fVar16 = fVar16 - VStack_6.z * fVar4;
+                      fVar12 = VStack_6.x * fVar4;
+                      fVar28 = fVar28 - VStack_6.y * fVar4;
+                      fVar18 = fVar18 - VStack_6.z * fVar4;
                       pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
                                           ((Vector3 *)&stack0xffffffa0,this_00,(MethodInfo *)0x0);
                       uVar35 = pVVar1->x;
                       uVar36 = pVVar1->y;
-                      VStack_6.x = ((float)pTVar28 - fVar7) - (float)uVar35 * (float)puVar8;
-                      VStack_6.y = fVar13 - (float)uVar36 * (float)puVar8;
-                      VStack_6.z = fVar16 - pVVar1->z * (float)puVar8;
-                      if (pVVar27 != (Vector3__Array *)0x0) {
-                        if (3 < pVVar27->max_length) {
-                          pVVar27->vector[3].x = VStack_6.x;
-                          pVVar27->vector[3].y = VStack_6.y;
-                          pVVar27->vector[3].z = VStack_6.z;
+                      VStack_6.x = ((float)pTVar27 - fVar12) - (float)uVar35 * (float)puVar7;
+                      VStack_6.y = fVar28 - (float)uVar36 * (float)puVar7;
+                      VStack_6.z = fVar18 - pVVar1->z * (float)puVar7;
+                      if (pVVar26 != (Vector3__Array *)0x0) {
+                        if (3 < pVVar26->max_length) {
+                          pVVar26->vector[3].x = VStack_6.x;
+                          pVVar26->vector[3].y = VStack_6.y;
+                          pVVar26->vector[3].z = VStack_6.z;
                           return;
                         }
                         goto code_?;
@@ -281,43 +276,43 @@ code_?:
           pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
                               (&VStack_6,(Ray *)&stack0xffffff84,(float)pVVar1,(MethodInfo *)0x0);
           fVar4 = pVVar5->x;
-          fVar7 = pVVar5->y;
+          fVar12 = pVVar5->y;
           camera = (Camera *)pVVar5->z;
           if (cRam_? == '\0') {
             func_?();
             cRam_? = '\x01';
           }
-          fVar12 = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).z;
+          fVar13 = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).z;
           if (cRam_? == '\0') {
             func_?();
             cRam_? = '\x01';
           }
           pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
                               (&VStack_6,this_00,(MethodInfo *)0x0);
-          puVar8 = &UNK_?;
-          pCVar21 = camera;
+          puVar7 = &UNK_?;
+          pCVar20 = camera;
           pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
                               (&VStack_6,*pVVar5,(MethodInfo *)0x0);
-          fVar13 = pVVar5->x;
+          fVar28 = pVVar5->x;
           uVar37 = pVVar5->y;
           pPVar2 = (this->fields)._worldPlanes;
           if (pPVar2 != (Plane__Array *)0x0) {
             if (pPVar2->max_length < 4) goto code_?;
-            ray_03.m_Origin.y = fVar7;
+            ray_03.m_Origin.y = fVar12;
             ray_03.m_Origin.x = fVar4;
-            ray_03.m_Origin.z = (float)pCVar21;
-            ray_03.m_Direction.x = fVar13;
+            ray_03.m_Origin.z = (float)pCVar20;
+            ray_03.m_Direction.x = fVar28;
             ray_03.m_Direction.y = (float)uVar37;
             ray_03.m_Direction.z = pVVar5->z;
-            bVar11 = UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane_Raycast
+            bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane_Raycast
                                ((Plane *)&stack0xffffff9c,ray_03,(float *)&stack0xfffffff8,
                                 (MethodInfo *)0x0);
-            if (bVar11 != 0) {
+            if (bVar10 != 0) {
               camera = (Camera *)&UNK_?;
               pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
                                   (&VStack_6,(Ray *)&stack0xffffff84,(float)pVVar1,
                                    (MethodInfo *)0x0);
-              fVar12 = pVVar5->z;
+              fVar13 = pVVar5->z;
             }
             pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
                                 (&VStack_6,this_00,(MethodInfo *)0x0);
@@ -328,118 +323,118 @@ code_?:
             pPVar2 = (this->fields)._worldPlanes;
             if (pPVar2 != (Plane__Array *)0x0) {
               if (pPVar2->max_length < 2) goto code_?;
-              ray.m_Origin.y = fVar13;
-              ray.m_Origin.x = (float)pCVar21;
+              ray.m_Origin.y = fVar28;
+              ray.m_Origin.x = (float)pCVar20;
               ray.m_Origin.z = (float)camera;
               ray.m_Direction.x = (float)uVar38;
               ray.m_Direction.y = (float)uVar39;
               ray.m_Direction.z = pVVar5->z;
-              bVar11 = UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane_Raycast
+              bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane_Raycast
                                  ((Plane *)&stack0xffffff9c,ray,(float *)&stack0xfffffff8,
                                   (MethodInfo *)0x0);
-              if (bVar11 != 0) {
+              if (bVar10 != 0) {
                 pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
                                     (&VStack_6,(Ray *)&stack0xffffff84,(float)pVVar1,
                                      (MethodInfo *)0x0);
-                puVar8 = (undefined *)pVVar1->z;
+                puVar7 = (undefined *)pVVar1->z;
               }
-              VStack_6.z = (float)puVar8 - fVar7;
-              fVar26 = (float10)func_?();
-              VStack_6.z = fVar12 - fVar7;
-              fVar4 = (float)fVar26;
-              fVar26 = (float10)func_?();
-              pVVar27 = (this->fields)._worldPoints;
-              fVar15 = 0.0;
-              fVar12 = (float)fVar26;
-              pTVar28 = this_00;
+              VStack_6.z = (float)puVar7 - fVar12;
+              fVar25 = (float10)func_?();
+              VStack_6.z = fVar13 - fVar12;
+              fVar4 = (float)fVar25;
+              fVar25 = (float10)func_?();
+              pVVar26 = (this->fields)._worldPoints;
+              fVar17 = 0.0;
+              fVar13 = (float)fVar25;
+              pTVar27 = this_00;
               pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
                                   ((Vector3 *)&stack0xffffffb8,this_00,(MethodInfo *)0x0);
               VStack_6.x = pVVar1->x;
               VStack_6.y = pVVar1->y;
               VStack_6.z = pVVar1->z;
-              fVar16 = (float)pTVar28 - VStack_6.x * fVar4;
-              fVar15 = fVar15 - VStack_6.y * fVar4;
-              fVar13 = fVar7 - VStack_6.z * fVar4;
+              fVar18 = (float)pTVar27 - VStack_6.x * fVar4;
+              fVar17 = fVar17 - VStack_6.y * fVar4;
+              fVar28 = fVar12 - VStack_6.z * fVar4;
               fVar14 = 0.0;
-              pTVar28 = this_00;
+              pTVar27 = this_00;
               pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
                                   ((Vector3 *)&stack0xffffffb8,this_00,(MethodInfo *)0x0);
               uVar40 = pVVar1->x;
               uVar41 = pVVar1->y;
-              VStack_6.x = fVar16 + (float)uVar40 * fVar12;
-              VStack_6.y = fVar15 + (float)uVar41 * fVar12;
-              VStack_6.z = fVar13 + pVVar1->z * fVar12;
-              if (pVVar27 != (Vector3__Array *)0x0) {
-                if (pVVar27->max_length < 5) goto code_?;
-                pVVar27->vector[4].x = VStack_6.x;
-                pVVar27->vector[4].y = VStack_6.y;
-                pVVar27->vector[4].z = VStack_6.z;
-                pVVar27 = (this->fields)._worldPoints;
+              VStack_6.x = (float)uVar40 * fVar13 + fVar18;
+              VStack_6.y = (float)uVar41 * fVar13 + fVar17;
+              VStack_6.z = pVVar1->z * fVar13 + fVar28;
+              if (pVVar26 != (Vector3__Array *)0x0) {
+                if (pVVar26->max_length < 5) goto code_?;
+                pVVar26->vector[4].x = VStack_6.x;
+                pVVar26->vector[4].y = VStack_6.y;
+                pVVar26->vector[4].z = VStack_6.z;
+                pVVar26 = (this->fields)._worldPoints;
                 pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
                                     ((Vector3 *)&stack0xffffffb8,this_00,(MethodInfo *)0x0);
                 VStack_6.x = pVVar1->x;
                 VStack_6.y = pVVar1->y;
                 VStack_6.z = pVVar1->z;
-                fVar15 = VStack_6.x * fVar4 + (float)pTVar28;
-                fVar13 = VStack_6.y * fVar4 + fVar14;
-                fVar12 = VStack_6.z * fVar4 + fVar7;
+                fVar17 = (float)pTVar27 + VStack_6.x * fVar4;
+                fVar13 = fVar14 + VStack_6.y * fVar4;
+                fVar28 = fVar12 + VStack_6.z * fVar4;
                 pVVar1 = (Vector3 *)&stack0xffffffb8;
-                puVar8 = &UNK_?;
+                puVar7 = &UNK_?;
                 pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
                                     (pVVar1,this_00,(MethodInfo *)0x0);
                 uVar42 = pVVar5->x;
                 uVar43 = pVVar5->y;
-                VStack_6.x = fVar15 + (float)uVar42 * (float)puVar8;
-                VStack_6.y = fVar13 + (float)uVar43 * (float)puVar8;
-                VStack_6.z = fVar12 + pVVar5->z * (float)puVar8;
-                if (pVVar27 != (Vector3__Array *)0x0) {
-                  if (pVVar27->max_length < 6) goto code_?;
-                  pVVar27->vector[5].x = VStack_6.x;
-                  pVVar27->vector[5].y = VStack_6.y;
-                  pVVar27->vector[5].z = VStack_6.z;
-                  pVVar27 = (this->fields)._worldPoints;
+                VStack_6.x = (float)uVar42 * (float)puVar7 + fVar17;
+                VStack_6.y = (float)uVar43 * (float)puVar7 + fVar13;
+                VStack_6.z = pVVar5->z * (float)puVar7 + fVar28;
+                if (pVVar26 != (Vector3__Array *)0x0) {
+                  if (pVVar26->max_length < 6) goto code_?;
+                  pVVar26->vector[5].x = VStack_6.x;
+                  pVVar26->vector[5].y = VStack_6.y;
+                  pVVar26->vector[5].z = VStack_6.z;
+                  pVVar26 = (this->fields)._worldPoints;
                   pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
                                       ((Vector3 *)&stack0xffffffb8,this_00,(MethodInfo *)0x0);
                   VStack_6.x = pVVar5->x;
                   VStack_6.y = pVVar5->y;
                   VStack_6.z = pVVar5->z;
-                  fVar15 = (float)pTVar28 + VStack_6.x * fVar4;
-                  fVar12 = fVar14 + VStack_6.y * fVar4;
-                  fVar13 = fVar7 + VStack_6.z * fVar4;
+                  fVar17 = (float)pTVar27 + VStack_6.x * fVar4;
+                  fVar13 = fVar14 + VStack_6.y * fVar4;
+                  fVar28 = fVar12 + VStack_6.z * fVar4;
                   pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
                                       ((Vector3 *)&stack0xffffffb8,this_00,(MethodInfo *)0x0);
                   uVar44 = pVVar5->x;
                   uVar45 = pVVar5->y;
-                  VStack_6.x = fVar15 - (float)uVar44 * (float)puVar8;
-                  VStack_6.y = fVar12 - (float)uVar45 * (float)puVar8;
-                  VStack_6.z = fVar13 - pVVar5->z * (float)puVar8;
-                  if (pVVar27 != (Vector3__Array *)0x0) {
-                    if (pVVar27->max_length < 7) goto code_?;
-                    pVVar27->vector[6].x = VStack_6.x;
-                    pVVar27->vector[6].y = VStack_6.y;
-                    pVVar27->vector[6].z = VStack_6.z;
-                    pVVar27 = (this->fields)._worldPoints;
+                  VStack_6.x = fVar17 - (float)uVar44 * (float)puVar7;
+                  VStack_6.y = fVar13 - (float)uVar45 * (float)puVar7;
+                  VStack_6.z = fVar28 - pVVar5->z * (float)puVar7;
+                  if (pVVar26 != (Vector3__Array *)0x0) {
+                    if (pVVar26->max_length < 7) goto code_?;
+                    pVVar26->vector[6].x = VStack_6.x;
+                    pVVar26->vector[6].y = VStack_6.y;
+                    pVVar26->vector[6].z = VStack_6.z;
+                    pVVar26 = (this->fields)._worldPoints;
                     pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                               Transform_get_right((Vector3 *)&stack0xffffffb8,this_00,
                                                   (MethodInfo *)0x0);
                     VStack_6.x = pVVar5->x;
                     VStack_6.y = pVVar5->y;
                     VStack_6.z = pVVar5->z;
-                    fVar12 = VStack_6.x * fVar4;
+                    fVar13 = VStack_6.x * fVar4;
                     fVar14 = fVar14 - VStack_6.y * fVar4;
-                    fVar7 = fVar7 - VStack_6.z * fVar4;
+                    fVar12 = fVar12 - VStack_6.z * fVar4;
                     pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
                                         ((Vector3 *)&stack0xffffffb8,this_00,(MethodInfo *)0x0);
                     uVar46 = pVVar5->x;
                     uVar47 = pVVar5->y;
-                    VStack_6.x = ((float)pTVar28 - fVar12) - (float)uVar46 * (float)puVar8;
-                    VStack_6.y = fVar14 - (float)uVar47 * (float)puVar8;
-                    VStack_6.z = fVar7 - pVVar5->z * (float)puVar8;
-                    if (pVVar27 != (Vector3__Array *)0x0) {
-                      if (pVVar27->max_length < 8) goto code_?;
-                      pVVar27->vector[7].x = VStack_6.x;
-                      pVVar27->vector[7].y = VStack_6.y;
-                      pVVar27->vector[7].z = VStack_6.z;
+                    VStack_6.x = ((float)pTVar27 - fVar13) - (float)uVar46 * (float)puVar7;
+                    VStack_6.y = fVar14 - (float)uVar47 * (float)puVar7;
+                    VStack_6.z = fVar12 - pVVar5->z * (float)puVar7;
+                    if (pVVar26 != (Vector3__Array *)0x0) {
+                      if (pVVar26->max_length < 8) goto code_?;
+                      pVVar26->vector[7].x = VStack_6.x;
+                      pVVar26->vector[7].y = VStack_6.y;
+                      pVVar26->vector[7].z = VStack_6.z;
                       goto code_?;
                     }
                   }
@@ -597,211 +592,228 @@ void Assembly-CSharp.dll::RTG::CameraViewVolume::CameraViewVolume_FromCamera
 {
   if (camera != (Camera *)0x0) {
     pMVar1 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_projectionMatrix
-                       ((Matrix4x4 *)&stack0xffffff10,camera,(MethodInfo *)0x0);
-    QStack_2.x = pMVar1->m00;
-    QStack_2.y = pMVar1->m10;
-    QStack_2.z = pMVar1->m20;
-    QStack_2.w = pMVar1->m30;
-    VStack_3.x = pMVar1->m01;
-    VStack_3.y = pMVar1->m11;
-    VStack_3.z = pMVar1->m21;
-    fStack_4 = pMVar1->m31;
-    fStack_5 = pMVar1->m02;
-    uStack_6._0_4_ = pMVar1->m12;
-    uStack_6._4_4_ = pMVar1->m22;
-    fStack_7 = pMVar1->m32;
-    fStack_8 = pMVar1->m03;
-    VStack_9.x = pMVar1->m13;
-    VStack_9.y = pMVar1->m23;
-    fStack_10 = pMVar1->m33;
+                        ((Matrix4x4 *)auStack_2,camera,(MethodInfo *)0x0);
+    fVar3 = pMVar1->m00;
+    fVar4 = pMVar1->m10;
+    fVar5 = pMVar1->m20;
+    fVar6 = pMVar1->m30;
+    uStack_7._0_4_ = pMVar1->m01;
+    uStack_7._4_4_ = pMVar1->m11;
+    fVar8 = pMVar1->m21;
+    fVar9 = pMVar1->m31;
+    fVar10 = pMVar1->m32;
+    fStack_11 = pMVar1->m03;
+    fStack_12 = pMVar1->m13;
+    fStack_13 = pMVar1->m23;
+    fStack_14 = pMVar1->m33;
     pMVar1 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_worldToCameraMatrix
-                       ((Matrix4x4 *)&stack0xffffff10,camera,(MethodInfo *)0x0);
-    lhs.m10 = QStack_2.y;
-    lhs.m00 = QStack_2.x;
-    lhs.m20 = QStack_2.z;
-    lhs.m30 = QStack_2.w;
-    lhs.m01 = VStack_3.x;
-    lhs.m11 = VStack_3.y;
-    lhs.m21 = VStack_3.z;
-    lhs.m31 = fStack_4;
-    lhs.m02 = fStack_5;
-    lhs.m12 = (float)uStack_6;
-    lhs.m22 = uStack_6._4_4_;
-    lhs.m32 = fStack_7;
-    lhs.m03 = fStack_8;
-    lhs.m13 = VStack_9.x;
-    lhs.m23 = VStack_9.y;
-    lhs.m33 = fStack_10;
+                        ((Matrix4x4 *)(auStack_2 + 0xc),camera,(MethodInfo *)0x0);
+    fVar15 = pMVar1->m02;
+    puVar16 = (undefined *)pMVar1->m12;
+    lhs.m10 = (float)in_stack_17;
+    lhs.m00 = fVar6;
+    lhs.m20 = in_stack_18;
+    lhs.m30 = in_stack_19;
+    lhs.m01 = fVar9;
+    lhs.m11 = fVar3;
+    lhs.m21 = fVar4;
+    lhs.m31 = fVar5;
+    lhs.m02 = fVar10;
+    lhs.m12 = fStack_20;
+    lhs.m22 = (float)uStack_21;
+    lhs.m32 = fStack_11;
+    lhs.m03 = fStack_14;
+    lhs.m13 = (float)uStack_7;
+    lhs.m23 = uStack_7._4_4_;
+    lhs.m33 = fVar8;
     pMVar1 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_op_Multiply
-                       ((Matrix4x4 *)&stack0xffffff10,lhs,*pMVar1,(MethodInfo *)0x0);
-    fVar11 = pMVar1->m10;
-    fVar12 = pMVar1->m20;
-    fVar13 = pMVar1->m30;
-    fVar14 = pMVar1->m01;
-    fVar15 = pMVar1->m11;
-    fVar16 = pMVar1->m21;
-    fVar17 = pMVar1->m31;
-    fVar18 = pMVar1->m02;
-    fVar19 = pMVar1->m12;
-    fVar20 = pMVar1->m22;
-    fVar21 = pMVar1->m32;
+                        ((Matrix4x4 *)(auStack_2 + 0x18),lhs,*pMVar1,(MethodInfo *)0x0);
+    fVar3 = pMVar1->m10;
+    fVar4 = pMVar1->m20;
+    fVar5 = pMVar1->m30;
+    fVar6 = pMVar1->m01;
+    fVar8 = pMVar1->m02;
+    uStack_7._4_4_ = (float)&UNK_?;
     pPVar22 = UnityEngine.CoreModule.dll::UnityEngine::GeometryUtility::
-             GeometryUtility_CalculateFrustumPlanes(*pMVar1,(MethodInfo *)0x0);
+              GeometryUtility_CalculateFrustumPlanes(*pMVar1,(MethodInfo *)0x0);
     (this->fields)._worldPlanes = pPVar22;
     func_?();
+    fVar9 = 0.0;
     CameraViewVolume_CalculateWorldPoints(this,camera,(MethodInfo *)0x0);
     pVVar23 = (this->fields)._worldPoints;
     if (pVVar23 != (Vector3__Array *)0x0) {
       if (pVVar23->max_length < 5) goto code_?;
-      VStack_9 = *(Vector2 *)(pVVar23->vector + 4);
-      fStack_10 = pVVar23->vector[4].z;
+      uVar24 = pVVar23->vector[4].x;
+      uVar25 = pVVar23->vector[4].y;
+      if (pVVar23->max_length < 6) goto code_?;
+      uVar26 = pVVar23->vector[5].x;
+      uVar27 = pVVar23->vector[5].y;
+      fVar10 = (float)uVar24 - (float)uVar26;
+      fVar28 = (float)uVar25 - (float)uVar27;
+      fVar29 = pVVar23->vector[4].z - pVVar23->vector[5].z;
+      if (cRam_? == '\0') {
+        puVar16 = &UNK_?;
+        func_?(&TypeInfo__System__Math);
+        cRam_? = '\x01';
+      }
+      if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+        puVar16 = &UNK_?;
+        func_?(TypeInfo__System__Math);
+      }
+      dVar30 = (double)(fVar28 * fVar28 + fVar10 * fVar10 + fVar29 * fVar29);
+      if (dVar30 < 0.0) {
+        func_?();
+      }
+      else {
+        dVar30 = SQRT(dVar30);
+      }
+      (this->fields)._farPlaneSize.x = (float)dVar30;
       pVVar23 = (this->fields)._worldPoints;
       if (pVVar23 != (Vector3__Array *)0x0) {
-        if (pVVar23->max_length < 6) goto code_?;
-        uStack_6._0_4_ = pVVar23->vector[5].x;
-        uStack_6._4_4_ = pVVar23->vector[5].y;
-        fStack_7 = pVVar23->vector[5].z;
-        fStack_10 = fStack_10 - fStack_7;
-        VStack_3.z = fStack_10;
-        VStack_9.y = VStack_9.y - uStack_6._4_4_;
-        VStack_9.x = VStack_9.x - (float)uStack_6;
-        fVar24 = (float10)func_?(&VStack_9,0);
-        (this->fields)._farPlaneSize.x = (float)fVar24;
+        if (pVVar23->max_length < 5) goto code_?;
+        uVar31 = pVVar23->vector[4].x;
+        uVar32 = pVVar23->vector[4].y;
+        if (pVVar23->max_length < 8) goto code_?;
+        uVar33 = pVVar23->vector[7].x;
+        uVar34 = pVVar23->vector[7].y;
+        fVar10 = (float)uVar31 - (float)uVar33;
+        fVar28 = (float)uVar32 - (float)uVar34;
+        fVar29 = pVVar23->vector[4].z - pVVar23->vector[7].z;
+        if (cRam_? == '\0') {
+          puVar16 = &UNK_?;
+          func_?(&TypeInfo__System__Math);
+          cRam_? = '\x01';
+        }
+        if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+          puVar16 = &UNK_?;
+          func_?(TypeInfo__System__Math);
+        }
+        dVar30 = (double)(fVar10 * fVar10 + fVar28 * fVar28 + fVar29 * fVar29);
+        if (dVar30 < 0.0) {
+          func_?();
+        }
+        else {
+          dVar30 = SQRT(dVar30);
+        }
+        (this->fields)._farPlaneSize.y = (float)dVar30;
         pVVar23 = (this->fields)._worldPoints;
         if (pVVar23 != (Vector3__Array *)0x0) {
-          if (pVVar23->max_length < 5) goto code_?;
-          uStack_6._0_4_ = pVVar23->vector[4].x;
-          uStack_6._4_4_ = pVVar23->vector[4].y;
-          fStack_7 = pVVar23->vector[4].z;
+          if (pVVar23->max_length == 0) goto code_?;
+          uVar35 = pVVar23->vector[0].x;
+          uVar36 = pVVar23->vector[0].y;
+          if (pVVar23->max_length < 2) goto code_?;
+          uVar37 = pVVar23->vector[1].x;
+          uVar38 = pVVar23->vector[1].y;
+          fVar10 = (float)uVar35 - (float)uVar37;
+          fVar28 = (float)uVar36 - (float)uVar38;
+          fVar29 = pVVar23->vector[0].z - pVVar23->vector[1].z;
+          if (cRam_? == '\0') {
+            puVar16 = &UNK_?;
+            func_?(&TypeInfo__System__Math);
+            cRam_? = '\x01';
+          }
+          if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+            puVar16 = &UNK_?;
+            func_?(TypeInfo__System__Math);
+          }
+          dVar30 = (double)(fVar28 * fVar28 + fVar10 * fVar10 + fVar29 * fVar29);
+          if (dVar30 < 0.0) {
+            func_?();
+          }
+          else {
+            dVar30 = SQRT(dVar30);
+          }
+          (this->fields)._nearPlaneSize.x = (float)dVar30;
           pVVar23 = (this->fields)._worldPoints;
           if (pVVar23 != (Vector3__Array *)0x0) {
-            if (pVVar23->max_length < 8) goto code_?;
-            uVar25 = pVVar23->vector[7].x;
-            uVar26 = pVVar23->vector[7].y;
-            fStack_4 = pVVar23->vector[7].z;
-            fStack_10 = fStack_7 - fStack_4;
-            VStack_3.z = fStack_10;
-            VStack_3.y = (float)uVar25;
-            VStack_9.y = uStack_6._4_4_ - (float)uVar26;
-            VStack_9.x = (float)uStack_6 - (float)uVar25;
-            fVar24 = (float10)func_?(&VStack_9,0);
-            (this->fields)._farPlaneSize.y = (float)fVar24;
-            pVVar23 = (this->fields)._worldPoints;
-            if (pVVar23 != (Vector3__Array *)0x0) {
-              if (pVVar23->max_length == 0) goto code_?;
-              VStack_3.y = pVVar23->vector[0].x;
-              VStack_3.z = pVVar23->vector[0].y;
-              fStack_4 = pVVar23->vector[0].z;
-              pVVar23 = (this->fields)._worldPoints;
-              if (pVVar23 != (Vector3__Array *)0x0) {
-                if (pVVar23->max_length < 2) goto code_?;
-                uStack_6._0_4_ = pVVar23->vector[1].x;
-                uStack_6._4_4_ = pVVar23->vector[1].y;
-                fStack_7 = pVVar23->vector[1].z;
-                fVar27 = VStack_3.z - uStack_6._4_4_;
-                fStack_10 = fStack_4 - fStack_7;
-                VStack_3.z = fStack_10;
-                VStack_9.y = fVar27;
-                VStack_9.x = VStack_3.y - (float)uStack_6;
-                fVar24 = (float10)func_?(&VStack_9,0);
-                (this->fields)._nearPlaneSize.x = (float)fVar24;
-                pVVar23 = (this->fields)._worldPoints;
-                if (pVVar23 != (Vector3__Array *)0x0) {
-                  if (pVVar23->max_length == 0) goto code_?;
-                  VStack_3.y = pVVar23->vector[0].x;
-                  VStack_3.z = pVVar23->vector[0].y;
-                  fStack_4 = pVVar23->vector[0].z;
-                  pVVar23 = (this->fields)._worldPoints;
-                  if (pVVar23 != (Vector3__Array *)0x0) {
-                    if (pVVar23->max_length < 4) goto code_?;
-                    uStack_6._0_4_ = pVVar23->vector[3].x;
-                    uStack_6._4_4_ = pVVar23->vector[3].y;
-                    fStack_7 = pVVar23->vector[3].z;
-                    fVar27 = VStack_3.z - uStack_6._4_4_;
-                    fStack_10 = fStack_4 - fStack_7;
-                    VStack_3.z = fStack_10;
-                    VStack_9.y = fVar27;
-                    VStack_9.x = VStack_3.y - (float)uStack_6;
-                    fVar24 = (float10)func_?(&VStack_9,0);
-                    (this->fields)._nearPlaneSize.y = (float)fVar24;
-                    uVar28._0_4_ = 0.0;
-                    uVar28._4_4_ = 0.0;
-                    fVar27 = 0.0;
-                    fVar29 = 0.0;
-                    fVar30 = 0.0;
-                    fVar31 = 0.0;
-                    AABB::AABB__ctor_2((AABB *)&stack0xffffff8c,
-                                       (IEnumerable_1_UnityEngine_Vector3_ *)
-                                       (this->fields)._worldPoints,(MethodInfo *)0x0);
-                    (this->fields)._worldAABB._size.x = fVar27;
-                    (this->fields)._worldAABB._size.y = fVar29;
-                    (this->fields)._worldAABB._size.z = fVar30;
-                    (this->fields)._worldAABB._center.x = fVar31;
-                    (this->fields)._worldAABB._center.y = (float)uVar28;
-                    (this->fields)._worldAABB._center.z = uVar28._4_4_;
-                    *(undefined4 *)&(this->fields)._worldAABB._isValid = 0;
-                    VStack_9 = (this->fields)._farPlaneSize;
-                    pTStack_32 = (Transform *)
-                                 UnityEngine.CoreModule.dll::UnityEngine::Camera::
-                                 Camera_get_farClipPlane(camera,(MethodInfo *)0x0);
-                    fStack_10 = UnityEngine.CoreModule.dll::UnityEngine::Camera::
-                                Camera_get_nearClipPlane(camera,(MethodInfo *)0x0);
-                    fStack_10 = (float)pTStack_32 - fStack_10;
-                    pTStack_32 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                                 Component_get_transform((Component *)camera,(MethodInfo *)0x0);
-                    if (pTStack_32 != (Transform *)0x0) {
-                      pVVar33 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                               Transform_get_position(&VStack_3,pTStack_32,(MethodInfo *)0x0);
-                      uStack_6._0_4_ = pVVar33->x;
-                      uStack_6._4_4_ = pVVar33->y;
-                      fStack_7 = pVVar33->z;
-                      pVVar33 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                               Transform_get_forward
-                                         ((Vector3 *)&QStack_2,pTStack_32,(MethodInfo *)0x0);
-                      VStack_3.y = pVVar33->x;
-                      VStack_3.z = pVVar33->y;
-                      fStack_4 = pVVar33->z;
-                      fVar27 = UnityEngine.CoreModule.dll::UnityEngine::Camera::
-                               Camera_get_nearClipPlane(camera,(MethodInfo *)0x0);
-                      fVar27 = fVar27 + fStack_10 * _UNK_?;
-                      fVar29 = (float)uStack_6 + VStack_3.y * fVar27;
-                      fStack_34 = uStack_6._4_4_ + VStack_3.z * fVar27;
-                      VStack_3.z = fStack_7 + fStack_4 * fVar27;
-                      pQVar35 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                               Transform_get_rotation(&QStack_2,pTStack_32,(MethodInfo *)0x0);
-                      QStack_2.x = pQVar35->x;
-                      QStack_2.y = pQVar35->y;
-                      QStack_2.z = pQVar35->z;
-                      QStack_2.w = pQVar35->w;
-                      func_?(&stack0xffffff60,0,0x2c);
-                      center.y = fStack_34;
-                      center.x = fVar29;
-                      center.z = VStack_3.z;
-                      size.z = fStack_10;
-                      size.x = VStack_9.x;
-                      size.y = VStack_9.y;
-                      rotation.y = QStack_2.y;
-                      rotation.x = QStack_2.x;
-                      rotation.z = QStack_2.z;
-                      rotation.w = QStack_2.w;
-                      OBB::OBB__ctor_1((OBB *)&stack0xffffff60,center,size,rotation,
-                                       (MethodInfo *)0x0);
-                      (this->fields)._worldOBB._size.x = fVar11;
-                      (this->fields)._worldOBB._size.y = fVar12;
-                      (this->fields)._worldOBB._size.z = fVar13;
-                      (this->fields)._worldOBB._center.x = fVar14;
-                      (this->fields)._worldOBB._center.y = fVar15;
-                      (this->fields)._worldOBB._center.z = fVar16;
-                      (this->fields)._worldOBB._rotation.x = fVar17;
-                      (this->fields)._worldOBB._rotation.y = fVar18;
-                      (this->fields)._worldOBB._rotation.z = fVar19;
-                      (this->fields)._worldOBB._rotation.w = fVar20;
-                      *(float *)&(this->fields)._worldOBB._isValid = fVar21;
-                      return;
-                    }
-                  }
-                }
-              }
+            if (pVVar23->max_length == 0) goto code_?;
+            if (pVVar23->max_length < 4) goto code_?;
+            if (cRam_? == '\0') {
+              puVar16 = &UNK_?;
+              func_?(&TypeInfo__System__Math);
+              cRam_? = '\x01';
+            }
+            if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+              func_?(TypeInfo__System__Math);
+            }
+            dVar30 = (double)(fVar9 * fVar9 + (float)puVar16 * (float)puVar16 + fVar15 * fVar15);
+            if (dVar30 < 0.0) {
+              func_?();
+            }
+            else {
+              dVar30 = SQRT(dVar30);
+            }
+            fVar9 = 0.0;
+            (this->fields)._nearPlaneSize.y = (float)dVar30;
+            fStack_11 = 0.0;
+            fStack_12 = 0.0;
+            fStack_13 = 0.0;
+            fStack_14 = 0.0;
+            uStack_7._0_4_ = 0.0;
+            uStack_7._4_4_ = 0.0;
+            AABB::AABB__ctor_2((AABB *)&fStack_11,
+                               (IEnumerable_1_UnityEngine_Vector3_ *)(this->fields)._worldPoints,
+                               (MethodInfo *)0x0);
+            (this->fields)._worldAABB._size.x = fStack_14;
+            (this->fields)._worldAABB._size.y = (float)uStack_7;
+            (this->fields)._worldAABB._size.z = uStack_7._4_4_;
+            (this->fields)._worldAABB._center.x = fVar9;
+            (this->fields)._worldAABB._center.y = fVar3;
+            (this->fields)._worldAABB._center.z = fVar4;
+            *(float *)&(this->fields)._worldAABB._isValid = fVar5;
+            this_02 = (Transform *)(this->fields)._farPlaneSize.y;
+            UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_farClipPlane
+                      (camera,(MethodInfo *)0x0);
+            UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_nearClipPlane
+                      (camera,(MethodInfo *)0x0);
+            this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                ((Component *)camera,(MethodInfo *)0x0);
+            if (this_01 != (Transform *)0x0) {
+              pVVar39 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                                  ((Vector3 *)&stack0xffffff20,this_01,(MethodInfo *)0x0);
+              uStack_7._0_4_ = pVVar39->x;
+              uStack_7._4_4_ = pVVar39->y;
+              pVVar39 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
+                                  ((Vector3 *)&stack0xffffff64,this_02,(MethodInfo *)0x0);
+              this_00 = pVVar39->x;
+              fVar9 = pVVar39->z;
+              fVar10 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_nearClipPlane
+                                 (camera,(MethodInfo *)0x0);
+              fVar28 = fVar5 + fVar9 * (fVar10 + fVar3 * _UNK_?);
+              fStack_11 = 0.0;
+              fStack_12 = 0.0;
+              fStack_13 = 0.0;
+              pQVar40 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+                                  ((Quaternion *)&stack0xffffff78,(Transform *)this_00,
+                                   (MethodInfo *)0x0);
+              fVar3 = pQVar40->x;
+              fVar9 = pQVar40->y;
+              fVar10 = pQVar40->z;
+              fVar15 = pQVar40->w;
+              func_?(auStack_2,0,0x2c);
+              center.y = fVar28;
+              center.x = fStack_13;
+              center.z = fVar8;
+              size.y = fVar5;
+              size.x = fVar4;
+              size.z = fVar6;
+              rotation.y = fVar9;
+              rotation.x = fVar3;
+              rotation.z = fVar10;
+              rotation.w = fVar15;
+              OBB::OBB__ctor_1((OBB *)auStack_2,center,size,rotation,(MethodInfo *)0x0);
+              (this->fields)._worldOBB._size.x = fStack_41;
+              (this->fields)._worldOBB._size.y = fStack_42;
+              (this->fields)._worldOBB._size.z = fStack_43;
+              (this->fields)._worldOBB._center.x = fStack_44;
+              (this->fields)._worldOBB._center.y = fStack_45;
+              (this->fields)._worldOBB._center.z = fStack_46;
+              (this->fields)._worldOBB._rotation.x = fStack_47;
+              (this->fields)._worldOBB._rotation.y = unaff_EBP;
+              (this->fields)._worldOBB._rotation.z = (float)unaff_retaddr;
+              (this->fields)._worldOBB._rotation.w = (float)this;
+              *(Camera **)&(this->fields)._worldOBB._isValid = camera;
+              return;
             }
           }
         }
@@ -811,8 +823,8 @@ void Assembly-CSharp.dll::RTG::CameraViewVolume::CameraViewVolume_FromCamera
   func_?();
 code_?:
   func_?();
-  pcVar36 = (code *)swi(3);
-  (*pcVar36)();
+  pcVar48 = (code *)swi(3);
+  (*pcVar48)();
   return;
 }
 
@@ -959,22 +971,23 @@ void Assembly-CSharp.dll::RTG::CameraViewVolume::CameraViewVolume__ctor
   (this->fields)._worldPoints = pVVar1;
   func_?(&this->fields,pVVar1);
   pPVar2 = (Plane__Array *)func_?(TypeInfo__UnityEngine__Plane,6);
-  (this->fields)._worldPlanes = pPVar2;
-  func_?(&(this->fields)._worldPlanes,pPVar2);
+  ppPVar3 = &(this->fields)._worldPlanes;
+  *ppPVar3 = pPVar2;
+  func_?(ppPVar3,pPVar2);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Vector2);
     cRam_? = '\x01';
   }
-  fVar3 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
+  fVar4 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
   (this->fields)._farPlaneSize.x = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).x;
-  (this->fields)._farPlaneSize.y = fVar3;
+  (this->fields)._farPlaneSize.y = fVar4;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Vector2);
     cRam_? = '\x01';
   }
-  fVar3 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
+  fVar4 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
   (this->fields)._nearPlaneSize.x = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).x;
-  (this->fields)._nearPlaneSize.y = fVar3;
+  (this->fields)._nearPlaneSize.y = fVar4;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   return;
@@ -996,22 +1009,23 @@ void Assembly-CSharp.dll::RTG::CameraViewVolume::CameraViewVolume__ctor_1
   (this->fields)._worldPoints = pVVar1;
   func_?(&this->fields,pVVar1);
   pPVar2 = (Plane__Array *)func_?(TypeInfo__UnityEngine__Plane,6);
-  (this->fields)._worldPlanes = pPVar2;
-  func_?(&(this->fields)._worldPlanes,pPVar2);
+  ppPVar3 = &(this->fields)._worldPlanes;
+  *ppPVar3 = pPVar2;
+  func_?(ppPVar3,pPVar2);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Vector2);
     cRam_? = '\x01';
   }
-  fVar3 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
+  fVar4 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
   (this->fields)._farPlaneSize.x = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).x;
-  (this->fields)._farPlaneSize.y = fVar3;
+  (this->fields)._farPlaneSize.y = fVar4;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Vector2);
     cRam_? = '\x01';
   }
-  fVar3 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
+  fVar4 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
   (this->fields)._nearPlaneSize.x = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).x;
-  (this->fields)._nearPlaneSize.y = fVar3;
+  (this->fields)._nearPlaneSize.y = fVar4;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   CameraViewVolume_FromCamera(this,camera,(MethodInfo *)0x0);

@@ -120,13 +120,14 @@ void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarPointingHandlerRemote::
                ,MethodInfo *method)
 
 {
-  if ((this->fields)._.pointState == 2) {
+  iVar1 = (this->fields)._.pointState;
+  if (iVar1 == 2) {
     AvatarLimbManager+AvatarPointingHandler::
     AvatarLimbManager_AvatarPointingHandler_HandleWeaponPointing
               ((AvatarLimbManager_AvatarPointingHandler *)this,(this->fields).remoteYawRotation,
                (this->fields).remotePitchRotation,(MethodInfo *)0x0);
   }
-  else if ((this->fields)._.pointState == 1) {
+  else if (iVar1 == 1) {
     AvatarLimbManager+AvatarPointingHandler::AvatarLimbManager_AvatarPointingHandler_HandlePointing
               ((AvatarLimbManager_AvatarPointingHandler *)this,(this->fields).remoteYawRotation,
                (this->fields).remotePitchRotation,(MethodInfo *)0x0);

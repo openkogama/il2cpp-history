@@ -48,12 +48,13 @@ void Assembly-CSharp.dll::RTG::GizmoLineSlider2DLookAndFeel::GizmoLineSlider2DLo
   this_00 = (GizmoRotationArc3DLookAndFeel *)
             func_?(TypeInfo__RTG__GizmoRotationArc2DLookAndFeel);
   GizmoRotationArc3DLookAndFeel::GizmoRotationArc3DLookAndFeel__ctor(this_00,(MethodInfo *)0x0);
-  (this->fields)._rotationArcLookAndFeel = (GizmoRotationArc2DLookAndFeel *)this_00;
-  func_?(&(this->fields)._rotationArcLookAndFeel,this_00);
+  ppGVar7 = &(this->fields)._rotationArcLookAndFeel;
+  *ppGVar7 = (GizmoRotationArc2DLookAndFeel *)this_00;
+  func_?(ppGVar7,this_00);
   this_01 = (GizmoCap2DLookAndFeel *)func_?(TypeInfo__RTG__GizmoCap2DLookAndFeel);
   GizmoCap2DLookAndFeel::GizmoCap2DLookAndFeel__ctor(this_01,(MethodInfo *)0x0);
   method_00 = (MethodInfo *)&(this->fields)._capLookAndFeel;
-  (this->fields)._capLookAndFeel = this_01;
+  *(GizmoCap2DLookAndFeel **)method_00 = this_01;
   func_?(method_00,this_01);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);

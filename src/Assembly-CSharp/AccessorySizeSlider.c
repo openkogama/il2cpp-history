@@ -80,27 +80,28 @@ void Assembly-CSharp.dll::AccessorySizeSlider::AccessorySizeSlider_Initialize
        (this_01 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0),
        this_01 != (MVLocalPlayer *)0x0)) {
       this_02 = MVLocalPlayer::MVLocalPlayer_get_Body(this_01,(MethodInfo *)0x0);
-      (this->fields).avatarBody = this_02;
-      func_?(&(this->fields).avatarBody,this_02);
-      pSVar3 = (this->fields).slider;
+      ppMVar3 = &(this->fields).avatarBody;
+      *ppMVar3 = this_02;
+      func_?(ppMVar3,this_02);
+      pSVar4 = (this->fields).slider;
       if ((this->fields).isInPreview == 0) {
         if ((this_02 != (MVBody *)0x0) &&
-           (fVar4 = MVBody::MVBody_GetAccessoryScale
+           (fVar5 = MVBody::MVBody_GetAccessoryScale
                               (this_02,(this->fields).accessorySlot,(MethodInfo *)0x0),
-           pSVar3 != (Slider *)0x0)) goto code_?;
+           pSVar4 != (Slider *)0x0)) goto code_?;
       }
-      else if (pSVar3 != (Slider *)0x0) {
-        fVar4 = (this->fields).defaultValue;
+      else if (pSVar4 != (Slider *)0x0) {
+        fVar5 = (this->fields).defaultValue;
 code_?:
-        (*(code *)(pSVar3->klass->vtable).set_value.method)
-                  (pSVar3,fVar4,(pSVar3->klass->vtable).SetValueWithoutNotify.methodPtr);
+        (*(code *)(pSVar4->klass->vtable).set_value.method)
+                  (pSVar4,fVar5,(pSVar4->klass->vtable).SetValueWithoutNotify.methodPtr);
         return;
       }
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -111,25 +112,26 @@ void Assembly-CSharp.dll::AccessorySizeSlider::AccessorySizeSlider_Initialize_1
                (AccessorySizeSlider *this,MVBody *avatarBody,MethodInfo *method)
 
 {
-  (this->fields).avatarBody = avatarBody;
-  func_?(&(this->fields).avatarBody,avatarBody);
-  pSVar1 = (this->fields).slider;
+  ppMVar1 = &(this->fields).avatarBody;
+  *ppMVar1 = avatarBody;
+  func_?(ppMVar1,avatarBody);
+  pSVar2 = (this->fields).slider;
   if ((this->fields).isInPreview == 0) {
     if ((avatarBody != (MVBody *)0x0) &&
-       (fVar2 = MVBody::MVBody_GetAccessoryScale
+       (fVar3 = MVBody::MVBody_GetAccessoryScale
                           (avatarBody,(this->fields).accessorySlot,(MethodInfo *)0x0),
-       pSVar1 != (Slider *)0x0)) goto code_?;
+       pSVar2 != (Slider *)0x0)) goto code_?;
   }
-  else if (pSVar1 != (Slider *)0x0) {
-    fVar2 = (this->fields).defaultValue;
+  else if (pSVar2 != (Slider *)0x0) {
+    fVar3 = (this->fields).defaultValue;
 code_?:
-    (*(code *)(pSVar1->klass->vtable).set_value.method)
-              (pSVar1,fVar2,(pSVar1->klass->vtable).SetValueWithoutNotify.methodPtr);
+    (*(code *)(pSVar2->klass->vtable).set_value.method)
+              (pSVar2,fVar3,(pSVar2->klass->vtable).SetValueWithoutNotify.methodPtr);
     return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -152,7 +154,7 @@ void Assembly-CSharp.dll::AccessorySizeSlider::AccessorySizeSlider_Reset
                       UnityEngine__UI__Slider_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Slider>__
                      );
   (this->fields).slider = pSVar1;
-  func_?(&(this->fields).slider,pSVar1);
+  func_?();
   return;
 }
 

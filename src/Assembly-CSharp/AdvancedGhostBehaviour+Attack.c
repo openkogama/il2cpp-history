@@ -138,8 +138,7 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour+Attack::AdvancedGhostBehaviour_
           do {
             if (pOVar5->interfaceOffsets[uVar6].interfaceType ==
                 (Il2CppClass *)TypeInfo__GhostEye__IGhostEyeState) {
-              ppMVar8 = &(&(pOVar4->klass->vtable).Equals)
-                         [pOVar4->klass->interfaceOffsets[uVar6].offset].method;
+              ppMVar8 = &(&(pOVar5->vtable).Equals)[pOVar5->interfaceOffsets[uVar6].offset].method;
               goto code_?;
             }
             uVar6 = uVar6 + 1;
@@ -153,7 +152,7 @@ code_?:
       }
     }
   }
-  uVar9 = func_?(&stack0xffffffe0);
+  uVar9 = func_?(&stack0xffffffe4);
   func_?(uVar9);
   pcVar10 = (code *)swi(3);
   (*pcVar10)();

@@ -19,9 +19,10 @@ bool Assembly-CSharp.dll::MVMaterialRepository+<GenerateMaterialButtonTextureRou
   iVar1 = (this->fields).__1__state;
   pMVar2 = (this->fields).__4__this;
   if (iVar1 == 0) {
+    ppOVar3 = &(this->fields).__2__current;
     (this->fields).__1__state = -1;
-    (this->fields).__2__current = (Object *)0x0;
-    func_?(&(this->fields).__2__current,0);
+    *ppOVar3 = (Object *)0x0;
+    func_?(ppOVar3,0);
     (this->fields).__1__state = 1;
     return 1;
   }
@@ -31,27 +32,28 @@ bool Assembly-CSharp.dll::MVMaterialRepository+<GenerateMaterialButtonTextureRou
       func_?(&TypeInfo__PrefabPool);
       cRam_? = '\x01';
     }
-    pPVar3 = TypeInfo__PrefabPool->static_fields->instance;
-    if (pPVar3 == (PrefabPool *)0x0) goto code_?;
-    pMVar4 = (pPVar3->fields).materialButtonTextureGenerator;
+    pPVar4 = TypeInfo__PrefabPool->static_fields->instance;
+    if (pPVar4 == (PrefabPool *)0x0) goto code_?;
+    pMVar5 = (pPVar4->fields).materialButtonTextureGenerator;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    pMVar4 = (MaterialButtonTextureGenerator *)
-             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                       ((Object *)pMVar4,
-                        MaterialButtonTextureGenerator_MethodInfo__UnityEngine__Object__Instantiate<MaterialButtonTextureGenerator>_MaterialButtonTextureGenerator_
-                       );
-    (this->fields)._materialButtonTextureGenerator_5__2 = pMVar4;
-    func_?(&(this->fields)._materialButtonTextureGenerator_5__2,pMVar4);
+    pMVar5 = (MaterialButtonTextureGenerator *)
+              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                        ((Object *)pMVar5,
+                         MaterialButtonTextureGenerator_MethodInfo__UnityEngine__Object__Instantiate<MaterialButtonTextureGenerator>_MaterialButtonTextureGenerator_
+                        );
+    ppMVar6 = &(this->fields)._materialButtonTextureGenerator_5__2;
+    *ppMVar6 = pMVar5;
+    func_?(ppMVar6,pMVar5);
     (this->fields)._i_5__3 = 0;
   }
   else {
     if (iVar1 != 2) {
       return 0;
     }
-    piVar5 = &(this->fields)._i_5__3;
-    *piVar5 = *piVar5 + 1;
+    piVar7 = &(this->fields)._i_5__3;
+    *piVar7 = *piVar7 + 1;
     (this->fields).__1__state = -1;
   }
   if ((pMVar2 != (MVMaterialRepository *)0x0) &&
@@ -60,46 +62,49 @@ bool Assembly-CSharp.dll::MVMaterialRepository+<GenerateMaterialButtonTextureRou
      this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)) {
     iVar1 = (this->fields)._i_5__3;
     if (iVar1 < (this_00->fields)._size) {
-      RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-              RegexCharClass+SingleRange]::
-              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                        (this_00,iVar1,
-                         MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Item_int_);
-      if ((RVar6 != (RegexCharClass_SingleRange)0x0) &&
-         (pMVar4 = (this->fields)._materialButtonTextureGenerator_5__2,
-         pMVar4 != (MaterialButtonTextureGenerator *)0x0)) {
-        pTVar7 = MaterialButtonTextureGenerator::MaterialButtonTextureGenerator_TakePicture
-                           (pMVar4,*(Mesh **)((int)RVar6 + 0x10),(MethodInfo *)0x0);
-        *(Texture2D **)((int)RVar6 + 0x34) = pTVar7;
-        func_?((int)RVar6 + 0x34,pTVar7);
-        (this->fields).__2__current = (Object *)0x0;
-        func_?(&(this->fields).__2__current,0);
+      RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+               RegexCharClass+SingleRange]::
+               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                         (this_00,iVar1,
+                          MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Item_int_)
+      ;
+      if ((RVar8 != (RegexCharClass_SingleRange)0x0) &&
+         (pMVar5 = (this->fields)._materialButtonTextureGenerator_5__2,
+         pMVar5 != (MaterialButtonTextureGenerator *)0x0)) {
+        pTVar9 = MaterialButtonTextureGenerator::MaterialButtonTextureGenerator_TakePicture
+                            (pMVar5,*(Mesh **)((int)RVar8 + 0x10),(MethodInfo *)0x0);
+        *(undefined4 *)((int)RVar8 + 0x34) = pTVar9;
+        func_?((undefined4 *)((int)RVar8 + 0x34),pTVar9);
+        ppOVar3 = &(this->fields).__2__current;
+        *ppOVar3 = (Object *)0x0;
+        func_?(ppOVar3,0);
         (this->fields).__1__state = 2;
         return 1;
       }
     }
     else {
-      pMVar4 = (this->fields)._materialButtonTextureGenerator_5__2;
-      if (pMVar4 != (MaterialButtonTextureGenerator *)0x0) {
+      pMVar5 = (this->fields)._materialButtonTextureGenerator_5__2;
+      if (pMVar5 != (MaterialButtonTextureGenerator *)0x0) {
         obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                        ((Component *)pMVar4,(MethodInfo *)0x0);
+                        ((Component *)pMVar5,(MethodInfo *)0x0);
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
         UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
                   ((Object_1 *)obj,(MethodInfo *)0x0);
+        ppIVar10 = &(pMVar2->fields).generateTexturesRoutine;
         (pMVar2->fields)._IsButtonTexturesInitialized_k__BackingField = 1;
-        (pMVar2->fields).generateTexturesRoutine = (IEnumerator *)0x0;
-        func_?(&(pMVar2->fields).generateTexturesRoutine,0);
+        *ppIVar10 = (IEnumerator *)0x0;
+        func_?(ppIVar10,0);
         return 0;
       }
     }
   }
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  bVar9 = (*pcVar8)();
-  return bVar9;
+  pcVar11 = (code *)swi(3);
+  bVar12 = (*pcVar11)();
+  return bVar12;
 }
 
 

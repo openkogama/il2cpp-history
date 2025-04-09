@@ -7,33 +7,36 @@ Assembly-CSharp.dll::TeamRequirement::TeamRequirement_GetCanUseGUIResult
 
 {
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar1 != (MVNetworkGame *)0x0) &&
-     (pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0),
-     pMVar2 != (MVLocalPlayer *)0x0)) {
-    if ((this->fields).team == 5) {
+  if (pMVar1 != (MVNetworkGame *)0x0) {
+    pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
+    if (pMVar2 != (MVLocalPlayer *)0x0) {
+      if (*(int *)(unaff_ESI + 0x10) == 5) {
 code_?:
-      return ((this->fields).hasUseButtonWhenFree != 0) + UseGUIResult__Enum_NoUseButton;
-    }
-    iVar3 = (pMVar2->fields)._._Team_k__BackingField;
-    if (iVar3 != (this->fields).team) {
+        return (*(char *)(unaff_ESI + 0x14) != '\0') + UseGUIResult__Enum_NoUseButton;
+      }
+      iVar3 = (pMVar2->fields)._._Team_k__BackingField;
+      if (iVar3 == *(int *)(unaff_ESI + 0x10)) {
+        pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if ((pMVar1 == (MVNetworkGame *)0x0) ||
+           (pMVar4 = (pMVar1->fields).teamManager, pMVar4 == (MVTeamManager *)0x0))
+        goto code_?;
+        iVar5 = MVTeamManager::MVTeamManager_TeamCount(pMVar4,(MethodInfo *)0x0);
+        if (iVar5 != 1) goto code_?;
+      }
+      if (iVar3 == *(int *)(unaff_ESI + 0x10)) {
+        pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if ((pMVar1 == (MVNetworkGame *)0x0) ||
+           (pMVar4 = (pMVar1->fields).teamManager, pMVar4 == (MVTeamManager *)0x0))
+        goto code_?;
+        iVar5 = MVTeamManager::MVTeamManager_TeamCount(pMVar4,(MethodInfo *)0x0);
+        if (iVar5 != 1) {
+          return UseGUIResult__Enum_CanAfford;
+        }
+      }
       return UseGUIResult__Enum_CannotAfford;
     }
-    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if ((pMVar1 != (MVNetworkGame *)0x0) &&
-       (pMVar4 = (pMVar1->fields).teamManager, pMVar4 != (MVTeamManager *)0x0)) {
-      iVar5 = MVTeamManager::MVTeamManager_TeamCount(pMVar4,(MethodInfo *)0x0);
-      if (iVar5 != 1) goto code_?;
-      if (iVar3 != (this->fields).team) {
-        return UseGUIResult__Enum_CannotAfford;
-      }
-      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((pMVar1 != (MVNetworkGame *)0x0) &&
-         (pMVar4 = (pMVar1->fields).teamManager, pMVar4 != (MVTeamManager *)0x0)) {
-        iVar5 = MVTeamManager::MVTeamManager_TeamCount(pMVar4,(MethodInfo *)0x0);
-        return (-(uint)(iVar5 != 1) & 0xfffffffc) + UseGUIResult__Enum_CannotAfford;
-      }
-    }
   }
+code_?:
   func_?();
   pcVar6 = (code *)swi(3);
   UVar7 = (*pcVar6)();
@@ -55,18 +58,20 @@ Assembly-CSharp.dll::TeamRequirement::TeamRequirement_GetShowOption
   if (pMVar1 != (MVNetworkGame *)0x0) {
     pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
     if (pMVar2 != (MVLocalPlayer *)0x0) {
-      if ((pMVar2->fields)._._Team_k__BackingField != (this->fields).team) {
-        return ShowUseOption__Enum_TeamRestricted|ShowUseOption__Enum_UsingTeam;
-      }
-      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((pMVar1 != (MVNetworkGame *)0x0) &&
-         (this_00 = (pMVar1->fields).teamManager, this_00 != (MVTeamManager *)0x0)) {
+      if ((pMVar2->fields)._._Team_k__BackingField == (this->fields).team) {
+        pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if ((pMVar1 == (MVNetworkGame *)0x0) ||
+           (this_00 = (pMVar1->fields).teamManager, this_00 == (MVTeamManager *)0x0))
+        goto code_?;
         iVar3 = MVTeamManager::MVTeamManager_TeamCount(this_00,(MethodInfo *)0x0);
-        return (-(uint)(iVar3 != 1) & 0xfffffc00) +
-               (ShowUseOption__Enum_TeamRestricted|ShowUseOption__Enum_UsingTeam);
+        if (iVar3 != 1) {
+          return ShowUseOption__Enum_TeamAllowed|ShowUseOption__Enum_UsingTeam;
+        }
       }
+      return ShowUseOption__Enum_TeamRestricted|ShowUseOption__Enum_UsingTeam;
     }
   }
+code_?:
   func_?();
   pcVar4 = (code *)swi(3);
   SVar5 = (*pcVar4)();
@@ -211,8 +216,9 @@ void Assembly-CSharp.dll::TeamRequirement::TeamRequirement__ctor
   (this->fields).team = 5;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  (this->fields).tintObject = tintObject;
-  func_?(&(this->fields).tintObject,tintObject);
+  ppTVar1 = &(this->fields).tintObject;
+  *ppTVar1 = tintObject;
+  func_?(ppTVar1,tintObject);
   (this->fields).hasUseButtonWhenFree = hasUseButtonWhenFree;
   return;
 }

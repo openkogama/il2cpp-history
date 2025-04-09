@@ -14,8 +14,9 @@ void Assembly-CSharp.dll::CustomPostRequest::CustomPostRequest__ctor
   }
   AsyncWebRequest::AsyncWebRequest__ctor
             ((AsyncWebRequest *)this,::StringLiteral__,callback,requestPriority,(MethodInfo *)0x0);
-  (this->fields)._.request = request;
-  func_?(&(this->fields)._.request,request);
+  ppUVar1 = &(this->fields)._.request;
+  *ppUVar1 = request;
+  func_?(ppUVar1,request);
   return;
 }
 

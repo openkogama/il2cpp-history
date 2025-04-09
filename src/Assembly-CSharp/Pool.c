@@ -4,7 +4,6 @@
 void Assembly-CSharp.dll::Pool::Pool_Initialize(Pool *this,Transform *parent,MethodInfo *method)
 
 {
-  pPVar1 = this;
   if (cRam_? == '\0') {
     func_?(&MethodInfo__System__Collections__Generic__List<int>__Add_int_);
     func_?(&MethodInfo__System__Collections__Generic__List<int>__List_int_);
@@ -16,12 +15,14 @@ void Assembly-CSharp.dll::Pool::Pool_Initialize(Pool *this,Transform *parent,Met
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  (this->fields).parent = parent;
-  func_?(&(this->fields).parent,parent);
+  ppTVar1 = &(this->fields).parent;
+  *ppTVar1 = parent;
+  func_?(ppTVar1,parent);
   pMVar2 = (MonoBehaviour__Array *)
            func_?(TypeInfo__UnityEngine__MonoBehaviour,(this->fields).poolSize);
-  (this->fields).pool = pMVar2;
-  func_?(&(this->fields).pool,pMVar2);
+  ppMVar3 = &(this->fields).pool;
+  *ppMVar3 = pMVar2;
+  func_?(ppMVar3,pMVar2);
   capacity = (this->fields).poolSize;
   this_01 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
              *)func_?(TypeInfo__System__Collections__Generic__List<int>);
@@ -29,80 +30,91 @@ void Assembly-CSharp.dll::Pool::Pool_Initialize(Pool *this,Transform *parent,Met
   MultiColumnCollectionHeader+ViewState+ColumnState]::
   List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
             (this_01,capacity,MethodInfo__System__Collections__Generic__List<int>__List_int_);
-  (this->fields).available = (List_1_System_Int32_ *)this_01;
-  func_?(&(this->fields).available,this_01);
+  ppLVar4 = &(this->fields).available;
+  *ppLVar4 = (List_1_System_Int32_ *)this_01;
+  func_?(ppLVar4,this_01);
   item = 0;
   if (0 < (this->fields).poolSize) {
-    this = (Pool *)0x10;
+    iVar5 = 0x10;
+    ppMVar6 = ppMVar3;
     do {
-      original = (pPVar1->fields).prefab;
-      pMVar2 = (pPVar1->fields).pool;
+      original = (this->fields).prefab;
+      pMVar2 = *ppMVar3;
+      ppMVar3 = ppMVar6;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
+        ppMVar3 = ppMVar6;
       }
-      pOVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                         ((Object *)original,
-                          UnityEngine__MonoBehaviour_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::MonoBehaviour>_UnityEngine__MonoBehaviour_
-                         );
+      pOVar7 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                          ((Object *)original,
+                           UnityEngine__MonoBehaviour_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::MonoBehaviour>_UnityEngine__MonoBehaviour_
+                          );
       if (pMVar2 == (MonoBehaviour__Array *)0x0) goto code_?;
-      if ((pOVar3 != (Object *)0x0) &&
-         (iVar4 = func_?(pOVar3,(pMVar2->klass->_0).element_class), iVar4 == 0)) {
+      pIVar8 = (Il2CppClass *)0x0;
+      if (pOVar7 != (Object *)0x0) {
+        pIVar8 = (pMVar2->klass->_0).element_class;
+        iVar9 = func_?(pOVar7);
+        if (iVar9 != 0) goto code_?;
 code_?:
-        uVar5 = func_?(0);
-        func_?(uVar5);
+        uVar10 = func_?(0);
+        func_?(uVar10);
 code_?:
         func_?();
-        pcVar6 = (code *)swi(3);
-        (*pcVar6)();
+        pcVar11 = (code *)swi(3);
+        (*pcVar11)();
         return;
       }
+code_?:
       if (pMVar2->max_length <= item) goto code_?;
-      *(Object **)((int)pMVar2->vector + (int)&this[-1].fields.poolEnum) = pOVar3;
-      func_?((int)pMVar2->vector + (int)&this[-1].fields.poolEnum,pOVar3);
-      pMVar7 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
-      this_00 = (pPVar1->fields).available;
+      *(Il2CppClass **)((int)pMVar2->vector + iVar5 + -0x10) = pIVar8;
+      puVar12 = (undefined4 *)((int)pMVar2->vector + iVar5 + -0x10);
+      func_?(puVar12,pIVar8);
+      pMVar13 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+      this_00 = (List_1_System_Int32_ *)*puVar12;
       if (this_00 == (List_1_System_Int32_ *)0x0) {
 code_?:
         func_?();
         goto code_?;
       }
-      piVar8 = &(this_00->fields)._version;
-      *piVar8 = *piVar8 + 1;
-      pIVar9 = (this_00->fields)._items;
-      if (pIVar9 == (Int32__Array *)0x0) goto code_?;
-      uVar10 = (this_00->fields)._size;
-      if (uVar10 < pIVar9->max_length) {
-        (this_00->fields)._size = uVar10 + 1;
-        if (pIVar9->max_length <= uVar10) goto code_?;
-        pIVar9->vector[uVar10] = item;
+      piVar14 = &(this_00->fields)._version;
+      *piVar14 = *piVar14 + 1;
+      pIVar15 = (this_00->fields)._items;
+      if (pIVar15 == (Int32__Array *)0x0) goto code_?;
+      uVar16 = (this_00->fields)._size;
+      if (uVar16 < pIVar15->max_length) {
+        (this_00->fields)._size = uVar16 + 1;
+        if (pIVar15->max_length <= uVar16) goto code_?;
+        pIVar15->vector[uVar16] = item;
       }
       else {
         mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
-        List_1_System_Int32__AddWithResize(this_00,item,pMVar7->klass->rgctx_data[0xe].method);
+        List_1_System_Int32__AddWithResize(this_00,item,pMVar13->klass->rgctx_data[0xe].method);
       }
-      pMVar2 = (pPVar1->fields).pool;
+      pMVar2 = *ppMVar3;
       if (pMVar2 == (MonoBehaviour__Array *)0x0) goto code_?;
       if (pMVar2->max_length <= item) goto code_?;
-      pCVar11 = *(Component **)((int)pMVar2->vector + (int)&this[-1].fields.poolEnum);
-      if ((pCVar11 == (Component *)0x0) ||
+      pCVar17 = *(Component **)((int)pMVar2->vector + iVar5 + -0x10);
+      if ((pCVar17 == (Component *)0x0) ||
          (this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                              (pCVar11,(MethodInfo *)0x0), this_02 == (GameObject *)0x0))
+                              (pCVar17,(MethodInfo *)0x0), this_02 == (GameObject *)0x0))
       goto code_?;
+      ppMVar6 = (MonoBehaviour__Array **)0x0;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 (this_02,0,(MethodInfo *)0x0);
-      pMVar2 = (pPVar1->fields).pool;
+      pMVar2 = *ppMVar3;
       if (pMVar2 == (MonoBehaviour__Array *)0x0) goto code_?;
       if (pMVar2->max_length <= item) goto code_?;
-      pCVar11 = *(Component **)((int)pMVar2->vector + (int)&this[-1].fields.poolEnum);
-      if ((pCVar11 == (Component *)0x0) ||
+      pCVar17 = *(Component **)((int)pMVar2->vector + iVar5 + -0x10);
+      if ((pCVar17 == (Component *)0x0) ||
          (this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                              (pCVar11,(MethodInfo *)0x0), this_03 == (Transform *)0x0))
+                              (pCVar17,(MethodInfo *)0x0), this_03 == (Transform *)0x0))
       goto code_?;
+      this = (Pool *)&UNK_?;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
-                (this_03,(Transform *)&UNK_?,(MethodInfo *)0x0);
+                (this_03,(Transform *)0x0,(MethodInfo *)0x0);
       item = item + 1;
-      this = (Pool *)&this->monitor;
-    } while ((int)item < (pPVar1->fields).poolSize);
+      iVar5 = iVar5 + 4;
+    } while ((int)item < _UNK_?);
   }
   return;
 }
@@ -145,18 +157,17 @@ Object * Assembly-CSharp.dll::Pool::Pool_Instantiate(Pool *this,MethodInfo *meth
 void Assembly-CSharp.dll::Pool::Pool_ReturnObject(Pool *this,MonoBehaviour *obj,MethodInfo *method)
 
 {
-  pPVar1 = this;
   if (cRam_? == '\0') {
     func_?(&MethodInfo__System__Collections__Generic__List<int>__Add_int_);
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  uVar2 = 0;
-  pMVar3 = (this->fields).pool;
-  if (pMVar3 != (MonoBehaviour__Array *)0x0) {
-    this = (Pool *)0x10;
+  uVar1 = 0;
+  pMVar2 = (this->fields).pool;
+  if (pMVar2 != (MonoBehaviour__Array *)0x0) {
+    iVar3 = 0x10;
     do {
-      if ((int)pMVar3->max_length <= (int)uVar2) {
+      if ((int)pMVar2->max_length <= (int)uVar1) {
         if (obj != (MonoBehaviour *)0x0) {
           pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                              ((Component *)obj,(MethodInfo *)0x0);
@@ -169,10 +180,9 @@ void Assembly-CSharp.dll::Pool::Pool_ReturnObject(Pool *this,MonoBehaviour *obj,
         }
         break;
       }
-      pMVar3 = (pPVar1->fields).pool;
-      if (pMVar3 == (MonoBehaviour__Array *)0x0) break;
-      if (pMVar3->max_length <= uVar2) goto code_?;
-      x = *(Object_1 **)((int)pMVar3->vector + (int)&this[-1].fields.poolEnum);
+      if (pMVar2 == (MonoBehaviour__Array *)0x0) break;
+      if (pMVar2->max_length <= uVar1) goto code_?;
+      x = *(Object_1 **)((int)pMVar2->vector + iVar3 + -0x10);
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
@@ -188,10 +198,10 @@ void Assembly-CSharp.dll::Pool::Pool_ReturnObject(Pool *this,MonoBehaviour *obj,
                               ((Component *)obj,(MethodInfo *)0x0);
           if (this_00 != (Transform *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
-                      (this_00,(pPVar1->fields).parent,(MethodInfo *)0x0);
-            pLVar6 = (pPVar1->fields).available;
+                      (this_00,(this->fields).parent,(MethodInfo *)0x0);
+            pLVar6 = (this->fields).available;
             if (pLVar6 != (List_1_System_Int32_ *)0x0) {
-              func_?(pLVar6,uVar2,
+              func_?(pLVar6,uVar1,
                               MethodInfo__System__Collections__Generic__List<int>__Add_int_);
               return;
             }
@@ -199,10 +209,10 @@ void Assembly-CSharp.dll::Pool::Pool_ReturnObject(Pool *this,MonoBehaviour *obj,
         }
         break;
       }
-      uVar2 = uVar2 + 1;
-      pMVar3 = (pPVar1->fields).pool;
-      this = (Pool *)&this->monitor;
-    } while (pMVar3 != (MonoBehaviour__Array *)0x0);
+      uVar1 = uVar1 + 1;
+      iVar3 = iVar3 + 4;
+      pMVar2 = (this->fields).pool;
+    } while (pMVar2 != (MonoBehaviour__Array *)0x0);
   }
   func_?();
 code_?:
@@ -251,8 +261,7 @@ MonoBehaviour * Assembly-CSharp.dll::Pool::Pool_get_Next(Pool *this,MethodInfo *
       cRam_? = '\x01';
     }
     pLVar2 = (this->fields).available;
-    if ((pLVar2 != (List_1_System_Int32_ *)0x0) &&
-       (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)) {
+    if (pLVar2 != (List_1_System_Int32_ *)0x0) {
       RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
               RegexCharClass+SingleRange]::
               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
@@ -332,18 +341,17 @@ int32_t Assembly-CSharp.dll::Pool::Pool_get_ObjectsAvailable(Pool *this,MethodIn
 void Assembly-CSharp.dll::Pool::Pool_set_Return(Pool *this,MonoBehaviour *value,MethodInfo *method)
 
 {
-  pPVar1 = this;
   if (cRam_? == '\0') {
     func_?(&MethodInfo__System__Collections__Generic__List<int>__Add_int_);
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  uVar2 = 0;
-  pMVar3 = (this->fields).pool;
-  if (pMVar3 != (MonoBehaviour__Array *)0x0) {
-    this = (Pool *)0x10;
+  uVar1 = 0;
+  pMVar2 = (this->fields).pool;
+  if (pMVar2 != (MonoBehaviour__Array *)0x0) {
+    iVar3 = 0x10;
     do {
-      if ((int)pMVar3->max_length <= (int)uVar2) {
+      if ((int)pMVar2->max_length <= (int)uVar1) {
         if (value != (MonoBehaviour *)0x0) {
           pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                              ((Component *)value,(MethodInfo *)0x0);
@@ -356,10 +364,9 @@ void Assembly-CSharp.dll::Pool::Pool_set_Return(Pool *this,MonoBehaviour *value,
         }
         break;
       }
-      pMVar3 = (pPVar1->fields).pool;
-      if (pMVar3 == (MonoBehaviour__Array *)0x0) break;
-      if (pMVar3->max_length <= uVar2) goto code_?;
-      x = *(Object_1 **)((int)pMVar3->vector + (int)&this[-1].fields.poolEnum);
+      if (pMVar2 == (MonoBehaviour__Array *)0x0) break;
+      if (pMVar2->max_length <= uVar1) goto code_?;
+      x = *(Object_1 **)((int)pMVar2->vector + iVar3 + -0x10);
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
@@ -376,10 +383,10 @@ void Assembly-CSharp.dll::Pool::Pool_set_Return(Pool *this,MonoBehaviour *value,
                               ((Component *)value,(MethodInfo *)0x0);
           if (this_00 != (Transform *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
-                      (this_00,(pPVar1->fields).parent,(MethodInfo *)0x0);
-            pLVar6 = (pPVar1->fields).available;
+                      (this_00,(this->fields).parent,(MethodInfo *)0x0);
+            pLVar6 = (this->fields).available;
             if (pLVar6 != (List_1_System_Int32_ *)0x0) {
-              func_?(pLVar6,uVar2,
+              func_?(pLVar6,uVar1,
                               MethodInfo__System__Collections__Generic__List<int>__Add_int_);
               return;
             }
@@ -387,10 +394,10 @@ void Assembly-CSharp.dll::Pool::Pool_set_Return(Pool *this,MonoBehaviour *value,
         }
         break;
       }
-      uVar2 = uVar2 + 1;
-      pMVar3 = (pPVar1->fields).pool;
-      this = (Pool *)&this->monitor;
-    } while (pMVar3 != (MonoBehaviour__Array *)0x0);
+      uVar1 = uVar1 + 1;
+      iVar3 = iVar3 + 4;
+      pMVar2 = (this->fields).pool;
+    } while (pMVar2 != (MonoBehaviour__Array *)0x0);
   }
   func_?();
 code_?:

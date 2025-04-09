@@ -30,18 +30,18 @@ bool Assembly-CSharp.dll::RTG::Priority::Priority_Equals
   }
   if (obj != (Object *)0x0) {
     pOVar1 = obj->klass;
-    if (((TypeInfo__RTG__Priority->_1).naturalAligment <= (pOVar1->_1).naturalAligment) &&
-       ((pOVar1->_1).typeHierarchy[(TypeInfo__RTG__Priority->_1).naturalAligment - 1] ==
-        (Il2CppClass *)TypeInfo__RTG__Priority)) {
-      if (((TypeInfo__RTG__Priority->_1).naturalAligment <= (pOVar1->_1).naturalAligment) &&
-         ((pOVar1->_1).typeHierarchy[(TypeInfo__RTG__Priority->_1).naturalAligment - 1] ==
-          (Il2CppClass *)TypeInfo__RTG__Priority)) {
+    bVar2 = (TypeInfo__RTG__Priority->_1).naturalAligment;
+    if ((bVar2 <= (pOVar1->_1).naturalAligment) &&
+       ((pOVar1->_1).typeHierarchy[bVar2 - 1] == (Il2CppClass *)TypeInfo__RTG__Priority)) {
+      bVar2 = (TypeInfo__RTG__Priority->_1).naturalAligment;
+      if ((bVar2 <= (pOVar1->_1).naturalAligment) &&
+         ((pOVar1->_1).typeHierarchy[bVar2 - 1] == (Il2CppClass *)TypeInfo__RTG__Priority)) {
         return (Object__Class *)(this->fields)._priority == obj[1].klass;
       }
       func_?(obj,TypeInfo__RTG__Priority);
-      pcVar2 = (code *)swi(3);
-      bVar3 = (*pcVar2)();
-      return bVar3;
+      pcVar3 = (code *)swi(3);
+      bVar4 = (*pcVar3)();
+      return bVar4;
     }
   }
   return 0;

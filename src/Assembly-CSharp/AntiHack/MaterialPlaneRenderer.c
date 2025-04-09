@@ -29,32 +29,33 @@ uint8_t Assembly-CSharp.dll::AntiHack::MaterialPlaneRenderer::MaterialPlaneRende
                 (this_00,(Rect)(auVar4 << 0x40),0,0,(MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::Texture2D::Texture2D_Apply_1
                 (this_00,(MethodInfo *)0x0);
-      uVar5 = 0;
-      pCVar6 = UnityEngine.CoreModule.dll::UnityEngine::Texture2D::Texture2D_GetPixels32_1
+      renderTexture = (RenderTexture *)0x0;
+      pCVar5 = UnityEngine.CoreModule.dll::UnityEngine::Texture2D::Texture2D_GetPixels32_1
                          (this_00,(MethodInfo *)0x0);
-      uVar7 = 0;
-      if (pCVar6 != (Color32__Array *)0x0) {
-        pCVar8 = pCVar6->vector;
+      uVar6 = 0;
+      if (pCVar5 != (Color32__Array *)0x0) {
+        pCVar7 = pCVar5->vector;
+        bVar8 = 0;
         while( true ) {
-          if ((int)pCVar6->max_length <= (int)uVar7) {
-            return uVar5;
+          if ((int)pCVar5->max_length <= (int)uVar6) {
+            return bVar8;
           }
-          if (pCVar6->max_length <= uVar7) break;
-          iVar1 = pCVar8->rgba;
-          uVar7 = uVar7 + 1;
-          uVar5 = uVar5 + (char)((uint)iVar1 >> 0x10) + (char)((uint)iVar1 >> 8) + (char)iVar1;
-          pCVar8 = (Color32 *)&pCVar8->r;
+          if (pCVar5->max_length <= uVar6) break;
+          iVar1 = pCVar7->rgba;
+          uVar6 = uVar6 + 1;
+          bVar8 = renderTexture._3_1_ +
+                  (char)((uint)iVar1 >> 0x10) + (char)((uint)iVar1 >> 8) + (char)iVar1;
+          pCVar7 = (Color32 *)&pCVar7->r;
+          renderTexture = (RenderTexture *)((uint)bVar8 << 0x18);
         }
-        goto code_?;
+        func_?();
       }
     }
   }
   func_?();
-code_?:
-  func_?();
   pcVar9 = (code *)swi(3);
-  uVar5 = (*pcVar9)();
-  return uVar5;
+  uVar10 = (*pcVar9)();
+  return uVar10;
 }
 
 
@@ -64,7 +65,7 @@ uint8_t Assembly-CSharp.dll::AntiHack::MaterialPlaneRenderer::MaterialPlaneRende
                   (MaterialPlaneRenderer *this,Texture2D *texture,MethodInfo *method)
 
 {
-  uVar1 = 0;
+  uStack_1 = 0;
   if (texture != (Texture2D *)0x0) {
     pCVar2 = UnityEngine.CoreModule.dll::UnityEngine::Texture2D::Texture2D_GetPixels32_1
                        (texture,(MethodInfo *)0x0);
@@ -73,12 +74,12 @@ uint8_t Assembly-CSharp.dll::AntiHack::MaterialPlaneRenderer::MaterialPlaneRende
       pCVar4 = pCVar2->vector;
       while( true ) {
         if ((int)pCVar2->max_length <= (int)uVar3) {
-          return uVar1;
+          return uStack_1;
         }
         if (pCVar2->max_length <= uVar3) break;
         iVar5 = pCVar4->rgba;
         uVar3 = uVar3 + 1;
-        uVar1 = uVar1 + (char)((uint)iVar5 >> 0x10) + (char)((uint)iVar5 >> 8) + (char)iVar5;
+        uStack_1 = uStack_1 + (char)((uint)iVar5 >> 0x10) + (char)((uint)iVar5 >> 8) + (char)iVar5;
         pCVar4 = (Color32 *)&pCVar4->r;
       }
       goto code_?;
@@ -88,8 +89,8 @@ uint8_t Assembly-CSharp.dll::AntiHack::MaterialPlaneRenderer::MaterialPlaneRende
 code_?:
   func_?();
   pcVar6 = (code *)swi(3);
-  uVar1 = (*pcVar6)();
-  return uVar1;
+  uVar7 = (*pcVar6)();
+  return uVar7;
 }
 
 
@@ -115,13 +116,12 @@ void Assembly-CSharp.dll::AntiHack::MaterialPlaneRenderer::MaterialPlaneRenderer
     *piVar2 = *piVar2 + 1;
     (pLVar1->fields)._size = 0;
     index = 0;
-    pLVar3 = (this->fields).textures;
-    while (pLVar3 != (List_1_UnityEngine_Texture2D_ *)0x0) {
-      if ((pLVar3->fields)._size <= index) {
+    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              (this->fields).textures;
+    while (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+      if ((this_00->fields)._size <= index) {
         return;
       }
-      this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                (this->fields).textures;
       if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
       break;
       value = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
@@ -138,12 +138,13 @@ void Assembly-CSharp.dll::AntiHack::MaterialPlaneRenderer::MaterialPlaneRenderer
       if (this_02 == (Camera *)0x0) break;
       UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_Render(this_02,(MethodInfo *)0x0);
       index = index + 1;
-      pLVar3 = (this->fields).textures;
+      this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                (this->fields).textures;
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -202,7 +203,7 @@ void Assembly-CSharp.dll::AntiHack::MaterialPlaneRenderer::MaterialPlaneRenderer
   (this->fields).renderTextureDesc._flags = iVar7;
   (this->fields).renderTextureDesc._memoryless_k__BackingField = iVar8;
   puVar13 = &UNK_?;
-  pRVar14 = (RenderTexture *)func_?();
+  this_00 = (RenderTexture *)func_?();
   desc._height_k__BackingField = iVar11;
   desc._width_k__BackingField = iVar10;
   desc._msaaSamples_k__BackingField = iVar12;
@@ -217,21 +218,19 @@ void Assembly-CSharp.dll::AntiHack::MaterialPlaneRenderer::MaterialPlaneRenderer
   desc._flags = iVar7;
   desc._memoryless_k__BackingField = iVar8;
   UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture__ctor_1
-            (pRVar14,desc,(MethodInfo *)0x0);
-  (this->fields).renderTexture = pRVar14;
+            (this_00,desc,(MethodInfo *)0x0);
+  ppRVar14 = &(this->fields).renderTexture;
+  *ppRVar14 = this_00;
   func_?();
-  pRVar14 = (this->fields).renderTexture;
-  if (pRVar14 != (RenderTexture *)0x0) {
+  if (*ppRVar14 != (RenderTexture *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_wrapMode
-              ((Texture *)pRVar14,TextureWrapMode__Enum_Clamp,(MethodInfo *)0x0);
-    pRVar14 = (this->fields).renderTexture;
-    if (pRVar14 != (RenderTexture *)0x0) {
+              ((Texture *)*ppRVar14,TextureWrapMode__Enum_Clamp,(MethodInfo *)0x0);
+    if (*ppRVar14 != (RenderTexture *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_filterMode
-                ((Texture *)pRVar14,FilterMode__Enum_Point,(MethodInfo *)0x0);
-      pRVar14 = (this->fields).renderTexture;
-      if (pRVar14 != (RenderTexture *)0x0) {
+                ((Texture *)*ppRVar14,FilterMode__Enum_Point,(MethodInfo *)0x0);
+      if (*ppRVar14 != (RenderTexture *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_anisoLevel
-                  ((Texture *)pRVar14,1,(MethodInfo *)0x0);
+                  ((Texture *)*ppRVar14,1,(MethodInfo *)0x0);
         MaterialPlaneRenderer_GenerateNewHashes(this,(MethodInfo *)0x0);
         return;
       }
@@ -240,6 +239,124 @@ void Assembly-CSharp.dll::AntiHack::MaterialPlaneRenderer::MaterialPlaneRenderer
   func_?();
   pcVar15 = (code *)swi(3);
   (*pcVar15)();
+  return;
+}
+
+
+/* Void OnPostRender() */
+
+void Assembly-CSharp.dll::AntiHack::MaterialPlaneRenderer::MaterialPlaneRenderer_OnPostRender
+               (MaterialPlaneRenderer *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Debug);
+    func_?(&TypeInfo__UnityEngine__Graphics);
+    func_?(&
+                    MethodInfo__System__Collections__Generic__List<unsigned_char>__Add_unsigned_char_
+                   );
+    func_?(&StringLiteral_MaterialPlaneRenderer_failed_to_);
+    cRam_? = '\x01';
+  }
+  this_00 = (this->fields).material;
+  if (this_00 != (Material *)0x0) {
+    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetPass
+                      (this_00,0,(MethodInfo *)0x0);
+    if (bVar1 == 0) {
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Debug);
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+                ((Object *)StringLiteral_MaterialPlaneRenderer_failed_to_,(MethodInfo *)0x0);
+      return;
+    }
+    mesh = (this->fields).plane;
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__UnityEngine__Vector3);
+      cRam_? = '\x01';
+    }
+    position = TypeInfo__UnityEngine__Vector3->static_fields->zeroVector;
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__UnityEngine__Quaternion);
+      cRam_? = '\x01';
+    }
+    rotation = TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion;
+    if ((TypeInfo__UnityEngine__Graphics->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Graphics);
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Graphics::Graphics_DrawMeshNow_2
+              (mesh,position,rotation,(MethodInfo *)0x0);
+    this_01 = (this->fields).hashes;
+    pRVar2 = (this->fields).renderTexture;
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__UnityEngine__Texture2D);
+      cRam_? = '\x01';
+    }
+    if (pRVar2 != (RenderTexture *)0x0) {
+      iVar3 = (*(code *)(pRVar2->klass->vtable).get_width.method)
+                        (pRVar2,(pRVar2->klass->vtable).set_width.methodPtr);
+      height = (*(code *)(pRVar2->klass->vtable).get_height.method)
+                         (pRVar2,(pRVar2->klass->vtable).set_height.methodPtr);
+      this_02 = (Texture2D *)func_?(TypeInfo__UnityEngine__Texture2D);
+      UnityEngine.CoreModule.dll::UnityEngine::Texture2D::Texture2D__ctor_3
+                (this_02,iVar3,height,TextureFormat__Enum_ARGB32,0,(MethodInfo *)0x0);
+      iVar4 = (*(code *)(pRVar2->klass->vtable).get_width.method)
+                        (pRVar2,(pRVar2->klass->vtable).set_width.methodPtr);
+      iVar5 = (*(code *)(pRVar2->klass->vtable).get_height.method)
+                         (pRVar2,(pRVar2->klass->vtable).set_height.methodPtr);
+      if (this_02 != (Texture2D *)0x0) {
+        auVar6._4_4_ = (float)iVar5;
+        auVar6._0_4_ = (float)iVar4;
+        auVar6._8_8_ = 0;
+        UnityEngine.CoreModule.dll::UnityEngine::Texture2D::Texture2D_ReadPixels_1
+                  (this_02,(Rect)(auVar6 << 0x40),0,0,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::Texture2D::Texture2D_Apply_1
+                  (this_02,(MethodInfo *)0x0);
+        bVar7 = 0;
+        this = (MaterialPlaneRenderer *)0x0;
+        pCVar8 = UnityEngine.CoreModule.dll::UnityEngine::Texture2D::Texture2D_GetPixels32_1
+                            (this_02,(MethodInfo *)0x0);
+        pMVar9 = MethodInfo__System__Collections__Generic__List<unsigned_char>__Add_unsigned_char_;
+        uVar10 = 0;
+        if (pCVar8 != (Color32__Array *)0x0) {
+          pCVar11 = pCVar8->vector;
+          for (; (int)uVar10 < (int)pCVar8->max_length; uVar10 = uVar10 + 1) {
+            if (pCVar8->max_length <= uVar10) goto code_?;
+            iVar3 = pCVar11->rgba;
+            bVar7 = bVar7 + (char)((uint)iVar3 >> 0x10) + (char)((uint)iVar3 >> 8) + (char)iVar3;
+            pCVar11 = (Color32 *)&pCVar11->r;
+            this = (MaterialPlaneRenderer *)(uint)bVar7;
+          }
+          if (this_01 != (List_1_System_Byte_ *)0x0) {
+            piVar12 = &(this_01->fields)._version;
+            *piVar12 = *piVar12 + 1;
+            pBVar13 = (this_01->fields)._items;
+            if (pBVar13 != (Byte__Array *)0x0) {
+              uVar10 = (this_01->fields)._size;
+              if (pBVar13->max_length <= uVar10) {
+                mscorlib.dll::System::Collections::Generic::List`1[System::SByte]::
+                List_1_System_SByte__AddWithResize
+                          ((List_1_System_SByte_ *)this_01,(int8_t)this,
+                           pMVar9->klass->rgctx_data[0xe].method);
+                return;
+              }
+              (this_01->fields)._size = uVar10 + 1;
+              if (uVar10 < pBVar13->max_length) {
+                pBVar13->vector[uVar10] = bVar7;
+                return;
+              }
+              goto code_?;
+            }
+          }
+        }
+      }
+    }
+  }
+  func_?();
+code_?:
+  func_?();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -289,34 +406,76 @@ void Assembly-CSharp.dll::AntiHack::MaterialPlaneRenderer::
     UnityEngine.CoreModule.dll::UnityEngine::Graphics::Graphics_DrawMeshNow_2
               (mesh,position,rotation,(MethodInfo *)0x0);
     this_01 = (this->fields).hashes;
-    item = MaterialPlaneRenderer_CalculateHash(this,(this->fields).renderTexture,(MethodInfo *)0x0);
-    pMVar2 = MethodInfo__System__Collections__Generic__List<unsigned_char>__Add_unsigned_char_;
-    if (this_01 != (List_1_System_Byte_ *)0x0) {
-      piVar3 = &(this_01->fields)._version;
-      *piVar3 = *piVar3 + 1;
-      pBVar4 = (this_01->fields)._items;
-      if (pBVar4 != (Byte__Array *)0x0) {
-        uVar5 = (this_01->fields)._size;
-        if (pBVar4->max_length <= uVar5) {
-          mscorlib.dll::System::Collections::Generic::List`1[System::SByte]::
-          List_1_System_SByte__AddWithResize
-                    ((List_1_System_SByte_ *)this_01,item,pMVar2->klass->rgctx_data[0xe].method);
-          return;
+    pRVar2 = (this->fields).renderTexture;
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__UnityEngine__Texture2D);
+      cRam_? = '\x01';
+    }
+    if (pRVar2 != (RenderTexture *)0x0) {
+      iVar3 = (*(code *)(pRVar2->klass->vtable).get_width.method)
+                        (pRVar2,(pRVar2->klass->vtable).set_width.methodPtr);
+      height = (*(code *)(pRVar2->klass->vtable).get_height.method)
+                         (pRVar2,(pRVar2->klass->vtable).set_height.methodPtr);
+      this_02 = (Texture2D *)func_?(TypeInfo__UnityEngine__Texture2D);
+      UnityEngine.CoreModule.dll::UnityEngine::Texture2D::Texture2D__ctor_3
+                (this_02,iVar3,height,TextureFormat__Enum_ARGB32,0,(MethodInfo *)0x0);
+      iVar4 = (*(code *)(pRVar2->klass->vtable).get_width.method)
+                        (pRVar2,(pRVar2->klass->vtable).set_width.methodPtr);
+      iVar5 = (*(code *)(pRVar2->klass->vtable).get_height.method)
+                         (pRVar2,(pRVar2->klass->vtable).set_height.methodPtr);
+      if (this_02 != (Texture2D *)0x0) {
+        auVar6._4_4_ = (float)iVar5;
+        auVar6._0_4_ = (float)iVar4;
+        auVar6._8_8_ = 0;
+        UnityEngine.CoreModule.dll::UnityEngine::Texture2D::Texture2D_ReadPixels_1
+                  (this_02,(Rect)(auVar6 << 0x40),0,0,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::Texture2D::Texture2D_Apply_1
+                  (this_02,(MethodInfo *)0x0);
+        bVar7 = 0;
+        this = (MaterialPlaneRenderer *)0x0;
+        pCVar8 = UnityEngine.CoreModule.dll::UnityEngine::Texture2D::Texture2D_GetPixels32_1
+                            (this_02,(MethodInfo *)0x0);
+        pMVar9 = MethodInfo__System__Collections__Generic__List<unsigned_char>__Add_unsigned_char_;
+        uVar10 = 0;
+        if (pCVar8 != (Color32__Array *)0x0) {
+          pCVar11 = pCVar8->vector;
+          for (; (int)uVar10 < (int)pCVar8->max_length; uVar10 = uVar10 + 1) {
+            if (pCVar8->max_length <= uVar10) goto code_?;
+            iVar3 = pCVar11->rgba;
+            bVar7 = bVar7 + (char)((uint)iVar3 >> 0x10) + (char)((uint)iVar3 >> 8) + (char)iVar3;
+            pCVar11 = (Color32 *)&pCVar11->r;
+            this = (MaterialPlaneRenderer *)(uint)bVar7;
+          }
+          if (this_01 != (List_1_System_Byte_ *)0x0) {
+            piVar12 = &(this_01->fields)._version;
+            *piVar12 = *piVar12 + 1;
+            pBVar13 = (this_01->fields)._items;
+            if (pBVar13 != (Byte__Array *)0x0) {
+              uVar10 = (this_01->fields)._size;
+              if (pBVar13->max_length <= uVar10) {
+                mscorlib.dll::System::Collections::Generic::List`1[System::SByte]::
+                List_1_System_SByte__AddWithResize
+                          ((List_1_System_SByte_ *)this_01,(int8_t)this,
+                           pMVar9->klass->rgctx_data[0xe].method);
+                return;
+              }
+              (this_01->fields)._size = uVar10 + 1;
+              if (uVar10 < pBVar13->max_length) {
+                pBVar13->vector[uVar10] = bVar7;
+                return;
+              }
+              goto code_?;
+            }
+          }
         }
-        (this_01->fields)._size = uVar5 + 1;
-        if (uVar5 < pBVar4->max_length) {
-          pBVar4->vector[uVar5] = item;
-          return;
-        }
-        goto code_?;
       }
     }
   }
   func_?();
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -334,53 +493,55 @@ void Assembly-CSharp.dll::AntiHack::MaterialPlaneRenderer::MaterialPlaneRenderer
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  pCVar1 = (this->fields).cam;
+  ppCVar1 = &(this->fields).cam;
+  pCVar2 = *ppCVar1;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)pCVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
-    pCVar1 = (Camera *)
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)pCVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar3 != 0) {
+    pCVar2 = (Camera *)
              UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
                        ((Component *)this,
                         UnityEngine__Camera_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Camera>__
                        );
-    (this->fields).cam = pCVar1;
-    func_?(&(this->fields).cam);
+    *ppCVar1 = pCVar2;
+    func_?(ppCVar1,pCVar2);
   }
-  pCVar1 = (this->fields).cam;
-  if (pCVar1 != (Camera *)0x0) {
+  if (*ppCVar1 != (Camera *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-              ((Behaviour *)pCVar1,0,(MethodInfo *)0x0);
-    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+              ((Behaviour *)*ppCVar1,0,(MethodInfo *)0x0);
+    pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                        ((Component *)this,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
-    if (pTVar3 != (Transform *)0x0) {
+    if (pTVar4 != (Transform *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                (pTVar3,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,(MethodInfo *)0x0)
+                (pTVar4,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,(MethodInfo *)0x0)
       ;
-      pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+      pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                          ((Component *)this,(MethodInfo *)0x0);
-      fVar4 = 0.0;
-      this = (MaterialPlaneRenderer *)0x0;
+      euler.y = 0.0;
+      euler.z = 0.0;
+      euler.x = (float)_UNK_?;
       pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
-                         ((Quaternion *)&stack0xffffffec,
-                          (Vector3)CONCAT84(CONCAT44(this,fVar4),(float)_UNK_?),
-                          (MethodInfo *)0x0);
-      if (pTVar3 != (Transform *)0x0) {
+                         ((Quaternion *)&stack0xffffffec,euler,(MethodInfo *)0x0);
+      if (pTVar4 != (Transform *)0x0) {
+        fStack6 = pQVar5->y;
+        fStack7 = pQVar5->z;
+        fStack8 = pQVar5->w;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
-                  (pTVar3,*pQVar5,(MethodInfo *)0x0);
+                  (pTVar4,*pQVar5,(MethodInfo *)0x0);
         return;
       }
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -512,16 +673,18 @@ void Assembly-CSharp.dll::AntiHack::MaterialPlaneRenderer::MaterialPlaneRenderer
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<UnityEngine::Texture2D>__List__);
-  (this->fields).textures = this_00;
-  func_?(&(this->fields).textures,this_00);
+  ppLVar1 = &(this->fields).textures;
+  *ppLVar1 = this_00;
+  func_?(ppLVar1,this_00);
   this_01 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
              *)func_?(TypeInfo__System__Collections__Generic__List<unsigned_char>);
   mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
   MultiColumnCollectionHeader+ViewState+ColumnState]::
   List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
             (this_01,1,MethodInfo__System__Collections__Generic__List<unsigned_char>__List_int_);
-  (this->fields).hashes = (List_1_System_Byte_ *)this_01;
-  func_?(&(this->fields).hashes,this_01);
+  ppLVar2 = &(this->fields).hashes;
+  *ppLVar2 = (List_1_System_Byte_ *)this_01;
+  func_?(ppLVar2,this_01);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

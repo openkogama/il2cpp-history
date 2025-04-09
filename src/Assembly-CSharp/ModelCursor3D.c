@@ -155,44 +155,45 @@ void Assembly-CSharp.dll::ModelCursor3D::ModelCursor3D__ctor
     pMVar2 = (pPVar1->fields).cellCursorErrorMaterial;
     this_00 = (CellCursor *)func_?(TypeInfo__CellCursor);
     CellCursor::CellCursor__ctor(this_00,1,0.03,pMVar2,1.0,cubeCorners,(MethodInfo *)0x0);
-    (this->fields)._.errorCursor = this_00;
-    func_?(&(this->fields)._.errorCursor,this_00);
-    value = (IndentArea *)func_?(TypeInfo__IndentArea);
+    ppCVar3 = &(this->fields)._.errorCursor;
+    *ppCVar3 = this_00;
+    func_?(ppCVar3,this_00);
+    value = (Il2CppType *)func_?(TypeInfo__IndentArea);
     if (cRam_? == '\0') {
       func_?();
       func_?();
-      func_?();
+      func_?(&TypeInfo__UnityEngine__GameObject);
       func_?(&StringLiteral_UIItems);
       func_?(&StringLiteral_IndentArea);
       cRam_? = '\x01';
     }
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)value,ExceptionArgument__Enum_obj,method);
-    pGVar3 = (GameObject *)func_?();
+              ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)cubeCorners);
+    pGVar4 = TypeInfo__UnityEngine__GameObject;
+    pGVar5 = (GameObject *)func_?();
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor
-              (pGVar3,StringLiteral_IndentArea,(MethodInfo *)0x0);
-    (value->fields).gameObject = pGVar3;
-    func_?();
-    pGVar3 = (value->fields).gameObject;
-    iVar4 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
-                      (StringLiteral_UIItems,(MethodInfo *)0x0);
-    if (pGVar3 != (GameObject *)0x0) {
+              (pGVar5,StringLiteral_IndentArea,(MethodInfo *)0x0);
+    puVar6 = &value[2].attrs;
+    *(GameObject **)puVar6 = pGVar5;
+    func_?(puVar6);
+    pGVar5 = *(GameObject **)puVar6;
+    iVar7 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+                       (StringLiteral_UIItems,(MethodInfo *)0x0);
+    if (pGVar5 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer
-                (pGVar3,iVar4,(MethodInfo *)0x0);
-      pCVar5 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
-      (value->fields).mainCamera = pCVar5;
-      func_?(&(value->fields).mainCamera,pCVar5);
-      pGVar3 = (value->fields).gameObject;
-      if (pGVar3 != (GameObject *)0x0) {
-        pRVar6 = (Renderer *)
-                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
-                           (pGVar3,
-                            UnityEngine__MeshRenderer_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshRenderer>__
-                           );
-        pGVar3 = (value->fields).gameObject;
-        if (pGVar3 != (GameObject *)0x0) {
+                (pGVar5,iVar7,(MethodInfo *)0x0);
+      pCVar8 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
+      value[2].data.typeHandle = (Il2CppMetadataTypeHandle)pCVar8;
+      func_?(value + 2,pCVar8);
+      if (*(GameObject **)puVar6 != (GameObject *)0x0) {
+        pRVar9 = (Renderer *)
+                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
+                            (*(GameObject **)puVar6,
+                             UnityEngine__MeshRenderer_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshRenderer>__
+                            );
+        if (*(GameObject **)puVar6 != (GameObject *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
-                    (pGVar3,
+                    (*(GameObject **)puVar6,
                      UnityEngine__MeshFilter_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshFilter>__
                     );
           if (cRam_? == '\0') {
@@ -202,13 +203,15 @@ void Assembly-CSharp.dll::ModelCursor3D::ModelCursor3D__ctor
           pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
           if (pPVar1 != (PrefabPool *)0x0) {
             pMVar2 = (pPVar1->fields).indentMaterial;
-            (value->fields).materialNone = pMVar2;
-            func_?(&(value->fields).materialNone,pMVar2);
-            if (pRVar6 != (Renderer *)0x0) {
+            puVar6 = &value[1].attrs;
+            *(Material **)puVar6 = pMVar2;
+            func_?(puVar6,pMVar2);
+            if (pRVar9 != (Renderer *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
-                        (pRVar6,(value->fields).materialNone,(MethodInfo *)0x0);
-              (this->fields).indentArea = value;
-              func_?(&(this->fields).indentArea,value);
+                        (pRVar9,*(Material **)puVar6,(MethodInfo *)0x0);
+              pIVar10 = &(pGVar4->_0).byval_arg;
+              (pIVar10->data).type = value;
+              func_?(pIVar10,value);
               if (cRam_? == '\0') {
                 func_?(&TypeInfo__PrefabPool);
                 cRam_? = '\x01';
@@ -222,15 +225,15 @@ void Assembly-CSharp.dll::ModelCursor3D::ModelCursor3D__ctor
                 }
                 pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
                 if (pPVar1 != (PrefabPool *)0x0) {
-                  pMVar7 = (pPVar1->fields).cursorCornerMaterial;
+                  pOVar11 = (Object__Class *)(pPVar1->fields).cursorCornerMaterial;
                   if (cRam_? == '\0') {
                     func_?(&TypeInfo__PrefabPool);
                     cRam_? = '\x01';
                   }
                   pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
                   if (pPVar1 != (PrefabPool *)0x0) {
-                    pMVar8 = (pPVar1->fields).cursorNoneMaterial;
-                    value_00 = (FaceCursor *)func_?(TypeInfo__FaceCursor);
+                    pOVar12 = (Object__Class *)(pPVar1->fields).cursorNoneMaterial;
+                    value_00 = (Object *)func_?(TypeInfo__FaceCursor);
                     if (cRam_? == '\0') {
                       func_?(&
                                       UnityEngine__MeshFilter_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshFilter>__
@@ -245,45 +248,45 @@ void Assembly-CSharp.dll::ModelCursor3D::ModelCursor3D__ctor
                     }
                     mscorlib.dll::System::ThrowHelper::
                     ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                              ((Object *)value_00,ExceptionArgument__Enum_obj,unaff_EBX);
-                    pGVar3 = (GameObject *)func_?(TypeInfo__UnityEngine__GameObject);
+                              (value_00,ExceptionArgument__Enum_obj,unaff_EBX);
+                    pGVar5 = (GameObject *)func_?(TypeInfo__UnityEngine__GameObject);
                     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor
-                              (pGVar3,StringLiteral_Cursor,(MethodInfo *)0x0);
-                    (value_00->fields).gameObject = pGVar3;
-                    func_?(&(value_00->fields).gameObject,pGVar3);
-                    pGVar3 = (value_00->fields).gameObject;
-                    iVar4 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::
-                            LayerMask_NameToLayer(StringLiteral_UIItems,(MethodInfo *)0x0);
-                    if (pGVar3 != (GameObject *)0x0) {
+                              (pGVar5,StringLiteral_Cursor,(MethodInfo *)0x0);
+                    value_00[2].monitor = (MonitorData *)pGVar5;
+                    func_?(&value_00[2].monitor,pGVar5);
+                    pGVar5 = (GameObject *)value_00[2].monitor;
+                    iVar7 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::
+                             LayerMask_NameToLayer(StringLiteral_UIItems,(MethodInfo *)0x0);
+                    if (pGVar5 != (GameObject *)0x0) {
                       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer
-                                (pGVar3,iVar4,(MethodInfo *)0x0);
-                      pGVar3 = (value_00->fields).gameObject;
-                      if (pGVar3 != (GameObject *)0x0) {
-                        pRVar6 = (Renderer *)
-                                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                 GameObject_AddComponent_1
-                                           (pGVar3,
-                                            UnityEngine__MeshRenderer_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshRenderer>__
-                                           );
-                        pGVar3 = (value_00->fields).gameObject;
-                        if (pGVar3 != (GameObject *)0x0) {
+                                (pGVar5,iVar7,(MethodInfo *)0x0);
+                      if ((GameObject *)value_00[2].monitor != (GameObject *)0x0) {
+                        pRVar9 = (Renderer *)
+                                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                                  GameObject_AddComponent_1
+                                            ((GameObject *)value_00[2].monitor,
+                                             UnityEngine__MeshRenderer_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshRenderer>__
+                                            );
+                        if ((GameObject *)value_00[2].monitor != (GameObject *)0x0) {
                           UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                           GameObject_AddComponent_1
-                                    (pGVar3,
+                                    ((GameObject *)value_00[2].monitor,
                                      UnityEngine__MeshFilter_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshFilter>__
                                     );
-                          (value_00->fields).materialEdge = pMVar2;
-                          func_?(&(value_00->fields).materialEdge,pMVar2);
-                          (value_00->fields).materialCorner = pMVar7;
-                          func_?(&value_00->fields,pMVar7);
-                          (value_00->fields).materialNone = pMVar8;
-                          func_?(&(value_00->fields).materialNone,pMVar8);
-                          if (pRVar6 != (Renderer *)0x0) {
+                          ppMVar13 = &value_00[1].monitor;
+                          *ppMVar13 = (MonitorData *)pMVar2;
+                          func_?(ppMVar13,pMVar2);
+                          value_00[1].klass = pOVar11;
+                          func_?(value_00 + 1,pOVar11);
+                          value_00[2].klass = pOVar12;
+                          func_?(value_00 + 2,pOVar12);
+                          if (pRVar9 != (Renderer *)0x0) {
                             UnityEngine.CoreModule.dll::UnityEngine::Renderer::
                             Renderer_set_sharedMaterial
-                                      (pRVar6,(value_00->fields).materialEdge,(MethodInfo *)0x0);
-                            (this->fields)._.faceCursor = value_00;
-                            func_?(&this->fields,value_00);
+                                      (pRVar9,(Material *)*ppMVar13,(MethodInfo *)0x0);
+                            ppcVar14 = &(pGVar4->_0).name;
+                            *ppcVar14 = (char *)value_00;
+                            func_?(ppcVar14,value_00);
                             return;
                           }
                         }
@@ -299,8 +302,8 @@ void Assembly-CSharp.dll::ModelCursor3D::ModelCursor3D__ctor
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 

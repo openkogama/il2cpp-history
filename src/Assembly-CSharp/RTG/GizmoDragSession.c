@@ -167,8 +167,8 @@ code_?:
       if (bVar15 == 0) break;
       fStack_22 = (this->fields)._relativeDragRotation.x;
       fStack_23 = (this->fields)._relativeDragRotation.y;
-      fStack_21 = (this->fields)._relativeDragRotation.z;
-      fStack_24 = (this->fields)._relativeDragRotation.w;
+      fStack_24 = (this->fields)._relativeDragRotation.z;
+      fStack_21 = (this->fields)._relativeDragRotation.w;
       if ((RegexCharClass_SingleRange)LStack_8._current == (RegexCharClass_SingleRange)0x0)
       goto code_?;
       fStack_25 = *(float *)((int)LStack_8._current + 0x2c);
@@ -176,17 +176,17 @@ code_?:
       in_stack_27 = *(RegexCharClass_SingleRange *)((int)LStack_8._current + 0x34);
       uStack_18 = CONCAT44(fStack_25,fStack_25);
       pLStack_17 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                   ((((float)in_stack_27 * fStack_24 -
+                   ((((float)in_stack_27 * fStack_21 -
                      fStack_22 * *(float *)((int)LStack_8._current + 0x28)) - fStack_25 * fStack_23
-                    ) - fStack_21 * fVar26);
-      fVar28 = (fStack_21 * (float)in_stack_27 + fVar26 * fStack_24 + fStack_25 * fStack_22) -
+                    ) - fStack_24 * fVar26);
+      fVar28 = (fStack_24 * (float)in_stack_27 + fVar26 * fStack_21 + fStack_25 * fStack_22) -
                fStack_23 * *(float *)((int)LStack_8._current + 0x28);
-      fVar29 = (fStack_23 * (float)in_stack_27 + fStack_25 * fStack_24 +
-              fStack_21 * *(float *)((int)LStack_8._current + 0x28)) - fVar26 * fStack_22;
+      fVar29 = (fStack_23 * (float)in_stack_27 + fStack_25 * fStack_21 +
+              fStack_24 * *(float *)((int)LStack_8._current + 0x28)) - fVar26 * fStack_22;
       uStack_20 = CONCAT44(fVar28,fVar29);
       fStack_30 = ((float)in_stack_27 * fStack_22 +
-                   *(float *)((int)LStack_8._current + 0x28) * fStack_24 + fVar26 * fStack_23) -
-                  fStack_25 * fStack_21;
+                   *(float *)((int)LStack_8._current + 0x28) * fStack_21 + fVar26 * fStack_23) -
+                  fStack_25 * fStack_24;
       value.y = fVar29;
       value.x = fStack_30;
       value.z = fVar28;

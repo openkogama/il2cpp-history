@@ -127,8 +127,9 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager::
   value = (IAdManager *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  (this->fields).sdkManager = value;
-  func_?(&(this->fields).sdkManager,value);
+  ppIVar1 = &(this->fields).sdkManager;
+  *ppIVar1 = value;
+  func_?(ppIVar1,value);
   (this->fields).embeddedSiteSDKAvailable = 1;
   return;
 }
@@ -167,7 +168,8 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager::
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   (this->fields).sdkManager = value;
   func_?();
-  (this->fields).siteData.sites = site.sites;
+  pEVar2 = &(this->fields).siteData;
+  pEVar2->sites = site.sites;
   (this->fields).siteData.siteEnum = site.siteEnum;
   (this->fields).siteData.showTouristPromotion = site.showTouristPromotion;
   (this->fields).siteData.allowsOpenInNewTab = site.allowsOpenInNewTab;
@@ -181,7 +183,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager::
   (this->fields).siteData.removeFullscreenButton = site.removeFullscreenButton;
   (this->fields).siteData.hideSignUp = site.hideSignUp;
   (this->fields).siteData.noPlayButtonVideoIcon = site.noPlayButtonVideoIcon;
-  func_?(&(this->fields).siteData,0);
+  func_?(pEVar2,0);
   (this->fields).embeddedSiteSDKAvailable = 1;
   return;
 }
@@ -208,7 +210,8 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager::
     bVar11 = (config->fields)._EmbeddedSiteConfigData_k__BackingField.removeFullscreenButton;
     bVar12 = (config->fields)._EmbeddedSiteConfigData_k__BackingField.hideSignUp;
     bVar13 = (config->fields)._EmbeddedSiteConfigData_k__BackingField.noPlayButtonVideoIcon;
-    (this->fields).siteData.sites = (config->fields)._EmbeddedSiteConfigData_k__BackingField.sites;
+    pEVar14 = &(this->fields).siteData;
+    pEVar14->sites = (config->fields)._EmbeddedSiteConfigData_k__BackingField.sites;
     (this->fields).siteData.siteEnum = iVar1;
     (this->fields).siteData.showTouristPromotion = bVar2;
     (this->fields).siteData.allowsOpenInNewTab = bVar3;
@@ -222,7 +225,7 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager::
     (this->fields).siteData.removeFullscreenButton = bVar11;
     (this->fields).siteData.hideSignUp = bVar12;
     (this->fields).siteData.noPlayButtonVideoIcon = bVar13;
-    func_?(&(this->fields).siteData,0);
+    func_?(pEVar14,0);
     (this->fields).timeoutAdAfterDelayAsUnlocked =
          (config->fields)._AdTimeoutAsSuccess_k__BackingField;
     (this->fields).timeoutSuccessDelay = (config->fields)._AdTimeoutAsSuccessDelay_k__BackingField;
@@ -231,8 +234,8 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager::
     return;
   }
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -249,23 +252,25 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager::
     func_?(&TypeInfo__AdIntegration__InHouse__InHouseAdManager);
     cRam_? = '\x01';
   }
-  (this->fields).adUIManager = adUIManager;
-  func_?(&(this->fields).adUIManager,adUIManager);
+  ppIVar1 = &(this->fields).adUIManager;
+  *ppIVar1 = adUIManager;
+  func_?(ppIVar1,adUIManager);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MVGameControllerBase);
     cRam_? = '\x01';
   }
-  pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-  if (pGVar1 != (GameSessionData *)0x0) {
-    if ((pGVar1->fields).embedded != 0) {
-      bVar2 = MVClientSettings::MVClientSettings_get_WebAdSDKsEnabled((MethodInfo *)0x0);
-      if ((bVar2 != 0) && ((this->fields).siteData.integratedSdk != 0)) {
+  pGVar2 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar2 != (GameSessionData *)0x0) {
+    if ((pGVar2->fields).embedded != 0) {
+      bVar3 = MVClientSettings::MVClientSettings_get_WebAdSDKsEnabled((MethodInfo *)0x0);
+      if ((bVar3 != 0) && ((this->fields).siteData.integratedSdk != 0)) {
         method_00 = TypeInfo__Assets__Scripts__AdIntegration__Web__AdSDKManager;
         value = (IAdManager *)func_?();
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                   ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-        (this->fields).sdkManager = value;
-        func_?(&(this->fields).sdkManager,value);
+        ppIVar4 = &(this->fields).sdkManager;
+        *ppIVar4 = value;
+        func_?(ppIVar4,value);
         (this->fields).embeddedSiteSDKAvailable = 1;
       }
     }
@@ -274,15 +279,16 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager::
                 func_?(TypeInfo__AdIntegration__InHouse__InHouseAdManager);
       Assembly-CSharp.dll::AdIntegration::InHouse::InHouseAdManager::InHouseAdManager__ctor
                 (this_00,(MethodInfo *)0x0);
-      (this->fields).inHouseAdManager = (IAdManager *)this_00;
-      func_?(&(this->fields).inHouseAdManager,this_00);
+      ppIVar4 = &(this->fields).inHouseAdManager;
+      *ppIVar4 = (IAdManager *)this_00;
+      func_?(ppIVar4,this_00);
       (this->fields).inHouseAdManagerAvailable = 1;
     }
     return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -299,37 +305,38 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager::
     cRam_? = '\x01';
   }
   pIVar1 = (this->fields).inHouseAdManager;
-  if (((pIVar1 != (IAdManager *)0x0) &&
-      ((TypeInfo__AdIntegration__InHouse__InHouseAdManager->_1).naturalAligment <=
-       (pIVar1->klass->_1).naturalAligment)) &&
-     ((pIVar1->klass->_1).typeHierarchy
-      [(TypeInfo__AdIntegration__InHouse__InHouseAdManager->_1).naturalAligment - 1] ==
-      (Il2CppClass *)TypeInfo__AdIntegration__InHouse__InHouseAdManager)) {
-    pIVar1[1].monitor = (MonitorData *)inHouseAdController;
-    func_?(&pIVar1[1].monitor,inHouseAdController);
-    pMVar2 = pIVar1[1].monitor;
-    pMVar3 = pIVar1[4].monitor;
-    if (pMVar2 == (MonitorData *)0x0) {
-      func_?();
-      pcVar4 = (code *)swi(3);
-      (*pcVar4)();
+  if (pIVar1 != (IAdManager *)0x0) {
+    bVar2 = (TypeInfo__AdIntegration__InHouse__InHouseAdManager->_1).naturalAligment;
+    if ((bVar2 <= (pIVar1->klass->_1).naturalAligment) &&
+       ((pIVar1->klass->_1).typeHierarchy[bVar2 - 1] ==
+        (Il2CppClass *)TypeInfo__AdIntegration__InHouse__InHouseAdManager)) {
+      ppMVar3 = &pIVar1[1].monitor;
+      *ppMVar3 = (MonitorData *)inHouseAdController;
+      func_?(ppMVar3,inHouseAdController);
+      pMVar4 = *ppMVar3;
+      pMVar5 = pIVar1[4].monitor;
+      if (pMVar4 == (MonitorData *)0x0) {
+        func_?();
+        pcVar6 = (code *)swi(3);
+        (*pcVar6)();
+        return;
+      }
+      bVar7 = cRam_? == '\0';
+      pMVar4[0x28] = *(MonitorData *)&pIVar1[4].klass;
+      *(MonitorData **)(pMVar4 + 0x2c) = pMVar5;
+      if (bVar7) {
+        func_?(&TypeInfo__UnityEngine__Object);
+        cRam_? = '\x01';
+      }
+      x = (Object_1 *)*ppMVar3;
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Object);
+      }
+      bVar8 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                        (x,(Object_1 *)0x0,(MethodInfo *)0x0);
+      *(bool *)&pIVar1[1].klass = bVar8;
       return;
     }
-    bVar5 = cRam_? == '\0';
-    pMVar2[0x28] = *(MonitorData *)&pIVar1[4].klass;
-    *(MonitorData **)(pMVar2 + 0x2c) = pMVar3;
-    if (bVar5) {
-      func_?(&TypeInfo__UnityEngine__Object);
-      cRam_? = '\x01';
-    }
-    x = (Object_1 *)pIVar1[1].monitor;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    bVar6 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      (x,(Object_1 *)0x0,(MethodInfo *)0x0);
-    *(bool *)&pIVar1[1].klass = bVar6;
-    return;
   }
   return;
 }
@@ -1249,28 +1256,29 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager::
     values = (String__Array *)func_?();
     if (values == (String__Array *)0x0) goto code_?;
     if (values->max_length != 0) {
-      values->vector[0] = StringLiteral_Ad_;
       pSStack2 = (String__Array__Class *)values->vector;
+      *(String **)pSStack2 = StringLiteral_Ad_;
       func_?();
       if (1 < values->max_length) {
         pSStack2 = (String__Array__Class *)(values->vector + 1);
-        values->vector[1] = adType;
+        (pSStack2->_0).image = (Il2CppImage *)adType;
         func_?();
         if (2 < values->max_length) {
-          values->vector[2] = StringLiteral_Finished_;
           pSStack2 = (String__Array__Class *)(values->vector + 2);
+          (pSStack2->_0).image = (Il2CppImage *)StringLiteral_Finished_;
           func_?();
-          pSVar1 = mscorlib.dll::System::Enum::Enum_ToString
+          pIVar3 = (Il2CppImage *)
+                   mscorlib.dll::System::Enum::Enum_ToString
                              ((Enum *)&stack0xfffffff0,(MethodInfo *)0x0);
           if (3 < values->max_length) {
-            values->vector[3] = pSVar1;
             pSStack2 = (String__Array__Class *)(values->vector + 3);
+            (pSStack2->_0).image = pIVar3;
             func_?();
             pSVar1 = StringLiteral__Failure;
 code_?:
             if (4 < values->max_length) {
-              values->vector[4] = pSVar1;
               pSStack2 = (String__Array__Class *)(values->vector + 4);
+              *(String **)pSStack2 = pSVar1;
               func_?();
               pSVar1 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
               if (cRam_? == '\0') {
@@ -1294,22 +1302,23 @@ code_?:
     values = (String__Array *)func_?();
     if (values == (String__Array *)0x0) goto code_?;
     if (values->max_length != 0) {
-      values->vector[0] = StringLiteral_Ad_;
       pSStack2 = (String__Array__Class *)values->vector;
+      *(String **)pSStack2 = StringLiteral_Ad_;
       func_?();
       if (1 < values->max_length) {
         pSStack2 = (String__Array__Class *)(values->vector + 1);
-        values->vector[1] = adType;
+        (pSStack2->_0).image = (Il2CppImage *)adType;
         func_?();
         if (2 < values->max_length) {
-          values->vector[2] = StringLiteral_Finished_;
           pSStack2 = (String__Array__Class *)(values->vector + 2);
+          (pSStack2->_0).image = (Il2CppImage *)StringLiteral_Finished_;
           func_?();
-          pSVar1 = mscorlib.dll::System::Enum::Enum_ToString
+          pIVar3 = (Il2CppImage *)
+                   mscorlib.dll::System::Enum::Enum_ToString
                              ((Enum *)&stack0xfffffff0,(MethodInfo *)0x0);
           if (3 < values->max_length) {
-            values->vector[3] = pSVar1;
             pSStack2 = (String__Array__Class *)(values->vector + 3);
+            (pSStack2->_0).image = pIVar3;
             func_?();
             pSVar1 = StringLiteral__Success;
             goto code_?;
@@ -1321,8 +1330,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -1426,8 +1435,9 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager::
     func_?(&StringLiteral_WebCallbackAdAvailable);
     cRam_? = '\x01';
   }
+  this_00 = &this->fields;
   bVar2 = cRam_? == '\0';
-  (this->fields).webReturnedAvailabilityInterstitial = 0;
+  this_00->webReturnedAvailabilityInterstitial = 0;
   pSVar3 = StringLiteral_WebCallbackAdAvailable;
   if (bVar2) {
     func_?(&TypeInfo__UnityEngine__Debug);
@@ -1445,12 +1455,11 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager::
                       (jsonData,
                        Assets__Scripts__AdIntegration__Web__WebAdManager__JSONAdReturnedData_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<Assets::Scripts::AdIntegration::Web::WebAdManager::JSONAdReturnedData>_System__String_
                       );
-    (this->fields).webReturnedAvailabilityInterstitial = WVar4.status;
+    this_00->webReturnedAvailabilityInterstitial = WVar4.status;
     if ((TypeInfo__System__Boolean->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pSVar3 = mscorlib.dll::System::Boolean::Boolean_ToString
-                       ((Boolean *)&this->fields,(MethodInfo *)0x0);
+    pSVar3 = mscorlib.dll::System::Boolean::Boolean_ToString((Boolean *)this_00,(MethodInfo *)0x0);
     pSVar3 = mscorlib.dll::System::String::String_Concat_3
                        (StringLiteral_WebCallbackAdAvailable__,pSVar3,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
@@ -1485,7 +1494,8 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager::
     func_?(&StringLiteral_WebCallbackAdAvailable__);
     cRam_? = '\x01';
   }
-  (this->fields).webReturnedAvailabilityRewardedAd = 0;
+  this_00 = &(this->fields).webReturnedAvailabilityRewardedAd;
+  *this_00 = 0;
   if (ok != 0) {
     if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__Newtonsoft__Json__JsonConvert);
@@ -1494,13 +1504,11 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager::
                       (jsonData,
                        Assets__Scripts__AdIntegration__Web__WebAdManager__JSONAdReturnedData_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<Assets::Scripts::AdIntegration::Web::WebAdManager::JSONAdReturnedData>_System__String_
                       );
-    (this->fields).webReturnedAvailabilityRewardedAd = WVar2.status;
+    *this_00 = WVar2.status;
     if ((TypeInfo__System__Boolean->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pSVar3 = mscorlib.dll::System::Boolean::Boolean_ToString
-                       ((Boolean *)&(this->fields).webReturnedAvailabilityRewardedAd,
-                        (MethodInfo *)0x0);
+    pSVar3 = mscorlib.dll::System::Boolean::Boolean_ToString((Boolean *)this_00,(MethodInfo *)0x0);
     pSVar3 = mscorlib.dll::System::String::String_Concat_3
                        (StringLiteral_WebCallbackAdAvailable__,pSVar3,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
@@ -1639,8 +1647,8 @@ bool Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Web::WebAdManager::
   if (pIStack_1 != (IAdUIManager *)0x0) {
     pIStack_2 = TypeInfo__Assets__Scripts__AdIntegration__IAdUIManager;
     uStack_3 = 0;
-    bVar4 = func_?();
-    return bVar4 ^ 1;
+    cVar4 = func_?();
+    return cVar4 == '\0';
   }
   pIStack_1 = (IAdUIManager *)&stack0xfffffffc;
   uVar5 = func_?(&uStack_3);

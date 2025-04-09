@@ -28,8 +28,8 @@ code_?:
   }
   pGVar5 = pGVar2->vector[axisIndex];
   if (tick != (GizmoCap2D *)0x0) {
-    (tick->fields)._sharedLookAndFeel = pGVar5;
     ppGStack_3 = &(tick->fields)._sharedLookAndFeel;
+    *ppGStack_3 = pGVar5;
     pGStack_1 = pGVar5;
     func_?();
     return;
@@ -478,8 +478,9 @@ void Assembly-CSharp.dll::RTG::PointLightGizmo3DLookAndFeel::PointLightGizmo3DLo
   (this->fields)._sphereBorderColor.b = fVar4;
   (this->fields)._sphereBorderColor.a = fVar5;
   pGVar6 = (GizmoCap2DLookAndFeel__Array *)func_?(TypeInfo__RTG__GizmoCap2DLookAndFeel,6);
-  (this->fields)._tickLookAndFeel = pGVar6;
-  func_?(&(this->fields)._tickLookAndFeel,pGVar6);
+  ppGVar7 = &(this->fields)._tickLookAndFeel;
+  *ppGVar7 = pGVar6;
+  func_?(ppGVar7,pGVar6);
   pCVar1 = ColorEx::ColorEx_FromByteValues(&CStack_2,0xd2,0xd2,0x8a,0xff,(MethodInfo *)0x0);
   fVar3 = pCVar1->g;
   fVar4 = pCVar1->b;
@@ -491,11 +492,11 @@ void Assembly-CSharp.dll::RTG::PointLightGizmo3DLookAndFeel::PointLightGizmo3DLo
   (this->fields)._axialCircleCullAlphaScale = 0.3;
   (this->fields)._tickCullAlphaScale = 0.3;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,in_stack_7);
-  uVar8 = 0;
-  pGVar6 = (this->fields)._tickLookAndFeel;
+            ((Object *)this,ExceptionArgument__Enum_obj,in_stack_8);
+  uVar9 = 0;
+  pGVar6 = *ppGVar7;
   while (pGVar6 != (GizmoCap2DLookAndFeel__Array *)0x0) {
-    if ((int)pGVar6->max_length <= (int)uVar8) {
+    if ((int)pGVar6->max_length <= (int)uVar9) {
       pCVar1 = ColorEx::ColorEx_FromByteValues(&CStack_2,0xd2,0xd2,0x8a,0xff,(MethodInfo *)0x0);
       fVar3 = pCVar1->g;
       fVar4 = pCVar1->b;
@@ -513,95 +514,95 @@ void Assembly-CSharp.dll::RTG::PointLightGizmo3DLookAndFeel::PointLightGizmo3DLo
       (((GizmoCap2DLookAndFeel *)this)->fields)._arrowHeight = fVar4;
       (((GizmoCap2DLookAndFeel *)this)->fields)._color.r = fVar5;
       pCVar1 = ColorEx::ColorEx_FromByteValues(&CStack_2,0xd2,0xd2,0x8a,0xff,(MethodInfo *)0x0);
-      fVar3 = (((GizmoCap2DLookAndFeel *)this)->fields)._quadWidth;
-      fVar4 = pCVar1->r;
-      fVar5 = pCVar1->g;
-      fVar9 = pCVar1->b;
+      pGVar6 = *ppGVar7;
+      fVar3 = pCVar1->r;
+      fVar4 = pCVar1->g;
+      fVar5 = pCVar1->b;
       fVar10 = pCVar1->a;
-      if (fVar3 != 0.0) {
-        if (*(int *)((int)fVar3 + 0xc) == 0) goto code_?;
-        iVar11 = *(int *)((int)fVar3 + 0x10);
-        fVar3 = pCVar1->g;
-        fVar12 = pCVar1->b;
-        fVar13 = pCVar1->a;
-        if (iVar11 != 0) {
-          *(float *)(iVar11 + 0x28) = pCVar1->r;
-          *(float *)(iVar11 + 0x2c) = fVar3;
-          *(float *)(iVar11 + 0x30) = fVar12;
-          *(float *)(iVar11 + 0x34) = fVar13;
-          fVar3 = (((GizmoCap2DLookAndFeel *)this)->fields)._quadWidth;
-          if (fVar3 != 0.0) {
-            if (*(uint *)((int)fVar3 + 0xc) < 4) goto code_?;
-            iVar11 = *(int *)((int)fVar3 + 0x1c);
-            if (iVar11 != 0) {
-              *(float *)(iVar11 + 0x28) = fVar4;
-              *(float *)(iVar11 + 0x2c) = fVar5;
-              *(float *)(iVar11 + 0x30) = fVar9;
-              *(float *)(iVar11 + 0x34) = fVar10;
+      if (pGVar6 != (GizmoCap2DLookAndFeel__Array *)0x0) {
+        if (pGVar6->max_length == 0) goto code_?;
+        pGVar11 = pGVar6->vector[0];
+        fVar12 = pCVar1->g;
+        fVar13 = pCVar1->b;
+        fVar14 = pCVar1->a;
+        if (pGVar11 != (GizmoCap2DLookAndFeel *)0x0) {
+          (pGVar11->fields)._color.r = pCVar1->r;
+          (pGVar11->fields)._color.g = fVar12;
+          (pGVar11->fields)._color.b = fVar13;
+          (pGVar11->fields)._color.a = fVar14;
+          pGVar6 = *ppGVar7;
+          if (pGVar6 != (GizmoCap2DLookAndFeel__Array *)0x0) {
+            if (pGVar6->max_length < 4) goto code_?;
+            pGVar11 = pGVar6->vector[3];
+            if (pGVar11 != (GizmoCap2DLookAndFeel *)0x0) {
+              (pGVar11->fields)._color.r = fVar3;
+              (pGVar11->fields)._color.g = fVar4;
+              (pGVar11->fields)._color.b = fVar5;
+              (pGVar11->fields)._color.a = fVar10;
               pCVar1 = ColorEx::ColorEx_FromByteValues
-                                 (&CStack_2,0xd2,0xd2,0x8a,0xff,(MethodInfo *)0x0);
-              fVar3 = (((GizmoCap2DLookAndFeel *)this)->fields)._quadWidth;
-              fVar4 = pCVar1->r;
-              fVar5 = pCVar1->g;
-              fVar9 = pCVar1->b;
+                                  (&CStack_2,0xd2,0xd2,0x8a,0xff,(MethodInfo *)0x0);
+              pGVar6 = *ppGVar7;
+              fVar3 = pCVar1->r;
+              fVar4 = pCVar1->g;
+              fVar5 = pCVar1->b;
               fVar10 = pCVar1->a;
-              if (fVar3 != 0.0) {
-                if (*(uint *)((int)fVar3 + 0xc) < 2) goto code_?;
-                iVar11 = *(int *)((int)fVar3 + 0x14);
-                fVar3 = pCVar1->g;
-                fVar12 = pCVar1->b;
-                fVar13 = pCVar1->a;
-                if (iVar11 != 0) {
-                  *(float *)(iVar11 + 0x28) = pCVar1->r;
-                  *(float *)(iVar11 + 0x2c) = fVar3;
-                  *(float *)(iVar11 + 0x30) = fVar12;
-                  *(float *)(iVar11 + 0x34) = fVar13;
-                  fVar3 = (((GizmoCap2DLookAndFeel *)this)->fields)._quadWidth;
-                  if (fVar3 != 0.0) {
-                    if (*(uint *)((int)fVar3 + 0xc) < 5) goto code_?;
-                    iVar11 = *(int *)((int)fVar3 + 0x20);
-                    if (iVar11 != 0) {
-                      *(float *)(iVar11 + 0x28) = fVar4;
-                      *(float *)(iVar11 + 0x2c) = fVar5;
-                      *(float *)(iVar11 + 0x30) = fVar9;
-                      *(float *)(iVar11 + 0x34) = fVar10;
+              if (pGVar6 != (GizmoCap2DLookAndFeel__Array *)0x0) {
+                if (pGVar6->max_length < 2) goto code_?;
+                pGVar11 = pGVar6->vector[1];
+                fVar12 = pCVar1->g;
+                fVar13 = pCVar1->b;
+                fVar14 = pCVar1->a;
+                if (pGVar11 != (GizmoCap2DLookAndFeel *)0x0) {
+                  (pGVar11->fields)._color.r = pCVar1->r;
+                  (pGVar11->fields)._color.g = fVar12;
+                  (pGVar11->fields)._color.b = fVar13;
+                  (pGVar11->fields)._color.a = fVar14;
+                  pGVar6 = *ppGVar7;
+                  if (pGVar6 != (GizmoCap2DLookAndFeel__Array *)0x0) {
+                    if (pGVar6->max_length < 5) goto code_?;
+                    pGVar11 = pGVar6->vector[4];
+                    if (pGVar11 != (GizmoCap2DLookAndFeel *)0x0) {
+                      (pGVar11->fields)._color.r = fVar3;
+                      (pGVar11->fields)._color.g = fVar4;
+                      (pGVar11->fields)._color.b = fVar5;
+                      (pGVar11->fields)._color.a = fVar10;
                       pCVar1 = ColorEx::ColorEx_FromByteValues
-                                         (&CStack_2,0xd2,0xd2,0x8a,0xff,(MethodInfo *)0x0);
-                      fVar3 = (((GizmoCap2DLookAndFeel *)this)->fields)._quadWidth;
-                      fVar4 = pCVar1->r;
-                      fVar5 = pCVar1->g;
-                      fVar9 = pCVar1->b;
+                                          (&CStack_2,0xd2,0xd2,0x8a,0xff,(MethodInfo *)0x0);
+                      pGVar6 = *ppGVar7;
+                      fVar3 = pCVar1->r;
+                      fVar4 = pCVar1->g;
+                      fVar5 = pCVar1->b;
                       fVar10 = pCVar1->a;
-                      if (fVar3 != 0.0) {
-                        if (*(uint *)((int)fVar3 + 0xc) < 3) goto code_?;
-                        iVar11 = *(int *)((int)fVar3 + 0x18);
-                        fVar3 = pCVar1->g;
-                        fVar12 = pCVar1->b;
-                        fVar13 = pCVar1->a;
-                        if (iVar11 != 0) {
-                          *(float *)(iVar11 + 0x28) = pCVar1->r;
-                          *(float *)(iVar11 + 0x2c) = fVar3;
-                          *(float *)(iVar11 + 0x30) = fVar12;
-                          *(float *)(iVar11 + 0x34) = fVar13;
-                          fVar3 = (((GizmoCap2DLookAndFeel *)this)->fields)._quadWidth;
-                          if (fVar3 != 0.0) {
-                            if (*(uint *)((int)fVar3 + 0xc) < 6) goto code_?;
-                            iVar11 = *(int *)((int)fVar3 + 0x24);
-                            if (iVar11 != 0) {
-                              *(float *)(iVar11 + 0x28) = fVar4;
-                              *(float *)(iVar11 + 0x2c) = fVar5;
-                              *(float *)(iVar11 + 0x30) = fVar9;
-                              *(float *)(iVar11 + 0x34) = fVar10;
+                      if (pGVar6 != (GizmoCap2DLookAndFeel__Array *)0x0) {
+                        if (pGVar6->max_length < 3) goto code_?;
+                        pGVar11 = pGVar6->vector[2];
+                        fVar12 = pCVar1->g;
+                        fVar13 = pCVar1->b;
+                        fVar14 = pCVar1->a;
+                        if (pGVar11 != (GizmoCap2DLookAndFeel *)0x0) {
+                          (pGVar11->fields)._color.r = pCVar1->r;
+                          (pGVar11->fields)._color.g = fVar12;
+                          (pGVar11->fields)._color.b = fVar13;
+                          (pGVar11->fields)._color.a = fVar14;
+                          pGVar6 = *ppGVar7;
+                          if (pGVar6 != (GizmoCap2DLookAndFeel__Array *)0x0) {
+                            if (pGVar6->max_length < 6) goto code_?;
+                            pGVar11 = pGVar6->vector[5];
+                            if (pGVar11 != (GizmoCap2DLookAndFeel *)0x0) {
+                              (pGVar11->fields)._color.r = fVar3;
+                              (pGVar11->fields)._color.g = fVar4;
+                              (pGVar11->fields)._color.b = fVar5;
+                              (pGVar11->fields)._color.a = fVar10;
                               pCVar1 = RTSystemValues::RTSystemValues_get_HoveredAxisColor
-                                                 (&CStack_2,(MethodInfo *)0x0);
-                              fVar3 = (((GizmoCap2DLookAndFeel *)this)->fields)._quadWidth;
-                              uVar8 = 0;
-                              fVar4 = pCVar1->r;
-                              fVar5 = pCVar1->g;
-                              fVar9 = pCVar1->b;
+                                                  (&CStack_2,(MethodInfo *)0x0);
+                              pGVar6 = *ppGVar7;
+                              uVar9 = 0;
+                              fVar3 = pCVar1->r;
+                              fVar4 = pCVar1->g;
+                              fVar5 = pCVar1->b;
                               fVar10 = pCVar1->a;
-                              if (fVar3 != 0.0) {
-                                piVar14 = (int *)((int)fVar3 + 0x10);
+                              if (pGVar6 != (GizmoCap2DLookAndFeel__Array *)0x0) {
+                                ppGVar15 = pGVar6->vector;
                                 goto code_?;
                               }
                             }
@@ -618,17 +619,19 @@ void Assembly-CSharp.dll::RTG::PointLightGizmo3DLookAndFeel::PointLightGizmo3DLo
       }
       break;
     }
-    fVar3 = (((GizmoCap2DLookAndFeel *)this)->fields)._quadWidth;
+    pGVar6 = *ppGVar7;
     this = (PointLightGizmo3DLookAndFeel *)func_?();
     GizmoCap2DLookAndFeel::GizmoCap2DLookAndFeel__ctor
               ((GizmoCap2DLookAndFeel *)this,(MethodInfo *)0x0);
-    if (fVar3 == 0.0) break;
+    if (pGVar6 == (GizmoCap2DLookAndFeel__Array *)0x0) break;
     if (((GizmoCap2DLookAndFeel *)this != (GizmoCap2DLookAndFeel *)0x0) &&
-       (iVar11 = func_?(), iVar11 == 0)) goto code_?;
-    if (*(uint *)((int)fVar3 + 0xc) <= uVar8) goto code_?;
-    *(PointLightGizmo3DLookAndFeel **)((int)fVar3 + 0x10 + uVar8 * 4) = this;
+       (iVar16 = func_?(), iVar16 == 0)) goto code_?;
+    if (pGVar6->max_length <= uVar9) goto code_?;
+    pGVar6->vector[uVar9] = (GizmoCap2DLookAndFeel *)this;
     func_?();
-    uVar8 = uVar8 + 1;
+    uVar9 = uVar9 + 1;
+    ppGVar7 = (GizmoCap2DLookAndFeel__Array **)&(((GizmoCap2DLookAndFeel *)this)->fields)._quadWidth
+    ;
     pGVar6 = (GizmoCap2DLookAndFeel__Array *)(((GizmoCap2DLookAndFeel *)this)->fields)._quadWidth;
   }
 code_?:
@@ -638,20 +641,20 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
   return;
 code_?:
-  if (*(int *)((int)fVar3 + 0xc) <= (int)uVar8) goto code_?;
-  if (*(uint *)((int)fVar3 + 0xc) <= uVar8) goto code_?;
-  iVar11 = *piVar14;
-  if (iVar11 == 0) goto code_?;
-  uVar8 = uVar8 + 1;
-  piVar14 = piVar14 + 1;
-  *(float *)(iVar11 + 0x38) = fVar4;
-  *(float *)(iVar11 + 0x3c) = fVar5;
-  *(float *)(iVar11 + 0x40) = fVar9;
-  *(float *)(iVar11 + 0x44) = fVar10;
+  if ((int)pGVar6->max_length <= (int)uVar9) goto code_?;
+  if (pGVar6->max_length <= uVar9) goto code_?;
+  pGVar11 = *ppGVar15;
+  if (pGVar11 == (GizmoCap2DLookAndFeel *)0x0) goto code_?;
+  uVar9 = uVar9 + 1;
+  ppGVar15 = ppGVar15 + 1;
+  (pGVar11->fields)._hoveredColor.r = fVar3;
+  (pGVar11->fields)._hoveredColor.g = fVar4;
+  (pGVar11->fields)._hoveredColor.b = fVar5;
+  (pGVar11->fields)._hoveredColor.a = fVar10;
   goto code_?;
 code_?:
   color.g = (float)_UNK_?;
@@ -659,93 +662,91 @@ code_?:
   color.b = (float)_UNK_?;
   color.a = _UNK_?;
   pCVar1 = ColorEx::ColorEx_KeepAllButAlpha(&CStack_2,color,0.0,(MethodInfo *)0x0);
-  fVar3 = (((GizmoCap2DLookAndFeel *)this)->fields)._quadWidth;
-  uVar8 = 0;
-  fVar4 = pCVar1->r;
-  fVar5 = pCVar1->g;
-  fVar9 = pCVar1->b;
+  pGVar6 = *ppGVar7;
+  uVar9 = 0;
+  fVar3 = pCVar1->r;
+  fVar4 = pCVar1->g;
+  fVar5 = pCVar1->b;
   fVar10 = pCVar1->a;
-  if (fVar3 != 0.0) {
-    piVar14 = (int *)((int)fVar3 + 0x10);
-    for (; (int)uVar8 < *(int *)((int)fVar3 + 0xc); uVar8 = uVar8 + 1) {
-      if (*(uint *)((int)fVar3 + 0xc) <= uVar8) goto code_?;
-      iVar11 = *piVar14;
-      if (iVar11 == 0) goto code_?;
-      piVar14 = piVar14 + 1;
-      *(float *)(iVar11 + 0x48) = fVar4;
-      *(float *)(iVar11 + 0x4c) = fVar5;
-      *(float *)(iVar11 + 0x50) = fVar9;
-      *(float *)(iVar11 + 0x54) = fVar10;
+  if (pGVar6 != (GizmoCap2DLookAndFeel__Array *)0x0) {
+    ppGVar15 = pGVar6->vector;
+    for (; (int)uVar9 < (int)pGVar6->max_length; uVar9 = uVar9 + 1) {
+      if (pGVar6->max_length <= uVar9) goto code_?;
+      pGVar11 = *ppGVar15;
+      if (pGVar11 == (GizmoCap2DLookAndFeel *)0x0) goto code_?;
+      ppGVar15 = ppGVar15 + 1;
+      (pGVar11->fields)._borderColor.r = fVar3;
+      (pGVar11->fields)._borderColor.g = fVar4;
+      (pGVar11->fields)._borderColor.b = fVar5;
+      (pGVar11->fields)._borderColor.a = fVar10;
     }
     color_00.g = (float)_UNK_?;
     color_00.r = (float)_UNK_?;
     color_00.b = (float)_UNK_?;
     color_00.a = _UNK_?;
     pCVar1 = ColorEx::ColorEx_KeepAllButAlpha(&CStack_2,color_00,0.0,(MethodInfo *)0x0);
-    fVar3 = (((GizmoCap2DLookAndFeel *)this)->fields)._quadWidth;
-    uVar8 = 0;
-    fVar4 = pCVar1->r;
-    fVar5 = pCVar1->g;
-    fVar9 = pCVar1->b;
+    pGVar6 = *ppGVar7;
+    uVar9 = 0;
+    fVar3 = pCVar1->r;
+    fVar4 = pCVar1->g;
+    fVar5 = pCVar1->b;
     fVar10 = pCVar1->a;
-    if (fVar3 != 0.0) {
-      piVar14 = (int *)((int)fVar3 + 0x10);
-      for (; (int)uVar8 < *(int *)((int)fVar3 + 0xc); uVar8 = uVar8 + 1) {
-        if (*(uint *)((int)fVar3 + 0xc) <= uVar8) goto code_?;
-        iVar11 = *piVar14;
-        if (iVar11 == 0) goto code_?;
-        piVar14 = piVar14 + 1;
-        *(float *)(iVar11 + 0x58) = fVar4;
-        *(float *)(iVar11 + 0x5c) = fVar5;
-        *(float *)(iVar11 + 0x60) = fVar9;
-        *(float *)(iVar11 + 100) = fVar10;
+    if (pGVar6 != (GizmoCap2DLookAndFeel__Array *)0x0) {
+      ppGVar15 = pGVar6->vector;
+      for (; (int)uVar9 < (int)pGVar6->max_length; uVar9 = uVar9 + 1) {
+        if (pGVar6->max_length <= uVar9) goto code_?;
+        pGVar11 = *ppGVar15;
+        if (pGVar11 == (GizmoCap2DLookAndFeel *)0x0) goto code_?;
+        ppGVar15 = ppGVar15 + 1;
+        (pGVar11->fields)._hoveredBorderColor.r = fVar3;
+        (pGVar11->fields)._hoveredBorderColor.g = fVar4;
+        (pGVar11->fields)._hoveredBorderColor.b = fVar5;
+        (pGVar11->fields)._hoveredBorderColor.a = fVar10;
       }
-      fVar3 = (((GizmoCap2DLookAndFeel *)this)->fields)._quadWidth;
-      uVar8 = 0;
-      if (fVar3 != 0.0) {
-        puVar16 = (undefined4 *)((int)fVar3 + 0x10);
-        for (; (int)uVar8 < *(int *)((int)fVar3 + 0xc); uVar8 = uVar8 + 1) {
-          if (*(uint *)((int)fVar3 + 0xc) <= uVar8) goto code_?;
-          if ((CameraMoveSettings *)*puVar16 == (CameraMoveSettings *)0x0) goto code_?;
+      pGVar6 = *ppGVar7;
+      uVar9 = 0;
+      if (pGVar6 != (GizmoCap2DLookAndFeel__Array *)0x0) {
+        ppGVar15 = pGVar6->vector;
+        for (; iVar16 = iRam_?, (int)uVar9 < (int)pGVar6->max_length; uVar9 = uVar9 + 1) {
+          if (pGVar6->max_length <= uVar9) goto code_?;
+          if (*ppGVar15 == (GizmoCap2DLookAndFeel *)0x0) goto code_?;
           CameraMoveSettings::CameraMoveSettings_set_AccelerationRate
-                    ((CameraMoveSettings *)*puVar16,6.0,(MethodInfo *)0x0);
-          puVar16 = puVar16 + 1;
+                    ((CameraMoveSettings *)*ppGVar15,6.0,(MethodInfo *)0x0);
+          ppGVar15 = ppGVar15 + 1;
         }
-        fVar3 = (((GizmoCap2DLookAndFeel *)this)->fields)._quadWidth;
-        uVar8 = 0;
-        if (fVar3 != 0.0) {
-          puVar16 = (undefined4 *)((int)fVar3 + 0x10);
-          for (; (int)uVar8 < *(int *)((int)fVar3 + 0xc); uVar8 = uVar8 + 1) {
-            if (*(uint *)((int)fVar3 + 0xc) <= uVar8) goto code_?;
-            if ((GizmoPlaneSlider3DLookAndFeel *)*puVar16 == (GizmoPlaneSlider3DLookAndFeel *)0x0)
+        uVar9 = 0;
+        if (iRam_? != 0) {
+          puVar18 = (undefined4 *)(iRam_? + 0x10);
+          for (; iVar19 = iRam_?, (int)uVar9 < *(int *)(iVar16 + 0xc); uVar9 = uVar9 + 1) {
+            if (*(uint *)(iVar16 + 0xc) <= uVar9) goto code_?;
+            if ((GizmoPlaneSlider3DLookAndFeel *)*puVar18 == (GizmoPlaneSlider3DLookAndFeel *)0x0)
             goto code_?;
             GizmoPlaneSlider3DLookAndFeel::GizmoPlaneSlider3DLookAndFeel_set_RATriangleXLength
-                      ((GizmoPlaneSlider3DLookAndFeel *)*puVar16,6.0,(MethodInfo *)0x0);
-            puVar16 = puVar16 + 1;
+                      ((GizmoPlaneSlider3DLookAndFeel *)*puVar18,6.0,(MethodInfo *)0x0);
+            puVar18 = puVar18 + 1;
           }
-          fVar3 = (((GizmoCap2DLookAndFeel *)this)->fields)._quadWidth;
-          uVar8 = 0;
-          if (fVar3 != 0.0) {
-            piVar14 = (int *)((int)fVar3 + 0x10);
-            for (; (int)uVar8 < *(int *)((int)fVar3 + 0xc); uVar8 = uVar8 + 1) {
-              if (*(uint *)((int)fVar3 + 0xc) <= uVar8) goto code_?;
-              if (*piVar14 == 0) goto code_?;
-              *(undefined4 *)(*piVar14 + 0x14) = 0x40400000;
-              piVar14 = piVar14 + 1;
+          uVar9 = 0;
+          if (iRam_? != 0) {
+            piVar20 = (int *)(iRam_? + 0x10);
+            for (; iVar16 = iRam_?, (int)uVar9 < *(int *)(iVar19 + 0xc); uVar9 = uVar9 + 1)
+            {
+              if (*(uint *)(iVar19 + 0xc) <= uVar9) goto code_?;
+              if (*piVar20 == 0) goto code_?;
+              *(undefined4 *)(*piVar20 + 0x14) = 0x40400000;
+              piVar20 = piVar20 + 1;
             }
-            fVar3 = (((GizmoCap2DLookAndFeel *)this)->fields)._quadWidth;
-            uVar8 = 0;
-            if (fVar3 != 0.0) {
-              piVar14 = (int *)((int)fVar3 + 0x10);
+            uVar9 = 0;
+            if (iRam_? != 0) {
+              piVar20 = (int *)(iRam_? + 0x10);
               while( true ) {
-                if (*(int *)((int)fVar3 + 0xc) <= (int)uVar8) {
+                if ((int)*(uint *)(iVar16 + 0xc) <= (int)uVar9) {
                   return;
                 }
-                if (*(uint *)((int)fVar3 + 0xc) <= uVar8) break;
-                if (*piVar14 == 0) goto code_?;
-                uVar8 = uVar8 + 1;
-                *(undefined4 *)(*piVar14 + 0xc) = 0;
-                piVar14 = piVar14 + 1;
+                if (*(uint *)(iVar16 + 0xc) <= uVar9) break;
+                if (*piVar20 == 0) goto code_?;
+                uVar9 = uVar9 + 1;
+                *(undefined4 *)(*piVar20 + 0xc) = 0;
+                piVar20 = piVar20 + 1;
               }
               goto code_?;
             }

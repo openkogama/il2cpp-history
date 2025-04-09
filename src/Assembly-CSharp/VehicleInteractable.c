@@ -6,7 +6,6 @@ void Assembly-CSharp.dll::VehicleInteractable::VehicleInteractable_AddModifier
                AvatarModifierPackage_AvatarModifier__Array *additionalModifers,MethodInfo *method)
 
 {
-  pVVar1 = this;
   if (type == AvatarModifierPackageType__Enum_Poison) {
     return;
   }
@@ -39,37 +38,26 @@ void Assembly-CSharp.dll::VehicleInteractable::VehicleInteractable_AddModifier
     func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  AVar2 = type;
+  AVar1 = type;
+  pVVar2 = this;
   pAVar3 = (this->fields)._.modifierPackages;
-  bVar4 = 0;
+  pVVar4 = pVVar2;
   if (pAVar3 != (AvatarModifierPackages *)0x0) {
-    action = AvatarModifierPackages::AvatarModifierPackages_GetActionToTakeWithPackageType
-                       (pAVar3,type,(MethodInfo *)0x0);
-    pMVar5 = (this->fields)._.runtimeDataModifiers;
-    bVar4 = 0;
-    unaff_ESI = (VehicleInteractable *)AVar2;
-    if (pMVar5 != (MVRuntimeDataVariable *)0x0) {
+    MVar5 = AvatarModifierPackages::AvatarModifierPackages_GetActionToTakeWithPackageType
+                      (pAVar3,type,(MethodInfo *)0x0);
+    pMVar6 = (pVVar2->fields)._.runtimeDataModifiers;
+    if (pMVar6 != (MVRuntimeDataVariable *)0x0) {
       dictionary = (IDictionary_2_System_Object_System_Object_ *)
-                   MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value(pMVar5,(MethodInfo *)0x0);
+                   MVRuntimeDataVariable::MVRuntimeDataVariable_get_Value(pMVar6,(MethodInfo *)0x0);
       this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
                 func_?(
                                TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
                                );
-      if ((dictionary == (IDictionary_2_System_Object_System_Object_ *)0x0) ||
-         ((bVar4 = (dictionary->klass->_1).naturalAligment <
-                    (
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                    ->_1).naturalAligment, !(bool)bVar4 &&
-          (pDVar6 = (Dictionary_2_System_Object_System_Object___Class *)
-                    (dictionary->klass->_1).typeHierarchy
-                    [(
-                     TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                     ->_1).naturalAligment - 1],
-          bVar4 = pDVar6 < 
-                   TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-          , unaff_ESI = (VehicleInteractable *)type,
-          pDVar6 == 
-          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)))) {
+      pVVar4 = this;
+      if (dictionary == (IDictionary_2_System_Object_System_Object_ *)0x0) {
+        dictionary = (IDictionary_2_System_Object_System_Object_ *)0x0;
+        pVVar4 = pVVar2;
+code_?:
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
         Dictionary_2_System_Object_System_Object___ctor_1
                   ((Dictionary_2_System_Object_System_Object_ *)this_00,dictionary,
@@ -80,45 +68,38 @@ void Assembly-CSharp.dll::VehicleInteractable::VehicleInteractable_AddModifier
         }
         pSVar7 = TypeInfo__AvatarModifierPackage->static_fields->
                  AvatarModifierPackageTypeLookupTable;
-        bVar4 = 0;
         if (pSVar7 != (String__Array *)0x0) {
-          bVar4 = unaff_ESI < (VehicleInteractable *)pSVar7->max_length;
-          if (!(bool)bVar4) goto code_?;
-          key = (VehicleInteractable *)pSVar7->vector[(int)unaff_ESI];
-          switch(action) {
+          if (pSVar7->max_length <= AVar1) goto code_?;
+          type = (AvatarModifierPackageType__Enum)pSVar7->vector[AVar1];
+          switch(MVar5) {
           case ModifierActions__Enum_Add:
-            bVar4 = 0;
             if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
               bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                       Object,UnityEngine::UIElements::TextureId]::
-                       Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                                 (this_00,(Object *)key,
-                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                                 );
+                      Object,UnityEngine::UIElements::TextureId]::
+                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                                (this_00,(Object *)type,
+                                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                                );
               if (bVar8 != 0) {
                 return;
               }
-              pAVar3 = (this->fields)._.modifierPackages;
-              bVar4 = 0;
+              pAVar3 = (pVVar4->fields)._.modifierPackages;
               if (pAVar3 != (AvatarModifierPackages *)0x0) {
                 AvatarModifierPackages::AvatarModifierPackages_AddModifier
-                          (pAVar3,(AvatarModifierPackageType__Enum)unaff_ESI,id,additionalModifers,
-                           (MethodInfo *)0x0);
-                type = type & 0xffffff;
+                          (pAVar3,AVar1,id,additionalModifers,(MethodInfo *)0x0);
+                this = (VehicleInteractable *)((uint)this & 0xffffff);
                 pOVar9 = (Object *)func_?();
                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
                 Object]::Dictionary_2_System_Object_System_Object__Add
-                          ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)key,
+                          ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)type,
                            pOVar9,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                           );
-                pMVar5 = (this->fields)._.runtimeDataModifiers;
+                pMVar6 = (pVVar4->fields)._.runtimeDataModifiers;
 joined_?:
-                bVar4 = 0;
-                unaff_ESI = key;
-                if (pMVar5 != (MVRuntimeDataVariable *)0x0) {
+                if (pMVar6 != (MVRuntimeDataVariable *)0x0) {
                   MVRuntimeDataVariable::MVRuntimeDataVariable_set_Value
-                            (pMVar5,(Object *)this_00,(MethodInfo *)0x0);
+                            (pMVar6,(Object *)this_00,(MethodInfo *)0x0);
 code_?:
                   return;
                 }
@@ -126,123 +107,103 @@ code_?:
             }
             break;
           case ModifierActions__Enum_Renew:
-            bVar4 = 0;
             if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
               bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                       Object,UnityEngine::UIElements::TextureId]::
-                       Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                                 (this_00,(Object *)key,
-                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                                 );
+                      Object,UnityEngine::UIElements::TextureId]::
+                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                                (this_00,(Object *)type,
+                                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                                );
               if (bVar8 == 0) {
                 return;
               }
-              pAVar3 = (this->fields)._.modifierPackages;
-              bVar4 = 0;
+              pAVar3 = (pVVar4->fields)._.modifierPackages;
               if (pAVar3 != (AvatarModifierPackages *)0x0) {
                 AvatarModifierPackages::AvatarModifierPackages_AddModifier
-                          (pAVar3,(AvatarModifierPackageType__Enum)unaff_ESI,id,additionalModifers,
-                           (MethodInfo *)0x0);
+                          (pAVar3,AVar1,id,additionalModifers,(MethodInfo *)0x0);
+                AVar1 = type;
                 TVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                         Object,UnityEngine::UIElements::TextureId]::
-                         Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                   (this_00,(Object *)key,
-                                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                   );
+                        Object,UnityEngine::UIElements::TextureId]::
+                        Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                  (this_00,(Object *)type,
+                                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                  );
                 uVar11 = CONCAT44(TypeInfo__System__Byte,TVar10.m_Index);
-                bVar4 = 0;
-                unaff_ESI = key;
                 if (TVar10.m_Index != 0) {
-                  pIVar12 = (TypeInfo__System__Byte->_0).element_class;
-                  bVar4 = *(Il2CppClass **)(*(int *)TVar10.m_Index + 0x20) < pIVar12;
-                  if (*(Il2CppClass **)(*(int *)TVar10.m_Index + 0x20) != pIVar12)
-                  goto code_?;
-                  additionalModifers = (AvatarModifierPackage_AvatarModifier__Array *)&UNK_?;
-                  method = (MethodInfo *)TVar10;
-                  func_?();
-                  additionalModifers =
-                       (AvatarModifierPackage_AvatarModifier__Array *)((int)&type + 3);
-                  id = (int32_t)TypeInfo__System__Byte;
+                  if (*(Il2CppClass **)(*(int *)TVar10.m_Index + 0x20) !=
+                      (TypeInfo__System__Byte->_0).element_class) goto code_?;
                   type = (AvatarModifierPackageType__Enum)&UNK_?;
+                  id = TVar10.m_Index;
+                  func_?();
+                  type = (int)&this + AvatarModifierPackageType__Enum_Sticky;
+                  this = (VehicleInteractable *)TypeInfo__System__Byte;
                   pOVar9 = (Object *)func_?();
                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
                   Object]::Dictionary_2_System_Object_System_Object__set_Item
-                            ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)key,
+                            ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)AVar1,
                              pOVar9,
                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
                             );
 code_?:
-                  pMVar5 = (pVVar1->fields)._.runtimeDataModifiers;
+                  pMVar6 = (pVVar4->fields)._.runtimeDataModifiers;
                   goto joined_?;
                 }
               }
             }
             break;
           case ModifierActions__Enum_Replace:
-            bVar4 = 0;
             if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
               bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                       Object,UnityEngine::UIElements::TextureId]::
-                       Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                                 (this_00,(Object *)key,
-                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                                 );
+                      Object,UnityEngine::UIElements::TextureId]::
+                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                                (this_00,(Object *)type,
+                                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                                );
               if (bVar8 != 0) {
                 return;
               }
-              pAVar3 = (this->fields)._.modifierPackages;
-              bVar4 = 0;
+              pAVar3 = (pVVar4->fields)._.modifierPackages;
               if (pAVar3 != (AvatarModifierPackages *)0x0) {
                 AvatarModifierPackages::AvatarModifierPackages_AddModifier
-                          (pAVar3,(AvatarModifierPackageType__Enum)unaff_ESI,id,additionalModifers,
-                           (MethodInfo *)0x0);
-                pAVar3 = (this->fields)._.modifierPackages;
-                bVar4 = 0;
+                          (pAVar3,AVar1,id,additionalModifers,(MethodInfo *)0x0);
+                pAVar3 = (pVVar4->fields)._.modifierPackages;
                 if (pAVar3 != (AvatarModifierPackages *)0x0) {
-                  type = AvatarModifierPackageType__Enum_None;
                   this_01 = (Enum *)AvatarModifierPackages::
                                     AvatarModifierPackages_GetPackageToActWith
-                                              (pAVar3,(AvatarModifierPackageType__Enum)unaff_ESI,
-                                               action,(MethodInfo *)0x0);
-                  ppVVar13 = &this->klass;
-                  type = (AvatarModifierPackageType__Enum)
-                         ((*ppVVar13)->vtable).HasModifierEffect.methodPtr;
-                  this = (VehicleInteractable *)0xffffffff;
-                  (*(code *)((*ppVVar13)->vtable).RemoveModifier.method)();
-                  pSVar14 = mscorlib.dll::System::Enum::Enum_ToString(this_01,(MethodInfo *)0x0);
-                  pSVar14 = mscorlib.dll::System::String::String_Concat_3
-                                      (::StringLiteral__,pSVar14,(MethodInfo *)0x0);
+                                              (pAVar3,AVar1,ModifierActions__Enum_Replace,
+                                               (MethodInfo *)0x0);
+                  (*(code *)(pVVar4->klass->vtable).RemoveModifier.method)();
+                  pSVar12 = mscorlib.dll::System::Enum::Enum_ToString(this_01,(MethodInfo *)0x0);
+                  pSVar12 = mscorlib.dll::System::String::String_Concat_3
+                                      (::StringLiteral__,pSVar12,(MethodInfo *)0x0);
                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
                   Object]::Dictionary_2_System_Object_System_Object__Remove
-                            ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)pSVar14,
+                            ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)pSVar12,
                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Remove_System__Object_
                             );
-                  type = type & 0xffffff;
-                  in_stack_15 = (byte *)((int)&type + 3);
-                  in_stack_16 = TypeInfo__System__Byte;
-                  in_stack_17 = &UNK_?;
+                  this = (VehicleInteractable *)((uint)this & 0xffffff);
+                  in_stack_13 = (int)&this + 3;
+                  in_stack_14 = TypeInfo__System__Byte;
+                  in_stack_15 = &UNK_?;
                   pOVar9 = (Object *)func_?();
                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
                   Object]::Dictionary_2_System_Object_System_Object__Add
-                            ((Dictionary_2_System_Object_System_Object_ *)this_00,
-                             (Object *)0xffffffff,pOVar9,
+                            ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)type,
+                             pOVar9,
                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                             );
-                  key = this;
                   goto code_?;
                 }
               }
             }
             break;
           case ModifierActions__Enum_CancelOut:
-            pAVar3 = (this->fields)._.modifierPackages;
-            bVar4 = 0;
+            pAVar3 = (pVVar4->fields)._.modifierPackages;
             if (pAVar3 != (AvatarModifierPackages *)0x0) {
-              AVar2 = AvatarModifierPackages::AvatarModifierPackages_GetPackageToActWith
-                                 (pAVar3,(AvatarModifierPackageType__Enum)unaff_ESI,action,
-                                  (MethodInfo *)0x0);
-              (*(code *)(this->klass->vtable).RemoveModifier.method)
-                        (this,AVar2,id,(this->klass->vtable).HasModifierEffect.methodPtr);
+              AVar1 = AvatarModifierPackages::AvatarModifierPackages_GetPackageToActWith
+                                 (pAVar3,AVar1,ModifierActions__Enum_CancelOut,(MethodInfo *)0x0);
+              (*(code *)(pVVar4->klass->vtable).RemoveModifier.method)
+                        (pVVar4,AVar1,id,(pVVar4->klass->vtable).HasModifierEffect.methodPtr);
               return;
             }
             break;
@@ -252,6 +213,14 @@ code_?:
         }
       }
       else {
+        bVar16 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                ->_1).naturalAligment;
+        if ((bVar16 <= (dictionary->klass->_1).naturalAligment) &&
+           (AVar1 = type,
+           (Dictionary_2_System_Object_System_Object___Class *)
+           (dictionary->klass->_1).typeHierarchy[bVar16 - 1] ==
+           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
+        goto code_?;
         func_?(dictionary,
                         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
                        );
@@ -261,20 +230,18 @@ code_?:
     }
   }
   uVar11 = func_?();
-  key = unaff_ESI;
 code_?:
   uVar11 = func_?(uVar11);
-  pbVar18 = (byte *)((int)((ulonglong)uVar11 >> 0x20) + 0x6e1028b1);
-  bVar19 = *pbVar18;
-  bVar20 = (byte)((uint)pVVar1 >> 8);
-  bVar21 = *pbVar18;
-  *pbVar18 = bVar21 + bVar20 + bVar4;
-  *(byte *)(&pVVar1->klass + (int)key) =
-       *(char *)(&pVVar1->klass + (int)key) + bVar20 +
-       (CARRY1(bVar19,bVar20) || CARRY1(bVar21 + bVar20,bVar4));
-  *(char *)uVar11 = *(char *)uVar11 + -0x28;
-  pcVar22 = (code *)swi(3);
-  (*pcVar22)();
+  pbVar17 = (byte *)uVar11;
+  bVar18 = (char)((ulonglong)uVar11 >> 0x20) + 1;
+  bVar16 = *pbVar17;
+  *pbVar17 = *pbVar17 - bVar18;
+  pcVar19 = (char *)*(undefined6 *)((int)((ulonglong)uVar11 >> 0x20) + 0x29);
+  pcVar19[0x43] = pcVar19[0x43] + (char)((uint)pVVar4 >> 8) + (bVar16 < bVar18);
+  *pcVar19 = *pcVar19 - bVar18;
+  *pcVar19 = *pcVar19 - bVar18;
+  pcVar20 = (code *)swi(3);
+  (*pcVar20)();
   return;
 }
 
@@ -422,8 +389,9 @@ void Assembly-CSharp.dll::VehicleInteractable::VehicleInteractable__ctor
   }
   this_00 = (AvatarModifierPackages *)func_?(TypeInfo__AvatarModifierPackages);
   AvatarModifierPackages::AvatarModifierPackages__ctor(this_00,(MethodInfo *)0x0);
-  (this->fields)._.modifierPackages = this_00;
-  func_?(&(this->fields)._.modifierPackages,this_00);
+  ppAVar1 = &(this->fields)._.modifierPackages;
+  *ppAVar1 = this_00;
+  func_?(ppAVar1,this_00);
   (this->fields)._._._.findWorldObjectParent = 1;
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);

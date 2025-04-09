@@ -62,63 +62,60 @@ code_?:
       (*pcVar3)();
       return;
     }
-    fVar4 = fVar1;
-    fVar5 = Vector3Ex::Vector3Ex_Dot
+    fVar4 = Vector3Ex::Vector3Ex_Dot
                       ((pIVar2->fields)._dragDelta,(this->fields)._scaleDragAxis,(MethodInfo *)0x0);
     method_00 = (MethodInfo *)0x0;
-    fVar4 = fVar5 * (this->fields)._._sensitivity + fVar4;
-    (this->fields)._scale = fVar4;
-    fVar1 = fVar4 / fVar1;
-    (this->fields)._totalScale = fVar4;
-    (this->fields)._relativeScale = fVar1;
+    fVar1 = fVar4 * (this->fields)._._sensitivity + fVar1;
+    (this->fields)._scale = fVar1;
+    fVar4 = fVar1 / extraout_ECX;
+    (this->fields)._totalScale = fVar1;
+    (this->fields)._relativeScale = fVar4;
   }
   else {
     if (cRam_? == '\0') {
       func_?(&TypeInfo__UnityEngine__Vector3);
       cRam_? = '\x01';
     }
+    accumulated = &(this->fields)._accumSnapDrag;
     pIVar2 = (this->fields)._._planeDragSession;
-    pVVar6 = TypeInfo__UnityEngine__Vector3->static_fields;
-    fVar1 = (pVVar6->oneVector).y;
-    fVar4 = (pVVar6->oneVector).z;
-    (this->fields)._._._relativeDragScale.x = (pVVar6->oneVector).x;
-    (this->fields)._._._relativeDragScale.y = fVar1;
-    fVar1 = (this->fields)._accumSnapDrag;
-    (this->fields)._._._relativeDragScale.z = fVar4;
+    pVVar5 = TypeInfo__UnityEngine__Vector3->static_fields;
+    fVar4 = (pVVar5->oneVector).y;
+    fVar1 = (pVVar5->oneVector).z;
+    (this->fields)._._._relativeDragScale.x = (pVVar5->oneVector).x;
+    (this->fields)._._._relativeDragScale.y = fVar4;
+    fVar4 = *accumulated;
+    (this->fields)._._._relativeDragScale.z = fVar1;
     if (pIVar2 == (InputDevicePlaneDragSession3D *)0x0) goto code_?;
-    fVar4 = Vector3Ex::Vector3Ex_Dot
+    fVar1 = Vector3Ex::Vector3Ex_Dot
                       ((pIVar2->fields)._dragDelta,(this->fields)._scaleDragAxis,(MethodInfo *)0x0);
-    fVar4 = fVar4 + fVar1;
-    (this->fields)._accumSnapDrag = fVar4;
-    VStack_7.z = (float)&UNK_?;
-    bVar8 = SnapMath::SnapMath_CanExtractSnap
-                      ((this->fields)._workData.SnapStep,fVar4,(MethodInfo *)0x0);
-    if (bVar8 == 0) goto code_?;
+    *accumulated = fVar1 + fVar4;
+    bVar6 = SnapMath::SnapMath_CanExtractSnap
+                      ((this->fields)._workData.SnapStep,fVar1 + fVar4,(MethodInfo *)0x0);
+    if (bVar6 == 0) goto code_?;
     method_00 = (MethodInfo *)&UNK_?;
-    fVar4 = SnapMath::SnapMath_ExtractSnap
-                      ((this->fields)._workData.SnapStep,&(this->fields)._accumSnapDrag,
-                       (MethodInfo *)0x0);
-    fVar1 = (this->fields)._scale;
-    fVar4 = fVar4 + fVar1;
-    (this->fields)._scale = fVar4;
-    fVar1 = fVar4 / fVar1;
-    (this->fields)._totalScale = fVar4;
-    (this->fields)._relativeScale = fVar1;
+    fVar1 = SnapMath::SnapMath_ExtractSnap
+                      ((this->fields)._workData.SnapStep,accumulated,(MethodInfo *)0x0);
+    fVar4 = (this->fields)._scale;
+    fVar1 = fVar4 + fVar1;
+    (this->fields)._scale = fVar1;
+    fVar4 = fVar1 / fVar4;
+    (this->fields)._totalScale = fVar1;
+    (this->fields)._relativeScale = fVar4;
   }
-  VStack_7.z = (float)&UNK_?;
-  pVVar9 = Vector3Ex::Vector3Ex_FromValue(&VStack_7,fVar1,method_00);
-  fVar4 = pVVar9->y;
-  fVar1 = pVVar9->z;
-  (this->fields)._._._relativeDragScale.x = pVVar9->x;
-  (this->fields)._._._relativeDragScale.y = fVar4;
-  (this->fields)._._._relativeDragScale.z = fVar1;
+  pVVar7 = Vector3Ex::Vector3Ex_FromValue((Vector3 *)&stack0xffffffec,fVar4,method_00);
+  fVar1 = pVVar7->y;
+  fVar4 = pVVar7->z;
+  (this->fields)._._._relativeDragScale.x = pVVar7->x;
+  (this->fields)._._._relativeDragScale.y = fVar1;
+  (this->fields)._._._relativeDragScale.z = fVar4;
 code_?:
-  pVVar9 = Vector3Ex::Vector3Ex_FromValue(&VStack_7,(this->fields)._totalScale,(MethodInfo *)0x0);
-  fVar4 = pVVar9->y;
-  fVar1 = pVVar9->z;
-  (this->fields)._._._totalDragScale.x = pVVar9->x;
-  (this->fields)._._._totalDragScale.y = fVar4;
-  (this->fields)._._._totalDragScale.z = fVar1;
+  pVVar7 = Vector3Ex::Vector3Ex_FromValue
+                     ((Vector3 *)&stack0xffffffec,(this->fields)._totalScale,(MethodInfo *)0x0);
+  fVar1 = pVVar7->y;
+  fVar4 = pVVar7->z;
+  (this->fields)._._._totalDragScale.x = pVVar7->x;
+  (this->fields)._._._totalDragScale.y = fVar1;
+  (this->fields)._._._totalDragScale.z = fVar4;
   return;
 }
 

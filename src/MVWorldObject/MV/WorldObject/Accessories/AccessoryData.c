@@ -201,7 +201,7 @@ void MVWorldObject.dll::MV::WorldObject::Accessories::AccessoryData::AccessoryDa
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
   method_00 = (MethodInfo *)&(this->fields).time;
-  (this->fields).time = value;
+  *(AccessoryTimelimit **)method_00 = value;
   func_?(method_00,value);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
@@ -215,6 +215,7 @@ int32_t MVWorldObject.dll::MV::WorldObject::Accessories::AccessoryData::
         AccessoryData_get_DiscountedPrice(AccessoryData *this,MethodInfo *method)
 
 {
-  return (this->fields).cost - ((this->fields).dsc * (this->fields).cost) / 100;
+  iVar1 = (this->fields).cost;
+  return iVar1 - ((this->fields).dsc * iVar1) / 100;
 }
 

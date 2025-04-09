@@ -70,13 +70,13 @@ bool Assembly-CSharp.dll::DrawPlaneControllerUUI::DrawPlaneControllerUUI_GetCube
                               (pVVar6,this_03,(MethodInfo *)0x0);
           uVar10 = pVVar9->x;
           uVar11 = pVVar9->y;
-          fVar1 = (float)(int)((uint)(_UNK_? < fVar1) * 2 + -1);
-          fVar12 = pVVar9->z * _UNK_? * fVar1 + (float)this_03;
+          fVar12 = (float)(int)((uint)(_UNK_? < fVar1) * 2 + -1);
+          fVar1 = (float)this_03 + fVar12 * pVVar9->z * _UNK_?;
           stack0xffffffec = (float)&stack0xffffffa0;
-          vector.y = (float)uVar11 * _UNK_? * fVar1 + (float)pVVar6;
-          vector.x = (float)uVar10 * _UNK_? * fVar1 + (float)puVar8;
-          vector.z._0_2_ = SUB42(fVar12,0);
-          vector.z._2_2_ = (short)((uint)fVar12 >> 0x10);
+          vector.y = (float)pVVar6 + fVar12 * (float)uVar11 * _UNK_?;
+          vector.x = (float)puVar8 + fVar12 * (float)uVar10 * _UNK_?;
+          vector.z._0_2_ = SUB42(fVar1,0);
+          vector.z._2_2_ = (short)((uint)fVar1 >> 0x10);
           pVVar6 = MathFunctions::MathFunctions_RoundVector
                              ((Vector3 *)&stack0xffffffa0,vector,0,(MethodInfo *)0x0);
           uVar13 = pVVar6->x;
@@ -145,8 +145,7 @@ void Assembly-CSharp.dll::DrawPlaneControllerUUI::DrawPlaneControllerUUI_HideDra
       pWVar1 = (this->fields).worldEditorDrawPlane;
       if (pWVar1 != (WorldEditorDrawPlane *)0x0) {
         WorldEditorDrawPlane::WorldEditorDrawPlane_set_Active
-                  ((this->fields).worldEditorDrawPlane,(pWVar1->fields).isActive == 0,
-                   (MethodInfo *)0x0);
+                  (pWVar1,(pWVar1->fields).isActive == 0,(MethodInfo *)0x0);
         return;
       }
     }
@@ -176,45 +175,45 @@ void Assembly-CSharp.dll::DrawPlaneControllerUUI::DrawPlaneControllerUUI_Initial
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  pWVar1 = (this->fields).worldEditorDrawPlane;
+  ppWVar1 = &(this->fields).worldEditorDrawPlane;
+  pWVar2 = *ppWVar1;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  pWVar1 = (WorldEditorDrawPlane *)
+  pWVar2 = (WorldEditorDrawPlane *)
            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                     ((Object *)pWVar1,
+                     ((Object *)pWVar2,
                       WorldEditorDrawPlane_MethodInfo__UnityEngine__Object__Instantiate<WorldEditorDrawPlane>_WorldEditorDrawPlane_
                      );
-  (this->fields).worldEditorDrawPlane = pWVar1;
-  func_?(&(this->fields).worldEditorDrawPlane,pWVar1);
-  pWVar1 = (this->fields).worldEditorDrawPlane;
+  *ppWVar1 = pWVar2;
+  func_?(ppWVar1,pWVar2);
+  pWVar2 = *ppWVar1;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MVGameControllerBase);
     cRam_? = '\x01';
   }
-  pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
-  if ((pMVar2 != (MVGameControllerBase *)0x0) &&
-     (this_00 = (pMVar2->fields).game, this_00 != (MVNetworkGame *)0x0)) {
+  pMVar3 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((pMVar3 != (MVGameControllerBase *)0x0) &&
+     (this_00 = (pMVar3->fields).game, this_00 != (MVNetworkGame *)0x0)) {
     this_01 = MVNetworkGame::MVNetworkGame_get_WorldObjectClientManager(this_00,(MethodInfo *)0x0);
     if (this_01 != (MVWorldObjectClientManager *)0x0) {
-      pOVar3 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetSingletonWorldObject
+      pOVar4 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetSingletonWorldObject
                          (this_01,
                           MVCubeModelPrototypeTerrain_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVCubeModelPrototypeTerrain>__
                          );
-      if ((pOVar3 != (Object *)0x0) && (pWVar1 != (WorldEditorDrawPlane *)0x0)) {
+      if ((pOVar4 != (Object *)0x0) && (pWVar2 != (WorldEditorDrawPlane *)0x0)) {
         WorldEditorDrawPlane::WorldEditorDrawPlane_set_TargetGameObject
-                  (pWVar1,(GameObject *)pOVar3[0x11].klass,(MethodInfo *)0x0);
-        pWVar1 = (this->fields).worldEditorDrawPlane;
-        if (pWVar1 != (WorldEditorDrawPlane *)0x0) {
-          WorldEditorDrawPlane::WorldEditorDrawPlane_set_Active(pWVar1,0,(MethodInfo *)0x0);
+                  (pWVar2,(GameObject *)pOVar4[0x11].klass,(MethodInfo *)0x0);
+        if (*ppWVar1 != (WorldEditorDrawPlane *)0x0) {
+          WorldEditorDrawPlane::WorldEditorDrawPlane_set_Active(*ppWVar1,0,(MethodInfo *)0x0);
           return;
         }
       }
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -249,33 +248,28 @@ void Assembly-CSharp.dll::DrawPlaneControllerUUI::DrawPlaneControllerUUI_MoveDra
           func_?();
           cRam_? = '\x01';
         }
-        pVVar7 = &TypeInfo__UnityEngine__Vector3->static_fields->upVector;
-        fVar8 = pVVar7->x;
         rotation.y = fVar4;
         rotation.x = fVar1;
         rotation.z = fVar5;
         rotation.w = fVar6;
-        pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                           ((Vector3 *)&stack0xffffffd4,rotation,*pVVar7,(MethodInfo *)0x0);
-        uVar9 = pVVar7->x;
-        uVar10 = pVVar7->y;
-        fVar1 = (float)dir;
-        fVar5 = fVar5 + (float)uVar9 * fVar1;
-        fVar8 = fVar8 + pVVar7->z * fVar1;
-        fVar6 = fVar6 + (float)uVar10 * fVar1;
+        UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                  ((Vector3 *)&stack0xffffffd4,rotation,
+                   TypeInfo__UnityEngine__Vector3->static_fields->upVector,(MethodInfo *)0x0);
+        fVar1 = 0.0;
+        puVar7 = &UNK_?;
+        pWVar8 = this_00;
         pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                            ((Component *)this_00,(MethodInfo *)0x0);
         if (pTVar2 != (Transform *)0x0) {
-          value.y = fVar6;
-          value.x = fVar5;
-          value.z = fVar8;
+          value.y = (float)pWVar8;
+          value.x = (float)puVar7;
+          value.z = fVar1;
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
                     (pTVar2,value,(MethodInfo *)0x0);
           WorldEditorDrawPlane::WorldEditorDrawPlane_UpdateEditorPlanePosition
                     (this_00,(MethodInfo *)0x0);
           WorldEditorDrawPlane::WorldEditorDrawPlane_UpdateAltitude(this_00,(MethodInfo *)0x0);
-          fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0)
-          ;
+          fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
           (this_00->fields).lastMovePlaneDelta = fVar1;
           return;
         }
@@ -284,8 +278,8 @@ void Assembly-CSharp.dll::DrawPlaneControllerUUI::DrawPlaneControllerUUI_MoveDra
   }
   func_?();
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -303,55 +297,56 @@ bool Assembly-CSharp.dll::DrawPlaneControllerUUI::DrawPlaneControllerUUI_Pick
       func_?(&TypeInfo__UnityEngine__Object);
       cRam_? = '\x01';
     }
-    pCVar1 = (this_00->fields).mainCamera;
+    ppCVar1 = &(this_00->fields).mainCamera;
+    pCVar2 = *ppCVar1;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                       ((Object_1 *)pCVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      pCVar1 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
-      (this_00->fields).mainCamera = pCVar1;
-      func_?(&(this_00->fields).mainCamera);
+    bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                       ((Object_1 *)pCVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar3 != 0) {
+      pCVar2 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
+      *ppCVar1 = pCVar2;
+      func_?(ppCVar1,pCVar2);
     }
-    pCVar1 = (this_00->fields).mainCamera;
+    pCVar2 = *ppCVar1;
     if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+      func_?(TypeInfo__MVInputWrapper);
     }
-    pVVar3 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_get_mousePosition
+    pVVar4 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_get_mousePosition
                         ((Vector3 *)&stack0xffffffe4,(MethodInfo *)0x0);
-    uVar4 = pVVar3->x;
-    pVVar3 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_get_mousePosition
+    uVar5 = pVVar4->x;
+    pVVar4 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_get_mousePosition
                         ((Vector3 *)&stack0xffffffd8,(MethodInfo *)0x0);
-    uVar5 = pVVar3->y;
-    if (pCVar1 != (Camera *)0x0) {
-      pos.y = (float)uVar5;
-      pos.x = (float)uVar4;
+    uVar6 = pVVar4->y;
+    if (pCVar2 != (Camera *)0x0) {
+      pos.y = (float)uVar6;
+      pos.x = (float)uVar5;
       pos.z = 0.0;
-      pRVar6 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenPointToRay_2
-                          ((Ray *)&stack0xffffffcc,pCVar1,pos,(MethodInfo *)0x0);
-      uVar7 = (pRVar6->m_Direction).z;
-      uVar8 = (pRVar6->m_Origin).x;
-      uVar9 = (pRVar6->m_Origin).y;
-      uVar10 = (pRVar6->m_Origin).z;
-      ray.m_Origin.z = (float)uVar10;
-      ray.m_Origin.y = (float)uVar9;
-      ray.m_Origin.x = (float)uVar8;
-      uVar11 = (pRVar6->m_Direction).x;
-      uVar12 = (pRVar6->m_Direction).y;
-      ray.m_Direction.y = (float)uVar12;
-      ray.m_Direction.x = (float)uVar11;
-      ray.m_Direction.z = (float)uVar7;
-      bVar2 = WorldEditorDrawPlane::WorldEditorDrawPlane_RayCast
+      pRVar7 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenPointToRay_2
+                          ((Ray *)&stack0xffffffcc,pCVar2,pos,(MethodInfo *)0x0);
+      uVar8 = (pRVar7->m_Direction).z;
+      uVar9 = (pRVar7->m_Origin).x;
+      uVar10 = (pRVar7->m_Origin).y;
+      uVar11 = (pRVar7->m_Origin).z;
+      ray.m_Origin.z = (float)uVar11;
+      ray.m_Origin.y = (float)uVar10;
+      ray.m_Origin.x = (float)uVar9;
+      uVar12 = (pRVar7->m_Direction).x;
+      uVar13 = (pRVar7->m_Direction).y;
+      ray.m_Direction.y = (float)uVar13;
+      ray.m_Direction.x = (float)uVar12;
+      ray.m_Direction.z = (float)uVar8;
+      bVar3 = WorldEditorDrawPlane::WorldEditorDrawPlane_RayCast
                          (this_00,ray,hit,0,(MethodInfo *)0x0);
-      return bVar2;
+      return bVar3;
     }
   }
-  func_?();
-  func_?();
-  pcVar13 = (code *)swi(3);
-  bVar2 = (*pcVar13)();
-  return bVar2;
+  uVar14 = func_?(&stack0xffffffcc);
+  func_?(uVar14);
+  pcVar15 = (code *)swi(3);
+  bVar3 = (*pcVar15)();
+  return bVar3;
 }
 
 
@@ -449,8 +444,7 @@ void Assembly-CSharp.dll::DrawPlaneControllerUUI::DrawPlaneControllerUUI_ToggleD
     pWVar1 = (this->fields).worldEditorDrawPlane;
     if (pWVar1 != (WorldEditorDrawPlane *)0x0) {
       WorldEditorDrawPlane::WorldEditorDrawPlane_set_Active
-                ((this->fields).worldEditorDrawPlane,(pWVar1->fields).isActive == 0,
-                 (MethodInfo *)0x0);
+                (pWVar1,(pWVar1->fields).isActive == 0,(MethodInfo *)0x0);
       return;
     }
   }
@@ -573,7 +567,7 @@ code_?:
     axis.x = (float)uVar5;
     axis.z = fVar4;
     pQVar8 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
-                        ((Quaternion *)&stack0xffffffb0,fVar7,axis,(MethodInfo *)0x0);
+                        ((Quaternion *)&stack0xffffffd8,fVar7,axis,(MethodInfo *)0x0);
     if (pTVar1 == (Transform *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
               (pTVar1,*pQVar8,(MethodInfo *)0x0);
@@ -614,14 +608,14 @@ code_?:
        (pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                             (this_01,(MethodInfo *)0x0), pTVar1 != (Transform *)0x0)) {
       pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                          ((Vector3 *)&stack0xffffffd8,pTVar1,(MethodInfo *)0x0);
-      fVar4 = pVVar10->x;
-      fVar7 = pVVar10->y;
-      fVar11 = pVVar10->z;
+                          ((Vector3 *)&stack0xffffffe8,pTVar1,(MethodInfo *)0x0);
+      fVar11 = pVVar10->x;
+      fVar4 = pVVar10->y;
+      fVar7 = pVVar10->z;
 code_?:
-      pos.y = fVar7;
-      pos.x = fVar4;
-      pos.z = fVar11;
+      pos.y = fVar4;
+      pos.x = fVar11;
+      pos.z = fVar7;
       WorldEditorDrawPlane::WorldEditorDrawPlane_SetToGridAlignedPos(this_00,pos,(MethodInfo *)0x0);
       WorldEditorDrawPlane::WorldEditorDrawPlane_UpdateEditorPlanePosition
                 (this_00,(MethodInfo *)0x0);
@@ -641,36 +635,31 @@ code_?:
                             ((Component *)this_02,(MethodInfo *)0x0), pTVar1 != (Transform *)0x0))
     {
       pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
-                          ((Vector3 *)&stack0xffffffc8,pTVar1,(MethodInfo *)0x0);
-      uVar12 = pVVar10->x;
-      uVar13 = pVVar10->y;
+                          ((Vector3 *)&stack0xffffffdc,pTVar1,(MethodInfo *)0x0);
+      uVar12 = pVVar10->y;
       fVar4 = _UNK_?;
       if (_UNK_? < (float)uVar12) {
         fVar4 = _UNK_?;
       }
       fVar7 = _UNK_?;
-      if (_UNK_? < (float)uVar13) {
+      if (pVVar10->z <= 0.0) {
         fVar7 = _UNK_?;
       }
-      fVar11 = _UNK_?;
-      if (pVVar10->z <= 0.0) {
-        fVar11 = _UNK_?;
-      }
-      pSVar14 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
+      pSVar13 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                           ((MethodInfo *)0x0);
-      if (pSVar14 != (SpawnRoleDataMediator *)0x0) {
+      if (pSVar13 != (SpawnRoleDataMediator *)0x0) {
         pVVar10 = Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::
                   SpawnRoleVariableTypes::SpawnRoleVariable`1[UnityEngine::Vector3]::
                   SpawnRoleVariable_1_UnityEngine_Vector3__op_Implicit
-                            ((Vector3 *)&stack0xffffffc8,
-                             (SpawnRoleVariable_1_UnityEngine_Vector3_ *)(pSVar14->fields).position,
+                            ((Vector3 *)&stack0xffffffdc,
+                             (SpawnRoleVariable_1_UnityEngine_Vector3_ *)(pSVar13->fields).position,
                              MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>__op_Implicit_MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>_
                             );
-        uVar15 = pVVar10->x;
-        uVar16 = pVVar10->y;
-        fVar4 = fVar4 + (float)uVar15;
-        fVar7 = fVar7 + (float)uVar16;
-        fVar11 = fVar11 + pVVar10->z;
+        uVar14 = pVVar10->x;
+        uVar15 = pVVar10->y;
+        fVar11 = (float)uVar14 + (float)&stack0xffffffdc;
+        fVar4 = (float)uVar15 + fVar4;
+        fVar7 = pVVar10->z + fVar7;
         goto code_?;
       }
     }
@@ -678,8 +667,8 @@ code_?:
 code_?:
   func_?();
   func_?();
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 

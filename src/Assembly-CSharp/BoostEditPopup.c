@@ -19,53 +19,51 @@ void Assembly-CSharp.dll::BoostEditPopup::BoostEditPopup_CreateBoostImage
     cRam_? = '\x01';
   }
   index = 0;
-  pLVar1 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
-           (this->fields).boosterList;
+  this_00 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+            (this->fields).boosterList;
   do {
-    if (pLVar1 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0) {
+    if (this_00 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0) {
 code_?:
       func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
       return;
     }
-    if ((pLVar1->fields)._size <= index) {
+    if ((this_00->fields)._size <= index) {
       return;
     }
-    pLVar1 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
-             (this->fields).boosterList;
-    if (pLVar1 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
+    if (this_00 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
     goto code_?;
-    XVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
+    XVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
             XmlSchemaObjectTable+XmlSchemaObjectEntry]::
             List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
-                      (pLVar1,index,
+                      (this_00,index,
                        MethodInfo__System__Collections__Generic__List<BoostEditPopup::BoosterDef>__get_Item_int_
                       );
     if (boost == (Boost *)0x0) goto code_?;
-    pLVar1 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
-             (this->fields).boosterList;
-    if (XVar3.qname == (XmlQualifiedName *)(boost->fields)._Type_k__BackingField) {
-      if (pLVar1 != (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0) {
-        XVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
+    this_00 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+              (this->fields).boosterList;
+    if (XVar2.qname == (XmlQualifiedName *)(boost->fields)._Type_k__BackingField) {
+      if (this_00 != (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0) {
+        XVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
                 XmlSchemaObjectTable+XmlSchemaObjectEntry]::
                 List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
-                          (pLVar1,index,
+                          (this_00,index,
                            MethodInfo__System__Collections__Generic__List<BoostEditPopup::BoosterDef>__get_Item_int_
                           );
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
-        this_00 = (GameObject *)
+        this_01 = (GameObject *)
                   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                            ((Object *)XVar3.xso,
+                            ((Object *)XVar2.xso,
                              UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
                             );
-        if ((this_00 != (GameObject *)0x0) &&
-           (this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                                (this_00,(MethodInfo *)0x0), this_01 != (Transform *)0x0)) {
+        if ((this_01 != (GameObject *)0x0) &&
+           (this_02 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                                (this_01,(MethodInfo *)0x0), this_02 != (Transform *)0x0)) {
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                    (this_01,(Transform *)(this->fields).boostImageParent,0,(MethodInfo *)0x0);
+                    (this_02,(Transform *)(this->fields).boostImageParent,0,(MethodInfo *)0x0);
           return;
         }
       }
@@ -92,14 +90,18 @@ void Assembly-CSharp.dll::BoostEditPopup::BoostEditPopup_Initialize
                    );
     cRam_? = '\x01';
   }
-  (this->fields).boostSetting = boostSetting;
-  func_?(&(this->fields).boostSetting,boostSetting);
-  (this->fields).settingChangedCallback = settingChangedCallback;
-  func_?(&(this->fields).settingChangedCallback,settingChangedCallback);
-  (this->fields).priceChangedCallback = priceChangedCallback;
-  func_?(&(this->fields).priceChangedCallback,priceChangedCallback);
-  (this->fields).submitDataCallback = submitDataCallback;
-  func_?(&(this->fields).submitDataCallback,submitDataCallback);
+  ppGVar1 = &(this->fields).boostSetting;
+  *ppGVar1 = boostSetting;
+  func_?(ppGVar1,boostSetting);
+  ppUVar2 = &(this->fields).settingChangedCallback;
+  *ppUVar2 = settingChangedCallback;
+  func_?(ppUVar2,settingChangedCallback);
+  ppUVar3 = &(this->fields).priceChangedCallback;
+  *ppUVar3 = priceChangedCallback;
+  func_?(ppUVar3,priceChangedCallback);
+  ppUVar4 = &(this->fields).submitDataCallback;
+  *ppUVar4 = submitDataCallback;
+  func_?(ppUVar4,submitDataCallback);
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__List<BoostEditPopup::BoosterDef>__get_Count__
@@ -113,25 +115,25 @@ void Assembly-CSharp.dll::BoostEditPopup::BoostEditPopup_Initialize
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  pLVar1 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+  pLVar5 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
            (this->fields).boosterList;
   index = 0;
   do {
-    if (pLVar1 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0) {
+    if (pLVar5 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0) {
 code_?:
       func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
       return;
     }
-    if ((pLVar1->fields)._size <= index) {
+    if ((pLVar5->fields)._size <= index) {
       if (boost != (Boost *)0x0) {
 code_?:
-        pTVar3 = (this->fields).headerText;
-        if (((((pTVar3 != (Text *)0x0) &&
-              ((*(code *)(pTVar3->klass->vtable).set_text.method)
-                         (pTVar3,(boost->fields)._EditTitle_k__BackingField,
-                          (pTVar3->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr),
+        pTVar7 = (this->fields).headerText;
+        if (((((pTVar7 != (Text *)0x0) &&
+              ((*(code *)(pTVar7->klass->vtable).set_text.method)
+                         (pTVar7,(boost->fields)._EditTitle_k__BackingField,
+                          (pTVar7->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr),
               boostSetting != (GameBoosterSettingWithGoldSetting *)0x0)) &&
              (this_02 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes
                         ::GameBoosterSettings::GameBoosterSettingTypes::
@@ -139,38 +141,38 @@ code_?:
                         GameBoosterSettingWithGoldSetting_get_GoldPrice
                                   (boostSetting,(MethodInfo *)0x0),
              this_02 != (KogamaSettingNumericBase_1_System_Int32_ *)0x0)) &&
-            ((pKVar4 = (this_02->fields).KogamaSettingNumeric,
-             pKVar4 != (KogamaSettingNumeric_1_System_Int32_ *)0x0 &&
-             (pRVar5 = (pKVar4->fields).RangeValidator,
-             pRVar5 != (RangeValidator_1_System_Int32_ *)0x0)))) &&
-           (pSVar6 = (this->fields).priceSlider, pSVar6 != (Slider *)0x0)) {
+            ((pKVar8 = (this_02->fields).KogamaSettingNumeric,
+             pKVar8 != (KogamaSettingNumeric_1_System_Int32_ *)0x0 &&
+             (pRVar9 = (pKVar8->fields).RangeValidator,
+             pRVar9 != (RangeValidator_1_System_Int32_ *)0x0)))) &&
+           (pSVar10 = (this->fields).priceSlider, pSVar10 != (Slider *)0x0)) {
           UnityEngine.UI.dll::UnityEngine::UI::Slider::Slider_set_maxValue
-                    (pSVar6,(float)(pRVar5->fields).max,(MethodInfo *)0x0);
-          pKVar4 = (this_02->fields).KogamaSettingNumeric;
-          if (((pKVar4 != (KogamaSettingNumeric_1_System_Int32_ *)0x0) &&
-              (pRVar5 = (pKVar4->fields).RangeValidator,
-              pRVar5 != (RangeValidator_1_System_Int32_ *)0x0)) &&
-             (pSVar6 = (this->fields).priceSlider, pSVar6 != (Slider *)0x0)) {
+                    (pSVar10,(float)(pRVar9->fields).max,(MethodInfo *)0x0);
+          pKVar8 = (this_02->fields).KogamaSettingNumeric;
+          if (((pKVar8 != (KogamaSettingNumeric_1_System_Int32_ *)0x0) &&
+              (pRVar9 = (pKVar8->fields).RangeValidator,
+              pRVar9 != (RangeValidator_1_System_Int32_ *)0x0)) &&
+             (pSVar10 = (this->fields).priceSlider, pSVar10 != (Slider *)0x0)) {
             UnityEngine.UI.dll::UnityEngine::UI::Slider::Slider_set_minValue
-                      (pSVar6,(float)(pRVar5->fields).min,(MethodInfo *)0x0);
-            pSVar6 = (this->fields).priceSlider;
-            iVar7 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
-                    KogamaSettingTypes::KogamaSettingNumericBase`1[System::Int32]::
-                    KogamaSettingNumericBase_1_System_Int32__get_NumericValue
-                              (this_02,
-                               MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>__get_NumericValue__
-                              );
-            if (pSVar6 != (Slider *)0x0) {
-              (*(code *)(pSVar6->klass->vtable).set_value.method)
-                        (pSVar6,(float)iVar7,(pSVar6->klass->vtable).SetValueWithoutNotify.methodPtr
-                        );
-              iVar7 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
-                      KogamaSettingTypes::KogamaSettingNumericBase`1[System::Int32]::
-                      KogamaSettingNumericBase_1_System_Int32__get_NumericValue
-                                (this_02,
-                                 MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>__get_NumericValue__
-                                );
-              (this->fields).originalPrice = iVar7;
+                      (pSVar10,(float)(pRVar9->fields).min,(MethodInfo *)0x0);
+            pSVar10 = (this->fields).priceSlider;
+            iVar11 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
+                     KogamaSettingTypes::KogamaSettingNumericBase`1[System::Int32]::
+                     KogamaSettingNumericBase_1_System_Int32__get_NumericValue
+                               (this_02,
+                                MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>__get_NumericValue__
+                               );
+            if (pSVar10 != (Slider *)0x0) {
+              (*(code *)(pSVar10->klass->vtable).set_value.method)
+                        (pSVar10,(float)iVar11,
+                         (pSVar10->klass->vtable).SetValueWithoutNotify.methodPtr);
+              iVar11 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
+                       KogamaSettingTypes::KogamaSettingNumericBase`1[System::Int32]::
+                       KogamaSettingNumericBase_1_System_Int32__get_NumericValue
+                                 (this_02,
+                                  MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>__get_NumericValue__
+                                 );
+              (this->fields).originalPrice = iVar11;
               (this->fields).isInitialized = 1;
               return;
             }
@@ -179,33 +181,33 @@ code_?:
       }
       goto code_?;
     }
-    pLVar1 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+    pLVar5 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
              (this->fields).boosterList;
-    if (pLVar1 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
+    if (pLVar5 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
     goto code_?;
-    XVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
-            XmlSchemaObjectTable+XmlSchemaObjectEntry]::
-            List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
-                      (pLVar1,index,
-                       MethodInfo__System__Collections__Generic__List<BoostEditPopup::BoosterDef>__get_Item_int_
-                      );
+    XVar12 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
+             XmlSchemaObjectTable+XmlSchemaObjectEntry]::
+             List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
+                       (pLVar5,index,
+                        MethodInfo__System__Collections__Generic__List<BoostEditPopup::BoosterDef>__get_Item_int_
+                       );
     if (boost == (Boost *)0x0) goto code_?;
-    pLVar1 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+    pLVar5 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
              (this->fields).boosterList;
-    if (XVar8.qname == (XmlQualifiedName *)(boost->fields)._Type_k__BackingField) {
-      if (pLVar1 != (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0) {
-        XVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
-                XmlSchemaObjectTable+XmlSchemaObjectEntry]::
-                List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
-                          (pLVar1,index,
-                           MethodInfo__System__Collections__Generic__List<BoostEditPopup::BoosterDef>__get_Item_int_
-                          );
+    if (XVar12.qname == (XmlQualifiedName *)(boost->fields)._Type_k__BackingField) {
+      if (pLVar5 != (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0) {
+        XVar12 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
+                 XmlSchemaObjectTable+XmlSchemaObjectEntry]::
+                 List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
+                           (pLVar5,index,
+                            MethodInfo__System__Collections__Generic__List<BoostEditPopup::BoosterDef>__get_Item_int_
+                           );
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
         this_00 = (GameObject *)
                   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                            ((Object *)XVar8.xso,
+                            ((Object *)XVar12.xso,
                              UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
                             );
         if ((this_00 != (GameObject *)0x0) &&

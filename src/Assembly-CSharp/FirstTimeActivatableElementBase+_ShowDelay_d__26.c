@@ -21,16 +21,17 @@ bool Assembly-CSharp.dll::FirstTimeActivatableElementBase+<ShowDelay>d__26::
                 func_?(TypeInfo__UnityEngine__WaitForSeconds);
       SubscribableVariable`1[System::Single]::SubscribableVariable_1_System_Single___ctor
                 (this_01,value,(MethodInfo *)0x0);
-      (this->fields).__2__current = (Object *)this_01;
-      func_?(&(this->fields).__2__current,this_01);
+      ppOVar2 = &(this->fields).__2__current;
+      *ppOVar2 = (Object *)this_01;
+      func_?(ppOVar2,this_01);
       (this->fields).__1__state = 1;
       return 1;
     }
 code_?:
     func_?();
-    pcVar2 = (code *)swi(3);
-    bVar3 = (*pcVar2)();
-    return bVar3;
+    pcVar3 = (code *)swi(3);
+    bVar4 = (*pcVar3)();
+    return bVar4;
   }
   if (iVar1 == 1) {
     (this->fields).__1__state = -1;

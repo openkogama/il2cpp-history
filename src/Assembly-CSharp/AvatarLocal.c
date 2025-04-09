@@ -133,41 +133,43 @@ void Assembly-CSharp.dll::AvatarLocal::AvatarLocal_Initialize
   pIVar1 = (IAvatarCameraController *)
            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                      ((Object *)original,method_00);
-  (this->fields).avatarCameraController = pIVar1;
-  func_?(&(this->fields).avatarCameraController);
-  pIVar1 = (this->fields).avatarCameraController;
+  ppIVar2 = &(this->fields).avatarCameraController;
+  *ppIVar2 = pIVar1;
+  func_?(ppIVar2);
+  pIVar1 = *ppIVar2;
   if (pIVar1 == (IAvatarCameraController *)0x0) {
     func_?();
-  }
-  else if ((mvAvatar == (MVAvatar *)0x0) ||
-          (((TypeInfo__MVAvatarLocal->_1).naturalAligment <= (mvAvatar->klass->_1).naturalAligment
-           && ((MVAvatarLocal__Class *)
-               (mvAvatar->klass->_1).typeHierarchy
-               [(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] == TypeInfo__MVAvatarLocal)))) {
-    pIVar2 = pIVar1->klass;
-    uVar3 = 0;
-    uVar4._0_1_ = (pIVar2->_1).rank;
-    uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
-    if (uVar4 != 0) {
-      do {
-        if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
-            (Il2CppClass *)TypeInfo__IAvatarCameraController) {
-          ppMVar5 = &(&(pIVar2->vtable).Initialize)[pIVar2->interfaceOffsets[uVar3].offset].method;
-          goto code_?;
-        }
-        uVar3 = uVar3 + 1;
-      } while (uVar3 < uVar4);
-    }
-    ppMVar5 = (MethodInfo **)func_?(pIVar1,TypeInfo__IAvatarCameraController);
 code_?:
-    (*(code *)*ppMVar5)(pIVar1,mvAvatar);
-    layer = LayerUtil::LayerUtil_GetLayerNumber(LayerFlags__Enum_Hidden,(MethodInfo *)0x0);
-    AvatarLocal_CreateXPParticlesWithLayer(this,0,layer,(MethodInfo *)0x0);
+    func_?(mvAvatar);
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
     return;
   }
-  func_?(mvAvatar);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  if (mvAvatar != (MVAvatar *)0x0) {
+    bVar4 = (TypeInfo__MVAvatarLocal->_1).naturalAligment;
+    if (((mvAvatar->klass->_1).naturalAligment < bVar4) ||
+       ((MVAvatarLocal__Class *)(mvAvatar->klass->_1).typeHierarchy[bVar4 - 1] !=
+        TypeInfo__MVAvatarLocal)) goto code_?;
+  }
+  pIVar5 = pIVar1->klass;
+  uVar6 = 0;
+  uVar7._0_1_ = (pIVar5->_1).rank;
+  uVar7._1_1_ = (pIVar5->_1).minimumAlignment;
+  if (uVar7 != 0) {
+    do {
+      if (pIVar5->interfaceOffsets[uVar6].interfaceType ==
+          (Il2CppClass *)TypeInfo__IAvatarCameraController) {
+        ppMVar8 = &(&(pIVar5->vtable).Initialize)[pIVar5->interfaceOffsets[uVar6].offset].method;
+        goto code_?;
+      }
+      uVar6 = uVar6 + 1;
+    } while (uVar6 < uVar7);
+  }
+  ppMVar8 = (MethodInfo **)func_?(pIVar1,TypeInfo__IAvatarCameraController);
+code_?:
+  (*(code *)*ppMVar8)(pIVar1,mvAvatar);
+  layer = LayerUtil::LayerUtil_GetLayerNumber(LayerFlags__Enum_Hidden,(MethodInfo *)0x0);
+  AvatarLocal_CreateXPParticlesWithLayer(this,0,layer,(MethodInfo *)0x0);
   return;
 }
 
@@ -182,36 +184,36 @@ void Assembly-CSharp.dll::AvatarLocal::AvatarLocal_OnDestroy(AvatarLocal *this,M
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  pCVar1 = (Component *)(this->fields).avatarCameraController;
-  if (pCVar1 == (Component *)0x0) {
+  ppIVar1 = &(this->fields).avatarCameraController;
+  pCVar2 = (Component *)*ppIVar1;
+  if (pCVar2 == (Component *)0x0) {
     this_00 = (Component *)0x0;
   }
   else {
-    if (((pCVar1->klass->_1).naturalAligment <
-         (TypeInfo__UnityEngine__MonoBehaviour->_1).naturalAligment) ||
-       ((pCVar1->klass->_1).typeHierarchy
-        [(TypeInfo__UnityEngine__MonoBehaviour->_1).naturalAligment - 1] !=
+    bVar3 = (TypeInfo__UnityEngine__MonoBehaviour->_1).naturalAligment;
+    if (((pCVar2->klass->_1).naturalAligment < bVar3) ||
+       ((pCVar2->klass->_1).typeHierarchy[bVar3 - 1] !=
         (Il2CppClass *)TypeInfo__UnityEngine__MonoBehaviour)) {
-      bVar2 = false;
+      bVar4 = false;
     }
     else {
-      bVar2 = true;
+      bVar4 = true;
     }
     this_00 = (Component *)0x0;
-    if (bVar2) {
-      this_00 = pCVar1;
+    if (bVar4) {
+      this_00 = pCVar2;
     }
   }
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+  bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                     ((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar3 != 0) {
+  if (bVar5 != 0) {
     if (this_00 == (Component *)0x0) {
       func_?();
-      pcVar4 = (code *)swi(3);
-      (*pcVar4)();
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
       return;
     }
     obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -221,7 +223,7 @@ void Assembly-CSharp.dll::AvatarLocal::AvatarLocal_OnDestroy(AvatarLocal *this,M
     }
     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
               ((Object_1 *)obj,(MethodInfo *)0x0);
-    (this->fields).avatarCameraController = (IAvatarCameraController *)0x0;
+    *ppIVar1 = (IAvatarCameraController *)0x0;
     func_?();
   }
   return;

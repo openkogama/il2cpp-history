@@ -127,14 +127,15 @@ void Assembly-CSharp.dll::UploadGameScreenshotHandler::
       pOVar5 = (Object__Class *)
                TM::TM__(StringLiteral_Screenshot_Successfully_uploaded,(MethodInfo *)0x0);
       if (value != (Object *)0x0) {
-        value[1].klass = pOVar5;
-        func_?(value + 1,pOVar5);
+        pOVar6 = value + 1;
+        pOVar6->klass = pOVar5;
+        func_?(pOVar6,pOVar5);
         if (args != (ScreenshotUploadedEventArgs *)0x0) {
           if ((args->fields).Uploaded == 0) {
             pOVar5 = (Object__Class *)
                      TM::TM__(StringLiteral_Failed_to_upload_screenshot,(MethodInfo *)0x0);
-            value[1].klass = pOVar5;
-            func_?(value + 1,pOVar5);
+            pOVar6->klass = pOVar5;
+            func_?(pOVar6,pOVar5);
           }
           pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                              ((Component *)this,(MethodInfo *)0x0);
@@ -163,8 +164,8 @@ void Assembly-CSharp.dll::UploadGameScreenshotHandler::
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

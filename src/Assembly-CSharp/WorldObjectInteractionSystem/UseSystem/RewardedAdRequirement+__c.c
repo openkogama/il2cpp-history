@@ -24,7 +24,7 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
         if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
             (Il2CppClass *)TypeInfo__Assets__Scripts__AdIntegration__IAdManager) {
           ppMVar5 = &(&(pIVar1->klass->vtable).get_RewardedAdNotAvailableText)
-                     [pIVar1->klass->interfaceOffsets[uVar3].offset].method;
+                     [pIVar2->interfaceOffsets[uVar3].offset].method;
           goto code_?;
         }
         uVar3 = uVar3 + 1;
@@ -44,8 +44,8 @@ code_?:
         do {
           if (pIVar8->interfaceOffsets[uVar4].interfaceType ==
               (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IModalPopupCreator) {
-            ppMVar5 = &(&(x->klass->vtable).Create_3)[x->klass->interfaceOffsets[uVar4].offset].
-                       method;
+            ppMVar5 = &(&(x->klass->vtable).Create_3)[pIVar8->interfaceOffsets[uVar4].offset].method
+            ;
             goto code_?;
           }
           uVar4 = uVar4 + 1;

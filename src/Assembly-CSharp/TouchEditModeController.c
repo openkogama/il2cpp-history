@@ -13,28 +13,29 @@ void Assembly-CSharp.dll::TouchEditModeController::TouchEditModeController_Awake
     func_?();
     cRam_? = '\x01';
   }
+  ppCVar1 = &(this->fields).chatController;
   this_00 = (this->fields).stackBottom;
-  pCVar1 = (this->fields).chatController;
+  pCVar2 = *ppCVar1;
   if (this_00 != (GameObject *)0x0) {
     parent = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                        (this_00,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pCVar1 = (ChatControllerUGUI *)
+    pCVar2 = (ChatControllerUGUI *)
              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
-                       ((Object *)pCVar1,parent,0,
+                       ((Object *)pCVar2,parent,0,
                         ChatControllerUGUI_MethodInfo__UnityEngine__Object__Instantiate<ChatControllerUGUI>_ChatControllerUGUI__UnityEngine__Transform__bool_
                        );
-    (this->fields).chatController = pCVar1;
-    ppCStack_2 = &(this->fields).chatController;
+    *ppCVar1 = pCVar2;
+    ppCStack_3 = ppCVar1;
     func_?();
     return;
   }
-  uVar3 = func_?(&puStack_4);
-  func_?(uVar3);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  uVar4 = func_?(&puStack_5);
+  func_?(uVar4);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -113,16 +114,17 @@ void Assembly-CSharp.dll::TouchEditModeController::TouchEditModeController_Delet
   if (this_00 != (EditorStateMachine *)0x0) {
     EditorStateMachine::EditorStateMachine_DeSelectAll(this_00,(MethodInfo *)0x0);
     if (value != (Object *)0x0) {
-      value[1].klass = (Object__Class *)::StringLiteral__;
-      func_?(value + 1,::StringLiteral__);
-      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-      if (pMVar1 != (MVWorldObjectClientManager *)0x0) {
+      pOVar1 = value + 1;
+      pOVar1->klass = (Object__Class *)::StringLiteral__;
+      func_?(pOVar1,::StringLiteral__);
+      this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+      if (this_01 != (MVWorldObjectClientManager *)0x0) {
         pMVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                           (pMVar1,woid,(MethodInfo *)0x0);
-        pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+                           (this_01,woid,(MethodInfo *)0x0);
+        MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
         if (pMVar2 != (MVWorldObject *)0x0) {
           cVar3 = (*(code *)pMVar2->klass[2]._0.declaringType)
-                            (pMVar2,pMVar1,value + 1,pMVar2->klass[2]._0.parent);
+                            (pMVar2,pMVar2->klass[2]._0.parent,pOVar1);
           if (cVar3 != '\0') {
             pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                                ((Component *)this,(MethodInfo *)0x0);
@@ -143,7 +145,8 @@ void Assembly-CSharp.dll::TouchEditModeController::TouchEditModeController_Delet
                          MethodInfo__TouchEditModeController____c___DeleteWoid_b__64_1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                          ,(MethodInfo *)0x0);
               TypeInfo__TouchEditModeController____c->static_fields->__9__64_1 = callbackFunction;
-              func_?(&TypeInfo__TouchEditModeController____c->static_fields->__9__64_1);
+              func_?(&TypeInfo__TouchEditModeController____c->static_fields->__9__64_1,
+                              callbackFunction);
             }
             if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor
                 == 0) {
@@ -209,8 +212,8 @@ void Assembly-CSharp.dll::TouchEditModeController::TouchEditModeController_Disab
       if (pGVar1 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                   (pGVar1,0,(MethodInfo *)0x0);
-        if ((this->fields).editModeChange != (Action_1_EditModeChangeArgs_ *)0x0) {
-          pAVar2 = (this->fields).editModeChange;
+        pAVar2 = (this->fields).editModeChange;
+        if (pAVar2 != (Action_1_EditModeChangeArgs_ *)0x0) {
           pvStack3 = (pAVar2->fields)._._.method;
           pvStack4 = (pAVar2->fields)._._.method_code;
           (*(pAVar2->fields)._._.invoke_impl)();
@@ -246,8 +249,9 @@ void Assembly-CSharp.dll::TouchEditModeController::TouchEditModeController_Enter
   value[1].klass = (Object__Class *)0x0;
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
             ((MonoBehaviour *)this,(IEnumerator *)value,(MethodInfo *)0x0);
-  if ((this->fields).editModeChange != (Action_1_EditModeChangeArgs_ *)0x0) {
-    (*(((this->fields).editModeChange)->fields)._._.invoke_impl)();
+  pAVar2 = (this->fields).editModeChange;
+  if (pAVar2 != (Action_1_EditModeChangeArgs_ *)0x0) {
+    (*(pAVar2->fields)._._.invoke_impl)();
   }
   (this->fields).enterPlayModeOnceGuard = 0;
   return;
@@ -397,9 +401,9 @@ void Assembly-CSharp.dll::TouchEditModeController::TouchEditModeController_Initi
     cRam_? = '\x01';
   }
   ModeControllerBase::ModeControllerBase_Initialize((ModeControllerBase *)this,(MethodInfo *)0x0);
-  this_09 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-  if (this_09 != (MainCameraManager *)0x0) {
-    MainCameraManager::MainCameraManager_set_IsLogicRendered(this_09,1,(MethodInfo *)0x0);
+  this_08 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+  if (this_08 != (MainCameraManager *)0x0) {
+    MainCameraManager::MainCameraManager_set_IsLogicRendered(this_08,1,(MethodInfo *)0x0);
     pDVar1 = (this->fields).drawPlaneController;
     if (pDVar1 != (DrawPlaneControllerUUI *)0x0) {
       DrawPlaneControllerUUI::DrawPlaneControllerUUI_Initialize(pDVar1,(MethodInfo *)0x0);
@@ -428,77 +432,74 @@ void Assembly-CSharp.dll::TouchEditModeController::TouchEditModeController_Initi
       object = TypeInfo__EditorStateMachine;
       pCVar4 = (this->fields).contextMenuController;
       pGVar5 = (this->fields).gizmoController;
-      this_10 = (EditorStateMachine *)func_?();
+      this_09 = (EditorStateMachine *)func_?();
       EditorStateMachine::EditorStateMachine__ctor_2
-                (this_10,(GameObject *)pCVar4,pCVar4,pGVar5,(MethodInfo *)0x0);
-      (object->_1).native_size = (int32_t)this_10;
+                (this_09,(GameObject *)pCVar4,pCVar4,pGVar5,(MethodInfo *)0x0);
+      piVar6 = &(object->_1).native_size;
+      *piVar6 = (int32_t)this_09;
       func_?();
-      pIVar6 = (object->_0).declaringType;
-      if (pIVar6 != (Il2CppClass *)0x0) {
+      pIVar7 = (object->_0).declaringType;
+      if (pIVar7 != (Il2CppClass *)0x0) {
         EditorWorldObjectCreation::EditorWorldObjectCreation_Initialize
-                  ((EditorWorldObjectCreation *)pIVar6,
-                   (EditorStateMachine *)(object->_1).native_size,(MethodInfo *)0x0);
-        iVar7 = (object->_1).native_size;
-        if ((iVar7 != 0) &&
+                  ((EditorWorldObjectCreation *)pIVar7,(EditorStateMachine *)*piVar6,
+                   (MethodInfo *)0x0);
+        if ((*piVar6 != 0) &&
            (this_00 = (MaterialsController *)(object->_0).fields,
            this_00 != (MaterialsController *)0x0)) {
           MaterialsController::MaterialsController_Initialize
-                    (this_00,*(CubeModelingStateMachine **)(iVar7 + 0x38),(MethodInfo *)0x0);
+                    (this_00,*(CubeModelingStateMachine **)(*piVar6 + 0x38),(MethodInfo *)0x0);
           pFVar8 = (object->_0).fields;
-          pIVar6 = (object->_0).parent;
+          pIVar7 = (object->_0).parent;
           if (pFVar8 != (FieldInfo *)0x0) {
-            pCVar9 = (Component *)
+            this_10 = (Component *)
                       (**(code **)(pFVar8->name + 0xf8))
                                 (pFVar8,*(undefined4 *)(pFVar8->name + 0xfc));
-            if (pCVar9 != (Component *)0x0) {
-              pGVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                  (pCVar9,(MethodInfo *)0x0);
-              if (pIVar6 != (Il2CppClass *)0x0) {
+            if (this_10 != (Component *)0x0) {
+              pGVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                  (this_10,(MethodInfo *)0x0);
+              if (pIVar7 != (Il2CppClass *)0x0) {
                 UIStack::UIStack_Push
-                          ((UIStack *)pIVar6,pGVar10,UIPushOption__Enum_None,(UnityAction *)0x0,
+                          ((UIStack *)pIVar7,pGVar9,UIPushOption__Enum_None,(UnityAction *)0x0,
                            UIGroupFlags__Enum_MainUI,(MethodInfo *)0x0);
-                iVar7 = (object->_1).native_size;
-                if ((iVar7 != 0) &&
-                   (this_01 = *(CubeModelingStateMachine **)(iVar7 + 0x38),
+                if ((*piVar6 != 0) &&
+                   (this_01 = *(CubeModelingStateMachine **)(*piVar6 + 0x38),
                    this_01 != (CubeModelingStateMachine *)0x0)) {
                   CubeModelingStateMachine::CubeModelingStateMachine_set_CurrentMaterialId
                             (this_01,0x15,(MethodInfo *)0x0);
-                  pGVar10 = (GameObject *)(object->_0).typeMetadataHandle;
+                  pGVar9 = (GameObject *)(object->_0).typeMetadataHandle;
                   original = (object->_0).generic_class;
-                  if (pGVar10 != (GameObject *)0x0) {
+                  if (pGVar9 != (GameObject *)0x0) {
                     pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                              GameObject_get_transform(pGVar10,(MethodInfo *)0x0);
-                    pOVar11 = UnityEngine.CoreModule.dll::UnityEngine::Object::
+                              GameObject_get_transform(pGVar9,(MethodInfo *)0x0);
+                    pOVar10 = UnityEngine.CoreModule.dll::UnityEngine::Object::
                               Object_1_Instantiate_6
                                         ((Object *)original,pTVar3,0,
                                          InEditMenu_MethodInfo__UnityEngine__Object__Instantiate<InEditMenu>_InEditMenu__UnityEngine__Transform__bool_
                                         );
-                    (object->_1).element_size = (uint32_t)pOVar11;
-                    func_?(&(object->_1).element_size,pOVar11);
-                    pCVar9 = (Component *)(object->_1).element_size;
-                    if (pCVar9 != (Component *)0x0) {
-                      pGVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                                Component_get_gameObject(pCVar9,(MethodInfo *)0x0);
-                      if (pGVar10 != (GameObject *)0x0) {
+                    puVar11 = &(object->_1).element_size;
+                    *puVar11 = (uint32_t)pOVar10;
+                    func_?(puVar11,pOVar10);
+                    if ((Component *)*puVar11 != (Component *)0x0) {
+                      pGVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                Component_get_gameObject((Component *)*puVar11,(MethodInfo *)0x0);
+                      if (pGVar9 != (GameObject *)0x0) {
                         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                                  (pGVar10,0,(MethodInfo *)0x0);
-                        this_02 = (InEditMenu *)(object->_1).element_size;
-                        if (this_02 != (InEditMenu *)0x0) {
-                          InEditMenu::InEditMenu_Initialize(this_02,(MethodInfo *)0x0);
-                          this_03 = (ChatControllerUGUI *)(object->_0).interopData;
-                          if (this_03 != (ChatControllerUGUI *)0x0) {
+                                  (pGVar9,0,(MethodInfo *)0x0);
+                        if ((InEditMenu *)*puVar11 != (InEditMenu *)0x0) {
+                          InEditMenu::InEditMenu_Initialize((InEditMenu *)*puVar11,(MethodInfo *)0x0)
+                          ;
+                          this_02 = (ChatControllerUGUI *)(object->_0).interopData;
+                          if (this_02 != (ChatControllerUGUI *)0x0) {
                             ChatControllerUGUI::ChatControllerUGUI_Initialize
-                                      (this_03,(MethodInfo *)0x0);
+                                      (this_02,(MethodInfo *)0x0);
                             pCVar4 = (ContextMenuController *)(object->_0).events;
                             if (pCVar4 != (ContextMenuController *)0x0) {
                               ContextMenuController::ContextMenuController_Initialize
-                                        (pCVar4,(EditorStateMachine *)(object->_1).native_size,
-                                         (MethodInfo *)0x0);
+                                        (pCVar4,(EditorStateMachine *)*piVar6,(MethodInfo *)0x0);
                               pGVar5 = (GizmoController *)(object->_0).properties;
                               if (pGVar5 != (GizmoController *)0x0) {
                                 GizmoController::GizmoController_Initialize
-                                          (pGVar5,(EditorStateMachine *)(object->_1).native_size,
-                                           (MethodInfo *)0x0);
+                                          (pGVar5,(EditorStateMachine *)*piVar6,(MethodInfo *)0x0);
                                 this_11 = (TouchInputMap *)func_?(TypeInfo__TouchInputMap);
                                 TouchInputMap::TouchInputMap__ctor(this_11,(MethodInfo *)0x0);
                                 if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0)
@@ -506,23 +507,23 @@ void Assembly-CSharp.dll::TouchEditModeController::TouchEditModeController_Initi
                                   func_?();
                                 }
                                 func_?();
-                                this_04 = (FSMEntity *)(object->_1).native_size;
-                                pOVar11 = (Object *)func_?();
-                                if (this_04 != (FSMEntity *)0x0) {
-                                  FSMEntity::FSMEntity_set_Event(this_04,pOVar11,(MethodInfo *)0x0);
-                                  this_05 = (EditModeClientShopController *)(object->_0).nestedTypes
+                                this_03 = (FSMEntity *)*piVar6;
+                                pOVar10 = (Object *)func_?();
+                                if (this_03 != (FSMEntity *)0x0) {
+                                  FSMEntity::FSMEntity_set_Event(this_03,pOVar10,(MethodInfo *)0x0);
+                                  this_04 = (EditModeClientShopController *)(object->_0).nestedTypes
                                   ;
-                                  if (this_05 != (EditModeClientShopController *)0x0) {
+                                  if (this_04 != (EditModeClientShopController *)0x0) {
                                     EditModeClientShopController::
                                     EditModeClientShopController_Initialize
-                                              (this_05,(EditModeRepositoryController *)
+                                              (this_04,(EditModeRepositoryController *)
                                                        (object->_0).methods,(MethodInfo *)0x0);
-                                    this_06 = (PlayerInventoryController *)
+                                    this_05 = (PlayerInventoryController *)
                                               (object->_0).implementedInterfaces;
-                                    if (this_06 != (PlayerInventoryController *)0x0) {
+                                    if (this_05 != (PlayerInventoryController *)0x0) {
                                       PlayerInventoryController::
                                       PlayerInventoryController_Initialize
-                                                (this_06,(MethodInfo *)0x0);
+                                                (this_05,(MethodInfo *)0x0);
                                       piVar12 = (int *)(object->_1).actualSize;
                                       if (piVar12 != (int *)0x0) {
                                         (**(code **)(*piVar12 + 0x148))
@@ -537,52 +538,51 @@ void Assembly-CSharp.dll::TouchEditModeController::TouchEditModeController_Initi
                                             (*(code *)(pMVar13->klass->vtable).PlayModeInitialize.
                                                       method)(pMVar13,(pMVar13->klass->vtable).
                                                                       SetupTierInventory.methodPtr);
-                                            this_07 = (GoldPurchasedTracker *)
+                                            this_06 = (GoldPurchasedTracker *)
                                                       (object->_1).cctor_finished_or_no_cctor;
-                                            if (this_07 != (GoldPurchasedTracker *)0x0) {
+                                            if (this_06 != (GoldPurchasedTracker *)0x0) {
                                               GoldPurchasedTracker::GoldPurchasedTracker_Initialize
-                                                        (this_07,(MethodInfo *)0x0);
-                                              pGVar10 = (GameObject *)
+                                                        (this_06,(MethodInfo *)0x0);
+                                              pOVar10 = (Object *)object->static_fields;
+                                              pGVar9 = (GameObject *)
                                                         (object->_0).typeMetadataHandle;
-                                              pOVar11 = (Object *)object->static_fields;
-                                              if (pGVar10 != (GameObject *)0x0) {
+                                              if (pGVar9 != (GameObject *)0x0) {
                                                 pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::
                                                           GameObject::GameObject_get_transform
-                                                                    (pGVar10,(MethodInfo *)0x0);
-                                                pOVar11 = UnityEngine.CoreModule.dll::UnityEngine::
+                                                                    (pGVar9,(MethodInfo *)0x0);
+                                                pOVar10 = UnityEngine.CoreModule.dll::UnityEngine::
                                                           Object::Object_1_Instantiate_6
-                                                                    (pOVar11,pTVar3,0,
+                                                                    (pOVar10,pTVar3,0,
                                                                                                                                           
                                                   UnityEngine__RectTransform_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::RectTransform>_UnityEngine__RectTransform__UnityEngine__Transform__bool_
                                                   );
                                                 object->static_fields =
-                                                     (EditorStateMachine__StaticFields *)pOVar11;
-                                                func_?(&object->static_fields,pOVar11);
-                                                iVar7 = (object->_1).native_size;
-                                                if ((iVar7 != 0) &&
-                                                   (this_08 = (FirstTimeSetupTerrainEditTutorial *)
+                                                     (EditorStateMachine__StaticFields *)pOVar10;
+                                                func_?(&object->static_fields,pOVar10);
+                                                if ((*piVar6 != 0) &&
+                                                   (this_07 = (FirstTimeSetupTerrainEditTutorial *)
                                                               (object->_1).
                                                               initializationExceptionGCHandle,
-                                                   this_08 !=
+                                                   this_07 !=
                                                    (FirstTimeSetupTerrainEditTutorial *)0x0)) {
                                                   FirstTimeSetupTerrainEditTutorial::
                                                   FirstTimeSetupTerrainEditTutorial_Initialize
-                                                            (this_08,*(CubeModelingStateMachine **)
-                                                                      (iVar7 + 0x38),
+                                                            (this_07,*(CubeModelingStateMachine **)
+                                                                      (*piVar6 + 0x38),
                                                              (MaterialsController *)
                                                              (object->_0).fields,(MethodInfo *)0x0);
-                                                  iVar7 = (object->_1).native_size;
-                                                  if ((iVar7 != 0) &&
+                                                  if ((*piVar6 != 0) &&
                                                      (uVar14 = (object->_1).cctor_started, uVar14 != 0
                                                      )) {
-                                                    uVar15 = *(undefined4 *)(iVar7 + 0x38);
-                                                    *(undefined4 *)(uVar14 + 0x10) = uVar15;
-                                                    func_?(uVar14 + 0x10,uVar15);
+                                                    uVar15 = *(undefined4 *)(*piVar6 + 0x38);
+                                                    puVar16 = (undefined4 *)(uVar14 + 0x10);
+                                                    *puVar16 = uVar15;
+                                                    func_?(puVar16,uVar15);
                                                     if ((TypeInfo__ChatCommandManager->_1).
                                                         cctor_finished_or_no_cctor == 0) {
                                                       func_?(TypeInfo__ChatCommandManager);
                                                     }
-                                                    pAVar16 = ChatCommandManager::
+                                                    pAVar17 = ChatCommandManager::
                                                                                                                             
                                                   ChatCommandManager_GetChatCommandCallback
                                                             (ChatCommand__Enum_HideAllUI,
@@ -597,24 +597,24 @@ void Assembly-CSharp.dll::TouchEditModeController::TouchEditModeController_Initi
                                                                                                                           
                                                   MethodInfo__TouchEditModeController__HideUI__,
                                                   (MethodInfo *)0x0);
-                                                  pAVar17 = (Action *)
+                                                  pAVar18 = (Action *)
                                                             mscorlib.dll::System::Delegate::
-                                                            Delegate_Combine((Delegate *)pAVar16,
+                                                            Delegate_Combine((Delegate *)pAVar17,
                                                                              (Delegate *)this_13,
                                                                              (MethodInfo *)0x0);
-                                                  pAVar16 = (Action *)0x0;
-                                                  if (pAVar17 == (Action *)0x0) {
+                                                  pAVar17 = (Action *)0x0;
+                                                  if (pAVar18 == (Action *)0x0) {
 code_?:
                                                     ChatCommandManager::
                                                     ChatCommandManager_UpdateChatCommandCallback
-                                                              (ChatCommand__Enum_HideAllUI,pAVar16,
+                                                              (ChatCommand__Enum_HideAllUI,pAVar17,
                                                                (MethodInfo *)0x0);
                                                     return;
                                                   }
-                                                  if (pAVar17->klass == TypeInfo__System__Action) {
-                                                    pAVar16 = pAVar17;
+                                                  if (pAVar18->klass == TypeInfo__System__Action) {
+                                                    pAVar17 = pAVar18;
                                                   }
-                                                  if (pAVar16 != (Action *)0x0)
+                                                  if (pAVar17 != (Action *)0x0)
                                                   goto code_?;
                                                   goto code_?;
                                                   }
@@ -645,8 +645,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
+  pcVar19 = (code *)swi(3);
+  (*pcVar19)();
   return;
 }
 
@@ -758,45 +758,46 @@ void Assembly-CSharp.dll::TouchEditModeController::
     func_?(&TypeInfo__UnityEngine__Events__UnityAction);
     cRam_? = '\x01';
   }
-  (this->fields).mobilePlayModeController = mobilePlayModeController;
-  func_?(&(this->fields).mobilePlayModeController,mobilePlayModeController);
+  ppTVar1 = &(this->fields).mobilePlayModeController;
+  *ppTVar1 = mobilePlayModeController;
+  func_?(ppTVar1,mobilePlayModeController);
   if (mobilePlayModeController != (TouchPlayModeController *)0x0) {
     this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                         ((Component *)mobilePlayModeController,(MethodInfo *)0x0);
     if (this_00 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 (this_00,0,(MethodInfo *)0x0);
-      pUVar1 = (mobilePlayModeController->fields).OnLeaveEditPlayMode;
+      pUVar2 = (mobilePlayModeController->fields).OnLeaveEditPlayMode;
+      ppUVar3 = &(mobilePlayModeController->fields).OnLeaveEditPlayMode;
       this_01 = (NavMesh_OnNavMeshPreUpdate *)
                 func_?(TypeInfo__UnityEngine__Events__UnityAction);
       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
       NavMesh_OnNavMeshPreUpdate__ctor
                 (this_01,(Object *)this,MethodInfo__TouchEditModeController__LeaveEditPlayMode__,
                  (MethodInfo *)0x0);
-      pUVar1 = (UnityAction *)
+      pUVar2 = (UnityAction *)
                mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)pUVar1,(Delegate *)this_01,(MethodInfo *)0x0);
-      uVar2 = CONCAT44(TypeInfo__UnityEngine__Events__UnityAction,pUVar1);
-      if (pUVar1 == (UnityAction *)0x0) {
-        (mobilePlayModeController->fields).OnLeaveEditPlayMode = (UnityAction *)0x0;
-        ppUStack3 = &(mobilePlayModeController->fields).OnLeaveEditPlayMode;
-        pUStack4 = (UnityAction *)0x0;
+                         ((Delegate *)pUVar2,(Delegate *)this_01,(MethodInfo *)0x0);
+      uVar4 = CONCAT44(TypeInfo__UnityEngine__Events__UnityAction,pUVar2);
+      ppUStack5 = ppUVar3;
+      if (pUVar2 == (UnityAction *)0x0) {
+        pUStack6 = (UnityAction *)0x0;
+        *ppUVar3 = (UnityAction *)0x0;
         func_?();
         return;
       }
-      pUVar5 = (UnityAction *)0x0;
-      if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-        pUVar5 = pUVar1;
+      pUVar7 = (UnityAction *)0x0;
+      if (pUVar2->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+        pUVar7 = pUVar2;
       }
-      if (pUVar5 != (UnityAction *)0x0) {
-        (mobilePlayModeController->fields).OnLeaveEditPlayMode = pUVar5;
-        uVar2 = CONCAT44(TypeInfo__UnityEngine__Events__UnityAction,pUVar1);
-        pUStack4 = (UnityAction *)0x0;
-        if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-          pUStack4 = pUVar1;
+      if (pUVar7 != (UnityAction *)0x0) {
+        *ppUVar3 = pUVar7;
+        uVar4 = CONCAT44(TypeInfo__UnityEngine__Events__UnityAction,pUVar2);
+        pUStack6 = (UnityAction *)0x0;
+        if (pUVar2->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+          pUStack6 = pUVar2;
         }
-        if (pUStack4 != (UnityAction *)0x0) {
-          ppUStack3 = &(mobilePlayModeController->fields).OnLeaveEditPlayMode;
+        if (pUStack6 != (UnityAction *)0x0) {
           func_?();
           return;
         }
@@ -804,12 +805,12 @@ void Assembly-CSharp.dll::TouchEditModeController::
       goto code_?;
     }
   }
-  uVar2 = func_?();
+  uVar4 = func_?();
 code_?:
-  _ppUStack00000020 = uVar2;
+  _ppUStack00000018 = uVar4;
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -880,8 +881,9 @@ void Assembly-CSharp.dll::TouchEditModeController::TouchEditModeController_Respa
   if ((pGVar1 != (GameEventManager *)0x0) &&
      (this_00 = (pGVar1->fields).AvatarCommandsPlayMode,
      this_00 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) {
-    GameEventManager+AvatarCommandsPlayModeManager::
-    GameEventManager_AvatarCommandsPlayModeManager_KillSelf(this_00,(MethodInfo *)0x0);
+    UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::MultiColumnController::
+    MultiColumnController_OnColumnSortingChanged((MultiColumnController *)this_00,(MethodInfo *)0x0)
+    ;
     return;
   }
   uVar2 = func_?(&puStack_3);
@@ -1027,7 +1029,7 @@ void Assembly-CSharp.dll::TouchEditModeController::TouchEditModeController_Updat
       bVar3 = pVVar19 == (VisualElement *)0x0;
     }
     fVar20 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_realtimeSinceStartup
-                      ((MethodInfo *)0x0);
+                       ((MethodInfo *)0x0);
     if (_UNK_? < fVar20 - (this->fields).focusTime) {
       bVar3 = true;
     }
@@ -1041,27 +1043,27 @@ void Assembly-CSharp.dll::TouchEditModeController::TouchEditModeController_Updat
       MVInputWrapper::MVInputWrapper_SuppressAllInput((MethodInfo *)0x0);
     }
   }
-  if ((this->fields)._EditModeStateMachine_k__BackingField != (EditorStateMachine *)0x0) {
-    (*(code *)(((this->fields)._EditModeStateMachine_k__BackingField)->klass->vtable).Update.method)
-              ();
+  pEVar21 = (this->fields)._EditModeStateMachine_k__BackingField;
+  if (pEVar21 != (EditorStateMachine *)0x0) {
+    (*(code *)(pEVar21->klass->vtable).Update.method)();
   }
   if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  bVar21 = MVInputWrapper::MVInputWrapper_GetBooleanControlDown
+  bVar22 = MVInputWrapper::MVInputWrapper_GetBooleanControlDown
                     (KogamaControls__Enum_Deprecated_ToggleHD,(MethodInfo *)0x0);
-  if (bVar21 == 0) {
+  if (bVar22 == 0) {
     return;
   }
-  pUVar22 = (this->fields).uiStack;
-  if (pUVar22 != (UIStack *)0x0) {
+  pUVar23 = (this->fields).uiStack;
+  if (pUVar23 != (UIStack *)0x0) {
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
-    pLVar23 = (pUVar22->fields).stackableUiElements;
-    if (pLVar23 != (List_1_UIStack_StackElement_ *)0x0) {
-      if (2 < (pLVar23->fields)._size) {
+    pLVar24 = (pUVar23->fields).stackableUiElements;
+    if (pLVar24 != (List_1_UIStack_StackElement_ *)0x0) {
+      if (2 < (pLVar24->fields)._size) {
         return;
       }
       if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
@@ -1072,8 +1074,8 @@ void Assembly-CSharp.dll::TouchEditModeController::TouchEditModeController_Updat
     }
   }
   func_?();
-  pcVar24 = (code *)swi(3);
-  (*pcVar24)();
+  pcVar25 = (code *)swi(3);
+  (*pcVar25)();
   return;
 }
 

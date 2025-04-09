@@ -27,42 +27,14 @@ void Assembly-CSharp.dll::SentryGunScript::SentryGunScript_Awake
                        ((Object *)pSVar2,
                         SphereVolumeIndicator_MethodInfo__UnityEngine__Object__Instantiate<SphereVolumeIndicator>_SphereVolumeIndicator_
                        );
-    (this->fields).rangeVisualization = pSVar2;
-    func_?(&(this->fields).rangeVisualization,pSVar2);
-    pSVar2 = (this->fields).rangeVisualization;
-    if (pSVar2 != (SphereVolumeIndicator *)0x0) {
-      pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                         ((Component *)pSVar2,(MethodInfo *)0x0);
-      value = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                        ((Component *)this,(MethodInfo *)0x0);
-      if (pTVar3 != (Transform *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
-                  (pTVar3,value,(MethodInfo *)0x0);
-        pSVar2 = (this->fields).rangeVisualization;
-        if (pSVar2 != (SphereVolumeIndicator *)0x0) {
-          pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                             ((Component *)pSVar2,(MethodInfo *)0x0);
-          if (cRam_? == '\0') {
-            func_?(&TypeInfo__UnityEngine__Vector3);
-            cRam_? = '\x01';
-          }
-          if (pTVar3 != (Transform *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                      (pTVar3,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
-                       (MethodInfo *)0x0);
-            pCVar4 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main
-                               ((MethodInfo *)0x0);
-            (this->fields).mainCamera = pCVar4;
-            func_?(&(this->fields).mainCamera,pCVar4);
-            return;
-          }
-        }
-      }
-    }
+    ppSVar3 = &(this->fields).rangeVisualization;
+    *ppSVar3 = pSVar2;
+    func_?(ppSVar3,&stack0xfffffffc,&UNK_?,ppSVar3,pSVar2);
+    return;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -213,19 +185,23 @@ void Assembly-CSharp.dll::SentryGunScript::SentryGunScript_LateUpdate
                             (&VStack_3,this_02,(MethodInfo *)0x0);
         uVar4 = pVVar2->x;
         uVar5 = pVVar2->y;
-        fStack_6 = (float)(uVar4 ^ 
-                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
-        ;
-        uStack_7._0_4_ =
-             (float)(uVar5 ^ 
-                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-        uStack_7._4_4_ =
-             (float)((uint)pVVar2->z ^
-                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+        uStack_6._4_4_ = pVVar2->z;
+        uStack_6 = (double)CONCAT44(uStack_6._4_4_,uVar5);
+        VStack_3.x = (float)(uVar4 ^ 
+                             __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                             );
+        VStack_3.y = (float)(uVar5 ^ 
+                             __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                             );
+        VStack_3.z = (float)((uint)uStack_6._4_4_ ^
+                             __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                             );
+        fStack_7 = (float)uVar4;
         if (pTVar1 != (Transform *)0x0) {
-          value.y = (float)uStack_7;
-          value.x = fStack_6;
-          value.z = uStack_7._4_4_;
+          value.y = VStack_3.y;
+          value.x = VStack_3.x;
+          value.z = VStack_3.z;
+          uStack_6._0_4_ = (float)uVar5;
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_up
                     (pTVar1,value,(MethodInfo *)0x0);
           fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0)
@@ -234,9 +210,9 @@ void Assembly-CSharp.dll::SentryGunScript::SentryGunScript_LateUpdate
             fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
                                ((MethodInfo *)0x0);
             fVar8 = fVar8 * _UNK_?;
-            uStack_7 = (double)fVar8;
+            uStack_6 = (double)fVar8;
             fVar9 = (float10)func_?();
-            uStack_7 = (double)fVar9;
+            uStack_6 = (double)fVar9;
             fVar8 = fVar8 - (float)fVar9;
             if ((fVar8 < 0.0) || ((fVar8 <= _UNK_? && (fVar8 < _UNK_?)))) {
               this_01 = (this->fields).sentryRenderer;
@@ -254,9 +230,9 @@ void Assembly-CSharp.dll::SentryGunScript::SentryGunScript_LateUpdate
                   VStack_3.y = pMVar10->m20;
                   VStack_3.z = pMVar10->m30;
                   fStack_11 = pMVar10->m01;
-                  fStack_6 = pMVar10->m11;
-                  uStack_7._0_4_ = pMVar10->m21;
-                  uStack_7._4_4_ = pMVar10->m31;
+                  fStack_7 = pMVar10->m11;
+                  uStack_6._0_4_ = pMVar10->m21;
+                  uStack_6._4_4_ = pMVar10->m31;
                   fVar12 = pMVar10->m02;
                   fVar13 = pMVar10->m12;
                   fVar14 = pMVar10->m22;
@@ -275,9 +251,9 @@ void Assembly-CSharp.dll::SentryGunScript::SentryGunScript_LateUpdate
                   matrix.m20 = VStack_3.y;
                   matrix.m30 = VStack_3.z;
                   matrix.m01 = fStack_11;
-                  matrix.m11 = fStack_6;
-                  matrix.m21 = (float)uStack_7;
-                  matrix.m31 = uStack_7._4_4_;
+                  matrix.m11 = fStack_7;
+                  matrix.m21 = (float)uStack_6;
+                  matrix.m31 = uStack_6._4_4_;
                   matrix.m02 = fVar12;
                   matrix.m12 = fVar13;
                   matrix.m22 = fVar14;

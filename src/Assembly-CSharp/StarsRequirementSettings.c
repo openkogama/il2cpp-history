@@ -102,15 +102,17 @@ void Assembly-CSharp.dll::StarsRequirementSettings::StarsRequirementSettings_Ini
        (this_00 = (pMVar7->fields)._WinningConditionManager_k__BackingField,
        this_00 != (WinningConditionManager *)0x0)) {
       pAVar8 = (AllCollectiblesCollectedClient *)
-               MVWorldObject.dll::WinningConditionManager::
-               WinningConditionManager_GetSingletonWinnerConditionByType
-                         (this_00,
-                          AllCollectiblesCollectedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<AllCollectiblesCollectedClient>__
-                         );
-      (this->fields).collectible = pAVar8;
+                MVWorldObject.dll::WinningConditionManager::
+                WinningConditionManager_GetSingletonWinnerConditionByType
+                          (this_00,
+                           AllCollectiblesCollectedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<AllCollectiblesCollectedClient>__
+                          );
+      ppAVar9 = &(this->fields).collectible;
+      *ppAVar9 = pAVar8;
       func_?();
-      if ((this->fields).collectible != (AllCollectiblesCollectedClient *)0x0) {
-        (this->fields).maxValue = (((this->fields).collectible)->fields)._._.limit + -1;
+      pAVar8 = *ppAVar9;
+      if (pAVar8 != (AllCollectiblesCollectedClient *)0x0) {
+        (this->fields).maxValue = (pAVar8->fields)._._.limit + -1;
       }
       if (cRam_? == '\0') {
         func_?();
@@ -136,25 +138,25 @@ void Assembly-CSharp.dll::StarsRequirementSettings::StarsRequirementSettings_Ini
           if (pSVar2 == (SettingsBase *)0x0) goto code_?;
           SettingsBase::SettingsBase_OnSettingChanged(pSVar2,pSVar3,pOVar4,(MethodInfo *)0x0);
         }
-        pGVar9 = (this->fields).message;
-        if ((pGVar9 == (GameObject *)0x0) ||
-           (pGVar9 = (GameObject *)
+        pGVar10 = (this->fields).message;
+        if ((pGVar10 == (GameObject *)0x0) ||
+           (pGVar10 = (GameObject *)
                       UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::
-                      UnsafeUtility::UnsafeUtility_AsRef_1((Void *)pGVar9,(MethodInfo *)0x0),
-           pGVar9 == (GameObject *)0x0)) goto code_?;
+                      UnsafeUtility::UnsafeUtility_AsRef_1((Void *)pGVar10,(MethodInfo *)0x0),
+           pGVar10 == (GameObject *)0x0)) goto code_?;
         this._0_1_ = 1;
       }
       else {
-        pGVar9 = (this->fields).message;
-        if ((pGVar9 == (GameObject *)0x0) ||
-           (pGVar9 = (GameObject *)
+        pGVar10 = (this->fields).message;
+        if ((pGVar10 == (GameObject *)0x0) ||
+           (pGVar10 = (GameObject *)
                       UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::
-                      UnsafeUtility::UnsafeUtility_AsRef_1((Void *)pGVar9,(MethodInfo *)0x0),
-           pGVar9 == (GameObject *)0x0)) goto code_?;
+                      UnsafeUtility::UnsafeUtility_AsRef_1((Void *)pGVar10,(MethodInfo *)0x0),
+           pGVar10 == (GameObject *)0x0)) goto code_?;
         this._0_1_ = 0;
       }
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar9,(bool)this,(MethodInfo *)0x0);
+                (pGVar10,(bool)this,(MethodInfo *)0x0);
       this_01 = (pSVar1->fields).slider;
       if (this_01 != (SettingsSlider *)0x0) {
         SettingsSlider::SettingsSlider_Initialize_1
@@ -171,8 +173,8 @@ void Assembly-CSharp.dll::StarsRequirementSettings::StarsRequirementSettings_Ini
   }
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -228,16 +230,17 @@ void Assembly-CSharp.dll::StarsRequirementSettings::StarsRequirementSettings_Upd
                        (this_00,
                         AllCollectiblesCollectedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<AllCollectiblesCollectedClient>__
                        );
-    (this->fields).collectible = pAVar2;
-    func_?(&(this->fields).collectible,pAVar2);
-    if ((this->fields).collectible != (AllCollectiblesCollectedClient *)0x0) {
-      (this->fields).maxValue = (((this->fields).collectible)->fields)._._.limit + -1;
+    ppAVar3 = &(this->fields).collectible;
+    *ppAVar3 = pAVar2;
+    func_?(ppAVar3,pAVar2);
+    if (*ppAVar3 != (AllCollectiblesCollectedClient *)0x0) {
+      (this->fields).maxValue = ((*ppAVar3)->fields)._._.limit + -1;
     }
     return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

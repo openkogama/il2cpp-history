@@ -41,50 +41,43 @@ String * MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassProgression
   }
   puStack_4 = puVar5;
   pSVar6 = StringLiteral_Tier_XP_rewardsu000A;
-  DStack_7._dictionary = (Dictionary_2_System_ByteEnum_System_Int32_ *)0x0;
-  DStack_7._version = 0;
-  DStack_7._index = 0;
-  DStack_7._current.key = 0;
-  DStack_7._current._1_3_ = 0;
-  pSStack_8 = StringLiteral_Tier_XP_rewardsu000A;
+  pSStack_7 = StringLiteral_Tier_XP_rewardsu000A;
   this_00 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields).xpTierRewards;
-  DStack_7._current.value = 0;
-  DStack_7._getEnumeratorRetType = 0;
   if (this_00 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
-    pDVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+    pDVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
              ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
                        ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
                         &stack0xffffff9c,this_00,
                         MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_int>__GetEnumerator__
                        );
-    uStack_10 = 0;
-    DStack_7._dictionary = (Dictionary_2_System_ByteEnum_System_Int32_ *)pDVar9->_dictionary;
-    DStack_7._version = pDVar9->_version;
-    DStack_7._index = pDVar9->_index;
-    DStack_7._current._0_4_ = (pDVar9->_current).key;
-    DStack_7._16_8_ = *(undefined8 *)&(pDVar9->_current).value;
+    uStack_9 = 0;
+    DStack_10._dictionary = (Dictionary_2_System_ByteEnum_System_Int32_ *)pDVar8->_dictionary;
+    DStack_10._version = pDVar8->_version;
+    DStack_10._index = pDVar8->_index;
+    DStack_10._current._0_4_ = (pDVar8->_current).key;
+    DStack_10._16_8_ = *(undefined8 *)&(pDVar8->_current).value;
     uStack_1 = 1;
-    pDStack_11 = &DStack_7;
+    pDStack_11 = &DStack_10;
     while( true ) {
       bVar12 = mscorlib.dll::System::Collections::Generic::
               Dictionary`2[TKey,TValue]+Enumerator[System::ByteEnum,System::Int32]::
               Dictionary_2_TKey_TValue_Enumerator_System_ByteEnum_System_Int32__MoveNext
-                        (&DStack_7,
+                        (&DStack_10,
                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::Common::GamePassTier,_int>__MoveNext__
                         );
       if (bVar12 == 0) break;
-      iStack_13 = DStack_7._current.value;
+      iStack_13 = DStack_10._current.value;
       pOStack_14 = (Object *)func_?();
       iStack_15 = iStack_13;
       arg1 = (Object *)func_?();
       str1 = mscorlib.dll::System::String::String_Format_1
                        (StringLiteral_____0____1__u000A,pOStack_14,arg1,(MethodInfo *)0x0);
       pSVar6 = mscorlib.dll::System::String::String_Concat_3(pSVar6,str1,(MethodInfo *)0x0);
-      pSStack_8 = pSVar6;
+      pSStack_7 = pSVar6;
     }
     uStack_1 = 0xffffffff;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)&DStack_7,
+              ((Object *)&DStack_10,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::Common::GamePassTier,_int>__Dispose__
                ,in_stack_16);
@@ -148,7 +141,8 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassProgressionData
                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_int>__Add_MV__Common__GamePassTier__int_
               );
     method_00 = (MethodInfo *)&this->fields;
-    (this->fields).xpTierRewards = (Dictionary_2_MV_Common_GamePassTier_System_Int32_ *)this_00;
+    ((GamePassProgressionDataObjectShared_XPTierRewards__Fields *)method_00)->xpTierRewards =
+         (Dictionary_2_MV_Common_GamePassTier_System_Int32_ *)this_00;
     func_?(method_00,this_00);
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
               ((Object *)this,ExceptionArgument__Enum_obj,method_00);

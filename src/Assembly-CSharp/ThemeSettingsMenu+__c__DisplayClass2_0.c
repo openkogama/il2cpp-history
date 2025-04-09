@@ -40,11 +40,12 @@ void Assembly-CSharp.dll::ThemeSettingsMenu+<>c__DisplayClass2_0::
                         ThemeSelection_MethodInfo__UnityEngine__Object__Instantiate<ThemeSelection>_ThemeSelection_
                        );
     if (value != (Object *)0x0) {
-      value[1].klass = pOVar2;
-      func_?(value + 1,pOVar2);
-      if (value[1].klass != (Object__Class *)0x0) {
+      pOVar3 = value + 1;
+      pOVar3->klass = pOVar2;
+      func_?(pOVar3,pOVar2);
+      if (pOVar3->klass != (Object__Class *)0x0) {
         ThemeSelection::ThemeSelection_InitializeWithBackButton
-                  ((ThemeSelection *)value[1].klass,menuController,(MethodInfo *)0x0);
+                  ((ThemeSelection *)pOVar3->klass,menuController,(MethodInfo *)0x0);
         root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)menuController,(MethodInfo *)0x0);
         callbackFunction =
@@ -70,8 +71,8 @@ void Assembly-CSharp.dll::ThemeSettingsMenu+<>c__DisplayClass2_0::
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

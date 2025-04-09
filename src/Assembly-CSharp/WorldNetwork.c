@@ -634,41 +634,36 @@ void Assembly-CSharp.dll::WorldNetwork::WorldNetwork_CloneLinks
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  LStack_6._list = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0;
-  LStack_6._index = 0;
-  LStack_6._version = 0;
-  LStack_6._current.First = 0;
-  LStack_6._current.Last = 0;
   if ((cloneBookkeeping != (CloneBookkeeping *)0x0) &&
      (this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                 (cloneBookkeeping->fields).linkIds,
      this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)) {
-    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
              RegexCharClass+SingleRange]::
              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       (&LStack_8,this_00,
+                       (&LStack_7,this_00,
                         MethodInfo__System__Collections__Generic__List<int>__GetEnumerator__);
-    LStack_6._list = pLVar7->_list;
-    LStack_6._index = pLVar7->_index;
-    LStack_6._version = pLVar7->_version;
-    LStack_6._current = pLVar7->_current;
-    LStack_8._version = 0;
+    LStack_8._list = pLVar6->_list;
+    LStack_8._index = pLVar6->_index;
+    LStack_8._version = pLVar6->_version;
+    LStack_8._current = pLVar6->_current;
+    LStack_7._version = 0;
     uStack_1 = 1;
-    LStack_8._current = (RegexCharClass_SingleRange)&LStack_6;
+    LStack_7._current = (RegexCharClass_SingleRange)&LStack_8;
     while( true ) {
       do {
         do {
           bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Text::
                   RegularExpressions::RegexCharClass+SingleRange]::
                   List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange__MoveNext
-                            (&LStack_6,
+                            (&LStack_8,
                              MethodInfo__System__Collections__Generic__List_1_T___Enumerator<int>__MoveNext__
                             );
-          linkID = LStack_6._current;
+          linkID = LStack_8._current;
           if (bVar9 == 0) {
             uStack_1 = 0xffffffff;
             mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                      ((Object *)&LStack_6,
+                      ((Object *)&LStack_8,
                        (ExceptionArgument__Enum)
                        MethodInfo__System__Collections__Generic__List_1_T___Enumerator<int>__Dispose__
                        ,in_stack_10);
@@ -678,7 +673,7 @@ void Assembly-CSharp.dll::WorldNetwork::WorldNetwork_CloneLinks
           pMStack_11 = (MethodInfo *)(cloneBookkeeping->fields).worldObjectIdsMaps;
           pLVar12 = (this->fields).links;
           if (pLVar12 == (Links *)0x0) goto code_?;
-          pLVar13 = Links::Links_GetLink(pLVar12,(int32_t)LStack_6._current,(MethodInfo *)0x0);
+          pLVar13 = Links::Links_GetLink(pLVar12,(int32_t)LStack_8._current,(MethodInfo *)0x0);
           if (pLVar13 == (Link *)0x0) goto code_?;
           if (pMStack_11 == (MethodInfo *)0x0) goto code_?;
           in_stack_10 = pMStack_11;
@@ -781,41 +776,36 @@ void Assembly-CSharp.dll::WorldNetwork::WorldNetwork_CloneObjectLinks
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  LStack_6._list = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0;
-  LStack_6._index = 0;
-  LStack_6._version = 0;
-  LStack_6._current.First = 0;
-  LStack_6._current.Last = 0;
   if ((cloneBookkeeping != (CloneBookkeeping *)0x0) &&
      (this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                 (cloneBookkeeping->fields).objectLinkIds,
      this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)) {
-    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
              RegexCharClass+SingleRange]::
              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       (&LStack_8,this_00,
+                       (&LStack_7,this_00,
                         MethodInfo__System__Collections__Generic__List<int>__GetEnumerator__);
-    LStack_6._list = pLVar7->_list;
-    LStack_6._index = pLVar7->_index;
-    LStack_6._version = pLVar7->_version;
-    LStack_6._current = pLVar7->_current;
-    LStack_8._version = 0;
+    LStack_8._list = pLVar6->_list;
+    LStack_8._index = pLVar6->_index;
+    LStack_8._version = pLVar6->_version;
+    LStack_8._current = pLVar6->_current;
+    LStack_7._version = 0;
     uStack_1 = 1;
-    LStack_8._current = (RegexCharClass_SingleRange)&LStack_6;
+    LStack_7._current = (RegexCharClass_SingleRange)&LStack_8;
     while( true ) {
       do {
         do {
           bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Text::
                   RegularExpressions::RegexCharClass+SingleRange]::
                   List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange__MoveNext
-                            (&LStack_6,
+                            (&LStack_8,
                              MethodInfo__System__Collections__Generic__List_1_T___Enumerator<int>__MoveNext__
                             );
-          objectLinkID = LStack_6._current;
+          objectLinkID = LStack_8._current;
           if (bVar9 == 0) {
             uStack_1 = 0xffffffff;
             mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                      ((Object *)&LStack_6,
+                      ((Object *)&LStack_8,
                        (ExceptionArgument__Enum)
                        MethodInfo__System__Collections__Generic__List_1_T___Enumerator<int>__Dispose__
                        ,in_stack_10);
@@ -826,7 +816,7 @@ void Assembly-CSharp.dll::WorldNetwork::WorldNetwork_CloneObjectLinks
           pOVar12 = (this->fields).objectLinks;
           if (pOVar12 == (ObjectLinks *)0x0) goto code_?;
           pOVar13 = ObjectLinks::ObjectLinks_GetObjectLink
-                             (pOVar12,(int32_t)LStack_6._current,(MethodInfo *)0x0);
+                             (pOVar12,(int32_t)LStack_8._current,(MethodInfo *)0x0);
           if (pOVar13 == (ObjectLink *)0x0) goto code_?;
           if (pMStack_11 == (MethodInfo *)0x0) goto code_?;
           in_stack_10 = pMStack_11;
@@ -957,10 +947,10 @@ void Assembly-CSharp.dll::WorldNetwork::WorldNetwork_ConstructRuntimeEventManage
                 (this_00,
                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>__Dictionary__
                 );
-      (value_00->fields).accumulatedCubeDamages =
+      pMVar3 = (MethodInfo *)&value_00->fields;
+      ((RuntimeEventManager_AccumulatedCubeDamages__Fields *)pMVar3)->accumulatedCubeDamages =
            (Dictionary_2_MV_WorldObject_IntVector_RuntimeEventManager_AccumulatedCubeDamages_AccumulatedCubeDamage_
             *)this_00;
-      pMVar3 = (MethodInfo *)&value_00->fields;
       func_?(pMVar3,this_00);
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                 ((Object *)value_00,ExceptionArgument__Enum_obj,pMVar3);
@@ -973,8 +963,7 @@ void Assembly-CSharp.dll::WorldNetwork::WorldNetwork_ConstructRuntimeEventManage
       pMVar3 = (MethodInfo *)
                &(((RuntimeEventManagerNetwork__Fields *)&value->fields)->_).
                 localAccumulatedCubeDamages;
-      (((RuntimeEventManagerNetwork__Fields *)&value->fields)->_).localAccumulatedCubeDamages =
-           value_00;
+      *(RuntimeEventManager_AccumulatedCubeDamages **)pMVar3 = value_00;
       func_?();
       pMVar4 = value;
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
@@ -982,17 +971,19 @@ void Assembly-CSharp.dll::WorldNetwork::WorldNetwork_ConstructRuntimeEventManage
       (((RuntimeEventManagerNetwork__Fields *)&value->fields)->_).cubeModelPrototypeTerrain = pMVar4
       ;
       puVar5 = &UNK_?;
-      func_?(&value->fields,pMVar4);
-      (value->fields)._._._.groupId = (int32_t)puVar5;
-      func_?(&(value->fields)._._._.groupId,puVar5);
-      (this->fields)._.runtimeEventManagerNetwork = (RuntimeEventManagerNetwork *)value;
-      func_?(&(this->fields)._.runtimeEventManagerNetwork,value);
+      func_?((RuntimeEventManagerNetwork__Fields *)&value->fields,pMVar4);
+      piVar6 = &(value->fields)._._._.groupId;
+      *piVar6 = (int32_t)puVar5;
+      func_?(piVar6,puVar5);
+      ppRVar7 = &(this->fields)._.runtimeEventManagerNetwork;
+      *ppRVar7 = (RuntimeEventManagerNetwork *)value;
+      func_?(ppRVar7,value);
       return;
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -1027,19 +1018,20 @@ void Assembly-CSharp.dll::WorldNetwork::WorldNetwork_CreateGameWorldFromQueryDat
   if (value != (Object *)0x0) {
     value[1].klass = (Object__Class *)this;
     func_?(value + 1,this);
-    value[1].monitor = (MonitorData *)queryData;
-    func_?(&value[1].monitor,queryData);
+    ppMVar1 = &value[1].monitor;
+    *ppMVar1 = (MonitorData *)queryData;
+    func_?(ppMVar1,queryData);
     value[2].klass = (Object__Class *)instigatorActorNumber;
-    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-    if (pMVar1 != (MainCameraManager *)0x0) {
-      camera = (pMVar1->fields).mainCamera;
+    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+    if (pMVar2 != (MainCameraManager *)0x0) {
+      camera = (pMVar2->fields).mainCamera;
       if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__CullingApiWrapper);
       }
       CullingApiWrapper::CullingApiWrapper_Init
                 (10000,camera,TypeInfo__CullingApiWrapper->static_fields->baseDistance,
                  (MethodInfo *)0x0);
-      bp = (BytePacker *)value[1].monitor;
+      bp = (BytePacker *)*ppMVar1;
       this_00 = (UnityAction_2_System_Object_System_ByteEnum_ *)
                 func_?(
                                TypeInfo__UnityEngine__Events__UnityAction<System::Collections::Generic::Dictionary<System::Object,_System::Object>,_MV::WorldObject::KogamaDataType>
@@ -1066,8 +1058,8 @@ void Assembly-CSharp.dll::WorldNetwork::WorldNetwork_CreateGameWorldFromQueryDat
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -1138,55 +1130,44 @@ void Assembly-CSharp.dll::WorldNetwork::WorldNetwork_DeserializeRuntimeEvents
           cRam_? = '\x01';
         }
         if (unaff_ESI == (SingleCubeFineGrainedEvent *)0x0) goto code_?;
-        in_stack_3 =
-             (SingleCubeFineGrainedEvent *)
-             CONCAT31((int3)((uint)in_stack_3 >> 8),
-                      (unaff_ESI->fields)._._RuntimeEventType_k__BackingField);
-        pRVar4 = (RuntimeEventManager *)0x0;
-        RVar5 = MVWorldObject.dll::MV::WorldObject::RuntimeEvents::RuntimeEvent::
+        this = (WorldNetwork *)
+               CONCAT31(this._1_3_,(unaff_ESI->fields)._._RuntimeEventType_k__BackingField);
+        pRVar3 = (RuntimeEventManager *)0x0;
+        RVar4 = MVWorldObject.dll::MV::WorldObject::RuntimeEvents::RuntimeEvent::
                 RuntimeEvent_GetRuntimeEventObjectType
-                          ((RuntimeEventType__Enum)in_stack_3,(MethodInfo *)0x0);
-        if ((char)RVar5 == '\x01') {
-          pSVar6 = TypeInfo__MV__WorldObject__RuntimeEvents__SingleCubeFineGrainedEvent;
-          if (((unaff_ESI->klass->_1).naturalAligment <
-               (TypeInfo__MV__WorldObject__RuntimeEvents__SingleCubeFineGrainedEvent->_1).
-               naturalAligment) ||
-             ((unaff_ESI->klass->_1).typeHierarchy
-              [(TypeInfo__MV__WorldObject__RuntimeEvents__SingleCubeFineGrainedEvent->_1).
-               naturalAligment - 1] !=
+                          ((RuntimeEventType__Enum)this,(MethodInfo *)0x0);
+        if ((char)RVar4 == '\x01') {
+          bVar5 = (TypeInfo__MV__WorldObject__RuntimeEvents__SingleCubeFineGrainedEvent->_1).
+                  naturalAligment;
+          if (((unaff_ESI->klass->_1).naturalAligment < bVar5) ||
+             ((unaff_ESI->klass->_1).typeHierarchy[bVar5 - 1] !=
               (Il2CppClass *)TypeInfo__MV__WorldObject__RuntimeEvents__SingleCubeFineGrainedEvent))
           goto code_?;
-          pRVar4 = this_00;
+          pRVar3 = this_00;
           RuntimeEventManager::RuntimeEventManager_HandleEvent(this_00,unaff_ESI,(MethodInfo *)0x0);
-          in_stack_3 = unaff_ESI;
         }
-        else if ((char)RVar5 == '\x02') {
-          pSVar6 = (SingleCubeFineGrainedEvent__Class *)
-                   TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent;
-          if (((unaff_ESI->klass->_1).naturalAligment <
-               (TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent->_1).naturalAligment) ||
-             ((unaff_ESI->klass->_1).typeHierarchy
-              [(TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent->_1).naturalAligment - 1]
-              != (Il2CppClass *)TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent))
+        else if ((char)RVar4 == '\x02') {
+          bVar5 = (TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent->_1).naturalAligment;
+          if (((unaff_ESI->klass->_1).naturalAligment < bVar5) ||
+             ((unaff_ESI->klass->_1).typeHierarchy[bVar5 - 1] !=
+              (Il2CppClass *)TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent))
           goto code_?;
-          pRVar4 = this_00;
+          pRVar3 = this_00;
           RuntimeEventManager::RuntimeEventManager_HandleEvent_1
                     (this_00,(ExplosionEvent *)unaff_ESI,(MethodInfo *)0x0);
-          in_stack_3 = unaff_ESI;
         }
         iVar2 = iVar2 + 1;
-      } while (iVar2 < (int)pRVar4);
+      } while (iVar2 < (int)pRVar3);
     }
     (this_00->fields).doEffects = 1;
     return;
   }
 code_?:
   func_?();
-  pSVar6 = extraout_EDX;
 code_?:
-  func_?(unaff_ESI,pSVar6);
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  func_?(unaff_ESI);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -1207,21 +1188,21 @@ void Assembly-CSharp.dll::WorldNetwork::WorldNetwork_HandleDeserializedWorldData
     }
     break;
   case KogamaDataType__Enum_WorldObjects:
-    this_00 = (this->fields)._.worldObjectClientManager;
-    if ((this_00 != (MVWorldObjectClientManagerNetwork *)0x0) &&
+    unaff_EDI = (this->fields)._.worldObjectClientManager;
+    if ((unaff_EDI != (MVWorldObjectClientManagerNetwork *)0x0) &&
        (pMVar1 = (this->fields)._.worldInventory, pMVar1 != (MVWorldInventory *)0x0)) {
-      this_01 = KoGaMaPackageClient::KoGaMaPackageClient_WorldObjectFactory
-                          (data,(this_00->fields)._.worldObjects,(pMVar1->fields).runtimePrototypes,
-                           (MethodInfo *)0x0);
-      if (this_01 == (MVWorldObjectClient *)0x0) {
+      this_00 = KoGaMaPackageClient::KoGaMaPackageClient_WorldObjectFactory
+                          (data,(unaff_EDI->fields)._.worldObjects,
+                           (pMVar1->fields).runtimePrototypes,(MethodInfo *)0x0);
+      if (this_00 == (MVWorldObjectClient *)0x0) {
 code_?:
         MVWorldObjectClientManagerNetwork::MVWorldObjectClientManagerNetwork_AddToWorldObjects
-                  (this_00,this_01,(MethodInfo *)0x0);
+                  (unaff_EDI,this_00,(MethodInfo *)0x0);
         return;
       }
       pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
       if (pMVar2 != (MVNetworkGame *)0x0) {
-        pOVar3 = (Object *)(this_01->fields)._.id;
+        pOVar3 = (Object *)(this_00->fields)._.id;
         pTVar4 = (pMVar2->fields).transformNetworkManager;
         if (pTVar4 != (TransformNetworkManager *)0x0) {
           if (cRam_? == '\0') {
@@ -1235,7 +1216,7 @@ code_?:
                               MVNetworkObject_MethodInfo__System__Collections__Generic__CollectionExtensions__GetValueOrDefault<int,_MVNetworkObject>_System__Collections__Generic__IReadOnlyDictionary<int,_MVNetworkObject>__int_
                              );
           if (pOVar3 == (Object *)0x0) {
-            MVWorldObjectClient::MVWorldObjectClient_SetNetworkObject(this_01,0,(MethodInfo *)0x0);
+            MVWorldObjectClient::MVWorldObjectClient_SetNetworkObject(this_00,0,(MethodInfo *)0x0);
           }
           goto code_?;
         }
@@ -1250,9 +1231,12 @@ code_?:
   default:
     return;
   }
+  cVar5 = '\0';
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (char *)segment(in_DS,(short)unaff_EDI);
+  *pcVar6 = *pcVar6 + extraout_DH + cVar5;
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -1427,8 +1411,9 @@ Assembly-CSharp.dll::WorldNetwork::WorldNetwork_OnCloneWorldObjectTreeEvent
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar1,
              MethodInfo__System__Collections__Generic__List<int>__List__);
-  (cloneBookkeeping->fields).linkIds = pLVar1;
-  func_?(&(cloneBookkeeping->fields).linkIds,pLVar1);
+  ppLVar2 = &(cloneBookkeeping->fields).linkIds;
+  *ppLVar2 = pLVar1;
+  func_?(ppLVar2,pLVar1);
   pLVar1 = (List_1_System_Int32_ *)
            func_?(TypeInfo__System__Collections__Generic__List<int>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
@@ -1436,8 +1421,9 @@ Assembly-CSharp.dll::WorldNetwork::WorldNetwork_OnCloneWorldObjectTreeEvent
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar1,
              MethodInfo__System__Collections__Generic__List<int>__List__);
-  (cloneBookkeeping->fields).objectLinkIds = pLVar1;
-  func_?(&(cloneBookkeeping->fields).objectLinkIds,pLVar1);
+  ppLVar2 = &(cloneBookkeeping->fields).objectLinkIds;
+  *ppLVar2 = pLVar1;
+  func_?(ppLVar2,pLVar1);
   this_00 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *
             )func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_int>);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text
@@ -1445,50 +1431,50 @@ Assembly-CSharp.dll::WorldNetwork::WorldNetwork_OnCloneWorldObjectTreeEvent
   Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
             (this_00,MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Dictionary__);
   method_00 = (MethodInfo *)&(cloneBookkeeping->fields).worldObjectIdsMaps;
-  (cloneBookkeeping->fields).worldObjectIdsMaps = (Dictionary_2_System_Int32_System_Int32_ *)this_00
-  ;
+  *(Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ **)
+   method_00 = this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)cloneBookkeeping,ExceptionArgument__Enum_obj,method_00);
-  pMVar2 = (this->fields)._.worldObjectClientManager;
-  if (pMVar2 != (MVWorldObjectClientManagerNetwork *)0x0) {
+  pMVar3 = (this->fields)._.worldObjectClientManager;
+  if (pMVar3 != (MVWorldObjectClientManagerNetwork *)0x0) {
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
-    pDVar3 = (pMVar2->fields)._.worldObjects;
-    pOStack_4 = (Object *)0x0;
-    if (pDVar3 != (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) {
+    pDVar4 = (pMVar3->fields)._.worldObjects;
+    pOStack_5 = (Object *)0x0;
+    if (pDVar4 != (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) {
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
       Dictionary_2_System_Int32_System_Object__TryGetValue
-                ((Dictionary_2_System_Int32_System_Object_ *)pDVar3,originalId,&pOStack_4,
+                ((Dictionary_2_System_Int32_System_Object_ *)pDVar4,originalId,&pOStack_5,
                  MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
                 );
       (cloneBookkeeping->fields).cloneIdIncrement = cloneId;
       (cloneBookkeeping->fields).cloneLinkIdIncrement = cloneLinkId;
       (cloneBookkeeping->fields).cloneObjectLinkIdIncrement = cloneObjectLinkId;
       if ((((this->fields)._.worldObjectClientManager != (MVWorldObjectClientManagerNetwork *)0x0)
-          && (pOStack_4 != (Object *)0x0)) &&
+          && (pOStack_5 != (Object *)0x0)) &&
          ((this->fields)._.worldInventory != (MVWorldInventory *)0x0)) {
-        pDVar3 = (((this->fields)._.worldObjectClientManager)->fields)._.worldObjects;
-        pMVar5 = (MVWorldObjectClient *)(*(code *)pOStack_4->klass[2]._1.element_size)();
+        pDVar4 = (((this->fields)._.worldObjectClientManager)->fields)._.worldObjects;
+        pMVar6 = (MVWorldObjectClient *)(*(code *)pOStack_5->klass[2]._1.element_size)();
         if (cloneBookkeeping != (CloneBookkeeping *)0x0) {
-          if (pMVar5 == (MVWorldObjectClient *)0x0) goto code_?;
-          (pMVar5->fields)._.previewOwnerProfileId = (int32_t)cloneBookkeeping;
+          if (pMVar6 == (MVWorldObjectClient *)0x0) goto code_?;
+          (pMVar6->fields)._.previewOwnerProfileId = (int32_t)cloneBookkeeping;
         }
-        cloneToRootGroup = (bool)pDVar3;
+        cloneToRootGroup = (bool)pDVar4;
         if (cloneToRootGroup == 0) {
           WorldNetwork_CloneLinks(this,cloneBookkeeping,(MethodInfo *)0x0);
           WorldNetwork_CloneObjectLinks(this,cloneBookkeeping,(MethodInfo *)0x0);
-          if (pMVar5 != (MVWorldObjectClient *)0x0) {
+          if (pMVar6 != (MVWorldObjectClient *)0x0) {
 code_?:
-            (*(code *)(pMVar5->klass->vtable).Initialize.method)();
-            return pMVar5;
+            (*(code *)(pMVar6->klass->vtable).Initialize.method)();
+            return pMVar6;
           }
         }
         else {
-          pMVar2 = (this->fields)._.worldObjectClientManager;
-          if (pMVar2 != (MVWorldObjectClientManagerNetwork *)0x0) {
+          pMVar3 = (this->fields)._.worldObjectClientManager;
+          if (pMVar3 != (MVWorldObjectClientManagerNetwork *)0x0) {
             if (cRam_? == '\0') {
               func_?(&
                               MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Item_int_
@@ -1496,24 +1482,29 @@ code_?:
               func_?(&TypeInfo__MVGroup);
               cRam_? = '\x01';
             }
-            pDVar3 = (pMVar2->fields)._.worldObjects;
-            if (pDVar3 != (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) {
-              key = (WorldNetwork *)(pMVar2->fields)._.rootGroupId;
-              pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System
+            pDVar4 = (pMVar3->fields)._.worldObjects;
+            if (pDVar4 != (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) {
+              this_01 = (WorldNetwork *)(pMVar3->fields)._.rootGroupId;
+              pOVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System
                        ::Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                                 ((Dictionary_2_System_Int32_System_Object_ *)pDVar3,(int32_t)key,
+                                 ((Dictionary_2_System_Int32_System_Object_ *)pDVar4,
+                                  (int32_t)this_01,
                                   MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Item_int_
                                  );
-              if ((pOVar6 != (Object *)0x0) &&
-                 (((pOVar6->klass->_1).naturalAligment < (TypeInfo__MVGroup->_1).naturalAligment ||
-                  (this = key,
-                  (MVGroup__Class *)
-                  (pOVar6->klass->_1).typeHierarchy[(TypeInfo__MVGroup->_1).naturalAligment - 1] !=
-                  TypeInfo__MVGroup)))) goto code_?;
-              if ((pMVar5 != (MVWorldObjectClient *)0x0) && (pOVar6 != (Object *)0x0)) {
-                (*pOVar6->klass[3].vtable.GetHashCode.methodPtr)();
-                WorldNetwork_CloneLinks(this,cloneBookkeeping,(MethodInfo *)0x0);
-                WorldNetwork_CloneObjectLinks(this,cloneBookkeeping,(MethodInfo *)0x0);
+              if (pOVar7 == (Object *)0x0) {
+                pOVar7 = (Object *)0x0;
+                this_01 = this;
+              }
+              else {
+                bVar8 = (TypeInfo__MVGroup->_1).naturalAligment;
+                if (((pOVar7->klass->_1).naturalAligment < bVar8) ||
+                   ((MVGroup__Class *)(pOVar7->klass->_1).typeHierarchy[bVar8 - 1] !=
+                    TypeInfo__MVGroup)) goto code_?;
+              }
+              if ((pMVar6 != (MVWorldObjectClient *)0x0) && (pOVar7 != (Object *)0x0)) {
+                (*pOVar7->klass[3].vtable.GetHashCode.methodPtr)();
+                WorldNetwork_CloneLinks(this_01,cloneBookkeeping,(MethodInfo *)0x0);
+                WorldNetwork_CloneObjectLinks(this_01,cloneBookkeeping,(MethodInfo *)0x0);
                 goto code_?;
               }
             }
@@ -1526,9 +1517,9 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  pMVar5 = (MVWorldObjectClient *)(*pcVar7)();
-  return pMVar5;
+  pcVar9 = (code *)swi(3);
+  pMVar6 = (MVWorldObjectClient *)(*pcVar9)();
+  return pMVar6;
 }
 
 
@@ -1539,26 +1530,26 @@ void Assembly-CSharp.dll::WorldNetwork::WorldNetwork_OnGameDataDeserialized
                int32_t rootId,MethodInfo *method)
 
 {
-  this_02 = (this->fields)._.worldObjectClientManager;
-  if (this_02 != (MVWorldObjectClientManagerNetwork *)0x0) {
+  singleCubeFineGrainedEvent = (this->fields)._.worldObjectClientManager;
+  if (singleCubeFineGrainedEvent != (MVWorldObjectClientManagerNetwork *)0x0) {
     if (cRam_? == '\0') {
       func_?(&
                       MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
                      );
       cRam_? = '\x01';
     }
-    this_00 = (Int32__Array *)(this_02->fields)._.worldObjects;
+    this_00 = *(Dictionary_2_System_Int32_System_Object_ **)
+               &(singleCubeFineGrainedEvent->fields)._.worldObjects;
     pOVar1 = (Object *)0x0;
-    if (this_00 != (Int32__Array *)0x0) {
+    if (this_00 != (Dictionary_2_System_Int32_System_Object_ *)0x0) {
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
       Dictionary_2_System_Int32_System_Object__TryGetValue
-                ((Dictionary_2_System_Int32_System_Object_ *)this_00,rootId,
-                 (Object **)&stack0xfffffff8,
+                (this_00,rootId,(Object **)&stack0xfffffff8,
                  MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
                 );
       if (pOVar1 != (Object *)0x0) {
-        (*(code *)pOVar1->klass[2]._1.thread_static_fields_offset)(pOVar1,pOVar1->klass[2]._1.flags)
-        ;
+        (*(code *)pOVar1->klass[2]._1.thread_static_fields_offset)
+                  (pOVar1,pOVar1->klass[2]._1.flags);
       }
       if (cRam_? == '\0') {
         func_?(&
@@ -1572,22 +1563,21 @@ void Assembly-CSharp.dll::WorldNetwork::WorldNetwork_OnGameDataDeserialized
       }
       pMVar2 = (MVWorldObjectClientManager *)(this->fields)._.worldObjectClientManager;
       if (pMVar2 != (MVWorldObjectClientManager *)0x0) {
-        runtimeEventType =
-             (SingleCubeFineGrainedEvent__Class **)
-             MVWorldObjectClientManager::MVWorldObjectClientManager_GetSingletonWorldObject
-                       (pMVar2,
-                        MVCubeModelPrototypeTerrain_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVCubeModelPrototypeTerrain>__
-                       );
+        rootId = (int32_t)MVWorldObjectClientManager::
+                          MVWorldObjectClientManager_GetSingletonWorldObject
+                                    (pMVar2,
+                                     MVCubeModelPrototypeTerrain_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVCubeModelPrototypeTerrain>__
+                                    );
         pMVar2 = (MVWorldObjectClientManager *)(this->fields)._.worldObjectClientManager;
         if (pMVar2 != (MVWorldObjectClientManager *)0x0) {
-          MVWorldObjectClientManager::MVWorldObjectClientManager_GetSingletonWorldObject
-                    (pMVar2,
-                     MVCubeModelFineGrainedTerrain_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVCubeModelFineGrainedTerrain>__
-                    );
+          pOVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetSingletonWorldObject
+                              (pMVar2,
+                               MVCubeModelFineGrainedTerrain_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVCubeModelFineGrainedTerrain>__
+                              );
           value = (RuntimeEventManagerNetwork *)
                   func_?(TypeInfo__RuntimeEventManagerNetwork);
           if (cRam_? == '\0') {
-            func_?(&TypeInfo__RuntimeEventManager__AccumulatedCubeDamages);
+            func_?(&TypeInfo__RuntimeEventManager__AccumulatedCubeDamages,pOVar1);
             cRam_? = '\x01';
           }
           value_00 = (RuntimeEventManager_AccumulatedCubeDamages *)
@@ -1595,26 +1585,25 @@ void Assembly-CSharp.dll::WorldNetwork::WorldNetwork_OnGameDataDeserialized
           if (cRam_? == '\0') {
             func_?(&
                             MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>__Dictionary__
-                           );
+                            ,pOVar1);
             func_?(&
                             TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>
                            );
             func_?(&TypeInfo__UpdateController);
             cRam_? = '\x01';
           }
-          this_02 = (MVWorldObjectClientManagerNetwork *)
+          this_02 = (Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables_ *)
                     func_?(
                                    TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>
                                    );
           mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
           IntVector,ChunkInstances+ChunkInstanceVariables]::
           Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables___ctor
-                    ((Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables_ *
-                     )this_02,
+                    (this_02,
                      MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>__Dictionary__
                     );
           pMVar3 = (MethodInfo *)&value_00->fields;
-          (value_00->fields).accumulatedCubeDamages =
+          ((RuntimeEventManager_AccumulatedCubeDamages__Fields *)pMVar3)->accumulatedCubeDamages =
                (Dictionary_2_MV_WorldObject_IntVector_RuntimeEventManager_AccumulatedCubeDamages_AccumulatedCubeDamage_
                 *)this_02;
           func_?(pMVar3,this_02);
@@ -1627,82 +1616,77 @@ void Assembly-CSharp.dll::WorldNetwork::WorldNetwork_OnGameDataDeserialized
                     ((IUpdatecontrollerSubscriberUpdate *)value_00,
                      UpdatePriority__Enum_UPDATEBUCKET_STANDARD,1,(MethodInfo *)0x0);
           pMVar3 = (MethodInfo *)&(value->fields)._.localAccumulatedCubeDamages;
-          (value->fields)._.localAccumulatedCubeDamages = value_00;
+          *(RuntimeEventManager_AccumulatedCubeDamages **)pMVar3 = value_00;
           func_?();
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                     ((Object *)value,ExceptionArgument__Enum_obj,pMVar3);
-          (value->fields)._.cubeModelPrototypeTerrain =
-               (MVCubeModelPrototypeTerrain *)runtimeEventType;
-          func_?(&value->fields);
-          (value->fields)._.cubeModelFineGrainedTerrain =
-               (MVCubeModelFineGrainedTerrain *)runtimeEventType;
-          func_?(&(value->fields)._.cubeModelFineGrainedTerrain,runtimeEventType);
-          (this->fields)._.runtimeEventManagerNetwork = value;
-          func_?(&(this->fields)._.runtimeEventManagerNetwork,value);
-          this_01 = (RuntimeEventManager *)(this->fields)._.runtimeEventManagerNetwork;
+          pMVar4 = (MVCubeModelFineGrainedTerrain *)&value->fields;
+          (((RuntimeEventManagerNetwork__Fields *)pMVar4)->_).cubeModelPrototypeTerrain =
+               (MVCubeModelPrototypeTerrain *)rootId;
+          func_?();
+          ppMVar5 = &(value->fields)._.cubeModelFineGrainedTerrain;
+          *ppMVar5 = pMVar4;
+          func_?(ppMVar5,pMVar4);
+          singleCubeFineGrainedEvent =
+               (MVWorldObjectClientManagerNetwork *)&(this->fields)._.runtimeEventManagerNetwork;
+          *(RuntimeEventManagerNetwork **)singleCubeFineGrainedEvent = value;
+          func_?(singleCubeFineGrainedEvent,value);
+          this_01 = *(RuntimeEventManager **)singleCubeFineGrainedEvent;
           if ((this_01 != (RuntimeEventManager *)0x0) &&
-             (this_02 = (MVWorldObjectClientManagerNetwork *)0x0, queryData != (BytePacker *)0x0)) {
-            iVar4 = MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_ReadInt32
+             (singleCubeFineGrainedEvent = (MVWorldObjectClientManagerNetwork *)0x0,
+             queryData != (BytePacker *)0x0)) {
+            iVar6 = MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_ReadInt32
                               (queryData,(MethodInfo *)0x0);
-            iVar5 = 0;
-            if (0 < iVar4) {
+            iVar7 = 0;
+            if (0 < iVar6) {
               do {
-                puVar6 = (undefined *)0x0;
-                this_02 = (MVWorldObjectClientManagerNetwork *)
-                          MVWorldObject.dll::MV::WorldObject::RuntimeEvents::RuntimeEvent::
-                          RuntimeEvent_Create(queryData,(MethodInfo *)0x0);
+                puVar8 = (undefined *)0x0;
+                singleCubeFineGrainedEvent =
+                     (MVWorldObjectClientManagerNetwork *)
+                     MVWorldObject.dll::MV::WorldObject::RuntimeEvents::RuntimeEvent::
+                     RuntimeEvent_Create(queryData,(MethodInfo *)0x0);
                 if (cRam_? == '\0') {
                   func_?();
-                  runtimeEventType =
-                       &TypeInfo__MV__WorldObject__RuntimeEvents__SingleCubeFineGrainedEvent;
-                  puVar6 = &UNK_?;
-                  func_?(&
-                                  TypeInfo__MV__WorldObject__RuntimeEvents__SingleCubeFineGrainedEvent
-                                 );
+                  puVar8 = &UNK_?;
+                  func_?();
                   cRam_? = '\x01';
                 }
-                if (this_02 == (MVWorldObjectClientManagerNetwork *)0x0) goto code_?;
-                runtimeEventType =
-                     (SingleCubeFineGrainedEvent__Class **)
-                     CONCAT31((int3)((uint)runtimeEventType >> 8),
-                              *(undefined1 *)((int)&(this_02->fields)._.pendingUngroupQueue + 2));
-                RVar7 = MVWorldObject.dll::MV::WorldObject::RuntimeEvents::RuntimeEvent::
-                        RuntimeEvent_GetRuntimeEventObjectType
-                                  ((RuntimeEventType__Enum)runtimeEventType,(MethodInfo *)0x0);
-                if ((char)RVar7 == '\x01') {
-                  pSVar8 = TypeInfo__MV__WorldObject__RuntimeEvents__SingleCubeFineGrainedEvent;
-                  if (((((Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables___Class
-                          *)this_02->klass)->_1).naturalAligment <
-                       (TypeInfo__MV__WorldObject__RuntimeEvents__SingleCubeFineGrainedEvent->_1).
-                       naturalAligment) ||
-                     ((((Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables___Class
-                         *)this_02->klass)->_1).typeHierarchy
-                      [(TypeInfo__MV__WorldObject__RuntimeEvents__SingleCubeFineGrainedEvent->_1).
-                       naturalAligment - 1] !=
+                if (singleCubeFineGrainedEvent == (MVWorldObjectClientManagerNetwork *)0x0)
+                goto code_?;
+                rootId = CONCAT31(rootId._1_3_,
+                                  *(undefined1 *)
+                                   ((int)&(singleCubeFineGrainedEvent->fields)._.pendingUngroupQueue
+                                   + 2));
+                RVar9 = MVWorldObject.dll::MV::WorldObject::RuntimeEvents::RuntimeEvent::
+                        RuntimeEvent_GetRuntimeEventObjectType(rootId,(MethodInfo *)0x0);
+                if ((char)RVar9 == '\x01') {
+                  bVar10 = (TypeInfo__MV__WorldObject__RuntimeEvents__SingleCubeFineGrainedEvent->_1)
+                          .naturalAligment;
+                  pSVar11 = TypeInfo__MV__WorldObject__RuntimeEvents__SingleCubeFineGrainedEvent;
+                  if (((singleCubeFineGrainedEvent->klass->_1).naturalAligment < bVar10) ||
+                     ((singleCubeFineGrainedEvent->klass->_1).typeHierarchy[bVar10 - 1] !=
                       (Il2CppClass *)
                       TypeInfo__MV__WorldObject__RuntimeEvents__SingleCubeFineGrainedEvent))
                   goto code_?;
                   RuntimeEventManager::RuntimeEventManager_HandleEvent
-                            (this_01,(SingleCubeFineGrainedEvent *)this_02,(MethodInfo *)0x0);
+                            (this_01,(SingleCubeFineGrainedEvent *)singleCubeFineGrainedEvent,
+                             (MethodInfo *)0x0);
                 }
-                else if ((char)RVar7 == '\x02') {
-                  pSVar8 = (SingleCubeFineGrainedEvent__Class *)
+                else if ((char)RVar9 == '\x02') {
+                  bVar10 = (TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent->_1).
+                          naturalAligment;
+                  pSVar11 = (SingleCubeFineGrainedEvent__Class *)
                            TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent;
-                  if (((((Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables___Class
-                          *)this_02->klass)->_1).naturalAligment <
-                       (TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent->_1).
-                       naturalAligment) ||
-                     ((((Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables___Class
-                         *)this_02->klass)->_1).typeHierarchy
-                      [(TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent->_1).
-                       naturalAligment - 1] !=
+                  if (((singleCubeFineGrainedEvent->klass->_1).naturalAligment < bVar10) ||
+                     ((singleCubeFineGrainedEvent->klass->_1).typeHierarchy[bVar10 - 1] !=
                       (Il2CppClass *)TypeInfo__MV__WorldObject__RuntimeEvents__ExplosionEvent))
                   goto code_?;
                   RuntimeEventManager::RuntimeEventManager_HandleEvent_1
-                            (this_01,(ExplosionEvent *)this_02,(MethodInfo *)0x0);
+                            (this_01,(ExplosionEvent *)singleCubeFineGrainedEvent,(MethodInfo *)0x0)
+                  ;
                 }
-                iVar5 = iVar5 + 1;
-              } while (iVar5 < (int)puVar6);
+                iVar7 = iVar7 + 1;
+              } while (iVar7 < (int)puVar8);
             }
             (this_01->fields).doEffects = 1;
             WorldNetwork_CreateQueryEvent
@@ -1716,11 +1700,11 @@ void Assembly-CSharp.dll::WorldNetwork::WorldNetwork_OnGameDataDeserialized
   }
 code_?:
   func_?();
-  pSVar8 = extraout_EDX;
+  pSVar11 = extraout_EDX;
 code_?:
-  func_?(this_02,pSVar8);
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  func_?(singleCubeFineGrainedEvent,pSVar11);
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -1990,21 +1974,23 @@ void Assembly-CSharp.dll::WorldNetwork::WorldNetwork__ctor(WorldNetwork *this,Me
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   this_00 = (MVWorldInventory *)func_?(TypeInfo__MVWorldInventory);
   MVWorldInventory::MVWorldInventory__ctor(this_00,(MethodInfo *)0x0);
-  (this->fields)._.worldInventory = this_00;
-  func_?(&(this->fields)._.worldInventory,this_00);
+  ppMVar1 = &(this->fields)._.worldInventory;
+  *ppMVar1 = this_00;
+  func_?(ppMVar1,this_00);
   this_01 = (Links *)func_?(TypeInfo__Links);
   Links::Links__ctor(this_01,(MethodInfo *)0x0);
-  (this->fields).links = this_01;
-  func_?(&(this->fields).links,this_01);
+  ppLVar2 = &(this->fields).links;
+  *ppLVar2 = this_01;
+  func_?(ppLVar2,this_01);
   this_02 = (MVWorldObjectClientManager *)
             func_?(TypeInfo__MVWorldObjectClientManagerNetwork);
   MVWorldObjectClientManager::MVWorldObjectClientManager__ctor(this_02,(MethodInfo *)0x0);
   (this->fields)._.worldObjectClientManager = (MVWorldObjectClientManagerNetwork *)this_02;
   func_?(&this->fields,this_02);
-  ppMStack1 = (MethodInfo **)TypeInfo__ObjectLinks;
+  ppMStack3 = (MethodInfo **)TypeInfo__ObjectLinks;
   value = (ObjectLinks *)func_?();
   if (cRam_? == '\0') {
-    ppMStack1 =
+    ppMStack3 =
          &
          MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::ObjectLink>__Dictionary__
     ;
@@ -2014,34 +2000,36 @@ void Assembly-CSharp.dll::WorldNetwork::WorldNetwork__ctor(WorldNetwork *this,Me
     func_?();
     cRam_? = '\x01';
   }
-  ppMStack1 =
+  ppMStack3 =
        (MethodInfo **)
        TypeInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::ObjectLink>;
-  pDVar2 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *)
+  pDVar4 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *)
            func_?();
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text
   ::TextResourceManager+FontAssetRef]::
   Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
-            (pDVar2,
+            (pDVar4,
              MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::ObjectLink>__Dictionary__
             );
-  (value->fields).objectLinks = (Dictionary_2_System_Int32_MV_WorldObject_ObjectLink_ *)pDVar2;
+  (value->fields).objectLinks = (Dictionary_2_System_Int32_MV_WorldObject_ObjectLink_ *)pDVar4;
   func_?();
-  pDVar2 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *)
+  pDVar4 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *)
            func_?();
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text
   ::TextResourceManager+FontAssetRef]::
   Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
-            (pDVar2,
+            (pDVar4,
              MethodInfo__System__Collections__Generic__Dictionary<int,_ObjectLinkObjectScript>__Dictionary__
             );
   method_00 = (MethodInfo *)&(value->fields).objectLinkObjects;
-  (value->fields).objectLinkObjects = (Dictionary_2_System_Int32_ObjectLinkObjectScript_ *)pDVar2;
-  func_?(method_00,pDVar2);
+  *(Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ **)
+   method_00 = pDVar4;
+  func_?(method_00,pDVar4);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,method_00);
-  (this->fields).objectLinks = value;
-  func_?(&(this->fields).objectLinks,value);
+  ppOVar5 = &(this->fields).objectLinks;
+  *ppOVar5 = value;
+  func_?(ppOVar5,value);
   return;
 }
 

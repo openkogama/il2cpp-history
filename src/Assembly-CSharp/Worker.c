@@ -15,13 +15,13 @@ Assembly-CSharp.dll::Worker::Worker_DoTo
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[2].klass = (Object__Class *)this;
   value[1].klass = (Object__Class *)0x0;
+  value[2].klass = (Object__Class *)this;
   func_?(value + 2,this);
   value[2].monitor = (MonitorData *)duration;
-  value[4].klass = (Object__Class *)callback;
   value[3].klass = (Object__Class *)startValue;
   value[3].monitor = (MonitorData *)endValue;
+  value[4].klass = (Object__Class *)callback;
   func_?(value + 4,callback);
   return (IEnumerator *)value;
 }
@@ -46,9 +46,9 @@ void Assembly-CSharp.dll::Worker::Worker_To
   value[2].klass = (Object__Class *)this;
   func_?(value + 2,this);
   value[2].monitor = (MonitorData *)duration;
-  value[4].klass = (Object__Class *)callback;
   value[3].klass = (Object__Class *)startValue;
   value[3].monitor = (MonitorData *)endValue;
+  value[4].klass = (Object__Class *)callback;
   func_?(value + 4,callback);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
             ((MonoBehaviour *)this,(IEnumerator *)value,(MethodInfo *)0x0);

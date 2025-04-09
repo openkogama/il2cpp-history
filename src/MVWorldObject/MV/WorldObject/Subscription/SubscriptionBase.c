@@ -124,7 +124,7 @@ void MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionBase::Subscri
              MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Dictionary__
             );
   method_00 = (MethodInfo *)&this->fields;
-  (this->fields).benefits =
+  ((SubscriptionBase__Fields *)method_00)->benefits =
        (Dictionary_2_MV_WorldObject_Subscription_SubscriptionBenefit_MV_WorldObject_Subscription_SubscriptionRule_
         *)this_00;
   func_?(method_00,this_00);

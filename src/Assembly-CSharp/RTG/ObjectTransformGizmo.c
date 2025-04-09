@@ -255,187 +255,181 @@ AABB * Assembly-CSharp.dll::RTG::ObjectTransformGizmo::
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  AStack_6._size.x = 0.0;
-  AStack_6._size.y = 0.0;
-  AStack_6._size.z = 0.0;
-  AStack_6._center.x = 0.0;
-  AStack_6._isValid = 0;
-  AStack_6._25_3_ = 0;
-  AStack_6._center.y = 0.0;
-  AStack_6._center.z = 0.0;
   if ((this->fields)._targetObjects == (IEnumerable_1_UnityEngine_GameObject_ *)0x0) {
-    pAVar7 = AABB::AABB_GetInvalid(&AStack_8,(MethodInfo *)0x0);
-    fVar9 = (pAVar7->_size).y;
-    fVar10 = (pAVar7->_size).z;
-    fVar11 = (pAVar7->_center).x;
-    bVar12 = pAVar7->_isValid;
-    uVar13 = *(undefined3 *)&pAVar7->field_0x19;
-    (__return_storage_ptr__->_size).x = (pAVar7->_size).x;
-    (__return_storage_ptr__->_size).y = fVar9;
-    (__return_storage_ptr__->_size).z = fVar10;
-    (__return_storage_ptr__->_center).x = fVar11;
-    fVar9 = (pAVar7->_center).z;
-    (__return_storage_ptr__->_center).y = (pAVar7->_center).y;
-    (__return_storage_ptr__->_center).z = fVar9;
-    __return_storage_ptr__->_isValid = bVar12;
-    *(undefined3 *)&__return_storage_ptr__->field_0x19 = uVar13;
+    pAVar6 = AABB::AABB_GetInvalid(&AStack_7,(MethodInfo *)0x0);
+    fVar8 = (pAVar6->_size).y;
+    fVar9 = (pAVar6->_size).z;
+    fVar10 = (pAVar6->_center).x;
+    bVar11 = pAVar6->_isValid;
+    uVar12 = *(undefined3 *)&pAVar6->field_0x19;
+    (__return_storage_ptr__->_size).x = (pAVar6->_size).x;
+    (__return_storage_ptr__->_size).y = fVar8;
+    (__return_storage_ptr__->_size).z = fVar9;
+    (__return_storage_ptr__->_center).x = fVar10;
+    fVar8 = (pAVar6->_center).z;
+    (__return_storage_ptr__->_center).y = (pAVar6->_center).y;
+    (__return_storage_ptr__->_center).z = fVar8;
+    __return_storage_ptr__->_isValid = bVar11;
+    *(undefined3 *)&__return_storage_ptr__->field_0x19 = uVar12;
     *unaff_FS_OFFSET = uStack_3;
     return __return_storage_ptr__;
   }
-  pOVar14 = ObjectTransformGizmo_GetObjectBoundsQConfig(&OStack_15,this,(MethodInfo *)0x0);
-  OStack_15.ObjectTypes = pOVar14->ObjectTypes;
-  OStack_15.NoVolumeSize.x = (pOVar14->NoVolumeSize).x;
-  OStack_15.NoVolumeSize.y = (pOVar14->NoVolumeSize).y;
-  OStack_15.NoVolumeSize.z = (pOVar14->NoVolumeSize).z;
-  pAVar7 = AABB::AABB_GetInvalid(&AStack_8,(MethodInfo *)0x0);
-  AStack_6._size.x = (pAVar7->_size).x;
-  AStack_6._size.y = (pAVar7->_size).y;
-  AStack_6._size.z = (pAVar7->_size).z;
-  AStack_6._center.x = (pAVar7->_center).x;
-  AStack_6._center.y = (pAVar7->_center).y;
-  AStack_6._center.z = (pAVar7->_center).z;
-  AStack_6._isValid = pAVar7->_isValid;
-  AStack_6._25_3_ = *(undefined3 *)&pAVar7->field_0x19;
+  pOVar13 = ObjectTransformGizmo_GetObjectBoundsQConfig(&OStack_14,this,(MethodInfo *)0x0);
+  OStack_14.ObjectTypes = pOVar13->ObjectTypes;
+  OStack_14.NoVolumeSize.x = (pOVar13->NoVolumeSize).x;
+  OStack_14.NoVolumeSize.y = (pOVar13->NoVolumeSize).y;
+  OStack_14.NoVolumeSize.z = (pOVar13->NoVolumeSize).z;
+  pAVar6 = AABB::AABB_GetInvalid(&AStack_7,(MethodInfo *)0x0);
+  AStack_15._size.x = (pAVar6->_size).x;
+  AStack_15._size.y = (pAVar6->_size).y;
+  AStack_15._size.z = (pAVar6->_size).z;
+  AStack_15._center.x = (pAVar6->_center).x;
+  AStack_15._center.y = (pAVar6->_center).y;
+  AStack_15._center.z = (pAVar6->_center).z;
+  AStack_15._isValid = pAVar6->_isValid;
+  AStack_15._25_3_ = *(undefined3 *)&pAVar6->field_0x19;
   pIVar16 = (this->fields)._targetObjects;
   if (pIVar16 != (IEnumerable_1_UnityEngine_GameObject_ *)0x0) {
-    pIVar17 = pIVar16->klass;
+    pIStack_17 = pIVar16->klass;
     uVar18 = 0;
-    uVar19._0_1_ = (pIVar17->_1).rank;
-    uVar19._1_1_ = (pIVar17->_1).minimumAlignment;
-    if (uVar19 != 0) {
+    pIStack_19 = (IEnumerable_1_UnityEngine_GameObject_ *)0x0;
+    uVar20._0_1_ = (pIStack_17->_1).rank;
+    uVar20._1_1_ = (pIStack_17->_1).minimumAlignment;
+    if (uVar20 != 0) {
       do {
-        if (pIVar17->interfaceOffsets[uVar18].interfaceType ==
+        if (pIStack_17->interfaceOffsets[uVar18].interfaceType ==
             (Il2CppClass *)
             TypeInfo__System__Collections__Generic__IEnumerable<UnityEngine::GameObject>) {
-          ppMVar20 = &(&pIVar16->klass->vtable)[pIVar16->klass->interfaceOffsets[uVar18].offset].
+          ppMVar21 = &(&pIStack_17->vtable)[pIStack_17->interfaceOffsets[uVar18].offset].
                       GetEnumerator.method;
           goto code_?;
         }
         uVar18 = uVar18 + 1;
-      } while (uVar18 < uVar19);
+      } while (uVar18 < uVar20);
     }
-    AStack_8._size.y = 0.0;
-    AStack_8._size.x =
+    AStack_7._size.y = 0.0;
+    AStack_7._size.x =
          (float)TypeInfo__System__Collections__Generic__IEnumerable<UnityEngine::GameObject>;
-    ppMVar20 = (MethodInfo **)func_?();
+    ppMVar21 = (MethodInfo **)func_?();
 code_?:
-    AStack_8._size.y = (float)ppMVar20[1];
-    AStack_8._size.x = (float)pIVar16;
-    pIStack_21 = (IEnumerable_1_UnityEngine_GameObject_ *)(*(code *)*ppMVar20)();
-    ppIStack_22 = &pIStack_21;
-    uStack_23 = 0;
+    AStack_7._size.y = (float)ppMVar21[1];
+    AStack_7._size.x = (float)pIVar16;
+    pIStack_22 = (IEnumerable_1_UnityEngine_GameObject_ *)(*(code *)*ppMVar21)();
+    ppIStack_23 = &pIStack_22;
+    uStack_24 = 0;
     uStack_1 = 1;
-    fVar9 = AStack_6._size.x;
-    fVar10 = AStack_6._size.y;
-    fVar11 = AStack_6._size.z;
-    fVar24 = AStack_6._center.x;
-    uVar25 = AStack_6._center._4_8_;
-    uVar26 = AStack_6._24_4_;
-    while (AStack_6._24_4_ = uVar26, AStack_6._center._4_8_ = uVar25, AStack_6._center.x = fVar24
-          , AStack_6._size.z = fVar11, AStack_6._size.y = fVar10, AStack_6._size.x = fVar9,
-          pIVar16 = pIStack_21, pIStack_27 = pIStack_21,
-          pIStack_21 != (IEnumerable_1_UnityEngine_GameObject_ *)0x0) {
-      pIStack_28 = pIStack_21->klass;
-      uVar19 = 0;
-      uVar18._0_1_ = (pIStack_28->_1).rank;
-      uVar18._1_1_ = (pIStack_28->_1).minimumAlignment;
-      pIStack_29 = (IEnumerable_1_UnityEngine_GameObject___Class *)(uint)uVar18;
+    fVar8 = AStack_15._size.x;
+    fVar9 = AStack_15._size.y;
+    fVar10 = AStack_15._size.z;
+    fVar25 = AStack_15._center.x;
+    uVar26 = AStack_15._center._4_8_;
+    uVar27 = AStack_15._24_4_;
+    while (AStack_15._24_4_ = uVar27, AStack_15._center._4_8_ = uVar26, AStack_15._center.x = fVar25,
+          AStack_15._size.z = fVar10, AStack_15._size.y = fVar9, AStack_15._size.x = fVar8,
+          pIVar16 = pIStack_22,
+          pIStack_28 = (IEnumerable_1_UnityEngine_GameObject___Class *)pIStack_22,
+          pIStack_22 != (IEnumerable_1_UnityEngine_GameObject_ *)0x0) {
+      pIStack_17 = pIStack_22->klass;
+      uVar20 = 0;
+      uVar18._0_1_ = (pIStack_17->_1).rank;
+      uVar18._1_1_ = (pIStack_17->_1).minimumAlignment;
+      pIStack_19 = (IEnumerable_1_UnityEngine_GameObject_ *)(uint)uVar18;
       if (uVar18 != 0) {
         do {
-          if (pIStack_28->interfaceOffsets[uVar19].interfaceType ==
+          if (pIStack_17->interfaceOffsets[uVar20].interfaceType ==
               (Il2CppClass *)TypeInfo__System__Collections__IEnumerator) {
-            ppMVar20 = &(&pIStack_21->klass->vtable)
-                        [pIStack_21->klass->interfaceOffsets[uVar19].offset].GetEnumerator.method;
+            ppMVar21 = &(&pIStack_22->klass->vtable)
+                        [pIStack_22->klass->interfaceOffsets[uVar20].offset].GetEnumerator.method;
             goto code_?;
           }
-          uVar19 = uVar19 + 1;
-        } while (uVar19 < uVar18);
+          uVar20 = uVar20 + 1;
+        } while (uVar20 < uVar18);
       }
-      AStack_8._size.y = 0.0;
-      AStack_8._size.x = (float)TypeInfo__System__Collections__IEnumerator;
-      ppMVar20 = (MethodInfo **)func_?();
+      AStack_7._size.y = 0.0;
+      AStack_7._size.x = (float)TypeInfo__System__Collections__IEnumerator;
+      ppMVar21 = (MethodInfo **)func_?();
 code_?:
-      AStack_8._size.y = (float)ppMVar20[1];
-      AStack_8._size.x = (float)pIVar16;
-      cVar30 = (*(code *)*ppMVar20)();
-      pIVar16 = pIStack_21;
-      if (cVar30 == '\0') {
+      AStack_7._size.y = (float)ppMVar21[1];
+      AStack_7._size.x = (float)pIVar16;
+      cVar29 = (*(code *)*ppMVar21)();
+      pIVar16 = pIStack_22;
+      if (cVar29 == '\0') {
         uStack_1 = 0xffffffff;
-        AStack_8._size.y = (float)&UNK_?;
+        AStack_7._size.y = (float)&UNK_?;
         func_?();
-        (__return_storage_ptr__->_size).x = AStack_6._size.x;
-        (__return_storage_ptr__->_size).y = AStack_6._size.y;
-        (__return_storage_ptr__->_size).z = AStack_6._size.z;
-        (__return_storage_ptr__->_center).x = AStack_6._center.x;
-        (__return_storage_ptr__->_center).y = AStack_6._center.y;
-        (__return_storage_ptr__->_center).z = AStack_6._center.z;
-        __return_storage_ptr__->_isValid = AStack_6._isValid;
-        *(undefined3 *)&__return_storage_ptr__->field_0x19 = AStack_6._25_3_;
+        (__return_storage_ptr__->_size).x = AStack_15._size.x;
+        (__return_storage_ptr__->_size).y = AStack_15._size.y;
+        (__return_storage_ptr__->_size).z = AStack_15._size.z;
+        (__return_storage_ptr__->_center).x = AStack_15._center.x;
+        (__return_storage_ptr__->_center).y = AStack_15._center.y;
+        (__return_storage_ptr__->_center).z = AStack_15._center.z;
+        __return_storage_ptr__->_isValid = AStack_15._isValid;
+        *(undefined3 *)&__return_storage_ptr__->field_0x19 = AStack_15._25_3_;
         *unaff_FS_OFFSET = uStack_3;
         return __return_storage_ptr__;
       }
-      pIStack_27 = pIStack_21;
-      if (pIStack_21 == (IEnumerable_1_UnityEngine_GameObject_ *)0x0) break;
-      pIStack_29 = pIStack_21->klass;
-      uVar19 = 0;
-      uVar31._0_1_ = (pIStack_29->_1).rank;
-      uVar31._1_1_ = (pIStack_29->_1).minimumAlignment;
-      pIStack_28 = (IEnumerable_1_UnityEngine_GameObject___Class *)(uint)uVar31;
-      if (uVar31 != 0) {
+      pIStack_19 = pIStack_22;
+      if (pIStack_22 == (IEnumerable_1_UnityEngine_GameObject_ *)0x0) break;
+      pIStack_28 = pIStack_22->klass;
+      uVar20 = 0;
+      uVar30._0_1_ = (pIStack_28->_1).rank;
+      uVar30._1_1_ = (pIStack_28->_1).minimumAlignment;
+      pIStack_17 = (IEnumerable_1_UnityEngine_GameObject___Class *)(uint)uVar30;
+      if (uVar30 != 0) {
         do {
-          if (pIStack_29->interfaceOffsets[uVar19].interfaceType ==
+          if (pIStack_28->interfaceOffsets[uVar20].interfaceType ==
               (Il2CppClass *)
               TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::GameObject>) {
-            ppMVar20 = &(&pIStack_21->klass->vtable)
-                        [pIStack_21->klass->interfaceOffsets[uVar19].offset].GetEnumerator.method;
+            ppMVar21 = &(&pIStack_22->klass->vtable)
+                        [pIStack_22->klass->interfaceOffsets[uVar20].offset].GetEnumerator.method;
             goto code_?;
           }
-          uVar19 = uVar19 + 1;
-        } while (uVar19 < uVar31);
+          uVar20 = uVar20 + 1;
+        } while (uVar20 < uVar30);
       }
-      AStack_8._size.y = 0.0;
-      AStack_8._size.x =
+      AStack_7._size.y = 0.0;
+      AStack_7._size.x =
            (float)TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::GameObject>;
-      ppMVar20 = (MethodInfo **)func_?();
+      ppMVar21 = (MethodInfo **)func_?();
 code_?:
-      AStack_8._size.y = (float)ppMVar20[1];
-      AStack_8._size.x = (float)pIVar16;
-      gameObject = (GameObject *)(*(code *)*ppMVar20)();
+      AStack_7._size.y = (float)ppMVar21[1];
+      AStack_7._size.x = (float)pIVar16;
+      gameObject = (GameObject *)(*(code *)*ppMVar21)();
       if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__RTG__ObjectBounds);
       }
-      queryConfig.NoVolumeSize.x = OStack_15.NoVolumeSize.x;
-      queryConfig.ObjectTypes = OStack_15.ObjectTypes;
-      queryConfig.NoVolumeSize.y = OStack_15.NoVolumeSize.y;
-      queryConfig.NoVolumeSize.z = OStack_15.NoVolumeSize.z;
-      pAVar7 = ObjectBounds::ObjectBounds_CalcWorldAABB
-                          (&AStack_8,gameObject,queryConfig,(MethodInfo *)0x0);
-      uVar26._0_1_ = pAVar7->_isValid;
-      uVar26._1_3_ = *(undefined3 *)&pAVar7->field_0x19;
-      uVar25._0_4_ = (pAVar7->_center).y;
-      uVar25._4_4_ = (pAVar7->_center).z;
-      fVar9 = (pAVar7->_size).x;
-      fVar10 = (pAVar7->_size).y;
-      fVar11 = (pAVar7->_size).z;
-      fVar24 = (pAVar7->_center).x;
-      if (AStack_6._isValid != 0) {
-        AABB::AABB_Encapsulate_2(&AStack_6,*pAVar7,(MethodInfo *)0x0);
-        fVar9 = AStack_6._size.x;
-        fVar10 = AStack_6._size.y;
-        fVar11 = AStack_6._size.z;
-        fVar24 = AStack_6._center.x;
-        uVar25 = AStack_6._center._4_8_;
-        uVar26 = AStack_6._24_4_;
+      queryConfig.NoVolumeSize.x = OStack_14.NoVolumeSize.x;
+      queryConfig.ObjectTypes = OStack_14.ObjectTypes;
+      queryConfig.NoVolumeSize.y = OStack_14.NoVolumeSize.y;
+      queryConfig.NoVolumeSize.z = OStack_14.NoVolumeSize.z;
+      pAVar6 = ObjectBounds::ObjectBounds_CalcWorldAABB
+                          (&AStack_7,gameObject,queryConfig,(MethodInfo *)0x0);
+      uVar27._0_1_ = pAVar6->_isValid;
+      uVar27._1_3_ = *(undefined3 *)&pAVar6->field_0x19;
+      uVar26._0_4_ = (pAVar6->_center).y;
+      uVar26._4_4_ = (pAVar6->_center).z;
+      fVar8 = (pAVar6->_size).x;
+      fVar9 = (pAVar6->_size).y;
+      fVar10 = (pAVar6->_size).z;
+      fVar25 = (pAVar6->_center).x;
+      if (AStack_15._isValid != 0) {
+        AABB::AABB_Encapsulate_2(&AStack_15,*pAVar6,(MethodInfo *)0x0);
+        fVar8 = AStack_15._size.x;
+        fVar9 = AStack_15._size.y;
+        fVar10 = AStack_15._size.z;
+        fVar25 = AStack_15._center.x;
+        uVar26 = AStack_15._center._4_8_;
+        uVar27 = AStack_15._24_4_;
       }
     }
   }
-  AStack_8._size.y = (float)&UNK_?;
-  AStack_8._size.y = (float)func_?();
-  AStack_8._size.x = (float)&UNK_?;
+  AStack_7._size.y = (float)&UNK_?;
+  AStack_7._size.y = (float)func_?();
+  AStack_7._size.x = (float)&UNK_?;
   func_?();
-  pcVar32 = (code *)swi(3);
-  pAVar7 = (AABB *)(*pcVar32)();
-  return pAVar7;
+  pcVar31 = (code *)swi(3);
+  pAVar6 = (AABB *)(*pcVar31)();
+  return pAVar6;
 }
 
 
@@ -446,7 +440,7 @@ Assembly-CSharp.dll::RTG::ObjectTransformGizmo::ObjectTransformGizmo_GetTransfor
           (ObjectTransformGizmo *this,MethodInfo *method)
 
 {
-  pOVar1 = (ObjectTransformGizmoSettings *)*unaff_FS_OFFSET;
+  pMVar1 = (MethodInfo *)*unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &stack0xfffffff0;
   if (cRam_? == '\0') {
     func_?(&
@@ -480,96 +474,88 @@ Assembly-CSharp.dll::RTG::ObjectTransformGizmo::ObjectTransformGizmo_GetTransfor
   }
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
             GameObjectEx::GameObjectEx_FilterParentsOnly_1(gameObjects,(MethodInfo *)0x0);
-  this_01 = (ObjectTransformGizmoSettings *)
+  this_01 = (MethodInfo *)
             func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
+  pMVar2 = this_01;
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_01,
              MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__);
-  if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-code_?:
-    func_?();
-    func_?();
-    pcVar2 = (code *)swi(3);
-    pLVar3 = (List_1_UnityEngine_GameObject_ *)(*pcVar2)();
-    return pLVar3;
-  }
-  mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-  RegexCharClass+SingleRange]::
-  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-            ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-             &stack0xffffffcc,this_00,
-             MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
-            );
-  method_00 = (MethodInfo *)0x0;
-code_?:
-  this_02 = 
-  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
-  ;
-  bVar4 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
-          List_1_T_Enumerator_System_Object__MoveNext
-                    ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffbc,
-                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
-                    );
-  if (bVar4 == 0) {
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)&stack0xffffffbc,
-               (ExceptionArgument__Enum)
-               MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
-               ,method_00);
-    *unaff_FS_OFFSET = pOVar1;
-    return (List_1_UnityEngine_GameObject_ *)this_01;
-  }
-  if (this_02 != (MethodInfo *)0x0) {
-    method_00 = (MethodInfo *)
-                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
-                          ((GameObject *)this_02,
-                           RTG__IRTTransformGizmoListener_MethodInfo__UnityEngine__GameObject__GetComponent<RTG::IRTTransformGizmoListener>__
-                          );
-    if (method_00 != (MethodInfo *)0x0) goto code_?;
-    goto code_?;
-  }
-  goto code_?;
-code_?:
-  cVar5 = func_?();
-  if (cVar5 != '\0') {
-code_?:
-    if ((this->fields)._sharedSettings == (ObjectTransformGizmoSettings *)0x0) {
-      pOVar6 = (this->fields)._settings;
-    }
-    else {
-      pOVar6 = (this->fields)._sharedSettings;
-    }
-    if (this_02 == (MethodInfo *)0x0) goto code_?;
-    layerNumber = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_layer
-                            ((GameObject *)this_02,(MethodInfo *)0x0);
-    if (pOVar6 == (ObjectTransformGizmoSettings *)0x0) goto code_?;
-    method_00 = (MethodInfo *)&UNK_?;
-    bVar4 = LayerEx::LayerEx_IsLayerBitSet
-                      ((pOVar6->fields)._transformableLayers,layerNumber,(MethodInfo *)0x0);
-    if (bVar4 != 0) {
-      if ((this->fields)._sharedSettings == (ObjectTransformGizmoSettings *)0x0) {
-        this_01 = (this->fields)._settings;
-        if (this_01 == (ObjectTransformGizmoSettings *)0x0) goto code_?;
+  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    RegexCharClass+SingleRange]::
+    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+              ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+               &stack0xffffffcc,this_00,
+               MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
+              );
+    method_00 = (MethodInfo *)0x0;
+    while( true ) {
+      this_02 = 
+      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
+      ;
+      bVar3 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+              List_1_T_Enumerator_System_Object__MoveNext
+                        ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffbc,
+                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
+                        );
+      if (bVar3 == 0) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                  ((Object *)&stack0xffffffbc,
+                   (ExceptionArgument__Enum)
+                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
+                   ,method_00);
+        *unaff_FS_OFFSET = pMVar1;
+        return (List_1_UnityEngine_GameObject_ *)this_01;
       }
-      else {
-        this_01 = (this->fields)._sharedSettings;
-      }
-      bVar4 = ObjectTransformGizmoSettings::ObjectTransformGizmoSettings_IsObjectTransformable
-                        (this_01,(GameObject *)this_02,(MethodInfo *)0x0);
-      if (bVar4 != 0) {
-        if (this_01 == (ObjectTransformGizmoSettings *)0x0) goto code_?;
-        pOVar1 = this_01;
-        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-        List_1_System_Object__Add
-                  ((List_1_System_Object_ *)this_01,(Object *)this_02,
-                   MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Add_UnityEngine__GameObject_
-                  );
+      if (this_02 == (MethodInfo *)0x0) break;
+      method_00 = (MethodInfo *)
+                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                            ((GameObject *)this_02,
+                             RTG__IRTTransformGizmoListener_MethodInfo__UnityEngine__GameObject__GetComponent<RTG::IRTTransformGizmoListener>__
+                            );
+      this_01 = pMVar2;
+      if ((method_00 == (MethodInfo *)0x0) ||
+         (cVar4 = func_?(), pMVar2 = this_01, cVar4 != '\0')) {
+        pOVar5 = (this->fields)._sharedSettings;
+        if (pOVar5 == (ObjectTransformGizmoSettings *)0x0) {
+          pOVar5 = (this->fields)._settings;
+        }
+        layerNumber = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_layer
+                                ((GameObject *)this_02,(MethodInfo *)0x0);
+        if (pOVar5 == (ObjectTransformGizmoSettings *)0x0) break;
+        method_00 = (MethodInfo *)&UNK_?;
+        bVar3 = LayerEx::LayerEx_IsLayerBitSet
+                          ((pOVar5->fields)._transformableLayers,layerNumber,(MethodInfo *)0x0);
+        pMVar2 = this_01;
+        if (bVar3 != 0) {
+          pOVar5 = (this->fields)._sharedSettings;
+          if ((pOVar5 == (ObjectTransformGizmoSettings *)0x0) &&
+             (pOVar5 = (this->fields)._settings, pOVar5 == (ObjectTransformGizmoSettings *)0x0))
+          break;
+          this_01 = this_02;
+          bVar3 = ObjectTransformGizmoSettings::ObjectTransformGizmoSettings_IsObjectTransformable
+                            (pOVar5,(GameObject *)this_02,(MethodInfo *)0x0);
+          pMVar2 = this_01;
+          if (bVar3 != 0) {
+            if (this_01 == (MethodInfo *)0x0) break;
+            pMVar1 = this_01;
+            mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+            List_1_System_Object__Add
+                      ((List_1_System_Object_ *)this_01,(Object *)this_02,
+                       MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Add_UnityEngine__GameObject_
+                      );
+          }
+        }
       }
     }
   }
-  goto code_?;
+  func_?();
+  func_?();
+  pcVar6 = (code *)swi(3);
+  pLVar7 = (List_1_UnityEngine_GameObject_ *)(*pcVar6)();
+  return pLVar7;
 }
 
 
@@ -648,19 +634,15 @@ code_?:
           if (pBVar7->vector[0] == 0) {
             moveVector.x = 0.0;
           }
-          if (pBVar7 != (Boolean__Array *)0x0) {
-            if (pBVar7->max_length < 2) goto code_?;
-            if (pBVar7->vector[1] == 0) {
-              moveVector.y = 0.0;
-            }
-            if (pBVar7 != (Boolean__Array *)0x0) {
-              if (pBVar7->max_length < 3) goto code_?;
-              if (pBVar7->vector[2] == 0) {
-                moveVector.z = 0.0;
-              }
-              goto code_?;
-            }
+          if (pBVar7->max_length < 2) goto code_?;
+          if (pBVar7->vector[1] == 0) {
+            moveVector.y = 0.0;
           }
+          if (pBVar7->max_length < 3) goto code_?;
+          if (pBVar7->vector[2] == 0) {
+            moveVector.z = 0.0;
+          }
+          goto code_?;
         }
       }
     }
@@ -854,28 +836,30 @@ void Assembly-CSharp.dll::RTG::ObjectTransformGizmo::ObjectTransformGizmo_OnGizm
 
 {
   pLVar1 = LocalTransformSnapshot::LocalTransformSnapshot_GetSnapshotCollection
-                     ((this->fields)._targetObjects,(MethodInfo *)0x0);
-  (this->fields)._preTransformSnapshots = pLVar1;
-  func_?(&(this->fields)._preTransformSnapshots,pLVar1);
-  pLVar2 = ObjectTransformGizmo_GetTransformableParentObjects(this,(MethodInfo *)0x0);
-  (this->fields)._transformableParents = pLVar2;
-  func_?(&(this->fields)._transformableParents,pLVar2);
-  pAVar3 = ObjectTransformGizmo_GetTargetObjectGroupWorldAABB(&AStack_4,this,(MethodInfo *)0x0);
-  fVar5 = (pAVar3->_size).y;
-  fVar6 = (pAVar3->_size).z;
-  fVar7 = (pAVar3->_center).x;
-  fVar8 = (pAVar3->_center).y;
-  fVar9 = (pAVar3->_center).z;
-  bVar10 = pAVar3->_isValid;
-  uVar11 = *(undefined3 *)&pAVar3->field_0x19;
-  (this->fields)._targetGroupAABBOnDragBegin._size.x = (pAVar3->_size).x;
-  (this->fields)._targetGroupAABBOnDragBegin._size.y = fVar5;
-  (this->fields)._targetGroupAABBOnDragBegin._size.z = fVar6;
-  (this->fields)._targetGroupAABBOnDragBegin._center.x = fVar7;
-  (this->fields)._targetGroupAABBOnDragBegin._center.y = fVar8;
-  (this->fields)._targetGroupAABBOnDragBegin._center.z = fVar9;
-  (this->fields)._targetGroupAABBOnDragBegin._isValid = bVar10;
-  *(undefined3 *)&(this->fields)._targetGroupAABBOnDragBegin.field_0x19 = uVar11;
+                      ((this->fields)._targetObjects,(MethodInfo *)0x0);
+  ppLVar2 = &(this->fields)._preTransformSnapshots;
+  *ppLVar2 = pLVar1;
+  func_?(ppLVar2,pLVar1);
+  pLVar3 = ObjectTransformGizmo_GetTransformableParentObjects(this,(MethodInfo *)0x0);
+  ppLVar4 = &(this->fields)._transformableParents;
+  *ppLVar4 = pLVar3;
+  func_?(ppLVar4,pLVar3);
+  pAVar5 = ObjectTransformGizmo_GetTargetObjectGroupWorldAABB(&AStack_6,this,(MethodInfo *)0x0);
+  fVar7 = (pAVar5->_size).y;
+  fVar8 = (pAVar5->_size).z;
+  fVar9 = (pAVar5->_center).x;
+  fVar10 = (pAVar5->_center).y;
+  fVar11 = (pAVar5->_center).z;
+  bVar12 = pAVar5->_isValid;
+  uVar13 = *(undefined3 *)&pAVar5->field_0x19;
+  (this->fields)._targetGroupAABBOnDragBegin._size.x = (pAVar5->_size).x;
+  (this->fields)._targetGroupAABBOnDragBegin._size.y = fVar7;
+  (this->fields)._targetGroupAABBOnDragBegin._size.z = fVar8;
+  (this->fields)._targetGroupAABBOnDragBegin._center.x = fVar9;
+  (this->fields)._targetGroupAABBOnDragBegin._center.y = fVar10;
+  (this->fields)._targetGroupAABBOnDragBegin._center.z = fVar11;
+  (this->fields)._targetGroupAABBOnDragBegin._isValid = bVar12;
+  *(undefined3 *)&(this->fields)._targetGroupAABBOnDragBegin.field_0x19 = uVar13;
   return;
 }
 
@@ -988,14 +972,14 @@ void Assembly-CSharp.dll::RTG::ObjectTransformGizmo::ObjectTransformGizmo_OnUndo
     func_?(&TypeInfo__RTG__PostObjectTransformsChangedAction);
     cRam_? = '\x01';
   }
-  if (((action != (IUndoRedoAction *)0x0) &&
-      ((TypeInfo__RTG__PostObjectTransformsChangedAction->_1).naturalAligment <=
-       (action->klass->_1).naturalAligment)) &&
-     ((action->klass->_1).typeHierarchy
-      [(TypeInfo__RTG__PostObjectTransformsChangedAction->_1).naturalAligment - 1] ==
-      (Il2CppClass *)TypeInfo__RTG__PostObjectTransformsChangedAction)) {
-    ObjectTransformGizmo_RefreshPosition(this,(MethodInfo *)0x0);
-    ObjectTransformGizmo_RefreshRotation(this,(MethodInfo *)0x0);
+  if (action != (IUndoRedoAction *)0x0) {
+    bVar1 = (TypeInfo__RTG__PostObjectTransformsChangedAction->_1).naturalAligment;
+    if ((bVar1 <= (action->klass->_1).naturalAligment) &&
+       ((action->klass->_1).typeHierarchy[bVar1 - 1] ==
+        (Il2CppClass *)TypeInfo__RTG__PostObjectTransformsChangedAction)) {
+      ObjectTransformGizmo_RefreshPosition(this,(MethodInfo *)0x0);
+      ObjectTransformGizmo_RefreshRotation(this,(MethodInfo *)0x0);
+    }
   }
   return;
 }
@@ -1056,7 +1040,8 @@ code_?:
     bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                        ((Object_1 *)pGVar9,(Object_1 *)0x0,(MethodInfo *)0x0);
     if (bVar1 != 0) goto code_?;
-    if ((this->fields)._transformPivot == 1) {
+    iVar10 = (this->fields)._transformPivot;
+    if (iVar10 == 1) {
       pGVar9 = (this->fields)._targetPivotObject;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
@@ -1066,17 +1051,17 @@ code_?:
       if (bVar1 != 0) goto code_?;
       pGVar9 = (this->fields)._targetPivotObject;
       if (((pGVar9 == (GameObject *)0x0) ||
-          (pTVar10 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                               (pGVar9,(MethodInfo *)0x0), pTVar10 == (Transform *)0x0)) ||
-         (pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                              ((Vector3 *)&stack0xfffffff0,pTVar10,(MethodInfo *)0x0),
+          (pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                               (pGVar9,(MethodInfo *)0x0), pTVar11 == (Transform *)0x0)) ||
+         (pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                              ((Vector3 *)&stack0xfffffff0,pTVar11,(MethodInfo *)0x0),
          this_01 == (GizmoTransform *)0x0)) goto code_?;
-      uVar8._0_4_ = pVVar11->x;
-      uVar8._4_4_ = pVVar11->y;
-      fStack_7 = pVVar11->z;
+      uVar8._0_4_ = pVVar12->x;
+      uVar8._4_4_ = pVVar12->y;
+      fStack_7 = pVVar12->z;
       goto code_?;
     }
-    if ((this->fields)._transformPivot == 2) {
+    if (iVar10 == 2) {
       pGVar9 = (this->fields)._targetPivotObject;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
@@ -1085,34 +1070,35 @@ code_?:
       bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                          ((Object_1 *)pGVar9,(Object_1 *)0x0,(MethodInfo *)0x0);
       if (bVar1 != 0) goto code_?;
-      pOVar12 = ObjectTransformGizmo_GetObjectBoundsQConfig
-                          ((ObjectBounds_QueryConfig *)&stack0xffffffec,in_stack_13,
+      pOVar13 = ObjectTransformGizmo_GetObjectBoundsQConfig
+                          ((ObjectBounds_QueryConfig *)&stack0xffffffec,in_stack_14,
                            (MethodInfo *)0x0);
       pGVar9 = (this->fields)._targetPivotObject;
-      iVar14 = pOVar12->ObjectTypes;
-      fVar5 = (pOVar12->NoVolumeSize).x;
-      fVar4 = (pOVar12->NoVolumeSize).y;
-      fVar15 = (pOVar12->NoVolumeSize).z;
+      iVar15 = pOVar13->ObjectTypes;
+      fVar5 = (pOVar13->NoVolumeSize).x;
+      fVar4 = (pOVar13->NoVolumeSize).y;
+      fVar16 = (pOVar13->NoVolumeSize).z;
       if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__RTG__ObjectBounds);
       }
       queryConfig.NoVolumeSize.x = fVar5;
-      queryConfig.ObjectTypes = iVar14;
+      queryConfig.ObjectTypes = iVar15;
       queryConfig.NoVolumeSize.y = fVar4;
-      queryConfig.NoVolumeSize.z = fVar15;
+      queryConfig.NoVolumeSize.z = fVar16;
       pAVar3 = ObjectBounds::ObjectBounds_CalcWorldAABB
                           ((AABB *)&stack0xffffffc4,pGVar9,queryConfig,(MethodInfo *)0x0);
       fVar4 = (pAVar3->_center).x;
-      uVar16 = (pAVar3->_center).y;
-      uVar17 = (pAVar3->_center).z;
-      fVar5 = (float)uVar16;
-      fStack_7 = (float)uVar17;
+      uVar17 = (pAVar3->_center).y;
+      uVar18 = (pAVar3->_center).z;
+      fVar5 = (float)uVar17;
+      fStack_7 = (float)uVar18;
       if ((char)*(undefined4 *)&pAVar3->_isValid == '\0') goto code_?;
       goto code_?;
     }
   }
 code_?:
-  if ((this->fields)._transformPivot == 3) {
+  iVar10 = (this->fields)._transformPivot;
+  if (iVar10 == 3) {
     if (this_01 != (GizmoTransform *)0x0) {
       GizmoTransform::GizmoTransform_set_Position3D
                 (this_01,(this->fields)._customWorldPivot,(MethodInfo *)0x0);
@@ -1120,7 +1106,7 @@ code_?:
     }
   }
   else {
-    if ((this->fields)._transformPivot != 4) {
+    if (iVar10 != 4) {
       return;
     }
     pGVar9 = (this->fields)._targetPivotObject;
@@ -1132,16 +1118,16 @@ code_?:
     if (bVar1 == 0) {
       pGVar9 = (this->fields)._targetPivotObject;
       if (pGVar9 != (GameObject *)0x0) {
-        pTVar10 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+        pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                             (pGVar9,(MethodInfo *)0x0);
-        pVVar11 = ObjectTransformGizmo_GetObjectCustomLocalPivot
+        pVVar12 = ObjectTransformGizmo_GetObjectCustomLocalPivot
                             ((Vector3 *)&stack0xfffffff0,this,(this->fields)._targetPivotObject,
                              (MethodInfo *)0x0);
-        if ((pTVar10 != (Transform *)0x0) &&
-           (pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_TransformPoint
-                                ((Vector3 *)&stack0xfffffff0,pTVar10,*pVVar11,(MethodInfo *)0x0),
+        if ((pTVar11 != (Transform *)0x0) &&
+           (pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_TransformPoint
+                                ((Vector3 *)&stack0xfffffff0,pTVar11,*pVVar12,(MethodInfo *)0x0),
            this_01 != (GizmoTransform *)0x0)) {
-          GizmoTransform::GizmoTransform_set_Position3D(this_01,*pVVar11,(MethodInfo *)0x0);
+          GizmoTransform::GizmoTransform_set_Position3D(this_01,*pVVar12,(MethodInfo *)0x0);
           return;
         }
       }
@@ -1149,13 +1135,13 @@ code_?:
     else {
       pAVar3 = ObjectTransformGizmo_GetTargetObjectGroupWorldAABB
                           ((AABB *)&stack0xffffffc4,this,(MethodInfo *)0x0);
-      uVar18 = (pAVar3->_center).z;
-      uVar19 = (pAVar3->_center).x;
-      uVar20 = (pAVar3->_center).y;
-      value_00.y = (float)uVar20;
-      value_00.x = (float)uVar19;
+      uVar19 = (pAVar3->_center).z;
+      uVar20 = (pAVar3->_center).x;
+      uVar21 = (pAVar3->_center).y;
+      value_00.y = (float)uVar21;
+      value_00.x = (float)uVar20;
       if (this_01 != (GizmoTransform *)0x0) {
-        value_00.z = (float)uVar18;
+        value_00.z = (float)uVar19;
         GizmoTransform::GizmoTransform_set_Position3D(this_01,value_00,(MethodInfo *)0x0);
         return;
       }
@@ -1163,8 +1149,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar21 = (code *)swi(3);
-  (*pcVar21)();
+  pcVar22 = (code *)swi(3);
+  (*pcVar22)();
   return;
 }
 
@@ -1365,8 +1351,6 @@ void Assembly-CSharp.dll::RTG::ObjectTransformGizmo::
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffbc;
-  puVar5 = &stack0xffffffbc;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
@@ -1381,70 +1365,83 @@ void Assembly-CSharp.dll::RTG::ObjectTransformGizmo::
                     MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
                    );
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  LStack_6._list = (List_1_System_Object_ *)0x0;
-  LStack_6._index = 0;
-  LStack_6._version = 0;
-  LStack_6._current = (Object *)0x0;
-  if (targetObjects != (List_1_UnityEngine_GameObject_ *)0x0) {
-    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-             RegexCharClass+SingleRange]::
-             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       (&LStack_8,
-                        (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                        targetObjects,
-                        MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
-                       );
-    LStack_6._list = (List_1_System_Object_ *)pLVar7->_list;
-    LStack_6._index = pLVar7->_index;
-    LStack_6._version = pLVar7->_version;
-    LStack_6._current = *(Object **)&pLVar7->_current;
-    LStack_8._version = 0;
-    uStack_1 = 1;
-    LStack_8._current = (RegexCharClass_SingleRange)&LStack_6;
-    while( true ) {
-      do {
-        bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
-                List_1_T_Enumerator_System_Object__MoveNext
-                          (&LStack_6,
-                           MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
-                          );
-        targetObject = LStack_6._current;
-        if (bVar9 == 0) {
-          uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&LStack_6,
-                     (ExceptionArgument__Enum)
-                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
-                     ,unaff_EBX);
-          *unaff_FS_OFFSET = uStack_3;
-          return;
-        }
-        if (cRam_? == '\0') {
-          func_?();
-          cRam_? = '\x01';
-        }
-        bVar9 = ObjectTransformGizmo_ContainsRestrictionsForObject
-                          (this,(GameObject *)targetObject,(MethodInfo *)0x0);
-      } while (bVar9 != 0);
-      this_00 = (this->fields)._objectToRestrictions;
-      if (this_00 ==
-          (Dictionary_2_UnityEngine_GameObject_RTG_ObjectTransformGizmo_ObjectRestrictions_ *)0x0)
-      break;
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__Add
-                ((Dictionary_2_System_Object_System_Object_ *)this_00,targetObject,
-                 (Object *)restrictions,
-                 MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::GameObject,_RTG::ObjectTransformGizmo::ObjectRestrictions>__Add_UnityEngine__GameObject__RTG__ObjectTransformGizmo__ObjectRestrictions_
-                );
-    }
+  if (targetObjects == (List_1_UnityEngine_GameObject_ *)0x0) {
+code_?:
+    func_?();
+    pcVar4 = (code *)swi(3);
+    (*pcVar4)();
+    return;
   }
-  func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
-  return;
+  pLVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+           RegexCharClass+SingleRange]::
+           List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                     ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                       *)&stack0xffffffd8,
+                      (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                      targetObjects,
+                      MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
+                     );
+  uStack_1 = 1;
+  this_01 = pLVar5->_current;
+code_?:
+  method_00 = this_01;
+  bVar6 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+          List_1_T_Enumerator_System_Object__MoveNext
+                    ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffc8,
+                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
+                    );
+  if (bVar6 == 0) {
+    uStack_1 = 0xffffffff;
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+              ((Object *)&stack0xffffffc8,
+               (ExceptionArgument__Enum)
+               MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
+               ,(MethodInfo *)method_00);
+    *unaff_FS_OFFSET = uStack_3;
+    return;
+  }
+  this_01 = method_00;
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
+  }
+  if (cRam_? == '\0') {
+    func_?();
+    func_?();
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  bVar6 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                    ((Object_1 *)method_00,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar6 == 0) goto code_?;
+  this_01 = (RegexCharClass_SingleRange)(this->fields)._objectToRestrictions;
+  if (this_01 != (RegexCharClass_SingleRange)0x0) goto code_?;
+  goto code_?;
+code_?:
+  bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+          UIElements::TextureId]::
+          Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                    ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_01,
+                     (Object *)method_00,
+                     MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::GameObject,_RTG::ObjectTransformGizmo::ObjectRestrictions>__ContainsKey_UnityEngine__GameObject_
+                    );
+  if (bVar6 == 0) {
+code_?:
+    this_00 = (this->fields)._objectToRestrictions;
+    if (this_00 ==
+        (Dictionary_2_UnityEngine_GameObject_RTG_ObjectTransformGizmo_ObjectRestrictions_ *)0x0)
+    goto code_?;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)method_00,
+               (Object *)restrictions,
+               MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::GameObject,_RTG::ObjectTransformGizmo::ObjectRestrictions>__Add_UnityEngine__GameObject__RTG__ObjectTransformGizmo__ObjectRestrictions_
+              );
+  }
+  goto code_?;
 }
 
 
@@ -1900,22 +1897,18 @@ code_?:
               if (pBVar20->vector[0] == 0) {
                 uVar3 = 0x3f800000;
               }
-              if (pBVar20 != (Boolean__Array *)0x0) {
-                if (pBVar20->max_length < 2) goto code_?;
-                uVar6 = uVar4;
-                if (pBVar20->vector[1] == 0) {
-                  uVar6 = 0x3f800000;
-                }
-                if (pBVar20 != (Boolean__Array *)0x0) {
-                  if (pBVar20->max_length < 3) goto code_?;
-                  uVar7 = uVar3;
-                  uStack_9 = uVar6;
-                  if (pBVar20->vector[2] == 0) {
-                    fVar5 = 1.0;
-                  }
-                  goto code_?;
-                }
+              if (pBVar20->max_length < 2) goto code_?;
+              uVar6 = uVar4;
+              if (pBVar20->vector[1] == 0) {
+                uVar6 = 0x3f800000;
               }
+              if (pBVar20->max_length < 3) goto code_?;
+              uVar7 = uVar3;
+              uStack_9 = uVar6;
+              if (pBVar20->vector[2] == 0) {
+                fVar5 = 1.0;
+              }
+              goto code_?;
             }
           }
         }
@@ -2423,10 +2416,12 @@ void Assembly-CSharp.dll::RTG::ObjectTransformGizmo::ObjectTransformGizmo_SetTar
                 (this_01,(Object *)targetObject,
                  MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Add_UnityEngine__GameObject_
                 );
-      (this->fields)._targetObjects = (IEnumerable_1_UnityEngine_GameObject_ *)this_01;
-      func_?(&(this->fields)._targetObjects,this_01);
-      (this->fields)._targetPivotObject = targetObject;
-      func_?(&(this->fields)._targetPivotObject,targetObject);
+      ppIVar2 = &(this->fields)._targetObjects;
+      *ppIVar2 = (IEnumerable_1_UnityEngine_GameObject_ *)this_01;
+      func_?(ppIVar2,this_01);
+      ppGVar3 = &(this->fields)._targetPivotObject;
+      *ppGVar3 = targetObject;
+      func_?(ppGVar3,targetObject);
       ObjectTransformGizmo_RefreshPosition(this,(MethodInfo *)0x0);
       ObjectTransformGizmo_RefreshRotation(this,(MethodInfo *)0x0);
     }
@@ -2434,8 +2429,8 @@ void Assembly-CSharp.dll::RTG::ObjectTransformGizmo::ObjectTransformGizmo_SetTar
   }
 code_?:
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -2452,17 +2447,18 @@ void Assembly-CSharp.dll::RTG::ObjectTransformGizmo::ObjectTransformGizmo_SetTar
     bVar1 = System.Data.dll::System::Data::DataTable::DataTable_get_CaseSensitive
                       (this_00,(MethodInfo *)0x0);
     if (bVar1 == 0) {
-      (this->fields)._targetObjects = targetObjects;
+      ppIVar2 = &(this->fields)._targetObjects;
       (this->fields)._targetObjectMode = 0;
-      func_?(&(this->fields)._targetObjects,targetObjects);
+      *ppIVar2 = targetObjects;
+      func_?(ppIVar2,targetObjects);
       ObjectTransformGizmo_RefreshPosition(this,(MethodInfo *)0x0);
       ObjectTransformGizmo_RefreshRotation(this,(MethodInfo *)0x0);
     }
     return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -2478,16 +2474,17 @@ void Assembly-CSharp.dll::RTG::ObjectTransformGizmo::ObjectTransformGizmo_SetTar
     bVar1 = System.Data.dll::System::Data::DataTable::DataTable_get_CaseSensitive
                       (this_00,(MethodInfo *)0x0);
     if ((bVar1 == 0) && ((this->fields)._targetObjectMode != 1)) {
-      (this->fields)._targetPivotObject = targetPivotObject;
-      func_?(&(this->fields)._targetPivotObject,targetPivotObject);
+      ppGVar2 = &(this->fields)._targetPivotObject;
+      *ppGVar2 = targetPivotObject;
+      func_?(ppGVar2,targetPivotObject);
       ObjectTransformGizmo_RefreshPosition(this,(MethodInfo *)0x0);
       ObjectTransformGizmo_RefreshRotation(this,(MethodInfo *)0x0);
     }
     return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -2634,8 +2631,9 @@ void Assembly-CSharp.dll::RTG::ObjectTransformGizmo::ObjectTransformGizmo__ctor
               *)this_00,
              MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::GameObject,_UnityEngine::Vector3>__Dictionary__
             );
-  (this->fields)._objectToCustomLocalPivot = this_00;
-  func_?(&(this->fields)._objectToCustomLocalPivot,this_00);
+  ppDVar4 = &(this->fields)._objectToCustomLocalPivot;
+  *ppDVar4 = this_00;
+  func_?(ppDVar4,this_00);
   this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
              *)func_?(
                               TypeInfo__System__Collections__Generic__Dictionary<UnityEngine::GameObject,_RTG::ObjectTransformGizmo::ObjectRestrictions>
@@ -2646,9 +2644,10 @@ void Assembly-CSharp.dll::RTG::ObjectTransformGizmo::ObjectTransformGizmo__ctor
             (this_01,
              MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::GameObject,_RTG::ObjectTransformGizmo::ObjectRestrictions>__Dictionary__
             );
-  (this->fields)._objectToRestrictions =
-       (Dictionary_2_UnityEngine_GameObject_RTG_ObjectTransformGizmo_ObjectRestrictions_ *)this_01;
-  func_?(&(this->fields)._objectToRestrictions,this_01);
+  ppDVar5 = &(this->fields)._objectToRestrictions;
+  *ppDVar5 = (Dictionary_2_UnityEngine_GameObject_RTG_ObjectTransformGizmo_ObjectRestrictions_ *)
+             this_01;
+  func_?(ppDVar5,this_01);
   this_02 = (ObjectTransformGizmoSettings *)
             func_?(TypeInfo__RTG__ObjectTransformGizmoSettings);
   if (cRam_? == '\0') {
@@ -2665,8 +2664,9 @@ void Assembly-CSharp.dll::RTG::ObjectTransformGizmo::ObjectTransformGizmo__ctor
   (this_02->fields)._nonTransformableObjects = this_03;
   func_?();
   Settings::Settings__ctor((Settings *)this_02,(MethodInfo *)0x0);
-  (this->fields)._settings = this_02;
-  func_?(&(this->fields)._settings);
+  ppOVar6 = &(this->fields)._settings;
+  *ppOVar6 = this_02;
+  func_?(ppOVar6);
   GizmoBehaviour::GizmoBehaviour__ctor((GizmoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
@@ -2734,8 +2734,9 @@ Assembly-CSharp.dll::RTG::ObjectTransformGizmo::ObjectTransformGizmo_get_Setting
           (ObjectTransformGizmo *this,MethodInfo *method)
 
 {
-  if ((this->fields)._sharedSettings != (ObjectTransformGizmoSettings *)0x0) {
-    return (this->fields)._sharedSettings;
+  pOVar1 = (this->fields)._sharedSettings;
+  if (pOVar1 != (ObjectTransformGizmoSettings *)0x0) {
+    return pOVar1;
   }
   return (this->fields)._settings;
 }

@@ -12,41 +12,40 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
                MethodInfo *method)
 
 {
-  pMVar1 = method;
-  uVar2 = (method->klass->rgctx_data[3].klass)->actualSize;
+  uVar1 = (method->klass->rgctx_data[3].klass)->actualSize;
   func_?();
-  method = (MethodInfo *)&stack0xffffffe0;
   func_?();
   func_?();
   KogamaSettingValueWrapperBase::KogamaSettingValueWrapperBase__ctor
             ((KogamaSettingValueWrapperBase *)this,key,parent,(MethodInfo *)0x0);
   p_Var5 = (_Il2CppFullySharedGenericType *)&value;
-  if ((int)(pMVar1->klass->rgctx_data[3].method)->return_type < 0) {
+  if ((int)(method->klass->rgctx_data[3].method)->return_type < 0) {
     p_Var5 = value;
   }
-  func_?(method,p_Var5,uVar2);
+  func_?(&stack0xffffffe0,p_Var5,uVar1);
   p_Var5 = (_Il2CppFullySharedGenericType *)&min;
-  if ((int)(pMVar1->klass->rgctx_data[3].method)->return_type < 0) {
+  if ((int)(method->klass->rgctx_data[3].method)->return_type < 0) {
     p_Var5 = min;
   }
-  func_?(&stack0xffffffe0,p_Var5,uVar2);
+  func_?(&stack0xffffffe0,p_Var5,uVar1);
+  pMVar2 = method;
   p_Var5 = (_Il2CppFullySharedGenericType *)&max;
-  if ((int)(pMVar1->klass->rgctx_data[3].method)->return_type < 0) {
+  if ((int)(method->klass->rgctx_data[3].method)->return_type < 0) {
     p_Var5 = max;
   }
-  func_?(&stack0xffffffe0,p_Var5,uVar2);
-  if (((uint)(pMVar1->klass->rgctx_data[1].klass)->vtable[0].methodPtr & 0x100) == 0) {
+  func_?(&stack0xffffffe0,p_Var5,uVar1);
+  if (((uint)(pMVar2->klass->rgctx_data[1].klass)->vtable[0].methodPtr & 0x100) == 0) {
     func_?();
   }
   pKVar3 = (KogamaSettingNumeric_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
            func_?();
-  if (-1 < (int)(pMVar1->klass->rgctx_data[3].method)->return_type) {
-    method = (MethodInfo *)method->methodPointer;
+  pIVar4 = method->klass->rgctx_data;
+  puVar5 = &stack0xffffffe0;
+  if (-1 < (int)(pIVar4[3].method)->return_type) {
+    puVar5 = unaff_EDI;
   }
-  pMVar4 = pMVar1->klass->rgctx_data[5].method;
-  (*pMVar4->invoker_method)
-            ((pMVar1->klass->rgctx_data[5].method)->methodPointer,pMVar4,pKVar3,
-             (void **)&stack0xffffffec,method);
+  pMVar2 = pIVar4[5].method;
+  (*pMVar2->invoker_method)(pMVar2->methodPointer,pMVar2,pKVar3,(void **)&stack0xffffffec,puVar5);
   (this->fields).KogamaSettingNumeric = pKVar3;
   func_?();
   return;
@@ -63,18 +62,15 @@ KogamaSettingNumericBase_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__g
           MethodInfo *method)
 
 {
-  uVar1 = *(undefined4 *)
-           (*(int *)(*(int *)(*(int *)((int)in_stack_2 + 0x10) + 0x60) + 0xc) + 0x84);
+  iVar1 = *(int *)(*(int *)((int)in_stack_2 + 0x10) + 0x60);
+  uVar3 = *(undefined4 *)(*(int *)(iVar1 + 0xc) + 0x84);
   func_?();
-  pKVar3 = (this->fields).KogamaSettingNumeric;
-  if (pKVar3 != (KogamaSettingNumeric_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
-    iVar4 = *(int *)(*(int *)(*(int *)((int)in_stack_2 + 0x10) + 0x60) + 8);
-    piVar5 = (int *)((int)in_stack_2 + 0x10);
+  pKVar4 = (this->fields).KogamaSettingNumeric;
+  if (pKVar4 != (KogamaSettingNumeric_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
+    puVar5 = *(undefined4 **)(iVar1 + 8);
     in_stack_2 = &stack0xfffffff0;
-    (**(code **)(iVar4 + 8))
-              (**(undefined4 **)(*(int *)(*piVar5 + 0x60) + 8),iVar4,pKVar3,&stack0x0000000c,
-               &stack0xfffffff0);
-    p_Var6 = (_Il2CppFullySharedGenericType *)func_?(method,&stack0xfffffff0,uVar1);
+    (*(code *)puVar5[2])(*puVar5,puVar5,pKVar4,&stack0x0000000c,&stack0xfffffff0);
+    p_Var6 = (_Il2CppFullySharedGenericType *)func_?(method,&stack0xfffffff0,uVar3);
     return p_Var6;
   }
   func_?();
@@ -93,28 +89,30 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
                ,_Il2CppFullySharedGenericType *value,MethodInfo *method)
 
 {
-  pMVar1 = method;
-  uVar2 = (method->klass->rgctx_data[3].klass)->actualSize;
+  pIVar1 = method->klass->rgctx_data[3].klass;
   func_?();
-  method = (MethodInfo *)(this->fields).KogamaSettingNumeric;
-  p_Var5 = (_Il2CppFullySharedGenericType *)&value;
-  if ((int)(pMVar1->klass->rgctx_data[3].method)->return_type < 0) {
-    p_Var5 = value;
+  pKVar2 = (this->fields).KogamaSettingNumeric;
+  iVar3._0_2_ = (pIVar1->byval_arg).attrs;
+  iVar3._2_1_ = (pIVar1->byval_arg).type;
+  iVar3._3_1_ = (pIVar1->byval_arg).field_0x7;
+  p_Var7 = (_Il2CppFullySharedGenericType *)&value;
+  if (iVar3 < 0) {
+    p_Var7 = value;
   }
-  func_?(&stack0xfffffff0,p_Var5,uVar2);
-  if (method != (MethodInfo *)0x0) {
-    value = (_Il2CppFullySharedGenericType *)&stack0xfffffff0;
-    if (-1 < (int)(pMVar1->klass->rgctx_data[3].method)->return_type) {
+  func_?(&stack0xfffffff4,p_Var7,pIVar1->actualSize);
+  if (pKVar2 != (KogamaSettingNumeric_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
+    pIVar4 = method->klass->rgctx_data;
+    value = (_Il2CppFullySharedGenericType *)&stack0xfffffff4;
+    if (-1 < (int)(pIVar4[3].method)->return_type) {
       value = unaff_EDI;
     }
-    pMVar3 = pMVar1->klass->rgctx_data[4].method;
-    (*pMVar3->invoker_method)
-              ((pMVar1->klass->rgctx_data[4].method)->methodPointer,pMVar3,method,&value,value);
+    pMVar5 = pIVar4[4].method;
+    (*pMVar5->invoker_method)(pMVar5->methodPointer,pMVar5,pKVar2,&value,value);
     return;
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

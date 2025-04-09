@@ -15,15 +15,16 @@ void Assembly-CSharp.dll::RTG::RotationGizmoHotkeys::RotationGizmoHotkeys__ctor
   Hotkeys::Hotkeys__ctor_1(this_00,StringLiteral_Enable_snapping,staticData,(MethodInfo *)0x0);
   if (this_00 != (Hotkeys *)0x0) {
     Hotkeys::Hotkeys_set_Key(this_00,KeyCode__Enum_None,(MethodInfo *)0x0);
+    ppHVar1 = &(this->fields)._enableSnapping;
     (this_00->fields)._lCtrl = 1;
-    (this->fields)._enableSnapping = this_00;
-    func_?(&(this->fields)._enableSnapping,this_00);
+    *ppHVar1 = this_00;
+    func_?(ppHVar1,this_00);
     Settings::Settings__ctor((Settings *)this,(MethodInfo *)0x0);
     return;
   }
   func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

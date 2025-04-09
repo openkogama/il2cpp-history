@@ -85,18 +85,19 @@ void Assembly-CSharp.dll::MVExplosives::MVExplosives_Initialize
     cRam_? = '\x01';
   }
   MVLogicObject::MVLogicObject_Initialize((MVLogicObject *)this,(MethodInfo *)0x0);
-  pOVar1 = (this->fields)._._.component;
-  if (pOVar1 == (ObjectPrefab *)0x0) {
+  pMVar1 = TypeInfo__MVExplosivesObject;
+  pOVar2 = (this->fields)._._.component;
+  if (pOVar2 == (ObjectPrefab *)0x0) {
     func_?();
-    pMVar2 = extraout_EDX;
+    pOVar2 = extraout_EDX;
   }
   else {
-    pMVar2 = TypeInfo__MVExplosivesObject;
-    if (((TypeInfo__MVExplosivesObject->_1).naturalAligment <= (pOVar1->klass->_1).naturalAligment)
-       && ((pOVar1->klass->_1).typeHierarchy[(TypeInfo__MVExplosivesObject->_1).naturalAligment - 1]
-           == (Il2CppClass *)TypeInfo__MVExplosivesObject)) {
+    bVar3 = (TypeInfo__MVExplosivesObject->_1).naturalAligment;
+    if ((bVar3 <= (pOVar2->klass->_1).naturalAligment) &&
+       ((pOVar2->klass->_1).typeHierarchy[bVar3 - 1] == (Il2CppClass *)TypeInfo__MVExplosivesObject)
+       ) {
       MVLogicObject::MVLogicObject_SetupCulling
-                ((MVLogicObject *)this,(GameObject *)pOVar1[1].klass,2.0,(MethodInfo *)0x0);
+                ((MVLogicObject *)this,(GameObject *)pOVar2[1].klass,2.0,(MethodInfo *)0x0);
       this_00 = (UnityAction_2_System_Int32_System_Int32_ *)
                 func_?(TypeInfo__System__Action<LogicInputState,_LogicObjectManager>);
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
@@ -104,19 +105,19 @@ void Assembly-CSharp.dll::MVExplosives::MVExplosives_Initialize
                 (this_00,(Object *)this,
                  MethodInfo__MVExplosives__InputStateUpdateCallback_LogicInputState__LogicObjectManager_
                  ,(MethodInfo *)0x0);
-      pIVar3 = LogicClientsideFactory::LogicClientsideFactory_CreateStateChangeInputSignalReceiver
+      pIVar4 = LogicClientsideFactory::LogicClientsideFactory_CreateStateChangeInputSignalReceiver
                          ((MVWorldObject *)this,0,
                           (Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,
                           (Action_2_LogicInputState_LogicObjectManager_ *)this_00,(MethodInfo *)0x0)
       ;
-      (this->fields)._InputSignalReceiver_k__BackingField = pIVar3;
-      func_?(&(this->fields)._InputSignalReceiver_k__BackingField,pIVar3);
+      (this->fields)._InputSignalReceiver_k__BackingField = pIVar4;
+      func_?();
       return;
     }
   }
-  func_?(pOVar1,pMVar2);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  func_?(pOVar2,pMVar1);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

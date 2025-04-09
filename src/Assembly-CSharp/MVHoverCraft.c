@@ -8,6 +8,7 @@ Assembly-CSharp.dll::MVHoverCraft::MVHoverCraft_CreateHoverCraftVisualizationSet
           MVHoverCraft *this,MethodInfo *method)
 
 {
+  pHVar1 = __return_storage_ptr__;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Boolean);
     func_?(&
@@ -20,117 +21,128 @@ Assembly-CSharp.dll::MVHoverCraft::MVHoverCraft_CreateHoverCraftVisualizationSet
     func_?(&StringLiteral_thrustersSize);
     cRam_? = '\x01';
   }
-  pOStack_1 = (Object *)0x0;
-  pOStack_2 = (Object *)0x0;
-  iVar3 = 0x100;
-  pOStack_4 = (Object *)0x0;
+  pTStack_2 = (ThrustersColorAlphaKey__Array *)0x0;
+  pTStack_3 = (ThrustersColorAlphaKey__Array *)0x0;
+  pTStack_4 = (ThrustersColorAlphaKey__Array *)0x0;
   *(undefined4 *)__return_storage_ptr__ = 0;
   __return_storage_ptr__->thrustersSize = 0.0;
   (__return_storage_ptr__->thrustersColor).colors = (ThrustersColorColorKey__Array *)0x0;
   (__return_storage_ptr__->thrustersColor).alphas = (ThrustersColorAlphaKey__Array *)0x0;
-  pOStack_5 = _UNK_?;
+  bStack_5 = 0;
+  __return_storage_ptr__._3_1_ = 1;
+  bVar6 = __return_storage_ptr__._3_1_;
+  __return_storage_ptr__._3_1_ = 1;
+  fStack_7 = _UNK_?;
   if ((TypeInfo__HoverCraftVisualization->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__HoverCraftVisualization);
   }
-  pTVar6 = (TypeInfo__HoverCraftVisualization->static_fields->DefaultThrustersColor).colors;
-  pTStack_7 = (TypeInfo__HoverCraftVisualization->static_fields->DefaultThrustersColor).alphas;
-  if ((this->fields)._._._.blueprintData != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-            ::Dictionary_2_System_Object_System_Object__TryGetValue
-                      ((this->fields)._._._.blueprintData,(Object *)StringLiteral_thrustersOn,
-                       &pOStack_1,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
-                      );
-    if ((bVar8 != 0) && (pOStack_1 != (Object *)0x0)) {
-      pOVar9 = (Object *)0x0;
-      if ((Boolean__Class *)pOStack_1->klass == TypeInfo__System__Boolean) {
-        pOVar9 = pOStack_1;
-      }
-      if (pOVar9 == (Object *)0x0) goto code_?;
-      pOVar9 = pOStack_1;
-      pSVar10 = (Single__Class *)TypeInfo__System__Boolean;
-      if ((pOStack_1->klass->_0).element_class == (TypeInfo__System__Boolean->_0).element_class) {
-        pOStack_5 = pOStack_1;
-        pbVar11 = (byte *)func_?();
-        iVar3 = (uint)*pbVar11 << 8;
-        goto code_?;
-      }
-code_?:
-      func_?(pOVar9,pSVar10);
-code_?:
-      func_?();
-      pcVar12 = (code *)swi(3);
-      pHVar13 = (HoverCraftVisualization_HoverCraftVisualizationSettings *)(*pcVar12)();
-      return pHVar13;
+  pTVar8 = &TypeInfo__HoverCraftVisualization->static_fields->DefaultThrustersColor;
+  pTVar9 = pTVar8->colors;
+  pTStack_10 = pTVar8->alphas;
+  pDVar11 = (this->fields)._._._.blueprintData;
+  TVar12 = *pTVar8;
+  if (pDVar11 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+  bVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+          Dictionary_2_System_Object_System_Object__TryGetValue
+                    (pDVar11,(Object *)StringLiteral_thrustersOn,(Object **)&pTStack_2,
+                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
+                    );
+  __return_storage_ptr__._3_1_ = bVar6;
+  if ((bVar13 != 0) && (pTStack_2 != (ThrustersColorAlphaKey__Array *)0x0)) {
+    pTVar14 = (ThrustersColorAlphaKey__Array *)0x0;
+    if ((Boolean__Class *)pTStack_2->klass == TypeInfo__System__Boolean) {
+      pTVar14 = pTStack_2;
     }
-code_?:
-    pDVar14 = (this->fields)._._._.blueprintData;
-    if (pDVar14 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-    bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-            ::Dictionary_2_System_Object_System_Object__TryGetValue
-                      (pDVar14,(Object *)StringLiteral_thrustersSize,&pOStack_2,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
-                      );
-    if ((bVar8 != 0) && (pOStack_2 != (Object *)0x0)) {
-      pOVar9 = (Object *)0x0;
-      if ((Single__Class *)pOStack_2->klass == TypeInfo__System__Single) {
-        pOVar9 = pOStack_2;
-      }
-      if (pOVar9 != (Object *)0x0) {
-        pOVar9 = pOStack_2;
-        pSVar10 = TypeInfo__System__Single;
-        if ((pOStack_2->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
-        goto code_?;
-        pfVar15 = (float *)func_?(pOStack_2);
-        pOStack_5 = (Object *)*pfVar15;
-      }
-    }
-    pDVar14 = (this->fields)._._._.blueprintData;
-    if (pDVar14 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-    bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-            ::Dictionary_2_System_Object_System_Object__TryGetValue
-                      (pDVar14,(Object *)StringLiteral_thrustersColor,&pOStack_4,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
-                      );
-    if (bVar8 == 0) goto code_?;
-    if (pOStack_4 == (Object *)0x0) {
-code_?:
-      bVar16 = 0;
-    }
-    else {
-      pOVar9 = (Object *)0x0;
-      if ((Boolean__Class *)pOStack_4->klass == TypeInfo__System__Boolean) {
-        pOVar9 = pOStack_4;
-      }
-      if (pOVar9 == (Object *)0x0) goto code_?;
-      pOVar9 = pOStack_4;
-      pSVar10 = (Single__Class *)TypeInfo__System__Boolean;
-      if ((pOStack_4->klass->_0).element_class != (TypeInfo__System__Boolean->_0).element_class)
-      goto code_?;
-      puVar17 = (undefined1 *)func_?(pOStack_4);
-      iVar3 = CONCAT31((int3)((uint)iVar3 >> 8),*puVar17);
-      bVar16 = 1;
-    }
-    if ((bVar16 & (byte)iVar3) != 0) {
-      TVar18 = WorldObjectTypes::HoverCraft::Shared::ThrustersColorSerializer::
-               ThrustersColorSerializer_Deserialize
-                         ((this->fields)._._._.blueprintData,(MethodInfo *)0x0);
-      goto code_?;
+    if (pTVar14 != (ThrustersColorAlphaKey__Array *)0x0) {
+      pTVar14 = pTStack_2;
+      pSVar15 = (Single__Class *)TypeInfo__System__Boolean;
+      if ((((Boolean__Class *)pTStack_2->klass)->_0).element_class !=
+          (TypeInfo__System__Boolean->_0).element_class) goto code_?;
+      pTStack_10 = pTStack_2;
+      pbVar16 = (bool *)func_?();
+      __return_storage_ptr__._3_1_ = *pbVar16;
     }
   }
+  TVar17.alphas = pTStack_10;
+  TVar17.colors = pTVar9;
+  TVar12.alphas = pTStack_10;
+  TVar12.colors = pTVar9;
+  pDVar11 = (this->fields)._._._.blueprintData;
+  if (pDVar11 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+            ::Dictionary_2_System_Object_System_Object__TryGetValue
+                      (pDVar11,(Object *)StringLiteral_thrustersSize,(Object **)&pTStack_3,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
+                      );
+    if ((bVar6 != 0) && (pTStack_3 != (ThrustersColorAlphaKey__Array *)0x0)) {
+      pTVar14 = (ThrustersColorAlphaKey__Array *)0x0;
+      if ((Single__Class *)pTStack_3->klass == TypeInfo__System__Single) {
+        pTVar14 = pTStack_3;
+      }
+      if (pTVar14 != (ThrustersColorAlphaKey__Array *)0x0) {
+        pTVar14 = pTStack_3;
+        pSVar15 = TypeInfo__System__Single;
+        if ((((Single__Class *)pTStack_3->klass)->_0).element_class !=
+            (TypeInfo__System__Single->_0).element_class) goto code_?;
+        pfVar18 = (float *)func_?(pTStack_3);
+        fStack_7 = *pfVar18;
+      }
+    }
+    pDVar11 = (this->fields)._._._.blueprintData;
+    if (pDVar11 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+      bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+              Object]::Dictionary_2_System_Object_System_Object__TryGetValue
+                        (pDVar11,(Object *)StringLiteral_thrustersColor,(Object **)&pTStack_4,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
+                        );
+      if (bVar6 == 0) goto code_?;
+      if (pTStack_4 == (ThrustersColorAlphaKey__Array *)0x0) {
 code_?:
-  TVar18.alphas = pTStack_7;
-  TVar18.colors = pTVar6;
+        bVar19 = 0;
+      }
+      else {
+        pTVar14 = (ThrustersColorAlphaKey__Array *)0x0;
+        if ((Boolean__Class *)pTStack_4->klass == TypeInfo__System__Boolean) {
+          pTVar14 = pTStack_4;
+        }
+        if (pTVar14 == (ThrustersColorAlphaKey__Array *)0x0) goto code_?;
+        pTVar14 = pTStack_4;
+        pSVar15 = (Single__Class *)TypeInfo__System__Boolean;
+        if ((((Boolean__Class *)pTStack_4->klass)->_0).element_class !=
+            (TypeInfo__System__Boolean->_0).element_class) goto code_?;
+        pbVar20 = (byte *)func_?(pTStack_4);
+        bStack_5 = *pbVar20;
+        bVar19 = 1;
+      }
+      TVar12 = TVar17;
+      if ((bStack_5 & bVar19) != 0) {
+        TVar12 = WorldObjectTypes::HoverCraft::Shared::ThrustersColorSerializer::
+                 ThrustersColorSerializer_Deserialize
+                           ((this->fields)._._._.blueprintData,(MethodInfo *)0x0);
+      }
 code_?:
-  *(undefined4 *)__return_storage_ptr__ = 0;
-  __return_storage_ptr__->thrustersSize = 0.0;
-  (__return_storage_ptr__->thrustersColor).colors = (ThrustersColorColorKey__Array *)0x0;
-  (__return_storage_ptr__->thrustersColor).alphas = (ThrustersColorAlphaKey__Array *)0x0;
-  __return_storage_ptr__->useThruster = (bool)((uint)iVar3 >> 8);
-  __return_storage_ptr__->thrustersSize = (float)pOStack_5;
-  __return_storage_ptr__->thrustersColor = TVar18;
-  func_?(&__return_storage_ptr__->thrustersColor,0);
-  return __return_storage_ptr__;
+      pTStack_10 = TVar12.alphas;
+      pTStack_21 = TVar12.colors;
+      *(undefined4 *)pHVar1 = 0;
+      pHVar1->thrustersSize = 0.0;
+      (pHVar1->thrustersColor).colors = (ThrustersColorColorKey__Array *)0x0;
+      (pHVar1->thrustersColor).alphas = (ThrustersColorAlphaKey__Array *)0x0;
+      pHVar1->useThruster = __return_storage_ptr__._3_1_;
+      (pHVar1->thrustersColor).colors = pTStack_21;
+      pHVar1->thrustersSize = fStack_7;
+      (pHVar1->thrustersColor).alphas = pTStack_10;
+      func_?(&pHVar1->thrustersColor,0);
+      return pHVar1;
+    }
+  }
+  func_?();
+  pTVar14 = extraout_ECX;
+  pSVar15 = extraout_EDX;
+code_?:
+  func_?(pTVar14,pSVar15);
+  pcVar22 = (code *)swi(3);
+  pHVar1 = (HoverCraftVisualization_HoverCraftVisualizationSettings *)(*pcVar22)();
+  return pHVar1;
 }
 
 
@@ -158,63 +170,61 @@ Assembly-CSharp.dll::MVHoverCraft::MVHoverCraft_CreateLocalObjects
   }
   pGVar1 = (this->fields)._._._._._.gameObject;
   if (pGVar1 != (GameObject *)0x0) {
-    this_01 = (SmoothCharacterController *)
+    this_02 = (SmoothCharacterController *)
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
                         (pGVar1,
                          SmoothCharacterController_MethodInfo__UnityEngine__GameObject__AddComponent<SmoothCharacterController>__
                         );
-    if (this_01 != (SmoothCharacterController *)0x0) {
+    if (this_02 != (SmoothCharacterController *)0x0) {
       SmoothCharacterController::SmoothCharacterController_Init
-                (this_01,(this->fields)._._._._._.gameObject,(CullingSubscriberBase *)0x0,
+                (this_02,(this->fields)._._._._._.gameObject,(CullingSubscriberBase *)0x0,
                  (MVWorldObjectClient *)this,(MethodInfo *)0x0);
-      pMVar2 = (this_01->fields).controller;
+      this_00 = (this_02->fields).controller;
       if (cRam_? == '\0') {
-        in_stack_3 = &TypeInfo__UnityEngine__Vector3;
         func_?(&TypeInfo__UnityEngine__Vector3);
         cRam_? = '\x01';
       }
-      pVVar4 = TypeInfo__UnityEngine__Vector3->static_fields;
-      uVar5 = (pVVar4->upVector).x;
-      uVar6 = (pVVar4->upVector).y;
-      if (pMVar2 != (MvCharacterController *)0x0) {
-        center.y = (float)uVar6 * _UNK_?;
-        center.x = (float)uVar5 * _UNK_?;
-        center.z = (pVVar4->upVector).z * _UNK_?;
-        MvCharacterController::MvCharacterController_Init(pMVar2,1.3,2.0,center,(MethodInfo *)0x0);
-        pMVar2 = (this_01->fields).controller;
-        pHVar7 = MVWorldObjectClient::MVWorldObjectClient_get_WorldIDsRecursive
+      pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
+      uVar3 = (pVVar2->upVector).x;
+      uVar4 = (pVVar2->upVector).y;
+      unaff_ESI = (MvCharacterController *)0x0;
+      if (this_00 != (MvCharacterController *)0x0) {
+        center.y = (float)uVar4 * _UNK_?;
+        center.x = (float)uVar3 * _UNK_?;
+        center.z = (pVVar2->upVector).z * _UNK_?;
+        MvCharacterController::MvCharacterController_Init(this_00,1.3,2.0,center,(MethodInfo *)0x0);
+        unaff_ESI = (this_02->fields).controller;
+        pHVar5 = MVWorldObjectClient::MVWorldObjectClient_get_WorldIDsRecursive
                            ((MVWorldObjectClient *)this,(MethodInfo *)0x0);
-        if (pMVar2 != (MvCharacterController *)0x0) {
-          (pMVar2->fields).IgnoreWoIds = pHVar7;
-          in_stack_3 = (Vector3__Class **)&UNK_?;
-          func_?(&(pMVar2->fields).IgnoreWoIds,pHVar7);
+        if (unaff_ESI != (MvCharacterController *)0x0) {
+          (unaff_ESI->fields).IgnoreWoIds = pHVar5;
+          func_?();
           pGVar1 = (this->fields)._._._._._.gameObject;
           if (pGVar1 != (GameObject *)0x0) {
-            this_02 = (HoverCraftMotor *)
+            this_03 = (HoverCraftMotor *)
                       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
                                 (pGVar1,
                                  HoverCraftMotor_MethodInfo__UnityEngine__GameObject__AddComponent<HoverCraftMotor>__
                                 );
-            if (this_02 != (HoverCraftMotor *)0x0) {
-              motor = this_02;
+            if (this_03 != (HoverCraftMotor *)0x0) {
               HoverCraftMotor::HoverCraftMotor_UpdateConfiguration
-                        (this_02,(this->fields)._._._.blueprintData,(MethodInfo *)0x0);
-              pVVar8 = (this->fields)._._.seatManager;
-              if ((pVVar8 != (VehicleSeatManager *)0x0) &&
-                 (this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                            (pVVar8->fields).seats,
-                 this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0
+                        (this_03,(this->fields)._._._.blueprintData,(MethodInfo *)0x0);
+              pVVar6 = (this->fields)._._.seatManager;
+              if ((pVVar6 != (VehicleSeatManager *)0x0) &&
+                 (this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                            (pVVar6->fields).seats,
+                 this_01 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0
                  )) {
-                RVar9 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                         RegularExpressions::RegexCharClass+SingleRange]::
-                         List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                   (this_00,seatID,
-                                    MethodInfo__System__Collections__Generic__List<VehicleSeatBase>__get_Item_int_
-                                   );
-                if (RVar9 != (RegexCharClass_SingleRange)0x0) {
-                  pMVar10 = *(MVHoverCraft **)((int)RVar9 + 0x18);
-                  iVar11 = func_?(pMVar10,TypeInfo__IVehicleCamera);
-                  if (iVar11 == 0) {
+                RVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                        RegularExpressions::RegexCharClass+SingleRange]::
+                        List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                                  (this_01,seatID,
+                                   MethodInfo__System__Collections__Generic__List<VehicleSeatBase>__get_Item_int_
+                                  );
+                if (RVar7 != (RegexCharClass_SingleRange)0x0) {
+                  unaff_ESI = *(MvCharacterController **)((int)RVar7 + 0x18);
+                  iVar8 = func_?(unaff_ESI,TypeInfo__IVehicleCamera);
+                  if (iVar8 == 0) {
                     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
                       func_?(TypeInfo__UnityEngine__Debug);
                     }
@@ -223,22 +233,23 @@ Assembly-CSharp.dll::MVHoverCraft::MVHoverCraft_CreateLocalObjects
                                (MethodInfo *)0x0);
                     return (MVVehicleBase_LocalObjectsBase *)0x0;
                   }
-                  pIVar12 = (IVehicleCamera *)0x0;
-                  if (pMVar10 == (MVHoverCraft *)0x0) {
+                  pIStack_9 = TypeInfo__IVehicleCamera;
+                  if (unaff_ESI == (MvCharacterController *)0x0) {
+                    pIVar10 = (IVehicleCamera *)0x0;
 code_?:
-                    (this_02->fields)._._VehicleCamera_k__BackingField = pIVar12;
-                    func_?(&(this_02->fields)._._VehicleCamera_k__BackingField,pIVar12);
-                    this_03 = (MVSimpleOneSeatVehicle_LocalObjectsSimpleVehicle *)
+                    ppIVar11 = &(this_03->fields)._._VehicleCamera_k__BackingField;
+                    *ppIVar11 = pIVar10;
+                    func_?(ppIVar11,pIVar10);
+                    this_04 = (MVSimpleOneSeatVehicle_LocalObjectsSimpleVehicle *)
                               func_?(TypeInfo__MVHoverCraft__LocalObjectsHoverCraft);
                     MVSimpleOneSeatVehicle+LocalObjectsSimpleVehicle::
                     MVSimpleOneSeatVehicle_LocalObjectsSimpleVehicle__ctor
-                              (this_03,(MVSimpleOneSeatVehicle *)this,this_01,
-                               (SimpleVehicleMotorBase *)motor,(MethodInfo *)0x0);
-                    return (MVVehicleBase_LocalObjectsBase *)this_03;
+                              (this_04,(MVSimpleOneSeatVehicle *)this,this_02,
+                               (SimpleVehicleMotorBase *)this_03,(MethodInfo *)0x0);
+                    return (MVVehicleBase_LocalObjectsBase *)this_04;
                   }
-                  in_stack_3 = (Vector3__Class **)TypeInfo__IVehicleCamera;
-                  pIVar12 = (IVehicleCamera *)func_?(pMVar10,TypeInfo__IVehicleCamera);
-                  if (pIVar12 != (IVehicleCamera *)0x0) goto code_?;
+                  pIVar10 = (IVehicleCamera *)func_?(unaff_ESI,TypeInfo__IVehicleCamera);
+                  if (pIVar10 != (IVehicleCamera *)0x0) goto code_?;
                   goto code_?;
                 }
               }
@@ -249,13 +260,11 @@ code_?:
     }
   }
   func_?();
-  pMVar10 = this;
 code_?:
-  this = pMVar10;
-  func_?(this,in_stack_3);
-  pcVar13 = (code *)swi(3);
-  pMVar14 = (MVVehicleBase_LocalObjectsBase *)(*pcVar13)();
-  return pMVar14;
+  func_?(unaff_ESI,pIStack_9);
+  pcVar12 = (code *)swi(3);
+  pMVar13 = (MVVehicleBase_LocalObjectsBase *)(*pcVar12)();
+  return pMVar13;
 }
 
 
@@ -265,11 +274,12 @@ void Assembly-CSharp.dll::MVHoverCraft::MVHoverCraft_Destroy(MVHoverCraft *this,
 
 {
   MVWorldObjectClient::MVWorldObjectClient_Destroy((MVWorldObjectClient *)this,(MethodInfo *)0x0);
-  if ((this->fields).cullingSubscriberDynamic != (CullingSubscriberDynamic *)0x0) {
-    CullingSubscriberDynamic::CullingSubscriberDynamic_Destroy
-              ((this->fields).cullingSubscriberDynamic,(MethodInfo *)0x0);
-    (this->fields).cullingSubscriberDynamic = (CullingSubscriberDynamic *)0x0;
-    func_?(&(this->fields).cullingSubscriberDynamic,0);
+  this_00 = (this->fields).cullingSubscriberDynamic;
+  ppCVar1 = &(this->fields).cullingSubscriberDynamic;
+  if (this_00 != (CullingSubscriberDynamic *)0x0) {
+    CullingSubscriberDynamic::CullingSubscriberDynamic_Destroy(this_00,(MethodInfo *)0x0);
+    *ppCVar1 = (CullingSubscriberDynamic *)0x0;
+    func_?(ppCVar1,0);
   }
   return;
 }
@@ -348,22 +358,24 @@ Assembly-CSharp.dll::MVHoverCraft::MVHoverCraft_HealthChangeResult
       pBVar3 = TypeInfo__System__Boolean;
       if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Boolean->_0).element_class) {
         pcVar4 = (char *)func_?(pOVar1);
-        if ((*pcVar4 == '\0' && health < fVar2) &&
-           (pMVar5 = (MVHoverCraft *)(this->fields).randomLeaveVehicle, 0.0 < (float)pMVar5)) {
-          if ((float)pMVar5 < 0.0) {
-            this = (MVHoverCraft *)0x0;
-          }
-          else {
-            this = pMVar5;
-            if ((float)_UNK_? < (float)pMVar5) {
-              this = _UNK_?;
+        if (*pcVar4 == '\0' && health < fVar2) {
+          pMVar5 = (MVHoverCraft *)(this->fields).randomLeaveVehicle;
+          if (0.0 < (float)pMVar5) {
+            if ((float)pMVar5 < 0.0) {
+              this = (MVHoverCraft *)0x0;
             }
+            else {
+              this = pMVar5;
+              if ((float)_UNK_? < (float)pMVar5) {
+                this = _UNK_?;
+              }
+            }
+            fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_Range
+                              (0.0,100.0,(MethodInfo *)0x0);
+            this._0_2_ = (MVVehicleBase_HealthChangeAffects)
+                         CONCAT11(health <= 0.0,fVar2 <= (float)this);
+            return this._0_2_;
           }
-          fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_Range
-                            (0.0,100.0,(MethodInfo *)0x0);
-          this._0_2_ = (MVVehicleBase_HealthChangeAffects)
-                       CONCAT11(health <= 0.0,fVar2 <= (float)this);
-          return this._0_2_;
         }
         MVar6 = MVVehicleBase::MVVehicleBase_HealthChangeResult
                           ((MVVehicleBase *)this,health,(MethodInfo *)0x0);
@@ -409,27 +421,24 @@ void Assembly-CSharp.dll::MVHoverCraft::MVHoverCraft_Initialize
     func_?(&StringLiteral_HoverCraftHull);
     cRam_? = '\x01';
   }
-  this_03 = (CullingSubscriberDynamic *)0x0;
+  this_04 = (CullingSubscriberDynamic *)0x0;
   MVSimpleOneSeatVehicle::MVSimpleOneSeatVehicle_Initialize
             ((MVSimpleOneSeatVehicle *)this,(MethodInfo *)0x0);
   pMVar1 = MVBlueprintBase::MVBlueprintBase_GetChild
                      ((MVBlueprintBase *)this,StringLiteral_HoverCraftHull,(MethodInfo *)0x0);
-  if ((pMVar1 == (MVWorldObjectClient *)0x0) ||
-     (((TypeInfo__MVCubeModelInstance->_1).naturalAligment <= (pMVar1->klass->_1).naturalAligment &&
-      ((MVCubeModelInstance__Class *)
-       (pMVar1->klass->_1).typeHierarchy[(TypeInfo__MVCubeModelInstance->_1).naturalAligment - 1] ==
-       TypeInfo__MVCubeModelInstance)))) {
+  if (pMVar1 == (MVWorldObjectClient *)0x0) {
+code_?:
     pGVar2 = (this->fields)._._._._._.gameObject;
-    if ((pGVar2 == (GameObject *)0x0) ||
-       ((this_00 = (Behaviour *)
+    if (((pGVar2 == (GameObject *)0x0) ||
+        (this_01 = (Behaviour *)
                    UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                    GameObject_GetComponentInChildren_1
                              (pGVar2,
                               HoverCraftVisualization_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<HoverCraftVisualization>__
-                             ), this_00 == (Behaviour *)0x0 ||
-        (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                            ((Component *)this_00,(MethodInfo *)0x0), pGVar2 == (GameObject *)0x0)))
-       ) goto code_?;
+                             ), this_01 == (Behaviour *)0x0)) ||
+       (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)this_01,(MethodInfo *)0x0), pGVar2 == (GameObject *)0x0))
+    goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
               (pGVar2,1,(MethodInfo *)0x0);
     cVar3 = (*(code *)(this->klass->vtable).get_IsInSpawner.method)();
@@ -441,43 +450,43 @@ void Assembly-CSharp.dll::MVHoverCraft::MVHoverCraft_Initialize
                  InteractionDataHandler_MethodInfo__UnityEngine__GameObject__AddComponent<InteractionDataHandler>__
                 );
       pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)this_00,(MethodInfo *)0x0);
-      this_03 = (CullingSubscriberDynamic *)func_?();
+                         ((Component *)this_01,(MethodInfo *)0x0);
+      this_04 = (CullingSubscriberDynamic *)func_?();
       CullingSubscriberDynamic::CullingSubscriberDynamic__ctor
-                (this_03,4.0,3,pGVar2,(GameObject__Array *)0x0,0,(MethodInfo *)0x0);
-      (this->fields).cullingSubscriberDynamic = this_03;
+                (this_04,4.0,3,pGVar2,(GameObject__Array *)0x0,0,(MethodInfo *)0x0);
+      (this->fields).cullingSubscriberDynamic = this_04;
       func_?();
       if (pMVar1 == (MVWorldObjectClient *)0x0) goto code_?;
       (*(code *)(pMVar1->klass->vtable).set_Visible.method)();
       UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                (this_00,1,(MethodInfo *)0x0);
+                (this_01,1,(MethodInfo *)0x0);
     }
     pMVar4 = (this->fields)._._.IsVehicleDead;
     if (pMVar4 == (MVRuntimeDataVariable *)0x0) goto code_?;
     a = (pMVar4->fields).OnChange;
-    this_01 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)func_?();
+    this_02 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)func_?();
     UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
     VideoCapture+OnVideoCaptureResourceCreatedCallback::
     VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
-              (this_01,(Object *)this,MethodInfo__MVHoverCraft__OnIsDeadChange_System__Object_,
+              (this_02,(Object *)this,MethodInfo__MVHoverCraft__OnIsDeadChange_System__Object_,
                (MethodInfo *)0x0);
     pMVar5 = (MVCubeModelInstance *)
              mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)a,(Delegate *)this_01,(MethodInfo *)0x0);
-    cubeModelBase = (MVCubeModelInstance *)0x0;
+                       ((Delegate *)a,(Delegate *)this_02,(MethodInfo *)0x0);
     if (pMVar5 == (MVCubeModelInstance *)0x0) {
+      pMVar6 = (MVCubeModelInstance *)0x0;
       (pMVar4->fields).OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)0x0;
 code_?:
       func_?();
-      pHVar6 = MVHoverCraft_CreateHoverCraftVisualizationSettings
+      pHVar7 = MVHoverCraft_CreateHoverCraftVisualizationSettings
                          ((HoverCraftVisualization_HoverCraftVisualizationSettings *)
                           &stack0xffffffc8,this,(MethodInfo *)0x0);
-      uVar7._0_1_ = pHVar6->useThruster;
-      uVar7._1_3_ = *(undefined3 *)&pHVar6->field_0x1;
-      fVar8 = pHVar6->thrustersSize;
-      pTVar9 = (pHVar6->thrustersColor).colors;
-      if ((cubeModelBase == (MVCubeModelInstance *)0x0) ||
-         (pGVar2 = (cubeModelBase->fields)._._.gameObject, pGVar2 == (GameObject *)0x0))
+      uVar8._0_1_ = pHVar7->useThruster;
+      uVar8._1_3_ = *(undefined3 *)&pHVar7->field_0x1;
+      fVar9 = pHVar7->thrustersSize;
+      pTVar10 = (pHVar7->thrustersColor).colors;
+      if ((pMVar6 == (MVCubeModelInstance *)0x0) ||
+         (pGVar2 = (pMVar6->fields)._._.gameObject, pGVar2 == (GameObject *)0x0))
       goto code_?;
       hoverCraftHull =
            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
@@ -485,80 +494,86 @@ code_?:
       maxHealthVal = (this->fields)._.maxHealth;
       vsm = (this->fields)._._.seatManager;
       health = (this->fields)._.Health;
-      pTVar10 = (ThrustersColorAlphaKey__Array *)&UNK_?;
-      bVar11 = (*(code *)(this->klass->vtable).get_IsInSpawner.method)();
-      hoverCraftVisualizationSettings.thrustersSize = fVar8;
-      hoverCraftVisualizationSettings.useThruster = (bool)uVar7;
-      hoverCraftVisualizationSettings._1_3_ = SUB43(uVar7,1);
-      hoverCraftVisualizationSettings.thrustersColor.colors._0_2_ = (int16_t)pTVar9;
-      hoverCraftVisualizationSettings.thrustersColor.colors._2_2_ = (short)((uint)pTVar9 >> 0x10);
-      hoverCraftVisualizationSettings.thrustersColor.alphas = pTVar10;
+      pTVar11 = (ThrustersColorAlphaKey__Array *)&UNK_?;
+      bVar12 = (*(code *)(this->klass->vtable).get_IsInSpawner.method)();
+      hoverCraftVisualizationSettings.thrustersSize = fVar9;
+      hoverCraftVisualizationSettings.useThruster = (bool)uVar8;
+      hoverCraftVisualizationSettings._1_3_ = SUB43(uVar8,1);
+      hoverCraftVisualizationSettings.thrustersColor.colors._0_2_ = (int16_t)pTVar10;
+      hoverCraftVisualizationSettings.thrustersColor.colors._2_2_ = (short)((uint)pTVar10 >> 0x10);
+      hoverCraftVisualizationSettings.thrustersColor.alphas = pTVar11;
       HoverCraftVisualization::HoverCraftVisualization_Init
                 ((HoverCraftVisualization *)&UNK_?,hoverCraftHull,vsm,maxHealthVal,health,
-                 bVar11,hoverCraftVisualizationSettings,(MethodInfo *)0x0);
+                 bVar12,hoverCraftVisualizationSettings,(MethodInfo *)0x0);
       (this->fields)._._.visualization = (VehicleVisualizationBase *)&UNK_?;
       func_?();
-      uVar12._0_2_ = 0;
-      uVar12._2_2_ = 0;
-      iVar13 = 0;
+      uVar13._0_2_ = 0;
+      uVar13._2_2_ = 0;
+      iVar14 = 0;
       MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
                 ((IntVector *)&stack0xffffffd8,-0x10,-2,0,(MethodInfo *)0x0);
-      uVar14._0_2_ = 0;
-      uVar14._2_2_ = 0;
-      iVar15 = 0;
+      uVar15._0_2_ = 0;
+      uVar15._2_2_ = 0;
+      iVar16 = 0;
       MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
                 ((IntVector *)&stack0xffffffe0,2,5,6,(MethodInfo *)0x0);
-      this_02 = (EditableCubeModelWrapper *)func_?();
-      min.z = iVar13;
-      min.x = (int16_t)uVar12;
-      min.y = SUB42(uVar12,2);
-      max.z = iVar15;
-      max.x = (int16_t)uVar14;
-      max.y = SUB42(uVar14,2);
+      this_03 = (EditableCubeModelWrapper *)func_?();
+      min.z = iVar14;
+      min.x = (int16_t)uVar13;
+      min.y = SUB42(uVar13,2);
+      max.z = iVar16;
+      max.x = (int16_t)uVar15;
+      max.y = SUB42(uVar15,2);
       EditableCubeModelWrapper::EditableCubeModelWrapper__ctor_1
-                (this_02,cubeModelBase,min,max,0x32,(MethodInfo *)0x0);
-      (this->fields)._.editableCubeModelWrapper = this_02;
+                (this_03,pMVar6,min,max,0x32,(MethodInfo *)0x0);
+      (this->fields)._.editableCubeModelWrapper = this_03;
       func_?();
-      if (((this->fields)._._._.blueprintData == (Dictionary_2_System_Object_System_Object_ *)0x0)
-         || ((bVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System
-                      ::Object]::Dictionary_2_System_Object_System_Object__TryGetValue
-                                ((this->fields)._._._.blueprintData,
-                                 (Object *)StringLiteral_randomLeaveVehicle,
-                                 (Object **)&stack0xffffffec,
-                                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
-                                ), bVar11 == 0 || (this_03 == (CullingSubscriberDynamic *)0x0)))) {
+      this_00 = (this->fields)._._._.blueprintData;
+      if ((this_00 == (Dictionary_2_System_Object_System_Object_ *)0x0) ||
+         ((bVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                   Object]::Dictionary_2_System_Object_System_Object__TryGetValue
+                             (this_00,(Object *)StringLiteral_randomLeaveVehicle,
+                              (Object **)&stack0xffffffec,
+                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
+                             ), bVar12 == 0 || (this_04 == (CullingSubscriberDynamic *)0x0)))) {
         return;
       }
-      pCVar16 = (CullingSubscriberDynamic *)0x0;
-      if ((Single__Class *)this_03->klass == TypeInfo__System__Single) {
-        pCVar16 = this_03;
+      pCVar17 = (CullingSubscriberDynamic *)0x0;
+      if ((Single__Class *)this_04->klass == TypeInfo__System__Single) {
+        pCVar17 = this_04;
       }
-      if (pCVar16 == (CullingSubscriberDynamic *)0x0) {
+      if (pCVar17 == (CullingSubscriberDynamic *)0x0) {
         return;
       }
-      if ((this_03->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
-        pfVar17 = (float *)func_?();
-        (this->fields).randomLeaveVehicle = *pfVar17;
+      if ((((Single__Class *)this_04->klass)->_0).element_class ==
+          (TypeInfo__System__Single->_0).element_class) {
+        pfVar18 = (float *)func_?();
+        (this->fields).randomLeaveVehicle = *pfVar18;
         return;
       }
       goto code_?;
     }
+    pMVar6 = (MVCubeModelInstance *)0x0;
     if (pMVar5->klass ==
         (MVCubeModelInstance__Class *)TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-      cubeModelBase = pMVar5;
+      pMVar6 = pMVar5;
     }
-    if (cubeModelBase != (MVCubeModelInstance *)0x0) {
-      (pMVar4->fields).OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)cubeModelBase;
-      cubeModelBase = (MVCubeModelInstance *)0x0;
+    if (pMVar6 != (MVCubeModelInstance *)0x0) {
+      (pMVar4->fields).OnChange = (MVRuntimeDataVariable_OnChangeDelegate *)pMVar6;
+      pMVar6 = (MVCubeModelInstance *)0x0;
       if (pMVar5->klass ==
           (MVCubeModelInstance__Class *)TypeInfo__MVRuntimeDataVariable__OnChangeDelegate) {
-        cubeModelBase = pMVar5;
+        pMVar6 = pMVar5;
       }
-      if (cubeModelBase != (MVCubeModelInstance *)0x0) goto code_?;
+      if (pMVar6 != (MVCubeModelInstance *)0x0) goto code_?;
       goto code_?;
     }
   }
   else {
+    bVar19 = (TypeInfo__MVCubeModelInstance->_1).naturalAligment;
+    if ((bVar19 <= (pMVar1->klass->_1).naturalAligment) &&
+       ((MVCubeModelInstance__Class *)(pMVar1->klass->_1).typeHierarchy[bVar19 - 1] ==
+        TypeInfo__MVCubeModelInstance)) goto code_?;
     func_?();
 code_?:
     func_?();
@@ -568,8 +583,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
+  pcVar20 = (code *)swi(3);
+  (*pcVar20)();
   return;
 }
 
@@ -595,18 +610,18 @@ void Assembly-CSharp.dll::MVHoverCraft::MVHoverCraft_InitializeInventory
                        (this_00,
                         HoverCraftVisualization_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<HoverCraftVisualization>__
                        );
-    (this->fields)._._.visualization = pVVar1;
-    func_?(&(this->fields)._._.visualization,pVVar1);
-    pVVar1 = (this->fields)._._.visualization;
-    if (pVVar1 != (VehicleVisualizationBase *)0x0) {
+    ppVVar2 = &(this->fields)._._.visualization;
+    *ppVVar2 = pVVar1;
+    func_?(ppVVar2,pVVar1);
+    if (*ppVVar2 != (VehicleVisualizationBase *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                ((Behaviour *)pVVar1,0,(MethodInfo *)0x0);
+                ((Behaviour *)*ppVVar2,0,(MethodInfo *)0x0);
       return;
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -624,16 +639,15 @@ void Assembly-CSharp.dll::MVHoverCraft::MVHoverCraft_OnDataUpdate
   }
   this_00 = (HoverCraftVisualization *)(this->fields)._._.visualization;
   if (this_00 != (HoverCraftVisualization *)0x0) {
-    if (((TypeInfo__HoverCraftVisualization->_1).naturalAligment <=
-         (this_00->klass->_1).naturalAligment) &&
-       ((this_00->klass->_1).typeHierarchy
-        [(TypeInfo__HoverCraftVisualization->_1).naturalAligment - 1] ==
+    bVar1 = (TypeInfo__HoverCraftVisualization->_1).naturalAligment;
+    if ((bVar1 <= (this_00->klass->_1).naturalAligment) &&
+       ((this_00->klass->_1).typeHierarchy[bVar1 - 1] ==
         (Il2CppClass *)TypeInfo__HoverCraftVisualization)) {
-      pHVar1 = MVHoverCraft_CreateHoverCraftVisualizationSettings
+      pHVar2 = MVHoverCraft_CreateHoverCraftVisualizationSettings
                          ((HoverCraftVisualization_HoverCraftVisualizationSettings *)
                           &stack0xffffffec,this,(MethodInfo *)0x0);
       HoverCraftVisualization::HoverCraftVisualization_UpdateSettings
-                (this_00,*pHVar1,(MethodInfo *)0x0);
+                (this_00,*pHVar2,(MethodInfo *)0x0);
       return;
     }
     func_?(this_00,TypeInfo__HoverCraftVisualization);
@@ -642,8 +656,8 @@ void Assembly-CSharp.dll::MVHoverCraft::MVHoverCraft_OnDataUpdate
             ((HoverCraftVisualization_HoverCraftVisualizationSettings *)&stack0xffffffec,this,
              (MethodInfo *)0x0);
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -813,38 +827,37 @@ Assembly-CSharp.dll::MVHoverCraft::MVHoverCraft_SetupVehicleEnergyContainerConfi
   *(undefined3 *)&__return_storage_ptr__->field_0x1 = 0;
   __return_storage_ptr__->storage = 0;
   __return_storage_ptr__->consumption = 0;
-  if ((this->fields)._._._.blueprintData != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pDVar1 = (this->fields)._._._.blueprintData;
+  pDVar1 = (this->fields)._._._.blueprintData;
+  if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
     if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__Extensions);
     }
     bVar2 = Extensions::Extensions_GetBool
                       (pDVar1,StringLiteral_vehicleEnergyUse,0,(MethodInfo *)0x0);
-    pHVar3 = TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HoverCraftSettings
-    ;
     pDVar1 = (this->fields)._._._.blueprintData;
     __return_storage_ptr__->usingEnergy = bVar2;
-    if ((pHVar3->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(pHVar3);
-      pHVar3 = 
-      TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HoverCraftSettings;
+    if ((TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HoverCraftSettings->_1
+        ).cctor_finished_or_no_cctor == 0) {
+      func_?(
+                     TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HoverCraftSettings
+                     );
     }
-    iVar4 = Extensions::Extensions_GetClampedInt
+    iVar3 = Extensions::Extensions_GetClampedInt
                       (pDVar1,StringLiteral_vehicleEnergyStorage,
-                       (pHVar3->static_fields->VehicleEnergyForVehicleSettingsConfig).
-                       storageMinValue,
-                       (pHVar3->static_fields->VehicleEnergyForVehicleSettingsConfig).
-                       storageMaxValue,0x37,(MethodInfo *)0x0);
-    pHVar3 = TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HoverCraftSettings
-    ;
-    __return_storage_ptr__->storage = iVar4;
-    iVar4 = Extensions::Extensions_GetClampedInt
+                       (TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HoverCraftSettings
+                        ->static_fields->VehicleEnergyForVehicleSettingsConfig).storageMinValue,
+                       (TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HoverCraftSettings
+                        ->static_fields->VehicleEnergyForVehicleSettingsConfig).storageMaxValue,0x37
+                       ,(MethodInfo *)0x0);
+    __return_storage_ptr__->storage = iVar3;
+    iVar3 = Extensions::Extensions_GetClampedInt
                       ((this->fields)._._._.blueprintData,StringLiteral_vehicleEnergyConsumption,
-                       (pHVar3->static_fields->VehicleEnergyForVehicleSettingsConfig).
-                       consumptionMinValue,
-                       (pHVar3->static_fields->VehicleEnergyForVehicleSettingsConfig).
-                       consumptionMaxValue,6,(MethodInfo *)0x0);
-    __return_storage_ptr__->consumption = iVar4;
+                       (TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HoverCraftSettings
+                        ->static_fields->VehicleEnergyForVehicleSettingsConfig).consumptionMinValue,
+                       (TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HoverCraftSettings
+                        ->static_fields->VehicleEnergyForVehicleSettingsConfig).consumptionMaxValue,
+                       6,(MethodInfo *)0x0);
+    __return_storage_ptr__->consumption = iVar3;
     return __return_storage_ptr__;
   }
   __return_storage_ptr__->storage = -1;
@@ -896,17 +909,17 @@ Assembly-CSharp.dll::MVHoverCraft::MVHoverCraft_get_HoverCraftVisualization
   }
   pHVar1 = (HoverCraftVisualization *)(this->fields)._._.visualization;
   if (pHVar1 == (HoverCraftVisualization *)0x0) {
-    return (HoverCraftVisualization *)0x0;
+    return pHVar1;
   }
-  if (((TypeInfo__HoverCraftVisualization->_1).naturalAligment <=
-       (pHVar1->klass->_1).naturalAligment) &&
-     ((pHVar1->klass->_1).typeHierarchy[(TypeInfo__HoverCraftVisualization->_1).naturalAligment - 1]
-      == (Il2CppClass *)TypeInfo__HoverCraftVisualization)) {
+  bVar2 = (TypeInfo__HoverCraftVisualization->_1).naturalAligment;
+  if ((bVar2 <= (pHVar1->klass->_1).naturalAligment) &&
+     ((pHVar1->klass->_1).typeHierarchy[bVar2 - 1] ==
+      (Il2CppClass *)TypeInfo__HoverCraftVisualization)) {
     return pHVar1;
   }
   func_?(pHVar1,TypeInfo__HoverCraftVisualization);
-  pcVar2 = (code *)swi(3);
-  pHVar1 = (HoverCraftVisualization *)(*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  pHVar1 = (HoverCraftVisualization *)(*pcVar3)();
   return pHVar1;
 }
 

@@ -13,10 +13,12 @@ void Assembly-CSharp.dll::RTG::GizmoTransformAxisMap3D::GizmoTransformAxisMap3D_
   if (transform != (GizmoTransform *)0x0) {
     this_00 = (AxisDescriptor *)func_?(TypeInfo__RTG__AxisDescriptor);
     AxisDescriptor::AxisDescriptor__ctor(this_00,axisIndex,axisSign,(MethodInfo *)0x0);
-    (this->fields)._mappedAxisDesc = this_00;
-    func_?(&(this->fields)._mappedAxisDesc,this_00);
-    (this->fields)._transform = transform;
-    func_?(&(this->fields)._transform,transform);
+    ppAVar1 = &(this->fields)._mappedAxisDesc;
+    *ppAVar1 = this_00;
+    func_?(ppAVar1,this_00);
+    ppGVar2 = &(this->fields)._transform;
+    *ppGVar2 = transform;
+    func_?(ppGVar2,transform);
   }
   return;
 }
@@ -66,71 +68,54 @@ void Assembly-CSharp.dll::RTG::GizmoTransformAxisMap3D::GizmoTransformAxisMap3D_
                (GizmoTransformAxisMap3D *this,Vector3 axis,MethodInfo *method)
 
 {
-  if ((this->fields)._transform == (GizmoTransform *)0x0) {
+  this_00 = (this->fields)._transform;
+  if (this_00 == (GizmoTransform *)0x0) {
     return;
   }
-  pVVar1 = (((this->fields)._transform)->fields)._axes3D;
+  pVVar1 = (this_00->fields)._axes3D;
   if (pVVar1 != (Vector3__Array *)0x0) {
     if (pVVar1->max_length == 0) goto code_?;
     uVar2._0_4_ = pVVar1->vector[0].x;
     uStack_3 = pVVar1->vector[0].y;
+    axisDesc = (this->fields)._mappedAxisDesc;
     fVar4 = pVVar1->vector[0].z;
-    pAVar5 = (this->fields)._mappedAxisDesc;
-    if (pAVar5 != (AxisDescriptor *)0x0) {
-      if ((pAVar5->fields)._index == 0) {
-        pVVar1 = (((this->fields)._transform)->fields)._axes3D;
+    if (axisDesc != (AxisDescriptor *)0x0) {
+      if ((axisDesc->fields)._index == 0) {
         if (pVVar1->max_length < 2) goto code_?;
         uVar2._0_4_ = pVVar1->vector[1].x;
         uStack_3 = pVVar1->vector[1].y;
         fVar4 = pVVar1->vector[1].z;
       }
-      this_00 = (this->fields)._transform;
-      if (this_00 == (GizmoTransform *)0x0) {
-        uVar6._0_4_ = (this->fields)._freeAxis.x;
-        uVar6._4_4_ = (this->fields)._freeAxis.y;
-        fVar7 = (this->fields)._freeAxis.z;
-      }
-      else {
-        pVVar8 = GizmoTransform::GizmoTransform_GetAxis3D
-                            ((Vector3 *)&puStack_9,this_00,(this->fields)._mappedAxisDesc,
-                             (MethodInfo *)0x0);
-        uVar6._0_4_ = pVVar8->x;
-        uVar6._4_4_ = pVVar8->y;
-        fVar7 = pVVar8->z;
-      }
-      from.z = fVar7;
-      from.x = (float)(int)uVar6;
-      from.y = (float)(int)((ulonglong)uVar6 >> 0x20);
+      pVVar5 = GizmoTransform::GizmoTransform_GetAxis3D
+                         ((Vector3 *)&puStack_6,this_00,axisDesc,(MethodInfo *)0x0);
       perp180.z = fVar4;
       uStack_3 = (undefined4)((ulonglong)uVar2 >> 0x20);
       perp180.x = (float)(undefined4)uVar2;
       perp180.y = (float)uStack_3;
-      pQVar10 = QuaternionEx::QuaternionEx_FromToRotation3D
-                          (&QStack_11,from,axis,perp180,(MethodInfo *)0x0);
-      if (this_00 != (GizmoTransform *)0x0) {
-        fVar4 = (this_00->fields)._rotation3D.x;
-        fVar7 = (this_00->fields)._rotation3D.y;
-        fVar12 = (this_00->fields)._rotation3D.z;
-        fVar13 = (this_00->fields)._rotation3D.w;
-        fVar14 = pQVar10->y;
-        fVar15 = pQVar10->z;
-        fVar16 = pQVar10->w;
-        value.y = (fVar14 * fVar13 + fVar7 * fVar16 + fVar15 * fVar4) - fVar12 * pQVar10->x;
-        value.x = (fVar13 * pQVar10->x + fVar4 * fVar16 + fVar12 * fVar14) - fVar7 * fVar15;
-        value.z = (fVar15 * fVar13 + fVar12 * fVar16 + fVar7 * pQVar10->x) -
-                  fVar14 * (this_00->fields)._rotation3D.x;
-        value.w = ((fVar13 * fVar16 - pQVar10->x * (this_00->fields)._rotation3D.x) - fVar7 * fVar14)
-                  - fVar15 * fVar12;
-        GizmoTransform::GizmoTransform_set_Rotation3D(this_00,value,(MethodInfo *)0x0);
-        return;
-      }
+      pQVar7 = QuaternionEx::QuaternionEx_FromToRotation3D
+                          (&QStack_8,*pVVar5,axis,perp180,(MethodInfo *)0x0);
+      fVar4 = (this_00->fields)._rotation3D.x;
+      fVar9 = (this_00->fields)._rotation3D.y;
+      fVar10 = (this_00->fields)._rotation3D.z;
+      fVar11 = (this_00->fields)._rotation3D.w;
+      fVar12 = pQVar7->y;
+      fVar13 = pQVar7->z;
+      fVar14 = pQVar7->w;
+      value.y = (fVar14 * fVar9 + fVar12 * fVar11 + fVar13 * fVar4) - pQVar7->x * fVar10;
+      value.x = (pQVar7->x * fVar11 + fVar14 * fVar4 + fVar12 * fVar10) - fVar13 * fVar9;
+      value.z = (fVar14 * fVar10 + fVar13 * fVar11 + pQVar7->x * fVar9) -
+                fVar12 * (this_00->fields)._rotation3D.x;
+      value.w = ((fVar14 * fVar11 - pQVar7->x * (this_00->fields)._rotation3D.x) - fVar12 * fVar9) -
+                fVar13 * fVar10;
+      GizmoTransform::GizmoTransform_set_Rotation3D(this_00,value,(MethodInfo *)0x0);
+      return;
     }
   }
   func_?();
 code_?:
   func_?();
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -141,8 +126,9 @@ void Assembly-CSharp.dll::RTG::GizmoTransformAxisMap3D::GizmoTransformAxisMap3D_
                (GizmoTransformAxisMap3D *this,MethodInfo *method)
 
 {
-  (this->fields)._transform = (GizmoTransform *)0x0;
-  func_?(&(this->fields)._transform);
+  ppGVar1 = &(this->fields)._transform;
+  *ppGVar1 = (GizmoTransform *)0x0;
+  func_?(ppGVar1);
   return;
 }
 
@@ -170,7 +156,7 @@ void Assembly-CSharp.dll::RTG::GizmoTransformAxisMap3D::GizmoTransformAxisMap3D_
   this_00 = (AxisDescriptor *)func_?(TypeInfo__RTG__AxisDescriptor);
   AxisDescriptor::AxisDescriptor__ctor(this_00,0,AxisSign__Enum_Positive,(MethodInfo *)0x0);
   method_00 = (MethodInfo *)&(this->fields)._mappedAxisDesc;
-  (this->fields)._mappedAxisDesc = this_00;
+  *(AxisDescriptor **)method_00 = this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
@@ -185,7 +171,8 @@ Vector3 * Assembly-CSharp.dll::RTG::GizmoTransformAxisMap3D::GizmoTransformAxisM
                     MethodInfo *method)
 
 {
-  if ((this->fields)._transform == (GizmoTransform *)0x0) {
+  this_00 = (this->fields)._transform;
+  if (this_00 == (GizmoTransform *)0x0) {
     fVar1 = (this->fields)._freeAxis.y;
     fVar2 = (this->fields)._freeAxis.z;
     __return_storage_ptr__->x = (this->fields)._freeAxis.x;
@@ -193,20 +180,13 @@ Vector3 * Assembly-CSharp.dll::RTG::GizmoTransformAxisMap3D::GizmoTransformAxisM
     __return_storage_ptr__->z = fVar2;
     return __return_storage_ptr__;
   }
-  this_00 = (this->fields)._transform;
-  if (this_00 != (GizmoTransform *)0x0) {
-    pVVar3 = GizmoTransform::GizmoTransform_GetAxis3D
-                       (&VStack_4,this_00,(this->fields)._mappedAxisDesc,(MethodInfo *)0x0);
-    fVar1 = pVVar3->y;
-    fVar2 = pVVar3->z;
-    __return_storage_ptr__->x = pVVar3->x;
-    __return_storage_ptr__->y = fVar1;
-    __return_storage_ptr__->z = fVar2;
-    return __return_storage_ptr__;
-  }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  pVVar3 = (Vector3 *)(*pcVar5)();
-  return pVVar3;
+  pVVar3 = GizmoTransform::GizmoTransform_GetAxis3D
+                     (&VStack_4,this_00,(this->fields)._mappedAxisDesc,(MethodInfo *)0x0);
+  fVar1 = pVVar3->y;
+  fVar2 = pVVar3->z;
+  __return_storage_ptr__->x = pVVar3->x;
+  __return_storage_ptr__->y = fVar1;
+  __return_storage_ptr__->z = fVar2;
+  return __return_storage_ptr__;
 }
 

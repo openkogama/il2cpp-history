@@ -15,15 +15,15 @@ void Assembly-CSharp.dll::MVGamePoint::MVGamePoint_Create(MVGamePoint *this,Meth
   if (pMVar1 == (MVGamePointObject *)0x0) {
     (this->fields).gamePointObject = (MVGamePointObject *)0x0;
 code_?:
-    func_?(&(this->fields).gamePointObject,pMVar1);
-    pMVar1 = (this->fields).gamePointObject;
-    if (pMVar1 != (MVGamePointObject *)0x0) {
-      pTVar2 = (pMVar1->fields).triggerBoxEvents;
+    ppMVar2 = &(this->fields).gamePointObject;
+    func_?(ppMVar2,pMVar1);
+    if (*ppMVar2 != (MVGamePointObject *)0x0) {
+      unaff_EBX = (MVGamePointObject__Class *)((*ppMVar2)->fields).triggerBoxEvents;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
       bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                        ((Object_1 *)pTVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
+                        ((Object_1 *)unaff_EBX,(Object_1 *)0x0,(MethodInfo *)0x0);
       if (bVar3 == 0) {
 code_?:
         MVGamePoint_SetVisible(this,(MethodInfo *)0x0);
@@ -31,41 +31,43 @@ code_?:
         MVGamePoint_UpdateCanRespawn(this,(this->fields)._._._._.data,(MethodInfo *)0x0);
         return;
       }
-      pMVar1 = (this->fields).gamePointObject;
-      if (pMVar1 != (MVGamePointObject *)0x0) {
-        pTVar2 = (pMVar1->fields).triggerBoxEvents;
-        this_00 = (EventHandler_1_Object_ *)
-                  func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+      if (*ppMVar2 != (MVGamePointObject *)0x0) {
+        this_00 = ((*ppMVar2)->fields).triggerBoxEvents;
+        unaff_EBX = (MVGamePointObject__Class *)
+                    func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
         mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-                  (this_00,(Object *)this,
+                  ((EventHandler_1_Object_ *)unaff_EBX,(Object *)this,
                    MethodInfo__MVGamePoint__Enter_System__Object__TriggerEventArgs_,
                    (MethodInfo *)0x0);
-        if (pTVar2 != (TriggerBoxEvents *)0x0) {
+        if (this_00 != (TriggerBoxEvents *)0x0) {
           TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
-                    (pTVar2,(EventHandler_1_TriggerEventArgs_ *)this_00,(MethodInfo *)0x0);
+                    (this_00,(EventHandler_1_TriggerEventArgs_ *)unaff_EBX,(MethodInfo *)0x0);
           goto code_?;
         }
       }
     }
   }
   else {
-    if (((TypeInfo__MVGamePointObject->_1).naturalAligment <=
-         (((ObjectPrefab__Class *)pMVar1->klass)->_1).naturalAligment) &&
-       ((((ObjectPrefab__Class *)pMVar1->klass)->_1).typeHierarchy
-        [(TypeInfo__MVGamePointObject->_1).naturalAligment - 1] ==
+    bVar4 = (TypeInfo__MVGamePointObject->_1).naturalAligment;
+    if ((bVar4 <= (((ObjectPrefab__Class *)pMVar1->klass)->_1).naturalAligment) &&
+       ((((ObjectPrefab__Class *)pMVar1->klass)->_1).typeHierarchy[bVar4 - 1] ==
         (Il2CppClass *)TypeInfo__MVGamePointObject)) {
       (this->fields).gamePointObject = pMVar1;
-      if (((TypeInfo__MVGamePointObject->_1).naturalAligment <=
-           (((ObjectPrefab__Class *)pMVar1->klass)->_1).naturalAligment) &&
-         ((((ObjectPrefab__Class *)pMVar1->klass)->_1).typeHierarchy
-          [(TypeInfo__MVGamePointObject->_1).naturalAligment - 1] ==
+      bVar4 = (TypeInfo__MVGamePointObject->_1).naturalAligment;
+      unaff_EBX = TypeInfo__MVGamePointObject;
+      if (((((ObjectPrefab__Class *)pMVar1->klass)->_1).naturalAligment < bVar4) ||
+         ((((ObjectPrefab__Class *)pMVar1->klass)->_1).typeHierarchy[bVar4 - 1] !=
           (Il2CppClass *)TypeInfo__MVGamePointObject)) goto code_?;
+      goto code_?;
     }
     func_?(pMVar1,TypeInfo__MVGamePointObject);
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pMVar1 = extraout_EDX;
+code_?:
+  func_?(pMVar1,unaff_EBX);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -81,12 +83,9 @@ void Assembly-CSharp.dll::MVGamePoint::MVGamePoint_Destroy(MVGamePoint *this,Met
     cRam_? = '\x01';
   }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if (pMVar1 != (MVNetworkGame *)0x0) {
-    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar1 == (MVNetworkGame *)0x0) {
-      func_?();
-      goto code_?;
-    }
     pAVar2 = (pMVar1->fields).OnWinningConditionFulfilled;
     this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
                *)func_?(TypeInfo__System__Action<IWinningCondition>);
@@ -103,29 +102,32 @@ void Assembly-CSharp.dll::MVGamePoint::MVGamePoint_Destroy(MVGamePoint *this,Met
     }
     else {
       pAVar2 = (Action_1_IWinningCondition_ *)func_?();
-      if (pAVar2 == (Action_1_IWinningCondition_ *)0x0) {
-code_?:
-        func_?();
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
-        return;
-      }
+      if (pAVar2 == (Action_1_IWinningCondition_ *)0x0) goto code_?;
       (pMVar1->fields).OnWinningConditionFulfilled = pAVar2;
-      iVar5 = func_?();
-      if (iVar5 == 0) goto code_?;
+      iVar4 = func_?();
+      if (iVar4 == 0) goto code_?;
     }
     func_?();
+code_?:
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__GamePointAmountManager);
+      cRam_? = '\x01';
+    }
+    woid = (this->fields)._._._._.id;
+    if ((TypeInfo__GamePointAmountManager->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__GamePointAmountManager);
+    }
+    GamePointAmountManager::GamePointAmountManager_UpdateRewardData(woid,0,(MethodInfo *)0x0);
+    MVLogicObject::MVLogicObject_Destroy((MVLogicObject *)this,(MethodInfo *)0x0);
+    return;
   }
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__GamePointAmountManager);
-    cRam_? = '\x01';
-  }
-  woid = (this->fields)._._._._.id;
-  if ((TypeInfo__GamePointAmountManager->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__GamePointAmountManager);
-  }
-  GamePointAmountManager::GamePointAmountManager_UpdateRewardData(woid,0,(MethodInfo *)0x0);
-  MVLogicObject::MVLogicObject_Destroy((MVLogicObject *)this,(MethodInfo *)0x0);
+  func_?();
+code_?:
+  func_?();
+code_?:
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -259,31 +261,34 @@ code_?:
                           ((Delegate *)a,(Delegate *)this_00,(MethodInfo *)0x0);
     unaff_EDI = TypeInfo__System__Action<IWinningCondition>;
     if (unaff_ESI == (Delegate *)0x0) {
+      pAStack3 = (Action_1_IWinningCondition___Class *)0xc0;
       iRam_? = 0;
-      pAStack3 = (Action_1_IWinningCondition___Class *)0x0;
-code_?:
-      pDStack4 = (Delegate *)0xc0;
+      pAStack4 = (Action_1_IWinningCondition___Class *)unaff_ESI;
       func_?();
       return;
     }
-    pAStack3 = TypeInfo__System__Action<IWinningCondition>;
-    pDStack4 = unaff_ESI;
+    pAStack4 = TypeInfo__System__Action<IWinningCondition>;
+    pAStack3 = (Action_1_IWinningCondition___Class *)unaff_ESI;
     iVar5 = func_?();
     this = (MVGamePoint *)TypeInfo__System__Action<IWinningCondition>;
     if (iVar5 == 0) goto code_?;
-    unaff_EDI = (Action_1_IWinningCondition___Class *)0x0;
-    pAStack3 = TypeInfo__System__Action<IWinningCondition>;
-    pDStack4 = unaff_ESI;
+    unaff_EDI = (Action_1_IWinningCondition___Class *)0xc0;
+    pAStack4 = TypeInfo__System__Action<IWinningCondition>;
+    pAStack3 = (Action_1_IWinningCondition___Class *)unaff_ESI;
     iRam_? = iVar5;
-    pAStack3 = (Action_1_IWinningCondition___Class *)func_?();
-    if (pAStack3 != (Action_1_IWinningCondition___Class *)0x0) goto code_?;
+    pAStack4 = (Action_1_IWinningCondition___Class *)func_?();
+    if (pAStack4 != (Action_1_IWinningCondition___Class *)0x0) {
+      pAStack3 = unaff_EDI;
+      func_?();
+      return;
+    }
   }
-  pDStack4 = unaff_ESI;
-  pAStack3 = (Action_1_IWinningCondition___Class *)this;
+  pAStack3 = (Action_1_IWinningCondition___Class *)unaff_ESI;
+  pAStack4 = (Action_1_IWinningCondition___Class *)this;
   func_?();
 code_?:
-  pDStack4 = unaff_ESI;
-  pAStack3 = unaff_EDI;
+  pAStack3 = (Action_1_IWinningCondition___Class *)unaff_ESI;
+  pAStack4 = unaff_EDI;
   func_?();
   pcVar6 = (code *)swi(3);
   (*pcVar6)();

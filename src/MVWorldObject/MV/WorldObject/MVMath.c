@@ -25,8 +25,8 @@ bool MVWorldObject.dll::MV::WorldObject::MVMath::MVMath_ValidateFloat
                (float validateFloat,MethodInfo *method)
 
 {
-  if (ABS(validateFloat) != INFINITY) {
-    return (uint)ABS(validateFloat) < 0x7f800001;
+  if ((ABS(validateFloat) != INFINITY) && ((uint)ABS(validateFloat) < 0x7f800001)) {
+    return 1;
   }
   return 0;
 }

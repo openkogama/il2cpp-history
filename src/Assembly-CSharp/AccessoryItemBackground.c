@@ -16,15 +16,15 @@ void Assembly-CSharp.dll::AccessoryItemBackground::AccessoryItemBackground_Initi
     cRam_? = '\x01';
   }
   if (accessoryData != (AccessoryDataClient *)0x0) {
-    if (((accessoryData->fields)._.lvl == 0) || ((accessoryData->fields)._.cost != 0)) {
-      iVar1 = (accessoryData->fields)._.cost;
+    iVar1 = (accessoryData->fields)._.lvl;
+    if ((iVar1 == 0) || ((accessoryData->fields)._.cost != 0)) {
+      price = (accessoryData->fields)._.cost;
       if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__Styles);
       }
-      pRVar2 = Styles::Styles_GetAccessoryColorsFromPrice(iVar1,(MethodInfo *)0x0);
+      pRVar2 = Styles::Styles_GetAccessoryColorsFromPrice(price,(MethodInfo *)0x0);
     }
     else {
-      iVar1 = (accessoryData->fields)._.lvl;
       if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__Styles);
       }
@@ -64,22 +64,22 @@ void Assembly-CSharp.dll::AccessoryItemBackground::AccessoryItemBackground_Initi
             if (pAVar5 != (AccessoryBundleClient *)0x0) {
               this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                         (pAVar5->fields)._.accessoryBundleItems;
-              index = 0;
+              iVar1 = 0;
               if (this_00 !=
                   (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
                 while( true ) {
-                  if ((this_00->fields)._size <= index) {
+                  if ((this_00->fields)._size <= iVar1) {
                     return;
                   }
                   RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                           RegularExpressions::RegexCharClass+SingleRange]::
                           List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                    (this_00,index,
+                                    (this_00,iVar1,
                                      MethodInfo__System__Collections__Generic__List<MV::WorldObject::Accessories::AccessoryBundleItem>__get_Item_int_
                                     );
                   if (RVar6 == (RegexCharClass_SingleRange)0x0) goto code_?;
                   if (*(int *)((int)RVar6 + 0xc) == (accessoryData->fields)._.aMDID) break;
-                  index = index + 1;
+                  iVar1 = iVar1 + 1;
                 }
                 pIVar3 = (this->fields).backgroundRay;
                 if ((pIVar3 != (Image *)0x0) &&

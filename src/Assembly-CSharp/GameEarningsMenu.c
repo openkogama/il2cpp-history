@@ -419,7 +419,7 @@ void Assembly-CSharp.dll::GameEarningsMenu::GameEarningsMenu_OnProjectEarningsUp
                MethodInfo *method)
 
 {
-  this_00 = in_stack_1;
+  projectEarningsReport_00 = in_stack_1;
   if (cRam_? == '\0') {
     func_?(&
                     TypeInfo__System__Action<MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectEarningsReport>
@@ -431,27 +431,27 @@ void Assembly-CSharp.dll::GameEarningsMenu::GameEarningsMenu_OnProjectEarningsUp
     cRam_? = '\x01';
   }
   pAVar2 = TypeInfo__GamePassesProjectEarningsManager->static_fields->OnEarningsDataUpdated;
-  this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
              *)func_?(
                               TypeInfo__System__Action<MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectEarningsReport>
                               );
   DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
   DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            (this_01,(Object *)this,
+            (this_00,(Object *)this,
              MethodInfo__GameEarningsMenu__OnProjectEarningsUpdatedCallback_MV__WorldObject__GamePassSystem__GamePassEarnings__ProjectEarningsReport_
              ,(MethodInfo *)0x0);
   pDVar3 = mscorlib.dll::System::Delegate::Delegate_Remove
-                     ((Delegate *)pAVar2,(Delegate *)this_01,(MethodInfo *)0x0);
+                     ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
   if (pDVar3 == (Delegate *)0x0) {
     TypeInfo__GamePassesProjectEarningsManager->static_fields->OnEarningsDataUpdated =
          (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport_ *)0x0;
   }
   else {
     pAVar2 = (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport_ *)
-              func_?();
-    if (pAVar2 ==
-        (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport_ *)0x0) {
+             func_?();
+    if (pAVar2 == (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport_ *)
+                  0x0) {
 code_?:
       func_?();
       pcVar4 = (code *)swi(3);
@@ -476,198 +476,206 @@ code_?:
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar6,
              MethodInfo__System__Collections__Generic__List<int>__List__);
-  (in_stack_1->fields).tierEarnings = pLVar6;
-  func_?(&(in_stack_1->fields).tierEarnings);
-  pLVar6 = (in_stack_1->fields).tierEarnings;
+  ppLVar7 = &(in_stack_8->fields).tierEarnings;
+  *ppLVar7 = pLVar6;
+  func_?(ppLVar7,pLVar6);
+  pLVar6 = *ppLVar7;
   if (cRam_? == '\0') {
     func_?();
     func_?();
     cRam_? = '\x01';
   }
-  this_02 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_02 != (MVNetworkGame *)0x0) {
-    pMVar7 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_02,(MethodInfo *)0x0);
-    if (((pMVar7 != (MVLocalPlayer *)0x0) && (in_stack_8 != (ProjectEarningsReport *)0x0))
-       && (pDVar9 = (in_stack_8->fields).projectMemberEarningsReports,
-          pDVar9 != (Dictionary_2_System_Int32_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectMemberEarningsReport_
+  this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if (this_01 != (MVNetworkGame *)0x0) {
+    pMVar9 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0);
+    if (((pMVar9 != (MVLocalPlayer *)0x0) && (in_stack_1 != (ProjectEarningsReport *)0x0))
+       && (pDVar10 = (in_stack_1->fields).projectMemberEarningsReports,
+          pDVar10 != (Dictionary_2_System_Int32_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectMemberEarningsReport_
                      *)0x0)) {
-      iVar10 = (pMVar7->fields)._._ProfileID_k__BackingField;
-      bVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]
+      iVar11 = (pMVar9->fields)._._ProfileID_k__BackingField;
+      bVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]
               ::Dictionary_2_System_Int32_System_Single__ContainsKey
-                        ((Dictionary_2_System_Int32_System_Single_ *)pDVar9,iVar10,
+                        ((Dictionary_2_System_Int32_System_Single_ *)pDVar10,iVar11,
                          MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__ContainsKey_int_
                         );
-      if (bVar11 == 0) {
-        in_stack_1 = (GameEarningsMenu *)0x0;
+      if (bVar12 == 0) {
+        in_stack_1 = (ProjectEarningsReport *)0x0;
 code_?:
-        pMVar12 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+        pMVar13 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
         if (pLVar6 != (List_1_System_Int32_ *)0x0) {
-          piVar13 = &(pLVar6->fields)._version;
-          *piVar13 = *piVar13 + 1;
-          pIVar14 = (pLVar6->fields)._items;
-          if (pIVar14 != (Int32__Array *)0x0) {
-            uVar15 = (pLVar6->fields)._size;
-            if (uVar15 < pIVar14->max_length) {
-              (pLVar6->fields)._size = uVar15 + 1;
-              if (pIVar14->max_length <= uVar15) goto code_?;
-              pIVar14->vector[uVar15] = (int32_t)in_stack_1;
+          piVar14 = &(pLVar6->fields)._version;
+          *piVar14 = *piVar14 + 1;
+          pIVar15 = (pLVar6->fields)._items;
+          if (pIVar15 != (Int32__Array *)0x0) {
+            uVar16 = (pLVar6->fields)._size;
+            if (uVar16 < pIVar15->max_length) {
+              (pLVar6->fields)._size = uVar16 + 1;
+              if (pIVar15->max_length <= uVar16) goto code_?;
+              pIVar15->vector[uVar16] = (int32_t)in_stack_1;
             }
             else {
               mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
               List_1_System_Int32__AddWithResize
-                        (pLVar6,(int32_t)in_stack_1,pMVar12->klass->rgctx_data[0xe].method);
+                        (pLVar6,(int32_t)in_stack_1,pMVar13->klass->rgctx_data[0xe].method);
             }
-            pLVar6 = (this_00->fields).tierEarnings;
-            iVar10 = GameEarningsMenu_GetTotalBoostEarnings
-                               (this_00,in_stack_8,(MethodInfo *)0x0);
-            pMVar12 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+            pLVar6 = *ppLVar7;
+            iVar11 = GameEarningsMenu_GetTotalBoostEarnings
+                               (in_stack_8,projectEarningsReport_00,(MethodInfo *)0x0);
+            pMVar13 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
             if (pLVar6 != (List_1_System_Int32_ *)0x0) {
-              piVar13 = &(pLVar6->fields)._version;
-              *piVar13 = *piVar13 + 1;
-              pIVar14 = (pLVar6->fields)._items;
-              if (pIVar14 != (Int32__Array *)0x0) {
-                uVar15 = (pLVar6->fields)._size;
-                if (uVar15 < pIVar14->max_length) {
-                  (pLVar6->fields)._size = uVar15 + 1;
-                  if (pIVar14->max_length <= uVar15) goto code_?;
-                  pIVar14->vector[uVar15] = iVar10;
+              piVar14 = &(pLVar6->fields)._version;
+              *piVar14 = *piVar14 + 1;
+              pIVar15 = (pLVar6->fields)._items;
+              if (pIVar15 != (Int32__Array *)0x0) {
+                uVar16 = (pLVar6->fields)._size;
+                if (uVar16 < pIVar15->max_length) {
+                  (pLVar6->fields)._size = uVar16 + 1;
+                  if (pIVar15->max_length <= uVar16) goto code_?;
+                  pIVar15->vector[uVar16] = iVar11;
                 }
                 else {
                   mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
                   List_1_System_Int32__AddWithResize
-                            (pLVar6,iVar10,pMVar12->klass->rgctx_data[0xe].method);
+                            (pLVar6,iVar11,pMVar13->klass->rgctx_data[0xe].method);
                 }
-                pLVar6 = (this_00->fields).tierEarnings;
-                iVar10 = GameEarningsMenu_GetTierEarnings
-                                   (this_00,in_stack_8,GamePassTier__Enum_Tier1,
-                                    (MethodInfo *)0x0);
-                pMVar12 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+                pLVar6 = *ppLVar7;
+                iVar11 = GameEarningsMenu_GetTierEarnings
+                                   (in_stack_8,projectEarningsReport_00,
+                                    GamePassTier__Enum_Tier1,(MethodInfo *)0x0);
+                pMVar13 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
                 if (pLVar6 != (List_1_System_Int32_ *)0x0) {
-                  piVar13 = &(pLVar6->fields)._version;
-                  *piVar13 = *piVar13 + 1;
-                  pIVar14 = (pLVar6->fields)._items;
-                  if (pIVar14 != (Int32__Array *)0x0) {
-                    uVar15 = (pLVar6->fields)._size;
-                    if (uVar15 < pIVar14->max_length) {
-                      (pLVar6->fields)._size = uVar15 + 1;
-                      if (pIVar14->max_length <= uVar15) goto code_?;
-                      pIVar14->vector[uVar15] = iVar10;
+                  piVar14 = &(pLVar6->fields)._version;
+                  *piVar14 = *piVar14 + 1;
+                  pIVar15 = (pLVar6->fields)._items;
+                  if (pIVar15 != (Int32__Array *)0x0) {
+                    uVar16 = (pLVar6->fields)._size;
+                    if (uVar16 < pIVar15->max_length) {
+                      (pLVar6->fields)._size = uVar16 + 1;
+                      if (pIVar15->max_length <= uVar16) goto code_?;
+                      pIVar15->vector[uVar16] = iVar11;
                     }
                     else {
                       mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
                       List_1_System_Int32__AddWithResize
-                                (pLVar6,iVar10,pMVar12->klass->rgctx_data[0xe].method);
+                                (pLVar6,iVar11,pMVar13->klass->rgctx_data[0xe].method);
                     }
-                    pLVar6 = (this_00->fields).tierEarnings;
-                    iVar10 = GameEarningsMenu_GetTierEarnings
-                                       (this_00,in_stack_8,GamePassTier__Enum_Tier2,
-                                        (MethodInfo *)0x0);
-                    pMVar12 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+                    pLVar6 = *ppLVar7;
+                    iVar11 = GameEarningsMenu_GetTierEarnings
+                                       (in_stack_8,projectEarningsReport_00,
+                                        GamePassTier__Enum_Tier2,(MethodInfo *)0x0);
+                    pMVar13 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
                     if (pLVar6 != (List_1_System_Int32_ *)0x0) {
-                      piVar13 = &(pLVar6->fields)._version;
-                      *piVar13 = *piVar13 + 1;
-                      pIVar14 = (pLVar6->fields)._items;
-                      if (pIVar14 != (Int32__Array *)0x0) {
-                        uVar15 = (pLVar6->fields)._size;
-                        if (uVar15 < pIVar14->max_length) {
-                          (pLVar6->fields)._size = uVar15 + 1;
-                          if (pIVar14->max_length <= uVar15) goto code_?;
-                          pIVar14->vector[uVar15] = iVar10;
+                      piVar14 = &(pLVar6->fields)._version;
+                      *piVar14 = *piVar14 + 1;
+                      pIVar15 = (pLVar6->fields)._items;
+                      if (pIVar15 != (Int32__Array *)0x0) {
+                        uVar16 = (pLVar6->fields)._size;
+                        if (uVar16 < pIVar15->max_length) {
+                          (pLVar6->fields)._size = uVar16 + 1;
+                          if (pIVar15->max_length <= uVar16) goto code_?;
+                          pIVar15->vector[uVar16] = iVar11;
                         }
                         else {
                           mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
                           List_1_System_Int32__AddWithResize
-                                    (pLVar6,iVar10,pMVar12->klass->rgctx_data[0xe].method);
+                                    (pLVar6,iVar11,pMVar13->klass->rgctx_data[0xe].method);
                         }
-                        pLVar6 = (this_00->fields).tierEarnings;
-                        iVar10 = GameEarningsMenu_GetTierEarnings
-                                           (this_00,in_stack_8,GamePassTier__Enum_Tier3,
-                                            (MethodInfo *)0x0);
-                        pMVar12 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+                        pLVar6 = *ppLVar7;
+                        iVar11 = GameEarningsMenu_GetTierEarnings
+                                           (in_stack_8,projectEarningsReport_00,
+                                            GamePassTier__Enum_Tier3,(MethodInfo *)0x0);
+                        pMVar13 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
                         if (pLVar6 != (List_1_System_Int32_ *)0x0) {
-                          piVar13 = &(pLVar6->fields)._version;
-                          *piVar13 = *piVar13 + 1;
-                          pIVar14 = (pLVar6->fields)._items;
-                          if (pIVar14 != (Int32__Array *)0x0) {
-                            uVar15 = (pLVar6->fields)._size;
-                            if (uVar15 < pIVar14->max_length) {
-                              (pLVar6->fields)._size = uVar15 + 1;
-                              if (pIVar14->max_length <= uVar15) goto code_?;
-                              pIVar14->vector[uVar15] = iVar10;
+                          piVar14 = &(pLVar6->fields)._version;
+                          *piVar14 = *piVar14 + 1;
+                          pIVar15 = (pLVar6->fields)._items;
+                          if (pIVar15 != (Int32__Array *)0x0) {
+                            uVar16 = (pLVar6->fields)._size;
+                            if (uVar16 < pIVar15->max_length) {
+                              (pLVar6->fields)._size = uVar16 + 1;
+                              if (pIVar15->max_length <= uVar16) goto code_?;
+                              pIVar15->vector[uVar16] = iVar11;
                             }
                             else {
                               mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
                               List_1_System_Int32__AddWithResize
-                                        (pLVar6,iVar10,pMVar12->klass->rgctx_data[0xe].method);
+                                        (pLVar6,iVar11,pMVar13->klass->rgctx_data[0xe].method);
                             }
-                            pLVar16 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                      *)(this_00->fields).tierEarnings;
-                            if (pLVar16 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                           *)0x0) {
+                            if ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *
+                                )*ppLVar7 !=
+                                (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *
+                                )0x0) {
                               boostersEarnings =
                                    mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                                    RegularExpressions::RegexCharClass+SingleRange]::
                                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                             (pLVar16,1,
+                                             ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                               *)*ppLVar7,1,
                                               MethodInfo__System__Collections__Generic__List<int>__get_Item_int_
                                              );
-                              pLVar16 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                        *)(this_00->fields).tierEarnings;
-                              if (pLVar16 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                             *)0x0) {
+                              if ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                   *)*ppLVar7 !=
+                                  (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                   *)0x0) {
                                 tier1Earnings =
                                      mscorlib.dll::System::Collections::Generic::List`1[System::Text
                                      ::RegularExpressions::RegexCharClass+SingleRange]::
                                      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                               (pLVar16,2,
+                                               ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                                 *)*ppLVar7,2,
                                                 MethodInfo__System__Collections__Generic__List<int>__get_Item_int_
                                                );
-                                pLVar16 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                          *)(this_00->fields).tierEarnings;
-                                if (pLVar16 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                               *)0x0) {
+                                if ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                     *)*ppLVar7 !=
+                                    (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                     *)0x0) {
                                   tier2Earnings =
                                        mscorlib.dll::System::Collections::Generic::List`1[System::
                                        Text::RegularExpressions::RegexCharClass+SingleRange]::
                                        List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                                 (pLVar16,3,
+                                                 ((
+                                                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                                  *)*ppLVar7,3,
                                                   MethodInfo__System__Collections__Generic__List<int>__get_Item_int_
                                                  );
-                                  pLVar16 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                            *)(this_00->fields).tierEarnings;
-                                  if (pLVar16 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                                 *)0x0) {
+                                  if ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                       *)*ppLVar7 !=
+                                      (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                       *)0x0) {
                                     tier3Earnings =
                                          mscorlib.dll::System::Collections::Generic::List`1[System::
                                          Text::RegularExpressions::RegexCharClass+SingleRange]::
                                          List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                                   (pLVar16,4,
+                                                   ((
+                                                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                                  *)*ppLVar7,4,
                                                   MethodInfo__System__Collections__Generic__List<int>__get_Item_int_
                                                   );
-                                    pLVar16 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                              *)(this_00->fields).tierEarnings;
-                                    if (pLVar16 != (
-                                                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                                  *)0x0) {
+                                    if ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                         *)*ppLVar7 !=
+                                        (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                         *)0x0) {
                                       totalEarnings =
                                            mscorlib.dll::System::Collections::Generic::List`1[System
                                            ::Text::RegularExpressions::RegexCharClass+SingleRange]::
                                            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                                     (pLVar16,0,
+                                                     ((
+                                                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                                  *)*ppLVar7,0,
                                                   MethodInfo__System__Collections__Generic__List<int>__get_Item_int_
                                                   );
                                       GameEarningsMenu_UpdateEarningsText
-                                                (this_00,(int32_t)boostersEarnings,
+                                                (in_stack_8,(int32_t)boostersEarnings,
                                                  (int32_t)tier1Earnings,(int32_t)tier2Earnings,
                                                  (int32_t)tier3Earnings,(int32_t)totalEarnings,
                                                  (MethodInfo *)0x0);
                                       GameEarningsMenu_UpdateEarningPieChart
-                                                (this_00,(int32_t)boostersEarnings,
+                                                (in_stack_8,(int32_t)boostersEarnings,
                                                  (int32_t)tier1Earnings,(int32_t)tier2Earnings,
                                                  (int32_t)tier3Earnings,(int32_t)totalEarnings,
                                                  (MethodInfo *)0x0);
                                       GameEarningsMenu_UpdateDisplayedText
-                                                (this_00,(MethodInfo *)0x0);
+                                                (in_stack_8,(MethodInfo *)0x0);
                                       return;
                                     }
                                   }
@@ -686,17 +694,21 @@ code_?:
         }
       }
       else {
-        pDVar9 = (in_stack_8->fields).projectMemberEarningsReports;
-        if (pDVar9 != (Dictionary_2_System_Int32_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectMemberEarningsReport_
+        pDVar10 = (in_stack_1->fields).projectMemberEarningsReports;
+        if (pDVar10 != (Dictionary_2_System_Int32_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectMemberEarningsReport_
                        *)0x0) {
+          in_stack_8 =
+               (GameEarningsMenu *)
+               MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__get_Item_int_
+          ;
           pOVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
                     Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                              ((Dictionary_2_System_Int32_System_Object_ *)pDVar9,iVar10,
+                              ((Dictionary_2_System_Int32_System_Object_ *)pDVar10,iVar11,
                                MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__get_Item_int_
                               );
           if ((pOVar17 != (Object *)0x0) && (pOVar17[1].klass != (Object__Class *)0x0)) {
             in_stack_1 =
-                 (GameEarningsMenu *)
+                 (ProjectEarningsReport *)
                  MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassEarnings::
                  EarningsReport::EarningsReport_get_TotalEarningsGold
                            ((EarningsReport *)pOVar17[1].klass,(MethodInfo *)0x0);
@@ -1135,12 +1147,11 @@ void Assembly-CSharp.dll::GameEarningsMenu::GameEarningsMenu_Update
   fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
   pGVar3 = (GameEarningsMenu *)(fVar2 - (this->fields).interpolationStartTime);
   fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-  if (fVar2 + _UNK_? < (float)pGVar3) {
+  if (fVar2 + (float)_UNK_? < (float)pGVar3) {
     return;
   }
   pLVar4 = (this->fields).transformsToExpand;
   fVar2 = 0.0;
-  this = pGVar3;
   if (pLVar4 != (List_1_UnityEngine_RectTransform_ *)0x0) {
     while ((int)fVar2 < (pLVar4->fields)._size) {
       pLVar5 = (pGVar1->fields).originalWidthPositionsList;
@@ -1159,7 +1170,11 @@ void Assembly-CSharp.dll::GameEarningsMenu::GameEarningsMenu_Update
                              MethodInfo__System__Collections__Generic__List<UnityEngine::RectTransform>__get_Item_int_
                             ), RVar7 == (RegexCharClass_SingleRange)0x0)) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
-                ((Rect *)&stack0xffffffc8,(RectTransform *)RVar7,(MethodInfo *)0x0);
+                ((Rect *)&stack0xffffffc4,(RectTransform *)RVar7,(MethodInfo *)0x0);
+      this = (GameEarningsMenu *)0x0;
+      if ((0.0 <= (float)pGVar3) && (this = _UNK_?, (float)pGVar3 <= (float)_UNK_?)) {
+        this = pGVar3;
+      }
       pLVar6 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                (pGVar1->fields).transformsToExpand;
       if (pLVar6 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
@@ -1181,14 +1196,11 @@ void Assembly-CSharp.dll::GameEarningsMenu::GameEarningsMenu_Update
                                MethodInfo__System__Collections__Generic__List<UnityEngine::RectTransform>__get_Item_int_
                               ), this_00 == (RegexCharClass_SingleRange)0x0)) goto code_?;
       VVar9 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_sizeDelta
-                        ((RectTransform *)this_00,(MethodInfo *)0x0);
-      VVar9.y = VVar9.y;
-      fVar10 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Clamp01
-                         ((float)this,(MethodInfo *)0x0);
-      this = (GameEarningsMenu *)(fVar10 * ((float)this_00 - fVar8) + fVar8);
+                         ((RectTransform *)this_00,(MethodInfo *)0x0);
+      pGVar3 = (GameEarningsMenu *)(((float)this_00 - fVar8) * (float)this + fVar8);
       if (RVar7 == (RegexCharClass_SingleRange)0x0) goto code_?;
       VVar9.y = VVar9.y;
-      VVar9.x = (float)this;
+      VVar9.x = (float)pGVar3;
       UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_sizeDelta
                 ((RectTransform *)RVar7,VVar9,(MethodInfo *)0x0);
       pLVar4 = (pGVar1->fields).transformsToExpand;
@@ -1201,8 +1213,8 @@ void Assembly-CSharp.dll::GameEarningsMenu::GameEarningsMenu_Update
   }
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 code_?:
   if ((pLVar4->fields)._size <= index) {
@@ -1226,14 +1238,20 @@ code_?:
                         (pLVar6,index,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::RectTransform>__get_Item_int_
                         ), RVar7 == (RegexCharClass_SingleRange)0x0)) goto code_?;
-  pRVar12 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
-                     ((Rect *)&stack0xffffffc8,(RectTransform *)RVar7,(MethodInfo *)0x0);
-  pGVar3 = this;
-  fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Mathf::Mathf_Clamp01
-                     ((float)this,(MethodInfo *)0x0);
+  pRVar11 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
+                     ((Rect *)&stack0xffffffc4,(RectTransform *)RVar7,(MethodInfo *)0x0);
+  fVar8 = pRVar11->m_Width;
+  if ((float)pGVar3 < 0.0) {
+    pGVar12 = (GameEarningsMenu *)0x0;
+  }
+  else {
+    pGVar12 = _UNK_?;
+    if ((float)pGVar3 <= (float)_UNK_?) {
+      pGVar12 = pGVar3;
+    }
+  }
   pLVar6 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
            (pGVar1->fields).pieChartsToEnlargen;
-  fVar2 = fVar8 * (fVar2 - pRVar12->m_Width) + (float)pGVar3;
   if ((pLVar6 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
      (RVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
               RegexCharClass+SingleRange]::
@@ -1241,10 +1259,10 @@ code_?:
                         (pLVar6,index,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::RectTransform>__get_Item_int_
                         ), RVar7 == (RegexCharClass_SingleRange)0x0)) goto code_?;
-  value.y = fVar2;
-  value.x = fVar2;
   UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_sizeDelta
-            ((RectTransform *)RVar7,value,(MethodInfo *)0x0);
+            ((RectTransform *)RVar7,
+             (Vector2)((ulonglong)(uint)((fVar2 - fVar8) * (float)pGVar12 + fVar8) << 0x20),
+             (MethodInfo *)0x0);
   pLVar4 = (pGVar1->fields).pieChartsToEnlargen;
   index = index + 1;
   if (pLVar4 == (List_1_UnityEngine_RectTransform_ *)0x0) goto code_?;
@@ -1265,21 +1283,25 @@ void Assembly-CSharp.dll::GameEarningsMenu::GameEarningsMenu_UpdateDisplayedText
     func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  pGVar1 = (this->fields).displayedSmallGoldIcon;
-  if ((this->fields).currentFocusedEarning == -1) {
-    if (pGVar1 != (GameObject *)0x0) {
+  iVar1 = (this->fields).currentFocusedEarning;
+  this_00 = &(this->fields).currentFocusedEarning;
+  pGVar2 = (this->fields).displayedSmallGoldIcon;
+  if (iVar1 == -1) {
+    if (pGVar2 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar1,0,(MethodInfo *)0x0);
-      pGVar1 = (this->fields).displayedLargeGoldIcon;
-      if (pGVar1 != (GameObject *)0x0) {
+                (pGVar2,0,(MethodInfo *)0x0);
+      pGVar2 = (this->fields).displayedLargeGoldIcon;
+      if (pGVar2 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar1,1,(MethodInfo *)0x0);
-        pTVar2 = (this->fields).displayedEarningsDescriptionText;
-        if (pTVar2 != (Text *)0x0) {
-          (*(code *)(pTVar2->klass->vtable).set_text.method)();
-          pTVar2 = (this->fields).displayedEarningsAmountText;
-          if (pTVar2 != (Text *)0x0) {
-            (*(code *)(pTVar2->klass->vtable).set_text.method)();
+                  (pGVar2,1,(MethodInfo *)0x0);
+        pTVar3 = (this->fields).displayedEarningsDescriptionText;
+        if (pTVar3 != (Text *)0x0) {
+          (*(code *)(pTVar3->klass->vtable).set_text.method)();
+          pTVar3 = (this->fields).displayedEarningsAmountText;
+          if (pTVar3 != (Text *)0x0) {
+            (*(code *)(pTVar3->klass->vtable).set_text.method)
+                      (pTVar3,::StringLiteral__,
+                       (pTVar3->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
             return;
           }
         }
@@ -1287,53 +1309,55 @@ void Assembly-CSharp.dll::GameEarningsMenu::GameEarningsMenu_UpdateDisplayedText
     }
     goto code_?;
   }
-  if ((this->fields).currentFocusedEarning == 0) {
-    if (pGVar1 == (GameObject *)0x0) goto code_?;
+  if (iVar1 == 0) {
+    if (pGVar2 == (GameObject *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (pGVar1,1,(MethodInfo *)0x0);
-    pGVar1 = (this->fields).displayedLargeGoldIcon;
-    if (pGVar1 == (GameObject *)0x0) goto code_?;
+              (pGVar2,1,(MethodInfo *)0x0);
+    pGVar2 = (this->fields).displayedLargeGoldIcon;
+    if (pGVar2 == (GameObject *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (pGVar1,0,(MethodInfo *)0x0);
-    pTVar2 = (this->fields).displayedEarningsDescriptionText;
-    if (pTVar2 == (Text *)0x0) goto code_?;
-    pTVar3 = pTVar2->klass;
+              (pGVar2,0,(MethodInfo *)0x0);
+    pTVar3 = (this->fields).displayedEarningsDescriptionText;
+    if (pTVar3 == (Text *)0x0) goto code_?;
+    pTVar4 = pTVar3->klass;
   }
   else {
-    if (pGVar1 == (GameObject *)0x0) goto code_?;
+    if (pGVar2 == (GameObject *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (pGVar1,1,(MethodInfo *)0x0);
-    pGVar1 = (this->fields).displayedLargeGoldIcon;
-    if (pGVar1 == (GameObject *)0x0) goto code_?;
+              (pGVar2,1,(MethodInfo *)0x0);
+    pGVar2 = (this->fields).displayedLargeGoldIcon;
+    if (pGVar2 == (GameObject *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (pGVar1,0,(MethodInfo *)0x0);
-    pTVar2 = (this->fields).displayedEarningsDescriptionText;
-    str1 = mscorlib.dll::System::Int32::Int32_ToString
-                     ((Int32 *)&(this->fields).currentFocusedEarning,(MethodInfo *)0x0);
-    mscorlib.dll::System::String::String_Concat_3(StringLiteral_Game_Tier_,str1,(MethodInfo *)0x0);
-    if (pTVar2 == (Text *)0x0) goto code_?;
-    pTVar3 = pTVar2->klass;
+              (pGVar2,0,(MethodInfo *)0x0);
+    pTVar3 = (this->fields).displayedEarningsDescriptionText;
+    pSVar5 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)this_00,(MethodInfo *)0x0);
+    mscorlib.dll::System::String::String_Concat_3(StringLiteral_Game_Tier_,pSVar5,(MethodInfo *)0x0)
+    ;
+    if (pTVar3 == (Text *)0x0) goto code_?;
+    pTVar4 = pTVar3->klass;
   }
-  (*(code *)(pTVar3->vtable).set_text.method)();
-  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+  (*(code *)(pTVar4->vtable).set_text.method)();
+  this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
             (this->fields).tierEarnings;
-  pTVar2 = (this->fields).displayedEarningsAmountText;
-  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+  pTVar3 = (this->fields).displayedEarningsAmountText;
+  if (this_01 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
     mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
     RegexCharClass+SingleRange]::
     List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-              (this_00,(this->fields).currentFocusedEarning + 1,
+              (this_01,*this_00 + 1,
                MethodInfo__System__Collections__Generic__List<int>__get_Item_int_);
-    mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0);
-    if (pTVar2 != (Text *)0x0) {
-      (*(code *)(pTVar2->klass->vtable).set_text.method)();
+    pSVar5 = mscorlib.dll::System::Int32::Int32_ToString
+                       ((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0);
+    if (pTVar3 != (Text *)0x0) {
+      (*(code *)(pTVar3->klass->vtable).set_text.method)
+                (pTVar3,pSVar5,(pTVar3->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
       return;
     }
   }
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -1350,16 +1374,14 @@ void Assembly-CSharp.dll::GameEarningsMenu::GameEarningsMenu_UpdateEarningPieCha
     if (pIVar1 == (Image *)0x0) goto code_?;
     UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_fillAmount(pIVar1,0.25,(MethodInfo *)0x0);
     pIVar1 = (this->fields).tier1CircularImage;
-    totalEarnings = (int32_t)_UNK_?;
     if (pIVar1 == (Image *)0x0) goto code_?;
     UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_fillAmount(pIVar1,0.25,(MethodInfo *)0x0);
     pIVar1 = (this->fields).tier2CircularImage;
     if (pIVar1 == (Image *)0x0) goto code_?;
-    fVar2 = 0.25;
     UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_fillAmount(pIVar1,0.25,(MethodInfo *)0x0);
-    pIVar1 = (this->fields).tier3CircularImage;
-    fVar3 = _UNK_?;
-    if (pIVar1 == (Image *)0x0) goto code_?;
+    this_00 = (this->fields).tier3CircularImage;
+    fVar2 = _UNK_?;
+    if (this_00 == (Image *)0x0) goto code_?;
   }
   else {
     if (pIVar1 == (Image *)0x0) goto code_?;
@@ -1370,59 +1392,57 @@ void Assembly-CSharp.dll::GameEarningsMenu::GameEarningsMenu_UpdateEarningPieCha
     UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_fillAmount
               (pIVar1,(float)tier1Earnings / (float)totalEarnings,(MethodInfo *)0x0);
     pIVar1 = (this->fields).tier2CircularImage;
-    fVar2 = (float)tier2Earnings / (float)totalEarnings;
     if (pIVar1 == (Image *)0x0) goto code_?;
-    UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_fillAmount(pIVar1,fVar2,(MethodInfo *)0x0)
-    ;
-    pIVar1 = (this->fields).tier3CircularImage;
-    if (pIVar1 == (Image *)0x0) goto code_?;
-    fVar3 = (float)tier3Earnings / (float)totalEarnings;
-    totalEarnings = (int32_t)((float)tier1Earnings / (float)totalEarnings);
+    UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_fillAmount
+              (pIVar1,(float)tier2Earnings / (float)totalEarnings,(MethodInfo *)0x0);
+    this_00 = (this->fields).tier3CircularImage;
+    if (this_00 == (Image *)0x0) goto code_?;
+    fVar2 = (float)tier3Earnings / (float)totalEarnings;
   }
-  UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_fillAmount(pIVar1,fVar3,(MethodInfo *)0x0);
-  fVar2 = fVar2 * _UNK_?;
+  UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_fillAmount(this_00,fVar2,(MethodInfo *)0x0);
+  totalEarnings = (int32_t)((float)pIVar1 * _UNK_?);
   pIVar1 = (this->fields).tier1CircularImage;
   if (pIVar1 != (Image *)0x0) {
-    pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                        ((Component *)pIVar1,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
       totalEarnings = (int32_t)&UNK_?;
       func_?();
       cRam_? = '\x01';
     }
-    if (pTVar4 != (Transform *)0x0) {
+    if (pTVar3 != (Transform *)0x0) {
+      fVar2 = (TypeInfo__UnityEngine__Vector3->static_fields->forwardVector).z;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_Rotate_5
-                (pTVar4,TypeInfo__UnityEngine__Vector3->static_fields->forwardVector,fVar2,
-                 (MethodInfo *)0x0);
+                (pTVar3,TypeInfo__UnityEngine__Vector3->static_fields->forwardVector,
+                 (float)totalEarnings,(MethodInfo *)0x0);
       pIVar1 = (this->fields).tier2CircularImage;
-      fVar3 = ((float)totalEarnings + fVar2) * _UNK_?;
+      totalEarnings = (int32_t)(((float)totalEarnings + fVar2) * _UNK_?);
       if (pIVar1 != (Image *)0x0) {
-        pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+        pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                            ((Component *)pIVar1,(MethodInfo *)0x0);
         if (cRam_? == '\0') {
           totalEarnings = (int32_t)&UNK_?;
           func_?();
           cRam_? = '\x01';
         }
-        if (pTVar4 != (Transform *)0x0) {
-          fVar2 = (TypeInfo__UnityEngine__Vector3->static_fields->forwardVector).z;
+        if (pTVar3 != (Transform *)0x0) {
+          pVVar4 = &TypeInfo__UnityEngine__Vector3->static_fields->forwardVector;
+          fVar2 = pVVar4->y;
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_Rotate_5
-                    (pTVar4,TypeInfo__UnityEngine__Vector3->static_fields->forwardVector,fVar3,
-                     (MethodInfo *)0x0);
+                    (pTVar3,*pVVar4,(float)totalEarnings,(MethodInfo *)0x0);
           pIVar1 = (this->fields).tier3CircularImage;
-          totalEarnings = (int32_t)(((float)totalEarnings + fVar3 + fVar2) * _UNK_?);
+          fVar2 = ((float)totalEarnings + fVar2) * _UNK_?;
           if (pIVar1 != (Image *)0x0) {
-            pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+            pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                                ((Component *)pIVar1,(MethodInfo *)0x0);
             if (cRam_? == '\0') {
-              totalEarnings = (int32_t)&UNK_?;
               func_?();
               cRam_? = '\x01';
             }
-            if (pTVar4 != (Transform *)0x0) {
+            if (pTVar3 != (Transform *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_Rotate_5
-                        (pTVar4,TypeInfo__UnityEngine__Vector3->static_fields->forwardVector,
-                         (float)totalEarnings,(MethodInfo *)0x0);
+                        (pTVar3,TypeInfo__UnityEngine__Vector3->static_fields->forwardVector,fVar2,
+                         (MethodInfo *)0x0);
               return;
             }
           }
@@ -1445,7 +1465,7 @@ void Assembly-CSharp.dll::GameEarningsMenu::GameEarningsMenu_UpdateEarningsData
                MethodInfo *method)
 
 {
-  this_00 = this;
+  projectEarningsReport_00 = projectEarningsReport;
   if (cRam_? == '\0') {
     func_?(&MethodInfo__System__Collections__Generic__List<int>__Add_int_);
     func_?(&MethodInfo__System__Collections__Generic__List<int>__List__);
@@ -1460,9 +1480,10 @@ void Assembly-CSharp.dll::GameEarningsMenu::GameEarningsMenu_UpdateEarningsData
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar1,
              MethodInfo__System__Collections__Generic__List<int>__List__);
-  (this->fields).tierEarnings = pLVar1;
-  func_?(&(this->fields).tierEarnings,pLVar1);
-  pLVar1 = (this->fields).tierEarnings;
+  ppLVar2 = &(this->fields).tierEarnings;
+  *ppLVar2 = pLVar1;
+  func_?(ppLVar2,pLVar1);
+  pLVar1 = *ppLVar2;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__ContainsKey_int_
@@ -1472,191 +1493,197 @@ void Assembly-CSharp.dll::GameEarningsMenu::GameEarningsMenu_UpdateEarningsData
                    );
     cRam_? = '\x01';
   }
-  this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_01 != (MVNetworkGame *)0x0) {
-    pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0);
-    if (((pMVar2 != (MVLocalPlayer *)0x0) &&
-        (projectEarningsReport != (ProjectEarningsReport *)0x0)) &&
-       (pDVar3 = (projectEarningsReport->fields).projectMemberEarningsReports,
-       pDVar3 != (Dictionary_2_System_Int32_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectMemberEarningsReport_
-                  *)0x0)) {
-      iVar4 = (pMVar2->fields)._._ProfileID_k__BackingField;
-      bVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]
+  this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if (this_00 != (MVNetworkGame *)0x0) {
+    pMVar3 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0);
+    if (((pMVar3 != (MVLocalPlayer *)0x0) && (projectEarningsReport != (ProjectEarningsReport *)0x0)
+        ) && (pDVar4 = (projectEarningsReport->fields).projectMemberEarningsReports,
+             pDVar4 != (Dictionary_2_System_Int32_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectMemberEarningsReport_
+                        *)0x0)) {
+      iVar5 = (pMVar3->fields)._._ProfileID_k__BackingField;
+      bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]
               ::Dictionary_2_System_Int32_System_Single__ContainsKey
-                        ((Dictionary_2_System_Int32_System_Single_ *)pDVar3,iVar4,
+                        ((Dictionary_2_System_Int32_System_Single_ *)pDVar4,iVar5,
                          MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__ContainsKey_int_
                         );
-      if (bVar5 == 0) {
-        this = (GameEarningsMenu *)0x0;
+      if (bVar6 == 0) {
+        projectEarningsReport = (ProjectEarningsReport *)0x0;
 code_?:
-        pMVar6 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+        pMVar7 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
         if (pLVar1 != (List_1_System_Int32_ *)0x0) {
-          piVar7 = &(pLVar1->fields)._version;
-          *piVar7 = *piVar7 + 1;
-          pIVar8 = (pLVar1->fields)._items;
-          if (pIVar8 != (Int32__Array *)0x0) {
-            uVar9 = (pLVar1->fields)._size;
-            if (uVar9 < pIVar8->max_length) {
-              (pLVar1->fields)._size = uVar9 + 1;
-              if (pIVar8->max_length <= uVar9) goto code_?;
-              pIVar8->vector[uVar9] = (int32_t)this;
+          piVar8 = &(pLVar1->fields)._version;
+          *piVar8 = *piVar8 + 1;
+          pIVar9 = (pLVar1->fields)._items;
+          if (pIVar9 != (Int32__Array *)0x0) {
+            uVar10 = (pLVar1->fields)._size;
+            if (uVar10 < pIVar9->max_length) {
+              (pLVar1->fields)._size = uVar10 + 1;
+              if (pIVar9->max_length <= uVar10) goto code_?;
+              pIVar9->vector[uVar10] = (int32_t)projectEarningsReport;
             }
             else {
               mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
               List_1_System_Int32__AddWithResize
-                        (pLVar1,(int32_t)this,pMVar6->klass->rgctx_data[0xe].method);
+                        (pLVar1,(int32_t)projectEarningsReport,pMVar7->klass->rgctx_data[0xe].method
+                        );
             }
-            pLVar1 = (this_00->fields).tierEarnings;
-            iVar4 = GameEarningsMenu_GetTotalBoostEarnings
-                               (this_00,projectEarningsReport,(MethodInfo *)0x0);
-            pMVar6 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+            pLVar1 = *ppLVar2;
+            iVar5 = GameEarningsMenu_GetTotalBoostEarnings
+                               (this,projectEarningsReport_00,(MethodInfo *)0x0);
+            pMVar7 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
             if (pLVar1 != (List_1_System_Int32_ *)0x0) {
-              piVar7 = &(pLVar1->fields)._version;
-              *piVar7 = *piVar7 + 1;
-              pIVar8 = (pLVar1->fields)._items;
-              if (pIVar8 != (Int32__Array *)0x0) {
-                uVar9 = (pLVar1->fields)._size;
-                if (uVar9 < pIVar8->max_length) {
-                  (pLVar1->fields)._size = uVar9 + 1;
-                  if (pIVar8->max_length <= uVar9) goto code_?;
-                  pIVar8->vector[uVar9] = iVar4;
+              piVar8 = &(pLVar1->fields)._version;
+              *piVar8 = *piVar8 + 1;
+              pIVar9 = (pLVar1->fields)._items;
+              if (pIVar9 != (Int32__Array *)0x0) {
+                uVar10 = (pLVar1->fields)._size;
+                if (uVar10 < pIVar9->max_length) {
+                  (pLVar1->fields)._size = uVar10 + 1;
+                  if (pIVar9->max_length <= uVar10) goto code_?;
+                  pIVar9->vector[uVar10] = iVar5;
                 }
                 else {
                   mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
                   List_1_System_Int32__AddWithResize
-                            (pLVar1,iVar4,pMVar6->klass->rgctx_data[0xe].method);
+                            (pLVar1,iVar5,pMVar7->klass->rgctx_data[0xe].method);
                 }
-                pLVar1 = (this_00->fields).tierEarnings;
-                iVar4 = GameEarningsMenu_GetTierEarnings
-                                   (this_00,projectEarningsReport,GamePassTier__Enum_Tier1,
+                pLVar1 = *ppLVar2;
+                iVar5 = GameEarningsMenu_GetTierEarnings
+                                   (this,projectEarningsReport_00,GamePassTier__Enum_Tier1,
                                     (MethodInfo *)0x0);
-                pMVar6 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+                pMVar7 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
                 if (pLVar1 != (List_1_System_Int32_ *)0x0) {
-                  piVar7 = &(pLVar1->fields)._version;
-                  *piVar7 = *piVar7 + 1;
-                  pIVar8 = (pLVar1->fields)._items;
-                  if (pIVar8 != (Int32__Array *)0x0) {
-                    uVar9 = (pLVar1->fields)._size;
-                    if (uVar9 < pIVar8->max_length) {
-                      (pLVar1->fields)._size = uVar9 + 1;
-                      if (pIVar8->max_length <= uVar9) goto code_?;
-                      pIVar8->vector[uVar9] = iVar4;
+                  piVar8 = &(pLVar1->fields)._version;
+                  *piVar8 = *piVar8 + 1;
+                  pIVar9 = (pLVar1->fields)._items;
+                  if (pIVar9 != (Int32__Array *)0x0) {
+                    uVar10 = (pLVar1->fields)._size;
+                    if (uVar10 < pIVar9->max_length) {
+                      (pLVar1->fields)._size = uVar10 + 1;
+                      if (pIVar9->max_length <= uVar10) goto code_?;
+                      pIVar9->vector[uVar10] = iVar5;
                     }
                     else {
                       mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
                       List_1_System_Int32__AddWithResize
-                                (pLVar1,iVar4,pMVar6->klass->rgctx_data[0xe].method);
+                                (pLVar1,iVar5,pMVar7->klass->rgctx_data[0xe].method);
                     }
-                    pLVar1 = (this_00->fields).tierEarnings;
-                    iVar4 = GameEarningsMenu_GetTierEarnings
-                                       (this_00,projectEarningsReport,GamePassTier__Enum_Tier2,
+                    pLVar1 = *ppLVar2;
+                    iVar5 = GameEarningsMenu_GetTierEarnings
+                                       (this,projectEarningsReport_00,GamePassTier__Enum_Tier2,
                                         (MethodInfo *)0x0);
-                    pMVar6 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+                    pMVar7 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
                     if (pLVar1 != (List_1_System_Int32_ *)0x0) {
-                      piVar7 = &(pLVar1->fields)._version;
-                      *piVar7 = *piVar7 + 1;
-                      pIVar8 = (pLVar1->fields)._items;
-                      if (pIVar8 != (Int32__Array *)0x0) {
-                        uVar9 = (pLVar1->fields)._size;
-                        if (uVar9 < pIVar8->max_length) {
-                          (pLVar1->fields)._size = uVar9 + 1;
-                          if (pIVar8->max_length <= uVar9) goto code_?;
-                          pIVar8->vector[uVar9] = iVar4;
+                      piVar8 = &(pLVar1->fields)._version;
+                      *piVar8 = *piVar8 + 1;
+                      pIVar9 = (pLVar1->fields)._items;
+                      if (pIVar9 != (Int32__Array *)0x0) {
+                        uVar10 = (pLVar1->fields)._size;
+                        if (uVar10 < pIVar9->max_length) {
+                          (pLVar1->fields)._size = uVar10 + 1;
+                          if (pIVar9->max_length <= uVar10) goto code_?;
+                          pIVar9->vector[uVar10] = iVar5;
                         }
                         else {
                           mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
                           List_1_System_Int32__AddWithResize
-                                    (pLVar1,iVar4,pMVar6->klass->rgctx_data[0xe].method);
+                                    (pLVar1,iVar5,pMVar7->klass->rgctx_data[0xe].method);
                         }
-                        pLVar1 = (this_00->fields).tierEarnings;
-                        iVar4 = GameEarningsMenu_GetTierEarnings
-                                           (this_00,projectEarningsReport,GamePassTier__Enum_Tier3,
+                        pLVar1 = *ppLVar2;
+                        iVar5 = GameEarningsMenu_GetTierEarnings
+                                           (this,projectEarningsReport_00,GamePassTier__Enum_Tier3,
                                             (MethodInfo *)0x0);
-                        pMVar6 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+                        pMVar7 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
                         if (pLVar1 != (List_1_System_Int32_ *)0x0) {
-                          piVar7 = &(pLVar1->fields)._version;
-                          *piVar7 = *piVar7 + 1;
-                          pIVar8 = (pLVar1->fields)._items;
-                          if (pIVar8 != (Int32__Array *)0x0) {
-                            uVar9 = (pLVar1->fields)._size;
-                            if (uVar9 < pIVar8->max_length) {
-                              (pLVar1->fields)._size = uVar9 + 1;
-                              if (pIVar8->max_length <= uVar9) goto code_?;
-                              pIVar8->vector[uVar9] = iVar4;
+                          piVar8 = &(pLVar1->fields)._version;
+                          *piVar8 = *piVar8 + 1;
+                          pIVar9 = (pLVar1->fields)._items;
+                          if (pIVar9 != (Int32__Array *)0x0) {
+                            uVar10 = (pLVar1->fields)._size;
+                            if (uVar10 < pIVar9->max_length) {
+                              (pLVar1->fields)._size = uVar10 + 1;
+                              if (pIVar9->max_length <= uVar10) goto code_?;
+                              pIVar9->vector[uVar10] = iVar5;
                             }
                             else {
                               mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
                               List_1_System_Int32__AddWithResize
-                                        (pLVar1,iVar4,pMVar6->klass->rgctx_data[0xe].method);
+                                        (pLVar1,iVar5,pMVar7->klass->rgctx_data[0xe].method);
                             }
-                            pLVar10 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                      *)(this_00->fields).tierEarnings;
-                            if (pLVar10 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                           *)0x0) {
+                            if ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *
+                                )*ppLVar2 !=
+                                (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *
+                                )0x0) {
                               boostersEarnings =
                                    mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                                    RegularExpressions::RegexCharClass+SingleRange]::
                                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                             (pLVar10,1,
+                                             ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                               *)*ppLVar2,1,
                                               MethodInfo__System__Collections__Generic__List<int>__get_Item_int_
                                              );
-                              pLVar10 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                        *)(this_00->fields).tierEarnings;
-                              if (pLVar10 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                             *)0x0) {
+                              if ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                   *)*ppLVar2 !=
+                                  (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                   *)0x0) {
                                 tier1Earnings =
                                      mscorlib.dll::System::Collections::Generic::List`1[System::Text
                                      ::RegularExpressions::RegexCharClass+SingleRange]::
                                      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                               (pLVar10,2,
+                                               ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                                 *)*ppLVar2,2,
                                                 MethodInfo__System__Collections__Generic__List<int>__get_Item_int_
                                                );
-                                pLVar10 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                          *)(this_00->fields).tierEarnings;
-                                if (pLVar10 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                               *)0x0) {
+                                if ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                     *)*ppLVar2 !=
+                                    (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                     *)0x0) {
                                   tier2Earnings =
                                        mscorlib.dll::System::Collections::Generic::List`1[System::
                                        Text::RegularExpressions::RegexCharClass+SingleRange]::
                                        List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                                 (pLVar10,3,
+                                                 ((
+                                                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                                  *)*ppLVar2,3,
                                                   MethodInfo__System__Collections__Generic__List<int>__get_Item_int_
                                                  );
-                                  pLVar10 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                            *)(this_00->fields).tierEarnings;
-                                  if (pLVar10 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                                 *)0x0) {
+                                  if ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                       *)*ppLVar2 !=
+                                      (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                       *)0x0) {
                                     tier3Earnings =
                                          mscorlib.dll::System::Collections::Generic::List`1[System::
                                          Text::RegularExpressions::RegexCharClass+SingleRange]::
                                          List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                                   (pLVar10,4,
+                                                   ((
+                                                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                                  *)*ppLVar2,4,
                                                   MethodInfo__System__Collections__Generic__List<int>__get_Item_int_
                                                   );
-                                    pLVar10 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                              *)(this_00->fields).tierEarnings;
-                                    if (pLVar10 != (
-                                                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                                  *)0x0) {
+                                    if ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                         *)*ppLVar2 !=
+                                        (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                         *)0x0) {
                                       totalEarnings =
                                            mscorlib.dll::System::Collections::Generic::List`1[System
                                            ::Text::RegularExpressions::RegexCharClass+SingleRange]::
                                            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                                     (pLVar10,0,
+                                                     ((
+                                                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                                  *)*ppLVar2,0,
                                                   MethodInfo__System__Collections__Generic__List<int>__get_Item_int_
                                                   );
                                       GameEarningsMenu_UpdateEarningsText
-                                                (this_00,(int32_t)boostersEarnings,
+                                                (this,(int32_t)boostersEarnings,
                                                  (int32_t)tier1Earnings,(int32_t)tier2Earnings,
                                                  (int32_t)tier3Earnings,(int32_t)totalEarnings,
                                                  (MethodInfo *)0x0);
                                       GameEarningsMenu_UpdateEarningPieChart
-                                                (this_00,(int32_t)boostersEarnings,
+                                                (this,(int32_t)boostersEarnings,
                                                  (int32_t)tier1Earnings,(int32_t)tier2Earnings,
                                                  (int32_t)tier3Earnings,(int32_t)totalEarnings,
                                                  (MethodInfo *)0x0);
-                                      GameEarningsMenu_UpdateDisplayedText
-                                                (this_00,(MethodInfo *)0x0);
+                                      GameEarningsMenu_UpdateDisplayedText(this,(MethodInfo *)0x0);
                                       return;
                                     }
                                   }
@@ -1675,19 +1702,23 @@ code_?:
         }
       }
       else {
-        pDVar3 = (projectEarningsReport->fields).projectMemberEarningsReports;
-        if (pDVar3 != (Dictionary_2_System_Int32_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectMemberEarningsReport_
+        pDVar4 = (projectEarningsReport->fields).projectMemberEarningsReports;
+        if (pDVar4 != (Dictionary_2_System_Int32_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectMemberEarningsReport_
                        *)0x0) {
+          this = (GameEarningsMenu *)
+                 MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__get_Item_int_
+          ;
           pOVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
                     Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                              ((Dictionary_2_System_Int32_System_Object_ *)pDVar3,iVar4,
+                              ((Dictionary_2_System_Int32_System_Object_ *)pDVar4,iVar5,
                                MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__get_Item_int_
                               );
           if ((pOVar11 != (Object *)0x0) && (pOVar11[1].klass != (Object__Class *)0x0)) {
-            this = (GameEarningsMenu *)
-                   MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassEarnings::
-                   EarningsReport::EarningsReport_get_TotalEarningsGold
-                             ((EarningsReport *)pOVar11[1].klass,(MethodInfo *)0x0);
+            projectEarningsReport =
+                 (ProjectEarningsReport *)
+                 MVWorldObject.dll::MV::WorldObject::GamePassSystem::GamePassEarnings::
+                 EarningsReport::EarningsReport_get_TotalEarningsGold
+                           ((EarningsReport *)pOVar11[1].klass,(MethodInfo *)0x0);
             goto code_?;
           }
         }
