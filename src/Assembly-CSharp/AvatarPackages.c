@@ -43,7 +43,7 @@ void Assembly-CSharp.dll::AvatarPackages::AvatarPackages__cctor(MethodInfo *meth
   this_00 = (Object__Class *)func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_float>);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text::TextResourceManager+FontAssetRef]::Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor((Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *)this_00,MethodInfo__System__Collections__Generic__Dictionary<int,_float>__Dictionary__);
   method_20 = (MethodInfo *)(pOVar1 + 1);
-  pOVar1[1].klass = this_00;
+  method_20->methodPointer = (Il2CppMethodPointer)this_00;
   func_?(method_20,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(pOVar1,ExceptionArgument__Enum_obj,method_20);
   if (this != (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_ *)0x0) {

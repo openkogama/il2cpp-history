@@ -38,7 +38,7 @@ void Assembly-CSharp.dll::CellCursorCubeMesh::CellCursorCubeMesh_SetCursorCube(C
     if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__SharedCubeFunctions);
     }
-    pVVar4 = SharedCubeFunctions::SharedCubeFunctions_LocalToWorld((Vector3 *)&stack0xfffffff0,cubeGameObject,iVector,(MethodInfo *)0x0);
+    pVVar4 = SharedCubeFunctions::SharedCubeFunctions_LocalToWorld((Vector3 *)&stack0xffffffe4,cubeGameObject,iVector,(MethodInfo *)0x0);
     if (pTVar3 != (Transform *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position(pTVar3,*pVVar4,(MethodInfo *)0x0);
       pGVar2 = (this->fields).gameObject;
@@ -53,7 +53,7 @@ void Assembly-CSharp.dll::CellCursorCubeMesh::CellCursorCubeMesh_SetCursorCube(C
             uVar7 = pVVar4->x;
             uVar8 = pVVar4->y;
             if (pTVar3 != (Transform *)0x0) {
-              in_stack_5 = 0x1045;
+              in_stack_5 = 0x1044;
               value.y = (float)uVar8 * 0.99;
               value.x = (float)uVar7 * 0.99;
               value.z = pVVar4->z * 0.99;
@@ -122,11 +122,11 @@ void Assembly-CSharp.dll::CellCursorCubeMesh::CellCursorCubeMesh_Update(CellCurs
           value.z = (float)uVar9;
           value.y = (float)uVar8;
           value.x = (float)uVar7;
-          iVar10 = 0;
+          pMVar3 = (Material__Array *)0x0;
           value.w = fVar1 / (this->fields).fadeOutTime;
           UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector(this_01,StringLiteral__Color,value,(MethodInfo *)0x0);
           uVar4 = uVar4 + 1;
-          ppMVar5 = (Material **)(iVar10 + 4);
+          ppMVar5 = ppMVar5 + 1;
         }
         goto code_?;
       }
@@ -140,8 +140,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -165,25 +165,24 @@ void Assembly-CSharp.dll::CellCursorCubeMesh::CellCursorCubeMesh__ctor(CellCurso
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   pGVar1 = (GameObject *)func_?(TypeInfo__UnityEngine__GameObject);
   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor(pGVar1,StringLiteral_CellCursor,(MethodInfo *)0x0);
-  (this->fields).gameObject = pGVar1;
-  func_?(&(this->fields).gameObject,pGVar1);
-  pGVar1 = (this->fields).gameObject;
+  ppGVar2 = &(this->fields).gameObject;
+  *ppGVar2 = pGVar1;
+  func_?(ppGVar2,pGVar1);
+  pGVar1 = *ppGVar2;
   value = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer(StringLiteral_UIItems,(MethodInfo *)0x0);
   if (pGVar1 != (GameObject *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer(pGVar1,value,(MethodInfo *)0x0);
-    pGVar1 = (this->fields).gameObject;
-    if (pGVar1 != (GameObject *)0x0) {
-      this_00 = (Renderer *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1(pGVar1,UnityEngine__MeshRenderer_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshRenderer>__);
-      pGVar1 = (this->fields).gameObject;
-      if (pGVar1 != (GameObject *)0x0) {
-        this_01 = (MeshFilter *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1(pGVar1,UnityEngine__MeshFilter_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshFilter>__);
+    if (*ppGVar2 != (GameObject *)0x0) {
+      this_00 = (Renderer *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1(*ppGVar2,UnityEngine__MeshRenderer_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshRenderer>__);
+      if (*ppGVar2 != (GameObject *)0x0) {
+        this_01 = (MeshFilter *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1(*ppGVar2,UnityEngine__MeshFilter_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshFilter>__);
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
         }
-        pPVar2 = TypeInfo__PrefabPool->static_fields->instance;
-        if ((pPVar2 != (PrefabPool *)0x0) && (this_00 != (Renderer *)0x0)) {
-          UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial(this_00,(pPVar2->fields).modelCubeSpaceMaterial,(MethodInfo *)0x0);
+        pPVar3 = TypeInfo__PrefabPool->static_fields->instance;
+        if ((pPVar3 != (PrefabPool *)0x0) && (this_00 != (Renderer *)0x0)) {
+          UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial(this_00,(pPVar3->fields).modelCubeSpaceMaterial,(MethodInfo *)0x0);
           if (this_01 != (MeshFilter *)0x0) {
             mesh = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::MeshFilter_get_mesh(this_01,(MethodInfo *)0x0);
             if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
@@ -201,8 +200,8 @@ void Assembly-CSharp.dll::CellCursorCubeMesh::CellCursorCubeMesh__ctor(CellCurso
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

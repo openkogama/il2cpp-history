@@ -19,17 +19,16 @@ void Assembly-CSharp.dll::FirstTimeActivatableButtonPointerEnterEditMode::FirstT
   }
   else {
     pAVar2 = (pEVar1->fields).enteringPlayMode;
-    this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(this_01,(Object *)this,MethodInfo__FirstTimeActivatableButtonPointerEnterEditMode__OnShown__,(MethodInfo *)0x0);
-    pAVar2 = (Action *)mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)pAVar2,(Delegate *)this_01,(MethodInfo *)0x0);
+    this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(this_00,(Object *)this,MethodInfo__FirstTimeActivatableButtonPointerEnterEditMode__OnShown__,(MethodInfo *)0x0);
+    pAVar2 = (Action *)mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
     if (pAVar2 == (Action *)0x0) {
       (pEVar1->fields).enteringPlayMode = (Action *)0x0;
 code_?:
-      this_00 = &(pEVar1->fields).enteringPlayMode;
       func_?();
-      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this_00,(MethodInfo *)0x0);
+      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
       callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this_00,MethodInfo__FirstTimeActivatableButtonPointerEnterEditMode___Clear_b__15_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,MethodInfo__FirstTimeActivatableButtonPointerEnterEditMode___Clear_b__15_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
@@ -40,15 +39,16 @@ code_?:
     if (pAVar2->klass == TypeInfo__System__Action) {
       pAVar3 = pAVar2;
     }
-    if (pAVar3 != (Action *)0x0) {
-      (pEVar1->fields).enteringPlayMode = pAVar3;
-      pAVar3 = (Action *)0x0;
-      if (pAVar2->klass == TypeInfo__System__Action) {
-        pAVar3 = pAVar2;
-      }
-      if (pAVar3 != (Action *)0x0) goto code_?;
+    if (pAVar3 == (Action *)0x0) goto code_?;
+    (pEVar1->fields).enteringPlayMode = pAVar3;
+    pAVar3 = (Action *)0x0;
+    if (pAVar2->klass == TypeInfo__System__Action) {
+      pAVar3 = pAVar2;
     }
+    if (pAVar3 != (Action *)0x0) goto code_?;
   }
+  func_?();
+code_?:
   func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
@@ -95,30 +95,30 @@ void Assembly-CSharp.dll::FirstTimeActivatableButtonPointerEnterEditMode::FirstT
   }
   else {
     pAVar3 = (pEVar1->fields).enteringPlayMode;
+    ppAVar4 = &(pEVar1->fields).enteringPlayMode;
     this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(this_00,(Object *)this,MethodInfo__FirstTimeActivatableButtonPointerEnterEditMode__OnShown__,(MethodInfo *)0x0);
     pAVar3 = (Action *)mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pAVar3,(Delegate *)this_00,(MethodInfo *)0x0);
     uVar2 = CONCAT44(TypeInfo__System__Action,pAVar3);
+    ppAStack5 = ppAVar4;
     if (pAVar3 == (Action *)0x0) {
-      (pEVar1->fields).enteringPlayMode = (Action *)0x0;
-      ppAStack4 = &(pEVar1->fields).enteringPlayMode;
-      pAStack5 = (Action *)0x0;
+      pAStack6 = (Action *)0x0;
+      *ppAVar4 = (Action *)0x0;
       func_?();
       return;
     }
-    pAVar6 = (Action *)0x0;
+    pAVar7 = (Action *)0x0;
     if (pAVar3->klass == TypeInfo__System__Action) {
-      pAVar6 = pAVar3;
+      pAVar7 = pAVar3;
     }
-    if (pAVar6 != (Action *)0x0) {
-      (pEVar1->fields).enteringPlayMode = pAVar6;
+    if (pAVar7 != (Action *)0x0) {
+      *ppAVar4 = pAVar7;
       uVar2 = CONCAT44(TypeInfo__System__Action,pAVar3);
-      pAStack5 = (Action *)0x0;
+      pAStack6 = (Action *)0x0;
       if (pAVar3->klass == TypeInfo__System__Action) {
-        pAStack5 = pAVar3;
+        pAStack6 = pAVar3;
       }
-      if (pAStack5 != (Action *)0x0) {
-        ppAStack4 = &(pEVar1->fields).enteringPlayMode;
+      if (pAStack6 != (Action *)0x0) {
         func_?();
         return;
       }
@@ -126,8 +126,8 @@ void Assembly-CSharp.dll::FirstTimeActivatableButtonPointerEnterEditMode::FirstT
   }
   _ppAStack0000000c = uVar2;
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -225,40 +225,46 @@ void Assembly-CSharp.dll::FirstTimeActivatableButtonPointerEnterEditMode::FirstT
   }
   pEVar1 = (this->fields).button;
   if (pEVar1 == (EnterPlayModeButton *)0x0) {
-    uVar2 = func_?();
+    func_?();
+    pAStack2 = unaff_ESI;
   }
   else {
     pAVar3 = (pEVar1->fields).enteringPlayMode;
     this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(this_00,(Object *)this,MethodInfo__FirstTimeActivatableButtonPointerEnterEditMode__OnShown__,(MethodInfo *)0x0);
     pAVar3 = (Action *)mscorlib.dll::System::Delegate::Delegate_Remove((Delegate *)pAVar3,(Delegate *)this_00,(MethodInfo *)0x0);
-    uVar2 = CONCAT44(TypeInfo__System__Action,pAVar3);
-    pAStack4 = (Action *)0x0;
     if (pAVar3 == (Action *)0x0) {
+      pAStack2 = (Action__Class *)0x0;
       (pEVar1->fields).enteringPlayMode = (Action *)0x0;
-code_?:
-      ppAStack5 = &(pEVar1->fields).enteringPlayMode;
       func_?();
       (this->fields).shouldBeDelayedDestroyed = 1;
       return;
     }
+    pAVar4 = (Action *)0x0;
     if (pAVar3->klass == TypeInfo__System__Action) {
-      pAStack4 = pAVar3;
+      pAVar4 = pAVar3;
     }
-    if (pAStack4 != (Action *)0x0) {
-      (pEVar1->fields).enteringPlayMode = pAStack4;
-      uVar2 = CONCAT44(TypeInfo__System__Action,pAVar3);
-      pAStack4 = (Action *)0x0;
-      if (pAVar3->klass == TypeInfo__System__Action) {
-        pAStack4 = pAVar3;
-      }
-      if (pAStack4 != (Action *)0x0) goto code_?;
+    pAStack2 = TypeInfo__System__Action;
+    if (pAVar4 == (Action *)0x0) goto code_?;
+    (pEVar1->fields).enteringPlayMode = pAVar4;
+    pAVar4 = (Action *)0x0;
+    if (pAVar3->klass == TypeInfo__System__Action) {
+      pAVar4 = pAVar3;
+    }
+    pAStack2 = TypeInfo__System__Action;
+    if (pAVar4 != (Action *)0x0) {
+      pAStack2 = (Action__Class *)pAVar4;
+      func_?();
+      (this->fields).shouldBeDelayedDestroyed = 1;
+      return;
     }
   }
-  _ppAStack0000000c = uVar2;
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pAStack2 = extraout_EDX;
+code_?:
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -268,7 +274,8 @@ code_?:
 void Assembly-CSharp.dll::FirstTimeActivatableButtonPointerEnterEditMode::FirstTimeActivatableButtonPointerEnterEditMode__Clear_b__15_0(FirstTimeActivatableButtonPointerEnterEditMode *this,TextBubbleController *x,BaseEventData *y,MethodInfo *method)
 
 {
-  if ((this->fields).bubbleId != -1) {
+  bubbleId = (this->fields).bubbleId;
+  if (bubbleId != -1) {
     if (x == (TextBubbleController *)0x0) {
       uVar1 = func_?(&stack0xfffffff0);
       func_?(uVar1);
@@ -276,7 +283,7 @@ void Assembly-CSharp.dll::FirstTimeActivatableButtonPointerEnterEditMode::FirstT
       (*pcVar2)();
       return;
     }
-    TextBubbleController::TextBubbleController_ClearBubblesOfTypeImmediately(x,(this->fields).bubbleId,(MethodInfo *)0x0);
+    TextBubbleController::TextBubbleController_ClearBubblesOfTypeImmediately(x,bubbleId,(MethodInfo *)0x0);
   }
   return;
 }

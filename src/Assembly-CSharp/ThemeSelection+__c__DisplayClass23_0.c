@@ -28,7 +28,7 @@ void Assembly-CSharp.dll::ThemeSelection+<>c__DisplayClass23_0::ThemeSelection_c
   if (uVar5 != 0) {
     do {
       if (pIVar3->interfaceOffsets[uVar4].interfaceType == (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IModalPopupCreator) {
-        ppMVar6 = &(&(x->klass->vtable).Create_2)[x->klass->interfaceOffsets[uVar4].offset].method;
+        ppMVar6 = &(&(x->klass->vtable).Create_2)[pIVar3->interfaceOffsets[uVar4].offset].method;
         goto code_?;
       }
       uVar4 = uVar4 + 1;

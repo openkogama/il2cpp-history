@@ -8,28 +8,29 @@ void Assembly-CSharp.dll::SpawnRoleTierSettings::SpawnRoleTierSettings_Initializ
     func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__get_Item_int_);
     cRam_? = '\x01';
   }
-  (this->fields).OnChangeTierCallback = OnChangeTierCallback;
+  ppUVar1 = &(this->fields).OnChangeTierCallback;
+  *ppUVar1 = OnChangeTierCallback;
   (this->fields).canSelectTier0 = canSelectTier0;
-  func_?(&(this->fields).OnChangeTierCallback,OnChangeTierCallback);
+  func_?(ppUVar1,OnChangeTierCallback);
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).tierSelectedEffectObjects;
   if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
     this_01 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_00,currentTier & 0xff,MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__get_Item_int_);
     if (this_01 != (RegexCharClass_SingleRange)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive((GameObject *)this_01,1,(MethodInfo *)0x0);
-      pGVar1 = (this->fields).tierZero;
-      if (pGVar1 != (GameObject *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar1,canSelectTier0,(MethodInfo *)0x0);
-        pGVar1 = (this->fields).tierZeroGray;
-        if (pGVar1 != (GameObject *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar1,canSelectTier0 ^ 1,(MethodInfo *)0x0);
+      pGVar2 = (this->fields).tierZero;
+      if (pGVar2 != (GameObject *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar2,canSelectTier0,(MethodInfo *)0x0);
+        pGVar2 = (this->fields).tierZeroGray;
+        if (pGVar2 != (GameObject *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar2,canSelectTier0 ^ 1,(MethodInfo *)0x0);
           return;
         }
       }
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

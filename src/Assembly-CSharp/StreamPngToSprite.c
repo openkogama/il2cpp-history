@@ -149,14 +149,15 @@ void Assembly-CSharp.dll::StreamPngToSprite::StreamPngToSprite_Reset(StreamPngTo
     cRam_? = '\x01';
   }
   pRVar1 = (this->fields).rawImage;
+  ppRVar2 = &(this->fields).rawImage;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality((Object_1 *)pRVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality((Object_1 *)pRVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar3 != 0) {
     pRVar1 = (RawImage *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1((Component *)this,UnityEngine__UI__RawImage_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::RawImage>__);
-    (this->fields).rawImage = pRVar1;
-    func_?(&(this->fields).rawImage,pRVar1);
+    *ppRVar2 = pRVar1;
+    func_?(ppRVar2,pRVar1);
   }
   return;
 }
@@ -276,8 +277,9 @@ void Assembly-CSharp.dll::StreamPngToSprite::StreamPngToSprite_StreamingTextureL
         if (pRVar3 == (RawImage *)0x0) goto code_?;
         UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture(pRVar3,(Texture *)value,(MethodInfo *)0x0);
       }
-      if ((this->fields).OnDownloadFinish != (Action *)0x0) {
-        (*(((this->fields).OnDownloadFinish)->fields)._._.invoke_impl)();
+      pAVar4 = (this->fields).OnDownloadFinish;
+      if (pAVar4 != (Action *)0x0) {
+        (*(pAVar4->fields)._._.invoke_impl)();
       }
       return;
     }
@@ -295,8 +297,8 @@ void Assembly-CSharp.dll::StreamPngToSprite::StreamPngToSprite_StreamingTextureL
   }
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

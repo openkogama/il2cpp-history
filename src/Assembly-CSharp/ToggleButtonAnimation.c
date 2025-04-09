@@ -6,23 +6,23 @@ void Assembly-CSharp.dll::ToggleButtonAnimation::ToggleButtonAnimation_HandleTog
 {
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
   fVar2 = (this->fields).toggleOffOriginalPositionX;
-  (this->fields).interpolateToggleMaskNewPositionX = (this->fields).toggleOffOriginalPositionX;
   pRVar3 = (this->fields).toggleOffMaskTransform;
   (this->fields).interpolationStartTime = fVar1;
+  (this->fields).interpolateToggleMaskNewPositionX = fVar2;
   (this->fields).interpolateToggleMaskStartPositionX = fVar2;
   if ((this->fields).isToggleOn == 0) {
     if (pRVar3 == (RectTransform *)0x0) goto code_?;
-    pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffe8,pRVar3,(MethodInfo *)0x0);
+    pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffec,pRVar3,(MethodInfo *)0x0);
     (this->fields).interpolateToggleMaskStartPositionX = pRVar4->m_Width + fVar2;
   }
   else {
     if (pRVar3 == (RectTransform *)0x0) goto code_?;
-    pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffe8,pRVar3,(MethodInfo *)0x0);
+    pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffec,pRVar3,(MethodInfo *)0x0);
     (this->fields).interpolateToggleMaskNewPositionX = fVar2 + pRVar4->m_Width;
   }
   fVar2 = (this->fields).toggleOffOriginalPositionX;
-  (this->fields).interpolateToggleContentNewPositionX = (this->fields).toggleOffOriginalPositionX;
   pRVar3 = (this->fields).toggleOffMaskTransform;
+  (this->fields).interpolateToggleContentNewPositionX = fVar2;
   (this->fields).interpolateToggleContentStartPositionX = fVar2;
   if ((this->fields).isToggleOn == 0) {
     if (pRVar3 == (RectTransform *)0x0) {
@@ -32,18 +32,18 @@ code_?:
       (*pcVar5)();
       return;
     }
-    pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffe8,pRVar3,(MethodInfo *)0x0);
+    pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffec,pRVar3,(MethodInfo *)0x0);
     (this->fields).interpolateToggleContentStartPositionX = fVar2 - pRVar4->m_Width;
   }
   else {
     if (pRVar3 == (RectTransform *)0x0) goto code_?;
-    pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffe8,pRVar3,(MethodInfo *)0x0);
+    pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffec,pRVar3,(MethodInfo *)0x0);
     (this->fields).interpolateToggleContentNewPositionX = fVar2 - pRVar4->m_Width;
   }
   fVar2 = (this->fields).toggleButtonOriginalPositionX;
   (this->fields).interpolateToggleButtonNewPositionX = fVar2;
   (this->fields).interpolateToggleButtonStartPositionX = fVar2;
-  fVar2 = (this->fields).toggleButtonOriginalPositionX + (this->fields).toggleButtonMoveAmount;
+  fVar2 = (this->fields).toggleButtonMoveAmount + fVar2;
   if ((this->fields).isToggleOn == 0) {
     (this->fields).interpolateToggleButtonStartPositionX = fVar2;
     return;
@@ -71,70 +71,19 @@ void Assembly-CSharp.dll::ToggleButtonAnimation::ToggleButtonAnimation_Initializ
       pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xfffffff0,pTVar1,(MethodInfo *)0x0);
       (this->fields).toggleButtonOriginalPositionX = pVVar2->x;
       if ((this->fields).isToggleOn != 0) {
-        pTVar1 = (Transform *)(this->fields).toggleOffMaskTransform;
-        (this->fields).isToggleOn = 1;
-        if (pTVar1 == (Transform *)0x0) goto code_?;
-        pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xffffffe4,pTVar1,(MethodInfo *)0x0);
-        fVar3 = pVVar2->z;
-        pRVar4 = (this->fields).toggleOffMaskTransform;
-        fVar5 = (this->fields).toggleOffOriginalPositionX;
-        if (pRVar4 == (RectTransform *)0x0) goto code_?;
-        pRVar6 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffe0,pRVar4,(MethodInfo *)0x0);
-        pTVar1 = (Transform *)(this->fields).toggleOffMaskTransform;
-        value_01.y = (float)pRVar4;
-        value_01.x = fVar5 + pRVar6->m_Width;
-        if (pTVar1 == (Transform *)0x0) goto code_?;
-        value_01.z = fVar3;
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition(pTVar1,value_01,(MethodInfo *)0x0);
-        pTVar1 = (Transform *)(this->fields).toggleOffContentTransform;
-        if (pTVar1 == (Transform *)0x0) goto code_?;
-        pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xffffffe4,pTVar1,(MethodInfo *)0x0);
-        fVar3 = pVVar2->y;
-        fVar7 = pVVar2->z;
-        pRVar4 = (this->fields).toggleOffContentTransform;
-        fVar5 = (this->fields).toggleOffOriginalPositionX;
-        if (pRVar4 == (RectTransform *)0x0) goto code_?;
-        pRVar6 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffe0,pRVar4,(MethodInfo *)0x0);
-        pTVar1 = (Transform *)(this->fields).toggleOffContentTransform;
-        if (pTVar1 == (Transform *)0x0) goto code_?;
-        value.y = fVar3;
-        value.x = fVar5 - pRVar6->m_Width;
-        value.z = fVar7;
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition(pTVar1,value,(MethodInfo *)0x0);
-        pTVar1 = (Transform *)(this->fields).toggleButtonTransform;
-        if (pTVar1 == (Transform *)0x0) goto code_?;
-        pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xffffffe4,pTVar1,(MethodInfo *)0x0);
-        pTVar1 = (Transform *)(this->fields).toggleButtonTransform;
-        uVar8 = pVVar2->y;
-        if (pTVar1 == (Transform *)0x0) goto code_?;
-        value_00.y = (float)uVar8;
-        value_00.x = (this->fields).toggleButtonOriginalPositionX + (this->fields).toggleButtonMoveAmount;
-        value_00.z = pVVar2->z;
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition(pTVar1,value_00,(MethodInfo *)0x0);
-        pTVar1 = (Transform *)(this->fields).toggleOffMaskTransform;
-        if (pTVar1 == (Transform *)0x0) goto code_?;
-        pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xffffffe4,pTVar1,(MethodInfo *)0x0);
-        (this->fields).interpolateToggleMaskNewPositionX = pVVar2->x;
-        pTVar1 = (Transform *)(this->fields).toggleOffContentTransform;
-        if (pTVar1 == (Transform *)0x0) goto code_?;
-        pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xffffffe4,pTVar1,(MethodInfo *)0x0);
-        (this->fields).interpolateToggleContentNewPositionX = pVVar2->x;
-        pTVar1 = (Transform *)(this->fields).toggleButtonTransform;
-        if (pTVar1 == (Transform *)0x0) goto code_?;
-        pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xffffffe4,pTVar1,(MethodInfo *)0x0);
-        (this->fields).interpolateToggleButtonNewPositionX = pVVar2->x;
+        ToggleButtonAnimation_SetToggleOnWithoutInterpolation(this,(MethodInfo *)0x0);
       }
       pTVar1 = (Transform *)(this->fields).toggleOffMaskTransform;
       if (pTVar1 != (Transform *)0x0) {
-        pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xffffffe4,pTVar1,(MethodInfo *)0x0);
+        pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xfffffff0,pTVar1,(MethodInfo *)0x0);
         (this->fields).interpolateToggleMaskNewPositionX = pVVar2->x;
         pTVar1 = (Transform *)(this->fields).toggleOffContentTransform;
         if (pTVar1 != (Transform *)0x0) {
-          pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xffffffe4,pTVar1,(MethodInfo *)0x0);
+          pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xfffffff0,pTVar1,(MethodInfo *)0x0);
           (this->fields).interpolateToggleContentNewPositionX = pVVar2->x;
           pTVar1 = (Transform *)(this->fields).toggleButtonTransform;
           if (pTVar1 != (Transform *)0x0) {
-            pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xffffffe4,pTVar1,(MethodInfo *)0x0);
+            pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xfffffff0,pTVar1,(MethodInfo *)0x0);
             (this->fields).interpolateToggleButtonNewPositionX = pVVar2->x;
             return;
           }
@@ -142,10 +91,9 @@ void Assembly-CSharp.dll::ToggleButtonAnimation::ToggleButtonAnimation_Initializ
       }
     }
   }
-code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -294,103 +242,6 @@ void Assembly-CSharp.dll::ToggleButtonAnimation::ToggleButtonAnimation_SetToggle
 }
 
 
-/* Void Start() */
-
-void Assembly-CSharp.dll::ToggleButtonAnimation::ToggleButtonAnimation_Start(ToggleButtonAnimation *this,MethodInfo *method)
-
-{
-  if ((this->fields).isInitialized != 0) {
-    return;
-  }
-  pTVar1 = (Transform *)(this->fields).toggleOffMaskTransform;
-  (this->fields).isInitialized = 1;
-  if (pTVar1 != (Transform *)0x0) {
-    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xfffffff0,pTVar1,(MethodInfo *)0x0);
-    (this->fields).toggleOffOriginalPositionX = pVVar2->x;
-    pTVar1 = (Transform *)(this->fields).toggleButtonTransform;
-    if (pTVar1 != (Transform *)0x0) {
-      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xfffffff0,pTVar1,(MethodInfo *)0x0);
-      (this->fields).toggleButtonOriginalPositionX = pVVar2->x;
-      if ((this->fields).isToggleOn != 0) {
-        pTVar1 = (Transform *)(this->fields).toggleOffMaskTransform;
-        (this->fields).isToggleOn = 1;
-        if (pTVar1 == (Transform *)0x0) goto code_?;
-        pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xffffffe4,pTVar1,(MethodInfo *)0x0);
-        fVar3 = pVVar2->z;
-        pRVar4 = (this->fields).toggleOffMaskTransform;
-        fVar5 = (this->fields).toggleOffOriginalPositionX;
-        if (pRVar4 == (RectTransform *)0x0) goto code_?;
-        pRVar6 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffe0,pRVar4,(MethodInfo *)0x0);
-        pTVar1 = (Transform *)(this->fields).toggleOffMaskTransform;
-        value_01.y = (float)pRVar4;
-        value_01.x = fVar5 + pRVar6->m_Width;
-        if (pTVar1 == (Transform *)0x0) goto code_?;
-        value_01.z = fVar3;
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition(pTVar1,value_01,(MethodInfo *)0x0);
-        pTVar1 = (Transform *)(this->fields).toggleOffContentTransform;
-        if (pTVar1 == (Transform *)0x0) goto code_?;
-        pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xffffffe4,pTVar1,(MethodInfo *)0x0);
-        fVar3 = pVVar2->y;
-        fVar7 = pVVar2->z;
-        pRVar4 = (this->fields).toggleOffContentTransform;
-        fVar5 = (this->fields).toggleOffOriginalPositionX;
-        if (pRVar4 == (RectTransform *)0x0) goto code_?;
-        pRVar6 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffe0,pRVar4,(MethodInfo *)0x0);
-        pTVar1 = (Transform *)(this->fields).toggleOffContentTransform;
-        if (pTVar1 == (Transform *)0x0) goto code_?;
-        value.y = fVar3;
-        value.x = fVar5 - pRVar6->m_Width;
-        value.z = fVar7;
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition(pTVar1,value,(MethodInfo *)0x0);
-        pTVar1 = (Transform *)(this->fields).toggleButtonTransform;
-        if (pTVar1 == (Transform *)0x0) goto code_?;
-        pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xffffffe4,pTVar1,(MethodInfo *)0x0);
-        pTVar1 = (Transform *)(this->fields).toggleButtonTransform;
-        uVar8 = pVVar2->y;
-        if (pTVar1 == (Transform *)0x0) goto code_?;
-        value_00.y = (float)uVar8;
-        value_00.x = (this->fields).toggleButtonOriginalPositionX + (this->fields).toggleButtonMoveAmount;
-        value_00.z = pVVar2->z;
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition(pTVar1,value_00,(MethodInfo *)0x0);
-        pTVar1 = (Transform *)(this->fields).toggleOffMaskTransform;
-        if (pTVar1 == (Transform *)0x0) goto code_?;
-        pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xffffffe4,pTVar1,(MethodInfo *)0x0);
-        (this->fields).interpolateToggleMaskNewPositionX = pVVar2->x;
-        pTVar1 = (Transform *)(this->fields).toggleOffContentTransform;
-        if (pTVar1 == (Transform *)0x0) goto code_?;
-        pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xffffffe4,pTVar1,(MethodInfo *)0x0);
-        (this->fields).interpolateToggleContentNewPositionX = pVVar2->x;
-        pTVar1 = (Transform *)(this->fields).toggleButtonTransform;
-        if (pTVar1 == (Transform *)0x0) goto code_?;
-        pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xffffffe4,pTVar1,(MethodInfo *)0x0);
-        (this->fields).interpolateToggleButtonNewPositionX = pVVar2->x;
-      }
-      pTVar1 = (Transform *)(this->fields).toggleOffMaskTransform;
-      if (pTVar1 != (Transform *)0x0) {
-        pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xffffffe4,pTVar1,(MethodInfo *)0x0);
-        (this->fields).interpolateToggleMaskNewPositionX = pVVar2->x;
-        pTVar1 = (Transform *)(this->fields).toggleOffContentTransform;
-        if (pTVar1 != (Transform *)0x0) {
-          pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xffffffe4,pTVar1,(MethodInfo *)0x0);
-          (this->fields).interpolateToggleContentNewPositionX = pVVar2->x;
-          pTVar1 = (Transform *)(this->fields).toggleButtonTransform;
-          if (pTVar1 != (Transform *)0x0) {
-            pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xffffffe4,pTVar1,(MethodInfo *)0x0);
-            (this->fields).interpolateToggleButtonNewPositionX = pVVar2->x;
-            return;
-          }
-        }
-      }
-    }
-  }
-code_?:
-  func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
-  return;
-}
-
-
 /* Void Toggle() */
 
 void Assembly-CSharp.dll::ToggleButtonAnimation::ToggleButtonAnimation_Toggle(ToggleButtonAnimation *this,MethodInfo *method)
@@ -399,23 +250,23 @@ void Assembly-CSharp.dll::ToggleButtonAnimation::ToggleButtonAnimation_Toggle(To
   (this->fields).isToggleOn = (this->fields).isToggleOn == 0;
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
   fVar2 = (this->fields).toggleOffOriginalPositionX;
-  (this->fields).interpolateToggleMaskNewPositionX = (this->fields).toggleOffOriginalPositionX;
   pRVar3 = (this->fields).toggleOffMaskTransform;
   (this->fields).interpolationStartTime = fVar1;
+  (this->fields).interpolateToggleMaskNewPositionX = fVar2;
   (this->fields).interpolateToggleMaskStartPositionX = fVar2;
   if ((this->fields).isToggleOn == 0) {
     if (pRVar3 == (RectTransform *)0x0) goto code_?;
-    pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffe8,pRVar3,(MethodInfo *)0x0);
+    pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffec,pRVar3,(MethodInfo *)0x0);
     (this->fields).interpolateToggleMaskStartPositionX = fVar2 + pRVar4->m_Width;
   }
   else {
     if (pRVar3 == (RectTransform *)0x0) goto code_?;
-    pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffe8,pRVar3,(MethodInfo *)0x0);
+    pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffec,pRVar3,(MethodInfo *)0x0);
     (this->fields).interpolateToggleMaskNewPositionX = fVar2 + pRVar4->m_Width;
   }
   fVar2 = (this->fields).toggleOffOriginalPositionX;
-  (this->fields).interpolateToggleContentNewPositionX = (this->fields).toggleOffOriginalPositionX;
   pRVar3 = (this->fields).toggleOffMaskTransform;
+  (this->fields).interpolateToggleContentNewPositionX = fVar2;
   (this->fields).interpolateToggleContentStartPositionX = fVar2;
   if ((this->fields).isToggleOn == 0) {
     if (pRVar3 == (RectTransform *)0x0) {
@@ -425,18 +276,18 @@ code_?:
       (*pcVar5)();
       return;
     }
-    pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffe8,pRVar3,(MethodInfo *)0x0);
+    pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffec,pRVar3,(MethodInfo *)0x0);
     (this->fields).interpolateToggleContentStartPositionX = fVar2 - pRVar4->m_Width;
   }
   else {
     if (pRVar3 == (RectTransform *)0x0) goto code_?;
-    pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffe8,pRVar3,(MethodInfo *)0x0);
+    pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffec,pRVar3,(MethodInfo *)0x0);
     (this->fields).interpolateToggleContentNewPositionX = fVar2 - pRVar4->m_Width;
   }
   fVar2 = (this->fields).toggleButtonOriginalPositionX;
   (this->fields).interpolateToggleButtonNewPositionX = fVar2;
   (this->fields).interpolateToggleButtonStartPositionX = fVar2;
-  fVar2 = (this->fields).toggleButtonOriginalPositionX + (this->fields).toggleButtonMoveAmount;
+  fVar2 = (this->fields).toggleButtonMoveAmount + fVar2;
   if ((this->fields).isToggleOn == 0) {
     (this->fields).interpolateToggleButtonStartPositionX = fVar2;
     return;
@@ -457,23 +308,23 @@ void Assembly-CSharp.dll::ToggleButtonAnimation::ToggleButtonAnimation_ToggleOff
   (this->fields).isToggleOn = (this->fields).isToggleOn == 0;
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
   fVar2 = (this->fields).toggleOffOriginalPositionX;
-  (this->fields).interpolateToggleMaskNewPositionX = (this->fields).toggleOffOriginalPositionX;
   pRVar3 = (this->fields).toggleOffMaskTransform;
   (this->fields).interpolationStartTime = fVar1;
+  (this->fields).interpolateToggleMaskNewPositionX = fVar2;
   (this->fields).interpolateToggleMaskStartPositionX = fVar2;
   if ((this->fields).isToggleOn == 0) {
     if (pRVar3 == (RectTransform *)0x0) goto code_?;
-    pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffe8,pRVar3,(MethodInfo *)0x0);
+    pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffec,pRVar3,(MethodInfo *)0x0);
     (this->fields).interpolateToggleMaskStartPositionX = fVar2 + pRVar4->m_Width;
   }
   else {
     if (pRVar3 == (RectTransform *)0x0) goto code_?;
-    pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffe8,pRVar3,(MethodInfo *)0x0);
+    pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffec,pRVar3,(MethodInfo *)0x0);
     (this->fields).interpolateToggleMaskNewPositionX = fVar2 + pRVar4->m_Width;
   }
   fVar2 = (this->fields).toggleOffOriginalPositionX;
-  (this->fields).interpolateToggleContentNewPositionX = (this->fields).toggleOffOriginalPositionX;
   pRVar3 = (this->fields).toggleOffMaskTransform;
+  (this->fields).interpolateToggleContentNewPositionX = fVar2;
   (this->fields).interpolateToggleContentStartPositionX = fVar2;
   if ((this->fields).isToggleOn == 0) {
     if (pRVar3 == (RectTransform *)0x0) {
@@ -483,18 +334,18 @@ code_?:
       (*pcVar5)();
       return;
     }
-    pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffe8,pRVar3,(MethodInfo *)0x0);
+    pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffec,pRVar3,(MethodInfo *)0x0);
     (this->fields).interpolateToggleContentStartPositionX = fVar2 - pRVar4->m_Width;
   }
   else {
     if (pRVar3 == (RectTransform *)0x0) goto code_?;
-    pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffe8,pRVar3,(MethodInfo *)0x0);
+    pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffec,pRVar3,(MethodInfo *)0x0);
     (this->fields).interpolateToggleContentNewPositionX = fVar2 - pRVar4->m_Width;
   }
   fVar2 = (this->fields).toggleButtonOriginalPositionX;
   (this->fields).interpolateToggleButtonNewPositionX = fVar2;
   (this->fields).interpolateToggleButtonStartPositionX = fVar2;
-  fVar2 = (this->fields).toggleButtonOriginalPositionX + (this->fields).toggleButtonMoveAmount;
+  fVar2 = (this->fields).toggleButtonMoveAmount + fVar2;
   if ((this->fields).isToggleOn == 0) {
     (this->fields).interpolateToggleButtonStartPositionX = fVar2;
     return;
@@ -515,23 +366,23 @@ void Assembly-CSharp.dll::ToggleButtonAnimation::ToggleButtonAnimation_ToggleOn(
   (this->fields).isToggleOn = (this->fields).isToggleOn == 0;
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
   fVar2 = (this->fields).toggleOffOriginalPositionX;
-  (this->fields).interpolateToggleMaskNewPositionX = (this->fields).toggleOffOriginalPositionX;
   pRVar3 = (this->fields).toggleOffMaskTransform;
   (this->fields).interpolationStartTime = fVar1;
+  (this->fields).interpolateToggleMaskNewPositionX = fVar2;
   (this->fields).interpolateToggleMaskStartPositionX = fVar2;
   if ((this->fields).isToggleOn == 0) {
     if (pRVar3 == (RectTransform *)0x0) goto code_?;
-    pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffe8,pRVar3,(MethodInfo *)0x0);
+    pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffec,pRVar3,(MethodInfo *)0x0);
     (this->fields).interpolateToggleMaskStartPositionX = fVar2 + pRVar4->m_Width;
   }
   else {
     if (pRVar3 == (RectTransform *)0x0) goto code_?;
-    pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffe8,pRVar3,(MethodInfo *)0x0);
+    pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffec,pRVar3,(MethodInfo *)0x0);
     (this->fields).interpolateToggleMaskNewPositionX = fVar2 + pRVar4->m_Width;
   }
   fVar2 = (this->fields).toggleOffOriginalPositionX;
-  (this->fields).interpolateToggleContentNewPositionX = (this->fields).toggleOffOriginalPositionX;
   pRVar3 = (this->fields).toggleOffMaskTransform;
+  (this->fields).interpolateToggleContentNewPositionX = fVar2;
   (this->fields).interpolateToggleContentStartPositionX = fVar2;
   if ((this->fields).isToggleOn == 0) {
     if (pRVar3 == (RectTransform *)0x0) {
@@ -541,18 +392,18 @@ code_?:
       (*pcVar5)();
       return;
     }
-    pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffe8,pRVar3,(MethodInfo *)0x0);
+    pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffec,pRVar3,(MethodInfo *)0x0);
     (this->fields).interpolateToggleContentStartPositionX = fVar2 - pRVar4->m_Width;
   }
   else {
     if (pRVar3 == (RectTransform *)0x0) goto code_?;
-    pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffe8,pRVar3,(MethodInfo *)0x0);
+    pRVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffec,pRVar3,(MethodInfo *)0x0);
     (this->fields).interpolateToggleContentNewPositionX = fVar2 - pRVar4->m_Width;
   }
   fVar2 = (this->fields).toggleButtonOriginalPositionX;
   (this->fields).interpolateToggleButtonNewPositionX = fVar2;
   (this->fields).interpolateToggleButtonStartPositionX = fVar2;
-  fVar2 = (this->fields).toggleButtonOriginalPositionX + (this->fields).toggleButtonMoveAmount;
+  fVar2 = (this->fields).toggleButtonMoveAmount + fVar2;
   if ((this->fields).isToggleOn == 0) {
     (this->fields).interpolateToggleButtonStartPositionX = fVar2;
     return;
@@ -567,63 +418,73 @@ code_?:
 void Assembly-CSharp.dll::ToggleButtonAnimation::ToggleButtonAnimation_Update(ToggleButtonAnimation *this,MethodInfo *method)
 
 {
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  fVar2 = (this->fields).toggleInterpolationDuration;
-  fVar1 = fVar1 - (this->fields).interpolationStartTime;
-  fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-  pTVar4 = (Transform *)(this->fields).toggleOffMaskTransform;
-  fVar1 = fVar1 / (fVar3 + fVar2);
-  if (pTVar4 != (Transform *)0x0) {
-    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xffffffe0,pTVar4,(MethodInfo *)0x0);
-    fVar2 = (this->fields).interpolateToggleMaskStartPositionX;
-    uVar6 = pVVar5->y;
-    if (fVar1 < 0.0) {
-      fVar3 = 0.0;
+  pTVar1 = this;
+  fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+  fVar3 = (this->fields).toggleInterpolationDuration;
+  fVar2 = fVar2 - (this->fields).interpolationStartTime;
+  fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+  pTVar5 = (Transform *)(this->fields).toggleOffMaskTransform;
+  fVar2 = fVar2 / (fVar4 + fVar3);
+  if (pTVar5 != (Transform *)0x0) {
+    pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xffffffe0,pTVar5,(MethodInfo *)0x0);
+    fVar3 = (this->fields).interpolateToggleMaskStartPositionX;
+    uVar7 = pVVar6->y;
+    bVar8 = fVar2 < 0.0;
+    if (bVar8) {
+      fVar4 = 0.0;
     }
     else {
-      fVar3 = 1.0;
-      if (fVar1 <= 1.0) {
-        fVar3 = fVar1;
+      fVar4 = 1.0;
+      if (fVar2 <= 1.0) {
+        fVar4 = fVar2;
       }
     }
-    pTVar4 = (Transform *)(this->fields).toggleOffMaskTransform;
-    if (pTVar4 != (Transform *)0x0) {
-      value_01.y = (float)uVar6;
-      value_01.x = ((this->fields).interpolateToggleMaskNewPositionX - fVar2) * fVar3 + fVar2;
-      value_01.z = pVVar5->z;
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition(pTVar4,value_01,(MethodInfo *)0x0);
-      pTVar4 = (Transform *)(this->fields).toggleOffMaskTransform;
-      if (pTVar4 != (Transform *)0x0) {
-        pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xffffffe0,pTVar4,(MethodInfo *)0x0);
-        fVar2 = (this->fields).interpolateToggleContentStartPositionX;
-        fVar3 = pVVar5->y;
-        fVar7 = 0.0;
-        if ((0.0 <= fVar1) && (fVar7 = 1.0, fVar1 <= 1.0)) {
-          fVar7 = fVar1;
+    pTVar5 = (Transform *)(this->fields).toggleOffMaskTransform;
+    if (pTVar5 != (Transform *)0x0) {
+      VVar9.y = (float)uVar7;
+      VVar9.x = ((this->fields).interpolateToggleMaskNewPositionX - fVar3) * fVar4 + fVar3;
+      VVar9.z = pVVar6->z;
+      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition(pTVar5,VVar9,(MethodInfo *)0x0);
+      pTVar5 = (Transform *)(this->fields).toggleOffMaskTransform;
+      if (pTVar5 != (Transform *)0x0) {
+        pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xffffffe0,pTVar5,(MethodInfo *)0x0);
+        fVar3 = (this->fields).interpolateToggleContentStartPositionX;
+        pTVar10 = &this->fields;
+        uVar11 = pVVar6->y;
+        fVar4 = pVVar6->z;
+        if (bVar8) {
+          fVar12 = 0.0;
         }
-        pTVar4 = (Transform *)(this->fields).toggleOffContentTransform;
-        if (pTVar4 != (Transform *)0x0) {
-          value.y = fVar3;
-          value.x = ((this->fields).interpolateToggleContentNewPositionX - fVar2) * fVar7 + fVar2;
-          value.z = pVVar5->z;
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition(pTVar4,value,(MethodInfo *)0x0);
-          pTVar4 = (Transform *)(this->fields).toggleButtonTransform;
-          if (pTVar4 != (Transform *)0x0) {
-            pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xffffffe0,pTVar4,(MethodInfo *)0x0);
-            fVar2 = (this->fields).interpolateToggleButtonStartPositionX;
-            uVar8 = pVVar5->y;
-            if (fVar3 < 0.0) {
-              fVar3 = 0.0;
+        else {
+          fVar12 = 1.0;
+          if (fVar2 <= 1.0) {
+            fVar12 = fVar2;
+          }
+        }
+        pTVar5 = (Transform *)(this->fields).toggleOffContentTransform;
+        if (pTVar5 != (Transform *)0x0) {
+          this = (ToggleButtonAnimation *)fVar4;
+          fVar13 = (float)uVar11;
+          VVar9.x = (pTVar10->interpolateToggleContentNewPositionX - fVar3) * fVar12 + fVar3;
+          VVar9 = (Vector3)CONCAT84(uVar14,VVar9.x);
+          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition(pTVar5,VVar9,(MethodInfo *)0x0);
+          pTVar5 = (Transform *)(pTVar1->fields).toggleButtonTransform;
+          if (pTVar5 != (Transform *)0x0) {
+            pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xffffffe0,pTVar5,(MethodInfo *)0x0);
+            fVar3 = (pTVar1->fields).interpolateToggleButtonStartPositionX;
+            uVar15 = pVVar6->y;
+            if (bVar8) {
+              fVar4 = 0.0;
             }
-            else if (1.0 < fVar3) {
-              fVar3 = 1.0;
+            else if (1.0 < fVar4) {
+              fVar4 = 1.0;
             }
-            pTVar4 = (Transform *)(this->fields).toggleButtonTransform;
-            if (pTVar4 != (Transform *)0x0) {
-              value_00.y = (float)uVar8;
-              value_00.x = ((this->fields).interpolateToggleButtonNewPositionX - fVar2) * fVar3 + fVar2;
-              value_00.z = pVVar5->z;
-              UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition(pTVar4,value_00,(MethodInfo *)0x0);
+            pTVar5 = (Transform *)(pTVar1->fields).toggleButtonTransform;
+            if (pTVar5 != (Transform *)0x0) {
+              value.y = (float)uVar15;
+              value.x = ((pTVar1->fields).interpolateToggleButtonNewPositionX - fVar3) * fVar4 + fVar3;
+              value.z = pVVar6->z;
+              UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition(pTVar5,value,(MethodInfo *)0x0);
               return;
             }
           }
@@ -632,8 +493,8 @@ void Assembly-CSharp.dll::ToggleButtonAnimation::ToggleButtonAnimation_Update(To
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 

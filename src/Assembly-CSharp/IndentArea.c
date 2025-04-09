@@ -41,11 +41,11 @@ bool Assembly-CSharp.dll::IndentArea::IndentArea_IsColliding(IndentArea *this,Me
             if (pVVar16 == (Vector3__Array *)0x0) break;
             if ((int)pVVar16->max_length <= (int)pTStack_13) {
               RStack_4.m_Direction.x = fVar6 + fVar9 * 5000.0;
-              fVar9 = fVar8 + (float)uVar11 * 5000.0;
               RStack_4.m_Direction.y = fVar7 + (float)uVar10 * 5000.0;
+              fVar9 = fVar8 + (float)uVar11 * 5000.0;
               RStack_4.m_Direction.z = fVar9;
               if (iVar12 != 0) {
-                if ((*(int *)(iVar12 + 0xc) != 0) && (3 < *(uint *)(iVar12 + 0xc))) {
+                if ((*(uint *)(iVar12 + 0xc) != 0) && (3 < *(uint *)(iVar12 + 0xc))) {
                   p2.y = RStack_4.m_Direction.y;
                   p2.x = RStack_4.m_Direction.x;
                   p1.y = fVar7;
@@ -82,9 +82,9 @@ bool Assembly-CSharp.dll::IndentArea::IndentArea_IsColliding(IndentArea *this,Me
             if (iVar12 == 0) break;
             fVar20 = pVVar3->z;
             if (*(Transform **)(iVar12 + 0xc) <= pTVar15) goto code_?;
-            *(undefined8 *)(iVar12 + 0x10 + iVar14) = *(undefined8 *)pVVar3;
+            *(undefined8 *)(iVar14 + 0x10 + iVar12) = *(undefined8 *)pVVar3;
             pTStack_13 = (Transform *)((int)&pTVar15->klass + 1);
-            *(float *)(iVar12 + 0x18 + iVar14) = fVar20;
+            *(float *)(iVar14 + 0x18 + iVar12) = fVar20;
             iVar14 = iVar14 + 0xc;
           }
         }
@@ -146,7 +146,10 @@ Vector2__Array * Assembly-CSharp.dll::IndentArea::IndentArea_SetUVs(IndentArea *
         (&pMVar3->vector[0].name)[uVar4 * 2] = (String *)0x0;
       }
       else {
-        mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__AddWithResize((List_1_UnityEngine_Vector2_ *)this_00,(Vector2)0x0,pMVar1->klass->rgctx_data[0xe].method);
+        pMVar1 = pMVar1->klass->rgctx_data[0xe].method;
+        item.y = 0.0;
+        item.x = (float)pMVar1;
+        mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__AddWithResize((List_1_UnityEngine_Vector2_ *)this_00,item,pMVar1);
       }
       pMVar1 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_;
       piVar2 = &(this_00->fields)._version;
@@ -186,7 +189,6 @@ Vector2__Array * Assembly-CSharp.dll::IndentArea::IndentArea_SetUVs(IndentArea *
             uVar4 = (this_00->fields)._size;
             if (pMVar3->max_length <= uVar4) {
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__AddWithResize((List_1_UnityEngine_Vector2_ *)this_00,(Vector2)0x3f80000000000000,pMVar1->klass->rgctx_data[0xe].method);
-code_?:
               pMVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::MultiColumnCollectionHeader+ViewState+ColumnState]::List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray(this_00,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__ToArray__);
               return (Vector2__Array *)pMVar3;
             }
@@ -194,7 +196,8 @@ code_?:
             if (uVar4 < pMVar3->max_length) {
               (&pMVar3->vector[0].index)[uVar4 * 2] = 0;
               (&pMVar3->vector[0].name)[uVar4 * 2] = (String *)0x3f800000;
-              goto code_?;
+              pMVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::MultiColumnCollectionHeader+ViewState+ColumnState]::List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray(this_00,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__ToArray__);
+              return (Vector2__Array *)pMVar3;
             }
             goto code_?;
           }
@@ -218,7 +221,7 @@ void Assembly-CSharp.dll::IndentArea::IndentArea_UpdateIndentArea(IndentArea *th
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__Cube);
-    func_?(0x5678);
+    func_?(0x74ec);
     func_?(&MethodInfo__System__Collections__Generic__List<int>__Add_int_);
     func_?(&MethodInfo__System__Collections__Generic__List<int>__ToArray__);
     func_?(&MethodInfo__System__Collections__Generic__List<int>__List__);
@@ -343,7 +346,6 @@ void Assembly-CSharp.dll::IndentArea::IndentArea_UpdateIndentArea(IndentArea *th
                           if (pVVar4->max_length < 3) goto code_?;
                           uVar10 = pVVar4->vector[0].x;
                           uVar11 = pVVar4->vector[2].x;
-                          if (pVVar4->max_length == 0) goto code_?;
                           uVar12 = pVVar4->vector[0].x;
                           pGVar5 = (this->fields).gameObject;
                           if (pGVar5 != (GameObject *)0x0) {
@@ -450,31 +452,33 @@ void Assembly-CSharp.dll::IndentArea::IndentArea__ctor(IndentArea *this,MethodIn
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   pGVar1 = (GameObject *)func_?(TypeInfo__UnityEngine__GameObject);
   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor(pGVar1,StringLiteral_IndentArea,(MethodInfo *)0x0);
-  (this->fields).gameObject = pGVar1;
-  func_?(&(this->fields).gameObject,pGVar1);
-  pGVar1 = (this->fields).gameObject;
+  ppGVar2 = &(this->fields).gameObject;
+  *ppGVar2 = pGVar1;
+  func_?(ppGVar2,pGVar1);
+  pGVar1 = *ppGVar2;
   value = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer(StringLiteral_UIItems,(MethodInfo *)0x0);
   if (pGVar1 != (GameObject *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer(pGVar1,value,(MethodInfo *)0x0);
-    pCVar2 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
-    (this->fields).mainCamera = pCVar2;
+    pCVar3 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
+    this = (IndentArea *)&(this->fields).mainCamera;
+    *(Camera **)this = pCVar3;
     func_?();
-    pGVar1 = (this->fields).gameObject;
-    if (pGVar1 != (GameObject *)0x0) {
-      this_00 = (Renderer *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1(pGVar1,UnityEngine__MeshRenderer_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshRenderer>__);
-      pGVar1 = (this->fields).gameObject;
-      if (pGVar1 != (GameObject *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1(pGVar1,UnityEngine__MeshFilter_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshFilter>__);
+    if (*ppGVar2 != (GameObject *)0x0) {
+      this_00 = (Renderer *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1(*ppGVar2,UnityEngine__MeshRenderer_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshRenderer>__);
+      if (*ppGVar2 != (GameObject *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1(*ppGVar2,UnityEngine__MeshFilter_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshFilter>__);
         if (cRam_? == '\0') {
+          this = (IndentArea *)&UNK_?;
           func_?();
           cRam_? = '\x01';
         }
-        pPVar3 = TypeInfo__PrefabPool->static_fields->instance;
-        if (pPVar3 != (PrefabPool *)0x0) {
-          (this->fields).materialNone = (pPVar3->fields).indentMaterial;
+        pPVar4 = TypeInfo__PrefabPool->static_fields->instance;
+        if (pPVar4 != (PrefabPool *)0x0) {
+          ppMVar5 = &(this->fields).materialNone;
+          *ppMVar5 = (pPVar4->fields).indentMaterial;
           func_?();
           if (this_00 != (Renderer *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial(this_00,(this->fields).materialNone,(MethodInfo *)0x0);
+            UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial(this_00,*ppMVar5,(MethodInfo *)0x0);
             return;
           }
         }
@@ -482,8 +486,8 @@ void Assembly-CSharp.dll::IndentArea::IndentArea__ctor(IndentArea *this,MethodIn
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

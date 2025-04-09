@@ -19,7 +19,7 @@ void Assembly-CSharp.dll::AccessoryMenuButton+<>c__DisplayClass10_0::AccessoryMe
       if (uVar4 != 0) {
         do {
           if (pIVar2->interfaceOffsets[uVar3].interfaceType == (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IUIStack) {
-            ppMVar5 = &(&(x->klass->vtable).IsUIElementBlocked)[x->klass->interfaceOffsets[uVar3].offset].method;
+            ppMVar5 = &(&(x->klass->vtable).IsUIElementBlocked)[pIVar2->interfaceOffsets[uVar3].offset].method;
             goto code_?;
           }
           uVar3 = uVar3 + 1;

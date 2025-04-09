@@ -10,7 +10,7 @@ void Assembly-CSharp.dll::ThemeImageUVScaler::ThemeImageUVScaler_Reset(ThemeImag
   }
   pRVar1 = (RawImage *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1((Component *)this,UnityEngine__UI__RawImage_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::RawImage>__);
   (this->fields).image = pRVar1;
-  func_?(&(this->fields).image,pRVar1);
+  func_?();
   return;
 }
 

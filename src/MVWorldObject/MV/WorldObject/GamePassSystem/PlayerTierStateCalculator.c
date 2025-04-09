@@ -547,7 +547,7 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerTierStateCalculat
   this_00 = (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::RuntimeEvents::ExplosionEvent+ExplosionValues]::Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues___ctor(this_00,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__Dictionary__);
   method_00 = (MethodInfo *)&(this->fields).progressionThresholds;
-  (this->fields).progressionThresholds = (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_ *)this_00;
+  *(Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_ **)method_00 = this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
@@ -566,13 +566,14 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerTierStateCalculat
   }
   this_00 = (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::RuntimeEvents::ExplosionEvent+ExplosionValues]::Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues___ctor(this_00,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__Dictionary__);
-  method_00 = (MethodInfo *)&(this->fields).progressionThresholds;
-  (this->fields).progressionThresholds = (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_ *)this_00;
-  func_?(method_00,this_00);
+  ppDVar1 = &(this->fields).progressionThresholds;
+  *ppDVar1 = (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_ *)this_00;
+  method_00 = (MethodInfo *)ppDVar1;
+  func_?(ppDVar1,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,method_00);
   (this->fields).gamePassRewardsActivated = gamePassRewardsActivated;
-  (this->fields).progressionThresholds = progressionThresholds;
-  func_?(&(this->fields).progressionThresholds,progressionThresholds);
+  *ppDVar1 = progressionThresholds;
+  func_?(ppDVar1,progressionThresholds);
   (this->fields).gamePointVelocityIsZero = gamePointVelocityIsZero;
   (this->fields).welcomeReward = welcomeReward;
   return;

@@ -70,27 +70,28 @@ void Assembly-CSharp.dll::GameMeterCollectible::GameMeterCollectible_SetGameMete
   pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if ((pMVar2 != (MVNetworkGame *)0x0) && (this_00 = (pMVar2->fields)._WinningConditionManager_k__BackingField, this_00 != (WinningConditionManager *)0x0)) {
     pAVar3 = (AllCollectiblesCollectedClient *)MVWorldObject.dll::WinningConditionManager::WinningConditionManager_GetSingletonWinnerConditionByType(this_00,AllCollectiblesCollectedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<AllCollectiblesCollectedClient>__);
-    (this->fields).collectedClient = pAVar3;
-    func_?(&(this->fields).collectedClient,pAVar3);
+    ppAVar4 = &(this->fields).collectedClient;
+    *ppAVar4 = pAVar3;
+    func_?(ppAVar4,pAVar3);
     WinningConditionControl::WinningConditionControl_TryGetPrioritizedWinCondition(&WStack_1,(MethodInfo *)0x0);
     if (WStack_1 == WinningConditionType__Enum_Collectible) {
-      pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-      if (pGVar4 != (GameObject *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar4,1,(MethodInfo *)0x0);
+      pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
+      if (pGVar5 != (GameObject *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar5,1,(MethodInfo *)0x0);
         return;
       }
     }
     else {
-      pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-      if (pGVar4 != (GameObject *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar4,0,(MethodInfo *)0x0);
+      pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
+      if (pGVar5 != (GameObject *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar5,0,(MethodInfo *)0x0);
         return;
       }
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
