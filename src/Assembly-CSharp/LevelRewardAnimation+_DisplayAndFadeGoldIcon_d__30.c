@@ -140,8 +140,7 @@ code_?:
                           UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
                           RectTransform_SetSizeWithCurrentAnchors
                                     (pRVar7,RectTransform_Axis__Enum_Horizontal,
-                                     (float)(pLVar2->fields).targetSize * fVar3,(MethodInfo *)0x0)
-                          ;
+                                     (float)(pLVar2->fields).targetSize * fVar3,(MethodInfo *)0x0);
                           pIVar4 = (pLVar2->fields).goldImage;
                           if ((pIVar4 != (Image *)0x0) &&
                              (pRVar7 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::
@@ -151,8 +150,8 @@ code_?:
                             UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
                             RectTransform_SetSizeWithCurrentAnchors
                                       (pRVar7,RectTransform_Axis__Enum_Vertical,
-                                       (float)(pLVar2->fields).targetSize * fVar3,
-                                       (MethodInfo *)0x0);
+                                       (float)(pLVar2->fields).targetSize * fVar3,(MethodInfo *)0x0
+                                      );
                             pOVar14 = (Object *)func_?();
                             (pLVar1->fields).__2__current = pOVar14;
                             func_?();
@@ -191,8 +190,7 @@ code_?:
                           UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
                           RectTransform_SetSizeWithCurrentAnchors
                                     (pRVar7,RectTransform_Axis__Enum_Vertical,
-                                     (float)(pLVar2->fields).targetSize * fVar3,(MethodInfo *)0x0)
-                          ;
+                                     (float)(pLVar2->fields).targetSize * fVar3,(MethodInfo *)0x0);
                           pAVar5 = (pLVar2->fields).goldFadeInCurve;
                           if (pAVar5 != (AnimationCurve *)0x0) {
                             pCVar13 = (CanvasGroup *)
@@ -241,7 +239,6 @@ code_?:
         pQVar10 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
                  Quaternion_Internal_FromEulerRad
                            ((Quaternion *)&stack0xffffffc0,euler_00,(MethodInfo *)0x0);
-        pLVar2 = (LevelRewardAnimation *)0x0;
         if (pTVar8 != (Transform *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
                     (pTVar8,*pQVar10,(MethodInfo *)0x0);
@@ -255,16 +252,11 @@ code_?:
     }
   }
 code_?:
-  func_?();
-  bVar16 = (byte)uRam_?;
-  in_AF = 9 < (bVar16 & 0xf) | in_AF;
-  *(undefined1 *)&pLVar1->klass = *(undefined1 *)&pLVar2->klass;
-  ppLVar17 = &pLVar1[2].fields.__4__this;
-  *(byte *)ppLVar17 =
-       *(char *)ppLVar17 + extraout_DL + '\x01' + (9 < (bVar16 + in_AF * -6 & 0xf) | in_AF);
-  pcVar18 = (code *)swi(3);
-  bVar19 = (*pcVar18)();
-  return bVar19;
+  bVar16 = func_?();
+  cRam_? = cRam_? + (char)&stack0xfffffffc + (9 < (bVar16 & 0xf) | in_AF);
+  pcVar17 = (code *)swi(3);
+  bVar18 = (*pcVar17)();
+  return bVar18;
 }
 
 

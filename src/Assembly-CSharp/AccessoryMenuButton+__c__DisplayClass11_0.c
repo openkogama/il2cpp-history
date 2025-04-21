@@ -1,9 +1,9 @@
 
 /* Void <CalculateShouldShowAccessoryPopup>b__0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::AccessoryMenuButton+<>c__DisplayClass10_0::
-     AccessoryMenuButton_c_DisplayClass10_0__CalculateShouldShowAccessoryPopup_b__0
-               (AccessoryMenuButton_c_DisplayClass10_0 *this,IUIStack *x,BaseEventData *y,
+void Assembly-CSharp.dll::AccessoryMenuButton+<>c__DisplayClass11_0::
+     AccessoryMenuButton_c_DisplayClass11_0__CalculateShouldShowAccessoryPopup_b__0
+               (AccessoryMenuButton_c_DisplayClass11_0 *this,IUIStack *x,BaseEventData *y,
                MethodInfo *method)
 
 {

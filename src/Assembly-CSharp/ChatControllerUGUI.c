@@ -110,7 +110,7 @@ code_?:
                                  ((Component *)pRVar8,(MethodInfo *)0x0),
              pGVar9 != (GameObject *)0x0)) {
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                      (pGVar9,0xe3,(MethodInfo *)0x0);
+                      (pGVar9,0xf3,(MethodInfo *)0x0);
             goto code_?;
           }
         }
@@ -518,7 +518,7 @@ void Assembly-CSharp.dll::ChatControllerUGUI::ChatControllerUGUI_OnLobbyStateCha
                          ((Component *)pRVar3,(MethodInfo *)0x0);
       if (pGVar4 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar4,0xb6,(MethodInfo *)0x0);
+                  (pGVar4,0xc6,(MethodInfo *)0x0);
         pRVar3 = (this->fields).inputAreaDeactivated;
         if (pRVar3 != (RectTransform *)0x0) {
           pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject

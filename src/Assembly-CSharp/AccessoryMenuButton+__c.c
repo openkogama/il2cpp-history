@@ -1,8 +1,8 @@
 
-/* Void <CalculateShouldShowBundleAd>b__12_0(IActivateUIElement, BaseEventData) */
+/* Void <CalculateShouldShowBundleAd>b__13_0(IActivateUIElement, BaseEventData) */
 
 void Assembly-CSharp.dll::AccessoryMenuButton+<>c::
-     AccessoryMenuButton_c__CalculateShouldShowBundleAd_b__12_0
+     AccessoryMenuButton_c__CalculateShouldShowBundleAd_b__13_0
                (AccessoryMenuButton_c *this,IActivateUIElement *x,BaseEventData *y,
                MethodInfo *method)
 

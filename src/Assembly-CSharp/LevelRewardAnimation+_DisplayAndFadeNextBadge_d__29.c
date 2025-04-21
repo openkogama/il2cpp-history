@@ -8,8 +8,8 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeNextBadge>d__29::
 {
   pLVar1 = this;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Int32);
-    func_?(&StringLiteral_LEVEL_UP_);
+    func_?();
+    func_?();
     cRam_? = '\x01';
   }
   this_00 = (Object__Class *)(this->fields).__4__this;
@@ -46,7 +46,7 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeNextBadge>d__29::
     pGVar9 = *(Graphic **)&(this_00->_0).this_arg.attrs;
     if ((pGVar9 == (Graphic *)0x0) ||
        (pRVar10 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
-                            (pGVar9,(MethodInfo *)0x0), pRVar10 == (RectTransform *)0x0))
+                           (pGVar9,(MethodInfo *)0x0), pRVar10 == (RectTransform *)0x0))
     goto code_?;
     this = (LevelRewardAnimation_DisplayAndFadeNextBadge_d_29 *)0x0;
     UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_SetSizeWithCurrentAnchors
@@ -55,7 +55,7 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeNextBadge>d__29::
     pGVar9 = *(Graphic **)&(this_00->_0).this_arg.attrs;
     if ((pGVar9 == (Graphic *)0x0) ||
        (pRVar10 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_rectTransform
-                            (pGVar9,(MethodInfo *)0x0), pRVar10 == (RectTransform *)0x0))
+                           (pGVar9,(MethodInfo *)0x0), pRVar10 == (RectTransform *)0x0))
     goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_SetSizeWithCurrentAnchors
               (pRVar10,RectTransform_Axis__Enum_Vertical,
@@ -123,7 +123,7 @@ code_?:
                   pGVar9 = *(Graphic **)&(this_00->_0).this_arg.attrs;
                   if ((pGVar9 != (Graphic *)0x0) &&
                      (pRVar10 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::
-                                Graphic_get_rectTransform(pGVar9,(MethodInfo *)0x0),
+                               Graphic_get_rectTransform(pGVar9,(MethodInfo *)0x0),
                      pRVar10 != (RectTransform *)0x0)) {
                     fVar2 = 0.0;
                     UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
@@ -133,7 +133,7 @@ code_?:
                     pGVar9 = *(Graphic **)&(this_00->_0).this_arg.attrs;
                     if ((pGVar9 != (Graphic *)0x0) &&
                        (pRVar10 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::
-                                  Graphic_get_rectTransform(pGVar9,(MethodInfo *)0x0),
+                                 Graphic_get_rectTransform(pGVar9,(MethodInfo *)0x0),
                        pRVar10 != (RectTransform *)0x0)) {
                       UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
                       RectTransform_SetSizeWithCurrentAnchors
@@ -162,6 +162,7 @@ code_?:
                                       Quaternion_Internal_FromEulerRad
                                                 ((Quaternion *)&stack0xffffffc0,euler_01,
                                                  (MethodInfo *)0x0);
+                            pLVar1 = (LevelRewardAnimation_DisplayAndFadeNextBadge_d_29 *)0x0;
                             if (pTVar4 != (Transform *)0x0) {
                               UnityEngine.CoreModule.dll::UnityEngine::Transform::
                               Transform_set_rotation(pTVar4,*pQVar5,(MethodInfo *)0x0);
@@ -244,7 +245,7 @@ code_?:
                   pGVar9 = *(Graphic **)&(this_00->_0).this_arg.attrs;
                   if ((pGVar9 != (Graphic *)0x0) &&
                      (pRVar10 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::
-                                Graphic_get_rectTransform(pGVar9,(MethodInfo *)0x0),
+                               Graphic_get_rectTransform(pGVar9,(MethodInfo *)0x0),
                      pRVar10 != (RectTransform *)0x0)) {
                     UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
                     RectTransform_SetSizeWithCurrentAnchors
@@ -253,7 +254,7 @@ code_?:
                     pGVar9 = *(Graphic **)&(this_00->_0).this_arg.attrs;
                     if ((pGVar9 != (Graphic *)0x0) &&
                        (pRVar10 = UnityEngine.UI.dll::UnityEngine::UI::Graphic::
-                                  Graphic_get_rectTransform(pGVar9,(MethodInfo *)0x0),
+                                 Graphic_get_rectTransform(pGVar9,(MethodInfo *)0x0),
                        pRVar10 != (RectTransform *)0x0)) {
                       UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
                       RectTransform_SetSizeWithCurrentAnchors
@@ -325,8 +326,11 @@ code_?:
   }
 code_?:
   bVar15 = func_?();
-  pcVar16 = (char *)((int)&stack0x00000000 * 5 + -5);
-  *pcVar16 = *pcVar16 + extraout_DH + (9 < (bVar15 & 0xf) | in_AF);
+  in_AF = 9 < (bVar15 & 0xf) | in_AF;
+  pcVar16 = (char *)((int)&stack0x00000000 * 5 + -0x51fcf005);
+  *pcVar16 = *pcVar16 + extraout_DL + in_AF;
+  *(byte *)&pLVar1->klass =
+       *(char *)&pLVar1->klass + extraout_CL + (9 < (bVar15 + in_AF * -6 & 0xf) | in_AF);
   pcVar17 = (code *)swi(3);
   bVar18 = (*pcVar17)();
   return bVar18;
