@@ -401,7 +401,7 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::LobbyStatePlayModeContro
                   bVar7 = MVLocalPlayer::MVLocalPlayer_get_IsChatLocked(this_01,(MethodInfo *)0x0);
                   pRVar1 = (pCVar5->fields)._._InputAreaRoot_k__BackingField;
                   if ((pRVar1 != (RectTransform *)0x0) && (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pRVar1,(MethodInfo *)0x0), pGVar2 != (GameObject *)0x0)) {
-                    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar2,0xb6,(MethodInfo *)0x0);
+                    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar2,0xc6,(MethodInfo *)0x0);
                     pRVar1 = (pCVar5->fields).inputAreaDeactivated;
                     if ((pRVar1 != (RectTransform *)0x0) && (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pRVar1,(MethodInfo *)0x0), pGVar2 != (GameObject *)0x0)) {
                       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar2,bVar7 != 0,(MethodInfo *)0x0);

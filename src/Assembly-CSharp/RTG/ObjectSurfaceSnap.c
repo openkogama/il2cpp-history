@@ -1128,11 +1128,11 @@ code_?:
     snapConfig.OffsetFromSurface = fVar89;
     fVar144 = fVar10;
     if (in_stack_164 == '\0') {
+      uStack_32 = snapConfig.SurfaceHitPoint.z._3_1_;
       uStack_30 = snapConfig.SurfaceHitPoint.z._0_1_;
       uStack_31 = snapConfig.SurfaceHitPoint.z._1_2_;
-      uStack_32 = snapConfig.SurfaceHitPoint.z._3_1_;
       if (cVar1 != '\0') {
-        if ((snapConfig.SurfaceObject != (GameObject *)0x0) && (uStack_30 = snapConfig.SurfaceHitPoint.z._0_1_, fVar8 = snapConfig.SurfaceHitPoint.y, uStack_31 = snapConfig.SurfaceHitPoint.z._1_2_, uStack_32 = snapConfig.SurfaceHitPoint.z._3_1_, pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(snapConfig.SurfaceObject,(MethodInfo *)0x0), pTVar13 != (Transform *)0x0)) {
+        if ((snapConfig.SurfaceObject != (GameObject *)0x0) && (fVar8 = snapConfig.SurfaceHitPoint.y, uStack_32 = snapConfig.SurfaceHitPoint.z._3_1_, uStack_30 = snapConfig.SurfaceHitPoint.z._0_1_, uStack_31 = snapConfig.SurfaceHitPoint.z._1_2_, pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(snapConfig.SurfaceObject,(MethodInfo *)0x0), pTVar13 != (Transform *)0x0)) {
           pVVar16 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffff10,pTVar13,(MethodInfo *)0x0);
           pTVar13 = (Transform *)pVVar16->x;
           if (transform != (Transform *)0x0) {
@@ -1243,9 +1243,9 @@ code_?:
       if (fVar11 != 1.4013e-45) goto code_?;
     }
     else {
+      uStack_32 = snapConfig.SurfaceHitPoint.z._3_1_;
       uStack_30 = snapConfig.SurfaceHitPoint.z._0_1_;
       uStack_31 = snapConfig.SurfaceHitPoint.z._1_2_;
-      uStack_32 = snapConfig.SurfaceHitPoint.z._3_1_;
       pVVar16 = TriangPrismShape3D::TriangPrismShape3D_get_ModelUp((Vector3 *)&stack0xffffff08,(MethodInfo *)0x0);
       fVar89 = pVVar16->z;
     }

@@ -160,7 +160,6 @@ code_?:
         euler_00.x = fVar3;
         euler_00.z = 0.0;
         pQVar10 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad((Quaternion *)&stack0xffffffc0,euler_00,(MethodInfo *)0x0);
-        pLVar2 = (LevelRewardAnimation *)0x0;
         if (pTVar8 != (Transform *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation(pTVar8,*pQVar10,(MethodInfo *)0x0);
           pOVar14 = (Object *)func_?();
@@ -173,15 +172,11 @@ code_?:
     }
   }
 code_?:
-  func_?();
-  bVar16 = (byte)uRam_?;
-  in_AF = 9 < (bVar16 & 0xf) | in_AF;
-  *(undefined1 *)&pLVar1->klass = *(undefined1 *)&pLVar2->klass;
-  ppLVar17 = &pLVar1[2].fields.__4__this;
-  *(byte *)ppLVar17 = *(char *)ppLVar17 + extraout_DL + '\x01' + (9 < (bVar16 + in_AF * -6 & 0xf) | in_AF);
-  pcVar18 = (code *)swi(3);
-  bVar19 = (*pcVar18)();
-  return bVar19;
+  bVar16 = func_?();
+  cRam_? = cRam_? + (char)&stack0xfffffffc + (9 < (bVar16 & 0xf) | in_AF);
+  pcVar17 = (code *)swi(3);
+  bVar18 = (*pcVar17)();
+  return bVar18;
 }
 
 

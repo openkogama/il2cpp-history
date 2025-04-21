@@ -67,7 +67,7 @@ void Assembly-CSharp.dll::MaterialPurchasePopup::MaterialPurchasePopup_Initializ
                   UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_filterMode((Texture *)0xc483068b,FilterMode__Enum_Bilinear,(MethodInfo *)0x0);
                   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_set_hideFlags((Object_1 *)0xc483068b,HideFlags__Enum_DontSave,(MethodInfo *)0x0);
                   UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_set_antiAliasing((RenderTexture *)0xc483068b,2,(MethodInfo *)0x0);
-                  UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_targetTexture((Camera *)0x2ee85001,(RenderTexture *)0xc483068b,(MethodInfo *)0x0);
+                  UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_targetTexture((Camera *)0xfee85001,(RenderTexture *)0xc483068b,(MethodInfo *)0x0);
                   pMVar6 = (this->fields).materialPreviewer;
                   if ((pMVar6 != (MaterialPreviewer *)0x0) && (this_03 = (this->fields).materialPreviewImage, this_03 != (RawImage *)0x0)) {
                     UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture(this_03,(Texture *)(pMVar6->fields).renderTexture,(MethodInfo *)0x0);
