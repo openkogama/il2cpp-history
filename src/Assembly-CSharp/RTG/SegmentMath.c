@@ -65,25 +65,28 @@ bool Assembly-CSharp.dll::RTG::SegmentMath::SegmentMath_Raycast
     fVar3 = ray.m_Origin.x - startPoint.x;
     fVar4 = ray.m_Origin.y - startPoint.y;
     fVar5 = ray.m_Origin.z - startPoint.z;
-    startPoint.y = (float)&pfStack_2;
-    startPoint.z = 0.0;
-    startPoint.x = (float)&t;
-    fVar6 = ray.m_Direction.y * fVar4 + ray.m_Direction.x * fVar3 + ray.m_Direction.z * fVar5;
-    t = (float *)((fVar4 * fVar4 + fVar3 * fVar3 + fVar5 * fVar5) -
-                 (epsilon._raycastEps + 0.0) * (epsilon._raycastEps + 0.0));
+    startPoint.x = (float)&pfStack_2;
+    startPoint.y = 0.0;
+    t = (float *)&t;
+    fVar6 = ray.m_Direction.x * fVar3 + ray.m_Direction.y * fVar4 + ray.m_Direction.z * fVar5;
+    a = ray.m_Direction.y * ray.m_Direction.y + ray.m_Direction.x * ray.m_Direction.x +
+        ray.m_Direction.z * ray.m_Direction.z;
     bVar1 = MathEx::MathEx_SolveQuadratic
-                      (ray.m_Direction.x * ray.m_Direction.x + ray.m_Direction.y * ray.m_Direction.y
-                       + ray.m_Direction.z * ray.m_Direction.z,fVar6 + fVar6,(float)t,
-                       (float *)startPoint.x,(float *)startPoint.y,(MethodInfo *)0x0);
+                      (a,fVar6 + fVar6,
+                       (fVar3 * fVar3 + fVar4 * fVar4 + fVar5 * fVar5) -
+                       (epsilon._raycastEps + 0.0) * (epsilon._raycastEps + 0.0),t,
+                       (float *)startPoint.x,(MethodInfo *)0x0);
     if ((bVar1 == 0) || (((float)t < 0.0 && (t = pfStack_2, (float)pfStack_2 < 0.0)))) {
-      startPoint.z = (float)t_00;
+      startPoint.z = endPoint.x;
+      startPoint.y = (float)t_00;
       t = (float *)&UNK_?;
-      startPoint.x = ray.m_Origin.y;
-      startPoint.y = ray.m_Origin.z;
-      ray_00.m_Direction.x = (float)&UNK_?;
-      ray_00.m_Origin = ray.m_Origin;
-      ray_00.m_Direction.y = ray.m_Origin.y;
-      ray_00.m_Direction.z = ray.m_Origin.z;
+      ray_00.m_Origin.z = (float)&UNK_?;
+      ray_00.m_Origin.x = (float)(int)ray.m_Origin._0_8_;
+      ray_00.m_Origin.y = (float)(int)((ulonglong)ray.m_Origin._0_8_ >> 0x20);
+      ray_00.m_Direction.x = a;
+      ray_00.m_Direction.y = (float)&UNK_?;
+      ray_00.m_Direction.z = a;
+      startPoint.x = a;
       bVar1 = SphereMath::SphereMath_Raycast_1
                         (ray_00,t_00,endPoint,epsilon._raycastEps,(SphereEpsilon)0x0,
                          (MethodInfo *)0x0);

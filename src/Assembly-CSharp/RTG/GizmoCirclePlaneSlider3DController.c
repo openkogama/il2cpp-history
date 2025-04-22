@@ -8,30 +8,43 @@ void Assembly-CSharp.dll::RTG::GizmoCirclePlaneSlider3DController::
 {
   pGVar1 = (this->fields)._._data;
   if (pGVar1 != (GizmoPlaneSlider3DControllerData *)0x0) {
-    pGVar2 = (pGVar1->fields).Slider;
-    pCVar3 = (pGVar1->fields).Circle;
-    if ((pGVar2 != (GizmoPlaneSlider3D *)0x0) &&
-       (((pGVar4 = (pGVar2->fields)._sharedSettings, pGVar4 != (GizmoPlaneSlider3DSettings *)0x0 ||
-         (pGVar4 = (pGVar2->fields)._settings, pGVar4 != (GizmoPlaneSlider3DSettings *)0x0)) &&
-        (pCVar3 != (CircleShape3D *)0x0)))) {
-      SphereShape3D::SphereShape3D_set_RadiusEps
-                ((SphereShape3D *)pCVar3,zoomFactor * (pGVar4->fields)._areaHoverEps * _UNK_?
-                 ,(MethodInfo *)0x0);
-      pGVar1 = (this->fields)._._data;
-      if (pGVar1 != (GizmoPlaneSlider3DControllerData *)0x0) {
-        pCVar3 = (pGVar1->fields).Circle;
-        pGVar2 = (pGVar1->fields).Slider;
-        if (((pGVar2 != (GizmoPlaneSlider3D *)0x0) &&
-            ((pGVar4 = (pGVar2->fields)._sharedSettings, pGVar4 != (GizmoPlaneSlider3DSettings *)0x0
-             || (pGVar4 = (pGVar2->fields)._settings, pGVar4 != (GizmoPlaneSlider3DSettings *)0x0)))
-            ) && (pCVar3 != (CircleShape3D *)0x0)) {
-          CircleShape3D::CircleShape3D_set_ExtrudeEps
-                    (pCVar3,zoomFactor * (pGVar4->fields)._extrudeHoverEps,(MethodInfo *)0x0);
-          return;
+    pCVar2 = (pGVar1->fields).Circle;
+    pGVar3 = (pGVar1->fields).Slider;
+    if (pGVar3 != (GizmoPlaneSlider3D *)0x0) {
+      if ((pGVar3->fields)._sharedSettings == (GizmoPlaneSlider3DSettings *)0x0) {
+        pGVar4 = (pGVar3->fields)._settings;
+        if (pGVar4 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
+      }
+      else {
+        pGVar4 = (pGVar3->fields)._sharedSettings;
+      }
+      if (pCVar2 != (CircleShape3D *)0x0) {
+        SphereShape3D::SphereShape3D_set_RadiusEps
+                  ((SphereShape3D *)pCVar2,
+                   zoomFactor * (pGVar4->fields)._areaHoverEps * _UNK_?,(MethodInfo *)0x0);
+        pGVar1 = (this->fields)._._data;
+        if (pGVar1 != (GizmoPlaneSlider3DControllerData *)0x0) {
+          pCVar2 = (pGVar1->fields).Circle;
+          pGVar3 = (((this->fields)._._data)->fields).Slider;
+          if (pGVar3 != (GizmoPlaneSlider3D *)0x0) {
+            if ((pGVar3->fields)._sharedSettings == (GizmoPlaneSlider3DSettings *)0x0) {
+              pGVar4 = (pGVar3->fields)._settings;
+              if (pGVar4 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
+            }
+            else {
+              pGVar4 = (pGVar3->fields)._sharedSettings;
+            }
+            if (pCVar2 != (CircleShape3D *)0x0) {
+              CircleShape3D::CircleShape3D_set_ExtrudeEps
+                        (pCVar2,zoomFactor * (pGVar4->fields)._extrudeHoverEps,(MethodInfo *)0x0);
+              return;
+            }
+          }
         }
       }
     }
   }
+code_?:
   func_?();
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
@@ -100,29 +113,29 @@ void Assembly-CSharp.dll::RTG::GizmoCirclePlaneSlider3DController::
 {
   pGVar1 = (this->fields)._._data;
   if (pGVar1 != (GizmoPlaneSlider3DControllerData *)0x0) {
-    this_00 = (pGVar1->fields).Circle;
-    this_01 = (pGVar1->fields).Slider;
-    if ((this_01 != (GizmoPlaneSlider3D *)0x0) &&
-       (pGVar2 = (this_01->fields)._transform, pGVar2 != (GizmoTransform *)0x0)) {
+    this_00 = (pGVar1->fields).Slider;
+    this_01 = (pGVar1->fields).Circle;
+    if ((this_00 != (GizmoPlaneSlider3D *)0x0) &&
+       (pGVar2 = (this_00->fields)._transform, pGVar2 != (GizmoTransform *)0x0)) {
       fVar3 = (pGVar2->fields)._position3D.y;
       fVar4 = (pGVar2->fields)._position3D.z;
-      if (this_00 != (CircleShape3D *)0x0) {
-        (this_00->fields)._center.x = (pGVar2->fields)._position3D.x;
-        (this_00->fields)._center.y = fVar3;
-        (this_00->fields)._center.z = fVar4;
+      if (this_01 != (CircleShape3D *)0x0) {
+        (this_01->fields)._center.x = (pGVar2->fields)._position3D.x;
+        (this_01->fields)._center.y = fVar3;
+        (this_01->fields)._center.z = fVar4;
         fVar4 = GizmoPlaneSlider3D::GizmoPlaneSlider3D_GetRealCircleRadius
-                          (this_01,zoomFactor,(MethodInfo *)0x0);
+                          (this_00,zoomFactor,(MethodInfo *)0x0);
         TriangPrismShape3D::TriangPrismShape3D_set_Width
-                  ((TriangPrismShape3D *)this_00,fVar4,(MethodInfo *)0x0);
-        pGVar2 = (this_01->fields)._transform;
+                  ((TriangPrismShape3D *)this_01,fVar4,(MethodInfo *)0x0);
+        pGVar2 = (this_00->fields)._transform;
         if (pGVar2 != (GizmoTransform *)0x0) {
           fVar4 = (pGVar2->fields)._rotation3D.y;
           fVar3 = (pGVar2->fields)._rotation3D.z;
           fVar5 = (pGVar2->fields)._rotation3D.w;
-          (this_00->fields)._rotation.x = (pGVar2->fields)._rotation3D.x;
-          (this_00->fields)._rotation.y = fVar4;
-          ((Quaternion *)&(this_00->fields)._rotation.z)->x = fVar3;
-          (this_00->fields)._rotation.w = fVar5;
+          (this_01->fields)._rotation.x = (pGVar2->fields)._rotation3D.x;
+          (this_01->fields)._rotation.y = fVar4;
+          ((Quaternion *)&(this_01->fields)._rotation.z)->x = fVar3;
+          (this_01->fields)._rotation.w = fVar5;
           pGVar1 = (this->fields)._._data;
           if ((pGVar1 != (GizmoPlaneSlider3DControllerData *)0x0) &&
              (this_02 = (pGVar1->fields).CircleBorder, this_02 != (GizmoCircle3DBorder *)0x0)) {

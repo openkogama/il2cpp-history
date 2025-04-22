@@ -187,8 +187,8 @@ bool Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscure
     cRam_? = '\x01';
   }
   uVar1 = this->hiddenValue;
-  uVar2 = this->currentCryptoKey;
-  if (uVar2 != obj.currentCryptoKey) {
+  if (this->currentCryptoKey != obj.currentCryptoKey) {
+    uVar2 = this->currentCryptoKey;
     if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor
         == 0) {
       func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);

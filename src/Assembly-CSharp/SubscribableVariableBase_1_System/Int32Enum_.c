@@ -57,16 +57,15 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[System::Int32Enum]::
     if (bVar1 != 0) {
       return 0;
     }
-    pIVar2 = method->klass->rgctx_data;
-    pMVar3 = pIVar2[1].method;
-    pIVar4 = pIVar2->klass;
-    if (((uint)pIVar4->vtable[0].methodPtr & 0x100) == 0) {
-      pIVar4 = (Il2CppClass *)func_?();
+    pMVar2 = method->klass->rgctx_data[1].method;
+    pIVar3 = method->klass->rgctx_data->klass;
+    if (((uint)pIVar3->vtable[0].methodPtr & 0x100) == 0) {
+      pIVar3 = (Il2CppClass *)func_?();
     }
-    if ((pIVar4->naturalAligment <= (obj->klass->_1).naturalAligment) &&
-       ((obj->klass->_1).typeHierarchy[pIVar4->naturalAligment - 1] == pIVar4)) {
+    if ((pIVar3->naturalAligment <= (obj->klass->_1).naturalAligment) &&
+       ((obj->klass->_1).typeHierarchy[pIVar3->naturalAligment - 1] == pIVar3)) {
       obj_00 = (Object *)func_?();
-      if (((uint)(pMVar3->klass->rgctx_data[5].klass)->vtable[0].methodPtr & 0x100) == 0) {
+      if (((uint)(pMVar2->klass->rgctx_data[5].klass)->vtable[0].methodPtr & 0x100) == 0) {
         func_?();
       }
       bVar1 = mscorlib.dll::System::ValueType::ValueType_Equals
@@ -76,8 +75,8 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[System::Int32Enum]::
     func_?();
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  bVar1 = (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  bVar1 = (*pcVar4)();
   return bVar1;
 }
 
@@ -281,7 +280,7 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[System::Int32Enum]::
     VStack_4.monitor = (MonitorData *)0xffffffff;
     VStack_4.klass = (ValueType__Class *)pIVar2;
     bVar5 = mscorlib.dll::System::ValueType::ValueType_Equals(&VStack_4,obj,(MethodInfo *)0x0);
-    return bVar5 == 0;
+    return bVar5 ^ 1;
   }
   func_?();
   pcVar6 = (code *)swi(3);
@@ -318,7 +317,7 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[System::Int32Enum]::
     VStack_4.monitor = (MonitorData *)0xffffffff;
     VStack_4.klass = (ValueType__Class *)pIVar2;
     bVar5 = mscorlib.dll::System::ValueType::ValueType_Equals(&VStack_4,obj,(MethodInfo *)0x0);
-    return bVar5 == 0;
+    return bVar5 ^ 1;
   }
   func_?();
   pcVar6 = (code *)swi(3);
@@ -361,7 +360,7 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[System::Int32Enum]::
     VStack_4.monitor = (MonitorData *)0xffffffff;
     VStack_4.klass = (ValueType__Class *)pIVar1;
     bVar5 = mscorlib.dll::System::ValueType::ValueType_Equals(&VStack_4,obj,(MethodInfo *)0x0);
-    return bVar5 == 0;
+    return bVar5 ^ 1;
   }
   func_?();
   pcVar6 = (code *)swi(3);

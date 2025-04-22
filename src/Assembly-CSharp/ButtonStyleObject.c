@@ -69,11 +69,10 @@ void Assembly-CSharp.dll::ButtonStyleObject::ButtonStyleObject_Reset
                      ((Component *)this,
                       UnityEngine__UI__Button_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Button>__
                      );
-  ppBVar2 = &(this->fields).button;
-  *ppBVar2 = pBVar1;
-  func_?(ppBVar2,pBVar1);
+  (this->fields).button = pBVar1;
+  func_?(&(this->fields).button,pBVar1);
+  pBVar1 = (this->fields).button;
   buttonStyle = (this->fields).buttonStyle;
-  pBVar1 = *ppBVar2;
   colorStyle = (this->fields).colorStyle;
   if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Styles);

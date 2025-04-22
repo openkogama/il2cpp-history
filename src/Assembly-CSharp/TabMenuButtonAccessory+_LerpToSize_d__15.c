@@ -61,18 +61,17 @@ bool Assembly-CSharp.dll::TabMenuButtonAccessory+<LerpToSize>d__15::
                  (pLVar5->klass->vtable).get_preferredWidth_1.methodPtr);
       uStack_9 = 0;
       pOVar10 = (Object *)func_?(TypeInfo__System__Int32,&uStack_9);
-      ppOVar11 = &(pTVar1->fields).__2__current;
-      *ppOVar11 = pOVar10;
-      func_?(ppOVar11,pOVar10);
+      (pTVar1->fields).__2__current = pOVar10;
+      func_?(&(pTVar1->fields).__2__current,pOVar10);
       (pTVar1->fields).__1__state = 1;
       return 1;
     }
   }
 code_?:
   func_?();
-  pcVar12 = (code *)swi(3);
-  bVar13 = (*pcVar12)();
-  return bVar13;
+  pcVar11 = (code *)swi(3);
+  bVar12 = (*pcVar11)();
+  return bVar12;
 }
 
 

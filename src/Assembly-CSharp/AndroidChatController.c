@@ -89,28 +89,27 @@ code_?:
 code_?:
         func_?();
         pCVar6 = (this->fields).chatConsoleModes;
-        ppCVar7 = &(this->fields).chatConsoleModes;
-        pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+        pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                            ((Component *)this,(MethodInfo *)0x0);
-        if (pTVar8 != (Transform *)0x0) {
-          pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
-                             (pTVar8,(MethodInfo *)0x0);
+        if (pTVar7 != (Transform *)0x0) {
+          pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
+                             (pTVar7,(MethodInfo *)0x0);
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
           pCVar6 = (ChatConsoleModes *)
-                    UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
-                              ((Object *)pCVar6,pTVar8,0,
-                               ChatConsoleModes_MethodInfo__UnityEngine__Object__Instantiate<ChatConsoleModes>_ChatConsoleModes__UnityEngine__Transform__bool_
-                              );
-          *ppCVar7 = pCVar6;
+                   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
+                             ((Object *)pCVar6,pTVar7,0,
+                              ChatConsoleModes_MethodInfo__UnityEngine__Object__Instantiate<ChatConsoleModes>_ChatConsoleModes__UnityEngine__Transform__bool_
+                             );
+          (this->fields).chatConsoleModes = pCVar6;
           func_?();
-          pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+          pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                              ((Component *)this,(MethodInfo *)0x0);
-          if (pTVar8 != (Transform *)0x0) {
+          if (pTVar7 != (Transform *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetAsLastSibling
-                      (pTVar8,(MethodInfo *)0x0);
-            pCVar6 = *ppCVar7;
+                      (pTVar7,(MethodInfo *)0x0);
+            pCVar6 = (this->fields).chatConsoleModes;
             if (pCVar6 != (ChatConsoleModes *)0x0) {
               ChatConsoleModes::ChatConsoleModes_Set
                         (pCVar6,ChatConsoleMode__Enum_ChatLobbyMode,&(this->fields).rectTransform,
@@ -129,8 +128,8 @@ code_?:
       if (pAVar5 != (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *
                     )0x0) {
         TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageHeard = pAVar5;
-        iVar9 = func_?();
-        if (iVar9 != 0) goto code_?;
+        iVar8 = func_?();
+        if (iVar8 != 0) goto code_?;
       }
 code_?:
       func_?();
@@ -138,17 +137,17 @@ code_?:
       func_?();
     }
     else {
-      pDVar10 = (Delegate *)0x0;
+      pDVar9 = (Delegate *)0x0;
       if ((UnityAction__Class *)pDVar4->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-        pDVar10 = pDVar4;
+        pDVar9 = pDVar4;
       }
-      if (pDVar10 != (Delegate *)0x0) {
-        (a->fields)._._.m_target = (Object *)pDVar10;
-        pDVar10 = (Delegate *)0x0;
+      if (pDVar9 != (Delegate *)0x0) {
+        (a->fields)._._.m_target = (Object *)pDVar9;
+        pDVar9 = (Delegate *)0x0;
         if ((UnityAction__Class *)pDVar4->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-          pDVar10 = pDVar4;
+          pDVar9 = pDVar4;
         }
-        if (pDVar10 != (Delegate *)0x0) goto code_?;
+        if (pDVar9 != (Delegate *)0x0) goto code_?;
         goto code_?;
       }
     }
@@ -158,8 +157,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -422,9 +421,8 @@ void Assembly-CSharp.dll::AndroidChatController::AndroidChatController__ctor
   ReadOnlyCollectionBuilder_1_System_Object___ctor
             ((ReadOnlyCollectionBuilder_1_System_Object_ *)this_00,
              MethodInfo__System__Collections__Generic__Queue<UnityEngine::UI::Text>__Queue__);
-  ppQVar4 = &(this->fields)._.lines;
-  *ppQVar4 = this_00;
-  func_?(ppQVar4,this_00);
+  (this->fields)._.lines = this_00;
+  func_?(&(this->fields)._.lines,this_00);
   (this->fields)._.promptRegisterForChat = 1;
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);

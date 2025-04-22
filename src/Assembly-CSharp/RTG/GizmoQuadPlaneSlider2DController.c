@@ -29,8 +29,8 @@ Vector2 Assembly-CSharp.dll::RTG::GizmoQuadPlaneSlider2DController::
       VVar5 = RightAngTriangle2D::RightAngTriangle2D_get_Up
                         ((RightAngTriangle2D *)this_00,(MethodInfo *)0x0);
       VStack_6.y = VVar5.y;
-      VStack_6.y = fVar4 + VStack_6.y * (float)puStack_1;
-      VStack_6.x = fVar3 + VStack_6.x * (float)puStack_1;
+      VStack_6.y = VStack_6.y * (float)puStack_1 + fVar4;
+      VStack_6.x = VStack_6.x * (float)puStack_1 + fVar3;
       return VStack_6;
     case Shape2DExtentPoint__Enum_Right:
       fVar4 = (this_00->fields)._center.x;
@@ -38,8 +38,8 @@ Vector2 Assembly-CSharp.dll::RTG::GizmoQuadPlaneSlider2DController::
       VVar5 = RightAngTriangle2D::RightAngTriangle2D_get_Right
                         ((RightAngTriangle2D *)this_00,(MethodInfo *)0x0);
       VStack_6.y = VVar5.y;
-      VStack_6.y = (float)puStack_1 + VStack_6.y * fVar3;
-      VStack_6.x = fVar4 + VStack_6.x * fVar3;
+      VStack_6.y = VStack_6.y * fVar3 + (float)puStack_1;
+      VStack_6.x = VStack_6.x * fVar3 + fVar4;
       return VStack_6;
     case Shape2DExtentPoint__Enum_Bottom:
       fVar3 = (this_00->fields)._center.x;
@@ -74,14 +74,14 @@ void Assembly-CSharp.dll::RTG::GizmoQuadPlaneSlider2DController::
 {
   pGVar1 = (this->fields)._._data;
   if (pGVar1 != (GizmoPlaneSlider2DControllerData *)0x0) {
-    this_00 = (pGVar1->fields).Quad;
-    this_01 = (pGVar1->fields).Slider;
-    if (this_01 != (GizmoPlaneSlider2D *)0x0) {
-      pGVar2 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_get_Settings(this_01,(MethodInfo *)0x0);
+    this_00 = (pGVar1->fields).Slider;
+    this_01 = (pGVar1->fields).Quad;
+    if (this_00 != (GizmoPlaneSlider2D *)0x0) {
+      pGVar2 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_get_Settings(this_00,(MethodInfo *)0x0);
       if (pGVar2 != (GizmoPlaneSlider2DSettings *)0x0) {
         value = Vector2Ex::Vector2Ex_FromValue((pGVar2->fields)._areaHoverEps,(MethodInfo *)0x0);
-        if (this_00 != (QuadShape2D *)0x0) {
-          QuadShape2D::QuadShape2D_set_SizeEps(this_00,value,(MethodInfo *)0x0);
+        if (this_01 != (QuadShape2D *)0x0) {
+          QuadShape2D::QuadShape2D_set_SizeEps(this_01,value,(MethodInfo *)0x0);
           return;
         }
       }

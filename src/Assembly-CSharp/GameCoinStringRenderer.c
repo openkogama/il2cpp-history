@@ -160,9 +160,8 @@ void Assembly-CSharp.dll::GameCoinStringRenderer::GameCoinStringRenderer__ctor
             ((ReadOnlyCollectionBuilder_1_System_Object_ *)this_00,
              MethodInfo__System__Collections__Generic__Queue<GameCoinStringRenderer::PriceTagString>__Queue__
             );
-  ppQVar1 = &(this->fields).strings;
-  *ppQVar1 = this_00;
-  func_?(ppQVar1,this_00);
+  (this->fields).strings = this_00;
+  func_?(&(this->fields).strings,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

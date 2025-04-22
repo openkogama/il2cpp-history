@@ -407,7 +407,7 @@ void Assembly-CSharp.dll::MVAvatarLocal+DeadMode::MVAvatarLocal_DeadMode__ctor
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,unaff_EDI);
   method_00 = (MethodInfo *)&(this->fields).inputController;
-  *(MVAvatarLocal_DeadMode_AvatarInputControllerDead **)method_00 = value;
+  (this->fields).inputController = value;
   func_?(method_00,value);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
@@ -415,10 +415,6 @@ void Assembly-CSharp.dll::MVAvatarLocal+DeadMode::MVAvatarLocal_DeadMode__ctor
   func_?(&this->fields,mvAvatar);
   (this->fields)._.modeTypes = 2;
   if (mvAvatar == (MVAvatarLocal *)0x0) {
-    func_?();
-code_?:
-    func_?();
-code_?:
     func_?();
   }
   else {
@@ -433,50 +429,51 @@ code_?:
                        ((Delegate *)pAVar5,(Delegate *)this_00,(MethodInfo *)0x0);
     if (pDVar6 == (Delegate *)0x0) {
       (mvAvatar->fields).OnKilled = (Action_3_Int32_Int32_MV_Common_PlayerKilledByType_ *)0x0;
-code_?:
+    }
+    else {
+      pAVar5 = (Action_3_Int32_Int32_MV_Common_PlayerKilledByType_ *)func_?();
+      if (pAVar5 == (Action_3_Int32_Int32_MV_Common_PlayerKilledByType_ *)0x0)
+      goto code_?;
+      (mvAvatar->fields).OnKilled = pAVar5;
+      iVar7 = func_?();
+      if (iVar7 == 0) goto code_?;
+    }
+    func_?();
+    pAVar8 = (mvAvatar->fields).OnSuicide;
+    this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (this_01,(Object *)this,MethodInfo__MVAvatarLocal__DeadMode__HandleResetUIPause__,
+               (MethodInfo *)0x0);
+    pAVar8 = (Action *)
+             mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pAVar8,(Delegate *)this_01,(MethodInfo *)0x0);
+    if (pAVar8 == (Action *)0x0) {
+      (mvAvatar->fields).OnSuicide = (Action *)0x0;
       func_?();
-      a = (mvAvatar->fields).OnSuicide;
-      this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-      NavMesh_OnNavMeshPreUpdate__ctor
-                (this_01,(Object *)this,MethodInfo__MVAvatarLocal__DeadMode__HandleResetUIPause__,
-                 (MethodInfo *)0x0);
-      pDVar6 = mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)a,(Delegate *)this_01,(MethodInfo *)0x0);
-      if (pDVar6 == (Delegate *)0x0) {
-        this_01[6].fields._._.invoke_impl = (void *)0x0;
+      return;
+    }
+    pAVar9 = (Action *)0x0;
+    if (pAVar8->klass == TypeInfo__System__Action) {
+      pAVar9 = pAVar8;
+    }
+    if (pAVar9 != (Action *)0x0) {
+      (mvAvatar->fields).OnSuicide = pAVar9;
+      pAVar9 = (Action *)0x0;
+      if (pAVar8->klass == TypeInfo__System__Action) {
+        pAVar9 = pAVar8;
+      }
+      if (pAVar9 != (Action *)0x0) {
         func_?();
         return;
       }
-      pDVar7 = (Delegate *)0x0;
-      if ((Action__Class *)pDVar6->klass == TypeInfo__System__Action) {
-        pDVar7 = pDVar6;
-      }
-      if (pDVar7 != (Delegate *)0x0) {
-        this_01[6].fields._._.invoke_impl = pDVar7;
-        pDVar7 = (Delegate *)0x0;
-        if ((Action__Class *)pDVar6->klass == TypeInfo__System__Action) {
-          pDVar7 = pDVar6;
-        }
-        if (pDVar7 != (Delegate *)0x0) {
-          func_?();
-          return;
-        }
-        goto code_?;
-      }
-      goto code_?;
     }
-    pAVar5 = (Action_3_Int32_Int32_MV_Common_PlayerKilledByType_ *)func_?();
-    if (pAVar5 == (Action_3_Int32_Int32_MV_Common_PlayerKilledByType_ *)0x0) goto code_?;
-    (mvAvatar->fields).OnKilled = pAVar5;
-    iVar8 = func_?();
-    if (iVar8 != 0) goto code_?;
   }
   func_?();
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

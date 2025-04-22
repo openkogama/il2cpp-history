@@ -127,35 +127,39 @@ void Assembly-CSharp.dll::MoveAnimation::MoveAnimation_EvaluateKeyFrameCallbacks
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
+  LStack_6._list = (List_1_System_Object_ *)0x0;
+  LStack_6._index = 0;
+  LStack_6._version = 0;
+  LStack_6._current = (Object *)0x0;
   method_00 = (MethodInfo *)(this->fields).keyFrameCallbacks;
   if (method_00 != (MethodInfo *)0x0) {
-    pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
              RegexCharClass+SingleRange]::
              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       (&LStack_7,
+                       (&LStack_8,
                         (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                         method_00,
                         MethodInfo__System__Collections__Generic__List<KeyFrameCallback>__GetEnumerator__
                        );
-    LStack_8._list = (List_1_System_Object_ *)pLVar6->_list;
-    LStack_8._index = pLVar6->_index;
-    LStack_8._version = pLVar6->_version;
-    LStack_8._current = *(Object **)&pLVar6->_current;
-    LStack_7._version = 0;
+    LStack_6._list = (List_1_System_Object_ *)pLVar7->_list;
+    LStack_6._index = pLVar7->_index;
+    LStack_6._version = pLVar7->_version;
+    LStack_6._current = *(Object **)&pLVar7->_current;
+    LStack_8._version = 0;
     uStack_1 = 1;
-    LStack_7._current = (RegexCharClass_SingleRange)&LStack_8;
+    LStack_8._current = (RegexCharClass_SingleRange)&LStack_6;
     while( true ) {
       do {
         bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
                 List_1_T_Enumerator_System_Object__MoveNext
-                          (&LStack_8,
+                          (&LStack_6,
                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<KeyFrameCallback>__MoveNext__
                           );
-        pOVar10 = LStack_8._current;
+        pOVar10 = LStack_6._current;
         if (bVar9 == 0) {
           uStack_1 = 0xffffffff;
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&LStack_8,
+                    ((Object *)&LStack_6,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<KeyFrameCallback>__Dispose__
                      ,method_00);
@@ -163,9 +167,9 @@ void Assembly-CSharp.dll::MoveAnimation::MoveAnimation_EvaluateKeyFrameCallbacks
           return;
         }
         this_00 = (this->fields).animationCurve;
-        if ((RegexCharClass_SingleRange)LStack_8._current == (RegexCharClass_SingleRange)0x0)
+        if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0)
         goto code_?;
-      } while (*(char *)((int)LStack_8._current + 0x1c) != '\0');
+      } while (*(char *)((int)LStack_6._current + 0x1c) != '\0');
       if (this_00 == (AnimationCurve *)0x0) goto code_?;
       pKVar11 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_GetKeys
                          (this_00,(MethodInfo *)0x0);
@@ -176,11 +180,9 @@ void Assembly-CSharp.dll::MoveAnimation::MoveAnimation_EvaluateKeyFrameCallbacks
                   Single]::KeyValuePair_2_System_Single_System_Single__get_Key
                             ((KeyValuePair_2_System_Single_System_Single_ *)method_00,
                              (MethodInfo *)0x0);
-      if (fStack_12 <= timePassedSincePlay) {
-        *(undefined1 *)((int)pOVar10 + 0x1c) = 1;
-        if (*(int *)((int)pOVar10 + 0x18) != 0) {
-          (**(code **)(*(int *)((int)pOVar10 + 0x18) + 0xc))();
-        }
+      if ((fStack_12 <= timePassedSincePlay) &&
+         (*(undefined1 *)((int)pOVar10 + 0x1c) = 1, *(int *)((int)pOVar10 + 0x18) != 0)) {
+        (**(code **)(*(int *)((int)pOVar10 + 0x18) + 0xc))();
       }
     }
     func_?();
@@ -222,78 +224,82 @@ void Assembly-CSharp.dll::MoveAnimation::MoveAnimation_Play
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  func_?(&fStack_6,0,0x40);
-  pLStack_7 = (List_1_T_Enumerator_System_Object_ *)
+  LStack_6._list = (List_1_System_Object_ *)0x0;
+  LStack_6._index = 0;
+  LStack_6._version = 0;
+  LStack_6._current = (Object *)0x0;
+  func_?(&fStack_7,0,0x40);
+  pLStack_8 = (List_1_T_Enumerator_System_Object_ *)
                UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  pTVar8 = (this->fields)._.target;
+  pTVar9 = (this->fields)._.target;
   (this->fields)._.state = 2;
-  (this->fields).beginTime = (float)pLStack_7 - offsetTime;
-  if (pTVar8 != (Transform *)0x0) {
+  (this->fields).beginTime = (float)pLStack_8 - offsetTime;
+  if (pTVar9 != (Transform *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-              (pTVar8,(this->fields)._.originalLocalPos,(MethodInfo *)0x0);
+              (pTVar9,(this->fields)._.originalLocalPos,(MethodInfo *)0x0);
     this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
               (this->fields).keyFrameCallbacks;
     if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-      pLVar9 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+      pLVar10 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
                RegexCharClass+SingleRange]::
                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                          ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                           *)auStack_10,this_00,
+                           *)auStack_11,this_00,
                           MethodInfo__System__Collections__Generic__List<KeyFrameCallback>__GetEnumerator__
                          );
-      uStack_11 = uStack_11 & 0xffffffff;
-      LStack_12._list = (List_1_System_Object_ *)pLVar9->_list;
-      LStack_12._index = pLVar9->_index;
-      LStack_12._version = pLVar9->_version;
-      LStack_12._current = *(Object **)&pLVar9->_current;
+      uStack_12 = uStack_12 & 0xffffffff;
+      LStack_6._list = (List_1_System_Object_ *)pLVar10->_list;
+      LStack_6._index = pLVar10->_index;
+      LStack_6._version = pLVar10->_version;
+      LStack_6._current = *(Object **)&pLVar10->_current;
       uStack_1 = 1;
-      pLStack_7 = &LStack_12;
+      pLStack_8 = &LStack_6;
       while( true ) {
         bVar13 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
                 List_1_T_Enumerator_System_Object__MoveNext
-                          (&LStack_12,
+                          (&LStack_6,
                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<KeyFrameCallback>__MoveNext__
                           );
         if (bVar13 == 0) break;
-        if ((RegexCharClass_SingleRange)LStack_12._current == (RegexCharClass_SingleRange)0x0)
+        if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0)
         goto code_?;
-        *(undefined1 *)((int)LStack_12._current + 0x1c) = 0;
+        *(undefined1 *)((int)LStack_6._current + 0x1c) = 0;
       }
       uStack_1 = 0xffffffff;
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                ((Object *)&LStack_12,
+                ((Object *)&LStack_6,
                  (ExceptionArgument__Enum)
                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<KeyFrameCallback>__Dispose__
                  ,in_stack_14);
       uStack_1 = 0xffffffff;
-      pTVar8 = (this->fields)._.target;
-      if (pTVar8 != (Transform *)0x0) {
+      pTVar9 = (this->fields)._.target;
+      if (pTVar9 != (Transform *)0x0) {
         pMVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                  Transform_get_worldToLocalMatrix
-                           ((Matrix4x4 *)&stack0xffffff30,pTVar8,(MethodInfo *)0x0);
-        fStack_6 = pMVar15->m00;
+                           ((Matrix4x4 *)&stack0xffffff30,pTVar9,(MethodInfo *)0x0);
+        fStack_7 = pMVar15->m00;
         fStack_16 = pMVar15->m10;
         puStack_17 = (undefined *)pMVar15->m20;
-        pTVar8 = (this->fields).moveTo;
-        if (pTVar8 != (Transform *)0x0) {
+        pTVar9 = (this->fields).moveTo;
+        if (pTVar9 != (Transform *)0x0) {
           pVVar18 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                              (&VStack_19,pTVar8,(MethodInfo *)0x0);
+                              (&VStack_19,pTVar9,(MethodInfo *)0x0);
           pVVar18 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyPoint
-                              (&VStack_19,(Matrix4x4 *)&fStack_6,*pVVar18,(MethodInfo *)0x0);
-          uStack_11._0_4_ = pVVar18->x;
-          uStack_11._4_4_ = pVVar18->y;
-          pLStack_7 = (List_1_T_Enumerator_System_Object_ *)pVVar18->z;
-          pTVar8 = (this->fields)._.target;
-          if (pTVar8 != (Transform *)0x0) {
+                              (&VStack_19,(Matrix4x4 *)&fStack_7,*pVVar18,(MethodInfo *)0x0);
+          uStack_12._0_4_ = pVVar18->x;
+          uStack_12._4_4_ = pVVar18->y;
+          pLStack_8 = (List_1_T_Enumerator_System_Object_ *)pVVar18->z;
+          pTVar9 = (this->fields)._.target;
+          if (pTVar9 != (Transform *)0x0) {
             pVVar18 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                       Transform_get_localPosition
-                                ((Vector3 *)(auStack_10 + 4),pTVar8,(MethodInfo *)0x0);
+                                ((Vector3 *)(auStack_11 + 4),pTVar9,(MethodInfo *)0x0);
             uVar20 = pVVar18->x;
             uVar21 = pVVar18->y;
             fVar22 = pVVar18->z;
-            (this->fields).direction.x = (float)uStack_11 - (float)uVar20;
-            (this->fields).direction.y = uStack_11._4_4_ - (float)uVar21;
-            (this->fields).direction.z = (float)pLStack_7 - fVar22;
+            (this->fields).direction.x = (float)uStack_12 - (float)uVar20;
+            (this->fields).direction.y = uStack_12._4_4_ - (float)uVar21;
+            (this->fields).direction.z = (float)pLStack_8 - fVar22;
             *unaff_FS_OFFSET = uStack_3;
             return;
           }
@@ -316,9 +322,10 @@ void Assembly-CSharp.dll::MoveAnimation::MoveAnimation_Stopped
                (MoveAnimation *this,float extraTime,MethodInfo *method)
 
 {
-  (this->fields)._.state = 1;
   pMVar1 = (this->fields)._.OnMoveAnimationStopped;
+  (this->fields)._.state = 1;
   if (pMVar1 != (MoveAnimationBase_OnMoveAnimationStoppedDelegate *)0x0) {
+    pMVar1 = (this->fields)._.OnMoveAnimationStopped;
     (*(pMVar1->fields)._._.invoke_impl)
               ((pMVar1->fields)._._.method_code,extraTime,(pMVar1->fields)._._.method);
   }
@@ -401,11 +408,10 @@ void Assembly-CSharp.dll::MoveAnimation::MoveAnimation_SubscribeToKeyFrame
                         (*(String **)((int)RVar5 + 0x10),keyFrameName,(MethodInfo *)0x0);
     } while (bVar8 == 0);
     if (RVar5 != (RegexCharClass_SingleRange)0x0) {
-      puVar9 = (undefined4 *)((int)RVar5 + 0x18);
-      pDVar10 = mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)*puVar9,(Delegate *)callback,(MethodInfo *)0x0);
-      if (pDVar10 == (Delegate *)0x0) {
-        *puVar9 = 0;
+      pDVar9 = mscorlib.dll::System::Delegate::Delegate_Combine
+                         (*(Delegate **)((int)RVar5 + 0x18),(Delegate *)callback,(MethodInfo *)0x0);
+      if (pDVar9 == (Delegate *)0x0) {
+        *(undefined4 *)((int)RVar5 + 0x18) = 0;
 code_?:
         func_?();
         _Stack_8 = (_union_155)0xffffffff;
@@ -417,25 +423,25 @@ code_?:
         *unaff_FS_OFFSET = ppIStack_1;
         return;
       }
-      pDVar11 = (Delegate *)0x0;
-      if ((Action__Class *)pDVar10->klass == TypeInfo__System__Action) {
-        pDVar11 = pDVar10;
+      pDVar10 = (Delegate *)0x0;
+      if ((Action__Class *)pDVar9->klass == TypeInfo__System__Action) {
+        pDVar10 = pDVar9;
       }
-      if (pDVar11 != (Delegate *)0x0) {
-        *puVar9 = pDVar11;
-        pDVar11 = (Delegate *)0x0;
-        if ((Action__Class *)pDVar10->klass == TypeInfo__System__Action) {
-          pDVar11 = pDVar10;
+      if (pDVar10 != (Delegate *)0x0) {
+        *(Delegate **)((int)RVar5 + 0x18) = pDVar10;
+        pDVar10 = (Delegate *)0x0;
+        if ((Action__Class *)pDVar9->klass == TypeInfo__System__Action) {
+          pDVar10 = pDVar9;
         }
-        if (pDVar11 != (Delegate *)0x0) goto code_?;
+        if (pDVar10 != (Delegate *)0x0) goto code_?;
       }
       func_?();
     }
   }
 code_?:
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -446,33 +452,36 @@ void Assembly-CSharp.dll::MoveAnimation::MoveAnimation_Update
                (MoveAnimation *this,MethodInfo *method)
 
 {
+  this_02 = this;
   if ((this->fields)._.testState == 2) {
     (*(code *)(this->klass->vtable).Play.method)(this,0,this->klass[1]._0.image);
     (this->fields)._.testState = 0;
   }
   if ((this->fields)._.state == 2) {
     fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    fVar2 = (this->fields).doneTime;
     this_00 = (this->fields)._.target;
     this_01 = (this->fields).animationCurve;
-    fVar1 = fVar1 - (this->fields).beginTime;
+    time = (MoveAnimation *)(fVar1 - (this->fields).beginTime);
+    pfVar2 = &(this->fields).doneTime;
     fVar3 = (this->fields).direction.z;
-    fVar4 = (this->fields).direction.x;
-    fVar5 = (this->fields).direction.y;
-    if (fVar2 < fVar1) {
+    fVar1 = (this->fields).direction.x;
+    fVar4 = (this->fields).direction.y;
+    if (*pfVar2 <= (float)time && (float)time != *pfVar2) {
       if (this_01 == (AnimationCurve *)0x0) goto code_?;
-      fVar2 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                        (this_01,fVar2,(MethodInfo *)0x0);
+      fVar5 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
+                        (this_01,(this->fields).doneTime,(MethodInfo *)0x0);
       if (this_00 == (Transform *)0x0) goto code_?;
-      value_00.y = fVar5 * fVar2;
-      value_00.x = fVar4 * fVar2;
-      value_00.z = fVar3 * fVar2;
+      value_00.y = fVar4 * fVar5;
+      value_00.x = fVar1 * fVar5;
+      value_00.z = fVar3 * fVar5;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
                 (this_00,value_00,(MethodInfo *)0x0);
-      pMVar6 = (this->fields)._.OnMoveAnimationStopped;
       (this->fields)._.state = 1;
-      if (pMVar6 != (MoveAnimationBase_OnMoveAnimationStoppedDelegate *)0x0) {
-        (*(pMVar6->fields)._._.invoke_impl)();
+      if ((this->fields)._.OnMoveAnimationStopped !=
+          (MoveAnimationBase_OnMoveAnimationStoppedDelegate *)0x0) {
+        pMVar6 = (this->fields)._.OnMoveAnimationStopped;
+        time = (pMVar6->fields)._._.method;
+        (*(pMVar6->fields)._._.invoke_impl)((pMVar6->fields)._._.method_code);
       }
     }
     else {
@@ -483,16 +492,17 @@ code_?:
         (*pcVar7)();
         return;
       }
-      fVar2 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                        (this_01,fVar1,(MethodInfo *)0x0);
+      fVar5 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
+                        (this_01,(float)time,(MethodInfo *)0x0);
       if (this_00 == (Transform *)0x0) goto code_?;
-      value.y = fVar5 * fVar2;
-      value.x = fVar4 * fVar2;
-      value.z = fVar3 * fVar2;
+      value.y = fVar4 * fVar5;
+      value.x = fVar1 * fVar5;
+      value.z = fVar3 * fVar5;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
                 (this_00,value,(MethodInfo *)0x0);
     }
-    MoveAnimation_EvaluateKeyFrameCallbacks(this,fVar1,(MethodInfo *)0x0);
+    this = time;
+    MoveAnimation_EvaluateKeyFrameCallbacks(this_02,(float)this,(MethodInfo *)0x0);
   }
   return;
 }

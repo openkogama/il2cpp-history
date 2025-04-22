@@ -1626,39 +1626,37 @@ void Assembly-CSharp.dll::MaterialDescription::MaterialDescription__ctor
     func_?(&TypeInfo__System__Collections__BitArray);
     cRam_? = '\x01';
   }
-  this_00 = (BitArray *)func_?(TypeInfo__System__Collections__BitArray);
-  mscorlib.dll::System::Collections::BitArray::BitArray__ctor(this_00,10,(MethodInfo *)0x0);
-  ppBVar1 = &(this->fields).specialProperties;
-  *ppBVar1 = this_00;
-  method_00 = (MethodInfo *)ppBVar1;
-  func_?(ppBVar1,this_00);
+  pBVar1 = (BitArray *)func_?(TypeInfo__System__Collections__BitArray);
+  mscorlib.dll::System::Collections::BitArray::BitArray__ctor(pBVar1,10,(MethodInfo *)0x0);
+  method_00 = (MethodInfo *)&(this->fields).specialProperties;
+  (this->fields).specialProperties = pBVar1;
+  func_?(method_00,pBVar1);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   (this->fields)._Name_k__BackingField = name;
   func_?(&this->fields,name);
-  ppSVar2 = &(this->fields)._Description_k__BackingField;
-  *ppSVar2 = description;
-  func_?(ppSVar2,description);
-  uVar3 = 0;
+  (this->fields)._Description_k__BackingField = description;
+  func_?(&(this->fields)._Description_k__BackingField,description);
+  uVar2 = 0;
   if (specialProperties != (MaterialDescription_MaterialSpecialProperty__Enum__Array *)0x0) {
-    pMVar4 = specialProperties->vector;
+    pMVar3 = specialProperties->vector;
     while( true ) {
-      if ((int)specialProperties->max_length <= (int)uVar3) {
+      if ((int)specialProperties->max_length <= (int)uVar2) {
         return;
       }
-      if (specialProperties->max_length <= uVar3) break;
-      if (*ppBVar1 == (BitArray *)0x0) goto code_?;
-      mscorlib.dll::System::Collections::BitArray::BitArray_Set
-                (*ppBVar1,*pMVar4,1,(MethodInfo *)0x0);
-      uVar3 = uVar3 + 1;
-      pMVar4 = pMVar4 + 1;
+      if (specialProperties->max_length <= uVar2) break;
+      pBVar1 = (this->fields).specialProperties;
+      if (pBVar1 == (BitArray *)0x0) goto code_?;
+      mscorlib.dll::System::Collections::BitArray::BitArray_Set(pBVar1,*pMVar3,1,(MethodInfo *)0x0);
+      uVar2 = uVar2 + 1;
+      pMVar3 = pMVar3 + 1;
     }
     func_?();
   }
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

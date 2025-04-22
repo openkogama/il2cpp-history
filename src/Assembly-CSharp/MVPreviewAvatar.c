@@ -31,22 +31,22 @@ Assembly-CSharp.dll::MVPreviewAvatar::MVPreviewAvatar_Clone
     bVar2 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
             UnsafeUtility_EnumEquals((Int32Enum__Enum)lhs,(Int32Enum__Enum)rhs,(MethodInfo *)0x0);
     if (bVar2 != 0) {
-      bVar3 = (TypeInfo__MVAvatarLocal->_1).naturalAligment;
-      pMStack4 = TypeInfo__MVAvatarLocal;
-      if (((pMVar1->klass->_1).naturalAligment < bVar3) ||
-         ((MVAvatarLocal__Class *)(pMVar1->klass->_1).typeHierarchy[bVar3 - 1] !=
+      pMStack3 = TypeInfo__MVAvatarLocal;
+      if (((pMVar1->klass->_1).naturalAligment < (TypeInfo__MVAvatarLocal->_1).naturalAligment) ||
+         ((MVAvatarLocal__Class *)
+          (pMVar1->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] !=
           TypeInfo__MVAvatarLocal)) goto code_?;
       pMVar1[1].fields._PlayInteractionType_k__BackingField = (this->fields).spawnRoleCreatorId;
     }
     return pMVar1;
   }
   func_?();
-  pMStack4 = extraout_EDX;
+  pMStack3 = extraout_EDX;
 code_?:
-  pMStack5 = pMVar1;
+  pMStack4 = pMVar1;
   func_?();
-  pcVar6 = (code *)swi(3);
-  pMVar1 = (MVWorldObjectClient *)(*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  pMVar1 = (MVWorldObjectClient *)(*pcVar5)();
   return pMVar1;
 }
 

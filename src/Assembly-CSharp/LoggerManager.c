@@ -68,31 +68,33 @@ code_?:
         separator->vector[0] = 0x2c;
         this_03 = mscorlib.dll::System::String::String_Split_1(pSVar4,separator,(MethodInfo *)0x0);
         uVar6 = 0;
-        while (this_03 != (String__Array *)0x0) {
-          if ((int)this_03->max_length <= (int)uVar6) goto code_?;
-          if (this_03->max_length <= uVar6) goto code_?;
-          this_03 = (String__Array *)this_03->vector[uVar6];
-          if (this_03 == (String__Array *)0x0) break;
-          if (0 < ((String__Fields *)&this_03->bounds)->_stringLength) {
-            this_00 = (this->fields).interestingLoggers;
-            if (this_00 == (HashSet_1_System_String_ *)0x0) break;
-            System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
-            HashSet_1_System_Object__System_Collections_Generic_ICollection_T__Add
-                      ((HashSet_1_System_Object_ *)this_00,(Object *)this_03,
-                       MethodInfo__System__Collections__Generic__HashSet<System::String>__Add_System__String_
-                      );
+        if (this_03 != (String__Array *)0x0) {
+          for (; (int)uVar6 < (int)this_03->max_length; uVar6 = uVar6 + 1) {
+            if (this_03->max_length <= uVar6) goto code_?;
+            this_03 = (String__Array *)this_03->vector[uVar6];
+            if (this_03 == (String__Array *)0x0) goto code_?;
+            if (0 < ((String__Fields *)&this_03->bounds)->_stringLength) {
+              this_00 = (this->fields).interestingLoggers;
+              if (this_00 == (HashSet_1_System_String_ *)0x0) goto code_?;
+              System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
+              HashSet_1_System_Object__System_Collections_Generic_ICollection_T__Add
+                        ((HashSet_1_System_Object_ *)this_00,(Object *)this_03,
+                         MethodInfo__System__Collections__Generic__HashSet<System::String>__Add_System__String_
+                        );
+            }
+            pSVar5 = (StreamReader *)0x0;
+            bVar7 = mscorlib.dll::System::String::String_Equals_1
+                              ((String *)this_03,StringLiteral_Ptr,(MethodInfo *)0x0);
+            if (bVar7 != 0) {
+              (this->fields).appendAll = 1;
+            }
           }
-          pSVar5 = (StreamReader *)0x0;
-          bVar7 = mscorlib.dll::System::String::String_Equals_1
-                            ((String *)this_03,StringLiteral_Ptr,(MethodInfo *)0x0);
-          if (bVar7 != 0) {
-            (this->fields).appendAll = 1;
-          }
-          uVar6 = uVar6 + 1;
+          goto code_?;
         }
       }
     }
   }
+code_?:
   func_?();
   func_?();
   pcVar8 = (code *)swi(3);
@@ -262,7 +264,8 @@ void Assembly-CSharp.dll::LoggerManager::LoggerManager_Log
     if (uVar5 != 0) {
       do {
         if (pIVar3->interfaceOffsets[uVar4].interfaceType == (Il2CppClass *)TypeInfo__IAppender) {
-          ppMVar6 = &(&pIVar2->klass->vtable)[pIVar3->interfaceOffsets[uVar4].offset].Log.method;
+          ppMVar6 = &(&pIVar2->klass->vtable)[pIVar2->klass->interfaceOffsets[uVar4].offset].Log.
+                     method;
           goto code_?;
         }
         uVar4 = uVar4 + 1;
@@ -318,7 +321,7 @@ void Assembly-CSharp.dll::LoggerManager::LoggerManager__ctor(LoggerManager *this
             ((HashSet_1_System_Object_ *)this_01,
              MethodInfo__System__Collections__Generic__HashSet<System::String>__HashSet__);
   method_01 = (MethodInfo *)&(this->fields).interestingLoggers;
-  *(HashSet_1_System_String_ **)method_01 = this_01;
+  (this->fields).interestingLoggers = this_01;
   func_?(method_01,this_01);
   (this->fields).appendAll = 1;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
@@ -327,15 +330,14 @@ void Assembly-CSharp.dll::LoggerManager::LoggerManager__ctor(LoggerManager *this
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  ppIVar1 = &(this->fields).appender;
-  *ppIVar1 = (IAppender *)value;
-  func_?(ppIVar1,value);
+  (this->fields).appender = (IAppender *)value;
+  func_?(&(this->fields).appender,value);
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_get_isDebugBuild
+  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_get_isDebugBuild
                     ((MethodInfo *)0x0);
-  (this->fields).appendAll = bVar2;
+  (this->fields).appendAll = bVar1;
   return;
 }
 
@@ -385,7 +387,7 @@ LoggerManager * Assembly-CSharp.dll::LoggerManager::LoggerManager_get_Instance(M
               ((HashSet_1_System_Object_ *)this_00,
                MethodInfo__System__Collections__Generic__HashSet<System::String>__HashSet__);
     method_01 = (MethodInfo *)&(value->fields).interestingLoggers;
-    *(HashSet_1_System_String_ **)method_01 = this_00;
+    (value->fields).interestingLoggers = this_00;
     func_?(method_01,this_00);
     (value->fields).appendAll = 1;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
@@ -394,17 +396,16 @@ LoggerManager * Assembly-CSharp.dll::LoggerManager::LoggerManager_get_Instance(M
     value_00 = (Object *)func_?();
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
               (value_00,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-    ppIVar2 = &(value->fields).appender;
-    *ppIVar2 = (IAppender *)value_00;
-    func_?(ppIVar2,value_00);
+    (value->fields).appender = (IAppender *)value_00;
+    func_?(&(value->fields).appender,value_00);
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_get_isDebugBuild
+    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_get_isDebugBuild
                       ((MethodInfo *)0x0);
-    (value->fields).appendAll = bVar3;
+    (value->fields).appendAll = bVar2;
     TypeInfo__LoggerManager->static_fields->instance = value;
-    pLStack4 = TypeInfo__LoggerManager->static_fields;
+    pLStack3 = TypeInfo__LoggerManager->static_fields;
     func_?();
     pLVar1 = TypeInfo__LoggerManager->static_fields;
   }

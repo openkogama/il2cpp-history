@@ -35,9 +35,8 @@ bool Assembly-CSharp.dll::AvatarAccessoryPreviewer+<AnimationEndTrack>d__35::
     bVar4 = (*pcVar3)();
     return bVar4;
   }
-  ppOVar5 = &(this->fields).__2__current;
-  *ppOVar5 = (Object *)0x0;
-  func_?(ppOVar5,0);
+  (this->fields).__2__current = (Object *)0x0;
+  func_?(&(this->fields).__2__current,0);
   (this->fields).__1__state = 1;
   return 1;
 }

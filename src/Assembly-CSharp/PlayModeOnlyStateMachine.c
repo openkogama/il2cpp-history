@@ -28,20 +28,17 @@ void Assembly-CSharp.dll::PlayModeOnlyStateMachine::PlayModeOnlyStateMachine__ct
     cRam_? = '\x01';
   }
   FSMEntity::FSMEntity__ctor((FSMEntity *)this,(MethodInfo *)0x0);
-  ppGVar1 = &(this->fields).gameObject;
-  *ppGVar1 = gameObject;
-  func_?(ppGVar1,gameObject);
-  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-  ppMVar3 = &(this->fields).weCamera;
-  *ppMVar3 = pMVar2;
-  func_?(ppMVar3,pMVar2);
+  (this->fields).gameObject = gameObject;
+  func_?(&(this->fields).gameObject,gameObject);
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+  (this->fields).weCamera = pMVar1;
+  func_?(&(this->fields).weCamera,pMVar1);
   this_00 = (PlayModeOnlyStateTransitionTable *)
             func_?(TypeInfo__PlayModeOnlyStateTransitionTable);
   PlayModeOnlyStateTransitionTable::PlayModeOnlyStateTransitionTable__ctor
             (this_00,(MethodInfo *)0x0);
-  ppSVar4 = &(this->fields)._.transitionTable;
-  *ppSVar4 = (StateTransitionTable *)this_00;
-  func_?(ppSVar4,this_00);
+  (this->fields)._.transitionTable = (StateTransitionTable *)this_00;
+  func_?(&(this->fields)._.transitionTable,this_00);
   return;
 }
 

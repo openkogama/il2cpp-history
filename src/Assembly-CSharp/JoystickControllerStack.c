@@ -53,49 +53,48 @@ void Assembly-CSharp.dll::JoystickControllerStack::JoystickControllerStack_Creat
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  this_02 = (Component *)
+  this_00 = (Component *)
             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                       ((Object *)prefab,
                        InGameControls_MethodInfo__UnityEngine__Object__Instantiate<InGameControls>_InGameControls_
                       );
-  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-            (this->fields).controls;
-  if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-  goto code_?;
-  if ((this_00->fields)._size != 0) {
-    this_03 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+  pLVar2 = (this->fields).controls;
+  if (pLVar2 == (List_1_InGameControls_ *)0x0) goto code_?;
+  if ((pLVar2->fields)._size != 0) {
+    this_01 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
               RegexCharClass+SingleRange]::
               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                        (this_00,(this_00->fields)._size + -1,
+                        ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                         (this->fields).controls,(pLVar2->fields)._size + -1,
                          MethodInfo__System__Collections__Generic__List<InGameControls>__get_Item_int_
                         );
-    if (this_03 == (RegexCharClass_SingleRange)0x0) goto code_?;
-    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)this_03,(MethodInfo *)0x0);
-    if (pGVar2 == (GameObject *)0x0) goto code_?;
+    if (this_01 == (RegexCharClass_SingleRange)0x0) goto code_?;
+    pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this_01,(MethodInfo *)0x0);
+    if (pGVar3 == (GameObject *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (pGVar2,0,(MethodInfo *)0x0);
+              (pGVar3,0,(MethodInfo *)0x0);
   }
-  if (this_02 != (Component *)0x0) {
-    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       (this_02,(MethodInfo *)0x0);
-    if (pGVar2 != (GameObject *)0x0) {
+  if (this_00 != (Component *)0x0) {
+    pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       (this_00,(MethodInfo *)0x0);
+    if (pGVar3 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar2,1,(MethodInfo *)0x0);
-      this_01 = (this->fields).controls;
-      if (this_01 != (List_1_InGameControls_ *)0x0) {
+                (pGVar3,1,(MethodInfo *)0x0);
+      pLVar2 = (this->fields).controls;
+      if (pLVar2 != (List_1_InGameControls_ *)0x0) {
         mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
         List_1_System_Object__Add
-                  ((List_1_System_Object_ *)this_01,(Object *)this_02,
+                  ((List_1_System_Object_ *)pLVar2,(Object *)this_00,
                    MethodInfo__System__Collections__Generic__List<InGameControls>__Add_InGameControls_
                   );
-        this_04 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                            (this_02,(MethodInfo *)0x0);
+        this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                            (this_00,(MethodInfo *)0x0);
         parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                            ((Component *)this,(MethodInfo *)0x0);
-        if (this_04 != (Transform *)0x0) {
+        if (this_02 != (Transform *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                    (this_04,parent,0,(MethodInfo *)0x0);
+                    (this_02,parent,0,(MethodInfo *)0x0);
           return;
         }
       }
@@ -103,8 +102,8 @@ void Assembly-CSharp.dll::JoystickControllerStack::JoystickControllerStack_Creat
   }
 code_?:
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -120,27 +119,27 @@ void Assembly-CSharp.dll::JoystickControllerStack::JoystickControllerStack_HideE
     func_?();
     cRam_? = '\x01';
   }
-  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-            (this->fields).controls;
-  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    if ((this_00->fields)._size != 0) {
-      RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+  pLVar1 = (this->fields).controls;
+  if (pLVar1 != (List_1_InGameControls_ *)0x0) {
+    if ((pLVar1->fields)._size != 0) {
+      RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
               RegexCharClass+SingleRange]::
               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                        (this_00,(this_00->fields)._size + -1,
+                        ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                         (this->fields).controls,(pLVar1->fields)._size + -1,
                          MethodInfo__System__Collections__Generic__List<InGameControls>__get_Item_int_
                         );
-      if ((RVar1 == (RegexCharClass_SingleRange)0x0) || (*(int **)((int)RVar1 + 0x18) == (int *)0x0)
+      if ((RVar2 == (RegexCharClass_SingleRange)0x0) || (*(int **)((int)RVar2 + 0x18) == (int *)0x0)
          ) goto code_?;
-      (**(code **)(**(int **)((int)RVar1 + 0x18) + 0xe8))();
+      (**(code **)(**(int **)((int)RVar2 + 0x18) + 0xe8))();
     }
     return;
   }
 code_?:
-  uVar2 = func_?(&stack0xfffffff0);
-  func_?(uVar2);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  uVar3 = func_?(&stack0xfffffff0);
+  func_?(uVar3);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -165,20 +164,20 @@ void Assembly-CSharp.dll::JoystickControllerStack::JoystickControllerStack_Pop
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_Pop,(MethodInfo *)0x0);
-  pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-           (this->fields).controls;
-  if (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+  pLVar1 = (this->fields).controls;
+  if (pLVar1 != (List_1_InGameControls_ *)0x0) {
     RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
             RegexCharClass+SingleRange]::
             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                      (pLVar1,(pLVar1->fields)._size + -1,
+                      ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                       (this->fields).controls,(pLVar1->fields)._size + -1,
                        MethodInfo__System__Collections__Generic__List<InGameControls>__get_Item_int_
                       );
-    this_00 = (this->fields).controls;
-    if (this_00 != (List_1_InGameControls_ *)0x0) {
+    pLVar1 = (this->fields).controls;
+    if (pLVar1 != (List_1_InGameControls_ *)0x0) {
       mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
       List_1_System_Object__RemoveAt
-                ((List_1_System_Object_ *)this_00,(this_00->fields)._size + -1,
+                ((List_1_System_Object_ *)(this->fields).controls,(pLVar1->fields)._size + -1,
                  MethodInfo__System__Collections__Generic__List<InGameControls>__RemoveAt_int_);
       if (RVar2 != (RegexCharClass_SingleRange)0x0) {
         pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -188,13 +187,13 @@ void Assembly-CSharp.dll::JoystickControllerStack::JoystickControllerStack_Pop
         }
         UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
                   ((Object_1 *)pGVar3,(MethodInfo *)0x0);
-        pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                 (this->fields).controls;
-        if (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+        pLVar1 = (this->fields).controls;
+        if (pLVar1 != (List_1_InGameControls_ *)0x0) {
           RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                   RegularExpressions::RegexCharClass+SingleRange]::
                   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            (pLVar1,(pLVar1->fields)._size + -1,
+                            ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                             (this->fields).controls,(pLVar1->fields)._size + -1,
                              MethodInfo__System__Collections__Generic__List<InGameControls>__get_Item_int_
                             );
           if (RVar2 != (RegexCharClass_SingleRange)0x0) {
@@ -262,27 +261,27 @@ void Assembly-CSharp.dll::JoystickControllerStack::JoystickControllerStack_ShowE
     func_?();
     cRam_? = '\x01';
   }
-  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-            (this->fields).controls;
-  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    if ((this_00->fields)._size != 0) {
-      RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+  pLVar1 = (this->fields).controls;
+  if (pLVar1 != (List_1_InGameControls_ *)0x0) {
+    if ((pLVar1->fields)._size != 0) {
+      RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
               RegexCharClass+SingleRange]::
               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                        (this_00,(this_00->fields)._size + -1,
+                        ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                         (this->fields).controls,(pLVar1->fields)._size + -1,
                          MethodInfo__System__Collections__Generic__List<InGameControls>__get_Item_int_
                         );
-      if ((RVar1 == (RegexCharClass_SingleRange)0x0) || (*(int **)((int)RVar1 + 0x18) == (int *)0x0)
+      if ((RVar2 == (RegexCharClass_SingleRange)0x0) || (*(int **)((int)RVar2 + 0x18) == (int *)0x0)
          ) goto code_?;
-      (**(code **)(**(int **)((int)RVar1 + 0x18) + 0xe0))();
+      (**(code **)(**(int **)((int)RVar2 + 0x18) + 0xe0))();
     }
     return;
   }
 code_?:
-  uVar2 = func_?(&stack0xfffffff0);
-  func_?(uVar2);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  uVar3 = func_?(&stack0xfffffff0);
+  func_?(uVar3);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -305,9 +304,8 @@ void Assembly-CSharp.dll::JoystickControllerStack::JoystickControllerStack__ctor
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<InGameControls>__List__);
-  ppLVar1 = &(this->fields).controls;
-  *ppLVar1 = this_00;
-  func_?(ppLVar1,this_00);
+  (this->fields).controls = this_00;
+  func_?(&(this->fields).controls,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

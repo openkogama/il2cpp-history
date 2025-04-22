@@ -152,21 +152,18 @@ Vector2 Assembly-CSharp.dll::RTG::EqTriangle2D::EqTriangle2D_GetEdgeMidPoint
     }
     pVVar2 = (this->fields)._points;
     if (pVVar2 != (Vector2__Array *)0x0) {
-      if (pVVar2->max_length == 0) goto code_?;
-      fStack_3 = pVVar2->vector[0].y;
-      edge_00 = EqTriangleEdge__Enum_LeftTop;
-      fVar4 = pVVar2->vector[0].x;
+      if (pVVar2->max_length != 0) {
+        edge = (EqTriangleEdge__Enum)pVVar2->vector[0].x;
+        fStack_3 = pVVar2->vector[0].y;
+        edge_00 = EqTriangleEdge__Enum_LeftTop;
 code_?:
-      edge = (EqTriangleEdge__Enum)fVar4;
-      VVar5 = EqTriangle2D_GetEdge(this,edge_00,(MethodInfo *)0x0);
-      VStack_6.x = VStack_7.x;
-      VStack_7.y = VVar5.y;
-      VStack_6.y = VStack_7.y;
-      UnityEngine.CoreModule.dll::UnityEngine::Vector2::Vector2_Normalize
-                (&VStack_6,(MethodInfo *)0x0);
-      VStack_7.y = fStack_3 + VStack_6.y * _UNK_?;
-      VStack_7.x = (float)edge + VStack_6.x * _UNK_?;
-      return VStack_7;
+        VStack_4 = EqTriangle2D_GetEdge(this,edge_00,(MethodInfo *)0x0);
+        uVar5 = func_?(&VStack_4,0);
+        VVar6.y = (float)((ulonglong)uVar5 >> 0x20) * _UNK_? + fStack_3;
+        VVar6.x = (float)uVar5 * _UNK_? + (float)edge;
+        return VVar6;
+      }
+      goto code_?;
     }
   }
   else if (edge == EqTriangleEdge__Enum_TopRight) {
@@ -175,10 +172,12 @@ code_?:
     }
     pVVar2 = (this->fields)._points;
     if (pVVar2 != (Vector2__Array *)0x0) {
-      if (pVVar2->max_length < 2) goto code_?;
-      fStack_3 = pVVar2->vector[1].y;
-      edge_00 = EqTriangleEdge__Enum_TopRight;
-      fVar4 = pVVar2->vector[1].x;
+      if (1 < pVVar2->max_length) {
+        edge = (EqTriangleEdge__Enum)pVVar2->vector[1].x;
+        fStack_3 = pVVar2->vector[1].y;
+        edge_00 = EqTriangleEdge__Enum_TopRight;
+        goto code_?;
+      }
       goto code_?;
     }
   }
@@ -189,10 +188,13 @@ code_?:
     pVVar2 = (this->fields)._points;
     if (pVVar2 != (Vector2__Array *)0x0) {
       if (2 < pVVar2->max_length) {
+        fVar7 = pVVar2->vector[2].x;
         fStack_3 = pVVar2->vector[2].y;
-        fVar4 = pVVar2->vector[2].x;
-        edge_00 = edge;
-        goto code_?;
+        VStack_4 = EqTriangle2D_GetEdge(this,edge,(MethodInfo *)0x0);
+        uVar5 = func_?(&VStack_4,0);
+        VVar8.y = (float)((ulonglong)uVar5 >> 0x20) * _UNK_? + fStack_3;
+        VVar8.x = fVar7 + (float)uVar5 * _UNK_?;
+        return VVar8;
       }
       goto code_?;
     }
@@ -200,9 +202,9 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  VVar5 = (Vector2)(*pcVar8)();
-  return VVar5;
+  pcVar9 = (code *)swi(3);
+  VVar6 = (Vector2)(*pcVar9)();
+  return VVar6;
 }
 
 
@@ -492,7 +494,7 @@ void Assembly-CSharp.dll::RTG::EqTriangle2D::EqTriangle2D_RenderBorder
         }
         else {
           pMVar1 = pMVar1->klass->rgctx_data[0xe].method;
-          item.y = (float)pMVar1;
+          item.y = fVar4;
           item.x = (float)pMVar1;
           mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
           List_1_UnityEngine_Vector2__AddWithResize(this_00,item,pMVar1);
@@ -521,7 +523,7 @@ void Assembly-CSharp.dll::RTG::EqTriangle2D::EqTriangle2D_RenderBorder
             }
             else {
               pMVar1 = pMVar1->klass->rgctx_data[0xe].method;
-              item_00.y = (float)pMVar1;
+              item_00.y = fVar4;
               item_00.x = (float)pMVar1;
               mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
               List_1_UnityEngine_Vector2__AddWithResize(this_00,item_00,pMVar1);
@@ -542,23 +544,21 @@ void Assembly-CSharp.dll::RTG::EqTriangle2D::EqTriangle2D_RenderBorder
               pVVar2 = (this_00->fields)._items;
               if (pVVar2 != (Vector2__Array *)0x0) {
                 uVar6 = (this_00->fields)._size;
-                if (pVVar2->max_length <= uVar6) {
+                if (uVar6 < pVVar2->max_length) {
+                  (this_00->fields)._size = uVar6 + 1;
+                  if (pVVar2->max_length <= uVar6) goto code_?;
+                  pVVar2->vector[uVar6].x = fVar3;
+                  pVVar2->vector[uVar6].y = fVar4;
+                }
+                else {
                   pMVar1 = pMVar1->klass->rgctx_data[0xe].method;
-                  item_01.y = (float)pMVar1;
+                  item_01.y = fVar4;
                   item_01.x = (float)pMVar1;
                   mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
                   List_1_UnityEngine_Vector2__AddWithResize(this_00,item_01,pMVar1);
-                  GLRenderer::GLRenderer_DrawLineLoop2D(this_00,(Camera *)0x0,(MethodInfo *)0x0);
-                  return;
                 }
-                (this_00->fields)._size = uVar6 + 1;
-                if (uVar6 < pVVar2->max_length) {
-                  pVVar2->vector[uVar6].x = fVar3;
-                  pVVar2->vector[uVar6].y = fVar4;
-                  GLRenderer::GLRenderer_DrawLineLoop2D(this_00,camera,(MethodInfo *)0x0);
-                  return;
-                }
-                goto code_?;
+                GLRenderer::GLRenderer_DrawLineLoop2D(this_00,camera,(MethodInfo *)0x0);
+                return;
               }
             }
           }
@@ -597,14 +597,14 @@ void Assembly-CSharp.dll::RTG::EqTriangle2D::EqTriangle2D_SetPoint
     if (pVVar1 != (Vector2__Array *)0x0) {
       if (pVVar1->max_length < 2) goto code_?;
       fVar4 = pVVar1->vector[1].y;
-      pVVar1->vector[1].x = fVar2 + pVVar1->vector[1].x;
-      pVVar1->vector[1].y = fVar3 + fVar4;
+      pVVar1->vector[1].x = pVVar1->vector[1].x + fVar2;
+      pVVar1->vector[1].y = fVar4 + fVar3;
       pVVar1 = (this->fields)._points;
       if (pVVar1 != (Vector2__Array *)0x0) {
         if (2 < pVVar1->max_length) {
           fVar4 = pVVar1->vector[2].y;
-          pVVar1->vector[2].x = fVar2 + pVVar1->vector[2].x;
-          pVVar1->vector[2].y = fVar3 + fVar4;
+          pVVar1->vector[2].x = pVVar1->vector[2].x + fVar2;
+          pVVar1->vector[2].y = fVar4 + fVar3;
           return;
         }
         goto code_?;
@@ -632,16 +632,15 @@ void Assembly-CSharp.dll::RTG::EqTriangle2D::EqTriangle2D__ctor
   }
   (this->fields)._sideLength = 1.0;
   pVVar1 = (Vector2__Array *)func_?(TypeInfo__UnityEngine__Vector2,3);
-  ppVVar2 = &(this->fields)._points;
-  *ppVVar2 = pVVar1;
-  func_?(ppVVar2,pVVar1);
+  (this->fields)._points = pVVar1;
+  func_?(&(this->fields)._points,pVVar1);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Vector2);
     cRam_? = '\x01';
   }
-  fVar3 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
+  fVar2 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
   (this->fields)._centroid.x = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).x;
-  (this->fields)._centroid.y = fVar3;
+  (this->fields)._centroid.y = fVar2;
   (this->fields)._arePointsDirty = 1;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
@@ -833,14 +832,14 @@ void Assembly-CSharp.dll::RTG::EqTriangle2D::EqTriangle2D_set_Centroid
       if (pVVar4 == (Vector2__Array *)0x0) goto code_?;
       if (1 < pVVar4->max_length) {
         fVar5 = pVVar4->vector[1].y;
-        pVVar4->vector[1].x = fVar2 + pVVar4->vector[1].x;
-        pVVar4->vector[1].y = fVar3 + fVar5;
+        pVVar4->vector[1].x = pVVar4->vector[1].x + fVar2;
+        pVVar4->vector[1].y = fVar5 + fVar3;
         pVVar4 = (this->fields)._points;
         if (pVVar4 == (Vector2__Array *)0x0) goto code_?;
         if (2 < pVVar4->max_length) {
           fVar5 = pVVar4->vector[2].y;
-          pVVar4->vector[2].x = fVar2 + pVVar4->vector[2].x;
-          pVVar4->vector[2].y = fVar3 + fVar5;
+          pVVar4->vector[2].x = pVVar4->vector[2].x + fVar2;
+          pVVar4->vector[2].y = fVar5 + fVar3;
           return;
         }
       }

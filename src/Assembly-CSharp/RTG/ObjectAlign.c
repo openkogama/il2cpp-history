@@ -30,14 +30,21 @@ void Assembly-CSharp.dll::RTG::ObjectAlign::ObjectAlign_AlignRootsToPlane
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
+  LStack_6._list = (List_1_System_Object_ *)0x0;
+  LStack_6._index = 0;
+  LStack_6._version = 0;
+  LStack_6._current = (Object *)0x0;
+  iStack_7 = 0;
+  uStack_8 = 0;
+  fStack_9 = 0.0;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  pVVar6 = TypeInfo__UnityEngine__Vector3->static_fields;
-  uStack_7._0_4_ = (pVVar6->zeroVector).x;
-  uStack_7._4_4_ = (pVVar6->zeroVector).y;
-  fStack_8 = (pVVar6->zeroVector).z;
+  pVVar10 = TypeInfo__UnityEngine__Vector3->static_fields;
+  uStack_8._0_4_ = (pVVar10->zeroVector).x;
+  uStack_8._4_4_ = (pVVar10->zeroVector).y;
+  fStack_9 = (pVVar10->zeroVector).z;
   if ((TypeInfo__RTG__GameObjectTypeHelper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__RTG__GameObjectTypeHelper);
   }
@@ -48,35 +55,35 @@ void Assembly-CSharp.dll::RTG::ObjectAlign::ObjectAlign_AlignRootsToPlane
   if ((TypeInfo__RTG__GameObjectTypeHelper->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__RTG__GameObjectTypeHelper);
   }
-  iStack_9 = TypeInfo__RTG__GameObjectTypeHelper->static_fields->_allCombined;
+  iStack_7 = TypeInfo__RTG__GameObjectTypeHelper->static_fields->_allCombined;
   if (roots != (List_1_UnityEngine_GameObject_ *)0x0) {
-    pLVar10 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    pLVar11 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
              RegexCharClass+SingleRange]::
              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                        ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                         *)auStack_11,
+                         *)auStack_12,
                         (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)roots,
                         MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
                        );
-    uStack_12 = 0;
-    LStack_13._list = (List_1_System_Object_ *)pLVar10->_list;
-    LStack_13._index = pLVar10->_index;
-    LStack_13._version = pLVar10->_version;
-    LStack_13._current = *(Object **)&pLVar10->_current;
+    uStack_13 = 0;
+    LStack_6._list = (List_1_System_Object_ *)pLVar11->_list;
+    LStack_6._index = pLVar11->_index;
+    LStack_6._version = pLVar11->_version;
+    LStack_6._current = *(Object **)&pLVar11->_current;
     uStack_1 = 1;
-    pLStack_14 = &LStack_13;
+    pLStack_14 = &LStack_6;
     while( true ) {
       do {
         bVar15 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
                 List_1_T_Enumerator_System_Object__MoveNext
-                          (&LStack_13,
+                          (&LStack_6,
                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
                           );
-        root = LStack_13._current;
+        root = LStack_6._current;
         if (bVar15 == 0) {
           uStack_1 = 0xffffffff;
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&LStack_13,
+                    ((Object *)&LStack_6,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
                      ,in_stack_16);
@@ -86,10 +93,10 @@ void Assembly-CSharp.dll::RTG::ObjectAlign::ObjectAlign_AlignRootsToPlane
         if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        queryConfig.NoVolumeSize.x = (float)(undefined4)uStack_7;
-        queryConfig.ObjectTypes = iStack_9;
-        queryConfig.NoVolumeSize.y = (float)uStack_7._4_4_;
-        queryConfig.NoVolumeSize.z = fStack_8;
+        queryConfig.NoVolumeSize.x = (float)(undefined4)uStack_8;
+        queryConfig.ObjectTypes = iStack_7;
+        queryConfig.NoVolumeSize.y = (float)uStack_8._4_4_;
+        queryConfig.NoVolumeSize.z = fStack_9;
         pOVar17 = ObjectBounds::ObjectBounds_CalcHierarchyWorldOBB
                            ((OBB *)&stack0xffffff28,(GameObject *)root,queryConfig,(MethodInfo *)0x0
                            );
@@ -115,7 +122,7 @@ void Assembly-CSharp.dll::RTG::ObjectAlign::ObjectAlign_AlignRootsToPlane
                        ((GameObject *)root,(MethodInfo *)0x0);
       if (this == (Transform *)0x0) break;
       pVVar28 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                         ((Vector3 *)(auStack_11 + 4),this,(MethodInfo *)0x0);
+                         ((Vector3 *)(auStack_12 + 4),this,(MethodInfo *)0x0);
       uStack_32._0_4_ = pVVar28->x;
       uStack_32._4_4_ = pVVar28->y;
       fStack_33 = pVVar28->z;
@@ -142,63 +149,62 @@ Assembly-CSharp.dll::RTG::ObjectAlign::ObjectAlign_AlignToWorldAxis
           Vector3 alignmentPlaneOrigin,MethodInfo *method)
 
 {
+  uVar1 = 0;
+  uVar2 = 0;
+  uVar3 = 0;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector3);
+    func_?(&TypeInfo__UnityEngine__Vector3,0,0,0,0);
     cRam_? = '\x01';
   }
-  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
-  uVar2._0_4_ = (pVVar1->forwardVector).x;
-  uVar2._4_4_ = (pVVar1->forwardVector).y;
-  fVar3 = (pVVar1->forwardVector).z;
+  pVVar4 = TypeInfo__UnityEngine__Vector3->static_fields;
+  uVar5._0_4_ = (pVVar4->forwardVector).x;
+  uVar5._4_4_ = (pVVar4->forwardVector).y;
+  fVar6 = (pVVar4->forwardVector).z;
   if (axis == Axis__Enum_Y) {
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Vector3);
+      func_?(&TypeInfo__UnityEngine__Vector3,uVar1,uVar2,uVar3);
       cRam_? = '\x01';
     }
-    pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
-    uVar2._0_4_ = (pVVar1->upVector).x;
-    uVar2._4_4_ = (pVVar1->upVector).y;
-    fVar3 = (pVVar1->upVector).z;
+    pVVar4 = TypeInfo__UnityEngine__Vector3->static_fields;
+    uVar5._0_4_ = (pVVar4->upVector).x;
+    uVar5._4_4_ = (pVVar4->upVector).y;
+    fVar6 = (pVVar4->upVector).z;
   }
   else if (axis == Axis__Enum_Z) {
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Vector3);
+      func_?(&TypeInfo__UnityEngine__Vector3,uVar1,uVar2,uVar3);
       cRam_? = '\x01';
     }
-    pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
-    uVar2._0_4_ = (pVVar1->rightVector).x;
-    uVar2._4_4_ = (pVVar1->rightVector).y;
-    fVar3 = (pVVar1->rightVector).z;
+    pVVar4 = TypeInfo__UnityEngine__Vector3->static_fields;
+    uVar5._0_4_ = (pVVar4->rightVector).x;
+    uVar5._4_4_ = (pVVar4->rightVector).y;
+    fVar6 = (pVVar4->rightVector).z;
   }
-  value.z = fVar3;
-  value.x = (float)(int)uVar2;
-  value.y = (float)(int)((ulonglong)uVar2 >> 0x20);
-  pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+  value.z = fVar6;
+  value.x = (float)(int)uVar5;
+  value.y = (float)(int)((ulonglong)uVar5 >> 0x20);
+  pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
                      ((Vector3 *)&stack0xffffffe4,value,(MethodInfo *)0x0);
-  uVar5 = pVVar4->x;
-  fVar3 = pVVar4->y;
-  fVar6 = pVVar4->z;
-  fVar7 = (float)((uint)(alignmentPlaneOrigin.y * fVar3 + alignmentPlaneOrigin.x * (float)uVar5 +
-                        alignmentPlaneOrigin.z * fVar6) ^
-                 __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+  uVar1._0_4_ = pVVar7->x;
+  uVar1._4_4_ = pVVar7->y;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__GameObjectEx);
+    func_?();
     func_?(&
                     MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__get_Count__
                    );
     cRam_? = '\x01';
   }
   if ((TypeInfo__RTG__GameObjectEx->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__RTG__GameObjectEx);
+    func_?();
   }
-  uVar8 = 0;
+  puVar8 = &UNK_?;
   roots = GameObjectEx::GameObjectEx_FilterParentsOnly_1(gameObjects,(MethodInfo *)0x0);
   if (roots != (List_1_UnityEngine_GameObject_ *)0x0) {
     if ((roots->fields)._size != 0) {
-      alignmentPlane.m_Normal.y = fVar3;
-      alignmentPlane.m_Normal.x = (float)uVar8;
-      alignmentPlane.m_Normal.z = fVar6;
-      alignmentPlane.m_Distance = fVar7;
+      alignmentPlane.m_Normal.z = (float)puVar8;
+      alignmentPlane.m_Normal.x = (float)(int)uVar1;
+      alignmentPlane.m_Normal.y = (float)(int)((ulonglong)uVar1 >> 0x20);
+      alignmentPlane.m_Distance = (float)gameObjects;
       ObjectAlign_AlignRootsToPlane(roots,alignmentPlane,(MethodInfo *)0x0);
       return ObjectAlign_Result__Enum_Success;
     }

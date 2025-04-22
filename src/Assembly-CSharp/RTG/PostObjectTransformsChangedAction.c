@@ -59,41 +59,45 @@ void Assembly-CSharp.dll::RTG::PostObjectTransformsChangedAction::
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
+  LStack_6._list = (List_1_System_Object_ *)0x0;
+  LStack_6._index = 0;
+  LStack_6._version = 0;
+  LStack_6._current = (Object *)0x0;
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
             (this->fields)._postChangeTransformSnapshots;
   if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
              RegexCharClass+SingleRange]::
              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       (&LStack_7,this_00,
+                       (&LStack_8,this_00,
                         MethodInfo__System__Collections__Generic__List<RTG::LocalTransformSnapshot>__GetEnumerator__
                        );
-    LStack_8._list = (List_1_System_Object_ *)pLVar6->_list;
-    LStack_8._index = pLVar6->_index;
-    LStack_8._version = pLVar6->_version;
-    LStack_8._current = *(Object **)&pLVar6->_current;
-    LStack_7._version = 0;
+    LStack_6._list = (List_1_System_Object_ *)pLVar7->_list;
+    LStack_6._index = pLVar7->_index;
+    LStack_6._version = pLVar7->_version;
+    LStack_6._current = *(Object **)&pLVar7->_current;
+    LStack_8._version = 0;
     uStack_1 = 1;
-    LStack_7._current = (RegexCharClass_SingleRange)&LStack_8;
+    LStack_8._current = (RegexCharClass_SingleRange)&LStack_6;
     while( true ) {
       bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
               List_1_T_Enumerator_System_Object__MoveNext
-                        (&LStack_8,
+                        (&LStack_6,
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::LocalTransformSnapshot>__MoveNext__
                         );
       if (bVar9 == 0) {
         uStack_1 = 0xffffffff;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&LStack_8,
+                  ((Object *)&LStack_6,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::LocalTransformSnapshot>__Dispose__
                    ,unaff_EDI);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      if ((RegexCharClass_SingleRange)LStack_8._current == (RegexCharClass_SingleRange)0x0) break;
+      if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) break;
       LocalTransformSnapshot::LocalTransformSnapshot_Apply
-                ((LocalTransformSnapshot *)LStack_8._current,(MethodInfo *)0x0);
+                ((LocalTransformSnapshot *)LStack_6._current,(MethodInfo *)0x0);
     }
   }
   func_?();
@@ -133,41 +137,45 @@ void Assembly-CSharp.dll::RTG::PostObjectTransformsChangedAction::
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
+  LStack_6._list = (List_1_System_Object_ *)0x0;
+  LStack_6._index = 0;
+  LStack_6._version = 0;
+  LStack_6._current = (Object *)0x0;
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
             (this->fields)._preChangeTransformSnapshots;
   if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
              RegexCharClass+SingleRange]::
              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       (&LStack_7,this_00,
+                       (&LStack_8,this_00,
                         MethodInfo__System__Collections__Generic__List<RTG::LocalTransformSnapshot>__GetEnumerator__
                        );
-    LStack_8._list = (List_1_System_Object_ *)pLVar6->_list;
-    LStack_8._index = pLVar6->_index;
-    LStack_8._version = pLVar6->_version;
-    LStack_8._current = *(Object **)&pLVar6->_current;
-    LStack_7._version = 0;
+    LStack_6._list = (List_1_System_Object_ *)pLVar7->_list;
+    LStack_6._index = pLVar7->_index;
+    LStack_6._version = pLVar7->_version;
+    LStack_6._current = *(Object **)&pLVar7->_current;
+    LStack_8._version = 0;
     uStack_1 = 1;
-    LStack_7._current = (RegexCharClass_SingleRange)&LStack_8;
+    LStack_8._current = (RegexCharClass_SingleRange)&LStack_6;
     while( true ) {
       bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
               List_1_T_Enumerator_System_Object__MoveNext
-                        (&LStack_8,
+                        (&LStack_6,
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::LocalTransformSnapshot>__MoveNext__
                         );
       if (bVar9 == 0) {
         uStack_1 = 0xffffffff;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&LStack_8,
+                  ((Object *)&LStack_6,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::LocalTransformSnapshot>__Dispose__
                    ,unaff_EDI);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      if ((RegexCharClass_SingleRange)LStack_8._current == (RegexCharClass_SingleRange)0x0) break;
+      if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) break;
       LocalTransformSnapshot::LocalTransformSnapshot_Apply
-                ((LocalTransformSnapshot *)LStack_8._current,(MethodInfo *)0x0);
+                ((LocalTransformSnapshot *)LStack_6._current,(MethodInfo *)0x0);
     }
   }
   func_?();
@@ -205,9 +213,8 @@ void Assembly-CSharp.dll::RTG::PostObjectTransformsChangedAction::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar1,
              MethodInfo__System__Collections__Generic__List<RTG::LocalTransformSnapshot>__List__);
-  collection = &this->fields;
-  collection->_preChangeTransformSnapshots = pLVar1;
-  func_?(collection,pLVar1);
+  (this->fields)._preChangeTransformSnapshots = pLVar1;
+  func_?(&this->fields,pLVar1);
   pLVar1 = (List_1_RTG_LocalTransformSnapshot_ *)
            func_?(TypeInfo__System__Collections__Generic__List<RTG::LocalTransformSnapshot>
                           );
@@ -217,7 +224,7 @@ void Assembly-CSharp.dll::RTG::PostObjectTransformsChangedAction::
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar1,
              MethodInfo__System__Collections__Generic__List<RTG::LocalTransformSnapshot>__List__);
   method_00 = (MethodInfo *)&(this->fields)._postChangeTransformSnapshots;
-  *(List_1_RTG_LocalTransformSnapshot_ **)method_00 = pLVar1;
+  (this->fields)._postChangeTransformSnapshots = pLVar1;
   func_?(method_00,pLVar1);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
@@ -229,8 +236,10 @@ void Assembly-CSharp.dll::RTG::PostObjectTransformsChangedAction::
              (IEnumerable_1_System_Object_ *)preChangeTransformSnapshots,
              MethodInfo__System__Collections__Generic__List<RTG::LocalTransformSnapshot>__List_System__Collections__Generic__IEnumerable<RTG::LocalTransformSnapshot>_
             );
-  collection->_preChangeTransformSnapshots = pLVar1;
+  (this->fields)._preChangeTransformSnapshots = pLVar1;
+  pLStack2 = pLVar1;
   func_?();
+  collection = TypeInfo__System__Collections__Generic__List<RTG::LocalTransformSnapshot>;
   pLVar1 = (List_1_RTG_LocalTransformSnapshot_ *)func_?();
   mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object___ctor_1
             ((List_1_System_Object_ *)pLVar1,(IEnumerable_1_System_Object_ *)collection,

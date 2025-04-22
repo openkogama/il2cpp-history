@@ -44,7 +44,7 @@ void Assembly-CSharp.dll::CellCursorCubeMesh::CellCursorCubeMesh_SetCursorCube
       func_?(TypeInfo__SharedCubeFunctions);
     }
     pVVar4 = SharedCubeFunctions::SharedCubeFunctions_LocalToWorld
-                       ((Vector3 *)&stack0xffffffe4,cubeGameObject,iVector,(MethodInfo *)0x0);
+                       ((Vector3 *)&stack0xfffffff0,cubeGameObject,iVector,(MethodInfo *)0x0);
     if (pTVar3 != (Transform *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                 (pTVar3,*pVVar4,(MethodInfo *)0x0);
@@ -63,7 +63,7 @@ void Assembly-CSharp.dll::CellCursorCubeMesh::CellCursorCubeMesh_SetCursorCube
             uVar7 = pVVar4->x;
             uVar8 = pVVar4->y;
             if (pTVar3 != (Transform *)0x0) {
-              in_stack_5 = 0x1044;
+              in_stack_5 = 0x1045;
               value.y = (float)uVar8 * _UNK_?;
               value.x = (float)uVar7 * _UNK_?;
               value.z = pVVar4->z * _UNK_?;
@@ -151,12 +151,12 @@ void Assembly-CSharp.dll::CellCursorCubeMesh::CellCursorCubeMesh_Update
           value.z = (float)uVar9;
           value.y = (float)uVar8;
           value.x = (float)uVar7;
-          pMVar3 = (Material__Array *)0x0;
+          iVar10 = 0;
           value.w = fVar1 / (this->fields).fadeOutTime;
           UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
                     (this_01,StringLiteral__Color,value,(MethodInfo *)0x0);
           uVar4 = uVar4 + 1;
-          ppMVar5 = ppMVar5 + 1;
+          ppMVar5 = (Material **)(iVar10 + 4);
         }
         goto code_?;
       }
@@ -171,8 +171,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -203,35 +203,36 @@ void Assembly-CSharp.dll::CellCursorCubeMesh::CellCursorCubeMesh__ctor
   pGVar1 = (GameObject *)func_?(TypeInfo__UnityEngine__GameObject);
   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor
             (pGVar1,StringLiteral_CellCursor,(MethodInfo *)0x0);
-  ppGVar2 = &(this->fields).gameObject;
-  *ppGVar2 = pGVar1;
-  func_?(ppGVar2,pGVar1);
-  pGVar1 = *ppGVar2;
+  (this->fields).gameObject = pGVar1;
+  func_?(&(this->fields).gameObject,pGVar1);
+  pGVar1 = (this->fields).gameObject;
   value = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
                     (StringLiteral_UIItems,(MethodInfo *)0x0);
   if (pGVar1 != (GameObject *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer
               (pGVar1,value,(MethodInfo *)0x0);
-    if (*ppGVar2 != (GameObject *)0x0) {
+    pGVar1 = (this->fields).gameObject;
+    if (pGVar1 != (GameObject *)0x0) {
       this_00 = (Renderer *)
                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
-                          (*ppGVar2,
+                          (pGVar1,
                            UnityEngine__MeshRenderer_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshRenderer>__
                           );
-      if (*ppGVar2 != (GameObject *)0x0) {
+      pGVar1 = (this->fields).gameObject;
+      if (pGVar1 != (GameObject *)0x0) {
         this_01 = (MeshFilter *)
                   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
-                            (*ppGVar2,
+                            (pGVar1,
                              UnityEngine__MeshFilter_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshFilter>__
                             );
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
         }
-        pPVar3 = TypeInfo__PrefabPool->static_fields->instance;
-        if ((pPVar3 != (PrefabPool *)0x0) && (this_00 != (Renderer *)0x0)) {
+        pPVar2 = TypeInfo__PrefabPool->static_fields->instance;
+        if ((pPVar2 != (PrefabPool *)0x0) && (this_00 != (Renderer *)0x0)) {
           UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
-                    (this_00,(pPVar3->fields).modelCubeSpaceMaterial,(MethodInfo *)0x0);
+                    (this_00,(pPVar2->fields).modelCubeSpaceMaterial,(MethodInfo *)0x0);
           if (this_01 != (MeshFilter *)0x0) {
             mesh = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::MeshFilter_get_mesh
                              (this_01,(MethodInfo *)0x0);
@@ -251,8 +252,8 @@ void Assembly-CSharp.dll::CellCursorCubeMesh::CellCursorCubeMesh__ctor
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

@@ -15,9 +15,9 @@ void Assembly-CSharp.dll::RTG::SpotLightGizmo3DHotkeys::SpotLightGizmo3DHotkeys_
   Hotkeys::Hotkeys__ctor_1(this_00,StringLiteral_Enable_snapping,staticData,(MethodInfo *)0x0);
   if (this_00 != (Hotkeys *)0x0) {
     Hotkeys::Hotkeys_set_Key(this_00,KeyCode__Enum_None,(MethodInfo *)0x0);
-    method_00 = (MethodInfo *)&this->fields;
     (this_00->fields)._lCtrl = 1;
-    ((SpotLightGizmo3DHotkeys__Fields *)method_00)->_enableSnapping = this_00;
+    method_00 = (MethodInfo *)&this->fields;
+    (this->fields)._enableSnapping = this_00;
     func_?(method_00,this_00);
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
               ((Object *)this,ExceptionArgument__Enum_obj,method_00);

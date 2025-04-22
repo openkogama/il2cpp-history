@@ -134,15 +134,15 @@ code_?:
     UnityEngine.CoreModule.dll::UnityEngine::CullingGroup::CullingGroup_SetBoundingDistances
               (this,pSVar1,(MethodInfo *)0x0);
     if (pSVar1 == (Single__Array *)0x0) goto code_?;
-    uVar2 = pSVar1->max_length;
-    if (uVar2 - 1 < uVar2) {
+    if (pSVar1->max_length - 1 < pSVar1->max_length) {
       pSVar4 = TypeInfo__CullingApiWrapper->static_fields->sizes;
       if (pSVar4 == (Single__Array *)0x0) goto code_?;
       if (pSVar4->max_length - 1 < pSVar4->max_length) {
         if (camera != (Camera *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_farClipPlane
-                    (camera,(pSVar1->vector[uVar2 - 1] + pSVar4->vector[pSVar4->max_length - 1]) *
-                            _UNK_?,(MethodInfo *)0x0);
+                    (camera,(pSVar1->vector[pSVar1->max_length - 1] +
+                            pSVar4->vector[pSVar4->max_length - 1]) * _UNK_?,
+                     (MethodInfo *)0x0);
           return;
         }
         goto code_?;
@@ -605,8 +605,8 @@ void Assembly-CSharp.dll::CullingApiWrapper::CullingApiWrapper_OnStateChanged
         do {
           if (pOVar2->interfaceOffsets[uVar3].interfaceType ==
               (Il2CppClass *)TypeInfo__ICullingSubscriber) {
-            ppMVar5 = &(&(pOVar1->klass->vtable).Equals)[pOVar2->interfaceOffsets[uVar3].offset].
-                       method;
+            ppMVar5 = &(&(pOVar1->klass->vtable).Equals)
+                       [pOVar1->klass->interfaceOffsets[uVar3].offset].method;
             goto code_?;
           }
           uVar3 = uVar3 + 1;
@@ -681,110 +681,113 @@ void Assembly-CSharp.dll::CullingApiWrapper::CullingApiWrapper_PostDestroyCleanu
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  LStack_6._list = (List_1_System_Object_ *)0x0;
-  LStack_6._index = 0;
-  LStack_6._version = 0;
-  LStack_6._current = (Object *)0x0;
+  pDStack_6 = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
+  LStack_7._list = (List_1_System_Object_ *)0x0;
+  LStack_7._index = 0;
+  LStack_7._version = 0;
+  LStack_7._current = (Object *)0x0;
   this = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
           *)func_?(TypeInfo__System__Collections__Generic__List<ICullingSubscriber>);
   mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
   MultiColumnCollectionHeader+ViewState+ColumnState]::
   List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
             (this,0,MethodInfo__System__Collections__Generic__List<ICullingSubscriber>__List_int_);
-  pLStack_7 = this;
+  pLStack_8 = this;
   if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  method_00 = (MethodInfo *)TypeInfo__CullingApiWrapper->static_fields->cullingSubscribers;
-  if (method_00 == (MethodInfo *)0x0) {
+  pMVar9 = (MethodInfo *)TypeInfo__CullingApiWrapper->static_fields->cullingSubscribers;
+  if (pMVar9 == (MethodInfo *)0x0) {
 code_?:
     func_?();
     func_?();
     func_?();
   }
   else {
-    pDVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+    pDVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
              ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
                        ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                        auStack_9,(Dictionary_2_System_UInt32_System_Object_ *)method_00,
+                        auStack_11,(Dictionary_2_System_UInt32_System_Object_ *)pMVar9,
                         MethodInfo__System__Collections__Generic__Dictionary<int,_ICullingSubscriber>__GetEnumerator__
                        );
-    uStack_10 = 0;
-    pDStack_11 = pDVar8->_dictionary;
-    pOVar12 = (pDVar8->_current).value;
-    method_01 = (MethodInfo *)pDVar8->_getEnumeratorRetType;
+    uStack_12 = 0;
+    pDStack_6 = pDVar10->_dictionary;
+    uVar13 = *(ulonglong *)&(pDVar10->_current).value;
     uStack_1 = 1;
-    RStack_13 = (RegexCharClass_SingleRange)&pDStack_11;
+    RStack_14 = (RegexCharClass_SingleRange)&pDStack_6;
     while( true ) {
-      bVar14 = mscorlib.dll::System::Collections::Generic::
+      bVar15 = mscorlib.dll::System::Collections::Generic::
               Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
               Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
                         ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                         &pDStack_11,
+                         &pDStack_6,
                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_ICullingSubscriber>__MoveNext__
                         );
-      if (bVar14 == 0) break;
+      if (bVar15 == 0) break;
       if (this == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
                    *)0x0) goto code_?;
       mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-                ((List_1_System_Object_ *)this,pOVar12,
+                ((List_1_System_Object_ *)this,(Object *)uVar13,
                  MethodInfo__System__Collections__Generic__List<ICullingSubscriber>__Add_ICullingSubscriber_
                 );
     }
     uStack_1 = 0xffffffff;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)&pDStack_11,
+              ((Object *)&pDStack_6,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_ICullingSubscriber>__Dispose__
-               ,method_00);
+               ,pMVar9);
     uStack_1 = 0xffffffff;
     if (this == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
                  *)0x0) goto code_?;
-    pLVar15 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    pLVar16 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
              RegexCharClass+SingleRange]::
              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                        ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                         *)(auStack_9 + 8),
+                         *)(auStack_11 + 8),
                         (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)this,
                         MethodInfo__System__Collections__Generic__List<ICullingSubscriber>__GetEnumerator__
                        );
-    LStack_6._list = (List_1_System_Object_ *)pLVar15->_list;
-    LStack_6._index = pLVar15->_index;
-    LStack_6._version = pLVar15->_version;
-    LStack_6._current = *(Object **)&pLVar15->_current;
-    pOStack_16 = (Object *)0x0;
+    LStack_7._list = (List_1_System_Object_ *)pLVar16->_list;
+    LStack_7._index = pLVar16->_index;
+    LStack_7._version = pLVar16->_version;
+    LStack_7._current = *(Object **)&pLVar16->_current;
+    pOStack_17 = (Object *)0x0;
     uStack_1 = 4;
-    pLStack_17 = &LStack_6;
+    pLStack_18 = &LStack_7;
     while( true ) {
-      bVar14 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+      bVar15 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
               List_1_T_Enumerator_System_Object__MoveNext
-                        (&LStack_6,
+                        (&LStack_7,
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ICullingSubscriber>__MoveNext__
                         );
-      if (bVar14 == 0) break;
-      RStack_13 = (RegexCharClass_SingleRange)LStack_6._current;
+      pMVar9 = (MethodInfo *)(uVar13 >> 0x20);
+      if (bVar15 == 0) break;
+      RStack_14 = (RegexCharClass_SingleRange)LStack_7._current;
       if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
+        uVar13 = CONCAT44(pMVar9,TypeInfo__CullingApiWrapper);
         func_?();
       }
-      CullingApiWrapper_UnSubscribe((ICullingSubscriber *)RStack_13,(MethodInfo *)0x0);
+      uVar13 = uVar13 & 0xffffffff00000000;
+      CullingApiWrapper_UnSubscribe((ICullingSubscriber *)RStack_14,(MethodInfo *)0x0);
     }
     uStack_1 = 0xffffffff;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)&LStack_6,
+              ((Object *)&LStack_7,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ICullingSubscriber>__Dispose__
-               ,method_01);
+               ,pMVar9);
     uStack_1 = 0xffffffff;
     if ((this->fields)._size < 1) goto code_?;
-    LStack_6._list = (List_1_System_Object_ *)0x1;
+    LStack_7._list = (List_1_System_Object_ *)0x1;
     args = (Object__Array *)func_?();
-    RStack_13 = (RegexCharClass_SingleRange)(this->fields)._size;
-    pOVar12 = (Object *)func_?();
+    RStack_14 = (RegexCharClass_SingleRange)(this->fields)._size;
+    pOVar19 = (Object *)func_?();
     if (args == (Object__Array *)0x0) goto code_?;
-    if (pOVar12 == (Object *)0x0) {
+    if (pOVar19 == (Object *)0x0) {
 code_?:
       if (args->max_length != 0) {
-        args->vector[0] = pOVar12;
+        args->vector[0] = pOVar19;
         func_?();
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
@@ -797,15 +800,15 @@ code_?:
       }
       goto code_?;
     }
-    iVar18 = func_?();
-    if (iVar18 != 0) goto code_?;
+    iVar20 = func_?();
+    if (iVar20 != 0) goto code_?;
   }
   func_?();
   func_?();
 code_?:
   func_?();
-  pcVar19 = (code *)swi(3);
-  (*pcVar19)();
+  pcVar21 = (code *)swi(3);
+  (*pcVar21)();
   return;
 }
 
@@ -871,12 +874,11 @@ void Assembly-CSharp.dll::CullingApiWrapper::CullingApiWrapper_Subscribe
       if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__CullingApiWrapper);
       }
-      array = &TypeInfo__CullingApiWrapper->static_fields->spheres;
-      pBVar1 = *array;
+      pBVar1 = TypeInfo__CullingApiWrapper->static_fields->spheres;
       if (pBVar1 != (BoundingSphere__Array *)0x0) {
         mscorlib.dll::System::Array::Array_Resize_86
-                  ((BindingRestrictions_TestBuilder_AndNode__Array **)array,
-                   pBVar1->max_length + 1000,
+                  ((BindingRestrictions_TestBuilder_AndNode__Array **)
+                   &TypeInfo__CullingApiWrapper->static_fields->spheres,pBVar1->max_length + 1000,
                    void_MethodInfo__System__Array__Resize<UnityEngine::BoundingSphere>_UnityEngine__BoundingSphere___int_
                   );
         pCVar2 = TypeInfo__CullingApiWrapper->static_fields->cullingGroup;

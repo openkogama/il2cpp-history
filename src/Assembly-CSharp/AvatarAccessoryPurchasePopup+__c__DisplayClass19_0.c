@@ -24,7 +24,8 @@ void Assembly-CSharp.dll::AvatarAccessoryPurchasePopup+<>c__DisplayClass19_0::
         do {
           if (pIVar4->interfaceOffsets[uVar5].interfaceType ==
               (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IModalPopupCreator) {
-            ppMVar7 = &(&(x->klass->vtable).Create)[pIVar4->interfaceOffsets[uVar5].offset].method;
+            ppMVar7 = &(&(x->klass->vtable).Create)[x->klass->interfaceOffsets[uVar5].offset].method
+            ;
             goto code_?;
           }
           uVar5 = uVar5 + 1;

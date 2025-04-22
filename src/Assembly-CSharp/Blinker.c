@@ -113,27 +113,27 @@ void Assembly-CSharp.dll::Blinker::Blinker__ctor
   }
   (this->fields).blinkInterval = 2.0;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
+    func_?();
   }
   pMVar1 = (Material *)
            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                      ((Object *)m,
                       UnityEngine__Material_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::Material>_UnityEngine__Material_
                      );
-  pBVar2 = &this->fields;
-  pBVar2->blinkMaterial = pMVar1;
-  func_?(pBVar2,pMVar1);
-  if (pBVar2->blinkMaterial != (Material *)0x0) {
+  (this->fields).blinkMaterial = pMVar1;
+  func_?();
+  pMVar1 = (this->fields).blinkMaterial;
+  if (pMVar1 != (Material *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color
-              (pBVar2->blinkMaterial,color,(MethodInfo *)0x0);
+              (pMVar1,color,(MethodInfo *)0x0);
     (this->fields).blinkInterval = interval;
     return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

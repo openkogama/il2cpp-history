@@ -8,9 +8,9 @@ void Assembly-CSharp.dll::ContinueButtonLockCursor::ContinueButtonLockCursor_Ini
   pAStack_1 = (Action *)&stack0xfffffffc;
   pCVar2 = (this->fields).button;
   if (pCVar2 != (ContinueButtonHandler *)0x0) {
-    ppAStack_3 = &(pCVar2->fields).OnClick;
     pAStack_1 = cursorLockCallback;
-    *ppAStack_3 = cursorLockCallback;
+    (pCVar2->fields).OnClick = cursorLockCallback;
+    ppAStack_3 = &(pCVar2->fields).OnClick;
     func_?();
     return;
   }

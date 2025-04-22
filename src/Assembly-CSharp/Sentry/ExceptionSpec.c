@@ -14,18 +14,16 @@ void Assembly-CSharp.dll::Sentry::ExceptionSpec::ExceptionSpec__ctor
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   (this->fields).type = type;
   func_?(&this->fields,type);
-  ppSVar1 = &(this->fields).value;
-  *ppSVar1 = value;
-  func_?(ppSVar1,value);
+  (this->fields).value = value;
+  func_?(&(this->fields).value,value);
   method_00 = TypeInfo__Sentry__StackTraceContainer;
   value_00 = (StackTraceContainer *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value_00,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   (value_00->fields).frames = stacktrace;
   func_?(&value_00->fields,stacktrace);
-  ppSVar2 = &(this->fields).stacktrace;
-  *ppSVar2 = value_00;
-  func_?(ppSVar2,value_00);
+  (this->fields).stacktrace = value_00;
+  func_?(&(this->fields).stacktrace,value_00);
   return;
 }
 

@@ -18,48 +18,50 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsType
                    );
     cRam_? = '\x01';
   }
-  if (settingNode != (KogamaSettingWrapperBase *)0x0) {
-    pKVar1 = settingNode->klass;
-    bVar2 = (
-            TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__GameBoosterSettings__GameBoosterSettingTypes__GameBoosterSettingWithGoldSetting
-            ->_1).naturalAligment;
-    if ((bVar2 <= (pKVar1->_1).naturalAligment) &&
-       ((pKVar1->_1).typeHierarchy[bVar2 - 1] ==
-        (Il2CppClass *)
-        TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__GameBoosterSettings__GameBoosterSettingTypes__GameBoosterSettingWithGoldSetting
-       )) {
-      this_00 = (this->fields).inv;
-      if (this_00 ==
-          (List_1_MV_WorldObject_KogamaSettings_SpecializedSettingsTypes_GameBoosterSettings_GameBoosterSettingTypes_GameBoosterSettingWithGoldSetting_
-           *)0x0) {
-        func_?();
-        pGVar3 = extraout_EDX;
-      }
-      else {
-        bVar2 = (
-                TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__GameBoosterSettings__GameBoosterSettingTypes__GameBoosterSettingWithGoldSetting
-                ->_1).naturalAligment;
-        pGVar3 = 
-        TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__GameBoosterSettings__GameBoosterSettingTypes__GameBoosterSettingWithGoldSetting
-        ;
-        if ((bVar2 <= (pKVar1->_1).naturalAligment) &&
-           ((pKVar1->_1).typeHierarchy[bVar2 - 1] ==
-            (Il2CppClass *)
-            TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__GameBoosterSettings__GameBoosterSettingTypes__GameBoosterSettingWithGoldSetting
-           )) {
-          mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-          List_1_System_Object__Add
-                    ((List_1_System_Object_ *)this_00,(Object *)settingNode,
-                     MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>__Add_MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__GameBoosterSettings__GameBoosterSettingTypes__GameBoosterSettingWithGoldSetting_
-                    );
-          return;
-        }
-      }
-      func_?(settingNode,pGVar3);
-      pcVar4 = (code *)swi(3);
-      (*pcVar4)();
-      return;
+  if (((settingNode != (KogamaSettingWrapperBase *)0x0) &&
+      ((
+       TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__GameBoosterSettings__GameBoosterSettingTypes__GameBoosterSettingWithGoldSetting
+       ->_1).naturalAligment <= (settingNode->klass->_1).naturalAligment)) &&
+     ((settingNode->klass->_1).typeHierarchy
+      [(
+       TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__GameBoosterSettings__GameBoosterSettingTypes__GameBoosterSettingWithGoldSetting
+       ->_1).naturalAligment - 1] ==
+      (Il2CppClass *)
+      TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__GameBoosterSettings__GameBoosterSettingTypes__GameBoosterSettingWithGoldSetting
+     )) {
+    this_00 = (this->fields).inv;
+    if (this_00 ==
+        (List_1_MV_WorldObject_KogamaSettings_SpecializedSettingsTypes_GameBoosterSettings_GameBoosterSettingTypes_GameBoosterSettingWithGoldSetting_
+         *)0x0) {
+      func_?();
+      pGVar1 = extraout_EDX;
     }
+    else {
+      pGVar1 = 
+      TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__GameBoosterSettings__GameBoosterSettingTypes__GameBoosterSettingWithGoldSetting
+      ;
+      if (((
+           TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__GameBoosterSettings__GameBoosterSettingTypes__GameBoosterSettingWithGoldSetting
+           ->_1).naturalAligment <= (settingNode->klass->_1).naturalAligment) &&
+         ((settingNode->klass->_1).typeHierarchy
+          [(
+           TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__GameBoosterSettings__GameBoosterSettingTypes__GameBoosterSettingWithGoldSetting
+           ->_1).naturalAligment - 1] ==
+          (Il2CppClass *)
+          TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__GameBoosterSettings__GameBoosterSettingTypes__GameBoosterSettingWithGoldSetting
+         )) {
+        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+        List_1_System_Object__Add
+                  ((List_1_System_Object_ *)this_00,(Object *)settingNode,
+                   MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>__Add_MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__GameBoosterSettings__GameBoosterSettingTypes__GameBoosterSettingWithGoldSetting_
+                  );
+        return;
+      }
+    }
+    func_?(settingNode,pGVar1);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
   }
   return;
 }

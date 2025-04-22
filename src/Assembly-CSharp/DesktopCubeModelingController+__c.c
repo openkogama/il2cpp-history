@@ -117,7 +117,7 @@ void Assembly-CSharp.dll::DesktopCubeModelingController+<>c::
       if (pIVar5->interfaceOffsets[uVar4].interfaceType ==
           (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IModalPopupCreator) {
         ppMVar7 = &(&(x->klass->vtable).CreateErrorNotificationPopup)
-                   [pIVar5->interfaceOffsets[uVar4].offset].method;
+                   [x->klass->interfaceOffsets[uVar4].offset].method;
         goto code_?;
       }
       uVar4 = uVar4 + 1;

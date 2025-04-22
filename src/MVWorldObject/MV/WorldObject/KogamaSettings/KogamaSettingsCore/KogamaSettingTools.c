@@ -156,12 +156,12 @@ KogamaSettingTools_CreateFromValues_1
           *factoryFunc,MethodInfo *method)
 
 {
-  pIStack_1 = (Il2CppInteropData *)0xffffffff;
-  p_Stack_c = (Il2CppMetadataTypeHandle)&DAT_?;
-  pIStack_2 = (Il2CppGenericClass *)*unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &pIStack_2;
-  pIStack_3 = (Il2CppClass *)&stack0xffffff9c;
-  pIVar4 = (Il2CppClass *)&stack0xffffff9c;
+  pIStack_1 = (Il2CppClass *)0xffffffff;
+  pIStack_2 = (Il2CppInteropData *)&DAT_?;
+  p_Stack_10 = (Il2CppMetadataTypeHandle)*unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &p_Stack_10;
+  pIStack_3 = (Il2CppGenericClass *)&stack0xffffff98;
+  pIVar4 = (Il2CppGenericClass *)&stack0xffffff98;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__GetEnumerator__
@@ -200,166 +200,184 @@ KogamaSettingTools_CreateFromValues_1
     pIVar4 = pIStack_3;
   }
   pIStack_3 = pIVar4;
-  pDVar6 = (Dictionary_2_System_Object_System_Object___Class *)prototype;
+  _Stack_34 = (_union_86)0x0;
+  uStack_6 = 0;
+  bStack_7 = 0;
+  uStack_8 = 0;
+  pDStack_9 = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
+  pvStack_10 = (void *)0x0;
+  pcStack_11 = (char *)0x0;
+  pIStack_12 = (Il2CppClass *)0x0;
+  pDVar13 = (Dictionary_2_System_Object_System_Object___Class *)prototype;
   if (prototype == (KogamaSettingWrapperBase *)0x0) {
 code_?:
     if (factoryFunc !=
         (Func_4_System_Collections_Generic_KeyValuePair_2_System_Object_System_Object_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingValueWrapperBase_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingsCollectionBase_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingValueWrapperBase_
          *)0x0) {
-      pKVar7 = (KogamaSettingWrapperBase *)
+      pKVar14 = (KogamaSettingWrapperBase *)
                (*(factoryFunc->fields)._._.invoke_impl)
                          ((factoryFunc->fields)._._.method_code,valuePair.key,valuePair.value,
                           prototype,parent,(factoryFunc->fields)._._.method);
-      *unaff_FS_OFFSET = pIStack_2;
-      return pKVar7;
+      *unaff_FS_OFFSET = p_Stack_10;
+      return pKVar14;
     }
 code_?:
     func_?();
-    pSVar8 = extraout_ECX;
+    pIVar15 = extraout_ECX;
 code_?:
-    uVar9 = func_?(unaff_EDI,pSVar8);
-    func_?(uVar9);
+    uVar16 = func_?(pIVar15,TypeInfo__System__String);
+    func_?(uVar16);
     valuePair.value = extraout_EDX;
-    pIVar4 = unaff_EDI;
 code_?:
-    pKVar10 = (KogamaSettingsCollectionBase__Class *)func_?(valuePair.value,pDVar6);
+    func_?(valuePair.value,pDVar13);
   }
   else {
-    pKVar11 = prototype->klass;
-    bVar12 = (
-            TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
-            ->_1).naturalAligment;
-    if (((pKVar11->_1).naturalAligment < bVar12) ||
-       ((pKVar11->_1).typeHierarchy[bVar12 - 1] !=
+    pKVar17 = prototype->klass;
+    if (((pKVar17->_1).naturalAligment <
+         (
+         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
+         ->_1).naturalAligment) ||
+       ((pKVar17->_1).typeHierarchy
+        [(
+         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
+         ->_1).naturalAligment - 1] !=
         (Il2CppClass *)
         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
        )) {
-      bVar12 = (
-              TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
-              ->_1).naturalAligment;
-      pIVar4 = (Il2CppClass *)
+      pKVar18 = (KogamaSettingsCollectionBase__Class *)
                TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
       ;
-      if (((pKVar11->_1).naturalAligment < bVar12) ||
-         (unaff_EDI = (Il2CppClass *)
-                      TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
-         , (pKVar11->_1).typeHierarchy[bVar12 - 1] !=
-           (Il2CppClass *)
+      if (((pKVar17->_1).naturalAligment <
+           (
            TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
+           ->_1).naturalAligment) ||
+         ((pKVar17->_1).typeHierarchy
+          [(
+           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
+           ->_1).naturalAligment - 1] !=
+          (Il2CppClass *)
+          TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
          )) goto code_?;
       goto code_?;
     }
-    bVar12 = (
-            TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
-            ->_1).naturalAligment;
-    pIVar4 = (Il2CppClass *)
-             TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
+    pKVar18 = 
+    TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
     ;
-    if (((pKVar11->_1).naturalAligment < bVar12) ||
-       ((pKVar11->_1).typeHierarchy[bVar12 - 1] !=
+    if (((pKVar17->_1).naturalAligment <
+         (
+         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
+         ->_1).naturalAligment) ||
+       ((pKVar17->_1).typeHierarchy
+        [(
+         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
+         ->_1).naturalAligment - 1] !=
         (Il2CppClass *)
         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
        )) goto code_?;
-    pIVar4 = (Il2CppClass *)
-             (*(code *)pKVar11[1]._0.namespaze)(prototype,parent,pKVar11[1]._0.byval_arg.data.dummy);
-    bVar12 = (
-            TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
-            ->_1).naturalAligment;
-    pKVar10 = 
-    TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
-    ;
-    pIStack_13 = pIVar4;
-    if ((bVar12 <= (prototype->klass->_1).naturalAligment) &&
-       ((prototype->klass->_1).typeHierarchy[bVar12 - 1] ==
+    parent_00 = (Il2CppClass *)
+                (*(code *)pKVar17[1]._0.namespaze)
+                          (prototype,parent,pKVar17[1]._0.byval_arg.data.dummy);
+    pIStack_19 = parent_00;
+    if (((
+         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
+         ->_1).naturalAligment <= (prototype->klass->_1).naturalAligment) &&
+       ((prototype->klass->_1).typeHierarchy
+        [(
+         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
+         ->_1).naturalAligment - 1] ==
         (Il2CppClass *)
         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
        )) {
-      pDVar6 = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
-      unaff_EDI = pIVar4;
+      pDVar13 = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
       if (valuePair.value == (Object *)0x0) goto code_?;
-      bVar12 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
-              _1).naturalAligment;
-      if (((bVar12 <= ((valuePair.value)->klass->_1).naturalAligment) &&
+      if ((((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1)
+            .naturalAligment <= ((valuePair.value)->klass->_1).naturalAligment) &&
           ((Dictionary_2_System_Object_System_Object___Class *)
-           ((valuePair.value)->klass->_1).typeHierarchy[bVar12 - 1] ==
+           ((valuePair.value)->klass->_1).typeHierarchy
+           [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1)
+            .naturalAligment - 1] ==
            TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) &&
          (valuePair.value != (Object *)0x0)) {
-        pDVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
+        pDVar20 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
                  Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                           (&DStack_15,(Dictionary_2_System_UInt32_System_Object_ *)valuePair.value,
+                           (&DStack_21,(Dictionary_2_System_UInt32_System_Object_ *)valuePair.value,
                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__GetEnumerator__
                            );
-        pDVar6 = (Dictionary_2_System_Object_System_Object___Class *)&DStack_16;
-        _Stack_28.dummy = (void *)0x0;
-        DStack_16._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar14->_dictionary;
-        DStack_16._version = pDVar14->_version;
-        DStack_16._index = pDVar14->_index;
-        DStack_16._current.key = (Object *)(pDVar14->_current).key;
-        DStack_16._16_8_ = *(undefined8 *)&(pDVar14->_current).value;
-        pIStack_1 = (Il2CppInteropData *)0x1;
-        pDStack_17 = pDVar6;
+        ppDStack_22 = &pDStack_9;
+        _Stack_2c.dummy = (void *)0x0;
+        pDStack_9 = pDVar20->_dictionary;
+        pvStack_10 = (void *)pDVar20->_version;
+        pcStack_11 = (char *)pDVar20->_index;
+        pIStack_12 = (Il2CppClass *)(pDVar20->_current).key;
+        __Stack_34 = *(Il2CppType *)&(pDVar20->_current).value;
+        pIStack_1 = (Il2CppClass *)0x1;
         while( true ) {
-          bVar18 = mscorlib.dll::System::Collections::Generic::
+          pDVar13 = (Dictionary_2_System_Object_System_Object___Class *)&pDStack_9;
+          bVar23 = mscorlib.dll::System::Collections::Generic::
                   Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Object]::
                   Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
-                            (&DStack_16,
+                            ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
+                             pDVar13,
                              MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__MoveNext__
                             );
-          pOVar19 = DStack_16._current.key;
-          if (bVar18 == 0) {
-            pIStack_1 = (Il2CppInteropData *)0xffffffff;
+          if (bVar23 == 0) {
+            pIStack_1 = (Il2CppClass *)0xffffffff;
             mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                      ((Object *)pDVar6,
+                      ((Object *)pDVar13,
                        (ExceptionArgument__Enum)
                        MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__Dispose__
                        ,(MethodInfo *)in_stack_5);
-            *unaff_FS_OFFSET = pIStack_2;
-            return (KogamaSettingWrapperBase *)pIVar4;
+            *unaff_FS_OFFSET = p_Stack_10;
+            return (KogamaSettingWrapperBase *)parent_00;
           }
-          _Stack_1c.__klassIndex = (TypeDefinitionIndex)DStack_16._current.value;
-          unaff_EDI = (Il2CppClass *)DStack_16._current.key;
+          _Stack_18.dummy = _Stack_34.dummy;
+          pIStack_24 = pIStack_12;
           if (prototype[1].klass == (KogamaSettingWrapperBase__Class *)0x0) break;
-          pIVar4 = (Il2CppClass *)0x0;
-          if ((Il2CppClass *)DStack_16._current.key != (Il2CppClass *)0x0) {
-            if ((String__Class *)((Il2CppClass_0 *)&(DStack_16._current.key)->klass)->image ==
-                TypeInfo__System__String) {
-              pIVar4 = (Il2CppClass *)DStack_16._current.key;
+          key = (Il2CppClass *)0x0;
+          if (pIStack_12 != (Il2CppClass *)0x0) {
+            pDVar13 = (Dictionary_2_System_Object_System_Object___Class *)&pDStack_9;
+            if ((String__Class *)pIStack_12->image == TypeInfo__System__String) {
+              key = pIStack_12;
             }
-            pSVar8 = TypeInfo__System__String;
-            if (pIVar4 == (Il2CppClass *)0x0) goto code_?;
+            pIVar15 = pIStack_12;
+            if (key == (Il2CppClass *)0x0) goto code_?;
           }
+          pDVar13 = (Dictionary_2_System_Object_System_Object___Class *)&pDStack_9;
           prototype_00 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                          Object,UnityEngine::UIElements::TextureId]::
                          Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                                    ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                                    prototype[1].klass,(Object *)pIVar4,
+                                    prototype[1].klass,(Object *)key,
                                     MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__get_Item_System__String_
                                    );
-          valuePair_00.value = _Stack_1c.dummy;
-          valuePair_00.key = pOVar19;
-          in_stack_5 = (KogamaSettingValueWrapperBase__Class **)pIStack_13;
-          pKVar7 = KogamaSettingTools_CreateFromValues_1
+          valuePair_00.value = _Stack_18.dummy;
+          valuePair_00.key = (Object *)pIStack_24;
+          in_stack_5 = (KogamaSettingValueWrapperBase__Class **)parent_00;
+          pKVar14 = KogamaSettingTools_CreateFromValues_1
                              (valuePair_00,(KogamaSettingWrapperBase *)prototype_00.m_Index,
-                              (KogamaSettingsCollectionBase *)pIStack_13,factoryFunc,
+                              (KogamaSettingsCollectionBase *)parent_00,factoryFunc,
                               (MethodInfo *)0x0);
-          pIVar4 = pIStack_13;
-          unaff_EDI = (Il2CppClass *)0x0;
-          if (pIStack_13 == (Il2CppClass *)0x0) break;
-          pOVar20 = (Object__Class *)((Il2CppClass_0 *)&pIStack_13->image)->image;
-          (*(code *)pOVar20[1]._0.namespaze)(pIStack_13,pKVar7,pOVar20[1]._0.byval_arg.data.dummy);
+          if (parent_00 == (Il2CppClass *)0x0) break;
+          (*(code *)(((KogamaSettingsCollectionBase__Class *)parent_00->image)->vtable).AddChild.
+                    method)(parent_00,pKVar14,
+                            (((KogamaSettingsCollectionBase__Class *)parent_00->image)->vtable).
+                            CopyWithOutChildren.methodPtr);
         }
         goto code_?;
       }
       goto code_?;
     }
   }
-  func_?(pDVar6,pKVar10);
-  prototype = (KogamaSettingWrapperBase *)pDVar6;
+  func_?(pDVar13,
+                  TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
+                 );
+  pKVar18 = extraout_EDX_00;
+  prototype = (KogamaSettingWrapperBase *)pDVar13;
 code_?:
-  func_?(prototype,pIVar4);
-  pcVar21 = (code *)swi(3);
-  pKVar7 = (KogamaSettingWrapperBase *)(*pcVar21)();
-  return pKVar7;
+  func_?(prototype,pKVar18);
+  pcVar25 = (code *)swi(3);
+  pKVar14 = (KogamaSettingWrapperBase *)(*pcVar25)();
+  return pKVar14;
 }
 
 
@@ -446,54 +464,51 @@ KogamaSettingTools_GetSettingBranch(KogamaSettingWrapperBase *obj,MethodInfo *me
             (this,
              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
             );
+  pKVar1 = 
+  TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
+  ;
   do {
     if (obj == (KogamaSettingWrapperBase *)0x0) {
+      TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
+           = pKVar1;
       return (Dictionary_2_System_Object_System_Object_ *)this;
     }
-    pKVar1 = (KogamaSettingWrapperBase__Class *)((KogamaSettingsCollectionBase *)obj)->klass;
-    if (((pKVar1->_1).naturalAligment <
+    TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
+         = pKVar1;
+    if (((((KogamaSettingWrapperBase__Class *)((KogamaSettingsCollectionBase *)obj)->klass)->_1).
+         naturalAligment <
          ((Il2CppClass *)
          TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
          )->naturalAligment) ||
-       ((pKVar1->_1).typeHierarchy
+       ((((KogamaSettingWrapperBase__Class *)((KogamaSettingsCollectionBase *)obj)->klass)->_1).
+        typeHierarchy
         [((Il2CppClass *)
          TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
          )->naturalAligment - 1] !=
         (Il2CppClass *)
         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
        )) {
-      if (((pKVar1->_1).naturalAligment <
-           ((Il2CppClass *)
-           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
-           )->naturalAligment) ||
-         ((pKVar1->_1).typeHierarchy
-          [((Il2CppClass *)
-           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
-           )->naturalAligment - 1] !=
-          (Il2CppClass *)
-          TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
-         )) {
-        func_?(obj,
-                        TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
-                       );
+      iVar2 = func_?(obj,pKVar1);
+      if (iVar2 == 0) {
+        func_?(obj,pKVar1);
 code_?:
         func_?();
-        pcVar2 = (code *)swi(3);
-        pDVar3 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar2)();
-        return pDVar3;
+        pcVar3 = (code *)swi(3);
+        pDVar4 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar3)();
+        return pDVar4;
       }
-      key = (((KogamaSettingsCollectionBase *)obj)->fields)._.key;
-      iVar4 = func_?(5,obj);
-      if ((iVar4 == 0) ||
+      key = *(Object **)(iVar2 + 0xc);
+      iVar2 = func_?(5,iVar2);
+      if ((iVar2 == 0) ||
          (value = (Object *)
                   func_?(0,
                                   TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__IKogamaSetting
-                                  ,iVar4),
+                                  ,iVar2),
          this == (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                   *)0x0)) goto code_?;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)key,value,
+                ((Dictionary_2_System_Object_System_Object_ *)this,key,value,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                 );
     }
@@ -521,6 +536,9 @@ code_?:
     }
     obj = (KogamaSettingWrapperBase *)
           (((KogamaSettingsCollectionBase *)obj)->fields)._._Parent_k__BackingField;
+    pKVar1 = 
+    TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
+    ;
   } while( true );
 }
 
@@ -608,45 +626,29 @@ KogamaSettingTools_GetSubTree(KogamaSettingWrapperBase *obj,MethodInfo *method)
             );
   for (pKVar8 = (KogamaSettingsCollectionBase *)obj; pKVar8 != (KogamaSettingsCollectionBase *)0x0;
       pKVar8 = (pKVar8->fields)._._Parent_k__BackingField) {
-    pKVar9 = (KogamaSettingWrapperBase__Class *)pKVar8->klass;
-    if (((pKVar9->_1).naturalAligment <
+    if (((((KogamaSettingWrapperBase__Class *)pKVar8->klass)->_1).naturalAligment <
          ((Il2CppClass *)
          TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
          )->naturalAligment) ||
-       ((pKVar9->_1).typeHierarchy
+       ((((KogamaSettingWrapperBase__Class *)pKVar8->klass)->_1).typeHierarchy
         [((Il2CppClass *)
          TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
          )->naturalAligment - 1] !=
         (Il2CppClass *)
         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
        )) {
-      if (((pKVar9->_1).naturalAligment <
-           ((Il2CppClass *)
-           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
-           )->naturalAligment) ||
-         ((pKVar9->_1).typeHierarchy
-          [((Il2CppClass *)
-           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
-           )->naturalAligment - 1] !=
-          (Il2CppClass *)
-          TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
-         )) goto code_?;
-      pDStack_10 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                    *)(pKVar8->fields)._.key;
-      iVar11 = func_?();
-      if ((iVar11 == 0) ||
-         (value = (Object *)
-                  func_?(0,
-                                  TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__IKogamaSetting
-                                  ,iVar11), this = pDStack_7,
-         pDStack_7 ==
-         (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
-         0x0)) goto code_?;
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__Add
-                ((Dictionary_2_System_Object_System_Object_ *)pDStack_7,(Object *)pDStack_10,value,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                );
+      iVar9 = func_?();
+      if (iVar9 == 0) goto code_?;
+      pDStack_7 = *(Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                     **)(iVar9 + 0xc);
+      iVar9 = func_?();
+      if ((iVar9 == 0) ||
+         (value = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                   *)func_?(0,
+                                     TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__IKogamaSetting
+                                     ,iVar9), pDVar10 = pDStack_7,
+         this == (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                  *)0x0)) goto code_?;
     }
     else {
       this = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
@@ -659,124 +661,115 @@ KogamaSettingTools_GetSubTree(KogamaSettingWrapperBase *obj,MethodInfo *method)
                 );
       if (this == (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                    *)0x0) goto code_?;
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__Add
-                ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)(pKVar8->fields)._.key,
-                 (Object *)pDStack_7,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                );
-      pDStack_7 = this;
+      pDVar10 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                *)(pKVar8->fields)._.key;
+      value = pDStack_7;
     }
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__Add
+              ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)pDVar10,(Object *)value,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+              );
+    pDStack_7 = this;
   }
   if (cRam_? == '\0') {
     func_?();
     func_?();
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-             *)func_?();
-  pDStack_10 = this_00;
+  pDVar10 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+            *)func_?();
+  pDStack_11 = pDVar10;
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
   StyleComplexSelector+PseudoStateData]::
   Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
-            (this_00,
+            (pDVar10,
              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
             );
   KogamaSettingTools_KogamaSettingsToDictionary_1
-            (obj,(Dictionary_2_System_Object_System_Object_ *)this_00,(MethodInfo *)0x0);
-  while( true ) {
-    if ((obj == (KogamaSettingWrapperBase *)0x0) ||
-       (this == (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                 *)0x0)) goto code_?;
-    bVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this,
-                       (Object *)(obj->fields).key,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                      );
-    if (bVar12 != 0) break;
-    pDVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
-             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                       ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                        &pDStack_14,(Dictionary_2_System_UInt32_System_Object_ *)this,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__GetEnumerator__
-                       );
-    uStack_15 = 0;
-    DStack_6._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar13->_dictionary;
-    DStack_6._version = pDVar13->_version;
-    DStack_6._index = pDVar13->_index;
-    DStack_6._current.key = (Object *)(pDVar13->_current).key;
-    DStack_6._16_8_ = *(undefined8 *)&(pDVar13->_current).value;
-    pDStack_16 = &DStack_6;
-    uStack_1 = 1;
-    bVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[System
-            ::Object,System::Object]::
-            Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
-                      (pDStack_16,
-                       MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__MoveNext__
-                      );
-    if (bVar12 == 0) {
-      uStack_1 = 0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                ((Object *)&DStack_6,
-                 (ExceptionArgument__Enum)
-                 MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__Dispose__
-                 ,in_stack_17);
-      uStack_1 = 0xffffffff;
-    }
-    else {
-      if ((Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *
-          )DStack_6._current.value ==
-          (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *
-          )0x0) {
-        this = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                *)0x0;
+            (obj,(Dictionary_2_System_Object_System_Object_ *)pDVar10,(MethodInfo *)0x0);
+  if (obj != (KogamaSettingWrapperBase *)0x0) {
+    while (this != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                    *)0x0) {
+      bVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this,
+                         (Object *)(obj->fields).key,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                        );
+      if (bVar12 != 0) {
+        key = (obj->fields).key;
+        if (pDStack_11 !=
+            (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+             *)0x0) {
+          value_00 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                     Object,UnityEngine::UIElements::TextureId]::
+                     Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                               ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                                pDStack_11,(Object *)(obj->fields).key,
+                                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                               );
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+          Dictionary_2_System_Object_System_Object__set_Item
+                    ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)key,
+                     (Object *)value_00.m_Index,
+                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                    );
+          *unaff_FS_OFFSET = uStack_3;
+          return (Dictionary_2_System_Object_System_Object_ *)pDStack_7;
+        }
+        break;
       }
-      else {
-        bVar18 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                ->_1).naturalAligment;
-        if ((((((Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___Class
-                 *)(DStack_6._current.value)->klass)->_1).naturalAligment < bVar18) ||
-            ((Dictionary_2_System_Object_System_Object___Class *)
-             (((Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___Class
-                *)(DStack_6._current.value)->klass)->_1).typeHierarchy[bVar18 - 1] !=
-             TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) ||
-           (this = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                    *)DStack_6._current.value,
-           (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-            *)DStack_6._current.value ==
-           (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-            *)0x0)) goto code_?;
-      }
-      uStack_1 = 0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                ((Object *)&DStack_6,
-                 (ExceptionArgument__Enum)
-                 MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__Dispose__
-                 ,in_stack_17);
-      uStack_1 = 0xffffffff;
-    }
-  }
-  key = (obj->fields).key;
-  if (pDStack_10 !=
-      (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)0x0
-     ) {
-    value_00 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-               UIElements::TextureId]::
-               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                         ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)pDStack_10
-                          ,(Object *)key,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+      pDVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
+               Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
+                         ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
+                          &pDStack_14,(Dictionary_2_System_UInt32_System_Object_ *)this,
+                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__GetEnumerator__
                          );
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__set_Item
-              ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)key,
-               (Object *)value_00.m_Index,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-              );
-    *unaff_FS_OFFSET = uStack_3;
-    return (Dictionary_2_System_Object_System_Object_ *)pDStack_7;
+      uStack_15 = 0;
+      DStack_6._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar13->_dictionary;
+      DStack_6._version = pDVar13->_version;
+      DStack_6._index = pDVar13->_index;
+      DStack_6._current.key = (Object *)(pDVar13->_current).key;
+      DStack_6._16_8_ = *(undefined8 *)&(pDVar13->_current).value;
+      pDStack_16 = &DStack_6;
+      uStack_1 = 1;
+      bVar12 = mscorlib.dll::System::Collections::Generic::
+              Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Object]::
+              Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
+                        (pDStack_16,
+                         MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__MoveNext__
+                        );
+      if (((bVar12 != 0) &&
+          (this = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                   *)DStack_6._current.value,
+          (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *
+          )DStack_6._current.value !=
+          (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *
+          )0x0)) &&
+         (((((Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___Class
+              *)(DStack_6._current.value)->klass)->_1).naturalAligment <
+           (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+           naturalAligment ||
+          (((Dictionary_2_System_Object_System_Object___Class *)
+            (((Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___Class
+               *)(DStack_6._current.value)->klass)->_1).typeHierarchy
+            [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1
+             ).naturalAligment - 1] !=
+            TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object> ||
+           ((Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+             *)DStack_6._current.value ==
+            (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+             *)0x0)))))) goto code_?;
+      uStack_1 = 0xffffffff;
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                ((Object *)&DStack_6,
+                 (ExceptionArgument__Enum)
+                 MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__Dispose__
+                 ,in_stack_17);
+      uStack_1 = 0xffffffff;
+    }
   }
 code_?:
   func_?();
@@ -784,7 +777,7 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pDStack_14 = (Dictionary_2_System_UInt32_System_Object_ *)*puStack_19;
+  pDStack_14 = (Dictionary_2_System_UInt32_System_Object_ *)*puStack_18;
   func_?();
   return (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
 }
@@ -835,8 +828,8 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff9c;
-  puVar5 = &stack0xffffff9c;
+  puStack_4 = &stack0xffffffa4;
+  puVar5 = &stack0xffffffa4;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
@@ -881,32 +874,38 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
   DStack_6._current.key = (Object *)0x0;
   key = (String *)obj;
   if (obj != (KogamaSettingWrapperBase *)0x0) {
-    bVar7 = (
-            TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
-            ->_1).naturalAligment;
-    if (((obj->klass->_1).naturalAligment < bVar7) ||
-       ((obj->klass->_1).typeHierarchy[bVar7 - 1] !=
+    if (((obj->klass->_1).naturalAligment <
+         (
+         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
+         ->_1).naturalAligment) ||
+       ((obj->klass->_1).typeHierarchy
+        [(
+         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
+         ->_1).naturalAligment - 1] !=
         (Il2CppClass *)
         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
        )) {
-      bVar7 = (
-              TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
-              ->_1).naturalAligment;
-      pKVar8 = (KogamaSettingsCollectionBase__Class *)
+      pKVar7 = (KogamaSettingsCollectionBase__Class *)
                TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
       ;
-      if (((obj->klass->_1).naturalAligment < bVar7) ||
-         ((obj->klass->_1).typeHierarchy[bVar7 - 1] !=
+      if (((obj->klass->_1).naturalAligment <
+           (
+           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
+           ->_1).naturalAligment) ||
+         ((obj->klass->_1).typeHierarchy
+          [(
+           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
+           ->_1).naturalAligment - 1] !=
           (Il2CppClass *)
           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
          )) goto code_?;
       key = (obj->fields).key;
-      iVar9 = (*obj->klass[1]._0.gc_desc)(obj,obj->klass[1]._0.name);
-      if (iVar9 != 0) {
+      iVar8 = (*obj->klass[1]._0.gc_desc)(obj,obj->klass[1]._0.name);
+      if (iVar8 != 0) {
         value = (Object *)
                 func_?(0,
                                 TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__IKogamaSetting
-                                ,iVar9);
+                                ,iVar8);
         if (settingsDictionary != (Dictionary_2_System_Object_System_Object_ *)0x0) {
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
           Dictionary_2_System_Object_System_Object__Add
@@ -919,81 +918,84 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
       }
     }
     else {
-      pDStack_10 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                    *)func_?(
-                                     TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                                     );
+      this = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+              *)func_?(
+                               TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                               );
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
       UIElements::StyleComplexSelector+PseudoStateData]::
       Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
-                (pDStack_10,
+                (this,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                 );
       if (settingsDictionary != (Dictionary_2_System_Object_System_Object_ *)0x0) {
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
         Dictionary_2_System_Object_System_Object__Add
-                  (settingsDictionary,(Object *)(obj->fields).key,(Object *)pDStack_10,
+                  (settingsDictionary,(Object *)(obj->fields).key,(Object *)this,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                   );
-        bVar7 = (
-                TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
-                ->_1).naturalAligment;
-        pKVar8 = 
+        pKVar7 = 
         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
         ;
-        if (((obj->klass->_1).naturalAligment < bVar7) ||
-           ((obj->klass->_1).typeHierarchy[bVar7 - 1] !=
+        if (((obj->klass->_1).naturalAligment <
+             (
+             TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
+             ->_1).naturalAligment) ||
+           ((obj->klass->_1).typeHierarchy
+            [(
+             TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
+             ->_1).naturalAligment - 1] !=
             (Il2CppClass *)
             TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
            )) goto code_?;
         if (obj[1].klass != (KogamaSettingWrapperBase__Class *)0x0) {
-          pDVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
+          pDVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
                    Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
                              ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                              &stack0xffffffa8,
+                              &stack0xffffffb0,
                               (Dictionary_2_System_UInt32_System_Object_ *)obj[1].klass,
                               MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__GetEnumerator__
                              );
-          uStack_12 = 0;
-          DStack_6._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar11->_dictionary;
-          DStack_6._version = pDVar11->_version;
-          DStack_6._index = pDVar11->_index;
-          DStack_6._current.key = (Object *)(pDVar11->_current).key;
-          DStack_6._16_8_ = *(undefined8 *)&(pDVar11->_current).value;
+          uStack_10 = 0;
+          DStack_6._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar9->_dictionary;
+          DStack_6._version = pDVar9->_version;
+          DStack_6._index = pDVar9->_index;
+          DStack_6._current.key = (Object *)(pDVar9->_current).key;
+          DStack_6._16_8_ = *(undefined8 *)&(pDVar9->_current).value;
           uStack_1 = 1;
-          pDStack_13 = &DStack_6;
+          pDStack_11 = &DStack_6;
           while( true ) {
-            bVar14 = mscorlib.dll::System::Collections::Generic::
+            bVar12 = mscorlib.dll::System::Collections::Generic::
                     Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Object]::
                     Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
                               (&DStack_6,
                                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__MoveNext__
                               );
-            if (bVar14 == 0) break;
+            if (bVar12 == 0) break;
             KogamaSettingTools_KogamaSettingsToDictionary_1
                       ((KogamaSettingWrapperBase *)DStack_6._current.value,
-                       (Dictionary_2_System_Object_System_Object_ *)pDStack_10,(MethodInfo *)0x0);
+                       (Dictionary_2_System_Object_System_Object_ *)this,(MethodInfo *)0x0);
           }
           uStack_1 = 0xffffffff;
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                     ((Object *)&DStack_6,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__Dispose__
-                     ,in_stack_15);
+                     ,in_stack_13);
           *unaff_FS_OFFSET = uStack_3;
           return;
         }
       }
     }
   }
-  uVar16 = func_?();
-  func_?(uVar16);
-  pKVar8 = extraout_EDX;
+  uVar14 = func_?();
+  func_?(uVar14);
+  pKVar7 = extraout_EDX;
   obj = (KogamaSettingWrapperBase *)key;
 code_?:
-  func_?(obj,pKVar8);
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  func_?(obj,pKVar7);
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -1054,12 +1056,7 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
     func_?();
 code_?:
     func_?();
-code_?:
-    func_?();
-code_?:
-    func_?();
-    func_?();
-    return;
+    goto code_?;
   }
   if (source == (KogamaSettingWrapperBase *)0x0) goto code_?;
   left = (XNamespace *)
@@ -1072,68 +1069,79 @@ code_?:
   bVar8 = System.Xml.Linq.dll::System::Xml::Linq::XNamespace::XNamespace_op_Inequality
                     (left,right,(MethodInfo *)0x0);
   if (bVar8 == 0) {
-    pKVar9 = source->klass;
-    bVar10 = (
-            TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
-            ->_1).naturalAligment;
-    if (bVar10 <= (pKVar9->_1).naturalAligment) {
-      if ((pKVar9->_1).typeHierarchy[bVar10 - 1] ==
+    if (((
+         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
+         ->_1).naturalAligment <= (source->klass->_1).naturalAligment) &&
+       ((source->klass->_1).typeHierarchy
+        [(
+         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
+         ->_1).naturalAligment - 1] ==
+        (Il2CppClass *)
+        TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
+       )) {
+      if (((
+           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
+           ->_1).naturalAligment <= (target->klass->_1).naturalAligment) &&
+         ((target->klass->_1).typeHierarchy
+          [(
+           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
+           ->_1).naturalAligment - 1] ==
           (Il2CppClass *)
           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
-         ) {
-        bVar10 = (
-                TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
-                ->_1).naturalAligment;
-        if ((bVar10 <= (target->klass->_1).naturalAligment) &&
-           ((target->klass->_1).typeHierarchy[bVar10 - 1] ==
+         )) {
+        piVar9 = (int *)(*target->klass[1]._0.gc_desc)();
+        pKVar10 = source->klass;
+        if (((
+             TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
+             ->_1).naturalAligment <= (pKVar10->_1).naturalAligment) &&
+           ((pKVar10->_1).typeHierarchy
+            [(
+             TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
+             ->_1).naturalAligment - 1] ==
             (Il2CppClass *)
             TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
            )) {
-          piVar11 = (int *)(*target->klass[1]._0.gc_desc)();
-          bVar10 = (
-                  TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
-                  ->_1).naturalAligment;
-          if ((bVar10 <= (source->klass->_1).naturalAligment) &&
-             ((source->klass->_1).typeHierarchy[bVar10 - 1] ==
-              (Il2CppClass *)
-              TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
-             )) {
-            iVar12 = (*source->klass[1]._0.gc_desc)();
-            if ((iVar12 != 0) && (func_?(), piVar11 != (int *)0x0)) {
-              iVar12 = *piVar11;
-              uVar13 = 0;
-              if (*(ushort *)(iVar12 + 0xb6) != 0) {
-                do {
-                  if (*(IKogamaSetting__Class **)(*(int *)(iVar12 + 0x58) + (uint)uVar13 * 8) ==
-                      TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__IKogamaSetting)
-                  {
-                    puVar14 = (undefined4 *)
-                             (iVar12 + 200 +
-                             *(int *)(*(int *)(iVar12 + 0x58) + 4 + (uint)uVar13 * 8) * 8);
-                    goto code_?;
-                  }
-                  uVar13 = uVar13 + 1;
-                } while (uVar13 < *(ushort *)(iVar12 + 0xb6));
-              }
-              puVar14 = (undefined4 *)func_?();
-code_?:
-              (*(code *)*puVar14)();
-              *unaff_FS_OFFSET = uStack_3;
-              return;
+          iVar11 = (*pKVar10[1]._0.gc_desc)();
+          if ((iVar11 != 0) && (func_?(), piVar9 != (int *)0x0)) {
+            iVar11 = *piVar9;
+            uVar12 = 0;
+            if (*(ushort *)(iVar11 + 0xb6) != 0) {
+              do {
+                if (*(IKogamaSetting__Class **)(*(int *)(iVar11 + 0x58) + (uint)uVar12 * 8) ==
+                    TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__IKogamaSetting) {
+                  puVar13 = (undefined4 *)
+                           (iVar11 + (*(int *)(*(int *)(iVar11 + 0x58) + 4 + (uint)uVar12 * 8) + 0x19)
+                                    * 8);
+                  goto code_?;
+                }
+                uVar12 = uVar12 + 1;
+              } while (uVar12 < *(ushort *)(iVar11 + 0xb6));
             }
-            goto code_?;
+            puVar13 = (undefined4 *)func_?();
+code_?:
+            (*(code *)*puVar13)();
+            *unaff_FS_OFFSET = uStack_3;
+            return;
           }
           goto code_?;
         }
         goto code_?;
       }
-      pKVar9 = source->klass;
+code_?:
+      func_?();
+code_?:
+      func_?();
+      func_?();
+      return;
     }
-    bVar10 = (
-            TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
-            ->_1).naturalAligment;
-    if (((pKVar9->_1).naturalAligment < bVar10) ||
-       ((pKVar9->_1).typeHierarchy[bVar10 - 1] !=
+    if (((source->klass->_1).naturalAligment <
+         (
+         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
+         ->_1).naturalAligment) ||
+       ((source->klass->_1).typeHierarchy
+        [(
+         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
+         ->_1).naturalAligment - 1] !=
         (Il2CppClass *)
         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
        )) {
@@ -1146,26 +1154,31 @@ code_?:
       func_?();
     }
     else {
-      bVar10 = (
-              TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
-              ->_1).naturalAligment;
-      if (((target->klass->_1).naturalAligment < bVar10) ||
-         ((target->klass->_1).typeHierarchy[bVar10 - 1] !=
+      if (((target->klass->_1).naturalAligment <
+           (
+           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
+           ->_1).naturalAligment) ||
+         ((target->klass->_1).typeHierarchy
+          [(
+           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
+           ->_1).naturalAligment - 1] !=
           (Il2CppClass *)
           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
          )) goto code_?;
-      bVar10 = (
-              TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
-              ->_1).naturalAligment;
-      if ((bVar10 <= (source->klass->_1).naturalAligment) &&
-         ((source->klass->_1).typeHierarchy[bVar10 - 1] ==
+      if (((
+           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
+           ->_1).naturalAligment <= (source->klass->_1).naturalAligment) &&
+         ((source->klass->_1).typeHierarchy
+          [(
+           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
+           ->_1).naturalAligment - 1] ==
           (Il2CppClass *)
           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
          )) {
         if (source[1].klass != (KogamaSettingWrapperBase__Class *)0x0) {
-          iVar12 = func_?();
-          key = *(Object **)(iVar12 + 0xc);
-          uVar15 = *(undefined8 *)(iVar12 + 0x10);
+          iVar11 = func_?();
+          key = *(Object **)(iVar11 + 0xc);
+          uVar14 = *(undefined8 *)(iVar11 + 0x10);
           uStack_1 = 1;
           while( true ) {
             bVar8 = mscorlib.dll::System::Collections::Generic::
@@ -1181,13 +1194,13 @@ code_?:
                         ((Object *)&stack0xffffffbc,
                          (ExceptionArgument__Enum)
                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__Dispose__
-                         ,(MethodInfo *)in_stack_16.m_Index);
+                         ,(MethodInfo *)in_stack_15.m_Index);
               *unaff_FS_OFFSET = uStack_3;
               return;
             }
-            pKStack_17 = (KogamaSettingWrapperBase *)uVar15;
+            pKStack_16 = (KogamaSettingWrapperBase *)uVar14;
             if (target[1].klass == (KogamaSettingWrapperBase__Class *)0x0) break;
-            in_stack_16 =
+            in_stack_15 =
                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
                  ::UIElements::TextureId]::
                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
@@ -1196,7 +1209,7 @@ code_?:
                             MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__get_Item_System__String_
                            );
             KogamaSettingTools_OverrideValues
-                      ((KogamaSettingWrapperBase *)in_stack_16.m_Index,pKStack_17,
+                      ((KogamaSettingWrapperBase *)in_stack_15.m_Index,pKStack_16,
                        (MethodInfo *)0x0);
           }
         }
@@ -1222,8 +1235,8 @@ code_?:
                   MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTools__OverrideValues_MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingWrapperBase__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingWrapperBase_
                  );
   func_?();
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
   return;
 }
 
@@ -1268,6 +1281,12 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
+  DStack_6._current.value = (Object *)0x0;
+  DStack_6._getEnumeratorRetType = 0;
+  DStack_6._dictionary = (Dictionary_2_System_Object_System_Object_ *)0x0;
+  DStack_6._version = 0;
+  DStack_6._index = 0;
+  DStack_6._current.key = (Object *)0x0;
   if (root == (KogamaSettingWrapperBase *)0x0) {
 code_?:
     *unaff_FS_OFFSET = uStack_3;
@@ -1278,22 +1297,28 @@ code_?:
        *)0x0) {
     (*(callback->fields)._._.invoke_impl)
               ((callback->fields)._._.method_code,root,(callback->fields)._._.method);
-    bVar6 = (
-            TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
-            ->_1).naturalAligment;
-    if (((root->klass->_1).naturalAligment < bVar6) ||
-       ((root->klass->_1).typeHierarchy[bVar6 - 1] !=
+    if (((root->klass->_1).naturalAligment <
+         (
+         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
+         ->_1).naturalAligment) ||
+       ((root->klass->_1).typeHierarchy
+        [(
+         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
+         ->_1).naturalAligment - 1] !=
         (Il2CppClass *)
         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
        )) goto code_?;
-    bVar6 = (
-            TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
-            ->_1).naturalAligment;
     pKVar7 = 
     TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
     ;
-    if (((root->klass->_1).naturalAligment < bVar6) ||
-       ((root->klass->_1).typeHierarchy[bVar6 - 1] !=
+    if (((root->klass->_1).naturalAligment <
+         (
+         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
+         ->_1).naturalAligment) ||
+       ((root->klass->_1).typeHierarchy
+        [(
+         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
+         ->_1).naturalAligment - 1] !=
         (Il2CppClass *)
         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
        )) goto code_?;
@@ -1306,40 +1331,40 @@ code_?:
                           MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__GetEnumerator__
                          );
       uStack_9 = 0;
-      DStack_10._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar8->_dictionary;
-      DStack_10._version = pDVar8->_version;
-      DStack_10._index = pDVar8->_index;
-      DStack_10._current.key = (Object *)(pDVar8->_current).key;
-      DStack_10._16_8_ = *(undefined8 *)&(pDVar8->_current).value;
+      DStack_6._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar8->_dictionary;
+      DStack_6._version = pDVar8->_version;
+      DStack_6._index = pDVar8->_index;
+      DStack_6._current.key = (Object *)(pDVar8->_current).key;
+      DStack_6._16_8_ = *(undefined8 *)&(pDVar8->_current).value;
       uStack_1 = 1;
-      pDStack_11 = &DStack_10;
+      pDStack_10 = &DStack_6;
       while( true ) {
-        bVar12 = mscorlib.dll::System::Collections::Generic::
+        bVar11 = mscorlib.dll::System::Collections::Generic::
                 Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Object]::
                 Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
-                          (&DStack_10,
+                          (&DStack_6,
                            MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__MoveNext__
                           );
-        if (bVar12 == 0) break;
+        if (bVar11 == 0) break;
         KogamaSettingTools_Traverse
-                  ((KogamaSettingWrapperBase *)DStack_10._current.value,callback,(MethodInfo *)0x0);
+                  ((KogamaSettingWrapperBase *)DStack_6._current.value,callback,(MethodInfo *)0x0);
       }
       uStack_1 = 0xffffffff;
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                ((Object *)&DStack_10,
+                ((Object *)&DStack_6,
                  (ExceptionArgument__Enum)
                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__Dispose__
-                 ,in_stack_13);
+                 ,in_stack_12);
       goto code_?;
     }
   }
-  uVar14 = func_?();
-  func_?(uVar14);
+  uVar13 = func_?();
+  func_?(uVar13);
   pKVar7 = extraout_EDX;
 code_?:
   func_?(root,pKVar7);
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 

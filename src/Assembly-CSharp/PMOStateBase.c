@@ -42,13 +42,13 @@ void Assembly-CSharp.dll::PMOStateBase::PMOStateBase_Enter_1
     cRam_? = '\x01';
   }
   if (e != (FSMEntity *)0x0) {
-    bVar1 = (TypeInfo__PlayModeOnlyStateMachine->_1).naturalAligment;
-    if (((e->klass->_1).naturalAligment < bVar1) ||
-       ((e->klass->_1).typeHierarchy[bVar1 - 1] != (Il2CppClass *)TypeInfo__PlayModeOnlyStateMachine
-       )) {
+    if (((e->klass->_1).naturalAligment < (TypeInfo__PlayModeOnlyStateMachine->_1).naturalAligment)
+       || ((e->klass->_1).typeHierarchy
+           [(TypeInfo__PlayModeOnlyStateMachine->_1).naturalAligment - 1] !=
+           (Il2CppClass *)TypeInfo__PlayModeOnlyStateMachine)) {
       func_?(e,TypeInfo__PlayModeOnlyStateMachine);
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
       return;
     }
   }
@@ -68,13 +68,13 @@ void Assembly-CSharp.dll::PMOStateBase::PMOStateBase_Execute_1
     cRam_? = '\x01';
   }
   if (e != (FSMEntity *)0x0) {
-    bVar1 = (TypeInfo__PlayModeOnlyStateMachine->_1).naturalAligment;
-    if (((e->klass->_1).naturalAligment < bVar1) ||
-       ((e->klass->_1).typeHierarchy[bVar1 - 1] != (Il2CppClass *)TypeInfo__PlayModeOnlyStateMachine
-       )) {
+    if (((e->klass->_1).naturalAligment < (TypeInfo__PlayModeOnlyStateMachine->_1).naturalAligment)
+       || ((e->klass->_1).typeHierarchy
+           [(TypeInfo__PlayModeOnlyStateMachine->_1).naturalAligment - 1] !=
+           (Il2CppClass *)TypeInfo__PlayModeOnlyStateMachine)) {
       func_?(e,TypeInfo__PlayModeOnlyStateMachine);
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
       return;
     }
   }
@@ -94,13 +94,13 @@ void Assembly-CSharp.dll::PMOStateBase::PMOStateBase_Exit_1
     cRam_? = '\x01';
   }
   if (e != (FSMEntity *)0x0) {
-    bVar1 = (TypeInfo__PlayModeOnlyStateMachine->_1).naturalAligment;
-    if (((e->klass->_1).naturalAligment < bVar1) ||
-       ((e->klass->_1).typeHierarchy[bVar1 - 1] != (Il2CppClass *)TypeInfo__PlayModeOnlyStateMachine
-       )) {
+    if (((e->klass->_1).naturalAligment < (TypeInfo__PlayModeOnlyStateMachine->_1).naturalAligment)
+       || ((e->klass->_1).typeHierarchy
+           [(TypeInfo__PlayModeOnlyStateMachine->_1).naturalAligment - 1] !=
+           (Il2CppClass *)TypeInfo__PlayModeOnlyStateMachine)) {
       func_?(e,TypeInfo__PlayModeOnlyStateMachine);
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
       return;
     }
   }

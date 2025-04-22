@@ -17,9 +17,10 @@ void Assembly-CSharp.dll::MVGamePassProgressionDataObject::
     func_?();
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)this,(MethodInfo *)0x0);
-  pAVar1 = TypeInfo__GamePassProgressionController->static_fields->OnGamePassesProgressionUpdate;
-  if (pAVar1 != (Action *)0x0) {
-    (*(pAVar1->fields)._._.invoke_impl)();
+  if (TypeInfo__GamePassProgressionController->static_fields->OnGamePassesProgressionUpdate !=
+      (Action *)0x0) {
+    (*(TypeInfo__GamePassProgressionController->static_fields->OnGamePassesProgressionUpdate->fields
+      )._._.invoke_impl)();
   }
   return;
 }
@@ -51,46 +52,48 @@ void Assembly-CSharp.dll::MVGamePassProgressionDataObject::MVGamePassProgression
   (this->fields)._.previewLayerMask = 1;
   MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject__ctor
             ((MVWorldObject *)this,(MethodInfo *)0x0);
-  this_00 = (GameObject *)func_?(TypeInfo__UnityEngine__GameObject);
-  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor_1(this_00,(MethodInfo *)0x0)
-  ;
-  ppGVar1 = &(this->fields)._.gameObject;
-  *ppGVar1 = this_00;
-  func_?(ppGVar1,this_00);
-  if (*ppGVar1 != (GameObject *)0x0) {
+  pGVar1 = (GameObject *)func_?(TypeInfo__UnityEngine__GameObject);
+  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor_1(pGVar1,(MethodInfo *)0x0);
+  (this->fields)._.gameObject = pGVar1;
+  func_?(&(this->fields)._.gameObject,pGVar1);
+  pGVar1 = (this->fields)._.gameObject;
+  if (pGVar1 != (GameObject *)0x0) {
     iVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_GetInstanceID
-                      ((Object_1 *)*ppGVar1,(MethodInfo *)0x0);
+                      ((Object_1 *)pGVar1,(MethodInfo *)0x0);
     (this->fields)._.goId = iVar2;
-    if (*ppGVar1 != (GameObject *)0x0) {
+    pGVar1 = (this->fields)._.gameObject;
+    if (pGVar1 != (GameObject *)0x0) {
       pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                         (*ppGVar1,(MethodInfo *)0x0);
-      ppTVar4 = &(this->fields)._.transform;
-      *ppTVar4 = pTVar3;
+                         (pGVar1,(MethodInfo *)0x0);
+      (this->fields)._.transform = pTVar3;
       func_?();
-      pMVar5 = MVWorldObjectClient::MVWorldObjectClient_GetTransformData
-                          ((MVWorldObjectClient_TransformData *)&stack0xffffffa8,
-                           (MVWorldObjectClient *)this,data,(MethodInfo *)0x0);
-      fVar6 = (pMVar5->rotation).w;
-      uVar7 = (pMVar5->rotation).z;
-      uVar8 = (pMVar5->rotation).x;
-      uVar9 = (pMVar5->rotation).y;
-      value.y = (float)uVar9;
-      value.x = (float)uVar8;
-      if (*ppTVar4 != (Transform *)0x0) {
+      pMVar4 = MVWorldObjectClient::MVWorldObjectClient_GetTransformData
+                         ((MVWorldObjectClient_TransformData *)&stack0xffffffa8,
+                          (MVWorldObjectClient *)this,data,(MethodInfo *)0x0);
+      pTVar3 = (this->fields)._.transform;
+      fVar5 = (pMVar4->rotation).w;
+      uVar6 = (pMVar4->rotation).z;
+      uVar7 = (pMVar4->rotation).x;
+      uVar8 = (pMVar4->rotation).y;
+      value.y = (float)uVar8;
+      value.x = (float)uVar7;
+      if (pTVar3 != (Transform *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                  (*ppTVar4,pMVar5->position,(MethodInfo *)0x0);
-        if (*ppTVar4 != (Transform *)0x0) {
-          value.z = (float)uVar7;
-          value.w = fVar6;
+                  (pTVar3,pMVar4->position,(MethodInfo *)0x0);
+        pTVar3 = (this->fields)._.transform;
+        if (pTVar3 != (Transform *)0x0) {
+          value.z = (float)uVar6;
+          value.w = fVar5;
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
-                    (*ppTVar4,value,(MethodInfo *)0x0);
-          if (*ppGVar1 != (GameObject *)0x0) {
-            pCVar10 = (Collider *)
+                    (pTVar3,value,(MethodInfo *)0x0);
+          pGVar1 = (this->fields)._.gameObject;
+          if (pGVar1 != (GameObject *)0x0) {
+            pCVar9 = (Collider *)
                       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
-                                (*ppGVar1,
+                                (pGVar1,
                                  UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::Collider>__
                                 );
-            (this->fields)._.collider = pCVar10;
+            (this->fields)._.collider = pCVar9;
             func_?();
             MVWorldObjectClient::MVWorldObjectClient_CreateWorldObject
                       ((MVWorldObjectClient *)this,data,worldObjects,(MethodInfo *)0x0);
@@ -101,8 +104,8 @@ void Assembly-CSharp.dll::MVGamePassProgressionDataObject::MVGamePassProgression
     }
   }
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

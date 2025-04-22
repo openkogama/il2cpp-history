@@ -56,7 +56,7 @@ void Assembly-CSharp.dll::AntiHack::TextureIntegrityChecker::TextureIntegrityChe
     (this_00->fields).renderTextureDesc._flags = iVar7;
     (this_00->fields).renderTextureDesc._memoryless_k__BackingField = iVar8;
     puVar13 = &UNK_?;
-    this_01 = (RenderTexture *)func_?();
+    pRVar14 = (RenderTexture *)func_?();
     desc._height_k__BackingField = iVar11;
     desc._width_k__BackingField = iVar10;
     desc._msaaSamples_k__BackingField = iVar12;
@@ -71,19 +71,21 @@ void Assembly-CSharp.dll::AntiHack::TextureIntegrityChecker::TextureIntegrityChe
     desc._flags = iVar7;
     desc._memoryless_k__BackingField = iVar8;
     UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture__ctor_1
-              (this_01,desc,(MethodInfo *)0x0);
-    ppRVar14 = &(this_00->fields).renderTexture;
-    *ppRVar14 = this_01;
+              (pRVar14,desc,(MethodInfo *)0x0);
+    (this_00->fields).renderTexture = pRVar14;
     func_?();
-    if (*ppRVar14 != (RenderTexture *)0x0) {
+    pRVar14 = (this_00->fields).renderTexture;
+    if (pRVar14 != (RenderTexture *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_wrapMode
-                ((Texture *)*ppRVar14,TextureWrapMode__Enum_Clamp,(MethodInfo *)0x0);
-      if (*ppRVar14 != (RenderTexture *)0x0) {
+                ((Texture *)pRVar14,TextureWrapMode__Enum_Clamp,(MethodInfo *)0x0);
+      pRVar14 = (this_00->fields).renderTexture;
+      if (pRVar14 != (RenderTexture *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_filterMode
-                  ((Texture *)*ppRVar14,FilterMode__Enum_Point,(MethodInfo *)0x0);
-        if (*ppRVar14 != (RenderTexture *)0x0) {
+                  ((Texture *)pRVar14,FilterMode__Enum_Point,(MethodInfo *)0x0);
+        pRVar14 = (this_00->fields).renderTexture;
+        if (pRVar14 != (RenderTexture *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_anisoLevel
-                    ((Texture *)*ppRVar14,1,(MethodInfo *)0x0);
+                    ((Texture *)pRVar14,1,(MethodInfo *)0x0);
           MaterialPlaneRenderer::MaterialPlaneRenderer_GenerateNewHashes(this_00,(MethodInfo *)0x0);
           return;
         }

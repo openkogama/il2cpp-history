@@ -30,11 +30,9 @@ bool Assembly-CSharp.dll::XPLevelLimits::XPLevelLimits_Validate
                (XPLevelLimits *this,int32_t currentXp,MethodInfo *method)
 
 {
-  iVar1 = (this->fields)._PrevXP_k__BackingField;
-  iVar2 = (this->fields)._NextXP_k__BackingField;
-  if (iVar1 < iVar2) {
-    if (currentXp < iVar1) goto code_?;
-    if (iVar2 <= currentXp) {
+  if ((this->fields)._PrevXP_k__BackingField < (this->fields)._NextXP_k__BackingField) {
+    if (currentXp < (this->fields)._PrevXP_k__BackingField) goto code_?;
+    if ((this->fields)._NextXP_k__BackingField <= currentXp) {
       return 0;
     }
     if (-1 < currentXp) {
@@ -42,32 +40,32 @@ bool Assembly-CSharp.dll::XPLevelLimits::XPLevelLimits_Validate
     }
   }
   else {
-    uVar3 = func_?(&TypeInfo__System__Exception);
-    pEVar4 = (Exception *)func_?(uVar3);
-    pMVar5 = (MethodInfo *)0x0;
-    pSVar6 = (String *)func_?(&StringLiteral_prevXp___nextXp);
-    mscorlib.dll::System::Exception::Exception__ctor_1(pEVar4,pSVar6,pMVar5);
+    uVar1 = func_?(&TypeInfo__System__Exception);
+    pEVar2 = (Exception *)func_?(uVar1);
+    pMVar3 = (MethodInfo *)0x0;
+    pSVar4 = (String *)func_?(&StringLiteral_prevXp___nextXp);
+    mscorlib.dll::System::Exception::Exception__ctor_1(pEVar2,pSVar4,pMVar3);
     func_?(&MethodInfo__XPLevelLimits__Validate_int_);
-    func_?(pEVar4);
+    func_?(pEVar2);
   }
-  uVar3 = func_?(&TypeInfo__System__Exception);
-  pEVar4 = (Exception *)func_?(uVar3);
-  pMVar5 = (MethodInfo *)0x0;
-  pSVar6 = (String *)func_?(&StringLiteral_currentXp__0);
-  mscorlib.dll::System::Exception::Exception__ctor_1(pEVar4,pSVar6,pMVar5);
+  uVar1 = func_?(&TypeInfo__System__Exception);
+  pEVar2 = (Exception *)func_?(uVar1);
+  pMVar3 = (MethodInfo *)0x0;
+  pSVar4 = (String *)func_?(&StringLiteral_currentXp__0);
+  mscorlib.dll::System::Exception::Exception__ctor_1(pEVar2,pSVar4,pMVar3);
   func_?(&MethodInfo__XPLevelLimits__Validate_int_);
-  func_?(pEVar4);
+  func_?(pEVar2);
 code_?:
-  uVar3 = func_?(&TypeInfo__System__Exception);
-  pEVar4 = (Exception *)func_?(uVar3);
-  pMVar5 = (MethodInfo *)0x0;
-  pSVar6 = (String *)func_?(&StringLiteral_currentXp___prevXp);
-  mscorlib.dll::System::Exception::Exception__ctor_1(pEVar4,pSVar6,pMVar5);
+  uVar1 = func_?(&TypeInfo__System__Exception);
+  pEVar2 = (Exception *)func_?(uVar1);
+  pMVar3 = (MethodInfo *)0x0;
+  pSVar4 = (String *)func_?(&StringLiteral_currentXp___prevXp);
+  mscorlib.dll::System::Exception::Exception__ctor_1(pEVar2,pSVar4,pMVar3);
   func_?(&MethodInfo__XPLevelLimits__Validate_int_);
-  func_?(pEVar4);
-  pcVar7 = (code *)swi(3);
-  bVar8 = (*pcVar7)();
-  return bVar8;
+  func_?(pEVar2);
+  pcVar5 = (code *)swi(3);
+  bVar6 = (*pcVar5)();
+  return bVar6;
 }
 
 

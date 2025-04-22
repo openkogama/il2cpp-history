@@ -11,8 +11,8 @@ void Assembly-CSharp.dll::FirstFrameUpdateActorReady::
     cRam_? = '\x01';
   }
   if (((this->fields).localPlayerIsReady != 0) && ((this->fields).firstFrameCallbackDone == 0)) {
-    pAVar1 = (this->fields).callbacks;
-    if (pAVar1 != (Action *)0x0) {
+    if ((this->fields).callbacks != (Action *)0x0) {
+      pAVar1 = (this->fields).callbacks;
       (*(pAVar1->fields)._._.invoke_impl)
                 ((pAVar1->fields)._._.method_code,(pAVar1->fields)._._.method);
     }
@@ -40,7 +40,7 @@ void Assembly-CSharp.dll::FirstFrameUpdateActorReady::FirstFrameUpdateActorReady
     cRam_? = '\x01';
   }
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EBX);
   if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UpdateController);
   }
@@ -51,57 +51,53 @@ void Assembly-CSharp.dll::FirstFrameUpdateActorReady::FirstFrameUpdateActorReady
     func_?();
     cRam_? = '\x01';
   }
+  object = TypeInfo__System__Action;
   pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
-  if ((pMVar1 == (MVGameControllerBase *)0x0) ||
-     (pMVar2 = (pMVar1->fields).game, pMVar2 == (MVNetworkGame *)0x0)) {
-code_?:
-    pDStack3 = (Delegate *)func_?();
-    pAStack4 = unaff_ESI;
+  if (((pMVar1 == (MVGameControllerBase *)0x0) ||
+      (pMVar2 = (pMVar1->fields).game, pMVar2 == (MVNetworkGame *)0x0)) ||
+     (pMVar3 = (pMVar2->fields).playerContainer, pMVar3 == (MVPlayerContainer *)0x0)) {
+    uVar4 = func_?();
   }
   else {
-    pMVar5 = (pMVar2->fields).playerContainer;
-    if (pMVar5 == (MVPlayerContainer *)0x0) goto code_?;
-    a = (pMVar5->fields).OnLocalPlayerReady;
+    pAVar5 = (pMVar3->fields).OnLocalPlayerReady;
     this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?();
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
-              (this_00,(Object *)this,MethodInfo__FirstFrameUpdateActorReady__OnLocalPlayerReady__,
-               (MethodInfo *)0x0);
-    pDStack3 =
-         mscorlib.dll::System::Delegate::Delegate_Combine
-                   ((Delegate *)a,(Delegate *)this_00,(MethodInfo *)0x0);
-    _pDStack00000018 = CONCAT44(TypeInfo__System__Action,pDStack3);
-    if (pDStack3 == (Delegate *)0x0) {
-      pDStack3 = (Delegate *)&(this_00->fields)._._.extra_arg;
-      pAStack4 = (Action__Class *)0x0;
-      *(void **)pDStack3 = (void *)0x0;
+              (this_00,(Object *)object,MethodInfo__FirstFrameUpdateActorReady__OnLocalPlayerReady__
+               ,(MethodInfo *)0x0);
+    pAVar5 = (Action *)
+             mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pAVar5,(Delegate *)this_00,(MethodInfo *)0x0);
+    uVar4 = CONCAT44(TypeInfo__System__Action,pAVar5);
+    if (pAVar5 == (Action *)0x0) {
+      (pMVar3->fields).OnLocalPlayerReady = (Action *)0x0;
+      ppAStack6 = &(pMVar3->fields).OnLocalPlayerReady;
+      pAStack7 = (Action *)0x0;
       func_?();
       return;
     }
-    pDVar6 = (Delegate *)0x0;
-    if ((Action__Class *)pDStack3->klass == TypeInfo__System__Action) {
-      pDVar6 = pDStack3;
+    pAVar8 = (Action *)0x0;
+    if (pAVar5->klass == TypeInfo__System__Action) {
+      pAVar8 = pAVar5;
     }
-    if (pDVar6 == (Delegate *)0x0) goto code_?;
-    ppvVar7 = &(this_00->fields)._._.extra_arg;
-    *ppvVar7 = pDVar6;
-    pDVar6 = (Delegate *)0x0;
-    if ((Action__Class *)pDStack3->klass == TypeInfo__System__Action) {
-      pDVar6 = pDStack3;
-    }
-    pAStack4 = TypeInfo__System__Action;
-    if (pDVar6 != (Delegate *)0x0) {
-      pDStack3 = (Delegate *)ppvVar7;
-      pAStack4 = (Action__Class *)pDVar6;
-      func_?();
-      return;
+    if (pAVar8 != (Action *)0x0) {
+      (pMVar3->fields).OnLocalPlayerReady = pAVar8;
+      uVar4 = CONCAT44(TypeInfo__System__Action,pAVar5);
+      pAStack7 = (Action *)0x0;
+      if (pAVar5->klass == TypeInfo__System__Action) {
+        pAStack7 = pAVar5;
+      }
+      if (pAStack7 != (Action *)0x0) {
+        ppAStack6 = &(pMVar3->fields).OnLocalPlayerReady;
+        func_?();
+        return;
+      }
     }
   }
-  _pDStack00000018 = func_?();
-code_?:
+  _ppAStack00000024 = uVar4;
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

@@ -11,60 +11,63 @@ void Assembly-CSharp.dll::GameCoinLogic::GameCoinLogic_CalculatePosAroundPivot
   auVar3._4_8_ = 0;
   auVar3._0_4_ = spacingAngle * _UNK_?;
   pQVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
-                     ((Quaternion *)&puStack_5,(Vector3)(auVar3 << 0x20),(MethodInfo *)0x0);
+                      ((Quaternion *)&puStack_5,(Vector3)(auVar3 << 0x20),(MethodInfo *)0x0);
   point.y = fVar2;
   point.x = fVar1;
   point.z = pivot.z - (pivot.z + distanceFromPivot);
-  UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-            ((Vector3 *)&puStack_5,*pQVar4,point,(MethodInfo *)0x0);
-  pGVar6 = (this->fields).displayObject;
-  if (pGVar6 != (GameCoinDisplayObject *)0x0) {
-    fVar2 = 0.0;
-    puVar7 = &UNK_?;
-    pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                        ((Component *)pGVar6,(MethodInfo *)0x0);
-    if (pTVar8 != (Transform *)0x0) {
-      value_00.y = (float)pGVar6;
-      value_00.x = (float)puVar7;
-      value_00.z = fVar2;
+  pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                      ((Vector3 *)&puStack_5,*pQVar4,point,(MethodInfo *)0x0);
+  uVar7 = pVVar6->x;
+  uVar8 = pVVar6->y;
+  fVar2 = pVVar6->z;
+  fVar9 = pivot.x + (float)uVar7;
+  fVar1 = pivot.y + (float)uVar8;
+  pGVar10 = (this->fields).displayObject;
+  if (pGVar10 != (GameCoinDisplayObject *)0x0) {
+    pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                        ((Component *)pGVar10,(MethodInfo *)0x0);
+    if (pTVar11 != (Transform *)0x0) {
+      value_00.y = fVar1;
+      value_00.x = fVar9;
+      value_00.z = pivot.z + fVar2;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                (pTVar8,value_00,(MethodInfo *)0x0);
-      pGVar6 = (this->fields).displayObject;
-      if (pGVar6 != (GameCoinDisplayObject *)0x0) {
-        pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                            ((Component *)pGVar6,(MethodInfo *)0x0);
+                (pTVar11,value_00,(MethodInfo *)0x0);
+      pGVar10 = (this->fields).displayObject;
+      if (pGVar10 != (GameCoinDisplayObject *)0x0) {
+        pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                            ((Component *)pGVar10,(MethodInfo *)0x0);
         this_00 = (this->fields).displayObjectRoot;
         if (this_00 != (GameObject *)0x0) {
           this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                               (this_00,(MethodInfo *)0x0);
           if (this_01 != (Transform *)0x0) {
-            pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                                ((Vector3 *)&stack0xffffffd8,this_01,(MethodInfo *)0x0);
-            uVar10 = pVVar9->x;
-            uVar11 = pVVar9->y;
-            if (pTVar8 != (Transform *)0x0) {
-              worldPosition.y = pivot.y + (float)uVar11;
-              worldPosition.x = pivot.x + (float)uVar10;
-              worldPosition.z = pivot.z + pVVar9->z;
+            pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                                ((Vector3 *)&puStack_5,this_01,(MethodInfo *)0x0);
+            uVar12 = pVVar6->x;
+            uVar13 = pVVar6->y;
+            if (pTVar11 != (Transform *)0x0) {
+              worldPosition.y = pivot.y + (float)uVar13;
+              worldPosition.x = pivot.x + (float)uVar12;
+              worldPosition.z = pivot.z + pVVar6->z;
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_LookAt_2
-                        (pTVar8,worldPosition,(MethodInfo *)0x0);
-              pGVar6 = (this->fields).displayObject;
-              if (pGVar6 != (GameCoinDisplayObject *)0x0) {
-                pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                          Component_get_transform((Component *)pGVar6,(MethodInfo *)0x0);
-                if (pTVar8 != (Transform *)0x0) {
-                  pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                            Transform_get_position((Vector3 *)&puStack_5,pTVar8,(MethodInfo *)0x0)
-                  ;
-                  uVar12 = pVVar9->x;
-                  uVar13 = pVVar9->y;
-                  uVar14 = (this->fields).displayObjectOffset.x;
-                  uVar15 = (this->fields).displayObjectOffset.y;
-                  value.y = (float)uVar15 + (float)uVar13;
-                  value.x = (float)uVar14 + (float)uVar12;
-                  value.z = (this->fields).displayObjectOffset.z + pVVar9->z;
+                        (pTVar11,worldPosition,(MethodInfo *)0x0);
+              pGVar10 = (this->fields).displayObject;
+              if (pGVar10 != (GameCoinDisplayObject *)0x0) {
+                pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                          Component_get_transform((Component *)pGVar10,(MethodInfo *)0x0);
+                if (pTVar11 != (Transform *)0x0) {
+                  pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                            Transform_get_position
+                                      ((Vector3 *)&stack0xffffffd8,pTVar11,(MethodInfo *)0x0);
+                  uVar14 = pVVar6->x;
+                  uVar15 = pVVar6->y;
+                  uVar16 = (this->fields).displayObjectOffset.x;
+                  uVar17 = (this->fields).displayObjectOffset.y;
+                  value.y = (float)uVar17 + (float)uVar15;
+                  value.x = (float)uVar16 + (float)uVar14;
+                  value.z = (this->fields).displayObjectOffset.z + pVVar6->z;
                   UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                            (pTVar8,value,(MethodInfo *)0x0);
+                            (pTVar11,value,(MethodInfo *)0x0);
                   return;
                 }
               }
@@ -75,8 +78,8 @@ void Assembly-CSharp.dll::GameCoinLogic::GameCoinLogic_CalculatePosAroundPivot
     }
   }
   func_?();
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 
@@ -109,22 +112,22 @@ void Assembly-CSharp.dll::GameCoinLogic::GameCoinLogic_CreateDisplayObject
                        ((Object *)pGVar2,
                         GameCoinDisplayObject_MethodInfo__UnityEngine__Object__Instantiate<GameCoinDisplayObject>_GameCoinDisplayObject_
                        );
-    ppGVar3 = &(this->fields).displayObject;
-    *ppGVar3 = pGVar2;
-    func_?(ppGVar3,pGVar2);
-    if (*ppGVar3 != (GameCoinDisplayObject *)0x0) {
-      pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)*ppGVar3,(MethodInfo *)0x0);
-      ppGVar5 = &(this->fields).displayGO;
-      *ppGVar5 = pGVar4;
-      func_?(ppGVar5,pGVar4);
-      if (*ppGVar5 != (GameObject *)0x0) {
+    (this->fields).displayObject = pGVar2;
+    func_?(&(this->fields).displayObject,pGVar2);
+    pGVar2 = (this->fields).displayObject;
+    if (pGVar2 != (GameCoinDisplayObject *)0x0) {
+      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)pGVar2,(MethodInfo *)0x0);
+      (this->fields).displayGO = pGVar3;
+      func_?(&(this->fields).displayGO,pGVar3);
+      pGVar3 = (this->fields).displayGO;
+      if (pGVar3 != (GameObject *)0x0) {
         this_00 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                            (*ppGVar5,(MethodInfo *)0x0);
-        pGVar4 = (this->fields).displayObjectRoot;
-        if (pGVar4 != (GameObject *)0x0) {
+                            (pGVar3,(MethodInfo *)0x0);
+        pGVar3 = (this->fields).displayObjectRoot;
+        if (pGVar3 != (GameObject *)0x0) {
           value = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                            (pGVar4,(MethodInfo *)0x0);
+                            (pGVar3,(MethodInfo *)0x0);
           if (this_00 != (Transform *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
                       (this_00,value,(MethodInfo *)0x0);
@@ -135,8 +138,8 @@ void Assembly-CSharp.dll::GameCoinLogic::GameCoinLogic_CreateDisplayObject
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -367,59 +370,51 @@ void Assembly-CSharp.dll::GameCoinLogic::GameCoinLogic_OnDataUpdate
               (this_00,(this->fields).purchaseAmount - iVar2,(MethodInfo *)0x0);
     iVar2 = (this->fields).purchaseAmount;
     if (0 < iVar2) {
-      ppGVar6 = &(this->fields).displayObject;
-      pGVar7 = *ppGVar6;
+      pGVar6 = (this->fields).displayObject;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+        func_?(TypeInfo__UnityEngine__Object);
       }
       bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                        ((Object_1 *)pGVar7,(Object_1 *)0x0,(MethodInfo *)0x0);
+                        ((Object_1 *)pGVar6,(Object_1 *)0x0,(MethodInfo *)0x0);
       if (bVar1 != 0) {
         if (cRam_? == '\0') {
-          method = (MethodInfo *)
-                   &
-                   GameCoinDisplayObject_MethodInfo__UnityEngine__Object__Instantiate<GameCoinDisplayObject>_GameCoinDisplayObject_
-          ;
-          ownerID = (int32_t)&UNK_?;
-          func_?();
-          ownerID = (int32_t)&TypeInfo__UnityEngine__Object;
-          data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
-          func_?();
+          func_?(&
+                          GameCoinDisplayObject_MethodInfo__UnityEngine__Object__Instantiate<GameCoinDisplayObject>_GameCoinDisplayObject_
+                         );
+          func_?(&TypeInfo__UnityEngine__Object);
           cRam_? = '\x01';
         }
         if (cRam_? == '\0') {
-          method = (MethodInfo *)&TypeInfo__PrefabPool;
-          ownerID = (int32_t)&UNK_?;
-          func_?();
+          func_?(&TypeInfo__PrefabPool);
           cRam_? = '\x01';
         }
-        pPVar8 = TypeInfo__PrefabPool->static_fields->instance;
-        if (pPVar8 == (PrefabPool *)0x0) goto code_?;
-        pGVar7 = (pPVar8->fields).gameCoinDisplayPrefab;
+        pPVar7 = TypeInfo__PrefabPool->static_fields->instance;
+        if (pPVar7 == (PrefabPool *)0x0) goto code_?;
+        pGVar6 = (pPVar7->fields).gameCoinDisplayPrefab;
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        pGVar7 = (GameCoinDisplayObject *)
-                  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                            ((Object *)pGVar7,
-                             GameCoinDisplayObject_MethodInfo__UnityEngine__Object__Instantiate<GameCoinDisplayObject>_GameCoinDisplayObject_
-                            );
-        *ppGVar6 = pGVar7;
+        pGVar6 = (GameCoinDisplayObject *)
+                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                           ((Object *)pGVar6,
+                            GameCoinDisplayObject_MethodInfo__UnityEngine__Object__Instantiate<GameCoinDisplayObject>_GameCoinDisplayObject_
+                           );
+        (this->fields).displayObject = pGVar6;
         func_?();
-        if (*ppGVar6 == (GameCoinDisplayObject *)0x0) goto code_?;
-        pGVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                            ((Component *)*ppGVar6,(MethodInfo *)0x0);
-        ppGVar10 = &(this->fields).displayGO;
-        *ppGVar10 = pGVar9;
+        pGVar6 = (this->fields).displayObject;
+        if (pGVar6 == (GameCoinDisplayObject *)0x0) goto code_?;
+        pGVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)pGVar6,(MethodInfo *)0x0);
+        (this->fields).displayGO = pGVar8;
         func_?();
-        pGVar9 = *ppGVar10;
-        if (pGVar9 == (GameObject *)0x0) goto code_?;
+        pGVar8 = (this->fields).displayGO;
+        if (pGVar8 == (GameObject *)0x0) goto code_?;
         this_02 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                            (pGVar9,(MethodInfo *)0x0);
-        pGVar9 = (this->fields).displayObjectRoot;
-        if (pGVar9 == (GameObject *)0x0) goto code_?;
+                            (pGVar8,(MethodInfo *)0x0);
+        pGVar8 = (this->fields).displayObjectRoot;
+        if (pGVar8 == (GameObject *)0x0) goto code_?;
         value = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                          (pGVar9,(MethodInfo *)0x0);
+                          (pGVar8,(MethodInfo *)0x0);
         if (this_02 == (Transform *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
                   (this_02,value,(MethodInfo *)0x0);
@@ -454,58 +449,54 @@ void Assembly-CSharp.dll::GameCoinLogic::GameCoinLogic_OnDataUpdate
       MVNetworkGame_OperationRequests_RemoveWorldObjectDataPartial_1
                 (this_04,ownerID,(Dictionary_2_System_Object_System_Object_ *)this_03,
                  (MethodInfo *)0x0);
-      pGVar7 = (this->fields).displayObject;
+      pGVar6 = (this->fields).displayObject;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        method = (MethodInfo *)&UNK_?;
-        func_?();
+        func_?(TypeInfo__UnityEngine__Object);
       }
-      method = (MethodInfo *)0x0;
-      data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
-      ownerID = (int32_t)pGVar7;
       bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                        ((Object_1 *)pGVar7,(Object_1 *)0x0,(MethodInfo *)0x0);
+                        ((Object_1 *)pGVar6,(Object_1 *)0x0,(MethodInfo *)0x0);
       if (bVar1 != 0) {
         if (cRam_? == '\0') {
-          func_?();
+          func_?(&TypeInfo__UnityEngine__Object);
           cRam_? = '\x01';
         }
-        pGVar7 = (this->fields).displayObject;
+        pGVar6 = (this->fields).displayObject;
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
         bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                          ((Object_1 *)pGVar7,(Object_1 *)0x0,(MethodInfo *)0x0);
+                          ((Object_1 *)pGVar6,(Object_1 *)0x0,(MethodInfo *)0x0);
         if (bVar1 != 0) {
-          pGVar7 = (this->fields).displayObject;
-          if (pGVar7 == (GameCoinDisplayObject *)0x0) goto code_?;
-          GameCoinDisplayObject::GameCoinDisplayObject_Destroy(pGVar7,(MethodInfo *)0x0);
-          pGVar9 = (this->fields).displayGO;
+          pGVar6 = (this->fields).displayObject;
+          if (pGVar6 == (GameCoinDisplayObject *)0x0) goto code_?;
+          GameCoinDisplayObject::GameCoinDisplayObject_Destroy(pGVar6,(MethodInfo *)0x0);
+          pGVar8 = (this->fields).displayGO;
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__UnityEngine__Object);
           }
           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                    ((Object_1 *)pGVar9,(MethodInfo *)0x0);
+                    ((Object_1 *)pGVar8,(MethodInfo *)0x0);
         }
       }
     }
   }
-  pGVar7 = (this->fields).displayObject;
+  pGVar6 = (this->fields).displayObject;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                    ((Object_1 *)pGVar7,(Object_1 *)0x0,(MethodInfo *)0x0);
+                    ((Object_1 *)pGVar6,(Object_1 *)0x0,(MethodInfo *)0x0);
   if (bVar1 != 0) {
-    pGVar7 = (this->fields).displayObject;
-    if (pGVar7 == (GameCoinDisplayObject *)0x0) {
+    pGVar6 = (this->fields).displayObject;
+    if (pGVar6 == (GameCoinDisplayObject *)0x0) {
 code_?:
       func_?();
-      pcVar11 = (code *)swi(3);
-      (*pcVar11)();
+      pcVar9 = (code *)swi(3);
+      (*pcVar9)();
       return;
     }
     GameCoinDisplayObject::GameCoinDisplayObject_SetAmount
-              (pGVar7,(this->fields).purchaseAmount,(MethodInfo *)0x0);
+              (pGVar6,(this->fields).purchaseAmount,(MethodInfo *)0x0);
   }
   return;
 }
@@ -594,59 +585,51 @@ void Assembly-CSharp.dll::GameCoinLogic::GameCoinLogic_SetAmount
               (this_00,(this->fields).purchaseAmount - iVar2,(MethodInfo *)0x0);
     iVar2 = (this->fields).purchaseAmount;
     if (0 < iVar2) {
-      ppGVar6 = &(this->fields).displayObject;
-      pGVar7 = *ppGVar6;
+      pGVar6 = (this->fields).displayObject;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+        func_?(TypeInfo__UnityEngine__Object);
       }
       bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                        ((Object_1 *)pGVar7,(Object_1 *)0x0,(MethodInfo *)0x0);
+                        ((Object_1 *)pGVar6,(Object_1 *)0x0,(MethodInfo *)0x0);
       if (bVar1 != 0) {
         if (cRam_? == '\0') {
-          method = (MethodInfo *)
-                   &
-                   GameCoinDisplayObject_MethodInfo__UnityEngine__Object__Instantiate<GameCoinDisplayObject>_GameCoinDisplayObject_
-          ;
-          ownerID = (int32_t)&UNK_?;
-          func_?();
-          ownerID = (int32_t)&TypeInfo__UnityEngine__Object;
-          data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
-          func_?();
+          func_?(&
+                          GameCoinDisplayObject_MethodInfo__UnityEngine__Object__Instantiate<GameCoinDisplayObject>_GameCoinDisplayObject_
+                         );
+          func_?(&TypeInfo__UnityEngine__Object);
           cRam_? = '\x01';
         }
         if (cRam_? == '\0') {
-          method = (MethodInfo *)&TypeInfo__PrefabPool;
-          ownerID = (int32_t)&UNK_?;
-          func_?();
+          func_?(&TypeInfo__PrefabPool);
           cRam_? = '\x01';
         }
-        pPVar8 = TypeInfo__PrefabPool->static_fields->instance;
-        if (pPVar8 == (PrefabPool *)0x0) goto code_?;
-        pGVar7 = (pPVar8->fields).gameCoinDisplayPrefab;
+        pPVar7 = TypeInfo__PrefabPool->static_fields->instance;
+        if (pPVar7 == (PrefabPool *)0x0) goto code_?;
+        pGVar6 = (pPVar7->fields).gameCoinDisplayPrefab;
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        pGVar7 = (GameCoinDisplayObject *)
-                  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                            ((Object *)pGVar7,
-                             GameCoinDisplayObject_MethodInfo__UnityEngine__Object__Instantiate<GameCoinDisplayObject>_GameCoinDisplayObject_
-                            );
-        *ppGVar6 = pGVar7;
+        pGVar6 = (GameCoinDisplayObject *)
+                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                           ((Object *)pGVar6,
+                            GameCoinDisplayObject_MethodInfo__UnityEngine__Object__Instantiate<GameCoinDisplayObject>_GameCoinDisplayObject_
+                           );
+        (this->fields).displayObject = pGVar6;
         func_?();
-        if (*ppGVar6 == (GameCoinDisplayObject *)0x0) goto code_?;
-        pGVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                            ((Component *)*ppGVar6,(MethodInfo *)0x0);
-        ppGVar10 = &(this->fields).displayGO;
-        *ppGVar10 = pGVar9;
+        pGVar6 = (this->fields).displayObject;
+        if (pGVar6 == (GameCoinDisplayObject *)0x0) goto code_?;
+        pGVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)pGVar6,(MethodInfo *)0x0);
+        (this->fields).displayGO = pGVar8;
         func_?();
-        pGVar9 = *ppGVar10;
-        if (pGVar9 == (GameObject *)0x0) goto code_?;
+        pGVar8 = (this->fields).displayGO;
+        if (pGVar8 == (GameObject *)0x0) goto code_?;
         this_02 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                            (pGVar9,(MethodInfo *)0x0);
-        pGVar9 = (this->fields).displayObjectRoot;
-        if (pGVar9 == (GameObject *)0x0) goto code_?;
+                            (pGVar8,(MethodInfo *)0x0);
+        pGVar8 = (this->fields).displayObjectRoot;
+        if (pGVar8 == (GameObject *)0x0) goto code_?;
         value = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                          (pGVar9,(MethodInfo *)0x0);
+                          (pGVar8,(MethodInfo *)0x0);
         if (this_02 == (Transform *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
                   (this_02,value,(MethodInfo *)0x0);
@@ -681,58 +664,54 @@ void Assembly-CSharp.dll::GameCoinLogic::GameCoinLogic_SetAmount
       MVNetworkGame_OperationRequests_RemoveWorldObjectDataPartial_1
                 (this_04,ownerID,(Dictionary_2_System_Object_System_Object_ *)this_03,
                  (MethodInfo *)0x0);
-      pGVar7 = (this->fields).displayObject;
+      pGVar6 = (this->fields).displayObject;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        method = (MethodInfo *)&UNK_?;
-        func_?();
+        func_?(TypeInfo__UnityEngine__Object);
       }
-      method = (MethodInfo *)0x0;
-      data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
-      ownerID = (int32_t)pGVar7;
       bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                        ((Object_1 *)pGVar7,(Object_1 *)0x0,(MethodInfo *)0x0);
+                        ((Object_1 *)pGVar6,(Object_1 *)0x0,(MethodInfo *)0x0);
       if (bVar1 != 0) {
         if (cRam_? == '\0') {
-          func_?();
+          func_?(&TypeInfo__UnityEngine__Object);
           cRam_? = '\x01';
         }
-        pGVar7 = (this->fields).displayObject;
+        pGVar6 = (this->fields).displayObject;
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
         bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                          ((Object_1 *)pGVar7,(Object_1 *)0x0,(MethodInfo *)0x0);
+                          ((Object_1 *)pGVar6,(Object_1 *)0x0,(MethodInfo *)0x0);
         if (bVar1 != 0) {
-          pGVar7 = (this->fields).displayObject;
-          if (pGVar7 == (GameCoinDisplayObject *)0x0) goto code_?;
-          GameCoinDisplayObject::GameCoinDisplayObject_Destroy(pGVar7,(MethodInfo *)0x0);
-          pGVar9 = (this->fields).displayGO;
+          pGVar6 = (this->fields).displayObject;
+          if (pGVar6 == (GameCoinDisplayObject *)0x0) goto code_?;
+          GameCoinDisplayObject::GameCoinDisplayObject_Destroy(pGVar6,(MethodInfo *)0x0);
+          pGVar8 = (this->fields).displayGO;
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__UnityEngine__Object);
           }
           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                    ((Object_1 *)pGVar9,(MethodInfo *)0x0);
+                    ((Object_1 *)pGVar8,(MethodInfo *)0x0);
         }
       }
     }
   }
-  pGVar7 = (this->fields).displayObject;
+  pGVar6 = (this->fields).displayObject;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
   bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                    ((Object_1 *)pGVar7,(Object_1 *)0x0,(MethodInfo *)0x0);
+                    ((Object_1 *)pGVar6,(Object_1 *)0x0,(MethodInfo *)0x0);
   if (bVar1 != 0) {
-    pGVar7 = (this->fields).displayObject;
-    if (pGVar7 == (GameCoinDisplayObject *)0x0) {
+    pGVar6 = (this->fields).displayObject;
+    if (pGVar6 == (GameCoinDisplayObject *)0x0) {
 code_?:
       func_?();
-      pcVar11 = (code *)swi(3);
-      (*pcVar11)();
+      pcVar9 = (code *)swi(3);
+      (*pcVar9)();
       return;
     }
     GameCoinDisplayObject::GameCoinDisplayObject_SetAmount
-              (pGVar7,(this->fields).purchaseAmount,(MethodInfo *)0x0);
+              (pGVar6,(this->fields).purchaseAmount,(MethodInfo *)0x0);
   }
   return;
 }
@@ -771,10 +750,9 @@ void Assembly-CSharp.dll::GameCoinLogic::GameCoinLogic__ctor
   (this->fields).hasUseWhenFree = 1;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  ppGVar1 = &(this->fields).displayObjectRoot;
   (this->fields).hasUseWhenFree = hasUseButtonWhenFree;
-  *ppGVar1 = root;
-  func_?(ppGVar1,root);
+  (this->fields).displayObjectRoot = root;
+  func_?(&(this->fields).displayObjectRoot,root);
   return;
 }
 
@@ -797,12 +775,11 @@ void Assembly-CSharp.dll::GameCoinLogic::GameCoinLogic__ctor_1
   uVar2 = (this->fields).displayObjectOffset.y;
   (this->fields).hasUseWhenFree = hasUseButtonWhenFree;
   fVar3 = (this->fields).displayObjectOffset.z;
-  ppGVar4 = &(this->fields).displayObjectRoot;
   (this->fields).displayObjectOffset.x = displayObjectOffset.x + (float)uVar1;
   (this->fields).displayObjectOffset.y = displayObjectOffset.y + (float)uVar2;
   (this->fields).displayObjectOffset.z = displayObjectOffset.z + fVar3;
-  *ppGVar4 = root;
-  func_?(ppGVar4,root);
+  (this->fields).displayObjectRoot = root;
+  func_?(&(this->fields).displayObjectRoot,root);
   return;
 }
 

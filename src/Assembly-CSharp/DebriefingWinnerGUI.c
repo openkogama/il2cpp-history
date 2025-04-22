@@ -20,6 +20,7 @@ void Assembly-CSharp.dll::DebriefingWinnerGUI::DebriefingWinnerGUI_ActivateScore
     if ((pLVar1->fields)._size <= index) {
       return;
     }
+    pLVar1 = (this->fields).winConImages;
     if (pLVar1 == (List_1_DebriefingWinnerGUI_WinningConditionData_ *)0x0) break;
     pIVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Linq::Expressions::
              Interpreter::InstructionList+DebugView+InstructionView]::
@@ -117,6 +118,7 @@ void Assembly-CSharp.dll::DebriefingWinnerGUI::DebriefingWinnerGUI_SetAdditional
     if ((pLVar2->fields)._size <= index) {
       return;
     }
+    pLVar2 = (this->fields).winConImages;
     if (pLVar2 == (List_1_DebriefingWinnerGUI_WinningConditionData_ *)0x0) break;
     pIVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Linq::Expressions::
              Interpreter::InstructionList+DebugView+InstructionView]::

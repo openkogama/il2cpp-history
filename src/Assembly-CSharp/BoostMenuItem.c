@@ -214,100 +214,100 @@ void Assembly-CSharp.dll::BoostMenuItem::BoostMenuItem_Initialize
     func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  ppBVar1 = &(this->fields).boost;
-  *ppBVar1 = boost;
-  func_?(ppBVar1,boost);
-  pTVar2 = (this->fields).boostDescription;
+  (this->fields).boost = boost;
+  func_?(&(this->fields).boost,boost);
+  pTVar1 = (this->fields).boostDescription;
   if (boost != (Boost *)0x0) {
-    pSVar3 = (boost->fields).description;
+    pSVar2 = (boost->fields).description;
     arg0 = Boost::Boost_get_Value(boost,(MethodInfo *)0x0);
-    pSVar3 = mscorlib.dll::System::String::String_Format(pSVar3,arg0,(MethodInfo *)0x0);
-    if (pTVar2 != (Text *)0x0) {
-      (*(code *)(pTVar2->klass->vtable).set_text.method)
-                (pTVar2,pSVar3,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+    pSVar2 = mscorlib.dll::System::String::String_Format(pSVar2,arg0,(MethodInfo *)0x0);
+    if (pTVar1 != (Text *)0x0) {
+      (*(code *)(pTVar1->klass->vtable).set_text.method)
+                (pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
       this_00 = (this->fields).boostImageController;
       if (this_00 != (BoostImageController *)0x0) {
         original = BoostImageController::BoostImageController_GetBoostVisualization
                              (this_00,(boost->fields)._Type_k__BackingField,(MethodInfo *)0x0);
         this_01 = (this->fields).boostActiveIcon;
         if (this_01 != (RectTransform *)0x0) {
-          pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+          pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                              ((Component *)this_01,(MethodInfo *)0x0);
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__UnityEngine__Object);
           }
           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
-                    ((Object *)original,pTVar4,0,
+                    ((Object *)original,pTVar3,0,
                      UnityEngine__UI__Image_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::UI::Image>_UnityEngine__UI__Image__UnityEngine__Transform__bool_
                     );
           BoostMenuItem_SetBoostUIUnlocked(this,boostUnlocked,(MethodInfo *)0x0);
-          pMVar5 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-          if (pMVar5 != (MVLocalPlayer *)0x0) {
-            this_02 = (pMVar5->fields).boostController;
+          pMVar4 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
+          if (pMVar4 != (MVLocalPlayer *)0x0) {
+            this_02 = (pMVar4->fields).boostController;
             type = (boost->fields)._Type_k__BackingField;
-            this_05 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+            this_04 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
             UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
             NavMesh_OnNavMeshPreUpdate__ctor
-                      (this_05,(Object *)this,MethodInfo__BoostMenuItem__BoostChanged__,
+                      (this_04,(Object *)this,MethodInfo__BoostMenuItem__BoostChanged__,
                        (MethodInfo *)0x0);
             if (this_02 != (BoostController *)0x0) {
               BoostController::BoostController_SubscribeToBoostChanged
-                        (this_02,type,(Action *)this_05,(MethodInfo *)0x0);
-              this_03 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
-                        (this->fields).boosterList;
+                        (this_02,type,(Action *)this_04,(MethodInfo *)0x0);
+              pLVar5 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+                       (this->fields).boosterList;
               index = 0;
-              while (this_03 !=
-                     (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0) {
-                if ((this_03->fields)._size <= index) {
+              while (pLVar5 != (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_
+                                *)0x0) {
+                if ((pLVar5->fields)._size <= index) {
 code_?:
                   if (boostUnlocked != 0) {
-                    this_04 = (this->fields).boostActiveIconCanvasGroup;
-                    if (this_04 == (CanvasGroup *)0x0) break;
+                    this_03 = (this->fields).boostActiveIconCanvasGroup;
+                    if (this_03 == (CanvasGroup *)0x0) break;
                     UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-                              (this_04,1.0,(MethodInfo *)0x0);
+                              (this_03,1.0,(MethodInfo *)0x0);
                   }
-                  pTVar2 = (this->fields).priceText;
+                  pTVar1 = (this->fields).priceText;
                   BoostMenuItem_GetBoostPrice(this,(MethodInfo *)0x0);
-                  pSVar3 = mscorlib.dll::System::Int32::Int32_ToString_1
+                  pSVar2 = mscorlib.dll::System::Int32::Int32_ToString_1
                                      ((Int32 *)&stack0xfffffff8,StringLiteral_N0,(MethodInfo *)0x0);
-                  if ((pSVar3 != (String *)0x0) &&
-                     (pSVar3 = mscorlib.dll::System::String::String_Replace_1
-                                         (pSVar3,::StringLiteral__,::StringLiteral__,
-                                          (MethodInfo *)0x0), pTVar2 != (Text *)0x0)) {
-                    (*(code *)(pTVar2->klass->vtable).set_text.method)
-                              (pTVar2,pSVar3,
-                               (pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+                  if ((pSVar2 != (String *)0x0) &&
+                     (pSVar2 = mscorlib.dll::System::String::String_Replace_1
+                                         (pSVar2,::StringLiteral__,::StringLiteral__,
+                                          (MethodInfo *)0x0), pTVar1 != (Text *)0x0)) {
+                    (*(code *)(pTVar1->klass->vtable).set_text.method)
+                              (pTVar1,pSVar2,
+                               (pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
                     return;
                   }
                   break;
                 }
-                if (this_03 ==
-                    (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
-                break;
+                pLVar5 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+                         (this->fields).boosterList;
+                if (pLVar5 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *
+                              )0x0) break;
                 XVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
                         XmlSchemaObjectTable+XmlSchemaObjectEntry]::
                         List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
-                                  (this_03,index,
+                                  (pLVar5,index,
                                    MethodInfo__System__Collections__Generic__List<BoostMenuItem::BoosterDef>__get_Item_int_
                                   );
-                this_03 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
-                          (this->fields).boosterList;
+                pLVar5 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+                         (this->fields).boosterList;
                 if (XVar6.qname == (XmlQualifiedName *)(boost->fields)._Type_k__BackingField) {
-                  if (this_03 !=
-                      (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0) {
+                  if (pLVar5 != (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_
+                                 *)0x0) {
                     XVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
                             XmlSchemaObjectTable+XmlSchemaObjectEntry]::
                             List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
-                                      (this_03,index,
+                                      (pLVar5,index,
                                        MethodInfo__System__Collections__Generic__List<BoostMenuItem::BoosterDef>__get_Item_int_
                                       );
-                    pTVar4 = (Transform *)(this->fields).boostTypeImageParent;
+                    pTVar3 = (Transform *)(this->fields).boostTypeImageParent;
                     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
                       boostUnlocked = (bool)TypeInfo__UnityEngine__Object;
                       func_?();
                     }
                     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
-                              ((Object *)XVar6.xso,pTVar4,0,
+                              ((Object *)XVar6.xso,pTVar3,0,
                                UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject__UnityEngine__Transform__bool_
                               );
                     goto code_?;
@@ -418,18 +418,17 @@ void Assembly-CSharp.dll::BoostMenuItem::BoostMenuItem_OnPurchaseBoostPressed
                         BoostPurchasePopup_MethodInfo__UnityEngine__Object__Instantiate<BoostPurchasePopup>_BoostPurchasePopup_
                        );
     if (pOVar2 != (Object *)0x0) {
-      pOVar4 = pOVar2 + 1;
-      pOVar4->klass = pOVar3;
-      func_?(pOVar4,pOVar3);
-      pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+      pOVar2[1].klass = pOVar3;
+      func_?(pOVar2 + 1,pOVar3);
+      pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)this,(MethodInfo *)0x0);
-      pEVar6 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+      pEVar5 = (ExecuteEvents_EventFunction_1_System_Object_ *)
                func_?(
                               TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                               );
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)pEVar6,pOVar2,
+                ((UnityAction_2_System_Object_System_Object_ *)pEVar5,pOVar2,
                  MethodInfo__BoostMenuItem____c__DisplayClass29_1___OnPurchaseBoostPressed_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
@@ -437,17 +436,17 @@ void Assembly-CSharp.dll::BoostMenuItem::BoostMenuItem_OnPurchaseBoostPressed
         func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
       }
       UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (pGVar5,(BaseEventData *)0x0,pEVar6,
+                (pGVar4,(BaseEventData *)0x0,pEVar5,
                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                 );
       price = BoostMenuItem_GetBoostPrice(this,(MethodInfo *)0x0);
-      pBVar7 = (this->fields).boost;
       (this->fields).price = price;
-      pOVar3 = pOVar4->klass;
-      if (pBVar7 != (Boost *)0x0) {
-        boostName = (pBVar7->fields)._EditTitle_k__BackingField;
+      pOVar3 = pOVar2[1].klass;
+      if ((this->fields).boost != (Boost *)0x0) {
+        pBVar6 = (this->fields).boost;
+        boostName = (pBVar6->fields)._EditTitle_k__BackingField;
         this_00 = (NavMesh_OnNavMeshPreUpdate *)
-                  func_?((pBVar7->fields)._BoostKey_k__BackingField);
+                  func_?((pBVar6->fields)._BoostKey_k__BackingField);
         UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
         NavMesh_OnNavMeshPreUpdate__ctor
                   (this_00,(Object *)this,MethodInfo__BoostMenuItem__OnPurchaseSuccessful__,
@@ -466,27 +465,27 @@ void Assembly-CSharp.dll::BoostMenuItem::BoostMenuItem_OnPurchaseBoostPressed
     pOVar2 = (Object *)func_?();
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
               (pOVar2,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
-    pGVar5 = (this->fields).boostTouristInformation;
+    pGVar4 = (this->fields).boostTouristInformation;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
     pOVar3 = (Object__Class *)
              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                       ((Object *)pGVar5,
+                       ((Object *)pGVar4,
                         UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
                        );
     if (pOVar2 != (Object *)0x0) {
       pOVar2[1].klass = pOVar3;
       func_?(pOVar2 + 1,pOVar3);
-      pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+      pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)this,(MethodInfo *)0x0);
-      pEVar6 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+      pEVar5 = (ExecuteEvents_EventFunction_1_System_Object_ *)
                func_?(
                               TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                               );
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)pEVar6,pOVar2,
+                ((UnityAction_2_System_Object_System_Object_ *)pEVar5,pOVar2,
                  MethodInfo__BoostMenuItem____c__DisplayClass29_0___OnPurchaseBoostPressed_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
@@ -494,15 +493,15 @@ void Assembly-CSharp.dll::BoostMenuItem::BoostMenuItem_OnPurchaseBoostPressed
         func_?();
       }
       UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (pGVar5,(BaseEventData *)0x0,pEVar6,
+                (pGVar4,(BaseEventData *)0x0,pEVar5,
                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                 );
       return;
     }
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -724,7 +723,7 @@ void Assembly-CSharp.dll::BoostMenuItem::BoostMenuItem_SetBoostUIUnlocked
                              ((Component *)pBVar5,(MethodInfo *)0x0);
           if (pGVar4 != (GameObject *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                      (pGVar4,(boostUnlocked ^ 1) & ((byte)((uint)pBVar5 >> 0x18) | 3) & bVar3,
+                      (pGVar4,((byte)((uint)pBVar5 >> 0x18) | 0x13) & (boostUnlocked ^ 1) & bVar3,
                        (MethodInfo *)0x0);
             pBVar5 = (this->fields).getWithAdDisabled;
             if ((pBVar5 != (Button *)0x0) &&
@@ -824,7 +823,8 @@ void Assembly-CSharp.dll::BoostMenuItem::BoostMenuItem__OnUnlockBoostWithAdClick
         do {
           if (pIVar3->interfaceOffsets[uVar4].interfaceType ==
               (Il2CppClass *)TypeInfo__IBoostAdController) {
-            ppMVar6 = &(&x->klass->vtable)[pIVar3->interfaceOffsets[uVar4].offset].TryShowAd.method;
+            ppMVar6 = &(&x->klass->vtable)[x->klass->interfaceOffsets[uVar4].offset].TryShowAd.
+                       method;
             goto code_?;
           }
           uVar4 = uVar4 + 1;

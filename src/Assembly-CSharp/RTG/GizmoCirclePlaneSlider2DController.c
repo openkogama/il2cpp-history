@@ -36,8 +36,8 @@ Vector2 Assembly-CSharp.dll::RTG::GizmoCirclePlaneSlider2DController::
     VVar6 = CircleShape2D::CircleShape2D_get_Right(this_00,(MethodInfo *)0x0);
     fVar7 = VVar6.y;
 code_?:
-    VStack_4.y = (float)puStack_1 + fVar7 * (this_00->fields)._radius;
-    VStack_4.x = (float)extentPt + VStack_4.x * (this_00->fields)._radius;
+    VStack_4.y = fVar7 * (this_00->fields)._radius + (float)puStack_1;
+    VStack_4.x = VStack_4.x * (this_00->fields)._radius + (float)extentPt;
     return VStack_4;
   case Shape2DExtentPoint__Enum_Bottom:
     extentPt = (Shape2DExtentPoint__Enum)(this_00->fields)._center.x;
@@ -67,17 +67,24 @@ void Assembly-CSharp.dll::RTG::GizmoCirclePlaneSlider2DController::
 {
   pGVar1 = (this->fields)._._data;
   if (pGVar1 != (GizmoPlaneSlider2DControllerData *)0x0) {
-    pGVar2 = (pGVar1->fields).Slider;
     this_00 = (pGVar1->fields).Circle;
-    if ((pGVar2 != (GizmoPlaneSlider2D *)0x0) &&
-       (((pGVar3 = (pGVar2->fields)._sharedSettings, pGVar3 != (GizmoPlaneSlider2DSettings *)0x0 ||
-         (pGVar3 = (pGVar2->fields)._settings, pGVar3 != (GizmoPlaneSlider2DSettings *)0x0)) &&
-        (this_00 != (CircleShape2D *)0x0)))) {
-      SegmentShape2D::SegmentShape2D_set_RaycastEps
-                ((SegmentShape2D *)this_00,(pGVar3->fields)._areaHoverEps,(MethodInfo *)0x0);
-      return;
+    pGVar2 = (((this->fields)._._data)->fields).Slider;
+    if (pGVar2 != (GizmoPlaneSlider2D *)0x0) {
+      if ((pGVar2->fields)._sharedSettings == (GizmoPlaneSlider2DSettings *)0x0) {
+        pGVar3 = (pGVar2->fields)._settings;
+        if (pGVar3 == (GizmoPlaneSlider2DSettings *)0x0) goto code_?;
+      }
+      else {
+        pGVar3 = (pGVar2->fields)._sharedSettings;
+      }
+      if (this_00 != (CircleShape2D *)0x0) {
+        SegmentShape2D::SegmentShape2D_set_RaycastEps
+                  ((SegmentShape2D *)this_00,(pGVar3->fields)._areaHoverEps,(MethodInfo *)0x0);
+        return;
+      }
     }
   }
+code_?:
   uVar4 = func_?(&stack0xfffffff0);
   func_?(uVar4);
   pcVar5 = (code *)swi(3);

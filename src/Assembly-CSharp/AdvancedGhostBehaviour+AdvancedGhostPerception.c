@@ -18,35 +18,23 @@ bool Assembly-CSharp.dll::AdvancedGhostBehaviour+AdvancedGhostPerception::
      pAVar3 != (AdvancedGhostBehaviour_NetworkedValues *)0x0)) {
     uVar4 = (pAVar3->fields).nextPosition.x;
     uVar5 = (pAVar3->fields).nextPosition.y;
-    fVar6 = (pAVar3->fields).nextPosition.z - targetPosition.z;
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__System__Math);
-      cRam_? = '\x01';
-    }
-    if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__Math);
-    }
+    targetPosition.x = (float)uVar4 - targetPosition.x;
+    targetPosition.y = (float)uVar5 - targetPosition.y;
+    targetPosition.z = (pAVar3->fields).nextPosition.z - targetPosition.z;
+    fVar6 = (float10)func_?(&targetPosition,0);
     pAVar2 = (this->fields).ghostBehaviour;
+    targetPosition.z = (float)fVar6;
     if (pAVar2 != (AdvancedGhostBehaviour *)0x0) {
-      dVar7 = (double)(((float)uVar5 - targetPosition.y) * ((float)uVar5 - targetPosition.y) +
-                       ((float)uVar4 - targetPosition.x) * ((float)uVar4 - targetPosition.x) +
-                      fVar6 * fVar6);
-      if (dVar7 < 0.0) {
-        func_?();
-      }
-      else {
-        dVar7 = SQRT(dVar7);
-      }
-      pfVar8 = &(pAVar2->fields).perceptionRadius;
-      if (*pfVar8 <= (float)dVar7 && (float)dVar7 != *pfVar8) {
+      pfVar7 = &(pAVar2->fields).perceptionRadius;
+      if (*pfVar7 <= targetPosition.z && targetPosition.z != *pfVar7) {
         return 0;
       }
       return 1;
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  bVar1 = (*pcVar9)();
+  pcVar8 = (code *)swi(3);
+  bVar1 = (*pcVar8)();
   return bVar1;
 }
 
@@ -60,32 +48,20 @@ float Assembly-CSharp.dll::AdvancedGhostBehaviour+AdvancedGhostPerception::
 
 {
   pAVar1 = (this->fields).ghostBehaviour;
-  if ((pAVar1 == (AdvancedGhostBehaviour *)0x0) ||
+  if ((pAVar1 != (AdvancedGhostBehaviour *)0x0) &&
      (pAVar2 = (pAVar1->fields).networkedValues,
-     pAVar2 == (AdvancedGhostBehaviour_NetworkedValues *)0x0)) {
-    func_?();
-    pcVar3 = (code *)swi(3);
-    fVar4 = (float10)(*pcVar3)();
-    return (float)fVar4;
-  }
-  uVar5 = (pAVar2->fields).nextPosition.x;
-  uVar6 = (pAVar2->fields).nextPosition.y;
-  fVar7 = (pAVar2->fields).nextPosition.z - targetPosition.z;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Math);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__Math);
-  }
-  dVar8 = (double)(((float)uVar6 - targetPosition.y) * ((float)uVar6 - targetPosition.y) +
-                   ((float)uVar5 - targetPosition.x) * ((float)uVar5 - targetPosition.x) +
-                  fVar7 * fVar7);
-  if (0.0 <= dVar8) {
-    return (float)SQRT(dVar8);
+     pAVar2 != (AdvancedGhostBehaviour_NetworkedValues *)0x0)) {
+    uVar3 = (pAVar2->fields).nextPosition.x;
+    uVar4 = (pAVar2->fields).nextPosition.y;
+    fStack_5 = (pAVar2->fields).nextPosition.z - targetPosition.z;
+    uStack_6 = CONCAT44((float)uVar4 - targetPosition.y,(float)uVar3 - targetPosition.x);
+    fVar7 = (float10)func_?(&uStack_6,0);
+    return (float)fVar7;
   }
   func_?();
-  return (float)dVar8;
+  pcVar8 = (code *)swi(3);
+  fVar7 = (float10)(*pcVar8)();
+  return (float)fVar7;
 }
 
 
@@ -103,32 +79,19 @@ bool Assembly-CSharp.dll::AdvancedGhostBehaviour+AdvancedGhostPerception::
      pAVar2 != (AdvancedGhostBehaviour_NetworkedValues *)0x0)) {
     uVar3 = (pAVar2->fields).nextPosition.x;
     uVar4 = (pAVar2->fields).nextPosition.y;
-    fVar5 = (pAVar2->fields).nextPosition.z - targetPosition.z;
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__System__Math);
-      cRam_? = '\x01';
-    }
-    if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__Math);
-    }
+    fStack_5 = (pAVar2->fields).nextPosition.z - targetPosition.z;
+    uStack_6 = CONCAT44((float)uVar4 - targetPosition.y,(float)uVar3 - targetPosition.x);
+    fVar7 = (float10)func_?(&uStack_6,0);
     pAVar1 = (this->fields).ghostBehaviour;
     if (pAVar1 != (AdvancedGhostBehaviour *)0x0) {
-      dVar6 = (double)(((float)uVar4 - targetPosition.y) * ((float)uVar4 - targetPosition.y) +
-                       ((float)uVar3 - targetPosition.x) * ((float)uVar3 - targetPosition.x) +
-                      fVar5 * fVar5);
-      if (0.0 <= dVar6) {
-        pfVar7 = &(pAVar1->fields).perceptionRadius;
-        return (float)SQRT(dVar6) < *pfVar7 || (float)SQRT(dVar6) == *pfVar7;
-      }
-      func_?();
-      pfVar7 = &(pAVar1->fields).perceptionRadius;
-      return (float)dVar6 < *pfVar7 || (float)dVar6 == *pfVar7;
+      pfVar8 = &(pAVar1->fields).perceptionRadius;
+      return (float)fVar7 < *pfVar8 || (float)fVar7 == *pfVar8;
     }
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  bVar9 = (*pcVar8)();
-  return bVar9;
+  pcVar9 = (code *)swi(3);
+  bVar10 = (*pcVar9)();
+  return bVar10;
 }
 
 
@@ -145,35 +108,21 @@ bool Assembly-CSharp.dll::AdvancedGhostBehaviour+AdvancedGhostPerception::
      (this_00 = (pAVar1->fields).transformParent, this_00 != (Transform *)0x0)) {
     pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
                        (&VStack_3,this_00,(MethodInfo *)0x0);
-    VStack_3.x = pVVar2->x;
-    VStack_3.y = pVVar2->y;
-    VStack_3.z = pVVar2->z;
-    fVar4 = VStack_3.x - targetPosition.x;
-    fVar5 = VStack_3.y - targetPosition.y;
-    fVar6 = VStack_3.z - targetPosition.z;
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__System__Math);
-      cRam_? = '\x01';
-    }
-    if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__Math);
-    }
+    uVar4 = pVVar2->x;
+    uVar5 = pVVar2->y;
+    VStack_3.z = pVVar2->z - targetPosition.z;
+    uStack_6 = CONCAT44((float)uVar5 - targetPosition.y,(float)uVar4 - targetPosition.x);
+    fStack_7 = VStack_3.z;
+    fVar8 = (float10)func_?(&uStack_6,0);
     pAVar1 = (this->fields).ghostBehaviour;
     if (pAVar1 != (AdvancedGhostBehaviour *)0x0) {
-      dVar7 = (double)(fVar5 * fVar5 + fVar4 * fVar4 + fVar6 * fVar6);
-      if (dVar7 < 0.0) {
-        func_?();
-      }
-      else {
-        dVar7 = SQRT(dVar7);
-      }
-      return (float)dVar7 <= (pAVar1->fields).perceptionRadius + (pAVar1->fields).radius;
+      return (float)fVar8 <= (pAVar1->fields).perceptionRadius + (pAVar1->fields).radius;
     }
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  bVar9 = (*pcVar8)();
-  return bVar9;
+  pcVar9 = (code *)swi(3);
+  bVar10 = (*pcVar9)();
+  return bVar10;
 }
 
 
@@ -187,17 +136,17 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour+AdvancedGhostPerception::
   pDVar1 = (this->fields).syncedInterval;
   if (pDVar1 != (DeterministicSyncedInterval *)0x0) {
     iVar2 = WaitForTicks::WaitForTicks_GetEnvironmentTick(0,(MethodInfo *)0x0);
-    iVar3 = (pDVar1->fields).nextTickThres;
-    if (iVar3 <= iVar2) {
-      iVar4 = (pDVar1->fields).range;
-      (pDVar1->fields).nextTickThres = (iVar4 - (iVar2 - iVar3) % iVar4) + iVar2;
+    if ((pDVar1->fields).nextTickThres <= iVar2) {
+      (pDVar1->fields).nextTickThres =
+           ((pDVar1->fields).range -
+           (iVar2 - (pDVar1->fields).nextTickThres) % (pDVar1->fields).range) + iVar2;
     }
     return;
   }
-  uVar5 = func_?(&stack0xfffffff0);
-  func_?(uVar5);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  uVar3 = func_?(&stack0xfffffff0);
+  func_?(uVar3);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -221,8 +170,8 @@ bool Assembly-CSharp.dll::AdvancedGhostBehaviour+AdvancedGhostPerception::
                        (this_00,(this->fields).currentWoID,(MethodInfo *)0x0);
     *worldObjectClient = pMVar1;
     func_?(worldObjectClient,pMVar1);
-    pMStack_2 = *worldObjectClient;
-    if (pMStack_2 != (MVWorldObjectClient *)0x0) {
+    if (*worldObjectClient != (MVWorldObjectClient *)0x0) {
+      pMStack_2 = *worldObjectClient;
       pIStack_3 = (pMStack_2->klass->vtable).DrawTransformGizmo.methodPtr;
       pVVar4 = (Vector3 *)
                (*(code *)(pMStack_2->klass->vtable).GetTargetPosition.method)(&pMStack_2);
@@ -448,20 +397,22 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour+AdvancedGhostPerception::
   if (this_00 != (DeterministicSyncedInterval *)0x0) {
     bVar1 = DeterministicSyncedInterval::DeterministicSyncedInterval_Update
                       (this_00,(MethodInfo *)0x0);
-    if (bVar1 != 0) {
-      pAVar2 = (this->fields).ghostBehaviour;
-      if (((pAVar2 == (AdvancedGhostBehaviour *)0x0) ||
-          (pAVar3 = (pAVar2->fields).networkedValues,
-          pAVar3 == (AdvancedGhostBehaviour_NetworkedValues *)0x0)) ||
-         (this_01 = (this->fields).perception, this_01 == (OptimizedPerception *)0x0))
-      goto code_?;
-      OptimizedPerception::OptimizedPerception_Update
-                (this_01,(pAVar3->fields).nextPosition,(pAVar2->fields).perceptionRadius,
-                 (MethodInfo *)0x0);
+    if (bVar1 == 0) {
+      return;
     }
-    return;
+    pAVar2 = (this->fields).ghostBehaviour;
+    if ((pAVar2 != (AdvancedGhostBehaviour *)0x0) &&
+       (pAVar3 = (pAVar2->fields).networkedValues,
+       pAVar3 != (AdvancedGhostBehaviour_NetworkedValues *)0x0)) {
+      this_01 = (this->fields).perception;
+      if (this_01 != (OptimizedPerception *)0x0) {
+        OptimizedPerception::OptimizedPerception_Update
+                  (this_01,(pAVar3->fields).nextPosition,
+                   (((this->fields).ghostBehaviour)->fields).perceptionRadius,(MethodInfo *)0x0);
+        return;
+      }
+    }
   }
-code_?:
   func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
@@ -487,21 +438,18 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour+AdvancedGhostPerception::
   (this->fields).perceptionIntervalMilliseconds = 1000;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-  ppAVar1 = &(this->fields).ghostBehaviour;
-  *ppAVar1 = ghostBehaviour;
-  func_?(ppAVar1,ghostBehaviour);
+  (this->fields).ghostBehaviour = ghostBehaviour;
+  func_?(&(this->fields).ghostBehaviour,ghostBehaviour);
   this_00 = (OptimizedPerception *)func_?(TypeInfo__OptimizedPerception);
   OptimizedPerception::OptimizedPerception__ctor(this_00,(MethodInfo *)0x0);
-  ppOVar2 = &(this->fields).perception;
-  *ppOVar2 = this_00;
-  func_?(ppOVar2,this_00);
+  (this->fields).perception = this_00;
+  func_?(&(this->fields).perception,this_00);
   range = (this->fields).perceptionIntervalMilliseconds;
   this_01 = (DeterministicSyncedInterval *)func_?(TypeInfo__DeterministicSyncedInterval);
   DeterministicSyncedInterval::DeterministicSyncedInterval__ctor
             (this_01,woID,range,(MethodInfo *)0x0);
-  ppDVar3 = &(this->fields).syncedInterval;
-  *ppDVar3 = this_01;
-  func_?(ppDVar3,this_01);
+  (this->fields).syncedInterval = this_01;
+  func_?(&(this->fields).syncedInterval,this_01);
   return;
 }
 

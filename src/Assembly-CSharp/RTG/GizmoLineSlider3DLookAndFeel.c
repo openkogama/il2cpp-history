@@ -39,9 +39,8 @@ void Assembly-CSharp.dll::RTG::GizmoLineSlider3DLookAndFeel::GizmoLineSlider3DLo
   (value->fields)._borderColor.a = fVar5;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
-  ppGVar6 = &(this->fields)._rotationArcLookAndFeel;
-  *ppGVar6 = value;
-  func_?(ppGVar6,value);
+  (this->fields)._rotationArcLookAndFeel = value;
+  func_?(&(this->fields)._rotationArcLookAndFeel,value);
   pCVar1 = RTSystemValues::RTSystemValues_get_XAxisColor(&CStack_2,(MethodInfo *)0x0);
   fVar3 = pCVar1->g;
   fVar4 = pCVar1->b;
@@ -62,7 +61,7 @@ void Assembly-CSharp.dll::RTG::GizmoLineSlider3DLookAndFeel::GizmoLineSlider3DLo
   GizmoCap3DLookAndFeel::GizmoCap3DLookAndFeel__ctor(this_00,(MethodInfo *)0x0);
   (this->fields)._capLookAndFeel = this_00;
   method_00 = (MethodInfo *)&(this->fields)._capLookAndFeel;
-  pGStack7 = this_00;
+  pGStack6 = this_00;
   func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);

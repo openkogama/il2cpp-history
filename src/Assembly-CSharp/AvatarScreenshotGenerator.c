@@ -50,56 +50,53 @@ void Assembly-CSharp.dll::AvatarScreenshotGenerator::AvatarScreenshotGenerator_G
           func_?();
         }
         Extensions::Extensions_ScaleBounds(bodyCloneGO,1.0,(MethodInfo *)0x0);
-        this = (GameObject *)func_?();
+        this_00 = (GameObject *)func_?();
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor
-                  (this,StringLiteral_AvatarScreenShotGenerator,(MethodInfo *)0x0);
-        if (this != (GameObject *)0x0) {
-          this_00 = (Object__Class *)
+                  (this_00,StringLiteral_AvatarScreenShotGenerator,(MethodInfo *)0x0);
+        if (this_00 != (GameObject *)0x0) {
+          this_01 = (Object__Class *)
                     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
-                              (this,
+                              (this_00,
                                AvatarScreenshotGenerator_MethodInfo__UnityEngine__GameObject__AddComponent<AvatarScreenshotGenerator>__
                               );
-          if (this_00 != (Object__Class *)0x0) {
-            ppIVar4 = &(this_00->_0).klass;
-            *ppIVar4 = (Il2CppClass *)&UNK_?;
-            func_?(ppIVar4,&UNK_?);
-            ppIVar5 = &(this_00->_0).interopData;
-            *ppIVar5 = (Il2CppInteropData *)bodyCloneGO;
-            func_?(ppIVar5,bodyCloneGO);
-            pOVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+          if (this_01 != (Object__Class *)0x0) {
+            (this_01->_0).klass = (Il2CppClass *)&UNK_?;
+            func_?(&(this_01->_0).klass,&UNK_?);
+            (this_01->_0).interopData = (Il2CppInteropData *)bodyCloneGO;
+            func_?(&(this_01->_0).interopData,bodyCloneGO);
+            pOVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                      GameObject_GetComponentInChildren_1
                                (bodyCloneGO,
                                 BoneAnimation_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<BoneAnimation>__
                                );
-            pp_Var2 = &(this_00->_0).typeMetadataHandle;
-            *pp_Var2 = (Il2CppMetadataTypeHandle)pOVar6;
-            func_?(pp_Var2,pOVar6);
-            pOVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                      GameObject_GetComponentsInChildren
-                                (bodyCloneGO,
-                                 UnityEngine__ParticleSystem__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::ParticleSystem>______
-                                );
-            ppIVar8 = &(this_00->_0).generic_class;
-            *ppIVar8 = (Il2CppGenericClass *)pOVar7;
-            func_?(ppIVar8,pOVar7);
-            if ((BoneAnimation *)*pp_Var2 != (BoneAnimation *)0x0) {
+            (this_01->_0).typeMetadataHandle = (Il2CppMetadataTypeHandle)pOVar4;
+            func_?(&(this_01->_0).typeMetadataHandle,pOVar4);
+            pOVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                     GameObject_GetComponentsInChildren
+                               (bodyCloneGO,
+                                UnityEngine__ParticleSystem__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::ParticleSystem>______
+                               );
+            (this_01->_0).generic_class = (Il2CppGenericClass *)pOVar5;
+            func_?(&(this_01->_0).generic_class,pOVar5);
+            this = (BoneAnimation *)(this_01->_0).typeMetadataHandle;
+            if (this != (BoneAnimation *)0x0) {
               BoneAnimation::BoneAnimation_PlayAndPauseAt
-                        ((BoneAnimation *)*pp_Var2,(String *)(this_00->_0).declaringType,
-                         (float)(this_00->_0).parent,(MethodInfo *)0x0);
+                        (this,(String *)(this_01->_0).declaringType,(float)(this_01->_0).parent,
+                         (MethodInfo *)0x0);
               if (cRam_? == '\0') {
                 func_?();
                 cRam_? = '\x01';
               }
               method_00 = TypeInfo__AvatarScreenshotGenerator___GenerateScreenshot_d__9;
-              pOVar6 = (Object *)func_?();
+              pOVar4 = (Object *)func_?();
               mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                        (pOVar6,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-              pOVar6[1].klass = (Object__Class *)0x0;
-              pOVar6[2].klass = this_00;
-              func_?(pOVar6 + 2,this_00);
+                        (pOVar4,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+              pOVar4[1].klass = (Object__Class *)0x0;
+              pOVar4[2].klass = this_01;
+              func_?(pOVar4 + 2,this_01);
               UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
               MonoBehaviour_StartCoroutine_Auto
-                        ((MonoBehaviour *)this_00,(IEnumerator *)pOVar6,(MethodInfo *)0x0);
+                        ((MonoBehaviour *)this_01,(IEnumerator *)pOVar4,(MethodInfo *)0x0);
               return;
             }
           }
@@ -108,8 +105,8 @@ void Assembly-CSharp.dll::AvatarScreenshotGenerator::AvatarScreenshotGenerator_G
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -129,8 +126,8 @@ Assembly-CSharp.dll::AvatarScreenshotGenerator::AvatarScreenshotGenerator_Genera
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[1].klass = (Object__Class *)0x0;
   value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
   func_?(value + 2,this);
   return (IEnumerator *)value;
 }
@@ -151,32 +148,30 @@ void Assembly-CSharp.dll::AvatarScreenshotGenerator::
   this_00 = TypeInfo__AvatarEditModeBodyController->static_fields->Theme;
   if (this_00 != (CloudyThemeBase *)0x0) {
     Theme::Theme_Activate((Theme *)this_00,(MethodInfo *)0x0);
-    pAVar1 = (this->fields).screenShotDataTexHandler;
-    if (pAVar1 != (Action_1_UnityEngine_Texture2D_ *)0x0) {
+    if ((this->fields).screenShotDataTexHandler != (Action_1_UnityEngine_Texture2D_ *)0x0) {
+      pAVar1 = (this->fields).screenShotDataTexHandler;
       (*(pAVar1->fields)._._.invoke_impl)
                 ((pAVar1->fields)._._.method_code,screenshotTex,(pAVar1->fields)._._.method);
     }
-    ppGVar2 = &(this->fields).bodyCloneGO;
-    pGVar3 = *ppGVar2;
+    pGVar2 = (this->fields).bodyCloneGO;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-              ((Object_1 *)pGVar3,(MethodInfo *)0x0);
-    *ppGVar2 = (GameObject *)0x0;
-    func_?(ppGVar2,0);
-    ppBVar4 = &(this->fields).boneAnimation;
-    *ppBVar4 = (BoneAnimation *)0x0;
-    func_?(ppBVar4,0);
-    pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+              ((Object_1 *)pGVar2,(MethodInfo *)0x0);
+    (this->fields).bodyCloneGO = (GameObject *)0x0;
+    func_?(&(this->fields).bodyCloneGO,0);
+    (this->fields).boneAnimation = (BoneAnimation *)0x0;
+    func_?(&(this->fields).boneAnimation,0);
+    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-              ((Object_1 *)pGVar3,(MethodInfo *)0x0);
+              ((Object_1 *)pGVar2,(MethodInfo *)0x0);
     return;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -192,15 +187,14 @@ void Assembly-CSharp.dll::AvatarScreenshotGenerator::AvatarScreenshotGenerator__
     cRam_? = '\x01';
   }
   uVar1 = _UNK_?;
-  ppSVar2 = &(this->fields).animationToShoot;
   (this->fields).cameraOffset.x = (float)_UNK_?;
   (this->fields).cameraOffset.y = (float)uVar1;
   (this->fields).cameraOffset.z = 2.0;
   (this->fields).lookAtOffset.x = 0.0;
   (this->fields).lookAtOffset.y = 0.0;
   (this->fields).lookAtOffset.z = 0.0;
-  *ppSVar2 = StringLiteral_Walk;
-  func_?(ppSVar2,StringLiteral_Walk);
+  (this->fields).animationToShoot = StringLiteral_Walk;
+  func_?(&(this->fields).animationToShoot,StringLiteral_Walk);
   (this->fields).animationTime = 0.16;
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);

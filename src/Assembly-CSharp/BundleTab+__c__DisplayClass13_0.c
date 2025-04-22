@@ -24,7 +24,6 @@ void Assembly-CSharp.dll::BundleTab+<>c__DisplayClass13_0::
     root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                      ((Component *)this_00,(MethodInfo *)0x0);
     callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)(this->fields).__9__1;
-    ppEVar1 = &(this->fields).__9__1;
     if (callbackFunction == (ExecuteEvents_EventFunction_1_System_Object_ *)0x0) {
       callbackFunction =
            (ExecuteEvents_EventFunction_1_System_Object_ *)
@@ -36,8 +35,8 @@ void Assembly-CSharp.dll::BundleTab+<>c__DisplayClass13_0::
                 ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
                  MethodInfo__BundleTab____c__DisplayClass13_0___Initialize_b__1_UnityEngine__EventSystems__ITabSelected__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
-      *ppEVar1 = (ExecuteEvents_EventFunction_1_ITabSelected_ *)callbackFunction;
-      func_?(ppEVar1,callbackFunction);
+      (this->fields).__9__1 = (ExecuteEvents_EventFunction_1_ITabSelected_ *)callbackFunction;
+      func_?(&(this->fields).__9__1,callbackFunction);
     }
     if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
@@ -49,8 +48,8 @@ void Assembly-CSharp.dll::BundleTab+<>c__DisplayClass13_0::
     return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

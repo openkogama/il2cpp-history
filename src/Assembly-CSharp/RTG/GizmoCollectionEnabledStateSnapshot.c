@@ -37,36 +37,43 @@ void Assembly-CSharp.dll::RTG::GizmoCollectionEnabledStateSnapshot::
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
+  DStack_6._dictionary = (Dictionary_2_System_Object_System_Boolean_ *)0x0;
+  DStack_6._version = 0;
+  DStack_6._index = 0;
+  DStack_6._current.key = (Object *)0x0;
+  DStack_6._current.value = 0;
+  DStack_6._current._5_3_ = 0;
+  DStack_6._getEnumeratorRetType = 0;
   method_00 = (MethodInfo *)(this->fields)._gizmoToState;
   if (method_00 != (MethodInfo *)0x0) {
-    pDVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+    pDVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
              ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                       (&DStack_7,(Dictionary_2_System_UInt32_System_Object_ *)method_00,
+                       (&DStack_8,(Dictionary_2_System_UInt32_System_Object_ *)method_00,
                         MethodInfo__System__Collections__Generic__Dictionary<RTG::Gizmo,_bool>__GetEnumerator__
                        );
-    uStack_8 = 0;
-    DStack_9._dictionary = (Dictionary_2_System_Object_System_Boolean_ *)pDVar6->_dictionary;
-    DStack_9._version = pDVar6->_version;
-    DStack_9._index = pDVar6->_index;
-    DStack_9._current.key = (Object *)(pDVar6->_current).key;
-    DStack_9._16_8_ = *(undefined8 *)&(pDVar6->_current).value;
+    uStack_9 = 0;
+    DStack_6._dictionary = (Dictionary_2_System_Object_System_Boolean_ *)pDVar7->_dictionary;
+    DStack_6._version = pDVar7->_version;
+    DStack_6._index = pDVar7->_index;
+    DStack_6._current.key = (Object *)(pDVar7->_current).key;
+    DStack_6._16_8_ = *(undefined8 *)&(pDVar7->_current).value;
     uStack_1 = 1;
-    pDStack_10 = &DStack_9;
+    pDStack_10 = &DStack_6;
     while( true ) {
       bVar11 = mscorlib.dll::System::Collections::Generic::
               Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Boolean]::
               Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Boolean__MoveNext
-                        (&DStack_9,
+                        (&DStack_6,
                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<RTG::Gizmo,_bool>__MoveNext__
                         );
       if (bVar11 == 0) break;
-      if ((Gizmo *)DStack_9._current.key == (Gizmo *)0x0) goto code_?;
+      if ((Gizmo *)DStack_6._current.key == (Gizmo *)0x0) goto code_?;
       Gizmo::Gizmo_SetEnabled
-                ((Gizmo *)DStack_9._current.key,DStack_9._current.value,(MethodInfo *)0x0);
+                ((Gizmo *)DStack_6._current.key,DStack_6._current.value,(MethodInfo *)0x0);
     }
     uStack_1 = 0xffffffff;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)&DStack_9,
+              ((Object *)&DStack_6,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<RTG::Gizmo,_bool>__Dispose__
                ,method_00);
@@ -204,8 +211,7 @@ void Assembly-CSharp.dll::RTG::GizmoCollectionEnabledStateSnapshot::
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<RTG::Gizmo,_bool>__Dictionary__);
   method_00 = (MethodInfo *)&this->fields;
-  ((GizmoCollectionEnabledStateSnapshot__Fields *)method_00)->_gizmoToState =
-       (Dictionary_2_RTG_Gizmo_System_Boolean_ *)this_00;
+  (this->fields)._gizmoToState = (Dictionary_2_RTG_Gizmo_System_Boolean_ *)this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);

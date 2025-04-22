@@ -63,11 +63,11 @@ void Assembly-CSharp.dll::ObjectParticleEmitterScript::ObjectParticleEmitterScri
                          ((Object *)pPVar2,position,rotation,
                           UnityEngine__ParticleSystem_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::ParticleSystem>_UnityEngine__ParticleSystem__UnityEngine__Vector3__UnityEngine__Quaternion_
                          );
-      ppPVar15 = &(pOVar1->fields).particleSystemInstance;
-      *ppPVar15 = pPVar2;
+      (pOVar1->fields).particleSystemInstance = pPVar2;
       func_?();
       bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                        ((Object_1 *)*ppPVar15,(Object_1 *)0x0,(MethodInfo *)0x0);
+                        ((Object_1 *)(pOVar1->fields).particleSystemInstance,(Object_1 *)0x0,
+                         (MethodInfo *)0x0);
       if (bVar3 == 0) {
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
@@ -76,16 +76,17 @@ void Assembly-CSharp.dll::ObjectParticleEmitterScript::ObjectParticleEmitterScri
                   ((Object *)StringLiteral_ParticleSystemInstance_is_null,(MethodInfo *)0x0);
         return;
       }
-      if (*ppPVar15 != (ParticleSystem *)0x0) {
+      pPVar2 = (pOVar1->fields).particleSystemInstance;
+      if (pPVar2 != (ParticleSystem *)0x0) {
         UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Play_1
-                  (*ppPVar15,(MethodInfo *)0x0);
+                  (pPVar2,(MethodInfo *)0x0);
         return;
       }
     }
   }
   func_?();
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 

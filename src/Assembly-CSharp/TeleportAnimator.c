@@ -10,7 +10,7 @@ void Assembly-CSharp.dll::TeleportAnimator::TeleportAnimator_Awake
     pMVar1 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
                        (this_00,(MethodInfo *)0x0);
     (this->fields)._material = pMVar1;
-    func_?();
+    func_?(&(this->fields)._material,pMVar1);
     return;
   }
   func_?();

@@ -130,14 +130,16 @@ code_?:
               ((NavMesh_OnNavMeshPreUpdate *)this,(Object *)object,
                MethodInfo__SpawnRoleSkillsEditor__CantRemoveSkillCallback__,(MethodInfo *)0x0);
     if (this_01 == (SkillSettingBase *)0x0) goto code_?;
-    bVar8 = (
-            TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
-            ->_1).naturalAligment;
     pKVar3 = 
     TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
     ;
-    if ((bVar8 <= (skillSettingData->klass->_1).naturalAligment) &&
-       ((skillSettingData->klass->_1).typeHierarchy[bVar8 - 1] ==
+    if (((
+         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
+         ->_1).naturalAligment <= (skillSettingData->klass->_1).naturalAligment) &&
+       ((skillSettingData->klass->_1).typeHierarchy
+        [(
+         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
+         ->_1).naturalAligment - 1] ==
         (Il2CppClass *)
         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
        )) {
@@ -154,35 +156,35 @@ code_?:
                   );
         pSVar1 = (object->fields).skillDataManagerPrefab;
         if (pSVar1 != (SpawnRolesSkillDataManager *)0x0) {
-          SVar9 = SpawnRolesSkillDataManager::SpawnRolesSkillDataManager_GetSkillsCategory
+          SVar8 = SpawnRolesSkillDataManager::SpawnRolesSkillDataManager_GetSkillsCategory
                             (pSVar1,(String *)&UNK_?,(MethodInfo *)0x0);
-          if (SVar9 == SkillCategory__Enum_Defence) {
-            pTVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+          if (SVar8 == SkillCategory__Enum_Defence) {
+            pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                                ((Component *)this_01,(MethodInfo *)0x0);
-            if (pTVar10 != (Transform *)0x0) {
+            if (pTVar9 != (Transform *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                        (pTVar10,(object->fields).defenceSkillsContainer,0,(MethodInfo *)0x0);
+                        (pTVar9,(object->fields).defenceSkillsContainer,0,(MethodInfo *)0x0);
               return;
             }
           }
-          else if (SVar9 == SkillCategory__Enum_Offence) {
-            pTVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+          else if (SVar8 == SkillCategory__Enum_Offence) {
+            pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                                ((Component *)this_01,(MethodInfo *)0x0);
-            if (pTVar10 != (Transform *)0x0) {
+            if (pTVar9 != (Transform *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                        (pTVar10,(object->fields).offenceSkillsContainer,0,(MethodInfo *)0x0);
+                        (pTVar9,(object->fields).offenceSkillsContainer,0,(MethodInfo *)0x0);
               return;
             }
           }
           else {
-            if (SVar9 != SkillCategory__Enum_Tactical) {
+            if (SVar8 != SkillCategory__Enum_Tactical) {
               return;
             }
-            pTVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+            pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                                ((Component *)this_01,(MethodInfo *)0x0);
-            if (pTVar10 != (Transform *)0x0) {
+            if (pTVar9 != (Transform *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                        (pTVar10,(object->fields).tacticalSkillsContainer,0,(MethodInfo *)0x0);
+                        (pTVar9,(object->fields).tacticalSkillsContainer,0,(MethodInfo *)0x0);
               return;
             }
           }
@@ -194,8 +196,8 @@ code_?:
   func_?(pKVar2,pKVar3);
 code_?:
   func_?(pKVar2,this);
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -238,67 +240,76 @@ void Assembly-CSharp.dll::SpawnRoleSkillsEditor::SpawnRoleSkillsEditor_CreateSki
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
+  DStack_6._dictionary = (Dictionary_2_System_Object_System_Object_ *)0x0;
+  DStack_6._version = 0;
+  DStack_6._index = 0;
+  DStack_6._current.key = (Object *)0x0;
+  DStack_6._current.value = (Object *)0x0;
+  DStack_6._getEnumeratorRetType = 0;
   this_00 = (this->fields).attributeSettingsManager;
   if (this_00 != (AttributeSettingsManager *)0x0) {
-    pKVar6 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::
+    pKVar7 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::
              AttributeSettings::AttributeSettingsManager::AttributeSettingsManager_get_Settings
                        (this_00,(MethodInfo *)0x0);
-    if (pKVar6 == (KogamaSettingWrapperBase *)0x0) {
+    if (pKVar7 == (KogamaSettingWrapperBase *)0x0) {
 code_?:
       *unaff_FS_OFFSET = uStack_3;
       return;
     }
-    bVar7 = (
-            TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
-            ->_1).naturalAligment;
-    if (((pKVar6->klass->_1).naturalAligment < bVar7) ||
-       ((pKVar6->klass->_1).typeHierarchy[bVar7 - 1] !=
+    if (((pKVar7->klass->_1).naturalAligment <
+         (
+         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
+         ->_1).naturalAligment) ||
+       ((pKVar7->klass->_1).typeHierarchy
+        [(
+         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
+         ->_1).naturalAligment - 1] !=
         (Il2CppClass *)
         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
        )) goto code_?;
-    if (pKVar6[1].klass != (KogamaSettingWrapperBase__Class *)0x0) {
+    if (pKVar7[1].klass != (KogamaSettingWrapperBase__Class *)0x0) {
       pDVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
                Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
                          ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
                           &stack0xffffffb0,
-                          (Dictionary_2_System_UInt32_System_Object_ *)pKVar6[1].klass,
+                          (Dictionary_2_System_UInt32_System_Object_ *)pKVar7[1].klass,
                           MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__GetEnumerator__
                          );
       uStack_9 = 0;
-      DStack_10._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar8->_dictionary;
-      DStack_10._version = pDVar8->_version;
-      DStack_10._index = pDVar8->_index;
-      DStack_10._current.key = (Object *)(pDVar8->_current).key;
-      DStack_10._16_8_ = *(undefined8 *)&(pDVar8->_current).value;
+      DStack_6._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar8->_dictionary;
+      DStack_6._version = pDVar8->_version;
+      DStack_6._index = pDVar8->_index;
+      DStack_6._current.key = (Object *)(pDVar8->_current).key;
+      DStack_6._16_8_ = *(undefined8 *)&(pDVar8->_current).value;
       uStack_1 = 1;
-      pDStack_11 = &DStack_10;
+      pDStack_10 = &DStack_6;
       while( true ) {
-        bVar12 = mscorlib.dll::System::Collections::Generic::
+        bVar11 = mscorlib.dll::System::Collections::Generic::
                 Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Object]::
                 Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
-                          (&DStack_10,
+                          (&DStack_6,
                            MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__MoveNext__
                           );
-        if (bVar12 == 0) break;
+        if (bVar11 == 0) break;
         SpawnRoleSkillsEditor_CreateSkillSetting
-                  (this,(String *)DStack_10._current.key,
-                   (KogamaSettingWrapperBase *)DStack_10._current.value,(MethodInfo *)0x0);
+                  (this,(String *)DStack_6._current.key,
+                   (KogamaSettingWrapperBase *)DStack_6._current.value,(MethodInfo *)0x0);
       }
       uStack_1 = 0xffffffff;
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                ((Object *)&DStack_10,
+                ((Object *)&DStack_6,
                  (ExceptionArgument__Enum)
                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__Dispose__
-                 ,in_stack_13);
+                 ,in_stack_12);
       goto code_?;
     }
   }
-  uVar14 = func_?();
-  func_?(uVar14);
+  uVar13 = func_?();
+  func_?(uVar13);
 code_?:
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -311,14 +322,12 @@ void Assembly-CSharp.dll::SpawnRoleSkillsEditor::SpawnRoleSkillsEditor_Initializ
                UnityAction *updateSkillCost,MethodInfo *method)
 
 {
-  ppAVar1 = &(this->fields).attributeSettingsManager;
   (this->fields).spawnRoleCost = spawnRoleCost;
   (this->fields).spawnRoleTier = (undefined1)spawnRoleTier;
-  *ppAVar1 = spawnRoleAttributeSettingsManager;
-  func_?(ppAVar1,spawnRoleAttributeSettingsManager);
-  ppUVar2 = &(this->fields).updateSkillCostCallback;
-  *ppUVar2 = updateSkillCost;
-  func_?(ppUVar2,updateSkillCost);
+  (this->fields).attributeSettingsManager = spawnRoleAttributeSettingsManager;
+  func_?(&(this->fields).attributeSettingsManager,spawnRoleAttributeSettingsManager);
+  (this->fields).updateSkillCostCallback = updateSkillCost;
+  func_?(&(this->fields).updateSkillCostCallback,updateSkillCost);
   SpawnRoleSkillsEditor_CreateSkillSettings(this,(MethodInfo *)0x0);
   return;
 }
@@ -371,10 +380,9 @@ void Assembly-CSharp.dll::SpawnRoleSkillsEditor::SpawnRoleSkillsEditor_OnAddDefe
                       SpawnRoleSkillSelectionMenu_MethodInfo__UnityEngine__Object__Instantiate<SpawnRoleSkillSelectionMenu>_SpawnRoleSkillSelectionMenu_
                      );
   if (this_01 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
-    pUVar3 = &this_01->fields;
-    (pUVar3->_)._defaultValue_k__BackingField = pLVar2;
-    func_?(pUVar3,pLVar2);
-    pSVar1 = (SpawnRoleSkillSelectionMenu *)(pUVar3->_)._defaultValue_k__BackingField;
+    (this_01->fields)._._defaultValue_k__BackingField = pLVar2;
+    func_?(&this_01->fields,pLVar2);
+    pSVar1 = (SpawnRoleSkillSelectionMenu *)(this_01->fields)._._defaultValue_k__BackingField;
     this_00 = (this->fields).attributeSettingsManager;
     if (this_00 != (AttributeSettingsManager *)0x0) {
       notAppliedSettings =
@@ -382,7 +390,7 @@ void Assembly-CSharp.dll::SpawnRoleSkillsEditor::SpawnRoleSkillsEditor_OnAddDefe
            AttributeSettings::AttributeSettingsManager::
            AttributeSettingsManager_get_AvailableAttributeSettings(this_00,(MethodInfo *)0x0);
       spawnRoleCost = (this->fields).spawnRoleCost;
-      GStack_4 = CONCAT31(GStack_4._1_3_,(this->fields).spawnRoleTier);
+      GStack_3 = CONCAT31(GStack_3._1_3_,(this->fields).spawnRoleTier);
       this_02 = (UnityAction_1_System_Object_ *)
                 func_?(
                                TypeInfo__UnityEngine__Events__UnityAction<MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingValueWrapperBase>
@@ -401,7 +409,7 @@ void Assembly-CSharp.dll::SpawnRoleSkillsEditor::SpawnRoleSkillsEditor_OnAddDefe
       if (pSVar1 != (SpawnRoleSkillSelectionMenu *)0x0) {
         SpawnRoleSkillSelectionMenu::SpawnRoleSkillSelectionMenu_Initialize
                   (pSVar1,(SpawnRolesSkillDataManager *)0x0,notAppliedSettings,
-                   SkillCategory__Enum_Defence,spawnRoleCost,GStack_4,
+                   SkillCategory__Enum_Defence,spawnRoleCost,GStack_3,
                    (UnityAction_1_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingValueWrapperBase_
                     *)this_02,(UnityAction *)this_03,(MethodInfo *)0x0);
         root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -429,8 +437,8 @@ void Assembly-CSharp.dll::SpawnRoleSkillsEditor::SpawnRoleSkillsEditor_OnAddDefe
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -482,10 +490,9 @@ void Assembly-CSharp.dll::SpawnRoleSkillsEditor::SpawnRoleSkillsEditor_OnAddOffe
                       SpawnRoleSkillSelectionMenu_MethodInfo__UnityEngine__Object__Instantiate<SpawnRoleSkillSelectionMenu>_SpawnRoleSkillSelectionMenu_
                      );
   if (this_01 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
-    pUVar3 = &this_01->fields;
-    (pUVar3->_)._defaultValue_k__BackingField = pLVar2;
-    func_?(pUVar3,pLVar2);
-    pSVar1 = (SpawnRoleSkillSelectionMenu *)(pUVar3->_)._defaultValue_k__BackingField;
+    (this_01->fields)._._defaultValue_k__BackingField = pLVar2;
+    func_?(&this_01->fields,pLVar2);
+    pSVar1 = (SpawnRoleSkillSelectionMenu *)(this_01->fields)._._defaultValue_k__BackingField;
     this_00 = (this->fields).attributeSettingsManager;
     if (this_00 != (AttributeSettingsManager *)0x0) {
       notAppliedSettings =
@@ -493,7 +500,7 @@ void Assembly-CSharp.dll::SpawnRoleSkillsEditor::SpawnRoleSkillsEditor_OnAddOffe
            AttributeSettings::AttributeSettingsManager::
            AttributeSettingsManager_get_AvailableAttributeSettings(this_00,(MethodInfo *)0x0);
       spawnRoleCost = (this->fields).spawnRoleCost;
-      GStack_4 = CONCAT31(GStack_4._1_3_,(this->fields).spawnRoleTier);
+      GStack_3 = CONCAT31(GStack_3._1_3_,(this->fields).spawnRoleTier);
       this_02 = (UnityAction_1_System_Object_ *)
                 func_?(
                                TypeInfo__UnityEngine__Events__UnityAction<MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingValueWrapperBase>
@@ -512,7 +519,7 @@ void Assembly-CSharp.dll::SpawnRoleSkillsEditor::SpawnRoleSkillsEditor_OnAddOffe
       if (pSVar1 != (SpawnRoleSkillSelectionMenu *)0x0) {
         SpawnRoleSkillSelectionMenu::SpawnRoleSkillSelectionMenu_Initialize
                   (pSVar1,(SpawnRolesSkillDataManager *)0x0,notAppliedSettings,
-                   SkillCategory__Enum_Offence,spawnRoleCost,GStack_4,
+                   SkillCategory__Enum_Offence,spawnRoleCost,GStack_3,
                    (UnityAction_1_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingValueWrapperBase_
                     *)this_02,(UnityAction *)this_03,(MethodInfo *)0x0);
         root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -540,8 +547,8 @@ void Assembly-CSharp.dll::SpawnRoleSkillsEditor::SpawnRoleSkillsEditor_OnAddOffe
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -593,10 +600,9 @@ void Assembly-CSharp.dll::SpawnRoleSkillsEditor::SpawnRoleSkillsEditor_OnAddTact
                       SpawnRoleSkillSelectionMenu_MethodInfo__UnityEngine__Object__Instantiate<SpawnRoleSkillSelectionMenu>_SpawnRoleSkillSelectionMenu_
                      );
   if (this_01 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
-    pUVar3 = &this_01->fields;
-    (pUVar3->_)._defaultValue_k__BackingField = pLVar2;
-    func_?(pUVar3,pLVar2);
-    pSVar1 = (SpawnRoleSkillSelectionMenu *)(pUVar3->_)._defaultValue_k__BackingField;
+    (this_01->fields)._._defaultValue_k__BackingField = pLVar2;
+    func_?(&this_01->fields,pLVar2);
+    pSVar1 = (SpawnRoleSkillSelectionMenu *)(this_01->fields)._._defaultValue_k__BackingField;
     this_00 = (this->fields).attributeSettingsManager;
     if (this_00 != (AttributeSettingsManager *)0x0) {
       notAppliedSettings =
@@ -604,7 +610,7 @@ void Assembly-CSharp.dll::SpawnRoleSkillsEditor::SpawnRoleSkillsEditor_OnAddTact
            AttributeSettings::AttributeSettingsManager::
            AttributeSettingsManager_get_AvailableAttributeSettings(this_00,(MethodInfo *)0x0);
       spawnRoleCost = (this->fields).spawnRoleCost;
-      GStack_4 = CONCAT31(GStack_4._1_3_,(this->fields).spawnRoleTier);
+      GStack_3 = CONCAT31(GStack_3._1_3_,(this->fields).spawnRoleTier);
       this_02 = (UnityAction_1_System_Object_ *)
                 func_?(
                                TypeInfo__UnityEngine__Events__UnityAction<MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingValueWrapperBase>
@@ -623,7 +629,7 @@ void Assembly-CSharp.dll::SpawnRoleSkillsEditor::SpawnRoleSkillsEditor_OnAddTact
       if (pSVar1 != (SpawnRoleSkillSelectionMenu *)0x0) {
         SpawnRoleSkillSelectionMenu::SpawnRoleSkillSelectionMenu_Initialize
                   (pSVar1,(SpawnRolesSkillDataManager *)0x0,notAppliedSettings,
-                   SkillCategory__Enum_Tactical,spawnRoleCost,GStack_4,
+                   SkillCategory__Enum_Tactical,spawnRoleCost,GStack_3,
                    (UnityAction_1_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingValueWrapperBase_
                     *)this_02,(UnityAction *)this_03,(MethodInfo *)0x0);
         root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -651,8 +657,8 @@ void Assembly-CSharp.dll::SpawnRoleSkillsEditor::SpawnRoleSkillsEditor_OnAddTact
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -668,47 +674,45 @@ void Assembly-CSharp.dll::SpawnRoleSkillsEditor::SpawnRoleSkillsEditor_OnDestroy
   pSVar2 = (pAVar1->fields).settingsManager;
   if ((pSVar2 != (SettingsManager *)0x0) &&
      (pSVar3 = (pSVar2->fields).settingsReporter, pSVar3 != (SettingsReporter *)0x0)) {
-    pDStack_4 = (pSVar3->fields).DeltaData;
-    ppDVar5 = &(pSVar3->fields).DeltaData;
-    if (pDStack_4 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      pMVar6 = (pSVar3->fields).worldObject;
-      if ((pMVar6 == (MVWorldObject *)0x0) ||
-         (pAVar7 = (pSVar3->fields).partialDataUpdate,
-         pAVar7 == (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
+    if ((pSVar3->fields).DeltaData != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+      pMVar4 = (pSVar3->fields).worldObject;
+      if ((pMVar4 == (MVWorldObject *)0x0) ||
+         (pAVar5 = (pSVar3->fields).partialDataUpdate,
+         pAVar5 == (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
                     *)0x0)) goto code_?;
-      puStack_8 = (pAVar7->fields)._._.method;
-      iStack_9 = (pMVar6->fields).id;
-      pvStack_10 = (pAVar7->fields)._._.method_code;
-      (*(pAVar7->fields)._._.invoke_impl)();
-      *ppDVar5 = (Dictionary_2_System_Object_System_Object_ *)0x0;
-      func_?(ppDVar5,0);
+      puStack_6 = (pAVar5->fields)._._.method;
+      pDStack_7 = (pSVar3->fields).DeltaData;
+      iStack_8 = (pMVar4->fields).id;
+      pvStack_9 = (pAVar5->fields)._._.method_code;
+      (*(pAVar5->fields)._._.invoke_impl)();
+      (pSVar3->fields).DeltaData = (Dictionary_2_System_Object_System_Object_ *)0x0;
+      func_?(&(pSVar3->fields).DeltaData,0);
     }
-    pDStack_4 = (pSVar3->fields).DeltaRemovalData;
-    ppDVar5 = &(pSVar3->fields).DeltaRemovalData;
-    if (pDStack_4 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    if ((pSVar3->fields).DeltaRemovalData == (Dictionary_2_System_Object_System_Object_ *)0x0) {
       return;
     }
-    pMVar6 = (pSVar3->fields).worldObject;
-    if ((pMVar6 != (MVWorldObject *)0x0) &&
-       (pAVar7 = (pSVar3->fields).partialDataRemove,
-       pAVar7 != (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
+    pMVar4 = (pSVar3->fields).worldObject;
+    if ((pMVar4 != (MVWorldObject *)0x0) &&
+       (pAVar5 = (pSVar3->fields).partialDataRemove,
+       pAVar5 != (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
                   *)0x0)) {
-      puStack_8 = (pAVar7->fields)._._.method;
-      iStack_9 = (pMVar6->fields).id;
-      pvStack_10 = (pAVar7->fields)._._.method_code;
-      (*(pAVar7->fields)._._.invoke_impl)();
-      *ppDVar5 = (Dictionary_2_System_Object_System_Object_ *)0x0;
-      func_?(ppDVar5,0);
+      puStack_6 = (pAVar5->fields)._._.method;
+      pDStack_7 = (pSVar3->fields).DeltaRemovalData;
+      iStack_8 = (pMVar4->fields).id;
+      pvStack_9 = (pAVar5->fields)._._.method_code;
+      (*(pAVar5->fields)._._.invoke_impl)();
+      (pSVar3->fields).DeltaRemovalData = (Dictionary_2_System_Object_System_Object_ *)0x0;
+      func_?(&(pSVar3->fields).DeltaRemovalData,0);
       return;
     }
   }
 code_?:
 code_?:
-  pDStack_4 = (Dictionary_2_System_Object_System_Object_ *)&stack0xfffffffc;
-  uVar11 = func_?(&pvStack_10);
-  func_?(uVar11);
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pDStack_7 = (Dictionary_2_System_Object_System_Object_ *)&stack0xfffffffc;
+  uVar10 = func_?(&pvStack_9);
+  func_?(uVar10);
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -889,9 +893,8 @@ void Assembly-CSharp.dll::SpawnRoleSkillsEditor::SpawnRoleSkillsEditor__ctor
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<SkillSettingBase>__List__);
-  ppLVar1 = &(this->fields).skillSettingList;
-  *ppLVar1 = this_00;
-  func_?(ppLVar1,this_00);
+  (this->fields).skillSettingList = this_00;
+  func_?(&(this->fields).skillSettingList,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

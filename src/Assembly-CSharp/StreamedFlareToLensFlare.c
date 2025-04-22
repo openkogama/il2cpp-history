@@ -40,34 +40,33 @@ void Assembly-CSharp.dll::StreamedFlareToLensFlare::StreamedFlareToLensFlare_Res
     cRam_? = '\x01';
   }
   pLVar1 = (this->fields).lensFlare;
-  ppLVar2 = &(this->fields).lensFlare;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                     ((Object_1 *)pLVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar3 != 0) {
+  if (bVar2 != 0) {
     pLVar1 = (LensFlare *)
              UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
                        ((Component *)this,
                         UnityEngine__LensFlare_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::LensFlare>__
                        );
-    *ppLVar2 = pLVar1;
-    func_?(ppLVar2,pLVar1);
+    (this->fields).lensFlare = pLVar1;
+    func_?(&(this->fields).lensFlare,pLVar1);
   }
-  pLVar1 = *ppLVar2;
+  pLVar1 = (this->fields).lensFlare;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                     ((Object_1 *)pLVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar3 != 0) {
+  if (bVar2 != 0) {
     pLVar1 = (LensFlare *)
              UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentInParent_1
                        ((Component *)this,
                         UnityEngine__LensFlare_MethodInfo__UnityEngine__Component__GetComponentInParent<UnityEngine::LensFlare>__
                        );
-    *ppLVar2 = pLVar1;
+    (this->fields).lensFlare = pLVar1;
     func_?();
   }
   return;

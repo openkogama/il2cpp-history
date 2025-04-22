@@ -89,28 +89,31 @@ Vector3 * Assembly-CSharp.dll::MVNetworkListener::MVNetworkListener_ExtrapolateP
 {
   pNVar1 = (this->fields).nextPackage;
   if (pNVar1 != (NetworkTransformPackage *)0x0) {
-    fVar2 = (pNVar1->fields).position.z;
-    uVar3 = (pNVar1->fields).position.x;
-    uVar4 = (pNVar1->fields).position.y;
-    pNVar5 = (this->fields).currentPackage;
-    if (pNVar5 != (NetworkTransformPackage *)0x0) {
-      uVar6 = (pNVar5->fields).position.x;
-      uVar7 = (pNVar5->fields).position.y;
-      fVar8 = (pNVar5->fields).position.z;
-      fVar9 = interpFactor - _UNK_?;
-      uVar10 = (pNVar1->fields).position.x;
-      uVar11 = (pNVar1->fields).position.y;
-      fVar12 = (pNVar1->fields).position.z;
-      __return_storage_ptr__->x = (float)uVar10 + fVar9 * ((float)uVar3 - (float)uVar6);
-      __return_storage_ptr__->y = (float)uVar11 + fVar9 * ((float)uVar4 - (float)uVar7);
-      __return_storage_ptr__->z = fVar12 + (fVar2 - fVar8) * fVar9;
-      return __return_storage_ptr__;
+    uVar2 = (pNVar1->fields).position.x;
+    uVar3 = (pNVar1->fields).position.y;
+    fVar4 = (pNVar1->fields).position.z;
+    pNVar1 = (this->fields).currentPackage;
+    if (pNVar1 != (NetworkTransformPackage *)0x0) {
+      uVar5 = (pNVar1->fields).position.x;
+      uVar6 = (pNVar1->fields).position.y;
+      fVar7 = (pNVar1->fields).position.z;
+      fVar8 = interpFactor - _UNK_?;
+      pNVar1 = (this->fields).nextPackage;
+      if (pNVar1 != (NetworkTransformPackage *)0x0) {
+        uVar9 = (pNVar1->fields).position.x;
+        uVar10 = (pNVar1->fields).position.y;
+        fVar11 = (pNVar1->fields).position.z;
+        __return_storage_ptr__->x = (float)uVar9 + ((float)uVar2 - (float)uVar5) * fVar8;
+        __return_storage_ptr__->y = (float)uVar10 + ((float)uVar3 - (float)uVar6) * fVar8;
+        __return_storage_ptr__->z = fVar11 + (fVar4 - fVar7) * fVar8;
+        return __return_storage_ptr__;
+      }
     }
   }
   func_?();
-  pcVar13 = (code *)swi(3);
-  pVVar14 = (Vector3 *)(*pcVar13)();
-  return pVVar14;
+  pcVar12 = (code *)swi(3);
+  pVVar13 = (Vector3 *)(*pcVar12)();
+  return pVVar13;
 }
 
 
@@ -198,31 +201,35 @@ void Assembly-CSharp.dll::MVNetworkListener::MVNetworkListener_SetOwnerTransform
   puStack_4 = puVar5;
   pNVar6 = (NetworkTransformPackage *)0x0;
   pNStack_7 = (NetworkTransformPackage *)0x0;
+  QStack_8._q = (Queue_1_System_Object_ *)0x0;
+  QStack_8._version = 0;
+  QStack_8._index = 0;
+  QStack_8._currentElement = (Object *)0x0;
   this_00 = (this->fields).transformQueue;
   if (this_00 != (Queue_1_NetworkTransformPackage_ *)0x0) {
-    pQVar8 = mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
+    pQVar9 = mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
              Queue_1_System_Object__GetEnumerator
-                       (&QStack_9,(Queue_1_System_Object_ *)this_00,
+                       (&QStack_10,(Queue_1_System_Object_ *)this_00,
                         MethodInfo__System__Collections__Generic__Queue<NetworkTransformPackage>__GetEnumerator__
                        );
-    QStack_10._q = pQVar8->_q;
-    QStack_10._version = pQVar8->_version;
-    QStack_10._index = pQVar8->_index;
-    QStack_10._currentElement = pQVar8->_currentElement;
-    QStack_9._index = 0;
+    QStack_8._q = pQVar9->_q;
+    QStack_8._version = pQVar9->_version;
+    QStack_8._index = pQVar9->_index;
+    QStack_8._currentElement = pQVar9->_currentElement;
+    QStack_10._index = 0;
     uStack_1 = 1;
-    QStack_9._currentElement = (Object *)&QStack_10;
+    QStack_10._currentElement = (Object *)&QStack_8;
     while( true ) {
       bVar11 = mscorlib.dll::System::Collections::Generic::Queue`1[T]+Enumerator[System::Object]::
               Queue_1_T_Enumerator_System_Object__MoveNext
-                        (&QStack_10,
+                        (&QStack_8,
                          MethodInfo__System__Collections__Generic__Queue_1_T___Enumerator<NetworkTransformPackage>__MoveNext__
                         );
       if (bVar11 == 0) break;
       pNVar6 = (NetworkTransformPackage *)
                mscorlib.dll::System::Collections::Generic::Queue`1[T]+Enumerator[System::Object]::
                Queue_1_T_Enumerator_System_Object__get_Current
-                         (&QStack_10,
+                         (&QStack_8,
                           MethodInfo__System__Collections__Generic__Queue_1_T___Enumerator<NetworkTransformPackage>__get_Current__
                          );
       pNStack_7 = pNVar6;
@@ -230,7 +237,7 @@ void Assembly-CSharp.dll::MVNetworkListener::MVNetworkListener_SetOwnerTransform
     uStack_1 = 0xffffffff;
     mscorlib.dll::System::Collections::Generic::Queue`1[T]+Enumerator[System::Object]::
     Queue_1_T_Enumerator_System_Object__Dispose
-              (&QStack_10,
+              (&QStack_8,
                MethodInfo__System__Collections__Generic__Queue_1_T___Enumerator<NetworkTransformPackage>__Dispose__
               );
     uStack_1 = 0xffffffff;
@@ -344,232 +351,240 @@ void Assembly-CSharp.dll::MVNetworkListener::MVNetworkListener_UpdateTransform
     cRam_? = '\x01';
   }
   if ((this->fields).transformReportingHasStopped == 0) {
-    ppNVar2 = &(this->fields).currentPackage;
     if ((this->fields).currentPackage == (NetworkTransformPackage *)0x0) {
-      pQVar3 = (this->fields).transformQueue;
-      if (pQVar3 == (Queue_1_NetworkTransformPackage_ *)0x0) goto code_?;
-      if (0 < (pQVar3->fields)._size) {
-        pNVar4 = (NetworkTransformPackage *)
+      pQVar2 = (this->fields).transformQueue;
+      if (pQVar2 == (Queue_1_NetworkTransformPackage_ *)0x0) goto code_?;
+      if (0 < (pQVar2->fields)._size) {
+        pNVar3 = (NetworkTransformPackage *)
                   mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
                   Queue_1_System_Object__Dequeue
-                            ((Queue_1_System_Object_ *)pQVar3,
+                            ((Queue_1_System_Object_ *)pQVar2,
                              MethodInfo__System__Collections__Generic__Queue<NetworkTransformPackage>__Dequeue__
                             );
-        *ppNVar2 = pNVar4;
-        func_?(ppNVar2,pNVar4);
+        (this->fields).currentPackage = pNVar3;
+        func_?(&(this->fields).currentPackage,pNVar3);
       }
-      if (*ppNVar2 == (NetworkTransformPackage *)0x0) goto code_?;
+      if ((this->fields).currentPackage == (NetworkTransformPackage *)0x0) {
+        return;
+      }
     }
-    ppNVar2 = &(this->fields).nextPackage;
     if ((this->fields).nextPackage == (NetworkTransformPackage *)0x0) {
-      pQVar3 = (this->fields).transformQueue;
-      if (pQVar3 == (Queue_1_NetworkTransformPackage_ *)0x0) goto code_?;
-      if (0 < (pQVar3->fields)._size) {
-        pNVar4 = (NetworkTransformPackage *)
+      pQVar2 = (this->fields).transformQueue;
+      if (pQVar2 == (Queue_1_NetworkTransformPackage_ *)0x0) goto code_?;
+      if (0 < (pQVar2->fields)._size) {
+        pNVar3 = (NetworkTransformPackage *)
                   mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
                   Queue_1_System_Object__Dequeue
-                            ((Queue_1_System_Object_ *)pQVar3,
+                            ((Queue_1_System_Object_ *)pQVar2,
                              MethodInfo__System__Collections__Generic__Queue<NetworkTransformPackage>__Dequeue__
                             );
-        *ppNVar2 = pNVar4;
-        func_?(ppNVar2,pNVar4);
+        (this->fields).nextPackage = pNVar3;
+        func_?(&(this->fields).nextPackage,pNVar3);
       }
     }
   }
-code_?:
-  ppNVar2 = &(this->fields).currentPackage;
   if ((this->fields).currentPackage == (NetworkTransformPackage *)0x0) {
     return;
   }
-  pNVar4 = (this->fields).nextPackage;
-  ppNVar5 = &(this->fields).nextPackage;
-  if (pNVar4 == (NetworkTransformPackage *)0x0) {
+  if ((this->fields).nextPackage == (NetworkTransformPackage *)0x0) {
+    if ((this->fields).currentPackage == (NetworkTransformPackage *)0x0) {
+      return;
+    }
+    pNVar3 = (this->fields).currentPackage;
 code_?:
-    pMVar6 = (pMVar1->fields)._.worldObject;
-    if (pMVar6 != (MVWorldObjectClient *)0x0) {
-      pNVar4 = *ppNVar2;
-      uVar7._0_4_ = (pNVar4->fields).position.x;
-      uVar7._4_4_ = (pNVar4->fields).position.y;
-      (*(code *)(pMVar6->klass->vtable).set_Position.method)
-                (pMVar6,uVar7,(pNVar4->fields).position.z,
-                 (pMVar6->klass->vtable).get_Rotation.methodPtr);
-      pNVar4 = *ppNVar2;
-      if ((pNVar4 != (NetworkTransformPackage *)0x0) &&
-         (pMVar6 = (pMVar1->fields)._.worldObject, pMVar6 != (MVWorldObjectClient *)0x0)) {
-        pMVar8 = pMVar6->klass;
-        fVar9 = (pNVar4->fields).rotation.x;
-        fVar10 = (pNVar4->fields).rotation.y;
-        fVar11 = (pNVar4->fields).rotation.z;
-        fVar12 = (pNVar4->fields).rotation.w;
-        pIVar13 = (pMVar8->vtable).get_Scale.methodPtr;
+    pMVar4 = (pMVar1->fields)._.worldObject;
+    if (pMVar4 != (MVWorldObjectClient *)0x0) {
+      uVar5._0_4_ = (pNVar3->fields).position.x;
+      uVar5._4_4_ = (pNVar3->fields).position.y;
+      (*(code *)(pMVar4->klass->vtable).set_Position.method)
+                (pMVar4,uVar5,(pNVar3->fields).position.z,
+                 (pMVar4->klass->vtable).get_Rotation.methodPtr);
+      pNVar3 = (pMVar1->fields).currentPackage;
+      if ((pNVar3 != (NetworkTransformPackage *)0x0) &&
+         (pMVar4 = (pMVar1->fields)._.worldObject, pMVar4 != (MVWorldObjectClient *)0x0)) {
+        fVar6 = (pNVar3->fields).rotation.x;
+        fVar7 = (pNVar3->fields).rotation.y;
+        fVar8 = (pNVar3->fields).rotation.z;
+        fVar9 = (pNVar3->fields).rotation.w;
 code_?:
-        (*(code *)(pMVar8->vtable).set_Rotation.method)
-                  (pMVar6,fVar9,fVar10,fVar11,fVar12,pIVar13);
+        (*(code *)(pMVar4->klass->vtable).set_Rotation.method)
+                  (pMVar4,fVar6,fVar7,fVar8,fVar9,(pMVar4->klass->vtable).get_Scale.methodPtr)
+        ;
         return;
       }
     }
   }
   else {
     if ((this->fields).transformReportingHasStopped == 0) {
-      do {
-        if (delayedTime < (pNVar4->fields).timestamp) goto code_?;
-        pQVar3 = (this->fields).transformQueue;
-        if (pQVar3 == (Queue_1_NetworkTransformPackage_ *)0x0) break;
-        if ((pQVar3->fields)._size < 1) goto code_?;
-        *ppNVar2 = *ppNVar5;
-        func_?(ppNVar2,*ppNVar5);
-        pQVar3 = (this->fields).transformQueue;
-        if (pQVar3 == (Queue_1_NetworkTransformPackage_ *)0x0) break;
-        pNVar4 = (NetworkTransformPackage *)
-                  mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
-                  Queue_1_System_Object__Dequeue
-                            ((Queue_1_System_Object_ *)pQVar3,
-                             MethodInfo__System__Collections__Generic__Queue<NetworkTransformPackage>__Dequeue__
-                            );
-        *ppNVar5 = pNVar4;
-        func_?(ppNVar5,pNVar4);
-        pNVar4 = *ppNVar5;
-      } while (pNVar4 != (NetworkTransformPackage *)0x0);
+      pNVar3 = (this->fields).nextPackage;
+      if (pNVar3 != (NetworkTransformPackage *)0x0) {
+        ppNVar10 = &(this->fields).nextPackage;
+        do {
+          ppNVar11 = &(this->fields).currentPackage;
+          if (delayedTime < (pNVar3->fields).timestamp) goto code_?;
+          pQVar2 = (this->fields).transformQueue;
+          if (pQVar2 == (Queue_1_NetworkTransformPackage_ *)0x0) break;
+          if ((pQVar2->fields)._size < 1) goto code_?;
+          *ppNVar11 = *ppNVar10;
+          func_?(ppNVar11,*ppNVar10);
+          pQVar2 = (this->fields).transformQueue;
+          if (pQVar2 == (Queue_1_NetworkTransformPackage_ *)0x0) break;
+          pNVar3 = (NetworkTransformPackage *)
+                    mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
+                    Queue_1_System_Object__Dequeue
+                              ((Queue_1_System_Object_ *)pQVar2,
+                               MethodInfo__System__Collections__Generic__Queue<NetworkTransformPackage>__Dequeue__
+                              );
+          *ppNVar10 = pNVar3;
+          func_?(ppNVar10,pNVar3);
+          pNVar3 = *ppNVar10;
+        } while (pNVar3 != (NetworkTransformPackage *)0x0);
+      }
       goto code_?;
     }
 code_?:
-    pMVar14 = _UNK_?;
-    pNVar4 = *ppNVar5;
-    if ((pNVar4 == (NetworkTransformPackage *)0x0) ||
-       (pNStack_15 = *ppNVar2, pNStack_15 == (NetworkTransformPackage *)0x0)) goto code_?;
-    pNVar16 = *ppNVar2;
+    pMVar12 = _UNK_?;
+    pNVar13 = (this->fields).nextPackage;
+    if ((pNVar13 == (NetworkTransformPackage *)0x0) ||
+       (pNVar3 = (this->fields).currentPackage, pNVar3 == (NetworkTransformPackage *)0x0))
+    goto code_?;
     this = (MVNetworkListener *)0x0;
-    fVar9 = (float)((pNVar4->fields).timestamp - (pNVar16->fields).timestamp);
-    if ((pNVar4->fields).packageType == 1) {
-      iVar17 = (pNVar16->fields).timestamp;
+    pNVar14 = (pMVar1->fields).nextPackage;
+    fVar6 = (float)((pNVar13->fields).timestamp - (pNVar3->fields).timestamp);
+    if ((pNVar14->fields).packageType == 1) {
+      if (pNVar3 == (NetworkTransformPackage *)0x0) goto code_?;
+      iVar15 = (pNVar3->fields).timestamp;
 code_?:
-      pMVar18 = (MVNetworkListener *)((float)(delayedTime - iVar17) / fVar9);
+      pMVar16 = (MVNetworkListener *)((float)(delayedTime - iVar15) / fVar6);
     }
     else {
-      pMVar18 = _UNK_?;
-      if (((pNVar4->fields).packageType != 0) &&
-         (pMVar18 = this, (pNVar4->fields).packageType == 2)) {
-        iVar17 = (pNVar16->fields).timestamp;
+      pMVar16 = _UNK_?;
+      if (((pNVar14->fields).packageType != 0) &&
+         (pMVar16 = this, (pNVar14->fields).packageType == 2)) {
+        iVar15 = (pNVar3->fields).timestamp;
         (pMVar1->fields).transformReportingHasStopped = 1;
         goto code_?;
       }
     }
-    this = pMVar18;
-    ppNVar5 = &(pMVar1->fields).nextPackage;
-    if (fVar9 == 0.0) {
+    this = pMVar16;
+    if (fVar6 == 0.0) {
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                 ((Object *)StringLiteral_Interpolation_INTERVAL_IS_ZERO__,(MethodInfo *)0x0);
       this = _UNK_?;
-      pMVar14 = _UNK_?;
+      pMVar12 = _UNK_?;
     }
     else {
-      if ((float)this < 0.0) goto code_?;
-      if ((float)pMVar14 < (float)this) {
-        pMVar18 = _UNK_?;
+      if ((float)this < 0.0) {
+        if (pNVar3 == (NetworkTransformPackage *)0x0) goto code_?;
+        goto code_?;
+      }
+      if ((float)pMVar12 < (float)this) {
+        pMVar16 = _UNK_?;
         if ((float)this < (float)_UNK_?) {
-          pMVar18 = this;
+          pMVar16 = this;
         }
-        pMVar6 = (pMVar1->fields)._.worldObject;
-        if ((pMVar1->fields).transformReportingHasStopped != 0) {
-          if (((pMVar6 != (MVWorldObjectClient *)0x0) &&
-              (pNVar4 = *ppNVar5, uVar19._0_4_ = (pNVar4->fields).position.x,
-              uVar19._4_4_ = (pNVar4->fields).position.y,
-              (*(code *)(pMVar6->klass->vtable).set_Position.method)
-                        ((pMVar1->fields)._.worldObject,uVar19,(pNVar4->fields).position.z,
-                         (pMVar6->klass->vtable).get_Rotation.methodPtr),
-              *ppNVar5 != (NetworkTransformPackage *)0x0)) &&
-             (pMVar6 = (pMVar1->fields)._.worldObject, pMVar6 != (MVWorldObjectClient *)0x0)) {
-            pNVar4 = *ppNVar5;
-            (*(code *)(pMVar6->klass->vtable).set_Rotation.method)
-                      (pMVar6,(pNVar4->fields).rotation.x,(pNVar4->fields).rotation.y,
-                       (pNVar4->fields).rotation.z,(pNVar4->fields).rotation.w,
-                       (pMVar6->klass->vtable).get_Scale.methodPtr);
-            ppNVar2 = &(pMVar1->fields).currentPackage;
-            *ppNVar2 = (NetworkTransformPackage *)0x0;
-            func_?(ppNVar2,0);
-            *ppNVar5 = (NetworkTransformPackage *)0x0;
-            func_?(ppNVar5,0);
+        if ((pMVar1->fields).transformReportingHasStopped == 0) {
+          pMVar4 = (pMVar1->fields)._.worldObject;
+          if ((float)pMVar16 <= (float)this) {
+            this = pMVar16;
+          }
+          pNVar13 = (pMVar1->fields).nextPackage;
+          if (pNVar13 == (NetworkTransformPackage *)0x0) goto code_?;
+          uStack_17._0_4_ = (pNVar13->fields).position.x;
+          uStack_17._4_4_ = (pNVar13->fields).position.y;
+          fStack_18 = (pNVar13->fields).position.z;
+          if (pNVar3 == (NetworkTransformPackage *)0x0) goto code_?;
+          QStack_19.y = (pNVar3->fields).position.x;
+          QStack_19.z = (pNVar3->fields).position.y;
+          QStack_19.w = (pNVar3->fields).position.z;
+          fVar6 = (float)this - (float)pMVar12;
+          pNVar3 = (pMVar1->fields).nextPackage;
+          if (pNVar3 == (NetworkTransformPackage *)0x0) goto code_?;
+          uVar20 = (pNVar3->fields).position.x;
+          uVar21 = (pNVar3->fields).position.y;
+          QStack_19.w = (pNVar3->fields).position.z + fVar6 * (fStack_18 - QStack_19.w);
+          QStack_19.z = (float)uVar21 + fVar6 * ((float)uStack_17._4_4_ - QStack_19.z);
+          QStack_19.y = (float)uVar20 + fVar6 * ((float)(undefined4)uStack_17 - QStack_19.y);
+          if (pMVar4 == (MVWorldObjectClient *)0x0) goto code_?;
+          (*(code *)(pMVar4->klass->vtable).set_Position.method)
+                    (pMVar4,QStack_19._4_8_,QStack_19.w,
+                     (pMVar4->klass->vtable).get_Rotation.methodPtr);
+          pMVar4 = (pMVar1->fields)._.worldObject;
+          pNVar3 = (pMVar1->fields).nextPackage;
+          if ((pNVar3 == (NetworkTransformPackage *)0x0) || (pMVar4 == (MVWorldObjectClient *)0x0)
+             ) goto code_?;
+          fVar6 = (pNVar3->fields).rotation.x;
+          fVar7 = (pNVar3->fields).rotation.y;
+          fVar8 = (pNVar3->fields).rotation.z;
+          fVar9 = (pNVar3->fields).rotation.w;
+          goto code_?;
+        }
+        pNVar3 = (pMVar1->fields).nextPackage;
+        if ((pNVar3 != (NetworkTransformPackage *)0x0) &&
+           (pMVar4 = (pMVar1->fields)._.worldObject, pMVar4 != (MVWorldObjectClient *)0x0)) {
+          uVar22._0_4_ = (pNVar3->fields).position.x;
+          uVar22._4_4_ = (pNVar3->fields).position.y;
+          (*(code *)(pMVar4->klass->vtable).set_Position.method)
+                    (pMVar4,uVar22,(pNVar3->fields).position.z,
+                     (pMVar4->klass->vtable).get_Rotation.methodPtr);
+          pNVar3 = (pMVar1->fields).nextPackage;
+          if ((pNVar3 != (NetworkTransformPackage *)0x0) &&
+             (pMVar4 = (pMVar1->fields)._.worldObject, pMVar4 != (MVWorldObjectClient *)0x0)) {
+            (*(code *)(pMVar4->klass->vtable).set_Rotation.method)
+                      (pMVar4,(pNVar3->fields).rotation.x,(pNVar3->fields).rotation.y,
+                       (pNVar3->fields).rotation.z,(pNVar3->fields).rotation.w,
+                       (pMVar4->klass->vtable).get_Scale.methodPtr);
+            (pMVar1->fields).currentPackage = (NetworkTransformPackage *)0x0;
+            func_?(&(pMVar1->fields).currentPackage,0);
+            (pMVar1->fields).nextPackage = (NetworkTransformPackage *)0x0;
+            func_?(&(pMVar1->fields).nextPackage,0);
             (pMVar1->fields).stopListening = 1;
             return;
           }
-          goto code_?;
         }
-        if ((float)pMVar18 <= (float)this) {
-          this = pMVar18;
-        }
-        uVar20 = (pNVar4->fields).position.x;
-        uVar21 = (pNVar4->fields).position.y;
-        uVar22 = (pNStack_15->fields).position.x;
-        uVar23 = (pNStack_15->fields).position.y;
-        fVar9 = (float)this - (float)pMVar14;
-        uStack_24._0_4_ = (pNVar4->fields).position.x;
-        uStack_24._4_4_ = (pNVar4->fields).position.y;
-        fStack_25 = (pNVar4->fields).position.z;
-        uStack_26 = CONCAT44((float)uStack_24._4_4_ + ((float)uVar21 - (float)uVar23) * fVar9,
-                             (float)(undefined4)uStack_24 + ((float)uVar20 - (float)uVar22) * fVar9);
-        fStack_27 = fStack_25 +
-                   ((pNVar4->fields).position.z - (pNStack_15->fields).position.z) * fVar9;
-        if (pMVar6 == (MVWorldObjectClient *)0x0) goto code_?;
-        (*(code *)(pMVar6->klass->vtable).set_Position.method)
-                  ((pMVar1->fields)._.worldObject,uStack_26,fStack_27,
-                   (pMVar6->klass->vtable).get_Rotation.methodPtr);
-        pMVar6 = (pMVar1->fields)._.worldObject;
-        pNVar4 = *ppNVar5;
-        if ((pNVar4 == (NetworkTransformPackage *)0x0) || (pMVar6 == (MVWorldObjectClient *)0x0))
-        goto code_?;
-        pMVar8 = pMVar6->klass;
-        fVar9 = (pNVar4->fields).rotation.x;
-        fVar10 = (pNVar4->fields).rotation.y;
-        fVar11 = (pNVar4->fields).rotation.z;
-        fVar12 = (pNVar4->fields).rotation.w;
-        pIVar13 = (pMVar8->vtable).get_Scale.methodPtr;
         goto code_?;
       }
     }
-    pNVar4 = *ppNVar2;
-    pMVar6 = (pMVar1->fields)._.worldObject;
-    if (pNVar4 != (NetworkTransformPackage *)0x0) {
-      uStack_26._0_4_ = (pNVar4->fields).position.x;
-      uStack_26._4_4_ = (pNVar4->fields).position.y;
-      fStack_27 = (pNVar4->fields).position.z;
-      pNVar4 = *ppNVar5;
-      if (pNVar4 != (NetworkTransformPackage *)0x0) {
-        uStack_24._0_4_ = (pNVar4->fields).position.x;
-        uStack_24._4_4_ = (pNVar4->fields).position.y;
-        fStack_25 = (pNVar4->fields).position.z;
+    pNVar3 = (pMVar1->fields).currentPackage;
+    pMVar4 = (pMVar1->fields)._.worldObject;
+    if (pNVar3 != (NetworkTransformPackage *)0x0) {
+      uStack_17._0_4_ = (pNVar3->fields).position.x;
+      uStack_17._4_4_ = (pNVar3->fields).position.y;
+      fStack_18 = (pNVar3->fields).position.z;
+      pNVar3 = (pMVar1->fields).nextPackage;
+      if (pNVar3 != (NetworkTransformPackage *)0x0) {
+        uVar23 = (pNVar3->fields).position.x;
+        uVar24 = (pNVar3->fields).position.y;
         if ((float)this < 0.0) {
-          pMVar14 = (MVNetworkListener *)0x0;
+          pMVar12 = (MVNetworkListener *)0x0;
         }
-        else if ((float)this <= (float)pMVar14) {
-          pMVar14 = this;
+        else if ((float)this <= (float)pMVar12) {
+          pMVar12 = this;
         }
-        QStack_28.y = ((float)(undefined4)uStack_24 - (float)(undefined4)uStack_26) * (float)pMVar14
-                      + (float)(undefined4)uStack_26;
-        QStack_28.z = ((float)uStack_24._4_4_ - (float)uStack_26._4_4_) * (float)pMVar14 +
-                      (float)uStack_26._4_4_;
-        QStack_28.w = (fStack_25 - fStack_27) * (float)pMVar14 + fStack_27;
-        if (pMVar6 != (MVWorldObjectClient *)0x0) {
-          pMVar8 = pMVar6->klass;
-          (*(code *)(pMVar8->vtable).set_Position.method)
-                    ((pMVar1->fields)._.worldObject,CONCAT44(QStack_28.z,QStack_28.y),QStack_28.w,
-                     (pMVar8->vtable).get_Rotation.methodPtr);
-          pMVar6 = (pMVar1->fields)._.worldObject;
-          if (((*ppNVar2 != (NetworkTransformPackage *)0x0) &&
-              (*ppNVar5 != (NetworkTransformPackage *)0x0)) &&
-             (pQVar29 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Lerp
-                                  (&QStack_28,((*ppNVar2)->fields).rotation,
-                                   ((*ppNVar5)->fields).rotation,(float)this,(MethodInfo *)0x0),
-             pMVar6 != (MVWorldObjectClient *)0x0)) {
-            pMVar8 = pMVar6->klass;
-            fVar9 = pQVar29->x;
-            fVar10 = pQVar29->y;
-            fVar11 = pQVar29->z;
-            fVar12 = pQVar29->w;
-            pIVar13 = (pMVar8->vtable).get_Scale.methodPtr;
-            goto code_?;
+        QStack_19.w = ((pNVar3->fields).position.z - fStack_18) * (float)pMVar12 + fStack_18;
+        QStack_19.z = ((float)uVar24 - (float)uStack_17._4_4_) * (float)pMVar12 +
+                      (float)uStack_17._4_4_;
+        QStack_19.y = ((float)uVar23 - (float)(undefined4)uStack_17) * (float)pMVar12 +
+                      (float)(undefined4)uStack_17;
+        if (pMVar4 != (MVWorldObjectClient *)0x0) {
+          (*(code *)(pMVar4->klass->vtable).set_Position.method)
+                    (pMVar4,QStack_19._4_8_,QStack_19.w,
+                     (pMVar4->klass->vtable).get_Rotation.methodPtr);
+          pNVar3 = (pMVar1->fields).currentPackage;
+          pMVar4 = (pMVar1->fields)._.worldObject;
+          if (((pNVar3 != (NetworkTransformPackage *)0x0) &&
+              (pNVar13 = (pMVar1->fields).nextPackage, pNVar13 != (NetworkTransformPackage *)0x0)) &&
+             (pQVar25 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Lerp
+                                  (&QStack_19,(pNVar3->fields).rotation,(pNVar13->fields).rotation,
+                                   (float)this,(MethodInfo *)0x0),
+             pMVar4 != (MVWorldObjectClient *)0x0)) {
+            (*(code *)(pMVar4->klass->vtable).set_Rotation.method)
+                      (pMVar4,pQVar25->x,pQVar25->y,pQVar25->z,pQVar25->w,
+                       (pMVar4->klass->vtable).get_Scale.methodPtr);
+            return;
           }
         }
       }
@@ -577,8 +592,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar30 = (code *)swi(3);
-  (*pcVar30)();
+  pcVar26 = (code *)swi(3);
+  (*pcVar26)();
   return;
 }
 
@@ -610,35 +625,34 @@ void Assembly-CSharp.dll::MVNetworkListener::MVNetworkListener__ctor
   HashSet_1_System_Object___ctor
             (this_00,
              MethodInfo__System__Collections__Generic__HashSet<INetworkUpdateListener>__HashSet__);
-  ppHVar1 = &(this->fields).updateListenerList;
-  *ppHVar1 = (HashSet_1_INetworkUpdateListener_ *)this_00;
-  func_?(ppHVar1,this_00);
-  this_01 = (Queue_1_NetworkTransformPackage_ *)
-            func_?(TypeInfo__System__Collections__Generic__Queue<NetworkTransformPackage>);
+  (this->fields).updateListenerList = (HashSet_1_INetworkUpdateListener_ *)this_00;
+  func_?(&(this->fields).updateListenerList,this_00);
+  pQVar1 = (Queue_1_NetworkTransformPackage_ *)
+           func_?(TypeInfo__System__Collections__Generic__Queue<NetworkTransformPackage>);
   System.Core.dll::System::Runtime::CompilerServices::ReadOnlyCollectionBuilder`1[System::Object]::
   ReadOnlyCollectionBuilder_1_System_Object___ctor
-            ((ReadOnlyCollectionBuilder_1_System_Object_ *)this_01,
+            ((ReadOnlyCollectionBuilder_1_System_Object_ *)pQVar1,
              MethodInfo__System__Collections__Generic__Queue<NetworkTransformPackage>__Queue__);
-  ppQVar2 = &(this->fields).transformQueue;
-  *ppQVar2 = this_01;
-  method_00 = (MethodInfo *)ppQVar2;
-  func_?(ppQVar2,this_01);
+  method_00 = (MethodInfo *)&(this->fields).transformQueue;
+  (this->fields).transformQueue = pQVar1;
+  func_?(method_00,pQVar1);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   (this->fields)._.worldObject = owner;
   func_?(&this->fields,owner);
   item = MVNetworkListener_CreateCurPosTransformPackage(this,(MethodInfo *)0x0);
-  if (*ppQVar2 != (Queue_1_NetworkTransformPackage_ *)0x0) {
+  pQVar1 = (this->fields).transformQueue;
+  if (pQVar1 != (Queue_1_NetworkTransformPackage_ *)0x0) {
     mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
     Queue_1_System_Object__Enqueue
-              ((Queue_1_System_Object_ *)*ppQVar2,(Object *)item,
+              ((Queue_1_System_Object_ *)pQVar1,(Object *)item,
                MethodInfo__System__Collections__Generic__Queue<NetworkTransformPackage>__Enqueue_NetworkTransformPackage_
               );
     return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

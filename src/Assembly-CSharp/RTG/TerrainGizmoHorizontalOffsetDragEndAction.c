@@ -213,9 +213,8 @@ void Assembly-CSharp.dll::RTG::TerrainGizmoHorizontalOffsetDragEndAction::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar1,
              MethodInfo__System__Collections__Generic__List<RTG::LocalTransformSnapshot>__List__);
-  pTVar2 = &this->fields;
-  pTVar2->_preChangeSnapshots = pLVar1;
-  func_?(pTVar2,pLVar1);
+  (this->fields)._preChangeSnapshots = pLVar1;
+  func_?(&this->fields,pLVar1);
   pLVar1 = (List_1_RTG_LocalTransformSnapshot_ *)
            func_?(TypeInfo__System__Collections__Generic__List<RTG::LocalTransformSnapshot>
                           );
@@ -224,10 +223,9 @@ void Assembly-CSharp.dll::RTG::TerrainGizmoHorizontalOffsetDragEndAction::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar1,
              MethodInfo__System__Collections__Generic__List<RTG::LocalTransformSnapshot>__List__);
-  ppLVar3 = &(this->fields)._postChangeSnapshots;
-  *ppLVar3 = pLVar1;
-  method_00 = (MethodInfo *)ppLVar3;
-  func_?(ppLVar3,pLVar1);
+  method_00 = (MethodInfo *)&(this->fields)._postChangeSnapshots;
+  (this->fields)._postChangeSnapshots = pLVar1;
+  func_?(method_00,pLVar1);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   pLVar1 = (List_1_RTG_LocalTransformSnapshot_ *)
@@ -237,33 +235,34 @@ void Assembly-CSharp.dll::RTG::TerrainGizmoHorizontalOffsetDragEndAction::
             ((List_1_System_Object_ *)pLVar1,(IEnumerable_1_System_Object_ *)preChangeSnapshots,
              MethodInfo__System__Collections__Generic__List<RTG::LocalTransformSnapshot>__List_System__Collections__Generic__IEnumerable<RTG::LocalTransformSnapshot>_
             );
-  pTVar2->_preChangeSnapshots = pLVar1;
+  (this->fields)._preChangeSnapshots = pLVar1;
   func_?();
-  pLVar4 = TypeInfo__System__Collections__Generic__List<RTG::LocalTransformSnapshot>;
-  this_00 = (List_1_RTG_LocalTransformSnapshot_ *)func_?();
+  pLVar2 = TypeInfo__System__Collections__Generic__List<RTG::LocalTransformSnapshot>;
+  this_00 = (TerrainGizmo *)func_?();
   mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object___ctor_1
             ((List_1_System_Object_ *)this_00,(IEnumerable_1_System_Object_ *)postChangeSnapshots,
              MethodInfo__System__Collections__Generic__List<RTG::LocalTransformSnapshot>__List_System__Collections__Generic__IEnumerable<RTG::LocalTransformSnapshot>_
             );
-  *ppLVar3 = this_00;
+  (this->fields)._postChangeSnapshots = (List_1_RTG_LocalTransformSnapshot_ *)this_00;
   func_?();
-  *(ulonglong *)&(this_00->fields)._version = CONCAT44(pLVar1,pTVar2);
-  this_00[1].klass = (List_1_RTG_LocalTransformSnapshot___Class *)preChangeGizmoPos.z;
-  if (((pLVar4 != (List_1_RTG_LocalTransformSnapshot___Class *)0x0) &&
-      (pcVar5 = (pLVar4->_0).name, pcVar5 != (char *)0x0)) &&
-     (iVar6 = *(int *)(pcVar5 + 0xf8), iVar6 != 0)) {
-    iVar7 = *(int32_t *)(iVar6 + 0x18);
-    *(undefined8 *)&this_00[1].monitor = *(undefined8 *)(iVar6 + 0x10);
-    this_00[1].fields._size = iVar7;
-    piStack8 = &this_00[1].fields._version;
-    pLStack9 = pLVar4;
-    *piStack8 = (int32_t)pLVar4;
+  (this->fields)._preChangeGizmoPos.x = (float)pLVar2;
+  (this->fields)._preChangeGizmoPos.y = (float)&this->fields;
+  (this->fields)._preChangeGizmoPos.z = (float)pLVar1;
+  if (((this_00 != (TerrainGizmo *)0x0) &&
+      (pGVar3 = (this_00->fields)._._gizmo, pGVar3 != (Gizmo *)0x0)) &&
+     (pGVar4 = (pGVar3->fields)._transform, pGVar4 != (GizmoTransform *)0x0)) {
+    fVar5 = (pGVar4->fields)._position3D.y;
+    fVar6 = (pGVar4->fields)._position3D.z;
+    (this->fields)._postChangeGizmoPos.x = (pGVar4->fields)._position3D.x;
+    (this->fields)._postChangeGizmoPos.y = fVar5;
+    (this->fields)._postChangeGizmoPos.z = fVar6;
+    (this->fields)._terrainGizmo = this_00;
     func_?();
     return;
   }
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

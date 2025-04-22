@@ -38,9 +38,9 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::VehicleEnergyContaine
 
 {
   if (((((this->fields)._UsingEnergy_k__BackingField != 0) && ((this->fields).consumingEnergy != 0))
-      && (fVar1 = (this->fields).energyStorage, 0.0 < fVar1)) &&
-     (fVar1 = fVar1 - (this->fields).consumption, (this->fields).energyStorage = fVar1, fVar1 < 0.0)
-     ) {
+      && (0.0 < (this->fields).energyStorage)) &&
+     (fVar1 = (this->fields).energyStorage - (this->fields).consumption,
+     (this->fields).energyStorage = fVar1, fVar1 < 0.0)) {
     (this->fields).energyStorage = 0.0;
   }
   return;
@@ -63,11 +63,11 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::VehicleEnergyContaine
   }
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
   this_00 = (this->fields).predictions;
+  uStack_2 = vehicleEnergyRefill._4_4_;
   if (this_00 !=
       (Dictionary_2_System_Int32_WorldObjectTypes_VehicleEnergy_VehicleEnergyRefillPrediction_ *)0x0
      ) {
-    value.vehicleEnergyRefill.prediction = vehicleEnergyRefill.prediction;
-    value.vehicleEnergyRefill._5_3_ = vehicleEnergyRefill._5_3_;
+    value.vehicleEnergyRefill._4_4_ = uStack_2;
     value.vehicleEnergyRefill.spawnerId =
          (int32_t)
          MethodInfo__System__Collections__Generic__Dictionary<int,_WorldObjectTypes::VehicleEnergy::VehicleEnergyRefillPrediction>__Add_int__WorldObjectTypes__VehicleEnergy__VehicleEnergyRefillPrediction_
@@ -83,8 +83,8 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::VehicleEnergyContaine
     return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -97,11 +97,12 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::VehicleEnergyContaine
                MethodInfo *method)
 
 {
-  fVar1 = (this->fields).originalEnergyStorage;
-  fVar2 = fVar1 * vehicleEnergyRefill.amount + (this->fields).energyStorage;
-  (this->fields).energyStorage = fVar2;
-  if (fVar1 < fVar2) {
-    (this->fields).energyStorage = fVar1;
+  fVar1 = vehicleEnergyRefill.amount * (this->fields).originalEnergyStorage +
+          (this->fields).energyStorage;
+  pfVar2 = &(this->fields).originalEnergyStorage;
+  (this->fields).energyStorage = fVar1;
+  if (*pfVar2 <= fVar1 && fVar1 != *pfVar2) {
+    (this->fields).energyStorage = (this->fields).originalEnergyStorage;
   }
   pAVar3 = (this->fields).OnRefill;
   if (pAVar3 != (Action *)0x0) {
@@ -282,7 +283,6 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::VehicleEnergyContaine
                MethodInfo *method)
 
 {
-  uVar1 = vehicleEnergyRefill._4_4_;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<int,_WorldObjectTypes::VehicleEnergy::VehicleEnergyRefillPrediction>__ContainsKey_int_
@@ -293,34 +293,33 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::VehicleEnergyContaine
     func_?(&TypeInfo__System__Math);
     cRam_? = '\x01';
   }
-  auStack_2 = (undefined1  [4])0x0;
-  pMStack_3 = (Math__Class *)0x0;
-  puStack_4 = (undefined *)0x0;
-  pvStack_5 = (void *)0x0;
-  pDVar6 = (this->fields).predictions;
+  auStack_1 = (undefined1  [4])0x0;
+  pMStack_2 = (Math__Class *)0x0;
+  puStack_3 = (undefined *)0x0;
+  pvStack_4 = (void *)0x0;
+  pDVar5 = (this->fields).predictions;
   if (vehicleEnergyRefill.prediction == 0) {
-    if (pDVar6 != (Dictionary_2_System_Int32_WorldObjectTypes_VehicleEnergy_VehicleEnergyRefillPrediction_
+    if (pDVar5 != (Dictionary_2_System_Int32_WorldObjectTypes_VehicleEnergy_VehicleEnergyRefillPrediction_
                    *)0x0) {
-      bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+      bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
               Int32,WorldObjectTypes::VehicleEnergy::VehicleEnergyRefillPrediction]::
               Dictionary_2_System_Int32_WorldObjectTypes_VehicleEnergy_VehicleEnergyRefillPrediction__TryGetValue
-                        (pDVar6,vehicleEnergyRefill.spawnerId,
-                         (VehicleEnergyRefillPrediction *)auStack_2,
+                        (pDVar5,vehicleEnergyRefill.spawnerId,
+                         (VehicleEnergyRefillPrediction *)auStack_1,
                          MethodInfo__System__Collections__Generic__Dictionary<int,_WorldObjectTypes::VehicleEnergy::VehicleEnergyRefillPrediction>__TryGetValue_int__WorldObjectTypes__VehicleEnergy__VehicleEnergyRefillPrediction__
                         );
-      if (bVar7 == 0) {
+      if (bVar6 == 0) {
         return;
       }
-      ppMStack_8 = (MethodInfo **)auStack_2;
-      pMStack_9 = pMStack_3;
-      fStack_10 = (float)puStack_4;
-      if (auStack_2 == (undefined1  [4])vehicleEnergyRefill.spawnerId) {
-        fStack_11 = (float)puStack_4;
+      uStack_7 = CONCAT44(pMStack_2,auStack_1);
+      fStack_8 = (float)puStack_3;
+      if (auStack_1 == (undefined1  [4])vehicleEnergyRefill.spawnerId) {
+        fStack_9 = (float)puStack_3;
         if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-          pMStack_3 = TypeInfo__System__Math;
+          pMStack_2 = TypeInfo__System__Math;
           func_?();
         }
-        if ((float)((uint)(fStack_11 - vehicleEnergyRefill.amount) & _UNK_?) < _UNK_?)
+        if ((float)((uint)(fStack_9 - vehicleEnergyRefill.amount) & _UNK_?) < _UNK_?)
         {
           if (cRam_? == '\0') {
             func_?(&
@@ -328,13 +327,13 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::VehicleEnergyContaine
                            );
             cRam_? = '\x01';
           }
-          pDVar6 = (this->fields).predictions;
-          if (pDVar6 != (Dictionary_2_System_Int32_WorldObjectTypes_VehicleEnergy_VehicleEnergyRefillPrediction_
+          pDVar5 = (this->fields).predictions;
+          if (pDVar5 != (Dictionary_2_System_Int32_WorldObjectTypes_VehicleEnergy_VehicleEnergyRefillPrediction_
                          *)0x0) {
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,WorldObjectTypes
             ::VehicleEnergy::VehicleEnergyRefillPrediction]::
             Dictionary_2_System_Int32_WorldObjectTypes_VehicleEnergy_VehicleEnergyRefillPrediction__Remove
-                      (pDVar6,vehicleEnergyRefill.spawnerId,
+                      (pDVar5,vehicleEnergyRefill.spawnerId,
                        MethodInfo__System__Collections__Generic__Dictionary<int,_WorldObjectTypes::VehicleEnergy::VehicleEnergyRefillPrediction>__Remove_int_
                       );
             return;
@@ -342,59 +341,58 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::VehicleEnergyContaine
           goto code_?;
         }
       }
-      fVar12 = (this->fields).energyStorage - fStack_10 * (this->fields).originalEnergyStorage;
-      (this->fields).energyStorage = fVar12;
-      if (0.0 <= fVar12) {
+      fVar10 = (this->fields).energyStorage - fStack_8 * (this->fields).originalEnergyStorage;
+      (this->fields).energyStorage = fVar10;
+      if (0.0 <= fVar10) {
         return;
       }
       (this->fields).energyStorage = 0.0;
       return;
     }
   }
-  else if (pDVar6 != (Dictionary_2_System_Int32_WorldObjectTypes_VehicleEnergy_VehicleEnergyRefillPrediction_
+  else if (pDVar5 != (Dictionary_2_System_Int32_WorldObjectTypes_VehicleEnergy_VehicleEnergyRefillPrediction_
                       *)0x0) {
-    bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,WorldObjectTypes
+    bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,WorldObjectTypes
             ::VehicleEnergy::VehicleEnergyRefillPrediction]::
             Dictionary_2_System_Int32_WorldObjectTypes_VehicleEnergy_VehicleEnergyRefillPrediction__ContainsKey
-                      (pDVar6,vehicleEnergyRefill.spawnerId,
+                      (pDVar5,vehicleEnergyRefill.spawnerId,
                        MethodInfo__System__Collections__Generic__Dictionary<int,_WorldObjectTypes::VehicleEnergy::VehicleEnergyRefillPrediction>__ContainsKey_int_
                       );
-    if (bVar7 == 0) {
+    if (bVar6 == 0) {
       if (cRam_? == '\0') {
-        auStack_2 = (undefined1  [4])
+        auStack_1 = (undefined1  [4])
                      &
                      MethodInfo__System__Collections__Generic__Dictionary<int,_WorldObjectTypes::VehicleEnergy::VehicleEnergyRefillPrediction>__Add_int__WorldObjectTypes__VehicleEnergy__VehicleEnergyRefillPrediction_
         ;
         func_?();
         cRam_? = '\x01';
       }
-      fStack_10 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      pDVar6 = (this->fields).predictions;
-      pvStack_13 = (void *)vehicleEnergyRefill.spawnerId;
-      ppMStack_8 = (MethodInfo **)uVar1;
-      pMStack_9 = (Math__Class *)vehicleEnergyRefill.amount;
-      fStack_11 = fStack_10;
-      if (pDVar6 == (Dictionary_2_System_Int32_WorldObjectTypes_VehicleEnergy_VehicleEnergyRefillPrediction_
+      fStack_8 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+      pDVar5 = (this->fields).predictions;
+      pvStack_11 = (void *)vehicleEnergyRefill.spawnerId;
+      uStack_7 = vehicleEnergyRefill._4_8_;
+      if (pDVar5 == (Dictionary_2_System_Int32_WorldObjectTypes_VehicleEnergy_VehicleEnergyRefillPrediction_
                      *)0x0) goto code_?;
-      value.timestamp = fStack_10;
+      value.timestamp = fStack_8;
       value.vehicleEnergyRefill = vehicleEnergyRefill;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,WorldObjectTypes::
       VehicleEnergy::VehicleEnergyRefillPrediction]::
       Dictionary_2_System_Int32_WorldObjectTypes_VehicleEnergy_VehicleEnergyRefillPrediction__Add
-                (pDVar6,vehicleEnergyRefill.spawnerId,value,
+                (pDVar5,vehicleEnergyRefill.spawnerId,value,
                  MethodInfo__System__Collections__Generic__Dictionary<int,_WorldObjectTypes::VehicleEnergy::VehicleEnergyRefillPrediction>__Add_int__WorldObjectTypes__VehicleEnergy__VehicleEnergyRefillPrediction_
                 );
-      fVar12 = (this->fields).originalEnergyStorage;
-      fVar14 = fVar12 * vehicleEnergyRefill.amount + (this->fields).energyStorage;
-      (this->fields).energyStorage = fVar14;
-      if (fVar12 < fVar14) {
-        (this->fields).energyStorage = fVar12;
+      fVar10 = vehicleEnergyRefill.amount * (this->fields).originalEnergyStorage +
+              (this->fields).energyStorage;
+      pfVar12 = &(this->fields).originalEnergyStorage;
+      (this->fields).energyStorage = fVar10;
+      if (*pfVar12 <= fVar10 && fVar10 != *pfVar12) {
+        (this->fields).energyStorage = (this->fields).originalEnergyStorage;
       }
-      pAVar15 = (this->fields).OnRefill;
-      if (pAVar15 != (Action *)0x0) {
-        pvStack_13 = (pAVar15->fields)._._.method;
-        pvStack_5 = (pAVar15->fields)._._.method_code;
-        (*(pAVar15->fields)._._.invoke_impl)();
+      pAVar13 = (this->fields).OnRefill;
+      if (pAVar13 != (Action *)0x0) {
+        pvStack_11 = (pAVar13->fields)._._.method;
+        pvStack_4 = (pAVar13->fields)._._.method_code;
+        (*(pAVar13->fields)._._.invoke_impl)();
         return;
       }
     }
@@ -402,8 +400,8 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::VehicleEnergyContaine
   }
 code_?:
   func_?();
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -503,10 +501,10 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::VehicleEnergyContaine
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<int,_WorldObjectTypes::VehicleEnergy::VehicleEnergyRefillPrediction>__Dictionary__
             );
-  ppDVar1 = &(this->fields).predictions;
-  *ppDVar1 = (Dictionary_2_System_Int32_WorldObjectTypes_VehicleEnergy_VehicleEnergyRefillPrediction_
-              *)this_00;
-  func_?(ppDVar1,this_00);
+  (this->fields).predictions =
+       (Dictionary_2_System_Int32_WorldObjectTypes_VehicleEnergy_VehicleEnergyRefillPrediction_ *)
+       this_00;
+  func_?(&(this->fields).predictions,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

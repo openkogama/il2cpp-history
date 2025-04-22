@@ -190,16 +190,14 @@ void Assembly-CSharp.dll::AvatarAccessoryEquipPopup::AvatarAccessoryEquipPopup_I
         if (pSVar2 != (StreamedSpriteToImageManual *)0x0) {
           StreamedSpriteToImageManual::StreamedSpriteToImageManual_Download
                     (pSVar2,previewImageUrl,(UnityAction *)this_01,(MethodInfo *)0x0);
-          ppUVar3 = &(this->fields).resultCallback;
-          *ppUVar3 = resultCallback;
-          func_?(ppUVar3,resultCallback);
+          (this->fields).resultCallback = resultCallback;
+          func_?(&(this->fields).resultCallback,resultCallback);
           this_00 = (this->fields).itemBackground;
           if (this_00 != (AccessoryItemBackground *)0x0) {
             AccessoryItemBackground::AccessoryItemBackground_Initialize
                       (this_00,accessoryData,(MethodInfo *)0x0);
-            ppAVar4 = &(this->fields).accessoryDataClient;
-            *ppAVar4 = accessoryData;
-            func_?(ppAVar4,accessoryData);
+            (this->fields).accessoryDataClient = accessoryData;
+            func_?(&(this->fields).accessoryDataClient,accessoryData);
             (this->fields).accessoryOffset = accessoryOffset;
             (this->fields).accessoryScale = accessoryScale;
             return;
@@ -209,8 +207,8 @@ void Assembly-CSharp.dll::AvatarAccessoryEquipPopup::AvatarAccessoryEquipPopup_I
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

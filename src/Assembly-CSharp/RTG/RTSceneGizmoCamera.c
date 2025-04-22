@@ -19,10 +19,16 @@ void Assembly-CSharp.dll::RTG::RTSceneGizmoCamera::RTSceneGizmoCamera_Awake
                        (this_00,
                         UnityEngine__Camera_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::Camera>__
                        );
-    ppCVar2 = &(this->fields)._camera;
-    *ppCVar2 = pCVar1;
-    func_?(ppCVar2,&stack0xfffffffc,&UNK_?,ppCVar2,pCVar1);
-    return;
+    (this->fields)._camera = pCVar1;
+    func_?(&(this->fields)._camera,pCVar1);
+    pCVar1 = (this->fields)._camera;
+    if (pCVar1 != (Camera *)0x0) {
+      pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                         ((Component *)pCVar1,(MethodInfo *)0x0);
+      (this->fields)._transform = pTVar2;
+      func_?(&(this->fields)._transform,pTVar2);
+      return;
+    }
   }
   func_?();
   pcVar3 = (code *)swi(3);
@@ -132,71 +138,79 @@ void Assembly-CSharp.dll::RTG::RTSceneGizmoCamera::RTSceneGizmoCamera_Update_Sys
     cRam_? = '\x01';
   }
   pCVar1 = (this->fields)._sceneCamera;
-  if ((pCVar1 != (Camera *)0x0) &&
-     (pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                          ((Component *)pCVar1,(MethodInfo *)0x0), pTVar2 != (Transform *)0x0)) {
-    pTVar3 = (this->fields)._transform;
-    pQVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                        ((Quaternion *)&stack0xffffffcc,pTVar2,(MethodInfo *)0x0);
-    if (pTVar3 != (Transform *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
-                (pTVar3,*pQVar4,(MethodInfo *)0x0);
+  if (pCVar1 != (Camera *)0x0) {
+    pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                        ((Component *)pCVar1,(MethodInfo *)0x0);
+    if (pTVar2 != (Transform *)0x0) {
+      pQVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+                          ((Quaternion *)&stack0xffffffd4,pTVar2,(MethodInfo *)0x0);
       pTVar2 = (this->fields)._transform;
       if (pTVar2 != (Transform *)0x0) {
-        pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
-                            ((Vector3 *)&stack0xffffffd0,pTVar2,(MethodInfo *)0x0);
-        uVar6 = pVVar5->x;
-        uVar7 = pVVar5->y;
-        fVar8 = (this->fields)._offsetFromFocusPt;
-        pTVar3 = (this->fields)._transform;
-        if (pTVar3 != (Transform *)0x0) {
-          value.y = (float)&stack0xffffffd0 - (float)uVar7 * fVar8;
-          value.x = 4.240488e-29 - (float)uVar6 * fVar8;
-          value.z = (float)pTVar2 - pVVar5->z * fVar8;
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                    (pTVar3,value,(MethodInfo *)0x0);
-          pCVar1 = (this->fields)._sceneCamera;
-          pCVar9 = (this->fields)._camera;
-          if ((pCVar1 != (Camera *)0x0) &&
-             (value_00 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_orthographic
-                                   (pCVar1,(MethodInfo *)0x0), pCVar9 != (Camera *)0x0)) {
-            UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_orthographic
-                      (pCVar9,value_00,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
+                  (pTVar2,*pQVar3,(MethodInfo *)0x0);
+        pTVar2 = (this->fields)._transform;
+        if (pTVar2 != (Transform *)0x0) {
+          pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
+                              ((Vector3 *)&stack0xffffffd8,pTVar2,(MethodInfo *)0x0);
+          uVar5 = pVVar4->x;
+          uVar6 = pVVar4->y;
+          fVar7 = (this->fields)._offsetFromFocusPt;
+          this_00 = (this->fields)._transform;
+          if (this_00 != (Transform *)0x0) {
+            value.y = (float)&stack0xffffffd8 - (float)uVar6 * fVar7;
+            value.x = 4.253459e-29 - (float)uVar5 * fVar7;
+            value.z = (float)pTVar2 - pVVar4->z * fVar7;
+            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
+                      (this_00,value,(MethodInfo *)0x0);
             pCVar1 = (this->fields)._sceneCamera;
-            pCVar9 = (this->fields)._camera;
-            if ((pCVar1 != (Camera *)0x0) &&
-               (fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_fieldOfView
-                                   (pCVar1,(MethodInfo *)0x0), pCVar9 != (Camera *)0x0)) {
-              UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_fieldOfView
-                        (pCVar9,fVar8,(MethodInfo *)0x0);
-              pIVar10 = (this->fields)._viewportUpdater;
-              if (pIVar10 != (ISceneGizmoCamViewportUpdater *)0x0) {
-                pIVar11 = pIVar10->klass;
-                uVar12 = 0;
-                uVar13._0_1_ = (pIVar11->_1).rank;
-                uVar13._1_1_ = (pIVar11->_1).minimumAlignment;
-                if (uVar13 != 0) {
-                  do {
-                    if (pIVar11->interfaceOffsets[uVar12].interfaceType ==
-                        (Il2CppClass *)TypeInfo__RTG__ISceneGizmoCamViewportUpdater) {
-                      ppMVar14 = &(&pIVar11->vtable)[pIVar11->interfaceOffsets[uVar12].offset].Update.
-                                  method;
-                      goto code_?;
+            pCVar8 = (this->fields)._camera;
+            if (pCVar1 != (Camera *)0x0) {
+              value_00 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_orthographic
+                                   (pCVar1,(MethodInfo *)0x0);
+              if (pCVar8 != (Camera *)0x0) {
+                UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_orthographic
+                          (pCVar8,value_00,(MethodInfo *)0x0);
+                pCVar1 = (this->fields)._sceneCamera;
+                pCVar8 = (this->fields)._camera;
+                if (pCVar1 != (Camera *)0x0) {
+                  fVar7 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_fieldOfView
+                                     (pCVar1,(MethodInfo *)0x0);
+                  if (pCVar8 != (Camera *)0x0) {
+                    UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_fieldOfView
+                              (pCVar8,fVar7,(MethodInfo *)0x0);
+                    if ((this->fields)._viewportUpdater != (ISceneGizmoCamViewportUpdater *)0x0) {
+                      pIVar9 = (this->fields)._viewportUpdater;
+                      uVar10 = 0;
+                      pIVar11 = pIVar9->klass;
+                      uVar12._0_1_ = (pIVar11->_1).rank;
+                      uVar12._1_1_ = (pIVar11->_1).minimumAlignment;
+                      pIStack13 = pIVar9;
+                      if (uVar12 != 0) {
+                        do {
+                          if (pIVar11->interfaceOffsets[uVar10].interfaceType ==
+                              (Il2CppClass *)TypeInfo__RTG__ISceneGizmoCamViewportUpdater) {
+                            pIVar11 = pIVar9->klass;
+                            iVar14 = pIVar11->interfaceOffsets[uVar10].offset;
+                            pIStack15 = (&pIVar11[1]._0.image)[iVar14 * 2];
+                            pIStack16 = (ISceneGizmoCamViewportUpdater__Class *)this;
+                            (*(code *)(&pIVar11->vtable)[iVar14].Update.method)();
+                            return;
+                          }
+                          uVar10 = uVar10 + 1;
+                        } while (uVar10 < uVar12);
+                      }
+                      pIStack15 = (Il2CppImage *)0x0;
+                      pIStack16 = TypeInfo__RTG__ISceneGizmoCamViewportUpdater;
+                      puVar17 = (undefined4 *)func_?();
+                      pIStack15 = (Il2CppImage *)puVar17[1];
+                      pIStack16 = (ISceneGizmoCamViewportUpdater__Class *)this;
+                      pIStack13 = pIVar9;
+                      (*(code *)*puVar17)();
                     }
-                    uVar12 = uVar12 + 1;
-                  } while (uVar12 < uVar13);
+                    return;
+                  }
                 }
-                uStack15 = 0;
-                pIStack16 = TypeInfo__RTG__ISceneGizmoCamViewportUpdater;
-                pIStack17 = pIVar10;
-                ppMVar14 = (MethodInfo **)func_?();
-code_?:
-                uStack15 = ppMVar14[1];
-                pIStack16 = (ISceneGizmoCamViewportUpdater__Class *)this;
-                pIStack17 = pIVar10;
-                (*(code *)*ppMVar14)();
               }
-              return;
             }
           }
         }
@@ -386,21 +400,20 @@ void Assembly-CSharp.dll::RTG::RTSceneGizmoCamera::RTSceneGizmoCamera_set_SceneC
     bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                       ((Object_1 *)pCVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
     if (bVar1 != 0) {
-      ppCVar3 = &(this->fields)._sceneCamera;
-      *ppCVar3 = value;
+      (this->fields)._sceneCamera = value;
       func_?();
-      pCVar2 = *ppCVar3;
+      pCVar2 = (this->fields)._sceneCamera;
       this_00 = (this->fields)._camera;
       if ((pCVar2 == (Camera *)0x0) ||
-         (fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_depth
+         (fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_depth
                             (pCVar2,(MethodInfo *)0x0), this_00 == (Camera *)0x0)) {
         func_?();
-        pcVar5 = (code *)swi(3);
-        (*pcVar5)();
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
       UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_depth
-                (this_00,fVar4 + _UNK_?,(MethodInfo *)0x0);
+                (this_00,fVar3 + _UNK_?,(MethodInfo *)0x0);
     }
   }
   return;
@@ -414,9 +427,8 @@ void Assembly-CSharp.dll::RTG::RTSceneGizmoCamera::RTSceneGizmoCamera_set_Viewpo
 
 {
   if (value != (ISceneGizmoCamViewportUpdater *)0x0) {
-    ppIVar1 = &(this->fields)._viewportUpdater;
-    *ppIVar1 = value;
-    func_?(ppIVar1,value);
+    (this->fields)._viewportUpdater = value;
+    func_?(&(this->fields)._viewportUpdater,value);
   }
   return;
 }

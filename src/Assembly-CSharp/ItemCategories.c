@@ -262,45 +262,43 @@ void Assembly-CSharp.dll::ItemCategories::ItemCategories__ctor
                    );
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *
+  this_02 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *
             )func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_System::String>
                             );
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text
   ::TextResourceManager+FontAssetRef]::
   Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
-            (this_00,
+            (this_02,
              MethodInfo__System__Collections__Generic__Dictionary<int,_System::String>__Dictionary__
             );
-  ppDVar4 = &(this->fields).itemCategoriesIDName;
-  *ppDVar4 = (Dictionary_2_System_Int32_System_String_ *)this_00;
-  method_00 = (MethodInfo *)ppDVar4;
-  func_?(ppDVar4,this_00);
+  method_00 = (MethodInfo *)&(this->fields).itemCategoriesIDName;
+  (this->fields).itemCategoriesIDName = (Dictionary_2_System_Int32_System_String_ *)this_02;
+  func_?(method_00,this_02);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-  pIVar5 = &this->fields;
-  pIVar5->itemCategoriesNameID = itemCategories;
-  func_?(pIVar5,itemCategories);
-  if (pIVar5->itemCategoriesNameID != (Dictionary_2_System_String_System_Int32_ *)0x0) {
-    pDVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+  (this->fields).itemCategoriesNameID = itemCategories;
+  func_?(&this->fields,itemCategories);
+  this_00 = (this->fields).itemCategoriesNameID;
+  if (this_00 != (Dictionary_2_System_String_System_Int32_ *)0x0) {
+    pDVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
              ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
                        ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                        &stack0xffffffb0,
-                        (Dictionary_2_System_UInt32_System_Object_ *)pIVar5->itemCategoriesNameID,
+                        &stack0xffffffb0,(Dictionary_2_System_UInt32_System_Object_ *)this_00,
                         MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__GetEnumerator__
                        );
-    method_01 = (Object__Class *)pDVar6->_dictionary;
-    value = (Object *)(pDVar6->_current).key;
-    uVar7 = *(undefined8 *)&(pDVar6->_current).value;
+    method_01 = (Object__Class *)pDVar4->_dictionary;
+    value = (Object *)(pDVar4->_current).key;
+    uVar5 = *(undefined8 *)&(pDVar4->_current).value;
     uStack_1 = 1;
     while( true ) {
-      bVar8 = mscorlib.dll::System::Collections::Generic::
+      bVar6 = mscorlib.dll::System::Collections::Generic::
               Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Int32Enum]::
               Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Int32Enum__MoveNext
                         ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Int32Enum_ *)
                          &stack0xffffffc8,
                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_int>__MoveNext__
                         );
-      if (bVar8 == 0) {
+      if (bVar6 == 0) {
         uStack_1 = 0xffffffff;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                   ((Object *)&stack0xffffffc8,
@@ -310,18 +308,19 @@ void Assembly-CSharp.dll::ItemCategories::ItemCategories__ctor
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      if (*ppDVar4 == (Dictionary_2_System_Int32_System_String_ *)0x0) break;
-      iStack_9 = (int32_t)uVar7;
+      this_01 = (this->fields).itemCategoriesIDName;
+      if (this_01 == (Dictionary_2_System_Int32_System_String_ *)0x0) break;
+      iStack_7 = (int32_t)uVar5;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
       Dictionary_2_System_Int32_System_Object__Add
-                ((Dictionary_2_System_Int32_System_Object_ *)*ppDVar4,iStack_9,value,
+                ((Dictionary_2_System_Int32_System_Object_ *)this_01,iStack_7,value,
                  MethodInfo__System__Collections__Generic__Dictionary<int,_System::String>__Add_int__System__String_
                 );
     }
   }
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

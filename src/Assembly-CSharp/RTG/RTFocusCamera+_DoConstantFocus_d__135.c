@@ -118,12 +118,11 @@ bool Assembly-CSharp.dll::RTG::RTFocusCamera+<DoConstantFocus>d__135::
                                   ((Vector3 *)&stack0xffffffc0,pTVar7,(MethodInfo *)0x0);
               uVar24 = pVVar8->x;
               uVar25 = pVVar8->y;
-              if (0.0 < (float)uVar22 * ((float)((ulonglong)uVar23 >> 0x20) - (float)uVar25) +
-                        (float)uVar21 * ((float)uVar23 - (float)uVar24) +
+              if (0.0 < (float)uVar21 * ((float)uVar23 - (float)uVar24) +
+                        (float)uVar22 * ((float)((ulonglong)uVar23 >> 0x20) - (float)uVar25) +
                         fVar4 * (fVar5 - pVVar8->z)) {
-                ppOVar26 = &(this->fields).__2__current;
-                *ppOVar26 = (Object *)0x0;
-                func_?(ppOVar26,0);
+                (this->fields).__2__current = (Object *)0x0;
+                func_?(&(this->fields).__2__current,0);
                 (this->fields).__1__state = 1;
                 return 1;
               }
@@ -161,9 +160,9 @@ bool Assembly-CSharp.dll::RTG::RTFocusCamera+<DoConstantFocus>d__135::
   }
 code_?:
   func_?();
-  pcVar27 = (code *)swi(3);
-  bVar28 = (*pcVar27)();
-  return bVar28;
+  pcVar26 = (code *)swi(3);
+  bVar27 = (*pcVar26)();
+  return bVar27;
 }
 
 

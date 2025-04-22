@@ -16,6 +16,7 @@ void Assembly-CSharp.dll::MVGameControllerDesktop::MVGameControllerDesktop_Clean
     cRam_? = '\x01';
   }
   pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  pMVar2 = unaff_ESI;
   if ((pMVar1 != (MVGameControllerBase *)0x0) &&
      (this_00 = (pMVar1->fields).game, this_00 != (MVNetworkGame *)0x0)) {
     MVNetworkGame::MVNetworkGame_Cleanup(this_00,(MethodInfo *)0x0);
@@ -28,17 +29,18 @@ void Assembly-CSharp.dll::MVGameControllerDesktop::MVGameControllerDesktop_Clean
         (IPlayModeUI *)0x0) {
 code_?:
       this_01 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+      pMVar2 = unaff_ESI;
       if (this_01 != (MainCameraManager *)0x0) {
-        pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+        pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)this_01,(MethodInfo *)0x0);
-        if (pGVar2 != (GameObject *)0x0) {
+        if (pGVar3 != (GameObject *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar2,0,(MethodInfo *)0x0);
-          pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                    (pGVar3,0,(MethodInfo *)0x0);
+          pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                              ((Component *)this,(MethodInfo *)0x0);
-          if (pGVar2 != (GameObject *)0x0) {
+          if (pGVar3 != (GameObject *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                      (pGVar2,0,(MethodInfo *)0x0);
+                      (pGVar3,0,(MethodInfo *)0x0);
             if ((TypeInfo__GameLoader->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
@@ -55,18 +57,20 @@ code_?:
       }
       this_02 = (Component *)
                 TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
-      unaff_ESI = TypeInfo__UnityEngine__MonoBehaviour;
+      pMVar2 = TypeInfo__UnityEngine__MonoBehaviour;
       if (this_02 != (Component *)0x0) {
-        bVar3 = (TypeInfo__UnityEngine__MonoBehaviour->_1).naturalAligment;
-        if (((this_02->klass->_1).naturalAligment < bVar3) ||
-           ((this_02->klass->_1).typeHierarchy[bVar3 - 1] !=
+        pMVar2 = TypeInfo__UnityEngine__MonoBehaviour;
+        if (((this_02->klass->_1).naturalAligment <
+             (TypeInfo__UnityEngine__MonoBehaviour->_1).naturalAligment) ||
+           ((this_02->klass->_1).typeHierarchy
+            [(TypeInfo__UnityEngine__MonoBehaviour->_1).naturalAligment - 1] !=
             (Il2CppClass *)TypeInfo__UnityEngine__MonoBehaviour)) goto code_?;
-        unaff_ESI = in_stack_4;
-        pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+        pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            (this_02,(MethodInfo *)0x0);
-        if (pGVar2 != (GameObject *)0x0) {
+        pMVar2 = unaff_ESI;
+        if (pGVar3 != (GameObject *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar2,0,(MethodInfo *)0x0);
+                    (pGVar3,0,(MethodInfo *)0x0);
           goto code_?;
         }
       }
@@ -75,9 +79,9 @@ code_?:
   func_?();
   this_02 = extraout_EDX;
 code_?:
-  func_?(this_02,unaff_ESI);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?(this_02,pMVar2);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -253,9 +257,8 @@ void Assembly-CSharp.dll::MVGameControllerDesktop::
 {
   pMVar1 = MVGameControllerDesktop_get_Instance((MethodInfo *)0x0);
   if (pMVar1 != (MVGameControllerDesktop *)0x0) {
-    ppMVar2 = &(pMVar1->fields)._.modeController;
-    *ppMVar2 = (ModeControllerBase *)editModeController;
-    func_?(ppMVar2,editModeController);
+    (pMVar1->fields)._.modeController = (ModeControllerBase *)editModeController;
+    func_?(&(pMVar1->fields)._.modeController,editModeController);
     if (cRam_? == '\0') {
       func_?(&TypeInfo__MVGameControllerBase);
       cRam_? = '\x01';
@@ -267,8 +270,8 @@ void Assembly-CSharp.dll::MVGameControllerDesktop::
     return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -288,9 +291,8 @@ void Assembly-CSharp.dll::MVGameControllerDesktop::
   if ((playModeController != (DesktopPlayModeController *)0x0) &&
      (pIVar2 = (playModeController->fields).lockCursorManager,
      pMVar1 != (MVGameControllerDesktop *)0x0)) {
-    ppIVar3 = &(pMVar1->fields).lockCursorManager;
-    *ppIVar3 = pIVar2;
-    func_?(ppIVar3,pIVar2);
+    (pMVar1->fields).lockCursorManager = pIVar2;
+    func_?(&(pMVar1->fields).lockCursorManager,pIVar2);
     if (cRam_? == '\0') {
       func_?(&TypeInfo__MVGameControllerBase);
       cRam_? = '\x01';
@@ -303,14 +305,13 @@ void Assembly-CSharp.dll::MVGameControllerDesktop::
       func_?(&TypeInfo__MVGameControllerBase);
       cRam_? = '\x01';
     }
-    pGVar4 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-    if (pGVar4 != (GameSessionData *)0x0) {
-      if ((pGVar4->fields).gameMode == 1) {
+    pGVar3 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar3 != (GameSessionData *)0x0) {
+      if ((pGVar3->fields).gameMode == 1) {
         pMVar1 = MVGameControllerDesktop_get_Instance((MethodInfo *)0x0);
         if (pMVar1 != (MVGameControllerDesktop *)0x0) {
-          ppMVar5 = &(pMVar1->fields)._.modeController;
-          *ppMVar5 = (ModeControllerBase *)playModeController;
-          func_?(ppMVar5,playModeController);
+          (pMVar1->fields)._.modeController = (ModeControllerBase *)playModeController;
+          func_?(&(pMVar1->fields)._.modeController,playModeController);
           return;
         }
       }
@@ -320,9 +321,11 @@ void Assembly-CSharp.dll::MVGameControllerDesktop::
           this = (DesktopEditModeController *)(pMVar1->fields)._.modeController;
           unaff_EDI = TypeInfo__DesktopEditModeController;
           if (this != (DesktopEditModeController *)0x0) {
-            bVar6 = (TypeInfo__DesktopEditModeController->_1).naturalAligment;
-            if ((bVar6 <= (this->klass->_1).naturalAligment) &&
-               ((DesktopEditModeController__Class *)(this->klass->_1).typeHierarchy[bVar6 - 1] ==
+            if (((TypeInfo__DesktopEditModeController->_1).naturalAligment <=
+                 (this->klass->_1).naturalAligment) &&
+               ((DesktopEditModeController__Class *)
+                (this->klass->_1).typeHierarchy
+                [(TypeInfo__DesktopEditModeController->_1).naturalAligment - 1] ==
                 TypeInfo__DesktopEditModeController)) {
               DesktopEditModeController::DesktopEditModeController_RegisterPlayModeController
                         (this,playModeController,(MethodInfo *)0x0);
@@ -338,8 +341,8 @@ void Assembly-CSharp.dll::MVGameControllerDesktop::
   this = extraout_EDX;
 code_?:
   func_?(this,unaff_EDI);
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -428,8 +431,8 @@ void Assembly-CSharp.dll::MVGameControllerDesktop::
       (*pcVar3)();
       return;
     }
-    ppMStack4 = (MVGameControllerBase__Class **)0x0;
     (pMVar2->fields)._.modeController = (ModeControllerBase *)0x0;
+    ppMStack4 = (MVGameControllerBase__Class **)0x0;
     func_?();
     if (cRam_? == '\0') {
       ppMStack4 = &TypeInfo__MVGameControllerBase;
@@ -514,9 +517,8 @@ void Assembly-CSharp.dll::MVGameControllerDesktop::MVGameControllerDesktop__ctor
   (this->fields).applicationHasFocus = 1;
   this_00 = (InHouseAdManager *)func_?(TypeInfo__AdIntegration__InHouse__InHouseAdManager);
   AdIntegration::InHouse::InHouseAdManager::InHouseAdManager__ctor(this_00,(MethodInfo *)0x0);
-  ppIVar1 = &(this->fields).adManager;
-  *ppIVar1 = (IAdManager *)this_00;
-  func_?(ppIVar1,this_00);
+  (this->fields).adManager = (IAdManager *)this_00;
+  func_?(&(this->fields).adManager,this_00);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__FlagDebriefingControl);
     func_?(&TypeInfo__GoldRewardManager);
@@ -525,25 +527,22 @@ void Assembly-CSharp.dll::MVGameControllerDesktop::MVGameControllerDesktop__ctor
   }
   this_01 = (SkinnedMeshOptimizeManager *)func_?(TypeInfo__SkinnedMeshOptimizeManager);
   SkinnedMeshOptimizeManager::SkinnedMeshOptimizeManager__ctor(this_01,(MethodInfo *)0x0);
-  ppSVar2 = &(this->fields)._.skinnedMeshOptimizeManager;
-  *ppSVar2 = this_01;
-  func_?(ppSVar2,this_01);
+  (this->fields)._.skinnedMeshOptimizeManager = this_01;
+  func_?(&(this->fields)._.skinnedMeshOptimizeManager,this_01);
   this_02 = (FlagDebriefingControl *)func_?(TypeInfo__FlagDebriefingControl);
   UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
   UxmlObjectListAttributeDescription`1[System::Object]::
   UxmlObjectListAttributeDescription_1_System_Object___ctor
             ((UxmlObjectListAttributeDescription_1_System_Object_ *)this_02,(MethodInfo *)0x0);
-  ppFVar3 = &(this->fields)._.flagDebriefingControl;
-  *ppFVar3 = this_02;
-  func_?(ppFVar3,this_02);
+  (this->fields)._.flagDebriefingControl = this_02;
+  func_?(&(this->fields)._.flagDebriefingControl,this_02);
   this_03 = (GoldRewardManager *)func_?(TypeInfo__GoldRewardManager);
   UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
   UxmlObjectListAttributeDescription`1[System::Object]::
   UxmlObjectListAttributeDescription_1_System_Object___ctor
             ((UxmlObjectListAttributeDescription_1_System_Object_ *)this_03,(MethodInfo *)0x0);
-  ppGVar4 = &(this->fields)._.goldRewardManager;
-  *ppGVar4 = this_03;
-  func_?(ppGVar4,this_03);
+  (this->fields)._.goldRewardManager = this_03;
+  func_?(&(this->fields)._.goldRewardManager,this_03);
   (this->fields)._.reAuthTestTries = 3;
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
@@ -565,17 +564,18 @@ Assembly-CSharp.dll::MVGameControllerDesktop::MVGameControllerDesktop_get_Instan
   }
   pMVar1 = (MVGameControllerDesktop *)TypeInfo__MVGameControllerBase->static_fields->instance;
   if (pMVar1 == (MVGameControllerDesktop *)0x0) {
-    return pMVar1;
+    return (MVGameControllerDesktop *)0x0;
   }
-  bVar2 = (TypeInfo__MVGameControllerDesktop->_1).naturalAligment;
-  if ((bVar2 <= (((MVGameControllerBase__Class *)pMVar1->klass)->_1).naturalAligment) &&
-     ((((MVGameControllerBase__Class *)pMVar1->klass)->_1).typeHierarchy[bVar2 - 1] ==
+  if (((TypeInfo__MVGameControllerDesktop->_1).naturalAligment <=
+       (((MVGameControllerBase__Class *)pMVar1->klass)->_1).naturalAligment) &&
+     ((((MVGameControllerBase__Class *)pMVar1->klass)->_1).typeHierarchy
+      [(TypeInfo__MVGameControllerDesktop->_1).naturalAligment - 1] ==
       (Il2CppClass *)TypeInfo__MVGameControllerDesktop)) {
     return pMVar1;
   }
   func_?(pMVar1,TypeInfo__MVGameControllerDesktop);
-  pcVar3 = (code *)swi(3);
-  pMVar1 = (MVGameControllerDesktop *)(*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  pMVar1 = (MVGameControllerDesktop *)(*pcVar2)();
   return pMVar1;
 }
 

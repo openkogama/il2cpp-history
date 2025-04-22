@@ -368,73 +368,24 @@ void Assembly-CSharp.dll::GamePassesPurchaseButton::GamePassesPurchaseButton_OnT
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__GamePassesManager);
     cRam_? = '\x01';
   }
   pPVar1 = TypeInfo__GamePassesManager->static_fields->playerPlanetData;
-  if (pPVar1 == (PlayerPlanetData *)0x0) {
-code_?:
-    func_?();
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
-  }
-  pTVar3 = (this->fields).toggleButton;
-  if (pTVar3 == (ToggleButtonAnimation *)0x0) goto code_?;
-  if (((pPVar1->fields).gamePassTier == (this->fields).tierDisplayed) !=
-      (bool)(pTVar3->fields).isToggleOn) {
-    return;
-  }
-  (pTVar3->fields).isToggleOn = (pTVar3->fields).isToggleOn == 0;
-  fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  fVar5 = (pTVar3->fields).toggleOffOriginalPositionX;
-  pRVar6 = (pTVar3->fields).toggleOffMaskTransform;
-  (pTVar3->fields).interpolationStartTime = fVar4;
-  (pTVar3->fields).interpolateToggleMaskNewPositionX = fVar5;
-  (pTVar3->fields).interpolateToggleMaskStartPositionX = fVar5;
-  if ((pTVar3->fields).isToggleOn == 0) {
-    if (pRVar6 == (RectTransform *)0x0) goto code_?;
-    pRVar7 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
-                       ((Rect *)&stack0xffffffec,pRVar6,(MethodInfo *)0x0);
-    (pTVar3->fields).interpolateToggleMaskStartPositionX = fVar5 + pRVar7->m_Width;
-  }
-  else {
-    if (pRVar6 == (RectTransform *)0x0) goto code_?;
-    pRVar7 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
-                       ((Rect *)&stack0xffffffec,pRVar6,(MethodInfo *)0x0);
-    (pTVar3->fields).interpolateToggleMaskNewPositionX = fVar5 + pRVar7->m_Width;
-  }
-  fVar5 = (pTVar3->fields).toggleOffOriginalPositionX;
-  pRVar6 = (pTVar3->fields).toggleOffMaskTransform;
-  (pTVar3->fields).interpolateToggleContentNewPositionX = fVar5;
-  (pTVar3->fields).interpolateToggleContentStartPositionX = fVar5;
-  if ((pTVar3->fields).isToggleOn == 0) {
-    if (pRVar6 == (RectTransform *)0x0) {
-code_?:
-      func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
+  if (pPVar1 != (PlayerPlanetData *)0x0) {
+    pTVar2 = (this->fields).toggleButton;
+    if (pTVar2 != (ToggleButtonAnimation *)0x0) {
+      if (((pPVar1->fields).gamePassTier == (this->fields).tierDisplayed) ==
+          (bool)(pTVar2->fields).isToggleOn) {
+        ToggleButtonAnimation::ToggleButtonAnimation_Toggle
+                  ((this->fields).toggleButton,(MethodInfo *)0x0);
+      }
       return;
     }
-    pRVar7 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
-                       ((Rect *)&stack0xffffffec,pRVar6,(MethodInfo *)0x0);
-    (pTVar3->fields).interpolateToggleContentStartPositionX = fVar5 - pRVar7->m_Width;
   }
-  else {
-    if (pRVar6 == (RectTransform *)0x0) goto code_?;
-    pRVar7 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
-                       ((Rect *)&stack0xffffffec,pRVar6,(MethodInfo *)0x0);
-    (pTVar3->fields).interpolateToggleContentNewPositionX = fVar5 - pRVar7->m_Width;
-  }
-  fVar5 = (pTVar3->fields).toggleButtonOriginalPositionX;
-  (pTVar3->fields).interpolateToggleButtonNewPositionX = fVar5;
-  (pTVar3->fields).interpolateToggleButtonStartPositionX = fVar5;
-  fVar5 = (pTVar3->fields).toggleButtonMoveAmount + fVar5;
-  if ((pTVar3->fields).isToggleOn == 0) {
-    (pTVar3->fields).interpolateToggleButtonStartPositionX = fVar5;
-    return;
-  }
-  (pTVar3->fields).interpolateToggleButtonNewPositionX = fVar5;
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

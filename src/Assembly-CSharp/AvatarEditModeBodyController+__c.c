@@ -11,9 +11,9 @@ bool Assembly-CSharp.dll::AvatarEditModeBodyController+<>c::
     cRam_? = '\x01';
   }
   if (wo != (MVWorldObjectClient *)0x0) {
-    bVar1 = (TypeInfo__MVSpawnPointRed->_1).naturalAligment;
-    if ((bVar1 <= (wo->klass->_1).naturalAligment) &&
-       ((MVSpawnPointRed__Class *)(wo->klass->_1).typeHierarchy[bVar1 - 1] ==
+    if (((TypeInfo__MVSpawnPointRed->_1).naturalAligment <= (wo->klass->_1).naturalAligment) &&
+       ((MVSpawnPointRed__Class *)
+        (wo->klass->_1).typeHierarchy[(TypeInfo__MVSpawnPointRed->_1).naturalAligment - 1] ==
         TypeInfo__MVSpawnPointRed)) {
       return wo != (MVWorldObjectClient *)0x0;
     }
@@ -35,11 +35,11 @@ bool Assembly-CSharp.dll::AvatarEditModeBodyController+<>c::
     cRam_? = '\x01';
   }
   if (wo != (MVWorldObjectClient *)0x0) {
-    bVar1 = (TypeInfo__MVBody->_1).naturalAligment;
-    if ((bVar1 <= (wo->klass->_1).naturalAligment) &&
-       ((MVBody__Class *)(wo->klass->_1).typeHierarchy[bVar1 - 1] == TypeInfo__MVBody)) {
-      bVar2 = MVBody::MVBody_get_IsPlayerBody((MVBody *)wo,(MethodInfo *)0x0);
-      return bVar2 == 0;
+    if (((TypeInfo__MVBody->_1).naturalAligment <= (wo->klass->_1).naturalAligment) &&
+       ((MVBody__Class *)(wo->klass->_1).typeHierarchy[(TypeInfo__MVBody->_1).naturalAligment - 1]
+        == TypeInfo__MVBody)) {
+      bVar1 = MVBody::MVBody_get_IsPlayerBody((MVBody *)wo,(MethodInfo *)0x0);
+      return bVar1 ^ 1;
     }
   }
   return 0;

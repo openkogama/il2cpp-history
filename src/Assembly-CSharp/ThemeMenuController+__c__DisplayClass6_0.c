@@ -20,7 +20,6 @@ void Assembly-CSharp.dll::ThemeMenuController+<>c__DisplayClass6_0::
     pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this_00,(MethodInfo *)0x0);
     this_01 = (NavMesh_OnNavMeshPreUpdate *)(this->fields).__9__1;
-    ppUVar2 = &(this->fields).__9__1;
     if (this_01 == (NavMesh_OnNavMeshPreUpdate *)0x0) {
       this_01 = (NavMesh_OnNavMeshPreUpdate *)
                 func_?(TypeInfo__UnityEngine__Events__UnityAction);
@@ -29,8 +28,8 @@ void Assembly-CSharp.dll::ThemeMenuController+<>c__DisplayClass6_0::
                 (this_01,(Object *)this,
                  MethodInfo__ThemeMenuController____c__DisplayClass6_0___OpenSettingsForPreview_b__1__
                  ,(MethodInfo *)0x0);
-      *ppUVar2 = (UnityAction *)this_01;
-      func_?(ppUVar2,this_01);
+      (this->fields).__9__1 = (UnityAction *)this_01;
+      func_?(&(this->fields).__9__1,this_01);
     }
     if (x != (IUIStack *)0x0) {
       func_?(1,TypeInfo__UnityEngine__EventSystems__IUIStack,x,pGVar1,6,this_01,4);
@@ -38,8 +37,8 @@ void Assembly-CSharp.dll::ThemeMenuController+<>c__DisplayClass6_0::
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

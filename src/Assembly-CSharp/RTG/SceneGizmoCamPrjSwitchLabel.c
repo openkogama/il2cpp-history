@@ -15,9 +15,11 @@ void Assembly-CSharp.dll::RTG::SceneGizmoCamPrjSwitchLabel::SceneGizmoCamPrjSwit
   }
   pSVar1 = (this->fields)._sceneGizmo;
   if (pSVar1 != (SceneGizmo *)0x0) {
-    this_02 = (pSVar1->fields)._sharedLookAndFeel;
-    if (this_02 == (SceneGizmoLookAndFeel *)0x0) {
+    if ((pSVar1->fields)._sharedLookAndFeel == (SceneGizmoLookAndFeel *)0x0) {
       this_02 = (pSVar1->fields)._lookAndFeel;
+    }
+    else {
+      this_02 = (pSVar1->fields)._sharedLookAndFeel;
     }
     pRVar2 = (pSVar1->fields)._sceneGizmoCamera;
     if ((pRVar2 == (RTSceneGizmoCamera *)0x0) ||
@@ -26,7 +28,7 @@ void Assembly-CSharp.dll::RTG::SceneGizmoCamPrjSwitchLabel::SceneGizmoCamPrjSwit
     if ((this_02->fields)._isCamPrjSwitchLabelVisible == 0) {
       return;
     }
-    x = (((pSVar1->fields)._sceneGizmoCamera)->fields)._sceneCamera;
+    x = (((((this->fields)._sceneGizmo)->fields)._sceneGizmoCamera)->fields)._sceneCamera;
     if ((TypeInfo__RTG__MonoSingleton<RTG::RTFocusCamera>->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__RTG__MonoSingleton<RTG::RTFocusCamera>);
     }
@@ -49,31 +51,30 @@ void Assembly-CSharp.dll::RTG::SceneGizmoCamPrjSwitchLabel::SceneGizmoCamPrjSwit
       if (pRVar5 == (RTFocusCamera *)0x0) goto code_?;
       bVar4 = RTFocusCamera::RTFocusCamera_get_IsDoingProjectionSwitch(pRVar5,(MethodInfo *)0x0);
       if (bVar4 != 0) {
-        SceneGizmoLookAndFeel::SceneGizmoLookAndFeel_get_CamOrthoModeLabelTexture
-                  (this_02,(MethodInfo *)0x0);
-        texture2D = SceneGizmoLookAndFeel::SceneGizmoLookAndFeel_get_CamPerspModeLabelTexture
-                              (this_02,(MethodInfo *)0x0);
+        pTStack_6 = SceneGizmoLookAndFeel::SceneGizmoLookAndFeel_get_CamOrthoModeLabelTexture
+                               (this_02,(MethodInfo *)0x0);
+        pTStack_7 = SceneGizmoLookAndFeel::SceneGizmoLookAndFeel_get_CamPerspModeLabelTexture
+                               (this_02,(MethodInfo *)0x0);
         if ((TypeInfo__RTG__MonoSingleton<RTG::RTFocusCamera>->_1).cctor_finished_or_no_cctor == 0)
         {
-          func_?();
+          func_?(TypeInfo__RTG__MonoSingleton<RTG::RTFocusCamera>);
         }
         pRVar5 = (RTFocusCamera *)
                  MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
                            (MethodInfo__RTG__MonoSingleton<RTG::RTFocusCamera>__get_Get__);
         if (pRVar5 == (RTFocusCamera *)0x0) goto code_?;
-        CVar6 = RTFocusCamera::RTFocusCamera_get_PrjSwitchTransitionType(pRVar5,(MethodInfo *)0x0);
-        if (CVar6 == CameraPrjSwitchTransition_Type__Enum_ToPerspective) {
-          SceneGizmoLookAndFeel::SceneGizmoLookAndFeel_get_CamPerspModeLabelTexture
-                    (this_02,(MethodInfo *)0x0);
-          texture2D = SceneGizmoLookAndFeel::SceneGizmoLookAndFeel_get_CamOrthoModeLabelTexture
-                                (this_02,(MethodInfo *)0x0);
+        CVar8 = RTFocusCamera::RTFocusCamera_get_PrjSwitchTransitionType(pRVar5,(MethodInfo *)0x0);
+        if (CVar8 == CameraPrjSwitchTransition_Type__Enum_ToPerspective) {
+          pTStack_6 = SceneGizmoLookAndFeel::SceneGizmoLookAndFeel_get_CamPerspModeLabelTexture
+                                 (this_02,(MethodInfo *)0x0);
+          pTStack_7 = SceneGizmoLookAndFeel::SceneGizmoLookAndFeel_get_CamOrthoModeLabelTexture
+                                 (this_02,(MethodInfo *)0x0);
         }
         UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_EaseInOut
                   (0.0,(this_02->fields)._camPrjSwitchLabelTint.a,1.0,0.0,(MethodInfo *)0x0);
-        texture2D_00 = (Texture2D *)(this_02->fields)._camPrjSwitchLabelTint.a;
-        this_03 = (AnimationCurve *)0x0;
+        this_03 = (AnimationCurve *)(this_02->fields)._camPrjSwitchLabelTint.a;
         this_01 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_EaseInOut
-                            (0.0,0.0,1.0,(float)texture2D_00,(MethodInfo *)0x0);
+                            (0.0,0.0,1.0,(float)this_03,(MethodInfo *)0x0);
         if ((TypeInfo__RTG__MonoSingleton<RTG::RTFocusCamera>->_1).cctor_finished_or_no_cctor == 0)
         {
           func_?();
@@ -82,96 +83,97 @@ void Assembly-CSharp.dll::RTG::SceneGizmoCamPrjSwitchLabel::SceneGizmoCamPrjSwit
                  MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
                            (MethodInfo__RTG__MonoSingleton<RTG::RTFocusCamera>__get_Get__);
         if ((pRVar5 == (RTFocusCamera *)0x0) ||
-           (fVar7 = RTFocusCamera::RTFocusCamera_get_PrjSwitchProgress(pRVar5,(MethodInfo *)0x0),
+           (fVar9 = RTFocusCamera::RTFocusCamera_get_PrjSwitchProgress(pRVar5,(MethodInfo *)0x0),
            this_01 == (AnimationCurve *)0x0)) goto code_?;
-        fVar7 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                           (this_01,fVar7,(MethodInfo *)0x0);
+        fVar9 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
+                           (this_01,fVar9,(MethodInfo *)0x0);
         pRVar5 = (RTFocusCamera *)
                  MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
                            (MethodInfo__RTG__MonoSingleton<RTG::RTFocusCamera>__get_Get__);
         if ((pRVar5 == (RTFocusCamera *)0x0) ||
-           (fVar8 = RTFocusCamera::RTFocusCamera_get_PrjSwitchProgress(pRVar5,(MethodInfo *)0x0),
+           (fVar10 = RTFocusCamera::RTFocusCamera_get_PrjSwitchProgress(pRVar5,(MethodInfo *)0x0),
            this_03 == (AnimationCurve *)0x0)) goto code_?;
-        fVar8 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                           (this_03,fVar8,(MethodInfo *)0x0);
-        pCVar9 = ColorEx::ColorEx_KeepAllButAlpha
-                           ((Color *)&stack0xffffffdc,(this_02->fields)._camPrjSwitchLabelTint,
-                            fVar8,(MethodInfo *)0x0);
-        fVar8 = pCVar9->r;
-        fVar10 = pCVar9->g;
-        fVar11 = pCVar9->b;
-        fVar12 = pCVar9->a;
+        fVar10 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
+                           (this_03,fVar10,(MethodInfo *)0x0);
+        pCVar11 = ColorEx::ColorEx_KeepAllButAlpha
+                           ((Color *)&stack0xffffffb0,(this_02->fields)._camPrjSwitchLabelTint,
+                            fVar10,(MethodInfo *)0x0);
+        fVar10 = pCVar11->r;
+        fVar12 = pCVar11->g;
+        fVar13 = pCVar11->b;
+        fVar14 = pCVar11->a;
         if ((TypeInfo__RTG__GUIEx->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        color.g = fVar10;
-        color.r = fVar8;
-        color.b = fVar11;
-        color.a = fVar12;
+        color.g = fVar12;
+        color.r = fVar10;
+        color.b = fVar13;
+        color.a = fVar14;
         GUIEx::GUIEx_PushColor(color,(MethodInfo *)0x0);
-        pRVar13 = RectEx::RectEx_FromTexture2D((Rect *)&stack0xffffffdc,texture2D,(MethodInfo *)0x0)
-        ;
-        fVar8 = pRVar13->m_XMin;
-        fVar10 = pRVar13->m_YMin;
-        fVar11 = pRVar13->m_Width;
-        fVar12 = pRVar13->m_Height;
-        if (this_00 == (Camera *)0x0) goto code_?;
-        pRVar13 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_pixelRect
-                            ((Rect *)&stack0xffffffcc,this_00,(MethodInfo *)0x0);
-        rect.m_YMin = fVar10;
-        rect.m_XMin = fVar8;
-        rect.m_Width = fVar11;
-        rect.m_Height = fVar12;
-        pRVar13 = RectEx::RectEx_PlaceBelowCenterHrz
-                            ((Rect *)&stack0xffffffcc,rect,*pRVar13,(MethodInfo *)0x0);
-        pRVar13 = RectEx::RectEx_InvertScreenY((Rect *)&stack0xffffffcc,*pRVar13,(MethodInfo *)0x0);
-        fVar8 = pRVar13->m_XMin;
-        fVar10 = pRVar13->m_Width;
-        fVar11 = pRVar13->m_Height;
-        iVar14 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height
+        pRVar15 = RectEx::RectEx_FromTexture2D
+                            ((Rect *)&stack0xffffffb0,pTStack_7,(MethodInfo *)0x0);
+        fVar10 = pRVar15->m_XMin;
+        fVar12 = pRVar15->m_YMin;
+        fVar13 = pRVar15->m_Width;
+        fVar14 = pRVar15->m_Height;
+        pRVar15 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_pixelRect
+                            ((Rect *)&stack0xffffffb0,(Camera *)&UNK_?,(MethodInfo *)0x0);
+        rect.m_YMin = fVar12;
+        rect.m_XMin = fVar10;
+        rect.m_Width = fVar13;
+        rect.m_Height = fVar14;
+        pRVar15 = RectEx::RectEx_PlaceBelowCenterHrz
+                            ((Rect *)&stack0xffffffb0,rect,*pRVar15,(MethodInfo *)0x0);
+        pRVar15 = RectEx::RectEx_InvertScreenY((Rect *)&stack0xffffffb0,*pRVar15,(MethodInfo *)0x0);
+        fVar10 = pRVar15->m_Width;
+        fVar12 = pRVar15->m_Height;
+        fVar14 = fVar10 * _UNK_? + pRVar15->m_XMin;
+        fVar13 = fVar10;
+        iVar16 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height
                            ((MethodInfo *)0x0);
-        pQVar15 = (this->fields)._labelQuad;
-        if (pQVar15 == (QuadShape2D *)0x0) goto code_?;
-        fVar8 = (fVar8 + fVar10 * _UNK_?) - fVar10 * _UNK_?;
-        fVar12 = ((float)(iVar14 + -1) - (pQVar15->fields)._center.y) - fVar11 * _UNK_?;
+        pQVar17 = (this->fields)._labelQuad;
+        if (pQVar17 == (QuadShape2D *)0x0) goto code_?;
+        fVar14 = fVar14 - fVar10 * _UNK_?;
+        fVar10 = ((float)(iVar16 + -1) - (pQVar17->fields)._center.y) - fVar12 * _UNK_?;
         if ((TypeInfo__UnityEngine__GUI->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        position.m_YMin = fVar12;
-        position.m_XMin = fVar8;
-        position.m_Width = fVar10;
-        position.m_Height = fVar11;
+        position.m_YMin = fVar10;
+        position.m_XMin = fVar14;
+        position.m_Width = fVar13;
+        position.m_Height = fVar12;
         UnityEngine.IMGUIModule.dll::UnityEngine::GUI::GUI_DrawTexture
-                  (position,(Texture *)texture2D,(MethodInfo *)0x0);
+                  (position,(Texture *)pTStack_7,(MethodInfo *)0x0);
         GUIEx::GUIEx_PopColor((MethodInfo *)0x0);
-        pCVar9 = ColorEx::ColorEx_KeepAllButAlpha
-                           ((Color *)&stack0xffffffcc,(this_02->fields)._camPrjSwitchLabelTint,
-                            fVar7,(MethodInfo *)0x0);
-        GUIEx::GUIEx_PushColor(*pCVar9,(MethodInfo *)0x0);
-        pRVar13 = RectEx::RectEx_FromTexture2D
-                            ((Rect *)&stack0xffffffcc,texture2D_00,(MethodInfo *)0x0);
-        fVar7 = pRVar13->m_XMin;
-        fVar8 = pRVar13->m_YMin;
-        fVar10 = pRVar13->m_Width;
-        fVar11 = pRVar13->m_Height;
-        pRVar13 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_pixelRect
-                            ((Rect *)&stack0xffffffcc,this_00,(MethodInfo *)0x0);
-        rect_00.m_YMin = fVar8;
-        rect_00.m_XMin = fVar7;
-        rect_00.m_Width = fVar10;
-        rect_00.m_Height = fVar11;
-        pRVar13 = RectEx::RectEx_PlaceBelowCenterHrz
-                            ((Rect *)&stack0xffffffcc,rect_00,*pRVar13,(MethodInfo *)0x0);
-        pRVar13 = RectEx::RectEx_InvertScreenY((Rect *)&stack0xffffffcc,*pRVar13,(MethodInfo *)0x0);
-        fVar10 = pRVar13->m_XMin;
-        fVar7 = pRVar13->m_Width;
-        fVar8 = pRVar13->m_Height;
-        iVar14 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height
+        pCVar11 = ColorEx::ColorEx_KeepAllButAlpha
+                           ((Color *)&stack0xffffffb0,(this_02->fields)._camPrjSwitchLabelTint,
+                            fVar9,(MethodInfo *)0x0);
+        GUIEx::GUIEx_PushColor(*pCVar11,(MethodInfo *)0x0);
+        pRVar15 = RectEx::RectEx_FromTexture2D
+                            ((Rect *)&stack0xffffffb0,pTStack_6,(MethodInfo *)0x0);
+        fVar9 = pRVar15->m_XMin;
+        fVar10 = pRVar15->m_YMin;
+        fVar12 = pRVar15->m_Width;
+        fVar13 = pRVar15->m_Height;
+        pRVar15 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_pixelRect
+                            ((Rect *)&stack0xffffffc8,(Camera *)&UNK_?,(MethodInfo *)0x0);
+        rect_00.m_YMin = fVar10;
+        rect_00.m_XMin = fVar9;
+        rect_00.m_Width = fVar12;
+        rect_00.m_Height = fVar13;
+        pRVar15 = RectEx::RectEx_PlaceBelowCenterHrz
+                            ((Rect *)&stack0xffffffb0,rect_00,*pRVar15,(MethodInfo *)0x0);
+        pRVar15 = RectEx::RectEx_InvertScreenY((Rect *)&stack0xffffffb0,*pRVar15,(MethodInfo *)0x0);
+        fVar10 = pRVar15->m_Width;
+        fVar9 = pRVar15->m_Height;
+        fVar13 = fVar10 * _UNK_? + pRVar15->m_XMin;
+        fVar12 = fVar10;
+        iVar16 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height
                            ((MethodInfo *)0x0);
-        pQVar15 = (this->fields)._labelQuad;
-        if (pQVar15 == (QuadShape2D *)0x0) goto code_?;
-        fVar10 = (fVar10 + fVar7 * _UNK_?) - fVar7 * _UNK_?;
-        fVar11 = ((float)(iVar14 + -1) - (pQVar15->fields)._center.y) - fVar8 * _UNK_?;
+        pQVar17 = (this->fields)._labelQuad;
+        if (pQVar17 == (QuadShape2D *)0x0) goto code_?;
+        fVar13 = fVar13 - fVar10 * _UNK_?;
+        fVar10 = ((float)(iVar16 + -1) - (pQVar17->fields)._center.y) - fVar9 * _UNK_?;
         goto code_?;
       }
     }
@@ -179,59 +181,59 @@ void Assembly-CSharp.dll::RTG::SceneGizmoCamPrjSwitchLabel::SceneGizmoCamPrjSwit
       bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_orthographic
                         (this_00,(MethodInfo *)0x0);
       if (bVar4 == 0) {
-        texture2D_00 = SceneGizmoLookAndFeel::SceneGizmoLookAndFeel_get_CamPerspModeLabelTexture
-                                 (this_02,(MethodInfo *)0x0);
+        pTStack_6 = SceneGizmoLookAndFeel::SceneGizmoLookAndFeel_get_CamPerspModeLabelTexture
+                               (this_02,(MethodInfo *)0x0);
       }
       else {
-        texture2D_00 = SceneGizmoLookAndFeel::SceneGizmoLookAndFeel_get_CamOrthoModeLabelTexture
-                                 (this_02,(MethodInfo *)0x0);
+        pTStack_6 = SceneGizmoLookAndFeel::SceneGizmoLookAndFeel_get_CamOrthoModeLabelTexture
+                               (this_02,(MethodInfo *)0x0);
       }
-      fVar7 = (this_02->fields)._camPrjSwitchLabelTint.r;
-      fVar8 = (this_02->fields)._camPrjSwitchLabelTint.g;
-      fVar10 = (this_02->fields)._camPrjSwitchLabelTint.b;
-      fVar11 = (this_02->fields)._camPrjSwitchLabelTint.a;
+      fVar9 = (this_02->fields)._camPrjSwitchLabelTint.r;
+      fVar10 = (this_02->fields)._camPrjSwitchLabelTint.g;
+      fVar12 = (this_02->fields)._camPrjSwitchLabelTint.b;
+      fVar13 = (this_02->fields)._camPrjSwitchLabelTint.a;
       if ((TypeInfo__RTG__GUIEx->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+        func_?(TypeInfo__RTG__GUIEx);
       }
-      color_00.g = fVar8;
-      color_00.r = fVar7;
-      color_00.b = fVar10;
-      color_00.a = fVar11;
+      color_00.g = fVar10;
+      color_00.r = fVar9;
+      color_00.b = fVar12;
+      color_00.a = fVar13;
       GUIEx::GUIEx_PushColor(color_00,(MethodInfo *)0x0);
-      pRVar13 = RectEx::RectEx_FromTexture2D
-                          ((Rect *)&stack0xffffffcc,texture2D_00,(MethodInfo *)0x0);
-      fVar7 = pRVar13->m_XMin;
-      fVar8 = pRVar13->m_YMin;
-      fVar10 = pRVar13->m_Width;
-      fVar11 = pRVar13->m_Height;
-      pRVar13 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_pixelRect
-                          ((Rect *)&stack0xffffffcc,this_00,(MethodInfo *)0x0);
-      rect_01.m_YMin = fVar8;
-      rect_01.m_XMin = fVar7;
-      rect_01.m_Width = fVar10;
-      rect_01.m_Height = fVar11;
-      pRVar13 = RectEx::RectEx_PlaceBelowCenterHrz
-                          ((Rect *)&stack0xffffffcc,rect_01,*pRVar13,(MethodInfo *)0x0);
-      pRVar13 = RectEx::RectEx_InvertScreenY((Rect *)&stack0xffffffcc,*pRVar13,(MethodInfo *)0x0);
-      fVar10 = pRVar13->m_XMin;
-      fVar7 = pRVar13->m_Width;
-      fVar8 = pRVar13->m_Height;
-      iVar14 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height((MethodInfo *)0x0)
+      pRVar15 = RectEx::RectEx_FromTexture2D((Rect *)&stack0xffffffb0,pTStack_6,(MethodInfo *)0x0);
+      fVar9 = pRVar15->m_XMin;
+      fVar10 = pRVar15->m_YMin;
+      fVar12 = pRVar15->m_Width;
+      fVar13 = pRVar15->m_Height;
+      pRVar15 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_pixelRect
+                          ((Rect *)&stack0xffffffc8,this_00,(MethodInfo *)0x0);
+      rect_01.m_YMin = fVar10;
+      rect_01.m_XMin = fVar9;
+      rect_01.m_Width = fVar12;
+      rect_01.m_Height = fVar13;
+      pRVar15 = RectEx::RectEx_PlaceBelowCenterHrz
+                          ((Rect *)&stack0xffffffb0,rect_01,*pRVar15,(MethodInfo *)0x0);
+      pRVar15 = RectEx::RectEx_InvertScreenY((Rect *)&stack0xffffffb0,*pRVar15,(MethodInfo *)0x0);
+      fVar10 = pRVar15->m_Width;
+      fVar9 = pRVar15->m_Height;
+      fVar13 = fVar10 * _UNK_? + pRVar15->m_XMin;
+      fVar12 = fVar10;
+      iVar16 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height((MethodInfo *)0x0)
       ;
-      pQVar15 = (this->fields)._labelQuad;
-      if (pQVar15 != (QuadShape2D *)0x0) {
-        fVar10 = (fVar10 + fVar7 * _UNK_?) - fVar7 * _UNK_?;
-        fVar11 = ((float)(iVar14 + -1) - (pQVar15->fields)._center.y) - fVar8 * _UNK_?;
+      pQVar17 = (this->fields)._labelQuad;
+      if (pQVar17 != (QuadShape2D *)0x0) {
+        fVar13 = fVar13 - fVar10 * _UNK_?;
+        fVar10 = ((float)(iVar16 + -1) - (pQVar17->fields)._center.y) - fVar9 * _UNK_?;
         if ((TypeInfo__UnityEngine__GUI->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__GUI);
         }
 code_?:
-        position_00.m_YMin = fVar11;
-        position_00.m_XMin = fVar10;
-        position_00.m_Width = fVar7;
-        position_00.m_Height = fVar8;
+        position_00.m_YMin = fVar10;
+        position_00.m_XMin = fVar13;
+        position_00.m_Width = fVar12;
+        position_00.m_Height = fVar9;
         UnityEngine.IMGUIModule.dll::UnityEngine::GUI::GUI_DrawTexture
-                  (position_00,(Texture *)texture2D_00,(MethodInfo *)0x0);
+                  (position_00,(Texture *)pTStack_6,(MethodInfo *)0x0);
         GUIEx::GUIEx_PopColor((MethodInfo *)0x0);
         return;
       }
@@ -239,8 +241,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 
@@ -290,17 +292,81 @@ void Assembly-CSharp.dll::RTG::SceneGizmoCamPrjSwitchLabel::
 {
   pSVar1 = (this->fields)._sceneGizmo;
   pGVar2 = (this->fields)._handle;
-  if ((pSVar1 != (SceneGizmo *)0x0) &&
-     (((pSVar3 = (pSVar1->fields)._sharedLookAndFeel, pSVar3 != (SceneGizmoLookAndFeel *)0x0 ||
-       (pSVar3 = (pSVar1->fields)._lookAndFeel, pSVar3 != (SceneGizmoLookAndFeel *)0x0)) &&
-      (pGVar2 != (GizmoHandle *)0x0)))) {
-    (pGVar2->fields)._Is2DVisible_k__BackingField = (pSVar3->fields)._isCamPrjSwitchLabelVisible;
-    SceneGizmoCamPrjSwitchLabel_UpdateTransform(this,(MethodInfo *)0x0);
-    return;
+  if (pSVar1 != (SceneGizmo *)0x0) {
+    if ((pSVar1->fields)._sharedLookAndFeel == (SceneGizmoLookAndFeel *)0x0) {
+      pSVar3 = (pSVar1->fields)._lookAndFeel;
+      if (pSVar3 == (SceneGizmoLookAndFeel *)0x0) goto code_?;
+    }
+    else {
+      pSVar3 = (pSVar1->fields)._sharedLookAndFeel;
+    }
+    if (pGVar2 != (GizmoHandle *)0x0) {
+      (pGVar2->fields)._Is2DVisible_k__BackingField = (pSVar3->fields)._isCamPrjSwitchLabelVisible;
+      pSVar1 = (this->fields)._sceneGizmo;
+      if (pSVar1 != (SceneGizmo *)0x0) {
+        if ((pSVar1->fields)._sharedLookAndFeel == (SceneGizmoLookAndFeel *)0x0) {
+          pSVar3 = (pSVar1->fields)._lookAndFeel;
+        }
+        else {
+          pSVar3 = (pSVar1->fields)._sharedLookAndFeel;
+        }
+        pRVar4 = (pSVar1->fields)._sceneGizmoCamera;
+        if ((pRVar4 != (RTSceneGizmoCamera *)0x0) &&
+           (pCVar5 = (pRVar4->fields)._camera, pCVar5 != (Camera *)0x0)) {
+          bVar6 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_orthographic
+                            (pCVar5,(MethodInfo *)0x0);
+          if (pSVar3 != (SceneGizmoLookAndFeel *)0x0) {
+            if (bVar6 == 0) {
+              texture2D = SceneGizmoLookAndFeel::SceneGizmoLookAndFeel_get_CamPerspModeLabelTexture
+                                    (pSVar3,(MethodInfo *)0x0);
+            }
+            else {
+              texture2D = SceneGizmoLookAndFeel::SceneGizmoLookAndFeel_get_CamOrthoModeLabelTexture
+                                    (pSVar3,(MethodInfo *)0x0);
+            }
+            pRVar7 = RectEx::RectEx_FromTexture2D
+                                ((Rect *)&stack0xffffffdc,texture2D,(MethodInfo *)0x0);
+            pSVar3 = (SceneGizmoLookAndFeel *)pRVar7->m_XMin;
+            method_00 = (MethodInfo *)pRVar7->m_YMin;
+            SceneGizmoLookAndFeel::SceneGizmoLookAndFeel_CalculateMaxPrjSwitchLabelRectSize
+                      (pSVar3,method_00);
+            pSVar1 = (this->fields)._sceneGizmo;
+            if (((pSVar1 != (SceneGizmo *)0x0) &&
+                (pRVar4 = (pSVar1->fields)._sceneGizmoCamera, pRVar4 != (RTSceneGizmoCamera *)0x0))
+               && (pCVar5 = (pRVar4->fields)._camera, pCVar5 != (Camera *)0x0)) {
+              puVar8 = &UNK_?;
+              pRVar7 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_pixelRect
+                                  ((Rect *)&stack0xffffffec,pCVar5,(MethodInfo *)0x0);
+              rect.m_YMin = (float)method_00;
+              rect.m_XMin = (float)pSVar3;
+              rect.m_Width = in_stack_9;
+              rect.m_Height = (float)puVar8;
+              pRVar7 = RectEx::RectEx_PlaceBelowCenterHrz
+                                  ((Rect *)&stack0xffffffdc,rect,*pRVar7,(MethodInfo *)0x0);
+              fVar10 = pRVar7->m_YMin;
+              value.x = pRVar7->m_Width;
+              value.y = pRVar7->m_Height;
+              pQVar11 = (this->fields)._labelQuad;
+              fVar12 = pRVar7->m_Height * _UNK_?;
+              if (pQVar11 != (QuadShape2D *)0x0) {
+                (pQVar11->fields)._center.x = pRVar7->m_Width * _UNK_? + pRVar7->m_XMin;
+                (pQVar11->fields)._center.y = fVar12 + fVar10;
+                pQVar11 = (this->fields)._labelQuad;
+                if (pQVar11 != (QuadShape2D *)0x0) {
+                  QuadShape2D::QuadShape2D_set_Size(pQVar11,value,(MethodInfo *)0x0);
+                  return;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
+code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -314,9 +380,11 @@ void Assembly-CSharp.dll::RTG::SceneGizmoCamPrjSwitchLabel::
 {
   pSVar1 = (this->fields)._sceneGizmo;
   if (pSVar1 != (SceneGizmo *)0x0) {
-    pSVar2 = (pSVar1->fields)._sharedLookAndFeel;
-    if (pSVar2 == (SceneGizmoLookAndFeel *)0x0) {
+    if ((pSVar1->fields)._sharedLookAndFeel == (SceneGizmoLookAndFeel *)0x0) {
       pSVar2 = (pSVar1->fields)._lookAndFeel;
+    }
+    else {
+      pSVar2 = (pSVar1->fields)._sharedLookAndFeel;
     }
     pRVar3 = (pSVar1->fields)._sceneGizmoCamera;
     if ((pRVar3 != (RTSceneGizmoCamera *)0x0) &&
@@ -335,33 +403,32 @@ void Assembly-CSharp.dll::RTG::SceneGizmoCamPrjSwitchLabel::
         pRVar6 = RectEx::RectEx_FromTexture2D((Rect *)&stack0xffffffdc,texture2D,(MethodInfo *)0x0);
         pSVar2 = (SceneGizmoLookAndFeel *)pRVar6->m_XMin;
         method_00 = (MethodInfo *)pRVar6->m_YMin;
-        VVar7 = SceneGizmoLookAndFeel::SceneGizmoLookAndFeel_CalculateMaxPrjSwitchLabelRectSize
-                           (pSVar2,method_00);
-        fVar8 = VVar7.x;
+        SceneGizmoLookAndFeel::SceneGizmoLookAndFeel_CalculateMaxPrjSwitchLabelRectSize
+                  (pSVar2,method_00);
         pSVar1 = (this->fields)._sceneGizmo;
         if (((pSVar1 != (SceneGizmo *)0x0) &&
             (pRVar3 = (pSVar1->fields)._sceneGizmoCamera, pRVar3 != (RTSceneGizmoCamera *)0x0)) &&
            (pCVar4 = (pRVar3->fields)._camera, pCVar4 != (Camera *)0x0)) {
-          puVar9 = &UNK_?;
+          puVar7 = &UNK_?;
           pRVar6 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_pixelRect
                              ((Rect *)&stack0xffffffec,pCVar4,(MethodInfo *)0x0);
           rect.m_YMin = (float)method_00;
           rect.m_XMin = (float)pSVar2;
-          rect.m_Width = fVar8;
-          rect.m_Height = (float)puVar9;
+          rect.m_Width = in_stack_8;
+          rect.m_Height = (float)puVar7;
           pRVar6 = RectEx::RectEx_PlaceBelowCenterHrz
                              ((Rect *)&stack0xffffffdc,rect,*pRVar6,(MethodInfo *)0x0);
-          fVar8 = pRVar6->m_YMin;
-          VVar7.x = pRVar6->m_Width;
-          VVar7.y = pRVar6->m_Height;
+          fVar9 = pRVar6->m_YMin;
+          value.x = pRVar6->m_Width;
+          value.y = pRVar6->m_Height;
           pQVar10 = (this->fields)._labelQuad;
           fVar11 = pRVar6->m_Height * _UNK_?;
           if (pQVar10 != (QuadShape2D *)0x0) {
             (pQVar10->fields)._center.x = pRVar6->m_Width * _UNK_? + pRVar6->m_XMin;
-            (pQVar10->fields)._center.y = fVar11 + fVar8;
+            (pQVar10->fields)._center.y = fVar11 + fVar9;
             pQVar10 = (this->fields)._labelQuad;
             if (pQVar10 != (QuadShape2D *)0x0) {
-              QuadShape2D::QuadShape2D_set_Size(pQVar10,VVar7,(MethodInfo *)0x0);
+              QuadShape2D::QuadShape2D_set_Size(pQVar10,value,(MethodInfo *)0x0);
               return;
             }
           }
@@ -396,23 +463,22 @@ void Assembly-CSharp.dll::RTG::SceneGizmoCamPrjSwitchLabel::SceneGizmoCamPrjSwit
   this_00 = (QuadShape2D *)func_?(TypeInfo__RTG__QuadShape2D);
   QuadShape2D::QuadShape2D__ctor(this_00,(MethodInfo *)0x0);
   method_00 = (MethodInfo *)&(this->fields)._labelQuad;
-  *(QuadShape2D **)method_00 = this_00;
+  (this->fields)._labelQuad = this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-  pSVar1 = &this->fields;
-  pSVar1->_sceneGizmo = sceneGizmo;
-  func_?(pSVar1,sceneGizmo);
-  if (pSVar1->_sceneGizmo != (SceneGizmo *)0x0) {
-    pGVar2 = (pSVar1->_sceneGizmo->fields)._._gizmo;
+  (this->fields)._sceneGizmo = sceneGizmo;
+  func_?(&this->fields,sceneGizmo);
+  pSVar1 = (this->fields)._sceneGizmo;
+  if (pSVar1 != (SceneGizmo *)0x0) {
+    pGVar2 = (pSVar1->fields)._._gizmo;
     id = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
          UnsafeUtility_SizeOf_10((MethodInfo *)0x0);
     if (pGVar2 != (Gizmo *)0x0) {
       pGVar3 = Gizmo::Gizmo_CreateHandle(pGVar2,id,(MethodInfo *)0x0);
-      ppGVar4 = &(this->fields)._handle;
-      *ppGVar4 = pGVar3;
+      (this->fields)._handle = pGVar3;
       func_?();
-      pGVar3 = *ppGVar4;
+      pGVar3 = (this->fields)._handle;
       if (pGVar3 != (GizmoHandle *)0x0) {
         GizmoHandle::GizmoHandle_Add2DShape
                   (pGVar3,(Shape2D *)(this->fields)._labelQuad,(MethodInfo *)0x0);
@@ -444,8 +510,8 @@ void Assembly-CSharp.dll::RTG::SceneGizmoCamPrjSwitchLabel::SceneGizmoCamPrjSwit
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

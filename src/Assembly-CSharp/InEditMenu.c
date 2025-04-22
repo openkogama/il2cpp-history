@@ -94,20 +94,21 @@ void Assembly-CSharp.dll::InEditMenu::InEditMenu_Initialize(InEditMenu *this,Met
                        ((Object *)pGVar2,parent,0,
                         GamePassesUI_MethodInfo__UnityEngine__Object__Instantiate<GamePassesUI>_GamePassesUI__UnityEngine__Transform__bool_
                        );
-    ppGVar3 = &(this->fields).gamePassesUI;
-    *ppGVar3 = pGVar2;
+    (this->fields).gamePassesUI = pGVar2;
     func_?();
-    if (*ppGVar3 != (GamePassesUI *)0x0) {
-      GamePassesUI::GamePassesUI_Initialize(*ppGVar3,(MethodInfo *)0x0);
-      bVar4 = GamePassProgressionController::GamePassProgressionController_get_IsProgressionEnabled
+    pGVar2 = (this->fields).gamePassesUI;
+    if (pGVar2 != (GamePassesUI *)0x0) {
+      GamePassesUI::GamePassesUI_Initialize(pGVar2,(MethodInfo *)0x0);
+      bVar3 = GamePassProgressionController::GamePassProgressionController_get_IsProgressionEnabled
                         ((MethodInfo *)0x0);
-      if (bVar4 != 0) {
+      if (bVar3 != 0) {
         return;
       }
-      if ((*ppGVar3 != (GamePassesUI *)0x0) &&
+      pGVar2 = (this->fields).gamePassesUI;
+      if ((pGVar2 != (GamePassesUI *)0x0) &&
          (pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                             ((Component *)*ppGVar3,(MethodInfo *)0x0), pGVar1 != (GameObject *)0x0)
-         ) {
+                             ((Component *)pGVar2,(MethodInfo *)0x0), pGVar1 != (GameObject *)0x0))
+      {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                   (pGVar1,0,(MethodInfo *)0x0);
         return;
@@ -115,8 +116,8 @@ void Assembly-CSharp.dll::InEditMenu::InEditMenu_Initialize(InEditMenu *this,Met
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

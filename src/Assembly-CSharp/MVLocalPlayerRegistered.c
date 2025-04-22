@@ -62,15 +62,14 @@ void Assembly-CSharp.dll::MVLocalPlayerRegistered::MVLocalPlayerRegistered_Initi
     this_00 = (XPProgress *)func_?(TypeInfo__XPProgress);
     XPProgress::XPProgress__ctor
               (this_00,(MVLocalPlayer *)this,initialLevelData_00,(MethodInfo *)0x0);
-    ppXVar1 = &(this->fields)._.xpProgress;
-    *ppXVar1 = this_00;
-    func_?(ppXVar1,this_00);
-    pAVar2 = (this->fields)._.OnInitializeLeveling;
-    if (pAVar2 != (Action *)0x0) {
-      (*(pAVar2->fields)._._.invoke_impl)
-                ((pAVar2->fields)._._.method_code,(pAVar2->fields)._._.method);
+    (this->fields)._.xpProgress = this_00;
+    func_?(&(this->fields)._.xpProgress,this_00);
+    if ((this->fields)._.OnInitializeLeveling != (Action *)0x0) {
+      pAVar1 = (this->fields)._.OnInitializeLeveling;
+      (*(pAVar1->fields)._._.invoke_impl)
+                ((pAVar1->fields)._._.method_code,(pAVar1->fields)._._.method);
     }
-    initialLevelData = (InitialLevelData *)*ppXVar1;
+    initialLevelData = (InitialLevelData *)(this->fields)._.xpProgress;
     if (initialLevelData != (InitialLevelData *)0x0) {
       a = (XPProgress_OnXPProgressDataDelegate *)(initialLevelData->fields).BadgeUrlData;
       this_01 = (UnityAction_1_System_Object_ *)
@@ -80,28 +79,28 @@ void Assembly-CSharp.dll::MVLocalPlayerRegistered::MVLocalPlayerRegistered_Initi
                 (this_01,(Object *)this,
                  MethodInfo__MVLocalPlayerRegistered__OnXPProgressDataChangeRegistered_XPProgressData_
                  ,(MethodInfo *)0x0);
-      pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine
+      pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
                          ((Delegate *)a,(Delegate *)this_01,(MethodInfo *)0x0);
-      if (pDVar3 == (Delegate *)0x0) {
+      if (pDVar2 == (Delegate *)0x0) {
         (initialLevelData->fields).BadgeUrlData = (List_1_BadgeUrlData_ *)0x0;
       }
       else {
-        pDVar4 = (Delegate *)0x0;
-        if ((XPProgress_OnXPProgressDataDelegate__Class *)pDVar3->klass ==
+        pDVar3 = (Delegate *)0x0;
+        if ((XPProgress_OnXPProgressDataDelegate__Class *)pDVar2->klass ==
             TypeInfo__XPProgress__OnXPProgressDataDelegate) {
-          pDVar4 = pDVar3;
+          pDVar3 = pDVar2;
         }
-        if (pDVar4 == (Delegate *)0x0) {
+        if (pDVar3 == (Delegate *)0x0) {
           func_?();
           goto code_?;
         }
-        (initialLevelData->fields).BadgeUrlData = (List_1_BadgeUrlData_ *)pDVar4;
-        pDVar4 = (Delegate *)0x0;
-        if ((XPProgress_OnXPProgressDataDelegate__Class *)pDVar3->klass ==
+        (initialLevelData->fields).BadgeUrlData = (List_1_BadgeUrlData_ *)pDVar3;
+        pDVar3 = (Delegate *)0x0;
+        if ((XPProgress_OnXPProgressDataDelegate__Class *)pDVar2->klass ==
             TypeInfo__XPProgress__OnXPProgressDataDelegate) {
-          pDVar4 = pDVar3;
+          pDVar3 = pDVar2;
         }
-        if (pDVar4 == (Delegate *)0x0) goto code_?;
+        if (pDVar3 == (Delegate *)0x0) goto code_?;
       }
       func_?();
       level = (undefined *)(this->fields)._._.level;
@@ -120,10 +119,10 @@ void Assembly-CSharp.dll::MVLocalPlayerRegistered::MVLocalPlayerRegistered_Initi
         func_?(&TypeInfo__NotificationController);
         cRam_? = '\x01';
       }
-      pMVar5 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
-      if (pMVar5 != (MVNetworkGame_OperationRequests *)0x0) {
+      pMVar4 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
+      if (pMVar4 != (MVNetworkGame_OperationRequests *)0x0) {
         MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_LocalPlayerLevelChanged
-                  (pMVar5,(int32_t)level,(MethodInfo *)0x0);
+                  (pMVar4,(int32_t)level,(MethodInfo *)0x0);
         if ((this->fields)._.oldLevel != 0) {
           this_02 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                      *)func_?(
@@ -137,8 +136,8 @@ void Assembly-CSharp.dll::MVLocalPlayerRegistered::MVLocalPlayerRegistered_Initi
                     );
           initialLevelData = (InitialLevelData *)CONCAT13(4,initialLevelData._0_3_);
           key = (Object *)func_?(TypeInfo__System__Byte,(int)&initialLevelData + 3);
-          puStack_6 = level;
-          value = (Object *)func_?(TypeInfo__System__Int32,&puStack_6);
+          puStack_5 = level;
+          value = (Object *)func_?(TypeInfo__System__Int32,&puStack_5);
           if (this_02 ==
               (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                *)0x0) goto code_?;
@@ -155,11 +154,11 @@ void Assembly-CSharp.dll::MVLocalPlayerRegistered::MVLocalPlayerRegistered_Initi
                      (Dictionary_2_System_Object_System_Object_ *)this_02,(MethodInfo *)0x0);
         }
         (this->fields)._.oldLevel = (int32_t)level;
-        pMVar5 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0)
+        pMVar4 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0)
         ;
-        if (pMVar5 != (MVNetworkGame_OperationRequests *)0x0) {
+        if (pMVar4 != (MVNetworkGame_OperationRequests *)0x0) {
           MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_JoinNotification
-                    (pMVar5,(MethodInfo *)0x0);
+                    (pMVar4,(MethodInfo *)0x0);
           return;
         }
       }
@@ -169,8 +168,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -210,16 +209,16 @@ void Assembly-CSharp.dll::MVLocalPlayerRegistered::MVLocalPlayerRegistered_Level
                          );
       pIVar3 = pMVar1->klass;
       pMVar1->klass = pIVar2;
-      if ((pIVar3 != pIVar2) && (ppIVar4 = pMVar1->parameters, ppIVar4 != (Il2CppType **)0x0)) {
-        pIStack5 = ppIVar4[5];
-        (*(code *)ppIVar4[3])();
+      if ((pIVar3 != pIVar2) && (pMVar1->parameters != (Il2CppType **)0x0)) {
+        pIStack4 = pMVar1->parameters[5];
+        (*(code *)pMVar1->parameters[3])();
       }
       return;
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -352,8 +351,8 @@ void Assembly-CSharp.dll::MVLocalPlayerRegistered::
       func_?(&StringLiteral_You_gained__0__XP_);
       cRam_? = '\x01';
     }
-    pXVar5 = (this->fields)._.OnXPProgressData;
-    if (pXVar5 != (XPProgress_OnXPProgressDataDelegate *)0x0) {
+    if ((this->fields)._.OnXPProgressData != (XPProgress_OnXPProgressDataDelegate *)0x0) {
+      pXVar5 = (this->fields)._.OnXPProgressData;
       (*(pXVar5->fields)._._.invoke_impl)
                 ((pXVar5->fields)._._.method_code,pXVar1,(pXVar5->fields)._._.method);
     }
@@ -366,12 +365,12 @@ void Assembly-CSharp.dll::MVLocalPlayerRegistered::
     }
     NotificationController::NotificationController_PushNotification
               (pSVar3,(Sprite *)0x0,5,(MethodInfo *)0x0);
-    this_00 = (ContextualMenuManipulator *)
+    this_00 = (GameEventManager_AvatarCommandsPlayModeManager *)
               MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-    if (this_00 != (ContextualMenuManipulator *)0x0) {
-      UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::ContextualMenuManipulator::
-      ContextualMenuManipulator_OnContextualMenuEvent
-                (this_00,(ContextualMenuPopulateEvent *)(pXVar1->fields).xpDelta,(MethodInfo *)0x0);
+    if (this_00 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0) {
+      GameEventManager+AvatarCommandsPlayModeManager::
+      GameEventManager_AvatarCommandsPlayModeManager_SetIntermediateDebriefing
+                (this_00,(pXVar1->fields).xpDelta,(MethodInfo *)0x0);
       return;
     }
   }

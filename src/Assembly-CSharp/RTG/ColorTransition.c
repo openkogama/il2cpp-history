@@ -23,11 +23,11 @@ void Assembly-CSharp.dll::RTG::ColorTransition::ColorTransition_BeginFadeIn
     (this->fields)._fadeOutColor.b = fVar7;
     (this->fields)._fadeOutColor.a = fVar8;
   }
-  pCVar9 = (this->fields).TransitionBegin;
   (this->fields)._state = 2;
   (this->fields)._isActive = 1;
   (this->fields)._elapsedTimeInSeconds = 0.0;
-  if (pCVar9 != (ColorTransition_ColorTransitionBeginHandler *)0x0) {
+  if ((this->fields).TransitionBegin != (ColorTransition_ColorTransitionBeginHandler *)0x0) {
+    pCVar9 = (this->fields).TransitionBegin;
     puStack_1 = (pCVar9->fields)._._.method;
     pCStack_10 = this;
     pvStack_4 = (pCVar9->fields)._._.method_code;
@@ -61,11 +61,11 @@ void Assembly-CSharp.dll::RTG::ColorTransition::ColorTransition_BeginFadeOut
     (this->fields)._fadeInColor.b = fVar7;
     (this->fields)._fadeInColor.a = fVar8;
   }
-  pCVar9 = (this->fields).TransitionBegin;
   (this->fields)._state = 3;
   (this->fields)._isActive = 1;
   (this->fields)._elapsedTimeInSeconds = 0.0;
-  if (pCVar9 != (ColorTransition_ColorTransitionBeginHandler *)0x0) {
+  if ((this->fields).TransitionBegin != (ColorTransition_ColorTransitionBeginHandler *)0x0) {
+    pCVar9 = (this->fields).TransitionBegin;
     puStack_1 = (pCVar9->fields)._._.method;
     pCStack_10 = this;
     pvStack_4 = (pCVar9->fields)._._.method_code;
@@ -82,18 +82,17 @@ void Assembly-CSharp.dll::RTG::ColorTransition::ColorTransition_End
 
 {
   if ((this->fields)._isActive != 0) {
-    iVar1 = (this->fields)._state;
     (this->fields)._isActive = 0;
-    if (iVar1 == 3) {
+    if ((this->fields)._state == 3) {
       (this->fields)._state = 1;
     }
-    else if (iVar1 == 2) {
+    else if ((this->fields)._state == 2) {
       (this->fields)._state = 0;
     }
-    pCVar2 = (this->fields).TransitionEnd;
-    if (pCVar2 != (ColorTransition_ColorTransitionEndHandler *)0x0) {
-      (*(pCVar2->fields)._._.invoke_impl)
-                ((pCVar2->fields)._._.method_code,this,(pCVar2->fields)._._.method);
+    if ((this->fields).TransitionEnd != (ColorTransition_ColorTransitionEndHandler *)0x0) {
+      pCVar1 = (this->fields).TransitionEnd;
+      (*(pCVar1->fields)._._.invoke_impl)
+                ((pCVar1->fields)._._.method_code,this,(pCVar1->fields)._._.method);
     }
   }
   return;
@@ -145,18 +144,17 @@ void Assembly-CSharp.dll::RTG::ColorTransition::ColorTransition_Update
       (pCVar11->fields)._value.b = fVar7;
       (pCVar11->fields)._value.a = fVar8;
       if ((this->fields)._isActive != 0) {
-        iVar12 = (this->fields)._state;
         (this->fields)._isActive = 0;
-        if (iVar12 == 3) {
+        if ((this->fields)._state == 3) {
           (this->fields)._state = 1;
         }
-        else if (iVar12 == 2) {
+        else if ((this->fields)._state == 2) {
           (this->fields)._state = 0;
         }
-        pCVar13 = (this->fields).TransitionEnd;
-        if (pCVar13 != (ColorTransition_ColorTransitionEndHandler *)0x0) {
-          (*(pCVar13->fields)._._.invoke_impl)
-                    ((pCVar13->fields)._._.method_code,this,(pCVar13->fields)._._.method);
+        if ((this->fields).TransitionEnd != (ColorTransition_ColorTransitionEndHandler *)0x0) {
+          pCVar12 = (this->fields).TransitionEnd;
+          (*(pCVar12->fields)._._.invoke_impl)
+                    ((pCVar12->fields)._._.method_code,this,(pCVar12->fields)._._.method);
           return;
         }
       }
@@ -171,8 +169,8 @@ void Assembly-CSharp.dll::RTG::ColorTransition::ColorTransition_Update
       if (pCVar11 == (ColorRef *)0x0) {
 code_?:
         func_?();
-        pcVar14 = (code *)swi(3);
-        (*pcVar14)();
+        pcVar13 = (code *)swi(3);
+        (*pcVar13)();
         return;
       }
       (pCVar11->fields)._value.r = (fVar5 - fStack_1) * fVar9 + fStack_1;
@@ -194,29 +192,28 @@ void Assembly-CSharp.dll::RTG::ColorTransition::ColorTransition__ctor
   (this->fields)._state = 4;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-  ppCVar1 = &(this->fields)._colorRef;
-  *ppCVar1 = colorRef;
-  func_?(ppCVar1,colorRef);
+  (this->fields)._colorRef = colorRef;
+  func_?(&(this->fields)._colorRef,colorRef);
   if (colorRef != (ColorRef *)0x0) {
-    fVar2 = (colorRef->fields)._value.g;
-    fVar3 = (colorRef->fields)._value.b;
-    fVar4 = (colorRef->fields)._value.a;
+    fVar1 = (colorRef->fields)._value.g;
+    fVar2 = (colorRef->fields)._value.b;
+    fVar3 = (colorRef->fields)._value.a;
     (this->fields)._fadeInColor.r = (colorRef->fields)._value.r;
-    (this->fields)._fadeInColor.g = fVar2;
-    (this->fields)._fadeInColor.b = fVar3;
-    (this->fields)._fadeInColor.a = fVar4;
-    fVar2 = (colorRef->fields)._value.g;
-    fVar3 = (colorRef->fields)._value.b;
-    fVar4 = (colorRef->fields)._value.a;
+    (this->fields)._fadeInColor.g = fVar1;
+    (this->fields)._fadeInColor.b = fVar2;
+    (this->fields)._fadeInColor.a = fVar3;
+    fVar1 = (colorRef->fields)._value.g;
+    fVar2 = (colorRef->fields)._value.b;
+    fVar3 = (colorRef->fields)._value.a;
     (this->fields)._fadeOutColor.r = (colorRef->fields)._value.r;
-    (this->fields)._fadeOutColor.g = fVar2;
-    (this->fields)._fadeOutColor.b = fVar3;
-    (this->fields)._fadeOutColor.a = fVar4;
+    (this->fields)._fadeOutColor.g = fVar1;
+    (this->fields)._fadeOutColor.b = fVar2;
+    (this->fields)._fadeOutColor.a = fVar3;
     return;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -270,28 +267,28 @@ void Assembly-CSharp.dll::RTG::ColorTransition::ColorTransition_add_TransitionEn
     func_?(&TypeInfo__RTG__ColorTransition__ColorTransitionEndHandler);
     cRam_? = '\x01';
   }
-  ppCVar1 = &(this->fields).TransitionEnd;
-  a = *ppCVar1;
+  a = (this->fields).TransitionEnd;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((ColorTransition_ColorTransitionEndHandler__Class *)pDVar2->klass ==
+    pDVar2 = (Delegate *)0x0;
+    if (pDVar1 != (Delegate *)0x0) {
+      if ((ColorTransition_ColorTransitionEndHandler__Class *)pDVar1->klass ==
           TypeInfo__RTG__ColorTransition__ColorTransitionEndHandler) {
-        pDVar3 = pDVar2;
+        pDVar2 = pDVar1;
       }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__RTG__ColorTransition__ColorTransitionEndHandler);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+      if (pDVar2 == (Delegate *)0x0) {
+        func_?(pDVar1,TypeInfo__RTG__ColorTransition__ColorTransitionEndHandler);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
     }
-    pCVar5 = (ColorTransition_ColorTransitionEndHandler *)func_?(ppCVar1,pDVar3,a);
-    bVar6 = pCVar5 == a;
-    a = pCVar5;
-    if (bVar6) {
+    pCVar4 = (ColorTransition_ColorTransitionEndHandler *)
+             func_?(&(this->fields).TransitionEnd,pDVar2,a);
+    bVar5 = pCVar4 == a;
+    a = pCVar4;
+    if (bVar5) {
       return;
     }
   } while( true );
@@ -348,28 +345,28 @@ void Assembly-CSharp.dll::RTG::ColorTransition::ColorTransition_remove_Transitio
     func_?(&TypeInfo__RTG__ColorTransition__ColorTransitionEndHandler);
     cRam_? = '\x01';
   }
-  ppCVar1 = &(this->fields).TransitionEnd;
-  source = *ppCVar1;
+  source = (this->fields).TransitionEnd;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar3 = (Delegate *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      if ((ColorTransition_ColorTransitionEndHandler__Class *)pDVar2->klass ==
+    pDVar2 = (Delegate *)0x0;
+    if (pDVar1 != (Delegate *)0x0) {
+      if ((ColorTransition_ColorTransitionEndHandler__Class *)pDVar1->klass ==
           TypeInfo__RTG__ColorTransition__ColorTransitionEndHandler) {
-        pDVar3 = pDVar2;
+        pDVar2 = pDVar1;
       }
-      if (pDVar3 == (Delegate *)0x0) {
-        func_?(pDVar2,TypeInfo__RTG__ColorTransition__ColorTransitionEndHandler);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+      if (pDVar2 == (Delegate *)0x0) {
+        func_?(pDVar1,TypeInfo__RTG__ColorTransition__ColorTransitionEndHandler);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
     }
-    pCVar5 = (ColorTransition_ColorTransitionEndHandler *)func_?(ppCVar1,pDVar3,source);
-    bVar6 = pCVar5 == source;
-    source = pCVar5;
-    if (bVar6) {
+    pCVar4 = (ColorTransition_ColorTransitionEndHandler *)
+             func_?(&(this->fields).TransitionEnd,pDVar2,source);
+    bVar5 = pCVar4 == source;
+    source = pCVar4;
+    if (bVar5) {
       return;
     }
   } while( true );

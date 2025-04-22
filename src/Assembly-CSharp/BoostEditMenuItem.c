@@ -99,7 +99,8 @@ void Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_Initialize
                (BoostEditMenuItem *this,Boost *boost,MethodInfo *method)
 
 {
-  pBVar1 = this;
+  pBVar1 = boost;
+  pBVar2 = this;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>__get_NumericValue__
@@ -128,9 +129,8 @@ void Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_Initialize
     func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  ppBVar2 = &(this->fields).boost;
-  *ppBVar2 = boost;
-  func_?(ppBVar2,boost);
+  (this->fields).boost = boost;
+  func_?(&(this->fields).boost,boost);
   pTVar3 = (this->fields).boostDescription;
   if (boost != (Boost *)0x0) {
     pSVar4 = (boost->fields).description;
@@ -153,10 +153,10 @@ void Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_Initialize
            (pGVar6 = MVGameOptionDataObject::MVGameOptionDataObject_get_GameBoosterSettingsManager
                                (this_02,(MethodInfo *)0x0),
            pGVar6 != (GameBoosterSettingsManager *)0x0)) {
-          this_03 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                    MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::
-                    GameBoosterSettings::GameBoosterSettingsManager::
-                    GameBoosterSettingsManager_get_ActiveSettingsList(pGVar6,(MethodInfo *)0x0);
+          boost = (Boost *)MVWorldObject.dll::MV::WorldObject::KogamaSettings::
+                           SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingsManager
+                           ::GameBoosterSettingsManager_get_ActiveSettingsList
+                                     (pGVar6,(MethodInfo *)0x0);
           pGVar6 = MVGameOptionDataObject::MVGameOptionDataObject_get_GameBoosterSettingsManager
                              (this_02,(MethodInfo *)0x0);
           if (pGVar6 != (GameBoosterSettingsManager *)0x0) {
@@ -166,33 +166,34 @@ void Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_Initialize
                    GameBoosterSettingsManager_get_InactiveGameBoosterSettingsList
                              (pGVar6,(MethodInfo *)0x0);
             iVar7 = 0;
-            if (this_03 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-            {
-              for (; iVar7 < (this_03->fields)._size; iVar7 = iVar7 + 1) {
+            if (boost != (Boost *)0x0) {
+              for (; iVar7 < (int)(boost->fields)._BoostKey_k__BackingField; iVar7 = iVar7 + 1) {
                 RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                         RegularExpressions::RegexCharClass+SingleRange]::
                         List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                  (this_03,iVar7,
+                                  ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                    *)boost,iVar7,
                                    MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>__get_Item_int_
                                   );
                 if (RVar8 == (RegexCharClass_SingleRange)0x0) goto code_?;
                 bVar9 = mscorlib.dll::System::String::String_op_Equality
                                   (*(String **)((int)RVar8 + 0xc),
-                                   (boost->fields)._BoostKey_k__BackingField,(MethodInfo *)0x0);
+                                   (pBVar1->fields)._BoostKey_k__BackingField,(MethodInfo *)0x0);
                 if (bVar9 != 0) {
-                  pTVar5 = (pBVar1->fields).activeToggleButton;
-                  (pBVar1->fields).isActive = 1;
+                  pTVar5 = (pBVar2->fields).activeToggleButton;
+                  (pBVar2->fields).isActive = 1;
                   if (pTVar5 == (ToggleButtonAnimation *)0x0) goto code_?;
                   ToggleButtonAnimation::ToggleButtonAnimation_SetToggleOnWithoutInterpolation
                             (pTVar5,(MethodInfo *)0x0);
                   RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                           RegularExpressions::RegexCharClass+SingleRange]::
                           List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                    (this_03,iVar7,
+                                    ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
+                                      *)pTVar5,iVar7,
                                      MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>__get_Item_int_
                                     );
-                  boost = (Boost *)&(pBVar1->fields).boosterSetting;
-                  *(RegexCharClass_SingleRange *)boost = RVar8;
+                  (pBVar2->fields).boosterSetting = (GameBoosterSettingWithGoldSetting *)RVar8;
+                  boost = (Boost *)&(pBVar2->fields).boosterSetting;
                   this = (BoostEditMenuItem *)&UNK_?;
                   func_?();
                 }
@@ -211,10 +212,10 @@ void Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_Initialize
                   if (RVar8 == (RegexCharClass_SingleRange)0x0) goto code_?;
                   bVar9 = mscorlib.dll::System::String::String_op_Equality
                                     (*(String **)((int)RVar8 + 0xc),
-                                     (boost->fields)._BoostKey_k__BackingField,(MethodInfo *)0x0);
+                                     (pBVar1->fields)._BoostKey_k__BackingField,(MethodInfo *)0x0);
                   if (bVar9 != 0) {
-                    pTVar5 = (pBVar1->fields).activeToggleButton;
-                    (pBVar1->fields).isActive = 0;
+                    pTVar5 = (pBVar2->fields).activeToggleButton;
+                    (pBVar2->fields).isActive = 0;
                     if (pTVar5 == (ToggleButtonAnimation *)0x0) goto code_?;
                     ToggleButtonAnimation::ToggleButtonAnimation_SetToggleOffWithoutInterpolation
                               (pTVar5,(MethodInfo *)0x0);
@@ -225,19 +226,19 @@ void Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_Initialize
                                         *)&UNK_?,iVar7,
                                        MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>__get_Item_int_
                                       );
-                    (pBVar1->fields).boosterSetting = (GameBoosterSettingWithGoldSetting *)RVar8;
+                    (pBVar2->fields).boosterSetting = (GameBoosterSettingWithGoldSetting *)RVar8;
                     this = (BoostEditMenuItem *)&UNK_?;
                     func_?();
                   }
                 }
                 pLVar10 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
-                          (pBVar1->fields).boosterList;
+                          (pBVar2->fields).boosterList;
                 iVar7 = 0;
                 if (pLVar10 !=
                     (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0) {
                   while (iVar7 < (pLVar10->fields)._size) {
                     pLVar10 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *
-                              )(pBVar1->fields).boosterList;
+                              )(pBVar2->fields).boosterList;
                     if (pLVar10 ==
                         (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
                     goto code_?;
@@ -248,8 +249,9 @@ void Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_Initialize
                                         MethodInfo__System__Collections__Generic__List<BoostEditMenuItem::BoosterDef>__get_Item_int_
                                        );
                     pLVar10 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *
-                              )(pBVar1->fields).boosterList;
-                    if (XVar11.qname == (XmlQualifiedName *)(boost->fields)._Type_k__BackingField) {
+                              )(pBVar2->fields).boosterList;
+                    if (XVar11.qname == (XmlQualifiedName *)(pBVar1->fields)._Type_k__BackingField)
+                    {
                       if (pLVar10 !=
                           (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0
                          ) {
@@ -262,18 +264,18 @@ void Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_Initialize
                         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
                           func_?();
                         }
-                        this_04 = (GameObject *)
+                        this_03 = (GameObject *)
                                   UnityEngine.CoreModule.dll::UnityEngine::Object::
                                   Object_1_Instantiate_4
                                             ((Object *)XVar11.xso,
                                              UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
                                             );
-                        if ((this_04 != (GameObject *)0x0) &&
-                           (this_05 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                      GameObject_get_transform(this_04,(MethodInfo *)0x0),
-                           this_05 != (Transform *)0x0)) {
+                        if ((this_03 != (GameObject *)0x0) &&
+                           (this_04 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                                      GameObject_get_transform(this_03,(MethodInfo *)0x0),
+                           this_04 != (Transform *)0x0)) {
                           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                                    (this_05,(Transform *)(pBVar1->fields).boostTypeImageParent,0,
+                                    (this_04,(Transform *)(pBVar2->fields).boostTypeImageParent,0,
                                      (MethodInfo *)0x0);
                           break;
                         }
@@ -285,22 +287,22 @@ void Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_Initialize
                         (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
                     goto code_?;
                   }
-                  this_00 = (pBVar1->fields).boosterSetting;
+                  this_00 = (pBVar2->fields).boosterSetting;
                   if ((this_00 != (GameBoosterSettingWithGoldSetting *)0x0) &&
-                     (this_06 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::
+                     (this_05 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::
                                 SpecializedSettingsTypes::GameBoosterSettings::
                                 GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting::
                                 GameBoosterSettingWithGoldSetting_get_GoldPrice
                                           (this_00,(MethodInfo *)0x0),
-                     this_06 != (KogamaSettingNumericBase_1_System_Int32_ *)0x0)) {
+                     this_05 != (KogamaSettingNumericBase_1_System_Int32_ *)0x0)) {
                     pSVar4 = (String *)
                              MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore
                              ::KogamaSettingTypes::KogamaSettingNumericBase`1[System::Int32]::
                              KogamaSettingNumericBase_1_System_Int32__get_NumericValue
-                                       (this_06,
+                                       (this_05,
                                         MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>__get_NumericValue__
                                        );
-                    pTVar3 = (pBVar1->fields).goldPriceText;
+                    pTVar3 = (pBVar2->fields).goldPriceText;
                     pSVar4 = mscorlib.dll::System::Int32::Int32_ToString_1
                                        ((Int32 *)&stack0xfffffff8,pSVar4,(MethodInfo *)0x0);
                     if ((pSVar4 != (String *)0x0) &&
@@ -402,7 +404,6 @@ void Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_OnBoostSettingCha
   if (this_01 == (MVWorldObjectClientManager *)0x0) {
 code_?:
     func_?();
-    pKVar1 = extraout_EDX;
   }
   else {
     this_02 = (MVGameOptionDataObject *)
@@ -410,60 +411,62 @@ code_?:
                         (this_01,
                          MVGameOptionDataObject_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVGameOptionDataObject>__
                         );
-    pGVar2 = (this->fields).boosterSetting;
-    if (pGVar2 == (GameBoosterSettingWithGoldSetting *)0x0) goto code_?;
-    pKVar3 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::
+    pGVar1 = (this->fields).boosterSetting;
+    if (pGVar1 == (GameBoosterSettingWithGoldSetting *)0x0) goto code_?;
+    pKVar2 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::
              GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting::
-             GameBoosterSettingWithGoldSetting_get_Setting(pGVar2,(MethodInfo *)0x0);
-    if (pKVar3 != (KogamaSettingValueWrapperBase *)0x0) {
-      bVar4 = (
-              TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
-              ->_1).naturalAligment;
-      if (((pKVar3->klass->_1).naturalAligment < bVar4) ||
-         ((pKVar3->klass->_1).typeHierarchy[bVar4 - 1] !=
+             GameBoosterSettingWithGoldSetting_get_Setting(pGVar1,(MethodInfo *)0x0);
+    if (pKVar2 != (KogamaSettingValueWrapperBase *)0x0) {
+      if (((pKVar2->klass->_1).naturalAligment <
+           (
+           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
+           ->_1).naturalAligment) ||
+         ((pKVar2->klass->_1).typeHierarchy
+          [(
+           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
+           ->_1).naturalAligment - 1] !=
           (Il2CppClass *)
           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
          )) goto code_?;
-      pGVar2 = (this->fields).boosterSetting;
-      if (pGVar2 == (GameBoosterSettingWithGoldSetting *)0x0) goto code_?;
-      unaff_EDI = (Text *)MVWorldObject.dll::MV::WorldObject::KogamaSettings::
-                          SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::
-                          GameBoosterSettingWithGoldSetting::
-                          GameBoosterSettingWithGoldSetting_get_Setting(pGVar2,(MethodInfo *)0x0);
-      if (unaff_EDI == (Text *)0x0) goto code_?;
-      bVar4 = (
-              TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
-              ->_1).naturalAligment;
-      pKVar1 = 
-      TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
-      ;
-      if (((unaff_EDI->klass->_1).naturalAligment < bVar4) ||
-         ((unaff_EDI->klass->_1).typeHierarchy[bVar4 - 1] !=
+      pGVar1 = (this->fields).boosterSetting;
+      if (pGVar1 == (GameBoosterSettingWithGoldSetting *)0x0) goto code_?;
+      this_03 = (KogamaSettingNumericBase_1_System_Int32_ *)
+                MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::
+                GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting::
+                GameBoosterSettingWithGoldSetting_get_Setting(pGVar1,(MethodInfo *)0x0);
+      if (this_03 == (KogamaSettingNumericBase_1_System_Int32_ *)0x0) goto code_?;
+      if (((this_03->klass->_1).naturalAligment <
+           (
+           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
+           ->_1).naturalAligment) ||
+         ((this_03->klass->_1).typeHierarchy
+          [(
+           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
+           ->_1).naturalAligment - 1] !=
           (Il2CppClass *)
           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
          )) goto code_?;
       if (newValue == (Object *)0x0) goto code_?;
       if ((newValue->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
       goto code_?;
-      pMVar5 = 
+      pMVar3 = 
       MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>__set_NumericValue_int_
       ;
-      piVar6 = (int32_t *)func_?();
-      bVar4 = (
-              TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
-              ->_1).naturalAligment;
-      pKVar1 = 
-      TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
-      ;
-      if (((unaff_EDI->klass->_1).naturalAligment < bVar4) ||
-         ((unaff_EDI->klass->_1).typeHierarchy[bVar4 - 1] !=
+      piVar4 = (int32_t *)func_?();
+      if (((this_03->klass->_1).naturalAligment <
+           (
+           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
+           ->_1).naturalAligment) ||
+         ((this_03->klass->_1).typeHierarchy
+          [(
+           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
+           ->_1).naturalAligment - 1] !=
           (Il2CppClass *)
           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
          )) goto code_?;
       MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::
       KogamaSettingNumericBase`1[System::Int32]::
-      KogamaSettingNumericBase_1_System_Int32__set_NumericValue
-                ((KogamaSettingNumericBase_1_System_Int32_ *)unaff_EDI,*piVar6,pMVar5);
+      KogamaSettingNumericBase_1_System_Int32__set_NumericValue(this_03,*piVar4,pMVar3);
 code_?:
       if (this_02 != (MVGameOptionDataObject *)0x0) {
         MVGameOptionDataObject::MVGameOptionDataObject_UpdateSetting
@@ -474,84 +477,87 @@ code_?:
       goto code_?;
     }
 code_?:
-    pGVar2 = (this->fields).boosterSetting;
-    if (pGVar2 == (GameBoosterSettingWithGoldSetting *)0x0) goto code_?;
-    pKVar3 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::
+    pGVar1 = (this->fields).boosterSetting;
+    if (pGVar1 == (GameBoosterSettingWithGoldSetting *)0x0) goto code_?;
+    pKVar2 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::
              GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting::
-             GameBoosterSettingWithGoldSetting_get_Setting(pGVar2,(MethodInfo *)0x0);
-    if (pKVar3 == (KogamaSettingValueWrapperBase *)0x0) {
+             GameBoosterSettingWithGoldSetting_get_Setting(pGVar1,(MethodInfo *)0x0);
+    if (pKVar2 == (KogamaSettingValueWrapperBase *)0x0) {
 code_?:
       this_00 = (this->fields).boost;
-      unaff_EDI = (this->fields).boostDescription;
+      pTVar5 = (this->fields).boostDescription;
       if (this_00 != (Boost *)0x0) {
         format = (this_00->fields).description;
         arg0 = Boost::Boost_get_Value(this_00,(MethodInfo *)0x0);
-        mscorlib.dll::System::String::String_Format(format,arg0,(MethodInfo *)0x0);
-        if (unaff_EDI != (Text *)0x0) {
-          (*(code *)(unaff_EDI->klass->vtable).set_text.method)(unaff_EDI);
+        pSStack6 = mscorlib.dll::System::String::String_Format(format,arg0,(MethodInfo *)0x0)
+        ;
+        if (pTVar5 != (Text *)0x0) {
+          pIStack7 = (pTVar5->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
+          pTStack8 = pTVar5;
+          (*(code *)(pTVar5->klass->vtable).set_text.method)();
           return;
         }
       }
       goto code_?;
     }
-    bVar4 = (
-            TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
-            ->_1).naturalAligment;
-    if (((pKVar3->klass->_1).naturalAligment < bVar4) ||
-       ((pKVar3->klass->_1).typeHierarchy[bVar4 - 1] !=
+    if (((pKVar2->klass->_1).naturalAligment <
+         (
+         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
+         ->_1).naturalAligment) ||
+       ((pKVar2->klass->_1).typeHierarchy
+        [(
+         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
+         ->_1).naturalAligment - 1] !=
         (Il2CppClass *)
         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
        )) goto code_?;
-    pGVar2 = (this->fields).boosterSetting;
-    if (pGVar2 == (GameBoosterSettingWithGoldSetting *)0x0) goto code_?;
-    unaff_EDI = (Text *)MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes
-                        ::GameBoosterSettings::GameBoosterSettingTypes::
-                        GameBoosterSettingWithGoldSetting::
-                        GameBoosterSettingWithGoldSetting_get_Setting(pGVar2,(MethodInfo *)0x0);
-    if (unaff_EDI == (Text *)0x0) goto code_?;
-    bVar4 = (
-            TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
-            ->_1).naturalAligment;
-    pKVar1 = (KogamaSettingNumericBase_1_System_Int32___Class *)
-             TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
-    ;
-    if ((bVar4 <= (unaff_EDI->klass->_1).naturalAligment) &&
-       ((unaff_EDI->klass->_1).typeHierarchy[bVar4 - 1] ==
+    pGVar1 = (this->fields).boosterSetting;
+    if (pGVar1 == (GameBoosterSettingWithGoldSetting *)0x0) goto code_?;
+    this_04 = (KogamaSettingNumericBase_1_System_Single_ *)
+              MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::
+              GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting::
+              GameBoosterSettingWithGoldSetting_get_Setting(pGVar1,(MethodInfo *)0x0);
+    if (this_04 == (KogamaSettingNumericBase_1_System_Single_ *)0x0) goto code_?;
+    if (((
+         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
+         ->_1).naturalAligment <= (this_04->klass->_1).naturalAligment) &&
+       ((this_04->klass->_1).typeHierarchy
+        [(
+         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
+         ->_1).naturalAligment - 1] ==
         (Il2CppClass *)
         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
        )) {
       if (newValue == (Object *)0x0) goto code_?;
       if ((newValue->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
       goto code_?;
-      pMVar5 = 
+      pMVar3 = 
       MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>__set_NumericValue_float_
       ;
-      pfVar7 = (float *)func_?();
-      bVar4 = (
-              TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
-              ->_1).naturalAligment;
-      pKVar1 = (KogamaSettingNumericBase_1_System_Int32___Class *)
-               TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
-      ;
-      if ((bVar4 <= (unaff_EDI->klass->_1).naturalAligment) &&
-         ((unaff_EDI->klass->_1).typeHierarchy[bVar4 - 1] ==
+      pfVar9 = (float *)func_?();
+      if (((
+           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
+           ->_1).naturalAligment <= (this_04->klass->_1).naturalAligment) &&
+         ((this_04->klass->_1).typeHierarchy
+          [(
+           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
+           ->_1).naturalAligment - 1] ==
           (Il2CppClass *)
           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
          )) {
         MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::
         KogamaSettingNumericBase`1[System::Single]::
-        KogamaSettingNumericBase_1_System_Single__set_NumericValue
-                  ((KogamaSettingNumericBase_1_System_Single_ *)unaff_EDI,*pfVar7,pMVar5);
+        KogamaSettingNumericBase_1_System_Single__set_NumericValue(this_04,*pfVar9,pMVar3);
         goto code_?;
       }
     }
   }
 code_?:
-  func_?(unaff_EDI,pKVar1);
+  func_?();
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -714,11 +720,13 @@ void Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_ShowEditPopup
            GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting::
            GameBoosterSettingWithGoldSetting_get_Setting(pGVar1,(MethodInfo *)0x0);
   if (pKVar3 != (KogamaSettingValueWrapperBase *)0x0) {
-    bVar4 = (
-            TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
-            ->_1).naturalAligment;
-    if ((bVar4 <= (pKVar3->klass->_1).naturalAligment) &&
-       ((pKVar3->klass->_1).typeHierarchy[bVar4 - 1] ==
+    if (((
+         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
+         ->_1).naturalAligment <= (pKVar3->klass->_1).naturalAligment) &&
+       ((pKVar3->klass->_1).typeHierarchy
+        [(
+         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
+         ->_1).naturalAligment - 1] ==
         (Il2CppClass *)
         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
        )) {
@@ -729,41 +737,39 @@ void Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_ShowEditPopup
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      pOVar5 = (Object__Class *)
+      pOVar4 = (Object__Class *)
                UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                          ((Object *)original,
                           BoostEditIntPopup_MethodInfo__UnityEngine__Object__Instantiate<BoostEditIntPopup>_BoostEditIntPopup_
                          );
       if (value == (Object *)0x0) goto code_?;
-      pOVar6 = value + 1;
-      pOVar6->klass = pOVar5;
-      func_?(pOVar6,pOVar5);
-      pBVar7 = (this->fields).boost;
-      pOVar5 = pOVar6->klass;
+      value[1].klass = pOVar4;
+      func_?(value + 1,pOVar4);
+      pBVar5 = (this->fields).boost;
+      pOVar4 = value[1].klass;
       pGVar1 = (this->fields).boosterSetting;
-      pUVar8 = (UnityAction_1_System_Object_ *)
+      pUVar6 = (UnityAction_1_System_Object_ *)
                func_?(TypeInfo__UnityEngine__Events__UnityAction<System::Object>);
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
       UnityAction_1_System_Object___ctor
-                (pUVar8,(Object *)this,
+                (pUVar6,(Object *)this,
                  MethodInfo__BoostEditMenuItem__OnBoostSettingChange_System__Object_,
                  (MethodInfo *)0x0);
-      pUVar9 = (UnityAction_1_System_Int32Enum_ *)
+      pUVar7 = (UnityAction_1_System_Int32Enum_ *)
                func_?(TypeInfo__UnityEngine__Events__UnityAction<int>);
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
       UnityAction_1_System_Int32Enum___ctor
-                (pUVar9,(Object *)this,MethodInfo__BoostEditMenuItem__OnPriceSettingChanged_int_,
+                (pUVar7,(Object *)this,MethodInfo__BoostEditMenuItem__OnPriceSettingChanged_int_,
                  (MethodInfo *)0x0);
-      pNVar10 = (NavMesh_OnNavMeshPreUpdate *)
+      pNVar8 = (NavMesh_OnNavMeshPreUpdate *)
                func_?(TypeInfo__UnityEngine__Events__UnityAction);
       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
       NavMesh_OnNavMeshPreUpdate__ctor
-                (pNVar10,(Object *)this,MethodInfo__BoostEditMenuItem__OnSubmitData__,
+                (pNVar8,(Object *)this,MethodInfo__BoostEditMenuItem__OnSubmitData__,
                  (MethodInfo *)0x0);
-      if (pOVar5 == (Object__Class *)0x0) goto code_?;
-      pIVar11 = (pOVar5->_0).image;
-      (*(code *)pIVar11[5].nameNoExt)(pOVar5,pBVar7,pGVar1,pUVar8,pUVar9,pNVar10,pIVar11[5].assembly)
-      ;
+      if (pOVar4 == (Object__Class *)0x0) goto code_?;
+      pIVar9 = (pOVar4->_0).image;
+      (*(code *)pIVar9[5].nameNoExt)(pOVar4,pBVar5,pGVar1,pUVar6,pUVar7,pNVar8,pIVar9[5].assembly);
       root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
       callbackFunction =
@@ -783,11 +789,13 @@ void Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_ShowEditPopup
            GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting::
            GameBoosterSettingWithGoldSetting_get_Setting(pGVar1,(MethodInfo *)0x0);
   if (pKVar3 != (KogamaSettingValueWrapperBase *)0x0) {
-    bVar4 = (
-            TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
-            ->_1).naturalAligment;
-    if ((bVar4 <= (pKVar3->klass->_1).naturalAligment) &&
-       ((pKVar3->klass->_1).typeHierarchy[bVar4 - 1] ==
+    if (((
+         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
+         ->_1).naturalAligment <= (pKVar3->klass->_1).naturalAligment) &&
+       ((pKVar3->klass->_1).typeHierarchy
+        [(
+         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
+         ->_1).naturalAligment - 1] ==
         (Il2CppClass *)
         TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>
        )) {
@@ -798,41 +806,39 @@ void Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_ShowEditPopup
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      pOVar5 = (Object__Class *)
+      pOVar4 = (Object__Class *)
                UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                          ((Object *)original_00,
                           BoostEditFloatPopup_MethodInfo__UnityEngine__Object__Instantiate<BoostEditFloatPopup>_BoostEditFloatPopup_
                          );
       if (value == (Object *)0x0) goto code_?;
-      pOVar6 = value + 1;
-      pOVar6->klass = pOVar5;
-      func_?(pOVar6,pOVar5);
-      pBVar7 = (this->fields).boost;
-      pOVar5 = pOVar6->klass;
+      value[1].klass = pOVar4;
+      func_?(value + 1,pOVar4);
+      pBVar5 = (this->fields).boost;
+      pOVar4 = value[1].klass;
       pGVar1 = (this->fields).boosterSetting;
-      pUVar8 = (UnityAction_1_System_Object_ *)
+      pUVar6 = (UnityAction_1_System_Object_ *)
                func_?(TypeInfo__UnityEngine__Events__UnityAction<System::Object>);
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
       UnityAction_1_System_Object___ctor
-                (pUVar8,(Object *)this,
+                (pUVar6,(Object *)this,
                  MethodInfo__BoostEditMenuItem__OnBoostSettingChange_System__Object_,
                  (MethodInfo *)0x0);
-      pUVar9 = (UnityAction_1_System_Int32Enum_ *)
+      pUVar7 = (UnityAction_1_System_Int32Enum_ *)
                func_?(TypeInfo__UnityEngine__Events__UnityAction<int>);
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
       UnityAction_1_System_Int32Enum___ctor
-                (pUVar9,(Object *)this,MethodInfo__BoostEditMenuItem__OnPriceSettingChanged_int_,
+                (pUVar7,(Object *)this,MethodInfo__BoostEditMenuItem__OnPriceSettingChanged_int_,
                  (MethodInfo *)0x0);
-      pNVar10 = (NavMesh_OnNavMeshPreUpdate *)
+      pNVar8 = (NavMesh_OnNavMeshPreUpdate *)
                func_?(TypeInfo__UnityEngine__Events__UnityAction);
       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
       NavMesh_OnNavMeshPreUpdate__ctor
-                (pNVar10,(Object *)this,MethodInfo__BoostEditMenuItem__OnSubmitData__,
+                (pNVar8,(Object *)this,MethodInfo__BoostEditMenuItem__OnSubmitData__,
                  (MethodInfo *)0x0);
-      if (pOVar5 == (Object__Class *)0x0) goto code_?;
-      pIVar11 = (pOVar5->_0).image;
-      (*(code *)pIVar11[5].nameNoExt)(pOVar5,pBVar7,pGVar1,pUVar8,pUVar9,pNVar10,pIVar11[5].assembly)
-      ;
+      if (pOVar4 == (Object__Class *)0x0) goto code_?;
+      pIVar9 = (pOVar4->_0).image;
+      (*(code *)pIVar9[5].nameNoExt)(pOVar4,pBVar5,pGVar1,pUVar6,pUVar7,pNVar8,pIVar9[5].assembly);
       root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
       callbackFunction =
@@ -853,41 +859,39 @@ void Assembly-CSharp.dll::BoostEditMenuItem::BoostEditMenuItem_ShowEditPopup
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  pOVar5 = (Object__Class *)
+  pOVar4 = (Object__Class *)
            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                      ((Object *)original_01,
                       BoostEditPopup_MethodInfo__UnityEngine__Object__Instantiate<BoostEditPopup>_BoostEditPopup_
                      );
   if (value != (Object *)0x0) {
-    pOVar6 = value + 1;
-    pOVar6->klass = pOVar5;
-    func_?(pOVar6,pOVar5);
-    pBVar7 = (this->fields).boost;
-    pOVar5 = pOVar6->klass;
+    value[1].klass = pOVar4;
+    func_?(value + 1,pOVar4);
+    pBVar5 = (this->fields).boost;
+    pOVar4 = value[1].klass;
     pGVar1 = (this->fields).boosterSetting;
-    pUVar8 = (UnityAction_1_System_Object_ *)
+    pUVar6 = (UnityAction_1_System_Object_ *)
              func_?(TypeInfo__UnityEngine__Events__UnityAction<System::Object>);
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
     UnityAction_1_System_Object___ctor
-              (pUVar8,(Object *)this,
+              (pUVar6,(Object *)this,
                MethodInfo__BoostEditMenuItem__OnBoostSettingChange_System__Object_,(MethodInfo *)0x0
               );
-    pUVar9 = (UnityAction_1_System_Int32Enum_ *)
+    pUVar7 = (UnityAction_1_System_Int32Enum_ *)
              func_?(TypeInfo__UnityEngine__Events__UnityAction<int>);
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
     UnityAction_1_System_Int32Enum___ctor
-              (pUVar9,(Object *)this,MethodInfo__BoostEditMenuItem__OnPriceSettingChanged_int_,
+              (pUVar7,(Object *)this,MethodInfo__BoostEditMenuItem__OnPriceSettingChanged_int_,
                (MethodInfo *)0x0);
-    pNVar10 = (NavMesh_OnNavMeshPreUpdate *)
+    pNVar8 = (NavMesh_OnNavMeshPreUpdate *)
              func_?(TypeInfo__UnityEngine__Events__UnityAction);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
-              (pNVar10,(Object *)this,MethodInfo__BoostEditMenuItem__OnSubmitData__,(MethodInfo *)0x0
+              (pNVar8,(Object *)this,MethodInfo__BoostEditMenuItem__OnSubmitData__,(MethodInfo *)0x0
               );
-    if (pOVar5 != (Object__Class *)0x0) {
-      pIVar11 = (pOVar5->_0).image;
-      (*(code *)pIVar11[5].nameNoExt)(pOVar5,pBVar7,pGVar1,pUVar8,pUVar9,pNVar10,pIVar11[5].assembly)
-      ;
+    if (pOVar4 != (Object__Class *)0x0) {
+      pIVar9 = (pOVar4->_0).image;
+      (*(code *)pIVar9[5].nameNoExt)(pOVar4,pBVar5,pGVar1,pUVar6,pUVar7,pNVar8,pIVar9[5].assembly);
       root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
       callbackFunction =
@@ -916,8 +920,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

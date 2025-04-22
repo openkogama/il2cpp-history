@@ -25,12 +25,10 @@ void Assembly-CSharp.dll::SettingsDropdown::SettingsDropdown_Initialize
                    );
     cRam_? = '\x01';
   }
-  ppSVar1 = &(this->fields).key;
-  *ppSVar1 = key;
-  func_?(ppSVar1,key);
-  ppLVar2 = &(this->fields).possibleWOData;
-  *ppLVar2 = possibleWOData;
-  func_?(ppLVar2,possibleWOData);
+  (this->fields).key = key;
+  func_?(&(this->fields).key,key);
+  (this->fields).possibleWOData = possibleWOData;
+  func_?(&(this->fields).possibleWOData,possibleWOData);
   value_00 = (List_1_UnityEngine_UI_Dropdown_OptionData_ *)
              func_?(
                             TypeInfo__System__Collections__Generic__List<UnityEngine::UI::Dropdown::OptionData>
@@ -41,29 +39,49 @@ void Assembly-CSharp.dll::SettingsDropdown::SettingsDropdown_Initialize
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)value_00,
              MethodInfo__System__Collections__Generic__List<UnityEngine::UI::Dropdown::OptionData>__List__
             );
+  uVar1 = 0;
   if (options != (String__Array *)0x0) {
-    if ((int)options->max_length < 1) {
-      pDVar3 = (this->fields).dropdown;
-      if ((pDVar3 != (Dropdown *)0x0) &&
-         (UnityEngine.UI.dll::UnityEngine::UI::Dropdown::Dropdown_set_options
-                    (pDVar3,value_00,(MethodInfo *)0x0),
-         possibleWOData != (List_1_System_Int32_ *)0x0)) {
+    ppSVar2 = options->vector;
+    for (; (int)uVar1 < (int)options->max_length; uVar1 = uVar1 + 1) {
+      this_01 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
+                func_?(TypeInfo__UnityEngine__UI__Dropdown__OptionData);
+      UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+      UxmlObjectListAttributeDescription`1[System::Object]::
+      UxmlObjectListAttributeDescription_1_System_Object___ctor(this_01,(MethodInfo *)0x0);
+      if (options->max_length <= uVar1) goto code_?;
+      pLVar3 = (List_1_System_Object_ *)TM::TM__(*ppSVar2,(MethodInfo *)0x0);
+      if (this_01 == (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0)
+      goto code_?;
+      (this_01->fields)._._defaultValue_k__BackingField = pLVar3;
+      func_?(&this_01->fields,pLVar3);
+      if (value_00 == (List_1_UnityEngine_UI_Dropdown_OptionData_ *)0x0) goto code_?;
+      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+                ((List_1_System_Object_ *)value_00,(Object *)this_01,
+                 MethodInfo__System__Collections__Generic__List<UnityEngine::UI::Dropdown::OptionData>__Add_UnityEngine__UI__Dropdown__OptionData_
+                );
+      ppSVar2 = ppSVar2 + 1;
+    }
+    pDVar4 = (this->fields).dropdown;
+    if (pDVar4 != (Dropdown *)0x0) {
+      UnityEngine.UI.dll::UnityEngine::UI::Dropdown::Dropdown_set_options
+                (pDVar4,value_00,(MethodInfo *)0x0);
+      if (possibleWOData != (List_1_System_Int32_ *)0x0) {
         value_01 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
                    List_1_System_Int32__IndexOf
                              (possibleWOData,value,
                               MethodInfo__System__Collections__Generic__List<int>__IndexOf_int_);
-        pDVar3 = (this->fields).dropdown;
-        if (pDVar3 != (Dropdown *)0x0) {
+        pDVar4 = (this->fields).dropdown;
+        if (pDVar4 != (Dropdown *)0x0) {
           UnityEngine.UI.dll::UnityEngine::UI::Dropdown::Dropdown_set_value
-                    (pDVar3,value_01,(MethodInfo *)0x0);
-          pDVar3 = (this->fields).dropdown;
-          if (pDVar3 != (Dropdown *)0x0) {
-            this_00 = (UnityEvent_1_UnityEngine_Vector2_ *)(pDVar3->fields).m_OnValueChanged;
+                    (pDVar4,value_01,(MethodInfo *)0x0);
+          pDVar4 = (this->fields).dropdown;
+          if (pDVar4 != (Dropdown *)0x0) {
+            this_00 = (UnityEvent_1_UnityEngine_Vector2_ *)(pDVar4->fields).m_OnValueChanged;
             this_02 = (UnityAction_1_System_Int32Enum_ *)func_?();
             UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
             UnityAction_1_System_Int32Enum___ctor
-                      (this_02,(Object *)MethodInfo__SettingsDropdown__ValueChanged_int_,
-                       MethodInfo__SettingsDropdown__ValueChanged_int_,(MethodInfo *)0x0);
+                      (this_02,(Object *)this,MethodInfo__SettingsDropdown__ValueChanged_int_,
+                       (MethodInfo *)0x0);
             if (this_00 != (UnityEvent_1_UnityEngine_Vector2_ *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent`1[UnityEngine::Vector2]::
               UnityEvent_1_UnityEngine_Vector2__AddListener
@@ -76,20 +94,8 @@ void Assembly-CSharp.dll::SettingsDropdown::SettingsDropdown_Initialize
         }
       }
     }
-    else {
-      this_01 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
-                func_?(TypeInfo__UnityEngine__UI__Dropdown__OptionData);
-      UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-      UxmlObjectListAttributeDescription`1[System::Object]::
-      UxmlObjectListAttributeDescription_1_System_Object___ctor(this_01,(MethodInfo *)0x0);
-      if (options->max_length == 0) goto code_?;
-      pLVar4 = (List_1_System_Object_ *)TM::TM__(options->vector[0],(MethodInfo *)0x0);
-      if (this_01 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
-        (this_01->fields)._._defaultValue_k__BackingField = pLVar4;
-        func_?();
-      }
-    }
   }
+code_?:
   func_?();
 code_?:
   func_?();
@@ -117,7 +123,7 @@ void Assembly-CSharp.dll::SettingsDropdown::SettingsDropdown_Reset
                       UnityEngine__UI__Dropdown_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Dropdown>__
                      );
   (this->fields).dropdown = pDVar1;
-  func_?();
+  func_?(&(this->fields).dropdown,pDVar1);
   return;
 }
 

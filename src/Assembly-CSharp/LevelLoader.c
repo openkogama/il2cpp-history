@@ -45,29 +45,28 @@ void Assembly-CSharp.dll::LevelLoader::LevelLoader_LoadScenes_1
     func_?(&TypeInfo__UnityEngine__SceneManagement__SceneManager);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).callback;
-  *ppAVar1 = callbackAction;
-  func_?(ppAVar1,callbackAction);
+  (this->fields).callback = callbackAction;
+  func_?(&(this->fields).callback,callbackAction);
   if ((TypeInfo__LevelLoader->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__LevelLoader);
   }
   this_00 = TypeInfo__LevelLoader->static_fields->scenesForModeMap;
   if (this_00 != (Dictionary_2_ScenesForMode_System_String_ *)0x0) {
-    pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
              Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
                        ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,mode,
                         MethodInfo__System__Collections__Generic__Dictionary<ScenesForMode,_System::String_[]>__get_Item_ScenesForMode_
                        );
-    pMVar3 = (MonitorData *)0x0;
-    if (pOVar2 != (Object *)0x0) {
-      pOVar4 = pOVar2 + 2;
+    pMVar2 = (MonitorData *)0x0;
+    if (pOVar1 != (Object *)0x0) {
+      pOVar3 = pOVar1 + 2;
       while( true ) {
-        if ((int)pOVar2[1].monitor <= (int)pMVar3) {
+        if ((int)pOVar1[1].monitor <= (int)pMVar2) {
           return;
         }
         this_01 = (this->fields).pendingScenes;
-        if (pOVar2[1].monitor <= pMVar3) break;
-        sceneName = pOVar4->klass;
+        if (pOVar1[1].monitor <= pMVar2) break;
+        sceneName = pOVar3->klass;
         if ((TypeInfo__UnityEngine__SceneManagement__SceneManager->_1).cctor_finished_or_no_cctor ==
             0) {
           func_?(TypeInfo__UnityEngine__SceneManagement__SceneManager);
@@ -81,16 +80,16 @@ void Assembly-CSharp.dll::LevelLoader::LevelLoader_LoadScenes_1
                   ((List_1_System_Object_ *)this_01,(Object *)item,
                    MethodInfo__System__Collections__Generic__List<UnityEngine::AsyncOperation>__Add_UnityEngine__AsyncOperation_
                   );
-        pMVar3 = pMVar3 + 1;
-        pOVar4 = (Object *)&pOVar4->monitor;
+        pMVar2 = pMVar2 + 1;
+        pOVar3 = (Object *)&pOVar3->monitor;
       }
       func_?();
     }
   }
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -139,23 +138,20 @@ void Assembly-CSharp.dll::LevelLoader::LevelLoader_Update(LevelLoader *this,Meth
     }
     pLVar1 = (this->fields).pendingScenes;
     if (pLVar1 != (List_1_UnityEngine_AsyncOperation_ *)0x0) {
-      if ((pLVar1->fields)._size < 1) {
+      if (((pLVar1->fields)._size < 1) && ((this->fields).callback != (Action *)0x0)) {
         pAVar3 = (this->fields).callback;
-        ppAVar4 = &(this->fields).callback;
-        if (pAVar3 != (Action *)0x0) {
-          (*(pAVar3->fields)._._.invoke_impl)
-                    ((pAVar3->fields)._._.method_code,(pAVar3->fields)._._.method);
-          *ppAVar4 = (Action *)0x0;
-          func_?(ppAVar4,0);
-        }
+        (*(pAVar3->fields)._._.invoke_impl)
+                  ((pAVar3->fields)._._.method_code,(pAVar3->fields)._._.method);
+        (this->fields).callback = (Action *)0x0;
+        func_?(&(this->fields).callback,0);
       }
       return;
     }
   }
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -282,9 +278,8 @@ void Assembly-CSharp.dll::LevelLoader::LevelLoader__ctor(LevelLoader *this,Metho
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<UnityEngine::AsyncOperation>__List__);
-  ppLVar1 = &(this->fields).pendingScenes;
-  *ppLVar1 = this_00;
-  func_?(ppLVar1,this_00);
+  (this->fields).pendingScenes = this_00;
+  func_?(&(this->fields).pendingScenes,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

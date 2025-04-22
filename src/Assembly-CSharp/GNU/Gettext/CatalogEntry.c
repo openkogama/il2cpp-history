@@ -312,9 +312,8 @@ void Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_MarkOwnerDirt
                (CatalogEntry *this,MethodInfo *method)
 
 {
-  this_00 = (this->fields).owner;
-  if (this_00 != (Catalog *)0x0) {
-    Catalog::Catalog_set_IsDirty(this_00,1,(MethodInfo *)0x0);
+  if ((this->fields).owner != (Catalog *)0x0) {
+    Catalog::Catalog_set_IsDirty((this->fields).owner,1,(MethodInfo *)0x0);
   }
   return;
 }
@@ -375,38 +374,38 @@ bool Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_RemoveReferen
   }
   bVar1 = 0;
   index = 0;
-  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-            (this->fields).references;
-  while (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    if ((this_00->fields)._size <= index) {
+  pLVar2 = (this->fields).references;
+  while (pLVar2 != (List_1_System_String_ *)0x0) {
+    if ((pLVar2->fields)._size <= index) {
       return bVar1;
     }
+    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              (this->fields).references;
     if ((this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-       (this_02 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+       (this_01 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                   RegularExpressions::RegexCharClass+SingleRange]::
                   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                             (this_00,index,
                              MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_
-                            ), this_02 == (RegexCharClass_SingleRange)0x0)) break;
-    bVar2 = mscorlib.dll::System::String::String_StartsWith
-                      ((String *)this_02,fileNamePrefix,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      this_01 = (this->fields).references;
-      if (this_01 == (List_1_System_String_ *)0x0) break;
+                            ), this_01 == (RegexCharClass_SingleRange)0x0)) break;
+    bVar3 = mscorlib.dll::System::String::String_StartsWith
+                      ((String *)this_01,fileNamePrefix,(MethodInfo *)0x0);
+    if (bVar3 != 0) {
+      pLVar2 = (this->fields).references;
+      if (pLVar2 == (List_1_System_String_ *)0x0) break;
       mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
       List_1_System_Object__RemoveAt
-                ((List_1_System_Object_ *)this_01,index,
+                ((List_1_System_Object_ *)pLVar2,index,
                  MethodInfo__System__Collections__Generic__List<System::String>__RemoveAt_int_);
       bVar1 = 1;
       index = index + -1;
     }
     index = index + 1;
-    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-              (this->fields).references;
+    pLVar2 = (this->fields).references;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  bVar1 = (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  bVar1 = (*pcVar4)();
   return bVar1;
 }
 
@@ -417,11 +416,10 @@ void Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_SetPluralStri
                (CatalogEntry *this,String *plural,MethodInfo *method)
 
 {
-  ppSVar1 = &(this->fields).plural;
-  *ppSVar1 = plural;
-  func_?(ppSVar1,plural);
-  bVar2 = mscorlib.dll::System::String::String_IsNullOrEmpty(plural,(MethodInfo *)0x0);
-  (this->fields).hasPlural = bVar2 == 0;
+  (this->fields).plural = plural;
+  func_?(&(this->fields).plural,plural);
+  bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty(plural,(MethodInfo *)0x0);
+  (this->fields).hasPlural = bVar1 ^ 1;
   return;
 }
 
@@ -490,21 +488,8 @@ code_?:
                    MethodInfo__System__Collections__Generic__List<System::String>__set_Item_int__System__String_
                   );
         (this->fields).validity = 0;
-        pCVar4 = (this->fields).owner;
-        if (pCVar4 != (Catalog *)0x0) {
-          if (cRam_? == '\0') {
-            ppEStack5 = &TypeInfo__System__EventArgs;
-            func_?();
-            cRam_? = '\x01';
-          }
-          (pCVar4->fields).isDirty = 1;
-          if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
-            ppEStack5 = (EventArgs__Class **)TypeInfo__System__EventArgs;
-            func_?();
-          }
-          ppEStack5 = (EventArgs__Class **)pCVar4->klass[1]._0.image;
-          pEStack6 = TypeInfo__System__EventArgs->static_fields->Empty;
-          (*(code *)(pCVar4->klass->vtable).OnDirtyChanged.method)();
+        if ((this->fields).owner != (Catalog *)0x0) {
+          Catalog::Catalog_set_IsDirty((this->fields).owner,1,(MethodInfo *)0x0);
         }
       }
       return;
@@ -539,22 +524,11 @@ void Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_SetTranslatio
             ((List_1_System_Object_ *)this_00,(IEnumerable_1_System_Object_ *)translations,
              MethodInfo__System__Collections__Generic__List<System::String>__List_System__Collections__Generic__IEnumerable<System::String>_
             );
-  ppLVar1 = &(this->fields).translations;
-  *ppLVar1 = this_00;
-  func_?(ppLVar1,this_00);
+  (this->fields).translations = this_00;
+  func_?(&(this->fields).translations,this_00);
   (this->fields).validity = 0;
   if ((this->fields).owner != (Catalog *)0x0) {
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    *(undefined1 *)((int)in_stack_2 + 0x15) = in_stack_3;
-    if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    (**(code **)(*in_stack_2 + 0xf0))
-              (in_stack_2,TypeInfo__System__EventArgs->static_fields->Empty);
-    return;
+    Catalog::Catalog_set_IsDirty((this->fields).owner,1,(MethodInfo *)0x0);
   }
   return;
 }
@@ -573,49 +547,45 @@ void Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry__ctor
     cRam_? = '\x01';
   }
   pSVar1 = TypeInfo__System__String->static_fields->Empty;
+  (this->fields).context = pSVar1;
   method_00 = (MethodInfo *)&(this->fields).context;
-  *(String **)method_00 = pSVar1;
   func_?(method_00,pSVar1);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-  ppCVar2 = &(this->fields).owner;
-  *ppCVar2 = owner;
-  func_?(ppCVar2,owner);
+  (this->fields).owner = owner;
+  func_?(&(this->fields).owner,owner);
   (this->fields).str = str;
   func_?(&this->fields,str);
-  ppSVar3 = &(this->fields).plural;
-  *ppSVar3 = plural;
-  func_?(ppSVar3,plural);
-  bVar4 = mscorlib.dll::System::String::String_IsNullOrEmpty(plural,(MethodInfo *)0x0);
-  (this->fields).hasPlural = bVar4 == 0;
-  pLVar5 = (List_1_System_String_ *)
+  (this->fields).plural = plural;
+  func_?(&(this->fields).plural,plural);
+  bVar2 = mscorlib.dll::System::String::String_IsNullOrEmpty(plural,(MethodInfo *)0x0);
+  (this->fields).hasPlural = bVar2 ^ 1;
+  pLVar3 = (List_1_System_String_ *)
            func_?(TypeInfo__System__Collections__Generic__List<System::String>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar5,
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar3,
              MethodInfo__System__Collections__Generic__List<System::String>__List__);
-  ppLVar6 = &(this->fields).references;
-  *ppLVar6 = pLVar5;
-  func_?(ppLVar6,pLVar5);
-  pLVar5 = (List_1_System_String_ *)func_?();
+  (this->fields).references = pLVar3;
+  func_?(&(this->fields).references,pLVar3);
+  pLVar3 = (List_1_System_String_ *)func_?();
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar5,
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar3,
              MethodInfo__System__Collections__Generic__List<System::String>__List__);
-  (this->fields).autocomments = pLVar5;
+  (this->fields).autocomments = pLVar3;
   func_?();
-  pLVar5 = (List_1_System_String_ *)
+  pLVar3 = (List_1_System_String_ *)
            func_?(TypeInfo__System__Collections__Generic__List<System::String>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar5,
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar3,
              MethodInfo__System__Collections__Generic__List<System::String>__List__);
-  ppLVar6 = &(this->fields).translations;
-  *ppLVar6 = pLVar5;
-  func_?(ppLVar6,pLVar5);
+  (this->fields).translations = pLVar3;
+  func_?(&(this->fields).translations,pLVar3);
   (this->fields).isFuzzy = 0;
   (this->fields).isModified = 0;
   (this->fields).isAutomatic = 0;
@@ -638,81 +608,73 @@ void Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry__ctor_1
     func_?(&TypeInfo__System__String);
     cRam_? = '\x01';
   }
-  method_00 = (MethodInfo *)&(this->fields).context;
   pSVar1 = TypeInfo__System__String->static_fields->Empty;
-  *(String **)method_00 = pSVar1;
+  (this->fields).context = pSVar1;
+  method_00 = (MethodInfo *)&(this->fields).context;
   func_?(method_00,pSVar1);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-  ppCVar2 = &(this->fields).owner;
-  *ppCVar2 = owner;
-  func_?(ppCVar2,owner);
+  (this->fields).owner = owner;
+  func_?(&(this->fields).owner,owner);
   if (dt != (CatalogEntry *)0x0) {
     pSVar1 = (dt->fields).str;
     (this->fields).str = pSVar1;
     func_?(&this->fields,pSVar1);
     pSVar1 = (dt->fields).plural;
-    ppSVar3 = &(this->fields).plural;
-    *ppSVar3 = pSVar1;
-    func_?(ppSVar3,pSVar1);
+    (this->fields).plural = pSVar1;
+    func_?(&(this->fields).plural,pSVar1);
     (this->fields).hasPlural = (dt->fields).hasPlural;
-    pLVar4 = (dt->fields).translations;
-    pLVar5 = (List_1_System_String_ *)
+    pLVar2 = (dt->fields).translations;
+    pLVar3 = (List_1_System_String_ *)
              func_?(TypeInfo__System__Collections__Generic__List<System::String>);
     mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
     List_1_System_Object___ctor_1
-              ((List_1_System_Object_ *)pLVar5,(IEnumerable_1_System_Object_ *)pLVar4,
+              ((List_1_System_Object_ *)pLVar3,(IEnumerable_1_System_Object_ *)pLVar2,
                MethodInfo__System__Collections__Generic__List<System::String>__List_System__Collections__Generic__IEnumerable<System::String>_
               );
-    ppLVar6 = &(this->fields).translations;
-    *ppLVar6 = pLVar5;
-    func_?(ppLVar6,pLVar5);
-    pLVar4 = (dt->fields).references;
-    pLVar5 = (List_1_System_String_ *)
+    (this->fields).translations = pLVar3;
+    func_?(&(this->fields).translations,pLVar3);
+    pLVar2 = (dt->fields).references;
+    pLVar3 = (List_1_System_String_ *)
              func_?(TypeInfo__System__Collections__Generic__List<System::String>);
     mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
     List_1_System_Object___ctor_1
-              ((List_1_System_Object_ *)pLVar5,(IEnumerable_1_System_Object_ *)pLVar4,
+              ((List_1_System_Object_ *)pLVar3,(IEnumerable_1_System_Object_ *)pLVar2,
                MethodInfo__System__Collections__Generic__List<System::String>__List_System__Collections__Generic__IEnumerable<System::String>_
               );
-    ppLVar6 = &(this->fields).references;
-    *ppLVar6 = pLVar5;
-    func_?(ppLVar6,pLVar5);
-    pLVar7 = TypeInfo__System__Collections__Generic__List<System::String>;
-    pLVar4 = (dt->fields).autocomments;
-    pLVar5 = (List_1_System_String_ *)func_?();
+    (this->fields).references = pLVar3;
+    func_?(&(this->fields).references,pLVar3);
+    pLVar4 = TypeInfo__System__Collections__Generic__List<System::String>;
+    pLVar2 = (dt->fields).autocomments;
+    pLVar3 = (List_1_System_String_ *)func_?();
     mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
     List_1_System_Object___ctor_1
-              ((List_1_System_Object_ *)pLVar5,(IEnumerable_1_System_Object_ *)pLVar4,
+              ((List_1_System_Object_ *)pLVar3,(IEnumerable_1_System_Object_ *)pLVar2,
                MethodInfo__System__Collections__Generic__List<System::String>__List_System__Collections__Generic__IEnumerable<System::String>_
               );
-    (this->fields).autocomments = pLVar5;
+    (this->fields).autocomments = pLVar3;
     func_?();
-    ppSVar3 = &(this->fields).moreFlags;
-    (this->fields).isFuzzy = *(bool *)&(pLVar7->_0).element_class;
-    (this->fields).isModified = *(bool *)((int)&(pLVar7->_0).element_class + 1);
-    (this->fields).isAutomatic = *(bool *)((int)&(pLVar7->_0).element_class + 2);
-    (this->fields).hasBadTokens = *(bool *)((int)&(pLVar7->_0).element_class + 3);
-    *ppSVar3 = (String *)(pLVar7->_0).castClass;
-    func_?(ppSVar3);
-    pIVar8 = (pLVar7->_0).declaringType;
-    ppSVar3 = &(this->fields).comment;
-    *ppSVar3 = (String *)pIVar8;
-    func_?(ppSVar3,pIVar8);
-    ppSVar3 = &(this->fields).errorString;
-    (this->fields).validity = (int32_t)(pLVar7->_0).parent;
-    pSVar1 = (String *)(pLVar7->_0).generic_class;
-    *ppSVar3 = pSVar1;
-    func_?(ppSVar3,pSVar1);
-    pSVar1 = (String *)(pLVar7->_0).typeMetadataHandle;
-    ppSVar3 = &(this->fields).context;
-    *ppSVar3 = pSVar1;
-    func_?(ppSVar3,pSVar1);
+    (this->fields).isFuzzy = *(bool *)&(pLVar4->_0).element_class;
+    (this->fields).isModified = *(bool *)((int)&(pLVar4->_0).element_class + 1);
+    (this->fields).isAutomatic = *(bool *)((int)&(pLVar4->_0).element_class + 2);
+    (this->fields).hasBadTokens = *(bool *)((int)&(pLVar4->_0).element_class + 3);
+    (this->fields).moreFlags = (String *)(pLVar4->_0).castClass;
+    func_?(&(this->fields).moreFlags);
+    pIVar5 = (pLVar4->_0).declaringType;
+    (this->fields).comment = (String *)pIVar5;
+    func_?(&(this->fields).comment,pIVar5);
+    (this->fields).validity = (int32_t)(pLVar4->_0).parent;
+    pSVar1 = (String *)(pLVar4->_0).generic_class;
+    (this->fields).errorString = pSVar1;
+    func_?(&(this->fields).errorString,pSVar1);
+    pSVar1 = (String *)(pLVar4->_0).typeMetadataHandle;
+    (this->fields).context = pSVar1;
+    func_?(&(this->fields).context,pSVar1);
     return;
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -784,7 +746,7 @@ bool Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_get_HasCommen
 {
   bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty
                     ((this->fields).comment,(MethodInfo *)0x0);
-  return bVar1 == 0;
+  return bVar1 ^ 1;
 }
 
 
@@ -796,7 +758,7 @@ bool Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_get_HasContex
 {
   bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty
                     ((this->fields).context,(MethodInfo *)0x0);
-  return bVar1 == 0;
+  return bVar1 ^ 1;
 }
 
 
@@ -818,37 +780,40 @@ bool Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_get_IsTransla
     if (pCVar3 != (Catalog *)0x0) {
       iVar4 = Catalog::Catalog_get_PluralFormsCount(pCVar3,(MethodInfo *)0x0);
       if (iVar2 < iVar4) {
-        if ((this->fields).hasPlural == 0) {
-          pLVar5 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                   (this->fields).translations;
-          if (pLVar5 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-          goto code_?;
-          RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                  RegularExpressions::RegexCharClass+SingleRange]::
-                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            (pLVar5,0,
-                             MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_
-                            );
-          bVar7 = mscorlib.dll::System::String::String_IsNullOrEmpty
-                            ((String *)RVar6,(MethodInfo *)0x0);
-          pCVar3 = (Catalog *)(uint)(bVar7 == 0);
+        if ((this->fields).hasPlural != 0) {
+          return 0;
         }
-        else {
-          pCVar3 = (Catalog *)0x0;
+        pLVar5 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                 (this->fields).translations;
+        if (pLVar5 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+        goto code_?;
+        RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+                ::RegexCharClass+SingleRange]::
+                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                          (pLVar5,0,
+                           MethodInfo__System__Collections__Generic__List<System::String>__get_Item_int_
+                          );
+        bVar7 = mscorlib.dll::System::String::String_IsNullOrEmpty
+                          ((String *)RVar6,(MethodInfo *)0x0);
+        bVar8 = bVar7 ^ 1;
+        if (bVar8 == 0) {
+          return 0;
         }
       }
       else {
-        pCVar3 = (Catalog *)0x1;
+        bVar8 = 1;
       }
-      if (((char)pCVar3 == '\0') || ((this->fields).hasPlural == 0)) {
-code_?:
-        return (bool)pCVar3;
+      if ((this->fields).hasPlural == 0) {
+        return bVar8;
       }
       iVar2 = 0;
       pCVar3 = (this->fields).owner;
       while (pCVar3 != (Catalog *)0x0) {
         iVar4 = Catalog::Catalog_get_PluralFormsCount(pCVar3,(MethodInfo *)0x0);
-        if (iVar4 <= iVar2) goto code_?;
+        if (iVar4 <= iVar2) {
+          this._3_1_ = (bool)((uint)pCVar3 >> 0x18);
+          return this._3_1_;
+        }
         pLVar5 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                  (this->fields).translations;
         if (pLVar5 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
@@ -871,8 +836,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  bVar7 = (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  bVar7 = (*pcVar9)();
   return bVar7;
 }
 
@@ -984,8 +949,7 @@ code_?:
       pSVar2 = (String *)(*pcVar8)();
       return pSVar2;
     }
-    iVar5 = (pSVar6->fields)._stringLength;
-    if (iVar5 == 2) {
+    if ((pSVar6->fields)._stringLength == 2) {
       if ((TypeInfo__GNU__Gettext__IsoCodes->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
@@ -995,7 +959,7 @@ code_?:
       }
       return pSVar2;
     }
-    if ((iVar5 == 5) &&
+    if (((pSVar6->fields)._stringLength == 5) &&
        (uVar9 = mscorlib.dll::System::String::String_get_Chars(pSVar6,2,(MethodInfo *)0x0),
        uVar9 == 0x5f)) {
       code = mscorlib.dll::System::String::String_Substring_1(pSVar6,0,2,(MethodInfo *)0x0);
@@ -1114,23 +1078,13 @@ void Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_set_Comment
                (CatalogEntry *this,String *value,MethodInfo *method)
 
 {
-  ppSVar1 = &(this->fields).comment;
-  bVar2 = mscorlib.dll::System::String::String_op_Inequality(*ppSVar1,value,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
-    *ppSVar1 = value;
-    func_?(ppSVar1,value);
+  bVar1 = mscorlib.dll::System::String::String_op_Inequality
+                    ((this->fields).comment,value,(MethodInfo *)0x0);
+  if (bVar1 != 0) {
+    (this->fields).comment = value;
+    func_?(&(this->fields).comment,value);
     if ((this->fields).owner != (Catalog *)0x0) {
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
-      *(undefined1 *)((int)in_stack_3 + 0x15) = in_stack_4;
-      if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      (**(code **)(*in_stack_3 + 0xf0))
-                (in_stack_3,TypeInfo__System__EventArgs->static_fields->Empty);
-      return;
+      Catalog::Catalog_set_IsDirty((this->fields).owner,1,(MethodInfo *)0x0);
     }
   }
   return;
@@ -1170,13 +1124,12 @@ void Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_set_Flags
     func_?(&StringLiteral_fuzzy);
     cRam_? = '\x01';
   }
-  ppSVar1 = &(this->fields).moreFlags;
   (this->fields).isFuzzy = 0;
-  pSVar2 = TypeInfo__System__String->static_fields->Empty;
-  *ppSVar1 = pSVar2;
-  func_?(ppSVar1,pSVar2);
-  bVar3 = mscorlib.dll::System::String::String_IsNullOrEmpty(value,(MethodInfo *)0x0);
-  if (bVar3 != 0) {
+  pSVar1 = TypeInfo__System__String->static_fields->Empty;
+  (this->fields).moreFlags = pSVar1;
+  func_?(&(this->fields).moreFlags,pSVar1);
+  bVar2 = mscorlib.dll::System::String::String_IsNullOrEmpty(value,(MethodInfo *)0x0);
+  if (bVar2 != 0) {
     return;
   }
   trimChars = (Char__Array *)func_?(TypeInfo__System__Char,2);
@@ -1184,47 +1137,46 @@ void Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_set_Flags
   if ((trimChars->max_length != 0) && (trimChars->vector[0] = 0x23, 1 < trimChars->max_length)) {
     trimChars->vector[1] = 0x2c;
     if ((value == (String *)0x0) ||
-       (pSVar2 = mscorlib.dll::System::String::String_TrimStart_1(value,trimChars,(MethodInfo *)0x0)
-       , pSVar2 == (String *)0x0)) goto code_?;
-    pSVar4 = mscorlib.dll::System::String::String_Split
-                       (pSVar2,0x2c,StringSplitOptions__Enum_None,(MethodInfo *)0x0);
-    uVar5 = 0;
-    if (pSVar4 == (String__Array *)0x0) goto code_?;
-    ppSVar6 = pSVar4->vector;
+       (pSVar1 = mscorlib.dll::System::String::String_TrimStart_1(value,trimChars,(MethodInfo *)0x0)
+       , pSVar1 == (String *)0x0)) goto code_?;
+    pSVar3 = mscorlib.dll::System::String::String_Split
+                       (pSVar1,0x2c,StringSplitOptions__Enum_None,(MethodInfo *)0x0);
+    uVar4 = 0;
+    if (pSVar3 == (String__Array *)0x0) goto code_?;
+    ppSVar5 = pSVar3->vector;
     while( true ) {
-      if ((int)pSVar4->max_length <= (int)uVar5) {
+      if ((int)pSVar3->max_length <= (int)uVar4) {
         return;
       }
-      if (pSVar4->max_length <= uVar5) break;
-      pSVar2 = *ppSVar6;
-      if (pSVar2 == (String *)0x0) goto code_?;
-      a = mscorlib.dll::System::String::String_Trim(pSVar2,(MethodInfo *)0x0);
-      pSVar7 = StringLiteral_fuzzy;
-      bVar3 = mscorlib.dll::System::String::String_op_Equality
+      if (pSVar3->max_length <= uVar4) break;
+      pSVar1 = *ppSVar5;
+      if (pSVar1 == (String *)0x0) goto code_?;
+      a = mscorlib.dll::System::String::String_Trim(pSVar1,(MethodInfo *)0x0);
+      pSVar6 = StringLiteral_fuzzy;
+      bVar2 = mscorlib.dll::System::String::String_op_Equality
                         (a,StringLiteral_fuzzy,(MethodInfo *)0x0);
-      if (bVar3 == 0) {
-        str0 = *ppSVar1;
-        pSVar2 = mscorlib.dll::System::String::String_Trim(pSVar2,(MethodInfo *)0x0);
-        pSVar2 = mscorlib.dll::System::String::String_Concat_4
-                           (str0,::StringLiteral___,pSVar2,(MethodInfo *)0x0);
-        ppSVar1 = (String **)&a[2].monitor;
-        *ppSVar1 = pSVar2;
+      if (bVar2 == 0) {
+        pSVar1 = mscorlib.dll::System::String::String_Trim(pSVar1,(MethodInfo *)0x0);
+        pSRam00000000 =
+             mscorlib.dll::System::String::String_Concat_4
+                       (pSRam00000000,::StringLiteral___,pSVar1,(MethodInfo *)0x0);
         func_?();
-        uVar5 = uVar5 + 1;
-        ppSVar6 = (String **)&pSVar7->monitor;
+        uVar4 = uVar4 + 1;
+        ppSVar5 = ppSVar5 + 1;
+        this = (CatalogEntry *)pSVar6;
       }
       else {
-        *(undefined1 *)&a[2].klass = 1;
-        uVar5 = uVar5 + 1;
-        ppSVar6 = (String **)&pSVar7->monitor;
+        (this->fields).isFuzzy = 1;
+        uVar4 = uVar4 + 1;
+        ppSVar5 = ppSVar5 + 1;
       }
     }
   }
   func_?();
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -1236,19 +1188,8 @@ void Assembly-CSharp.dll::GNU::Gettext::CatalogEntry::CatalogEntry_set_IsFuzzy
 
 {
   (this->fields).isFuzzy = value;
-  pCVar1 = (this->fields).owner;
-  if (pCVar1 != (Catalog *)0x0) {
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__System__EventArgs);
-      cRam_? = '\x01';
-    }
-    (pCVar1->fields).isDirty = 1;
-    if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__EventArgs);
-    }
-    (*(code *)(pCVar1->klass->vtable).OnDirtyChanged.method)
-              (pCVar1,TypeInfo__System__EventArgs->static_fields->Empty,pCVar1->klass[1]._0.image);
-    return;
+  if ((this->fields).owner != (Catalog *)0x0) {
+    Catalog::Catalog_set_IsDirty((this->fields).owner,1,(MethodInfo *)0x0);
   }
   return;
 }

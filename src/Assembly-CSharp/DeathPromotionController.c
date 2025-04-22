@@ -9,18 +9,17 @@ void Assembly-CSharp.dll::DeathPromotionController::DeathPromotionController_Ini
     func_?(&TypeInfo__IPromotionController);
     cRam_? = '\x01';
   }
-  ppIVar1 = &(this->fields).adController;
-  bVar2 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
-  if (bVar2 == 0) {
-    pRVar3 = (this->fields).registeredAdController;
+  bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
+  if (bVar1 == 0) {
+    pRVar2 = (this->fields).registeredAdController;
   }
   else {
-    pRVar3 = (RegisteredPromotionController *)(this->fields).touristAdController;
+    pRVar2 = (RegisteredPromotionController *)(this->fields).touristAdController;
   }
-  *ppIVar1 = (IPromotionController *)pRVar3;
-  func_?(ppIVar1,pRVar3);
-  if (*ppIVar1 != (IPromotionController *)0x0) {
-    func_?(0,TypeInfo__IPromotionController,*ppIVar1);
+  (this->fields).adController = (IPromotionController *)pRVar2;
+  func_?(&(this->fields).adController,pRVar2);
+  if ((this->fields).adController != (IPromotionController *)0x0) {
+    func_?(0,TypeInfo__IPromotionController,(this->fields).adController);
   }
   return;
 }
@@ -37,13 +36,12 @@ void Assembly-CSharp.dll::DeathPromotionController::DeathPromotionController_Try
     func_?(&TypeInfo__IPromotionController);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields).adController;
-  if (pIVar1 != (IPromotionController *)0x0) {
-    cVar2 = func_?(2,TypeInfo__IPromotionController,pIVar1);
-    if (cVar2 != '\0') {
-      pIVar1 = (this->fields).adController;
-      if (pIVar1 != (IPromotionController *)0x0) {
-        func_?(3,TypeInfo__IPromotionController,pIVar1,onPromotionPopped);
+  if ((this->fields).adController != (IPromotionController *)0x0) {
+    cVar1 = func_?(2,TypeInfo__IPromotionController,(this->fields).adController);
+    if (cVar1 != '\0') {
+      pIVar2 = (this->fields).adController;
+      if (pIVar2 != (IPromotionController *)0x0) {
+        func_?(3,TypeInfo__IPromotionController,pIVar2,onPromotionPopped);
         return;
       }
       func_?();
@@ -71,10 +69,9 @@ bool Assembly-CSharp.dll::DeathPromotionController::DeathPromotionController_get
     func_?(&TypeInfo__IPromotionController);
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields).adController;
-  if (pIVar1 != (IPromotionController *)0x0) {
-    bVar2 = func_?(1,TypeInfo__IPromotionController,pIVar1);
-    return bVar2;
+  if ((this->fields).adController != (IPromotionController *)0x0) {
+    bVar1 = func_?(1,TypeInfo__IPromotionController,(this->fields).adController);
+    return bVar1;
   }
   return 0;
 }

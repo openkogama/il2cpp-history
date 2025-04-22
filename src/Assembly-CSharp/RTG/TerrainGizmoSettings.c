@@ -233,9 +233,8 @@ void Assembly-CSharp.dll::RTG::TerrainGizmoSettings::TerrainGizmoSettings__ctor
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar1,
              MethodInfo__System__Collections__Generic__List<System::String>__List__);
-  ppLVar2 = &(this->fields)._objectHrzMoveIgnoreTags;
-  *ppLVar2 = pLVar1;
-  func_?(ppLVar2,pLVar1);
+  (this->fields)._objectHrzMoveIgnoreTags = pLVar1;
+  func_?(&(this->fields)._objectHrzMoveIgnoreTags,pLVar1);
   pLVar1 = (List_1_System_String_ *)
            func_?(TypeInfo__System__Collections__Generic__List<System::String>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
@@ -243,9 +242,8 @@ void Assembly-CSharp.dll::RTG::TerrainGizmoSettings::TerrainGizmoSettings__ctor
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar1,
              MethodInfo__System__Collections__Generic__List<System::String>__List__);
-  ppLVar2 = &(this->fields)._objectVertMoveIgnoreTags;
-  *ppLVar2 = pLVar1;
-  func_?(ppLVar2,pLVar1);
+  (this->fields)._objectVertMoveIgnoreTags = pLVar1;
+  func_?(&(this->fields)._objectVertMoveIgnoreTags,pLVar1);
   pLVar1 = (List_1_System_String_ *)
            func_?(TypeInfo__System__Collections__Generic__List<System::String>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
@@ -254,7 +252,7 @@ void Assembly-CSharp.dll::RTG::TerrainGizmoSettings::TerrainGizmoSettings__ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar1,
              MethodInfo__System__Collections__Generic__List<System::String>__List__);
   method_00 = (MethodInfo *)&(this->fields)._objectRotationIgnoreTags;
-  *(List_1_System_String_ **)method_00 = pLVar1;
+  (this->fields)._objectRotationIgnoreTags = pLVar1;
   func_?(method_00,pLVar1);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);

@@ -113,6 +113,7 @@ void Assembly-CSharp.dll::Extensions::Extensions_AppendRecursive
         *unaff_FS_OFFSET = _Stack_10;
         return;
       }
+      unaff_ESI = (Object *)0x0;
       if (OStack_5.klass == (Object__Class *)0x0) break;
       pIVar9 = ((OStack_5.klass)->_0).image;
       uVar10 = 0;
@@ -121,6 +122,7 @@ void Assembly-CSharp.dll::Extensions::Extensions_AppendRecursive
         do {
           if (*(IEnumerator__Class **)(pIVar9[2].name + (uint)uVar10 * 8) ==
               TypeInfo__System__Collections__IEnumerator) {
+            pIVar9 = ((OStack_5.klass)->_0).image;
             pp_Var8 = &pIVar9[4].metadataHandle +
                       *(int *)(pIVar9[2].name + (uint)uVar10 * 8 + 4) * 2;
             goto code_?;
@@ -166,8 +168,7 @@ code_?:
           pOVar14 = unaff_ESI;
         }
         if (pOVar14 == (Object *)0x0) goto code_?;
-        if ((((KeyValuePair_2_System_Object_System_Object___Class *)unaff_ESI->klass)->_0).
-            element_class !=
+        if ((unaff_ESI->klass->_0).element_class !=
             (TypeInfo__System__Collections__Generic__KeyValuePair<System::Object,_System::Object>->
             _0).element_class) goto code_?;
         piVar15 = (int *)func_?();
@@ -189,7 +190,6 @@ code_?:
           if (unaff_ESI != (Object *)0x0) {
             pSVar12 = (String *)func_?(3,unaff_ESI);
           }
-          if (sb == (StringBuilder *)0x0) break;
           mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
                     (sb,pSVar12,(MethodInfo *)0x0);
           mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_6
@@ -253,7 +253,7 @@ String * Assembly-CSharp.dll::Extensions::Extensions_BuildString
   }
   pSVar1 = (String *)
            (*((method->field7_0x1c).rgctx_data[1].method)->methodPointer)
-                     (collection,0,1,(method->field7_0x1c).rgctx_data[1].method);
+                     (collection,0,1,(method->field7_0x1c).rgctx_data[1].rgctxDataDummy);
   return pSVar1;
 }
 
@@ -316,7 +316,8 @@ String * Assembly-CSharp.dll::Extensions::Extensions_BuildString_1
   }
   pSVar1 = (String *)
            (*((method->field7_0x1c).rgctx_data[1].method)->methodPointer)
-                     (collection,0,_eachEntryNewLine,(method->field7_0x1c).rgctx_data[1].method);
+                     (collection,0,_eachEntryNewLine,
+                      (method->field7_0x1c).rgctx_data[1].rgctxDataDummy);
   return pSVar1;
 }
 
@@ -341,7 +342,7 @@ String * Assembly-CSharp.dll::Extensions::Extensions_BuildString_2
   }
   pSVar1 = (String *)
            (*((method->field7_0x1c).rgctx_data[1].method)->methodPointer)
-                     (collection,prependInfo,1,(method->field7_0x1c).rgctx_data[1].method);
+                     (collection,prependInfo,1,(method->field7_0x1c).rgctx_data[1].rgctxDataDummy);
   return pSVar1;
 }
 
@@ -543,10 +544,14 @@ Assembly-CSharp.dll::Extensions::Extensions_FindChildRecursively
           (Transform *transform,String *child,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
+  uStack_1._0_2_ = 0xffff;
+  uStack_1._2_1_ = 0xff;
+  uStack_1._3_1_ = 0xff;
+  _Stack_c.dummy = &DAT_?;
+  pcStack_2 = (char *)*unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &pcStack_2;
+  pcStack_3 = &stack0xffffffc0;
+  pcVar4 = &stack0xffffffc0;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__Extensions);
     func_?(&TypeInfo__System__IDisposable);
@@ -554,32 +559,38 @@ Assembly-CSharp.dll::Extensions::Extensions_FindChildRecursively
     func_?(&TypeInfo__UnityEngine__Object);
     func_?(&TypeInfo__UnityEngine__Transform);
     cRam_? = '\x01';
+    pcVar4 = pcStack_3;
   }
+  pcStack_3 = pcVar4;
   transform_00 = (Transform__Class *)0x0;
-  pTVar4 = unaff_EDI;
+  pIStack_5 = (Il2CppImage *)0x0;
   if (transform != (Transform *)0x0) {
-    pIVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetEnumerator
-                       (transform,(MethodInfo *)0x0);
-    uStack_1 = 1;
-    while (pTVar4 = unaff_EDI, pIVar5 != (IEnumerator *)0x0) {
-      cVar6 = func_?(0,TypeInfo__System__Collections__IEnumerator,pIVar5);
-      if (cVar6 == '\0') {
-        uStack_1 = 0xffffffff;
-        iVar7 = func_?(pIVar5,TypeInfo__System__IDisposable);
-        if (iVar7 != 0) {
-          func_?(0,TypeInfo__System__IDisposable,iVar7);
+    pIStack_6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetEnumerator
+                           (transform,(MethodInfo *)0x0);
+    uStack_1._0_2_ = 1;
+    uStack_1._2_1_ = 0;
+    uStack_1._3_1_ = 0;
+    while (pIStack_6 != (IEnumerator *)0x0) {
+      cVar7 = func_?(0,TypeInfo__System__Collections__IEnumerator,pIStack_6);
+      if (cVar7 == '\0') {
+        uStack_1._0_2_ = 0xffff;
+        uStack_1._2_1_ = 0xff;
+        uStack_1._3_1_ = 0xff;
+        pIStack_5 = (Il2CppImage *)func_?(pIStack_6,TypeInfo__System__IDisposable);
+        if (pIStack_5 != (Il2CppImage *)0x0) {
+          func_?(0,TypeInfo__System__IDisposable,pIStack_5);
         }
         goto code_?;
       }
-      if ((pIVar5 == (IEnumerator *)0x0) ||
+      if ((pIStack_6 == (IEnumerator *)0x0) ||
          (unaff_EDI = (Transform__Class *)
-                      func_?(1,TypeInfo__System__Collections__IEnumerator,pIVar5),
-         pTVar4 = TypeInfo__UnityEngine__Transform, unaff_EDI == (Transform__Class *)0x0)) break;
-      pIVar8 = (unaff_EDI->_0).image;
-      bVar9 = (TypeInfo__UnityEngine__Transform->_1).naturalAligment;
-      if ((*(byte *)&pIVar8[4].assembly < bVar9) ||
-         (*(Transform__Class **)((pIVar8[2].typeCount - 4) + (uint)bVar9 * 4) !=
-          TypeInfo__UnityEngine__Transform)) goto code_?;
+                      func_?(1,TypeInfo__System__Collections__IEnumerator,pIStack_6),
+         unaff_EDI == (Transform__Class *)0x0)) break;
+      pTVar8 = (Transform__Class *)(unaff_EDI->_0).image;
+      pTVar9 = TypeInfo__UnityEngine__Transform;
+      if (((pTVar8->_1).naturalAligment < (TypeInfo__UnityEngine__Transform->_1).naturalAligment) ||
+         ((pTVar8->_1).typeHierarchy[(TypeInfo__UnityEngine__Transform->_1).naturalAligment - 1] !=
+          (Il2CppClass *)TypeInfo__UnityEngine__Transform)) goto code_?;
       a = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name
                     ((Object_1 *)unaff_EDI,(MethodInfo *)0x0);
       bVar10 = mscorlib.dll::System::String::String_op_Equality(a,child,(MethodInfo *)0x0);
@@ -588,11 +599,15 @@ Assembly-CSharp.dll::Extensions::Extensions_FindChildRecursively
   }
   goto code_?;
 code_?:
-  uStack_1 = 0xffffffff;
+  uStack_1._0_2_ = 0xffff;
+  uStack_1._2_1_ = 0xff;
+  uStack_1._3_1_ = 0xff;
   func_?();
   transform_00 = unaff_EDI;
 code_?:
-  uStack_1 = 0xffffffff;
+  uStack_1._0_2_ = 0xffff;
+  uStack_1._2_1_ = 0xff;
+  uStack_1._3_1_ = 0xff;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
@@ -600,42 +615,41 @@ code_?:
                     ((Object_1 *)transform_00,(Object_1 *)0x0,(MethodInfo *)0x0);
   if (bVar10 == 0) {
 code_?:
-    *unaff_FS_OFFSET = uStack_3;
+    *unaff_FS_OFFSET = pcStack_2;
     return (Transform *)transform_00;
   }
-  pIVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetEnumerator
-                     (transform,(MethodInfo *)0x0);
-  pTVar4 = (Transform__Class *)0x0;
-  uStack_1 = 4;
-  while (pIVar5 != (IEnumerator *)0x0) {
-    cVar6 = func_?(0,TypeInfo__System__Collections__IEnumerator,pIVar5);
-    if (cVar6 == '\0') {
-      uStack_1 = 0xffffffff;
-      iVar7 = func_?(pIVar5,TypeInfo__System__IDisposable);
-      if (iVar7 != 0) {
-        func_?(0,TypeInfo__System__IDisposable,iVar7);
-        *unaff_FS_OFFSET = uStack_3;
+  pIStack_6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetEnumerator
+                         (transform,(MethodInfo *)0x0);
+  unaff_EDI = (Transform__Class *)&pIStack_5;
+  uStack_1._0_2_ = 4;
+  uStack_1._2_1_ = 0;
+  uStack_1._3_1_ = 0;
+  while (pIStack_6 != (IEnumerator *)0x0) {
+    cVar7 = func_?(0,TypeInfo__System__Collections__IEnumerator,pIStack_6);
+    if (cVar7 == '\0') {
+      uStack_1._0_2_ = 0xffff;
+      uStack_1._2_1_ = 0xff;
+      uStack_1._3_1_ = 0xff;
+      pIStack_5 = (Il2CppImage *)func_?(pIStack_6,TypeInfo__System__IDisposable);
+      if (pIStack_5 != (Il2CppImage *)0x0) {
+        func_?(0,TypeInfo__System__IDisposable,pIStack_5);
+        *unaff_FS_OFFSET = pcStack_2;
         return (Transform *)transform_00;
       }
       goto code_?;
     }
-    if (pIVar5 == (IEnumerator *)0x0) break;
+    if (pIStack_6 == (IEnumerator *)0x0) break;
     transform_00 = (Transform__Class *)
-                   func_?(1,TypeInfo__System__Collections__IEnumerator,pIVar5);
+                   func_?(1,TypeInfo__System__Collections__IEnumerator,pIStack_6);
     if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__Extensions);
     }
-    if (transform_00 == (Transform__Class *)0x0) {
-      transform_00 = (Transform__Class *)0x0;
-    }
-    else {
-      pIVar8 = (transform_00->_0).image;
-      bVar9 = (TypeInfo__UnityEngine__Transform->_1).naturalAligment;
-      pTVar11 = TypeInfo__UnityEngine__Transform;
-      if ((*(byte *)&pIVar8[4].assembly < bVar9) ||
-         (*(Transform__Class **)((pIVar8[2].typeCount - 4) + (uint)bVar9 * 4) !=
-          TypeInfo__UnityEngine__Transform)) goto code_?;
-    }
+    if ((transform_00 != (Transform__Class *)0x0) &&
+       ((unaff_EDI = *(Transform__Class **)&transform_00->_0,
+        pTVar8 = TypeInfo__UnityEngine__Transform,
+        (unaff_EDI->_1).naturalAligment < (TypeInfo__UnityEngine__Transform->_1).naturalAligment ||
+        ((unaff_EDI->_1).typeHierarchy[(TypeInfo__UnityEngine__Transform->_1).naturalAligment - 1]
+         != (Il2CppClass *)TypeInfo__UnityEngine__Transform)))) goto code_?;
     transform_00 = (Transform__Class *)
                    Extensions_FindChildRecursively
                              ((Transform *)transform_00,child,(MethodInfo *)0x0);
@@ -645,23 +659,25 @@ code_?:
     bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                       ((Object_1 *)transform_00,(Object_1 *)0x0,(MethodInfo *)0x0);
     if (bVar10 != 0) {
-      uStack_1 = 0xffffffff;
+      uStack_1._0_2_ = 0xffff;
+      uStack_1._2_1_ = 0xff;
+      uStack_1._3_1_ = 0xff;
       func_?();
-      *unaff_FS_OFFSET = uStack_3;
+      *unaff_FS_OFFSET = pcStack_2;
       return (Transform *)transform_00;
     }
   }
 code_?:
   func_?();
-  unaff_EDI = extraout_EDX;
+  pTVar9 = extraout_EDX;
 code_?:
-  func_?(unaff_EDI,pTVar4);
-  pTVar11 = extraout_EDX_00;
+  func_?(unaff_EDI,pTVar9);
+  pTVar8 = extraout_EDX_00;
 code_?:
-  func_?(transform_00,pTVar11);
-  pcVar12 = (code *)swi(3);
-  pTVar13 = (Transform *)(*pcVar12)();
-  return pTVar13;
+  func_?(transform_00,pTVar8);
+  pcVar11 = (code *)swi(3);
+  pTVar12 = (Transform *)(*pcVar11)();
+  return pTVar12;
 }
 
 
@@ -678,8 +694,8 @@ String * Assembly-CSharp.dll::Extensions::Extensions_GenerateDictionaryString
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffa4;
-  puVar5 = &stack0xffffffa4;
+  puStack_4 = &stack0xffffffa0;
+  puVar5 = &stack0xffffffa0;
   if ((method->field7_0x1c).rgctx_data == (Il2CppRGCTXData *)0x0) {
     func_?(&TypeInfo__Extensions);
     func_?(&TypeInfo__System__Text__StringBuilder);
@@ -695,35 +711,37 @@ String * Assembly-CSharp.dll::Extensions::Extensions_GenerateDictionaryString
     }
   }
   puStack_4 = puVar5;
-  pIVar6 = (method->field7_0x1c).rgctx_data;
-  uVar7 = (pIVar6[2].klass)->actualSize;
-  puStack_8 = (undefined1 *)(pIVar6[5].klass)->actualSize;
-  if (((uint)(pIVar6[2].klass)->vtable[0].methodPtr & 0x100) == 0) {
-    func_?(pIVar6[2].klass);
+  uVar6 = ((method->field7_0x1c).rgctx_data[2].klass)->actualSize;
+  pDStack_7 = (Dictionary_2_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                *)((method->field7_0x1c).rgctx_data[5].klass)->actualSize;
+  if (((uint)((method->field7_0x1c).rgctx_data[2].klass)->vtable[0].methodPtr & 0x100) == 0) {
+    func_?((method->field7_0x1c).rgctx_data[2].klass);
   }
   func_?();
-  puStack_9 = &stack0xffffffa4;
-  puStack_4 = &stack0xffffffa4;
+  puStack_4 = &stack0xffffffa0;
   func_?();
-  puStack_10 = &stack0xffffffa4;
-  puStack_4 = &stack0xffffffa4;
+  puStack_8 = &stack0xffffffa0;
+  puStack_4 = &stack0xffffffa0;
   func_?();
-  puStack_11 = &stack0xffffffa4;
-  puStack_4 = &stack0xffffffa4;
+  puStack_9 = &stack0xffffffa0;
+  puStack_4 = &stack0xffffffa0;
   func_?();
-  puVar5 = puStack_8;
+  pDVar10 = pDStack_7;
+  pDStack_11 = (Dictionary_2_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                *)&stack0xffffffa0;
+  puStack_4 = &stack0xffffffa0;
+  func_?();
   pDStack_12 = (Dictionary_2_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                *)&stack0xffffffa4;
-  puStack_4 = &stack0xffffffa4;
+                *)&stack0xffffffa0;
+  puStack_4 = &stack0xffffffa0;
   func_?();
-  puStack_4 = &stack0xffffffa4;
+  puStack_13 = &stack0xffffffa0;
+  puStack_4 = &stack0xffffffa0;
+  func_?(&stack0xffffffa0,0,uVar6);
   func_?();
-  puStack_13 = &stack0xffffffa4;
-  puStack_4 = &stack0xffffffa4;
-  func_?(&stack0xffffffa4,0,uVar7);
-  func_?();
-  puStack_4 = &stack0xffffffa4;
-  func_?(&stack0xffffffa4,0,puVar5);
+  puStack_14 = &stack0xffffffa0;
+  puStack_4 = &stack0xffffffa0;
+  func_?(&stack0xffffffa0,0,pDVar10);
   this = (StringBuilder *)func_?(TypeInfo__System__Text__StringBuilder);
   mscorlib.dll::System::Text::StringBuilder::StringBuilder__ctor_2
             (this,prependInfo,(MethodInfo *)0x0);
@@ -731,23 +749,20 @@ String * Assembly-CSharp.dll::Extensions::Extensions_GenerateDictionaryString
   if (collection !=
       (Dictionary_2_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
        *)0x0) {
-    pDStack_14 = pDStack_12;
     pMVar15 = (method->field7_0x1c).rgctx_data[1].method;
-    (*pMVar15->invoker_method)(pMVar15->methodPointer,pMVar15,collection,&pDStack_14,pDStack_12);
+    pDStack_16 = pDStack_11;
+    (*pMVar15->invoker_method)(pMVar15->methodPointer,pMVar15,collection,&pDStack_16,pDStack_11);
     func_?();
     uStack_1 = 1;
-    pDVar16 = (Dictionary_2_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-               *)&stack0xffffffa4;
     while( true ) {
+      pDVar10 = pDStack_12;
       cVar17 = (*((method->field7_0x1c).rgctx_data[0xc].method)->methodPointer)();
       if (cVar17 == '\0') break;
+      collection = pDVar10;
       pMVar15 = (method->field7_0x1c).rgctx_data[3].method;
-      collection = pDVar16;
-      (*pMVar15->invoker_method)(pMVar15->methodPointer,pMVar15,puStack_13,&collection,pDVar16);
-      puStack_9 = puStack_8;
-      pDStack_18 = (Dictionary_2_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                    *)&UNK_?;
-      pDStack_14 = pDVar16;
+      (*pMVar15->invoker_method)(pMVar15->methodPointer,pMVar15,puStack_13,&collection,pDVar10);
+      pDStack_12 = pDStack_7;
+      pDStack_16 = pDVar10;
       func_?();
       if (prependInfo._3_1_ == '\0') {
         if (this == (StringBuilder *)0x0) goto code_?;
@@ -758,57 +773,51 @@ String * Assembly-CSharp.dll::Extensions::Extensions_GenerateDictionaryString
         prependInfo = (String *)((uint)prependInfo & 0xffffff);
         if (this == (StringBuilder *)0x0) goto code_?;
       }
-      pSVar19 = mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
+      pSVar18 = mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
                          (this,StringLiteral__k__,(MethodInfo *)0x0);
       func_?();
-      pOVar20 = (Object *)func_?();
-      if (pSVar19 == (StringBuilder *)0x0) goto code_?;
-      pSVar19 = mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_10
-                         (pSVar19,pOVar20,(MethodInfo *)0x0);
-      if (pSVar19 == (StringBuilder *)0x0) goto code_?;
+      pOVar19 = (Object *)func_?();
+      if (pSVar18 == (StringBuilder *)0x0) goto code_?;
+      pSVar18 = mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_10
+                         (pSVar18,pOVar19,(MethodInfo *)0x0);
+      if (pSVar18 == (StringBuilder *)0x0) goto code_?;
       mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
-                (pSVar19,StringLiteral__v__,(MethodInfo *)0x0);
+                (pSVar18,StringLiteral__v__,(MethodInfo *)0x0);
       func_?();
       func_?();
       func_?();
-      iVar21 = func_?();
-      if (iVar21 == 0) {
+      iVar20 = func_?();
+      if (iVar20 == 0) {
         func_?();
-        pOVar20 = (Object *)func_?();
+        pOVar19 = (Object *)func_?();
         mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_10
-                  (this,pOVar20,(MethodInfo *)0x0);
+                  (this,pOVar19,(MethodInfo *)0x0);
       }
       else {
         if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        pSVar22 = (String *)(*((method->field7_0x1c).rgctx_data[0xb].method)->methodPointer)();
+        pSVar21 = (String *)(*((method->field7_0x1c).rgctx_data[0xb].method)->methodPointer)();
         mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
-                  (this,pSVar22,(MethodInfo *)0x0);
+                  (this,pSVar21,(MethodInfo *)0x0);
       }
       mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
                 (this,::StringLiteral__,(MethodInfo *)0x0);
-      pDVar16 = pDStack_18;
     }
     uStack_1 = 0xffffffff;
-    collection = (Dictionary_2_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                  *)(method->field7_0x1c).rgctx_data[0xd].method;
-    if (((uint)((method->field7_0x1c).rgctx_data[2].klass)->vtable[0].methodPtr & 0x100) == 0) {
-      func_?();
-    }
     func_?();
     uStack_1 = 0xffffffff;
     if (this != (StringBuilder *)0x0) {
-      pSVar22 = (String *)(*(code *)(this->klass->vtable).ToString.method)();
+      pSVar21 = (String *)(*(code *)(this->klass->vtable).ToString.method)();
       *unaff_FS_OFFSET = uStack_3;
-      return pSVar22;
+      return pSVar21;
     }
   }
 code_?:
   func_?();
-  pcVar23 = (code *)swi(3);
-  pSVar22 = (String *)(*pcVar23)();
-  return pSVar22;
+  pcVar22 = (code *)swi(3);
+  pSVar21 = (String *)(*pcVar22)();
+  return pSVar21;
 }
 
 
@@ -846,8 +855,7 @@ code_?:
       pOVar4 = pOStack_1;
     }
     if (pOVar4 != (Object *)0x0) {
-      if ((((Boolean__Class *)pOStack_1->klass)->_0).element_class ==
-          (TypeInfo__System__Boolean->_0).element_class) {
+      if ((pOStack_1->klass->_0).element_class == (TypeInfo__System__Boolean->_0).element_class) {
         pbVar5 = (bool *)func_?();
         return *pbVar5;
       }
@@ -894,16 +902,17 @@ code_?:
       pOVar5 = pOStack_1;
     }
     if (pOVar5 != (Object *)0x0) {
-      if ((((Single__Class *)pOStack_1->klass)->_0).element_class ==
-          (TypeInfo__System__Single->_0).element_class) {
-        pfVar6 = (float *)func_?();
-        t = *pfVar6;
+      if ((pOStack_1->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
+        puVar6 = (undefined4 *)func_?();
+        pCVar7 = TypeInfo__System__Convert;
+        t = (Convert__Class *)*puVar6;
         if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
+          t = pCVar7;
         }
         hashtable = (Dictionary_2_System_Object_System_Object_ *)
                     UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::Experimental::Easing
-                    ::Easing_Linear(t,(MethodInfo *)0x0);
+                    ::Easing_Linear((float)t,(MethodInfo *)0x0);
         if (((float)hashtable < min) || (min = max, max < (float)hashtable)) {
           hashtable = (Dictionary_2_System_Object_System_Object_ *)min;
         }
@@ -950,8 +959,7 @@ code_?:
       pOVar5 = pOStack_1;
     }
     if (pOVar5 != (Object *)0x0) {
-      if ((((Int32__Class *)pOStack_1->klass)->_0).element_class ==
-          (TypeInfo__System__Int32->_0).element_class) {
+      if ((pOStack_1->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
         piVar6 = (int *)func_?();
         iVar7 = *piVar6;
         if ((iVar7 < min) || (min = max, max < iVar7)) {
@@ -997,10 +1005,20 @@ Color * Assembly-CSharp.dll::Extensions::Extensions_GetColor
                      (hashtable,colorKey,pOVar1,
                       System__Single__MethodInfo__Extensions__GetValueOrDefault<System::Single_[]>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__System__Single________
                      );
-  if (pOVar1 != (Object *)0x0) {
-    if (pOVar1[1].monitor == (MonitorData *)0x4) {
-      pMVar2 = pOVar1[2].monitor;
-      pOVar3 = pOVar1[3].klass;
+  if (pOVar1 == (Object *)0x0) {
+    func_?();
+  }
+  else {
+    if (pOVar1[1].monitor != (MonitorData *)0x4) {
+      __return_storage_ptr__->r = 0.0;
+      __return_storage_ptr__->g = 0.0;
+      __return_storage_ptr__->b = 0.0;
+      __return_storage_ptr__->a = 0.0;
+      return __return_storage_ptr__;
+    }
+    if ((((pOVar1[1].monitor != (MonitorData *)0x0) && ((MonitorData *)0x1 < pOVar1[1].monitor)) &&
+        (pMVar2 = pOVar1[2].monitor, (MonitorData *)0x2 < pOVar1[1].monitor)) &&
+       (pOVar3 = pOVar1[3].klass, (MonitorData *)0x3 < pOVar1[1].monitor)) {
       pMVar4 = pOVar1[3].monitor;
       __return_storage_ptr__->r = (float)pOVar1[2].klass;
       __return_storage_ptr__->g = (float)pMVar2;
@@ -1008,11 +1026,6 @@ Color * Assembly-CSharp.dll::Extensions::Extensions_GetColor
       __return_storage_ptr__->a = (float)pMVar4;
       return __return_storage_ptr__;
     }
-    __return_storage_ptr__->r = 0.0;
-    __return_storage_ptr__->g = 0.0;
-    __return_storage_ptr__->b = 0.0;
-    __return_storage_ptr__->a = 0.0;
-    return __return_storage_ptr__;
   }
   func_?();
   pcVar5 = (code *)swi(3);
@@ -1045,10 +1058,20 @@ Color * Assembly-CSharp.dll::Extensions::Extensions_GetColorOrDefault
                      (hashtable,colorKey,pOVar1,
                       System__Single__MethodInfo__Extensions__GetValueOrDefault<System::Single_[]>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__System__Single________
                      );
-  if (pOVar1 != (Object *)0x0) {
-    if (pOVar1[1].monitor == (MonitorData *)0x4) {
-      pMVar2 = pOVar1[2].monitor;
-      pOVar3 = pOVar1[3].klass;
+  if (pOVar1 == (Object *)0x0) {
+    func_?();
+  }
+  else {
+    if (pOVar1[1].monitor != (MonitorData *)0x4) {
+      __return_storage_ptr__->r = defaultColor.r;
+      __return_storage_ptr__->g = defaultColor.g;
+      __return_storage_ptr__->b = defaultColor.b;
+      __return_storage_ptr__->a = defaultColor.a;
+      return __return_storage_ptr__;
+    }
+    if ((((pOVar1[1].monitor != (MonitorData *)0x0) && ((MonitorData *)0x1 < pOVar1[1].monitor)) &&
+        (pMVar2 = pOVar1[2].monitor, (MonitorData *)0x2 < pOVar1[1].monitor)) &&
+       (pOVar3 = pOVar1[3].klass, (MonitorData *)0x3 < pOVar1[1].monitor)) {
       pMVar4 = pOVar1[3].monitor;
       __return_storage_ptr__->r = (float)pOVar1[2].klass;
       __return_storage_ptr__->g = (float)pMVar2;
@@ -1056,11 +1079,6 @@ Color * Assembly-CSharp.dll::Extensions::Extensions_GetColorOrDefault
       __return_storage_ptr__->a = (float)pMVar4;
       return __return_storage_ptr__;
     }
-    __return_storage_ptr__->r = defaultColor.r;
-    __return_storage_ptr__->g = defaultColor.g;
-    __return_storage_ptr__->b = defaultColor.b;
-    __return_storage_ptr__->a = defaultColor.a;
-    return __return_storage_ptr__;
   }
   func_?();
   pcVar5 = (code *)swi(3);
@@ -1208,92 +1226,99 @@ Assembly-CSharp.dll::Extensions::Extensions_GetTypedValueOrDefault_1
       func_?();
     }
   }
-  iVar3 = *(int *)(*(int *)(iVar1 + 0x1c) + 4);
-  uStack_4 = *(undefined4 *)(iVar3 + 0x84);
-  uStack_5 = *(undefined4 *)(*(int *)(*(int *)(iVar1 + 0x1c) + 0xc) + 0x84);
+  uStack_3 = *(undefined4 *)(*(int *)(*(int *)(iVar1 + 0x1c) + 4) + 0x84);
+  uStack_4 = *(undefined4 *)(*(int *)(*(int *)(iVar1 + 0x1c) + 0xc) + 0x84);
   func_?();
+  puVar5 = &stack0xffffffdc;
   func_?();
-  p_Var7 = key;
-  p_Var10 = (_Il2CppFullySharedGenericType *)&key;
-  if (*(int *)(iVar3 + 0x14) < 0) {
-    p_Var10 = key;
+  p_Var6 = (_Il2CppFullySharedGenericType *)&key;
+  if (*(int *)(*(int *)(*(int *)(iVar1 + 0x1c) + 4) + 0x14) < 0) {
+    p_Var6 = key;
   }
   puStack_6 = &stack0xffffffdc;
-  func_?(&stack0xffffffdc,p_Var10,uStack_4);
+  func_?(&stack0xffffffdc,p_Var6,uStack_3);
   if (hashtable ==
       (Dictionary_2_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
        *)0x0) {
 code_?:
     func_?();
     pcVar7 = (code *)swi(3);
-    p_Var7 = (_Il2CppFullySharedGenericType *)(*pcVar7)();
-    return p_Var7;
+    p_Var6 = (_Il2CppFullySharedGenericType *)(*pcVar7)();
+    return p_Var6;
   }
   puStack_8 = &stack0xffffffdc;
   if (-1 < *(int *)(*(int *)(*(int *)(iVar1 + 0x1c) + 4) + 0x14)) {
     puStack_8 = unaff_EDI;
   }
-  puVar9 = *(undefined4 **)(*(int *)(iVar1 + 0x1c) + 8);
-  (*(code *)puVar9[2])(*puVar9,puVar9,hashtable,&puStack_8,(int)&stack0x00000014 + 3);
-  iVar3 = *(int *)(iVar1 + 0x1c);
-  if (in_stack_2._3_1_ != '\0') {
-    p_Var10 = (_Il2CppFullySharedGenericType *)&key;
-    if (*(int *)(*(int *)(iVar3 + 4) + 0x14) < 0) {
-      p_Var10 = p_Var7;
+  iVar9 = *(int *)(*(int *)(iVar1 + 0x1c) + 8);
+  (**(code **)(iVar9 + 8))
+            (**(undefined4 **)(*(int *)(iVar1 + 0x1c) + 8),iVar9,hashtable,&puStack_8,
+             (int)&stack0x00000014 + 3);
+  uVar10 = uStack_4;
+  if (in_stack_2._3_1_ == '\0') {
+    p_Var6 = (_Il2CppFullySharedGenericType *)&defaultValue;
+    if (*(int *)(*(int *)(*(int *)(iVar1 + 0x1c) + 0xc) + 0x14) < 0) {
+      p_Var6 = defaultValue;
     }
-    func_?(&stack0xffffffdc,p_Var10,uStack_4);
-    puVar10 = puStack_6;
-    puStack_11 = &stack0xffffffdc;
-    if (-1 < *(int *)(*(int *)(*(int *)(iVar1 + 0x1c) + 4) + 0x14)) {
-      puStack_11 = unaff_EDI;
-    }
-    puVar9 = *(undefined4 **)(*(int *)(iVar1 + 0x1c) + 0x10);
-    puStack_8 = puStack_6;
-    (*(code *)puVar9[2])(*puVar9,puVar9,hashtable,&puStack_11,puStack_6);
-    piVar12 = (int *)func_?(*(undefined4 *)(*(int *)(iVar1 + 0x1c) + 0xc),puVar10);
-    iVar3 = *(int *)(*(int *)(iVar1 + 0x1c) + 0xc);
-    if ((*(byte *)(iVar3 + 0xbd) & 1) == 0) {
-      iVar3 = func_?(iVar3);
-    }
-    iVar3 = func_?(piVar12,iVar3);
-    if (iVar3 != 0) {
-code_?:
-      iVar1 = *(int *)(*(int *)(iVar1 + 0x1c) + 0xc);
-      if ((*(byte *)(iVar1 + 0xbd) & 1) == 0) {
-        iVar1 = func_?(iVar1);
-      }
-      puVar10 = (undefined1 *)func_?(piVar12,iVar1,puVar10);
-      uVar13 = uStack_5;
-      goto code_?;
-    }
+    func_?(&stack0xffffffdc,p_Var6,uStack_4);
+    goto code_?;
+  }
+  p_Var6 = (_Il2CppFullySharedGenericType *)&key;
+  if (*(int *)(*(int *)(*(int *)(iVar1 + 0x1c) + 4) + 0x14) < 0) {
+    p_Var6 = key;
+  }
+  func_?(&stack0xffffffdc,p_Var6,uStack_3);
+  puStack_11 = &stack0xffffffdc;
+  if (-1 < *(int *)(*(int *)(*(int *)(iVar1 + 0x1c) + 4) + 0x14)) {
+    puStack_11 = unaff_EDI;
+  }
+  iVar9 = *(int *)(*(int *)(iVar1 + 0x1c) + 0x10);
+  puStack_8 = &stack0xffffffdc;
+  (**(code **)(iVar9 + 8))
+            (**(undefined4 **)(*(int *)(iVar1 + 0x1c) + 0x10),iVar9,hashtable,&puStack_11,
+             &stack0xffffffdc);
+  piVar12 = (int *)func_?(*(undefined4 *)(*(int *)(iVar1 + 0x1c) + 0xc),&stack0xffffffdc);
+  iVar9 = *(int *)(*(int *)(iVar1 + 0x1c) + 0xc);
+  if ((*(byte *)(iVar9 + 0xbd) & 1) == 0) {
+    iVar9 = func_?(iVar9);
+  }
+  iVar9 = func_?(piVar12,iVar9);
+  if (iVar9 == 0) {
     handle.value = *(void **)(*(int *)(iVar1 + 0x1c) + 0x14);
     if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__Type);
     }
-    pTVar14 = mscorlib.dll::System::Type::Type_GetTypeFromHandle(handle,(MethodInfo *)0x0);
-    if (pTVar14 == (Type *)0x0) goto code_?;
-    cVar15 = (*(code *)(pTVar14->klass->vtable).get_IsEnum.method)
-                      (pTVar14,(pTVar14->klass->vtable).get_IsMarshalByRef.methodPtr);
-    if ((cVar15 != '\0') && (piVar12 != (int *)0x0)) {
-      piVar16 = (int *)0x0;
+    pTVar13 = mscorlib.dll::System::Type::Type_GetTypeFromHandle(handle,(MethodInfo *)0x0);
+    if (pTVar13 == (Type *)0x0) goto code_?;
+    cVar14 = (*(code *)(pTVar13->klass->vtable).get_IsEnum.method)
+                      (pTVar13,(pTVar13->klass->vtable).get_IsMarshalByRef.methodPtr);
+    uVar10 = uStack_4;
+    puVar5 = puStack_6;
+    if ((cVar14 != '\0') && (piVar12 != (int *)0x0)) {
+      piVar15 = (int *)0x0;
       if ((Int32__Class *)*piVar12 == TypeInfo__System__Int32) {
-        piVar16 = piVar12;
+        piVar15 = piVar12;
       }
-      puVar10 = puStack_6;
-      if (piVar16 != (int *)0x0) goto code_?;
+      if (piVar15 != (int *)0x0) goto code_?;
     }
-    iVar3 = *(int *)(iVar1 + 0x1c);
+    p_Var6 = (_Il2CppFullySharedGenericType *)&defaultValue;
+    if (*(int *)(*(int *)(*(int *)(iVar1 + 0x1c) + 0xc) + 0x14) < 0) {
+      p_Var6 = defaultValue;
+    }
+    func_?(puStack_6,p_Var6,uStack_4);
   }
-  uVar13 = uStack_5;
-  puVar10 = puStack_6;
-  p_Var7 = (_Il2CppFullySharedGenericType *)&defaultValue;
-  if (*(int *)(*(int *)(iVar3 + 0xc) + 0x14) < 0) {
-    p_Var7 = defaultValue;
-  }
-  func_?(puStack_6,p_Var7,uStack_5);
+  else {
 code_?:
-  p_Var7 = (_Il2CppFullySharedGenericType *)func_?(method,puVar10,uVar13);
-  return p_Var7;
+    iVar1 = *(int *)(*(int *)(iVar1 + 0x1c) + 0xc);
+    if ((*(byte *)(iVar1 + 0xbd) & 1) == 0) {
+      iVar1 = func_?(iVar1);
+    }
+    puVar5 = (undefined1 *)func_?(piVar12,iVar1,puStack_6);
+    uVar10 = uStack_4;
+  }
+code_?:
+  p_Var6 = (_Il2CppFullySharedGenericType *)func_?(method,puVar5,uVar10);
+  return p_Var6;
 }
 
 
@@ -1501,7 +1526,7 @@ Object * Assembly-CSharp.dll::Extensions::Extensions_GetValueOrDefault_3
     if (bVar1 == 0) {
       return defaultValue;
     }
-    unaff_EDI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+    unaff_EBX = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
                 ::UIElements::TextureId]::
                 Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                           ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)hashtable
@@ -1521,12 +1546,12 @@ Object * Assembly-CSharp.dll::Extensions::Extensions_GetValueOrDefault_3
       if (pTVar3 == (Type *)0x0) goto code_?;
       cVar4 = (*(code *)(pTVar3->klass->vtable).get_IsEnum.method)
                         (pTVar3,(pTVar3->klass->vtable).get_IsMarshalByRef.methodPtr);
-      if ((cVar4 == '\0') || (unaff_EDI.m_Index == 0)) {
+      if ((cVar4 == '\0') || (unaff_EBX.m_Index == 0)) {
         return defaultValue;
       }
       TVar5.m_Index = 0;
-      if (*(Int32__Class **)unaff_EDI.m_Index == TypeInfo__System__Int32) {
-        TVar5 = unaff_EDI;
+      if (*(Int32__Class **)unaff_EBX.m_Index == TypeInfo__System__Int32) {
+        TVar5 = unaff_EBX;
       }
       if (TVar5.m_Index == 0) {
         return defaultValue;
@@ -1536,11 +1561,11 @@ Object * Assembly-CSharp.dll::Extensions::Extensions_GetValueOrDefault_3
     if (((uint)((Il2CppClass *)handle.value)->vtable[0].methodPtr & 0x100) == 0) {
       handle.value = (void *)func_?(handle.value);
     }
-    if (unaff_EDI.m_Index == 0) {
+    if (unaff_EBX.m_Index == 0) {
       pOVar6 = (Object *)0x0;
     }
     else {
-      pOVar6 = (Object *)func_?(unaff_EDI.m_Index,handle.value);
+      pOVar6 = (Object *)func_?(unaff_EBX.m_Index,handle.value);
       if (pOVar6 == (Object *)0x0) goto code_?;
     }
     return pOVar6;
@@ -1548,7 +1573,7 @@ Object * Assembly-CSharp.dll::Extensions::Extensions_GetValueOrDefault_3
 code_?:
   func_?();
 code_?:
-  func_?(unaff_EDI.m_Index,handle.value);
+  func_?(unaff_EBX.m_Index,handle.value);
   pcVar7 = (code *)swi(3);
   pOVar6 = (Object *)(*pcVar7)();
   return pOVar6;
@@ -1650,8 +1675,8 @@ Assembly-CSharp.dll::Extensions::Extensions_GetValueOrDefault_5
           _Il2CppFullySharedGenericType *defaultValue,MethodInfo *method)
 
 {
-  iVar1 = (int)in_stack_2;
-  if (*(int *)((int)in_stack_2 + 0x1c) == 0) {
+  iVar1 = in_stack_2;
+  if (*(int *)(in_stack_2 + 0x1c) == 0) {
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                    );
@@ -1660,49 +1685,44 @@ Assembly-CSharp.dll::Extensions::Extensions_GetValueOrDefault_5
                    );
     func_?(&TypeInfo__System__Int32);
     func_?(&TypeInfo__System__Type);
-    if (*(int *)((int)in_stack_2 + 0x1c) == 0) {
+    if (*(int *)(in_stack_2 + 0x1c) == 0) {
       func_?();
     }
   }
-  puVar3 = *(undefined **)(**(int **)((int)in_stack_2 + 0x1c) + 0x84);
+  uVar3 = *(undefined4 *)(**(int **)(in_stack_2 + 0x1c) + 0x84);
+  puVar4 = &stack0xffffffec;
+  in_stack_2 = uVar3;
   func_?();
-  in_stack_2 = &stack0xffffffec;
   if (hashtable == (Dictionary_2_System_Object_System_Object_ *)0x0) {
 code_?:
     func_?();
-    pcVar4 = (code *)swi(3);
-    p_Var7 = (_Il2CppFullySharedGenericType *)(*pcVar4)();
+    pcVar5 = (code *)swi(3);
+    p_Var7 = (_Il2CppFullySharedGenericType *)(*pcVar5)();
     return p_Var7;
   }
-  in_stack_2 = &stack0xffffffec;
-  bVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+  bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
           UIElements::TextureId]::
           Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                     ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)hashtable,
                      (Object *)key,
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                     );
-  if (bVar5 != 0) {
-    TVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)hashtable,
-                       (Object *)key,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                      );
-    if ((*(byte *)(**(int **)(iVar1 + 0x1c) + 0xbd) & 1) == 0) {
-      func_?();
-    }
-    iVar7 = func_?();
-    if (iVar7 != 0) {
-code_?:
-      iVar1 = **(int **)(iVar1 + 0x1c);
-      if ((*(byte *)(iVar1 + 0xbd) & 1) == 0) {
-        iVar1 = func_?(iVar1);
-      }
-      puVar8 = (undefined1 *)func_?(TVar6.m_Index,iVar1,in_stack_2);
-      goto code_?;
-    }
+  if (bVar6 == 0) {
+    func_?();
+    goto code_?;
+  }
+  TVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+          UIElements::TextureId]::
+          Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                    ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)hashtable,
+                     (Object *)key,
+                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                    );
+  if ((*(byte *)(**(int **)(iVar1 + 0x1c) + 0xbd) & 1) == 0) {
+    func_?();
+  }
+  iVar8 = func_?();
+  if (iVar8 == 0) {
     handle.value = *(void **)(*(int *)(iVar1 + 0x1c) + 4);
     if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__Type);
@@ -1711,26 +1731,31 @@ code_?:
     if (pTVar9 == (Type *)0x0) goto code_?;
     cVar10 = (*(code *)(pTVar9->klass->vtable).get_IsEnum.method)
                       (pTVar9,(pTVar9->klass->vtable).get_IsMarshalByRef.methodPtr);
-    if ((cVar10 != '\0') && (TVar6.m_Index != 0)) {
+    uVar3 = in_stack_2;
+    if ((cVar10 != '\0') && (TVar7.m_Index != 0)) {
       TVar11.m_Index = 0;
-      if (*(Int32__Class **)TVar6.m_Index == TypeInfo__System__Int32) {
-        TVar11 = TVar6;
+      if (*(Int32__Class **)TVar7.m_Index == TypeInfo__System__Int32) {
+        TVar11 = TVar7;
       }
-      if (TVar11.m_Index != 0) {
-        puVar3 = &UNK_?;
-        goto code_?;
-      }
+      if (TVar11.m_Index != 0) goto code_?;
     }
-    puVar3 = &UNK_?;
+    p_Var7 = (_Il2CppFullySharedGenericType *)&defaultValue;
+    if (*(int *)(**(int **)(iVar1 + 0x1c) + 0x14) < 0) {
+      p_Var7 = defaultValue;
+    }
+    func_?(&UNK_?,p_Var7,in_stack_2);
+    puVar4 = &UNK_?;
   }
-  puVar8 = in_stack_2;
-  p_Var7 = (_Il2CppFullySharedGenericType *)&defaultValue;
-  if (*(int *)(**(int **)(iVar1 + 0x1c) + 0x14) < 0) {
-    p_Var7 = defaultValue;
-  }
-  func_?(in_stack_2,p_Var7,puVar3);
+  else {
 code_?:
-  p_Var7 = (_Il2CppFullySharedGenericType *)func_?(method,puVar8,puVar3);
+    iVar1 = **(int **)(iVar1 + 0x1c);
+    if ((*(byte *)(iVar1 + 0xbd) & 1) == 0) {
+      iVar1 = func_?(iVar1);
+    }
+    puVar4 = (undefined *)func_?(TVar7.m_Index,iVar1,&UNK_?);
+  }
+code_?:
+  p_Var7 = (_Il2CppFullySharedGenericType *)func_?(method,puVar4,uVar3);
   return p_Var7;
 }
 
@@ -1766,19 +1791,24 @@ Vector3 * Assembly-CSharp.dll::Extensions::Extensions_GetVector3
                      (hashtable,vectorKey,pOVar1,
                       System__Single__MethodInfo__Extensions__GetValueOrDefault<System::Single_[]>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__System__Single________
                      );
-  if (pOVar1 != (Object *)0x0) {
-    if (pOVar1[1].monitor == (MonitorData *)0x3) {
-      pMVar2 = pOVar1[2].monitor;
+  if (pOVar1 == (Object *)0x0) {
+    func_?();
+  }
+  else {
+    if (pOVar1[1].monitor != (MonitorData *)0x3) {
+      __return_storage_ptr__->x = 0.0;
+      __return_storage_ptr__->y = 0.0;
+      __return_storage_ptr__->z = 0.0;
+      return __return_storage_ptr__;
+    }
+    if (((pOVar1[1].monitor != (MonitorData *)0x0) && ((MonitorData *)0x1 < pOVar1[1].monitor)) &&
+       (pMVar2 = pOVar1[2].monitor, (MonitorData *)0x2 < pOVar1[1].monitor)) {
       pOVar3 = pOVar1[3].klass;
       __return_storage_ptr__->x = (float)pOVar1[2].klass;
       __return_storage_ptr__->y = (float)pMVar2;
       __return_storage_ptr__->z = (float)pOVar3;
       return __return_storage_ptr__;
     }
-    __return_storage_ptr__->x = 0.0;
-    __return_storage_ptr__->y = 0.0;
-    __return_storage_ptr__->z = 0.0;
-    return __return_storage_ptr__;
   }
   func_?();
   pcVar4 = (code *)swi(3);
@@ -1811,19 +1841,24 @@ Vector3 * Assembly-CSharp.dll::Extensions::Extensions_GetVector3OrDefault
                      (hashtable,vectorKey,pOVar1,
                       System__Single__MethodInfo__Extensions__GetValueOrDefault<System::Single_[]>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__System__Single________
                      );
-  if (pOVar1 != (Object *)0x0) {
-    if (pOVar1[1].monitor == (MonitorData *)0x3) {
-      pMVar2 = pOVar1[2].monitor;
+  if (pOVar1 == (Object *)0x0) {
+    func_?();
+  }
+  else {
+    if (pOVar1[1].monitor != (MonitorData *)0x3) {
+      __return_storage_ptr__->x = defaultValue.x;
+      __return_storage_ptr__->y = defaultValue.y;
+      __return_storage_ptr__->z = defaultValue.z;
+      return __return_storage_ptr__;
+    }
+    if (((pOVar1[1].monitor != (MonitorData *)0x0) && ((MonitorData *)0x1 < pOVar1[1].monitor)) &&
+       (pMVar2 = pOVar1[2].monitor, (MonitorData *)0x2 < pOVar1[1].monitor)) {
       pOVar3 = pOVar1[3].klass;
       __return_storage_ptr__->x = (float)pOVar1[2].klass;
       __return_storage_ptr__->y = (float)pMVar2;
       __return_storage_ptr__->z = (float)pOVar3;
       return __return_storage_ptr__;
     }
-    __return_storage_ptr__->x = defaultValue.x;
-    __return_storage_ptr__->y = defaultValue.y;
-    __return_storage_ptr__->z = defaultValue.z;
-    return __return_storage_ptr__;
   }
   func_?();
   pcVar4 = (code *)swi(3);
@@ -1853,7 +1888,7 @@ void Assembly-CSharp.dll::Extensions::Extensions_Log
   }
   message = (Object *)
             (*((method->field7_0x1c).rgctx_data[1].method)->methodPointer)
-                      (collection,prependInfo,(method->field7_0x1c).rgctx_data[1].method);
+                      (collection,prependInfo,(method->field7_0x1c).rgctx_data[1].rgctxDataDummy);
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
@@ -2115,7 +2150,7 @@ void Assembly-CSharp.dll::Extensions::Extensions_Log_2
   }
   uVar1 = (*((method->field7_0x1c).rgctx_data[1].method)->methodPointer)
                     (collection,prependInfo,_eachEntryNewLine,
-                     (method->field7_0x1c).rgctx_data[1].method);
+                     (method->field7_0x1c).rgctx_data[1].rgctxDataDummy);
   if (logFunc != (Action_1_String_ *)0x0) {
     (*(logFunc->fields)._._.invoke_impl)
               ((logFunc->fields)._._.method_code,uVar1,(logFunc->fields)._._.method);
@@ -2182,22 +2217,30 @@ void Assembly-CSharp.dll::Extensions::Extensions_ScaleBounds
     func_?(&StringLiteral_Failed_to_find_bounds_);
     cRam_? = '\x01';
   }
+  NStack_1.value.m_Extents.x = 0.0;
+  NStack_1.value.m_Extents.y = 0.0;
+  NStack_1.value.m_Extents.z = 0.0;
+  NStack_1.hasValue = 0;
+  NStack_1._1_3_ = 0;
+  NStack_1.value.m_Center.x = 0.0;
+  NStack_1.value.m_Center.y = 0.0;
+  NStack_1.value.m_Center.z = 0.0;
   if (gameObject != (GameObject *)0x0) {
-    pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+    pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                        (gameObject,(MethodInfo *)0x0);
     if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__SharedCubeFunctions);
     }
-    pNVar2 = SharedCubeFunctions::SharedCubeFunctions_GetAxisAlignedBoundsRecursively
-                       (&NStack_3,pTVar1,(MethodInfo *)0x0);
-    NStack_4.hasValue = pNVar2->hasValue;
-    NStack_4._1_3_ = *(undefined3 *)&pNVar2->field_0x1;
-    NStack_4.value.m_Center.x = (pNVar2->value).m_Center.x;
-    NStack_4.value.m_Center.y = (pNVar2->value).m_Center.y;
-    NStack_4.value.m_Center.z = (pNVar2->value).m_Center.z;
-    NStack_4.value.m_Extents.x = (pNVar2->value).m_Extents.x;
-    NStack_4.value.m_Extents.y = (pNVar2->value).m_Extents.y;
-    NStack_4.value.m_Extents.z = (pNVar2->value).m_Extents.z;
+    pNVar3 = SharedCubeFunctions::SharedCubeFunctions_GetAxisAlignedBoundsRecursively
+                       (&NStack_4,pTVar2,(MethodInfo *)0x0);
+    NStack_1.hasValue = pNVar3->hasValue;
+    NStack_1._1_3_ = *(undefined3 *)&pNVar3->field_0x1;
+    NStack_1.value.m_Center.x = (pNVar3->value).m_Center.x;
+    NStack_1.value.m_Center.y = (pNVar3->value).m_Center.y;
+    NStack_1.value.m_Center.z = (pNVar3->value).m_Center.z;
+    NStack_1.value.m_Extents.x = (pNVar3->value).m_Extents.x;
+    NStack_1.value.m_Extents.y = (pNVar3->value).m_Extents.y;
+    NStack_1.value.m_Extents.z = (pNVar3->value).m_Extents.z;
     if (cRam_? == '\0') {
       func_?(&TypeInfo__UnityEngine__Vector3);
       cRam_? = '\x01';
@@ -2209,11 +2252,11 @@ void Assembly-CSharp.dll::Extensions::Extensions_ScaleBounds
     pVVar5 = TypeInfo__UnityEngine__Vector3->static_fields;
     BStack_6.m_Extents.x = (pVVar5->oneVector).x;
     BStack_6.m_Extents.y = (pVVar5->oneVector).y;
-    NStack_3.value.m_Extents.z = (pVVar5->oneVector).z * _UNK_?;
-    NStack_3.value.m_Extents.x = BStack_6.m_Extents.x * _UNK_?;
-    NStack_3.value.m_Extents.y = BStack_6.m_Extents.y * _UNK_?;
-    BStack_6.m_Extents.z = NStack_3.value.m_Extents.z;
-    if (NStack_4.hasValue == 0) {
+    NStack_4.value.m_Extents.z = (pVVar5->oneVector).z * _UNK_?;
+    NStack_4.value.m_Extents.x = BStack_6.m_Extents.x * _UNK_?;
+    NStack_4.value.m_Extents.y = BStack_6.m_Extents.y * _UNK_?;
+    BStack_6.m_Extents.z = NStack_4.value.m_Extents.z;
+    if (NStack_1.hasValue == 0) {
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
@@ -2223,38 +2266,38 @@ void Assembly-CSharp.dll::Extensions::Extensions_ScaleBounds
     else {
       pBVar7 = mscorlib.dll::System::Nullable`1[UnityEngine::Bounds]::
                Nullable_1_UnityEngine_Bounds__get_Value
-                         (&BStack_6,&NStack_4,
+                         (&BStack_6,&NStack_1,
                           MethodInfo__System__Nullable<UnityEngine::Bounds>__get_Value__);
-      NStack_3.value.m_Center.x = (pBVar7->m_Center).x;
-      NStack_3.value.m_Center.y = (pBVar7->m_Center).y;
-      NStack_3.value.m_Center.z = (pBVar7->m_Center).z;
-      NStack_3.value.m_Extents.x = (pBVar7->m_Extents).x;
+      NStack_4.value.m_Center.x = (pBVar7->m_Center).x;
+      NStack_4.value.m_Center.y = (pBVar7->m_Center).y;
+      NStack_4.value.m_Center.z = (pBVar7->m_Center).z;
+      NStack_4.value.m_Extents.x = (pBVar7->m_Extents).x;
       uVar8 = (pBVar7->m_Extents).y;
       uVar9 = (pBVar7->m_Extents).z;
-      NStack_3.value.m_Extents.y = (float)uVar8;
-      NStack_3.value.m_Extents.z = (float)uVar9;
+      NStack_4.value.m_Extents.y = (float)uVar8;
+      NStack_4.value.m_Extents.z = (float)uVar9;
     }
-    fVar10 = NStack_3.value.m_Extents.y * _UNK_?;
-    if (NStack_3.value.m_Extents.y * _UNK_? <= NStack_3.value.m_Extents.z * _UNK_?)
+    fVar10 = NStack_4.value.m_Extents.y * _UNK_?;
+    if (NStack_4.value.m_Extents.y * _UNK_? <= NStack_4.value.m_Extents.z * _UNK_?)
     {
-      fVar10 = NStack_3.value.m_Extents.z * _UNK_?;
+      fVar10 = NStack_4.value.m_Extents.z * _UNK_?;
     }
-    fVar11 = NStack_3.value.m_Extents.x * _UNK_?;
-    if (NStack_3.value.m_Extents.x * _UNK_? <= fVar10) {
+    fVar11 = NStack_4.value.m_Extents.x * _UNK_?;
+    if (NStack_4.value.m_Extents.x * _UNK_? <= fVar10) {
       fVar11 = fVar10;
     }
     fVar11 = targetSize / fVar11;
-    pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+    pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                        (gameObject,(MethodInfo *)0x0);
     BStack_6.m_Extents.y = fVar11;
     BStack_6.m_Extents.x = fVar11;
     BStack_6.m_Extents.z = fVar11;
-    if (pTVar1 != (Transform *)0x0) {
+    if (pTVar2 != (Transform *)0x0) {
       value.y = fVar11;
       value.x = fVar11;
       value.z = fVar11;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-                (pTVar1,value,(MethodInfo *)0x0);
+                (pTVar2,value,(MethodInfo *)0x0);
       return;
     }
   }
@@ -2609,18 +2652,20 @@ code_?:
     pSVar1 = mscorlib.dll::System::String::String_Split_1(text,separator,(MethodInfo *)0x0);
     if (pSVar1 == (String__Array *)0x0) goto code_?;
     if (pSVar1->max_length == 3) {
-      pSVar2 = pSVar1->vector[0];
-      if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__Extensions);
-      }
-      fVar3 = Extensions_ConvertToSingle(pSVar2,(MethodInfo *)0x0);
-      if (1 < pSVar1->max_length) {
-        fVar4 = Extensions_ConvertToSingle(pSVar1->vector[1],(MethodInfo *)0x0);
-        if (2 < pSVar1->max_length) {
-          fRam00000008 = Extensions_ConvertToSingle(pSVar1->vector[2],(MethodInfo *)0x0);
-          fRam00000000 = fVar3;
-          fRam00000004 = fVar4;
-          return (Vector3 *)0x0;
+      if (pSVar1->max_length != 0) {
+        pSVar2 = pSVar1->vector[0];
+        if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__Extensions);
+        }
+        fVar3 = Extensions_ConvertToSingle(pSVar2,(MethodInfo *)0x0);
+        if (1 < pSVar1->max_length) {
+          fVar4 = Extensions_ConvertToSingle(pSVar1->vector[1],(MethodInfo *)0x0);
+          if (2 < pSVar1->max_length) {
+            fRam00000008 = Extensions_ConvertToSingle(pSVar1->vector[2],(MethodInfo *)0x0);
+            fRam00000000 = fVar3;
+            fRam00000004 = fVar4;
+            return (Vector3 *)0x0;
+          }
         }
       }
       goto code_?;

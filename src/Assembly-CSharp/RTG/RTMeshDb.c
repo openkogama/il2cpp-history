@@ -291,28 +291,27 @@ void Assembly-CSharp.dll::RTG::RTMeshDb::RTMeshDb_SetMeshDirty
         pOVar5 = (Object__Class *)
                  UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_triangles
                            ((Mesh *)pOVar3[1].klass,(MethodInfo *)0x0);
-        pOVar6 = pOVar3 + 2;
-        pOVar6->klass = pOVar5;
-        func_?(pOVar6,pOVar5);
-        if (pOVar6->klass != (Object__Class *)0x0) {
-          pOVar3[2].monitor = (MonitorData *)((int)(pOVar6->klass->_0).namespaze / 3);
+        pOVar3[2].klass = pOVar5;
+        func_?(pOVar3 + 2,pOVar5);
+        if (pOVar3[2].klass != (Object__Class *)0x0) {
+          pOVar3[2].monitor = (MonitorData *)((int)((pOVar3[2].klass)->_0).namespaze / 3);
           if (pOVar3[1].klass != (Object__Class *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_RecalculateBounds
                       ((Mesh *)pOVar3[1].klass,(MethodInfo *)0x0);
             if (pOVar3[1].klass != (Object__Class *)0x0) {
-              pBVar7 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_bounds
-                                 (&BStack_8,(Mesh *)pOVar3[1].klass,(MethodInfo *)0x0);
+              pBVar6 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_bounds
+                                 (&BStack_7,(Mesh *)pOVar3[1].klass,(MethodInfo *)0x0);
               pOVar5 = (Object__Class *)0x0;
-              pMVar9 = (MonitorData *)0x0;
-              AABB::AABB__ctor_1((AABB *)&stack0xffffffc4,*pBVar7,(MethodInfo *)0x0);
+              pMVar8 = (MonitorData *)0x0;
+              AABB::AABB__ctor_1((AABB *)&stack0xffffffc4,*pBVar6,(MethodInfo *)0x0);
+              pMVar9 = pOVar3[6].monitor;
               pOVar3[3].klass = pOVar5;
-              pOVar3[3].monitor = pMVar9;
+              pOVar3[3].monitor = pMVar8;
               pOVar3[4].klass = (Object__Class *)0x0;
               pOVar3[4].monitor = (MonitorData *)0x0;
               pOVar3[5].klass = (Object__Class *)0x0;
               pOVar3[5].monitor = (MonitorData *)0x0;
               pOVar3[6].klass = (Object__Class *)0x0;
-              pMVar9 = pOVar3[6].monitor;
               if (pMVar9 != (MonitorData *)0x0) {
                 if (cRam_? == '\0') {
                   func_?(&MethodInfo__RTG__SphereTree<RTG::MeshTriangle>__SphereTree__);

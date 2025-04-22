@@ -5,20 +5,20 @@ bool Assembly-CSharp.dll::SkyboxManager+<DoAnimate>d__23::SkyboxManager_DoAnimat
                (SkyboxManager_DoAnimate_d_23 *this,MethodInfo *method)
 
 {
+  pSVar1 = this;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Int32);
     cRam_? = '\x01';
   }
-  iVar1 = (this->fields).__1__state;
+  iVar2 = (this->fields).__1__state;
   this_00 = (this->fields).__4__this;
-  if (iVar1 == 0) {
+  if (iVar2 == 0) {
     (this->fields)._t_5__2 = 0.0;
   }
-  else if (iVar1 != 1) {
+  else if (iVar2 != 1) {
     return 0;
   }
-  fStack_2 = _UNK_?;
-  bVar3 = (this->fields)._t_5__2 <= _UNK_?;
+  bVar3 = (this->fields)._t_5__2 <= (float)_UNK_?;
   (this->fields).__1__state = -1;
   if (bVar3) {
     if (this_00 == (SkyboxManager *)0x0) {
@@ -33,54 +33,52 @@ bool Assembly-CSharp.dll::SkyboxManager+<DoAnimate>d__23::SkyboxManager_DoAnimat
       fVar6 = (this_00->fields).currentColor.g;
       fVar7 = (this_00->fields).currentColor.b;
       fVar8 = (this_00->fields).currentColor.a;
-      fVar9 = (this->fields)._t_5__2;
+      pSVar9 = (SkyboxManager_DoAnimate_d_23 *)(this->fields)._t_5__2;
       fVar10 = (this_00->fields).targetColor.g;
       fVar11 = (this_00->fields).targetColor.b;
       fVar12 = (this_00->fields).targetColor.a;
-      if (fVar9 < 0.0) {
-        fVar13 = 0.0;
+      if ((float)pSVar9 < 0.0) {
+        pSVar9 = (SkyboxManager_DoAnimate_d_23 *)0x0;
       }
-      else {
-        fVar13 = _UNK_?;
-        if (fVar9 <= _UNK_?) {
-          fVar13 = fVar9;
-        }
+      else if ((float)_UNK_? < (float)pSVar9) {
+        pSVar9 = _UNK_?;
       }
+      pSVar13 = (SkyboxManager_DoAnimate_d_23 *)(this->fields)._t_5__2;
       fStack_14 = (this_00->fields).currentSunAngle;
-      if (fVar9 < 0.0) {
-        fVar15 = 0.0;
+      if ((float)pSVar13 < 0.0) {
+        pSVar13 = (SkyboxManager_DoAnimate_d_23 *)0x0;
+      }
+      else if ((float)_UNK_? < (float)pSVar13) {
+        pSVar13 = _UNK_?;
+      }
+      fStack_14 = ((this_00->fields).targetSunAngle - fStack_14) * (float)pSVar13 + fStack_14;
+      fStack_15 = (this_00->fields).currentFogDensity;
+      fStack_16 = (this_00->fields).targetFogDensity;
+      pSStack_17 = (SkyboxManager_DoAnimate_d_23 *)(this->fields)._t_5__2;
+      if ((float)pSStack_17 < 0.0) {
+        this = (SkyboxManager_DoAnimate_d_23 *)0x0;
       }
       else {
-        fVar15 = _UNK_?;
-        if (fVar9 <= _UNK_?) {
-          fVar15 = fVar9;
+        this = pSStack_17;
+        if ((float)_UNK_? < (float)pSStack_17) {
+          this = _UNK_?;
         }
       }
-      fStack_14 = ((this_00->fields).targetSunAngle - fStack_14) * fVar15 + fStack_14;
-      fStack_16 = (this_00->fields).currentFogDensity;
-      fStack_17 = (this_00->fields).targetFogDensity;
-      if (fVar9 < 0.0) {
-        fStack_2 = 0.0;
-      }
-      else if (fVar9 <= _UNK_?) {
-        fStack_2 = fVar9;
-      }
-      fVar15 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
+      fVar18 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
                          ((MethodInfo *)0x0);
-      (this->fields)._t_5__2 = fVar15 * _UNK_? + fVar9;
-      auVar18._4_4_ = (fVar11 - fVar7) * fVar13 + fVar7;
-      auVar18._0_4_ = (fVar10 - fVar6) * fVar13 + fVar6;
-      auVar18._8_4_ = (fVar12 - fVar8) * fVar13 + fVar8;
-      auVar18._12_4_ = 0;
+      (pSVar1->fields)._t_5__2 = fVar18 * _UNK_? + (float)pSStack_17;
+      auVar19._4_4_ = (fVar11 - fVar7) * (float)pSVar9 + fVar7;
+      auVar19._0_4_ = (fVar10 - fVar6) * (float)pSVar9 + fVar6;
+      auVar19._8_4_ = (fVar12 - fVar8) * (float)pSVar9 + fVar8;
+      auVar19._12_4_ = 0;
       SkyboxManager::SkyboxManager_SetColor
-                (this_00,(Color)(auVar18 << 0x20),fStack_14,
-                 (fStack_17 - fStack_16) * fStack_2 + fStack_16,(MethodInfo *)0x0);
-      uStack_19 = 0;
-      pOVar20 = (Object *)func_?(TypeInfo__System__Int32,&uStack_19);
-      ppOVar21 = &(this->fields).__2__current;
-      *ppOVar21 = pOVar20;
-      func_?(ppOVar21,pOVar20);
-      (this->fields).__1__state = 1;
+                (this_00,(Color)(auVar19 << 0x20),fStack_14,
+                 (fStack_16 - fStack_15) * (float)this + fStack_15,(MethodInfo *)0x0);
+      uStack_20 = 0;
+      pOVar21 = (Object *)func_?(TypeInfo__System__Int32,&uStack_20);
+      (pSVar1->fields).__2__current = pOVar21;
+      func_?(&(pSVar1->fields).__2__current,pOVar21);
+      (pSVar1->fields).__1__state = 1;
       return 1;
     }
   }

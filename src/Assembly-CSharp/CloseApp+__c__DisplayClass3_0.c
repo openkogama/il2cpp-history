@@ -29,7 +29,7 @@ void Assembly-CSharp.dll::CloseApp+<>c__DisplayClass3_0::CloseApp_c_DisplayClass
     do {
       if (pIVar6->interfaceOffsets[uVar5].interfaceType ==
           (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IModalPopupCreator) {
-        ppMVar8 = &(&(x->klass->vtable).Create_2)[pIVar6->interfaceOffsets[uVar5].offset].method;
+        ppMVar8 = &(&(x->klass->vtable).Create_2)[x->klass->interfaceOffsets[uVar5].offset].method;
         goto code_?;
       }
       uVar5 = uVar5 + 1;

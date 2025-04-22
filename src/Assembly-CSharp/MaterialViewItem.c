@@ -201,39 +201,36 @@ void Assembly-CSharp.dll::MaterialViewItem::MaterialViewItem_OnClick
     return;
   }
   method_00 = TypeInfo__MaterialViewItem____c__DisplayClass11_0;
-  pOVar4 = (Object *)func_?();
+  value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (pOVar4,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   original = (this->fields).materialPurchasePopupPrefab;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  pOVar5 = (Object__Class *)
+  pOVar4 = (Object__Class *)
            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                      ((Object *)original,
                       MaterialPurchasePopup_MethodInfo__UnityEngine__Object__Instantiate<MaterialPurchasePopup>_MaterialPurchasePopup_
                      );
-  if (pOVar4 != (Object *)0x0) {
-    pOVar4 = pOVar4 + 1;
-    pOVar4->klass = pOVar5;
-    func_?(pOVar4,pOVar5);
-    materialID = (this->fields).id;
-    pOVar5 = pOVar4->klass;
+  if (value != (Object *)0x0) {
+    value[1].klass = pOVar4;
+    pOVar5 = value + 1;
+    func_?(pOVar5,pOVar4);
+    pOVar4 = value[1].klass;
     this_00 = (UnityAction_2_System_Int32_System_Int32_ *)
-              func_?(
-                             TypeInfo__UnityEngine__Events__UnityAction<bool,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
-                             );
+              func_?(TypeInfo__UnityEngine__Events__UnityAction<bool,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
+                              ,pOVar5,(this->fields).id);
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
     UnityAction_2_System_Int32_System_Int32___ctor
               (this_00,(Object *)this,
                MethodInfo__MaterialViewItem__PurchaseCallback_bool__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
                ,(MethodInfo *)0x0);
-    if (pOVar5 != (Object__Class *)0x0) {
+    if (pOVar4 != (Object__Class *)0x0) {
       MaterialPurchasePopup::MaterialPurchasePopup_Initialize
-                ((MaterialPurchasePopup *)pOVar5,materialID,
+                ((MaterialPurchasePopup *)pOVar4,0,
                  (UnityAction_2_System_Boolean_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
                   *)this_00,(MethodInfo *)0x0);
-      pOVar4 = (Object *)0x0;
       pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)this,(MethodInfo *)0x0);
       if ((TypeInfo__MaterialViewItem____c->_1).cctor_finished_or_no_cctor == 0) {
@@ -254,7 +251,6 @@ void Assembly-CSharp.dll::MaterialViewItem::MaterialViewItem_OnClick
                    ,(MethodInfo *)0x0);
         TypeInfo__MaterialViewItem____c->static_fields->__9__11_2 = callbackFunction_00;
         func_?();
-        pGVar1 = (GameObject *)&UNK_?;
       }
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
       {
@@ -270,7 +266,7 @@ void Assembly-CSharp.dll::MaterialViewItem::MaterialViewItem_OnClick
       pEVar2 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)pEVar2,pOVar4,
+                ((UnityAction_2_System_Object_System_Object_ *)pEVar2,value,
                  MethodInfo__MaterialViewItem____c__DisplayClass11_0___OnClick_b__3_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
       UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
@@ -322,39 +318,36 @@ void Assembly-CSharp.dll::MaterialViewItem::MaterialViewItem_OnInfoClick
     cRam_? = '\x01';
   }
   method_00 = TypeInfo__MaterialViewItem____c__DisplayClass13_0;
-  pOVar1 = (Object *)func_?();
+  value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (pOVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   original = (this->fields).materialPurchasePopupPrefab;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  pOVar2 = (Object__Class *)
+  pOVar1 = (Object__Class *)
            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                      ((Object *)original,
                       MaterialPurchasePopup_MethodInfo__UnityEngine__Object__Instantiate<MaterialPurchasePopup>_MaterialPurchasePopup_
                      );
-  if (pOVar1 != (Object *)0x0) {
-    pOVar1 = pOVar1 + 1;
-    pOVar1->klass = pOVar2;
-    func_?(pOVar1,pOVar2);
-    materialID = (this->fields).id;
-    pOVar2 = pOVar1->klass;
+  if (value != (Object *)0x0) {
+    value[1].klass = pOVar1;
+    pOVar2 = value + 1;
+    func_?(pOVar2,pOVar1);
+    pOVar1 = value[1].klass;
     this_00 = (UnityAction_2_System_Int32_System_Int32_ *)
-              func_?(
-                             TypeInfo__UnityEngine__Events__UnityAction<bool,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
-                             );
+              func_?(TypeInfo__UnityEngine__Events__UnityAction<bool,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
+                              ,pOVar2,(this->fields).id);
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
     UnityAction_2_System_Int32_System_Int32___ctor
               (this_00,(Object *)this,
                MethodInfo__MaterialViewItem__PurchaseCallback_bool__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
                ,(MethodInfo *)0x0);
-    if (pOVar2 != (Object__Class *)0x0) {
+    if (pOVar1 != (Object__Class *)0x0) {
       MaterialPurchasePopup::MaterialPurchasePopup_Initialize
-                ((MaterialPurchasePopup *)pOVar2,materialID,
+                ((MaterialPurchasePopup *)pOVar1,0,
                  (UnityAction_2_System_Boolean_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
                   *)this_00,(MethodInfo *)0x0);
-      pOVar1 = (Object *)0x0;
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)this,(MethodInfo *)0x0);
       if ((TypeInfo__MaterialViewItem____c->_1).cctor_finished_or_no_cctor == 0) {
@@ -374,7 +367,6 @@ void Assembly-CSharp.dll::MaterialViewItem::MaterialViewItem_OnInfoClick
                    ,(MethodInfo *)0x0);
         TypeInfo__MaterialViewItem____c->static_fields->__9__13_0 = callbackFunction;
         func_?();
-        pGVar3 = (GameObject *)&UNK_?;
       }
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
       {
@@ -390,7 +382,7 @@ void Assembly-CSharp.dll::MaterialViewItem::MaterialViewItem_OnInfoClick
       callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,pOVar1,
+                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,
                  MethodInfo__MaterialViewItem____c__DisplayClass13_0___OnInfoClick_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
       UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
@@ -504,9 +496,10 @@ void Assembly-CSharp.dll::MaterialViewItem::MaterialViewItem__OnClick_b__11_1
       do {
         if (pIVar1->interfaceOffsets[uVar2].interfaceType ==
             (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IMaterialClicked) {
+          pIVar1 = x->klass;
           iVar4 = pIVar1->interfaceOffsets[uVar2].offset;
-          (*(code *)(&x->klass->vtable)[iVar4].OnMaterialClicked.method)
-                    (x,this,(&x->klass[1]._0.image)[iVar4 * 2]);
+          (*(code *)(&pIVar1->vtable)[iVar4].OnMaterialClicked.method)
+                    (x,this,(&pIVar1[1]._0.image)[iVar4 * 2]);
           return;
         }
         uVar2 = uVar2 + 1;

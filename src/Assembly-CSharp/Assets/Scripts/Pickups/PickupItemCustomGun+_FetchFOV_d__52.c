@@ -19,9 +19,8 @@ bool Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun+<FetchFO
               func_?(TypeInfo__UnityEngine__WaitForSecondsRealtime);
     UnityEngine.CoreModule.dll::UnityEngine::WaitForSecondsRealtime::WaitForSecondsRealtime__ctor
               (this_00,0.1,(MethodInfo *)0x0);
-    ppOVar3 = &(this->fields).__2__current;
-    *ppOVar3 = (Object *)this_00;
-    func_?(ppOVar3,this_00);
+    (this->fields).__2__current = (Object *)this_00;
+    func_?(&(this->fields).__2__current,this_00);
     (this->fields).__1__state = 1;
     return 1;
   }
@@ -31,38 +30,38 @@ bool Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun+<FetchFO
   (this->fields).__1__state = -1;
   this_01 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
   if ((this_01 != (MainCameraManager *)0x0) &&
-     (pMVar4 = MainCameraManager::MainCameraManager_get_CurrentCamera(this_01,(MethodInfo *)0x0),
-     pMVar4 != (MVCameraBase *)0x0)) {
-    OStack_5.currentCryptoKey = (int32_t)(pMVar4->klass->vtable).UpdateCamera.methodPtr;
-    fVar6 = (float10)(*(code *)(pMVar4->klass->vtable).get_FieldOfView.method)(pMVar4);
+     (pMVar3 = MainCameraManager::MainCameraManager_get_CurrentCamera(this_01,(MethodInfo *)0x0),
+     pMVar3 != (MVCameraBase *)0x0)) {
+    OStack_4.currentCryptoKey = (int32_t)(pMVar3->klass->vtable).UpdateCamera.methodPtr;
+    fVar5 = (float10)(*(code *)(pMVar3->klass->vtable).get_FieldOfView.method)(pMVar3);
     if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).
         cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
     }
-    pOVar7 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-              ObscuredFloat_op_Implicit(&OStack_5,(float)fVar6,(MethodInfo *)0x0);
-    AVar8 = pOVar7->hiddenValue;
-    pBVar9 = pOVar7->hiddenValueOld;
-    fVar10 = pOVar7->fakeValue;
-    bVar11 = pOVar7->inited;
-    uVar12 = *(undefined3 *)&pOVar7->field_0x11;
+    pOVar6 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+              ObscuredFloat_op_Implicit(&OStack_4,(float)fVar5,(MethodInfo *)0x0);
+    AVar7 = pOVar6->hiddenValue;
+    pBVar8 = pOVar6->hiddenValueOld;
+    fVar9 = pOVar6->fakeValue;
+    bVar10 = pOVar6->inited;
+    uVar11 = *(undefined3 *)&pOVar6->field_0x11;
     if (pPVar2 != (PickupItemCustomGun *)0x0) {
-      (pPVar2->fields).initialFOV.currentCryptoKey = pOVar7->currentCryptoKey;
-      (pPVar2->fields).initialFOV.hiddenValue = AVar8;
-      (pPVar2->fields).initialFOV.hiddenValueOld = pBVar9;
-      (pPVar2->fields).initialFOV.fakeValue = fVar10;
-      (pPVar2->fields).initialFOV.inited = bVar11;
-      *(undefined3 *)&(pPVar2->fields).initialFOV.field_0x11 = uVar12;
-      OStack_5.currentCryptoKey = 0;
+      (pPVar2->fields).initialFOV.currentCryptoKey = pOVar6->currentCryptoKey;
+      (pPVar2->fields).initialFOV.hiddenValue = AVar7;
+      (pPVar2->fields).initialFOV.hiddenValueOld = pBVar8;
+      (pPVar2->fields).initialFOV.fakeValue = fVar9;
+      (pPVar2->fields).initialFOV.inited = bVar10;
+      *(undefined3 *)&(pPVar2->fields).initialFOV.field_0x11 = uVar11;
+      OStack_4.currentCryptoKey = 0;
       func_?(&(pPVar2->fields).initialFOV.hiddenValueOld);
       return 0;
     }
   }
-  OStack_5.currentCryptoKey = (int32_t)&UNK_?;
+  OStack_4.currentCryptoKey = (int32_t)&UNK_?;
   func_?();
-  pcVar13 = (code *)swi(3);
-  bVar11 = (*pcVar13)();
-  return bVar11;
+  pcVar12 = (code *)swi(3);
+  bVar10 = (*pcVar12)();
+  return bVar10;
 }
 
 

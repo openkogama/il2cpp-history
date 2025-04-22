@@ -5,14 +5,13 @@ void Assembly-CSharp.dll::ConfirmationPopup::ConfirmationPopup_Cancel
                (ConfirmationPopup *this,MethodInfo *method)
 
 {
-  pUVar1 = (this->fields).resultCallback;
-  ppUVar2 = &(this->fields).resultCallback;
-  if (pUVar1 != (UnityAction_2_System_Boolean_ConfirmationPopup_ *)0x0) {
+  if ((this->fields).resultCallback != (UnityAction_2_System_Boolean_ConfirmationPopup_ *)0x0) {
+    pUVar1 = (this->fields).resultCallback;
     (*(pUVar1->fields)._._.invoke_impl)
               ((pUVar1->fields)._._.method_code,0,this,(pUVar1->fields)._._.method);
   }
-  *ppUVar2 = (UnityAction_2_System_Boolean_ConfirmationPopup_ *)0x0;
-  func_?(ppUVar2,0);
+  (this->fields).resultCallback = (UnityAction_2_System_Boolean_ConfirmationPopup_ *)0x0;
+  func_?(&(this->fields).resultCallback,0);
   return;
 }
 
@@ -39,32 +38,31 @@ void Assembly-CSharp.dll::ConfirmationPopup::ConfirmationPopup_Initialize
     if (pTVar1 != (Text *)0x0) {
       (*(code *)(pTVar1->klass->vtable).set_text.method)
                 (pTVar1,header,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-      ppUVar2 = &(this->fields).resultCallback;
-      *ppUVar2 = resultCallback;
-      func_?(ppUVar2,resultCallback);
-      pBVar3 = (this->fields).okButton;
-      if (pBVar3 != (Button *)0x0) {
-        pUVar4 = (UnityEvent *)(pBVar3->fields).m_OnClick;
-        pNVar5 = (NavMesh_OnNavMeshPreUpdate *)
+      (this->fields).resultCallback = resultCallback;
+      func_?(&(this->fields).resultCallback,resultCallback);
+      pBVar2 = (this->fields).okButton;
+      if (pBVar2 != (Button *)0x0) {
+        pUVar3 = (UnityEvent *)(pBVar2->fields).m_OnClick;
+        pNVar4 = (NavMesh_OnNavMeshPreUpdate *)
                  func_?(TypeInfo__UnityEngine__Events__UnityAction);
         UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
         NavMesh_OnNavMeshPreUpdate__ctor
-                  (pNVar5,(Object *)this,MethodInfo__ConfirmationPopup__Ok__,(MethodInfo *)0x0);
-        if (pUVar4 != (UnityEvent *)0x0) {
+                  (pNVar4,(Object *)this,MethodInfo__ConfirmationPopup__Ok__,(MethodInfo *)0x0);
+        if (pUVar3 != (UnityEvent *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
-                    (pUVar4,(UnityAction *)pNVar5,(MethodInfo *)0x0);
-          pBVar3 = (this->fields).cancelButton;
-          if (pBVar3 != (Button *)0x0) {
-            pUVar4 = (UnityEvent *)(pBVar3->fields).m_OnClick;
-            pNVar5 = (NavMesh_OnNavMeshPreUpdate *)
+                    (pUVar3,(UnityAction *)pNVar4,(MethodInfo *)0x0);
+          pBVar2 = (this->fields).cancelButton;
+          if (pBVar2 != (Button *)0x0) {
+            pUVar3 = (UnityEvent *)(pBVar2->fields).m_OnClick;
+            pNVar4 = (NavMesh_OnNavMeshPreUpdate *)
                      func_?(TypeInfo__UnityEngine__Events__UnityAction);
             UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
             NavMesh_OnNavMeshPreUpdate__ctor
-                      (pNVar5,(Object *)this,MethodInfo__ConfirmationPopup__Cancel__,
+                      (pNVar4,(Object *)this,MethodInfo__ConfirmationPopup__Cancel__,
                        (MethodInfo *)0x0);
-            if (pUVar4 != (UnityEvent *)0x0) {
+            if (pUVar3 != (UnityEvent *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
-                        (pUVar4,(UnityAction *)pNVar5,(MethodInfo *)0x0);
+                        (pUVar3,(UnityAction *)pNVar4,(MethodInfo *)0x0);
               return;
             }
           }
@@ -73,8 +71,8 @@ void Assembly-CSharp.dll::ConfirmationPopup::ConfirmationPopup_Initialize
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -85,14 +83,13 @@ void Assembly-CSharp.dll::ConfirmationPopup::ConfirmationPopup_Ok
                (ConfirmationPopup *this,MethodInfo *method)
 
 {
-  pUVar1 = (this->fields).resultCallback;
-  ppUVar2 = &(this->fields).resultCallback;
-  if (pUVar1 != (UnityAction_2_System_Boolean_ConfirmationPopup_ *)0x0) {
+  if ((this->fields).resultCallback != (UnityAction_2_System_Boolean_ConfirmationPopup_ *)0x0) {
+    pUVar1 = (this->fields).resultCallback;
     (*(pUVar1->fields)._._.invoke_impl)
               ((pUVar1->fields)._._.method_code,1,this,(pUVar1->fields)._._.method);
   }
-  *ppUVar2 = (UnityAction_2_System_Boolean_ConfirmationPopup_ *)0x0;
-  func_?(ppUVar2,0);
+  (this->fields).resultCallback = (UnityAction_2_System_Boolean_ConfirmationPopup_ *)0x0;
+  func_?(&(this->fields).resultCallback,0);
   return;
 }
 

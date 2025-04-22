@@ -9,32 +9,31 @@ void Assembly-CSharp.dll::TeamMenuQuadrant::TeamMenuQuadrant_Initialize
     func_?(&TypeInfo__Styles);
     cRam_? = '\x01';
   }
-  ppTVar1 = &(this->fields).teamData;
-  *ppTVar1 = teamData;
-  func_?(ppTVar1,teamData);
-  pTVar2 = (this->fields).players;
+  (this->fields).teamData = teamData;
+  func_?(&(this->fields).teamData,teamData);
+  pTVar1 = (this->fields).players;
   if (teamData != (TeamData *)0x0) {
-    pSVar3 = mscorlib.dll::System::Int32::Int32_ToString
+    pSVar2 = mscorlib.dll::System::Int32::Int32_ToString
                        ((Int32 *)&(teamData->fields).playersCount,(MethodInfo *)0x0);
-    if (pTVar2 != (Text *)0x0) {
-      (*(code *)(pTVar2->klass->vtable).set_text.method)
-                (pTVar2,pSVar3,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-      pTVar2 = (this->fields).score;
-      pSVar3 = mscorlib.dll::System::Int32::Int32_ToString
+    if (pTVar1 != (Text *)0x0) {
+      (*(code *)(pTVar1->klass->vtable).set_text.method)
+                (pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+      pTVar1 = (this->fields).score;
+      pSVar2 = mscorlib.dll::System::Int32::Int32_ToString
                          ((Int32 *)&(teamData->fields).score,(MethodInfo *)0x0);
-      if (pTVar2 != (Text *)0x0) {
-        (*(code *)(pTVar2->klass->vtable).set_text.method)
-                  (pTVar2,pSVar3,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr)
+      if (pTVar1 != (Text *)0x0) {
+        (*(code *)(pTVar1->klass->vtable).set_text.method)
+                  (pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr)
         ;
         team = (teamData->fields).team;
-        pIVar4 = (this->fields).header;
+        pIVar3 = (this->fields).header;
         if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__Styles);
         }
-        Styles::Styles_SetStyle_3((Graphic *)pIVar4,team,(MethodInfo *)0x0);
+        Styles::Styles_SetStyle_3((Graphic *)pIVar3,team,(MethodInfo *)0x0);
         Styles::Styles_SetStyle_3
                   ((Graphic *)(this->fields).buttonImage,(teamData->fields).team,(MethodInfo *)0x0);
-        pIVar4 = (this->fields).teamImage;
+        pIVar3 = (this->fields).teamImage;
         key = (teamData->fields).team;
         if (cRam_? == '\0') {
           func_?(&
@@ -48,14 +47,14 @@ void Assembly-CSharp.dll::TeamMenuQuadrant::TeamMenuQuadrant_Initialize
         }
         this_00 = TypeInfo__Styles->static_fields->teamIconStylesDictionary;
         if (this_00 != (Dictionary_2_MV_WorldObject_MVTeam_Styles_TeamIconStyleDef_ *)0x0) {
-          pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System
+          pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System
                    ::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
                              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,key,
                               MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_Styles::TeamIconStyleDef>__get_Item_MV__WorldObject__MVTeam_
                              );
-          if ((pOVar5 != (Object *)0x0) && (pIVar4 != (Image *)0x0)) {
+          if ((pOVar4 != (Object *)0x0) && (pIVar3 != (Image *)0x0)) {
             UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_sprite
-                      (pIVar4,(Sprite *)pOVar5[1].monitor,(MethodInfo *)0x0);
+                      (pIVar3,(Sprite *)pOVar4[1].monitor,(MethodInfo *)0x0);
             return;
           }
         }
@@ -63,8 +62,8 @@ void Assembly-CSharp.dll::TeamMenuQuadrant::TeamMenuQuadrant_Initialize
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

@@ -154,22 +154,22 @@ code_?:
             return pSVar11;
           }
           pBVar12 = pKVar6->vector[uVar9].key;
-          if ((pBVar12 == (Byte__Array *)0x0) || (uVar13 = pBVar12->max_length, iVar3 == 0))
+          if ((pBVar12 == (Byte__Array *)0x0) || (iVar13 = pBVar12->max_length, iVar3 == 0))
           goto code_?;
-          if ((int)uVar13 <= *(int *)(iVar3 + 0xc)) {
+          if ((int)iVar13 <= *(int *)(iVar3 + 0xc)) {
             uVar14 = 0;
-            uVar15 = uVar13;
-            if (0 < (int)uVar13) {
+            if (0 < (int)iVar13) {
               do {
-                if ((uVar13 <= uVar14) || (*(uint *)(iVar3 + 0xc) <= uVar14)) goto code_?;
+                if ((pBVar12->max_length <= uVar14) || (*(uint *)(iVar3 + 0xc) <= uVar14))
+                goto code_?;
                 if (pBVar12->vector[uVar14] != *(uint8_t *)(uVar14 + 0x10 + iVar3)) {
-                  uVar15 = 0xffffffff;
+                  iVar13 = 0xffffffff;
                 }
                 uVar14 = uVar14 + 1;
                 pTVar8 = TypeInfo__UnityEngine__TextAsset__EncodingUtility;
-              } while ((int)uVar14 < (int)uVar15);
+              } while ((int)uVar14 < (int)iVar13);
             }
-            if (-1 < (int)uVar15) {
+            if (-1 < (int)iVar13) {
               pTStack_2 = (TextAsset *)0x0;
               if ((TypeInfo__UnityEngine__TextAsset__EncodingUtility->_1).cctor_finished_or_no_cctor
                   == 0) {
@@ -177,11 +177,11 @@ code_?:
               }
               if (TypeInfo__UnityEngine__TextAsset__EncodingUtility->static_fields->encodingLookup
                   != (KeyValuePair_2_System_Byte_System_Text_Encoding___Array *)0x0) {
-                iVar16 = func_?(uVar9);
-                if (*(int *)(iVar16 + 4) != 0) {
+                iVar15 = func_?(uVar9);
+                if (*(int *)(iVar15 + 4) != 0) {
                   pSVar11 = (String *)
-                            func_?(0x23,*(int *)(iVar16 + 4),iVar3,uVar15,
-                                            *(int *)(iVar3 + 0xc) - uVar15);
+                           func_?(0x23,*(int *)(iVar15 + 4),iVar3,iVar13,
+                                           *(int *)(iVar3 + 0xc) - iVar13);
                   *unaff_FS_OFFSET = uStack_5;
                   return pSVar11;
                 }
@@ -194,12 +194,12 @@ code_?:
           func_?(pTVar8);
           pTVar8 = TypeInfo__UnityEngine__TextAsset__EncodingUtility;
         }
-        pEVar17 = pTVar8->static_fields->targetEncoding;
-        if ((iVar3 != 0) && (pEVar17 != (Encoding *)0x0)) {
+        pEVar16 = pTVar8->static_fields->targetEncoding;
+        if ((iVar3 != 0) && (pEVar16 != (Encoding *)0x0)) {
           pSVar11 = (String *)
-                    (*(code *)(pEVar17->klass->vtable).GetString_1.method)
-                              (pEVar17,iVar3,0,*(undefined4 *)(iVar3 + 0xc),
-                               (pEVar17->klass->vtable).GetBestFitUnicodeToBytesData.methodPtr);
+                   (*(code *)(pEVar16->klass->vtable).GetString_1.method)
+                             (pEVar16,iVar3,0,*(undefined4 *)(iVar3 + 0xc),
+                              (pEVar16->klass->vtable).GetBestFitUnicodeToBytesData.methodPtr);
           *unaff_FS_OFFSET = uStack_5;
           return pSVar11;
         }
