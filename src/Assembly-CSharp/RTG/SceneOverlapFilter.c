@@ -54,7 +54,7 @@ bool Assembly-CSharp.dll::RTG::SceneOverlapFilter::SceneOverlapFilter__FilterOve
       if (item != (GameObject *)0x0) {
         layerNumber = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_layer(item,(MethodInfo *)0x0);
         bVar1 = LayerEx::LayerEx_IsLayerBitSet(layerBits,layerNumber,(MethodInfo *)0x0);
-        return bVar1 == 0;
+        return bVar1 ^ 1;
       }
     }
   }
@@ -84,7 +84,7 @@ void Assembly-CSharp.dll::RTG::SceneOverlapFilter::SceneOverlapFilter__ctor(Scen
   this_01 = (List_1_UnityEngine_GameObject_ *)func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_01,MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__);
   method_00 = (MethodInfo *)&(this->fields)._ignoreObjects;
-  *(List_1_UnityEngine_GameObject_ **)method_00 = this_01;
+  (this->fields)._ignoreObjects = this_01;
   func_?(method_00,this_01);
   (this->fields)._layerMask = -1;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,method_00);

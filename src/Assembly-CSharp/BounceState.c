@@ -168,21 +168,20 @@ void Assembly-CSharp.dll::BounceState::BounceState_UpdateBounceState(BounceState
           inVector.x = mvControllerColliderHit.slopeNormal.z;
           inVector.y = mvControllerColliderHit.impactVelocity.x;
           pVVar16 = HamsterWheelBounceState::HamsterWheelBounceState_GetOutVectorFromInVector((Vector3 *)&mvControllerColliderHit.hit.interactionFlags,normal,inVector,(MethodInfo *)0x0);
-          this_00 = &this->fields;
           fVar17 = pVVar16->y;
           fVar14 = pVVar16->z;
-          (this_00->bounceVelocity).x = pVVar16->x;
-          (this_00->bounceVelocity).y = fVar17;
+          (this->fields).bounceVelocity.x = pVVar16->x;
+          (this->fields).bounceVelocity.y = fVar17;
           (this->fields).bounceVelocity.z = fVar14;
-          UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1(&this_00->bounceVelocity,(MethodInfo *)0x0);
+          UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1(&(this->fields).bounceVelocity,(MethodInfo *)0x0);
           if (fVar15 < 10.0) {
             fVar15 = fVar15 * (fVar15 / 10.0);
           }
-          uVar18 = (this_00->bounceVelocity).x;
-          uVar19 = (this_00->bounceVelocity).y;
+          uVar18 = (this->fields).bounceVelocity.x;
+          uVar19 = (this->fields).bounceVelocity.y;
           fVar14 = (this->fields).bounceVelocity.z;
-          (this_00->bounceVelocity).x = (float)uVar18 * fVar15;
-          (this_00->bounceVelocity).y = (float)uVar19 * fVar15;
+          (this->fields).bounceVelocity.x = (float)uVar18 * fVar15;
+          (this->fields).bounceVelocity.y = (float)uVar19 * fVar15;
           (this->fields).bounceVelocity.z = fVar14 * fVar15;
         }
       }
@@ -212,9 +211,8 @@ void Assembly-CSharp.dll::BounceState::BounceState__ctor(BounceState *this,MVInt
   (this->fields).bounceVelocity.y = fVar2;
   (this->fields).bounceVelocity.z = fVar3;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  ppMVar4 = &(this->fields).interactable;
-  *ppMVar4 = interactable;
-  func_?(ppMVar4,interactable);
+  (this->fields).interactable = interactable;
+  func_?(&(this->fields).interactable,interactable);
   return;
 }
 

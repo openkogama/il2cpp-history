@@ -366,8 +366,7 @@ void Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper_ResetInput(MethodInfo *
   pIVar1 = TypeInfo__MVInputWrapper->static_fields->inputMap;
   pDVar2 = TypeInfo__DesktopDefaultKeyboardMapping;
   if (pIVar1 != (IKogamaInputMap *)0x0) {
-    bVar3 = (TypeInfo__DesktopDefaultKeyboardMapping->_1).naturalAligment;
-    if (((pIVar1->klass->_1).naturalAligment < bVar3) || ((pIVar1->klass->_1).typeHierarchy[bVar3 - 1] != (Il2CppClass *)TypeInfo__DesktopDefaultKeyboardMapping)) goto code_?;
+    if (((pIVar1->klass->_1).naturalAligment < (TypeInfo__DesktopDefaultKeyboardMapping->_1).naturalAligment) || ((pIVar1->klass->_1).typeHierarchy[(TypeInfo__DesktopDefaultKeyboardMapping->_1).naturalAligment - 1] != (Il2CppClass *)TypeInfo__DesktopDefaultKeyboardMapping)) goto code_?;
     pDVar2 = unaff_ESI;
     if ((pIVar1[1].monitor != (MonitorData *)0x0) && (this = *(BitArray **)(pIVar1[1].monitor + 8), this != (BitArray *)0x0)) {
       mscorlib.dll::System::Collections::BitArray::BitArray_SetAll(this,0,(MethodInfo *)0x0);
@@ -378,8 +377,8 @@ void Assembly-CSharp.dll::MVInputWrapper::MVInputWrapper_ResetInput(MethodInfo *
   pIVar1 = extraout_EDX;
 code_?:
   func_?(pIVar1,pDVar2);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

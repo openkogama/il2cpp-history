@@ -59,9 +59,14 @@ void Assembly-CSharp.dll::TierUnlockedPopupContentSpawnRole::TierUnlockedPopupCo
             }
             fVar9 = (this->fields)._.titleOriginalYPosition;
             fVar11 = fVar9 + 300.0;
-            this = pTVar10;
-            if (1.0 < (float)pTVar10) {
-              this = (TierUnlockedPopupContentSpawnRole *)0x3f800000;
+            if ((float)pTVar10 < 0.0) {
+              this = (TierUnlockedPopupContentSpawnRole *)0x0;
+            }
+            else {
+              this = pTVar10;
+              if (1.0 < (float)pTVar10) {
+                this = (TierUnlockedPopupContentSpawnRole *)0x3f800000;
+              }
             }
             pTVar2 = (pTVar1->fields)._.titleText;
             if (pTVar2 != (Text *)0x0) {
