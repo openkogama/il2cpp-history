@@ -10,8 +10,9 @@ void Assembly-CSharp.dll::RTG::EditorToolbar::EditorToolbar__ctor(EditorToolbar 
   (this->fields)._activeTabColor.a = 1.0;
   (this->fields)._numTabsPerRow = 3;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  (this->fields)._tabs = tabs;
-  func_?(&(this->fields)._tabs,tabs);
+  ppEVar1 = &(this->fields)._tabs;
+  *ppEVar1 = tabs;
+  func_?(ppEVar1,tabs);
   (this->fields)._numTabsPerRow = numTabsPerRow;
   (this->fields)._activeTabColor.r = activeTabColor.r;
   (this->fields)._activeTabColor.g = activeTabColor.g;

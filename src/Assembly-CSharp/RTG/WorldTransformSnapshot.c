@@ -23,7 +23,7 @@ bool Assembly-CSharp.dll::RTG::WorldTransformSnapshot::WorldTransformSnapshot_Sa
     fVar8 = (this->fields)._worldRotation.z;
     fVar9 = (this->fields)._worldRotation.w;
     pQVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation(&QStack_6,transform,method_00);
-    if (0.999999 < pQVar10->y * fVar7 + pQVar10->x * (float)method_00 + pQVar10->z * fVar8 + pQVar10->w * fVar9) {
+    if (0.999999 < fVar7 * pQVar10->y + (float)method_00 * pQVar10->x + fVar8 * pQVar10->z + fVar9 * pQVar10->w) {
       QStack_6.w = (this->fields)._worldScale.z;
       QStack_6.y = (this->fields)._worldScale.x;
       QStack_6.z = (this->fields)._worldScale.y;

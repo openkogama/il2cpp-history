@@ -34,31 +34,30 @@ void Assembly-CSharp.dll::GameMeterVisuals::SlideOnClick::SlideOnClick_LerpToPos
     else if (1.0 < i) {
       i = 1.0;
     }
-    fStack_1 = (to.x - from.x) * i;
-    fStack_2 = (to.y - from.y) * i + from.y;
+    if (this_00 != (RectTransform *)0x0) {
+      value.y = (to.y - from.y) * i + from.y;
+      value.x = (to.x - from.x) * i + from.x;
+      UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_anchoredPosition(this_00,value,(MethodInfo *)0x0);
+      return;
+    }
   }
   else {
-    pSVar3 = (SlideOnClick *)0x0;
+    pSVar1 = (SlideOnClick *)0x0;
     this = (SlideOnClick *)i;
-    if ((i < 0.0) || (pSVar3 = (SlideOnClick *)0x3f800000, 1.0 < i)) {
-      this = pSVar3;
+    if ((i < 0.0) || (pSVar1 = (SlideOnClick *)0x3f800000, 1.0 < i)) {
+      this = pSVar1;
     }
-    if (this_00 == (RectTransform *)0x0) goto code_?;
-    VVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_anchoredPosition(this_00,(MethodInfo *)0x0);
-    fStack_2 = VVar4.y;
-    fStack_1 = (to.x - from.x) * (float)this;
+    if (this_00 != (RectTransform *)0x0) {
+      VVar2 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_anchoredPosition(this_00,(MethodInfo *)0x0);
+      VVar2.y = VVar2.y;
+      VVar2.x = (to.x - from.x) * (float)this + from.x;
+      UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_anchoredPosition(this_00,VVar2,(MethodInfo *)0x0);
+      return;
+    }
   }
-  fStack_1 = fStack_1 + from.x;
-  if (this_00 != (RectTransform *)0x0) {
-    VVar4.y = fStack_2;
-    VVar4.x = fStack_1;
-    UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_anchoredPosition(this_00,VVar4,(MethodInfo *)0x0);
-    return;
-  }
-code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -69,26 +68,26 @@ void Assembly-CSharp.dll::GameMeterVisuals::SlideOnClick::SlideOnClick_OnDisable
 
 {
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StopAllCoroutines((MonoBehaviour *)this,(MethodInfo *)0x0);
-  fVar1 = (this->fields)._StartPos_k__BackingField.x;
-  uVar2 = (this->fields)._StartPos_k__BackingField.y;
+  value.x = (this->fields)._StartPos_k__BackingField.x;
+  value.y = (this->fields)._StartPos_k__BackingField.y;
   (this->fields).readyForSlide = 1;
   this_00 = (this->fields).rectTransform;
-  fStack_3 = (float)uVar2;
-  if ((this->fields).ignoreY != 0) {
-    if (this_00 == (RectTransform *)0x0) goto code_?;
-    VVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_anchoredPosition(this_00,(MethodInfo *)0x0);
-    fStack_3 = VVar4.y;
+  if ((this->fields).ignoreY == 0) {
+    if (this_00 != (RectTransform *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_anchoredPosition(this_00,value,(MethodInfo *)0x0);
+      return;
+    }
   }
-  if (this_00 != (RectTransform *)0x0) {
-    VVar4.y = fStack_3;
-    VVar4.x = fVar1;
-    UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_anchoredPosition(this_00,VVar4,(MethodInfo *)0x0);
+  else if (this_00 != (RectTransform *)0x0) {
+    VVar1 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_anchoredPosition(this_00,(MethodInfo *)0x0);
+    VVar1.y = VVar1.y;
+    VVar1.x = value.x;
+    UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_anchoredPosition(this_00,VVar1,(MethodInfo *)0x0);
     return;
   }
-code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -132,12 +131,10 @@ void Assembly-CSharp.dll::GameMeterVisuals::SlideOnClick::SlideOnClick_SetToPosi
   }
   else if (this_00 != (RectTransform *)0x0) {
     VVar1 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_anchoredPosition(this_00,(MethodInfo *)0x0);
-    if (this_00 != (RectTransform *)0x0) {
-      VVar1.y = VVar1.y;
-      VVar1.x = pos.x;
-      UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_anchoredPosition(this_00,VVar1,(MethodInfo *)0x0);
-      return;
-    }
+    VVar1.y = VVar1.y;
+    VVar1.x = pos.x;
+    UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_anchoredPosition(this_00,VVar1,(MethodInfo *)0x0);
+    return;
   }
   func_?();
   pcVar2 = (code *)swi(3);
@@ -158,8 +155,8 @@ IEnumerator * Assembly-CSharp.dll::GameMeterVisuals::SlideOnClick::SlideOnClick_
   method_00 = TypeInfo__GameMeterVisuals__SlideOnClick___SlideTowardsPosition_d__14;
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[2].klass = (Object__Class *)this;
   value[1].klass = (Object__Class *)0x0;
+  value[2].klass = (Object__Class *)this;
   func_?(value + 2,this);
   return (IEnumerator *)value;
 }

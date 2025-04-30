@@ -17,7 +17,7 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider2DLookAndFeel::GizmoPlaneSlider2D
   this_00 = (GizmoRotationArc3DLookAndFeel *)func_?(TypeInfo__RTG__GizmoRotationArc2DLookAndFeel);
   GizmoRotationArc3DLookAndFeel::GizmoRotationArc3DLookAndFeel__ctor(this_00,(MethodInfo *)0x0);
   method_00 = (MethodInfo *)&(this->fields)._rotationArcLookAndFeel;
-  (this->fields)._rotationArcLookAndFeel = (GizmoRotationArc2DLookAndFeel *)this_00;
+  *(GizmoRotationArc3DLookAndFeel **)method_00 = this_00;
   func_?(method_00,this_00);
   (this->fields)._color.r = 1.0;
   (this->fields)._color.g = 1.0;

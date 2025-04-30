@@ -24,11 +24,11 @@ void Assembly-CSharp.dll::GamePassesHighlightArrowManager::GamePassesHighlightAr
       func_?(TypeInfo__UnityEngine__Object);
     }
     pGVar2 = (GameObject *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pGVar2,UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_);
-    (this->fields).highLightArrow = pGVar2;
-    func_?(&(this->fields).highLightArrow,pGVar2);
-    pGVar2 = (this->fields).highLightArrow;
-    if (pGVar2 != (GameObject *)0x0) {
-      this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar2,(MethodInfo *)0x0);
+    ppGVar3 = &(this->fields).highLightArrow;
+    *ppGVar3 = pGVar2;
+    func_?(ppGVar3,pGVar2);
+    if (*ppGVar3 != (GameObject *)0x0) {
+      this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(*ppGVar3,(MethodInfo *)0x0);
       this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).progressBarTransfromsList;
       if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
         parent = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_00,(gamePassTierToHighlight & 0xff) - GamePassTier__Enum_Tier1,MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__get_Item_int_);
@@ -41,8 +41,8 @@ void Assembly-CSharp.dll::GamePassesHighlightArrowManager::GamePassesHighlightAr
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -57,18 +57,19 @@ void Assembly-CSharp.dll::GamePassesHighlightArrowManager::GamePassesHighlightAr
     cRam_? = '\x01';
   }
   pGVar1 = (this->fields).highLightArrow;
+  ppGVar2 = &(this->fields).highLightArrow;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality((Object_1 *)pGVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 == 0) {
-    pGVar1 = (this->fields).highLightArrow;
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality((Object_1 *)pGVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar3 == 0) {
+    pGVar1 = *ppGVar2;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1((Object_1 *)pGVar1,(MethodInfo *)0x0);
-    (this->fields).highLightArrow = (GameObject *)0x0;
-    func_?(&(this->fields).highLightArrow,0);
+    *ppGVar2 = (GameObject *)0x0;
+    func_?(ppGVar2,0);
     (this->fields).currentGamePassTierHighlighted = 0;
   }
   return;
@@ -112,17 +113,17 @@ void Assembly-CSharp.dll::GamePassesHighlightArrowManager::GamePassesHighlightAr
         func_?(TypeInfo__UnityEngine__Object);
       }
       pGVar4 = (GameObject *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pGVar4,UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_);
-      (this->fields).highLightArrow = pGVar4;
-      func_?(&(this->fields).highLightArrow,pGVar4);
-      pGVar4 = (this->fields).highLightArrow;
-      if (pGVar4 == (GameObject *)0x0) {
+      ppGVar5 = &(this->fields).highLightArrow;
+      *ppGVar5 = pGVar4;
+      func_?(ppGVar5,pGVar4);
+      if (*ppGVar5 == (GameObject *)0x0) {
 code_?:
         func_?();
-        pcVar5 = (code *)swi(3);
-        (*pcVar5)();
+        pcVar6 = (code *)swi(3);
+        (*pcVar6)();
         return;
       }
-      this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar4,(MethodInfo *)0x0);
+      this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(*ppGVar5,(MethodInfo *)0x0);
       this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).progressBarTransfromsList;
       if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) goto code_?;
       parent = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_00,bVar2 - 1,MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__get_Item_int_);
@@ -199,9 +200,10 @@ void Assembly-CSharp.dll::GamePassesHighlightArrowManager::GamePassesHighlightAr
             func_?();
           }
           pGVar4 = (GameObject *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pGVar4,UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_);
-          (this->fields).highLightArrow = pGVar4;
+          ppGVar5 = &(this->fields).highLightArrow;
+          *ppGVar5 = pGVar4;
           func_?();
-          pGVar4 = (this->fields).highLightArrow;
+          pGVar4 = *ppGVar5;
           if (pGVar4 == (GameObject *)0x0) goto code_?;
           this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform(pGVar4,(MethodInfo *)0x0);
           this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).progressBarTransfromsList;
@@ -215,10 +217,10 @@ void Assembly-CSharp.dll::GamePassesHighlightArrowManager::GamePassesHighlightAr
     }
   }
 code_?:
-  uVar5 = func_?(&stack0xfffffff0);
-  func_?(uVar5);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  uVar6 = func_?(&stack0xfffffff0);
+  func_?(uVar6);
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -319,9 +321,10 @@ code_?:
         func_?();
       }
       pGVar8 = (GameObject *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pGVar8,UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_);
-      (in_stack_6->fields).highLightArrow = pGVar8;
+      ppGVar9 = &(in_stack_6->fields).highLightArrow;
+      *ppGVar9 = pGVar8;
       func_?();
-      pGVar8 = (in_stack_6->fields).highLightArrow;
+      pGVar8 = *ppGVar9;
       if (pGVar8 == (GameObject *)0x0) {
 code_?:
         func_?();

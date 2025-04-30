@@ -87,26 +87,28 @@ Byte__Array * MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionDa
   pBVar4 = (BytePacker *)pIVar3->damage;
   fVar5 = (pIVar3->impulse).x;
   fVar6 = (pIVar3->impulse).y;
-  puVar7 = (undefined *)(pIVar3->impulse).z;
+  puStack_7 = (undefined *)(pIVar3->impulse).z;
   cVar8 = pIVar3->playerKilledByType;
   BytePacker::BytePacker_Write(this_00,0,(MethodInfo *)0x0);
-  bVar9 = pIVar1->interactionType != 0;
-  if ((bool)bVar9) {
-    fVar5 = (float)(uint)pIVar1->interactionType;
+  value = pIVar1->interactionType;
+  fVar9 = (float)CONCAT31((int3)((uint)extraout_EAX >> 8),value);
+  bVar10 = value != 0;
+  if ((bool)bVar10) {
     fVar6 = 0.0;
     pBVar4 = this_00;
-    BytePacker::BytePacker_Write(this_00,pIVar1->interactionType,(MethodInfo *)0x0);
+    BytePacker::BytePacker_Write(this_00,value,(MethodInfo *)0x0);
+    fVar5 = fVar9;
   }
-  if ((pIVar1->damage == 0.0) || ((float)pBVar4 != 0.0)) {
+  if (pIVar1->damage == 0.0) {
 code_?:
-    fVar10 = (pIVar1->impulse).y;
+    fVar9 = (pIVar1->impulse).y;
     fVar11 = (pIVar1->impulse).x;
     fVar12 = (pIVar1->impulse).z;
-    if ((fVar11 * fVar11 + fVar10 * fVar10 + fVar12 * fVar12 <= 1e-05) || (1e-05 < fVar5 * fVar5 + fVar6 * fVar6 + (float)puVar7 * (float)puVar7)) {
+    if ((fVar11 * fVar11 + fVar9 * fVar9 + fVar12 * fVar12 <= 1e-05) || (1e-05 < fVar6 * fVar6 + fVar5 * fVar5 + (float)puStack_7 * (float)puStack_7)) {
 code_?:
       if ((pIVar1->playerKilledByType != 0) && (cVar8 == '\0')) {
         BytePacker::BytePacker_Write(this_00,pIVar1->playerKilledByType,(MethodInfo *)0x0);
-        bVar9 = bVar9 | 8;
+        bVar10 = bVar10 | 8;
       }
       if (cRam_? == '\0') {
         func_?();
@@ -117,7 +119,7 @@ code_?:
         pMVar13 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::MultiColumnCollectionHeader+ViewState+ColumnState]::List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray(pLVar2,MethodInfo__System__Collections__Generic__List<unsigned_char>__ToArray__);
         if (pMVar13 != (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0) {
           if (pMVar13->max_length != 0) {
-            *(byte *)&pMVar13->vector[0].index = bVar9;
+            *(byte *)&pMVar13->vector[0].index = bVar10;
             return (Byte__Array *)pMVar13;
           }
           goto code_?;
@@ -139,7 +141,7 @@ code_?:
           mscorlib.dll::System::Array::Array_Reverse((Array *)pBVar14,(MethodInfo *)0x0);
           if (pBVar14 != (Byte__Array *)0x0) {
             BytePacker::BytePacker_Write_2(this_00,pBVar14,0,pBVar14->max_length,(MethodInfo *)0x0);
-            bVar9 = bVar9 | 4;
+            bVar10 = bVar10 | 4;
             goto code_?;
           }
         }
@@ -147,14 +149,14 @@ code_?:
     }
   }
   else {
+    if ((float)pBVar4 != 0.0) goto code_?;
     pBVar14 = mscorlib.dll::System::BitConverter::BitConverter_GetBytes_8(pIVar1->damage,(MethodInfo *)0x0);
-    puVar7 = &UNK_?;
     mscorlib.dll::System::Array::Array_Reverse((Array *)pBVar14,(MethodInfo *)0x0);
     if (pBVar14 != (Byte__Array *)0x0) {
       pBVar4 = this_00;
       BytePacker::BytePacker_Write_2(this_00,pBVar14,0,pBVar14->max_length,(MethodInfo *)0x0);
       cVar8 = (char)((uint)pBVar4 >> 8);
-      bVar9 = bVar9 | 2;
+      bVar10 = bVar10 | 2;
       goto code_?;
     }
   }

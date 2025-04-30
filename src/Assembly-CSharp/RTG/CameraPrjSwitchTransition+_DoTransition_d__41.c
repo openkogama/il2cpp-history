@@ -18,7 +18,8 @@ bool Assembly-CSharp.dll::RTG::CameraPrjSwitchTransition+<DoTransition>d__41::Ca
     (this->fields)._targetFOV_5__3 = 0.0;
     this = (CameraPrjSwitchTransition_DoTransition_d_41 *)0x0;
     (pCVar1->fields)._frustumHeight_5__2 = fVar5 + fVar5;
-    if ((pCVar3->fields)._transitionType == 0) {
+    iVar2 = (pCVar3->fields)._transitionType;
+    if (iVar2 == 0) {
       pCVar4 = (pCVar3->fields)._targetCamera;
       if (pCVar4 == (Camera *)0x0) goto code_?;
       bVar6 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_orthographic(pCVar4,(MethodInfo *)0x0);
@@ -38,7 +39,7 @@ bool Assembly-CSharp.dll::RTG::CameraPrjSwitchTransition+<DoTransition>d__41::Ca
       (pCVar1->fields)._targetFOV_5__3 = fVar5;
       (pCVar3->fields)._transitionType = 1;
     }
-    else if ((pCVar3->fields)._transitionType == 1) {
+    else if (iVar2 == 1) {
       pCVar4 = (pCVar3->fields)._targetCamera;
       if (pCVar4 == (Camera *)0x0) goto code_?;
       this = (CameraPrjSwitchTransition_DoTransition_d_41 *)UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_fieldOfView(pCVar4,(MethodInfo *)0x0);
@@ -46,7 +47,7 @@ code_?:
       (pCVar1->fields)._targetFOV_5__3 = (pCVar3->fields)._camFieldOfView;
       (pCVar3->fields)._transitionType = 2;
     }
-    else if ((pCVar3->fields)._transitionType == 2) {
+    else if (iVar2 == 2) {
       pCVar4 = (pCVar3->fields)._targetCamera;
       if (pCVar4 == (Camera *)0x0) goto code_?;
       this = (CameraPrjSwitchTransition_DoTransition_d_41 *)UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_fieldOfView(pCVar4,(MethodInfo *)0x0);
@@ -58,9 +59,9 @@ code_?:
       (pCVar1->fields)._targetFOV_5__3 = fVar5;
       (pCVar3->fields)._transitionType = 1;
     }
+    pCVar7 = (pCVar3->fields).TransitionBegin;
     (pCVar3->fields)._progress = 0.0;
-    if ((pCVar3->fields).TransitionBegin != (CameraProjectionSwitchBeginHandler *)0x0) {
-      pCVar7 = (pCVar3->fields).TransitionBegin;
+    if (pCVar7 != (CameraProjectionSwitchBeginHandler *)0x0) {
       (*(pCVar7->fields)._._.invoke_impl)((pCVar7->fields)._._.method_code,(pCVar3->fields)._transitionType,(pCVar7->fields)._._.method);
     }
     fVar5 = 1.0 / (pCVar3->fields)._durationInSeconds;
@@ -69,8 +70,9 @@ code_?:
     pCVar4 = (pCVar3->fields)._targetCamera;
     if (pCVar4 == (Camera *)0x0) goto code_?;
     pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pCVar4,(MethodInfo *)0x0);
-    (pCVar1->fields).__targetTransform_5__6 = pTVar8;
-    func_?(&(pCVar1->fields).__targetTransform_5__6,pTVar8);
+    ppTVar9 = &(pCVar1->fields).__targetTransform_5__6;
+    *ppTVar9 = pTVar8;
+    func_?(ppTVar9,pTVar8);
     pCVar4 = (pCVar3->fields)._targetCamera;
     if (pCVar4 == (Camera *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_orthographic(pCVar4,0,(MethodInfo *)0x0);
@@ -79,11 +81,11 @@ code_?:
     UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_fieldOfView(pCVar4,(float)this,(MethodInfo *)0x0);
     pTVar8 = (pCVar1->fields).__targetTransform_5__6;
     if (pTVar8 == (Transform *)0x0) goto code_?;
-    pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffdc,pTVar8,(MethodInfo *)0x0);
-    fVar10 = pVVar9->y;
-    fVar5 = pVVar9->z;
-    (pCVar3->fields)._camRestorePosition.x = pVVar9->x;
-    (pCVar3->fields)._camRestorePosition.y = fVar10;
+    pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffd8,pTVar8,(MethodInfo *)0x0);
+    fVar11 = pVVar10->y;
+    fVar5 = pVVar10->z;
+    (pCVar3->fields)._camRestorePosition.x = pVVar10->x;
+    (pCVar3->fields)._camRestorePosition.y = fVar11;
     (pCVar3->fields)._camRestorePosition.z = fVar5;
   }
   else {
@@ -93,70 +95,72 @@ code_?:
     (this->fields).__1__state = -1;
     if (pCVar3 == (CameraPrjSwitchTransition *)0x0) goto code_?;
   }
-  pfVar11 = &(pCVar3->fields)._progress;
-  if (1.0 < *pfVar11 || *pfVar11 == 1.0) {
-    if ((pCVar3->fields).TransitionEnd != (CameraProjectionSwitchBeginHandler *)0x0) {
-      pCVar7 = (pCVar3->fields).TransitionEnd;
+  pfVar12 = &(pCVar3->fields)._progress;
+  if (1.0 < *pfVar12 || *pfVar12 == 1.0) {
+    pCVar7 = (pCVar3->fields).TransitionEnd;
+    if (pCVar7 != (CameraProjectionSwitchBeginHandler *)0x0) {
       (*(pCVar7->fields)._._.invoke_impl)((pCVar7->fields)._._.method_code,(pCVar3->fields)._transitionType,(pCVar7->fields)._._.method);
     }
+    ppIVar13 = &(pCVar3->fields)._transitionCrtn;
     (pCVar3->fields)._transitionType = 0;
     (pCVar3->fields)._progress = 0.0;
-    (pCVar3->fields)._transitionCrtn = (IEnumerator *)0x0;
-    func_?(&(pCVar3->fields)._transitionCrtn,0);
+    *ppIVar13 = (IEnumerator *)0x0;
+    func_?(ppIVar13,0);
     return 0;
   }
   pCVar4 = (pCVar3->fields)._targetCamera;
   if (pCVar4 == (Camera *)0x0) goto code_?;
-  fVar10 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_fieldOfView(pCVar4,(MethodInfo *)0x0);
+  fVar11 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_fieldOfView(pCVar4,(MethodInfo *)0x0);
   fVar5 = (pCVar1->fields)._fovSpeed_5__5;
-  fVar12 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-  UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_fieldOfView(pCVar4,fVar12 * fVar5 + fVar10,(MethodInfo *)0x0);
+  fVar14 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_fieldOfView(pCVar4,fVar14 * fVar5 + fVar11,(MethodInfo *)0x0);
   pCVar4 = (pCVar3->fields)._targetCamera;
   if (pCVar4 == (Camera *)0x0) goto code_?;
   this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pCVar4,(MethodInfo *)0x0);
   fVar5 = (pCVar3->fields)._camFocusPoint.z;
   pTVar8 = (pCVar1->fields).__targetTransform_5__6;
   if (pTVar8 == (Transform *)0x0) goto code_?;
-  uVar13 = ZEXT48(pTVar8);
-  pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward((Vector3 *)&stack0xffffffd0,pTVar8,(MethodInfo *)0x0);
+  uVar15 = ZEXT48(pTVar8);
+  pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward((Vector3 *)&stack0xffffffcc,pTVar8,(MethodInfo *)0x0);
   pCVar4 = (pCVar3->fields)._targetCamera;
-  uStack_14._0_4_ = pVVar9->x;
-  uStack_14._4_4_ = pVVar9->y;
-  fVar12 = pVVar9->z;
-  fVar10 = (pCVar1->fields)._frustumHeight_5__2;
+  uStack_16._0_4_ = pVVar10->x;
+  uStack_16._4_4_ = pVVar10->y;
+  fVar14 = pVVar10->z;
+  fVar11 = (pCVar1->fields)._frustumHeight_5__2;
   if ((TypeInfo__RTG__CameraEx->_1).cctor_finished_or_no_cctor == 0) {
-    uStack_14 = CONCAT44(TypeInfo__RTG__CameraEx,&UNK_?);
+    uStack_16 = CONCAT44(TypeInfo__RTG__CameraEx,&UNK_?);
     func_?();
   }
   if (pCVar4 == (Camera *)0x0) goto code_?;
-  fVar15 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_fieldOfView(pCVar4,(MethodInfo *)0x0);
-  dVar16 = (double)(fVar15 * 0.5 * 0.017453292);
+  fVar17 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_fieldOfView(pCVar4,(MethodInfo *)0x0);
+  dVar18 = (double)(fVar17 * 0.5 * 0.017453292);
   func_?();
-  fVar10 = (fVar10 * 0.5) / (float)dVar16;
+  fVar11 = (fVar11 * 0.5) / (float)dVar18;
   if (this_00 == (Transform *)0x0) goto code_?;
-  value.y = (float)(uVar13 >> 0x20) - uStack_14._4_4_ * fVar10;
-  value.x = (float)uVar13 - (float)uStack_14 * fVar10;
-  value.z = fVar5 - fVar12 * fVar10;
+  value.y = (float)(uVar15 >> 0x20) - uStack_16._4_4_ * fVar11;
+  value.x = (float)uVar15 - (float)uStack_16 * fVar11;
+  value.z = fVar5 - fVar14 * fVar11;
   UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position(this_00,value,(MethodInfo *)0x0);
   fVar5 = (pCVar3->fields)._progress;
-  fVar10 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-  fVar5 = fVar10 * (pCVar1->fields)._invDuration_5__4 + fVar5;
-  fVar10 = 1.0;
+  fVar11 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+  fVar5 = fVar11 * (pCVar1->fields)._invDuration_5__4 + fVar5;
+  fVar11 = 1.0;
   if (fVar5 <= 1.0) {
-    fVar10 = fVar5;
+    fVar11 = fVar5;
   }
-  (pCVar3->fields)._progress = fVar10;
-  pfVar11 = &(pCVar1->fields)._fovSpeed_5__5;
-  if (0.0 < *pfVar11 || *pfVar11 == 0.0) {
+  (pCVar3->fields)._progress = fVar11;
+  pfVar12 = &(pCVar1->fields)._fovSpeed_5__5;
+  if (0.0 < *pfVar12 || *pfVar12 == 0.0) {
 code_?:
     if ((pCVar1->fields)._fovSpeed_5__5 <= 0.0) {
 code_?:
-      if ((pCVar3->fields).TransitionUpdate != (CameraProjectionSwitchUpdateHandler *)0x0) {
-        pCVar17 = (pCVar3->fields).TransitionUpdate;
-        (*(pCVar17->fields)._._.invoke_impl)((pCVar17->fields)._._.method_code,(pCVar3->fields)._transitionType,(pCVar17->fields)._._.method);
+      pCVar19 = (pCVar3->fields).TransitionUpdate;
+      if (pCVar19 != (CameraProjectionSwitchUpdateHandler *)0x0) {
+        (*(pCVar19->fields)._._.invoke_impl)((pCVar19->fields)._._.method_code,(pCVar3->fields)._transitionType,(pCVar19->fields)._._.method);
       }
-      (pCVar1->fields).__2__current = (Object *)0x0;
-      func_?(&(pCVar1->fields).__2__current,0);
+      ppOVar20 = &(pCVar1->fields).__2__current;
+      *ppOVar20 = (Object *)0x0;
+      func_?(ppOVar20,0);
       (pCVar1->fields).__1__state = 2;
       return 1;
     }
@@ -186,8 +190,9 @@ code_?:
       pCVar4 = (pCVar3->fields)._targetCamera;
       if (pCVar4 != (Camera *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_fieldOfView(pCVar4,(pCVar3->fields)._camFieldOfView,(MethodInfo *)0x0);
-        if ((pCVar3->fields).TransitionUpdate != (CameraProjectionSwitchUpdateHandler *)0x0) {
-          (*(((pCVar3->fields).TransitionUpdate)->fields)._._.invoke_impl)();
+        pCVar19 = (pCVar3->fields).TransitionUpdate;
+        if (pCVar19 != (CameraProjectionSwitchUpdateHandler *)0x0) {
+          (*(pCVar19->fields)._._.invoke_impl)();
         }
         (pCVar1->fields).__2__current = (Object *)0x0;
         func_?();
@@ -198,8 +203,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar18 = (code *)swi(3);
-  bVar6 = (*pcVar18)();
+  pcVar21 = (code *)swi(3);
+  bVar6 = (*pcVar21)();
   return bVar6;
 }
 

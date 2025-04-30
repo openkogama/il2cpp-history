@@ -237,8 +237,9 @@ void Assembly-CSharp.dll::ShortcutManager::ShortcutManager__ctor(ShortcutManager
   }
   this_00 = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::Collections::Generic::Stack<ShortcutManager::ShortcutKey>_>);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,GamePassesHighScoreList+HighScoreListData]::Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData___ctor(this_00,MethodInfo__System__Collections__Generic__Dictionary<KogamaControls,_System::Collections::Generic::Stack<ShortcutManager::ShortcutKey>_>__Dictionary__);
-  (this->fields).shortCutKeys = (Dictionary_2_KogamaControls_Stack_1_ShortcutManager_ShortcutKey_ *)this_00;
-  func_?(&(this->fields).shortCutKeys,this_00);
+  ppDVar1 = &(this->fields).shortCutKeys;
+  *ppDVar1 = (Dictionary_2_KogamaControls_Stack_1_ShortcutManager_ShortcutKey_ *)this_00;
+  func_?(ppDVar1,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }

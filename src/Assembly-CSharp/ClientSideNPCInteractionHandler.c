@@ -53,18 +53,18 @@ bool Assembly-CSharp.dll::ClientSideNPCInteractionHandler::ClientSideNPCInteract
             uVar10 = 0;
             uVar11 = *(ushort *)(*piVar9 + 0xb6);
             if (uVar11 != 0) {
+              iVar12 = *(int *)(*piVar9 + 0x58);
               do {
-                if (*(IGUICrossHair__Class **)(*(int *)(*piVar9 + 0x58) + (uint)uVar10 * 8) == TypeInfo__IGUICrossHair) {
-                  iVar12 = *piVar9;
-                  iVar13 = *(int *)(*(int *)(iVar12 + 0x58) + 4 + (uint)uVar10 * 8) + 0x1b;
-                  (**(code **)(iVar12 + iVar13 * 8))(piVar9,*(undefined4 *)(iVar12 + 4 + iVar13 * 8));
+                if (*(IGUICrossHair__Class **)(iVar12 + (uint)uVar10 * 8) == TypeInfo__IGUICrossHair) {
+                  iVar12 = *(int *)(iVar12 + 4 + (uint)uVar10 * 8) + 0x1b;
+                  (**(code **)(*piVar9 + iVar12 * 8))(piVar9,*(undefined4 *)(*piVar9 + 4 + iVar12 * 8));
                   return 1;
                 }
                 uVar10 = uVar10 + 1;
               } while (uVar10 < uVar11);
             }
-            puVar14 = (undefined4 *)func_?(piVar9,TypeInfo__IGUICrossHair,3);
-            (*(code *)*puVar14)(piVar9,puVar14[1]);
+            puVar13 = (undefined4 *)func_?(piVar9,TypeInfo__IGUICrossHair,3);
+            (*(code *)*puVar13)(piVar9,puVar13[1]);
             return 1;
           }
         }
@@ -96,8 +96,8 @@ bool Assembly-CSharp.dll::ClientSideNPCInteractionHandler::ClientSideNPCInteract
   }
 code_?:
   func_?();
-  pcVar15 = (code *)swi(3);
-  bVar2 = (*pcVar15)();
+  pcVar14 = (code *)swi(3);
+  bVar2 = (*pcVar14)();
   return bVar2;
 }
 
@@ -118,14 +118,16 @@ void Assembly-CSharp.dll::ClientSideNPCInteractionHandler::ClientSideNPCInteract
   if (pHVar1 != (HashSet_1_System_ByteEnum_ *)0x0) {
     System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::HashSet_1_System_ByteEnum__System_Collections_Generic_ICollection_T__Add(pHVar1,8,MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::InteractionPackageType>__Add_MV__WorldObject__InteractionPackageType_);
     System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::HashSet_1_System_ByteEnum__System_Collections_Generic_ICollection_T__Add(pHVar1,0x1b,MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::InteractionPackageType>__Add_MV__WorldObject__InteractionPackageType_);
-    (this->fields).unableToDamageNPCs = (HashSet_1_MV_WorldObject_InteractionPackageType_ *)pHVar1;
-    func_?(&(this->fields).unableToDamageNPCs,pHVar1);
+    ppHVar2 = &(this->fields).unableToDamageNPCs;
+    *ppHVar2 = (HashSet_1_MV_WorldObject_InteractionPackageType_ *)pHVar1;
+    func_?(ppHVar2,pHVar1);
     pHVar1 = (HashSet_1_System_ByteEnum_ *)func_?(TypeInfo__System__Collections__Generic__HashSet<MV::WorldObject::InteractionPackageType>);
     System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::HashSet_1_System_ByteEnum___ctor(pHVar1,MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::InteractionPackageType>__HashSet__);
     if (pHVar1 != (HashSet_1_System_ByteEnum_ *)0x0) {
       System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::HashSet_1_System_ByteEnum__System_Collections_Generic_ICollection_T__Add(pHVar1,0x1b,MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::InteractionPackageType>__Add_MV__WorldObject__InteractionPackageType_);
-      (this->fields).friendlyInteractions = (HashSet_1_MV_WorldObject_InteractionPackageType_ *)pHVar1;
-      func_?(&(this->fields).friendlyInteractions,pHVar1);
+      ppHVar2 = &(this->fields).friendlyInteractions;
+      *ppHVar2 = (HashSet_1_MV_WorldObject_InteractionPackageType_ *)pHVar1;
+      func_?(ppHVar2,pHVar1);
       (this->fields).team = 5;
       (this->fields)._._.findWorldObjectParent = 1;
       UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor((MonoBehaviour *)this,(MethodInfo *)0x0);
@@ -133,8 +135,8 @@ void Assembly-CSharp.dll::ClientSideNPCInteractionHandler::ClientSideNPCInteract
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

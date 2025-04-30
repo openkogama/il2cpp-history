@@ -40,22 +40,21 @@ void Assembly-CSharp.dll::PlayerElementHold::PlayerElementHold_ActivateSubscribe
         if (pTVar1 != (Text *)0x0) {
           (*(code *)(pTVar1->klass->vtable).set_color.method)(pTVar1,pCVar3->r,pCVar3->g,pCVar3->b,pCVar3->a,(pTVar1->klass->vtable).get_raycastTarget.methodPtr);
           index = 0;
-          pLVar4 = (this->fields).backgrounds;
-          while (pLVar4 != (List_1_UnityEngine_UI_Image_ *)0x0) {
-            if ((pLVar4->fields)._size <= index) {
+          this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).backgrounds;
+          while (this_02 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+            if ((this_02->fields)._size <= index) {
               return;
             }
-            this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).backgrounds;
             if (this_02 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) break;
-            RVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_02,index,MethodInfo__System__Collections__Generic__List<UnityEngine::UI::Image>__get_Item_int_);
+            RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_02,index,MethodInfo__System__Collections__Generic__List<UnityEngine::UI::Image>__get_Item_int_);
             if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
               func_?(TypeInfo__Styles);
             }
             pCVar3 = Styles::Styles_GetColor(&CStack_2,ColorStyle__Enum_Gray,(MethodInfo *)0x0);
-            if (RVar5 == (RegexCharClass_SingleRange)0x0) break;
-            (**(code **)(*(int *)RVar5 + 0x178))(RVar5,pCVar3->r,pCVar3->g,pCVar3->b,pCVar3->a,*(undefined4 *)(*(int *)RVar5 + 0x17c));
+            if (RVar4 == (RegexCharClass_SingleRange)0x0) break;
+            (**(code **)(*(int *)RVar4 + 0x178))(RVar4,pCVar3->r,pCVar3->g,pCVar3->b,pCVar3->a,*(undefined4 *)(*(int *)RVar4 + 0x17c));
             index = index + 1;
-            pLVar4 = (this->fields).backgrounds;
+            this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).backgrounds;
           }
         }
       }
@@ -63,8 +62,8 @@ void Assembly-CSharp.dll::PlayerElementHold::PlayerElementHold_ActivateSubscribe
   }
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -99,8 +98,8 @@ void Assembly-CSharp.dll::PlayerElementHold::PlayerElementHold_Initialize(Player
         pIVar4 = (this->fields).redDot;
         if ((pIVar4 == (Image *)0x0) || (player = (MVPlayer *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pIVar4,(MethodInfo *)0x0), player == (MVPlayer *)0x0)) goto code_?;
         scoreValue = 0;
-        typeToDisplay = (GameStatCounterType__Enum)(bVar6 ^ 1);
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive((GameObject *)player,bVar6 ^ 1,(MethodInfo *)0x0);
+        typeToDisplay = (GameStatCounterType__Enum)(bVar6 == 0);
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive((GameObject *)player,bVar6 == 0,(MethodInfo *)0x0);
       }
       if (bVar3 == false) {
 code_?:
@@ -110,30 +109,29 @@ code_?:
           bVar6 = (bool)((uint)this_01 >> 0x18);
           if ((MVLocalPlayer *)player == pMVar7) {
             iVar8 = 0;
-            pLVar9 = (this->fields).backgrounds;
-            while (pLVar9 != (List_1_UnityEngine_UI_Image_ *)0x0) {
+            pLVar9 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).backgrounds;
+            while (pLVar9 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
               bVar6 = (bool)((uint)this_01 >> 0x18);
               if ((pLVar9->fields)._size <= iVar8) goto code_?;
-              pLVar10 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).backgrounds;
-              if (pLVar10 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) break;
-              RVar11 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(pLVar10,iVar8,MethodInfo__System__Collections__Generic__List<UnityEngine::UI::Image>__get_Item_int_);
+              if (pLVar9 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) break;
+              RVar10 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(pLVar9,iVar8,MethodInfo__System__Collections__Generic__List<UnityEngine::UI::Image>__get_Item_int_);
               if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
               }
               Styles::Styles_GetColor((Color *)&stack0xffffffe4,ColorStyle__Enum_LocalPlayerBackground,(MethodInfo *)0x0);
-              if (RVar11 == (RegexCharClass_SingleRange)0x0) break;
+              if (RVar10 == (RegexCharClass_SingleRange)0x0) break;
               scoreValue = (int32_t)&UNK_?;
-              (**(code **)(*(int *)RVar11 + 0x178))();
+              (**(code **)(*(int *)RVar10 + 0x178))();
               iVar8 = iVar8 + 1;
-              pLVar9 = (this->fields).backgrounds;
+              pLVar9 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).backgrounds;
             }
           }
           else {
 code_?:
             this_00 = (player->fields)._SubscriptionRules_k__BackingField;
             if (this_00 != (SubscriptionRulesWrapper *)0x0) {
-              bVar12 = MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrapper::SubscriptionRulesWrapper_HasBenefit(this_00,SubscriptionBenefit__Enum_XPBoost,(MethodInfo *)0x0);
-              if (bVar12 == 0) {
+              bVar11 = MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrapper::SubscriptionRulesWrapper_HasBenefit(this_00,SubscriptionBenefit__Enum_XPBoost,(MethodInfo *)0x0);
+              if (bVar11 == 0) {
                 pGVar5 = (this->fields).memberUI;
                 if (pGVar5 == (GameObject *)0x0) goto code_?;
                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar5,0,(MethodInfo *)0x0);
@@ -141,22 +139,22 @@ code_?:
               else {
                 PlayerElementHold_ActivateSubscriberUI(this,bVar6,(MethodInfo *)0x0);
               }
-              pTVar13 = (this->fields).playerName;
-              if (((player->fields)._UserProfileData_k__BackingField != (UserProfileData *)0x0) && (pTVar13 != (Text *)0x0)) {
-                (*(code *)(pTVar13->klass->vtable).set_text.method)();
-                pTVar13 = (this->fields).score;
+              pTVar12 = (this->fields).playerName;
+              if (((player->fields)._UserProfileData_k__BackingField != (UserProfileData *)0x0) && (pTVar12 != (Text *)0x0)) {
+                (*(code *)(pTVar12->klass->vtable).set_text.method)();
+                pTVar12 = (this->fields).score;
                 if ((char)typeToDisplay == '\0') {
-                  if ((pTVar13 != (Text *)0x0) && (pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar13,(MethodInfo *)0x0), pGVar5 != (GameObject *)0x0)) {
+                  if ((pTVar12 != (Text *)0x0) && (pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar12,(MethodInfo *)0x0), pGVar5 != (GameObject *)0x0)) {
                     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar5,0,(MethodInfo *)0x0);
                     return;
                   }
                 }
-                else if ((pTVar13 != (Text *)0x0) && (pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar13,(MethodInfo *)0x0), pGVar5 != (GameObject *)0x0)) {
+                else if ((pTVar12 != (Text *)0x0) && (pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar12,(MethodInfo *)0x0), pGVar5 != (GameObject *)0x0)) {
                   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(pGVar5,1,(MethodInfo *)0x0);
-                  pTVar13 = (this->fields).score;
+                  pTVar12 = (this->fields).score;
                   WinningConditionControl::WinningConditionControl_MakeIntoScoreText(scoreValue,typeToDisplay,(MethodInfo *)0x0);
-                  if (pTVar13 != (Text *)0x0) {
-                    (*(code *)(pTVar13->klass->vtable).set_text.method)();
+                  if (pTVar12 != (Text *)0x0) {
+                    (*(code *)(pTVar12->klass->vtable).set_text.method)();
                     return;
                   }
                 }
@@ -166,30 +164,29 @@ code_?:
         }
       }
       else {
-        pTVar13 = (this->fields).playerName;
+        pTVar12 = (this->fields).playerName;
         if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
         Styles::Styles_GetColor((Color *)&stack0xffffffe4,ColorStyle__Enum_FriendGreen,(MethodInfo *)0x0);
-        if (pTVar13 != (Text *)0x0) {
+        if (pTVar12 != (Text *)0x0) {
           scoreValue = (int32_t)&UNK_?;
-          (*(code *)(pTVar13->klass->vtable).set_color.method)();
+          (*(code *)(pTVar12->klass->vtable).set_color.method)();
           iVar8 = 0;
-          pLVar9 = (this->fields).backgrounds;
-          while (pLVar9 != (List_1_UnityEngine_UI_Image_ *)0x0) {
+          pLVar9 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).backgrounds;
+          while (pLVar9 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
             if ((pLVar9->fields)._size <= iVar8) goto code_?;
-            pLVar10 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).backgrounds;
-            if (pLVar10 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) break;
-            RVar11 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(pLVar10,iVar8,MethodInfo__System__Collections__Generic__List<UnityEngine::UI::Image>__get_Item_int_);
+            if (pLVar9 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) break;
+            RVar10 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(pLVar9,iVar8,MethodInfo__System__Collections__Generic__List<UnityEngine::UI::Image>__get_Item_int_);
             if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
             Styles::Styles_GetColor((Color *)&stack0xffffffe4,ColorStyle__Enum_FriendListBackground,(MethodInfo *)0x0);
-            if (RVar11 == (RegexCharClass_SingleRange)0x0) break;
+            if (RVar10 == (RegexCharClass_SingleRange)0x0) break;
             scoreValue = (int32_t)&UNK_?;
-            (**(code **)(*(int *)RVar11 + 0x178))();
+            (**(code **)(*(int *)RVar10 + 0x178))();
             iVar8 = iVar8 + 1;
-            pLVar9 = (this->fields).backgrounds;
+            pLVar9 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).backgrounds;
           }
         }
       }
@@ -197,8 +194,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

@@ -15,7 +15,6 @@ void Assembly-CSharp.dll::DebriefingWinnerGUI::DebriefingWinnerGUI_ActivateScore
     if ((pLVar1->fields)._size <= index) {
       return;
     }
-    pLVar1 = (this->fields).winConImages;
     if (pLVar1 == (List_1_DebriefingWinnerGUI_WinningConditionData_ *)0x0) break;
     pIVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Linq::Expressions::Interpreter::InstructionList+DebugView+InstructionView]::List_1_System_Linq_Expressions_Interpreter_InstructionList_DebugView_InstructionView__get_Item(&IStack_3,(List_1_System_Linq_Expressions_Interpreter_InstructionList_DebugView_InstructionView_ *)pLVar1,index,MethodInfo__System__Collections__Generic__List<DebriefingWinnerGUI::WinningConditionData>__get_Item_int_);
     pLVar1 = (this->fields).winConImages;
@@ -82,7 +81,6 @@ void Assembly-CSharp.dll::DebriefingWinnerGUI::DebriefingWinnerGUI_SetAdditional
     if ((pLVar2->fields)._size <= index) {
       return;
     }
-    pLVar2 = (this->fields).winConImages;
     if (pLVar2 == (List_1_DebriefingWinnerGUI_WinningConditionData_ *)0x0) break;
     pIVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Linq::Expressions::Interpreter::InstructionList+DebugView+InstructionView]::List_1_System_Linq_Expressions_Interpreter_InstructionList_DebugView_InstructionView__get_Item(&IStack_4,(List_1_System_Linq_Expressions_Interpreter_InstructionList_DebugView_InstructionView_ *)pLVar2,index,MethodInfo__System__Collections__Generic__List<DebriefingWinnerGUI::WinningConditionData>__get_Item_int_);
     IStack_4._instruction = pIVar3->_instruction;
