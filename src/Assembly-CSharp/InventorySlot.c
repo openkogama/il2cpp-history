@@ -81,40 +81,41 @@ void Assembly-CSharp.dll::InventorySlot::InventorySlot_OnDrop
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
-    value[1].klass = (Object__Class *)eventData;
-    func_?(value + 1,eventData);
+    pOVar1 = value + 1;
+    pOVar1->klass = (Object__Class *)eventData;
+    func_?(pOVar1,eventData);
     value[1].monitor = (MonitorData *)this;
     func_?(&value[1].monitor,this);
-    if (value[1].klass != (Object__Class *)0x0) {
-      pGVar1 = UnityEngine.UI.dll::UnityEngine::EventSystems::BaseEventData::
-               BaseEventData_get_selectedObject((BaseEventData *)value[1].klass,(MethodInfo *)0x0);
+    if (pOVar1->klass != (Object__Class *)0x0) {
+      pGVar2 = UnityEngine.UI.dll::UnityEngine::EventSystems::BaseEventData::
+               BaseEventData_get_selectedObject((BaseEventData *)pOVar1->klass,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                        ((Object_1 *)pGVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar2 == 0) {
+      bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                        ((Object_1 *)pGVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
+      if (bVar3 == 0) {
         return;
       }
-      if ((value[1].klass != (Object__Class *)0x0) &&
-         (pGVar1 = UnityEngine.UI.dll::UnityEngine::EventSystems::BaseEventData::
+      if ((pOVar1->klass != (Object__Class *)0x0) &&
+         (pGVar2 = UnityEngine.UI.dll::UnityEngine::EventSystems::BaseEventData::
                    BaseEventData_get_selectedObject
-                             ((BaseEventData *)value[1].klass,(MethodInfo *)0x0),
-         pGVar1 != (GameObject *)0x0)) {
+                             ((BaseEventData *)pOVar1->klass,(MethodInfo *)0x0),
+         pGVar2 != (GameObject *)0x0)) {
         x = (Object_1 *)
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
-                      (pGVar1,
+                      (pGVar2,
                        InventoryItemMetaData_MethodInfo__UnityEngine__GameObject__GetComponent<InventoryItemMetaData>__
                       );
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UnityEngine__Object);
         }
-        bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+        bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                           (x,(Object_1 *)0x0,(MethodInfo *)0x0);
-        if (bVar2 == 0) {
+        if (bVar3 == 0) {
           return;
         }
-        pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+        pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)this,(MethodInfo *)0x0);
         callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
@@ -127,7 +128,7 @@ void Assembly-CSharp.dll::InventorySlot::InventorySlot_OnDrop
           func_?();
         }
         UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                  (pGVar1,(BaseEventData *)0x0,callbackFunction,
+                  (pGVar2,(BaseEventData *)0x0,callbackFunction,
                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IGameObjectDroppedInSlot>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IGameObjectDroppedInSlot>_
                   );
         return;
@@ -135,8 +136,8 @@ void Assembly-CSharp.dll::InventorySlot::InventorySlot_OnDrop
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

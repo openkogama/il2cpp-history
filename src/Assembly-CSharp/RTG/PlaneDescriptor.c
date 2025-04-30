@@ -93,9 +93,9 @@ void Assembly-CSharp.dll::RTG::PlaneDescriptor::PlaneDescriptor__ctor
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                   ((Object *)pAVar11,ExceptionArgument__Enum_obj,(MethodInfo *)pAVar10);
         (pAVar11->fields)._sign = (int32_t)uStack_5._4_4_;
-        (pAVar11->fields)._index = iVar1;
-        this->_firstAxisDescriptor = pAVar11;
         method_01 = (MethodInfo *)&this->_firstAxisDescriptor;
+        (pAVar11->fields)._index = iVar1;
+        *(AxisDescriptor **)method_01 = pAVar11;
         func_?(method_01,pAVar11);
         if (cRam_? == '\0') {
           uStack_5._4_4_ = &TypeInfo__RTG__AxisDescriptor;

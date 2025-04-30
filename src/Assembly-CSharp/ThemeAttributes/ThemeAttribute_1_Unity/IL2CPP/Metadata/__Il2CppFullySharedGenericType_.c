@@ -9,18 +9,19 @@ void Assembly-CSharp.dll::ThemeAttributes::ThemeAttribute`1[Unity::IL2CPP::Metad
 
 {
   pMVar1 = method;
-  uVar2 = (method->klass->rgctx_data[1].klass)->actualSize;
+  pIVar2 = method->klass->rgctx_data;
+  uVar3 = (pIVar2[1].klass)->actualSize;
   func_?();
-  uVar3 = func_?(this,pMVar1->klass->rgctx_data->klass->fields);
-  func_?(&stack0xfffffff0,uVar3,uVar2);
-  pTVar4 = this;
-  pTVar5 = (ThemeAttribute_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)&stack0xfffffff0;
+  method = (MethodInfo *)&stack0xfffffff0;
+  uVar4 = func_?(this,pIVar2->klass->fields);
+  pMVar5 = method;
+  func_?(method,uVar4,uVar3);
   if (-1 < (int)(pMVar1->klass->rgctx_data[1].method)->return_type) {
-    pTVar5 = unaff_EDI;
+    pMVar5 = (MethodInfo *)pMVar5->methodPointer;
   }
   pIVar6 = this->klass[1]._0.image;
-  this = pTVar5;
-  (*(code *)pIVar6->assembly)(pIVar6->nameNoExt,pIVar6,pTVar4,&this,pTVar5);
+  method = pMVar5;
+  (*(code *)pIVar6->assembly)(pIVar6->nameNoExt,pIVar6,this,&method,pMVar5);
   return;
 }
 

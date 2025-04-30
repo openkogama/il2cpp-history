@@ -64,40 +64,42 @@ void Assembly-CSharp.dll::XpBoostParticlePreviewer::XpBoostParticlePreviewer_Ini
                  RenderTexture_GetTemporary_4
                            (0,textureHeight,0x10,RenderTextureFormat__Enum_ARGB32,
                             RenderTextureReadWrite__Enum_Default,2,(MethodInfo *)0x0);
-        (this->fields).previewTexture = pRVar4;
+        ppRVar5 = &(this->fields).previewTexture;
+        *ppRVar5 = pRVar4;
         func_?();
-        pCVar5 = (this->fields).previewCam;
-        if (pCVar5 != (Camera *)0x0) {
+        pCVar6 = (this->fields).previewCam;
+        if (pCVar6 != (Camera *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_targetTexture
-                    (pCVar5,(this->fields).previewTexture,(MethodInfo *)0x0);
+                    (pCVar6,*ppRVar5,(MethodInfo *)0x0);
           pPVar1 = (this->fields).xpBoostParticles;
           if (pPVar1 != (ParticleSystem *)0x0) {
             pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                                ((Component *)pPVar1,(MethodInfo *)0x0);
-            (this->fields)._PreviewGameObject_k__BackingField = pGVar2;
-            func_?(&(this->fields)._PreviewGameObject_k__BackingField,pGVar2);
-            pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+            ppGVar7 = &(this->fields)._PreviewGameObject_k__BackingField;
+            *ppGVar7 = pGVar2;
+            func_?(ppGVar7,pGVar2);
+            pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                                ((Component *)this,(MethodInfo *)0x0);
-            if (pTVar6 != (Transform *)0x0) {
+            if (pTVar8 != (Transform *)0x0) {
               value.y = previewPosition.y;
               value.x = (float)pRVar4;
               value.z = previewPosition.z;
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                        (pTVar6,value,(MethodInfo *)0x0);
-              pCVar5 = (this->fields).previewCam;
-              if (pCVar5 != (Camera *)0x0) {
-                pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                   ((Component *)pCVar5,(MethodInfo *)0x0);
+                        (pTVar8,value,(MethodInfo *)0x0);
+              pCVar6 = (this->fields).previewCam;
+              if (pCVar6 != (Camera *)0x0) {
+                pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                   ((Component *)pCVar6,(MethodInfo *)0x0);
                 pPVar1 = (this->fields).xpBoostParticles;
                 if (pPVar1 != (ParticleSystem *)0x0) {
                   this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                             Component_get_transform((Component *)pPVar1,(MethodInfo *)0x0);
                   if (this_00 != (Transform *)0x0) {
-                    pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                             Transform_get_position(&VStack_8,this_00,(MethodInfo *)0x0);
-                    if (pTVar6 != (Transform *)0x0) {
+                    pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                              Transform_get_position(&VStack_10,this_00,(MethodInfo *)0x0);
+                    if (pTVar8 != (Transform *)0x0) {
                       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_LookAt_2
-                                (pTVar6,*pVVar7,(MethodInfo *)0x0);
+                                (pTVar8,*pVVar9,(MethodInfo *)0x0);
                       return;
                     }
                   }
@@ -110,8 +112,8 @@ void Assembly-CSharp.dll::XpBoostParticlePreviewer::XpBoostParticlePreviewer_Ini
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -143,7 +145,8 @@ void Assembly-CSharp.dll::XpBoostParticlePreviewer::XpBoostParticlePreviewer_OnD
     UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_targetTexture
               (pCVar1,(RenderTexture *)0x0,(MethodInfo *)0x0);
   }
-  x = (this->fields).previewTexture;
+  ppRVar4 = &(this->fields).previewTexture;
+  x = *ppRVar4;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
@@ -151,8 +154,8 @@ void Assembly-CSharp.dll::XpBoostParticlePreviewer::XpBoostParticlePreviewer_OnD
                     ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
   if (bVar2 != 0) {
     UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_ReleaseTemporary
-              ((this->fields).previewTexture,(MethodInfo *)0x0);
-    (this->fields).previewTexture = (RenderTexture *)0x0;
+              (*ppRVar4,(MethodInfo *)0x0);
+    *ppRVar4 = (RenderTexture *)0x0;
     func_?();
   }
   obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject

@@ -253,11 +253,16 @@ void Assembly-CSharp.dll::ThemeAttributes::ColorAttribute::ColorAttribute_Initia
                        System__Collections__Generic__Dictionary<System::Object,_System::Object>_MethodInfo__ThemeSettings__SettingsWrapper__GetValueForAttribute<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>_ThemeAttributes__ThemeAttribute_
                       );
     pCVar1 = ColorAttribute_ConvertToColor((Color *)&puStack_2,value,(MethodInfo *)0x0);
-    fVar3 = _UNK_?;
-    fVar4 = pCVar1->r;
-    fVar5 = pCVar1->g;
-    fVar6 = pCVar1->b;
-    fVar7 = pCVar1->a;
+    fVar3 = pCVar1->r;
+    fVar4 = pCVar1->g;
+    fVar5 = pCVar1->b;
+    fVar6 = pCVar1->a;
+    if (fVar3 < 0.0) {
+      fVar3 = 0.0;
+    }
+    else if (_UNK_? < fVar3) {
+      fVar3 = _UNK_?;
+    }
     if (fVar4 < 0.0) {
       fVar4 = 0.0;
     }
@@ -276,25 +281,15 @@ void Assembly-CSharp.dll::ThemeAttributes::ColorAttribute::ColorAttribute_Initia
     else if (_UNK_? < fVar6) {
       fVar6 = _UNK_?;
     }
-    if (fVar7 < 0.0) {
-      fVar7 = 0.0;
-    }
-    else if (_UNK_? < fVar7) {
-      (this->fields)._._.value.r = fVar4;
-      (this->fields)._._.value.g = fVar5;
-      (this->fields)._._.value.b = fVar6;
-      (this->fields)._._.value.a = fVar3;
-      return;
-    }
-    (this->fields)._._.value.r = fVar4;
-    (this->fields)._._.value.g = fVar5;
-    (this->fields)._._.value.b = fVar6;
-    (this->fields)._._.value.a = fVar7;
+    (this->fields)._._.value.r = fVar3;
+    (this->fields)._._.value.g = fVar4;
+    (this->fields)._._.value.b = fVar5;
+    (this->fields)._._.value.a = fVar6;
     return;
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

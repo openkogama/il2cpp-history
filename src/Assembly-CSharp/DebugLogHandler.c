@@ -94,7 +94,7 @@ bool Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_AddLogToLogContext
           if ((this->fields).maxLogContextQueueCount < (pQVar3->fields)._size) {
             mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
             Queue_1_System_Object__Dequeue
-                      ((Queue_1_System_Object_ *)(this->fields).logContextQueue,
+                      ((Queue_1_System_Object_ *)pQVar3,
                        MethodInfo__System__Collections__Generic__Queue<System::Collections::Generic::Dictionary<System::String,_System::Object>_>__Dequeue__
                       );
           }
@@ -132,13 +132,10 @@ String * Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_CleanStackTrace
                          (stackTrace,pSVar1,StringSplitOptions__Enum_RemoveEmptyEntries,
                           (MethodInfo *)0x0);
       if (pSVar1 != (String__Array *)0x0) {
-        if (pSVar1->max_length != 2) {
-          return stackTrace;
-        }
-        if (1 < pSVar1->max_length) {
+        if (pSVar1->max_length == 2) {
           return pSVar1->vector[1];
         }
-        goto code_?;
+        return stackTrace;
       }
     }
   }
@@ -193,8 +190,10 @@ void Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_Destroy
       *unaff_FS_OFFSET = uStack_3;
       return;
     }
+    pPVar4 = (this->fields).kogamaLogHandler;
+    ppPVar5 = &(this->fields).kogamaLogHandler;
     uStack_1 = 0;
-    if ((this->fields).kogamaLogHandler == (ProxyLogHandler *)0x0) {
+    if (pPVar4 == (ProxyLogHandler *)0x0) {
 code_?:
       this_02 = (Application_LogCallback *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::Application+LogCallback::
@@ -210,7 +209,6 @@ code_?:
       *unaff_FS_OFFSET = uStack_3;
       return;
     }
-    pPVar4 = (this->fields).kogamaLogHandler;
     if (cRam_? == '\0') {
       func_?();
       func_?();
@@ -226,10 +224,10 @@ code_?:
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
-    pIVar5 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
-    if (pIVar5 != (ILogger_1 *)0x0) {
-      func_?(1,TypeInfo__UnityEngine__ILogger,pIVar5,(pPVar4->fields).defaultLogHandler);
-      pPVar4 = (this->fields).kogamaLogHandler;
+    pIVar6 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
+    if (pIVar6 != (ILogger_1 *)0x0) {
+      func_?(1,TypeInfo__UnityEngine__ILogger,pIVar6,(pPVar4->fields).defaultLogHandler);
+      pPVar4 = *ppPVar5;
       this_01 = (EventHandler_1_Object_ *)
                 func_?(TypeInfo__System__EventHandler<ProxyLogHandler::LogFormatData>);
       mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
@@ -240,7 +238,7 @@ code_?:
         ProxyLogHandler::ProxyLogHandler_remove_OnLogReceived
                   (pPVar4,(EventHandler_1_ProxyLogHandler_LogFormatData_ *)this_01,(MethodInfo *)0x0
                   );
-        (this->fields).kogamaLogHandler = (ProxyLogHandler *)0x0;
+        *ppPVar5 = (ProxyLogHandler *)0x0;
         func_?();
         goto code_?;
       }
@@ -248,8 +246,8 @@ code_?:
   }
   func_?();
   func_?(&stack0xffffffe8,&UNK_?);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -292,46 +290,40 @@ String * Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_GenerateSystemInf
   }
   puStack_4 = puVar5;
   pSVar6 = ::StringLiteral__;
-  DStack_7._current.value = (Object *)0x0;
-  DStack_7._getEnumeratorRetType = 0;
-  pSStack_8 = ::StringLiteral__;
-  DStack_7._dictionary = (Dictionary_2_System_Object_System_Object_ *)0x0;
-  DStack_7._version = 0;
-  DStack_7._index = 0;
-  DStack_7._current.key = (Object *)0x0;
+  pSStack_7 = ::StringLiteral__;
   if (systemInfo != (Dictionary_2_System_String_System_String_ *)0x0) {
-    pDVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+    pDVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
              ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
                        ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
                         &stack0xffffffac,(Dictionary_2_System_UInt32_System_Object_ *)systemInfo,
                         MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__GetEnumerator__
                        );
-    uStack_10 = 0;
-    DStack_7._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar9->_dictionary;
-    DStack_7._version = pDVar9->_version;
-    DStack_7._index = pDVar9->_index;
-    DStack_7._current.key = (Object *)(pDVar9->_current).key;
-    DStack_7._16_8_ = *(undefined8 *)&(pDVar9->_current).value;
+    uStack_9 = 0;
+    DStack_10._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar8->_dictionary;
+    DStack_10._version = pDVar8->_version;
+    DStack_10._index = pDVar8->_index;
+    DStack_10._current.key = (Object *)(pDVar8->_current).key;
+    DStack_10._16_8_ = *(undefined8 *)&(pDVar8->_current).value;
     uStack_1 = 1;
-    pDStack_11 = &DStack_7;
+    pDStack_11 = &DStack_10;
     while( true ) {
       bVar12 = mscorlib.dll::System::Collections::Generic::
               Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Object]::
               Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
-                        (&DStack_7,
+                        (&DStack_10,
                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_System::String>__MoveNext__
                         );
       if (bVar12 == 0) break;
       str1 = mscorlib.dll::System::String::String_Format_1
-                       (StringLiteral__0____1_u000A,DStack_7._current.key,DStack_7._current.value,
+                       (StringLiteral__0____1_u000A,DStack_10._current.key,DStack_10._current.value,
                         (MethodInfo *)0x0);
       in_stack_13 = (MethodInfo *)&UNK_?;
       pSVar6 = mscorlib.dll::System::String::String_Concat_3(pSVar6,str1,(MethodInfo *)0x0);
-      pSStack_8 = pSVar6;
+      pSStack_7 = pSVar6;
     }
     uStack_1 = 0xffffffff;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)&DStack_7,
+              ((Object *)&DStack_10,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_System::String>__Dispose__
                ,in_stack_13);
@@ -720,36 +712,32 @@ String * Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_GetLogContext
   }
   puStack_4 = puVar5;
   pSVar6 = ::StringLiteral__;
-  QStack_7._q = (Queue_1_System_Object_ *)0x0;
-  QStack_7._version = 0;
-  QStack_7._index = 0;
-  QStack_7._currentElement = (Object *)0x0;
+  DStack_7._dictionary = (Dictionary_2_System_Object_System_Object_ *)0x0;
+  DStack_7._version = 0;
+  DStack_7._index = 0;
+  DStack_7._current.key = (Object *)0x0;
   pSStack_8 = ::StringLiteral__;
   this_00 = (this->fields).logContextQueue;
-  DStack_9._current.value = (Object *)0x0;
-  DStack_9._getEnumeratorRetType = 0;
-  DStack_9._dictionary = (Dictionary_2_System_Object_System_Object_ *)0x0;
-  DStack_9._version = 0;
-  DStack_9._index = 0;
-  DStack_9._current.key = (Object *)0x0;
+  DStack_7._current.value = (Object *)0x0;
+  DStack_7._getEnumeratorRetType = 0;
   if (this_00 != (Queue_1_Dictionary_2_System_String_System_Object_ *)0x0) {
-    pQVar10 = mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
+    pQVar9 = mscorlib.dll::System::Collections::Generic::Queue`1[System::Object]::
              Queue_1_System_Object__GetEnumerator
-                       (&QStack_11,(Queue_1_System_Object_ *)this_00,
+                       (&QStack_10,(Queue_1_System_Object_ *)this_00,
                         MethodInfo__System__Collections__Generic__Queue<System::Collections::Generic::Dictionary<System::String,_System::Object>_>__GetEnumerator__
                        );
-    uStack_12 = 0;
-    QStack_7._q = pQVar10->_q;
-    QStack_7._version = pQVar10->_version;
-    QStack_7._index = pQVar10->_index;
-    QStack_7._currentElement = pQVar10->_currentElement;
-    pQStack_13 = &QStack_7;
+    uStack_11 = 0;
+    QStack_12._q = pQVar9->_q;
+    QStack_12._version = pQVar9->_version;
+    QStack_12._index = pQVar9->_index;
+    QStack_12._currentElement = pQVar9->_currentElement;
+    pQStack_13 = &QStack_12;
     uStack_1._0_1_ = 1;
     uStack_1._1_3_ = 0;
     while( true ) {
       bVar14 = mscorlib.dll::System::Collections::Generic::Queue`1[T]+Enumerator[System::Object]::
               Queue_1_T_Enumerator_System_Object__MoveNext
-                        (&QStack_7,
+                        (&QStack_12,
                          MethodInfo__System__Collections__Generic__Queue_1_T___Enumerator<System::Collections::Generic::Dictionary<System::String,_System::Object>_>__MoveNext__
                         );
       if (bVar14 == 0) {
@@ -765,7 +753,7 @@ String * Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_GetLogContext
       this_01 = (Dictionary_2_System_UInt32_System_Object_ *)
                 mscorlib.dll::System::Collections::Generic::Queue`1[T]+Enumerator[System::Object]::
                 Queue_1_T_Enumerator_System_Object__get_Current
-                          (&QStack_7,
+                          (&QStack_12,
                            MethodInfo__System__Collections__Generic__Queue_1_T___Enumerator<System::Collections::Generic::Dictionary<System::String,_System::Object>_>__get_Current__
                           );
       if (this_01 == (Dictionary_2_System_UInt32_System_Object_ *)0x0) break;
@@ -775,24 +763,24 @@ String * Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_GetLogContext
                           &stack0xffffff88,this_01,
                           MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__GetEnumerator__
                          );
-      QStack_11._index = 0;
-      DStack_9._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar15->_dictionary;
-      DStack_9._version = pDVar15->_version;
-      DStack_9._index = pDVar15->_index;
-      DStack_9._current.key = (Object *)(pDVar15->_current).key;
-      DStack_9._16_8_ = *(undefined8 *)&(pDVar15->_current).value;
+      QStack_10._index = 0;
+      DStack_7._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar15->_dictionary;
+      DStack_7._version = pDVar15->_version;
+      DStack_7._index = pDVar15->_index;
+      DStack_7._current.key = (Object *)(pDVar15->_current).key;
+      DStack_7._16_8_ = *(undefined8 *)&(pDVar15->_current).value;
       uStack_1._0_1_ = 3;
-      QStack_11._currentElement = (Object *)&DStack_9;
+      QStack_10._currentElement = (Object *)&DStack_7;
       while( true ) {
         bVar14 = mscorlib.dll::System::Collections::Generic::
                 Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Object]::
                 Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
-                          (&DStack_9,
+                          (&DStack_7,
                            MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_System::Object>__MoveNext__
                           );
         if (bVar14 == 0) break;
         str1 = mscorlib.dll::System::String::String_Format_1
-                         (StringLiteral__0____1__,DStack_9._current.key,DStack_9._current.value,
+                         (StringLiteral__0____1__,DStack_7._current.key,DStack_7._current.value,
                           (MethodInfo *)0x0);
         in_stack_16 = (MethodInfo *)&UNK_?;
         pSVar6 = mscorlib.dll::System::String::String_Concat_3(pSVar6,str1,(MethodInfo *)0x0);
@@ -800,7 +788,7 @@ String * Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_GetLogContext
       }
       uStack_1._0_1_ = 1;
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                ((Object *)&DStack_9,
+                ((Object *)&DStack_7,
                  (ExceptionArgument__Enum)
                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_System::Object>__Dispose__
                  ,in_stack_16);
@@ -931,8 +919,8 @@ String * Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_GetSystemInfo(Met
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff8c;
-  puVar5 = &stack0xffffff8c;
+  puStack_4 = &stack0xffffff94;
+  puVar5 = &stack0xffffff94;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Boolean);
     func_?(&TypeInfo__DebugLogHandler);
@@ -973,167 +961,165 @@ String * Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_GetSystemInfo(Met
   }
   puStack_4 = puVar5;
   pIStack_6 = (IEnumerator *)0x0;
-  iStack_7 = 0;
   this = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
          func_?(
                         TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
                         );
-  pDStack_8 = this;
+  pDStack_7 = this;
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
   StyleComplexSelector+PseudoStateData]::
   Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
             (this,
              MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
             );
-  pSVar9 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetOperatingSystem
+  pSVar8 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetOperatingSystem
                      ((MethodInfo *)0x0);
   if (this != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                *)0x0) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
               ((Dictionary_2_System_Object_System_Object_ *)this,
-               (Object *)StringLiteral_operatingSystem,(Object *)pSVar9,
+               (Object *)StringLiteral_operatingSystem,(Object *)pSVar8,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    pSVar9 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetProcessorType
+    pSVar8 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetProcessorType
                        ((MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
               ((Dictionary_2_System_Object_System_Object_ *)this,
-               (Object *)StringLiteral_processorType,(Object *)pSVar9,
+               (Object *)StringLiteral_processorType,(Object *)pSVar8,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    IStack_10.m_value =
+    IStack_9.m_value =
          UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetProcessorCount
                    ((MethodInfo *)0x0);
-    pSVar9 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_10,(MethodInfo *)0x0);
+    pSVar8 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_9,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
               ((Dictionary_2_System_Object_System_Object_ *)this,
-               (Object *)StringLiteral_processorCount,(Object *)pSVar9,
+               (Object *)StringLiteral_processorCount,(Object *)pSVar8,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    IStack_10.m_value =
+    IStack_9.m_value =
          UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetPhysicalMemoryMB
                    ((MethodInfo *)0x0);
-    pSVar9 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_10,(MethodInfo *)0x0);
-    pDStack_8 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+    pSVar8 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_9,(MethodInfo *)0x0);
+    pDStack_7 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                   *)&UNK_?;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
               ((Dictionary_2_System_Object_System_Object_ *)this,
-               (Object *)StringLiteral_systemMemorySize,(Object *)pSVar9,
+               (Object *)StringLiteral_systemMemorySize,(Object *)pSVar8,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    IStack_10.m_value =
+    IStack_9.m_value =
          UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsMemorySize
                    ((MethodInfo *)0x0);
-    pSVar9 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_10,(MethodInfo *)0x0);
-    pDStack_8 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+    pSVar8 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_9,(MethodInfo *)0x0);
+    pDStack_7 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                   *)&UNK_?;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
               ((Dictionary_2_System_Object_System_Object_ *)this,
-               (Object *)StringLiteral_graphicsMemorySize,(Object *)pSVar9,
+               (Object *)StringLiteral_graphicsMemorySize,(Object *)pSVar8,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    pSVar9 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsDeviceName
+    pSVar8 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsDeviceName
                        ((MethodInfo *)0x0);
-    pDStack_8 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+    pDStack_7 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                   *)&UNK_?;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
               ((Dictionary_2_System_Object_System_Object_ *)this,
-               (Object *)StringLiteral_graphicsDeviceName,(Object *)pSVar9,
+               (Object *)StringLiteral_graphicsDeviceName,(Object *)pSVar8,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    pSVar9 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsDeviceVendor
+    pSVar8 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsDeviceVendor
                        ((MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
               ((Dictionary_2_System_Object_System_Object_ *)this,
-               (Object *)StringLiteral_graphicsDeviceVendor,(Object *)pSVar9,
+               (Object *)StringLiteral_graphicsDeviceVendor,(Object *)pSVar8,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    IStack_10.m_value =
+    IStack_9.m_value =
          UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsDeviceID
                    ((MethodInfo *)0x0);
-    pSVar9 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_10,(MethodInfo *)0x0);
+    pSVar8 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_9,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
               ((Dictionary_2_System_Object_System_Object_ *)this,
-               (Object *)StringLiteral_graphicsDeviceID,(Object *)pSVar9,
+               (Object *)StringLiteral_graphicsDeviceID,(Object *)pSVar8,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    IStack_10.m_value =
+    IStack_9.m_value =
          UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsDeviceVendorID
                    ((MethodInfo *)0x0);
-    pSVar9 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_10,(MethodInfo *)0x0);
+    pSVar8 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_9,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
               ((Dictionary_2_System_Object_System_Object_ *)this,
-               (Object *)StringLiteral_graphicsDeviceVendorID,(Object *)pSVar9,
+               (Object *)StringLiteral_graphicsDeviceVendorID,(Object *)pSVar8,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    pSVar9 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
+    pSVar8 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
              SystemInfo_GetGraphicsDeviceVersion((MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
               ((Dictionary_2_System_Object_System_Object_ *)this,
-               (Object *)StringLiteral_graphicsDeviceVersion,(Object *)pSVar9,
+               (Object *)StringLiteral_graphicsDeviceVersion,(Object *)pSVar8,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    IStack_10.m_value =
+    IStack_9.m_value =
          UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsShaderLevel
                    ((MethodInfo *)0x0);
-    pSVar9 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_10,(MethodInfo *)0x0);
+    pSVar8 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_9,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
               ((Dictionary_2_System_Object_System_Object_ *)this,
-               (Object *)StringLiteral_graphicsShaderLevel,(Object *)pSVar9,
+               (Object *)StringLiteral_graphicsShaderLevel,(Object *)pSVar8,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    BStack_11.m_value =
+    BStack_10.m_value =
          UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_SupportsShadows
                    ((MethodInfo *)0x0);
     if ((TypeInfo__System__Boolean->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pSVar9 = mscorlib.dll::System::Boolean::Boolean_ToString(&BStack_11,(MethodInfo *)0x0);
+    pSVar8 = mscorlib.dll::System::Boolean::Boolean_ToString(&BStack_10,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
               ((Dictionary_2_System_Object_System_Object_ *)this,
-               (Object *)StringLiteral_supportsShadows,(Object *)pSVar9,
+               (Object *)StringLiteral_supportsShadows,(Object *)pSVar8,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    IStack_10.m_value =
+    IStack_9.m_value =
          UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_SupportedRenderTargetCount
                    ((MethodInfo *)0x0);
-    pSVar9 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_10,(MethodInfo *)0x0);
+    pSVar8 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_9,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
               ((Dictionary_2_System_Object_System_Object_ *)this,
-               (Object *)StringLiteral_supportedRenderTargetCount,(Object *)pSVar9,
+               (Object *)StringLiteral_supportedRenderTargetCount,(Object *)pSVar8,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
               );
-    pDStack_12 = this;
-    pSVar9 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsDeviceVendor
+    pDStack_11 = this;
+    pSVar8 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsDeviceVendor
                        ((MethodInfo *)0x0);
-    bVar13 = mscorlib.dll::System::String::String_op_Equality
-                      (pSVar9,StringLiteral_Vivante_Corporation,(MethodInfo *)0x0);
+    bVar12 = mscorlib.dll::System::String::String_op_Equality
+                      (pSVar8,StringLiteral_Vivante_Corporation,(MethodInfo *)0x0);
     handle = TypeRef__UnityEngine__RenderTextureFormat;
-    pSVar9 = ::StringLiteral__;
-    if (bVar13 == 0) {
+    pSVar8 = ::StringLiteral__;
+    if (bVar12 == 0) {
 code_?:
       if ((TypeInfo__DebugLogHandler->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pSVar9 = DebugLogHandler_GenerateSystemInfoString
+      pSVar8 = DebugLogHandler_GenerateSystemInfoString
                          ((Dictionary_2_System_String_System_String_ *)this,(MethodInfo *)0x0);
       *unaff_FS_OFFSET = uStack_3;
-      return pSVar9;
+      return pSVar8;
     }
-    pSStack_14 = ::StringLiteral__;
     if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
@@ -1145,85 +1131,83 @@ code_?:
     this_00 = mscorlib.dll::System::Enum::Enum_GetValues(enumType,(MethodInfo *)0x0);
     if (this_00 != (Array *)0x0) {
       pIStack_6 = mscorlib.dll::System::Array::Array_GetEnumerator(this_00,(MethodInfo *)0x0);
-      piStack_15 = &iStack_7;
-      ppIStack_16 = &pIStack_6;
-      uStack_17 = 0;
+      puStack_13 = &stack0xffffffd4;
+      ppIStack_14 = &pIStack_6;
+      uStack_15 = 0;
       uStack_1 = 1;
       while (pIStack_6 != (IEnumerator *)0x0) {
-        cVar18 = func_?();
-        if (cVar18 == '\0') {
+        cVar16 = func_?();
+        if (cVar16 == '\0') {
           uStack_1 = 0xffffffff;
-          iStack_7 = func_?();
-          if (iStack_7 != 0) {
+          iVar17 = func_?();
+          if (iVar17 != 0) {
             func_?();
           }
-          this = pDStack_8;
+          this = pDStack_7;
           uStack_1 = 0xffffffff;
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
           Dictionary_2_System_Object_System_Object__Add
-                    ((Dictionary_2_System_Object_System_Object_ *)pDStack_8,
-                     (Object *)StringLiteral_supportedRenderTextureFormats,(Object *)pSVar9,
+                    ((Dictionary_2_System_Object_System_Object_ *)pDStack_7,
+                     (Object *)StringLiteral_supportedRenderTextureFormats,(Object *)pSVar8,
                      MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
                     );
           goto code_?;
         }
         if (pIStack_6 == (IEnumerator *)0x0) break;
-        pIVar19 = pIStack_6->klass;
-        uVar20 = 0;
-        uVar21._0_1_ = (pIVar19->_1).rank;
-        uVar21._1_1_ = (pIVar19->_1).minimumAlignment;
-        if (uVar21 != 0) {
+        pIVar18 = pIStack_6->klass;
+        uVar19 = 0;
+        uVar20._0_1_ = (pIVar18->_1).rank;
+        uVar20._1_1_ = (pIVar18->_1).minimumAlignment;
+        if (uVar20 != 0) {
           do {
-            if (pIVar19->interfaceOffsets[uVar20].interfaceType ==
+            if (pIVar18->interfaceOffsets[uVar19].interfaceType ==
                 (Il2CppClass *)TypeInfo__System__Collections__IEnumerator) {
-              ppMVar22 = &(&(pIStack_6->klass->vtable).get_Current)
-                         [pIStack_6->klass->interfaceOffsets[uVar20].offset].method;
+              ppMVar21 = &(&(pIVar18->vtable).get_Current)[pIVar18->interfaceOffsets[uVar19].offset].
+                         method;
               goto code_?;
             }
-            uVar20 = uVar20 + 1;
-          } while (uVar20 < uVar21);
+            uVar19 = uVar19 + 1;
+          } while (uVar19 < uVar20);
         }
-        ppMVar22 = (MethodInfo **)func_?();
+        ppMVar21 = (MethodInfo **)func_?();
 code_?:
-        piVar23 = (int *)(*(code *)*ppMVar22)();
-        if (piVar23 == (int *)0x0) break;
-        if (*(Il2CppClass **)(*piVar23 + 0x20) !=
+        piVar22 = (int *)(*(code *)*ppMVar21)();
+        if (piVar22 == (int *)0x0) break;
+        if (*(Il2CppClass **)(*piVar22 + 0x20) !=
             (TypeInfo__UnityEngine__RenderTextureFormat->_0).element_class) {
           func_?();
           break;
         }
-        pRVar24 = (RenderTextureFormat__Enum *)func_?();
-        format = *pRVar24;
-        bVar13 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
+        pRVar23 = (RenderTextureFormat__Enum *)func_?();
+        format = *pRVar23;
+        bVar12 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
                 SystemInfo_SupportsRenderTextureFormat(format,(MethodInfo *)0x0);
-        if (bVar13 != 0) {
-          bVar13 = mscorlib.dll::System::String::String_IsNullOrEmpty(pSVar9,(MethodInfo *)0x0);
-          if (bVar13 == 0) {
-            EStack_25.klass = (Enum__Class *)TypeInfo__UnityEngine__RenderTextureFormat;
-            EStack_25.monitor = (MonitorData *)0xffffffff;
-            RStack_26 = format;
-            pSVar27 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_25,(MethodInfo *)0x0);
-            pSVar9 = mscorlib.dll::System::String::String_Concat_4
-                               (pSVar9,::StringLiteral__,pSVar27,(MethodInfo *)0x0);
-            pSStack_14 = pSVar9;
+        if (bVar12 != 0) {
+          bVar12 = mscorlib.dll::System::String::String_IsNullOrEmpty(pSVar8,(MethodInfo *)0x0);
+          if (bVar12 == 0) {
+            EStack_24.klass = (Enum__Class *)TypeInfo__UnityEngine__RenderTextureFormat;
+            EStack_24.monitor = (MonitorData *)0xffffffff;
+            RStack_25 = format;
+            pSVar26 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_24,(MethodInfo *)0x0);
+            pSVar8 = mscorlib.dll::System::String::String_Concat_4
+                               (pSVar8,::StringLiteral__,pSVar26,(MethodInfo *)0x0);
           }
           else {
-            EStack_28.klass = (Enum__Class *)TypeInfo__UnityEngine__RenderTextureFormat;
-            EStack_28.monitor = (MonitorData *)0xffffffff;
-            RStack_29 = format;
-            pSVar27 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_28,(MethodInfo *)0x0);
-            pSVar9 = mscorlib.dll::System::String::String_Concat_3(pSVar9,pSVar27,(MethodInfo *)0x0)
+            EStack_27.klass = (Enum__Class *)TypeInfo__UnityEngine__RenderTextureFormat;
+            EStack_27.monitor = (MonitorData *)0xffffffff;
+            RStack_28 = format;
+            pSVar26 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_27,(MethodInfo *)0x0);
+            pSVar8 = mscorlib.dll::System::String::String_Concat_3(pSVar8,pSVar26,(MethodInfo *)0x0)
             ;
-            pSStack_14 = pSVar9;
           }
         }
       }
     }
   }
   func_?();
-  pcVar30 = (code *)swi(3);
-  pSVar9 = (String *)(*pcVar30)();
-  return pSVar9;
+  pcVar29 = (code *)swi(3);
+  pSVar8 = (String *)(*pcVar29)();
+  return pSVar8;
 }
 
 
@@ -1385,18 +1369,15 @@ void Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_HandleLogExecute
       if (((String__Array *)type)->max_length == 0) goto code_?;
       ((String__Array *)type)->vector[0] = StringLiteral_UnityEngine_Debug_LogError_Objec;
       func_?();
-      if (stackTrace != (String *)0x0) {
-        logString = (String *)&UNK_?;
-        pSVar2 = mscorlib.dll::System::String::String_Split_4
-                           (stackTrace,(String__Array *)type,
-                            StringSplitOptions__Enum_RemoveEmptyEntries,(MethodInfo *)0x0);
-        if (pSVar2 != (String__Array *)0x0) {
-          if (pSVar2->max_length == 2) {
-            if (pSVar2->max_length < 2) goto code_?;
-            stackTrace = pSVar2->vector[1];
-          }
-          goto code_?;
+      if ((stackTrace != (String *)0x0) &&
+         (pSVar2 = mscorlib.dll::System::String::String_Split_4
+                             (stackTrace,(String__Array *)type,
+                              StringSplitOptions__Enum_RemoveEmptyEntries,(MethodInfo *)0x0),
+         pSVar2 != (String__Array *)0x0)) {
+        if (pSVar2->max_length == 2) {
+          stackTrace = pSVar2->vector[1];
         }
+        goto code_?;
       }
     }
   }
@@ -1470,9 +1451,10 @@ void Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_Initialize
   if (debugLogHandlerConfig.useProxyLogHandler != 0) {
     pPVar1 = (ProxyLogHandler *)func_?(TypeInfo__ProxyLogHandler);
     ProxyLogHandler::ProxyLogHandler__ctor(pPVar1,(MethodInfo *)0x0);
-    (this->fields).kogamaLogHandler = pPVar1;
-    func_?(&(this->fields).kogamaLogHandler,pPVar1);
-    pPVar1 = (this->fields).kogamaLogHandler;
+    ppPVar2 = &(this->fields).kogamaLogHandler;
+    *ppPVar2 = pPVar1;
+    func_?(ppPVar2,pPVar1);
+    pPVar1 = *ppPVar2;
     this_01 = (EventHandler_1_Object_ *)
               func_?(TypeInfo__System__EventHandler<ProxyLogHandler::LogFormatData>);
     mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
@@ -1482,9 +1464,8 @@ void Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_Initialize
     if (pPVar1 == (ProxyLogHandler *)0x0) goto code_?;
     ProxyLogHandler::ProxyLogHandler_add_OnLogReceived
               (pPVar1,(EventHandler_1_ProxyLogHandler_LogFormatData_ *)this_01,(MethodInfo *)0x0);
-    pPVar1 = (this->fields).kogamaLogHandler;
-    if (pPVar1 == (ProxyLogHandler *)0x0) goto code_?;
-    (pPVar1->fields).filterLogTypeConsoleWrite =
+    if (*ppPVar2 == (ProxyLogHandler *)0x0) goto code_?;
+    ((*ppPVar2)->fields).filterLogTypeConsoleWrite =
          debugLogHandlerConfig.proxyLogHandlerConfig.filterLogTypeConsoleWrite;
   }
   UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_RandomRangeInt(0,0x65,(MethodInfo *)0x0)
@@ -1508,8 +1489,8 @@ void Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_Initialize
   }
 code_?:
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -1644,7 +1625,6 @@ void Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler_ReportError
           pSVar1 = TypeInfo__SentrySdk->static_fields->_instance;
           if (pSVar1 == (SentrySdk *)0x0) goto code_?;
           if (_UNK_? < fVar5 - (pSVar1->fields)._timeLastError) {
-            pSVar1 = TypeInfo__SentrySdk->static_fields->_instance;
             fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
                               ((MethodInfo *)0x0);
             (pSVar1->fields)._timeLastError = fVar5;
@@ -1955,8 +1935,9 @@ void Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler__ctor
   value = (DebugLogHandler_StatHatErrorCount *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  (this->fields).statHatErrorCount = value;
-  func_?(&(this->fields).statHatErrorCount,value);
+  ppDVar1 = &(this->fields).statHatErrorCount;
+  *ppDVar1 = value;
+  func_?(ppDVar1,value);
   this_00 = (Queue_1_Dictionary_2_System_String_System_Object_ *)
             func_?(
                            TypeInfo__System__Collections__Generic__Queue<System::Collections::Generic::Dictionary<System::String,_System::Object>_>
@@ -1966,8 +1947,9 @@ void Assembly-CSharp.dll::DebugLogHandler::DebugLogHandler__ctor
             ((ReadOnlyCollectionBuilder_1_System_Object_ *)this_00,
              MethodInfo__System__Collections__Generic__Queue<System::Collections::Generic::Dictionary<System::String,_System::Object>_>__Queue__
             );
-  (this->fields).logContextQueue = this_00;
-  func_?(&(this->fields).logContextQueue,this_00);
+  ppQVar2 = &(this->fields).logContextQueue;
+  *ppQVar2 = this_00;
+  func_?(ppQVar2,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

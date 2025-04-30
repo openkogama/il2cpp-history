@@ -65,6 +65,8 @@ Assembly-CSharp.dll::RTG::ObjectPool::ObjectPool_GetPooledObject
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
+  pMVar4 = (MethodInfo *)&stack0xffffffb8;
+  method_00 = (MethodInfo *)&stack0xffffffb8;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
@@ -86,50 +88,53 @@ Assembly-CSharp.dll::RTG::ObjectPool::ObjectPool_GetPooledObject
                    );
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
+    method_00 = pMVar4;
   }
-  pLVar4 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+  pLVar5 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
            (this->fields)._pooledObjects;
-  if (pLVar4 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+  if (pLVar5 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
 code_?:
-    uVar5 = func_?();
-    func_?(uVar5);
-    pcVar6 = (code *)swi(3);
-    pGVar7 = (GameObject *)(*pcVar6)();
-    return pGVar7;
+    uVar6 = func_?();
+    func_?(uVar6);
+    pcVar7 = (code *)swi(3);
+    pGVar8 = (GameObject *)(*pcVar7)();
+    return pGVar8;
   }
-  method_00 = (MethodInfo *)&UNK_?;
-  pLVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+  pMVar4 = (MethodInfo *)&UNK_?;
+  pLVar9 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
            RegexCharClass+SingleRange]::
            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                      ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                       *)&stack0xffffffd0,pLVar4,
+                       *)&stack0xffffffd4,pLVar5,
                       MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
                      );
-  RVar9 = pLVar8->_current;
   uStack_1 = 1;
+  RVar10 = pLVar9->_current;
   do {
     do {
-      bVar10 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+      this_00 = RVar10;
+      bVar11 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
               List_1_T_Enumerator_System_Object__MoveNext
-                        ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffc0,
+                        ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffc4,
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
                         );
-      if (bVar10 == 0) {
+      if (bVar11 == 0) {
         uStack_1 = 0xffffffff;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&stack0xffffffc0,
+                  ((Object *)&stack0xffffffc4,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
-                   ,method_00);
+                   ,pMVar4);
         uStack_1 = 0xffffffff;
-        if ((this->fields)._growMode == 0) {
+        iVar12 = (this->fields)._growMode;
+        if (iVar12 == 0) {
           *unaff_FS_OFFSET = uStack_3;
           return (GameObject *)0x0;
         }
-        pLVar11 = (this->fields)._pooledObjects;
-        if (pLVar11 != (List_1_UnityEngine_GameObject_ *)0x0) {
-          index = (pLVar11->fields)._size;
-          if ((this->fields)._growMode == 2) {
+        pLVar13 = (this->fields)._pooledObjects;
+        if (pLVar13 != (List_1_UnityEngine_GameObject_ *)0x0) {
+          index = (pLVar13->fields)._size;
+          if (iVar12 == 2) {
             iVar12 = 0;
             if (0 < (this->fields)._growAmount) {
               do {
@@ -138,74 +143,74 @@ code_?:
               } while (iVar12 < (this->fields)._growAmount);
             }
           }
-          else if ((this->fields)._growMode == 1) {
+          else if (iVar12 == 1) {
             ObjectPool_CreatePooledObject(this,(MethodInfo *)0x0);
           }
-          pLVar4 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+          pLVar5 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                    (this->fields)._pooledObjects;
-          if ((pLVar4 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-             && (RVar9 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+          if ((pLVar5 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+             && (RVar10 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                          RegularExpressions::RegexCharClass+SingleRange]::
                          List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                   (pLVar4,index,
+                                   (pLVar5,index,
                                     MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__get_Item_int_
-                                   ), RVar9 != (RegexCharClass_SingleRange)0x0)) {
+                                   ), RVar10 != (RegexCharClass_SingleRange)0x0)) {
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                      ((GameObject *)RVar9,1,(MethodInfo *)0x0);
-            pTVar13 = (this->fields)._pooledParent;
+                      ((GameObject *)RVar10,1,(MethodInfo *)0x0);
+            pTVar14 = (this->fields)._pooledParent;
             if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
-            bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                              ((Object_1 *)pTVar13,(Object_1 *)0x0,(MethodInfo *)0x0);
-            if (bVar10 != 0) {
-              pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                                 ((GameObject *)RVar9,(MethodInfo *)0x0);
-              if (pTVar13 == (Transform *)0x0) goto code_?;
+            bVar11 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                              ((Object_1 *)pTVar14,(Object_1 *)0x0,(MethodInfo *)0x0);
+            if (bVar11 != 0) {
+              pTVar14 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                                 ((GameObject *)RVar10,(MethodInfo *)0x0);
+              if (pTVar14 == (Transform *)0x0) goto code_?;
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                        (pTVar13,(this->fields)._pooledParent,0,(MethodInfo *)0x0);
+                        (pTVar14,(this->fields)._pooledParent,0,(MethodInfo *)0x0);
             }
             *unaff_FS_OFFSET = uStack_3;
-            return (GameObject *)RVar9;
+            return (GameObject *)RVar10;
           }
         }
         goto code_?;
       }
-      method_01 = RVar9;
+      RVar10 = this_00;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                        ((Object_1 *)method_01,(Object_1 *)0x0,(MethodInfo *)0x0);
-    } while (bVar10 == 0);
-    if (method_01 == (RegexCharClass_SingleRange)0x0) goto code_?;
-    method_00 = (MethodInfo *)&UNK_?;
-    bVar10 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                      ((GameObject *)method_01,(MethodInfo *)0x0);
-  } while (bVar10 != 0);
+      bVar11 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                        ((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
+    } while (bVar11 == 0);
+    if (this_00 == (RegexCharClass_SingleRange)0x0) goto code_?;
+    pMVar4 = (MethodInfo *)&UNK_?;
+    bVar11 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+                      ((GameObject *)this_00,(MethodInfo *)0x0);
+  } while (bVar11 != 0);
   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-            ((GameObject *)method_01,1,(MethodInfo *)0x0);
-  pTVar13 = (this->fields)._pooledParent;
+            ((GameObject *)this_00,1,(MethodInfo *)0x0);
+  pTVar14 = (this->fields)._pooledParent;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                    ((Object_1 *)pTVar13,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar10 != 0) {
-    pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                       ((GameObject *)method_01,(MethodInfo *)0x0);
-    if (pTVar13 == (Transform *)0x0) goto code_?;
+  bVar11 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                    ((Object_1 *)pTVar14,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar11 != 0) {
+    pTVar14 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                       ((GameObject *)this_00,(MethodInfo *)0x0);
+    if (pTVar14 == (Transform *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-              (pTVar13,(this->fields)._pooledParent,0,(MethodInfo *)0x0);
+              (pTVar14,(this->fields)._pooledParent,0,(MethodInfo *)0x0);
   }
   uStack_1 = 0xffffffff;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)&stack0xffffffc0,
+            ((Object *)&stack0xffffffc4,
              (ExceptionArgument__Enum)
              MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
-             ,(MethodInfo *)method_01);
+             ,method_00);
   *unaff_FS_OFFSET = uStack_3;
-  return (GameObject *)method_01;
+  return (GameObject *)this_00;
 }
 
 
@@ -214,8 +219,9 @@ code_?:
 void Assembly-CSharp.dll::RTG::ObjectPool::ObjectPool_Grow(ObjectPool *this,MethodInfo *method)
 
 {
-  if ((this->fields)._growMode != 0) {
-    if ((this->fields)._growMode == 2) {
+  iVar1 = (this->fields)._growMode;
+  if (iVar1 != 0) {
+    if (iVar1 == 2) {
       iVar1 = 0;
       if (0 < (this->fields)._growAmount) {
         do {
@@ -268,7 +274,7 @@ code_?:
         } while (iVar1 < (this->fields)._growAmount);
       }
     }
-    else if ((this->fields)._growMode == 1) {
+    else if (iVar1 == 1) {
       ObjectPool_CreatePooledObject(this,(MethodInfo *)0x0);
       return;
     }
@@ -306,38 +312,34 @@ void Assembly-CSharp.dll::RTG::ObjectPool::ObjectPool_MarkAllAsUnused
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  LStack_6._list = (List_1_System_Object_ *)0x0;
-  LStack_6._index = 0;
-  LStack_6._version = 0;
-  LStack_6._current = (Object *)0x0;
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
             (this->fields)._pooledObjects;
   if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
              RegexCharClass+SingleRange]::
              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       (&LStack_8,this_00,
+                       (&LStack_7,this_00,
                         MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
                        );
-    LStack_6._list = (List_1_System_Object_ *)pLVar7->_list;
-    LStack_6._index = pLVar7->_index;
-    LStack_6._version = pLVar7->_version;
-    LStack_6._current = *(Object **)&pLVar7->_current;
-    LStack_8._version = 0;
+    LStack_8._list = (List_1_System_Object_ *)pLVar6->_list;
+    LStack_8._index = pLVar6->_index;
+    LStack_8._version = pLVar6->_version;
+    LStack_8._current = *(Object **)&pLVar6->_current;
+    LStack_7._version = 0;
     uStack_1 = 1;
-    LStack_8._current = (RegexCharClass_SingleRange)&LStack_6;
+    LStack_7._current = (RegexCharClass_SingleRange)&LStack_8;
     while( true ) {
       do {
         bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
                 List_1_T_Enumerator_System_Object__MoveNext
-                          (&LStack_6,
+                          (&LStack_8,
                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
                           );
-        this_01 = LStack_6._current;
+        this_01 = LStack_8._current;
         if (bVar9 == 0) {
           uStack_1 = 0xffffffff;
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&LStack_6,
+                    ((Object *)&LStack_8,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
                      ,unaff_EBX);
@@ -421,31 +423,32 @@ void Assembly-CSharp.dll::RTG::ObjectPool::ObjectPool_SetPooledObjectsParent
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  (this->fields)._pooledParent = parent;
-  func_?(&(this->fields)._pooledParent,parent);
+  ppTVar4 = &(this->fields)._pooledParent;
+  *ppTVar4 = parent;
+  func_?(ppTVar4,parent);
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
             (this->fields)._pooledObjects;
   if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    pLVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
              RegexCharClass+SingleRange]::
              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                        ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
                          *)&stack0xffffffd8,this_00,
                         MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
                        );
-    method_00 = (MethodInfo *)pLVar4->_version;
+    method_00 = (MethodInfo *)pLVar5->_version;
     uStack_1 = 1;
-    RVar5 = pLVar4->_current;
+    RVar6 = pLVar5->_current;
     while( true ) {
       do {
         do {
-          this_02 = RVar5;
-          bVar6 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+          this_02 = RVar6;
+          bVar7 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
                   List_1_T_Enumerator_System_Object__MoveNext
                             ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffc8,
                              MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
                             );
-          if (bVar6 == 0) {
+          if (bVar7 == 0) {
             uStack_1 = 0xffffffff;
             mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                       ((Object *)&stack0xffffffc8,
@@ -455,19 +458,19 @@ void Assembly-CSharp.dll::RTG::ObjectPool::ObjectPool_SetPooledObjectsParent
             *unaff_FS_OFFSET = uStack_3;
             return;
           }
-          RVar5 = this_02;
+          RVar6 = this_02;
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          bVar6 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+          bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                             ((Object_1 *)this_02,(Object_1 *)0x0,(MethodInfo *)0x0);
-        } while (bVar6 == 0);
+        } while (bVar7 == 0);
         if (this_02 == (RegexCharClass_SingleRange)0x0) goto code_?;
         method_00 = (MethodInfo *)&UNK_?;
-        RVar5 = this_02;
-        bVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+        RVar6 = this_02;
+        bVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
                           ((GameObject *)this_02,(MethodInfo *)0x0);
-      } while (bVar6 != 0);
+      } while (bVar7 != 0);
       this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                           ((GameObject *)this_02,(MethodInfo *)0x0);
       if (this_01 == (Transform *)0x0) break;
@@ -477,8 +480,8 @@ void Assembly-CSharp.dll::RTG::ObjectPool::ObjectPool_SetPooledObjectsParent
   }
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -508,7 +511,8 @@ void Assembly-CSharp.dll::RTG::ObjectPool::ObjectPool__ctor
             (this_00,100,
              MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List_int_);
   method_00 = (MethodInfo *)&(this->fields)._pooledObjects;
-  (this->fields)._pooledObjects = (List_1_UnityEngine_GameObject_ *)this_00;
+  *(List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ **)
+   method_00 = this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);

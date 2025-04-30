@@ -11,55 +11,52 @@ void Assembly-CSharp.dll::RTG::Tut_1_Enabling_and_Disabling_Gizmos::
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  (this->fields)._targetObject = newTargetObject;
-  func_?(&(this->fields)._targetObject,newTargetObject);
-  x = (this->fields)._targetObject;
+  ppGVar1 = &(this->fields)._targetObject;
+  *ppGVar1 = newTargetObject;
+  func_?(ppGVar1,newTargetObject);
+  x = *ppGVar1;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                     ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-  pOVar2 = (this->fields)._objectMoveGizmo;
-  if (bVar1 == 0) {
-    if ((pOVar2 == (ObjectTransformGizmo *)0x0) ||
-       (pGVar3 = (pOVar2->fields)._._gizmo, pGVar3 == (Gizmo *)0x0)) goto code_?;
-    Gizmo::Gizmo_SetEnabled(pGVar3,0,(MethodInfo *)0x0);
-    pOVar2 = (this->fields)._objectRotationGizmo;
-    if ((pOVar2 == (ObjectTransformGizmo *)0x0) ||
-       (pGVar3 = (pOVar2->fields)._._gizmo, pGVar3 == (Gizmo *)0x0)) goto code_?;
-    Gizmo::Gizmo_SetEnabled(pGVar3,0,(MethodInfo *)0x0);
-    pOVar2 = (this->fields)._objectScaleGizmo;
-    if ((pOVar2 == (ObjectTransformGizmo *)0x0) ||
-       (pGVar3 = (pOVar2->fields)._._gizmo, pGVar3 == (Gizmo *)0x0)) goto code_?;
-    Gizmo::Gizmo_SetEnabled(pGVar3,0,(MethodInfo *)0x0);
-    pOVar2 = (this->fields)._objectUniversalGizmo;
-    if (pOVar2 == (ObjectTransformGizmo *)0x0) goto code_?;
-    pGVar3 = (pOVar2->fields)._._gizmo;
+  pOVar3 = (this->fields)._objectMoveGizmo;
+  if (bVar2 == 0) {
+    if ((pOVar3 == (ObjectTransformGizmo *)0x0) ||
+       (pGVar4 = (pOVar3->fields)._._gizmo, pGVar4 == (Gizmo *)0x0)) goto code_?;
+    Gizmo::Gizmo_SetEnabled(pGVar4,0,(MethodInfo *)0x0);
+    pOVar3 = (this->fields)._objectRotationGizmo;
+    if ((pOVar3 == (ObjectTransformGizmo *)0x0) ||
+       (pGVar4 = (pOVar3->fields)._._gizmo, pGVar4 == (Gizmo *)0x0)) goto code_?;
+    Gizmo::Gizmo_SetEnabled(pGVar4,0,(MethodInfo *)0x0);
+    pOVar3 = (this->fields)._objectScaleGizmo;
+    if ((pOVar3 == (ObjectTransformGizmo *)0x0) ||
+       (pGVar4 = (pOVar3->fields)._._gizmo, pGVar4 == (Gizmo *)0x0)) goto code_?;
+    Gizmo::Gizmo_SetEnabled(pGVar4,0,(MethodInfo *)0x0);
+    pOVar3 = (this->fields)._objectUniversalGizmo;
+    if (pOVar3 == (ObjectTransformGizmo *)0x0) goto code_?;
+    pGVar4 = (pOVar3->fields)._._gizmo;
   }
   else {
-    if (pOVar2 == (ObjectTransformGizmo *)0x0) goto code_?;
-    ObjectTransformGizmo::ObjectTransformGizmo_SetTargetObject
-              (pOVar2,(this->fields)._targetObject,(MethodInfo *)0x0);
-    pOVar2 = (this->fields)._objectRotationGizmo;
-    if (pOVar2 == (ObjectTransformGizmo *)0x0) goto code_?;
-    ObjectTransformGizmo::ObjectTransformGizmo_SetTargetObject
-              (pOVar2,(this->fields)._targetObject,(MethodInfo *)0x0);
-    pOVar2 = (this->fields)._objectScaleGizmo;
-    if (pOVar2 == (ObjectTransformGizmo *)0x0) goto code_?;
-    ObjectTransformGizmo::ObjectTransformGizmo_SetTargetObject
-              (pOVar2,(this->fields)._targetObject,(MethodInfo *)0x0);
-    pOVar2 = (this->fields)._objectUniversalGizmo;
-    if (pOVar2 == (ObjectTransformGizmo *)0x0) goto code_?;
-    ObjectTransformGizmo::ObjectTransformGizmo_SetTargetObject
-              (pOVar2,(this->fields)._targetObject,(MethodInfo *)0x0);
-    pOVar2 = (this->fields)._workGizmo;
-    if (pOVar2 == (ObjectTransformGizmo *)0x0) goto code_?;
-    pGVar3 = (pOVar2->fields)._._gizmo;
+    if (pOVar3 == (ObjectTransformGizmo *)0x0) goto code_?;
+    ObjectTransformGizmo::ObjectTransformGizmo_SetTargetObject(pOVar3,*ppGVar1,(MethodInfo *)0x0);
+    pOVar3 = (this->fields)._objectRotationGizmo;
+    if (pOVar3 == (ObjectTransformGizmo *)0x0) goto code_?;
+    ObjectTransformGizmo::ObjectTransformGizmo_SetTargetObject(pOVar3,*ppGVar1,(MethodInfo *)0x0);
+    pOVar3 = (this->fields)._objectScaleGizmo;
+    if (pOVar3 == (ObjectTransformGizmo *)0x0) goto code_?;
+    ObjectTransformGizmo::ObjectTransformGizmo_SetTargetObject(pOVar3,*ppGVar1,(MethodInfo *)0x0);
+    pOVar3 = (this->fields)._objectUniversalGizmo;
+    if (pOVar3 == (ObjectTransformGizmo *)0x0) goto code_?;
+    ObjectTransformGizmo::ObjectTransformGizmo_SetTargetObject(pOVar3,*ppGVar1,(MethodInfo *)0x0);
+    pOVar3 = (this->fields)._workGizmo;
+    if (pOVar3 == (ObjectTransformGizmo *)0x0) goto code_?;
+    pGVar4 = (pOVar3->fields)._._gizmo;
   }
-  if (pGVar3 != (Gizmo *)0x0) {
-    uStack4 = 0xffffffff;
-    puStack5 = &DAT_?;
-    puStack6 = (undefined *)*unaff_FS_OFFSET;
+  if (pGVar4 != (Gizmo *)0x0) {
+    uStack5 = 0xffffffff;
+    puStack6 = &DAT_?;
+    uStack7 = *unaff_FS_OFFSET;
     *unaff_FS_OFFSET = &stack0x0000002c;
     if (cRam_? == '\0') {
       func_?(&TypeInfo__System__IDisposable);
@@ -68,167 +65,166 @@ void Assembly-CSharp.dll::RTG::Tut_1_Enabling_and_Disabling_Gizmos::
       func_?(&TypeInfo__RTG__IGizmoBehaviour);
       cRam_? = '\x01';
     }
-    pGVar3 = in_stack_7;
-    if (bStack8 == (in_stack_7->fields)._isEnabled) {
+    pGVar4 = in_stack_8;
+    if (bStack9 == (in_stack_8->fields)._isEnabled) {
 code_?:
-      *unaff_FS_OFFSET = puStack6;
+      *unaff_FS_OFFSET = uStack7;
       return;
     }
-    if (bStack8 == 0) {
-      Gizmo::Gizmo_EndDragSession(in_stack_7,(MethodInfo *)0x0);
-      GizmoHoverInfo::GizmoHoverInfo_Reset(&(pGVar3->fields)._hoverInfo,(MethodInfo *)0x0);
-      (pGVar3->fields)._hoveredHandle = (IGizmoHandle *)0x0;
-      func_?(&(pGVar3->fields)._hoveredHandle,0);
-      pGVar9 = (pGVar3->fields)._behaviours;
-      (pGVar3->fields)._isEnabled = 0;
-      if (pGVar9 != (GizmoBehaviourCollection *)0x0) {
-        pIVar10 = GizmoBehaviourCollection::GizmoBehaviourCollection_GetEnumerator
-                           (pGVar9,(MethodInfo *)0x0);
-        uStack4 = 1;
-        while (pIVar10 != (IEnumerator_1_RTG_IGizmoBehaviour_ *)0x0) {
-          cVar11 = func_?(0,TypeInfo__System__Collections__IEnumerator,pIVar10);
-          if (cVar11 == '\0') {
-            uStack4 = 0xffffffff;
-            if (pIVar10 != (IEnumerator_1_RTG_IGizmoBehaviour_ *)0x0) {
-              func_?(0,TypeInfo__System__IDisposable,pIVar10);
+    if (bStack9 == 0) {
+      Gizmo::Gizmo_EndDragSession(in_stack_8,(MethodInfo *)0x0);
+      GizmoHoverInfo::GizmoHoverInfo_Reset(&(pGVar4->fields)._hoverInfo,(MethodInfo *)0x0);
+      ppIVar10 = &(pGVar4->fields)._hoveredHandle;
+      *ppIVar10 = (IGizmoHandle *)0x0;
+      func_?(ppIVar10,0);
+      pGVar11 = (pGVar4->fields)._behaviours;
+      (pGVar4->fields)._isEnabled = 0;
+      if (pGVar11 != (GizmoBehaviourCollection *)0x0) {
+        pIVar12 = GizmoBehaviourCollection::GizmoBehaviourCollection_GetEnumerator
+                            (pGVar11,(MethodInfo *)0x0);
+        uStack5 = 1;
+        while (pIVar12 != (IEnumerator_1_RTG_IGizmoBehaviour_ *)0x0) {
+          cVar13 = func_?(0,TypeInfo__System__Collections__IEnumerator,pIVar12);
+          if (cVar13 == '\0') {
+            uStack5 = 0xffffffff;
+            if (pIVar12 != (IEnumerator_1_RTG_IGizmoBehaviour_ *)0x0) {
+              func_?(0,TypeInfo__System__IDisposable,pIVar12);
             }
-            if ((in_stack_7->fields).PostDisabled == (GizmoPostDisabledHandler *)0x0)
-            goto code_?;
-            pGVar12 = (GizmoPostEnabledHandler *)(in_stack_7->fields).PostDisabled;
+            pGVar14 = (GizmoPostEnabledHandler *)(in_stack_8->fields).PostDisabled;
             goto code_?;
           }
-          if (pIVar10 == (IEnumerator_1_RTG_IGizmoBehaviour_ *)0x0) break;
-          pIVar13 = pIVar10->klass;
-          uVar14 = 0;
+          if (pIVar12 == (IEnumerator_1_RTG_IGizmoBehaviour_ *)0x0) break;
+          pIVar15 = pIVar12->klass;
+          uVar16 = 0;
           _bStack00000044 = 0;
-          uVar15._0_1_ = (pIVar13->_1).rank;
-          uVar15._1_1_ = (pIVar13->_1).minimumAlignment;
-          if (uVar15 != 0) {
+          uVar17._0_1_ = (pIVar15->_1).rank;
+          uVar17._1_1_ = (pIVar15->_1).minimumAlignment;
+          if (uVar17 != 0) {
             do {
-              if (pIVar13->interfaceOffsets[uVar14].interfaceType ==
+              if (pIVar15->interfaceOffsets[uVar16].interfaceType ==
                   (Il2CppClass *)
                   TypeInfo__System__Collections__Generic__IEnumerator<RTG::IGizmoBehaviour>) {
-                ppMVar16 = &(&pIVar10->klass->vtable)[pIVar10->klass->interfaceOffsets[uVar14].offset].
-                           get_Current.method;
+                ppMVar18 = &(&pIVar12->klass->vtable)
+                            [pIVar12->klass->interfaceOffsets[uVar16].offset].get_Current.method;
                 goto code_?;
               }
-              uVar14 = uVar14 + 1;
-            } while (uVar14 < uVar15);
+              uVar16 = uVar16 + 1;
+            } while (uVar16 < uVar17);
           }
-          ppMVar16 = (MethodInfo **)
-                    func_?(pIVar10,
-                                    TypeInfo__System__Collections__Generic__IEnumerator<RTG::IGizmoBehaviour>
-                                    ,0);
+          ppMVar18 = (MethodInfo **)
+                     func_?(pIVar12,
+                                     TypeInfo__System__Collections__Generic__IEnumerator<RTG::IGizmoBehaviour>
+                                     ,0);
 code_?:
-          piVar17 = (int *)(*(code *)*ppMVar16)(pIVar10,ppMVar16[1]);
-          if (piVar17 == (int *)0x0) break;
-          uVar14 = 0;
+          piVar19 = (int *)(*(code *)*ppMVar18)(pIVar12,ppMVar18[1]);
+          if (piVar19 == (int *)0x0) break;
+          uVar16 = 0;
           _bStack00000044 = 0;
-          uVar15 = *(ushort *)(*piVar17 + 0xb6);
-          if (uVar15 != 0) {
+          uVar17 = *(ushort *)(*piVar19 + 0xb6);
+          if (uVar17 != 0) {
             do {
-              if (*(IGizmoBehaviour__Class **)(*(int *)(*piVar17 + 0x58) + (uint)uVar14 * 8) ==
+              if (*(IGizmoBehaviour__Class **)(*(int *)(*piVar19 + 0x58) + (uint)uVar16 * 8) ==
                   TypeInfo__RTG__IGizmoBehaviour) {
-                puVar18 = (undefined4 *)
-                          (*piVar17 +
-                          (*(int *)(*(int *)(*piVar17 + 0x58) + 4 + (uint)uVar14 * 8) + 0x19) * 8);
+                puVar20 = (undefined4 *)
+                          (*piVar19 +
+                          (*(int *)(*(int *)(*piVar19 + 0x58) + 4 + (uint)uVar16 * 8) + 0x19) * 8);
                 goto code_?;
               }
-              uVar14 = uVar14 + 1;
-            } while (uVar14 < uVar15);
+              uVar16 = uVar16 + 1;
+            } while (uVar16 < uVar17);
           }
-          puVar18 = (undefined4 *)func_?(piVar17,TypeInfo__RTG__IGizmoBehaviour,1);
+          puVar20 = (undefined4 *)func_?(piVar19,TypeInfo__RTG__IGizmoBehaviour,1);
 code_?:
-          cVar11 = (*(code *)*puVar18)(piVar17,puVar18[1]);
-          if (cVar11 != '\0') {
-            func_?(9,TypeInfo__RTG__IGizmoBehaviour,piVar17);
+          cVar13 = (*(code *)*puVar20)(piVar19,puVar20[1]);
+          if (cVar13 != '\0') {
+            func_?(9,TypeInfo__RTG__IGizmoBehaviour,piVar19);
           }
         }
       }
     }
     else {
-      pGVar9 = (in_stack_7->fields)._behaviours;
-      (in_stack_7->fields)._isEnabled = 1;
-      if (pGVar9 != (GizmoBehaviourCollection *)0x0) {
-        pIVar10 = GizmoBehaviourCollection::GizmoBehaviourCollection_GetEnumerator
-                           (pGVar9,(MethodInfo *)0x0);
-        uStack4 = 4;
-        while (pIVar10 != (IEnumerator_1_RTG_IGizmoBehaviour_ *)0x0) {
-          cVar11 = func_?(0,TypeInfo__System__Collections__IEnumerator,pIVar10);
-          if (cVar11 == '\0') {
-            uStack4 = 0xffffffff;
-            if (pIVar10 != (IEnumerator_1_RTG_IGizmoBehaviour_ *)0x0) {
-              func_?(0,TypeInfo__System__IDisposable,pIVar10);
+      pGVar11 = (in_stack_8->fields)._behaviours;
+      (in_stack_8->fields)._isEnabled = 1;
+      if (pGVar11 != (GizmoBehaviourCollection *)0x0) {
+        pIVar12 = GizmoBehaviourCollection::GizmoBehaviourCollection_GetEnumerator
+                            (pGVar11,(MethodInfo *)0x0);
+        uStack5 = 4;
+        while (pIVar12 != (IEnumerator_1_RTG_IGizmoBehaviour_ *)0x0) {
+          cVar13 = func_?(0,TypeInfo__System__Collections__IEnumerator,pIVar12);
+          if (cVar13 == '\0') {
+            uStack5 = 0xffffffff;
+            if (pIVar12 != (IEnumerator_1_RTG_IGizmoBehaviour_ *)0x0) {
+              func_?(0,TypeInfo__System__IDisposable,pIVar12);
             }
-            if ((in_stack_7->fields).PostEnabled != (GizmoPostEnabledHandler *)0x0) {
-              pGVar12 = (in_stack_7->fields).PostEnabled;
+            pGVar14 = (in_stack_8->fields).PostEnabled;
 code_?:
-              uStack4 = 0xffffffff;
-              (*(pGVar12->fields)._._.invoke_impl)
-                        ((pGVar12->fields)._._.method_code,in_stack_7,
-                         (pGVar12->fields)._._.method);
+            uStack5 = 0xffffffff;
+            if (pGVar14 != (GizmoPostEnabledHandler *)0x0) {
+              (*(pGVar14->fields)._._.invoke_impl)
+                        ((pGVar14->fields)._._.method_code,in_stack_8,
+                         (pGVar14->fields)._._.method);
             }
             goto code_?;
           }
-          if (pIVar10 == (IEnumerator_1_RTG_IGizmoBehaviour_ *)0x0) break;
-          pIVar13 = pIVar10->klass;
-          uVar15 = 0;
+          if (pIVar12 == (IEnumerator_1_RTG_IGizmoBehaviour_ *)0x0) break;
+          pIVar15 = pIVar12->klass;
+          uVar17 = 0;
           _bStack00000044 = 0;
-          uVar14._0_1_ = (pIVar13->_1).rank;
-          uVar14._1_1_ = (pIVar13->_1).minimumAlignment;
-          if (uVar14 != 0) {
+          uVar16._0_1_ = (pIVar15->_1).rank;
+          uVar16._1_1_ = (pIVar15->_1).minimumAlignment;
+          if (uVar16 != 0) {
             do {
-              if (pIVar13->interfaceOffsets[uVar15].interfaceType ==
+              if (pIVar15->interfaceOffsets[uVar17].interfaceType ==
                   (Il2CppClass *)
                   TypeInfo__System__Collections__Generic__IEnumerator<RTG::IGizmoBehaviour>) {
-                ppMVar16 = &(&pIVar10->klass->vtable)[pIVar10->klass->interfaceOffsets[uVar15].offset].
-                           get_Current.method;
+                ppMVar18 = &(&pIVar12->klass->vtable)
+                            [pIVar12->klass->interfaceOffsets[uVar17].offset].get_Current.method;
                 goto code_?;
               }
-              uVar15 = uVar15 + 1;
-            } while (uVar15 < uVar14);
+              uVar17 = uVar17 + 1;
+            } while (uVar17 < uVar16);
           }
-          ppMVar16 = (MethodInfo **)
-                    func_?(pIVar10,
-                                    TypeInfo__System__Collections__Generic__IEnumerator<RTG::IGizmoBehaviour>
-                                    ,0);
+          ppMVar18 = (MethodInfo **)
+                     func_?(pIVar12,
+                                     TypeInfo__System__Collections__Generic__IEnumerator<RTG::IGizmoBehaviour>
+                                     ,0);
 code_?:
-          piVar17 = (int *)(*(code *)*ppMVar16)(pIVar10,ppMVar16[1]);
-          if (piVar17 == (int *)0x0) break;
-          uVar14 = 0;
+          piVar19 = (int *)(*(code *)*ppMVar18)(pIVar12,ppMVar18[1]);
+          if (piVar19 == (int *)0x0) break;
+          uVar16 = 0;
           _bStack00000044 = 0;
-          uVar15 = *(ushort *)(*piVar17 + 0xb6);
-          if (uVar15 != 0) {
+          uVar17 = *(ushort *)(*piVar19 + 0xb6);
+          if (uVar17 != 0) {
             do {
-              if (*(IGizmoBehaviour__Class **)(*(int *)(*piVar17 + 0x58) + (uint)uVar14 * 8) ==
+              if (*(IGizmoBehaviour__Class **)(*(int *)(*piVar19 + 0x58) + (uint)uVar16 * 8) ==
                   TypeInfo__RTG__IGizmoBehaviour) {
-                puVar18 = (undefined4 *)
-                          (*piVar17 +
-                          (*(int *)(*(int *)(*piVar17 + 0x58) + 4 + (uint)uVar14 * 8) + 0x19) * 8);
+                puVar20 = (undefined4 *)
+                          (*piVar19 +
+                          (*(int *)(*(int *)(*piVar19 + 0x58) + 4 + (uint)uVar16 * 8) + 0x19) * 8);
                 goto code_?;
               }
-              uVar14 = uVar14 + 1;
-            } while (uVar14 < uVar15);
+              uVar16 = uVar16 + 1;
+            } while (uVar16 < uVar17);
           }
-          puVar18 = (undefined4 *)func_?(piVar17,TypeInfo__RTG__IGizmoBehaviour,1);
+          puVar20 = (undefined4 *)func_?(piVar19,TypeInfo__RTG__IGizmoBehaviour,1);
 code_?:
-          cVar11 = (*(code *)*puVar18)(piVar17,puVar18[1]);
-          if (cVar11 != '\0') {
-            func_?(8,TypeInfo__RTG__IGizmoBehaviour,piVar17);
+          cVar13 = (*(code *)*puVar20)(piVar19,puVar20[1]);
+          if (cVar13 != '\0') {
+            func_?(8,TypeInfo__RTG__IGizmoBehaviour,piVar19);
           }
         }
       }
     }
-    uVar19 = func_?();
-    func_?(uVar19);
-    pcVar20 = (code *)swi(3);
-    (*pcVar20)();
+    uVar21 = func_?();
+    func_?(uVar21);
+    pcVar22 = (code *)swi(3);
+    (*pcVar22)();
     return;
   }
 code_?:
   func_?();
-  pcVar20 = (code *)swi(3);
-  (*pcVar20)();
+  pcVar22 = (code *)swi(3);
+  (*pcVar22)();
   return;
 }
 
@@ -361,158 +357,157 @@ code_?:
     if (bStack8 == 0) {
       Gizmo::Gizmo_EndDragSession(in_stack_7,(MethodInfo *)0x0);
       GizmoHoverInfo::GizmoHoverInfo_Reset(&(pGVar2->fields)._hoverInfo,(MethodInfo *)0x0);
-      (pGVar2->fields)._hoveredHandle = (IGizmoHandle *)0x0;
-      func_?(&(pGVar2->fields)._hoveredHandle,0);
-      pGVar9 = (pGVar2->fields)._behaviours;
+      ppIVar9 = &(pGVar2->fields)._hoveredHandle;
+      *ppIVar9 = (IGizmoHandle *)0x0;
+      func_?(ppIVar9,0);
+      pGVar10 = (pGVar2->fields)._behaviours;
       (pGVar2->fields)._isEnabled = 0;
-      if (pGVar9 != (GizmoBehaviourCollection *)0x0) {
-        pIVar10 = GizmoBehaviourCollection::GizmoBehaviourCollection_GetEnumerator
-                           (pGVar9,(MethodInfo *)0x0);
+      if (pGVar10 != (GizmoBehaviourCollection *)0x0) {
+        pIVar11 = GizmoBehaviourCollection::GizmoBehaviourCollection_GetEnumerator
+                           (pGVar10,(MethodInfo *)0x0);
         uStack4 = 1;
-        while (pIVar10 != (IEnumerator_1_RTG_IGizmoBehaviour_ *)0x0) {
-          cVar11 = func_?(0,TypeInfo__System__Collections__IEnumerator,pIVar10);
-          if (cVar11 == '\0') {
+        while (pIVar11 != (IEnumerator_1_RTG_IGizmoBehaviour_ *)0x0) {
+          cVar12 = func_?(0,TypeInfo__System__Collections__IEnumerator,pIVar11);
+          if (cVar12 == '\0') {
             uStack4 = 0xffffffff;
-            if (pIVar10 != (IEnumerator_1_RTG_IGizmoBehaviour_ *)0x0) {
-              func_?(0,TypeInfo__System__IDisposable,pIVar10);
+            if (pIVar11 != (IEnumerator_1_RTG_IGizmoBehaviour_ *)0x0) {
+              func_?(0,TypeInfo__System__IDisposable,pIVar11);
             }
-            if ((in_stack_7->fields).PostDisabled == (GizmoPostDisabledHandler *)0x0)
-            goto code_?;
-            pGVar12 = (GizmoPostEnabledHandler *)(in_stack_7->fields).PostDisabled;
+            pGVar13 = (GizmoPostEnabledHandler *)(in_stack_7->fields).PostDisabled;
             goto code_?;
           }
-          if (pIVar10 == (IEnumerator_1_RTG_IGizmoBehaviour_ *)0x0) break;
-          pIVar13 = pIVar10->klass;
-          uVar14 = 0;
+          if (pIVar11 == (IEnumerator_1_RTG_IGizmoBehaviour_ *)0x0) break;
+          pIVar14 = pIVar11->klass;
+          uVar15 = 0;
           _bStack00000044 = 0;
-          uVar15._0_1_ = (pIVar13->_1).rank;
-          uVar15._1_1_ = (pIVar13->_1).minimumAlignment;
-          if (uVar15 != 0) {
+          uVar16._0_1_ = (pIVar14->_1).rank;
+          uVar16._1_1_ = (pIVar14->_1).minimumAlignment;
+          if (uVar16 != 0) {
             do {
-              if (pIVar13->interfaceOffsets[uVar14].interfaceType ==
+              if (pIVar14->interfaceOffsets[uVar15].interfaceType ==
                   (Il2CppClass *)
                   TypeInfo__System__Collections__Generic__IEnumerator<RTG::IGizmoBehaviour>) {
-                ppMVar16 = &(&pIVar10->klass->vtable)[pIVar10->klass->interfaceOffsets[uVar14].offset].
-                           get_Current.method;
+                ppMVar17 = &(&pIVar11->klass->vtable)[pIVar11->klass->interfaceOffsets[uVar15].offset]
+                            .get_Current.method;
                 goto code_?;
               }
-              uVar14 = uVar14 + 1;
-            } while (uVar14 < uVar15);
+              uVar15 = uVar15 + 1;
+            } while (uVar15 < uVar16);
           }
-          ppMVar16 = (MethodInfo **)
-                    func_?(pIVar10,
-                                    TypeInfo__System__Collections__Generic__IEnumerator<RTG::IGizmoBehaviour>
-                                    ,0);
+          ppMVar17 = (MethodInfo **)
+                     func_?(pIVar11,
+                                     TypeInfo__System__Collections__Generic__IEnumerator<RTG::IGizmoBehaviour>
+                                     ,0);
 code_?:
-          piVar17 = (int *)(*(code *)*ppMVar16)(pIVar10,ppMVar16[1]);
-          if (piVar17 == (int *)0x0) break;
-          uVar14 = 0;
+          piVar18 = (int *)(*(code *)*ppMVar17)(pIVar11,ppMVar17[1]);
+          if (piVar18 == (int *)0x0) break;
+          uVar15 = 0;
           _bStack00000044 = 0;
-          uVar15 = *(ushort *)(*piVar17 + 0xb6);
-          if (uVar15 != 0) {
+          uVar16 = *(ushort *)(*piVar18 + 0xb6);
+          if (uVar16 != 0) {
             do {
-              if (*(IGizmoBehaviour__Class **)(*(int *)(*piVar17 + 0x58) + (uint)uVar14 * 8) ==
+              if (*(IGizmoBehaviour__Class **)(*(int *)(*piVar18 + 0x58) + (uint)uVar15 * 8) ==
                   TypeInfo__RTG__IGizmoBehaviour) {
-                puVar18 = (undefined4 *)
-                          (*piVar17 +
-                          (*(int *)(*(int *)(*piVar17 + 0x58) + 4 + (uint)uVar14 * 8) + 0x19) * 8);
+                puVar19 = (undefined4 *)
+                          (*piVar18 +
+                          (*(int *)(*(int *)(*piVar18 + 0x58) + 4 + (uint)uVar15 * 8) + 0x19) * 8);
                 goto code_?;
               }
-              uVar14 = uVar14 + 1;
-            } while (uVar14 < uVar15);
+              uVar15 = uVar15 + 1;
+            } while (uVar15 < uVar16);
           }
-          puVar18 = (undefined4 *)func_?(piVar17,TypeInfo__RTG__IGizmoBehaviour,1);
+          puVar19 = (undefined4 *)func_?(piVar18,TypeInfo__RTG__IGizmoBehaviour,1);
 code_?:
-          cVar11 = (*(code *)*puVar18)(piVar17,puVar18[1]);
-          if (cVar11 != '\0') {
-            func_?(9,TypeInfo__RTG__IGizmoBehaviour,piVar17);
+          cVar12 = (*(code *)*puVar19)(piVar18,puVar19[1]);
+          if (cVar12 != '\0') {
+            func_?(9,TypeInfo__RTG__IGizmoBehaviour,piVar18);
           }
         }
       }
     }
     else {
-      pGVar9 = (in_stack_7->fields)._behaviours;
+      pGVar10 = (in_stack_7->fields)._behaviours;
       (in_stack_7->fields)._isEnabled = 1;
-      if (pGVar9 != (GizmoBehaviourCollection *)0x0) {
-        pIVar10 = GizmoBehaviourCollection::GizmoBehaviourCollection_GetEnumerator
-                           (pGVar9,(MethodInfo *)0x0);
+      if (pGVar10 != (GizmoBehaviourCollection *)0x0) {
+        pIVar11 = GizmoBehaviourCollection::GizmoBehaviourCollection_GetEnumerator
+                           (pGVar10,(MethodInfo *)0x0);
         uStack4 = 4;
-        while (pIVar10 != (IEnumerator_1_RTG_IGizmoBehaviour_ *)0x0) {
-          cVar11 = func_?(0,TypeInfo__System__Collections__IEnumerator,pIVar10);
-          if (cVar11 == '\0') {
+        while (pIVar11 != (IEnumerator_1_RTG_IGizmoBehaviour_ *)0x0) {
+          cVar12 = func_?(0,TypeInfo__System__Collections__IEnumerator,pIVar11);
+          if (cVar12 == '\0') {
             uStack4 = 0xffffffff;
-            if (pIVar10 != (IEnumerator_1_RTG_IGizmoBehaviour_ *)0x0) {
-              func_?(0,TypeInfo__System__IDisposable,pIVar10);
+            if (pIVar11 != (IEnumerator_1_RTG_IGizmoBehaviour_ *)0x0) {
+              func_?(0,TypeInfo__System__IDisposable,pIVar11);
             }
-            if ((in_stack_7->fields).PostEnabled != (GizmoPostEnabledHandler *)0x0) {
-              pGVar12 = (in_stack_7->fields).PostEnabled;
+            pGVar13 = (in_stack_7->fields).PostEnabled;
 code_?:
-              uStack4 = 0xffffffff;
-              (*(pGVar12->fields)._._.invoke_impl)
-                        ((pGVar12->fields)._._.method_code,in_stack_7,
-                         (pGVar12->fields)._._.method);
+            uStack4 = 0xffffffff;
+            if (pGVar13 != (GizmoPostEnabledHandler *)0x0) {
+              (*(pGVar13->fields)._._.invoke_impl)
+                        ((pGVar13->fields)._._.method_code,in_stack_7,
+                         (pGVar13->fields)._._.method);
             }
             goto code_?;
           }
-          if (pIVar10 == (IEnumerator_1_RTG_IGizmoBehaviour_ *)0x0) break;
-          pIVar13 = pIVar10->klass;
-          uVar15 = 0;
+          if (pIVar11 == (IEnumerator_1_RTG_IGizmoBehaviour_ *)0x0) break;
+          pIVar14 = pIVar11->klass;
+          uVar16 = 0;
           _bStack00000044 = 0;
-          uVar14._0_1_ = (pIVar13->_1).rank;
-          uVar14._1_1_ = (pIVar13->_1).minimumAlignment;
-          if (uVar14 != 0) {
+          uVar15._0_1_ = (pIVar14->_1).rank;
+          uVar15._1_1_ = (pIVar14->_1).minimumAlignment;
+          if (uVar15 != 0) {
             do {
-              if (pIVar13->interfaceOffsets[uVar15].interfaceType ==
+              if (pIVar14->interfaceOffsets[uVar16].interfaceType ==
                   (Il2CppClass *)
                   TypeInfo__System__Collections__Generic__IEnumerator<RTG::IGizmoBehaviour>) {
-                ppMVar16 = &(&pIVar10->klass->vtable)[pIVar10->klass->interfaceOffsets[uVar15].offset].
-                           get_Current.method;
+                ppMVar17 = &(&pIVar11->klass->vtable)[pIVar11->klass->interfaceOffsets[uVar16].offset]
+                            .get_Current.method;
+                goto code_?;
+              }
+              uVar16 = uVar16 + 1;
+            } while (uVar16 < uVar15);
+          }
+          ppMVar17 = (MethodInfo **)
+                     func_?(pIVar11,
+                                     TypeInfo__System__Collections__Generic__IEnumerator<RTG::IGizmoBehaviour>
+                                     ,0);
+code_?:
+          piVar18 = (int *)(*(code *)*ppMVar17)(pIVar11,ppMVar17[1]);
+          if (piVar18 == (int *)0x0) break;
+          uVar15 = 0;
+          _bStack00000044 = 0;
+          uVar16 = *(ushort *)(*piVar18 + 0xb6);
+          if (uVar16 != 0) {
+            do {
+              if (*(IGizmoBehaviour__Class **)(*(int *)(*piVar18 + 0x58) + (uint)uVar15 * 8) ==
+                  TypeInfo__RTG__IGizmoBehaviour) {
+                puVar19 = (undefined4 *)
+                          (*piVar18 +
+                          (*(int *)(*(int *)(*piVar18 + 0x58) + 4 + (uint)uVar15 * 8) + 0x19) * 8);
                 goto code_?;
               }
               uVar15 = uVar15 + 1;
-            } while (uVar15 < uVar14);
+            } while (uVar15 < uVar16);
           }
-          ppMVar16 = (MethodInfo **)
-                    func_?(pIVar10,
-                                    TypeInfo__System__Collections__Generic__IEnumerator<RTG::IGizmoBehaviour>
-                                    ,0);
+          puVar19 = (undefined4 *)func_?(piVar18,TypeInfo__RTG__IGizmoBehaviour,1);
 code_?:
-          piVar17 = (int *)(*(code *)*ppMVar16)(pIVar10,ppMVar16[1]);
-          if (piVar17 == (int *)0x0) break;
-          uVar14 = 0;
-          _bStack00000044 = 0;
-          uVar15 = *(ushort *)(*piVar17 + 0xb6);
-          if (uVar15 != 0) {
-            do {
-              if (*(IGizmoBehaviour__Class **)(*(int *)(*piVar17 + 0x58) + (uint)uVar14 * 8) ==
-                  TypeInfo__RTG__IGizmoBehaviour) {
-                puVar18 = (undefined4 *)
-                          (*piVar17 +
-                          (*(int *)(*(int *)(*piVar17 + 0x58) + 4 + (uint)uVar14 * 8) + 0x19) * 8);
-                goto code_?;
-              }
-              uVar14 = uVar14 + 1;
-            } while (uVar14 < uVar15);
-          }
-          puVar18 = (undefined4 *)func_?(piVar17,TypeInfo__RTG__IGizmoBehaviour,1);
-code_?:
-          cVar11 = (*(code *)*puVar18)(piVar17,puVar18[1]);
-          if (cVar11 != '\0') {
-            func_?(8,TypeInfo__RTG__IGizmoBehaviour,piVar17);
+          cVar12 = (*(code *)*puVar19)(piVar18,puVar19[1]);
+          if (cVar12 != '\0') {
+            func_?(8,TypeInfo__RTG__IGizmoBehaviour,piVar18);
           }
         }
       }
     }
-    uVar19 = func_?();
-    func_?(uVar19);
-    pcVar20 = (code *)swi(3);
-    (*pcVar20)();
+    uVar20 = func_?();
+    func_?(uVar20);
+    pcVar21 = (code *)swi(3);
+    (*pcVar21)();
     return;
   }
 code_?:
   func_?();
-  pcVar20 = (code *)swi(3);
-  (*pcVar20)();
+  pcVar21 = (code *)swi(3);
+  (*pcVar21)();
   return;
 }
 
@@ -537,49 +532,51 @@ void Assembly-CSharp.dll::RTG::Tut_1_Enabling_and_Disabling_Gizmos::
                      (MethodInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>__get_Get__);
   if (pRVar1 != (RTGizmosEngine *)0x0) {
     pOVar2 = RTGizmosEngine::RTGizmosEngine_CreateObjectMoveGizmo(pRVar1,(MethodInfo *)0x0);
-    (this->fields)._objectMoveGizmo = pOVar2;
-    func_?(&(this->fields)._objectMoveGizmo,pOVar2);
+    ppOVar3 = &(this->fields)._objectMoveGizmo;
+    *ppOVar3 = pOVar2;
+    func_?(ppOVar3,pOVar2);
     pRVar1 = (RTGizmosEngine *)
              MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
                        (MethodInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>__get_Get__);
     if (pRVar1 != (RTGizmosEngine *)0x0) {
       pOVar2 = RTGizmosEngine::RTGizmosEngine_CreateObjectRotationGizmo(pRVar1,(MethodInfo *)0x0);
-      (this->fields)._objectRotationGizmo = pOVar2;
-      func_?(&(this->fields)._objectRotationGizmo,pOVar2);
+      ppOVar4 = &(this->fields)._objectRotationGizmo;
+      *ppOVar4 = pOVar2;
+      func_?(ppOVar4,pOVar2);
       pRVar1 = (RTGizmosEngine *)
                MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
                          (MethodInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>__get_Get__);
       if (pRVar1 != (RTGizmosEngine *)0x0) {
         pOVar2 = RTGizmosEngine::RTGizmosEngine_CreateObjectScaleGizmo(pRVar1,(MethodInfo *)0x0);
-        (this->fields)._objectScaleGizmo = pOVar2;
-        func_?(&(this->fields)._objectScaleGizmo,pOVar2);
+        ppOVar4 = &(this->fields)._objectScaleGizmo;
+        *ppOVar4 = pOVar2;
+        func_?(ppOVar4,pOVar2);
         pRVar1 = (RTGizmosEngine *)
                  MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
                            (MethodInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>__get_Get__);
         if (pRVar1 != (RTGizmosEngine *)0x0) {
           pOVar2 = RTGizmosEngine::RTGizmosEngine_CreateObjectUniversalGizmo
                              (pRVar1,(MethodInfo *)0x0);
-          (this->fields)._objectUniversalGizmo = pOVar2;
-          func_?(&(this->fields)._objectUniversalGizmo,pOVar2);
-          pOVar2 = (this->fields)._objectMoveGizmo;
-          if ((pOVar2 != (ObjectTransformGizmo *)0x0) &&
-             (pGVar3 = (pOVar2->fields)._._gizmo, pGVar3 != (Gizmo *)0x0)) {
-            Gizmo::Gizmo_SetEnabled(pGVar3,0,(MethodInfo *)0x0);
+          ppOVar4 = &(this->fields)._objectUniversalGizmo;
+          *ppOVar4 = pOVar2;
+          func_?(ppOVar4,pOVar2);
+          if ((*ppOVar3 != (ObjectTransformGizmo *)0x0) &&
+             (pGVar5 = ((*ppOVar3)->fields)._._gizmo, pGVar5 != (Gizmo *)0x0)) {
+            Gizmo::Gizmo_SetEnabled(pGVar5,0,(MethodInfo *)0x0);
             pOVar2 = (this->fields)._objectRotationGizmo;
             if ((pOVar2 != (ObjectTransformGizmo *)0x0) &&
-               (pGVar3 = (pOVar2->fields)._._gizmo, pGVar3 != (Gizmo *)0x0)) {
-              Gizmo::Gizmo_SetEnabled(pGVar3,0,(MethodInfo *)0x0);
+               (pGVar5 = (pOVar2->fields)._._gizmo, pGVar5 != (Gizmo *)0x0)) {
+              Gizmo::Gizmo_SetEnabled(pGVar5,0,(MethodInfo *)0x0);
               pOVar2 = (this->fields)._objectScaleGizmo;
               if ((pOVar2 != (ObjectTransformGizmo *)0x0) &&
-                 (pGVar3 = (pOVar2->fields)._._gizmo, pGVar3 != (Gizmo *)0x0)) {
-                Gizmo::Gizmo_SetEnabled(pGVar3,0,(MethodInfo *)0x0);
-                pOVar2 = (this->fields)._objectUniversalGizmo;
-                if ((pOVar2 != (ObjectTransformGizmo *)0x0) &&
-                   (pGVar3 = (pOVar2->fields)._._gizmo, pGVar3 != (Gizmo *)0x0)) {
-                  Gizmo::Gizmo_SetEnabled(pGVar3,0,(MethodInfo *)0x0);
-                  pOVar2 = (this->fields)._objectMoveGizmo;
-                  (this->fields)._workGizmo = pOVar2;
-                  func_?(&(this->fields)._workGizmo,pOVar2);
+                 (pGVar5 = (pOVar2->fields)._._gizmo, pGVar5 != (Gizmo *)0x0)) {
+                Gizmo::Gizmo_SetEnabled(pGVar5,0,(MethodInfo *)0x0);
+                if ((*ppOVar4 != (ObjectTransformGizmo *)0x0) &&
+                   (pGVar5 = ((*ppOVar4)->fields)._._gizmo, pGVar5 != (Gizmo *)0x0)) {
+                  Gizmo::Gizmo_SetEnabled(pGVar5,0,(MethodInfo *)0x0);
+                  ppOVar4 = &(this->fields)._workGizmo;
+                  *ppOVar4 = *ppOVar3;
+                  func_?(ppOVar4,*ppOVar3);
                   (this->fields)._workGizmoId = 1;
                   return;
                 }
@@ -591,8 +588,8 @@ void Assembly-CSharp.dll::RTG::Tut_1_Enabling_and_Disabling_Gizmos::
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

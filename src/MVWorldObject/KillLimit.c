@@ -30,20 +30,21 @@ void MVWorldObject.dll::KillLimit::KillLimit_GameCountersQuery_OnCounterTypeChan
       UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
       UxmlObjectListAttributeDescription`1[System::Object]::
       UxmlObjectListAttributeDescription_1_System_Object___ctor(this_01,(MethodInfo *)0x0);
+      ppOVar4 = &(pKVar1->fields)._.instigatorCounterTypeChangedEvent;
       (pKVar1->fields)._.forfilled = 1;
-      (pKVar1->fields)._.instigatorCounterTypeChangedEvent = e;
-      func_?(&(pKVar1->fields)._.instigatorCounterTypeChangedEvent,e);
-      if ((pKVar1->fields)._.OnWinningConditionChanged != (EventHandler_1_EventArgs_ *)0x0) {
-        pEVar4 = (pKVar1->fields)._.OnWinningConditionChanged;
-        (*(pEVar4->fields)._._.invoke_impl)((pEVar4->fields)._._.method_code,pKVar1);
+      *ppOVar4 = e;
+      func_?(ppOVar4,e);
+      pEVar5 = (pKVar1->fields)._.OnWinningConditionChanged;
+      if (pEVar5 != (EventHandler_1_EventArgs_ *)0x0) {
+        (*(pEVar5->fields)._._.invoke_impl)((pEVar5->fields)._._.method_code,pKVar1);
       }
     }
     return;
   }
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

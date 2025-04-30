@@ -9,11 +9,11 @@ void Assembly-CSharp.dll::TimedPlayReward::TimedPlayReward_ClaimReward
     func_?(&TypeInfo__TimedPlayReward__RewardTracker);
     cRam_? = '\x01';
   }
-  pTVar1 = TypeInfo__TimedPlayReward__RewardTracker->static_fields;
-  if ((pTVar1->IsCollected == 0) && (pTVar1->CollectedChanged != (Action *)0x0)) {
-    pAVar2 = pTVar1->CollectedChanged;
-    (*(pAVar2->fields)._._.invoke_impl)
-              ((pAVar2->fields)._._.method_code,(pAVar2->fields)._._.method);
+  if ((TypeInfo__TimedPlayReward__RewardTracker->static_fields->IsCollected == 0) &&
+     (pAVar1 = TypeInfo__TimedPlayReward__RewardTracker->static_fields->CollectedChanged,
+     pAVar1 != (Action *)0x0)) {
+    (*(pAVar1->fields)._._.invoke_impl)
+              ((pAVar1->fields)._._.method_code,(pAVar1->fields)._._.method);
   }
   return;
 }
@@ -135,12 +135,13 @@ void Assembly-CSharp.dll::TimedPlayReward::TimedPlayReward_OnCollectedChanged
     }
     NotificationController::NotificationController_PushNotification
               (pSVar2,(Sprite *)0x0,5,(MethodInfo *)0x0);
-    this_01 = (GameEventManager_AvatarCommandsPlayModeManager *)
+    this_01 = (ContextualMenuManipulator *)
               MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-    if (this_01 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0) {
-      GameEventManager+AvatarCommandsPlayModeManager::
-      GameEventManager_AvatarCommandsPlayModeManager_SetIntermediateDebriefing
-                (this_01,(this->fields)._RewardXP_k__BackingField,(MethodInfo *)0x0);
+    if (this_01 != (ContextualMenuManipulator *)0x0) {
+      UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::ContextualMenuManipulator::
+      ContextualMenuManipulator_OnContextualMenuEvent
+                (this_01,(ContextualMenuPopulateEvent *)(this->fields)._RewardXP_k__BackingField,
+                 (MethodInfo *)0x0);
       (this->fields)._IsClaimable_k__BackingField = 0;
       if (cRam_? == '\0') {
         func_?();
@@ -327,12 +328,13 @@ void Assembly-CSharp.dll::TimedPlayReward::TimedPlayReward_OnFinishedViewingAd
     }
     NotificationController::NotificationController_PushNotification
               (pSVar2,(Sprite *)0x0,5,(MethodInfo *)0x0);
-    this_01 = (GameEventManager_AvatarCommandsPlayModeManager *)
+    this_01 = (ContextualMenuManipulator *)
               MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-    if (this_01 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0) {
-      GameEventManager+AvatarCommandsPlayModeManager::
-      GameEventManager_AvatarCommandsPlayModeManager_SetIntermediateDebriefing
-                (this_01,(this->fields)._RewardXP_k__BackingField,(MethodInfo *)0x0);
+    if (this_01 != (ContextualMenuManipulator *)0x0) {
+      UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::ContextualMenuManipulator::
+      ContextualMenuManipulator_OnContextualMenuEvent
+                (this_01,(ContextualMenuPopulateEvent *)(this->fields)._RewardXP_k__BackingField,
+                 (MethodInfo *)0x0);
       (this->fields)._IsClaimable_k__BackingField = 0;
       if (cRam_? == '\0') {
         func_?();

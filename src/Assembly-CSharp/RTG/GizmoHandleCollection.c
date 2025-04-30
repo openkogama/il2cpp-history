@@ -223,7 +223,6 @@ Assembly-CSharp.dll::RTG::GizmoHandleCollection::GizmoHandleCollection_GetAllHan
     func_?(&TypeInfo__System__Collections__Generic__List<RTG::GizmoHandleHoverData>);
     cRam_? = '\x01';
   }
-  pLStack_4 = (List_1_System_Object_ *)0x0;
   this_01 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
              *)func_?(
                               TypeInfo__System__Collections__Generic__List<RTG::GizmoHandleHoverData>
@@ -236,34 +235,34 @@ Assembly-CSharp.dll::RTG::GizmoHandleCollection::GizmoHandleCollection_GetAllHan
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
             (this->fields)._handles;
   if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    pLVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
              RegexCharClass+SingleRange]::
              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                        ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
                          *)&stack0xffffffc4,this_00,
                         MethodInfo__System__Collections__Generic__List<RTG::IGizmoHandle>__GetEnumerator__
                        );
-    lVar6 = (ulonglong)(uint)pLVar5->_current << 0x20;
+    lVar5 = (ulonglong)(uint)pLVar4->_current << 0x20;
     uStack_1 = 1;
     while( true ) {
-      pOVar7 = (Object *)((ulonglong)lVar6 >> 0x20);
-      bVar8 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+      pOVar6 = (Object *)((ulonglong)lVar5 >> 0x20);
+      bVar7 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
               List_1_T_Enumerator_System_Object__MoveNext
-                        ((List_1_T_Enumerator_System_Object_ *)&pLStack_4,
+                        ((List_1_T_Enumerator_System_Object_ *)&pLStack_8,
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::IGizmoHandle>__MoveNext__
                         );
-      if (bVar8 == 0) {
+      if (bVar7 == 0) {
         uStack_1 = 0xffffffff;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&pLStack_4,
+                  ((Object *)&pLStack_8,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::IGizmoHandle>__Dispose__
                    ,in_stack_9);
         *unaff_FS_OFFSET = uStack_3;
         return (List_1_RTG_GizmoHandleHoverData_ *)this_01;
       }
-      if (pOVar7 == (Object *)0x0) break;
-      pOVar10 = pOVar7->klass;
+      if (pOVar6 == (Object *)0x0) break;
+      pOVar10 = pOVar6->klass;
       uVar11 = 0;
       uVar12._0_1_ = (pOVar10->_1).rank;
       uVar12._1_1_ = (pOVar10->_1).minimumAlignment;
@@ -279,16 +278,16 @@ Assembly-CSharp.dll::RTG::GizmoHandleCollection::GizmoHandleCollection_GetAllHan
       }
       puVar13 = (uint32_t *)func_?();
 code_?:
-      pLStack_4 = (List_1_System_Object_ *)hoverRay.m_Origin.z;
-      lVar6 = hoverRay.m_Direction._4_8_;
-      pOVar7 = (Object *)(*(code *)*puVar13)();
-      if (pOVar7 != (Object *)0x0) {
+      pLStack_8 = (List_1_System_Object_ *)hoverRay.m_Origin.z;
+      lVar5 = hoverRay.m_Direction._4_8_;
+      pOVar6 = (Object *)(*(code *)*puVar13)();
+      if (pOVar6 != (Object *)0x0) {
         if (this_01 ==
             (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
              *)0x0) break;
         mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
         List_1_System_Object__Add
-                  ((List_1_System_Object_ *)this_01,pOVar7,
+                  ((List_1_System_Object_ *)this_01,pOVar6,
                    MethodInfo__System__Collections__Generic__List<RTG::GizmoHandleHoverData>__Add_RTG__GizmoHandleHoverData_
                   );
       }
@@ -395,8 +394,9 @@ void Assembly-CSharp.dll::RTG::GizmoHandleCollection::GizmoHandleCollection__cto
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<RTG::IGizmoHandle>__List__);
-  (this->fields)._handles = this_00;
-  func_?(&(this->fields)._handles,this_00);
+  ppLVar1 = &(this->fields)._handles;
+  *ppLVar1 = this_00;
+  func_?(ppLVar1,this_00);
   this_01 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *
             )func_?(
                             TypeInfo__System__Collections__Generic__Dictionary<int,_RTG::IGizmoHandle>
@@ -408,7 +408,8 @@ void Assembly-CSharp.dll::RTG::GizmoHandleCollection::GizmoHandleCollection__cto
              MethodInfo__System__Collections__Generic__Dictionary<int,_RTG::IGizmoHandle>__Dictionary__
             );
   method_00 = (MethodInfo *)&(this->fields)._idToHandle;
-  (this->fields)._idToHandle = (Dictionary_2_System_Int32_RTG_IGizmoHandle_ *)this_01;
+  *(Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ **)
+   method_00 = this_01;
   func_?(method_00,this_01);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);

@@ -135,51 +135,50 @@ Assembly-CSharp.dll::RTG::RTSceneGrid::RTSceneGrid_GetSceneHitForGridSnap
       uVar5 = 0;
       uVar6 = *(ushort *)((int)&pIVar4[4].nameNoExt + 2);
       if (uVar6 != 0) {
+        pcVar7 = pIVar4[2].name;
         do {
-          if (*(IInputDevice__Class **)(pIVar4[2].name + (uint)uVar5 * 8) ==
-              TypeInfo__RTG__IInputDevice) {
-            pIVar4 = (pOVar2->_0).image;
-            puVar7 = &pIVar4[5].customAttributeCount +
-                      *(int *)(pIVar4[2].name + (uint)uVar5 * 8 + 4) * 2;
+          if (*(IInputDevice__Class **)(pcVar7 + (uint)uVar5 * 8) == TypeInfo__RTG__IInputDevice) {
+            puVar8 = &(pOVar2->_0).image[5].customAttributeCount +
+                      *(int *)(pcVar7 + (uint)uVar5 * 8 + 4) * 2;
             goto code_?;
           }
           uVar5 = uVar5 + 1;
         } while (uVar5 < uVar6);
       }
-      puVar7 = (uint32_t *)func_?(pOVar2,TypeInfo__RTG__IInputDevice,6);
+      puVar8 = (uint32_t *)func_?(pOVar2,TypeInfo__RTG__IInputDevice,6);
 code_?:
-      puVar8 = (undefined4 *)
-                (*(code *)*puVar7)(auStack_9,pOVar2,uStack_3._4_4_,
-                                    (Il2CppMetadataImageHandle)puVar7[1]);
-      uStack_10 = *puVar8;
-      uStack_11 = puVar8[1];
-      uStack_12 = puVar8[2];
-      uStack_13 = puVar8[3];
-      uStack_3 = *(undefined8 *)(puVar8 + 4);
+      puVar9 = (undefined4 *)
+                (*(code *)*puVar8)(auStack_10,pOVar2,uStack_3._4_4_,
+                                    (Il2CppMetadataImageHandle)puVar8[1]);
+      uStack_11 = *puVar9;
+      uStack_12 = puVar9[1];
+      uStack_13 = puVar9[2];
+      uStack_14 = puVar9[3];
+      uStack_3 = *(undefined8 *)(puVar9 + 4);
       this_00 = (SceneRaycastFilter *)func_?(TypeInfo__RTG__SceneRaycastFilter);
       SceneRaycastFilter::SceneRaycastFilter__ctor(this_00,(MethodInfo *)0x0);
-      pMVar14 = 
+      pMVar15 = 
       MethodInfo__System__Collections__Generic__List<RTG::GameObjectType>__Add_RTG__GameObjectType_;
       if ((this_00 != (SceneRaycastFilter *)0x0) &&
-         (pLVar15 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+         (pLVar16 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                    (this_00->fields)._allowedObjectTypes,
-         pLVar15 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)) {
-        piVar16 = &(pLVar15->fields)._version;
-        *piVar16 = *piVar16 + 1;
-        pRVar17 = (pLVar15->fields)._items;
-        if (pRVar17 != (RegexCharClass_SingleRange__Array *)0x0) {
-          uVar18 = (pLVar15->fields)._size;
-          if (uVar18 < pRVar17->max_length) {
-            (pLVar15->fields)._size = uVar18 + 1;
-            if (pRVar17->max_length <= uVar18) goto code_?;
-            pRVar17->vector[uVar18].First = 1;
-            pRVar17->vector[uVar18].Last = 0;
+         pLVar16 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)) {
+        piVar17 = &(pLVar16->fields)._version;
+        *piVar17 = *piVar17 + 1;
+        pRVar18 = (pLVar16->fields)._items;
+        if (pRVar18 != (RegexCharClass_SingleRange__Array *)0x0) {
+          uVar19 = (pLVar16->fields)._size;
+          if (uVar19 < pRVar18->max_length) {
+            (pLVar16->fields)._size = uVar19 + 1;
+            if (pRVar18->max_length <= uVar19) goto code_?;
+            pRVar18->vector[uVar19].First = 1;
+            pRVar18->vector[uVar19].Last = 0;
           }
           else {
             mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
             RegexCharClass+SingleRange]::
             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__AddWithResize
-                      (pLVar15,(RegexCharClass_SingleRange)0x1,pMVar14->klass->rgctx_data[0xe].method
+                      (pLVar16,(RegexCharClass_SingleRange)0x1,pMVar15->klass->rgctx_data[0xe].method
                       );
           }
           if ((TypeInfo__RTG__MonoSingleton<RTG::RTScene>->_1).cctor_finished_or_no_cctor == 0) {
@@ -214,20 +213,20 @@ code_?:
             }
             if (hits != (List_1_RTG_GameObjectRayHit_ *)0x0) {
               length = (hits->fields)._size;
-              piVar16 = &(hits->fields)._version;
-              *piVar16 = *piVar16 + 1;
+              piVar17 = &(hits->fields)._version;
+              *piVar17 = *piVar17 + 1;
               (hits->fields)._size = 0;
               if (0 < length) {
                 mscorlib.dll::System::Array::Array_Clear
                           ((Array *)(hits->fields)._items,0,length,(MethodInfo *)0x0);
               }
-              pLVar19 = (this_00->fields)._allowedObjectTypes;
-              if (pLVar19 != (List_1_RTG_GameObjectType_ *)0x0) {
-                if ((pLVar19->fields)._size != 0) {
-                  ray.m_Origin.y = (float)uStack_11;
-                  ray.m_Origin.x = (float)uStack_10;
-                  ray.m_Origin.z = (float)uStack_12;
-                  ray.m_Direction.x = (float)uStack_13;
+              pLVar20 = (this_00->fields)._allowedObjectTypes;
+              if (pLVar20 != (List_1_RTG_GameObjectType_ *)0x0) {
+                if ((pLVar20->fields)._size != 0) {
+                  ray.m_Origin.y = (float)uStack_12;
+                  ray.m_Origin.x = (float)uStack_11;
+                  ray.m_Origin.z = (float)uStack_13;
+                  ray.m_Direction.x = (float)uStack_14;
                   ray.m_Direction.y = (float)(int)uStack_3;
                   ray.m_Direction.z = (float)((ulonglong)uStack_3 >> 0x20);
                   RTScene::RTScene_RaycastAllObjectsSorted
@@ -235,11 +234,11 @@ code_?:
                   ;
                   SceneRaycastFilter::SceneRaycastFilter_FilterHits(this_00,hits,(MethodInfo *)0x0);
                 }
-                pLVar15 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                pLVar16 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                          (this_01->fields)._objectHitBuffer;
-                if (pLVar15 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                if (pLVar16 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                               0x0) {
-                  if ((pLVar15->fields)._size == 0) {
+                  if ((pLVar16->fields)._size == 0) {
                     item1.First = 0;
                     item1.Last = 0;
                   }
@@ -247,14 +246,14 @@ code_?:
                     item1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                             RegularExpressions::RegexCharClass+SingleRange]::
                             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                      (pLVar15,0,
+                                      (pLVar16,0,
                                        MethodInfo__System__Collections__Generic__List<RTG::GameObjectRayHit>__get_Item_int_
                                       );
                   }
-                  ray_00.m_Origin.y = (float)uStack_11;
-                  ray_00.m_Origin.x = (float)uStack_10;
-                  ray_00.m_Origin.z = (float)uStack_12;
-                  ray_00.m_Direction.x = (float)uStack_13;
+                  ray_00.m_Origin.y = (float)uStack_12;
+                  ray_00.m_Origin.x = (float)uStack_11;
+                  ray_00.m_Origin.z = (float)uStack_13;
+                  ray_00.m_Direction.x = (float)uStack_14;
                   ray_00.m_Direction.y = (float)(int)uStack_3;
                   ray_00.m_Direction.z = (float)((ulonglong)uStack_3 >> 0x20);
                   item2 = RTScene::RTScene_RaycastSceneGridIfVisible
@@ -275,9 +274,9 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar20 = (code *)swi(3);
-  pSVar21 = (SceneRaycastHit *)(*pcVar20)();
-  return pSVar21;
+  pcVar21 = (code *)swi(3);
+  pSVar22 = (SceneRaycastHit *)(*pcVar21)();
+  return pSVar22;
 }
 
 
@@ -315,26 +314,25 @@ void Assembly-CSharp.dll::RTG::RTSceneGrid::RTSceneGrid_Initialize_SystemCall
       uVar4 = 0;
       uVar5 = *(ushort *)((int)&pIVar3[4].nameNoExt + 2);
       if (uVar5 != 0) {
+        pcVar6 = pIVar3[2].name;
         do {
-          if (*(IInputDevice__Class **)(pIVar3[2].name + (uint)uVar4 * 8) ==
-              TypeInfo__RTG__IInputDevice) {
-            pIVar3 = (pOVar2->_0).image;
-            puVar6 = &pIVar3[4].exportedTypeCount +
-                     *(int *)(pIVar3[2].name + (uint)uVar4 * 8 + 4) * 2;
+          if (*(IInputDevice__Class **)(pcVar6 + (uint)uVar4 * 8) == TypeInfo__RTG__IInputDevice) {
+            puVar7 = &(pOVar2->_0).image[4].exportedTypeCount +
+                     *(int *)(pcVar6 + (uint)uVar4 * 8 + 4) * 2;
             goto code_?;
           }
           uVar4 = uVar4 + 1;
         } while (uVar4 < uVar5);
       }
-      puVar6 = (uint32_t *)func_?(pOVar2,TypeInfo__RTG__IInputDevice,0);
+      puVar7 = (uint32_t *)func_?(pOVar2,TypeInfo__RTG__IInputDevice,0);
 code_?:
-      (*(code *)*puVar6)(pOVar2,puVar6[1]);
+      (*(code *)*puVar7)(pOVar2,puVar7[1]);
       return;
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -519,10 +517,10 @@ void Assembly-CSharp.dll::RTG::RTSceneGrid::RTSceneGrid_Render_SystemCall
     this_00 = (this->fields)._renderIgnoreCameras;
     if (this_00 != (List_1_UnityEngine_Camera_ *)0x0) {
       bVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-              List_1_System_Object__Contains
-                        ((List_1_System_Object_ *)this_00,(Object *)renderCamera,
-                         MethodInfo__System__Collections__Generic__List<UnityEngine::Camera>__Contains_UnityEngine__Camera_
-                        );
+               List_1_System_Object__Contains
+                         ((List_1_System_Object_ *)this_00,(Object *)renderCamera,
+                          MethodInfo__System__Collections__Generic__List<UnityEngine::Camera>__Contains_UnityEngine__Camera_
+                         );
       if (bVar2 != 0) {
         return;
       }
@@ -530,311 +528,322 @@ void Assembly-CSharp.dll::RTG::RTSceneGrid::RTSceneGrid_Render_SystemCall
         func_?(TypeInfo__RTG__CameraEx);
       }
       pAVar3 = CameraEx::CameraEx_CalculateVolumeAABB
-                         ((AABB *)&stack0xffffff40,renderCamera,(MethodInfo *)0x0);
+                          ((AABB *)&stack0xffffff60,renderCamera,(MethodInfo *)0x0);
       fStack_4 = (pAVar3->_size).x;
       fStack_5 = (pAVar3->_size).y;
       fStack_6 = (pAVar3->_size).z;
       fStack_7 = (pAVar3->_center).x;
       uVar8 = (pAVar3->_center).y;
       uVar9 = (pAVar3->_center).z;
-      fStack_10 = (float)uVar8;
-      fStack_11 = (float)uVar9;
-      PStack_12.m_Normal.x = fStack_4;
-      PStack_12.m_Normal.y = fStack_5;
-      PStack_12.m_Normal.z = fStack_6;
-      PStack_12.m_Distance = fStack_7;
-      pPVar13 = RTSceneGrid_get_WorldPlane((Plane *)&QStack_14,this,(MethodInfo *)0x0);
-      pt.y = fStack_10;
+      fStack_10 = *(float *)&pAVar3->_isValid;
+      fStack_11 = (float)uVar8;
+      fStack_12 = (float)uVar9;
+      QStack_13.x = fStack_4;
+      QStack_13.y = fStack_5;
+      QStack_13.z = fStack_6;
+      QStack_13.w = fStack_7;
+      pPVar14 = RTSceneGrid_get_WorldPlane(&PStack_15,this,(MethodInfo *)0x0);
+      pt.y = fStack_11;
       pt.x = fStack_7;
-      pt.z = fStack_11;
-      pVVar15 = PlaneEx::PlaneEx_ProjectPoint(&VStack_16,*pPVar13,pt,(MethodInfo *)0x0);
-      uStack_17._0_4_ = pVVar15->x;
-      uStack_17._4_4_ = pVVar15->y;
-      PStack_12.m_Normal.x = PStack_12.m_Normal.x * _UNK_?;
-      fVar18 = pVVar15->z;
-      VStack_16.z = PStack_12.m_Normal.z * _UNK_?;
-      pQVar19 = RTSceneGrid_get_Rotation(&QStack_14,this,(MethodInfo *)0x0);
-      method_00 = (MethodInfo *)pQVar19->w;
-      pos.z = fVar18;
-      pos.x = (float)(undefined4)uStack_17;
-      pos.y = (float)uStack_17._4_4_;
-      s.y = _UNK_?;
-      s.x = PStack_12.m_Normal.x;
-      s.z = VStack_16.z;
-      pMVar20 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
-                          ((Matrix4x4 *)&stack0xffffff00,pos,*pQVar19,s,(MethodInfo *)0x0);
-      fStack_21 = pMVar20->m00;
-      fStack_22 = pMVar20->m10;
-      fStack_23 = pMVar20->m20;
-      fStack_24 = pMVar20->m30;
-      fStack_25 = pMVar20->m01;
-      fStack_26 = pMVar20->m11;
-      fStack_27 = pMVar20->m21;
-      fStack_28 = pMVar20->m31;
-      fStack_6 = pMVar20->m02;
-      fStack_7 = pMVar20->m12;
-      fStack_10 = pMVar20->m22;
-      fStack_11 = pMVar20->m32;
-      QStack_14.x = pMVar20->m03;
-      QStack_14.y = pMVar20->m13;
-      QStack_14.z = pMVar20->m23;
-      QStack_14.w = pMVar20->m33;
-      pXVar29 = (this->fields)._lookAndFeel;
-      if (pXVar29 != (XZGridLookAndFeel *)0x0) {
-        if ((pXVar29->fields)._useCellFading == 0) {
+      pt.z = fStack_12;
+      pVVar16 = PlaneEx::PlaneEx_ProjectPoint(&VStack_17,*pPVar14,pt,(MethodInfo *)0x0);
+      uVar18 = pVVar16->x;
+      uVar19 = pVVar16->y;
+      fVar20 = pVVar16->z;
+      fVar21 = QStack_13.z * _UNK_?;
+      uStack_22 = CONCAT44(0x3f800000,QStack_13.x * _UNK_?);
+      fStack_23 = (float)uVar18;
+      fStack_24 = (float)uVar19;
+      VStack_17.z = fVar21;
+      pQVar25 = RTSceneGrid_get_Rotation(&QStack_13,this,(MethodInfo *)0x0);
+      method_00 = (MethodInfo *)pQVar25->w;
+      pos.y = fStack_24;
+      pos.x = fStack_23;
+      pos.z = fVar20;
+      s.z = fVar21;
+      s.x = (float)(undefined4)uStack_22;
+      s.y = (float)uStack_22._4_4_;
+      pMVar26 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
+                          ((Matrix4x4 *)&stack0xffffff20,pos,*pQVar25,s,(MethodInfo *)0x0);
+      fStack_27 = pMVar26->m00;
+      fStack_28 = pMVar26->m10;
+      fStack_29 = pMVar26->m20;
+      fStack_30 = pMVar26->m30;
+      fStack_31 = pMVar26->m01;
+      fStack_32 = pMVar26->m11;
+      fStack_33 = pMVar26->m21;
+      fStack_34 = pMVar26->m31;
+      fStack_7 = pMVar26->m02;
+      fStack_11 = pMVar26->m12;
+      fStack_12 = pMVar26->m22;
+      fStack_10 = pMVar26->m32;
+      PStack_15.m_Normal.x = pMVar26->m03;
+      PStack_15.m_Normal.y = pMVar26->m13;
+      PStack_15.m_Normal.z = pMVar26->m23;
+      PStack_15.m_Distance = pMVar26->m33;
+      pXVar35 = (this->fields)._lookAndFeel;
+      if (pXVar35 != (XZGridLookAndFeel *)0x0) {
+        if ((pXVar35->fields)._useCellFading == 0) {
           if ((TypeInfo__RTG__Singleton<RTG::MaterialPool>->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__RTG__Singleton<RTG::MaterialPool>);
           }
-          pMVar30 = (MaterialPool *)
+          pMVar36 = (MaterialPool *)
                     Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
                               (MethodInfo__RTG__Singleton<RTG::MaterialPool>__get_Get__);
-          if (((pMVar30 == (MaterialPool *)0x0) ||
-              (pMStack_31 = MaterialPool::MaterialPool_get_XZGrid_Plane(pMVar30,(MethodInfo *)0x0),
+          if (((pMVar36 == (MaterialPool *)0x0) ||
+              (this_01 = MaterialPool::MaterialPool_get_XZGrid_Plane(pMVar36,(MethodInfo *)0x0),
               renderCamera == (Camera *)0x0)) ||
-             (fStack_32 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_farClipPlane
-                                    (renderCamera,(MethodInfo *)0x0), pMStack_31 == (Material *)0x0)
-             ) goto code_?;
+             (fVar20 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_farClipPlane
+                                 (renderCamera,(MethodInfo *)0x0), this_01 == (Material *)0x0))
+          goto code_?;
           UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetFloat
-                    (pMStack_31,StringLiteral__CamFarPlaneDist,fStack_32,(MethodInfo *)0x0);
-          pTVar33 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                    (this_01,StringLiteral__CamFarPlaneDist,fVar20,(MethodInfo *)0x0);
+          pTVar37 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                               ((Component *)renderCamera,(MethodInfo *)0x0);
-          if (pTVar33 == (Transform *)0x0) goto code_?;
-          pVVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                              (&VStack_16,pTVar33,(MethodInfo *)0x0);
-          this_01 = pMStack_31;
-          uStack_34 = 0;
-          uStack_17._0_4_ = pVVar15->x;
-          uStack_17._4_4_ = pVVar15->y;
-          fStack_35 = pVVar15->z;
-          VStack_36.x = (float)(undefined4)uStack_17;
-          VStack_36.y = (float)uStack_17._4_4_;
+          if (pTVar37 == (Transform *)0x0) goto code_?;
+          pVVar16 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                              (&VStack_17,pTVar37,(MethodInfo *)0x0);
+          uVar38 = pVVar16->x;
+          uVar39 = pVVar16->y;
+          fStack_24 = pVVar16->z;
+          uStack_40 = uVar38;
+          VStack_17.x = (float)uVar39;
+          VStack_17.z = 0.0;
           value_05.w = 0.0;
-          value_05.x = pVVar15->x;
-          value_05.y = pVVar15->y;
-          value_05.z = pVVar15->z;
-          VStack_36.z = fStack_35;
+          value_05.x = pVVar16->x;
+          value_05.y = pVVar16->y;
+          value_05.z = pVVar16->z;
+          uStack_41 = uVar38;
+          fStack_23 = (float)uVar39;
+          VStack_17.y = fStack_24;
           UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
-                    (pMStack_31,StringLiteral__CamWorldPos,value_05,(MethodInfo *)0x0);
-          value_04.m10 = fStack_22;
-          value_04.m00 = fStack_21;
-          value_04.m20 = fStack_23;
-          value_04.m30 = fStack_24;
-          value_04.m01 = fStack_25;
-          value_04.m11 = fStack_26;
-          value_04.m21 = fStack_27;
-          value_04.m31 = fStack_28;
-          value_04.m02 = fStack_6;
-          value_04.m12 = fStack_7;
-          value_04.m22 = fStack_10;
-          value_04.m32 = fStack_11;
-          value_04.m03 = QStack_14.x;
-          value_04.m13 = QStack_14.y;
-          value_04.m23 = QStack_14.z;
-          value_04.m33 = QStack_14.w;
+                    (this_01,StringLiteral__CamWorldPos,value_05,(MethodInfo *)0x0);
+          value_04.m10 = fStack_28;
+          value_04.m00 = fStack_27;
+          value_04.m20 = fStack_29;
+          value_04.m30 = fStack_30;
+          value_04.m01 = fStack_31;
+          value_04.m11 = fStack_32;
+          value_04.m21 = fStack_33;
+          value_04.m31 = fStack_34;
+          value_04.m02 = fStack_7;
+          value_04.m12 = fStack_11;
+          value_04.m22 = fStack_12;
+          value_04.m32 = fStack_10;
+          value_04.m03 = PStack_15.m_Normal.x;
+          value_04.m13 = PStack_15.m_Normal.y;
+          value_04.m23 = PStack_15.m_Normal.z;
+          value_04.m33 = PStack_15.m_Distance;
           UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetMatrix
                     (this_01,StringLiteral__TransformMatrix,value_04,(MethodInfo *)0x0);
           pXVar1 = (this->fields)._settings;
           if (pXVar1 == (XZGridSettings *)0x0) goto code_?;
           UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetFloat
-                    (this_01,StringLiteral__CellSizeX,(pXVar1->fields)._cellSizeX,(MethodInfo *)0x0)
-          ;
+                    (this_01,StringLiteral__CellSizeX,(pXVar1->fields)._cellSizeX,(MethodInfo *)0x0
+                    );
           pXVar1 = (this->fields)._settings;
           if (pXVar1 == (XZGridSettings *)0x0) goto code_?;
           UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetFloat
-                    (this_01,StringLiteral__CellSizeZ,(pXVar1->fields)._cellSizeZ,(MethodInfo *)0x0)
-          ;
-          pXVar29 = (this->fields)._lookAndFeel;
-          if (pXVar29 == (XZGridLookAndFeel *)0x0) goto code_?;
+                    (this_01,StringLiteral__CellSizeZ,(pXVar1->fields)._cellSizeZ,(MethodInfo *)0x0
+                    );
+          pXVar35 = (this->fields)._lookAndFeel;
+          if (pXVar35 == (XZGridLookAndFeel *)0x0) goto code_?;
           UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
-                    (this_01,StringLiteral__LineColor,(Vector4)(pXVar29->fields)._lineColor,
+                    (this_01,StringLiteral__LineColor,(Vector4)(pXVar35->fields)._lineColor,
                      (MethodInfo *)0x0);
-          pVVar15 = MVWorldObject.dll::MV::WorldObject::MVWorldObject::
-                    MVWorldObject_get_WorldPosition(&VStack_16,(MVWorldObject *)0x0,method_00);
-          uStack_34 = 0;
-          uStack_17._0_4_ = pVVar15->x;
-          uStack_17._4_4_ = pVVar15->y;
-          fStack_35 = pVVar15->z;
-          VStack_36.x = (float)(undefined4)uStack_17;
-          VStack_36.y = (float)uStack_17._4_4_;
+          pVVar16 = MVWorldObject.dll::MV::WorldObject::MVWorldObject::
+                    MVWorldObject_get_WorldPosition(&VStack_17,(MVWorldObject *)0x0,method_00);
+          uVar42 = pVVar16->x;
+          uVar43 = pVVar16->y;
+          fStack_24 = pVVar16->z;
+          uStack_40 = uVar42;
+          VStack_17.x = (float)uVar43;
+          VStack_17.z = 0.0;
           value_07.w = 0.0;
-          value_07.x = pVVar15->x;
-          value_07.y = pVVar15->y;
-          value_07.z = pVVar15->z;
-          VStack_36.z = fStack_35;
+          value_07.x = pVVar16->x;
+          value_07.y = pVVar16->y;
+          value_07.z = pVVar16->z;
+          uStack_41 = uVar42;
+          fStack_23 = (float)uVar43;
+          VStack_17.y = fStack_24;
           UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
                     (this_01,StringLiteral__GridOrigin,value_07,(MethodInfo *)0x0);
-          pVVar15 = RTSceneGrid_get_Right(&VStack_16,this,(MethodInfo *)0x0);
-          uStack_34 = 0;
-          uStack_17._0_4_ = pVVar15->x;
-          uStack_17._4_4_ = pVVar15->y;
-          fStack_35 = pVVar15->z;
-          VStack_36.x = (float)(undefined4)uStack_17;
-          VStack_36.y = (float)uStack_17._4_4_;
+          pVVar16 = RTSceneGrid_get_Right(&VStack_17,this,(MethodInfo *)0x0);
+          uVar44 = pVVar16->x;
+          uVar45 = pVVar16->y;
+          fStack_24 = pVVar16->z;
+          uStack_40 = uVar44;
+          VStack_17.x = (float)uVar45;
+          VStack_17.z = 0.0;
           value_08.w = 0.0;
-          value_08.x = pVVar15->x;
-          value_08.y = pVVar15->y;
-          value_08.z = pVVar15->z;
-          VStack_36.z = fStack_35;
+          value_08.x = pVVar16->x;
+          value_08.y = pVVar16->y;
+          value_08.z = pVVar16->z;
+          uStack_41 = uVar44;
+          fStack_23 = (float)uVar45;
+          VStack_17.y = fStack_24;
           UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
                     (this_01,StringLiteral__GridRight,value_08,(MethodInfo *)0x0);
-          pVVar15 = RTSceneGrid_get_Look(&VStack_16,this,(MethodInfo *)0x0);
-          uStack_34 = 0;
-          uStack_17._0_4_ = pVVar15->x;
-          uStack_17._4_4_ = pVVar15->y;
-          fStack_35 = pVVar15->z;
-          VStack_36.x = (float)(undefined4)uStack_17;
-          VStack_36.y = (float)uStack_17._4_4_;
+          pVVar16 = RTSceneGrid_get_Look(&VStack_17,this,(MethodInfo *)0x0);
+          uVar46 = pVVar16->x;
+          uVar47 = pVVar16->y;
+          fStack_24 = pVVar16->z;
+          uStack_40 = uVar46;
+          VStack_17.x = (float)uVar47;
+          VStack_17.z = 0.0;
           value_09.w = 0.0;
-          value_09.x = pVVar15->x;
-          value_09.y = pVVar15->y;
-          value_09.z = pVVar15->z;
-          VStack_36.z = fStack_35;
+          value_09.x = pVVar16->x;
+          value_09.y = pVVar16->y;
+          value_09.z = pVVar16->z;
+          uStack_41 = uVar46;
+          fStack_23 = (float)uVar47;
+          VStack_17.y = fStack_24;
           UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
                     (this_01,StringLiteral__GridLook,value_09,(MethodInfo *)0x0);
         }
         else {
-          pPVar13 = RTSceneGrid_get_WorldPlane(&PStack_12,this,(MethodInfo *)0x0);
-          PStack_12.m_Normal.x = (pPVar13->m_Normal).x;
-          PStack_12.m_Normal.y = (pPVar13->m_Normal).y;
-          PStack_12.m_Normal.z = (pPVar13->m_Normal).z;
-          PStack_12.m_Distance = pPVar13->m_Distance;
+          pPVar14 = RTSceneGrid_get_WorldPlane((Plane *)&QStack_13,this,(MethodInfo *)0x0);
+          QStack_13.x = (pPVar14->m_Normal).x;
+          QStack_13.y = (pPVar14->m_Normal).y;
+          QStack_13.z = (pPVar14->m_Normal).z;
+          QStack_13.w = pPVar14->m_Distance;
           if ((renderCamera == (Camera *)0x0) ||
-             (pTVar33 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+             (pTVar37 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                                   ((Component *)renderCamera,(MethodInfo *)0x0),
-             pTVar33 == (Transform *)0x0)) goto code_?;
-          pVVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                              (&VStack_16,pTVar33,(MethodInfo *)0x0);
-          plane.m_Normal.y = PStack_12.m_Normal.y;
-          plane.m_Normal.x = PStack_12.m_Normal.x;
-          plane.m_Normal.z = PStack_12.m_Normal.z;
-          plane.m_Distance = PStack_12.m_Distance;
-          fStack_37 = PlaneEx::PlaneEx_GetAbsDistanceToPoint(plane,*pVVar15,(MethodInfo *)0x0);
-          MathEx::MathEx_GetNumDigits((int)fStack_37,(MethodInfo *)0x0);
-          dVar38 = _UNK_?;
+             pTVar37 == (Transform *)0x0)) goto code_?;
+          pVVar16 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                              (&VStack_17,pTVar37,(MethodInfo *)0x0);
+          plane.m_Normal.y = QStack_13.y;
+          plane.m_Normal.x = QStack_13.x;
+          plane.m_Normal.z = QStack_13.z;
+          plane.m_Distance = QStack_13.w;
+          fStack_48 = PlaneEx::PlaneEx_GetAbsDistanceToPoint(plane,*pVVar16,(MethodInfo *)0x0);
+          MathEx::MathEx_GetNumDigits((int)fStack_48,(MethodInfo *)0x0);
+          dVar49 = _UNK_?;
           func_?();
-          pMStack_31 = (Material *)(float)dVar38;
-          dVar38 = _UNK_?;
+          fVar20 = (float)dVar49;
+          dVar49 = _UNK_?;
           func_?();
-          pXVar29 = (this->fields)._lookAndFeel;
-          fStack_32 = (float)dVar38;
-          if (pXVar29 == (XZGridLookAndFeel *)0x0) goto code_?;
-          PStack_12.m_Normal.x = (pXVar29->fields)._lineColor.r;
-          PStack_12.m_Normal.y = (pXVar29->fields)._lineColor.g;
-          PStack_12.m_Normal.z = (pXVar29->fields)._lineColor.b;
-          PStack_12.m_Distance = (pXVar29->fields)._lineColor.a;
-          pMStack_39 = (Mesh *)((fStack_32 - fStack_37) / (fStack_32 - (float)pMStack_31));
-          fStack_35 = _UNK_? - (float)pMStack_39;
+          pXVar35 = (this->fields)._lookAndFeel;
+          fStack_50 = (float)dVar49;
+          if (pXVar35 == (XZGridLookAndFeel *)0x0) goto code_?;
+          QStack_13.x = (pXVar35->fields)._lineColor.r;
+          QStack_13.y = (pXVar35->fields)._lineColor.g;
+          QStack_13.z = (pXVar35->fields)._lineColor.b;
+          QStack_13.w = (pXVar35->fields)._lineColor.a;
+          fStack_51 = (fStack_50 - fStack_48) / (fStack_50 - fVar20);
+          fStack_24 = _UNK_? - fStack_51;
           if ((TypeInfo__RTG__Singleton<RTG::MaterialPool>->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__RTG__Singleton<RTG::MaterialPool>);
           }
-          pMVar30 = (MaterialPool *)
+          pMVar36 = (MaterialPool *)
                     Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
                               (MethodInfo__RTG__Singleton<RTG::MaterialPool>__get_Get__);
-          if (pMVar30 == (MaterialPool *)0x0) goto code_?;
-          this_01 = MaterialPool::MaterialPool_get_XZGrid_Plane(pMVar30,(MethodInfo *)0x0);
-          fStack_37 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_farClipPlane
+          if (pMVar36 == (MaterialPool *)0x0) goto code_?;
+          this_01 = MaterialPool::MaterialPool_get_XZGrid_Plane(pMVar36,(MethodInfo *)0x0);
+          fStack_48 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_farClipPlane
                                 (renderCamera,(MethodInfo *)0x0);
           if (this_01 == (Material *)0x0) goto code_?;
           UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetFloat
-                    (this_01,StringLiteral__CamFarPlaneDist,fStack_37,(MethodInfo *)0x0);
-          pTVar33 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                    (this_01,StringLiteral__CamFarPlaneDist,fStack_48,(MethodInfo *)0x0);
+          pTVar37 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                               ((Component *)renderCamera,(MethodInfo *)0x0);
-          if (pTVar33 == (Transform *)0x0) goto code_?;
-          pVVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                              (&VStack_36,pTVar33,(MethodInfo *)0x0);
-          VStack_16.x = pVVar15->x;
-          VStack_16.y = pVVar15->y;
-          VStack_16.z = pVVar15->z;
-          VStack_36.x = VStack_16.x;
-          VStack_36.y = VStack_16.y;
-          uStack_34 = 0;
+          if (pTVar37 == (Transform *)0x0) goto code_?;
+          pVVar16 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                              (&VStack_17,pTVar37,(MethodInfo *)0x0);
+          uStack_22._0_4_ = pVVar16->x;
+          uStack_22._4_4_ = pVVar16->y;
+          fStack_52 = pVVar16->z;
+          uStack_40 = (undefined4)uStack_22;
+          VStack_17.x = (float)uStack_22._4_4_;
+          VStack_17.z = 0.0;
           value.w = 0.0;
-          value.x = pVVar15->x;
-          value.y = pVVar15->y;
-          value.z = pVVar15->z;
-          VStack_36.z = VStack_16.z;
+          value.x = pVVar16->x;
+          value.y = pVVar16->y;
+          value.z = pVVar16->z;
+          VStack_17.y = fStack_52;
           UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
                     (this_01,StringLiteral__CamWorldPos,value,(MethodInfo *)0x0);
-          pVVar15 = MVWorldObject.dll::MV::WorldObject::MVWorldObject::
+          pVVar16 = MVWorldObject.dll::MV::WorldObject::MVWorldObject::
                     MVWorldObject_get_WorldPosition
-                              (&VStack_36,(MVWorldObject *)0x0,in_stack_40);
-          VStack_16.x = pVVar15->x;
-          VStack_16.y = pVVar15->y;
-          VStack_16.z = pVVar15->z;
-          VStack_36.x = VStack_16.x;
-          VStack_36.y = VStack_16.y;
-          uStack_34 = 0;
+                              (&VStack_17,(MVWorldObject *)0x0,in_stack_53);
+          uStack_22._0_4_ = pVVar16->x;
+          uStack_22._4_4_ = pVVar16->y;
+          fStack_52 = pVVar16->z;
+          uStack_40 = (undefined4)uStack_22;
+          VStack_17.x = (float)uStack_22._4_4_;
+          VStack_17.z = 0.0;
           value_00.w = 0.0;
-          value_00.x = pVVar15->x;
-          value_00.y = pVVar15->y;
-          value_00.z = pVVar15->z;
-          VStack_36.z = VStack_16.z;
+          value_00.x = pVVar16->x;
+          value_00.y = pVVar16->y;
+          value_00.z = pVVar16->z;
+          VStack_17.y = fStack_52;
           UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
                     (this_01,StringLiteral__GridOrigin,value_00,(MethodInfo *)0x0);
-          pVVar15 = RTSceneGrid_get_Right(&VStack_36,this,(MethodInfo *)0x0);
-          VStack_16.x = pVVar15->x;
-          VStack_16.y = pVVar15->y;
-          VStack_16.z = pVVar15->z;
-          VStack_36.x = VStack_16.x;
-          VStack_36.y = VStack_16.y;
-          uStack_34 = 0;
+          pVVar16 = RTSceneGrid_get_Right(&VStack_17,this,(MethodInfo *)0x0);
+          uStack_22._0_4_ = pVVar16->x;
+          uStack_22._4_4_ = pVVar16->y;
+          fStack_52 = pVVar16->z;
+          uStack_40 = (undefined4)uStack_22;
+          VStack_17.x = (float)uStack_22._4_4_;
+          VStack_17.z = 0.0;
           value_01.w = 0.0;
-          value_01.x = pVVar15->x;
-          value_01.y = pVVar15->y;
-          value_01.z = pVVar15->z;
-          VStack_36.z = VStack_16.z;
+          value_01.x = pVVar16->x;
+          value_01.y = pVVar16->y;
+          value_01.z = pVVar16->z;
+          VStack_17.y = fStack_52;
           UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
                     (this_01,StringLiteral__GridRight,value_01,(MethodInfo *)0x0);
-          pVVar15 = RTSceneGrid_get_Look(&VStack_36,this,(MethodInfo *)0x0);
-          VStack_16.x = pVVar15->x;
-          VStack_16.y = pVVar15->y;
-          VStack_16.z = pVVar15->z;
-          VStack_36.x = VStack_16.x;
-          VStack_36.y = VStack_16.y;
-          uStack_34 = 0;
+          pVVar16 = RTSceneGrid_get_Look(&VStack_17,this,(MethodInfo *)0x0);
+          uStack_22._0_4_ = pVVar16->x;
+          uStack_22._4_4_ = pVVar16->y;
+          fStack_52 = pVVar16->z;
+          uStack_40 = (undefined4)uStack_22;
+          VStack_17.x = (float)uStack_22._4_4_;
+          VStack_17.z = 0.0;
           value_03.w = 0.0;
-          value_03.x = pVVar15->x;
-          value_03.y = pVVar15->y;
-          value_03.z = pVVar15->z;
-          VStack_36.z = VStack_16.z;
+          value_03.x = pVVar16->x;
+          value_03.y = pVVar16->y;
+          value_03.z = pVVar16->z;
+          VStack_17.y = fStack_52;
           UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
                     (this_01,StringLiteral__GridLook,value_03,(MethodInfo *)0x0);
-          value_02.m10 = fStack_22;
-          value_02.m00 = fStack_21;
-          value_02.m20 = fStack_23;
-          value_02.m30 = fStack_24;
-          value_02.m01 = fStack_25;
-          value_02.m11 = fStack_26;
-          value_02.m21 = fStack_27;
-          value_02.m31 = fStack_28;
-          value_02.m02 = fStack_6;
-          value_02.m12 = fStack_7;
-          value_02.m22 = fStack_10;
-          value_02.m32 = fStack_11;
-          value_02.m03 = QStack_14.x;
-          value_02.m13 = QStack_14.y;
-          value_02.m23 = QStack_14.z;
-          value_02.m33 = QStack_14.w;
+          value_02.m10 = fStack_28;
+          value_02.m00 = fStack_27;
+          value_02.m20 = fStack_29;
+          value_02.m30 = fStack_30;
+          value_02.m01 = fStack_31;
+          value_02.m11 = fStack_32;
+          value_02.m21 = fStack_33;
+          value_02.m31 = fStack_34;
+          value_02.m02 = fStack_7;
+          value_02.m12 = fStack_11;
+          value_02.m22 = fStack_12;
+          value_02.m32 = fStack_10;
+          value_02.m03 = PStack_15.m_Normal.x;
+          value_02.m13 = PStack_15.m_Normal.y;
+          value_02.m23 = PStack_15.m_Normal.z;
+          value_02.m33 = PStack_15.m_Distance;
           UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetMatrix
                     (this_01,StringLiteral__TransformMatrix,value_02,(MethodInfo *)0x0);
-          pXVar29 = (this->fields)._lookAndFeel;
-          if (pXVar29 == (XZGridLookAndFeel *)0x0) goto code_?;
-          PStack_12.m_Distance = (pXVar29->fields)._lineColor.a * (float)pMStack_39;
-          if (PStack_12.m_Distance != 0.0) {
+          pXVar35 = (this->fields)._lookAndFeel;
+          if (pXVar35 == (XZGridLookAndFeel *)0x0) goto code_?;
+          QStack_13.w = (pXVar35->fields)._lineColor.a * fStack_51;
+          if (QStack_13.w != 0.0) {
             pXVar1 = (this->fields)._settings;
             if (pXVar1 == (XZGridSettings *)0x0) goto code_?;
             UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetFloat
-                      (this_01,StringLiteral__CellSizeX,
-                       (float)pMStack_31 * (pXVar1->fields)._cellSizeX,(MethodInfo *)0x0);
+                      (this_01,StringLiteral__CellSizeX,fVar20 * (pXVar1->fields)._cellSizeX,
+                       (MethodInfo *)0x0);
             pXVar1 = (this->fields)._settings;
             if (pXVar1 == (XZGridSettings *)0x0) goto code_?;
             UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetFloat
-                      (this_01,StringLiteral__CellSizeZ,
-                       (float)pMStack_31 * (pXVar1->fields)._cellSizeZ,(MethodInfo *)0x0);
-            value_06.y = PStack_12.m_Normal.y;
-            value_06.x = PStack_12.m_Normal.x;
-            value_06.z = PStack_12.m_Normal.z;
-            value_06.w = PStack_12.m_Distance;
+                      (this_01,StringLiteral__CellSizeZ,fVar20 * (pXVar1->fields)._cellSizeZ,
+                       (MethodInfo *)0x0);
+            value_06.y = QStack_13.y;
+            value_06.x = QStack_13.x;
+            value_06.z = QStack_13.z;
+            value_06.w = QStack_13.w;
             UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
                       (this_01,StringLiteral__LineColor,value_06,(MethodInfo *)0x0);
             UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetPass
@@ -842,53 +851,53 @@ void Assembly-CSharp.dll::RTG::RTSceneGrid::RTSceneGrid_Render_SystemCall
             if ((TypeInfo__RTG__Singleton<RTG::MeshPool>->_1).cctor_finished_or_no_cctor == 0) {
               func_?(TypeInfo__RTG__Singleton<RTG::MeshPool>);
             }
-            pMVar41 = (MeshPool *)
+            pMVar54 = (MeshPool *)
                       Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
                                 (MethodInfo__RTG__Singleton<RTG::MeshPool>__get_Get__);
-            if (pMVar41 == (MeshPool *)0x0) goto code_?;
-            pMStack_39 = MeshPool::MeshPool_get_UnitQuadXZ(pMVar41,(MethodInfo *)0x0);
+            if (pMVar54 == (MeshPool *)0x0) goto code_?;
+            pMVar55 = MeshPool::MeshPool_get_UnitQuadXZ(pMVar54,(MethodInfo *)0x0);
             if ((TypeInfo__UnityEngine__Graphics->_1).cctor_finished_or_no_cctor == 0) {
               func_?(TypeInfo__UnityEngine__Graphics);
             }
-            matrix.m10 = fStack_22;
-            matrix.m00 = fStack_21;
-            matrix.m20 = fStack_23;
-            matrix.m30 = fStack_24;
-            matrix.m01 = fStack_25;
-            matrix.m11 = fStack_26;
-            matrix.m21 = fStack_27;
-            matrix.m31 = fStack_28;
-            matrix.m02 = fStack_6;
-            matrix.m12 = fStack_7;
-            matrix.m22 = fStack_10;
-            matrix.m32 = fStack_11;
-            matrix.m03 = QStack_14.x;
-            matrix.m13 = QStack_14.y;
-            matrix.m23 = QStack_14.z;
-            matrix.m33 = QStack_14.w;
+            matrix.m10 = fStack_28;
+            matrix.m00 = fStack_27;
+            matrix.m20 = fStack_29;
+            matrix.m30 = fStack_30;
+            matrix.m01 = fStack_31;
+            matrix.m11 = fStack_32;
+            matrix.m21 = fStack_33;
+            matrix.m31 = fStack_34;
+            matrix.m02 = fStack_7;
+            matrix.m12 = fStack_11;
+            matrix.m22 = fStack_12;
+            matrix.m32 = fStack_10;
+            matrix.m03 = PStack_15.m_Normal.x;
+            matrix.m13 = PStack_15.m_Normal.y;
+            matrix.m23 = PStack_15.m_Normal.z;
+            matrix.m33 = PStack_15.m_Distance;
             UnityEngine.CoreModule.dll::UnityEngine::Graphics::Graphics_DrawMeshNow_3
-                      (pMStack_39,matrix,(MethodInfo *)0x0);
+                      (pMVar55,matrix,(MethodInfo *)0x0);
           }
-          pXVar29 = (this->fields)._lookAndFeel;
-          if (pXVar29 == (XZGridLookAndFeel *)0x0) goto code_?;
-          PStack_12.m_Distance = (pXVar29->fields)._lineColor.a * fStack_35;
-          if (PStack_12.m_Distance == 0.0) {
+          pXVar35 = (this->fields)._lookAndFeel;
+          if (pXVar35 == (XZGridLookAndFeel *)0x0) goto code_?;
+          QStack_13.w = (pXVar35->fields)._lineColor.a * fStack_24;
+          if (QStack_13.w == 0.0) {
             return;
           }
           pXVar1 = (this->fields)._settings;
           if (pXVar1 == (XZGridSettings *)0x0) goto code_?;
           UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetFloat
-                    (this_01,StringLiteral__CellSizeX,fStack_32 * (pXVar1->fields)._cellSizeX,
+                    (this_01,StringLiteral__CellSizeX,fStack_50 * (pXVar1->fields)._cellSizeX,
                      (MethodInfo *)0x0);
           pXVar1 = (this->fields)._settings;
           if (pXVar1 == (XZGridSettings *)0x0) goto code_?;
           UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetFloat
-                    (this_01,StringLiteral__CellSizeZ,fStack_32 * (pXVar1->fields)._cellSizeZ,
+                    (this_01,StringLiteral__CellSizeZ,fStack_50 * (pXVar1->fields)._cellSizeZ,
                      (MethodInfo *)0x0);
-          value_10.y = PStack_12.m_Normal.y;
-          value_10.x = PStack_12.m_Normal.x;
-          value_10.z = PStack_12.m_Normal.z;
-          value_10.w = PStack_12.m_Distance;
+          value_10.y = QStack_13.y;
+          value_10.x = QStack_13.x;
+          value_10.z = QStack_13.z;
+          value_10.w = QStack_13.w;
           UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
                     (this_01,StringLiteral__LineColor,value_10,(MethodInfo *)0x0);
         }
@@ -897,32 +906,32 @@ void Assembly-CSharp.dll::RTG::RTSceneGrid::RTSceneGrid_Render_SystemCall
         if ((TypeInfo__RTG__Singleton<RTG::MeshPool>->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        pMVar41 = (MeshPool *)
+        pMVar54 = (MeshPool *)
                   Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
                             (MethodInfo__RTG__Singleton<RTG::MeshPool>__get_Get__);
-        if (pMVar41 != (MeshPool *)0x0) {
-          mesh = MeshPool::MeshPool_get_UnitQuadXZ(pMVar41,(MethodInfo *)0x0);
+        if (pMVar54 != (MeshPool *)0x0) {
+          pMVar55 = MeshPool::MeshPool_get_UnitQuadXZ(pMVar54,(MethodInfo *)0x0);
           if ((TypeInfo__UnityEngine__Graphics->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          matrix_00.m10 = fStack_22;
-          matrix_00.m00 = fStack_21;
-          matrix_00.m20 = fStack_23;
-          matrix_00.m30 = fStack_24;
-          matrix_00.m01 = fStack_25;
-          matrix_00.m11 = fStack_26;
-          matrix_00.m21 = fStack_27;
-          matrix_00.m31 = fStack_28;
-          matrix_00.m02 = fStack_6;
-          matrix_00.m12 = fStack_7;
-          matrix_00.m22 = fStack_10;
-          matrix_00.m32 = fStack_11;
-          matrix_00.m03 = QStack_14.x;
-          matrix_00.m13 = QStack_14.y;
-          matrix_00.m23 = QStack_14.z;
-          matrix_00.m33 = QStack_14.w;
+          matrix_00.m10 = fStack_28;
+          matrix_00.m00 = fStack_27;
+          matrix_00.m20 = fStack_29;
+          matrix_00.m30 = fStack_30;
+          matrix_00.m01 = fStack_31;
+          matrix_00.m11 = fStack_32;
+          matrix_00.m21 = fStack_33;
+          matrix_00.m31 = fStack_34;
+          matrix_00.m02 = fStack_7;
+          matrix_00.m12 = fStack_11;
+          matrix_00.m22 = fStack_12;
+          matrix_00.m32 = fStack_10;
+          matrix_00.m03 = PStack_15.m_Normal.x;
+          matrix_00.m13 = PStack_15.m_Normal.y;
+          matrix_00.m23 = PStack_15.m_Normal.z;
+          matrix_00.m33 = PStack_15.m_Distance;
           UnityEngine.CoreModule.dll::UnityEngine::Graphics::Graphics_DrawMeshNow_3
-                    (mesh,matrix_00,(MethodInfo *)0x0);
+                    (pMVar55,matrix_00,(MethodInfo *)0x0);
           return;
         }
       }
@@ -930,8 +939,8 @@ void Assembly-CSharp.dll::RTG::RTSceneGrid::RTSceneGrid_Render_SystemCall
   }
 code_?:
   func_?();
-  pcVar42 = (code *)swi(3);
-  (*pcVar42)();
+  pcVar56 = (code *)swi(3);
+  (*pcVar56)();
   return;
 }
 
@@ -951,174 +960,135 @@ void Assembly-CSharp.dll::RTG::RTSceneGrid::RTSceneGrid_SnapToObjectHitPoint
     func_?(&TypeInfo__RTG__ObjectBounds);
     cRam_? = '\x01';
   }
-  VStack_1.x = 0.0;
-  VStack_1.y = 0.0;
-  VStack_1.z = 0.0;
-  fStack_2 = 0.0;
   if (snapMode == RTSceneGrid_SnapToPointMode__Enum_Exact) {
-    pVVar3 = RTSceneGrid_get_Normal(&VStack_1,this,(MethodInfo *)0x0);
-    uStack_4._0_4_ = pVVar3->x;
-    uStack_4._4_4_ = pVVar3->y;
-    fVar5 = pVVar3->z;
+    pVVar1 = RTSceneGrid_get_Normal(&VStack_2,this,(MethodInfo *)0x0);
+    VVar3 = *pVVar1;
     if (cRam_? == '\0') {
       func_?(&TypeInfo__UnityEngine__Vector3);
       cRam_? = '\x01';
     }
-    pVVar6 = TypeInfo__UnityEngine__Vector3->static_fields;
-    VStack_7.x = (pVVar6->zeroVector).x;
-    VStack_7.y = (pVVar6->zeroVector).y;
-    VStack_7.z = (pVVar6->zeroVector).z;
-    VVar8.z = fVar5;
-    VVar8.x = (float)(undefined4)uStack_4;
-    VVar8.y = (float)uStack_4._4_4_;
-    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                        (&VStack_1,VVar8,(MethodInfo *)0x0);
-    uStack_9._0_4_ = pVVar3->x;
-    uStack_9._4_4_ = pVVar3->y;
-    fStack_10 = pVVar3->z;
-    fVar5 = (float)((uint)(VStack_7.y * uStack_9._4_4_ + VStack_7.x * (float)uStack_9 +
-                           VStack_7.z * fStack_10) ^
+    pVVar4 = TypeInfo__UnityEngine__Vector3->static_fields;
+    VStack_5.x = (pVVar4->zeroVector).x;
+    VStack_5.y = (pVVar4->zeroVector).y;
+    VStack_5.z = (pVVar4->zeroVector).z;
+    pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                        (&VStack_2,VVar3,(MethodInfo *)0x0);
+    uStack_6._0_4_ = pVVar1->x;
+    uStack_6._4_4_ = pVVar1->y;
+    fStack_7 = pVVar1->z;
+    fVar8 = (float)((uint)(VStack_5.y * uStack_6._4_4_ + VStack_5.x * (float)uStack_6 +
+                           VStack_5.z * fStack_7) ^
                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-    uStack_11 = uStack_9;
-    fStack_12 = fStack_10;
     if (objectHit != (GameObjectRayHit *)0x0) {
-      VStack_7.x = (objectHit->fields)._hitPoint.x;
-      VStack_7.y = (objectHit->fields)._hitPoint.y;
-      VStack_7.z = (objectHit->fields)._hitPoint.z;
-      pXVar13 = (this->fields)._settings;
-      if (pXVar13 != (XZGridSettings *)0x0) {
-        fVar14 = uStack_9._4_4_ * VStack_7.y + (float)uStack_9 * VStack_7.x;
-        fStack_15 = fStack_10 * VStack_7.z;
+      VStack_5.x = (objectHit->fields)._hitPoint.x;
+      VStack_5.y = (objectHit->fields)._hitPoint.y;
+      VStack_5.z = (objectHit->fields)._hitPoint.z;
+      pXVar9 = (this->fields)._settings;
+      if (pXVar9 != (XZGridSettings *)0x0) {
+        fVar10 = uStack_6._4_4_ * VStack_5.y + (float)uStack_6 * VStack_5.x;
+        fStack_7 = fStack_7 * VStack_5.z;
         goto code_?;
       }
     }
   }
-  else {
-    fStack_10 = 0.0;
-    fStack_16 = 0.0;
-    uStack_9 = 1;
-    if (objectHit != (GameObjectRayHit *)0x0) {
-      gameObject = (objectHit->fields)._hitObject;
-      if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__RTG__ObjectBounds);
-      }
-      queryConfig.NoVolumeSize.y = fStack_10;
-      queryConfig.ObjectTypes = (int32_t)(float)uStack_9;
-      queryConfig.NoVolumeSize.x = uStack_9._4_4_;
-      queryConfig.NoVolumeSize.z = fStack_16;
-      pOVar17 = ObjectBounds::ObjectBounds_CalcWorldOBB
-                          ((OBB *)&stack0xffffff40,gameObject,queryConfig,(MethodInfo *)0x0);
-      VVar8 = pOVar17->_size;
-      pVVar3 = &pOVar17->_center;
-      fVar5 = pVVar3->x;
-      fVar14 = (pOVar17->_center).y;
-      uVar18._0_4_ = pVVar3->x;
-      uVar18._4_4_ = pVVar3->y;
-      uStack_11._0_4_ = pVVar3->x;
-      uStack_11._4_4_ = pVVar3->y;
-      fVar19 = (pOVar17->_center).z;
-      uVar20 = (pOVar17->_rotation).w;
-      uVar21 = (pOVar17->_rotation).x;
-      uVar22 = (pOVar17->_rotation).y;
-      uVar23 = (pOVar17->_rotation).z;
-      boxRotation.z = (float)uVar23;
-      boxRotation.y = (float)uVar22;
-      boxRotation.x = (float)uVar21;
-      if ((char)*(undefined4 *)&pOVar17->_isValid == '\0') {
-        return;
-      }
-      pVVar3 = RTSceneGrid_get_Normal(&VStack_7,this,(MethodInfo *)0x0);
-      pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                          (&VStack_7,*pVVar3,(MethodInfo *)0x0);
-      VStack_1.x = pVVar3->x;
-      VStack_1.y = pVVar3->y;
-      VStack_1.z = pVVar3->z;
-      fStack_10 = 0.0;
-      fStack_16 = 0.0;
-      fStack_2 = (float)((uint)(fVar14 * VStack_1.y + fVar5 * VStack_1.x + fVar19 * VStack_1.z)
-                         ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
-      ;
-      fStack_15 = fStack_2;
-      uStack_9 = uVar18;
-      fStack_12 = fVar19;
-      if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-        fVar5 = (float)uStack_9;
-        fVar14 = uStack_9._4_4_;
-      }
-      boxCenter.y = fVar14;
-      boxCenter.x = fVar5;
-      boxCenter.z = fVar19;
-      boxRotation.w = (float)uVar20;
-      points = BoxMath::BoxMath_CalcBoxCornerPoints(boxCenter,VVar8,boxRotation,(MethodInfo *)0x0);
-      VStack_7.x = (objectHit->fields)._hitPoint.x;
-      VStack_7.y = (objectHit->fields)._hitPoint.y;
-      VStack_7.z = (objectHit->fields)._hitPoint.z;
-      if (_UNK_? <=
-          VStack_1.x * VStack_7.x + VStack_1.y * VStack_7.y + VStack_1.z * VStack_7.z +
-          fStack_15) {
-        plane_00.m_Normal.z = VStack_1.z;
-        plane_00.m_Normal.x = VStack_1.x;
-        plane_00.m_Normal.y = VStack_1.y;
-        plane_00.m_Distance = fStack_2;
-        iVar24 = PlaneEx::PlaneEx_GetFurthestPtInFront(plane_00,points,(MethodInfo *)0x0);
-      }
-      else {
-        plane.m_Normal.z = VStack_1.z;
-        plane.m_Normal.x = VStack_1.x;
-        plane.m_Normal.y = VStack_1.y;
-        plane.m_Distance = fStack_2;
-        iVar24 = PlaneEx::PlaneEx_GetFurthestPtBehind(plane,points,(MethodInfo *)0x0);
-      }
-      if (-1 < iVar24) {
-        if (points == (List_1_UnityEngine_Vector3_ *)0x0) goto code_?;
-        puVar25 = (undefined8 *)
-                  func_?(&VStack_7,points,iVar24,
-                                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                                 );
-        uStack_11 = *puVar25;
-        fStack_12 = *(float *)(puVar25 + 1);
-      }
-      pVVar3 = RTSceneGrid_get_Normal(&VStack_7,this,(MethodInfo *)0x0);
-      uStack_4._0_4_ = pVVar3->x;
-      uStack_4._4_4_ = pVVar3->y;
-      fVar5 = pVVar3->z;
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__UnityEngine__Vector3);
-        cRam_? = '\x01';
-      }
-      pVVar6 = TypeInfo__UnityEngine__Vector3->static_fields;
-      VStack_7.x = (pVVar6->zeroVector).x;
-      VStack_7.y = (pVVar6->zeroVector).y;
-      VStack_7.z = (pVVar6->zeroVector).z;
-      value.z = fVar5;
-      value.x = (float)(undefined4)uStack_4;
-      value.y = (float)uStack_4._4_4_;
-      pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                          (&VStack_1,value,(MethodInfo *)0x0);
-      uStack_4._0_4_ = pVVar3->x;
-      uStack_4._4_4_ = pVVar3->y;
-      fStack_15 = pVVar3->z;
-      fVar5 = (float)((uint)(VStack_7.y * (float)uStack_4._4_4_ +
-                              VStack_7.x * (float)(undefined4)uStack_4 + VStack_7.z * fStack_15)
-                      ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-      pXVar13 = (this->fields)._settings;
-      uStack_9 = uStack_4;
-      fStack_10 = fStack_15;
-      if (pXVar13 != (XZGridSettings *)0x0) {
-        fVar14 = (float)(undefined4)uStack_4 * (float)uStack_11 +
-                 (float)uStack_4._4_4_ * uStack_11._4_4_;
-        fStack_15 = fStack_15 * fStack_12;
+  else if (objectHit != (GameObjectRayHit *)0x0) {
+    gameObject = (objectHit->fields)._hitObject;
+    if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__RTG__ObjectBounds);
+    }
+    pOVar11 = ObjectBounds::ObjectBounds_CalcWorldOBB
+                        ((OBB *)&stack0xffffff40,gameObject,(ObjectBounds_QueryConfig)ZEXT816(1),
+                         (MethodInfo *)0x0);
+    VVar3 = pOVar11->_size;
+    pVVar1 = &pOVar11->_center;
+    fVar8 = pVVar1->x;
+    fVar10 = (pOVar11->_center).y;
+    uStack_6._0_4_ = pVVar1->x;
+    uStack_6._4_4_ = pVVar1->y;
+    fStack_7 = (pOVar11->_center).z;
+    boxCenter = *pVVar1;
+    uVar12 = (pOVar11->_rotation).w;
+    uVar13 = (pOVar11->_rotation).x;
+    uVar14 = (pOVar11->_rotation).y;
+    uVar15 = (pOVar11->_rotation).z;
+    boxRotation.z = (float)uVar15;
+    boxRotation.y = (float)uVar14;
+    boxRotation.x = (float)uVar13;
+    if ((char)*(undefined4 *)&pOVar11->_isValid == '\0') {
+      return;
+    }
+    pVVar1 = RTSceneGrid_get_Normal(&VStack_5,this,(MethodInfo *)0x0);
+    pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                        (&VStack_5,*pVVar1,(MethodInfo *)0x0);
+    VStack_2.x = pVVar1->x;
+    VStack_2.y = pVVar1->y;
+    VStack_2.z = pVVar1->z;
+    fVar8 = (float)((uint)(fVar8 * VStack_2.x + fVar10 * VStack_2.y + fStack_7 * VStack_2.z) ^
+                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+    if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    boxRotation.w = (float)uVar12;
+    points = BoxMath::BoxMath_CalcBoxCornerPoints(boxCenter,VVar3,boxRotation,(MethodInfo *)0x0);
+    VStack_5.x = (objectHit->fields)._hitPoint.x;
+    VStack_5.y = (objectHit->fields)._hitPoint.y;
+    VStack_5.z = (objectHit->fields)._hitPoint.z;
+    fStack_16 = fVar8;
+    if (_UNK_? <=
+        VStack_2.y * VStack_5.y + VStack_2.x * VStack_5.x + VStack_2.z * VStack_5.z + fVar8)
+    {
+      plane_00.m_Normal.z = VStack_2.z;
+      plane_00.m_Normal.x = VStack_2.x;
+      plane_00.m_Normal.y = VStack_2.y;
+      plane_00.m_Distance = fVar8;
+      iVar17 = PlaneEx::PlaneEx_GetFurthestPtInFront(plane_00,points,(MethodInfo *)0x0);
+    }
+    else {
+      plane.m_Normal.z = VStack_2.z;
+      plane.m_Normal.x = VStack_2.x;
+      plane.m_Normal.y = VStack_2.y;
+      plane.m_Distance = fVar8;
+      iVar17 = PlaneEx::PlaneEx_GetFurthestPtBehind(plane,points,(MethodInfo *)0x0);
+    }
+    if (-1 < iVar17) {
+      if (points == (List_1_UnityEngine_Vector3_ *)0x0) goto code_?;
+      puVar18 = (undefined8 *)
+                func_?(&VStack_5,points,iVar17,
+                                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
+                               );
+      uStack_6 = *puVar18;
+      fStack_7 = *(float *)(puVar18 + 1);
+    }
+    pVVar1 = RTSceneGrid_get_Normal(&VStack_5,this,(MethodInfo *)0x0);
+    VVar3 = *pVVar1;
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__UnityEngine__Vector3);
+      cRam_? = '\x01';
+    }
+    pVVar4 = TypeInfo__UnityEngine__Vector3->static_fields;
+    VStack_5.x = (pVVar4->zeroVector).x;
+    VStack_5.y = (pVVar4->zeroVector).y;
+    VStack_5.z = (pVVar4->zeroVector).z;
+    pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                        (&VStack_2,VVar3,(MethodInfo *)0x0);
+    uVar19 = pVVar1->x;
+    uVar20 = pVVar1->y;
+    fVar8 = (float)((uint)(VStack_5.y * (float)uVar20 + VStack_5.x * (float)uVar19 +
+                           VStack_5.z * pVVar1->z) ^
+                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+    pXVar9 = (this->fields)._settings;
+    if (pXVar9 != (XZGridSettings *)0x0) {
+      fVar10 = uStack_6._4_4_ * (float)uVar20 + (float)uStack_6 * (float)uVar19;
+      fStack_7 = fStack_7 * pVVar1->z;
 code_?:
-        (pXVar13->fields)._yOffset = fVar14 + fStack_15 + fVar5;
-        return;
-      }
+      (pXVar9->fields)._yOffset = fVar10 + fStack_7 + fVar8;
+      return;
     }
   }
 code_?:
   func_?();
-  pcVar26 = (code *)swi(3);
-  (*pcVar26)();
+  pcVar21 = (code *)swi(3);
+  (*pcVar21)();
   return;
 }
 
@@ -1278,8 +1248,9 @@ void Assembly-CSharp.dll::RTG::RTSceneGrid::RTSceneGrid__ctor(RTSceneGrid *this,
         (this_00->fields)._snapToCursorPickPoint = pHVar1;
         func_?();
         Settings::Settings__ctor((Settings *)this_00,(MethodInfo *)0x0);
-        (this->fields)._hotkeys = this_00;
-        func_?(&(this->fields)._hotkeys,this_00);
+        ppSVar2 = &(this->fields)._hotkeys;
+        *ppSVar2 = this_00;
+        func_?(ppSVar2,this_00);
         this_01 = (XZGridSettings *)func_?(TypeInfo__RTG__XZGridSettings);
         (this_01->fields)._isVisible = 1;
         (this_01->fields)._cellSizeX = 1.0;
@@ -1288,31 +1259,32 @@ void Assembly-CSharp.dll::RTG::RTSceneGrid::RTSceneGrid__ctor(RTSceneGrid *this,
           func_?();
           cRam_? = '\x01';
         }
-        pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
-        fVar3 = (pVVar2->zeroVector).y;
-        fVar4 = (pVVar2->zeroVector).z;
-        (this_01->fields)._rotationAngles.x = (pVVar2->zeroVector).x;
-        (this_01->fields)._rotationAngles.y = fVar3;
-        (this_01->fields)._rotationAngles.z = fVar4;
+        pVVar3 = TypeInfo__UnityEngine__Vector3->static_fields;
+        fVar4 = (pVVar3->zeroVector).y;
+        fVar5 = (pVVar3->zeroVector).z;
+        (this_01->fields)._rotationAngles.x = (pVVar3->zeroVector).x;
+        (this_01->fields)._rotationAngles.y = fVar4;
+        (this_01->fields)._rotationAngles.z = fVar5;
         (this_01->fields)._upDownStep = 1.0;
         Settings::Settings__ctor((Settings *)this_01,(MethodInfo *)0x0);
         (this->fields)._settings = this_01;
         func_?();
         this_02 = (XZGridLookAndFeel *)func_?();
-        pCVar5 = ColorEx::ColorEx_FromByteValues
-                           ((Color *)&stack0xffffffe8,0x80,0x80,0x80,0x66,(MethodInfo *)0x0);
-        fVar4 = pCVar5->r;
-        fVar3 = pCVar5->g;
-        fVar6 = pCVar5->b;
-        fVar7 = pCVar5->a;
+        pCVar6 = ColorEx::ColorEx_FromByteValues
+                            ((Color *)&stack0xffffffe8,0x80,0x80,0x80,0x66,(MethodInfo *)0x0);
+        fVar5 = pCVar6->r;
+        fVar4 = pCVar6->g;
+        fVar7 = pCVar6->b;
+        fVar8 = pCVar6->a;
         (this_02->fields)._useCellFading = 1;
-        (this_02->fields)._lineColor.r = fVar4;
-        (this_02->fields)._lineColor.g = fVar3;
-        (this_02->fields)._lineColor.b = fVar6;
-        (this_02->fields)._lineColor.a = fVar7;
+        (this_02->fields)._lineColor.r = fVar5;
+        (this_02->fields)._lineColor.g = fVar4;
+        (this_02->fields)._lineColor.b = fVar7;
+        (this_02->fields)._lineColor.a = fVar8;
         Settings::Settings__ctor((Settings *)this_02,(MethodInfo *)0x0);
-        (this->fields)._lookAndFeel = this_02;
-        func_?(&(this->fields)._lookAndFeel);
+        ppXVar9 = &(this->fields)._lookAndFeel;
+        *ppXVar9 = this_02;
+        func_?(ppXVar9);
         this_03 = (List_1_UnityEngine_Camera_ *)
                   func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Camera>)
         ;
@@ -1335,8 +1307,8 @@ void Assembly-CSharp.dll::RTG::RTSceneGrid::RTSceneGrid__ctor(RTSceneGrid *this,
     }
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -1617,7 +1589,7 @@ Plane * Assembly-CSharp.dll::RTG::RTSceneGrid::RTSceneGrid_get_WorldPlane
     (__return_storage_ptr__->m_Normal).y = (float)uVar8;
     (__return_storage_ptr__->m_Normal).z = fVar9;
     __return_storage_ptr__->m_Distance =
-         (float)((uint)((float)uVar7 * (float)uVar2 * fVar6 + (float)uVar8 * (float)uVar3 * fVar6 +
+         (float)((uint)((float)uVar8 * (float)uVar3 * fVar6 + (float)uVar7 * (float)uVar2 * fVar6 +
                        fVar9 * fVar4 * fVar6) ^
                 __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     return __return_storage_ptr__;

@@ -12,8 +12,6 @@ Vector3 * Assembly-CSharp.dll::RTG::ObjectPositionCalculator::
     func_?(&TypeInfo__RTG__ObjectPositionCalculator);
     cRam_? = '\x01';
   }
-  func_?(&stack0xffffff50,0,0x40);
-  func_?(&stack0xffffff10,0,0x40);
   if ((TypeInfo__RTG__ObjectPositionCalculator->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__RTG__ObjectPositionCalculator);
   }
@@ -30,7 +28,7 @@ Vector3 * Assembly-CSharp.dll::RTG::ObjectPositionCalculator::
   queryConfig.NoVolumeSize.y = VStack_3.y;
   queryConfig.NoVolumeSize.z = VStack_3.z;
   pOVar4 = ObjectBounds::ObjectBounds_CalcHierarchyWorldOBB
-                      ((OBB *)&stack0xfffffee4,root,queryConfig,(MethodInfo *)0x0);
+                      ((OBB *)&stack0xffffff64,root,queryConfig,(MethodInfo *)0x0);
   fVar5 = (pOVar4->_center).x;
   fVar6 = (pOVar4->_center).y;
   fVar7 = (pOVar4->_center).z;
@@ -62,34 +60,34 @@ Vector3 * Assembly-CSharp.dll::RTG::ObjectPositionCalculator::
       q.z = fStack_16;
       q.w = fStack_17;
       UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
-                ((Matrix4x4 *)&puStack_19,pos,q,*pVVar18,(MethodInfo *)0x0);
+                ((Matrix4x4 *)&stack0xffffff50,pos,q,*pVVar18,(MethodInfo *)0x0);
       if (cRam_? == '\0') {
         func_?();
         cRam_? = '\x01';
       }
-      pMVar20 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
-                          ((Matrix4x4 *)&puStack_19,
+      pMVar19 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
+                          ((Matrix4x4 *)&stack0xffffff50,
                            TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
                            desiredWorldRotation,desiredWorldScale,(MethodInfo *)0x0);
-      fStack_14 = pMVar20->m00;
-      fStack_15 = pMVar20->m10;
-      fStack_16 = pMVar20->m20;
-      fStack_17 = pMVar20->m30;
-      fStack_2 = pMVar20->m01;
-      VStack_3.x = pMVar20->m11;
-      VStack_3.y = pMVar20->m21;
-      VStack_3.z = pMVar20->m31;
-      fVar11 = pMVar20->m02;
-      fVar21 = pMVar20->m12;
-      fVar22 = pMVar20->m22;
-      fVar23 = pMVar20->m32;
-      QStack_13.x = pMVar20->m03;
-      QStack_13.y = pMVar20->m13;
-      QStack_13.z = pMVar20->m23;
-      QStack_13.w = pMVar20->m33;
-      pMVar20 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_inverse
-                          ((Matrix4x4 *)&puStack_19,(Matrix4x4 *)&stack0xffffff50,(MethodInfo *)0x0
-                          );
+      fStack_14 = pMVar19->m00;
+      fStack_15 = pMVar19->m10;
+      fStack_16 = pMVar19->m20;
+      fStack_17 = pMVar19->m30;
+      fStack_2 = pMVar19->m01;
+      VStack_3.x = pMVar19->m11;
+      VStack_3.y = pMVar19->m21;
+      VStack_3.z = pMVar19->m31;
+      fVar11 = pMVar19->m02;
+      fVar20 = pMVar19->m12;
+      fVar21 = pMVar19->m22;
+      fVar22 = pMVar19->m32;
+      QStack_13.x = pMVar19->m03;
+      QStack_13.y = pMVar19->m13;
+      QStack_13.z = pMVar19->m23;
+      QStack_13.w = pMVar19->m33;
+      pMVar19 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_inverse
+                          ((Matrix4x4 *)&stack0xffffff50,(Matrix4x4 *)&stack0xffffff10,
+                           (MethodInfo *)0x0);
       lhs.m10 = fStack_15;
       lhs.m00 = fStack_14;
       lhs.m20 = fStack_16;
@@ -99,15 +97,16 @@ Vector3 * Assembly-CSharp.dll::RTG::ObjectPositionCalculator::
       lhs.m21 = VStack_3.y;
       lhs.m31 = VStack_3.z;
       lhs.m02 = fVar11;
-      lhs.m12 = fVar21;
-      lhs.m22 = fVar22;
-      lhs.m32 = fVar23;
+      lhs.m12 = fVar20;
+      lhs.m22 = fVar21;
+      lhs.m32 = fVar22;
       lhs.m03 = QStack_13.x;
       lhs.m13 = QStack_13.y;
       lhs.m23 = QStack_13.z;
       lhs.m33 = QStack_13.w;
-      UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_op_Multiply
-                ((Matrix4x4 *)&puStack_19,lhs,*pMVar20,(MethodInfo *)0x0);
+      pMVar19 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_op_Multiply
+                          ((Matrix4x4 *)&stack0xffffff50,lhs,*pMVar19,(MethodInfo *)0x0);
+      puStack_23 = (undefined *)pMVar19->m00;
       pVVar18 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
                           (&VStack_3,this,(MethodInfo *)0x0);
       uVar24 = pVVar18->x;
@@ -117,7 +116,7 @@ Vector3 * Assembly-CSharp.dll::RTG::ObjectPositionCalculator::
       vector.x = (float)uVar24 - fVar5;
       vector.z = pVVar18->z - fVar7;
       pVVar18 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyVector
-                          (&VStack_3,(Matrix4x4 *)&stack0xffffff10,vector,(MethodInfo *)0x0);
+                          (&VStack_3,(Matrix4x4 *)&puStack_23,vector,(MethodInfo *)0x0);
       uVar26 = pVVar18->x;
       uVar27 = pVVar18->y;
       fVar5 = pVVar18->z;

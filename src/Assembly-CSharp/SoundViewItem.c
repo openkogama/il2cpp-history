@@ -72,53 +72,54 @@ void Assembly-CSharp.dll::SoundViewItem::SoundViewItem_Initialize
     func_?(&StringLiteral_Loading___);
     cRam_? = '\x01';
   }
-  (this->fields).setNewOriginalUrl = setNewOriginalUrl;
-  func_?(&(this->fields).setNewOriginalUrl,setNewOriginalUrl);
-  (this->fields).originalUrl = originalUrl;
-  func_?(&(this->fields).originalUrl,originalUrl);
-  (this->fields).tabInfo = info;
-  func_?(&(this->fields).tabInfo,info);
-  pGVar1 = (this->fields).loadingWheel;
-  if (pGVar1 != (GameObject *)0x0) {
+  ppUVar1 = &(this->fields).setNewOriginalUrl;
+  *ppUVar1 = setNewOriginalUrl;
+  func_?(ppUVar1,setNewOriginalUrl);
+  ppSVar2 = &(this->fields).originalUrl;
+  *ppSVar2 = originalUrl;
+  func_?(ppSVar2,originalUrl);
+  ppSVar3 = &(this->fields).tabInfo;
+  *ppSVar3 = info;
+  func_?(ppSVar3,info);
+  pGVar4 = (this->fields).loadingWheel;
+  if (pGVar4 != (GameObject *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (pGVar1,1,(MethodInfo *)0x0);
-    pIVar2 = (this->fields).soundImage;
-    if (pIVar2 != (Image *)0x0) {
-      pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)pIVar2,(MethodInfo *)0x0);
-      if (pGVar1 != (GameObject *)0x0) {
+              (pGVar4,1,(MethodInfo *)0x0);
+    pIVar5 = (this->fields).soundImage;
+    if (pIVar5 != (Image *)0x0) {
+      pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)pIVar5,(MethodInfo *)0x0);
+      if (pGVar4 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar1,0,(MethodInfo *)0x0);
-        pTVar3 = (this->fields).title;
+                  (pGVar4,0,(MethodInfo *)0x0);
+        pTVar6 = (this->fields).title;
         TM::TM__(StringLiteral_Loading___,(MethodInfo *)0x0);
-        if (pTVar3 != (Text *)0x0) {
-          (*(code *)(pTVar3->klass->vtable).set_text.method)();
+        if (pTVar6 != (Text *)0x0) {
+          (*(code *)(pTVar6->klass->vtable).set_text.method)();
           this_00 = (this->fields).toolTip;
-          pSVar4 = TM::TM__(StringLiteral_Loading___,(MethodInfo *)0x0);
+          pSVar7 = TM::TM__(StringLiteral_Loading___,(MethodInfo *)0x0);
           if (this_00 != (ToolTip *)0x0) {
-            ToolTip::ToolTip_SetText(this_00,pSVar4,(MethodInfo *)0x0);
-            pSVar5 = (this->fields).tabInfo;
-            if (pSVar5 != (SoundTabInfo *)0x0) {
-              bVar6 = mscorlib.dll::System::String::String_op_Equality
-                                ((pSVar5->fields).url,originalUrl,(MethodInfo *)0x0);
-              if (bVar6 != 0) {
-                pIVar2 = (this->fields).selectedImage;
-                if (pIVar2 == (Image *)0x0) goto code_?;
-                pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                         Component_get_gameObject((Component *)pIVar2,(MethodInfo *)0x0);
-                if (pGVar1 == (GameObject *)0x0) goto code_?;
+            ToolTip::ToolTip_SetText(this_00,pSVar7,(MethodInfo *)0x0);
+            if (*ppSVar3 != (SoundTabInfo *)0x0) {
+              bVar8 = mscorlib.dll::System::String::String_op_Equality
+                                (((*ppSVar3)->fields).url,originalUrl,(MethodInfo *)0x0);
+              if (bVar8 != 0) {
+                pIVar5 = (this->fields).selectedImage;
+                if (pIVar5 == (Image *)0x0) goto code_?;
+                pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                         Component_get_gameObject((Component *)pIVar5,(MethodInfo *)0x0);
+                if (pGVar4 == (GameObject *)0x0) goto code_?;
                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                          (pGVar1,1,(MethodInfo *)0x0);
+                          (pGVar4,1,(MethodInfo *)0x0);
               }
               if ((TypeInfo__StreamingAsset->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
               }
-              pSVar4 = StreamingAsset::StreamingAsset_get_AssetBundleUrl((MethodInfo *)0x0);
-              pSVar5 = (this->fields).tabInfo;
-              if (pSVar5 != (SoundTabInfo *)0x0) {
-                pSVar4 = mscorlib.dll::System::String::String_Concat_3
-                                   (pSVar4,(pSVar5->fields).url,(MethodInfo *)0x0);
-                pSVar4 = StreamingAsset::StreamingAsset_DBUrlToServerUrl(pSVar4,(MethodInfo *)0x0);
+              pSVar7 = StreamingAsset::StreamingAsset_get_AssetBundleUrl((MethodInfo *)0x0);
+              if (*ppSVar3 != (SoundTabInfo *)0x0) {
+                pSVar7 = mscorlib.dll::System::String::String_Concat_3
+                                   (pSVar7,((*ppSVar3)->fields).url,(MethodInfo *)0x0);
+                pSVar7 = StreamingAsset::StreamingAsset_DBUrlToServerUrl(pSVar7,(MethodInfo *)0x0);
                 this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
                            *)func_?();
                 DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::
@@ -130,7 +131,7 @@ void Assembly-CSharp.dll::SoundViewItem::SoundViewItem_Initialize
                            ,(MethodInfo *)0x0);
                 this_02 = (AssetBundleRequest *)func_?();
                 AssetBundleRequest::AssetBundleRequest__ctor
-                          (this_02,pSVar4,
+                          (this_02,pSVar7,
                            (Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_01,
                            WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,(MethodInfo *)0x0);
                 if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
@@ -148,8 +149,8 @@ void Assembly-CSharp.dll::SoundViewItem::SoundViewItem_Initialize
   }
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -160,24 +161,26 @@ void Assembly-CSharp.dll::SoundViewItem::SoundViewItem_OnClick
                (SoundViewItem *this,MethodInfo *method)
 
 {
-  if (((this->fields).tabInfo != (SoundTabInfo *)0x0) && ((this->fields).doneLoading != 0)) {
-    pSVar1 = (((this->fields).tabInfo)->fields).url;
-    (this->fields).originalUrl = pSVar1;
-    func_?(&(this->fields).originalUrl,pSVar1);
-    pSVar2 = (this->fields).tabInfo;
-    if ((pSVar2 != (SoundTabInfo *)0x0) &&
-       (pUVar3 = (this->fields).setNewOriginalUrl, pUVar3 != (UnityAction_1_System_String_ *)0x0)) {
-      (*(pUVar3->fields)._._.invoke_impl)
-                ((pUVar3->fields)._._.method_code,(pSVar2->fields).url,(pUVar3->fields)._._.method);
-      pSVar2 = (this->fields).tabInfo;
-      if (pSVar2 != (SoundTabInfo *)0x0) {
-        SoundViewItem_ChangeUrl(this,(pSVar2->fields).url,(MethodInfo *)0x0);
+  pSVar1 = (this->fields).tabInfo;
+  if ((pSVar1 != (SoundTabInfo *)0x0) && ((this->fields).doneLoading != 0)) {
+    pSVar2 = (pSVar1->fields).url;
+    ppSVar3 = &(this->fields).originalUrl;
+    *ppSVar3 = pSVar2;
+    func_?(ppSVar3,pSVar2);
+    pSVar1 = (this->fields).tabInfo;
+    if ((pSVar1 != (SoundTabInfo *)0x0) &&
+       (pUVar4 = (this->fields).setNewOriginalUrl, pUVar4 != (UnityAction_1_System_String_ *)0x0)) {
+      (*(pUVar4->fields)._._.invoke_impl)
+                ((pUVar4->fields)._._.method_code,(pSVar1->fields).url,(pUVar4->fields)._._.method);
+      pSVar1 = (this->fields).tabInfo;
+      if (pSVar1 != (SoundTabInfo *)0x0) {
+        SoundViewItem_ChangeUrl(this,(pSVar1->fields).url,(MethodInfo *)0x0);
         return;
       }
     }
     func_?();
-    pcVar4 = (code *)swi(3);
-    (*pcVar4)();
+    pcVar5 = (code *)swi(3);
+    (*pcVar5)();
     return;
   }
   return;
@@ -311,8 +314,9 @@ void Assembly-CSharp.dll::SoundViewItem::SoundViewItem_OnPointerEnter
                (SoundViewItem *this,PointerEventData *eventData,MethodInfo *method)
 
 {
-  if (((this->fields).tabInfo != (SoundTabInfo *)0x0) && ((this->fields).doneLoading != 0)) {
-    SoundViewItem_ChangeUrl(this,(((this->fields).tabInfo)->fields).url,(MethodInfo *)0x0);
+  pSVar1 = (this->fields).tabInfo;
+  if ((pSVar1 != (SoundTabInfo *)0x0) && ((this->fields).doneLoading != 0)) {
+    SoundViewItem_ChangeUrl(this,(pSVar1->fields).url,(MethodInfo *)0x0);
   }
   return;
 }

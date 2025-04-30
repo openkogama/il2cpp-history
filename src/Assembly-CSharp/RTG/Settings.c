@@ -8,10 +8,10 @@ void Assembly-CSharp.dll::RTG::Settings::Settings__ctor(Settings *this,MethodInf
     func_?(&StringLiteral_Settings);
     cRam_? = '\x01';
   }
+  method_00 = (MethodInfo *)&(this->fields)._foldoutLabel;
   (this->fields)._canBeDisplayed = 1;
   (this->fields)._isExpanded = 1;
-  (this->fields)._foldoutLabel = StringLiteral_Settings;
-  method_00 = (MethodInfo *)&(this->fields)._foldoutLabel;
+  *(String **)method_00 = StringLiteral_Settings;
   func_?(method_00,StringLiteral_Settings);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
@@ -26,8 +26,9 @@ void Assembly-CSharp.dll::RTG::Settings::Settings_set_FoldoutLabel
 
 {
   if (value != (String *)0x0) {
-    (this->fields)._foldoutLabel = value;
-    func_?(&(this->fields)._foldoutLabel,value);
+    ppSVar1 = &(this->fields)._foldoutLabel;
+    *ppSVar1 = value;
+    func_?(ppSVar1,value);
   }
   return;
 }

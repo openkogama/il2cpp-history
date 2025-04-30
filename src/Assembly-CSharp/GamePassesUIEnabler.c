@@ -59,7 +59,7 @@ void Assembly-CSharp.dll::GamePassesUIEnabler::GamePassesUIEnabler_OnGamePassPro
                (GamePassesUIEnabler *this,MethodInfo *method)
 
 {
-  this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+  this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                       ((Component *)this,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__GamePassProgressionController);
@@ -68,20 +68,19 @@ void Assembly-CSharp.dll::GamePassesUIEnabler::GamePassesUIEnabler_OnGamePassPro
   if (TypeInfo__GamePassProgressionController->static_fields->isInitialized == 0) {
     GamePassProgressionController::GamePassProgressionController_Initialize((MethodInfo *)0x0);
   }
-  if (TypeInfo__GamePassProgressionController->static_fields->progressionDataObject !=
-      (MVGamePassProgressionDataObject *)0x0) {
+  this_00 = TypeInfo__GamePassProgressionController->static_fields->progressionDataObject;
+  if (this_00 != (MVGamePassProgressionDataObject *)0x0) {
     MVGamePassProgressionDataObject::MVGamePassProgressionDataObject_get_EnableProgression
-              (TypeInfo__GamePassProgressionController->static_fields->progressionDataObject,
-               (MethodInfo *)0x0);
+              (this_00,(MethodInfo *)0x0);
   }
-  if (this_00 == (GameObject *)0x0) {
+  if (this_01 == (GameObject *)0x0) {
     func_?();
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-            (this_00,0,(MethodInfo *)0x0);
+            (this_01,0,(MethodInfo *)0x0);
   return;
 }
 
@@ -98,7 +97,7 @@ void Assembly-CSharp.dll::GamePassesUIEnabler::GamePassesUIEnabler_Start
     func_?(&MethodInfo__GamePassesUIEnabler__OnGamePassProgression__);
     cRam_? = '\x01';
   }
-  this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+  this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                       ((Component *)this,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__GamePassProgressionController);
@@ -107,33 +106,32 @@ void Assembly-CSharp.dll::GamePassesUIEnabler::GamePassesUIEnabler_Start
   if (TypeInfo__GamePassProgressionController->static_fields->isInitialized == 0) {
     GamePassProgressionController::GamePassProgressionController_Initialize((MethodInfo *)0x0);
   }
-  if (TypeInfo__GamePassProgressionController->static_fields->progressionDataObject ==
-      (MVGamePassProgressionDataObject *)0x0) {
+  this_00 = TypeInfo__GamePassProgressionController->static_fields->progressionDataObject;
+  if (this_00 == (MVGamePassProgressionDataObject *)0x0) {
     value = 0;
   }
   else {
     value = MVGamePassProgressionDataObject::MVGamePassProgressionDataObject_get_EnableProgression
-                      (TypeInfo__GamePassProgressionController->static_fields->progressionDataObject
-                       ,(MethodInfo *)0x0);
+                      (this_00,(MethodInfo *)0x0);
   }
-  if (this_00 == (GameObject *)0x0) {
+  if (this_01 == (GameObject *)0x0) {
     func_?();
     pAStack1 = extraout_ECX;
     pAStack2 = extraout_EDX;
   }
   else {
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (this_00,value,(MethodInfo *)0x0);
+              (this_01,value,(MethodInfo *)0x0);
     pAVar3 = TypeInfo__GamePassProgressionController->static_fields->OnGamePassesProgressionUpdate;
-    this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+    this_02 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
-              (this_01,(Object *)this,MethodInfo__GamePassesUIEnabler__OnGamePassProgression__,
+              (this_02,(Object *)this,MethodInfo__GamePassesUIEnabler__OnGamePassProgression__,
                (MethodInfo *)0x0);
     pAStack1 =
          (Action *)
          mscorlib.dll::System::Delegate::Delegate_Combine
-                   ((Delegate *)pAVar3,(Delegate *)this_01,(MethodInfo *)0x0);
+                   ((Delegate *)pAVar3,(Delegate *)this_02,(MethodInfo *)0x0);
     if (pAStack1 == (Action *)0x0) {
       TypeInfo__GamePassProgressionController->static_fields->OnGamePassesProgressionUpdate =
            (Action *)0x0;

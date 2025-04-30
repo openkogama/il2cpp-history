@@ -57,8 +57,9 @@ void Assembly-CSharp.dll::Gamestrap::GradientEffect::GradientEffect_ModifyVertic
       (*pcVar2)();
       return;
     }
-    if (3 < (vertexList->fields)._size) {
-      if ((vertexList->fields)._size == 6) {
+    iVar3 = (vertexList->fields)._size;
+    if (3 < iVar3) {
+      if (iVar3 == 6) {
         GradientEffect_SetVertexColor(this,vertexList,0,(this->fields).bottom,(MethodInfo *)0x0);
         GradientEffect_SetVertexColor(this,vertexList,1,(this->fields).top,(MethodInfo *)0x0);
         GradientEffect_SetVertexColor(this,vertexList,2,(this->fields).top,(MethodInfo *)0x0);
@@ -67,51 +68,51 @@ void Assembly-CSharp.dll::Gamestrap::GradientEffect::GradientEffect_ModifyVertic
         GradientEffect_SetVertexColor(this,vertexList,5,(this->fields).bottom,(MethodInfo *)0x0);
       }
       else {
-        pUVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::
+        pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::
                  List_1_UnityEngine_UIVertex__get_Item
-                           (&UStack_4,vertexList,(vertexList->fields)._size + -1,
+                           (&UStack_5,vertexList,iVar3 + -1,
                             MethodInfo__System__Collections__Generic__List<UnityEngine::UIVertex>__get_Item_int_
                            );
-        pfVar5 = (float *)&stack0xfffffe7c;
-        for (iVar6 = 0x1b; iVar6 != 0; iVar6 = iVar6 + -1) {
-          *pfVar5 = (pUVar3->position).x;
-          pUVar3 = (UIVertex *)&(pUVar3->position).y;
-          pfVar5 = pfVar5 + 1;
+        pfVar6 = (float *)&stack0xfffffe7c;
+        for (iVar3 = 0x1b; iVar3 != 0; iVar3 = iVar3 + -1) {
+          *pfVar6 = (pUVar4->position).x;
+          pUVar4 = (UIVertex *)&(pUVar4->position).y;
+          pfVar6 = pfVar6 + 1;
         }
-        pUVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::
+        pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::
                  List_1_UnityEngine_UIVertex__get_Item
-                           (&UStack_4,vertexList,0,
+                           (&UStack_5,vertexList,0,
                             MethodInfo__System__Collections__Generic__List<UnityEngine::UIVertex>__get_Item_int_
                            );
-        pfVar5 = &UStack_4.uv3.w;
-        for (iVar6 = 0x1b; iVar6 != 0; iVar6 = iVar6 + -1) {
-          *pfVar5 = (pUVar3->position).x;
-          pUVar3 = (UIVertex *)&(pUVar3->position).y;
-          pfVar5 = pfVar5 + 1;
+        pfVar6 = &UStack_5.uv3.w;
+        for (iVar3 = 0x1b; iVar3 != 0; iVar3 = iVar3 + -1) {
+          *pfVar6 = (pUVar4->position).x;
+          pUVar4 = (UIVertex *)&(pUVar4->position).y;
+          pfVar6 = pfVar6 + 1;
         }
         fStack_7 = fStack_8 - in_stack_9;
         iStack_10 = 0;
         while (iStack_10 < (vertexList->fields)._size) {
-          pUVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::
+          pUVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::
                    List_1_UnityEngine_UIVertex__get_Item
                              ((UIVertex *)&stack0xfffffe10,vertexList,iStack_10,
                               MethodInfo__System__Collections__Generic__List<UnityEngine::UIVertex>__get_Item_int_
                              );
-          pUVar11 = pUVar3;
-          pfVar5 = &UStack_4.uv3.w;
-          for (iVar6 = 0x1b; iVar6 != 0; iVar6 = iVar6 + -1) {
-            *pfVar5 = (pUVar11->position).x;
+          pUVar11 = pUVar4;
+          pfVar6 = &UStack_5.uv3.w;
+          for (iVar3 = 0x1b; iVar3 != 0; iVar3 = iVar3 + -1) {
+            *pfVar6 = (pUVar11->position).x;
             pUVar11 = (UIVertex *)&(pUVar11->position).y;
-            pfVar5 = pfVar5 + 1;
+            pfVar6 = pfVar6 + 1;
           }
           fStack_12 = (float)(uStack_13 & 0xff) / _UNK_?;
           fStack_14 = (float)(uStack_13 >> 8 & 0xff) / _UNK_?;
           fStack_15 = (float)(uStack_13 >> 0x10 & 0xff) / _UNK_?;
           fStack_16 = (float)(uStack_13 >> 0x18) / _UNK_?;
-          pUVar11 = &UStack_4;
-          for (iVar6 = 0x1b; iVar6 != 0; iVar6 = iVar6 + -1) {
-            (pUVar11->position).x = (pUVar3->position).x;
-            pUVar3 = (UIVertex *)&(pUVar3->position).y;
+          pUVar11 = &UStack_5;
+          for (iVar3 = 0x1b; iVar3 != 0; iVar3 = iVar3 + -1) {
+            (pUVar11->position).x = (pUVar4->position).x;
+            pUVar4 = (UIVertex *)&(pUVar4->position).y;
             pUVar11 = (UIVertex *)&(pUVar11->position).y;
           }
           fStack_17 = (this->fields).top.r;
@@ -122,7 +123,7 @@ void Assembly-CSharp.dll::Gamestrap::GradientEffect::GradientEffect_ModifyVertic
           fStack_22 = (this->fields).bottom.g;
           fStack_23 = (this->fields).bottom.b;
           fStack_24 = (this->fields).bottom.a;
-          fVar25 = (UStack_4.position.y - in_stack_9) / fStack_7;
+          fVar25 = (UStack_5.position.y - in_stack_9) / fStack_7;
           if (fVar25 < 0.0) {
             fVar25 = 0.0;
           }
@@ -143,14 +144,14 @@ void Assembly-CSharp.dll::Gamestrap::GradientEffect::GradientEffect_ModifyVertic
           uStack_27 = CONCAT31(CONCAT21(CONCAT11((char)(int)fVar26,(char)(int)fStack_15),
                                         (char)(int)fStack_14),(char)(int)fStack_12);
           uStack_13 = uStack_27;
-          pfVar5 = &UStack_4.uv3.w;
+          pfVar6 = &UStack_5.uv3.w;
           pfVar28 = (float *)&stack0xfffffd38;
           pMVar29 = 
           MethodInfo__System__Collections__Generic__List<UnityEngine::UIVertex>__set_Item_int__UnityEngine__UIVertex_
           ;
-          for (iVar6 = 0x1b; iVar30 = iStack_10, iVar6 != 0; iVar6 = iVar6 + -1) {
-            *pfVar28 = *pfVar5;
-            pfVar5 = pfVar5 + 1;
+          for (iVar3 = 0x1b; iVar30 = iStack_10, iVar3 != 0; iVar3 = iVar3 + -1) {
+            *pfVar28 = *pfVar6;
+            pfVar6 = pfVar6 + 1;
             pfVar28 = pfVar28 + 1;
           }
           value.uv3.w = (float)pMVar29;

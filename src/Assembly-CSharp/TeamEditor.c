@@ -13,11 +13,12 @@ void Assembly-CSharp.dll::TeamEditor::TeamEditor_Destroy(TeamEditor *this,Method
   }
   UpdateController::UpdateController_RemoveUpdateObject
             ((IUpdatecontrollerSubscriberUpdate *)this,(MethodInfo *)0x0);
-  if ((this->fields)._.cullingSubscriberBase != (CullingSubscriberBase *)0x0) {
-    CullingSubscriberBase::CullingSubscriberBase_Destroy
-              ((this->fields)._.cullingSubscriberBase,(MethodInfo *)0x0);
-    (this->fields)._.cullingSubscriberBase = (CullingSubscriberBase *)0x0;
-    func_?(&(this->fields)._.cullingSubscriberBase,0);
+  this_00 = (this->fields)._.cullingSubscriberBase;
+  ppCVar1 = &(this->fields)._.cullingSubscriberBase;
+  if (this_00 != (CullingSubscriberBase *)0x0) {
+    CullingSubscriberBase::CullingSubscriberBase_Destroy(this_00,(MethodInfo *)0x0);
+    *ppCVar1 = (CullingSubscriberBase *)0x0;
+    func_?(ppCVar1,0);
   }
   MVWorldObjectClient::MVWorldObjectClient_Destroy((MVWorldObjectClient *)this,(MethodInfo *)0x0);
   return;

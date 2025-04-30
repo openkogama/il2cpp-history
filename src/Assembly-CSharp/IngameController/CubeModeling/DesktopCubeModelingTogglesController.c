@@ -22,45 +22,48 @@ void Assembly-CSharp.dll::IngameController::CubeModeling::DesktopCubeModelingTog
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).toggleCameraEffects;
-  if ((pTVar1 == (ToggleCameraEffects *)0x0) ||
-     (pTVar2 = (pTVar1->fields).toggleStatHandlerBase, pTVar2 == (ToggleStatHandlerBase *)0x0)) {
-    func_?();
-    func_?();
-  }
-  else {
-    pTVar3 = (pTVar2->fields).OnStartSetValue;
-    this_00 = (Func_1_System_Threading_Tasks_VoidTaskResult_ *)
-              func_?(TypeInfo__ToggleStateHandlerOnStartSetValue);
-    mscorlib.dll::System::Func`1[System::Threading::Tasks::VoidTaskResult]::
-    Func_1_System_Threading_Tasks_VoidTaskResult___ctor
-              (this_00,(Object *)this,
-               MethodInfo__IngameController__CubeModeling__DesktopCubeModelingTogglesController__StartSetValue__
-               ,(MethodInfo *)0x0);
-    pTVar3 = (ToggleStateHandlerOnStartSetValue *)
-             mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pTVar3,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pTVar3 == (ToggleStateHandlerOnStartSetValue *)0x0) {
-      (pTVar2->fields).OnStartSetValue = (ToggleStateHandlerOnStartSetValue *)0x0;
+  if (pTVar1 != (ToggleCameraEffects *)0x0) {
+    pTVar2 = (pTVar1->fields).toggleStatHandlerBase;
+    if (pTVar2 != (ToggleStatHandlerBase *)0x0) {
+      pTVar3 = (pTVar2->fields).OnStartSetValue;
+      ppTVar4 = &(pTVar2->fields).OnStartSetValue;
+      this_00 = (Func_1_System_Threading_Tasks_VoidTaskResult_ *)
+                func_?(TypeInfo__ToggleStateHandlerOnStartSetValue);
+      mscorlib.dll::System::Func`1[System::Threading::Tasks::VoidTaskResult]::
+      Func_1_System_Threading_Tasks_VoidTaskResult___ctor
+                (this_00,(Object *)this,
+                 MethodInfo__IngameController__CubeModeling__DesktopCubeModelingTogglesController__StartSetValue__
+                 ,(MethodInfo *)0x0);
+      pTVar3 = (ToggleStateHandlerOnStartSetValue *)
+               mscorlib.dll::System::Delegate::Delegate_Combine
+                         ((Delegate *)pTVar3,(Delegate *)this_00,(MethodInfo *)0x0);
+      if (pTVar3 == (ToggleStateHandlerOnStartSetValue *)0x0) {
+        *ppTVar4 = (ToggleStateHandlerOnStartSetValue *)0x0;
 code_?:
-      func_?(&(pTVar2->fields).OnStartSetValue);
-      return;
-    }
-    pTVar4 = (ToggleStateHandlerOnStartSetValue *)0x0;
-    if (pTVar3->klass == TypeInfo__ToggleStateHandlerOnStartSetValue) {
-      pTVar4 = pTVar3;
-    }
-    if (pTVar4 != (ToggleStateHandlerOnStartSetValue *)0x0) {
-      (pTVar2->fields).OnStartSetValue = pTVar4;
-      pTVar4 = (ToggleStateHandlerOnStartSetValue *)0x0;
-      if (pTVar3->klass == TypeInfo__ToggleStateHandlerOnStartSetValue) {
-        pTVar4 = pTVar3;
+        func_?(ppTVar4);
+        return;
       }
-      if (pTVar4 != (ToggleStateHandlerOnStartSetValue *)0x0) goto code_?;
+      pTVar5 = (ToggleStateHandlerOnStartSetValue *)0x0;
+      if (pTVar3->klass == TypeInfo__ToggleStateHandlerOnStartSetValue) {
+        pTVar5 = pTVar3;
+      }
+      if (pTVar5 != (ToggleStateHandlerOnStartSetValue *)0x0) {
+        *ppTVar4 = pTVar5;
+        pTVar5 = (ToggleStateHandlerOnStartSetValue *)0x0;
+        if (pTVar3->klass == TypeInfo__ToggleStateHandlerOnStartSetValue) {
+          pTVar5 = pTVar3;
+        }
+        if (pTVar5 != (ToggleStateHandlerOnStartSetValue *)0x0) goto code_?;
+      }
+      goto code_?;
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?();
+code_?:
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -184,45 +187,48 @@ void Assembly-CSharp.dll::IngameController::CubeModeling::DesktopCubeModelingTog
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).toggleCameraEffects;
-  if ((pTVar1 == (ToggleCameraEffects *)0x0) ||
-     (pTVar2 = (pTVar1->fields).toggleStatHandlerBase, pTVar2 == (ToggleStatHandlerBase *)0x0)) {
-    func_?();
-    func_?();
-  }
-  else {
-    pTVar3 = (pTVar2->fields).OnStartSetValue;
-    this_00 = (Func_1_System_Threading_Tasks_VoidTaskResult_ *)
-              func_?(TypeInfo__ToggleStateHandlerOnStartSetValue);
-    mscorlib.dll::System::Func`1[System::Threading::Tasks::VoidTaskResult]::
-    Func_1_System_Threading_Tasks_VoidTaskResult___ctor
-              (this_00,(Object *)this,
-               MethodInfo__IngameController__CubeModeling__DesktopCubeModelingTogglesController__StartSetValue__
-               ,(MethodInfo *)0x0);
-    pTVar3 = (ToggleStateHandlerOnStartSetValue *)
-             mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)pTVar3,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pTVar3 == (ToggleStateHandlerOnStartSetValue *)0x0) {
-      (pTVar2->fields).OnStartSetValue = (ToggleStateHandlerOnStartSetValue *)0x0;
+  if (pTVar1 != (ToggleCameraEffects *)0x0) {
+    pTVar2 = (pTVar1->fields).toggleStatHandlerBase;
+    if (pTVar2 != (ToggleStatHandlerBase *)0x0) {
+      pTVar3 = (pTVar2->fields).OnStartSetValue;
+      ppTVar4 = &(pTVar2->fields).OnStartSetValue;
+      this_00 = (Func_1_System_Threading_Tasks_VoidTaskResult_ *)
+                func_?(TypeInfo__ToggleStateHandlerOnStartSetValue);
+      mscorlib.dll::System::Func`1[System::Threading::Tasks::VoidTaskResult]::
+      Func_1_System_Threading_Tasks_VoidTaskResult___ctor
+                (this_00,(Object *)this,
+                 MethodInfo__IngameController__CubeModeling__DesktopCubeModelingTogglesController__StartSetValue__
+                 ,(MethodInfo *)0x0);
+      pTVar3 = (ToggleStateHandlerOnStartSetValue *)
+               mscorlib.dll::System::Delegate::Delegate_Remove
+                         ((Delegate *)pTVar3,(Delegate *)this_00,(MethodInfo *)0x0);
+      if (pTVar3 == (ToggleStateHandlerOnStartSetValue *)0x0) {
+        *ppTVar4 = (ToggleStateHandlerOnStartSetValue *)0x0;
 code_?:
-      func_?(&(pTVar2->fields).OnStartSetValue);
-      return;
-    }
-    pTVar4 = (ToggleStateHandlerOnStartSetValue *)0x0;
-    if (pTVar3->klass == TypeInfo__ToggleStateHandlerOnStartSetValue) {
-      pTVar4 = pTVar3;
-    }
-    if (pTVar4 != (ToggleStateHandlerOnStartSetValue *)0x0) {
-      (pTVar2->fields).OnStartSetValue = pTVar4;
-      pTVar4 = (ToggleStateHandlerOnStartSetValue *)0x0;
-      if (pTVar3->klass == TypeInfo__ToggleStateHandlerOnStartSetValue) {
-        pTVar4 = pTVar3;
+        func_?(ppTVar4);
+        return;
       }
-      if (pTVar4 != (ToggleStateHandlerOnStartSetValue *)0x0) goto code_?;
+      pTVar5 = (ToggleStateHandlerOnStartSetValue *)0x0;
+      if (pTVar3->klass == TypeInfo__ToggleStateHandlerOnStartSetValue) {
+        pTVar5 = pTVar3;
+      }
+      if (pTVar5 != (ToggleStateHandlerOnStartSetValue *)0x0) {
+        *ppTVar4 = pTVar5;
+        pTVar5 = (ToggleStateHandlerOnStartSetValue *)0x0;
+        if (pTVar3->klass == TypeInfo__ToggleStateHandlerOnStartSetValue) {
+          pTVar5 = pTVar3;
+        }
+        if (pTVar5 != (ToggleStateHandlerOnStartSetValue *)0x0) goto code_?;
+      }
+      goto code_?;
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?();
+code_?:
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

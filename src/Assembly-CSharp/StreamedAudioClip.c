@@ -23,10 +23,9 @@ void Assembly-CSharp.dll::StreamedAudioClip::StreamedAudioClip_OnAssetSet
       do {
         if (pSVar3->interfaceOffsets[uVar4].interfaceType ==
             (Il2CppClass *)TypeInfo__StreamedAudioClip__IReceiver) {
-          pSVar3 = pSVar1->klass;
           iVar6 = pSVar3->interfaceOffsets[uVar4].offset;
-          (*(code *)(&pSVar3->vtable)[iVar6].OnAudioReceived.method)
-                    (pSVar1,pAVar2,(&pSVar3[1]._0.image)[iVar6 * 2]);
+          (*(code *)(&pSVar1->klass->vtable)[iVar6].OnAudioReceived.method)
+                    (pSVar1,pAVar2,(&pSVar1->klass[1]._0.image)[iVar6 * 2]);
           return;
         }
         uVar4 = uVar4 + 1;

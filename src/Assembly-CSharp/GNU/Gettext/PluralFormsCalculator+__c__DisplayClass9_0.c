@@ -15,8 +15,8 @@ void Assembly-CSharp.dll::GNU::Gettext::PluralFormsCalculator+<>c__DisplayClass9
   pPVar1 = this;
   pRVar2 = (this->fields).tracer;
   if (pRVar2 != (RecursiveTracer *)0x0) {
-    pSVar3 = (pRVar2->fields)._Text_k__BackingField;
     this = (PluralFormsCalculator_c_DisplayClass9_0 *)(pRVar2->fields)._Level_k__BackingField;
+    pSVar3 = (pRVar2->fields)._Text_k__BackingField;
     (pRVar2->fields)._Level_k__BackingField = (int32_t)((int)&this->klass + 1);
     arg0 = (Object *)func_?(TypeInfo__System__Int32,&this);
     if (pSVar3 != (StringBuilder *)0x0) {

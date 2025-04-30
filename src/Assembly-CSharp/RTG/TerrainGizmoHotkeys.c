@@ -25,7 +25,7 @@ void Assembly-CSharp.dll::RTG::TerrainGizmoHotkeys::TerrainGizmoHotkeys__ctor
     if (pHVar2 != (Hotkeys *)0x0) {
       Hotkeys::Hotkeys_set_Key(pHVar2,KeyCode__Enum_C,(MethodInfo *)0x0);
       method_00 = (MethodInfo *)&(this->fields)._rotateObjects;
-      (this->fields)._rotateObjects = pHVar2;
+      *(Hotkeys **)method_00 = pHVar2;
       func_?(method_00,pHVar2);
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                 ((Object *)this,ExceptionArgument__Enum_obj,method_00);

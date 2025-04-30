@@ -21,46 +21,46 @@ void Assembly-CSharp.dll::FirstTimeActivatablePopup::FirstTimeActivatablePopup_C
                      ((Object *)pFVar1,
                       FirstTimeEventPopup_MethodInfo__UnityEngine__Object__Instantiate<FirstTimeEventPopup>_FirstTimeEventPopup_
                      );
-  (this->fields).popup = pFVar1;
-  func_?(&(this->fields).popup,pFVar1);
-  pFVar1 = (this->fields).popup;
+  ppFVar2 = &(this->fields).popup;
+  *ppFVar2 = pFVar1;
+  func_?(ppFVar2,pFVar1);
+  pFVar1 = *ppFVar2;
   value = (this->fields).skipAllowed;
   if (pFVar1 == (FirstTimeEventPopup *)0x0) goto code_?;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  pBVar2 = (pFVar1->fields).skipButton;
+  pBVar3 = (pFVar1->fields).skipButton;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                    ((Object_1 *)pBVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar3 != 0) {
-    pBVar2 = (pFVar1->fields).skipButton;
-    if (pBVar2 == (Button *)0x0) goto code_?;
+  bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                    ((Object_1 *)pBVar3,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar4 != 0) {
+    pBVar3 = (pFVar1->fields).skipButton;
+    if (pBVar3 == (Button *)0x0) goto code_?;
     this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                        ((Component *)pBVar2,(MethodInfo *)0x0);
+                        ((Component *)pBVar3,(MethodInfo *)0x0);
     if (this_01 == (GameObject *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
               (this_01,value,(MethodInfo *)0x0);
   }
-  pFVar1 = (this->fields).popup;
-  if ((pFVar1 != (FirstTimeEventPopup *)0x0) &&
-     (pFVar4 = (pFVar1->fields).fader, pFVar4 != (FirstTimeFadeHandler *)0x0)) {
-    this_00 = (pFVar4->fields).canvasGroup;
-    (pFVar4->fields).fadingIn = 1;
+  if ((*ppFVar2 != (FirstTimeEventPopup *)0x0) &&
+     (pFVar5 = ((*ppFVar2)->fields).fader, pFVar5 != (FirstTimeFadeHandler *)0x0)) {
+    this_00 = (pFVar5->fields).canvasGroup;
+    (pFVar5->fields).fadingIn = 1;
     if (this_00 != (CanvasGroup *)0x0) {
       UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
                 (this_00,0.0,(MethodInfo *)0x0);
-      (pFVar4->fields).currentFadeInTime = 0.0;
+      (pFVar5->fields).currentFadeInTime = 0.0;
       return;
     }
   }
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

@@ -8,10 +8,16 @@ bool Assembly-CSharp.dll::GoldRewardManager::GoldRewardManager_CanGetGoldReward
   bVar1 = MVClientSettings::MVClientSettings_get_RewardedAdsEnabled((MethodInfo *)0x0);
   MVar2 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
   bVar3 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
-  if ((bVar1 != 0) && ((this->fields).isGoldRewardGame != 0)) {
-    return -(MVar2 == MVGameMode__Enum_Play && (this->fields).isGoldRewardDone == 0) & (bVar3 ^ 1);
+  if ((bVar1 == 0) || ((this->fields).isGoldRewardGame == 0)) {
+    bVar4 = false;
   }
-  return 0;
+  else {
+    bVar4 = (this->fields).isGoldRewardDone == 0;
+  }
+  if (!(bool)(bVar4 & MVar2 == MVGameMode__Enum_Play)) {
+    return 0;
+  }
+  return bVar3 == 0;
 }
 
 

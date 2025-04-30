@@ -26,7 +26,7 @@ bool Assembly-CSharp.dll::DesktopCubeModelingController+<SetButtonTextureRoutine
        pMVar6 != (MVMaterialRepository *)0x0)) {
       ppOVar7 = &(this->fields).__2__current;
       if ((pMVar6->fields)._IsButtonTexturesInitialized_k__BackingField != 0) {
-        (this->fields).__2__current = (Object *)0x0;
+        *ppOVar7 = (Object *)0x0;
         func_?(ppOVar7,0);
         (this->fields).__1__state = 2;
         return 1;
@@ -35,7 +35,7 @@ bool Assembly-CSharp.dll::DesktopCubeModelingController+<SetButtonTextureRoutine
                 func_?(TypeInfo__UnityEngine__WaitForSeconds);
       SubscribableVariable`1[System::Single]::SubscribableVariable_1_System_Single___ctor
                 (this_01,0.1,(MethodInfo *)0x0);
-      (this->fields).__2__current = (Object *)this_01;
+      *ppOVar7 = (Object *)this_01;
       func_?(ppOVar7,this_01);
       (this->fields).__1__state = 1;
       return 1;
@@ -58,21 +58,22 @@ bool Assembly-CSharp.dll::DesktopCubeModelingController+<SetButtonTextureRoutine
          ((pMVar6 = (pMVar5->fields)._MaterialRepository_k__BackingField,
           pMVar6 != (MVMaterialRepository *)0x0 &&
           ((pMVar8 = MVMaterialRepository::MVMaterialRepository_GetMaterial
-                               (pMVar6,(this->fields).materialId,(MethodInfo *)0x0),
+                                (pMVar6,(this->fields).materialId,(MethodInfo *)0x0),
            pMVar8 != (MVMaterial *)0x0 && (this_00 != (RawImage *)0x0)))))) {
         UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
                   (this_00,(Texture *)(pMVar8->fields)._ButtonTexture_k__BackingField,
                    (MethodInfo *)0x0);
-        (pDVar2->fields).setButtonTextureRoutine = (IEnumerator *)0x0;
-        func_?(&(pDVar2->fields).setButtonTextureRoutine,0);
+        ppIVar9 = &(pDVar2->fields).setButtonTextureRoutine;
+        *ppIVar9 = (IEnumerator *)0x0;
+        func_?(ppIVar9,0);
         return 0;
       }
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  bVar10 = (*pcVar9)();
-  return bVar10;
+  pcVar10 = (code *)swi(3);
+  bVar11 = (*pcVar10)();
+  return bVar11;
 }
 
 

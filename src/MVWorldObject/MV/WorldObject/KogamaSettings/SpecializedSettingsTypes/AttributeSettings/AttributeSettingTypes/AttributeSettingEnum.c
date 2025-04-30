@@ -39,65 +39,59 @@ String * MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettings
   }
   puStack_4 = puVar5;
   pSVar6 = ::StringLiteral__;
-  DStack_7._dictionary = (Dictionary_2_System_UInt32_System_Int32_ *)0x0;
-  DStack_7._version = 0;
-  DStack_7._index = 0;
-  DStack_7._current.key = 0;
-  pSStack_8 = ::StringLiteral__;
+  pSStack_7 = ::StringLiteral__;
   this_00 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields).valueAttributeValueMap;
-  DStack_7._current.value = 0;
-  DStack_7._getEnumeratorRetType = 0;
   if (this_00 == (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
 code_?:
-    uVar9 = func_?();
-    func_?(uVar9);
+    uVar8 = func_?();
+    func_?(uVar8);
 code_?:
-    uVar9 = func_?(0);
-    func_?(uVar9);
+    uVar8 = func_?(0);
+    func_?(uVar8);
 code_?:
-    uVar9 = func_?(0);
-    func_?(uVar9);
+    uVar8 = func_?(0);
+    func_?(uVar8);
 code_?:
-    uVar9 = func_?(0);
-    func_?(uVar9);
+    uVar8 = func_?(0);
+    func_?(uVar8);
 code_?:
-    uVar9 = func_?(0);
-    func_?(uVar9);
+    uVar8 = func_?(0);
+    func_?(uVar8);
   }
   else {
-    pDVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+    pDVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
              ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
                        ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
                         &stack0xffffff98,this_00,
                         MethodInfo__System__Collections__Generic__Dictionary<int,_int>__GetEnumerator__
                        );
-    uStack_11 = 0;
-    DStack_7._dictionary = (Dictionary_2_System_UInt32_System_Int32_ *)pDVar10->_dictionary;
-    DStack_7._version = pDVar10->_version;
-    DStack_7._index = pDVar10->_index;
-    DStack_7._current.key = (pDVar10->_current).key;
-    DStack_7._16_8_ = *(undefined8 *)&(pDVar10->_current).value;
+    uStack_10 = 0;
+    DStack_11._dictionary = (Dictionary_2_System_UInt32_System_Int32_ *)pDVar9->_dictionary;
+    DStack_11._version = pDVar9->_version;
+    DStack_11._index = pDVar9->_index;
+    DStack_11._current.key = (pDVar9->_current).key;
+    DStack_11._16_8_ = *(undefined8 *)&(pDVar9->_current).value;
     uStack_1 = 1;
-    apDStack_12[0] = &DStack_7;
+    apDStack_12[0] = &DStack_11;
     while (bVar13 = mscorlib.dll::System::Collections::Generic::
                    Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Int32]::
                    Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Int32__MoveNext
-                             (&DStack_7,
+                             (&DStack_11,
                               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_int>__MoveNext__
                              ), bVar13 != 0) {
-      uStack_14 = DStack_7._current.key;
-      pDStack_15 = (Dictionary_2_System_Int32_System_Object_ *)DStack_7._current.value;
+      uStack_14 = DStack_11._current.key;
+      pDStack_15 = (Dictionary_2_System_Int32_System_Object_ *)DStack_11._current.value;
       pKStack_16 = (KogamaSettingEnum *)func_?();
       pDStack_17 = pDStack_15;
       pOVar18 = (Object *)func_?();
       str1 = mscorlib.dll::System::String::String_Format_1
                        (StringLiteral___0____1__,(Object *)pKStack_16,pOVar18,(MethodInfo *)0x0);
       pSVar6 = mscorlib.dll::System::String::String_Concat_3(pSVar6,str1,(MethodInfo *)0x0);
-      pSStack_8 = pSVar6;
+      pSStack_7 = pSVar6;
     }
     uStack_1 = 0xffffffff;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)&DStack_7,
+              ((Object *)&DStack_11,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_int>__Dispose__
                ,in_stack_19);
@@ -122,13 +116,13 @@ code_?:
     goto code_?;
     piVar21 = (int32_t *)func_?(pOVar18);
     if (pDStack_15 == (Dictionary_2_System_Int32_System_Object_ *)0x0) goto code_?;
-    pSStack_8 = (String *)
+    pSStack_7 = (String *)
                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
                  Object]::Dictionary_2_System_Int32_System_Object__get_Item
                            (pDStack_15,*piVar21,
                             MethodInfo__System__Collections__Generic__Dictionary<int,_int>__get_Item_int_
                            );
-    pKStack_16 = (KogamaSettingEnum *)func_?(TypeInfo__System__Int32,&pSStack_8);
+    pKStack_16 = (KogamaSettingEnum *)func_?(TypeInfo__System__Int32,&pSStack_7);
     if (args == (Object__Array *)0x0) goto code_?;
     if ((pKStack_16 != (KogamaSettingEnum *)0x0) &&
        (iVar22 = func_?(pKStack_16,(args->klass->_0).element_class), iVar22 == 0))
@@ -195,8 +189,9 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsType
 {
   KogamaSettingsCore::KogamaSettingTypes::KogamaSettingEnumBase::KogamaSettingEnumBase__ctor
             ((KogamaSettingEnumBase *)this,key,value,min,max,parent,(MethodInfo *)0x0);
-  (this->fields).valueAttributeValueMap = valueAttributeValueMap;
-  func_?(&(this->fields).valueAttributeValueMap,valueAttributeValueMap);
+  ppDVar1 = &(this->fields).valueAttributeValueMap;
+  *ppDVar1 = valueAttributeValueMap;
+  func_?(ppDVar1,valueAttributeValueMap);
   return;
 }
 
@@ -214,8 +209,9 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsType
 {
   KogamaSettingsCore::KogamaSettingTypes::KogamaSettingEnumBase::KogamaSettingEnumBase__ctor
             ((KogamaSettingEnumBase *)this,key,value,min,max,parent,(MethodInfo *)0x0);
-  (this->fields).valueAttributeValueMap = valueAttributeValueMap;
-  func_?(&(this->fields).valueAttributeValueMap,valueAttributeValueMap);
+  ppDVar1 = &(this->fields).valueAttributeValueMap;
+  *ppDVar1 = valueAttributeValueMap;
+  func_?(ppDVar1,valueAttributeValueMap);
   (this->fields)._ExclusivityFlag_k__BackingField = attributeSettingsExclusivityFlag;
   return;
 }

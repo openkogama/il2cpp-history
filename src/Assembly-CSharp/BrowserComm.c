@@ -100,7 +100,7 @@ void Assembly-CSharp.dll::BrowserComm::BrowserComm_ExternalCallback
   if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Newtonsoft__Json__JsonConvert);
   }
-  this_00 = (BrowserComm_JsonReturnData *)
+  this_01 = (BrowserComm_JsonReturnData *)
             Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2
                       (jsonData,
                        BrowserComm__JsonReturnData_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<BrowserComm::JsonReturnData>_System__String_
@@ -109,17 +109,16 @@ void Assembly-CSharp.dll::BrowserComm::BrowserComm_ExternalCallback
     func_?(TypeInfo__BrowserComm);
   }
   pDVar1 = TypeInfo__BrowserComm->static_fields->callbacks;
-  if ((this_00 != (BrowserComm_JsonReturnData *)0x0) &&
+  if ((this_01 != (BrowserComm_JsonReturnData *)0x0) &&
      (pDVar1 != (Dictionary_2_System_Int32_BrowserComm_Callback_ *)0x0)) {
+    this_00 = &this_01->fields;
     bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::
             Dictionary_2_System_Int32_System_Single__ContainsKey
-                      ((Dictionary_2_System_Int32_System_Single_ *)pDVar1,
-                       (this_00->fields).callbackId,
+                      ((Dictionary_2_System_Int32_System_Single_ *)pDVar1,this_00->callbackId,
                        MethodInfo__System__Collections__Generic__Dictionary<int,_BrowserComm::Callback>__ContainsKey_int_
                       );
     if (bVar2 == 0) {
-      pSVar3 = mscorlib.dll::System::Int32::Int32_ToString
-                         ((Int32 *)&this_00->fields,(MethodInfo *)0x0);
+      pSVar3 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)this_00,(MethodInfo *)0x0);
       pSVar3 = mscorlib.dll::System::String::String_Concat_3
                          (StringLiteral_No_callback_function_with_callba,pSVar3,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
@@ -136,30 +135,27 @@ void Assembly-CSharp.dll::BrowserComm::BrowserComm_ExternalCallback
     if (pDVar1 != (Dictionary_2_System_Int32_BrowserComm_Callback_ *)0x0) {
       pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
                Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                         ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,
-                          (this_00->fields).callbackId,
+                         ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,this_00->callbackId,
                           MethodInfo__System__Collections__Generic__Dictionary<int,_BrowserComm::Callback>__get_Item_int_
                          );
       pDVar1 = TypeInfo__BrowserComm->static_fields->callbacks;
       if (pDVar1 != (Dictionary_2_System_Int32_BrowserComm_Callback_ *)0x0) {
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
         Dictionary_2_System_Int32_System_Object__Remove
-                  ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,(this_00->fields).callbackId,
+                  ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,this_00->callbackId,
                    MethodInfo__System__Collections__Generic__Dictionary<int,_BrowserComm::Callback>__Remove_int_
                   );
         bVar2 = BrowserComm+JsonReturnData::BrowserComm_JsonReturnData_Validate
-                          (this_00,(MethodInfo *)0x0);
+                          (this_01,(MethodInfo *)0x0);
         if (pOVar4 != (Object *)0x0) {
           pOVar5 = pOVar4[1].klass;
           if (bVar2 == 0) {
             if (pOVar5 != (Object__Class *)0x0) {
-              puStack6 = (undefined *)0x0;
               (*(code *)(pOVar5->_0).namespaze)();
               return;
             }
           }
           else if (pOVar5 != (Object__Class *)0x0) {
-            puStack6 = (undefined *)0x1;
             (*(code *)(pOVar5->_0).namespaze)();
             return;
           }
@@ -168,8 +164,8 @@ void Assembly-CSharp.dll::BrowserComm::BrowserComm_ExternalCallback
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -279,16 +275,16 @@ void Assembly-CSharp.dll::BrowserComm::BrowserComm_UserGoldUpdate
                      (data,
                       BrowserComm__JsonGoldUpdateData_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<BrowserComm::JsonGoldUpdateData>_System__String_
                      );
-  if ((this->fields).OnGoldPurchasedFromWeb != (Action_2_Int32_Int32_ *)0x0) {
+  pAVar2 = (this->fields).OnGoldPurchasedFromWeb;
+  if (pAVar2 != (Action_2_Int32_Int32_ *)0x0) {
     if (pOVar1 == (Object *)0x0) {
-      uVar2 = func_?(&stack0xfffffff8);
-      func_?(uVar2);
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
+      uVar3 = func_?(&stack0xfffffff8);
+      func_?(uVar3);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
       return;
     }
-    pAVar4 = (this->fields).OnGoldPurchasedFromWeb;
-    (*(pAVar4->fields)._._.invoke_impl)((pAVar4->fields)._._.method_code);
+    (*(pAVar2->fields)._._.invoke_impl)((pAVar2->fields)._._.method_code);
   }
   return;
 }

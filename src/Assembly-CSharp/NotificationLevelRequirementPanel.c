@@ -14,50 +14,51 @@ void Assembly-CSharp.dll::NotificationLevelRequirementPanel::
   }
   pTVar1 = UnityEngine.UnityWebRequestTextureModule.dll::UnityEngine::Networking::
            DownloadHandlerTexture::DownloadHandlerTexture_GetContent(www,(MethodInfo *)0x0);
-  (this->fields).badgeTextureAsset = pTVar1;
-  func_?(&(this->fields).badgeTextureAsset,pTVar1);
-  pTVar1 = (this->fields).badgeTextureAsset;
+  ppTVar2 = &(this->fields).badgeTextureAsset;
+  *ppTVar2 = pTVar1;
+  func_?(ppTVar2,pTVar1);
+  pTVar1 = *ppTVar2;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                     ((Object_1 *)pTVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 == 0) {
+  if (bVar3 == 0) {
     if (www != (UnityWebRequest *)0x0) {
-      pSVar3 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
+      pSVar4 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
                UnityWebRequest_GetUrl(www,(MethodInfo *)0x0);
-      pSVar3 = mscorlib.dll::System::String::String_Concat_3
-                         (StringLiteral_Failed_to_get__,pSVar3,(MethodInfo *)0x0);
+      pSVar4 = mscorlib.dll::System::String::String_Concat_3
+                         (StringLiteral_Failed_to_get__,pSVar4,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Debug);
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                ((Object *)pSVar3,(MethodInfo *)0x0);
+                ((Object *)pSVar4,(MethodInfo *)0x0);
       return;
     }
   }
   else {
     this_00 = (this->fields).LevelImage;
-    pTVar1 = (this->fields).badgeTextureAsset;
+    pTVar1 = *ppTVar2;
     if (cRam_? == '\0') {
       func_?(&TypeInfo__UnityEngine__Vector2);
       cRam_? = '\x01';
     }
-    fVar4 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).x;
-    fVar5 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
+    fVar5 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).x;
+    fVar6 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
     if (pTVar1 != (Texture2D *)0x0) {
-      iVar6 = (*(code *)(pTVar1->klass->vtable).get_width.method)
+      iVar7 = (*(code *)(pTVar1->klass->vtable).get_width.method)
                         (pTVar1,(pTVar1->klass->vtable).set_width.methodPtr);
-      iVar7 = (*(code *)(pTVar1->klass->vtable).get_height.method)
+      iVar8 = (*(code *)(pTVar1->klass->vtable).get_height.method)
                         (pTVar1,(pTVar1->klass->vtable).set_height.methodPtr);
       if (cRam_? == '\0') {
         func_?(&TypeInfo__UnityEngine__Vector2);
         cRam_? = '\x01';
       }
-      rect.m_YMin = fVar5;
-      rect.m_XMin = fVar4;
-      rect.m_Width = (float)iVar6;
-      rect.m_Height = (float)iVar7;
+      rect.m_YMin = fVar6;
+      rect.m_XMin = fVar5;
+      rect.m_Width = (float)iVar7;
+      rect.m_Height = (float)iVar8;
       pivot.y = (TypeInfo__UnityEngine__Vector2->static_fields->oneVector).y * _UNK_?;
       pivot.x = (TypeInfo__UnityEngine__Vector2->static_fields->oneVector).x * _UNK_?;
       value = UnityEngine.CoreModule.dll::UnityEngine::Sprite::Sprite_Create_6
@@ -70,8 +71,8 @@ void Assembly-CSharp.dll::NotificationLevelRequirementPanel::
     }
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -143,7 +144,7 @@ void Assembly-CSharp.dll::NotificationLevelRequirementPanel::
   BadgeManager::BadgeManager_UnsubscribeGetBadgeRequest
             ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,(MethodInfo *)0x0);
   (this->fields).badgeTextureAsset = (Texture2D *)0x0;
-  func_?(&(this->fields).badgeTextureAsset);
+  func_?();
   return;
 }
 

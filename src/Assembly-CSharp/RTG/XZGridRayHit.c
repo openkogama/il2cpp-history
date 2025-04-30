@@ -35,8 +35,8 @@ void Assembly-CSharp.dll::RTG::XZGridRayHit::XZGridRayHit__ctor
   if (uVar9 != 0) {
     do {
       if (pIVar7->interfaceOffsets[uVar8].interfaceType == (Il2CppClass *)TypeInfo__RTG__IXZGrid) {
-        ppMVar10 = &(&(pIVar7->vtable).get_WorldPlane)[pIVar7->interfaceOffsets[uVar8].offset].
-                   method;
+        ppMVar10 = &(&(((IXZGrid__Class *)(pIVar5->_0).image)->vtable).get_WorldPlane)
+                   [pIVar7->interfaceOffsets[uVar8].offset].method;
         goto code_?;
       }
       uVar8 = uVar8 + 1;

@@ -71,13 +71,14 @@ void Assembly-CSharp.dll::RTG::ObjectSurfaceSnap+TerrainSurfaceRaycaster::
                        (surfaceObject,
                         UnityEngine__TerrainCollider_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::TerrainCollider>__
                        );
-    (this->fields)._terrainCollider = pTVar1;
-    func_?(&(this->fields)._terrainCollider,pTVar1);
+    ppTVar2 = &(this->fields)._terrainCollider;
+    *ppTVar2 = pTVar1;
+    func_?(ppTVar2,pTVar1);
     return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

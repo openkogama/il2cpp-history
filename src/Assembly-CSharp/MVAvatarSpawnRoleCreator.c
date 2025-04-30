@@ -74,11 +74,12 @@ void Assembly-CSharp.dll::MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_Des
     }
   }
 code_?:
-  if ((this->fields).cullingSubscriberDynamic != (CullingSubscriberDynamic *)0x0) {
-    CullingSubscriberDynamic::CullingSubscriberDynamic_Destroy
-              ((this->fields).cullingSubscriberDynamic,(MethodInfo *)0x0);
-    (this->fields).cullingSubscriberDynamic = (CullingSubscriberDynamic *)0x0;
-    func_?(&(this->fields).cullingSubscriberDynamic,0);
+  this_01 = (this->fields).cullingSubscriberDynamic;
+  ppCVar3 = &(this->fields).cullingSubscriberDynamic;
+  if (this_01 != (CullingSubscriberDynamic *)0x0) {
+    CullingSubscriberDynamic::CullingSubscriberDynamic_Destroy(this_01,(MethodInfo *)0x0);
+    *ppCVar3 = (CullingSubscriberDynamic *)0x0;
+    func_?(ppCVar3,0);
   }
   return;
 }
@@ -103,7 +104,7 @@ Vector3 * Assembly-CSharp.dll::MVAvatarSpawnRoleCreator::
   pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
   uVar2 = (pVVar1->oneVector).x;
   uVar3 = (pVVar1->oneVector).y;
-  pSVar4 = (SharedCubeFunctions__Class *)((float)uVar2 * _UNK_?);
+  fVar4 = (float)uVar2 * _UNK_?;
   fVar5 = (float)uVar3 * _UNK_?;
   fVar6 = (pVVar1->oneVector).z * _UNK_?;
   this_00 = (this->fields)._._._.gameObject;
@@ -111,37 +112,38 @@ Vector3 * Assembly-CSharp.dll::MVAvatarSpawnRoleCreator::
     this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                         (this_00,(MethodInfo *)0x0);
     if (this_01 != (Transform *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                ((Quaternion *)&stack0xffffffe0,this_01,(MethodInfo *)0x0);
-      pSVar7 = TypeInfo__SharedCubeFunctions;
+      uVar7 = 0;
+      pQVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+                         ((Quaternion *)&stack0xffffffec,this_01,(MethodInfo *)0x0);
+      fVar4 = pQVar8->z;
+      fVar5 = pQVar8->w;
       if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
-        pSVar4 = pSVar7;
       }
       worldPosition.z = position.z;
       worldPosition.x = position.x;
       worldPosition.y = position.y;
-      rotation.y = (float)pSVar4;
-      rotation.x = gridSize;
-      rotation.z = fVar5;
-      rotation.w = fVar6;
-      scale.y = fVar5;
-      scale.x = (float)pSVar4;
+      rotation.y = 0.0;
+      rotation.x = fVar6;
+      rotation.z = fVar4;
+      rotation.w = fVar5;
+      scale.y = (float)uVar7;
+      scale.x = (float)this_01;
       scale.z = fVar6;
-      pVVar8 = SharedCubeFunctions::SharedCubeFunctions_GetClosestGridPoint
+      pVVar9 = SharedCubeFunctions::SharedCubeFunctions_GetClosestGridPoint
                          (&position,worldPosition,rotation,gridSize,scale,(MethodInfo *)0x0);
-      fVar5 = pVVar8->y;
-      fVar6 = pVVar8->z;
-      __return_storage_ptr__->x = pVVar8->x;
+      fVar5 = pVVar9->y;
+      fVar4 = pVVar9->z;
+      __return_storage_ptr__->x = pVVar9->x;
       __return_storage_ptr__->y = fVar5;
-      __return_storage_ptr__->z = fVar6;
+      __return_storage_ptr__->z = fVar4;
       return __return_storage_ptr__;
     }
   }
-  func_?();
-  pcVar9 = (code *)swi(3);
-  pVVar8 = (Vector3 *)(*pcVar9)();
-  return pVVar8;
+  func_?(fVar4,fVar5);
+  pcVar10 = (code *)swi(3);
+  pVVar9 = (Vector3 *)(*pcVar10)();
+  return pVVar9;
 }
 
 
@@ -246,11 +248,10 @@ code_?:
     if (pMVar3 == (MVWorldObject *)0x0) {
       return;
     }
-    if (((TypeInfo__MVWorldObjectClient->_1).naturalAligment <= (pMVar3->klass->_1).naturalAligment)
-       && ((MVWorldObjectClient__Class *)
-           (pMVar3->klass->_1).typeHierarchy
-           [(TypeInfo__MVWorldObjectClient->_1).naturalAligment - 1] ==
-           TypeInfo__MVWorldObjectClient)) {
+    bVar4 = (TypeInfo__MVWorldObjectClient->_1).naturalAligment;
+    if ((bVar4 <= (pMVar3->klass->_1).naturalAligment) &&
+       ((MVWorldObjectClient__Class *)(pMVar3->klass->_1).typeHierarchy[bVar4 - 1] ==
+        TypeInfo__MVWorldObjectClient)) {
       this_01 = pMVar3[1].fields.inputLinkRefs;
       if (this_01 != (List_1_MV_WorldObject_Link_ *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
@@ -263,8 +264,8 @@ code_?:
   TVar1.m_Index = func_?(pMVar3);
 code_?:
   func_?(TVar1.m_Index);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -294,40 +295,37 @@ void Assembly-CSharp.dll::MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_Ini
     func_?(&StringLiteral_Logic);
     cRam_? = '\x01';
   }
-  OStack_1.klass = (Object__Class *)0x0;
-  OStack_1.monitor = (MonitorData *)0x0;
-  puStack_2 = (undefined *)0x0;
   MVBlueprintBase::MVBlueprintBase_Initialize((MVBlueprintBase *)this,(MethodInfo *)0x0);
-  pTVar3 = (this->fields)._._._.transform;
+  pTVar1 = (this->fields)._._._.transform;
   (this->fields).isInWorld = 1;
-  iVar4 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+  iVar2 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
                     (StringLiteral_Logic,(MethodInfo *)0x0);
-  LayerUtil::LayerUtil_SetLayerRecursively(pTVar3,iVar4,(MethodInfo *)0x0);
-  cVar5 = '\0';
+  LayerUtil::LayerUtil_SetLayerRecursively(pTVar1,iVar2,(MethodInfo *)0x0);
+  cVar3 = '\0';
   this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
             MVGroup::MVGroup_get_Children((MVGroup *)this,(MethodInfo *)0x0);
   if (this_02 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    pLVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
              RegexCharClass+SingleRange]::
              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                        ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
                          *)&stack0xffffffd8,this_02,
                         MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__GetEnumerator__
                        );
-    OStack_1.klass = (Object__Class *)pLVar6->_list;
-    OStack_1.monitor = (MonitorData *)pLVar6->_index;
-    puStack_2 = (undefined *)pLVar6->_version;
-    RVar7 = pLVar6->_current;
+    OStack_5.klass = (Object__Class *)pLVar4->_list;
+    OStack_5.monitor = (MonitorData *)pLVar4->_index;
+    puStack_6 = (undefined *)pLVar4->_version;
+    RVar7 = pLVar4->_current;
     while( true ) {
       bVar8 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
               List_1_T_Enumerator_System_Object__MoveNext
-                        ((List_1_T_Enumerator_System_Object_ *)&OStack_1,
+                        ((List_1_T_Enumerator_System_Object_ *)&OStack_5,
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__MoveNext__
                         );
       if (bVar8 == 0) break;
       if (RVar7 == (RegexCharClass_SingleRange)0x0) goto code_?;
       if (*(int *)((int)RVar7 + 0x54) == 0) {
-        if (cVar5 != '\0') {
+        if (cVar3 != '\0') {
           func_?();
           this_04 = (Exception *)func_?();
           message = (String *)func_?();
@@ -337,11 +335,11 @@ void Assembly-CSharp.dll::MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_Ini
           goto code_?;
         }
         (this->fields)._AvatarRuntimePrototypeRoot_k__BackingField = *(int32_t *)((int)RVar7 + 8);
-        cVar5 = '\x01';
+        cVar3 = '\x01';
       }
     }
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (&OStack_1,
+              (&OStack_5,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__Dispose__
                ,method_00);
@@ -362,11 +360,11 @@ void Assembly-CSharp.dll::MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_Ini
           pMVar11 = (this->fields).spawnRoleCreatorObject;
           if ((pMVar11 != (MVAvatarSpawnRoleCreatorObject *)0x0) &&
              (pGVar12 = (pMVar11->fields).useInteractionRotator, pGVar12 != (GameObject *)0x0)) {
-            pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+            pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                                (pGVar12,(MethodInfo *)0x0);
-            iVar4 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+            iVar2 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
                               (StringLiteral_Logic,(MethodInfo *)0x0);
-            LayerUtil::LayerUtil_SetLayerRecursively(pTVar3,iVar4,(MethodInfo *)0x0);
+            LayerUtil::LayerUtil_SetLayerRecursively(pTVar1,iVar2,(MethodInfo *)0x0);
             pMVar11 = (this->fields).spawnRoleCreatorObject;
             if (pMVar11 != (MVAvatarSpawnRoleCreatorObject *)0x0) {
               pGVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -729,44 +727,57 @@ code_?:
     func_?();
   }
   else {
-    pMVar6 = TypeInfo__MVGroup;
-    if (((originalBody->klass->_1).naturalAligment < (TypeInfo__MVGroup->_1).naturalAligment) ||
-       ((MVGroup__Class *)
-        (originalBody->klass->_1).typeHierarchy[(TypeInfo__MVGroup->_1).naturalAligment - 1] !=
-        TypeInfo__MVGroup)) goto code_?;
+    bVar6 = (TypeInfo__MVGroup->_1).naturalAligment;
+    pMVar7 = TypeInfo__MVGroup;
+    if (((originalBody->klass->_1).naturalAligment < bVar6) ||
+       ((MVGroup__Class *)(originalBody->klass->_1).typeHierarchy[bVar6 - 1] != TypeInfo__MVGroup))
+    goto code_?;
     this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
               MVGroup::MVGroup_get_Children((MVGroup *)originalBody,(MethodInfo *)0x0);
     if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
     goto code_?;
-    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    pLVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
              RegexCharClass+SingleRange]::
              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       (&LStack_8,this_00,
+                       (&LStack_9,this_00,
                         MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__GetEnumerator__
                        );
     originalBody = (MVWorldObjectClient *)&stack0xffffffc8;
-    method_00 = (MethodInfo *)pLVar7->_version;
-    RVar9 = pLVar7->_current;
-    LStack_8._version = 0;
+    method_00 = (MethodInfo *)pLVar8->_version;
+    RVar10 = pLVar8->_current;
+    LStack_9._version = 0;
     uStack_1 = 1;
-    LStack_8._current = (RegexCharClass_SingleRange)originalBody;
+    LStack_9._current = (RegexCharClass_SingleRange)originalBody;
     do {
-      bVar10 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
-              List_1_T_Enumerator_System_Object__MoveNext
-                        ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffc8,
-                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__MoveNext__
-                        );
-      if (bVar10 == 0) goto code_?;
-    } while ((((RVar9 == (RegexCharClass_SingleRange)0x0) ||
-              (*(byte *)(*(int *)RVar9 + 0xb8) < (TypeInfo__MVBody->_1).naturalAligment)) ||
-             (*(MVBody__Class **)
-               (*(int *)(*(int *)RVar9 + 100) + -4 +
-               (uint)(TypeInfo__MVBody->_1).naturalAligment * 4) != TypeInfo__MVBody)) ||
-            (RVar9 == (RegexCharClass_SingleRange)0x0));
-    iVar11 = func_?();
-    if ((iVar11 != 0) && (iVar11 = func_?(), iVar11 != 0)) {
-      *(String **)(iVar11 + 0x120) = StringLiteral_Hidden;
-      method_00 = (MethodInfo *)(iVar11 + 0x120);
+      do {
+        bVar11 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+                List_1_T_Enumerator_System_Object__MoveNext
+                          ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffc8,
+                           MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__MoveNext__
+                          );
+        if (bVar11 == 0) goto code_?;
+      } while (RVar10 == (RegexCharClass_SingleRange)0x0);
+      bVar6 = (TypeInfo__MVBody->_1).naturalAligment;
+      if ((*(byte *)(*(int *)RVar10 + 0xb8) < bVar6) ||
+         (*(MVBody__Class **)(*(int *)(*(int *)RVar10 + 100) + -4 + (uint)bVar6 * 4) !=
+          TypeInfo__MVBody)) {
+        bVar12 = false;
+      }
+      else {
+        bVar12 = true;
+      }
+      RVar13.First = 0;
+      RVar13.Last = 0;
+      if (bVar12) {
+        RVar13 = RVar10;
+      }
+    } while (RVar13 == (RegexCharClass_SingleRange)0x0);
+    bVar6 = (TypeInfo__MVBody->_1).naturalAligment;
+    if (((bVar6 <= *(byte *)(*(int *)RVar10 + 0xb8)) &&
+        (*(MVBody__Class **)(*(int *)(*(int *)RVar10 + 100) + -4 + (uint)bVar6 * 4) ==
+         TypeInfo__MVBody)) && (RVar10 != (RegexCharClass_SingleRange)0x0)) {
+      method_00 = (MethodInfo *)((int)RVar10 + 0x120);
+      method_00->methodPointer = (Il2CppMethodPointer)StringLiteral_Hidden;
       func_?();
 code_?:
       uStack_1 = 0xffffffff;
@@ -786,11 +797,11 @@ code_?:
   }
   func_?();
   func_?();
-  pMVar6 = extraout_EDX;
+  pMVar7 = extraout_EDX;
 code_?:
-  func_?(originalBody,pMVar6);
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  func_?(originalBody,pMVar7);
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -846,14 +857,14 @@ code_?:
     if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) !=
         (TypeInfo__System__Int32->_0).element_class) goto code_?;
     piVar5 = (int32_t *)func_?();
-    unaff_EDI = (MVGroup__Class *)*piVar5;
+    unaff_EDI = (MVWorldObjectClient__Class *)*piVar5;
     this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
     if (this_01 == (MVWorldObjectClientManager *)0x0) goto code_?;
-    originalBody = (MVWorldObjectClient *)
+    originalBody = (MVWorldObjectClient__Class *)
                    MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                              (this_01,(int32_t)unaff_EDI,(MethodInfo *)0x0);
-    unaff_EDI = (MVGroup__Class *)TypeInfo__MVWorldObjectClient;
-    if (originalBody == (MVWorldObjectClient *)0x0) {
+    unaff_EDI = TypeInfo__MVWorldObjectClient;
+    if (originalBody == (MVWorldObjectClient__Class *)0x0) {
 code_?:
       this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                 MVGroup::MVGroup_get_Children((MVGroup *)this,(MethodInfo *)0x0);
@@ -868,18 +879,29 @@ code_?:
         RVar7 = pLVar6->_current;
         uStack_1 = 1;
         do {
-          bVar8 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
-                  List_1_T_Enumerator_System_Object__MoveNext
-                            ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffc8,
-                             MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__MoveNext__
-                            );
-          if (bVar8 == 0) goto code_?;
-        } while ((((RVar7 == (RegexCharClass_SingleRange)0x0) ||
-                  (*(byte *)(*(int *)RVar7 + 0xb8) < (TypeInfo__MVBody->_1).naturalAligment)) ||
-                 (*(MVBody__Class **)
-                   (*(int *)(*(int *)RVar7 + 100) + -4 +
-                   (uint)(TypeInfo__MVBody->_1).naturalAligment * 4) != TypeInfo__MVBody)) ||
-                (RVar7 == (RegexCharClass_SingleRange)0x0));
+          do {
+            bVar8 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]
+                    ::List_1_T_Enumerator_System_Object__MoveNext
+                              ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffc8,
+                               MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__MoveNext__
+                              );
+            if (bVar8 == 0) goto code_?;
+          } while (RVar7 == (RegexCharClass_SingleRange)0x0);
+          bVar9 = (TypeInfo__MVBody->_1).naturalAligment;
+          if ((*(byte *)(*(int *)RVar7 + 0xb8) < bVar9) ||
+             (*(MVBody__Class **)(*(int *)(*(int *)RVar7 + 100) + -4 + (uint)bVar9 * 4) !=
+              TypeInfo__MVBody)) {
+            bVar10 = false;
+          }
+          else {
+            bVar10 = true;
+          }
+          RVar11.First = 0;
+          RVar11.Last = 0;
+          if (bVar10) {
+            RVar11 = RVar7;
+          }
+        } while (RVar11 == (RegexCharClass_SingleRange)0x0);
         MVAvatarSpawnRoleCreator_ShowBody(this,(MVWorldObjectClient *)this,(MethodInfo *)0x0);
 code_?:
         uStack_1 = 0xffffffff;
@@ -887,36 +909,36 @@ code_?:
                   ((Object *)&stack0xffffffc8,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__Dispose__
-                   ,in_stack_9);
+                   ,in_stack_12);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
       goto code_?;
     }
-    if (((TypeInfo__MVWorldObjectClient->_1).naturalAligment <=
-         (originalBody->klass->_1).naturalAligment) &&
-       ((MVWorldObjectClient__Class *)
-        (originalBody->klass->_1).typeHierarchy
-        [(TypeInfo__MVWorldObjectClient->_1).naturalAligment - 1] == TypeInfo__MVWorldObjectClient))
-    {
-      unaff_EDI = TypeInfo__MVGroup;
-      if (((TypeInfo__MVGroup->_1).naturalAligment <= (originalBody->klass->_1).naturalAligment) &&
-         ((MVGroup__Class *)
-          (originalBody->klass->_1).typeHierarchy[(TypeInfo__MVGroup->_1).naturalAligment - 1] ==
-          TypeInfo__MVGroup)) {
-        MVAvatarSpawnRoleCreator_ShowBody(this,originalBody,(MethodInfo *)0x0);
+    pIVar13 = (originalBody->_0).image;
+    bVar9 = (TypeInfo__MVWorldObjectClient->_1).naturalAligment;
+    if ((bVar9 <= *(byte *)&pIVar13[4].assembly) &&
+       (*(MVWorldObjectClient__Class **)((pIVar13[2].typeCount - 4) + (uint)bVar9 * 4) ==
+        TypeInfo__MVWorldObjectClient)) {
+      pIVar13 = (originalBody->_0).image;
+      bVar9 = (TypeInfo__MVGroup->_1).naturalAligment;
+      unaff_EDI = originalBody;
+      if ((bVar9 <= *(byte *)&pIVar13[4].assembly) &&
+         (*(MVGroup__Class **)((pIVar13[2].typeCount - 4) + (uint)bVar9 * 4) == TypeInfo__MVGroup)) {
+        MVAvatarSpawnRoleCreator_ShowBody
+                  (this,(MVWorldObjectClient *)originalBody,(MethodInfo *)0x0);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
       goto code_?;
     }
   }
-  uVar10 = func_?(originalBody,unaff_EDI);
-  func_?(uVar10);
+  uVar14 = func_?(originalBody,unaff_EDI);
+  func_?(uVar14);
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -949,8 +971,8 @@ void Assembly-CSharp.dll::MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_Upd
                 (this_00,(Object *)StringLiteral_bodyId,value,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
                 );
-      if ((this_02->fields).OnBodyUpdate != (Action *)0x0) {
-        pAVar1 = (this_02->fields).OnBodyUpdate;
+      pAVar1 = (this_02->fields).OnBodyUpdate;
+      if (pAVar1 != (Action *)0x0) {
         (*(pAVar1->fields)._._.invoke_impl)
                   ((pAVar1->fields)._._.method_code,(pAVar1->fields)._._.method);
       }
@@ -980,8 +1002,8 @@ void Assembly-CSharp.dll::MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_Upd
         pMVar4 = MVAvatarSpawnRoleCreator_get_AvatarPrototype(this_02,(MethodInfo *)0x0);
         if (pMVar4 != (MVPreviewAvatar *)0x0) {
           (pMVar4->fields).spawnRoleCreatorId = (this_02->fields)._._._._.id;
-          if ((removedObjectLinks != 0) && ((this_02->fields).OnRedoObjectLinks != (Action *)0x0)) {
-            pAVar1 = (this_02->fields).OnRedoObjectLinks;
+          if ((removedObjectLinks != 0) &&
+             (pAVar1 = (this_02->fields).OnRedoObjectLinks, pAVar1 != (Action *)0x0)) {
             (*(pAVar1->fields)._._.invoke_impl)
                       ((pAVar1->fields)._._.method_code,(pAVar1->fields)._._.method);
           }
@@ -1038,7 +1060,11 @@ void Assembly-CSharp.dll::MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator__ct
     cRam_? = '\x01';
   }
   pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
-  if (pPVar1 != (PrefabPool *)0x0) {
+  if (pPVar1 == (PrefabPool *)0x0) {
+code_?:
+    func_?();
+  }
+  else {
     MVBlueprintBase::MVBlueprintBase__ctor_1
               ((MVBlueprintBase *)this,data,
                (ObjectPrefab *)(pPVar1->fields).mvAvatarSpawnRoleCreatorPrefab,worldObjects,
@@ -1062,9 +1088,9 @@ void Assembly-CSharp.dll::MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator__ct
                MethodInfo__MVAvatarSpawnRoleCreator__PartialDataRemove_int__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
                ,(MethodInfo *)0x0);
     pSVar2 = (SettingsReporter *)
-             func_?(
-                            TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__Client__SettingsReporter
-                            );
+              func_?(
+                             TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__Client__SettingsReporter
+                             );
     MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Client::SettingsReporter
     ::SettingsReporter__ctor
               (pSVar2,(MVWorldObject *)this,
@@ -1072,106 +1098,105 @@ void Assembly-CSharp.dll::MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator__ct
                 *)this_00,
                (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
                 *)this_01,(MethodInfo *)0x0);
-    (this->fields).settingsReporter = pSVar2;
+    ppSVar3 = &(this->fields).settingsReporter;
+    *ppSVar3 = pSVar2;
     func_?();
-    pSVar2 = (this->fields).settingsReporter;
-    pDVar3 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-              *)func_?();
+    pSVar2 = *ppSVar3;
+    pDVar4 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+               *)func_?();
     DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
     __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
     DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-              (pDVar3,(Object *)this,
+              (pDVar4,(Object *)this,
                MethodInfo__MVAvatarSpawnRoleCreator__SettingsReporterOnOnValueChangedLocal_System__Collections__Generic__Dictionary<System::Object,_System::Object>_
                ,(MethodInfo *)0x0);
-    if (pSVar2 != (SettingsReporter *)0x0) {
-      MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Client::
-      SettingsReporter::SettingsReporter_add_OnValueChangedLocal
-                (pSVar2,(Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
-                         *)pDVar3,(MethodInfo *)0x0);
-      pSVar2 = (this->fields).settingsReporter;
-      pDVar3 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                *)func_?(
-                                 TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
-                                 );
-      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                (pDVar3,(Object *)this,
-                 MethodInfo__MVAvatarSpawnRoleCreator__SettingsReporterOnOnValueRemovedLocal_System__Collections__Generic__Dictionary<System::Object,_System::Object>_
-                 ,(MethodInfo *)0x0);
-      if (pSVar2 != (SettingsReporter *)0x0) {
-        MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Client::
-        SettingsReporter::SettingsReporter_add_OnValueRemovedLocal
-                  (pSVar2,(Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
-                           *)pDVar3,(MethodInfo *)0x0);
-        piVar4 = &(this->fields)._._._.interactionFlags;
-        *(uint *)piVar4 = (uint)*piVar4 | 0x8000;
-        piVar4 = &(this->fields)._._._.interactionFlags;
-        *(uint *)piVar4 = (uint)*piVar4 | 0x80000000;
-        pMVar5 = (MVAvatarSpawnRoleCreatorObject *)(this->fields)._._._.component;
-        *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4) =
-             *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4);
-        if (pMVar5 == (MVAvatarSpawnRoleCreatorObject *)0x0) {
-          (this->fields).spawnRoleCreatorObject = (MVAvatarSpawnRoleCreatorObject *)0x0;
-        }
-        else {
-          if (((((ObjectPrefab__Class *)pMVar5->klass)->_1).naturalAligment <
-               (TypeInfo__MVAvatarSpawnRoleCreatorObject->_1).naturalAligment) ||
-             ((((ObjectPrefab__Class *)pMVar5->klass)->_1).typeHierarchy
-              [(TypeInfo__MVAvatarSpawnRoleCreatorObject->_1).naturalAligment - 1] !=
-              (Il2CppClass *)TypeInfo__MVAvatarSpawnRoleCreatorObject)) goto code_?;
-          (this->fields).spawnRoleCreatorObject = pMVar5;
-          if (((((ObjectPrefab__Class *)pMVar5->klass)->_1).naturalAligment <
-               (TypeInfo__MVAvatarSpawnRoleCreatorObject->_1).naturalAligment) ||
-             ((((ObjectPrefab__Class *)pMVar5->klass)->_1).typeHierarchy
-              [(TypeInfo__MVAvatarSpawnRoleCreatorObject->_1).naturalAligment - 1] !=
-              (Il2CppClass *)TypeInfo__MVAvatarSpawnRoleCreatorObject)) goto code_?;
-        }
-        func_?();
-        pMVar5 = (this->fields).spawnRoleCreatorObject;
-        if (pMVar5 != (MVAvatarSpawnRoleCreatorObject *)0x0) {
-          pTVar6 = (pMVar5->fields).spawnPlate;
-          MVar7 = MVAvatarSpawnRoleCreator_get_Team(this,(MethodInfo *)0x0);
-          if (pTVar6 != (TintObject *)0x0) {
-            (*(code *)(pTVar6->klass->vtable).TeamTint.method)
-                      (pTVar6,MVar7,(pTVar6->klass->vtable).Tint.methodPtr);
-            pMVar5 = (this->fields).spawnRoleCreatorObject;
-            if (pMVar5 != (MVAvatarSpawnRoleCreatorObject *)0x0) {
-              pGVar8 = (pMVar5->fields).useInteractionRotator;
-              pUVar9 = (UseInteractor *)func_?(TypeInfo__UseInteractor);
-              UseInteractor::UseInteractor__ctor
-                        (pUVar9,(MVWorldObjectClient *)this,pGVar8,0,(Collider *)0x0,
-                         (Func_2_Int32_Boolean_ *)0x0,
-                         (Func_3_Int32_MVInteractableBase_Boolean_ *)0x0,2.5,0,(MethodInfo *)0x0);
-              (this->fields).useInteractor = pUVar9;
-              func_?(&(this->fields).useInteractor,pUVar9);
-              pMVar5 = (this->fields).spawnRoleCreatorObject;
-              if (pMVar5 != (MVAvatarSpawnRoleCreatorObject *)0x0) {
-                pGVar8 = (pMVar5->fields).useInteractionRotator;
-                this_02 = (GameRankRequirement *)func_?(TypeInfo__GameRankRequirement);
-                GameRankRequirement::GameRankRequirement__ctor
-                          (this_02,pGVar8,(MVWorldObjectClient *)this,0,(MethodInfo *)0x0);
-                if (this_02 != (GameRankRequirement *)0x0) {
-                  *(undefined1 *)((int)&(this_02->fields).worldObjectType + 1) = 0;
-                  pUVar9 = (this->fields).useInteractor;
-                  if (pUVar9 != (UseInteractor *)0x0) {
-                    UseInteractor::UseInteractor_AddRequirement
-                              (pUVar9,(UseRequirement *)this_02,(MethodInfo *)0x0);
-                    return;
-                  }
+    if (pSVar2 == (SettingsReporter *)0x0) goto code_?;
+    MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Client::SettingsReporter
+    ::SettingsReporter_add_OnValueChangedLocal
+              (pSVar2,(Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
+                        *)pDVar4,(MethodInfo *)0x0);
+    pSVar2 = *ppSVar3;
+    pDVar4 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+               *)func_?(
+                                TypeInfo__System__Action<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
+                                );
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              (pDVar4,(Object *)this,
+               MethodInfo__MVAvatarSpawnRoleCreator__SettingsReporterOnOnValueRemovedLocal_System__Collections__Generic__Dictionary<System::Object,_System::Object>_
+               ,(MethodInfo *)0x0);
+    if (pSVar2 == (SettingsReporter *)0x0) goto code_?;
+    MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Client::SettingsReporter
+    ::SettingsReporter_add_OnValueRemovedLocal
+              (pSVar2,(Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
+                        *)pDVar4,(MethodInfo *)0x0);
+    piVar5 = &(this->fields)._._._.interactionFlags;
+    *(uint *)piVar5 = (uint)*piVar5 | 0x8000;
+    piVar5 = &(this->fields)._._._.interactionFlags;
+    *(uint *)piVar5 = (uint)*piVar5 | 0x80000000;
+    pMVar6 = (MVAvatarSpawnRoleCreatorObject *)(this->fields)._._._.component;
+    *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4) =
+         *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4);
+    if (pMVar6 == (MVAvatarSpawnRoleCreatorObject *)0x0) {
+      (this->fields).spawnRoleCreatorObject = (MVAvatarSpawnRoleCreatorObject *)0x0;
+code_?:
+      ppMVar7 = &(this->fields).spawnRoleCreatorObject;
+      func_?();
+      pMVar6 = *ppMVar7;
+      if (pMVar6 != (MVAvatarSpawnRoleCreatorObject *)0x0) {
+        pTVar8 = (pMVar6->fields).spawnPlate;
+        MVar9 = MVAvatarSpawnRoleCreator_get_Team(this,(MethodInfo *)0x0);
+        if (pTVar8 != (TintObject *)0x0) {
+          (*(code *)(pTVar8->klass->vtable).TeamTint.method)
+                    (pTVar8,MVar9,(pTVar8->klass->vtable).Tint.methodPtr);
+          pMVar6 = *ppMVar7;
+          if (pMVar6 != (MVAvatarSpawnRoleCreatorObject *)0x0) {
+            pGVar10 = (pMVar6->fields).useInteractionRotator;
+            pUVar11 = (UseInteractor *)func_?(TypeInfo__UseInteractor);
+            UseInteractor::UseInteractor__ctor
+                      (pUVar11,(MVWorldObjectClient *)this,pGVar10,0,(Collider *)0x0,
+                       (Func_2_Int32_Boolean_ *)0x0,(Func_3_Int32_MVInteractableBase_Boolean_ *)0x0,
+                       2.5,0,(MethodInfo *)0x0);
+            ppUVar12 = &(this->fields).useInteractor;
+            *ppUVar12 = pUVar11;
+            func_?(ppUVar12,pUVar11);
+            pMVar6 = (this->fields).spawnRoleCreatorObject;
+            if (pMVar6 != (MVAvatarSpawnRoleCreatorObject *)0x0) {
+              pGVar10 = (pMVar6->fields).useInteractionRotator;
+              this_02 = (GameRankRequirement *)func_?(TypeInfo__GameRankRequirement);
+              GameRankRequirement::GameRankRequirement__ctor
+                        (this_02,pGVar10,(MVWorldObjectClient *)this,0,(MethodInfo *)0x0);
+              if (this_02 != (GameRankRequirement *)0x0) {
+                *(undefined1 *)((int)&(this_02->fields).worldObjectType + 1) = 0;
+                pUVar11 = (this->fields).useInteractor;
+                if (pUVar11 != (UseInteractor *)0x0) {
+                  UseInteractor::UseInteractor_AddRequirement
+                            (pUVar11,(UseRequirement *)this_02,(MethodInfo *)0x0);
+                  return;
                 }
               }
             }
           }
         }
       }
+      goto code_?;
     }
+    bVar13 = (TypeInfo__MVAvatarSpawnRoleCreatorObject->_1).naturalAligment;
+    if (((((ObjectPrefab__Class *)pMVar6->klass)->_1).naturalAligment < bVar13) ||
+       ((((ObjectPrefab__Class *)pMVar6->klass)->_1).typeHierarchy[bVar13 - 1] !=
+        (Il2CppClass *)TypeInfo__MVAvatarSpawnRoleCreatorObject)) goto code_?;
+    (this->fields).spawnRoleCreatorObject = pMVar6;
+    bVar13 = (TypeInfo__MVAvatarSpawnRoleCreatorObject->_1).naturalAligment;
+    if ((bVar13 <= (((ObjectPrefab__Class *)pMVar6->klass)->_1).naturalAligment) &&
+       ((((ObjectPrefab__Class *)pMVar6->klass)->_1).typeHierarchy[bVar13 - 1] ==
+        (Il2CppClass *)TypeInfo__MVAvatarSpawnRoleCreatorObject)) goto code_?;
   }
   func_?();
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -1220,30 +1245,30 @@ Assembly-CSharp.dll::MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_get_Avat
   this_00 = (this->fields)._._.children;
   if (this_00 == (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) {
     func_?();
+    pMVar1 = extraout_EDX;
   }
   else {
-    unaff_ESI = (MVPreviewAvatar *)
-                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
-                Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                          ((Dictionary_2_System_Int32_System_Object_ *)this_00,
-                           (this->fields)._AvatarRuntimePrototypeRoot_k__BackingField,
-                           MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Item_int_
-                          );
-    if (unaff_ESI == (MVPreviewAvatar *)0x0) {
+    pMVar1 = (MVPreviewAvatar *)
+             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]
+             ::Dictionary_2_System_Int32_System_Object__get_Item
+                       ((Dictionary_2_System_Int32_System_Object_ *)this_00,
+                        (this->fields)._AvatarRuntimePrototypeRoot_k__BackingField,
+                        MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Item_int_
+                       );
+    if (pMVar1 == (MVPreviewAvatar *)0x0) {
       return (MVPreviewAvatar *)0x0;
     }
-    unaff_EDI = TypeInfo__MVPreviewAvatar;
-    if (((TypeInfo__MVPreviewAvatar->_1).naturalAligment <= (unaff_ESI->klass->_1).naturalAligment)
-       && ((MVPreviewAvatar__Class *)
-           (unaff_ESI->klass->_1).typeHierarchy[(TypeInfo__MVPreviewAvatar->_1).naturalAligment - 1]
-           == TypeInfo__MVPreviewAvatar)) {
-      return unaff_ESI;
+    bVar2 = (TypeInfo__MVPreviewAvatar->_1).naturalAligment;
+    if ((bVar2 <= (pMVar1->klass->_1).naturalAligment) &&
+       ((MVPreviewAvatar__Class *)(pMVar1->klass->_1).typeHierarchy[bVar2 - 1] ==
+        TypeInfo__MVPreviewAvatar)) {
+      return pMVar1;
     }
   }
-  func_?(unaff_ESI,unaff_EDI);
-  pcVar1 = (code *)swi(3);
-  pMVar2 = (MVPreviewAvatar *)(*pcVar1)();
-  return pMVar2;
+  func_?(pMVar1);
+  pcVar3 = (code *)swi(3);
+  pMVar1 = (MVPreviewAvatar *)(*pcVar3)();
+  return pMVar1;
 }
 
 

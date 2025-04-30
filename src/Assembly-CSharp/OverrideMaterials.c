@@ -24,43 +24,39 @@ void Assembly-CSharp.dll::OverrideMaterials::OverrideMaterials_Register
                    );
     cRam_? = '\x01';
   }
-  LStack_4._list = (List_1_System_Object_ *)0x0;
-  LStack_4._index = 0;
-  LStack_4._version = 0;
-  LStack_4._current = (Object *)0x0;
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
             (this->fields).overrideMaterials;
   if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    pLVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
              RegexCharClass+SingleRange]::
              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                        ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
                          *)&stack0xffffffbc,this_00,
                         MethodInfo__System__Collections__Generic__List<OverrideMaterial>__GetEnumerator__
                        );
-    LStack_4._list = (List_1_System_Object_ *)pLVar5->_list;
-    LStack_4._index = pLVar5->_index;
-    LStack_4._version = pLVar5->_version;
-    LStack_4._current = *(Object **)&pLVar5->_current;
+    LStack_5._list = (List_1_System_Object_ *)pLVar4->_list;
+    LStack_5._index = pLVar4->_index;
+    LStack_5._version = pLVar4->_version;
+    LStack_5._current = *(Object **)&pLVar4->_current;
     uStack_1 = 1;
     while( true ) {
       bVar6 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
               List_1_T_Enumerator_System_Object__MoveNext
-                        (&LStack_4,
+                        (&LStack_5,
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<OverrideMaterial>__MoveNext__
                         );
-      pOVar7 = LStack_4._current;
+      pOVar7 = LStack_5._current;
       if (bVar6 == 0) {
         uStack_1 = 0xffffffff;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&LStack_4,
+                  ((Object *)&LStack_5,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<OverrideMaterial>__Dispose__
                    ,in_stack_8);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      if ((RegexCharClass_SingleRange)LStack_4._current == (RegexCharClass_SingleRange)0x0)
+      if ((RegexCharClass_SingleRange)LStack_5._current == (RegexCharClass_SingleRange)0x0)
       goto code_?;
       if (cRam_? == '\0') {
         func_?();
@@ -229,8 +225,9 @@ void Assembly-CSharp.dll::OverrideMaterials::OverrideMaterials__ctor
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<OverrideMaterial>__List__);
-  (this->fields).overrideMaterials = this_00;
-  func_?(&(this->fields).overrideMaterials,this_00);
+  ppLVar1 = &(this->fields).overrideMaterials;
+  *ppLVar1 = this_00;
+  func_?(ppLVar1,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

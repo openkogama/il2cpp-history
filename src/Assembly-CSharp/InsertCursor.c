@@ -76,8 +76,9 @@ void Assembly-CSharp.dll::InsertCursor::InsertCursor_Start(InsertCursor *this,Me
                      ((Component *)this,
                       UnityEngine__MeshRenderer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::MeshRenderer>______
                      );
-  (this->fields).renderers = pMVar1;
-  func_?(&(this->fields).renderers,pMVar1);
+  ppMVar2 = &(this->fields).renderers;
+  *ppMVar2 = pMVar1;
+  func_?(ppMVar2,pMVar1);
   UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
             ((Behaviour *)this,0,(MethodInfo *)0x0);
   return;
@@ -94,8 +95,9 @@ void Assembly-CSharp.dll::InsertCursor::InsertCursor__ctor(InsertCursor *this,Me
     cRam_? = '\x01';
   }
   pMVar1 = (MeshRenderer__Array *)func_?(TypeInfo__UnityEngine__MeshRenderer,0);
-  (this->fields).renderers = pMVar1;
-  func_?(&(this->fields).renderers,pMVar1);
+  ppMVar2 = &(this->fields).renderers;
+  *ppMVar2 = pMVar1;
+  func_?(ppMVar2,pMVar1);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

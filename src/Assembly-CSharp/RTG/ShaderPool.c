@@ -32,19 +32,20 @@ Shader * Assembly-CSharp.dll::RTG::ShaderPool::ShaderPool_get_CircleCull
     func_?(&StringLiteral_RTUnityApp_CircleCull);
     cRam_? = '\x01';
   }
-  pSVar1 = (this->fields)._circleCull;
+  ppSVar1 = &(this->fields)._circleCull;
+  pSVar2 = *ppSVar1;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)pSVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
-    pSVar1 = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_Find
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)pSVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar3 != 0) {
+    pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_Find
                        (StringLiteral_RTUnityApp_CircleCull,(MethodInfo *)0x0);
-    (this->fields)._circleCull = pSVar1;
-    func_?(&(this->fields)._circleCull,pSVar1);
+    *ppSVar1 = pSVar2;
+    func_?(ppSVar1,pSVar2);
   }
-  return (this->fields)._circleCull;
+  return *ppSVar1;
 }
 
 
@@ -59,19 +60,20 @@ Shader * Assembly-CSharp.dll::RTG::ShaderPool::ShaderPool_get_CylindricalTorusCu
     func_?(&StringLiteral_RTUnityApp_CylindricalTorusCull);
     cRam_? = '\x01';
   }
-  pSVar1 = (this->fields)._cylindricalTorusCull;
+  ppSVar1 = &(this->fields)._cylindricalTorusCull;
+  pSVar2 = *ppSVar1;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)pSVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
-    pSVar1 = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_Find
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)pSVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar3 != 0) {
+    pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_Find
                        (StringLiteral_RTUnityApp_CylindricalTorusCull,(MethodInfo *)0x0);
-    (this->fields)._cylindricalTorusCull = pSVar1;
-    func_?(&(this->fields)._cylindricalTorusCull,pSVar1);
+    *ppSVar1 = pSVar2;
+    func_?(ppSVar1,pSVar2);
   }
-  return (this->fields)._cylindricalTorusCull;
+  return *ppSVar1;
 }
 
 
@@ -86,19 +88,20 @@ Shader * Assembly-CSharp.dll::RTG::ShaderPool::ShaderPool_get_GizmoSolidHandle
     func_?(&StringLiteral_RTUnityApp_GizmoSolidHandle);
     cRam_? = '\x01';
   }
-  pSVar1 = (this->fields)._gizmoSolidHandle;
+  ppSVar1 = &(this->fields)._gizmoSolidHandle;
+  pSVar2 = *ppSVar1;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)pSVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
-    pSVar1 = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_Find
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)pSVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar3 != 0) {
+    pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_Find
                        (StringLiteral_RTUnityApp_GizmoSolidHandle,(MethodInfo *)0x0);
-    (this->fields)._gizmoSolidHandle = pSVar1;
-    func_?(&(this->fields)._gizmoSolidHandle,pSVar1);
+    *ppSVar1 = pSVar2;
+    func_?(ppSVar1,pSVar2);
   }
-  return (this->fields)._gizmoSolidHandle;
+  return *ppSVar1;
 }
 
 
@@ -113,19 +116,20 @@ Shader * Assembly-CSharp.dll::RTG::ShaderPool::ShaderPool_get_LinearGradientCame
     func_?(&StringLiteral_RTUnityApp_LinearGradientCameraB);
     cRam_? = '\x01';
   }
-  pSVar1 = (this->fields)._linearGradientCameraBk;
+  pSVar1 = &this->fields;
+  pSVar2 = pSVar1->_linearGradientCameraBk;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)pSVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
-    pSVar1 = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_Find
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)pSVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar3 != 0) {
+    pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_Find
                        (StringLiteral_RTUnityApp_LinearGradientCameraB,(MethodInfo *)0x0);
-    (this->fields)._linearGradientCameraBk = pSVar1;
-    func_?(&this->fields,pSVar1);
+    pSVar1->_linearGradientCameraBk = pSVar2;
+    func_?(pSVar1,pSVar2);
   }
-  return (this->fields)._linearGradientCameraBk;
+  return pSVar1->_linearGradientCameraBk;
 }
 
 
@@ -140,19 +144,20 @@ Shader * Assembly-CSharp.dll::RTG::ShaderPool::ShaderPool_get_SimpleColor
     func_?(&StringLiteral_RTUnityApp_SimpleColor);
     cRam_? = '\x01';
   }
-  pSVar1 = (this->fields)._simpleColor;
+  ppSVar1 = &(this->fields)._simpleColor;
+  pSVar2 = *ppSVar1;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)pSVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
-    pSVar1 = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_Find
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)pSVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar3 != 0) {
+    pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_Find
                        (StringLiteral_RTUnityApp_SimpleColor,(MethodInfo *)0x0);
-    (this->fields)._simpleColor = pSVar1;
-    func_?(&(this->fields)._simpleColor,pSVar1);
+    *ppSVar1 = pSVar2;
+    func_?(ppSVar1,pSVar2);
   }
-  return (this->fields)._simpleColor;
+  return *ppSVar1;
 }
 
 
@@ -167,19 +172,20 @@ Shader * Assembly-CSharp.dll::RTG::ShaderPool::ShaderPool_get_TintedTexture
     func_?(&StringLiteral_RTUnityApp_TintedTexture);
     cRam_? = '\x01';
   }
-  pSVar1 = (this->fields)._tintedTexture;
+  ppSVar1 = &(this->fields)._tintedTexture;
+  pSVar2 = *ppSVar1;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)pSVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
-    pSVar1 = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_Find
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)pSVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar3 != 0) {
+    pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_Find
                        (StringLiteral_RTUnityApp_TintedTexture,(MethodInfo *)0x0);
-    (this->fields)._tintedTexture = pSVar1;
-    func_?(&(this->fields)._tintedTexture,pSVar1);
+    *ppSVar1 = pSVar2;
+    func_?(ppSVar1,pSVar2);
   }
-  return (this->fields)._tintedTexture;
+  return *ppSVar1;
 }
 
 
@@ -194,19 +200,20 @@ Shader * Assembly-CSharp.dll::RTG::ShaderPool::ShaderPool_get_TorusCull
     func_?(&StringLiteral_RTUnityApp_TorusCull);
     cRam_? = '\x01';
   }
-  pSVar1 = (this->fields)._torusCull;
+  ppSVar1 = &(this->fields)._torusCull;
+  pSVar2 = *ppSVar1;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)pSVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
-    pSVar1 = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_Find
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)pSVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar3 != 0) {
+    pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_Find
                        (StringLiteral_RTUnityApp_TorusCull,(MethodInfo *)0x0);
-    (this->fields)._torusCull = pSVar1;
-    func_?(&(this->fields)._torusCull,pSVar1);
+    *ppSVar1 = pSVar2;
+    func_?(ppSVar1,pSVar2);
   }
-  return (this->fields)._torusCull;
+  return *ppSVar1;
 }
 
 
@@ -221,18 +228,19 @@ Shader * Assembly-CSharp.dll::RTG::ShaderPool::ShaderPool_get_XZGrid_Plane
     func_?(&StringLiteral_RTUnityApp_XZGrid_Plane);
     cRam_? = '\x01';
   }
-  pSVar1 = (this->fields)._xzGrid_Plane;
+  ppSVar1 = &(this->fields)._xzGrid_Plane;
+  pSVar2 = *ppSVar1;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)pSVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
-    pSVar1 = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_Find
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)pSVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar3 != 0) {
+    pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_Find
                        (StringLiteral_RTUnityApp_XZGrid_Plane,(MethodInfo *)0x0);
-    (this->fields)._xzGrid_Plane = pSVar1;
-    func_?(&(this->fields)._xzGrid_Plane,pSVar1);
+    *ppSVar1 = pSVar2;
+    func_?(ppSVar1,pSVar2);
   }
-  return (this->fields)._xzGrid_Plane;
+  return *ppSVar1;
 }
 

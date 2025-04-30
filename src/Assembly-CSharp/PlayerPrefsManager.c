@@ -69,56 +69,56 @@ void Assembly-CSharp.dll::PlayerPrefsManager::PlayerPrefsManager_HandlePlayedGam
   pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::PlayerPrefs::PlayerPrefs_GetString_1
                      (StringLiteral_playedGamesList,(MethodInfo *)0x0);
   if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+    func_?(TypeInfo__Newtonsoft__Json__JsonConvert);
   }
   this_00 = (List_1_UnityEngine_UIElements_UIR_Implementation_UIRStylePainter_RepeatRectUV_ *)
             Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2
                       (pSVar2,
                        System__Collections__Generic__List<int>_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<System::Collections::Generic::List<int>_>_System__String_
                       );
-  index = -1;
-  index_00 = 0;
-  gameId = unaff_EBX;
+  iVar3 = -1;
+  index = 0;
   if (this_00 !=
       (List_1_UnityEngine_UIElements_UIR_Implementation_UIRStylePainter_RepeatRectUV_ *)0x0) {
-    for (; pMVar3 = MethodInfo__System__Collections__Generic__List<int>__get_Item_int_,
-        index_00 < (this_00->fields)._size; index_00 = index_00 + 1) {
+    for (; pMVar4 = MethodInfo__System__Collections__Generic__List<int>__get_Item_int_,
+        index < (this_00->fields)._size; index = index + 1) {
       gameId = (int32_t)MethodInfo__System__Collections__Generic__List<int>__get_Item_int_;
-      RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+      RVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
               RegexCharClass+SingleRange]::
               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                         ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                         this_00,index_00,
+                         this_00,index,
                          MethodInfo__System__Collections__Generic__List<int>__get_Item_int_);
-      if (RVar4 == (RegexCharClass_SingleRange)pMVar3) {
+      if (RVar5 == (RegexCharClass_SingleRange)pMVar4) {
         TypeInfo__PlayerPrefsManager->static_fields->isReturningPlayer = 1;
-        index = index_00;
+        iVar3 = index;
       }
     }
-    if (index != -1) {
+    if (iVar3 != -1) {
       gameId = (int32_t)MethodInfo__System__Collections__Generic__List<int>__RemoveAt_int_;
       mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::UIR::
       Implementation::UIRStylePainter+RepeatRectUV]::
       List_1_UnityEngine_UIElements_UIR_Implementation_UIRStylePainter_RepeatRectUV__RemoveAt
-                (this_00,index,MethodInfo__System__Collections__Generic__List<int>__RemoveAt_int_);
+                (this_00,iVar3,MethodInfo__System__Collections__Generic__List<int>__RemoveAt_int_);
     }
-    pMVar3 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
-    piVar5 = &(this_00->fields)._version;
-    *piVar5 = *piVar5 + 1;
-    pUVar6 = (this_00->fields)._items;
-    if (pUVar6 != (UIRStylePainter_RepeatRectUV__Array *)0x0) {
-      uVar7 = (this_00->fields)._size;
-      if (pUVar6->max_length <= uVar7) {
-        method_00 = pMVar3->klass->rgctx_data[0xe];
+    pMVar4 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+    piVar6 = &(this_00->fields)._version;
+    *piVar6 = *piVar6 + 1;
+    pUVar7 = (this_00->fields)._items;
+    if (pUVar7 != (UIRStylePainter_RepeatRectUV__Array *)0x0) {
+      uVar8 = (this_00->fields)._size;
+      if (pUVar7->max_length <= uVar8) {
+        method_00 = pMVar4->klass->rgctx_data[0xe];
         mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
         List_1_System_Int32__AddWithResize
                   ((List_1_System_Int32_ *)this_00,(int32_t)method_00,(MethodInfo *)method_00);
 code_?:
-        if (0x32 < (this_00->fields)._size) {
+        iVar3 = (this_00->fields)._size;
+        if (0x32 < iVar3) {
           mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::UIR::
           Implementation::UIRStylePainter+RepeatRectUV]::
           List_1_UnityEngine_UIElements_UIR_Implementation_UIRStylePainter_RepeatRectUV__RemoveRange
-                    (this_00,0,(this_00->fields)._size + -0x32,
+                    (this_00,0,iVar3 + -0x32,
                      MethodInfo__System__Collections__Generic__List<int>__RemoveRange_int__int_);
         }
         if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
@@ -130,9 +130,9 @@ code_?:
                   (StringLiteral_playedGamesList,pSVar2,(MethodInfo *)0x0);
         return;
       }
-      (this_00->fields)._size = uVar7 + 1;
-      if (uVar7 < pUVar6->max_length) {
-        (&pUVar6->vector[0].rect.m_XMin)[uVar7] = (float)gameId;
+      (this_00->fields)._size = uVar8 + 1;
+      if (uVar8 < pUVar7->max_length) {
+        (&pUVar7->vector[0].rect.m_XMin)[uVar8] = (float)gameId;
         goto code_?;
       }
       goto code_?;
@@ -141,8 +141,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

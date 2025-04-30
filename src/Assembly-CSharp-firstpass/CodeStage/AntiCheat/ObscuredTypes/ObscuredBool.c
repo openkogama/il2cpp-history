@@ -176,16 +176,16 @@ bool Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscure
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool);
     cRam_? = '\x01';
   }
+  key = this->currentCryptoKey;
   value = this->hiddenValue;
-  if (this->currentCryptoKey != obj.currentCryptoKey) {
-    key = this->currentCryptoKey;
+  if (key != obj.currentCryptoKey) {
     if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).cctor_finished_or_no_cctor
         == 0) {
       func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool);
     }
     bVar1 = ObscuredBool_Decrypt_1(value,key,(MethodInfo *)0x0);
     bVar2 = ObscuredBool_Decrypt_1(obj.hiddenValue,obj.currentCryptoKey,(MethodInfo *)0x0);
-    return bVar2 ^ bVar1 ^ 1;
+    return bVar1 == bVar2;
   }
   return value == obj.hiddenValue;
 }
@@ -352,21 +352,25 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscure
   bVar1 = ObscuredBool_InternalDecrypt(this,(MethodInfo *)0x0);
   iVar2 = UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_RandomRangeInt
                     (1,0x96,(MethodInfo *)0x0);
-  bVar3 = (byte)iVar2;
+  uVar3 = (uint8_t)iVar2;
   bVar4 = cRam_? == '\0';
-  this->currentCryptoKey = bVar3;
+  this->currentCryptoKey = uVar3;
   if (bVar4) {
     func_?();
     cRam_? = '\x01';
   }
-  if (bVar3 == 0) {
+  if (uVar3 == 0) {
     if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).cctor_finished_or_no_cctor
         == 0) {
       func_?();
     }
-    bVar3 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->static_fields->cryptoKey;
+    uVar3 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->static_fields->cryptoKey;
   }
-  this->hiddenValue = (uint)bVar1 * 0x20 + 0xb5 ^ (uint)bVar3;
+  uVar5 = 0xb5;
+  if (bVar1 != 0) {
+    uVar5 = 0xd5;
+  }
+  this->hiddenValue = uVar3 ^ uVar5;
   return;
 }
 

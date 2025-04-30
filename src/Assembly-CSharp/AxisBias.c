@@ -43,51 +43,58 @@ Vector3 * Assembly-CSharp.dll::AxisBias::AxisBias_GetBiasedVector
                     MethodInfo *method)
 
 {
-  fVar1 = (float10)func_?();
-  fStack_2 = (float)fVar1;
-  puVar3 = (undefined8 *)func_?(&uStack_4);
-  VStack_5._0_8_ = *puVar3;
-  fVar6 = *(float *)(puVar3 + 1);
-  VStack_5.z = fVar6;
-  VStack_7._0_8_ = VStack_5._0_8_;
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
   }
-  pVVar8 = TypeInfo__UnityEngine__Vector3->static_fields;
-  uStack_4._0_4_ = (pVVar8->upVector).x;
-  uStack_4._4_4_ = (pVVar8->upVector).y;
-  fStack_9 = (pVVar8->upVector).z;
-  VStack_7.z = VStack_5.y * (float)uStack_4._4_4_ + VStack_5.x * (float)(undefined4)uStack_4 +
-                VStack_5.z * fStack_9;
-  if (0.0 < VStack_7.z) {
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  if (inputVector.y * inputVector.y + inputVector.x * inputVector.x + inputVector.z * inputVector.z
+      < 0.0) {
+    func_?();
+  }
+  pVVar1 = (Vector3 *)func_?();
+  VStack_2.x = pVVar1->x;
+  VStack_2.y = pVVar1->y;
+  VStack_2.z = pVVar1->z;
+  normalizedInputVector = *pVVar1;
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
+  }
+  pVVar3 = TypeInfo__UnityEngine__Vector3->static_fields;
+  uStack_4._0_4_ = (pVVar3->upVector).x;
+  uStack_4._4_4_ = (pVVar3->upVector).y;
+  fStack_5 = (pVVar3->upVector).z;
+  fVar6 = VStack_2.y * (float)uStack_4._4_4_ + VStack_2.x * (float)(undefined4)uStack_4 +
+          VStack_2.z * fStack_5;
+  if (0.0 < fVar6) {
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
-    pVVar8 = TypeInfo__UnityEngine__Vector3->static_fields;
-    uVar10 = (pVVar8->upVector).x;
-    uVar11 = (pVVar8->upVector).y;
-    fVar12 = (pVVar8->upVector).z;
-    fVar13 = VStack_7.x;
-    fVar14 = VStack_7.y;
-    uVar15 = uVar10;
-    uVar16 = uVar11;
+    pVVar3 = TypeInfo__UnityEngine__Vector3->static_fields;
+    uVar7 = (pVVar3->upVector).x;
+    uVar8 = (pVVar3->upVector).y;
+    fVar9 = (pVVar3->upVector).z;
+    uVar10 = uVar7;
+    uVar11 = uVar8;
   }
   else {
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
-    pVVar8 = TypeInfo__UnityEngine__Vector3->static_fields;
-    uStack_4._0_4_ = (pVVar8->downVector).x;
-    uStack_4._4_4_ = (pVVar8->downVector).y;
-    fStack_9 = (pVVar8->downVector).z;
-    VStack_7.z = VStack_5.y * (float)uStack_4._4_4_ + VStack_5.x * (float)(undefined4)uStack_4
-                  + VStack_5.z * fStack_9;
-    if (VStack_7.z <= 0.0) {
-      __return_storage_ptr__->x = inputVector.x;
-      __return_storage_ptr__->y = inputVector.y;
+    pVVar3 = TypeInfo__UnityEngine__Vector3->static_fields;
+    uStack_4._0_4_ = (pVVar3->downVector).x;
+    uStack_4._4_4_ = (pVVar3->downVector).y;
+    fStack_5 = (pVVar3->downVector).z;
+    fVar6 = VStack_2.y * (float)uStack_4._4_4_ + VStack_2.x * (float)(undefined4)uStack_4 +
+            VStack_2.z * fStack_5;
+    if (fVar6 <= 0.0) {
+      __return_storage_ptr__->x = (float)(int)inputVector._0_8_;
+      __return_storage_ptr__->y = (float)(int)((ulonglong)inputVector._0_8_ >> 0x20);
       __return_storage_ptr__->z = inputVector.z;
       return __return_storage_ptr__;
     }
@@ -95,27 +102,22 @@ Vector3 * Assembly-CSharp.dll::AxisBias::AxisBias_GetBiasedVector
       func_?();
       cRam_? = '\x01';
     }
-    pVVar8 = TypeInfo__UnityEngine__Vector3->static_fields;
-    uVar15 = (pVVar8->downVector).x;
-    uVar16 = (pVVar8->downVector).y;
-    fVar12 = (pVVar8->downVector).z;
-    fVar13 = VStack_7.x;
-    fVar14 = VStack_7.y;
+    pVVar3 = TypeInfo__UnityEngine__Vector3->static_fields;
+    uVar10 = (pVVar3->downVector).x;
+    uVar11 = (pVVar3->downVector).y;
+    fVar9 = (pVVar3->downVector).z;
   }
-  normalizedInputVector.y = fVar14;
-  normalizedInputVector.x = fVar13;
-  normalizedInputVector.z = fVar6;
-  biasVector.y = (float)uVar16;
-  biasVector.x = (float)uVar15;
-  biasVector.z = fVar12;
-  pVVar17 = AxisBias_GetBiased(&VStack_5,this,VStack_7.z,normalizedInputVector,biasVector,
-                               (MethodInfo *)0x0);
-  uVar18 = pVVar17->x;
-  uVar19 = pVVar17->y;
-  fVar6 = pVVar17->z;
-  __return_storage_ptr__->x = (float)uVar18 * fStack_2;
-  __return_storage_ptr__->y = (float)uVar19 * fStack_2;
-  __return_storage_ptr__->z = fVar6 * fStack_2;
+  biasVector.y = (float)uVar11;
+  biasVector.x = (float)uVar10;
+  biasVector.z = fVar9;
+  pVVar1 = AxisBias_GetBiased(&VStack_2,this,fVar6,normalizedInputVector,biasVector,
+                              (MethodInfo *)0x0);
+  uVar12 = pVVar1->x;
+  uVar13 = pVVar1->y;
+  fVar6 = pVVar1->z;
+  __return_storage_ptr__->x = (float)uVar12 * fStack_5;
+  __return_storage_ptr__->y = (float)uVar13 * fStack_5;
+  __return_storage_ptr__->z = fVar6 * fStack_5;
   return __return_storage_ptr__;
 }
 

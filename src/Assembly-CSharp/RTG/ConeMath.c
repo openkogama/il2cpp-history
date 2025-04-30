@@ -23,72 +23,73 @@ Assembly-CSharp.dll::RTG::ConeMath::ConeMath_CalcConeBaseExtentPoints
                       TypeInfo__UnityEngine__Vector3->static_fields->rightVector,(MethodInfo *)0x0);
   uVar3 = pVVar1->x;
   uVar4 = pVVar1->y;
-  pMStack_5 = (MethodInfo *)pVVar1->z;
-  fStack_6 = (float)uVar3;
+  fStack_5 = pVVar1->z;
+  pLStack_6 = (List_1_UnityEngine_Vector3_ *)uVar3;
   fStack_7 = (float)uVar4;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector3);
+    func_?();
     cRam_? = '\x01';
   }
   pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                     (&VStack_2,coneRotation,
+                     ((Vector3 *)&stack0xffffffa0,coneRotation,
                       TypeInfo__UnityEngine__Vector3->static_fields->forwardVector,(MethodInfo *)0x0
                      );
-  uStack_8._0_4_ = (undefined *)pVVar1->x;
-  uStack_8._4_4_ = (List_1_UnityEngine_Vector3_ *)pVVar1->y;
-  fStack_9 = pVVar1->z;
-  pLVar10 = (List_1_UnityEngine_Vector3_ *)
-           func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector3>);
+  VStack_2.x = pVVar1->x;
+  VStack_2.y = pVVar1->y;
+  VStack_2.z = pVVar1->z;
+  pLVar8 = (List_1_UnityEngine_Vector3_ *)func_?();
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar10,
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar8,
              MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List__);
-  VStack_2.x = coneBaseCenter.x + fStack_6 * coneBaseRadius;
-  VStack_2.y = coneBaseCenter.y + fStack_7 * coneBaseRadius;
-  VStack_2.z = coneBaseCenter.z + (float)pMStack_5 * coneBaseRadius;
-  if (pLVar10 != (List_1_UnityEngine_Vector3_ *)0x0) {
-    pMStack_5 = 
+  fStack_9 = (float)pLStack_6 * coneBaseRadius;
+  fStack_10 = fStack_7 * coneBaseRadius;
+  fStack_11 = fStack_5 * coneBaseRadius;
+  pLStack_6 = (List_1_UnityEngine_Vector3_ *)(coneBaseCenter.x + fStack_9);
+  fStack_7 = coneBaseCenter.y + fStack_10;
+  fStack_5 = coneBaseCenter.z + fStack_11;
+  if (pLVar8 != (List_1_UnityEngine_Vector3_ *)0x0) {
+    pMStack_12 = 
     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_;
-    uStack_8._0_4_ = &UNK_?;
-    fStack_9 = VStack_2.x;
-    fStack_6 = VStack_2.y;
-    fStack_7 = VStack_2.z;
-    uStack_8._4_4_ = pLVar10;
+    fVar13 = (float)pLStack_6;
+    pLStack_6 = pLVar8;
+    fVar14 = fStack_7;
+    fStack_7 = fVar13;
+    fStack_15 = fStack_5;
+    fStack_5 = fVar14;
     func_?();
-    VStack_2.z = fStack_9 * coneBaseRadius;
-    fStack_9 = coneBaseCenter.x - (float)(undefined *)uStack_8 * coneBaseRadius;
-    fStack_6 = coneBaseCenter.y - (float)uStack_8._4_4_ * coneBaseRadius;
-    VStack_2.z = coneBaseCenter.z - VStack_2.z;
-    pMStack_5 = 
+    fStack_16 = VStack_2.x * coneBaseRadius;
+    fStack_7 = coneBaseCenter.x - fStack_16;
+    fStack_5 = coneBaseCenter.y - VStack_2.y * coneBaseRadius;
+    VStack_2.z = coneBaseCenter.z - VStack_2.z * coneBaseRadius;
+    pMStack_12 = 
     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_;
-    uStack_8 = CONCAT44(pLVar10,&UNK_?);
-    fStack_7 = VStack_2.z;
+    pLStack_6 = pLVar8;
+    fStack_15 = VStack_2.z;
     func_?();
-    VStack_2.z = coneBaseCenter.z - (float)pMStack_5 * coneBaseRadius;
-    fStack_9 = coneBaseCenter.x - fStack_6 * coneBaseRadius;
-    fStack_6 = coneBaseCenter.y - fStack_7 * coneBaseRadius;
-    pMStack_5 = 
+    VStack_2.z = coneBaseCenter.z - fStack_11;
+    fStack_7 = coneBaseCenter.x - fStack_9;
+    fStack_5 = coneBaseCenter.y - fStack_10;
+    pMStack_12 = 
     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_;
-    uStack_8._0_4_ = &UNK_?;
-    fStack_7 = VStack_2.z;
-    uStack_8._4_4_ = pLVar10;
+    pLStack_6 = pLVar8;
+    fStack_15 = VStack_2.z;
     func_?();
-    VStack_2.z = fStack_9 * coneBaseRadius;
-    fStack_9 = coneBaseCenter.x + (float)(undefined *)uStack_8 * coneBaseRadius;
-    fStack_6 = coneBaseCenter.y + (float)uStack_8._4_4_ * coneBaseRadius;
-    VStack_2.z = coneBaseCenter.z + VStack_2.z;
-    pMStack_5 = 
+    VStack_2.z = coneBaseCenter.z + fStack_15;
+    fStack_7 = coneBaseCenter.x + fStack_16;
+    fStack_5 = coneBaseCenter.y + (float)pMStack_12;
+    pMStack_12 = 
     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_;
-    uStack_8 = CONCAT44(pLVar10,&UNK_?);
-    fStack_7 = VStack_2.z;
+    pLStack_6 = pLVar8;
+    fStack_15 = VStack_2.z;
     func_?();
-    return pLVar10;
+    return pLVar8;
   }
   func_?();
-  pcVar11 = (code *)swi(3);
-  pLVar10 = (List_1_UnityEngine_Vector3_ *)(*pcVar11)();
-  return pLVar10;
+  pcVar17 = (code *)swi(3);
+  pLVar8 = (List_1_UnityEngine_Vector3_ *)(*pcVar17)();
+  return pLVar8;
 }
 
 
@@ -99,42 +100,40 @@ bool Assembly-CSharp.dll::RTG::ConeMath::ConeMath_ContainsPoint
                Quaternion coneRotation,ConeEpsilon epsilon,MethodInfo *method)
 
 {
-  func_?(&MStack_1,0,0x40);
-  func_?(&stack0xffffff70,0,0x40);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  VVar2.y = coneBaseCenter.y;
-  VVar2.x = coneBaseCenter.x;
-  VVar2.z = coneBaseCenter.z;
-  pMVar3 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
-                     ((Matrix4x4 *)&stack0xffffff30,VVar2,coneRotation,
+  VVar1.y = coneBaseCenter.y;
+  VVar1.x = coneBaseCenter.x;
+  VVar1.z = coneBaseCenter.z;
+  pMVar2 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
+                     ((Matrix4x4 *)&stack0xffffff30,VVar1,coneRotation,
                       TypeInfo__UnityEngine__Vector3->static_fields->oneVector,(MethodInfo *)0x0);
-  MStack_1.m00 = pMVar3->m00;
-  MStack_1.m10 = pMVar3->m10;
-  MStack_1.m20 = pMVar3->m20;
-  MStack_1.m30 = pMVar3->m30;
-  MStack_1.m01 = pMVar3->m01;
-  MStack_1.m11 = pMVar3->m11;
-  MStack_1.m21 = pMVar3->m21;
-  MStack_1.m31 = pMVar3->m31;
-  MStack_1.m02 = pMVar3->m02;
-  MStack_1.m12 = pMVar3->m12;
-  MStack_1.m22 = pMVar3->m22;
-  MStack_1.m32 = pMVar3->m32;
-  MStack_1.m03 = pMVar3->m03;
-  MStack_1.m13 = pMVar3->m13;
-  MStack_1.m23 = pMVar3->m23;
-  MStack_1.m33 = pMVar3->m33;
+  MStack_3.m00 = pMVar2->m00;
+  MStack_3.m10 = pMVar2->m10;
+  MStack_3.m20 = pMVar2->m20;
+  MStack_3.m30 = pMVar2->m30;
+  MStack_3.m01 = pMVar2->m01;
+  MStack_3.m11 = pMVar2->m11;
+  MStack_3.m21 = pMVar2->m21;
+  MStack_3.m31 = pMVar2->m31;
+  MStack_3.m02 = pMVar2->m02;
+  MStack_3.m12 = pMVar2->m12;
+  MStack_3.m22 = pMVar2->m22;
+  MStack_3.m32 = pMVar2->m32;
+  MStack_3.m03 = pMVar2->m03;
+  MStack_3.m13 = pMVar2->m13;
+  MStack_3.m23 = pMVar2->m23;
+  MStack_3.m33 = pMVar2->m33;
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_inverse
-            ((Matrix4x4 *)&stack0xffffff30,&MStack_1,(MethodInfo *)0x0);
+            ((Matrix4x4 *)&stack0xffffff30,&MStack_3,(MethodInfo *)0x0);
   pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyPoint
                       (&coneBaseCenter,(Matrix4x4 *)&stack0xffffff70,point,(MethodInfo *)0x0);
   uVar5 = pVVar4->x;
   uVar6 = pVVar4->y;
   fVar7 = pVVar4->z;
-  VVar2 = *pVVar4;
+  VVar1 = *pVVar4;
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
@@ -173,7 +172,7 @@ bool Assembly-CSharp.dll::RTG::ConeMath::ConeMath_ContainsPoint
     point1.y = (float)uStack_14._4_4_ * coneHeight;
     point1.x = (float)(undefined4)uStack_14 * coneHeight;
     point1.z = fStack_15;
-    fVar13 = Vector3Ex::Vector3Ex_GetDistanceToSegment(VVar2,point0,point1,(MethodInfo *)0x0);
+    fVar13 = Vector3Ex::Vector3Ex_GetDistanceToSegment(VVar1,point0,point1,(MethodInfo *)0x0);
     return fVar13 <= epsilon._hrzEps + (coneHeight / coneBaseRadius) * fVar7;
   }
   return 0;
@@ -193,14 +192,14 @@ bool Assembly-CSharp.dll::RTG::ConeMath::ConeMath_Raycast
   }
   fStack_1 = 0.0;
   fStack_2 = 0.0;
-  *t = 0.0;
   fStack_3 = 0.0;
+  *t = 0.0;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
   pMVar4 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
-                      ((Matrix4x4 *)&stack0xffffff4c,coneBaseCenter,coneRotation,
+                      ((Matrix4x4 *)&stack0xffffff5c,coneBaseCenter,coneRotation,
                        TypeInfo__UnityEngine__Vector3->static_fields->oneVector,(MethodInfo *)0x0);
   ray_01.m_Origin.y = ray.m_Origin.y;
   ray_01.m_Origin.x = ray.m_Origin.x;
@@ -209,108 +208,115 @@ bool Assembly-CSharp.dll::RTG::ConeMath::ConeMath_Raycast
   ray_01.m_Direction.y = ray.m_Direction.y;
   ray_01.m_Direction.z = ray.m_Direction.z;
   pRVar5 = RayEx::RayEx_InverseTransform(&ray,ray_01,*pMVar4,(MethodInfo *)0x0);
-  fVar6 = (pRVar5->m_Origin).x;
-  fVar7 = (pRVar5->m_Origin).y;
-  fVar8 = (pRVar5->m_Origin).z;
+  uVar6 = (pRVar5->m_Direction).y;
+  uVar7 = (pRVar5->m_Direction).z;
+  fVar8 = (pRVar5->m_Origin).x;
   fVar9 = (pRVar5->m_Direction).x;
-  uVar10 = (pRVar5->m_Direction).y;
+  fVar10 = (pRVar5->m_Direction).y;
   uVar11 = (pRVar5->m_Direction).z;
-  fVar12 = (pRVar5->m_Origin).x;
-  fVar13 = (pRVar5->m_Direction).x;
-  fVar14 = (pRVar5->m_Direction).y;
-  uVar15 = (pRVar5->m_Direction).z;
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
   }
-  pVVar16 = TypeInfo__UnityEngine__Vector3->static_fields;
-  uVar17 = (pVVar16->upVector).x;
-  uVar18 = (pVVar16->upVector).y;
-  ray.m_Direction.x = (float)uVar17 * coneHeight * _UNK_?;
-  ray.m_Direction.y = (float)uVar18 * coneHeight * _UNK_?;
-  ray.m_Direction.z = (pVVar16->upVector).z * coneHeight * _UNK_?;
+  pVVar12 = TypeInfo__UnityEngine__Vector3->static_fields;
+  uVar13 = (pVVar12->upVector).x;
+  uVar14 = (pVVar12->upVector).y;
+  ray.m_Direction.x = (float)uVar13 * coneHeight * _UNK_?;
+  ray.m_Direction.y = (float)uVar14 * coneHeight * _UNK_?;
+  ray.m_Direction.z = (pVVar12->upVector).z * coneHeight * _UNK_?;
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
   }
-  pQVar19 = TypeInfo__UnityEngine__Quaternion->static_fields;
-  fVar20 = (pQVar19->identityQuaternion).x;
-  fVar21 = (pQVar19->identityQuaternion).y;
-  fVar22 = (pQVar19->identityQuaternion).z;
-  fVar23 = (pQVar19->identityQuaternion).w;
+  pQVar15 = TypeInfo__UnityEngine__Quaternion->static_fields;
+  fVar16 = (pQVar15->identityQuaternion).x;
+  fVar17 = (pQVar15->identityQuaternion).y;
+  fVar18 = (pQVar15->identityQuaternion).z;
+  fVar19 = (pQVar15->identityQuaternion).w;
   if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
+  fVar20 = 0.0;
+  fVar21 = 0.0;
+  fVar22 = 0.0;
+  fVar23 = 0.0;
   ray_02.m_Origin.y = ray.m_Direction.x;
-  ray_02.m_Origin.x = fVar12;
+  ray_02.m_Origin.x = fVar8;
   ray_02.m_Origin.z = ray.m_Direction.y;
-  ray_02.m_Direction.x = fVar13;
-  ray_02.m_Direction.y = fVar14;
-  ray_02.m_Direction.z = (float)uVar15;
+  ray_02.m_Direction.x = fVar9;
+  ray_02.m_Direction.y = fVar10;
+  ray_02.m_Direction.z = (float)uVar11;
   boxCenter.y = ray.m_Direction.y;
   boxCenter.x = ray.m_Direction.x;
   boxCenter.z = ray.m_Direction.z;
-  boxRotation.y = fVar21;
-  boxRotation.x = fVar20;
-  boxRotation.z = fVar22;
-  boxRotation.w = fVar23;
-  fVar12 = ray.m_Direction.x;
-  fVar20 = ray.m_Direction.y;
+  boxSize.y = fVar18;
+  boxSize.x = fVar17;
+  boxSize.z = fVar19;
+  boxRotation.y = fVar17;
+  boxRotation.x = fVar16;
+  boxRotation.z = fVar18;
+  boxRotation.w = fVar19;
+  fVar8 = ray.m_Direction.x;
+  fVar16 = ray.m_Direction.y;
   bVar24 = BoxMath::BoxMath_Raycast
-                     (ray_02,boxCenter,(Vector3)ZEXT412(0),boxRotation,(BoxEpsilon)ZEXT812(0),
-                      (MethodInfo *)0x0);
+                     (ray_02,boxCenter,boxSize,boxRotation,(BoxEpsilon)ZEXT812(0),(MethodInfo *)0x0)
+  ;
   if (bVar24 != 0) {
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
-    uVar25 = (TypeInfo__UnityEngine__Vector3->static_fields->upVector).x;
-    coneBaseCenter.x =
-         (float)(uVar25 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-    fVar21 = (float)((uint)(TypeInfo__UnityEngine__Vector3->static_fields->upVector).z ^
-                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+    pVVar12 = TypeInfo__UnityEngine__Vector3->static_fields;
+    uVar25 = (pVVar12->upVector).x;
+    uVar26 = (pVVar12->upVector).y;
+    ray.m_Direction.x =
+         (float)(uVar25 ^ (uint)
+                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+    ray.m_Direction.y =
+         (float)(uVar26 ^ (uint)
+                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+    ray.m_Direction.z =
+         (float)((uint)(pVVar12->upVector).z ^
+                (uint)__0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     if (cRam_? == '\0') {
-      coneBaseCenter.x = (float)&UNK_?;
       func_?();
       cRam_? = '\x01';
     }
-    ray.m_Direction.z = coneBaseCenter.x;
-    ray.m_Direction.y = (float)&stack0xffffffcc;
-    ray.m_Direction.x = (float)&UNK_?;
-    value.y = 0.0;
-    value.x = coneBaseCenter.x;
-    value.z = fVar21;
-    UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-              ((Vector3 *)ray.m_Direction.y,value,(MethodInfo *)0x0);
-    ray.m_Direction.z = (float)&stack0xffffffbc;
-    ray.m_Direction.y = (float)&UNK_?;
-    ray_00.m_Origin.y = fVar20;
-    ray_00.m_Origin.x = fVar12;
-    ray_00.m_Origin.z = fVar13;
-    ray_00.m_Direction.x = fVar14;
-    ray_00.m_Direction.y = (float)uVar10;
-    ray_00.m_Direction.z = (float)uVar11;
+    value.y = ray.m_Direction.y;
+    value.x = ray.m_Direction.x;
+    value.z = ray.m_Direction.z;
+    pVVar27 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                        ((Vector3 *)&stack0xffffffcc,value,(MethodInfo *)0x0);
+    uVar28 = pVVar27->x;
+    uVar29 = pVVar27->y;
+    ray.m_Direction.z = pVVar27->z;
+    ray_00.m_Origin.y = fVar16;
+    ray_00.m_Origin.x = fVar8;
+    ray_00.m_Origin.z = fVar9;
+    ray_00.m_Direction.x = fVar10;
+    ray_00.m_Direction.y = (float)uVar6;
+    ray_00.m_Direction.z = (float)uVar7;
+    ray.m_Direction.x = (float)uVar28;
+    ray.m_Direction.y = (float)uVar29;
     bVar24 = UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane_Raycast
-                       ((Plane *)ray.m_Direction.z,ray_00,&fStack_1,(MethodInfo *)0x0);
-    if ((bVar24 != 0) && (fVar26 = (float10)func_?(), (float)fVar26 <= (float)uVar10)) {
+                       ((Plane *)&stack0xffffffbc,ray_00,&fStack_1,(MethodInfo *)0x0);
+    if ((bVar24 != 0) && (fVar30 = (float10)func_?(), (float)fVar30 <= fVar8)) {
       *t = fStack_1;
       return 1;
     }
-    fVar14 = ((float)uVar10 / (float)uVar11) * ((float)uVar10 / (float)uVar11);
-    fVar12 = (fVar8 * (float)uVar11 + fVar6 * fVar9) -
-             (float)uVar10 * fVar14 * (fVar7 - (float)uVar11);
-    fVar9 = ((float)uVar11 * (float)uVar11 + fVar9 * fVar9) - (float)uVar10 * fVar14 * (float)uVar10;
+    fVar8 = (fVar8 / fVar16) * (fVar8 / fVar16);
+    fVar10 = fVar22 - fVar16;
+    fVar17 = (float)uVar6 * fVar8;
+    fVar9 = (fVar23 * (float)uVar7 + fVar21 * fVar20) - fVar17 * fVar10;
     bVar24 = MathEx::MathEx_SolveQuadratic
-                       (fVar9,fVar12 + fVar12,
-                        (fVar8 * fVar8 + fVar6 * fVar6) -
-                        (fVar7 - (float)uVar11) * fVar14 * (fVar7 - (float)uVar11),&fStack_2,
-                        &fStack_3,(MethodInfo *)0x0);
+                       (((float)uVar7 * (float)uVar7 + fVar20 * fVar20) - fVar17 * (float)uVar6,
+                        fVar9 + fVar9,(fVar23 * fVar23 + fVar21 * fVar21) - fVar10 * fVar8 * fVar10
+                        ,&fStack_2,&fStack_3,(MethodInfo *)0x0);
     if ((bVar24 != 0) && ((0.0 <= fStack_2 || (fStack_2 = fStack_3, 0.0 <= fStack_3)))) {
       *t = fStack_2;
-      fVar7 = fVar7 + (float)uVar10 * fStack_2;
-      if (((float)((uint)fVar9 ^
-                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) <=
-           fVar7) && (fVar7 <= fVar9 + (float)uVar11)) {
+      fVar22 = fVar22 + (float)uVar6 * fStack_2;
+      if ((__0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field <= fVar22) &&
+         (fVar22 <= fVar16 + 0.0)) {
         return 1;
       }
       *t = 0.0;

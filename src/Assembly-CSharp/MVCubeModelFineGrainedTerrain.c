@@ -44,8 +44,9 @@ void Assembly-CSharp.dll::MVCubeModelFineGrainedTerrain::MVCubeModelFineGrainedT
   this_00 = (CullingTerrainManager *)func_?(TypeInfo__CullingTerrainManager);
   CullingTerrainManager::CullingTerrainManager__ctor
             (this_00,chunkInstances,(MVCubeModelBase *)this,(MethodInfo *)0x0);
-  (this->fields).cullingTerrainManager = this_00;
-  func_?(&(this->fields).cullingTerrainManager,this_00);
+  ppCVar1 = &(this->fields).cullingTerrainManager;
+  *ppCVar1 = this_00;
+  func_?(ppCVar1,this_00);
   return;
 }
 

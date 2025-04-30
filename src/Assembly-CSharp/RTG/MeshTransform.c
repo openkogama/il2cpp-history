@@ -10,14 +10,14 @@ OBB * Assembly-CSharp.dll::RTG::MeshTransform::MeshTransform_InverseTransformOBB
   fVar3 = pVVar1->x;
   fVar4 = pVVar1->y;
   pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Inverse
-                      ((Quaternion *)&stack0xffffff90,(this->fields)._rotation,(MethodInfo *)0x0);
+                      ((Quaternion *)&stack0xffffffa0,(this->fields)._rotation,(MethodInfo *)0x0);
   uVar6 = (this->fields)._position.x;
   uVar7 = (this->fields)._position.y;
   point.y = obb._center.y - (float)uVar7;
   point.x = obb._center.x - (float)uVar6;
   point.z = obb._center.z - (this->fields)._position.z;
   pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                      ((Vector3 *)&stack0xffffffa0,*pQVar5,point,(MethodInfo *)0x0);
+                      ((Vector3 *)&stack0xffffffb0,*pQVar5,point,(MethodInfo *)0x0);
   uVar8 = pVVar1->x;
   uVar9 = pVVar1->y;
   VStack_2.x = (float)uVar8 * fVar3;
@@ -25,18 +25,18 @@ OBB * Assembly-CSharp.dll::RTG::MeshTransform::MeshTransform_InverseTransformOBB
   fVar4 = (float)uVar9 * fVar4;
   VStack_2.z = (float)&UNK_?;
   pVVar1 = Vector3Ex::Vector3Ex_GetInverse
-                      ((Vector3 *)&stack0xffffffa0,(this->fields)._scale,(MethodInfo *)0x0);
+                      ((Vector3 *)&stack0xffffffb0,(this->fields)._scale,(MethodInfo *)0x0);
   uVar10 = pVVar1->x;
   uVar11 = pVVar1->y;
   center.y = fVar4;
   center.x = VStack_2.x;
-  center.z = 0.0;
+  center.z = obb._size.x * (float)uVar10;
   size.y = obb._size.y * (float)uVar11;
   size.x = obb._size.x * (float)uVar10;
   size.z = obb._size.z * pVVar1->z;
   OBB::OBB__ctor(__return_storage_ptr__,center,size,(MethodInfo *)0x0);
   pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Inverse
-                      ((Quaternion *)&stack0xffffff90,(this->fields)._rotation,(MethodInfo *)0x0);
+                      ((Quaternion *)&stack0xffffffa0,(this->fields)._rotation,(MethodInfo *)0x0);
   fVar4 = pQVar5->x;
   fVar12 = pQVar5->y;
   fVar13 = pQVar5->z;
@@ -47,10 +47,10 @@ OBB * Assembly-CSharp.dll::RTG::MeshTransform::MeshTransform_InverseTransformOBB
        (obb._rotation.w * fVar4 + obb._rotation.x * fVar14 + obb._rotation.z * fVar12) -
        obb._rotation.y * fVar13;
   (__return_storage_ptr__->_rotation).y =
-       (obb._rotation.y * fVar14 + obb._rotation.w * fVar12 + obb._rotation.x * fVar13) -
+       (obb._rotation.w * fVar12 + obb._rotation.y * fVar14 + obb._rotation.x * fVar13) -
        obb._rotation.z * fVar15;
   (__return_storage_ptr__->_rotation).z =
-       (obb._rotation.z * fVar14 + obb._rotation.w * fVar13 + obb._rotation.y * fVar3) -
+       (obb._rotation.w * fVar13 + obb._rotation.z * fVar14 + obb._rotation.y * fVar3) -
        obb._rotation.x * fVar12;
   (__return_storage_ptr__->_rotation).w =
        ((obb._rotation.w * fVar14 - obb._rotation.x * fVar4) - obb._rotation.y * fVar12) -

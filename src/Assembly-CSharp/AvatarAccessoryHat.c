@@ -19,7 +19,7 @@ void Assembly-CSharp.dll::AvatarAccessoryHat::AvatarAccessoryHat_Awake
   pTVar1 = Extensions::Extensions_FindChildRecursively
                      (pTVar1,StringLiteral_HatAttachPoint,(MethodInfo *)0x0);
   (this->fields).attachPosTfm = pTVar1;
-  func_?(&(this->fields).attachPosTfm);
+  func_?();
   return;
 }
 
@@ -39,21 +39,22 @@ Assembly-CSharp.dll::AvatarAccessoryHat::AvatarAccessoryHat_get_AccessorySetting
     cRam_? = '\x01';
   }
   pAVar1 = (this->fields).hatSettings;
+  ppAVar2 = &(this->fields).hatSettings;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                     ((Object_1 *)pAVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
+  if (bVar3 != 0) {
     pAVar1 = (AccessoryHatSettings *)
              UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
                        ((Component *)this,
                         AccessoryHatSettings_MethodInfo__UnityEngine__Component__GetComponent<AccessoryHatSettings>__
                        );
-    (this->fields).hatSettings = pAVar1;
-    func_?(&(this->fields).hatSettings,pAVar1);
+    *ppAVar2 = pAVar1;
+    func_?(ppAVar2,pAVar1);
   }
-  return (AccessorySettings *)(this->fields).hatSettings;
+  return (AccessorySettings *)*ppAVar2;
 }
 
 

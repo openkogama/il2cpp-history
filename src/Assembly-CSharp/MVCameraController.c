@@ -30,10 +30,6 @@ void Assembly-CSharp.dll::MVCameraController::MVCameraController_Activate
       puVar3 = puStack_2;
     }
     puStack_2 = puVar3;
-    DStack_4._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
-    DStack_4._index = 0;
-    DStack_4._version = 0;
-    DStack_4._currentValue = (Object *)0x0;
     this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                *)(pMVar1->fields).cameras;
     if ((this_00 !=
@@ -46,23 +42,23 @@ void Assembly-CSharp.dll::MVCameraController::MVCameraController_Activate
                               (this_00,
                                MethodInfo__System__Collections__Generic__Dictionary<CameraType,_MVCameraBase>__get_Values__
                               ), method_00 != (MethodInfo *)0x0)) {
-      pDVar5 = mscorlib.dll::System::Collections::Generic::
+      pDVar4 = mscorlib.dll::System::Collections::Generic::
                Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
                StyleSheetCache+SheetHandleKey,System::Object]::
                Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
-                         (&DStack_6,
+                         (&DStack_5,
                           (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                            *)method_00,
                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<CameraType,_MVCameraBase>__GetEnumerator__
                          );
-      DStack_4._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)pDVar5->_dictionary;
-      DStack_4._index = pDVar5->_index;
-      DStack_4._version = pDVar5->_version;
-      DStack_4._currentValue = pDVar5->_currentValue;
-      DStack_6._version = 0;
-      DStack_6._currentValue = (Object *)&DStack_4;
+      DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)pDVar4->_dictionary;
+      DStack_6._index = pDVar4->_index;
+      DStack_6._version = pDVar4->_version;
+      DStack_6._currentValue = pDVar4->_currentValue;
+      DStack_5._version = 0;
+      DStack_5._currentValue = (Object *)&DStack_6;
       while( true ) {
-        this_01 = &DStack_4;
+        this_01 = &DStack_6;
         bVar7 = mscorlib.dll::System::Collections::Generic::
                 Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
                 UInt32,System::Object]::
@@ -72,15 +68,15 @@ void Assembly-CSharp.dll::MVCameraController::MVCameraController_Activate
                           );
         if (bVar7 == 0) {
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&DStack_4,
+                    ((Object *)&DStack_6,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<CameraType,_MVCameraBase>__Dispose__
                      ,method_00);
           *unaff_FS_OFFSET = this_01;
           return;
         }
-        if (DStack_4._currentValue == (Object *)0x0) break;
-        (*(code *)(DStack_4._currentValue)->klass[1].static_fields)();
+        if (DStack_6._currentValue == (Object *)0x0) break;
+        (*(code *)(DStack_6._currentValue)->klass[1].static_fields)();
       }
     }
   }
@@ -124,10 +120,6 @@ void Assembly-CSharp.dll::MVCameraController::MVCameraController_Deactivate
       puVar3 = puStack_2;
     }
     puStack_2 = puVar3;
-    DStack_4._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
-    DStack_4._index = 0;
-    DStack_4._version = 0;
-    DStack_4._currentValue = (Object *)0x0;
     this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                *)(pMVar1->fields).cameras;
     if ((this_00 !=
@@ -140,23 +132,23 @@ void Assembly-CSharp.dll::MVCameraController::MVCameraController_Deactivate
                               (this_00,
                                MethodInfo__System__Collections__Generic__Dictionary<CameraType,_MVCameraBase>__get_Values__
                               ), method_00 != (MethodInfo *)0x0)) {
-      pDVar5 = mscorlib.dll::System::Collections::Generic::
+      pDVar4 = mscorlib.dll::System::Collections::Generic::
                Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
                StyleSheetCache+SheetHandleKey,System::Object]::
                Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
-                         (&DStack_6,
+                         (&DStack_5,
                           (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                            *)method_00,
                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<CameraType,_MVCameraBase>__GetEnumerator__
                          );
-      DStack_4._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)pDVar5->_dictionary;
-      DStack_4._index = pDVar5->_index;
-      DStack_4._version = pDVar5->_version;
-      DStack_4._currentValue = pDVar5->_currentValue;
-      DStack_6._version = 0;
-      DStack_6._currentValue = (Object *)&DStack_4;
+      DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)pDVar4->_dictionary;
+      DStack_6._index = pDVar4->_index;
+      DStack_6._version = pDVar4->_version;
+      DStack_6._currentValue = pDVar4->_currentValue;
+      DStack_5._version = 0;
+      DStack_5._currentValue = (Object *)&DStack_6;
       while( true ) {
-        this_01 = &DStack_4;
+        this_01 = &DStack_6;
         bVar7 = mscorlib.dll::System::Collections::Generic::
                 Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
                 UInt32,System::Object]::
@@ -166,15 +158,15 @@ void Assembly-CSharp.dll::MVCameraController::MVCameraController_Deactivate
                           );
         if (bVar7 == 0) {
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&DStack_4,
+                    ((Object *)&DStack_6,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<CameraType,_MVCameraBase>__Dispose__
                      ,method_00);
           *unaff_FS_OFFSET = this_01;
           return;
         }
-        if (DStack_4._currentValue == (Object *)0x0) break;
-        (*(code *)(DStack_4._currentValue)->klass[1]._1.typeHierarchy)();
+        if (DStack_6._currentValue == (Object *)0x0) break;
+        (*(code *)(DStack_6._currentValue)->klass[1]._1.typeHierarchy)();
       }
     }
   }
@@ -451,26 +443,26 @@ Assembly-CSharp.dll::MVCameraController::MVCameraController_get_CurCamera
       func_?();
       cRam_? = '\x01';
     }
-    pLVar2 = (pMVar1->fields).activeCameras;
-    if (pLVar2 != (List_1_MVCameraBase_ *)0x0) {
-      if ((pLVar2->fields)._size == 0) {
+    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              (pMVar1->fields).activeCameras;
+    if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+      if ((this_00->fields)._size == 0) {
         return (MVCameraBase *)0x0;
       }
-      RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+      RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
               RegexCharClass+SingleRange]::
               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                        ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                         (pMVar1->fields).activeCameras,(pLVar2->fields)._size + -1,
+                        (this_00,(this_00->fields)._size + -1,
                          MethodInfo__System__Collections__Generic__List<MVCameraBase>__get_Item_int_
                         );
-      return (MVCameraBase *)RVar3;
+      return (MVCameraBase *)RVar2;
     }
   }
-  uVar4 = func_?(&stack0xfffffff0);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  pMVar6 = (MVCameraBase *)(*pcVar5)();
-  return pMVar6;
+  uVar3 = func_?(&stack0xfffffff0);
+  func_?(uVar3);
+  pcVar4 = (code *)swi(3);
+  pMVar5 = (MVCameraBase *)(*pcVar4)();
+  return pMVar5;
 }
 
 

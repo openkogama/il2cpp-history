@@ -66,47 +66,49 @@ void Assembly-CSharp.dll::RTG::GizmoSglAxisOffsetDrag3D::
     (this->fields)._accumSnapDrag = 0.0;
     uVar4 = (this->fields)._workData.Axis.x;
     uVar5 = (this->fields)._workData.Axis.y;
-    fVar6 = (float)uVar4 * fVar3;
-    fVar7 = (float)uVar5 * fVar3;
-    fVar3 = (this->fields)._workData.Axis.z * fVar3;
-    fVar8 = (this->fields)._._sensitivity;
+    fVar6 = (this->fields)._._sensitivity;
+    fVar7 = (this->fields)._workData.Axis.z * fVar3 * fVar6;
+    fVar8 = (float)uVar4 * fVar3 * fVar6;
+    fVar6 = (float)uVar5 * fVar3 * fVar6;
   }
   else {
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Vector3);
+      func_?();
       cRam_? = '\x01';
     }
-    fVar3 = fVar3 + (this->fields)._accumSnapDrag;
+    accumulated = &(this->fields)._accumSnapDrag;
+    fVar6 = *accumulated;
     pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
-    fVar6 = (pVVar9->zeroVector).y;
-    fVar8 = (pVVar9->zeroVector).z;
+    fVar8 = (pVVar9->zeroVector).y;
+    fVar7 = (pVVar9->zeroVector).z;
     (this->fields)._._._relativeDragOffset.x = (pVVar9->zeroVector).x;
-    (this->fields)._._._relativeDragOffset.y = fVar6;
-    (this->fields)._._._relativeDragOffset.z = fVar8;
-    (this->fields)._accumSnapDrag = fVar3;
+    (this->fields)._._._relativeDragOffset.y = fVar8;
+    (this->fields)._._._relativeDragOffset.z = fVar7;
+    *accumulated = fVar3 + fVar6;
     bVar10 = SnapMath::SnapMath_CanExtractSnap
-                       ((this->fields)._workData.SnapStep,fVar3,(MethodInfo *)0x0);
+                       ((this->fields)._workData.SnapStep,fVar3 + fVar6,(MethodInfo *)0x0);
     if (bVar10 == 0) goto code_?;
-    fVar8 = SnapMath::SnapMath_ExtractSnap
-                       ((this->fields)._workData.SnapStep,&(this->fields)._accumSnapDrag,
-                        (MethodInfo *)0x0);
-    fVar6 = (this->fields)._workData.Axis.x;
-    fVar7 = (this->fields)._workData.Axis.y;
-    fVar3 = (this->fields)._workData.Axis.z;
+    fVar6 = SnapMath::SnapMath_ExtractSnap
+                       ((this->fields)._workData.SnapStep,accumulated,(MethodInfo *)0x0);
+    uVar11 = (this->fields)._workData.Axis.x;
+    uVar12 = (this->fields)._workData.Axis.y;
+    fVar7 = (this->fields)._workData.Axis.z * fVar6;
+    fVar8 = (float)uVar11 * fVar6;
+    fVar6 = (float)uVar12 * fVar6;
   }
-  (this->fields)._._._relativeDragOffset.x = fVar6 * fVar8;
-  (this->fields)._._._relativeDragOffset.y = fVar7 * fVar8;
-  (this->fields)._._._relativeDragOffset.z = fVar3 * fVar8;
+  (this->fields)._._._relativeDragOffset.x = fVar8;
+  (this->fields)._._._relativeDragOffset.y = fVar6;
+  (this->fields)._._._relativeDragOffset.z = fVar7;
 code_?:
-  uVar11 = (this->fields)._._._totalDragOffset.x;
-  uVar12 = (this->fields)._._._totalDragOffset.y;
+  uVar13 = (this->fields)._._._totalDragOffset.x;
+  uVar14 = (this->fields)._._._totalDragOffset.y;
   fVar3 = (this->fields)._._._totalDragOffset.z;
-  uVar13 = (this->fields)._._._relativeDragOffset.x;
-  uVar14 = (this->fields)._._._relativeDragOffset.y;
-  fVar8 = (this->fields)._._._relativeDragOffset.z;
-  (this->fields)._._._totalDragOffset.x = (float)uVar13 + (float)uVar11;
-  (this->fields)._._._totalDragOffset.y = (float)uVar14 + (float)uVar12;
-  (this->fields)._._._totalDragOffset.z = fVar8 + fVar3;
+  uVar15 = (this->fields)._._._relativeDragOffset.x;
+  uVar16 = (this->fields)._._._relativeDragOffset.y;
+  fVar6 = (this->fields)._._._relativeDragOffset.z;
+  (this->fields)._._._totalDragOffset.x = (float)uVar15 + (float)uVar13;
+  (this->fields)._._._totalDragOffset.y = (float)uVar16 + (float)uVar14;
+  (this->fields)._._._totalDragOffset.z = fVar6 + fVar3;
   return;
 }
 

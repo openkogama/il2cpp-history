@@ -43,10 +43,8 @@ code_?:
       (*pcVar6)();
       return;
     }
-    pKVar7 = pKVar4->vector;
     for (; (int)uVar5 < (int)pKVar4->max_length; uVar5 = uVar5 + 1) {
       if (pKVar4->max_length <= uVar5) goto code_?;
-      KVar1 = *pKVar7;
       if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__MVInputWrapper);
       }
@@ -57,17 +55,16 @@ code_?:
       if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__MVInputWrapper);
       }
-      pKVar4 = (KogamaControls__Enum__Array *)0x0;
+      iVar7 = 0;
       bVar2 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
-                        (KVar1,KeyState__Enum_Down,(MethodInfo *)0x0);
+                        (KogamaControls__Enum_MoveForward,KeyState__Enum_Down,(MethodInfo *)0x0);
       if (bVar2 != 0) {
-        (this->fields).lastMovement = KVar1;
+        (this->fields).lastMovement = iVar7;
         fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_realtimeSinceStartup
                           ((MethodInfo *)0x0);
         (this->fields).timer = fVar3;
         return;
       }
-      pKVar7 = pKVar7 + 1;
     }
   }
   else {
@@ -85,14 +82,12 @@ code_?:
     bVar2 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
                       (KVar1,KeyState__Enum_Pressed,(MethodInfo *)0x0);
     if (bVar2 == 0) {
-      pKVar4 = (this->fields).movementControls;
-      uVar5 = 0;
       (this->fields).doubleTap = 0;
+      uVar5 = 0;
+      pKVar4 = (this->fields).movementControls;
       if (pKVar4 == (KogamaControls__Enum__Array *)0x0) goto code_?;
-      pKVar7 = pKVar4->vector;
       for (; (int)uVar5 < (int)pKVar4->max_length; uVar5 = uVar5 + 1) {
         if (pKVar4->max_length <= uVar5) goto code_?;
-        KVar1 = *pKVar7;
         if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__MVInputWrapper);
         }
@@ -103,15 +98,15 @@ code_?:
         if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__MVInputWrapper);
         }
-        pKVar4 = (KogamaControls__Enum__Array *)0x0;
+        iVar7 = 0;
         bVar2 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
-                          (KVar1,KeyState__Enum_Pressed,(MethodInfo *)0x0);
+                          (KogamaControls__Enum_MoveForward,KeyState__Enum_Pressed,(MethodInfo *)0x0
+                          );
         if (bVar2 != 0) {
-          (this->fields).lastMovement = KVar1;
+          (this->fields).lastMovement = iVar7;
           (this->fields).doubleTap = 1;
           return;
         }
-        pKVar7 = pKVar7 + 1;
       }
     }
   }
@@ -135,7 +130,7 @@ void Assembly-CSharp.dll::DoubleTapMovementChecker::DoubleTapMovementChecker__ct
             ((Array *)array,__22F9E13B351DD0E6242C73AA96EAE83BAF7713684B5E8493CCED630DF6E47F09_Field
              ,(MethodInfo *)0x0);
   method_00 = (MethodInfo *)&this->fields;
-  (this->fields).movementControls = array;
+  ((DoubleTapMovementChecker__Fields *)method_00)->movementControls = array;
   func_?(method_00,array);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);

@@ -17,11 +17,11 @@ bool Assembly-CSharp.dll::TeleportAvatar+<DoForSeconds>d__14::
   else if (iVar1 != 1) {
     return 0;
   }
-  fVar2 = (this->fields).duration;
-  pfVar3 = &(this->fields)._t_5__2;
+  fVar2 = (this->fields)._t_5__2;
+  fVar3 = (this->fields).duration;
   pTVar4 = (this->fields).body;
   (this->fields).__1__state = -1;
-  if (fVar2 < *pfVar3 || fVar2 == *pfVar3) {
+  if (fVar3 <= fVar2) {
     if (pTVar4 != (TeleportAvatar_ActionDelegate *)0x0) {
       (*(pTVar4->fields)._._.invoke_impl)
                 ((pTVar4->fields)._._.method_code,0x3f800000,(pTVar4->fields)._._.method);
@@ -30,15 +30,15 @@ bool Assembly-CSharp.dll::TeleportAvatar+<DoForSeconds>d__14::
   }
   else if (pTVar4 != (TeleportAvatar_ActionDelegate *)0x0) {
     (*(pTVar4->fields)._._.invoke_impl)
-              ((pTVar4->fields)._._.method_code,(this->fields)._t_5__2 / (this->fields).duration,
-               (pTVar4->fields)._._.method);
+              ((pTVar4->fields)._._.method_code,fVar2 / fVar3,(pTVar4->fields)._._.method);
     fVar2 = (this->fields)._t_5__2;
-    fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    uStack_6 = 0;
-    (this->fields)._t_5__2 = fVar5 + fVar2;
-    pOVar7 = (Object *)func_?(TypeInfo__System__Int32,&uStack_6);
-    (this->fields).__2__current = pOVar7;
-    func_?(&(this->fields).__2__current,pOVar7);
+    fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+    uStack_5 = 0;
+    (this->fields)._t_5__2 = fVar3 + fVar2;
+    pOVar6 = (Object *)func_?(TypeInfo__System__Int32,&uStack_5);
+    ppOVar7 = &(this->fields).__2__current;
+    *ppOVar7 = pOVar6;
+    func_?(ppOVar7,pOVar6);
     (this->fields).__1__state = 1;
     return 1;
   }

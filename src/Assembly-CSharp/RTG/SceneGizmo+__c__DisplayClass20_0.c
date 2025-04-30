@@ -24,12 +24,12 @@ int32_t Assembly-CSharp.dll::RTG::SceneGizmo+<>c__DisplayClass20_0::
       uVar11 = (this->fields).cameraPos.y;
       fVar12 = pVVar2->z - (this->fields).cameraPos.z;
       SStack_13.m_value =
-           ((float)uVar8 - (float)uVar10) * ((float)uVar8 - (float)uVar10) +
-           ((float)uVar9 - (float)uVar11) * ((float)uVar9 - (float)uVar11) + fVar12 * fVar12;
+           ((float)uVar9 - (float)uVar11) * ((float)uVar9 - (float)uVar11) +
+           ((float)uVar8 - (float)uVar10) * ((float)uVar8 - (float)uVar10) + fVar12 * fVar12;
       iVar14 = mscorlib.dll::System::Single::Single_CompareTo_1
                          (&SStack_13,
-                          ((float)uVar3 - (float)uVar5) * ((float)uVar3 - (float)uVar5) +
                           ((float)uVar4 - (float)uVar6) * ((float)uVar4 - (float)uVar6) +
+                          ((float)uVar3 - (float)uVar5) * ((float)uVar3 - (float)uVar5) +
                           fVar7 * fVar7,(MethodInfo *)0x0);
       return iVar14;
     }

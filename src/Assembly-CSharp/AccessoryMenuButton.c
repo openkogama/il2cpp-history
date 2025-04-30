@@ -169,8 +169,9 @@ code_?:
                               AccessoryPreviewPopup_MethodInfo__UnityEngine__Object__Instantiate<AccessoryPreviewPopup>_AccessoryPreviewPopup_
                              );
           if (pOVar1 != (Object *)0x0) {
-            pOVar1[1].klass = pOVar7;
-            func_?(pOVar1 + 1,pOVar7);
+            pOVar8 = pOVar1 + 1;
+            pOVar8->klass = pOVar7;
+            func_?(pOVar8,pOVar7);
             pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                                ((Component *)this,(MethodInfo *)0x0);
             pEVar4 = (ExecuteEvents_EventFunction_1_System_Object_ *)
@@ -191,9 +192,9 @@ code_?:
                       (pGVar3,(BaseEventData *)0x0,pEVar4,
                        UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                       );
-            if (pOVar1[1].klass != (Object__Class *)0x0) {
+            if (pOVar8->klass != (Object__Class *)0x0) {
               AccessoryPreviewPopup::AccessoryPreviewPopup_Initialize
-                        ((AccessoryPreviewPopup *)pOVar1[1].klass,previewedAccessories,
+                        ((AccessoryPreviewPopup *)pOVar8->klass,previewedAccessories,
                          (MethodInfo *)0x0);
               return;
             }
@@ -682,8 +683,7 @@ void Assembly-CSharp.dll::AccessoryMenuButton::AccessoryMenuButton_Start
         pMVar6 = TypeInfo__MVGameControllerBase->static_fields->instance;
         if (pMVar6 != (MVGameControllerBase *)0x0) {
           if ((pMVar6->fields).onJoinStateChanged != (Action_1_MVJoinState_ *)0x0) {
-            (*(((TypeInfo__MVGameControllerBase->static_fields->instance->fields).onJoinStateChanged
-               )->fields)._._.invoke_impl)();
+            (*(((pMVar6->fields).onJoinStateChanged)->fields)._._.invoke_impl)();
           }
           return;
         }

@@ -20,6 +20,7 @@ void Assembly-CSharp.dll::TestItem::TestItem_Initialize
     if (pIVar2 != (InventoryItemMetaData *)0x0) {
       (pIVar2->fields).slotIndex = slotIndex;
       pPVar3 = (this->fields).previewObject;
+      ppPVar4 = &(this->fields).previewObject;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
@@ -28,20 +29,19 @@ void Assembly-CSharp.dll::TestItem::TestItem_Initialize
                          ((Object *)pPVar3,
                           PreviewObject_MethodInfo__UnityEngine__Object__Instantiate<PreviewObject>_PreviewObject_
                          );
-      (this->fields).previewObject = pPVar3;
-      func_?(&(this->fields).previewObject,pPVar3);
-      pPVar3 = (this->fields).previewObject;
-      if ((pPVar3 != (PreviewObject *)0x0) &&
+      *ppPVar4 = pPVar3;
+      func_?(ppPVar4,pPVar3);
+      if ((*ppPVar4 != (PreviewObject *)0x0) &&
          (this_00 = (this->fields).image, this_00 != (RawImage *)0x0)) {
         UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
-                  (this_00,(Texture *)(pPVar3->fields).renderTexture,(MethodInfo *)0x0);
+                  (this_00,(Texture *)((*ppPVar4)->fields).renderTexture,(MethodInfo *)0x0);
         return;
       }
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

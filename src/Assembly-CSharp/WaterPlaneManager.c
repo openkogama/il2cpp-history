@@ -11,6 +11,7 @@ void Assembly-CSharp.dll::WaterPlaneManager::WaterPlaneManager_AddWaterPlaneLogi
     func_?(&StringLiteral_Added_water_plane_to_manager_twi);
     cRam_? = '\x01';
   }
+  ppMVar1 = &(this->fields).waterPlaneLogicCube;
   if ((this->fields).waterPlaneLogicCube != (MVWaterPlane *)0x0) {
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
@@ -18,92 +19,92 @@ void Assembly-CSharp.dll::WaterPlaneManager::WaterPlaneManager_AddWaterPlaneLogi
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
               ((Object *)StringLiteral_Added_water_plane_to_manager_twi,(MethodInfo *)0x0);
   }
-  (this->fields).waterPlaneLogicCube = logicCube;
-  func_?(&(this->fields).waterPlaneLogicCube,logicCube);
-  pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+  *ppMVar1 = logicCube;
+  func_?(ppMVar1,logicCube);
+  pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                      ((Component *)this,(MethodInfo *)0x0);
-  if ((logicCube != (MVWaterPlane *)0x0) && (pTVar1 != (Transform *)0x0)) {
+  if ((logicCube != (MVWaterPlane *)0x0) && (pTVar2 != (Transform *)0x0)) {
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-              (pTVar1,(logicCube->fields)._._.transform,0,(MethodInfo *)0x0);
-    pTVar1 = (this->fields).underwaterCameraPlane;
-    if (pTVar1 != (Transform *)0x0) {
-      pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                         ((Component *)pTVar1,(MethodInfo *)0x0);
-      pCVar2 = (this->fields).mainCamera;
-      if (pCVar2 != (Camera *)0x0) {
+              (pTVar2,(logicCube->fields)._._.transform,0,(MethodInfo *)0x0);
+    pTVar2 = (this->fields).underwaterCameraPlane;
+    if (pTVar2 != (Transform *)0x0) {
+      pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                         ((Component *)pTVar2,(MethodInfo *)0x0);
+      pCVar3 = (this->fields).mainCamera;
+      if (pCVar3 != (Camera *)0x0) {
         parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                           ((Component *)pCVar2,(MethodInfo *)0x0);
-        if (pTVar1 != (Transform *)0x0) {
+                           ((Component *)pCVar3,(MethodInfo *)0x0);
+        if (pTVar2 != (Transform *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                    (pTVar1,parent,0,(MethodInfo *)0x0);
-          pCVar2 = (this->fields).mainCamera;
-          pTVar1 = (this->fields).underwaterCameraPlane;
-          if (pCVar2 != (Camera *)0x0) {
-            puStack_3 = (undefined *)0x0;
+                    (pTVar2,parent,0,(MethodInfo *)0x0);
+          pCVar3 = (this->fields).mainCamera;
+          pTVar2 = (this->fields).underwaterCameraPlane;
+          if (pCVar3 != (Camera *)0x0) {
             fVar4 = 0.0;
-            fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_nearClipPlane
-                              (pCVar2,(MethodInfo *)0x0);
-            if (pTVar1 != (Transform *)0x0) {
-              value.y = fVar4;
-              value.x = (float)puStack_3;
-              value.z = fVar5 + _UNK_?;
+            fVar5 = 0.0;
+            fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_nearClipPlane
+                               (pCVar3,(MethodInfo *)0x0);
+            if (pTVar2 != (Transform *)0x0) {
+              value.y = fVar5;
+              value.x = fVar4;
+              value.z = fVar6 + _UNK_?;
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                        (pTVar1,value,(MethodInfo *)0x0);
-              pTVar1 = (this->fields).underwaterCameraPlane;
+                        (pTVar2,value,(MethodInfo *)0x0);
+              pTVar2 = (this->fields).underwaterCameraPlane;
               euler.y = 0.0;
               euler.z = 0.0;
               euler.x = (float)_UNK_?;
-              pQVar6 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
+              pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
                        Quaternion_Internal_FromEulerRad
-                                 ((Quaternion *)&stack0xffffffec,euler,(MethodInfo *)0x0);
-              if (pTVar1 != (Transform *)0x0) {
+                                 ((Quaternion *)&puStack_8,euler,(MethodInfo *)0x0);
+              if (pTVar2 != (Transform *)0x0) {
                 UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
-                          (pTVar1,*pQVar6,(MethodInfo *)0x0);
-                pTVar1 = (this->fields).underwaterCameraPlane;
-                if (pTVar1 != (Transform *)0x0) {
-                  pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                           Component_get_gameObject((Component *)pTVar1,(MethodInfo *)0x0);
-                  if (pGVar7 != (GameObject *)0x0) {
+                          (pTVar2,*pQVar7,(MethodInfo *)0x0);
+                pTVar2 = (this->fields).underwaterCameraPlane;
+                if (pTVar2 != (Transform *)0x0) {
+                  pGVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                           Component_get_gameObject((Component *)pTVar2,(MethodInfo *)0x0);
+                  if (pGVar9 != (GameObject *)0x0) {
                     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                              (pGVar7,1,(MethodInfo *)0x0);
-                    pWVar8 = (this->fields).water;
-                    if (pWVar8 != (Water *)0x0) {
-                      pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                               Component_get_gameObject((Component *)pWVar8,(MethodInfo *)0x0);
-                      if (pGVar7 != (GameObject *)0x0) {
+                              (pGVar9,1,(MethodInfo *)0x0);
+                    pWVar10 = (this->fields).water;
+                    if (pWVar10 != (Water *)0x0) {
+                      pGVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                               Component_get_gameObject((Component *)pWVar10,(MethodInfo *)0x0);
+                      if (pGVar9 != (GameObject *)0x0) {
                         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                                  (pGVar7,1,(MethodInfo *)0x0);
-                        pWVar8 = (this->fields).water;
+                                  (pGVar9,1,(MethodInfo *)0x0);
+                        pWVar10 = (this->fields).water;
                         if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1)
                             .cctor_finished_or_no_cctor == 0) {
-                          ppPStack9 =
+                          ppPStack11 =
                                (ProfileSettingsManager__Class **)
                                TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager;
                           func_?();
                         }
                         if (cRam_? == '\0') {
-                          ppPStack9 =
+                          ppPStack11 =
                                &TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager;
                           func_?();
                           cRam_? = '\x01';
                         }
                         if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1)
                             .cctor_finished_or_no_cctor == 0) {
-                          ppPStack9 =
+                          ppPStack11 =
                                (ProfileSettingsManager__Class **)
                                TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager;
                           func_?();
                         }
-                        iVar10 = TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->
+                        iVar12 = TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->
                                 static_fields->_LightQualityLevel_k__BackingField;
-                        if ((iVar10 == 0) || ((iVar10 != 1 && (iVar10 != 2)))) {
-                          iVar11 = 0;
+                        if ((iVar12 == 0) || ((iVar12 != 1 && (iVar12 != 2)))) {
+                          iVar13 = 0;
                         }
                         else {
-                          iVar11 = 1;
+                          iVar13 = 1;
                         }
-                        if (pWVar8 != (Water *)0x0) {
-                          (pWVar8->fields).waterMode = iVar11;
+                        if (pWVar10 != (Water *)0x0) {
+                          (pWVar10->fields).waterMode = iVar13;
                           return;
                         }
                       }
@@ -118,8 +119,8 @@ void Assembly-CSharp.dll::WaterPlaneManager::WaterPlaneManager_AddWaterPlaneLogi
     }
   }
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -134,8 +135,8 @@ void Assembly-CSharp.dll::WaterPlaneManager::WaterPlaneManager_Awake
   pSVar2 = (this->fields).splashController;
   if ((pSVar2 != (SplashController *)0x0) &&
      (pSVar3 = (pSVar2->fields).streamedSplashSound, pSVar3 != (StreamedAudioClip *)0x0)) {
-    (pSVar3->fields).receiver = (StreamedAudioClip_IReceiver *)pSVar2;
     ppSStack_1 = &(pSVar3->fields).receiver;
+    *ppSStack_1 = (StreamedAudioClip_IReceiver *)pSVar2;
     func_?();
     return;
   }
@@ -460,41 +461,42 @@ void Assembly-CSharp.dll::WaterPlaneManager::WaterPlaneManager_RemoveWaterPlaneL
                (WaterPlaneManager *this,MVWaterPlane *wp,MethodInfo *method)
 
 {
-  (this->fields).waterPlaneLogicCube = (MVWaterPlane *)0x0;
-  func_?(&(this->fields).waterPlaneLogicCube,0);
-  pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+  ppMVar1 = &(this->fields).waterPlaneLogicCube;
+  *ppMVar1 = (MVWaterPlane *)0x0;
+  func_?(ppMVar1,0);
+  pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                      ((Component *)this,(MethodInfo *)0x0);
-  if (pTVar1 != (Transform *)0x0) {
+  if (pTVar2 != (Transform *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-              (pTVar1,(Transform *)0x0,0,(MethodInfo *)0x0);
-    pTVar1 = (this->fields).underwaterCameraPlane;
-    if (pTVar1 != (Transform *)0x0) {
-      pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                         ((Component *)pTVar1,(MethodInfo *)0x0);
+              (pTVar2,(Transform *)0x0,0,(MethodInfo *)0x0);
+    pTVar2 = (this->fields).underwaterCameraPlane;
+    if (pTVar2 != (Transform *)0x0) {
+      pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                         ((Component *)pTVar2,(MethodInfo *)0x0);
       value = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                         ((Component *)this,(MethodInfo *)0x0);
-      if (pTVar1 != (Transform *)0x0) {
+      if (pTVar2 != (Transform *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
-                  (pTVar1,value,(MethodInfo *)0x0);
-        pTVar1 = (this->fields).underwaterCameraPlane;
-        if (pTVar1 != (Transform *)0x0) {
-          pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                             ((Component *)pTVar1,(MethodInfo *)0x0);
-          if (pGVar2 != (GameObject *)0x0) {
+                  (pTVar2,value,(MethodInfo *)0x0);
+        pTVar2 = (this->fields).underwaterCameraPlane;
+        if (pTVar2 != (Transform *)0x0) {
+          pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                             ((Component *)pTVar2,(MethodInfo *)0x0);
+          if (pGVar3 != (GameObject *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                      (pGVar2,0,(MethodInfo *)0x0);
+                      (pGVar3,0,(MethodInfo *)0x0);
             this_00 = (this->fields).water;
             if (this_00 != (Water *)0x0) {
-              pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+              pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                                  ((Component *)this_00,(MethodInfo *)0x0);
-              if (pGVar2 != (GameObject *)0x0) {
+              if (pGVar3 != (GameObject *)0x0) {
                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                          (pGVar2,0,(MethodInfo *)0x0);
+                          (pGVar3,0,(MethodInfo *)0x0);
                 UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
                           ((Behaviour *)this,1,(MethodInfo *)0x0);
-                pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                          Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-                if (pGVar2 != (GameObject *)0x0) {
+                if (pGVar3 != (GameObject *)0x0) {
                   if (pcRam_? == (code *)0x0) {
                     pcRam_? = (code *)func_?();
                   }
@@ -509,8 +511,8 @@ void Assembly-CSharp.dll::WaterPlaneManager::WaterPlaneManager_RemoveWaterPlaneL
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -536,103 +538,9 @@ void Assembly-CSharp.dll::WaterPlaneManager::WaterPlaneManager_Start
     cRam_? = '\x01';
   }
   pSVar1 = MVGameControllerBase::MVGameControllerBase_get_SkyboxManager((MethodInfo *)0x0);
-  (this->fields).skyboxManager = pSVar1;
-  func_?(&(this->fields).skyboxManager,pSVar1);
-  pSVar1 = (this->fields).skyboxManager;
-  if (pSVar1 == (SkyboxManager *)0x0) {
-code_?:
-    func_?();
-  }
-  else {
-    pSVar2 = (pSVar1->fields).OnSkyboxColorChanged;
-    this_01 = (UnityAction_1_UnityEngine_Color_ *)
-              func_?(TypeInfo__SkyboxManager__SkyboxColorChangedDelegate);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Color]::
-    UnityAction_1_UnityEngine_Color___ctor
-              (this_01,(Object *)this,
-               MethodInfo__WaterPlaneManager__HandleSkyboxColorChanged_UnityEngine__Color_,
-               (MethodInfo *)0x0);
-    pSVar2 = (SkyboxManager_SkyboxColorChangedDelegate *)
-             mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pSVar2,(Delegate *)this_01,(MethodInfo *)0x0);
-    if (pSVar2 == (SkyboxManager_SkyboxColorChangedDelegate *)0x0) {
-      (pSVar1->fields).OnSkyboxColorChanged = (SkyboxManager_SkyboxColorChangedDelegate *)0x0;
-code_?:
-      func_?();
-      pTVar3 = (this->fields).underwaterCameraPlane;
-      if (pTVar3 != (Transform *)0x0) {
-        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)pTVar3,(MethodInfo *)0x0);
-        if (pGVar4 != (GameObject *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar4,0,(MethodInfo *)0x0);
-          pTVar3 = (this->fields).underwaterCameraPlane;
-          if (pTVar3 != (Transform *)0x0) {
-            pRVar5 = (Renderer *)
-                     UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
-                               ((Component *)pTVar3,
-                                UnityEngine__Renderer_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Renderer>__
-                               );
-            (this->fields).underwaterCameraPlaneRenderer = pRVar5;
-            func_?(&(this->fields).underwaterCameraPlaneRenderer,pRVar5);
-            this_00 = (this->fields).water;
-            if (this_00 != (Water *)0x0) {
-              pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                 ((Component *)this_00,(MethodInfo *)0x0);
-              if (pGVar4 != (GameObject *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                          (pGVar4,0,(MethodInfo *)0x0);
-                pCVar6 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main
-                                   ((MethodInfo *)0x0);
-                (this->fields).mainCamera = pCVar6;
-                func_?(&(this->fields).mainCamera,pCVar6);
-                pCVar6 = (this->fields).mainCamera;
-                if (pCVar6 != (Camera *)0x0) {
-                  pAVar7 = (AudioLowPassFilter *)
-                           UnityEngine.CoreModule.dll::UnityEngine::Component::
-                           Component_GetComponent_1
-                                     ((Component *)pCVar6,
-                                      UnityEngine__AudioLowPassFilter_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::AudioLowPassFilter>__
-                                     );
-                  (this->fields).lowPassFilter = pAVar7;
-                  func_?(&(this->fields).lowPassFilter,pAVar7);
-                  pCVar6 = (this->fields).mainCamera;
-                  if (pCVar6 != (Camera *)0x0) {
-                    pAVar8 = (AudioReverbFilter *)
-                             UnityEngine.CoreModule.dll::UnityEngine::Component::
-                             Component_GetComponent_1
-                                       ((Component *)pCVar6,
-                                        UnityEngine__AudioReverbFilter_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::AudioReverbFilter>__
-                                       );
-                    (this->fields).reverbFilter = pAVar8;
-                    func_?(&(this->fields).reverbFilter,pAVar8);
-                    return;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-      goto code_?;
-    }
-    pSVar9 = (SkyboxManager_SkyboxColorChangedDelegate *)0x0;
-    if (pSVar2->klass == TypeInfo__SkyboxManager__SkyboxColorChangedDelegate) {
-      pSVar9 = pSVar2;
-    }
-    if (pSVar9 == (SkyboxManager_SkyboxColorChangedDelegate *)0x0) goto code_?;
-    (pSVar1->fields).OnSkyboxColorChanged = pSVar9;
-    pSVar9 = (SkyboxManager_SkyboxColorChangedDelegate *)0x0;
-    if (pSVar2->klass == TypeInfo__SkyboxManager__SkyboxColorChangedDelegate) {
-      pSVar9 = pSVar2;
-    }
-    if (pSVar9 != (SkyboxManager_SkyboxColorChangedDelegate *)0x0) goto code_?;
-  }
-  func_?();
-code_?:
-  func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  ppSVar2 = &(this->fields).skyboxManager;
+  *ppSVar2 = pSVar1;
+  func_?(ppSVar2,&stack0xfffffffc,&UNK_?,ppSVar2,pSVar1);
   return;
 }
 
@@ -726,91 +634,91 @@ void Assembly-CSharp.dll::WaterPlaneManager::WaterPlaneManager_UpdateUnderwaterC
   pCVar1 = (this->fields).mainCamera;
   if ((pCVar1 != (Camera *)0x0) &&
      (pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                         ((Component *)pCVar1,(MethodInfo *)0x0), pTVar2 != (Transform *)0x0)) {
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-              ((Vector3 *)&stack0xfffffff0,pTVar2,(MethodInfo *)0x0);
+                          ((Component *)pCVar1,(MethodInfo *)0x0), pTVar2 != (Transform *)0x0)) {
+    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                        ((Vector3 *)&puStack_4,pTVar2,(MethodInfo *)0x0);
+    fVar5 = pVVar3->y;
     pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                       ((Component *)this,(MethodInfo *)0x0);
+                        ((Component *)this,(MethodInfo *)0x0);
     if (pTVar2 != (Transform *)0x0) {
       pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                         ((Vector3 *)&stack0xfffffff0,pTVar2,(MethodInfo *)0x0);
-      pWVar4 = (this->fields).water;
-      fVar5 = pVVar3->y;
-      if (pWVar4 != (Water *)0x0) {
-        (pWVar4->fields).isCameraAboveWater = fVar5 <= unaff_EBX;
-        pRVar6 = (this->fields).underwaterCameraPlaneRenderer;
-        if (pRVar6 != (Renderer *)0x0) {
+                          ((Vector3 *)&puStack_4,pTVar2,(MethodInfo *)0x0);
+      pWVar6 = (this->fields).water;
+      fVar7 = pVVar3->y;
+      if (pWVar6 != (Water *)0x0) {
+        (pWVar6->fields).isCameraAboveWater = fVar7 <= fVar5;
+        pRVar8 = (this->fields).underwaterCameraPlaneRenderer;
+        if (pRVar8 != (Renderer *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
-                    (pRVar6,unaff_EBX < fVar5,(MethodInfo *)0x0);
-          pRVar6 = (this->fields).underwaterCameraPlaneRenderer;
-          if (pRVar6 != (Renderer *)0x0) {
-            bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_enabled
-                              (pRVar6,(MethodInfo *)0x0);
-            if (bVar7 != 0) {
-              pRVar6 = (this->fields).underwaterCameraPlaneRenderer;
-              if (pRVar6 == (Renderer *)0x0) goto code_?;
+                    (pRVar8,fVar5 < fVar7,(MethodInfo *)0x0);
+          pRVar8 = (this->fields).underwaterCameraPlaneRenderer;
+          if (pRVar8 != (Renderer *)0x0) {
+            bVar9 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_enabled
+                              (pRVar8,(MethodInfo *)0x0);
+            if (bVar9 != 0) {
+              pRVar8 = (this->fields).underwaterCameraPlaneRenderer;
+              if (pRVar8 == (Renderer *)0x0) goto code_?;
               this_00 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
-                                  (pRVar6,(MethodInfo *)0x0);
+                                  (pRVar8,(MethodInfo *)0x0);
               pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                 ((Component *)this,(MethodInfo *)0x0);
+                                  ((Component *)this,(MethodInfo *)0x0);
               if (pTVar2 == (Transform *)0x0) goto code_?;
               pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                                 ((Vector3 *)&stack0xfffffff0,pTVar2,(MethodInfo *)0x0);
+                                  ((Vector3 *)&puStack_4,pTVar2,(MethodInfo *)0x0);
               if (this_00 == (Material *)0x0) goto code_?;
               UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetFloat
                         (this_00,StringLiteral__WaterY,pVVar3->y,(MethodInfo *)0x0);
             }
-            pAVar8 = (this->fields).lowPassFilter;
+            pAVar10 = (this->fields).lowPassFilter;
+            ppAVar11 = &(this->fields).lowPassFilter;
             if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
               func_?(TypeInfo__UnityEngine__Object);
             }
-            bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                              ((Object_1 *)pAVar8,(Object_1 *)0x0,(MethodInfo *)0x0);
-            if (bVar7 != 0) {
+            bVar9 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                              ((Object_1 *)pAVar10,(Object_1 *)0x0,(MethodInfo *)0x0);
+            if (bVar9 != 0) {
               pCVar1 = (this->fields).mainCamera;
               if (pCVar1 == (Camera *)0x0) goto code_?;
-              pAVar8 = (AudioLowPassFilter *)
+              pAVar10 = (AudioLowPassFilter *)
                         UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
                                   ((Component *)pCVar1,
                                    UnityEngine__AudioLowPassFilter_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::AudioLowPassFilter>__
                                   );
-              (this->fields).lowPassFilter = pAVar8;
-              func_?(&(this->fields).lowPassFilter,pAVar8);
+              *ppAVar11 = pAVar10;
+              func_?(ppAVar11,pAVar10);
             }
-            pAVar8 = (this->fields).lowPassFilter;
-            if (fVar5 <= unaff_EBX) {
-              if (pAVar8 != (AudioLowPassFilter *)0x0) {
-                bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_get_enabled
-                                  ((Behaviour *)pAVar8,(MethodInfo *)0x0);
-                if (bVar7 == 0) {
+            pAVar10 = *ppAVar11;
+            if (fVar7 <= fVar5) {
+              if (pAVar10 != (AudioLowPassFilter *)0x0) {
+                bVar9 = UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_get_enabled
+                                  ((Behaviour *)pAVar10,(MethodInfo *)0x0);
+                if (bVar9 == 0) {
                   return;
                 }
-                pAVar8 = (this->fields).lowPassFilter;
-                if (pAVar8 != (AudioLowPassFilter *)0x0) {
+                if (*ppAVar11 != (AudioLowPassFilter *)0x0) {
                   UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                            ((Behaviour *)pAVar8,0,(MethodInfo *)0x0);
-                  pAVar9 = (this->fields).reverbFilter;
-                  if (pAVar9 != (AudioReverbFilter *)0x0) {
+                            ((Behaviour *)*ppAVar11,0,(MethodInfo *)0x0);
+                  pAVar12 = (this->fields).reverbFilter;
+                  if (pAVar12 != (AudioReverbFilter *)0x0) {
                     UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                              ((Behaviour *)pAVar9,0,(MethodInfo *)0x0);
+                              ((Behaviour *)pAVar12,0,(MethodInfo *)0x0);
                     return;
                   }
                 }
               }
             }
-            else if (pAVar8 != (AudioLowPassFilter *)0x0) {
-              bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_get_enabled
-                                ((Behaviour *)pAVar8,(MethodInfo *)0x0);
-              if (bVar7 == 0) {
-                pAVar8 = (this->fields).lowPassFilter;
-                if (pAVar8 == (AudioLowPassFilter *)0x0) goto code_?;
+            else if (pAVar10 != (AudioLowPassFilter *)0x0) {
+              bVar9 = UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_get_enabled
+                                ((Behaviour *)pAVar10,(MethodInfo *)0x0);
+              if (bVar9 == 0) {
+                if (*ppAVar11 == (AudioLowPassFilter *)0x0) goto code_?;
                 UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                          ((Behaviour *)pAVar8,1,(MethodInfo *)0x0);
+                          ((Behaviour *)*ppAVar11,1,(MethodInfo *)0x0);
                 if ((this->fields).audioHD != 0) {
-                  pAVar9 = (this->fields).reverbFilter;
-                  if (pAVar9 == (AudioReverbFilter *)0x0) goto code_?;
+                  pAVar12 = (this->fields).reverbFilter;
+                  if (pAVar12 == (AudioReverbFilter *)0x0) goto code_?;
                   UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                            ((Behaviour *)pAVar9,1,(MethodInfo *)0x0);
+                            ((Behaviour *)pAVar12,1,(MethodInfo *)0x0);
                 }
               }
               return;
@@ -822,8 +730,8 @@ void Assembly-CSharp.dll::WaterPlaneManager::WaterPlaneManager_UpdateUnderwaterC
   }
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

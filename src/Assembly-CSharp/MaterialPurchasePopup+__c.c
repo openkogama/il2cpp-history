@@ -46,10 +46,9 @@ void Assembly-CSharp.dll::MaterialPurchasePopup+<>c::MaterialPurchasePopup_c__On
       do {
         if (pIVar1->interfaceOffsets[uVar2].interfaceType ==
             (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IModalPopupCreator) {
-          pIVar1 = x->klass;
           iVar4 = pIVar1->interfaceOffsets[uVar2].offset;
-          (*(code *)(&(pIVar1->vtable).Create_1)[iVar4].method)
-                    (x,(&(pIVar1->vtable).Create_2)[iVar4].methodPtr);
+          (*(code *)(&(x->klass->vtable).Create_1)[iVar4].method)
+                    (x,(&(x->klass->vtable).Create_2)[iVar4].methodPtr);
           return;
         }
         uVar2 = uVar2 + 1;

@@ -454,16 +454,19 @@ void Assembly-CSharp.dll::KoGaMaDataHandler::KoGaMaDataHandler_GetKoGaMaDataAsyn
     (value->fields).workTime = 1.0;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
               ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-    (value->fields).bp = bp;
-    func_?(&(value->fields).bp,bp);
-    (value->fields).callBack = callBack;
-    func_?(&(value->fields).callBack,callBack);
+    ppBVar2 = &(value->fields).bp;
+    *ppBVar2 = bp;
+    func_?(ppBVar2,bp);
+    ppUVar3 = &(value->fields).callBack;
+    *ppUVar3 = callBack;
+    func_?(ppUVar3,callBack);
+    ppUVar4 = &(value->fields).doneCallback;
     (value->fields).readRuntimeData = readRuntimeData;
-    (value->fields).doneCallback = doneCallback;
-    func_?(&(value->fields).doneCallback,doneCallback);
-    fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_realtimeSinceStartup
+    *ppUVar4 = doneCallback;
+    func_?(ppUVar4,doneCallback);
+    fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_realtimeSinceStartup
                       ((MethodInfo *)0x0);
-    (value->fields).workStartTime = fVar2;
+    (value->fields).workStartTime = fVar5;
     TypeInfo__KoGaMaDataHandler->static_fields->asyncBookkeeping = value;
     func_?(TypeInfo__KoGaMaDataHandler->static_fields,value);
     KoGaMaDataHandler_Execute((MethodInfo *)0x0);
@@ -576,9 +579,8 @@ bool Assembly-CSharp.dll::KoGaMaDataHandler::KoGaMaDataHandler_GetLinksAsync(Met
         pKVar1 = TypeInfo__KoGaMaDataHandler->static_fields->asyncBookkeeping;
         if (pKVar1 == (KoGaMaDataHandler_AsyncBookkeeping *)0x0) break;
         pBVar2 = (pKVar1->fields).bp;
-        pUVar4 = (TypeInfo__KoGaMaDataHandler->static_fields->asyncBookkeeping->fields).callBack;
-        bVar5 = (TypeInfo__KoGaMaDataHandler->static_fields->asyncBookkeeping->fields).
-                readRuntimeData;
+        pUVar4 = (pKVar1->fields).callBack;
+        bVar5 = (pKVar1->fields).readRuntimeData;
         if (cRam_? == '\0') {
           func_?(&TypeInfo__KoGaMaDataHandler);
           cRam_? = '\x01';
@@ -720,9 +722,8 @@ bool Assembly-CSharp.dll::KoGaMaDataHandler::KoGaMaDataHandler_GetObjectLinksAsy
         pKVar1 = TypeInfo__KoGaMaDataHandler->static_fields->asyncBookkeeping;
         if (pKVar1 == (KoGaMaDataHandler_AsyncBookkeeping *)0x0) break;
         pBVar2 = (pKVar1->fields).bp;
-        pUVar4 = (TypeInfo__KoGaMaDataHandler->static_fields->asyncBookkeeping->fields).callBack;
-        bVar5 = (TypeInfo__KoGaMaDataHandler->static_fields->asyncBookkeeping->fields).
-                readRuntimeData;
+        pUVar4 = (pKVar1->fields).callBack;
+        bVar5 = (pKVar1->fields).readRuntimeData;
         if (cRam_? == '\0') {
           func_?(&TypeInfo__KoGaMaDataHandler);
           cRam_? = '\x01';
@@ -864,7 +865,7 @@ bool Assembly-CSharp.dll::KoGaMaDataHandler::KoGaMaDataHandler_GetPrototypeDataA
         pKVar1 = TypeInfo__KoGaMaDataHandler->static_fields->asyncBookkeeping;
         if (pKVar1 == (KoGaMaDataHandler_AsyncBookkeeping *)0x0) break;
         pBVar2 = (pKVar1->fields).bp;
-        pUVar4 = (TypeInfo__KoGaMaDataHandler->static_fields->asyncBookkeeping->fields).callBack;
+        pUVar4 = (pKVar1->fields).callBack;
         if (cRam_? == '\0') {
           func_?(&TypeInfo__KoGaMaDataHandler);
           cRam_? = '\x01';
@@ -1038,8 +1039,7 @@ bool Assembly-CSharp.dll::KoGaMaDataHandler::KoGaMaDataHandler_GetWorldObjectDat
         if (pKVar1 == (KoGaMaDataHandler_AsyncBookkeeping *)0x0) break;
         iVar3 = KoGaMaDataHandler_DeserializeWorldObject
                           ((pKVar1->fields).bp,(pKVar1->fields).callBack,
-                           (TypeInfo__KoGaMaDataHandler->static_fields->asyncBookkeeping->fields).
-                           readRuntimeData,(MethodInfo *)0x0);
+                           (pKVar1->fields).readRuntimeData,(MethodInfo *)0x0);
         pKVar1 = TypeInfo__KoGaMaDataHandler->static_fields->asyncBookkeeping;
         if (pKVar1 == (KoGaMaDataHandler_AsyncBookkeeping *)0x0) break;
         if ((pKVar1->fields).rootId == -1) {

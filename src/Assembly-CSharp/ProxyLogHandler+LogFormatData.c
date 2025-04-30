@@ -17,13 +17,16 @@ void Assembly-CSharp.dll::ProxyLogHandler+LogFormatData::ProxyLogHandler_LogForm
   UxmlObjectListAttributeDescription`1[System::Object]::
   UxmlObjectListAttributeDescription_1_System_Object___ctor
             ((UxmlObjectListAttributeDescription_1_System_Object_ *)this,(MethodInfo *)0x0);
+  ppOVar1 = &(this->fields).context;
   (this->fields).LogType = logType;
-  (this->fields).context = context;
-  func_?(&(this->fields).context,context);
-  (this->fields).format = format;
-  func_?(&(this->fields).format,format);
-  (this->fields).args = args;
-  func_?(&(this->fields).args,args);
+  *ppOVar1 = context;
+  func_?(ppOVar1,context);
+  ppSVar2 = &(this->fields).format;
+  *ppSVar2 = format;
+  func_?(ppSVar2,format);
+  ppOVar3 = &(this->fields).args;
+  *ppOVar3 = args;
+  func_?(ppOVar3,args);
   return;
 }
 

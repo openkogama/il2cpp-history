@@ -13,20 +13,19 @@ int32_t Assembly-CSharp.dll::GamePassProgressionController::
   if (TypeInfo__GamePassProgressionController->static_fields->isInitialized == 0) {
     GamePassProgressionController_Initialize((MethodInfo *)0x0);
   }
-  if (TypeInfo__GamePassProgressionController->static_fields->progressionDataObject !=
-      (MVGamePassProgressionDataObject *)0x0) {
+  this = TypeInfo__GamePassProgressionController->static_fields->progressionDataObject;
+  if (this != (MVGamePassProgressionDataObject *)0x0) {
     pGVar1 = MVGamePassProgressionDataObject::
              MVGamePassProgressionDataObject_get_GamePassProgressionDataObjectShared
-                       (TypeInfo__GamePassProgressionController->static_fields->
-                        progressionDataObject,(MethodInfo *)0x0);
+                       (this,(MethodInfo *)0x0);
     if (((pGVar1 != (GamePassProgressionDataObjectShared *)0x0) &&
         (pGVar2 = (pGVar1->fields).xpTierRewards,
         pGVar2 != (GamePassProgressionDataObjectShared_XPTierRewards *)0x0)) &&
-       (this = (Dictionary_2_System_ByteEnum_System_Object_ *)(pGVar2->fields).xpTierRewards,
-       this != (Dictionary_2_System_ByteEnum_System_Object_ *)0x0)) {
+       (this_00 = (Dictionary_2_System_ByteEnum_System_Object_ *)(pGVar2->fields).xpTierRewards,
+       this_00 != (Dictionary_2_System_ByteEnum_System_Object_ *)0x0)) {
       pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
                Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                         (this,tier,
+                         (this_00,tier,
                           MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_int>__get_Item_MV__Common__GamePassTier_
                          );
       return (int32_t)pOVar3;
@@ -104,56 +103,59 @@ void Assembly-CSharp.dll::GamePassProgressionController::GamePassProgressionCont
     cRam_? = '\x01';
   }
   this = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  if (this != (MVWorldObjectClientManager *)0x0) {
-    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-              MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectsByType
-                        (this,WorldObjectType__Enum_GamePassProgressionDataObject,(MethodInfo *)0x0)
-    ;
-    if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-      if (0 < (this_00->fields)._size) {
-        RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
-                ::RegexCharClass+SingleRange]::
-                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                          (this_00,0,
-                           MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
-                          );
-        if (RVar1 == (RegexCharClass_SingleRange)0x0) {
-          TypeInfo__GamePassProgressionController->static_fields->progressionDataObject =
-               (MVGamePassProgressionDataObject *)0x0;
-        }
-        else {
-          pMStack2 = TypeInfo__MVGamePassProgressionDataObject;
-          if ((*(byte *)(*(int *)RVar1 + 0xb8) <
-               (TypeInfo__MVGamePassProgressionDataObject->_1).naturalAligment) ||
-             (*(MVGamePassProgressionDataObject__Class **)
-               (*(int *)(*(int *)RVar1 + 100) + -4 +
-               (uint)(TypeInfo__MVGamePassProgressionDataObject->_1).naturalAligment * 4) !=
-              TypeInfo__MVGamePassProgressionDataObject)) goto code_?;
-          TypeInfo__GamePassProgressionController->static_fields->progressionDataObject =
-               (MVGamePassProgressionDataObject *)RVar1;
-          pMStack2 = TypeInfo__MVGamePassProgressionDataObject;
-          if ((*(byte *)(*(int *)RVar1 + 0xb8) <
-               (TypeInfo__MVGamePassProgressionDataObject->_1).naturalAligment) ||
-             (*(MVGamePassProgressionDataObject__Class **)
-               (*(int *)(*(int *)RVar1 + 100) + -4 +
-               (uint)(TypeInfo__MVGamePassProgressionDataObject->_1).naturalAligment * 4) !=
-              TypeInfo__MVGamePassProgressionDataObject)) goto code_?;
-        }
-        pMStack2 =
-             (MVGamePassProgressionDataObject__Class *)
-             TypeInfo__GamePassProgressionController->static_fields;
-        func_?();
-      }
-      TypeInfo__GamePassProgressionController->static_fields->isInitialized = 1;
-      return;
-    }
+  if ((this == (MVWorldObjectClientManager *)0x0) ||
+     (this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectsByType
+                          (this,WorldObjectType__Enum_GamePassProgressionDataObject,
+                           (MethodInfo *)0x0),
+     this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)) {
+    func_?();
+    RStack1 = extraout_EDX;
+    RStack2 = (RegexCharClass_SingleRange)unaff_ESI;
+    goto code_?;
   }
-  func_?();
-  pMStack2 = unaff_ESI;
+  if (0 < (this_00->fields)._size) {
+    RStack1 =
+         mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+         RegexCharClass+SingleRange]::
+         List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                   (this_00,0,
+                    MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
+                   );
+    if (RStack1 == (RegexCharClass_SingleRange)0x0) {
+      TypeInfo__GamePassProgressionController->static_fields->progressionDataObject =
+           (MVGamePassProgressionDataObject *)0x0;
+      RStack1.First = 0;
+      RStack1.Last = 0;
+    }
+    else {
+      bVar3 = (TypeInfo__MVGamePassProgressionDataObject->_1).naturalAligment;
+      RStack2 = (RegexCharClass_SingleRange)TypeInfo__MVGamePassProgressionDataObject;
+      if ((*(byte *)(*(int *)RStack1 + 0xb8) < bVar3) ||
+         (*(MVGamePassProgressionDataObject__Class **)
+           (*(int *)(*(int *)RStack1 + 100) + -4 + (uint)bVar3 * 4) !=
+          TypeInfo__MVGamePassProgressionDataObject)) {
 code_?:
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+        func_?();
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
+      TypeInfo__GamePassProgressionController->static_fields->progressionDataObject =
+           (MVGamePassProgressionDataObject *)RStack1;
+      bVar3 = (TypeInfo__MVGamePassProgressionDataObject->_1).naturalAligment;
+      RStack2 = (RegexCharClass_SingleRange)TypeInfo__MVGamePassProgressionDataObject;
+      if ((*(byte *)(*(int *)RStack1 + 0xb8) < bVar3) ||
+         (*(MVGamePassProgressionDataObject__Class **)
+           (*(int *)(*(int *)RStack1 + 100) + -4 + (uint)bVar3 * 4) !=
+          TypeInfo__MVGamePassProgressionDataObject)) goto code_?;
+    }
+    RStack2 = RStack1;
+    RStack1 =
+         (RegexCharClass_SingleRange)TypeInfo__GamePassProgressionController->static_fields;
+    func_?();
+  }
+  TypeInfo__GamePassProgressionController->static_fields->isInitialized = 1;
   return;
 }
 
@@ -225,11 +227,10 @@ bool Assembly-CSharp.dll::GamePassProgressionController::
   if (TypeInfo__GamePassProgressionController->static_fields->isInitialized == 0) {
     GamePassProgressionController_Initialize((MethodInfo *)0x0);
   }
-  if (TypeInfo__GamePassProgressionController->static_fields->progressionDataObject !=
-      (MVGamePassProgressionDataObject *)0x0) {
+  this = TypeInfo__GamePassProgressionController->static_fields->progressionDataObject;
+  if (this != (MVGamePassProgressionDataObject *)0x0) {
     bVar1 = MVGamePassProgressionDataObject::MVGamePassProgressionDataObject_get_EnableProgression
-                      (TypeInfo__GamePassProgressionController->static_fields->progressionDataObject
-                       ,(MethodInfo *)0x0);
+                      (this,(MethodInfo *)0x0);
     return bVar1;
   }
   return 0;

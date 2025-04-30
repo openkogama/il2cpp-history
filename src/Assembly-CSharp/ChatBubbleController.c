@@ -172,19 +172,20 @@ code_?:
     Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
               (this_01,
                MethodInfo__System__Collections__Generic__Dictionary<int,_ChatBubble>__Dictionary__);
-    (this->fields).chatBubbleList = (Dictionary_2_System_Int32_ChatBubble_ *)this_01;
-    func_?(&(this->fields).chatBubbleList,this_01);
+    ppDVar3 = &(this->fields).chatBubbleList;
+    *ppDVar3 = (Dictionary_2_System_Int32_ChatBubble_ *)this_01;
+    func_?(ppDVar3,this_01);
     return;
   }
   pAVar1 = (Action_3_String_Int32_ChatAnchor_ *)func_?();
   if (pAVar1 != (Action_3_String_Int32_ChatAnchor_ *)0x0) {
     TypeInfo__ChatBubbleManager->static_fields->OnShowChatBubble = pAVar1;
-    iVar3 = func_?();
-    if (iVar3 != 0) goto code_?;
+    iVar4 = func_?();
+    if (iVar4 != 0) goto code_?;
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

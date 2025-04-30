@@ -51,20 +51,18 @@ void Assembly-CSharp.dll::ThemeSettings::SettingsSerialized::SettingsSerialized_
                           (in_stack_2 + 0x58),(Object *)StringLiteral_settings,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                         );
-      if ((value.m_Index != 0) &&
-         ((*(byte *)(*(int *)value.m_Index + 0xb8) <
-           (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-           naturalAligment ||
-          (*(Dictionary_2_System_Object_System_Object___Class **)
-            (*(int *)(*(int *)value.m_Index + 100) + -4 +
-            (uint)(
-                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                  ->_1).naturalAligment * 4) !=
-           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)))) {
-        func_?();
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
-        return;
+      if (value.m_Index != 0) {
+        bVar3 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                ->_1).naturalAligment;
+        if ((*(byte *)(*(int *)value.m_Index + 0xb8) < bVar3) ||
+           (*(Dictionary_2_System_Object_System_Object___Class **)
+             (*(int *)(*(int *)value.m_Index + 100) + -4 + (uint)bVar3 * 4) !=
+            TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
+          func_?();
+          pcVar4 = (code *)swi(3);
+          (*pcVar4)();
+          return;
+        }
       }
       if ((this_02 !=
            (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
@@ -83,10 +81,10 @@ void Assembly-CSharp.dll::ThemeSettings::SettingsSerialized::SettingsSerialized_
       }
     }
   }
-  uVar4 = func_?(&puStack_5);
-  func_?(uVar4);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  uVar5 = func_?(&puStack_6);
+  func_?(uVar5);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -111,27 +109,28 @@ void Assembly-CSharp.dll::ThemeSettings::SettingsSerialized::SettingsSerialized_
                        (this_00,woid,
                         WorldObjectClientRef<ThemeWorldObject>_MethodInfo__MVWorldObjectClientManager__GetWorldObjectClientRef<ThemeWorldObject>_int_
                        );
-    (this->fields).worldObjectRef = (WorldObjectClientRef_1_ThemeWorldObject_ *)pWVar1;
-    func_?(&(this->fields).worldObjectRef);
-    pWVar1 = (WorldObjectClientRef_1_System_Object_ *)(this->fields).worldObjectRef;
-    if (pWVar1 != (WorldObjectClientRef_1_System_Object_ *)0x0) {
+    ppWVar2 = &(this->fields).worldObjectRef;
+    *ppWVar2 = (WorldObjectClientRef_1_ThemeWorldObject_ *)pWVar1;
+    func_?(ppWVar2,pWVar1);
+    if ((WorldObjectClientRef_1_System_Object_ *)*ppWVar2 !=
+        (WorldObjectClientRef_1_System_Object_ *)0x0) {
       this_01 = (ThemeWorldObject *)
                 WorldObjectClientRef`1[System::Object]::
                 WorldObjectClientRef_1_System_Object__get_WorldObjectClient
-                          (pWVar1,
+                          ((WorldObjectClientRef_1_System_Object_ *)*ppWVar2,
                            MethodInfo__WorldObjectClientRef<ThemeWorldObject>__get_WorldObjectClient__
                           );
       if (this_01 != (ThemeWorldObject *)0x0) {
-        pDVar2 = ThemeWorldObject::ThemeWorldObject_get_SettingsData(this_01,(MethodInfo *)0x0);
-        (this->fields)._.settingsData = pDVar2;
+        pDVar3 = ThemeWorldObject::ThemeWorldObject_get_SettingsData(this_01,(MethodInfo *)0x0);
+        (this->fields)._.settingsData = pDVar3;
         func_?(&this->fields);
         return;
       }
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

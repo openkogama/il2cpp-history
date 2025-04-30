@@ -123,21 +123,22 @@ IntVector MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::
     cRam_? = '\x01';
   }
   pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
-  fVar2 = (pVVar1->oneVector).x;
-  fVar3 = (pVVar1->oneVector).y;
-  fVar4 = fVar2 * _UNK_?;
-  fVar5 = (pVVar1->oneVector).z * _UNK_?;
-  fVar6 = localPos.z + fVar3 * _UNK_?;
+  uVar2 = (pVVar1->oneVector).x;
+  uVar3 = (pVVar1->oneVector).y;
+  fVar4 = (float)method + (pVVar1->oneVector).z * _UNK_?;
+  fVar5 = localPos.y + (float)uVar2 * _UNK_?;
+  uVar6 = CONCAT44(localPos.z + (float)uVar3 * _UNK_?,fVar5);
   if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  fVar7 = (float10)func_?((double)(localPos.y + fVar4),fVar2,fVar3,fVar6);
-  fVar8 = (float10)func_?((double)fVar6);
-  fVar2 = (float)fVar8;
-  fVar8 = (float10)func_?((double)((float)method + fVar5));
-  *(short *)localPos.x = (short)(int)fVar7;
-  *(short *)((int)localPos.x + 2) = (short)(int)fVar2;
-  *(short *)((int)localPos.x + 4) = (short)(int)fVar8;
+  fVar7 = (float10)func_?((double)fVar5,uVar6,fVar4);
+  fVar5 = (float)fVar7;
+  fVar7 = (float10)func_?((double)(float)((ulonglong)uVar6 >> 0x20));
+  fVar8 = (float)fVar7;
+  fVar7 = (float10)func_?((double)fVar4);
+  *(short *)localPos.x = (short)(int)fVar5;
+  *(short *)((int)localPos.x + 2) = (short)(int)fVar8;
+  *(short *)((int)localPos.x + 4) = (short)(int)fVar7;
   IVar9.z = extraout_DX;
   IVar9._0_4_ = localPos.x;
   return IVar9;
@@ -162,8 +163,8 @@ IntVector MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::
   uVar2 = (pVVar1->oneVector).x;
   uVar3 = (pVVar1->oneVector).y;
   fVar4 = (float)uVar3 * _UNK_?;
-  fVar5 = (pVVar1->oneVector).z * _UNK_?;
-  fVar6 = (float)uVar2 * _UNK_? + worldPos.y;
+  fVar5 = (float)uVar2 * _UNK_? + worldPos.y;
+  method = (MethodInfo *)((pVVar1->oneVector).z * _UNK_? + (float)method);
   if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__Math);
   }
@@ -171,11 +172,11 @@ IntVector MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::
     func_?(&TypeInfo__System__Math);
     cRam_? = '\x01';
   }
-  dVar7 = (double)fVar6;
   if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__Math);
   }
-  mscorlib.dll::System::Math::Math_Round_5(dVar7,0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
+  mscorlib.dll::System::Math::Math_Round_5
+            ((double)fVar5,0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Math);
     cRam_? = '\x01';
@@ -183,23 +184,27 @@ IntVector MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::
   if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__Math);
   }
+  mscorlib.dll::System::Math::Math_Round_5
+            ((double)(fVar4 + worldPos.z),0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    method = (MethodInfo *)&TypeInfo__System__Math;
+    func_?();
+    cRam_? = '\x01';
+  }
+  pMVar6 = TypeInfo__System__Math;
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+    method = (MethodInfo *)pMVar6;
+  }
+  worldPos.x = (float)((ulonglong)(double)(float)method >> 0x20);
   dVar7 = mscorlib.dll::System::Math::Math_Round_5
-                    ((double)(fVar4 + worldPos.z),0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0)
-  ;
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  dVar8 = mscorlib.dll::System::Math::Math_Round_5
-                    ((double)((float)method + fVar5),0,MidpointRounding__Enum_ToEven,
-                     (MethodInfo *)0x0);
-  uRam_? = 0;
-  uRam_? = (short)(int)dVar7;
-  uRam_? = (short)(int)dVar8;
-  return (IntVector)((uint6)extraout_DX << 0x20);
+                    ((double)(float)method,0,MidpointRounding__Enum_ToEven,(MethodInfo *)0x0);
+  *(undefined2 *)worldPos.x = 0;
+  *(undefined2 *)((int)worldPos.x + 2) = 0;
+  *(short *)((int)worldPos.x + 4) = (short)(int)dVar7;
+  IVar8.z = extraout_DX;
+  IVar8._0_4_ = worldPos.x;
+  return IVar8;
 }
 
 

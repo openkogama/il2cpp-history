@@ -60,27 +60,28 @@ bool Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
     if (bVar1 != 0) {
       return 0;
     }
-    pMVar2 = method->klass->rgctx_data[1].method;
-    pIVar3 = method->klass->rgctx_data->klass;
-    if (((uint)pIVar3->vtable[0].methodPtr & 0x100) == 0) {
-      pIVar3 = (Il2CppClass *)func_?();
+    pIVar2 = method->klass->rgctx_data;
+    pMVar3 = pIVar2[1].method;
+    pIVar4 = pIVar2->klass;
+    if (((uint)pIVar4->vtable[0].methodPtr & 0x100) == 0) {
+      pIVar4 = (Il2CppClass *)func_?();
     }
-    if (((obj->klass->_1).naturalAligment < pIVar3->naturalAligment) ||
-       ((obj->klass->_1).typeHierarchy[pIVar3->naturalAligment - 1] != pIVar3))
+    if (((obj->klass->_1).naturalAligment < pIVar4->naturalAligment) ||
+       ((obj->klass->_1).typeHierarchy[pIVar4->naturalAligment - 1] != pIVar4))
     goto code_?;
     if (((this->fields).subscribableVariable != (SubscribableVariable_1_System_Single_ *)0x0) &&
        (obj[1].klass != (Object__Class *)0x0)) {
       obj_00 = (Object *)func_?();
       bVar1 = mscorlib.dll::System::Single::Single_Equals
-                        ((Single *)&stack0xfffffff4,obj_00,pMVar2->klass->rgctx_data[0x10].method);
+                        ((Single *)&stack0xfffffff8,obj_00,pMVar3->klass->rgctx_data[0x10].method);
       return bVar1;
     }
   }
   func_?();
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  bVar1 = (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  bVar1 = (*pcVar5)();
   return bVar1;
 }
 
@@ -122,8 +123,8 @@ void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
                (SpawnRoleVariable_1_System_Single_ *this,float value,MethodInfo *method)
 
 {
-  if ((this->fields).OnChange != (SpawnRoleVariable_1_T_SubDelegate_System_Single_ *)0x0) {
-    pSVar1 = (this->fields).OnChange;
+  pSVar1 = (this->fields).OnChange;
+  if (pSVar1 != (SpawnRoleVariable_1_T_SubDelegate_System_Single_ *)0x0) {
     (*(pSVar1->fields)._._.invoke_impl)
               ((pSVar1->fields)._._.method_code,value,(pSVar1->fields)._._.method);
   }
@@ -148,17 +149,18 @@ void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
   this_01 = (SubscribableVariable_1_System_Single_ *)func_?(pIVar1);
   SubscribableVariable`1[System::Single]::SubscribableVariable_1_System_Single___ctor
             (this_01,value,method->klass->rgctx_data[10].method);
-  (this->fields).subscribableVariable = this_01;
-  func_?(&this->fields,this_01);
-  this_00 = (SubscribableVariableBase_1_System_Single_ *)(this->fields).subscribableVariable;
+  pSVar2 = &this->fields;
+  pSVar2->subscribableVariable = this_01;
+  func_?(pSVar2,this_01);
+  this_00 = (SubscribableVariableBase_1_System_Single_ *)pSVar2->subscribableVariable;
   if (((uint)(method->klass->rgctx_data[0xc].klass)->vtable[0].methodPtr & 0x100) == 0) {
     func_?();
   }
   this_02 = (UnityAction_1_System_Single_ *)func_?();
+  pIVar3 = method->klass->rgctx_data;
   UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Single]::
   UnityAction_1_System_Single___ctor
-            (this_02,(Object *)this,method->klass->rgctx_data[0xb].rgctxDataDummy,
-             method->klass->rgctx_data[0xd].method);
+            (this_02,(Object *)this,pIVar3[0xb].rgctxDataDummy,pIVar3[0xd].method);
   if (this_00 != (SubscribableVariableBase_1_System_Single_ *)0x0) {
     SubscribableVariableBase`1[System::Single]::
     SubscribableVariableBase_1_System_Single__add_OnChange
@@ -166,8 +168,8 @@ void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
     return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -365,7 +367,7 @@ bool Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
       }
       bVar4 = mscorlib.dll::System::Single::Single_Equals
                         ((Single *)&b,obj,pIVar3->rgctx_data[0x10].method);
-      return bVar4 ^ 1;
+      return bVar4 == 0;
     }
   }
   func_?();
@@ -402,7 +404,7 @@ bool Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
       }
       bVar4 = mscorlib.dll::System::Single::Single_Equals
                         ((Single *)&b,obj,pIVar3->rgctx_data[0x10].method);
-      return bVar4 ^ 1;
+      return bVar4 == 0;
     }
   }
   func_?();
@@ -451,7 +453,7 @@ bool Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
       }
       bVar4 = mscorlib.dll::System::Single::Single_Equals
                         ((Single *)&a,obj,pIVar1->rgctx_data[0x10].method);
-      return bVar4 ^ 1;
+      return bVar4 == 0;
     }
   }
   func_?();

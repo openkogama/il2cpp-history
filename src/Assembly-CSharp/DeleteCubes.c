@@ -38,30 +38,30 @@ void Assembly-CSharp.dll::DeleteCubes::DeleteCubes_Enter
       CellCursor::CellCursor__ctor(this_01,1,0.03,material,1.0,cubeCorners,(MethodInfo *)0x0);
       (value->fields).deleteCursor = this_01;
       func_?(&value->fields,this_01);
-      (this->fields).deleteCursor = value;
-      func_?(&(this->fields).deleteCursor,value);
-      pGVar2 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-      if (((pGVar2 != (GameEventManager *)0x0) &&
-          (pGVar3 = (pGVar2->fields).AvatarCommandsBuildMode,
-          pGVar3 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) &&
-         (this_00 = (pGVar3->fields).LaserCommands,
+      ppDVar2 = &(this->fields).deleteCursor;
+      *ppDVar2 = value;
+      func_?(ppDVar2,value);
+      pGVar3 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
+      if (((pGVar3 != (GameEventManager *)0x0) &&
+          (pGVar4 = (pGVar3->fields).AvatarCommandsBuildMode,
+          pGVar4 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) &&
+         (this_00 = (pGVar4->fields).LaserCommands,
          this_00 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
-        GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::
-        GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_ChangeState
-                  (this_00,LaserPointerState__Enum_DeletingCubes,(MethodInfo *)0x0);
+        UnityEngine.AudioModule.dll::UnityEngine::AudioClip::
+        AudioClip_InvokePCMSetPositionCallback_Internal((AudioClip *)this_00,4,(MethodInfo *)0x0);
         if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        bVar4 = MVInputWrapper::MVInputWrapper_GetBooleanControl
+        bVar5 = MVInputWrapper::MVInputWrapper_GetBooleanControl
                           (KogamaControls__Enum_PointerSelect,(MethodInfo *)0x0);
-        (this->fields)._.waitForMouseUp = bVar4;
+        (this->fields)._.waitForMouseUp = bVar5;
         return;
       }
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -72,164 +72,157 @@ void Assembly-CSharp.dll::DeleteCubes::DeleteCubes_Execute
                (DeleteCubes *this,CubeModelingStateMachine *e,MethodInfo *method)
 
 {
+  this_00 = e;
   if (cRam_? == '\0') {
-    func_?(0xa364);
-    func_?(&TypeInfo__MVInputWrapper);
+    func_?(&TypeInfo__MV__WorldObject__IntVector);
+    func_?(0xc68);
     cRam_? = '\x01';
   }
-  if (cRam_? == '\0') {
-    func_?(0x7c30);
-    cRam_? = '\x01';
-  }
-  pCVar1 = TypeInfo__CubeModelTool->static_fields;
-  if ((pCVar1->cubeChange != 0) &&
-     (pCVar1->OnEditCubeChange != (Action_2_Int32_EditCubeChange_ *)0x0)) {
-    pAVar2 = pCVar1->OnEditCubeChange;
-    (*(pAVar2->fields)._._.invoke_impl)
-              ((pAVar2->fields)._._.method_code,pCVar1->cubeCount,pCVar1->cubeChange,
-               (short)(pAVar2->fields)._._.method);
-  }
-  TypeInfo__CubeModelTool->static_fields->cubeChange = 0;
+  CubeModelTool::CubeModelTool_Execute((CubeModelTool *)this,e,(MethodInfo *)0x0);
   if ((this->fields)._.waitForMouseUp != 0) {
     if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?((short)TypeInfo__MVInputWrapper);
     }
-    bVar3 = MVInputWrapper::MVInputWrapper_GetBooleanControl
+    bVar1 = MVInputWrapper::MVInputWrapper_GetBooleanControl
                        (KogamaControls__Enum_PointerSelect,(MethodInfo *)0x0);
-    (this->fields)._.waitForMouseUp = bVar3;
+    (this->fields)._.waitForMouseUp = bVar1;
     return;
   }
-  cVar4 = '\0';
+  e = (CubeModelingStateMachine *)0x0;
   if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
     func_?((short)TypeInfo__MVInputWrapper);
   }
-  bVar3 = MVInputWrapper::MVInputWrapper_GetBooleanControlUp
+  bVar1 = MVInputWrapper::MVInputWrapper_GetBooleanControlUp
                      (KogamaControls__Enum_PointerSelect,(MethodInfo *)0x0);
-  if (bVar3 != 0) {
-    (this->fields).cubeNotToBeDeleted = (CubePickingInfo *)0x0;
-    func_?(&(this->fields).cubeNotToBeDeleted,0);
+  if (bVar1 != 0) {
+    ppCVar2 = &(this->fields).cubeNotToBeDeleted;
+    *ppCVar2 = (CubePickingInfo *)0x0;
+    func_?(ppCVar2,0);
   }
-  if (e == (CubeModelingStateMachine *)0x0) goto code_?;
-  if ((e->fields)._SelectedCube_k__BackingField == (CubePickingInfo *)0x0) {
-    (this->fields).cubeNotToBeDeleted = (CubePickingInfo *)0x0;
-    func_?(&(this->fields).cubeNotToBeDeleted,0);
+  if (this_00 == (CubeModelingStateMachine *)0x0) goto code_?;
+  if ((this_00->fields)._SelectedCube_k__BackingField == (CubePickingInfo *)0x0) {
+    ppCVar2 = &(this->fields).cubeNotToBeDeleted;
+    *ppCVar2 = (CubePickingInfo *)0x0;
+    func_?(ppCVar2,0);
   }
   else {
     if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__MVInputWrapper);
     }
-    bVar3 = MVInputWrapper::MVInputWrapper_GetBooleanControl
+    bVar1 = MVInputWrapper::MVInputWrapper_GetBooleanControl
                        (KogamaControls__Enum_PointerSelect,(MethodInfo *)0x0);
-    if (bVar3 != 0) {
-      CVar5 = CubeModelingStateMachine::CubeModelingStateMachine_CanRemoveCubeAt
-                         (e,(e->fields)._SelectedCube_k__BackingField,(MethodInfo *)0x0);
-      if (CVar5 == CanPerformCubeActionResult__Enum_Yes) {
-        if ((this->fields).cubeNotToBeDeleted != (CubePickingInfo *)0x0) {
-          pCVar6 = (e->fields)._SelectedCube_k__BackingField;
+    if (bVar1 != 0) {
+      CVar3 = CubeModelingStateMachine::CubeModelingStateMachine_CanRemoveCubeAt
+                         (this_00,(this_00->fields)._SelectedCube_k__BackingField,(MethodInfo *)0x0)
+      ;
+      if (CVar3 == CanPerformCubeActionResult__Enum_Yes) {
+        pCVar4 = (this->fields).cubeNotToBeDeleted;
+        pDVar5 = &this->fields;
+        if (pCVar4 != (CubePickingInfo *)0x0) {
+          pCVar6 = (this_00->fields)._SelectedCube_k__BackingField;
           if (pCVar6 == (CubePickingInfo *)0x0) goto code_?;
-          uVar7 = (pCVar6->fields).iLocalPos.x;
-          uVar8 = (pCVar6->fields).iLocalPos.y;
-          a.y = uVar8;
-          a.x = uVar7;
-          iVar9 = (pCVar6->fields).iLocalPos.z;
-          uVar10 = (undefined1)iVar9;
-          uVar11 = (undefined1)((ushort)iVar9 >> 8);
-          pCVar6 = (this->fields).cubeNotToBeDeleted;
-          uVar12._0_2_ = (pCVar6->fields).iLocalPos.x;
-          uVar12._2_2_ = (pCVar6->fields).iLocalPos.y;
-          iVar9 = (pCVar6->fields).iLocalPos.z;
+          uVar7._0_2_ = (pCVar4->fields).iLocalPos.x;
+          uVar7._2_2_ = (pCVar4->fields).iLocalPos.y;
+          iVar8 = (pCVar4->fields).iLocalPos.z;
+          uVar9._0_2_ = (pCVar6->fields).iLocalPos.x;
+          uVar9._2_2_ = (pCVar6->fields).iLocalPos.y;
+          iVar10 = (pCVar6->fields).iLocalPos.z;
           if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
+            e = (CubeModelingStateMachine *)TypeInfo__MV__WorldObject__IntVector;
+            this = (DeleteCubes *)&UNK_?;
             func_?();
           }
-          a.z._1_1_ = uVar11;
-          a.z._0_1_ = uVar10;
-          b.z = iVar9;
-          b.x = (short)uVar12;
-          b.y = (short)((uint)uVar12 >> 0x10);
-          bVar3 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Inequality
+          a.z = iVar10;
+          a.x = (short)uVar9;
+          a.y = (short)((uint)uVar9 >> 0x10);
+          b.z = iVar8;
+          b.x = (short)uVar7;
+          b.y = (short)((uint)uVar7 >> 0x10);
+          bVar1 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Inequality
                              (a,b,(MethodInfo *)0x0);
-          if (bVar3 == 0) goto code_?;
+          if (bVar1 == 0) goto code_?;
         }
-        pCVar6 = (e->fields)._SelectedCube_k__BackingField;
-        if (pCVar6 == (CubePickingInfo *)0x0) goto code_?;
+        pCVar4 = (this_00->fields)._SelectedCube_k__BackingField;
+        if (pCVar4 == (CubePickingInfo *)0x0) goto code_?;
         CubeModelingStateMachine::CubeModelingStateMachine_HandleAudio
-                  (e,(pCVar6->fields).iLocalPos,AudioActions__Enum_CubeRemoved,(MethodInfo *)0x0);
-        pCVar6 = (e->fields)._SelectedCube_k__BackingField;
-        if ((pCVar6 == (CubePickingInfo *)0x0) ||
-           (pMVar13 = (e->fields)._TargetCubeModel_k__BackingField, pMVar13 == (MVCubeModelBase *)0x0)
-           ) goto code_?;
+                  (this_00,(pCVar4->fields).iLocalPos,AudioActions__Enum_CubeRemoved,
+                   (MethodInfo *)0x0);
+        pCVar4 = (this_00->fields)._SelectedCube_k__BackingField;
+        if ((pCVar4 == (CubePickingInfo *)0x0) ||
+           ((this_00->fields)._TargetCubeModel_k__BackingField == (MVCubeModelBase *)0x0))
+        goto code_?;
         MVCubeModelBase::MVCubeModelBase_RemoveCube
-                  (pMVar13,(pCVar6->fields).iLocalPos,(MethodInfo *)0x0);
-        pCVar6 = CubeModelingStateMachine::CubeModelingStateMachine_DoPicking(e,(MethodInfo *)0x0);
-        (this->fields).cubeNotToBeDeleted = pCVar6;
-        cVar4 = '\x10';
-        func_?((short)&(this->fields).cubeNotToBeDeleted);
-        pMVar13 = (e->fields)._TargetCubeModel_k__BackingField;
-        if (pMVar13 == (MVCubeModelBase *)0x0) goto code_?;
-        cubeCount = MVCubeModelBase::MVCubeModelBase_get_CubeCount(pMVar13,(MethodInfo *)0x0);
+                  ((this_00->fields)._TargetCubeModel_k__BackingField,(pCVar4->fields).iLocalPos,
+                   (MethodInfo *)0x0);
+        e = (CubeModelingStateMachine *)
+            CubeModelingStateMachine::CubeModelingStateMachine_DoPicking
+                      (this_00,(MethodInfo *)0x1000000);
+        pDVar5->cubeNotToBeDeleted = (CubePickingInfo *)e;
+        func_?();
+        pMVar11 = (this_00->fields)._TargetCubeModel_k__BackingField;
+        if (pMVar11 == (MVCubeModelBase *)0x0) goto code_?;
+        cubeCount = MVCubeModelBase::MVCubeModelBase_get_CubeCount(pMVar11,(MethodInfo *)0x0);
         CubeModelTool::CubeModelTool_SendCubeEvent
                   (cubeCount,EditCubeChange__Enum_CubeDeleted,(MethodInfo *)0x0);
       }
-      else if (CVar5 == CanPerformCubeActionResult__Enum_UnlockMaterial) {
+      else if (CVar3 == CanPerformCubeActionResult__Enum_UnlockMaterial) {
         if ((this->fields).deleteCursor == (DeleteCursor *)0x0) goto code_?;
-        cVar4 = '\0';
+        e = (CubeModelingStateMachine *)0x0;
         ModelCursor::ModelCursor_ShowUnlockMaterialNotification
                   (0,NotificationLifetime__Enum_Low,(MethodInfo *)0x0);
       }
     }
   }
 code_?:
-  pDVar14 = (this->fields).deleteCursor;
-  pCVar6 = (e->fields)._SelectedCube_k__BackingField;
-  pMVar13 = (e->fields)._TargetCubeModel_k__BackingField;
-  if (pDVar14 != (DeleteCursor *)0x0) {
-    if (cVar4 != '\0') {
-      pGVar15 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-      if (((pGVar15 == (GameEventManager *)0x0) ||
-          (pGVar16 = (pGVar15->fields).AvatarCommandsBuildMode,
-          pGVar16 == (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) ||
-         (pGVar17 = (pGVar16->fields).LaserCommands,
-         pGVar17 == (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0))
+  pDVar12 = (this->fields).deleteCursor;
+  pCVar4 = (this_00->fields)._SelectedCube_k__BackingField;
+  pMVar11 = (this_00->fields)._TargetCubeModel_k__BackingField;
+  if (pDVar12 != (DeleteCursor *)0x0) {
+    if (e._3_1_ != '\0') {
+      pGVar13 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
+      if (((pGVar13 == (GameEventManager *)0x0) ||
+          (pGVar14 = (pGVar13->fields).AvatarCommandsBuildMode,
+          pGVar14 == (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) ||
+         (pGVar15 = (pGVar14->fields).LaserCommands,
+         pGVar15 == (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0))
       goto code_?;
       GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::
       GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_ActivateLaserForDuration
-                (pGVar17,0.2,(MethodInfo *)0x0);
+                (pGVar15,0.2,(MethodInfo *)0x0);
     }
-    if (pCVar6 == (CubePickingInfo *)0x0) {
-      pCVar18 = (pDVar14->fields).deleteCursor;
-      if (pCVar18 != (CellCursor *)0x0) {
-        CellCursor::CellCursor_set_Active(pCVar18,0,(MethodInfo *)0x0);
+    if (pCVar4 == (CubePickingInfo *)0x0) {
+      pCVar16 = (pDVar12->fields).deleteCursor;
+      if (pCVar16 != (CellCursor *)0x0) {
+        CellCursor::CellCursor_set_Active(pCVar16,0,(MethodInfo *)0x0);
         return;
       }
     }
     else {
-      pGVar15 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-      if (((pGVar15 != (GameEventManager *)0x0) &&
-          (pGVar16 = (pGVar15->fields).AvatarCommandsBuildMode,
-          pGVar16 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) &&
-         (pGVar17 = (pGVar16->fields).LaserCommands,
-         pGVar17 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
+      pGVar13 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
+      if (((pGVar13 != (GameEventManager *)0x0) &&
+          (pGVar14 = (pGVar13->fields).AvatarCommandsBuildMode,
+          pGVar14 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) &&
+         (pGVar15 = (pGVar14->fields).LaserCommands,
+         pGVar15 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
         GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::
         GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_UpdatePosition
-                  (pGVar17,(pCVar6->fields).point,(MethodInfo *)0x0);
-        pCVar18 = (pDVar14->fields).deleteCursor;
-        if (pCVar18 != (CellCursor *)0x0) {
-          CellCursor::CellCursor_set_Active(pCVar18,1,(MethodInfo *)0x0);
-          uVar19._0_2_ = (pCVar6->fields).iLocalPos.x;
-          uVar19._2_2_ = (pCVar6->fields).iLocalPos.y;
-          if (pMVar13 != (MVCubeModelBase *)0x0) {
-            pCVar18 = (pDVar14->fields).deleteCursor;
-            cubeGameObject = (pMVar13->fields)._.gameObject;
-            if (pCVar18 != (CellCursor *)0x0) {
-              pIVar20 = &(pCVar6->fields).iLocalPos;
-              uVar21 = pIVar20->y;
-              this_00 = CellCursor::CellCursor_GetCellCursor(pCVar18,*pIVar20,(MethodInfo *)0x0);
-              if (this_00 != (CellCursorCubeLineMesh *)0x0) {
-                position.z = uVar21;
-                position.x = (short)uVar19;
-                position.y = (short)((uint)uVar19 >> 0x10);
+                  (pGVar15,(pCVar4->fields).point,(MethodInfo *)0x0);
+        pCVar16 = (pDVar12->fields).deleteCursor;
+        if (pCVar16 != (CellCursor *)0x0) {
+          CellCursor::CellCursor_set_Active(pCVar16,1,(MethodInfo *)0x0);
+          iVar8 = (pCVar4->fields).iLocalPos.z;
+          if (pMVar11 != (MVCubeModelBase *)0x0) {
+            pCVar16 = (pDVar12->fields).deleteCursor;
+            cubeGameObject = (pMVar11->fields)._.gameObject;
+            if (pCVar16 != (CellCursor *)0x0) {
+              this_01 = CellCursor::CellCursor_GetCellCursor
+                                  (pCVar16,(pCVar4->fields).iLocalPos,(MethodInfo *)0x0);
+              if (this_01 != (CellCursorCubeLineMesh *)0x0) {
+                uStack17 = 0x1045;
+                position.z = iVar8;
+                position._0_4_ = &UNK_?;
                 CellCursorCubeLineMesh::CellCursorCubeLineMesh_SetCursorCube
-                          (this_00,position,cubeGameObject,(MethodInfo *)0x0);
+                          (this_01,position,cubeGameObject,(MethodInfo *)0x0);
                 return;
               }
             }
@@ -240,8 +233,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar22 = (code *)swi(3);
-  (*pcVar22)();
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 
@@ -273,31 +266,27 @@ void Assembly-CSharp.dll::DeleteCubes::DeleteCubes_HideCursor(DeleteCubes *this,
                      );
       cRam_? = '\x01';
     }
-    LStack_3._list = (List_1_System_Object_ *)0x0;
-    LStack_3._index = 0;
-    LStack_3._version = 0;
-    LStack_3._current = (Object *)0x0;
     this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
               (pCVar2->fields).cursorCubes;
     if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-      pLVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+      pLVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
                RegexCharClass+SingleRange]::
                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                          ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
                            *)&stack0xffffffd8,this_00,
                           MethodInfo__System__Collections__Generic__List<CellCursorCubeLineMesh>__GetEnumerator__
                          );
-      array = (CellCursorCubeLineMesh__Array *)&LStack_3;
-      LStack_3._list = (List_1_System_Object_ *)pLVar4->_list;
-      LStack_3._index = pLVar4->_index;
-      LStack_3._version = pLVar4->_version;
-      LStack_3._current = *(Object **)&pLVar4->_current;
+      array = (CellCursorCubeLineMesh__Array *)&LStack_4;
+      LStack_4._list = (List_1_System_Object_ *)pLVar3->_list;
+      LStack_4._index = pLVar3->_index;
+      LStack_4._version = pLVar3->_version;
+      LStack_4._current = *(Object **)&pLVar3->_current;
       while (bVar5 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
                      Object]::List_1_T_Enumerator_System_Object__MoveNext
-                               (&LStack_3,
+                               (&LStack_4,
                                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<CellCursorCubeLineMesh>__MoveNext__
-                               ), pOVar6 = LStack_3._current, bVar5 != 0) {
-        if ((RegexCharClass_SingleRange)LStack_3._current == (RegexCharClass_SingleRange)0x0)
+                               ), pOVar6 = LStack_4._current, bVar5 != 0) {
+        if ((RegexCharClass_SingleRange)LStack_4._current == (RegexCharClass_SingleRange)0x0)
         goto code_?;
         if (cRam_? == '\0') {
           func_?();

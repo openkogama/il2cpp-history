@@ -43,8 +43,9 @@ void Assembly-CSharp.dll::AvatarAccessoryErrorPopup::AvatarAccessoryErrorPopup_I
             if (pSVar3 != (StreamedSpriteToImageManual *)0x0) {
               StreamedSpriteToImageManual::StreamedSpriteToImageManual_Download
                         (pSVar3,previewImageUrl,(UnityAction *)this_01,(MethodInfo *)0x0);
-              (this->fields).resultCallback = resultCallback;
-              func_?(&(this->fields).resultCallback,resultCallback);
+              ppUVar4 = &(this->fields).resultCallback;
+              *ppUVar4 = resultCallback;
+              func_?(ppUVar4,resultCallback);
               this_00 = (this->fields).itemBackground;
               if (this_00 != (AccessoryItemBackground *)0x0) {
                 AccessoryItemBackground::AccessoryItemBackground_Initialize
@@ -58,8 +59,8 @@ void Assembly-CSharp.dll::AvatarAccessoryErrorPopup::AvatarAccessoryErrorPopup_I
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -117,8 +118,10 @@ void Assembly-CSharp.dll::AvatarAccessoryErrorPopup::AvatarAccessoryErrorPopup_O
              (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
              UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
             );
-  if ((this->fields).resultCallback != (UnityAction_1_System_Boolean_ *)0x0) {
-    (*(((this->fields).resultCallback)->fields)._._.invoke_impl)();
+  pUVar1 = (this->fields).resultCallback;
+  if (pUVar1 != (UnityAction_1_System_Boolean_ *)0x0) {
+    pvStack2 = (pUVar1->fields)._._.method;
+    (*(pUVar1->fields)._._.invoke_impl)();
   }
   return;
 }

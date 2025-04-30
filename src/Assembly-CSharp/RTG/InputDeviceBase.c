@@ -15,34 +15,35 @@ bool Assembly-CSharp.dll::RTG::InputDeviceBase::InputDeviceBase_CreateDeltaCaptu
     do {
       pIVar1 = (this->fields)._deltaCaptures;
       if (pIVar1 == (InputDeviceDeltaCapture__Array *)0x0) goto code_?;
-      if (pIVar1->max_length <= (uint)*deltaCaptureId) goto code_?;
-    } while ((pIVar1->vector[*deltaCaptureId] != (InputDeviceDeltaCapture *)0x0) &&
-            (*deltaCaptureId = *deltaCaptureId + 1,
-            *deltaCaptureId < (this->fields)._maxNumDeltaCaptures));
+      uVar2 = *deltaCaptureId;
+      if (pIVar1->max_length <= uVar2) goto code_?;
+    } while ((pIVar1->vector[uVar2] != (InputDeviceDeltaCapture *)0x0) &&
+            (*deltaCaptureId = uVar2 + 1, (int)(uVar2 + 1) < (this->fields)._maxNumDeltaCaptures));
   }
-  iVar2 = *deltaCaptureId;
-  if (iVar2 == (this->fields)._maxNumDeltaCaptures) {
+  iVar3 = *deltaCaptureId;
+  if (iVar3 == (this->fields)._maxNumDeltaCaptures) {
     *deltaCaptureId = -1;
     return 0;
   }
+  method_00 = (MethodInfo *)&UNK_?;
   value = (InputDeviceDeltaCapture *)func_?(TypeInfo__RTG__InputDeviceDeltaCapture);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,in_stack_3);
+            ((Object *)value,ExceptionArgument__Enum_obj,method_00);
+  (value->fields)._id = iVar3;
   (value->fields)._origin.x = deltaOrigin.x;
   (value->fields)._origin.y = deltaOrigin.y;
-  (value->fields)._id = iVar2;
   (value->fields)._origin.z = deltaOrigin.z;
   pIVar1 = (this->fields)._deltaCaptures;
-  uVar4 = *deltaCaptureId;
+  uVar2 = *deltaCaptureId;
   if (pIVar1 != (InputDeviceDeltaCapture__Array *)0x0) {
-    iVar2 = func_?(value,(pIVar1->klass->_0).element_class);
-    if (iVar2 == 0) {
-      uVar5 = func_?(0);
-      func_?(uVar5);
+    iVar3 = func_?(value,(pIVar1->klass->_0).element_class);
+    if (iVar3 == 0) {
+      uVar4 = func_?(0);
+      func_?(uVar4);
     }
-    else if (uVar4 < pIVar1->max_length) {
-      pIVar1->vector[uVar4] = value;
-      func_?(pIVar1->vector + uVar4,value);
+    else if (uVar2 < pIVar1->max_length) {
+      pIVar1->vector[uVar2] = value;
+      func_?(pIVar1->vector + uVar2,value);
       return 1;
     }
 code_?:
@@ -50,9 +51,9 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  bVar7 = (*pcVar6)();
-  return bVar7;
+  pcVar5 = (code *)swi(3);
+  bVar6 = (*pcVar5)();
+  return bVar6;
 }
 
 
@@ -72,10 +73,10 @@ void Assembly-CSharp.dll::RTG::InputDeviceBase::InputDeviceBase_DetectAndHandleD
       (this->fields)._lastTapTime = fVar2;
       return;
     }
+    pIVar3 = (this->fields).DoubleTap;
     (this->fields)._lastTapTime = 0.0;
     (this->fields)._didDoubleTap = 1;
-    if ((this->fields).DoubleTap != (InputDeviceDoubleTapHandler *)0x0) {
-      pIVar3 = (this->fields).DoubleTap;
+    if (pIVar3 != (InputDeviceDoubleTapHandler *)0x0) {
       puVar4 = (undefined8 *)
                (*(code *)(this->klass->vtable).__unknown_3.method)
                          (auStack_5,this,(this->klass->vtable).__unknown_4.methodPtr);
@@ -102,35 +103,35 @@ Vector3 * Assembly-CSharp.dll::RTG::InputDeviceBase::InputDeviceBase_GetCaptureD
   ppVStack_1 = (Vector3__Class **)&stack0xfffffffc;
   if ((-1 < deltaCaptureId) && (deltaCaptureId < (this->fields)._maxNumDeltaCaptures)) {
     pIVar2 = (this->fields)._deltaCaptures;
-    if (pIVar2 != (InputDeviceDeltaCapture__Array *)0x0) {
-      if (pIVar2->max_length <= (uint)deltaCaptureId) {
+    if (pIVar2 == (InputDeviceDeltaCapture__Array *)0x0) {
 code_?:
-        ppVStack_1 = (Vector3__Class **)0x0;
-        puStack_3 = (undefined *)func_?();
-        func_?();
-        pcVar4 = (code *)swi(3);
-        pVVar5 = (Vector3 *)(*pcVar4)();
-        return pVVar5;
-      }
+      uVar3 = func_?(&puStack_4);
+      func_?(uVar3);
+      pcVar5 = (code *)swi(3);
+      pVVar6 = (Vector3 *)(*pcVar5)();
+      return pVVar6;
+    }
+    if ((uint)deltaCaptureId < pIVar2->max_length) {
       if (pIVar2->vector[deltaCaptureId] == (InputDeviceDeltaCapture *)0x0) goto code_?;
-      if (pIVar2 != (InputDeviceDeltaCapture__Array *)0x0) {
-        if (pIVar2->max_length <= (uint)deltaCaptureId) goto code_?;
-        pIVar6 = pIVar2->vector[deltaCaptureId];
-        if (pIVar6 != (InputDeviceDeltaCapture *)0x0) {
-          fVar7 = (pIVar6->fields)._delta.y;
-          fVar8 = (pIVar6->fields)._delta.z;
-          __return_storage_ptr__->x = (pIVar6->fields)._delta.x;
-          __return_storage_ptr__->y = fVar7;
-          __return_storage_ptr__->z = fVar8;
+      if ((uint)deltaCaptureId < pIVar2->max_length) {
+        pIVar7 = pIVar2->vector[deltaCaptureId];
+        if (pIVar7 != (InputDeviceDeltaCapture *)0x0) {
+          fVar8 = (pIVar7->fields)._delta.y;
+          fVar9 = (pIVar7->fields)._delta.z;
+          __return_storage_ptr__->x = (pIVar7->fields)._delta.x;
+          __return_storage_ptr__->y = fVar8;
+          __return_storage_ptr__->z = fVar9;
           return __return_storage_ptr__;
         }
+        goto code_?;
       }
     }
-    uVar9 = func_?(&puStack_10);
-    func_?(uVar9);
-    pcVar4 = (code *)swi(3);
-    pVVar5 = (Vector3 *)(*pcVar4)();
-    return pVVar5;
+    ppVStack_1 = (Vector3__Class **)0x0;
+    puStack_10 = (undefined *)func_?();
+    func_?();
+    pcVar5 = (code *)swi(3);
+    pVVar6 = (Vector3 *)(*pcVar5)();
+    return pVVar6;
   }
 code_?:
   if (cRam_? == '\0') {
@@ -139,11 +140,11 @@ code_?:
     cRam_? = '\x01';
   }
   pVVar11 = TypeInfo__UnityEngine__Vector3->static_fields;
-  fVar7 = (pVVar11->zeroVector).y;
-  fVar8 = (pVVar11->zeroVector).z;
+  fVar8 = (pVVar11->zeroVector).y;
+  fVar9 = (pVVar11->zeroVector).z;
   __return_storage_ptr__->x = (pVVar11->zeroVector).x;
-  __return_storage_ptr__->y = fVar7;
-  __return_storage_ptr__->z = fVar8;
+  __return_storage_ptr__->y = fVar8;
+  __return_storage_ptr__->z = fVar9;
   return __return_storage_ptr__;
 }
 
@@ -172,9 +173,9 @@ void Assembly-CSharp.dll::RTG::InputDeviceBase::InputDeviceBase_RemoveDeltaCaptu
       (*pcVar5)();
       return;
     }
-    pIVar2->vector[deltaCaptureId] = (InputDeviceDeltaCapture *)0x0;
-    puStack_1 = (undefined1 *)0x0;
     ppIStack_6 = pIVar2->vector + deltaCaptureId;
+    *ppIStack_6 = (InputDeviceDeltaCapture *)0x0;
+    puStack_1 = (undefined1 *)0x0;
     func_?();
   }
   return;
@@ -198,8 +199,9 @@ void Assembly-CSharp.dll::RTG::InputDeviceBase::InputDeviceBase_SetMaxNumDeltaCa
   (this->fields)._maxNumDeltaCaptures = iVar1;
   pIVar2 = (InputDeviceDeltaCapture__Array *)
            func_?(TypeInfo__RTG__InputDeviceDeltaCapture,iVar1);
-  (this->fields)._deltaCaptures = pIVar2;
-  func_?(&(this->fields)._deltaCaptures,pIVar2);
+  ppIVar3 = &(this->fields)._deltaCaptures;
+  *ppIVar3 = pIVar2;
+  func_?(ppIVar3,pIVar2);
   return;
 }
 
@@ -262,10 +264,10 @@ code_?:
       (this->fields)._lastTapTime = fVar5;
       return;
     }
+    pIVar16 = (this->fields).DoubleTap;
     (this->fields)._lastTapTime = 0.0;
     (this->fields)._didDoubleTap = 1;
-    if ((this->fields).DoubleTap != (InputDeviceDoubleTapHandler *)0x0) {
-      pIVar16 = (this->fields).DoubleTap;
+    if (pIVar16 != (InputDeviceDoubleTapHandler *)0x0) {
       puVar2 = (undefined8 *)
                 (*(code *)(this->klass->vtable).__unknown_3.method)
                           (&uStack_6,this,(this->klass->vtable).__unknown_4.methodPtr);
@@ -354,7 +356,7 @@ void Assembly-CSharp.dll::RTG::InputDeviceBase::InputDeviceBase__ctor
   pIVar1 = (InputDeviceDeltaCapture__Array *)
            func_?(TypeInfo__RTG__InputDeviceDeltaCapture,0x32);
   (this->fields)._deltaCaptures = pIVar1;
-  func_?(&(this->fields)._deltaCaptures,pIVar1);
+  func_?();
   return;
 }
 

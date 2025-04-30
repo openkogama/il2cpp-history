@@ -77,40 +77,40 @@ void Assembly-CSharp.dll::RTG::RTUndoRedo::RTUndoRedo_RecordAction
   pLVar1 = (this->fields)._actionGroupStack;
   if (pLVar1 != (List_1_RTG_RTUndoRedo_ActionGroup_ *)0x0) {
     if (((pLVar1->fields)._size != 0) &&
-       ((this->fields)._stackPointer < (pLVar1->fields)._size + -1)) {
-      startIndex = (this->fields)._stackPointer + 1;
-      RTUndoRedo_RemoveGroups
-                (this,startIndex,(((this->fields)._actionGroupStack)->fields)._size - startIndex,
-                 (MethodInfo *)0x0);
+       (iVar2 = (this->fields)._stackPointer, iVar2 < (pLVar1->fields)._size + -1)) {
+      iVar2 = iVar2 + 1;
+      RTUndoRedo_RemoveGroups(this,iVar2,(pLVar1->fields)._size - iVar2,(MethodInfo *)0x0);
     }
-    pLVar1 = (this->fields)._actionGroupStack;
-    value = (Object *)func_?();
+    value = (Object *)func_?((this->fields)._actionGroupStack);
     if (cRam_? == '\0') {
-      func_?();
+      func_?(&
+                      MethodInfo__System__Collections__Generic__List<RTG::IUndoRedoAction>__Add_RTG__IUndoRedoAction_
+                     );
       func_?(&MethodInfo__System__Collections__Generic__List<RTG::IUndoRedoAction>__List__)
       ;
       func_?(&TypeInfo__System__Collections__Generic__List<RTG::IUndoRedoAction>);
       cRam_? = '\x01';
     }
-    this_00 = (Object__Class *)
-              func_?(TypeInfo__System__Collections__Generic__List<RTG::IUndoRedoAction>);
+    this_01 = TypeInfo__System__Collections__Generic__List<RTG::IUndoRedoAction>;
+    this_00 = (Object__Class *)func_?();
     mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
     __Il2CppFullySharedGenericType]::
     LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
               ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
                MethodInfo__System__Collections__Generic__List<RTG::IUndoRedoAction>__List__);
-    value[1].klass = this_00;
-    func_?(value + 1,this_00);
+    pOVar3 = value + 1;
+    pOVar3->klass = this_00;
+    func_?(pOVar3,this_00);
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (value,ExceptionArgument__Enum_obj,in_stack_2);
-    if ((value[1].klass != (Object__Class *)0x0) &&
+              (value,ExceptionArgument__Enum_obj,in_stack_4);
+    if ((pOVar3->klass != (Object__Class *)0x0) &&
        (mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
         List_1_System_Object__Add
-                  ((List_1_System_Object_ *)value[1].klass,(Object *)action,
+                  ((List_1_System_Object_ *)pOVar3->klass,(Object *)action,
                    MethodInfo__System__Collections__Generic__List<RTG::IUndoRedoAction>__Add_RTG__IUndoRedoAction_
-                  ), pLVar1 != (List_1_RTG_RTUndoRedo_ActionGroup_ *)0x0)) {
+                  ), this_01 != (List_1_RTG_IUndoRedoAction___Class *)0x0)) {
       mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-                ((List_1_System_Object_ *)pLVar1,value,
+                ((List_1_System_Object_ *)this_01,value,
                  MethodInfo__System__Collections__Generic__List<RTG::RTUndoRedo::ActionGroup>__Add_RTG__RTUndoRedo__ActionGroup_
                 );
       pLVar1 = (this->fields)._actionGroupStack;
@@ -127,8 +127,8 @@ void Assembly-CSharp.dll::RTG::RTUndoRedo::RTUndoRedo_RecordAction
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -169,88 +169,84 @@ void Assembly-CSharp.dll::RTG::RTUndoRedo::RTUndoRedo_Redo(RTUndoRedo *this,Meth
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  LStack_6._list = (List_1_System_Object_ *)0x0;
-  LStack_6._index = 0;
-  LStack_6._version = 0;
-  LStack_6._current = (Object *)0x0;
   if ((this->fields)._isEnabled != 0) {
-    pLVar7 = (this->fields)._actionGroupStack;
-    if (pLVar7 == (List_1_RTG_RTUndoRedo_ActionGroup_ *)0x0) {
+    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              (this->fields)._actionGroupStack;
+    if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
 code_?:
       func_?();
-      pcVar8 = (code *)swi(3);
-      (*pcVar8)();
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
       return;
     }
-    if (((pLVar7->fields)._size != 0) &&
-       ((this->fields)._stackPointer != (pLVar7->fields)._size + -1)) {
-      RVar9 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-               RegexCharClass+SingleRange]::
-               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                         ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                          (this->fields)._actionGroupStack,(this->fields)._stackPointer + 1,
-                          MethodInfo__System__Collections__Generic__List<RTG::RTUndoRedo::ActionGroup>__get_Item_int_
-                         );
-      this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
+    if (((this_00->fields)._size != 0) &&
+       (iVar7 = (this->fields)._stackPointer, iVar7 != (this_00->fields)._size + -1)) {
+      LStack_8._current =
+           mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+           RegexCharClass+SingleRange]::
+           List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                     (this_00,iVar7 + 1,
+                      MethodInfo__System__Collections__Generic__List<RTG::RTUndoRedo::ActionGroup>__get_Item_int_
+                     );
+      this_02 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
                 func_?(TypeInfo__RTG__YesNoAnswer);
       UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
       UxmlObjectListAttributeDescription`1[System::Object]::
-      UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
-      if ((this->fields).CanUndoRedo != (CanUndoRedoHandler *)0x0) {
-        pCVar10 = (this->fields).CanUndoRedo;
-        (*(pCVar10->fields)._._.invoke_impl)
-                  ((pCVar10->fields)._._.method_code,1,this_00,(pCVar10->fields)._._.method);
+      UxmlObjectListAttributeDescription_1_System_Object___ctor(this_02,(MethodInfo *)0x0);
+      pCVar9 = (this->fields).CanUndoRedo;
+      if (pCVar9 != (CanUndoRedoHandler *)0x0) {
+        (*(pCVar9->fields)._._.invoke_impl)
+                  ((pCVar9->fields)._._.method_code,1,this_02,(pCVar9->fields)._._.method);
       }
-      if (this_00 == (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0)
+      if (this_02 == (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0)
       goto code_?;
-      if (*(char *)((int)&(this_00->fields)._._defaultValue_k__BackingField + 1) == '\0') {
-        piVar11 = &(this->fields)._stackPointer;
-        *piVar11 = *piVar11 + 1;
-        if ((RVar9 == (RegexCharClass_SingleRange)0x0) ||
-           (*(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)((int)RVar9 + 8)
-            == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0))
-        goto code_?;
-        pLVar12 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+      if (*(char *)((int)&(this_02->fields)._._defaultValue_k__BackingField + 1) == '\0') {
+        piVar10 = &(this->fields)._stackPointer;
+        *piVar10 = *piVar10 + 1;
+        if ((LStack_8._current == (RegexCharClass_SingleRange)0x0) ||
+           (this_01 = ((Object *)((int)LStack_8._current + 8))->klass,
+           this_01 == (Object__Class *)0x0)) goto code_?;
+        pLVar11 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                   RegularExpressions::RegexCharClass+SingleRange]::
                   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                            (&LStack_13,
-                             *(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)
-                              ((int)RVar9 + 8),
+                            (&LStack_8,
+                             (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                             this_01,
                              MethodInfo__System__Collections__Generic__List<RTG::IUndoRedoAction>__GetEnumerator__
                             );
-        LStack_6._list = (List_1_System_Object_ *)pLVar12->_list;
-        LStack_6._index = pLVar12->_index;
-        LStack_6._version = pLVar12->_version;
-        LStack_6._current = *(Object **)&pLVar12->_current;
-        LStack_13._version = 0;
+        LStack_12._list = (List_1_System_Object_ *)pLVar11->_list;
+        LStack_12._index = pLVar11->_index;
+        LStack_12._version = pLVar11->_version;
+        LStack_12._current = *(Object **)&pLVar11->_current;
+        LStack_8._version = 0;
         uStack_1 = 1;
-        LStack_13._current = (RegexCharClass_SingleRange)&LStack_6;
+        LStack_8._current = (RegexCharClass_SingleRange)&LStack_12;
         while( true ) {
-          bVar14 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+          bVar13 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
                   List_1_T_Enumerator_System_Object__MoveNext
-                            (&LStack_6,
+                            (&LStack_12,
                              MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::IUndoRedoAction>__MoveNext__
                             );
-          pOVar15 = LStack_6._current;
-          if (bVar14 == 0) break;
-          if ((this->fields).RedoStart != (RedoStartHandler *)0x0) {
-            pRVar16 = (this->fields).RedoStart;
-            (*(pRVar16->fields)._._.invoke_impl)
-                      ((pRVar16->fields)._._.method_code,LStack_6._current,
-                       (pRVar16->fields)._._.method);
+          pOVar14 = LStack_12._current;
+          if (bVar13 == 0) break;
+          pRVar15 = (this->fields).RedoStart;
+          if (pRVar15 != (RedoStartHandler *)0x0) {
+            (*(pRVar15->fields)._._.invoke_impl)
+                      ((pRVar15->fields)._._.method_code,LStack_12._current,
+                       (pRVar15->fields)._._.method);
           }
-          if ((RegexCharClass_SingleRange)pOVar15 == (RegexCharClass_SingleRange)0x0)
+          if ((RegexCharClass_SingleRange)pOVar14 == (RegexCharClass_SingleRange)0x0)
           goto code_?;
-          func_?(2,TypeInfo__RTG__IUndoRedoAction,pOVar15);
-          if ((this->fields).RedoEnd != (RedoEndHandler *)0x0) {
-            pRVar17 = (this->fields).RedoEnd;
-            (*(pRVar17->fields)._._.invoke_impl)
-                      ((pRVar17->fields)._._.method_code,pOVar15,(pRVar17->fields)._._.method);
+          func_?(2,TypeInfo__RTG__IUndoRedoAction,pOVar14);
+          pRVar16 = (this->fields).RedoEnd;
+          if (pRVar16 != (RedoEndHandler *)0x0) {
+            (*(pRVar16->fields)._._.invoke_impl)
+                      ((pRVar16->fields)._._.method_code,pOVar14,(pRVar16->fields)._._.method);
           }
         }
         uStack_1 = 0xffffffff;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&LStack_6,
+                  ((Object *)&LStack_12,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::IUndoRedoAction>__Dispose__
                    ,unaff_EDI);
@@ -319,7 +315,7 @@ void Assembly-CSharp.dll::RTG::RTUndoRedo::RTUndoRedo_RemoveGroups
             *)(this->fields)._actionGroupStack;
   if (pLVar7 != (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
                  *)0x0) {
-    this_00 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
+    this_01 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
               MultiColumnCollectionHeader+ViewState+ColumnState]::
               List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__GetRange
                         (pLVar7,startIndex,count,
@@ -335,7 +331,7 @@ void Assembly-CSharp.dll::RTG::RTUndoRedo::RTUndoRedo_RemoveGroups
                 (pLVar7,startIndex,count,
                  MethodInfo__System__Collections__Generic__List<RTG::RTUndoRedo::ActionGroup>__RemoveRange_int__int_
                 );
-      if (this_00 !=
+      if (this_01 !=
           (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
            *)0x0) {
         method_01 = (MethodInfo *)&UNK_?;
@@ -344,64 +340,64 @@ void Assembly-CSharp.dll::RTG::RTUndoRedo::RTUndoRedo_RemoveGroups
                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                            (&LStack_9,
                             (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                            this_00,
+                            this_01,
                             MethodInfo__System__Collections__Generic__List<RTG::RTUndoRedo::ActionGroup>__GetEnumerator__
                            );
         uStack_10 = 0;
-        LStack_6._list = (List_1_System_Object_ *)pLVar8->_list;
-        LStack_6._index = pLVar8->_index;
-        LStack_6._version = pLVar8->_version;
-        LStack_6._current = *(Object **)&pLVar8->_current;
-        pLStack_11 = &LStack_6;
+        RVar11 = pLVar8->_current;
+        pOStack_12 = (Object *)&stack0xffffffac;
         uStack_1 = 0;
         while( true ) {
           uStack_1._0_1_ = 1;
-          bVar12 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+          bVar13 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
                   List_1_T_Enumerator_System_Object__MoveNext
-                            (&LStack_6,
+                            ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffac,
                              MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::RTUndoRedo::ActionGroup>__MoveNext__
                             );
-          if (bVar12 == 0) {
+          if (bVar13 == 0) {
             uStack_1 = 0xffffffff;
             mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                      ((Object *)pLStack_11,
+                      (pOStack_12,
                        (ExceptionArgument__Enum)
                        MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::RTUndoRedo::ActionGroup>__Dispose__
                        ,method_01);
             *unaff_FS_OFFSET = uStack_3;
             return;
           }
-          if (((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) ||
-             (*(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)
-               ((int)LStack_6._current + 8) ==
-              (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)) break;
+          if ((RVar11 == (RegexCharClass_SingleRange)0x0) ||
+             (this_00 = *(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)
+                         ((int)RVar11 + 8),
+             this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0))
+          break;
           method_00 = (MethodInfo *)&UNK_?;
           pLVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                    RegularExpressions::RegexCharClass+SingleRange]::
                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                              ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                               *)&stack0xffffff9c,
-                              *(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **
-                               )((int)LStack_6._current + 8),
+                               *)&stack0xffffff9c,this_00,
                               MethodInfo__System__Collections__Generic__List<RTG::IUndoRedoAction>__GetEnumerator__
                              );
           LStack_9._version = 0;
-          RVar13 = pLVar8->_current;
+          LStack_6._list = (List_1_System_Object_ *)pLVar8->_list;
+          LStack_6._index = pLVar8->_index;
+          LStack_6._version = pLVar8->_version;
+          LStack_6._current = *(Object **)&pLVar8->_current;
           uStack_1._0_1_ = 3;
-          LStack_9._current = (RegexCharClass_SingleRange)&stack0xffffffac;
+          LStack_9._current = (RegexCharClass_SingleRange)&LStack_6;
           while( true ) {
-            bVar12 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]
+            bVar13 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]
                     ::List_1_T_Enumerator_System_Object__MoveNext
-                              ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffac,
+                              (&LStack_6,
                                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::IUndoRedoAction>__MoveNext__
                               );
-            if (bVar12 == 0) break;
-            if (RVar13 == (RegexCharClass_SingleRange)0x0) goto code_?;
-            func_?(3,TypeInfo__RTG__IUndoRedoAction,RVar13);
+            if (bVar13 == 0) break;
+            if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0)
+            goto code_?;
+            func_?(3,TypeInfo__RTG__IUndoRedoAction,LStack_6._current);
           }
           uStack_1 = CONCAT31(uStack_1._1_3_,1);
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&stack0xffffffac,
+                    ((Object *)&LStack_6,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::IUndoRedoAction>__Dispose__
                      ,method_00);
@@ -451,79 +447,76 @@ void Assembly-CSharp.dll::RTG::RTUndoRedo::RTUndoRedo_Undo(RTUndoRedo *this,Meth
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  LStack_6._list = (List_1_System_Object_ *)0x0;
-  LStack_6._index = 0;
-  LStack_6._version = 0;
-  LStack_6._current = (Object *)0x0;
-  if (((this->fields)._isEnabled == 0) || ((this->fields)._stackPointer < 0)) goto code_?;
+  if (((this->fields)._isEnabled == 0) || (index = (this->fields)._stackPointer, index < 0))
+  goto code_?;
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
             (this->fields)._actionGroupStack;
   if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    RVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-            RegexCharClass+SingleRange]::
-            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                      (this_00,(this->fields)._stackPointer,
-                       MethodInfo__System__Collections__Generic__List<RTG::RTUndoRedo::ActionGroup>__get_Item_int_
-                      );
-    this_01 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
+    LStack_6._current =
+         mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+         RegexCharClass+SingleRange]::
+         List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                   (this_00,index,
+                    MethodInfo__System__Collections__Generic__List<RTG::RTUndoRedo::ActionGroup>__get_Item_int_
+                   );
+    this_02 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
               func_?(TypeInfo__RTG__YesNoAnswer);
     UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
     UxmlObjectListAttributeDescription`1[System::Object]::
-    UxmlObjectListAttributeDescription_1_System_Object___ctor(this_01,(MethodInfo *)0x0);
-    if ((this->fields).CanUndoRedo != (CanUndoRedoHandler *)0x0) {
-      pCVar8 = (this->fields).CanUndoRedo;
-      (*(pCVar8->fields)._._.invoke_impl)
-                ((pCVar8->fields)._._.method_code,0,this_01,(pCVar8->fields)._._.method);
+    UxmlObjectListAttributeDescription_1_System_Object___ctor(this_02,(MethodInfo *)0x0);
+    pCVar7 = (this->fields).CanUndoRedo;
+    if (pCVar7 != (CanUndoRedoHandler *)0x0) {
+      (*(pCVar7->fields)._._.invoke_impl)
+                ((pCVar7->fields)._._.method_code,0,this_02,(pCVar7->fields)._._.method);
     }
-    if (this_01 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
-      if (*(char *)((int)&(this_01->fields)._._defaultValue_k__BackingField + 1) == '\0') {
-        piVar9 = &(this->fields)._stackPointer;
-        *piVar9 = *piVar9 + -1;
-        if ((RVar7 == (RegexCharClass_SingleRange)0x0) ||
-           (*(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)((int)RVar7 + 8)
-            == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0))
-        goto code_?;
-        pLVar10 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                  RegularExpressions::RegexCharClass+SingleRange]::
-                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                            (&LStack_11,
-                             *(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)
-                              ((int)RVar7 + 8),
-                             MethodInfo__System__Collections__Generic__List<RTG::IUndoRedoAction>__GetEnumerator__
-                            );
-        LStack_6._list = (List_1_System_Object_ *)pLVar10->_list;
-        LStack_6._index = pLVar10->_index;
-        LStack_6._version = pLVar10->_version;
-        LStack_6._current = *(Object **)&pLVar10->_current;
-        LStack_11._version = 0;
+    if (this_02 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
+      if (*(char *)((int)&(this_02->fields)._._defaultValue_k__BackingField + 1) == '\0') {
+        piVar8 = &(this->fields)._stackPointer;
+        *piVar8 = *piVar8 + -1;
+        if ((LStack_6._current == (RegexCharClass_SingleRange)0x0) ||
+           (this_01 = ((Object *)((int)LStack_6._current + 8))->klass,
+           this_01 == (Object__Class *)0x0)) goto code_?;
+        pLVar9 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+                 ::RegexCharClass+SingleRange]::
+                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
+                           (&LStack_6,
+                            (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                            this_01,
+                            MethodInfo__System__Collections__Generic__List<RTG::IUndoRedoAction>__GetEnumerator__
+                           );
+        LStack_10._list = (List_1_System_Object_ *)pLVar9->_list;
+        LStack_10._index = pLVar9->_index;
+        LStack_10._version = pLVar9->_version;
+        LStack_10._current = *(Object **)&pLVar9->_current;
+        LStack_6._version = 0;
         uStack_1 = 1;
-        LStack_11._current = (RegexCharClass_SingleRange)&LStack_6;
+        LStack_6._current = (RegexCharClass_SingleRange)&LStack_10;
         while( true ) {
-          bVar12 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+          bVar11 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
                   List_1_T_Enumerator_System_Object__MoveNext
-                            (&LStack_6,
+                            (&LStack_10,
                              MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::IUndoRedoAction>__MoveNext__
                             );
-          pOVar13 = LStack_6._current;
-          if (bVar12 == 0) break;
-          if ((this->fields).UndoStart != (UndoStartHandler *)0x0) {
-            pUVar14 = (this->fields).UndoStart;
-            (*(pUVar14->fields)._._.invoke_impl)
-                      ((pUVar14->fields)._._.method_code,LStack_6._current,
-                       (pUVar14->fields)._._.method);
+          pOVar12 = LStack_10._current;
+          if (bVar11 == 0) break;
+          pUVar13 = (this->fields).UndoStart;
+          if (pUVar13 != (UndoStartHandler *)0x0) {
+            (*(pUVar13->fields)._._.invoke_impl)
+                      ((pUVar13->fields)._._.method_code,LStack_10._current,
+                       (pUVar13->fields)._._.method);
           }
-          if ((RegexCharClass_SingleRange)pOVar13 == (RegexCharClass_SingleRange)0x0)
+          if ((RegexCharClass_SingleRange)pOVar12 == (RegexCharClass_SingleRange)0x0)
           goto code_?;
-          func_?(1,TypeInfo__RTG__IUndoRedoAction,pOVar13);
-          if ((this->fields).UndoEnd != (UndoEndHandler *)0x0) {
-            pUVar15 = (this->fields).UndoEnd;
-            (*(pUVar15->fields)._._.invoke_impl)
-                      ((pUVar15->fields)._._.method_code,pOVar13,(pUVar15->fields)._._.method);
+          func_?(1,TypeInfo__RTG__IUndoRedoAction,pOVar12);
+          pUVar14 = (this->fields).UndoEnd;
+          if (pUVar14 != (UndoEndHandler *)0x0) {
+            (*(pUVar14->fields)._._.invoke_impl)
+                      ((pUVar14->fields)._._.method_code,pOVar12,(pUVar14->fields)._._.method);
           }
         }
         uStack_1 = 0xffffffff;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&LStack_6,
+                  ((Object *)&LStack_10,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::IUndoRedoAction>__Dispose__
                    ,unaff_EDI);
@@ -535,8 +528,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -572,10 +565,7 @@ void Assembly-CSharp.dll::RTG::RTUndoRedo::RTUndoRedo_Update_SystemCall
     if (bVar1 == 0) {
       return;
     }
-    bVar1 = RTInput::RTInput_IsKeyPressed(KeyCode__Enum_LeftControl,(MethodInfo *)0x0);
-    if (bVar1 == 0) {
-      return;
-    }
+    keyCode = KeyCode__Enum_LeftControl;
   }
   else {
     bVar1 = RTInput::RTInput_WasKeyPressedThisFrame(KeyCode__Enum_Z,(MethodInfo *)0x0);
@@ -596,12 +586,12 @@ code_?:
     if (bVar1 == 0) {
       return;
     }
-    bVar1 = RTInput::RTInput_IsKeyPressed(KeyCode__Enum_LeftShift,(MethodInfo *)0x0);
-    if (bVar1 == 0) {
-      return;
-    }
+    keyCode = KeyCode__Enum_LeftShift;
   }
-  RTUndoRedo_Redo(this,(MethodInfo *)0x0);
+  bVar1 = RTInput::RTInput_IsKeyPressed(keyCode,(MethodInfo *)0x0);
+  if (bVar1 != 0) {
+    RTUndoRedo_Redo(this,(MethodInfo *)0x0);
+  }
   return;
 }
 
@@ -631,8 +621,9 @@ void Assembly-CSharp.dll::RTG::RTUndoRedo::RTUndoRedo__ctor(RTUndoRedo *this,Met
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<RTG::RTUndoRedo::ActionGroup>__List__);
-  (this->fields)._actionGroupStack = this_00;
-  func_?(&(this->fields)._actionGroupStack,this_00);
+  ppLVar1 = &(this->fields)._actionGroupStack;
+  *ppLVar1 = this_00;
+  func_?(ppLVar1,this_00);
   (this->fields)._stackPointer = -1;
   if ((TypeInfo__RTG__MonoSingleton<RTG::RTUndoRedo>->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__RTG__MonoSingleton<RTG::RTUndoRedo>);
@@ -655,26 +646,27 @@ void Assembly-CSharp.dll::RTG::RTUndoRedo::RTUndoRedo_add_CanUndoRedo
     func_?(&TypeInfo__RTG__CanUndoRedoHandler);
     cRam_? = '\x01';
   }
-  a = (this->fields).CanUndoRedo;
+  ppCVar1 = &(this->fields).CanUndoRedo;
+  a = *ppCVar1;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar2 = (Delegate *)0x0;
-    if (pDVar1 != (Delegate *)0x0) {
-      if ((CanUndoRedoHandler__Class *)pDVar1->klass == TypeInfo__RTG__CanUndoRedoHandler) {
-        pDVar2 = pDVar1;
+    pDVar3 = (Delegate *)0x0;
+    if (pDVar2 != (Delegate *)0x0) {
+      if ((CanUndoRedoHandler__Class *)pDVar2->klass == TypeInfo__RTG__CanUndoRedoHandler) {
+        pDVar3 = pDVar2;
       }
-      if (pDVar2 == (Delegate *)0x0) {
-        func_?(pDVar1,TypeInfo__RTG__CanUndoRedoHandler);
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
+      if (pDVar3 == (Delegate *)0x0) {
+        func_?(pDVar2,TypeInfo__RTG__CanUndoRedoHandler);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pCVar4 = (CanUndoRedoHandler *)func_?(&(this->fields).CanUndoRedo,pDVar2,a);
-    bVar5 = pCVar4 == a;
-    a = pCVar4;
-    if (bVar5) {
+    pCVar5 = (CanUndoRedoHandler *)func_?(ppCVar1,pDVar3,a);
+    bVar6 = pCVar5 == a;
+    a = pCVar5;
+    if (bVar6) {
       return;
     }
   } while( true );
@@ -691,26 +683,27 @@ void Assembly-CSharp.dll::RTG::RTUndoRedo::RTUndoRedo_add_RedoEnd
     func_?(&TypeInfo__RTG__RedoEndHandler);
     cRam_? = '\x01';
   }
-  a = (this->fields).RedoEnd;
+  ppRVar1 = &(this->fields).RedoEnd;
+  a = *ppRVar1;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar2 = (Delegate *)0x0;
-    if (pDVar1 != (Delegate *)0x0) {
-      if ((RedoEndHandler__Class *)pDVar1->klass == TypeInfo__RTG__RedoEndHandler) {
-        pDVar2 = pDVar1;
+    pDVar3 = (Delegate *)0x0;
+    if (pDVar2 != (Delegate *)0x0) {
+      if ((RedoEndHandler__Class *)pDVar2->klass == TypeInfo__RTG__RedoEndHandler) {
+        pDVar3 = pDVar2;
       }
-      if (pDVar2 == (Delegate *)0x0) {
-        func_?(pDVar1,TypeInfo__RTG__RedoEndHandler);
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
+      if (pDVar3 == (Delegate *)0x0) {
+        func_?(pDVar2,TypeInfo__RTG__RedoEndHandler);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pRVar4 = (RedoEndHandler *)func_?(&(this->fields).RedoEnd,pDVar2,a);
-    bVar5 = pRVar4 == a;
-    a = pRVar4;
-    if (bVar5) {
+    pRVar5 = (RedoEndHandler *)func_?(ppRVar1,pDVar3,a);
+    bVar6 = pRVar5 == a;
+    a = pRVar5;
+    if (bVar6) {
       return;
     }
   } while( true );
@@ -727,26 +720,27 @@ void Assembly-CSharp.dll::RTG::RTUndoRedo::RTUndoRedo_add_RedoStart
     func_?(&TypeInfo__RTG__RedoStartHandler);
     cRam_? = '\x01';
   }
-  a = (this->fields).RedoStart;
+  ppRVar1 = &(this->fields).RedoStart;
+  a = *ppRVar1;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar2 = (Delegate *)0x0;
-    if (pDVar1 != (Delegate *)0x0) {
-      if ((RedoStartHandler__Class *)pDVar1->klass == TypeInfo__RTG__RedoStartHandler) {
-        pDVar2 = pDVar1;
+    pDVar3 = (Delegate *)0x0;
+    if (pDVar2 != (Delegate *)0x0) {
+      if ((RedoStartHandler__Class *)pDVar2->klass == TypeInfo__RTG__RedoStartHandler) {
+        pDVar3 = pDVar2;
       }
-      if (pDVar2 == (Delegate *)0x0) {
-        func_?(pDVar1,TypeInfo__RTG__RedoStartHandler);
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
+      if (pDVar3 == (Delegate *)0x0) {
+        func_?(pDVar2,TypeInfo__RTG__RedoStartHandler);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pRVar4 = (RedoStartHandler *)func_?(&(this->fields).RedoStart,pDVar2,a);
-    bVar5 = pRVar4 == a;
-    a = pRVar4;
-    if (bVar5) {
+    pRVar5 = (RedoStartHandler *)func_?(ppRVar1,pDVar3,a);
+    bVar6 = pRVar5 == a;
+    a = pRVar5;
+    if (bVar6) {
       return;
     }
   } while( true );
@@ -763,26 +757,27 @@ void Assembly-CSharp.dll::RTG::RTUndoRedo::RTUndoRedo_add_UndoEnd
     func_?(&TypeInfo__RTG__UndoEndHandler);
     cRam_? = '\x01';
   }
-  a = (this->fields).UndoEnd;
+  ppUVar1 = &(this->fields).UndoEnd;
+  a = *ppUVar1;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar2 = (Delegate *)0x0;
-    if (pDVar1 != (Delegate *)0x0) {
-      if ((UndoEndHandler__Class *)pDVar1->klass == TypeInfo__RTG__UndoEndHandler) {
-        pDVar2 = pDVar1;
+    pDVar3 = (Delegate *)0x0;
+    if (pDVar2 != (Delegate *)0x0) {
+      if ((UndoEndHandler__Class *)pDVar2->klass == TypeInfo__RTG__UndoEndHandler) {
+        pDVar3 = pDVar2;
       }
-      if (pDVar2 == (Delegate *)0x0) {
-        func_?(pDVar1,TypeInfo__RTG__UndoEndHandler);
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
+      if (pDVar3 == (Delegate *)0x0) {
+        func_?(pDVar2,TypeInfo__RTG__UndoEndHandler);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pUVar4 = (UndoEndHandler *)func_?(&(this->fields).UndoEnd,pDVar2,a);
-    bVar5 = pUVar4 == a;
-    a = pUVar4;
-    if (bVar5) {
+    pUVar5 = (UndoEndHandler *)func_?(ppUVar1,pDVar3,a);
+    bVar6 = pUVar5 == a;
+    a = pUVar5;
+    if (bVar6) {
       return;
     }
   } while( true );
@@ -799,26 +794,27 @@ void Assembly-CSharp.dll::RTG::RTUndoRedo::RTUndoRedo_add_UndoStart
     func_?(&TypeInfo__RTG__UndoStartHandler);
     cRam_? = '\x01';
   }
-  a = (this->fields).UndoStart;
+  ppUVar1 = &(this->fields).UndoStart;
+  a = *ppUVar1;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar2 = (Delegate *)0x0;
-    if (pDVar1 != (Delegate *)0x0) {
-      if ((UndoStartHandler__Class *)pDVar1->klass == TypeInfo__RTG__UndoStartHandler) {
-        pDVar2 = pDVar1;
+    pDVar3 = (Delegate *)0x0;
+    if (pDVar2 != (Delegate *)0x0) {
+      if ((UndoStartHandler__Class *)pDVar2->klass == TypeInfo__RTG__UndoStartHandler) {
+        pDVar3 = pDVar2;
       }
-      if (pDVar2 == (Delegate *)0x0) {
-        func_?(pDVar1,TypeInfo__RTG__UndoStartHandler);
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
+      if (pDVar3 == (Delegate *)0x0) {
+        func_?(pDVar2,TypeInfo__RTG__UndoStartHandler);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pUVar4 = (UndoStartHandler *)func_?(&(this->fields).UndoStart,pDVar2,a);
-    bVar5 = pUVar4 == a;
-    a = pUVar4;
-    if (bVar5) {
+    pUVar5 = (UndoStartHandler *)func_?(ppUVar1,pDVar3,a);
+    bVar6 = pUVar5 == a;
+    a = pUVar5;
+    if (bVar6) {
       return;
     }
   } while( true );
@@ -835,26 +831,27 @@ void Assembly-CSharp.dll::RTG::RTUndoRedo::RTUndoRedo_remove_CanUndoRedo
     func_?(&TypeInfo__RTG__CanUndoRedoHandler);
     cRam_? = '\x01';
   }
-  source = (this->fields).CanUndoRedo;
+  ppCVar1 = &(this->fields).CanUndoRedo;
+  source = *ppCVar1;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar2 = (Delegate *)0x0;
-    if (pDVar1 != (Delegate *)0x0) {
-      if ((CanUndoRedoHandler__Class *)pDVar1->klass == TypeInfo__RTG__CanUndoRedoHandler) {
-        pDVar2 = pDVar1;
+    pDVar3 = (Delegate *)0x0;
+    if (pDVar2 != (Delegate *)0x0) {
+      if ((CanUndoRedoHandler__Class *)pDVar2->klass == TypeInfo__RTG__CanUndoRedoHandler) {
+        pDVar3 = pDVar2;
       }
-      if (pDVar2 == (Delegate *)0x0) {
-        func_?(pDVar1,TypeInfo__RTG__CanUndoRedoHandler);
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
+      if (pDVar3 == (Delegate *)0x0) {
+        func_?(pDVar2,TypeInfo__RTG__CanUndoRedoHandler);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pCVar4 = (CanUndoRedoHandler *)func_?(&(this->fields).CanUndoRedo,pDVar2,source);
-    bVar5 = pCVar4 == source;
-    source = pCVar4;
-    if (bVar5) {
+    pCVar5 = (CanUndoRedoHandler *)func_?(ppCVar1,pDVar3,source);
+    bVar6 = pCVar5 == source;
+    source = pCVar5;
+    if (bVar6) {
       return;
     }
   } while( true );
@@ -871,26 +868,27 @@ void Assembly-CSharp.dll::RTG::RTUndoRedo::RTUndoRedo_remove_RedoEnd
     func_?(&TypeInfo__RTG__RedoEndHandler);
     cRam_? = '\x01';
   }
-  source = (this->fields).RedoEnd;
+  ppRVar1 = &(this->fields).RedoEnd;
+  source = *ppRVar1;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar2 = (Delegate *)0x0;
-    if (pDVar1 != (Delegate *)0x0) {
-      if ((RedoEndHandler__Class *)pDVar1->klass == TypeInfo__RTG__RedoEndHandler) {
-        pDVar2 = pDVar1;
+    pDVar3 = (Delegate *)0x0;
+    if (pDVar2 != (Delegate *)0x0) {
+      if ((RedoEndHandler__Class *)pDVar2->klass == TypeInfo__RTG__RedoEndHandler) {
+        pDVar3 = pDVar2;
       }
-      if (pDVar2 == (Delegate *)0x0) {
-        func_?(pDVar1,TypeInfo__RTG__RedoEndHandler);
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
+      if (pDVar3 == (Delegate *)0x0) {
+        func_?(pDVar2,TypeInfo__RTG__RedoEndHandler);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pRVar4 = (RedoEndHandler *)func_?(&(this->fields).RedoEnd,pDVar2,source);
-    bVar5 = pRVar4 == source;
-    source = pRVar4;
-    if (bVar5) {
+    pRVar5 = (RedoEndHandler *)func_?(ppRVar1,pDVar3,source);
+    bVar6 = pRVar5 == source;
+    source = pRVar5;
+    if (bVar6) {
       return;
     }
   } while( true );
@@ -907,26 +905,27 @@ void Assembly-CSharp.dll::RTG::RTUndoRedo::RTUndoRedo_remove_RedoStart
     func_?(&TypeInfo__RTG__RedoStartHandler);
     cRam_? = '\x01';
   }
-  source = (this->fields).RedoStart;
+  ppRVar1 = &(this->fields).RedoStart;
+  source = *ppRVar1;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar2 = (Delegate *)0x0;
-    if (pDVar1 != (Delegate *)0x0) {
-      if ((RedoStartHandler__Class *)pDVar1->klass == TypeInfo__RTG__RedoStartHandler) {
-        pDVar2 = pDVar1;
+    pDVar3 = (Delegate *)0x0;
+    if (pDVar2 != (Delegate *)0x0) {
+      if ((RedoStartHandler__Class *)pDVar2->klass == TypeInfo__RTG__RedoStartHandler) {
+        pDVar3 = pDVar2;
       }
-      if (pDVar2 == (Delegate *)0x0) {
-        func_?(pDVar1,TypeInfo__RTG__RedoStartHandler);
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
+      if (pDVar3 == (Delegate *)0x0) {
+        func_?(pDVar2,TypeInfo__RTG__RedoStartHandler);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pRVar4 = (RedoStartHandler *)func_?(&(this->fields).RedoStart,pDVar2,source);
-    bVar5 = pRVar4 == source;
-    source = pRVar4;
-    if (bVar5) {
+    pRVar5 = (RedoStartHandler *)func_?(ppRVar1,pDVar3,source);
+    bVar6 = pRVar5 == source;
+    source = pRVar5;
+    if (bVar6) {
       return;
     }
   } while( true );
@@ -943,26 +942,27 @@ void Assembly-CSharp.dll::RTG::RTUndoRedo::RTUndoRedo_remove_UndoEnd
     func_?(&TypeInfo__RTG__UndoEndHandler);
     cRam_? = '\x01';
   }
-  source = (this->fields).UndoEnd;
+  ppUVar1 = &(this->fields).UndoEnd;
+  source = *ppUVar1;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar2 = (Delegate *)0x0;
-    if (pDVar1 != (Delegate *)0x0) {
-      if ((UndoEndHandler__Class *)pDVar1->klass == TypeInfo__RTG__UndoEndHandler) {
-        pDVar2 = pDVar1;
+    pDVar3 = (Delegate *)0x0;
+    if (pDVar2 != (Delegate *)0x0) {
+      if ((UndoEndHandler__Class *)pDVar2->klass == TypeInfo__RTG__UndoEndHandler) {
+        pDVar3 = pDVar2;
       }
-      if (pDVar2 == (Delegate *)0x0) {
-        func_?(pDVar1,TypeInfo__RTG__UndoEndHandler);
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
+      if (pDVar3 == (Delegate *)0x0) {
+        func_?(pDVar2,TypeInfo__RTG__UndoEndHandler);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pUVar4 = (UndoEndHandler *)func_?(&(this->fields).UndoEnd,pDVar2,source);
-    bVar5 = pUVar4 == source;
-    source = pUVar4;
-    if (bVar5) {
+    pUVar5 = (UndoEndHandler *)func_?(ppUVar1,pDVar3,source);
+    bVar6 = pUVar5 == source;
+    source = pUVar5;
+    if (bVar6) {
       return;
     }
   } while( true );
@@ -979,26 +979,27 @@ void Assembly-CSharp.dll::RTG::RTUndoRedo::RTUndoRedo_remove_UndoStart
     func_?(&TypeInfo__RTG__UndoStartHandler);
     cRam_? = '\x01';
   }
-  source = (this->fields).UndoStart;
+  ppUVar1 = &(this->fields).UndoStart;
+  source = *ppUVar1;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar2 = (Delegate *)0x0;
-    if (pDVar1 != (Delegate *)0x0) {
-      if ((UndoStartHandler__Class *)pDVar1->klass == TypeInfo__RTG__UndoStartHandler) {
-        pDVar2 = pDVar1;
+    pDVar3 = (Delegate *)0x0;
+    if (pDVar2 != (Delegate *)0x0) {
+      if ((UndoStartHandler__Class *)pDVar2->klass == TypeInfo__RTG__UndoStartHandler) {
+        pDVar3 = pDVar2;
       }
-      if (pDVar2 == (Delegate *)0x0) {
-        func_?(pDVar1,TypeInfo__RTG__UndoStartHandler);
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
+      if (pDVar3 == (Delegate *)0x0) {
+        func_?(pDVar2,TypeInfo__RTG__UndoStartHandler);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pUVar4 = (UndoStartHandler *)func_?(&(this->fields).UndoStart,pDVar2,source);
-    bVar5 = pUVar4 == source;
-    source = pUVar4;
-    if (bVar5) {
+    pUVar5 = (UndoStartHandler *)func_?(ppUVar1,pDVar3,source);
+    bVar6 = pUVar5 == source;
+    source = pUVar5;
+    if (bVar6) {
       return;
     }
   } while( true );

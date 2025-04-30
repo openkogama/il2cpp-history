@@ -241,7 +241,7 @@ void Assembly-CSharp.dll::MVGameModeChangeNotifier::MVGameModeChangeNotifier__ct
              MethodInfo__System__Collections__Generic__List<IGameStateControllerSubscriber>__List__)
   ;
   method_00 = (MethodInfo *)&(this->fields).UpdateList;
-  (this->fields).UpdateList = this_00;
+  *(List_1_IGameStateControllerSubscriber_ **)method_00 = this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);

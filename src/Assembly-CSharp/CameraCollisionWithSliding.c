@@ -13,65 +13,16 @@ bool Assembly-CSharp.dll::CameraCollisionWithSliding::CameraCollisionWithSliding
     (this->fields).slideDir = 0.0;
   }
   iVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_frameCount((MethodInfo *)0x0);
-  fVar2 = distanceToAvatar * (this->fields).checkDistanceFactor;
   (this->fields).prevFrameCount = iVar1;
-  func_?(&stack0xffffff60,0,0x48);
-  bVar3 = CameraCollision::CameraCollision_Collide_1
-                    ((CameraCollision *)this,(VoxelHit *)&stack0xffffff60,newCameraPosition,
-                     cameraRadius,fVar2,targetPosition,cameraPosition,ignoreAvatarId,
-                     (MethodInfo *)0x0);
-  if (bVar3 != 0) {
-    uVar4._0_4_ = newCameraPosition->x;
-    uVar4._4_4_ = newCameraPosition->y;
-    fVar5 = newCameraPosition->z;
-    VStack_6.z = targetPosition.z - cameraPosition.z;
-    uStack_7 = CONCAT44(targetPosition.y - cameraPosition.y,targetPosition.x - cameraPosition.x);
-    fStack_8 = VStack_6.z;
-    puVar9 = (undefined8 *)func_?();
-    uStack_7._0_4_ = (float)*puVar9;
-    VStack_6.z = *(float *)(puVar9 + 1) * fVar2;
-    uStack_7 = (ulonglong)(uint)((float)uStack_7 * fVar2);
-    uStack_10 = uVar4 & 0xffffffff;
-    uVar11 = 0;
-    uVar12 = 0;
-    fStack_8 = VStack_6.z;
-    fVar13 = (float10)func_?();
-    newPos.z = fVar5;
-    newPos.x = (float)(int)(uVar4 & 0xffffffff);
-    newPos.y = (float)(int)((uVar4 & 0xffffffff) >> 0x20);
-    hitPoint.y = (float)uVar11;
-    hitPoint.x = in_stack_14;
-    hitPoint.z = in_stack_15;
-    targetPosition_00.y = 0.0;
-    targetPosition_00.x = targetPosition.x;
-    targetPosition_00.z = targetPosition.z;
-    cameraPosition_00.y = (float)uVar12;
-    cameraPosition_00.x = cameraPosition.x;
-    cameraPosition_00.z = cameraPosition.z;
-    pVVar16 = CameraCollisionWithSliding_GetSlideDir
-                        (&VStack_6,this,newPos,hitPoint,targetPosition_00,cameraPosition_00,
-                         (MethodInfo *)0x0);
-    uVar17 = pVVar16->x;
-    uVar18 = pVVar16->y;
-    fVar2 = pVVar16->z;
-    newPos_00.z = fVar5;
-    newPos_00.x = (float)(undefined4)uStack_10;
-    newPos_00.y = (float)uStack_10._4_4_;
-    targetPosition_01.y = 0.0;
-    targetPosition_01.x = targetPosition.x;
-    targetPosition_01.z = targetPosition.z;
-    fVar19 = CameraCollisionWithSliding_GetSlideVectorLength
-                       (*pVVar16,newPos_00,targetPosition_01,(float)fVar13,(MethodInfo *)0x0);
-    uVar20 = newCameraPosition->x;
-    uVar21 = newCameraPosition->y;
-    fVar5 = newCameraPosition->z;
-    newCameraPosition->x = (float)uVar20 + (float)uVar17 * fVar19;
-    newCameraPosition->y = (float)uVar21 + (float)uVar18 * fVar19;
-    newCameraPosition->z = fVar5 + fVar2 * fVar19;
-    return 1;
+  bVar2 = CameraCollisionWithSliding_DoCollideWithSliding
+                    (this,newCameraPosition,cameraRadius,
+                     (this->fields).checkDistanceFactor * distanceToAvatar,targetPosition,
+                     cameraPosition,ignoreAvatarId,(MethodInfo *)0x0);
+  if (bVar2 == 0) {
+    (this->fields).slideDir = 0.0;
+    return 0;
   }
-  (this->fields).slideDir = 0.0;
-  return 0;
+  return 1;
 }
 
 
@@ -85,57 +36,79 @@ bool Assembly-CSharp.dll::CameraCollisionWithSliding::
                HashSet_1_System_Int32_ *ignoreIDs,MethodInfo *method)
 
 {
-  func_?(&stack0xffffff60,0,0x48);
+  func_?((undefined1 *)((int)register0x00000010 + -0x50),0,0x48);
   bVar1 = CameraCollision::CameraCollision_Collide_1
-                    ((CameraCollision *)this,(VoxelHit *)&stack0xffffff60,newPos,cameraRadius,
-                     baseDistance,targetPosition,cameraPosition,ignoreIDs,(MethodInfo *)0x0);
+                    ((CameraCollision *)this,(VoxelHit *)((int)register0x00000010 + -0x50),newPos,
+                     cameraRadius,baseDistance,targetPosition,cameraPosition,ignoreIDs,
+                     (MethodInfo *)0x0);
   if (bVar1 != 0) {
-    fVar2 = newPos->z;
-    uVar3._0_4_ = newPos->x;
-    uVar3._4_4_ = newPos->y;
-    VStack_4.z = targetPosition.z - cameraPosition.z;
-    uStack_5 = CONCAT44(targetPosition.y - cameraPosition.y,targetPosition.x - cameraPosition.x);
-    fStack_6 = VStack_4.z;
-    puVar7 = (undefined8 *)func_?();
-    uStack_5._0_4_ = (float)*puVar7;
-    VStack_4.z = *(float *)(puVar7 + 1) * baseDistance;
-    uStack_5 = (ulonglong)(uint)((float)uStack_5 * baseDistance);
-    uStack_8 = uVar3 & 0xffffffff;
-    uVar9 = 0;
-    fStack_6 = VStack_4.z;
-    fVar10 = (float10)func_?();
-    hitPoint.y = (float)uVar9;
-    hitPoint.x = in_stack_11;
-    newPos_00.z = fVar2;
-    newPos_00.x = (float)(int)(uVar3 & 0xffffffff);
-    newPos_00.y = (float)(int)((uVar3 & 0xffffffff) >> 0x20);
-    hitPoint.z = in_stack_12;
-    targetPosition_00.y = 0.0;
-    targetPosition_00.x = targetPosition.x;
+    uStack_2 = cameraPosition._0_8_;
+    puStack_3 = (undefined *)(targetPosition.x - cameraPosition.x);
+    uStack_4 = targetPosition._0_8_;
+    auStack_5._20_4_ = pCStack_6;
+    uVar7 = newPos->x;
+    uVar8 = newPos->y;
+    fVar9 = newPos->z;
+    fVar10 = fStack_11;
+    auStack_5._8_4_ = uVar7;
+    auStack_5._12_4_ = uVar8;
+    puVar12 = (undefined8 *)func_?(&stack0xffffff9c,&puStack_3,0);
+    puStack_3 = (undefined *)*puVar12;
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__System__Math);
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__System__Math);
+    }
+    uVar13 = uStack_2;
+    uStack_2 = uStack_2 & 0xffffffff;
+    uStack_4 = uStack_4 & 0xffffffff;
+    auStack_5._24_4_ = 0;
+    auStack_5._12_4_ = 0.0;
+    newPos_00.y = 0.0;
+    newPos_00.x = (float)auStack_5._8_4_;
+    newPos_00.z = fVar9;
+    hitPoint.z = fVar10;
+    hitPoint.x = (float)auStack_5._20_4_;
+    hitPoint.y = 0.0;
     targetPosition_00.z = targetPosition.z;
-    cameraPosition_00.y = 0.0;
-    cameraPosition_00.x = cameraPosition.x;
+    targetPosition_00.x = (float)method_00;
+    targetPosition_00.y = (float)uStack_4._4_4_;
     cameraPosition_00.z = cameraPosition.z;
-    pVVar13 = CameraCollisionWithSliding_GetSlideDir
-                        (&VStack_4,this,newPos_00,hitPoint,targetPosition_00,cameraPosition_00,
-                         (MethodInfo *)0x0);
-    uVar14 = pVVar13->x;
-    uVar15 = pVVar13->y;
-    fVar16 = pVVar13->z;
-    newPos_01.z = fVar2;
-    newPos_01.x = (float)(undefined4)uStack_8;
-    newPos_01.y = (float)uStack_8._4_4_;
-    targetPosition_01.y = 0.0;
-    targetPosition_01.x = targetPosition.x;
+    cameraPosition_00.x = (float)(int)(uVar13 & 0xffffffff);
+    cameraPosition_00.y = (float)(int)((uVar13 & 0xffffffff) >> 0x20);
+    pVVar14 = CameraCollisionWithSliding_GetSlideDir
+                        ((Vector3 *)((undefined1 *)((int)register0x00000010 + -0x50) + 0x14),this,
+                         newPos_00,hitPoint,targetPosition_00,cameraPosition_00,(MethodInfo *)0x0);
+    uVar15 = pVVar14->x;
+    uVar16 = pVVar14->y;
+    auStack_5._20_4_ = pVVar14->z;
+    uStack_4 = uStack_4 & 0xffffffff00000000;
+    dVar17 = (double)(fStack_18 * fStack_18 + 0.0 +
+                     (float)auStack_5._24_4_ * (float)auStack_5._24_4_);
+    auStack_5._12_4_ = uVar15;
+    auStack_5._16_4_ = uVar16;
+    if (dVar17 < 0.0) {
+      func_?();
+    }
+    else {
+      dVar17 = SQRT(dVar17);
+    }
+    targetPosition_01.y = fStack_11;
+    targetPosition_01.x = (float)pTStack_19;
+    newPos_01.y = (float)uStack_20;
+    newPos_01.x = (float)uStack_21;
+    newPos_01.z = fStack_22;
     targetPosition_01.z = targetPosition.z;
-    fVar17 = CameraCollisionWithSliding_GetSlideVectorLength
-                       (*pVVar13,newPos_01,targetPosition_01,(float)fVar10,(MethodInfo *)0x0);
-    uVar18 = newPos->x;
-    uVar19 = newPos->y;
-    fVar2 = newPos->z;
-    newPos->x = (float)uVar18 + (float)uVar14 * fVar17;
-    newPos->y = (float)uVar19 + (float)uVar15 * fVar17;
-    newPos->z = fVar2 + fVar16 * fVar17;
+    fVar10 = CameraCollisionWithSliding_GetSlideVectorLength
+                       (*pVVar14,newPos_01,targetPosition_01,(float)dVar17,method_00);
+    uVar23 = newPos->x;
+    uVar24 = newPos->y;
+    fVar9 = newPos->z;
+    newPos->x = (float)uVar23 + (float)pTStack_19 * fVar10;
+    newPos->y = (float)uVar24 + fStack_11 * fVar10;
+    newPos->z = fVar9 + fStack_25 * fVar10;
     return 1;
   }
   return 0;
@@ -218,44 +191,48 @@ Vector3 * Assembly-CSharp.dll::CameraCollisionWithSliding::CameraCollisionWithSl
                     float baseDistance,MethodInfo *method)
 
 {
-  fStack_1 = targetPosition.z - cameraPosition.z;
-  uStack_2 = CONCAT44(targetPosition.y - cameraPosition.y,targetPosition.x - cameraPosition.x);
-  puVar3 = (undefined8 *)func_?(&stack0xffffffd0,&uStack_2,0);
-  uStack_2._0_4_ = (float)*puVar3;
-  fStack_1 = *(float *)(puVar3 + 1) * baseDistance;
-  uStack_2 = (ulonglong)(uint)((float)uStack_2 * baseDistance);
-  fVar4 = (float10)func_?(&uStack_2,0);
-  fStack_5 = (float)fVar4;
+  func_?(&stack0xffffffe8,&stack0xffffffdc,0);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Math);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Math);
+  }
+  targetPosition_00.y = 0.0;
+  targetPosition_00.x = targetPosition.x;
   hitPoint_00.y = 0.0;
   hitPoint_00.x = hitPoint.x;
   newPos_00.y = 0.0;
   newPos_00.x = newPos.x;
-  uVar6 = 0;
   newPos_00.z = newPos.z;
   hitPoint_00.z = hitPoint.z;
-  targetPosition_00.y = 0.0;
-  targetPosition_00.x = targetPosition.x;
   targetPosition_00.z = targetPosition.z;
   cameraPosition_00.y = 0.0;
   cameraPosition_00.x = cameraPosition.x;
   cameraPosition_00.z = cameraPosition.z;
-  pVVar7 = CameraCollisionWithSliding_GetSlideDir
-                     ((Vector3 *)&stack0xffffffd0,this,newPos_00,hitPoint_00,targetPosition_00,
+  pVVar1 = CameraCollisionWithSliding_GetSlideDir
+                     ((Vector3 *)&stack0xffffffe8,this,newPos_00,hitPoint_00,targetPosition_00,
                       cameraPosition_00,(MethodInfo *)0x0);
-  uStack_2._0_4_ = pVVar7->x;
-  uStack_2._4_4_ = pVVar7->y;
-  fStack_1 = pVVar7->z;
+  method_00 = (MethodInfo *)0x0;
+  dVar2 = (double)(newPos.z * newPos.z + 0.0);
+  if (dVar2 < 0.0) {
+    func_?();
+  }
+  else {
+    dVar2 = SQRT(dVar2);
+  }
   newPos_01.y = 0.0;
   newPos_01.x = newPos.x;
   newPos_01.z = newPos.z;
-  targetPosition_01.y = (float)uVar6;
+  targetPosition_01.y = 0.0;
   targetPosition_01.x = targetPosition.x;
   targetPosition_01.z = targetPosition.z;
-  fVar8 = CameraCollisionWithSliding_GetSlideVectorLength
-                    (*pVVar7,newPos_01,targetPosition_01,fStack_5,(MethodInfo *)0x0);
-  __return_storage_ptr__->x = (float)uStack_2 * fVar8;
-  __return_storage_ptr__->y = uStack_2._4_4_ * fVar8;
-  __return_storage_ptr__->z = fStack_1 * fVar8;
+  fVar3 = CameraCollisionWithSliding_GetSlideVectorLength
+                    (*pVVar1,newPos_01,targetPosition_01,(float)dVar2,method_00);
+  __return_storage_ptr__->x = in_stack_4 * fVar3;
+  __return_storage_ptr__->y = in_stack_5 * fVar3;
+  __return_storage_ptr__->z = in_stack_6 * fVar3;
   return __return_storage_ptr__;
 }
 
@@ -272,20 +249,48 @@ float Assembly-CSharp.dll::CameraCollisionWithSliding::
     func_?(&TypeInfo__UnityEngine__Debug);
     cRam_? = '\x01';
   }
-  fVar1 = targetPosition.x - newPos.x;
-  fVar2 = targetPosition.y - newPos.y;
-  uStack_3 = 0;
+  fVar1 = newPos.z + (targetPosition.z - newPos.z);
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
-  end.y = newPos.y + fVar2;
-  end.x = newPos.x + fVar1;
-  fStack_4 = newPos.x;
-  fStack_5 = newPos.y;
-  fStack_6 = 0.0;
-  fStack_7 = 0.0;
-  end.z = newPos.z + (targetPosition.z - newPos.z);
+  end.y = newPos.y + (targetPosition.y - newPos.y);
+  end.x = newPos.x + (targetPosition.x - newPos.x);
+  end.z = fVar1;
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_DrawLine_2(newPos,end,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Math);
+    cRam_? = '\x01';
+  }
+  fVar2 = newPos.x * newPos.x + fVar1 * fVar1 + 0.0;
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Math);
+  }
+  dVar3 = (double)((slideVector.x * slideVector.x + slideVector.y * slideVector.y +
+                   slideVector.z * slideVector.z) * fVar2);
+  if (dVar3 < 0.0) {
+    func_?();
+  }
+  else {
+    dVar3 = SQRT(dVar3);
+  }
+  if ((float)dVar3 < _UNK_?) {
+    fVar1 = 0.0;
+  }
+  else {
+    fStack_4 = (slideVector.y * fVar1 + slideVector.x * newPos.x + slideVector.z * 0.0) /
+                (float)dVar3;
+    fVar1 = _UNK_?;
+    if ((fStack_4 < _UNK_?) || (fVar1 = _UNK_?, _UNK_? < fStack_4)) {
+      fStack_4 = fVar1;
+    }
+    if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__System__Math);
+    }
+    auVar5._0_8_ = (double)fStack_4;
+    auVar5._8_8_ = 0;
+    func_?();
+    fVar1 = (float)auVar5._0_8_ * _UNK_?;
+  }
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Math);
     cRam_? = '\x01';
@@ -293,52 +298,29 @@ float Assembly-CSharp.dll::CameraCollisionWithSliding::
   if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__Math);
   }
-  pMVar8 = TypeInfo__System__Math;
-  dVar9 = (double)((slideVector.x * slideVector.x + slideVector.y * slideVector.y +
-                   slideVector.z * slideVector.z) *
-                  (fStack_10 * fStack_10 + fVar1 * fVar1 + fVar2 * fVar2));
-  if (dVar9 < 0.0) {
+  dVar3 = (double)(fVar1 * _UNK_?);
+  func_?();
+  dVar6 = (double)fVar2;
+  if (dVar6 < 0.0) {
     func_?();
   }
   else {
-    dVar9 = SQRT(dVar9);
+    dVar6 = SQRT(dVar6);
   }
-  if ((float)dVar9 < _UNK_?) {
-    fVar1 = 0.0;
-  }
-  else {
-    fStack_10 = (slideVector.y * fStack_10 + slideVector.x * fVar1 + slideVector.z * fVar2) /
-                (float)dVar9;
-    fVar1 = _UNK_?;
-    if ((fStack_10 < _UNK_?) || (fVar1 = _UNK_?, _UNK_? < fStack_10)) {
-      fStack_10 = fVar1;
-    }
-    if ((pMVar8->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(pMVar8);
-    }
-    auVar11._0_8_ = (double)fStack_10;
-    auVar11._8_8_ = 0;
-    func_?();
-    fVar1 = (float)auVar11._0_8_ * _UNK_?;
-  }
-  dVar12 = (double)(fVar1 * _UNK_?);
+  dVar6 = (double)((float)dVar6 / (baseDistance / (float)dVar3));
   func_?();
-  fVar13 = (float10)func_?(&uStack_3,0);
-  dVar9 = (double)(fVar13 / (float10)(baseDistance / (float)dVar12));
+  dVar6 = (double)((_UNK_? - ((float)dVar6 * _UNK_? + fVar1)) * _UNK_?);
   func_?();
-  dVar9 = (double)((_UNK_? - ((float)dVar9 * _UNK_? + fVar1)) * _UNK_?);
-  func_?();
-  fVar1 = (float)dVar9 * (baseDistance / (float)dVar12);
-  fStack_5 = newPos.z + slideVector.z * fVar1;
+  fVar1 = (float)dVar6 * (baseDistance / (float)dVar3);
   start.y = (float)unaff_retaddr;
   start.x = (float)unaff_EBP;
   start.z = newPos.z;
   end_00.y = newPos.y + slideVector.y * fVar1;
-  end_00.x = fStack_7 + slideVector.x * fVar1;
-  end_00.z = fStack_5;
+  end_00.x = slideVector.x * fVar1 + 0.0;
+  end_00.z = newPos.z + slideVector.z * fVar1;
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_DrawLine_2(start,end_00,(MethodInfo *)0x0)
   ;
-  return fStack_6;
+  return fStack_7;
 }
 
 

@@ -55,16 +55,19 @@ Assembly-CSharp.dll::RTG::Object2ObjectSnapDataDb::Object2ObjectSnapDataDb_GetOb
       if (pAVar5 != (Array *)0x0) {
         iVar6 = mscorlib.dll::System::Array::Array_get_Length(pAVar5,(MethodInfo *)0x0);
         pAVar7 = (AABB__Array *)func_?(TypeInfo__RTG__AABB,iVar6);
-        (pOVar3->fields)._snapAreaBounds = pAVar7;
-        func_?(&(pOVar3->fields)._snapAreaBounds,pAVar7);
+        ppAVar8 = &(pOVar3->fields)._snapAreaBounds;
+        *ppAVar8 = pAVar7;
+        func_?(ppAVar8,pAVar7);
         pTVar4 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
                            ((RuntimeTypeHandle)TypeRef__RTG__BoxFace,(MethodInfo *)0x0);
         pAVar5 = mscorlib.dll::System::Enum::Enum_GetValues(pTVar4,(MethodInfo *)0x0);
         if (pAVar5 != (Array *)0x0) {
           iVar6 = mscorlib.dll::System::Array::Array_get_Length(pAVar5,(MethodInfo *)0x0);
-          pBVar8 = (BoxFaceAreaDesc__Array *)func_?(TypeInfo__RTG__BoxFaceAreaDesc,iVar6);
-          (pOVar3->fields)._snapAreaDesc = pBVar8;
-          func_?(&(pOVar3->fields)._snapAreaDesc,pBVar8);
+          pBVar9 = (BoxFaceAreaDesc__Array *)func_?(TypeInfo__RTG__BoxFaceAreaDesc,iVar6)
+          ;
+          ppBVar10 = &(pOVar3->fields)._snapAreaDesc;
+          *ppBVar10 = pBVar9;
+          func_?(ppBVar10,pBVar9);
           this_01 = (List_1_UnityEngine_Vector3_ *)
                     func_?(
                                    TypeInfo__System__Collections__Generic__List<UnityEngine::Vector3>
@@ -74,10 +77,11 @@ Assembly-CSharp.dll::RTG::Object2ObjectSnapDataDb::Object2ObjectSnapDataDb_GetOb
           LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
                     ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_01,
                      MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List__);
-          (pOVar3->fields)._vertsBuffer = this_01;
-          func_?(&(pOVar3->fields)._vertsBuffer,this_01);
+          ppLVar11 = &(pOVar3->fields)._vertsBuffer;
+          *ppLVar11 = this_01;
+          func_?(ppLVar11,this_01);
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)pOVar3,ExceptionArgument__Enum_obj,in_stack_9);
+                    ((Object *)pOVar3,ExceptionArgument__Enum_obj,in_stack_12);
           bVar2 = Object2ObjectSnapData::Object2ObjectSnapData_Initialize
                             (pOVar3,gameObject,(MethodInfo *)0x0);
           if (bVar2 == 0) {
@@ -100,19 +104,19 @@ Assembly-CSharp.dll::RTG::Object2ObjectSnapDataDb::Object2ObjectSnapDataDb_GetOb
       pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
                (this->fields)._objectToSnapData;
       if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-        TVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+        TVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
                  ::UIElements::TextureId]::
                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                            (pDVar1,(Object *)gameObject,
                             MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::GameObject,_RTG::Object2ObjectSnapData>__get_Item_UnityEngine__GameObject_
                            );
-        return (Object2ObjectSnapData *)TVar10.m_Index;
+        return (Object2ObjectSnapData *)TVar13.m_Index;
       }
     }
   }
   func_?();
-  pcVar11 = (code *)swi(3);
-  pOVar3 = (Object2ObjectSnapData *)(*pcVar11)();
+  pcVar14 = (code *)swi(3);
+  pOVar3 = (Object2ObjectSnapData *)(*pcVar14)();
   return pOVar3;
 }
 

@@ -206,27 +206,25 @@ bool Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscure
       cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredDecimal);
   }
-  pDVar1 = ObscuredDecimal_InternalDecrypt
-                     ((Decimal *)&stack0xffffffdc,(ObscuredDecimal *)&stack0x00000008,
-                      (MethodInfo *)0x0);
-  iVar2 = pDVar1->lo;
-  iVar3 = pDVar1->mid;
-  pDVar1 = ObscuredDecimal_InternalDecrypt((Decimal *)&stack0xffffffdc,this,(MethodInfo *)0x0);
-  iVar4 = pDVar1->hi;
-  iVar5 = pDVar1->lo;
-  iVar6 = pDVar1->mid;
+  ObscuredDecimal_InternalDecrypt
+            ((Decimal *)&stack0xffffffec,(ObscuredDecimal *)&stack0x00000008,(MethodInfo *)0x0);
+  pDVar1 = ObscuredDecimal_InternalDecrypt((Decimal *)&stack0xffffffec,this,(MethodInfo *)0x0);
+  pDVar2 = (Decimal__Class *)pDVar1->hi;
+  iVar3 = pDVar1->lo;
+  iVar4 = pDVar1->mid;
   if ((TypeInfo__System__Decimal->_1).cctor_finished_or_no_cctor == 0) {
+    pDVar2 = TypeInfo__System__Decimal;
     func_?();
   }
-  value.hi = iVar5;
-  value.flags = iVar4;
-  value.lo = iVar6;
+  value.hi = iVar3;
+  value.flags = (int32_t)pDVar2;
+  value.lo = iVar4;
   value.mid = 0;
-  value.ulomidLE._0_4_ = iVar2;
-  value.ulomidLE._4_4_ = iVar3;
-  bVar7 = mscorlib.dll::System::Decimal::Decimal_Equals_1
-                    ((Decimal *)&stack0xffffffec,value,unaff_EBP);
-  return bVar7;
+  value.ulomidLE._0_4_ = iVar3;
+  value.ulomidLE._4_4_ = iVar4;
+  bVar5 = mscorlib.dll::System::Decimal::Decimal_Equals_1
+                    ((Decimal *)&stack0xffffffdc,value,unaff_EBP);
+  return bVar5;
 }
 
 
@@ -295,24 +293,20 @@ int32_t Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obsc
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredDecimal);
     cRam_? = '\x01';
   }
-  iStack_1 = 0;
-  iStack_2 = 0;
-  iStack_3 = 0;
-  iStack_4 = 0;
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredDecimal->_1).
       cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredDecimal);
   }
-  pDVar5 = ObscuredDecimal_InternalDecrypt((Decimal *)&puStack_6,this,(MethodInfo *)0x0);
-  iStack_1 = pDVar5->flags;
-  iStack_2 = pDVar5->hi;
-  iStack_3 = pDVar5->lo;
-  iStack_4 = pDVar5->mid;
+  pDVar1 = ObscuredDecimal_InternalDecrypt((Decimal *)&puStack_2,this,(MethodInfo *)0x0);
+  iStack_3 = pDVar1->flags;
+  iStack_4 = pDVar1->hi;
+  iStack_5 = pDVar1->lo;
+  iStack_6 = pDVar1->mid;
   if ((TypeInfo__System__Decimal->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
   iVar7 = mscorlib.dll::System::Decimal::Decimal_GetHashCode
-                    ((Decimal *)&iStack_1,(MethodInfo *)0x0);
+                    ((Decimal *)&iStack_3,(MethodInfo *)0x0);
   return iVar7;
 }
 
@@ -414,88 +408,87 @@ Decimal * Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Ob
   uVar29._1_1_ = (this->hiddenValue).b14;
   uVar29._2_1_ = (this->hiddenValue).b15;
   uVar29._3_1_ = (this->hiddenValue).b16;
-  uVar30 = *(uint *)((int)&this->currentCryptoKey + 4);
-  iVar31 = this->currentCryptoKey;
-  uVar32 = *(uint *)((int)&this->currentCryptoKey + 4);
-  __return_storage_ptr__->flags = uVar26 ^ (uint)this->currentCryptoKey;
-  __return_storage_ptr__->hi = uVar27 ^ uVar30;
-  __return_storage_ptr__->lo = uVar28 ^ (uint)iVar31;
-  __return_storage_ptr__->mid = uVar29 ^ uVar32;
-  bVar33 = Detectors::ObscuredCheatingDetector::ObscuredCheatingDetector_get_IsRunning
+  uVar30 = (uint)this->currentCryptoKey;
+  uVar31 = *(uint *)((int)&this->currentCryptoKey + 4);
+  __return_storage_ptr__->flags = uVar26 ^ uVar30;
+  __return_storage_ptr__->hi = uVar27 ^ uVar31;
+  __return_storage_ptr__->lo = uVar28 ^ uVar30;
+  __return_storage_ptr__->mid = uVar29 ^ uVar31;
+  bVar32 = Detectors::ObscuredCheatingDetector::ObscuredCheatingDetector_get_IsRunning
                      ((MethodInfo *)0x0);
-  if (bVar33 != 0) {
-    iVar34 = (this->fakeValue).flags;
-    iVar35 = (this->fakeValue).hi;
-    iVar36 = (this->fakeValue).lo;
-    iVar37 = (this->fakeValue).mid;
+  if (bVar32 != 0) {
+    iVar33 = (this->fakeValue).flags;
+    iVar34 = (this->fakeValue).hi;
+    iVar35 = (this->fakeValue).lo;
+    iVar36 = (this->fakeValue).mid;
     if ((TypeInfo__System__Decimal->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__Decimal);
     }
     pDVar3 = TypeInfo__System__Decimal->static_fields;
-    uVar38 = (pDVar3->Zero).lo;
-    uVar39 = (pDVar3->Zero).mid;
-    d2_00.hi = uVar39;
-    d2_00.flags = uVar38;
-    d1.hi = iVar35;
-    d1.flags = iVar34;
-    d1.lo = iVar36;
-    d1.mid = iVar37;
+    uVar37 = (pDVar3->Zero).lo;
+    uVar38 = (pDVar3->Zero).mid;
+    d2_00.hi = uVar38;
+    d2_00.flags = uVar37;
+    d1.hi = iVar34;
+    d1.flags = iVar33;
+    d1.lo = iVar35;
+    d1.mid = iVar36;
     d1.ulomidLE._0_4_ = (pDVar3->Zero).flags;
     d1.ulomidLE._4_4_ = (pDVar3->Zero).hi;
     d2_00.lo = 0;
     d2_00.mid = unaff_ESI;
-    d2_00.ulomidLE._0_1_ = (uint8_t)in_stack_40;
-    d2_00.ulomidLE._1_1_ = SUB41(in_stack_40,1);
-    d2_00.ulomidLE._2_1_ = SUB41(in_stack_40,2);
-    d2_00.ulomidLE._3_1_ = SUB41(in_stack_40,3);
-    d2_00.ulomidLE._4_1_ = (uint8_t)in_stack_41;
-    d2_00.ulomidLE._5_1_ = SUB41(in_stack_41,1);
-    d2_00.ulomidLE._6_1_ = SUB41(in_stack_41,2);
-    d2_00.ulomidLE._7_1_ = SUB41(in_stack_41,3);
-    bVar33 = mscorlib.dll::System::Decimal::Decimal_op_Inequality(d1,d2_00,in_stack_42);
-    if (bVar33 != 0) {
-      iVar34 = __return_storage_ptr__->flags;
-      iVar35 = __return_storage_ptr__->hi;
-      iVar36 = __return_storage_ptr__->lo;
-      iVar37 = __return_storage_ptr__->mid;
-      iVar43 = (this->fakeValue).flags;
-      iVar44 = (this->fakeValue).hi;
-      iVar45 = (this->fakeValue).lo;
-      iVar46 = (this->fakeValue).mid;
+    d2_00.ulomidLE._0_1_ = (uint8_t)in_stack_39;
+    d2_00.ulomidLE._1_1_ = SUB41(in_stack_39,1);
+    d2_00.ulomidLE._2_1_ = SUB41(in_stack_39,2);
+    d2_00.ulomidLE._3_1_ = SUB41(in_stack_39,3);
+    d2_00.ulomidLE._4_1_ = (uint8_t)in_stack_40;
+    d2_00.ulomidLE._5_1_ = SUB41(in_stack_40,1);
+    d2_00.ulomidLE._6_1_ = SUB41(in_stack_40,2);
+    d2_00.ulomidLE._7_1_ = SUB41(in_stack_40,3);
+    bVar32 = mscorlib.dll::System::Decimal::Decimal_op_Inequality(d1,d2_00,in_stack_41);
+    if (bVar32 != 0) {
+      iVar33 = __return_storage_ptr__->flags;
+      iVar34 = __return_storage_ptr__->hi;
+      iVar35 = __return_storage_ptr__->lo;
+      iVar36 = __return_storage_ptr__->mid;
+      iVar42 = (this->fakeValue).flags;
+      iVar43 = (this->fakeValue).hi;
+      iVar44 = (this->fakeValue).lo;
+      iVar45 = (this->fakeValue).mid;
       if ((TypeInfo__System__Decimal->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      d1_00.hi = iVar35;
-      d1_00.flags = iVar34;
-      d1_00.lo = iVar36;
-      d1_00.mid = iVar37;
-      d1_00.ulomidLE._0_4_ = iVar43;
-      d1_00.ulomidLE._4_4_ = iVar44;
-      d2.hi = iVar46;
-      d2.flags = iVar45;
+      d1_00.hi = iVar34;
+      d1_00.flags = iVar33;
+      d1_00.lo = iVar35;
+      d1_00.mid = iVar36;
+      d1_00.ulomidLE._0_4_ = iVar42;
+      d1_00.ulomidLE._4_4_ = iVar43;
+      d2.hi = iVar45;
+      d2.flags = iVar44;
       d2.lo = 0;
       d2.mid = (int32_t)method;
-      d2.ulomidLE = in_stack_47;
-      bVar33 = mscorlib.dll::System::Decimal::Decimal_op_Inequality(d1_00,d2,in_stack_48);
-      if (bVar33 != 0) {
+      d2.ulomidLE = in_stack_46;
+      bVar32 = mscorlib.dll::System::Decimal::Decimal_op_Inequality(d1_00,d2,in_stack_47);
+      if (bVar32 != 0) {
         if (cRam_? == '\0') {
-          ppOStack49 = &TypeInfo__CodeStage__AntiCheat__Detectors__ObscuredCheatingDetector;
+          ppOStack48 = &TypeInfo__CodeStage__AntiCheat__Detectors__ObscuredCheatingDetector;
           func_?();
           cRam_? = '\x01';
         }
-        pOVar50 = TypeInfo__CodeStage__AntiCheat__Detectors__ObscuredCheatingDetector->static_fields
+        pOVar49 = TypeInfo__CodeStage__AntiCheat__Detectors__ObscuredCheatingDetector->static_fields
                  ->_Instance_k__BackingField;
-        if (pOVar50 == (ObscuredCheatingDetector *)0x0) {
+        if (pOVar49 == (ObscuredCheatingDetector *)0x0) {
           func_?();
-          pcVar51 = (code *)swi(3);
-          pDVar52 = (Decimal *)(*pcVar51)();
-          return pDVar52;
+          pcVar50 = (code *)swi(3);
+          pDVar51 = (Decimal *)(*pcVar50)();
+          return pDVar51;
         }
-        pOVar53 = pOVar50->klass;
-        ppOStack49 =
+        pOVar52 = pOVar49->klass;
+        ppOStack48 =
              (ObscuredCheatingDetector__Class **)
-             (pOVar53->vtable).StartDetectionAutomatically.methodPtr;
-        (*(code *)(pOVar53->vtable).OnCheatingDetected.method)();
+             (pOVar52->vtable).StartDetectionAutomatically.methodPtr;
+        (*(code *)(pOVar52->vtable).OnCheatingDetected.method)();
       }
     }
   }
@@ -754,23 +747,19 @@ String * Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obs
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredDecimal);
     cRam_? = '\x01';
   }
-  iStack_1 = 0;
-  iStack_2 = 0;
-  iStack_3 = 0;
-  iStack_4 = 0;
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredDecimal->_1).
       cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredDecimal);
   }
-  pDVar5 = ObscuredDecimal_InternalDecrypt((Decimal *)&puStack_6,this,(MethodInfo *)0x0);
-  iStack_1 = pDVar5->flags;
-  iStack_2 = pDVar5->hi;
-  iStack_3 = pDVar5->lo;
-  iStack_4 = pDVar5->mid;
+  pDVar1 = ObscuredDecimal_InternalDecrypt((Decimal *)&puStack_2,this,(MethodInfo *)0x0);
+  iStack_3 = pDVar1->flags;
+  iStack_4 = pDVar1->hi;
+  iStack_5 = pDVar1->lo;
+  iStack_6 = pDVar1->mid;
   if ((TypeInfo__System__Decimal->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  pSVar7 = mscorlib.dll::System::Decimal::Decimal_ToString((Decimal *)&iStack_1,(MethodInfo *)0x0);
+  pSVar7 = mscorlib.dll::System::Decimal::Decimal_ToString((Decimal *)&iStack_3,(MethodInfo *)0x0);
   return pSVar7;
 }
 
@@ -786,24 +775,20 @@ String * Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obs
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredDecimal);
     cRam_? = '\x01';
   }
-  iStack_1 = 0;
-  iStack_2 = 0;
-  iStack_3 = 0;
-  iStack_4 = 0;
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredDecimal->_1).
       cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredDecimal);
   }
-  pDVar5 = ObscuredDecimal_InternalDecrypt((Decimal *)&stack0xffffffdc,this,(MethodInfo *)0x0);
-  iStack_1 = pDVar5->flags;
-  iStack_2 = pDVar5->hi;
-  iStack_3 = pDVar5->lo;
-  iStack_4 = pDVar5->mid;
+  pDVar1 = ObscuredDecimal_InternalDecrypt((Decimal *)&stack0xffffffdc,this,(MethodInfo *)0x0);
+  iStack_2 = pDVar1->flags;
+  iStack_3 = pDVar1->hi;
+  iStack_4 = pDVar1->lo;
+  iStack_5 = pDVar1->mid;
   if ((TypeInfo__System__Decimal->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
   pSVar6 = mscorlib.dll::System::Decimal::Decimal_ToString_1
-                     ((Decimal *)&iStack_1,format,(MethodInfo *)0x0);
+                     ((Decimal *)&iStack_2,format,(MethodInfo *)0x0);
   return pSVar6;
 }
 
@@ -820,24 +805,20 @@ String * Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obs
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredDecimal);
     cRam_? = '\x01';
   }
-  iStack_1 = 0;
-  iStack_2 = 0;
-  iStack_3 = 0;
-  iStack_4 = 0;
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredDecimal->_1).
       cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredDecimal);
   }
-  pDVar5 = ObscuredDecimal_InternalDecrypt((Decimal *)&stack0xffffffdc,this,(MethodInfo *)0x0);
-  iStack_1 = pDVar5->flags;
-  iStack_2 = pDVar5->hi;
-  iStack_3 = pDVar5->lo;
-  iStack_4 = pDVar5->mid;
+  pDVar1 = ObscuredDecimal_InternalDecrypt((Decimal *)&stack0xffffffdc,this,(MethodInfo *)0x0);
+  iStack_2 = pDVar1->flags;
+  iStack_3 = pDVar1->hi;
+  iStack_4 = pDVar1->lo;
+  iStack_5 = pDVar1->mid;
   if ((TypeInfo__System__Decimal->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
   pSVar6 = mscorlib.dll::System::Decimal::Decimal_ToString_2
-                     ((Decimal *)&iStack_1,provider,(MethodInfo *)0x0);
+                     ((Decimal *)&iStack_2,provider,(MethodInfo *)0x0);
   return pSVar6;
 }
 
@@ -855,24 +836,20 @@ String * Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obs
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredDecimal);
     cRam_? = '\x01';
   }
-  iStack_1 = 0;
-  iStack_2 = 0;
-  iStack_3 = 0;
-  iStack_4 = 0;
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredDecimal->_1).
       cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredDecimal);
   }
-  pDVar5 = ObscuredDecimal_InternalDecrypt((Decimal *)&stack0xffffffdc,this,(MethodInfo *)0x0);
-  iStack_1 = pDVar5->flags;
-  iStack_2 = pDVar5->hi;
-  iStack_3 = pDVar5->lo;
-  iStack_4 = pDVar5->mid;
+  pDVar1 = ObscuredDecimal_InternalDecrypt((Decimal *)&stack0xffffffdc,this,(MethodInfo *)0x0);
+  iStack_2 = pDVar1->flags;
+  iStack_3 = pDVar1->hi;
+  iStack_4 = pDVar1->lo;
+  iStack_5 = pDVar1->mid;
   if ((TypeInfo__System__Decimal->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
   pSVar6 = mscorlib.dll::System::Decimal::Decimal_ToString_3
-                     ((Decimal *)&iStack_1,format,provider,(MethodInfo *)0x0);
+                     ((Decimal *)&iStack_2,format,provider,(MethodInfo *)0x0);
   return pSVar6;
 }
 

@@ -195,11 +195,12 @@ float Assembly-CSharp.dll::MathFunctions+PerlinSimplexNoise::MathFunctions_Perli
     fVar5 = (float10)(*pcVar4)();
     return (float)fVar5;
   }
-  if (((g->max_length != 0) && (1 < g->max_length)) && (2 < g->max_length)) {
+  uVar6 = g->max_length;
+  if (((uVar6 != 0) && (1 < uVar6)) && (2 < uVar6)) {
     return (float)g->vector[1] * y + (float)g->vector[0] * x + (float)g->vector[2] * z;
   }
   puStack_1 = (undefined1 *)0x0;
-  puStack_6 = (undefined *)func_?();
+  puStack_7 = (undefined *)func_?();
   func_?();
   pcVar4 = (code *)swi(3);
   fVar5 = (float10)(*pcVar4)();
@@ -221,13 +222,13 @@ float Assembly-CSharp.dll::MathFunctions+PerlinSimplexNoise::MathFunctions_Perli
     fVar5 = (float10)(*pcVar4)();
     return (float)fVar5;
   }
-  if ((((g->max_length != 0) && (1 < g->max_length)) && (2 < g->max_length)) && (3 < g->max_length))
-  {
+  uVar6 = g->max_length;
+  if ((((uVar6 != 0) && (1 < uVar6)) && (2 < uVar6)) && (3 < uVar6)) {
     return (float)g->vector[1] * y + (float)g->vector[0] * x + (float)g->vector[2] * z +
            (float)g->vector[3] * w;
   }
   puStack_1 = (undefined1 *)0x0;
-  puStack_6 = (undefined *)func_?();
+  puStack_7 = (undefined *)func_?();
   func_?();
   pcVar4 = (code *)swi(3);
   fVar5 = (float10)(*pcVar4)();
@@ -241,9 +242,9 @@ int32_t Assembly-CSharp.dll::MathFunctions+PerlinSimplexNoise::
         MathFunctions_PerlinSimplexNoise_fastfloor(float x,MethodInfo *method)
 
 {
-  iVar1 = (int)x + -1;
-  if (_UNK_? < x) {
-    iVar1 = (int)x;
+  iVar1 = (int32_t)x;
+  if (x <= _UNK_?) {
+    iVar1 = iVar1 + -1;
   }
   return iVar1;
 }
@@ -264,6 +265,9 @@ float Assembly-CSharp.dll::MathFunctions+PerlinSimplexNoise::MathFunctions_Perli
     func_?(TypeInfo__MathFunctions__PerlinSimplexNoise);
   }
   uVar2 = (uint)(fVar1 + xin);
+  if (fVar1 + xin <= 0.0) {
+    uVar2 = uVar2 - 1;
+  }
   uVar3 = (uint)(fVar1 + yin);
   if (fVar1 + yin <= 0.0) {
     uVar3 = uVar3 - 1;
@@ -272,9 +276,6 @@ float Assembly-CSharp.dll::MathFunctions+PerlinSimplexNoise::MathFunctions_Perli
   if (fVar1 + zin <= 0.0) {
     uVar4 = uVar4 - 1;
   }
-  if (fVar1 + xin <= 0.0) {
-    uVar2 = uVar2 - 1;
-  }
   fVar1 = (float)(int)(uVar2 + uVar4 + uVar3) * _UNK_?;
   fVar5 = xin - ((float)(int)uVar2 - fVar1);
   fVar6 = yin - ((float)(int)uVar3 - fVar1);
@@ -282,126 +283,115 @@ float Assembly-CSharp.dll::MathFunctions+PerlinSimplexNoise::MathFunctions_Perli
   if (fVar6 <= fVar5) {
     iVar7 = 0;
     if (fVar1 <= fVar6) {
-      iVar8 = 1;
-code_?:
+      iStack_8 = 1;
       iStack_9 = 0;
-      iVar10 = 1;
-      iVar11 = 0;
+      iStack_10 = 1;
     }
     else {
       if (fVar1 <= fVar5) {
-        iVar8 = 1;
-        iVar11 = 0;
-        iVar12 = 1;
+        iStack_8 = 1;
         iStack_9 = 0;
-        iVar10 = 0;
-        iStack_13 = 1;
+        iVar11 = 1;
+        iStack_10 = 0;
+        iStack_12 = 1;
         goto code_?;
       }
-      iVar11 = 1;
-      iVar8 = 0;
       iStack_9 = 1;
-      iVar10 = 0;
+      iStack_8 = 0;
+      iStack_10 = 0;
     }
-    iVar12 = 1;
-    iStack_13 = iVar11;
+    iVar11 = 1;
+code_?:
+    iVar7 = 0;
+    iStack_12 = iStack_9;
   }
   else {
-    iVar8 = 0;
+    iStack_8 = 0;
     if (fVar6 < fVar1) {
-      iVar11 = 1;
-      iVar7 = 0;
-      iVar10 = 1;
       iStack_9 = 1;
-      iVar12 = 0;
-      iStack_13 = 1;
+      iVar11 = 0;
+      iStack_10 = 1;
+      goto code_?;
+    }
+    iVar7 = 1;
+    iStack_9 = 0;
+    iStack_10 = 1;
+    if (fVar1 <= fVar5) {
+      iVar11 = 1;
+      iStack_12 = iStack_9;
     }
     else {
       iVar11 = 0;
-      iVar10 = 1;
-      iStack_9 = 0;
-      iVar7 = iVar10;
-      if (fVar1 <= fVar5) goto code_?;
-      iVar12 = 0;
-      iStack_13 = 1;
+      iStack_12 = 1;
     }
   }
 code_?:
-  fVar14 = (fVar5 - (float)iVar8) + _UNK_?;
-  fVar15 = (fVar6 - (float)iVar7) + _UNK_?;
-  fVar16 = (fVar1 - (float)iVar11) + _UNK_?;
+  fVar13 = (fVar5 - (float)iStack_8) + _UNK_?;
   uVar2 = uVar2 & 0xff;
+  fVar14 = (fVar6 - (float)iVar7) + _UNK_?;
   uVar3 = uVar3 & 0xff;
-  fVar17 = (fVar5 - (float)iVar12) + _UNK_?;
+  fVar15 = (fVar1 - (float)iStack_9) + _UNK_?;
   uVar4 = uVar4 & 0xff;
-  fVar18 = (fVar6 - (float)iVar10) + _UNK_?;
-  fVar19 = (fVar1 - (float)iStack_13) + _UNK_?;
-  fVar20 = (fVar5 - _UNK_?) + _UNK_?;
-  fVar21 = (fVar6 - _UNK_?) + _UNK_?;
-  fVar22 = (fVar1 - _UNK_?) + _UNK_?;
+  fVar16 = (fVar5 - (float)iVar11) + _UNK_?;
+  fVar17 = (fVar6 - (float)iStack_10) + _UNK_?;
+  fVar18 = (fVar1 - (float)iStack_12) + _UNK_?;
+  fVar19 = (fVar5 - _UNK_?) + _UNK_?;
+  fVar20 = (fVar6 - _UNK_?) + _UNK_?;
+  fVar21 = (fVar1 - _UNK_?) + _UNK_?;
   if ((TypeInfo__MathFunctions__PerlinSimplexNoise->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MathFunctions__PerlinSimplexNoise);
   }
-  pIVar23 = TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields->perm;
-  pIVar24 = TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields->perm;
-  pIVar25 = TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields->perm;
-  if (pIVar25 == (Int32__Array *)0x0) goto code_?;
-  if (((pIVar25->max_length <= uVar4) ||
-      (uVar26 = pIVar25->vector[uVar4] + uVar3, pIVar24->max_length <= uVar26)) ||
-     (uVar26 = pIVar24->vector[uVar26] + uVar2, pIVar23->max_length <= uVar26)) goto code_?;
-  uVar26 = pIVar23->vector[uVar26] % 0xc;
-  pIVar23 = TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields->perm;
-  pIVar24 = TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields->perm;
-  if (((pIVar24->max_length <= iStack_9 + uVar4) ||
-      (uVar27 = pIVar24->vector[iStack_9 + uVar4] + uVar3 + iVar7, pIVar24->max_length <= uVar27)) ||
-     (uVar27 = pIVar24->vector[uVar27] + uVar2 + iVar8, pIVar23->max_length <= uVar27))
+  pIVar22 = TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields->perm;
+  if (pIVar22 == (Int32__Array *)0x0) goto code_?;
+  if (((pIVar22->max_length <= uVar4) ||
+      (uVar23 = pIVar22->vector[uVar4] + uVar3, pIVar22->max_length <= uVar23)) ||
+     (uVar23 = pIVar22->vector[uVar23] + uVar2, pIVar22->max_length <= uVar23)) goto code_?;
+  uVar23 = pIVar22->vector[uVar23] % 0xc;
+  if (((pIVar22->max_length <= iStack_9 + uVar4) ||
+      (uVar24 = pIVar22->vector[iStack_9 + uVar4] + uVar3 + iVar7, pIVar22->max_length <= uVar24)) ||
+     (uVar24 = pIVar22->vector[uVar24] + uVar2 + iStack_8, pIVar22->max_length <= uVar24))
   goto code_?;
-  uVar27 = pIVar23->vector[uVar27] % 0xc;
-  pIVar23 = TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields->perm;
-  pIVar24 = TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields->perm;
-  if (((pIVar24->max_length <= iStack_13 + uVar4) ||
-      (uVar28 = pIVar24->vector[iStack_13 + uVar4] + uVar3 + iVar10, pIVar24->max_length <= uVar28)) ||
-     (uVar28 = pIVar24->vector[uVar28] + uVar2 + iVar12, pIVar23->max_length <= uVar28))
+  uVar24 = pIVar22->vector[uVar24] % 0xc;
+  if (((pIVar22->max_length <= iStack_12 + uVar4) ||
+      (uVar25 = pIVar22->vector[iStack_12 + uVar4] + uVar3 + iStack_10, pIVar22->max_length <= uVar25))
+     || (uVar25 = pIVar22->vector[uVar25] + uVar2 + iVar11, pIVar22->max_length <= uVar25))
   goto code_?;
-  uVar28 = pIVar23->vector[uVar28] % 0xc;
-  pIVar23 = TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields->perm;
-  pIVar24 = TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields->perm;
-  if (((pIVar24->max_length <= uVar4 + 1) ||
-      (pIVar24->max_length <= uVar3 + 1 + pIVar24->vector[uVar4 + 1])) ||
-     (pIVar23->max_length <= uVar2 + 1 + pIVar24->vector[pIVar24->vector[uVar4 + 1] + uVar3 + 1]))
+  uVar25 = pIVar22->vector[uVar25] % 0xc;
+  if (((pIVar22->max_length <= uVar4 + 1) ||
+      (pIVar22->max_length <= uVar3 + 1 + pIVar22->vector[uVar4 + 1])) ||
+     (pIVar22->max_length <= pIVar22->vector[pIVar22->vector[uVar4 + 1] + uVar3 + 1] + uVar2 + 1))
   goto code_?;
-  fVar29 = ((_UNK_? - fVar5 * fVar5) - fVar6 * fVar6) - fVar1 * fVar1;
-  uVar3 = pIVar23->vector[pIVar24->vector[pIVar24->vector[uVar4 + 1] + uVar3 + 1] + uVar2 + 1] %
-           0xc;
-  if (fVar29 < 0.0) {
-    zin = 0.0;
+  fVar26 = ((_UNK_? - fVar5 * fVar5) - fVar6 * fVar6) - fVar1 * fVar1;
+  uVar2 = pIVar22->vector[uVar2 + pIVar22->vector[pIVar22->vector[uVar4 + 1] + uVar3 + 1] + 1] % 0xc;
+  if (fVar26 < 0.0) {
+    xin = 0.0;
 code_?:
-    fVar1 = ((_UNK_? - fVar14 * fVar14) - fVar15 * fVar15) - fVar16 * fVar16;
+    fVar1 = ((_UNK_? - fVar13 * fVar13) - fVar14 * fVar14) - fVar15 * fVar15;
     if (fVar1 < 0.0) {
-      yin = 0.0;
+      zin = 0.0;
 code_?:
-      fVar1 = ((_UNK_? - fVar17 * fVar17) - fVar18 * fVar18) - fVar19 * fVar19;
+      fVar1 = ((_UNK_? - fVar16 * fVar16) - fVar17 * fVar17) - fVar18 * fVar18;
       if (fVar1 < 0.0) {
-        xin = 0.0;
+        yin = 0.0;
 code_?:
-        fVar6 = 0.0;
-        fVar1 = ((_UNK_? - fVar20 * fVar20) - fVar21 * fVar21) - fVar22 * fVar22;
+        fVar5 = 0.0;
+        fVar1 = ((_UNK_? - fVar19 * fVar19) - fVar20 * fVar20) - fVar21 * fVar21;
         if (fVar1 < 0.0) {
 code_?:
-          return (yin + zin + xin + fVar6) * _UNK_?;
+          return (zin + xin + yin + fVar5) * _UNK_?;
         }
         if ((TypeInfo__MathFunctions__PerlinSimplexNoise->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__MathFunctions__PerlinSimplexNoise);
         }
-        pIVar30 = TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields->grad3;
-        if (pIVar30 != (Int32__Array__Array *)0x0) {
-          if (pIVar30->max_length <= uVar3) goto code_?;
-          pIVar23 = pIVar30->vector[uVar3];
-          if (pIVar23 != (Int32__Array *)0x0) {
-            if (((pIVar23->max_length != 0) && (1 < pIVar23->max_length)) && (2 < pIVar23->max_length))
-            {
-              fVar6 = ((float)pIVar23->vector[1] * fVar21 + (float)pIVar23->vector[0] * fVar20 +
-                       (float)pIVar23->vector[2] * fVar22) * fVar1 * fVar1 * fVar1 * fVar1;
+        pIVar27 = TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields->grad3;
+        if (pIVar27 != (Int32__Array__Array *)0x0) {
+          if (pIVar27->max_length <= uVar2) goto code_?;
+          pIVar22 = pIVar27->vector[uVar2];
+          if (pIVar22 != (Int32__Array *)0x0) {
+            uVar2 = pIVar22->max_length;
+            if (((uVar2 != 0) && (1 < uVar2)) && (2 < uVar2)) {
+              fVar5 = ((float)pIVar22->vector[1] * fVar20 + (float)pIVar22->vector[0] * fVar19 +
+                       (float)pIVar22->vector[2] * fVar21) * fVar1 * fVar1 * fVar1 * fVar1;
               goto code_?;
             }
             goto code_?;
@@ -412,15 +402,15 @@ code_?:
         if ((TypeInfo__MathFunctions__PerlinSimplexNoise->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__MathFunctions__PerlinSimplexNoise);
         }
-        pIVar30 = TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields->grad3;
-        if (pIVar30 != (Int32__Array__Array *)0x0) {
-          if (pIVar30->max_length <= uVar28) goto code_?;
-          pIVar23 = pIVar30->vector[uVar28];
-          if (pIVar23 != (Int32__Array *)0x0) {
-            if (((pIVar23->max_length == 0) || (pIVar23->max_length < 2)) || (pIVar23->max_length < 3))
-            goto code_?;
-            xin = ((float)pIVar23->vector[1] * fVar18 + (float)pIVar23->vector[0] * fVar17 +
-                  (float)pIVar23->vector[2] * fVar19) * fVar1 * fVar1 * fVar1 * fVar1;
+        pIVar27 = TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields->grad3;
+        if (pIVar27 != (Int32__Array__Array *)0x0) {
+          if (pIVar27->max_length <= uVar25) goto code_?;
+          pIVar22 = pIVar27->vector[uVar25];
+          if (pIVar22 != (Int32__Array *)0x0) {
+            uVar3 = pIVar22->max_length;
+            if (((uVar3 == 0) || (uVar3 < 2)) || (uVar3 < 3)) goto code_?;
+            yin = ((float)pIVar22->vector[1] * fVar17 + (float)pIVar22->vector[0] * fVar16 +
+                  (float)pIVar22->vector[2] * fVar18) * fVar1 * fVar1 * fVar1 * fVar1;
             goto code_?;
           }
         }
@@ -430,15 +420,15 @@ code_?:
       if ((TypeInfo__MathFunctions__PerlinSimplexNoise->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__MathFunctions__PerlinSimplexNoise);
       }
-      pIVar30 = TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields->grad3;
-      if (pIVar30 != (Int32__Array__Array *)0x0) {
-        if (pIVar30->max_length <= uVar27) goto code_?;
-        pIVar23 = pIVar30->vector[uVar27];
-        if (pIVar23 != (Int32__Array *)0x0) {
-          if (((pIVar23->max_length == 0) || (pIVar23->max_length < 2)) || (pIVar23->max_length < 3))
-          goto code_?;
-          yin = ((float)pIVar23->vector[1] * fVar15 + (float)pIVar23->vector[0] * fVar14 +
-                (float)pIVar23->vector[2] * fVar16) * fVar1 * fVar1 * fVar1 * fVar1;
+      pIVar27 = TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields->grad3;
+      if (pIVar27 != (Int32__Array__Array *)0x0) {
+        if (pIVar27->max_length <= uVar24) goto code_?;
+        pIVar22 = pIVar27->vector[uVar24];
+        if (pIVar22 != (Int32__Array *)0x0) {
+          uVar3 = pIVar22->max_length;
+          if (((uVar3 == 0) || (uVar3 < 2)) || (uVar3 < 3)) goto code_?;
+          zin = ((float)pIVar22->vector[1] * fVar14 + (float)pIVar22->vector[0] * fVar13 +
+                (float)pIVar22->vector[2] * fVar15) * fVar1 * fVar1 * fVar1 * fVar1;
           goto code_?;
         }
       }
@@ -448,15 +438,15 @@ code_?:
     if ((TypeInfo__MathFunctions__PerlinSimplexNoise->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__MathFunctions__PerlinSimplexNoise);
     }
-    pIVar30 = TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields->grad3;
-    if (pIVar30 != (Int32__Array__Array *)0x0) {
-      if (pIVar30->max_length <= uVar26) goto code_?;
-      pIVar23 = pIVar30->vector[uVar26];
-      if (pIVar23 != (Int32__Array *)0x0) {
-        if (((pIVar23->max_length == 0) || (pIVar23->max_length < 2)) || (pIVar23->max_length < 3))
-        goto code_?;
-        zin = ((float)pIVar23->vector[1] * fVar6 + (float)pIVar23->vector[0] * fVar5 +
-              (float)pIVar23->vector[2] * fVar1) * fVar29 * fVar29 * fVar29 * fVar29;
+    pIVar27 = TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields->grad3;
+    if (pIVar27 != (Int32__Array__Array *)0x0) {
+      if (pIVar27->max_length <= uVar23) goto code_?;
+      pIVar22 = pIVar27->vector[uVar23];
+      if (pIVar22 != (Int32__Array *)0x0) {
+        uVar3 = pIVar22->max_length;
+        if (((uVar3 == 0) || (uVar3 < 2)) || (uVar3 < 3)) goto code_?;
+        xin = ((float)pIVar22->vector[1] * fVar6 + (float)pIVar22->vector[0] * fVar5 +
+              (float)pIVar22->vector[2] * fVar1) * fVar26 * fVar26 * fVar26 * fVar26;
         goto code_?;
       }
     }
@@ -465,9 +455,9 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar31 = (code *)swi(3);
-  fVar32 = (float10)(*pcVar31)();
-  return (float)fVar32;
+  pcVar28 = (code *)swi(3);
+  fVar29 = (float10)(*pcVar28)();
+  return (float)fVar29;
 }
 
 
@@ -496,80 +486,67 @@ float Assembly-CSharp.dll::MathFunctions+PerlinSimplexNoise::
   if ((TypeInfo__MathFunctions__PerlinSimplexNoise->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MathFunctions__PerlinSimplexNoise);
   }
-  pMVar3 = TypeInfo__MathFunctions__PerlinSimplexNoise;
-  fVar4 = fVar2 + xin;
-  uVar5 = (uint)fVar4;
+  fVar3 = fVar2 + xin;
+  uVar4 = (uint)fVar3;
   fVar2 = fVar2 + yin;
-  uVar6 = (uint)fVar2;
-  if (fVar2 <= _UNK_?) {
-    uVar6 = uVar6 - 1;
+  if (fVar3 <= 0.0) {
+    uVar4 = uVar4 - 1;
   }
-  if (_UNK_? < 0.0) {
-    dVar1 = _UNK_?;
-    func_?();
-  }
-  else {
-    dVar1 = SQRT(_UNK_?);
-  }
-  if (fVar4 <= 0.0) {
+  uVar5 = (uint)fVar2;
+  if (fVar2 <= 0.0) {
     uVar5 = uVar5 - 1;
   }
-  fVar7 = (float)((_UNK_? - dVar1) / _UNK_?);
-  fVar2 = (float)(int)(uVar5 + uVar6) * fVar7;
-  fVar8 = xin - ((float)(int)uVar5 - fVar2);
-  fVar9 = yin - ((float)(int)uVar6 - fVar2);
+  fVar3 = (float)((_UNK_? - dVar1) / _UNK_?);
+  fVar2 = (float)(int)(uVar4 + uVar5) * fVar3;
+  fVar6 = xin - ((float)(int)uVar4 - fVar2);
+  fVar7 = yin - ((float)(int)uVar5 - fVar2);
+  uVar4 = uVar4 & 0xff;
   uVar5 = uVar5 & 0xff;
-  uVar6 = uVar6 & 0xff;
-  uVar10 = (uint)(fVar8 <= fVar9);
-  fVar2 = (fVar8 - (float)(fVar9 < fVar8)) + fVar7;
-  fVar4 = (fVar9 - (float)uVar10) + fVar7;
-  fVar11 = fVar7 + fVar7 + (fVar8 - _UNK_?);
-  fVar7 = fVar7 + fVar7 + (fVar9 - _UNK_?);
-  if ((pMVar3->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(pMVar3);
-    pMVar3 = TypeInfo__MathFunctions__PerlinSimplexNoise;
+  fVar8 = (fVar6 - (float)(fVar7 < fVar6)) + fVar3;
+  fVar9 = (fVar7 - (float)(fVar6 <= fVar7)) + fVar3;
+  fVar2 = (fVar6 - _UNK_?) + fVar3 + fVar3;
+  fVar3 = (fVar7 - _UNK_?) + fVar3 + fVar3;
+  if ((TypeInfo__MathFunctions__PerlinSimplexNoise->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__MathFunctions__PerlinSimplexNoise);
   }
-  pIVar12 = pMVar3->static_fields->perm;
-  if (pIVar12 == (Int32__Array *)0x0) goto code_?;
-  if ((pIVar12->max_length <= uVar6) ||
-     (uVar13 = pIVar12->vector[uVar6] + uVar5, pIVar12->max_length <= uVar13)) goto code_?;
-  uVar13 = pIVar12->vector[uVar13] % 0xc;
-  pIVar12 = pMVar3->static_fields->perm;
-  if (pIVar12->max_length <= uVar10 + uVar6) goto code_?;
-  uVar10 = pIVar12->vector[uVar10 + uVar6] + (uint)(fVar9 < fVar8) + uVar5;
-  if (pIVar12->max_length <= uVar10) goto code_?;
-  uVar10 = pIVar12->vector[uVar10] % 0xc;
-  pIVar12 = TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields->perm;
-  pIVar14 = TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields->perm;
-  if (pIVar14->max_length <= uVar6 + 1) goto code_?;
-  iVar15 = pIVar14->vector[uVar6 + 1];
-  if (pIVar12->max_length <= uVar5 + 1 + iVar15) goto code_?;
-  fVar16 = (_UNK_? - fVar8 * fVar8) - fVar9 * fVar9;
-  uVar5 = pIVar12->vector[iVar15 + uVar5 + 1] % 0xc;
-  if (fVar16 < 0.0) {
-    fStack_17 = 0.0;
+  pIVar10 = TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields->perm;
+  if (pIVar10 == (Int32__Array *)0x0) goto code_?;
+  if ((pIVar10->max_length <= uVar5) ||
+     (uVar11 = pIVar10->vector[uVar5] + uVar4, pIVar10->max_length <= uVar11)) goto code_?;
+  uVar12 = pIVar10->vector[uVar11] % 0xc;
+  uVar11 = (fVar6 <= fVar7) + uVar5;
+  if ((pIVar10->max_length <= uVar11) ||
+     (uVar11 = pIVar10->vector[uVar11] + (uint)(fVar7 < fVar6) + uVar4, pIVar10->max_length <= uVar11))
+  goto code_?;
+  uVar11 = pIVar10->vector[uVar11] % 0xc;
+  if ((pIVar10->max_length <= uVar5 + 1) ||
+     (pIVar10->max_length <= pIVar10->vector[uVar5 + 1] + uVar4 + 1)) goto code_?;
+  fVar13 = (_UNK_? - fVar6 * fVar6) - fVar7 * fVar7;
+  uVar4 = pIVar10->vector[uVar4 + pIVar10->vector[uVar5 + 1] + 1] % 0xc;
+  if (fVar13 < 0.0) {
+    fStack_14 = 0.0;
 code_?:
-    fVar8 = (_UNK_? - fVar2 * fVar2) - fVar4 * fVar4;
-    if (fVar8 < 0.0) {
-      fVar2 = 0.0;
-code_?:
-      fVar4 = (_UNK_? - fVar11 * fVar11) - fVar7 * fVar7;
+    fVar6 = (_UNK_? - fVar8 * fVar8) - fVar9 * fVar9;
+    if (fVar6 < 0.0) {
       fVar8 = 0.0;
-      if (fVar4 < 0.0) {
 code_?:
-        return ((fVar2 + fStack_17 + fVar8) * _UNK_? + _UNK_?) * _UNK_?;
+      fVar9 = (_UNK_? - fVar2 * fVar2) - fVar3 * fVar3;
+      fVar6 = 0.0;
+      if (fVar9 < 0.0) {
+code_?:
+        return ((fVar8 + fStack_14 + fVar6) * _UNK_? + _UNK_?) * _UNK_?;
       }
       if ((TypeInfo__MathFunctions__PerlinSimplexNoise->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__MathFunctions__PerlinSimplexNoise);
       }
-      pIVar18 = TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields->grad3;
-      if (pIVar18 != (Int32__Array__Array *)0x0) {
-        if (pIVar18->max_length <= uVar5) goto code_?;
-        pIVar12 = pIVar18->vector[uVar5];
-        if (pIVar12 != (Int32__Array *)0x0) {
-          if ((pIVar12->max_length != 0) && (1 < pIVar12->max_length)) {
-            fVar8 = ((float)pIVar12->vector[1] * fVar7 + (float)pIVar12->vector[0] * fVar11) *
-                     fVar4 * fVar4 * fVar4 * fVar4;
+      pIVar15 = TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields->grad3;
+      if (pIVar15 != (Int32__Array__Array *)0x0) {
+        if (pIVar15->max_length <= uVar4) goto code_?;
+        pIVar10 = pIVar15->vector[uVar4];
+        if (pIVar10 != (Int32__Array *)0x0) {
+          if ((pIVar10->max_length != 0) && (1 < pIVar10->max_length)) {
+            fVar6 = ((float)pIVar10->vector[1] * fVar3 + (float)pIVar10->vector[0] * fVar2) *
+                     fVar9 * fVar9 * fVar9 * fVar9;
             goto code_?;
           }
           goto code_?;
@@ -580,14 +557,14 @@ code_?:
       if ((TypeInfo__MathFunctions__PerlinSimplexNoise->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__MathFunctions__PerlinSimplexNoise);
       }
-      pIVar18 = TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields->grad3;
-      if (pIVar18 != (Int32__Array__Array *)0x0) {
-        if (pIVar18->max_length <= uVar10) goto code_?;
-        pIVar12 = pIVar18->vector[uVar10];
-        if (pIVar12 != (Int32__Array *)0x0) {
-          if ((pIVar12->max_length == 0) || (pIVar12->max_length < 2)) goto code_?;
-          fVar2 = ((float)pIVar12->vector[1] * fVar4 + (float)pIVar12->vector[0] * fVar2) *
-                   fVar8 * fVar8 * fVar8 * fVar8;
+      pIVar15 = TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields->grad3;
+      if (pIVar15 != (Int32__Array__Array *)0x0) {
+        if (pIVar15->max_length <= uVar11) goto code_?;
+        pIVar10 = pIVar15->vector[uVar11];
+        if (pIVar10 != (Int32__Array *)0x0) {
+          if ((pIVar10->max_length == 0) || (pIVar10->max_length < 2)) goto code_?;
+          fVar8 = ((float)pIVar10->vector[1] * fVar9 + (float)pIVar10->vector[0] * fVar8) *
+                   fVar6 * fVar6 * fVar6 * fVar6;
           goto code_?;
         }
       }
@@ -597,14 +574,14 @@ code_?:
     if ((TypeInfo__MathFunctions__PerlinSimplexNoise->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__MathFunctions__PerlinSimplexNoise);
     }
-    pIVar18 = TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields->grad3;
-    if (pIVar18 != (Int32__Array__Array *)0x0) {
-      if (pIVar18->max_length <= uVar13) goto code_?;
-      pIVar12 = pIVar18->vector[uVar13];
-      if (pIVar12 != (Int32__Array *)0x0) {
-        if ((pIVar12->max_length == 0) || (pIVar12->max_length < 2)) goto code_?;
-        fStack_17 = ((float)pIVar12->vector[1] * fVar9 + (float)pIVar12->vector[0] * fVar8) *
-                    fVar16 * fVar16 * fVar16 * fVar16;
+    pIVar15 = TypeInfo__MathFunctions__PerlinSimplexNoise->static_fields->grad3;
+    if (pIVar15 != (Int32__Array__Array *)0x0) {
+      if (pIVar15->max_length <= uVar12) goto code_?;
+      pIVar10 = pIVar15->vector[uVar12];
+      if (pIVar10 != (Int32__Array *)0x0) {
+        if ((pIVar10->max_length == 0) || (pIVar10->max_length < 2)) goto code_?;
+        fStack_14 = ((float)pIVar10->vector[1] * fVar7 + (float)pIVar10->vector[0] * fVar6) *
+                    fVar13 * fVar13 * fVar13 * fVar13;
         goto code_?;
       }
     }
@@ -613,8 +590,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar19 = (code *)swi(3);
-  fVar20 = (float10)(*pcVar19)();
-  return (float)fVar20;
+  pcVar16 = (code *)swi(3);
+  fVar17 = (float10)(*pcVar16)();
+  return (float)fVar17;
 }
 

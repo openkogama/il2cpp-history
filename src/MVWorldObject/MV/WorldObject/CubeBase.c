@@ -9,56 +9,52 @@ bool MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_Equals
     func_?(&TypeInfo__MV__WorldObject__CubeBase);
     cRam_? = '\x01';
   }
-  if (((obj == (Object *)0x0) ||
-      ((obj->klass->_1).naturalAligment < (TypeInfo__MV__WorldObject__CubeBase->_1).naturalAligment)
-      ) || ((obj->klass->_1).typeHierarchy
-            [(TypeInfo__MV__WorldObject__CubeBase->_1).naturalAligment - 1] !=
-            (Il2CppClass *)TypeInfo__MV__WorldObject__CubeBase)) {
-    return 0;
-  }
-  pBVar1 = (this->fields).byteCorners;
-  if ((pBVar1 != (Byte__Array *)0x0) && (obj[1].monitor != (MonitorData *)0x0)) {
-    if (pBVar1->max_length != *(il2cpp_array_size_t *)(obj[1].monitor + 0xc)) {
-      return 0;
-    }
-    pBVar1 = (this->fields).faceMaterials;
-    if ((pBVar1 != (Byte__Array *)0x0) && (obj[2].klass != (Object__Class *)0x0)) {
-      if ((char *)pBVar1->max_length != ((obj[2].klass)->_0).namespaze) {
-        return 0;
-      }
-      pBVar1 = (this->fields).byteCorners;
-      for (uVar2 = 0; (int)uVar2 < (int)((this->fields).byteCorners)->max_length; uVar2 = uVar2 + 1)
+  if (obj != (Object *)0x0) {
+    bVar1 = (TypeInfo__MV__WorldObject__CubeBase->_1).naturalAligment;
+    if ((bVar1 <= (obj->klass->_1).naturalAligment) &&
+       ((obj->klass->_1).typeHierarchy[bVar1 - 1] ==
+        (Il2CppClass *)TypeInfo__MV__WorldObject__CubeBase)) {
+      pBVar2 = (this->fields).byteCorners;
+      if ((pBVar2 != (Byte__Array *)0x0) && (pMVar3 = obj[1].monitor, pMVar3 != (MonitorData *)0x0))
       {
-        if ((pBVar1->max_length <= uVar2) || (*(uint *)(obj[1].monitor + 0xc) <= uVar2))
-        goto code_?;
-        if (*(MonitorData *)(pBVar1->vector + uVar2) != obj[1].monitor[uVar2 + 0x10]) {
+        if (pBVar2->max_length != *(il2cpp_array_size_t *)(pMVar3 + 0xc)) {
           return 0;
         }
-      }
-      pOVar3 = obj[2].klass;
-      pcVar4 = (char *)0x0;
-      pBVar1 = (this->fields).faceMaterials;
-      while( true ) {
-        if ((int)((this->fields).faceMaterials)->max_length <= (int)pcVar4) {
-          return 1;
-        }
-        if ((char *)pBVar1->max_length <= pcVar4) break;
-        if (pOVar3 == (Object__Class *)0x0) goto code_?;
-        if ((pOVar3->_0).namespaze <= pcVar4) break;
-        if (pBVar1->vector[(int)pcVar4] != pcVar4[(int)&(pOVar3->_0).byval_arg.data]) {
-          return 0;
-        }
-        pcVar4 = pcVar4 + 1;
-      }
+        pBVar4 = (this->fields).faceMaterials;
+        if ((pBVar4 != (Byte__Array *)0x0) &&
+           (pOVar5 = obj[2].klass, pOVar5 != (Object__Class *)0x0)) {
+          if ((char *)pBVar4->max_length != (pOVar5->_0).namespaze) {
+            return 0;
+          }
+          for (uVar6 = 0; (int)uVar6 < (int)pBVar2->max_length; uVar6 = uVar6 + 1) {
+            if ((pBVar2->max_length <= uVar6) || (*(uint *)(pMVar3 + 0xc) <= uVar6))
+            goto code_?;
+            if (*(MonitorData *)(pBVar2->vector + uVar6) != pMVar3[uVar6 + 0x10]) {
+              return 0;
+            }
+          }
+          pcVar7 = (char *)0x0;
+          while( true ) {
+            if ((int)pBVar4->max_length <= (int)pcVar7) {
+              return 1;
+            }
+            if (((char *)pBVar4->max_length <= pcVar7) || ((pOVar5->_0).namespaze <= pcVar7)) break;
+            if (pBVar4->vector[(int)pcVar7] != pcVar7[(int)&(pOVar5->_0).byval_arg.data]) {
+              return 0;
+            }
+            pcVar7 = pcVar7 + 1;
+          }
 code_?:
+          func_?();
+        }
+      }
       func_?();
+      pcVar8 = (code *)swi(3);
+      bVar9 = (*pcVar8)();
+      return bVar9;
     }
   }
-code_?:
-  func_?();
-  pcVar5 = (code *)swi(3);
-  bVar6 = (*pcVar5)();
-  return bVar6;
+  return 0;
 }
 
 
@@ -77,42 +73,37 @@ bool MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_Equals_1
     if (pBVar1->max_length != pBVar2->max_length) {
       return 0;
     }
-    pBVar1 = (this->fields).faceMaterials;
-    if ((pBVar1 != (Byte__Array *)0x0) &&
-       (pBVar2 = (cube->fields).faceMaterials, pBVar2 != (Byte__Array *)0x0)) {
-      if (pBVar1->max_length != pBVar2->max_length) {
+    pBVar3 = (this->fields).faceMaterials;
+    if ((pBVar3 != (Byte__Array *)0x0) &&
+       (pBVar4 = (cube->fields).faceMaterials, pBVar4 != (Byte__Array *)0x0)) {
+      if (pBVar3->max_length != pBVar4->max_length) {
         return 0;
       }
-      pBVar1 = (cube->fields).byteCorners;
-      pBVar2 = (this->fields).byteCorners;
-      for (uVar3 = 0; (int)uVar3 < (int)((this->fields).byteCorners)->max_length; uVar3 = uVar3 + 1)
-      {
-        if ((pBVar2->max_length <= uVar3) || (pBVar1->max_length <= uVar3)) goto code_?;
-        if (pBVar2->vector[uVar3] != pBVar1->vector[uVar3]) {
+      for (uVar5 = 0; (int)uVar5 < (int)pBVar1->max_length; uVar5 = uVar5 + 1) {
+        if ((pBVar1->max_length <= uVar5) || (pBVar2->max_length <= uVar5)) goto code_?;
+        if (pBVar1->vector[uVar5] != pBVar2->vector[uVar5]) {
           return 0;
         }
       }
-      pBVar1 = (cube->fields).faceMaterials;
-      uVar3 = 0;
-      pBVar2 = (this->fields).faceMaterials;
+      uVar5 = 0;
       while( true ) {
-        if ((int)((this->fields).faceMaterials)->max_length <= (int)uVar3) {
+        if ((int)pBVar3->max_length <= (int)uVar5) {
           return 1;
         }
-        if ((pBVar2->max_length <= uVar3) || (pBVar1->max_length <= uVar3)) break;
-        if (pBVar2->vector[uVar3] != pBVar1->vector[uVar3]) {
+        if ((pBVar3->max_length <= uVar5) || (pBVar4->max_length <= uVar5)) break;
+        if (pBVar3->vector[uVar5] != pBVar4->vector[uVar5]) {
           return 0;
         }
-        uVar3 = uVar3 + 1;
+        uVar5 = uVar5 + 1;
       }
 code_?:
       func_?();
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  bVar5 = (*pcVar4)();
-  return bVar5;
+  pcVar6 = (code *)swi(3);
+  bVar7 = (*pcVar6)();
+  return bVar7;
 }
 
 
@@ -127,27 +118,26 @@ MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_FaceFlagToFace
     switch(faceFlag & 0xff) {
     case FaceFlags__Enum_Top:
     case FaceFlags__Enum_Bottom|FaceFlags__Enum_Top:
-      goto code_?;
+      break;
     case FaceFlags__Enum_Bottom:
       return Face__Enum_Bottom;
     case FaceFlags__Enum_Front:
       return Face__Enum_Front;
     default:
-      FVar1 = Face__Enum_Top;
       if ((undefined1)faceFlag == FaceFlags__Enum_Back) {
-        FVar1 = Face__Enum_Back;
+        return Face__Enum_Back;
       }
-      return FVar1;
     }
   }
-  if ((undefined1)faceFlag != FaceFlags__Enum_Left) {
-    if ((undefined1)faceFlag != FaceFlags__Enum_Right) {
-code_?:
-      return Face__Enum_Top;
+  else {
+    if ((undefined1)faceFlag == FaceFlags__Enum_Left) {
+      return Face__Enum_Left;
     }
-    return Face__Enum_Right;
+    if ((undefined1)faceFlag == FaceFlags__Enum_Right) {
+      return Face__Enum_Right;
+    }
   }
-  return Face__Enum_Left;
+  return Face__Enum_Top;
 }
 
 
@@ -246,72 +236,72 @@ void MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_GetFace
   switch(face) {
   case Face__Enum_Top:
     pVVar1 = *faceVertices;
-    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0)
-       ) goto code_?;
+    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
+    goto code_?;
     func_?(0,uStack_2,uStack_3);
     pVVar1 = *faceVertices;
-    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0)
-       ) goto code_?;
+    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
+    goto code_?;
     func_?(1,uStack_2,uStack_3);
     pVVar4 = *corners;
     pVVar1 = *faceVertices;
     goto joined_?;
   case Face__Enum_Bottom:
     pVVar1 = *faceVertices;
-    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0)
-       ) goto code_?;
+    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
+    goto code_?;
     func_?(0,uStack_2,uStack_3);
     pVVar1 = *faceVertices;
-    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0)
-       ) goto code_?;
+    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
+    goto code_?;
     func_?(1,uStack_2,uStack_3);
     pVVar1 = *faceVertices;
-    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0)
-       ) goto code_?;
+    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
+    goto code_?;
     func_?(2,uStack_2,uStack_3);
     pVVar4 = *corners;
-    faceVertices = (Vector3__Array **)*faceVertices;
+    pVVar1 = *faceVertices;
     break;
   case Face__Enum_Front:
     pVVar1 = *faceVertices;
-    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0)
-       ) goto code_?;
+    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
+    goto code_?;
     func_?(0,uStack_2,uStack_3);
     pVVar1 = *faceVertices;
-    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0)
-       ) goto code_?;
+    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
+    goto code_?;
     func_?(1,uStack_2,uStack_3);
     pVVar1 = *faceVertices;
-    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0)
-       ) goto code_?;
+    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
+    goto code_?;
     func_?(2,uStack_2,uStack_3);
     pVVar4 = *corners;
-    faceVertices = (Vector3__Array **)*faceVertices;
+    pVVar1 = *faceVertices;
     break;
   case Face__Enum_Back:
     pVVar1 = *faceVertices;
-    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0)
-       ) goto code_?;
+    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
+    goto code_?;
     func_?(0,uStack_2,uStack_3);
     pVVar1 = *faceVertices;
-    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0)
-       ) goto code_?;
+    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
+    goto code_?;
     func_?(1,uStack_2,uStack_3);
     pVVar1 = *faceVertices;
-    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0)
-       ) goto code_?;
+    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
+    goto code_?;
     func_?(2,uStack_2,uStack_3);
     pVVar4 = *corners;
-    faceVertices = (Vector3__Array **)*faceVertices;
+    pVVar1 = *faceVertices;
     break;
   case Face__Enum_Left:
     pVVar1 = *faceVertices;
-    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0)
-       ) goto code_?;
+    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
+    goto code_?;
     func_?(0,uStack_2,uStack_3);
     pVVar1 = *faceVertices;
-    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0)
-       ) goto code_?;
+    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
+    goto code_?;
     func_?(1,uStack_2,uStack_3);
     pVVar4 = *corners;
     pVVar1 = *faceVertices;
@@ -319,24 +309,24 @@ joined_?:
     if ((pVVar4 == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
     goto code_?;
     func_?(2,uStack_2,uStack_3);
-    faceVertices = (Vector3__Array **)*faceVertices;
+    pVVar1 = *faceVertices;
     if (*corners == (Vector3__Array *)0x0) goto code_?;
     goto code_?;
   case Face__Enum_Right:
     pVVar1 = *faceVertices;
-    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0)
-       ) goto code_?;
+    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
+    goto code_?;
     func_?(0,uStack_2,uStack_3);
     pVVar1 = *faceVertices;
-    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0)
-       ) goto code_?;
+    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
+    goto code_?;
     func_?(1,uStack_2,uStack_3);
     pVVar1 = *faceVertices;
-    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0)
-       ) goto code_?;
+    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
+    goto code_?;
     func_?(2,uStack_2,uStack_3);
     pVVar4 = *corners;
-    faceVertices = (Vector3__Array **)*faceVertices;
+    pVVar1 = *faceVertices;
     break;
   default:
     goto code_?;
@@ -344,43 +334,16 @@ joined_?:
   if (pVVar4 != (Vector3__Array *)0x0) {
 code_?:
     func_?();
-    bVar5 = (Vector3__Array *)faceVertices != (Vector3__Array *)0x0;
-    faceVertices = (Vector3__Array **)0x0;
-    if (bVar5) {
+    if (pVVar1 != (Vector3__Array *)0x0) {
       func_?(3,uStack_2,uStack_3);
 code_?:
       return;
     }
   }
 code_?:
-  bVar6 = 0;
-  uVar7 = func_?();
-  uVar8 = (undefined2)((uint6)uVar7 >> 0x20);
-  uVar9 = (undefined4)uVar7;
-  pbVar10 = (byte *)(extraout_ECX + 100);
-  bVar11 = (byte)pVVar1;
-  bVar5 = CARRY1(*pbVar10,bVar11) || CARRY1(*pbVar10 + bVar11,bVar6);
-  *pbVar10 = *pbVar10 + bVar11 + bVar6;
-  out(uVar8,uVar9);
-  bVar6 = *(byte *)&((Vector3__Array *)faceVertices)->klass;
-  bVar12 = (byte)((uint6)uVar7 >> 8);
-  bVar13 = *(char *)&((Vector3__Array *)faceVertices)->klass + bVar12;
-  *(byte *)&((Vector3__Array *)faceVertices)->klass = bVar13 + bVar5;
-  out(uVar8,uVar9);
-  bVar14 = (byte)((uint6)uVar7 >> 0x28);
-  bVar5 = CARRY1(bVar11,bVar14) ||
-           CARRY1(bVar11 + bVar14,CARRY1(bVar6,bVar12) || CARRY1(bVar13,bVar5));
-  out(uVar8,uVar9);
-  bVar6 = (byte)uVar7;
-  uVar9 = CONCAT31((int3)((uint6)uVar7 >> 8),bVar6 * '\x02' + bVar5);
-  out(uVar8,(short)uVar9);
-  *(char *)(extraout_ECX + 0x67) =
-       *(char *)(extraout_ECX + 0x67) + (char)((uint6)uVar7 >> 0x20) +
-       (CARRY1(bVar6,bVar6) || CARRY1(bVar6 * '\x02',bVar5));
-  out(uVar8,uVar9);
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
-  return;
+  func_?();
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 
@@ -511,78 +474,84 @@ code_?:
       (cube->fields).unIndentedSides = 0;
       return;
     }
-    if (*(int *)(iVar1 + 0xc) != 0) {
+    uVar3 = *(uint *)(iVar1 + 0xc);
+    if (uVar3 != 0) {
       if (*(char *)(iVar1 + 0x10) == '\0') {
-        if (*(uint *)(iVar1 + 0xc) < 2) goto code_?;
+        if (uVar3 < 2) goto code_?;
         if (*(char *)(iVar1 + 0x11) == '\0') {
-          if (*(uint *)(iVar1 + 0xc) < 3) goto code_?;
+          if (uVar3 < 3) goto code_?;
           if (*(char *)(iVar1 + 0x12) == '\0') {
-            if (*(uint *)(iVar1 + 0xc) < 4) goto code_?;
+            if (uVar3 < 4) goto code_?;
             if (*(char *)(iVar1 + 0x13) == '\0') {
               (cube->fields).unIndentedSides = (cube->fields).unIndentedSides | 1;
             }
           }
         }
       }
-      if (4 < *(uint *)(iVar1 + 0xc)) {
+      uVar3 = *(uint *)(iVar1 + 0xc);
+      if (4 < uVar3) {
         if (*(char *)(iVar1 + 0x14) == '\0') {
-          if (*(uint *)(iVar1 + 0xc) < 6) goto code_?;
+          if (uVar3 < 6) goto code_?;
           if (*(char *)(iVar1 + 0x15) == '\0') {
-            if (*(uint *)(iVar1 + 0xc) < 7) goto code_?;
+            if (uVar3 < 7) goto code_?;
             if (*(char *)(iVar1 + 0x16) == '\0') {
-              if (*(uint *)(iVar1 + 0xc) < 8) goto code_?;
+              if (uVar3 < 8) goto code_?;
               if (*(char *)(iVar1 + 0x17) == '\0') {
                 (cube->fields).unIndentedSides = (cube->fields).unIndentedSides | 2;
               }
             }
           }
         }
-        if (2 < *(uint *)(iVar1 + 0xc)) {
+        uVar3 = *(uint *)(iVar1 + 0xc);
+        if (2 < uVar3) {
           if (*(char *)(iVar1 + 0x12) == '\0') {
-            if (*(uint *)(iVar1 + 0xc) < 4) goto code_?;
+            if (uVar3 < 4) goto code_?;
             if (*(char *)(iVar1 + 0x13) == '\0') {
-              if (*(uint *)(iVar1 + 0xc) < 5) goto code_?;
+              if (uVar3 < 5) goto code_?;
               if (*(char *)(iVar1 + 0x14) == '\0') {
-                if (*(uint *)(iVar1 + 0xc) < 6) goto code_?;
+                if (uVar3 < 6) goto code_?;
                 if (*(char *)(iVar1 + 0x15) == '\0') {
                   (cube->fields).unIndentedSides = (cube->fields).unIndentedSides | 8;
                 }
               }
             }
           }
-          if (*(int *)(iVar1 + 0xc) != 0) {
+          uVar3 = *(uint *)(iVar1 + 0xc);
+          if (uVar3 != 0) {
             if (*(char *)(iVar1 + 0x10) == '\0') {
-              if (*(uint *)(iVar1 + 0xc) < 2) goto code_?;
+              if (uVar3 < 2) goto code_?;
               if (*(char *)(iVar1 + 0x11) == '\0') {
-                if (*(uint *)(iVar1 + 0xc) < 7) goto code_?;
+                if (uVar3 < 7) goto code_?;
                 if (*(char *)(iVar1 + 0x16) == '\0') {
-                  if (*(uint *)(iVar1 + 0xc) < 8) goto code_?;
+                  if (uVar3 < 8) goto code_?;
                   if (*(char *)(iVar1 + 0x17) == '\0') {
                     (cube->fields).unIndentedSides = (cube->fields).unIndentedSides | 4;
                   }
                 }
               }
             }
-            if (*(int *)(iVar1 + 0xc) != 0) {
+            uVar3 = *(uint *)(iVar1 + 0xc);
+            if (uVar3 != 0) {
               if (*(char *)(iVar1 + 0x10) == '\0') {
-                if (*(uint *)(iVar1 + 0xc) < 4) goto code_?;
+                if (uVar3 < 4) goto code_?;
                 if (*(char *)(iVar1 + 0x13) == '\0') {
-                  if (*(uint *)(iVar1 + 0xc) < 5) goto code_?;
+                  if (uVar3 < 5) goto code_?;
                   if (*(char *)(iVar1 + 0x14) == '\0') {
-                    if (*(uint *)(iVar1 + 0xc) < 8) goto code_?;
+                    if (uVar3 < 8) goto code_?;
                     if (*(char *)(iVar1 + 0x17) == '\0') {
                       (cube->fields).unIndentedSides = (cube->fields).unIndentedSides | 0x10;
                     }
                   }
                 }
               }
-              if (1 < *(uint *)(iVar1 + 0xc)) {
+              uVar3 = *(uint *)(iVar1 + 0xc);
+              if (1 < uVar3) {
                 if (*(char *)(iVar1 + 0x11) == '\0') {
-                  if (*(uint *)(iVar1 + 0xc) < 3) goto code_?;
+                  if (uVar3 < 3) goto code_?;
                   if (*(char *)(iVar1 + 0x12) == '\0') {
-                    if (*(uint *)(iVar1 + 0xc) < 6) goto code_?;
+                    if (uVar3 < 6) goto code_?;
                     if (*(char *)(iVar1 + 0x15) == '\0') {
-                      if (*(uint *)(iVar1 + 0xc) < 7) goto code_?;
+                      if (uVar3 < 7) goto code_?;
                       if (*(char *)(iVar1 + 0x16) == '\0') {
                         (cube->fields).unIndentedSides = (cube->fields).unIndentedSides | 0x20;
                       }
@@ -684,40 +653,45 @@ void MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase__ctor
   pBVar1 = TypeInfo__MV__WorldObject__CubeBase->static_fields->identityByteCorners;
   if (pBVar1 == (Byte__Array *)0x0) {
     func_?();
+    pBStack_2 = in_ECX;
   }
   else {
-    unaff_EDI = UnityEngine.CoreModule.dll::UnityEngine::Playables::PlayableBehaviour::
+    unaff_ESI = UnityEngine.CoreModule.dll::UnityEngine::Playables::PlayableBehaviour::
                 PlayableBehaviour_Clone((PlayableBehaviour *)pBVar1,(MethodInfo *)0x0);
-    unaff_EBX = TypeInfo__System__Byte;
-    if (unaff_EDI == (Object *)0x0) {
+    unaff_EDI = TypeInfo__System__Byte;
+    if (unaff_ESI == (Object *)0x0) {
       (this->fields).byteCorners = (Byte__Array *)0x0;
-      iVar2 = 0;
+      iVar3 = 0;
 code_?:
-      func_?(&(this->fields).byteCorners,iVar2);
+      ppBVar4 = &(this->fields).byteCorners;
+      func_?(ppBVar4,iVar3);
       pBVar1 = (Byte__Array *)func_?(TypeInfo__System__Byte,6);
-      (this->fields).faceMaterials = pBVar1;
-      method_00 = (MethodInfo *)&(this->fields).faceMaterials;
-      func_?(method_00,pBVar1);
+      ppBVar5 = &(this->fields).faceMaterials;
+      *ppBVar5 = pBVar1;
+      method_00 = (MethodInfo *)ppBVar5;
+      func_?(ppBVar5,pBVar1);
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                 ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-      (this->fields).byteCorners = byteCorners;
-      func_?(&(this->fields).byteCorners,byteCorners);
-      (this->fields).faceMaterials = faceMaterials;
-      func_?(&(this->fields).faceMaterials,faceMaterials);
+      *ppBVar4 = byteCorners;
+      func_?(ppBVar4,byteCorners);
+      *ppBVar5 = faceMaterials;
+      func_?(ppBVar5,faceMaterials);
       CubeBase_SetCubeFlags(this,(MethodInfo *)0x0);
       return;
     }
-    pBVar1 = (Byte__Array *)func_?(unaff_EDI,TypeInfo__System__Byte);
-    if (pBVar1 != (Byte__Array *)0x0) {
-      (this->fields).byteCorners = pBVar1;
-      unaff_EBX = TypeInfo__System__Byte;
-      iVar2 = func_?(unaff_EDI,TypeInfo__System__Byte);
-      if (iVar2 != 0) goto code_?;
-    }
+    pBVar1 = (Byte__Array *)func_?(unaff_ESI,TypeInfo__System__Byte);
+    if (pBVar1 == (Byte__Array *)0x0) goto code_?;
+    unaff_EDI = (Byte__Array__Class *)&(this->fields).byteCorners;
+    *(Byte__Array **)unaff_EDI = pBVar1;
+    pBStack_2 = TypeInfo__System__Byte;
+    iVar3 = func_?(unaff_ESI,TypeInfo__System__Byte);
+    if (iVar3 != 0) goto code_?;
   }
-  func_?(unaff_EDI,unaff_EBX);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?(unaff_ESI,pBStack_2);
+code_?:
+  func_?(unaff_ESI,unaff_EDI);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -738,21 +712,34 @@ void MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase__ctor_1
     func_?(TypeInfo__MV__WorldObject__CubeBase);
   }
   pBVar1 = TypeInfo__MV__WorldObject__CubeBase->static_fields->identityByteCorners;
-  if (pBVar1 == (Byte__Array *)0x0) goto code_?;
-  pOVar2 = UnityEngine.CoreModule.dll::UnityEngine::Playables::PlayableBehaviour::
-           PlayableBehaviour_Clone((PlayableBehaviour *)pBVar1,(MethodInfo *)0x0);
-  pBStack_3 = TypeInfo__System__Byte;
-  if (pOVar2 == (Object *)0x0) {
-    (this->fields).byteCorners = (Byte__Array *)0x0;
-    iVar4 = 0;
-code_?:
-    func_?(&(this->fields).byteCorners,iVar4);
+  pBStack_2 = in_ECX;
+  if (pBVar1 != (Byte__Array *)0x0) {
+    unaff_ESI = UnityEngine.CoreModule.dll::UnityEngine::Playables::PlayableBehaviour::
+                PlayableBehaviour_Clone((PlayableBehaviour *)pBVar1,(MethodInfo *)0x0);
+    pBVar3 = TypeInfo__System__Byte;
+    if (unaff_ESI == (Object *)0x0) {
+      (this->fields).byteCorners = (Byte__Array *)0x0;
+      iVar4 = 0;
+    }
+    else {
+      pBVar1 = (Byte__Array *)func_?(unaff_ESI,TypeInfo__System__Byte);
+      if (pBVar1 == (Byte__Array *)0x0) {
+        func_?(unaff_ESI,pBVar3);
+        goto code_?;
+      }
+      (this->fields).byteCorners = pBVar1;
+      pBStack_2 = TypeInfo__System__Byte;
+      iVar4 = func_?(unaff_ESI,TypeInfo__System__Byte);
+      if (iVar4 == 0) goto code_?;
+    }
+    ppBVar5 = &(this->fields).byteCorners;
+    func_?(ppBVar5,iVar4);
     pBVar1 = (Byte__Array *)func_?(TypeInfo__System__Byte,6);
-    (this->fields).faceMaterials = pBVar1;
-    func_?(&(this->fields).faceMaterials,pBVar1);
+    unaff_ESI = (Object *)&(this->fields).faceMaterials;
+    *(Byte__Array **)unaff_ESI = pBVar1;
+    func_?(unaff_ESI,pBVar1);
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)this,ExceptionArgument__Enum_obj,in_stack_5);
-    ppBVar6 = &(this->fields).faceMaterials;
+              ((Object *)this,ExceptionArgument__Enum_obj,in_stack_6);
     if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__MV__WorldObject__CubeDataPacker);
     }
@@ -761,53 +748,49 @@ code_?:
       cRam_? = '\x01';
     }
     if ((byteFlags & 1) == 0) {
-      if (bp == (BytePacker *)0x0) goto code_?;
-      pBVar1 = BytePacker::BytePacker_ReadBytes(bp,8,(MethodInfo *)0x0);
-      (this->fields).byteCorners = pBVar1;
-      func_?(&(this->fields).byteCorners,pBVar1);
+      if (bp != (BytePacker *)0x0) {
+        pBVar1 = BytePacker::BytePacker_ReadBytes(bp,8,(MethodInfo *)0x0);
+        *ppBVar5 = pBVar1;
+        func_?(ppBVar5,pBVar1);
+        goto code_?;
+      }
     }
     else {
       if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__MV__WorldObject__CubeDataPacker);
       }
       pBVar1 = TypeInfo__MV__WorldObject__CubeDataPacker->static_fields->IdentityByteCorners;
-      (this->fields).byteCorners = pBVar1;
-      func_?(&(this->fields).byteCorners,pBVar1);
-      if (bp == (BytePacker *)0x0) goto code_?;
-    }
-    if ((byteFlags & 2) == 0) {
-      pBVar1 = BytePacker::BytePacker_ReadBytes(bp,6,(MethodInfo *)0x0);
-      *ppBVar6 = pBVar1;
-      func_?(ppBVar6,pBVar1);
-      CubeBase_SetCubeFlags(this,(MethodInfo *)0x0);
-      return;
-    }
-    uVar7 = BytePacker::BytePacker_ReadByte(bp,(MethodInfo *)0x0);
-    uVar8 = 0;
-    while (pBVar1 = *ppBVar6, pBVar1 != (Byte__Array *)0x0) {
-      if (pBVar1->max_length <= uVar8) goto code_?;
-      pBVar1->vector[uVar8] = uVar7;
-      uVar8 = uVar8 + 1;
-      if (5 < (int)uVar8) {
-        CubeBase_SetCubeFlags(this,(MethodInfo *)0x0);
-        return;
+      *ppBVar5 = pBVar1;
+      func_?(ppBVar5,pBVar1);
+      if (bp != (BytePacker *)0x0) {
+code_?:
+        if ((byteFlags & 2) == 0) {
+          pBVar1 = BytePacker::BytePacker_ReadBytes(bp,6,(MethodInfo *)0x0);
+          *(Byte__Array **)unaff_ESI = pBVar1;
+          func_?(unaff_ESI,pBVar1);
+          CubeBase_SetCubeFlags(this,(MethodInfo *)0x0);
+          return;
+        }
+        uVar7 = BytePacker::BytePacker_ReadByte(bp,(MethodInfo *)0x0);
+        uVar8 = 0;
+        while (pBVar1 = *(Byte__Array **)unaff_ESI, pBVar1 != (Byte__Array *)0x0) {
+          if (pBVar1->max_length <= uVar8) goto code_?;
+          pBVar1->vector[uVar8] = uVar7;
+          uVar8 = uVar8 + 1;
+          if (5 < (int)uVar8) {
+            CubeBase_SetCubeFlags(this,(MethodInfo *)0x0);
+            return;
+          }
+        }
       }
     }
   }
-  else {
-    pBVar1 = (Byte__Array *)func_?(pOVar2,TypeInfo__System__Byte);
-    if (pBVar1 != (Byte__Array *)0x0) {
-      (this->fields).byteCorners = pBVar1;
-      pBStack_3 = TypeInfo__System__Byte;
-      iVar4 = func_?(pOVar2,TypeInfo__System__Byte);
-      if (iVar4 != 0) goto code_?;
-    }
-    func_?(pOVar2,pBStack_3);
-  }
 code_?:
   func_?();
 code_?:
   func_?();
+code_?:
+  func_?(unaff_ESI,pBStack_2);
   pcVar9 = (code *)swi(3);
   (*pcVar9)();
   return;
@@ -833,13 +816,14 @@ void MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase__ctor_2
   if (pBVar2 == (Byte__Array *)0x0) {
 code_?:
     func_?();
+code_?:
+    func_?(unaff_ESI,_material);
   }
   else {
-    if (pBVar2->max_length == 0) goto code_?;
-    pBVar2->vector[0] = material;
-    if ((((pBVar2->max_length < 2) || (pBVar2->vector[1] = material, pBVar2->max_length < 3)) ||
-        (pBVar2->vector[2] = material, pBVar2->max_length < 4)) ||
-       ((pBVar2->vector[3] = material, pBVar2->max_length < 5 ||
+    if ((((pBVar2->max_length == 0) || (pBVar2->vector[0] = material, pBVar2->max_length < 2)) ||
+        (pBVar2->vector[1] = material, pBVar2->max_length < 3)) ||
+       (((pBVar2->vector[2] = material, pBVar2->max_length < 4 ||
+         (pBVar2->vector[3] = material, pBVar2->max_length < 5)) ||
         (pBVar2->vector[4] = material, pBVar2->max_length < 6)))) goto code_?;
     bVar3 = cRam_? == '\0';
     pBVar2->vector[5] = material;
@@ -853,40 +837,44 @@ code_?:
     }
     pBVar4 = TypeInfo__MV__WorldObject__CubeBase->static_fields->identityByteCorners;
     if (pBVar4 == (Byte__Array *)0x0) goto code_?;
-    unaff_EBX = UnityEngine.CoreModule.dll::UnityEngine::Playables::PlayableBehaviour::
+    unaff_ESI = UnityEngine.CoreModule.dll::UnityEngine::Playables::PlayableBehaviour::
                 PlayableBehaviour_Clone((PlayableBehaviour *)pBVar4,(MethodInfo *)0x0);
-    _material = TypeInfo__System__Byte;
-    if (unaff_EBX == (Object *)0x0) {
+    unaff_EBX = TypeInfo__System__Byte;
+    if (unaff_ESI == (Object *)0x0) {
       (this->fields).byteCorners = (Byte__Array *)0x0;
       iVar5 = 0;
 code_?:
-      func_?(&(this->fields).byteCorners,iVar5);
+      ppBVar6 = &(this->fields).byteCorners;
+      func_?(ppBVar6,iVar5);
       pBVar4 = (Byte__Array *)func_?(TypeInfo__System__Byte,6);
-      (this->fields).faceMaterials = pBVar4;
-      method_00 = (MethodInfo *)&(this->fields).faceMaterials;
-      func_?(method_00,pBVar4);
+      ppBVar7 = &(this->fields).faceMaterials;
+      *ppBVar7 = pBVar4;
+      method_00 = (MethodInfo *)ppBVar7;
+      func_?(ppBVar7,pBVar4);
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                 ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-      (this->fields).byteCorners = pBVar1;
-      func_?(&(this->fields).byteCorners,pBVar1);
-      (this->fields).faceMaterials = pBVar2;
-      func_?(&(this->fields).faceMaterials,pBVar2);
+      *ppBVar6 = pBVar1;
+      func_?(ppBVar6,pBVar1);
+      *ppBVar7 = pBVar2;
+      func_?(ppBVar7,pBVar2);
       CubeBase_SetCubeFlags(this,(MethodInfo *)0x0);
       return;
     }
-    pBVar4 = (Byte__Array *)func_?(unaff_EBX,TypeInfo__System__Byte);
+    pBVar4 = (Byte__Array *)func_?(unaff_ESI,TypeInfo__System__Byte);
     if (pBVar4 != (Byte__Array *)0x0) {
-      (this->fields).byteCorners = pBVar4;
+      unaff_EBX = (Byte__Array__Class *)&(this->fields).byteCorners;
+      *(Byte__Array **)unaff_EBX = pBVar4;
       _material = TypeInfo__System__Byte;
-      iVar5 = func_?(unaff_EBX,TypeInfo__System__Byte);
+      iVar5 = func_?(unaff_ESI,TypeInfo__System__Byte);
       if (iVar5 != 0) goto code_?;
+      goto code_?;
     }
   }
-  func_?(unaff_EBX,_material);
+  func_?(unaff_ESI,unaff_EBX);
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -1009,41 +997,37 @@ bool MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_op_Equality
     if (pBVar1->max_length != pBVar2->max_length) {
       return 0;
     }
-    pBVar1 = (a->fields).faceMaterials;
-    if ((pBVar1 != (Byte__Array *)0x0) &&
-       (pBVar2 = (b->fields).faceMaterials, pBVar2 != (Byte__Array *)0x0)) {
-      if (pBVar1->max_length != pBVar2->max_length) {
+    pBVar3 = (a->fields).faceMaterials;
+    if ((pBVar3 != (Byte__Array *)0x0) &&
+       (pBVar4 = (b->fields).faceMaterials, pBVar4 != (Byte__Array *)0x0)) {
+      if (pBVar3->max_length != pBVar4->max_length) {
         return 0;
       }
-      pBVar1 = (b->fields).byteCorners;
-      pBVar2 = (a->fields).byteCorners;
-      for (uVar3 = 0; (int)uVar3 < (int)((a->fields).byteCorners)->max_length; uVar3 = uVar3 + 1) {
-        if ((pBVar2->max_length <= uVar3) || (pBVar1->max_length <= uVar3)) goto code_?;
-        if (pBVar2->vector[uVar3] != pBVar1->vector[uVar3]) {
+      for (uVar5 = 0; (int)uVar5 < (int)pBVar1->max_length; uVar5 = uVar5 + 1) {
+        if ((pBVar1->max_length <= uVar5) || (pBVar2->max_length <= uVar5)) goto code_?;
+        if (pBVar1->vector[uVar5] != pBVar2->vector[uVar5]) {
           return 0;
         }
       }
-      pBVar1 = (b->fields).faceMaterials;
-      uVar3 = 0;
-      pBVar2 = (a->fields).faceMaterials;
+      uVar5 = 0;
       while( true ) {
-        if ((int)((a->fields).faceMaterials)->max_length <= (int)uVar3) {
+        if ((int)pBVar3->max_length <= (int)uVar5) {
           return 1;
         }
-        if ((pBVar2->max_length <= uVar3) || (pBVar1->max_length <= uVar3)) break;
-        if (pBVar2->vector[uVar3] != pBVar1->vector[uVar3]) {
+        if ((pBVar3->max_length <= uVar5) || (pBVar4->max_length <= uVar5)) break;
+        if (pBVar3->vector[uVar5] != pBVar4->vector[uVar5]) {
           return 0;
         }
-        uVar3 = uVar3 + 1;
+        uVar5 = uVar5 + 1;
       }
 code_?:
       func_?();
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  bVar5 = (*pcVar4)();
-  return bVar5;
+  pcVar6 = (code *)swi(3);
+  bVar7 = (*pcVar6)();
+  return bVar7;
 }
 
 
@@ -1085,8 +1069,9 @@ void MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_set_Corners
     func_?(TypeInfo__MV__WorldObject__CubeDataPacker);
   }
   pBVar1 = CubeDataPacker::CubeDataPacker_CornersToByteArray(value,(MethodInfo *)0x0);
-  (this->fields).byteCorners = pBVar1;
-  func_?(&(this->fields).byteCorners,pBVar1);
+  ppBVar2 = &(this->fields).byteCorners;
+  *ppBVar2 = pBVar1;
+  func_?(ppBVar2,pBVar1);
   return;
 }
 

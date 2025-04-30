@@ -26,20 +26,23 @@ MobileAdManagerCredentials_GetAdMobCredentials(MethodInfo *method)
   }
   method_00 = TypeInfo__Assets__Scripts__AdIntegration__Mobile__AdMobCredentials;
   value = (AdMobCredentials *)func_?();
-  pSVar1 = StringLiteral_Reward_ad_unit_not_set;
-  pSVar2 = StringLiteral_AppId_not_set;
-  pSVar3 = StringLiteral_Interstitial_ad_unit_not_set;
+  pSVar1 = StringLiteral_Interstitial_ad_unit_not_set;
+  pSVar2 = StringLiteral_Reward_ad_unit_not_set;
+  pSVar3 = StringLiteral_AppId_not_set;
   pSVar4 = StringLiteral_Banner_ad_unit_not;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  (value->fields).AppId = pSVar2;
-  func_?(&value->fields,pSVar2);
-  (value->fields).RewardedAdUnitId = pSVar1;
-  func_?(&(value->fields).RewardedAdUnitId,pSVar1);
-  (value->fields).InterstitialAdUnitId = pSVar3;
-  func_?(&(value->fields).InterstitialAdUnitId,pSVar3);
-  (value->fields).BannerAdUnitId = pSVar4;
-  func_?(&(value->fields).BannerAdUnitId,pSVar4);
+  (value->fields).AppId = pSVar3;
+  func_?(&value->fields,pSVar3);
+  ppSVar5 = &(value->fields).RewardedAdUnitId;
+  *ppSVar5 = pSVar2;
+  func_?(ppSVar5,pSVar2);
+  ppSVar5 = &(value->fields).InterstitialAdUnitId;
+  *ppSVar5 = pSVar1;
+  func_?(ppSVar5,pSVar1);
+  ppSVar5 = &(value->fields).BannerAdUnitId;
+  *ppSVar5 = pSVar4;
+  func_?(ppSVar5,pSVar4);
   return value;
 }
 
@@ -61,20 +64,23 @@ MobileAdManagerCredentials_GetDefault(MethodInfo *method)
   }
   method_00 = TypeInfo__Assets__Scripts__AdIntegration__Mobile__AdMobCredentials;
   value = (AdMobCredentials *)func_?();
-  pSVar1 = StringLiteral_Banner_ad_unit_not;
-  pSVar2 = StringLiteral_Reward_ad_unit_not_set;
-  pSVar3 = StringLiteral_AppId_not_set;
-  pSVar4 = StringLiteral_Interstitial_ad_unit_not_set;
+  pSVar1 = StringLiteral_Interstitial_ad_unit_not_set;
+  pSVar2 = StringLiteral_Banner_ad_unit_not;
+  pSVar3 = StringLiteral_Reward_ad_unit_not_set;
+  pSVar4 = StringLiteral_AppId_not_set;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  (value->fields).AppId = pSVar3;
-  func_?(&value->fields,pSVar3);
-  (value->fields).RewardedAdUnitId = pSVar2;
-  func_?(&(value->fields).RewardedAdUnitId,pSVar2);
-  (value->fields).InterstitialAdUnitId = pSVar4;
-  func_?(&(value->fields).InterstitialAdUnitId,pSVar4);
-  (value->fields).BannerAdUnitId = pSVar1;
-  func_?(&(value->fields).BannerAdUnitId,pSVar1);
+  (value->fields).AppId = pSVar4;
+  func_?(&value->fields,pSVar4);
+  ppSVar5 = &(value->fields).RewardedAdUnitId;
+  *ppSVar5 = pSVar3;
+  func_?(ppSVar5,pSVar3);
+  ppSVar5 = &(value->fields).InterstitialAdUnitId;
+  *ppSVar5 = pSVar1;
+  func_?(ppSVar5,pSVar1);
+  ppSVar5 = &(value->fields).BannerAdUnitId;
+  *ppSVar5 = pSVar2;
+  func_?(ppSVar5,pSVar2);
   return value;
 }
 

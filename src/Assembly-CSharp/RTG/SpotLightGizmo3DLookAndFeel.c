@@ -73,172 +73,163 @@ void Assembly-CSharp.dll::RTG::SpotLightGizmo3DLookAndFeel::SpotLightGizmo3DLook
     cRam_? = '\x01';
   }
   pCVar1 = ColorEx::ColorEx_FromByteValues
-                      ((Color *)&stack0xffffffec,0xd2,0xd2,0x8a,0xff,(MethodInfo *)0x0);
-  fVar2 = pCVar1->g;
-  fVar3 = pCVar1->b;
-  fVar4 = pCVar1->a;
+                      ((Color *)&puStack_2,0xd2,0xd2,0x8a,0xff,(MethodInfo *)0x0);
+  fVar3 = pCVar1->g;
+  fVar4 = pCVar1->b;
+  fVar5 = pCVar1->a;
   (this->fields)._wireColor.r = pCVar1->r;
-  (this->fields)._wireColor.g = fVar2;
-  (this->fields)._wireColor.b = fVar3;
-  (this->fields)._wireColor.a = fVar4;
-  pGVar5 = (GizmoCap2DLookAndFeel *)func_?(TypeInfo__RTG__GizmoCap2DLookAndFeel);
-  GizmoCap2DLookAndFeel::GizmoCap2DLookAndFeel__ctor(pGVar5,(MethodInfo *)0x0);
-  (this->fields)._tickLookAndFeel = pGVar5;
-  func_?(&(this->fields)._tickLookAndFeel,pGVar5);
-  pGVar5 = (GizmoCap2DLookAndFeel *)func_?(TypeInfo__RTG__GizmoCap2DLookAndFeel);
-  GizmoCap2DLookAndFeel::GizmoCap2DLookAndFeel__ctor(pGVar5,(MethodInfo *)0x0);
-  (this->fields)._dirSnapTickLookAndFeel = pGVar5;
-  func_?(&(this->fields)._dirSnapTickLookAndFeel,pGVar5);
+  (this->fields)._wireColor.g = fVar3;
+  (this->fields)._wireColor.b = fVar4;
+  (this->fields)._wireColor.a = fVar5;
+  pGVar6 = (GizmoCap2DLookAndFeel *)func_?(TypeInfo__RTG__GizmoCap2DLookAndFeel);
+  GizmoCap2DLookAndFeel::GizmoCap2DLookAndFeel__ctor(pGVar6,(MethodInfo *)0x0);
+  ppGVar7 = &(this->fields)._tickLookAndFeel;
+  *ppGVar7 = pGVar6;
+  func_?(ppGVar7,pGVar6);
+  pGVar6 = (GizmoCap2DLookAndFeel *)func_?(TypeInfo__RTG__GizmoCap2DLookAndFeel);
+  GizmoCap2DLookAndFeel::GizmoCap2DLookAndFeel__ctor(pGVar6,(MethodInfo *)0x0);
+  (this->fields)._dirSnapTickLookAndFeel = pGVar6;
+  ppGVar8 = &(this->fields)._dirSnapTickLookAndFeel;
+  func_?(ppGVar8,pGVar6);
+  fVar5 = _UNK_?;
   fVar4 = _UNK_?;
   fVar3 = _UNK_?;
-  fVar2 = _UNK_?;
   (this->fields)._dirSnapSegmentColor.r = _UNK_?;
-  (this->fields)._dirSnapSegmentColor.g = fVar2;
-  (this->fields)._dirSnapSegmentColor.b = fVar3;
-  (this->fields)._dirSnapSegmentColor.a = fVar4;
+  (this->fields)._dirSnapSegmentColor.g = fVar3;
+  (this->fields)._dirSnapSegmentColor.b = fVar4;
+  (this->fields)._dirSnapSegmentColor.a = fVar5;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,in_stack_6);
+            ((Object *)this,ExceptionArgument__Enum_obj,method);
   pCVar1 = ColorEx::ColorEx_FromByteValues
-                      ((Color *)&stack0xffffffec,0xd2,0xd2,0x8a,0xff,(MethodInfo *)0x0);
-  pGVar5 = (this->fields)._dirSnapTickLookAndFeel;
-  fVar2 = pCVar1->g;
-  fVar3 = pCVar1->b;
-  fVar4 = pCVar1->a;
-  if (pGVar5 != (GizmoCap2DLookAndFeel *)0x0) {
-    (pGVar5->fields)._color.r = pCVar1->r;
-    (pGVar5->fields)._color.g = fVar2;
-    (pGVar5->fields)._color.b = fVar3;
-    (pGVar5->fields)._color.a = fVar4;
+                      ((Color *)&puStack_2,0xd2,0xd2,0x8a,0xff,(MethodInfo *)0x0);
+  pGVar6 = *ppGVar8;
+  fVar3 = pCVar1->g;
+  fVar4 = pCVar1->b;
+  fVar5 = pCVar1->a;
+  if (pGVar6 != (GizmoCap2DLookAndFeel *)0x0) {
+    (pGVar6->fields)._color.r = pCVar1->r;
+    (pGVar6->fields)._color.g = fVar3;
+    (pGVar6->fields)._color.b = fVar4;
+    (pGVar6->fields)._color.a = fVar5;
     pCVar1 = RTSystemValues::RTSystemValues_get_HoveredAxisColor
-                        ((Color *)&stack0xffffffec,(MethodInfo *)0x0);
-    fVar7 = _UNK_?;
-    uVar8 = _UNK_?;
-    uVar9 = _UNK_?;
+                        ((Color *)&puStack_2,(MethodInfo *)0x0);
+    fVar9 = _UNK_?;
     uVar10 = _UNK_?;
-    pGVar5 = (this->fields)._dirSnapTickLookAndFeel;
-    fVar2 = pCVar1->g;
-    fVar3 = pCVar1->b;
-    fVar4 = pCVar1->a;
-    if (pGVar5 != (GizmoCap2DLookAndFeel *)0x0) {
-      (pGVar5->fields)._hoveredColor.r = pCVar1->r;
-      (pGVar5->fields)._hoveredColor.g = fVar2;
-      (pGVar5->fields)._hoveredColor.b = fVar3;
-      (pGVar5->fields)._hoveredColor.a = fVar4;
-      color.g = (float)uVar9;
-      color.r = (float)uVar10;
-      color.b = (float)uVar8;
-      color.a = fVar7;
-      pCVar1 = ColorEx::ColorEx_KeepAllButAlpha
-                          ((Color *)&stack0xffffffec,color,0.0,(MethodInfo *)0x0);
-      pGVar5 = (this->fields)._dirSnapTickLookAndFeel;
-      fVar2 = pCVar1->g;
-      fVar3 = pCVar1->b;
-      fVar4 = pCVar1->a;
-      if (pGVar5 != (GizmoCap2DLookAndFeel *)0x0) {
-        (pGVar5->fields)._borderColor.r = pCVar1->r;
-        (pGVar5->fields)._borderColor.g = fVar2;
-        (pGVar5->fields)._borderColor.b = fVar3;
-        (pGVar5->fields)._borderColor.a = fVar4;
+    uVar11 = _UNK_?;
+    uVar12 = _UNK_?;
+    pGVar6 = *ppGVar8;
+    fVar3 = pCVar1->g;
+    fVar4 = pCVar1->b;
+    fVar5 = pCVar1->a;
+    if (pGVar6 != (GizmoCap2DLookAndFeel *)0x0) {
+      (pGVar6->fields)._hoveredColor.r = pCVar1->r;
+      (pGVar6->fields)._hoveredColor.g = fVar3;
+      (pGVar6->fields)._hoveredColor.b = fVar4;
+      (pGVar6->fields)._hoveredColor.a = fVar5;
+      color.g = (float)uVar11;
+      color.r = (float)uVar12;
+      color.b = (float)uVar10;
+      color.a = fVar9;
+      pCVar1 = ColorEx::ColorEx_KeepAllButAlpha((Color *)&puStack_2,color,0.0,(MethodInfo *)0x0);
+      pGVar6 = *ppGVar8;
+      fVar3 = pCVar1->g;
+      fVar4 = pCVar1->b;
+      fVar5 = pCVar1->a;
+      if (pGVar6 != (GizmoCap2DLookAndFeel *)0x0) {
+        (pGVar6->fields)._borderColor.r = pCVar1->r;
+        (pGVar6->fields)._borderColor.g = fVar3;
+        (pGVar6->fields)._borderColor.b = fVar4;
+        (pGVar6->fields)._borderColor.a = fVar5;
         color_00.g = (float)_UNK_?;
         color_00.r = (float)_UNK_?;
         color_00.b = (float)_UNK_?;
         color_00.a = _UNK_?;
         pCVar1 = ColorEx::ColorEx_KeepAllButAlpha
-                            ((Color *)&stack0xffffffec,color_00,0.0,(MethodInfo *)0x0);
-        pGVar5 = (this->fields)._dirSnapTickLookAndFeel;
-        fVar2 = pCVar1->g;
-        fVar3 = pCVar1->b;
-        fVar4 = pCVar1->a;
-        if (pGVar5 != (GizmoCap2DLookAndFeel *)0x0) {
-          (pGVar5->fields)._hoveredBorderColor.r = pCVar1->r;
-          (pGVar5->fields)._hoveredBorderColor.g = fVar2;
-          (pGVar5->fields)._hoveredBorderColor.b = fVar3;
-          (pGVar5->fields)._hoveredBorderColor.a = fVar4;
-          pGVar5 = (this->fields)._dirSnapTickLookAndFeel;
-          if (pGVar5 != (GizmoCap2DLookAndFeel *)0x0) {
+                            ((Color *)&puStack_2,color_00,0.0,(MethodInfo *)0x0);
+        pGVar6 = *ppGVar8;
+        fVar3 = pCVar1->g;
+        fVar4 = pCVar1->b;
+        fVar5 = pCVar1->a;
+        if (pGVar6 != (GizmoCap2DLookAndFeel *)0x0) {
+          (pGVar6->fields)._hoveredBorderColor.r = pCVar1->r;
+          (pGVar6->fields)._hoveredBorderColor.g = fVar3;
+          (pGVar6->fields)._hoveredBorderColor.b = fVar4;
+          (pGVar6->fields)._hoveredBorderColor.a = fVar5;
+          if (*ppGVar8 != (GizmoCap2DLookAndFeel *)0x0) {
             CameraMoveSettings::CameraMoveSettings_set_AccelerationRate
-                      ((CameraMoveSettings *)pGVar5,6.0,(MethodInfo *)0x0);
-            pGVar11 = (GizmoPlaneSlider3DLookAndFeel *)(this->fields)._dirSnapTickLookAndFeel;
-            if (pGVar11 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+                      ((CameraMoveSettings *)*ppGVar8,6.0,(MethodInfo *)0x0);
+            if ((GizmoPlaneSlider3DLookAndFeel *)*ppGVar8 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
               GizmoPlaneSlider3DLookAndFeel::GizmoPlaneSlider3DLookAndFeel_set_RATriangleXLength
-                        (pGVar11,6.0,(MethodInfo *)0x0);
-              pGVar5 = (this->fields)._dirSnapTickLookAndFeel;
-              if (pGVar5 != (GizmoCap2DLookAndFeel *)0x0) {
-                (pGVar5->fields)._circleRadius = 3.0;
-                pGVar5 = (this->fields)._dirSnapTickLookAndFeel;
-                if (pGVar5 != (GizmoCap2DLookAndFeel *)0x0) {
-                  (pGVar5->fields)._capType = 0;
+                        ((GizmoPlaneSlider3DLookAndFeel *)*ppGVar8,6.0,(MethodInfo *)0x0);
+              if (*ppGVar8 != (GizmoCap2DLookAndFeel *)0x0) {
+                ((*ppGVar8)->fields)._circleRadius = 3.0;
+                if (*ppGVar8 != (GizmoCap2DLookAndFeel *)0x0) {
+                  ((*ppGVar8)->fields)._capType = 0;
                   pCVar1 = ColorEx::ColorEx_FromByteValues
-                                      ((Color *)&stack0xffffffec,0xd2,0xd2,0x8a,0xff,
-                                       (MethodInfo *)0x0);
-                  pGVar5 = (this->fields)._tickLookAndFeel;
-                  fVar2 = pCVar1->g;
-                  fVar3 = pCVar1->b;
-                  fVar4 = pCVar1->a;
-                  if (pGVar5 != (GizmoCap2DLookAndFeel *)0x0) {
-                    (pGVar5->fields)._color.r = pCVar1->r;
-                    (pGVar5->fields)._color.g = fVar2;
-                    (pGVar5->fields)._color.b = fVar3;
-                    (pGVar5->fields)._color.a = fVar4;
+                                      ((Color *)&puStack_2,0xd2,0xd2,0x8a,0xff,(MethodInfo *)0x0);
+                  pGVar6 = *ppGVar7;
+                  fVar3 = pCVar1->g;
+                  fVar4 = pCVar1->b;
+                  fVar5 = pCVar1->a;
+                  if (pGVar6 != (GizmoCap2DLookAndFeel *)0x0) {
+                    (pGVar6->fields)._color.r = pCVar1->r;
+                    (pGVar6->fields)._color.g = fVar3;
+                    (pGVar6->fields)._color.b = fVar4;
+                    (pGVar6->fields)._color.a = fVar5;
                     pCVar1 = RTSystemValues::RTSystemValues_get_HoveredAxisColor
-                                        ((Color *)&stack0xffffffec,(MethodInfo *)0x0);
-                    pGVar5 = (this->fields)._tickLookAndFeel;
-                    fVar2 = pCVar1->g;
-                    fVar3 = pCVar1->b;
-                    fVar4 = pCVar1->a;
-                    if (pGVar5 != (GizmoCap2DLookAndFeel *)0x0) {
-                      (pGVar5->fields)._hoveredColor.r = pCVar1->r;
-                      (pGVar5->fields)._hoveredColor.g = fVar2;
-                      (pGVar5->fields)._hoveredColor.b = fVar3;
-                      (pGVar5->fields)._hoveredColor.a = fVar4;
+                                        ((Color *)&puStack_2,(MethodInfo *)0x0);
+                    pGVar6 = *ppGVar7;
+                    fVar3 = pCVar1->g;
+                    fVar4 = pCVar1->b;
+                    fVar5 = pCVar1->a;
+                    if (pGVar6 != (GizmoCap2DLookAndFeel *)0x0) {
+                      (pGVar6->fields)._hoveredColor.r = pCVar1->r;
+                      (pGVar6->fields)._hoveredColor.g = fVar3;
+                      (pGVar6->fields)._hoveredColor.b = fVar4;
+                      (pGVar6->fields)._hoveredColor.a = fVar5;
                       color_01.g = (float)_UNK_?;
                       color_01.r = (float)_UNK_?;
                       color_01.b = (float)_UNK_?;
                       color_01.a = _UNK_?;
                       pCVar1 = ColorEx::ColorEx_KeepAllButAlpha
-                                          ((Color *)&stack0xffffffec,color_01,0.0,(MethodInfo *)0x0)
-                      ;
-                      pGVar5 = (this->fields)._tickLookAndFeel;
-                      fVar2 = pCVar1->g;
-                      fVar3 = pCVar1->b;
-                      fVar4 = pCVar1->a;
-                      if (pGVar5 != (GizmoCap2DLookAndFeel *)0x0) {
-                        (pGVar5->fields)._borderColor.r = pCVar1->r;
-                        (pGVar5->fields)._borderColor.g = fVar2;
-                        (pGVar5->fields)._borderColor.b = fVar3;
-                        (pGVar5->fields)._borderColor.a = fVar4;
+                                          ((Color *)&puStack_2,color_01,0.0,(MethodInfo *)0x0);
+                      pGVar6 = *ppGVar7;
+                      fVar3 = pCVar1->g;
+                      fVar4 = pCVar1->b;
+                      fVar5 = pCVar1->a;
+                      if (pGVar6 != (GizmoCap2DLookAndFeel *)0x0) {
+                        (pGVar6->fields)._borderColor.r = pCVar1->r;
+                        (pGVar6->fields)._borderColor.g = fVar3;
+                        (pGVar6->fields)._borderColor.b = fVar4;
+                        (pGVar6->fields)._borderColor.a = fVar5;
                         color_02.g = (float)_UNK_?;
                         color_02.r = (float)_UNK_?;
                         color_02.b = (float)_UNK_?;
                         color_02.a = _UNK_?;
                         pCVar1 = ColorEx::ColorEx_KeepAllButAlpha
-                                            ((Color *)&stack0xffffffec,color_02,0.0,
-                                             (MethodInfo *)0x0);
-                        pGVar5 = (this->fields)._tickLookAndFeel;
-                        fVar2 = pCVar1->g;
-                        fVar3 = pCVar1->b;
-                        fVar4 = pCVar1->a;
-                        if (pGVar5 != (GizmoCap2DLookAndFeel *)0x0) {
-                          (pGVar5->fields)._hoveredBorderColor.r = pCVar1->r;
-                          (pGVar5->fields)._hoveredBorderColor.g = fVar2;
-                          (pGVar5->fields)._hoveredBorderColor.b = fVar3;
-                          (pGVar5->fields)._hoveredBorderColor.a = fVar4;
-                          pGVar5 = (this->fields)._tickLookAndFeel;
-                          if (pGVar5 != (GizmoCap2DLookAndFeel *)0x0) {
+                                            ((Color *)&puStack_2,color_02,0.0,(MethodInfo *)0x0);
+                        pGVar6 = *ppGVar7;
+                        fVar3 = pCVar1->g;
+                        fVar4 = pCVar1->b;
+                        fVar5 = pCVar1->a;
+                        if (pGVar6 != (GizmoCap2DLookAndFeel *)0x0) {
+                          (pGVar6->fields)._hoveredBorderColor.r = pCVar1->r;
+                          (pGVar6->fields)._hoveredBorderColor.g = fVar3;
+                          (pGVar6->fields)._hoveredBorderColor.b = fVar4;
+                          (pGVar6->fields)._hoveredBorderColor.a = fVar5;
+                          if (*ppGVar7 != (GizmoCap2DLookAndFeel *)0x0) {
                             CameraMoveSettings::CameraMoveSettings_set_AccelerationRate
-                                      ((CameraMoveSettings *)pGVar5,6.0,(MethodInfo *)0x0);
-                            pGVar11 = (GizmoPlaneSlider3DLookAndFeel *)
-                                     (this->fields)._tickLookAndFeel;
-                            if (pGVar11 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+                                      ((CameraMoveSettings *)*ppGVar7,6.0,(MethodInfo *)0x0);
+                            if ((GizmoPlaneSlider3DLookAndFeel *)*ppGVar7 !=
+                                (GizmoPlaneSlider3DLookAndFeel *)0x0) {
                               GizmoPlaneSlider3DLookAndFeel::
                               GizmoPlaneSlider3DLookAndFeel_set_RATriangleXLength
-                                        (pGVar11,6.0,(MethodInfo *)0x0);
-                              pGVar5 = (this->fields)._tickLookAndFeel;
-                              if (pGVar5 != (GizmoCap2DLookAndFeel *)0x0) {
-                                (pGVar5->fields)._circleRadius = 3.0;
-                                pGVar5 = (this->fields)._tickLookAndFeel;
-                                if (pGVar5 != (GizmoCap2DLookAndFeel *)0x0) {
-                                  (pGVar5->fields)._capType = 0;
+                                        ((GizmoPlaneSlider3DLookAndFeel *)*ppGVar7,6.0,
+                                         (MethodInfo *)0x0);
+                              if (*ppGVar7 != (GizmoCap2DLookAndFeel *)0x0) {
+                                ((*ppGVar7)->fields)._circleRadius = 3.0;
+                                if (*ppGVar7 != (GizmoCap2DLookAndFeel *)0x0) {
+                                  ((*ppGVar7)->fields)._capType = 0;
                                   return;
                                 }
                               }
@@ -257,8 +248,8 @@ void Assembly-CSharp.dll::RTG::SpotLightGizmo3DLookAndFeel::SpotLightGizmo3DLook
     }
   }
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

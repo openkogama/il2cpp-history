@@ -17,10 +17,10 @@ void Assembly-CSharp.dll::FlagReachedClient::FlagReachedClient_GetBriefing
     if (uVar3 != 0) {
       do {
         if (pIVar1->interfaceOffsets[uVar2].interfaceType == (Il2CppClass *)TypeInfo__IBriefing) {
-          pIVar1 = winningConditionBriefingView->klass;
           iVar4 = pIVar1->interfaceOffsets[uVar2].offset;
-          (*(code *)(&(pIVar1->vtable).AddBriefing_1)[iVar4].method)
-                    (winningConditionBriefingView,1,(&pIVar1[1]._0.image)[iVar4 * 2]);
+          (*(code *)(&(winningConditionBriefingView->klass->vtable).AddBriefing_1)[iVar4].method)
+                    (winningConditionBriefingView,1,
+                     (&winningConditionBriefingView->klass[1]._0.image)[iVar4 * 2]);
           return;
         }
         uVar2 = uVar2 + 1;

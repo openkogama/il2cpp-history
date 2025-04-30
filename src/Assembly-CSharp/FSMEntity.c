@@ -215,8 +215,9 @@ void Assembly-CSharp.dll::FSMEntity::FSMEntity__ctor(FSMEntity *this,MethodInfo 
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
             );
-  (this->fields).data = (Dictionary_2_System_Object_System_Object_ *)this_00;
-  func_?(&(this->fields).data,this_00);
+  ppDVar1 = &(this->fields).data;
+  *ppDVar1 = (Dictionary_2_System_Object_System_Object_ *)this_00;
+  func_?(ppDVar1,this_00);
   (this->fields).clearStack = 1;
   this_01 = (Stack_1_System_Dynamic_BindingRestrictions_TestBuilder_AndNode_ *)
             func_?(TypeInfo__System__Collections__Generic__Stack<EditorEvent>);
@@ -225,7 +226,7 @@ void Assembly-CSharp.dll::FSMEntity::FSMEntity__ctor(FSMEntity *this,MethodInfo 
   Stack_1_System_Dynamic_BindingRestrictions_TestBuilder_AndNode___ctor
             (this_01,MethodInfo__System__Collections__Generic__Stack<EditorEvent>__Stack__);
   method_00 = (MethodInfo *)&(this->fields).stateStack;
-  (this->fields).stateStack = (Stack_1_EditorEvent_ *)this_01;
+  *(Stack_1_System_Dynamic_BindingRestrictions_TestBuilder_AndNode_ **)method_00 = this_01;
   func_?(method_00,this_01);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
@@ -260,47 +261,53 @@ void Assembly-CSharp.dll::FSMEntity::FSMEntity_set_Event
     }
     pSVar1 = mscorlib.dll::System::String::String_Concat_3(pSVar1,str1,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+      func_?(TypeInfo__UnityEngine__Debug);
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
               ((Object *)pSVar1,(MethodInfo *)0x0);
     return;
   }
-  (this->fields).nextEvent = value;
-  func_?(&(this->fields).nextEvent,value);
+  ppOVar2 = &(this->fields).nextEvent;
+  *ppOVar2 = value;
+  func_?(ppOVar2,value);
   if (value == (Object *)0x0) {
-    pIVar2 = (this->fields).currentState;
-    if (pIVar2 != (IState *)0x0) {
-      func_?(2,TypeInfo__IState,pIVar2,this);
-      (this->fields).currentState = (IState *)0x0;
-      func_?(&(this->fields).currentState,0);
+    pIVar3 = (this->fields).currentState;
+    ppIVar4 = &(this->fields).currentState;
+    if (pIVar3 != (IState *)0x0) {
+      func_?(2,TypeInfo__IState,pIVar3,this);
+      *ppIVar4 = (IState *)0x0;
+      func_?(ppIVar4,0);
       return;
     }
   }
   else {
     this_00 = (this->fields).transitionTable;
     if (this_00 != (StateTransitionTable *)0x0) {
-      pIVar2 = StateTransitionTable::StateTransitionTable_GetState(this_00,value,(MethodInfo *)0x0);
-      if (pIVar2 != (IState *)0x0) {
-        if ((this->fields).currentState != (IState *)0x0) {
-          func_?(2,TypeInfo__IState,(this->fields).currentState,this);
+      pIVar3 = StateTransitionTable::StateTransitionTable_GetState(this_00,value,(MethodInfo *)0x0);
+      if (pIVar3 != (IState *)0x0) {
+        pIVar5 = (this->fields).currentState;
+        if (pIVar5 != (IState *)0x0) {
+          func_?(2,TypeInfo__IState,pIVar5,this);
         }
         pSVar1 = (String *)
                  (*(code *)(value->klass->vtable).ToString.method)(value,value->klass[1]._0.image);
-        (this->fields).stateName = pSVar1;
-        func_?(&(this->fields).stateName,pSVar1);
-        (this->fields).currentState = pIVar2;
-        func_?(&(this->fields).currentState,pIVar2);
-        (this->fields).nextEvent = (Object *)0x0;
-        func_?(&(this->fields).nextEvent,0);
-        pOVar3 = (this->fields).curEvent;
-        (this->fields).prevEvent = pOVar3;
-        func_?(&this->fields,pOVar3);
-        (this->fields).curEvent = value;
-        func_?(&(this->fields).curEvent,value);
-        pIVar2 = (this->fields).currentState;
-        if (pIVar2 == (IState *)0x0) goto code_?;
-        func_?(0,TypeInfo__IState,pIVar2,this);
+        ppSVar6 = &(this->fields).stateName;
+        *ppSVar6 = pSVar1;
+        func_?(ppSVar6,pSVar1);
+        ppIVar4 = &(this->fields).currentState;
+        *ppIVar4 = pIVar3;
+        func_?(ppIVar4,pIVar3);
+        *ppOVar2 = (Object *)0x0;
+        func_?(ppOVar2,0);
+        pOVar7 = (this->fields).curEvent;
+        ppOVar2 = &(this->fields).curEvent;
+        (this->fields).prevEvent = pOVar7;
+        func_?(&this->fields,pOVar7);
+        *ppOVar2 = value;
+        func_?(ppOVar2,value);
+        pIVar3 = (this->fields).currentState;
+        if (pIVar3 == (IState *)0x0) goto code_?;
+        func_?(0,TypeInfo__IState,pIVar3,this);
         this_01 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                    *)(this->fields).data;
         if (this_01 ==
@@ -331,8 +338,8 @@ void Assembly-CSharp.dll::FSMEntity::FSMEntity_set_Event
   }
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

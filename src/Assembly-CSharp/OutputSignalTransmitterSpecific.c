@@ -51,12 +51,12 @@ void Assembly-CSharp.dll::OutputSignalTransmitterSpecific::OutputSignalTransmitt
         uVar9 = 0;
         uVar10 = *(ushort *)(*piVar8 + 0xb6);
         if (uVar10 != 0) {
+          iVar7 = *(int *)(*piVar8 + 0x58);
           do {
-            if (*(ILogicWorldObject__Class **)(*(int *)(*piVar8 + 0x58) + (uint)uVar9 * 8) ==
+            if (*(ILogicWorldObject__Class **)(iVar7 + (uint)uVar9 * 8) ==
                 TypeInfo__ILogicWorldObject) {
               puVar11 = (undefined4 *)
-                        (*piVar8 +
-                        (*(int *)(*(int *)(*piVar8 + 0x58) + 4 + (uint)uVar9 * 8) + 0x18) * 8);
+                        (*piVar8 + (*(int *)(iVar7 + 4 + (uint)uVar9 * 8) + 0x18) * 8);
               goto code_?;
             }
             uVar9 = uVar9 + 1;
@@ -70,12 +70,12 @@ code_?:
         uVar9 = 0;
         uVar10 = *(ushort *)(*piVar8 + 0xb6);
         if (uVar10 != 0) {
+          iVar7 = *(int *)(*piVar8 + 0x58);
           do {
-            if (*(IInputSignalReceiver__Class **)(*(int *)(*piVar8 + 0x58) + (uint)uVar9 * 8) ==
+            if (*(IInputSignalReceiver__Class **)(iVar7 + (uint)uVar9 * 8) ==
                 TypeInfo__IInputSignalReceiver) {
               puVar11 = (undefined4 *)
-                        (*piVar8 +
-                        (*(int *)(*(int *)(*piVar8 + 0x58) + 4 + (uint)uVar9 * 8) + 0x18) * 8);
+                        (*piVar8 + (*(int *)(iVar7 + 4 + (uint)uVar9 * 8) + 0x18) * 8);
               goto code_?;
             }
             uVar9 = uVar9 + 1;

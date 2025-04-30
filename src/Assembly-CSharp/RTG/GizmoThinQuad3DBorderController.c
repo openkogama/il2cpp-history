@@ -10,26 +10,19 @@ void Assembly-CSharp.dll::RTG::GizmoThinQuad3DBorderController::
   if (pGVar1 != (GizmoQuad3DBorderControllerData *)0x0) {
     pGVar2 = (pGVar1->fields).PlaneSlider;
     this_00 = (Touch *)(pGVar1->fields).BorderQuad;
-    if (pGVar2 != (GizmoPlaneSlider3D *)0x0) {
-      if ((pGVar2->fields)._sharedSettings == (GizmoPlaneSlider3DSettings *)0x0) {
-        pGVar3 = (pGVar2->fields)._settings;
-        if (pGVar3 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
-      }
-      else {
-        pGVar3 = (pGVar2->fields)._sharedSettings;
-      }
-      if (this_00 != (Touch *)0x0) {
-        QuadShape3D::QuadShape3D_set_WireEps
-                  ((QuadShape3D *)this_00,zoomFactor * (pGVar3->fields)._borderLineHoverEps,
-                   (MethodInfo *)0x0);
-        value = UnityEngine.InputLegacyModule.dll::UnityEngine::Touch::Touch_get_altitudeAngle
-                          (this_00,(MethodInfo *)0x0);
-        QuadShape3D::QuadShape3D_set_ExtrudeEps((QuadShape3D *)this_00,value,(MethodInfo *)0x0);
-        return;
-      }
+    if ((pGVar2 != (GizmoPlaneSlider3D *)0x0) &&
+       (((pGVar3 = (pGVar2->fields)._sharedSettings, pGVar3 != (GizmoPlaneSlider3DSettings *)0x0 ||
+         (pGVar3 = (pGVar2->fields)._settings, pGVar3 != (GizmoPlaneSlider3DSettings *)0x0)) &&
+        (this_00 != (Touch *)0x0)))) {
+      QuadShape3D::QuadShape3D_set_WireEps
+                ((QuadShape3D *)this_00,zoomFactor * (pGVar3->fields)._borderLineHoverEps,
+                 (MethodInfo *)0x0);
+      value = UnityEngine.InputLegacyModule.dll::UnityEngine::Touch::Touch_get_altitudeAngle
+                        (this_00,(MethodInfo *)0x0);
+      QuadShape3D::QuadShape3D_set_ExtrudeEps((QuadShape3D *)this_00,value,(MethodInfo *)0x0);
+      return;
     }
   }
-code_?:
   func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();

@@ -21,38 +21,36 @@ float Assembly-CSharp.dll::WorldObjectTypes::MVDoor::MVDoorObject::MVDoorObject_
     pMVar2 = (this->fields).doorLogic;
     if (pMVar2 != (MVDoor *)0x0) {
       fVar3 = (pMVar2->fields).doorConfig.openValue;
-      if (pMVar2 != (MVDoor *)0x0) {
-        fVar4 = (pMVar2->fields).doorConfig.closeValue;
-        uVar5._0_4_ = (pMVar2->fields).doorConfig.toggleTime;
-        uVar5._4_4_ = (pMVar2->fields).doorConfig.docType;
-        pTVar6 = (this->fields).animationRoot;
-        if (pTVar6 != (Transform *)0x0) {
-          pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localRotation
-                             ((Quaternion *)auStack_8,pTVar6,(MethodInfo *)0x0);
-          fStack_9 = pQVar7->x;
-          VStack_10.x = pQVar7->y;
-          VStack_10.y = pQVar7->z;
-          VStack_10.z = pQVar7->w;
-          puVar11 = (undefined8 *)func_?(auStack_8 + 4,&fStack_9,0,fVar4,uVar5);
-          VStack_10._0_8_ = *puVar11;
-          VStack_10.z = *(float *)(puVar11 + 1);
-          doorType = (DoorType__Enum)
-                     UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
-                               (&VStack_10,index,(MethodInfo *)0x0);
-          if (((float)((uint)fVar3 & _UNK_?) + _UNK_? < (float)doorType) &&
-             ((float)((uint)fVar4 & _UNK_?) + _UNK_? < (float)doorType)) {
-            doorType = (DoorType__Enum)((float)doorType - _UNK_?);
-          }
-          return (float)doorType;
+      pTVar4 = (this->fields).animationRoot;
+      fVar5 = (pMVar2->fields).doorConfig.closeValue;
+      uVar6._0_4_ = (pMVar2->fields).doorConfig.toggleTime;
+      uVar6._4_4_ = (pMVar2->fields).doorConfig.docType;
+      if (pTVar4 != (Transform *)0x0) {
+        pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localRotation
+                           ((Quaternion *)auStack_8,pTVar4,(MethodInfo *)0x0);
+        fStack_9 = pQVar7->x;
+        VStack_10.x = pQVar7->y;
+        VStack_10.y = pQVar7->z;
+        VStack_10.z = pQVar7->w;
+        puVar11 = (undefined8 *)func_?(auStack_8 + 4,&fStack_9,0,fVar5,uVar6);
+        VStack_10._0_8_ = *puVar11;
+        VStack_10.z = *(float *)(puVar11 + 1);
+        doorType = (DoorType__Enum)
+                   UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
+                             (&VStack_10,index,(MethodInfo *)0x0);
+        if (((float)((uint)fVar3 & _UNK_?) + _UNK_? < (float)doorType) &&
+           ((float)((uint)fVar5 & _UNK_?) + _UNK_? < (float)doorType)) {
+          doorType = (DoorType__Enum)((float)doorType - _UNK_?);
         }
+        return (float)doorType;
       }
     }
   }
   else {
-    pTVar6 = (this->fields).animationRoot;
-    if (pTVar6 != (Transform *)0x0) {
+    pTVar4 = (this->fields).animationRoot;
+    if (pTVar4 != (Transform *)0x0) {
       pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                         ((Vector3 *)(auStack_8 + 4),pTVar6,(MethodInfo *)0x0);
+                         ((Vector3 *)(auStack_8 + 4),pTVar4,(MethodInfo *)0x0);
       VStack_10.x = pVVar12->x;
       VStack_10.y = pVVar12->y;
       VStack_10.z = pVVar12->z;

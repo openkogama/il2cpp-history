@@ -84,7 +84,9 @@ void Assembly-CSharp.dll::MVPickupItemBase::MVPickupItemBase_Destroy
         if (pTVar2 != (TriggerBoxEvents *)0x0) {
           TriggerBoxEvents::TriggerBoxEvents_remove_TriggerExit
                     (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pEVar3,(MethodInfo *)0x0);
-          if ((this->fields).useInteractor == (UseInteractor *)0x0) {
+          pUVar4 = (this->fields).useInteractor;
+          ppUVar5 = &(this->fields).useInteractor;
+          if (pUVar4 == (UseInteractor *)0x0) {
 code_?:
             if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
               func_?(TypeInfo__UpdateController);
@@ -97,7 +99,6 @@ code_?:
           pMVar1 = (this->fields)._BaseObject_k__BackingField;
           if (pMVar1 != (MVPickupItemBaseObject *)0x0) {
             pTVar2 = (pMVar1->fields).triggerBoxEvents;
-            pUVar4 = (this->fields).useInteractor;
             pEVar3 = (EventHandler_1_Object_ *)
                      func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
             mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
@@ -110,7 +111,7 @@ code_?:
               pMVar1 = (this->fields)._BaseObject_k__BackingField;
               if (pMVar1 != (MVPickupItemBaseObject *)0x0) {
                 pTVar2 = (pMVar1->fields).triggerBoxEvents;
-                pUVar4 = (this->fields).useInteractor;
+                pUVar4 = *ppUVar5;
                 pEVar3 = (EventHandler_1_Object_ *)
                          func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
                 mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
@@ -120,12 +121,11 @@ code_?:
                 if (pTVar2 != (TriggerBoxEvents *)0x0) {
                   TriggerBoxEvents::TriggerBoxEvents_remove_TriggerExit
                             (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pEVar3,(MethodInfo *)0x0);
-                  pUVar4 = (this->fields).useInteractor;
-                  if (pUVar4 != (UseInteractor *)0x0) {
+                  if (*ppUVar5 != (UseInteractor *)0x0) {
                     UseInteractor::UseInteractor_OnDestroy
-                              (pUVar4,(this->fields)._._._.data,(MethodInfo *)0x0);
-                    (this->fields).useInteractor = (UseInteractor *)0x0;
-                    func_?(&(this->fields).useInteractor,0);
+                              (*ppUVar5,(this->fields)._._._.data,(MethodInfo *)0x0);
+                    *ppUVar5 = (UseInteractor *)0x0;
+                    func_?(ppUVar5,0);
                     goto code_?;
                   }
                 }
@@ -137,8 +137,8 @@ code_?:
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -244,17 +244,19 @@ bool Assembly-CSharp.dll::MVPickupItemBase::MVPickupItemBase_DoPickup
                                (instigatorWOID,(Object *)StringLiteral_itemData,
                                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                                );
-            if ((TVar12.m_Index != 0) &&
-               ((*(byte *)(*(int *)TVar12.m_Index + 0xb8) <
-                 (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                 ->_1).naturalAligment ||
-                (*(Dictionary_2_System_Object_System_Object___Class **)
-                  (*(int *)(*(int *)TVar12.m_Index + 100) + -4 +
-                  (uint)(
-                        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                        ->_1).naturalAligment * 4) !=
-                 TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)
-                ))) goto code_?;
+            if (TVar12.m_Index == 0) {
+              TVar12.m_Index = 0;
+            }
+            else {
+              bVar13 = (
+                      TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                      ->_1).naturalAligment;
+              if ((*(byte *)(*(int *)TVar12.m_Index + 0xb8) < bVar13) ||
+                 (*(Dictionary_2_System_Object_System_Object___Class **)
+                   (*(int *)(*(int *)TVar12.m_Index + 100) + -4 + (uint)bVar13 * 4) !=
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 )) goto code_?;
+            }
           }
           if (x != (Object_1 *)0x0) {
             cVar7 = (*(code *)x->klass[1]._0.namespaze)(x,puVar10,iVar9,TVar12.m_Index);
@@ -278,8 +280,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  bVar2 = (*pcVar13)();
+  pcVar14 = (code *)swi(3);
+  bVar2 = (*pcVar14)();
   return bVar2;
 }
 
@@ -302,7 +304,7 @@ Vector3 * Assembly-CSharp.dll::MVPickupItemBase::MVPickupItemBase_GetClosestGrid
   pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
   uVar2 = (pVVar1->oneVector).x;
   uVar3 = (pVVar1->oneVector).y;
-  pSVar4 = (SharedCubeFunctions__Class *)((float)uVar2 * _UNK_?);
+  fVar4 = (float)uVar2 * _UNK_?;
   fVar5 = (float)uVar3 * _UNK_?;
   fVar6 = (pVVar1->oneVector).z * _UNK_?;
   this_00 = (this->fields)._._.gameObject;
@@ -310,37 +312,38 @@ Vector3 * Assembly-CSharp.dll::MVPickupItemBase::MVPickupItemBase_GetClosestGrid
     this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                         (this_00,(MethodInfo *)0x0);
     if (this_01 != (Transform *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                ((Quaternion *)&stack0xffffffe0,this_01,(MethodInfo *)0x0);
-      pSVar7 = TypeInfo__SharedCubeFunctions;
+      uVar7 = 0;
+      pQVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+                         ((Quaternion *)&stack0xffffffec,this_01,(MethodInfo *)0x0);
+      fVar4 = pQVar8->z;
+      fVar5 = pQVar8->w;
       if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
-        pSVar4 = pSVar7;
       }
       worldPosition.z = position.z;
       worldPosition.x = position.x;
       worldPosition.y = position.y;
-      rotation.y = (float)pSVar4;
-      rotation.x = gridSize;
-      rotation.z = fVar5;
-      rotation.w = fVar6;
-      scale.y = fVar5;
-      scale.x = (float)pSVar4;
+      rotation.y = 0.0;
+      rotation.x = fVar6;
+      rotation.z = fVar4;
+      rotation.w = fVar5;
+      scale.y = (float)uVar7;
+      scale.x = (float)this_01;
       scale.z = fVar6;
-      pVVar8 = SharedCubeFunctions::SharedCubeFunctions_GetClosestGridPoint
+      pVVar9 = SharedCubeFunctions::SharedCubeFunctions_GetClosestGridPoint
                          (&position,worldPosition,rotation,gridSize,scale,(MethodInfo *)0x0);
-      fVar5 = pVVar8->y;
-      fVar6 = pVVar8->z;
-      __return_storage_ptr__->x = pVVar8->x;
+      fVar5 = pVVar9->y;
+      fVar4 = pVVar9->z;
+      __return_storage_ptr__->x = pVVar9->x;
       __return_storage_ptr__->y = fVar5;
-      __return_storage_ptr__->z = fVar6;
+      __return_storage_ptr__->z = fVar4;
       return __return_storage_ptr__;
     }
   }
-  func_?();
-  pcVar9 = (code *)swi(3);
-  pVVar8 = (Vector3 *)(*pcVar9)();
-  return pVVar8;
+  func_?(fVar4,fVar5);
+  pcVar10 = (code *)swi(3);
+  pVVar9 = (Vector3 *)(*pcVar10)();
+  return pVVar9;
 }
 
 
@@ -374,43 +377,42 @@ code_?:
     uVar3 = func_?(unaff_ESI.m_Index,pAVar2);
   }
   else {
-    unaff_ESI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                ::UIElements::TextureId]::
-                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,
-                           pOVar1,
-                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                          );
-    if (unaff_ESI.m_Index == 0) goto code_?;
-    pDVar4 = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
-    if ((*(byte *)(*(int *)unaff_ESI.m_Index + 0xb8) <
-         (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-         naturalAligment) ||
-       (*(Dictionary_2_System_Object_System_Object___Class **)
-         (*(int *)(*(int *)unaff_ESI.m_Index + 100) + -4 +
-         (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
-               _1).naturalAligment * 4) !=
-        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
-    goto code_?;
-    unaff_ESI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                ::UIElements::TextureId]::
-                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                          (unaff_ESI.m_Index,(Object *)StringLiteral_itemType,
-                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                          );
-    pOVar1 = (Object *)
-             func_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,&stack0xfffffffa);
-    TVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+    TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
             UIElements::TextureId]::
             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                       ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,pOVar1,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                       );
-    uVar3 = CONCAT44(TypeInfo__System__Int32,TVar5.m_Index);
-    if (TVar5.m_Index == 0) goto code_?;
-    if (*(Il2CppClass **)(*(int *)TVar5.m_Index + 0x20) ==
+    unaff_ESI.m_Index =
+         (int32_t)TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+    ;
+    if (TVar4.m_Index == 0) goto code_?;
+    bVar5 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1)
+            .naturalAligment;
+    if ((*(byte *)(*(int *)TVar4.m_Index + 0xb8) < bVar5) ||
+       (*(Dictionary_2_System_Object_System_Object___Class **)
+         (*(int *)(*(int *)TVar4.m_Index + 100) + -4 + (uint)bVar5 * 4) !=
+        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
+    goto code_?;
+    unaff_ESI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                          (TVar4.m_Index,(Object *)StringLiteral_itemType,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                          );
+    pOVar1 = (Object *)
+             func_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,&stack0xfffffffa);
+    TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,pOVar1,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    uVar3 = CONCAT44(TypeInfo__System__Int32,TVar4.m_Index);
+    if (TVar4.m_Index == 0) goto code_?;
+    if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) ==
         (TypeInfo__System__Int32->_0).element_class) {
-      piVar6 = (int32_t *)func_?(TVar5.m_Index);
+      piVar6 = (int32_t *)func_?(TVar4.m_Index);
       itemId = *piVar6;
       if (unaff_ESI.m_Index == 0) goto code_?;
       pAVar2 = TypeInfo__MV__Common__AvatarItemType;
@@ -424,9 +426,9 @@ code_?:
     }
   }
   func_?(uVar3);
-  pDVar4 = extraout_EDX;
+  TVar4.m_Index = extraout_EDX;
 code_?:
-  func_?(unaff_ESI.m_Index,pDVar4);
+  func_?(TVar4.m_Index,unaff_ESI.m_Index);
   pcVar9 = (code *)swi(3);
   pOVar10 = (ObjectPrefab *)(*pcVar9)();
   return pOVar10;
@@ -835,17 +837,17 @@ code_?:
         if (TVar3.m_Index != 0) {
           if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) !=
               (TypeInfo__System__Int32->_0).element_class) goto code_?;
-          piVar4 = (int32_t *)func_?();
-          (this->fields).pickupVariantId = *piVar4;
-          pSVar5 = mscorlib.dll::System::Int32::Int32_ToString
-                             ((Int32 *)&(this->fields).pickupVariantId,(MethodInfo *)0x0);
-          pSVar5 = mscorlib.dll::System::String::String_Concat_3
-                             (StringLiteral_PtrPtrPtr_Update_variant_id_,pSVar5,(MethodInfo *)0x0);
+          piVar5 = (int32_t *)func_?();
+          piVar4 = &(this->fields).pickupVariantId;
+          *piVar4 = *piVar5;
+          pSVar6 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)piVar4,(MethodInfo *)0x0);
+          pSVar6 = mscorlib.dll::System::String::String_Concat_3
+                             (StringLiteral_PtrPtrPtr_Update_variant_id_,pSVar6,(MethodInfo *)0x0);
           if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__UnityEngine__Debug);
           }
           UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                    ((Object *)pSVar5,(MethodInfo *)0x0);
+                    ((Object *)pSVar6,(MethodInfo *)0x0);
           goto code_?;
         }
       }
@@ -854,8 +856,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -885,10 +887,11 @@ void Assembly-CSharp.dll::MVPickupItemBase::MVPickupItemBase_SetupUseInteractor
                    );
     cRam_? = '\x01';
   }
-  if ((this->fields)._BaseObject_k__BackingField != (MVPickupItemBaseObject *)0x0) {
-    pTVar1 = (((this->fields)._BaseObject_k__BackingField)->fields).triggerBoxEvents;
-    if (pTVar1 != (TriggerBoxEvents *)0x0) {
-      triggerCollider = TriggerBoxEvents::TriggerBoxEvents_get_Collider(pTVar1,(MethodInfo *)0x0);
+  pMVar1 = (this->fields)._BaseObject_k__BackingField;
+  if (pMVar1 != (MVPickupItemBaseObject *)0x0) {
+    pTVar2 = (pMVar1->fields).triggerBoxEvents;
+    if (pTVar2 != (TriggerBoxEvents *)0x0) {
+      triggerCollider = TriggerBoxEvents::TriggerBoxEvents_get_Collider(pTVar2,(MethodInfo *)0x0);
       this_00 = (Predicate_1_UInt32_ *)func_?(TypeInfo__System__Func<int,_bool>);
       mscorlib.dll::System::Predicate`1[UInt32]::Predicate_1_UInt32___ctor
                 (this_00,(Object *)this,MethodInfo__MVPickupItemBase__DoPickup_int_,
@@ -899,45 +902,45 @@ void Assembly-CSharp.dll::MVPickupItemBase::MVPickupItemBase_SetupUseInteractor
                 (this_01,(Object *)this,
                  MethodInfo__MVPickupItemBase__CheckCanUse_int__MVInteractableBase_,
                  (MethodInfo *)0x0);
-      pUVar2 = (UseInteractor *)func_?(TypeInfo__UseInteractor);
+      pUVar3 = (UseInteractor *)func_?(TypeInfo__UseInteractor);
       UseInteractor::UseInteractor__ctor
-                (pUVar2,(MVWorldObjectClient *)0x40200000,(GameObject *)0x0,0,triggerCollider,
+                (pUVar3,(MVWorldObjectClient *)0x40200000,(GameObject *)0x0,0,triggerCollider,
                  (Func_2_Int32_Boolean_ *)this_00,
                  (Func_3_Int32_MVInteractableBase_Boolean_ *)this_01,2.5,0,(MethodInfo *)0x0);
-      pURam402000fc = pUVar2;
+      pURam402000fc = pUVar3;
       func_?();
       if (iRam_? != 0) {
-        pGVar3 = *(GameObject **)(iRam_? + 0x24);
+        pGVar4 = *(GameObject **)(iRam_? + 0x24);
         this_02 = (GameCoinLogic *)func_?(TypeInfo__GameCoinLogic);
-        GameCoinLogic::GameCoinLogic__ctor(this_02,pGVar3,1,(MethodInfo *)0x0);
+        GameCoinLogic::GameCoinLogic__ctor(this_02,pGVar4,1,(MethodInfo *)0x0);
         if (pURam402000fc != (UseInteractor *)0x0) {
           UseInteractor::UseInteractor_AddRequirement
                     (pURam402000fc,(UseRequirement *)this_02,(MethodInfo *)0x0);
           if (iRam_? != 0) {
-            pGVar3 = *(GameObject **)(iRam_? + 0x24);
+            pGVar4 = *(GameObject **)(iRam_? + 0x24);
             this_03 = (LevelBasedUseRequirement *)
                       func_?(TypeInfo__LevelBasedUseRequirement);
             LevelBasedUseRequirement::LevelBasedUseRequirement__ctor
-                      (this_03,pGVar3,1,(MethodInfo *)0x0);
+                      (this_03,pGVar4,1,(MethodInfo *)0x0);
             if (pURam402000fc != (UseInteractor *)0x0) {
               UseInteractor::UseInteractor_AddRequirement
                         (pURam402000fc,(UseRequirement *)this_03,(MethodInfo *)0x0);
               if (iRam_? != 0) {
-                pGVar3 = *(GameObject **)(iRam_? + 0x24);
+                pGVar4 = *(GameObject **)(iRam_? + 0x24);
                 this_04 = (GameRankRequirement *)func_?(TypeInfo__GameRankRequirement);
                 GameRankRequirement::GameRankRequirement__ctor
-                          (this_04,pGVar3,(MVWorldObjectClient *)0x40200000,0,(MethodInfo *)0x0);
+                          (this_04,pGVar4,(MVWorldObjectClient *)0x40200000,0,(MethodInfo *)0x0);
                 if (pURam402000fc != (UseInteractor *)0x0) {
                   UseInteractor::UseInteractor_AddRequirement
                             (pURam402000fc,(UseRequirement *)this_04,(MethodInfo *)0x0);
                   if (iRam_? != 0) {
-                    pGVar3 = *(GameObject **)(iRam_? + 0x24);
+                    pGVar4 = *(GameObject **)(iRam_? + 0x24);
                     this_05 = (RewardedAdRequirement *)
                               func_?(
                                              TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement
                                              );
                     WorldObjectInteractionSystem::UseSystem::RewardedAdRequirement::
-                    RewardedAdRequirement__ctor(this_05,pGVar3,(MethodInfo *)0x0);
+                    RewardedAdRequirement__ctor(this_05,pGVar4,(MethodInfo *)0x0);
                     if (pURam402000fc != (UseInteractor *)0x0) {
                       UseInteractor::UseInteractor_AddRequirement
                                 (pURam402000fc,(UseRequirement *)this_05,(MethodInfo *)0x0);
@@ -945,34 +948,34 @@ void Assembly-CSharp.dll::MVPickupItemBase::MVPickupItemBase_SetupUseInteractor
                         (**(code **)(iRam_? + 0x398))
                                   (0x40200000,*(undefined4 *)(iRam_? + 0x24),pURam402000fc,
                                    *(undefined4 *)(iRam_? + 0x39c));
-                        pUVar2 = pURam402000fc;
+                        pUVar3 = pURam402000fc;
                         if (iRam_? != 0) {
-                          pTVar1 = *(TriggerBoxEvents **)(iRam_? + 0x18);
-                          pEVar4 = (EventHandler_1_Object_ *)
+                          pTVar2 = *(TriggerBoxEvents **)(iRam_? + 0x18);
+                          pEVar5 = (EventHandler_1_Object_ *)
                                    func_?(TypeInfo__System__EventHandler<TriggerEventArgs>)
                           ;
                           mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-                                    (pEVar4,(Object *)pUVar2,
+                                    (pEVar5,(Object *)pUVar3,
                                      MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                                      ,(MethodInfo *)0x0);
-                          if (pTVar1 != (TriggerBoxEvents *)0x0) {
+                          if (pTVar2 != (TriggerBoxEvents *)0x0) {
                             TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
-                                      (pTVar1,(EventHandler_1_TriggerEventArgs_ *)pEVar4,
+                                      (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pEVar5,
                                        (MethodInfo *)0x0);
-                            pUVar2 = pURam402000fc;
+                            pUVar3 = pURam402000fc;
                             if (iRam_? != 0) {
-                              pTVar1 = *(TriggerBoxEvents **)(iRam_? + 0x18);
-                              pEVar4 = (EventHandler_1_Object_ *)
+                              pTVar2 = *(TriggerBoxEvents **)(iRam_? + 0x18);
+                              pEVar5 = (EventHandler_1_Object_ *)
                                        func_?(
                                                   TypeInfo__System__EventHandler<TriggerEventArgs>);
                               mscorlib.dll::System::EventHandler`1[Object]::
                               EventHandler_1_Object___ctor
-                                        (pEVar4,(Object *)pUVar2,
+                                        (pEVar5,(Object *)pUVar3,
                                          MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                                          ,(MethodInfo *)0x0);
-                              if (pTVar1 != (TriggerBoxEvents *)0x0) {
+                              if (pTVar2 != (TriggerBoxEvents *)0x0) {
                                 TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
-                                          (pTVar1,(EventHandler_1_TriggerEventArgs_ *)pEVar4,
+                                          (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pEVar5,
                                            (MethodInfo *)0x0);
                                 return;
                               }
@@ -991,8 +994,8 @@ void Assembly-CSharp.dll::MVPickupItemBase::MVPickupItemBase_SetupUseInteractor
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -1104,13 +1107,13 @@ bool Assembly-CSharp.dll::MVPickupItemBase::MVPickupItemBase_TryGetPickupOwner
           bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                             ((Object_1 *)pMVar4,(Object_1 *)0x0,(MethodInfo *)0x0);
           if (bVar5 == 0) {
-            if (*pickupOwner == (MVPickupOwner *)0x0) goto code_?;
-            pMVar6 = (*pickupOwner)->klass;
-            if (((pMVar6->_1).naturalAligment < (TypeInfo__VehiclePickupOwner->_1).naturalAligment)
-               || ((pMVar6->_1).typeHierarchy
-                   [(TypeInfo__VehiclePickupOwner->_1).naturalAligment - 1] !=
-                   (Il2CppClass *)TypeInfo__VehiclePickupOwner)) {
-              x = ((*pickupOwner)->fields).currentItem;
+            pMVar4 = *pickupOwner;
+            if (pMVar4 == (MVPickupOwner *)0x0) goto code_?;
+            bVar6 = (TypeInfo__VehiclePickupOwner->_1).naturalAligment;
+            if (((pMVar4->klass->_1).naturalAligment < bVar6) ||
+               ((pMVar4->klass->_1).typeHierarchy[bVar6 - 1] !=
+                (Il2CppClass *)TypeInfo__VehiclePickupOwner)) {
+              x = (pMVar4->fields).currentItem;
               if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
               }
@@ -1309,14 +1312,16 @@ void Assembly-CSharp.dll::MVPickupItemBase::MVPickupItemBase__ctor
   }
   this_02 = this;
   (this->fields).canPickUp = 1;
-  this_04.m_Index = func_?(TypeInfo__System__Collections__Generic__List<int>);
+  this_04 = (List_1_System_Int32_ *)
+            func_?(TypeInfo__System__Collections__Generic__List<int>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_04.m_Index,
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_04,
              MethodInfo__System__Collections__Generic__List<int>__List__);
-  (this_02->fields).instigatorsInTrigger = (List_1_System_Int32_ *)this_04.m_Index;
-  func_?(&(this_02->fields).instigatorsInTrigger,this_04.m_Index);
+  ppLVar1 = &(this_02->fields).instigatorsInTrigger;
+  *ppLVar1 = this_04;
+  func_?(ppLVar1,this_04);
   if ((TypeInfo__MVPickupItemBase->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVPickupItemBase);
   }
@@ -1334,175 +1339,166 @@ void Assembly-CSharp.dll::MVPickupItemBase::MVPickupItemBase__ctor
     cRam_? = '\x01';
   }
   this = (MVPickupItemBase *)CONCAT13(7,this._0_3_);
-  pOVar1 = (Object *)
+  pOVar2 = (Object *)
            func_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,(int)&this + 3);
   this_03 = data;
   if (data == (Dictionary_2_System_Object_System_Object_ *)0x0) {
 code_?:
-    uVar2 = func_?();
-code_?:
-    data = (Dictionary_2_System_Object_System_Object_ *)((ulonglong)uVar2 >> 0x20);
-    this = (MVPickupItemBase *)uVar2;
-    func_?();
+    uVar3 = func_?();
   }
   else {
-    this_04 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-              UIElements::TextureId]::
-              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,pOVar1
-                         ,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                        );
-    if (this_04.m_Index == 0) goto code_?;
-    if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-         naturalAligment <= *(byte *)(*(int *)this_04.m_Index + 0xb8)) &&
+    TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+             UIElements::TextureId]::
+             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                       ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,pOVar2,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                       );
+    if (TVar4.m_Index == 0) goto code_?;
+    bVar5 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1)
+            .naturalAligment;
+    if ((*(byte *)(*(int *)TVar4.m_Index + 0xb8) < bVar5) ||
        (*(Dictionary_2_System_Object_System_Object___Class **)
-         (*(int *)(*(int *)this_04.m_Index + 100) + -4 +
-         (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
-               _1).naturalAligment * 4) ==
-        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
-      this_04 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                ::UIElements::TextureId]::
-                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                          (this_04.m_Index,(Object *)StringLiteral_itemType,
-                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                          );
-      pOVar1 = (Object *)func_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters);
-      TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-              UIElements::TextureId]::
-              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_03,
-                         pOVar1,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                        );
-      uVar2 = CONCAT44(TypeInfo__System__Int32,TVar3.m_Index);
-      if (TVar3.m_Index == 0) goto code_?;
-      if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) ==
-          (TypeInfo__System__Int32->_0).element_class) {
-        this = (MVPickupItemBase *)&UNK_?;
-        data = (Dictionary_2_System_Object_System_Object_ *)TVar3;
-        puVar4 = (undefined4 *)func_?();
-        data = (Dictionary_2_System_Object_System_Object_ *)*puVar4;
-        if (this_04.m_Index != 0) {
-          if (*(Il2CppClass **)(*(int *)this_04.m_Index + 0x20) ==
-              (TypeInfo__MV__Common__AvatarItemType->_0).element_class) {
-            pAVar5 = (AvatarItemType__Enum *)func_?();
-            EVar6 = PrefabPool::PrefabPool_GetPickupPrefab(*pAVar5,(int32_t)data,(MethodInfo *)0x0)
-            ;
-            MVLogicObject::MVLogicObject__ctor
-                      ((MVLogicObject *)this_02,this_03,EVar6.prefabObject,worldObjects,
-                       (MethodInfo *)0x0);
-            in_stack_7 = (MVPickupItemBaseObject__Class *)(this_02->fields)._._.component;
-            if ((in_stack_7 != (MVPickupItemBaseObject__Class *)0x0) &&
-               ((this_04.m_Index = (int32_t)TypeInfo__MVPickupItemBaseObject,
-                (((ObjectPrefab__Class *)((MVPickupItemBaseObject *)in_stack_7)->klass)->_1).
-                naturalAligment < (TypeInfo__MVPickupItemBaseObject->_1).naturalAligment ||
-                ((((ObjectPrefab__Class *)((MVPickupItemBaseObject *)in_stack_7)->klass)->_1)
-                 .typeHierarchy[(TypeInfo__MVPickupItemBaseObject->_1).naturalAligment - 1] !=
-                 (Il2CppClass *)TypeInfo__MVPickupItemBaseObject)))) goto code_?;
-            in_stack_8 =
-                 (MVPickupItemBaseObject *)&(this_02->fields)._BaseObject_k__BackingField;
-            (this_02->fields)._BaseObject_k__BackingField =
-                 (MVPickupItemBaseObject *)in_stack_7;
-            in_stack_9 = &UNK_?;
-            func_?();
-            in_stack_9 = &stack0xfffffffa;
-            method = (MethodInfo *)TypeInfo__MV__WorldObject__WorldObjectDataParameters;
-            worldObjects = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)&UNK_?;
-            pOVar1 = (Object *)func_?();
-            this_04 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                      Object,UnityEngine::UIElements::TextureId]::
-                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                                 this_03,pOVar1,
-                                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                );
-            if (this_04.m_Index != 0) {
-              if ((*(byte *)(*(int *)this_04.m_Index + 0xb8) <
-                   (
-                   TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   ->_1).naturalAligment) ||
-                 (*(Dictionary_2_System_Object_System_Object___Class **)
-                   (*(int *)(*(int *)this_04.m_Index + 100) + -4 +
-                   (uint)(
-                         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                         ->_1).naturalAligment * 4) !=
-                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                 )) goto code_?;
-              TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                      Object,UnityEngine::UIElements::TextureId]::
-                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                (this_04.m_Index,(Object *)StringLiteral_itemType,
-                                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                );
-              uVar2 = CONCAT44(TypeInfo__MV__Common__AvatarItemType,TVar3.m_Index);
-              if (TVar3.m_Index != 0) {
-                if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) !=
-                    (TypeInfo__MV__Common__AvatarItemType->_0).element_class) goto code_?;
-                this = (MVPickupItemBase *)&UNK_?;
-                data = (Dictionary_2_System_Object_System_Object_ *)TVar3;
-                pIVar10 = (Int32Enum__Enum *)func_?();
-                iVar11 = (this_02->fields)._._.interactionFlags;
-                key = *pIVar10;
-                *(undefined4 *)((int)&(this_02->fields)._._.interactionFlags + 4) =
-                     *(undefined4 *)((int)&(this_02->fields)._._.interactionFlags + 4);
-                puVar12 = (uint *)((int)&(this_02->fields)._._.interactionFlags + 4);
-                *puVar12 = *puVar12 | 2;
-                (this_02->fields).pickupItemType = key;
-                *(uint *)&(this_02->fields)._._.interactionFlags = (uint)iVar11 | 0xADDR;
-                this_00 = (Dictionary_2_System_Int32Enum_System_Single_ *)
+         (*(int *)(*(int *)TVar4.m_Index + 100) + -4 + (uint)bVar5 * 4) !=
+        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
+    goto code_?;
+    TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+             UIElements::TextureId]::
+             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                       (TVar4.m_Index,(Object *)StringLiteral_itemType,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                       );
+    pOVar2 = (Object *)func_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters);
+    TVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+             UIElements::TextureId]::
+             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                       ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_03,
+                        pOVar2,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                       );
+    uVar3 = CONCAT44(TypeInfo__System__Int32,TVar6.m_Index);
+    if (TVar6.m_Index == 0) goto code_?;
+    if (*(Il2CppClass **)(*(int *)TVar6.m_Index + 0x20) ==
+        (TypeInfo__System__Int32->_0).element_class) {
+      this = (MVPickupItemBase *)&UNK_?;
+      data = (Dictionary_2_System_Object_System_Object_ *)TVar6;
+      puVar7 = (undefined4 *)func_?();
+      data = (Dictionary_2_System_Object_System_Object_ *)*puVar7;
+      if (TVar4.m_Index != 0) {
+        if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) ==
+            (TypeInfo__MV__Common__AvatarItemType->_0).element_class) {
+          pAVar8 = (AvatarItemType__Enum *)func_?();
+          EVar9 = PrefabPool::PrefabPool_GetPickupPrefab(*pAVar8,(int32_t)data,(MethodInfo *)0x0);
+          MVLogicObject::MVLogicObject__ctor
+                    ((MVLogicObject *)this_02,this_03,EVar9.prefabObject,worldObjects,
+                     (MethodInfo *)0x0);
+          TVar4.m_Index = (int32_t)(this_02->fields)._._.component;
+          if ((MVPickupItemBaseObject *)TVar4.m_Index != (MVPickupItemBaseObject *)0x0) {
+            bVar5 = (TypeInfo__MVPickupItemBaseObject->_1).naturalAligment;
+            if (((((ObjectPrefab__Class *)((MVPickupItemBaseObject *)TVar4.m_Index)->klass)->_1).
+                 naturalAligment < bVar5) ||
+               ((((ObjectPrefab__Class *)((MVPickupItemBaseObject *)TVar4.m_Index)->klass)->_1).
+                typeHierarchy[bVar5 - 1] != (Il2CppClass *)TypeInfo__MVPickupItemBaseObject))
+            goto code_?;
+          }
+          ppMVar10 = &(this_02->fields)._BaseObject_k__BackingField;
+          *ppMVar10 = (MVPickupItemBaseObject *)TVar4.m_Index;
+          func_?(ppMVar10);
+          pOVar2 = (Object *)
+                   func_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,
+                                   &stack0xfffffffa);
+          TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                   Object,UnityEngine::UIElements::TextureId]::
+                   Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                             ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                              this_03,pOVar2,
+                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                             );
+          if (TVar4.m_Index != 0) {
+            bVar5 = (
+                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                    ->_1).naturalAligment;
+            if ((*(byte *)(*(int *)TVar4.m_Index + 0xb8) < bVar5) ||
+               (*(Dictionary_2_System_Object_System_Object___Class **)
+                 (*(int *)(*(int *)TVar4.m_Index + 100) + -4 + (uint)bVar5 * 4) !=
+                TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
+            goto code_?;
+            TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                     Object,UnityEngine::UIElements::TextureId]::
+                     Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                               (TVar4.m_Index,(Object *)StringLiteral_itemType,
+                                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                               );
+            uVar3 = CONCAT44(TypeInfo__MV__Common__AvatarItemType,TVar4.m_Index);
+            if (TVar4.m_Index != 0) {
+              if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) !=
+                  (TypeInfo__MV__Common__AvatarItemType->_0).element_class) goto code_?;
+              this = (MVPickupItemBase *)&UNK_?;
+              data = (Dictionary_2_System_Object_System_Object_ *)TVar4;
+              pIVar11 = (Int32Enum__Enum *)func_?();
+              key = *pIVar11;
+              piVar12 = &(this_02->fields)._._.interactionFlags;
+              *(uint *)piVar12 = (uint)*piVar12 | 0x100000;
+              piVar12 = &(this_02->fields)._._.interactionFlags;
+              *(uint *)piVar12 = (uint)*piVar12 | 0x200000;
+              piVar12 = &(this_02->fields)._._.interactionFlags;
+              *(uint *)piVar12 = (uint)*piVar12 | 0xADDR;
+              *(undefined4 *)((int)&(this_02->fields)._._.interactionFlags + 4) =
+                   *(undefined4 *)((int)&(this_02->fields)._._.interactionFlags + 4);
+              puVar13 = (uint *)((int)&(this_02->fields)._._.interactionFlags + 4);
+              *puVar13 = *puVar13 | 2;
+              iVar14 = (this_02->fields)._._.interactionFlags;
+              (this_02->fields).pickupItemType = key;
+              *(int *)&(this_02->fields)._._.interactionFlags = (int)iVar14;
+              this_00 = (Dictionary_2_System_Int32Enum_System_Single_ *)
+                        TypeInfo__MVPickupItemBase->static_fields->
+                        avatarItemToToinventoryItemDescrip;
+              if (this_00 != (Dictionary_2_System_Int32Enum_System_Single_ *)0x0) {
+                bVar15 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                        Int32Enum,System::Single]::
+                        Dictionary_2_System_Int32Enum_System_Single__ContainsKey
+                                  (this_00,key,
+                                   MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_MVWorldObjectDocumentationType>__ContainsKey_MV__Common__AvatarItemType_
+                                  );
+                if (bVar15 == 0) {
+                  (this_02->fields).documentationType = 0;
+                  return;
+                }
+                if ((TypeInfo__MVPickupItemBase->_1).cctor_finished_or_no_cctor == 0) {
+                  func_?();
+                }
+                this_01 = (Dictionary_2_System_Int32Enum_System_Object_ *)
                           TypeInfo__MVPickupItemBase->static_fields->
                           avatarItemToToinventoryItemDescrip;
-                if (this_00 != (Dictionary_2_System_Int32Enum_System_Single_ *)0x0) {
-                  bVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                          Int32Enum,System::Single]::
-                          Dictionary_2_System_Int32Enum_System_Single__ContainsKey
-                                    (this_00,key,
-                                     MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_MVWorldObjectDocumentationType>__ContainsKey_MV__Common__AvatarItemType_
-                                    );
-                  if (bVar13 == 0) {
-                    (this_02->fields).documentationType = 0;
-                    return;
-                  }
-                  if ((TypeInfo__MVPickupItemBase->_1).cctor_finished_or_no_cctor == 0) {
-                    func_?();
-                  }
-                  this_01 = (Dictionary_2_System_Int32Enum_System_Object_ *)
-                            TypeInfo__MVPickupItemBase->static_fields->
-                            avatarItemToToinventoryItemDescrip;
-                  if (this_01 != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) {
-                    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                             Int32Enum,System::Object]::
-                             Dictionary_2_System_Int32Enum_System_Object__get_Item
-                                       (this_01,(this_02->fields).pickupItemType,
-                                        MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_MVWorldObjectDocumentationType>__get_Item_MV__Common__AvatarItemType_
-                                       );
-                    (this_02->fields).documentationType = (int32_t)pOVar1;
-                    return;
-                  }
+                if (this_01 != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) {
+                  pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                           Int32Enum,System::Object]::
+                           Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                     (this_01,(this_02->fields).pickupItemType,
+                                      MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_MVWorldObjectDocumentationType>__get_Item_MV__Common__AvatarItemType_
+                                     );
+                  (this_02->fields).documentationType = (int32_t)pOVar2;
+                  return;
                 }
               }
             }
           }
-          else {
-            func_?(this_04.m_Index);
-          }
         }
-        goto code_?;
+        else {
+          func_?(TVar4.m_Index);
+        }
       }
       goto code_?;
     }
   }
 code_?:
-  func_?(this_04.m_Index);
-  in_stack_7 = (MVPickupItemBaseObject__Class *)extraout_EDX;
-code_?:
-  in_stack_9 = &UNK_?;
-  in_stack_8 = (MVPickupItemBaseObject *)in_stack_7;
-  in_stack_7 = (MVPickupItemBaseObject__Class *)this_04.m_Index;
+  data = (Dictionary_2_System_Object_System_Object_ *)((ulonglong)uVar3 >> 0x20);
+  this = (MVPickupItemBase *)uVar3;
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  TVar4.m_Index = (int32_t)extraout_EDX;
+code_?:
+  func_?(TVar4.m_Index);
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 
@@ -1551,12 +1547,13 @@ Assembly-CSharp.dll::MVPickupItemBase::MVPickupItemBase_get_ItemData
       if (TVar3.m_Index == 0) {
         return (Dictionary_2_System_Object_System_Object_ *)0x0;
       }
-      if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-           naturalAligment <= *(byte *)(*(int *)TVar3.m_Index + 0xb8)) &&
+      bVar4 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
+              _1).naturalAligment;
+      pDStack5 =
+           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
+      if ((bVar4 <= *(byte *)(*(int *)TVar3.m_Index + 0xb8)) &&
          (*(Dictionary_2_System_Object_System_Object___Class **)
-           (*(int *)(*(int *)TVar3.m_Index + 100) + -4 +
-           (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                 ->_1).naturalAligment * 4) ==
+           (*(int *)(*(int *)TVar3.m_Index + 100) + -4 + (uint)bVar4 * 4) ==
           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
         return (Dictionary_2_System_Object_System_Object_ *)TVar3.m_Index;
       }
@@ -1564,11 +1561,12 @@ Assembly-CSharp.dll::MVPickupItemBase::MVPickupItemBase_get_ItemData
     }
   }
   func_?();
+  pDStack5 = (Dictionary_2_System_Object_System_Object___Class *)this;
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  pDVar5 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar4)();
-  return pDVar5;
+  pcVar6 = (code *)swi(3);
+  pDVar7 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar6)();
+  return pDVar7;
 }
 
 
@@ -1584,25 +1582,25 @@ void Assembly-CSharp.dll::MVPickupItemBase::MVPickupItemBase_triggerBoxEvents_Tr
   }
   pMVar1 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
   if (e != (TriggerEventArgs *)0x0) {
-    if ((e->fields).instigatorWOID == -1) {
+    item = (e->fields).instigatorWOID;
+    if (item == -1) {
       return;
     }
-    item = (e->fields).instigatorWOID;
     this_00 = (this->fields).instigatorsInTrigger;
     if (this_00 != (List_1_System_Int32_ *)0x0) {
-      pIVar2 = (this_00->fields)._items;
-      piVar3 = &(this_00->fields)._version;
-      *piVar3 = *piVar3 + 1;
-      if (pIVar2 != (Int32__Array *)0x0) {
+      piVar2 = &(this_00->fields)._version;
+      *piVar2 = *piVar2 + 1;
+      pIVar3 = (this_00->fields)._items;
+      if (pIVar3 != (Int32__Array *)0x0) {
         uVar4 = (this_00->fields)._size;
-        if (pIVar2->max_length <= uVar4) {
+        if (pIVar3->max_length <= uVar4) {
           mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
           List_1_System_Int32__AddWithResize(this_00,item,pMVar1->klass->rgctx_data[0xe].method);
           return;
         }
         (this_00->fields)._size = uVar4 + 1;
-        if (uVar4 < pIVar2->max_length) {
-          pIVar2->vector[uVar4] = item;
+        if (uVar4 < pIVar3->max_length) {
+          pIVar3->vector[uVar4] = item;
           return;
         }
         goto code_?;

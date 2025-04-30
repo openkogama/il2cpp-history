@@ -23,58 +23,60 @@ bool Assembly-CSharp.dll::HealthbarLerp+<LerpProgress>d__10::
     if ((float)this - (pHVar2->fields).lerpStart < (pHVar2->fields).lerpDelay) {
       this = (HealthbarLerp_LerpProgress_d_10 *)0x0;
       pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&this);
-      (pHVar1->fields).__2__current = pOVar3;
-      func_?(&(pHVar1->fields).__2__current,pOVar3);
+      ppOVar4 = &(pHVar1->fields).__2__current;
+      *ppOVar4 = pOVar3;
+      func_?(ppOVar4,pOVar3);
       (pHVar1->fields).__1__state = 1;
       return 1;
     }
-    fVar4 = 0.0;
+    fVar5 = 0.0;
     break;
   case 2:
-    fVar4 = (this->fields)._progress_5__2;
+    fVar5 = (this->fields)._progress_5__2;
     (this->fields).__1__state = -1;
     this = (HealthbarLerp_LerpProgress_d_10 *)
            UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
     if (pHVar2 == (HealthbarLerp *)0x0) goto code_?;
-    fVar4 = (float)this / (pHVar2->fields).lerpForSeconds + fVar4;
+    fVar5 = (float)this / (pHVar2->fields).lerpForSeconds + fVar5;
     break;
   case 3:
     (this->fields).__1__state = -1;
   default:
     return 0;
   }
-  (pHVar1->fields)._progress_5__2 = fVar4;
-  if (_UNK_? <= fVar4) {
+  (pHVar1->fields)._progress_5__2 = fVar5;
+  if (_UNK_? <= fVar5) {
 code_?:
     this = (HealthbarLerp_LerpProgress_d_10 *)0x0;
-    pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&this);
-    (pHVar1->fields).__2__current = pOVar3;
-    func_?(&(pHVar1->fields).__2__current,pOVar3);
+    pOVar3 = (Object *)func_?(TypeInfo__System__Int32);
+    ppOVar4 = &(pHVar1->fields).__2__current;
+    *ppOVar4 = pOVar3;
+    func_?(ppOVar4,pOVar3);
     (pHVar1->fields).__1__state = 3;
     return 1;
   }
-  pPVar5 = (pHVar2->fields).targetProgressBar;
+  pPVar6 = (pHVar2->fields).targetProgressBar;
   this_00 = (ProgressBarAndroid *)(pHVar2->fields).progressBar;
-  if (pPVar5 != (ProgressBar *)0x0) {
-    fVar4 = (pHVar1->fields)._progress_5__2;
-    fVar6 = (pHVar2->fields).startProgress;
-    if (fVar4 < 0.0) {
-      fVar4 = 0.0;
+  if (pPVar6 != (ProgressBar *)0x0) {
+    fVar7 = (pHVar2->fields).startProgress;
+    if (fVar5 < 0.0) {
+      fVar5 = 0.0;
     }
-    else if (_UNK_? < fVar4) {
-      fVar4 = _UNK_?;
+    else if (_UNK_? < fVar5) {
+      fVar5 = _UNK_?;
     }
     if (this_00 != (ProgressBarAndroid *)0x0) {
       ProgressBarAndroid::ProgressBarAndroid_set_Progress
-                (this_00,((pPVar5->fields).progress - fVar6) * fVar4 + fVar6,(MethodInfo *)0x0);
-      pPVar5 = (pHVar2->fields).progressBar;
-      if ((pPVar5 != (ProgressBar *)0x0) &&
-         (pPVar7 = (pHVar2->fields).targetProgressBar, pPVar7 != (ProgressBar *)0x0)) {
-        if ((pPVar7->fields).progress < (pPVar5->fields).progress) {
+                (this_00,((pPVar6->fields).progress - fVar7) * fVar5 + fVar7,(MethodInfo *)0x0);
+      pPVar6 = (pHVar2->fields).progressBar;
+      if ((pPVar6 != (ProgressBar *)0x0) &&
+         (pPVar8 = (pHVar2->fields).targetProgressBar, pPVar8 != (ProgressBar *)0x0)) {
+        if ((pPVar8->fields).progress < (pPVar6->fields).progress) {
           this = (HealthbarLerp_LerpProgress_d_10 *)0x0;
-          pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&this);
-          (pHVar1->fields).__2__current = pOVar3;
-          func_?(&(pHVar1->fields).__2__current,pOVar3);
+          pOVar3 = (Object *)func_?(TypeInfo__System__Int32);
+          ppOVar4 = &(pHVar1->fields).__2__current;
+          *ppOVar4 = pOVar3;
+          func_?(ppOVar4,pOVar3);
           (pHVar1->fields).__1__state = 2;
           return 1;
         }
@@ -83,22 +85,38 @@ code_?:
     }
   }
 code_?:
-  bVar8 = 0;
-  uVar9 = func_?();
-  bVar10 = (byte)((ushort)uVar9 >> 8);
-  bVar11 = CARRY1(bVar10,(byte)unaff_EBX) || CARRY1(bVar10 + (byte)unaff_EBX,bVar8);
-  pHVar12 = (HealthbarLerp__Class *)in(extraout_DX);
-  pHVar2->klass = pHVar12;
-  pbVar13 = (byte *)((int)&pHVar1[4].fields.__2__current + 2);
-  bVar10 = *pbVar13;
-  bVar8 = *pbVar13 + (byte)uVar9;
-  *pbVar13 = bVar8 + bVar11;
-  *(char *)(unaff_EBX + 0x71) =
-       *(char *)(unaff_EBX + 0x71) + (char)((ushort)extraout_DX >> 8) +
-       (CARRY1(bVar10,(byte)uVar9) || CARRY1(bVar8,bVar11));
-  pcVar14 = (code *)swi(3);
-  bVar15 = (*pcVar14)();
-  return bVar15;
+  bVar9 = 0;
+  bVar10 = func_?();
+  bVar11 = bVar10 < 0xec || (byte)(bVar10 + 0x14) < bVar9;
+  bVar9 = (bVar10 + 0x14) - bVar9;
+  pbVar12 = (byte *)((int)&stack0x00000000 * 9 + -0x20);
+  bVar10 = *pbVar12;
+  bVar13 = *pbVar12;
+  *pbVar12 = bVar13 + unaff_BL + bVar11;
+  in(extraout_DX + 2);
+  pHVar14 = &pHVar1[4].fields;
+  *(char *)&pHVar14->__1__state =
+       (char)pHVar14->__1__state + (char)extraout_DX + '\x03' +
+       (CARRY1(in_stack_15,bVar9) ||
+       CARRY1(in_stack_15 + bVar9,CARRY1(bVar10,unaff_BL) || CARRY1(bVar13 + unaff_BL,bVar11))
+       );
+  if ((char)pHVar14->__1__state < '\0') {
+                    /* WARNING: Bad instruction - Truncating control flow here */
+    halt_baddata();
+  }
+  func_?();
+  this_01 = (NotSupportedException *)func_?();
+  mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
+            (this_01,(MethodInfo *)0x0);
+  method = (MethodInfo *)
+           func_?(&
+                           MethodInfo__HealthbarLerp___LerpProgress_d__10__System_Collections_IEnumerator_Reset__
+                          );
+  this = (HealthbarLerp_LerpProgress_d_10 *)this_01;
+  func_?();
+  pcVar16 = (code *)swi(3);
+  bVar17 = (*pcVar16)();
+  return bVar17;
 }
 
 

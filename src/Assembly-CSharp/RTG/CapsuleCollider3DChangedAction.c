@@ -166,14 +166,15 @@ void Assembly-CSharp.dll::RTG::CapsuleCollider3DChangedAction::CapsuleCollider3D
       (value_00->fields)._localCenter.z = fVar2;
       (value_00->fields)._localRadius = (postChangeSnapshot->fields)._localRadius;
       (value_00->fields)._localHeight = (postChangeSnapshot->fields)._localHeight;
-      (this->fields)._postChangeSnapshot = value_00;
-      func_?(&(this->fields)._postChangeSnapshot,value_00);
+      ppCVar5 = &(this->fields)._postChangeSnapshot;
+      *ppCVar5 = value_00;
+      func_?(ppCVar5,value_00);
       return;
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

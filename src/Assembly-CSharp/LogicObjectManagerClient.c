@@ -104,7 +104,7 @@ void Assembly-CSharp.dll::LogicObjectManagerClient::LogicObjectManagerClient__ct
   HashSet_1_System_Int32___ctor
             (this_01,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
   method_00 = (MethodInfo *)&(this->fields)._.updatedIds;
-  (this->fields)._.updatedIds = this_01;
+  *(HashSet_1_System_Int32_ **)method_00 = this_01;
   func_?(method_00,this_01);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);

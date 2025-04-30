@@ -10,8 +10,9 @@ void Assembly-CSharp.dll::PickupItemMeleeWeapon+MeleeWeaponConfiguration::
     func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  (this->fields)._.name = ::StringLiteral__;
   method_00 = (MethodInfo *)&this->fields;
+  (((PickupItemMeleeWeapon_MeleeWeaponConfiguration__Fields *)method_00)->_).name =
+       ::StringLiteral__;
   func_?(method_00,::StringLiteral__);
   (this->fields)._.cubeModelId = -1;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57

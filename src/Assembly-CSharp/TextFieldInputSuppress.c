@@ -17,7 +17,7 @@ void Assembly-CSharp.dll::TextFieldInputSuppress::TextFieldInputSuppress_Reset
                       UnityEngine__UI__InputField_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::InputField>__
                      );
   (this->fields).inputField = pIVar1;
-  func_?(&(this->fields).inputField,pIVar1);
+  func_?();
   return;
 }
 

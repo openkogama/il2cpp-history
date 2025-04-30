@@ -11,13 +11,14 @@ void Assembly-CSharp.dll::PickHelper::PickHelper_Initialize
   if (pTVar1 != (Text *)0x0) {
     (*(code *)(pTVar1->klass->vtable).set_text.method)
               (pTVar1,msg,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-    (this->fields).pickCallback = onPickCallback;
-    func_?(&(this->fields).pickCallback,onPickCallback);
+    ppUVar2 = &(this->fields).pickCallback;
+    *ppUVar2 = onPickCallback;
+    func_?(ppUVar2,onPickCallback);
     return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

@@ -43,11 +43,12 @@ bool Assembly-CSharp.dll::RTG::ArcShape3D::ArcShape3D_ContainsPoint
 
 {
   if (((this->fields)._forceShortestArc == 0) &&
-     (_UNK_? < (float)((uint)(this->fields)._degreeAngleFromStart & _UNK_?))) {
+     (degreesFromStart = (this->fields)._degreeAngleFromStart,
+     _UNK_? < (float)((uint)degreesFromStart & _UNK_?))) {
     bVar1 = ArcMath::ArcMath_LgArcContains3DPoint
                       (point,checkOnPlane,(this->fields)._origin,(this->fields)._startPoint,
-                       (this->fields)._plane.m_Normal,(this->fields)._degreeAngleFromStart,
-                       (this->fields)._epsilon,(MethodInfo *)0x0);
+                       (this->fields)._plane.m_Normal,degreesFromStart,(this->fields)._epsilon,
+                       (MethodInfo *)0x0);
     return bVar1;
   }
   bVar1 = ArcMath::ArcMath_ShArcContains3DPoint
@@ -95,32 +96,33 @@ void Assembly-CSharp.dll::RTG::ArcShape3D::ArcShape3D_OnBorderPointsFoundDirty
                      ((this->fields)._origin,(this->fields)._startPoint,(this->fields)._plane,
                       (this->fields)._degreeAngleFromStart,(this->fields)._forceShortestArc,
                       (this->fields)._numBorderPoints,(MethodInfo *)0x0);
-  (this->fields)._borderPoints = pLVar1;
-  func_?(&(this->fields)._borderPoints,pLVar1);
-  AStack_2._isValid = 0;
-  AStack_2._25_3_ = 0;
-  AStack_2._size.x = 0.0;
-  AStack_2._size.y = 0.0;
-  AStack_2._size.z = 0.0;
-  AStack_2._center.x = 0.0;
-  AStack_2._center.y = 0.0;
-  AStack_2._center.z = 0.0;
-  AABB::AABB__ctor_2(&AStack_2,(IEnumerable_1_UnityEngine_Vector3_ *)(this->fields)._borderPoints,
-                     (MethodInfo *)0x0);
-  (this->fields)._aabb._size.x = AStack_2._size.x;
-  (this->fields)._aabb._size.y = AStack_2._size.y;
-  (this->fields)._aabb._size.z = AStack_2._size.z;
-  (this->fields)._aabb._center.x = AStack_2._center.x;
-  (this->fields)._aabb._center.y = AStack_2._center.y;
-  (this->fields)._aabb._center.z = AStack_2._center.z;
-  uVar3 = (this->fields)._origin.x;
-  uVar4 = (this->fields)._origin.y;
-  point.y = (float)uVar4;
-  point.x = (float)uVar3;
-  (this->fields)._aabb._isValid = AStack_2._isValid;
-  *(undefined3 *)&(this->fields)._aabb.field_0x19 = AStack_2._25_3_;
+  ppLVar2 = &(this->fields)._borderPoints;
+  *ppLVar2 = pLVar1;
+  func_?(ppLVar2,pLVar1);
+  AStack_3._isValid = 0;
+  AStack_3._25_3_ = 0;
+  AStack_3._size.x = 0.0;
+  AStack_3._size.y = 0.0;
+  AStack_3._size.z = 0.0;
+  AStack_3._center.x = 0.0;
+  AStack_3._center.y = 0.0;
+  AStack_3._center.z = 0.0;
+  AABB::AABB__ctor_2(&AStack_3,(IEnumerable_1_UnityEngine_Vector3_ *)*ppLVar2,(MethodInfo *)0x0);
+  this_00 = &(this->fields)._aabb;
+  (this_00->_size).x = AStack_3._size.x;
+  (this->fields)._aabb._size.y = AStack_3._size.y;
+  (this->fields)._aabb._size.z = AStack_3._size.z;
+  (this->fields)._aabb._center.x = AStack_3._center.x;
+  (this->fields)._aabb._center.y = AStack_3._center.y;
+  (this->fields)._aabb._center.z = AStack_3._center.z;
+  uVar4 = (this->fields)._origin.x;
+  uVar5 = (this->fields)._origin.y;
+  point.y = (float)uVar5;
+  point.x = (float)uVar4;
+  (this->fields)._aabb._isValid = AStack_3._isValid;
+  *(undefined3 *)&(this->fields)._aabb.field_0x19 = AStack_3._25_3_;
   point.z = (this->fields)._origin.z;
-  AABB::AABB_Encapsulate(&(this->fields)._aabb,point,(MethodInfo *)0x0);
+  AABB::AABB_Encapsulate(this_00,point,(MethodInfo *)0x0);
   (this->fields)._areBorderPointsDirty = 0;
   return;
 }
@@ -135,11 +137,12 @@ bool Assembly-CSharp.dll::RTG::ArcShape3D::ArcShape3D_Raycast
   bVar1 = (this->fields)._forceShortestArc;
   if ((this->fields)._raycastMode == 0) {
     if ((bVar1 == 0) &&
-       (_UNK_? < (float)((uint)(this->fields)._degreeAngleFromStart & _UNK_?))) {
+       (fVar2 = (this->fields)._degreeAngleFromStart,
+       _UNK_? < (float)((uint)fVar2 & _UNK_?))) {
       bVar1 = ArcMath::ArcMath_RaycastLgArc
                         (ray,t,(this->fields)._origin,(this->fields)._startPoint,
-                         (this->fields)._plane.m_Normal,(this->fields)._degreeAngleFromStart,
-                         (this->fields)._epsilon,(MethodInfo *)0x0);
+                         (this->fields)._plane.m_Normal,fVar2,(this->fields)._epsilon,
+                         (MethodInfo *)0x0);
       return bVar1;
     }
     bVar1 = ArcMath::ArcMath_RaycastShArc
@@ -149,11 +152,12 @@ bool Assembly-CSharp.dll::RTG::ArcShape3D::ArcShape3D_Raycast
     return bVar1;
   }
   if ((bVar1 == 0) &&
-     (_UNK_? < (float)((uint)(this->fields)._degreeAngleFromStart & _UNK_?))) {
+     (fVar2 = (this->fields)._degreeAngleFromStart,
+     _UNK_? < (float)((uint)fVar2 & _UNK_?))) {
     bVar1 = ArcMath::ArcMath_RaycastLgArcWire
                       (ray,t,(this->fields)._origin,(this->fields)._startPoint,
-                       (this->fields)._plane.m_Normal,(this->fields)._degreeAngleFromStart,
-                       (this->fields)._epsilon,(MethodInfo *)0x0);
+                       (this->fields)._plane.m_Normal,fVar2,(this->fields)._epsilon,
+                       (MethodInfo *)0x0);
     return bVar1;
   }
   bVar1 = ArcMath::ArcMath_RaycastShArcWire
@@ -171,11 +175,12 @@ bool Assembly-CSharp.dll::RTG::ArcShape3D::ArcShape3D_RaycastWire
 
 {
   if (((this->fields)._forceShortestArc == 0) &&
-     (_UNK_? < (float)((uint)(this->fields)._degreeAngleFromStart & _UNK_?))) {
+     (degreesFromStart = (this->fields)._degreeAngleFromStart,
+     _UNK_? < (float)((uint)degreesFromStart & _UNK_?))) {
     bVar1 = ArcMath::ArcMath_RaycastLgArcWire
                       (ray,t,(this->fields)._origin,(this->fields)._startPoint,
-                       (this->fields)._plane.m_Normal,(this->fields)._degreeAngleFromStart,
-                       (this->fields)._epsilon,(MethodInfo *)0x0);
+                       (this->fields)._plane.m_Normal,degreesFromStart,(this->fields)._epsilon,
+                       (MethodInfo *)0x0);
     return bVar1;
   }
   bVar1 = ArcMath::ArcMath_RaycastShArcWire
@@ -342,7 +347,7 @@ void Assembly-CSharp.dll::RTG::ArcShape3D::ArcShape3D__ctor(ArcShape3D *this,Met
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
   method_00 = (MethodInfo *)&this->fields;
-  (this->fields)._wireRenderDesc = value;
+  ((ArcShape3D__Fields *)method_00)->_wireRenderDesc = value;
   func_?(method_00,value);
   (this->fields)._numBorderPoints = 100;
   (this->fields)._areBorderPointsDirty = 1;

@@ -73,10 +73,6 @@ Assembly-CSharp.dll::UseInteractor::UseInteractor_EvaluateRequirementsUsability
       puVar4 = puStack_3;
     }
     puStack_3 = puVar4;
-    LStack_5._list = (List_1_System_Object_ *)0x0;
-    LStack_5._index = 0;
-    LStack_5._version = 0;
-    LStack_5._current = (Object *)0x0;
     this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
               (pUVar1->fields).useRequirements;
     if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
@@ -84,21 +80,21 @@ Assembly-CSharp.dll::UseInteractor::UseInteractor_EvaluateRequirementsUsability
         *unaff_FS_OFFSET = uVar2;
         return UseGUIResult__Enum_NoCost;
       }
-      UVar6 = 0;
-      pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+      UVar5 = 0;
+      pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
                RegexCharClass+SingleRange]::
                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                         (&LStack_8,this_00,
+                         (&LStack_7,this_00,
                           MethodInfo__System__Collections__Generic__List<UseRequirement>__GetEnumerator__
                          );
-      LStack_5._list = (List_1_System_Object_ *)pLVar7->_list;
-      LStack_5._index = pLVar7->_index;
-      LStack_5._version = pLVar7->_version;
-      LStack_5._current = *(Object **)&pLVar7->_current;
-      LStack_8._version = 0;
-      LStack_8._current = (RegexCharClass_SingleRange)&LStack_5;
+      LStack_8._list = (List_1_System_Object_ *)pLVar6->_list;
+      LStack_8._index = pLVar6->_index;
+      LStack_8._version = pLVar6->_version;
+      LStack_8._current = *(Object **)&pLVar6->_current;
+      LStack_7._version = 0;
+      LStack_7._current = (RegexCharClass_SingleRange)&LStack_8;
       while( true ) {
-        this_01 = &LStack_5;
+        this_01 = &LStack_8;
         bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
                 List_1_T_Enumerator_System_Object__MoveNext
                           (this_01,
@@ -106,17 +102,17 @@ Assembly-CSharp.dll::UseInteractor::UseInteractor_EvaluateRequirementsUsability
                           );
         if (bVar9 == 0) {
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&LStack_5,
+                    ((Object *)&LStack_8,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UseRequirement>__Dispose__
                      ,unaff_retaddr);
           *unaff_FS_OFFSET = this_01;
-          return UVar6;
+          return UVar5;
         }
-        if ((RegexCharClass_SingleRange)LStack_5._current == (RegexCharClass_SingleRange)0x0)
+        if ((RegexCharClass_SingleRange)LStack_8._current == (RegexCharClass_SingleRange)0x0)
         break;
-        UVar10 = (**(code **)(*(int *)LStack_5._current + 0xe0))();
-        UVar6 = UVar6 | UVar10;
+        UVar10 = (**(code **)(*(int *)LStack_8._current + 0xe0))();
+        UVar5 = UVar5 | UVar10;
       }
     }
   }
@@ -124,8 +120,8 @@ Assembly-CSharp.dll::UseInteractor::UseInteractor_EvaluateRequirementsUsability
   puStack_3 = (undefined1 *)func_?();
   func_?();
   pcVar11 = (code *)swi(3);
-  UVar6 = (*pcVar11)();
-  return UVar6;
+  UVar5 = (*pcVar11)();
+  return UVar5;
 }
 
 
@@ -160,10 +156,6 @@ Assembly-CSharp.dll::UseInteractor::UseInteractor_GetGUIShowOptions
       puVar4 = puStack_3;
     }
     puStack_3 = puVar4;
-    LStack_5._list = (List_1_System_Object_ *)0x0;
-    LStack_5._index = 0;
-    LStack_5._version = 0;
-    LStack_5._current = (Object *)0x0;
     this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
               (pUVar1->fields).useRequirements;
     if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
@@ -171,21 +163,21 @@ Assembly-CSharp.dll::UseInteractor::UseInteractor_GetGUIShowOptions
         *unaff_FS_OFFSET = uVar2;
         return ShowUseOption__Enum_Normal;
       }
-      SVar6 = ShowUseOption__Enum_Normal;
-      pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+      SVar5 = ShowUseOption__Enum_Normal;
+      pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
                RegexCharClass+SingleRange]::
                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                         (&LStack_8,this_00,
+                         (&LStack_7,this_00,
                           MethodInfo__System__Collections__Generic__List<UseRequirement>__GetEnumerator__
                          );
-      LStack_5._list = (List_1_System_Object_ *)pLVar7->_list;
-      LStack_5._index = pLVar7->_index;
-      LStack_5._version = pLVar7->_version;
-      LStack_5._current = *(Object **)&pLVar7->_current;
-      LStack_8._version = 0;
-      LStack_8._current = (RegexCharClass_SingleRange)&LStack_5;
+      LStack_8._list = (List_1_System_Object_ *)pLVar6->_list;
+      LStack_8._index = pLVar6->_index;
+      LStack_8._version = pLVar6->_version;
+      LStack_8._current = *(Object **)&pLVar6->_current;
+      LStack_7._version = 0;
+      LStack_7._current = (RegexCharClass_SingleRange)&LStack_8;
       while( true ) {
-        this_01 = &LStack_5;
+        this_01 = &LStack_8;
         bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
                 List_1_T_Enumerator_System_Object__MoveNext
                           (this_01,
@@ -193,17 +185,17 @@ Assembly-CSharp.dll::UseInteractor::UseInteractor_GetGUIShowOptions
                           );
         if (bVar9 == 0) {
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&LStack_5,
+                    ((Object *)&LStack_8,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UseRequirement>__Dispose__
                      ,unaff_retaddr);
           *unaff_FS_OFFSET = this_01;
-          return SVar6;
+          return SVar5;
         }
-        if ((RegexCharClass_SingleRange)LStack_5._current == (RegexCharClass_SingleRange)0x0)
+        if ((RegexCharClass_SingleRange)LStack_8._current == (RegexCharClass_SingleRange)0x0)
         break;
-        SVar10 = (**(code **)(*(int *)LStack_5._current + 0x100))();
-        SVar6 = SVar6 | SVar10;
+        SVar10 = (**(code **)(*(int *)LStack_8._current + 0x100))();
+        SVar5 = SVar5 | SVar10;
       }
     }
   }
@@ -211,8 +203,8 @@ Assembly-CSharp.dll::UseInteractor::UseInteractor_GetGUIShowOptions
   puStack_3 = (undefined1 *)func_?();
   func_?();
   pcVar11 = (code *)swi(3);
-  SVar6 = (*pcVar11)();
-  return SVar6;
+  SVar5 = (*pcVar11)();
+  return SVar5;
 }
 
 
@@ -223,10 +215,10 @@ bool Assembly-CSharp.dll::UseInteractor::UseInteractor_GetInteractorCanBeUsed
                MethodInfo *method)
 
 {
-  if ((this->fields).checkCanUseFunction == (Func_3_Int32_MVInteractableBase_Boolean_ *)0x0) {
+  pFVar1 = (this->fields).checkCanUseFunction;
+  if (pFVar1 == (Func_3_Int32_MVInteractableBase_Boolean_ *)0x0) {
     return 1;
   }
-  pFVar1 = (this->fields).checkCanUseFunction;
   bVar2 = (*(pFVar1->fields)._._.invoke_impl)
                     ((pFVar1->fields)._._.method_code,woId,avatarInteractable,
                      (pFVar1->fields)._._.method);
@@ -256,29 +248,31 @@ Assembly-CSharp.dll::UseInteractor::UseInteractor_GetUseInteractorHandler
     if (this_02 == (MVAvatar *)0x0) {
       return (UseInteractorHandler *)0x0;
     }
-    if (((((this->fields)._UsedInVehicles_k__BackingField != 0) &&
-         ((TypeInfo__MVVehicleBase->_1).naturalAligment <= (this_02->klass->_1).naturalAligment)) &&
-        ((MVVehicleBase__Class *)
-         (this_02->klass->_1).typeHierarchy[(TypeInfo__MVVehicleBase->_1).naturalAligment - 1] ==
-         TypeInfo__MVVehicleBase)) &&
-       (pMVar1 = MVVehicleBase::MVVehicleBase_GetDriver((MVVehicleBase *)this_02,(MethodInfo *)0x0),
-       pMVar1 != (MVAvatar *)0x0)) {
-      this_02 = pMVar1;
+    if ((this->fields)._UsedInVehicles_k__BackingField != 0) {
+      bVar1 = (TypeInfo__MVVehicleBase->_1).naturalAligment;
+      if ((bVar1 <= (this_02->klass->_1).naturalAligment) &&
+         ((MVVehicleBase__Class *)(this_02->klass->_1).typeHierarchy[bVar1 - 1] ==
+          TypeInfo__MVVehicleBase)) {
+        pMVar2 = MVVehicleBase::MVVehicleBase_GetDriver((MVVehicleBase *)this_02,(MethodInfo *)0x0);
+        if (pMVar2 != (MVAvatar *)0x0) {
+          this_02 = pMVar2;
+        }
+      }
     }
     this_00 = (((MVBlueprintBase__Fields *)&(this_02->fields)._)->_)._.gameObject;
     if (this_00 != (GameObject *)0x0) {
-      pUVar2 = (UseInteractorHandler *)
+      pUVar3 = (UseInteractorHandler *)
                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
                          (this_00,
                           UseInteractorHandler_MethodInfo__UnityEngine__GameObject__GetComponent<UseInteractorHandler>__
                          );
-      return pUVar2;
+      return pUVar3;
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  pUVar2 = (UseInteractorHandler *)(*pcVar3)();
-  return pUVar2;
+  pcVar4 = (code *)swi(3);
+  pUVar3 = (UseInteractorHandler *)(*pcVar4)();
+  return pUVar3;
 }
 
 
@@ -438,15 +432,16 @@ void Assembly-CSharp.dll::UseInteractor::UseInteractor_UpdateData
                MethodInfo *method)
 
 {
-  this_00 = (this->fields).useInteractorVisuals;
+  this_01 = (this->fields).useInteractorVisuals;
   pMVar1 = (MonitorData *)(this->fields).woOwnerID;
-  if (this_00 != (UseInteractorVisualization *)0x0) {
+  if (this_01 != (UseInteractorVisualization *)0x0) {
+    pUVar2 = this_01;
     if (cRam_? == '\0') {
       func_?(&TypeInfo__System__Func<UseRequirement,_bool>);
       func_?(&
                       MethodInfo__UseInteractorVisualization____c___UpdateData_b__36_0_UseRequirement_
                      );
-      in_stack_2 =
+      in_stack_3 =
            &
            MethodInfo__UseInteractorVisualization____c__DisplayClass36_0___UpdateData_b__1_UseRequirement_
       ;
@@ -457,7 +452,7 @@ void Assembly-CSharp.dll::UseInteractor::UseInteractor_UpdateData
     }
     value = (Object *)func_?(TypeInfo__UseInteractorVisualization____c__DisplayClass36_0);
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (value,ExceptionArgument__Enum_obj,(MethodInfo *)in_stack_2);
+              (value,ExceptionArgument__Enum_obj,(MethodInfo *)in_stack_3);
     if (value != (Object *)0x0) {
       value[1].klass = (Object__Class *)data;
       func_?(value + 1,data);
@@ -465,38 +460,46 @@ void Assembly-CSharp.dll::UseInteractor::UseInteractor_UpdateData
       if ((TypeInfo__UseInteractorVisualization____c->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UseInteractorVisualization____c);
       }
-      this_01 = TypeInfo__UseInteractorVisualization____c->static_fields->__9__36_0;
-      if (this_01 == (Func_2_UseRequirement_Boolean_ *)0x0) {
+      this_00 = TypeInfo__UseInteractorVisualization____c->static_fields->__9__36_0;
+      if (this_00 == (Func_2_UseRequirement_Boolean_ *)0x0) {
+        this_01 = pUVar2;
         if ((TypeInfo__UseInteractorVisualization____c->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__UseInteractorVisualization____c);
+          this_01 = pUVar2;
         }
         object = TypeInfo__UseInteractorVisualization____c->static_fields->__9;
-        this_01 = (Func_2_UseRequirement_Boolean_ *)
+        this_00 = (Func_2_UseRequirement_Boolean_ *)
                   func_?(TypeInfo__System__Func<UseRequirement,_bool>);
         mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor
-                  ((Func_2_Object_Boolean_ *)this_01,(Object *)object,
+                  ((Func_2_Object_Boolean_ *)this_00,(Object *)object,
                    MethodInfo__UseInteractorVisualization____c___UpdateData_b__36_0_UseRequirement_,
                    (MethodInfo *)0x0);
-        TypeInfo__UseInteractorVisualization____c->static_fields->__9__36_0 = this_01;
-        func_?(&TypeInfo__UseInteractorVisualization____c->static_fields->__9__36_0,this_01
+        TypeInfo__UseInteractorVisualization____c->static_fields->__9__36_0 = this_00;
+        func_?(&TypeInfo__UseInteractorVisualization____c->static_fields->__9__36_0,this_00
                        );
+        this = (UseInteractor *)func_?(TypeInfo__System__Func<UseRequirement,_bool>);
+        mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor
+                  ((Func_2_Object_Boolean_ *)this,value,
+                   MethodInfo__UseInteractorVisualization____c__DisplayClass36_0___UpdateData_b__1_UseRequirement_
+                   ,(MethodInfo *)0x0);
       }
-      this_02 = (Func_2_Object_Boolean_ *)
-                func_?(TypeInfo__System__Func<UseRequirement,_bool>);
-      mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor
-                (this_02,value,
-                 MethodInfo__UseInteractorVisualization____c__DisplayClass36_0___UpdateData_b__1_UseRequirement_
-                 ,(MethodInfo *)0x0);
+      else {
+        this = (UseInteractor *)func_?(TypeInfo__System__Func<UseRequirement,_bool>);
+        mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor
+                  ((Func_2_Object_Boolean_ *)this,value,
+                   MethodInfo__UseInteractorVisualization____c__DisplayClass36_0___UpdateData_b__1_UseRequirement_
+                   ,(MethodInfo *)0x0);
+      }
       UseInteractorVisualization::UseInteractorVisualization_ChangeUseRequirements
-                (this_00,this_01,(Func_2_UseRequirement_Boolean_ *)this_02,(MethodInfo *)0x0);
+                (this_01,this_00,(Func_2_UseRequirement_Boolean_ *)this,(MethodInfo *)0x0);
       UseInteractorVisualization::UseInteractorVisualization_CalculateSpacing
-                (this_00,(MethodInfo *)0x0);
+                (this_01,(MethodInfo *)0x0);
       return;
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -606,12 +609,14 @@ void Assembly-CSharp.dll::UseInteractor::UseInteractor__ctor
                        (owner,
                         UseInteractorVisualization_MethodInfo__UnityEngine__GameObject__AddComponent<UseInteractorVisualization>__
                        );
-    (this->fields).useInteractorVisuals = pUVar1;
-    func_?(&(this->fields).useInteractorVisuals,pUVar1);
-    pUVar1 = (this->fields).useInteractorVisuals;
+    ppUVar2 = &(this->fields).useInteractorVisuals;
+    *ppUVar2 = pUVar1;
+    func_?(ppUVar2,pUVar1);
+    pUVar1 = *ppUVar2;
     if (pUVar1 != (UseInteractorVisualization *)0x0) {
-      (pUVar1->fields).wo = wo;
-      func_?(&(pUVar1->fields).wo,wo);
+      ppMVar3 = &(pUVar1->fields).wo;
+      *ppMVar3 = wo;
+      func_?(ppMVar3,wo);
       (pUVar1->fields).pivot.y = yOffset;
       UseInteractorVisualization::UseInteractorVisualization_CalculateSpacing
                 (pUVar1,(MethodInfo *)0x0);
@@ -622,40 +627,42 @@ void Assembly-CSharp.dll::UseInteractor::UseInteractor__ctor
       if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__MainCameraManager);
       }
-      fVar2 = (TypeInfo__MainCameraManager->static_fields->DistanceToAvatarBase - _UNK_?) /
+      fVar4 = (TypeInfo__MainCameraManager->static_fields->DistanceToAvatarBase - _UNK_?) /
               _UNK_?;
-      if (fVar2 < 0.0) {
-        fVar2 = 0.0;
+      if (fVar4 < 0.0) {
+        fVar4 = 0.0;
       }
-      else if (_UNK_? < fVar2) {
-        fVar2 = _UNK_?;
+      else if (_UNK_? < fVar4) {
+        fVar4 = _UNK_?;
       }
-      if (fVar2 < 0.0) {
-        fVar2 = 0.0;
+      if (fVar4 < 0.0) {
+        fVar4 = 0.0;
       }
-      else if (_UNK_? < fVar2) {
-        fVar2 = _UNK_?;
+      else if (_UNK_? < fVar4) {
+        fVar4 = _UNK_?;
       }
-      (pUVar1->fields).scale = fVar2 + fVar2 + _UNK_?;
+      (pUVar1->fields).scale = fVar4 + fVar4 + _UNK_?;
       UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
                 ((Behaviour *)pUVar1,0,(MethodInfo *)0x0);
       if (wo != (MVWorldObjectClient *)0x0) {
         (this->fields).woOwnerID = (wo->fields)._.id;
         (this->fields).useFunction = useFunction;
         func_?(&this->fields,useFunction);
-        (this->fields).triggerCollider = triggerCollider;
-        func_?(&(this->fields).triggerCollider,triggerCollider);
+        ppCVar5 = &(this->fields).triggerCollider;
+        *ppCVar5 = triggerCollider;
+        func_?(ppCVar5,triggerCollider);
+        ppFVar6 = &(this->fields).checkCanUseFunction;
         (this->fields).reset = reset;
         (this->fields)._UsedInVehicles_k__BackingField = usedInVehicles;
-        (this->fields).checkCanUseFunction = checkCanUseFunction;
-        func_?(&(this->fields).checkCanUseFunction,checkCanUseFunction);
+        *ppFVar6 = checkCanUseFunction;
+        func_?(ppFVar6,checkCanUseFunction);
         return;
       }
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

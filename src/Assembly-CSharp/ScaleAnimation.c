@@ -80,35 +80,32 @@ void Assembly-CSharp.dll::ScaleAnimation::ScaleAnimation_Stop
                (ScaleAnimation *this,MethodInfo *method)
 
 {
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  fVar2 = (this->fields).beginTime;
-  fVar3 = (this->fields)._.originalScale.z;
+  UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+  fVar1 = (this->fields)._.originalScale.z;
   this_00 = (this->fields)._.target;
-  fVar4 = (this->fields)._.originalScale.x;
-  fVar5 = (this->fields)._.originalScale.y;
+  uVar2 = (this->fields)._.originalScale.x;
+  uVar3 = (this->fields)._.originalScale.y;
   this_01 = (this->fields).animationCurve;
   if (this_01 != (AnimationCurve *)0x0) {
-    fVar6 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
+    fVar4 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
                       (this_01,(this->fields).doneTime,(MethodInfo *)0x0);
-    fVar3 = fVar3 * fVar6;
     if (this_00 != (Transform *)0x0) {
-      value.y = fVar5 * fVar6;
-      value.x = fVar4 * fVar6;
-      value.z = fVar3;
+      value.y = (float)uVar3 * fVar4;
+      value.x = (float)uVar2 * fVar4;
+      value.z = fVar1 * fVar4;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
                 (this_00,value,(MethodInfo *)0x0);
-      pSVar7 = (this->fields)._.OnScaleAnimationStopped;
+      pSVar5 = (this->fields)._.OnScaleAnimationStopped;
       (this->fields)._.state = 1;
-      if (pSVar7 != (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0) {
-        (*(pSVar7->fields)._._.invoke_impl)
-                  ((pSVar7->fields)._._.method_code,(fVar1 - fVar2) - (this->fields).doneTime);
+      if (pSVar5 != (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0) {
+        (*(pSVar5->fields)._._.invoke_impl)();
       }
       return;
     }
   }
-  func_?(fVar3,fVar2,fVar1);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -143,50 +140,48 @@ void Assembly-CSharp.dll::ScaleAnimation::ScaleAnimation_Update
     return;
   }
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+  fVar2 = (this->fields).doneTime;
   this_00 = (this->fields)._.target;
   this_01 = (this->fields).animationCurve;
   fVar1 = fVar1 - (this->fields).beginTime;
-  pfVar2 = &(this->fields).doneTime;
   fVar3 = (this->fields)._.originalScale.z;
   fVar4 = (this->fields)._.originalScale.x;
   fVar5 = (this->fields)._.originalScale.y;
-  if (*pfVar2 <= fVar1 && fVar1 != *pfVar2) {
+  if (fVar2 < fVar1) {
     if (this_01 != (AnimationCurve *)0x0) {
-      fVar6 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                        (this_01,(this->fields).doneTime,(MethodInfo *)0x0);
-      fVar3 = fVar3 * fVar6;
+      fVar2 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
+                        (this_01,fVar2,(MethodInfo *)0x0);
       if (this_00 != (Transform *)0x0) {
-        value_00.y = fVar5 * fVar6;
-        value_00.x = fVar4 * fVar6;
-        value_00.z = fVar3;
+        value_00.y = fVar5 * fVar2;
+        value_00.x = fVar4 * fVar2;
+        value_00.z = fVar3 * fVar2;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
                   (this_00,value_00,(MethodInfo *)0x0);
-        pSVar7 = (this->fields)._.OnScaleAnimationStopped;
+        pSVar6 = (this->fields)._.OnScaleAnimationStopped;
         (this->fields)._.state = 1;
-        if (pSVar7 == (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0) {
+        if (pSVar6 == (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0) {
           return;
         }
-        (*(pSVar7->fields)._._.invoke_impl)((pSVar7->fields)._._.method_code);
+        (*(pSVar6->fields)._._.invoke_impl)();
         return;
       }
     }
   }
   else if (this_01 != (AnimationCurve *)0x0) {
-    fVar6 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
+    fVar2 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
                       (this_01,fVar1,(MethodInfo *)0x0);
-    fVar3 = fVar3 * fVar6;
     if (this_00 != (Transform *)0x0) {
-      value.y = fVar5 * fVar6;
-      value.x = fVar4 * fVar6;
-      value.z = fVar3;
+      value.y = fVar5 * fVar2;
+      value.x = fVar4 * fVar2;
+      value.z = fVar3 * fVar2;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
                 (this_00,value,(MethodInfo *)0x0);
       return;
     }
   }
-  func_?(fVar3,fVar1);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  func_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

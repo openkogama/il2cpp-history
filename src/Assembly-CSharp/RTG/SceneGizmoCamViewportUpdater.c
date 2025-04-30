@@ -7,65 +7,59 @@ void Assembly-CSharp.dll::RTG::SceneGizmoCamViewportUpdater::SceneGizmoCamViewpo
 
 {
   pSVar1 = (this->fields)._sceneGizmo;
-  if (pSVar1 == (SceneGizmo *)0x0) goto code_?;
-  if ((pSVar1->fields)._sharedLookAndFeel == (SceneGizmoLookAndFeel *)0x0) {
-    this_00 = (pSVar1->fields)._lookAndFeel;
-    if (this_00 == (SceneGizmoLookAndFeel *)0x0) goto code_?;
-  }
-  else {
-    this_00 = (pSVar1->fields)._sharedLookAndFeel;
-  }
-  fStack_2 = (this_00->fields)._screenOffset.x;
+  if ((pSVar1 == (SceneGizmo *)0x0) ||
+     ((this_00 = (pSVar1->fields)._sharedLookAndFeel, this_00 == (SceneGizmoLookAndFeel *)0x0 &&
+      (this_00 = (pSVar1->fields)._lookAndFeel, this_00 == (SceneGizmoLookAndFeel *)0x0))))
+  goto code_?;
+  fVar2 = (this_00->fields)._screenOffset.x;
   fVar3 = (this_00->fields)._screenOffset.y;
   if ((sceneGizmoCamera == (RTSceneGizmoCamera *)0x0) ||
      (pCVar4 = (sceneGizmoCamera->fields)._sceneCamera, pCVar4 == (Camera *)0x0))
   goto code_?;
   pRVar5 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_pixelRect
-                     ((Rect *)&stack0xffffffd8,pCVar4,(MethodInfo *)0x0);
-  fVar6 = pRVar5->m_XMin;
+                      ((Rect *)&stack0xffffffd8,pCVar4,(MethodInfo *)0x0);
+  fStack_6 = pRVar5->m_XMin;
   fVar7 = pRVar5->m_YMin;
   fVar8 = pRVar5->m_Width;
   fVar9 = pRVar5->m_Height;
   VVar10 = SceneGizmoLookAndFeel::SceneGizmoLookAndFeel_CalculateMaxPrjSwitchLabelRectSize
                      (this_00,(MethodInfo *)0x0);
   fVar11 = (this_00->fields)._screenSize;
-  bVar12 = (this_00->fields)._isCamPrjSwitchLabelVisible;
-  if ((this_00->fields)._screenCorner == 1) {
-    fVar6 = (fVar8 + fVar6) - fVar11;
+  iVar12 = (this_00->fields)._screenCorner;
+  bVar13 = (this_00->fields)._isCamPrjSwitchLabelVisible;
+  pCVar4 = (sceneGizmoCamera->fields)._camera;
+  if (iVar12 == 1) {
+    fStack_6 = (fVar8 + fStack_6) - fVar11;
 code_?:
-    fStack_2 = fStack_2 + fVar6;
-    pCVar4 = (sceneGizmoCamera->fields)._camera;
+    fStack_6 = fStack_6 + fVar2;
     fVar7 = (fVar9 + fVar7) - fVar11;
   }
   else {
-    if ((this_00->fields)._screenCorner == 0) goto code_?;
-    fStack_13 = VVar10.y;
-    if ((this_00->fields)._screenCorner == 2) {
-      if (bVar12 == 0) {
-        fStack_13 = 0.0;
+    if (iVar12 == 0) goto code_?;
+    fStack_14 = VVar10.y;
+    if (iVar12 == 2) {
+      if (bVar13 == 0) {
+        fStack_14 = 0.0;
       }
       else {
-        fStack_13 = fStack_13 + _UNK_?;
+        fStack_14 = fStack_14 + _UNK_?;
       }
-      pCVar4 = (sceneGizmoCamera->fields)._camera;
-      fStack_2 = fStack_2 + ((fVar8 + fVar6) - fVar11);
-      fVar7 = fVar7 + fStack_13;
+      fStack_6 = ((fVar8 + fStack_6) - fVar11) + fVar2;
+      fVar7 = fVar7 + fStack_14;
     }
     else {
-      pCVar4 = (sceneGizmoCamera->fields)._camera;
-      if (bVar12 == 0) {
-        fStack_13 = 0.0;
+      fStack_6 = fStack_6 + fVar2;
+      if (bVar13 == 0) {
+        fVar7 = fVar7 + 0.0;
       }
       else {
-        fStack_13 = fStack_13 + _UNK_?;
+        fVar7 = fVar7 + fStack_14 + _UNK_?;
       }
-      fStack_2 = fStack_2 + fVar6;
-      fVar7 = fVar7 + fStack_13;
     }
   }
   if (pCVar4 != (Camera *)0x0) {
     value.m_YMin = fVar7 + fVar3;
-    value.m_XMin = fStack_2;
+    value.m_XMin = fStack_6;
     value.m_Width = fVar11;
     value.m_Height = fVar11;
     UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_pixelRect
@@ -74,8 +68,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 

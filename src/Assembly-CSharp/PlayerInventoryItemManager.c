@@ -91,10 +91,12 @@ void Assembly-CSharp.dll::PlayerInventoryItemManager::PlayerInventoryItemManager
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  (this->fields).previewedItem = item;
-  func_?(&(this->fields).previewedItem,item);
-  (this->fields).itemImage = itemPreview;
-  func_?(&(this->fields).itemImage,itemPreview);
+  ppIVar6 = &(this->fields).previewedItem;
+  *ppIVar6 = item;
+  func_?(ppIVar6,item);
+  ppRVar7 = &(this->fields).itemImage;
+  *ppRVar7 = itemPreview;
+  func_?(ppRVar7,itemPreview);
   PlayerInventoryItemManager_AddTabMenuButton
             (this,1,StringLiteral_Info,(ManageItemPage *)(this->fields).infoTabPrefab,
              (MethodInfo *)0x0);
@@ -109,10 +111,10 @@ void Assembly-CSharp.dll::PlayerInventoryItemManager::PlayerInventoryItemManager
           (IEditModeUI *)0x0) goto code_?;
       this_00 = (PlayerShopInventoryRepository *)func_?();
       if (this_00 == (PlayerShopInventoryRepository *)0x0) goto code_?;
-      iVar6 = UGUI::Desktop::Scripts::EditMode::Inventories::PlayerShopInventoryRepository::
+      iVar8 = UGUI::Desktop::Scripts::EditMode::Inventories::PlayerShopInventoryRepository::
               PlayerShopInventoryRepository_CountInventoryItemsWithOriginalID
                         (this_00,item,(MethodInfo *)0x0);
-      if (iVar6 < 2) goto code_?;
+      if (iVar8 < 2) goto code_?;
     }
     PlayerInventoryItemManager_AddTabMenuButton
               (this,2,StringLiteral_Sell,(ManageItemPage *)(this->fields).itemSellTabPrefab,
@@ -123,29 +125,29 @@ void Assembly-CSharp.dll::PlayerInventoryItemManager::PlayerInventoryItemManager
                (MethodInfo *)0x0);
   }
 code_?:
-  pLVar7 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+  pLVar9 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
            (this->fields).tabList;
-  if (pLVar7 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+  if (pLVar9 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    pLVar10 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
              RegexCharClass+SingleRange]::
              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       (&LStack_9,pLVar7,
+                       (&LStack_11,pLVar9,
                         MethodInfo__System__Collections__Generic__List<PlayerInventoryItemManager::ItemManagePageDef>__GetEnumerator__
                        );
-    RVar10 = pLVar8->_current;
-    LStack_9._version = 0;
+    RVar12 = pLVar10->_current;
+    LStack_11._version = 0;
     uStack_1 = 1;
-    LStack_9._current = (RegexCharClass_SingleRange)&stack0xffffffc8;
+    LStack_11._current = (RegexCharClass_SingleRange)&stack0xffffffc8;
     while( true ) {
-      bVar11 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+      bVar13 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
               List_1_T_Enumerator_System_Object__MoveNext
                         ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffc8,
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<PlayerInventoryItemManager::ItemManagePageDef>__MoveNext__
                         );
-      if (bVar11 == 0) break;
-      if ((RVar10 == (RegexCharClass_SingleRange)0x0) ||
-         (piVar12 = *(int **)((int)RVar10 + 8), piVar12 == (int *)0x0)) goto code_?;
-      (**(code **)(*piVar12 + 0xe8))(piVar12,*(undefined4 *)(*piVar12 + 0xec));
+      if (bVar13 == 0) break;
+      if ((RVar12 == (RegexCharClass_SingleRange)0x0) ||
+         (piVar14 = *(int **)((int)RVar12 + 8), piVar14 == (int *)0x0)) goto code_?;
+      (**(code **)(*piVar14 + 0xe8))(piVar14,*(undefined4 *)(*piVar14 + 0xec));
     }
     uStack_1 = 0xffffffff;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
@@ -154,17 +156,18 @@ code_?:
                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<PlayerInventoryItemManager::ItemManagePageDef>__Dispose__
                ,(MethodInfo *)unaff_EDI);
     uStack_1 = 0xffffffff;
-    pLVar7 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+    pLVar9 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
              (this->fields).tabList;
-    if (pLVar7 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-      RVar10 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-              RegexCharClass+SingleRange]::
-              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                        (pLVar7,(this->fields).currentTab,
-                         MethodInfo__System__Collections__Generic__List<PlayerInventoryItemManager::ItemManagePageDef>__get_Item_int_
-                        );
-      if ((RVar10 != (RegexCharClass_SingleRange)0x0) && (*(int **)((int)RVar10 + 8) != (int *)0x0)) {
-        (**(code **)(**(int **)((int)RVar10 + 8) + 0xf0))();
+    if (pLVar9 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+      RVar12 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+               RegexCharClass+SingleRange]::
+               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                         (pLVar9,(this->fields).currentTab,
+                          MethodInfo__System__Collections__Generic__List<PlayerInventoryItemManager::ItemManagePageDef>__get_Item_int_
+                         );
+      if ((RVar12 != (RegexCharClass_SingleRange)0x0) && (*(int **)((int)RVar12 + 8) != (int *)0x0))
+      {
+        (**(code **)(**(int **)((int)RVar12 + 8) + 0xf0))();
         PlayerInventoryItemManager_UpdateContent(this,(MethodInfo *)0x0);
         *unaff_FS_OFFSET = uStack_3;
         return;
@@ -174,8 +177,8 @@ code_?:
 code_?:
   func_?();
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -214,54 +217,50 @@ void Assembly-CSharp.dll::PlayerInventoryItemManager::PlayerInventoryItemManager
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  LStack_7._list = (List_1_System_Object_ *)0x0;
-  LStack_7._index = 0;
-  LStack_7._version = 0;
-  LStack_7._current = (Object *)0x0;
   if ((this->fields).currentTab != tabId + -1) {
     (this->fields).currentTab = tabId + -1;
-    pLVar8 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+    pLVar7 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
              (this->fields).tabList;
-    if (pLVar8 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-      pLVar9 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    if (pLVar7 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+      pLVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
                RegexCharClass+SingleRange]::
                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                         (&LStack_10,pLVar8,
+                         (&LStack_9,pLVar7,
                           MethodInfo__System__Collections__Generic__List<PlayerInventoryItemManager::ItemManagePageDef>__GetEnumerator__
                          );
-      LStack_7._list = (List_1_System_Object_ *)pLVar9->_list;
-      LStack_7._index = pLVar9->_index;
-      LStack_7._version = pLVar9->_version;
-      LStack_7._current = *(Object **)&pLVar9->_current;
-      LStack_10._version = 0;
+      LStack_10._list = (List_1_System_Object_ *)pLVar8->_list;
+      LStack_10._index = pLVar8->_index;
+      LStack_10._version = pLVar8->_version;
+      LStack_10._current = *(Object **)&pLVar8->_current;
+      LStack_9._version = 0;
       uStack_1 = 1;
-      LStack_10._current = (RegexCharClass_SingleRange)&LStack_7;
+      LStack_9._current = (RegexCharClass_SingleRange)&LStack_10;
       while( true ) {
         bVar11 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
                 List_1_T_Enumerator_System_Object__MoveNext
-                          (&LStack_7,
+                          (&LStack_10,
                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<PlayerInventoryItemManager::ItemManagePageDef>__MoveNext__
                           );
         if (bVar11 == 0) break;
-        if (((RegexCharClass_SingleRange)LStack_7._current == (RegexCharClass_SingleRange)0x0) ||
-           (piVar12 = *(int **)((int)LStack_7._current + 8), piVar12 == (int *)0x0))
+        if (((RegexCharClass_SingleRange)LStack_10._current == (RegexCharClass_SingleRange)0x0) ||
+           (piVar12 = *(int **)((int)LStack_10._current + 8), piVar12 == (int *)0x0))
         goto code_?;
         (**(code **)(*piVar12 + 0xe8))(piVar12,*(undefined4 *)(*piVar12 + 0xec));
       }
       uStack_1 = 0xffffffff;
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                ((Object *)&LStack_7,
+                ((Object *)&LStack_10,
                  (ExceptionArgument__Enum)
                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<PlayerInventoryItemManager::ItemManagePageDef>__Dispose__
                  ,(MethodInfo *)in_stack_6);
       uStack_1 = 0xffffffff;
-      pLVar8 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+      pLVar7 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                (this->fields).tabList;
-      if (pLVar8 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+      if (pLVar7 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
         RVar13 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                 ::RegexCharClass+SingleRange]::
                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                          (pLVar8,(this->fields).currentTab,
+                          (pLVar7,(this->fields).currentTab,
                            MethodInfo__System__Collections__Generic__List<PlayerInventoryItemManager::ItemManagePageDef>__get_Item_int_
                           );
         if ((RVar13 != (RegexCharClass_SingleRange)0x0) &&
@@ -302,16 +301,16 @@ void Assembly-CSharp.dll::PlayerInventoryItemManager::PlayerInventoryItemManager
     cRam_? = '\x01';
   }
   pMVar1 = (this->fields).currentManageItemPage;
+  ppMVar2 = &(this->fields).currentManageItemPage;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                     ((Object_1 *)pMVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
-    pMVar1 = (this->fields).currentManageItemPage;
-    if (pMVar1 == (ManageItemPage *)0x0) goto code_?;
+  if (bVar3 != 0) {
+    if (*ppMVar2 == (ManageItemPage *)0x0) goto code_?;
     obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                    ((Component *)pMVar1,(MethodInfo *)0x0);
+                    ((Component *)*ppMVar2,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
@@ -321,14 +320,14 @@ void Assembly-CSharp.dll::PlayerInventoryItemManager::PlayerInventoryItemManager
   this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
             (this->fields).tabList;
   if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
             RegexCharClass+SingleRange]::
             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                       (this_00,(this->fields).currentTab,
                        MethodInfo__System__Collections__Generic__List<PlayerInventoryItemManager::ItemManagePageDef>__get_Item_int_
                       );
-    if (RVar3 != (RegexCharClass_SingleRange)0x0) {
-      original = *(Object **)((int)RVar3 + 0xc);
+    if (RVar4 != (RegexCharClass_SingleRange)0x0) {
+      original = *(Object **)((int)RVar4 + 0xc);
       parent = (Transform *)(this->fields).pageContentRoot;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
@@ -338,19 +337,19 @@ void Assembly-CSharp.dll::PlayerInventoryItemManager::PlayerInventoryItemManager
                          (original,parent,0,
                           ManageItemPage_MethodInfo__UnityEngine__Object__Instantiate<ManageItemPage>_ManageItemPage__UnityEngine__Transform__bool_
                          );
-      (this->fields).currentManageItemPage = pMVar1;
+      *ppMVar2 = pMVar1;
       func_?();
-      pMVar1 = (this->fields).currentManageItemPage;
+      pMVar1 = *ppMVar2;
       if (pMVar1 != (ManageItemPage *)0x0) {
-        (*(code *)(pMVar1->klass->vtable).__unknown.method)();
+        (*(code *)(pMVar1->klass->vtable).__unknown.method)(pMVar1);
         return;
       }
     }
   }
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -380,8 +379,9 @@ void Assembly-CSharp.dll::PlayerInventoryItemManager::PlayerInventoryItemManager
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<PlayerInventoryItemManager::ItemManagePageDef>__List__
             );
-  (this->fields).tabList = this_00;
-  func_?(&(this->fields).tabList,this_00);
+  ppLVar1 = &(this->fields).tabList;
+  *ppLVar1 = this_00;
+  func_?(ppLVar1,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

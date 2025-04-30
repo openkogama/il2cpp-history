@@ -692,16 +692,16 @@ void Assembly-CSharp.dll::RTG::BoxShape3D::BoxShape3D_set_Max
   uVar2 = (this->fields)._center.y;
   uVar3 = (this->fields)._size.x;
   uVar4 = (this->fields)._size.y;
-  fVar5 = (float)uVar1 - (float)uVar3 * _UNK_?;
-  fVar6 = (float)uVar2 - (float)uVar4 * _UNK_?;
+  fVar5 = (float)uVar2 - (float)uVar4 * _UNK_?;
+  fVar6 = (float)uVar1 - (float)uVar3 * _UNK_?;
   fVar7 = (this->fields)._center.z - (this->fields)._size.z * _UNK_?;
   fVar8 = (value.z + fVar7) * _UNK_?;
-  fVar9 = (value.y + fVar6) * _UNK_?;
-  (this->fields)._center.x = (value.x + fVar5) * _UNK_?;
+  fVar9 = (value.y + fVar5) * _UNK_?;
+  (this->fields)._center.x = (value.x + fVar6) * _UNK_?;
   (this->fields)._center.y = fVar9;
   (this->fields)._center.z = fVar8;
-  (this->fields)._size.x = value.x - fVar5;
-  (this->fields)._size.y = value.y - fVar6;
+  (this->fields)._size.x = value.x - fVar6;
+  (this->fields)._size.y = value.y - fVar5;
   (this->fields)._size.z = value.z - fVar7;
   return;
 }

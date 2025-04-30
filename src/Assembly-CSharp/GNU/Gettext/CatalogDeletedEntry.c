@@ -180,8 +180,9 @@ void Assembly-CSharp.dll::GNU::Gettext::CatalogDeletedEntry::CatalogDeletedEntry
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar1,
              MethodInfo__System__Collections__Generic__List<System::String>__List__);
-  (this->fields).references = pLVar1;
-  func_?(&(this->fields).references,pLVar1);
+  ppLVar2 = &(this->fields).references;
+  *ppLVar2 = pLVar1;
+  func_?(ppLVar2,pLVar1);
   pLVar1 = (List_1_System_String_ *)
            func_?(TypeInfo__System__Collections__Generic__List<System::String>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
@@ -190,8 +191,8 @@ void Assembly-CSharp.dll::GNU::Gettext::CatalogDeletedEntry::CatalogDeletedEntry
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar1,
              MethodInfo__System__Collections__Generic__List<System::String>__List__);
   (this->fields).autocomments = pLVar1;
-  ppLStack2 = &(this->fields).autocomments;
-  pLStack3 = pLVar1;
+  ppLStack3 = &(this->fields).autocomments;
+  pLStack4 = pLVar1;
   func_?();
   return;
 }
@@ -231,8 +232,9 @@ void Assembly-CSharp.dll::GNU::Gettext::CatalogDeletedEntry::CatalogDeletedEntry
               ((List_1_System_Object_ *)pLVar2,(IEnumerable_1_System_Object_ *)pLVar1,
                MethodInfo__System__Collections__Generic__List<System::String>__List_System__Collections__Generic__IEnumerable<System::String>_
               );
-    (this->fields).references = pLVar2;
-    func_?(&(this->fields).references,pLVar2);
+    ppLVar3 = &(this->fields).references;
+    *ppLVar3 = pLVar2;
+    func_?(ppLVar3,pLVar2);
     pLVar1 = (dt->fields).autocomments;
     pLVar2 = (List_1_System_String_ *)
              func_?(TypeInfo__System__Collections__Generic__List<System::String>);
@@ -242,19 +244,19 @@ void Assembly-CSharp.dll::GNU::Gettext::CatalogDeletedEntry::CatalogDeletedEntry
                MethodInfo__System__Collections__Generic__List<System::String>__List_System__Collections__Generic__IEnumerable<System::String>_
               );
     (this->fields).autocomments = pLVar2;
-    ppLStack3 = &(this->fields).autocomments;
-    pLStack4 = pLVar2;
+    ppLStack4 = &(this->fields).autocomments;
+    pLStack5 = pLVar2;
     func_?();
-    pSStack5 = (dt->fields).flags;
-    (this->fields).flags = pSStack5;
+    pSStack6 = (dt->fields).flags;
+    (this->fields).flags = pSStack6;
     func_?();
     (this->fields).comment = (dt->fields).comment;
     func_?();
     return;
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -365,7 +367,7 @@ bool Assembly-CSharp.dll::GNU::Gettext::CatalogDeletedEntry::CatalogDeletedEntry
 {
   bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty
                     ((this->fields).comment,(MethodInfo *)0x0);
-  return bVar1 ^ 1;
+  return bVar1 == 0;
 }
 
 

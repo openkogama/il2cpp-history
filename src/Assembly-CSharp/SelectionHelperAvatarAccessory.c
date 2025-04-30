@@ -7,8 +7,9 @@ void Assembly-CSharp.dll::SelectionHelperAvatarAccessory::SelectionHelperAvatarA
                int32_t accessoryStreamingAssetsId,MethodInfo *method)
 
 {
-  (this->fields).avatarAccessory = avatarAccessory;
-  func_?(&(this->fields).avatarAccessory,avatarAccessory);
+  ppAVar1 = &(this->fields).avatarAccessory;
+  *ppAVar1 = avatarAccessory;
+  func_?(ppAVar1,avatarAccessory);
   (this->fields).slot = slot;
   (this->fields).avatarBodyWoID = avatarBodyWoID;
   (this->fields).streamingAssetsId = accessoryStreamingAssetsId;

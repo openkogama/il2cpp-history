@@ -13,19 +13,19 @@ void Assembly-CSharp.dll::PlayModeControlsBase::PlayModeControlsBase_HideEUseIco
                      );
       cRam_? = '\x01';
     }
-    pLVar2 = (pJVar1->fields).controls;
-    if (pLVar2 != (List_1_InGameControls_ *)0x0) {
-      if ((pLVar2->fields)._size != 0) {
-        RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              (pJVar1->fields).controls;
+    if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+      if ((this_00->fields)._size != 0) {
+        RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                 ::RegexCharClass+SingleRange]::
                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                          ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                           (pJVar1->fields).controls,(pLVar2->fields)._size + -1,
+                          (this_00,(this_00->fields)._size + -1,
                            MethodInfo__System__Collections__Generic__List<InGameControls>__get_Item_int_
                           );
-        if ((RVar3 == (RegexCharClass_SingleRange)0x0) ||
-           (piVar4 = *(int **)((int)RVar3 + 0x18), piVar4 == (int *)0x0)) goto code_?;
-        (**(code **)(*piVar4 + 0xe8))(piVar4,*(undefined4 *)(*piVar4 + 0xec));
+        if ((RVar2 == (RegexCharClass_SingleRange)0x0) ||
+           (piVar3 = *(int **)((int)RVar2 + 0x18), piVar3 == (int *)0x0)) goto code_?;
+        (**(code **)(*piVar3 + 0xe8))(piVar3,*(undefined4 *)(*piVar3 + 0xec));
       }
       (*(code *)(this->klass->vtable).SetUseButtonVisible.method)
                 (this,0,0,0,this->klass[1]._0.image);
@@ -34,8 +34,8 @@ void Assembly-CSharp.dll::PlayModeControlsBase::PlayModeControlsBase_HideEUseIco
   }
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -53,8 +53,9 @@ void Assembly-CSharp.dll::PlayModeControlsBase::PlayModeControlsBase_OnEnable
   if ((this->fields).testForLowFPS != 0) {
     this_00 = (WaitForTicks *)func_?(TypeInfo__WaitForTicks);
     WaitForTicks::WaitForTicks__ctor(this_00,5000,(MethodInfo *)0x0);
-    (this->fields).waitForMs = this_00;
-    func_?(&(this->fields).waitForMs,this_00);
+    ppWVar1 = &(this->fields).waitForMs;
+    *ppWVar1 = this_00;
+    func_?(ppWVar1,this_00);
     (this->fields).testForLowFPS = 0;
   }
   return;
@@ -122,36 +123,36 @@ void Assembly-CSharp.dll::PlayModeControlsBase::PlayModeControlsBase_ShowEUseIco
                      );
       cRam_? = '\x01';
     }
-    pLVar2 = (pJVar1->fields).controls;
-    if (pLVar2 != (List_1_InGameControls_ *)0x0) {
-      if ((pLVar2->fields)._size != 0) {
-        RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              (pJVar1->fields).controls;
+    if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+      if ((this_00->fields)._size != 0) {
+        RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                 ::RegexCharClass+SingleRange]::
                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                          ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                           (pJVar1->fields).controls,(pLVar2->fields)._size + -1,
+                          (this_00,(this_00->fields)._size + -1,
                            MethodInfo__System__Collections__Generic__List<InGameControls>__get_Item_int_
                           );
-        if ((RVar3 == (RegexCharClass_SingleRange)0x0) ||
-           (piVar4 = *(int **)((int)RVar3 + 0x18), piVar4 == (int *)0x0)) goto code_?;
-        NStack_5._0_4_ = *(undefined4 *)(*piVar4 + 0xe4);
-        (**(code **)(*piVar4 + 0xe0))(piVar4,option);
+        if ((RVar2 == (RegexCharClass_SingleRange)0x0) ||
+           (piVar3 = *(int **)((int)RVar2 + 0x18), piVar3 == (int *)0x0)) goto code_?;
+        NStack_4._0_4_ = *(undefined4 *)(*piVar3 + 0xe4);
+        (**(code **)(*piVar3 + 0xe0))(piVar3,option);
       }
-      NStack_5.hasValue = 0;
-      NStack_5._1_3_ = 0;
-      NStack_5.value = 0;
+      NStack_4.hasValue = 0;
+      NStack_4._1_3_ = 0;
+      NStack_4.value = 0;
       mscorlib.dll::System::Nullable`1[UInt32]::Nullable_1_UInt32___ctor
-                (&NStack_5,option,
+                (&NStack_4,option,
                  MethodInfo__System__Nullable<ShowUseOption>__Nullable_ShowUseOption_);
       (*(code *)(this->klass->vtable).SetUseButtonVisible.method)
-                (this,1,NStack_5._0_4_,NStack_5.value,this->klass[1]._0.image);
+                (this,1,NStack_4._0_4_,NStack_4.value,this->klass[1]._0.image);
       return;
     }
   }
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
