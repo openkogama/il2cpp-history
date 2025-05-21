@@ -1,8 +1,8 @@
 {
-    "header_s": 59,
-    "inspector_s": 192,
+    "header_s": 44,
+    "inspector_s": 141,
     "game_functions": 18825,
-    "decompile_s": 631,
+    "decompile_s": 439,
     "failed": 8,
     "files": 3084
 }
