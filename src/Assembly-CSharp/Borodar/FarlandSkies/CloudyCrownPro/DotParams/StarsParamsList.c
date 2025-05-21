@@ -24,12 +24,11 @@ StarsParamsList_GetParamPerTime(StarsParamsList *this,float currentTime,MethodIn
     func_?(&
                     MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>__get_Keys__
                    );
-    in_stack_1 =
-         &
-         MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>__get_Values__
-    ;
+    func_?(&
+                    MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>__get_Values__
+                   );
+    in_stack_1 = &TypeInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__StarsParam;
     func_?();
-    func_?(&TypeInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__StarsParam);
     func_?(&StringLiteral_Stars_params_list_is_empty);
     cRam_? = '\x01';
   }
@@ -67,16 +66,12 @@ StarsParamsList_GetParamPerTime(StarsParamsList *this,float currentTime,MethodIn
                          ((DotParamsList_1_System_Object_ *)pDVar2,currentTime,
                           MethodInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__DotParamsList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>__FindIndexPerTime_float_
                          );
+      pSVar3 = (SortedList_2_System_Single_System_Object_ *)(this->fields)._.SortedParams;
       if (iVar7 < 1) {
-        pDVar2 = (this->fields)._.SortedParams;
-        if (pDVar2 == (DotParamsList_1_StarsParam_ *)0x0) goto code_?;
-        iVar7 = (pDVar2->fields)._._size;
-        pSVar3 = (SortedList_2_System_Single_System_Object_ *)(this->fields)._.SortedParams;
-      }
-      else {
-        pSVar3 = (SortedList_2_System_Single_System_Object_ *)(this->fields)._.SortedParams;
         if (pSVar3 == (SortedList_2_System_Single_System_Object_ *)0x0) goto code_?;
+        iVar7 = (pSVar3->fields)._size;
       }
+      else if (pSVar3 == (SortedList_2_System_Single_System_Object_ *)0x0) goto code_?;
       pIVar8 = System.dll::System::Collections::Generic::SortedList`2[System::Single,System::
                 Object]::SortedList_2_System_Single_System_Object__get_Keys
                           (pSVar3,
@@ -102,15 +97,16 @@ StarsParamsList_GetParamPerTime(StarsParamsList *this,float currentTime,MethodIn
               fVar14 = *(float *)(iVar12 + 0x10);
               fVar15 = *(float *)(iVar12 + 0x14);
               fVar16 = *(float *)(iVar12 + 0x18);
-              pSVar3 = (SortedList_2_System_Single_System_Object_ *)(this->fields)._.SortedParams;
-              if (pSVar3 != (SortedList_2_System_Single_System_Object_ *)0x0) {
+              pDVar2 = (this->fields)._.SortedParams;
+              if (pDVar2 != (DotParamsList_1_StarsParam_ *)0x0) {
                 iVar12 = 0;
-                if (iVar7 < (pSVar3->fields)._size) {
+                if (iVar7 < (pDVar2->fields)._._size) {
                   iVar12 = iVar7;
                 }
                 pIVar8 = System.dll::System::Collections::Generic::SortedList`2[System::
                           Single,System::Object]::SortedList_2_System_Single_System_Object__get_Keys
-                                    (pSVar3,
+                                    ((SortedList_2_System_Single_System_Object_ *)
+                                     (this->fields)._.SortedParams,
                                      MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>__get_Keys__
                                     );
                 if (pIVar8 != (IList_1_System_Single_ *)0x0) {
@@ -118,7 +114,7 @@ StarsParamsList_GetParamPerTime(StarsParamsList *this,float currentTime,MethodIn
                                                   TypeInfo__System__Collections__Generic__IList<float>
                                                   ,pIVar8,iVar12);
                   pSVar3 = (SortedList_2_System_Single_System_Object_ *)
-                            (this->fields)._.SortedParams;
+                           (this->fields)._.SortedParams;
                   fVar17 = (float)fVar9;
                   if (pSVar3 != (SortedList_2_System_Single_System_Object_ *)0x0) {
                     pIVar11 = System.dll::System::Collections::Generic::SortedList`2[System::
@@ -128,14 +124,14 @@ StarsParamsList_GetParamPerTime(StarsParamsList *this,float currentTime,MethodIn
                                          MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>__get_Values__
                                         );
                     if (pIVar11 != (IList_1_System_Object_ *)0x0) {
-                      iVar7 = func_?(0,
+                      iVar12 = func_?(0,
                                                TypeInfo__System__Collections__Generic__IList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>
                                                ,pIVar11,iVar12);
-                      if (iVar7 != 0) {
-                        fVar18 = *(float *)(iVar7 + 0xc);
-                        fVar19 = *(float *)(iVar7 + 0x10);
-                        fVar20 = *(float *)(iVar7 + 0x14);
-                        fVar21 = *(float *)(iVar7 + 0x18);
+                      if (iVar12 != 0) {
+                        fVar18 = *(float *)(iVar12 + 0xc);
+                        fVar19 = *(float *)(iVar12 + 0x10);
+                        fVar20 = *(float *)(iVar12 + 0x14);
+                        fVar21 = *(float *)(iVar12 + 0x18);
                         if (currentTime <= fVar10) {
                           fVar22 = currentTime + (_UNK_? - fVar10);
                         }

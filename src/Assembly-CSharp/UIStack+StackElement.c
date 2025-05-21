@@ -11,9 +11,8 @@ void Assembly-CSharp.dll::UIStack+StackElement::UIStack_StackElement__ctor
   if (gameObject != (GameObject *)0x0) {
     pSVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name
                        ((Object_1 *)gameObject,(MethodInfo *)0x0);
-    ppSVar2 = &(this->fields).name;
-    *ppSVar2 = pSVar1;
-    func_?(ppSVar2,pSVar1);
+    (this->fields).name = pSVar1;
+    func_?(&(this->fields).name,pSVar1);
     (this->fields).gameObject = gameObject;
     func_?(&this->fields,gameObject);
     (this->fields).blockingObject =
@@ -24,17 +23,16 @@ void Assembly-CSharp.dll::UIStack+StackElement::UIStack_StackElement__ctor
          (pushOption & UIPushOption__Enum_InvisibleBlocker) != UIPushOption__Enum_None;
     (this->fields).hideAllExceptStackbottom =
          (pushOption & UIPushOption__Enum_HideAllExceptStackBottom) != UIPushOption__Enum_None;
-    ppUVar3 = &(this->fields).onPop;
     (this->fields).suppressInput =
          (pushOption & UIPushOption__Enum_SuppressInput) != UIPushOption__Enum_None;
-    *ppUVar3 = onPop;
-    func_?(ppUVar3);
+    (this->fields).onPop = onPop;
+    func_?(&(this->fields).onPop);
     (this->fields).group = group;
     return;
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

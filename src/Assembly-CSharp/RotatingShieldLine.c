@@ -10,12 +10,11 @@ void Assembly-CSharp.dll::RotatingShieldLine::RotatingShieldLine_CreatePoints
   iVar2 = (this->fields).segments;
   if (iVar2 != -1 && -1 < iVar2 + 1) {
     do {
-      fVar3 = fStack_1 * _UNK_?;
-      dVar4 = (double)fVar3;
+      dVar3 = (double)(fStack_1 * _UNK_?);
       func_?();
-      dVar5 = (double)fVar3;
+      dVar4 = (double)(fStack_1 * _UNK_?);
       func_?();
-      fVar3 = (this->fields).radius;
+      fVar5 = (this->fields).radius;
       this_00 = (this->fields).line;
       if (this_00 == (LineRenderer *)0x0) {
 code_?:
@@ -24,23 +23,22 @@ code_?:
         (*pcVar6)();
         return;
       }
-      position.y = (float)dVar5 * fVar3;
-      position.x = (float)dVar4 * fVar3;
-      position.z = fVar3 * 0.0;
+      position.y = (float)dVar4 * fVar5;
+      position.x = (float)dVar3 * fVar5;
+      position.z = fVar5 * 0.0;
       UnityEngine.CoreModule.dll::UnityEngine::LineRenderer::LineRenderer_SetPosition
                 (this_00,index,position,(MethodInfo *)0x0);
       fVar7 = _UNK_?;
-      if ((index % ((this->fields).segments / 3) == 0) &&
-         (iVar2 = (this->fields).currIndex, iVar2 < 3)) {
-        fVar8 = (float)dVar4 * fVar3 * _UNK_?;
+      if ((index % ((this->fields).segments / 3) == 0) && ((this->fields).currIndex < 3)) {
+        iVar2 = (this->fields).currIndex;
         (this->fields).currIndex = iVar2 + 1;
         if ((this->fields).positions == (Vector3__Array *)0x0) goto code_?;
-        func_?(iVar2,CONCAT44((float)dVar5 * fVar3 * fVar7,fVar8),fVar3 * 0.0 * fVar7);
+        func_?(iVar2,CONCAT44((float)dVar4 * fVar5 * fVar7,(float)dVar3 * fVar5 * fVar7),
+                        fVar5 * 0.0 * fVar7);
       }
-      iVar2 = (this->fields).segments;
       index = index + 1;
-      fStack_1 = _UNK_? / (float)iVar2 + fStack_1;
-    } while (index < iVar2 + 1);
+      fStack_1 = _UNK_? / (float)(this->fields).segments + fStack_1;
+    } while (index < (this->fields).segments + 1);
   }
   return;
 }
@@ -58,29 +56,26 @@ void Assembly-CSharp.dll::RotatingShieldLine::RotatingShieldLine_Initialize
   iVar2 = (this->fields).segments;
   if (iVar2 != -1 && -1 < iVar2 + 1) {
     do {
-      fVar3 = fStack_1 * _UNK_?;
-      dVar4 = (double)fVar3;
+      dVar3 = (double)(fStack_1 * _UNK_?);
       func_?();
-      dVar5 = (double)fVar3;
+      dVar4 = (double)(fStack_1 * _UNK_?);
       func_?();
-      fVar3 = (this->fields).radius;
+      fVar5 = (this->fields).radius;
       this_00 = (this->fields).line;
       if (this_00 == (LineRenderer *)0x0) goto code_?;
-      position.y = (float)dVar5 * fVar3;
-      position.x = (float)dVar4 * fVar3;
-      position.z = fVar3 * _UNK_?;
+      position.y = (float)dVar4 * fVar5;
+      position.x = (float)dVar3 * fVar5;
+      position.z = fVar5 * _UNK_?;
       UnityEngine.CoreModule.dll::UnityEngine::LineRenderer::LineRenderer_SetPosition
                 (this_00,index,position,(MethodInfo *)0x0);
-      if ((index % ((this->fields).segments / 3) == 0) &&
-         (iVar2 = (this->fields).currIndex, iVar2 < 3)) {
-        (this->fields).currIndex = iVar2 + 1;
+      if ((index % ((this->fields).segments / 3) == 0) && ((this->fields).currIndex < 3)) {
+        (this->fields).currIndex = (this->fields).currIndex + 1;
         if ((this->fields).positions == (Vector3__Array *)0x0) goto code_?;
         func_?();
       }
-      iVar2 = (this->fields).segments;
       index = index + 1;
-      fStack_1 = _UNK_? / (float)iVar2 + fStack_1;
-    } while (index < iVar2 + 1);
+      fStack_1 = _UNK_? / (float)(this->fields).segments + fStack_1;
+    } while (index < (this->fields).segments + 1);
   }
   pVVar6 = (this->fields).positions;
   uStack_7 = 0;
@@ -231,18 +226,17 @@ void Assembly-CSharp.dll::RotatingShieldLine::RotatingShieldLine_OnSetVisible
     iStack_1 = 0;
     fStack_2 = 0.0;
     do {
-      fVar3 = fStack_2 * _UNK_?;
-      auVar4._0_8_ = (double)fVar3;
-      auVar4._8_8_ = 0;
+      auVar3._0_8_ = (double)(fStack_2 * _UNK_?);
+      auVar3._8_8_ = 0;
       func_?();
-      dVar5 = (double)fVar3;
+      dVar4 = (double)(fStack_2 * _UNK_?);
       func_?();
-      fVar3 = (this->fields).radius;
-      fVar6 = fVar3 * _UNK_?;
+      fVar5 = (this->fields).radius;
+      fVar6 = fVar5 * _UNK_?;
       fStack_2 = fStack_2 + _UNK_?;
       func_?();
-      value_00.y = (float)dVar5 * fVar3 * _UNK_?;
-      value_00.x = (float)auVar4._0_8_ * fVar3 * _UNK_?;
+      value_00.y = (float)dVar4 * fVar5 * _UNK_?;
+      value_00.x = (float)auVar3._0_8_ * fVar5 * _UNK_?;
       value_00.z = fVar6 * _UNK_?;
       UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmitParams::
       ParticleSystem_EmitParams_set_position
@@ -397,9 +391,8 @@ void Assembly-CSharp.dll::RotatingShieldLine::RotatingShieldLine__ctor
     cRam_? = '\x01';
   }
   pVVar1 = (Vector3__Array *)func_?(TypeInfo__UnityEngine__Vector3,3);
-  ppVVar2 = &(this->fields).positions;
-  *ppVVar2 = pVVar1;
-  func_?(ppVVar2,pVVar1);
+  (this->fields).positions = pVVar1;
+  func_?(&(this->fields).positions,pVVar1);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

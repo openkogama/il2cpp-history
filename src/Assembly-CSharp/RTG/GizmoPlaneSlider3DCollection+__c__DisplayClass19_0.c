@@ -22,12 +22,12 @@ int32_t Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DCollection+<>c__DisplayClass
       uVar10 = (this->fields).cameraPos.y;
       fVar11 = (pGVar1->fields)._position3D.z - (this->fields).cameraPos.z;
       s0 = (GizmoPlaneSlider3D *)
-           (((float)uVar8 - (float)uVar10) * ((float)uVar8 - (float)uVar10) +
-            ((float)uVar7 - (float)uVar9) * ((float)uVar7 - (float)uVar9) + fVar11 * fVar11);
+           (((float)uVar7 - (float)uVar9) * ((float)uVar7 - (float)uVar9) +
+            ((float)uVar8 - (float)uVar10) * ((float)uVar8 - (float)uVar10) + fVar11 * fVar11);
       iVar12 = mscorlib.dll::System::Single::Single_CompareTo_1
                          ((Single *)&s0,
-                          ((float)uVar3 - (float)uVar5) * ((float)uVar3 - (float)uVar5) +
                           ((float)uVar2 - (float)uVar4) * ((float)uVar2 - (float)uVar4) +
+                          ((float)uVar3 - (float)uVar5) * ((float)uVar3 - (float)uVar5) +
                           fVar6 * fVar6,(MethodInfo *)0x0);
       return iVar12;
     }

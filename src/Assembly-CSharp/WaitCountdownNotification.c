@@ -110,11 +110,9 @@ code_?:
         (*(code *)(pTVar4->klass->vtable).set_text.method)();
         pNVar9 = (this->fields).countDownFader;
         if (pNVar9 != (NotificationFade *)0x0) {
-          fVar10 = (pNVar9->fields).pauseAt;
-          fVar11 = (pNVar9->fields).duration;
-          if (fVar10 != fVar11) {
-            (pNVar9->fields).currentTime = fVar10;
-            (pNVar9->fields).pauseAt = fVar11;
+          if ((pNVar9->fields).pauseAt != (pNVar9->fields).duration) {
+            (pNVar9->fields).currentTime = (pNVar9->fields).pauseAt;
+            (pNVar9->fields).pauseAt = (pNVar9->fields).duration;
           }
           goto code_?;
         }
@@ -122,8 +120,8 @@ code_?:
     }
   }
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

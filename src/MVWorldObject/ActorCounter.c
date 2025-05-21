@@ -5,8 +5,9 @@ int32_t MVWorldObject.dll::ActorCounter::ActorCounter_Increment
                   (ActorCounter *this,int32_t value,MethodInfo *method)
 
 {
-  (this->fields).count = (this->fields).count + value;
-  return (this->fields).count;
+  iVar1 = value + (this->fields).count;
+  (this->fields).count = iVar1;
+  return iVar1;
 }
 
 

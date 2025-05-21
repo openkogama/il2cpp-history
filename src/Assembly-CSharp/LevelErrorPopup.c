@@ -112,17 +112,12 @@ void Assembly-CSharp.dll::LevelErrorPopup::LevelErrorPopup_OnButtonPressed
              (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
              UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
             );
-  ppTVar1 = &(this->fields).requiredLevelTextureAsset;
-  *ppTVar1 = (Texture2D *)0x0;
-  func_?(ppTVar1,0);
-  ppTVar1 = &(this->fields).playerLevelTextureAsset;
-  *ppTVar1 = (Texture2D *)0x0;
-  func_?(ppTVar1,0);
-  pUVar2 = (this->fields).resultCallback;
-  if (pUVar2 != (UnityAction *)0x0) {
-    pvStack3 = (pUVar2->fields)._._.method;
-    pvStack4 = (pUVar2->fields)._._.method_code;
-    (*(pUVar2->fields)._._.invoke_impl)();
+  (this->fields).requiredLevelTextureAsset = (Texture2D *)0x0;
+  func_?(&(this->fields).requiredLevelTextureAsset,0);
+  (this->fields).playerLevelTextureAsset = (Texture2D *)0x0;
+  func_?(&(this->fields).playerLevelTextureAsset,0);
+  if ((this->fields).resultCallback != (UnityAction *)0x0) {
+    (*(((this->fields).resultCallback)->fields)._._.invoke_impl)();
   }
   return;
 }
@@ -187,25 +182,24 @@ void Assembly-CSharp.dll::LevelErrorPopup::LevelErrorPopup_OnLevelRequirementLoa
   }
   pTVar1 = UnityEngine.UnityWebRequestTextureModule.dll::UnityEngine::Networking::
            DownloadHandlerTexture::DownloadHandlerTexture_GetContent(www,(MethodInfo *)0x0);
-  ppTVar2 = &(this->fields).requiredLevelTextureAsset;
-  *ppTVar2 = pTVar1;
-  func_?(ppTVar2,pTVar1);
-  pTVar1 = *ppTVar2;
+  (this->fields).requiredLevelTextureAsset = pTVar1;
+  func_?(&(this->fields).requiredLevelTextureAsset,pTVar1);
+  pTVar1 = (this->fields).requiredLevelTextureAsset;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                     ((Object_1 *)pTVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar3 == 0) {
+  if (bVar2 == 0) {
     this_00 = (this->fields).requiredLevelImage;
     if (this_00 != (RawImage *)0x0) {
       UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
-                (this_00,(Texture *)*ppTVar2,(MethodInfo *)0x0);
+                (this_00,(Texture *)(this->fields).requiredLevelTextureAsset,(MethodInfo *)0x0);
       return;
     }
     func_?();
-    pcVar4 = (code *)swi(3);
-    (*pcVar4)();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
     return;
   }
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
@@ -231,25 +225,24 @@ void Assembly-CSharp.dll::LevelErrorPopup::LevelErrorPopup_OnPlayerLevelLoaded
   }
   pTVar1 = UnityEngine.UnityWebRequestTextureModule.dll::UnityEngine::Networking::
            DownloadHandlerTexture::DownloadHandlerTexture_GetContent(www,(MethodInfo *)0x0);
-  ppTVar2 = &(this->fields).playerLevelTextureAsset;
-  *ppTVar2 = pTVar1;
-  func_?(ppTVar2,pTVar1);
-  pTVar1 = *ppTVar2;
+  (this->fields).playerLevelTextureAsset = pTVar1;
+  func_?(&(this->fields).playerLevelTextureAsset,pTVar1);
+  pTVar1 = (this->fields).playerLevelTextureAsset;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                     ((Object_1 *)pTVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar3 == 0) {
+  if (bVar2 == 0) {
     this_00 = (this->fields).playerLevelImage;
     if (this_00 != (RawImage *)0x0) {
       UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
-                (this_00,(Texture *)*ppTVar2,(MethodInfo *)0x0);
+                (this_00,(Texture *)(this->fields).playerLevelTextureAsset,(MethodInfo *)0x0);
       return;
     }
     func_?();
-    pcVar4 = (code *)swi(3);
-    (*pcVar4)();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
     return;
   }
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {

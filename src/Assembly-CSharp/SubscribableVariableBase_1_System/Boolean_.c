@@ -37,59 +37,53 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[System::Boolean]::
                (SubscribableVariableBase_1_System_Boolean_ *this,Object *obj,MethodInfo *method)
 
 {
-  pOVar1 = obj;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Type);
     cRam_? = '\x01';
   }
-  if (pOVar1 == (Object *)0x0) {
+  if (obj == (Object *)0x0) {
     return 0;
   }
-  if (this == (SubscribableVariableBase_1_System_Boolean_ *)pOVar1) {
+  if (this == (SubscribableVariableBase_1_System_Boolean_ *)obj) {
     return 1;
   }
-  left = (XNamespace *)mscorlib.dll::System::Object::Object_GetType(pOVar1,(MethodInfo *)0x0);
+  left = (XNamespace *)mscorlib.dll::System::Object::Object_GetType(obj,(MethodInfo *)0x0);
   if (this != (SubscribableVariableBase_1_System_Boolean_ *)0x0) {
-    obj = (Object *)mscorlib.dll::System::Object::Object_GetType((Object *)this,(MethodInfo *)0x0);
+    right = (XNamespace *)
+            mscorlib.dll::System::Object::Object_GetType((Object *)this,(MethodInfo *)0x0);
     if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__Type);
     }
-    bVar2 = System.Xml.Linq.dll::System::Xml::Linq::XNamespace::XNamespace_op_Inequality
-                      (left,(XNamespace *)obj,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
+    bVar1 = System.Xml.Linq.dll::System::Xml::Linq::XNamespace::XNamespace_op_Inequality
+                      (left,right,(MethodInfo *)0x0);
+    if (bVar1 != 0) {
       return 0;
     }
-    pIVar3 = method->klass->rgctx_data;
-    pMVar4 = pIVar3[1].method;
-    obj = (Object *)pIVar3->klass;
-    if (((uint)((Il2CppClass *)obj)->vtable[0].methodPtr & 0x100) == 0) {
-      obj = (Object *)func_?();
+    pMVar2 = method->klass->rgctx_data[1].method;
+    pIVar3 = method->klass->rgctx_data->klass;
+    if (((uint)pIVar3->vtable[0].methodPtr & 0x100) == 0) {
+      pIVar3 = (Il2CppClass *)func_?();
     }
-    if ((((Il2CppClass *)obj)->naturalAligment <= (pOVar1->klass->_1).naturalAligment) &&
-       ((pOVar1->klass->_1).typeHierarchy[((Il2CppClass *)obj)->naturalAligment - 1] ==
-        (Il2CppClass *)obj)) {
+    if ((pIVar3->naturalAligment <= (obj->klass->_1).naturalAligment) &&
+       ((obj->klass->_1).typeHierarchy[pIVar3->naturalAligment - 1] == pIVar3)) {
       if (cRam_? == '\0') {
-        obj = (Object *)&TypeInfo__System__Boolean;
         func_?();
         cRam_? = '\x01';
       }
-      obj = (Object *)((int)&obj + 3);
-      pOVar1 = (Object *)func_?();
+      obj_00 = (Object *)func_?();
       if ((TypeInfo__System__Boolean->_1).cctor_finished_or_no_cctor == 0) {
-        obj = (Object *)TypeInfo__System__Boolean;
         func_?();
       }
-      obj = (Object *)pMVar4->klass->rgctx_data[9].method;
-      bVar2 = mscorlib.dll::System::Boolean::Boolean_Equals
-                        ((Boolean *)&this->fields,pOVar1,(MethodInfo *)obj);
-      return bVar2;
+      bVar1 = mscorlib.dll::System::Boolean::Boolean_Equals
+                        ((Boolean *)&this->fields,obj_00,pMVar2->klass->rgctx_data[9].method);
+      return bVar1;
     }
     func_?();
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  bVar2 = (*pcVar5)();
-  return bVar2;
+  pcVar4 = (code *)swi(3);
+  bVar1 = (*pcVar4)();
+  return bVar1;
 }
 
 
@@ -295,7 +289,7 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[System::Boolean]::
     }
     bVar3 = mscorlib.dll::System::Boolean::Boolean_Equals
                       ((Boolean *)&b,obj,pIVar2->rgctx_data[9].method);
-    return bVar3 == 0;
+    return bVar3 ^ 1;
   }
   func_?();
   pcVar4 = (code *)swi(3);
@@ -332,7 +326,7 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[System::Boolean]::
     }
     bVar3 = mscorlib.dll::System::Boolean::Boolean_Equals
                       ((Boolean *)&b,obj,pIVar2->rgctx_data[9].method);
-    return bVar3 == 0;
+    return bVar3 ^ 1;
   }
   func_?();
   pcVar4 = (code *)swi(3);
@@ -376,7 +370,7 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[System::Boolean]::
       }
       bVar3 = mscorlib.dll::System::Boolean::Boolean_Equals
                         ((Boolean *)&a->fields,obj,pIVar1->rgctx_data[9].method);
-      return bVar3 == 0;
+      return bVar3 ^ 1;
     }
   }
   func_?();

@@ -88,26 +88,28 @@ void Assembly-CSharp.dll::UGUI::Framework::Scripts::Shared::VehicleUI::SpeedOMet
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  ppMVar1 = &(this->fields).rigidBody;
-  *ppMVar1 = mvRigidBody;
-  func_?(ppMVar1,mvRigidBody);
-  x = *ppMVar1;
+  (this->fields).rigidBody = mvRigidBody;
+  func_?(&(this->fields).rigidBody,mvRigidBody);
+  x = (this->fields).rigidBody;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                     ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-  (this->fields).updateSpeed = bVar2;
+  (this->fields).updateSpeed = bVar1;
   this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                       ((Component *)this,(MethodInfo *)0x0);
   if (this_01 != (GameObject *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
               (this_01,(this->fields).updateSpeed,(MethodInfo *)0x0);
-    bVar2 = (this->fields).alwaysShow;
-    (this->fields).noHiding = bVar2 != 0;
+    bVar1 = 1;
+    if (insideVehicle == 0) {
+      bVar1 = (this->fields).alwaysShow;
+    }
+    (this->fields).noHiding = bVar1 != 0;
     this_00 = (this->fields).speedGroup;
     value = _UNK_?;
-    if (bVar2 == 0) {
+    if ((this->fields).noHiding == 0) {
       value = 0.0;
     }
     if (this_00 != (CanvasGroup *)0x0) {
@@ -117,8 +119,8 @@ void Assembly-CSharp.dll::UGUI::Framework::Scripts::Shared::VehicleUI::SpeedOMet
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

@@ -39,9 +39,8 @@ code_?:
          (Action *)
          mscorlib.dll::System::Delegate::Delegate_Combine
                    ((Delegate *)pAVar4,(Delegate *)this_01,(MethodInfo *)0x0);
-    _pAStack00000014 = CONCAT44(TypeInfo__System__Action,pAStack2);
+    pAStack5 = (Action__Class *)0x0;
     if (pAStack2 == (Action *)0x0) {
-      pAStack5 = (Action__Class *)0x0;
       (pNVar3->fields).OnFinished = (Action *)0x0;
 code_?:
       pAStack2 = (Action *)&(pNVar3->fields).OnFinished;
@@ -50,10 +49,11 @@ code_?:
       (this->fields).countDownStartTime = fVar6;
       return;
     }
-    pAVar4 = (Action *)0x0;
+    pAVar4 = (Action *)pAStack5;
     if (pAStack2->klass == TypeInfo__System__Action) {
       pAVar4 = pAStack2;
     }
+    pAStack5 = TypeInfo__System__Action;
     if (pAVar4 == (Action *)0x0) goto code_?;
     (pNVar3->fields).OnFinished = pAVar4;
     pAStack5 = (Action__Class *)(Action *)0x0;
@@ -64,7 +64,8 @@ code_?:
     if (pAStack5 != (Action__Class *)0x0) goto code_?;
   }
   pAStack5 = pAVar1;
-  _pAStack00000014 = func_?();
+  pAStack2 = (Action *)func_?();
+  pAStack5 = extraout_ECX;
 code_?:
   func_?();
   pcVar7 = (code *)swi(3);
@@ -113,11 +114,9 @@ code_?:
       (*(code *)(pTVar3->klass->vtable).set_text.method)();
       pNVar7 = (this->fields).countDownFader;
       if (pNVar7 != (NotificationFade *)0x0) {
-        fVar1 = (pNVar7->fields).pauseAt;
-        fVar2 = (pNVar7->fields).duration;
-        if (fVar1 != fVar2) {
-          (pNVar7->fields).currentTime = fVar1;
-          (pNVar7->fields).pauseAt = fVar2;
+        if ((pNVar7->fields).pauseAt != (pNVar7->fields).duration) {
+          (pNVar7->fields).currentTime = (pNVar7->fields).pauseAt;
+          (pNVar7->fields).pauseAt = (pNVar7->fields).duration;
         }
         goto code_?;
       }

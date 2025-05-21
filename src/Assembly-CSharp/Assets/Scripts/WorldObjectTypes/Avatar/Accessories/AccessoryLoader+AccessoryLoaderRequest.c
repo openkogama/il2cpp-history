@@ -286,9 +286,8 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::Avatar::Accessories
     func_?(&TypeInfo__AsyncWWWManager);
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).accessoryCreatedCallback;
-  *ppAVar1 = (Action_2_Int32_AvatarAccessory_ *)0x0;
-  func_?(ppAVar1,0);
+  (this->fields).accessoryCreatedCallback = (Action_2_Int32_AvatarAccessory_ *)0x0;
+  func_?(&(this->fields).accessoryCreatedCallback,0);
   this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
              *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
   DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::

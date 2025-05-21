@@ -7,24 +7,24 @@ bool Assembly-CSharp.dll::WaitForFrames+<Frames>d__0::WaitForFrames_Frames_d_0_M
 {
   iVar1 = (this->fields).__1__state;
   if ((iVar1 == 0) || (iVar1 == 1)) {
-    iVar1 = (this->fields).frameCount;
     (this->fields).__1__state = -1;
-    if (0 < iVar1) {
+    if (0 < (this->fields).frameCount) {
+      piVar2 = &(this->fields).frameCount;
+      *piVar2 = *piVar2 + -1;
       (this->fields).__2__current = (Object *)0x0;
-      (this->fields).frameCount = iVar1 + -1;
       func_?(&(this->fields).__2__current,0);
       (this->fields).__1__state = 1;
       return 1;
     }
-    pUVar2 = (this->fields).callback;
-    if (pUVar2 == (UnityAction *)0x0) {
+    pUVar3 = (this->fields).callback;
+    if (pUVar3 == (UnityAction *)0x0) {
       func_?();
-      pcVar3 = (code *)swi(3);
-      bVar4 = (*pcVar3)();
-      return bVar4;
+      pcVar4 = (code *)swi(3);
+      bVar5 = (*pcVar4)();
+      return bVar5;
     }
-    (*(pUVar2->fields)._._.invoke_impl)
-              ((pUVar2->fields)._._.method_code,(pUVar2->fields)._._.method);
+    (*(pUVar3->fields)._._.invoke_impl)
+              ((pUVar3->fields)._._.method_code,(pUVar3->fields)._._.method);
   }
   return 0;
 }

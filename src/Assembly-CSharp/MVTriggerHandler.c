@@ -111,32 +111,38 @@ void Assembly-CSharp.dll::MVTriggerHandler::MVTriggerHandler_OnDestroy
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
+  DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
+  DStack_6._version = 0;
+  DStack_6._index = 0;
+  DStack_6._current.key = 0;
+  DStack_6._current.value = (Object *)0x0;
+  DStack_6._getEnumeratorRetType = 0;
   this_00 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields).triggerBoxEvents;
   (this->fields).wasResetThisFrame = 1;
   if (this_00 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
     method_00 = (MethodInfo *)&UNK_?;
-    pDVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+    pDVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
              ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                       (&DStack_7,this_00,
+                       (&DStack_8,this_00,
                         MethodInfo__System__Collections__Generic__Dictionary<int,_TriggerBoxEvents>__GetEnumerator__
                        );
-    uStack_8 = 0;
-    DStack_9._dictionary = pDVar6->_dictionary;
-    DStack_9._version = pDVar6->_version;
-    DStack_9._index = pDVar6->_index;
-    DStack_9._current.key = (pDVar6->_current).key;
-    DStack_9._16_8_ = *(undefined8 *)&(pDVar6->_current).value;
+    uStack_9 = 0;
+    DStack_6._dictionary = pDVar7->_dictionary;
+    DStack_6._version = pDVar7->_version;
+    DStack_6._index = pDVar7->_index;
+    DStack_6._current.key = (pDVar7->_current).key;
+    DStack_6._16_8_ = *(undefined8 *)&(pDVar7->_current).value;
     uStack_1 = 1;
-    pDStack_10 = &DStack_9;
+    pDStack_10 = &DStack_6;
     while( true ) {
       bVar11 = mscorlib.dll::System::Collections::Generic::
               Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
               Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                        (&DStack_9,
+                        (&DStack_6,
                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_TriggerBoxEvents>__MoveNext__
                         );
       if (bVar11 == 0) break;
-      this_01 = DStack_9._current.value;
+      this_01 = DStack_6._current.value;
       method_00 = (MethodInfo *)MVTriggerHandler_get_TriggingCollider(this,(MethodInfo *)0x0);
       if ((TriggerBoxEvents *)this_01 == (TriggerBoxEvents *)0x0) goto code_?;
       TriggerBoxEvents::TriggerBoxEvents_OnMVTriggerExit
@@ -144,7 +150,7 @@ void Assembly-CSharp.dll::MVTriggerHandler::MVTriggerHandler_OnDestroy
     }
     uStack_1 = 0xffffffff;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)&DStack_9,
+              ((Object *)&DStack_6,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_TriggerBoxEvents>__Dispose__
                ,method_00);
@@ -289,32 +295,38 @@ void Assembly-CSharp.dll::MVTriggerHandler::MVTriggerHandler_Reset
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
+  DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
+  DStack_6._version = 0;
+  DStack_6._index = 0;
+  DStack_6._current.key = 0;
+  DStack_6._current.value = (Object *)0x0;
+  DStack_6._getEnumeratorRetType = 0;
   this_00 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields).triggerBoxEvents;
   (this->fields).wasResetThisFrame = 1;
   if (this_00 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
     method_00 = (MethodInfo *)&UNK_?;
-    pDVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+    pDVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
              ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                       (&DStack_7,this_00,
+                       (&DStack_8,this_00,
                         MethodInfo__System__Collections__Generic__Dictionary<int,_TriggerBoxEvents>__GetEnumerator__
                        );
-    uStack_8 = 0;
-    DStack_9._dictionary = pDVar6->_dictionary;
-    DStack_9._version = pDVar6->_version;
-    DStack_9._index = pDVar6->_index;
-    DStack_9._current.key = (pDVar6->_current).key;
-    DStack_9._16_8_ = *(undefined8 *)&(pDVar6->_current).value;
+    uStack_9 = 0;
+    DStack_6._dictionary = pDVar7->_dictionary;
+    DStack_6._version = pDVar7->_version;
+    DStack_6._index = pDVar7->_index;
+    DStack_6._current.key = (pDVar7->_current).key;
+    DStack_6._16_8_ = *(undefined8 *)&(pDVar7->_current).value;
     uStack_1 = 1;
-    pDStack_10 = &DStack_9;
+    pDStack_10 = &DStack_6;
     while( true ) {
       bVar11 = mscorlib.dll::System::Collections::Generic::
               Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
               Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                        (&DStack_9,
+                        (&DStack_6,
                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_TriggerBoxEvents>__MoveNext__
                         );
       if (bVar11 == 0) break;
-      this_01 = DStack_9._current.value;
+      this_01 = DStack_6._current.value;
       method_00 = (MethodInfo *)MVTriggerHandler_get_TriggingCollider(this,(MethodInfo *)0x0);
       if ((TriggerBoxEvents *)this_01 == (TriggerBoxEvents *)0x0) goto code_?;
       TriggerBoxEvents::TriggerBoxEvents_OnMVTriggerExit
@@ -322,7 +334,7 @@ void Assembly-CSharp.dll::MVTriggerHandler::MVTriggerHandler_Reset
     }
     uStack_1 = 0xffffffff;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)&DStack_9,
+              ((Object *)&DStack_6,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_TriggerBoxEvents>__Dispose__
                ,method_00);
@@ -445,25 +457,26 @@ void Assembly-CSharp.dll::MVTriggerHandler::MVTriggerHandler_Update
                           (pDVar1,
                            MethodInfo__System__Collections__Generic__Dictionary<int,_TriggerBoxEvents>__get_Keys__
                           );
-      this_02 = (TriggerBoxEvents *)
+      this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                 MVTriggerHandler_GetMissingKeysInDictionary
                           (this,(Dictionary_2_TKey_TValue_KeyCollection_System_Int32_TriggerBoxEvents_
                                  *)keys_00,(this->fields).triggerBoxEvents,(MethodInfo *)0x0);
-      index_00 = 0;
+      iVar2 = 0;
       if (this_01 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-        for (; index_00 < (this_01->fields)._size; index_00 = index_00 + 1) {
-          RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+        for (; iVar2 < (this_01->fields)._size; iVar2 = iVar2 + 1) {
+          RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                   RegularExpressions::RegexCharClass+SingleRange]::
                   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            (this_01,index_00,
+                            (this_01,iVar2,
                              MethodInfo__System__Collections__Generic__List<int>__get_Item_int_);
-          pDVar3 = (this->fields).triggerBoxEvents;
-          if (pDVar3 == (Dictionary_2_System_Int32_TriggerBoxEvents_ *)0x0) goto code_?;
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-          Dictionary_2_System_Int32_System_Object__get_Item
-                    ((Dictionary_2_System_Int32_System_Object_ *)pDVar3,(int32_t)RVar2,
-                     MethodInfo__System__Collections__Generic__Dictionary<int,_TriggerBoxEvents>__get_Item_int_
-                    );
+          pDVar4 = (this->fields).triggerBoxEvents;
+          if (pDVar4 == (Dictionary_2_System_Int32_TriggerBoxEvents_ *)0x0) goto code_?;
+          pTVar5 = (TriggerBoxEvents *)
+                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+                   Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                             ((Dictionary_2_System_Int32_System_Object_ *)pDVar4,(int32_t)RVar3,
+                              MethodInfo__System__Collections__Generic__Dictionary<int,_TriggerBoxEvents>__get_Item_int_
+                             );
           this_01 = keys_00;
           if (cRam_? == '\0') {
             func_?();
@@ -471,144 +484,132 @@ void Assembly-CSharp.dll::MVTriggerHandler::MVTriggerHandler_Update
             cRam_? = '\x01';
             this_01 = keys_00;
           }
-          pCVar4 = (this->fields).triggingCollider;
-          ppCVar5 = &(this->fields).triggingCollider;
+          pCVar6 = (this->fields).triggingCollider;
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          pTVar6 = (TriggerBoxEvents *)&UNK_?;
+          this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                    &UNK_?;
           bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                            ((Object_1 *)pCVar4,(Object_1 *)0x0,(MethodInfo *)0x0);
+                            ((Object_1 *)pCVar6,(Object_1 *)0x0,(MethodInfo *)0x0);
           if (bVar7 != 0) {
-            pCVar8 = (Collider *)
+            pCVar6 = (Collider *)
                      UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
                                ((Component *)this,
                                 UnityEngine__Collider_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Collider>__
                                );
-            *ppCVar5 = pCVar8;
+            (this->fields).triggingCollider = pCVar6;
             func_?();
           }
-          if (pTVar6 == (TriggerBoxEvents *)0x0) goto code_?;
-          TriggerBoxEvents::TriggerBoxEvents_OnMVTriggerExit(pTVar6,*ppCVar5,(MethodInfo *)0x0);
-          pDVar3 = (this->fields).triggerBoxEvents;
-          if (pDVar3 == (Dictionary_2_System_Int32_TriggerBoxEvents_ *)0x0) goto code_?;
+          if (pTVar5 == (TriggerBoxEvents *)0x0) goto code_?;
+          TriggerBoxEvents::TriggerBoxEvents_OnMVTriggerExit
+                    (pTVar5,(this->fields).triggingCollider,(MethodInfo *)0x0);
+          pDVar4 = (this->fields).triggerBoxEvents;
+          if (pDVar4 == (Dictionary_2_System_Int32_TriggerBoxEvents_ *)0x0) goto code_?;
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
           Dictionary_2_System_Int32_System_Object__Remove
-                    ((Dictionary_2_System_Int32_System_Object_ *)pDVar3,(int32_t)pCVar4,
+                    ((Dictionary_2_System_Int32_System_Object_ *)pDVar4,(int32_t)RVar3,
                      MethodInfo__System__Collections__Generic__Dictionary<int,_TriggerBoxEvents>__Remove_int_
                     );
           keys_00 = this_01;
         }
-        index = (undefined1 *)0x0;
-        if (this_02 != (TriggerBoxEvents *)0x0) {
-          while ((int)index < (int)(this_02->fields)._.m_CancellationTokenSource) {
-            RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+        iVar2 = 0;
+        if (this_02 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+          while (iVar2 < (this_02->fields)._size) {
+            RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                     RegularExpressions::RegexCharClass+SingleRange]::
                     List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                              ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                               this_02,(int32_t)index,
+                              (this_02,iVar2,
                                MethodInfo__System__Collections__Generic__List<int>__get_Item_int_);
-            pDVar3 = (this->fields).triggerBoxEvents;
+            pDVar4 = (this->fields).triggerBoxEvents;
             this_00 = (this->fields).newTriggerBoxEvents;
             if ((this_00 == (Dictionary_2_System_Int32_TriggerBoxEvents_ *)0x0) ||
                (value = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                         Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item
                                   ((Dictionary_2_System_Int32_System_Object_ *)this_00,
-                                   (int32_t)RVar2,
+                                   (int32_t)RVar3,
                                    MethodInfo__System__Collections__Generic__Dictionary<int,_TriggerBoxEvents>__get_Item_int_
-                                  ), pDVar3 == (Dictionary_2_System_Int32_TriggerBoxEvents_ *)0x0))
+                                  ), pDVar4 == (Dictionary_2_System_Int32_TriggerBoxEvents_ *)0x0))
             goto code_?;
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
             Dictionary_2_System_Int32_System_Object__Add
-                      ((Dictionary_2_System_Int32_System_Object_ *)pDVar3,(int32_t)RVar2,value,
+                      ((Dictionary_2_System_Int32_System_Object_ *)pDVar4,(int32_t)RVar3,value,
                        MethodInfo__System__Collections__Generic__Dictionary<int,_TriggerBoxEvents>__Add_int__TriggerBoxEvents_
                       );
-            pDVar3 = (this->fields).triggerBoxEvents;
-            if (pDVar3 == (Dictionary_2_System_Int32_TriggerBoxEvents_ *)0x0) goto code_?;
-            pTVar6 = (TriggerBoxEvents *)
-                      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System
-                      ::Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                                ((Dictionary_2_System_Int32_System_Object_ *)pDVar3,(int32_t)RVar2,
-                                 MethodInfo__System__Collections__Generic__Dictionary<int,_TriggerBoxEvents>__get_Item_int_
-                                );
+            pDVar4 = (this->fields).triggerBoxEvents;
+            if (pDVar4 == (Dictionary_2_System_Int32_TriggerBoxEvents_ *)0x0) goto code_?;
+            pTVar5 = (TriggerBoxEvents *)
+                     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+                     Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                               ((Dictionary_2_System_Int32_System_Object_ *)pDVar4,(int32_t)RVar3,
+                                MethodInfo__System__Collections__Generic__Dictionary<int,_TriggerBoxEvents>__get_Item_int_
+                               );
             if (cRam_? == '\0') {
               func_?();
               func_?();
               cRam_? = '\x01';
             }
-            pCVar4 = (this->fields).triggingCollider;
-            ppCVar5 = &(this->fields).triggingCollider;
+            pCVar6 = (this->fields).triggingCollider;
             if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
             bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                              ((Object_1 *)pCVar4,(Object_1 *)0x0,(MethodInfo *)0x0);
+                              ((Object_1 *)pCVar6,(Object_1 *)0x0,(MethodInfo *)0x0);
             if (bVar7 != 0) {
-              pCVar4 = (Collider *)
+              pCVar6 = (Collider *)
                        UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
                                  ((Component *)this,
                                   UnityEngine__Collider_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Collider>__
                                  );
-              *ppCVar5 = pCVar4;
+              (this->fields).triggingCollider = pCVar6;
               func_?();
             }
-            pCVar4 = *ppCVar5;
-            if (pTVar6 == (TriggerBoxEvents *)0x0) goto code_?;
+            this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                      (this->fields).triggingCollider;
+            if (pTVar5 == (TriggerBoxEvents *)0x0) goto code_?;
             if (cRam_? == '\0') {
               func_?();
               cRam_? = '\x01';
             }
-            this_02 = pTVar6;
+            woid_00 = (void *)0x0;
+            puVar8 = &UNK_?;
             pMVar9 = TriggerBoxEvents::TriggerBoxEvents_GetValidWorldObject
-                                (pTVar6,pCVar4,(MethodInfo *)0x0);
+                               (pTVar5,(Collider *)this_02,(MethodInfo *)0x0);
             if (pMVar9 != (MVWorldObjectClient *)0x0) {
               pMVar10 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
               if ((pMVar10 == (MVNetworkGame *)0x0) ||
                  (pMVar11 = (pMVar10->fields)._NetworkGameStateListener_k__BackingField,
                  pMVar11 == (MVNetworkGameStateListener *)0x0)) goto code_?;
               if ((pMVar11->fields).currentGameState == 1) {
-                pEVar12 = (pTVar6->fields).TriggerEnterOverride;
-                (pTVar6->fields).isInTrigger = 1;
-                pLVar13 = pLRam00000008;
-                if (pEVar12 == (EventHandler_1_TriggerEventArgs_ *)0x0) {
-                  pEVar12 = (pTVar6->fields).TriggerEnter;
-                  if (pEVar12 == (EventHandler_1_TriggerEventArgs_ *)0x0) goto code_?;
-                  this_03 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?()
-                  ;
-                  if (cRam_? == '\0') {
-                    func_?();
-                    this_03 = (UxmlObjectListAttributeDescription_1_System_Object_ *)&UNK_?;
-                    cRam_? = '\x01';
-                  }
-                  if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
-                    func_?();
-                    this_03 = (UxmlObjectListAttributeDescription_1_System_Object_ *)&UNK_?;
+                (pTVar5->fields).isInTrigger = 1;
+                if ((pTVar5->fields).TriggerEnterOverride == (EventHandler_1_TriggerEventArgs_ *)0x0
+                   ) {
+                  if ((pTVar5->fields).TriggerEnter != (EventHandler_1_TriggerEventArgs_ *)0x0) {
+                    pEVar12 = (pTVar5->fields).TriggerEnter;
+                    woid = (pMVar9->fields)._.id;
+                    this_03 = (TriggerEventArgs *)func_?();
+                    TriggerEventArgs::TriggerEventArgs__ctor(this_03,woid,(MethodInfo *)0x0);
+                    this = (pEVar12->fields)._._.method;
+                    woid_00 = (pEVar12->fields)._._.method_code;
+                    this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                              &UNK_?;
+                    (*(pEVar12->fields)._._.invoke_impl)(woid_00,puVar8);
                   }
                 }
                 else {
-                  this_03 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?()
-                  ;
-                  if (cRam_? == '\0') {
-                    func_?();
-                    this_03 = (UxmlObjectListAttributeDescription_1_System_Object_ *)&UNK_?;
-                    cRam_? = '\x01';
-                  }
-                  if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
-                    func_?();
-                    this_03 = (UxmlObjectListAttributeDescription_1_System_Object_ *)&UNK_?;
-                  }
+                  pEVar12 = (pTVar5->fields).TriggerEnterOverride;
+                  woid_00 = (void *)(pMVar9->fields)._.id;
+                  this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                            func_?();
+                  TriggerEventArgs::TriggerEventArgs__ctor
+                            ((TriggerEventArgs *)this_02,(int32_t)woid_00,(MethodInfo *)0x0);
+                  if (pEVar12 == (EventHandler_1_TriggerEventArgs_ *)0x0) goto code_?;
+                  (*(pEVar12->fields)._._.invoke_impl)();
                 }
-                UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-                UxmlObjectListAttributeDescription`1[System::Object]::
-                UxmlObjectListAttributeDescription_1_System_Object___ctor(this_03,(MethodInfo *)0x0)
-                ;
-                (this_03->fields)._._defaultValue_k__BackingField = pLVar13;
-                (*(pEVar12->fields)._._.invoke_impl)((pEVar12->fields)._._.method_code);
               }
             }
-code_?:
             if ((this->fields).wasResetThisFrame != 0) break;
-            index = (undefined1 *)((int)&pCVar4->klass + 1);
+            iVar2 = (int)woid_00 + 1;
           }
           pDVar1 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                     *)(this->fields).newTriggerBoxEvents;
@@ -628,8 +629,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -656,9 +657,8 @@ void Assembly-CSharp.dll::MVTriggerHandler::MVTriggerHandler__ctor
             (pDVar1,
              MethodInfo__System__Collections__Generic__Dictionary<int,_TriggerBoxEvents>__Dictionary__
             );
-  ppDVar2 = &(this->fields).triggerBoxEvents;
-  *ppDVar2 = (Dictionary_2_System_Int32_TriggerBoxEvents_ *)pDVar1;
-  func_?(ppDVar2,pDVar1);
+  (this->fields).triggerBoxEvents = (Dictionary_2_System_Int32_TriggerBoxEvents_ *)pDVar1;
+  func_?(&(this->fields).triggerBoxEvents,pDVar1);
   pDVar1 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *)
            func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_TriggerBoxEvents>
                           );
@@ -668,9 +668,8 @@ void Assembly-CSharp.dll::MVTriggerHandler::MVTriggerHandler__ctor
             (pDVar1,
              MethodInfo__System__Collections__Generic__Dictionary<int,_TriggerBoxEvents>__Dictionary__
             );
-  ppDVar2 = &(this->fields).newTriggerBoxEvents;
-  *ppDVar2 = (Dictionary_2_System_Int32_TriggerBoxEvents_ *)pDVar1;
-  func_?(ppDVar2,pDVar1);
+  (this->fields).newTriggerBoxEvents = (Dictionary_2_System_Int32_TriggerBoxEvents_ *)pDVar1;
+  func_?(&(this->fields).newTriggerBoxEvents,pDVar1);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
@@ -692,21 +691,20 @@ Assembly-CSharp.dll::MVTriggerHandler::MVTriggerHandler_get_TriggingCollider
     cRam_? = '\x01';
   }
   pCVar1 = (this->fields).triggingCollider;
-  ppCVar2 = &(this->fields).triggingCollider;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                     ((Object_1 *)pCVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar3 != 0) {
+  if (bVar2 != 0) {
     pCVar1 = (Collider *)
              UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
                        ((Component *)this,
                         UnityEngine__Collider_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Collider>__
                        );
-    *ppCVar2 = pCVar1;
-    func_?(ppCVar2,pCVar1);
+    (this->fields).triggingCollider = pCVar1;
+    func_?(&(this->fields).triggingCollider,pCVar1);
   }
-  return *ppCVar2;
+  return (this->fields).triggingCollider;
 }
 

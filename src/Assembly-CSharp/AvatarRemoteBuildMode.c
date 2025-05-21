@@ -64,7 +64,6 @@ void Assembly-CSharp.dll::AvatarRemoteBuildMode::AvatarRemoteBuildMode_Initializ
                (pAVar1->klass->vtable).Activate.methodPtr);
     if (avatar != (MVBuildModeAvatar *)0x0) {
       pUVar2 = (avatar->fields)._._.PositionChanged;
-      ppUVar3 = &(avatar->fields)._._.PositionChanged;
       this_00 = (UnityAction_2_System_Object_System_Object_ *)
                 func_?(
                                TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
@@ -74,34 +73,19 @@ void Assembly-CSharp.dll::AvatarRemoteBuildMode::AvatarRemoteBuildMode_Initializ
                 (this_00,(Object *)this,
                  MethodInfo__AvatarRemoteBuildMode__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_
                  ,(MethodInfo *)0x0);
-      pUStack4 =
-           (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)
-           mscorlib.dll::System::Delegate::Delegate_Combine
-                     ((Delegate *)pUVar2,(Delegate *)this_00,(MethodInfo *)0x0);
-      unaff_EDI = 
-      TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
-      if (pUStack4 ==
-          (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)0x0) {
-        *ppUVar3 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
+      pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine
+                         ((Delegate *)pUVar2,(Delegate *)this_00,(MethodInfo *)0x0);
+      if (pDVar3 == (Delegate *)0x0) {
+        (avatar->fields)._._.PositionChanged =
+             (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
         func_?();
         return;
       }
-      pUStack4 =
-           TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
-      ;
       pUVar2 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
       if (pUVar2 != (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) {
-        *ppUVar3 = pUVar2;
-        unaff_EDI = 
-        TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
-        pUStack4 =
-             TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
-        ;
-        pUStack4 =
-             (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)func_?()
-        ;
-        if (pUStack4 !=
-            (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)0x0) {
+        (avatar->fields)._._.PositionChanged = pUVar2;
+        iVar4 = func_?();
+        if (iVar4 != 0) {
           func_?();
           return;
         }
@@ -111,7 +95,6 @@ void Assembly-CSharp.dll::AvatarRemoteBuildMode::AvatarRemoteBuildMode_Initializ
   }
   func_?();
 code_?:
-  pUStack4 = unaff_EDI;
   func_?();
   pcVar5 = (code *)swi(3);
   (*pcVar5)();

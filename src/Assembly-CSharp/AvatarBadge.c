@@ -13,11 +13,9 @@ void Assembly-CSharp.dll::AvatarBadge::AvatarBadge_Initialize
     func_?(&TypeInfo__UnityEngine__Events__UnityAction);
     cRam_? = '\x01';
   }
-  (this->fields).ownerActorId = ownerActorId;
   pSVar1 = (this->fields).scaleAnimation;
+  (this->fields).ownerActorId = ownerActorId;
   if (pSVar1 == (ScaleAnimations *)0x0) {
-    func_?();
-code_?:
     func_?();
 code_?:
     func_?();
@@ -37,66 +35,72 @@ code_?:
     if (pSVar2 == (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0) {
       (pSVar1->fields).OnIntermediateScaleAnimationStopped =
            (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0;
-code_?:
-      func_?();
-      if ((TypeInfo__LevelingManager->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+    }
+    else {
+      pSVar3 = (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0;
+      if (pSVar2->klass == TypeInfo__ScaleAnimationBase__OnScaleAnimationStoppedDelegate) {
+        pSVar3 = pSVar2;
       }
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
+      if (pSVar3 == (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0)
+      goto code_?;
+      (pSVar1->fields).OnIntermediateScaleAnimationStopped = pSVar3;
+      pSVar3 = (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0;
+      if (pSVar2->klass == TypeInfo__ScaleAnimationBase__OnScaleAnimationStoppedDelegate) {
+        pSVar3 = pSVar2;
       }
-      if ((TypeInfo__LevelingManager->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      if (TypeInfo__LevelingManager->static_fields->_IsInitialized_k__BackingField != 0) {
-        AvatarBadge_OnLevelingInitialized(this,(MethodInfo *)0x0);
-        return;
-      }
-      if ((TypeInfo__LevelingManager->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      pUVar3 = TypeInfo__LevelingManager->static_fields->OnLevelingInitialized;
-      this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-      NavMesh_OnNavMeshPreUpdate__ctor
-                (this_01,(Object *)this,MethodInfo__AvatarBadge__OnLevelingInitialized__,
-                 (MethodInfo *)0x0);
-      pUVar3 = (UnityAction *)
-               mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)pUVar3,(Delegate *)this_01,(MethodInfo *)0x0);
-      if (pUVar3 == (UnityAction *)0x0) {
-        TypeInfo__LevelingManager->static_fields->OnLevelingInitialized = (UnityAction *)0x0;
-code_?:
-        func_?();
-        return;
-      }
-      pUVar4 = (UnityAction *)0x0;
-      if (pUVar3->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-        pUVar4 = pUVar3;
-      }
-      if (pUVar4 != (UnityAction *)0x0) {
-        TypeInfo__LevelingManager->static_fields->OnLevelingInitialized = pUVar4;
-        pUVar4 = (UnityAction *)0x0;
-        if (pUVar3->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-          pUVar4 = pUVar3;
-        }
-        if (pUVar4 != (UnityAction *)0x0) goto code_?;
-        goto code_?;
-      }
+      if (pSVar3 == (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0)
       goto code_?;
     }
-    pSVar5 = (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0;
-    if (pSVar2->klass == TypeInfo__ScaleAnimationBase__OnScaleAnimationStoppedDelegate) {
-      pSVar5 = pSVar2;
+    this = (AvatarBadge *)&(pSVar1->fields).OnIntermediateScaleAnimationStopped;
+    func_?();
+    if ((TypeInfo__LevelingManager->_1).cctor_finished_or_no_cctor == 0) {
+      this = (AvatarBadge *)&UNK_?;
+      func_?();
     }
-    if (pSVar5 == (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0) goto code_?;
-    (pSVar1->fields).OnIntermediateScaleAnimationStopped = pSVar5;
-    pSVar5 = (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0;
-    if (pSVar2->klass == TypeInfo__ScaleAnimationBase__OnScaleAnimationStoppedDelegate) {
-      pSVar5 = pSVar2;
+    if (cRam_? == '\0') {
+      this = (AvatarBadge *)&UNK_?;
+      func_?();
+      cRam_? = '\x01';
     }
-    if (pSVar5 != (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0) goto code_?;
+    if ((TypeInfo__LevelingManager->_1).cctor_finished_or_no_cctor == 0) {
+      this = (AvatarBadge *)&UNK_?;
+      func_?();
+    }
+    if (TypeInfo__LevelingManager->static_fields->_IsInitialized_k__BackingField != 0) {
+      AvatarBadge_OnLevelingInitialized(this,(MethodInfo *)0x0);
+      return;
+    }
+    if ((TypeInfo__LevelingManager->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    pUVar4 = TypeInfo__LevelingManager->static_fields->OnLevelingInitialized;
+    this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (this_01,(Object *)0x0,MethodInfo__AvatarBadge__OnLevelingInitialized__,
+               (MethodInfo *)0x0);
+    pUVar4 = (UnityAction *)
+             mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pUVar4,(Delegate *)this_01,(MethodInfo *)0x0);
+    if (pUVar4 == (UnityAction *)0x0) {
+      TypeInfo__LevelingManager->static_fields->OnLevelingInitialized = (UnityAction *)0x0;
+code_?:
+      func_?();
+      return;
+    }
+    pUVar5 = (UnityAction *)0x0;
+    if (pUVar4->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+      pUVar5 = pUVar4;
+    }
+    if (pUVar5 != (UnityAction *)0x0) {
+      TypeInfo__LevelingManager->static_fields->OnLevelingInitialized = pUVar5;
+      pUVar5 = (UnityAction *)0x0;
+      if (pUVar4->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+        pUVar5 = pUVar4;
+      }
+      if (pUVar5 != (UnityAction *)0x0) goto code_?;
+      goto code_?;
+    }
   }
   func_?();
 code_?:
@@ -381,11 +385,11 @@ void Assembly-CSharp.dll::AvatarBadge::AvatarBadge_OnLevelingInitialized
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if ((pMVar1 != (MVNetworkGame *)0x0) &&
      (this_00 = (pMVar1->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) {
-    unaff_EDI = (UnityAction_1_System_Int32___Class *)
-                MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe
-                          (this_00,(this->fields).ownerActorId,(MethodInfo *)0x0);
-    if (unaff_EDI != (UnityAction_1_System_Int32___Class *)0x0) {
-      IStack_2.m_value = (unaff_EDI->_0).byval_arg.data.__klassIndex;
+    pMVar2 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe
+                       (this_00,(this->fields).ownerActorId,(MethodInfo *)0x0);
+    unaff_EDI = (UnityAction_1_System_Int32___Class *)this;
+    if (pMVar2 != (MVPlayer *)0x0) {
+      IStack_3.m_value = (pMVar2->fields).level;
       if (cRam_? == '\0') {
         func_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
         func_?(&
@@ -394,7 +398,7 @@ void Assembly-CSharp.dll::AvatarBadge::AvatarBadge_OnLevelingInitialized
         func_?(&TypeInfo__BadgeManager);
         cRam_? = '\x01';
       }
-      level.m_value = IStack_2.m_value;
+      level.m_value = IStack_3.m_value;
       this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
                  *)func_?(
                                   TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>
@@ -412,13 +416,12 @@ void Assembly-CSharp.dll::AvatarBadge::AvatarBadge_OnLevelingInitialized
                 (level.m_value,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_02,
                  (MethodInfo *)0x0);
       this_01 = (this->fields).levelText;
-      value = mscorlib.dll::System::Int32::Int32_ToString(&IStack_2,(MethodInfo *)0x0);
+      value = mscorlib.dll::System::Int32::Int32_ToString(&IStack_3,(MethodInfo *)0x0);
       unaff_ESI = (Delegate *)0x0;
       if (this_01 != (TextMesh *)0x0) {
         UnityEngine.TextRenderingModule.dll::UnityEngine::TextMesh::TextMesh_set_text
                   (this_01,value,(MethodInfo *)0x0);
-        pIVar3 = &(unaff_EDI->_0).this_arg;
-        a = (Delegate *)(pIVar3->data).typeHandle;
+        pUVar4 = (pMVar2->fields).OnLevelChanged;
         this_03 = (UnityAction_1_System_Int32Enum_ *)
                   func_?(TypeInfo__UnityEngine__Events__UnityAction<int>);
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
@@ -426,26 +429,26 @@ void Assembly-CSharp.dll::AvatarBadge::AvatarBadge_OnLevelingInitialized
                   (this_03,(Object *)this,MethodInfo__AvatarBadge__UpdateBadge_int_,
                    (MethodInfo *)0x0);
         unaff_ESI = mscorlib.dll::System::Delegate::Delegate_Combine
-                              (a,(Delegate *)this_03,(MethodInfo *)0x0);
+                              ((Delegate *)pUVar4,(Delegate *)this_03,(MethodInfo *)0x0);
         unaff_EDI = TypeInfo__UnityEngine__Events__UnityAction<int>;
         if (unaff_ESI == (Delegate *)0x0) {
-          (pIVar3->data).dummy = (void *)0x0;
-          pDStack4 = (Delegate *)pIVar3;
-          pUStack5 = (UnityAction_1_System_Int32___Class *)unaff_ESI;
+          (pMVar2->fields).OnLevelChanged = (UnityAction_1_System_Int32_ *)0x0;
+          pDStack5 = (Delegate *)&(pMVar2->fields).OnLevelChanged;
+          pUStack6 = (UnityAction_1_System_Int32___Class *)unaff_ESI;
           func_?();
           return;
         }
-        pUStack5 = TypeInfo__UnityEngine__Events__UnityAction<int>;
-        pDStack4 = unaff_ESI;
-        pvVar6 = (void *)func_?();
-        if (pvVar6 != (void *)0x0) {
-          (pIVar3->data).dummy = pvVar6;
+        pUStack6 = TypeInfo__UnityEngine__Events__UnityAction<int>;
+        pDStack5 = unaff_ESI;
+        pUVar4 = (UnityAction_1_System_Int32_ *)func_?();
+        if (pUVar4 != (UnityAction_1_System_Int32_ *)0x0) {
+          (pMVar2->fields).OnLevelChanged = pUVar4;
           unaff_EDI = TypeInfo__UnityEngine__Events__UnityAction<int>;
-          pUStack5 = TypeInfo__UnityEngine__Events__UnityAction<int>;
-          pDStack4 = unaff_ESI;
-          pUStack5 = (UnityAction_1_System_Int32___Class *)func_?();
-          if (pUStack5 != (UnityAction_1_System_Int32___Class *)0x0) {
-            pDStack4 = (Delegate *)pIVar3;
+          pUStack6 = TypeInfo__UnityEngine__Events__UnityAction<int>;
+          pDStack5 = unaff_ESI;
+          pUStack6 = (UnityAction_1_System_Int32___Class *)func_?();
+          if (pUStack6 != (UnityAction_1_System_Int32___Class *)0x0) {
+            pDStack5 = (Delegate *)&(pMVar2->fields).OnLevelChanged;
             func_?();
             return;
           }
@@ -456,8 +459,8 @@ void Assembly-CSharp.dll::AvatarBadge::AvatarBadge_OnLevelingInitialized
   }
   func_?();
 code_?:
-  pDStack4 = unaff_ESI;
-  pUStack5 = unaff_EDI;
+  pDStack5 = unaff_ESI;
+  pUStack6 = unaff_EDI;
   func_?();
   pcVar7 = (code *)swi(3);
   (*pcVar7)();
@@ -492,16 +495,15 @@ void Assembly-CSharp.dll::AvatarBadge::AvatarBadge_ScaleAnimationIntermediateCal
   if ((this_00 != (MeshRenderer *)0x0) &&
      (this_01 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
                           ((Renderer *)this_00,(MethodInfo *)0x0), this_01 != (Material *)0x0)) {
-    ppTVar3 = &(this->fields).badgeTextureAsset;
     UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_mainTexture
-              (this_01,*ppTVar3,(MethodInfo *)0x0);
-    *ppTVar3 = (Texture *)0x0;
+              (this_01,(this->fields).badgeTextureAsset,(MethodInfo *)0x0);
+    (this->fields).badgeTextureAsset = (Texture *)0x0;
     func_?();
     return;
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

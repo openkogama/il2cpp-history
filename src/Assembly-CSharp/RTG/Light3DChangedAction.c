@@ -165,12 +165,12 @@ void Assembly-CSharp.dll::RTG::Light3DChangedAction::Light3DChangedAction__ctor
     value->name = (char *)(preChangeSnapshot->fields)._position.x;
     value->klass = (Il2CppClass *)fVar2;
     value->return_type = pIVar3;
-    _Var6 = (_union_154)(preChangeSnapshot->fields)._rotation.y;
-    _Var7 = (_union_155)(preChangeSnapshot->fields)._rotation.z;
+    _Var5 = (_union_154)(preChangeSnapshot->fields)._rotation.y;
+    _Var6 = (_union_155)(preChangeSnapshot->fields)._rotation.z;
     fVar2 = (preChangeSnapshot->fields)._rotation.w;
     ((Quaternion *)&value->parameters)->x = (preChangeSnapshot->fields)._rotation.x;
-    value->field7_0x1c = _Var6;
-    value->field8_0x20 = _Var7;
+    value->field7_0x1c = _Var5;
+    value->field8_0x20 = _Var6;
     value->token = (uint32_t)fVar2;
     *(float *)&value->flags = (preChangeSnapshot->fields)._range;
     *(float *)&value->slot = (preChangeSnapshot->fields)._spotAngle;
@@ -197,15 +197,14 @@ void Assembly-CSharp.dll::RTG::Light3DChangedAction::Light3DChangedAction__ctor
       (value_00->fields)._rotation.w = fVar5;
       (value_00->fields)._range = (postChangeSnapshot->fields)._range;
       (value_00->fields)._spotAngle = (postChangeSnapshot->fields)._spotAngle;
-      ppLVar6 = &(this->fields)._postChangeSnapshot;
-      *ppLVar6 = value_00;
-      func_?(ppLVar6,value_00);
+      (this->fields)._postChangeSnapshot = value_00;
+      func_?(&(this->fields)._postChangeSnapshot,value_00);
       return;
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

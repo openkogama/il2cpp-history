@@ -108,26 +108,27 @@ void Assembly-CSharp.dll::DynamicLODDistance::DynamicLODDistance_Test(MethodInfo
   this = (DynamicLODDistance *)func_?(TypeInfo__DynamicLODDistance);
   DynamicLODDistance__ctor(this,1.0,100.0,10,(MethodInfo *)0x0);
   iVar1 = 0;
-  do {
-    if (this == (DynamicLODDistance *)0x0) {
-      func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
-    }
-    iVar3 = WaitForTicks::WaitForTicks_GetEnvironmentTick(0,(MethodInfo *)0x0);
-    WaitForTicks::WaitForTicks_Diff((this->fields).prevTick,(MethodInfo *)0x0);
-    (this->fields).prevTick = iVar3;
-    pSVar4 = mscorlib.dll::System::Single::Single_ToString
-                       ((Single *)&stack0xfffffff8,(MethodInfo *)0x0);
-    pSVar4 = mscorlib.dll::System::String::String_Concat_3
-                       (StringLiteral_DeltaTime__,pSVar4,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar4,(MethodInfo *)0x0);
-    iVar1 = iVar1 + 1;
-  } while (iVar1 < 5);
+  if (this != (DynamicLODDistance *)0x0) {
+    do {
+      iVar2 = WaitForTicks::WaitForTicks_GetEnvironmentTick(0,(MethodInfo *)0x0);
+      WaitForTicks::WaitForTicks_Diff((this->fields).prevTick,(MethodInfo *)0x0);
+      (this->fields).prevTick = iVar2;
+      pSVar3 = mscorlib.dll::System::Single::Single_ToString
+                         ((Single *)&stack0xfffffff8,(MethodInfo *)0x0);
+      pSVar3 = mscorlib.dll::System::String::String_Concat_3
+                         (StringLiteral_DeltaTime__,pSVar3,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                ((Object *)pSVar3,(MethodInfo *)0x0);
+      iVar1 = iVar1 + 1;
+    } while (iVar1 < 5);
+    return;
+  }
+  func_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -146,26 +147,27 @@ void Assembly-CSharp.dll::DynamicLODDistance::DynamicLODDistance_TickTest(Method
   this = (DynamicLODDistance *)func_?(TypeInfo__DynamicLODDistance);
   DynamicLODDistance__ctor(this,1.0,100.0,10,(MethodInfo *)0x0);
   iVar1 = 0;
-  do {
-    if (this == (DynamicLODDistance *)0x0) {
-      func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
-    }
-    iVar3 = WaitForTicks::WaitForTicks_GetEnvironmentTick(0,(MethodInfo *)0x0);
-    iVar4 = WaitForTicks::WaitForTicks_Diff((this->fields).prevTick,(MethodInfo *)0x0);
-    (this->fields).prevTick = iVar3;
-    pSVar5 = mscorlib.dll::System::Single::Single_ToString
-                       ((Single *)((float)iVar4 / _UNK_?),(MethodInfo *)0x0);
-    pSVar5 = mscorlib.dll::System::String::String_Concat_3
-                       (StringLiteral_DeltaTime__,pSVar5,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar5,(MethodInfo *)0x0);
-    iVar1 = iVar1 + 1;
-  } while (iVar1 < 5);
+  if (this != (DynamicLODDistance *)0x0) {
+    do {
+      iVar2 = WaitForTicks::WaitForTicks_GetEnvironmentTick(0,(MethodInfo *)0x0);
+      iVar3 = WaitForTicks::WaitForTicks_Diff((this->fields).prevTick,(MethodInfo *)0x0);
+      (this->fields).prevTick = iVar2;
+      pSVar4 = mscorlib.dll::System::Single::Single_ToString
+                         ((Single *)((float)iVar3 / _UNK_?),(MethodInfo *)0x0);
+      pSVar4 = mscorlib.dll::System::String::String_Concat_3
+                         (StringLiteral_DeltaTime__,pSVar4,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                ((Object *)pSVar4,(MethodInfo *)0x0);
+      iVar1 = iVar1 + 1;
+    } while (iVar1 < 5);
+    return;
+  }
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

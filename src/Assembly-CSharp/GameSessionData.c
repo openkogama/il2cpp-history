@@ -150,70 +150,50 @@ void Assembly-CSharp.dll::GameSessionData::GameSessionData__ctor
   (this->fields).serverIP = ::StringLiteral__;
   func_?(&this->fields,::StringLiteral__);
   (this->fields).profileID = -1;
-  ppSVar1 = &(this->fields).language;
   (this->fields).planetID = -1;
   (this->fields).gameMode = 1;
-  *ppSVar1 = ::StringLiteral__;
-  func_?(ppSVar1,::StringLiteral__);
-  ppSVar1 = &(this->fields).embeddedSite;
-  *ppSVar1 = ::StringLiteral__;
-  func_?(ppSVar1,::StringLiteral__);
-  ppSVar1 = &(this->fields).token;
-  *ppSVar1 = ::StringLiteral__;
-  func_?(ppSVar1,::StringLiteral__);
-  ppSVar1 = &(this->fields).sessionToken;
-  *ppSVar1 = ::StringLiteral__;
-  func_?(ppSVar1,::StringLiteral__);
-  ppSVar1 = &(this->fields).newPlanetName;
-  *ppSVar1 = StringLiteral_game_server_test;
-  func_?(ppSVar1,StringLiteral_game_server_test);
-  ppSVar1 = &(this->fields).pingURL;
-  *ppSVar1 = ::StringLiteral__;
-  func_?(ppSVar1,::StringLiteral__);
-  ppSVar1 = &(this->fields).disconnectURL;
-  *ppSVar1 = ::StringLiteral__;
-  func_?(ppSVar1,::StringLiteral__);
-  ppSVar1 = &(this->fields).gameRewardURL;
-  *ppSVar1 = ::StringLiteral__;
-  func_?(ppSVar1,::StringLiteral__);
-  ppSVar1 = &(this->fields).gamePublishedURL;
-  *ppSVar1 = ::StringLiteral__;
-  func_?(ppSVar1,::StringLiteral__);
-  ppSVar1 = &(this->fields).purchaseGoldURL;
-  *ppSVar1 = ::StringLiteral__;
-  func_?(ppSVar1,::StringLiteral__);
-  ppSVar1 = &(this->fields).loginURL;
-  *ppSVar1 = ::StringLiteral__;
-  func_?(ppSVar1,::StringLiteral__);
-  ppSVar1 = &(this->fields).signupURL;
-  *ppSVar1 = ::StringLiteral__;
-  func_?(ppSVar1,::StringLiteral__);
-  ppSVar1 = &(this->fields).idleURL;
-  *ppSVar1 = ::StringLiteral__;
-  func_?(ppSVar1,::StringLiteral__);
-  ppSVar1 = &(this->fields).disconnectedURL;
-  *ppSVar1 = ::StringLiteral__;
-  func_?(ppSVar1,::StringLiteral__);
-  ppSVar1 = &(this->fields).playerProfileURL;
-  *ppSVar1 = ::StringLiteral__;
-  func_?(ppSVar1,::StringLiteral__);
-  ppSVar1 = &(this->fields).eliteUpgradeURL;
-  *ppSVar1 = ::StringLiteral__;
-  func_?(ppSVar1,::StringLiteral__);
-  ppSVar1 = &(this->fields).region;
-  *ppSVar1 = StringLiteral_RegionNotDefined;
-  func_?(ppSVar1,StringLiteral_RegionNotDefined);
-  ppSVar1 = &(this->fields).ezKey;
-  *ppSVar1 = StringLiteral_h5g9REtmi1LT7JY5;
-  func_?(ppSVar1,StringLiteral_h5g9REtmi1LT7JY5);
-  ppSVar1 = &(this->fields).reauthURL;
-  *ppSVar1 = ::StringLiteral__;
-  func_?(ppSVar1,::StringLiteral__);
-  ppSVar1 = &(this->fields).gameRewardDataURL;
-  *ppSVar1 = ::StringLiteral__;
-  func_?(ppSVar1,::StringLiteral__);
+  (this->fields).language = ::StringLiteral__;
+  func_?(&(this->fields).language,::StringLiteral__);
+  (this->fields).embeddedSite = ::StringLiteral__;
+  func_?(&(this->fields).embeddedSite,::StringLiteral__);
+  (this->fields).token = ::StringLiteral__;
+  func_?(&(this->fields).token,::StringLiteral__);
+  (this->fields).sessionToken = ::StringLiteral__;
+  func_?(&(this->fields).sessionToken,::StringLiteral__);
+  (this->fields).newPlanetName = StringLiteral_game_server_test;
+  func_?(&(this->fields).newPlanetName,StringLiteral_game_server_test);
+  (this->fields).pingURL = ::StringLiteral__;
+  func_?(&(this->fields).pingURL,::StringLiteral__);
+  (this->fields).disconnectURL = ::StringLiteral__;
+  func_?(&(this->fields).disconnectURL,::StringLiteral__);
+  (this->fields).gameRewardURL = ::StringLiteral__;
+  func_?(&(this->fields).gameRewardURL,::StringLiteral__);
+  (this->fields).gamePublishedURL = ::StringLiteral__;
+  func_?(&(this->fields).gamePublishedURL,::StringLiteral__);
+  (this->fields).purchaseGoldURL = ::StringLiteral__;
+  func_?(&(this->fields).purchaseGoldURL,::StringLiteral__);
+  (this->fields).loginURL = ::StringLiteral__;
+  func_?(&(this->fields).loginURL,::StringLiteral__);
+  (this->fields).signupURL = ::StringLiteral__;
+  func_?(&(this->fields).signupURL,::StringLiteral__);
+  (this->fields).idleURL = ::StringLiteral__;
+  func_?(&(this->fields).idleURL,::StringLiteral__);
+  (this->fields).disconnectedURL = ::StringLiteral__;
+  func_?(&(this->fields).disconnectedURL,::StringLiteral__);
+  (this->fields).playerProfileURL = ::StringLiteral__;
+  func_?(&(this->fields).playerProfileURL,::StringLiteral__);
+  (this->fields).eliteUpgradeURL = ::StringLiteral__;
+  func_?(&(this->fields).eliteUpgradeURL,::StringLiteral__);
+  (this->fields).region = StringLiteral_RegionNotDefined;
+  func_?(&(this->fields).region,StringLiteral_RegionNotDefined);
+  (this->fields).ezKey = StringLiteral_h5g9REtmi1LT7JY5;
+  func_?(&(this->fields).ezKey,StringLiteral_h5g9REtmi1LT7JY5);
+  (this->fields).reauthURL = ::StringLiteral__;
+  func_?(&(this->fields).reauthURL,::StringLiteral__);
+  (this->fields).gameRewardDataURL = ::StringLiteral__;
+  func_?(&(this->fields).gameRewardDataURL,::StringLiteral__);
+  (this->fields).referrer = ::StringLiteral__;
   method_00 = (MethodInfo *)&(this->fields).referrer;
-  *(String **)method_00 = ::StringLiteral__;
   func_?(method_00,::StringLiteral__);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
@@ -228,6 +208,7 @@ void Assembly-CSharp.dll::GameSessionData::GameSessionData__ctor_1
                MethodInfo *method)
 
 {
+  value = this;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Boolean);
     func_?(&
@@ -262,377 +243,377 @@ void Assembly-CSharp.dll::GameSessionData::GameSessionData__ctor_1
     func_?(&StringLiteral_RegionNotDefined);
     cRam_? = '\x01';
   }
-  pGVar1 = &this->fields;
-  pSVar2 = (String *)0x0;
-  pGVar1->serverIP = ::StringLiteral__;
-  func_?(pGVar1,::StringLiteral__);
-  (this->fields).profileID = -1;
-  ppSVar3 = &(this->fields).language;
-  (this->fields).planetID = -1;
-  (this->fields).gameMode = 1;
-  *ppSVar3 = ::StringLiteral__;
-  func_?(ppSVar3,::StringLiteral__);
-  ppSVar3 = &(this->fields).embeddedSite;
-  *ppSVar3 = ::StringLiteral__;
-  func_?(ppSVar3,::StringLiteral__);
-  ppSVar3 = &(this->fields).token;
-  *ppSVar3 = ::StringLiteral__;
-  func_?(ppSVar3,::StringLiteral__);
-  ppSVar3 = &(this->fields).sessionToken;
-  *ppSVar3 = ::StringLiteral__;
-  func_?(ppSVar3,::StringLiteral__);
-  ppSVar3 = &(this->fields).newPlanetName;
-  *ppSVar3 = StringLiteral_game_server_test;
-  func_?(ppSVar3,StringLiteral_game_server_test);
-  ppSVar3 = &(this->fields).pingURL;
-  *ppSVar3 = ::StringLiteral__;
-  func_?(ppSVar3,::StringLiteral__);
-  ppSVar3 = &(this->fields).disconnectURL;
-  *ppSVar3 = ::StringLiteral__;
-  func_?(ppSVar3,::StringLiteral__);
-  ppSVar3 = &(this->fields).gameRewardURL;
-  *ppSVar3 = ::StringLiteral__;
-  func_?(ppSVar3,::StringLiteral__);
-  ppSVar3 = &(this->fields).gamePublishedURL;
-  *ppSVar3 = ::StringLiteral__;
-  func_?(ppSVar3,::StringLiteral__);
-  ppSVar3 = &(this->fields).purchaseGoldURL;
-  *ppSVar3 = ::StringLiteral__;
-  func_?(ppSVar3,::StringLiteral__);
-  ppSVar3 = &(this->fields).loginURL;
-  *ppSVar3 = ::StringLiteral__;
-  func_?(ppSVar3,::StringLiteral__);
-  ppSVar3 = &(this->fields).signupURL;
-  *ppSVar3 = ::StringLiteral__;
-  func_?(ppSVar3,::StringLiteral__);
-  ppSVar3 = &(this->fields).idleURL;
-  *ppSVar3 = ::StringLiteral__;
-  func_?(ppSVar3,::StringLiteral__);
-  ppSVar3 = &(this->fields).disconnectedURL;
-  *ppSVar3 = ::StringLiteral__;
-  func_?(ppSVar3,::StringLiteral__);
-  ppSVar3 = &(this->fields).playerProfileURL;
-  *ppSVar3 = ::StringLiteral__;
-  func_?(ppSVar3,::StringLiteral__);
-  ppSVar3 = &(this->fields).eliteUpgradeURL;
-  *ppSVar3 = ::StringLiteral__;
-  func_?(ppSVar3,::StringLiteral__);
-  ppSVar3 = &(this->fields).region;
-  *ppSVar3 = StringLiteral_RegionNotDefined;
-  func_?(ppSVar3,StringLiteral_RegionNotDefined);
-  ppSVar3 = &(this->fields).ezKey;
-  *ppSVar3 = StringLiteral_h5g9REtmi1LT7JY5;
-  func_?(ppSVar3,StringLiteral_h5g9REtmi1LT7JY5);
-  ppSVar3 = &(this->fields).reauthURL;
-  *ppSVar3 = ::StringLiteral__;
-  func_?(ppSVar3,::StringLiteral__);
-  ppSVar3 = &(this->fields).gameRewardDataURL;
-  *ppSVar3 = ::StringLiteral__;
-  func_?(ppSVar3,::StringLiteral__);
-  method_00 = (MethodInfo *)&(this->fields).referrer;
-  *(String **)method_00 = ::StringLiteral__;
+  (value->fields).serverIP = ::StringLiteral__;
+  this = (GameSessionData *)0x0;
+  func_?(&value->fields,::StringLiteral__);
+  (value->fields).profileID = -1;
+  (value->fields).planetID = -1;
+  (value->fields).gameMode = 1;
+  (value->fields).language = ::StringLiteral__;
+  func_?(&(value->fields).language,::StringLiteral__);
+  (value->fields).embeddedSite = ::StringLiteral__;
+  func_?(&(value->fields).embeddedSite,::StringLiteral__);
+  (value->fields).token = ::StringLiteral__;
+  func_?(&(value->fields).token,::StringLiteral__);
+  (value->fields).sessionToken = ::StringLiteral__;
+  func_?(&(value->fields).sessionToken,::StringLiteral__);
+  (value->fields).newPlanetName = StringLiteral_game_server_test;
+  func_?(&(value->fields).newPlanetName,StringLiteral_game_server_test);
+  (value->fields).pingURL = ::StringLiteral__;
+  func_?(&(value->fields).pingURL,::StringLiteral__);
+  (value->fields).disconnectURL = ::StringLiteral__;
+  func_?(&(value->fields).disconnectURL,::StringLiteral__);
+  (value->fields).gameRewardURL = ::StringLiteral__;
+  func_?(&(value->fields).gameRewardURL,::StringLiteral__);
+  (value->fields).gamePublishedURL = ::StringLiteral__;
+  func_?(&(value->fields).gamePublishedURL,::StringLiteral__);
+  (value->fields).purchaseGoldURL = ::StringLiteral__;
+  func_?(&(value->fields).purchaseGoldURL,::StringLiteral__);
+  (value->fields).loginURL = ::StringLiteral__;
+  func_?(&(value->fields).loginURL,::StringLiteral__);
+  (value->fields).signupURL = ::StringLiteral__;
+  func_?(&(value->fields).signupURL,::StringLiteral__);
+  (value->fields).idleURL = ::StringLiteral__;
+  func_?(&(value->fields).idleURL,::StringLiteral__);
+  (value->fields).disconnectedURL = ::StringLiteral__;
+  func_?(&(value->fields).disconnectedURL,::StringLiteral__);
+  (value->fields).playerProfileURL = ::StringLiteral__;
+  func_?(&(value->fields).playerProfileURL,::StringLiteral__);
+  (value->fields).eliteUpgradeURL = ::StringLiteral__;
+  func_?(&(value->fields).eliteUpgradeURL,::StringLiteral__);
+  (value->fields).region = StringLiteral_RegionNotDefined;
+  func_?(&(value->fields).region,StringLiteral_RegionNotDefined);
+  (value->fields).ezKey = StringLiteral_h5g9REtmi1LT7JY5;
+  func_?(&(value->fields).ezKey,StringLiteral_h5g9REtmi1LT7JY5);
+  (value->fields).reauthURL = ::StringLiteral__;
+  func_?(&(value->fields).reauthURL,::StringLiteral__);
+  (value->fields).gameRewardDataURL = ::StringLiteral__;
+  func_?(&(value->fields).gameRewardDataURL,::StringLiteral__);
+  (value->fields).referrer = ::StringLiteral__;
+  method_00 = (MethodInfo *)&(value->fields).referrer;
   func_?(method_00,::StringLiteral__);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+            ((Object *)value,ExceptionArgument__Enum_obj,method_00);
+  pDVar1 = gameSessionData;
   if (gameSessionData != (Dictionary_2_System_String_System_Object_ *)0x0) {
-    TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+    TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
             UIElements::TextureId]::
             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                       ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
                        gameSessionData,(Object *)StringLiteral_serverIP,
                        MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__get_Item_System__String_
                       );
-    if (TVar4.m_Index == 0) {
-      pGVar1->serverIP = (String *)0x0;
+    if (TVar2.m_Index == 0) {
+      (value->fields).serverIP = (String *)0x0;
     }
     else {
-      TVar5.m_Index = (int32_t)(String *)0x0;
-      if (*(String__Class **)TVar4.m_Index == TypeInfo__System__String) {
-        TVar5 = TVar4;
+      TVar3.m_Index = (int32_t)(String *)0x0;
+      if (*(String__Class **)TVar2.m_Index == TypeInfo__System__String) {
+        TVar3 = TVar2;
       }
-      if ((String *)TVar5.m_Index == (String *)0x0) goto code_?;
-      pGVar1->serverIP = (String *)TVar5.m_Index;
-      TVar5.m_Index = 0;
-      if (*(String__Class **)TVar4.m_Index == TypeInfo__System__String) {
-        TVar5 = TVar4;
+      if ((String *)TVar3.m_Index == (String *)0x0) goto code_?;
+      (value->fields).serverIP = (String *)TVar3.m_Index;
+      TVar3.m_Index = 0;
+      if (*(String__Class **)TVar2.m_Index == TypeInfo__System__String) {
+        TVar3 = TVar2;
       }
-      if (TVar5.m_Index == 0) goto code_?;
+      if (TVar3.m_Index == 0) goto code_?;
     }
     func_?();
-    TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+    TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
             UIElements::TextureId]::
             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                       gameSessionData,(Object *)StringLiteral_profileID,
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)pDVar1,
+                       (Object *)StringLiteral_profileID,
                        MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__get_Item_System__String_
                       );
-    if (TVar4.m_Index != 0) {
-      if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) !=
+    if (TVar2.m_Index != 0) {
+      if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
           (TypeInfo__System__Int32->_0).element_class) goto code_?;
-      piVar6 = (int32_t *)func_?();
-      (this->fields).profileID = *piVar6;
-      TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+      piVar4 = (int32_t *)func_?();
+      (value->fields).profileID = *piVar4;
+      TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
               UIElements::TextureId]::
               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                         gameSessionData,(Object *)StringLiteral_planetID,
+                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)pDVar1,
+                         (Object *)StringLiteral_planetID,
                          MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__get_Item_System__String_
                         );
-      if (TVar4.m_Index != 0) {
-        if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) !=
+      if (TVar2.m_Index != 0) {
+        if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
             (TypeInfo__System__Int32->_0).element_class) goto code_?;
-        piVar6 = (int32_t *)func_?();
-        (this->fields).planetID = *piVar6;
-        TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+        piVar4 = (int32_t *)func_?();
+        (value->fields).planetID = *piVar4;
+        TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
                 ::UIElements::TextureId]::
                 Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                           gameSessionData,(Object *)StringLiteral_gameMode,
+                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)pDVar1,
+                           (Object *)StringLiteral_gameMode,
                            MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__get_Item_System__String_
                           );
-        if (TVar4.m_Index != 0) {
-          if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) !=
+        if (TVar2.m_Index != 0) {
+          if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
               (TypeInfo__MV__Common__MVGameMode->_0).element_class) goto code_?;
-          piVar6 = (int32_t *)func_?();
-          (this->fields).gameMode = *piVar6;
-          TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+          piVar4 = (int32_t *)func_?();
+          (value->fields).gameMode = *piVar4;
+          TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                   Object,UnityEngine::UIElements::TextureId]::
                   Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                            ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                             gameSessionData,(Object *)StringLiteral_language,
+                            ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)pDVar1
+                             ,(Object *)StringLiteral_language,
                              MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__get_Item_System__String_
                             );
-          if (TVar4.m_Index == 0) {
-            (this->fields).language = (String *)0x0;
+          if (TVar2.m_Index == 0) {
+            (value->fields).language = (String *)0x0;
           }
           else {
-            TVar5.m_Index = (int32_t)(String *)0x0;
-            if (*(String__Class **)TVar4.m_Index == TypeInfo__System__String) {
-              TVar5 = TVar4;
+            TVar3.m_Index = (int32_t)(String *)0x0;
+            if (*(String__Class **)TVar2.m_Index == TypeInfo__System__String) {
+              TVar3 = TVar2;
             }
-            if ((String *)TVar5.m_Index == (String *)0x0) goto code_?;
-            (this->fields).language = (String *)TVar5.m_Index;
-            TVar5.m_Index = 0;
-            if (*(String__Class **)TVar4.m_Index == TypeInfo__System__String) {
-              TVar5 = TVar4;
+            if ((String *)TVar3.m_Index == (String *)0x0) goto code_?;
+            (value->fields).language = (String *)TVar3.m_Index;
+            TVar3.m_Index = 0;
+            if (*(String__Class **)TVar2.m_Index == TypeInfo__System__String) {
+              TVar3 = TVar2;
             }
-            if (TVar5.m_Index == 0) goto code_?;
+            if (TVar3.m_Index == 0) goto code_?;
           }
           func_?();
-          TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+          TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                   Object,UnityEngine::UIElements::TextureId]::
                   Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                            ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                             gameSessionData,(Object *)StringLiteral_embedded,
+                            ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)pDVar1
+                             ,(Object *)StringLiteral_embedded,
                              MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__get_Item_System__String_
                             );
-          if (TVar4.m_Index != 0) {
-            if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) !=
+          if (TVar2.m_Index != 0) {
+            if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
                 (TypeInfo__System__Boolean->_0).element_class) goto code_?;
-            pbVar7 = (bool *)func_?();
-            (this->fields).embedded = *pbVar7;
-            bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+            pbVar5 = (bool *)func_?();
+            (value->fields).embedded = *pbVar5;
+            bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
                     Object]::Dictionary_2_System_Object_System_Object__TryGetValue
-                              ((Dictionary_2_System_Object_System_Object_ *)gameSessionData,
-                               (Object *)StringLiteral_embeddedSite,(Object **)&stack0xfffffff8,
+                              ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+                               (Object *)StringLiteral_embeddedSite,(Object **)&this,
                                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__TryGetValue_System__String__System__Object__
                               );
-            if (bVar8 != 0) {
-              pSVar9 = (String *)0x0;
-              if (pSVar2 != (String *)0x0) {
-                if (pSVar2->klass == TypeInfo__System__String) {
-                  pSVar9 = pSVar2;
+            if (bVar6 != 0) {
+              pGVar7 = (GameSessionData *)0x0;
+              if (this != (GameSessionData *)0x0) {
+                if ((String__Class *)this->klass == TypeInfo__System__String) {
+                  pGVar7 = this;
                 }
-                if (pSVar9 == (String *)0x0) goto code_?;
+                if (pGVar7 == (GameSessionData *)0x0) goto code_?;
               }
-              (this->fields).embeddedSite = pSVar9;
-              if (pSVar2 != (String *)0x0) {
-                pSVar9 = (String *)0x0;
-                if (pSVar2->klass == TypeInfo__System__String) {
-                  pSVar9 = pSVar2;
+              (value->fields).embeddedSite = (String *)pGVar7;
+              if (this != (GameSessionData *)0x0) {
+                pGVar7 = (GameSessionData *)0x0;
+                if ((String__Class *)this->klass == TypeInfo__System__String) {
+                  pGVar7 = this;
                 }
-                if (pSVar9 == (String *)0x0) goto code_?;
+                if (pGVar7 == (GameSessionData *)0x0) goto code_?;
               }
               func_?();
             }
-            TVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+            TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                     Object,UnityEngine::UIElements::TextureId]::
                     Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                               ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                               gameSessionData,(Object *)StringLiteral_token,
+                               pDVar1,(Object *)StringLiteral_token,
                                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__get_Item_System__String_
                               );
-            TVar4.m_Index = 0;
-            if (TVar5.m_Index == 0) {
-              (this->fields).token = (String *)0x0;
+            if (TVar2.m_Index == 0) {
+              (value->fields).token = (String *)0x0;
             }
             else {
-              if (*(String__Class **)TVar5.m_Index == TypeInfo__System__String) {
-                TVar4 = TVar5;
+              TVar3.m_Index = (int32_t)(String *)0x0;
+              if (*(String__Class **)TVar2.m_Index == TypeInfo__System__String) {
+                TVar3 = TVar2;
               }
-              if ((String *)TVar4.m_Index == (String *)0x0) goto code_?;
-              (this->fields).token = (String *)TVar4.m_Index;
-              TVar4.m_Index = (int32_t)(String *)0x0;
-              if (*(String__Class **)TVar5.m_Index == TypeInfo__System__String) {
-                TVar4 = TVar5;
+              if ((String *)TVar3.m_Index == (String *)0x0) goto code_?;
+              (value->fields).token = (String *)TVar3.m_Index;
+              TVar3.m_Index = 0;
+              if (*(String__Class **)TVar2.m_Index == TypeInfo__System__String) {
+                TVar3 = TVar2;
               }
-              if ((String *)TVar4.m_Index == (String *)0x0) goto code_?;
+              if (TVar3.m_Index == 0) goto code_?;
             }
+            pSVar8 = (String *)&(value->fields).token;
             func_?();
-            bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+            bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
                     Object]::Dictionary_2_System_Object_System_Object__TryGetValue
-                              ((Dictionary_2_System_Object_System_Object_ *)gameSessionData,
-                               (Object *)StringLiteral_sessionToken,(Object **)&stack0xfffffff4,
+                              ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+                               (Object *)StringLiteral_sessionToken,(Object **)&stack0xfffffff8,
                                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__TryGetValue_System__String__System__Object__
                               );
-            if (bVar8 != 0) {
-              pSVar2 = (String *)0x0;
-              if ((String *)TVar4.m_Index != (String *)0x0) {
-                if (((String *)TVar4.m_Index)->klass == TypeInfo__System__String) {
-                  pSVar2 = (String *)TVar4.m_Index;
-                }
-                if (pSVar2 == (String *)0x0) goto code_?;
-              }
-              (this->fields).sessionToken = pSVar2;
-              if ((String *)TVar4.m_Index != (String *)0x0) {
-                pSVar2 = (String *)0x0;
-                if (((String *)TVar4.m_Index)->klass == TypeInfo__System__String) {
-                  pSVar2 = (String *)TVar4.m_Index;
-                }
-                if (pSVar2 == (String *)0x0) goto code_?;
-              }
-              func_?();
-            }
-            bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                    Object,UnityEngine::UIElements::TextureId]::
-                    Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                              ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                               gameSessionData,(Object *)StringLiteral_playButtonAdsEnabledDefault,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__ContainsKey_System__String_
-                              );
-            if (bVar8 == 0) {
-              cVar10 = '\0';
-            }
-            else {
-              TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                      Object,UnityEngine::UIElements::TextureId]::
-                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                                 gameSessionData,(Object *)StringLiteral_playButtonAdsEnabledDefault
-                                 ,
-                                 MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__get_Item_System__String_
-                                );
-              if (TVar4.m_Index == 0) goto code_?;
-              if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) !=
-                  (TypeInfo__System__Boolean->_0).element_class) goto code_?;
-              pcVar11 = (char *)func_?();
-              cVar10 = *pcVar11;
-            }
-            (this->fields).playButtonAdsEnabledDefault = cVar10 != '\0';
-            bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                    Object,UnityEngine::UIElements::TextureId]::
-                    Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                              ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                               gameSessionData,(Object *)StringLiteral_boostersEnabledDefault,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__ContainsKey_System__String_
-                              );
-            if (bVar8 == 0) {
-              cVar10 = '\0';
-            }
-            else {
-              TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                      Object,UnityEngine::UIElements::TextureId]::
-                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                                 gameSessionData,(Object *)StringLiteral_boostersEnabledDefault,
-                                 MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__get_Item_System__String_
-                                );
-              if (TVar4.m_Index == 0) goto code_?;
-              if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) !=
-                  (TypeInfo__System__Boolean->_0).element_class) goto code_?;
-              pcVar11 = (char *)func_?();
-              cVar10 = *pcVar11;
-            }
-            (this->fields).boostersEnabledDefault = cVar10 != '\0';
-            pSVar2 = StringLiteral_interstitialsAdsEnabledDefault;
-            bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                    Object,UnityEngine::UIElements::TextureId]::
-                    Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                              ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                               gameSessionData,
-                               (Object *)StringLiteral_interstitialsAdsEnabledDefault,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__ContainsKey_System__String_
-                              );
-            if (bVar8 == 0) {
-              cVar10 = '\0';
-            }
-            else {
-              TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                      Object,UnityEngine::UIElements::TextureId]::
-                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                                 gameSessionData,
-                                 (Object *)StringLiteral_interstitialsAdsEnabledDefault,
-                                 MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__get_Item_System__String_
-                                );
-              if (TVar4.m_Index == 0) goto code_?;
-              if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) !=
-                  (TypeInfo__System__Boolean->_0).element_class) goto code_?;
-              pcVar11 = (char *)func_?();
-              cVar10 = *pcVar11;
-            }
-            (this->fields).interstitialsAdsEnabledDefault = cVar10 != '\0';
-            bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                    Object,UnityEngine::UIElements::TextureId]::
-                    Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                              ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                               gameSessionData,(Object *)StringLiteral_rewardedAdsEnabledDefault,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__ContainsKey_System__String_
-                              );
-            if (bVar8 == 0) {
-              cVar10 = '\0';
-            }
-            else {
-              TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                      Object,UnityEngine::UIElements::TextureId]::
-                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                                 gameSessionData,(Object *)StringLiteral_rewardedAdsEnabledDefault,
-                                 MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__get_Item_System__String_
-                                );
-              if (TVar4.m_Index == 0) goto code_?;
-              if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) !=
-                  (TypeInfo__System__Boolean->_0).element_class) goto code_?;
-              pcVar11 = (char *)func_?();
-              cVar10 = *pcVar11;
-            }
-            (this->fields).rewardedAdsEnabledDefault = cVar10 != '\0';
-            bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                    Object]::Dictionary_2_System_Object_System_Object__TryGetValue
-                              ((Dictionary_2_System_Object_System_Object_ *)gameSessionData,
-                               (Object *)StringLiteral_newPlanetName,(Object **)&stack0xfffffff0,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__TryGetValue_System__String__System__Object__
-                              );
-            if (bVar8 != 0) {
+            if (bVar6 != 0) {
               pSVar9 = (String *)0x0;
-              if (pSVar2 != (String *)0x0) {
-                if (pSVar2->klass == TypeInfo__System__String) {
-                  pSVar9 = pSVar2;
+              if (pSVar8 != (String *)0x0) {
+                if (pSVar8->klass == TypeInfo__System__String) {
+                  pSVar9 = pSVar8;
                 }
                 if (pSVar9 == (String *)0x0) goto code_?;
               }
-              (this->fields).newPlanetName = pSVar9;
-              pSStack12 = (String *)0x0;
-              if (pSVar2 != (String *)0x0) {
-                if (pSVar2->klass == TypeInfo__System__String) {
-                  pSStack12 = pSVar2;
+              (value->fields).sessionToken = pSVar9;
+              if (pSVar8 != (String *)0x0) {
+                pSVar9 = (String *)0x0;
+                if (pSVar8->klass == TypeInfo__System__String) {
+                  pSVar9 = pSVar8;
                 }
-                if (pSStack12 == (String *)0x0) goto code_?;
+                if (pSVar9 == (String *)0x0) goto code_?;
               }
               func_?();
             }
-            if ((this->fields).gameMode == 2) {
-              (this->fields).planetID = -1;
+            bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                    Object,UnityEngine::UIElements::TextureId]::
+                    Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                              ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                               pDVar1,(Object *)StringLiteral_playButtonAdsEnabledDefault,
+                               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__ContainsKey_System__String_
+                              );
+            if (bVar6 == 0) {
+              cVar10 = '\0';
+            }
+            else {
+              TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      Object,UnityEngine::UIElements::TextureId]::
+                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                                 pDVar1,(Object *)StringLiteral_playButtonAdsEnabledDefault,
+                                 MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__get_Item_System__String_
+                                );
+              if (TVar2.m_Index == 0) goto code_?;
+              if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
+                  (TypeInfo__System__Boolean->_0).element_class) goto code_?;
+              pcVar11 = (char *)func_?();
+              cVar10 = *pcVar11;
+            }
+            (value->fields).playButtonAdsEnabledDefault = cVar10 != '\0';
+            bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                    Object,UnityEngine::UIElements::TextureId]::
+                    Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                              ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                               pDVar1,(Object *)StringLiteral_boostersEnabledDefault,
+                               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__ContainsKey_System__String_
+                              );
+            if (bVar6 == 0) {
+              cVar10 = '\0';
+            }
+            else {
+              TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      Object,UnityEngine::UIElements::TextureId]::
+                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                                 pDVar1,(Object *)StringLiteral_boostersEnabledDefault,
+                                 MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__get_Item_System__String_
+                                );
+              if (TVar2.m_Index == 0) goto code_?;
+              if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
+                  (TypeInfo__System__Boolean->_0).element_class) goto code_?;
+              this = (GameSessionData *)&UNK_?;
+              gameSessionData = (Dictionary_2_System_String_System_Object_ *)TVar2;
+              pcVar11 = (char *)func_?();
+              cVar10 = *pcVar11;
+            }
+            (value->fields).boostersEnabledDefault = cVar10 != '\0';
+            pDVar12 = pDVar1;
+            bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                    Object,UnityEngine::UIElements::TextureId]::
+                    Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                              ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                               pDVar1,(Object *)StringLiteral_interstitialsAdsEnabledDefault,
+                               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__ContainsKey_System__String_
+                              );
+            if (bVar6 == 0) {
+              cVar10 = '\0';
+            }
+            else {
+              gameSessionData =
+                   (Dictionary_2_System_String_System_Object_ *)
+                   MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__get_Item_System__String_
+              ;
+              this = (GameSessionData *)StringLiteral_interstitialsAdsEnabledDefault;
+              TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      Object,UnityEngine::UIElements::TextureId]::
+                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                                 pDVar1,(Object *)StringLiteral_interstitialsAdsEnabledDefault,
+                                 MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__get_Item_System__String_
+                                );
+              if (TVar2.m_Index == 0) goto code_?;
+              if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
+                  (TypeInfo__System__Boolean->_0).element_class) goto code_?;
+              pcVar11 = (char *)func_?();
+              cVar10 = *pcVar11;
+            }
+            (value->fields).interstitialsAdsEnabledDefault = cVar10 != '\0';
+            gameSessionData =
+                 (Dictionary_2_System_String_System_Object_ *)
+                 MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__ContainsKey_System__String_
+            ;
+            this = (GameSessionData *)StringLiteral_rewardedAdsEnabledDefault;
+            bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                    Object,UnityEngine::UIElements::TextureId]::
+                    Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                              ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                               pDVar1,(Object *)StringLiteral_rewardedAdsEnabledDefault,
+                               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__ContainsKey_System__String_
+                              );
+            if (bVar6 == 0) {
+              cVar10 = '\0';
+            }
+            else {
+              method = (MethodInfo *)pDVar1;
+              gameSessionData = (Dictionary_2_System_String_System_Object_ *)&UNK_?;
+              TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      Object,UnityEngine::UIElements::TextureId]::
+                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                                 pDVar1,(Object *)StringLiteral_rewardedAdsEnabledDefault,
+                                 MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__get_Item_System__String_
+                                );
+              if (TVar2.m_Index == 0) goto code_?;
+              if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
+                  (TypeInfo__System__Boolean->_0).element_class) goto code_?;
+              pcVar11 = (char *)func_?();
+              cVar10 = *pcVar11;
+            }
+            (value->fields).rewardedAdsEnabledDefault = cVar10 != '\0';
+            method = (MethodInfo *)StringLiteral_newPlanetName;
+            this = (GameSessionData *)&UNK_?;
+            gameSessionData = pDVar1;
+            bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                    Object]::Dictionary_2_System_Object_System_Object__TryGetValue
+                              ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
+                               (Object *)StringLiteral_newPlanetName,(Object **)&stack0xfffffff4,
+                               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__TryGetValue_System__String__System__Object__
+                              );
+            if (bVar6 != 0) {
+              pDVar1 = (Dictionary_2_System_String_System_Object_ *)0x0;
+              if (pDVar12 != (Dictionary_2_System_String_System_Object_ *)0x0) {
+                if (pDVar12->klass ==
+                    (Dictionary_2_System_String_System_Object___Class *)TypeInfo__System__String) {
+                  pDVar1 = pDVar12;
+                }
+                if (pDVar1 == (Dictionary_2_System_String_System_Object_ *)0x0)
+                goto code_?;
+              }
+              (value->fields).newPlanetName = (String *)pDVar1;
+              pDStack13 = (Dictionary_2_System_String_System_Object_ *)0x0;
+              if (pDVar12 != (Dictionary_2_System_String_System_Object_ *)0x0) {
+                if (pDVar12->klass ==
+                    (Dictionary_2_System_String_System_Object___Class *)TypeInfo__System__String) {
+                  pDStack13 = pDVar12;
+                }
+                if (pDStack13 == (Dictionary_2_System_String_System_Object_ *)0x0)
+                goto code_?;
+              }
+              ppSStack14 = &(value->fields).newPlanetName;
+              func_?();
+            }
+            if ((value->fields).gameMode == 2) {
+              (value->fields).planetID = -1;
             }
             return;
           }
@@ -644,8 +625,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 

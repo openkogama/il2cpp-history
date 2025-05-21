@@ -38,9 +38,8 @@ void Assembly-CSharp.dll::SelfElevator::SelfElevator_Elevate(SelfElevator *this,
         (this_00->fields).fileName = pSVar4;
         func_?();
         pSVar4 = StringLiteral_runas;
-        ppSVar6 = &(this_00->fields).verb;
-        *ppSVar6 = StringLiteral_runas;
-        func_?(ppSVar6,pSVar4);
+        (this_00->fields).verb = StringLiteral_runas;
+        func_?(&(this_00->fields).verb,pSVar4);
         puStack_1 = (undefined *)0x0;
         System.dll::System::Diagnostics::Process::Process_Start_1(this_00,(MethodInfo *)0x0);
         if ((TypeInfo__UnityEngine__Application->_1).cctor_finished_or_no_cctor == 0) {
@@ -54,8 +53,8 @@ void Assembly-CSharp.dll::SelfElevator::SelfElevator_Elevate(SelfElevator *this,
   }
   func_?();
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -550,7 +549,7 @@ void Assembly-CSharp.dll::SelfElevator::SelfElevator__ctor(SelfElevator *this,Me
               }
               bVar3 = SelfElevator_IsProcessElevated(this,(MethodInfo *)0x0);
               if ((TypeInfo__SelfElevator->_1).cctor_finished_or_no_cctor == 0) {
-                bVar3 = 0x3f;
+                bVar3 = 0x90;
                 func_?();
               }
               if (cRam_? == '\0') {

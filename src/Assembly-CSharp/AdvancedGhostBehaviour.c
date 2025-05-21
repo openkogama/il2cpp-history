@@ -169,15 +169,48 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour::AdvancedGhostBehaviour_FixedUp
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  x = (this->fields).advancedGhostMotor;
+  pAVar1 = (this->fields).advancedGhostMotor;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar1 == 0) {
-    AdvancedGhostBehaviour_UpdatePositionAndRotation(this,(MethodInfo *)0x0);
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                    ((Object_1 *)pAVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar2 != 0) {
+    return;
   }
+  pVVar3 = AdvancedGhostBehaviour_GetMoveVector
+                     ((Vector3 *)&stack0xfffffff0,this,(this->fields).nextPosition,(MethodInfo *)0x0
+                     );
+  pAVar1 = (this->fields).advancedGhostMotor;
+  fVar4 = pVVar3->y;
+  fVar5 = pVVar3->z;
+  if (pAVar1 != (AdvancedGhostMotor *)0x0) {
+    (pAVar1->fields)._MoveDirection_k__BackingField.x = pVVar3->x;
+    (pAVar1->fields)._MoveDirection_k__BackingField.y = fVar4;
+    (pAVar1->fields)._MoveDirection_k__BackingField.z = fVar5;
+    pAVar1 = (this->fields).advancedGhostMotor;
+    if (pAVar1 != (AdvancedGhostMotor *)0x0) {
+      AdvancedGhostMotor::AdvancedGhostMotor_FixedUpdateFunction(pAVar1,(MethodInfo *)0x0);
+      this_00 = (this->fields).GhostVisualization;
+      if ((this_00 != (AdvancedGhostVisualizaton *)0x0) &&
+         (this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                              ((Component *)this_00,(MethodInfo *)0x0), this_01 != (GameObject *)0x0
+         )) {
+        bVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                GameObject_get_activeInHierarchy(this_01,(MethodInfo *)0x0);
+        if (bVar2 != 0) {
+          pAVar1 = (this->fields).advancedGhostMotor;
+          if (pAVar1 == (AdvancedGhostMotor *)0x0) goto code_?;
+          AdvancedGhostMotor::AdvancedGhostMotor_FixedUpdateRotation(pAVar1,(MethodInfo *)0x0);
+        }
+        return;
+      }
+    }
+  }
+code_?:
+  func_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -204,24 +237,24 @@ Vector3 * Assembly-CSharp.dll::AdvancedGhostBehaviour::AdvancedGhostBehaviour_Ge
   pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
   uVar2 = (pVVar1->upVector).x;
   uVar3 = (pVVar1->upVector).y;
-  VStack_4.y = targetPos.y + (float)uVar3;
-  VStack_4.x = targetPos.x + (float)uVar2;
-  VStack_4.z = targetPos.z + (pVVar1->upVector).z;
+  fVar4 = targetPos.y + (float)uVar3;
+  fVar5 = targetPos.x + (float)uVar2;
+  fVar6 = targetPos.z + (pVVar1->upVector).z;
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Debug);
   }
+  end_01.y = fVar4;
+  end_01.x = fVar5;
   start_00.y = targetPos.y;
   start_00.x = targetPos.x;
   start_00.z = targetPos.z;
-  end_01.z = VStack_4.z;
-  end_01.x = VStack_4.x;
-  end_01.y = VStack_4.y;
+  end_01.z = fVar6;
   color_01.g = (float)_UNK_?;
   color_01.r = (float)_UNK_?;
   color_01.b = _UNK_?;
   color_01.a = _UNK_?;
-  fVar5 = targetPos.y;
-  fVar6 = targetPos.x;
+  fVar6 = targetPos.y;
+  fVar4 = targetPos.x;
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_DrawLine
             (start_00,end_01,color_01,0.3,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
@@ -229,169 +262,168 @@ Vector3 * Assembly-CSharp.dll::AdvancedGhostBehaviour::AdvancedGhostBehaviour_Ge
     cRam_? = '\x01';
   }
   pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
-  VStack_4.x = (pVVar1->rightVector).x;
-  VStack_4.y = (pVVar1->rightVector).y;
-  VStack_4.z = (pVVar1->rightVector).z;
-  fVar7 = targetPos.y + VStack_4.y;
-  fVar8 = targetPos.z + VStack_4.z;
-  start_01.y = fVar5;
+  uVar7 = (pVVar1->rightVector).x;
+  uVar8 = (pVVar1->rightVector).y;
+  fVar9 = targetPos.y + (float)uVar8;
+  fVar5 = targetPos.z + (pVVar1->rightVector).z;
+  start_01.y = fVar6;
   start_01.x = targetPos.x;
   start_01.z = targetPos.z;
-  end_02.y = fVar7;
-  end_02.x = fVar6 + VStack_4.x;
-  end_02.z = fVar8;
+  end_02.y = fVar9;
+  end_02.x = fVar4 + (float)uVar7;
+  end_02.z = fVar5;
   color_02.g = (float)_UNK_?;
   color_02.r = (float)_UNK_?;
   color_02.b = _UNK_?;
   color_02.a = _UNK_?;
-  fVar5 = _UNK_?;
-  VStack_9.z = fVar8;
+  fVar6 = _UNK_?;
+  VStack_10.z = fVar5;
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_DrawLine
             (start_01,end_02,color_02,0.3,(MethodInfo *)0x0);
-  pTVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                     ((Component *)this,(MethodInfo *)0x0);
-  if (pTVar10 != (Transform *)0x0) {
-    pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                       (&VStack_9,pTVar10,(MethodInfo *)0x0);
-    uVar12 = pVVar11->x;
-    puVar13 = &UNK_?;
-    pTVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                       ((Component *)this,(MethodInfo *)0x0);
-    if (pTVar10 != (Transform *)0x0) {
-      pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                         (&VStack_4,pTVar10,(MethodInfo *)0x0);
-      VStack_9.x = pVVar11->x;
-      VStack_9.y = pVVar11->y;
-      VStack_9.z = pVVar11->z;
+  pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                      ((Component *)this,(MethodInfo *)0x0);
+  if (pTVar11 != (Transform *)0x0) {
+    pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                        (&VStack_10,pTVar11,(MethodInfo *)0x0);
+    uVar13 = pVVar12->x;
+    puVar14 = &UNK_?;
+    pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                        ((Component *)this,(MethodInfo *)0x0);
+    if (pTVar11 != (Transform *)0x0) {
+      pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                          (&VStack_15,pTVar11,(MethodInfo *)0x0);
+      VStack_10.x = pVVar12->x;
+      VStack_10.y = pVVar12->y;
+      VStack_10.z = pVVar12->z;
       if (cRam_? == '\0') {
         func_?();
         cRam_? = '\x01';
       }
       pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
-      VStack_4.x = (pVVar1->upVector).x;
-      VStack_4.y = (pVVar1->upVector).y;
-      VStack_4.z = (pVVar1->upVector).z;
-      VStack_9.z = VStack_4.z + VStack_9.z;
-      start_02.y = (float)puVar13;
-      start_02.x = (float)uVar12;
-      start_02.z = VStack_9.z;
-      end_03.y = VStack_4.y + VStack_9.y;
-      end_03.x = VStack_4.x + VStack_9.x;
-      end_03.z = VStack_9.z;
+      VStack_15.x = (pVVar1->upVector).x;
+      VStack_15.y = (pVVar1->upVector).y;
+      VStack_15.z = (pVVar1->upVector).z;
+      VStack_10.z = VStack_15.z + VStack_10.z;
+      start_02.y = (float)puVar14;
+      start_02.x = (float)uVar13;
+      start_02.z = VStack_10.z;
+      end_03.y = VStack_15.y + VStack_10.y;
+      end_03.x = VStack_15.x + VStack_10.x;
+      end_03.z = VStack_10.z;
       color_03.g = (float)_UNK_?;
       color_03.r = (float)_UNK_?;
       color_03.b = (float)_UNK_?;
       color_03.a = _UNK_?;
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_DrawLine
                 (start_02,end_03,color_03,0.3,(MethodInfo *)0x0);
-      pTVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                         ((Component *)this,(MethodInfo *)0x0);
-      if (pTVar10 != (Transform *)0x0) {
-        pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                           (&VStack_9,pTVar10,(MethodInfo *)0x0);
-        uVar14 = pVVar11->x;
-        uVar15 = pVVar11->y;
-        fVar6 = pVVar11->z;
-        pTVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                           ((Component *)this,(MethodInfo *)0x0);
-        if (pTVar10 != (Transform *)0x0) {
-          pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                             (&VStack_9,pTVar10,(MethodInfo *)0x0);
-          VStack_4.x = pVVar11->x;
-          VStack_4.y = pVVar11->y;
-          VStack_4.z = pVVar11->z;
+      pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                          ((Component *)this,(MethodInfo *)0x0);
+      if (pTVar11 != (Transform *)0x0) {
+        pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                            (&VStack_10,pTVar11,(MethodInfo *)0x0);
+        uVar16 = pVVar12->x;
+        uVar17 = pVVar12->y;
+        fVar4 = pVVar12->z;
+        pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                            ((Component *)this,(MethodInfo *)0x0);
+        if (pTVar11 != (Transform *)0x0) {
+          pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                              (&VStack_10,pTVar11,(MethodInfo *)0x0);
+          VStack_15.x = pVVar12->x;
+          VStack_15.y = pVVar12->y;
+          VStack_15.z = pVVar12->z;
           if (cRam_? == '\0') {
             func_?();
             cRam_? = '\x01';
           }
           pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
-          VStack_9.x = (pVVar1->rightVector).x;
-          VStack_9.y = (pVVar1->rightVector).y;
-          VStack_9.z = (pVVar1->rightVector).z + VStack_4.z;
-          start.y = (float)uVar15;
-          start.x = (float)uVar14;
-          start.z = fVar6;
-          end.y = VStack_9.y + VStack_4.y;
-          end.x = VStack_9.x + VStack_4.x;
-          end.z = VStack_9.z;
+          VStack_10.x = (pVVar1->rightVector).x;
+          VStack_10.y = (pVVar1->rightVector).y;
+          VStack_10.z = (pVVar1->rightVector).z + VStack_15.z;
+          start.y = (float)uVar17;
+          start.x = (float)uVar16;
+          start.z = fVar4;
+          end.y = VStack_10.y + VStack_15.y;
+          end.x = VStack_10.x + VStack_15.x;
+          end.z = VStack_10.z;
           color.g = (float)_UNK_?;
           color.r = (float)_UNK_?;
           color.b = (float)_UNK_?;
           color.a = _UNK_?;
           UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_DrawLine
                     (start,end,color,0.3,(MethodInfo *)0x0);
-          pTVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                             ((Component *)this,(MethodInfo *)0x0);
-          if (pTVar10 != (Transform *)0x0) {
-            pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                               (&VStack_9,pTVar10,(MethodInfo *)0x0);
-            end_00.y = fVar8;
-            end_00.x = fVar7;
+          pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                              ((Component *)this,(MethodInfo *)0x0);
+          if (pTVar11 != (Transform *)0x0) {
+            pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                                (&VStack_10,pTVar11,(MethodInfo *)0x0);
+            end_00.y = fVar5;
+            end_00.x = fVar9;
             end_00.z = targetPos.z;
             color_00.g = (float)_UNK_?;
             color_00.r = (float)_UNK_?;
             color_00.b = (float)_UNK_?;
             color_00.a = _UNK_?;
             UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_DrawLine
-                      (*pVVar11,end_00,color_00,0.3,(MethodInfo *)0x0);
-            pTVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                               ((Component *)this,(MethodInfo *)0x0);
-            if (pTVar10 != (Transform *)0x0) {
-              pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                                 (&VStack_4,pTVar10,(MethodInfo *)0x0);
-              VStack_9.x = pVVar11->x;
-              VStack_9.y = pVVar11->y;
-              VStack_9.z = pVVar11->z;
-              fVar5 = fVar5 - VStack_9.x;
-              fVar6 = targetPos.y - VStack_9.y;
-              fVar8 = targetPos.z - VStack_9.z;
-              fVar7 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
+                      (*pVVar12,end_00,color_00,0.3,(MethodInfo *)0x0);
+            pTVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                ((Component *)this,(MethodInfo *)0x0);
+            if (pTVar11 != (Transform *)0x0) {
+              pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                                  (&VStack_15,pTVar11,(MethodInfo *)0x0);
+              VStack_10.x = pVVar12->x;
+              VStack_10.y = pVVar12->y;
+              VStack_10.z = pVVar12->z;
+              fVar6 = fVar6 - VStack_10.x;
+              fVar4 = targetPos.y - VStack_10.y;
+              fVar5 = targetPos.z - VStack_10.z;
+              fVar9 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
                                  ((MethodInfo *)0x0);
-              VStack_9.z = fVar8 / fVar7;
-              __return_storage_ptr__->x = fVar5 / fVar7;
-              __return_storage_ptr__->y = fVar6 / fVar7;
-              __return_storage_ptr__->z = VStack_9.z;
-              fVar16 = (float10)func_?();
-              uVar12 = *(undefined4 *)&(this->fields).speed.inited;
-              iVar17 = (this->fields).speed.currentCryptoKey;
-              AVar18 = (this->fields).speed.hiddenValue;
-              pBVar19 = (this->fields).speed.hiddenValueOld;
-              fVar6 = (this->fields).speed.fakeValue;
-              fVar5 = (float)fVar16;
+              VStack_10.z = fVar5 / fVar9;
+              __return_storage_ptr__->x = fVar6 / fVar9;
+              __return_storage_ptr__->y = fVar4 / fVar9;
+              __return_storage_ptr__->z = VStack_10.z;
+              fVar18 = (float10)func_?();
+              uVar13 = *(undefined4 *)&(this->fields).speed.inited;
+              iVar19 = (this->fields).speed.currentCryptoKey;
+              AVar20 = (this->fields).speed.hiddenValue;
+              pBVar21 = (this->fields).speed.hiddenValueOld;
+              fVar4 = (this->fields).speed.fakeValue;
+              fVar6 = (float)fVar18;
               if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).
                   cctor_finished_or_no_cctor == 0) {
                 func_?();
               }
-              value.hiddenValue = AVar18;
-              value.currentCryptoKey = iVar17;
-              value.hiddenValueOld = pBVar19;
-              value.fakeValue = fVar6;
-              value._16_4_ = uVar12;
-              fVar6 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
+              value.hiddenValue = AVar20;
+              value.currentCryptoKey = iVar19;
+              value.hiddenValueOld = pBVar21;
+              value.fakeValue = fVar4;
+              value._16_4_ = uVar13;
+              fVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
                        ObscuredFloat::ObscuredFloat_op_Implicit_1(value,(MethodInfo *)0x0);
-              if (fVar6 < fVar5) {
-                puVar20 = (undefined8 *)func_?();
-                VStack_9._0_8_ = *puVar20;
-                VStack_9.z = *(float *)(puVar20 + 1);
-                iVar17 = (this->fields).speed.currentCryptoKey;
-                AVar18 = (this->fields).speed.hiddenValue;
-                pBVar19 = (this->fields).speed.hiddenValueOld;
-                fVar5 = (this->fields).speed.fakeValue;
+              if (fVar4 < fVar6) {
+                puVar22 = (undefined8 *)func_?();
+                VStack_10._0_8_ = *puVar22;
+                VStack_10.z = *(float *)(puVar22 + 1);
+                iVar19 = (this->fields).speed.currentCryptoKey;
+                AVar20 = (this->fields).speed.hiddenValue;
+                pBVar21 = (this->fields).speed.hiddenValueOld;
+                fVar6 = (this->fields).speed.fakeValue;
                 if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).
                     cctor_finished_or_no_cctor == 0) {
                   func_?();
                 }
-                value_00.hiddenValue = AVar18;
-                value_00.currentCryptoKey = iVar17;
-                value_00.hiddenValueOld = pBVar19;
-                value_00.fakeValue = fVar5;
+                value_00.hiddenValue = AVar20;
+                value_00.currentCryptoKey = iVar19;
+                value_00.hiddenValueOld = pBVar21;
+                value_00.fakeValue = fVar6;
                 value_00.inited = (this->fields).speed.inited;
                 value_00._17_3_ = *(undefined3 *)&(this->fields).speed.field_0x11;
-                fVar5 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
+                fVar6 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
                          ObscuredFloat::ObscuredFloat_op_Implicit_1(value_00,(MethodInfo *)0x0);
-                __return_storage_ptr__->x = VStack_9.x * fVar5;
-                __return_storage_ptr__->y = VStack_9.y * fVar5;
-                __return_storage_ptr__->z = VStack_9.z * fVar5;
+                __return_storage_ptr__->x = VStack_10.x * fVar6;
+                __return_storage_ptr__->y = VStack_10.y * fVar6;
+                __return_storage_ptr__->z = VStack_10.z * fVar6;
               }
               return __return_storage_ptr__;
             }
@@ -401,9 +433,9 @@ Vector3 * Assembly-CSharp.dll::AdvancedGhostBehaviour::AdvancedGhostBehaviour_Ge
     }
   }
   func_?();
-  pcVar21 = (code *)swi(3);
-  pVVar11 = (Vector3 *)(*pcVar21)();
-  return pVVar11;
+  pcVar23 = (code *)swi(3);
+  pVVar12 = (Vector3 *)(*pcVar23)();
+  return pVVar12;
 }
 
 
@@ -421,16 +453,15 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour::AdvancedGhostBehaviour_Init
     cRam_? = '\x01';
   }
   pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                      ((Component *)this,(MethodInfo *)0x0);
+                     ((Component *)this,(MethodInfo *)0x0);
   if (pTVar1 != (Transform *)0x0) {
     pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
-                        (pTVar1,(MethodInfo *)0x0);
-    ppTVar2 = &(this->fields).transformParent;
-    *ppTVar2 = pTVar1;
-    func_?(ppTVar2,pTVar1);
+                       (pTVar1,(MethodInfo *)0x0);
+    (this->fields).transformParent = pTVar1;
+    func_?(&(this->fields).transformParent,pTVar1);
     value = (AdvancedGhostBehaviour_AdvancedGhostPerception *)
             func_?(TypeInfo__AdvancedGhostBehaviour__AdvancedGhostPerception);
-    pAVar3 = value;
+    pAVar2 = value;
     if (cRam_? == '\0') {
       func_?();
       func_?(&TypeInfo__OptimizedPerception);
@@ -440,23 +471,20 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour::AdvancedGhostBehaviour_Init
     (value->fields).currentWoID = -1;
     (value->fields).perceptionIntervalMilliseconds = 1000;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)value,ExceptionArgument__Enum_obj,in_stack_4);
-    ppAVar5 = &(value->fields).ghostBehaviour;
-    *ppAVar5 = this;
-    func_?(ppAVar5);
+              ((Object *)value,ExceptionArgument__Enum_obj,in_stack_3);
+    (value->fields).ghostBehaviour = this;
+    func_?(&(value->fields).ghostBehaviour);
     this_00 = (OptimizedPerception *)func_?(TypeInfo__OptimizedPerception);
     OptimizedPerception::OptimizedPerception__ctor(this_00,(MethodInfo *)0x0);
-    ppOVar6 = &(value->fields).perception;
-    *ppOVar6 = this_00;
-    func_?(ppOVar6,this_00);
+    (value->fields).perception = this_00;
+    func_?(&(value->fields).perception,this_00);
     range = (value->fields).perceptionIntervalMilliseconds;
     this_01 = (DeterministicSyncedInterval *)func_?(TypeInfo__DeterministicSyncedInterval);
     DeterministicSyncedInterval::DeterministicSyncedInterval__ctor
               (this_01,woID,range,(MethodInfo *)0x0);
-    ppDVar7 = &(pAVar3->fields).syncedInterval;
-    *ppDVar7 = this_01;
-    func_?(ppDVar7,this_01);
-    (this->fields).perception = pAVar3;
+    (pAVar2->fields).syncedInterval = this_01;
+    func_?(&(pAVar2->fields).syncedInterval,this_01);
+    (this->fields).perception = pAVar2;
     func_?();
     this_02 = (AdvancedGhostBehaviour_NetworkedValues *)func_?();
     if (cRam_? == '\0') {
@@ -467,8 +495,7 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour::AdvancedGhostBehaviour_Init
     (this_02->fields).minLookDeltaOffset = 0.1;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
               ((Object *)this_02,ExceptionArgument__Enum_obj,(MethodInfo *)advancedGhostMotor);
-    ppAVar5 = &(this_02->fields).ghostBehaviour;
-    *ppAVar5 = this;
+    (this_02->fields).ghostBehaviour = this;
     func_?();
     this_03 = (Func_5_Int32_Single_Single_Object_UnityEngine_Vector3_ *)func_?();
     mscorlib.dll::System::Func`5[Int32,Single,Single,Object,UnityEngine::Vector3]::
@@ -481,27 +508,24 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour::AdvancedGhostBehaviour_Init
     func_?();
     AdvancedGhostBehaviour+NetworkedValues::AdvancedGhostBehaviour_NetworkedValues_Update
               (this_02,(MethodInfo *)0x0);
-    ppAVar8 = &(this->fields).networkedValues;
-    *ppAVar8 = this_02;
+    (this->fields).networkedValues = this_02;
     func_?();
-    pAVar9 = *ppAVar8;
-    if (pAVar9 != (AdvancedGhostBehaviour_NetworkedValues *)0x0) {
-      fVar10 = (pAVar9->fields).nextPosition.y;
-      fVar11 = (pAVar9->fields).nextPosition.z;
-      (this->fields).nextPosition.x = (pAVar9->fields).nextPosition.x;
-      (this->fields).nextPosition.y = fVar10;
-      (this->fields).nextPosition.z = fVar11;
+    pAVar4 = (this->fields).networkedValues;
+    if (pAVar4 != (AdvancedGhostBehaviour_NetworkedValues *)0x0) {
+      fVar5 = (pAVar4->fields).nextPosition.y;
+      fVar6 = (pAVar4->fields).nextPosition.z;
+      (this->fields).nextPosition.x = (pAVar4->fields).nextPosition.x;
+      (this->fields).nextPosition.y = fVar5;
+      (this->fields).nextPosition.z = fVar6;
       pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                          ((Component *)this,(MethodInfo *)0x0);
+                         ((Component *)this,(MethodInfo *)0x0);
       if (pTVar1 != (Transform *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                   (pTVar1,(this->fields).nextPosition,(MethodInfo *)0x0);
-        ppAVar12 = &(this->fields).advancedGhostMotor;
-        *ppAVar12 = advancedGhostMotor;
-        func_?(ppAVar12,advancedGhostMotor);
-        ppFVar13 = &(this->fields).deathCheckFunc;
-        *ppFVar13 = deathCheckFunc;
-        func_?(ppFVar13,deathCheckFunc);
+        (this->fields).advancedGhostMotor = advancedGhostMotor;
+        func_?(&(this->fields).advancedGhostMotor,advancedGhostMotor);
+        (this->fields).deathCheckFunc = deathCheckFunc;
+        func_?(&(this->fields).deathCheckFunc,deathCheckFunc);
         AdvancedGhostBehaviour_InitBody(this,(MVCubeModelBase *)this,(MethodInfo *)0x0);
         AdvancedGhostBehaviour_SetInitialState(this,(MethodInfo *)0x0);
         if (cRam_? == '\0') {
@@ -515,37 +539,36 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour::AdvancedGhostBehaviour_Init
           cRam_? = '\x01';
         }
         pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                            ((Component *)this,(MethodInfo *)0x0);
+                           ((Component *)this,(MethodInfo *)0x0);
         if (pTVar1 != (Transform *)0x0) {
-          pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                              ((Vector3 *)&stack0xffffffe8,pTVar1,(MethodInfo *)0x0);
-          uVar15 = pVVar14->x;
-          uVar16 = pVVar14->y;
-          fVar11 = pVVar14->z;
+          pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                             ((Vector3 *)&stack0xffffffe8,pTVar1,(MethodInfo *)0x0);
+          uVar8 = pVVar7->x;
+          uVar9 = pVVar7->y;
+          fVar6 = pVVar7->z;
           this_04 = (UnityAction_1_UnityEngine_Vector2_ *)
                     func_?(
                                    TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>
                                    );
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Vector2]::
           UnityAction_1_UnityEngine_Vector2___ctor
-                    (this_04,(Object *)ppAVar5,
+                    (this_04,(Object *)&(this_02->fields).ghostBehaviour,
                      MethodInfo__AdvancedGhostBehaviour__OnStateChange_UnityEngine__CullingGroupEvent_
                      ,(MethodInfo *)0x0);
-          pFVar17 = (Func_5_Int32_Single_Single_UnityEngine_Transform_UnityEngine_Vector3_ *)
-                    func_?(TypeInfo__CullingSubscriberBase);
-          position.y = (float)uVar16;
-          position.x = (float)uVar15;
-          position.z = fVar11;
+          pFVar10 = (Func_5_Int32_Single_Single_UnityEngine_Transform_UnityEngine_Vector3_ *)
+                   func_?(TypeInfo__CullingSubscriberBase);
+          position.y = (float)uVar9;
+          position.x = (float)uVar8;
+          position.z = fVar6;
           CullingSubscriberBase::CullingSubscriberBase__ctor_2
-                    ((CullingSubscriberBase *)pFVar17,4.0,position,
+                    ((CullingSubscriberBase *)pFVar10,4.0,position,
                      (UnityAction_1_UnityEngine_CullingGroupEvent_ *)this_04,(MethodInfo *)0x0);
-          ppFVar18 = &(this_02->fields).patrolPattern;
-          *ppFVar18 = pFVar17;
+          (this_02->fields).patrolPattern = pFVar10;
           func_?();
-          pFVar17 = *ppFVar18;
-          if (pFVar17 !=
-              (Func_5_Int32_Single_Single_UnityEngine_Transform_UnityEngine_Vector3_ *)0x0) {
-            (pFVar17->fields)._._.invoke_impl = (void *)0x3;
+          pFVar10 = (this_02->fields).patrolPattern;
+          if (pFVar10 != (Func_5_Int32_Single_Single_UnityEngine_Transform_UnityEngine_Vector3_ *)0x0
+             ) {
+            (pFVar10->fields)._._.invoke_impl = (void *)0x3;
             return;
           }
         }
@@ -553,8 +576,8 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour::AdvancedGhostBehaviour_Init
     }
   }
   func_?();
-  pcVar19 = (code *)swi(3);
-  (*pcVar19)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -580,77 +603,63 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour::AdvancedGhostBehaviour_InitBod
     LayerUtil::LayerUtil_SetLayerRecursively_4(pGVar1,layer,(MethodInfo *)0x0);
     pGVar1 = (body->fields)._.gameObject;
     pAVar2 = (this->fields).GhostVisualization;
-    unaff_ESI = this;
     if (pGVar1 != (GameObject *)0x0) {
       pGVar3 = (GhostBody *)
                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
                          (pGVar1,
                           GhostBody_MethodInfo__UnityEngine__GameObject__AddComponent<GhostBody>__);
-      unaff_ESI = this;
       if (pAVar2 != (AdvancedGhostVisualizaton *)0x0) {
         (pAVar2->fields).ghostBody = pGVar3;
         func_?();
         pGVar1 = (body->fields)._.gameObject;
-        unaff_ESI = this;
         if (pGVar1 != (GameObject *)0x0) {
           pAVar4 = (AdvancedGhostBodyRotateWeapon *)
                    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
                              (pGVar1,
                               AdvancedGhostBodyRotateWeapon_MethodInfo__UnityEngine__GameObject__AddComponent<AdvancedGhostBodyRotateWeapon>__
                              );
-          ppAVar5 = &(this->fields).weapon;
-          *ppAVar5 = pAVar4;
-          func_?();
+          (this->fields).weapon = pAVar4;
+          func_?(&(this->fields).weapon,pAVar4);
           pAVar2 = (this->fields).GhostVisualization;
-          unaff_ESI = this;
           if (pAVar2 != (AdvancedGhostVisualizaton *)0x0) {
-            pAVar4 = *ppAVar5;
-            this_00 = (AdvancedGhostBehaviour *)(pAVar2->fields).weaponHitSound;
-            unaff_ESI = this_00;
+            pAVar4 = (this->fields).weapon;
+            pAVar5 = (pAVar2->fields).weaponHitSound;
             if (pAVar4 != (AdvancedGhostBodyRotateWeapon *)0x0) {
               if (cRam_? == '\0') {
-                func_?();
-                func_?();
+                func_?(&TypeInfo__System__Action<CubeModelChangedEventArgs>);
+                func_?(&
+                                MethodInfo__AdvancedGhostBodyRotateWeapon__body_Changed_CubeModelChangedEventArgs_
+                               );
                 cRam_? = '\x01';
               }
-              (pAVar4->fields).weaponHitSound = (AudioSource *)this_00;
-              func_?();
-              ppAVar6 = &(body->fields).Changed;
-              pAVar7 = *ppAVar6;
-              this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                         *)func_?();
+              (pAVar4->fields).weaponHitSound = pAVar5;
+              func_?(&(pAVar4->fields).weaponHitSound,pAVar5);
+              pAVar6 = (body->fields).Changed;
+              this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+                         *)func_?(TypeInfo__System__Action<CubeModelChangedEventArgs>);
               DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::
               Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
               __Il2CppFullySharedGenericType]::
               DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                        (this_01,(Object *)this_00,
+                        (this_00,(Object *)pAVar4,
                          MethodInfo__AdvancedGhostBodyRotateWeapon__body_Changed_CubeModelChangedEventArgs_
                          ,(MethodInfo *)0x0);
-              unaff_ESI = (AdvancedGhostBehaviour *)
-                          mscorlib.dll::System::Delegate::Delegate_Combine
-                                    ((Delegate *)pAVar7,(Delegate *)this_01,(MethodInfo *)0x0);
-              body = (MVCubeModelBase *)TypeInfo__System__Action<CubeModelChangedEventArgs>;
-              if (unaff_ESI == (AdvancedGhostBehaviour *)0x0) {
-                *ppAVar6 = (Action_1_CubeModelChangedEventArgs_ *)0x0;
-                pAStack8 = (Action_1_CubeModelChangedEventArgs___Class *)0x0;
+              pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine
+                                 ((Delegate *)pAVar6,(Delegate *)this_00,(MethodInfo *)0x0);
+              if (pDVar7 == (Delegate *)0x0) {
+                (body->fields).Changed = (Action_1_CubeModelChangedEventArgs_ *)0x0;
+                pAVar4 = (AdvancedGhostBodyRotateWeapon *)0x0;
 code_?:
-                pAStack9 = (AdvancedGhostBehaviour *)ppAVar6;
                 func_?();
                 AdvancedGhostBodyRotateWeapon::AdvancedGhostBodyRotateWeapon_SetupWeaponCollision
-                          ((AdvancedGhostBodyRotateWeapon *)this_00,(MethodInfo *)0x0);
+                          (pAVar4,(MethodInfo *)0x0);
                 return;
               }
-              pAStack8 = TypeInfo__System__Action<CubeModelChangedEventArgs>;
-              pAStack9 = unaff_ESI;
-              pAVar7 = (Action_1_CubeModelChangedEventArgs_ *)func_?();
-              if (pAVar7 != (Action_1_CubeModelChangedEventArgs_ *)0x0) {
-                *ppAVar6 = pAVar7;
-                body = (MVCubeModelBase *)TypeInfo__System__Action<CubeModelChangedEventArgs>;
-                pAStack8 = TypeInfo__System__Action<CubeModelChangedEventArgs>;
-                pAStack9 = unaff_ESI;
-                pAStack8 = (Action_1_CubeModelChangedEventArgs___Class *)func_?();
-                if (pAStack8 != (Action_1_CubeModelChangedEventArgs___Class *)0x0)
-                goto code_?;
+              pAVar6 = (Action_1_CubeModelChangedEventArgs_ *)func_?();
+              if (pAVar6 != (Action_1_CubeModelChangedEventArgs_ *)0x0) {
+                (body->fields).Changed = pAVar6;
+                pAVar4 = (AdvancedGhostBodyRotateWeapon *)func_?();
+                if (pAVar4 != (AdvancedGhostBodyRotateWeapon *)0x0) goto code_?;
               }
               goto code_?;
             }
@@ -661,11 +670,9 @@ code_?:
   }
   func_?();
 code_?:
-  pAStack9 = unaff_ESI;
-  pAStack8 = (Action_1_CubeModelChangedEventArgs___Class *)body;
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -676,11 +683,11 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour::AdvancedGhostBehaviour_OnDestr
                (AdvancedGhostBehaviour *this,MethodInfo *method)
 
 {
-  ppCVar1 = &(this->fields).cullingSubscriberBase;
-  if (*ppCVar1 != (CullingSubscriberBase *)0x0) {
-    CullingSubscriberBase::CullingSubscriberBase_Destroy(*ppCVar1,(MethodInfo *)0x0);
-    *ppCVar1 = (CullingSubscriberBase *)0x0;
-    func_?(ppCVar1,0);
+  if ((this->fields).cullingSubscriberBase != (CullingSubscriberBase *)0x0) {
+    CullingSubscriberBase::CullingSubscriberBase_Destroy
+              ((this->fields).cullingSubscriberBase,(MethodInfo *)0x0);
+    (this->fields).cullingSubscriberBase = (CullingSubscriberBase *)0x0;
+    func_?(&(this->fields).cullingSubscriberBase,0);
   }
   return;
 }
@@ -869,29 +876,28 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour::AdvancedGhostBehaviour_SetCurr
     func_?(&TypeInfo__AdvancedGhostBehaviour__IGhostBehaviourState);
     cRam_? = '\x01';
   }
-  pAVar1 = (this->fields).currentState;
-  ppAVar2 = &(this->fields).currentState;
-  if (pAVar1 != (AdvancedGhostBehaviour_IGhostBehaviourState *)0x0) {
-    func_?(2,TypeInfo__AdvancedGhostBehaviour__IGhostBehaviourState,pAVar1,this);
+  if ((this->fields).currentState != (AdvancedGhostBehaviour_IGhostBehaviourState *)0x0) {
+    func_?(2,TypeInfo__AdvancedGhostBehaviour__IGhostBehaviourState,
+                    (this->fields).currentState,this);
   }
-  pOVar3 = mscorlib.dll::System::Activator::Activator_CreateInstance_4(type,(MethodInfo *)0x0);
-  pAVar4 = TypeInfo__AdvancedGhostBehaviour__IGhostBehaviourState;
-  if (pOVar3 == (Object *)0x0) {
+  pOVar1 = mscorlib.dll::System::Activator::Activator_CreateInstance_4(type,(MethodInfo *)0x0);
+  pAVar2 = TypeInfo__AdvancedGhostBehaviour__IGhostBehaviourState;
+  if (pOVar1 == (Object *)0x0) {
     func_?();
   }
   else {
-    pAVar1 = (AdvancedGhostBehaviour_IGhostBehaviourState *)
-             func_?(pOVar3,TypeInfo__AdvancedGhostBehaviour__IGhostBehaviourState);
-    if (pAVar1 != (AdvancedGhostBehaviour_IGhostBehaviourState *)0x0) {
-      func_?(0,TypeInfo__AdvancedGhostBehaviour__IGhostBehaviourState,pAVar1,this);
-      *ppAVar2 = pAVar1;
-      func_?(ppAVar2,pAVar1);
+    pAVar3 = (AdvancedGhostBehaviour_IGhostBehaviourState *)
+             func_?(pOVar1,TypeInfo__AdvancedGhostBehaviour__IGhostBehaviourState);
+    if (pAVar3 != (AdvancedGhostBehaviour_IGhostBehaviourState *)0x0) {
+      func_?(0,TypeInfo__AdvancedGhostBehaviour__IGhostBehaviourState,pAVar3,this);
+      (this->fields).currentState = pAVar3;
+      func_?(&(this->fields).currentState,pAVar3);
       return;
     }
   }
-  func_?(pOVar3,pAVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?(pOVar1,pAVar2);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -1044,18 +1050,17 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour::AdvancedGhostBehaviour_SetupCu
     CullingSubscriberBase::CullingSubscriberBase__ctor_2
               (pCVar5,4.0,position,(UnityAction_1_UnityEngine_CullingGroupEvent_ *)this_01,
                (MethodInfo *)0x0);
-    ppCVar6 = &(this->fields).cullingSubscriberBase;
-    *ppCVar6 = pCVar5;
+    (this->fields).cullingSubscriberBase = pCVar5;
     func_?();
-    pCVar5 = *ppCVar6;
+    pCVar5 = (this->fields).cullingSubscriberBase;
     if (pCVar5 != (CullingSubscriberBase *)0x0) {
       (pCVar5->fields)._DistanceBandIndex_k__BackingField = 3;
       return;
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -1067,81 +1072,80 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour::AdvancedGhostBehaviour_Update
 
 {
   pAVar1 = this;
-  pAVar2 = (this->fields).perception;
-  if (pAVar2 == (AdvancedGhostBehaviour_AdvancedGhostPerception *)0x0) {
+  if ((this->fields).perception == (AdvancedGhostBehaviour_AdvancedGhostPerception *)0x0) {
     return;
   }
+  pAVar2 = (this->fields).perception;
   this_00 = (pAVar2->fields).syncedInterval;
-  if (this_00 != (DeterministicSyncedInterval *)0x0) {
-    bVar3 = DeterministicSyncedInterval::DeterministicSyncedInterval_Update
-                       (this_00,(MethodInfo *)0x0);
-    if (bVar3 != 0) {
-      pAVar4 = (pAVar2->fields).ghostBehaviour;
-      if (((pAVar4 == (AdvancedGhostBehaviour *)0x0) ||
-          (pAVar5 = (pAVar4->fields).networkedValues,
-          pAVar5 == (AdvancedGhostBehaviour_NetworkedValues *)0x0)) ||
-         (this_01 = (pAVar2->fields).perception, this_01 == (OptimizedPerception *)0x0))
-      goto code_?;
-      OptimizedPerception::OptimizedPerception_Update
-                (this_01,(pAVar5->fields).nextPosition,(pAVar4->fields).perceptionRadius,
-                 (MethodInfo *)0x0);
+  if (this_00 == (DeterministicSyncedInterval *)0x0) goto code_?;
+  bVar3 = DeterministicSyncedInterval::DeterministicSyncedInterval_Update
+                     (this_00,(MethodInfo *)0x0);
+  if (bVar3 != 0) {
+    pAVar4 = (pAVar2->fields).ghostBehaviour;
+    if ((pAVar4 == (AdvancedGhostBehaviour *)0x0) ||
+       (pAVar5 = (pAVar4->fields).networkedValues,
+       pAVar5 == (AdvancedGhostBehaviour_NetworkedValues *)0x0)) goto code_?;
+    this_01 = (pAVar2->fields).perception;
+    if (this_01 == (OptimizedPerception *)0x0) goto code_?;
+    OptimizedPerception::OptimizedPerception_Update
+              (this_01,(pAVar5->fields).nextPosition,
+               (((pAVar2->fields).ghostBehaviour)->fields).perceptionRadius,(MethodInfo *)0x0);
+  }
+  pAVar5 = (this->fields).networkedValues;
+  if (pAVar5 != (AdvancedGhostBehaviour_NetworkedValues *)0x0) {
+    AdvancedGhostBehaviour+NetworkedValues::AdvancedGhostBehaviour_NetworkedValues_Update
+              (pAVar5,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      func_?();
+      this = (AdvancedGhostBehaviour *)&TypeInfo__System__Type;
+      func_?();
+      cRam_? = '\x01';
     }
-    pAVar5 = (this->fields).networkedValues;
-    if (pAVar5 != (AdvancedGhostBehaviour_NetworkedValues *)0x0) {
-      AdvancedGhostBehaviour+NetworkedValues::AdvancedGhostBehaviour_NetworkedValues_Update
-                (pAVar5,(MethodInfo *)0x0);
-      if (cRam_? == '\0') {
-        func_?();
-        this = (AdvancedGhostBehaviour *)&TypeInfo__System__Type;
-        func_?();
-        cRam_? = '\x01';
+    pAVar6 = (pAVar1->fields).currentState;
+    if (pAVar6 != (AdvancedGhostBehaviour_IGhostBehaviourState *)0x0) {
+      pAVar7 = pAVar6->klass;
+      uVar8 = 0;
+      uVar9._0_1_ = (pAVar7->_1).rank;
+      uVar9._1_1_ = (pAVar7->_1).minimumAlignment;
+      if (uVar9 != 0) {
+        do {
+          if (pAVar7->interfaceOffsets[uVar8].interfaceType ==
+              (Il2CppClass *)TypeInfo__AdvancedGhostBehaviour__IGhostBehaviourState) {
+            ppMVar10 = &(&(pAVar6->klass->vtable).Update)
+                        [pAVar6->klass->interfaceOffsets[uVar8].offset].method;
+            goto code_?;
+          }
+          uVar8 = uVar8 + 1;
+          pAVar1 = this;
+        } while (uVar8 < uVar9);
       }
-      pAVar6 = (pAVar1->fields).currentState;
-      if (pAVar6 != (AdvancedGhostBehaviour_IGhostBehaviourState *)0x0) {
-        pAVar7 = pAVar6->klass;
-        uVar8 = 0;
-        uVar9._0_1_ = (pAVar7->_1).rank;
-        uVar9._1_1_ = (pAVar7->_1).minimumAlignment;
-        if (uVar9 != 0) {
-          do {
-            if (pAVar7->interfaceOffsets[uVar8].interfaceType ==
-                (Il2CppClass *)TypeInfo__AdvancedGhostBehaviour__IGhostBehaviourState) {
-              ppMVar10 = &(&(pAVar6->klass->vtable).Update)
-                          [pAVar6->klass->interfaceOffsets[uVar8].offset].method;
-              goto code_?;
-            }
-            uVar8 = uVar8 + 1;
-            pAVar1 = this;
-          } while (uVar8 < uVar9);
-        }
-        this = pAVar1;
-        ppMVar10 = (MethodInfo **)
-                   func_?(pAVar6,TypeInfo__AdvancedGhostBehaviour__IGhostBehaviourState);
+      this = pAVar1;
+      ppMVar10 = (MethodInfo **)
+                 func_?(pAVar6,TypeInfo__AdvancedGhostBehaviour__IGhostBehaviourState);
 code_?:
-        right = (XNamespace *)(*(code *)*ppMVar10)(pAVar6,this);
-        this_02 = (Object *)(this->fields).currentState;
-        if (this_02 != (Object *)0x0) {
-          left = (XNamespace *)
-                 mscorlib.dll::System::Object::Object_GetType(this_02,(MethodInfo *)0x0);
-          if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__System__Type);
-          }
-          bVar3 = System.Xml.Linq.dll::System::Xml::Linq::XNamespace::XNamespace_op_Inequality
-                             (left,right,(MethodInfo *)0x0);
-          if (bVar3 != 0) {
-            AdvancedGhostBehaviour_SetCurrentState(this,(Type *)right,(MethodInfo *)0x0);
-          }
-          pAVar11 = (this->fields).advancedGhostMotor;
-          if ((pAVar11 != (AdvancedGhostMotor *)0x0) &&
-             (this_03 = (pAVar11->fields).smoothPhysicsMovement,
-             this_03 != (SmoothPhysicsMovement *)0x0)) {
-            SmoothPhysicsMovement::SmoothPhysicsMovement_SmoothMove(this_03,(MethodInfo *)0x0);
-            if ((this->fields).respawn == 0) {
-              return;
-            }
-            AdvancedGhostBehaviour_DoRespawn(this,(MethodInfo *)0x0);
+      right = (XNamespace *)(*(code *)*ppMVar10)(pAVar6,this);
+      this_02 = (Object *)(this->fields).currentState;
+      if (this_02 != (Object *)0x0) {
+        left = (XNamespace *)mscorlib.dll::System::Object::Object_GetType(this_02,(MethodInfo *)0x0)
+        ;
+        if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__System__Type);
+        }
+        bVar3 = System.Xml.Linq.dll::System::Xml::Linq::XNamespace::XNamespace_op_Inequality
+                           (left,right,(MethodInfo *)0x0);
+        if (bVar3 != 0) {
+          AdvancedGhostBehaviour_SetCurrentState(this,(Type *)right,(MethodInfo *)0x0);
+        }
+        pAVar11 = (this->fields).advancedGhostMotor;
+        if ((pAVar11 != (AdvancedGhostMotor *)0x0) &&
+           (this_03 = (pAVar11->fields).smoothPhysicsMovement,
+           this_03 != (SmoothPhysicsMovement *)0x0)) {
+          SmoothPhysicsMovement::SmoothPhysicsMovement_SmoothMove(this_03,(MethodInfo *)0x0);
+          if ((this->fields).respawn == 0) {
             return;
           }
+          AdvancedGhostBehaviour_DoRespawn(this,(MethodInfo *)0x0);
+          return;
         }
       }
     }
@@ -1216,89 +1220,29 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour::AdvancedGhostBehaviour_UpdateP
 
 {
   pVVar1 = AdvancedGhostBehaviour_GetMoveVector
-                     ((Vector3 *)&stack0xffffffdc,this,(this->fields).nextPosition,(MethodInfo *)0x0
-                     );
-  pAVar2 = (this->fields).advancedGhostMotor;
-  fVar3 = pVVar1->y;
-  fVar4 = pVVar1->z;
-  if (pAVar2 != (AdvancedGhostMotor *)0x0) {
-    (pAVar2->fields)._MoveDirection_k__BackingField.x = pVVar1->x;
-    (pAVar2->fields)._MoveDirection_k__BackingField.y = fVar3;
-    (pAVar2->fields)._MoveDirection_k__BackingField.z = fVar4;
-    pAVar2 = (this->fields).advancedGhostMotor;
-    if (pAVar2 != (AdvancedGhostMotor *)0x0) {
-      AdvancedGhostMotor::AdvancedGhostMotor_FixedUpdateFunction(pAVar2,(MethodInfo *)0x0);
+                     (&VStack_2,this,(this->fields).nextPosition,(MethodInfo *)0x0);
+  pAVar3 = (this->fields).advancedGhostMotor;
+  fVar4 = pVVar1->y;
+  fVar5 = pVVar1->z;
+  if (pAVar3 != (AdvancedGhostMotor *)0x0) {
+    (pAVar3->fields)._MoveDirection_k__BackingField.x = pVVar1->x;
+    (pAVar3->fields)._MoveDirection_k__BackingField.y = fVar4;
+    (pAVar3->fields)._MoveDirection_k__BackingField.z = fVar5;
+    pAVar3 = (this->fields).advancedGhostMotor;
+    if (pAVar3 != (AdvancedGhostMotor *)0x0) {
+      VStack_2.z = (float)&UNK_?;
+      AdvancedGhostMotor::AdvancedGhostMotor_FixedUpdateFunction(pAVar3,(MethodInfo *)0x0);
       this_00 = (this->fields).GhostVisualization;
       if (this_00 != (AdvancedGhostVisualizaton *)0x0) {
         this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                             ((Component *)this_00,(MethodInfo *)0x0);
         if (this_01 != (GameObject *)0x0) {
-          bVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+          bVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                   GameObject_get_activeInHierarchy(this_01,(MethodInfo *)0x0);
-          if (bVar5 != 0) {
-            pAVar2 = (this->fields).advancedGhostMotor;
-            if ((pAVar2 == (AdvancedGhostMotor *)0x0) ||
-               (pTVar6 = (pAVar2->fields).targetTransform, pTVar6 == (Transform *)0x0))
-            goto code_?;
-            pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                               ((Vector3 *)&puStack_7,pTVar6,(MethodInfo *)0x0);
-            uVar8 = pVVar1->x;
-            uVar9 = pVVar1->y;
-            fVar3 = pVVar1->z;
-            uVar10 = (pAVar2->fields).prevLocalPosition.x;
-            uVar11 = (pAVar2->fields).prevLocalPosition.y;
-            fVar12 = fVar3 - (pAVar2->fields).prevLocalPosition.z;
-            fVar4 = (pAVar2->fields).minDeltaPos;
-            if (fVar4 * fVar4 <
-                ((float)uVar9 - (float)uVar11) * ((float)uVar9 - (float)uVar11) +
-                ((float)uVar8 - (float)uVar10) * ((float)uVar8 - (float)uVar10) + fVar12 * fVar12) {
-              puVar13 = &stack0xffffffdc;
-              uVar14 = 0;
-              puVar15 = (undefined8 *)func_?();
-              fVar4 = *(float *)(puVar15 + 1);
-              fVar16 = (float)((ulonglong)*puVar15 >> 0x20);
-              fVar17 = (float)((uint)fVar16 & _UNK_?);
-              (pAVar2->fields).prevLocalPosition.x = (float)puVar13;
-              fVar12 = _UNK_?;
-              (pAVar2->fields).prevLocalPosition.y = (float)uVar14;
-              (pAVar2->fields).prevLocalPosition.z = fVar3;
-              if (fVar17 < fVar12) {
-                pTVar6 = (pAVar2->fields).targetTransform;
-                if (pTVar6 == (Transform *)0x0) goto code_?;
-                uVar14 = 0;
-                pQVar18 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                          Transform_get_localRotation
-                                    ((Quaternion *)&fStack_19,pTVar6,(MethodInfo *)0x0);
-                fVar3 = pQVar18->x;
-                fVar12 = pQVar18->y;
-                fVar17 = pQVar18->z;
-                puVar20 = &UNK_?;
-                forward.y = fVar16;
-                forward.x = (float)uVar14;
-                forward.z = fVar4;
-                pQVar18 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
-                          Quaternion_LookRotation_1
-                                    ((Quaternion *)&fStack_19,forward,(MethodInfo *)0x0);
-                fStack_19 = pQVar18->x;
-                puStack_7 = (undefined *)pQVar18->y;
-                this = (AdvancedGhostBehaviour *)pQVar18->z;
-                method = (MethodInfo *)pQVar18->w;
-                fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
-                                   ((MethodInfo *)0x0);
-                fVar21 = (float)puStack_7;
-                a.y = fVar12;
-                a.x = fVar3;
-                a.z = fVar17;
-                a.w = (float)puVar20;
-                b.x = fStack_19;
-                b = (Quaternion)CONCAT124(auVar22,b.x);
-                pQVar18 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Slerp
-                                    ((Quaternion *)&fStack_19,a,b,
-                                     (fVar4 / _UNK_?) * _UNK_?,(MethodInfo *)0x0);
-                UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
-                          (pTVar6,*pQVar18,(MethodInfo *)0x0);
-              }
-            }
+          if (bVar6 != 0) {
+            pAVar3 = (this->fields).advancedGhostMotor;
+            if (pAVar3 == (AdvancedGhostMotor *)0x0) goto code_?;
+            AdvancedGhostMotor::AdvancedGhostMotor_FixedUpdateRotation(pAVar3,(MethodInfo *)0x0);
           }
           return;
         }
@@ -1307,8 +1251,8 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour::AdvancedGhostBehaviour_UpdateP
   }
 code_?:
   func_?();
-  pcVar23 = (code *)swi(3);
-  (*pcVar23)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

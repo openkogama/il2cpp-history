@@ -6,96 +6,81 @@ void Assembly-CSharp.dll::ProfileSettingButton::ProfileSettingButton_OnChange
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Int32);
+    func_?();
     cRam_? = '\x01';
   }
   if (value != (Object *)0x0) {
-    pIVar1 = TypeInfo__System__Int32;
-    if ((value->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
-    goto code_?;
-    piVar2 = (int *)func_?(value);
-    this_00 = (this->fields).button;
-    if ((this->fields).isIncrease == 0) {
-      newValue = (this->fields).minValue < *piVar2;
+    if ((value->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class) {
+      func_?();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
     }
-    else {
-      newValue = *piVar2 < (this->fields).maxValue;
-    }
-    if (this_00 != (Button *)0x0) {
+    func_?();
+    if ((this->fields).button != (Button *)0x0) {
       if (cRam_? == '\0') {
-        func_?(&TypeInfo__UnityEngine__EventSystems__EventSystem,unaff_EBP);
-        func_?(&TypeInfo__UnityEngine__Object);
-        func_?(&
-                        bool_MethodInfo__UnityEngine__UI__SetPropertyUtility__SetStruct<bool>_System__Boolean___bool_
-                       );
+        func_?();
+        func_?();
+        func_?();
         cRam_? = '\x01';
       }
-      currentValue = &(this_00->fields)._.m_Interactable;
-      bVar3 = UnityEngine.UI.dll::UnityEngine::UI::SetPropertyUtility::SetPropertyUtility_SetStruct
-                        (currentValue,newValue,
+      bVar2 = UnityEngine.UI.dll::UnityEngine::UI::SetPropertyUtility::SetPropertyUtility_SetStruct
+                        (&(in_stack_3->fields).m_Interactable,in_stack_4,
                          bool_MethodInfo__UnityEngine__UI__SetPropertyUtility__SetStruct<bool>_System__Boolean___bool_
                         );
-      if (bVar3 != 0) {
-        if (*currentValue == 0) {
+      if (bVar2 != 0) {
+        if ((in_stack_3->fields).m_Interactable == 0) {
           if ((TypeInfo__UnityEngine__EventSystems__EventSystem->_1).cctor_finished_or_no_cctor == 0
              ) {
-            func_?(TypeInfo__UnityEngine__EventSystems__EventSystem);
+            func_?();
           }
-          pEVar4 = UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::
+          pEVar5 = UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::
                    EventSystem_get_current((MethodInfo *)0x0);
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                            ((Object_1 *)pEVar4,(Object_1 *)0x0,(MethodInfo *)0x0);
-          if (bVar3 != 0) {
+          bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                            ((Object_1 *)pEVar5,(Object_1 *)0x0,(MethodInfo *)0x0);
+          if (bVar2 != 0) {
             if ((TypeInfo__UnityEngine__EventSystems__EventSystem->_1).cctor_finished_or_no_cctor ==
                 0) {
-              func_?(TypeInfo__UnityEngine__EventSystems__EventSystem);
-            }
-            pEVar4 = UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::
-                     EventSystem_get_current((MethodInfo *)0x0);
-            if (pEVar4 == (EventSystem *)0x0) {
-code_?:
               func_?();
-              pcVar5 = (code *)swi(3);
-              (*pcVar5)();
-              return;
             }
-            x = (pEVar4->fields).m_CurrentSelected;
+            pEVar5 = UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::
+                     EventSystem_get_current((MethodInfo *)0x0);
+            if (pEVar5 == (EventSystem *)0x0) goto code_?;
+            x = (pEVar5->fields).m_CurrentSelected;
             y = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                          ((Component *)this_00,(MethodInfo *)0x0);
+                          ((Component *)in_stack_3,(MethodInfo *)0x0);
             if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-              func_?(TypeInfo__UnityEngine__Object);
+              func_?();
             }
-            bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+            bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                               ((Object_1 *)x,(Object_1 *)y,(MethodInfo *)0x0);
-            if (bVar3 != 0) {
+            if (bVar2 != 0) {
               if ((TypeInfo__UnityEngine__EventSystems__EventSystem->_1).cctor_finished_or_no_cctor
                   == 0) {
                 func_?();
               }
-              pEVar4 = UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::
+              pEVar5 = UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::
                        EventSystem_get_current((MethodInfo *)0x0);
-              if (pEVar4 == (EventSystem *)0x0) goto code_?;
+              if (pEVar5 == (EventSystem *)0x0) goto code_?;
               UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::
-              EventSystem_SetSelectedGameObject_1(pEVar4,(GameObject *)0x0,(MethodInfo *)0x0);
+              EventSystem_SetSelectedGameObject_1(pEVar5,(GameObject *)0x0,(MethodInfo *)0x0);
             }
           }
         }
         UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_OnSetProperty
-                  ((Selectable *)this_00,(MethodInfo *)0x0);
+                  (in_stack_3,(MethodInfo *)0x0);
       }
       return;
     }
   }
-  func_?();
-  value = extraout_ECX;
-  pIVar1 = extraout_EDX;
 code_?:
-  func_?(value,pIVar1);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  uVar6 = func_?(&puStack_7);
+  func_?(uVar6);
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -120,71 +105,97 @@ void Assembly-CSharp.dll::ProfileSettingButton::ProfileSettingButton_OnClick
   pOVar3 = Assets::Scripts::ProfileSettings::ProfileSettingsManager::
            ProfileSettingsManager_GetSettingValue(PVar2,(MethodInfo *)0x0);
   uVar4 = CONCAT44(TypeInfo__System__Int32,pOVar3);
-  if (pOVar3 == (Object *)0x0) {
+  cVar5 = '\0';
+  cVar6 = (int)pOVar3 < 0;
+  uVar7 = pOVar3 == (Object *)0x0;
+  if ((bool)uVar7) {
     uVar4 = func_?();
   }
-  else if ((pOVar3->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
-    piVar5 = (int *)func_?(pOVar3);
-    pPVar6 = (ProfileSettingButton *)(pPVar1->fields).minValue;
-    pPVar7 = (ProfileSettingButton *)((uint)((pPVar1->fields).isIncrease != 0) * 2 + -1 + *piVar5);
-    if (((int)pPVar6 <= (int)pPVar7) &&
-       (pPVar8 = (ProfileSettingButton *)(pPVar1->fields).maxValue, pPVar6 = pPVar7,
-       (int)pPVar8 < (int)pPVar7)) {
-      pPVar6 = pPVar8;
+  else {
+    pIVar8 = (pOVar3->klass->_0).element_class;
+    pIVar9 = (TypeInfo__System__Int32->_0).element_class;
+    cVar5 = SBORROW4((int)pIVar8,(int)pIVar9);
+    cVar6 = (int)pIVar8 - (int)pIVar9 < 0;
+    uVar7 = 0;
+    if (pIVar8 == pIVar9) {
+      piVar10 = (int *)func_?(pOVar3);
+      pPVar11 = (ProfileSettingButton *)(pPVar1->fields).minValue;
+      pPVar12 = (ProfileSettingButton *)
+                ((uint)((pPVar1->fields).isIncrease != 0) * 2 + -1 + *piVar10);
+      if (((int)pPVar11 <= (int)pPVar12) &&
+         (pPVar13 = (ProfileSettingButton *)(pPVar1->fields).maxValue, pPVar11 = pPVar12,
+         (int)pPVar13 < (int)pPVar12)) {
+        pPVar11 = pPVar13;
+      }
+      PVar2 = (pPVar1->fields).profileSettingKey;
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__MV__WorldObject__MetaData__AnistropicFilteringLevel);
+        func_?(&TypeInfo__MV__WorldObject__MetaData__AntiAliasingLevel);
+        func_?(&TypeInfo__UnityEngine__FilterMode);
+        func_?(&TypeInfo__MV__WorldObject__MetaData__LightingQualityLevel);
+        func_?(&TypeInfo__MV__WorldObject__MetaData__TargetFrameRateValue);
+        func_?(&TypeInfo__MV__WorldObject__MetaData__TextureQualityLevel);
+        func_?(&StringLiteral_Error);
+        cRam_? = '\x01';
+      }
+      value = StringLiteral_Error;
+      switch((pPVar1->fields).profileSettingKey) {
+      case 1:
+        this = pPVar11;
+        value = (String *)
+                func_?(TypeInfo__MV__WorldObject__MetaData__TargetFrameRateValue,&this);
+        break;
+      case 2:
+        pPStack_14 = pPVar11;
+        value = (String *)
+                func_?(TypeInfo__MV__WorldObject__MetaData__TextureQualityLevel,&pPStack_14)
+        ;
+        break;
+      case 3:
+        pPStack_15 = pPVar11;
+        value = (String *)func_?(TypeInfo__UnityEngine__FilterMode,&pPStack_15);
+        break;
+      case 4:
+        pPStack_16 = pPVar11;
+        value = (String *)
+                func_?(TypeInfo__MV__WorldObject__MetaData__AnistropicFilteringLevel,
+                                &pPStack_16);
+        break;
+      case 5:
+        pPStack_17 = pPVar11;
+        value = (String *)
+                func_?(TypeInfo__MV__WorldObject__MetaData__AntiAliasingLevel,&pPStack_17);
+        break;
+      case 6:
+        pPStack_18 = pPVar11;
+        value = (String *)
+                func_?(TypeInfo__MV__WorldObject__MetaData__LightingQualityLevel,
+                                &pPStack_18);
+      }
+      if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
+          cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
+      }
+      Assets::Scripts::ProfileSettings::ProfileSettingsManager::
+      ProfileSettingsManager_SetSettingValue(PVar2,(Object *)value,(MethodInfo *)0x0);
+      return;
     }
-    PVar2 = (pPVar1->fields).profileSettingKey;
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__MV__WorldObject__MetaData__AnistropicFilteringLevel);
-      func_?(&TypeInfo__MV__WorldObject__MetaData__AntiAliasingLevel);
-      func_?(&TypeInfo__UnityEngine__FilterMode);
-      func_?(&TypeInfo__MV__WorldObject__MetaData__LightingQualityLevel);
-      func_?(&TypeInfo__MV__WorldObject__MetaData__TargetFrameRateValue);
-      func_?(&TypeInfo__MV__WorldObject__MetaData__TextureQualityLevel);
-      func_?(&StringLiteral_Error);
-      cRam_? = '\x01';
-    }
-    value = StringLiteral_Error;
-    switch((pPVar1->fields).profileSettingKey) {
-    case 1:
-      this = pPVar6;
-      value = (String *)
-              func_?(TypeInfo__MV__WorldObject__MetaData__TargetFrameRateValue,&this);
-      break;
-    case 2:
-      pPStack_9 = pPVar6;
-      value = (String *)
-              func_?(TypeInfo__MV__WorldObject__MetaData__TextureQualityLevel,&pPStack_9);
-      break;
-    case 3:
-      pPStack_10 = pPVar6;
-      value = (String *)func_?(TypeInfo__UnityEngine__FilterMode,&pPStack_10);
-      break;
-    case 4:
-      pPStack_11 = pPVar6;
-      value = (String *)
-              func_?(TypeInfo__MV__WorldObject__MetaData__AnistropicFilteringLevel,
-                              &pPStack_11);
-      break;
-    case 5:
-      pPStack_12 = pPVar6;
-      value = (String *)
-              func_?(TypeInfo__MV__WorldObject__MetaData__AntiAliasingLevel,&pPStack_12);
-      break;
-    case 6:
-      pPStack_13 = pPVar6;
-      value = (String *)
-              func_?(TypeInfo__MV__WorldObject__MetaData__LightingQualityLevel,&pPStack_13)
-      ;
-    }
-    if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
-        cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
-    }
-    Assets::Scripts::ProfileSettings::ProfileSettingsManager::ProfileSettingsManager_SetSettingValue
-              (PVar2,(Object *)value,(MethodInfo *)0x0);
+  }
+  puVar19 = (undefined4 *)func_?(uVar4);
+  if (!(bool)uVar7 && cVar5 == cVar6) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(code *)puVar19[0x15])();
     return;
   }
-  func_?(uVar4);
+  uVar20 = *puVar19;
+  *unaff_EBX = *unaff_EBX ^ (byte)((uint)puVar19 >> 8);
+  pcVar21 = (char *)((int)puVar19 +
+                   (int)((int)&pPVar1[0x138539a].fields.profileSettingButtonType + 3));
+  *pcVar21 = *pcVar21 + (extraout_DH & (byte)((uint)uVar20 >> 8));
+  out(0x30,(char)puVar19);
+  pcVar22 = (code *)swi(3);
+  (*pcVar22)();
   return;
 }
 
@@ -341,9 +352,8 @@ void Assembly-CSharp.dll::ProfileSettingButton::ProfileSettingButton_Start
                      ((Component *)this,
                       UnityEngine__UI__Button_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Button>__
                      );
-  ppBVar2 = &(this->fields).button;
-  *ppBVar2 = pBVar1;
-  func_?(ppBVar2,pBVar1);
+  (this->fields).button = pBVar1;
+  func_?(&(this->fields).button,pBVar1);
   (this->fields).minValue = 0;
   (this->fields).isIncrease = (this->fields).profileSettingButtonType == 0;
   handle_04 = TypeRef__MV__WorldObject__MetaData__TextureQualityLevel;
@@ -363,10 +373,10 @@ void Assembly-CSharp.dll::ProfileSettingButton::ProfileSettingButton_Start
     if ((TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__Enum);
     }
-    pAVar3 = mscorlib.dll::System::Enum::Enum_GetValues((Type *)unaff_ESI,(MethodInfo *)0x0);
-    if (pAVar3 != (Array *)0x0) {
-      iVar4 = mscorlib.dll::System::Array::Array_get_Length(pAVar3,(MethodInfo *)0x0);
-      iVar5 = iVar4 + -1;
+    pAVar2 = mscorlib.dll::System::Enum::Enum_GetValues((Type *)unaff_ESI,(MethodInfo *)0x0);
+    if (pAVar2 != (Array *)0x0) {
+      iVar3 = mscorlib.dll::System::Array::Array_get_Length(pAVar2,(MethodInfo *)0x0);
+      iVar4 = iVar3 + -1;
       break;
     }
     goto code_?;
@@ -380,10 +390,10 @@ void Assembly-CSharp.dll::ProfileSettingButton::ProfileSettingButton_Start
     if ((TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__Enum);
     }
-    pAVar3 = mscorlib.dll::System::Enum::Enum_GetValues((Type *)unaff_ESI,(MethodInfo *)0x0);
-    if (pAVar3 == (Array *)0x0) goto code_?;
-    iVar4 = mscorlib.dll::System::Array::Array_get_Length(pAVar3,(MethodInfo *)0x0);
-    iVar5 = iVar4 + -2;
+    pAVar2 = mscorlib.dll::System::Enum::Enum_GetValues((Type *)unaff_ESI,(MethodInfo *)0x0);
+    if (pAVar2 == (Array *)0x0) goto code_?;
+    iVar3 = mscorlib.dll::System::Array::Array_get_Length(pAVar2,(MethodInfo *)0x0);
+    iVar4 = iVar3 + -2;
     break;
   case 3:
     if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
@@ -395,10 +405,10 @@ void Assembly-CSharp.dll::ProfileSettingButton::ProfileSettingButton_Start
     if ((TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__Enum);
     }
-    pAVar3 = mscorlib.dll::System::Enum::Enum_GetValues((Type *)unaff_ESI,(MethodInfo *)0x0);
-    if (pAVar3 == (Array *)0x0) goto code_?;
-    iVar4 = mscorlib.dll::System::Array::Array_get_Length(pAVar3,(MethodInfo *)0x0);
-    iVar5 = iVar4 + -1;
+    pAVar2 = mscorlib.dll::System::Enum::Enum_GetValues((Type *)unaff_ESI,(MethodInfo *)0x0);
+    if (pAVar2 == (Array *)0x0) goto code_?;
+    iVar3 = mscorlib.dll::System::Array::Array_get_Length(pAVar2,(MethodInfo *)0x0);
+    iVar4 = iVar3 + -1;
     break;
   case 4:
     if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
@@ -410,10 +420,10 @@ void Assembly-CSharp.dll::ProfileSettingButton::ProfileSettingButton_Start
     if ((TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__Enum);
     }
-    pAVar3 = mscorlib.dll::System::Enum::Enum_GetValues((Type *)unaff_ESI,(MethodInfo *)0x0);
-    if (pAVar3 == (Array *)0x0) goto code_?;
-    iVar4 = mscorlib.dll::System::Array::Array_get_Length(pAVar3,(MethodInfo *)0x0);
-    iVar5 = iVar4 + -1;
+    pAVar2 = mscorlib.dll::System::Enum::Enum_GetValues((Type *)unaff_ESI,(MethodInfo *)0x0);
+    if (pAVar2 == (Array *)0x0) goto code_?;
+    iVar3 = mscorlib.dll::System::Array::Array_get_Length(pAVar2,(MethodInfo *)0x0);
+    iVar4 = iVar3 + -1;
     break;
   case 5:
     if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
@@ -425,10 +435,10 @@ void Assembly-CSharp.dll::ProfileSettingButton::ProfileSettingButton_Start
     if ((TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__Enum);
     }
-    pAVar3 = mscorlib.dll::System::Enum::Enum_GetValues((Type *)unaff_ESI,(MethodInfo *)0x0);
-    if (pAVar3 == (Array *)0x0) goto code_?;
-    iVar4 = mscorlib.dll::System::Array::Array_get_Length(pAVar3,(MethodInfo *)0x0);
-    iVar5 = iVar4 + -1;
+    pAVar2 = mscorlib.dll::System::Enum::Enum_GetValues((Type *)unaff_ESI,(MethodInfo *)0x0);
+    if (pAVar2 == (Array *)0x0) goto code_?;
+    iVar3 = mscorlib.dll::System::Array::Array_get_Length(pAVar2,(MethodInfo *)0x0);
+    iVar4 = iVar3 + -1;
     break;
   case 6:
     if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
@@ -440,15 +450,15 @@ void Assembly-CSharp.dll::ProfileSettingButton::ProfileSettingButton_Start
     if ((TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__Enum);
     }
-    pAVar3 = mscorlib.dll::System::Enum::Enum_GetValues((Type *)unaff_ESI,(MethodInfo *)0x0);
-    if (pAVar3 == (Array *)0x0) goto code_?;
-    iVar4 = mscorlib.dll::System::Array::Array_get_Length(pAVar3,(MethodInfo *)0x0);
-    iVar5 = iVar4 + -1;
+    pAVar2 = mscorlib.dll::System::Enum::Enum_GetValues((Type *)unaff_ESI,(MethodInfo *)0x0);
+    if (pAVar2 == (Array *)0x0) goto code_?;
+    iVar3 = mscorlib.dll::System::Array::Array_get_Length(pAVar2,(MethodInfo *)0x0);
+    iVar4 = iVar3 + -1;
     break;
   default:
-    iVar5 = 1;
+    iVar4 = 1;
   }
-  (this->fields).maxValue = iVar5;
+  (this->fields).maxValue = iVar4;
   if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
       cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
@@ -460,10 +470,10 @@ void Assembly-CSharp.dll::ProfileSettingButton::ProfileSettingButton_Start
       (Dictionary_2_MV_WorldObject_MetaData_ProfileSettingKey_System_Action_1_Object_ *)0x0) {
 code_?:
     func_?();
-    pIVar6 = extraout_ECX;
+    pIVar5 = extraout_ECX;
   }
   else {
-    pDVar7 = (Delegate *)
+    pDVar6 = (Delegate *)
              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
              Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
                        ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,key,
@@ -476,9 +486,9 @@ code_?:
     DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
               (this_01,(Object *)this,MethodInfo__ProfileSettingButton__OnChange_System__Object_,
                (MethodInfo *)0x0);
-    pAVar8 = unaff_EDI;
+    pAVar7 = unaff_EDI;
     unaff_ESI = mscorlib.dll::System::Delegate::Delegate_Combine
-                          (pDVar7,(Delegate *)this_01,(MethodInfo *)0x0);
+                          (pDVar6,(Delegate *)this_01,(MethodInfo *)0x0);
     method_00 = 
     MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__set_Item_MV__WorldObject__MetaData__ProfileSettingKey__System__Action<System::Object>_
     ;
@@ -490,7 +500,7 @@ code_?:
       value_00 = (Object *)func_?(unaff_ESI,TypeInfo__System__Action<System::Object>);
       if (value_00 == (Object *)0x0) goto code_?;
     }
-    unaff_EDI = pAVar8;
+    unaff_EDI = pAVar7;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
     Dictionary_2_System_Int32Enum_System_Object__set_Item
               ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,key,value_00,method_00);
@@ -503,19 +513,19 @@ code_?:
       cRam_? = '\x01';
     }
     if (unaff_ESI == (Delegate *)0x0) goto code_?;
-    pIVar6 = TypeInfo__System__Int32;
+    pIVar5 = TypeInfo__System__Int32;
     if ((((Type__Class *)unaff_ESI->klass)->_0).element_class ==
         (TypeInfo__System__Int32->_0).element_class) {
-      pDVar7 = (Delegate *)&UNK_?;
-      piVar9 = (int *)func_?(unaff_ESI);
-      unaff_ESI = pDVar7;
-      pBVar1 = (this->fields).button;
+      pDVar6 = (Delegate *)&UNK_?;
+      piVar8 = (int *)func_?(unaff_ESI);
+      unaff_ESI = pDVar6;
       if ((this->fields).isIncrease == 0) {
-        value = (this->fields).minValue < *piVar9;
+        value = (this->fields).minValue < *piVar8;
       }
       else {
-        value = *piVar9 < (this->fields).maxValue;
+        value = *piVar8 < (this->fields).maxValue;
       }
+      pBVar1 = (this->fields).button;
       if (pBVar1 != (Button *)0x0) {
         UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_set_interactable
                   ((Selectable *)pBVar1,value,(MethodInfo *)0x0);
@@ -524,7 +534,7 @@ code_?:
       goto code_?;
     }
   }
-  func_?(unaff_ESI,pIVar6);
+  func_?(unaff_ESI,pIVar5);
 code_?:
   func_?(unaff_ESI,unaff_EDI);
                     /* WARNING: Bad instruction - Truncating control flow here */

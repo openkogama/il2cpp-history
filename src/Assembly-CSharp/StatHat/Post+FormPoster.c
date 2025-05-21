@@ -41,9 +41,9 @@ Assembly-CSharp.dll::StatHat::Post+FormPoster::Post_FormPoster_CreatePostData
   puStack_4 = puVar5;
   pSVar6 = ::StringLiteral__;
   pSStack_7 = ::StringLiteral__;
-  pSStack_8 = ::StringLiteral__;
   this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
              *)(this->fields).Parameters;
+  pSStack_8 = ::StringLiteral__;
   if (this_00 !=
       (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
        *)0x0) {
@@ -127,10 +127,10 @@ code_?:
         if (values->max_length < 2) goto code_?;
         values->vector[1] = (String *)DStack_10._dictionary;
         func_?();
+        if (values->max_length < 3) goto code_?;
         DStack_10._dictionary =
              (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
               *)::StringLiteral__;
-        if (values->max_length < 3) goto code_?;
         values->vector[2] = ::StringLiteral__;
         func_?();
         this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
@@ -163,12 +163,12 @@ code_?:
         if (values->max_length < 4) goto code_?;
         values->vector[3] = (String *)DStack_10._dictionary;
         func_?();
+        if (values->max_length < 5) goto code_?;
         DStack_10._dictionary =
              (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
               *)::StringLiteral__;
-        if (values->max_length < 5) goto code_?;
+        values->vector[4] = ::StringLiteral__;
         pSStack_11 = (String *)(values->vector + 4);
-        pSStack_11->klass = (String__Class *)::StringLiteral__;
         func_?();
         pSVar6 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
         pSStack_8 = pSVar6;
@@ -335,14 +335,12 @@ void Assembly-CSharp.dll::StatHat::Post+FormPoster::Post_FormPoster__ctor
 {
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  ppSVar1 = &(this->fields).BaseUrl;
-  *ppSVar1 = base_url;
-  func_?(ppSVar1,base_url);
+  (this->fields).BaseUrl = base_url;
+  func_?(&(this->fields).BaseUrl,base_url);
   (this->fields).Parameters = parameters;
   func_?(&this->fields,parameters);
-  ppSVar1 = &(this->fields).RelUrl;
-  *ppSVar1 = rel_url;
-  func_?(ppSVar1,rel_url);
+  (this->fields).RelUrl = rel_url;
+  func_?(&(this->fields).RelUrl,rel_url);
   Post_FormPoster_PostForm(this,(MethodInfo *)0x0);
   return;
 }

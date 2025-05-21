@@ -14,83 +14,85 @@ Assembly-CSharp.dll::RTG::TransformEx::TransformEx_Align
     return pQVar2;
   }
   pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
-                      ((Vector3 *)&stack0xffffffc0,transform,(MethodInfo *)0x0);
-  fVar4 = pVVar3->x;
-  fVar5 = pVVar3->y;
+                      ((Vector3 *)&stack0xffffffc8,transform,(MethodInfo *)0x0);
+  fStack_4 = pVVar3->x;
+  fStack_5 = pVVar3->y;
   fStack_6 = pVVar3->z;
   if (alignmentAxis != TransformAxis__Enum_PositiveY) {
     if (alignmentAxis == TransformAxis__Enum_PositiveX) {
       pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
-                          ((Vector3 *)&puStack_7,transform,(MethodInfo *)0x0);
-      fVar4 = pVVar3->x;
-      fVar5 = pVVar3->y;
+                          ((Vector3 *)&stack0xffffffb8,transform,(MethodInfo *)0x0);
+      fStack_4 = pVVar3->x;
+      fStack_5 = pVVar3->y;
 code_?:
       fStack_6 = pVVar3->z;
     }
     else if (alignmentAxis == TransformAxis__Enum_NegativeX) {
       pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
-                          ((Vector3 *)&puStack_7,transform,(MethodInfo *)0x0);
-      uVar8 = pVVar3->x;
-      uVar9 = pVVar3->y;
-      fVar4 = (float)(uVar8 ^ 
-                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-      fVar5 = (float)(uVar9 ^ 
-                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                          ((Vector3 *)&stack0xffffffb8,transform,(MethodInfo *)0x0);
+      uVar7 = pVVar3->x;
+      uVar8 = pVVar3->y;
+      fStack_4 = (float)(uVar7 ^ 
+                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+      fStack_5 = (float)(uVar8 ^ 
+                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       fStack_6 = (float)((uint)pVVar3->z ^
                          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     }
     else if (alignmentAxis == TransformAxis__Enum_NegativeY) {
       pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
-                          ((Vector3 *)&puStack_7,transform,(MethodInfo *)0x0);
-      uVar10 = pVVar3->x;
-      uVar11 = pVVar3->y;
-      fVar4 = (float)(uVar10 ^ 
-                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-      fVar5 = (float)(uVar11 ^ 
-                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                          ((Vector3 *)&stack0xffffffb8,transform,(MethodInfo *)0x0);
+      uVar9 = pVVar3->x;
+      uVar10 = pVVar3->y;
+      fStack_4 = (float)(uVar9 ^ 
+                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+      fStack_5 = (float)(uVar10 ^ 
+                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
       fStack_6 = (float)((uint)pVVar3->z ^
                          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     }
     else {
       if (alignmentAxis == TransformAxis__Enum_PositiveZ) {
         pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
-                            ((Vector3 *)&puStack_7,transform,(MethodInfo *)0x0);
-        fVar4 = pVVar3->x;
-        fVar5 = pVVar3->y;
+                            ((Vector3 *)&stack0xffffffb8,transform,(MethodInfo *)0x0);
+        fStack_4 = pVVar3->x;
+        fStack_5 = pVVar3->y;
         goto code_?;
       }
       if (alignmentAxis == TransformAxis__Enum_NegativeZ) {
         pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
-                            ((Vector3 *)&puStack_7,transform,(MethodInfo *)0x0);
-        uVar12 = pVVar3->x;
-        uVar13 = pVVar3->y;
-        fVar4 = (float)(uVar12 ^ 
-                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-        fVar5 = (float)(uVar13 ^ 
-                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                            ((Vector3 *)&stack0xffffffb8,transform,(MethodInfo *)0x0);
+        uVar11 = pVVar3->x;
+        uVar12 = pVVar3->y;
+        fStack_4 = (float)(uVar11 ^ 
+                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
+        ;
+        fStack_5 = (float)(uVar12 ^ 
+                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
+        ;
         fStack_6 = (float)((uint)pVVar3->z ^
                            __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
         ;
       }
     }
   }
-  fVar14 = fVar4 * normAlignVector.x + fVar5 * normAlignVector.y + fStack_6 * normAlignVector.z;
-  if (_UNK_? - fVar14 < _UNK_?) {
+  fVar13 = normAlignVector.y * fStack_5 + normAlignVector.x * fStack_4 +
+           normAlignVector.z * fStack_6;
+  if (_UNK_? - fVar13 < _UNK_?) {
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
-    pQVar15 = TypeInfo__UnityEngine__Quaternion->static_fields;
-    fVar4 = (pQVar15->identityQuaternion).y;
-    fVar5 = (pQVar15->identityQuaternion).z;
-    fVar14 = (pQVar15->identityQuaternion).w;
-    __return_storage_ptr__->x = (pQVar15->identityQuaternion).x;
-    __return_storage_ptr__->y = fVar4;
-    __return_storage_ptr__->z = fVar5;
-    __return_storage_ptr__->w = fVar14;
+    pQVar14 = TypeInfo__UnityEngine__Quaternion->static_fields;
+    fVar13 = (pQVar14->identityQuaternion).y;
+    fVar15 = (pQVar14->identityQuaternion).z;
+    fVar16 = (pQVar14->identityQuaternion).w;
+    __return_storage_ptr__->x = (pQVar14->identityQuaternion).x;
+    __return_storage_ptr__->y = fVar13;
+    __return_storage_ptr__->z = fVar15;
+    __return_storage_ptr__->w = fVar16;
     return __return_storage_ptr__;
   }
-  fVar16 = fStack_6;
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
@@ -98,64 +100,64 @@ code_?:
   pVVar17 = TypeInfo__UnityEngine__Vector3->static_fields;
   uVar18._0_4_ = (pVVar17->zeroVector).x;
   uVar18._4_4_ = (pVVar17->zeroVector).y;
-  fVar19 = (pVVar17->zeroVector).z;
-  if (_UNK_? <= fVar14 + _UNK_?) {
-    value.y = fVar16 * normAlignVector.x - normAlignVector.z * fVar4;
-    value.x = normAlignVector.z * fVar5 - fVar16 * normAlignVector.y;
-    value.z = fVar4 * normAlignVector.y - normAlignVector.x * fVar5;
+  fVar15 = (pVVar17->zeroVector).z;
+  if (_UNK_? <= fVar13 + _UNK_?) {
+    value.y = normAlignVector.x * fStack_6 - normAlignVector.z * fStack_4;
+    value.x = normAlignVector.z * fStack_5 - normAlignVector.y * fStack_6;
+    value.z = normAlignVector.y * fStack_4 - normAlignVector.x * fStack_5;
     pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                        ((Vector3 *)&puStack_7,value,(MethodInfo *)0x0);
+                        ((Vector3 *)&stack0xffffffb8,value,(MethodInfo *)0x0);
     uVar18._0_4_ = pVVar3->x;
     uVar18._4_4_ = pVVar3->y;
-    fVar19 = pVVar3->z;
-    uStack_20 = (undefined4)uVar18;
-    uVar21 = uVar18._4_4_;
+    fVar15 = pVVar3->z;
+    uStack_19 = (undefined4)uVar18;
+    uVar20 = uVar18._4_4_;
     goto code_?;
   }
   if (alignmentAxis == TransformAxis__Enum_PositiveX) {
 code_?:
     pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
-                        ((Vector3 *)&puStack_7,transform,(MethodInfo *)0x0);
+                        ((Vector3 *)&stack0xffffffb8,transform,(MethodInfo *)0x0);
     uVar18._0_4_ = pVVar3->x;
     uVar18._4_4_ = pVVar3->y;
-    fVar19 = pVVar3->z;
-    uStack_20 = (undefined4)uVar18;
-    uVar21 = uVar18._4_4_;
+    fVar15 = pVVar3->z;
+    uStack_19 = (undefined4)uVar18;
+    uVar20 = uVar18._4_4_;
   }
   else {
     if (alignmentAxis == TransformAxis__Enum_NegativeX) {
       pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
-                          ((Vector3 *)&puStack_7,transform,(MethodInfo *)0x0);
+                          ((Vector3 *)&stack0xffffffb8,transform,(MethodInfo *)0x0);
     }
     else {
       if (alignmentAxis == TransformAxis__Enum_PositiveY) {
         pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
-                            ((Vector3 *)&puStack_7,transform,(MethodInfo *)0x0);
+                            ((Vector3 *)&stack0xffffffb8,transform,(MethodInfo *)0x0);
         uVar18._0_4_ = pVVar3->x;
         uVar18._4_4_ = pVVar3->y;
-        fVar19 = pVVar3->z;
-        uStack_20 = (undefined4)uVar18;
-        uVar21 = uVar18._4_4_;
+        fVar15 = pVVar3->z;
+        uStack_19 = (undefined4)uVar18;
+        uVar20 = uVar18._4_4_;
         goto code_?;
       }
       if (alignmentAxis != TransformAxis__Enum_NegativeY) {
         if (alignmentAxis != TransformAxis__Enum_PositiveZ) {
-          uStack_20 = (undefined4)uVar18;
-          uVar21 = uVar18._4_4_;
+          uStack_19 = (undefined4)uVar18;
+          uVar20 = uVar18._4_4_;
           if (alignmentAxis == TransformAxis__Enum_NegativeZ) {
             pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
-                                ((Vector3 *)&puStack_7,transform,(MethodInfo *)0x0);
-            uVar22 = pVVar3->x;
-            uVar23 = pVVar3->y;
-            uStack_20 = uVar22 ^ 
+                                ((Vector3 *)&stack0xffffffb8,transform,(MethodInfo *)0x0);
+            uVar21 = pVVar3->x;
+            uVar22 = pVVar3->y;
+            uStack_19 = uVar21 ^ 
                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
-            fVar19 = (float)((uint)pVVar3->z ^
+            fVar15 = (float)((uint)pVVar3->z ^
                             __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
                             );
-            uVar18 = CONCAT44(uVar23 ^ 
+            uVar18 = CONCAT44(uVar22 ^ 
                               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
-                              ,uStack_20);
-            uVar21 = uVar23 ^ 
+                              ,uStack_19);
+            uVar20 = uVar22 ^ 
                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
           }
           goto code_?;
@@ -163,43 +165,43 @@ code_?:
         goto code_?;
       }
       pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
-                          ((Vector3 *)&puStack_7,transform,(MethodInfo *)0x0);
+                          ((Vector3 *)&stack0xffffffb8,transform,(MethodInfo *)0x0);
     }
-    uVar24 = pVVar3->x;
-    uVar25 = pVVar3->y;
-    uStack_20 = uVar24 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
-    fVar19 = (float)((uint)pVVar3->z ^
+    uVar23 = pVVar3->x;
+    uVar24 = pVVar3->y;
+    uStack_19 = uVar23 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+    fVar15 = (float)((uint)pVVar3->z ^
                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-    uVar18 = CONCAT44(uVar25 ^ 
+    uVar18 = CONCAT44(uVar24 ^ 
                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field,
-                      uStack_20);
-    uVar21 = uVar25 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+                      uStack_19);
+    uVar20 = uVar24 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
   }
 code_?:
   from.y = 0.0;
-  from.x = fVar19;
+  from.x = fVar15;
   from.z = fStack_6;
-  axis.z = fVar19;
+  axis.z = fVar15;
   axis.x = (float)(int)uVar18;
   axis.y = (float)(int)((ulonglong)uVar18 >> 0x20);
-  fVar4 = Vector3Ex::Vector3Ex_SignedAngle(from,normAlignVector,axis,(MethodInfo *)0x0);
-  axis_00.y = (float)uVar21;
-  axis_00.x = (float)uStack_20;
-  axis_00.z = fVar19;
+  fVar13 = Vector3Ex::Vector3Ex_SignedAngle(from,normAlignVector,axis,(MethodInfo *)0x0);
+  axis_00.y = (float)uVar20;
+  axis_00.x = (float)uStack_19;
+  axis_00.z = fVar15;
   UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_Rotate_4
-            (transform,axis_00,fVar4,Space__Enum_World,(MethodInfo *)0x0);
-  axis_01.y = (float)uVar21;
-  axis_01.x = (float)uStack_20;
-  axis_01.z = fVar19;
+            (transform,axis_00,fVar13,Space__Enum_World,(MethodInfo *)0x0);
+  axis_01.y = (float)transform;
+  axis_01.x = (float)&UNK_?;
+  axis_01.z = fVar15;
   pQVar2 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
-                      ((Quaternion *)&stack0xffffffa0,fVar4,axis_01,(MethodInfo *)0x0);
-  fVar4 = pQVar2->y;
-  fVar5 = pQVar2->z;
-  fVar14 = pQVar2->w;
+                      ((Quaternion *)&stack0xffffff90,fVar13,axis_01,(MethodInfo *)0x0);
+  fVar13 = pQVar2->y;
+  fVar15 = pQVar2->z;
+  fVar16 = pQVar2->w;
   __return_storage_ptr__->x = pQVar2->x;
-  __return_storage_ptr__->y = fVar4;
-  __return_storage_ptr__->z = fVar5;
-  __return_storage_ptr__->w = fVar14;
+  __return_storage_ptr__->y = fVar13;
+  __return_storage_ptr__->z = fVar15;
+  __return_storage_ptr__->w = fVar16;
   return __return_storage_ptr__;
 }
 
@@ -251,18 +253,18 @@ Assembly-CSharp.dll::RTG::TransformEx::TransformEx_FilterParentsOnly
   iVar4 = func_?(0,
                           TypeInfo__System__Collections__Generic__IEnumerable<UnityEngine::Transform>
                           ,transforms);
-  uStack_1._1_3_ = 0;
+  uStack_1 = 0;
 code_?:
   uStack_1._0_1_ = 1;
   while (iVar4 != 0) {
     cVar5 = func_?();
     if (cVar5 == '\0') {
       uStack_1 = 0xffffffff;
-      if (iVar4 == 0) {
+      if (iVar4 != 0) {
+        func_?();
         *unaff_FS_OFFSET = uStack_3;
         return (List_1_UnityEngine_Transform_ *)this;
       }
-      func_?();
       *unaff_FS_OFFSET = uStack_3;
       return (List_1_UnityEngine_Transform_ *)this;
     }
@@ -282,25 +284,21 @@ code_?:
       bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                         ((Object_1 *)this_01,(Object_1 *)this_00,(MethodInfo *)0x0);
       if (bVar7 != 0) {
-        if ((this_01 == (Component *)0x0) ||
-           (parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                               (this_01,(MethodInfo *)0x0), this_00 == (Transform *)0x0))
-        goto code_?;
+        if (this_01 == (Component *)0x0) goto code_?;
+        parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                           (this_01,(MethodInfo *)0x0);
+        if (this_00 == (Transform *)0x0) goto code_?;
         bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_IsChildOf
                           (this_00,parent,(MethodInfo *)0x0);
         if (bVar7 != 0) {
-          uStack_1._0_1_ = 1;
-          if (iVar6 != 0) {
-            func_?();
-          }
+          uStack_1 = CONCAT31(uStack_1._1_3_,1);
+          func_?();
           goto code_?;
         }
       }
     }
     uStack_1._0_1_ = 1;
-    if (iVar6 != 0) {
-      func_?();
-    }
+    func_?();
     uStack_1._0_1_ = 1;
     if (this == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
                  *)0x0) break;
@@ -431,13 +429,12 @@ code_?:
   __return_storage_ptr__->y = fVar3;
   __return_storage_ptr__->z = fVar4;
   if (axisDesc == (AxisDescriptor *)0x0) goto code_?;
-  iVar5 = (axisDesc->fields)._index;
-  if (iVar5 == 1) {
+  if ((axisDesc->fields)._index == 1) {
     pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
                        ((Vector3 *)&stack0xfffffff0,transform,(MethodInfo *)0x0);
   }
   else {
-    if (iVar5 != 2) goto code_?;
+    if ((axisDesc->fields)._index != 2) goto code_?;
     pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
                        ((Vector3 *)&stack0xfffffff0,transform,(MethodInfo *)0x0);
   }
@@ -448,14 +445,14 @@ code_?:
   __return_storage_ptr__->z = fVar4;
 code_?:
   if ((axisDesc->fields)._sign == 1) {
-    uVar6 = __return_storage_ptr__->x;
-    uVar7 = __return_storage_ptr__->y;
-    uVar8 = uVar7 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+    uVar5 = __return_storage_ptr__->x;
+    uVar6 = __return_storage_ptr__->y;
+    uVar7 = uVar6 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
     fVar4 = (float)((uint)__return_storage_ptr__->z ^
                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
     __return_storage_ptr__->x =
-         (float)(uVar6 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-    __return_storage_ptr__->y = (float)uVar8;
+         (float)(uVar5 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+    __return_storage_ptr__->y = (float)uVar7;
     __return_storage_ptr__->z = fVar4;
   }
   return __return_storage_ptr__;
@@ -532,7 +529,7 @@ void Assembly-CSharp.dll::RTG::TransformEx::TransformEx_RotateAroundPivot
 {
   if (transform != (Transform *)0x0) {
     pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                        ((Vector3 *)&stack0xffffffc8,transform,(MethodInfo *)0x0);
+                        ((Vector3 *)&stack0xffffffc0,transform,(MethodInfo *)0x0);
     uVar2 = pVVar1->x;
     uVar3 = pVVar1->y;
     fVar4 = pVVar1->z;
@@ -556,7 +553,7 @@ void Assembly-CSharp.dll::RTG::TransformEx::TransformEx_RotateAroundPivot
     point.x = fVar5;
     point.z = fVar4 - pivot.z;
     pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                        ((Vector3 *)&stack0xffffffc8,rotation,point,(MethodInfo *)0x0);
+                        ((Vector3 *)&stack0xffffffc0,rotation,point,(MethodInfo *)0x0);
     uVar10 = pVVar1->x;
     uVar11 = pVVar1->y;
     value_00.y = pivot.y + (float)uVar11;
@@ -581,16 +578,14 @@ void Assembly-CSharp.dll::RTG::TransformEx::TransformEx_ScaleFromPivot
 {
   if (transform != (Transform *)0x0) {
     pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale
-                       (&VStack_2,transform,(MethodInfo *)0x0);
-    VStack_3.x = pVVar1->x;
-    VStack_3.y = pVVar1->y;
-    VStack_3.z = pVVar1->z;
-    VStack_4.x = scaleFactor.x * VStack_3.x;
-    VStack_4.y = 0.0;
-    VStack_4.z = 0.0;
-    uStack_5 = 0;
-    fStack_6 = scaleFactor.y * VStack_3.y;
-    fStack_7 = scaleFactor.z * VStack_3.z;
+                       ((Vector3 *)&fStack_2,transform,(MethodInfo *)0x0);
+    uVar3 = pVVar1->x;
+    uVar4 = pVVar1->y;
+    fVar5 = pVVar1->z;
+    VStack_6.x = scaleFactor.x * (float)uVar3;
+    VStack_6.y = 0.0;
+    VStack_6.z = 0.0;
+    uStack_7 = 0;
     if (cRam_? == '\0') {
       func_?(&TypeInfo__UnityEngine__Vector3);
       cRam_? = '\x01';
@@ -599,64 +594,59 @@ void Assembly-CSharp.dll::RTG::TransformEx::TransformEx_ScaleFromPivot
               (transform,TypeInfo__UnityEngine__Vector3->static_fields->oneVector,(MethodInfo *)0x0)
     ;
     pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale
-                       (&VStack_2,transform,(MethodInfo *)0x0);
-    fStack_8 = pVVar1->x;
+                       ((Vector3 *)&fStack_2,transform,(MethodInfo *)0x0);
+    fVar8 = pVVar1->x;
     pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale
-                       (&VStack_2,transform,(MethodInfo *)0x0);
-    VStack_4.x = VStack_4.x / fStack_8;
-    fStack_6 = fStack_6 / pVVar1->y;
+                       ((Vector3 *)&fStack_2,transform,(MethodInfo *)0x0);
+    VStack_6.x = VStack_6.x / fVar8;
+    fVar8 = pVVar1->y;
     pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale
-                       (&VStack_2,transform,(MethodInfo *)0x0);
-    VStack_2.z = fStack_7 / pVVar1->z;
-    value.y = fStack_6;
-    value.x = VStack_4.x;
-    value.z = VStack_2.z;
+                       ((Vector3 *)&fStack_2,transform,(MethodInfo *)0x0);
+    pTVar9 = (Transform *)((scaleFactor.z * fVar5) / pVVar1->z);
+    value.y = (scaleFactor.y * (float)uVar4) / fVar8;
+    value.x = VStack_6.x;
+    value.z = (float)pTVar9;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-              (transform,value,(MethodInfo *)0x0);
+              (pTVar9,value,(MethodInfo *)0x0);
     pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
-                       (&VStack_2,transform,(MethodInfo *)0x0);
-    this = pVVar1->x;
-    method_00 = pVVar1->y;
-    fVar9 = pVVar1->z;
+                       ((Vector3 *)&fStack_2,transform,(MethodInfo *)0x0);
+    uVar10 = pVVar1->x;
+    uVar11 = pVVar1->y;
+    fVar5 = pVVar1->z;
     pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
-                       (&VStack_2,(Transform *)this,(MethodInfo *)method_00);
-    fVar10 = pVVar1->x;
+                       ((Vector3 *)&fStack_2,transform,(MethodInfo *)0x0);
+    __return_storage_ptr__ = pVVar1->x;
+    this = pVVar1->y;
     pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
-                       (&VStack_3,transform,(MethodInfo *)0x0);
-    fVar11 = 0.0;
-    VStack_2.x = pVVar1->x;
-    VStack_2.y = pVVar1->y;
-    VStack_2.z = pVVar1->z;
-    pVVar1 = &VStack_4;
-    puVar12 = &UNK_?;
-    pTVar13 = transform;
+                       ((Vector3 *)__return_storage_ptr__,(Transform *)this,(MethodInfo *)pVVar1->z)
+    ;
+    fVar12 = 0.0;
+    fStack_2 = pVVar1->x;
+    puStack_13 = (undefined *)pVVar1->y;
+    fVar8 = pVVar1->z;
+    pVVar1 = &VStack_6;
+    pTVar9 = transform;
     pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                       (pVVar1,transform,(MethodInfo *)0x0);
-    VStack_3.x = pVVar14->x;
-    VStack_3.y = pVVar14->y;
-    VStack_3.z = pVVar14->z;
-    fStack_7 = VStack_3.x - pivot.x;
-    fStack_8 = VStack_3.y - pivot.y;
-    fStack_6 = VStack_3.z - pivot.z;
-    fVar15 = ((float)pTVar13 * fStack_7 + fVar11 * fStack_8 + fVar9 * fStack_6) * scaleFactor.x;
-    fStack_16 = pivot.x + (float)pTVar13 * fVar15;
-    fStack_17 = pivot.y + fVar11 * fVar15;
-    fStack_18 = pivot.z + fVar9 * fVar15;
-    fVar9 = (fVar10 * fStack_7 + (float)puVar12 * fStack_8 + (float)pVVar1 * fStack_6) *
-            scaleFactor.y;
-    fVar15 = (VStack_2.x * fStack_7 + VStack_2.y * fStack_8 + VStack_2.z * fStack_6) *
-            scaleFactor.z;
-    VStack_2.z = VStack_2.z * fVar15 + (float)pVVar1 * fVar9 + fStack_18;
-    value_00.y = VStack_2.y * fVar15 + (float)puVar12 * fVar9 + fStack_17;
-    value_00.x = VStack_2.x * fVar15 + fVar10 * fVar9 + fStack_16;
-    value_00.z = VStack_2.z;
+                        (pVVar1,transform,(MethodInfo *)0x0);
+    uVar15 = pVVar14->x;
+    uVar16 = pVVar14->y;
+    fVar17 = (float)uVar15 - pivot.x;
+    fVar18 = (float)uVar16 - pivot.y;
+    fVar19 = pVVar14->z - pivot.z;
+    fVar20 = ((float)uVar10 * fVar17 + (float)uVar11 * fVar18 + fVar5 * fVar19) * scaleFactor.x;
+    fVar21 = ((float)pVVar1 * fVar17 + (float)pTVar9 * fVar18 + fVar12 * fVar19) * scaleFactor.y;
+    fVar18 = (fStack_2 * fVar17 + (float)puStack_13 * fVar18 + fVar8 * fVar19) * scaleFactor.z;
+    value_00.y = (float)puStack_13 * fVar18 +
+                 pivot.y + (float)uVar11 * fVar20 + (float)pTVar9 * fVar21;
+    value_00.x = fStack_2 * fVar18 + pivot.x + (float)uVar10 * fVar20 + (float)pVVar1 * fVar21;
+    value_00.z = fVar8 * fVar18 + pivot.z + fVar5 * fVar20 + fVar12 * fVar21;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
               (transform,value_00,(MethodInfo *)0x0);
     return;
   }
   func_?();
-  pcVar19 = (code *)swi(3);
-  (*pcVar19)();
+  pcVar22 = (code *)swi(3);
+  (*pcVar22)();
   return;
 }
 

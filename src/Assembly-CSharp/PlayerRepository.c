@@ -134,7 +134,7 @@ void Assembly-CSharp.dll::PlayerRepository::PlayerRepository_CreateWorldObjectHi
               TypeInfo__System__Collections__Generic__IEnumerator<System::Collections::Generic::KeyValuePair<int,_MV::WorldObject::MVItem>_>
              ) {
             puVar14 = (undefined4 *)
-                     (iVar12 + 0xc0 + *(int *)(*(int *)(iVar12 + 0x58) + 4 + (uint)uVar13 * 8) * 8);
+                     (iVar12 + (*(int *)(*(int *)(iVar12 + 0x58) + 4 + (uint)uVar13 * 8) + 0x18) * 8);
             goto code_?;
           }
           uVar13 = uVar13 + 1;
@@ -354,9 +354,8 @@ void Assembly-CSharp.dll::PlayerRepository::PlayerRepository__ctor
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::MVItem>__Dictionary__
             );
-  ppDVar1 = &(this->fields).playerInventory;
-  *ppDVar1 = (Dictionary_2_System_Int32_MV_WorldObject_MVItem_ *)this_00;
-  func_?(ppDVar1,this_00);
+  (this->fields).playerInventory = (Dictionary_2_System_Int32_MV_WorldObject_MVItem_ *)this_00;
+  func_?(&(this->fields).playerInventory,this_00);
   return;
 }
 

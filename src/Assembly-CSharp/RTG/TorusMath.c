@@ -24,74 +24,73 @@ Assembly-CSharp.dll::RTG::TorusMath::TorusMath_Calc3DHrzExtentPoints
                       TypeInfo__UnityEngine__Vector3->static_fields->rightVector,(MethodInfo *)0x0);
   uVar3 = pVVar1->x;
   uVar4 = pVVar1->y;
-  fStack_5 = pVVar1->z;
-  pLStack_6 = (List_1_UnityEngine_Vector3_ *)uVar3;
+  pMStack_5 = (MethodInfo *)pVVar1->z;
+  fStack_6 = (float)uVar3;
   fStack_7 = (float)uVar4;
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
   pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                     ((Vector3 *)&stack0xffffffa0,torusRotation,
+                     (&VStack_2,torusRotation,
                       TypeInfo__UnityEngine__Vector3->static_fields->forwardVector,(MethodInfo *)0x0
                      );
   fVar8 = torusCoreRadius + torusTubeRadius;
-  VStack_2.x = pVVar1->x;
-  VStack_2.y = pVVar1->y;
-  VStack_2.z = pVVar1->z;
-  pLVar9 = (List_1_UnityEngine_Vector3_ *)func_?();
+  uStack_9._0_4_ = (undefined *)pVVar1->x;
+  uStack_9._4_4_ = (List_1_UnityEngine_Vector3_ *)pVVar1->y;
+  fStack_10 = pVVar1->z;
+  pLVar11 = (List_1_UnityEngine_Vector3_ *)
+           func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector3>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar9,
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar11,
              MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List__);
-  fStack_10 = (float)pLStack_6 * fVar8;
-  fStack_11 = fStack_7 * fVar8;
-  fStack_12 = fStack_5 * fVar8;
-  pLStack_6 = (List_1_UnityEngine_Vector3_ *)(torusCenter.x - fStack_10);
-  fStack_7 = torusCenter.y - fStack_11;
-  fStack_5 = torusCenter.z - fStack_12;
-  if (pLVar9 != (List_1_UnityEngine_Vector3_ *)0x0) {
-    pMStack_13 = 
+  VStack_2.x = torusCenter.x - fStack_6 * fVar8;
+  VStack_2.y = torusCenter.y - fStack_7 * fVar8;
+  VStack_2.z = torusCenter.z - (float)pMStack_5 * fVar8;
+  if (pLVar11 != (List_1_UnityEngine_Vector3_ *)0x0) {
+    pMStack_5 = 
     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_;
-    fVar14 = (float)pLStack_6;
-    pLStack_6 = pLVar9;
-    fVar15 = fStack_7;
-    fStack_7 = fVar14;
-    fStack_16 = fStack_5;
-    fStack_5 = fVar15;
+    uStack_9._0_4_ = &UNK_?;
+    fStack_10 = VStack_2.x;
+    fStack_6 = VStack_2.y;
+    fStack_7 = VStack_2.z;
+    uStack_9._4_4_ = pLVar11;
     func_?();
-    fStack_17 = VStack_2.x * fVar8;
-    fStack_7 = torusCenter.x + fStack_17;
-    fStack_5 = torusCenter.y + VStack_2.y * fVar8;
-    VStack_2.z = torusCenter.z + VStack_2.z * fVar8;
-    pMStack_13 = 
+    VStack_2.z = fStack_10 * fVar8;
+    fStack_10 = torusCenter.x + (float)(undefined *)uStack_9 * fVar8;
+    fStack_6 = torusCenter.y + (float)uStack_9._4_4_ * fVar8;
+    VStack_2.z = torusCenter.z + VStack_2.z;
+    pMStack_5 = 
     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_;
-    pLStack_6 = pLVar9;
-    fStack_16 = VStack_2.z;
+    uStack_9 = CONCAT44(pLVar11,&UNK_?);
+    fStack_7 = VStack_2.z;
     func_?();
-    VStack_2.z = torusCenter.z + fStack_12;
-    fStack_7 = torusCenter.x + fStack_10;
-    fStack_5 = torusCenter.y + fStack_11;
-    pMStack_13 = 
+    VStack_2.z = torusCenter.z + (float)pMStack_5 * fVar8;
+    fStack_10 = torusCenter.x + fStack_6 * fVar8;
+    fStack_6 = torusCenter.y + fStack_7 * fVar8;
+    pMStack_5 = 
     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_;
-    pLStack_6 = pLVar9;
-    fStack_16 = VStack_2.z;
+    uStack_9._0_4_ = &UNK_?;
+    fStack_7 = VStack_2.z;
+    uStack_9._4_4_ = pLVar11;
     func_?();
-    VStack_2.z = torusCenter.z - fStack_16;
-    fStack_7 = torusCenter.x - fStack_17;
-    fStack_5 = torusCenter.y - (float)pMStack_13;
-    pMStack_13 = 
+    VStack_2.z = fStack_10 * fVar8;
+    fStack_10 = torusCenter.x - (float)(undefined *)uStack_9 * fVar8;
+    fStack_6 = torusCenter.y - (float)uStack_9._4_4_ * fVar8;
+    VStack_2.z = torusCenter.z - VStack_2.z;
+    pMStack_5 = 
     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_;
-    pLStack_6 = pLVar9;
-    fStack_16 = VStack_2.z;
+    uStack_9 = CONCAT44(pLVar11,&UNK_?);
+    fStack_7 = VStack_2.z;
     func_?();
-    return pLVar9;
+    return pLVar11;
   }
   func_?();
-  pcVar18 = (code *)swi(3);
-  pLVar9 = (List_1_UnityEngine_Vector3_ *)(*pcVar18)();
-  return pLVar9;
+  pcVar12 = (code *)swi(3);
+  pLVar11 = (List_1_UnityEngine_Vector3_ *)(*pcVar12)();
+  return pLVar11;
 }
 
 
@@ -188,72 +187,78 @@ bool Assembly-CSharp.dll::RTG::TorusMath::TorusMath_Raycast
                Quaternion torusRotation,TorusEpsilon epsilon,MethodInfo *method)
 
 {
-  fVar1 = epsilon._tubeRadiusEps + torusTubeRadius;
-  fVar2 = torusCoreRadius + fVar1;
+  RStack_1.m_Origin.x = 0.0;
+  RStack_1.m_Origin.y = 0.0;
+  RStack_1.m_Origin.z = 0.0;
+  RStack_1.m_Direction.x = 0.0;
+  RStack_1.m_Direction.y = 0.0;
+  RStack_1.m_Direction.z = 0.0;
+  fVar2 = epsilon._tubeRadiusEps + torusTubeRadius;
   *t = 0.0;
+  cylinderRadius = torusCoreRadius + fVar2;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
   pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                      ((Vector3 *)&stack0xffffffb8,torusRotation,
+                      ((Vector3 *)&stack0xffffffa8,torusRotation,
                        TypeInfo__UnityEngine__Vector3->static_fields->upVector,(MethodInfo *)0x0);
   fVar4 = pVVar3->x;
   fVar5 = pVVar3->y;
   fVar6 = pVVar3->z;
-  method_00 = (MethodInfo *)(torusCenter.x - fVar4 * fVar1);
-  fVar7 = torusCenter.y - fVar5 * fVar1;
-  uVar8 = pVVar3->x;
-  uVar9 = pVVar3->y;
-  fVar10 = torusCenter.x + (float)uVar8 * fVar1;
-  fVar11 = torusCenter.y + (float)uVar9 * fVar1;
-  ray_00.m_Direction.z = ray.m_Direction.z;
-  ray_00.m_Direction.y = ray.m_Direction.y;
+  uVar7 = pVVar3->x;
+  uVar8 = pVVar3->y;
+  method_00 = (MethodInfo *)(torusCenter.x + (float)uVar7 * fVar2);
+  fVar9 = torusCenter.y + (float)uVar8 * fVar2;
+  fVar10 = torusCenter.z + fVar6 * fVar2;
+  fVar11 = 0.0;
+  fVar12 = 0.0;
+  cylinderAxisPt1.y = fVar9;
+  cylinderAxisPt1.x = (float)method_00;
   ray_00.m_Origin.y = ray.m_Origin.y;
   ray_00.m_Origin.x = ray.m_Origin.x;
   ray_00.m_Origin.z = ray.m_Origin.z;
   ray_00.m_Direction.x = ray.m_Direction.x;
-  cylinderAxisPt0.y = fVar7;
-  cylinderAxisPt0.x = (float)method_00;
-  cylinderAxisPt0.z = torusCenter.z - fVar6 * fVar1;
-  cylinderAxisPt1_00.y = fVar11;
-  cylinderAxisPt1_00.x = fVar10;
-  cylinderAxisPt1_00.z = torusCenter.z + fVar6 * fVar1;
-  bVar12 = CylinderMath::CylinderMath_Raycast
-                     (ray_00,t,cylinderAxisPt0,cylinderAxisPt1_00,fVar2,(CylinderEpsilon)0x0,
+  ray_00.m_Direction.y = ray.m_Direction.y;
+  ray_00.m_Direction.z = ray.m_Direction.z;
+  cylinderAxisPt0.y = torusCenter.y - fVar5 * fVar2;
+  cylinderAxisPt0.x = torusCenter.x - fVar4 * fVar2;
+  cylinderAxisPt0.z = torusCenter.z - fVar6 * fVar2;
+  cylinderAxisPt1.z = fVar10;
+  bVar13 = CylinderMath::CylinderMath_Raycast
+                     (ray_00,t,cylinderAxisPt0,cylinderAxisPt1,cylinderRadius,(CylinderEpsilon)0x0,
                       method_00);
-  if (bVar12 == 0) {
+  if (bVar13 == 0) {
     return 0;
   }
-  fVar1 = torusCoreRadius - fVar1;
-  RStack_13.m_Direction.z = (float)&UNK_?;
+  uStack_14._4_4_ = (float)&UNK_?;
   pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
-                      ((Vector3 *)&stack0xffffffb8,&ray,*t,(MethodInfo *)0x0);
-  uVar14 = pVVar3->x;
+                      ((Vector3 *)&stack0xffffffa8,&ray,*t,(MethodInfo *)0x0);
   uVar15 = pVVar3->y;
-  fVar2 = pVVar3->z;
+  fVar16 = pVVar3->z;
+  uStack_14._0_4_ = 0.0;
+  uStack_14._4_4_ = 0.0;
   value.y = fVar5;
   value.x = fVar4;
   value.z = fVar6;
-  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                      ((Vector3 *)&stack0xffffffb8,value,(MethodInfo *)0x0);
-  RStack_13.m_Origin.z = pVVar3->x;
-  RStack_13.m_Direction.x = pVVar3->y;
-  RStack_13.m_Direction.y = pVVar3->z;
-  RStack_13.m_Direction.z =
-       (float)((uint)(torusCenter.y * RStack_13.m_Direction.x + torusCenter.x * RStack_13.m_Origin.z
-                     + torusCenter.z * RStack_13.m_Direction.y) ^
+  pVVar17 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                      ((Vector3 *)&stack0xffffffa8,value,(MethodInfo *)0x0);
+  uStack_14._0_4_ = pVVar17->x;
+  uStack_14._4_4_ = pVVar17->y;
+  fVar4 = pVVar17->z;
+  pVVar3 = (Vector3 *)&stack0xffffffa8;
+  plane.m_Distance =
+       (float)((uint)(torusCenter.y * uStack_14._4_4_ + torusCenter.x * (float)uStack_14 +
+                     torusCenter.z * fVar4) ^
               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-  puVar16 = &UNK_?;
-  plane.m_Distance = RStack_13.m_Direction.z;
-  plane.m_Normal = *pVVar3;
-  pt.y = (float)uVar15;
-  pt.x = (float)uVar14;
-  pt.z = fVar2;
-  fVar4 = RStack_13.m_Direction.y;
-  PlaneEx::PlaneEx_ProjectPoint((Vector3 *)&stack0xffffffb8,plane,pt,(MethodInfo *)0x0);
-  fVar17 = (float10)func_?();
-  if ((float)fVar17 < fVar1) {
+  plane.m_Normal = *pVVar17;
+  auVar18._4_4_ = fVar16;
+  auVar18._0_4_ = uVar15;
+  auVar18._8_4_ = 0;
+  PlaneEx::PlaneEx_ProjectPoint(pVVar3,plane,(Vector3)(auVar18 << 0x20),(MethodInfo *)0x0);
+  uVar19 = 0;
+  fVar20 = (float10)func_?();
+  if ((float)fVar20 < torusCoreRadius - fVar2) {
     ray_01.m_Origin.y = ray.m_Origin.y;
     ray_01.m_Origin.x = ray.m_Origin.x;
     ray_01.m_Origin.z = ray.m_Origin.z;
@@ -261,43 +266,47 @@ bool Assembly-CSharp.dll::RTG::TorusMath::TorusMath_Raycast
     ray_01.m_Direction.y = ray.m_Direction.y;
     ray_01.m_Direction.z = ray.m_Direction.z;
     mirrorPoint.y = (float)uVar15;
-    mirrorPoint.x = (float)uVar14;
-    mirrorPoint.z = fVar2;
-    pRVar18 = RayEx::RayEx_Mirror(&RStack_13,ray_01,mirrorPoint,(MethodInfo *)0x0);
-    ray.m_Origin.y = fVar4;
-    ray.m_Direction.z = 0.0;
-    ray.m_Direction.x = 0.0;
-    ray.m_Direction.y = 0.0;
-    uVar19 = (pRVar18->m_Direction).z;
-    uVar20 = (pRVar18->m_Origin).x;
-    uVar21 = (pRVar18->m_Origin).y;
-    uVar22 = (pRVar18->m_Origin).z;
-    ray_02.m_Origin.z = (float)uVar22;
-    ray_02.m_Origin.y = (float)uVar21;
-    ray_02.m_Origin.x = (float)uVar20;
-    uVar23 = (pRVar18->m_Direction).x;
-    uVar24 = (pRVar18->m_Direction).y;
-    ray_02.m_Direction.y = (float)uVar24;
-    ray_02.m_Direction.x = (float)uVar23;
-    ray_02.m_Direction.z = (float)uVar19;
-    cylinderAxisPt0_00.y = fVar7;
-    cylinderAxisPt0_00.x = (float)method_00;
-    cylinderAxisPt0_00.z = (float)puVar16;
-    cylinderAxisPt1.y = fVar11;
-    cylinderAxisPt1.x = fVar10;
-    cylinderAxisPt1.z = ray.m_Origin.y;
-    ray.m_Origin.x = fVar11;
-    ray.m_Origin.z = fVar1;
-    bVar12 = CylinderMath::CylinderMath_RaycastNoCaps
-                       (ray_02,t,cylinderAxisPt0_00,cylinderAxisPt1,fVar1,(CylinderEpsilon)0x0,
-                        (MethodInfo *)0x0);
-    if (bVar12 == 0) {
+    mirrorPoint.x = (float)uVar19;
+    mirrorPoint.z = fVar16;
+    pRVar21 = RayEx::RayEx_Mirror((Ray *)&stack0xffffff78,ray_01,mirrorPoint,(MethodInfo *)0x0);
+    ray.m_Origin.x = fVar12;
+    ray.m_Origin.y = 0.0;
+    RStack_1.m_Origin.x = (pRVar21->m_Origin).x;
+    RStack_1.m_Origin.y = (pRVar21->m_Origin).y;
+    RStack_1.m_Origin.z = (pRVar21->m_Origin).z;
+    RStack_1.m_Direction.x = (pRVar21->m_Direction).x;
+    RStack_1.m_Direction.y = (pRVar21->m_Direction).y;
+    RStack_1.m_Direction.z = (pRVar21->m_Direction).z;
+    uVar22 = (pRVar21->m_Direction).z;
+    uVar23 = (pRVar21->m_Origin).x;
+    uVar24 = (pRVar21->m_Origin).y;
+    uVar25 = (pRVar21->m_Origin).z;
+    ray_02.m_Origin.z = (float)uVar25;
+    ray_02.m_Origin.y = (float)uVar24;
+    ray_02.m_Origin.x = (float)uVar23;
+    uVar26 = (pRVar21->m_Direction).x;
+    uVar27 = (pRVar21->m_Direction).y;
+    ray_02.m_Direction.y = (float)uVar27;
+    ray_02.m_Direction.x = (float)uVar26;
+    ray_02.m_Direction.z = (float)uVar22;
+    cylinderAxisPt0_00.y = cylinderRadius;
+    cylinderAxisPt0_00.x = fVar10;
+    cylinderAxisPt0_00.z = (float)pVVar3;
+    cylinderAxisPt1_00.y = fVar9;
+    cylinderAxisPt1_00.x = (float)method_00;
+    cylinderAxisPt1_00.z = fVar4;
+    epsilon_00._vertEps = ray.m_Origin.x;
+    epsilon_00._hrzEps = fVar11;
+    bVar13 = CylinderMath::CylinderMath_RaycastNoCaps
+                       (ray_02,t,cylinderAxisPt0_00,cylinderAxisPt1_00,torusCoreRadius - fVar2,
+                        epsilon_00,(MethodInfo *)0x0);
+    if (bVar13 == 0) {
       return 0;
     }
     UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
-              ((Vector3 *)&stack0xffffffb8,(Ray *)&stack0xffffff48,*t,(MethodInfo *)0x0);
-    fVar17 = (float10)func_?();
-    *t = (float)fVar17;
+              ((Vector3 *)&stack0xffffffa8,&RStack_1,*t,(MethodInfo *)0x0);
+    fVar20 = (float10)func_?();
+    *t = (float)fVar20;
   }
   return 1;
 }
@@ -312,116 +321,119 @@ bool Assembly-CSharp.dll::RTG::TorusMath::TorusMath_RaycastCylindrical
                MethodInfo *method)
 
 {
-  uStack_1._4_4_ = epsilon._cylVertRadius + torusVertRadius;
-  fVar2 = epsilon._cylHrzRadius + torusHrzRadius;
-  fVar3 = torusCoreRadius + fVar2;
+  fVar1 = epsilon._cylVertRadius + torusVertRadius;
+  RStack_2.m_Origin.x = 0.0;
+  RStack_2.m_Origin.y = 0.0;
+  RStack_2.m_Origin.z = 0.0;
+  RStack_2.m_Direction.x = 0.0;
+  RStack_2.m_Direction.y = 0.0;
+  RStack_2.m_Direction.z = 0.0;
+  fVar3 = epsilon._cylHrzRadius + torusHrzRadius;
   *t = 0.0;
+  cylinderRadius = torusCoreRadius + fVar3;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
   pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                      (&VStack_5,torusRotation,
+                      ((Vector3 *)&stack0xffffff88,torusRotation,
                        TypeInfo__UnityEngine__Vector3->static_fields->upVector,(MethodInfo *)0x0);
-  fVar6 = pVVar4->x;
-  fVar7 = pVVar4->y;
-  fVar8 = pVVar4->z;
-  fVar9 = fVar8 * uStack_1._4_4_;
-  method_01 = (MethodInfo *)(torusCenter.x - fVar6 * uStack_1._4_4_);
-  fVar10 = torusCenter.y - fVar7 * uStack_1._4_4_;
-  uVar11 = pVVar4->x;
-  uVar12 = pVVar4->y;
-  fStack_13 = torusCenter.x + (float)uVar11 * uStack_1._4_4_;
-  VStack_5.z = torusCenter.z + fVar8 * uStack_1._4_4_;
-  fStack_14 = torusCenter.y + (float)uVar12 * uStack_1._4_4_;
-  uStack_1 = 0;
-  ray_00.m_Direction.z = ray.m_Direction.z;
-  ray_00.m_Direction.y = ray.m_Direction.y;
+  fVar5 = pVVar4->x;
+  fVar6 = pVVar4->y;
+  fVar7 = pVVar4->z;
+  uVar8 = pVVar4->x;
+  uVar9 = pVVar4->y;
+  method_00 = (MethodInfo *)(torusCenter.x + (float)uVar8 * fVar1);
+  fVar10 = torusCenter.y + (float)uVar9 * fVar1;
+  fVar11 = torusCenter.z + fVar7 * fVar1;
+  fVar12 = 0.0;
+  fVar13 = 0.0;
+  cylinderAxisPt1.y = fVar10;
+  cylinderAxisPt1.x = (float)method_00;
   ray_00.m_Origin.y = ray.m_Origin.y;
   ray_00.m_Origin.x = ray.m_Origin.x;
   ray_00.m_Origin.z = ray.m_Origin.z;
   ray_00.m_Direction.x = ray.m_Direction.x;
-  cylinderAxisPt0.y = fVar10;
-  cylinderAxisPt0.x = (float)method_01;
-  cylinderAxisPt0.z = torusCenter.z - fVar9;
-  cylinderAxisPt1_00.y = fStack_14;
-  cylinderAxisPt1_00.x = fStack_13;
-  cylinderAxisPt1_00.z = VStack_5.z;
-  bVar15 = CylinderMath::CylinderMath_Raycast
-                     (ray_00,t,cylinderAxisPt0,cylinderAxisPt1_00,fVar3,(CylinderEpsilon)0x0,
-                      method_01);
-  if (bVar15 == 0) {
+  ray_00.m_Direction.y = ray.m_Direction.y;
+  ray_00.m_Direction.z = ray.m_Direction.z;
+  cylinderAxisPt0.y = torusCenter.y - fVar6 * fVar1;
+  cylinderAxisPt0.x = torusCenter.x - fVar5 * fVar1;
+  cylinderAxisPt0.z = torusCenter.z - fVar7 * fVar1;
+  cylinderAxisPt1.z = fVar11;
+  bVar14 = CylinderMath::CylinderMath_Raycast
+                     (ray_00,t,cylinderAxisPt0,cylinderAxisPt1,cylinderRadius,(CylinderEpsilon)0x0,
+                      method_00);
+  if (bVar14 == 0) {
     return 0;
   }
-  fVar2 = torusCoreRadius - fVar2;
   pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
                       ((Vector3 *)&stack0xffffffe0,&ray,*t,(MethodInfo *)0x0);
-  method_00 = (MethodInfo *)pVVar4->y;
-  fVar9 = pVVar4->z;
-  puVar16 = &UNK_?;
-  value.y = fVar7;
-  value.x = fVar6;
-  value.z = fVar8;
+  uVar15 = pVVar4->x;
+  uVar16 = pVVar4->y;
+  fVar17 = pVVar4->z;
+  value.y = fVar6;
+  value.x = fVar5;
+  value.z = fVar7;
   pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                      ((Vector3 *)&stack0xffffffb8,value,method_00);
-  uVar17 = pVVar4->x;
-  fVar3 = pVVar4->y;
-  fVar6 = pVVar4->z;
-  auVar18._4_4_ = fVar6;
-  auVar18._0_4_ = fVar3;
-  auVar18._8_4_ =
-       (uint)(torusCenter.y * fVar3 + torusCenter.x * (float)uVar17 + torusCenter.z * fVar6) ^
-       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
-  auVar18._12_4_ = 0;
-  pt.y = (float)method_00;
-  pt.x = fVar8;
-  pt.z = fVar9;
-  PlaneEx::PlaneEx_ProjectPoint
-            ((Vector3 *)&stack0xffffffb8,(Plane)(auVar18 << 0x20),pt,(MethodInfo *)0x0);
+                      ((Vector3 *)&stack0xffffffb0,value,(MethodInfo *)0x0);
+  uVar18 = pVVar4->x;
+  fVar1 = pVVar4->y;
+  plane.m_Distance =
+       (float)((uint)(torusCenter.y * fVar1 + torusCenter.x * (float)uVar18 +
+                     torusCenter.z * pVVar4->z) ^
+              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+  plane.m_Normal = *pVVar4;
+  pt.y = (float)uVar16;
+  pt.x = (float)uVar15;
+  pt.z = fVar17;
+  PlaneEx::PlaneEx_ProjectPoint((Vector3 *)&stack0xffffffb0,plane,pt,(MethodInfo *)0x0);
   fVar19 = (float10)func_?();
-  if ((float)fVar19 < fVar2) {
+  if ((float)fVar19 < torusCoreRadius - fVar3) {
+    puVar20 = &UNK_?;
     ray_01.m_Origin.y = ray.m_Origin.y;
     ray_01.m_Origin.x = ray.m_Origin.x;
     ray_01.m_Origin.z = ray.m_Origin.z;
     ray_01.m_Direction.x = ray.m_Direction.x;
     ray_01.m_Direction.y = ray.m_Direction.y;
     ray_01.m_Direction.z = ray.m_Direction.z;
-    mirrorPoint.y = fVar6;
-    mirrorPoint.x = fVar3;
-    mirrorPoint.z = fVar9;
-    pRVar20 = RayEx::RayEx_Mirror((Ray *)&stack0xffffffd8,ray_01,mirrorPoint,(MethodInfo *)0x0);
-    ray.m_Direction.z = 0.0;
-    ray.m_Direction.x = 0.0;
-    ray.m_Direction.y = 0.0;
-    ray.m_Origin.x = fStack_14;
-    ray.m_Origin.y = VStack_5.z;
-    uVar21 = (pRVar20->m_Direction).z;
-    uVar22 = (pRVar20->m_Origin).x;
-    uVar23 = (pRVar20->m_Origin).y;
-    uVar24 = (pRVar20->m_Origin).z;
-    ray_02.m_Origin.z = (float)uVar24;
-    ray_02.m_Origin.y = (float)uVar23;
-    ray_02.m_Origin.x = (float)uVar22;
-    uVar25 = (pRVar20->m_Direction).x;
-    uVar26 = (pRVar20->m_Direction).y;
-    ray_02.m_Direction.y = (float)uVar26;
-    ray_02.m_Direction.x = (float)uVar25;
-    ray_02.m_Direction.z = (float)uVar21;
-    cylinderAxisPt0_00.y = fVar10;
-    cylinderAxisPt0_00.x = (float)method_01;
-    cylinderAxisPt0_00.z = (float)puVar16;
-    cylinderAxisPt1.y = fStack_14;
-    cylinderAxisPt1.x = fStack_13;
-    cylinderAxisPt1.z = VStack_5.z;
-    ray.m_Origin.z = fVar2;
-    bVar15 = CylinderMath::CylinderMath_RaycastNoCaps
-                       (ray_02,t,cylinderAxisPt0_00,cylinderAxisPt1,fVar2,(CylinderEpsilon)0x0,
-                        (MethodInfo *)0x0);
-    if (bVar15 == 0) {
+    mirrorPoint.y = (float)uVar16;
+    mirrorPoint.x = (float)uVar15;
+    mirrorPoint.z = fVar17;
+    pRVar21 = RayEx::RayEx_Mirror((Ray *)&stack0xffffff70,ray_01,mirrorPoint,(MethodInfo *)0x0);
+    RStack_2.m_Origin.x = (pRVar21->m_Origin).x;
+    RStack_2.m_Origin.y = (pRVar21->m_Origin).y;
+    RStack_2.m_Origin.z = (pRVar21->m_Origin).z;
+    RStack_2.m_Direction.x = (pRVar21->m_Direction).x;
+    RStack_2.m_Direction.y = (pRVar21->m_Direction).y;
+    RStack_2.m_Direction.z = (pRVar21->m_Direction).z;
+    uVar22 = (pRVar21->m_Direction).z;
+    uVar23 = (pRVar21->m_Origin).x;
+    uVar24 = (pRVar21->m_Origin).y;
+    uVar25 = (pRVar21->m_Origin).z;
+    ray_02.m_Origin.z = (float)uVar25;
+    ray_02.m_Origin.y = (float)uVar24;
+    ray_02.m_Origin.x = (float)uVar23;
+    uVar26 = (pRVar21->m_Direction).x;
+    uVar27 = (pRVar21->m_Direction).y;
+    ray_02.m_Direction.y = (float)uVar27;
+    ray_02.m_Direction.x = (float)uVar26;
+    ray_02.m_Direction.z = (float)uVar22;
+    cylinderAxisPt0_00.y = cylinderRadius;
+    cylinderAxisPt0_00.x = fVar11;
+    cylinderAxisPt0_00.z = (float)puVar20;
+    cylinderAxisPt1_00.y = fVar10;
+    cylinderAxisPt1_00.x = (float)method_00;
+    cylinderAxisPt1_00.z = fVar1;
+    epsilon_00._vertEps = fVar13;
+    epsilon_00._hrzEps = fVar12;
+    bVar14 = CylinderMath::CylinderMath_RaycastNoCaps
+                       (ray_02,t,cylinderAxisPt0_00,cylinderAxisPt1_00,torusCoreRadius - fVar3,
+                        epsilon_00,(MethodInfo *)0x0);
+    if (bVar14 == 0) {
       return 0;
     }
     UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
-              ((Vector3 *)&stack0xffffff98,(Ray *)&stack0xffffff48,*t,(MethodInfo *)0x0);
+              ((Vector3 *)&stack0xffffff98,&RStack_2,*t,(MethodInfo *)0x0);
     fVar19 = (float10)func_?();
     *t = (float)fVar19;
   }

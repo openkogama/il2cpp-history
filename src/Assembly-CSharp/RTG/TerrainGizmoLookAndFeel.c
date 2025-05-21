@@ -28,9 +28,9 @@ void Assembly-CSharp.dll::RTG::TerrainGizmoLookAndFeel::
 {
   pGStack_1 = (GizmoCap3DLookAndFeel *)&stack0xfffffffc;
   if (pickPointCap != (GizmoCap3D *)0x0) {
-    ppGStack_2 = &(pickPointCap->fields)._sharedLookAndFeel;
     pGStack_1 = (this->fields)._midCapLookAndFeel;
-    *ppGStack_2 = pGStack_1;
+    (pickPointCap->fields)._sharedLookAndFeel = pGStack_1;
+    ppGStack_2 = &(pickPointCap->fields)._sharedLookAndFeel;
     func_?();
     return;
   }
@@ -51,9 +51,9 @@ void Assembly-CSharp.dll::RTG::TerrainGizmoLookAndFeel::
 {
   pGStack_1 = (GizmoCap2DLookAndFeel *)&stack0xfffffffc;
   if (radiusTick != (GizmoCap2D *)0x0) {
-    ppGStack_2 = &(radiusTick->fields)._sharedLookAndFeel;
     pGStack_1 = (this->fields)._radiusTickLookAndFeel;
-    *ppGStack_2 = pGStack_1;
+    (radiusTick->fields)._sharedLookAndFeel = pGStack_1;
+    ppGStack_2 = &(radiusTick->fields)._sharedLookAndFeel;
     func_?();
     return;
   }
@@ -87,20 +87,17 @@ void Assembly-CSharp.dll::RTG::TerrainGizmoLookAndFeel::TerrainGizmoLookAndFeel_
   pGVar4 = (GizmoLineSlider3DLookAndFeel *)
            func_?(TypeInfo__RTG__GizmoLineSlider3DLookAndFeel);
   GizmoLineSlider3DLookAndFeel::GizmoLineSlider3DLookAndFeel__ctor(pGVar4,(MethodInfo *)0x0);
-  ppGVar5 = &(this->fields)._axisSliderLookAndFeel;
-  *ppGVar5 = pGVar4;
-  func_?(ppGVar5,pGVar4);
-  pGVar6 = (GizmoCap3DLookAndFeel *)func_?(TypeInfo__RTG__GizmoCap3DLookAndFeel);
-  GizmoCap3DLookAndFeel::GizmoCap3DLookAndFeel__ctor(pGVar6,(MethodInfo *)0x0);
-  ppGVar7 = &(this->fields)._midCapLookAndFeel;
-  *ppGVar7 = pGVar6;
-  func_?(ppGVar7,pGVar6);
-  pGVar8 = (GizmoCap2DLookAndFeel *)func_?(TypeInfo__RTG__GizmoCap2DLookAndFeel);
-  GizmoCap2DLookAndFeel::GizmoCap2DLookAndFeel__ctor(pGVar8,(MethodInfo *)0x0);
-  (this->fields)._radiusTickLookAndFeel = pGVar8;
-  ppGVar9 = &(this->fields)._radiusTickLookAndFeel;
-  method_00 = (MethodInfo *)ppGVar9;
-  func_?(ppGVar9,pGVar8);
+  (this->fields)._axisSliderLookAndFeel = pGVar4;
+  func_?(&(this->fields)._axisSliderLookAndFeel,pGVar4);
+  pGVar5 = (GizmoCap3DLookAndFeel *)func_?(TypeInfo__RTG__GizmoCap3DLookAndFeel);
+  GizmoCap3DLookAndFeel::GizmoCap3DLookAndFeel__ctor(pGVar5,(MethodInfo *)0x0);
+  (this->fields)._midCapLookAndFeel = pGVar5;
+  func_?(&(this->fields)._midCapLookAndFeel,pGVar5);
+  pGVar6 = (GizmoCap2DLookAndFeel *)func_?(TypeInfo__RTG__GizmoCap2DLookAndFeel);
+  GizmoCap2DLookAndFeel::GizmoCap2DLookAndFeel__ctor(pGVar6,(MethodInfo *)0x0);
+  method_00 = (MethodInfo *)&(this->fields)._radiusTickLookAndFeel;
+  (this->fields)._radiusTickLookAndFeel = pGVar6;
+  func_?(method_00,pGVar6);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   fVar1 = _UNK_?;
@@ -117,15 +114,15 @@ void Assembly-CSharp.dll::RTG::TerrainGizmoLookAndFeel::TerrainGizmoLookAndFeel_
     fVar3 = _UNK_?;
     pGVar4 = (this->fields)._axisSliderLookAndFeel;
     if ((pGVar4 != (GizmoLineSlider3DLookAndFeel *)0x0) &&
-       (pGVar6 = (pGVar4->fields)._capLookAndFeel, pGVar6 != (GizmoCap3DLookAndFeel *)0x0)) {
-      (pGVar6->fields)._color.r = _UNK_?;
-      (pGVar6->fields)._color.g = fVar3;
-      (pGVar6->fields)._color.b = fVar2;
-      (pGVar6->fields)._color.a = fVar1;
+       (pGVar5 = (pGVar4->fields)._capLookAndFeel, pGVar5 != (GizmoCap3DLookAndFeel *)0x0)) {
+      (pGVar5->fields)._color.r = _UNK_?;
+      (pGVar5->fields)._color.g = fVar3;
+      (pGVar5->fields)._color.b = fVar2;
+      (pGVar5->fields)._color.a = fVar1;
       pGVar4 = (this->fields)._axisSliderLookAndFeel;
       if ((pGVar4 != (GizmoLineSlider3DLookAndFeel *)0x0) &&
-         (pGVar6 = (pGVar4->fields)._capLookAndFeel, pGVar6 != (GizmoCap3DLookAndFeel *)0x0)) {
-        (pGVar6->fields)._capType = 0;
+         (pGVar5 = (pGVar4->fields)._capLookAndFeel, pGVar5 != (GizmoCap3DLookAndFeel *)0x0)) {
+        (pGVar5->fields)._capType = 0;
         pGVar4 = (this->fields)._axisSliderLookAndFeel;
         if (pGVar4 != (GizmoLineSlider3DLookAndFeel *)0x0) {
           (pGVar4->fields)._lineType = 0;
@@ -133,71 +130,79 @@ void Assembly-CSharp.dll::RTG::TerrainGizmoLookAndFeel::TerrainGizmoLookAndFeel_
           if (pGVar4 != (GizmoLineSlider3DLookAndFeel *)0x0) {
             GizmoPlaneSlider3DSettings::GizmoPlaneSlider3DSettings_set_BorderBoxHoverEps
                       ((GizmoPlaneSlider3DSettings *)pGVar4,5.0,(MethodInfo *)0x0);
-            if (*ppGVar7 != (GizmoCap3DLookAndFeel *)0x0) {
-              ((*ppGVar7)->fields)._capType = 2;
-              if (*ppGVar7 != (GizmoCap3DLookAndFeel *)0x0) {
+            pGVar5 = (this->fields)._midCapLookAndFeel;
+            if (pGVar5 != (GizmoCap3DLookAndFeel *)0x0) {
+              (pGVar5->fields)._capType = 2;
+              pGVar5 = (this->fields)._midCapLookAndFeel;
+              if (pGVar5 != (GizmoCap3DLookAndFeel *)0x0) {
                 GizmoCap3DLookAndFeel::GizmoCap3DLookAndFeel_set_BoxWidth
-                          (*ppGVar7,0.7,(MethodInfo *)0x0);
-                if (*ppGVar7 != (GizmoCap3DLookAndFeel *)0x0) {
+                          (pGVar5,0.7,(MethodInfo *)0x0);
+                pGVar5 = (this->fields)._midCapLookAndFeel;
+                if (pGVar5 != (GizmoCap3DLookAndFeel *)0x0) {
                   GizmoCap3DLookAndFeel::GizmoCap3DLookAndFeel_set_BoxHeight
-                            (*ppGVar7,0.7,(MethodInfo *)0x0);
-                  if (*ppGVar7 != (GizmoCap3DLookAndFeel *)0x0) {
+                            (pGVar5,0.7,(MethodInfo *)0x0);
+                  pGVar5 = (this->fields)._midCapLookAndFeel;
+                  if (pGVar5 != (GizmoCap3DLookAndFeel *)0x0) {
                     GizmoCap3DLookAndFeel::GizmoCap3DLookAndFeel_set_BoxDepth
-                              (*ppGVar7,0.7,(MethodInfo *)0x0);
-                    if (*ppGVar7 != (GizmoCap3DLookAndFeel *)0x0) {
+                              (pGVar5,0.7,(MethodInfo *)0x0);
+                    pGVar5 = (this->fields)._midCapLookAndFeel;
+                    if (pGVar5 != (GizmoCap3DLookAndFeel *)0x0) {
                       GizmoCap3DLookAndFeel::GizmoCap3DLookAndFeel_set_SphereRadius
-                                (*ppGVar7,0.35,(MethodInfo *)0x0);
+                                (pGVar5,0.35,(MethodInfo *)0x0);
                       fVar1 = _UNK_?;
                       fVar2 = _UNK_?;
                       fVar3 = _UNK_?;
-                      pGVar6 = *ppGVar7;
-                      if (pGVar6 != (GizmoCap3DLookAndFeel *)0x0) {
-                        (pGVar6->fields)._color.r = _UNK_?;
-                        (pGVar6->fields)._color.g = fVar3;
-                        (pGVar6->fields)._color.b = fVar2;
-                        (pGVar6->fields)._color.a = fVar1;
-                        if (*ppGVar9 != (GizmoCap2DLookAndFeel *)0x0) {
-                          ((*ppGVar9)->fields)._capType = 0;
+                      pGVar5 = (this->fields)._midCapLookAndFeel;
+                      if (pGVar5 != (GizmoCap3DLookAndFeel *)0x0) {
+                        (pGVar5->fields)._color.r = _UNK_?;
+                        (pGVar5->fields)._color.g = fVar3;
+                        (pGVar5->fields)._color.b = fVar2;
+                        (pGVar5->fields)._color.a = fVar1;
+                        pGVar6 = (this->fields)._radiusTickLookAndFeel;
+                        if (pGVar6 != (GizmoCap2DLookAndFeel *)0x0) {
+                          (pGVar6->fields)._capType = 0;
                           fVar1 = _UNK_?;
                           fVar2 = _UNK_?;
                           fVar3 = _UNK_?;
-                          pGVar8 = *ppGVar9;
-                          if (pGVar8 != (GizmoCap2DLookAndFeel *)0x0) {
-                            (pGVar8->fields)._color.r = _UNK_?;
-                            (pGVar8->fields)._color.g = fVar3;
-                            (pGVar8->fields)._color.b = fVar2;
-                            (pGVar8->fields)._color.a = fVar1;
-                            if (*ppGVar9 != (GizmoCap2DLookAndFeel *)0x0) {
+                          pGVar6 = (this->fields)._radiusTickLookAndFeel;
+                          if (pGVar6 != (GizmoCap2DLookAndFeel *)0x0) {
+                            (pGVar6->fields)._color.r = _UNK_?;
+                            (pGVar6->fields)._color.g = fVar3;
+                            (pGVar6->fields)._color.b = fVar2;
+                            (pGVar6->fields)._color.a = fVar1;
+                            pGVar6 = (this->fields)._radiusTickLookAndFeel;
+                            if (pGVar6 != (GizmoCap2DLookAndFeel *)0x0) {
                               CameraMoveSettings::CameraMoveSettings_set_AccelerationRate
-                                        ((CameraMoveSettings *)*ppGVar9,8.0,(MethodInfo *)0x0);
-                              if ((GizmoPlaneSlider3DLookAndFeel *)*ppGVar9 !=
-                                  (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+                                        ((CameraMoveSettings *)pGVar6,8.0,(MethodInfo *)0x0);
+                              this_00 = (GizmoPlaneSlider3DLookAndFeel *)
+                                        (this->fields)._radiusTickLookAndFeel;
+                              if (this_00 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
                                 GizmoPlaneSlider3DLookAndFeel::
                                 GizmoPlaneSlider3DLookAndFeel_set_RATriangleXLength
-                                          ((GizmoPlaneSlider3DLookAndFeel *)*ppGVar9,8.0,
-                                           (MethodInfo *)0x0);
-                                fVar10 = _UNK_?;
+                                          (this_00,8.0,(MethodInfo *)0x0);
+                                fVar7 = _UNK_?;
                                 fVar1 = _UNK_?;
                                 fVar2 = _UNK_?;
                                 fVar3 = _UNK_?;
-                                if (*ppGVar9 != (GizmoCap2DLookAndFeel *)0x0) {
-                                  ((*ppGVar9)->fields)._circleRadius = 4.0;
-                                  pGVar8 = *ppGVar9;
+                                pGVar6 = (this->fields)._radiusTickLookAndFeel;
+                                if (pGVar6 != (GizmoCap2DLookAndFeel *)0x0) {
+                                  (pGVar6->fields)._circleRadius = 4.0;
+                                  pGVar6 = (this->fields)._radiusTickLookAndFeel;
                                   color.g = fVar2;
                                   color.r = fVar3;
                                   color.b = fVar1;
-                                  color.a = fVar10;
-                                  pCVar11 = ColorEx::ColorEx_KeepAllButAlpha
-                                                      ((Color *)&stack0xffffffec,color,0.0,
-                                                       (MethodInfo *)0x0);
-                                  fVar3 = pCVar11->g;
-                                  fVar2 = pCVar11->b;
-                                  fVar1 = pCVar11->a;
-                                  if (pGVar8 != (GizmoCap2DLookAndFeel *)0x0) {
-                                    (pGVar8->fields)._borderColor.r = pCVar11->r;
-                                    (pGVar8->fields)._borderColor.g = fVar3;
-                                    (pGVar8->fields)._borderColor.b = fVar2;
-                                    (pGVar8->fields)._borderColor.a = fVar1;
+                                  color.a = fVar7;
+                                  pCVar8 = ColorEx::ColorEx_KeepAllButAlpha
+                                                     ((Color *)&stack0xffffffec,color,0.0,
+                                                      (MethodInfo *)0x0);
+                                  fVar3 = pCVar8->g;
+                                  fVar2 = pCVar8->b;
+                                  fVar1 = pCVar8->a;
+                                  if (pGVar6 != (GizmoCap2DLookAndFeel *)0x0) {
+                                    (pGVar6->fields)._borderColor.r = pCVar8->r;
+                                    (pGVar6->fields)._borderColor.g = fVar3;
+                                    (pGVar6->fields)._borderColor.b = fVar2;
+                                    (pGVar6->fields)._borderColor.a = fVar1;
                                     return;
                                   }
                                 }
@@ -217,8 +222,8 @@ void Assembly-CSharp.dll::RTG::TerrainGizmoLookAndFeel::TerrainGizmoLookAndFeel_
     }
   }
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

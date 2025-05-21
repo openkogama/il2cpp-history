@@ -6,32 +6,34 @@ int32_t Assembly-CSharp.dll::AvatarSelectionAnimator::AvatarSelectionAnimator_Ge
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__List<MVBody>__get_Count__);
+    ppMStack_1 = &MethodInfo__System__Collections__Generic__List<MVBody>__get_Count__;
+    func_?();
     cRam_? = '\x01';
   }
-  if ((this->fields).forward != 0) {
-    pLVar1 = (this->fields).Bodies;
-    if (pLVar1 != (List_1_MVBody_ *)0x0) {
-      iVar2 = (this->fields).currentIndex;
-      iVar3 = 0;
-      if (iVar2 != (pLVar1->fields)._size + -1) {
-        iVar3 = iVar2 + 1;
-      }
-      return iVar3;
+  if ((this->fields).forward == 0) {
+    if ((this->fields).currentIndex != 0) {
+      return (this->fields).currentIndex + -1;
     }
-code_?:
-    func_?();
-    pcVar4 = (code *)swi(3);
-    iVar5 = (*pcVar4)();
-    return iVar5;
+    pLVar2 = (this->fields).Bodies;
+    if (pLVar2 != (List_1_MVBody_ *)0x0) {
+      return (pLVar2->fields)._size + -1;
+    }
   }
-  iVar2 = (this->fields).currentIndex;
-  if (iVar2 == 0) {
-    pLVar1 = (this->fields).Bodies;
-    if (pLVar1 == (List_1_MVBody_ *)0x0) goto code_?;
-    iVar2 = (pLVar1->fields)._size;
+  else {
+    pLVar2 = (this->fields).Bodies;
+    if (pLVar2 != (List_1_MVBody_ *)0x0) {
+      if ((this->fields).currentIndex == (pLVar2->fields)._size + -1) {
+        return 0;
+      }
+      return (this->fields).currentIndex + 1;
+    }
   }
-  return iVar2 + -1;
+  ppMStack_1 = (MethodInfo **)&stack0xfffffffc;
+  uVar3 = func_?(auStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  iVar6 = (*pcVar5)();
+  return iVar6;
 }
 
 
@@ -89,29 +91,28 @@ void Assembly-CSharp.dll::AvatarSelectionAnimator::AvatarSelectionAnimator_SetTa
     if ((this->fields).currentIndex == -1) {
       (this->fields).currentIndex = currentIndexInp;
     }
-    iVar6 = (this->fields).currentIndex;
-    if (iVar6 < TargetIndexInp) {
-      iVar7 = TargetIndexInp - iVar6;
+    if ((this->fields).currentIndex < TargetIndexInp) {
+      iVar6 = TargetIndexInp - (this->fields).currentIndex;
     }
     else {
-      pLVar8 = (this->fields).Bodies;
-      if (pLVar8 == (List_1_MVBody_ *)0x0) goto code_?;
-      iVar7 = TargetIndexInp + -1 + ((pLVar8->fields)._size - iVar6);
-      if (TargetIndexInp < iVar6) {
-        iVar6 = iVar6 - TargetIndexInp;
+      pLVar7 = (this->fields).Bodies;
+      if (pLVar7 == (List_1_MVBody_ *)0x0) goto code_?;
+      iVar6 = ((pLVar7->fields)._size - (this->fields).currentIndex) + -1 + TargetIndexInp;
+      if (TargetIndexInp < (this->fields).currentIndex) {
+        iVar8 = (this->fields).currentIndex - TargetIndexInp;
         goto code_?;
       }
     }
-    pLVar8 = (this->fields).Bodies;
-    if (pLVar8 != (List_1_MVBody_ *)0x0) {
-      iVar6 = iVar6 + -1 + ((pLVar8->fields)._size - TargetIndexInp);
+    pLVar7 = (this->fields).Bodies;
+    if (pLVar7 != (List_1_MVBody_ *)0x0) {
+      iVar8 = (((pLVar7->fields)._size + (this->fields).currentIndex) - TargetIndexInp) + -1;
 code_?:
-      if ((bool)(this->fields).forward == iVar7 < iVar6) {
+      if ((bool)(this->fields).forward == iVar6 < iVar8) {
         return;
       }
       iVar9 = AvatarSelectionAnimator_GetNextIndex(this,(MethodInfo *)0x0);
       fVar10 = _UNK_? - (this->fields).time;
-      (this->fields).forward = iVar7 < iVar6;
+      (this->fields).forward = iVar6 < iVar8;
       (this->fields).currentIndex = iVar9;
       (this->fields).time = fVar10;
       return;
@@ -136,8 +137,7 @@ void Assembly-CSharp.dll::AvatarSelectionAnimator::AvatarSelectionAnimator_SetTa
     func_?(&MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_);
     cRam_? = '\x01';
   }
-  index = (this->fields).currentIndex;
-  if (index != -1) {
+  if ((this->fields).currentIndex != -1) {
     pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
              (this->fields).Bodies;
     if (pLVar1 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
@@ -145,7 +145,7 @@ void Assembly-CSharp.dll::AvatarSelectionAnimator::AvatarSelectionAnimator_SetTa
     RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
              RegexCharClass+SingleRange]::
              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                       (pLVar1,index,
+                       (pLVar1,(this->fields).currentIndex,
                         MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_);
     if (RVar2 == (RegexCharClass_SingleRange)0x0) goto code_?;
     uVar3._0_4_ = (this->fields).hidePos.x;
@@ -266,7 +266,7 @@ void Assembly-CSharp.dll::AvatarSelectionAnimator::AvatarSelectionAnimator_Start
 
 {
   (this->fields).addition =
-       (_UNK_? - (this->fields).timeSlowThreshold * (this->fields).endmultiplier) /
+       (_UNK_? - (this->fields).endmultiplier * (this->fields).timeSlowThreshold) /
        (_UNK_? - (this->fields).timeSlowThreshold);
   return;
 }
@@ -284,12 +284,12 @@ void Assembly-CSharp.dll::AvatarSelectionAnimator::AvatarSelectionAnimator_Updat
     func_?(&TypeInfo__System__Math);
     cRam_? = '\x01';
   }
-  iVar1 = (this->fields).targetIndex;
-  if (iVar1 != -1) {
-    iVar2 = (this->fields).currentIndex;
-    if (iVar2 == -1) {
+  if ((this->fields).targetIndex != -1) {
+    if ((this->fields).currentIndex == -1) {
       return;
     }
+    iVar1 = (this->fields).targetIndex;
+    iVar2 = (this->fields).currentIndex;
     this = _UNK_?;
     if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__Math);
@@ -306,9 +306,11 @@ void Assembly-CSharp.dll::AvatarSelectionAnimator::AvatarSelectionAnimator_Updat
     fVar6 = (this_00->fields).time;
     pfVar7 = &(this_00->fields).timeSlowThreshold;
     if ((*pfVar7 <= fVar6 && fVar6 != *pfVar7) && (index == (this_00->fields).targetIndex)) {
-      fStack_5 = (((this_00->fields).endmultiplier - (this_00->fields).addition) * fVar6 +
-                 (this_00->fields).addition) * (this_00->fields).baseTimeMultiplier;
+      fStack_5 = (((this_00->fields).endmultiplier - (this_00->fields).addition) *
+                  (this_00->fields).time + (this_00->fields).addition) *
+                 (this_00->fields).baseTimeMultiplier;
     }
+    fVar6 = (this_00->fields).time;
     fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
     pLVar9 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
               (this_00->fields).Bodies;
@@ -482,9 +484,8 @@ void Assembly-CSharp.dll::AvatarSelectionAnimator::AvatarSelectionAnimator__ctor
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<MVBody>__List__);
-  ppLVar1 = &(this->fields).Bodies;
-  *ppLVar1 = this_00;
-  func_?(ppLVar1,this_00);
+  (this->fields).Bodies = this_00;
+  func_?(&(this->fields).Bodies,this_00);
   (this->fields).currentIndex = -1;
   (this->fields).targetIndex = -1;
   (this->fields).baseTimeMultiplier = 2.0;
@@ -492,14 +493,14 @@ void Assembly-CSharp.dll::AvatarSelectionAnimator::AvatarSelectionAnimator__ctor
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';
   }
-  pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
-  uVar3 = (pVVar2->rightVector).x;
-  uVar4 = (pVVar2->rightVector).y;
-  fVar5 = (pVVar2->rightVector).z * _UNK_?;
-  fVar6 = (float)uVar4 * _UNK_?;
-  (this->fields).distance.x = (float)uVar3 * _UNK_?;
-  (this->fields).distance.y = fVar6;
-  (this->fields).distance.z = fVar5;
+  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
+  uVar2 = (pVVar1->rightVector).x;
+  uVar3 = (pVVar1->rightVector).y;
+  fVar4 = (pVVar1->rightVector).z * _UNK_?;
+  fVar5 = (float)uVar3 * _UNK_?;
+  (this->fields).distance.x = (float)uVar2 * _UNK_?;
+  (this->fields).distance.y = fVar5;
+  (this->fields).distance.z = fVar4;
   (this->fields).forward = 1;
   (this->fields).timeSlowThreshold = 0.8;
   (this->fields).endmultiplier = 0.01;

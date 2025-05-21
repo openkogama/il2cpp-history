@@ -82,44 +82,44 @@ void Assembly-CSharp.dll::BoostEditIntPopup::BoostEditIntPopup_Initialize
                 (pTVar1,(boost->fields)._ValueDescription_k__BackingField,
                  (pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
       if (boostSetting != (GameBoosterSettingWithGoldSetting *)0x0) {
-        this_00 = (KogamaSettingNumericBase_1_System_Int32___Class *)
-                  MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::
-                  GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting::
-                  GameBoosterSettingWithGoldSetting_get_Setting(boostSetting,(MethodInfo *)0x0);
-        unaff_EDI = 
-        TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
-        ;
-        if (this_00 != (KogamaSettingNumericBase_1_System_Int32___Class *)0x0) {
-          pIVar2 = (this_00->_0).image;
-          bVar3 = (
-                  TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
-                  ->_1).naturalAligment;
-          unaff_EDI = 
+        unaff_ESI = (KogamaSettingNumericBase_1_System_Int32_ *)
+                    MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::
+                    GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting
+                    ::GameBoosterSettingWithGoldSetting_get_Setting(boostSetting,(MethodInfo *)0x0);
+        if (unaff_ESI != (KogamaSettingNumericBase_1_System_Int32_ *)0x0) {
+          pKVar2 = 
           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
           ;
-          if ((*(byte *)&pIVar2[4].assembly < bVar3) ||
-             (*(KogamaSettingNumericBase_1_System_Int32___Class **)
-               ((pIVar2[2].typeCount - 4) + (uint)bVar3 * 4) !=
+          if (((unaff_ESI->klass->_1).naturalAligment <
+               (
+               TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
+               ->_1).naturalAligment) ||
+             ((unaff_ESI->klass->_1).typeHierarchy
+              [(
+               TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
+               ->_1).naturalAligment - 1] !=
+              (Il2CppClass *)
               TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>
              )) goto code_?;
-          iVar4 = *(int *)&(this_00->_0).byval_arg.attrs;
-          unaff_EDI = this_00;
-          if ((iVar4 != 0) &&
-             ((iVar4 = *(int *)(iVar4 + 0x10), iVar4 != 0 &&
+          pKVar3 = (unaff_ESI->fields).KogamaSettingNumeric;
+          if ((pKVar3 != (KogamaSettingNumeric_1_System_Int32_ *)0x0) &&
+             ((pRVar4 = (pKVar3->fields).RangeValidator,
+              pRVar4 != (RangeValidator_1_System_Int32_ *)0x0 &&
               (pSVar5 = (this->fields).boostSlider, pSVar5 != (Slider *)0x0)))) {
             UnityEngine.UI.dll::UnityEngine::UI::Slider::Slider_set_maxValue
-                      (pSVar5,(float)*(int *)(iVar4 + 0xc),(MethodInfo *)0x0);
-            iVar4 = *(int *)&(this_00->_0).byval_arg.attrs;
-            if ((iVar4 != 0) &&
-               ((iVar4 = *(int *)(iVar4 + 0x10), iVar4 != 0 &&
+                      (pSVar5,(float)(pRVar4->fields).max,(MethodInfo *)0x0);
+            pKVar3 = (unaff_ESI->fields).KogamaSettingNumeric;
+            if ((pKVar3 != (KogamaSettingNumeric_1_System_Int32_ *)0x0) &&
+               ((pRVar4 = (pKVar3->fields).RangeValidator,
+                pRVar4 != (RangeValidator_1_System_Int32_ *)0x0 &&
                 (pSVar5 = (this->fields).boostSlider, pSVar5 != (Slider *)0x0)))) {
               UnityEngine.UI.dll::UnityEngine::UI::Slider::Slider_set_minValue
-                        (pSVar5,(float)*(int *)(iVar4 + 8),(MethodInfo *)0x0);
+                        (pSVar5,(float)(pRVar4->fields).min,(MethodInfo *)0x0);
               pSVar5 = (this->fields).boostSlider;
               iVar6 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
                       KogamaSettingTypes::KogamaSettingNumericBase`1[System::Int32]::
                       KogamaSettingNumericBase_1_System_Int32__get_NumericValue
-                                ((KogamaSettingNumericBase_1_System_Int32_ *)this_00,
+                                (unaff_ESI,
                                  MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>__get_NumericValue__
                                 );
               if (pSVar5 != (Slider *)0x0) {
@@ -129,7 +129,7 @@ void Assembly-CSharp.dll::BoostEditIntPopup::BoostEditIntPopup_Initialize
                 iVar6 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
                         KogamaSettingTypes::KogamaSettingNumericBase`1[System::Int32]::
                         KogamaSettingNumericBase_1_System_Int32__get_NumericValue
-                                  ((KogamaSettingNumericBase_1_System_Int32_ *)this_00,
+                                  (unaff_ESI,
                                    MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>__get_NumericValue__
                                   );
                 (this->fields).originalSettingValue = iVar6;
@@ -145,9 +145,9 @@ void Assembly-CSharp.dll::BoostEditIntPopup::BoostEditIntPopup_Initialize
     }
   }
   func_?();
-  this_00 = extraout_EDX;
+  pKVar2 = extraout_EDX;
 code_?:
-  func_?(this_00,unaff_EDI);
+  func_?(unaff_ESI,pKVar2);
   pcVar7 = (code *)swi(3);
   (*pcVar7)();
   return;

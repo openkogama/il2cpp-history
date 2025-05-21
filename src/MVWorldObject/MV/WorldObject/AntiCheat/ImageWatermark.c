@@ -48,84 +48,77 @@ MVWorldObject.dll::MV::WorldObject::AntiCheat::ImageWatermark::ImageWatermark_Ad
       }
       if (pSVar3 != (String *)0x0) {
         pIVar4 = (Int32__Array *)func_?();
-        pRVar5 = TypeInfo__System__Random;
-        this = (Random *)func_?();
-        mscorlib.dll::System::Random::Random__ctor_1(this,0x72fce,(MethodInfo *)0x0);
+        pRVar5 = (Random *)func_?();
+        mscorlib.dll::System::Random::Random__ctor_1(pRVar5,0x72fce,(MethodInfo *)0x0);
         piVar6 = pIVar4->vector;
-        piVar7 = piVar6;
-        for (uVar8 = 0; (int)uVar8 < (int)(pRVar5->_0).name; uVar8 = uVar8 + 1) {
-          if ((StringLiteral_KoGaMa == (String *)0x0) ||
-             (pRVar5 = (Random__Class *)(StringLiteral_KoGaMa->fields)._stringLength,
-             this == (Random *)0x0)) goto code_?;
-          piVar7 = (int32_t *)&UNK_?;
-          iVar9 = (*(code *)(this->klass->vtable).Next_1.method)();
-          if (pIVar4 == (Int32__Array *)0x0) goto code_?;
-          if (pIVar4->max_length <= uVar8) goto code_?;
-          *piVar6 = iVar9;
+        for (uVar7 = 0; pRVar8 = pRVar5, (int)uVar7 < (pRStack_9->fields)._inext;
+            uVar7 = uVar7 + 1) {
+          if (((StringLiteral_KoGaMa == (String *)0x0) || (pRVar8 == (Random *)0x0)) ||
+             (pRVar5 = pRVar8, iVar10 = (*(code *)(pRVar8->klass->vtable).Next_1.method)(),
+             pIVar4 == (Int32__Array *)0x0)) goto code_?;
+          if (pIVar4->max_length <= uVar7) goto code_?;
+          *piVar6 = iVar10;
           piVar6 = piVar6 + 1;
+          pRStack_9 = pRVar8;
         }
-        pSVar3 = (String *)&UNK_?;
-        pIVar10 = pIVar4;
+        pRVar5 = (Random *)&UNK_?;
         mscorlib.dll::System::Array::Array_Sort_8
                   (pIVar4,void_MethodInfo__System__Array__Sort<int>_System__Int32____);
-        pIStack_11 = (Int32__Array *)0x0;
+        index = (Int32__Array *)0x0;
         if (pIVar4 != (Int32__Array *)0x0) {
-          if (pIVar4->max_length == 0) {
-code_?:
-            func_?();
-          }
-          else {
-            uVar8 = pIVar4->vector[0];
+          if (pIVar4->max_length == 0) goto code_?;
+          pIVar11 = (Int32__Array *)pIVar4->vector[0];
+          if (StringLiteral_KoGaMa != (String *)0x0) {
+            iVar12 = pIVar4->max_length + (StringLiteral_KoGaMa->fields)._stringLength +
+                    bytes->max_length;
+            pBVar13 = (Byte__Array *)func_?();
+            iVar14 = 0;
+            uVar7 = 0;
+            pRVar8 = (Random *)StringLiteral_KoGaMa;
             if (StringLiteral_KoGaMa != (String *)0x0) {
-              iVar12 = (StringLiteral_KoGaMa->fields)._stringLength + pIVar4->max_length +
-                      bytes->max_length;
-              pBVar13 = (Byte__Array *)func_?();
-              pIVar4 = (Int32__Array *)0x0;
-              uVar14 = 0;
-              this_00 = StringLiteral_KoGaMa;
-              if (StringLiteral_KoGaMa != (String *)0x0) {
-                for (; (int)pIVar4 < (this_00->fields)._stringLength;
-                    pIVar4 = (Int32__Array *)((int)&pIVar4->klass + 1)) {
-                  uVar15 = uVar14 + 1;
-                  pSVar3 = this_00;
-                  pIVar10 = pIVar4;
-                  uVar16 = mscorlib.dll::System::String::String_get_Chars
-                                    (this_00,(int32_t)pIVar4,(MethodInfo *)0x0);
-                  if (pBVar13 == (Byte__Array *)0x0) goto code_?;
-                  if (pBVar13->max_length <= uVar14) goto code_?;
-                  pBVar13->vector[uVar14] = (uint8_t)uVar16;
-                  uVar14 = uVar15;
-                }
-                uVar15 = 0;
-                do {
-                  pIVar4 = pIStack_11;
-                  if (*(int *)(iVar12 + 0xc) <= (int)uVar15) {
-                    return pBVar13;
-                  }
-                  uVar17 = uVar14;
-                  if ((uVar15 == uVar8) && ((int)pIStack_11 < (int)pIVar10->max_length)) {
-                    uVar17 = uVar14 + 1;
-                    pIVar10 = pIVar4;
-                    uVar16 = mscorlib.dll::System::String::String_get_Chars
-                                      (pSVar3,(int32_t)pIVar4,(MethodInfo *)0x0);
-                    if (pBVar13 == (Byte__Array *)0x0) break;
-                    if (pBVar13->max_length <= uVar14) goto code_?;
-                    pBVar13->vector[uVar14] = (uint8_t)uVar16;
-                    if (0xADDR < (int)((undefined *)pIVar10->max_length + -1)) {
-                      piVar7 = piVar7 + 1;
-                      if ((undefined *)pIVar10->max_length < &UNK_?) goto code_?;
-                      uVar8 = *piVar7;
-                    }
-                  }
-                  uVar14 = uVar17 + 1;
-                  if (*(uint *)(iVar12 + 0xc) <= uVar15) goto code_?;
-                  if (pBVar13 == (Byte__Array *)0x0) break;
-                  if (pBVar13->max_length <= uVar17) goto code_?;
-                  puVar18 = (uint8_t *)(iVar12 + 0x10 + uVar15);
-                  uVar15 = uVar15 + 1;
-                  pBVar13->vector[uVar17] = *puVar18;
-                } while( true );
+              for (; iVar14 < (pRVar8->fields)._inext; iVar14 = iVar14 + 1) {
+                uVar15 = uVar7 + 1;
+                pRVar5 = pRVar8;
+                uVar16 = mscorlib.dll::System::String::String_get_Chars
+                                  ((String *)pRVar8,iVar14,(MethodInfo *)0x0);
+                if (pBVar13 == (Byte__Array *)0x0) goto code_?;
+                if (pBVar13->max_length <= uVar7) goto code_?;
+                pBVar13->vector[uVar7] = (uint8_t)uVar16;
+                uVar7 = uVar15;
               }
+              pIVar4 = (Int32__Array *)0x0;
+              ppIVar17 = &(pRVar5->fields)._seedArray;
+              iVar14 = iVar12 + 0x10;
+              do {
+                pRVar8 = pRStack_9;
+                if (*(int *)(iVar12 + 0xc) <= (int)pIVar4) {
+                  return pBVar13;
+                }
+                uVar15 = uVar7;
+                if ((pIVar4 == pIVar11) && ((int)index < (pRVar5->fields)._inextp)) {
+                  uVar15 = uVar7 + 1;
+                  pIVar4 = index;
+                  uVar16 = mscorlib.dll::System::String::String_get_Chars
+                                    ((String *)pRVar8,(int32_t)index,(MethodInfo *)0x0);
+                  if (pBVar13 == (Byte__Array *)0x0) break;
+                  if (pBVar13->max_length <= uVar7) goto code_?;
+                  pBVar13->vector[uVar7] = (uint8_t)uVar16;
+                  pRVar5 = pRVar8;
+                  if ((int)index < (pRVar8->fields)._inextp + -1) {
+                    index = (Int32__Array *)((int)&index->klass + 1);
+                    ppIVar17 = ppIVar17 + 1;
+                    if ((Int32__Array *)(pRVar8->fields)._inextp <= index) goto code_?;
+                    pIVar11 = *ppIVar17;
+                  }
+                }
+                uVar7 = uVar15 + 1;
+                if (*(Int32__Array **)(iVar12 + 0xc) <= pIVar4) goto code_?;
+                if (pBVar13 == (Byte__Array *)0x0) break;
+                if (pBVar13->max_length <= uVar15) goto code_?;
+                piVar6 = pIVar4->vector;
+                pIVar4 = (Int32__Array *)((int)&pIVar4->klass + 1);
+                pBVar13->vector[uVar15] = *(uint8_t *)((int)piVar6 + iVar14 + -0x10);
+              } while( true );
             }
           }
         }
@@ -134,8 +127,10 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar19 = (code *)swi(3);
-  pBVar13 = (Byte__Array *)(*pcVar19)();
+code_?:
+  func_?();
+  pcVar18 = (code *)swi(3);
+  pBVar13 = (Byte__Array *)(*pcVar18)();
   return pBVar13;
 }
 

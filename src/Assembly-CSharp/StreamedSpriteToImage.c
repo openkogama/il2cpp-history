@@ -37,19 +37,18 @@ void Assembly-CSharp.dll::StreamedSpriteToImage::StreamedSpriteToImage_Reset
     cRam_? = '\x01';
   }
   pIVar1 = (this->fields).image;
-  ppIVar2 = &(this->fields).image;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                     ((Object_1 *)pIVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar3 != 0) {
+  if (bVar2 != 0) {
     pIVar1 = (Image *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
                                 ((Component *)this,
                                  UnityEngine__UI__Image_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Image>__
                                 );
-    *ppIVar2 = pIVar1;
-    func_?(ppIVar2,pIVar1);
+    (this->fields).image = pIVar1;
+    func_?(&(this->fields).image,pIVar1);
   }
   return;
 }

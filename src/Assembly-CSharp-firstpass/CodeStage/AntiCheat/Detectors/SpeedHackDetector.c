@@ -403,9 +403,8 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::SpeedHackDe
                 ((Object *)StringLiteral__ACTk__Speed_Hack_Detector__has_,(Object_1 *)this,
                  (MethodInfo *)0x0);
     }
-    ppUVar2 = &(this->fields)._.detectionAction;
-    *ppUVar2 = callback;
-    func_?(ppUVar2,callback);
+    (this->fields)._.detectionAction = callback;
+    func_?(&(this->fields)._.detectionAction,callback);
     (this->fields).maxFalsePositives = falsePositives;
     (this->fields).interval = checkInterval;
     (this->fields).coolDown = shotsTillCooldown;
@@ -582,9 +581,8 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::SpeedHackDe
 
 {
   if ((this->fields)._.started != 0) {
-    ppUVar1 = &(this->fields)._.detectionAction;
-    *ppUVar1 = (UnityAction *)0x0;
-    func_?(ppUVar1,0);
+    (this->fields)._.detectionAction = (UnityAction *)0x0;
+    func_?(&(this->fields)._.detectionAction,0);
     (this->fields)._.isRunning = 0;
     (this->fields)._.started = 0;
   }
@@ -606,44 +604,52 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::SpeedHackDe
     if ((TypeInfo__System__DateTime->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__System__DateTime);
     }
-    mscorlib.dll::System::DateTime::DateTime_get_UtcNow((MethodInfo *)0x0);
-    iVar1 = mscorlib.dll::System::DateTime::DateTime_get_Ticks
-                       ((DateTime *)&stack0xfffffff0,(MethodInfo *)0x0);
-    iVar2 = (int)((ulonglong)iVar1 >> 0x20);
-    uVar3 = (uint)iVar1;
-    piVar4 = &(this->fields).prevTicks;
-    if ((iVar2 - *(int *)((int)&(this->fields).prevTicks + 4) == (uint)(uVar3 < (uint)*piVar4)) &&
-       (uVar3 - (int)*piVar4 < 0x989681)) {
-      fVar5 = (this->fields).interval * _UNK_?;
-      (this->fields).prevTicks = iVar1;
-      dVar6 = (double)fVar5;
-      lVar7 = func_?();
-      piVar4 = &(this->fields).prevIntervalTicks;
-      if (lVar7 <= CONCAT44((iVar2 - *(int *)((int)&(this->fields).prevIntervalTicks + 4)) -
-                             (uint)(uVar3 < (uint)*piVar4),uVar3 - (int)*piVar4)) {
+    DStack_1 = mscorlib.dll::System::DateTime::DateTime_get_UtcNow((MethodInfo *)0x0);
+    uStack_2 = mscorlib.dll::System::DateTime::DateTime_get_Ticks(&DStack_1,(MethodInfo *)0x0);
+    uVar3 = (uint)((ulonglong)uStack_2 >> 0x20);
+    uVar4 = (uint)uStack_2;
+    piVar5 = &(this->fields).prevTicks;
+    puVar6 = (uint *)((int)&(this->fields).prevTicks + 4);
+    uVar7 = (uint)(uVar4 < (uint)*piVar5);
+    uVar8 = uVar3 - *puVar6;
+    if ((uVar8 == uVar7) &&
+       ((uVar3 < *puVar6 || uVar8 < uVar7 || (uVar4 - (int)*piVar5 < 0x989681)))) {
+      fVar9 = (this->fields).interval * _UNK_?;
+      piVar5 = &(this->fields).prevIntervalTicks;
+      iVar10 = *piVar5;
+      iVar11 = *piVar5;
+      (this->fields).prevTicks = uStack_2;
+      iVar12 = *(int *)((int)&(this->fields).prevIntervalTicks + 4);
+      dVar13 = (double)fVar9;
+      lVar14 = func_?();
+      if (lVar14 <= CONCAT44((uVar3 - iVar12) - (uint)(uVar4 < (uint)iVar10),uVar4 - (int)iVar11))
+      {
         mscorlib.dll::System::Environment::Environment_get_TickCount((MethodInfo *)0x0);
-        uVar8 = (this->fields).currentFalsePositives;
+        uVar15 = (this->fields).currentFalsePositives;
+        uVar16 = (undefined4)uStack_2;
         func_?();
-        if (_UNK_? < (float)((uint)(float)dVar6 & _UNK_?)) {
-          bVar9 = uVar8 + 1;
-          (this->fields).currentFalsePositives = bVar9;
-          if (bVar9 <= (this->fields).maxFalsePositives) {
+        if (_UNK_? < (float)((uint)(float)dVar13 & _UNK_?)) {
+          bVar17 = uVar15 + 1;
+          (this->fields).currentFalsePositives = bVar17;
+          if (bVar17 <= (this->fields).maxFalsePositives) {
             (this->fields).currentCooldownShots = 0;
             SpeedHackDetector_ResetStartTicks(this,(MethodInfo *)0x0);
-            (this->fields).prevIntervalTicks = iVar1;
+            *(undefined4 *)&(this->fields).prevIntervalTicks = uVar16;
+            *(undefined4 *)((int)&(this->fields).prevIntervalTicks + 4) = uStack_2._4_4_;
             return;
           }
-          func_?();
+          func_?(8,this);
         }
-        else if (((uVar8 != 0) && (iVar10 = (this->fields).coolDown, 0 < iVar10)) &&
-                (piVar11 = &(this->fields).currentCooldownShots, *piVar11 = *piVar11 + 1,
-                iVar10 <= (this->fields).currentCooldownShots)) {
-          *(uint *)&(this->fields).prevIntervalTicks = uVar3;
+        else if (((uVar15 != 0) && (0 < (this->fields).coolDown)) &&
+                (iVar12 = (this->fields).currentCooldownShots + 1,
+                (this->fields).currentCooldownShots = iVar12, (this->fields).coolDown <= iVar12)) {
+          *(undefined4 *)&(this->fields).prevIntervalTicks = uVar16;
           (this->fields).currentFalsePositives = 0;
-          *(int *)((int)&(this->fields).prevIntervalTicks + 4) = iVar2;
+          *(undefined4 *)((int)&(this->fields).prevIntervalTicks + 4) = uStack_2._4_4_;
           return;
         }
-        (this->fields).prevIntervalTicks = iVar1;
+        *(undefined4 *)&(this->fields).prevIntervalTicks = uVar16;
+        *(undefined4 *)((int)&(this->fields).prevIntervalTicks + 4) = uStack_2._4_4_;
         return;
       }
     }

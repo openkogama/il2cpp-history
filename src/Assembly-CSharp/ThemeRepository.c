@@ -286,9 +286,8 @@ void Assembly-CSharp.dll::ThemeRepository::ThemeRepository__ctor
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<System::String,_Theme>__Dictionary__
             );
-  ppDVar1 = &(this->fields).IdentifierToTheme;
-  *ppDVar1 = (Dictionary_2_System_String_Theme_ *)this_00;
-  func_?(ppDVar1,this_00);
+  (this->fields).IdentifierToTheme = (Dictionary_2_System_String_Theme_ *)this_00;
+  func_?(&(this->fields).IdentifierToTheme,this_00);
   UnityEngine.CoreModule.dll::UnityEngine::ScriptableObject::ScriptableObject__ctor
             ((ScriptableObject *)this,(MethodInfo *)0x0);
   return;
@@ -326,23 +325,22 @@ Assembly-CSharp.dll::ThemeRepository::ThemeRepository_get_CurrentTheme
                   MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectsByType
                             (pMVar1,WorldObjectType__Enum_Theme,(MethodInfo *)0x0);
         if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-          RStack3 =
-               mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-               RegexCharClass+SingleRange]::
-               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                         (this_00,0,
-                          MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
-                         );
-          if (RStack3 == (RegexCharClass_SingleRange)0x0) {
+          RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+                  RegularExpressions::RegexCharClass+SingleRange]::
+                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                            (this_00,0,
+                             MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
+                            );
+          if (RVar3 == (RegexCharClass_SingleRange)0x0) {
             return (ThemeWorldObject *)0x0;
           }
-          bVar4 = (TypeInfo__ThemeWorldObject->_1).naturalAligment;
-          pTStack5 = TypeInfo__ThemeWorldObject;
-          if ((bVar4 <= *(byte *)(*(int *)RStack3 + 0xb8)) &&
-             (*(ThemeWorldObject__Class **)
-               (*(int *)(*(int *)RStack3 + 100) + -4 + (uint)bVar4 * 4) ==
-              TypeInfo__ThemeWorldObject)) {
-            return (ThemeWorldObject *)RStack3;
+          pTStack4 = TypeInfo__ThemeWorldObject;
+          if (((TypeInfo__ThemeWorldObject->_1).naturalAligment <= *(byte *)(*(int *)RVar3 + 0xb8))
+             && (*(ThemeWorldObject__Class **)
+                  (*(int *)(*(int *)RVar3 + 100) + -4 +
+                  (uint)(TypeInfo__ThemeWorldObject->_1).naturalAligment * 4) ==
+                 TypeInfo__ThemeWorldObject)) {
+            return (ThemeWorldObject *)RVar3;
           }
           goto code_?;
         }
@@ -350,13 +348,12 @@ Assembly-CSharp.dll::ThemeRepository::ThemeRepository_get_CurrentTheme
     }
   }
   func_?();
-  RStack3 = extraout_EDX;
-  pTStack5 = unaff_ESI;
+  pTStack4 = unaff_EDI;
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  pTVar7 = (ThemeWorldObject *)(*pcVar6)();
-  return pTVar7;
+  pcVar5 = (code *)swi(3);
+  pTVar6 = (ThemeWorldObject *)(*pcVar5)();
+  return pTVar6;
 }
 
 

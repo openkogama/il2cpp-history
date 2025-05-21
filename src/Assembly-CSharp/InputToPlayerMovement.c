@@ -24,13 +24,12 @@ code_?:
   }
   cVar3 = func_?(3,TypeInfo__IPlayModeUI,pIVar1);
   if (cVar3 == '\0') {
-    uVar4 = 0;
     (this->fields).movementMapState = 0;
     if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__MVInputWrapper);
     }
-    bVar5 = MVInputWrapper::MVInputWrapper_get_IsInGameInputSuppressed((MethodInfo *)0x0);
-    if (bVar5 == 0) {
+    bVar4 = MVInputWrapper::MVInputWrapper_get_IsInGameInputSuppressed((MethodInfo *)0x0);
+    if (bVar4 == 0) {
       if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__MVInputWrapper);
       }
@@ -41,11 +40,8 @@ code_?:
       if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__MVInputWrapper);
       }
-      bVar5 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
+      bVar4 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
                         (KogamaControls__Enum_MoveForward,KeyState__Enum_Pressed,(MethodInfo *)0x0);
-      if (bVar5 != 0) {
-        uVar4 = 2;
-      }
       if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__MVInputWrapper);
       }
@@ -59,8 +55,9 @@ code_?:
       bVar5 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
                         (KogamaControls__Enum_MoveBackwards,KeyState__Enum_Pressed,(MethodInfo *)0x0
                         );
-      if (bVar5 != 0) {
-        uVar4 = uVar4 | 8;
+      uVar6 = (uint)bVar4 * 2 | 8;
+      if (bVar5 == 0) {
+        uVar6 = (uint)bVar4 * 2;
       }
       if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__MVInputWrapper);
@@ -72,10 +69,11 @@ code_?:
       if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__MVInputWrapper);
       }
-      bVar5 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
+      bVar4 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
                         (KogamaControls__Enum_MoveLeft,KeyState__Enum_Pressed,(MethodInfo *)0x0);
-      if (bVar5 != 0) {
-        uVar4 = uVar4 | 1;
+      uVar7 = uVar6 | 1;
+      if (bVar4 == 0) {
+        uVar7 = uVar6;
       }
       if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__MVInputWrapper);
@@ -87,10 +85,11 @@ code_?:
       if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__MVInputWrapper);
       }
-      bVar5 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
+      bVar4 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
                         (KogamaControls__Enum_MoveRight,KeyState__Enum_Pressed,(MethodInfo *)0x0);
-      if (bVar5 != 0) {
-        uVar4 = uVar4 | 4;
+      uVar6 = uVar7 | 4;
+      if (bVar4 == 0) {
+        uVar6 = uVar7;
       }
       if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__MVInputWrapper);
@@ -102,10 +101,11 @@ code_?:
       if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__MVInputWrapper);
       }
-      bVar5 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
+      bVar4 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
                         (KogamaControls__Enum_Jump,KeyState__Enum_Pressed,(MethodInfo *)0x0);
-      if (bVar5 != 0) {
-        uVar4 = uVar4 | 0x10;
+      uVar7 = uVar6 | 0x10;
+      if (bVar4 == 0) {
+        uVar7 = uVar6;
       }
       if (cRam_? == '\0') {
         func_?(&TypeInfo__MVGameControllerBase);
@@ -115,14 +115,13 @@ code_?:
       if (pIVar1 == (IPlayModeUI *)0x0) goto code_?;
       cVar3 = func_?(3,TypeInfo__IPlayModeUI,pIVar1);
       if (cVar3 == '\0') {
-        uVar4 = (this->fields).frameUpdateMovementMapState | uVar4;
+        uVar6 = (this->fields).frameUpdateMovementMapState;
         if (fromFrameUpdate != 0) {
-          (this->fields).frameUpdateMovementMapState = uVar4;
+          (this->fields).frameUpdateMovementMapState = uVar7 | uVar6;
           return;
         }
-        piVar6 = &(this->fields).movementMapState;
-        *piVar6 = *piVar6 | uVar4;
         (this->fields).frameUpdateMovementMapState = 0;
+        (this->fields).movementMapState = (this->fields).movementMapState | uVar7 | uVar6;
       }
     }
   }

@@ -9,7 +9,7 @@ OBB * Assembly-CSharp.dll::RTG::TriangleMath::TriangleMath_Calc3DTriangleOBB
   func_?(__return_storage_ptr__,0,0x2c);
   fVar1 = (p0.x - p1.x) * (p0.x - p1.x) + (p0.y - p1.y) * (p0.y - p1.y) +
            (p0.z - p1.z) * (p0.z - p1.z) + _UNK_?;
-  fVar2 = (p1.y - p2.y) * (p1.y - p2.y) + (p1.x - p2.x) * (p1.x - p2.x) +
+  fVar2 = (p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y) +
            (p1.z - p2.z) * (p1.z - p2.z);
   uStack_3 = p0._0_8_;
   fVar4 = p0.z;
@@ -18,70 +18,72 @@ OBB * Assembly-CSharp.dll::RTG::TriangleMath::TriangleMath_Calc3DTriangleOBB
   fVar7 = p1.z;
   if (fVar1 < fVar2) {
     fVar1 = fVar2;
-    uStack_3 = p1._0_8_;
+    uStack_3 = CONCAT44(p1.y,p1.x);
     fVar4 = p1.z;
     fVar5 = p2.x;
     fVar6 = p2.y;
     fVar7 = p2.z;
   }
-  if (fVar1 < (p2.y - p0.y) * (p2.y - p0.y) + (p2.x - p0.x) * (p2.x - p0.x) +
+  if (fVar1 < (p2.x - p0.x) * (p2.x - p0.x) + (p2.y - p0.y) * (p2.y - p0.y) +
                (p2.z - p0.z) * (p2.z - p0.z)) {
-    uStack_3 = p2._0_8_;
+    uStack_3 = CONCAT44(p2.y,p2.x);
     fVar4 = p2.z;
     fVar5 = p0.x;
     fVar6 = p0.y;
     fVar7 = p0.z;
   }
+  puStack_8 = (undefined *)0x0;
   value.y = fVar6 - uStack_3._4_4_;
   value.x = fVar5 - (float)uStack_3;
   value.z = fVar7 - fVar4;
-  pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                     ((Vector3 *)&stack0xffffffc8,value,(MethodInfo *)0x0);
+  pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                     ((Vector3 *)&stack0xffffffb0,value,(MethodInfo *)0x0);
   upwards.y = normal.y;
   upwards.x = normal.x;
   upwards.z = normal.z;
-  pQVar9 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation
-                     ((Quaternion *)&stack0xfffffffc,*pVVar8,upwards,(MethodInfo *)0x0);
-  OBB::OBB__ctor_3(__return_storage_ptr__,*pQVar9,(MethodInfo *)0x0);
-  if (fStack_10 < 0.0) {
+  pQVar10 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation
+                      ((Quaternion *)&puStack_8,*pVVar9,upwards,(MethodInfo *)0x0);
+  OBB::OBB__ctor_3(__return_storage_ptr__,*pQVar10,(MethodInfo *)0x0);
+  if ((float)puStack_8 < 0.0) {
     func_?();
   }
-  pVVar8 = SphereShape3D::SphereShape3D_get_Right
+  pVVar9 = SphereShape3D::SphereShape3D_get_Right
+                     ((Vector3 *)&p1.z,(SphereShape3D *)__return_storage_ptr__,(MethodInfo *)0x0);
+  uVar11 = pVVar9->x;
+  uVar12 = pVVar9->y;
+  fVar1 = epsilon._extrudeEps * _UNK_?;
+  (__return_storage_ptr__->_size).x =
+       (float)((uint)((float)uVar11 * (p1.y - epsilon._areaEps) +
+                      (float)uVar12 * (p1.z - unaff_retaddr) +
+                     pVVar9->z * (p2.x - (float)__return_storage_ptr__)) & _UNK_?) + fStack_13
+  ;
+  (__return_storage_ptr__->_size).y = fVar1;
+  (__return_storage_ptr__->_size).z = fStack_14;
+  pVVar9 = SphereShape3D::SphereShape3D_get_Right
+                     ((Vector3 *)&p2.z,(SphereShape3D *)__return_storage_ptr__,(MethodInfo *)0x0);
+  uVar15 = pVVar9->x;
+  uVar16 = pVVar9->y;
+  normal.x = pVVar9->z;
+  p2.y = (float)uVar15;
+  p2.z = (float)uVar16;
+  pVVar9 = SphereShape3D::SphereShape3D_get_Look
                      ((Vector3 *)&normal.z,(SphereShape3D *)__return_storage_ptr__,(MethodInfo *)0x0
                      );
-  uVar11 = pVVar8->x;
-  uVar12 = pVVar8->y;
-  fVar1 = pVVar8->z;
-  fVar4 = epsilon._extrudeEps - p1.z;
-  epsilon._extrudeEps = p0.z;
-  fVar5 = p0.z * _UNK_?;
-  (__return_storage_ptr__->_size).x =
-       (float)((uint)((float)uVar12 * (epsilon._areaEps - p1.y) + (float)uVar11 * (normal.z - p1.x) +
-                     fVar1 * fVar4) & _UNK_?) + p0.y;
-  (__return_storage_ptr__->_size).y = fVar5;
-  (__return_storage_ptr__->_size).z = p0.z;
-  pVVar8 = SphereShape3D::SphereShape3D_get_Right
+  uVar17 = pVVar9->x;
+  uVar18 = pVVar9->y;
+  epsilon._areaEps = pVVar9->z;
+  normal.y = (float)uVar17;
+  normal.z = (float)uVar18;
+  pVVar9 = SphereShape3D::SphereShape3D_get_Look
                      ((Vector3 *)&epsilon._wireEps,(SphereShape3D *)__return_storage_ptr__,
                       (MethodInfo *)0x0);
-  uVar13 = pVVar8->x;
-  fStack14 = pVVar8->z;
-  epsilon._wireEps = (float)uVar13;
-  pVVar8 = SphereShape3D::SphereShape3D_get_Look
-                     ((Vector3 *)&uStack15,(SphereShape3D *)__return_storage_ptr__,
-                      (MethodInfo *)0x0);
-  uStack15._0_4_ = pVVar8->x;
-  uStack15._4_4_ = pVVar8->y;
-  fStack16 = pVVar8->z;
-  pVVar8 = SphereShape3D::SphereShape3D_get_Look
-                     ((Vector3 *)&stack0x00000058,(SphereShape3D *)__return_storage_ptr__,
-                      (MethodInfo *)0x0);
-  uVar17 = pVVar8->x;
-  uVar18 = pVVar8->y;
-  fVar5 = (float)uVar18 * normal.z * _UNK_?;
-  fVar4 = pVVar8->z * normal.z * _UNK_?;
-  (__return_storage_ptr__->_center).x = (float)uVar17 * normal.z * _UNK_? + fVar1;
-  (__return_storage_ptr__->_center).y = fVar5 + normal.x;
-  (__return_storage_ptr__->_center).z = fVar4 + normal.y;
+  uVar19 = pVVar9->x;
+  uVar20 = pVVar9->y;
+  fVar1 = (float)uVar20 * p1.z * _UNK_?;
+  fVar4 = pVVar9->z * p1.z * _UNK_?;
+  (__return_storage_ptr__->_center).x = in_stack_21 + (float)uVar19 * p1.z * _UNK_?;
+  (__return_storage_ptr__->_center).y = p1.x + fVar1;
+  (__return_storage_ptr__->_center).z = p1.y + fVar4;
   return __return_storage_ptr__;
 }
 
@@ -102,6 +104,7 @@ Assembly-CSharp.dll::RTG::TriangleMath::TriangleMath_CalcEqTriangle2DPoints
     func_?(&TypeInfo__RTG__TriangleMath);
     cRam_? = '\x01';
   }
+  fVar1 = sideLength * _UNK_?;
   if ((TypeInfo__RTG__TriangleMath->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__RTG__TriangleMath);
   }
@@ -112,7 +115,7 @@ Assembly-CSharp.dll::RTG::TriangleMath::TriangleMath_CalcEqTriangle2DPoints
   if ((TypeInfo__RTG__TriangleMath->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__RTG__TriangleMath);
   }
-  fVar1 = (sideLength * TypeInfo__RTG__TriangleMath->static_fields->_eqTriangleAltFactor) /
+  fVar2 = (sideLength * TypeInfo__RTG__TriangleMath->static_fields->_eqTriangleAltFactor) /
            _UNK_?;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Vector2);
@@ -126,7 +129,7 @@ Assembly-CSharp.dll::RTG::TriangleMath::TriangleMath_CalcEqTriangle2DPoints
   point.x = (TypeInfo__UnityEngine__Vector2->static_fields->rightVector).x;
   point.y = (TypeInfo__UnityEngine__Vector2->static_fields->rightVector).y;
   UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-            ((Vector3 *)&stack0xffffffd4,rotation_00,point,(MethodInfo *)0x0);
+            ((Vector3 *)&stack0xffffffdc,rotation_00,point,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
@@ -138,49 +141,48 @@ Assembly-CSharp.dll::RTG::TriangleMath::TriangleMath_CalcEqTriangle2DPoints
   point_00.z = 0.0;
   point_00.x = (TypeInfo__UnityEngine__Vector2->static_fields->upVector).x;
   point_00.y = (TypeInfo__UnityEngine__Vector2->static_fields->upVector).y;
-  fVar2 = rotation.w;
-  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+  fVar3 = rotation.y;
+  fVar4 = rotation.z;
+  pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
                      ((Vector3 *)&rotation.y,rotation_01,point_00,(MethodInfo *)0x0);
-  fVar4 = pVVar3->x;
-  fVar5 = pVVar3->y;
-  rotation.w = centroid.x - fVar4 * fVar1;
-  fVar6 = centroid.y - fVar5 * fVar1;
-  pLVar7 = TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>;
-  pLVar8 = (List_1_UnityEngine_Vector2_ *)func_?();
+  uVar6 = pVVar5->x;
+  uVar7 = pVVar5->y;
+  rotation.w = centroid.x - (float)uVar6 * fVar2;
+  fVar8 = centroid.y - (float)uVar7 * fVar2;
+  this = (List_1_UnityEngine_Vector2_ *)func_?();
   puVar9 = &UNK_?;
+  pLVar10 = this;
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar8,
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this,
              MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List__);
-  pMVar10 = 
+  pMVar11 = 
   MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_;
-  fVar2 = fVar2 * (float)pLVar7;
-  fVar11 = (float)puVar9 * (float)pLVar7;
-  fVar12 = rotation.w - fVar2;
-  fVar13 = fVar6 - fVar11;
-  if (pLVar8 != (List_1_UnityEngine_Vector2_ *)0x0) {
-    piVar14 = &(pLVar8->fields)._version;
+  fVar12 = rotation.w - fVar3 * fVar1;
+  fVar13 = fVar8 - fVar4 * fVar1;
+  if (this != (List_1_UnityEngine_Vector2_ *)0x0) {
+    piVar14 = &(this->fields)._version;
     *piVar14 = *piVar14 + 1;
-    pVVar15 = (pLVar8->fields)._items;
+    pVVar15 = (this->fields)._items;
     if (pVVar15 != (Vector2__Array *)0x0) {
-      uVar16 = (pLVar8->fields)._size;
+      uVar16 = (this->fields)._size;
       if (uVar16 < pVVar15->max_length) {
-        (pLVar8->fields)._size = uVar16 + 1;
+        (this->fields)._size = uVar16 + 1;
         if (pVVar15->max_length <= uVar16) goto code_?;
         pVVar15->vector[uVar16].x = fVar12;
         pVVar15->vector[uVar16].y = fVar13;
       }
       else {
-        rotation.w = (float)pMVar10->klass->rgctx_data[0xe].method;
-        sideLength = (float)&UNK_?;
+        rotation.y = (float)pMVar11->klass->rgctx_data[0xe].method;
+        centroid.x = (float)&UNK_?;
         item.y = fVar13;
         item.x = fVar12;
-        rotation.x = (float)pLVar8;
-        rotation.y = fVar12;
-        rotation.z = fVar13;
+        rotation.x = fVar13;
         mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-        List_1_UnityEngine_Vector2__AddWithResize(pLVar8,item,(MethodInfo *)rotation.w);
+        List_1_UnityEngine_Vector2__AddWithResize(this,item,(MethodInfo *)rotation.y);
+        centroid.y = (float)this;
+        sideLength = fVar12;
       }
       if (cRam_? == '\0') {
         func_?();
@@ -189,56 +191,60 @@ Assembly-CSharp.dll::RTG::TriangleMath::TriangleMath_CalcEqTriangle2DPoints
       if ((TypeInfo__RTG__TriangleMath->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pMVar10 = 
+      pMVar11 = 
       MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
       ;
-      fVar1 = sideLength * TypeInfo__RTG__TriangleMath->static_fields->_eqTriangleAltFactor -
-               fVar1;
-      fVar4 = centroid.x + fVar4 * fVar1;
-      fVar1 = centroid.y + fVar5 * fVar1;
-      piVar14 = &(pLVar8->fields)._version;
+      fVar2 = sideLength * TypeInfo__RTG__TriangleMath->static_fields->_eqTriangleAltFactor -
+               fVar2;
+      fVar13 = centroid.x + (float)puVar9 * fVar2;
+      fVar2 = centroid.y + (float)pLVar10 * fVar2;
+      piVar14 = &(this->fields)._version;
       *piVar14 = *piVar14 + 1;
-      pVVar15 = (pLVar8->fields)._items;
+      pVVar15 = (this->fields)._items;
       if (pVVar15 != (Vector2__Array *)0x0) {
-        uVar16 = (pLVar8->fields)._size;
+        uVar16 = (this->fields)._size;
         if (uVar16 < pVVar15->max_length) {
-          (pLVar8->fields)._size = uVar16 + 1;
+          (this->fields)._size = uVar16 + 1;
           if (pVVar15->max_length <= uVar16) goto code_?;
-          pVVar15->vector[uVar16].x = fVar4;
-          pVVar15->vector[uVar16].y = fVar1;
+          pVVar15->vector[uVar16].x = fVar13;
+          pVVar15->vector[uVar16].y = fVar2;
         }
         else {
-          rotation.w = (float)&UNK_?;
-          item_00.y = fVar1;
-          item_00.x = fVar4;
+          rotation.y = (float)&UNK_?;
+          item_00.y = fVar2;
+          item_00.x = fVar13;
+          rotation.z = (float)this;
+          rotation.w = fVar13;
           mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
           List_1_UnityEngine_Vector2__AddWithResize
-                    (pLVar8,item_00,pMVar10->klass->rgctx_data[0xe].method);
+                    (this,item_00,pMVar11->klass->rgctx_data[0xe].method);
         }
-        pMVar10 = 
+        pMVar11 = 
         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
         ;
-        fVar2 = rotation.w + fVar2;
-        fVar6 = fVar6 + fVar11;
-        piVar14 = &(pLVar8->fields)._version;
+        fVar2 = fVar3 * fVar1 + rotation.w;
+        fVar8 = fVar4 * fVar1 + fVar8;
+        piVar14 = &(this->fields)._version;
         *piVar14 = *piVar14 + 1;
-        pVVar15 = (pLVar8->fields)._items;
+        pVVar15 = (this->fields)._items;
         if (pVVar15 != (Vector2__Array *)0x0) {
-          uVar16 = (pLVar8->fields)._size;
+          uVar16 = (this->fields)._size;
           if (pVVar15->max_length <= uVar16) {
-            rotation.w = (float)&UNK_?;
-            item_01.y = fVar6;
+            rotation.y = (float)&UNK_?;
+            item_01.y = fVar8;
             item_01.x = fVar2;
+            rotation.z = (float)this;
+            rotation.w = fVar2;
             mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
             List_1_UnityEngine_Vector2__AddWithResize
-                      (pLVar8,item_01,pMVar10->klass->rgctx_data[0xe].method);
-            return pLVar8;
+                      (this,item_01,pMVar11->klass->rgctx_data[0xe].method);
+            return this;
           }
-          (pLVar8->fields)._size = uVar16 + 1;
+          (this->fields)._size = uVar16 + 1;
           if (uVar16 < pVVar15->max_length) {
             pVVar15->vector[uVar16].x = fVar2;
-            pVVar15->vector[uVar16].y = fVar6;
-            return pLVar8;
+            pVVar15->vector[uVar16].y = fVar8;
+            return this;
           }
           goto code_?;
         }
@@ -249,8 +255,8 @@ Assembly-CSharp.dll::RTG::TriangleMath::TriangleMath_CalcEqTriangle2DPoints
 code_?:
   func_?();
   pcVar17 = (code *)swi(3);
-  pLVar8 = (List_1_UnityEngine_Vector2_ *)(*pcVar17)();
-  return pLVar8;
+  pLVar10 = (List_1_UnityEngine_Vector2_ *)(*pcVar17)();
+  return pLVar10;
 }
 
 
@@ -287,33 +293,30 @@ Assembly-CSharp.dll::RTG::TriangleMath::TriangleMath_CalcEqTriangle3DPoints
   UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
             ((Vector3 *)&stack0xffffffc0,rotation,
              TypeInfo__UnityEngine__Vector3->static_fields->upVector,(MethodInfo *)0x0);
-  pLVar1 = (List_1_UnityEngine_Vector3_ *)
+  uVar1 = 0;
+  pLVar2 = (List_1_UnityEngine_Vector3_ *)
            func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector3>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar1,
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar2,
              MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List__);
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__UnityEngine__Vector3,uVar1);
     cRam_? = '\x01';
   }
   UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
             ((Vector3 *)&stack0xffffffc0,rotation,
              TypeInfo__UnityEngine__Vector3->static_fields->rightVector,(MethodInfo *)0x0);
-  if (pLVar1 != (List_1_UnityEngine_Vector3_ *)0x0) {
+  if (pLVar2 != (List_1_UnityEngine_Vector3_ *)0x0) {
     func_?();
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
-    pVVar2 = &TypeInfo__UnityEngine__Vector3->static_fields->upVector;
-    fVar3 = pVVar2->x;
-    fVar4 = pVVar2->y;
-    fVar5 = (TypeInfo__UnityEngine__Vector3->static_fields->upVector).z;
-    fVar6 = rotation.w;
     UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-              ((Vector3 *)&stack0xffffffc0,rotation,*pVVar2,(MethodInfo *)0x0);
+              ((Vector3 *)&stack0xffffffc0,rotation,
+               TypeInfo__UnityEngine__Vector3->static_fields->upVector,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
@@ -326,24 +329,16 @@ Assembly-CSharp.dll::RTG::TriangleMath::TriangleMath_CalcEqTriangle3DPoints
       func_?();
       cRam_? = '\x01';
     }
-    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                       ((Vector3 *)&stack0xffffffc0,rotation,
-                        TypeInfo__UnityEngine__Vector3->static_fields->rightVector,(MethodInfo *)0x0
-                       );
-    uVar7 = pVVar2->x;
-    uVar8 = pVVar2->y;
-    fStack9 = pVVar2->z * fVar5 + fVar6;
-    pMStack10 =
-         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
-    ;
-    uStack11 = CONCAT44((float)uVar8 * fVar5 + fVar3,(float)uVar7 * fVar5 + fVar4);
+    UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+              ((Vector3 *)&stack0xffffffc0,rotation,
+               TypeInfo__UnityEngine__Vector3->static_fields->rightVector,(MethodInfo *)0x0);
     func_?();
-    return pLVar1;
+    return pLVar2;
   }
   func_?();
-  pcVar12 = (code *)swi(3);
-  pLVar1 = (List_1_UnityEngine_Vector3_ *)(*pcVar12)();
-  return pLVar1;
+  pcVar3 = (code *)swi(3);
+  pLVar2 = (List_1_UnityEngine_Vector3_ *)(*pcVar3)();
+  return pLVar2;
 }
 
 
@@ -371,21 +366,23 @@ Assembly-CSharp.dll::RTG::TriangleMath::TriangleMath_CalcRATriangle2DPoints
                        (MethodInfo *)0x0);
   fVar2 = pQVar1->x;
   fVar3 = pQVar1->y;
-  fVar4 = pQVar1->z;
-  puVar5 = (undefined *)pQVar1->w;
+  puVar4 = (undefined *)pQVar1->z;
+  ppVVar5 = (Vector2__Class **)pQVar1->w;
   if (cRam_? == '\0') {
-    puVar5 = &UNK_?;
+    ppVVar5 = &TypeInfo__UnityEngine__Vector2;
+    puVar4 = &UNK_?;
     func_?();
     cRam_? = '\x01';
   }
   VVar6 = TypeInfo__UnityEngine__Vector2->static_fields->rightVector;
-  fVar7 = VVar6.x;
-  fVar8 = VVar6.y;
-  fVar9 = 0.0;
+  fVar7 = 0.0;
+  fVar8 = VVar6.x;
+  fVar9 = VVar6.y;
+  fVar10 = 0.0;
   rotation.y = fVar3;
   rotation.x = fVar2;
-  rotation.z = fVar4;
-  rotation.w = (float)puVar5;
+  rotation.z = (float)puVar4;
+  rotation.w = (float)ppVVar5;
   point.z = 0.0;
   point.x = VVar6.x;
   point.y = VVar6.y;
@@ -395,95 +392,92 @@ Assembly-CSharp.dll::RTG::TriangleMath::TriangleMath_CalcRATriangle2DPoints
     func_?();
     cRam_? = '\x01';
   }
-  VVar6 = TypeInfo__UnityEngine__Vector2->static_fields->upVector;
-  uVar10 = (ulonglong)VVar6 >> 0x20;
-  point_00.x = VVar6.x;
-  uVar11 = CONCAT44((Vector3 *)&stack0xffffffd8,&UNK_?);
-  rotation_00.y = fVar7;
-  rotation_00.x = (float)puVar5;
-  rotation_00.z = fVar8;
-  rotation_00.w = fVar9;
-  point_00.y = (float)(int)uVar10;
-  rightAngleCorner.x = (float)(int)(uVar10 >> 0x20);
-  pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                      ((Vector3 *)&stack0xffffffd8,rotation_00,point_00,(MethodInfo *)0x0);
-  pLVar13 = TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>;
-  fVar2 = pVVar12->x;
-  fVar3 = pVVar12->y;
-  pLVar14 = (List_1_UnityEngine_Vector2_ *)func_?();
-  pMVar15 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List__;
+  __return_storage_ptr__ = (Vector3 *)&stack0xffffffd8;
+  rotation_00.y = fVar9;
+  rotation_00.x = fVar8;
+  rotation_00.z = fVar10;
+  rotation_00.w = fVar7;
+  point_00.z = 0.0;
+  point_00.x = (TypeInfo__UnityEngine__Vector2->static_fields->upVector).x;
+  point_00.y = (TypeInfo__UnityEngine__Vector2->static_fields->upVector).y;
+  pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                      (__return_storage_ptr__,rotation_00,point_00,(MethodInfo *)0x0);
+  pLVar12 = TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>;
+  fVar2 = pVVar11->x;
+  fVar3 = pVVar11->y;
+  pLVar13 = (List_1_UnityEngine_Vector2_ *)func_?();
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar14,
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar13,
              MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List__);
-  pMVar16 = 
+  pMVar14 = 
   MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_;
-  if (pLVar14 != (List_1_UnityEngine_Vector2_ *)0x0) {
-    piVar17 = &(pLVar14->fields)._version;
-    *piVar17 = *piVar17 + 1;
-    pVVar18 = (pLVar14->fields)._items;
-    if (pVVar18 != (Vector2__Array *)0x0) {
-      uVar19 = (pLVar14->fields)._size;
-      if (uVar19 < pVVar18->max_length) {
-        (pLVar14->fields)._size = uVar19 + 1;
-        if (pVVar18->max_length <= uVar19) goto code_?;
-        pVVar18->vector[uVar19].x = (float)pMVar15;
-        pVVar18->vector[uVar19].y = (float)pLVar13;
+  if (pLVar13 != (List_1_UnityEngine_Vector2_ *)0x0) {
+    piVar15 = &(pLVar13->fields)._version;
+    *piVar15 = *piVar15 + 1;
+    pVVar16 = (pLVar13->fields)._items;
+    if (pVVar16 != (Vector2__Array *)0x0) {
+      uVar17 = (pLVar13->fields)._size;
+      if (uVar17 < pVVar16->max_length) {
+        (pLVar13->fields)._size = uVar17 + 1;
+        if (pVVar16->max_length <= uVar17) goto code_?;
+        pVVar16->vector[uVar17].x = (float)pLVar12;
+        pVVar16->vector[uVar17].y = rightAngleCorner.y;
       }
       else {
-        VVar6.y = (float)pLVar13;
-        VVar6.x = (float)pMVar15;
+        VVar6.y = rightAngleCorner.y;
+        VVar6.x = (float)pLVar12;
         mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
         List_1_UnityEngine_Vector2__AddWithResize
-                  (pLVar14,VVar6,pMVar16->klass->rgctx_data[0xe].method);
+                  (pLVar13,VVar6,pMVar14->klass->rgctx_data[0xe].method);
       }
-      pMVar16 = 
+      pMVar14 = 
       MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
       ;
-      fVar2 = (float)pMVar15 + fVar2 * yLength;
-      fVar3 = (float)pLVar13 + fVar3 * yLength;
-      piVar17 = &(pLVar14->fields)._version;
-      *piVar17 = *piVar17 + 1;
-      pVVar18 = (pLVar14->fields)._items;
-      if (pVVar18 != (Vector2__Array *)0x0) {
-        uVar19 = (pLVar14->fields)._size;
-        if (uVar19 < pVVar18->max_length) {
-          (pLVar14->fields)._size = uVar19 + 1;
-          if (pVVar18->max_length <= uVar19) goto code_?;
-          pVVar18->vector[uVar19].x = fVar2;
-          pVVar18->vector[uVar19].y = fVar3;
+      fVar2 = (float)pLVar12 + fVar2 * yLength;
+      fVar3 = rightAngleCorner.y + fVar3 * yLength;
+      piVar15 = &(pLVar13->fields)._version;
+      *piVar15 = *piVar15 + 1;
+      pVVar16 = (pLVar13->fields)._items;
+      if (pVVar16 != (Vector2__Array *)0x0) {
+        uVar17 = (pLVar13->fields)._size;
+        if (uVar17 < pVVar16->max_length) {
+          (pLVar13->fields)._size = uVar17 + 1;
+          if (pVVar16->max_length <= uVar17) goto code_?;
+          pVVar16->vector[uVar17].x = fVar2;
+          pVVar16->vector[uVar17].y = fVar3;
         }
         else {
           item.y = fVar3;
           item.x = fVar2;
           mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
           List_1_UnityEngine_Vector2__AddWithResize
-                    (pLVar14,item,pMVar16->klass->rgctx_data[0xe].method);
+                    (pLVar13,item,pMVar14->klass->rgctx_data[0xe].method);
         }
-        pMVar16 = 
+        pMVar14 = 
         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
         ;
-        fVar2 = (float)pMVar15 + (float)uVar11 * xLength;
-        fVar3 = (float)pLVar13 + (float)((ulonglong)uVar11 >> 0x20) * xLength;
-        piVar17 = &(pLVar14->fields)._version;
-        *piVar17 = *piVar17 + 1;
-        pVVar18 = (pLVar14->fields)._items;
-        if (pVVar18 != (Vector2__Array *)0x0) {
-          uVar19 = (pLVar14->fields)._size;
-          if (pVVar18->max_length <= uVar19) {
+        fVar2 = (float)pLVar12 + (float)__return_storage_ptr__ * xLength;
+        fVar3 = rightAngleCorner.y + fVar8 * xLength;
+        piVar15 = &(pLVar13->fields)._version;
+        *piVar15 = *piVar15 + 1;
+        pVVar16 = (pLVar13->fields)._items;
+        if (pVVar16 != (Vector2__Array *)0x0) {
+          uVar17 = (pLVar13->fields)._size;
+          if (pVVar16->max_length <= uVar17) {
             item_00.y = fVar3;
             item_00.x = fVar2;
             mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
             List_1_UnityEngine_Vector2__AddWithResize
-                      (pLVar14,item_00,pMVar16->klass->rgctx_data[0xe].method);
-            return pLVar14;
+                      (pLVar13,item_00,pMVar14->klass->rgctx_data[0xe].method);
+            return pLVar13;
           }
-          (pLVar14->fields)._size = uVar19 + 1;
-          if (uVar19 < pVVar18->max_length) {
-            pVVar18->vector[uVar19].x = fVar2;
-            pVVar18->vector[uVar19].y = fVar3;
-            return pLVar14;
+          (pLVar13->fields)._size = uVar17 + 1;
+          if (uVar17 < pVVar16->max_length) {
+            pVVar16->vector[uVar17].x = fVar2;
+            pVVar16->vector[uVar17].y = fVar3;
+            return pLVar13;
           }
           goto code_?;
         }
@@ -493,9 +487,9 @@ Assembly-CSharp.dll::RTG::TriangleMath::TriangleMath_CalcRATriangle2DPoints
   func_?();
 code_?:
   func_?();
-  pcVar20 = (code *)swi(3);
-  pLVar14 = (List_1_UnityEngine_Vector2_ *)(*pcVar20)();
-  return pLVar14;
+  pcVar18 = (code *)swi(3);
+  pLVar13 = (List_1_UnityEngine_Vector2_ *)(*pcVar18)();
+  return pLVar13;
 }
 
 
@@ -630,30 +624,35 @@ bool Assembly-CSharp.dll::RTG::TriangleMath::TriangleMath_Contains3DPoint
   fVar5 = p2.y - p1.y;
   fVar6 = p2.z - p1.z;
   fVar7 = p0.y - p2.y;
-  fVar8 = p0.z - p2.z;
-  fVar9 = (float)((uint)(p0.x - p2.x) ^
-                 __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-  value.y = fVar9 * fVar3 -
+  fVar8 = p0.x - p2.x;
+  fVar9 = p0.z - p2.z;
+  value.y = fVar3 * (float)((uint)fVar8 ^
+                            __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                            ) -
+            fVar1 * (float)((uint)fVar9 ^
+                            __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                            );
+  value.x = (float)((uint)fVar9 ^
+                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) *
+            fVar2 - fVar3 * (float)((uint)fVar7 ^
+                                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                     );
+  value.z = fVar1 * (float)((uint)fVar7 ^
+                            __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                            ) -
             (float)((uint)fVar8 ^
                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) *
-            fVar1;
-  value.x = (float)((uint)fVar8 ^
-                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) *
-            fVar2 - (float)((uint)fVar7 ^
-                            __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
-                            ) * fVar3;
-  value.z = (float)((uint)fVar7 ^
-                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) *
-            fVar1 - fVar9 * fVar2;
+            fVar2;
   pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                      ((Vector3 *)&stack0xffffffb4,value,(MethodInfo *)0x0);
-  fVar9 = pVVar10->x;
-  fVar11 = pVVar10->y;
+                     ((Vector3 *)&stack0xffffffa8,value,(MethodInfo *)0x0);
+  uVar11._0_4_ = pVVar10->x;
+  uVar11._4_4_ = pVVar10->y;
   fVar12 = pVVar10->z;
   if ((checkOnPlane != 0) &&
      (epsilon._extrudeEps <
-      (float)((uint)(fVar11 * (point.y - p0.y) + fVar9 * (point.x - p0.x) + fVar12 * (point.z - p0.z)
-                    ) & _UNK_?))) {
+      (float)((uint)((float)uVar11._4_4_ * (point.y - p0.y) +
+                     (float)(undefined4)uVar11 * (point.x - p0.x) + fVar12 * (point.z - p0.z)) &
+             _UNK_?))) {
     return 0;
   }
   uVar13 = pVVar10->x;
@@ -662,32 +661,31 @@ bool Assembly-CSharp.dll::RTG::TriangleMath::TriangleMath_Contains3DPoint
   value_00.x = fVar12 * fVar2 - (float)uVar14 * fVar3;
   value_00.z = (float)uVar14 * fVar1 - (float)uVar13 * fVar2;
   pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                      ((Vector3 *)&stack0xffffffb4,value_00,(MethodInfo *)0x0);
+                     ((Vector3 *)&stack0xffffffa8,value_00,(MethodInfo *)0x0);
   uVar15 = pVVar10->x;
   uVar16 = pVVar10->y;
   if ((float)uVar16 * (point.y - p0.y) + (float)uVar15 * (point.x - p0.x) +
       pVVar10->z * (point.z - p0.z) <= epsilon._areaEps) {
-    fVar1 = fVar12 * fVar5 - fVar11 * fVar6;
-    fVar12 = fVar9 * fVar6 - fVar12 * fVar4;
-    fVar9 = fVar11 * fVar4 - fVar9 * fVar5;
-    fVar11 = 0.0;
-    value_01.y = fVar12;
-    value_01.x = fVar1;
-    value_01.z = fVar9;
+    fVar3 = (float)((ulonglong)uVar11 >> 0x20);
+    lVar17 = (ulonglong)(uint)fVar3 << 0x20;
+    value_01.y = (float)uVar11 * fVar6 - fVar12 * fVar4;
+    value_01.x = fVar12 * fVar5 - fVar3 * fVar6;
+    value_01.z = fVar3 * fVar4 - (float)uVar11 * fVar5;
     pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                        ((Vector3 *)&stack0xffffffb4,value_01,(MethodInfo *)0x0);
-    uVar17 = pVVar10->x;
-    uVar18 = pVVar10->y;
-    if ((float)uVar18 * (point.y - p1.y) + (float)uVar17 * (point.x - p1.x) +
+                       ((Vector3 *)&stack0xffffffa8,value_01,(MethodInfo *)0x0);
+    uVar18 = pVVar10->x;
+    uVar19 = pVVar10->y;
+    if ((float)uVar18 * (point.x - p1.x) + (float)uVar19 * (point.y - p1.y) +
         pVVar10->z * (point.z - p1.z) <= epsilon._areaEps) {
-      value_02.y = fVar1 * fVar8 - fVar9 * fVar11;
-      value_02.x = fVar9 * fVar7 - fVar12 * fVar8;
-      value_02.z = fVar12 * fVar11 - fVar1 * fVar7;
+      fVar3 = (float)((ulonglong)lVar17 >> 0x20);
+      value_02.y = (float)lVar17 * fVar9 - fVar12 * fVar8;
+      value_02.x = fVar12 * fVar7 - fVar3 * fVar9;
+      value_02.z = fVar3 * fVar8 - (float)lVar17 * fVar7;
       pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                          (&p1,value_02,(MethodInfo *)0x0);
-      uVar19 = pVVar10->x;
-      uVar20 = pVVar10->y;
-      if ((float)uVar20 * (point.y - p2.y) + (float)uVar19 * (point.x - p2.x) +
+                         (&p1,value_02,(MethodInfo *)0x0);
+      uVar20 = pVVar10->x;
+      uVar21 = pVVar10->y;
+      if ((float)uVar21 * (point.y - p2.y) + (float)uVar20 * (point.x - p2.x) +
           pVVar10->z * (point.z - p2.z) <= epsilon._areaEps) {
         return 1;
       }
@@ -746,9 +744,9 @@ bool Assembly-CSharp.dll::RTG::TriangleMath::TriangleMath_Raycast
   }
   fVar1 = 0.0;
   *t = 0.0;
-  VVar2.y = (p2.x - p0.x) * (p1.z - p0.z) - (p2.z - p0.z) * (p1.x - p0.x);
-  VVar2.x = (p2.z - p0.z) * (p1.y - p0.y) - (p2.y - p0.y) * (p1.z - p0.z);
-  VVar2.z = (p2.y - p0.y) * (p1.x - p0.x) - (p2.x - p0.x) * (p1.y - p0.y);
+  VVar2.y = (p1.z - p0.z) * (p2.x - p0.x) - (p1.x - p0.x) * (p2.z - p0.z);
+  VVar2.x = (p1.y - p0.y) * (p2.z - p0.z) - (p1.z - p0.z) * (p2.y - p0.y);
+  VVar2.z = (p1.x - p0.x) * (p2.y - p0.y) - (p1.y - p0.y) * (p2.x - p0.x);
   pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
                       ((Vector3 *)&stack0xffffff9c,VVar2,(MethodInfo *)0x0);
   uVar4 = pVVar3->x;
@@ -870,9 +868,9 @@ bool Assembly-CSharp.dll::RTG::TriangleMath::TriangleMath_RaycastWire
   }
   puStack_1 = (undefined *)0x0;
   *t = 0.0;
-  VVar2.y = (p2.x - p0.x) * (p1.z - p0.z) - (p2.z - p0.z) * (p1.x - p0.x);
-  VVar2.x = (p2.z - p0.z) * (p1.y - p0.y) - (p2.y - p0.y) * (p1.z - p0.z);
-  VVar2.z = (p2.y - p0.y) * (p1.x - p0.x) - (p2.x - p0.x) * (p1.y - p0.y);
+  VVar2.y = (p1.z - p0.z) * (p2.x - p0.x) - (p2.z - p0.z) * (p1.x - p0.x);
+  VVar2.x = (p1.y - p0.y) * (p2.z - p0.z) - (p1.z - p0.z) * (p2.y - p0.y);
+  VVar2.z = (p2.y - p0.y) * (p1.x - p0.x) - (p1.y - p0.y) * (p2.x - p0.x);
   pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
                       ((Vector3 *)&stack0xffffff90,VVar2,(MethodInfo *)0x0);
   fVar4 = pVVar3->x;
@@ -902,8 +900,8 @@ code_?:
       v2.y = ray.m_Direction.x;
       v2.x = ray.m_Origin.z;
       v2.z = fVar6;
-      fVar4 = ray.m_Origin.z;
-      fVar5 = ray.m_Direction.x;
+      fVar4 = ray.m_Direction.x;
+      fVar5 = ray.m_Origin.z;
       ray.m_Direction.y = fVar6;
       fVar8 = Vector3Ex::Vector3Ex_AbsDot(v1,v2,(MethodInfo *)0x0);
       ray.m_Direction.z = 0.0;
@@ -919,13 +917,13 @@ code_?:
         ray.m_Origin.z = epsilon._extrudeEps;
         ray.m_Direction.x = epsilon._wireEps;
         ray.m_Origin.x = fVar6;
-        fVar10 = fVar5;
-        VVar2.x = fVar4;
+        fVar10 = fVar4;
+        VVar2.x = fVar5;
         VVar2 = (Vector3)CONCAT84(VVar2._0_8_,VVar2.x);
         auVar11._8_4_ = 0;
         auVar11._0_8_ = p2._4_8_;
-        normal.y = fVar5;
-        normal.x = fVar4;
+        normal.y = fVar4;
+        normal.x = fVar5;
         normal.z = fVar6;
         pOVar12 = TriangleMath_Calc3DTriangleOBB
                             ((OBB *)&stack0xffffff64,VVar2,(Vector3)epsilon,

@@ -160,23 +160,26 @@ void Assembly-CSharp.dll::PlanetOwnershipsManager::
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
+  LStack_6._list = (List_1_System_Object_ *)0x0;
+  LStack_6._index = 0;
+  LStack_6._version = 0;
+  LStack_6._current = (Object *)0x0;
   (this->fields)._RecievedPlanetOwnershipData_k__BackingField = 1;
   if ((data != (PlanetOwnershipsData *)0x0) &&
-     (pLVar6 = (data->fields).planetOwnerships,
-     pLVar6 != (List_1_MV_WorldObject_OwnershipData_PlanetOwnershipsEntry_ *)0x0)) {
-    capacity = (pLVar6->fields)._size;
-    pDVar7 = (Dictionary_2_System_Int32_MV_WorldObject_OwnershipData_PlanetOwnershipsEntry_ *)
+     (pLVar7 = (data->fields).planetOwnerships,
+     pLVar7 != (List_1_MV_WorldObject_OwnershipData_PlanetOwnershipsEntry_ *)0x0)) {
+    capacity = (pLVar7->fields)._size;
+    pDVar8 = (Dictionary_2_System_Int32_MV_WorldObject_OwnershipData_PlanetOwnershipsEntry_ *)
              func_?(
                             TypeInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>
                             );
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
     Dictionary_2_System_Int32_System_Object___ctor_3
-              ((Dictionary_2_System_Int32_System_Object_ *)pDVar7,capacity,
+              ((Dictionary_2_System_Int32_System_Object_ *)pDVar8,capacity,
                MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>__Dictionary_int_
               );
-    (this->fields)._PlanetOwnershipsEntries_k__BackingField = pDVar7;
-    ppDVar8 = &(this->fields)._PlanetOwnershipsEntries_k__BackingField;
-    func_?(ppDVar8,pDVar7);
+    (this->fields)._PlanetOwnershipsEntries_k__BackingField = pDVar8;
+    func_?(&(this->fields)._PlanetOwnershipsEntries_k__BackingField,pDVar8);
     this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
               (data->fields).planetOwnerships;
     if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
@@ -186,49 +189,50 @@ void Assembly-CSharp.dll::PlanetOwnershipsManager::
                          (&LStack_10,this_00,
                           MethodInfo__System__Collections__Generic__List<MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>__GetEnumerator__
                          );
-      LStack_11._list = (List_1_System_Object_ *)pLVar9->_list;
-      LStack_11._index = pLVar9->_index;
-      LStack_11._version = pLVar9->_version;
-      LStack_11._current = *(Object **)&pLVar9->_current;
+      LStack_6._list = (List_1_System_Object_ *)pLVar9->_list;
+      LStack_6._index = pLVar9->_index;
+      LStack_6._version = pLVar9->_version;
+      LStack_6._current = *(Object **)&pLVar9->_current;
       LStack_10._version = 0;
       uStack_1 = 1;
-      LStack_10._current = (RegexCharClass_SingleRange)&LStack_11;
+      LStack_10._current = (RegexCharClass_SingleRange)&LStack_6;
       while( true ) {
-        bVar12 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+        bVar11 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
                 List_1_T_Enumerator_System_Object__MoveNext
-                          (&LStack_11,
+                          (&LStack_6,
                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>__MoveNext__
                           );
-        if (bVar12 == 0) {
+        if (bVar11 == 0) {
           uStack_1 = 0xffffffff;
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&LStack_11,
+                    ((Object *)&LStack_6,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>__Dispose__
                      ,unaff_EDI);
           uStack_1 = 0xffffffff;
-          pAVar13 = (this->fields).OnReceivedPlanetOwnershipData;
-          if (pAVar13 != (Action_1_System_Collections_Generic_Dictionary_2_System_Int32_MV_WorldObject_OwnershipData_PlanetOwnershipsEntry_
+          pAVar12 = (this->fields).OnReceivedPlanetOwnershipData;
+          if (pAVar12 != (Action_1_System_Collections_Generic_Dictionary_2_System_Int32_MV_WorldObject_OwnershipData_PlanetOwnershipsEntry_
                          *)0x0) {
-            (*(pAVar13->fields)._._.invoke_impl)((pAVar13->fields)._._.method_code);
+            (*(pAVar12->fields)._._.invoke_impl)((pAVar12->fields)._._.method_code);
           }
           *unaff_FS_OFFSET = uStack_3;
           return;
         }
-        pDVar7 = *ppDVar8;
-        if (((RegexCharClass_SingleRange)LStack_11._current == (RegexCharClass_SingleRange)0x0) ||
-           (pDVar7 == (Dictionary_2_System_Int32_MV_WorldObject_OwnershipData_PlanetOwnershipsEntry_
+        pDVar8 = (this->fields)._PlanetOwnershipsEntries_k__BackingField;
+        if (((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) ||
+           (pDVar8 == (Dictionary_2_System_Int32_MV_WorldObject_OwnershipData_PlanetOwnershipsEntry_
                        *)0x0)) break;
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
         Dictionary_2_System_Int32_System_Object__Add
-                  ((Dictionary_2_System_Int32_System_Object_ *)pDVar7,
-                   *(int32_t *)((int)LStack_11._current + 8),LStack_11._current,
+                  ((Dictionary_2_System_Int32_System_Object_ *)pDVar8,
+                   *(int32_t *)((int)LStack_6._current + 8),LStack_6._current,
                    MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>__Add_int__MV__WorldObject__OwnershipData__PlanetOwnershipsEntry_
                   );
       }
     }
   }
-  func_?();
+  uVar13 = func_?();
+  func_?(uVar13);
   pcVar14 = (code *)swi(3);
   (*pcVar14)();
   return;
@@ -300,31 +304,30 @@ void Assembly-CSharp.dll::PlanetOwnershipsManager::
                    );
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnReceivedPlanetOwnershipData;
-  a = *ppAVar1;
+  a = (this->fields).OnReceivedPlanetOwnershipData;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar3 = 
+    pAVar2 = 
     TypeInfo__System__Action<System::Collections::Generic::Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>_>
     ;
-    iVar4 = 0;
-    if (pDVar2 != (Delegate *)0x0) {
-      iVar4 = func_?(pDVar2,
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,
                               TypeInfo__System__Action<System::Collections::Generic::Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>_>
                              );
-      if (iVar4 == 0) {
-        func_?(pDVar2,pAVar3);
-        pcVar5 = (code *)swi(3);
-        (*pcVar5)();
+      if (iVar3 == 0) {
+        func_?(pDVar1,pAVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pAVar6 = (Action_1_System_Collections_Generic_Dictionary_2_System_Int32_MV_WorldObject_OwnershipData_PlanetOwnershipsEntry_
-              *)func_?(ppAVar1,iVar4,a);
-    bVar7 = pAVar6 != a;
-    a = pAVar6;
-  } while (bVar7);
+    pAVar5 = (Action_1_System_Collections_Generic_Dictionary_2_System_Int32_MV_WorldObject_OwnershipData_PlanetOwnershipsEntry_
+              *)func_?(&(this->fields).OnReceivedPlanetOwnershipData,iVar3,a);
+    bVar6 = pAVar5 != a;
+    a = pAVar5;
+  } while (bVar6);
   return;
 }
 
@@ -361,31 +364,30 @@ void Assembly-CSharp.dll::PlanetOwnershipsManager::
                    );
     cRam_? = '\x01';
   }
-  ppAVar1 = &(this->fields).OnReceivedPlanetOwnershipData;
-  source = *ppAVar1;
+  source = (this->fields).OnReceivedPlanetOwnershipData;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar3 = 
+    pAVar2 = 
     TypeInfo__System__Action<System::Collections::Generic::Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>_>
     ;
-    iVar4 = 0;
-    if (pDVar2 != (Delegate *)0x0) {
-      iVar4 = func_?(pDVar2,
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,
                               TypeInfo__System__Action<System::Collections::Generic::Dictionary<int,_MV::WorldObject::OwnershipData::PlanetOwnershipsEntry>_>
                              );
-      if (iVar4 == 0) {
-        func_?(pDVar2,pAVar3);
-        pcVar5 = (code *)swi(3);
-        (*pcVar5)();
+      if (iVar3 == 0) {
+        func_?(pDVar1,pAVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pAVar6 = (Action_1_System_Collections_Generic_Dictionary_2_System_Int32_MV_WorldObject_OwnershipData_PlanetOwnershipsEntry_
-              *)func_?(ppAVar1,iVar4,source);
-    bVar7 = pAVar6 != source;
-    source = pAVar6;
-  } while (bVar7);
+    pAVar5 = (Action_1_System_Collections_Generic_Dictionary_2_System_Int32_MV_WorldObject_OwnershipData_PlanetOwnershipsEntry_
+              *)func_?(&(this->fields).OnReceivedPlanetOwnershipData,iVar3,source);
+    bVar6 = pAVar5 != source;
+    source = pAVar5;
+  } while (bVar6);
   return;
 }
 

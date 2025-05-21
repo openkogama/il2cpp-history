@@ -221,18 +221,15 @@ void Assembly-CSharp.dll::OverrideMaterial::OverrideMaterial__ctor
     func_?(&StringLiteral_A_basic_building_material_u000AHint_);
     cRam_? = '\x01';
   }
-  ppSVar1 = &(this->fields).materialName;
   (this->fields).friction = 0.43;
   (this->fields).softness = 1.0;
   (this->fields).staticFriction = 20.0;
-  *ppSVar1 = StringLiteral_Light_Red;
-  func_?(ppSVar1,StringLiteral_Light_Red);
-  ppSVar1 = &(this->fields).description;
-  *ppSVar1 = StringLiteral_A_basic_building_material_u000AHint_;
-  func_?(ppSVar1,StringLiteral_A_basic_building_material_u000AHint_);
-  ppSVar1 = &(this->fields).path;
-  *ppSVar1 = StringLiteral_Cube_Materials_scarletred00;
-  func_?(ppSVar1,StringLiteral_Cube_Materials_scarletred00);
+  (this->fields).materialName = StringLiteral_Light_Red;
+  func_?(&(this->fields).materialName,StringLiteral_Light_Red);
+  (this->fields).description = StringLiteral_A_basic_building_material_u000AHint_;
+  func_?(&(this->fields).description,StringLiteral_A_basic_building_material_u000AHint_);
+  (this->fields).path = StringLiteral_Cube_Materials_scarletred00;
+  func_?(&(this->fields).path,StringLiteral_Cube_Materials_scarletred00);
   (this->fields).isUnlocked = 1;
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);

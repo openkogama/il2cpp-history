@@ -40,168 +40,157 @@ void Assembly-CSharp.dll::WaterBoxSettings::WaterBoxSettings_Initialize
   if (this_00 == (SettingsBase *)0x0) {
 code_?:
     uVar2 = func_?();
-code_?:
-    func_?(uVar2);
   }
   else {
     SettingsBase::SettingsBase_Initialize
               (this_00,woID,root,MVWorldObjectDocumentationType__Enum_WaterPlane,(MethodInfo *)0x0);
     if (id != -1) {
-      this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-      if (((this_01 != (MVWorldObjectClientManager *)0x0) &&
+      this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+      if (((this_02 != (MVWorldObjectClientManager *)0x0) &&
           (pMVar3 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                              (this_01,id,(MethodInfo *)0x0), pMVar3 != (MVWorldObject *)0x0)) &&
-         (this_02 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                              (this_02,id,(MethodInfo *)0x0), pMVar3 != (MVWorldObject *)0x0)) &&
+         (this_03 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                      *)(pMVar3->fields).data,
-         this_02 !=
+         this_03 !=
          (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
          0x0)) goto code_?;
       goto code_?;
     }
-    this_02 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+    this_03 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                *)func_?(
                                 TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
                                 );
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements
     ::StyleComplexSelector+PseudoStateData]::
     Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
-              (this_02,
+              (this_03,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
               );
-    unaff_EBX.m_Index = func_?(TypeInfo__System__Single,3);
+    array = (Array *)func_?(TypeInfo__System__Single,3);
     mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::
     RuntimeHelpers_InitializeArray_1
-              ((Array *)unaff_EBX.m_Index,
-               _FBFE4CA61EC299680879894A16CA776F81F23454312659AC8736249AA1E9722B_Field,
+              (array,_FBFE4CA61EC299680879894A16CA776F81F23454312659AC8736249AA1E9722B_Field,
                (MethodInfo *)0x0);
-    if (this_02 ==
+    if (this_03 ==
         (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
         0x0) goto code_?;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              ((Dictionary_2_System_Object_System_Object_ *)this_02,
-               (Object *)StringLiteral_waterColor,(Object *)unaff_EBX.m_Index,
+              ((Dictionary_2_System_Object_System_Object_ *)this_03,
+               (Object *)StringLiteral_waterColor,(Object *)array,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
     this = (WaterBoxSettings *)((uint)this & 0xffffff);
     pOVar4 = (Object *)func_?(TypeInfo__System__Boolean,(int)&this + 3);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Add
-              ((Dictionary_2_System_Object_System_Object_ *)this_02,(Object *)StringLiteral_lethal,
+              ((Dictionary_2_System_Object_System_Object_ *)this_03,(Object *)StringLiteral_lethal,
                pOVar4,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
               );
 code_?:
-    unaff_EBX = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                ::UIElements::TextureId]::
-                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_02,
-                           (Object *)StringLiteral_waterColor,
-                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                          );
-    if (unaff_EBX.m_Index == 0) {
-      pGVar5 = (GameObject *)0x0;
-      (pWVar1->fields).color = (Single__Array *)0x0;
-    }
-    else {
+    TVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_03,
+                       (Object *)StringLiteral_waterColor,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    if (TVar5.m_Index != 0) {
       root = (GameObject *)TypeInfo__System__Single;
       this = (WaterBoxSettings *)&UNK_?;
-      woID = unaff_EBX.m_Index;
+      woID = TVar5.m_Index;
       pSVar6 = (Single__Array *)func_?();
-      if (pSVar6 == (Single__Array *)0x0) {
+      if (pSVar6 != (Single__Array *)0x0) {
+        (pWVar1->fields).color = pSVar6;
+        root = (GameObject *)TypeInfo__System__Single;
         this = (WaterBoxSettings *)&UNK_?;
-        woID = unaff_EBX.m_Index;
-        func_?();
-        goto code_?;
+        woID = TVar5.m_Index;
+        pGVar7 = (GameObject *)func_?();
+        if (pGVar7 != (GameObject *)0x0) goto code_?;
       }
-      (pWVar1->fields).color = pSVar6;
-      root = (GameObject *)TypeInfo__System__Single;
       this = (WaterBoxSettings *)&UNK_?;
-      woID = unaff_EBX.m_Index;
-      pGVar5 = (GameObject *)func_?();
-      if (pGVar5 == (GameObject *)0x0) goto code_?;
+      woID = TVar5.m_Index;
+      func_?();
+      goto code_?;
     }
-    unaff_EBX.m_Index = (int32_t)&(pWVar1->fields).color;
+    (pWVar1->fields).color = (Single__Array *)0x0;
+    pGVar7 = (GameObject *)0x0;
+code_?:
+    woID = (int32_t)&(pWVar1->fields).color;
     this = (WaterBoxSettings *)&UNK_?;
-    woID = unaff_EBX.m_Index;
-    root = pGVar5;
+    root = pGVar7;
     func_?();
-    pSVar6 = *(Single__Array **)unaff_EBX.m_Index;
-    pSVar7 = (pWVar1->fields).colorR;
+    pSVar6 = (pWVar1->fields).color;
+    pSVar8 = (pWVar1->fields).colorR;
     if (pSVar6 == (Single__Array *)0x0) goto code_?;
-    if (pSVar6->max_length != 0) {
-      if (pSVar7 == (SettingsSlider *)0x0) goto code_?;
-      SettingsSlider::SettingsSlider_Initialize
-                (pSVar7,StringLiteral_colorR,pSVar6->vector[0],0.0,1.0,(MethodInfo *)0x0);
-      pSVar6 = *(Single__Array **)unaff_EBX.m_Index;
-      pSVar7 = (pWVar1->fields).colorG;
-      if (pSVar6 == (Single__Array *)0x0) goto code_?;
-      if (pSVar6->max_length < 2) goto code_?;
-      if (pSVar7 == (SettingsSlider *)0x0) goto code_?;
-      SettingsSlider::SettingsSlider_Initialize
-                (pSVar7,StringLiteral_colorG,pSVar6->vector[1],0.0,1.0,(MethodInfo *)0x0);
-      pSVar6 = *(Single__Array **)unaff_EBX.m_Index;
-      pSVar7 = (pWVar1->fields).colorB;
-      if (pSVar6 == (Single__Array *)0x0) goto code_?;
-      if (pSVar6->max_length < 3) goto code_?;
-      if (pSVar7 == (SettingsSlider *)0x0) goto code_?;
-      SettingsSlider::SettingsSlider_Initialize
-                (pSVar7,StringLiteral_colorB,pSVar6->vector[2],0.0,1.0,(MethodInfo *)0x0);
-      bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-              UIElements::TextureId]::
-              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_02,
-                         (Object *)StringLiteral_lethal,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                        );
-      if (bVar8 == 0) {
-        root = (GameObject *)((uint)root & 0xffffff);
-        pOVar4 = (Object *)func_?(TypeInfo__System__Boolean,(int)&root + 3);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-        Dictionary_2_System_Object_System_Object__set_Item
-                  ((Dictionary_2_System_Object_System_Object_ *)this_02,
-                   (Object *)StringLiteral_lethal,pOVar4,
-                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                  );
-      }
-      root = (GameObject *)(pWVar1->fields).toggle;
-      TVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-               UIElements::TextureId]::
-               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                         ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_02,
-                          (Object *)StringLiteral_lethal,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         );
-      pGVar5 = root;
-      uVar2 = CONCAT44(TypeInfo__System__Boolean,TVar9.m_Index);
-      if ((root == (GameObject *)0x0) || (TVar9.m_Index == 0)) goto code_?;
-      if (*(Il2CppClass **)(*(int *)TVar9.m_Index + 0x20) ==
-          (TypeInfo__System__Boolean->_0).element_class) {
-        pbVar10 = (bool *)func_?(TVar9.m_Index);
-        SettingsToggle::SettingsToggle_Initialize
-                  ((SettingsToggle *)pGVar5,StringLiteral_lethal,*pbVar10,(MethodInfo *)0x0);
-        pSVar6 = *(Single__Array **)unaff_EBX.m_Index;
-        pIVar11 = (pWVar1->fields).preview;
-        if (pSVar6 != (Single__Array *)0x0) {
-          if (((pSVar6->max_length == 0) || (pSVar6->max_length < 2)) || (pSVar6->max_length < 3))
-          goto code_?;
-          if (pIVar11 != (Image *)0x0) {
-            (*(code *)(pIVar11->klass->vtable).set_color.method)
-                      (pIVar11,pSVar6->vector[0],pSVar6->vector[1],pSVar6->vector[2],0x3f800000,
-                       (pIVar11->klass->vtable).get_raycastTarget.methodPtr);
-            return;
-          }
-        }
+    if (pSVar6->max_length == 0) goto code_?;
+    if (pSVar8 == (SettingsSlider *)0x0) goto code_?;
+    SettingsSlider::SettingsSlider_Initialize
+              (pSVar8,StringLiteral_colorR,pSVar6->vector[0],0.0,1.0,(MethodInfo *)0x0);
+    pSVar6 = (pWVar1->fields).color;
+    pSVar8 = (pWVar1->fields).colorG;
+    if (pSVar6 == (Single__Array *)0x0) goto code_?;
+    if (pSVar6->max_length < 2) goto code_?;
+    if (pSVar8 == (SettingsSlider *)0x0) goto code_?;
+    SettingsSlider::SettingsSlider_Initialize
+              (pSVar8,StringLiteral_colorG,pSVar6->vector[1],0.0,1.0,(MethodInfo *)0x0);
+    pSVar6 = (pWVar1->fields).color;
+    pSVar8 = (pWVar1->fields).colorB;
+    if (pSVar6 == (Single__Array *)0x0) goto code_?;
+    if (pSVar6->max_length < 3) goto code_?;
+    if (pSVar8 == (SettingsSlider *)0x0) goto code_?;
+    SettingsSlider::SettingsSlider_Initialize
+              (pSVar8,StringLiteral_colorB,pSVar6->vector[2],0.0,1.0,(MethodInfo *)0x0);
+    bVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_03,
+                       (Object *)StringLiteral_lethal,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                      );
+    if (bVar9 == 0) {
+      root = (GameObject *)((uint)root & 0xffffff);
+      pOVar4 = (Object *)func_?(TypeInfo__System__Boolean,(int)&root + 3);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+      Dictionary_2_System_Object_System_Object__set_Item
+                ((Dictionary_2_System_Object_System_Object_ *)this_03,(Object *)StringLiteral_lethal
+                 ,pOVar4,
+                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                );
+    }
+    this_01 = (pWVar1->fields).toggle;
+    TVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_03,
+                       (Object *)StringLiteral_lethal,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    uVar2 = CONCAT44(TypeInfo__System__Boolean,TVar5.m_Index);
+    if ((this_01 == (SettingsToggle *)0x0) || (TVar5.m_Index == 0)) goto code_?;
+    if (*(Il2CppClass **)(*(int *)TVar5.m_Index + 0x20) ==
+        (TypeInfo__System__Boolean->_0).element_class) {
+      pbVar10 = (bool *)func_?(TVar5.m_Index);
+      SettingsToggle::SettingsToggle_Initialize
+                (this_01,StringLiteral_lethal,*pbVar10,(MethodInfo *)0x0);
+      pSVar6 = (pWVar1->fields).color;
+      pIVar11 = (pWVar1->fields).preview;
+      if (pSVar6 != (Single__Array *)0x0) {
+        if (((pSVar6->max_length == 0) || (pSVar6->max_length < 2)) || (pSVar6->max_length < 3))
         goto code_?;
+        if (pIVar11 != (Image *)0x0) {
+          (*(code *)(pIVar11->klass->vtable).set_color.method)
+                    (pIVar11,pSVar6->vector[0],pSVar6->vector[1],pSVar6->vector[2],0x3f800000,
+                     (pIVar11->klass->vtable).get_raycastTarget.methodPtr);
+          return;
+        }
       }
       goto code_?;
     }
   }
+  func_?(uVar2);
 code_?:
-  func_?();
-code_?:
-  this = (WaterBoxSettings *)&UNK_?;
-  woID = unaff_EBX.m_Index;
   func_?();
   pcVar12 = (code *)swi(3);
   (*pcVar12)();
@@ -321,8 +310,8 @@ void Assembly-CSharp.dll::WaterBoxSettings::WaterBoxSettings_UpdateWaterColor
       goto code_?;
       if (pIVar2 != (Image *)0x0) {
         (*(code *)(pIVar2->klass->vtable).set_color.method)
-                  (pIVar2,pSVar1->vector[0],pSVar1->vector[1],
-                   (pIVar2->klass->vtable).get_raycastTarget.methodPtr,0x3f800000);
+                  (pIVar2,pSVar1->vector[0],pSVar1->vector[1],pSVar1->vector[2],0x3f800000,
+                   (pIVar2->klass->vtable).get_raycastTarget.methodPtr);
         return;
       }
     }
@@ -347,9 +336,8 @@ void Assembly-CSharp.dll::WaterBoxSettings::WaterBoxSettings__ctor
     cRam_? = '\x01';
   }
   pSVar1 = (Single__Array *)func_?(TypeInfo__System__Single,3);
-  ppSVar2 = &(this->fields).color;
-  *ppSVar2 = pSVar1;
-  func_?(ppSVar2,pSVar1);
+  (this->fields).color = pSVar1;
+  func_?(&(this->fields).color,pSVar1);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

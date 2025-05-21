@@ -63,59 +63,59 @@ void Assembly-CSharp.dll::DesktopInGameGUIController::DesktopInGameGUIController
                      ((Object *)original,pTVar1,0,
                       ShowUse3D_MethodInfo__UnityEngine__Object__Instantiate<ShowUse3D>_ShowUse3D__UnityEngine__Transform__bool_
                      );
-  ppSVar3 = &(this->fields).use;
-  *ppSVar3 = pSVar2;
-  func_?(ppSVar3,pSVar2);
-  if (*ppSVar3 != (ShowUse *)0x0) {
+  (this->fields).use = pSVar2;
+  func_?(&(this->fields).use,pSVar2);
+  pSVar2 = (this->fields).use;
+  if (pSVar2 != (ShowUse *)0x0) {
     pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                       ((Component *)*ppSVar3,(MethodInfo *)0x0);
+                       ((Component *)pSVar2,(MethodInfo *)0x0);
     if (pTVar1 != (Transform *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetAsFirstSibling
                 (pTVar1,(MethodInfo *)0x0);
-      bVar4 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
-      if (bVar4 != 0) {
-        pEVar5 = (this->fields).embeddedPlayerConfig;
-        pGVar6 = (this->fields).touristLogo;
-        if (pEVar5 == (EmbeddedPlayerConfig *)0x0) goto code_?;
-        bVar4 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_IsSite
-                          (pEVar5,EmbeddedSite__Enum_GameDistribution,(MethodInfo *)0x0);
-        if (pGVar6 == (GameObject *)0x0) goto code_?;
+      bVar3 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
+      if (bVar3 != 0) {
+        pEVar4 = (this->fields).embeddedPlayerConfig;
+        pGVar5 = (this->fields).touristLogo;
+        if (pEVar4 == (EmbeddedPlayerConfig *)0x0) goto code_?;
+        bVar3 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_IsSite
+                          (pEVar4,EmbeddedSite__Enum_GameDistribution,(MethodInfo *)0x0);
+        if (pGVar5 == (GameObject *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar6,bVar4 == 0,(MethodInfo *)0x0);
-        pEVar5 = (this->fields).embeddedPlayerConfig;
-        if (pEVar5 == (EmbeddedPlayerConfig *)0x0) goto code_?;
-        pEVar7 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData
-                           ((EmbeddedSiteConfigData *)&pLStack_8,pEVar5,(MethodInfo *)0x0);
-        key = pEVar7->siteEnum;
+                  (pGVar5,bVar3 ^ 1,(MethodInfo *)0x0);
+        pEVar4 = (this->fields).embeddedPlayerConfig;
+        if (pEVar4 == (EmbeddedPlayerConfig *)0x0) goto code_?;
+        pEVar6 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData
+                           ((EmbeddedSiteConfigData *)&pLStack_7,pEVar4,(MethodInfo *)0x0);
+        key = pEVar6->siteEnum;
         if ((key != 0) && (key != 5)) {
-          pDVar9 = (this->fields).logoToPathMap;
-          if (pDVar9 == (Dictionary_2_EmbeddedSite_System_String_ *)0x0) goto code_?;
-          bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System
+          pDVar8 = (this->fields).logoToPathMap;
+          if (pDVar8 == (Dictionary_2_EmbeddedSite_System_String_ *)0x0) goto code_?;
+          bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System
                   ::Single]::Dictionary_2_System_Int32Enum_System_Single__ContainsKey
-                            ((Dictionary_2_System_Int32Enum_System_Single_ *)pDVar9,key,
+                            ((Dictionary_2_System_Int32Enum_System_Single_ *)pDVar8,key,
                              MethodInfo__System__Collections__Generic__Dictionary<EmbeddedSite,_System::String>__ContainsKey_EmbeddedSite_
                             );
-          if (bVar4 != 0) {
+          if (bVar3 != 0) {
             this_00 = (this->fields).logo;
             if (this_00 == (Image *)0x0) goto code_?;
-            pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                ((Component *)this_00,(MethodInfo *)0x0);
-            if (pGVar6 == (GameObject *)0x0) goto code_?;
+            pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                               ((Component *)this_00,(MethodInfo *)0x0);
+            if (pGVar5 == (GameObject *)0x0) goto code_?;
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                      (pGVar6,1,(MethodInfo *)0x0);
+                      (pGVar5,1,(MethodInfo *)0x0);
             if ((TypeInfo__MV__Common__Urls->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
-            pSVar10 = MVCommon.dll::MV::Common::Urls::Urls_get_StreamingAssets((MethodInfo *)0x0);
-            pDVar9 = (this->fields).logoToPathMap;
-            if (pDVar9 == (Dictionary_2_EmbeddedSite_System_String_ *)0x0) goto code_?;
+            pSVar9 = MVCommon.dll::MV::Common::Urls::Urls_get_StreamingAssets((MethodInfo *)0x0);
+            pDVar8 = (this->fields).logoToPathMap;
+            if (pDVar8 == (Dictionary_2_EmbeddedSite_System_String_ *)0x0) goto code_?;
             str1 = (String *)
                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System
                    ::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                             ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar9,key,
+                             ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar8,key,
                               MethodInfo__System__Collections__Generic__Dictionary<EmbeddedSite,_System::String>__get_Item_EmbeddedSite_
                              );
-            pSVar10 = mscorlib.dll::System::String::String_Concat_3(pSVar10,str1,(MethodInfo *)0x0);
+            pSVar9 = mscorlib.dll::System::String::String_Concat_3(pSVar9,str1,(MethodInfo *)0x0);
             this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
                        *)func_?();
             DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::
@@ -127,7 +127,7 @@ void Assembly-CSharp.dll::DesktopInGameGUIController::DesktopInGameGUIController
                        ,(MethodInfo *)0x0);
             this_02 = (AssetBundleRequest *)func_?();
             AssetBundleRequest::AssetBundleRequest__ctor
-                      (this_02,pSVar10,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_01,
+                      (this_02,pSVar9,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_01,
                        WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,(MethodInfo *)0x0);
             if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
@@ -143,30 +143,30 @@ void Assembly-CSharp.dll::DesktopInGameGUIController::DesktopInGameGUIController
       }
       if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField !=
           (IEditModeUI *)0x0) {
-        pGVar6 = (this->fields).leaveEditPlayModeButton;
-        if (pGVar6 == (GameObject *)0x0) goto code_?;
+        pGVar5 = (this->fields).leaveEditPlayModeButton;
+        if (pGVar5 == (GameObject *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar6,1,(MethodInfo *)0x0);
+                  (pGVar5,1,(MethodInfo *)0x0);
       }
-      pGVar6 = (this->fields).winningConditionLayoutGroup;
-      ppLVar11 = &(this->fields).levelBadge;
-      pLVar12 = *ppLVar11;
-      if (pGVar6 != (GameObject *)0x0) {
+      pGVar5 = (this->fields).winningConditionLayoutGroup;
+      pLVar10 = (this->fields).levelBadge;
+      if (pGVar5 != (GameObject *)0x0) {
         pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                           (pGVar6,(MethodInfo *)0x0);
+                           (pGVar5,(MethodInfo *)0x0);
         if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        pLVar12 = (LevelBadge *)
+        pLVar10 = (LevelBadge *)
                   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
-                            ((Object *)pLVar12,pTVar1,0,
+                            ((Object *)pLVar10,pTVar1,0,
                              LevelBadge_MethodInfo__UnityEngine__Object__Instantiate<LevelBadge>_LevelBadge__UnityEngine__Transform__bool_
                             );
-        *ppLVar11 = pLVar12;
+        (this->fields).levelBadge = pLVar10;
         func_?();
-        if (*ppLVar11 != (LevelBadge *)0x0) {
+        pLVar10 = (this->fields).levelBadge;
+        if (pLVar10 != (LevelBadge *)0x0) {
           pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                             ((Component *)*ppLVar11,(MethodInfo *)0x0);
+                             ((Component *)pLVar10,(MethodInfo *)0x0);
           if (pTVar1 != (Transform *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetAsFirstSibling
                       (pTVar1,(MethodInfo *)0x0);
@@ -178,8 +178,8 @@ void Assembly-CSharp.dll::DesktopInGameGUIController::DesktopInGameGUIController
   }
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -372,16 +372,15 @@ void Assembly-CSharp.dll::DesktopInGameGUIController::DesktopInGameGUIController
                (Object *)StringLiteral_Logos_Logo_Poki_png,
                MethodInfo__System__Collections__Generic__Dictionary<EmbeddedSite,_System::String>__Add_EmbeddedSite__System__String_
               );
-    ppDVar1 = &(this->fields).logoToPathMap;
-    *ppDVar1 = (Dictionary_2_EmbeddedSite_System_String_ *)this_00;
-    func_?(ppDVar1,this_00);
+    (this->fields).logoToPathMap = (Dictionary_2_EmbeddedSite_System_String_ *)this_00;
+    func_?(&(this->fields).logoToPathMap,this_00);
     UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
               ((MonoBehaviour *)this,(MethodInfo *)0x0);
     return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

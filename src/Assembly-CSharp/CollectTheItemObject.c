@@ -116,6 +116,7 @@ void Assembly-CSharp.dll::CollectTheItemObject::CollectTheItemObject_Update
 {
   this_00 = (this->fields).blinker;
   if (this_00 == (CollectTheItemBlinker *)0x0) {
+code_?:
     func_?();
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
@@ -124,11 +125,14 @@ void Assembly-CSharp.dll::CollectTheItemObject::CollectTheItemObject_Update
   if ((this_00->fields)._.visible != 0) {
     fVar2 = (this->fields).fadeTimer;
     if (_UNK_? <= fVar2) {
-      BlinkerBase::BlinkerBase_StartBlinking
-                ((BlinkerBase *)this_00,BlinkType__Enum_AboutToExpire,INFINITY,(MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                ((Behaviour *)this,0,(MethodInfo *)0x0);
-      return;
+      if (this_00 != (CollectTheItemBlinker *)0x0) {
+        BlinkerBase::BlinkerBase_StartBlinking
+                  ((BlinkerBase *)this_00,BlinkType__Enum_AboutToExpire,INFINITY,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+                  ((Behaviour *)this,0,(MethodInfo *)0x0);
+        return;
+      }
+      goto code_?;
     }
     fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
     (this->fields).fadeTimer = fVar3 + fVar2;

@@ -138,93 +138,90 @@ void Assembly-CSharp.dll::WorldObjectTypes::Avatar::Shared::AvatarPaused::Avatar
     cRam_? = '\x01';
   }
   bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsAlive((MethodInfo *)0x0);
-  if (bVar1 == 0) {
+  if ((bVar1 == 0) ||
+     (pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0),
+     pMVar2 == (MVNetworkGame *)0x0)) {
     return;
   }
   pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (pMVar2 == (MVNetworkGame *)0x0) {
-    return;
-  }
-  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar2 == (MVNetworkGame *)0x0) ||
-     (pMVar3 = (pMVar2->fields).playerContainer, pMVar3 == (MVPlayerContainer *)0x0)) {
-code_?:
-    func_?();
-  }
-  else {
+  if ((pMVar2 != (MVNetworkGame *)0x0) &&
+     (pMVar3 = (pMVar2->fields).playerContainer, pMVar3 != (MVPlayerContainer *)0x0)) {
     bVar1 = MVPlayerContainer::MVPlayerContainer_ContainsKey
-                      (pMVar3,(this->fields).ownerActorNr,(MethodInfo *)0x0);
+                      (pMVar3,*(int32_t *)(unaff_EBX + 0x14),(MethodInfo *)0x0);
     if (bVar1 == 0) {
       return;
     }
     pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (((pMVar2 == (MVNetworkGame *)0x0) ||
-        (pMVar3 = (pMVar2->fields).playerContainer, pMVar3 == (MVPlayerContainer *)0x0)) ||
+    if (((pMVar2 != (MVNetworkGame *)0x0) &&
+        (pMVar3 = (pMVar2->fields).playerContainer, pMVar3 != (MVPlayerContainer *)0x0)) &&
        (pMVar4 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe
-                           (pMVar3,(this->fields).ownerActorNr,(MethodInfo *)0x0),
-       pMVar4 == (MVPlayer *)0x0)) goto code_?;
-    pUVar5 = (pMVar4->fields).OnPause;
-    pNVar6 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (pNVar6,(Object *)this,
-               MethodInfo__WorldObjectTypes__Avatar__Shared__AvatarPaused__OnPause__,
-               (MethodInfo *)0x0);
-    pUVar5 = (UnityAction *)
-             mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)pUVar5,(Delegate *)pNVar6,(MethodInfo *)0x0);
-    if (pUVar5 == (UnityAction *)0x0) {
-      (pMVar4->fields).OnPause = (UnityAction *)0x0;
-code_?:
-      func_?();
-      pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if (((pMVar2 == (MVNetworkGame *)0x0) ||
-          (pMVar3 = (pMVar2->fields).playerContainer, pMVar3 == (MVPlayerContainer *)0x0)) ||
-         (pMVar4 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe
-                             (pMVar3,(this->fields).ownerActorNr,(MethodInfo *)0x0),
-         pMVar4 == (MVPlayer *)0x0)) goto code_?;
-      pUVar5 = (pMVar4->fields).OnResume;
+                           (pMVar3,*(int32_t *)(unaff_EBX + 0x14),(MethodInfo *)0x0),
+       pMVar4 != (MVPlayer *)0x0)) {
+      pUVar5 = (pMVar4->fields).OnPause;
       pNVar6 = (NavMesh_OnNavMeshPreUpdate *)func_?();
       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
       NavMesh_OnNavMeshPreUpdate__ctor
-                (pNVar6,(Object *)this,
-                 MethodInfo__WorldObjectTypes__Avatar__Shared__AvatarPaused__OnResume__,
+                (pNVar6,(Object *)&UNK_?,
+                 MethodInfo__WorldObjectTypes__Avatar__Shared__AvatarPaused__OnPause__,
                  (MethodInfo *)0x0);
       pUVar5 = (UnityAction *)
                mscorlib.dll::System::Delegate::Delegate_Remove
                          ((Delegate *)pUVar5,(Delegate *)pNVar6,(MethodInfo *)0x0);
       if (pUVar5 == (UnityAction *)0x0) {
-        (pMVar4->fields).OnResume = (UnityAction *)0x0;
-        func_?();
-        return;
+        (pMVar4->fields).OnPause = (UnityAction *)0x0;
       }
-      pUVar7 = (UnityAction *)0x0;
-      if (pUVar5->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-        pUVar7 = pUVar5;
+      else {
+        pUVar7 = (UnityAction *)0x0;
+        if (pUVar5->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+          pUVar7 = pUVar5;
+        }
+        if (pUVar7 == (UnityAction *)0x0) goto code_?;
+        (pMVar4->fields).OnPause = pUVar7;
+        pUVar7 = (UnityAction *)0x0;
+        if (pUVar5->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+          pUVar7 = pUVar5;
+        }
+        if (pUVar7 == (UnityAction *)0x0) goto code_?;
       }
-      if (pUVar7 == (UnityAction *)0x0) goto code_?;
-      (pMVar4->fields).OnResume = pUVar7;
-      pUVar7 = (UnityAction *)0x0;
-      if (pUVar5->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-        pUVar7 = pUVar5;
+      func_?();
+      pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if (((pMVar2 != (MVNetworkGame *)0x0) &&
+          (pMVar3 = (pMVar2->fields).playerContainer, pMVar3 != (MVPlayerContainer *)0x0)) &&
+         (pMVar4 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe
+                             (pMVar3,iRam_?,(MethodInfo *)0x0), pMVar4 != (MVPlayer *)0x0)) {
+        pUVar5 = (pMVar4->fields).OnResume;
+        pNVar6 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+        NavMesh_OnNavMeshPreUpdate__ctor
+                  (pNVar6,(Object *)
+                          MethodInfo__WorldObjectTypes__Avatar__Shared__AvatarPaused__OnResume__,
+                   MethodInfo__WorldObjectTypes__Avatar__Shared__AvatarPaused__OnResume__,
+                   (MethodInfo *)0x0);
+        pUVar5 = (UnityAction *)
+                 mscorlib.dll::System::Delegate::Delegate_Remove
+                           ((Delegate *)pUVar5,(Delegate *)pNVar6,(MethodInfo *)0x0);
+        if (pUVar5 == (UnityAction *)0x0) {
+          (pMVar4->fields).OnResume = (UnityAction *)0x0;
+          func_?();
+          return;
+        }
+        pUVar7 = (UnityAction *)0x0;
+        if (pUVar5->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+          pUVar7 = pUVar5;
+        }
+        if (pUVar7 != (UnityAction *)0x0) {
+          (pMVar4->fields).OnResume = pUVar7;
+          pUVar7 = (UnityAction *)0x0;
+          if (pUVar5->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+            pUVar7 = pUVar5;
+          }
+          if (pUVar7 != (UnityAction *)0x0) {
+            func_?();
+            return;
+          }
+        }
+        goto code_?;
       }
-      if (pUVar7 != (UnityAction *)0x0) {
-        func_?();
-        return;
-      }
-    }
-    else {
-      pUVar7 = (UnityAction *)0x0;
-      if (pUVar5->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-        pUVar7 = pUVar5;
-      }
-      if (pUVar7 == (UnityAction *)0x0) goto code_?;
-      (pMVar4->fields).OnPause = pUVar7;
-      pUVar7 = (UnityAction *)0x0;
-      if (pUVar5->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-        pUVar7 = pUVar5;
-      }
-      if (pUVar7 != (UnityAction *)0x0) goto code_?;
     }
   }
   func_?();

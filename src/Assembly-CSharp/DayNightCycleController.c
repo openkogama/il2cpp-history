@@ -5,36 +5,35 @@ void Assembly-CSharp.dll::DayNightCycleController::DayNightCycleController_Initi
                (DayNightCycleController *this,DayNightCycle *cycle,MethodInfo *method)
 
 {
-  ppDVar1 = &(this->fields).cycle;
-  *ppDVar1 = cycle;
-  func_?(ppDVar1,cycle);
+  (this->fields).cycle = cycle;
+  func_?(&(this->fields).cycle,cycle);
   this_00 = (this->fields).playToggle;
   if ((this_00 != (Toggle *)0x0) && (cycle != (DayNightCycle *)0x0)) {
-    bVar2 = (cycle->fields).isPaused;
-    if ((this_00->fields).m_IsOn == bVar2) {
-      UnityEngine.UI.dll::UnityEngine::UI::Toggle::Toggle_Set
-                (this_00,bVar2 == 0,1,(MethodInfo *)0x0);
+    if ((this_00->fields).m_IsOn == (cycle->fields).isPaused) {
+      UnityEngine.UI.dll::UnityEngine::UI::Toggle::Toggle_set_isOn
+                (this_00,(cycle->fields).isPaused == 0,(MethodInfo *)0x0);
       return;
     }
-    pIVar3 = (this->fields).playImage;
-    if (pIVar3 != (Image *)0x0) {
-      bVar2 = (this_00->fields).m_IsOn;
+    pIVar1 = (this->fields).playImage;
+    if (pIVar1 != (Image *)0x0) {
+      value = (this_00->fields).m_IsOn;
       UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                ((Behaviour *)pIVar3,bVar2 == 0,(MethodInfo *)0x0);
-      pIVar3 = (this->fields).pauseImage;
-      if (pIVar3 != (Image *)0x0) {
+                ((Behaviour *)pIVar1,value == 0,(MethodInfo *)0x0);
+      pIVar1 = (this->fields).pauseImage;
+      if (pIVar1 != (Image *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                  ((Behaviour *)pIVar3,bVar2,(MethodInfo *)0x0);
-        if (*ppDVar1 != (DayNightCycle *)0x0) {
-          ((*ppDVar1)->fields).isPaused = bVar2 == 0;
+                  ((Behaviour *)pIVar1,value,(MethodInfo *)0x0);
+        pDVar2 = (this->fields).cycle;
+        if (pDVar2 != (DayNightCycle *)0x0) {
+          (pDVar2->fields).isPaused = value == 0;
           return;
         }
       }
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -110,14 +109,13 @@ void Assembly-CSharp.dll::DayNightCycleController::DayNightCycleController_SetSi
         cycleLength = (this_01->fields).cycleLength;
         this_02 = (Timer_1 *)func_?(TypeInfo__ThemeTimers__Timer);
         ThemeTimers::Timer::Timer_1__ctor(this_02,unaff_ESI,cycleLength,(MethodInfo *)0x0);
-        ppIVar2 = &(this_01->fields).timer;
-        *ppIVar2 = (ITimer *)this_02;
-        func_?(ppIVar2,this_02);
+        (this_01->fields).timer = (ITimer *)this_02;
+        func_?(&(this_01->fields).timer,this_02);
         if ((this_01->fields).initialized != 0) {
-          pIVar3 = (this_01->fields).timer;
-          if (pIVar3 == (ITimer *)0x0) goto code_?;
-          fVar4 = (float10)func_?(0,TypeInfo__ThemeTimers__ITimer,pIVar3);
-          DayNightCycle::DayNightCycle_Update_1(this_01,(float)fVar4,(MethodInfo *)0x0);
+          pIVar2 = (this_01->fields).timer;
+          if (pIVar2 == (ITimer *)0x0) goto code_?;
+          fVar3 = (float10)func_?(0,TypeInfo__ThemeTimers__ITimer,pIVar2);
+          DayNightCycle::DayNightCycle_Update_1(this_01,(float)fVar3,(MethodInfo *)0x0);
         }
         DayNightCycleController_UpdateTrackBackground(this,(MethodInfo *)0x0);
         return;
@@ -126,8 +124,8 @@ void Assembly-CSharp.dll::DayNightCycleController::DayNightCycleController_SetSi
   }
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

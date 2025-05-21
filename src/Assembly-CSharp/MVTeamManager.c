@@ -112,8 +112,8 @@ Assembly-CSharp.dll::MVTeamManager::MVTeamManager_GetOnlySpawnPointsForTeam
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffac;
-  puVar5 = &stack0xffffffac;
+  puStack_4 = &stack0xffffffb0;
+  puVar5 = &stack0xffffffb0;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::Collections::Generic::HashSet<int>_>__get_Item_MV__WorldObject__MVTeam_
@@ -155,148 +155,152 @@ Assembly-CSharp.dll::MVTeamManager::MVTeamManager_GetOnlySpawnPointsForTeam
   if ((pMVar6 != (MVNetworkGame *)0x0) &&
      (this_00 = (pMVar6->fields).teamManager, this_00 != (MVTeamManager *)0x0)) {
     method_00 = (MethodInfo *)&UNK_?;
-    this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-              MVTeamManager_GetSpawnPointsForTeam(this_00,team,(MethodInfo *)0x0);
-    index = 0;
-    if (this_02 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-      do {
-        if ((this_02->fields)._size <= index) {
-          pLVar7 = MVTeamManager_GetSpawnPointsForTeam(this,team,(MethodInfo *)0x0);
+    pLStack_7 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                 MVTeamManager_GetSpawnPointsForTeam(this_00,team,(MethodInfo *)0x0);
+    iVar8 = 0;
+    if (pLStack_7 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+      while( true ) {
+        if ((pLStack_7->fields)._size <= iVar8) {
+          pLVar9 = MVTeamManager_GetSpawnPointsForTeam(this,team,(MethodInfo *)0x0);
           *unaff_FS_OFFSET = uStack_3;
-          return pLVar7;
+          return pLVar9;
         }
-        RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+        RVar10 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                 ::RegexCharClass+SingleRange]::
                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                          (this_02,index,
+                          (pLStack_7,iVar8,
                            MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
                           );
-        if (RVar8 != (RegexCharClass_SingleRange)0x0) {
-          bVar9 = (TypeInfo__MVSpawnPoint->_1).naturalAligment;
-          if ((bVar9 <= *(byte *)(*(int *)RVar8 + 0xb8)) &&
-             (*(MVSpawnPoint__Class **)(*(int *)(*(int *)RVar8 + 100) + -4 + (uint)bVar9 * 4) ==
-              TypeInfo__MVSpawnPoint)) {
-            pLVar7 = (List_1_MVWorldObjectClient_ *)func_?();
-            mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
-            __Il2CppFullySharedGenericType]::
-            LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                      ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar7,
-                       MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__List__);
-            pLStack_10 = pLVar7;
-            pLVar11 = (List_1_MVWorldObjectClient_ *)func_?();
-            pLStack_12 = pLVar11;
-            mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
-            __Il2CppFullySharedGenericType]::
-            LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                      ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar11,
-                       MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__List__);
-            this_01 = (this->fields).teams;
-            pLStack_13 = pLVar11;
-            if ((this_01 == (Dictionary_2_MV_WorldObject_MVTeam_HashSet_1_System_Int32_ *)0x0) ||
-               (this_03 = (HashSet_1_System_UInt32_ *)
-                          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                          Int32Enum,System::Object]::
-                          Dictionary_2_System_Int32Enum_System_Object__get_Item
-                                    ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,team,
-                                     MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::Collections::Generic::HashSet<int>_>__get_Item_MV__WorldObject__MVTeam_
-                                    ), this_03 == (HashSet_1_System_UInt32_ *)0x0)) break;
-            pHVar14 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
-                     HashSet_1_System_UInt32__GetEnumerator
-                               (&HStack_15,this_03,
-                                MethodInfo__System__Collections__Generic__HashSet<int>__GetEnumerator__
-                               );
-            HStack_15._current = (uint32_t)&stack0xffffffb8;
-            id = pHVar14->_current;
-            HStack_15._version = 0;
-            uStack_1 = 1;
-            goto code_?;
+        if (((RVar10 != (RegexCharClass_SingleRange)0x0) &&
+            ((TypeInfo__MVSpawnPoint->_1).naturalAligment <= *(byte *)(*(int *)RVar10 + 0xb8))) &&
+           (*(MVSpawnPoint__Class **)
+             (*(int *)(*(int *)RVar10 + 100) + -4 +
+             (uint)(TypeInfo__MVSpawnPoint->_1).naturalAligment * 4) == TypeInfo__MVSpawnPoint))
+        break;
+        iVar8 = iVar8 + 1;
+      }
+      this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                func_?();
+      mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType]::
+      LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_02,
+                 MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__List__);
+      pLStack_11 = this_02;
+      pLVar12 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+               func_?();
+      pLStack_13 = pLVar12;
+      mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+      __Il2CppFullySharedGenericType]::
+      LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar12,
+                 MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__List__);
+      this_01 = (this->fields).teams;
+      pLStack_7 = pLVar12;
+      if ((this_01 != (Dictionary_2_MV_WorldObject_MVTeam_HashSet_1_System_Int32_ *)0x0) &&
+         (this_03 = (HashSet_1_System_UInt32_ *)
+                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                    Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,team,
+                               MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::Collections::Generic::HashSet<int>_>__get_Item_MV__WorldObject__MVTeam_
+                              ), this_03 != (HashSet_1_System_UInt32_ *)0x0)) {
+        pHVar14 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
+                 HashSet_1_System_UInt32__GetEnumerator
+                           (&HStack_15,this_03,
+                            MethodInfo__System__Collections__Generic__HashSet<int>__GetEnumerator__)
+        ;
+        HStack_15._current = (uint32_t)&stack0xffffffbc;
+        id = pHVar14->_current;
+        HStack_15._version = 0;
+        uStack_1 = 1;
+        while( true ) {
+          bVar16 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[System::
+                  UInt32]::HashSet_1_T_Enumerator_System_UInt32__MoveNext
+                            ((HashSet_1_T_Enumerator_System_UInt32_ *)&stack0xffffffbc,
+                             MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__MoveNext__
+                            );
+          if (bVar16 == 0) break;
+          this_04 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+          team = id;
+          if (this_04 == (MVWorldObjectClientManager *)0x0) goto code_?;
+          method_00 = (MethodInfo *)0x0;
+          team = (MVTeam__Enum)
+                 MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                           (this_04,id,(MethodInfo *)0x0);
+          if ((((MVWorldObject *)team != (MVWorldObject *)0x0) &&
+              ((TypeInfo__MVSpawnPoint->_1).naturalAligment <=
+               (((MVWorldObject *)team)->klass->_1).naturalAligment)) &&
+             ((MVSpawnPoint__Class *)
+              (((MVWorldObject *)team)->klass->_1).typeHierarchy
+              [(TypeInfo__MVSpawnPoint->_1).naturalAligment - 1] == TypeInfo__MVSpawnPoint)) {
+            iVar8 = func_?(team);
+            if ((iVar8 == 0) ||
+               (this_05 = (MVSpawnPoint *)func_?(team,TypeInfo__MVSpawnPoint),
+               this_05 == (MVSpawnPoint *)0x0)) goto code_?;
+            bVar16 = MVSpawnPoint::MVSpawnPoint_get_SpawnPointOnlyFirstDeath
+                              (this_05,(MethodInfo *)0x0);
+            if (bVar16 == 0) {
+              if (this_02 ==
+                  (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+              goto code_?;
+              mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+              List_1_System_Object__Add
+                        ((List_1_System_Object_ *)this_02,(Object *)team,
+                         MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__Add_MVWorldObjectClient_
+                        );
+            }
+            else {
+              if (pLStack_13 ==
+                  (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+              goto code_?;
+              mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+              List_1_System_Object__Add
+                        ((List_1_System_Object_ *)pLStack_13,(Object *)team,
+                         MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__Add_MVWorldObjectClient_
+                        );
+            }
           }
         }
-        index = index + 1;
-      } while( true );
-    }
-  }
-  goto code_?;
-code_?:
-  bVar16 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[System::UInt32]::
-          HashSet_1_T_Enumerator_System_UInt32__MoveNext
-                    ((HashSet_1_T_Enumerator_System_UInt32_ *)&stack0xffffffb8,
-                     MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__MoveNext__
-                    );
-  if (bVar16 != 0) {
-    this_04 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    if (this_04 == (MVWorldObjectClientManager *)0x0) goto code_?;
-    method_00 = (MethodInfo *)0x0;
-    this_05 = (MVSpawnPoint *)
-              MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                        (this_04,id,(MethodInfo *)0x0);
-    pMStack_17 = this_05;
-    if (((this_05 != (MVSpawnPoint *)0x0) &&
-        (bVar9 = (TypeInfo__MVSpawnPoint->_1).naturalAligment,
-        bVar9 <= (this_05->klass->_1).naturalAligment)) &&
-       ((MVSpawnPoint__Class *)(this_05->klass->_1).typeHierarchy[bVar9 - 1] ==
-        TypeInfo__MVSpawnPoint)) {
-      bVar9 = (TypeInfo__MVSpawnPoint->_1).naturalAligment;
-      if (((this_05->klass->_1).naturalAligment < bVar9) ||
-         ((MVSpawnPoint__Class *)(this_05->klass->_1).typeHierarchy[bVar9 - 1] !=
-          TypeInfo__MVSpawnPoint)) goto code_?;
-      bVar16 = MVSpawnPoint::MVSpawnPoint_get_SpawnPointOnlyFirstDeath(this_05,(MethodInfo *)0x0);
-      if (bVar16 == 0) {
-        if (pLVar7 == (List_1_MVWorldObjectClient_ *)0x0) goto code_?;
-        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-        List_1_System_Object__Add
-                  ((List_1_System_Object_ *)pLVar7,(Object *)pMStack_17,
-                   MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__Add_MVWorldObjectClient_
-                  );
+        uStack_1 = 0xffffffff;
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                  ((Object *)&stack0xffffffbc,
+                   (ExceptionArgument__Enum)
+                   MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__Dispose__
+                   ,method_00);
+        pLVar12 = pLStack_13;
+        uStack_1 = 0xffffffff;
+        if (pLStack_13 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+        {
+          if ((pLStack_13->fields)._size != 0) {
+            pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+            if ((pMVar6 == (MVNetworkGame *)0x0) ||
+               (this_06 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar6,(MethodInfo *)0x0),
+               this_06 == (MVLocalPlayer *)0x0)) goto code_?;
+            bVar16 = MVLocalPlayer::MVLocalPlayer_HasDiedInRound(this_06,(MethodInfo *)0x0);
+            if (bVar16 == 0) {
+              *unaff_FS_OFFSET = uStack_3;
+              return (List_1_MVWorldObjectClient_ *)pLVar12;
+            }
+          }
+          if (this_02 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+            if ((this_02->fields)._size == 0) {
+              this_02 = pLVar12;
+            }
+            *unaff_FS_OFFSET = uStack_3;
+            return (List_1_MVWorldObjectClient_ *)this_02;
+          }
+        }
       }
-      else {
-        if (pLStack_12 == (List_1_MVWorldObjectClient_ *)0x0) goto code_?;
-        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-        List_1_System_Object__Add
-                  ((List_1_System_Object_ *)pLStack_12,(Object *)pMStack_17,
-                   MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__Add_MVWorldObjectClient_
-                  );
-      }
-    }
-    goto code_?;
-  }
-  uStack_1 = 0xffffffff;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)&stack0xffffffb8,
-             (ExceptionArgument__Enum)
-             MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__Dispose__,
-             method_00);
-  pLVar11 = pLStack_12;
-  uStack_1 = 0xffffffff;
-  if (pLStack_12 != (List_1_MVWorldObjectClient_ *)0x0) {
-    if ((pLStack_12->fields)._size != 0) {
-      pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((pMVar6 == (MVNetworkGame *)0x0) ||
-         (this_06 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar6,(MethodInfo *)0x0),
-         this_06 == (MVLocalPlayer *)0x0)) goto code_?;
-      bVar16 = MVLocalPlayer::MVLocalPlayer_HasDiedInRound(this_06,(MethodInfo *)0x0);
-      if (bVar16 == 0) {
-        *unaff_FS_OFFSET = uStack_3;
-        return pLVar11;
-      }
-    }
-    if (pLVar7 != (List_1_MVWorldObjectClient_ *)0x0) {
-      if ((pLVar7->fields)._size == 0) {
-        pLVar7 = pLVar11;
-      }
-      *unaff_FS_OFFSET = uStack_3;
-      return pLVar7;
     }
   }
 code_?:
   func_?();
-  this_05 = extraout_EDX;
 code_?:
-  uVar18 = func_?(this_05,TypeInfo__MVSpawnPoint);
-  func_?(uVar18);
-  pcVar19 = (code *)swi(3);
-  pLVar7 = (List_1_MVWorldObjectClient_ *)(*pcVar19)();
-  return pLVar7;
+  uVar17 = func_?(team,TypeInfo__MVSpawnPoint);
+  func_?(uVar17);
+  pcVar18 = (code *)swi(3);
+  pLVar9 = (List_1_MVWorldObjectClient_ *)(*pcVar18)();
+  return pLVar9;
 }
 
 
@@ -651,8 +655,8 @@ Assembly-CSharp.dll::MVTeamManager::MVTeamManager_GetTeamDatas
       value[1].klass = key;
       value[1].monitor = pMVar11;
       value[2].klass = (Object__Class *)pMVar8;
+      value[2].monitor = (MonitorData *)pOVar9;
       method_00 = (MethodInfo *)&value[2].monitor;
-      *(Object **)method_00 = pOVar9;
       func_?();
       mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
                 ((List_1_System_Object_ *)&UNK_?,value,
@@ -817,52 +821,50 @@ void Assembly-CSharp.dll::MVTeamManager::MVTeamManager_OnAddSpawnPoint
               ((Object *)StringLiteral_Attempt_to_AddTeam_of_type_Serve,(MethodInfo *)0x0);
     return;
   }
-  bVar1 = false;
-  pDVar2 = (this->fields).teams;
-  if (pDVar2 != (Dictionary_2_MV_WorldObject_MVTeam_HashSet_1_System_Int32_ *)0x0) {
-    bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+  pDVar1 = (this->fields).teams;
+  if (pDVar1 != (Dictionary_2_MV_WorldObject_MVTeam_HashSet_1_System_Int32_ *)0x0) {
+    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
             Single]::Dictionary_2_System_Int32Enum_System_Single__ContainsKey
-                      ((Dictionary_2_System_Int32Enum_System_Single_ *)pDVar2,team,
+                      ((Dictionary_2_System_Int32Enum_System_Single_ *)pDVar1,team,
                        MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::Collections::Generic::HashSet<int>_>__ContainsKey_MV__WorldObject__MVTeam_
                       );
-    if (bVar3 == 0) {
-      pDVar2 = (this->fields).teams;
-      pHVar4 = (HashSet_1_System_Int32_ *)
+    if (bVar2 == 0) {
+      pDVar1 = (this->fields).teams;
+      pHVar3 = (HashSet_1_System_Int32_ *)
                func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
       System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
       HashSet_1_System_Int32___ctor
-                (pHVar4,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-      if (pDVar2 == (Dictionary_2_MV_WorldObject_MVTeam_HashSet_1_System_Int32_ *)0x0)
+                (pHVar3,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+      if (pDVar1 == (Dictionary_2_MV_WorldObject_MVTeam_HashSet_1_System_Int32_ *)0x0)
       goto code_?;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
       Dictionary_2_System_Int32Enum_System_Object__Add
-                ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar2,team,(Object *)pHVar4,
+                ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,team,(Object *)pHVar3,
                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::Collections::Generic::HashSet<int>_>__Add_MV__WorldObject__MVTeam__System__Collections__Generic__HashSet<int>_
                 );
-      bVar1 = true;
     }
-    pDVar2 = (this->fields).teams;
-    if (pDVar2 != (Dictionary_2_MV_WorldObject_MVTeam_HashSet_1_System_Int32_ *)0x0) {
-      pHVar4 = (HashSet_1_System_Int32_ *)
+    pDVar1 = (this->fields).teams;
+    if (pDVar1 != (Dictionary_2_MV_WorldObject_MVTeam_HashSet_1_System_Int32_ *)0x0) {
+      pHVar3 = (HashSet_1_System_Int32_ *)
                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
                Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                         ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar2,team,
+                         ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,team,
                           MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::Collections::Generic::HashSet<int>_>__get_Item_MV__WorldObject__MVTeam_
                          );
-      if (pHVar4 != (HashSet_1_System_Int32_ *)0x0) {
+      if (pHVar3 != (HashSet_1_System_Int32_ *)0x0) {
         System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
         HashSet_1_System_Int32__System_Collections_Generic_ICollection_T__Add
-                  (pHVar4,woId,MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
-        if (bVar1) {
-          pMVar5 = (this->fields).OnTeamsUpdated;
-          if (pMVar5 != (MVTeamManager_OnTeamsUpdatedDelegate *)0x0) {
-            (*(pMVar5->fields)._._.invoke_impl)();
+                  (pHVar3,woId,MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
+        if ((char)((uint)woId >> 0x18) != '\0') {
+          if ((this->fields).OnTeamsUpdated != (MVTeamManager_OnTeamsUpdatedDelegate *)0x0) {
+            (*(((this->fields).OnTeamsUpdated)->fields)._._.invoke_impl)();
           }
           if ((this->fields).OnTeamAdded != (EventHandler_1_MV_WorldObject_TeamEventArgs_ *)0x0) {
+            pEVar4 = (this->fields).OnTeamAdded;
             this_00 = (TeamEventArgs *)func_?();
             MVWorldObject.dll::MV::WorldObject::TeamEventArgs::TeamEventArgs__ctor
                       (this_00,team,(MethodInfo *)0x0);
-            (*pcRam_?)();
+            (*(pEVar4->fields)._._.invoke_impl)((pEVar4->fields)._._.method_code,this);
           }
         }
         return;
@@ -871,8 +873,8 @@ void Assembly-CSharp.dll::MVTeamManager::MVTeamManager_OnAddSpawnPoint
   }
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -940,17 +942,16 @@ code_?:
               ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,team,
                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::Collections::Generic::HashSet<int>_>__Remove_MV__WorldObject__MVTeam_
               );
-    pMVar4 = (this->fields).OnTeamsUpdated;
-    if (pMVar4 != (MVTeamManager_OnTeamsUpdatedDelegate *)0x0) {
-      (*(pMVar4->fields)._._.invoke_impl)();
+    if ((this->fields).OnTeamsUpdated != (MVTeamManager_OnTeamsUpdatedDelegate *)0x0) {
+      (*(((this->fields).OnTeamsUpdated)->fields)._._.invoke_impl)();
     }
-    pEVar5 = (this->fields).OnTeamRemoved;
-    if (pEVar5 != (EventHandler_1_MV_WorldObject_TeamEventArgs_ *)0x0) {
+    if ((this->fields).OnTeamRemoved != (EventHandler_1_MV_WorldObject_TeamEventArgs_ *)0x0) {
+      pEVar4 = (this->fields).OnTeamRemoved;
       this_02 = (TeamEventArgs *)func_?(TypeInfo__MV__WorldObject__TeamEventArgs);
       MVWorldObject.dll::MV::WorldObject::TeamEventArgs::TeamEventArgs__ctor
                 (this_02,team,(MethodInfo *)0x0);
-      (*(pEVar5->fields)._._.invoke_impl)
-                ((pEVar5->fields)._._.method_code,this,this_02,(pEVar5->fields)._._.method);
+      (*(pEVar4->fields)._._.invoke_impl)
+                ((pEVar4->fields)._._.method_code,this,this_02,(pEVar4->fields)._._.method);
     }
     if (cRam_? == '\0') {
       func_?(&
@@ -969,9 +970,9 @@ code_?:
                          MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::Collections::Generic::HashSet<int>_>__ContainsKey_MV__WorldObject__MVTeam_
                         );
       if (bVar2 != 0) {
-        pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if ((pMVar6 == (MVNetworkGame *)0x0) ||
-           (this_00 = (pMVar6->fields).playerContainer, this_00 == (MVPlayerContainer *)0x0))
+        pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if ((pMVar5 == (MVNetworkGame *)0x0) ||
+           (this_00 = (pMVar5->fields).playerContainer, this_00 == (MVPlayerContainer *)0x0))
         goto code_?;
         MVPlayerContainer::MVPlayerContainer_UpdateTeamForPlayersOnRemovedTeam
                   (this_00,team,key,(MethodInfo *)0x0);
@@ -980,22 +981,22 @@ code_?:
       key = key + 1;
     } while ((int)key < 4);
   }
-  uVar7 = func_?(&TypeInfo__System__Exception);
-  pEVar8 = (Exception *)func_?(uVar7);
+  uVar6 = func_?(&TypeInfo__System__Exception);
+  pEVar7 = (Exception *)func_?(uVar6);
   method_00 = (MethodInfo *)0x0;
-  pSVar9 = (String *)func_?(&StringLiteral_Could_not_find_default_team);
-  mscorlib.dll::System::Exception::Exception__ctor_1(pEVar8,pSVar9,method_00);
+  pSVar8 = (String *)func_?(&StringLiteral_Could_not_find_default_team);
+  mscorlib.dll::System::Exception::Exception__ctor_1(pEVar7,pSVar8,method_00);
   func_?(&MethodInfo__MVTeamManager__GetDefaultTeam__);
   func_?();
 code_?:
   func_?();
-  pEVar8 = (Exception *)func_?();
-  pSVar9 = (String *)func_?();
-  mscorlib.dll::System::Exception::Exception__ctor_1(pEVar8,pSVar9,(MethodInfo *)0x0);
+  pEVar7 = (Exception *)func_?();
+  pSVar8 = (String *)func_?();
+  mscorlib.dll::System::Exception::Exception__ctor_1(pEVar7,pSVar8,(MethodInfo *)0x0);
   func_?();
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -1092,22 +1093,24 @@ bool Assembly-CSharp.dll::MVTeamManager::MVTeamManager_TeamHasSpawnPoints
     this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
               MVTeamManager_GetSpawnPointsForTeam(this_00,team,(MethodInfo *)0x0);
     index = 0;
+    pMVar2 = (MethodInfo *)0x0;
     if (this_01 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
       do {
         if ((this_01->fields)._size <= index) {
-          return 0;
+          return (bool)((uint)pMVar2 >> 0x18);
         }
-        RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+        pMVar2 = MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_;
+        RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                 ::RegexCharClass+SingleRange]::
                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
                           (this_01,index,
                            MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
                           );
-        if (RVar2 != (RegexCharClass_SingleRange)0x0) {
-          bVar3 = (TypeInfo__MVSpawnPoint->_1).naturalAligment;
-          if ((bVar3 <= *(byte *)(*(int *)RVar2 + 0xb8)) &&
-             (*(MVSpawnPoint__Class **)(*(int *)(*(int *)RVar2 + 100) + -4 + (uint)bVar3 * 4) ==
-              TypeInfo__MVSpawnPoint)) {
+        if (RVar3 != (RegexCharClass_SingleRange)0x0) {
+          if (((TypeInfo__MVSpawnPoint->_1).naturalAligment <= *(byte *)(*(int *)RVar3 + 0xb8)) &&
+             (*(MVSpawnPoint__Class **)
+               (*(int *)(*(int *)RVar3 + 100) + -4 +
+               (uint)(TypeInfo__MVSpawnPoint->_1).naturalAligment * 4) == TypeInfo__MVSpawnPoint)) {
             return 1;
           }
         }
@@ -1400,11 +1403,10 @@ void Assembly-CSharp.dll::MVTeamManager::MVTeamManager__ctor(MVTeamManager *this
                 (pDVar1,
                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::Collections::Generic::HashSet<int>_>__Dictionary__
                 );
-      method_00 = &(this->fields).teams;
-      *method_00 = (Dictionary_2_MV_WorldObject_MVTeam_HashSet_1_System_Int32_ *)pDVar1;
+      (this->fields).teams = (Dictionary_2_MV_WorldObject_MVTeam_HashSet_1_System_Int32_ *)pDVar1;
       func_?();
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                ((Object *)this,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+                ((Object *)this,ExceptionArgument__Enum_obj,(MethodInfo *)&(this->fields).teams);
       return;
     }
   }
@@ -1426,27 +1428,27 @@ void Assembly-CSharp.dll::MVTeamManager::MVTeamManager_add_OnTeamAdded
     func_?(&TypeInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>);
     cRam_? = '\x01';
   }
-  ppEVar1 = &(this->fields).OnTeamAdded;
-  a = *ppEVar1;
+  a = (this->fields).OnTeamAdded;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pEVar3 = TypeInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>;
-    iVar4 = 0;
-    if (pDVar2 != (Delegate *)0x0) {
-      iVar4 = func_?(pDVar2,TypeInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>)
+    pEVar2 = TypeInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>)
       ;
-      if (iVar4 == 0) {
-        func_?(pDVar2,pEVar3);
-        pcVar5 = (code *)swi(3);
-        (*pcVar5)();
+      if (iVar3 == 0) {
+        func_?(pDVar1,pEVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pEVar6 = (EventHandler_1_MV_WorldObject_TeamEventArgs_ *)func_?(ppEVar1,iVar4,a);
-    bVar7 = pEVar6 != a;
-    a = pEVar6;
-  } while (bVar7);
+    pEVar5 = (EventHandler_1_MV_WorldObject_TeamEventArgs_ *)
+             func_?(&(this->fields).OnTeamAdded,iVar3,a);
+    bVar6 = pEVar5 != a;
+    a = pEVar5;
+  } while (bVar6);
   return;
 }
 
@@ -1462,27 +1464,27 @@ void Assembly-CSharp.dll::MVTeamManager::MVTeamManager_add_OnTeamRemoved
     func_?(&TypeInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>);
     cRam_? = '\x01';
   }
-  ppEVar1 = &(this->fields).OnTeamRemoved;
-  a = *ppEVar1;
+  a = (this->fields).OnTeamRemoved;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pEVar3 = TypeInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>;
-    iVar4 = 0;
-    if (pDVar2 != (Delegate *)0x0) {
-      iVar4 = func_?(pDVar2,TypeInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>)
+    pEVar2 = TypeInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>)
       ;
-      if (iVar4 == 0) {
-        func_?(pDVar2,pEVar3);
-        pcVar5 = (code *)swi(3);
-        (*pcVar5)();
+      if (iVar3 == 0) {
+        func_?(pDVar1,pEVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pEVar6 = (EventHandler_1_MV_WorldObject_TeamEventArgs_ *)func_?(ppEVar1,iVar4,a);
-    bVar7 = pEVar6 != a;
-    a = pEVar6;
-  } while (bVar7);
+    pEVar5 = (EventHandler_1_MV_WorldObject_TeamEventArgs_ *)
+             func_?(&(this->fields).OnTeamRemoved,iVar3,a);
+    bVar6 = pEVar5 != a;
+    a = pEVar5;
+  } while (bVar6);
   return;
 }
 
@@ -1522,6 +1524,10 @@ int32_t Assembly-CSharp.dll::MVTeamManager::MVTeamManager_get_NumSpawnPoint
   puStack_4 = puVar5;
   iVar6 = 0;
   iStack_7 = 0;
+  DStack_8._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
+  DStack_8._index = 0;
+  DStack_8._version = 0;
+  DStack_8._currentValue = (Object *)0x0;
   this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
              *)(this->fields).teams;
   if (this_00 !=
@@ -1535,42 +1541,42 @@ int32_t Assembly-CSharp.dll::MVTeamManager::MVTeamManager_get_NumSpawnPoint
                            MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::Collections::Generic::HashSet<int>_>__get_Values__
                           );
     if (method_00 != (MethodInfo *)0x0) {
-      pDVar8 = mscorlib.dll::System::Collections::Generic::
+      pDVar9 = mscorlib.dll::System::Collections::Generic::
                Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
                StyleSheetCache+SheetHandleKey,System::Object]::
                Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
-                         (&DStack_9,
+                         (&DStack_10,
                           (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                            *)method_00,
                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<MV::WorldObject::MVTeam,_System::Collections::Generic::HashSet<int>_>__GetEnumerator__
                          );
-      DStack_10._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)pDVar8->_dictionary;
-      DStack_10._index = pDVar8->_index;
-      DStack_10._version = pDVar8->_version;
-      DStack_10._currentValue = pDVar8->_currentValue;
-      DStack_9._version = 0;
+      DStack_8._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)pDVar9->_dictionary;
+      DStack_8._index = pDVar9->_index;
+      DStack_8._version = pDVar9->_version;
+      DStack_8._currentValue = pDVar9->_currentValue;
+      DStack_10._version = 0;
       uStack_1 = 1;
-      DStack_9._currentValue = (Object *)&DStack_10;
+      DStack_10._currentValue = (Object *)&DStack_8;
       while( true ) {
         bVar11 = mscorlib.dll::System::Collections::Generic::
                 Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
                 UInt32,System::Object]::
                 Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                          (&DStack_10,
+                          (&DStack_8,
                            MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<MV::WorldObject::MVTeam,_System::Collections::Generic::HashSet<int>_>__MoveNext__
                           );
         if (bVar11 == 0) {
           uStack_1 = 0xffffffff;
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&DStack_10,
+                    ((Object *)&DStack_8,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<MV::WorldObject::MVTeam,_System::Collections::Generic::HashSet<int>_>__Dispose__
                      ,method_00);
           *unaff_FS_OFFSET = uStack_3;
           return iVar6;
         }
-        if (DStack_10._currentValue == (Object *)0x0) break;
-        iVar6 = (int)&((DStack_10._currentValue[2].klass)->_0).image + iVar6;
+        if (DStack_8._currentValue == (Object *)0x0) break;
+        iVar6 = (int)&((DStack_8._currentValue[2].klass)->_0).image + iVar6;
         iStack_7 = iVar6;
       }
     }
@@ -1594,27 +1600,27 @@ void Assembly-CSharp.dll::MVTeamManager::MVTeamManager_remove_OnTeamAdded
     func_?(&TypeInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>);
     cRam_? = '\x01';
   }
-  ppEVar1 = &(this->fields).OnTeamAdded;
-  source = *ppEVar1;
+  source = (this->fields).OnTeamAdded;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pEVar3 = TypeInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>;
-    iVar4 = 0;
-    if (pDVar2 != (Delegate *)0x0) {
-      iVar4 = func_?(pDVar2,TypeInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>)
+    pEVar2 = TypeInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>)
       ;
-      if (iVar4 == 0) {
-        func_?(pDVar2,pEVar3);
-        pcVar5 = (code *)swi(3);
-        (*pcVar5)();
+      if (iVar3 == 0) {
+        func_?(pDVar1,pEVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pEVar6 = (EventHandler_1_MV_WorldObject_TeamEventArgs_ *)func_?(ppEVar1,iVar4,source);
-    bVar7 = pEVar6 != source;
-    source = pEVar6;
-  } while (bVar7);
+    pEVar5 = (EventHandler_1_MV_WorldObject_TeamEventArgs_ *)
+             func_?(&(this->fields).OnTeamAdded,iVar3,source);
+    bVar6 = pEVar5 != source;
+    source = pEVar5;
+  } while (bVar6);
   return;
 }
 
@@ -1630,27 +1636,27 @@ void Assembly-CSharp.dll::MVTeamManager::MVTeamManager_remove_OnTeamRemoved
     func_?(&TypeInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>);
     cRam_? = '\x01';
   }
-  ppEVar1 = &(this->fields).OnTeamRemoved;
-  source = *ppEVar1;
+  source = (this->fields).OnTeamRemoved;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pEVar3 = TypeInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>;
-    iVar4 = 0;
-    if (pDVar2 != (Delegate *)0x0) {
-      iVar4 = func_?(pDVar2,TypeInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>)
+    pEVar2 = TypeInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>;
+    iVar3 = 0;
+    if (pDVar1 != (Delegate *)0x0) {
+      iVar3 = func_?(pDVar1,TypeInfo__System__EventHandler<MV::WorldObject::TeamEventArgs>)
       ;
-      if (iVar4 == 0) {
-        func_?(pDVar2,pEVar3);
-        pcVar5 = (code *)swi(3);
-        (*pcVar5)();
+      if (iVar3 == 0) {
+        func_?(pDVar1,pEVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pEVar6 = (EventHandler_1_MV_WorldObject_TeamEventArgs_ *)func_?(ppEVar1,iVar4,source);
-    bVar7 = pEVar6 != source;
-    source = pEVar6;
-  } while (bVar7);
+    pEVar5 = (EventHandler_1_MV_WorldObject_TeamEventArgs_ *)
+             func_?(&(this->fields).OnTeamRemoved,iVar3,source);
+    bVar6 = pEVar5 != source;
+    source = pEVar5;
+  } while (bVar6);
   return;
 }
 

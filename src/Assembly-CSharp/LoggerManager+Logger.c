@@ -36,7 +36,8 @@ void Assembly-CSharp.dll::LoggerManager+Logger::LoggerManager_Logger_Log
       if (uVar6 != 0) {
         do {
           if (pIVar4->interfaceOffsets[uVar5].interfaceType == (Il2CppClass *)TypeInfo__IAppender) {
-            ppMVar7 = &(&pIVar3->klass->vtable)[pIVar4->interfaceOffsets[uVar5].offset].Log.method;
+            ppMVar7 = &(&pIVar3->klass->vtable)[pIVar3->klass->interfaceOffsets[uVar5].offset].Log.
+                       method;
             goto code_?;
           }
           uVar5 = uVar5 + 1;

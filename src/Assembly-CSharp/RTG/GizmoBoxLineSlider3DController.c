@@ -31,57 +31,56 @@ float Assembly-CSharp.dll::RTG::GizmoBoxLineSlider3DController::
      (this_00 = (pGVar2->fields).Slider, this_00 != (GizmoLineSlider3D *)0x0)) {
     fVar3 = GizmoLineSlider3D::GizmoLineSlider3D_GetRealLength
                        (this_00,zoomFactor,(MethodInfo *)0x0);
-    pGVar4 = (this_00->fields)._sharedLookAndFeel;
-    pGVar5 = pGVar4;
-    if ((pGVar4 != (GizmoLineSlider3DLookAndFeel *)0x0) ||
-       (pGVar5 = (this_00->fields)._lookAndFeel, pGVar5 != (GizmoLineSlider3DLookAndFeel *)0x0)) {
-      fVar6 = zoomFactor;
-      if ((pGVar5->fields)._useZoomFactor == 0) {
-        fVar6 = _UNK_?;
-      }
-      if (pGVar4 == (GizmoLineSlider3DLookAndFeel *)0x0) {
-        pGVar5 = (this_00->fields)._lookAndFeel;
-        if (pGVar5 == (GizmoLineSlider3DLookAndFeel *)0x0) goto code_?;
-        fVar7 = (pGVar5->fields)._boxHeight * (pGVar5->fields)._scale;
-      }
-      else {
-        fVar7 = (pGVar4->fields)._boxHeight * (pGVar4->fields)._scale;
-        pGVar5 = pGVar4;
-      }
-      fVar8 = zoomFactor;
-      if ((pGVar5->fields)._useZoomFactor == 0) {
-        fVar8 = _UNK_?;
-      }
-      if (pGVar4 == (GizmoLineSlider3DLookAndFeel *)0x0) {
-        pGVar4 = (this_00->fields)._lookAndFeel;
-        if (pGVar4 == (GizmoLineSlider3DLookAndFeel *)0x0) goto code_?;
-        fVar9 = (pGVar4->fields)._boxDepth;
-      }
-      else {
-        fVar9 = (pGVar4->fields)._boxDepth;
-      }
-      pGVar2 = (this->fields)._._data;
-      if ((pGVar2 != (GizmoLineSlider3DControllerData *)0x0) &&
-         (pBVar10 = (pGVar2->fields).Box, pBVar10 != (BoxShape3D *)0x0)) {
-        point.y = fVar7 * fVar6;
-        point.x = fVar3;
-        point.z = fVar9 * (pGVar4->fields)._scale * fVar8;
-        pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                           ((Vector3 *)&stack0xffffffdc,(pBVar10->fields)._rotation,point,
-                            (MethodInfo *)0x0);
-        v1.y = zoomFactor;
-        v1.x = direction.z;
-        v1.z = fStack_12;
-        fVar3 = Vector3Ex::Vector3Ex_AbsDot(v1,*pVVar11,(MethodInfo *)0x0);
-        return fVar3;
-      }
+    if ((this_00->fields)._sharedLookAndFeel == (GizmoLineSlider3DLookAndFeel *)0x0) {
+      pGVar4 = (this_00->fields)._lookAndFeel;
+      if (pGVar4 == (GizmoLineSlider3DLookAndFeel *)0x0) goto code_?;
+    }
+    else {
+      pGVar4 = (this_00->fields)._sharedLookAndFeel;
+    }
+    fVar5 = zoomFactor;
+    if ((pGVar4->fields)._useZoomFactor == 0) {
+      fVar5 = _UNK_?;
+    }
+    if ((this_00->fields)._sharedLookAndFeel == (GizmoLineSlider3DLookAndFeel *)0x0) {
+      pGVar4 = (this_00->fields)._lookAndFeel;
+      if (pGVar4 == (GizmoLineSlider3DLookAndFeel *)0x0) goto code_?;
+    }
+    else {
+      pGVar4 = (this_00->fields)._sharedLookAndFeel;
+    }
+    fVar6 = zoomFactor;
+    if ((pGVar4->fields)._useZoomFactor == 0) {
+      fVar6 = _UNK_?;
+    }
+    if ((this_00->fields)._sharedLookAndFeel == (GizmoLineSlider3DLookAndFeel *)0x0) {
+      pGVar7 = (this_00->fields)._lookAndFeel;
+      if (pGVar7 == (GizmoLineSlider3DLookAndFeel *)0x0) goto code_?;
+    }
+    else {
+      pGVar7 = (this_00->fields)._sharedLookAndFeel;
+    }
+    pGVar2 = (this->fields)._._data;
+    if ((pGVar2 != (GizmoLineSlider3DControllerData *)0x0) &&
+       (pBVar8 = (pGVar2->fields).Box, pBVar8 != (BoxShape3D *)0x0)) {
+      point.y = (pGVar4->fields)._boxHeight * (pGVar4->fields)._scale * fVar5;
+      point.x = fVar3;
+      point.z = (pGVar7->fields)._boxDepth * (pGVar7->fields)._scale * fVar6;
+      pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                         ((Vector3 *)&stack0xffffffdc,(pBVar8->fields)._rotation,point,
+                          (MethodInfo *)0x0);
+      v1.y = zoomFactor;
+      v1.x = direction.z;
+      v1.z = fStack_10;
+      fVar3 = Vector3Ex::Vector3Ex_AbsDot(v1,*pVVar9,(MethodInfo *)0x0);
+      return fVar3;
     }
   }
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  fVar14 = (float10)(*pcVar13)();
-  return (float)fVar14;
+  pcVar11 = (code *)swi(3);
+  fVar12 = (float10)(*pcVar11)();
+  return (float)fVar12;
 }
 
 
@@ -95,19 +94,18 @@ void Assembly-CSharp.dll::RTG::GizmoBoxLineSlider3DController::
   pGVar1 = (this->fields)._._data;
   if ((pGVar1 != (GizmoLineSlider3DControllerData *)0x0) &&
      (pGVar2 = (pGVar1->fields).Slider, pGVar2 != (GizmoLineSlider3D *)0x0)) {
-    pGVar3 = (pGVar2->fields)._sharedSettings;
-    if (pGVar3 == (GizmoLineSlider3DSettings *)0x0) {
+    if ((pGVar2->fields)._sharedSettings == (GizmoLineSlider3DSettings *)0x0) {
       pGVar3 = (pGVar2->fields)._settings;
       if (pGVar3 == (GizmoLineSlider3DSettings *)0x0) goto code_?;
-      fVar4 = (pGVar3->fields)._boxHoverEps;
     }
     else {
-      fVar4 = (pGVar3->fields)._boxHoverEps;
+      pGVar3 = (pGVar2->fields)._sharedSettings;
     }
-    this_00 = (pGVar1->fields).Box;
+    fVar4 = zoomFactor * (pGVar3->fields)._boxHoverEps;
+    this_00 = (((this->fields)._._data)->fields).Box;
     if (this_00 != (BoxShape3D *)0x0) {
-      auVar5._4_4_ = zoomFactor * fVar4;
-      auVar5._0_4_ = zoomFactor * fVar4;
+      auVar5._4_4_ = fVar4;
+      auVar5._0_4_ = fVar4;
       auVar5._8_4_ = 0;
       BoxShape3D::BoxShape3D_set_SizeEps(this_00,(Vector3)(auVar5 << 0x20),(MethodInfo *)0x0);
       return;
@@ -167,60 +165,59 @@ void Assembly-CSharp.dll::RTG::GizmoBoxLineSlider3DController::
   if (pGVar1 != (GizmoLineSlider3DControllerData *)0x0) {
     pBVar2 = (pGVar1->fields).Box;
     this_00 = (pGVar1->fields).Slider;
-    if ((this_00 != (GizmoLineSlider3D *)0x0) &&
-       (pVVar3 = GizmoLineSlider3D::GizmoLineSlider3D_GetRealDirection
-                           ((Vector3 *)&fStack_4,this_00,(MethodInfo *)0x0),
-       pBVar2 != (BoxShape3D *)0x0)) {
-      BoxShape3D::BoxShape3D_AlignWidth(pBVar2,*pVVar3,(MethodInfo *)0x0);
-      pGVar1 = (this->fields)._._data;
-      if (pGVar1 != (GizmoLineSlider3DControllerData *)0x0) {
-        pBVar2 = (pGVar1->fields).Box;
-        fVar5 = GizmoLineSlider3D::GizmoLineSlider3D_GetRealLength
-                           (this_00,zoomFactor,(MethodInfo *)0x0);
-        pGVar6 = (this_00->fields)._sharedLookAndFeel;
-        pGVar7 = pGVar6;
-        if ((pGVar6 != (GizmoLineSlider3DLookAndFeel *)0x0) ||
-           (pGVar7 = (this_00->fields)._lookAndFeel, pGVar7 != (GizmoLineSlider3DLookAndFeel *)0x0))
-        {
-          fVar8 = zoomFactor;
-          if ((pGVar7->fields)._useZoomFactor == 0) {
-            fVar8 = _UNK_?;
-          }
-          if (pGVar6 == (GizmoLineSlider3DLookAndFeel *)0x0) {
-            pGVar7 = (this_00->fields)._lookAndFeel;
-            if (pGVar7 == (GizmoLineSlider3DLookAndFeel *)0x0) goto code_?;
-            fVar9 = (pGVar7->fields)._boxHeight * (pGVar7->fields)._scale;
-          }
-          else {
-            fVar9 = (pGVar6->fields)._boxHeight * (pGVar6->fields)._scale;
-            pGVar7 = pGVar6;
-          }
-          puVar10 = (undefined *)(fVar9 * fVar8);
-          if ((pGVar7->fields)._useZoomFactor == 0) {
-            zoomFactor = _UNK_?;
-          }
-          if (pGVar6 == (GizmoLineSlider3DLookAndFeel *)0x0) {
+    if (this_00 != (GizmoLineSlider3D *)0x0) {
+      pVVar3 = GizmoLineSlider3D::GizmoLineSlider3D_GetRealDirection
+                         ((Vector3 *)&fStack_4,this_00,(MethodInfo *)0x0);
+      if (pBVar2 != (BoxShape3D *)0x0) {
+        BoxShape3D::BoxShape3D_AlignWidth(pBVar2,*pVVar3,(MethodInfo *)0x0);
+        pGVar1 = (this->fields)._._data;
+        if (pGVar1 != (GizmoLineSlider3DControllerData *)0x0) {
+          pBVar2 = (pGVar1->fields).Box;
+          fVar5 = GizmoLineSlider3D::GizmoLineSlider3D_GetRealLength
+                            (this_00,zoomFactor,(MethodInfo *)0x0);
+          if ((this_00->fields)._sharedLookAndFeel == (GizmoLineSlider3DLookAndFeel *)0x0) {
             pGVar6 = (this_00->fields)._lookAndFeel;
             if (pGVar6 == (GizmoLineSlider3DLookAndFeel *)0x0) goto code_?;
-            fVar8 = (pGVar6->fields)._boxDepth;
           }
           else {
-            fVar8 = (pGVar6->fields)._boxDepth;
+            pGVar6 = (this_00->fields)._sharedLookAndFeel;
+          }
+          fVar7 = zoomFactor;
+          if ((pGVar6->fields)._useZoomFactor == 0) {
+            fVar7 = _UNK_?;
+          }
+          if ((this_00->fields)._sharedLookAndFeel == (GizmoLineSlider3DLookAndFeel *)0x0) {
+            pGVar6 = (this_00->fields)._lookAndFeel;
+            if (pGVar6 == (GizmoLineSlider3DLookAndFeel *)0x0) goto code_?;
+          }
+          else {
+            pGVar6 = (this_00->fields)._sharedLookAndFeel;
+          }
+          puVar8 = (undefined *)((pGVar6->fields)._boxHeight * (pGVar6->fields)._scale * fVar7);
+          if ((pGVar6->fields)._useZoomFactor == 0) {
+            zoomFactor = _UNK_?;
+          }
+          if ((this_00->fields)._sharedLookAndFeel == (GizmoLineSlider3DLookAndFeel *)0x0) {
+            pGVar6 = (this_00->fields)._lookAndFeel;
+            if (pGVar6 == (GizmoLineSlider3DLookAndFeel *)0x0) goto code_?;
+          }
+          else {
+            pGVar6 = (this_00->fields)._sharedLookAndFeel;
           }
           fStack_4 = fVar5;
-          puStack_11 = puVar10;
+          puStack_9 = puVar8;
           if (pBVar2 != (BoxShape3D *)0x0) {
-            value.y = (float)puVar10;
+            value.y = (float)puVar8;
             value.x = fVar5;
-            value.z = fVar8 * (pGVar6->fields)._scale * zoomFactor;
+            value.z = (pGVar6->fields)._boxDepth * (pGVar6->fields)._scale * zoomFactor;
             BoxShape3D::BoxShape3D_set_Size(pBVar2,value,(MethodInfo *)0x0);
             pGVar1 = (this->fields)._._data;
             if (pGVar1 != (GizmoLineSlider3DControllerData *)0x0) {
-              pGVar12 = (this_00->fields)._transform;
+              pGVar10 = (this_00->fields)._transform;
               pBVar2 = (pGVar1->fields).Box;
-              if ((pGVar12 != (GizmoTransform *)0x0) && (pBVar2 != (BoxShape3D *)0x0)) {
+              if ((pGVar10 != (GizmoTransform *)0x0) && (pBVar2 != (BoxShape3D *)0x0)) {
                 BoxShape3D::BoxShape3D_SetFaceCenter
-                          (pBVar2,BoxFace__Enum_Left,(pGVar12->fields)._position3D,(MethodInfo *)0x0)
+                          (pBVar2,BoxFace__Enum_Left,(pGVar10->fields)._position3D,(MethodInfo *)0x0)
                 ;
                 return;
               }
@@ -232,8 +229,8 @@ void Assembly-CSharp.dll::RTG::GizmoBoxLineSlider3DController::
   }
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 

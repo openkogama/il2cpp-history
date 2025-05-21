@@ -39,8 +39,8 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem_ApplyLocalDescriptionOver
                                  ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,t,
                                   MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__get_Item_MVWorldObjectDocumentationType_
                                  ), pOVar3 != (Object *)0x0)) {
-      *(undefined4 *)(unaff_EDI + 0x14) = pOVar3[1].klass;
-      func_?((undefined4 *)(unaff_EDI + 0x14));
+      (this->fields).name = (String *)pOVar3[1].klass;
+      func_?(&(this->fields).name);
       if (cRam_? == '\0') {
         func_?();
         cRam_? = '\x01';
@@ -48,8 +48,8 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem_ApplyLocalDescriptionOver
       pSVar4 = mscorlib.dll::System::String::String_Concat_4
                          ((String *)pOVar3[1].monitor,StringLiteral_u000Au000A,
                           (String *)pOVar3[2].klass,(MethodInfo *)0x0);
-      *(undefined4 *)(unaff_EDI + 0x18) = pSVar4;
-      func_?((undefined4 *)(unaff_EDI + 0x18));
+      (this->fields).description = pSVar4;
+      func_?(&(this->fields).description);
       return;
     }
   }
@@ -361,34 +361,32 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__cctor(MethodInfo *method
               ((Dictionary_2_System_Int32Enum_System_Object_ *)0x2,2,pOVar9,
                MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
               );
-    pDVar10 = (Dictionary_2_MVWorldObjectDocumentationType_InventoryItem_ItemDescription___Class *)
-             TM::TM__(StringLiteral_Impulse_Gun,(MethodInfo *)0x0);
+    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Impulse_Gun,(MethodInfo *)0x0);
     pSVar1 = TM::TM__(StringLiteral_A_gun_generating_a_powerful_forc,(MethodInfo *)0x0);
-    pOVar6 = (Object__Class *)
+    pOVar7 = (Object__Class *)
              TM::TM__(StringLiteral_This_gun_has_a_very_high_recoil_,(MethodInfo *)0x0);
     pIVar8 = TypeInfo__InventoryItem__ItemDescription;
     pOVar9 = (Object *)func_?();
     *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
     pOVar9[3].monitor = (MonitorData *)0x0;
-    puVar11 = &UNK_?;
+    value = (Object *)&UNK_?;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
               (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
+    value[1].klass = pOVar6;
     this_00 = (Dictionary_2_MVWorldObjectDocumentationType_InventoryItem_ItemDescription_ *)
-              (puVar11 + 8);
-    this_00->klass = pDVar10;
-    pOVar9 = (Object *)&UNK_?;
-    func_?(this_00,pDVar10);
-    ppMStack12 = &pOVar9[1].monitor;
-    *ppMStack12 = (MonitorData *)pSVar1;
-    pSStack13 = pSVar1;
+              (value + 1);
+    func_?(this_00,pOVar6);
+    value[1].monitor = (MonitorData *)pSVar1;
+    ppMStack10 = &value[1].monitor;
+    pSStack11 = pSVar1;
     func_?();
-    pOStack14 = pOVar9 + 2;
-    pOStack14->klass = pOVar6;
-    pOStack15 = pOVar6;
+    value[2].klass = pOVar7;
+    pOStack12 = value + 2;
+    pOStack13 = pOVar7;
     func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
     Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,3,pOVar9,
+              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,3,value,
                MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
               );
     pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Bazooka,(MethodInfo *)0x0);
@@ -401,16 +399,16 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__cctor(MethodInfo *method
     pOVar9[3].monitor = (MonitorData *)0x0;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
               (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOStack16 = pOVar9 + 1;
-    pOStack16->klass = pOVar6;
+    pOVar9[1].klass = pOVar6;
+    pOStack14 = pOVar9 + 1;
     func_?();
-    ppMStack17 = &pOVar9[1].monitor;
-    *ppMStack17 = (MonitorData *)pSVar1;
-    pSStack18 = pSVar1;
+    ppMStack15 = &pOVar9[1].monitor;
+    pOVar9[1].monitor = (MonitorData *)pSVar1;
+    pSStack16 = pSVar1;
     func_?();
-    pOStack19 = pOVar9 + 2;
-    pOStack19->klass = pOVar7;
-    pOStack20 = pOVar7;
+    pOVar9[2].klass = pOVar7;
+    pOStack17 = pOVar9 + 2;
+    pOStack18 = pOVar7;
     func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
     Dictionary_2_System_Int32Enum_System_Object__Add
@@ -429,13 +427,13 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__cctor(MethodInfo *method
               (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
     pOVar9[1].klass = pOVar6;
     func_?();
-    ppMStack21 = &pOVar9[1].monitor;
-    *ppMStack21 = (MonitorData *)pSVar1;
-    pSStack22 = pSVar1;
+    ppMStack19 = &pOVar9[1].monitor;
+    pOVar9[1].monitor = (MonitorData *)pSVar1;
+    pSStack20 = pSVar1;
     func_?();
-    pOStack23 = pOVar9 + 2;
-    pOStack23->klass = pOVar7;
-    pOStack24 = pOVar7;
+    pOVar9[2].klass = pOVar7;
+    pOStack21 = pOVar9 + 2;
+    pOStack22 = pOVar7;
     func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
     Dictionary_2_System_Int32Enum_System_Object__Add
@@ -454,13 +452,13 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__cctor(MethodInfo *method
               (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
     pOVar9[1].klass = pOVar6;
     func_?();
-    ppMStack25 = &pOVar9[1].monitor;
-    *ppMStack25 = (MonitorData *)pSVar1;
-    pSStack26 = pSVar1;
+    ppMStack23 = &pOVar9[1].monitor;
+    pOVar9[1].monitor = (MonitorData *)pSVar1;
+    pSStack24 = pSVar1;
     func_?();
-    pOStack27 = pOVar9 + 2;
-    pOStack27->klass = pOVar7;
-    pOStack28 = pOVar7;
+    pOVar9[2].klass = pOVar7;
+    pOStack25 = pOVar9 + 2;
+    pOStack26 = pOVar7;
     func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
     Dictionary_2_System_Int32Enum_System_Object__Add
@@ -479,13 +477,13 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__cctor(MethodInfo *method
               (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
     pOVar9[1].klass = pOVar6;
     func_?();
-    ppMStack29 = &pOVar9[1].monitor;
-    *ppMStack29 = (MonitorData *)pSVar1;
-    pSStack30 = pSVar1;
+    ppMStack27 = &pOVar9[1].monitor;
+    pOVar9[1].monitor = (MonitorData *)pSVar1;
+    pSStack28 = pSVar1;
     func_?();
-    pOStack31 = pOVar9 + 2;
-    pOStack31->klass = pOVar7;
-    pOStack32 = pOVar7;
+    pOVar9[2].klass = pOVar7;
+    pOStack29 = pOVar9 + 2;
+    pOStack30 = pOVar7;
     func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
     Dictionary_2_System_Int32Enum_System_Object__Add
@@ -504,13 +502,13 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__cctor(MethodInfo *method
               (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
     pOVar9[1].klass = pOVar6;
     func_?();
-    ppMStack33 = &pOVar9[1].monitor;
-    *ppMStack33 = (MonitorData *)pSVar1;
-    pSStack34 = pSVar1;
+    ppMStack31 = &pOVar9[1].monitor;
+    pOVar9[1].monitor = (MonitorData *)pSVar1;
+    pSStack32 = pSVar1;
     func_?();
-    pOStack35 = pOVar9 + 2;
-    pOStack35->klass = pOVar7;
-    pOStack36 = pOVar7;
+    pOVar9[2].klass = pOVar7;
+    pOStack33 = pOVar9 + 2;
+    pOStack34 = pOVar7;
     func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
     Dictionary_2_System_Int32Enum_System_Object__Add
@@ -529,13 +527,13 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__cctor(MethodInfo *method
               (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
     pOVar9[1].klass = pOVar6;
     func_?();
-    ppMStack37 = &pOVar9[1].monitor;
-    *ppMStack37 = (MonitorData *)pSVar1;
-    pSStack38 = pSVar1;
+    ppMStack35 = &pOVar9[1].monitor;
+    pOVar9[1].monitor = (MonitorData *)pSVar1;
+    pSStack36 = pSVar1;
     func_?();
-    pOStack39 = pOVar9 + 2;
-    pOStack39->klass = pOVar7;
-    pOStack40 = pOVar7;
+    pOVar9[2].klass = pOVar7;
+    pOStack37 = pOVar9 + 2;
+    pOStack38 = pOVar7;
     func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
     Dictionary_2_System_Int32Enum_System_Object__Add
@@ -554,13 +552,13 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__cctor(MethodInfo *method
               (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
     pOVar9[1].klass = pOVar6;
     func_?();
-    ppMStack41 = &pOVar9[1].monitor;
-    *ppMStack41 = (MonitorData *)pSVar1;
-    pSStack42 = pSVar1;
+    ppMStack39 = &pOVar9[1].monitor;
+    pOVar9[1].monitor = (MonitorData *)pSVar1;
+    pSStack40 = pSVar1;
     func_?();
-    pOStack43 = pOVar9 + 2;
-    pOStack43->klass = pOVar7;
-    pOStack44 = pOVar7;
+    pOVar9[2].klass = pOVar7;
+    pOStack41 = pOVar9 + 2;
+    pOStack42 = pOVar7;
     func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
     Dictionary_2_System_Int32Enum_System_Object__Add
@@ -579,13 +577,13 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__cctor(MethodInfo *method
               (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
     pOVar9[1].klass = pOVar6;
     func_?();
-    ppMStack45 = &pOVar9[1].monitor;
-    *ppMStack45 = (MonitorData *)pSVar1;
-    pSStack46 = pSVar1;
+    ppMStack43 = &pOVar9[1].monitor;
+    pOVar9[1].monitor = (MonitorData *)pSVar1;
+    pSStack44 = pSVar1;
     func_?();
-    pOStack47 = pOVar9 + 2;
-    pOStack47->klass = pOVar7;
-    pOStack48 = pOVar7;
+    pOVar9[2].klass = pOVar7;
+    pOStack45 = pOVar9 + 2;
+    pOStack46 = pOVar7;
     func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
     Dictionary_2_System_Int32Enum_System_Object__Add
@@ -604,13 +602,13 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__cctor(MethodInfo *method
               (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
     pOVar9[1].klass = pOVar6;
     func_?();
-    ppMStack49 = &pOVar9[1].monitor;
-    *ppMStack49 = (MonitorData *)pSVar1;
-    pSStack50 = pSVar1;
+    ppMStack47 = &pOVar9[1].monitor;
+    pOVar9[1].monitor = (MonitorData *)pSVar1;
+    pSStack48 = pSVar1;
     func_?();
-    pOStack51 = pOVar9 + 2;
-    pOStack51->klass = pOVar7;
-    pOStack52 = pOVar7;
+    pOVar9[2].klass = pOVar7;
+    pOStack49 = pOVar9 + 2;
+    pOStack50 = pOVar7;
     func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
     Dictionary_2_System_Int32Enum_System_Object__Add
@@ -629,13 +627,13 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__cctor(MethodInfo *method
               (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
     pOVar9[1].klass = pOVar6;
     func_?();
-    ppMStack53 = &pOVar9[1].monitor;
-    *ppMStack53 = (MonitorData *)pSVar1;
-    pSStack54 = pSVar1;
+    ppMStack51 = &pOVar9[1].monitor;
+    pOVar9[1].monitor = (MonitorData *)pSVar1;
+    pSStack52 = pSVar1;
     func_?();
-    pOStack55 = pOVar9 + 2;
-    pOStack55->klass = pOVar7;
-    pOStack56 = pOVar7;
+    pOVar9[2].klass = pOVar7;
+    pOStack53 = pOVar9 + 2;
+    pOStack54 = pOVar7;
     func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
     Dictionary_2_System_Int32Enum_System_Object__Add
@@ -833,13 +831,13 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__cctor(MethodInfo *method
               );
     pSVar1 = TM::TM__(StringLiteral_Oculus,(MethodInfo *)0x0);
     pSVar3 = TM::TM__(StringLiteral_A_customizable_monster_from_anot,(MethodInfo *)0x0);
-    pSVar57 = TM::TM__(StringLiteral_These_hideous_creatures_only_hav,(MethodInfo *)0x0);
+    pSVar55 = TM::TM__(StringLiteral_These_hideous_creatures_only_hav,(MethodInfo *)0x0);
     pIVar5 = (InventoryItem_ItemDescription *)func_?();
     cameraPreviewerOffset.y = (float)pSVar2;
     cameraPreviewerOffset.x = (float)pSVar2;
     cameraPreviewerOffset.z = 0.7;
     InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor_1
-              (pIVar5,pSVar1,pSVar3,pSVar57,cameraPreviewerOffset,(MethodInfo *)0x0);
+              (pIVar5,pSVar1,pSVar3,pSVar55,cameraPreviewerOffset,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
     Dictionary_2_System_Int32Enum_System_Object__Add
               ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x17,(Object *)pIVar5,
@@ -847,15 +845,15 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__cctor(MethodInfo *method
               );
     pSVar1 = TM::TM__(StringLiteral_Teleporter,(MethodInfo *)0x0);
     pSVar3 = TM::TM__(StringLiteral_A_pair_of_connected_teleporters_,(MethodInfo *)0x0);
-    pSVar57 = TM::TM__(StringLiteral_Useful_for_separating_different_,(MethodInfo *)0x0);
+    pSVar55 = TM::TM__(StringLiteral_Useful_for_separating_different_,(MethodInfo *)0x0);
     uVar4 = _UNK_?;
-    uVar58 = _UNK_?;
+    uVar56 = _UNK_?;
     pIVar5 = (InventoryItem_ItemDescription *)func_?();
     cameraPreviewerOffset_00.y = (float)uVar4;
-    cameraPreviewerOffset_00.x = (float)uVar58;
+    cameraPreviewerOffset_00.x = (float)uVar56;
     cameraPreviewerOffset_00.z = -1.0;
     InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor_1
-              (pIVar5,pSVar1,pSVar3,pSVar57,cameraPreviewerOffset_00,(MethodInfo *)0x0);
+              (pIVar5,pSVar1,pSVar3,pSVar55,cameraPreviewerOffset_00,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
     Dictionary_2_System_Int32Enum_System_Object__Add
               ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x18,(Object *)pIVar5,
@@ -863,13 +861,13 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__cctor(MethodInfo *method
               );
     pSVar1 = TM::TM__(StringLiteral_Hovercraft,(MethodInfo *)0x0);
     pSVar3 = TM::TM__(StringLiteral_A_customizable_hovercraft_,(MethodInfo *)0x0);
-    pSVar57 = TM::TM__(StringLiteral_Enables_players_to_traverse_grea,(MethodInfo *)0x0);
+    pSVar55 = TM::TM__(StringLiteral_Enables_players_to_traverse_grea,(MethodInfo *)0x0);
     pIVar5 = (InventoryItem_ItemDescription *)func_?();
     cameraPreviewerOffset_01.y = (float)pSVar2;
     cameraPreviewerOffset_01.x = (float)pSVar2;
     cameraPreviewerOffset_01.z = -0.3;
     InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor_1
-              (pIVar5,pSVar1,pSVar3,pSVar57,cameraPreviewerOffset_01,(MethodInfo *)0x0);
+              (pIVar5,pSVar1,pSVar3,pSVar55,cameraPreviewerOffset_01,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
     Dictionary_2_System_Int32Enum_System_Object__Add
               ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x19,(Object *)pIVar5,
@@ -877,13 +875,13 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__cctor(MethodInfo *method
               );
     pSVar1 = TM::TM__(StringLiteral_Hamster_Ball,(MethodInfo *)0x0);
     pSVar3 = TM::TM__(StringLiteral_A_giant_hamster_ball_,(MethodInfo *)0x0);
-    pSVar57 = TM::TM__(StringLiteral_This_bouncy_ball_offers_a_hilari,(MethodInfo *)0x0);
+    pSVar55 = TM::TM__(StringLiteral_This_bouncy_ball_offers_a_hilari,(MethodInfo *)0x0);
     pIVar5 = (InventoryItem_ItemDescription *)func_?();
     cameraPreviewerOffset_02.y = (float)_UNK_?;
     cameraPreviewerOffset_02.x = (float)uVar4;
     cameraPreviewerOffset_02.z = 0.0;
     InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor_1
-              (pIVar5,pSVar1,pSVar3,pSVar57,cameraPreviewerOffset_02,(MethodInfo *)0x0);
+              (pIVar5,pSVar1,pSVar3,pSVar55,cameraPreviewerOffset_02,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
     Dictionary_2_System_Int32Enum_System_Object__Add
               ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x1a,(Object *)pIVar5,
@@ -891,14 +889,14 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__cctor(MethodInfo *method
               );
     pSVar1 = TM::TM__(StringLiteral_Fire_Sentry_Tower,(MethodInfo *)0x0);
     pSVar3 = TM::TM__(StringLiteral_A_sentry_tower__shooting_fire_at,(MethodInfo *)0x0);
-    pSVar57 = TM::TM__(StringLiteral_Fire_sentries_serve_as_stationar,(MethodInfo *)0x0);
+    pSVar55 = TM::TM__(StringLiteral_Fire_sentries_serve_as_stationar,(MethodInfo *)0x0);
     uVar4 = _UNK_?;
     pIVar5 = (InventoryItem_ItemDescription *)func_?();
     cameraPreviewerOffset_03.y = (float)_UNK_?;
     cameraPreviewerOffset_03.x = (float)uVar4;
     cameraPreviewerOffset_03.z = -1.0;
     InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor_1
-              (pIVar5,pSVar1,pSVar3,pSVar57,cameraPreviewerOffset_03,(MethodInfo *)0x0);
+              (pIVar5,pSVar1,pSVar3,pSVar55,cameraPreviewerOffset_03,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
     Dictionary_2_System_Int32Enum_System_Object__Add
               ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x1b,(Object *)pIVar5,
@@ -969,13 +967,13 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__cctor(MethodInfo *method
               );
     pSVar1 = TM::TM__(StringLiteral_Dragonfly_Jetpack,(MethodInfo *)0x0);
     pSVar3 = TM::TM__(StringLiteral_A_big_customizable_jetpack_,(MethodInfo *)0x0);
-    pSVar57 = TM::TM__(StringLiteral_This_jetpack_offers_unprecedente,(MethodInfo *)0x0);
+    pSVar55 = TM::TM__(StringLiteral_This_jetpack_offers_unprecedente,(MethodInfo *)0x0);
     pIVar5 = (InventoryItem_ItemDescription *)func_?();
     cameraPreviewerOffset_04.y = (float)_UNK_?;
     cameraPreviewerOffset_04.x = (float)pSVar2;
     cameraPreviewerOffset_04.z = 0.2;
     InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor_1
-              (pIVar5,pSVar1,pSVar3,pSVar57,cameraPreviewerOffset_04,(MethodInfo *)0x0);
+              (pIVar5,pSVar1,pSVar3,pSVar55,cameraPreviewerOffset_04,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
     Dictionary_2_System_Int32Enum_System_Object__Add
               ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x1f,(Object *)pIVar5,
@@ -1004,13 +1002,13 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__cctor(MethodInfo *method
               );
     pSVar1 = TM::TM__(StringLiteral_Frost_Sentry_Tower,(MethodInfo *)0x0);
     pSVar3 = TM::TM__(StringLiteral_A_sentry_tower__shooting_a_beam_,(MethodInfo *)0x0);
-    pSVar57 = TM::TM__(StringLiteral_Frost_sentries_serve_as_stationa,(MethodInfo *)0x0);
+    pSVar55 = TM::TM__(StringLiteral_Frost_sentries_serve_as_stationa,(MethodInfo *)0x0);
     pIVar5 = (InventoryItem_ItemDescription *)func_?();
     cameraPreviewerOffset_05.y = (float)_UNK_?;
     cameraPreviewerOffset_05.x = (float)uVar4;
     cameraPreviewerOffset_05.z = -1.0;
     InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor_1
-              (pIVar5,pSVar1,pSVar3,pSVar57,cameraPreviewerOffset_05,(MethodInfo *)0x0);
+              (pIVar5,pSVar1,pSVar3,pSVar55,cameraPreviewerOffset_05,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
     Dictionary_2_System_Int32Enum_System_Object__Add
               ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x21,(Object *)pIVar5,
@@ -1018,13 +1016,13 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__cctor(MethodInfo *method
               );
     pSVar1 = TM::TM__(StringLiteral_Firefly_Jetpack,(MethodInfo *)0x0);
     pSVar3 = TM::TM__(StringLiteral_A_small_customizable_jetpack_,(MethodInfo *)0x0);
-    pSVar57 = TM::TM__(StringLiteral_Soar_to_the_skies_with_this_ligh,(MethodInfo *)0x0);
+    pSVar55 = TM::TM__(StringLiteral_Soar_to_the_skies_with_this_ligh,(MethodInfo *)0x0);
     pIVar5 = (InventoryItem_ItemDescription *)func_?();
     cameraPreviewerOffset_06.y = (float)_UNK_?;
     cameraPreviewerOffset_06.x = (float)pSVar2;
     cameraPreviewerOffset_06.z = -0.5;
     InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor_1
-              (pIVar5,pSVar1,pSVar3,pSVar57,cameraPreviewerOffset_06,(MethodInfo *)0x0);
+              (pIVar5,pSVar1,pSVar3,pSVar55,cameraPreviewerOffset_06,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
     Dictionary_2_System_Int32Enum_System_Object__Add
               ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x22,(Object *)pIVar5,
@@ -1912,13 +1910,13 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__cctor(MethodInfo *method
               );
     pSVar1 = TM::TM__(StringLiteral_Trap_Door,(MethodInfo *)0x0);
     pSVar3 = TM::TM__(StringLiteral_A_trap_door_that_can_be_opened_b,(MethodInfo *)0x0);
-    pSVar57 = TM::TM__(StringLiteral_Use_this_to_make_an_animated_tra,(MethodInfo *)0x0);
+    pSVar55 = TM::TM__(StringLiteral_Use_this_to_make_an_animated_tra,(MethodInfo *)0x0);
     pIVar5 = (InventoryItem_ItemDescription *)func_?();
     cameraPreviewerOffset_07.y = (float)_UNK_?;
     cameraPreviewerOffset_07.x = (float)uVar4;
     cameraPreviewerOffset_07.z = -1.0;
     InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor_1
-              (pIVar5,pSVar1,pSVar3,pSVar57,cameraPreviewerOffset_07,(MethodInfo *)0x0);
+              (pIVar5,pSVar1,pSVar3,pSVar55,cameraPreviewerOffset_07,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
     Dictionary_2_System_Int32Enum_System_Object__Add
               ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x4d,(Object *)pIVar5,
@@ -1992,8 +1990,8 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__cctor(MethodInfo *method
     return;
   }
   func_?();
-  pcVar59 = (code *)swi(3);
-  (*pcVar59)();
+  pcVar57 = (code *)swi(3);
+  (*pcVar57)();
   return;
 }
 
@@ -2030,141 +2028,140 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_1
   (this->fields).purchased = 1;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-  if ((data == (Dictionary_2_System_Byte_System_Object_ *)0x0) ||
-     (pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]
-               ::Dictionary_2_System_Byte_System_Object__get_Item
-                         (data,0x28,
-                          MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
-                         ), pOVar1 == (Object *)0x0)) {
+  if (data == (Dictionary_2_System_Byte_System_Object_ *)0x0) {
 code_?:
     func_?();
-    goto code_?;
   }
-  if ((pOVar1->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
-  goto code_?;
-  piVar2 = (int32_t *)func_?();
-  (this->fields).itemID = *piVar2;
-  pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
-           Dictionary_2_System_Byte_System_Object__get_Item
-                     (data,0x96,
-                      MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
-                     );
-  if (pOVar1 == (Object *)0x0) goto code_?;
-  if ((pOVar1->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
-  goto code_?;
-  piVar2 = (int32_t *)func_?();
-  (this->fields).itemCategoryID = *piVar2;
-  pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
-           Dictionary_2_System_Byte_System_Object__get_Item
-                     (data,0x29,
-                      MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
-                     );
-  if (pOVar1 == (Object *)0x0) goto code_?;
-  if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
-    piVar2 = (int32_t *)func_?();
-    (this->fields).itemTypeID = *piVar2;
-    pSVar3 = (String *)
-             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
-             Dictionary_2_System_Byte_System_Object__get_Item
-                       (data,0x2a,
-                        MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
-                       );
-    if (pSVar3 == (String *)0x0) {
-      (this->fields).name = (String *)0x0;
-    }
-    else {
-      pSVar4 = (String *)0x0;
-      if (pSVar3->klass == TypeInfo__System__String) {
-        pSVar4 = pSVar3;
-      }
-      if (pSVar4 == (String *)0x0) goto code_?;
-      (this->fields).name = pSVar4;
-      pSVar4 = (String *)0x0;
-      if (pSVar3->klass == TypeInfo__System__String) {
-        pSVar4 = pSVar3;
-      }
-      if (pSVar4 == (String *)0x0) goto code_?;
-    }
-    func_?();
-    (this->fields).isDeleted = 0;
+  else {
     pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
              Dictionary_2_System_Byte_System_Object__get_Item
-                       (data,0x2b,
+                       (data,0x28,
                         MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
                        );
-    if (pOVar1 == (Object *)0x0) {
-      (this->fields).data = (Byte__Array *)0x0;
-code_?:
-      func_?();
+    if (pOVar1 == (Object *)0x0) goto code_?;
+    if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
+      piVar2 = (int32_t *)func_?();
+      (this->fields).itemID = *piVar2;
       pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]
                ::Dictionary_2_System_Byte_System_Object__get_Item
-                         (data,0x2d,
+                         (data,0x96,
                           MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
                          );
       if (pOVar1 == (Object *)0x0) goto code_?;
       if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
         piVar2 = (int32_t *)func_?();
-        (this->fields).slotPosition = *piVar2;
+        (this->fields).itemCategoryID = *piVar2;
         pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
                  Object]::Dictionary_2_System_Byte_System_Object__get_Item
-                           (data,0x8a,
+                           (data,0x29,
                             MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
                            );
         if (pOVar1 == (Object *)0x0) goto code_?;
-        if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Boolean->_0).element_class) {
-          pbVar5 = (bool *)func_?();
-          (this->fields).resellable = *pbVar5;
-          pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
+        if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
+          piVar2 = (int32_t *)func_?();
+          (this->fields).itemTypeID = *piVar2;
+          pSVar3 = (String *)
+                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
                    Object]::Dictionary_2_System_Byte_System_Object__get_Item
-                             (data,0x45,
+                             (data,0x2a,
                               MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
                              );
-          if (pOVar1 == (Object *)0x0) goto code_?;
-          if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
-            piVar2 = (int32_t *)func_?();
-            (this->fields).priceGold = *piVar2;
+          if (pSVar3 == (String *)0x0) {
+            (this->fields).name = (String *)0x0;
+code_?:
+            func_?(&(this->fields).name);
+            (this->fields).isDeleted = 0;
             pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
                      Object]::Dictionary_2_System_Byte_System_Object__get_Item
-                               (data,0x89,
+                               (data,0x2b,
+                                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
+                               );
+            if (pOVar1 == (Object *)0x0) {
+              (this->fields).data = (Byte__Array *)0x0;
+            }
+            else {
+              pBVar4 = (Byte__Array *)func_?();
+              if (pBVar4 == (Byte__Array *)0x0) goto code_?;
+              (this->fields).data = pBVar4;
+              iVar5 = func_?();
+              if (iVar5 == 0) goto code_?;
+            }
+            func_?();
+            pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
+                     Object]::Dictionary_2_System_Byte_System_Object__get_Item
+                               (data,0x2d,
                                 MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
                                );
             if (pOVar1 == (Object *)0x0) goto code_?;
             if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
               piVar2 = (int32_t *)func_?();
-              (this->fields).authorProfileID = *piVar2;
+              (this->fields).slotPosition = *piVar2;
               pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System
                        ::Object]::Dictionary_2_System_Byte_System_Object__get_Item
-                                 (data,0x8b,
+                                 (data,0x8a,
                                   MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
                                  );
               if (pOVar1 == (Object *)0x0) goto code_?;
-              if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class)
-              {
-                piVar2 = (int32_t *)func_?();
-                (this->fields).originalItemID = *piVar2;
-                (this->fields).purchased = 1;
-                (this->fields).isDefaultInvItem = 0;
-                return;
+              if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Boolean->_0).element_class
+                 ) {
+                pbVar6 = (bool *)func_?();
+                (this->fields).resellable = *pbVar6;
+                pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                         Byte,System::Object]::Dictionary_2_System_Byte_System_Object__get_Item
+                                   (data,0x45,
+                                    MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
+                                   );
+                if (pOVar1 == (Object *)0x0) goto code_?;
+                if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class
+                   ) {
+                  piVar2 = (int32_t *)func_?();
+                  (this->fields).priceGold = *piVar2;
+                  pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                           Byte,System::Object]::Dictionary_2_System_Byte_System_Object__get_Item
+                                     (data,0x89,
+                                      MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
+                                     );
+                  if (pOVar1 == (Object *)0x0) goto code_?;
+                  if ((pOVar1->klass->_0).element_class ==
+                      (TypeInfo__System__Int32->_0).element_class) {
+                    piVar2 = (int32_t *)func_?();
+                    (this->fields).authorProfileID = *piVar2;
+                    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                             Byte,System::Object]::Dictionary_2_System_Byte_System_Object__get_Item
+                                       (data,0x8b,
+                                        MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
+                                       );
+                    if (pOVar1 == (Object *)0x0) goto code_?;
+                    if ((pOVar1->klass->_0).element_class ==
+                        (TypeInfo__System__Int32->_0).element_class) {
+                      piVar2 = (int32_t *)func_?();
+                      (this->fields).originalItemID = *piVar2;
+                      (this->fields).purchased = 1;
+                      (this->fields).isDefaultInvItem = 0;
+                      return;
+                    }
+                  }
+                }
               }
+            }
+          }
+          else {
+            pSVar7 = (String *)0x0;
+            if (pSVar3->klass == TypeInfo__System__String) {
+              pSVar7 = pSVar3;
+            }
+            if (pSVar7 != (String *)0x0) {
+              (this->fields).name = pSVar7;
+              pSVar7 = (String *)0x0;
+              if (pSVar3->klass == TypeInfo__System__String) {
+                pSVar7 = pSVar3;
+              }
+              if (pSVar7 != (String *)0x0) goto code_?;
             }
           }
         }
       }
-      goto code_?;
     }
-    pBVar6 = (Byte__Array *)func_?();
-    if (pBVar6 != (Byte__Array *)0x0) {
-      (this->fields).data = pBVar6;
-      iVar7 = func_?();
-      if (iVar7 != 0) goto code_?;
-      goto code_?;
-    }
-  }
-  else {
-code_?:
-    func_?();
-code_?:
-    func_?();
   }
   func_?();
 code_?:
@@ -2205,104 +2202,20 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_2
   this = (InventoryItem *)CONCAT13(0x70,this._0_3_);
   pOVar1 = (Object *)func_?(TypeInfo__System__Byte,(int)&this + 3);
   this_00 = itemData;
-  if ((itemData == (Dictionary_2_System_Object_System_Object_ *)0x0) ||
+  if ((itemData != (Dictionary_2_System_Object_System_Object_ *)0x0) &&
      (TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
               UIElements::TextureId]::
               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                         ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)itemData,
                          pOVar1,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                        ), TVar2.m_Index == 0)) goto code_?;
-  if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) != (TypeInfo__System__Int32->_0).element_class
-     ) goto code_?;
-  piVar3 = (int32_t *)func_?();
-  (value->fields).itemCategoryID = *piVar3;
-  pOVar1 = (Object *)func_?();
-  TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-          UIElements::TextureId]::
-          Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                    ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_00,pOVar1,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                    );
-  if (TVar2.m_Index == 0) goto code_?;
-  if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) == (TypeInfo__System__Int32->_0).element_class
-     ) {
-    piVar3 = (int32_t *)func_?();
-    (value->fields).itemTypeID = *piVar3;
-    pOVar1 = (Object *)func_?(TypeInfo__System__Byte);
-    TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_00,
-                       pOVar1,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                      );
-    if (TVar2.m_Index != 0) {
-      TVar4.m_Index = (int32_t)(String *)0x0;
-      if (*(String__Class **)TVar2.m_Index == TypeInfo__System__String) {
-        TVar4 = TVar2;
-      }
-      if ((String *)TVar4.m_Index != (String *)0x0) {
-        (value->fields).name = (String *)TVar4.m_Index;
-        TVar4.m_Index = 0;
-        if (*(String__Class **)TVar2.m_Index == TypeInfo__System__String) {
-          TVar4 = TVar2;
-        }
-        unaff_EBX.m_Index = (int32_t)TypeInfo__System__String;
-        if (TVar4.m_Index != 0) goto code_?;
-code_?:
-        unaff_EBX.m_Index = (int32_t)TypeInfo__System__String;
-        func_?();
-      }
-      goto code_?;
-    }
-    (value->fields).name = (String *)0x0;
-code_?:
-    func_?();
-    pOVar1 = (Object *)func_?(TypeInfo__System__Byte);
-    TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_00,
-                       pOVar1,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                      );
-    if (TVar2.m_Index == 0) {
-      (value->fields).description = (String *)0x0;
-    }
-    else {
-      TVar4.m_Index = (int32_t)(String *)0x0;
-      if (*(String__Class **)TVar2.m_Index == TypeInfo__System__String) {
-        TVar4 = TVar2;
-      }
-      if ((String *)TVar4.m_Index == (String *)0x0) goto code_?;
-      (value->fields).description = (String *)TVar4.m_Index;
-      TVar4.m_Index = 0;
-      if (*(String__Class **)TVar2.m_Index == TypeInfo__System__String) {
-        TVar4 = TVar2;
-      }
-      unaff_EBX.m_Index = (int32_t)TypeInfo__System__String;
-      if (TVar4.m_Index == 0) goto code_?;
-    }
-    func_?();
-    pOVar1 = (Object *)func_?(TypeInfo__System__Byte);
-    TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_00,
-                       pOVar1,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                      );
-    if (TVar2.m_Index == 0) goto code_?;
-    if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
-        (TypeInfo__System__Boolean->_0).element_class) goto code_?;
-    pbVar5 = (bool *)func_?();
-    bVar6 = *pbVar5;
-    (value->fields).isDeleted = bVar6;
-    if (bVar6 != 0) {
-code_?:
-      unaff_EBX.m_Index = (int)&this + 3;
-      this = (InventoryItem *)CONCAT13(100,this._0_3_);
+                        ), TVar2.m_Index != 0)) {
+    if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
+        (TypeInfo__System__Int32->_0).element_class) {
+      piVar3 = (int32_t *)func_?();
+      (value->fields).itemCategoryID = *piVar3;
+      uStack_4._0_3_ = SUB43(TypeInfo__System__Byte,0);
+      uStack_4 = (Byte__Class *)CONCAT13(0xf,(undefined3)uStack_4);
       pOVar1 = (Object *)func_?();
       TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
               UIElements::TextureId]::
@@ -2311,13 +2224,28 @@ code_?:
                          pOVar1,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                         );
-      if (TVar2.m_Index != 0) {
-        if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
-            (TypeInfo__System__Boolean->_0).element_class) {
-          pbVar5 = (bool *)func_?();
-          (value->fields).resellable = *pbVar5;
-          itemID = CONCAT13(0x4b,(undefined3)itemID);
-          pOVar1 = (Object *)func_?();
+      if (TVar2.m_Index == 0) goto code_?;
+      if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
+          (TypeInfo__System__Int32->_0).element_class) {
+        piVar3 = (int32_t *)func_?();
+        (value->fields).itemTypeID = *piVar3;
+        uStack_4._3_1_ = (undefined1)((uint)TypeInfo__System__Byte >> 0x18);
+        uStack_4._0_2_ = SUB42(TypeInfo__System__Byte,0);
+        uStack_4._0_3_ = CONCAT12(10,(undefined2)uStack_4);
+        pOVar1 = (Object *)func_?();
+        TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_00,
+                           pOVar1,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                          );
+        if (TVar2.m_Index == 0) {
+          (value->fields).name = (String *)0x0;
+code_?:
+          func_?();
+          uStack_4 = (Byte__Class *)((int)&uStack_4 + 1);
+          pOVar1 = (Object *)func_?(TypeInfo__System__Byte);
           TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                   Object,UnityEngine::UIElements::TextureId]::
                   Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
@@ -2325,13 +2253,12 @@ code_?:
                              ,pOVar1,
                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                             );
-          if (TVar2.m_Index == 0) goto code_?;
-          if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
-              (TypeInfo__System__Int32->_0).element_class) {
-            piVar3 = (int32_t *)func_?();
-            (value->fields).priceGold = *piVar3;
-            itemData = (Dictionary_2_System_Object_System_Object_ *)CONCAT13(0x68,itemData._0_3_);
-            pOVar1 = (Object *)func_?();
+          if (TVar2.m_Index == 0) {
+            (value->fields).description = (String *)0x0;
+code_?:
+            func_?();
+            uStack_4 = (Byte__Class *)&uStack_4;
+            pOVar1 = (Object *)func_?(TypeInfo__System__Byte);
             TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                     Object,UnityEngine::UIElements::TextureId]::
                     Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
@@ -2341,9 +2268,57 @@ code_?:
                               );
             if (TVar2.m_Index == 0) goto code_?;
             if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
-                (TypeInfo__System__Int32->_0).element_class) {
-              piVar3 = (int32_t *)func_?();
-              (value->fields).shopInventoryID = *piVar3;
+                (TypeInfo__System__Boolean->_0).element_class) {
+              pbVar5 = (bool *)func_?();
+              bVar6 = *pbVar5;
+              (value->fields).isDeleted = bVar6;
+              if (bVar6 == 0) {
+                this = (InventoryItem *)CONCAT13(0xb,this._0_3_);
+                uStack_4 = TypeInfo__System__Byte;
+                pOVar1 = (Object *)func_?();
+                unaff_EBX = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                            Object,UnityEngine::UIElements::TextureId]::
+                            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_
+                                        *)this_00,pOVar1,
+                                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                      );
+                itemData = (Dictionary_2_System_Object_System_Object_ *)TypeInfo__System__Byte;
+                if (unaff_EBX.m_Index == 0) {
+                  (value->fields).data = (Byte__Array *)0x0;
+                  itemID = 0;
+                }
+                else {
+                  itemID = (int32_t)TypeInfo__System__Byte;
+                  this = (InventoryItem *)unaff_EBX;
+                  pBVar7 = (Byte__Array *)func_?();
+                  if (pBVar7 == (Byte__Array *)0x0) goto code_?;
+                  (value->fields).data = pBVar7;
+                  itemID = (int32_t)TypeInfo__System__Byte;
+                  itemData = (Dictionary_2_System_Object_System_Object_ *)TypeInfo__System__Byte;
+                  this = (InventoryItem *)unaff_EBX;
+                  itemID = func_?();
+                  if (itemID == 0) goto code_?;
+                }
+                this = (InventoryItem *)&(value->fields).data;
+                func_?();
+                unaff_EBX.m_Index = (int)&itemID + 3;
+                itemID = CONCAT13(0x26,(undefined3)itemID);
+                pOVar1 = (Object *)func_?();
+                TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                        Object,UnityEngine::UIElements::TextureId]::
+                        Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                  ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+                                   this_00,pOVar1,
+                                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                  );
+                if (TVar2.m_Index == 0) goto code_?;
+                if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
+                    (TypeInfo__System__Boolean->_0).element_class) goto code_?;
+                pbVar5 = (bool *)func_?();
+                (value->fields).hasData = *pbVar5;
+              }
+              this = (InventoryItem *)CONCAT13(100,this._0_3_);
               pOVar1 = (Object *)func_?();
               TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                       Object,UnityEngine::UIElements::TextureId]::
@@ -2354,9 +2329,11 @@ code_?:
                                 );
               if (TVar2.m_Index == 0) goto code_?;
               if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
-                  (TypeInfo__System__Int32->_0).element_class) {
-                piVar3 = (int32_t *)func_?();
-                (value->fields).authorProfileID = *piVar3;
+                  (TypeInfo__System__Boolean->_0).element_class) {
+                pbVar5 = (bool *)func_?();
+                (value->fields).resellable = *pbVar5;
+                uStack_4 = TypeInfo__System__Byte;
+                itemID = CONCAT13(0x4b,(undefined3)itemID);
                 pOVar1 = (Object *)func_?();
                 TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                         Object,UnityEngine::UIElements::TextureId]::
@@ -2369,36 +2346,10 @@ code_?:
                 if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
                     (TypeInfo__System__Int32->_0).element_class) {
                   piVar3 = (int32_t *)func_?();
-                  (value->fields).originalItemID = *piVar3;
-                  pOVar1 = (Object *)func_?();
-                  bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                          Object,UnityEngine::UIElements::TextureId]::
-                          Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                                    ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *
-                                     )this_00,pOVar1,
-                                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                                    );
-                  if (bVar6 != 0) {
-                    itemData = (Dictionary_2_System_Object_System_Object_ *)((int)&this + 3);
-                    itemID = (int32_t)TypeInfo__System__Byte;
-                    this = (InventoryItem *)&UNK_?;
-                    pOVar1 = (Object *)func_?();
-                    TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                            Object,UnityEngine::UIElements::TextureId]::
-                            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_
-                                        *)this_00,pOVar1,
-                                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                      );
-                    if (TVar2.m_Index == 0) goto code_?;
-                    if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
-                        (TypeInfo__System__Boolean->_0).element_class) goto code_?;
-                    pbVar5 = (bool *)func_?();
-                    (value->fields).purchased = *pbVar5;
-                  }
-                  itemData = (Dictionary_2_System_Object_System_Object_ *)((int)&this + 3);
-                  itemID = (int32_t)TypeInfo__System__Byte;
-                  this = (InventoryItem *)&UNK_?;
+                  (value->fields).priceGold = *piVar3;
+                  uStack_4 = TypeInfo__System__Byte;
+                  itemData = (Dictionary_2_System_Object_System_Object_ *)
+                             CONCAT13(0x68,itemData._0_3_);
                   pOVar1 = (Object *)func_?();
                   TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                           Object,UnityEngine::UIElements::TextureId]::
@@ -2409,24 +2360,11 @@ code_?:
                                     );
                   if (TVar2.m_Index == 0) goto code_?;
                   if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
-                      (TypeInfo__System__Boolean->_0).element_class) {
-                    pbVar5 = (bool *)func_?();
-                    (value->fields).isDefaultInvItem = *pbVar5;
-                    itemID = CONCAT13(0xc,(undefined3)itemID);
-                    pOVar1 = (Object *)func_?();
-                    bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                            Object,UnityEngine::UIElements::TextureId]::
-                            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_
-                                        *)this_00,pOVar1,
-                                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                                      );
-                    if (bVar6 == 0) {
-                      return;
-                    }
-                    itemData = (Dictionary_2_System_Object_System_Object_ *)((int)&this + 3);
-                    itemID = (int32_t)TypeInfo__System__Byte;
-                    this = (InventoryItem *)&UNK_?;
+                      (TypeInfo__System__Int32->_0).element_class) {
+                    piVar3 = (int32_t *)func_?();
+                    (value->fields).shopInventoryID = *piVar3;
+                    uStack_4 = (Byte__Class *)
+                               CONCAT31((int3)((uint)TypeInfo__System__Byte >> 8),0x66);
                     pOVar1 = (Object *)func_?();
                     TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                             Object,UnityEngine::UIElements::TextureId]::
@@ -2435,24 +2373,116 @@ code_?:
                                         *)this_00,pOVar1,
                                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                                       );
-                    if (TVar2.m_Index == 0) {
-                      (value->fields).imagePath = (String *)0x0;
-                      func_?();
-                      return;
-                    }
-                    TVar4.m_Index = (int32_t)(String *)0x0;
-                    if (*(String__Class **)TVar2.m_Index == TypeInfo__System__String) {
-                      TVar4 = TVar2;
-                    }
-                    if ((String *)TVar4.m_Index != (String *)0x0) {
-                      (value->fields).imagePath = (String *)TVar4.m_Index;
-                      TVar4.m_Index = 0;
-                      if (*(String__Class **)TVar2.m_Index == TypeInfo__System__String) {
-                        TVar4 = TVar2;
-                      }
-                      if (TVar4.m_Index != 0) {
-                        func_?();
-                        return;
+                    if (TVar2.m_Index == 0) goto code_?;
+                    if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
+                        (TypeInfo__System__Int32->_0).element_class) {
+                      piVar3 = (int32_t *)func_?();
+                      (value->fields).authorProfileID = *piVar3;
+                      uStack_4._2_2_ = (undefined2)((uint)TypeInfo__System__Byte >> 0x10);
+                      uStack_4._0_2_ = CONCAT11(0x6a,(char)TypeInfo__System__Byte);
+                      pOVar1 = (Object *)func_?();
+                      TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                              Object,UnityEngine::UIElements::TextureId]::
+                              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_
+                                          *)this_00,pOVar1,
+                                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                        );
+                      if (TVar2.m_Index == 0) goto code_?;
+                      if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
+                          (TypeInfo__System__Int32->_0).element_class) {
+                        piVar3 = (int32_t *)func_?();
+                        (value->fields).originalItemID = *piVar3;
+                        uStack_4._3_1_ = (undefined1)((uint)TypeInfo__System__Byte >> 0x18);
+                        uStack_4._0_2_ = SUB42(TypeInfo__System__Byte,0);
+                        uStack_4._0_3_ = CONCAT12(0x22,(undefined2)uStack_4);
+                        pOVar1 = (Object *)func_?();
+                        bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                                Object,UnityEngine::UIElements::TextureId]::
+                                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_
+                                            *)this_00,pOVar1,
+                                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                                          );
+                        if (bVar6 != 0) {
+                          itemData = (Dictionary_2_System_Object_System_Object_ *)((int)&this + 3);
+                          itemID = (int32_t)TypeInfo__System__Byte;
+                          this = (InventoryItem *)&UNK_?;
+                          pOVar1 = (Object *)func_?();
+                          TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                                  Object,UnityEngine::UIElements::TextureId]::
+                                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                            ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_
+                                              *)this_00,pOVar1,
+                                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                            );
+                          if (TVar2.m_Index == 0) goto code_?;
+                          if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
+                              (TypeInfo__System__Boolean->_0).element_class) goto code_?;
+                          pbVar5 = (bool *)func_?();
+                          (value->fields).purchased = *pbVar5;
+                        }
+                        itemData = (Dictionary_2_System_Object_System_Object_ *)((int)&this + 3);
+                        itemID = (int32_t)TypeInfo__System__Byte;
+                        this = (InventoryItem *)&UNK_?;
+                        pOVar1 = (Object *)func_?();
+                        TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                                Object,UnityEngine::UIElements::TextureId]::
+                                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_
+                                            *)this_00,pOVar1,
+                                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                          );
+                        if (TVar2.m_Index == 0) goto code_?;
+                        if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
+                            (TypeInfo__System__Boolean->_0).element_class) {
+                          pbVar5 = (bool *)func_?();
+                          (value->fields).isDefaultInvItem = *pbVar5;
+                          uStack_4 = TypeInfo__System__Byte;
+                          itemID = CONCAT13(0xc,(undefined3)itemID);
+                          pOVar1 = (Object *)func_?();
+                          bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                                  Object,UnityEngine::UIElements::TextureId]::
+                                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                                            ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_
+                                              *)this_00,pOVar1,
+                                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                                            );
+                          if (bVar6 == 0) {
+                            return;
+                          }
+                          itemData = (Dictionary_2_System_Object_System_Object_ *)((int)&this + 3);
+                          itemID = (int32_t)TypeInfo__System__Byte;
+                          this = (InventoryItem *)&UNK_?;
+                          pOVar1 = (Object *)func_?();
+                          TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                                  Object,UnityEngine::UIElements::TextureId]::
+                                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                                            ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_
+                                              *)this_00,pOVar1,
+                                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                            );
+                          if (TVar2.m_Index == 0) {
+                            (value->fields).imagePath = (String *)0x0;
+                            func_?();
+                            return;
+                          }
+                          TVar8.m_Index = (int32_t)(String *)0x0;
+                          if (*(String__Class **)TVar2.m_Index == TypeInfo__System__String) {
+                            TVar8 = TVar2;
+                          }
+                          if ((String *)TVar8.m_Index != (String *)0x0) {
+                            (value->fields).imagePath = (String *)TVar8.m_Index;
+                            TVar8.m_Index = 0;
+                            if (*(String__Class **)TVar2.m_Index == TypeInfo__System__String) {
+                              TVar8 = TVar2;
+                            }
+                            if (TVar8.m_Index != 0) {
+                              func_?();
+                              return;
+                            }
+                          }
+                        }
                       }
                     }
                   }
@@ -2460,69 +2490,45 @@ code_?:
               }
             }
           }
+          else {
+            TVar8.m_Index = (int32_t)(String *)0x0;
+            if (*(String__Class **)TVar2.m_Index == TypeInfo__System__String) {
+              TVar8 = TVar2;
+            }
+            if ((String *)TVar8.m_Index != (String *)0x0) {
+              (value->fields).description = (String *)TVar8.m_Index;
+              TVar8.m_Index = 0;
+              if (*(String__Class **)TVar2.m_Index == TypeInfo__System__String) {
+                TVar8 = TVar2;
+              }
+              if (TVar8.m_Index != 0) goto code_?;
+            }
+          }
         }
-        goto code_?;
+        else {
+          TVar8.m_Index = (int32_t)(String *)0x0;
+          if (*(String__Class **)TVar2.m_Index == TypeInfo__System__String) {
+            TVar8 = TVar2;
+          }
+          if ((String *)TVar8.m_Index != (String *)0x0) {
+            (value->fields).name = (String *)TVar8.m_Index;
+            TVar8.m_Index = 0;
+            if (*(String__Class **)TVar2.m_Index == TypeInfo__System__String) {
+              TVar8 = TVar2;
+            }
+            if (TVar8.m_Index != 0) goto code_?;
+          }
+        }
       }
-      goto code_?;
     }
-    this = (InventoryItem *)CONCAT13(0xb,this._0_3_);
-    pOVar1 = (Object *)func_?();
-    unaff_EBX = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                ::UIElements::TextureId]::
-                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_00,
-                           pOVar1,
-                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                          );
-    if (unaff_EBX.m_Index == 0) {
-      pDVar7 = (Dictionary_2_System_Object_System_Object_ *)0x0;
-      (value->fields).data = (Byte__Array *)0x0;
-code_?:
-      itemID = (int32_t)&(value->fields).data;
-      this = (InventoryItem *)&UNK_?;
-      itemData = pDVar7;
-      func_?();
-      this = (InventoryItem *)((int)&itemID + 3);
-      itemID = CONCAT13(0x26,(undefined3)itemID);
-      pOVar1 = (Object *)func_?();
-      TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-              UIElements::TextureId]::
-              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_00,
-                         pOVar1,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                        );
-      if (TVar2.m_Index == 0) goto code_?;
-      if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
-          (TypeInfo__System__Boolean->_0).element_class) goto code_?;
-      pbVar5 = (bool *)func_?();
-      (value->fields).hasData = *pbVar5;
-      goto code_?;
-    }
-    itemData = (Dictionary_2_System_Object_System_Object_ *)TypeInfo__System__Byte;
-    this = (InventoryItem *)&UNK_?;
-    itemID = unaff_EBX.m_Index;
-    pBVar8 = (Byte__Array *)func_?();
-    if (pBVar8 == (Byte__Array *)0x0) goto code_?;
-    (value->fields).data = pBVar8;
-    itemData = (Dictionary_2_System_Object_System_Object_ *)TypeInfo__System__Byte;
-    this = (InventoryItem *)&UNK_?;
-    itemID = unaff_EBX.m_Index;
-    pDVar7 = (Dictionary_2_System_Object_System_Object_ *)func_?();
-    if (pDVar7 != (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-  }
-  else {
-code_?:
-    func_?();
 code_?:
     func_?();
   }
-  this = (InventoryItem *)&UNK_?;
-  itemID = unaff_EBX.m_Index;
+code_?:
   func_?();
 code_?:
-  this = (InventoryItem *)&UNK_?;
-  itemID = unaff_EBX.m_Index;
+  itemID = (int32_t)itemData;
+  this = (InventoryItem *)unaff_EBX.m_Index;
   func_?();
   pcVar9 = (code *)swi(3);
   (*pcVar9)();
@@ -2541,22 +2547,19 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_3
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   if (itemToCopy != (ShopItem *)0x0) {
-    ppSVar1 = &(this->fields).name;
     (this->fields).itemID = (itemToCopy->fields).itemID;
     (this->fields).itemCategoryID = (itemToCopy->fields).itemCategoryID;
     (this->fields).itemTypeID = (itemToCopy->fields).itemTypeID;
-    pSVar2 = (itemToCopy->fields).name;
-    *ppSVar1 = pSVar2;
-    func_?(ppSVar1,pSVar2);
-    pSVar2 = (itemToCopy->fields).description;
-    ppSVar1 = &(this->fields).description;
-    *ppSVar1 = pSVar2;
-    func_?(ppSVar1,pSVar2);
+    pSVar1 = (itemToCopy->fields).name;
+    (this->fields).name = pSVar1;
+    func_?(&(this->fields).name,pSVar1);
+    pSVar1 = (itemToCopy->fields).description;
+    (this->fields).description = pSVar1;
+    func_?(&(this->fields).description,pSVar1);
     (this->fields).isDeleted = 0;
-    ppBVar3 = &(this->fields).data;
-    pBVar4 = (itemToCopy->fields).data;
-    *ppBVar3 = pBVar4;
-    func_?(ppBVar3,pBVar4);
+    pBVar2 = (itemToCopy->fields).data;
+    (this->fields).data = pBVar2;
+    func_?(&(this->fields).data,pBVar2);
     (this->fields).resellable = (itemToCopy->fields).resellable;
     (this->fields).priceGold = (itemToCopy->fields).priceGold;
     (this->fields).purchased = 1;
@@ -2564,8 +2567,8 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_3
     return;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

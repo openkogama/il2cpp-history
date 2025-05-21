@@ -19,17 +19,16 @@ bool Assembly-CSharp.dll::CoroutineWorker+<Run>d__1::CoroutineWorker_Run_d_1_Mov
       pCVar2 = UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
                MonoBehaviour_StartCoroutine_Auto(this_00,(this->fields).coroutine,(MethodInfo *)0x0)
       ;
-      ppOVar3 = &(this->fields).__2__current;
-      *ppOVar3 = (Object *)pCVar2;
-      func_?(ppOVar3,pCVar2);
+      (this->fields).__2__current = (Object *)pCVar2;
+      func_?(&(this->fields).__2__current,pCVar2);
       (this->fields).__1__state = 1;
       return 1;
     }
 code_?:
     func_?();
-    pcVar4 = (code *)swi(3);
-    bVar5 = (*pcVar4)();
-    return bVar5;
+    pcVar3 = (code *)swi(3);
+    bVar4 = (*pcVar3)();
+    return bVar4;
   }
   if (iVar1 == 1) {
     (this->fields).__1__state = -1;

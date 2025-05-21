@@ -373,18 +373,20 @@ void Assembly-CSharp.dll::FirstTimeActivatablePointerWaitForCubeTool::
                        ((Object *)pFVar1,
                         FirstTimeEventPopupWithProgress_MethodInfo__UnityEngine__Object__Instantiate<FirstTimeEventPopupWithProgress>_FirstTimeEventPopupWithProgress_
                        );
-    ppFVar2 = &(this->fields).popup;
-    *ppFVar2 = pFVar1;
-    func_?(ppFVar2,pFVar1);
-    if (*ppFVar2 != (FirstTimeEventPopupWithProgress *)0x0) {
+    (this->fields).popup = pFVar1;
+    func_?(&(this->fields).popup,pFVar1);
+    pFVar1 = (this->fields).popup;
+    if (pFVar1 != (FirstTimeEventPopupWithProgress *)0x0) {
       FirstTimeEventPopup::FirstTimeEventPopup_SetSkippable
-                ((FirstTimeEventPopup *)*ppFVar2,(this->fields).skipAllowed,(MethodInfo *)0x0);
-      if (*ppFVar2 != (FirstTimeEventPopupWithProgress *)0x0) {
+                ((FirstTimeEventPopup *)pFVar1,(this->fields).skipAllowed,(MethodInfo *)0x0);
+      pFVar1 = (this->fields).popup;
+      if (pFVar1 != (FirstTimeEventPopupWithProgress *)0x0) {
         FirstTimeEventPopup::FirstTimeEventPopup_FadeIn
-                  ((FirstTimeEventPopup *)*ppFVar2,(MethodInfo *)0x0);
-        if (*ppFVar2 != (FirstTimeEventPopupWithProgress *)0x0) {
+                  ((FirstTimeEventPopup *)pFVar1,(MethodInfo *)0x0);
+        pFVar1 = (this->fields).popup;
+        if (pFVar1 != (FirstTimeEventPopupWithProgress *)0x0) {
           FirstTimeEventPopupWithProgress::FirstTimeEventPopupWithProgress_SetProgress
-                    (*ppFVar2,(float)(this->fields).currentChangeCount,
+                    (pFVar1,(float)(this->fields).currentChangeCount,
                      (float)(this->fields).numberOfChangesBeforePointer,(MethodInfo *)0x0);
           root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)this,(MethodInfo *)0x0);
@@ -408,8 +410,8 @@ void Assembly-CSharp.dll::FirstTimeActivatablePointerWaitForCubeTool::
       }
     }
     func_?();
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {

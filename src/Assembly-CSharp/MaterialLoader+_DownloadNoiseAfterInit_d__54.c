@@ -18,9 +18,8 @@ bool Assembly-CSharp.dll::MaterialLoader+<DownloadNoiseAfterInit>d__54::
               func_?(TypeInfo__UnityEngine__WaitForSeconds);
     SubscribableVariable`1[System::Single]::SubscribableVariable_1_System_Single___ctor
               (this_01,3.0,(MethodInfo *)0x0);
-    ppOVar2 = &(this->fields).__2__current;
-    *ppOVar2 = (Object *)this_01;
-    func_?(ppOVar2,this_01);
+    (this->fields).__2__current = (Object *)this_01;
+    func_?(&(this->fields).__2__current,this_01);
     (this->fields).__1__state = 1;
     return 1;
   }
@@ -28,9 +27,9 @@ bool Assembly-CSharp.dll::MaterialLoader+<DownloadNoiseAfterInit>d__54::
     (this->fields).__1__state = -1;
     if (this_00 == (MaterialLoader *)0x0) {
       func_?();
-      pcVar3 = (code *)swi(3);
-      bVar4 = (*pcVar3)();
-      return bVar4;
+      pcVar2 = (code *)swi(3);
+      bVar3 = (*pcVar2)();
+      return bVar3;
     }
     MaterialLoader::MaterialLoader_DownloadNoiseWhenPossible(this_00,(MethodInfo *)0x0);
   }

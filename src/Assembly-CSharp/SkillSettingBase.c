@@ -44,65 +44,58 @@ void Assembly-CSharp.dll::SkillSettingBase::SkillSettingBase_Initialize
                UnityAction *cantRemoveSkillCallback,MethodInfo *method)
 
 {
-  ppSVar1 = &(this->fields).skillDataManager;
-  *ppSVar1 = skillDataManager;
-  func_?(ppSVar1,skillDataManager);
-  ppKVar2 = &(this->fields).skillSetting;
+  (this->fields).skillDataManager = skillDataManager;
+  func_?(&(this->fields).skillDataManager,skillDataManager);
   (this->fields).currentSkillCost = skillCost;
   (this->fields).spawnRoleCost = spawnRoleCost;
   (this->fields).spawnRoleTier = (undefined1)spawnRoleTier;
-  *ppKVar2 = skillSetting;
-  func_?(ppKVar2,skillSetting);
-  ppUVar3 = &(this->fields).removeSkillCallback;
-  *ppUVar3 = removeSkillCallback;
-  func_?(ppUVar3,removeSkillCallback);
-  ppUVar3 = &(this->fields).updateSkillCallback;
-  *ppUVar3 = updateSkillCallback;
-  func_?(ppUVar3,updateSkillCallback);
-  ppUVar4 = &(this->fields).cantUpdateSkillCallback;
-  *ppUVar4 = cantUpdateSkillCallback;
-  func_?(ppUVar4,cantUpdateSkillCallback);
-  ppUVar4 = &(this->fields).cantRemoveSkillCallback;
-  *ppUVar4 = cantRemoveSkillCallback;
-  func_?(ppUVar4,cantRemoveSkillCallback);
-  pTVar5 = (this->fields).nameText;
+  (this->fields).skillSetting = skillSetting;
+  func_?(&(this->fields).skillSetting,skillSetting);
+  (this->fields).removeSkillCallback = removeSkillCallback;
+  func_?(&(this->fields).removeSkillCallback,removeSkillCallback);
+  (this->fields).updateSkillCallback = updateSkillCallback;
+  func_?(&(this->fields).updateSkillCallback,updateSkillCallback);
+  (this->fields).cantUpdateSkillCallback = cantUpdateSkillCallback;
+  func_?(&(this->fields).cantUpdateSkillCallback,cantUpdateSkillCallback);
+  (this->fields).cantRemoveSkillCallback = cantRemoveSkillCallback;
+  func_?(&(this->fields).cantRemoveSkillCallback,cantRemoveSkillCallback);
+  pTVar1 = (this->fields).nameText;
   if (skillDataManager != (SpawnRolesSkillDataManager *)0x0) {
-    pSVar6 = SpawnRolesSkillDataManager::SpawnRolesSkillDataManager_GetNameText
+    pSVar2 = SpawnRolesSkillDataManager::SpawnRolesSkillDataManager_GetNameText
                        (skillDataManager,skill,(MethodInfo *)0x0);
-    if (pTVar5 != (Text *)0x0) {
-      (*(code *)(pTVar5->klass->vtable).set_text.method)
-                (pTVar5,pSVar6,(pTVar5->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-      pTVar5 = (this->fields).skillCostText;
-      pSVar6 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&skillCost,(MethodInfo *)0x0);
-      if (pTVar5 != (Text *)0x0) {
-        (*(code *)(pTVar5->klass->vtable).set_text.method)
-                  (pTVar5,pSVar6,(pTVar5->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr)
+    if (pTVar1 != (Text *)0x0) {
+      (*(code *)(pTVar1->klass->vtable).set_text.method)
+                (pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+      pTVar1 = (this->fields).skillCostText;
+      pSVar2 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&skillCost,(MethodInfo *)0x0);
+      if (pTVar1 != (Text *)0x0) {
+        (*(code *)(pTVar1->klass->vtable).set_text.method)
+                  (pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr)
         ;
-        pTVar5 = (this->fields).skillCostText;
-        pCVar7 = SpawnRolesSkillDataManager::SpawnRolesSkillDataManager_GetCostColor
-                           (&CStack_8,skillCost,(MethodInfo *)0x0);
-        if (pTVar5 != (Text *)0x0) {
-          (*(code *)(pTVar5->klass->vtable).set_color.method)
-                    (pTVar5,pCVar7->r,pCVar7->g,pCVar7->b,pCVar7->a,
-                     (pTVar5->klass->vtable).get_raycastTarget.methodPtr);
-          pSVar9 = SpawnRolesSkillDataManager::SpawnRolesSkillDataManager_GetImageClone
-                              (skillDataManager,skill,(this->fields).iconColor,
-                               (this->fields).iconBackgroundColor,(this->fields).iconWidth,
-                               (this->fields).iconHeight,(MethodInfo *)0x0);
-          ppSVar10 = &(this->fields).skillIcon;
-          *ppSVar10 = pSVar9;
-          func_?(ppSVar10,pSVar9);
-          pSVar9 = (this->fields).skillIcon;
-          if (pSVar9 != (SpawnRoleSkillIconController *)0x0) {
+        pTVar1 = (this->fields).skillCostText;
+        pCVar3 = SpawnRolesSkillDataManager::SpawnRolesSkillDataManager_GetCostColor
+                           (&CStack_4,skillCost,(MethodInfo *)0x0);
+        if (pTVar1 != (Text *)0x0) {
+          (*(code *)(pTVar1->klass->vtable).set_color.method)
+                    (pTVar1,pCVar3->r,pCVar3->g,pCVar3->b,pCVar3->a,
+                     (pTVar1->klass->vtable).get_raycastTarget.methodPtr);
+          pSVar5 = SpawnRolesSkillDataManager::SpawnRolesSkillDataManager_GetImageClone
+                             (skillDataManager,skill,(this->fields).iconColor,
+                              (this->fields).iconBackgroundColor,(this->fields).iconWidth,
+                              (this->fields).iconHeight,(MethodInfo *)0x0);
+          (this->fields).skillIcon = pSVar5;
+          func_?(&(this->fields).skillIcon,pSVar5);
+          pSVar5 = (this->fields).skillIcon;
+          if (pSVar5 != (SpawnRoleSkillIconController *)0x0) {
             this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                ((Component *)pSVar9,(MethodInfo *)0x0);
+                                ((Component *)pSVar5,(MethodInfo *)0x0);
             if (this_00 != (Transform *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
                         (this_00,(this->fields).imageContainer,0,(MethodInfo *)0x0);
-              pSVar9 = (this->fields).skillIcon;
-              if (pSVar9 != (SpawnRoleSkillIconController *)0x0) {
+              pSVar5 = (this->fields).skillIcon;
+              if (pSVar5 != (SpawnRoleSkillIconController *)0x0) {
                 SpawnRoleSkillIconController::SpawnRoleSkillIconController_HandleNegativeState
-                          (pSVar9,skillCost,(MethodInfo *)0x0);
+                          (pSVar5,skillCost,(MethodInfo *)0x0);
                 (*(code *)(this->klass->vtable).InitializeInfoButton.method)
                           (this,skill,skillCost,skillDataManager,this->klass[1]._0.image);
                 return;
@@ -114,8 +107,8 @@ void Assembly-CSharp.dll::SkillSettingBase::SkillSettingBase_Initialize
     }
   }
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -136,21 +129,18 @@ void Assembly-CSharp.dll::SkillSettingBase::SkillSettingBase_InitializeInfoButto
   pSVar2 = (pSVar1->fields).infoButton;
   pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&this);
   if (pSVar2 != (SpawnRoleSkillInfoButton *)0x0) {
-    ppSVar4 = &(pSVar2->fields).skillType;
-    *ppSVar4 = skill;
-    func_?(ppSVar4,skill);
-    ppOVar5 = &(pSVar2->fields).skillValue;
-    *ppOVar5 = pOVar3;
-    func_?(ppOVar5,pOVar3);
-    ppSVar6 = &(pSVar2->fields).skillDataManager;
-    *ppSVar6 = skillDataManager;
-    func_?(ppSVar6,skillDataManager);
+    (pSVar2->fields).skillType = skill;
+    func_?(&(pSVar2->fields).skillType,skill);
+    (pSVar2->fields).skillValue = pOVar3;
+    func_?(&(pSVar2->fields).skillValue,pOVar3);
+    (pSVar2->fields).skillDataManager = skillDataManager;
+    func_?(&(pSVar2->fields).skillDataManager,skillDataManager);
     (pSVar2->fields).skillCost = skillCost;
     return;
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -213,40 +203,42 @@ void Assembly-CSharp.dll::SkillSettingBase::SkillSettingBase_UpdateSkillCost
   pIVar1 = 
   TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
   ;
-  this_01 = (this->fields).skillSetting;
-  if (this_01 != (KogamaSettingValueWrapperBase *)0x0) {
-    iVar2 = func_?(this_01,
+  pTVar2 = (Text *)(this->fields).skillSetting;
+  if (pTVar2 != (Text *)0x0) {
+    iVar3 = func_?(pTVar2,
                             TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
                            );
-    pIVar3 = 
+    pIVar4 = 
     TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
     ;
-    if (iVar2 == 0) goto code_?;
-    iVar2 = func_?(this_01,
+    if (iVar3 == 0) goto code_?;
+    iVar3 = func_?(pTVar2,
                             TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
                            );
-    pIVar1 = pIVar3;
-    if (iVar2 == 0) goto code_?;
-    this_01 = (KogamaSettingValueWrapperBase *)&(this->fields).currentSkillCost;
-    iVar4 = func_?(0,
+    pIVar1 = pIVar4;
+    if (iVar3 == 0) goto code_?;
+    iVar5 = func_?(0,
                             TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-                            ,iVar2);
-    pIVar1 = (IAttributeSetting__Class *)(this->fields).skillCostText;
-    *(int32_t *)this_01 = iVar4;
-    pSVar5 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)this_01,(MethodInfo *)0x0);
-    if (pIVar1 != (IAttributeSetting__Class *)0x0) {
-      pIVar6 = (pIVar1->_0).image;
-      (*(code *)pIVar6[0x12].name)(pIVar1,pSVar5,pIVar6[0x12].nameNoExt);
+                            ,iVar3);
+    pTVar2 = (this->fields).skillCostText;
+    (this->fields).currentSkillCost = iVar5;
+    pSVar6 = mscorlib.dll::System::Int32::Int32_ToString
+                       ((Int32 *)&(this->fields).currentSkillCost,(MethodInfo *)0x0);
+    if (pTVar2 != (Text *)0x0) {
+      (*(code *)(pTVar2->klass->vtable).set_text.method)
+                (pTVar2,pSVar6,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr)
+      ;
       this_00 = (this->fields).skillIcon;
       if (this_00 != (SpawnRoleSkillIconController *)0x0) {
         SpawnRoleSkillIconController::SpawnRoleSkillIconController_HandleNegativeState
-                  (this_00,*(int32_t *)this_01,(MethodInfo *)0x0);
+                  (this_00,(this->fields).currentSkillCost,(MethodInfo *)0x0);
         pSVar7 = (this->fields).infoButton;
         if (pSVar7 != (SpawnRoleSkillInfoButton *)0x0) {
-          (pSVar7->fields).skillCost = *(int32_t *)this_01;
+          (pSVar7->fields).skillCost = (this->fields).currentSkillCost;
           pTVar8 = (this->fields).skillCostText;
           pCVar9 = SpawnRolesSkillDataManager::SpawnRolesSkillDataManager_GetCostColor
-                             (&CStack_10,*(int32_t *)this_01,(MethodInfo *)0x0);
+                             (&CStack_10,(this->fields).currentSkillCost,(MethodInfo *)0x0);
+          pTVar2 = (Text *)0x0;
           if (pTVar8 != (Text *)0x0) {
             (*(code *)(pTVar8->klass->vtable).set_color.method)
                       (pTVar8,pCVar9->r,pCVar9->g,pCVar9->b,pCVar9->a,
@@ -259,7 +251,7 @@ void Assembly-CSharp.dll::SkillSettingBase::SkillSettingBase_UpdateSkillCost
   }
   func_?();
 code_?:
-  func_?(this_01,pIVar1);
+  func_?(pTVar2,pIVar1);
   pcVar11 = (code *)swi(3);
   (*pcVar11)();
   return;
@@ -275,9 +267,9 @@ void Assembly-CSharp.dll::SkillSettingBase::SkillSettingBase_UpdateSkillData
   pOStack_1 = (Object *)&stack0xfffffffc;
   pSVar2 = (this->fields).infoButton;
   if (pSVar2 != (SpawnRoleSkillInfoButton *)0x0) {
-    ppOStack_3 = &(pSVar2->fields).skillValue;
     pOStack_1 = newValue;
-    *ppOStack_3 = newValue;
+    (pSVar2->fields).skillValue = newValue;
+    ppOStack_3 = &(pSVar2->fields).skillValue;
     func_?();
     return;
   }

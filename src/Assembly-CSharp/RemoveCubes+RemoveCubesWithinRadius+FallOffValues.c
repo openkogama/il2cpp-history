@@ -106,22 +106,23 @@ void Assembly-CSharp.dll::RemoveCubes+RemoveCubesWithinRadius+FallOffValues::
   }
   TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->static_fields->numFallOffValues =
        (int)fVar3;
-  iVar4 = TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->static_fields->
+  iVar4 = 0;
+  iVar5 = TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->static_fields->
           numFallOffValues;
-  iVar5 = 0;
   while( true ) {
     if ((TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->_1).
         cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     if (TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->static_fields->
-        numFallOffValues <= iVar5) {
+        numFallOffValues <= iVar4) {
       return;
     }
-    fStack_6 = (float)(iVar5 + 1) * _UNK_?;
+    fStack_6 = (float)(iVar4 + 1) * _UNK_?;
     if (fVar1 < fStack_6) {
-      fStack_6 = (fVar1 - (float)iVar5 * _UNK_?) + (float)iVar5 * _UNK_?;
+      fStack_6 = (fVar1 - (float)iVar4 * _UNK_?) + (float)iVar4 * _UNK_?;
     }
+    fVar2 = (float)iVar4;
     if ((TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->_1).
         cctor_finished_or_no_cctor == 0) {
       func_?();
@@ -133,8 +134,8 @@ void Assembly-CSharp.dll::RemoveCubes+RemoveCubesWithinRadius+FallOffValues::
     if (TypeInfo__RemoveCubes_RemoveCubesWithinRadius__FallOffValues->static_fields->fallOffValues
         == (RemoveCubes_RemoveCubesWithinRadius_FallOffValues_FallOffValue__Array *)0x0) break;
     iVar8 = func_?();
-    *(float *)(iVar8 + 4) = centerDamage - (float)iVar5 * (centerDamage / (float)iVar4);
-    iVar5 = iVar5 + 1;
+    iVar4 = iVar4 + 1;
+    *(float *)(iVar8 + 4) = centerDamage - fVar2 * (centerDamage / (float)iVar5);
   }
   func_?();
   pcVar9 = (code *)swi(3);

@@ -12,23 +12,23 @@ void Assembly-CSharp.dll::ModifierIndicator::ModifierIndicator_Awake
   }
   pMVar1 = (ModifierIndicator_OverlayWrapper__Array *)
            func_?(TypeInfo__ModifierIndicator__OverlayWrapper,3);
-  ppMVar2 = &(this->fields).modifierIndicators;
-  *ppMVar2 = pMVar1;
-  func_?(ppMVar2,pMVar1);
-  pIVar3 = (this->fields).poisonOverlay.image;
-  pIVar4 = (this->fields).poisonOverlay.animator;
-  pSVar5 = (this->fields).poisonOverlay.streamComponent;
-  pCVar6 = (this->fields).poisonOverlay.alphaHandler;
-  pMVar1 = *ppMVar2;
-  pAVar7 = (this->fields).fadeOutCurve;
-  pMVar8 = (ModifierIndicator_OverlayWrapper *)
+  (this->fields).modifierIndicators = pMVar1;
+  func_?(&(this->fields).modifierIndicators,pMVar1);
+  pIVar2 = (this->fields).poisonOverlay.image;
+  pIVar3 = (this->fields).poisonOverlay.animator;
+  pSVar4 = (this->fields).poisonOverlay.streamComponent;
+  pCVar5 = (this->fields).poisonOverlay.alphaHandler;
+  pMVar1 = (this->fields).modifierIndicators;
+  pAVar6 = (this->fields).fadeOutCurve;
+  pMVar7 = (ModifierIndicator_OverlayWrapper *)
            func_?(TypeInfo__ModifierIndicator__OverlayWrapper);
-  overlayImage.animator = pIVar4;
-  overlayImage.image = pIVar3;
-  overlayImage.streamComponent = pSVar5;
-  overlayImage.alphaHandler = pCVar6;
+  overlayImage.animator = pIVar3;
+  overlayImage.image = pIVar2;
+  overlayImage.streamComponent = pSVar4;
+  overlayImage.alphaHandler = pCVar5;
+  pMVar8 = pMVar7;
   ModifierIndicator+OverlayWrapper::ModifierIndicator_OverlayWrapper__ctor
-            (pMVar8,overlayImage,pAVar7,(MethodInfo *)0x0);
+            (pMVar7,overlayImage,pAVar6,(MethodInfo *)0x0);
   if (pMVar1 == (ModifierIndicator_OverlayWrapper__Array *)0x0) {
 code_?:
     func_?();
@@ -40,51 +40,52 @@ code_?:
     func_?(uVar9);
   }
   else {
-    if (pMVar8 != (ModifierIndicator_OverlayWrapper *)0x0) {
-      iVar10 = func_?(pMVar8,(pMVar1->klass->_0).element_class);
+    if (pMVar7 != (ModifierIndicator_OverlayWrapper *)0x0) {
+      iVar10 = func_?(pMVar7,(pMVar1->klass->_0).element_class,pMVar8);
       if (iVar10 != 0) goto code_?;
       goto code_?;
     }
 code_?:
     if (pMVar1->max_length == 0) goto code_?;
-    pMVar1->vector[0] = pMVar8;
-    func_?(pMVar1->vector,pMVar8);
-    pIVar4 = (this->fields).fireOverlay.animator;
-    pSVar5 = (this->fields).fireOverlay.streamComponent;
-    pCVar6 = (this->fields).fireOverlay.alphaHandler;
-    pMVar1 = *ppMVar2;
-    pAVar7 = (this->fields).fadeOutCurve;
+    pMVar1->vector[0] = pMVar7;
+    func_?(pMVar1->vector,pMVar7);
+    pIVar3 = (this->fields).fireOverlay.animator;
+    pSVar4 = (this->fields).fireOverlay.streamComponent;
+    pCVar5 = (this->fields).fireOverlay.alphaHandler;
+    pMVar1 = (this->fields).modifierIndicators;
+    pAVar6 = (this->fields).fadeOutCurve;
     puVar11 = &UNK_?;
-    pMVar8 = (ModifierIndicator_OverlayWrapper *)func_?();
-    overlayImage_00.animator = pIVar4;
+    pMVar7 = (ModifierIndicator_OverlayWrapper *)func_?();
+    overlayImage_00.animator = pIVar3;
     overlayImage_00.image = (Image *)puVar11;
-    overlayImage_00.streamComponent = pSVar5;
-    overlayImage_00.alphaHandler = pCVar6;
+    overlayImage_00.streamComponent = pSVar4;
+    overlayImage_00.alphaHandler = pCVar5;
+    pMVar8 = pMVar7;
     ModifierIndicator+OverlayWrapper::ModifierIndicator_OverlayWrapper__ctor
-              (pMVar8,overlayImage_00,pAVar7,(MethodInfo *)0x0);
+              (pMVar7,overlayImage_00,pAVar6,(MethodInfo *)0x0);
     if (pMVar1 == (ModifierIndicator_OverlayWrapper__Array *)0x0) goto code_?;
-    if (pMVar8 != (ModifierIndicator_OverlayWrapper *)0x0) {
-      iVar10 = func_?(pMVar8,(pMVar1->klass->_0).element_class);
+    if (pMVar7 != (ModifierIndicator_OverlayWrapper *)0x0) {
+      iVar10 = func_?(pMVar7,(pMVar1->klass->_0).element_class,pMVar8);
       if (iVar10 != 0) goto code_?;
       goto code_?;
     }
 code_?:
     if (pMVar1->max_length < 2) goto code_?;
-    pMVar1->vector[1] = pMVar8;
-    func_?(pMVar1->vector + 1,pMVar8);
-    pMVar1 = *ppMVar2;
-    pIVar4 = (this->fields).iceOverlay.animator;
-    pSVar5 = (this->fields).iceOverlay.streamComponent;
-    pCVar6 = (this->fields).iceOverlay.alphaHandler;
-    pAVar7 = (this->fields).fadeOutCurve;
+    pMVar1->vector[1] = pMVar7;
+    func_?(pMVar1->vector + 1,pMVar7);
+    pIVar3 = (this->fields).iceOverlay.animator;
+    pSVar4 = (this->fields).iceOverlay.streamComponent;
+    pCVar5 = (this->fields).iceOverlay.alphaHandler;
+    pMVar1 = (this->fields).modifierIndicators;
+    pAVar6 = (this->fields).fadeOutCurve;
     puVar11 = &UNK_?;
     pMVar8 = (ModifierIndicator_OverlayWrapper *)func_?();
-    overlayImage_01.animator = pIVar4;
+    overlayImage_01.animator = pIVar3;
     overlayImage_01.image = (Image *)puVar11;
-    overlayImage_01.streamComponent = pSVar5;
-    overlayImage_01.alphaHandler = pCVar6;
+    overlayImage_01.streamComponent = pSVar4;
+    overlayImage_01.alphaHandler = pCVar5;
     ModifierIndicator+OverlayWrapper::ModifierIndicator_OverlayWrapper__ctor
-              (pMVar8,overlayImage_01,pAVar7,(MethodInfo *)0x0);
+              (pMVar8,overlayImage_01,pAVar6,(MethodInfo *)0x0);
     if (pMVar1 == (ModifierIndicator_OverlayWrapper__Array *)0x0) goto code_?;
     if (pMVar8 == (ModifierIndicator_OverlayWrapper *)0x0) {
 code_?:
@@ -121,16 +122,15 @@ void Assembly-CSharp.dll::ModifierIndicator::ModifierIndicator_Initialize
 {
   if (localAvatar != (MVAvatarLocal *)0x0) {
     pAVar1 = (localAvatar->fields).interactableLocal;
-    ppMVar2 = &(this->fields).localInteractable;
-    *ppMVar2 = (MVInteractableBase *)pAVar1;
-    func_?(ppMVar2,pAVar1);
+    (this->fields).localInteractable = (MVInteractableBase *)pAVar1;
+    func_?(&(this->fields).localInteractable,pAVar1);
     UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
               ((Behaviour *)this,1,(MethodInfo *)0x0);
     return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -146,35 +146,34 @@ void Assembly-CSharp.dll::ModifierIndicator::ModifierIndicator_OnValidate
     func_?(&StringLiteral_fadeOutCurve_has_been_auto_corre);
     cRam_? = '\x01';
   }
-  pAVar1 = (this->fields).fadeOutCurve;
-  if (pAVar1 == (AnimationCurve *)0x0) goto code_?;
-  pKVar2 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_GetKeys
-                     (pAVar1,(MethodInfo *)0x0);
-  pAVar1 = (this->fields).fadeOutCurve;
-  if ((pAVar1 != (AnimationCurve *)0x0) &&
+  if ((this->fields).fadeOutCurve == (AnimationCurve *)0x0) goto code_?;
+  pKVar1 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_GetKeys
+                     ((this->fields).fadeOutCurve,(MethodInfo *)0x0);
+  pAVar2 = (this->fields).fadeOutCurve;
+  if ((pAVar2 != (AnimationCurve *)0x0) &&
      (iVar3 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_get_length
-                        (pAVar1,(MethodInfo *)0x0), pKVar2 != (Keyframe__Array *)0x0)) {
-    if (pKVar2->max_length <= iVar3 - 1U) goto code_?;
+                        (pAVar2,(MethodInfo *)0x0), pKVar1 != (Keyframe__Array *)0x0)) {
+    if (pKVar1->max_length <= iVar3 - 1U) goto code_?;
     fVar4 = mscorlib.dll::System::Nullable`1[Single]::Nullable_1_Single__GetValueOrDefault
-                      ((Nullable_1_Single_ *)(pKVar2->vector + iVar3 + -1),(MethodInfo *)0x0);
+                      ((Nullable_1_Single_ *)(pKVar1->vector + iVar3 + -1),(MethodInfo *)0x0);
     if (fVar4 == 0.0) {
 code_?:
       UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
                 ((Behaviour *)this,0,(MethodInfo *)0x0);
       return;
     }
-    pAVar1 = (this->fields).fadeOutCurve;
-    if (pAVar1 != (AnimationCurve *)0x0) {
-      pKVar2 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_GetKeys
-                         (pAVar1,(MethodInfo *)0x0);
-      pAVar1 = (this->fields).fadeOutCurve;
-      if ((pAVar1 != (AnimationCurve *)0x0) &&
+    pAVar2 = (this->fields).fadeOutCurve;
+    if (pAVar2 != (AnimationCurve *)0x0) {
+      pKVar1 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_GetKeys
+                         (pAVar2,(MethodInfo *)0x0);
+      pAVar2 = (this->fields).fadeOutCurve;
+      if ((pAVar2 != (AnimationCurve *)0x0) &&
          (iVar3 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_get_length
-                            (pAVar1,(MethodInfo *)0x0), pKVar2 != (Keyframe__Array *)0x0)) {
-        if (pKVar2->max_length <= iVar3 - 1U) goto code_?;
+                            (pAVar2,(MethodInfo *)0x0), pKVar1 != (Keyframe__Array *)0x0)) {
+        if (pKVar1->max_length <= iVar3 - 1U) goto code_?;
         UnityEngine.TextCoreFontEngineModule.dll::UnityEngine::TextCore::LowLevel::GlyphValueRecord
         ::GlyphValueRecord_set_yPlacement
-                  ((GlyphValueRecord *)(pKVar2->vector + iVar3 + -1),0.0,(MethodInfo *)0x0);
+                  ((GlyphValueRecord *)(pKVar1->vector + iVar3 + -1),0.0,(MethodInfo *)0x0);
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }

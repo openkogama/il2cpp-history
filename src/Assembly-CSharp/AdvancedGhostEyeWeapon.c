@@ -28,37 +28,41 @@ void Assembly-CSharp.dll::AdvancedGhostEyeWeapon::AdvancedGhostEyeWeapon_Update
     puVar5 = puStack_4;
   }
   puStack_4 = puVar5;
-  pTVar6 = (this->fields).timeoutMap;
-  if (pTVar6 != (TimeoutMap *)0x0) {
-    TimeoutMap::TimeoutMap_Update(pTVar6,(MethodInfo *)0x0);
+  HStack_6._set = (HashSet_1_System_UInt32_ *)0x0;
+  HStack_6._index = 0;
+  HStack_6._version = 0;
+  HStack_6._current = 0;
+  pTVar7 = (this->fields).timeoutMap;
+  if (pTVar7 != (TimeoutMap *)0x0) {
+    TimeoutMap::TimeoutMap_Update(pTVar7,(MethodInfo *)0x0);
     this_00 = (HashSet_1_System_UInt32_ *)(this->fields)._.attackTargets;
     if (this_00 != (HashSet_1_System_UInt32_ *)0x0) {
-      pHVar7 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
+      pHVar8 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
                HashSet_1_System_UInt32__GetEnumerator
                          ((HashSet_1_T_Enumerator_System_UInt32_ *)&stack0xffffff68,this_00,
                           MethodInfo__System__Collections__Generic__HashSet<int>__GetEnumerator__);
-      uStack_8 = 0;
-      HStack_9._set = pHVar7->_set;
-      HStack_9._index = pHVar7->_index;
-      HStack_9._version = pHVar7->_version;
-      HStack_9._current = pHVar7->_current;
+      uStack_9 = 0;
+      HStack_6._set = pHVar8->_set;
+      HStack_6._index = pHVar8->_index;
+      HStack_6._version = pHVar8->_version;
+      HStack_6._current = pHVar8->_current;
       uStack_1 = 1;
-      pHStack_10 = &HStack_9;
+      pHStack_10 = &HStack_6;
       while( true ) {
         do {
           do {
             do {
               bVar11 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[System
                       ::UInt32]::HashSet_1_T_Enumerator_System_UInt32__MoveNext
-                                (&HStack_9,
+                                (&HStack_6,
                                  MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__MoveNext__
                                 );
-              id = HStack_9._current;
+              id = HStack_6._current;
               if (bVar11 == 0) {
                 uStack_1 = 0xffffffff;
                 mscorlib.dll::System::ThrowHelper::
                 ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                          ((Object *)&HStack_9,
+                          ((Object *)&HStack_6,
                            (ExceptionArgument__Enum)
                            MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__Dispose__
                            ,in_stack_12);
@@ -71,10 +75,10 @@ void Assembly-CSharp.dll::AdvancedGhostEyeWeapon::AdvancedGhostEyeWeapon_Update
               pMVar13 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                                  (this_03,id,(MethodInfo *)0x0);
             } while (pMVar13 == (MVWorldObject *)0x0);
-            pTVar6 = (this->fields).timeoutMap;
-            if (pTVar6 == (TimeoutMap *)0x0) goto code_?;
+            pTVar7 = (this->fields).timeoutMap;
+            if (pTVar7 == (TimeoutMap *)0x0) goto code_?;
             in_stack_12 = (MethodInfo *)&UNK_?;
-            bVar11 = TimeoutMap::TimeoutMap_Contains(pTVar6,(pMVar13->fields).id,(MethodInfo *)0x0);
+            bVar11 = TimeoutMap::TimeoutMap_Contains(pTVar7,(pMVar13->fields).id,(MethodInfo *)0x0);
           } while (bVar11 != 0);
           this_01 = pMVar13[1].fields.inputLinkRefs;
           if (this_01 == (List_1_MV_WorldObject_Link_ *)0x0) goto code_?;
@@ -92,7 +96,7 @@ void Assembly-CSharp.dll::AdvancedGhostEyeWeapon::AdvancedGhostEyeWeapon_Update
         } while (bVar11 != 0);
         puVar15 = (undefined8 *)func_?();
         uStack_16 = *puVar15;
-        fStack_17 = *(float *)(puVar15 + 1);
+        uStack_17 = *(undefined4 *)(puVar15 + 1);
         this_04 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                             ((Component *)this,(MethodInfo *)0x0);
         if (this_04 == (GameObject *)0x0) break;
@@ -109,28 +113,25 @@ void Assembly-CSharp.dll::AdvancedGhostEyeWeapon::AdvancedGhostEyeWeapon_Update
         uStack_21._0_4_ = pVVar18->x;
         uStack_21._4_4_ = pVVar18->y;
         fStack_22 = pVVar18->z;
-        fStack_23 = fStack_17 - (fStack_20 - fStack_22);
         in_stack_12 = (MethodInfo *)0x0;
-        uStack_24 = CONCAT44(uStack_16._4_4_ - (uStack_19._4_4_ - (float)uStack_21._4_4_),
-                             (float)uStack_16 - ((float)uStack_19 - (float)(undefined4)uStack_21));
         puVar15 = (undefined8 *)func_?();
-        uVar25 = *puVar15;
-        fStack_26 = *(float *)(puVar15 + 1);
-        uStack_27._4_4_ = (float)((ulonglong)uVar25 >> 0x20);
-        fStack_28 = (this->fields).impulseStrength;
-        uStack_27._0_4_ = (float)uVar25;
-        fStack_29 = fStack_26 * fStack_28;
-        fStack_30 = uStack_27._4_4_ * fStack_28;
-        fStack_28 = (float)uStack_27 * fStack_28;
-        uStack_27 = uVar25;
+        uVar23 = *puVar15;
+        fStack_24 = *(float *)(puVar15 + 1);
+        uStack_25._4_4_ = (float)((ulonglong)uVar23 >> 0x20);
+        fStack_26 = (this->fields).impulseStrength;
+        uStack_25._0_4_ = (float)uVar23;
+        fStack_27 = fStack_24 * fStack_26;
+        fStack_28 = uStack_25._4_4_ * fStack_26;
+        fStack_26 = (float)uStack_25 * fStack_26;
+        uStack_25 = uVar23;
         if (pMStack_14 == (MVRigidBody *)0x0) break;
-        impulse.y = fStack_30;
-        impulse.x = fStack_28;
-        impulse.z = fStack_29;
+        impulse.y = fStack_28;
+        impulse.x = fStack_26;
+        impulse.z = fStack_27;
         MVRigidBody::MVRigidBody_AddImpulse_1(pMStack_14,impulse,0,(MethodInfo *)0x0);
-        pTVar6 = (this->fields).timeoutMap;
-        if (pTVar6 == (TimeoutMap *)0x0) break;
-        TimeoutMap::TimeoutMap_Add(pTVar6,(pMVar13->fields).id,(MethodInfo *)0x0);
+        pTVar7 = (this->fields).timeoutMap;
+        if (pTVar7 == (TimeoutMap *)0x0) break;
+        TimeoutMap::TimeoutMap_Add(pTVar7,(pMVar13->fields).id,(MethodInfo *)0x0);
         this_02 = (this->fields).doDamage;
         if (this_02 == (AudioSource *)0x0) break;
         UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_Play_1
@@ -140,8 +141,8 @@ void Assembly-CSharp.dll::AdvancedGhostEyeWeapon::AdvancedGhostEyeWeapon_Update
   }
 code_?:
   func_?();
-  pcVar31 = (code *)swi(3);
-  (*pcVar31)();
+  pcVar29 = (code *)swi(3);
+  (*pcVar29)();
   return;
 }
 
@@ -159,9 +160,8 @@ void Assembly-CSharp.dll::AdvancedGhostEyeWeapon::AdvancedGhostEyeWeapon__ctor
   (this->fields).impulseStrength = 2000.0;
   this_00 = (TimeoutMap *)func_?(TypeInfo__TimeoutMap);
   TimeoutMap::TimeoutMap__ctor(this_00,0.5,(MethodInfo *)0x0);
-  ppTVar1 = &(this->fields).timeoutMap;
-  *ppTVar1 = this_00;
-  func_?(ppTVar1,this_00);
+  (this->fields).timeoutMap = this_00;
+  func_?(&(this->fields).timeoutMap,this_00);
   if (cRam_? == '\0') {
     func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
     func_?(&TypeInfo__System__Collections__Generic__HashSet<int>);
@@ -172,9 +172,8 @@ void Assembly-CSharp.dll::AdvancedGhostEyeWeapon::AdvancedGhostEyeWeapon__ctor
   System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
   HashSet_1_System_Int32___ctor
             (this_01,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-  ppHVar2 = &(this->fields)._.attackTargets;
-  *ppHVar2 = this_01;
-  func_?(ppHVar2,this_01);
+  (this->fields)._.attackTargets = this_01;
+  func_?(&(this->fields)._.attackTargets,this_01);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

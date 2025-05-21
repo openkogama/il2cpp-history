@@ -31,27 +31,27 @@ bool Assembly-CSharp.dll::RTG::GizmoPlaneDrag3D::GizmoPlaneDrag3D_DoBeginSession
                func_?(TypeInfo__RTG__InputDevicePlaneDragSession3D);
       InputDevicePlaneDragSession3D::InputDevicePlaneDragSession3D__ctor
                 (pIVar2,(IInputDevice *)inputDevice,raycastCamera,(MethodInfo *)0x0);
-      ppIVar3 = &(this->fields)._planeDragSession;
-      *ppIVar3 = pIVar2;
-      func_?(ppIVar3,pIVar2);
-      pIVar2 = *ppIVar3;
-      pPVar4 = (Plane *)(*(code *)(this->klass->vtable).__unknown_2.method)
-                                  (auStack_5,this,this->klass[1]._0.image);
+      (this->fields)._planeDragSession = pIVar2;
+      func_?(&(this->fields)._planeDragSession,pIVar2);
+      pIVar2 = (this->fields)._planeDragSession;
+      pPVar3 = (Plane *)(*(code *)(this->klass->vtable).__unknown_2.method)
+                                  (auStack_4,this,this->klass[1]._0.image);
       if (pIVar2 != (InputDevicePlaneDragSession3D *)0x0) {
         InputDevicePlaneDragSession3D::InputDevicePlaneDragSession3D_set_Plane
-                  (pIVar2,*pPVar4,(MethodInfo *)0x0);
-        if (*ppIVar3 != (InputDevicePlaneDragSession3D *)0x0) {
-          bVar6 = InputDevicePlaneDragSession3D::InputDevicePlaneDragSession3D_Begin
-                            (*ppIVar3,(MethodInfo *)0x0);
-          return bVar6;
+                  (pIVar2,*pPVar3,(MethodInfo *)0x0);
+        pIVar2 = (this->fields)._planeDragSession;
+        if (pIVar2 != (InputDevicePlaneDragSession3D *)0x0) {
+          bVar5 = InputDevicePlaneDragSession3D::InputDevicePlaneDragSession3D_Begin
+                            (pIVar2,(MethodInfo *)0x0);
+          return bVar5;
         }
       }
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  bVar6 = (*pcVar7)();
-  return bVar6;
+  pcVar6 = (code *)swi(3);
+  bVar5 = (*pcVar6)();
+  return bVar5;
 }
 
 
@@ -61,16 +61,16 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneDrag3D::GizmoPlaneDrag3D_DoEndSession
                (GizmoPlaneDrag3D *this,MethodInfo *method)
 
 {
-  ppIVar1 = &(this->fields)._planeDragSession;
-  if (*ppIVar1 != (InputDevicePlaneDragSession3D *)0x0) {
-    InputDevicePlaneDragSession3D::InputDevicePlaneDragSession3D_End(*ppIVar1,(MethodInfo *)0x0);
-    *ppIVar1 = (InputDevicePlaneDragSession3D *)0x0;
-    func_?(ppIVar1,0);
+  this_00 = (this->fields)._planeDragSession;
+  if (this_00 != (InputDevicePlaneDragSession3D *)0x0) {
+    InputDevicePlaneDragSession3D::InputDevicePlaneDragSession3D_End(this_00,(MethodInfo *)0x0);
+    (this->fields)._planeDragSession = (InputDevicePlaneDragSession3D *)0x0;
+    func_?(&(this->fields)._planeDragSession,0);
     return;
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -106,9 +106,9 @@ bool Assembly-CSharp.dll::RTG::GizmoPlaneDrag3D::GizmoPlaneDrag3D_DoUpdateSessio
       uVar12 = (this_00->fields)._accumDrag.y;
       (this_00->fields)._dragDelta.z = fVar8;
       fVar13 = (this_00->fields)._accumDrag.z;
-      (this_00->fields)._accumDrag.x = (float)uVar11 + ((float)uVar9 - (float)uVar6);
-      (this_00->fields)._accumDrag.y = (float)uVar12 + ((float)uVar10 - (float)uVar7);
-      (this_00->fields)._accumDrag.z = fVar13 + fVar8;
+      (this_00->fields)._accumDrag.x = ((float)uVar9 - (float)uVar6) + (float)uVar11;
+      (this_00->fields)._accumDrag.y = ((float)uVar10 - (float)uVar7) + (float)uVar12;
+      (this_00->fields)._accumDrag.z = fVar8 + fVar13;
       return 1;
     }
     if (cRam_? == '\0') {
@@ -132,10 +132,9 @@ bool Assembly-CSharp.dll::RTG::GizmoPlaneDrag3D::GizmoPlaneDrag3D_get_IsActive
                (GizmoPlaneDrag3D *this,MethodInfo *method)
 
 {
-  pIVar1 = (this->fields)._planeDragSession;
-  if (pIVar1 == (InputDevicePlaneDragSession3D *)0x0) {
+  if ((this->fields)._planeDragSession == (InputDevicePlaneDragSession3D *)0x0) {
     return 0;
   }
-  return (pIVar1->fields)._isActive;
+  return (((this->fields)._planeDragSession)->fields)._isActive;
 }
 

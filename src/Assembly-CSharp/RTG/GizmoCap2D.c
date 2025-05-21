@@ -30,13 +30,17 @@ void Assembly-CSharp.dll::RTG::GizmoCap2D::GizmoCap2D_CapSlider2D
     func_?();
     cRam_? = '\x01';
   }
-  pGVar2 = (this->fields)._sharedLookAndFeel;
-  pIVar3 = (this->fields)._controllers;
-  if (((pGVar2 != (GizmoCap2DLookAndFeel *)0x0) ||
-      (pGVar2 = (this->fields)._lookAndFeel, pGVar2 != (GizmoCap2DLookAndFeel *)0x0)) &&
-     (pIVar3 != (IGizmoCap2DController__Array *)0x0)) {
-    uVar4 = (pGVar2->fields)._capType;
-    if (pIVar3->max_length <= uVar4) {
+  pIVar2 = (this->fields)._controllers;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap2DLookAndFeel *)0x0) {
+    pGVar3 = (this->fields)._lookAndFeel;
+    if (pGVar3 == (GizmoCap2DLookAndFeel *)0x0) goto code_?;
+  }
+  else {
+    pGVar3 = (this->fields)._sharedLookAndFeel;
+  }
+  if (pIVar2 != (IGizmoCap2DController__Array *)0x0) {
+    uVar4 = (pGVar3->fields)._capType;
+    if (pIVar2->max_length <= uVar4) {
       ppIStack_1 = (IGizmoCap2DController__Class **)0x0;
       puStack_5 = (undefined *)func_?();
       func_?();
@@ -44,15 +48,16 @@ void Assembly-CSharp.dll::RTG::GizmoCap2D::GizmoCap2D_CapSlider2D
       (*pcVar6)();
       return;
     }
-    if (pIVar3->vector[uVar4] != (IGizmoCap2DController *)0x0) {
+    if (pIVar2->vector[uVar4] != (IGizmoCap2DController *)0x0) {
       ppIStack_1 = (IGizmoCap2DController__Class **)sliderEndPt.y;
       puStack_5 = (undefined *)sliderEndPt.x;
       puStack_7 = (undefined *)sliderDirection.y;
-      func_?(2,TypeInfo__RTG__IGizmoCap2DController,pIVar3->vector[uVar4],sliderDirection.x
+      func_?(2,TypeInfo__RTG__IGizmoCap2DController,pIVar2->vector[uVar4],sliderDirection.x
                      );
       return;
     }
   }
+code_?:
   ppIStack_1 = (IGizmoCap2DController__Class **)&stack0xfffffffc;
   uVar8 = func_?(&puStack_7);
   func_?(uVar8);
@@ -73,13 +78,17 @@ void Assembly-CSharp.dll::RTG::GizmoCap2D::GizmoCap2D_CapSlider2DInvert
     func_?();
     cRam_? = '\x01';
   }
-  pGVar2 = (this->fields)._sharedLookAndFeel;
-  pIVar3 = (this->fields)._controllers;
-  if (((pGVar2 != (GizmoCap2DLookAndFeel *)0x0) ||
-      (pGVar2 = (this->fields)._lookAndFeel, pGVar2 != (GizmoCap2DLookAndFeel *)0x0)) &&
-     (pIVar3 != (IGizmoCap2DController__Array *)0x0)) {
-    uVar4 = (pGVar2->fields)._capType;
-    if (pIVar3->max_length <= uVar4) {
+  pIVar2 = (this->fields)._controllers;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap2DLookAndFeel *)0x0) {
+    pGVar3 = (this->fields)._lookAndFeel;
+    if (pGVar3 == (GizmoCap2DLookAndFeel *)0x0) goto code_?;
+  }
+  else {
+    pGVar3 = (this->fields)._sharedLookAndFeel;
+  }
+  if (pIVar2 != (IGizmoCap2DController__Array *)0x0) {
+    uVar4 = (pGVar3->fields)._capType;
+    if (pIVar2->max_length <= uVar4) {
       ppIStack_1 = (IGizmoCap2DController__Class **)0x0;
       puStack_5 = (undefined *)func_?();
       func_?();
@@ -87,15 +96,16 @@ void Assembly-CSharp.dll::RTG::GizmoCap2D::GizmoCap2D_CapSlider2DInvert
       (*pcVar6)();
       return;
     }
-    if (pIVar3->vector[uVar4] != (IGizmoCap2DController *)0x0) {
+    if (pIVar2->vector[uVar4] != (IGizmoCap2DController *)0x0) {
       ppIStack_1 = (IGizmoCap2DController__Class **)sliderEndPt.y;
       puStack_5 = (undefined *)sliderEndPt.x;
       puStack_7 = (undefined *)sliderDirection.y;
-      func_?(3,TypeInfo__RTG__IGizmoCap2DController,pIVar3->vector[uVar4],sliderDirection.x
+      func_?(3,TypeInfo__RTG__IGizmoCap2DController,pIVar2->vector[uVar4],sliderDirection.x
                      );
       return;
     }
   }
+code_?:
   ppIStack_1 = (IGizmoCap2DController__Class **)&stack0xfffffffc;
   uVar8 = func_?(&puStack_7);
   func_?(uVar8);
@@ -112,16 +122,19 @@ float Assembly-CSharp.dll::RTG::GizmoCap2D::GizmoCap2D_GetRealArrowBaseRadius
 
 {
   puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._sharedLookAndFeel;
-  if ((pGVar2 == (GizmoCap2DLookAndFeel *)0x0) &&
-     (pGVar2 = (this->fields)._lookAndFeel, pGVar2 == (GizmoCap2DLookAndFeel *)0x0)) {
-    uVar3 = func_?(auStack_4);
-    func_?(uVar3);
-    pcVar5 = (code *)swi(3);
-    fVar6 = (float10)(*pcVar5)();
-    return (float)fVar6;
+  if ((this->fields)._sharedLookAndFeel != (GizmoCap2DLookAndFeel *)0x0) {
+    pGVar2 = (this->fields)._sharedLookAndFeel;
+    return (pGVar2->fields)._scale * (pGVar2->fields)._arrowBaseRadius;
   }
-  return (pGVar2->fields)._scale * (pGVar2->fields)._arrowBaseRadius;
+  pGVar2 = (this->fields)._lookAndFeel;
+  if (pGVar2 != (GizmoCap2DLookAndFeel *)0x0) {
+    return (pGVar2->fields)._scale * (pGVar2->fields)._arrowBaseRadius;
+  }
+  uVar3 = func_?(auStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  fVar6 = (float10)(*pcVar5)();
+  return (float)fVar6;
 }
 
 
@@ -132,16 +145,19 @@ float Assembly-CSharp.dll::RTG::GizmoCap2D::GizmoCap2D_GetRealArrowHeight
 
 {
   puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._sharedLookAndFeel;
-  if ((pGVar2 == (GizmoCap2DLookAndFeel *)0x0) &&
-     (pGVar2 = (this->fields)._lookAndFeel, pGVar2 == (GizmoCap2DLookAndFeel *)0x0)) {
-    uVar3 = func_?(auStack_4);
-    func_?(uVar3);
-    pcVar5 = (code *)swi(3);
-    fVar6 = (float10)(*pcVar5)();
-    return (float)fVar6;
+  if ((this->fields)._sharedLookAndFeel != (GizmoCap2DLookAndFeel *)0x0) {
+    pGVar2 = (this->fields)._sharedLookAndFeel;
+    return (pGVar2->fields)._scale * (pGVar2->fields)._arrowHeight;
   }
-  return (pGVar2->fields)._scale * (pGVar2->fields)._arrowHeight;
+  pGVar2 = (this->fields)._lookAndFeel;
+  if (pGVar2 != (GizmoCap2DLookAndFeel *)0x0) {
+    return (pGVar2->fields)._scale * (pGVar2->fields)._arrowHeight;
+  }
+  uVar3 = func_?(auStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  fVar6 = (float10)(*pcVar5)();
+  return (float)fVar6;
 }
 
 
@@ -152,16 +168,19 @@ float Assembly-CSharp.dll::RTG::GizmoCap2D::GizmoCap2D_GetRealCircleRadius
 
 {
   puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._sharedLookAndFeel;
-  if ((pGVar2 == (GizmoCap2DLookAndFeel *)0x0) &&
-     (pGVar2 = (this->fields)._lookAndFeel, pGVar2 == (GizmoCap2DLookAndFeel *)0x0)) {
-    uVar3 = func_?(auStack_4);
-    func_?(uVar3);
-    pcVar5 = (code *)swi(3);
-    fVar6 = (float10)(*pcVar5)();
-    return (float)fVar6;
+  if ((this->fields)._sharedLookAndFeel != (GizmoCap2DLookAndFeel *)0x0) {
+    pGVar2 = (this->fields)._sharedLookAndFeel;
+    return (pGVar2->fields)._scale * (pGVar2->fields)._circleRadius;
   }
-  return (pGVar2->fields)._scale * (pGVar2->fields)._circleRadius;
+  pGVar2 = (this->fields)._lookAndFeel;
+  if (pGVar2 != (GizmoCap2DLookAndFeel *)0x0) {
+    return (pGVar2->fields)._scale * (pGVar2->fields)._circleRadius;
+  }
+  uVar3 = func_?(auStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  fVar6 = (float10)(*pcVar5)();
+  return (float)fVar6;
 }
 
 
@@ -172,16 +191,19 @@ float Assembly-CSharp.dll::RTG::GizmoCap2D::GizmoCap2D_GetRealQuadHeight
 
 {
   puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._sharedLookAndFeel;
-  if ((pGVar2 == (GizmoCap2DLookAndFeel *)0x0) &&
-     (pGVar2 = (this->fields)._lookAndFeel, pGVar2 == (GizmoCap2DLookAndFeel *)0x0)) {
-    uVar3 = func_?(auStack_4);
-    func_?(uVar3);
-    pcVar5 = (code *)swi(3);
-    fVar6 = (float10)(*pcVar5)();
-    return (float)fVar6;
+  if ((this->fields)._sharedLookAndFeel != (GizmoCap2DLookAndFeel *)0x0) {
+    pGVar2 = (this->fields)._sharedLookAndFeel;
+    return (pGVar2->fields)._scale * (pGVar2->fields)._quadHeight;
   }
-  return (pGVar2->fields)._scale * (pGVar2->fields)._quadHeight;
+  pGVar2 = (this->fields)._lookAndFeel;
+  if (pGVar2 != (GizmoCap2DLookAndFeel *)0x0) {
+    return (pGVar2->fields)._scale * (pGVar2->fields)._quadHeight;
+  }
+  uVar3 = func_?(auStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  fVar6 = (float10)(*pcVar5)();
+  return (float)fVar6;
 }
 
 
@@ -192,16 +214,19 @@ float Assembly-CSharp.dll::RTG::GizmoCap2D::GizmoCap2D_GetRealQuadWidth
 
 {
   puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._sharedLookAndFeel;
-  if ((pGVar2 == (GizmoCap2DLookAndFeel *)0x0) &&
-     (pGVar2 = (this->fields)._lookAndFeel, pGVar2 == (GizmoCap2DLookAndFeel *)0x0)) {
-    uVar3 = func_?(auStack_4);
-    func_?(uVar3);
-    pcVar5 = (code *)swi(3);
-    fVar6 = (float10)(*pcVar5)();
-    return (float)fVar6;
+  if ((this->fields)._sharedLookAndFeel != (GizmoCap2DLookAndFeel *)0x0) {
+    pGVar2 = (this->fields)._sharedLookAndFeel;
+    return (pGVar2->fields)._scale * (pGVar2->fields)._quadWidth;
   }
-  return (pGVar2->fields)._scale * (pGVar2->fields)._quadWidth;
+  pGVar2 = (this->fields)._lookAndFeel;
+  if (pGVar2 != (GizmoCap2DLookAndFeel *)0x0) {
+    return (pGVar2->fields)._scale * (pGVar2->fields)._quadWidth;
+  }
+  uVar3 = func_?(auStack_4);
+  func_?(uVar3);
+  pcVar5 = (code *)swi(3);
+  fVar6 = (float10)(*pcVar5)();
+  return (float)fVar6;
 }
 
 
@@ -215,29 +240,39 @@ void Assembly-CSharp.dll::RTG::GizmoCap2D::GizmoCap2D_OnGizmoPostEnabled
     func_?(&TypeInfo__RTG__IGizmoCap2DController);
     cRam_? = '\x01';
   }
-  pGVar1 = (this->fields)._sharedLookAndFeel;
-  pIVar2 = (this->fields)._controllers;
-  if (((pGVar1 != (GizmoCap2DLookAndFeel *)0x0) ||
-      (pGVar1 = (this->fields)._lookAndFeel, pGVar1 != (GizmoCap2DLookAndFeel *)0x0)) &&
-     (pIVar2 != (IGizmoCap2DController__Array *)0x0)) {
-    uVar3 = (pGVar1->fields)._capType;
-    if (pIVar2->max_length <= uVar3) goto code_?;
-    if (pIVar2->vector[uVar3] != (IGizmoCap2DController *)0x0) {
-      func_?(0,TypeInfo__RTG__IGizmoCap2DController,pIVar2->vector[uVar3]);
-      pGVar1 = (this->fields)._sharedLookAndFeel;
-      pIVar2 = (this->fields)._controllers;
-      if (((pGVar1 != (GizmoCap2DLookAndFeel *)0x0) ||
-          (pGVar1 = (this->fields)._lookAndFeel, pGVar1 != (GizmoCap2DLookAndFeel *)0x0)) &&
-         (pIVar2 != (IGizmoCap2DController__Array *)0x0)) {
-        uVar3 = (pGVar1->fields)._capType;
-        if (pIVar2->max_length <= uVar3) goto code_?;
-        if (pIVar2->vector[uVar3] != (IGizmoCap2DController *)0x0) {
-          func_?(1,TypeInfo__RTG__IGizmoCap2DController,pIVar2->vector[uVar3]);
-          return;
+  pIVar1 = (this->fields)._controllers;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap2DLookAndFeel *)0x0) {
+    pGVar2 = (this->fields)._lookAndFeel;
+    if (pGVar2 != (GizmoCap2DLookAndFeel *)0x0) goto code_?;
+  }
+  else {
+    pGVar2 = (this->fields)._sharedLookAndFeel;
+code_?:
+    if (pIVar1 != (IGizmoCap2DController__Array *)0x0) {
+      uVar3 = (pGVar2->fields)._capType;
+      if (pIVar1->max_length <= uVar3) goto code_?;
+      if (pIVar1->vector[uVar3] != (IGizmoCap2DController *)0x0) {
+        func_?(0,TypeInfo__RTG__IGizmoCap2DController,pIVar1->vector[uVar3]);
+        pIVar1 = (this->fields)._controllers;
+        if ((this->fields)._sharedLookAndFeel == (GizmoCap2DLookAndFeel *)0x0) {
+          pGVar2 = (this->fields)._lookAndFeel;
+          if (pGVar2 == (GizmoCap2DLookAndFeel *)0x0) goto code_?;
+        }
+        else {
+          pGVar2 = (this->fields)._sharedLookAndFeel;
+        }
+        if (pIVar1 != (IGizmoCap2DController__Array *)0x0) {
+          uVar3 = (pGVar2->fields)._capType;
+          if (pIVar1->max_length <= uVar3) goto code_?;
+          if (pIVar1->vector[uVar3] != (IGizmoCap2DController *)0x0) {
+            func_?(1,TypeInfo__RTG__IGizmoCap2DController,pIVar1->vector[uVar3]);
+            return;
+          }
         }
       }
     }
   }
+code_?:
   func_?();
 code_?:
   func_?();
@@ -257,20 +292,26 @@ void Assembly-CSharp.dll::RTG::GizmoCap2D::GizmoCap2D_OnGizmoPreUpdateBegin
     func_?(&TypeInfo__RTG__IGizmoCap2DController);
     cRam_? = '\x01';
   }
-  pGVar1 = (this->fields)._sharedLookAndFeel;
-  if (((pGVar1 != (GizmoCap2DLookAndFeel *)0x0) ||
-      (pGVar1 = (this->fields)._lookAndFeel, pGVar1 != (GizmoCap2DLookAndFeel *)0x0)) &&
-     (pIVar2 = (this->fields)._controllers, pIVar2 != (IGizmoCap2DController__Array *)0x0)) {
-    uVar3 = (pGVar1->fields)._capType;
-    if (pIVar2->max_length <= uVar3) goto code_?;
-    if (pIVar2->vector[uVar3] != (IGizmoCap2DController *)0x0) {
-      func_?(0,TypeInfo__RTG__IGizmoCap2DController,pIVar2->vector[uVar3]);
-      pIVar2 = (this->fields)._controllers;
-      if (pIVar2 != (IGizmoCap2DController__Array *)0x0) {
-        if (pIVar2->max_length <= uVar3) goto code_?;
-        if (pIVar2->vector[uVar3] != (IGizmoCap2DController *)0x0) {
-          func_?(1,TypeInfo__RTG__IGizmoCap2DController,pIVar2->vector[uVar3]);
-          return;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap2DLookAndFeel *)0x0) {
+    pGVar1 = (this->fields)._lookAndFeel;
+    if (pGVar1 != (GizmoCap2DLookAndFeel *)0x0) goto code_?;
+  }
+  else {
+    pGVar1 = (this->fields)._sharedLookAndFeel;
+code_?:
+    pIVar2 = (this->fields)._controllers;
+    if (pIVar2 != (IGizmoCap2DController__Array *)0x0) {
+      uVar3 = (pGVar1->fields)._capType;
+      if (pIVar2->max_length <= uVar3) goto code_?;
+      if (pIVar2->vector[uVar3] != (IGizmoCap2DController *)0x0) {
+        func_?(0,TypeInfo__RTG__IGizmoCap2DController,pIVar2->vector[uVar3]);
+        pIVar2 = (this->fields)._controllers;
+        if (pIVar2 != (IGizmoCap2DController__Array *)0x0) {
+          if (pIVar2->max_length <= uVar3) goto code_?;
+          if (pIVar2->vector[uVar3] != (IGizmoCap2DController *)0x0) {
+            func_?(1,TypeInfo__RTG__IGizmoCap2DController,pIVar2->vector[uVar3]);
+            return;
+          }
         }
       }
     }
@@ -299,13 +340,17 @@ void Assembly-CSharp.dll::RTG::GizmoCap2D::GizmoCap2D_OnTransformChanged
   if ((changeData.TRSDimension != 1) && (changeData.ChangeReason != 1)) {
     return;
   }
-  pGVar2 = (this->fields)._sharedLookAndFeel;
-  pIVar3 = (this->fields)._controllers;
-  if (((pGVar2 != (GizmoCap2DLookAndFeel *)0x0) ||
-      (pGVar2 = (this->fields)._lookAndFeel, pGVar2 != (GizmoCap2DLookAndFeel *)0x0)) &&
-     (pIVar3 != (IGizmoCap2DController__Array *)0x0)) {
-    uVar4 = (pGVar2->fields)._capType;
-    if (pIVar3->max_length <= uVar4) {
+  pIVar2 = (this->fields)._controllers;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap2DLookAndFeel *)0x0) {
+    pGVar3 = (this->fields)._lookAndFeel;
+    if (pGVar3 == (GizmoCap2DLookAndFeel *)0x0) goto code_?;
+  }
+  else {
+    pGVar3 = (this->fields)._sharedLookAndFeel;
+  }
+  if (pIVar2 != (IGizmoCap2DController__Array *)0x0) {
+    uVar4 = (pGVar3->fields)._capType;
+    if (pIVar2->max_length <= uVar4) {
       pIStack_1 = (IGizmoCap2DController *)0x0;
       pIStack_5 = (IGizmoCap2DController__Class *)func_?();
       func_?();
@@ -313,7 +358,7 @@ void Assembly-CSharp.dll::RTG::GizmoCap2D::GizmoCap2D_OnTransformChanged
       (*pcVar6)();
       return;
     }
-    pIStack_1 = pIVar3->vector[uVar4];
+    pIStack_1 = pIVar2->vector[uVar4];
     if (pIStack_1 != (IGizmoCap2DController *)0x0) {
       pIStack_5 = TypeInfo__RTG__IGizmoCap2DController;
       puStack_7 = (undefined *)0x1;
@@ -321,6 +366,7 @@ void Assembly-CSharp.dll::RTG::GizmoCap2D::GizmoCap2D_OnTransformChanged
       return;
     }
   }
+code_?:
   pIStack_1 = (IGizmoCap2DController *)&stack0xfffffffc;
   uVar8 = func_?(&puStack_7);
   func_?(uVar8);
@@ -340,29 +386,39 @@ void Assembly-CSharp.dll::RTG::GizmoCap2D::GizmoCap2D_OnVisibilityStateChanged
     func_?(&TypeInfo__RTG__IGizmoCap2DController);
     cRam_? = '\x01';
   }
-  pGVar1 = (this->fields)._sharedLookAndFeel;
-  pIVar2 = (this->fields)._controllers;
-  if (((pGVar1 != (GizmoCap2DLookAndFeel *)0x0) ||
-      (pGVar1 = (this->fields)._lookAndFeel, pGVar1 != (GizmoCap2DLookAndFeel *)0x0)) &&
-     (pIVar2 != (IGizmoCap2DController__Array *)0x0)) {
-    uVar3 = (pGVar1->fields)._capType;
-    if (pIVar2->max_length <= uVar3) goto code_?;
-    if (pIVar2->vector[uVar3] != (IGizmoCap2DController *)0x0) {
-      func_?(0,TypeInfo__RTG__IGizmoCap2DController,pIVar2->vector[uVar3]);
-      pGVar1 = (this->fields)._sharedLookAndFeel;
-      pIVar2 = (this->fields)._controllers;
-      if (((pGVar1 != (GizmoCap2DLookAndFeel *)0x0) ||
-          (pGVar1 = (this->fields)._lookAndFeel, pGVar1 != (GizmoCap2DLookAndFeel *)0x0)) &&
-         (pIVar2 != (IGizmoCap2DController__Array *)0x0)) {
-        uVar3 = (pGVar1->fields)._capType;
-        if (pIVar2->max_length <= uVar3) goto code_?;
-        if (pIVar2->vector[uVar3] != (IGizmoCap2DController *)0x0) {
-          func_?(1,TypeInfo__RTG__IGizmoCap2DController,pIVar2->vector[uVar3]);
-          return;
+  pIVar1 = (this->fields)._controllers;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap2DLookAndFeel *)0x0) {
+    pGVar2 = (this->fields)._lookAndFeel;
+    if (pGVar2 != (GizmoCap2DLookAndFeel *)0x0) goto code_?;
+  }
+  else {
+    pGVar2 = (this->fields)._sharedLookAndFeel;
+code_?:
+    if (pIVar1 != (IGizmoCap2DController__Array *)0x0) {
+      uVar3 = (pGVar2->fields)._capType;
+      if (pIVar1->max_length <= uVar3) goto code_?;
+      if (pIVar1->vector[uVar3] != (IGizmoCap2DController *)0x0) {
+        func_?(0,TypeInfo__RTG__IGizmoCap2DController,pIVar1->vector[uVar3]);
+        pIVar1 = (this->fields)._controllers;
+        if ((this->fields)._sharedLookAndFeel == (GizmoCap2DLookAndFeel *)0x0) {
+          pGVar2 = (this->fields)._lookAndFeel;
+          if (pGVar2 == (GizmoCap2DLookAndFeel *)0x0) goto code_?;
+        }
+        else {
+          pGVar2 = (this->fields)._sharedLookAndFeel;
+        }
+        if (pIVar1 != (IGizmoCap2DController__Array *)0x0) {
+          uVar3 = (pGVar2->fields)._capType;
+          if (pIVar1->max_length <= uVar3) goto code_?;
+          if (pIVar1->vector[uVar3] != (IGizmoCap2DController *)0x0) {
+            func_?(1,TypeInfo__RTG__IGizmoCap2DController,pIVar1->vector[uVar3]);
+            return;
+          }
         }
       }
     }
   }
+code_?:
   func_?();
 code_?:
   func_?();
@@ -415,48 +471,57 @@ void Assembly-CSharp.dll::RTG::GizmoCap2D::GizmoCap2D_Render
   if ((this->fields)._._isVisible == 0) {
     return;
   }
-  pGVar1 = (this->fields)._sharedLookAndFeel;
-  pGVar2 = pGVar1;
-  if ((pGVar1 == (GizmoCap2DLookAndFeel *)0x0) &&
-     (pGVar2 = (this->fields)._lookAndFeel, pGVar2 == (GizmoCap2DLookAndFeel *)0x0))
-  goto code_?;
-  if ((pGVar2->fields)._fillMode == 2) {
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap2DLookAndFeel *)0x0) {
+    pGVar1 = (this->fields)._lookAndFeel;
+    if (pGVar1 == (GizmoCap2DLookAndFeel *)0x0) goto code_?;
+  }
+  else {
+    pGVar1 = (this->fields)._sharedLookAndFeel;
+  }
+  if ((pGVar1->fields)._fillMode == 2) {
 code_?:
-    pGVar3 = (this->fields)._overrideFillColor;
-    if (pGVar3 == (GizmoOverrideColor *)0x0) goto code_?;
-    if ((pGVar3->fields)._isActive == 0) {
-      if ((pGVar1 == (GizmoCap2DLookAndFeel *)0x0) &&
-         (pGVar1 = (this->fields)._lookAndFeel, pGVar1 == (GizmoCap2DLookAndFeel *)0x0))
-      goto code_?;
-      fVar4 = (pGVar1->fields)._color.r;
-      fStack_5 = (pGVar1->fields)._color.g;
-      fStack_6 = (pGVar1->fields)._color.b;
-      fStack_7 = (pGVar1->fields)._color.a;
-      pGVar8 = (this->fields)._._gizmo;
-      if (pGVar8 == (Gizmo *)0x0) goto code_?;
-      pvVar9 = (void *)UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+    pGVar2 = (this->fields)._overrideFillColor;
+    if (pGVar2 == (GizmoOverrideColor *)0x0) goto code_?;
+    if ((pGVar2->fields)._isActive == 0) {
+      if ((this->fields)._sharedLookAndFeel == (GizmoCap2DLookAndFeel *)0x0) {
+        pGVar1 = (this->fields)._lookAndFeel;
+        if (pGVar1 == (GizmoCap2DLookAndFeel *)0x0) goto code_?;
+      }
+      else {
+        pGVar1 = (this->fields)._sharedLookAndFeel;
+      }
+      fVar3 = (pGVar1->fields)._color.r;
+      fStack_4 = (pGVar1->fields)._color.g;
+      fStack_5 = (pGVar1->fields)._color.b;
+      fStack_6 = (pGVar1->fields)._color.a;
+      pGVar7 = (this->fields)._._gizmo;
+      if (pGVar7 == (Gizmo *)0x0) goto code_?;
+      pvVar8 = (void *)UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
                        PointerCaptureEventBase`1[System::Object]::
                        PointerCaptureEventBase_1_System_Object__get_pointerId
-                                 ((PointerCaptureEventBase_1_System_Object_ *)pGVar8,
+                                 ((PointerCaptureEventBase_1_System_Object_ *)pGVar7,
                                   (MethodInfo *)0x0);
-      pvVar10 = UnityEngine.AndroidJNIModule.dll::UnityEngine::AndroidJavaObject::
+      pvVar9 = UnityEngine.AndroidJNIModule.dll::UnityEngine::AndroidJavaObject::
                AndroidJavaObject__GetRawClass((AndroidJavaObject *)this,(MethodInfo *)0x0);
-      if (pvVar9 == pvVar10) {
-        pGVar1 = (this->fields)._sharedLookAndFeel;
-        if ((pGVar1 == (GizmoCap2DLookAndFeel *)0x0) &&
-           (pGVar1 = (this->fields)._lookAndFeel, pGVar1 == (GizmoCap2DLookAndFeel *)0x0))
-        goto code_?;
-        fVar4 = (pGVar1->fields)._hoveredColor.r;
-        fStack_5 = (pGVar1->fields)._hoveredColor.g;
-        fStack_6 = (pGVar1->fields)._hoveredColor.b;
-        fStack_7 = (pGVar1->fields)._hoveredColor.a;
+      if (pvVar8 == pvVar9) {
+        if ((this->fields)._sharedLookAndFeel == (GizmoCap2DLookAndFeel *)0x0) {
+          pGVar1 = (this->fields)._lookAndFeel;
+          if (pGVar1 == (GizmoCap2DLookAndFeel *)0x0) goto code_?;
+        }
+        else {
+          pGVar1 = (this->fields)._sharedLookAndFeel;
+        }
+        fVar3 = (pGVar1->fields)._hoveredColor.r;
+        fStack_4 = (pGVar1->fields)._hoveredColor.g;
+        fStack_5 = (pGVar1->fields)._hoveredColor.b;
+        fStack_6 = (pGVar1->fields)._hoveredColor.a;
       }
     }
     else {
-      fVar4 = (pGVar3->fields)._color.r;
-      fStack_5 = (pGVar3->fields)._color.g;
-      fStack_6 = (pGVar3->fields)._color.b;
-      fStack_7 = (pGVar3->fields)._color.a;
+      fVar3 = (pGVar2->fields)._color.r;
+      fStack_4 = (pGVar2->fields)._color.g;
+      fStack_5 = (pGVar2->fields)._color.b;
+      fStack_6 = (pGVar2->fields)._color.a;
     }
     if ((TypeInfo__RTG__Singleton<RTG::GizmoSolidMaterial>->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__RTG__Singleton<RTG::GizmoSolidMaterial>);
@@ -467,101 +532,115 @@ code_?:
     if (this_00 == (GizmoSolidMaterial *)0x0) goto code_?;
     GizmoSolidMaterial::GizmoSolidMaterial_ResetValuesToSensibleDefaults(this_00,(MethodInfo *)0x0);
     GizmoSolidMaterial::GizmoSolidMaterial_SetLit(this_00,0,(MethodInfo *)0x0);
-    color.g = fStack_5;
-    color.r = fVar4;
-    color.b = fStack_6;
-    color.a = fStack_7;
+    color.g = fStack_4;
+    color.r = fVar3;
+    color.b = fStack_5;
+    color.a = fStack_6;
     GizmoSolidMaterial::GizmoSolidMaterial_SetColor(this_00,color,(MethodInfo *)0x0);
     GizmoSolidMaterial::GizmoSolidMaterial_SetPass(this_00,0,(MethodInfo *)0x0);
-    pGVar11 = (this->fields)._._handle;
-    if (pGVar11 == (GizmoHandle *)0x0) goto code_?;
-    GizmoHandle::GizmoHandle_Render2DSolid(pGVar11,camera,(MethodInfo *)0x0);
+    pGVar10 = (this->fields)._._handle;
+    if (pGVar10 == (GizmoHandle *)0x0) goto code_?;
+    GizmoHandle::GizmoHandle_Render2DSolid(pGVar10,camera,(MethodInfo *)0x0);
   }
   else {
-    pGVar2 = pGVar1;
-    if ((pGVar1 == (GizmoCap2DLookAndFeel *)0x0) &&
-       (pGVar2 = (this->fields)._lookAndFeel, pGVar2 == (GizmoCap2DLookAndFeel *)0x0))
-    goto code_?;
-    if ((pGVar2->fields)._fillMode == 0) goto code_?;
-  }
-  pGVar1 = (this->fields)._sharedLookAndFeel;
-  pGVar2 = pGVar1;
-  if ((pGVar1 != (GizmoCap2DLookAndFeel *)0x0) ||
-     (pGVar2 = (this->fields)._lookAndFeel, pGVar2 != (GizmoCap2DLookAndFeel *)0x0)) {
-    if ((pGVar2->fields)._fillMode != 2) {
-      pGVar2 = pGVar1;
-      if ((pGVar1 == (GizmoCap2DLookAndFeel *)0x0) &&
-         (pGVar2 = (this->fields)._lookAndFeel, pGVar2 == (GizmoCap2DLookAndFeel *)0x0))
-      goto code_?;
-      if ((pGVar2->fields)._fillMode != 1) {
-        return;
-      }
+    if ((this->fields)._sharedLookAndFeel == (GizmoCap2DLookAndFeel *)0x0) {
+      pGVar1 = (this->fields)._lookAndFeel;
+      if (pGVar1 == (GizmoCap2DLookAndFeel *)0x0) goto code_?;
     }
-    pGVar3 = (this->fields)._overrideFillColor;
-    if (pGVar3 != (GizmoOverrideColor *)0x0) {
-      if ((pGVar3->fields)._isActive == 0) {
-        if ((pGVar1 == (GizmoCap2DLookAndFeel *)0x0) &&
-           (pGVar1 = (this->fields)._lookAndFeel, pGVar1 == (GizmoCap2DLookAndFeel *)0x0))
-        goto code_?;
-        fVar4 = (pGVar1->fields)._borderColor.r;
-        fStack_5 = (pGVar1->fields)._borderColor.g;
-        fStack_6 = (pGVar1->fields)._borderColor.b;
-        fStack_7 = (pGVar1->fields)._borderColor.a;
-        pGVar8 = (this->fields)._._gizmo;
-        if (pGVar8 == (Gizmo *)0x0) goto code_?;
-        pvVar9 = (void *)UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-                         PointerCaptureEventBase`1[System::Object]::
-                         PointerCaptureEventBase_1_System_Object__get_pointerId
-                                   ((PointerCaptureEventBase_1_System_Object_ *)pGVar8,
-                                    (MethodInfo *)0x0);
-        pvVar10 = UnityEngine.AndroidJNIModule.dll::UnityEngine::AndroidJavaObject::
-                 AndroidJavaObject__GetRawClass((AndroidJavaObject *)this,(MethodInfo *)0x0);
-        if (pvVar9 == pvVar10) {
-          pGVar1 = (this->fields)._sharedLookAndFeel;
-          if ((pGVar1 == (GizmoCap2DLookAndFeel *)0x0) &&
-             (pGVar1 = (this->fields)._lookAndFeel, pGVar1 == (GizmoCap2DLookAndFeel *)0x0))
-          goto code_?;
-          fVar4 = (pGVar1->fields)._hoveredBorderColor.r;
-          fStack_5 = (pGVar1->fields)._hoveredBorderColor.g;
-          fStack_6 = (pGVar1->fields)._hoveredBorderColor.b;
-          fStack_7 = (pGVar1->fields)._hoveredBorderColor.a;
-        }
+    else {
+      pGVar1 = (this->fields)._sharedLookAndFeel;
+    }
+    if ((pGVar1->fields)._fillMode == 0) goto code_?;
+  }
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap2DLookAndFeel *)0x0) {
+    pGVar1 = (this->fields)._lookAndFeel;
+    if (pGVar1 == (GizmoCap2DLookAndFeel *)0x0) goto code_?;
+  }
+  else {
+    pGVar1 = (this->fields)._sharedLookAndFeel;
+  }
+  if ((pGVar1->fields)._fillMode != 2) {
+    if ((this->fields)._sharedLookAndFeel == (GizmoCap2DLookAndFeel *)0x0) {
+      pGVar1 = (this->fields)._lookAndFeel;
+      if (pGVar1 == (GizmoCap2DLookAndFeel *)0x0) goto code_?;
+    }
+    else {
+      pGVar1 = (this->fields)._sharedLookAndFeel;
+    }
+    if ((pGVar1->fields)._fillMode != 1) {
+      return;
+    }
+  }
+  pGVar2 = (this->fields)._overrideFillColor;
+  if (pGVar2 != (GizmoOverrideColor *)0x0) {
+    if ((pGVar2->fields)._isActive == 0) {
+      if ((this->fields)._sharedLookAndFeel == (GizmoCap2DLookAndFeel *)0x0) {
+        pGVar1 = (this->fields)._lookAndFeel;
+        if (pGVar1 == (GizmoCap2DLookAndFeel *)0x0) goto code_?;
       }
       else {
-        pGVar3 = (this->fields)._overrideBorderColor;
-        if (pGVar3 == (GizmoOverrideColor *)0x0) goto code_?;
-        fVar4 = (pGVar3->fields)._color.r;
-        fStack_5 = (pGVar3->fields)._color.g;
-        fStack_6 = (pGVar3->fields)._color.b;
-        fStack_7 = (pGVar3->fields)._color.a;
+        pGVar1 = (this->fields)._sharedLookAndFeel;
       }
-      if ((TypeInfo__RTG__Singleton<RTG::GizmoLineMaterial>->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__RTG__Singleton<RTG::GizmoLineMaterial>);
-      }
-      this_01 = (GizmoLineMaterial *)
-                Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
-                          (MethodInfo__RTG__Singleton<RTG::GizmoLineMaterial>__get_Get__);
-      if (this_01 != (GizmoLineMaterial *)0x0) {
-        GizmoLineMaterial::GizmoLineMaterial_ResetValuesToSensibleDefaults
-                  (this_01,(MethodInfo *)0x0);
-        color_00.g = fStack_5;
-        color_00.r = fVar4;
-        color_00.b = fStack_6;
-        color_00.a = fStack_7;
-        GizmoLineMaterial::GizmoLineMaterial_SetColor(this_01,color_00,(MethodInfo *)0x0);
-        GizmoLineMaterial::GizmoLineMaterial_SetPass(this_01,0,(MethodInfo *)0x0);
-        pGVar11 = (this->fields)._._handle;
-        if (pGVar11 != (GizmoHandle *)0x0) {
-          GizmoHandle::GizmoHandle_Render2DWire(pGVar11,camera,(MethodInfo *)0x0);
-          return;
+      fVar3 = (pGVar1->fields)._borderColor.r;
+      fStack_4 = (pGVar1->fields)._borderColor.g;
+      fStack_5 = (pGVar1->fields)._borderColor.b;
+      fStack_6 = (pGVar1->fields)._borderColor.a;
+      pGVar7 = (this->fields)._._gizmo;
+      if (pGVar7 == (Gizmo *)0x0) goto code_?;
+      pvVar8 = (void *)UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+                       PointerCaptureEventBase`1[System::Object]::
+                       PointerCaptureEventBase_1_System_Object__get_pointerId
+                                 ((PointerCaptureEventBase_1_System_Object_ *)pGVar7,
+                                  (MethodInfo *)0x0);
+      pvVar9 = UnityEngine.AndroidJNIModule.dll::UnityEngine::AndroidJavaObject::
+               AndroidJavaObject__GetRawClass((AndroidJavaObject *)this,(MethodInfo *)0x0);
+      if (pvVar8 == pvVar9) {
+        if ((this->fields)._sharedLookAndFeel == (GizmoCap2DLookAndFeel *)0x0) {
+          pGVar1 = (this->fields)._lookAndFeel;
+          if (pGVar1 == (GizmoCap2DLookAndFeel *)0x0) goto code_?;
         }
+        else {
+          pGVar1 = (this->fields)._sharedLookAndFeel;
+        }
+        fVar3 = (pGVar1->fields)._hoveredBorderColor.r;
+        fStack_4 = (pGVar1->fields)._hoveredBorderColor.g;
+        fStack_5 = (pGVar1->fields)._hoveredBorderColor.b;
+        fStack_6 = (pGVar1->fields)._hoveredBorderColor.a;
+      }
+    }
+    else {
+      pGVar2 = (this->fields)._overrideBorderColor;
+      if (pGVar2 == (GizmoOverrideColor *)0x0) goto code_?;
+      fVar3 = (pGVar2->fields)._color.r;
+      fStack_4 = (pGVar2->fields)._color.g;
+      fStack_5 = (pGVar2->fields)._color.b;
+      fStack_6 = (pGVar2->fields)._color.a;
+    }
+    if ((TypeInfo__RTG__Singleton<RTG::GizmoLineMaterial>->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__RTG__Singleton<RTG::GizmoLineMaterial>);
+    }
+    this_01 = (GizmoLineMaterial *)
+              Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
+                        (MethodInfo__RTG__Singleton<RTG::GizmoLineMaterial>__get_Get__);
+    if (this_01 != (GizmoLineMaterial *)0x0) {
+      GizmoLineMaterial::GizmoLineMaterial_ResetValuesToSensibleDefaults(this_01,(MethodInfo *)0x0);
+      color_00.g = fStack_4;
+      color_00.r = fVar3;
+      color_00.b = fStack_5;
+      color_00.a = fStack_6;
+      GizmoLineMaterial::GizmoLineMaterial_SetColor(this_01,color_00,(MethodInfo *)0x0);
+      GizmoLineMaterial::GizmoLineMaterial_SetPass(this_01,0,(MethodInfo *)0x0);
+      pGVar10 = (this->fields)._._handle;
+      if (pGVar10 != (GizmoHandle *)0x0) {
+        GizmoHandle::GizmoHandle_Render2DWire(pGVar10,camera,(MethodInfo *)0x0);
+        return;
       }
     }
   }
 code_?:
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -626,40 +705,35 @@ void Assembly-CSharp.dll::RTG::GizmoCap2D::GizmoCap2D__ctor
   }
   this_00 = (QuadShape2D *)func_?(TypeInfo__RTG__QuadShape2D);
   QuadShape2D::QuadShape2D__ctor(this_00,(MethodInfo *)0x0);
-  ppQVar1 = &(this->fields)._quad;
-  *ppQVar1 = this_00;
-  func_?(ppQVar1,this_00);
+  (this->fields)._quad = this_00;
+  func_?(&(this->fields)._quad,this_00);
   this_01 = (CircleShape2D *)func_?(TypeInfo__RTG__CircleShape2D);
   CircleShape2D::CircleShape2D__ctor(this_01,(MethodInfo *)0x0);
-  ppCVar2 = &(this->fields)._circle;
-  *ppCVar2 = this_01;
-  func_?(ppCVar2,this_01);
+  (this->fields)._circle = this_01;
+  func_?(&(this->fields)._circle,this_01);
   this_02 = (ConeShape2D *)func_?(TypeInfo__RTG__ConeShape2D);
   ConeShape2D::ConeShape2D__ctor(this_02,(MethodInfo *)0x0);
-  ppCVar3 = &(this->fields)._arrow;
-  *ppCVar3 = this_02;
-  func_?(ppCVar3,this_02);
-  pGVar4 = (GizmoTransform *)func_?(TypeInfo__RTG__GizmoTransform);
-  GizmoTransform::GizmoTransform__ctor(pGVar4,(MethodInfo *)0x0);
-  (this->fields)._transform = pGVar4;
+  (this->fields)._arrow = this_02;
+  func_?(&(this->fields)._arrow,this_02);
+  pGVar1 = (GizmoTransform *)func_?(TypeInfo__RTG__GizmoTransform);
+  GizmoTransform::GizmoTransform__ctor(pGVar1,(MethodInfo *)0x0);
+  (this->fields)._transform = pGVar1;
   func_?();
-  pGStack_5 = TypeInfo__RTG__GizmoOverrideColor;
-  pGVar6 = (GizmoOverrideColor *)func_?();
+  pGStack_2 = TypeInfo__RTG__GizmoOverrideColor;
+  pGVar3 = (GizmoOverrideColor *)func_?();
   UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
   UxmlObjectListAttributeDescription`1[System::Object]::
   UxmlObjectListAttributeDescription_1_System_Object___ctor
-            ((UxmlObjectListAttributeDescription_1_System_Object_ *)pGVar6,(MethodInfo *)0x0);
-  ppGVar7 = &(this->fields)._overrideFillColor;
-  *ppGVar7 = pGVar6;
-  func_?(ppGVar7,pGVar6);
-  pGVar6 = (GizmoOverrideColor *)func_?(TypeInfo__RTG__GizmoOverrideColor);
+            ((UxmlObjectListAttributeDescription_1_System_Object_ *)pGVar3,(MethodInfo *)0x0);
+  (this->fields)._overrideFillColor = pGVar3;
+  func_?(&(this->fields)._overrideFillColor,pGVar3);
+  pGVar3 = (GizmoOverrideColor *)func_?(TypeInfo__RTG__GizmoOverrideColor);
   UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
   UxmlObjectListAttributeDescription`1[System::Object]::
   UxmlObjectListAttributeDescription_1_System_Object___ctor
-            ((UxmlObjectListAttributeDescription_1_System_Object_ *)pGVar6,(MethodInfo *)0x0);
-  ppGVar7 = &(this->fields)._overrideBorderColor;
-  *ppGVar7 = pGVar6;
-  func_?(ppGVar7,pGVar6);
+            ((UxmlObjectListAttributeDescription_1_System_Object_ *)pGVar3,(MethodInfo *)0x0);
+  (this->fields)._overrideBorderColor = pGVar3;
+  func_?(&(this->fields)._overrideBorderColor,pGVar3);
   handle = TypeRef__RTG__GizmoCap2DType;
   if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
@@ -682,176 +756,184 @@ code_?:
   }
   else {
     mscorlib.dll::System::Array::Array_get_Length(this_03,(MethodInfo *)0x0);
-    pIVar8 = (IGizmoCap2DController__Array *)func_?();
-    handleId_00 = &(this->fields)._controllers;
-    *handleId_00 = pIVar8;
+    pIVar4 = (IGizmoCap2DController__Array *)func_?();
+    (this->fields)._controllers = pIVar4;
     func_?();
-    gizmo_00 = TypeInfo__RTG__GizmoCap2DLookAndFeel;
-    value = (GizmoCap2DLookAndFeel *)func_?();
-    fVar9 = _UNK_?;
-    fVar10 = _UNK_?;
-    fVar11 = _UNK_?;
-    fVar12 = _UNK_?;
-    (value->fields)._fillMode = 2;
-    (value->fields)._scale = 1.0;
-    (value->fields)._circleRadius = 12.0;
-    (value->fields)._quadWidth = 25.0;
-    (value->fields)._quadHeight = 25.0;
-    (value->fields)._arrowBaseRadius = 5.0;
-    (value->fields)._arrowHeight = 20.0;
-    (value->fields)._color.r = fVar12;
-    (value->fields)._color.g = fVar11;
-    (value->fields)._color.b = fVar10;
-    (value->fields)._color.a = fVar9;
-    pCVar13 = RTSystemValues::RTSystemValues_get_HoveredAxisColor
-                        ((Color *)&pGStack_5,(MethodInfo *)0x0);
-    fVar12 = pCVar13->g;
-    fVar11 = pCVar13->b;
-    fVar10 = pCVar13->a;
-    (value->fields)._hoveredColor.r = pCVar13->r;
-    (value->fields)._hoveredColor.g = fVar12;
-    (value->fields)._hoveredColor.b = fVar11;
-    (value->fields)._hoveredColor.a = fVar10;
-    fVar10 = _UNK_?;
-    fVar11 = _UNK_?;
-    fVar12 = _UNK_?;
-    (value->fields)._borderColor.r = _UNK_?;
-    (value->fields)._borderColor.g = fVar12;
-    (value->fields)._borderColor.b = fVar11;
-    (value->fields)._borderColor.a = fVar10;
-    pCVar13 = RTSystemValues::RTSystemValues_get_HoveredAxisColor
-                        ((Color *)&pGStack_5,(MethodInfo *)0x0);
-    fVar12 = pCVar13->g;
-    fVar11 = pCVar13->b;
-    fVar10 = pCVar13->a;
-    (value->fields)._hoveredBorderColor.r = pCVar13->r;
-    (value->fields)._hoveredBorderColor.g = fVar12;
-    (value->fields)._hoveredBorderColor.b = fVar11;
-    (value->fields)._hoveredBorderColor.a = fVar10;
+    method_00 = TypeInfo__RTG__GizmoCap2DLookAndFeel;
+    pGVar5 = (Gizmo *)func_?();
+    pGVar6 = _UNK_?;
+    pGVar7 = _UNK_?;
+    pGVar8 = _UNK_?;
+    pGVar9 = _UNK_?;
+    (pGVar5->fields).PostEnabled = (GizmoPostEnabledHandler *)0x2;
+    (pGVar5->fields).PreUpdateBegin = (GizmoPreUpdateBeginHandler *)0x3f800000;
+    (pGVar5->fields).PostUpdateEnd = (GizmoPostUpdateEndHandler *)0x41400000;
+    (pGVar5->fields).PreHoverEnter = (GizmoPreHoverEnterHandler *)0x41c80000;
+    (pGVar5->fields).PostHoverEnter = (GizmoPostHoverEnterHandler *)0x41c80000;
+    (pGVar5->fields).PreHoverExit = (GizmoPreHoverExitHandler *)0x40a00000;
+    (pGVar5->fields).PostHoverExit = (GizmoPostHoverExitHandler *)0x41a00000;
+    (pGVar5->fields).PreDragBegin = pGVar9;
+    (pGVar5->fields).PostDragBegin = pGVar8;
+    (pGVar5->fields).PreDragEnd = pGVar7;
+    (pGVar5->fields).PostDragEnd = pGVar6;
+    pCVar10 = RTSystemValues::RTSystemValues_get_HoveredAxisColor
+                        ((Color *)&pGStack_2,(MethodInfo *)0x0);
+    pGVar11 = (GizmoPostDragUpdateHandler *)pCVar10->g;
+    pGVar12 = (GizmoPreHandlePickedHandler *)pCVar10->b;
+    pGVar13 = (GizmoPostHandlePickedHandler *)pCVar10->a;
+    (pGVar5->fields).PreDragUpdate = (GizmoPreDragUpdateHandler *)pCVar10->r;
+    (pGVar5->fields).PostDragUpdate = pGVar11;
+    (pGVar5->fields).PreHandlePicked = pGVar12;
+    (pGVar5->fields).PostHandlePicked = pGVar13;
+    pGVar6 = _UNK_?;
+    pGVar7 = _UNK_?;
+    pGVar8 = _UNK_?;
+    (pGVar5->fields).PreDragBeginAttempt = (GizmoPreDragBeginAttemptHandler *)_UNK_?;
+    (pGVar5->fields).PostDragBeginAttempt = (GizmoPostDragBeginAttemptHandler *)pGVar8;
+    (pGVar5->fields).OffsetDragAxisModify = (GizmoOffsetDragAxisModifyHandler *)pGVar7;
+    *(GizmoPostDragEndHandler **)&(pGVar5->fields)._isEnabled = pGVar6;
+    pCVar10 = RTSystemValues::RTSystemValues_get_HoveredAxisColor
+                        ((Color *)&pGStack_2,(MethodInfo *)0x0);
+    pGVar14 = (GizmoBehaviourCollection *)pCVar10->g;
+    fVar15 = pCVar10->b;
+    fVar16 = pCVar10->a;
+    (pGVar5->fields)._handles = (GizmoHandleCollection *)pCVar10->r;
+    (pGVar5->fields)._behaviours = pGVar14;
+    *(float *)&(pGVar5->fields)._hoverInfo = fVar15;
+    (pGVar5->fields)._hoverInfo._handleId = (int32_t)fVar16;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)gizmo_00);
-    (this->fields)._lookAndFeel = value;
+              ((Object *)pGVar5,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+    (this->fields)._lookAndFeel = (GizmoCap2DLookAndFeel *)pGVar5;
     func_?();
-    GizmoCap::GizmoCap__ctor
-              ((GizmoCap *)this,(Gizmo *)gizmo_00,(int32_t)handleId_00,(MethodInfo *)0x0);
-    pGVar14 = (this->fields)._._handle;
-    if (pGVar14 == (GizmoHandle *)0x0) goto code_?;
-    iVar15 = GizmoHandle::GizmoHandle_Add2DShape(pGVar14,(Shape2D *)*ppQVar1,(MethodInfo *)0x0);
-    (this->fields)._quadIndex = iVar15;
-    pGVar14 = (this->fields)._._handle;
-    if (pGVar14 == (GizmoHandle *)0x0) goto code_?;
-    iVar15 = GizmoHandle::GizmoHandle_Add2DShape
-                       (pGVar14,(Shape2D *)(this->fields)._circle,(MethodInfo *)0x0);
-    (this->fields)._circleIndex = iVar15;
-    pGVar14 = (this->fields)._._handle;
-    if (pGVar14 == (GizmoHandle *)0x0) goto code_?;
-    iVar15 = GizmoHandle::GizmoHandle_Add2DShape
-                       (pGVar14,(Shape2D *)(this->fields)._arrow,(MethodInfo *)0x0);
-    (this->fields)._arrowIndex = iVar15;
-    method_02 = TypeInfo__RTG__GizmoCap2DControllerData;
-    pGVar16 = (GizmoCap2DControllerData *)func_?();
+    GizmoCap::GizmoCap__ctor((GizmoCap *)this,pGVar5,(int32_t)method_00,(MethodInfo *)0x0);
+    pGVar17 = (this->fields)._._handle;
+    if (pGVar17 == (GizmoHandle *)0x0) goto code_?;
+    iVar18 = GizmoHandle::GizmoHandle_Add2DShape
+                       (pGVar17,(Shape2D *)(this->fields)._quad,(MethodInfo *)0x0);
+    (this->fields)._quadIndex = iVar18;
+    pGVar17 = (this->fields)._._handle;
+    if (pGVar17 == (GizmoHandle *)0x0) goto code_?;
+    iVar18 = GizmoHandle::GizmoHandle_Add2DShape
+                       (pGVar17,(Shape2D *)(this->fields)._circle,(MethodInfo *)0x0);
+    (this->fields)._circleIndex = iVar18;
+    pGVar17 = (this->fields)._._handle;
+    if (pGVar17 == (GizmoHandle *)0x0) goto code_?;
+    iVar18 = GizmoHandle::GizmoHandle_Add2DShape
+                       (pGVar17,(Shape2D *)(this->fields)._arrow,(MethodInfo *)0x0);
+    (this->fields)._arrowIndex = iVar18;
+    method_03 = TypeInfo__RTG__GizmoCap2DControllerData;
+    pGVar19 = (GizmoCap2DControllerData *)func_?();
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)pGVar16,ExceptionArgument__Enum_obj,(MethodInfo *)method_02);
-    ppGVar17 = &(this->fields)._controllerData;
-    *ppGVar17 = pGVar16;
+              ((Object *)pGVar19,ExceptionArgument__Enum_obj,(MethodInfo *)method_03);
+    (this->fields)._controllerData = pGVar19;
     func_?();
-    if (*ppGVar17 == (GizmoCap2DControllerData *)0x0) goto code_?;
-    ((*ppGVar17)->fields).Cap = this;
+    pGVar19 = (this->fields)._controllerData;
+    if (pGVar19 == (GizmoCap2DControllerData *)0x0) goto code_?;
+    (pGVar19->fields).Cap = this;
     func_?();
-    if (*ppGVar17 == (GizmoCap2DControllerData *)0x0) goto code_?;
-    ((*ppGVar17)->fields).CapHandle = (this->fields)._._handle;
+    pGVar19 = (this->fields)._controllerData;
+    if (pGVar19 == (GizmoCap2DControllerData *)0x0) goto code_?;
+    (pGVar19->fields).CapHandle = (this->fields)._._handle;
     func_?();
-    if (*ppGVar17 == (GizmoCap2DControllerData *)0x0) goto code_?;
-    ((*ppGVar17)->fields).Gizmo = (this->fields)._._gizmo;
+    pGVar19 = (this->fields)._controllerData;
+    if (pGVar19 == (GizmoCap2DControllerData *)0x0) goto code_?;
+    (pGVar19->fields).Gizmo = (this->fields)._._gizmo;
     func_?();
-    if (*ppGVar17 == (GizmoCap2DControllerData *)0x0) goto code_?;
-    ((*ppGVar17)->fields).Quad = (this->fields)._quad;
+    pGVar19 = (this->fields)._controllerData;
+    if (pGVar19 == (GizmoCap2DControllerData *)0x0) goto code_?;
+    (pGVar19->fields).Quad = (this->fields)._quad;
     func_?();
-    if (*ppGVar17 == (GizmoCap2DControllerData *)0x0) goto code_?;
-    ((*ppGVar17)->fields).QuadIndex = (this->fields)._quadIndex;
-    if (*ppGVar17 == (GizmoCap2DControllerData *)0x0) goto code_?;
-    ((*ppGVar17)->fields).Circle = (this->fields)._circle;
+    pGVar19 = (this->fields)._controllerData;
+    if (pGVar19 == (GizmoCap2DControllerData *)0x0) goto code_?;
+    (pGVar19->fields).QuadIndex = (this->fields)._quadIndex;
+    pGVar19 = (this->fields)._controllerData;
+    if (pGVar19 == (GizmoCap2DControllerData *)0x0) goto code_?;
+    (pGVar19->fields).Circle = (this->fields)._circle;
     func_?();
-    if (*ppGVar17 == (GizmoCap2DControllerData *)0x0) goto code_?;
-    ((*ppGVar17)->fields).CircleIndex = (this->fields)._circleIndex;
-    if (*ppGVar17 == (GizmoCap2DControllerData *)0x0) goto code_?;
-    ((*ppGVar17)->fields).Arrow = (this->fields)._arrow;
+    pGVar19 = (this->fields)._controllerData;
+    if (pGVar19 == (GizmoCap2DControllerData *)0x0) goto code_?;
+    (pGVar19->fields).CircleIndex = (this->fields)._circleIndex;
+    pGVar19 = (this->fields)._controllerData;
+    if (pGVar19 == (GizmoCap2DControllerData *)0x0) goto code_?;
+    (pGVar19->fields).Arrow = (this->fields)._arrow;
     func_?();
-    if (*ppGVar17 == (GizmoCap2DControllerData *)0x0) goto code_?;
-    ((*ppGVar17)->fields).ArrowIndex = (this->fields)._arrowIndex;
-    pIVar8 = (this->fields)._controllers;
-    pIVar18 = (IGizmoCap2DController__Class *)*ppGVar17;
-    method_03 = TypeInfo__RTG__GizmoQuadCap2DController;
-    value_00 = (IGizmoCap2DController *)func_?();
+    pGVar19 = (this->fields)._controllerData;
+    if (pGVar19 == (GizmoCap2DControllerData *)0x0) goto code_?;
+    (pGVar19->fields).ArrowIndex = (this->fields)._arrowIndex;
+    pIVar4 = (this->fields)._controllers;
+    pIVar20 = (IGizmoCap2DController__Class *)(this->fields)._controllerData;
+    method_04 = TypeInfo__RTG__GizmoQuadCap2DController;
+    pIVar21 = (IGizmoCap2DController *)func_?();
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)value_00,ExceptionArgument__Enum_obj,(MethodInfo *)method_03);
-    value_00[1].klass = pIVar18;
+              ((Object *)pIVar21,ExceptionArgument__Enum_obj,(MethodInfo *)method_04);
+    pIVar21[1].klass = pIVar20;
     func_?();
-    if (pIVar8 == (IGizmoCap2DController__Array *)0x0) goto code_?;
-    iVar19 = func_?();
-    if (iVar19 == 0) goto code_?;
-    if (pIVar8->max_length == 0) goto code_?;
-    pIVar8->vector[0] = value_00;
+    if (pIVar4 == (IGizmoCap2DController__Array *)0x0) goto code_?;
+    iVar22 = func_?();
+    if (iVar22 == 0) goto code_?;
+    if (pIVar4->max_length == 0) goto code_?;
+    pIVar4->vector[0] = pIVar21;
     func_?();
+    pIVar4 = (this->fields)._controllers;
+    pIVar20 = (IGizmoCap2DController__Class *)(this->fields)._controllerData;
     method_01 = TypeInfo__RTG__GizmoCircleCap2DController;
-    pIVar8 = (this->fields)._controllers;
-    pGVar16 = *ppGVar17;
-    pOVar20 = (Object *)func_?();
+    pIVar21 = (IGizmoCap2DController *)func_?();
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar20,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
-    _UNK_? = pGVar16;
+              ((Object *)pIVar21,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
+    pIVar21[1].klass = pIVar20;
     func_?();
-    if (pIVar8 == (IGizmoCap2DController__Array *)0x0) goto code_?;
-    iVar19 = func_?();
-    if (iVar19 == 0) goto code_?;
-    if (pIVar8->max_length < 2) goto code_?;
-    pIVar8->vector[1] = (IGizmoCap2DController *)&UNK_?;
+    if (pIVar4 == (IGizmoCap2DController__Array *)0x0) goto code_?;
+    iVar22 = func_?();
+    if (iVar22 == 0) goto code_?;
+    if (pIVar4->max_length < 2) goto code_?;
+    pIVar4->vector[1] = pIVar21;
     func_?();
-    method_00 = TypeInfo__RTG__GizmoArrowCap2DController;
-    pOVar21 = (Object__Class *)*ppGVar17;
-    pOVar20 = (Object *)func_?();
+    pIVar4 = (this->fields)._controllers;
+    pIVar20 = (IGizmoCap2DController__Class *)(this->fields)._controllerData;
+    method_02 = TypeInfo__RTG__GizmoArrowCap2DController;
+    pIVar21 = (IGizmoCap2DController *)func_?();
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar20,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-    pOVar20[1].klass = pOVar21;
+              ((Object *)pIVar21,ExceptionArgument__Enum_obj,(MethodInfo *)method_02);
+    pIVar21[1].klass = pIVar20;
     func_?();
-    iVar19 = func_?();
-    if (iVar19 != 0) {
-      if (_UNK_? < 3) goto code_?;
-      _UNK_? = pOVar20;
+    if (pIVar4 == (IGizmoCap2DController__Array *)0x0) goto code_?;
+    iVar22 = func_?();
+    if (iVar22 != 0) {
+      if (pIVar4->max_length < 3) goto code_?;
+      pIVar4->vector[2] = pIVar21;
       func_?();
-      if ((pOVar20 + 1 != (Object *)0x0) &&
-         (pGVar4 = (this->fields)._transform, pGVar4 != (GizmoTransform *)0x0)) {
-        GizmoTransform::GizmoTransform_SetParent
-                  (pGVar4,(GizmoTransform *)pOVar20[0x20].klass,(MethodInfo *)0x0);
-        pGVar4 = (this->fields)._transform;
-        value_01 = (GizmoEntityTransformChangedHandler *)func_?();
+      pGVar1 = (this->fields)._transform;
+      if (pGVar1 != (GizmoTransform *)0x0) {
+        GizmoTransform::GizmoTransform_SetParent(pGVar1,_UNK_?,(MethodInfo *)0x0);
+        pGVar1 = (this->fields)._transform;
+        value = (GizmoEntityTransformChangedHandler *)func_?();
         Newtonsoft.Json.dll::Newtonsoft::Json::Serialization::SerializationCallback::
         SerializationCallback__ctor
-                  ((SerializationCallback *)value_01,(Object *)this,
+                  ((SerializationCallback *)value,(Object *)this,
                    MethodInfo__RTG__GizmoCap2D__OnTransformChanged_RTG__GizmoTransform__RTG__GizmoTransform__ChangeData_
                    ,(MethodInfo *)0x0);
-        if (pGVar4 != (GizmoTransform *)0x0) {
-          GizmoTransform::GizmoTransform_add_Changed(pGVar4,value_01,(MethodInfo *)0x0);
-          pGVar22 = (this->fields)._._gizmo;
-          value_02 = (GizmoPreUpdateBeginHandler *)func_?();
+        if (pGVar1 != (GizmoTransform *)0x0) {
+          GizmoTransform::GizmoTransform_add_Changed(pGVar1,value,(MethodInfo *)0x0);
+          pGVar5 = (this->fields)._._gizmo;
+          value_00 = (GizmoPreUpdateBeginHandler *)func_?();
           UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
           VideoCapture+OnVideoCaptureResourceCreatedCallback::
           VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
-                    ((VideoCapture_OnVideoCaptureResourceCreatedCallback *)value_02,(Object *)this,
+                    ((VideoCapture_OnVideoCaptureResourceCreatedCallback *)value_00,(Object *)this,
                      MethodInfo__RTG__GizmoCap2D__OnGizmoPreUpdateBegin_RTG__Gizmo_,
                      (MethodInfo *)0x0);
-          if (pGVar22 != (Gizmo *)0x0) {
-            Gizmo::Gizmo_add_PreUpdateBegin(pGVar22,value_02,(MethodInfo *)0x0);
-            pGVar22 = (this->fields)._._gizmo;
-            value_03 = (GizmoPostEnabledHandler *)func_?();
+          if (pGVar5 != (Gizmo *)0x0) {
+            Gizmo::Gizmo_add_PreUpdateBegin(pGVar5,value_00,(MethodInfo *)0x0);
+            pGVar5 = (this->fields)._._gizmo;
+            value_01 = (GizmoPostEnabledHandler *)func_?();
             UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
             VideoCapture+OnVideoCaptureResourceCreatedCallback::
             VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
-                      ((VideoCapture_OnVideoCaptureResourceCreatedCallback *)value_03,(Object *)this
+                      ((VideoCapture_OnVideoCaptureResourceCreatedCallback *)value_01,(Object *)this
                        ,MethodInfo__RTG__GizmoCap2D__OnGizmoPostEnabled_RTG__Gizmo_,
                        (MethodInfo *)0x0);
-            if (pGVar22 != (Gizmo *)0x0) {
-              Gizmo::Gizmo_add_PostEnabled(pGVar22,value_03,(MethodInfo *)0x0);
+            if (pGVar5 != (Gizmo *)0x0) {
+              Gizmo::Gizmo_add_PostEnabled(pGVar5,value_01,(MethodInfo *)0x0);
               return;
             }
           }
@@ -877,9 +959,8 @@ Assembly-CSharp.dll::RTG::GizmoCap2D::GizmoCap2D_get_LookAndFeel
           (GizmoCap2D *this,MethodInfo *method)
 
 {
-  pGVar1 = (this->fields)._sharedLookAndFeel;
-  if (pGVar1 != (GizmoCap2DLookAndFeel *)0x0) {
-    return pGVar1;
+  if ((this->fields)._sharedLookAndFeel != (GizmoCap2DLookAndFeel *)0x0) {
+    return (this->fields)._sharedLookAndFeel;
   }
   return (this->fields)._lookAndFeel;
 }

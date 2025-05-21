@@ -12,61 +12,38 @@ void Assembly-CSharp.dll::ImpulseRay::ImpulseRay_Initialize
                        ((Vector3 *)(auStack_3 + 4),pTVar1,(MethodInfo *)0x0);
     uVar4 = pVVar2->x;
     uVar5 = pVVar2->y;
-    fStack_6 = target.x - (float)uVar4;
-    fStack_7 = target.y - (float)uVar5;
-    fStack_8 = target.z - pVVar2->z;
-    auStack_3 = (undefined1  [8])CONCAT44(fStack_7,fStack_6);
-    fStack_9 = fStack_8;
-    puVar10 = (undefined8 *)func_?(&stack0xfffffffc,auStack_3,0);
-    fVar11 = *(float *)(puVar10 + 1);
-    uVar12 = (undefined4)*puVar10;
-    uVar13 = (undefined4)((ulonglong)*puVar10 >> 0x20);
+    fStack_6 = target.z - pVVar2->z;
+    uStack_7 = CONCAT44(target.y - (float)uVar5,target.x - (float)uVar4);
+    pVVar2 = (Vector3 *)func_?(auStack_3 + 4,&uStack_7,0);
+    forward = *pVVar2;
     if (cRam_? == '\0') {
       func_?(&TypeInfo__UnityEngine__Vector3);
       cRam_? = '\x01';
     }
-    forward.y = (float)uVar13;
-    forward.x = (float)uVar12;
-    forward.z = fVar11;
-    pQVar14 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation
-                       (&QStack_15,forward,TypeInfo__UnityEngine__Vector3->static_fields->upVector,
-                        (MethodInfo *)0x0);
-    fStack_8 = pQVar14->x;
-    auStack_3._0_4_ = pQVar14->y;
-    auStack_3._4_4_ = pQVar14->z;
-    fStack_9 = pQVar14->w;
+    pQVar8 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation
+                       ((Quaternion *)auStack_3,forward,
+                        TypeInfo__UnityEngine__Vector3->static_fields->upVector,(MethodInfo *)0x0);
+    auStack_3._0_4_ = pQVar8->x;
+    auStack_3._4_4_ = pQVar8->y;
+    fStack_9 = pQVar8->z;
+    fStack_10 = pQVar8->w;
     pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                        ((Component *)this,(MethodInfo *)0x0);
     if (pTVar1 != (Transform *)0x0) {
-      value.y = fStack_9;
-      value.x = (float)auStack_3._4_4_;
-      value.z = (float)uStack_16;
-      value.w = unaff_EBP;
+      value.y = (float)auStack_3._4_4_;
+      value.x = (float)auStack_3._0_4_;
+      value.z = fStack_9;
+      value.w = fStack_10;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
                 (pTVar1,value,(MethodInfo *)0x0);
-      if (cRam_? == '\0') {
-        pMStack_17 = (Math__Class *)&TypeInfo__System__Math;
-        func_?();
-        cRam_? = '\x01';
-      }
-      if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-        pMStack_17 = TypeInfo__System__Math;
-        func_?();
-      }
-      dVar18 = (double)((float)auStack_3._0_4_ * (float)auStack_3._0_4_ +
-                       (float)auStack_3._4_4_ * (float)auStack_3._4_4_ + fStack_9 * fStack_9);
-      if (0.0 <= dVar18) {
-        (this->fields).rayMagnitude = (float)SQRT(dVar18);
-        return;
-      }
-      func_?();
-      (this->fields).rayMagnitude = (float)dVar18;
+      fVar11 = (float10)func_?(&uStack_7,0);
+      (this->fields).rayMagnitude = (float)fVar11;
       return;
     }
   }
   func_?();
-  pcVar19 = (code *)swi(3);
-  (*pcVar19)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 

@@ -14,49 +14,46 @@ void Assembly-CSharp.dll::StreamedSpriteToImageManual::StreamedSpriteToImageManu
     func_?(&TypeInfo__UnityEngine__Events__UnityAction);
     cRam_? = '\x01';
   }
-  ppUVar1 = &(this->fields).onAssetSetManual;
-  *ppUVar1 = onAssetSet;
-  func_?(ppUVar1,onAssetSet);
-  ppSVar2 = &(this->fields)._._.url;
-  *ppSVar2 = url;
-  func_?(ppSVar2,url);
-  pUVar3 = (this->fields)._._.onAssetSetAction;
-  ppUVar1 = &(this->fields)._._.onAssetSetAction;
+  (this->fields).onAssetSetManual = onAssetSet;
+  func_?(&(this->fields).onAssetSetManual,onAssetSet);
+  (this->fields)._._.url = url;
+  func_?(&(this->fields)._._.url,url);
+  pUVar1 = (this->fields)._._.onAssetSetAction;
   this_00 = (NavMesh_OnNavMeshPreUpdate *)
             func_?(TypeInfo__UnityEngine__Events__UnityAction);
   UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
   NavMesh_OnNavMeshPreUpdate__ctor
             (this_00,(Object *)this,MethodInfo__StreamedSpriteToImageManual__OnAssetSetCallback__,
              (MethodInfo *)0x0);
-  pUVar3 = (UnityAction *)
+  pUVar1 = (UnityAction *)
            mscorlib.dll::System::Delegate::Delegate_Combine
-                     ((Delegate *)pUVar3,(Delegate *)this_00,(MethodInfo *)0x0);
-  if (pUVar3 == (UnityAction *)0x0) {
-    *ppUVar1 = (UnityAction *)0x0;
+                     ((Delegate *)pUVar1,(Delegate *)this_00,(MethodInfo *)0x0);
+  if (pUVar1 == (UnityAction *)0x0) {
+    (this->fields)._._.onAssetSetAction = (UnityAction *)0x0;
 code_?:
     func_?();
     StreamingAsset`2[System::Object,System::Object]::
     StreamingAsset_2_System_Object_System_Object__DownloadWhenPossible
-              ((StreamingAsset_2_System_Object_System_Object_ *)ppUVar1,
+              ((StreamingAsset_2_System_Object_System_Object_ *)this,
                MethodInfo__StreamingAsset<UnityEngine::Sprite,_UnityEngine::Texture2D>__DownloadWhenPossible__
               );
     return;
   }
-  pUVar4 = (UnityAction *)0x0;
-  if (pUVar3->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-    pUVar4 = pUVar3;
+  pUVar2 = (UnityAction *)0x0;
+  if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+    pUVar2 = pUVar1;
   }
-  if (pUVar4 != (UnityAction *)0x0) {
-    *ppUVar1 = pUVar4;
-    pUVar4 = (UnityAction *)0x0;
-    if (pUVar3->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-      pUVar4 = pUVar3;
+  if (pUVar2 != (UnityAction *)0x0) {
+    (this->fields)._._.onAssetSetAction = pUVar2;
+    pUVar2 = (UnityAction *)0x0;
+    if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+      pUVar2 = pUVar1;
     }
-    if (pUVar4 != (UnityAction *)0x0) goto code_?;
+    if (pUVar2 != (UnityAction *)0x0) goto code_?;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -98,43 +95,45 @@ void Assembly-CSharp.dll::StreamedSpriteToImageManual::
     cRam_? = '\x01';
   }
   pUVar1 = (this->fields)._._.onAssetSetAction;
-  ppUVar2 = &(this->fields)._._.onAssetSetAction;
   this_00 = (NavMesh_OnNavMeshPreUpdate *)
             func_?(TypeInfo__UnityEngine__Events__UnityAction);
   UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
   NavMesh_OnNavMeshPreUpdate__ctor
             (this_00,(Object *)this,MethodInfo__StreamedSpriteToImageManual__OnAssetSetCallback__,
              (MethodInfo *)0x0);
-  pUVar1 = (UnityAction *)
-           mscorlib.dll::System::Delegate::Delegate_Remove
-                     ((Delegate *)pUVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-  if (pUVar1 == (UnityAction *)0x0) {
-    *ppUVar2 = (UnityAction *)0x0;
+  pUStack2 =
+       (UnityAction *)
+       mscorlib.dll::System::Delegate::Delegate_Remove
+                 ((Delegate *)pUVar1,(Delegate *)this_00,(MethodInfo *)0x0);
+  pUStack3 = (UnityAction__Class *)0x0;
+  if (pUStack2 == (UnityAction *)0x0) {
+    (this->fields)._._.onAssetSetAction = (UnityAction *)0x0;
 code_?:
+    pUStack2 = (UnityAction *)&(this->fields)._._.onAssetSetAction;
     func_?();
-    pSVar3 = this[1].fields._._.url;
-    if (pSVar3 != (String *)0x0) {
-      pMStack4 = pSVar3[1].monitor;
-      pSStack5 = pSVar3[2].klass;
-      (**(code **)&(pSVar3->fields)._firstChar)();
+    if ((this->fields).onAssetSetManual != (UnityAction *)0x0) {
+      pUVar1 = (this->fields).onAssetSetManual;
+      pUStack3 = (pUVar1->fields)._._.method;
+      pUStack2 = (pUVar1->fields)._._.method_code;
+      (*(pUVar1->fields)._._.invoke_impl)();
     }
     return;
   }
-  pUVar6 = (UnityAction *)0x0;
-  if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-    pUVar6 = pUVar1;
+  if (pUStack2->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+    pUStack3 = (UnityAction__Class *)pUStack2;
   }
-  if (pUVar6 != (UnityAction *)0x0) {
-    *ppUVar2 = pUVar6;
-    pUVar6 = (UnityAction *)0x0;
-    if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-      pUVar6 = pUVar1;
+  if (pUStack3 != (UnityAction__Class *)0x0) {
+    (this->fields)._._.onAssetSetAction = (UnityAction *)pUStack3;
+    pUStack3 = (UnityAction__Class *)(UnityAction *)0x0;
+    if (pUStack2->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+      pUStack3 = (UnityAction__Class *)pUStack2;
     }
-    if (pUVar6 != (UnityAction *)0x0) goto code_?;
+    if (pUStack3 != (UnityAction__Class *)0x0) goto code_?;
   }
+  pUStack3 = TypeInfo__UnityEngine__Events__UnityAction;
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -199,19 +198,18 @@ void Assembly-CSharp.dll::StreamedSpriteToImageManual::StreamedSpriteToImageManu
     cRam_? = '\x01';
   }
   pIVar1 = (this->fields).image;
-  ppIVar2 = &(this->fields).image;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                     ((Object_1 *)pIVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar3 != 0) {
+  if (bVar2 != 0) {
     pIVar1 = (Image *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
                                 ((Component *)this,
                                  UnityEngine__UI__Image_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Image>__
                                 );
-    *ppIVar2 = pIVar1;
-    func_?(ppIVar2,pIVar1);
+    (this->fields).image = pIVar1;
+    func_?(&(this->fields).image,pIVar1);
   }
   return;
 }

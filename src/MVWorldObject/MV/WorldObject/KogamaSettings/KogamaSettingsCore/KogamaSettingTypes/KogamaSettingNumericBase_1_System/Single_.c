@@ -14,28 +14,28 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
   if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
     pIVar1 = (Il2CppClass *)func_?(pIVar1);
   }
-  this_01 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?(pIVar1);
+  this_00 = (KogamaSettingBase *)func_?(pIVar1);
   pMVar2 = method->klass->rgctx_data[5].method;
   UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
   UxmlObjectListAttributeDescription`1[System::Object]::
-  UxmlObjectListAttributeDescription_1_System_Object___ctor(this_01,(MethodInfo *)0x0);
+  UxmlObjectListAttributeDescription_1_System_Object___ctor
+            ((UxmlObjectListAttributeDescription_1_System_Object_ *)this_00,(MethodInfo *)0x0);
   if (((uint)(pMVar2->klass->rgctx_data[3].klass)->vtable[0].methodPtr & 0x100) == 0) {
     func_?();
   }
-  this_02 = (RangeValidator_1_System_Single_ *)func_?();
+  this_01 = (KogamaSettingBase__Class *)func_?();
   AntiCheat::RangeValidator`1[System::Single]::RangeValidator_1_System_Single___ctor_1
-            (this_02,min,max,pMVar2->klass->rgctx_data[5].method);
-  ppMVar3 = &this_01[1].monitor;
-  *ppMVar3 = (MonitorData *)this_02;
+            ((RangeValidator_1_System_Single_ *)this_01,min,max,pMVar2->klass->rgctx_data[5].method)
+  ;
+  this_00[1].klass = this_01;
   func_?();
-  if ((RangeValidator_1_System_Single_ *)*ppMVar3 != (RangeValidator_1_System_Single_ *)0x0) {
+  if (this_00[1].klass != (KogamaSettingBase__Class *)0x0) {
     AntiCheat::RangeValidator`1[System::Single]::RangeValidator_1_System_Single__Validate
-              ((RangeValidator_1_System_Single_ *)*ppMVar3,value,0,
+              ((RangeValidator_1_System_Single_ *)this_00[1].klass,value,0,
                pMVar2->klass->rgctx_data[4].method);
-    this_00 = (KogamaSettingBase *)*ppMVar3;
-    if (this_00 != (KogamaSettingBase *)0x0) {
+    if (this_00[1].klass != (KogamaSettingBase__Class *)0x0) {
       AntiCheat::RangeValidator`1[System::Single]::RangeValidator_1_System_Single__Validate
-                ((RangeValidator_1_System_Single_ *)this_00,value,1,
+                ((RangeValidator_1_System_Single_ *)this_00[1].klass,value,1,
                  (pMVar2->klass->rgctx_data[6].method)->klass->rgctx_data[4].method);
       value_00 = (Object *)func_?();
       KogamaSettingBase::KogamaSettingBase_set_Value(this_00,value_00,(MethodInfo *)0x0);
@@ -45,8 +45,8 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

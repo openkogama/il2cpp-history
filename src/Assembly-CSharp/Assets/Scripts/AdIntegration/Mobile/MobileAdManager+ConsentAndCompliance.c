@@ -55,27 +55,25 @@ bool Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
                (MobileAdManager_ConsentAndCompliance *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pCVar2 = (this->fields).consentData;
-  if (pCVar2 == (ConsentData *)0x0) {
-    uVar3 = func_?(auStack_4);
-    func_?(uVar3);
-    pcVar5 = (code *)swi(3);
-    bVar6 = (*pcVar5)();
-    return bVar6;
+  pCVar1 = (this->fields).consentData;
+  if (pCVar1 == (ConsentData *)0x0) {
+    func_?();
+    pcVar2 = (code *)swi(3);
+    bVar3 = (*pcVar2)();
+    return bVar3;
   }
-  if ((pCVar2->fields).isEuropean == 0) {
-    bVar6 = (pCVar2->fields).isAmerican;
-    bVar7 = true;
+  if ((pCVar1->fields).isEuropean == 0) {
+    bVar3 = (pCVar1->fields).isAmerican;
+    bVar4 = true;
   }
   else {
-    bVar7 = (pCVar2->fields).isChild == 0;
-    bVar6 = 1;
+    bVar4 = (pCVar1->fields).isChild == 0;
+    bVar3 = 1;
   }
-  if (((pCVar2->fields).hasConsented & bVar7) != 0) {
+  if (((pCVar1->fields).hasConsented & bVar4) != 0) {
     return 1;
   }
-  return bVar6 == 0;
+  return bVar3 == 0;
 }
 
 

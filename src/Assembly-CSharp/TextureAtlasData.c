@@ -869,14 +869,11 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_StreamAtlasUVsToMat
           mscorlib.dll::System::ValueTuple`2[Int32,IntPtr]::ValueTuple_2_Int32_IntPtr___ctor
                     (&VStack_4,item1,(void *)(int)((float)item1 * _UNK_?),
                      MethodInfo__System__ValueTuple<int,_int>__ValueTuple_int__int_);
-          fVar5 = (float)VStack_4.Item1;
-          VStack_4.Item1 = (int32_t)((float)(int)VStack_4.Item2 / (float)iVar2);
-          VStack_4.Item2 = (void *)((float)(int)VStack_4.Item2 / (float)iVar3);
           if (*material != (Material *)0x0) {
-            value.y = fVar5 / (float)iVar3;
-            value.x = fVar5 / (float)iVar2;
-            value.z = (float)VStack_4.Item1;
-            value.w = (float)VStack_4.Item2;
+            value.y = (float)VStack_4.Item1 / (float)iVar3;
+            value.x = (float)VStack_4.Item1 / (float)iVar2;
+            value.z = (float)(int)VStack_4.Item2 / (float)iVar2;
+            value.w = (float)(int)VStack_4.Item2 / (float)iVar3;
             UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
                       (*material,StringLiteral__TileUVData,value,(MethodInfo *)0x0);
             if (*material != (Material *)0x0) {
@@ -916,8 +913,8 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_StreamAtlasUVsToMat
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -969,8 +966,8 @@ Vector4 * Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_TileUVData
   mscorlib.dll::System::ValueTuple`2[Int32,IntPtr]::ValueTuple_2_Int32_IntPtr___ctor
             (&VStack_1,item1,(void *)(int)((float)item1 * _UNK_?),
              MethodInfo__System__ValueTuple<int,_int>__ValueTuple_int__int_);
-  __return_storage_ptr__->y = (float)VStack_1.Item1 / (float)atlasHeight;
   __return_storage_ptr__->x = (float)VStack_1.Item1 / (float)atlasWidth;
+  __return_storage_ptr__->y = (float)VStack_1.Item1 / (float)atlasHeight;
   __return_storage_ptr__->z = (float)(int)VStack_1.Item2 / (float)atlasWidth;
   __return_storage_ptr__->w = (float)(int)VStack_1.Item2 / (float)atlasHeight;
   return __return_storage_ptr__;

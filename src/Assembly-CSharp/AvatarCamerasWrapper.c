@@ -157,8 +157,7 @@ void Assembly-CSharp.dll::AvatarCamerasWrapper::AvatarCamerasWrapper__ctor
              MethodInfo__System__Collections__Generic__Dictionary<CameraType,_MVCameraBase>__Dictionary__
             );
   method_00 = (MethodInfo *)&this->fields;
-  ((AvatarCamerasWrapper__Fields *)method_00)->avatarCameras =
-       (Dictionary_2_CameraType_MVCameraBase_ *)this_00;
+  (this->fields).avatarCameras = (Dictionary_2_CameraType_MVCameraBase_ *)this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);

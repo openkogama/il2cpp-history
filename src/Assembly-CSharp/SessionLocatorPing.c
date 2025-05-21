@@ -410,8 +410,8 @@ void Assembly-CSharp.dll::SessionLocatorPing::SessionLocatorPing_WWWCallBack
     milliseconds = *(int32_t *)(unaff_EBX + 0xc);
     this_00 = (WaitForTicksLocal *)func_?(TypeInfo__WaitForTicksLocal);
     WaitForTicksLocal::WaitForTicksLocal__ctor(this_00,milliseconds,(MethodInfo *)0x0);
-    *(undefined4 *)(unaff_EBX + 8) = this_00;
-    func_?((undefined4 *)(unaff_EBX + 8),this_00);
+    *(WaitForTicksLocal **)(unaff_EBX + 8) = this_00;
+    func_?(unaff_EBX + 8,this_00);
     *(undefined1 *)(unaff_EBX + 0x10) = 0;
     return;
   }
@@ -436,7 +436,7 @@ void Assembly-CSharp.dll::SessionLocatorPing::SessionLocatorPing__ctor
   this_00 = (WaitForTicksLocal *)func_?(TypeInfo__WaitForTicksLocal);
   WaitForTicksLocal::WaitForTicksLocal__ctor(this_00,0,(MethodInfo *)0x0);
   method_00 = (MethodInfo *)&this->fields;
-  ((SessionLocatorPing__Fields *)method_00)->waitForTicks = this_00;
+  (this->fields).waitForTicks = this_00;
   func_?(method_00,this_00);
   (this->fields).pingIntervalInMilliSeconds = 60000;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57

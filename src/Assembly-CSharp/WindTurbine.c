@@ -238,7 +238,7 @@ Vector3 * Assembly-CSharp.dll::WindTurbine::WindTurbine_GetClosestGridPoint
   pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
   uVar2 = (pVVar1->oneVector).x;
   uVar3 = (pVVar1->oneVector).y;
-  fVar4 = (float)uVar2 * _UNK_?;
+  pSVar4 = (SharedCubeFunctions__Class *)((float)uVar2 * _UNK_?);
   fVar5 = (float)uVar3 * _UNK_?;
   fVar6 = (pVVar1->oneVector).z * _UNK_?;
   this_00 = (this->fields)._._.gameObject;
@@ -246,38 +246,37 @@ Vector3 * Assembly-CSharp.dll::WindTurbine::WindTurbine_GetClosestGridPoint
     this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                         (this_00,(MethodInfo *)0x0);
     if (this_01 != (Transform *)0x0) {
-      uVar7 = 0;
-      pQVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                         ((Quaternion *)&stack0xffffffec,this_01,(MethodInfo *)0x0);
-      fVar4 = pQVar8->z;
-      fVar5 = pQVar8->w;
+      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+                ((Quaternion *)&stack0xffffffe0,this_01,(MethodInfo *)0x0);
+      pSVar7 = TypeInfo__SharedCubeFunctions;
       if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
+        pSVar4 = pSVar7;
       }
       worldPosition.z = position.z;
       worldPosition.x = position.x;
       worldPosition.y = position.y;
-      rotation.y = 0.0;
-      rotation.x = fVar6;
-      rotation.z = fVar4;
-      rotation.w = fVar5;
-      scale.y = (float)uVar7;
-      scale.x = (float)this_01;
+      rotation.y = (float)pSVar4;
+      rotation.x = gridSize;
+      rotation.z = fVar5;
+      rotation.w = fVar6;
+      scale.y = fVar5;
+      scale.x = (float)pSVar4;
       scale.z = fVar6;
-      pVVar9 = SharedCubeFunctions::SharedCubeFunctions_GetClosestGridPoint
+      pVVar8 = SharedCubeFunctions::SharedCubeFunctions_GetClosestGridPoint
                          (&position,worldPosition,rotation,gridSize,scale,(MethodInfo *)0x0);
-      fVar5 = pVVar9->y;
-      fVar4 = pVVar9->z;
-      __return_storage_ptr__->x = pVVar9->x;
+      fVar5 = pVVar8->y;
+      fVar6 = pVVar8->z;
+      __return_storage_ptr__->x = pVVar8->x;
       __return_storage_ptr__->y = fVar5;
-      __return_storage_ptr__->z = fVar4;
+      __return_storage_ptr__->z = fVar6;
       return __return_storage_ptr__;
     }
   }
-  func_?(fVar4,fVar5);
-  pcVar10 = (code *)swi(3);
-  pVVar9 = (Vector3 *)(*pcVar10)();
-  return pVVar9;
+  func_?();
+  pcVar9 = (code *)swi(3);
+  pVVar8 = (Vector3 *)(*pcVar9)();
+  return pVVar8;
 }
 
 
@@ -369,10 +368,9 @@ code_?:
                             (Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,
                             (Action_2_LogicInputState_LogicObjectManager_ *)this_03,
                             (MethodInfo *)0x0);
-        ppIVar7 = &(this->fields)._InputSignalReceiver_k__BackingField;
-        *ppIVar7 = pIVar6;
+        (this->fields)._InputSignalReceiver_k__BackingField = pIVar6;
         func_?();
-        if (*ppIVar7 != (IInputSignalReceiver *)0x0) {
+        if ((this->fields)._InputSignalReceiver_k__BackingField != (IInputSignalReceiver *)0x0) {
           value = func_?();
           (this->fields).isActive = value;
           pWVar5 = (this->fields).windTurbineObject;
@@ -392,8 +390,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -776,6 +774,12 @@ void Assembly-CSharp.dll::WindTurbine::WindTurbine_UpdateControllerFixedUpdate
     puVar6 = puStack_4;
   }
   puStack_4 = puVar6;
+  DStack_7._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
+  DStack_7._version = 0;
+  DStack_7._index = 0;
+  DStack_7._current.key = 0;
+  DStack_7._current.value = (Object *)0x0;
+  DStack_7._getEnumeratorRetType = 0;
   if ((this->fields).isActive == 0) {
 code_?:
     *unaff_FS_OFFSET = uStack_3;
@@ -783,28 +787,27 @@ code_?:
   }
   method_00 = (MethodInfo *)(this->fields).affectedBodies;
   if (method_00 != (MethodInfo *)0x0) {
-    pDVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
+    pDVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
              ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                       (&DStack_8,(Dictionary_2_System_UInt32_System_Object_ *)method_00,
+                       (&DStack_9,(Dictionary_2_System_UInt32_System_Object_ *)method_00,
                         MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__GetEnumerator__
                        );
-    uStack_9 = 0;
-    DStack_10._dictionary = pDVar7->_dictionary;
-    DStack_10._version = pDVar7->_version;
-    DStack_10._index = pDVar7->_index;
-    DStack_10._current.key = (pDVar7->_current).key;
-    DStack_10._current.value = (pDVar7->_current).value;
-    DStack_10._getEnumeratorRetType = pDVar7->_getEnumeratorRetType;
+    uStack_10 = 0;
+    DStack_7._dictionary = pDVar8->_dictionary;
+    DStack_7._version = pDVar8->_version;
+    DStack_7._index = pDVar8->_index;
+    DStack_7._current.key = (pDVar8->_current).key;
+    DStack_7._16_8_ = *(undefined8 *)&(pDVar8->_current).value;
     uStack_1 = 1;
-    pDStack_11 = &DStack_10;
+    pDStack_11 = &DStack_7;
     while (bVar12 = mscorlib.dll::System::Collections::Generic::
                    Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
                    Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                             (&DStack_10,
+                             (&DStack_7,
                               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVRigidBody>__MoveNext__
                              ), bVar12 != 0) {
-      pTStack_13 = (Transform *)DStack_10._current.key;
-      pMStack_14 = (MVRigidBody *)DStack_10._current.value;
+      pTStack_13 = (Transform *)DStack_7._current.key;
+      pMStack_14 = (MVRigidBody *)DStack_7._current.value;
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
@@ -827,12 +830,12 @@ code_?:
           if (this_02 == (Collider *)0x0) goto code_?;
           pBVar17 = UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_get_bounds
                              (&BStack_18,this_02,(MethodInfo *)0x0);
-          DStack_8._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)(pBVar17->m_Center).x;
-          DStack_8._version = (int32_t)(pBVar17->m_Center).y;
-          DStack_8._index = (int32_t)(pBVar17->m_Center).z;
-          DStack_8._current.key = (uint32_t)(pBVar17->m_Extents).x;
-          DStack_8._current.value = (Object *)(pBVar17->m_Extents).y;
-          DStack_8._getEnumeratorRetType = (int32_t)(pBVar17->m_Extents).z;
+          DStack_9._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)(pBVar17->m_Center).x;
+          DStack_9._version = (int32_t)(pBVar17->m_Center).y;
+          DStack_9._index = (int32_t)(pBVar17->m_Center).z;
+          DStack_9._current.key = (uint32_t)(pBVar17->m_Extents).x;
+          DStack_9._current.value = (Object *)(pBVar17->m_Extents).y;
+          DStack_9._getEnumeratorRetType = (int32_t)(pBVar17->m_Extents).z;
           if (pTStack_13 == (Transform *)0x0) goto code_?;
           pVVar19 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                    Transform_InverseTransformPoint
@@ -871,7 +874,7 @@ code_?:
     }
     uStack_1 = 0xffffffff;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)&DStack_10,
+              ((Object *)&DStack_7,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVRigidBody>__Dispose__
                ,method_00);
@@ -957,150 +960,135 @@ void Assembly-CSharp.dll::WindTurbine::WindTurbine__ctor
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<int>__List__);
-  ppLVar1 = &(this->fields).keysToRemove;
-  *ppLVar1 = this_00;
-  func_?(ppLVar1,this_00);
+  (this->fields).keysToRemove = this_00;
+  func_?(&(this->fields).keysToRemove,this_00);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__PrefabPool);
     cRam_? = '\x01';
   }
-  pPVar2 = TypeInfo__PrefabPool->static_fields->instance;
-  if (pPVar2 == (PrefabPool *)0x0) goto code_?;
-  MVLogicObject::MVLogicObject__ctor
-            ((MVLogicObject *)this,data,(ObjectPrefab *)(pPVar2->fields).windTurbinePrefab,
-             worldObjects,(MethodInfo *)0x0);
-  pWVar3 = (WindTurbineObject *)(this->fields)._._.component;
-  if (pWVar3 == (WindTurbineObject *)0x0) {
-    (this->fields).windTurbineObject = (WindTurbineObject *)0x0;
+  pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
+  if (pPVar1 == (PrefabPool *)0x0) {
 code_?:
-    ppWVar4 = &(this->fields).windTurbineObject;
-    func_?();
-    pDVar5 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-             (this->fields)._._._.data;
-    if (pDVar5 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-code_?:
-      uVar6 = func_?();
+    uVar2 = func_?();
+  }
+  else {
+    MVLogicObject::MVLogicObject__ctor
+              ((MVLogicObject *)this,data,(ObjectPrefab *)(pPVar1->fields).windTurbinePrefab,
+               worldObjects,(MethodInfo *)0x0);
+    pWVar3 = (WindTurbineObject *)(this->fields)._._.component;
+    if (pWVar3 == (WindTurbineObject *)0x0) {
+      (this->fields).windTurbineObject = (WindTurbineObject *)0x0;
     }
     else {
-      TVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-               UIElements::TextureId]::
-               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                         (pDVar5,(Object *)StringLiteral_windSize,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         );
-      uVar6 = CONCAT44(TypeInfo__System__Single,TVar7.m_Index);
-      if (TVar7.m_Index == 0) goto code_?;
-      if (*(Il2CppClass **)(*(int *)TVar7.m_Index + 0x20) ==
-          (TypeInfo__System__Single->_0).element_class) {
-        pfVar8 = (float *)func_?(TVar7.m_Index);
-        (this->fields).windAreaSize = *pfVar8;
-        pDVar5 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                 (this->fields)._._._.data;
-        if (pDVar5 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-          TVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                   Object,UnityEngine::UIElements::TextureId]::
-                   Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                             (pDVar5,(Object *)StringLiteral_windPitch,
-                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                             );
-          uVar6 = CONCAT44(TypeInfo__System__Single,TVar7.m_Index);
-          if (TVar7.m_Index != 0) {
-            if (*(Il2CppClass **)(*(int *)TVar7.m_Index + 0x20) !=
-                (TypeInfo__System__Single->_0).element_class) goto code_?;
-            pfVar8 = (float *)func_?(TVar7.m_Index);
-            fVar9 = (this->fields).windAreaSize / _UNK_?;
-            (this->fields).windPitch = *pfVar8;
-            (this->fields).windStrength = fVar9 * _UNK_?;
-            WindTurbine_Rescale(this,(MethodInfo *)0x0);
-            WindTurbine_Rotate(this,(MethodInfo *)0x0);
-            piVar10 = &(this->fields)._._.interactionFlags;
-            *(uint *)piVar10 = (uint)*piVar10 | 0x8000;
-            uVar11 = *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
-            piVar10 = &(this->fields)._._.interactionFlags;
-            *(uint *)piVar10 = (uint)*piVar10 | 0x10000;
-            piVar10 = &(this->fields)._._.interactionFlags;
-            *(uint *)piVar10 = (uint)*piVar10 | 0x200;
-            pWVar3 = *ppWVar4;
-            *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) = uVar11;
-            puVar12 = (uint *)((int)&(this->fields)._._.interactionFlags + 4);
-            *puVar12 = *puVar12 | 8;
-            iVar13 = (this->fields)._._.interactionFlags;
-            puVar12 = (uint *)((int)&(this->fields)._._.interactionFlags + 4);
-            *puVar12 = *puVar12 | 0x10;
-            puVar12 = (uint *)((int)&(this->fields)._._.interactionFlags + 4);
-            *puVar12 = *puVar12 | 0x20;
-            *(int *)&(this->fields)._._.interactionFlags = (int)iVar13;
-            piVar10 = &(this->fields)._._.interactionFlags;
-            *(uint *)piVar10 = (uint)*piVar10 & 0xfffffeff;
-            *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) =
-                 *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
-            if (pWVar3 != (WindTurbineObject *)0x0) {
-              pTVar14 = (pWVar3->fields).triggerBoxEvents;
-              pEVar15 = (EventHandler_1_Object_ *)
-                        func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-              mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-                        (pEVar15,(Object *)this,
-                         MethodInfo__WindTurbine__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
-                         ,(MethodInfo *)0x0);
-              if (pTVar14 != (TriggerBoxEvents *)0x0) {
-                TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
-                          (pTVar14,(EventHandler_1_TriggerEventArgs_ *)pEVar15,(MethodInfo *)0x0);
-                pWVar3 = *ppWVar4;
-                if (pWVar3 != (WindTurbineObject *)0x0) {
-                  pTVar14 = (pWVar3->fields).triggerBoxEvents;
-                  pEVar15 = (EventHandler_1_Object_ *)
-                            func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-                  mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-                            (pEVar15,(Object *)this,
-                             MethodInfo__WindTurbine__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
-                             ,(MethodInfo *)0x0);
-                  if (pTVar14 != (TriggerBoxEvents *)0x0) {
-                    TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
-                              (pTVar14,(EventHandler_1_TriggerEventArgs_ *)pEVar15,(MethodInfo *)0x0
-                              );
-                    this_01 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_
-                               *)func_?(
-                                                TypeInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>
-                                                );
-                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                    Int32,UnityEngine::TextCore::Text::TextResourceManager+FontAssetRef]::
-                    Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
-                              (this_01,
-                               MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__Dictionary__
-                              );
-                    ppDVar16 = &(this->fields).affectedBodies;
-                    *ppDVar16 = (Dictionary_2_System_Int32_MVRigidBody_ *)this_01;
-                    func_?(ppDVar16,this_01);
-                    (this->fields).isActive = 1;
-                    return;
-                  }
+      if (((((ObjectPrefab__Class *)pWVar3->klass)->_1).naturalAligment <
+           (TypeInfo__WindTurbineObject->_1).naturalAligment) ||
+         ((((ObjectPrefab__Class *)pWVar3->klass)->_1).typeHierarchy
+          [(TypeInfo__WindTurbineObject->_1).naturalAligment - 1] !=
+          (Il2CppClass *)TypeInfo__WindTurbineObject)) goto code_?;
+      (this->fields).windTurbineObject = pWVar3;
+      if (((((ObjectPrefab__Class *)pWVar3->klass)->_1).naturalAligment <
+           (TypeInfo__WindTurbineObject->_1).naturalAligment) ||
+         ((((ObjectPrefab__Class *)pWVar3->klass)->_1).typeHierarchy
+          [(TypeInfo__WindTurbineObject->_1).naturalAligment - 1] !=
+          (Il2CppClass *)TypeInfo__WindTurbineObject)) goto code_?;
+    }
+    func_?();
+    pDVar4 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+             (this->fields)._._._.data;
+    if (pDVar4 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
+    goto code_?;
+    TVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      (pDVar4,(Object *)StringLiteral_windSize,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    uVar2 = CONCAT44(TypeInfo__System__Single,TVar5.m_Index);
+    if (TVar5.m_Index == 0) goto code_?;
+    if (*(Il2CppClass **)(*(int *)TVar5.m_Index + 0x20) ==
+        (TypeInfo__System__Single->_0).element_class) {
+      pfVar6 = (float *)func_?(TVar5.m_Index);
+      (this->fields).windAreaSize = *pfVar6;
+      pDVar4 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+               (this->fields)._._._.data;
+      if (pDVar4 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+        TVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::TextureId]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                          (pDVar4,(Object *)StringLiteral_windPitch,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                          );
+        uVar2 = CONCAT44(TypeInfo__System__Single,TVar5.m_Index);
+        if (TVar5.m_Index != 0) {
+          if (*(Il2CppClass **)(*(int *)TVar5.m_Index + 0x20) !=
+              (TypeInfo__System__Single->_0).element_class) goto code_?;
+          pfVar6 = (float *)func_?(TVar5.m_Index);
+          fVar7 = (this->fields).windAreaSize / _UNK_?;
+          (this->fields).windPitch = *pfVar6;
+          (this->fields).windStrength = fVar7 * _UNK_?;
+          WindTurbine_Rescale(this,(MethodInfo *)0x0);
+          WindTurbine_Rotate(this,(MethodInfo *)0x0);
+          iVar8 = (this->fields)._._.interactionFlags;
+          pWVar3 = (this->fields).windTurbineObject;
+          *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) =
+               *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
+          uVar9 = *(uint *)((int)&(this->fields)._._.interactionFlags + 4);
+          *(uint *)&(this->fields)._._.interactionFlags = (uint)iVar8 | 0x18200;
+          piVar10 = &(this->fields)._._.interactionFlags;
+          *(uint *)piVar10 = (uint)*piVar10 & 0xfffffeff;
+          *(uint *)((int)&(this->fields)._._.interactionFlags + 4) = uVar9 | 0x38;
+          if (pWVar3 != (WindTurbineObject *)0x0) {
+            pTVar11 = (pWVar3->fields).triggerBoxEvents;
+            pEVar12 = (EventHandler_1_Object_ *)
+                      func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+            mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                      (pEVar12,(Object *)this,
+                       MethodInfo__WindTurbine__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                       ,(MethodInfo *)0x0);
+            if (pTVar11 != (TriggerBoxEvents *)0x0) {
+              TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
+                        (pTVar11,(EventHandler_1_TriggerEventArgs_ *)pEVar12,(MethodInfo *)0x0);
+              pWVar3 = (this->fields).windTurbineObject;
+              if (pWVar3 != (WindTurbineObject *)0x0) {
+                pTVar11 = (pWVar3->fields).triggerBoxEvents;
+                pEVar12 = (EventHandler_1_Object_ *)
+                          func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+                mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                          (pEVar12,(Object *)this,
+                           MethodInfo__WindTurbine__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                           ,(MethodInfo *)0x0);
+                if (pTVar11 != (TriggerBoxEvents *)0x0) {
+                  TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
+                            (pTVar11,(EventHandler_1_TriggerEventArgs_ *)pEVar12,(MethodInfo *)0x0);
+                  this_01 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_
+                             *)func_?(
+                                              TypeInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>
+                                              );
+                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine
+                  ::TextCore::Text::TextResourceManager+FontAssetRef]::
+                  Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
+                            (this_01,
+                             MethodInfo__System__Collections__Generic__Dictionary<int,_MVRigidBody>__Dictionary__
+                            );
+                  (this->fields).affectedBodies = (Dictionary_2_System_Int32_MVRigidBody_ *)this_01;
+                  func_?(&(this->fields).affectedBodies,this_01);
+                  (this->fields).isActive = 1;
+                  return;
                 }
               }
             }
           }
         }
-        goto code_?;
       }
+      goto code_?;
     }
+  }
 code_?:
-    func_?(uVar6);
-  }
-  else {
-    bVar17 = (TypeInfo__WindTurbineObject->_1).naturalAligment;
-    if (((((ObjectPrefab__Class *)pWVar3->klass)->_1).naturalAligment < bVar17) ||
-       ((((ObjectPrefab__Class *)pWVar3->klass)->_1).typeHierarchy[bVar17 - 1] !=
-        (Il2CppClass *)TypeInfo__WindTurbineObject)) goto code_?;
-    (this->fields).windTurbineObject = pWVar3;
-    bVar17 = (TypeInfo__WindTurbineObject->_1).naturalAligment;
-    if ((bVar17 <= (((ObjectPrefab__Class *)pWVar3->klass)->_1).naturalAligment) &&
-       ((((ObjectPrefab__Class *)pWVar3->klass)->_1).typeHierarchy[bVar17 - 1] ==
-        (Il2CppClass *)TypeInfo__WindTurbineObject)) goto code_?;
-  }
-  func_?();
+  func_?(uVar2);
 code_?:
   func_?();
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

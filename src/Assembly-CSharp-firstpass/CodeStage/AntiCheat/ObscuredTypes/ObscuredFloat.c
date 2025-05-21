@@ -589,10 +589,10 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscure
       == 0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
   }
-  iVar1 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->static_fields->cryptoKey;
-  this->hiddenValueOld = (Byte__Array *)0x0;
-  this->currentCryptoKey = iVar1;
+  this->currentCryptoKey =
+       TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->static_fields->cryptoKey;
   this->hiddenValue = value;
+  this->hiddenValueOld = (Byte__Array *)0x0;
   func_?(&this->hiddenValueOld,0);
   this->fakeValue = 0.0;
   this->inited = 1;

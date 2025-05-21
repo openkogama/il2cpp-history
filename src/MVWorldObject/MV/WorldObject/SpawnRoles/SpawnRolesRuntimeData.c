@@ -201,7 +201,7 @@ void MVWorldObject.dll::MV::WorldObject::SpawnRoles::SpawnRolesRuntimeData::
   HashSet_1_System_Int32___ctor
             (this_00,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
   method_00 = (MethodInfo *)&(this->fields).spawnRoleAvatarIds;
-  *(HashSet_1_System_Int32_ **)method_00 = this_00;
+  (this->fields).spawnRoleAvatarIds = this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
@@ -228,15 +228,14 @@ void MVWorldObject.dll::MV::WorldObject::SpawnRoles::SpawnRolesRuntimeData::
   System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
   HashSet_1_System_Int32___ctor
             (this_00,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-  ppHVar1 = &(this->fields).spawnRoleAvatarIds;
-  *ppHVar1 = this_00;
-  method_00 = (MethodInfo *)ppHVar1;
-  func_?(ppHVar1,this_00);
+  method_00 = (MethodInfo *)&(this->fields).spawnRoleAvatarIds;
+  (this->fields).spawnRoleAvatarIds = this_00;
+  func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   (this->fields).activeSpawnRole = activeSpawnRole;
-  *ppHVar1 = spawnRoleAvatarIds;
-  func_?(ppHVar1,spawnRoleAvatarIds);
+  (this->fields).spawnRoleAvatarIds = spawnRoleAvatarIds;
+  func_?(&(this->fields).spawnRoleAvatarIds,spawnRoleAvatarIds);
   return;
 }
 

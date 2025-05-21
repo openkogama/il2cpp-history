@@ -58,15 +58,13 @@ void Assembly-CSharp.dll::PlayerListToggle::PlayerListToggle_CreatePlayerList
                        ((Object *)pPVar1,
                         PlayerListsHold_MethodInfo__UnityEngine__Object__Instantiate<PlayerListsHold>_PlayerListsHold_
                        );
-    pOVar3 = value + 1;
-    pOVar3->klass = pOVar2;
-    func_?(pOVar3,pOVar2);
-    pOVar2 = pOVar3->klass;
+    value[1].klass = pOVar2;
+    func_?(value + 1,pOVar2);
+    pOVar2 = value[1].klass;
     if (pOVar2 != (Object__Class *)0x0) {
       pPVar1 = (this->fields).playerListsPrefab;
-      pIVar4 = &(pOVar2->_0).byval_arg;
-      (pIVar4->data).dummy = pPVar1;
-      func_?(pIVar4,pPVar1);
+      (pOVar2->_0).byval_arg.data.dummy = pPVar1;
+      func_?(&(pOVar2->_0).byval_arg,pPVar1);
       *(undefined1 *)&(pOVar2->_0).typeMetadataHandle = 1;
       UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                 ((Component *)this,(MethodInfo *)0x0);
@@ -79,7 +77,7 @@ void Assembly-CSharp.dll::PlayerListToggle::PlayerListToggle_CreatePlayerList
           func_?(TypeInfo__PlayerListToggle____c);
         }
         object = TypeInfo__PlayerListToggle____c->static_fields->__9;
-        pEVar5 = 
+        pEVar3 = 
         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
         ;
         callbackFunction =
@@ -87,7 +85,7 @@ void Assembly-CSharp.dll::PlayerListToggle::PlayerListToggle_CreatePlayerList
              func_?(
                             TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
                             );
-        pEVar6 = callbackFunction;
+        pEVar4 = callbackFunction;
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
                   ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
@@ -95,7 +93,7 @@ void Assembly-CSharp.dll::PlayerListToggle::PlayerListToggle_CreatePlayerList
                    ,(MethodInfo *)0x0);
         TypeInfo__PlayerListToggle____c->static_fields->__9__5_0 = callbackFunction;
         func_?(&TypeInfo__PlayerListToggle____c->static_fields->__9__5_0,callbackFunction,
-                        pEVar5,pEVar6);
+                        pEVar3,pEVar4);
       }
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
       {
@@ -128,8 +126,8 @@ void Assembly-CSharp.dll::PlayerListToggle::PlayerListToggle_CreatePlayerList
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

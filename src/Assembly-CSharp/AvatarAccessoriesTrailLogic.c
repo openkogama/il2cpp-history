@@ -5,72 +5,56 @@ void Assembly-CSharp.dll::AvatarAccessoriesTrailLogic::AvatarAccessoriesTrailLog
                (AvatarAccessoriesTrailLogic *this,MethodInfo *method)
 
 {
+  this_00 = this;
   pPVar1 = (this->fields).particles;
   if (pPVar1 != (ParticleSystem *)0x0) {
-    UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_get_collision
-              (pPVar1,(MethodInfo *)0x0);
+    this = (AvatarAccessoriesTrailLogic *)
+           UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+           ParticleSystem_get_collision(pPVar1,(MethodInfo *)0x0);
     pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                       ((Component *)this,(MethodInfo *)0x0);
+                       ((Component *)this_00,(MethodInfo *)0x0);
     if (pTVar2 != (Transform *)0x0) {
-      pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                         ((Vector3 *)&stack0xfffffff8,pTVar2,(MethodInfo *)0x0);
-      uVar4 = pVVar3->x;
-      uVar5 = pVVar3->y;
-      uVar6 = (this->fields).lastPosition.x;
-      uVar7 = (this->fields).lastPosition.y;
-      fVar8 = (float)uVar4 - (float)uVar6;
-      in_stack_9 = (this->fields).lastPosition.z;
-      fVar10 = (float)uVar5 - (float)uVar7;
-      fVar11 = pVVar3->z - in_stack_9;
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__System__Math);
-        cRam_? = '\x01';
-      }
-      if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__System__Math);
-      }
-      dVar12 = (double)(fVar10 * fVar10 + fVar8 * fVar8 + fVar11 * fVar11);
-      if (dVar12 < 0.0) {
-        func_?();
-      }
-      else {
-        dVar12 = SQRT(dVar12);
-      }
-      pfVar13 = &(this->fields).mininumMovementRequirement;
-      if ((float)dVar12 < *pfVar13 || (float)dVar12 == *pfVar13) {
+      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                ((Vector3 *)&stack0xffffffdc,pTVar2,(MethodInfo *)0x0);
+      fVar3 = (float10)func_?();
+      fStack_4 = (float)fVar3;
+      pfVar5 = &(this_00->fields).mininumMovementRequirement;
+      if (fStack_4 < *pfVar5 || fStack_4 == *pfVar5) {
         UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmissionModule::
         ParticleSystem_EmissionModule_set_enabled_Injected
-                  ((ParticleSystem_EmissionModule *)&stack0xffffffe4,0,(MethodInfo *)0x0);
+                  ((ParticleSystem_EmissionModule *)&this,0,(MethodInfo *)0x0);
         return;
       }
       UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmissionModule::
       ParticleSystem_EmissionModule_set_enabled_Injected
-                ((ParticleSystem_EmissionModule *)&stack0xffffffe4,1,(MethodInfo *)0x0);
-      pPVar1 = (this->fields).particles;
+                ((ParticleSystem_EmissionModule *)&this,1,(MethodInfo *)0x0);
+      pPVar1 = (this_00->fields).particles;
       if (pPVar1 != (ParticleSystem *)0x0) {
-        UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-        ParticleSystem_get_collision(pPVar1,(MethodInfo *)0x0);
+        PStack_6.m_ParticleSystem =
+             (ParticleSystem *)
+             UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+             ParticleSystem_get_collision(pPVar1,(MethodInfo *)0x0);
         UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
-        ParticleSystem_MainModule_set_startSpeedMultiplier_Injected
-                  ((ParticleSystem_MainModule *)&method,0.0,(MethodInfo *)0x0);
+        ParticleSystem_MainModule_set_startSpeedMultiplier_Injected(&PStack_6,0.0,(MethodInfo *)0x0)
+        ;
         pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                           ((Component *)this,(MethodInfo *)0x0);
+                           ((Component *)this_00,(MethodInfo *)0x0);
         if (pTVar2 != (Transform *)0x0) {
-          pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                             ((Vector3 *)&stack0x0000002c,pTVar2,(MethodInfo *)0x0);
-          fVar10 = pVVar3->y;
-          fVar8 = pVVar3->z;
-          (this->fields).lastPosition.x = pVVar3->x;
-          (this->fields).lastPosition.y = fVar10;
-          (this->fields).lastPosition.z = fVar8;
+          pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                             ((Vector3 *)&stack0xffffffdc,pTVar2,(MethodInfo *)0x0);
+          fVar8 = pVVar7->y;
+          fVar9 = pVVar7->z;
+          (this_00->fields).lastPosition.x = pVVar7->x;
+          (this_00->fields).lastPosition.y = fVar8;
+          (this_00->fields).lastPosition.z = fVar9;
           return;
         }
       }
     }
   }
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

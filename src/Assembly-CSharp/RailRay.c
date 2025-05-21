@@ -73,8 +73,8 @@ Assembly-CSharp.dll::RailRay::RailRay_DoShowRay(RailRay *this,Vector3 hit,Method
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[1].klass = (Object__Class *)0x0;
   value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
   func_?(value + 2,this);
   *(undefined8 *)&value[2].monitor = hit._0_8_;
   value[3].monitor = (MonitorData *)hit.z;

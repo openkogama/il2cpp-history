@@ -39,158 +39,124 @@ void Assembly-CSharp.dll::WorldObjectTypes::MVDoor::MVDoorBlueprint::MVDoorBluep
   pMVar1 = (MVDoor *)
             MVBlueprintBase::MVBlueprintBase_GetChild
                       ((MVBlueprintBase *)this,StringLiteral_DoorLogic,(MethodInfo *)0x0);
-  this_00 = (MVCubeModelInstance__Class *)TypeInfo__WorldObjectTypes__MVDoor__MVDoor;
   if (pMVar1 == (MVDoor *)0x0) {
     (this->fields).doorLogic = (MVDoor *)0x0;
-  }
-  else {
-    bVar2 = (TypeInfo__WorldObjectTypes__MVDoor__MVDoor->_1).naturalAligment;
-    if (((pMVar1->klass->_1).naturalAligment < bVar2) ||
-       ((MVDoor__Class *)(pMVar1->klass->_1).typeHierarchy[bVar2 - 1] !=
-        TypeInfo__WorldObjectTypes__MVDoor__MVDoor)) goto code_?;
-    (this->fields).doorLogic = pMVar1;
-    bVar2 = (TypeInfo__WorldObjectTypes__MVDoor__MVDoor->_1).naturalAligment;
-    this_00 = (MVCubeModelInstance__Class *)TypeInfo__WorldObjectTypes__MVDoor__MVDoor;
-    if (((pMVar1->klass->_1).naturalAligment < bVar2) ||
-       ((MVDoor__Class *)(pMVar1->klass->_1).typeHierarchy[bVar2 - 1] !=
-        TypeInfo__WorldObjectTypes__MVDoor__MVDoor)) goto code_?;
-  }
-  ppMVar3 = &(this->fields).doorLogic;
-  func_?((char)ppMVar3,pMVar1);
-  if (*ppMVar3 != (MVDoor *)0x0) {
-    ppMVar4 = &((*ppMVar3)->fields)._DoorBlueprint_k__BackingField;
-    *ppMVar4 = this;
-    func_?((char)ppMVar4,this);
-    pMVar1 = *ppMVar3;
-    if (pMVar1 != (MVDoor *)0x0) {
-      DStack_5 = (pMVar1->fields).doorConfig.doorType;
-      pMVar6 = (pMVar1->fields).doorObject;
-      uVar7._0_4_ = (pMVar1->fields).doorConfig.toggleTime;
-      uVar7._4_4_ = (pMVar1->fields).doorConfig.docType;
-      if (pMVar6 != (MVDoorObject *)0x0) {
-        pTStack_8 = (pMVar6->fields).animationRoot;
-        pTVar9 = (pMVar1->fields)._._.transform;
-        if (cRam_? == '\0') {
-          func_?(&TypeInfo__UnityEngine__Vector3,
-                          SUB42((pMVar1->fields).doorConfig.openValue,0),
-                          (pMVar1->fields).doorConfig.closeValue,uVar7);
-          cRam_? = '\x01';
-        }
-        this_00 = (MVCubeModelInstance__Class *)0x0;
-        if (pTVar9 != (Transform *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                    (pTVar9,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
-                     (MethodInfo *)0x0);
-          pMVar1 = (MVDoor *)
-                    MVBlueprintBase::MVBlueprintBase_GetChild
-                              ((MVBlueprintBase *)this,StringLiteral_DoorCubeModel,(MethodInfo *)0x0
-                              );
-          this_00 = TypeInfo__MVCubeModelInstance;
-          if (pMVar1 != (MVDoor *)0x0) {
-            bVar2 = (TypeInfo__MVCubeModelInstance->_1).naturalAligment;
-            if (((pMVar1->klass->_1).naturalAligment < bVar2) ||
-               ((MVCubeModelInstance__Class *)(pMVar1->klass->_1).typeHierarchy[bVar2 - 1] !=
-                TypeInfo__MVCubeModelInstance)) goto code_?;
-            pMStack_10 = pMVar1;
-            (*(code *)(pMVar1->klass->vtable).set_Visible.method)
-                      (pMVar1,1,(pMVar1->klass->vtable).GetTargetPosition.methodPtr);
-            if ((TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData->_1).
-                cctor_finished_or_no_cctor == 0) {
-              func_?(TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData);
-            }
-            pVVar11 = Assets::Scripts::WorldObjectTypes::MVDoor::DoorData::DoorData_GetEditPoints
-                                ((ValueTuple_2_MV_WorldObject_IntVector_MV_WorldObject_IntVector_ *)
-                                 &VStack_12,DStack_5,(MethodInfo *)0x0);
-            uVar13._0_2_ = (pVVar11->Item1).x;
-            uVar13._2_2_ = (pVVar11->Item1).y;
-            uVar13._4_2_ = (pVVar11->Item1).z;
-            uVar14 = (pVVar11->Item2).x;
-            uVar15 = (pVVar11->Item2).y;
-            uVar16 = (pVVar11->Item2).z;
-            uStack_17 = (undefined4)uVar13;
-            uStack_18 = uVar13._4_2_;
-            uStack_19 = uVar14;
-            uStack_20 = uVar15;
-            iStack_21 = uVar16;
-            this_00 = (MVCubeModelInstance__Class *)
-                      func_?(TypeInfo__EditableCubeModelWrapper);
-            max.y = uStack_20;
-            max.x = uStack_19;
-            min.z._0_1_ = (char)uStack_18;
-            min.x = (undefined2)uStack_17;
-            min.y = uStack_17._2_2_;
-            min.z._1_1_ = (char)((ushort)uStack_18 >> 8);
-            max.z = iStack_21;
-            EditableCubeModelWrapper::EditableCubeModelWrapper__ctor_1
-                      ((EditableCubeModelWrapper *)this_00,(MVCubeModelInstance *)pMStack_10,min,max
-                       ,0x14,(MethodInfo *)0x0);
-            ppEVar22 = &(this->fields).editableCubeModelWrapper;
-            *ppEVar22 = (EditableCubeModelWrapper *)this_00;
-            func_?(ppEVar22,this_00);
-            if (*ppEVar22 != (EditableCubeModelWrapper *)0x0) {
-              pMVar23 = ((*ppEVar22)->fields).cubeModelBase;
-              this_00 = (MVCubeModelInstance__Class *)&(this->fields).editableCubeModel;
-              *(MVCubeModelInstance **)this_00 = pMVar23;
-              func_?((char)this_00,pMVar23);
-              pMVar23 = *(MVCubeModelInstance **)this_00;
-              if (*ppMVar3 != (MVDoor *)0x0) {
-                ppMVar24 = &((*ppMVar3)->fields).doorModelInstance;
-                *ppMVar24 = pMVar23;
-                func_?((char)ppMVar24,pMVar23);
-                if ((*(MVCubeModelInstance **)this_00 != (MVCubeModelInstance *)0x0) &&
-                   (pTVar9 = ((*(MVCubeModelInstance **)this_00)->fields)._._.transform,
-                   pTVar9 != (Transform *)0x0)) {
-                  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent
-                            (pTVar9,pTStack_8,(MethodInfo *)0x0);
-                  if (*(MVCubeModelInstance **)this_00 != (MVCubeModelInstance *)0x0) {
-                    pMStack_10 = (MVDoor *)
-                                 ((*(MVCubeModelInstance **)this_00)->fields)._._.transform;
-                    pVVar25 = Assets::Scripts::WorldObjectTypes::MVDoor::DoorData::
-                              DoorData_GetCubeModelLocalPosition
-                                        (&VStack_12,DStack_5,pTStack_8,(MethodInfo *)0x0);
-                    if (pMStack_10 != (MVDoor *)0x0) {
-                      UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                      Transform_set_localPosition
-                                ((Transform *)pMStack_10,*pVVar25,(MethodInfo *)0x0);
-                      if (*(MVCubeModelInstance **)this_00 != (MVCubeModelInstance *)0x0) {
-                        MVCubeModelInstance::MVCubeModelInstance_EnableCulling
-                                  (*(MVCubeModelInstance **)this_00,(MethodInfo *)0x0);
-                        pMVar1 = *ppMVar3;
+code_?:
+    func_?(&(this->fields).doorLogic,pMVar1);
+    pMVar1 = (this->fields).doorLogic;
+    if (pMVar1 == (MVDoor *)0x0) goto code_?;
+    (pMVar1->fields)._DoorBlueprint_k__BackingField = this;
+    func_?(&(pMVar1->fields)._DoorBlueprint_k__BackingField,this);
+    pMVar1 = (this->fields).doorLogic;
+    if (pMVar1 == (MVDoor *)0x0) goto code_?;
+    uVar2._0_4_ = (pMVar1->fields).doorConfig.toggleTime;
+    uVar2._4_4_ = (pMVar1->fields).doorConfig.docType;
+    doorType = (pMVar1->fields).doorConfig.doorType;
+    pMVar3 = (this->fields).doorLogic;
+    if ((pMVar3 == (MVDoor *)0x0) ||
+       (pMVar4 = (pMVar3->fields).doorObject, pMVar4 == (MVDoorObject *)0x0)) goto code_?;
+    pTVar5 = (pMVar4->fields).animationRoot;
+    pTVar6 = (((this->fields).doorLogic)->fields)._._.transform;
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__UnityEngine__Vector3,(pMVar1->fields).doorConfig.openValue,
+                      (pMVar1->fields).doorConfig.closeValue,uVar2);
+      cRam_? = '\x01';
+    }
+    if (pTVar6 == (Transform *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
+              (pTVar6,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,(MethodInfo *)0x0);
+    cubeModelBase =
+         (MVDoor__Class *)
+         MVBlueprintBase::MVBlueprintBase_GetChild
+                   ((MVBlueprintBase *)this,StringLiteral_DoorCubeModel,(MethodInfo *)0x0);
+    if (cubeModelBase == (MVDoor__Class *)0x0) goto code_?;
+    pIVar7 = (cubeModelBase->_0).image;
+    pMVar8 = TypeInfo__MVCubeModelInstance;
+    if (((TypeInfo__MVCubeModelInstance->_1).naturalAligment <= *(byte *)&pIVar7[4].assembly) &&
+       (*(MVCubeModelInstance__Class **)
+         ((pIVar7[2].typeCount - 4) + (uint)(TypeInfo__MVCubeModelInstance->_1).naturalAligment * 4
+         ) == TypeInfo__MVCubeModelInstance)) {
+      (**(code **)&(cubeModelBase->_0).image[0x12].dynamic)();
+      if ((TypeInfo__Assets__Scripts__WorldObjectTypes__MVDoor__DoorData->_1).
+          cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      pVVar9 = Assets::Scripts::WorldObjectTypes::MVDoor::DoorData::DoorData_GetEditPoints
+                          ((ValueTuple_2_MV_WorldObject_IntVector_MV_WorldObject_IntVector_ *)
+                           &stack0xffffffdc,doorType,(MethodInfo *)0x0);
+      uVar10 = (pVVar9->Item1).x;
+      uVar11 = (pVVar9->Item1).y;
+      uVar12 = (pVVar9->Item2).x;
+      uVar13 = (pVVar9->Item2).y;
+      pEVar14 = (EditableCubeModelWrapper *)func_?();
+      max.y = uVar13;
+      max.x = uVar12;
+      min.y = uVar11;
+      min.x = uVar10;
+      min.z = 0x14;
+      max.z = 0;
+      EditableCubeModelWrapper::EditableCubeModelWrapper__ctor_1
+                (pEVar14,(MVCubeModelInstance *)cubeModelBase,min,max,0x14,(MethodInfo *)0x0);
+      (this->fields).editableCubeModelWrapper = pEVar14;
+      func_?();
+      pEVar14 = (this->fields).editableCubeModelWrapper;
+      if (pEVar14 != (EditableCubeModelWrapper *)0x0) {
+        pMVar15 = (pEVar14->fields).cubeModelBase;
+        (this->fields).editableCubeModel = pMVar15;
+        func_?(&(this->fields).editableCubeModel,pMVar15);
+        pMVar1 = (this->fields).doorLogic;
+        pMVar15 = (this->fields).editableCubeModel;
+        if (pMVar1 != (MVDoor *)0x0) {
+          (pMVar1->fields).doorModelInstance = pMVar15;
+          func_?(&(pMVar1->fields).doorModelInstance,pMVar15);
+          pMVar15 = (this->fields).editableCubeModel;
+          if ((pMVar15 != (MVCubeModelInstance *)0x0) &&
+             (pTVar6 = (pMVar15->fields)._._.transform, pTVar6 != (Transform *)0x0)) {
+            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent
+                      (pTVar6,pTVar5,(MethodInfo *)0x0);
+            pMVar15 = (this->fields).editableCubeModel;
+            if (pMVar15 != (MVCubeModelInstance *)0x0) {
+              pTVar6 = (pMVar15->fields)._._.transform;
+              pVVar16 = Assets::Scripts::WorldObjectTypes::MVDoor::DoorData::
+                        DoorData_GetCubeModelLocalPosition
+                                  ((Vector3 *)&stack0xffffffdc,doorType,pTVar5,(MethodInfo *)0x0);
+              if (pTVar6 != (Transform *)0x0) {
+                UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
+                          (pTVar6,*pVVar16,(MethodInfo *)0x0);
+                pMVar15 = (this->fields).editableCubeModel;
+                if (pMVar15 != (MVCubeModelInstance *)0x0) {
+                  MVCubeModelInstance::MVCubeModelInstance_EnableCulling(pMVar15,(MethodInfo *)0x0);
+                  pMVar1 = (this->fields).doorLogic;
+                  if (pMVar1 != (MVDoor *)0x0) {
+                    uVar17 = *(undefined4 *)((int)&(pMVar1->fields)._._.interactionFlags + 4);
+                    piVar18 = &(pMVar1->fields)._._.interactionFlags;
+                    *(uint *)piVar18 = (uint)*piVar18 | 0x30;
+                    *(undefined4 *)((int)&(pMVar1->fields)._._.interactionFlags + 4) = uVar17;
+                    pMVar15 = (this->fields).editableCubeModel;
+                    if (pMVar15 != (MVCubeModelInstance *)0x0) {
+                      piVar18 = &(pMVar15->fields)._._.interactionFlags;
+                      *(uint *)piVar18 = (uint)*piVar18 | 0x30;
+                      *(undefined4 *)((int)&(pMVar15->fields)._._.interactionFlags + 4) =
+                           *(undefined4 *)((int)&(pMVar15->fields)._._.interactionFlags + 4);
+                      pMVar1 = (this->fields).doorLogic;
+                      if (pMVar1 != (MVDoor *)0x0) {
+                        pDVar19 = (this->fields)._._._._.data;
+                        (pMVar1->fields).useInteractorData = pDVar19;
+                        func_?(&(pMVar1->fields).useInteractorData,pDVar19);
+                        pMVar1 = (this->fields).doorLogic;
                         if (pMVar1 != (MVDoor *)0x0) {
-                          uVar26 = *(undefined4 *)((int)&(pMVar1->fields)._._.interactionFlags + 4);
-                          piVar27 = &(pMVar1->fields)._._.interactionFlags;
-                          *(uint *)piVar27 = (uint)*piVar27 | 0x30;
-                          *(undefined4 *)((int)&(pMVar1->fields)._._.interactionFlags + 4) = uVar26;
-                          pMVar23 = *(MVCubeModelInstance **)this_00;
-                          if (pMVar23 != (MVCubeModelInstance *)0x0) {
-                            uVar26 = *(undefined4 *)((int)&(pMVar23->fields)._._.interactionFlags + 4)
-                            ;
-                            piVar27 = &(pMVar23->fields)._._.interactionFlags;
-                            *(uint *)piVar27 = (uint)*piVar27 | 0x30;
-                            *(undefined4 *)((int)&(pMVar23->fields)._._.interactionFlags + 4) = uVar26
-                            ;
-                            if (*ppMVar3 != (MVDoor *)0x0) {
-                              pDVar28 = (this->fields)._._._._.data;
-                              ppDVar29 = &((*ppMVar3)->fields).useInteractorData;
-                              *ppDVar29 = pDVar28;
-                              func_?((char)ppDVar29,pDVar28);
-                              if (*ppMVar3 != (MVDoor *)0x0) {
-                                MVDoor::MVDoor_UpdateUseInteractor(*ppMVar3,(MethodInfo *)0x0);
-                                if ((((*ppMVar3 != (MVDoor *)0x0) &&
-                                     (pMVar6 = ((*ppMVar3)->fields).doorObject,
-                                     pMVar6 != (MVDoorObject *)0x0)) &&
-                                    (*(MVCubeModelInstance **)this_00 != (MVCubeModelInstance *)0x0)
-                                    ) && (pTVar9 = (pMVar6->fields).cube, pTVar9 != (Transform *)0x0
-                                         )) {
-                                  UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                                  Transform_SetParent_1
-                                            (pTVar9,((*(MVCubeModelInstance **)this_00)->fields)._._
-                                                    .transform,0,(MethodInfo *)0x0);
-                                  MVDoorBlueprint_SetCubeSize(this,(MethodInfo *)0x0);
-                                  return;
-                                }
-                              }
-                            }
+                          MVDoor::MVDoor_UpdateUseInteractor(pMVar1,(MethodInfo *)0x0);
+                          pMVar1 = (this->fields).doorLogic;
+                          if ((((pMVar1 != (MVDoor *)0x0) &&
+                               (pMVar4 = (pMVar1->fields).doorObject, pMVar4 != (MVDoorObject *)0x0
+                               )) && (pMVar15 = (this->fields).editableCubeModel,
+                                     pMVar15 != (MVCubeModelInstance *)0x0)) &&
+                             (pTVar5 = (pMVar4->fields).cube, pTVar5 != (Transform *)0x0)) {
+                            UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                            Transform_SetParent_1
+                                      (pTVar5,(pMVar15->fields)._._.transform,0,(MethodInfo *)0x0);
+                            MVDoorBlueprint_SetCubeSize(this,(MethodInfo *)0x0);
+                            return;
                           }
                         }
                       }
@@ -202,14 +168,34 @@ void Assembly-CSharp.dll::WorldObjectTypes::MVDoor::MVDoorBlueprint::MVDoorBluep
           }
         }
       }
+      goto code_?;
     }
   }
-  func_?();
-  pMVar1 = extraout_EDX;
+  else {
+    cubeModelBase = pMVar1->klass;
+    if (((TypeInfo__WorldObjectTypes__MVDoor__MVDoor->_1).naturalAligment <=
+         (cubeModelBase->_1).naturalAligment) &&
+       ((MVDoor__Class *)
+        (cubeModelBase->_1).typeHierarchy
+        [(TypeInfo__WorldObjectTypes__MVDoor__MVDoor->_1).naturalAligment - 1] ==
+        TypeInfo__WorldObjectTypes__MVDoor__MVDoor)) {
+      (this->fields).doorLogic = pMVar1;
+      cubeModelBase = pMVar1->klass;
+      if (((TypeInfo__WorldObjectTypes__MVDoor__MVDoor->_1).naturalAligment <=
+           (cubeModelBase->_1).naturalAligment) &&
+         ((MVDoor__Class *)
+          (cubeModelBase->_1).typeHierarchy
+          [(TypeInfo__WorldObjectTypes__MVDoor__MVDoor->_1).naturalAligment - 1] ==
+          TypeInfo__WorldObjectTypes__MVDoor__MVDoor)) goto code_?;
+    }
+    func_?(pMVar1,TypeInfo__WorldObjectTypes__MVDoor__MVDoor);
+    pMVar8 = extraout_EDX;
+  }
+  func_?(cubeModelBase,pMVar8);
 code_?:
-  func_?((char)pMVar1,this_00);
-  pcVar30 = (code *)swi(3);
-  (*pcVar30)();
+  func_?();
+  pcVar20 = (code *)swi(3);
+  (*pcVar20)();
   return;
 }
 
@@ -234,22 +220,26 @@ void Assembly-CSharp.dll::WorldObjectTypes::MVDoor::MVDoorBlueprint::
     func_?();
     return;
   }
-  bVar2 = (TypeInfo__WorldObjectTypes__MVDoor__MVDoor->_1).naturalAligment;
-  if ((bVar2 <= (pMVar1->klass->_1).naturalAligment) &&
-     ((MVDoor__Class *)(pMVar1->klass->_1).typeHierarchy[bVar2 - 1] ==
+  if (((TypeInfo__WorldObjectTypes__MVDoor__MVDoor->_1).naturalAligment <=
+       (pMVar1->klass->_1).naturalAligment) &&
+     ((MVDoor__Class *)
+      (pMVar1->klass->_1).typeHierarchy
+      [(TypeInfo__WorldObjectTypes__MVDoor__MVDoor->_1).naturalAligment - 1] ==
       TypeInfo__WorldObjectTypes__MVDoor__MVDoor)) {
     (this->fields).doorLogic = pMVar1;
-    bVar2 = (TypeInfo__WorldObjectTypes__MVDoor__MVDoor->_1).naturalAligment;
-    if ((bVar2 <= (pMVar1->klass->_1).naturalAligment) &&
-       ((MVDoor__Class *)(pMVar1->klass->_1).typeHierarchy[bVar2 - 1] ==
+    if (((TypeInfo__WorldObjectTypes__MVDoor__MVDoor->_1).naturalAligment <=
+         (pMVar1->klass->_1).naturalAligment) &&
+       ((MVDoor__Class *)
+        (pMVar1->klass->_1).typeHierarchy
+        [(TypeInfo__WorldObjectTypes__MVDoor__MVDoor->_1).naturalAligment - 1] ==
         TypeInfo__WorldObjectTypes__MVDoor__MVDoor)) {
       func_?();
       return;
     }
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?(pMVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -262,176 +252,149 @@ void Assembly-CSharp.dll::WorldObjectTypes::MVDoor::MVDoorBlueprint::MVDoorBluep
 {
   MVBlueprintBase::MVBlueprintBase_OnDataUpdate((MVBlueprintBase *)this,(MethodInfo *)0x0);
   pMVar1 = (this->fields).doorLogic;
-  if (pMVar1 != (MVDoor *)0x0) {
-    pDVar2 = (this->fields)._._._._.data;
-    ppDVar3 = &(pMVar1->fields).useInteractorData;
-    *ppDVar3 = pDVar2;
-    func_?(ppDVar3,pDVar2);
-    if ((this->fields).doorLogic != (MVDoor *)0x0) {
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__System__EventHandler<TriggerEventArgs>);
-        func_?(&TypeInfo__System__Func<int,_bool>);
-        func_?(&TypeInfo__GameCoinLogic);
-        func_?(&TypeInfo__GameRankRequirement);
-        func_?(&TypeInfo__LevelBasedUseRequirement);
-        func_?(&MethodInfo__WorldObjectTypes__MVDoor__MVDoor__CheckIfOpen__);
-        func_?(&MethodInfo__WorldObjectTypes__MVDoor__MVDoor__Use_int_);
-        func_?(&TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement);
-        func_?(&TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedCheckNoCost);
-        func_?(&TypeInfo__StarRequirement);
-        func_?(&TypeInfo__UseInteractor);
-        func_?(&
-                        MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
-                       );
-        func_?(&
-                        MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
-                       );
-        cRam_? = '\x01';
-      }
-      wo = pMRam00000100;
-      puVar4 = (undefined4 *)0x108;
-      if (((bRam_? & pURam00000108 == (UseInteractor *)0x0) != 0) &&
-         (pMRam00000100 != (MVWorldObjectClient *)0x0)) {
-        if (iRam_? != 0) {
-          pGVar5 = *(GameObject **)(iRam_? + 0x1c);
-          triggerCollider = *(Collider **)(iRam_? + 0x24);
-          this_00 = (Predicate_1_UInt32_ *)func_?(TypeInfo__System__Func<int,_bool>);
-          mscorlib.dll::System::Predicate`1[UInt32]::Predicate_1_UInt32___ctor
-                    (this_00,(Object *)0x0,MethodInfo__WorldObjectTypes__MVDoor__MVDoor__Use_int_,
-                     (MethodInfo *)0x0);
-          pUVar6 = (UseInteractor *)func_?(TypeInfo__UseInteractor);
-          UseInteractor::UseInteractor__ctor
-                    (pUVar6,wo,pGVar5,0,triggerCollider,(Func_2_Int32_Boolean_ *)this_00,
-                     (Func_3_Int32_MVInteractableBase_Boolean_ *)0x0,2.5,0,(MethodInfo *)0x0);
-          *puVar4 = pUVar6;
-          func_?(puVar4,pUVar6);
-          pUVar6 = pURam00000108;
-          if (iRam_? != 0) {
-            pTVar7 = *(TriggerBoxEvents **)(iRam_? + 0x2c);
-            pEVar8 = (EventHandler_1_Object_ *)
-                     func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-            mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-                      (pEVar8,(Object *)pUVar6,
-                       MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
-                       ,(MethodInfo *)0x0);
-            if (pTVar7 != (TriggerBoxEvents *)0x0) {
-              TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
-                        (pTVar7,(EventHandler_1_TriggerEventArgs_ *)pEVar8,(MethodInfo *)0x0);
-              pUVar6 = pURam00000108;
-              if (iRam_? != 0) {
-                pTVar7 = *(TriggerBoxEvents **)(iRam_? + 0x2c);
-                pEVar8 = (EventHandler_1_Object_ *)
-                         func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-                mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-                          (pEVar8,(Object *)pUVar6,
-                           MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
-                           ,(MethodInfo *)0x0);
-                if (pTVar7 != (TriggerBoxEvents *)0x0) {
-                  TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
-                            (pTVar7,(EventHandler_1_TriggerEventArgs_ *)pEVar8,(MethodInfo *)0x0);
-                  if (iRam_? != 0) {
-                    pGVar5 = *(GameObject **)(iRam_? + 0x1c);
-                    this_01 = (GameCoinLogic *)func_?(TypeInfo__GameCoinLogic);
-                    GameCoinLogic::GameCoinLogic__ctor(this_01,pGVar5,1,(MethodInfo *)0x0);
-                    if (pURam00000108 != (UseInteractor *)0x0) {
-                      UseInteractor::UseInteractor_AddRequirement
-                                (pURam00000108,(UseRequirement *)this_01,(MethodInfo *)0x0);
-                      if (iRam_? != 0) {
-                        pGVar5 = *(GameObject **)(iRam_? + 0x1c);
-                        this_02 = (LevelBasedUseRequirement *)
-                                  func_?(TypeInfo__LevelBasedUseRequirement);
-                        LevelBasedUseRequirement::LevelBasedUseRequirement__ctor
-                                  (this_02,pGVar5,1,(MethodInfo *)0x0);
-                        if (pURam00000108 != (UseInteractor *)0x0) {
-                          UseInteractor::UseInteractor_AddRequirement
-                                    (pURam00000108,(UseRequirement *)this_02,(MethodInfo *)0x0);
-                          if (iRam_? != 0) {
-                            pGVar5 = *(GameObject **)(iRam_? + 0x1c);
-                            this_03 = (StarRequirement *)func_?(TypeInfo__StarRequirement);
-                            StarRequirement::StarRequirement__ctor
-                                      (this_03,pGVar5,1,(MethodInfo *)0x0);
-                            if (pURam00000108 != (UseInteractor *)0x0) {
-                              UseInteractor::UseInteractor_AddRequirement
-                                        (pURam00000108,(UseRequirement *)this_03,(MethodInfo *)0x0);
-                              if (iRam_? != 0) {
-                                pGVar5 = *(GameObject **)(iRam_? + 0x1c);
-                                this_04 = (GameRankRequirement *)
-                                          func_?(TypeInfo__GameRankRequirement);
-                                GameRankRequirement::GameRankRequirement__ctor
-                                          (this_04,pGVar5,(MVWorldObjectClient *)0x0,1,
-                                           (MethodInfo *)0x0);
-                                if (pURam00000108 != (UseInteractor *)0x0) {
-                                  UseInteractor::UseInteractor_AddRequirement
-                                            (pURam00000108,(UseRequirement *)this_04,
-                                             (MethodInfo *)0x0);
-                                  if (iRam_? != 0) {
-                                    pGVar5 = *(GameObject **)(iRam_? + 0x1c);
-                                    action = (RewardedCheckNoCost *)
-                                             func_?(
-                                                  TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedCheckNoCost
-                                                  );
-                                    mscorlib.dll::System::Func`1[System::Threading::Tasks::
-                                    VoidTaskResult]::
-                                    Func_1_System_Threading_Tasks_VoidTaskResult___ctor
-                                              ((Func_1_System_Threading_Tasks_VoidTaskResult_ *)
-                                               action,(Object *)0x0,
-                                               MethodInfo__WorldObjectTypes__MVDoor__MVDoor__CheckIfOpen__
-                                               ,(MethodInfo *)0x0);
-                                    this_05 = (RewardedAdRequirement *)
-                                              func_?(
-                                                  TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement
-                                                  );
-                                    auVar9._4_8_ = 0;
-                                    auVar9._0_4_ = _UNK_?;
-                                    WorldObjectInteractionSystem::UseSystem::RewardedAdRequirement::
-                                    RewardedAdRequirement__ctor_3
-                                              (this_05,pGVar5,action,(Vector3)(auVar9 << 0x20),
-                                               (MethodInfo *)0x0);
-                                    if ((UseInteractor *)*puVar4 != (UseInteractor *)0x0) {
-                                      UseInteractor::UseInteractor_AddRequirement
-                                                ((UseInteractor *)*puVar4,(UseRequirement *)this_05
-                                                 ,(MethodInfo *)0x0);
-                                      if ((UseInteractor *)*puVar4 != (UseInteractor *)0x0) {
-                                        UseInteractor::UseInteractor_UpdateData
-                                                  ((UseInteractor *)*puVar4,pDRam00000128,
-                                                   (MethodInfo *)0x0);
-                                        return;
-                                      }
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-        func_?();
-        pcVar10 = (code *)swi(3);
-        (*pcVar10)();
-        return;
-      }
-      if (bRam_? == 0) {
-        if (pURam00000108 != (UseInteractor *)0x0) {
-          MVDoor::MVDoor_DestroyUseInteractor((MVDoor *)0x0,(MethodInfo *)0x0);
-        }
-      }
-      else if (pURam00000108 != (UseInteractor *)0x0) {
-        UseInteractor::UseInteractor_UpdateData(pURam00000108,pDRam00000128,(MethodInfo *)0x0);
-        return;
+  if (pMVar1 == (MVDoor *)0x0) {
+code_?:
+    func_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  pDVar3 = (this->fields)._._._._.data;
+  (pMVar1->fields).useInteractorData = pDVar3;
+  func_?(&(pMVar1->fields).useInteractorData,pDVar3);
+  if ((this->fields).doorLogic == (MVDoor *)0x0) goto code_?;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__EventHandler<TriggerEventArgs>);
+    func_?(&TypeInfo__System__Func<int,_bool>);
+    func_?(&TypeInfo__GameCoinLogic);
+    func_?(&TypeInfo__GameRankRequirement);
+    func_?(&TypeInfo__LevelBasedUseRequirement);
+    func_?(&MethodInfo__WorldObjectTypes__MVDoor__MVDoor__CheckIfOpen__);
+    func_?(&MethodInfo__WorldObjectTypes__MVDoor__MVDoor__Use_int_);
+    func_?(&TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement);
+    func_?(&TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedCheckNoCost);
+    func_?(&TypeInfo__StarRequirement);
+    func_?(&TypeInfo__UseInteractor);
+    func_?(&
+                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                   );
+    func_?(&
+                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                   );
+    cRam_? = '\x01';
+  }
+  wo = pMRam00000100;
+  if (((bRam_? & pURam00000108 == (UseInteractor *)0x0) == 0) ||
+     (pMRam00000100 == (MVWorldObjectClient *)0x0)) {
+    if (bRam_? == 0) {
+code_?:
+      if (pURam00000108 != (UseInteractor *)0x0) {
+        MVDoor::MVDoor_DestroyUseInteractor((MVDoor *)0x0,(MethodInfo *)0x0);
       }
       return;
     }
+    if (pURam00000108 == (UseInteractor *)0x0) {
+      if (bRam_? != 0) {
+        return;
+      }
+      goto code_?;
+    }
   }
+  else {
+    if (iRam_? == 0) goto code_?;
+    pGVar4 = *(GameObject **)(iRam_? + 0x1c);
+    triggerCollider = *(Collider **)(iRam_? + 0x24);
+    this_00 = (Predicate_1_UInt32_ *)func_?(TypeInfo__System__Func<int,_bool>);
+    mscorlib.dll::System::Predicate`1[UInt32]::Predicate_1_UInt32___ctor
+              (this_00,(Object *)0x0,MethodInfo__WorldObjectTypes__MVDoor__MVDoor__Use_int_,
+               (MethodInfo *)0x0);
+    pUVar5 = (UseInteractor *)func_?(TypeInfo__UseInteractor);
+    UseInteractor::UseInteractor__ctor
+              (pUVar5,wo,pGVar4,0,triggerCollider,(Func_2_Int32_Boolean_ *)this_00,
+               (Func_3_Int32_MVInteractableBase_Boolean_ *)0x0,2.5,0,(MethodInfo *)0x0);
+    pURam00000108 = pUVar5;
+    func_?(0x108,pUVar5);
+    pUVar5 = pURam00000108;
+    if (iRam_? == 0) goto code_?;
+    pTVar6 = *(TriggerBoxEvents **)(iRam_? + 0x2c);
+    pEVar7 = (EventHandler_1_Object_ *)
+             func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+              (pEVar7,(Object *)pUVar5,
+               MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+               ,(MethodInfo *)0x0);
+    if ((pTVar6 == (TriggerBoxEvents *)0x0) ||
+       (TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
+                  (pTVar6,(EventHandler_1_TriggerEventArgs_ *)pEVar7,(MethodInfo *)0x0),
+       pUVar5 = pURam00000108, iRam_? == 0)) goto code_?;
+    pTVar6 = *(TriggerBoxEvents **)(iRam_? + 0x2c);
+    pEVar7 = (EventHandler_1_Object_ *)
+             func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+              (pEVar7,(Object *)pUVar5,
+               MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+               ,(MethodInfo *)0x0);
+    if ((pTVar6 == (TriggerBoxEvents *)0x0) ||
+       (TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
+                  (pTVar6,(EventHandler_1_TriggerEventArgs_ *)pEVar7,(MethodInfo *)0x0),
+       iRam_? == 0)) goto code_?;
+    pGVar4 = *(GameObject **)(iRam_? + 0x1c);
+    this_01 = (GameCoinLogic *)func_?(TypeInfo__GameCoinLogic);
+    GameCoinLogic::GameCoinLogic__ctor(this_01,pGVar4,1,(MethodInfo *)0x0);
+    if ((pURam00000108 == (UseInteractor *)0x0) ||
+       (UseInteractor::UseInteractor_AddRequirement
+                  (pURam00000108,(UseRequirement *)this_01,(MethodInfo *)0x0), iRam_? == 0))
+    goto code_?;
+    pGVar4 = *(GameObject **)(iRam_? + 0x1c);
+    this_02 = (LevelBasedUseRequirement *)func_?(TypeInfo__LevelBasedUseRequirement);
+    LevelBasedUseRequirement::LevelBasedUseRequirement__ctor(this_02,pGVar4,1,(MethodInfo *)0x0);
+    if ((pURam00000108 == (UseInteractor *)0x0) ||
+       (UseInteractor::UseInteractor_AddRequirement
+                  (pURam00000108,(UseRequirement *)this_02,(MethodInfo *)0x0), iRam_? == 0))
+    goto code_?;
+    pGVar4 = *(GameObject **)(iRam_? + 0x1c);
+    this_03 = (StarRequirement *)func_?(TypeInfo__StarRequirement);
+    StarRequirement::StarRequirement__ctor(this_03,pGVar4,1,(MethodInfo *)0x0);
+    if ((pURam00000108 == (UseInteractor *)0x0) ||
+       (UseInteractor::UseInteractor_AddRequirement
+                  (pURam00000108,(UseRequirement *)this_03,(MethodInfo *)0x0), iRam_? == 0))
+    goto code_?;
+    pGVar4 = *(GameObject **)(iRam_? + 0x1c);
+    this_04 = (GameRankRequirement *)func_?(TypeInfo__GameRankRequirement);
+    GameRankRequirement::GameRankRequirement__ctor
+              (this_04,pGVar4,(MVWorldObjectClient *)0x0,1,(MethodInfo *)0x0);
+    if ((pURam00000108 == (UseInteractor *)0x0) ||
+       (UseInteractor::UseInteractor_AddRequirement
+                  (pURam00000108,(UseRequirement *)this_04,(MethodInfo *)0x0), iRam_? == 0))
+    goto code_?;
+    pGVar4 = *(GameObject **)(iRam_? + 0x1c);
+    action = (RewardedCheckNoCost *)
+             func_?(TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedCheckNoCost)
+    ;
+    mscorlib.dll::System::Func`1[System::Threading::Tasks::VoidTaskResult]::
+    Func_1_System_Threading_Tasks_VoidTaskResult___ctor
+              ((Func_1_System_Threading_Tasks_VoidTaskResult_ *)action,(Object *)0x0,
+               MethodInfo__WorldObjectTypes__MVDoor__MVDoor__CheckIfOpen__,(MethodInfo *)0x0);
+    this_05 = (RewardedAdRequirement *)
+              func_?(
+                             TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement
+                             );
+    auVar8._4_8_ = 0;
+    auVar8._0_4_ = _UNK_?;
+    WorldObjectInteractionSystem::UseSystem::RewardedAdRequirement::RewardedAdRequirement__ctor_3
+              (this_05,pGVar4,action,(Vector3)(auVar8 << 0x20),(MethodInfo *)0x0);
+    if (pURam00000108 == (UseInteractor *)0x0) goto code_?;
+    UseInteractor::UseInteractor_AddRequirement
+              (pURam00000108,(UseRequirement *)this_05,(MethodInfo *)0x0);
+  }
+  if (pURam00000108 != (UseInteractor *)0x0) {
+    UseInteractor::UseInteractor_UpdateData(pURam00000108,pDRam00000128,(MethodInfo *)0x0);
+    return;
+  }
+code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -600,28 +563,12 @@ void Assembly-CSharp.dll::WorldObjectTypes::MVDoor::MVDoorBlueprint::MVDoorBluep
 {
   MVBlueprintBase::MVBlueprintBase__ctor
             ((MVBlueprintBase *)this,data,worldObjects,(MethodInfo *)0x0);
-  piVar1 = &(this->fields)._._._.interactionFlags;
-  *(uint *)piVar1 = (uint)*piVar1 | 0x8000;
-  piVar1 = &(this->fields)._._._.interactionFlags;
-  *(uint *)piVar1 = (uint)*piVar1 | 0x1000;
-  piVar1 = &(this->fields)._._._.interactionFlags;
-  *(uint *)piVar1 = (uint)*piVar1 | 0x2000;
-  piVar1 = &(this->fields)._._._.interactionFlags;
-  *(uint *)piVar1 = (uint)*piVar1 | 0x100;
-  piVar1 = &(this->fields)._._._.interactionFlags;
-  *(uint *)piVar1 = (uint)*piVar1 | 0x100000;
-  piVar1 = &(this->fields)._._._.interactionFlags;
-  *(uint *)piVar1 = (uint)*piVar1 | 0x200000;
-  piVar1 = &(this->fields)._._._.interactionFlags;
-  *(uint *)piVar1 = (uint)*piVar1 | 0x400000;
-  uVar2 = *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4);
-  piVar1 = &(this->fields)._._._.interactionFlags;
-  *(uint *)piVar1 = (uint)*piVar1 | 0xADDR;
-  *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4) = uVar2;
-  iVar3 = (this->fields)._._._.interactionFlags;
-  puVar4 = (uint *)((int)&(this->fields)._._._.interactionFlags + 4);
-  *puVar4 = *puVar4 | 2;
-  *(int *)&(this->fields)._._._.interactionFlags = (int)iVar3;
+  iVar1 = (this->fields)._._._.interactionFlags;
+  *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4) =
+       *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4);
+  puVar2 = (uint *)((int)&(this->fields)._._._.interactionFlags + 4);
+  *puVar2 = *puVar2 | 2;
+  *(uint *)&(this->fields)._._._.interactionFlags = (uint)iVar1 | 0xADDR;
   return;
 }
 

@@ -259,61 +259,59 @@ void Assembly-CSharp.dll::TouchPlayModeController::TouchPlayModeController_Creat
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  pAVar1 = (this->fields).chatController;
-  ppAVar2 = &(this->fields).chatController;
-  pGVar3 = (this->fields).stackBottom;
-  if (pGVar3 != (GameObject *)0x0) {
-    pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                       (pGVar3,(MethodInfo *)0x0);
+  pGVar1 = (this->fields).stackBottom;
+  pAVar2 = (this->fields).chatController;
+  if (pGVar1 != (GameObject *)0x0) {
+    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                       (pGVar1,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    pAVar1 = (AndroidChatController *)
+    pAVar2 = (AndroidChatController *)
              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
-                       ((Object *)pAVar1,pTVar4,0,
+                       ((Object *)pAVar2,pTVar3,0,
                         AndroidChatController_MethodInfo__UnityEngine__Object__Instantiate<AndroidChatController>_AndroidChatController__UnityEngine__Transform__bool_
                        );
-    *ppAVar2 = pAVar1;
-    func_?(ppAVar2,pAVar1);
-    pGVar3 = (this->fields).stackBottom;
+    (this->fields).chatController = pAVar2;
+    func_?(&(this->fields).chatController,pAVar2);
+    pGVar1 = (this->fields).stackBottom;
     original = (this->fields).playMode3DControllerPrefab;
-    if (pGVar3 != (GameObject *)0x0) {
-      pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                         (pGVar3,(MethodInfo *)0x0);
-      pPVar5 = (PlayModeControlsBase *)
+    if (pGVar1 != (GameObject *)0x0) {
+      pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                         (pGVar1,(MethodInfo *)0x0);
+      pPVar4 = (PlayModeControlsBase *)
                UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
-                         ((Object *)original,pTVar4,0,
+                         ((Object *)original,pTVar3,0,
                           PlayMode3DController_MethodInfo__UnityEngine__Object__Instantiate<PlayMode3DController>_PlayMode3DController__UnityEngine__Transform__bool_
                          );
-      ppPVar6 = &(this->fields).playModeControlsBase;
-      *ppPVar6 = pPVar5;
-      func_?(ppPVar6,pPVar5);
-      if (*ppPVar6 != (PlayModeControlsBase *)0x0) {
-        pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)*ppPVar6,(MethodInfo *)0x0);
-        if (pGVar3 != (GameObject *)0x0) {
+      (this->fields).playModeControlsBase = pPVar4;
+      func_?(&(this->fields).playModeControlsBase,pPVar4);
+      pPVar4 = (this->fields).playModeControlsBase;
+      if (pPVar4 != (PlayModeControlsBase *)0x0) {
+        pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)pPVar4,(MethodInfo *)0x0);
+        if (pGVar1 != (GameObject *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar3,0,(MethodInfo *)0x0);
-          pGVar3 = (this->fields).stackBottom;
-          ppRVar7 = &(this->fields).playerListButton;
-          pRVar8 = *ppRVar7;
-          if (pGVar3 != (GameObject *)0x0) {
-            pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                               (pGVar3,(MethodInfo *)0x0);
-            pRVar8 = (RectTransform *)
+                    (pGVar1,0,(MethodInfo *)0x0);
+          pGVar1 = (this->fields).stackBottom;
+          pRVar5 = (this->fields).playerListButton;
+          if (pGVar1 != (GameObject *)0x0) {
+            pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                               (pGVar1,(MethodInfo *)0x0);
+            pRVar5 = (RectTransform *)
                      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
-                               ((Object *)pRVar8,pTVar4,0,
+                               ((Object *)pRVar5,pTVar3,0,
                                 UnityEngine__RectTransform_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::RectTransform>_UnityEngine__RectTransform__UnityEngine__Transform__bool_
                                );
-            *ppRVar7 = pRVar8;
-            func_?(ppRVar7,pRVar8);
-            pGVar3 = (this->fields).stackBottom;
+            (this->fields).playerListButton = pRVar5;
+            func_?(&(this->fields).playerListButton,pRVar5);
+            pGVar1 = (this->fields).stackBottom;
             original_00 = (this->fields).notificationManager;
-            if (pGVar3 != (GameObject *)0x0) {
-              pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                                 (pGVar3,(MethodInfo *)0x0);
+            if (pGVar1 != (GameObject *)0x0) {
+              pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                                 (pGVar1,(MethodInfo *)0x0);
               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
-                        ((Object *)original_00,pTVar4,0,
+                        ((Object *)original_00,pTVar3,0,
                          UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject__UnityEngine__Transform__bool_
                         );
               return;
@@ -324,8 +322,8 @@ void Assembly-CSharp.dll::TouchPlayModeController::TouchPlayModeController_Creat
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -398,41 +396,38 @@ void Assembly-CSharp.dll::TouchPlayModeController::TouchPlayModeController_HideE
 
 {
   pPVar1 = (this->fields).playModeControlsBase;
-  if (pPVar1 != (PlayModeControlsBase *)0x0) {
-    pJVar2 = (pPVar1->fields).joystickControllerStack;
-    if (pJVar2 != (JoystickControllerStack *)0x0) {
-      if (cRam_? == '\0') {
-        func_?(&MethodInfo__System__Collections__Generic__List<InGameControls>__get_Count__
-                       );
-        func_?(&
-                        MethodInfo__System__Collections__Generic__List<InGameControls>__get_Item_int_
-                       );
-        cRam_? = '\x01';
+  if ((pPVar1 != (PlayModeControlsBase *)0x0) &&
+     (pJVar2 = (pPVar1->fields).joystickControllerStack, pJVar2 != (JoystickControllerStack *)0x0))
+  {
+    if (cRam_? == '\0') {
+      func_?(&MethodInfo__System__Collections__Generic__List<InGameControls>__get_Count__);
+      func_?(&MethodInfo__System__Collections__Generic__List<InGameControls>__get_Item_int_
+                     );
+      cRam_? = '\x01';
+    }
+    pLVar3 = (pJVar2->fields).controls;
+    if (pLVar3 != (List_1_InGameControls_ *)0x0) {
+      if ((pLVar3->fields)._size != 0) {
+        RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+                ::RegexCharClass+SingleRange]::
+                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
+                          ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                           (pJVar2->fields).controls,(pLVar3->fields)._size + -1,
+                           MethodInfo__System__Collections__Generic__List<InGameControls>__get_Item_int_
+                          );
+        if ((RVar4 == (RegexCharClass_SingleRange)0x0) ||
+           (piVar5 = *(int **)((int)RVar4 + 0x18), piVar5 == (int *)0x0)) goto code_?;
+        (**(code **)(*piVar5 + 0xe8))(piVar5,*(undefined4 *)(*piVar5 + 0xec));
       }
-      this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                (pJVar2->fields).controls;
-      if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-        if ((this_00->fields)._size != 0) {
-          RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                  RegularExpressions::RegexCharClass+SingleRange]::
-                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            (this_00,(this_00->fields)._size + -1,
-                             MethodInfo__System__Collections__Generic__List<InGameControls>__get_Item_int_
-                            );
-          if ((RVar3 == (RegexCharClass_SingleRange)0x0) ||
-             (piVar4 = *(int **)((int)RVar3 + 0x18), piVar4 == (int *)0x0)) goto code_?;
-          (**(code **)(*piVar4 + 0xe8))(piVar4,*(undefined4 *)(*piVar4 + 0xec));
-        }
-        (*(code *)(pPVar1->klass->vtable).SetUseButtonVisible.method)
-                  (pPVar1,0,0,0,pPVar1->klass[1]._0.image);
-        return;
-      }
+      (*(code *)(pPVar1->klass->vtable).SetUseButtonVisible.method)
+                (pPVar1,0,0,0,pPVar1->klass[1]._0.image);
+      return;
     }
   }
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -473,29 +468,21 @@ void Assembly-CSharp.dll::TouchPlayModeController::TouchPlayModeController_Initi
   }
   ModeControllerBase::ModeControllerBase_Initialize((ModeControllerBase *)this,(MethodInfo *)0x0);
   pCVar1 = (this->fields).chatBubbleController;
-  ppCVar2 = &(this->fields).chatBubbleController;
-  parent = (Object_1__Class *)
-           UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+  pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                      ((Component *)this,(MethodInfo *)0x0);
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    parent = TypeInfo__UnityEngine__Object;
-    func_?();
+    func_?(TypeInfo__UnityEngine__Object);
   }
   pCVar1 = (ChatBubbleController *)
            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
-                     ((Object *)pCVar1,(Transform *)parent,0,
+                     ((Object *)pCVar1,pTVar2,0,
                       ChatBubbleController_MethodInfo__UnityEngine__Object__Instantiate<ChatBubbleController>_ChatBubbleController__UnityEngine__Transform__bool_
                      );
-  *ppCVar2 = pCVar1;
-  func_?(ppCVar2,pCVar1);
+  (this->fields).chatBubbleController = pCVar1;
+  func_?(&(this->fields).chatBubbleController,pCVar1);
   pGVar3 = (this->fields).stackBottom;
-  ppRVar4 = &(this->fields).lobbyState;
-  pRVar5 = *ppRVar4;
+  pRVar4 = (this->fields).lobbyState;
   if (pGVar3 == (GameObject *)0x0) {
-code_?:
-    func_?();
-code_?:
-    func_?();
 code_?:
     func_?();
 code_?:
@@ -506,120 +493,120 @@ code_?:
     func_?();
   }
   else {
-    pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+    pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                        (pGVar3,(MethodInfo *)0x0);
-    pRVar5 = (RectTransform *)
+    pRVar4 = (RectTransform *)
              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
-                       ((Object *)pRVar5,pTVar6,0,
+                       ((Object *)pRVar4,pTVar2,0,
                         UnityEngine__RectTransform_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::RectTransform>_UnityEngine__RectTransform__UnityEngine__Transform__bool_
                        );
-    *ppRVar4 = pRVar5;
+    (this->fields).lobbyState = pRVar4;
     func_?();
     pGVar3 = (this->fields).stackBottom;
-    ppAVar7 = &(this->fields).inGameMenu;
-    pAVar8 = *ppAVar7;
+    pAVar5 = (this->fields).inGameMenu;
     if (pGVar3 == (GameObject *)0x0) goto code_?;
-    pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+    pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                        (pGVar3,(MethodInfo *)0x0);
-    pAVar8 = (AndroidInGameMenu *)
+    pAVar5 = (AndroidInGameMenu *)
              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
-                       ((Object *)pAVar8,pTVar6,0,
+                       ((Object *)pAVar5,pTVar2,0,
                         AndroidInGameMenu_MethodInfo__UnityEngine__Object__Instantiate<AndroidInGameMenu>_AndroidInGameMenu__UnityEngine__Transform__bool_
                        );
-    *ppAVar7 = pAVar8;
+    (this->fields).inGameMenu = pAVar5;
     func_?();
-    if (*ppAVar7 == (AndroidInGameMenu *)0x0) goto code_?;
-    AndroidInGameMenu::AndroidInGameMenu_Initialize(*ppAVar7,(MethodInfo *)0x0);
-    if (*ppAVar7 == (AndroidInGameMenu *)0x0) goto code_?;
+    pAVar5 = (this->fields).inGameMenu;
+    if (pAVar5 == (AndroidInGameMenu *)0x0) goto code_?;
+    AndroidInGameMenu::AndroidInGameMenu_Initialize(pAVar5,(MethodInfo *)0x0);
+    pAVar5 = (this->fields).inGameMenu;
+    if (pAVar5 == (AndroidInGameMenu *)0x0) goto code_?;
     pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                        ((Component *)*ppAVar7,(MethodInfo *)0x0);
+                       ((Component *)pAVar5,(MethodInfo *)0x0);
     if (pGVar3 == (GameObject *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
               (pGVar3,0,(MethodInfo *)0x0);
     pGVar3 = (this->fields).stackBottom;
-    ppTVar9 = &(this->fields).timeAttackFlagDebriefing;
-    pTVar10 = *ppTVar9;
+    pTVar6 = (this->fields).timeAttackFlagDebriefing;
     if (pGVar3 == (GameObject *)0x0) goto code_?;
-    pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+    pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                        (pGVar3,(MethodInfo *)0x0);
-    pTVar10 = (TimeAttackFlagDebriefing *)
-              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
-                        ((Object *)pTVar10,pTVar6,0,
-                         TimeAttackFlagDebriefing_MethodInfo__UnityEngine__Object__Instantiate<TimeAttackFlagDebriefing>_TimeAttackFlagDebriefing__UnityEngine__Transform__bool_
-                        );
-    *ppTVar9 = pTVar10;
+    pTVar6 = (TimeAttackFlagDebriefing *)
+             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
+                       ((Object *)pTVar6,pTVar2,0,
+                        TimeAttackFlagDebriefing_MethodInfo__UnityEngine__Object__Instantiate<TimeAttackFlagDebriefing>_TimeAttackFlagDebriefing__UnityEngine__Transform__bool_
+                       );
+    (this->fields).timeAttackFlagDebriefing = pTVar6;
     func_?();
-    pFVar11 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl
-                        ((MethodInfo *)0x0);
-    if (pFVar11 == (FlagDebriefingControl *)0x0) goto code_?;
-    a = (pFVar11->fields).OnFlagDebriefing;
-    pUVar12 = (UnityAction_1_System_Int32Enum_ *)func_?();
+    pFVar7 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl((MethodInfo *)0x0)
+    ;
+    if (pFVar7 == (FlagDebriefingControl *)0x0) goto code_?;
+    a = (pFVar7->fields).OnFlagDebriefing;
+    pUVar8 = (UnityAction_1_System_Int32Enum_ *)func_?();
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
     UnityAction_1_System_Int32Enum___ctor
-              (pUVar12,(Object *)this,
+              (pUVar8,(Object *)this,
                MethodInfo__TouchPlayModeController__OnShowTimeAttackFlagDebriefing_int_,
                (MethodInfo *)0x0);
-    puVar13 = &UNK_?;
-    pDVar14 = mscorlib.dll::System::Delegate::Delegate_Combine
-                        ((Delegate *)a,(Delegate *)pUVar12,(MethodInfo *)0x0);
-    if (pDVar14 != (Delegate *)0x0) {
-      iVar15 = func_?();
-      if (iVar15 != 0) {
-        *(int *)(puVar13 + 0x10) = iVar15;
-        iVar15 = func_?();
-        if (iVar15 == 0) goto code_?;
+    puVar9 = &UNK_?;
+    pDVar10 = mscorlib.dll::System::Delegate::Delegate_Combine
+                        ((Delegate *)a,(Delegate *)pUVar8,(MethodInfo *)0x0);
+    if (pDVar10 != (Delegate *)0x0) {
+      iVar11 = func_?();
+      if (iVar11 != 0) {
+        *(int *)(puVar9 + 0x10) = iVar11;
+        iVar11 = func_?();
+        if (iVar11 == 0) goto code_?;
         goto code_?;
       }
       goto code_?;
     }
-    *(undefined4 *)(puVar13 + 0x10) = 0;
+    *(undefined4 *)(puVar9 + 0x10) = 0;
 code_?:
     func_?();
-    pFVar11 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl
-                        ((MethodInfo *)0x0);
-    if (pFVar11 == (FlagDebriefingControl *)0x0) goto code_?;
-    pAVar16 = (pFVar11->fields).OnFlagCountDown;
-    pNVar17 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+    pFVar7 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl((MethodInfo *)0x0)
+    ;
+    if (pFVar7 == (FlagDebriefingControl *)0x0) goto code_?;
+    pAVar12 = (pFVar7->fields).OnFlagCountDown;
+    pNVar13 = (NavMesh_OnNavMeshPreUpdate *)func_?();
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
-              (pNVar17,(Object *)this,
+              (pNVar13,(Object *)this,
                MethodInfo__TouchPlayModeController__OnShowTimeAttackFlagCountDown__,
                (MethodInfo *)0x0);
-    puVar13 = &UNK_?;
-    pDVar14 = mscorlib.dll::System::Delegate::Delegate_Combine
-                        ((Delegate *)pAVar16,(Delegate *)pNVar17,(MethodInfo *)0x0);
-    if (pDVar14 == (Delegate *)0x0) {
-      *(undefined4 *)(puVar13 + 0x14) = 0;
+    puVar9 = &UNK_?;
+    pDVar10 = mscorlib.dll::System::Delegate::Delegate_Combine
+                        ((Delegate *)pAVar12,(Delegate *)pNVar13,(MethodInfo *)0x0);
+    if (pDVar10 == (Delegate *)0x0) {
+      *(undefined4 *)(puVar9 + 0x14) = 0;
 code_?:
       func_?();
-      pFVar11 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl
-                          ((MethodInfo *)0x0);
-      if (pFVar11 == (FlagDebriefingControl *)0x0) goto code_?;
-      pAVar16 = (pFVar11->fields).OnFlagCountDownEnd;
-      pNVar17 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+      pFVar7 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl
+                         ((MethodInfo *)0x0);
+      if (pFVar7 == (FlagDebriefingControl *)0x0) goto code_?;
+      pAVar12 = (pFVar7->fields).OnFlagCountDownEnd;
+      pNVar13 = (NavMesh_OnNavMeshPreUpdate *)func_?();
       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
       NavMesh_OnNavMeshPreUpdate__ctor
-                (pNVar17,(Object *)this,
+                (pNVar13,(Object *)this,
                  MethodInfo__TouchPlayModeController__OnHideTimeAttackFlagCountDown__,
                  (MethodInfo *)0x0);
-      puVar13 = &UNK_?;
-      pDVar14 = mscorlib.dll::System::Delegate::Delegate_Combine
-                          ((Delegate *)pAVar16,(Delegate *)pNVar17,(MethodInfo *)0x0);
-      if (pDVar14 == (Delegate *)0x0) {
-        *(undefined4 *)(puVar13 + 0x1c) = 0;
+      puVar9 = &UNK_?;
+      pDVar10 = mscorlib.dll::System::Delegate::Delegate_Combine
+                          ((Delegate *)pAVar12,(Delegate *)pNVar13,(MethodInfo *)0x0);
+      if (pDVar10 == (Delegate *)0x0) {
+        *(undefined4 *)(puVar9 + 0x1c) = 0;
       }
       else {
-        pDVar18 = (Delegate *)0x0;
-        if ((Action__Class *)pDVar14->klass == TypeInfo__System__Action) {
-          pDVar18 = pDVar14;
+        pDVar14 = (Delegate *)0x0;
+        if ((Action__Class *)pDVar10->klass == TypeInfo__System__Action) {
+          pDVar14 = pDVar10;
         }
-        if (pDVar18 == (Delegate *)0x0) goto code_?;
-        *(Delegate **)(puVar13 + 0x1c) = pDVar18;
-        pDVar18 = (Delegate *)0x0;
-        if ((Action__Class *)pDVar14->klass == TypeInfo__System__Action) {
-          pDVar18 = pDVar14;
+        if (pDVar14 == (Delegate *)0x0) goto code_?;
+        *(Delegate **)(puVar9 + 0x1c) = pDVar14;
+        pDVar14 = (Delegate *)0x0;
+        if ((Action__Class *)pDVar10->klass == TypeInfo__System__Action) {
+          pDVar14 = pDVar10;
         }
-        if (pDVar18 == (Delegate *)0x0) goto code_?;
+        if (pDVar14 == (Delegate *)0x0) goto code_?;
       }
       func_?();
       this_03 = (TouchInputMap *)func_?();
@@ -630,109 +617,107 @@ code_?:
       func_?();
       this_00 = (this->fields).playModeControlsBase;
       if (this_00 == (PlayModeControlsBase *)0x0) goto code_?;
-      pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+      pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                          ((Component *)this_00,(MethodInfo *)0x0);
-      if (pTVar6 == (Transform *)0x0) goto code_?;
+      if (pTVar2 == (Transform *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetAsFirstSibling
-                (pTVar6,(MethodInfo *)0x0);
+                (pTVar2,(MethodInfo *)0x0);
       this_01 = (this->fields).chatController;
       if (this_01 == (AndroidChatController *)0x0) goto code_?;
       AndroidChatController::AndroidChatController_Initialize(this_01,(MethodInfo *)0x0);
       this_02 = (this->fields).deathPromotionController;
       if (this_02 == (DeathPromotionController *)0x0) goto code_?;
       DeathPromotionController::DeathPromotionController_Initialize(this_02,(MethodInfo *)0x0);
-      pRVar5 = (this->fields).playerListButton;
-      if (pRVar5 == (RectTransform *)0x0) goto code_?;
+      pRVar4 = (this->fields).playerListButton;
+      if (pRVar4 == (RectTransform *)0x0) goto code_?;
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                          ((Component *)pRVar5,(MethodInfo *)0x0);
+                         ((Component *)pRVar4,(MethodInfo *)0x0);
       if (pGVar3 == (GameObject *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 (pGVar3,1,(MethodInfo *)0x0);
-      MVar19 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-      if (MVar19 == MVGameMode__Enum_Play) {
+      MVar15 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
+      if (MVar15 == MVGameMode__Enum_Play) {
         (this->fields)._._IsInLobby_k__BackingField = 1;
         (*(code *)(this->klass->vtable).set_IsInPauseMenu_1.method)();
       }
       object = _UNK_?;
       a_00 = (this->fields).OnLobbyStateChange;
-      pUVar12 = (UnityAction_1_System_Int32Enum_ *)func_?();
+      pUVar8 = (UnityAction_1_System_Int32Enum_ *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
       UnityAction_1_System_Int32Enum___ctor
-                (pUVar12,object,MethodInfo__AndroidChatController__OnLobbyStateChange_bool_,
+                (pUVar8,object,MethodInfo__AndroidChatController__OnLobbyStateChange_bool_,
                  (MethodInfo *)0x0);
-      piVar20 = (int *)&UNK_?;
-      pDVar14 = mscorlib.dll::System::Delegate::Delegate_Combine
-                          ((Delegate *)a_00,(Delegate *)pUVar12,(MethodInfo *)0x0);
-      if (pDVar14 == (Delegate *)0x0) {
-        *piVar20 = 0;
+      pDVar10 = mscorlib.dll::System::Delegate::Delegate_Combine
+                          ((Delegate *)a_00,(Delegate *)pUVar8,(MethodInfo *)0x0);
+      if (pDVar10 == (Delegate *)0x0) {
+        pDRam00000028 = (Delegate *)0x0;
 code_?:
         func_?();
-        pDVar14 = (Delegate *)*piVar20;
-        pUVar12 = (UnityAction_1_System_Int32Enum_ *)func_?();
+        pDVar10 = pDRam00000028;
+        pUVar8 = (UnityAction_1_System_Int32Enum_ *)func_?();
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
         UnityAction_1_System_Int32Enum___ctor
-                  (pUVar12,(Object *)0x0,MethodInfo__TouchPlayModeController__LobbyStateChange_bool_
-                   ,(MethodInfo *)0x0);
-        pDVar14 = mscorlib.dll::System::Delegate::Delegate_Combine
-                            (pDVar14,(Delegate *)pUVar12,(MethodInfo *)0x0);
-        if (pDVar14 == (Delegate *)0x0) {
-          iRam_? = 0;
+                  (pUVar8,(Object *)0x0,MethodInfo__TouchPlayModeController__LobbyStateChange_bool_,
+                   (MethodInfo *)0x0);
+        pDVar10 = mscorlib.dll::System::Delegate::Delegate_Combine
+                            (pDVar10,(Delegate *)pUVar8,(MethodInfo *)0x0);
+        if (pDVar10 != (Delegate *)0x0) {
+          pDVar10 = (Delegate *)func_?();
+          if (pDVar10 != (Delegate *)0x0) {
+            pDRam00000028 = pDVar10;
+            iVar11 = func_?();
+            if (iVar11 != 0) goto code_?;
+          }
+          goto code_?;
+        }
+        pDRam00000028 = (Delegate *)0x0;
 code_?:
+        func_?();
+        if ((TypeInfo__ChatCommandManager->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
-          if ((TypeInfo__ChatCommandManager->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          pAVar16 = ChatCommandManager::ChatCommandManager_GetChatCommandCallback
-                              (ChatCommand__Enum_HideAllUI,(MethodInfo *)0x0);
-          pNVar17 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-          UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-          NavMesh_OnNavMeshPreUpdate__ctor
-                    (pNVar17,(Object *)0x0,MethodInfo__TouchPlayModeController__HideUI__,
-                     (MethodInfo *)0x0);
-          pAVar21 = (Action *)
-                    mscorlib.dll::System::Delegate::Delegate_Combine
-                              ((Delegate *)pAVar16,(Delegate *)pNVar17,(MethodInfo *)0x0);
-          pAVar16 = (Action *)0x0;
-          if (pAVar21 == (Action *)0x0) {
+        }
+        pAVar12 = ChatCommandManager::ChatCommandManager_GetChatCommandCallback
+                            (ChatCommand__Enum_HideAllUI,(MethodInfo *)0x0);
+        pNVar13 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+        NavMesh_OnNavMeshPreUpdate__ctor
+                  (pNVar13,(Object *)0x0,MethodInfo__TouchPlayModeController__HideUI__,
+                   (MethodInfo *)0x0);
+        pAVar16 = (Action *)
+                  mscorlib.dll::System::Delegate::Delegate_Combine
+                            ((Delegate *)pAVar12,(Delegate *)pNVar13,(MethodInfo *)0x0);
+        pAVar12 = (Action *)0x0;
+        if (pAVar16 == (Action *)0x0) {
 code_?:
-            ChatCommandManager::ChatCommandManager_UpdateChatCommandCallback
-                      (ChatCommand__Enum_HideAllUI,pAVar16,(MethodInfo *)0x0);
-            return;
-          }
-          if (pAVar21->klass == TypeInfo__System__Action) {
-            pAVar16 = pAVar21;
-          }
-          if (pAVar16 != (Action *)0x0) goto code_?;
-          goto code_?;
+          ChatCommandManager::ChatCommandManager_UpdateChatCommandCallback
+                    (ChatCommand__Enum_HideAllUI,pAVar12,(MethodInfo *)0x0);
+          return;
         }
-        iVar15 = func_?();
-        if (iVar15 != 0) {
-          iRam_? = iVar15;
-          iVar15 = func_?();
-          if (iVar15 != 0) goto code_?;
-          goto code_?;
+        if (pAVar16->klass == TypeInfo__System__Action) {
+          pAVar12 = pAVar16;
         }
+        if (pAVar12 != (Action *)0x0) goto code_?;
         goto code_?;
       }
-      iVar15 = func_?();
-      if (iVar15 != 0) {
-        *piVar20 = iVar15;
-        iVar15 = func_?();
-        if (iVar15 != 0) goto code_?;
+      pDVar10 = (Delegate *)func_?();
+      if (pDVar10 != (Delegate *)0x0) {
+        pDRam00000028 = pDVar10;
+        iVar11 = func_?();
+        if (iVar11 != 0) goto code_?;
       }
       goto code_?;
     }
-    pDVar18 = (Delegate *)0x0;
-    if ((Action__Class *)pDVar14->klass == TypeInfo__System__Action) {
-      pDVar18 = pDVar14;
+    pDVar14 = (Delegate *)0x0;
+    if ((Action__Class *)pDVar10->klass == TypeInfo__System__Action) {
+      pDVar14 = pDVar10;
     }
-    if (pDVar18 != (Delegate *)0x0) {
-      *(Delegate **)(puVar13 + 0x14) = pDVar18;
-      pDVar18 = (Delegate *)0x0;
-      if ((Action__Class *)pDVar14->klass == TypeInfo__System__Action) {
-        pDVar18 = pDVar14;
+    if (pDVar14 != (Delegate *)0x0) {
+      *(Delegate **)(puVar9 + 0x14) = pDVar14;
+      pDVar14 = (Delegate *)0x0;
+      if ((Action__Class *)pDVar10->klass == TypeInfo__System__Action) {
+        pDVar14 = pDVar10;
       }
-      if (pDVar18 != (Delegate *)0x0) goto code_?;
+      if (pDVar14 != (Delegate *)0x0) goto code_?;
       goto code_?;
     }
   }
@@ -740,8 +725,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar22 = (code *)swi(3);
-  (*pcVar22)();
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
   return;
 }
 
@@ -769,9 +754,8 @@ void Assembly-CSharp.dll::TouchPlayModeController::TouchPlayModeController_Leave
     }
     TimeAttackFlagDebriefing::TimeAttackFlagDebriefing_EndDebriefingEarly(this_00,(MethodInfo *)0x0)
     ;
-    pUVar3 = (this->fields).OnLeaveEditPlayMode;
-    if (pUVar3 != (UnityAction *)0x0) {
-      (*(pUVar3->fields)._._.invoke_impl)();
+    if ((this->fields).OnLeaveEditPlayMode != (UnityAction *)0x0) {
+      (*(((this->fields).OnLeaveEditPlayMode)->fields)._._.invoke_impl)();
     }
   }
   return;
@@ -798,9 +782,8 @@ void Assembly-CSharp.dll::TouchPlayModeController::TouchPlayModeController_Leave
     pFVar2 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl((MethodInfo *)0x0)
     ;
     if (pFVar2 != (FlagDebriefingControl *)0x0) {
-      pAVar3 = (pFVar2->fields).OnFlagDebriefingEnd;
-      if (pAVar3 != (Action *)0x0) {
-        (*(pAVar3->fields)._._.invoke_impl)();
+      if ((pFVar2->fields).OnFlagDebriefingEnd != (Action *)0x0) {
+        (*(((pFVar2->fields).OnFlagDebriefingEnd)->fields)._._.invoke_impl)();
       }
       if (cRam_? == '\0') {
         func_?();
@@ -816,30 +799,29 @@ void Assembly-CSharp.dll::TouchPlayModeController::TouchPlayModeController_Leave
         if (this_02 != (GameObject *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                     (this_02,0,(MethodInfo *)0x0);
-          fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+          fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
           this_00 = (this_01->fields).scoreBoardCanvasGroup;
-          (this_01->fields).countdownEndTime = fVar4;
+          (this_01->fields).countdownEndTime = fVar3;
           if (this_00 != (CanvasGroup *)0x0) {
             UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
                       (this_00,0.0,(MethodInfo *)0x0);
             pFVar2 = MVGameControllerBase::MVGameControllerBase_get_FlagDebriefingControl
                                ((MethodInfo *)0x0);
             if (pFVar2 != (FlagDebriefingControl *)0x0) {
-              fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
+              fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
                                 ((MethodInfo *)0x0);
-              pAVar3 = (pFVar2->fields).OnFlagCountDownEnd;
               (pFVar2->fields).IsInFlagDebriefing = 0;
-              (pFVar2->fields).RunStartTime = fVar4;
-              if (pAVar3 != (Action *)0x0) {
-                (*(pAVar3->fields)._._.invoke_impl)();
+              (pFVar2->fields).RunStartTime = fVar3;
+              if ((pFVar2->fields).OnFlagCountDownEnd != (Action *)0x0) {
+                (*(((pFVar2->fields).OnFlagCountDownEnd)->fields)._._.invoke_impl)();
               }
-              pGVar5 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager
+              pGVar4 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager
                                  ((MethodInfo *)0x0);
-              if ((pGVar5 != (GameEventManager *)0x0) &&
-                 ((pGVar5->fields).AvatarCommandsPlayMode !=
+              if ((pGVar4 != (GameEventManager *)0x0) &&
+                 ((pGVar4->fields).AvatarCommandsPlayMode !=
                   (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) {
-                if (*(int *)(in_stack_6 + 0x14) != 0) {
-                  (**(code **)(*(int *)(in_stack_6 + 0x14) + 0xc))();
+                if (*(int *)(in_stack_5 + 0x14) != 0) {
+                  (**(code **)(*(int *)(in_stack_5 + 0x14) + 0xc))();
                 }
                 return;
               }
@@ -849,10 +831,10 @@ void Assembly-CSharp.dll::TouchPlayModeController::TouchPlayModeController_Leave
       }
     }
   }
-  uVar7 = func_?(&stack0xfffffff0);
-  func_?(uVar7);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  uVar6 = func_?(&stack0xfffffff0);
+  func_?(uVar6);
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -1088,46 +1070,45 @@ void Assembly-CSharp.dll::TouchPlayModeController::TouchPlayModeController_OpenI
     func_?();
     cRam_? = '\x01';
   }
-  ppAVar3 = &(object->fields).accessoryDataToShow;
-  *ppAVar3 = displayShopItems;
-  func_?(ppAVar3,displayShopItems);
+  (object->fields).accessoryDataToShow = displayShopItems;
+  func_?(&(object->fields).accessoryDataToShow,displayShopItems);
   (object->fields).pushOption = pushOption;
-  pUVar4 = TypeInfo__AccessoryDataManager->static_fields->readyCallback;
+  pUVar3 = TypeInfo__AccessoryDataManager->static_fields->readyCallback;
   this_00 = (NavMesh_OnNavMeshPreUpdate *)
             func_?(TypeInfo__UnityEngine__Events__UnityAction);
   UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
   NavMesh_OnNavMeshPreUpdate__ctor
             (this_00,(Object *)object,
              MethodInfo__AccessoryShopController__ReadyCallbackAccessoryView__,(MethodInfo *)0x0);
-  pUVar4 = (UnityAction *)
+  pUVar3 = (UnityAction *)
            mscorlib.dll::System::Delegate::Delegate_Combine
-                     ((Delegate *)pUVar4,(Delegate *)this_00,(MethodInfo *)0x0);
-  if (pUVar4 == (UnityAction *)0x0) {
+                     ((Delegate *)pUVar3,(Delegate *)this_00,(MethodInfo *)0x0);
+  if (pUVar3 == (UnityAction *)0x0) {
     TypeInfo__AccessoryDataManager->static_fields->readyCallback = (UnityAction *)0x0;
-    pUVar5 = (UnityAction *)0x0;
+    pUVar4 = (UnityAction *)0x0;
 code_?:
-    pUStack6 = (UnityAction__Class *)pUVar5;
+    pUStack5 = (UnityAction__Class *)pUVar4;
     func_?();
     AccessoryDataManager::AccessoryDataManager_SetReady((MethodInfo *)0x0);
     return;
   }
-  pUVar5 = (UnityAction *)0x0;
-  if (pUVar4->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-    pUVar5 = pUVar4;
+  pUVar4 = (UnityAction *)0x0;
+  if (pUVar3->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+    pUVar4 = pUVar3;
   }
-  if (pUVar5 == (UnityAction *)0x0) {
-    pUStack6 = TypeInfo__UnityEngine__Events__UnityAction;
+  if (pUVar4 == (UnityAction *)0x0) {
+    pUStack5 = TypeInfo__UnityEngine__Events__UnityAction;
     func_?();
-    pUStack6 = extraout_EDX;
+    pUStack5 = extraout_EDX;
   }
   else {
-    TypeInfo__AccessoryDataManager->static_fields->readyCallback = pUVar5;
-    pUVar5 = (UnityAction *)0x0;
-    if (pUVar4->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-      pUVar5 = pUVar4;
+    TypeInfo__AccessoryDataManager->static_fields->readyCallback = pUVar4;
+    pUVar4 = (UnityAction *)0x0;
+    if (pUVar3->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+      pUVar4 = pUVar3;
     }
-    pUStack6 = TypeInfo__UnityEngine__Events__UnityAction;
-    if (pUVar5 != (UnityAction *)0x0) goto code_?;
+    pUStack5 = TypeInfo__UnityEngine__Events__UnityAction;
+    if (pUVar4 != (UnityAction *)0x0) goto code_?;
   }
   func_?();
   pcVar2 = (code *)swi(3);
@@ -1242,37 +1223,37 @@ void Assembly-CSharp.dll::TouchPlayModeController::TouchPlayModeController_ShowE
                        );
         cRam_? = '\x01';
       }
-      this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                (pJVar2->fields).controls;
-      if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-        if ((this_00->fields)._size != 0) {
-          RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+      pLVar3 = (pJVar2->fields).controls;
+      if (pLVar3 != (List_1_InGameControls_ *)0x0) {
+        if ((pLVar3->fields)._size != 0) {
+          RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                   RegularExpressions::RegexCharClass+SingleRange]::
                   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            (this_00,(this_00->fields)._size + -1,
+                            ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                             (pJVar2->fields).controls,(pLVar3->fields)._size + -1,
                              MethodInfo__System__Collections__Generic__List<InGameControls>__get_Item_int_
                             );
-          if ((RVar3 == (RegexCharClass_SingleRange)0x0) ||
-             (piVar4 = *(int **)((int)RVar3 + 0x18), piVar4 == (int *)0x0)) goto code_?;
-          NStack_5._0_4_ = *(undefined4 *)(*piVar4 + 0xe4);
-          (**(code **)(*piVar4 + 0xe0))(piVar4,option);
+          if ((RVar4 == (RegexCharClass_SingleRange)0x0) ||
+             (piVar5 = *(int **)((int)RVar4 + 0x18), piVar5 == (int *)0x0)) goto code_?;
+          NStack_6._0_4_ = *(undefined4 *)(*piVar5 + 0xe4);
+          (**(code **)(*piVar5 + 0xe0))(piVar5,option);
         }
-        NStack_5.hasValue = 0;
-        NStack_5._1_3_ = 0;
-        NStack_5.value = 0;
+        NStack_6.hasValue = 0;
+        NStack_6._1_3_ = 0;
+        NStack_6.value = 0;
         mscorlib.dll::System::Nullable`1[UInt32]::Nullable_1_UInt32___ctor
-                  (&NStack_5,option,
+                  (&NStack_6,option,
                    MethodInfo__System__Nullable<ShowUseOption>__Nullable_ShowUseOption_);
         (*(code *)(pPVar1->klass->vtable).SetUseButtonVisible.method)
-                  (pPVar1,1,NStack_5._0_4_,NStack_5.value,pPVar1->klass[1]._0.image);
+                  (pPVar1,1,NStack_6._0_4_,NStack_6.value,pPVar1->klass[1]._0.image);
         return;
       }
     }
   }
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -1302,8 +1283,8 @@ void Assembly-CSharp.dll::TouchPlayModeController::TouchPlayModeController_set_I
 
 {
   (this->fields).inLobbyState = value;
-  pAVar1 = (this->fields).OnLobbyStateChange;
-  if (pAVar1 != (Action_1_Boolean_ *)0x0) {
+  if ((this->fields).OnLobbyStateChange != (Action_1_Boolean_ *)0x0) {
+    pAVar1 = (this->fields).OnLobbyStateChange;
     (*(pAVar1->fields)._._.invoke_impl)
               ((pAVar1->fields)._._.method_code,_value,(pAVar1->fields)._._.method);
   }

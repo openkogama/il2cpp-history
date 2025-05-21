@@ -15,8 +15,8 @@ bool MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerPlanetMetaDataCli
   }
   DVar1 = mscorlib.dll::System::DateTime::DateTime_get_UtcNow((MethodInfo *)0x0);
   puStack_2 = (undefined *)DVar1._dateData;
-  this_00 = &(this->fields).lastDailyWelcomeRewardClaim;
-  iVar3 = mscorlib.dll::System::DateTime::DateTime_get_DayOfYear(this_00,(MethodInfo *)0x0);
+  iVar3 = mscorlib.dll::System::DateTime::DateTime_get_DayOfYear
+                    (&(this->fields).lastDailyWelcomeRewardClaim,(MethodInfo *)0x0);
   iVar4 = mscorlib.dll::System::DateTime::DateTime_get_DayOfYear
                     ((DateTime *)&puStack_2,(MethodInfo *)0x0);
   if (iVar3 != iVar4) {
@@ -25,7 +25,8 @@ bool MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerPlanetMetaDataCli
   if ((TypeInfo__System__DateTime->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  iVar3 = mscorlib.dll::System::DateTime::DateTime_get_Year(this_00,(MethodInfo *)0x0);
+  iVar3 = mscorlib.dll::System::DateTime::DateTime_get_Year
+                    (&(this->fields).lastDailyWelcomeRewardClaim,(MethodInfo *)0x0);
   iVar4 = mscorlib.dll::System::DateTime::DateTime_get_Year
                     ((DateTime *)&puStack_2,(MethodInfo *)0x0);
   return iVar3 == iVar4;

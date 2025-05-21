@@ -268,14 +268,13 @@ Assembly-CSharp.dll::TimeReward+RequestRewardData::TimeReward_RequestRewardData_
     func_?(&TypeInfo__TimeReward__RewardDone);
     cRam_? = '\x01';
   }
-  iVar1 = (this->fields).requestedRewardDataStatus;
-  if (iVar1 == 2) {
+  if ((this->fields).requestedRewardDataStatus == 2) {
     method_00 = TypeInfo__TimeReward__RewardDone;
     this = (TimeReward_RequestRewardData *)func_?();
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
               ((Object *)this,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   }
-  else if (iVar1 == 1) {
+  else if ((this->fields).requestedRewardDataStatus == 1) {
     return (TimeReward_RewardStateBase *)(this->fields).rewardCountdown;
   }
   return (TimeReward_RewardStateBase *)this;

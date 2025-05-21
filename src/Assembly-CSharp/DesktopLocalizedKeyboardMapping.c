@@ -32,12 +32,12 @@ void Assembly-CSharp.dll::DesktopLocalizedKeyboardMapping::DesktopLocalizedKeybo
   this_00 = (BitArray *)func_?(TypeInfo__System__Collections__BitArray);
   mscorlib.dll::System::Collections::BitArray::BitArray__ctor(this_00,0x36,(MethodInfo *)0x0);
   pMVar1 = (MethodInfo *)&value->fields;
-  ((DesktopDefaultKeyboardMapping_ControlBitArray__Fields *)pMVar1)->controlDown = this_00;
+  (value->fields).controlDown = this_00;
   func_?(pMVar1,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)value,ExceptionArgument__Enum_obj,pMVar1);
   pMVar1 = (MethodInfo *)&(this->fields)._.controlDown;
-  *(DesktopDefaultKeyboardMapping_ControlBitArray **)pMVar1 = value;
+  (this->fields)._.controlDown = value;
   func_?(pMVar1,value);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,pMVar1);

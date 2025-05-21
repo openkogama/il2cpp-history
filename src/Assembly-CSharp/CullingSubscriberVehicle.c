@@ -74,9 +74,8 @@ void Assembly-CSharp.dll::CullingSubscriberVehicle::CullingSubscriberVehicle__ct
 {
   CullingSubscriberBase::CullingSubscriberBase__ctor
             ((CullingSubscriberBase *)this,(MethodInfo *)0x0);
-  ppGVar1 = &(this->fields).visualRoot;
-  *ppGVar1 = visualRoot;
-  func_?(ppGVar1,visualRoot);
+  (this->fields).visualRoot = visualRoot;
+  func_?(&(this->fields).visualRoot,visualRoot);
   (this->fields)._._CullingIndex_k__BackingField = 2;
   CullingSubscriberBase::CullingSubscriberBase_set_Radius
             ((CullingSubscriberBase *)this,10.0,(MethodInfo *)0x0);

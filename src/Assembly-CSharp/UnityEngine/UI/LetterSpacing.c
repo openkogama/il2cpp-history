@@ -65,7 +65,7 @@ code_?:
             if (pIVar9->interfaceOffsets[uVar10].interfaceType ==
                 (Il2CppClass *)TypeInfo__System__Collections__IEnumerator) {
               ppMVar12 = &(&(pIVar7->klass->vtable).get_Current)
-                         [pIVar9->interfaceOffsets[uVar10].offset].method;
+                         [pIVar7->klass->interfaceOffsets[uVar10].offset].method;
               goto code_?;
             }
             uVar10 = uVar10 + 1;
@@ -75,9 +75,11 @@ code_?:
 code_?:
         piVar13 = (int *)(*(code *)*ppMVar12)();
         if (piVar13 == (int *)0x0) break;
-        bVar14 = (TypeInfo__System__Text__RegularExpressions__Match->_1).naturalAligment;
-        if ((*(byte *)(*piVar13 + 0xb8) < bVar14) ||
-           (*(Match__Class **)(*(int *)(*piVar13 + 100) + -4 + (uint)bVar14 * 4) !=
+        if ((*(byte *)(*piVar13 + 0xb8) <
+             (TypeInfo__System__Text__RegularExpressions__Match->_1).naturalAligment) ||
+           (*(Match__Class **)
+             (*(int *)(*piVar13 + 100) + -4 +
+             (uint)(TypeInfo__System__Text__RegularExpressions__Match->_1).naturalAligment * 4) !=
             TypeInfo__System__Text__RegularExpressions__Match)) goto code_?;
         iStack_4 = iStack_4 + piVar13[3];
       }
@@ -86,8 +88,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar15 = (code *)swi(3);
-  pIVar7 = (IEnumerator *)(*pcVar15)();
+  pcVar14 = (code *)swi(3);
+  pIVar7 = (IEnumerator *)(*pcVar14)();
   return pIVar7;
 }
 
@@ -130,6 +132,8 @@ void Assembly-CSharp.dll::UnityEngine::UI::LetterSpacing::LetterSpacing_ModifyMe
 }
 
 
+/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
+    */
 /* Void ModifyVertices(List`1[UnityEngine.UIVertex]) */
 
 void Assembly-CSharp.dll::UnityEngine::UI::LetterSpacing::LetterSpacing_ModifyVertices
@@ -155,698 +159,682 @@ void Assembly-CSharp.dll::UnityEngine::UI::LetterSpacing::LetterSpacing_ModifyVe
   if (cVar1 == '\0') {
     return;
   }
-  pMVar2 = (Match__Class *)
-            UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
-                      ((Component *)this,
-                       UnityEngine__UI__Text_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Text>__
-                      );
-  pMStack_3 = pMVar2;
-  if (pMVar2 != (Match__Class *)0x0) {
-    unaff_EDI = (Text__Class *)(*(code *)(pMVar2->_0).image[0x11].token)();
-    pTStack_4 = unaff_EDI;
-    this_00 = UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_cachedTextGenerator
-                        ((Text *)pMVar2,(MethodInfo *)0x0);
-    if ((this_00 != (TextGenerator *)0x0) &&
-       (pIVar5 = UnityEngine.TextRenderingModule.dll::UnityEngine::TextGenerator::
-                  TextGenerator_get_lines(this_00,(MethodInfo *)0x0), pIStack_6 = pIVar5,
-       pIVar5 != (IList_1_UnityEngine_UILineInfo_ *)0x0)) {
-      pTStack_7 = (Text__Class *)pIVar5->klass;
-      uVar8 = 0;
-      pSStack_9 = (String *)0x0;
-      uVar10._0_1_ = (pTStack_7->_1).rank;
-      uVar10._1_1_ = (pTStack_7->_1).minimumAlignment;
-      if (uVar10 != 0) {
-        do {
-          pMVar2 = pMStack_3;
-          if (pTStack_7->interfaceOffsets[uVar8].interfaceType ==
-              (Il2CppClass *)
-              TypeInfo__System__Collections__Generic__ICollection<UnityEngine::UILineInfo>) {
-            ppMVar11 = &(&(pIVar5->klass->vtable).get_Item)
-                        [pIVar5->klass->interfaceOffsets[uVar8].offset].method;
-            pTVar12 = pTStack_4;
-            goto code_?;
-          }
-          uVar8 = uVar8 + 1;
-          unaff_EDI = pTStack_4;
-        } while (uVar8 < uVar10);
-      }
-      ppMVar11 = (MethodInfo **)func_?();
-      pTVar12 = unaff_EDI;
-code_?:
-      iVar13 = (*(code *)*ppMVar11)();
-      pMStack_14 = (Match__Class *)(iVar13 + -1);
-      pTVar15 = (Text__Class *)TypeInfo__System__Collections__Generic__IList<UnityEngine::UILineInfo>
-      ;
-      while (TypeInfo__System__Collections__Generic__IList<UnityEngine::UILineInfo> =
-                  (IList_1_UnityEngine_UILineInfo___Class *)pTVar15, 0 < (int)pMStack_14) {
-        pIVar16 = pIVar5->klass;
-        pMVar2 = (Match__Class *)0x0;
-        uVar10 = 0;
-        uVar8._0_1_ = (pIVar16->_1).rank;
-        uVar8._1_1_ = (pIVar16->_1).minimumAlignment;
-        if (uVar8 != 0) {
-          pMVar2 = (Match__Class *)pIVar16->interfaceOffsets;
+  this_00 = (Text *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
+                              ((Component *)this,
+                               UnityEngine__UI__Text_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Text>__
+                              );
+  uVar2 = (POPCOUNT((uint)this_00 & 0xff) & 1U) == 0;
+  pTStack_3 = this_00;
+  if (this_00 != (Text *)0x0) {
+    unaff_EDI = (Il2CppClass *)(*(code *)(this_00->klass->vtable).get_text.method)();
+    pIStack_4 = unaff_EDI;
+    this_01 = UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_cachedTextGenerator
+                        (this_00,(MethodInfo *)0x0);
+    uVar2 = (POPCOUNT((uint)this_01 & 0xff) & 1U) == 0;
+    if (this_01 != (TextGenerator *)0x0) {
+      pIVar5 = UnityEngine.TextRenderingModule.dll::UnityEngine::TextGenerator::
+               TextGenerator_get_lines(this_01,(MethodInfo *)0x0);
+      uVar2 = (POPCOUNT((uint)pIVar5 & 0xff) & 1U) == 0;
+      pIStack_6 = pIVar5;
+      if (pIVar5 != (IList_1_UnityEngine_UILineInfo_ *)0x0) {
+        pIStack_7 = pIVar5->klass;
+        uVar8 = 0;
+        ppSStack_9 = (String **)0x0;
+        uVar10._0_1_ = (pIStack_7->_1).rank;
+        uVar10._1_1_ = (pIStack_7->_1).minimumAlignment;
+        if (uVar10 != 0) {
           do {
-            if ((Text__Class *)(&(pMVar2->_0).image)[(uint)uVar10 * 2] == pTVar15) {
-              ppMVar11 = &(&(pIVar5->klass->vtable).get_Item)
-                          [(int)(&(pMVar2->_0).gc_desc)[(uint)uVar10 * 2]].method;
-              goto code_?;
-            }
-            uVar10 = uVar10 + 1;
-          } while (uVar10 < uVar8);
-        }
-        ppMVar11 = (MethodInfo **)func_?();
-code_?:
-        piVar17 = (int32_t *)(*(code *)*ppMVar11)();
-        iStack_18 = *piVar17;
-        VStack_19.x = (float)piVar17[1];
-        VStack_19.y = (float)piVar17[2];
-        VStack_19.z = (float)piVar17[3];
-        unaff_EDI = pTVar15;
-        if (pTStack_4 == (Text__Class *)0x0) goto code_?;
-        pSStack_9 = mscorlib.dll::System::String::String_Insert
-                               ((String *)pTStack_4,iStack_18,StringLiteral_u000A,(MethodInfo *)0x0
-                               );
-        unaff_EDI = (Text__Class *)
-                    TypeInfo__System__Collections__Generic__IList<UnityEngine::UILineInfo>;
-        pIVar16 = pIVar5->klass;
-        uVar10 = 0;
-        uVar20._0_1_ = (pIVar16->_1).rank;
-        uVar20._1_1_ = (pIVar16->_1).minimumAlignment;
-        if (uVar20 != 0) {
-          do {
-            if (pIVar16->interfaceOffsets[uVar10].interfaceType ==
+            if (pIStack_7->interfaceOffsets[uVar8].interfaceType ==
                 (Il2CppClass *)
-                TypeInfo__System__Collections__Generic__IList<UnityEngine::UILineInfo>) {
+                TypeInfo__System__Collections__Generic__ICollection<UnityEngine::UILineInfo>) {
               ppMVar11 = &(&(pIVar5->klass->vtable).get_Item)
-                          [pIVar16->interfaceOffsets[uVar10].offset].method;
+                          [pIVar5->klass->interfaceOffsets[uVar8].offset].method;
+              this_02 = pIStack_4;
               goto code_?;
             }
-            uVar10 = uVar10 + 1;
-          } while (uVar10 < uVar20);
+            uVar8 = uVar8 + 1;
+            unaff_EDI = pIStack_4;
+          } while (uVar8 < uVar10);
         }
         ppMVar11 = (MethodInfo **)func_?();
+        this_02 = unaff_EDI;
 code_?:
-        pMVar2 = pMStack_14;
-        piVar21 = (int *)(*(code *)*ppMVar11)();
-        iStack_18 = *piVar21;
-        VStack_19.x = (float)piVar21[1];
-        VStack_19.y = (float)piVar21[2];
-        VStack_19.z = (float)piVar21[3];
-        if (pSStack_9 == (String *)0x0) goto code_?;
-        pTVar12 = (Text__Class *)
-                  mscorlib.dll::System::String::String_Remove
-                            (pSStack_9,iStack_18 + -1,1,(MethodInfo *)0x0);
-        pMStack_14 = (Match__Class *)((int)&pMVar2[-1].vtable.Tidy.method + 3);
-        pMVar2 = pMStack_3;
-        pTVar15 = (Text__Class *)
+        this_00 = (Text *)(*(code *)*ppMVar11)();
+        pIVar12 = (Il2CppClass *)
                  TypeInfo__System__Collections__Generic__IList<UnityEngine::UILineInfo>;
-        pTStack_4 = pTVar12;
-      }
-      unaff_EDI = (Text__Class *)0x0;
-      if (pTVar12 != (Text__Class *)0x0) {
-        pSStack_22 = mscorlib.dll::System::String::String_Split
-                               ((String *)pTVar12,10,StringSplitOptions__Enum_None,(MethodInfo *)0x0
-                               );
-        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
+        pIVar13 = pIStack_6;
+        while (this_00 = (Text *)((int)&this_00[-1].fields.m_TempVerts + 3),
+              TypeInfo__System__Collections__Generic__IList<UnityEngine::UILineInfo> =
+                   (IList_1_UnityEngine_UILineInfo___Class *)pIVar12, pIStack_6 = pIVar13,
+              0 < (int)this_00) {
+          pIStack_7 = pIVar5->klass;
+          uVar10 = 0;
+          ppSStack_9 = (String **)0x0;
+          uVar8._0_1_ = (pIStack_7->_1).rank;
+          uVar8._1_1_ = (pIStack_7->_1).minimumAlignment;
+          pIStack_14 = (Il2CppClass *)(uint)uVar8;
+          if (uVar8 != 0) {
+            do {
+              if (pIStack_7->interfaceOffsets[uVar10].interfaceType == pIVar12) {
+                ppMVar11 = &(&(pIVar13->klass->vtable).get_Item)
+                            [pIVar13->klass->interfaceOffsets[uVar10].offset].method;
+                goto code_?;
+              }
+              uVar10 = uVar10 + 1;
+              pIVar5 = pIVar13;
+            } while (uVar10 < uVar8);
+          }
+          ppMVar11 = (MethodInfo **)func_?();
+          pIVar13 = pIVar5;
+code_?:
+          piVar15 = (int32_t *)(*(code *)*ppMVar11)();
+          iStack_16 = *piVar15;
+          VStack_17.x = (float)piVar15[1];
+          VStack_17.y = (float)piVar15[2];
+          VStack_17.z = (float)piVar15[3];
+          uVar2 = (POPCOUNT((uint)pIStack_4 & 0xff) & 1U) == 0;
+          unaff_EDI = pIVar12;
+          if (pIStack_4 == (Il2CppClass *)0x0) goto code_?;
+          pSStack_18 = mscorlib.dll::System::String::String_Insert
+                                 ((String *)pIStack_4,iStack_16,StringLiteral_u000A,
+                                  (MethodInfo *)0x0);
+          uVar10 = 0;
+          pIStack_7 = pIVar13->klass;
+          ppSStack_9 = (String **)0x0;
+          uVar19._0_1_ = (pIStack_7->_1).rank;
+          uVar19._1_1_ = (pIStack_7->_1).minimumAlignment;
+          unaff_EDI = (Il2CppClass *)(uint)uVar19;
+          pIStack_14 = unaff_EDI;
+          if (uVar19 != 0) {
+            do {
+              if (pIStack_7->interfaceOffsets[uVar10].interfaceType ==
+                  (Il2CppClass *)
+                  TypeInfo__System__Collections__Generic__IList<UnityEngine::UILineInfo>) {
+                ppMVar11 = &(&(pIStack_6->klass->vtable).get_Item)
+                            [pIStack_6->klass->interfaceOffsets[uVar10].offset].method;
+                pIVar5 = pIStack_6;
+                goto code_?;
+              }
+              uVar10 = uVar10 + 1;
+              pIVar13 = pIStack_6;
+            } while (uVar10 < uVar19);
+          }
+          ppMVar11 = (MethodInfo **)func_?();
+          pIVar5 = pIVar13;
+code_?:
+          piVar20 = (int *)(*(code *)*ppMVar11)();
+          iStack_16 = *piVar20;
+          VStack_17.x = (float)piVar20[1];
+          VStack_17.y = (float)piVar20[2];
+          VStack_17.z = (float)piVar20[3];
+          uVar2 = (POPCOUNT((uint)pSStack_18 & 0xff) & 1U) == 0;
+          if (pSStack_18 == (String *)0x0) goto code_?;
+          this_02 = (Il2CppClass *)
+                    mscorlib.dll::System::String::String_Remove
+                              (pSStack_18,iStack_16 + -1,1,(MethodInfo *)0x0);
+          pIVar12 = (Il2CppClass *)
+                   TypeInfo__System__Collections__Generic__IList<UnityEngine::UILineInfo>;
+          pIVar13 = pIStack_6;
+          pIStack_4 = this_02;
         }
-        bVar23 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                           ((Object_1 *)pMVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
-        if (bVar23 == 0) {
-          pSStack_9 = (String *)(this->fields).m_spacing;
+        uVar2 = (POPCOUNT((uint)this_02 & 0xff) & 1U) == 0;
+        unaff_EDI = (Il2CppClass *)0x0;
+        if (this_02 != (Il2CppClass *)0x0) {
+          pSStack_21 = mscorlib.dll::System::String::String_Split
+                                 ((String *)this_02,10,StringSplitOptions__Enum_None,
+                                  (MethodInfo *)0x0);
+          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+            func_?();
+          }
+          pTVar22 = pTStack_3;
+          bVar23 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                            ((Object_1 *)pTStack_3,(Object_1 *)0x0,(MethodInfo *)0x0);
+          if (bVar23 != 0) {
+            if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+              func_?();
+            }
+            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
+                      ((Object *)StringLiteral_LetterSpacing__Missing_Text_comp,(MethodInfo *)0x0);
+            return;
+          }
+          ppSStack_9 = (String **)(this->fields).m_spacing;
           iVar24 = UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_fontSize
-                             ((Text *)pMVar2,(MethodInfo *)0x0);
-          pTVar12 = (Text__Class *)0x0;
-          pTStack_4 = (Text__Class *)0x0;
-          fStack_25 = ((float)iVar24 * (float)pSStack_9) / _UNK_?;
-          fStack_26 = 0.0;
+                             (pTVar22,(MethodInfo *)0x0);
+          this_00 = (Text *)0x0;
+          fStack_25 = ((float)iVar24 * (float)ppSStack_9) / _UNK_?;
+          pIStack_4 = (Il2CppClass *)0x0;
           if ((this->fields).useRichText == 0) {
-            bStack_27 = 0;
+            bStack_26 = 0;
           }
           else {
-            bStack_27 = UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_supportRichText
-                                 ((Text *)pMVar2,(MethodInfo *)0x0);
+            bStack_26 = UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_supportRichText
+                                 (pTVar22,(MethodInfo *)0x0);
           }
-          pMVar2 = (Match__Class *)0x0;
-          unaff_EDI = (Text__Class *)0x0;
-          pTStack_7 = (Text__Class *)0x0;
-          TVar28 = UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_alignment
-                             ((Text *)pMStack_3,(MethodInfo *)0x0);
-          switch(TVar28) {
+          uVar27 = 0;
+          unaff_EDI = (Il2CppClass *)0x0;
+          pIStack_28 = (Il2CppClass *)0x0;
+          uStack_29 = 0;
+          TVar30 = UnityEngine.UI.dll::UnityEngine::UI::Text::Text_get_alignment
+                             (pTStack_3,(MethodInfo *)0x0);
+          switch(TVar30) {
           case TextAnchor__Enum_UpperLeft:
           case TextAnchor__Enum_MiddleLeft:
           case TextAnchor__Enum_LowerLeft:
-            fStack_26 = 0.0;
+            pIStack_4 = (Il2CppClass *)0x0;
             break;
           case TextAnchor__Enum_UpperCenter:
           case TextAnchor__Enum_MiddleCenter:
           case TextAnchor__Enum_LowerCenter:
-            fStack_26 = _UNK_?;
+            pIStack_4 = _UNK_?;
             break;
           case TextAnchor__Enum_UpperRight:
           case TextAnchor__Enum_MiddleRight:
           case TextAnchor__Enum_LowerRight:
-            fStack_26 = _UNK_?;
+            pIStack_4 = _UNK_?;
           }
-          pSStack_9 = (String *)0x0;
-          if (pSStack_22 == (String__Array *)0x0) goto code_?;
-          ppSStack_29 = pSStack_22->vector;
-          for (; (int)pSStack_9 < (int)pSStack_22->max_length;
-              pSStack_9 = (String *)((int)&pSStack_9->klass + 1)) {
-            bVar30 = pSStack_9 < (String *)pSStack_22->max_length;
-            pMVar31 = pMVar2;
-            if (!(bool)bVar30) goto code_?;
-            pSStack_32 = *ppSStack_29;
-            if (pSStack_32 == (String *)0x0) goto code_?;
-            pMStack_3 = (Match__Class *)(pSStack_32->fields)._stringLength;
-            if (bStack_27 != 0) {
-              unaff_EDI = (Text__Class *)
-                          LetterSpacing_GetRegexMatchedTagCollection
-                                    (this,pSStack_32,(int32_t *)&pMStack_3,(MethodInfo *)0x0);
-              pMVar2 = (Match__Class *)0x0;
-              pTStack_7 = unaff_EDI;
-              if (unaff_EDI == (Text__Class *)0x0) goto code_?;
-              cVar1 = func_?();
-              if (cVar1 != '\0') {
-                pMVar2 = (Match__Class *)func_?();
-                if (pMVar2 == (Match__Class *)0x0) {
-                  pMVar2 = (Match__Class *)0x0;
-                }
-                else {
-                  pTVar15 = (Text__Class *)(pMVar2->_0).image;
-                  bVar33 = (TypeInfo__System__Text__RegularExpressions__Match->_1).naturalAligment;
-                  bVar30 = 1;
-                  pMVar31 = TypeInfo__System__Text__RegularExpressions__Match;
-                  if (((pTVar15->_1).naturalAligment < bVar33) ||
-                     (pIVar34 = (pTVar15->_1).typeHierarchy[bVar33 - 1],
-                     bVar30 = pIVar34 < TypeInfo__System__Text__RegularExpressions__Match,
-                     pIVar34 != (Il2CppClass *)TypeInfo__System__Text__RegularExpressions__Match))
-                  goto code_?;
-                }
+          pIStack_7 = (IList_1_UnityEngine_UILineInfo___Class *)0x0;
+          uVar2 = (POPCOUNT((uint)pSStack_21 & 0xff) & 1U) == 0;
+          if (pSStack_21 != (String__Array *)0x0) {
+            ppSStack_9 = pSStack_21->vector;
+            while( true ) {
+              if ((int)pSStack_21->max_length <= (int)pIStack_7) {
+                return;
               }
-            }
-            pMVar31 = (Match__Class *)0x0;
-            pMStack_14 = (Match__Class *)0x0;
-            fStack_35 = (float)(int)((int)&pMStack_3[-1].vtable.Tidy.method + 3) * fStack_25 *
-                        fStack_26;
-            while (pMStack_3 = pMVar31, (int)pMVar31 < (pSStack_32->fields)._stringLength) {
-              if (((bStack_27 == 0) || (pMVar2 == (Match__Class *)0x0)) ||
-                 (*(Match__Class **)&(((Text__Fields *)&(pMVar2->_0).name)->_)._._._._ != pMVar31))
-              {
-                iStack_36 = (int)pTVar12 * 6;
-                iStack_37 = iStack_36 + 1;
-                iStack_38 = iStack_36 + 2;
-                iStack_39 = iStack_36 + 3;
-                iStack_40 = iStack_36 + 4;
-                pIStack_6 = (IList_1_UnityEngine_UILineInfo_ *)(iStack_36 + 5);
-                if (verts == (List_1_UnityEngine_UIVertex_ *)0x0) goto code_?;
-                if ((verts->fields)._size + -1 < (int)pIStack_6) {
-                  return;
-                }
-                puVar41 = (undefined4 *)func_?();
-                puVar42 = &uStack_43;
-                for (iVar13 = 0x1b; iVar13 != 0; iVar13 = iVar13 + -1) {
-                  *(undefined4 *)puVar42 = *puVar41;
-                  puVar41 = puVar41 + 1;
-                  puVar42 = (undefined8 *)((int)puVar42 + 4);
-                }
-                puVar41 = (undefined4 *)func_?();
-                puVar42 = &uStack_44;
-                for (iVar13 = 0x1b; iVar13 != 0; iVar13 = iVar13 + -1) {
-                  *(undefined4 *)puVar42 = *puVar41;
-                  puVar41 = puVar41 + 1;
-                  puVar42 = (undefined8 *)((int)puVar42 + 4);
-                }
-                puVar41 = (undefined4 *)func_?();
-                puVar42 = &uStack_45;
-                for (iVar13 = 0x1b; iVar13 != 0; iVar13 = iVar13 + -1) {
-                  *(undefined4 *)puVar42 = *puVar41;
-                  puVar41 = puVar41 + 1;
-                  puVar42 = (undefined8 *)((int)puVar42 + 4);
-                }
-                puVar41 = (undefined4 *)func_?();
-                puVar42 = &uStack_46;
-                for (iVar13 = 0x1b; iVar13 != 0; iVar13 = iVar13 + -1) {
-                  *(undefined4 *)puVar42 = *puVar41;
-                  puVar41 = puVar41 + 1;
-                  puVar42 = (undefined8 *)((int)puVar42 + 4);
-                }
-                puVar41 = (undefined4 *)func_?();
-                puVar42 = &uStack_47;
-                for (iVar13 = 0x1b; iVar13 != 0; iVar13 = iVar13 + -1) {
-                  *(undefined4 *)puVar42 = *puVar41;
-                  puVar41 = puVar41 + 1;
-                  puVar42 = (undefined8 *)((int)puVar42 + 4);
-                }
-                puVar41 = (undefined4 *)func_?();
-                __return_storage_ptr__ = &VStack_19;
-                uVar48 = 0;
-                puVar42 = &uStack_49;
-                for (iVar13 = 0x1b; iVar13 != 0; iVar13 = iVar13 + -1) {
-                  *(undefined4 *)puVar42 = *puVar41;
-                  puVar41 = puVar41 + 1;
-                  puVar42 = (undefined8 *)((int)puVar42 + 4);
-                }
-                puVar50 = &UNK_?;
-                pVVar51 = RTG::TriangPrismShape3D::TriangPrismShape3D_get_ModelRight
-                                    (__return_storage_ptr__,(MethodInfo *)0x0);
-                uStack_52._0_4_ = pVVar51->x;
-                uStack_52._4_4_ = pVVar51->y;
-                fStack_53 = pVVar51->z;
-                fVar54 = (float)(int)pMStack_14 * fStack_25 - fStack_35;
-                fVar55 = (float)(undefined4)uStack_52 * fVar54;
-                in_XMM1_Da = (float)uStack_52._4_4_ * fVar54;
-                fVar54 = pVVar51->z * fVar54;
-                fStack_56 = fStack_57 + fVar54;
-                uStack_43 = CONCAT44(uStack_43._4_4_ + in_XMM1_Da,(float)uStack_43 + fVar55);
-                fStack_57 = fStack_57 + fVar54;
-                fStack_58 = fStack_59 + fVar54;
-                uStack_44 = CONCAT44(uStack_44._4_4_ + in_XMM1_Da,(float)uStack_44 + fVar55);
-                fStack_59 = fStack_59 + fVar54;
-                fStack_60 = fStack_61 + fVar54;
-                uStack_45 = CONCAT44(uStack_45._4_4_ + in_XMM1_Da,(float)uStack_45 + fVar55);
-                fStack_61 = fStack_61 + fVar54;
-                fStack_62 = fStack_63 + fVar54;
-                uStack_46 = CONCAT44(uStack_46._4_4_ + in_XMM1_Da,(float)uStack_46 + fVar55);
-                fStack_63 = fStack_63 + fVar54;
-                fStack_64 = fStack_65 + fVar54;
-                uStack_47 = CONCAT44(uStack_47._4_4_ + in_XMM1_Da,(float)uStack_47 + fVar55);
-                in_XMM1_Da = uStack_49._4_4_ + in_XMM1_Da;
-                fStack_65 = fStack_65 + fVar54;
-                fStack_66 = fStack_67 + fVar54;
-                uStack_49 = CONCAT44(in_XMM1_Da,(float)uStack_49 + fVar55);
-                fStack_67 = fStack_67 + fVar54;
-                puVar42 = &uStack_43;
-                puVar41 = (undefined4 *)&stack0xfffff8f8;
-                pMVar68 = 
-                MethodInfo__System__Collections__Generic__List<UnityEngine::UIVertex>__set_Item_int__UnityEngine__UIVertex_
-                ;
-                for (iVar13 = 0x1b; iVar13 != 0; iVar13 = iVar13 + -1) {
-                  *puVar41 = *(undefined4 *)puVar42;
-                  puVar42 = (undefined8 *)((int)puVar42 + 4);
-                  puVar41 = puVar41 + 1;
-                }
-                value.uv0.w = (float)puVar50;
-                auVar69 = in_stack_70._0_12_;
-                auVar71 = in_stack_70._12_12_;
-                auVar72 = in_stack_70._24_16_;
-                uVar73 = in_stack_70._40_8_;
-                value.position.x = (float)auVar69._0_4_;
-                value.position.y = (float)auVar69._4_4_;
-                value.position.z = (float)auVar69._8_4_;
-                value.normal.x = (float)auVar71._0_4_;
-                value.normal.y = (float)auVar71._4_4_;
-                value.normal.z = (float)auVar71._8_4_;
-                value.tangent.x = (float)auVar72._0_4_;
-                value.tangent.y = (float)auVar72._4_4_;
-                value.tangent.z = (float)auVar72._8_4_;
-                value.tangent.w = (float)auVar72._12_4_;
-                value.color.rgba = (int)uVar73;
-                value.color.r = (char)((ulonglong)uVar73 >> 0x20);
-                value.color.g = (char)((ulonglong)uVar73 >> 0x28);
-                value.color.b = (char)((ulonglong)uVar73 >> 0x30);
-                value.color.a = (char)((ulonglong)uVar73 >> 0x38);
-                value.uv0.x = (float)in_stack_70._48_4_;
-                value.uv0.y = (float)in_stack_70._52_4_;
-                value.uv0.z = (float)in_stack_70._56_4_;
-                value.uv1.x = (float)__return_storage_ptr__;
-                value.uv1.y = (float)uVar48;
-                auVar72 = in_stack_74._8_16_;
-                value.uv1.z = (float)in_stack_74._0_4_;
-                value.uv1.w = (float)in_stack_74._4_4_;
-                value.uv2.x = (float)auVar72._0_4_;
-                value.uv2.y = (float)auVar72._4_4_;
-                value.uv2.z = (float)auVar72._8_4_;
-                value.uv2.w = (float)auVar72._12_4_;
-                value.uv3.x = (float)in_stack_74._24_4_;
-                value.uv3.y = (float)in_stack_74._28_4_;
-                value.uv3.z = (float)in_stack_74._32_4_;
-                value.uv3.w = (float)pMVar68;
-                mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::
-                List_1_UnityEngine_UIVertex__set_Item(verts,iStack_36,value,in_stack_75);
-                puVar42 = &uStack_44;
-                puVar41 = (undefined4 *)&stack0xfffff974;
-                pMVar68 = 
-                MethodInfo__System__Collections__Generic__List<UnityEngine::UIVertex>__set_Item_int__UnityEngine__UIVertex_
-                ;
-                for (iVar13 = 0x1b; iVar13 != 0; iVar13 = iVar13 + -1) {
-                  *puVar41 = *(undefined4 *)puVar42;
-                  puVar42 = (undefined8 *)((int)puVar42 + 4);
-                  puVar41 = puVar41 + 1;
-                }
-                in_stack_75 = (MethodInfo *)&UNK_?;
-                value_00.uv3.w = (float)pMVar68;
-                auVar69 = in_stack_76._0_12_;
-                auVar71 = in_stack_76._12_12_;
-                auVar72 = in_stack_76._24_16_;
-                uVar73 = in_stack_76._40_8_;
-                auVar77 = in_stack_76._48_16_;
-                auVar78 = in_stack_76._64_16_;
-                auVar79 = in_stack_76._80_16_;
-                value_00.position.x = (float)auVar69._0_4_;
-                value_00.position.y = (float)auVar69._4_4_;
-                value_00.position.z = (float)auVar69._8_4_;
-                value_00.normal.x = (float)auVar71._0_4_;
-                value_00.normal.y = (float)auVar71._4_4_;
-                value_00.normal.z = (float)auVar71._8_4_;
-                value_00.tangent.x = (float)auVar72._0_4_;
-                value_00.tangent.y = (float)auVar72._4_4_;
-                value_00.tangent.z = (float)auVar72._8_4_;
-                value_00.tangent.w = (float)auVar72._12_4_;
-                value_00.color.rgba = (int)uVar73;
-                value_00.color.r = (char)((ulonglong)uVar73 >> 0x20);
-                value_00.color.g = (char)((ulonglong)uVar73 >> 0x28);
-                value_00.color.b = (char)((ulonglong)uVar73 >> 0x30);
-                value_00.color.a = (char)((ulonglong)uVar73 >> 0x38);
-                value_00.uv0.x = (float)auVar77._0_4_;
-                value_00.uv0.y = (float)auVar77._4_4_;
-                value_00.uv0.z = (float)auVar77._8_4_;
-                value_00.uv0.w = (float)auVar77._12_4_;
-                value_00.uv1.x = (float)auVar78._0_4_;
-                value_00.uv1.y = (float)auVar78._4_4_;
-                value_00.uv1.z = (float)auVar78._8_4_;
-                value_00.uv1.w = (float)auVar78._12_4_;
-                value_00.uv2.x = (float)auVar79._0_4_;
-                value_00.uv2.y = (float)auVar79._4_4_;
-                value_00.uv2.z = (float)auVar79._8_4_;
-                value_00.uv2.w = (float)auVar79._12_4_;
-                value_00.uv3.x = (float)in_stack_76._96_4_;
-                value_00.uv3.y = (float)in_stack_76._100_4_;
-                value_00.uv3.z = (float)in_stack_76._104_4_;
-                mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::
-                List_1_UnityEngine_UIVertex__set_Item(verts,iStack_37,value_00,in_stack_80);
-                puVar42 = &uStack_45;
-                puVar41 = (undefined4 *)&stack0xfffff9f0;
-                pMVar68 = 
-                MethodInfo__System__Collections__Generic__List<UnityEngine::UIVertex>__set_Item_int__UnityEngine__UIVertex_
-                ;
-                for (iVar13 = 0x1b; iVar13 != 0; iVar13 = iVar13 + -1) {
-                  *puVar41 = *(undefined4 *)puVar42;
-                  puVar42 = (undefined8 *)((int)puVar42 + 4);
-                  puVar41 = puVar41 + 1;
-                }
-                in_stack_80 = (MethodInfo *)&UNK_?;
-                value_01.uv3.w = (float)pMVar68;
-                auVar69 = in_stack_81._0_12_;
-                auVar71 = in_stack_81._12_12_;
-                auVar72 = in_stack_81._24_16_;
-                uVar73 = in_stack_81._40_8_;
-                auVar77 = in_stack_81._48_16_;
-                auVar78 = in_stack_81._64_16_;
-                auVar79 = in_stack_81._80_16_;
-                value_01.position.x = (float)auVar69._0_4_;
-                value_01.position.y = (float)auVar69._4_4_;
-                value_01.position.z = (float)auVar69._8_4_;
-                value_01.normal.x = (float)auVar71._0_4_;
-                value_01.normal.y = (float)auVar71._4_4_;
-                value_01.normal.z = (float)auVar71._8_4_;
-                value_01.tangent.x = (float)auVar72._0_4_;
-                value_01.tangent.y = (float)auVar72._4_4_;
-                value_01.tangent.z = (float)auVar72._8_4_;
-                value_01.tangent.w = (float)auVar72._12_4_;
-                value_01.color.rgba = (int)uVar73;
-                value_01.color.r = (char)((ulonglong)uVar73 >> 0x20);
-                value_01.color.g = (char)((ulonglong)uVar73 >> 0x28);
-                value_01.color.b = (char)((ulonglong)uVar73 >> 0x30);
-                value_01.color.a = (char)((ulonglong)uVar73 >> 0x38);
-                value_01.uv0.x = (float)auVar77._0_4_;
-                value_01.uv0.y = (float)auVar77._4_4_;
-                value_01.uv0.z = (float)auVar77._8_4_;
-                value_01.uv0.w = (float)auVar77._12_4_;
-                value_01.uv1.x = (float)auVar78._0_4_;
-                value_01.uv1.y = (float)auVar78._4_4_;
-                value_01.uv1.z = (float)auVar78._8_4_;
-                value_01.uv1.w = (float)auVar78._12_4_;
-                value_01.uv2.x = (float)auVar79._0_4_;
-                value_01.uv2.y = (float)auVar79._4_4_;
-                value_01.uv2.z = (float)auVar79._8_4_;
-                value_01.uv2.w = (float)auVar79._12_4_;
-                value_01.uv3.x = (float)in_stack_81._96_4_;
-                value_01.uv3.y = (float)in_stack_81._100_4_;
-                value_01.uv3.z = (float)in_stack_81._104_4_;
-                mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::
-                List_1_UnityEngine_UIVertex__set_Item(verts,iStack_38,value_01,in_stack_82);
-                puVar42 = &uStack_46;
-                puVar41 = (undefined4 *)&stack0xfffffa6c;
-                pMVar68 = 
-                MethodInfo__System__Collections__Generic__List<UnityEngine::UIVertex>__set_Item_int__UnityEngine__UIVertex_
-                ;
-                for (iVar13 = 0x1b; iVar13 != 0; iVar13 = iVar13 + -1) {
-                  *puVar41 = *(undefined4 *)puVar42;
-                  puVar42 = (undefined8 *)((int)puVar42 + 4);
-                  puVar41 = puVar41 + 1;
-                }
-                in_stack_82 = (MethodInfo *)&UNK_?;
-                value_02.uv3.w = (float)pMVar68;
-                auVar69 = in_stack_83._0_12_;
-                auVar71 = in_stack_83._12_12_;
-                auVar72 = in_stack_83._24_16_;
-                uVar73 = in_stack_83._40_8_;
-                auVar77 = in_stack_83._48_16_;
-                auVar78 = in_stack_83._64_16_;
-                auVar79 = in_stack_83._80_16_;
-                value_02.position.x = (float)auVar69._0_4_;
-                value_02.position.y = (float)auVar69._4_4_;
-                value_02.position.z = (float)auVar69._8_4_;
-                value_02.normal.x = (float)auVar71._0_4_;
-                value_02.normal.y = (float)auVar71._4_4_;
-                value_02.normal.z = (float)auVar71._8_4_;
-                value_02.tangent.x = (float)auVar72._0_4_;
-                value_02.tangent.y = (float)auVar72._4_4_;
-                value_02.tangent.z = (float)auVar72._8_4_;
-                value_02.tangent.w = (float)auVar72._12_4_;
-                value_02.color.rgba = (int)uVar73;
-                value_02.color.r = (char)((ulonglong)uVar73 >> 0x20);
-                value_02.color.g = (char)((ulonglong)uVar73 >> 0x28);
-                value_02.color.b = (char)((ulonglong)uVar73 >> 0x30);
-                value_02.color.a = (char)((ulonglong)uVar73 >> 0x38);
-                value_02.uv0.x = (float)auVar77._0_4_;
-                value_02.uv0.y = (float)auVar77._4_4_;
-                value_02.uv0.z = (float)auVar77._8_4_;
-                value_02.uv0.w = (float)auVar77._12_4_;
-                value_02.uv1.x = (float)auVar78._0_4_;
-                value_02.uv1.y = (float)auVar78._4_4_;
-                value_02.uv1.z = (float)auVar78._8_4_;
-                value_02.uv1.w = (float)auVar78._12_4_;
-                value_02.uv2.x = (float)auVar79._0_4_;
-                value_02.uv2.y = (float)auVar79._4_4_;
-                value_02.uv2.z = (float)auVar79._8_4_;
-                value_02.uv2.w = (float)auVar79._12_4_;
-                value_02.uv3.x = (float)in_stack_83._96_4_;
-                value_02.uv3.y = (float)in_stack_83._100_4_;
-                value_02.uv3.z = (float)in_stack_83._104_4_;
-                mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::
-                List_1_UnityEngine_UIVertex__set_Item(verts,iStack_39,value_02,in_stack_84);
-                puVar42 = &uStack_47;
-                puVar41 = (undefined4 *)&stack0xfffffae8;
-                pMVar68 = 
-                MethodInfo__System__Collections__Generic__List<UnityEngine::UIVertex>__set_Item_int__UnityEngine__UIVertex_
-                ;
-                for (iVar13 = 0x1b; iVar13 != 0; iVar13 = iVar13 + -1) {
-                  *puVar41 = *(undefined4 *)puVar42;
-                  puVar42 = (undefined8 *)((int)puVar42 + 4);
-                  puVar41 = puVar41 + 1;
-                }
-                in_stack_84 = (MethodInfo *)&UNK_?;
-                value_03.uv3.w = (float)pMVar68;
-                auVar69 = in_stack_85._0_12_;
-                auVar71 = in_stack_85._12_12_;
-                auVar72 = in_stack_85._24_16_;
-                uVar73 = in_stack_85._40_8_;
-                auVar77 = in_stack_85._48_16_;
-                auVar78 = in_stack_85._64_16_;
-                auVar79 = in_stack_85._80_16_;
-                value_03.position.x = (float)auVar69._0_4_;
-                value_03.position.y = (float)auVar69._4_4_;
-                value_03.position.z = (float)auVar69._8_4_;
-                value_03.normal.x = (float)auVar71._0_4_;
-                value_03.normal.y = (float)auVar71._4_4_;
-                value_03.normal.z = (float)auVar71._8_4_;
-                value_03.tangent.x = (float)auVar72._0_4_;
-                value_03.tangent.y = (float)auVar72._4_4_;
-                value_03.tangent.z = (float)auVar72._8_4_;
-                value_03.tangent.w = (float)auVar72._12_4_;
-                value_03.color.rgba = (int)uVar73;
-                value_03.color.r = (char)((ulonglong)uVar73 >> 0x20);
-                value_03.color.g = (char)((ulonglong)uVar73 >> 0x28);
-                value_03.color.b = (char)((ulonglong)uVar73 >> 0x30);
-                value_03.color.a = (char)((ulonglong)uVar73 >> 0x38);
-                value_03.uv0.x = (float)auVar77._0_4_;
-                value_03.uv0.y = (float)auVar77._4_4_;
-                value_03.uv0.z = (float)auVar77._8_4_;
-                value_03.uv0.w = (float)auVar77._12_4_;
-                value_03.uv1.x = (float)auVar78._0_4_;
-                value_03.uv1.y = (float)auVar78._4_4_;
-                value_03.uv1.z = (float)auVar78._8_4_;
-                value_03.uv1.w = (float)auVar78._12_4_;
-                value_03.uv2.x = (float)auVar79._0_4_;
-                value_03.uv2.y = (float)auVar79._4_4_;
-                value_03.uv2.z = (float)auVar79._8_4_;
-                value_03.uv2.w = (float)auVar79._12_4_;
-                value_03.uv3.x = (float)in_stack_85._96_4_;
-                value_03.uv3.y = (float)in_stack_85._100_4_;
-                value_03.uv3.z = (float)in_stack_85._104_4_;
-                mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::
-                List_1_UnityEngine_UIVertex__set_Item(verts,iStack_40,value_03,in_stack_86);
-                puVar42 = &uStack_49;
-                puVar41 = (undefined4 *)&stack0xfffffb64;
-                pMVar68 = 
-                MethodInfo__System__Collections__Generic__List<UnityEngine::UIVertex>__set_Item_int__UnityEngine__UIVertex_
-                ;
-                for (iVar13 = 0x1b; iVar13 != 0; iVar13 = iVar13 + -1) {
-                  *puVar41 = *(undefined4 *)puVar42;
-                  puVar42 = (undefined8 *)((int)puVar42 + 4);
-                  puVar41 = puVar41 + 1;
-                }
-                in_stack_86 = (MethodInfo *)&UNK_?;
-                value_04.uv3.w = (float)pMVar68;
-                auVar69 = in_stack_87._0_12_;
-                auVar71 = in_stack_87._12_12_;
-                auVar72 = in_stack_87._24_16_;
-                uVar73 = in_stack_87._40_8_;
-                auVar77 = in_stack_87._48_16_;
-                auVar78 = in_stack_87._64_16_;
-                auVar79 = in_stack_87._80_16_;
-                value_04.position.x = (float)auVar69._0_4_;
-                value_04.position.y = (float)auVar69._4_4_;
-                value_04.position.z = (float)auVar69._8_4_;
-                value_04.normal.x = (float)auVar71._0_4_;
-                value_04.normal.y = (float)auVar71._4_4_;
-                value_04.normal.z = (float)auVar71._8_4_;
-                value_04.tangent.x = (float)auVar72._0_4_;
-                value_04.tangent.y = (float)auVar72._4_4_;
-                value_04.tangent.z = (float)auVar72._8_4_;
-                value_04.tangent.w = (float)auVar72._12_4_;
-                value_04.color.rgba = (int)uVar73;
-                value_04.color.r = (char)((ulonglong)uVar73 >> 0x20);
-                value_04.color.g = (char)((ulonglong)uVar73 >> 0x28);
-                value_04.color.b = (char)((ulonglong)uVar73 >> 0x30);
-                value_04.color.a = (char)((ulonglong)uVar73 >> 0x38);
-                value_04.uv0.x = (float)auVar77._0_4_;
-                value_04.uv0.y = (float)auVar77._4_4_;
-                value_04.uv0.z = (float)auVar77._8_4_;
-                value_04.uv0.w = (float)auVar77._12_4_;
-                value_04.uv1.x = (float)auVar78._0_4_;
-                value_04.uv1.y = (float)auVar78._4_4_;
-                value_04.uv1.z = (float)auVar78._8_4_;
-                value_04.uv1.w = (float)auVar78._12_4_;
-                value_04.uv2.x = (float)auVar79._0_4_;
-                value_04.uv2.y = (float)auVar79._4_4_;
-                value_04.uv2.z = (float)auVar79._8_4_;
-                value_04.uv2.w = (float)auVar79._12_4_;
-                value_04.uv3.x = (float)in_stack_87._96_4_;
-                value_04.uv3.y = (float)in_stack_87._100_4_;
-                value_04.uv3.z = (float)in_stack_87._104_4_;
-                mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::
-                List_1_UnityEngine_UIVertex__set_Item
-                          (verts,(int32_t)pIStack_6,value_04,in_stack_88);
-                pTVar12 = (Text__Class *)((int)&(pTStack_4->_0).image + 1);
-                unaff_EDI = pTStack_7;
-                pTStack_4 = pTVar12;
-code_?:
-                pMVar31 = (Match__Class *)((int)&(pMStack_3->_0).image + 1);
-                pMStack_14 = (Match__Class *)((int)&(pMStack_14->_0).image + 1);
-              }
-              else {
-                pTVar12 = (Text__Class *)
-                          ((int)&(pTVar12->_0).image +
-                          (int)&((CancellationTokenSource *)(pMVar2->_0).namespaze)->klass);
-                pMStack_3 = (Match__Class *)
-                            ((undefined1 *)((int)&pMVar31[-1].vtable.Tidy.method + 3) +
-                            (int)(pMVar2->_0).namespaze);
-                pMStack_14 = (Match__Class *)((int)&pMStack_14[-1].vtable.Tidy.method + 3);
-                pMVar2 = (Match__Class *)0x0;
-                pTStack_4 = pTVar12;
-                if (unaff_EDI == (Text__Class *)0x0) goto code_?;
+              uVar2 = (POPCOUNT((int)pIStack_7 - (int)pSStack_21->max_length & 0xff) & 1U) == 0;
+              bVar31 = 0;
+              unaff_EDI = pIStack_28;
+              if ((IList_1_UnityEngine_UILineInfo___Class *)pSStack_21->max_length <= pIStack_7)
+              break;
+              pSStack_32 = *ppSStack_9;
+              uVar2 = (POPCOUNT((uint)pSStack_32 & 0xff) & 1U) == 0;
+              if (pSStack_32 == (String *)0x0) goto code_?;
+              pTStack_3 = (Text *)(pSStack_32->fields)._stringLength;
+              if (bStack_26 != 0) {
+                unaff_EDI = (Il2CppClass *)
+                            LetterSpacing_GetRegexMatchedTagCollection
+                                      (this,pSStack_32,(int32_t *)&pTStack_3,(MethodInfo *)0x0);
+                uVar27 = 0;
+                uStack_29 = 0;
+                uVar2 = (POPCOUNT((uint)unaff_EDI & 0xff) & 1U) == 0;
+                pIStack_28 = unaff_EDI;
+                if (unaff_EDI == (Il2CppClass *)0x0) goto code_?;
                 cVar1 = func_?();
-                if (cVar1 == '\0') goto code_?;
-                pMVar2 = (Match__Class *)func_?();
-                if (pMVar2 == (Match__Class *)0x0) {
-                  pMVar2 = (Match__Class *)0x0;
-                  pMVar31 = (Match__Class *)((int)&(pMStack_3->_0).image + 1);
-                  pMStack_14 = (Match__Class *)((int)&(pMStack_14->_0).image + 1);
-                }
-                else {
-                  pTVar15 = (Text__Class *)(pMVar2->_0).image;
-                  bVar33 = (TypeInfo__System__Text__RegularExpressions__Match->_1).naturalAligment;
-                  bVar30 = 1;
-                  pMVar31 = TypeInfo__System__Text__RegularExpressions__Match;
-                  if (((pTVar15->_1).naturalAligment < bVar33) ||
-                     (pIVar34 = (pTVar15->_1).typeHierarchy[bVar33 - 1],
-                     bVar30 = pIVar34 < TypeInfo__System__Text__RegularExpressions__Match,
-                     pIVar34 != (Il2CppClass *)TypeInfo__System__Text__RegularExpressions__Match))
-                  goto code_?;
-                  pMVar31 = (Match__Class *)((int)&(pMStack_3->_0).image + 1);
-                  pMStack_14 = (Match__Class *)((int)&(pMStack_14->_0).image + 1);
+                if (cVar1 != '\0') {
+                  iStack_33 = func_?();
+                  if (iStack_33 == 0) {
+                    uStack_29 = 0;
+                  }
+                  else {
+                    uVar27 = func_?();
+                    bVar31 = 0;
+                    uVar2 = (POPCOUNT(uVar27 & 0xff) & 1U) == 0;
+                    uStack_29 = uVar27;
+                    if (uVar27 == 0) goto code_?;
+                  }
                 }
               }
+              pTVar22 = (Text *)0x0;
+              pIStack_6 = (IList_1_UnityEngine_UILineInfo_ *)0x0;
+              fStack_34 = (float)(int)((int)&pTStack_3[-1].fields.m_TempVerts + 3) * fStack_25 *
+                          (float)pIStack_4;
+              while (pTStack_3 = pTVar22, (int)pTVar22 < (pSStack_32->fields)._stringLength) {
+                if (((bStack_26 == 0) || (uVar27 == 0)) || (*(Text **)(uVar27 + 8) != pTVar22)) {
+                  iStack_35 = (int)this_00 * 6 + 1;
+                  iStack_33 = (int)this_00 * 6;
+                  iStack_36 = (int)this_00 * 6 + 2;
+                  iStack_37 = (int)this_00 * 6 + 3;
+                  pSStack_18 = (String *)((int)this_00 * 6 + 4);
+                  pIStack_14 = (Il2CppClass *)((int)this_00 * 6 + 5);
+                  uVar2 = (POPCOUNT((uint)verts & 0xff) & 1U) == 0;
+                  if (verts == (List_1_UnityEngine_UIVertex_ *)0x0) goto code_?;
+                  if ((verts->fields)._size + -1 < (int)pIStack_14) {
+                    return;
+                  }
+                  puVar38 = (undefined4 *)func_?();
+                  puVar39 = &uStack_40;
+                  for (iVar41 = 0x1b; iVar41 != 0; iVar41 = iVar41 + -1) {
+                    *(undefined4 *)puVar39 = *puVar38;
+                    puVar38 = puVar38 + 1;
+                    puVar39 = (undefined8 *)((int)puVar39 + 4);
+                  }
+                  puVar38 = (undefined4 *)func_?();
+                  puVar39 = &uStack_42;
+                  for (iVar41 = 0x1b; iVar41 != 0; iVar41 = iVar41 + -1) {
+                    *(undefined4 *)puVar39 = *puVar38;
+                    puVar38 = puVar38 + 1;
+                    puVar39 = (undefined8 *)((int)puVar39 + 4);
+                  }
+                  puVar38 = (undefined4 *)func_?();
+                  puVar39 = &uStack_43;
+                  for (iVar41 = 0x1b; iVar41 != 0; iVar41 = iVar41 + -1) {
+                    *(undefined4 *)puVar39 = *puVar38;
+                    puVar38 = puVar38 + 1;
+                    puVar39 = (undefined8 *)((int)puVar39 + 4);
+                  }
+                  puVar38 = (undefined4 *)func_?();
+                  puVar39 = &uStack_44;
+                  for (iVar41 = 0x1b; iVar41 != 0; iVar41 = iVar41 + -1) {
+                    *(undefined4 *)puVar39 = *puVar38;
+                    puVar38 = puVar38 + 1;
+                    puVar39 = (undefined8 *)((int)puVar39 + 4);
+                  }
+                  puVar38 = (undefined4 *)func_?();
+                  puVar39 = &uStack_45;
+                  for (iVar41 = 0x1b; iVar41 != 0; iVar41 = iVar41 + -1) {
+                    *(undefined4 *)puVar39 = *puVar38;
+                    puVar38 = puVar38 + 1;
+                    puVar39 = (undefined8 *)((int)puVar39 + 4);
+                  }
+                  puVar38 = (undefined4 *)func_?();
+                  __return_storage_ptr__ = &VStack_17;
+                  uVar46 = 0;
+                  puVar39 = &uStack_47;
+                  for (iVar41 = 0x1b; iVar41 != 0; iVar41 = iVar41 + -1) {
+                    *(undefined4 *)puVar39 = *puVar38;
+                    puVar38 = puVar38 + 1;
+                    puVar39 = (undefined8 *)((int)puVar39 + 4);
+                  }
+                  puVar48 = &UNK_?;
+                  pVVar49 = RTG::TriangPrismShape3D::TriangPrismShape3D_get_ModelRight
+                                      (__return_storage_ptr__,(MethodInfo *)0x0);
+                  uStack_50._0_4_ = pVVar49->x;
+                  uStack_50._4_4_ = pVVar49->y;
+                  fStack_51 = pVVar49->z;
+                  fVar52 = (float)(int)pIStack_6 * fStack_25 - fStack_34;
+                  fVar53 = (float)(undefined4)uStack_50 * fVar52;
+                  fVar54 = (float)uStack_50._4_4_ * fVar52;
+                  fVar52 = pVVar49->z * fVar52;
+                  fStack_55 = fStack_56 + fVar52;
+                  uStack_40 = CONCAT44(uStack_40._4_4_ + fVar54,(float)uStack_40 + fVar53);
+                  fStack_56 = fStack_56 + fVar52;
+                  fStack_57 = fVar52 + fStack_58;
+                  uStack_42 = CONCAT44(fVar54 + uStack_42._4_4_,fVar53 + (float)uStack_42);
+                  fStack_58 = fVar52 + fStack_58;
+                  fStack_59 = fVar52 + fStack_60;
+                  uStack_43 = CONCAT44(fVar54 + uStack_43._4_4_,fVar53 + (float)uStack_43);
+                  fStack_60 = fVar52 + fStack_60;
+                  fStack_61 = fVar52 + fStack_62;
+                  uStack_44 = CONCAT44(fVar54 + uStack_44._4_4_,fVar53 + (float)uStack_44);
+                  fStack_62 = fVar52 + fStack_62;
+                  fStack_63 = fVar52 + fStack_64;
+                  uStack_45 = CONCAT44(fVar54 + uStack_45._4_4_,fVar53 + (float)uStack_45);
+                  fStack_64 = fVar52 + fStack_64;
+                  fStack_65 = fVar52 + fStack_66;
+                  uStack_47 = CONCAT44(fVar54 + uStack_47._4_4_,fVar53 + (float)uStack_47);
+                  fStack_66 = fVar52 + fStack_66;
+                  puVar39 = &uStack_40;
+                  puVar38 = (undefined4 *)&stack0xfffff8f8;
+                  pMVar67 = 
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::UIVertex>__set_Item_int__UnityEngine__UIVertex_
+                  ;
+                  for (iVar41 = 0x1b; iVar41 != 0; iVar41 = iVar41 + -1) {
+                    *puVar38 = *(undefined4 *)puVar39;
+                    puVar39 = (undefined8 *)((int)puVar39 + 4);
+                    puVar38 = puVar38 + 1;
+                  }
+                  value.uv0.w = (float)puVar48;
+                  auVar68 = in_stack_69._0_12_;
+                  auVar70 = in_stack_69._12_12_;
+                  auVar71 = in_stack_69._24_16_;
+                  uVar72 = in_stack_69._40_8_;
+                  value.position.x = (float)auVar68._0_4_;
+                  value.position.y = (float)auVar68._4_4_;
+                  value.position.z = (float)auVar68._8_4_;
+                  value.normal.x = (float)auVar70._0_4_;
+                  value.normal.y = (float)auVar70._4_4_;
+                  value.normal.z = (float)auVar70._8_4_;
+                  value.tangent.x = (float)auVar71._0_4_;
+                  value.tangent.y = (float)auVar71._4_4_;
+                  value.tangent.z = (float)auVar71._8_4_;
+                  value.tangent.w = (float)auVar71._12_4_;
+                  value.color.rgba = (int)uVar72;
+                  value.color.r = (char)((ulonglong)uVar72 >> 0x20);
+                  value.color.g = (char)((ulonglong)uVar72 >> 0x28);
+                  value.color.b = (char)((ulonglong)uVar72 >> 0x30);
+                  value.color.a = (char)((ulonglong)uVar72 >> 0x38);
+                  value.uv0.x = (float)in_stack_69._48_4_;
+                  value.uv0.y = (float)in_stack_69._52_4_;
+                  value.uv0.z = (float)in_stack_69._56_4_;
+                  value.uv1.x = (float)__return_storage_ptr__;
+                  value.uv1.y = (float)uVar46;
+                  auVar71 = in_stack_73._8_16_;
+                  value.uv1.z = (float)in_stack_73._0_4_;
+                  value.uv1.w = (float)in_stack_73._4_4_;
+                  value.uv2.x = (float)auVar71._0_4_;
+                  value.uv2.y = (float)auVar71._4_4_;
+                  value.uv2.z = (float)auVar71._8_4_;
+                  value.uv2.w = (float)auVar71._12_4_;
+                  value.uv3.x = (float)in_stack_73._24_4_;
+                  value.uv3.y = (float)in_stack_73._28_4_;
+                  value.uv3.z = (float)in_stack_73._32_4_;
+                  value.uv3.w = (float)pMVar67;
+                  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::
+                  List_1_UnityEngine_UIVertex__set_Item(verts,iStack_33,value,in_stack_74);
+                  puVar39 = &uStack_42;
+                  puVar38 = (undefined4 *)&stack0xfffff974;
+                  pMVar67 = 
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::UIVertex>__set_Item_int__UnityEngine__UIVertex_
+                  ;
+                  for (iVar41 = 0x1b; iVar41 != 0; iVar41 = iVar41 + -1) {
+                    *puVar38 = *(undefined4 *)puVar39;
+                    puVar39 = (undefined8 *)((int)puVar39 + 4);
+                    puVar38 = puVar38 + 1;
+                  }
+                  in_stack_74 = (MethodInfo *)&UNK_?;
+                  value_00.uv3.w = (float)pMVar67;
+                  auVar68 = in_stack_75._0_12_;
+                  auVar70 = in_stack_75._12_12_;
+                  auVar71 = in_stack_75._24_16_;
+                  uVar72 = in_stack_75._40_8_;
+                  auVar76 = in_stack_75._48_16_;
+                  auVar77 = in_stack_75._64_16_;
+                  auVar78 = in_stack_75._80_16_;
+                  value_00.position.x = (float)auVar68._0_4_;
+                  value_00.position.y = (float)auVar68._4_4_;
+                  value_00.position.z = (float)auVar68._8_4_;
+                  value_00.normal.x = (float)auVar70._0_4_;
+                  value_00.normal.y = (float)auVar70._4_4_;
+                  value_00.normal.z = (float)auVar70._8_4_;
+                  value_00.tangent.x = (float)auVar71._0_4_;
+                  value_00.tangent.y = (float)auVar71._4_4_;
+                  value_00.tangent.z = (float)auVar71._8_4_;
+                  value_00.tangent.w = (float)auVar71._12_4_;
+                  value_00.color.rgba = (int)uVar72;
+                  value_00.color.r = (char)((ulonglong)uVar72 >> 0x20);
+                  value_00.color.g = (char)((ulonglong)uVar72 >> 0x28);
+                  value_00.color.b = (char)((ulonglong)uVar72 >> 0x30);
+                  value_00.color.a = (char)((ulonglong)uVar72 >> 0x38);
+                  value_00.uv0.x = (float)auVar76._0_4_;
+                  value_00.uv0.y = (float)auVar76._4_4_;
+                  value_00.uv0.z = (float)auVar76._8_4_;
+                  value_00.uv0.w = (float)auVar76._12_4_;
+                  value_00.uv1.x = (float)auVar77._0_4_;
+                  value_00.uv1.y = (float)auVar77._4_4_;
+                  value_00.uv1.z = (float)auVar77._8_4_;
+                  value_00.uv1.w = (float)auVar77._12_4_;
+                  value_00.uv2.x = (float)auVar78._0_4_;
+                  value_00.uv2.y = (float)auVar78._4_4_;
+                  value_00.uv2.z = (float)auVar78._8_4_;
+                  value_00.uv2.w = (float)auVar78._12_4_;
+                  value_00.uv3.x = (float)in_stack_75._96_4_;
+                  value_00.uv3.y = (float)in_stack_75._100_4_;
+                  value_00.uv3.z = (float)in_stack_75._104_4_;
+                  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::
+                  List_1_UnityEngine_UIVertex__set_Item(verts,iStack_35,value_00,in_stack_79);
+                  puVar39 = &uStack_43;
+                  puVar38 = (undefined4 *)&stack0xfffff9f0;
+                  pMVar67 = 
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::UIVertex>__set_Item_int__UnityEngine__UIVertex_
+                  ;
+                  for (iVar41 = 0x1b; iVar41 != 0; iVar41 = iVar41 + -1) {
+                    *puVar38 = *(undefined4 *)puVar39;
+                    puVar39 = (undefined8 *)((int)puVar39 + 4);
+                    puVar38 = puVar38 + 1;
+                  }
+                  in_stack_79 = (MethodInfo *)&UNK_?;
+                  value_01.uv3.w = (float)pMVar67;
+                  auVar68 = in_stack_80._0_12_;
+                  auVar70 = in_stack_80._12_12_;
+                  auVar71 = in_stack_80._24_16_;
+                  uVar72 = in_stack_80._40_8_;
+                  auVar76 = in_stack_80._48_16_;
+                  auVar77 = in_stack_80._64_16_;
+                  auVar78 = in_stack_80._80_16_;
+                  value_01.position.x = (float)auVar68._0_4_;
+                  value_01.position.y = (float)auVar68._4_4_;
+                  value_01.position.z = (float)auVar68._8_4_;
+                  value_01.normal.x = (float)auVar70._0_4_;
+                  value_01.normal.y = (float)auVar70._4_4_;
+                  value_01.normal.z = (float)auVar70._8_4_;
+                  value_01.tangent.x = (float)auVar71._0_4_;
+                  value_01.tangent.y = (float)auVar71._4_4_;
+                  value_01.tangent.z = (float)auVar71._8_4_;
+                  value_01.tangent.w = (float)auVar71._12_4_;
+                  value_01.color.rgba = (int)uVar72;
+                  value_01.color.r = (char)((ulonglong)uVar72 >> 0x20);
+                  value_01.color.g = (char)((ulonglong)uVar72 >> 0x28);
+                  value_01.color.b = (char)((ulonglong)uVar72 >> 0x30);
+                  value_01.color.a = (char)((ulonglong)uVar72 >> 0x38);
+                  value_01.uv0.x = (float)auVar76._0_4_;
+                  value_01.uv0.y = (float)auVar76._4_4_;
+                  value_01.uv0.z = (float)auVar76._8_4_;
+                  value_01.uv0.w = (float)auVar76._12_4_;
+                  value_01.uv1.x = (float)auVar77._0_4_;
+                  value_01.uv1.y = (float)auVar77._4_4_;
+                  value_01.uv1.z = (float)auVar77._8_4_;
+                  value_01.uv1.w = (float)auVar77._12_4_;
+                  value_01.uv2.x = (float)auVar78._0_4_;
+                  value_01.uv2.y = (float)auVar78._4_4_;
+                  value_01.uv2.z = (float)auVar78._8_4_;
+                  value_01.uv2.w = (float)auVar78._12_4_;
+                  value_01.uv3.x = (float)in_stack_80._96_4_;
+                  value_01.uv3.y = (float)in_stack_80._100_4_;
+                  value_01.uv3.z = (float)in_stack_80._104_4_;
+                  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::
+                  List_1_UnityEngine_UIVertex__set_Item(verts,iStack_36,value_01,in_stack_81);
+                  puVar39 = &uStack_44;
+                  puVar38 = (undefined4 *)&stack0xfffffa6c;
+                  pMVar67 = 
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::UIVertex>__set_Item_int__UnityEngine__UIVertex_
+                  ;
+                  for (iVar41 = 0x1b; iVar41 != 0; iVar41 = iVar41 + -1) {
+                    *puVar38 = *(undefined4 *)puVar39;
+                    puVar39 = (undefined8 *)((int)puVar39 + 4);
+                    puVar38 = puVar38 + 1;
+                  }
+                  in_stack_81 = (MethodInfo *)&UNK_?;
+                  value_02.uv3.w = (float)pMVar67;
+                  auVar68 = in_stack_82._0_12_;
+                  auVar70 = in_stack_82._12_12_;
+                  auVar71 = in_stack_82._24_16_;
+                  uVar72 = in_stack_82._40_8_;
+                  auVar76 = in_stack_82._48_16_;
+                  auVar77 = in_stack_82._64_16_;
+                  auVar78 = in_stack_82._80_16_;
+                  value_02.position.x = (float)auVar68._0_4_;
+                  value_02.position.y = (float)auVar68._4_4_;
+                  value_02.position.z = (float)auVar68._8_4_;
+                  value_02.normal.x = (float)auVar70._0_4_;
+                  value_02.normal.y = (float)auVar70._4_4_;
+                  value_02.normal.z = (float)auVar70._8_4_;
+                  value_02.tangent.x = (float)auVar71._0_4_;
+                  value_02.tangent.y = (float)auVar71._4_4_;
+                  value_02.tangent.z = (float)auVar71._8_4_;
+                  value_02.tangent.w = (float)auVar71._12_4_;
+                  value_02.color.rgba = (int)uVar72;
+                  value_02.color.r = (char)((ulonglong)uVar72 >> 0x20);
+                  value_02.color.g = (char)((ulonglong)uVar72 >> 0x28);
+                  value_02.color.b = (char)((ulonglong)uVar72 >> 0x30);
+                  value_02.color.a = (char)((ulonglong)uVar72 >> 0x38);
+                  value_02.uv0.x = (float)auVar76._0_4_;
+                  value_02.uv0.y = (float)auVar76._4_4_;
+                  value_02.uv0.z = (float)auVar76._8_4_;
+                  value_02.uv0.w = (float)auVar76._12_4_;
+                  value_02.uv1.x = (float)auVar77._0_4_;
+                  value_02.uv1.y = (float)auVar77._4_4_;
+                  value_02.uv1.z = (float)auVar77._8_4_;
+                  value_02.uv1.w = (float)auVar77._12_4_;
+                  value_02.uv2.x = (float)auVar78._0_4_;
+                  value_02.uv2.y = (float)auVar78._4_4_;
+                  value_02.uv2.z = (float)auVar78._8_4_;
+                  value_02.uv2.w = (float)auVar78._12_4_;
+                  value_02.uv3.x = (float)in_stack_82._96_4_;
+                  value_02.uv3.y = (float)in_stack_82._100_4_;
+                  value_02.uv3.z = (float)in_stack_82._104_4_;
+                  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::
+                  List_1_UnityEngine_UIVertex__set_Item(verts,iStack_37,value_02,in_stack_83);
+                  puVar39 = &uStack_45;
+                  puVar38 = (undefined4 *)&stack0xfffffae8;
+                  pMVar67 = 
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::UIVertex>__set_Item_int__UnityEngine__UIVertex_
+                  ;
+                  for (iVar41 = 0x1b; iVar41 != 0; iVar41 = iVar41 + -1) {
+                    *puVar38 = *(undefined4 *)puVar39;
+                    puVar39 = (undefined8 *)((int)puVar39 + 4);
+                    puVar38 = puVar38 + 1;
+                  }
+                  in_stack_83 = (MethodInfo *)&UNK_?;
+                  value_03.uv3.w = (float)pMVar67;
+                  auVar68 = in_stack_84._0_12_;
+                  auVar70 = in_stack_84._12_12_;
+                  auVar71 = in_stack_84._24_16_;
+                  uVar72 = in_stack_84._40_8_;
+                  auVar76 = in_stack_84._48_16_;
+                  auVar77 = in_stack_84._64_16_;
+                  auVar78 = in_stack_84._80_16_;
+                  value_03.position.x = (float)auVar68._0_4_;
+                  value_03.position.y = (float)auVar68._4_4_;
+                  value_03.position.z = (float)auVar68._8_4_;
+                  value_03.normal.x = (float)auVar70._0_4_;
+                  value_03.normal.y = (float)auVar70._4_4_;
+                  value_03.normal.z = (float)auVar70._8_4_;
+                  value_03.tangent.x = (float)auVar71._0_4_;
+                  value_03.tangent.y = (float)auVar71._4_4_;
+                  value_03.tangent.z = (float)auVar71._8_4_;
+                  value_03.tangent.w = (float)auVar71._12_4_;
+                  value_03.color.rgba = (int)uVar72;
+                  value_03.color.r = (char)((ulonglong)uVar72 >> 0x20);
+                  value_03.color.g = (char)((ulonglong)uVar72 >> 0x28);
+                  value_03.color.b = (char)((ulonglong)uVar72 >> 0x30);
+                  value_03.color.a = (char)((ulonglong)uVar72 >> 0x38);
+                  value_03.uv0.x = (float)auVar76._0_4_;
+                  value_03.uv0.y = (float)auVar76._4_4_;
+                  value_03.uv0.z = (float)auVar76._8_4_;
+                  value_03.uv0.w = (float)auVar76._12_4_;
+                  value_03.uv1.x = (float)auVar77._0_4_;
+                  value_03.uv1.y = (float)auVar77._4_4_;
+                  value_03.uv1.z = (float)auVar77._8_4_;
+                  value_03.uv1.w = (float)auVar77._12_4_;
+                  value_03.uv2.x = (float)auVar78._0_4_;
+                  value_03.uv2.y = (float)auVar78._4_4_;
+                  value_03.uv2.z = (float)auVar78._8_4_;
+                  value_03.uv2.w = (float)auVar78._12_4_;
+                  value_03.uv3.x = (float)in_stack_84._96_4_;
+                  value_03.uv3.y = (float)in_stack_84._100_4_;
+                  value_03.uv3.z = (float)in_stack_84._104_4_;
+                  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::
+                  List_1_UnityEngine_UIVertex__set_Item
+                            (verts,(int32_t)pSStack_18,value_03,in_stack_85);
+                  puVar39 = &uStack_47;
+                  puVar38 = (undefined4 *)&stack0xfffffb64;
+                  pMVar67 = 
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::UIVertex>__set_Item_int__UnityEngine__UIVertex_
+                  ;
+                  for (iVar41 = 0x1b; iVar41 != 0; iVar41 = iVar41 + -1) {
+                    *puVar38 = *(undefined4 *)puVar39;
+                    puVar39 = (undefined8 *)((int)puVar39 + 4);
+                    puVar38 = puVar38 + 1;
+                  }
+                  in_stack_85 = (MethodInfo *)&UNK_?;
+                  value_04.uv3.w = (float)pMVar67;
+                  auVar68 = in_stack_86._0_12_;
+                  auVar70 = in_stack_86._12_12_;
+                  auVar71 = in_stack_86._24_16_;
+                  uVar72 = in_stack_86._40_8_;
+                  auVar76 = in_stack_86._48_16_;
+                  auVar77 = in_stack_86._64_16_;
+                  auVar78 = in_stack_86._80_16_;
+                  value_04.position.x = (float)auVar68._0_4_;
+                  value_04.position.y = (float)auVar68._4_4_;
+                  value_04.position.z = (float)auVar68._8_4_;
+                  value_04.normal.x = (float)auVar70._0_4_;
+                  value_04.normal.y = (float)auVar70._4_4_;
+                  value_04.normal.z = (float)auVar70._8_4_;
+                  value_04.tangent.x = (float)auVar71._0_4_;
+                  value_04.tangent.y = (float)auVar71._4_4_;
+                  value_04.tangent.z = (float)auVar71._8_4_;
+                  value_04.tangent.w = (float)auVar71._12_4_;
+                  value_04.color.rgba = (int)uVar72;
+                  value_04.color.r = (char)((ulonglong)uVar72 >> 0x20);
+                  value_04.color.g = (char)((ulonglong)uVar72 >> 0x28);
+                  value_04.color.b = (char)((ulonglong)uVar72 >> 0x30);
+                  value_04.color.a = (char)((ulonglong)uVar72 >> 0x38);
+                  value_04.uv0.x = (float)auVar76._0_4_;
+                  value_04.uv0.y = (float)auVar76._4_4_;
+                  value_04.uv0.z = (float)auVar76._8_4_;
+                  value_04.uv0.w = (float)auVar76._12_4_;
+                  value_04.uv1.x = (float)auVar77._0_4_;
+                  value_04.uv1.y = (float)auVar77._4_4_;
+                  value_04.uv1.z = (float)auVar77._8_4_;
+                  value_04.uv1.w = (float)auVar77._12_4_;
+                  value_04.uv2.x = (float)auVar78._0_4_;
+                  value_04.uv2.y = (float)auVar78._4_4_;
+                  value_04.uv2.z = (float)auVar78._8_4_;
+                  value_04.uv2.w = (float)auVar78._12_4_;
+                  value_04.uv3.x = (float)in_stack_86._96_4_;
+                  value_04.uv3.y = (float)in_stack_86._100_4_;
+                  value_04.uv3.z = (float)in_stack_86._104_4_;
+                  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIVertex]::
+                  List_1_UnityEngine_UIVertex__set_Item
+                            (verts,(int32_t)pIStack_14,value_04,in_stack_87);
+                  this_00 = (Text *)((int)&this_00->klass + 1);
+                  uVar27 = uStack_29;
+                  unaff_EDI = pIStack_28;
+code_?:
+                  pTVar22 = (Text *)((int)&pTStack_3->klass + 1);
+                  pIStack_6 = (IList_1_UnityEngine_UILineInfo_ *)((int)&pIStack_6->klass + 1);
+                }
+                else {
+                  this_00 = (Text *)((int)&this_00->klass + *(int *)(uVar27 + 0xc));
+                  pTStack_3 = (Text *)((int)pTVar22 + *(int *)(uVar27 + 0xc) + -1);
+                  pIStack_6 = (IList_1_UnityEngine_UILineInfo_ *)((int)&pIStack_6[-1].monitor + 3)
+                  ;
+                  uVar27 = 0;
+                  uStack_29 = 0;
+                  uVar2 = (POPCOUNT((uint)unaff_EDI & 0xff) & 1U) == 0;
+                  if (unaff_EDI == (Il2CppClass *)0x0) goto code_?;
+                  cVar1 = func_?();
+                  if (cVar1 == '\0') goto code_?;
+                  iStack_33 = func_?();
+                  if (iStack_33 != 0) {
+                    uVar27 = func_?();
+                    bVar31 = 0;
+                    uVar2 = (POPCOUNT(uVar27 & 0xff) & 1U) == 0;
+                    uStack_29 = uVar27;
+                    if (uVar27 != 0) goto code_?;
+                    goto code_?;
+                  }
+                  pTVar22 = (Text *)((int)&pTStack_3->klass + 1);
+                  uStack_29 = 0;
+                  pIStack_6 = (IList_1_UnityEngine_UILineInfo_ *)((int)&pIStack_6->klass + 1);
+                }
+              }
+              this_00 = (Text *)((int)&this_00->klass + 1);
+              pIStack_7 = (IList_1_UnityEngine_UILineInfo___Class *)
+                           ((int)&(pIStack_7->_0).image + 1);
+              ppSStack_9 = ppSStack_9 + 1;
             }
-            pTVar12 = (Text__Class *)((int)&(pTVar12->_0).image + 1);
-            ppSStack_29 = ppSStack_29 + 1;
-            pTStack_4 = pTVar12;
+            goto code_?;
           }
         }
-        else {
-          if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
-                    ((Object *)StringLiteral_LetterSpacing__Missing_Text_comp,(MethodInfo *)0x0);
-        }
-        return;
       }
     }
   }
 code_?:
-  bVar30 = 0;
-  func_?();
-  pMVar31 = pMVar2;
-code_?:
+  bVar31 = 0;
   func_?();
 code_?:
-  lVar89 = func_?();
-  pcVar90 = (char *)lVar89;
-  piVar21 = (int *)((int)((ulonglong)lVar89 >> 0x20) + -1);
-  if (0xffffffff < lVar89) {
-    pp_Var1 = &(unaff_EDI->_1).genericContainerHandle;
-    bVar33 = *(char *)pp_Var1 + (byte)extraout_ECX;
-    bVar91 = CARRY1(*(byte *)pp_Var1,(byte)extraout_ECX) || CARRY1(bVar33,bVar30);
-    *(byte *)pp_Var1 = bVar33 + bVar30;
-    pbVar92 = (byte *)(extraout_ECX + 0x7c);
-    bVar30 = *pbVar92;
-    bVar33 = *pbVar92 + (byte)pMVar31;
-    *pbVar92 = bVar33 + bVar91;
-    cVar1 = (char)lVar89;
-    *pcVar90 = *pcVar90 + cVar1 + (CARRY1(bVar30,(byte)pMVar31) || CARRY1(bVar33,bVar91));
-    *piVar21 = (int)(pcVar90 + *piVar21);
-    *extraout_ECX = *extraout_ECX + cVar1;
-    *piVar21 = *piVar21 + CONCAT31((int3)((ulonglong)lVar89 >> 8),cVar1 + *pcVar90);
-    pcVar93 = (code *)swi(3);
-    (*pcVar93)();
+  func_?();
+code_?:
+  uVar72 = func_?();
+  piVar20 = (int *)((ulonglong)uVar72 >> 0x20);
+  if ((bool)uVar2) {
+    pcVar88 = (code *)swi(3);
+    (*pcVar88)();
     return;
   }
-  if ((this->fields).m_spacing != in_XMM1_Da) {
-    (this->fields).m_spacing = in_XMM1_Da;
-    pGVar94 = UnityEngine.UI.dll::UnityEngine::UI::BaseMeshEffect::BaseMeshEffect_get_graphic
-                        ((BaseMeshEffect *)this,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    bVar23 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                       ((Object_1 *)pGVar94,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar23 != 0) {
-      pGVar94 = UnityEngine.UI.dll::UnityEngine::UI::BaseMeshEffect::BaseMeshEffect_get_graphic
-                          ((BaseMeshEffect *)this,(MethodInfo *)0x0);
-      if (pGVar94 == (Graphic *)0x0) {
-        func_?();
-        pcVar93 = (code *)swi(3);
-        (*pcVar93)();
-        return;
-      }
-      (*(code *)(pGVar94->klass->vtable).SetVerticesDirty.method)();
-    }
-  }
+  puVar89 = (undefined1 *)((int)&(unaff_EDI->byval_arg).data + 2);
+  bVar90 = *puVar89;
+  bVar91 = (byte)((uint)this_00 >> 8);
+  bVar92 = *puVar89 + bVar91;
+  *puVar89 = bVar92 + bVar31;
+  extraout_ECX[0x105012] =
+       extraout_ECX[0x105012] + (char)extraout_ECX + (CARRY1(bVar90,bVar91) || CARRY1(bVar92,bVar31));
+  *piVar20 = (int)((char *)uVar72 + *piVar20);
+  *extraout_ECX = *extraout_ECX + (char)uVar72;
+  *piVar20 = *piVar20 + CONCAT31((int3)((ulonglong)uVar72 >> 8),(char)uVar72 + *(char *)uVar72);
+  pcVar88 = (code *)swi(3);
+  (*pcVar88)();
   return;
 }
 

@@ -2177,8 +2177,9 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::MVNetworkGame_Operati
     ppMVar2 = ppMVar1;
   }
   bVar3 = PlayerPrefsManager::PlayerPrefsManager_get_IsReturningAsSignedUp((MethodInfo *)0x0);
-  if (bVar3 != 0) {
-    ppMVar2 = (MVGameControllerBase__Class **)((uint)ppMVar2 | 8);
+  ppMVar1 = (MVGameControllerBase__Class **)((uint)ppMVar2 | 8);
+  if (bVar3 == 0) {
+    ppMVar1 = ppMVar2;
   }
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MVGameControllerBase);
@@ -2186,9 +2187,9 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::MVNetworkGame_Operati
   }
   pGVar4 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
   if (pGVar4 != (GameSessionData *)0x0) {
-    ppMVar1 = (MVGameControllerBase__Class **)((uint)ppMVar2 | 1);
+    ppMVar2 = (MVGameControllerBase__Class **)((uint)ppMVar1 | 1);
     if ((pGVar4->fields).embedded != 0) {
-      ppMVar1 = ppMVar2;
+      ppMVar2 = ppMVar1;
     }
     this_00 = (Dictionary_2_System_Byte_System_Object_ *)
               func_?(
@@ -2305,7 +2306,7 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::MVNetworkGame_Operati
                               (this_00,0xd9,(Object *)pSVar11,
                                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                               );
-                    ppMStack_8 = ppMVar1;
+                    ppMStack_8 = ppMVar2;
                     pOVar6 = (Object *)func_?(TypeInfo__System__Int32,&ppMStack_8);
                     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
                     Object]::Dictionary_2_System_Byte_System_Object__Add
@@ -3994,97 +3995,104 @@ code_?:
     else {
       separator->vector[0] = 0x5c;
       if (keyPath != (String *)0x0) {
-        keyPath = (String *)
-                  mscorlib.dll::System::String::String_Split_3
-                            (keyPath,separator,StringSplitOptions__Enum_RemoveEmptyEntries,
-                             (MethodInfo *)0x0);
-        if ((String__Array *)keyPath != (String__Array *)0x0) {
-          if (((String__Array *)keyPath)->max_length == 0) {
+        pSVar1 = mscorlib.dll::System::String::String_Split_3
+                           (keyPath,separator,StringSplitOptions__Enum_RemoveEmptyEntries,
+                            (MethodInfo *)0x0);
+        if (pSVar1 != (String__Array *)0x0) {
+          if (pSVar1->max_length == 0) {
             if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-              func_?();
+              func_?(TypeInfo__UnityEngine__Debug);
             }
             UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                       ((Object *)StringLiteral_Trying_to_remoe_WO_data_with_an_,(MethodInfo *)0x0);
           }
-          method_00 = (String__Class *)
-                      func_?(
-                                     TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                                     );
+          this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                     *)func_?(
+                                      TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                                      );
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
           UIElements::StyleComplexSelector+PseudoStateData]::
           Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
-                    ((Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                      *)method_00,(MethodInfo *)method_00);
-          uVar1 = 0;
-          pSVar2 = keyPath + 1;
-          while (uVar3 = *(uint *)&(keyPath->fields)._firstChar, (int)uVar1 < (int)uVar3) {
-            if ((int)uVar1 < (int)(uVar3 - 1)) {
-              this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                         *)func_?();
+                    (this_00,
+                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                    );
+          keyPath = (String *)pSVar1->vector;
+          uVar2 = 0;
+          while ((int)uVar2 < (int)pSVar1->max_length) {
+            if ((int)uVar2 < (int)(pSVar1->max_length - 1)) {
+              this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                         *)func_?(
+                                          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                                          );
               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
               UIElements::StyleComplexSelector+PseudoStateData]::
               Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
-                        (this_00,
+                        (this_01,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                         );
-              if (*(uint *)&(keyPath->fields)._firstChar <= uVar1) goto code_?;
-              if (method_00 == (String__Class *)0x0) goto code_?;
-              pSVar4 = pSVar2->klass;
+              if (pSVar1->max_length <= uVar2) goto code_?;
+              if (this_00 ==
+                  (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                   *)0x0) goto code_?;
               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
               Object]::Dictionary_2_System_Object_System_Object__set_Item
-                        ((Dictionary_2_System_Object_System_Object_ *)method_00,
-                         (Object *)pSVar2->klass,(Object *)this_00,
+                        ((Dictionary_2_System_Object_System_Object_ *)this_00,
+                         (Object *)keyPath->klass,(Object *)this_01,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
                         );
-              method_00 = pSVar4;
-              uVar1 = uVar1 + 1;
-              pSVar2 = (String *)&pSVar2->monitor;
+              uVar2 = uVar2 + 1;
+              keyPath = (String *)&keyPath->monitor;
+              this_00 = this_01;
             }
             else {
-              if (uVar3 <= uVar1) goto code_?;
-              if (method_00 == (String__Class *)0x0) goto code_?;
+              if (pSVar1->max_length <= uVar2) goto code_?;
+              if (this_00 ==
+                  (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                   *)0x0) goto code_?;
               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
               Object]::Dictionary_2_System_Object_System_Object__set_Item
-                        ((Dictionary_2_System_Object_System_Object_ *)method_00,
-                         (Object *)pSVar2->klass,(Object *)::StringLiteral__,
+                        ((Dictionary_2_System_Object_System_Object_ *)this_00,
+                         (Object *)keyPath->klass,(Object *)::StringLiteral__,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
                         );
-              uVar1 = uVar1 + 1;
-              pSVar2 = (String *)&pSVar2->monitor;
+              uVar2 = uVar2 + 1;
+              keyPath = (String *)&keyPath->monitor;
             }
           }
-          this_01 = (Dictionary_2_System_Byte_System_Object_ *)func_?();
+          value_00 = 
+          TypeInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>;
+          this_02 = (Dictionary_2_System_Byte_System_Object_ *)func_?();
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
           Dictionary_2_System_Byte_System_Object___ctor
-                    (this_01,
+                    (this_02,
                      MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
                     );
           keyPath = (String *)worldObjectID;
-          value_00 = (Object *)&UNK_?;
           value = (Object *)func_?(TypeInfo__System__Int32,&keyPath);
-          if (this_01 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
+          if (this_02 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
             Dictionary_2_System_Byte_System_Object__Add
-                      (this_01,0x16,value,
+                      (this_02,0x16,value,
                        MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                       );
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
             Dictionary_2_System_Byte_System_Object__Add
-                      (this_01,0x13,value_00,
+                      (this_02,0x13,(Object *)value_00,
                        MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                       );
-            pPVar5 = (this->fields).peer;
+            pPVar3 = (this->fields).peer;
             if ((TypeInfo__ExitGames__Client__Photon__SendOptions->_1).cctor_finished_or_no_cctor ==
                 0) {
-              func_?();
+              func_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
             }
-            pSVar6 = TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields;
-            uVar7._0_1_ = (pSVar6->SendReliable).Encrypt;
-            uVar7._1_1_ = (pSVar6->SendReliable).Channel;
-            uVar7._2_2_ = *(undefined2 *)&(pSVar6->SendReliable).field_0x6;
-            if (pPVar5 != (PhotonPeer *)0x0) {
-              (*(code *)(pPVar5->klass->vtable).SendOperation.method)
-                        (pPVar5,5,this_01,(pSVar6->SendReliable).DeliveryMode,uVar7);
+            pSVar4 = TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields;
+            uVar5._0_1_ = (pSVar4->SendReliable).Encrypt;
+            uVar5._1_1_ = (pSVar4->SendReliable).Channel;
+            uVar5._2_2_ = *(undefined2 *)&(pSVar4->SendReliable).field_0x6;
+            if (pPVar3 != (PhotonPeer *)0x0) {
+              (*(code *)(pPVar3->klass->vtable).SendOperation.method)
+                        (pPVar3,5,this_02,(pSVar4->SendReliable).DeliveryMode,uVar5,
+                         pPVar3->klass[1]._0.image);
               return;
             }
           }
@@ -4094,8 +4102,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -7821,23 +7829,22 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
               (this_00,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
               );
-    uVar2 = pSVar1->max_length;
-    if (uVar2 - 1 < uVar2) {
+    if (pSVar1->max_length - 1 < pSVar1->max_length) {
       if (this_00 !=
           (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *
           )0x0) {
-        pMVar3 = 
+        pMVar2 = 
         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
         ;
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
         Dictionary_2_System_Object_System_Object__Add
                   ((Dictionary_2_System_Object_System_Object_ *)this_00,
-                   (Object *)pSVar1->vector[uVar2 - 1],value,
+                   (Object *)pSVar1->vector[pSVar1->max_length - 1],value,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                   );
-        pcVar4 = (char *)(pSVar1->max_length - 2);
-        if (-1 < (int)pcVar4) {
-          ppSVar5 = pSVar1->vector + (pSVar1->max_length - 2);
+        pcVar3 = (char *)(pSVar1->max_length - 2);
+        if (-1 < (int)pcVar3) {
+          ppSVar4 = pSVar1->vector + (pSVar1->max_length - 2);
           keyPath = (String *)this_00;
           do {
             this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
@@ -7848,23 +7855,23 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
                       (this_00,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                       );
-            if (pMVar3->name <= pcVar4) goto code_?;
+            if (pMVar2->name <= pcVar3) goto code_?;
             if (this_00 ==
                 (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
                  *)0x0) goto code_?;
-            pMVar3 = 
+            pMVar2 = 
             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
             ;
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
             ::Dictionary_2_System_Object_System_Object__set_Item
-                      ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)*ppSVar5,
+                      ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)*ppSVar4,
                        (Object *)keyPath,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
                       );
-            ppSVar5 = ppSVar5 + -1;
-            pcVar4 = pcVar4 + -1;
+            ppSVar4 = ppSVar4 + -1;
+            pcVar3 = pcVar3 + -1;
             keyPath = (String *)this_00;
-          } while (-1 < (int)pcVar4);
+          } while (-1 < (int)pcVar3);
         }
         this_01 = (Dictionary_2_System_Byte_System_Object_ *)func_?();
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
@@ -7888,14 +7895,14 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::
              ) {
             func_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
           }
-          pSVar6 = TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields;
-          uVar7._0_1_ = (pSVar6->SendReliable).Encrypt;
-          uVar7._1_1_ = (pSVar6->SendReliable).Channel;
-          uVar7._2_2_ = *(undefined2 *)&(pSVar6->SendReliable).field_0x6;
-          if (in_stack_8 != (int *)0x0) {
-            (**(code **)(*in_stack_8 + 0x110))
-                      (in_stack_8,4,this_01,(pSVar6->SendReliable).DeliveryMode,uVar7,
-                       *(undefined4 *)(*in_stack_8 + 0x114));
+          pSVar5 = TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields;
+          uVar6._0_1_ = (pSVar5->SendReliable).Encrypt;
+          uVar6._1_1_ = (pSVar5->SendReliable).Channel;
+          uVar6._2_2_ = *(undefined2 *)&(pSVar5->SendReliable).field_0x6;
+          if (in_stack_7 != (int *)0x0) {
+            (**(code **)(*in_stack_7 + 0x110))
+                      (in_stack_7,4,this_01,(pSVar5->SendReliable).DeliveryMode,uVar6,
+                       *(undefined4 *)(*in_stack_7 + 0x114));
             return;
           }
         }
@@ -7907,8 +7914,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -8338,31 +8345,29 @@ void Assembly-CSharp.dll::MVNetworkGame+OperationRequests::MVNetworkGame_Operati
     func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
+  (this->fields).dummyData = ::StringLiteral__;
   method_00 = (MethodInfo *)&(this->fields).dummyData;
-  *(String **)method_00 = ::StringLiteral__;
   func_?(method_00,::StringLiteral__);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-  ppMVar1 = &(this->fields).networkGame;
-  *ppMVar1 = networkGame;
-  func_?(ppMVar1,networkGame);
+  (this->fields).networkGame = networkGame;
+  func_?(&(this->fields).networkGame,networkGame);
   if (networkGame != (MVNetworkGame *)0x0) {
-    pPVar2 = (networkGame->fields)._Peer_k__BackingField;
-    ppPVar3 = &(this->fields).peer;
-    *ppPVar3 = pPVar2;
-    func_?(ppPVar3,pPVar2);
-    pPVar2 = *ppPVar3;
+    pPVar1 = (networkGame->fields)._Peer_k__BackingField;
+    (this->fields).peer = pPVar1;
+    func_?(&(this->fields).peer,pPVar1);
+    pPVar1 = (this->fields).peer;
     this_00 = (OperationResponsePendingManager *)
               func_?(TypeInfo__OperationResponsePendingManager);
     OperationResponsePendingManager::OperationResponsePendingManager__ctor
-              (this_00,pPVar2,(MethodInfo *)0x0);
+              (this_00,pPVar1,(MethodInfo *)0x0);
     (this->fields).operationResponsePendingManager = this_00;
     func_?(&this->fields,this_00);
     return;
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

@@ -21,7 +21,6 @@ void Assembly-CSharp.dll::XPBoostTracker::XPBoostTracker_OnDestroy
   }
   else {
     pAVar5 = (pMVar3->fields).OnPlayerListChanged;
-    ppAVar6 = &(pMVar3->fields).OnPlayerListChanged;
     this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
@@ -31,25 +30,26 @@ void Assembly-CSharp.dll::XPBoostTracker::XPBoostTracker_OnDestroy
              mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)pAVar5,(Delegate *)this_00,(MethodInfo *)0x0);
     uVar4 = CONCAT44(TypeInfo__System__Action,pAVar5);
-    ppAStack7 = ppAVar6;
     if (pAVar5 == (Action *)0x0) {
-      pAStack8 = (Action *)0x0;
-      *ppAVar6 = (Action *)0x0;
+      (pMVar3->fields).OnPlayerListChanged = (Action *)0x0;
+      ppAStack6 = &(pMVar3->fields).OnPlayerListChanged;
+      pAStack7 = (Action *)0x0;
       func_?();
       return;
     }
-    pAVar9 = (Action *)0x0;
+    pAVar8 = (Action *)0x0;
     if (pAVar5->klass == TypeInfo__System__Action) {
-      pAVar9 = pAVar5;
+      pAVar8 = pAVar5;
     }
-    if (pAVar9 != (Action *)0x0) {
-      *ppAVar6 = pAVar9;
+    if (pAVar8 != (Action *)0x0) {
+      (pMVar3->fields).OnPlayerListChanged = pAVar8;
       uVar4 = CONCAT44(TypeInfo__System__Action,pAVar5);
-      pAStack8 = (Action *)0x0;
+      pAStack7 = (Action *)0x0;
       if (pAVar5->klass == TypeInfo__System__Action) {
-        pAStack8 = pAVar5;
+        pAStack7 = pAVar5;
       }
-      if (pAStack8 != (Action *)0x0) {
+      if (pAStack7 != (Action *)0x0) {
+        ppAStack6 = &(pMVar3->fields).OnPlayerListChanged;
         func_?();
         return;
       }
@@ -57,8 +57,8 @@ void Assembly-CSharp.dll::XPBoostTracker::XPBoostTracker_OnDestroy
   }
   _ppAStack00000014 = uVar4;
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -143,62 +143,59 @@ void Assembly-CSharp.dll::XPBoostTracker::XPBoostTracker_Start
     cRam_? = '\x01';
   }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (pMVar1 == (MVNetworkGame *)0x0) {
-code_?:
-    pDStack2 = (Delegate *)func_?();
-    pAStack3 = unaff_ESI;
-  }
-  else {
-    pMVar4 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
-    if (pMVar4 == (MVLocalPlayer *)0x0) goto code_?;
-    (this->fields).localActorNr = (pMVar4->fields)._._ActorNr_k__BackingField;
-    XPBoostTracker_UpdateMemberCount(this,(MethodInfo *)0x0);
-    XPBoostTracker_UpdateBoostText(this,(MethodInfo *)0x0);
-    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar1 == (MVNetworkGame *)0x0) goto code_?;
-    pMVar5 = (pMVar1->fields).playerContainer;
-    if (pMVar5 == (MVPlayerContainer *)0x0) goto code_?;
-    a = (pMVar5->fields).OnPlayerListChanged;
-    this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (this_00,(Object *)this,MethodInfo__XPBoostTracker__OnPlayerJoinOrLeave__,
-               (MethodInfo *)0x0);
-    puVar6 = &UNK_?;
-    pDStack2 =
-         mscorlib.dll::System::Delegate::Delegate_Combine
-                   ((Delegate *)a,(Delegate *)this_00,(MethodInfo *)0x0);
-    _pDStack00000020 = CONCAT44(TypeInfo__System__Action,pDStack2);
-    if (pDStack2 == (Delegate *)0x0) {
-      pDStack2 = (Delegate *)(puVar6 + 0x14);
-      pAStack3 = (Action__Class *)0x0;
-      *(undefined4 *)pDStack2 = 0;
-      func_?();
-      return;
-    }
-    pDVar7 = (Delegate *)0x0;
-    if ((Action__Class *)pDStack2->klass == TypeInfo__System__Action) {
-      pDVar7 = pDStack2;
-    }
-    if (pDVar7 == (Delegate *)0x0) goto code_?;
-    *(Delegate **)(puVar6 + 0x14) = pDVar7;
-    pDVar7 = (Delegate *)0x0;
-    if ((Action__Class *)pDStack2->klass == TypeInfo__System__Action) {
-      pDVar7 = pDStack2;
-    }
-    pAStack3 = TypeInfo__System__Action;
-    if (pDVar7 != (Delegate *)0x0) {
-      pDStack2 = (Delegate *)(puVar6 + 0x14);
-      pAStack3 = (Action__Class *)pDVar7;
-      func_?();
-      return;
+  if (pMVar1 != (MVNetworkGame *)0x0) {
+    pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
+    if (pMVar2 != (MVLocalPlayer *)0x0) {
+      (unaff_EBX->fields).localActorNr = (pMVar2->fields)._._ActorNr_k__BackingField;
+      XPBoostTracker_UpdateMemberCount(unaff_EBX,(MethodInfo *)0x0);
+      XPBoostTracker_UpdateBoostText(unaff_EBX,(MethodInfo *)0x0);
+      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if ((pMVar1 != (MVNetworkGame *)0x0) &&
+         (pMVar3 = (pMVar1->fields).playerContainer, pMVar3 != (MVPlayerContainer *)0x0)) {
+        pAVar4 = (pMVar3->fields).OnPlayerListChanged;
+        this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+        NavMesh_OnNavMeshPreUpdate__ctor
+                  (this_00,(Object *)MethodInfo__XPBoostTracker__OnPlayerJoinOrLeave__,
+                   MethodInfo__XPBoostTracker__OnPlayerJoinOrLeave__,(MethodInfo *)0x0);
+        pAVar4 = (Action *)
+                 mscorlib.dll::System::Delegate::Delegate_Combine
+                           ((Delegate *)pAVar4,(Delegate *)this_00,(MethodInfo *)0x0);
+        uVar5 = CONCAT44(TypeInfo__System__Action,pAVar4);
+        if (pAVar4 == (Action *)0x0) {
+          (pMVar3->fields).OnPlayerListChanged = (Action *)0x0;
+          ppAStack6 = &(pMVar3->fields).OnPlayerListChanged;
+          pAStack7 = (Action *)0x0;
+          func_?();
+          return;
+        }
+        pAVar8 = (Action *)0x0;
+        if (pAVar4->klass == TypeInfo__System__Action) {
+          pAVar8 = pAVar4;
+        }
+        if (pAVar8 != (Action *)0x0) {
+          (pMVar3->fields).OnPlayerListChanged = pAVar8;
+          uVar5 = CONCAT44(TypeInfo__System__Action,pAVar4);
+          pAStack7 = (Action *)0x0;
+          if (pAVar4->klass == TypeInfo__System__Action) {
+            pAStack7 = pAVar4;
+          }
+          if (pAStack7 != (Action *)0x0) {
+            ppAStack6 = &(pMVar3->fields).OnPlayerListChanged;
+            func_?();
+            return;
+          }
+        }
+        goto code_?;
+      }
     }
   }
-  _pDStack00000020 = func_?();
+  uVar5 = func_?();
 code_?:
+  _ppAStack0000002c = uVar5;
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -294,17 +291,18 @@ void Assembly-CSharp.dll::XPBoostTracker::XPBoostTracker_UpdateMemberCount
                    );
     cRam_? = '\x01';
   }
+  pOStack_4 = (Object__Class *)0x0;
   this_01 = (MVPlayer *)0x0;
   (this->fields).memberCount = 0;
-  pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar4 != (MVNetworkGame *)0x0) &&
-     (pMVar5 = (pMVar4->fields).playerContainer, pMVar5 != (MVPlayerContainer *)0x0)) {
+  pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+  if ((pMVar5 != (MVNetworkGame *)0x0) &&
+     (pMVar6 = (pMVar5->fields).playerContainer, pMVar6 != (MVPlayerContainer *)0x0)) {
     this_00 = (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-               *)MVPlayerContainer::MVPlayerContainer_get_ActivePlayers(pMVar5,(MethodInfo *)0x0);
+               *)MVPlayerContainer::MVPlayerContainer_get_ActivePlayers(pMVar6,(MethodInfo *)0x0);
     if (this_00 !=
         (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
          *)0x0) {
-      pDVar6 = mscorlib.dll::System::Collections::Generic::
+      pDVar7 = mscorlib.dll::System::Collections::Generic::
                Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
                StyleSheetCache+SheetHandleKey,System::Object]::
                Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
@@ -312,23 +310,23 @@ void Assembly-CSharp.dll::XPBoostTracker::XPBoostTracker_UpdateMemberCount
                            *)&stack0xffffffd4,this_00,
                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVPlayer>__GetEnumerator__
                          );
-      actorNr = pDVar6->_currentValue;
+      actorNr = pDVar7->_currentValue;
       uStack_1 = 1;
       while( true ) {
         do {
           do {
-            bVar7 = mscorlib.dll::System::Collections::Generic::
+            bVar8 = mscorlib.dll::System::Collections::Generic::
                     Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
                     UInt32,System::Object]::
                     Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
                               ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
-                                *)&pOStack_8,
+                                *)&pOStack_4,
                                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
                               );
-            if (bVar7 == 0) {
+            if (bVar8 == 0) {
               uStack_1 = 0xffffffff;
               mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                        ((Object *)&pOStack_8,
+                        ((Object *)&pOStack_4,
                          (ExceptionArgument__Enum)
                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__Dispose__
                          ,in_stack_9);
@@ -337,21 +335,21 @@ void Assembly-CSharp.dll::XPBoostTracker::XPBoostTracker_UpdateMemberCount
             }
           } while ((actorNr == (Object *)0x0) ||
                   (actorNr[6].klass == (Object__Class *)(this->fields).localActorNr));
-          pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-          if ((pMVar4 == (MVNetworkGame *)0x0) ||
-             (pMVar5 = (pMVar4->fields).playerContainer, pMVar5 == (MVPlayerContainer *)0x0))
+          pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if ((pMVar5 == (MVNetworkGame *)0x0) ||
+             (pMVar6 = (pMVar5->fields).playerContainer, pMVar6 == (MVPlayerContainer *)0x0))
           goto code_?;
           in_stack_9 = (MethodInfo *)0x0;
           actorNr = (Object *)actorNr[6].klass;
-          bVar7 = MVPlayerContainer::MVPlayerContainer_TryGetValue
-                            (pMVar5,(int32_t)actorNr,(MVPlayer **)&stack0xffffffe8,(MethodInfo *)0x0
+          bVar8 = MVPlayerContainer::MVPlayerContainer_TryGetValue
+                            (pMVar6,(int32_t)actorNr,(MVPlayer **)&stack0xffffffe8,(MethodInfo *)0x0
                             );
-        } while (bVar7 == 0);
+        } while (bVar8 == 0);
         if (this_01 == (MVPlayer *)0x0) break;
         pMVar10 = (MVPlayer *)0x0;
-        bVar7 = MVPlayer::MVPlayer_get_IsSubscriber(this_01,(MethodInfo *)0x0);
+        bVar8 = MVPlayer::MVPlayer_get_IsSubscriber(this_01,(MethodInfo *)0x0);
         this_01 = pMVar10;
-        if (bVar7 != 0) {
+        if (bVar8 != 0) {
           piVar11 = &(this->fields).memberCount;
           *piVar11 = *piVar11 + 1;
         }

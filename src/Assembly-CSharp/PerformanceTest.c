@@ -13,21 +13,21 @@ void Assembly-CSharp.dll::PerformanceTest::PerformanceTest_FixedUpdate
   }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if ((pMVar1 != (MVNetworkGame *)0x0) &&
-     (this_01 = (pMVar1->fields)._Peer_k__BackingField, this_01 != (PhotonPeer *)0x0)) {
+     (this_00 = (pMVar1->fields)._Peer_k__BackingField, this_00 != (PhotonPeer *)0x0)) {
     Photon3Unity3D.dll::ExitGames::Client::Photon::PhotonPeer::
-    PhotonPeer_get_ServerTimeInMilliSeconds(this_01,(MethodInfo *)0x0);
+    PhotonPeer_get_ServerTimeInMilliSeconds(this_00,(MethodInfo *)0x0);
     fVar2 = (this->fields).clientTime;
-    this_00 = &(this->fields).clientTime;
     fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
                       ((MethodInfo *)0x0);
-    piVar4 = &(this->fields).debuglogInterval;
-    *piVar4 = *piVar4 + 1;
-    *this_00 = fVar3 + fVar2;
-    if (0x3b < (this->fields).debuglogInterval) {
+    iVar4 = (this->fields).debuglogInterval + 1;
+    (this->fields).debuglogInterval = iVar4;
+    (this->fields).clientTime = fVar3 + fVar2;
+    if (0x3b < iVar4) {
       (this->fields).debuglogInterval = 0;
       pSVar5 = mscorlib.dll::System::Int32::Int32_ToString
                          ((Int32 *)&stack0xfffffff4,(MethodInfo *)0x0);
-      str3 = mscorlib.dll::System::Single::Single_ToString((Single *)this_00,(MethodInfo *)0x0);
+      str3 = mscorlib.dll::System::Single::Single_ToString
+                       ((Single *)&(this->fields).clientTime,(MethodInfo *)0x0);
       pSVar5 = mscorlib.dll::System::String::String_Concat_5
                          (StringLiteral_Servertime___,pSVar5,StringLiteral__clientTime__,str3,
                           (MethodInfo *)0x0);
@@ -137,20 +137,19 @@ Assembly-CSharp.dll::PerformanceTest::PerformanceTest_get_Instance(MethodInfo *m
       TypeInfo__PerformanceTest->static_fields->_instance = (PerformanceTest *)0x0;
     }
     else {
-      bVar5 = (TypeInfo__PerformanceTest->_1).naturalAligment;
-      if (((pPVar1->klass->_1).naturalAligment < bVar5) ||
-         ((pPVar1->klass->_1).typeHierarchy[bVar5 - 1] != (Il2CppClass *)TypeInfo__PerformanceTest))
-      {
-        bVar6 = false;
+      if (((pPVar1->klass->_1).naturalAligment < (TypeInfo__PerformanceTest->_1).naturalAligment) ||
+         ((pPVar1->klass->_1).typeHierarchy[(TypeInfo__PerformanceTest->_1).naturalAligment - 1] !=
+          (Il2CppClass *)TypeInfo__PerformanceTest)) {
+        bVar5 = false;
       }
       else {
-        bVar6 = true;
+        bVar5 = true;
       }
-      pPVar7 = (PerformanceTest *)0x0;
-      if (bVar6) {
-        pPVar7 = pPVar1;
+      pPVar6 = (PerformanceTest *)0x0;
+      if (bVar5) {
+        pPVar6 = pPVar1;
       }
-      TypeInfo__PerformanceTest->static_fields->_instance = pPVar7;
+      TypeInfo__PerformanceTest->static_fields->_instance = pPVar6;
     }
     func_?();
   }
@@ -172,8 +171,8 @@ Assembly-CSharp.dll::PerformanceTest::PerformanceTest_get_Instance(MethodInfo *m
                        ((RuntimeTypeHandle)pIVar3,(MethodInfo *)0x0);
     if (this == (GameObject *)0x0) {
       func_?();
-      pcVar8 = (code *)swi(3);
-      pPVar1 = (PerformanceTest *)(*pcVar8)();
+      pcVar7 = (code *)swi(3);
+      pPVar1 = (PerformanceTest *)(*pcVar7)();
       return pPVar1;
     }
     pPVar1 = (PerformanceTest *)
@@ -181,38 +180,36 @@ Assembly-CSharp.dll::PerformanceTest::PerformanceTest_get_Instance(MethodInfo *m
                        (this,pTVar4,(MethodInfo *)0x0);
     if (pPVar1 == (PerformanceTest *)0x0) {
       TypeInfo__PerformanceTest->static_fields->_instance = (PerformanceTest *)0x0;
-      pPStack9 = (PerformanceTest *)0x0;
+      pPStack8 = (PerformanceTest *)0x0;
     }
     else {
-      bVar5 = (TypeInfo__PerformanceTest->_1).naturalAligment;
-      if (((pPVar1->klass->_1).naturalAligment < bVar5) ||
-         ((pPVar1->klass->_1).typeHierarchy[bVar5 - 1] != (Il2CppClass *)TypeInfo__PerformanceTest))
-      {
-        bVar6 = false;
+      if (((pPVar1->klass->_1).naturalAligment < (TypeInfo__PerformanceTest->_1).naturalAligment) ||
+         ((pPVar1->klass->_1).typeHierarchy[(TypeInfo__PerformanceTest->_1).naturalAligment - 1] !=
+          (Il2CppClass *)TypeInfo__PerformanceTest)) {
+        bVar5 = false;
       }
       else {
-        bVar6 = true;
+        bVar5 = true;
       }
-      pPVar7 = (PerformanceTest *)0x0;
-      if (bVar6) {
-        pPVar7 = pPVar1;
+      pPVar6 = (PerformanceTest *)0x0;
+      if (bVar5) {
+        pPVar6 = pPVar1;
       }
-      TypeInfo__PerformanceTest->static_fields->_instance = pPVar7;
-      bVar5 = (TypeInfo__PerformanceTest->_1).naturalAligment;
-      if (((pPVar1->klass->_1).naturalAligment < bVar5) ||
-         ((pPVar1->klass->_1).typeHierarchy[bVar5 - 1] != (Il2CppClass *)TypeInfo__PerformanceTest))
-      {
-        bVar6 = false;
+      TypeInfo__PerformanceTest->static_fields->_instance = pPVar6;
+      if (((pPVar1->klass->_1).naturalAligment < (TypeInfo__PerformanceTest->_1).naturalAligment) ||
+         ((pPVar1->klass->_1).typeHierarchy[(TypeInfo__PerformanceTest->_1).naturalAligment - 1] !=
+          (Il2CppClass *)TypeInfo__PerformanceTest)) {
+        bVar5 = false;
       }
       else {
-        bVar6 = true;
+        bVar5 = true;
       }
-      pPStack9 = (PerformanceTest *)0x0;
-      if (bVar6) {
-        pPStack9 = pPVar1;
+      pPStack8 = (PerformanceTest *)0x0;
+      if (bVar5) {
+        pPStack8 = pPVar1;
       }
     }
-    pPStack10 = TypeInfo__PerformanceTest->static_fields;
+    pPStack9 = TypeInfo__PerformanceTest->static_fields;
     func_?();
   }
   return TypeInfo__PerformanceTest->static_fields->_instance;

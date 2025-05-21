@@ -126,13 +126,11 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_MobileAdManager_InterstitialAdRe,(MethodInfo *)0x0);
-  ppIVar1 = &(this->fields).adUIManager;
   (this->fields).context = context;
-  *ppIVar1 = adUIManager;
-  func_?(ppIVar1,adUIManager);
-  ppAVar2 = &(this->fields).interstitialCallback;
-  *ppAVar2 = interstitialCallback;
-  func_?(ppAVar2,interstitialCallback);
+  (this->fields).adUIManager = adUIManager;
+  func_?(&(this->fields).adUIManager,adUIManager);
+  (this->fields).interstitialCallback = interstitialCallback;
+  func_?(&(this->fields).interstitialCallback,interstitialCallback);
   return;
 }
 

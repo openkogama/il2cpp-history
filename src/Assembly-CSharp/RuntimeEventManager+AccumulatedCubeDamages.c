@@ -9,7 +9,7 @@ float Assembly-CSharp.dll::RuntimeEventManager+AccumulatedCubeDamages::
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__RuntimeEventManager_AccumulatedCubeDamages__AccumulatedCubeDamage);
-    func_?(0x144);
+    func_?(0xe264);
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>__ContainsKey_MV__WorldObject__IntVector_
                    );
@@ -205,7 +205,7 @@ void Assembly-CSharp.dll::RuntimeEventManager+AccumulatedCubeDamages::
       if (bVar18 == 0) break;
       auStack_9._18_2_ = iVar13;
       auStack_9._16_2_ = iVar12;
-      unique0x100002f2 = (Object *)pMVar15;
+      unique0x100002fe = (Object *)pMVar15;
       pOStack_19 = pOVar16;
       if (pOVar16 == (Object *)0x0) goto code_?;
       iVar12 = 0;
@@ -311,7 +311,7 @@ void Assembly-CSharp.dll::RuntimeEventManager+AccumulatedCubeDamages::
              MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_RuntimeEventManager_AccumulatedCubeDamages::AccumulatedCubeDamage>__Dictionary__
             );
   method_00 = (MethodInfo *)&this->fields;
-  ((RuntimeEventManager_AccumulatedCubeDamages__Fields *)method_00)->accumulatedCubeDamages =
+  (this->fields).accumulatedCubeDamages =
        (Dictionary_2_MV_WorldObject_IntVector_RuntimeEventManager_AccumulatedCubeDamages_AccumulatedCubeDamage_
         *)this_00;
   func_?(method_00,this_00);

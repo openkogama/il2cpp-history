@@ -59,8 +59,9 @@ ThreadSafeQueue_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__Dequeue
   uStack_1 = 1;
   mscorlib.dll::System::Threading::Monitor::Monitor_1_Enter_1(obj,&bStack_7,(MethodInfo *)0x0);
   if ((this->fields)._queue != (Queue_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
-    puVar8 = *(undefined4 **)(*(int *)(*(int *)(in_stack_5 + 0x10) + 0x60) + 0x14);
-    (*(code *)puVar8[2])(*puVar8,puVar8);
+    iVar8 = *(int *)(*(int *)(*(int *)(in_stack_5 + 0x10) + 0x60) + 0x14);
+    (**(code **)(iVar8 + 8))
+              (**(undefined4 **)(*(int *)(*(int *)(in_stack_5 + 0x10) + 0x60) + 0x14),iVar8);
     func_?();
     uStack_1 = 0xffffffff;
     if (bStack_7 != 0) {
@@ -102,13 +103,14 @@ void Assembly-CSharp.dll::ThreadSafeQueue`1[Unity::IL2CPP::Metadata::__Il2CppFul
   pQVar6 = (this->fields)._queue;
   func_?();
   if (pQVar6 != (Queue_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
-    pIVar7 = pMVar1->klass->rgctx_data;
-    puVar8 = &stack0xffffffcc;
-    if (-1 < (int)(pIVar7[6].method)->return_type) {
-      puVar8 = puVar5;
+    puVar7 = &stack0xffffffcc;
+    if (-1 < (int)(pMVar1->klass->rgctx_data[6].method)->return_type) {
+      puVar7 = puVar5;
     }
-    pMVar1 = pIVar7[7].method;
-    (*pMVar1->invoker_method)(pMVar1->methodPointer,pMVar1,pQVar6,(void **)&stack0xffffffe8,puVar8);
+    pMVar8 = pMVar1->klass->rgctx_data[7].method;
+    (*pMVar8->invoker_method)
+              ((pMVar1->klass->rgctx_data[7].method)->methodPointer,pMVar8,pQVar6,
+               (void **)&stack0xffffffe8,puVar7);
     uStack_2 = 0xffffffff;
     if (method._3_1_ != '\0') {
       mscorlib.dll::System::Threading::Monitor::Monitor_1_Exit(obj,(MethodInfo *)0x0);
@@ -148,8 +150,9 @@ ThreadSafeQueue_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__Peek
   uStack_1 = 1;
   mscorlib.dll::System::Threading::Monitor::Monitor_1_Enter_1(obj,&bStack_7,(MethodInfo *)0x0);
   if ((this->fields)._queue != (Queue_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
-    puVar8 = *(undefined4 **)(*(int *)(*(int *)(in_stack_5 + 0x10) + 0x60) + 0x20);
-    (*(code *)puVar8[2])(*puVar8,puVar8);
+    iVar8 = *(int *)(*(int *)(*(int *)(in_stack_5 + 0x10) + 0x60) + 0x20);
+    (**(code **)(iVar8 + 8))
+              (**(undefined4 **)(*(int *)(*(int *)(in_stack_5 + 0x10) + 0x60) + 0x20),iVar8);
     func_?();
     uStack_1 = 0xffffffff;
     if (bStack_7 != 0) {
@@ -185,7 +188,7 @@ void Assembly-CSharp.dll::ThreadSafeQueue`1[Unity::IL2CPP::Metadata::__Il2CppFul
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   pMVar1 = (MethodInfo *)&(this->fields)._lock;
-  *(Object **)pMVar1 = value;
+  (this->fields)._lock = value;
   func_?(pMVar1,value);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,pMVar1);

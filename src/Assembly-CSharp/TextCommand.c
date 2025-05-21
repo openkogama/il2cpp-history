@@ -154,36 +154,35 @@ void Assembly-CSharp.dll::TextCommand::TextCommand_Resolve(String *commandLine,M
     command = (TextCommand_Command *)func_?();
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
               ((Object *)command,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-    pTVar2 = &command->fields;
-    pTVar2->commandComponents = pSVar1;
-    func_?(pTVar2,pSVar1);
-    pSVar1 = pTVar2->commandComponents;
+    (command->fields).commandComponents = pSVar1;
+    func_?(&command->fields,pSVar1);
+    pSVar1 = (command->fields).commandComponents;
     if (pSVar1 != (String__Array *)0x0) {
       if (pSVar1->max_length == 0) goto code_?;
       if (pSVar1->vector[0] != (String *)0x0) {
-        pSVar3 = mscorlib.dll::System::String::String_ToLower(pSVar1->vector[0],(MethodInfo *)0x0);
-        bVar4 = mscorlib.dll::System::String::String_op_Equality
-                          (pSVar3,StringLiteral__abctest,(MethodInfo *)0x0);
-        if (bVar4 != 0) {
+        pSVar2 = mscorlib.dll::System::String::String_ToLower(pSVar1->vector[0],(MethodInfo *)0x0);
+        bVar3 = mscorlib.dll::System::String::String_op_Equality
+                          (pSVar2,StringLiteral__abctest,(MethodInfo *)0x0);
+        if (bVar3 != 0) {
 code_?:
           TextCommand_Command_AssetBundleCacheTest(command,(MethodInfo *)0x0);
           return;
         }
-        bVar4 = mscorlib.dll::System::String::String_op_Equality
-                          (pSVar3,StringLiteral__assetbundlecachetest,(MethodInfo *)0x0);
-        if (bVar4 != 0) goto code_?;
+        bVar3 = mscorlib.dll::System::String::String_op_Equality
+                          (pSVar2,StringLiteral__assetbundlecachetest,(MethodInfo *)0x0);
+        if (bVar3 != 0) goto code_?;
         if (cRam_? == '\0') {
           func_?(&StringLiteral__0__is_not_a_valid_command_);
           cRam_? = '\x01';
         }
-        pSVar1 = pTVar2->commandComponents;
+        pSVar1 = (command->fields).commandComponents;
         if (pSVar1 != (String__Array *)0x0) {
           if (pSVar1->max_length != 0) {
-            pSVar3 = mscorlib.dll::System::String::String_Format
+            pSVar2 = mscorlib.dll::System::String::String_Format
                                (StringLiteral__0__is_not_a_valid_command_,
                                 (Object *)pSVar1->vector[0],(MethodInfo *)0x0);
             MVGameControllerBase::MVGameControllerBase_PostGameMsg_1
-                      (MVGameMsgType__Enum_AdminMsg,pSVar3,(MethodInfo *)0x0);
+                      (MVGameMsgType__Enum_AdminMsg,pSVar2,(MethodInfo *)0x0);
             return;
           }
           goto code_?;
@@ -194,8 +193,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

@@ -29,9 +29,8 @@ bool Assembly-CSharp.dll::HackingToolDetector+<HandleReports>d__30::
              func_?(TypeInfo__UnityEngine__WaitForSeconds);
     SubscribableVariable`1[System::Single]::SubscribableVariable_1_System_Single___ctor
               (pSVar3,1.0,(MethodInfo *)0x0);
-    ppOVar4 = &(this->fields).__2__current;
-    *ppOVar4 = (Object *)pSVar3;
-    func_?(ppOVar4,pSVar3);
+    (this->fields).__2__current = (Object *)pSVar3;
+    func_?(&(this->fields).__2__current,pSVar3);
     (this->fields).__1__state = 1;
     return 1;
   }
@@ -40,41 +39,40 @@ bool Assembly-CSharp.dll::HackingToolDetector+<HandleReports>d__30::
   }
   (this->fields).__1__state = -1;
   if (this_00 != (HackingToolDetector *)0x0) {
-    bVar5 = HackingToolDetector::HackingToolDetector_get_QuitRequest(this_00,(MethodInfo *)0x0);
-    if (bVar5 != 0) {
+    bVar4 = HackingToolDetector::HackingToolDetector_get_QuitRequest(this_00,(MethodInfo *)0x0);
+    if (bVar4 != 0) {
       return 0;
     }
-    while (pTVar6 = (this_00->fields).detectedHackingTools,
-          pTVar6 != (ThreadSafeQueue_1_HackingToolDetector_HackingToolReport_ *)0x0) {
-      iVar7 = ThreadSafeQueue`1[System::Object]::ThreadSafeQueue_1_System_Object__get_Count
-                        ((ThreadSafeQueue_1_System_Object_ *)pTVar6,
+    while (pTVar5 = (this_00->fields).detectedHackingTools,
+          pTVar5 != (ThreadSafeQueue_1_HackingToolDetector_HackingToolReport_ *)0x0) {
+      iVar6 = ThreadSafeQueue`1[System::Object]::ThreadSafeQueue_1_System_Object__get_Count
+                        ((ThreadSafeQueue_1_System_Object_ *)pTVar5,
                          MethodInfo__ThreadSafeQueue<HackingToolDetector::HackingToolReport>__get_Count__
                         );
-      if (iVar7 < 1) {
+      if (iVar6 < 1) {
         fVar2 = (this->fields)._waitDuration_5__2;
         pSVar3 = (SubscribableVariable_1_System_Single_ *)func_?();
         SubscribableVariable`1[System::Single]::SubscribableVariable_1_System_Single___ctor
                   (pSVar3,fVar2,(MethodInfo *)0x0);
-        ppOVar4 = &(this->fields).__2__current;
-        *ppOVar4 = (Object *)pSVar3;
-        func_?(ppOVar4);
+        (this->fields).__2__current = (Object *)pSVar3;
+        func_?(&(this->fields).__2__current);
         (this->fields).__1__state = 2;
         return 1;
       }
-      pTVar6 = (this_00->fields).detectedHackingTools;
-      if (pTVar6 == (ThreadSafeQueue_1_HackingToolDetector_HackingToolReport_ *)0x0) break;
+      pTVar5 = (this_00->fields).detectedHackingTools;
+      if (pTVar5 == (ThreadSafeQueue_1_HackingToolDetector_HackingToolReport_ *)0x0) break;
       ThreadSafeQueue`1[System::Object]::ThreadSafeQueue_1_System_Object__Dequeue
-                ((ThreadSafeQueue_1_System_Object_ *)pTVar6,
+                ((ThreadSafeQueue_1_System_Object_ *)pTVar5,
                  MethodInfo__ThreadSafeQueue<HackingToolDetector::HackingToolReport>__Dequeue__);
-      pAVar8 = (this_00->fields).onHackToolDetected;
-      if (pAVar8 == (Action_1_HackingToolDetector_HackingToolReport_ *)0x0) break;
-      (*(pAVar8->fields)._._.invoke_impl)();
+      pAVar7 = (this_00->fields).onHackToolDetected;
+      if (pAVar7 == (Action_1_HackingToolDetector_HackingToolReport_ *)0x0) break;
+      (*(pAVar7->fields)._._.invoke_impl)();
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  bVar5 = (*pcVar9)();
-  return bVar5;
+  pcVar8 = (code *)swi(3);
+  bVar4 = (*pcVar8)();
+  return bVar4;
 }
 
 

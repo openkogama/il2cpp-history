@@ -32,8 +32,8 @@ bool Assembly-CSharp.dll::AudioOnOffComponent+<Fader>d__13::AudioOnOffComponent_
     }
     (this->fields).__1__state = -1;
   }
-  fVar3 = (this->fields)._counter_5__2;
-  if (_UNK_? <= fVar3) {
+  pfVar4 = &(this->fields)._counter_5__2;
+  if (_UNK_? < *pfVar4 || _UNK_? == *pfVar4) {
     if (this_00 != (AudioOnOffComponent *)0x0) {
       fVar3 = (this->fields)._fadeToNum_5__4;
       pAVar2 = (this_00->fields).onOffAudioSource;
@@ -41,12 +41,12 @@ bool Assembly-CSharp.dll::AudioOnOffComponent+<Fader>d__13::AudioOnOffComponent_
       if (pAVar2 != (AudioSource *)0x0) {
         UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_pitch
                   (pAVar2,fVar3,(MethodInfo *)0x0);
-        pSVar4 = mscorlib.dll::System::Single::Single_ToString
+        pSVar5 = mscorlib.dll::System::Single::Single_ToString
                            ((Single *)&(this_00->fields).fadeNum,(MethodInfo *)0x0);
-        pSVar4 = mscorlib.dll::System::String::String_Concat_3
-                           (StringLiteral_End__,pSVar4,(MethodInfo *)0x0);
+        pSVar5 = mscorlib.dll::System::String::String_Concat_3
+                           (StringLiteral_End__,pSVar5,(MethodInfo *)0x0);
         UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_print
-                  ((Object *)pSVar4,(MethodInfo *)0x0);
+                  ((Object *)pSVar5,(MethodInfo *)0x0);
         routine = AudioOnOffComponent::AudioOnOffComponent_Fader
                             (this_00,(this->fields).minEndPoint,(this->fields).maxEndPoint,
                              (MethodInfo *)0x0);
@@ -57,7 +57,8 @@ bool Assembly-CSharp.dll::AudioOnOffComponent+<Fader>d__13::AudioOnOffComponent_
     }
   }
   else {
-    fVar5 = (this->fields)._startFade_5__3;
+    fVar3 = (this->fields)._counter_5__2;
+    fVar6 = (this->fields)._startFade_5__3;
     if (fVar3 < 0.0) {
       fVar3 = 0.0;
     }
@@ -65,22 +66,21 @@ bool Assembly-CSharp.dll::AudioOnOffComponent+<Fader>d__13::AudioOnOffComponent_
       fVar3 = _UNK_?;
     }
     if (this_00 != (AudioOnOffComponent *)0x0) {
-      (this_00->fields).fadeNum = ((this->fields)._fadeToNum_5__4 - fVar5) * fVar3 + fVar5;
-      pOVar6 = (Object *)func_?();
+      (this_00->fields).fadeNum = ((this->fields)._fadeToNum_5__4 - fVar6) * fVar3 + fVar6;
+      pOVar7 = (Object *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_print
-                (pOVar6,(MethodInfo *)0x0);
+                (pOVar7,(MethodInfo *)0x0);
       pAVar2 = (this_00->fields).onOffAudioSource;
       if (pAVar2 != (AudioSource *)0x0) {
         UnityEngine.AudioModule.dll::UnityEngine::AudioSource::AudioSource_set_pitch
                   (pAVar2,(this_00->fields).fadeNum,(MethodInfo *)0x0);
         fVar3 = (this->fields)._counter_5__2;
-        fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
+        fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
                           ((MethodInfo *)0x0);
-        (this->fields)._counter_5__2 = fVar5 * (this_00->fields).fadeSpeed + fVar3;
-        pOVar6 = (Object *)func_?();
-        ppOVar7 = &(this->fields).__2__current;
-        *ppOVar7 = pOVar6;
-        func_?(ppOVar7);
+        (this->fields)._counter_5__2 = fVar6 * (this_00->fields).fadeSpeed + fVar3;
+        pOVar7 = (Object *)func_?();
+        (this->fields).__2__current = pOVar7;
+        func_?(&(this->fields).__2__current);
         (this->fields).__1__state = 1;
         return 1;
       }

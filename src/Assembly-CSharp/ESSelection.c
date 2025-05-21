@@ -111,11 +111,11 @@ void Assembly-CSharp.dll::ESSelection::ESSelection_Enter
     this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(e->fields)._.data;
     if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
       bVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-               UIElements::TextureId]::
-               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                         (this_00,(Object *)StringLiteral_FromTranslateState,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                         );
+              UIElements::TextureId]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+                        (this_00,(Object *)StringLiteral_FromTranslateState,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                        );
       if (bVar5 != 0) {
         bVar5 = EditorStateMachine::EditorStateMachine_get_ParentGroupIsRoot(e,(MethodInfo *)0x0);
         if (bVar5 != 0) {
@@ -147,8 +147,7 @@ void Assembly-CSharp.dll::ESSelection::ESSelection_Enter
           in_stack_10 = (EditorStateMachine *)0x0;
           in_stack_11 = &UNK_?;
           in_stack_12 = e;
-          bVar5 = EditorStateMachine::EditorStateMachine_get_ParentGroupIsRoot(e,(MethodInfo *)0x0)
-          ;
+          bVar5 = EditorStateMachine::EditorStateMachine_get_ParentGroupIsRoot(e,(MethodInfo *)0x0);
           if (bVar5 != 0) {
             VStack_13.z = 6.5861e-44;
             in_stack_14 = (Object *)func_?();
@@ -161,10 +160,11 @@ void Assembly-CSharp.dll::ESSelection::ESSelection_Enter
         }
       }
       ppEVar16 = &(this->fields).editorStateMachine;
-      *ppEVar16 = e;
+      (this->fields).editorStateMachine = e;
       func_?();
-      if (*ppEVar16 != (EditorStateMachine *)0x0) {
-        pSVar17 = ((*ppEVar16)->fields).selectionController;
+      pEVar17 = (this->fields).editorStateMachine;
+      if (pEVar17 != (EditorStateMachine *)0x0) {
+        pSVar18 = (pEVar17->fields).selectionController;
         this_04 = (EventHandler_1_Object_ *)
                   func_?(TypeInfo__System__EventHandler<WorldObjectDestroyedEventArgs>);
         VStack_13.z = (float)this_04;
@@ -172,10 +172,9 @@ void Assembly-CSharp.dll::ESSelection::ESSelection_Enter
                   (this_04,(Object *)this,
                    MethodInfo__ESSelection__SelectionController_SelectedWorldObjectDeletedHandler_System__Object__WorldObjectDestroyedEventArgs_
                    ,(MethodInfo *)0x0);
-        if (pSVar17 != (SelectionController *)0x0) {
-          func_?(0,TypeInfo__ISelectionController,pSVar17,VStack_13.z);
-          bVar5 = EditorStateMachine::EditorStateMachine_get_ParentGroupIsRoot(e,(MethodInfo *)0x0)
-          ;
+        if (pSVar18 != (SelectionController *)0x0) {
+          func_?(0,TypeInfo__ISelectionController,pSVar18,VStack_13.z);
+          bVar5 = EditorStateMachine::EditorStateMachine_get_ParentGroupIsRoot(e,(MethodInfo *)0x0);
           if ((bVar5 == 0) && (!bVar4)) {
             this_02 = (e->fields).weCamera;
             if (this_02 == (MainCameraManager *)0x0) goto code_?;
@@ -183,22 +182,22 @@ void Assembly-CSharp.dll::ESSelection::ESSelection_Enter
           }
           func_?(&stack0xffffff5c,0,0x48);
           bVar5 = EditModeObjectPicker::EditModeObjectPicker_Pick
-                             ((VoxelHit *)&stack0xffffff5c,(HashSet_1_System_Int32_ *)0x0,-0x40005,
-                              (MethodInfo *)0x0);
+                            ((VoxelHit *)&stack0xffffff5c,(HashSet_1_System_Int32_ *)0x0,-0x40005,
+                             (MethodInfo *)0x0);
           if (bVar5 != 0) {
-            puVar18 = in_stack_8;
-            puVar19 = in_stack_9;
-            puVar20 = in_stack_11;
-            pEVar21 = in_stack_12;
+            puVar19 = in_stack_8;
+            puVar20 = in_stack_9;
+            puVar21 = in_stack_11;
+            pEVar17 = in_stack_12;
             pEVar22 = in_stack_10;
             pOVar6 = in_stack_14;
             uVar23 = in_stack_15;
             if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
               func_?(TypeInfo__MVInputWrapper);
-              puVar18 = in_stack_8;
-              puVar19 = in_stack_9;
-              puVar20 = in_stack_11;
-              pEVar21 = in_stack_12;
+              puVar19 = in_stack_8;
+              puVar20 = in_stack_9;
+              puVar21 = in_stack_11;
+              pEVar17 = in_stack_12;
               pEVar22 = in_stack_10;
               pOVar6 = in_stack_14;
               uVar23 = in_stack_15;
@@ -209,10 +208,10 @@ void Assembly-CSharp.dll::ESSelection::ESSelection_Enter
             VStack_25.z = pVVar24->y;
             fVar26 = pVVar24->z;
             VStack_13._4_8_ = iStack_27;
-            in_stack_8 = puVar18;
-            in_stack_9 = puVar19;
-            in_stack_11 = puVar20;
-            in_stack_12 = pEVar21;
+            in_stack_8 = puVar19;
+            in_stack_9 = puVar20;
+            in_stack_11 = puVar21;
+            in_stack_12 = pEVar17;
             in_stack_10 = pEVar22;
             in_stack_14 = pOVar6;
             in_stack_15 = uVar23;
@@ -222,36 +221,33 @@ void Assembly-CSharp.dll::ESSelection::ESSelection_Enter
                                 (pMVar28,0xADDR,(MethodInfo *)0x0);
             pEVar30 = (ESSelection_PickResult_1_WorldObjectClientRef_ *)
                       func_?(TypeInfo__ESSelection__PickResult<WorldObjectClientRef>);
-            func_?(pEVar30,VStack_25._4_8_,fVar26,pEVar1,puVar18,puVar19,puVar20,pEVar21,
+            func_?(pEVar30,VStack_25._4_8_,fVar26,pEVar1,puVar19,puVar20,puVar21,pEVar17,
                             pEVar22,pOVar6,uVar23,iStack_31,uStack_32,&UNK_?,ppEVar16,e,
                             pCStack_33,pTStack_34,uStack_35,VStack_13._4_8_,pWVar29,
                             MethodInfo__ESSelection__PickResult<WorldObjectClientRef>__PickResult_UnityEngine__Vector3__VoxelHit__WorldObjectClientRef_
                            );
-            ppEVar36 = &(this->fields).pickedTarget;
-            *ppEVar36 = pEVar30;
-            func_?(ppEVar36,pEVar30);
+            (this->fields).pickedTarget = pEVar30;
+            func_?(&(this->fields).pickedTarget,pEVar30);
             pMVar3 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO
-                                (e,(MethodInfo *)0x0);
+                               (e,(MethodInfo *)0x0);
             if (pMVar3 == (MVWorldObjectClient *)0x0) {
               pWVar29 = MVWorldObjectClientManager::
                         MVWorldObjectClientManager_GetWorldObjectClientRefNullRef((MethodInfo *)0x0)
               ;
-              ppWVar37 = &(this->fields).selectedWorldObject;
-              *ppWVar37 = pWVar29;
-              func_?(ppWVar37,pWVar29);
+              (this->fields).selectedWorldObject = pWVar29;
+              func_?(&(this->fields).selectedWorldObject,pWVar29);
             }
             else {
               pMVar28 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
               pMVar3 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO
-                                  (e,(MethodInfo *)0x0);
+                                 (e,(MethodInfo *)0x0);
               if ((pMVar3 == (MVWorldObjectClient *)0x0) ||
                  (pMVar28 == (MVWorldObjectClientManager *)0x0)) goto code_?;
               pWVar29 = MVWorldObjectClientManager::
                         MVWorldObjectClientManager_GetWorldObjectClientRef
                                   (pMVar28,(pMVar3->fields)._.id,(MethodInfo *)0x0);
-              ppWVar37 = &(this->fields).selectedWorldObject;
-              *ppWVar37 = pWVar29;
-              func_?(ppWVar37,pWVar29);
+              (this->fields).selectedWorldObject = pWVar29;
+              func_?(&(this->fields).selectedWorldObject,pWVar29);
             }
           }
           x = ESSelection_GetLinkHit(this,e,(VoxelHit *)&stack0xffffff5c,(MethodInfo *)0x0);
@@ -259,9 +255,9 @@ void Assembly-CSharp.dll::ESSelection::ESSelection_Enter
             func_?();
           }
           bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                             ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
+                            ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
           if (bVar5 == 0) {
-            pEVar38 = (ESSelection_PickResult_1_LinkObjectBase_ *)0x0;
+            pEVar36 = (ESSelection_PickResult_1_LinkObjectBase_ *)0x0;
           }
           else {
             if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
@@ -269,20 +265,19 @@ void Assembly-CSharp.dll::ESSelection::ESSelection_Enter
             }
             pVVar24 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_get_mousePosition
                                 (&VStack_25,(MethodInfo *)0x0);
-            pEVar39 = TypeInfo__ESSelection__PickResult<LinkObjectBase>;
+            pEVar37 = TypeInfo__ESSelection__PickResult<LinkObjectBase>;
             VStack_13.y = pVVar24->x;
             VStack_13.z = pVVar24->y;
             fVar26 = pVVar24->z;
             VStack_25._4_8_ = iStack_27;
-            pEVar38 = (ESSelection_PickResult_1_LinkObjectBase_ *)func_?();
-            func_?(pEVar38,VStack_13._4_8_,fVar26,pEVar39,in_stack_8,in_stack_9
+            pEVar36 = (ESSelection_PickResult_1_LinkObjectBase_ *)func_?();
+            func_?(pEVar36,VStack_13._4_8_,fVar26,pEVar37,in_stack_8,in_stack_9
                             ,in_stack_11,in_stack_12,in_stack_10,in_stack_14
                             ,in_stack_15,iStack_31,uStack_32,&UNK_?,ppEVar16,e,
                             pCStack_33,pTStack_34,uStack_35,VStack_25._4_8_);
           }
-          ppEVar40 = &(this->fields).pickedLink;
-          *ppEVar40 = pEVar38;
-          func_?(ppEVar40);
+          (this->fields).pickedLink = pEVar36;
+          func_?(&(this->fields).pickedLink);
           return;
         }
       }
@@ -290,8 +285,8 @@ void Assembly-CSharp.dll::ESSelection::ESSelection_Enter
   }
 code_?:
   func_?();
-  pcVar41 = (code *)swi(3);
-  (*pcVar41)();
+  pcVar38 = (code *)swi(3);
+  (*pcVar38)();
   return;
 }
 
@@ -427,19 +422,18 @@ code_?:
           ESStateBase::ESStateBase_TintObjectsOnMouseOver_1
                     ((ESStateBase *)this_02,e_00,(bool)e,hit,in_stack_25);
         }
-        pEVar26 = (this_02->fields).pickedTarget;
-        if (pEVar26 != (ESSelection_PickResult_1_WorldObjectClientRef_ *)0x0) {
-          this_01 = (pEVar26->fields).data;
+        if ((this_02->fields).pickedTarget != (ESSelection_PickResult_1_WorldObjectClientRef_ *)0x0)
+        {
+          this_01 = (((this_02->fields).pickedTarget)->fields).data;
           if (this_01 == (WorldObjectClientRef *)0x0) goto code_?;
-          pOVar27 = WorldObjectClientRef`1[System::Object]::
+          pOVar26 = WorldObjectClientRef`1[System::Object]::
                     WorldObjectClientRef_1_System_Object__get_WorldObjectClient
                               ((WorldObjectClientRef_1_System_Object_ *)this_01,
                                MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
                               );
-          if (pOVar27 == (Object *)0x0) {
-            ppEVar28 = &(this_02->fields).pickedTarget;
-            *ppEVar28 = (ESSelection_PickResult_1_WorldObjectClientRef_ *)0x0;
-            func_?(ppEVar28,0);
+          if (pOVar26 == (Object *)0x0) {
+            (this_02->fields).pickedTarget = (ESSelection_PickResult_1_WorldObjectClientRef_ *)0x0;
+            func_?(&(this_02->fields).pickedTarget,0);
           }
         }
         if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
@@ -491,12 +485,12 @@ code_?:
           }
           fVar9 = 0.0;
           fVar6 = 8.40779e-45;
-          puVar29 = &UNK_?;
+          puVar27 = &UNK_?;
           bVar3 = MVInputWrapper::MVInputWrapper_GetBooleanControlDown
                             (KogamaControls__Enum_PointerSelectAlt,(MethodInfo *)0x0);
           if (bVar3 != 0) {
             targetHit_00.point.y = fVar6;
-            targetHit_00.point.x = (float)puVar29;
+            targetHit_00.point.x = (float)puVar27;
             targetHit_00.point.z = fVar9;
             targetHit_00.normal.x = fVar4;
             targetHit_00.normal.y = 0.0;
@@ -542,23 +536,24 @@ code_?:
             cRam_? = '\x01';
           }
           if ((bVar3 != 0) &&
-             (pEVar26 = (this_02->fields).pickedTarget,
-             pEVar26 != (ESSelection_PickResult_1_WorldObjectClientRef_ *)0x0)) {
-            uStack_30._0_4_ = (pEVar26->fields).mousePosition.x;
-            uStack_30._4_4_ = (pEVar26->fields).mousePosition.y;
-            fStack_31 = (pEVar26->fields).mousePosition.z;
+             ((this_02->fields).pickedTarget !=
+              (ESSelection_PickResult_1_WorldObjectClientRef_ *)0x0)) {
+            pEVar28 = (this_02->fields).pickedTarget;
+            uStack_29._0_4_ = (pEVar28->fields).mousePosition.x;
+            uStack_29._4_4_ = (pEVar28->fields).mousePosition.y;
+            fStack_30 = (pEVar28->fields).mousePosition.z;
             if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
-            pVVar32 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_get_mousePosition
-                                (&VStack_33,(MethodInfo *)0x0);
-            uVar34 = pVVar32->x;
-            uVar35 = pVVar32->y;
-            fStack_36 = fStack_31 - pVVar32->z;
-            uStack_37 = CONCAT44(uStack_30._4_4_ - (float)uVar35,(float)uStack_30 - (float)uVar34);
-            fStack_31 = fStack_36;
-            fVar38 = (float10)func_?(&uStack_37);
-            e = (EditorStateMachine *)(float)fVar38;
+            pVVar31 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_get_mousePosition
+                                (&VStack_32,(MethodInfo *)0x0);
+            uVar33 = pVVar31->x;
+            uVar34 = pVVar31->y;
+            fStack_35 = fStack_30 - pVVar31->z;
+            uStack_36 = CONCAT44(uStack_29._4_4_ - (float)uVar34,(float)uStack_29 - (float)uVar33);
+            fStack_30 = fStack_35;
+            fVar37 = (float10)func_?(&uStack_36);
+            e = (EditorStateMachine *)(float)fVar37;
             if ((float)e <= _UNK_?) {
               if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
                 func_?(TypeInfo__MVInputWrapper);
@@ -571,22 +566,22 @@ code_?:
               }
             }
             if (e_00 != (EditorStateMachine *)0x0) {
-              pDVar39 = (e_00->fields)._.data;
+              pDVar38 = (e_00->fields)._.data;
               this = (ESSelection *)0x0;
-              pOVar27 = (Object *)func_?(TypeInfo__TranslateMode,&this);
-              if (pDVar39 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+              pOVar26 = (Object *)func_?(TypeInfo__TranslateMode,&this);
+              if (pDVar38 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
                 Object]::Dictionary_2_System_Object_System_Object__Add
-                          (pDVar39,(Object *)StringLiteral_translateMode,pOVar27,
+                          (pDVar38,(Object *)StringLiteral_translateMode,pOVar26,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                           );
-                pDVar39 = (e_00->fields)._.data;
+                pDVar38 = (e_00->fields)._.data;
                 e = (EditorStateMachine *)CONCAT13(1,e._0_3_);
-                pOVar27 = (Object *)func_?(TypeInfo__System__Boolean,(int)&e + 3);
-                if (pDVar39 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+                pOVar26 = (Object *)func_?(TypeInfo__System__Boolean,(int)&e + 3);
+                if (pDVar38 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
                   Object]::Dictionary_2_System_Object_System_Object__Add
-                            (pDVar39,(Object *)StringLiteral_moveWithAvatar,pOVar27,
+                            (pDVar38,(Object *)StringLiteral_moveWithAvatar,pOVar26,
                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
                             );
                   FSMEntity::FSMEntity_PushState
@@ -1021,47 +1016,48 @@ void Assembly-CSharp.dll::ESSelection::ESSelection_HandleLeftClickDownSelection
                     targetHit.distance,targetHit.collider,targetHit.transform,targetHit._60_4_,
                     targetHit.interactionFlags);
     method_00 = (MethodInfo *)((ulonglong)targetHit.interactionFlags >> 0x20);
-    ppEVar6 = &(this->fields).pickedTarget;
-    *ppEVar6 = pEVar5;
-    func_?(ppEVar6,pEVar5);
+    (this->fields).pickedTarget = pEVar5;
+    func_?(&(this->fields).pickedTarget,pEVar5);
     if (e != (EditorStateMachine *)0x0) {
       this_01 = (HashSet_1_System_UInt32_ *)
                 MVJetPack+LocalObjectsJetPack::MVJetPack_LocalObjectsJetPack_get_Id
                           ((MVJetPack_LocalObjectsJetPack *)e,(MethodInfo *)0x0);
-      if ((*ppEVar6 != (ESSelection_PickResult_1_WorldObjectClientRef_ *)0x0) &&
+      pEVar5 = (this->fields).pickedTarget;
+      if ((pEVar5 != (ESSelection_PickResult_1_WorldObjectClientRef_ *)0x0) &&
          (this_01 != (HashSet_1_System_UInt32_ *)0x0)) {
-        bVar7 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
+        bVar6 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
                 HashSet_1_System_UInt32__Contains
-                          (this_01,((*ppEVar6)->fields).hit.woId,
+                          (this_01,(pEVar5->fields).hit.woId,
                            MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
-        _woPickSuccess = CONCAT31(in_stack_8,bVar7);
-        if ((*ppEVar6 != (ESSelection_PickResult_1_WorldObjectClientRef_ *)0x0) &&
-           ((pWVar9 = ((*ppEVar6)->fields).data, pWVar9 != (WorldObjectClientRef *)0x0 &&
-            (pOVar10 = WorldObjectClientRef`1[System::Object]::
+        _woPickSuccess = CONCAT31(in_stack_7,bVar6);
+        pEVar5 = (this->fields).pickedTarget;
+        if ((pEVar5 != (ESSelection_PickResult_1_WorldObjectClientRef_ *)0x0) &&
+           ((pWVar8 = (pEVar5->fields).data, pWVar8 != (WorldObjectClientRef *)0x0 &&
+            (pOVar9 = WorldObjectClientRef`1[System::Object]::
                       WorldObjectClientRef_1_System_Object__get_WorldObjectClient
-                                ((WorldObjectClientRef_1_System_Object_ *)pWVar9,
+                                ((WorldObjectClientRef_1_System_Object_ *)pWVar8,
                                  MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
-                                ), pOVar10 != (Object *)0x0)))) {
-          pOVar11 = pOVar10[0x17].klass;
-          if ((*ppEVar6 != (ESSelection_PickResult_1_WorldObjectClientRef_ *)0x0) &&
-             ((pWVar9 = ((*ppEVar6)->fields).data, pWVar9 != (WorldObjectClientRef *)0x0 &&
-              (pOVar10 = WorldObjectClientRef`1[System::Object]::
+                                ), pOVar9 != (Object *)0x0)))) {
+          pOVar10 = pOVar9[0x17].klass;
+          pEVar5 = (this->fields).pickedTarget;
+          if ((pEVar5 != (ESSelection_PickResult_1_WorldObjectClientRef_ *)0x0) &&
+             ((pWVar8 = (pEVar5->fields).data, pWVar8 != (WorldObjectClientRef *)0x0 &&
+              (pOVar9 = WorldObjectClientRef`1[System::Object]::
                         WorldObjectClientRef_1_System_Object__get_WorldObjectClient
-                                  ((WorldObjectClientRef_1_System_Object_ *)pWVar9,
+                                  ((WorldObjectClientRef_1_System_Object_ *)pWVar8,
                                    MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
-                                  ), pOVar10 != (Object *)0x0)))) {
-            if ((((uint)pOVar11 & 0x20) == 0) || (((uint)pOVar10[0x17].klass & 0x10) != 0)) {
-              pEVar5 = *ppEVar6;
+                                  ), pOVar9 != (Object *)0x0)))) {
+            if ((((uint)pOVar10 & 0x20) == 0) || (((uint)pOVar9[0x17].klass & 0x10) != 0)) {
+              pEVar5 = (this->fields).pickedTarget;
               if (pEVar5 == (ESSelection_PickResult_1_WorldObjectClientRef_ *)0x0)
               goto code_?;
               hit.interactionFlags._0_4_ =
                    (int)((ulonglong)(pEVar5->fields).hit.interactionFlags >> 0x20);
               hit._0_64_ = *(undefined1 (*) [64])&(pEVar5->fields).hit.point.y;
               hit.interactionFlags._4_4_ = _woPickSuccess;
-              pWVar9 = EditorStateMachine::EditorStateMachine_Select_1(e,hit,0,method_00);
-              ppWVar12 = &(this->fields).selectedWorldObject;
-              *ppWVar12 = pWVar9;
-              func_?(ppWVar12);
+              pWVar8 = EditorStateMachine::EditorStateMachine_Select_1(e,hit,0,method_00);
+              (this->fields).selectedWorldObject = pWVar8;
+              func_?(&(this->fields).selectedWorldObject);
             }
             return;
           }
@@ -1071,8 +1067,8 @@ void Assembly-CSharp.dll::ESSelection::ESSelection_HandleLeftClickDownSelection
   }
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -1096,10 +1092,10 @@ void Assembly-CSharp.dll::ESSelection::ESSelection_HandleLeftClickDragSelection
     cRam_? = '\x01';
   }
   if ((woPickSuccess == 0) ||
-     (pEVar1 = (this->fields).pickedTarget,
-     pEVar1 == (ESSelection_PickResult_1_WorldObjectClientRef_ *)0x0)) {
+     ((this->fields).pickedTarget == (ESSelection_PickResult_1_WorldObjectClientRef_ *)0x0)) {
     return;
   }
+  pEVar1 = (this->fields).pickedTarget;
   uStack_2._0_4_ = (pEVar1->fields).mousePosition.x;
   uStack_2._4_4_ = (pEVar1->fields).mousePosition.y;
   fStack_3 = (pEVar1->fields).mousePosition.z;
@@ -1176,9 +1172,8 @@ void Assembly-CSharp.dll::ESSelection::ESSelection_HandleLeftClickUpSelection
                       MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
                      );
   if ((pOVar2 != (Object *)0x0) &&
-     (pEVar3 = (this->fields).pickedTarget,
-     pEVar3 != (ESSelection_PickResult_1_WorldObjectClientRef_ *)0x0)) {
-    pWVar1 = (pEVar3->fields).data;
+     ((this->fields).pickedTarget != (ESSelection_PickResult_1_WorldObjectClientRef_ *)0x0)) {
+    pWVar1 = (((this->fields).pickedTarget)->fields).data;
     if (pWVar1 == (WorldObjectClientRef *)0x0) goto code_?;
     pOVar2 = WorldObjectClientRef`1[System::Object]::
              WorldObjectClientRef_1_System_Object__get_WorldObjectClient
@@ -1290,57 +1285,59 @@ void Assembly-CSharp.dll::ESSelection::ESSelection_HandleRightClickDownSelection
     ;
     cRam_? = '\x01';
   }
-  func_?(&stack0xffffff5c,0,0x48);
-  x = ESSelection_GetLinkHit(this,e,(VoxelHit *)&stack0xffffff5c,(MethodInfo *)0x0);
+  func_?(&stack0xffffff58,0,0x48);
+  x = ESSelection_GetLinkHit(this,e,(VoxelHit *)&stack0xffffff58,(MethodInfo *)0x0);
+  pLStack_1 = x;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  fVar1 = 0.0;
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+  fVar2 = 0.0;
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                     ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 == 0) {
+  if (bVar3 == 0) {
     if (woPickSuccess != 0) {
       this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
       if (this_00 != (MVWorldObjectClientManager *)0x0) {
-        MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRef
-                  (this_00,targetHit.woId,(MethodInfo *)0x0);
+        pLStack_1 = (LinkObjectBase *)
+                    MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRef
+                              (this_00,targetHit.woId,(MethodInfo *)0x0);
         if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        pVVar3 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_get_mousePosition
-                           (&VStack_4,(MethodInfo *)0x0);
-        VStack_5.y = pVVar3->x;
-        VStack_5.z = pVVar3->y;
-        fVar1 = pVVar3->z;
-        pEVar6 = (ESSelection_PickResult_1_WorldObjectClientRef_ *)func_?();
-        func_?(pEVar6,VStack_5.y,VStack_5.z,fVar1,targetHit.point.x,targetHit.point.y,
+        pVVar4 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_get_mousePosition
+                           (&VStack_5,(MethodInfo *)0x0);
+        VStack_6.y = pVVar4->x;
+        VStack_6.z = pVVar4->y;
+        fVar2 = pVVar4->z;
+        pEVar7 = (ESSelection_PickResult_1_WorldObjectClientRef_ *)func_?();
+        func_?(pEVar7,VStack_6.y,VStack_6.z,fVar2,targetHit.point.x,targetHit.point.y,
                         targetHit.point.z,targetHit.normal.x,targetHit.normal.y,targetHit.normal.z,
                         targetHit.cubePos._0_4_,targetHit._28_4_,targetHit.face,targetHit._36_4_);
-        ppEVar7 = &(this->fields).pickedTarget;
-        *ppEVar7 = pEVar6;
+        (this->fields).pickedTarget = pEVar7;
         func_?();
         if (e != (EditorStateMachine *)0x0) {
           this_01 = EditorStateMachine::EditorStateMachine_get_SelectedWOs(e,(MethodInfo *)0x0);
-          if (((*ppEVar7 != (ESSelection_PickResult_1_WorldObjectClientRef_ *)0x0) &&
-              (pWVar8 = ((*ppEVar7)->fields).data, pWVar8 != (WorldObjectClientRef *)0x0)) &&
+          pEVar7 = (this->fields).pickedTarget;
+          if (((pEVar7 != (ESSelection_PickResult_1_WorldObjectClientRef_ *)0x0) &&
+              (pWVar8 = (pEVar7->fields).data, pWVar8 != (WorldObjectClientRef *)0x0)) &&
              (item = WorldObjectClientRef`1[System::Object]::
                      WorldObjectClientRef_1_System_Object__get_WorldObjectClient
                                ((WorldObjectClientRef_1_System_Object_ *)pWVar8,
                                 MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
                                ), this_01 != (HashSet_1_MVWorldObjectClient_ *)0x0)) {
-            bVar2 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
+            bVar3 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Object]::
                     HashSet_1_System_Object__Contains
                               ((HashSet_1_System_Object_ *)this_01,item,
                                MethodInfo__System__Collections__Generic__HashSet<MVWorldObjectClient>__Contains_MVWorldObjectClient_
                               );
-            if (bVar2 != 0) {
+            if (bVar3 != 0) {
               return;
             }
-            pEVar6 = *ppEVar7;
-            if (pEVar6 != (ESSelection_PickResult_1_WorldObjectClientRef_ *)0x0) {
+            pEVar7 = (this->fields).pickedTarget;
+            if (pEVar7 != (ESSelection_PickResult_1_WorldObjectClientRef_ *)0x0) {
               hit.interactionFlags._0_4_ =
-                   (float)((ulonglong)(pEVar6->fields).hit.interactionFlags >> 0x20);
-              hit._0_64_ = *(undefined1 (*) [64])&(pEVar6->fields).hit.point.y;
+                   (float)((ulonglong)(pEVar7->fields).hit.interactionFlags >> 0x20);
+              hit._0_64_ = *(undefined1 (*) [64])&(pEVar7->fields).hit.point.y;
               hit.interactionFlags._4_4_ = 0;
               pWVar8 = EditorStateMachine::EditorStateMachine_Select_1
                                  (e,hit,0,(MethodInfo *)targetHit._60_4_);
@@ -1361,21 +1358,20 @@ void Assembly-CSharp.dll::ESSelection::ESSelection_HandleRightClickDownSelection
     if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pVVar3 = &VStack_5;
+    pVVar4 = &VStack_6;
     puVar10 = &UNK_?;
     pVVar11 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_get_mousePosition
-                       (pVVar3,(MethodInfo *)0x0);
+                       (pVVar4,(MethodInfo *)0x0);
     pEVar12 = TypeInfo__ESSelection__PickResult<LinkObjectBase>;
-    VStack_4.y = pVVar11->x;
-    VStack_4.z = pVVar11->y;
+    VStack_5.y = pVVar11->x;
+    VStack_5.z = pVVar11->y;
     fVar13 = pVVar11->z;
     pEVar14 = (ESSelection_PickResult_1_LinkObjectBase_ *)func_?();
-    func_?(pEVar14,VStack_4._4_8_,fVar13,fVar1,puVar10,pVVar3,pEVar12,in_stack_15,
+    func_?(pEVar14,VStack_5._4_8_,fVar13,fVar2,puVar10,pVVar4,pEVar12,in_stack_15,
                     in_stack_16,(int)in_stack_17,SUB84(in_stack_17,4),iStack_18,
                     uStack_19,iStack_20,pCStack_21,fStack_22,pCStack_23);
-    ppEVar24 = &(this->fields).pickedLink;
-    *ppEVar24 = pEVar14;
-    func_?(ppEVar24,pEVar14);
+    (this->fields).pickedLink = pEVar14;
+    func_?(&(this->fields).pickedLink,pEVar14);
   }
   return;
 }
@@ -1393,44 +1389,45 @@ void Assembly-CSharp.dll::ESSelection::ESSelection_HandleRightClickUpSelection
     func_?(&StringLiteral_There_should_be_selected_objects);
     cRam_? = '\x01';
   }
-  pEVar1 = (this->fields).pickedLink;
-  ppEVar2 = &(this->fields).pickedLink;
-  if (pEVar1 != (ESSelection_PickResult_1_LinkObjectBase_ *)0x0) {
-    bVar3 = ESSelection_IsMouseUpValid(this,(pEVar1->fields).mousePosition,(MethodInfo *)0x0);
-    if (bVar3 != 0) {
-      pCVar4 = (this->fields).contextMenuController;
-      if (pCVar4 == (ContextMenuController *)0x0) goto code_?;
-      ContextMenuController::ContextMenuController_PopGizmos(pCVar4,(MethodInfo *)0x0);
-      if (*ppEVar2 == (ESSelection_PickResult_1_LinkObjectBase_ *)0x0) goto code_?;
-      ppLVar5 = &(this->fields).selectedLinkObject;
-      *ppLVar5 = ((*ppEVar2)->fields).data;
+  if ((this->fields).pickedLink != (ESSelection_PickResult_1_LinkObjectBase_ *)0x0) {
+    bVar1 = ESSelection_IsMouseUpValid
+                      (this,(((this->fields).pickedLink)->fields).mousePosition,(MethodInfo *)0x0);
+    if (bVar1 != 0) {
+      pCVar2 = (this->fields).contextMenuController;
+      if (pCVar2 == (ContextMenuController *)0x0) goto code_?;
+      ContextMenuController::ContextMenuController_PopGizmos(pCVar2,(MethodInfo *)0x0);
+      pEVar3 = (this->fields).pickedLink;
+      if (pEVar3 == (ESSelection_PickResult_1_LinkObjectBase_ *)0x0) goto code_?;
+      (this->fields).selectedLinkObject = (pEVar3->fields).data;
       func_?();
-      pLVar6 = *ppLVar5;
-      if (((pLVar6 == (LinkObjectBase *)0x0) ||
-          (*ppEVar2 == (ESSelection_PickResult_1_LinkObjectBase_ *)0x0)) ||
-         (pCVar4 = (this->fields).contextMenuController, pCVar4 == (ContextMenuController *)0x0))
+      pLVar4 = (this->fields).selectedLinkObject;
+      if (((pLVar4 == (LinkObjectBase *)0x0) ||
+          (pEVar3 = (this->fields).pickedLink,
+          pEVar3 == (ESSelection_PickResult_1_LinkObjectBase_ *)0x0)) ||
+         (pCVar2 = (this->fields).contextMenuController, pCVar2 == (ContextMenuController *)0x0))
       goto code_?;
       ContextMenuController::ContextMenuController_ShowContextMenuLink
-                (pCVar4,(pLVar6->fields).linkID,(pLVar6->fields).isObjectLink,
-                 ((*ppEVar2)->fields).hit.point,(MethodInfo *)0x0);
+                (pCVar2,(pLVar4->fields).linkID,(pLVar4->fields).isObjectLink,
+                 (pEVar3->fields).hit.point,(MethodInfo *)0x0);
       goto code_?;
     }
   }
-  pEVar7 = (this->fields).pickedTarget;
-  if (pEVar7 != (ESSelection_PickResult_1_WorldObjectClientRef_ *)0x0) {
-    bVar3 = ESSelection_IsMouseUpValid(this,(pEVar7->fields).mousePosition,(MethodInfo *)0x0);
-    if (bVar3 != 0) {
-      pCVar4 = (this->fields).contextMenuController;
-      if (pCVar4 != (ContextMenuController *)0x0) {
-        ContextMenuController::ContextMenuController_PopGizmos(pCVar4,(MethodInfo *)0x0);
-        bVar3 = ESSelection_CheckAndExecuteOnClickHandler
-                           (this,e,(this->fields).pickedTarget,(MethodInfo *)0x0);
-        if (bVar3 != 0) goto code_?;
+  if ((this->fields).pickedTarget != (ESSelection_PickResult_1_WorldObjectClientRef_ *)0x0) {
+    bVar1 = ESSelection_IsMouseUpValid
+                      (this,(((this->fields).pickedTarget)->fields).mousePosition,(MethodInfo *)0x0)
+    ;
+    if (bVar1 != 0) {
+      pCVar2 = (this->fields).contextMenuController;
+      if (pCVar2 != (ContextMenuController *)0x0) {
+        ContextMenuController::ContextMenuController_PopGizmos(pCVar2,(MethodInfo *)0x0);
+        bVar1 = ESSelection_CheckAndExecuteOnClickHandler
+                          (this,e,(this->fields).pickedTarget,(MethodInfo *)0x0);
+        if (bVar1 != 0) goto code_?;
         if (e != (EditorStateMachine *)0x0) {
-          iVar8 = MVJetPack+LocalObjectsJetPack::MVJetPack_LocalObjectsJetPack_get_Id
-                             ((MVJetPack_LocalObjectsJetPack *)e,(MethodInfo *)0x0);
-          if (iVar8 != 0) {
-            if (*(int *)(iVar8 + 0x10) != 1) {
+          iVar5 = MVJetPack+LocalObjectsJetPack::MVJetPack_LocalObjectsJetPack_get_Id
+                            ((MVJetPack_LocalObjectsJetPack *)e,(MethodInfo *)0x0);
+          if (iVar5 != 0) {
+            if (*(int *)(iVar5 + 0x10) != 1) {
               if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
               }
@@ -1443,28 +1440,28 @@ void Assembly-CSharp.dll::ESSelection::ESSelection_HandleRightClickUpSelection
               func_?();
               cRam_? = '\x01';
             }
-            pWVar9 = (this->fields).selectedWorldObject;
-            if (pWVar9 != (WorldObjectClientRef *)0x0) {
-              pOVar10 = WorldObjectClientRef`1[System::Object]::
-                        WorldObjectClientRef_1_System_Object__get_WorldObjectClient
-                                  ((WorldObjectClientRef_1_System_Object_ *)pWVar9,
-                                   MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
-                                  );
-              if (pOVar10 == (Object *)0x0) goto code_?;
-              pWVar9 = (this->fields).selectedWorldObject;
-              pCVar4 = (this->fields).contextMenuController;
-              if (pWVar9 != (WorldObjectClientRef *)0x0) {
-                pOVar10 = WorldObjectClientRef`1[System::Object]::
-                          WorldObjectClientRef_1_System_Object__get_WorldObjectClient
-                                    ((WorldObjectClientRef_1_System_Object_ *)pWVar9,
-                                     MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
-                                    );
-                if (((pOVar10 != (Object *)0x0) &&
-                    (pEVar7 = (this->fields).pickedTarget,
-                    pEVar7 != (ESSelection_PickResult_1_WorldObjectClientRef_ *)0x0)) &&
-                   (pCVar4 != (ContextMenuController *)0x0)) {
+            pWVar6 = (this->fields).selectedWorldObject;
+            if (pWVar6 != (WorldObjectClientRef *)0x0) {
+              pOVar7 = WorldObjectClientRef`1[System::Object]::
+                       WorldObjectClientRef_1_System_Object__get_WorldObjectClient
+                                 ((WorldObjectClientRef_1_System_Object_ *)pWVar6,
+                                  MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
+                                 );
+              if (pOVar7 == (Object *)0x0) goto code_?;
+              pWVar6 = (this->fields).selectedWorldObject;
+              pCVar2 = (this->fields).contextMenuController;
+              if (pWVar6 != (WorldObjectClientRef *)0x0) {
+                pOVar7 = WorldObjectClientRef`1[System::Object]::
+                         WorldObjectClientRef_1_System_Object__get_WorldObjectClient
+                                   ((WorldObjectClientRef_1_System_Object_ *)pWVar6,
+                                    MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__get_WorldObjectClient__
+                                   );
+                if (((pOVar7 != (Object *)0x0) &&
+                    (pEVar8 = (this->fields).pickedTarget,
+                    pEVar8 != (ESSelection_PickResult_1_WorldObjectClientRef_ *)0x0)) &&
+                   (pCVar2 != (ContextMenuController *)0x0)) {
                   ContextMenuController::ContextMenuController_ShowContextMenu
-                            (pCVar4,(int32_t)pOVar10[1].klass,(pEVar7->fields).hit.point,
+                            (pCVar2,(int32_t)pOVar7[1].klass,(pEVar8->fields).hit.point,
                              (MethodInfo *)0x0);
                   goto code_?;
                 }
@@ -1475,17 +1472,16 @@ void Assembly-CSharp.dll::ESSelection::ESSelection_HandleRightClickUpSelection
       }
 code_?:
       func_?();
-      pcVar11 = (code *)swi(3);
-      (*pcVar11)();
+      pcVar9 = (code *)swi(3);
+      (*pcVar9)();
       return;
     }
   }
 code_?:
-  ppEVar12 = &(this->fields).pickedTarget;
-  *ppEVar12 = (ESSelection_PickResult_1_WorldObjectClientRef_ *)0x0;
-  func_?(ppEVar12,0);
-  *ppEVar2 = (ESSelection_PickResult_1_LinkObjectBase_ *)0x0;
-  func_?(ppEVar2,0);
+  (this->fields).pickedTarget = (ESSelection_PickResult_1_WorldObjectClientRef_ *)0x0;
+  func_?(&(this->fields).pickedTarget,0);
+  (this->fields).pickedLink = (ESSelection_PickResult_1_LinkObjectBase_ *)0x0;
+  func_?(&(this->fields).pickedLink,0);
   return;
 }
 
@@ -1508,8 +1504,8 @@ bool Assembly-CSharp.dll::ESSelection::ESSelection_IsMouseUpValid
   uVar3 = pVVar1->x;
   uVar4 = pVVar1->y;
   fVar5 = mousePosition.z - pVVar1->z;
-  return (mousePosition.y - (float)uVar4) * (mousePosition.y - (float)uVar4) +
-         (mousePosition.x - (float)uVar3) * (mousePosition.x - (float)uVar3) + fVar5 * fVar5 <
+  return (mousePosition.x - (float)uVar3) * (mousePosition.x - (float)uVar3) +
+         (mousePosition.y - (float)uVar4) * (mousePosition.y - (float)uVar4) + fVar5 * fVar5 <
          _UNK_?;
 }
 
@@ -1694,16 +1690,13 @@ void Assembly-CSharp.dll::ESSelection::ESSelection__ctor
 {
   pWVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRefNullRef
                      ((MethodInfo *)0x0);
-  ppWVar2 = &(this->fields).selectedWorldObject;
-  *ppWVar2 = pWVar1;
-  func_?(ppWVar2,pWVar1);
+  (this->fields).selectedWorldObject = pWVar1;
+  func_?(&(this->fields).selectedWorldObject,pWVar1);
   ESStateBase::ESStateBase__ctor((ESStateBase *)this,(MethodInfo *)0x0);
-  ppCVar3 = &(this->fields).contextMenuController;
-  *ppCVar3 = contextMenuController;
-  func_?(ppCVar3,contextMenuController);
-  ppGVar4 = &(this->fields).gizmoController;
-  *ppGVar4 = gizmoController;
-  func_?(ppGVar4,gizmoController);
+  (this->fields).contextMenuController = contextMenuController;
+  func_?(&(this->fields).contextMenuController,contextMenuController);
+  (this->fields).gizmoController = gizmoController;
+  func_?(&(this->fields).gizmoController,gizmoController);
   return;
 }
 
