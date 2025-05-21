@@ -6,10 +6,9 @@ bool Assembly-CSharp.dll::StreamingAsset+<DelayedUnload>d__11::StreamingAsset_De
 {
   iVar1 = (this->fields).__1__state;
   if (iVar1 == 0) {
-    ppOVar2 = &(this->fields).__2__current;
+    (this->fields).__2__current = (Object *)0x0;
     (this->fields).__1__state = -1;
-    *ppOVar2 = (Object *)0x0;
-    func_?(ppOVar2,0);
+    func_?(&(this->fields).__2__current,0);
     (this->fields).__1__state = 1;
     return 1;
   }
@@ -18,9 +17,9 @@ bool Assembly-CSharp.dll::StreamingAsset+<DelayedUnload>d__11::StreamingAsset_De
     this_00 = UnityEngine.UnityWebRequestAssetBundleModule.dll::UnityEngine::Networking::DownloadHandlerAssetBundle::DownloadHandlerAssetBundle_GetContent((this->fields).www,(MethodInfo *)0x0);
     if (this_00 == (AssetBundle *)0x0) {
       func_?();
-      pcVar3 = (code *)swi(3);
-      bVar4 = (*pcVar3)();
-      return bVar4;
+      pcVar2 = (code *)swi(3);
+      bVar3 = (*pcVar2)();
+      return bVar3;
     }
     UnityEngine.AssetBundleModule.dll::UnityEngine::AssetBundle::AssetBundle_Unload(this_00,0,(MethodInfo *)0x0);
     UnityEngine.CoreModule.dll::UnityEngine::Resources::Resources_UnloadUnusedAssets((MethodInfo *)0x0);

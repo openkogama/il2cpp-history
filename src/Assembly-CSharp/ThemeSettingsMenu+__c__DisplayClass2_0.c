@@ -25,11 +25,10 @@ void Assembly-CSharp.dll::ThemeSettingsMenu+<>c__DisplayClass2_0::ThemeSettingsM
     }
     pOVar2 = (Object__Class *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)original,ThemeSelection_MethodInfo__UnityEngine__Object__Instantiate<ThemeSelection>_ThemeSelection_);
     if (value != (Object *)0x0) {
-      pOVar3 = value + 1;
-      pOVar3->klass = pOVar2;
-      func_?(pOVar3,pOVar2);
-      if (pOVar3->klass != (Object__Class *)0x0) {
-        ThemeSelection::ThemeSelection_InitializeWithBackButton((ThemeSelection *)pOVar3->klass,menuController,(MethodInfo *)0x0);
+      value[1].klass = pOVar2;
+      func_?(value + 1,pOVar2);
+      if (value[1].klass != (Object__Class *)0x0) {
+        ThemeSelection::ThemeSelection_InitializeWithBackButton((ThemeSelection *)value[1].klass,menuController,(MethodInfo *)0x0);
         root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)menuController,(MethodInfo *)0x0);
         callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,MethodInfo__ThemeMenuController____c__DisplayClass4_0___OpenSelection_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
@@ -42,8 +41,8 @@ void Assembly-CSharp.dll::ThemeSettingsMenu+<>c__DisplayClass2_0::ThemeSettingsM
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

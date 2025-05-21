@@ -4,12 +4,10 @@
 void Assembly-CSharp.dll::FirstTimeSetupTerrainEditTutorial::FirstTimeSetupTerrainEditTutorial_Initialize(FirstTimeSetupTerrainEditTutorial *this,CubeModelingStateMachine *cubeModelingStateMachine,MaterialsController *materialsController,MethodInfo *method)
 
 {
-  ppCVar1 = &(this->fields).cubeModelingStateMachine;
-  *ppCVar1 = cubeModelingStateMachine;
-  func_?(ppCVar1,cubeModelingStateMachine);
-  ppMVar2 = &(this->fields).materialsController;
-  *ppMVar2 = materialsController;
-  func_?(ppMVar2,materialsController);
+  (this->fields).cubeModelingStateMachine = cubeModelingStateMachine;
+  func_?(&(this->fields).cubeModelingStateMachine,cubeModelingStateMachine);
+  (this->fields).materialsController = materialsController;
+  func_?(&(this->fields).materialsController,materialsController);
   return;
 }
 
@@ -45,11 +43,10 @@ void Assembly-CSharp.dll::FirstTimeSetupTerrainEditTutorial::FirstTimeSetupTerra
           func_?(TypeInfo__UnityEngine__Object);
         }
         pOVar1 = (Object__Class *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)original,TerrainCubeModelingControllerTutorial_MethodInfo__UnityEngine__Object__Instantiate<TerrainCubeModelingControllerTutorial>_TerrainCubeModelingControllerTutorial_);
-        pOVar2 = value + 1;
-        pOVar2->klass = pOVar1;
-        func_?(pOVar2,pOVar1);
-        if (pOVar2->klass != (Object__Class *)0x0) {
-          TerrainCubeModelingControllerTutorial::TerrainCubeModelingControllerTutorial_Initialize((TerrainCubeModelingControllerTutorial *)pOVar2->klass,(this->fields).cubeModelingStateMachine,(this->fields).materialsController,(MethodInfo *)0x0);
+        value[1].klass = pOVar1;
+        func_?(value + 1,pOVar1);
+        if (value[1].klass != (Object__Class *)0x0) {
+          TerrainCubeModelingControllerTutorial::TerrainCubeModelingControllerTutorial_Initialize((TerrainCubeModelingControllerTutorial *)value[1].klass,(this->fields).cubeModelingStateMachine,(this->fields).materialsController,(MethodInfo *)0x0);
           root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
           callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,MethodInfo__FirstTimeSetupTerrainEditTutorial____c__DisplayClass4_0___OnShow_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
@@ -62,17 +59,17 @@ void Assembly-CSharp.dll::FirstTimeSetupTerrainEditTutorial::FirstTimeSetupTerra
         }
         break;
       }
-      pMVar3 = value[1].monitor;
+      pMVar2 = value[1].monitor;
       if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) break;
-      RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_00,index,MethodInfo__System__Collections__Generic__List<UIPushOption>__get_Item_int_);
+      RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_00,index,MethodInfo__System__Collections__Generic__List<UIPushOption>__get_Item_int_);
       index = index + 1;
-      value[1].monitor = (MonitorData *)((uint)RVar4 | (uint)pMVar3);
+      value[1].monitor = (MonitorData *)((uint)RVar3 | (uint)pMVar2);
       this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).pushOptions;
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -89,9 +86,8 @@ void Assembly-CSharp.dll::FirstTimeSetupTerrainEditTutorial::FirstTimeSetupTerra
   }
   this_00 = (List_1_UIPushOption_ *)func_?(TypeInfo__System__Collections__Generic__List<UIPushOption>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,MethodInfo__System__Collections__Generic__List<UIPushOption>__List__);
-  ppLVar1 = &(this->fields).pushOptions;
-  *ppLVar1 = this_00;
-  func_?(ppLVar1,this_00);
+  (this->fields).pushOptions = this_00;
+  func_?(&(this->fields).pushOptions,this_00);
   FirstTimeActivatableMessage::FirstTimeActivatableMessage__ctor((FirstTimeActivatableMessage *)this,(MethodInfo *)0x0);
   return;
 }

@@ -10,7 +10,7 @@ void Assembly-CSharp.dll::TextFieldInputSuppress::TextFieldInputSuppress_Reset(T
   }
   pIVar1 = (InputField *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1((Component *)this,UnityEngine__UI__InputField_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::InputField>__);
   (this->fields).inputField = pIVar1;
-  func_?();
+  func_?(&(this->fields).inputField,pIVar1);
   return;
 }
 

@@ -364,9 +364,9 @@ Vector3 * Assembly-CSharp.dll::RTG::TriangPrismShape3D::TriangPrismShape3D_get_M
   uVar11 = pVVar3->y;
   fVar12 = pVVar3->z;
   fVar13 = (this->fields)._depth;
-  __return_storage_ptr__->x = (float)uStack_2 + ((float)uVar10 * fVar13 + fVar8) * 0.5;
-  __return_storage_ptr__->y = uStack_2._4_4_ + ((float)uVar11 * fVar13 + fStack_9) * 0.5;
-  __return_storage_ptr__->z = fStack_1 + (fVar12 * fVar13 + fStack_7) * 0.5;
+  __return_storage_ptr__->x = (float)uStack_2 + (fVar8 + (float)uVar10 * fVar13) * 0.5;
+  __return_storage_ptr__->y = uStack_2._4_4_ + (fStack_9 + (float)uVar11 * fVar13) * 0.5;
+  __return_storage_ptr__->z = fStack_1 + (fStack_7 + fVar12 * fVar13) * 0.5;
   return __return_storage_ptr__;
 }
 

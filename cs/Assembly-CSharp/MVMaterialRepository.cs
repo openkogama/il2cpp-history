@@ -3,7 +3,6 @@
  */
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
@@ -21,7 +20,6 @@ public class MVMaterialRepository
 	private readonly MVMaterial noMaterial;
 	private readonly MVMaterial inAirMaterial;
 	private readonly PhysicalProperties physicalPropertiesDefault;
-	private IEnumerator generateTexturesRoutine;
 	[CompilerGenerated]
 	private bool _IsButtonTexturesInitialized_k__BackingField;
 
@@ -30,33 +28,6 @@ public class MVMaterialRepository
 	public int MaterialCount { get; }
 	public MVMaterial InAirMaterial { get; }
 	public bool IsButtonTexturesInitialized { [CompilerGenerated] get; [CompilerGenerated] private set; }
-
-	// Nested types
-	[CompilerGenerated]
-	private sealed class _GenerateMaterialButtonTextureRoutine_d__26 : IEnumerator<object>
-	{
-		// Fields
-		private int __1__state;
-		private object __2__current;
-		public MVMaterialRepository __4__this;
-		private MaterialButtonTextureGenerator _materialButtonTextureGenerator_5__2;
-		private int _i_5__3;
-
-		// Properties
-		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
-		object IEnumerator.Current { [DebuggerHidden] get; }
-
-		// Constructors
-		[DebuggerHidden]
-		public _GenerateMaterialButtonTextureRoutine_d__26(int __1__state);
-
-		// Methods
-		[DebuggerHidden]
-		void IDisposable.Dispose();
-		private bool MoveNext();
-		[DebuggerHidden]
-		void IEnumerator.Reset();
-	}
 
 	// Constructors
 	public MVMaterialRepository();
@@ -68,9 +39,6 @@ public class MVMaterialRepository
 	public void SetMaterialUnlocked(int materialId, bool unlocked);
 	private bool AllMaterialUnlocked();
 	public void GenerateMaterialButtonTextures();
-	[IteratorStateMachine(typeof(_GenerateMaterialButtonTextureRoutine_d__26))]
-	private IEnumerator GenerateMaterialButtonTextureRoutine();
-	private void ForceGenerateMaterialButtonTextures();
 	public void AddMaterial(string name, string description, string path, MaterialSound materialSound, AvatarModifierPackageType modifierPackageType, int priceGold, bool isUnlocked, float[] physicalProperties, MaterialButtonTextureGenerator materialButtonTextureGenerator);
 	public MVMaterial GetMaterial(byte materialId);
 	public PhysicalProperties GetMaterialPhysicalProperties(byte materialId);

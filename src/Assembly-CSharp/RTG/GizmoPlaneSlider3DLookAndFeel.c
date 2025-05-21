@@ -70,7 +70,7 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DLookAndFeel::GizmoPlaneSlider3D
   (value->fields)._borderColor.a = fVar5;
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
   method_00 = (MethodInfo *)&(this->fields)._rotationArcLookAndFeel;
-  *(GizmoRotationArc3DLookAndFeel **)method_00 = value;
+  (this->fields)._rotationArcLookAndFeel = value;
   func_?(method_00,value);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;

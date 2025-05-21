@@ -53,8 +53,8 @@ IEnumerator * Assembly-CSharp.dll::ActivateSoundOnAnimation::ActivateSoundOnAnim
   method_00 = TypeInfo__ActivateSoundOnAnimation___PlaySound_d__4;
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[1].klass = (Object__Class *)0x0;
   value[2].monitor = (MonitorData *)this;
+  value[1].klass = (Object__Class *)0x0;
   func_?(&value[2].monitor,this);
   value[2].klass = (Object__Class *)activationDelay;
   return (IEnumerator *)value;

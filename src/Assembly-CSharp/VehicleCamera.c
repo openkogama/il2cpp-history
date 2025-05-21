@@ -7,23 +7,21 @@ void Assembly-CSharp.dll::VehicleCamera::VehicleCamera_Enter(VehicleCamera *this
   pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
   if (pTVar1 != (Transform *)0x0) {
     pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar1,(MethodInfo *)0x0);
-    ppTVar2 = &(this->fields).originalTransformParent;
-    *ppTVar2 = pTVar1;
-    func_?(ppTVar2,pTVar1);
+    (this->fields).originalTransformParent = pTVar1;
+    func_?(&(this->fields).originalTransformParent,pTVar1);
     pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
     if (pTVar1 != (Transform *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent(pTVar1,(Transform *)0x0,(MethodInfo *)0x0);
       PlaymodeCamera::PlaymodeCamera_Enter((PlaymodeCamera *)this,cameraController,(MethodInfo *)0x0);
       pTVar1 = (this->fields).LookAtTransform;
-      ppTVar2 = &(this->fields)._.lookAtTransform;
-      *ppTVar2 = pTVar1;
-      func_?(ppTVar2,pTVar1);
+      (this->fields)._.lookAtTransform = pTVar1;
+      func_?(&(this->fields)._.lookAtTransform,pTVar1);
       return;
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -67,15 +65,13 @@ void Assembly-CSharp.dll::VehicleCamera::VehicleCamera_Initialize(VehicleCamera 
     func_?(&TypeInfo__AvatarCameraDistTransparency);
     cRam_? = '\x01';
   }
-  ppMVar1 = &(this->fields)._.avatarLocal;
-  *ppMVar1 = avatarLocal;
-  func_?(ppMVar1,avatarLocal);
+  (this->fields)._.avatarLocal = avatarLocal;
+  func_?(&(this->fields)._.avatarLocal,avatarLocal);
   camMoveTowardsOffset = (this->fields)._.avatarHeadOffset;
   this_00 = (AvatarCameraDistTransparency *)func_?(TypeInfo__AvatarCameraDistTransparency);
   AvatarCameraDistTransparency::AvatarCameraDistTransparency__ctor(this_00,camMoveTowardsOffset,4.0,1.0,(MethodInfo *)0x0);
-  ppAVar2 = &(this->fields)._.avatarCameraDistTransparency;
-  *ppAVar2 = this_00;
-  func_?(ppAVar2,this_00);
+  (this->fields)._.avatarCameraDistTransparency = this_00;
+  func_?(&(this->fields)._.avatarCameraDistTransparency,this_00);
   if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
@@ -233,10 +229,10 @@ void Assembly-CSharp.dll::VehicleCamera::VehicleCamera_UpdateCamera(VehicleCamer
         value.x = (float)uVar11 + (float)uVar31;
         value.y = (float)uVar12 + (float)uVar32;
         ProtectedTransform::ProtectedTransform_set_position(in_stack_33,value,(MethodInfo *)0x0);
-        value_00.y = (fVar24 * fVar3 + fVar22 * 3.236491e-29 + fVar23 * fVar2) - fVar4 * fVar21;
-        value_00.x = (fVar24 * fVar2 + fVar21 * 3.236491e-29 + fVar4 * fVar22) - fVar23 * fVar3;
-        value_00.z = (fVar24 * fVar4 + fVar23 * 3.236491e-29 + fVar3 * fVar21) - fVar22 * fVar2;
-        value_00.w = ((fVar24 * 3.236491e-29 - fVar2 * fVar21) - fVar3 * fVar22) - fVar4 * fVar23;
+        value_00.y = (fVar3 * fVar24 + fVar22 * 3.244787e-29 + fVar23 * fVar2) - fVar4 * fVar21;
+        value_00.x = (fVar24 * fVar2 + fVar21 * 3.244787e-29 + fVar22 * fVar4) - fVar23 * fVar3;
+        value_00.z = (fVar4 * fVar24 + fVar23 * 3.244787e-29 + fVar3 * fVar21) - fVar22 * fVar2;
+        value_00.w = ((fVar24 * 3.244787e-29 - fVar2 * fVar21) - fVar3 * fVar22) - fVar23 * fVar4;
         ProtectedTransform::ProtectedTransform_set_rotation(in_stack_33,value_00,(MethodInfo *)0x0);
         this_00 = (AvatarCameraDistTransparency *)targetTransform[8].fields.transform;
         if (this_00 != (AvatarCameraDistTransparency *)0x0) {
@@ -279,10 +275,10 @@ void Assembly-CSharp.dll::VehicleCamera::VehicleCamera_UpdateTargetRotation(Vehi
     }
     pIVar6 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
     if (pIVar6 != (IPlayModeUI *)0x0) {
-      cVar7 = func_?(3,TypeInfo__IPlayModeUI,pIVar6);
-      (pVVar1->fields)._.autoRotate = cVar7 == '\0';
+      bVar7 = func_?(3,TypeInfo__IPlayModeUI,pIVar6);
+      (pVVar1->fields)._.autoRotate = bVar7 ^ 1;
       fVar8 = fStack_5;
-      if ((cVar7 == '\0') && (((pVVar1->fields)._._._.ignoreInputTypes & 1) == 0)) {
+      if (((bVar7 ^ 1) != 0) && (((pVVar1->fields)._._._.ignoreInputTypes & 1) == 0)) {
         fStack_9 = (pVVar1->fields).rotationAroundY;
         if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__MVInputWrapper);
@@ -413,12 +409,11 @@ void Assembly-CSharp.dll::VehicleCamera::VehicleCamera__ctor(VehicleCamera *this
   this_00 = (Queue_1_UnityEngine_Vector3_ *)func_?(TypeInfo__System__Collections__Generic__Queue<UnityEngine::Vector3>);
   System.Core.dll::System::Runtime::CompilerServices::ReadOnlyCollectionBuilder`1[System::Object]::ReadOnlyCollectionBuilder_1_System_Object___ctor((ReadOnlyCollectionBuilder_1_System_Object_ *)this_00,MethodInfo__System__Collections__Generic__Queue<UnityEngine::Vector3>__Queue__);
   method_00 = (MethodInfo *)&value->fields;
-  ((PlaymodeCamera_SmoothLookAt__Fields *)method_00)->prevVelocities = this_00;
+  (value->fields).prevVelocities = this_00;
   func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)value,ExceptionArgument__Enum_obj,method_00);
-  ppPVar4 = &(this->fields)._.smoothLookAt;
-  *ppPVar4 = value;
-  func_?(ppPVar4,value);
+  (this->fields)._.smoothLookAt = value;
+  func_?(&(this->fields)._.smoothLookAt,value);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Vector3);
     cRam_? = '\x01';

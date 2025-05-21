@@ -4,19 +4,20 @@
 int32_t MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRules::XpBooster::XpBooster_GetBoostedXp(XpBooster *this,int32_t xp,int32_t membersCount,MethodInfo *method)
 
 {
-  fVar1 = 0.0;
-  fVar2 = (float)xp;
+  auVar1 = ZEXT812(0);
   if (0 < membersCount) {
-    fVar1 = ((float)(this->fields).firstOtherMemberBoost / 100.0) * fVar2 + 0.0;
+    auVar1._4_8_ = 0;
+    auVar1._0_4_ = ((float)(this->fields).firstOtherMemberBoost / 100.0) * (float)xp + 0.0;
   }
   if (1 < membersCount) {
-    fVar1 = fVar1 + ((float)(this->fields).otherMembersBoost / 100.0) * fVar2 * (float)(membersCount + -1);
+    auVar1._4_8_ = auVar1._4_8_;
+    auVar1._0_4_ = auVar1._0_4_ + ((float)(this->fields).otherMembersBoost / 100.0) * (float)xp * (float)(membersCount + -1);
   }
-  fVar3 = ((float)(this->fields).maxMemberBoost / 100.0) * fVar2;
-  if (fVar3 < fVar1) {
-    fVar1 = fVar3;
+  fVar2 = auVar1._0_4_;
+  if (((float)(this->fields).maxMemberBoost / 100.0) * (float)xp < fVar2) {
+    fVar2 = ((float)(this->fields).maxMemberBoost / 100.0) * (float)xp;
   }
-  return (int)(fVar2 + ((float)(this->fields).baseBoost / 100.0) * fVar2 + fVar1);
+  return (int)((float)xp + ((float)(this->fields).baseBoost / 100.0) * (float)xp + fVar2);
 }
 
 
@@ -29,9 +30,8 @@ int32_t MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRules::XpB
   if ((0 < membersCount) && (fVar1 = (float)(this->fields).firstOtherMemberBoost / 100.0 + 0.0, 1 < membersCount)) {
     fVar1 = fVar1 + ((float)(this->fields).otherMembersBoost / 100.0) * (float)(membersCount + -1);
   }
-  fVar2 = (float)(this->fields).maxMemberBoost / 100.0;
-  if (fVar2 < fVar1) {
-    fVar1 = fVar2;
+  if ((float)(this->fields).maxMemberBoost / 100.0 < fVar1) {
+    fVar1 = (float)(this->fields).maxMemberBoost / 100.0;
   }
   return (int)(((float)(this->fields).baseBoost / 100.0 + fVar1) * 100.0);
 }

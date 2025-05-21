@@ -4,50 +4,50 @@
 Quaternion * Assembly-CSharp.dll::GhostEye+RandomEyeRoll::GhostEye_RandomEyeRoll_GetEyeRollRotation(Quaternion *__return_storage_ptr__,GhostEye_RandomEyeRoll *this,MethodInfo *method)
 
 {
-  fStack_1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-  fVar2 = fStack_1 * (this->fields)._.direction * (this->fields)._.rotatationPrSecond * 6.2831855 + (this->fields)._.wrappedTime;
-  (this->fields)._.wrappedTime = fVar2;
-  while (6.2831855 <= fVar2) {
-    fVar2 = (this->fields)._.wrappedTime - 6.2831855;
-    (this->fields)._.wrappedTime = fVar2;
+  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+  fVar1 = fVar1 * (this->fields)._.direction * (this->fields)._.rotatationPrSecond * 6.2831855 + (this->fields)._.wrappedTime;
+  (this->fields)._.wrappedTime = fVar1;
+  while (6.2831855 <= fVar1) {
+    fVar1 = (this->fields)._.wrappedTime - 6.2831855;
+    (this->fields)._.wrappedTime = fVar1;
   }
-  pfVar3 = &(this->fields)._.wrappedTime;
-  if (*pfVar3 <= -6.2831855 && *pfVar3 != -6.2831855) {
+  pfVar2 = &(this->fields)._.wrappedTime;
+  if (*pfVar2 <= -6.2831855 && *pfVar2 != -6.2831855) {
     do {
-      fVar2 = (this->fields)._.wrappedTime + 6.2831855;
-      (this->fields)._.wrappedTime = fVar2;
-    } while (fVar2 < -6.2831855);
+      fVar1 = (this->fields)._.wrappedTime + 6.2831855;
+      (this->fields)._.wrappedTime = fVar1;
+    } while (fVar1 < -6.2831855);
   }
-  dVar4 = (double)(this->fields)._.wrappedTime;
+  dVar3 = (double)(this->fields)._.wrappedTime;
   func_?();
-  fStack_1 = (float)dVar4 * (this->fields)._.radiusPitch;
+  fVar1 = (this->fields)._.radiusPitch;
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
   }
-  pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis(&QStack_6,fStack_1,TypeInfo__UnityEngine__Vector3->static_fields->rightVector,(MethodInfo *)0x0);
-  fStack_7 = pQVar5->x;
-  fStack_8 = pQVar5->y;
-  fStack_9 = pQVar5->z;
-  fStack_10 = pQVar5->w;
-  dVar4 = (double)(this->fields)._.wrappedTime;
+  pQVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis((Quaternion *)&stack0xffffffd8,(float)dVar3 * fVar1,TypeInfo__UnityEngine__Vector3->static_fields->rightVector,(MethodInfo *)0x0);
+  fVar5 = pQVar4->x;
+  fVar6 = pQVar4->y;
+  fVar7 = pQVar4->z;
+  fVar8 = pQVar4->w;
+  dVar3 = (double)(this->fields)._.wrappedTime;
   func_?();
-  fStack_1 = (float)dVar4 * (this->fields)._.radiusYaw;
+  fVar1 = (this->fields)._.radiusYaw;
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
   }
-  pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis((Quaternion *)&stack0xffffffb0,fStack_1,TypeInfo__UnityEngine__Vector3->static_fields->upVector,(MethodInfo *)0x0);
-  fVar11 = pQVar5->y;
-  fVar12 = pQVar5->z;
-  fVar13 = pQVar5->w;
-  fVar2 = pQVar5->x;
-  fVar14 = pQVar5->x;
-  fVar15 = pQVar5->x;
-  __return_storage_ptr__->x = (fVar13 * fStack_7 + fStack_10 * pQVar5->x + fStack_9 * fVar11) - fVar12 * fStack_8;
-  __return_storage_ptr__->y = (fVar13 * fStack_8 + fStack_10 * fVar11 + fVar12 * fStack_7) - fStack_9 * fVar2;
-  __return_storage_ptr__->z = (fVar13 * fStack_9 + fStack_10 * fVar12 + fStack_8 * fVar14) - fVar11 * fStack_7;
-  __return_storage_ptr__->w = ((fStack_10 * fVar13 - fStack_7 * fVar15) - fStack_8 * fVar11) - fStack_9 * fVar12;
+  pQVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis((Quaternion *)&stack0xffffffc8,(float)dVar3 * fVar1,TypeInfo__UnityEngine__Vector3->static_fields->upVector,(MethodInfo *)0x0);
+  fVar9 = pQVar4->x;
+  fVar10 = pQVar4->y;
+  fVar11 = pQVar4->z;
+  fVar12 = pQVar4->w;
+  fVar13 = pQVar4->x;
+  fVar1 = pQVar4->x;
+  __return_storage_ptr__->x = (fVar5 * fVar12 + fVar8 * fVar9 + fVar7 * fVar10) - fVar6 * fVar11;
+  __return_storage_ptr__->y = (fVar6 * fVar12 + fVar8 * fVar10 + fVar5 * fVar11) - fVar7 * fVar13;
+  __return_storage_ptr__->z = (fVar8 * fVar11 + fVar7 * fVar12 + fVar6 * fVar1) - fVar5 * fVar10;
+  __return_storage_ptr__->w = ((fVar8 * fVar12 - fVar5 * fVar9) - fVar6 * fVar10) - fVar7 * fVar11;
   return __return_storage_ptr__;
 }
 

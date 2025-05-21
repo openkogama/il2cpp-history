@@ -105,11 +105,10 @@ void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarPointingHandlerRemote::A
 void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarPointingHandlerRemote::AvatarLimbManagerRemote_AvatarPointingHandlerRemote_UpdatePointing(AvatarLimbManagerRemote_AvatarPointingHandlerRemote *this,Vector3 localLookDirection,MethodInfo *method)
 
 {
-  iVar1 = (this->fields)._.pointState;
-  if (iVar1 == 2) {
+  if ((this->fields)._.pointState == 2) {
     AvatarLimbManager+AvatarPointingHandler::AvatarLimbManager_AvatarPointingHandler_HandleWeaponPointing((AvatarLimbManager_AvatarPointingHandler *)this,(this->fields).remoteYawRotation,(this->fields).remotePitchRotation,(MethodInfo *)0x0);
   }
-  else if (iVar1 == 1) {
+  else if ((this->fields)._.pointState == 1) {
     AvatarLimbManager+AvatarPointingHandler::AvatarLimbManager_AvatarPointingHandler_HandlePointing((AvatarLimbManager_AvatarPointingHandler *)this,(this->fields).remoteYawRotation,(this->fields).remotePitchRotation,(MethodInfo *)0x0);
   }
   else {

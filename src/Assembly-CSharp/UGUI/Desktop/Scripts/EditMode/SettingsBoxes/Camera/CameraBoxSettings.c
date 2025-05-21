@@ -239,12 +239,12 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
   if (this_00 != (SettingsBase *)0x0) {
     SettingsBase::SettingsBase_Initialize(this_00,woID,root,MVWorldObjectDocumentationType__Enum_CameraSettings,(MethodInfo *)0x0);
     pDVar1 = CameraBoxSettings_InitData(this,(MethodInfo *)0x0);
-    ppDVar2 = &(this->fields).woData;
-    *ppDVar2 = pDVar1;
-    func_?(ppDVar2,pDVar1);
+    (this->fields).woData = pDVar1;
+    func_?(&(this->fields).woData,pDVar1);
+    pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields).woData;
     this_01 = (this->fields).slider;
-    if ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)*ppDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-      TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)*ppDVar2,(Object *)StringLiteral_distanceToAvatar,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
+    if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+      TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(pDVar2,(Object *)StringLiteral_distanceToAvatar,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
       if ((TypeInfo__System__Globalization__CultureInfo->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__System__Globalization__CultureInfo);
       }
@@ -255,16 +255,18 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
       fVar5 = mscorlib.dll::System::Convert::Convert_ToSingle_1((Object *)TVar3.m_Index,(IFormatProvider *)pCVar4,(MethodInfo *)0x0);
       if (this_01 != (SettingsSlider *)0x0) {
         SettingsSlider::SettingsSlider_Initialize(this_01,StringLiteral_distanceToAvatar,fVar5,3.0,30.0,(MethodInfo *)0x0);
+        pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields).woData;
         this_02 = (this->fields).inputField;
-        if ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)*ppDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-          TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)*ppDVar2,(Object *)StringLiteral_distanceToAvatar,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
+        if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+          TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(pDVar2,(Object *)StringLiteral_distanceToAvatar,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
           pCVar4 = mscorlib.dll::System::Globalization::CultureInfo::CultureInfo_get_InvariantCulture((MethodInfo *)0x0);
           fVar5 = mscorlib.dll::System::Convert::Convert_ToSingle_1((Object *)TVar3.m_Index,(IFormatProvider *)pCVar4,(MethodInfo *)0x0);
           if (this_02 != (SettingsInputFieldSlider *)0x0) {
             SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1(this_02,StringLiteral_distanceToAvatar,fVar5,(MethodInfo *)0x0);
+            pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields).woData;
             this_03 = (this->fields).toggle;
-            if ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)*ppDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-              TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)*ppDVar2,(Object *)StringLiteral_forceFirstPersonCamera,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
+            if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+              TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item(pDVar2,(Object *)StringLiteral_forceFirstPersonCamera,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_);
               uVar6 = CONCAT44(TypeInfo__System__Boolean,TVar3.m_Index);
               if ((this_03 != (SettingsToggle *)0x0) && (TVar3.m_Index != 0)) {
                 if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) == (TypeInfo__System__Boolean->_0).element_class) {

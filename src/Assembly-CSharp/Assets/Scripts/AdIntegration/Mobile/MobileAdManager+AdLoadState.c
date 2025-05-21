@@ -10,7 +10,7 @@ bool Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::MobileAdManage
     cRam_? = '\x01';
   }
   this_00 = &(this->fields).loadAttempts;
-  if (-1 < *this_00) {
+  if (-1 < (this->fields).loadAttempts) {
     pSVar1 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)this_00,(MethodInfo *)0x0);
     pSVar1 = mscorlib.dll::System::String::String_Concat_3(StringLiteral_Failed_to_get_an_ad_after_,pSVar1,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
@@ -19,7 +19,7 @@ bool Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::MobileAdManage
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError((Object *)pSVar1,(MethodInfo *)0x0);
     return 0;
   }
-  *this_00 = *this_00 + 1;
+  (this->fields).loadAttempts = *this_00 + 1;
   return 1;
 }
 

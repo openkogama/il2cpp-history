@@ -207,16 +207,17 @@ int32_t Assembly-CSharp.dll::PickupItem::PickupItem_GetAmmoMultiplier(PickupItem
     pMVar1 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0);
     if ((pMVar1 != (MVLocalPlayer *)0x0) && (this_00 = (pMVar1->fields).boostController, this_00 != (BoostController *)0x0)) {
       bVar2 = BoostController::BoostController_TryGetActiveBoost(this_00,BoostType__Enum_AmmoIntMultiplier,(Boost **)&stack0xfffffff8,(MethodInfo *)0x0);
-      if (bVar2 != 0) {
-        defaultAmmo = defaultAmmo * 2;
+      iVar3 = defaultAmmo * 2;
+      if (bVar2 == 0) {
+        iVar3 = defaultAmmo;
       }
-      return defaultAmmo;
+      return iVar3;
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  iVar4 = (*pcVar3)();
-  return iVar4;
+  pcVar4 = (code *)swi(3);
+  iVar5 = (*pcVar4)();
+  return iVar5;
 }
 
 
@@ -328,27 +329,23 @@ GameObject * Assembly-CSharp.dll::PickupItem::PickupItem_InstantiatePickupItem(A
     switch(type) {
     case AvatarItemType__Enum_LaserPointer:
       iVar1 = func_?(0);
-      bVar2 = iVar1 == 0;
-      if (!bVar2) {
-        pGVar3 = *(GameObject **)(iVar1 + 0x1c8);
-        goto code_?;
+      if (iVar1 == 0) {
+code_?:
+        func_?();
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
       }
+      pGVar2 = *(GameObject **)(iVar1 + 0x1c8);
       break;
     case AvatarItemType__Enum_CenterGun:
       iVar1 = func_?(0);
-      bVar2 = iVar1 == 0;
-      if (!bVar2) {
-        pGVar3 = *(GameObject **)(iVar1 + 0x1c0);
-        goto code_?;
-      }
+      if (iVar1 == 0) goto code_?;
+      pGVar2 = *(GameObject **)(iVar1 + 0x1c0);
       break;
     case AvatarItemType__Enum_ImpulseGun:
       iVar1 = func_?(0);
-      bVar2 = iVar1 == 0;
-      if (!bVar2) {
-        pGVar3 = *(GameObject **)(iVar1 + 0x1c4);
-        goto code_?;
-      }
+      if (iVar1 == 0) goto code_?;
+      pGVar2 = *(GameObject **)(iVar1 + 0x1c4);
       break;
     case AvatarItemType__Enum_Health:
     case AvatarItemType__Enum_Mutant:
@@ -357,27 +354,18 @@ code_?:
       return (GameObject *)0x0;
     case AvatarItemType__Enum_Bazooka:
       iVar1 = func_?(0);
-      bVar2 = iVar1 == 0;
-      if (!bVar2) {
-        pGVar3 = *(GameObject **)(iVar1 + 0x1cc);
-        goto code_?;
-      }
+      if (iVar1 == 0) goto code_?;
+      pGVar2 = *(GameObject **)(iVar1 + 0x1cc);
       break;
     case AvatarItemType__Enum_Hand:
       iVar1 = func_?(0);
-      bVar2 = iVar1 == 0;
-      if (!bVar2) {
-        pGVar3 = *(GameObject **)(iVar1 + 0x1d0);
-        goto code_?;
-      }
+      if (iVar1 == 0) goto code_?;
+      pGVar2 = *(GameObject **)(iVar1 + 0x1d0);
       break;
     case AvatarItemType__Enum_RailGun:
       iVar1 = func_?(0);
-      bVar2 = iVar1 == 0;
-      if (!bVar2) {
-        pGVar3 = *(GameObject **)(iVar1 + 0x1d4);
-        goto code_?;
-      }
+      if (iVar1 == 0) goto code_?;
+      pGVar2 = *(GameObject **)(iVar1 + 0x1d4);
       break;
     case AvatarItemType__Enum_MeleeWeapon:
       if (cRam_? == '\0') {
@@ -390,84 +378,61 @@ code_?:
           func_?(&TypeInfo__PrefabPool);
           cRam_? = '\x01';
         }
-        pPVar4 = TypeInfo__PrefabPool->static_fields->instance;
-        bVar2 = pPVar4 == (PrefabPool *)0x0;
-        if (!bVar2) {
-          pGVar3 = (pPVar4->fields).avatarItemSword;
-          goto code_?;
-        }
+        pPVar3 = TypeInfo__PrefabPool->static_fields->instance;
+        if (pPVar3 == (PrefabPool *)0x0) goto code_?;
+        pGVar2 = (pPVar3->fields).avatarItemSword;
       }
       else {
         if (cRam_? == '\0') {
           func_?(&TypeInfo__PrefabPool);
           cRam_? = '\x01';
         }
-        pPVar4 = TypeInfo__PrefabPool->static_fields->instance;
-        bVar2 = pPVar4 == (PrefabPool *)0x0;
-        if (!bVar2) {
-          pGVar3 = (pPVar4->fields).avatarItemMeleeWeapon;
-          goto code_?;
-        }
+        pPVar3 = TypeInfo__PrefabPool->static_fields->instance;
+        if (pPVar3 == (PrefabPool *)0x0) goto code_?;
+        pGVar2 = (pPVar3->fields).avatarItemMeleeWeapon;
       }
       break;
     case AvatarItemType__Enum_Shotgun:
       iVar1 = func_?(0);
-      bVar2 = iVar1 == 0;
-      if (!bVar2) {
-        pGVar3 = *(GameObject **)(iVar1 + 0x1e0);
-        goto code_?;
-      }
+      if (iVar1 == 0) goto code_?;
+      pGVar2 = *(GameObject **)(iVar1 + 0x1e0);
       break;
     case AvatarItemType__Enum_Flamethrower:
       iVar1 = func_?(0);
-      bVar2 = iVar1 == 0;
-      if (!bVar2) {
-        pGVar3 = *(GameObject **)(iVar1 + 0x1e4);
-        goto code_?;
-      }
+      if (iVar1 == 0) goto code_?;
+      pGVar2 = *(GameObject **)(iVar1 + 0x1e4);
       break;
     case AvatarItemType__Enum_CubeGun:
       iVar1 = func_?(0);
-      bVar2 = iVar1 == 0;
-      if (!bVar2) {
-        pGVar3 = *(GameObject **)(iVar1 + 0x1e8);
-        goto code_?;
-      }
+      if (iVar1 == 0) goto code_?;
+      pGVar2 = *(GameObject **)(iVar1 + 0x1e8);
       break;
     case AvatarItemType__Enum_SixShooter:
       iVar1 = func_?(0);
-      bVar2 = iVar1 == 0;
-      if (!bVar2) {
-        pGVar3 = *(GameObject **)(iVar1 + 0x1ec);
-        goto code_?;
-      }
+      if (iVar1 == 0) goto code_?;
+      pGVar2 = *(GameObject **)(iVar1 + 0x1ec);
       break;
     case AvatarItemType__Enum_DoubleSixShooter:
       iVar1 = func_?(0);
-      bVar2 = iVar1 == 0;
-      if (!bVar2) {
-        pGVar3 = *(GameObject **)(iVar1 + 0x1f0);
-        goto code_?;
-      }
+      if (iVar1 == 0) goto code_?;
+      pGVar2 = *(GameObject **)(iVar1 + 0x1f0);
       break;
     case AvatarItemType__Enum_CustomGun:
       iVar1 = func_?(0);
-      bVar2 = iVar1 == 0;
-      if (!bVar2) {
-        pGVar3 = *(GameObject **)(iVar1 + 0x214);
-        goto code_?;
-      }
+      if (iVar1 == 0) goto code_?;
+      pGVar2 = *(GameObject **)(iVar1 + 0x214);
       break;
     default:
       if (type != AvatarItemType__Enum_ThrowingStar) {
         return (GameObject *)0x0;
       }
-      pPVar5 = TypeInfo__PrefabPool;
-      if (cRam_? != '\0') goto code_?;
-      func_?(&TypeInfo__PrefabPool);
-      cRam_? = '\x01';
-      pPVar5 = TypeInfo__PrefabPool;
-      goto code_?;
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__PrefabPool);
+        cRam_? = '\x01';
+      }
+      pPVar3 = TypeInfo__PrefabPool->static_fields->instance;
+      if (pPVar3 == (PrefabPool *)0x0) goto code_?;
+      pGVar2 = (pPVar3->fields).avatarItemThrowingStar;
     }
   }
   else if (type == AvatarItemType__Enum_MultiThrowingStar) {
@@ -475,89 +440,54 @@ code_?:
       func_?(&TypeInfo__PrefabPool);
       cRam_? = '\x01';
     }
-    pPVar4 = TypeInfo__PrefabPool->static_fields->instance;
-    bVar2 = pPVar4 == (PrefabPool *)0x0;
-    if (!bVar2) {
-      pGVar3 = (pPVar4->fields).avatarItemMultiThrowingStar;
-      goto code_?;
-    }
+    pPVar3 = TypeInfo__PrefabPool->static_fields->instance;
+    if (pPVar3 == (PrefabPool *)0x0) goto code_?;
+    pGVar2 = (pPVar3->fields).avatarItemMultiThrowingStar;
   }
   else {
     switch(type) {
     case AvatarItemType__Enum_Costume:
       iVar1 = func_?(0);
-      bVar2 = iVar1 == 0;
-      if (!bVar2) {
-        pGVar3 = *(GameObject **)(iVar1 + 0x210);
-        goto code_?;
-      }
+      if (iVar1 == 0) goto code_?;
+      pGVar2 = *(GameObject **)(iVar1 + 0x210);
       break;
     case AvatarItemType__Enum_MouseGun:
       iVar1 = func_?(0);
-      bVar2 = iVar1 == 0;
-      if (!bVar2) {
-        pGVar3 = *(GameObject **)(iVar1 + 0x200);
-        goto code_?;
-      }
+      if (iVar1 == 0) goto code_?;
+      pGVar2 = *(GameObject **)(iVar1 + 0x200);
       break;
     case AvatarItemType__Enum_CollectTheItemCollectable:
       iVar1 = func_?(0);
-      bVar2 = iVar1 == 0;
-      if (!bVar2) {
-        pGVar3 = *(GameObject **)(iVar1 + 0x208);
-        goto code_?;
-      }
+      if (iVar1 == 0) goto code_?;
+      pGVar2 = *(GameObject **)(iVar1 + 0x208);
       break;
     case AvatarItemType__Enum_GrowthGun:
       iVar1 = func_?(0);
-      bVar2 = iVar1 == 0;
-      if (!bVar2) {
-        pGVar3 = *(GameObject **)(iVar1 + 0x1fc);
-        goto code_?;
-      }
+      if (iVar1 == 0) goto code_?;
+      pGVar2 = *(GameObject **)(iVar1 + 0x1fc);
       break;
     case AvatarItemType__Enum_MousePack:
     case AvatarItemType__Enum_GrowthPack:
       goto code_?;
     case AvatarItemType__Enum_SlapGun:
       iVar1 = func_?(0);
-      bVar2 = iVar1 == 0;
-      if (!bVar2) {
-        pGVar3 = *(GameObject **)(iVar1 + 0x204);
-        goto code_?;
-      }
+      if (iVar1 == 0) goto code_?;
+      pGVar2 = *(GameObject **)(iVar1 + 0x204);
       break;
     default:
       if (type != AvatarItemType__Enum_HealRay) {
         return (GameObject *)0x0;
       }
       iVar1 = func_?(0);
-      bVar2 = iVar1 == 0;
-      if (!bVar2) {
-        pGVar3 = *(GameObject **)(iVar1 + 0x20c);
-        goto code_?;
-      }
+      if (iVar1 == 0) goto code_?;
+      pGVar2 = *(GameObject **)(iVar1 + 0x20c);
     }
   }
-  do {
-    bVar6 = false;
-    pPVar5 = (PrefabPool__Class *)func_?();
-    if (!bVar6 && !bVar2) {
-      puVar7 = &pPVar5[0x66797e]._1.static_fields_size;
-      *(char *)puVar7 = (char)*puVar7 + extraout_DH + bVar6;
-      return (GameObject *)0x68d89310;
-    }
-code_?:
-    pPVar4 = pPVar5->static_fields->instance;
-    bVar2 = true;
-  } while (pPVar4 == (PrefabPool *)0x0);
-  pGVar3 = (pPVar4->fields).avatarItemThrowingStar;
-code_?:
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  pGVar3 = (GameObject *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pGVar3,UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_);
-  return pGVar3;
+  pGVar2 = (GameObject *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4((Object *)pGVar2,UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_);
+  return pGVar2;
 }
 
 
@@ -601,43 +531,42 @@ void Assembly-CSharp.dll::PickupItem::PickupItem_OnEquip(PickupItem *this,Method
   pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
   if (pTVar1 != (Transform *)0x0) {
     pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent(pTVar1,(MethodInfo *)0x0);
-    ppTVar2 = &(this->fields).originalParent;
-    *ppTVar2 = pTVar1;
-    func_?(ppTVar2);
+    (this->fields).originalParent = pTVar1;
+    func_?(&(this->fields).originalParent);
     pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
     if (pTVar1 != (Transform *)0x0) {
-      pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition(&VStack_4,pTVar1,(MethodInfo *)0x0);
-      fVar5 = pVVar3->y;
-      fVar6 = pVVar3->z;
-      (this->fields).originalPos.x = pVVar3->x;
-      (this->fields).originalPos.y = fVar5;
-      (this->fields).originalPos.z = fVar6;
+      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition(&VStack_3,pTVar1,(MethodInfo *)0x0);
+      fVar4 = pVVar2->y;
+      fVar5 = pVVar2->z;
+      (this->fields).originalPos.x = pVVar2->x;
+      (this->fields).originalPos.y = fVar4;
+      (this->fields).originalPos.z = fVar5;
       pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
       if (pTVar1 != (Transform *)0x0) {
-        pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localRotation((Quaternion *)&stack0xffffffec,pTVar1,(MethodInfo *)0x0);
-        fVar6 = pQVar7->y;
-        fVar5 = pQVar7->z;
-        fVar8 = pQVar7->w;
-        (this->fields).originalRot.x = pQVar7->x;
-        (this->fields).originalRot.y = fVar6;
-        (this->fields).originalRot.z = fVar5;
-        (this->fields).originalRot.w = fVar8;
+        pQVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localRotation((Quaternion *)&stack0xffffffec,pTVar1,(MethodInfo *)0x0);
+        fVar5 = pQVar6->y;
+        fVar4 = pQVar6->z;
+        fVar7 = pQVar6->w;
+        (this->fields).originalRot.x = pQVar6->x;
+        (this->fields).originalRot.y = fVar5;
+        (this->fields).originalRot.z = fVar4;
+        (this->fields).originalRot.w = fVar7;
         pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this,(MethodInfo *)0x0);
         if (pTVar1 != (Transform *)0x0) {
-          pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale(&VStack_4,pTVar1,(MethodInfo *)0x0);
-          fVar5 = pVVar3->y;
-          fVar6 = pVVar3->z;
-          (this->fields).originalScale.x = pVVar3->x;
-          (this->fields).originalScale.y = fVar5;
-          (this->fields).originalScale.z = fVar6;
+          pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale(&VStack_3,pTVar1,(MethodInfo *)0x0);
+          fVar4 = pVVar2->y;
+          fVar5 = pVVar2->z;
+          (this->fields).originalScale.x = pVVar2->x;
+          (this->fields).originalScale.y = fVar4;
+          (this->fields).originalScale.z = fVar5;
           return;
         }
       }
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -712,35 +641,35 @@ void Assembly-CSharp.dll::PickupItem::PickupItem_UpdateWithDirection(PickupItem 
     rotation.x = (float)uVar6;
     rotation.z = 0.0;
     rotation.w = fVar4;
-    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1((Vector3 *)&stack0xffffffa0,rotation,*pVVar5,(MethodInfo *)0x0);
+    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1((Vector3 *)&puStack_7,rotation,*pVVar5,(MethodInfo *)0x0);
     fVar4 = pVVar5->z;
     pTVar1 = (this->fields).center;
     if (pTVar1 != (Transform *)0x0) {
-      pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffa0,pTVar1,(MethodInfo *)0x0);
-      fVar7 = pVVar5->z;
+      pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&puStack_7,pTVar1,(MethodInfo *)0x0);
+      fVar8 = pVVar5->z;
       pTVar1 = (this->fields).center;
       if (pTVar1 != (Transform *)0x0) {
         pVVar5 = (Vector3 *)&stack0xffffffa0;
         puVar3 = &UNK_?;
-        pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position(pVVar5,pTVar1,(MethodInfo *)0x0);
-        VStack_9.y = pVVar8->x;
-        VStack_9.z = pVVar8->y;
-        fVar10 = (float)puVar3 + VStack_9.y;
-        fVar11 = (float)pVVar5 + VStack_9.z;
-        fVar12 = (float)pTVar1 + pVVar8->z;
+        pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position(pVVar5,pTVar1,(MethodInfo *)0x0);
+        uVar10 = pVVar9->x;
+        uVar11 = pVVar9->y;
+        puStack_7 = (undefined *)((float)puVar3 + (float)uVar10);
+        fVar12 = (float)pVVar5 + (float)uVar11;
+        fVar13 = (float)pTVar1 + pVVar9->z;
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        fVar13 = 1.0;
-        uVar14 = 0;
+        puVar3 = puStack_7;
+        fVar14 = 1.0;
         uVar15 = 0;
-        VStack_9.z = (float)&UNK_?;
-        start_01.z = fVar7;
+        uVar16 = 0;
+        start_01.z = fVar8;
         start_01.x = 1.0;
         start_01.y = 0.0;
-        end_01.y = fVar11;
-        end_01.x = fVar10;
-        end_01.z = fVar12;
+        end_01.y = fVar12;
+        end_01.x = (float)puVar3;
+        end_01.z = fVar13;
         color_01.a = 1.0;
         color_01.r = 1.0;
         color_01.g = 0.0;
@@ -752,79 +681,79 @@ void Assembly-CSharp.dll::PickupItem::PickupItem_UpdateWithDirection(PickupItem 
           dir.x = (float)&stack0xffffffa0;
           dir.y = (float)pTVar1;
           pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)dir.x,pTVar1,(MethodInfo *)0x0);
-          uVar16 = pVVar5->x;
-          uVar17 = pVVar5->y;
-          fVar7 = pVVar5->z;
+          uVar17 = pVVar5->x;
+          uVar18 = pVVar5->y;
+          fVar8 = pVVar5->z;
           pTVar1 = (this->fields).center;
           if (pTVar1 != (Transform *)0x0) {
             dir.z = (float)&UNK_?;
-            pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position(&VStack_9,pTVar1,(MethodInfo *)0x0);
-            uVar18 = pVVar5->x;
-            uVar19 = pVVar5->y;
-            fVar20 = dir.x + (float)uVar18;
-            fVar10 = dir.y + (float)uVar19;
-            start.y = (float)uVar17;
-            start.x = (float)uVar16;
-            start.z = fVar7;
-            end.y = fVar10;
-            end.x = fVar20;
+            pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffa0,pTVar1,(MethodInfo *)0x0);
+            uVar19 = pVVar5->x;
+            uVar20 = pVVar5->y;
+            fVar21 = dir.x + (float)uVar19;
+            fVar22 = dir.y + (float)uVar20;
+            start.y = (float)uVar18;
+            start.x = (float)uVar17;
+            start.z = fVar8;
+            end.y = fVar22;
+            end.x = fVar21;
             end.z = dir.z + pVVar5->z;
-            auVar21 = ZEXT412(0x3f800000) << 0x40;
+            auVar23 = ZEXT412(0x3f800000) << 0x40;
             color.a = 1.0;
-            color.r = (float)auVar21._0_4_;
-            color.g = (float)auVar21._4_4_;
-            color.b = (float)auVar21._8_4_;
-            dir.x = fVar7;
-            dir.y = fVar20;
-            dir.z = fVar10;
+            color.r = (float)auVar23._0_4_;
+            color.g = (float)auVar23._4_4_;
+            color.b = (float)auVar23._8_4_;
+            dir.x = fVar8;
+            dir.y = fVar21;
+            dir.z = fVar22;
+            puStack_7 = (undefined *)uVar19;
             UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_DrawLine_1(start,end,color,(MethodInfo *)0x0);
             if (cRam_? == '\0') {
               func_?();
               cRam_? = '\x01';
             }
-            pVVar22 = TypeInfo__UnityEngine__Vector3->static_fields;
-            uVar23 = (pVVar22->upVector).x;
-            uVar24 = (pVVar22->upVector).y;
-            fVar7 = (pVVar22->upVector).z;
-            fVar20 = fVar12 * (float)uVar23 - fVar11 * (float)uVar24;
-            fVar10 = fVar13 * (float)uVar24 - fVar12 * fVar7;
-            fVar7 = fVar11 * fVar7 - fVar13 * (float)uVar23;
+            pVVar24 = TypeInfo__UnityEngine__Vector3->static_fields;
+            uVar25 = (pVVar24->upVector).x;
+            uVar26 = (pVVar24->upVector).y;
+            fVar8 = (pVVar24->upVector).z;
+            fVar22 = fVar13 * (float)uVar25 - fVar12 * (float)uVar26;
+            fVar13 = fVar14 * (float)uVar26 - fVar13 * fVar8;
+            fVar8 = fVar12 * fVar8 - fVar14 * (float)uVar25;
+            puStack_7 = (undefined *)uVar25;
             UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1((Vector3 *)&stack0xffffffcc,(MethodInfo *)0x0);
             pTVar1 = (this->fields).center;
             if (pTVar1 != (Transform *)0x0) {
               pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffa0,pTVar1,(MethodInfo *)0x0);
-              uVar25 = pVVar5->x;
-              uVar26 = pVVar5->y;
-              fVar11 = pVVar5->z;
+              uVar27 = pVVar5->x;
+              uVar28 = pVVar5->y;
+              fVar12 = pVVar5->z;
               pTVar1 = (this->fields).center;
               if (pTVar1 != (Transform *)0x0) {
-                VStack_9.x = fVar10;
-                pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position(&VStack_9,pTVar1,(MethodInfo *)0x0);
-                uVar27 = pVVar5->x;
-                uVar28 = pVVar5->y;
-                VStack_9.y = 0.0;
-                VStack_9.z = 0.0;
-                start_00.y = (float)uVar26;
-                start_00.x = (float)uVar25;
-                start_00.z = fVar11;
-                end_00.y = fVar7 + (float)uVar28;
-                end_00.x = VStack_9.x + (float)uVar27;
-                end_00.z = fVar20 + pVVar5->z;
+                pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffa0,pTVar1,(MethodInfo *)0x0);
+                uVar29 = pVVar5->x;
+                uVar30 = pVVar5->y;
+                start_00.y = (float)uVar28;
+                start_00.x = (float)uVar27;
+                start_00.z = fVar12;
+                end_00.y = fVar8 + (float)uVar30;
+                end_00.x = fVar13 + (float)uVar29;
+                end_00.z = fVar22 + pVVar5->z;
                 color_00.a = 1.0;
                 color_00.r = 0.0;
                 color_00.g = 1.0;
                 color_00.b = 0.0;
+                puStack_7 = (undefined *)uVar29;
                 UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_DrawLine_1(start_00,end_00,color_00,(MethodInfo *)0x0);
-                v2.y = (float)uVar15;
-                v2.x = (float)uVar14;
-                uVar29 = CONCAT44(fVar7,VStack_9.x) ^ 0x8000000080000000;
+                v2.y = (float)uVar16;
+                v2.x = (float)uVar15;
+                uVar31 = CONCAT44(fVar8,fVar13) ^ 0x8000000080000000;
                 v1.y = dir.y;
                 v1.x = dir.x;
                 v1.z = dir.z;
                 v2.z = fVar4;
-                normal.z = -fVar20;
-                normal.x = (float)(int)uVar29;
-                normal.y = (float)(int)(uVar29 >> 0x20);
+                normal.z = -fVar22;
+                normal.x = (float)(int)uVar31;
+                normal.y = (float)(int)(uVar31 >> 0x20);
                 fVar4 = MathFunctions::MathFunctions_SignedAngle_1(v1,v2,normal,(MethodInfo *)0x0);
                 euler.y = 0.0;
                 euler.z = 0.0;
@@ -843,8 +772,8 @@ void Assembly-CSharp.dll::PickupItem::PickupItem_UpdateWithDirection(PickupItem 
     }
   }
   func_?();
-  pcVar30 = (code *)swi(3);
-  (*pcVar30)();
+  pcVar32 = (code *)swi(3);
+  (*pcVar32)();
   return;
 }
 
@@ -859,9 +788,8 @@ void Assembly-CSharp.dll::PickupItem::PickupItem__ctor(PickupItem *this,MethodIn
     cRam_? = '\x01';
   }
   pMVar1 = (MeshRenderer__Array *)func_?(TypeInfo__UnityEngine__MeshRenderer,0);
-  ppMVar2 = &(this->fields).meshRenderers;
-  *ppMVar2 = pMVar1;
-  func_?(ppMVar2,pMVar1);
+  (this->fields).meshRenderers = pMVar1;
+  func_?(&(this->fields).meshRenderers,pMVar1);
   (this->fields)._AbleToFire_k__BackingField = 1;
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;

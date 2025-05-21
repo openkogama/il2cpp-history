@@ -15,10 +15,15 @@ bool Assembly-CSharp.dll::Bullet+<MakeVisibleOverTime>d__48::Bullet_MakeVisibleO
   }
   (this->fields).__1__state = -1;
   if (pBVar2 != (Bullet *)0x0) {
-    fVar3 = 0.0;
-    fStack_4 = (pBVar2->fields).currentAirTime / 0.01;
-    if ((fStack_4 < 0.0) || (fVar3 = (pBVar2->fields).storedBulletColor.a, fVar3 < fStack_4)) {
-      fStack_4 = fVar3;
+    fVar3 = (pBVar2->fields).currentAirTime / 0.01;
+    if (fVar3 < 0.0) {
+      fVar4 = 0.0;
+code_?:
+      fVar3 = fVar4;
+    }
+    else {
+      fVar4 = (pBVar2->fields).storedBulletColor.a;
+      if (fVar4 < fVar3) goto code_?;
     }
     pCVar5 = &(pBVar2->fields).storedBulletColor;
     uVar6 = 0;
@@ -40,7 +45,7 @@ bool Assembly-CSharp.dll::Bullet+<MakeVisibleOverTime>d__48::Bullet_MakeVisibleO
       for (; (int)uVar6 < (int)pMVar7->max_length; uVar6 = uVar6 + 1) {
         if (pMVar7->max_length <= uVar6) goto code_?;
         if ((*ppMVar14 == (MeshRenderer *)0x0) || (pMVar15 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material((Renderer *)*ppMVar14,(MethodInfo *)0x0), pMVar15 == (Material *)0x0)) goto code_?;
-        value.w = fStack_4;
+        value.w = fVar3;
         UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector(pMVar15,StringLiteral__TintColor,value,(MethodInfo *)0x0);
         ppMVar14 = ppMVar14 + 1;
       }
@@ -50,18 +55,17 @@ bool Assembly-CSharp.dll::Bullet+<MakeVisibleOverTime>d__48::Bullet_MakeVisibleO
         ppSVar17 = pSVar16->vector;
         while( true ) {
           if ((int)pSVar16->max_length <= (int)uVar6) {
-            if (1.0 <= fStack_4) {
+            if (1.0 <= fVar3) {
               return 0;
             }
-            ppOVar18 = &(this->fields).__2__current;
-            *ppOVar18 = (Object *)0x0;
-            func_?(ppOVar18,0);
+            (this->fields).__2__current = (Object *)0x0;
+            func_?(&(this->fields).__2__current,0);
             (this->fields).__1__state = 1;
             return 1;
           }
           if (pSVar16->max_length <= uVar6) break;
           if ((*ppSVar17 == (SpriteRenderer *)0x0) || (pMVar15 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material((Renderer *)*ppSVar17,(MethodInfo *)0x0), pMVar15 == (Material *)0x0)) goto code_?;
-          value_00.w = fStack_4;
+          value_00.w = fVar3;
           UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector(pMVar15,StringLiteral__TintColor,value_00,(MethodInfo *)0x0);
           uVar6 = uVar6 + 1;
           ppSVar17 = ppSVar17 + 1;
@@ -74,9 +78,9 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar19 = (code *)swi(3);
-  bVar20 = (*pcVar19)();
-  return bVar20;
+  pcVar18 = (code *)swi(3);
+  bVar19 = (*pcVar18)();
+  return bVar19;
 }
 
 

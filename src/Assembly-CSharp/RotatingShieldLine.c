@@ -26,15 +26,15 @@ code_?:
       position.x = (float)dVar3 * fVar5;
       position.z = fVar5 * 0.0;
       UnityEngine.CoreModule.dll::UnityEngine::LineRenderer::LineRenderer_SetPosition(this_00,index,position,(MethodInfo *)0x0);
-      if ((index % ((this->fields).segments / 3) == 0) && (iVar2 = (this->fields).currIndex, iVar2 < 3)) {
+      if ((index % ((this->fields).segments / 3) == 0) && ((this->fields).currIndex < 3)) {
+        iVar2 = (this->fields).currIndex;
         (this->fields).currIndex = iVar2 + 1;
         if ((this->fields).positions == (Vector3__Array *)0x0) goto code_?;
         func_?(iVar2,CONCAT44((float)dVar4 * fVar5 * 2.5,(float)dVar3 * fVar5 * 2.5),fVar5 * 0.0 * 2.5);
       }
-      iVar2 = (this->fields).segments;
       index = index + 1;
-      fStack_1 = 360.0 / (float)iVar2 + fStack_1;
-    } while (index < iVar2 + 1);
+      fStack_1 = 360.0 / (float)(this->fields).segments + fStack_1;
+    } while (index < (this->fields).segments + 1);
   }
   return;
 }
@@ -62,15 +62,14 @@ void Assembly-CSharp.dll::RotatingShieldLine::RotatingShieldLine_Initialize(Rota
       position.x = (float)dVar3 * fVar5;
       position.z = fVar5 * 0.0;
       UnityEngine.CoreModule.dll::UnityEngine::LineRenderer::LineRenderer_SetPosition(this_00,index,position,(MethodInfo *)0x0);
-      if ((index % ((this->fields).segments / 3) == 0) && (iVar2 = (this->fields).currIndex, iVar2 < 3)) {
-        (this->fields).currIndex = iVar2 + 1;
+      if ((index % ((this->fields).segments / 3) == 0) && ((this->fields).currIndex < 3)) {
+        (this->fields).currIndex = (this->fields).currIndex + 1;
         if ((this->fields).positions == (Vector3__Array *)0x0) goto code_?;
         func_?();
       }
-      iVar2 = (this->fields).segments;
       index = index + 1;
-      fStack_1 = 360.0 / (float)iVar2 + fStack_1;
-    } while (index < iVar2 + 1);
+      fStack_1 = 360.0 / (float)(this->fields).segments + fStack_1;
+    } while (index < (this->fields).segments + 1);
   }
   pVVar6 = (this->fields).positions;
   uStack_7 = 0;
@@ -356,9 +355,8 @@ void Assembly-CSharp.dll::RotatingShieldLine::RotatingShieldLine__ctor(RotatingS
     cRam_? = '\x01';
   }
   pVVar1 = (Vector3__Array *)func_?(TypeInfo__UnityEngine__Vector3,3);
-  ppVVar2 = &(this->fields).positions;
-  *ppVVar2 = pVVar1;
-  func_?(ppVVar2,pVVar1);
+  (this->fields).positions = pVVar1;
+  func_?(&(this->fields).positions,pVVar1);
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }

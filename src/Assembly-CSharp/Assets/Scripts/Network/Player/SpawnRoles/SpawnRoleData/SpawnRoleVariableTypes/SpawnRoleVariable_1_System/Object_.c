@@ -92,8 +92,8 @@ int32_t Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::Spawn
 void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::SpawnRoleVariable`1[System::Object]::SpawnRoleVariable_1_System_Object__SubscribableVariableOnOnChange(SpawnRoleVariable_1_System_Object_ *this,Object *value,MethodInfo *method)
 
 {
-  pSVar1 = (this->fields).OnChange;
-  if (pSVar1 != (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)0x0) {
+  if ((this->fields).OnChange != (SpawnRoleVariable_1_T_SubDelegate_System_Object_ *)0x0) {
+    pSVar1 = (this->fields).OnChange;
     (*(pSVar1->fields)._._.invoke_impl)((pSVar1->fields)._._.method_code,value,(pSVar1->fields)._._.method);
   }
   return;
@@ -112,23 +112,21 @@ void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
   }
   this_01 = (SubscribableVariable_1_System_Object_ *)func_?(pIVar1);
   System.dll::System::Collections::Generic::SortedList`2[TKey,TValue]+ValueList[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::SortedList_2_TKey_TValue_ValueList_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((SortedList_2_TKey_TValue_ValueList_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_01,(SortedList_2_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)value,method->klass->rgctx_data[10].method);
-  pSVar2 = &this->fields;
-  pSVar2->subscribableVariable = this_01;
-  func_?(pSVar2,this_01);
-  this_00 = (SubscribableVariableBase_1_System_Single_ *)pSVar2->subscribableVariable;
+  (this->fields).subscribableVariable = this_01;
+  func_?(&this->fields,this_01);
+  this_00 = (SubscribableVariableBase_1_System_Single_ *)(this->fields).subscribableVariable;
   if (((uint)(method->klass->rgctx_data[0xc].klass)->vtable[0].methodPtr & 0x100) == 0) {
     func_?();
   }
   this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?();
-  pIVar3 = method->klass->rgctx_data;
-  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_02,(Object *)this,pIVar3[0xb].rgctxDataDummy,pIVar3[0xd].method);
+  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor(this_02,(Object *)this,method->klass->rgctx_data[0xb].rgctxDataDummy,method->klass->rgctx_data[0xd].method);
   if (this_00 != (SubscribableVariableBase_1_System_Single_ *)0x0) {
     SubscribableVariableBase`1[System::Single]::SubscribableVariableBase_1_System_Single__add_OnChange(this_00,(Action_1_Single_ *)this_02,method->klass->rgctx_data[0xe].method);
     return;
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

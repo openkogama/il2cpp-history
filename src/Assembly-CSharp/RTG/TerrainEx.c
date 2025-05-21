@@ -19,14 +19,13 @@ Vector3 * Assembly-CSharp.dll::RTG::TerrainEx::TerrainEx_GetInterpolatedNormal(V
         if (pTVar5 != (TerrainData *)0x0) {
           worldPos.z = 1.0 / worldPos.z;
           pVVar1 = UnityEngine.TerrainModule.dll::UnityEngine::TerrainData::TerrainData_get_size((Vector3 *)&stack0xffffffd4,pTVar5,(MethodInfo *)0x0);
-          worldPos.z = worldPos.z * (float)pTVar5;
           fVar4 = fVar4 * (1.0 / pVVar1->z);
           pTVar5 = UnityEngine.TerrainModule.dll::UnityEngine::Terrain::Terrain_get_terrainData(terrain,(MethodInfo *)0x0);
           if (pTVar5 != (TerrainData *)0x0) {
             worldPos.z = 0.0;
-            worldPos.x = 0.0;
+            worldPos.x = (float)terrain;
             worldPos.y = fVar4;
-            UnityEngine.TerrainModule.dll::UnityEngine::TerrainData::TerrainData_GetInterpolatedNormal(&worldPos,pTVar5,0.0,fVar4,(MethodInfo *)0x0);
+            UnityEngine.TerrainModule.dll::UnityEngine::TerrainData::TerrainData_GetInterpolatedNormal(&worldPos,pTVar5,(float)terrain,fVar4,(MethodInfo *)0x0);
             return &worldPos;
           }
         }
@@ -59,7 +58,7 @@ Vector2 Assembly-CSharp.dll::RTG::TerrainEx::TerrainEx_ToNormCoords(Terrain *ter
         if (pTVar4 != (TerrainData *)0x0) {
           __return_storage_ptr__ = (Vector3 *)(1.0 / fVar5);
           pVVar1 = UnityEngine.TerrainModule.dll::UnityEngine::TerrainData::TerrainData_get_size(__return_storage_ptr__,pTVar4,(MethodInfo *)0x0);
-          VVar6.y = (1.0 / pVVar1->z) * (worldPos.z - fVar3);
+          VVar6.y = (worldPos.z - fVar3) * (1.0 / pVVar1->z);
           VVar6.x = (worldPos.x - (float)uVar2) * (float)__return_storage_ptr__;
           return VVar6;
         }
