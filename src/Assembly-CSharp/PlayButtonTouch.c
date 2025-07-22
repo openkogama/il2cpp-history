@@ -4,8 +4,8 @@
 void Assembly-CSharp.dll::PlayButtonTouch::PlayButtonTouch_OnConfirmPlay(PlayButtonTouch *this,MethodInfo *method)
 
 {
-  if ((this->fields).OnPlayButtonPressed != (Action *)0x0) {
-    pAVar1 = (this->fields).OnPlayButtonPressed;
+  pAVar1 = (this->fields).OnPlayButtonPressed;
+  if (pAVar1 != (Action *)0x0) {
     (*(pAVar1->fields)._._.invoke_impl)((pAVar1->fields)._._.method_code,(pAVar1->fields)._._.method);
   }
   return;
@@ -151,7 +151,7 @@ void Assembly-CSharp.dll::PlayButtonTouch::PlayButtonTouch_StartPlaying(PlayButt
   }
   pIVar1 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
   if (pIVar1 != (IPlayModeUI *)0x0) {
-    func_?(4,TypeInfo__IPlayModeUI,pIVar1,0);
+    func_?(6,TypeInfo__IPlayModeUI,pIVar1,0);
     pSVar2 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal((MethodInfo *)0x0);
     if ((pSVar2 != (SpawnRoleDataMediator *)0x0) && (this_00 = (pSVar2->fields).SpawnRoleModeTypeWrapper, this_00 != (SpawnRoleModeTypeWrapper *)0x0)) {
       bVar3 = SpawnRoleModeTypeWrapper::SpawnRoleModeTypeWrapper_IsInMode(this_00,SpawnRoleModeType__Enum_Hidden,(MethodInfo *)0x0);

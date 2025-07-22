@@ -40,6 +40,8 @@ public abstract class PickupItem : MonoBehaviour
 	private bool _AbleToFire_k__BackingField;
 
 	// Properties
+	public abstract AvatarItemType Type { get; }
+	public abstract int MaxAmmo { get; }
 	public virtual int Quantity { get; }
 	public virtual Color CrossHairColor { get; }
 	public virtual float ChargeState { get; }
@@ -55,7 +57,6 @@ public abstract class PickupItem : MonoBehaviour
 	public Vector3 Origin { get; }
 	public bool IsInFirstPersonMode { get; }
 	public bool IsAmmoEmpty { get; }
-	public abstract AvatarItemType Type { get; }
 	public int VariantID { [CompilerGenerated] get; [CompilerGenerated] set; }
 	public bool AbleToFire { [CompilerGenerated] get; [CompilerGenerated] set; }
 
@@ -81,7 +82,7 @@ public abstract class PickupItem : MonoBehaviour
 	public virtual void OnEnterVehicleWithWeapon();
 	protected virtual void OnHolstered();
 	protected virtual void OnUnholstered();
-	protected virtual int GetAmmoMultiplier(int defaultAmmo);
+	protected virtual int CalculateMaxAmmo(int defaultAmmo);
 	public virtual void UpdateWithDirection(Vector3 dir);
 	public bool GetAndResetFiredThisFrame();
 	public static GameObject CloneCubeModelInstance(MVCubeModelInstance cmb, bool forceVisible = false);

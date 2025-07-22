@@ -1,7 +1,7 @@
 
 /* Boolean MoveNext() */
 
-bool Assembly-CSharp.dll::PickupItemFlamethrower+<DoFuelBurn>d__17::PickupItemFlamethrower_DoFuelBurn_d_17_MoveNext(PickupItemFlamethrower_DoFuelBurn_d_17 *this,MethodInfo *method)
+bool Assembly-CSharp.dll::PickupItemFlamethrower+<DoFuelBurn>d__19::PickupItemFlamethrower_DoFuelBurn_d_19_MoveNext(PickupItemFlamethrower_DoFuelBurn_d_19 *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -114,7 +114,7 @@ bool Assembly-CSharp.dll::PickupItemFlamethrower+<DoFuelBurn>d__17::PickupItemFl
               MVRigidBody::MVRigidBody_AddImpulse_1(pMStack_3,impulse,1,(MethodInfo *)0x0);
             }
           }
-          cVar19 = (*(code *)(pPVar2->klass->vtable).get_IsAmmoDepleted.method)(pPVar2,(pPVar2->klass->vtable).get_Type.methodPtr);
+          cVar19 = (*(code *)(pPVar2->klass->vtable).get_IsAmmoDepleted.method)(pPVar2,(pPVar2->klass->vtable).CanFire.methodPtr);
           if (cVar19 == '\0') {
             fStack_21 = 0.0;
             pOVar25 = (Object *)func_?(TypeInfo__System__Int32,&fStack_21);
@@ -150,13 +150,13 @@ code_?:
 
 /* Void System.Collections.IEnumerator.Reset() */
 
-void Assembly-CSharp.dll::PickupItemFlamethrower+<DoFuelBurn>d__17::PickupItemFlamethrower_DoFuelBurn_d_17_System_Collections_IEnumerator_Reset(PickupItemFlamethrower_DoFuelBurn_d_17 *this,MethodInfo *method)
+void Assembly-CSharp.dll::PickupItemFlamethrower+<DoFuelBurn>d__19::PickupItemFlamethrower_DoFuelBurn_d_19_System_Collections_IEnumerator_Reset(PickupItemFlamethrower_DoFuelBurn_d_19 *this,MethodInfo *method)
 
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
   this_00 = (NotSupportedException *)func_?(uVar1);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor(this_00,(MethodInfo *)0x0);
-  func_?(&MethodInfo__PickupItemFlamethrower___DoFuelBurn_d__17__System_Collections_IEnumerator_Reset__);
+  func_?(&MethodInfo__PickupItemFlamethrower___DoFuelBurn_d__19__System_Collections_IEnumerator_Reset__);
   func_?(this_00);
   pcVar2 = (code *)swi(3);
   (*pcVar2)();

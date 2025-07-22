@@ -8,14 +8,68 @@ void Assembly-CSharp.dll::ResolutionManager::ResolutionManager_Destroy(MethodInf
     func_?(&TypeInfo__ResolutionManager);
     cRam_? = '\x01';
   }
+  if ((TypeInfo__ResolutionManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__ResolutionManager);
+  }
   TypeInfo__ResolutionManager->static_fields->canvasScaler = (CanvasScaler *)0x0;
   func_?(&TypeInfo__ResolutionManager->static_fields->canvasScaler,0);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__ResolutionManager);
     cRam_? = '\x01';
   }
+  if ((TypeInfo__ResolutionManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__ResolutionManager);
+  }
   TypeInfo__ResolutionManager->static_fields->_Initialized_k__BackingField = 0;
   return;
+}
+
+
+/* Single GetScreenDpiScale() */
+
+float Assembly-CSharp.dll::ResolutionManager::ResolutionManager_GetScreenDpiScale(MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__ScreenSizeOptimizer);
+    cRam_? = '\x01';
+  }
+  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_dpi((MethodInfo *)0x0);
+  if (fVar1 != 0.0) {
+    unaff_EBP = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_dpi((MethodInfo *)0x0);
+  }
+  fVar1 = (TypeInfo__ScreenSizeOptimizer->static_fields->originalSize).x;
+  fVar2 = (TypeInfo__ScreenSizeOptimizer->static_fields->originalSize).y;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Math);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Math);
+  }
+  dVar3 = (double)(fVar2 * fVar2 + fVar1 * fVar1);
+  if (dVar3 < 0.0) {
+    func_?();
+  }
+  else {
+    dVar3 = SQRT(dVar3);
+  }
+  if ((float)dVar3 == 0.0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_width((MethodInfo *)0x0);
+    iVar4 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height((MethodInfo *)0x0);
+    fVar2 = (float)iVar4;
+  }
+  dVar3 = (double)(fVar2 * fVar2 + fVar1 * fVar1);
+  if (dVar3 < 0.0) {
+    func_?();
+  }
+  else {
+    dVar3 = SQRT(dVar3);
+  }
+  if ((float)dVar3 / unaff_EBP < 4.9) {
+    return 1.0;
+  }
+  return ((float)dVar3 / unaff_EBP) / 4.9;
 }
 
 
@@ -28,22 +82,74 @@ void Assembly-CSharp.dll::ResolutionManager::ResolutionManager_Init(CanvasScaler
     func_?(&TypeInfo__ResolutionManager);
     cRam_? = '\x01';
   }
+  if ((TypeInfo__ResolutionManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__ResolutionManager);
+  }
   if (cRam_? == '\0') {
     func_?(&TypeInfo__ResolutionManager);
     cRam_? = '\x01';
   }
+  if ((TypeInfo__ResolutionManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__ResolutionManager);
+  }
+  bVar1 = cRam_? == '\0';
   TypeInfo__ResolutionManager->static_fields->_Initialized_k__BackingField = 1;
+  if (bVar1) {
+    func_?(&TypeInfo__ScreenSizeOptimizer);
+    cRam_? = '\x01';
+  }
+  fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_dpi((MethodInfo *)0x0);
+  if (fVar2 != 0.0) {
+    fStack_3 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_dpi((MethodInfo *)0x0);
+  }
+  fVar2 = (TypeInfo__ScreenSizeOptimizer->static_fields->originalSize).x;
+  fVar4 = (TypeInfo__ScreenSizeOptimizer->static_fields->originalSize).y;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Math);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Math);
+  }
+  dVar5 = (double)(fVar2 * fVar2 + fVar4 * fVar4);
+  if (dVar5 < 0.0) {
+    func_?();
+  }
+  else {
+    dVar5 = SQRT(dVar5);
+  }
+  if ((float)dVar5 == 0.0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_width((MethodInfo *)0x0);
+    iVar6 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height((MethodInfo *)0x0);
+    fVar4 = (float)iVar6;
+  }
+  auVar7._0_8_ = (double)(fVar2 * fVar2 + fVar4 * fVar4);
+  auVar7._8_8_ = 0;
+  if (auVar7._0_8_ < 0.0) {
+    func_?();
+    dVar5 = auVar7._0_8_;
+  }
+  else {
+    dVar5 = SQRT(auVar7._0_8_);
+  }
+  if ((float)dVar5 / fStack_3 < 4.9) {
+    fVar2 = 1.0;
+  }
+  else {
+    fVar2 = ((float)dVar5 / fStack_3) / 4.9;
+  }
+  TypeInfo__ResolutionManager->static_fields->dpiScale = fVar2;
   TypeInfo__ResolutionManager->static_fields->canvasScaler = canvasScaler;
   func_?(&TypeInfo__ResolutionManager->static_fields->canvasScaler,canvasScaler);
-  if (TypeInfo__ResolutionManager->static_fields->OnReferenceResolution != (UnityAction_1_UnityEngine_Vector2_ *)0x0) {
-    pUVar1 = TypeInfo__ResolutionManager->static_fields->OnReferenceResolution;
+  pUVar8 = TypeInfo__ResolutionManager->static_fields->OnReferenceResolution;
+  if (pUVar8 != (UnityAction_1_UnityEngine_Vector2_ *)0x0) {
     if (canvasScaler == (CanvasScaler *)0x0) {
       func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
+      pcVar9 = (code *)swi(3);
+      (*pcVar9)();
       return;
     }
-    (*(pUVar1->fields)._._.invoke_impl)((pUVar1->fields)._._.method_code,(canvasScaler->fields).m_ReferenceResolution.x,(canvasScaler->fields).m_ReferenceResolution.y,(pUVar1->fields)._._.method);
+    (*(pUVar8->fields)._._.invoke_impl)((pUVar8->fields)._._.method_code,(canvasScaler->fields).m_ReferenceResolution.x,(canvasScaler->fields).m_ReferenceResolution.y,(pUVar8->fields)._._.method);
   }
   return;
 }
@@ -60,14 +166,36 @@ void Assembly-CSharp.dll::ResolutionManager::ResolutionManager_PostDestroyCleanu
     func_?(&StringLiteral_OnReferenceResolution_still_have);
     cRam_? = '\x01';
   }
+  if ((TypeInfo__ResolutionManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__ResolutionManager);
+  }
   if (TypeInfo__ResolutionManager->static_fields->OnReferenceResolution != (UnityAction_1_UnityEngine_Vector2_ *)0x0) {
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning((Object *)StringLiteral_OnReferenceResolution_still_have,(MethodInfo *)0x0);
+    if ((TypeInfo__ResolutionManager->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
     TypeInfo__ResolutionManager->static_fields->OnReferenceResolution = (UnityAction_1_UnityEngine_Vector2_ *)0x0;
-    func_?(TypeInfo__ResolutionManager->static_fields,0);
+    func_?();
   }
+  return;
+}
+
+
+/* ResolutionManager() */
+
+void Assembly-CSharp.dll::ResolutionManager::ResolutionManager__cctor(MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__ResolutionManager);
+    cRam_? = '\x01';
+  }
+  TypeInfo__ResolutionManager->static_fields->canvasScaler = (CanvasScaler *)0x0;
+  func_?(&TypeInfo__ResolutionManager->static_fields->canvasScaler,0);
+  TypeInfo__ResolutionManager->static_fields->dpiScale = 1.0;
   return;
 }
 
@@ -80,6 +208,9 @@ bool Assembly-CSharp.dll::ResolutionManager::ResolutionManager_get_Initialized(M
   if (cRam_? == '\0') {
     func_?(&TypeInfo__ResolutionManager);
     cRam_? = '\x01';
+  }
+  if ((TypeInfo__ResolutionManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__ResolutionManager);
   }
   return TypeInfo__ResolutionManager->static_fields->_Initialized_k__BackingField;
 }
@@ -94,16 +225,13 @@ float Assembly-CSharp.dll::ResolutionManager::ResolutionManager_get_InverseScale
     func_?(&TypeInfo__ResolutionManager);
     cRam_? = '\x01';
   }
-  pCVar1 = TypeInfo__ResolutionManager->static_fields->canvasScaler;
-  if (pCVar1 != (CanvasScaler *)0x0) {
-    fVar2 = (pCVar1->fields).m_ReferenceResolution.x;
-    iVar3 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_width((MethodInfo *)0x0);
-    return fVar2 / (float)iVar3;
+  if ((TypeInfo__ResolutionManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__ResolutionManager);
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  fVar5 = (float10)(*pcVar4)();
-  return (float)fVar5;
+  VVar1 = ResolutionManager_get_ReferenceResolution((MethodInfo *)0x0);
+  iVar2 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_width((MethodInfo *)0x0);
+  fStack_3 = VVar1.x;
+  return fStack_3 / (float)iVar2;
 }
 
 
@@ -113,39 +241,20 @@ Vector2 Assembly-CSharp.dll::ResolutionManager::ResolutionManager_get_PhysicalDi
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__ScaleToPhysicalSize);
-    cRam_? = '\x01';
-  }
-  if (cRam_? == '\0') {
     func_?(&TypeInfo__ResolutionManager);
     cRam_? = '\x01';
   }
-  pCVar1 = TypeInfo__ResolutionManager->static_fields->canvasScaler;
-  if (pCVar1 != (CanvasScaler *)0x0) {
-    fVar2 = (pCVar1->fields).m_ReferenceResolution.x;
-    iVar3 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_width((MethodInfo *)0x0);
-    if ((TypeInfo__ScaleToPhysicalSize->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__ScaleToPhysicalSize);
-    }
-    fVar4 = ScaleToPhysicalSize::ScaleToPhysicalSize_get_DpiScale((MethodInfo *)0x0);
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__ResolutionManager);
-      cRam_? = '\x01';
-    }
-    pCVar1 = TypeInfo__ResolutionManager->static_fields->canvasScaler;
-    if (pCVar1 != (CanvasScaler *)0x0) {
-      fVar5 = (pCVar1->fields).m_ReferenceResolution.y;
-      iVar6 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height((MethodInfo *)0x0);
-      fVar7 = ScaleToPhysicalSize::ScaleToPhysicalSize_get_DpiScale((MethodInfo *)0x0);
-      VVar8.y = fVar7 * (fVar5 / (float)iVar6);
-      VVar8.x = (fVar2 / (float)iVar3) * fVar4;
-      return VVar8;
-    }
+  if ((TypeInfo__ResolutionManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__ResolutionManager);
   }
-  func_?();
-  pcVar9 = (code *)swi(3);
-  VVar8 = (Vector2)(*pcVar9)();
-  return VVar8;
+  VVar1 = ResolutionManager_get_ReferenceResolution((MethodInfo *)0x0);
+  iVar2 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_width((MethodInfo *)0x0);
+  fVar3 = TypeInfo__ResolutionManager->static_fields->dpiScale;
+  VVar4 = ResolutionManager_get_ReferenceResolution((MethodInfo *)0x0);
+  iVar5 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height((MethodInfo *)0x0);
+  VVar4.y = (VVar4.y / (float)iVar5) * TypeInfo__ResolutionManager->static_fields->dpiScale;
+  VVar4.x = (VVar1.x / (float)iVar2) * fVar3;
+  return VVar4;
 }
 
 
@@ -155,40 +264,20 @@ Vector2 Assembly-CSharp.dll::ResolutionManager::ResolutionManager_get_PixelsToPh
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__ScaleToPhysicalSize);
-    cRam_? = '\x01';
-  }
-  iVar1 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_width((MethodInfo *)0x0);
-  if (cRam_? == '\0') {
     func_?(&TypeInfo__ResolutionManager);
     cRam_? = '\x01';
   }
-  pCVar2 = TypeInfo__ResolutionManager->static_fields->canvasScaler;
-  if (pCVar2 != (CanvasScaler *)0x0) {
-    fVar3 = (pCVar2->fields).m_ReferenceResolution.x;
-    if ((TypeInfo__ScaleToPhysicalSize->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__ScaleToPhysicalSize);
-    }
-    ppRStack_4 = (ResolutionManager__Class **)ScaleToPhysicalSize::ScaleToPhysicalSize_get_DpiScale((MethodInfo *)0x0);
-    iVar5 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height((MethodInfo *)0x0);
-    if (cRam_? == '\0') {
-      ppRStack_4 = &TypeInfo__ResolutionManager;
-      func_?();
-      cRam_? = '\x01';
-    }
-    pCVar2 = TypeInfo__ResolutionManager->static_fields->canvasScaler;
-    if (pCVar2 != (CanvasScaler *)0x0) {
-      fVar6 = (pCVar2->fields).m_ReferenceResolution.y;
-      fVar7 = ScaleToPhysicalSize::ScaleToPhysicalSize_get_DpiScale((MethodInfo *)0x0);
-      VVar8.y = ((float)iVar5 / fVar6) / fVar7;
-      VVar8.x = ((float)iVar1 / fVar3) / (float)ppRStack_4;
-      return VVar8;
-    }
+  iVar1 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_width((MethodInfo *)0x0);
+  if ((TypeInfo__ResolutionManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__ResolutionManager);
   }
-  func_?();
-  pcVar9 = (code *)swi(3);
-  VVar8 = (Vector2)(*pcVar9)();
-  return VVar8;
+  VVar2 = ResolutionManager_get_ReferenceResolution((MethodInfo *)0x0);
+  fVar3 = TypeInfo__ResolutionManager->static_fields->dpiScale;
+  iVar4 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height((MethodInfo *)0x0);
+  VVar5 = ResolutionManager_get_ReferenceResolution((MethodInfo *)0x0);
+  VVar5.y = ((float)iVar4 / VVar5.y) / TypeInfo__ResolutionManager->static_fields->dpiScale;
+  VVar5.x = ((float)iVar1 / VVar2.x) / fVar3;
+  return VVar5;
 }
 
 
@@ -200,6 +289,9 @@ Vector2 Assembly-CSharp.dll::ResolutionManager::ResolutionManager_get_ReferenceR
   if (cRam_? == '\0') {
     func_?(&TypeInfo__ResolutionManager);
     cRam_? = '\x01';
+  }
+  if ((TypeInfo__ResolutionManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__ResolutionManager);
   }
   pCVar1 = TypeInfo__ResolutionManager->static_fields->canvasScaler;
   if (pCVar1 != (CanvasScaler *)0x0) {
@@ -217,19 +309,17 @@ Vector2 Assembly-CSharp.dll::ResolutionManager::ResolutionManager_get_ReferenceR
 float Assembly-CSharp.dll::ResolutionManager::ResolutionManager_get_Scale(MethodInfo *method)
 
 {
-  iVar1 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_width((MethodInfo *)0x0);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__ResolutionManager);
     cRam_? = '\x01';
   }
-  pCVar2 = TypeInfo__ResolutionManager->static_fields->canvasScaler;
-  if (pCVar2 != (CanvasScaler *)0x0) {
-    return (float)iVar1 / (pCVar2->fields).m_ReferenceResolution.x;
+  iVar1 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_width((MethodInfo *)0x0);
+  if ((TypeInfo__ResolutionManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__ResolutionManager);
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  fVar4 = (float10)(*pcVar3)();
-  return (float)fVar4;
+  VVar2 = ResolutionManager_get_ReferenceResolution((MethodInfo *)0x0);
+  fStack_3 = VVar2.x;
+  return (float)iVar1 / fStack_3;
 }
 
 
@@ -241,6 +331,11 @@ void Assembly-CSharp.dll::ResolutionManager::ResolutionManager_set_Initialized(b
   if (cRam_? == '\0') {
     func_?(&TypeInfo__ResolutionManager);
     cRam_? = '\x01';
+  }
+  if ((TypeInfo__ResolutionManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__ResolutionManager);
+    TypeInfo__ResolutionManager->static_fields->_Initialized_k__BackingField = value;
+    return;
   }
   TypeInfo__ResolutionManager->static_fields->_Initialized_k__BackingField = value;
   return;

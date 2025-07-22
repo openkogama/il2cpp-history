@@ -11,10 +11,9 @@ void Assembly-CSharp.dll::GamePassesDetailHoldTrigger::GamePassesDetailHoldTrigg
     (pGVar1->fields).interpolationStartTime = fVar2;
     return;
   }
-  uVar3 = func_?(&puStack_4);
-  func_?(uVar3);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -31,10 +30,9 @@ void Assembly-CSharp.dll::GamePassesDetailHoldTrigger::GamePassesDetailHoldTrigg
     (pGVar1->fields).interpolationStartTime = fVar2;
     return;
   }
-  uVar3 = func_?(&puStack_4);
-  func_?(uVar3);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

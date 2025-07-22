@@ -1262,8 +1262,8 @@ BoxFaceDesc * Assembly-CSharp.dll::RTG::BoxMath::BoxMath_GetFaceClosestToPoint(B
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff48;
-  puVar5 = &stack0xffffff48;
+  puStack_4 = &stack0xffffff5c;
+  puVar5 = &stack0xffffff5c;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__RTG__BoxMath);
     func_?(&MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::BoxFace>__Dispose__);
@@ -1292,96 +1292,101 @@ BoxFaceDesc * Assembly-CSharp.dll::RTG::BoxMath::BoxMath_GetFaceClosestToPoint(B
   (__return_storage_ptr__->Center).y = 0.0;
   (__return_storage_ptr__->Center).z = 0.0;
   fStack_8 = 3.4028235e+38;
-  pLVar9 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0;
-  fVar10 = 0.0;
-  fVar11 = 0.0;
-  puVar12 = (undefined *)0x0;
+  fStack_9 = 0.0;
+  fStack_10 = 0.0;
+  fStack_11 = 0.0;
+  fStack_12 = 0.0;
   if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__RTG__BoxMath);
   }
-  pLVar13 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)BoxMath_get_AllBoxFaces((MethodInfo *)0x0);
-  if (pLVar13 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar14 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)&stack0xffffff64,pLVar13,MethodInfo__System__Collections__Generic__List<RTG::BoxFace>__GetEnumerator__);
-    uStack_15 = 0;
-    LStack_6._list = pLVar14->_list;
-    LStack_6._index = pLVar14->_index;
-    LStack_6._version = pLVar14->_version;
-    LStack_6._current = pLVar14->_current;
+  this = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)BoxMath_get_AllBoxFaces((MethodInfo *)0x0);
+  if (this != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    pLVar13 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator(&LStack_14,this,MethodInfo__System__Collections__Generic__List<RTG::BoxFace>__GetEnumerator__);
+    VStack_15.z = 0.0;
+    LStack_6._list = pLVar13->_list;
+    LStack_6._index = pLVar13->_index;
+    LStack_6._version = pLVar13->_version;
+    LStack_6._current = pLVar13->_current;
     fStack_16 = boxSize.z;
-    VStack_17.x = boxSize.x;
-    VStack_17.y = boxSize.y;
+    LStack_14._list = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)boxRotation.x;
+    LStack_14._index = (int32_t)boxRotation.y;
+    LStack_14._version = (int32_t)boxRotation.z;
+    LStack_14._current = (RegexCharClass_SingleRange)boxRotation.w;
+    VStack_15.x = boxSize.x;
+    VStack_15.y = boxSize.y;
     uStack_1 = 1;
-    fStack_18 = boxCenter.z;
-    auStack_19._4_4_ = boxCenter.x;
-    auStack_19._8_4_ = boxCenter.y;
-    pLStack_20 = &LStack_6;
+    fStack_17 = boxCenter.z;
+    auStack_18._4_4_ = boxCenter.x;
+    auStack_18._8_4_ = boxCenter.y;
+    pLStack_19 = &LStack_6;
     while( true ) {
-      bVar21 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange__MoveNext(&LStack_6,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::BoxFace>__MoveNext__);
-      if (bVar21 == 0) break;
-      RStack_22 = LStack_6._current;
+      bVar20 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange__MoveNext(&LStack_6,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::BoxFace>__MoveNext__);
+      if (bVar20 == 0) break;
+      RStack_21 = LStack_6._current;
       if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      boxCenter_00.z = fStack_18;
-      boxCenter_00.x = (float)auStack_19._4_4_;
-      boxCenter_00.y = (float)auStack_19._8_4_;
+      boxCenter_00.z = fStack_17;
+      boxCenter_00.x = (float)auStack_18._4_4_;
+      boxCenter_00.y = (float)auStack_18._8_4_;
       boxSize_00.z = fStack_16;
-      boxSize_00.x = VStack_17.x;
-      boxSize_00.y = VStack_17.y;
-      pPVar23 = BoxMath_CalcBoxFacePlane((Plane *)&stack0xffffff54,boxCenter_00,boxSize_00,boxRotation,(BoxFace__Enum)RStack_22,(MethodInfo *)0x0);
-      puVar12 = (undefined *)0x0;
-      pLVar13 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(pPVar23->m_Normal).x;
-      fVar24 = (pPVar23->m_Normal).y;
-      fVar25 = (pPVar23->m_Normal).z;
-      pLVar9 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)point.x;
-      fVar10 = point.y;
-      fVar11 = point.z;
-      VStack_17.z = PlaneEx::PlaneEx_GetAbsDistanceToPoint(*pPVar23,point,(MethodInfo *)0x0);
-      if (VStack_17.z < fStack_8) {
-        puVar12 = &UNK_?;
-        RStack_7 = RStack_22;
-        boxFace = RStack_22;
-        pLVar9 = pLVar13;
-        fVar10 = fVar24;
-        fVar11 = fVar25;
-        fStack_8 = VStack_17.z;
+      boxSize_00.x = VStack_15.x;
+      boxSize_00.y = VStack_15.y;
+      boxRotation_00.y = (float)LStack_14._index;
+      boxRotation_00.x = (float)LStack_14._list;
+      boxRotation_00.z = (float)LStack_14._version;
+      boxRotation_00.w = (float)LStack_14._current;
+      pPVar22 = BoxMath_CalcBoxFacePlane((Plane *)&stack0xffffff68,boxCenter_00,boxSize_00,boxRotation_00,(BoxFace__Enum)RStack_21,(MethodInfo *)0x0);
+      fVar23 = ABS((pPVar22->m_Normal).x * point.x + (pPVar22->m_Normal).y * point.y + (pPVar22->m_Normal).z * point.z + pPVar22->m_Distance);
+      if (fVar23 < fStack_8) {
+        fStack_9 = (pPVar22->m_Normal).x;
+        fStack_10 = (pPVar22->m_Normal).y;
+        fStack_11 = (pPVar22->m_Normal).z;
+        fStack_12 = pPVar22->m_Distance;
+        RStack_7 = RStack_21;
+        boxFace = RStack_21;
+        fStack_8 = fVar23;
       }
     }
     uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&LStack_6,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::BoxFace>__Dispose__,in_stack_26);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&LStack_6,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::BoxFace>__Dispose__,in_stack_24);
     uStack_1 = 0xffffffff;
     (__return_storage_ptr__->Center).x = 0.0;
     (__return_storage_ptr__->Center).y = 0.0;
     (__return_storage_ptr__->Center).z = 0.0;
-    pBVar27 = TypeInfo__RTG__BoxMath;
+    pBVar25 = TypeInfo__RTG__BoxMath;
     __return_storage_ptr__->Face = (int32_t)boxFace;
-    (__return_storage_ptr__->Plane).m_Normal.x = (float)pLVar9;
-    (__return_storage_ptr__->Plane).m_Normal.y = fVar10;
-    (__return_storage_ptr__->Plane).m_Normal.z = fVar11;
-    (__return_storage_ptr__->Plane).m_Distance = (float)puVar12;
-    if ((pBVar27->_1).cctor_finished_or_no_cctor == 0) {
+    (__return_storage_ptr__->Plane).m_Normal.x = fStack_9;
+    (__return_storage_ptr__->Plane).m_Normal.y = fStack_10;
+    (__return_storage_ptr__->Plane).m_Normal.z = fStack_11;
+    (__return_storage_ptr__->Plane).m_Distance = fStack_12;
+    if ((pBVar25->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    boxCenter_01.z = fStack_18;
-    boxCenter_01.x = (float)auStack_19._4_4_;
-    boxCenter_01.y = (float)auStack_19._8_4_;
+    boxCenter_01.z = fStack_17;
+    boxCenter_01.x = (float)auStack_18._4_4_;
+    boxCenter_01.y = (float)auStack_18._8_4_;
     boxSize_01.z = fStack_16;
-    boxSize_01.x = VStack_17.x;
-    boxSize_01.y = VStack_17.y;
-    pVVar28 = BoxMath_CalcBoxFaceCenter((Vector3 *)auStack_19,boxCenter_01,boxSize_01,boxRotation,(BoxFace__Enum)boxFace,(MethodInfo *)0x0);
-    fVar11 = pVVar28->y;
-    fVar10 = pVVar28->z;
-    (__return_storage_ptr__->Center).x = pVVar28->x;
-    (__return_storage_ptr__->Center).y = fVar11;
-    (__return_storage_ptr__->Center).z = fVar10;
+    boxSize_01.x = VStack_15.x;
+    boxSize_01.y = VStack_15.y;
+    boxRotation_01.y = (float)LStack_14._index;
+    boxRotation_01.x = (float)LStack_14._list;
+    boxRotation_01.z = (float)LStack_14._version;
+    boxRotation_01.w = (float)LStack_14._current;
+    pVVar26 = BoxMath_CalcBoxFaceCenter((Vector3 *)auStack_18,boxCenter_01,boxSize_01,boxRotation_01,(BoxFace__Enum)boxFace,(MethodInfo *)0x0);
+    fVar27 = pVVar26->y;
+    fVar23 = pVVar26->z;
+    (__return_storage_ptr__->Center).x = pVVar26->x;
+    (__return_storage_ptr__->Center).y = fVar27;
+    (__return_storage_ptr__->Center).z = fVar23;
     *unaff_FS_OFFSET = uStack_3;
     return __return_storage_ptr__;
   }
   func_?();
   func_?();
-  pcVar29 = (code *)swi(3);
-  pBVar30 = (BoxFaceDesc *)(*pcVar29)();
-  return pBVar30;
+  pcVar28 = (code *)swi(3);
+  pBVar29 = (BoxFaceDesc *)(*pcVar28)();
+  return pBVar29;
 }
 
 
@@ -1394,8 +1399,8 @@ BoxFaceDesc * Assembly-CSharp.dll::RTG::BoxMath::BoxMath_GetFaceClosestToPoint_1
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff48;
-  puVar5 = &stack0xffffff48;
+  puStack_4 = &stack0xffffff5c;
+  puVar5 = &stack0xffffff5c;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__RTG__BoxMath);
     func_?(&MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::BoxFace>__Dispose__);
@@ -1423,64 +1428,62 @@ BoxFaceDesc * Assembly-CSharp.dll::RTG::BoxMath::BoxMath_GetFaceClosestToPoint_1
   (__return_storage_ptr__->Center).y = 0.0;
   (__return_storage_ptr__->Center).z = 0.0;
   fStack_9 = 3.4028235e+38;
-  pLVar10 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0;
-  fVar11 = 0.0;
-  fVar12 = 0.0;
-  puVar13 = (undefined *)0x0;
+  fStack_10 = 0.0;
+  fStack_11 = 0.0;
+  fStack_12 = 0.0;
+  fStack_13 = 0.0;
   if ((pBVar6->_1).cctor_finished_or_no_cctor == 0) {
     func_?(pBVar6);
   }
-  pLVar14 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)BoxMath_get_AllBoxFaces((MethodInfo *)0x0);
-  if (pLVar14 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar15 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)&stack0xffffff64,pLVar14,MethodInfo__System__Collections__Generic__List<RTG::BoxFace>__GetEnumerator__);
-    uStack_16 = 0;
-    LStack_7._list = pLVar15->_list;
-    LStack_7._index = pLVar15->_index;
-    LStack_7._version = pLVar15->_version;
-    LStack_7._current = pLVar15->_current;
+  this = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)BoxMath_get_AllBoxFaces((MethodInfo *)0x0);
+  if (this != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+    pLVar14 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator(&LStack_15,this,MethodInfo__System__Collections__Generic__List<RTG::BoxFace>__GetEnumerator__);
+    VStack_16.z = 0.0;
+    LStack_7._list = pLVar14->_list;
+    LStack_7._index = pLVar14->_index;
+    LStack_7._version = pLVar14->_version;
+    LStack_7._current = pLVar14->_current;
     fStack_17 = boxSize.z;
-    VStack_18.x = boxSize.x;
-    VStack_18.y = boxSize.y;
+    LStack_15._list = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)boxRotation.x;
+    LStack_15._index = (int32_t)boxRotation.y;
+    LStack_15._version = (int32_t)boxRotation.z;
+    LStack_15._current = (RegexCharClass_SingleRange)boxRotation.w;
+    VStack_16.x = boxSize.x;
+    VStack_16.y = boxSize.y;
     uStack_1 = 1;
-    fStack_19 = boxCenter.z;
-    auStack_20._4_4_ = boxCenter.x;
-    auStack_20._8_4_ = boxCenter.y;
-    pLStack_21 = &LStack_7;
+    fStack_18 = boxCenter.z;
+    auStack_19._4_4_ = boxCenter.x;
+    auStack_19._8_4_ = boxCenter.y;
+    pLStack_20 = &LStack_7;
     while( true ) {
-      bVar22 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange__MoveNext(&LStack_7,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::BoxFace>__MoveNext__);
-      if (bVar22 == 0) break;
-      RStack_23 = LStack_7._current;
+      bVar21 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange__MoveNext(&LStack_7,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::BoxFace>__MoveNext__);
+      if (bVar21 == 0) break;
+      RStack_22 = LStack_7._current;
       if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      boxCenter_00.z = fStack_19;
-      boxCenter_00.x = (float)auStack_20._4_4_;
-      boxCenter_00.y = (float)auStack_20._8_4_;
+      boxCenter_00.z = fStack_18;
+      boxCenter_00.x = (float)auStack_19._4_4_;
+      boxCenter_00.y = (float)auStack_19._8_4_;
       boxSize_00.z = fStack_17;
-      boxSize_00.x = VStack_18.x;
-      boxSize_00.y = VStack_18.y;
-      pPVar24 = BoxMath_CalcBoxFacePlane((Plane *)&stack0xffffff54,boxCenter_00,boxSize_00,boxRotation,(BoxFace__Enum)RStack_23,(MethodInfo *)0x0);
-      pLVar14 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(pPVar24->m_Normal).x;
-      fVar25 = (pPVar24->m_Normal).y;
-      fVar26 = (pPVar24->m_Normal).z;
-      if (viewVector.y * fVar25 + viewVector.x * (float)pLVar14 + viewVector.z * fVar26 < 0.0) {
-        puVar13 = (undefined *)0x0;
-        pLVar10 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)point.x;
-        fVar11 = point.y;
-        fVar12 = point.z;
-        VStack_18.z = PlaneEx::PlaneEx_GetAbsDistanceToPoint(*pPVar24,point,(MethodInfo *)0x0);
-        if (VStack_18.z < fStack_9) {
-          puVar13 = &UNK_?;
-          RStack_8 = RStack_23;
-          pLVar10 = pLVar14;
-          fVar11 = fVar25;
-          fVar12 = fVar26;
-          fStack_9 = VStack_18.z;
-        }
+      boxSize_00.x = VStack_16.x;
+      boxSize_00.y = VStack_16.y;
+      boxRotation_00.y = (float)LStack_15._index;
+      boxRotation_00.x = (float)LStack_15._list;
+      boxRotation_00.z = (float)LStack_15._version;
+      boxRotation_00.w = (float)LStack_15._current;
+      pPVar23 = BoxMath_CalcBoxFacePlane((Plane *)&stack0xffffff68,boxCenter_00,boxSize_00,boxRotation_00,(BoxFace__Enum)RStack_22,(MethodInfo *)0x0);
+      if ((viewVector.x * (pPVar23->m_Normal).x + viewVector.y * (pPVar23->m_Normal).y + viewVector.z * (pPVar23->m_Normal).z < 0.0) && (fVar24 = ABS((pPVar23->m_Normal).x * point.x + (pPVar23->m_Normal).y * point.y + (pPVar23->m_Normal).z * point.z + pPVar23->m_Distance), fVar24 < fStack_9)) {
+        fStack_10 = (pPVar23->m_Normal).x;
+        fStack_11 = (pPVar23->m_Normal).y;
+        fStack_12 = (pPVar23->m_Normal).z;
+        fStack_13 = pPVar23->m_Distance;
+        RStack_8 = RStack_22;
+        fStack_9 = fVar24;
       }
     }
     uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&LStack_7,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::BoxFace>__Dispose__,in_stack_27);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)&LStack_7,(ExceptionArgument__Enum)MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::BoxFace>__Dispose__,in_stack_25);
     boxFace = RStack_8;
     uStack_1 = 0xffffffff;
     (__return_storage_ptr__->Center).x = 0.0;
@@ -1488,33 +1491,37 @@ BoxFaceDesc * Assembly-CSharp.dll::RTG::BoxMath::BoxMath_GetFaceClosestToPoint_1
     (__return_storage_ptr__->Center).z = 0.0;
     pBVar6 = TypeInfo__RTG__BoxMath;
     __return_storage_ptr__->Face = (int32_t)RStack_8;
-    (__return_storage_ptr__->Plane).m_Normal.x = (float)pLVar10;
-    (__return_storage_ptr__->Plane).m_Normal.y = fVar11;
-    (__return_storage_ptr__->Plane).m_Normal.z = fVar12;
-    (__return_storage_ptr__->Plane).m_Distance = (float)puVar13;
+    (__return_storage_ptr__->Plane).m_Normal.x = fStack_10;
+    (__return_storage_ptr__->Plane).m_Normal.y = fStack_11;
+    (__return_storage_ptr__->Plane).m_Normal.z = fStack_12;
+    (__return_storage_ptr__->Plane).m_Distance = fStack_13;
     if ((pBVar6->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    boxCenter_01.z = fStack_19;
-    boxCenter_01.x = (float)auStack_20._4_4_;
-    boxCenter_01.y = (float)auStack_20._8_4_;
+    boxCenter_01.z = fStack_18;
+    boxCenter_01.x = (float)auStack_19._4_4_;
+    boxCenter_01.y = (float)auStack_19._8_4_;
     boxSize_01.z = fStack_17;
-    boxSize_01.x = VStack_18.x;
-    boxSize_01.y = VStack_18.y;
-    pVVar28 = BoxMath_CalcBoxFaceCenter((Vector3 *)auStack_20,boxCenter_01,boxSize_01,boxRotation,(BoxFace__Enum)boxFace,(MethodInfo *)0x0);
-    fVar12 = pVVar28->y;
-    fVar11 = pVVar28->z;
-    (__return_storage_ptr__->Center).x = pVVar28->x;
-    (__return_storage_ptr__->Center).y = fVar12;
-    (__return_storage_ptr__->Center).z = fVar11;
+    boxSize_01.x = VStack_16.x;
+    boxSize_01.y = VStack_16.y;
+    boxRotation_01.y = (float)LStack_15._index;
+    boxRotation_01.x = (float)LStack_15._list;
+    boxRotation_01.z = (float)LStack_15._version;
+    boxRotation_01.w = (float)LStack_15._current;
+    pVVar26 = BoxMath_CalcBoxFaceCenter((Vector3 *)auStack_19,boxCenter_01,boxSize_01,boxRotation_01,(BoxFace__Enum)boxFace,(MethodInfo *)0x0);
+    fVar27 = pVVar26->y;
+    fVar24 = pVVar26->z;
+    (__return_storage_ptr__->Center).x = pVVar26->x;
+    (__return_storage_ptr__->Center).y = fVar27;
+    (__return_storage_ptr__->Center).z = fVar24;
     *unaff_FS_OFFSET = uStack_3;
     return __return_storage_ptr__;
   }
   func_?();
   func_?();
-  pcVar29 = (code *)swi(3);
-  pBVar30 = (BoxFaceDesc *)(*pcVar29)();
-  return pBVar30;
+  pcVar28 = (code *)swi(3);
+  pBVar29 = (BoxFaceDesc *)(*pcVar28)();
+  return pBVar29;
 }
 
 

@@ -97,7 +97,6 @@ void Assembly-CSharp.dll::RTG::SceneGizmoMidCap::SceneGizmoMidCap__ctor(SceneGiz
     func_?(&MethodInfo__RTG__SceneGizmoMidCap__OnGizmoPreUpdateBegin_RTG__Gizmo_);
     cRam_? = '\x01';
   }
-  UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::UnsafeUtility_SizeOf_26((MethodInfo *)0x0);
   if (cRam_? == '\0') {
     func_?(&TypeInfo__RTG__GizmoCap3D);
     cRam_? = '\x01';
@@ -107,9 +106,8 @@ void Assembly-CSharp.dll::RTG::SceneGizmoMidCap::SceneGizmoMidCap__ctor(SceneGiz
   func_?(&this->fields,sceneGizmo);
   if (sceneGizmo != (SceneGizmo *)0x0) {
     pGVar1 = (sceneGizmo->fields)._._gizmo;
-    handleId = TypeInfo__RTG__GizmoCap3D;
-    pGVar2 = (GizmoCap3D *)func_?();
-    GizmoCap3D::GizmoCap3D__ctor(pGVar2,pGVar1,(int32_t)handleId,(MethodInfo *)0x0);
+    pGVar2 = (GizmoCap3D *)func_?(TypeInfo__RTG__GizmoCap3D);
+    GizmoCap3D::GizmoCap3D__ctor(pGVar2,pGVar1,1,(MethodInfo *)0x0);
     (this->fields)._._cap = pGVar2;
     func_?(&(this->fields)._._cap,pGVar2);
     if ((sceneGizmo->fields)._sharedLookAndFeel == (SceneGizmoLookAndFeel *)0x0) {

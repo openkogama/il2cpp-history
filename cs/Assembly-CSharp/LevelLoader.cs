@@ -19,7 +19,7 @@ public class LevelLoader : MonoBehaviour
 	private const string SceneTouchEditMode = "AndroidEditModeGUI";
 	private const string SceneDesktopEditMode = "DesktopEditModeGUI";
 	private const string SceneDesktopAvatarEditMode = "DesktopAvatarEditModeGUI";
-	private static Dictionary<ScenesForMode, string[]> scenesForModeMap;
+	private static readonly Dictionary<ScenesForMode, string[]> scenesForModeMap;
 	private readonly List<AsyncOperation> pendingScenes;
 	private Action callback;
 

@@ -6,23 +6,23 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_AddMenuBu
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Func<bool>);
-    func_?(&MethodInfo__ContextMenuController____c___AddMenuButtonForFlag_b__13_0__);
+    func_?(&MethodInfo__ContextMenuController____c___AddMenuButtonForFlag_b__15_0__);
     func_?(&TypeInfo__ContextMenuController____c);
     cRam_? = '\x01';
   }
   if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__ContextMenuController____c);
   }
-  this_00 = TypeInfo__ContextMenuController____c->static_fields->__9__13_0;
+  this_00 = TypeInfo__ContextMenuController____c->static_fields->__9__15_0;
   if (this_00 == (Func_1_Boolean_ *)0x0) {
     if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__ContextMenuController____c);
     }
     object = TypeInfo__ContextMenuController____c->static_fields->__9;
     this_00 = (Func_1_Boolean_ *)func_?(TypeInfo__System__Func<bool>);
-    mscorlib.dll::System::Func`1[System::Threading::Tasks::VoidTaskResult]::Func_1_System_Threading_Tasks_VoidTaskResult___ctor((Func_1_System_Threading_Tasks_VoidTaskResult_ *)this_00,(Object *)object,MethodInfo__ContextMenuController____c___AddMenuButtonForFlag_b__13_0__,(MethodInfo *)0x0);
-    TypeInfo__ContextMenuController____c->static_fields->__9__13_0 = this_00;
-    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__13_0,this_00);
+    mscorlib.dll::System::Func`1[System::Threading::Tasks::VoidTaskResult]::Func_1_System_Threading_Tasks_VoidTaskResult___ctor((Func_1_System_Threading_Tasks_VoidTaskResult_ *)this_00,(Object *)object,MethodInfo__ContextMenuController____c___AddMenuButtonForFlag_b__15_0__,(MethodInfo *)0x0);
+    TypeInfo__ContextMenuController____c->static_fields->__9__15_0 = this_00;
+    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__15_0,this_00);
   }
   if (this != (ContextMenuController *)0x0) {
     ContextMenuController_AddMenuButtonForFlag_1(this,flag,buttonText,onClickCallback,(Func_1_Boolean_ *)method,(MethodInfo *)this_00);
@@ -122,14 +122,14 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_AddToInve
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__ContextMenuController___AddToInventory_b__36_2_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_);
+    func_?(&MethodInfo__ContextMenuController___AddToInventory_b__38_2_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_);
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>);
     func_?(&UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_);
     func_?(&UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&MethodInfo__ContextMenuController____c___AddToInventory_b__36_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_);
-    func_?(&MethodInfo__ContextMenuController____c___AddToInventory_b__36_1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
+    func_?(&MethodInfo__ContextMenuController____c___AddToInventory_b__38_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_);
+    func_?(&MethodInfo__ContextMenuController____c___AddToInventory_b__38_1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
     func_?(&TypeInfo__ContextMenuController____c);
     cRam_? = '\x01';
   }
@@ -138,7 +138,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_AddToInve
   if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__ContextMenuController____c);
   }
-  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__36_0;
+  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__38_0;
   if (callbackFunction == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
     pGVar1 = pGVar2;
     if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
@@ -147,9 +147,9 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_AddToInve
     }
     pCVar3 = TypeInfo__ContextMenuController____c->static_fields->__9;
     callbackFunction = (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)pCVar3,MethodInfo__ContextMenuController____c___AddToInventory_b__36_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
-    TypeInfo__ContextMenuController____c->static_fields->__9__36_0 = callbackFunction;
-    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__36_0,callbackFunction);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)pCVar3,MethodInfo__ContextMenuController____c___AddToInventory_b__38_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+    TypeInfo__ContextMenuController____c->static_fields->__9__38_0 = callbackFunction;
+    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__38_0,callbackFunction);
   }
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
@@ -159,7 +159,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_AddToInve
   if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  callbackFunction_00 = TypeInfo__ContextMenuController____c->static_fields->__9__36_1;
+  callbackFunction_00 = TypeInfo__ContextMenuController____c->static_fields->__9__38_1;
   if (callbackFunction_00 == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
     if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
@@ -167,8 +167,8 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_AddToInve
     pCVar3 = TypeInfo__ContextMenuController____c->static_fields->__9;
     callbackFunction_00 = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
     root = callbackFunction_00;
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,(Object *)pCVar3,MethodInfo__ContextMenuController____c___AddToInventory_b__36_1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
-    TypeInfo__ContextMenuController____c->static_fields->__9__36_1 = callbackFunction_00;
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,(Object *)pCVar3,MethodInfo__ContextMenuController____c___AddToInventory_b__38_1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+    TypeInfo__ContextMenuController____c->static_fields->__9__38_1 = callbackFunction_00;
     func_?();
   }
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
@@ -177,7 +177,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_AddToInve
   UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy((GameObject *)root,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction_00,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
   pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
   callbackFunction_01 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction_01,(Object *)this,MethodInfo__ContextMenuController___AddToInventory_b__36_2_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction_01,(Object *)this,MethodInfo__ContextMenuController___AddToInventory_b__38_2_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
   UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy(pGVar1,(BaseEventData *)0x0,callbackFunction_01,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_);
   return;
 }
@@ -323,13 +323,13 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_Clone(Con
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__ContextMenuController___Clone_b__34_1_UnityEngine__EventSystems__ICloneHandler__UnityEngine__EventSystems__BaseEventData_);
+    func_?(&MethodInfo__ContextMenuController___Clone_b__36_1_UnityEngine__EventSystems__ICloneHandler__UnityEngine__EventSystems__BaseEventData_);
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::ICloneHandler>);
     func_?(&UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::ICloneHandler>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::ICloneHandler>_);
     func_?(&UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&MethodInfo__ContextMenuController____c___Clone_b__34_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
+    func_?(&MethodInfo__ContextMenuController____c___Clone_b__36_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
     func_?(&TypeInfo__ContextMenuController____c);
     cRam_? = '\x01';
   }
@@ -337,16 +337,16 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_Clone(Con
   if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__ContextMenuController____c);
   }
-  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__34_0;
+  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__36_0;
   if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
     if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__ContextMenuController____c);
     }
     object = TypeInfo__ContextMenuController____c->static_fields->__9;
     callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___Clone_b__34_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
-    TypeInfo__ContextMenuController____c->static_fields->__9__34_0 = callbackFunction;
-    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__34_0,callbackFunction);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___Clone_b__36_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+    TypeInfo__ContextMenuController____c->static_fields->__9__36_0 = callbackFunction;
+    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__36_0,callbackFunction);
   }
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
@@ -354,7 +354,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_Clone(Con
   UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy(pGVar1,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
   pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
   callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::ICloneHandler>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,(Object *)this,MethodInfo__ContextMenuController___Clone_b__34_1_UnityEngine__EventSystems__ICloneHandler__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,(Object *)this,MethodInfo__ContextMenuController___Clone_b__36_1_UnityEngine__EventSystems__ICloneHandler__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
   UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy(pGVar1,(BaseEventData *)0x0,callbackFunction_00,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::ICloneHandler>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::ICloneHandler>_);
   return;
 }
@@ -371,29 +371,29 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_CloneRoot
     func_?(&UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::ICloneHandler>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::ICloneHandler>_);
     func_?(&UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&MethodInfo__ContextMenuController____c___CloneRoot_b__35_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
-    func_?(&MethodInfo__ContextMenuController____c__DisplayClass35_0___CloneRoot_b__1_UnityEngine__EventSystems__ICloneHandler__UnityEngine__EventSystems__BaseEventData_);
-    func_?(&TypeInfo__ContextMenuController____c__DisplayClass35_0);
+    func_?(&MethodInfo__ContextMenuController____c___CloneRoot_b__37_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
+    func_?(&MethodInfo__ContextMenuController____c__DisplayClass37_0___CloneRoot_b__1_UnityEngine__EventSystems__ICloneHandler__UnityEngine__EventSystems__BaseEventData_);
+    func_?(&TypeInfo__ContextMenuController____c__DisplayClass37_0);
     func_?(&TypeInfo__ContextMenuController____c);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__ContextMenuController____c__DisplayClass35_0;
+  method_00 = TypeInfo__ContextMenuController____c__DisplayClass37_0;
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
   if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__ContextMenuController____c);
   }
-  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__35_0;
+  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__37_0;
   if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
     if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__ContextMenuController____c);
     }
     object = TypeInfo__ContextMenuController____c->static_fields->__9;
     callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___CloneRoot_b__35_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
-    TypeInfo__ContextMenuController____c->static_fields->__9__35_0 = callbackFunction;
-    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__35_0,callbackFunction);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___CloneRoot_b__37_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+    TypeInfo__ContextMenuController____c->static_fields->__9__37_0 = callbackFunction;
+    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__37_0,callbackFunction);
   }
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
@@ -408,7 +408,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_CloneRoot
       func_?();
       root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
       callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,MethodInfo__ContextMenuController____c__DisplayClass35_0___CloneRoot_b__1_UnityEngine__EventSystems__ICloneHandler__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,MethodInfo__ContextMenuController____c__DisplayClass37_0___CloneRoot_b__1_UnityEngine__EventSystems__ICloneHandler__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
       UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy(root,(BaseEventData *)0x0,callbackFunction_00,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::ICloneHandler>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::ICloneHandler>_);
       return;
     }
@@ -431,14 +431,14 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_Delete(Co
     func_?(&UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_);
     func_?(&UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&MethodInfo__ContextMenuController____c___Delete_b__41_1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
-    func_?(&MethodInfo__ContextMenuController____c__DisplayClass41_0___Delete_b__0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_);
-    func_?(&TypeInfo__ContextMenuController____c__DisplayClass41_0);
+    func_?(&MethodInfo__ContextMenuController____c___Delete_b__43_1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
+    func_?(&MethodInfo__ContextMenuController____c__DisplayClass43_0___Delete_b__0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_);
+    func_?(&TypeInfo__ContextMenuController____c__DisplayClass43_0);
     func_?(&TypeInfo__ContextMenuController____c);
     func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__ContextMenuController____c__DisplayClass41_0;
+  method_00 = TypeInfo__ContextMenuController____c__DisplayClass43_0;
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   this_00 = (this->fields).editorStateMachine;
@@ -458,16 +458,16 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_Delete(Co
             if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
-            callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__41_1;
+            callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__43_1;
             if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
               if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
               }
               object = TypeInfo__ContextMenuController____c->static_fields->__9;
               callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___Delete_b__41_1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
-              TypeInfo__ContextMenuController____c->static_fields->__9__41_1 = callbackFunction;
-              func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__41_1);
+              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___Delete_b__43_1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+              TypeInfo__ContextMenuController____c->static_fields->__9__43_1 = callbackFunction;
+              func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__43_1);
             }
             if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
@@ -477,7 +477,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_Delete(Co
           }
           pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
           callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>);
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,MethodInfo__ContextMenuController____c__DisplayClass41_0___Delete_b__0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,MethodInfo__ContextMenuController____c__DisplayClass43_0___Delete_b__0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
           if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
@@ -503,7 +503,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_DeleteLin
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
     func_?(&UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&MethodInfo__ContextMenuController____c___DeleteLink_b__17_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
+    func_?(&MethodInfo__ContextMenuController____c___DeleteLink_b__19_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
     func_?(&TypeInfo__ContextMenuController____c);
     cRam_? = '\x01';
   }
@@ -526,16 +526,16 @@ code_?:
   if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__17_0;
+  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__19_0;
   if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
     if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
     object = TypeInfo__ContextMenuController____c->static_fields->__9;
     callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___DeleteLink_b__17_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
-    TypeInfo__ContextMenuController____c->static_fields->__9__17_0 = callbackFunction;
-    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__17_0);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___DeleteLink_b__19_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+    TypeInfo__ContextMenuController____c->static_fields->__9__19_0 = callbackFunction;
+    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__19_0);
   }
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
@@ -605,7 +605,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_EnterPlay
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
     func_?(&TypeInfo__MVAvatarSpawnRoleCreator);
     func_?(&TypeInfo__MVLocalPlayerBuilder);
-    func_?(&MethodInfo__ContextMenuController____c___EnterPlay_b__37_0_UnityEngine__EventSystems__IEditModeController__UnityEngine__EventSystems__BaseEventData_);
+    func_?(&MethodInfo__ContextMenuController____c___EnterPlay_b__39_0_UnityEngine__EventSystems__IEditModeController__UnityEngine__EventSystems__BaseEventData_);
     func_?(&TypeInfo__ContextMenuController____c);
     cRam_? = '\x01';
   }
@@ -662,15 +662,15 @@ code_?:
             if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
-            callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__37_0;
+            callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__39_0;
             if (callbackFunction == (ExecuteEvents_EventFunction_1_IEditModeController_ *)0x0) {
               if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
               }
               object = TypeInfo__ContextMenuController____c->static_fields->__9;
               callbackFunction = (ExecuteEvents_EventFunction_1_IEditModeController_ *)func_?();
-              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___EnterPlay_b__37_0_UnityEngine__EventSystems__IEditModeController__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
-              TypeInfo__ContextMenuController____c->static_fields->__9__37_0 = callbackFunction;
+              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___EnterPlay_b__39_0_UnityEngine__EventSystems__IEditModeController__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+              TypeInfo__ContextMenuController____c->static_fields->__9__39_0 = callbackFunction;
               func_?();
             }
             if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
@@ -713,43 +713,33 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_Initializ
   }
   pIVar1 = TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
   if (pIVar1 != (IEditModeUI *)0x0) {
-    pIVar2 = pIVar1->klass;
-    uVar3 = 0;
-    uVar4._0_1_ = (pIVar2->_1).rank;
-    uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
-    if (uVar4 != 0) {
-      do {
-        if (pIVar2->interfaceOffsets[uVar3].interfaceType == (Il2CppClass *)TypeInfo__IEditModeUI) {
-          ppMVar5 = &(&(pIVar1->klass->vtable).get_PlayerShopInventoryRepository)[pIVar1->klass->interfaceOffsets[uVar3].offset].method;
-          goto code_?;
-        }
-        uVar3 = uVar3 + 1;
-      } while (uVar3 < uVar4);
-    }
-    ppMVar5 = (MethodInfo **)func_?(pIVar1,TypeInfo__IEditModeUI,4);
-code_?:
-    iVar6 = (*(code *)*ppMVar5)(pIVar1,ppMVar5[1]);
-    if (iVar6 != 0) {
-      pDVar7 = *(Delegate **)(iVar6 + 8);
+    iVar2 = func_?(4,TypeInfo__IEditModeUI,pIVar1);
+    if (iVar2 != 0) {
+      pDVar3 = *(Delegate **)(iVar2 + 8);
       this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(this_00,(Object *)this,MethodInfo__ContextMenuController__OnFailedToAddItem__,(MethodInfo *)0x0);
-      pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine(pDVar7,(Delegate *)this_00,(MethodInfo *)0x0);
-      if (pDVar7 == (Delegate *)0x0) {
-        *(undefined4 *)(iVar6 + 8) = 0;
+      pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine(pDVar3,(Delegate *)this_00,(MethodInfo *)0x0);
+      uVar4 = CONCAT44(TypeInfo__System__Action,pDVar3);
+      if (pDVar3 == (Delegate *)0x0) {
+        *(undefined4 *)(iVar2 + 8) = 0;
+        iStack5 = iVar2 + 8;
+        pDStack6 = (Delegate *)0x0;
         func_?();
         return;
       }
-      pDVar8 = (Delegate *)0x0;
-      if ((Action__Class *)pDVar7->klass == TypeInfo__System__Action) {
-        pDVar8 = pDVar7;
+      pDVar7 = (Delegate *)0x0;
+      if ((Action__Class *)pDVar3->klass == TypeInfo__System__Action) {
+        pDVar7 = pDVar3;
       }
-      if (pDVar8 != (Delegate *)0x0) {
-        *(Delegate **)(iVar6 + 8) = pDVar8;
-        pDVar8 = (Delegate *)0x0;
-        if ((Action__Class *)pDVar7->klass == TypeInfo__System__Action) {
-          pDVar8 = pDVar7;
+      if (pDVar7 != (Delegate *)0x0) {
+        *(Delegate **)(iVar2 + 8) = pDVar7;
+        uVar4 = CONCAT44(TypeInfo__System__Action,pDVar3);
+        pDStack6 = (Delegate *)0x0;
+        if ((Action__Class *)pDVar3->klass == TypeInfo__System__Action) {
+          pDStack6 = pDVar3;
         }
-        if (pDVar8 != (Delegate *)0x0) {
+        if (pDStack6 != (Delegate *)0x0) {
+          iStack5 = iVar2 + 8;
           func_?();
           return;
         }
@@ -757,11 +747,12 @@ code_?:
       goto code_?;
     }
   }
-  func_?();
+  uVar4 = func_?();
 code_?:
+  _iStack00000010 = uVar4;
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -842,7 +833,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_OnClosedS
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
     func_?(&UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&MethodInfo__ContextMenuController____c___OnClosedStandaloneError_b__38_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
+    func_?(&MethodInfo__ContextMenuController____c___OnClosedStandaloneError_b__40_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
     func_?(&TypeInfo__ContextMenuController____c);
     cRam_? = '\x01';
   }
@@ -851,16 +842,16 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_OnClosedS
     if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__ContextMenuController____c);
     }
-    callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__38_0;
+    callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__40_0;
     if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
       if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__ContextMenuController____c);
       }
       object = TypeInfo__ContextMenuController____c->static_fields->__9;
       callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___OnClosedStandaloneError_b__38_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
-      TypeInfo__ContextMenuController____c->static_fields->__9__38_0 = callbackFunction;
-      func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__38_0,callbackFunction);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___OnClosedStandaloneError_b__40_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+      TypeInfo__ContextMenuController____c->static_fields->__9__40_0 = callbackFunction;
+      func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__40_0,callbackFunction);
     }
     if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
@@ -890,7 +881,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_OnFailedT
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
     func_?(&UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&MethodInfo__ContextMenuController____c___OnFailedToAddItem_b__40_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
+    func_?(&MethodInfo__ContextMenuController____c___OnFailedToAddItem_b__42_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
     func_?(&TypeInfo__ContextMenuController____c);
     cRam_? = '\x01';
   }
@@ -898,16 +889,16 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_OnFailedT
   if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__ContextMenuController____c);
   }
-  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__40_0;
+  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__42_0;
   if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
     if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__ContextMenuController____c);
     }
     object = TypeInfo__ContextMenuController____c->static_fields->__9;
     callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___OnFailedToAddItem_b__40_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
-    TypeInfo__ContextMenuController____c->static_fields->__9__40_0 = callbackFunction;
-    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__40_0,callbackFunction);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___OnFailedToAddItem_b__42_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+    TypeInfo__ContextMenuController____c->static_fields->__9__42_0 = callbackFunction;
+    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__42_0,callbackFunction);
   }
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
@@ -936,7 +927,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_PopGizmos
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
     func_?(&UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&MethodInfo__ContextMenuController____c___PopGizmos_b__16_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
+    func_?(&MethodInfo__ContextMenuController____c___PopGizmos_b__18_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
     func_?(&TypeInfo__ContextMenuController____c);
     cRam_? = '\x01';
   }
@@ -944,16 +935,16 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_PopGizmos
   if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__ContextMenuController____c);
   }
-  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__16_0;
+  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__18_0;
   if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
     if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__ContextMenuController____c);
     }
     object = TypeInfo__ContextMenuController____c->static_fields->__9;
     callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___PopGizmos_b__16_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
-    TypeInfo__ContextMenuController____c->static_fields->__9__16_0 = callbackFunction;
-    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__16_0,callbackFunction);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___PopGizmos_b__18_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+    TypeInfo__ContextMenuController____c->static_fields->__9__18_0 = callbackFunction;
+    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__18_0,callbackFunction);
   }
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
@@ -972,7 +963,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ResetLogi
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
     func_?(&UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&MethodInfo__ContextMenuController____c___ResetLogic_b__33_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
+    func_?(&MethodInfo__ContextMenuController____c___ResetLogic_b__35_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
     func_?(&TypeInfo__ContextMenuController____c);
     cRam_? = '\x01';
   }
@@ -980,16 +971,16 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ResetLogi
   if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__ContextMenuController____c);
   }
-  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__33_0;
+  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__35_0;
   if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
     if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__ContextMenuController____c);
     }
     object = TypeInfo__ContextMenuController____c->static_fields->__9;
     callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___ResetLogic_b__33_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
-    TypeInfo__ContextMenuController____c->static_fields->__9__33_0 = callbackFunction;
-    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__33_0,callbackFunction);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___ResetLogic_b__35_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+    TypeInfo__ContextMenuController____c->static_fields->__9__35_0 = callbackFunction;
+    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__35_0,callbackFunction);
   }
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
@@ -1016,7 +1007,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowChang
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
     func_?(&UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&MethodInfo__ContextMenuController____c___ShowChangeScaleDialog_b__32_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
+    func_?(&MethodInfo__ContextMenuController____c___ShowChangeScaleDialog_b__34_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
     func_?(&TypeInfo__ContextMenuController____c);
     cRam_? = '\x01';
   }
@@ -1024,16 +1015,16 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowChang
   if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__ContextMenuController____c);
   }
-  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__32_0;
+  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__34_0;
   if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
     if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__ContextMenuController____c);
     }
     object = TypeInfo__ContextMenuController____c->static_fields->__9;
     callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___ShowChangeScaleDialog_b__32_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
-    TypeInfo__ContextMenuController____c->static_fields->__9__32_0 = callbackFunction;
-    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__32_0,callbackFunction);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___ShowChangeScaleDialog_b__34_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+    TypeInfo__ContextMenuController____c->static_fields->__9__34_0 = callbackFunction;
+    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__34_0,callbackFunction);
   }
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
@@ -1087,12 +1078,12 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowConte
     func_?(&TypeInfo__System__Func<bool>);
     func_?(&ContextMenu_MethodInfo__UnityEngine__Object__Instantiate<ContextMenu>_ContextMenu_);
     func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&MethodInfo__ContextMenuController____c__DisplayClass10_0___ShowContextMenu_b__0__);
-    func_?(&MethodInfo__ContextMenuController____c__DisplayClass10_0___ShowContextMenu_b__1__);
-    func_?(&MethodInfo__ContextMenuController____c__DisplayClass10_0___ShowContextMenu_b__2__);
-    func_?(&MethodInfo__ContextMenuController____c__DisplayClass10_0___ShowContextMenu_b__3__);
-    func_?(&MethodInfo__ContextMenuController____c__DisplayClass10_0___ShowContextMenu_b__4_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
-    func_?(&TypeInfo__ContextMenuController____c__DisplayClass10_0);
+    func_?(&MethodInfo__ContextMenuController____c__DisplayClass12_0___ShowContextMenu_b__0__);
+    func_?(&MethodInfo__ContextMenuController____c__DisplayClass12_0___ShowContextMenu_b__1__);
+    func_?(&MethodInfo__ContextMenuController____c__DisplayClass12_0___ShowContextMenu_b__2__);
+    func_?(&MethodInfo__ContextMenuController____c__DisplayClass12_0___ShowContextMenu_b__3__);
+    func_?(&MethodInfo__ContextMenuController____c__DisplayClass12_0___ShowContextMenu_b__4_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
+    func_?(&TypeInfo__ContextMenuController____c__DisplayClass12_0);
     func_?(&TypeInfo__UnityEngine__Events__UnityAction);
     func_?(&StringLiteral_Game_Tier);
     func_?(&StringLiteral_Settings);
@@ -1116,7 +1107,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowConte
     func_?(&StringLiteral_Reset_Logic);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__ContextMenuController____c__DisplayClass10_0;
+  method_00 = TypeInfo__ContextMenuController____c__DisplayClass12_0;
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
@@ -1199,19 +1190,19 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowConte
           pNVar7 = (NavMesh_OnNavMeshPreUpdate *)func_?();
           UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(pNVar7,(Object *)this,MethodInfo__ContextMenuController__EnterCubeEdit__,(MethodInfo *)0x0);
           pFVar9 = (Func_1_System_Threading_Tasks_VoidTaskResult_ *)func_?();
-          mscorlib.dll::System::Func`1[System::Threading::Tasks::VoidTaskResult]::Func_1_System_Threading_Tasks_VoidTaskResult___ctor(pFVar9,(Object *)object,MethodInfo__ContextMenuController____c__DisplayClass10_0___ShowContextMenu_b__0__,(MethodInfo *)0x0);
+          mscorlib.dll::System::Func`1[System::Threading::Tasks::VoidTaskResult]::Func_1_System_Threading_Tasks_VoidTaskResult___ctor(pFVar9,(Object *)object,MethodInfo__ContextMenuController____c__DisplayClass12_0___ShowContextMenu_b__0__,(MethodInfo *)0x0);
           ContextMenuController_AddMenuButtonForFlag_1(this,InteractionFlags__Enum_CanEdit,(String *)0x0,pUVar6,(Func_1_Boolean_ *)pNVar7,(MethodInfo *)pFVar9);
           pUVar6 = (UnityAction *)TM::TM__(StringLiteral_Edit_Muzzle,(MethodInfo *)0x0);
           pNVar7 = (NavMesh_OnNavMeshPreUpdate *)func_?();
           UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(pNVar7,(Object *)this,MethodInfo__ContextMenuController__EnterMuzzleEdit__,(MethodInfo *)0x0);
           pFVar9 = (Func_1_System_Threading_Tasks_VoidTaskResult_ *)func_?();
-          mscorlib.dll::System::Func`1[System::Threading::Tasks::VoidTaskResult]::Func_1_System_Threading_Tasks_VoidTaskResult___ctor(pFVar9,(Object *)object,MethodInfo__ContextMenuController____c__DisplayClass10_0___ShowContextMenu_b__1__,(MethodInfo *)0x0);
+          mscorlib.dll::System::Func`1[System::Threading::Tasks::VoidTaskResult]::Func_1_System_Threading_Tasks_VoidTaskResult___ctor(pFVar9,(Object *)object,MethodInfo__ContextMenuController____c__DisplayClass12_0___ShowContextMenu_b__1__,(MethodInfo *)0x0);
           ContextMenuController_AddMenuButtonForFlag_1(this,InteractionFlags__Enum_CanChangeScale,(String *)0x100,pUVar6,(Func_1_Boolean_ *)pNVar7,(MethodInfo *)pFVar9);
           pUVar6 = (UnityAction *)TM::TM__(StringLiteral_Change_Scale,(MethodInfo *)0x0);
           pNVar7 = (NavMesh_OnNavMeshPreUpdate *)func_?();
           UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(pNVar7,(Object *)this,MethodInfo__ContextMenuController__ShowChangeScaleDialog__,(MethodInfo *)0x0);
           pFVar9 = (Func_1_System_Threading_Tasks_VoidTaskResult_ *)func_?();
-          mscorlib.dll::System::Func`1[System::Threading::Tasks::VoidTaskResult]::Func_1_System_Threading_Tasks_VoidTaskResult___ctor(pFVar9,(Object *)object,MethodInfo__ContextMenuController____c__DisplayClass10_0___ShowContextMenu_b__2__,(MethodInfo *)0x0);
+          mscorlib.dll::System::Func`1[System::Threading::Tasks::VoidTaskResult]::Func_1_System_Threading_Tasks_VoidTaskResult___ctor(pFVar9,(Object *)object,MethodInfo__ContextMenuController____c__DisplayClass12_0___ShowContextMenu_b__2__,(MethodInfo *)0x0);
           ContextMenuController_AddMenuButtonForFlag_1(this,InteractionFlags__Enum_CanChangeScale,(String *)0x40,pUVar6,(Func_1_Boolean_ *)pNVar7,(MethodInfo *)pFVar9);
           pUVar6 = (UnityAction *)TM::TM__(StringLiteral_Reset_Logic,(MethodInfo *)0x0);
           pNVar7 = (NavMesh_OnNavMeshPreUpdate *)func_?();
@@ -1253,7 +1244,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowConte
           pNVar7 = (NavMesh_OnNavMeshPreUpdate *)func_?();
           UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(pNVar7,(Object *)this,MethodInfo__ContextMenuController__AddToInventory__,(MethodInfo *)0x0);
           pFVar9 = (Func_1_System_Threading_Tasks_VoidTaskResult_ *)func_?();
-          mscorlib.dll::System::Func`1[System::Threading::Tasks::VoidTaskResult]::Func_1_System_Threading_Tasks_VoidTaskResult___ctor(pFVar9,(Object *)object,MethodInfo__ContextMenuController____c__DisplayClass10_0___ShowContextMenu_b__3__,(MethodInfo *)0x0);
+          mscorlib.dll::System::Func`1[System::Threading::Tasks::VoidTaskResult]::Func_1_System_Threading_Tasks_VoidTaskResult___ctor(pFVar9,(Object *)object,MethodInfo__ContextMenuController____c__DisplayClass12_0___ShowContextMenu_b__3__,(MethodInfo *)0x0);
           ContextMenuController_AddMenuButtonForFlag_1(this,InteractionFlags__Enum_CanAddToInventory,(String *)0x0,pUVar6,(Func_1_Boolean_ *)pNVar7,(MethodInfo *)pFVar9);
           pCVar1 = (this->fields).currentContextMenu;
           buttonText = TM::TM__(StringLiteral_Delete,(MethodInfo *)0x0);
@@ -1264,7 +1255,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowConte
             ContextMenuController_PopGizmos(this,(MethodInfo *)0x0);
             root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
             callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c__DisplayClass10_0___ShowContextMenu_b__4_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c__DisplayClass12_0___ShowContextMenu_b__4_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
             if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
               func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
             }
@@ -1313,14 +1304,14 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowConte
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
     func_?(&ContextMenu_MethodInfo__UnityEngine__Object__Instantiate<ContextMenu>_ContextMenu_);
     func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&MethodInfo__ContextMenuController____c__DisplayClass15_0___ShowContextMenuLink_b__0__);
-    func_?(&MethodInfo__ContextMenuController____c__DisplayClass15_0___ShowContextMenuLink_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
-    func_?(&TypeInfo__ContextMenuController____c__DisplayClass15_0);
+    func_?(&MethodInfo__ContextMenuController____c__DisplayClass17_0___ShowContextMenuLink_b__0__);
+    func_?(&MethodInfo__ContextMenuController____c__DisplayClass17_0___ShowContextMenuLink_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
+    func_?(&TypeInfo__ContextMenuController____c__DisplayClass17_0);
     func_?(&TypeInfo__UnityEngine__Events__UnityAction);
     func_?(&StringLiteral_Delete);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__ContextMenuController____c__DisplayClass15_0;
+  method_00 = TypeInfo__ContextMenuController____c__DisplayClass17_0;
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   if (value != (Object *)0x0) {
@@ -1338,13 +1329,13 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowConte
     pCVar1 = (ContextMenu *)value[2].monitor;
     buttonText = TM::TM__(StringLiteral_Delete,(MethodInfo *)0x0);
     this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__UnityEngine__Events__UnityAction);
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(this_00,value,MethodInfo__ContextMenuController____c__DisplayClass15_0___ShowContextMenuLink_b__0__,(MethodInfo *)0x0);
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(this_00,value,MethodInfo__ContextMenuController____c__DisplayClass17_0___ShowContextMenuLink_b__0__,(MethodInfo *)0x0);
     if (pCVar1 != (ContextMenu *)0x0) {
       ContextMenu::ContextMenu_AddButton(pCVar1,buttonText,(UnityAction *)this_00,(MethodInfo *)0x0);
       ContextMenuController_PopGizmos(this,(MethodInfo *)0x0);
       root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
       callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,MethodInfo__ContextMenuController____c__DisplayClass15_0___ShowContextMenuLink_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,MethodInfo__ContextMenuController____c__DisplayClass17_0___ShowContextMenuLink_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
       }
@@ -1376,7 +1367,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowGameC
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
     func_?(&UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&MethodInfo__ContextMenuController____c___ShowGameCoinsDialog_b__24_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
+    func_?(&MethodInfo__ContextMenuController____c___ShowGameCoinsDialog_b__26_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
     func_?(&TypeInfo__ContextMenuController____c);
     cRam_? = '\x01';
   }
@@ -1384,16 +1375,16 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowGameC
   if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__ContextMenuController____c);
   }
-  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__24_0;
+  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__26_0;
   if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
     if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__ContextMenuController____c);
     }
     object = TypeInfo__ContextMenuController____c->static_fields->__9;
     callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___ShowGameCoinsDialog_b__24_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
-    TypeInfo__ContextMenuController____c->static_fields->__9__24_0 = callbackFunction;
-    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__24_0,callbackFunction);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___ShowGameCoinsDialog_b__26_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+    TypeInfo__ContextMenuController____c->static_fields->__9__26_0 = callbackFunction;
+    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__26_0,callbackFunction);
   }
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
@@ -1420,7 +1411,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowGameP
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
     func_?(&UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&MethodInfo__ContextMenuController____c___ShowGamePointsDialog_b__20_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
+    func_?(&MethodInfo__ContextMenuController____c___ShowGamePointsDialog_b__22_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
     func_?(&TypeInfo__ContextMenuController____c);
     cRam_? = '\x01';
   }
@@ -1428,16 +1419,16 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowGameP
   if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__ContextMenuController____c);
   }
-  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__20_0;
+  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__22_0;
   if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
     if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__ContextMenuController____c);
     }
     object = TypeInfo__ContextMenuController____c->static_fields->__9;
     callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___ShowGamePointsDialog_b__20_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
-    TypeInfo__ContextMenuController____c->static_fields->__9__20_0 = callbackFunction;
-    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__20_0,callbackFunction);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___ShowGamePointsDialog_b__22_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+    TypeInfo__ContextMenuController____c->static_fields->__9__22_0 = callbackFunction;
+    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__22_0,callbackFunction);
   }
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
@@ -1464,7 +1455,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowGameR
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
     func_?(&UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&MethodInfo__ContextMenuController____c___ShowGameRankDialog_b__19_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
+    func_?(&MethodInfo__ContextMenuController____c___ShowGameRankDialog_b__21_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
     func_?(&TypeInfo__ContextMenuController____c);
     cRam_? = '\x01';
   }
@@ -1472,16 +1463,16 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowGameR
   if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__ContextMenuController____c);
   }
-  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__19_0;
+  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__21_0;
   if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
     if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__ContextMenuController____c);
     }
     object = TypeInfo__ContextMenuController____c->static_fields->__9;
     callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___ShowGameRankDialog_b__19_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
-    TypeInfo__ContextMenuController____c->static_fields->__9__19_0 = callbackFunction;
-    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__19_0,callbackFunction);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___ShowGameRankDialog_b__21_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+    TypeInfo__ContextMenuController____c->static_fields->__9__21_0 = callbackFunction;
+    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__21_0,callbackFunction);
   }
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
@@ -1508,7 +1499,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowGloba
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
     func_?(&UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&MethodInfo__ContextMenuController____c___ShowGlobalSoundsDialog_b__29_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
+    func_?(&MethodInfo__ContextMenuController____c___ShowGlobalSoundsDialog_b__31_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
     func_?(&TypeInfo__ContextMenuController____c);
     cRam_? = '\x01';
   }
@@ -1516,16 +1507,16 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowGloba
   if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__ContextMenuController____c);
   }
-  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__29_0;
+  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__31_0;
   if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
     if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__ContextMenuController____c);
     }
     object = TypeInfo__ContextMenuController____c->static_fields->__9;
     callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___ShowGlobalSoundsDialog_b__29_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
-    TypeInfo__ContextMenuController____c->static_fields->__9__29_0 = callbackFunction;
-    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__29_0,callbackFunction);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___ShowGlobalSoundsDialog_b__31_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+    TypeInfo__ContextMenuController____c->static_fields->__9__31_0 = callbackFunction;
+    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__31_0,callbackFunction);
   }
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
@@ -1606,7 +1597,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowLevel
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
     func_?(&UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&MethodInfo__ContextMenuController____c___ShowLevelsDialog_b__25_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
+    func_?(&MethodInfo__ContextMenuController____c___ShowLevelsDialog_b__27_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
     func_?(&TypeInfo__ContextMenuController____c);
     cRam_? = '\x01';
   }
@@ -1614,16 +1605,16 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowLevel
   if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__ContextMenuController____c);
   }
-  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__25_0;
+  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__27_0;
   if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
     if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__ContextMenuController____c);
     }
     object = TypeInfo__ContextMenuController____c->static_fields->__9;
     callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___ShowLevelsDialog_b__25_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
-    TypeInfo__ContextMenuController____c->static_fields->__9__25_0 = callbackFunction;
-    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__25_0,callbackFunction);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___ShowLevelsDialog_b__27_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+    TypeInfo__ContextMenuController____c->static_fields->__9__27_0 = callbackFunction;
+    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__27_0,callbackFunction);
   }
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
@@ -1650,7 +1641,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowMinor
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
     func_?(&UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&MethodInfo__ContextMenuController____c___ShowMinorGamePointsDialog_b__21_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
+    func_?(&MethodInfo__ContextMenuController____c___ShowMinorGamePointsDialog_b__23_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
     func_?(&TypeInfo__ContextMenuController____c);
     cRam_? = '\x01';
   }
@@ -1658,16 +1649,16 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowMinor
   if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__ContextMenuController____c);
   }
-  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__21_0;
+  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__23_0;
   if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
     if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__ContextMenuController____c);
     }
     object = TypeInfo__ContextMenuController____c->static_fields->__9;
     callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___ShowMinorGamePointsDialog_b__21_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
-    TypeInfo__ContextMenuController____c->static_fields->__9__21_0 = callbackFunction;
-    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__21_0,callbackFunction);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___ShowMinorGamePointsDialog_b__23_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+    TypeInfo__ContextMenuController____c->static_fields->__9__23_0 = callbackFunction;
+    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__23_0,callbackFunction);
   }
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
@@ -1694,7 +1685,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowRespa
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
     func_?(&UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&MethodInfo__ContextMenuController____c___ShowRespawnDialog_b__22_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
+    func_?(&MethodInfo__ContextMenuController____c___ShowRespawnDialog_b__24_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
     func_?(&TypeInfo__ContextMenuController____c);
     cRam_? = '\x01';
   }
@@ -1702,16 +1693,16 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowRespa
   if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__ContextMenuController____c);
   }
-  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__22_0;
+  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__24_0;
   if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
     if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__ContextMenuController____c);
     }
     object = TypeInfo__ContextMenuController____c->static_fields->__9;
     callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___ShowRespawnDialog_b__22_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
-    TypeInfo__ContextMenuController____c->static_fields->__9__22_0 = callbackFunction;
-    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__22_0,callbackFunction);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___ShowRespawnDialog_b__24_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+    TypeInfo__ContextMenuController____c->static_fields->__9__24_0 = callbackFunction;
+    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__24_0,callbackFunction);
   }
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
@@ -1738,7 +1729,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowRewar
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
     func_?(&UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&MethodInfo__ContextMenuController____c___ShowRewardedAdDialog_b__26_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
+    func_?(&MethodInfo__ContextMenuController____c___ShowRewardedAdDialog_b__28_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
     func_?(&TypeInfo__ContextMenuController____c);
     cRam_? = '\x01';
   }
@@ -1746,16 +1737,16 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowRewar
   if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__ContextMenuController____c);
   }
-  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__26_0;
+  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__28_0;
   if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
     if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__ContextMenuController____c);
     }
     object = TypeInfo__ContextMenuController____c->static_fields->__9;
     callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___ShowRewardedAdDialog_b__26_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
-    TypeInfo__ContextMenuController____c->static_fields->__9__26_0 = callbackFunction;
-    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__26_0,callbackFunction);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___ShowRewardedAdDialog_b__28_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+    TypeInfo__ContextMenuController____c->static_fields->__9__28_0 = callbackFunction;
+    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__28_0,callbackFunction);
   }
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
@@ -1782,7 +1773,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowSetti
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
     func_?(&UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&MethodInfo__ContextMenuController____c___ShowSettingsDialog_b__27_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
+    func_?(&MethodInfo__ContextMenuController____c___ShowSettingsDialog_b__29_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
     func_?(&TypeInfo__ContextMenuController____c);
     cRam_? = '\x01';
   }
@@ -1790,16 +1781,16 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowSetti
   if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__ContextMenuController____c);
   }
-  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__27_0;
+  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__29_0;
   if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
     if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__ContextMenuController____c);
     }
     object = TypeInfo__ContextMenuController____c->static_fields->__9;
     callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___ShowSettingsDialog_b__27_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
-    TypeInfo__ContextMenuController____c->static_fields->__9__27_0 = callbackFunction;
-    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__27_0,callbackFunction);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___ShowSettingsDialog_b__29_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+    TypeInfo__ContextMenuController____c->static_fields->__9__29_0 = callbackFunction;
+    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__29_0,callbackFunction);
   }
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
@@ -1826,7 +1817,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowSound
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
     func_?(&UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&MethodInfo__ContextMenuController____c___ShowSoundsDialog_b__28_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
+    func_?(&MethodInfo__ContextMenuController____c___ShowSoundsDialog_b__30_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
     func_?(&TypeInfo__ContextMenuController____c);
     cRam_? = '\x01';
   }
@@ -1834,16 +1825,16 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowSound
   if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__ContextMenuController____c);
   }
-  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__28_0;
+  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__30_0;
   if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
     if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__ContextMenuController____c);
     }
     object = TypeInfo__ContextMenuController____c->static_fields->__9;
     callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___ShowSoundsDialog_b__28_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
-    TypeInfo__ContextMenuController____c->static_fields->__9__28_0 = callbackFunction;
-    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__28_0,callbackFunction);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___ShowSoundsDialog_b__30_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+    TypeInfo__ContextMenuController____c->static_fields->__9__30_0 = callbackFunction;
+    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__30_0,callbackFunction);
   }
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
@@ -1870,7 +1861,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowStars
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
     func_?(&UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&MethodInfo__ContextMenuController____c___ShowStarsDialog_b__18_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
+    func_?(&MethodInfo__ContextMenuController____c___ShowStarsDialog_b__20_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
     func_?(&TypeInfo__ContextMenuController____c);
     cRam_? = '\x01';
   }
@@ -1878,16 +1869,16 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowStars
   if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__ContextMenuController____c);
   }
-  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__18_0;
+  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__20_0;
   if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
     if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__ContextMenuController____c);
     }
     object = TypeInfo__ContextMenuController____c->static_fields->__9;
     callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___ShowStarsDialog_b__18_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
-    TypeInfo__ContextMenuController____c->static_fields->__9__18_0 = callbackFunction;
-    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__18_0,callbackFunction);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___ShowStarsDialog_b__20_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+    TypeInfo__ContextMenuController____c->static_fields->__9__20_0 = callbackFunction;
+    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__20_0,callbackFunction);
   }
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
@@ -1914,7 +1905,7 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowTeamD
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
     func_?(&UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&MethodInfo__ContextMenuController____c___ShowTeamDialog_b__23_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
+    func_?(&MethodInfo__ContextMenuController____c___ShowTeamDialog_b__25_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_);
     func_?(&TypeInfo__ContextMenuController____c);
     cRam_? = '\x01';
   }
@@ -1922,16 +1913,16 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowTeamD
   if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__ContextMenuController____c);
   }
-  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__23_0;
+  callbackFunction = TypeInfo__ContextMenuController____c->static_fields->__9__25_0;
   if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
     if ((TypeInfo__ContextMenuController____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__ContextMenuController____c);
     }
     object = TypeInfo__ContextMenuController____c->static_fields->__9;
     callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___ShowTeamDialog_b__23_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
-    TypeInfo__ContextMenuController____c->static_fields->__9__23_0 = callbackFunction;
-    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__23_0,callbackFunction);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,MethodInfo__ContextMenuController____c___ShowTeamDialog_b__25_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_,(MethodInfo *)0x0);
+    TypeInfo__ContextMenuController____c->static_fields->__9__25_0 = callbackFunction;
+    func_?(&TypeInfo__ContextMenuController____c->static_fields->__9__25_0,callbackFunction);
   }
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
@@ -1949,9 +1940,9 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController_ShowTeamD
 }
 
 
-/* Void <AddToInventory>b__36_2(IModalPopupCreator, BaseEventData) */
+/* Void <AddToInventory>b__38_2(IModalPopupCreator, BaseEventData) */
 
-void Assembly-CSharp.dll::ContextMenuController::ContextMenuController__AddToInventory_b__36_2(ContextMenuController *this,IModalPopupCreator *x,BaseEventData *y,MethodInfo *method)
+void Assembly-CSharp.dll::ContextMenuController::ContextMenuController__AddToInventory_b__38_2(ContextMenuController *this,IModalPopupCreator *x,BaseEventData *y,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -1977,9 +1968,9 @@ void Assembly-CSharp.dll::ContextMenuController::ContextMenuController__AddToInv
 }
 
 
-/* Void <Clone>b__34_1(ICloneHandler, BaseEventData) */
+/* Void <Clone>b__36_1(ICloneHandler, BaseEventData) */
 
-void Assembly-CSharp.dll::ContextMenuController::ContextMenuController__Clone_b__34_1(ContextMenuController *this,ICloneHandler *handler,BaseEventData *data,MethodInfo *method)
+void Assembly-CSharp.dll::ContextMenuController::ContextMenuController__Clone_b__36_1(ContextMenuController *this,ICloneHandler *handler,BaseEventData *data,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {

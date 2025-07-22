@@ -221,13 +221,9 @@ code_?:
     }
   }
 code_?:
-  cVar16 = '\0';
-  uVar17 = func_?();
-  *(undefined1 *)&this->klass = uVar17;
-  *(char *)(extraout_ECX + -0x49efb953) = *(char *)(extraout_ECX + -0x49efb953) + extraout_DH + cVar16;
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
-  return;
+  func_?();
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 

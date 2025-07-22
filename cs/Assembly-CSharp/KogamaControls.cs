@@ -51,7 +51,7 @@ public enum KogamaControls
 	ChangeFocus = 38,
 	ChangeChangeFocusDirection = 39,
 	Deprecated_ToggleHD = 40,
-	LobbyMenu = 41,
+	PauseMenu = 41,
 	Escape = 42,
 	Holster = 43,
 	EditMoveUp = 44,

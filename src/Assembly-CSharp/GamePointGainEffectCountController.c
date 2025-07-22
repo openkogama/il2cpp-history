@@ -144,8 +144,6 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::GamePointGainEffec
     }
   }
   func_?();
-  *extraout_EDX = *extraout_EDX | (uint)extraout_EDX;
-  cRam_? = cRam_? + (char)((uint)extraout_EDX >> 8);
   pcVar12 = (code *)swi(3);
   (*pcVar12)();
   return;

@@ -230,8 +230,8 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVWorldObjectSpawnerV
     func_?(&GreyOutObjectScript_MethodInfo__UnityEngine__GameObject__AddComponent<GreyOutObjectScript>__);
     func_?(&TypeInfo__WorldObjectTypes__VehicleEnergy__MVVehicleEnergy);
     func_?(&MethodInfo__WorldObjectTypes__VehicleEnergy__MVWorldObjectSpawnerVehicleEnergy__OnEnterTriggerBox_System__Object__TriggerEventArgs_);
+    func_?(&MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_);
     func_?(&TypeInfo__UseInteractor);
-    func_?(&MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_);
     func_?(&StringLiteral_Could_not_get_spawnPoint_child_s);
     func_?(&StringLiteral_spawnWorldObjectID);
     cRam_? = '\x01';
@@ -266,7 +266,7 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVWorldObjectSpawnerV
       mscorlib.dll::System::Func`3[Int32,Object,Boolean]::Func_3_Int32_Object_Boolean___ctor(this_04,(Object *)this,(this->klass->vtable).Use.methodPtr,(MethodInfo *)0x0);
       triggerCollider = (Collider *)&UNK_?;
       pUVar3 = (UseInteractor *)func_?(TypeInfo__UseInteractor);
-      UseInteractor::UseInteractor__ctor(pUVar3,(MVWorldObjectClient *)this_02,(GameObject *)this,1,triggerCollider,(Func_2_Int32_Boolean_ *)this_03,(Func_3_Int32_MVInteractableBase_Boolean_ *)this_04,3.5,1,(MethodInfo *)0x0);
+      UseInteractor::UseInteractor__ctor(pUVar3,(MVWorldObjectClient *)this_02,(GameObject *)this,1,triggerCollider,(Func_2_Int32_Boolean_ *)this_03,(Func_3_Int32_MVInteractableBase_Boolean_ *)this_04,3.5,1,1,(MethodInfo *)0x0);
       (this_02->vtable).GetMethodImpl.methodPtr = (Il2CppMethodPointer)pUVar3;
       func_?();
       pMVar4 = (this_02->vtable).GetObjectData_1.method;
@@ -277,7 +277,7 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVWorldObjectSpawnerV
         pMVar4 = (this_02->vtable).GetObjectData_1.method;
         object = (Object *)(this_02->vtable).GetMethodImpl.methodPtr;
         pEVar5 = (EventHandler_1_Object_ *)func_?();
-        mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(pEVar5,object,MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
+        mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(pEVar5,object,MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
         if (pMVar4 != (MethodInfo *)0x0) {
           TriggerBoxEvents::TriggerBoxEvents_add_TriggerExitOverride((TriggerBoxEvents *)pMVar4,(EventHandler_1_TriggerEventArgs_ *)pEVar5,(MethodInfo *)0x0);
           MVWorldObjectSpawnerVehicleEnergy_InitializeCommon((MVWorldObjectSpawnerVehicleEnergy *)this_02,(MethodInfo *)0x0);
@@ -492,7 +492,7 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVWorldObjectSpawnerV
     else {
       this_00 = (this->fields)._.useInteractor;
       if (this_00 != (UseInteractor *)0x0) {
-        UseInteractor::UseInteractor_triggerBoxEvents_TriggerEnter(this_00,sender,e,(MethodInfo *)0x0);
+        UseInteractor::UseInteractor_TriggerBoxEvents_TriggerEnter(this_00,sender,e,(MethodInfo *)0x0);
         return;
       }
     }

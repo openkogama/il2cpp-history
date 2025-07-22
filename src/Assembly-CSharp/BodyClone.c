@@ -85,31 +85,11 @@ void Assembly-CSharp.dll::BodyClone::BodyClone_Initialize(BodyClone *this,int32_
   bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality(x,(Object_1 *)0x0,(MethodInfo *)0x0);
   if (bVar1 == 0) {
     if (x != (Object_1 *)0x0) {
-      pBVar2 = (BodyAccessoriesController *)func_?(TypeInfo__BodyAccessoriesController);
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__Avatar__Accessories__AccessoryLoader);
-        func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AccessorySlotType,_AvatarAccessory>__Dictionary__);
-        func_?(&TypeInfo__System__Collections__Generic__Dictionary<MV::Common::AccessorySlotType,_AvatarAccessory>);
-        cRam_? = '\x01';
-      }
-      this_00 = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)func_?(TypeInfo__System__Collections__Generic__Dictionary<MV::Common::AccessorySlotType,_AvatarAccessory>);
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,GamePassesHighScoreList+HighScoreListData]::Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData___ctor(this_00,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AccessorySlotType,_AvatarAccessory>__Dictionary__);
-      (pBVar2->fields).accessoryMap = (Dictionary_2_MV_Common_AccessorySlotType_AvatarAccessory_ *)this_00;
-      func_?(&(pBVar2->fields).accessoryMap);
-      this_01 = (AccessoryLoader *)func_?(TypeInfo__Assets__Scripts__WorldObjectTypes__Avatar__Accessories__AccessoryLoader);
-      Assets::Scripts::WorldObjectTypes::Avatar::Accessories::AccessoryLoader::AccessoryLoader__ctor(this_01,(MethodInfo *)0x0);
-      method_00 = (MethodInfo *)&(pBVar2->fields).accessoryLoader;
-      (pBVar2->fields).accessoryLoader = this_01;
-      func_?(method_00,this_01);
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)pBVar2,ExceptionArgument__Enum_obj,method_00);
-      (pBVar2->fields).bodyWoId = bodyWoId;
-      (pBVar2->fields).bodyData = (BodyData *)this_00;
-      func_?(&(pBVar2->fields).bodyData,this_00);
-      (pBVar2->fields).accessoryData = accessoryData;
-      func_?(&(pBVar2->fields).accessoryData,accessoryData);
-      (pBVar2->fields).accessoriesVisible = 1;
+      bodyData = x[3].klass;
+      pBVar2 = (BodyAccessoriesController *)func_?();
+      BodyAccessoriesController::BodyAccessoriesController__ctor(pBVar2,bodyWoId,(BodyData *)bodyData,accessoryData,1,(MethodInfo *)0x0);
       (this->fields).bodyAccessoriesController = pBVar2;
-      func_?();
+      func_?(&(this->fields).bodyAccessoriesController,pBVar2);
       pBVar2 = (this->fields).bodyAccessoriesController;
       if (pBVar2 != (BodyAccessoriesController *)0x0) {
         BodyAccessoriesController::BodyAccessoriesController_set_AccessoryMoveOverride(pBVar2,1,(MethodInfo *)0x0);
@@ -339,11 +319,11 @@ code_?:
                 goto code_?;
               }
             }
-            key_00 = (Object *)0x98158b80;
+            key_00 = (Object *)0x38158b80;
             pAVar11 = (AvatarAccessoryData__Enum__Class *)func_?();
             pMVar4 = MethodInfo__BodyAccessoriesController____c__DisplayClass25_0___RefreshAccessories_b__0_AvatarAccessory_;
             DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pAVar11,value,MethodInfo__BodyAccessoriesController____c__DisplayClass25_0___RefreshAccessories_b__0_AvatarAccessory_,(MethodInfo *)0x0);
-            Assets::Scripts::WorldObjectTypes::Avatar::Accessories::AccessoryLoader::AccessoryLoader_LoadAccessory((AccessoryLoader *)0x98158b80,(String *)pMVar4,(Action_1_AvatarAccessory_ *)pAVar11,(MethodInfo *)0x0);
+            Assets::Scripts::WorldObjectTypes::Avatar::Accessories::AccessoryLoader::AccessoryLoader_LoadAccessory((AccessoryLoader *)0x38158b80,(String *)pMVar4,(Action_1_AvatarAccessory_ *)pAVar11,(MethodInfo *)0x0);
             goto code_?;
           }
           TVar19.m_Index = (int32_t)(String *)0x0;

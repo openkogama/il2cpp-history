@@ -4,7 +4,7 @@
 void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarHeadRotationHandlerLocal::AvatarLimbManagerLocal_AvatarHeadRotationHandlerLocal_HandleOnRotationChange(AvatarLimbManagerLocal_AvatarHeadRotationHandlerLocal *this,MethodInfo *method)
 
 {
-  AvatarLimbManager+AvatarHeadRotationHandler::AvatarLimbManager_AvatarHeadRotationHandler_ResetIdleTimer_1((AvatarLimbManager_AvatarHeadRotationHandler *)this,EmoteTypes__Enum_None,unaff_ESI);
+  AvatarLimbManager+AvatarHeadRotationHandler::AvatarLimbManager_AvatarHeadRotationHandler_ResetIdleTimer((AvatarLimbManager_AvatarHeadRotationHandler *)this,(MethodInfo *)0x0);
   (this->fields).shouldSendNetworkMessage = 1;
   return;
 }

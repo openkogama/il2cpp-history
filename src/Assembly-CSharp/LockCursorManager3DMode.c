@@ -5,6 +5,7 @@ void Assembly-CSharp.dll::LockCursorManager3DMode::LockCursorManager3DMode_LockC
 
 {
   if (cRam_? == '\0') {
+    func_?(&TypeInfo__IPlayModeUI);
     func_?(&StringLiteral_Really_trying_to_lock_cursor);
     cRam_? = '\x01';
   }
@@ -12,16 +13,18 @@ void Assembly-CSharp.dll::LockCursorManager3DMode::LockCursorManager3DMode_LockC
   if (CVar1 != CursorLockMode__Enum_Locked) {
     UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_1_set_lockState(CursorLockMode__Enum_Locked,(MethodInfo *)0x0);
     UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_1_set_visible(0,(MethodInfo *)0x0);
-    pAVar2 = (this->fields)._OnCursorLockChanged_k__BackingField;
-    UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_1_get_lockState((MethodInfo *)0x0);
-    if (pAVar2 == (Action_1_Boolean_ *)0x0) {
+    if (cRam_? == '\0') {
       func_?();
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
+      cRam_? = '\x01';
+    }
+    if (TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField == (IPlayModeUI *)0x0) {
+      func_?();
+      func_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
       return;
     }
-    puStack4 = (pAVar2->fields)._._.method;
-    (*(pAVar2->fields)._._.invoke_impl)();
+    func_?();
   }
   return;
 }
@@ -63,6 +66,7 @@ void Assembly-CSharp.dll::LockCursorManager3DMode::LockCursorManager3DMode_Unloc
 
 {
   if (cRam_? == '\0') {
+    func_?(&TypeInfo__IPlayModeUI);
     func_?(&StringLiteral_Really_trying_to_unlock_cursor);
     cRam_? = '\x01';
   }
@@ -70,16 +74,18 @@ void Assembly-CSharp.dll::LockCursorManager3DMode::LockCursorManager3DMode_Unloc
   if (CVar1 == CursorLockMode__Enum_Locked) {
     UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_1_set_lockState(CursorLockMode__Enum_None,(MethodInfo *)0x0);
     UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_1_set_visible(1,(MethodInfo *)0x0);
-    pAVar2 = (this->fields)._OnCursorLockChanged_k__BackingField;
-    UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_1_get_lockState((MethodInfo *)0x0);
-    if (pAVar2 == (Action_1_Boolean_ *)0x0) {
+    if (cRam_? == '\0') {
       func_?();
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
+      cRam_? = '\x01';
+    }
+    if (TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField == (IPlayModeUI *)0x0) {
+      func_?();
+      func_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
       return;
     }
-    puStack4 = (pAVar2->fields)._._.method;
-    (*(pAVar2->fields)._._.invoke_impl)();
+    func_?();
   }
   return;
 }
@@ -130,33 +136,49 @@ void Assembly-CSharp.dll::LockCursorManager3DMode::LockCursorManager3DMode_set_C
   mscorlib.dll::System::String::String_Concat_3(StringLiteral_Cursor_locked__,str1,(MethodInfo *)0x0);
   if (value == 0) {
     method = (MethodInfo *)0x0;
-    _value = this;
+    _value = (String **)this;
     LockCursorManager3DMode_UnlockCursor(this,(MethodInfo *)0x0);
   }
   else {
     if (cRam_? == '\0') {
-      method = (MethodInfo *)&StringLiteral_Really_trying_to_lock_cursor;
-      _value = (LockCursorManager3DMode *)&UNK_?;
+      method = (MethodInfo *)&TypeInfo__IPlayModeUI;
+      _value = (String **)&UNK_?;
+      func_?();
+      _value = &StringLiteral_Really_trying_to_lock_cursor;
       func_?();
       cRam_? = '\x01';
     }
     method = (MethodInfo *)0x0;
-    _value = (LockCursorManager3DMode *)&UNK_?;
+    _value = (String **)&UNK_?;
     CVar1 = UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_1_get_lockState((MethodInfo *)0x0);
     if (CVar1 != CursorLockMode__Enum_Locked) {
-      method = (MethodInfo *)0x0;
-      _value = (LockCursorManager3DMode *)0x1;
+      method = (MethodInfo *)0x1;
+      _value = (String **)&UNK_?;
       UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_1_set_lockState(CursorLockMode__Enum_Locked,(MethodInfo *)0x0);
       method = (MethodInfo *)0x0;
-      _value = (LockCursorManager3DMode *)0x0;
+      _value = (String **)&UNK_?;
       UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_1_set_visible(0,(MethodInfo *)0x0);
-      method = (MethodInfo *)0x0;
-      _value = (LockCursorManager3DMode *)&UNK_?;
-      CVar1 = UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_1_get_lockState((MethodInfo *)0x0);
-      uStack2 = uRam_?;
-      uStack3 = (uint)(CVar1 == CursorLockMode__Enum_Locked);
-      uStack4 = uRam_?;
-      (*pcRam_?)();
+      if (cRam_? == '\0') {
+        ppMStack2 = &TypeInfo__MVGameControllerBase;
+        in_stack_3 = (IPlayModeUI *)&UNK_?;
+        func_?();
+        cRam_? = '\x01';
+      }
+      pIVar4 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
+      if (pIVar4 != (IPlayModeUI *)0x0) {
+        ppMStack2 = (MVGameControllerBase__Class **)0x0;
+        pIStack5 = TypeInfo__IPlayModeUI;
+        puStack6 = (undefined1 *)0x6;
+        in_stack_3 = pIVar4;
+        func_?();
+        return;
+      }
+      puStack6 = (undefined1 *)&stack0x00000018;
+      ppMStack2 = (MVGameControllerBase__Class **)&stack0xfffffffc;
+      puStack6 = (undefined1 *)func_?();
+      func_?();
+      pcVar7 = (code *)swi(3);
+      (*pcVar7)();
       return;
     }
   }

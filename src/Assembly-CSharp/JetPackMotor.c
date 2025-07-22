@@ -657,7 +657,7 @@ code_?:
               fVar1 = pVVar5->z;
               fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_Range(0.0,4.5,(MethodInfo *)0x0);
               fVar1 = fVar1 * fVar6 + 0.0;
-              fVar2 = fVar3 * fVar6 + 3.5084136e-29;
+              fVar2 = fVar3 * fVar6 + 3.5116444e-29;
               fVar6 = (float)this + fVar13 * fVar6;
               goto code_?;
             }
@@ -1384,30 +1384,12 @@ bool Assembly-CSharp.dll::JetPackMotor::JetPackMotor_get_InputRun(JetPackMotor *
 }
 
 
-/* Boolean get_IsMovementLocked() */
-
-bool Assembly-CSharp.dll::JetPackMotor::JetPackMotor_get_IsMovementLocked(JetPackMotor *this,MethodInfo *method)
-
-{
-  return (this->fields)._IsMovementLocked_k__BackingField;
-}
-
-
 /* Boolean get_IsUnderWater() */
 
 bool Assembly-CSharp.dll::JetPackMotor::JetPackMotor_get_IsUnderWater(JetPackMotor *this,MethodInfo *method)
 
 {
   return 0.5 < (this->fields).waterProximity;
-}
-
-
-/* Boolean get_LeaveMode() */
-
-bool Assembly-CSharp.dll::JetPackMotor::JetPackMotor_get_LeaveMode(JetPackMotor *this,MethodInfo *method)
-
-{
-  return (this->fields).leaveMode;
 }
 
 
@@ -1461,16 +1443,6 @@ void Assembly-CSharp.dll::JetPackMotor::JetPackMotor_set_InputRun(JetPackMotor *
 
 {
   (this->fields)._InputRun_k__BackingField = value;
-  return;
-}
-
-
-/* Void set_IsMovementLocked(Boolean) */
-
-void Assembly-CSharp.dll::JetPackMotor::JetPackMotor_set_IsMovementLocked(JetPackMotor *this,bool value,MethodInfo *method)
-
-{
-  (this->fields)._IsMovementLocked_k__BackingField = value;
   return;
 }
 

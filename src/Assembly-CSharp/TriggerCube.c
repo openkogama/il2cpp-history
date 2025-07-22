@@ -122,18 +122,18 @@ void Assembly-CSharp.dll::TriggerCube::TriggerCube_Initialize(TriggerCube *this,
                   this_02 = (Predicate_1_UInt32_ *)func_?(TypeInfo__System__Func<int,_bool>);
                   mscorlib.dll::System::Predicate`1[UInt32]::Predicate_1_UInt32___ctor(this_02,(Object *)this,MethodInfo__TriggerCube__DoEnter_int_,(MethodInfo *)0x0);
                   this_03 = (UseInteractor *)func_?(TypeInfo__UseInteractor);
-                  UseInteractor::UseInteractor__ctor(this_03,(MVWorldObjectClient *)0x0,(GameObject *)this_02,0,triggerCollider,(Func_2_Int32_Boolean_ *)this_02,(Func_3_Int32_MVInteractableBase_Boolean_ *)0x0,2.5,0,(MethodInfo *)0x0);
-                  pURam00000114 = this_03;
+                  UseInteractor::UseInteractor__ctor(this_03,(MVWorldObjectClient *)0x1,(GameObject *)0x0,0,triggerCollider,(Func_2_Int32_Boolean_ *)this_02,(Func_3_Int32_MVInteractableBase_Boolean_ *)0x0,2.5,0,1,(MethodInfo *)0x0);
+                  pURam00000115 = this_03;
                   func_?();
                   unaff_ESI = (TriggerBoxEvents *)0x0;
                   if (iRam_? != 0) {
                     unaff_ESI = *(TriggerBoxEvents **)(iRam_? + 0x1c);
                     this_04 = (TeamRequirement *)func_?(TypeInfo__TeamRequirement);
                     TeamRequirement::TeamRequirement__ctor(this_04,(TintObject *)unaff_ESI,0,(MethodInfo *)0x0);
-                    if (pURam00000114 != (UseInteractor *)0x0) {
-                      UseInteractor::UseInteractor_AddRequirement(pURam00000114,(UseRequirement *)this_04,(MethodInfo *)0x0);
-                      if (pURam00000114 != (UseInteractor *)0x0) {
-                        UseInteractor::UseInteractor_UpdateData(pURam00000114,pDRam00000058,(MethodInfo *)0x0);
+                    if (pURam00000115 != (UseInteractor *)0x0) {
+                      UseInteractor::UseInteractor_AddRequirement(pURam00000115,(UseRequirement *)this_04,(MethodInfo *)0x0);
+                      if (pURam00000115 != (UseInteractor *)0x0) {
+                        UseInteractor::UseInteractor_UpdateData(pURam00000115,pDRam00000059,(MethodInfo *)0x0);
                         return;
                       }
                     }

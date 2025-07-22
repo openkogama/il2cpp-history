@@ -6,7 +6,7 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeGoldIcon>d__30::Le
 {
   pLVar1 = this;
   if (cRam_? == '\0') {
-    func_?(0xa150);
+    func_?(&TypeInfo__System__Int32);
     func_?(&StringLiteral_REWARD_);
     cRam_? = '\x01';
   }
@@ -59,9 +59,8 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeGoldIcon>d__30::Le
     pIVar4 = (pLVar2->fields).goldImage;
     if (pIVar4 != (Image *)0x0) {
       pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pIVar4,(MethodInfo *)0x0);
-      euler.y._0_2_ = SUB42(fVar3,0);
+      euler.y = fVar3;
       euler.x = fVar3;
-      euler.y._2_2_ = (short)((uint)fVar3 >> 0x10);
       euler.z = 0.0;
       pQVar10 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad((Quaternion *)&stack0xffffffc0,euler,(MethodInfo *)0x0);
       if (pTVar8 != (Transform *)0x0) {
@@ -171,17 +170,13 @@ code_?:
     }
   }
 code_?:
-  bVar16 = 0;
+  cVar16 = '\0';
   iVar17 = func_?();
-  bVar18 = (char)iVar17 + 1;
-  pLVar19 = &pLVar1[1].fields;
-  iVar20 = pLVar19->__1__state;
-  bVar21 = (char)pLVar19->__1__state + bVar18;
-  *(byte *)&pLVar19->__1__state = bVar21 + bVar16;
-  *(char *)(iVar17 + 0xb104024) = *(char *)(iVar17 + 0xb104024) + extraout_DH + (CARRY1((byte)iVar20,bVar18) || CARRY1(bVar21,bVar16));
-  pcVar22 = (code *)swi(3);
-  bVar23 = (*pcVar22)();
-  return bVar23;
+  uRam_? = (undefined1)iVar17;
+  *(char *)(iVar17 + 0xb) = *(char *)(iVar17 + 0xb) + (char)((uint)(iVar17 + 1) >> 8) + cVar16;
+  pcVar18 = (code *)swi(3);
+  bVar19 = (*pcVar18)();
+  return bVar19;
 }
 
 

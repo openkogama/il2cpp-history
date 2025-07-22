@@ -213,9 +213,9 @@ void Assembly-CSharp.dll::MVWorldObjectSpawnerVehicle::MVWorldObjectSpawnerVehic
     func_?(&TypeInfo__LevelBasedUseRequirement);
     func_?(&TypeInfo__MVVehicleBase);
     func_?(&TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement);
+    func_?(&MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_);
+    func_?(&MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_);
     func_?(&TypeInfo__UseInteractor);
-    func_?(&MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_);
-    func_?(&MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_);
     func_?(&StringLiteral_spawnWorldObjectID);
     func_?(&StringLiteral_Could_not_get_spawnPoint_child_s);
     cRam_? = '\x01';
@@ -234,19 +234,19 @@ void Assembly-CSharp.dll::MVWorldObjectSpawnerVehicle::MVWorldObjectSpawnerVehic
         mscorlib.dll::System::Func`3[Int32,Object,Boolean]::Func_3_Int32_Object_Boolean___ctor(this_02,(Object *)this,(this->klass->vtable).Use.methodPtr,(MethodInfo *)0x0);
         triggerCollider = (Collider *)&UNK_?;
         pUVar3 = (UseInteractor *)func_?(TypeInfo__UseInteractor);
-        UseInteractor::UseInteractor__ctor(pUVar3,(MVWorldObjectClient *)this,(GameObject *)owner,1,triggerCollider,(Func_2_Int32_Boolean_ *)this_01,(Func_3_Int32_MVInteractableBase_Boolean_ *)this_02,3.5,0,(MethodInfo *)0x0);
+        UseInteractor::UseInteractor__ctor(pUVar3,(MVWorldObjectClient *)this,(GameObject *)owner,1,triggerCollider,(Func_2_Int32_Boolean_ *)this_01,(Func_3_Int32_MVInteractableBase_Boolean_ *)this_02,3.5,0,1,(MethodInfo *)0x0);
         (this->fields)._.useInteractor = pUVar3;
         func_?();
         pTVar2 = (this->fields)._.triggerBoxEvents;
         pUVar3 = (this->fields)._.useInteractor;
         pEVar4 = (EventHandler_1_Object_ *)func_?();
-        mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(pEVar4,(Object *)pUVar3,MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
+        mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(pEVar4,(Object *)pUVar3,MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
         if (pTVar2 != (TriggerBoxEvents *)0x0) {
           TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnterOverride(pTVar2,(EventHandler_1_TriggerEventArgs_ *)pEVar4,(MethodInfo *)0x0);
           this_00 = (this->fields)._.triggerBoxEvents;
           pUVar3 = (this->fields)._.useInteractor;
           pEVar4 = (EventHandler_1_Object_ *)func_?();
-          mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(pEVar4,(Object *)pUVar3,MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
+          mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(pEVar4,(Object *)pUVar3,MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
           if (this_00 != (TriggerBoxEvents *)0x0) {
             TriggerBoxEvents::TriggerBoxEvents_add_TriggerExitOverride(this_00,(EventHandler_1_TriggerEventArgs_ *)pEVar4,(MethodInfo *)0x0);
             MVWorldObjectSpawnerVehicle_InitializeCommon(this,(MethodInfo *)0x0);

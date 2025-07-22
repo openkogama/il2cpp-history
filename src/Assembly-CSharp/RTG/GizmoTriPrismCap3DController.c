@@ -11,22 +11,22 @@ void Assembly-CSharp.dll::RTG::GizmoTriPrismCap3DController::GizmoTriPrismCap3DC
       func_?(&TypeInfo__UnityEngine__Quaternion);
       cRam_? = '\x01';
     }
-    if (pGVar2 != (GizmoCap3D *)0x0) {
-      GizmoCap3D::GizmoCap3D_set_Rotation(pGVar2,TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,(MethodInfo *)0x0);
+    if ((pGVar2 != (GizmoCap3D *)0x0) && (pGVar3 = (pGVar2->fields)._transform, pGVar3 != (GizmoTransform *)0x0)) {
+      GizmoTransform::GizmoTransform_set_Rotation3D(pGVar3,TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,(MethodInfo *)0x0);
       pGVar1 = (this->fields)._._data;
-      if ((pGVar1 != (GizmoCap3DControllerData *)0x0) && (pGVar2 = (pGVar1->fields).Cap, pGVar2 != (GizmoCap3D *)0x0)) {
-        GizmoCap3D::GizmoCap3D_AlignTransformAxis(pGVar2,2,AxisSign__Enum_Positive,sliderDirection,(MethodInfo *)0x0);
+      if ((pGVar1 != (GizmoCap3DControllerData *)0x0) && ((pGVar2 = (pGVar1->fields).Cap, pGVar2 != (GizmoCap3D *)0x0 && (pGVar3 = (pGVar2->fields)._transform, pGVar3 != (GizmoTransform *)0x0)))) {
+        GizmoTransform::GizmoTransform_AlignAxis3D(pGVar3,2,AxisSign__Enum_Positive,sliderDirection,(MethodInfo *)0x0);
         pGVar1 = (this->fields)._._data;
-        if ((pGVar1 != (GizmoCap3DControllerData *)0x0) && (pGVar2 = (pGVar1->fields).Cap, pGVar2 != (GizmoCap3D *)0x0)) {
-          GizmoCap3D::GizmoCap3D_set_Position(pGVar2,sliderEndPt,(MethodInfo *)0x0);
+        if ((pGVar1 != (GizmoCap3DControllerData *)0x0) && ((pGVar2 = (pGVar1->fields).Cap, pGVar2 != (GizmoCap3D *)0x0 && (pGVar3 = (pGVar2->fields)._transform, pGVar3 != (GizmoTransform *)0x0)))) {
+          GizmoTransform::GizmoTransform_set_Position3D(pGVar3,sliderEndPt,(MethodInfo *)0x0);
           return;
         }
       }
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -43,28 +43,28 @@ void Assembly-CSharp.dll::RTG::GizmoTriPrismCap3DController::GizmoTriPrismCap3DC
       func_?(&TypeInfo__UnityEngine__Quaternion);
       cRam_? = '\x01';
     }
-    if (pGVar2 != (GizmoCap3D *)0x0) {
-      GizmoCap3D::GizmoCap3D_set_Rotation(pGVar2,TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,(MethodInfo *)0x0);
+    if ((pGVar2 != (GizmoCap3D *)0x0) && (pGVar3 = (pGVar2->fields)._transform, pGVar3 != (GizmoTransform *)0x0)) {
+      GizmoTransform::GizmoTransform_set_Rotation3D(pGVar3,TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,(MethodInfo *)0x0);
       pGVar1 = (this->fields)._._data;
       if (pGVar1 != (GizmoCap3DControllerData *)0x0) {
         pGVar2 = (pGVar1->fields).Cap;
-        if (pGVar2 != (GizmoCap3D *)0x0) {
-          uVar3 = sliderDirection._0_8_ ^ 0x8000000080000000;
+        if ((pGVar2 != (GizmoCap3D *)0x0) && (pGVar3 = (pGVar2->fields)._transform, pGVar3 != (GizmoTransform *)0x0)) {
+          uVar4 = sliderDirection._0_8_ ^ 0x8000000080000000;
           axis.z = -sliderDirection.z;
-          axis.x = (float)(int)uVar3;
-          axis.y = (float)(int)(uVar3 >> 0x20);
-          GizmoCap3D::GizmoCap3D_AlignTransformAxis(pGVar2,2,AxisSign__Enum_Positive,axis,(MethodInfo *)0x0);
+          axis.x = (float)(int)uVar4;
+          axis.y = (float)(int)(uVar4 >> 0x20);
+          GizmoTransform::GizmoTransform_AlignAxis3D(pGVar3,2,AxisSign__Enum_Positive,axis,(MethodInfo *)0x0);
           pGVar1 = (this->fields)._._data;
           if (pGVar1 != (GizmoCap3DControllerData *)0x0) {
             pGVar2 = (pGVar1->fields).Cap;
-            pIVar4 = this->klass[1]._0.image;
-            fVar5 = (float10)(*(code *)(this->klass->vtable).GetSliderAlignedRealLength_1.method)();
-            fVar6 = (float)fVar5;
-            if (pGVar2 != (GizmoCap3D *)0x0) {
-              value.y = (float)pIVar4 + fVar6 * 4.1729127e-29;
-              value.x = zoomFactor + sliderDirection.x * fVar6;
-              value.z = sliderEndPt.z + (float)this * fVar6;
-              GizmoCap3D::GizmoCap3D_set_Position(pGVar2,value,(MethodInfo *)0x0);
+            pIVar5 = this->klass[1]._0.image;
+            fVar6 = (float10)(*(code *)(this->klass->vtable).GetSliderAlignedRealLength_1.method)();
+            fVar7 = (float)fVar6;
+            if ((pGVar2 != (GizmoCap3D *)0x0) && (pGVar3 = (pGVar2->fields)._transform, pGVar3 != (GizmoTransform *)0x0)) {
+              value.y = (float)pIVar5 + fVar7 * 4.18421e-29;
+              value.x = zoomFactor + sliderDirection.x * fVar7;
+              value.z = sliderEndPt.z + (float)this * fVar7;
+              GizmoTransform::GizmoTransform_set_Position3D(pGVar3,value,(MethodInfo *)0x0);
               return;
             }
           }
@@ -73,8 +73,8 @@ void Assembly-CSharp.dll::RTG::GizmoTriPrismCap3DController::GizmoTriPrismCap3DC
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -85,15 +85,32 @@ float Assembly-CSharp.dll::RTG::GizmoTriPrismCap3DController::GizmoTriPrismCap3D
 
 {
   pGVar1 = (this->fields)._._data;
-  if ((pGVar1 != (GizmoCap3DControllerData *)0x0) && (this_00 = (pGVar1->fields).Cap, this_00 != (GizmoCap3D *)0x0)) {
-    fVar2 = GizmoCap3D::GizmoCap3D_GetRealTriPrismDepth(this_00,zoomFactor,(MethodInfo *)0x0);
-    return fVar2;
+  if ((pGVar1 != (GizmoCap3DControllerData *)0x0) && (pGVar2 = (pGVar1->fields).Cap, pGVar2 != (GizmoCap3D *)0x0)) {
+    fStack_3 = zoomFactor;
+    if ((pGVar2->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+      pGVar4 = (pGVar2->fields)._lookAndFeel;
+      if (pGVar4 == (GizmoCap3DLookAndFeel *)0x0) goto code_?;
+    }
+    else {
+      pGVar4 = (pGVar2->fields)._sharedLookAndFeel;
+    }
+    if ((pGVar4->fields)._useZoomFactor == 0) {
+      fStack_3 = 1.0;
+    }
+    if ((pGVar2->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+      pGVar4 = (pGVar2->fields)._lookAndFeel;
+      if (pGVar4 == (GizmoCap3DLookAndFeel *)0x0) goto code_?;
+    }
+    else {
+      pGVar4 = (pGVar2->fields)._sharedLookAndFeel;
+    }
+    return (pGVar4->fields)._scale * (pGVar4->fields)._trPrismDepth * fStack_3;
   }
-  uVar3 = func_?(&stack0xfffffff0);
-  func_?(uVar3);
-  pcVar4 = (code *)swi(3);
-  fVar5 = (float10)(*pcVar4)();
-  return (float)fVar5;
+code_?:
+  func_?();
+  pcVar5 = (code *)swi(3);
+  fVar6 = (float10)(*pcVar5)();
+  return (float)fVar6;
 }
 
 
@@ -138,41 +155,91 @@ void Assembly-CSharp.dll::RTG::GizmoTriPrismCap3DController::GizmoTriPrismCap3DC
   pGVar1 = (this->fields)._._data;
   if (pGVar1 != (GizmoCap3DControllerData *)0x0) {
     pTVar2 = (pGVar1->fields).TrPrism;
-    this_00 = (pGVar1->fields).Cap;
-    if (this_00 != (GizmoCap3D *)0x0) {
-      pQVar3 = GizmoCap3D::GizmoCap3D_get_Rotation((Quaternion *)&stack0xffffffec,this_00,(MethodInfo *)0x0);
-      fVar4 = pQVar3->y;
-      fVar5 = pQVar3->z;
-      fVar6 = pQVar3->w;
+    pGVar3 = (pGVar1->fields).Cap;
+    if ((pGVar3 != (GizmoCap3D *)0x0) && (pGVar4 = (pGVar3->fields)._transform, pGVar4 != (GizmoTransform *)0x0)) {
+      fVar5 = (pGVar4->fields)._rotation3D.y;
+      fVar6 = (pGVar4->fields)._rotation3D.z;
+      fVar7 = (pGVar4->fields)._rotation3D.w;
       if (pTVar2 != (TriangPrismShape3D *)0x0) {
-        (pTVar2->fields)._rotation.x = pQVar3->x;
-        (pTVar2->fields)._rotation.y = fVar4;
-        (pTVar2->fields)._rotation.z = fVar5;
-        (pTVar2->fields)._rotation.w = fVar6;
+        (pTVar2->fields)._rotation.x = (pGVar4->fields)._rotation3D.x;
+        (pTVar2->fields)._rotation.y = fVar5;
+        (pTVar2->fields)._rotation.z = fVar6;
+        (pTVar2->fields)._rotation.w = fVar7;
         pGVar1 = (this->fields)._._data;
         if (pGVar1 != (GizmoCap3DControllerData *)0x0) {
           pTVar2 = (pGVar1->fields).TrPrism;
-          fVar4 = GizmoCap3D::GizmoCap3D_GetRealTriPrismWidth(this_00,zoomFactor,(MethodInfo *)0x0);
+          if ((pGVar3->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+            pGVar8 = (pGVar3->fields)._lookAndFeel;
+            if (pGVar8 == (GizmoCap3DLookAndFeel *)0x0) goto code_?;
+          }
+          else {
+            pGVar8 = (pGVar3->fields)._sharedLookAndFeel;
+          }
+          fVar5 = zoomFactor;
+          if ((pGVar8->fields)._useZoomFactor == 0) {
+            fVar5 = 1.0;
+          }
+          if ((pGVar3->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+            pGVar8 = (pGVar3->fields)._lookAndFeel;
+            if (pGVar8 == (GizmoCap3DLookAndFeel *)0x0) goto code_?;
+          }
+          else {
+            pGVar8 = (pGVar3->fields)._sharedLookAndFeel;
+          }
           if (pTVar2 != (TriangPrismShape3D *)0x0) {
-            TriangPrismShape3D::TriangPrismShape3D_set_Width(pTVar2,fVar4,(MethodInfo *)0x0);
+            TriangPrismShape3D::TriangPrismShape3D_set_Width(pTVar2,(pGVar8->fields)._trPrismWidth * (pGVar8->fields)._scale * fVar5,(MethodInfo *)0x0);
             pGVar1 = (this->fields)._._data;
             if (pGVar1 != (GizmoCap3DControllerData *)0x0) {
               pTVar2 = (pGVar1->fields).TrPrism;
-              fVar4 = GizmoCap3D::GizmoCap3D_GetRealTriPrismHeight(this_00,zoomFactor,(MethodInfo *)0x0);
+              if ((pGVar3->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+                pGVar8 = (pGVar3->fields)._lookAndFeel;
+                if (pGVar8 == (GizmoCap3DLookAndFeel *)0x0) goto code_?;
+              }
+              else {
+                pGVar8 = (pGVar3->fields)._sharedLookAndFeel;
+              }
+              fVar5 = zoomFactor;
+              if ((pGVar8->fields)._useZoomFactor == 0) {
+                fVar5 = 1.0;
+              }
+              if ((pGVar3->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+                pGVar8 = (pGVar3->fields)._lookAndFeel;
+                if (pGVar8 == (GizmoCap3DLookAndFeel *)0x0) goto code_?;
+              }
+              else {
+                pGVar8 = (pGVar3->fields)._sharedLookAndFeel;
+              }
               if (pTVar2 != (TriangPrismShape3D *)0x0) {
-                TriangPrismShape3D::TriangPrismShape3D_set_Height(pTVar2,fVar4,(MethodInfo *)0x0);
+                TriangPrismShape3D::TriangPrismShape3D_set_Height(pTVar2,(pGVar8->fields)._trPrismHeight * (pGVar8->fields)._scale * fVar5,(MethodInfo *)0x0);
                 pGVar1 = (this->fields)._._data;
                 if (pGVar1 != (GizmoCap3DControllerData *)0x0) {
                   pTVar2 = (pGVar1->fields).TrPrism;
-                  fVar4 = GizmoCap3D::GizmoCap3D_GetRealTriPrismDepth(this_00,fVar4,(MethodInfo *)0x0);
+                  if ((pGVar3->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+                    pGVar8 = (pGVar3->fields)._lookAndFeel;
+                    if (pGVar8 == (GizmoCap3DLookAndFeel *)0x0) goto code_?;
+                  }
+                  else {
+                    pGVar8 = (pGVar3->fields)._sharedLookAndFeel;
+                  }
+                  if ((pGVar8->fields)._useZoomFactor == 0) {
+                    zoomFactor = 1.0;
+                  }
+                  if ((pGVar3->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+                    pGVar8 = (pGVar3->fields)._lookAndFeel;
+                    if (pGVar8 == (GizmoCap3DLookAndFeel *)0x0) goto code_?;
+                  }
+                  else {
+                    pGVar8 = (pGVar3->fields)._sharedLookAndFeel;
+                  }
                   if (pTVar2 != (TriangPrismShape3D *)0x0) {
-                    TriangPrismShape3D::TriangPrismShape3D_set_Depth(pTVar2,fVar4,(MethodInfo *)0x0);
+                    TriangPrismShape3D::TriangPrismShape3D_set_Depth(pTVar2,(pGVar8->fields)._trPrismDepth * (pGVar8->fields)._scale * zoomFactor,(MethodInfo *)0x0);
                     pGVar1 = (this->fields)._._data;
                     if (pGVar1 != (GizmoCap3DControllerData *)0x0) {
+                      pGVar4 = (pGVar3->fields)._transform;
                       pTVar2 = (pGVar1->fields).TrPrism;
-                      pVVar7 = GizmoCap3D::GizmoCap3D_get_Position((Vector3 *)&stack0xfffffff0,this_00,(MethodInfo *)0x0);
-                      if (pTVar2 != (TriangPrismShape3D *)0x0) {
-                        TriangPrismShape3D::TriangPrismShape3D_set_FrontCenter(pTVar2,*pVVar7,(MethodInfo *)0x0);
+                      if ((pGVar4 != (GizmoTransform *)0x0) && (pTVar2 != (TriangPrismShape3D *)0x0)) {
+                        fStack9 = (pGVar4->fields)._position3D.z;
+                        TriangPrismShape3D::TriangPrismShape3D_set_FrontCenter(pTVar2,(pGVar4->fields)._position3D,(MethodInfo *)0x0);
                         return;
                       }
                     }
@@ -185,9 +252,10 @@ void Assembly-CSharp.dll::RTG::GizmoTriPrismCap3DController::GizmoTriPrismCap3DC
       }
     }
   }
+code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

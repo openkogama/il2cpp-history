@@ -30,71 +30,50 @@ Quaternion * Assembly-CSharp.dll::RTG::QuaternionEx::QuaternionEx_FromToRotation
 
 {
   uVar1 = func_?();
-  fVar2 = (float)((ulonglong)uVar1 >> 0x20);
-  fVar3 = (float)uVar1;
-  uVar1 = func_?();
-  fVar4 = (float)((ulonglong)uVar1 >> 0x20);
-  fVar5 = (float)uVar1;
-  fVar6 = fVar3 * fVar5 + fVar2 * fVar4;
-  if (1.0 - fVar6 < 1e-05) {
+  uVar2 = func_?();
+  fVar3 = (float)((ulonglong)uVar2 >> 0x20);
+  fVar4 = (float)uVar2;
+  fVar5 = (float)uVar1 * fVar4 + SUB84(uVar1,4) * fVar3;
+  if (1.0 - fVar5 < 1e-05) {
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
-    pQVar7 = TypeInfo__UnityEngine__Quaternion->static_fields;
-    fVar3 = (pQVar7->identityQuaternion).y;
-    fVar5 = (pQVar7->identityQuaternion).z;
-    fVar2 = (pQVar7->identityQuaternion).w;
-    __return_storage_ptr__->x = (pQVar7->identityQuaternion).x;
-    __return_storage_ptr__->y = fVar3;
-    __return_storage_ptr__->z = fVar5;
-    __return_storage_ptr__->w = fVar2;
+    pQVar6 = TypeInfo__UnityEngine__Quaternion->static_fields;
+    fVar4 = (pQVar6->identityQuaternion).y;
+    fVar3 = (pQVar6->identityQuaternion).z;
+    fVar5 = (pQVar6->identityQuaternion).w;
+    __return_storage_ptr__->x = (pQVar6->identityQuaternion).x;
+    __return_storage_ptr__->y = fVar4;
+    __return_storage_ptr__->z = fVar3;
+    __return_storage_ptr__->w = fVar5;
     return __return_storage_ptr__;
   }
-  if (1e-05 <= fVar6 + 1.0) {
-    value.y = fVar5 * 0.0 - fVar3 * 0.0;
-    value.x = fVar2 * 0.0 - fVar4 * 0.0;
-    value.z = fVar3 * fVar4 - fVar5 * fVar2;
-    pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize((Vector3 *)&stack0xfffffff0,value,(MethodInfo *)0x0);
-    uVar1._0_4_ = pVVar8->x;
-    uVar1._4_4_ = pVVar8->y;
-    fVar3 = 1.0;
-    if (fVar6 <= 1.0) {
-      fVar3 = fVar6;
-    }
-    fVar5 = pVVar8->z;
-    method_00 = (MethodInfo *)0x0;
-    fVar2 = -1.0;
-    if (-1.0 <= fVar3) {
-      fVar2 = fVar3;
-    }
-    dVar9 = (double)fVar2;
-    func_?();
-    axis.z = fVar5;
-    axis.x = (float)uVar1;
-    axis.y = SUB84(uVar1,4);
-    pQVar10 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis((Quaternion *)&stack0xffffffec,(float)dVar9 * 57.29578,axis,method_00);
-    fVar3 = pQVar10->y;
-    fVar5 = pQVar10->z;
-    fVar2 = pQVar10->w;
-    __return_storage_ptr__->x = pQVar10->x;
-    __return_storage_ptr__->y = fVar3;
-    __return_storage_ptr__->z = fVar5;
-    __return_storage_ptr__->w = fVar2;
-    return __return_storage_ptr__;
+  if (1e-05 <= fVar5 + 1.0) {
+    fVar5 = MathEx::MathEx_SafeAcos(fVar5,(MethodInfo *)0x0);
+    value.y = fVar4 * 0.0 - (float)uVar1 * 0.0;
+    value.x = SUB84(uVar1,4) * 0.0 - fVar3 * 0.0;
+    value.z = (float)uVar1 * fVar3 - fVar4 * SUB84(uVar1,4);
+    pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize((Vector3 *)&stack0xfffffff0,value,(MethodInfo *)0x0);
+    pQVar8 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis((Quaternion *)&stack0xffffffec,fVar5 * 57.29578,*pVVar7,(MethodInfo *)0x0);
+    fRam00000000 = pQVar8->x;
+    fRam00000004 = pQVar8->y;
+    fRam00000008 = pQVar8->z;
+    fRam0000000c = pQVar8->w;
+    return (Quaternion *)0x0;
   }
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
   }
-  pQVar10 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis((Quaternion *)&stack0xffffffec,180.0,TypeInfo__UnityEngine__Vector3->static_fields->forwardVector,(MethodInfo *)0x0);
-  fVar3 = pQVar10->y;
-  fVar5 = pQVar10->z;
-  fVar2 = pQVar10->w;
-  __return_storage_ptr__->x = pQVar10->x;
-  __return_storage_ptr__->y = fVar3;
-  __return_storage_ptr__->z = fVar5;
-  __return_storage_ptr__->w = fVar2;
+  pQVar8 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis((Quaternion *)&stack0xffffffec,180.0,TypeInfo__UnityEngine__Vector3->static_fields->forwardVector,(MethodInfo *)0x0);
+  fVar4 = pQVar8->y;
+  fVar3 = pQVar8->z;
+  fVar5 = pQVar8->w;
+  __return_storage_ptr__->x = pQVar8->x;
+  __return_storage_ptr__->y = fVar4;
+  __return_storage_ptr__->z = fVar3;
+  __return_storage_ptr__->w = fVar5;
   return __return_storage_ptr__;
 }
 
@@ -104,76 +83,66 @@ Quaternion * Assembly-CSharp.dll::RTG::QuaternionEx::QuaternionEx_FromToRotation
 Quaternion * Assembly-CSharp.dll::RTG::QuaternionEx::QuaternionEx_FromToRotation3D(Quaternion *__return_storage_ptr__,Vector3 from,Vector3 to,Vector3 perp180,MethodInfo *method)
 
 {
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize((Vector3 *)&stack0xfffffff0,from,(MethodInfo *)0x0);
+  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize((Vector3 *)&stack0xffffffec,from,(MethodInfo *)0x0);
   uVar2 = pVVar1->x;
   uVar3 = pVVar1->y;
-  fVar4 = pVVar1->z;
-  value_00.y = to.y;
-  value_00.x = to.x;
-  value_00.z = to.z;
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize((Vector3 *)&stack0xfffffff0,value_00,(MethodInfo *)0x0);
-  uVar5 = pVVar1->x;
-  uVar6 = pVVar1->y;
-  to.z = pVVar1->z;
-  fVar7 = (float)uVar3 * (float)uVar6 + (float)uVar2 * (float)uVar5 + fVar4 * to.z;
-  to.x = (float)uVar5;
-  to.y = (float)uVar6;
+  from.z = pVVar1->z;
+  from.x = (float)uVar2;
+  from.y = (float)uVar3;
+  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize((Vector3 *)&stack0xffffffe0,to,(MethodInfo *)0x0);
+  uVar4 = pVVar1->x;
+  uVar5 = pVVar1->y;
+  fVar6 = pVVar1->z;
+  fVar7 = from.y * (float)uVar5 + from.x * (float)uVar4 + from.z * fVar6;
   if (1.0 - fVar7 < 1e-05) {
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
     pQVar8 = TypeInfo__UnityEngine__Quaternion->static_fields;
-    fVar4 = (pQVar8->identityQuaternion).y;
+    fVar6 = (pQVar8->identityQuaternion).y;
     fVar7 = (pQVar8->identityQuaternion).z;
     fVar9 = (pQVar8->identityQuaternion).w;
     __return_storage_ptr__->x = (pQVar8->identityQuaternion).x;
-    __return_storage_ptr__->y = fVar4;
+    __return_storage_ptr__->y = fVar6;
     __return_storage_ptr__->z = fVar7;
     __return_storage_ptr__->w = fVar9;
     return __return_storage_ptr__;
   }
   if (1e-05 <= fVar7 + 1.0) {
-    uVar10 = pVVar1->x;
-    uVar11 = pVVar1->y;
-    pQVar12 = (Quaternion *)((float)uVar3 * to.z - fVar4 * (float)uVar11);
-    fVar7 = (float)uVar2 * to.z;
-    to.z = (float)uVar2 * (float)uVar11 - (float)uVar3 * (float)uVar10;
-    value.y = fVar4 * (float)uVar10 - fVar7;
-    value.x = (float)pQVar12;
-    value.z = to.z;
-    to.x = (float)uVar10;
-    to.y = (float)uVar11;
-    pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize(&to,value,(MethodInfo *)0x0);
-    uVar13 = pVVar1->x;
-    uVar14 = pVVar1->y;
-    fVar4 = pVVar1->z;
-    dVar15 = 0.0;
-    to.x = (float)&UNK_?;
-    to.y = (float)uVar13;
-    to.z = (float)uVar14;
-    func_?();
-    to.x = (float)dVar15 * 57.29578;
-    axis.y = to.z;
-    axis.x = to.y;
-    axis.z = fVar4;
-    pQVar16 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis((Quaternion *)&stack0xffffffec,to.x,axis,(MethodInfo *)0x0);
-    fVar4 = pQVar16->y;
-    fVar7 = pQVar16->z;
-    fVar9 = pQVar16->w;
-    pQVar12->x = pQVar16->x;
-    pQVar12->y = fVar4;
-    pQVar12->z = fVar7;
-    pQVar12->w = fVar9;
-    return pQVar12;
+    MathEx::MathEx_SafeAcos(fVar7,(MethodInfo *)0x0);
+    fVar7 = (float)uVar5 * from.z;
+    fVar9 = fVar6 * from.x;
+    fVar10 = (float)uVar4 * from.z;
+    from.z = (float)uVar5 * from.x - (float)uVar4 * from.y;
+    from.x = 0.0;
+    __return_storage_ptr__ = (Quaternion *)from.z;
+    fVar11 = fVar10 - fVar9;
+    pVVar1 = &from;
+    value.x = fVar6 * from.y - fVar7;
+    value = (Vector3)CONCAT84(uVar12,value.x);
+    pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize(pVVar1,value,(MethodInfo *)0x0);
+    uVar14 = pVVar13->x;
+    from.y = (float)pVVar1 * 57.29578;
+    from.x = (float)&stack0xffffffdc;
+    from.z = (float)uVar14;
+    pQVar15 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis((Quaternion *)from.x,from.y,*pVVar13,(MethodInfo *)0x0);
+                    /* WARNING: Read-only address (ram,0xADDR) is written */
+                    /* WARNING: Read-only address (ram,0xADDR) is written */
+                    /* WARNING: Read-only address (ram,0xADDR) is written */
+                    /* WARNING: Read-only address (ram,0xADDR) is written */
+    _UNK_? = pQVar15->x;
+    _UNK_? = pQVar15->y;
+    _UNK_? = pQVar15->z;
+    _UNK_? = pQVar15->w;
+    return (Quaternion *)&UNK_?;
   }
-  __return_storage_ptr__ = (Quaternion *)perp180.x;
-  pQVar16 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis((Quaternion *)&stack0xffffffec,180.0,perp180,(MethodInfo *)0x0);
-  fVar4 = pQVar16->y;
-  fVar7 = pQVar16->z;
-  fVar9 = pQVar16->w;
-  __return_storage_ptr__->x = pQVar16->x;
-  __return_storage_ptr__->y = fVar4;
+  pQVar15 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis((Quaternion *)&stack0xffffffdc,180.0,perp180,(MethodInfo *)0x0);
+  fVar6 = pQVar15->y;
+  fVar7 = pQVar15->z;
+  fVar9 = pQVar15->w;
+  __return_storage_ptr__->x = pQVar15->x;
+  __return_storage_ptr__->y = fVar6;
   __return_storage_ptr__->z = fVar7;
   __return_storage_ptr__->w = fVar9;
   return __return_storage_ptr__;

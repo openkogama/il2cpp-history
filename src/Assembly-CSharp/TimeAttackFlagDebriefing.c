@@ -24,7 +24,7 @@ void Assembly-CSharp.dll::TimeAttackFlagDebriefing::TimeAttackFlagDebriefing_End
     }
     pIVar4 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
     if (pIVar4 != (IPlayModeUI *)0x0) {
-      func_?(4,TypeInfo__IPlayModeUI,pIVar4);
+      func_?(6,TypeInfo__IPlayModeUI,pIVar4);
       (this->fields).isDebriefingOn = 0;
       (this->fields).isWaitingForStart = 0;
       this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
@@ -311,7 +311,7 @@ void Assembly-CSharp.dll::TimeAttackFlagDebriefing::TimeAttackFlagDebriefing_Ini
         cRam_? = '\x01';
       }
       if (TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField != (IPlayModeUI *)0x0) {
-        func_?(4);
+        func_?(6);
         pSVar2 = (this->fields).scoreBoardSingle;
         if (pSVar2 != (ScoreBoardSingleBase *)0x0) {
           (*(code *)(pSVar2->klass->vtable).Initialize.method)();
@@ -384,7 +384,7 @@ void Assembly-CSharp.dll::TimeAttackFlagDebriefing::TimeAttackFlagDebriefing_Ini
   }
   pIVar1 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
   if (pIVar1 != (IPlayModeUI *)0x0) {
-    func_?(4,TypeInfo__IPlayModeUI,pIVar1,0);
+    func_?(6,TypeInfo__IPlayModeUI,pIVar1,0);
     pCVar2 = (this_01->fields).canvasGroup;
     if (pCVar2 != (CanvasGroup *)0x0) {
       UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha(pCVar2,0.0,(MethodInfo *)0x0);
@@ -558,7 +558,7 @@ void Assembly-CSharp.dll::TimeAttackFlagDebriefing::TimeAttackFlagDebriefing_OnE
       (*pcVar3)();
       return;
     }
-    func_?(4,TypeInfo__IPlayModeUI,pIVar2,1);
+    func_?(6,TypeInfo__IPlayModeUI,pIVar2,1);
     (this->fields).shouldStartFlagCountdown = 1;
   }
   return;
@@ -790,7 +790,7 @@ void Assembly-CSharp.dll::TimeAttackFlagDebriefing::TimeAttackFlagDebriefing_Sta
                   }
                   pIVar8 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
                   if (pIVar8 == (IPlayModeUI *)0x0) goto code_?;
-                  func_?(4,TypeInfo__IPlayModeUI,pIVar8,1);
+                  func_?(6,TypeInfo__IPlayModeUI,pIVar8,1);
                   (this->fields).shouldStartFlagCountdown = 1;
                 }
               }
@@ -872,7 +872,7 @@ void Assembly-CSharp.dll::TimeAttackFlagDebriefing::TimeAttackFlagDebriefing_Upd
           this = (TimeAttackFlagDebriefing *)((uint)this_00 & 0xffffff00);
         }
         if (pIVar8 == (IPlayModeUI *)0x0) goto code_?;
-        func_?(4,TypeInfo__IPlayModeUI,pIVar8,this);
+        func_?(6,TypeInfo__IPlayModeUI,pIVar8,this);
       }
     }
   }

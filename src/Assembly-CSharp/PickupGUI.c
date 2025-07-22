@@ -29,7 +29,7 @@ void Assembly-CSharp.dll::PickupGUI::PickupGUI_AvatarLeftVehicle(PickupGUI *this
       if (bVar4 != 0) {
         pMVar2 = (this->fields).pickupOwner;
         if ((pMVar2 == (MVPickupOwner *)0x0) || (pPVar3 = (pMVar2->fields).currentItem, pPVar3 == (PickupItem *)0x0)) goto code_?;
-        iVar5 = (*(code *)(pPVar3->klass->vtable).__unknown.method)(pPVar3,(pPVar3->klass->vtable).CanFire.methodPtr);
+        iVar5 = (*(code *)(pPVar3->klass->vtable).__unknown.method)(pPVar3,(pPVar3->klass->vtable).__unknown_1.methodPtr);
         if (iVar5 != 5) {
           pMVar2 = (this->fields).pickupOwner;
           if (pMVar2 != (MVPickupOwner *)0x0) {
@@ -601,7 +601,7 @@ void Assembly-CSharp.dll::PickupGUI::PickupGUI_UpdateCrossHairVisibility(PickupG
   }
   pIVar1 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
   if (pIVar1 != (IPlayModeUI *)0x0) {
-    cVar2 = func_?(3,TypeInfo__IPlayModeUI,pIVar1);
+    cVar2 = func_?(5,TypeInfo__IPlayModeUI,pIVar1);
     if ((cVar2 == '\0') && ((this->fields).canBeVisible != 0)) {
       pMVar3 = (this->fields).pickupOwner;
       if (pMVar3 == (MVPickupOwner *)0x0) goto code_?;

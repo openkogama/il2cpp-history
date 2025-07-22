@@ -506,7 +506,7 @@ code_?:
       }
     }
   }
-  cVar18 = (*(code *)(this->klass->vtable).get_IsAmmoDepleted.method)(this,(this->klass->vtable).get_Type.methodPtr);
+  cVar18 = (*(code *)(this->klass->vtable).get_IsAmmoDepleted.method)(this,(this->klass->vtable).CanFire.methodPtr);
   if (cVar18 != '\0') {
     pMVar13 = (this->fields)._.owner;
     if (((pMVar13 == (MVPickupOwner *)0x0) || (pMVar16 = (pMVar13->fields)._.worldObjectParent, pMVar16 == (MVWorldObjectClient *)0x0)) || (pGVar17 = (pMVar16->fields).gameObject, pGVar17 == (GameObject *)0x0)) {
@@ -1873,37 +1873,23 @@ void Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_ResetAmmo(PickUpI
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
     cRam_? = '\x01';
   }
-  AVar1 = (ACTkByte4)(this->fields).maxAmmoTime.currentCryptoKey;
-  AVar2 = (this->fields).maxAmmoTime.hiddenValue;
-  pBVar3 = (this->fields).maxAmmoTime.hiddenValueOld;
-  fVar4 = (this->fields).maxAmmoTime.fakeValue;
+  iVar1 = (*(code *)(this->klass->vtable).get_MaxAmmo.method)(this,(this->klass->vtable).get_Quantity.methodPtr);
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
   }
-  value.hiddenValue = AVar2;
-  value.currentCryptoKey._0_1_ = AVar1.b1;
-  value.currentCryptoKey._1_1_ = AVar1.b2;
-  value.currentCryptoKey._2_1_ = AVar1.b3;
-  value.currentCryptoKey._3_1_ = AVar1.b4;
-  value.hiddenValueOld = pBVar3;
-  value.fakeValue = fVar4;
-  value.inited = (this->fields).maxAmmoTime.inited;
-  value._17_3_ = *(undefined3 *)&(this->fields).maxAmmoTime.field_0x11;
-  fVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::ObscuredFloat_op_Implicit_1(value,(MethodInfo *)0x0);
-  iVar5 = (*(code *)(this->klass->vtable).GetAmmoMultiplier.method)(this,(int)fVar4,(this->klass->vtable).UpdateWithDirection.methodPtr);
-  pOVar6 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::ObscuredFloat_op_Implicit((ObscuredFloat *)&puStack_7,(float)iVar5,(MethodInfo *)0x0);
-  AVar1 = pOVar6->hiddenValue;
-  pBVar3 = pOVar6->hiddenValueOld;
-  fVar4 = pOVar6->fakeValue;
-  bVar8 = pOVar6->inited;
-  uVar9 = *(undefined3 *)&pOVar6->field_0x11;
-  (this->fields).currentAmmoLeft.currentCryptoKey = pOVar6->currentCryptoKey;
-  (this->fields).currentAmmoLeft.hiddenValue = AVar1;
-  (this->fields).currentAmmoLeft.hiddenValueOld = pBVar3;
-  (this->fields).currentAmmoLeft.fakeValue = fVar4;
-  (this->fields).currentAmmoLeft.inited = bVar8;
-  *(undefined3 *)&(this->fields).currentAmmoLeft.field_0x11 = uVar9;
-  func_?();
+  pOVar2 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::ObscuredFloat_op_Implicit(&OStack_3,(float)iVar1,(MethodInfo *)0x0);
+  AVar4 = pOVar2->hiddenValue;
+  pBVar5 = pOVar2->hiddenValueOld;
+  fVar6 = pOVar2->fakeValue;
+  bVar7 = pOVar2->inited;
+  uVar8 = *(undefined3 *)&pOVar2->field_0x11;
+  (this->fields).currentAmmoLeft.currentCryptoKey = pOVar2->currentCryptoKey;
+  (this->fields).currentAmmoLeft.hiddenValue = AVar4;
+  (this->fields).currentAmmoLeft.hiddenValueOld = pBVar5;
+  (this->fields).currentAmmoLeft.fakeValue = fVar6;
+  (this->fields).currentAmmoLeft.inited = bVar7;
+  *(undefined3 *)&(this->fields).currentAmmoLeft.field_0x11 = uVar8;
+  func_?(&(this->fields).currentAmmoLeft.hiddenValueOld,0);
   return;
 }
 
@@ -3041,6 +3027,25 @@ void Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay__ctor(PickUpItemH
   (this->fields)._._AbleToFire_k__BackingField = 1;
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
+}
+
+
+/* Int32 get_MaxAmmo() */
+
+int32_t Assembly-CSharp.dll::PickUpItemHealRay::PickUpItemHealRay_get_MaxAmmo(PickUpItemHealRay *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    cRam_? = '\x01';
+  }
+  value = (this->fields).maxAmmoTime;
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+  }
+  fVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::ObscuredFloat_op_Implicit_1(value,(MethodInfo *)0x0);
+  iVar2 = (*(code *)(this->klass->vtable).CalculateMaxAmmo.method)(this,(int)fVar1,(this->klass->vtable).UpdateWithDirection.methodPtr);
+  return iVar2;
 }
 
 

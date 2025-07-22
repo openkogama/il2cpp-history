@@ -372,7 +372,7 @@ void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarLimbDataManagerRemote::A
     fVar2 = (this->fields).newHeadYawValue;
     this_00 = (pAVar1->fields).headRotationHandler;
     if (this_00 != (AvatarLimbManagerRemote_AvatarHeadRotationHandlerRemote *)0x0) {
-      AvatarLimbManager+AvatarHeadRotationHandler::AvatarLimbManager_AvatarHeadRotationHandler_ResetIdleTimer_1((AvatarLimbManager_AvatarHeadRotationHandler *)this_00,EmoteTypes__Enum_None,unaff_ESI);
+      AvatarLimbManager+AvatarHeadRotationHandler::AvatarLimbManager_AvatarHeadRotationHandler_ResetIdleTimer((AvatarLimbManager_AvatarHeadRotationHandler *)this_00,(MethodInfo *)0x0);
       auVar3._4_8_ = 0;
       auVar3._0_4_ = fVar2 * 0.017453292;
       pQVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad((Quaternion *)&stack0xffffffd8,(Vector3)(auVar3 << 0x20),(MethodInfo *)0x0);

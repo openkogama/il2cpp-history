@@ -196,7 +196,7 @@ bool Assembly-CSharp.dll::MVCameraBase::MVCameraBase_get_InputActive(MVCameraBas
   pIStack_1 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
   if (pIStack_1 != (IPlayModeUI *)0x0) {
     pIStack_2 = TypeInfo__IPlayModeUI;
-    uStack_3 = 3;
+    uStack_3 = 5;
     cVar4 = func_?();
     if (cVar4 != '\0') {
       return 0;

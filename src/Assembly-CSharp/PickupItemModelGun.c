@@ -37,10 +37,10 @@ IEnumerator * Assembly-CSharp.dll::PickupItemModelGun::PickupItemModelGun_DoAuto
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__PickupItemModelGun___DoAutoFire_d__39);
+    func_?(&TypeInfo__PickupItemModelGun___DoAutoFire_d__41);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__PickupItemModelGun___DoAutoFire_d__39;
+  method_00 = TypeInfo__PickupItemModelGun___DoAutoFire_d__41;
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   value[2].klass = (Object__Class *)this;
@@ -301,7 +301,7 @@ code_?:
                 if (cVar24 == '\0') break;
                 if ((CONCAT22(uStack_28,uVar27) == 0) || (piVar25 = (int *)func_?(), piVar25 == (int *)0x0)) goto code_?;
                 if (*(Il2CppClass **)(*piVar25 + 0x20) != (TypeInfo__Edge->_0).element_class) goto code_?;
-                uVar27 = 0x55f4;
+                uVar27 = 0xeeb4;
                 uStack_28 = 0x1069;
                 pfVar29 = (float *)func_?();
                 face = *pfVar29;
@@ -559,7 +559,7 @@ void Assembly-CSharp.dll::PickupItemModelGun::PickupItemModelGun_HandleCursors(P
 
 {
   if (cRam_? == '\0') {
-    func_?(0xa330);
+    func_?(0xd434);
     func_?(&TypeInfo__MVCubeModelFineGrainedTerrain);
     func_?(&MVCubeModelFineGrainedTerrain_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVCubeModelFineGrainedTerrain>__);
     cRam_? = '\x01';
@@ -720,7 +720,7 @@ void Assembly-CSharp.dll::PickupItemModelGun::PickupItemModelGun_OnFire(PickupIt
     cRam_? = '\x01';
   }
   func_?(&stack0xffffff84,0,0x48);
-  cVar1 = (*(code *)(this->klass->vtable).get_IsAmmoDepleted.method)(this,(this->klass->vtable).get_Type.methodPtr);
+  cVar1 = (*(code *)(this->klass->vtable).get_IsAmmoDepleted.method)(this,(this->klass->vtable).CanFire.methodPtr);
   if (cVar1 != '\0') {
                     /* WARNING: Read-only address (ram,0xADDR) is written */
                     /* WARNING: Read-only address (ram,0xADDR) is written */
@@ -892,7 +892,7 @@ void Assembly-CSharp.dll::PickupItemModelGun::PickupItemModelGun_OnFireSecondary
         if (pMVar4 != (MVPickupOwner *)0x0) {
           fVar5 = (pMVar4->fields).lookOrigin.y;
           fVar6 = (pMVar4->fields).lookOrigin.z;
-          iVar7 = 0x61a0;
+          iVar7 = -0x5a0;
           pVVar8 = MVPickupOwner::MVPickupOwner_get_LookDirection((Vector3 *)&stack0xffffffe0,(this->fields)._._.owner,(MethodInfo *)0x0);
           this_00 = (PickupItemModelGun *)pVVar8->x;
           pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize((Vector3 *)&stack0xfffffff0,*pVVar8,(MethodInfo *)0x0);
@@ -1076,7 +1076,7 @@ void Assembly-CSharp.dll::PickupItemModelGun::PickupItemModelGun_OnUnequip(Picku
 void Assembly-CSharp.dll::PickupItemModelGun::PickupItemModelGun_ResetAmmo(PickupItemModelGun *this,MethodInfo *method)
 
 {
-  iVar1 = (*(code *)(this->klass->vtable).GetAmmoMultiplier.method)(this,(this->fields).ammo,(this->klass->vtable).UpdateWithDirection.methodPtr);
+  iVar1 = (*(code *)(this->klass->vtable).get_MaxAmmo.method)(this,(this->klass->vtable).get_Quantity.methodPtr);
   (this->fields).currentAmmo = iVar1;
   return;
 }
@@ -1121,10 +1121,10 @@ void Assembly-CSharp.dll::PickupItemModelGun::PickupItemModelGun_TriggerBegin(Pi
   if ((this->fields)._.isFiring == 0) {
     if ((this->fields).waitingToFire == 0) {
       if (cRam_? == '\0') {
-        func_?(&TypeInfo__PickupItemModelGun___DoAutoFire_d__39);
+        func_?(&TypeInfo__PickupItemModelGun___DoAutoFire_d__41);
         cRam_? = '\x01';
       }
-      method_00 = TypeInfo__PickupItemModelGun___DoAutoFire_d__39;
+      method_00 = TypeInfo__PickupItemModelGun___DoAutoFire_d__41;
       value = (Object *)func_?();
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
       value[1].klass = (Object__Class *)0x0;
@@ -1194,7 +1194,7 @@ void Assembly-CSharp.dll::PickupItemModelGun::PickupItemModelGun_Update(PickupIt
       goto code_?;
     }
   }
-  cVar3 = (*(code *)(this->klass->vtable).get_IsAmmoDepleted.method)(this,(this->klass->vtable).get_Type.methodPtr);
+  cVar3 = (*(code *)(this->klass->vtable).get_IsAmmoDepleted.method)(this,(this->klass->vtable).CanFire.methodPtr);
   if (cVar3 != '\0') {
     return;
   }
@@ -1224,7 +1224,7 @@ void Assembly-CSharp.dll::PickupItemModelGun::PickupItemModelGun__ctor(PickupIte
 
 {
   (this->fields).minDistanceToCubeFire = 0.8;
-  (this->fields).ammo = 10;
+  (this->fields).maxAmmo = 10;
   (this->fields).speed = 30.0;
   (this->fields).range = 200.0;
   (this->fields).fireIntervalSecondary = 1.3;
@@ -1277,5 +1277,15 @@ bool Assembly-CSharp.dll::PickupItemModelGun::PickupItemModelGun_get_IsAmmoDeple
   }
   cVar1 = (*(code *)(this->klass->vtable).get_HasUnlimitedAmmo.method)(this,(this->klass->vtable).get_CanUnequip.methodPtr);
   return cVar1 == '\0';
+}
+
+
+/* Int32 get_MaxAmmo() */
+
+int32_t Assembly-CSharp.dll::PickupItemModelGun::PickupItemModelGun_get_MaxAmmo(PickupItemModelGun *this,MethodInfo *method)
+
+{
+  iVar1 = (*(code *)(this->klass->vtable).CalculateMaxAmmo.method)(this,(this->fields).maxAmmo,(this->klass->vtable).UpdateWithDirection.methodPtr);
+  return iVar1;
 }
 

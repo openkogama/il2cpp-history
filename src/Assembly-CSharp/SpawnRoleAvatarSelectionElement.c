@@ -13,9 +13,10 @@ void Assembly-CSharp.dll::SpawnRoleAvatarSelectionElement::SpawnRoleAvatarSelect
       return;
     }
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  uVar2 = func_?(&stack0xfffffff0);
+  func_?(uVar2);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -34,9 +35,10 @@ void Assembly-CSharp.dll::SpawnRoleAvatarSelectionElement::SpawnRoleAvatarSelect
       return;
     }
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  uVar2 = func_?(&stack0xfffffff0);
+  func_?(uVar2);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

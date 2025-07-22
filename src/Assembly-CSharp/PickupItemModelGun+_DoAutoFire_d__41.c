@@ -1,7 +1,7 @@
 
 /* Boolean MoveNext() */
 
-bool Assembly-CSharp.dll::PickupItemModelGun+<DoAutoFire>d__39::PickupItemModelGun_DoAutoFire_d_39_MoveNext(PickupItemModelGun_DoAutoFire_d_39 *this,MethodInfo *method)
+bool Assembly-CSharp.dll::PickupItemModelGun+<DoAutoFire>d__41::PickupItemModelGun_DoAutoFire_d_41_MoveNext(PickupItemModelGun_DoAutoFire_d_41 *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -18,7 +18,7 @@ bool Assembly-CSharp.dll::PickupItemModelGun+<DoAutoFire>d__39::PickupItemModelG
     (this_00->fields)._.isFiring = 1;
     (this_00->fields).fireMain = 1;
     (this_00->fields).fireSecondary = 0;
-    this = (PickupItemModelGun_DoAutoFire_d_39 *)UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+    this = (PickupItemModelGun_DoAutoFire_d_41 *)UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
     fVar3 = (this_00->fields).prevFireTime;
     iVar4 = (this_00->fields)._.fireInterval.currentCryptoKey;
     AVar5 = (this_00->fields)._.fireInterval.hiddenValue;
@@ -27,7 +27,7 @@ bool Assembly-CSharp.dll::PickupItemModelGun+<DoAutoFire>d__39::PickupItemModelG
     if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
     }
-    this = (PickupItemModelGun_DoAutoFire_d_39 *)((float)this - fVar3);
+    this = (PickupItemModelGun_DoAutoFire_d_41 *)((float)this - fVar3);
     value.hiddenValue = AVar5;
     value.currentCryptoKey = iVar4;
     value.hiddenValueOld = pBVar6;
@@ -36,7 +36,7 @@ bool Assembly-CSharp.dll::PickupItemModelGun+<DoAutoFire>d__39::PickupItemModelG
     value._17_3_ = *(undefined3 *)&(this_00->fields)._.fireInterval.field_0x11;
     fVar3 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::ObscuredFloat_op_Implicit_1(value,(MethodInfo *)0x0);
     if (fVar3 < (float)this) {
-      this = (PickupItemModelGun_DoAutoFire_d_39 *)UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+      this = (PickupItemModelGun_DoAutoFire_d_41 *)UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
       iVar4 = (this_00->fields)._.fireInterval.currentCryptoKey;
       AVar5 = (this_00->fields)._.fireInterval.hiddenValue;
       pBVar6 = (this_00->fields)._.fireInterval.hiddenValueOld;
@@ -55,7 +55,7 @@ bool Assembly-CSharp.dll::PickupItemModelGun+<DoAutoFire>d__39::PickupItemModelG
     }
 code_?:
     if ((this_00->fields)._.isFiring != 0) {
-      this = (PickupItemModelGun_DoAutoFire_d_39 *)UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+      this = (PickupItemModelGun_DoAutoFire_d_41 *)UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
       bVar8 = (this_00->fields).fireSecondary;
       fVar3 = (float)this - (this_00->fields).prevFireTime;
       pfVar9 = &(this_00->fields).fireIntervalSecondary;
@@ -65,7 +65,7 @@ code_?:
       (this_00->fields).fireMain = (NAN(fVar3) || NAN(*pfVar9)) || (!bVar11 || !bVar10);
       if (((NAN(fVar3) || NAN(*pfVar9)) || (!bVar11 || !bVar10)) || (bVar8 != 0)) {
 code_?:
-        this = (PickupItemModelGun_DoAutoFire_d_39 *)0x0;
+        this = (PickupItemModelGun_DoAutoFire_d_41 *)0x0;
         pOVar12 = (Object *)func_?(TypeInfo__System__Int32,&this);
         (pPVar1->fields).__2__current = pOVar12;
         func_?(&(pPVar1->fields).__2__current,pOVar12);
@@ -91,7 +91,7 @@ code_?:
     }
     (this->fields).__1__state = -1;
   }
-  this = (PickupItemModelGun_DoAutoFire_d_39 *)UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+  this = (PickupItemModelGun_DoAutoFire_d_41 *)UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
   if (this_00 != (PickupItemModelGun *)0x0) {
     fVar3 = (this_00->fields).prevFireTime;
     iVar4 = (this_00->fields)._.fireInterval.currentCryptoKey;
@@ -108,10 +108,10 @@ code_?:
     value_00.fakeValue = fVar7;
     value_00.inited = (this_00->fields)._.fireInterval.inited;
     value_00._17_3_ = *(undefined3 *)&(this_00->fields)._.fireInterval.field_0x11;
-    this = (PickupItemModelGun_DoAutoFire_d_39 *)Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::ObscuredFloat_op_Implicit_1(value_00,(MethodInfo *)0x0);
+    this = (PickupItemModelGun_DoAutoFire_d_41 *)Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::ObscuredFloat_op_Implicit_1(value_00,(MethodInfo *)0x0);
     if (fVar3 <= (float)this) {
       (this_00->fields).waitingToFire = 1;
-      this = (PickupItemModelGun_DoAutoFire_d_39 *)0x0;
+      this = (PickupItemModelGun_DoAutoFire_d_41 *)0x0;
       pOVar12 = (Object *)func_?(TypeInfo__System__Int32,&this);
       (pPVar1->fields).__2__current = pOVar12;
       func_?(&(pPVar1->fields).__2__current,pOVar12);
@@ -122,7 +122,7 @@ code_?:
       pMVar15 = (this_00->fields)._._.owner;
       if (pMVar15 == (MVPickupOwner *)0x0) goto code_?;
       (*(code *)(this_00->klass->vtable).OnFire.method)(this_00,(pMVar15->fields)._IsLocal_k__BackingField,(this_00->klass->vtable).OnDestroy.methodPtr);
-      this = (PickupItemModelGun_DoAutoFire_d_39 *)UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+      this = (PickupItemModelGun_DoAutoFire_d_41 *)UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
       (this_00->fields).prevFireTime = (float)this;
     }
     if ((this_00->fields).fireSecondary == 0) {
@@ -135,7 +135,7 @@ code_?:
     pMVar15 = (this_00->fields)._._.owner;
     if (pMVar15 != (MVPickupOwner *)0x0) {
       PickupItemModelGun::PickupItemModelGun_OnFireSecondary(this_00,(pMVar15->fields)._IsLocal_k__BackingField,(MethodInfo *)0x0);
-      this = (PickupItemModelGun_DoAutoFire_d_39 *)UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+      this = (PickupItemModelGun_DoAutoFire_d_41 *)UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
       pTVar13 = (this_00->fields).chargeObject;
       (this_00->fields).prevFireTime = (float)this;
       if ((pTVar13 != (Transform *)0x0) && (pGVar14 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)pTVar13,(MethodInfo *)0x0), pGVar14 != (GameObject *)0x0)) {
@@ -154,13 +154,13 @@ code_?:
 
 /* Void System.Collections.IEnumerator.Reset() */
 
-void Assembly-CSharp.dll::PickupItemModelGun+<DoAutoFire>d__39::PickupItemModelGun_DoAutoFire_d_39_System_Collections_IEnumerator_Reset(PickupItemModelGun_DoAutoFire_d_39 *this,MethodInfo *method)
+void Assembly-CSharp.dll::PickupItemModelGun+<DoAutoFire>d__41::PickupItemModelGun_DoAutoFire_d_41_System_Collections_IEnumerator_Reset(PickupItemModelGun_DoAutoFire_d_41 *this,MethodInfo *method)
 
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
   this_00 = (NotSupportedException *)func_?(uVar1);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor(this_00,(MethodInfo *)0x0);
-  func_?(&MethodInfo__PickupItemModelGun___DoAutoFire_d__39__System_Collections_IEnumerator_Reset__);
+  func_?(&MethodInfo__PickupItemModelGun___DoAutoFire_d__41__System_Collections_IEnumerator_Reset__);
   func_?(this_00);
   pcVar2 = (code *)swi(3);
   (*pcVar2)();

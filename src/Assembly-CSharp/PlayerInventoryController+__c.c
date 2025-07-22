@@ -1,7 +1,7 @@
 
-/* Void <Activate>b__20_0(IUIStack, BaseEventData) */
+/* Void <Activate>b__20_1(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::PlayerInventoryController+<>c::PlayerInventoryController_c__Activate_b__20_0(PlayerInventoryController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
+void Assembly-CSharp.dll::PlayerInventoryController+<>c::PlayerInventoryController_c__Activate_b__20_1(PlayerInventoryController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {

@@ -43,9 +43,7 @@ public class DesktopPlayModeController : ModeControllerBase, IPlayModeUI, IActiv
 	[SerializeField]
 	private GameObject fullscreenPlayModeStateTransform;
 	[SerializeField]
-	private WinningConditionBriefing winningConditionBriefingMenu;
-	[SerializeField]
-	private LobbyStatePlayModeController lobbyStatePlayModeController;
+	private InGameMenuStatePlayModeController lobbyStatePlayModeController;
 	[SerializeField]
 	private ChatBubbleController chatBubbleController;
 	[SerializeField]
@@ -63,7 +61,6 @@ public class DesktopPlayModeController : ModeControllerBase, IPlayModeUI, IActiv
 	// Properties
 	public ILockCursorManager LockCursorManager { get; }
 	public GameObject InGameUIRoot { get; }
-	public override bool IsInPauseMenu { get; set; }
 
 	// Nested types
 	[Serializable]
@@ -72,14 +69,14 @@ public class DesktopPlayModeController : ModeControllerBase, IPlayModeUI, IActiv
 	{
 		// Fields
 		public static readonly __c __9;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__36_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__35_0;
 
 		// Constructors
 		static __c();
 		public __c();
 
 		// Methods
-		internal void _Initialize_b__36_0(IUIStack handler, BaseEventData data);
+		internal void _Initialize_b__35_0(IUIStack handler, BaseEventData data);
 	}
 
 	// Constructors
@@ -112,6 +109,6 @@ public class DesktopPlayModeController : ModeControllerBase, IPlayModeUI, IActiv
 	public void SetUIReady();
 	public void OpenInventoryAtItem(UIPushOption pushOption, AccessoryDataClient displayShopItems);
 	[CompilerGenerated]
-	private void _RegisterHotkeys_b__34_0(IShortcutKeyRegister x, BaseEventData y);
+	private void _RegisterHotkeys_b__33_0(IShortcutKeyRegister x, BaseEventData y);
 }
 

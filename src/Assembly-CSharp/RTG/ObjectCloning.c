@@ -71,7 +71,7 @@ List_1_UnityEngine_GameObject_ * Assembly-CSharp.dll::RTG::ObjectCloning::Object
         bVar11 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
       } while (bVar11 == 0);
       if (this == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_ *)0x0) break;
-      func_?(this,x,MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Add_UnityEngine__GameObject_);
+      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add((List_1_System_Object_ *)this,(Object *)x,MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Add_UnityEngine__GameObject_);
     }
   }
   uVar12 = func_?();

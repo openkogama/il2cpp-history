@@ -232,7 +232,7 @@ void Assembly-CSharp.dll::TeamMenu::TeamMenu_StartPlaying(TeamMenu *this,MethodI
       cRam_? = '\x01';
     }
     if (TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField == (IPlayModeUI *)0x0) goto code_?;
-    func_?(4,TypeInfo__IPlayModeUI);
+    func_?(6,TypeInfo__IPlayModeUI);
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
     if ((pMVar1 == (MVLocalPlayer *)0x0) || (pSVar2 = (pMVar1->fields).spawnRoleDataMediator, pSVar2 == (SpawnRoleDataMediator *)0x0)) goto code_?;
     pSVar3 = (SpawnRoleVariable_1_System_Int32_ *)(pSVar2->fields).woId;

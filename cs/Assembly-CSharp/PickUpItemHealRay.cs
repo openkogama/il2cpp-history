@@ -59,6 +59,7 @@ public class PickUpItemHealRay : PickupItem
 	// Properties
 	public override AvatarItemType Type { get; }
 	public override int Quantity { get; }
+	public override int MaxAmmo { get; }
 
 	// Nested types
 	private struct RayCastData

@@ -1077,12 +1077,10 @@ code_?:
       color_00.b = fVar9;
       color_00.a = fStack_10;
       GizmoSolidMaterial::GizmoSolidMaterial_SetColor(this_00,color_00,(MethodInfo *)0x0);
-      pMVar14 = GizmoSolidMaterial::GizmoSolidMaterial_get_Material(this_00,(MethodInfo *)0x0);
-      if (pMVar14 == (Material *)0x0) goto code_?;
-      UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetPass(pMVar14,0,(MethodInfo *)0x0);
-      pGVar15 = (this->fields)._._handle;
-      if (pGVar15 == (GizmoHandle *)0x0) goto code_?;
-      GizmoHandle::GizmoHandle_Render2DSolid(pGVar15,camera,(MethodInfo *)0x0);
+      GizmoSolidMaterial::GizmoSolidMaterial_SetPass(this_00,0,(MethodInfo *)0x0);
+      pGVar14 = (this->fields)._._handle;
+      if (pGVar14 == (GizmoHandle *)0x0) goto code_?;
+      GizmoHandle::GizmoHandle_Render2DSolid(pGVar14,camera,(MethodInfo *)0x0);
     }
     else {
       if ((this->fields)._sharedLookAndFeel == (GizmoLineSlider2DLookAndFeel *)0x0) {
@@ -1178,12 +1176,10 @@ code_?:
       color.b = fVar9;
       color.a = fStack_10;
       GizmoLineMaterial::GizmoLineMaterial_SetColor(this_01,color,(MethodInfo *)0x0);
-      pMVar14 = GizmoLineMaterial::GizmoLineMaterial_get_Material(this_01,(MethodInfo *)0x0);
-      if (pMVar14 == (Material *)0x0) goto code_?;
-      UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetPass(pMVar14,0,(MethodInfo *)0x0);
-      pGVar15 = (this->fields)._._handle;
-      if (pGVar15 == (GizmoHandle *)0x0) goto code_?;
-      GizmoHandle::GizmoHandle_Render2DWire(pGVar15,camera,(MethodInfo *)0x0);
+      GizmoLineMaterial::GizmoLineMaterial_SetPass(this_01,0,(MethodInfo *)0x0);
+      pGVar14 = (this->fields)._._handle;
+      if (pGVar14 == (GizmoHandle *)0x0) goto code_?;
+      GizmoHandle::GizmoHandle_Render2DWire(pGVar14,camera,(MethodInfo *)0x0);
     }
   }
 code_?:
@@ -1194,8 +1190,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 

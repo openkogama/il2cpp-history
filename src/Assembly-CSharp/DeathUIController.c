@@ -65,12 +65,12 @@ code_?:
         return;
       }
       Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::Mediator::SpawnRoleDataMediator::SpawnRoleDataMediator_add_OnSuicide(pSVar1,(Action *)pNVar5,(MethodInfo *)0x0);
-      pDVar8 = pDRamac35ff2c;
+      pDVar8 = pDRamcc35ff2c;
       pNVar5 = (NavMesh_OnNavMeshPreUpdate *)func_?();
       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::NavMesh_OnNavMeshPreUpdate__ctor(pNVar5,(Object *)object,MethodInfo__DeathUIController__OnFadeFinished__,(MethodInfo *)0x0);
       pDVar8 = mscorlib.dll::System::Delegate::Delegate_Combine(pDVar8,(Delegate *)pNVar5,(MethodInfo *)0x0);
       if (pDVar8 == (Delegate *)0x0) {
-        pDRamac35ff2c = (Delegate *)0x0;
+        pDRamcc35ff2c = (Delegate *)0x0;
         func_?();
         return;
       }
@@ -83,7 +83,7 @@ code_?:
         if ((Action__Class *)pDVar8->klass == TypeInfo__System__Action) {
           pDVar12 = pDVar8;
         }
-        pDRamac35ff2c = pDVar11;
+        pDRamcc35ff2c = pDVar11;
         if (pDVar12 != (Delegate *)0x0) {
           func_?();
           return;
@@ -576,7 +576,7 @@ void Assembly-CSharp.dll::DeathUIController::DeathUIController_OnFadeFinished(De
         }
         pIVar4 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
         if (pIVar4 != (IPlayModeUI *)0x0) {
-          cVar5 = func_?(3,TypeInfo__IPlayModeUI,pIVar4);
+          cVar5 = func_?(5,TypeInfo__IPlayModeUI,pIVar4);
           if (cVar5 == '\0') {
             if (cRam_? == '\0') {
               func_?(&TypeInfo__GamePassesManager);

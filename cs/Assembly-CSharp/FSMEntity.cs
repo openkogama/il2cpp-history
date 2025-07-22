@@ -26,6 +26,7 @@ public class FSMEntity
 	// Properties
 	public Dictionary<object, object> Data { get; }
 	public bool LockState { get; set; }
+	public IState CurState { get; }
 	public object Event { set; }
 
 	// Constructors

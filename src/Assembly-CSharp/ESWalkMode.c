@@ -144,7 +144,7 @@ void Assembly-CSharp.dll::ESWalkMode::ESWalkMode_Enter(ESWalkMode *this,EditorSt
             pGVar4 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
           }
           if ((pGVar4 == (GameEventManager *)0x0) || (this_00 = (pGVar4->fields).AvatarCommandsPlayMode, this_00 == (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) goto code_?;
-          PlayButtonTouch::PlayButtonTouch_OnConfirmPlay((PlayButtonTouch *)this_00,(MethodInfo *)0x0);
+          GameEventManager+AvatarCommandsPlayModeManager::GameEventManager_AvatarCommandsPlayModeManager_RemoveFromGame(this_00,(MethodInfo *)0x0);
           MVGameControllerDesktop::MVGameControllerDesktop_CursorLock(0,0,(MethodInfo *)0x0);
         }
 code_?:
@@ -278,7 +278,7 @@ void Assembly-CSharp.dll::ESWalkMode::ESWalkMode_HandleEnterPlayInEditMode(ESWal
     pGVar2 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
   }
   if ((pGVar2 != (GameEventManager *)0x0) && (this_00 = (pGVar2->fields).AvatarCommandsPlayMode, this_00 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) {
-    PlayButtonTouch::PlayButtonTouch_OnConfirmPlay((PlayButtonTouch *)this_00,(MethodInfo *)0x0);
+    GameEventManager+AvatarCommandsPlayModeManager::GameEventManager_AvatarCommandsPlayModeManager_RemoveFromGame(this_00,(MethodInfo *)0x0);
     MVGameControllerDesktop::MVGameControllerDesktop_CursorLock(0,0,(MethodInfo *)0x0);
     return;
   }

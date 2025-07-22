@@ -151,6 +151,7 @@ public class GameTierProgressBar : MonoBehaviour, HoverInputReceiver
 	private int ReduceGamePointsWithPreviousTierRequirements(GamePassTier gamePassTierToDisplay, int gamePoints, Dictionary<GamePassTier, PlayerTierState> gameTierShopStatus);
 	private void UpdateDividerVisibility(int playerGamePoints);
 	private void UpdateTempProgressVisibility();
+	private void UpdateTempProgressVisibilityForTier(int index, bool hasTempTeir);
 	private bool HasTempTier(GamePassTier tier);
 	private bool HasAnyTempTier();
 	private void UpdateTierIconHoverInput();

@@ -10,7 +10,7 @@ void Assembly-CSharp.dll::PickupItemWithDelay::PickupItemWithDelay_Fire(PickupIt
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
     cRam_? = '\x01';
   }
-  cVar1 = (*(code *)(this->klass->vtable).get_IsAmmoDepleted.method)(this,(this->klass->vtable).__unknown.methodPtr);
+  cVar1 = (*(code *)(this->klass->vtable).get_IsAmmoDepleted.method)(this,(this->klass->vtable).CanFire.methodPtr);
   if (cVar1 == '\0') {
     fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
     fVar3 = (this->fields).lastFireTime;
@@ -37,7 +37,7 @@ void Assembly-CSharp.dll::PickupItemWithDelay::PickupItemWithDelay_Fire(PickupIt
       (this->fields)._.firedThisFrame = 1;
     }
   }
-  cVar1 = (*(code *)(this->klass->vtable).get_IsAmmoDepleted.method)(this,(this->klass->vtable).__unknown.methodPtr);
+  cVar1 = (*(code *)(this->klass->vtable).get_IsAmmoDepleted.method)(this,(this->klass->vtable).CanFire.methodPtr);
   if (cVar1 != '\0') {
     pMVar8 = (this->fields)._.owner;
     if (((pMVar8 == (MVPickupOwner *)0x0) || (pMVar9 = (pMVar8->fields)._.worldObjectParent, pMVar9 == (MVWorldObjectClient *)0x0)) || (this_00 = (pMVar9->fields).gameObject, this_00 == (GameObject *)0x0)) {
@@ -214,7 +214,7 @@ void Assembly-CSharp.dll::PickupItemWithDelay::PickupItemWithDelay_UpdateControl
       func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
       cRam_? = '\x01';
     }
-    cVar1 = (*(code *)(this->klass->vtable).get_IsAmmoDepleted.method)(this,(this->klass->vtable).__unknown.methodPtr);
+    cVar1 = (*(code *)(this->klass->vtable).get_IsAmmoDepleted.method)(this,(this->klass->vtable).CanFire.methodPtr);
     if (cVar1 == '\0') {
       fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
       fVar3 = (this->fields).lastFireTime;
@@ -241,7 +241,7 @@ void Assembly-CSharp.dll::PickupItemWithDelay::PickupItemWithDelay_UpdateControl
         (this->fields)._.firedThisFrame = 1;
       }
     }
-    cVar1 = (*(code *)(this->klass->vtable).get_IsAmmoDepleted.method)(this,(this->klass->vtable).__unknown.methodPtr);
+    cVar1 = (*(code *)(this->klass->vtable).get_IsAmmoDepleted.method)(this,(this->klass->vtable).CanFire.methodPtr);
     if (cVar1 != '\0') {
       pMVar8 = (this->fields)._.owner;
       if (((pMVar8 == (MVPickupOwner *)0x0) || (pMVar9 = (pMVar8->fields)._.worldObjectParent, pMVar9 == (MVWorldObjectClient *)0x0)) || (this_00 = (pMVar9->fields).gameObject, this_00 == (GameObject *)0x0)) {

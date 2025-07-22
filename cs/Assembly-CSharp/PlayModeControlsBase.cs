@@ -34,6 +34,5 @@ public abstract class PlayModeControlsBase : MonoBehaviour
 	public void ShowEUseIcon(ShowUseOption option);
 	public void HideEUseIcon();
 	public IGUICrossHair GetCrossHair();
-	protected virtual void SetUseButtonVisible(bool visible, ShowUseOption? option = default);
 }
 

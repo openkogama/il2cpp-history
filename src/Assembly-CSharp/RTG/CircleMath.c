@@ -234,29 +234,20 @@ bool Assembly-CSharp.dll::RTG::CircleMath::CircleMath_Contains2DPoint(Vector2 po
 bool Assembly-CSharp.dll::RTG::CircleMath::CircleMath_Contains3DPoint(Vector3 point,bool checkOnPlane,Vector3 circleCenter,float circleRadius,Vector3 circleNormal,CircleEpsilon epsilon,MethodInfo *method)
 
 {
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize((Vector3 *)&stack0xfffffff0,circleNormal,(MethodInfo *)0x0);
-  fVar2 = pVVar1->x;
-  fVar3 = pVVar1->y;
-  fVar4 = pVVar1->z;
-  fVar5 = -(circleCenter.x * fVar2 + circleCenter.y * fVar3 + circleCenter.z * fVar4);
-  if (checkOnPlane != 0) {
-    plane.m_Distance = fVar5;
-    plane.m_Normal = *pVVar1;
-    fVar2 = point.x;
-    fVar3 = point.y;
-    fVar4 = point.z;
-    fVar5 = 0.0;
-    fVar6 = PlaneEx::PlaneEx_GetAbsDistanceToPoint(plane,point,(MethodInfo *)0x0);
-    if (epsilon._extrudeEps < fVar6) {
-      return 0;
-    }
+  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize(&VStack_2,circleNormal,(MethodInfo *)0x0);
+  uVar3 = pVVar1->x;
+  uVar4 = pVVar1->y;
+  fVar5 = pVVar1->z;
+  fVar6 = -(circleCenter.x * (float)uVar3 + circleCenter.y * (float)uVar4 + circleCenter.z * fVar5);
+  if ((checkOnPlane != 0) && (epsilon._extrudeEps < ABS((float)uVar3 * point.x + (float)uVar4 * point.y + fVar5 * point.z + fVar6))) {
+    return 0;
   }
-  plane_00.m_Normal.y = fVar3;
-  plane_00.m_Normal.x = fVar2;
-  plane_00.m_Normal.z = fVar4;
-  plane_00.m_Distance = fVar5;
-  PlaneEx::PlaneEx_ProjectPoint((Vector3 *)&stack0xfffffff0,plane_00,point,(MethodInfo *)0x0);
-  fVar7 = (float10)func_?();
+  fVar6 = (float)uVar3 * point.x + (float)uVar4 * point.y + fVar5 * point.z + fVar6;
+  circleCenter.z = (point.z - fVar5 * fVar6) - circleCenter.z;
+  circleCenter.x = (point.x - (float)uVar3 * fVar6) - circleCenter.x;
+  circleCenter.y = (point.y - (float)uVar4 * fVar6) - circleCenter.y;
+  VStack_2.x = 0.0;
+  fVar7 = (float10)func_?(&circleCenter);
   return (float)fVar7 <= epsilon._radiusEps + circleRadius;
 }
 

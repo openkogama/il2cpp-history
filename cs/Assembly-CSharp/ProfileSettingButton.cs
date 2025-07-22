@@ -35,6 +35,7 @@ public class ProfileSettingButton : MonoBehaviour
 
 	// Methods
 	private void Start();
+	private int GetTextureQualityLimit();
 	public void OnClick();
 	private void OnChange(object value);
 	private object ProfileSettingValueToObj(int value);

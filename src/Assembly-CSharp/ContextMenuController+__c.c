@@ -1,7 +1,7 @@
 
-/* Void <AddToInventory>b__36_0(IModalPopupCreator, BaseEventData) */
+/* Void <AddToInventory>b__38_0(IModalPopupCreator, BaseEventData) */
 
-void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__AddToInventory_b__36_0(ContextMenuController_c *this,IModalPopupCreator *x,BaseEventData *y,MethodInfo *method)
+void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__AddToInventory_b__38_0(ContextMenuController_c *this,IModalPopupCreator *x,BaseEventData *y,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -25,9 +25,9 @@ void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__Ad
 }
 
 
-/* Void <AddToInventory>b__36_1(IUIStack, BaseEventData) */
+/* Void <AddToInventory>b__38_1(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__AddToInventory_b__36_1(ContextMenuController_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
+void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__AddToInventory_b__38_1(ContextMenuController_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -51,35 +51,9 @@ void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__Ad
 }
 
 
-/* Void <CloneRoot>b__35_0(IUIStack, BaseEventData) */
+/* Void <CloneRoot>b__37_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__CloneRoot_b__35_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?();
-    cRam_? = '\x01';
-  }
-  if (handler != (IUIStack *)0x0) {
-    ppIStack_1 = (IUIStack__Class **)0x2;
-    pIStack_2 = handler;
-    pIStack_3 = TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?(3);
-    return;
-  }
-  ppIStack_1 = (IUIStack__Class **)&stack0xfffffffc;
-  uVar4 = func_?(&pIStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
-  return;
-}
-
-
-/* Void <Clone>b__34_0(IUIStack, BaseEventData) */
-
-void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__Clone_b__34_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
+void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__CloneRoot_b__37_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -103,9 +77,35 @@ void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__Cl
 }
 
 
-/* Void <DeleteLink>b__17_0(IUIStack, BaseEventData) */
+/* Void <Clone>b__36_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__DeleteLink_b__17_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
+void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__Clone_b__36_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IUIStack;
+    func_?();
+    cRam_? = '\x01';
+  }
+  if (handler != (IUIStack *)0x0) {
+    ppIStack_1 = (IUIStack__Class **)0x2;
+    pIStack_2 = handler;
+    pIStack_3 = TypeInfo__UnityEngine__EventSystems__IUIStack;
+    func_?(3);
+    return;
+  }
+  ppIStack_1 = (IUIStack__Class **)&stack0xfffffffc;
+  uVar4 = func_?(&pIStack_3);
+  func_?(uVar4);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
+  return;
+}
+
+
+/* Void <DeleteLink>b__19_0(IUIStack, BaseEventData) */
+
+void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__DeleteLink_b__19_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -129,9 +129,9 @@ void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__De
 }
 
 
-/* Void <Delete>b__41_1(IUIStack, BaseEventData) */
+/* Void <Delete>b__43_1(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__Delete_b__41_1(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
+void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__Delete_b__43_1(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -155,9 +155,9 @@ void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__De
 }
 
 
-/* Void <EnterPlay>b__37_0(IEditModeController, BaseEventData) */
+/* Void <EnterPlay>b__39_0(IEditModeController, BaseEventData) */
 
-void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__EnterPlay_b__37_0(ContextMenuController_c *this,IEditModeController *x,BaseEventData *y,MethodInfo *method)
+void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__EnterPlay_b__39_0(ContextMenuController_c *this,IEditModeController *x,BaseEventData *y,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -181,9 +181,9 @@ void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__En
 }
 
 
-/* Void <OnClosedStandaloneError>b__38_0(IUIStack, BaseEventData) */
+/* Void <OnClosedStandaloneError>b__40_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__OnClosedStandaloneError_b__38_0(ContextMenuController_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
+void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__OnClosedStandaloneError_b__40_0(ContextMenuController_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -207,9 +207,9 @@ void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__On
 }
 
 
-/* Void <OnFailedToAddItem>b__40_0(IUIStack, BaseEventData) */
+/* Void <OnFailedToAddItem>b__42_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__OnFailedToAddItem_b__40_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
+void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__OnFailedToAddItem_b__42_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -233,9 +233,9 @@ void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__On
 }
 
 
-/* Void <PopGizmos>b__16_0(IUIStack, BaseEventData) */
+/* Void <PopGizmos>b__18_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__PopGizmos_b__16_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
+void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__PopGizmos_b__18_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -259,35 +259,9 @@ void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__Po
 }
 
 
-/* Void <ResetLogic>b__33_0(IUIStack, BaseEventData) */
+/* Void <ResetLogic>b__35_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__ResetLogic_b__33_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?();
-    cRam_? = '\x01';
-  }
-  if (handler != (IUIStack *)0x0) {
-    ppIStack_1 = (IUIStack__Class **)0x2;
-    pIStack_2 = handler;
-    pIStack_3 = TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?(3);
-    return;
-  }
-  ppIStack_1 = (IUIStack__Class **)&stack0xfffffffc;
-  uVar4 = func_?(&pIStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
-  return;
-}
-
-
-/* Void <ShowChangeScaleDialog>b__32_0(IUIStack, BaseEventData) */
-
-void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__ShowChangeScaleDialog_b__32_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
+void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__ResetLogic_b__35_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -311,35 +285,9 @@ void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__Sh
 }
 
 
-/* Void <ShowGameCoinsDialog>b__24_0(IUIStack, BaseEventData) */
+/* Void <ShowChangeScaleDialog>b__34_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__ShowGameCoinsDialog_b__24_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?();
-    cRam_? = '\x01';
-  }
-  if (handler != (IUIStack *)0x0) {
-    ppIStack_1 = (IUIStack__Class **)0x2;
-    pIStack_2 = handler;
-    pIStack_3 = TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?(3);
-    return;
-  }
-  ppIStack_1 = (IUIStack__Class **)&stack0xfffffffc;
-  uVar4 = func_?(&pIStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
-  return;
-}
-
-
-/* Void <ShowGamePointsDialog>b__20_0(IUIStack, BaseEventData) */
-
-void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__ShowGamePointsDialog_b__20_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
+void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__ShowChangeScaleDialog_b__34_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -363,35 +311,9 @@ void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__Sh
 }
 
 
-/* Void <ShowGameRankDialog>b__19_0(IUIStack, BaseEventData) */
+/* Void <ShowGameCoinsDialog>b__26_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__ShowGameRankDialog_b__19_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?();
-    cRam_? = '\x01';
-  }
-  if (handler != (IUIStack *)0x0) {
-    ppIStack_1 = (IUIStack__Class **)0x2;
-    pIStack_2 = handler;
-    pIStack_3 = TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?(3);
-    return;
-  }
-  ppIStack_1 = (IUIStack__Class **)&stack0xfffffffc;
-  uVar4 = func_?(&pIStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
-  return;
-}
-
-
-/* Void <ShowGlobalSoundsDialog>b__29_0(IUIStack, BaseEventData) */
-
-void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__ShowGlobalSoundsDialog_b__29_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
+void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__ShowGameCoinsDialog_b__26_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -415,35 +337,9 @@ void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__Sh
 }
 
 
-/* Void <ShowLevelsDialog>b__25_0(IUIStack, BaseEventData) */
+/* Void <ShowGamePointsDialog>b__22_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__ShowLevelsDialog_b__25_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?();
-    cRam_? = '\x01';
-  }
-  if (handler != (IUIStack *)0x0) {
-    ppIStack_1 = (IUIStack__Class **)0x2;
-    pIStack_2 = handler;
-    pIStack_3 = TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?(3);
-    return;
-  }
-  ppIStack_1 = (IUIStack__Class **)&stack0xfffffffc;
-  uVar4 = func_?(&pIStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
-  return;
-}
-
-
-/* Void <ShowMinorGamePointsDialog>b__21_0(IUIStack, BaseEventData) */
-
-void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__ShowMinorGamePointsDialog_b__21_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
+void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__ShowGamePointsDialog_b__22_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -467,35 +363,9 @@ void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__Sh
 }
 
 
-/* Void <ShowRespawnDialog>b__22_0(IUIStack, BaseEventData) */
+/* Void <ShowGameRankDialog>b__21_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__ShowRespawnDialog_b__22_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?();
-    cRam_? = '\x01';
-  }
-  if (handler != (IUIStack *)0x0) {
-    ppIStack_1 = (IUIStack__Class **)0x2;
-    pIStack_2 = handler;
-    pIStack_3 = TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?(3);
-    return;
-  }
-  ppIStack_1 = (IUIStack__Class **)&stack0xfffffffc;
-  uVar4 = func_?(&pIStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
-  return;
-}
-
-
-/* Void <ShowRewardedAdDialog>b__26_0(IUIStack, BaseEventData) */
-
-void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__ShowRewardedAdDialog_b__26_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
+void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__ShowGameRankDialog_b__21_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -519,35 +389,9 @@ void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__Sh
 }
 
 
-/* Void <ShowSettingsDialog>b__27_0(IUIStack, BaseEventData) */
+/* Void <ShowGlobalSoundsDialog>b__31_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__ShowSettingsDialog_b__27_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?();
-    cRam_? = '\x01';
-  }
-  if (handler != (IUIStack *)0x0) {
-    ppIStack_1 = (IUIStack__Class **)0x2;
-    pIStack_2 = handler;
-    pIStack_3 = TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?(3);
-    return;
-  }
-  ppIStack_1 = (IUIStack__Class **)&stack0xfffffffc;
-  uVar4 = func_?(&pIStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
-  return;
-}
-
-
-/* Void <ShowSoundsDialog>b__28_0(IUIStack, BaseEventData) */
-
-void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__ShowSoundsDialog_b__28_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
+void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__ShowGlobalSoundsDialog_b__31_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -571,9 +415,9 @@ void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__Sh
 }
 
 
-/* Void <ShowStarsDialog>b__18_0(IUIStack, BaseEventData) */
+/* Void <ShowLevelsDialog>b__27_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__ShowStarsDialog_b__18_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
+void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__ShowLevelsDialog_b__27_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -597,9 +441,165 @@ void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__Sh
 }
 
 
-/* Void <ShowTeamDialog>b__23_0(IUIStack, BaseEventData) */
+/* Void <ShowMinorGamePointsDialog>b__23_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__ShowTeamDialog_b__23_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
+void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__ShowMinorGamePointsDialog_b__23_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IUIStack;
+    func_?();
+    cRam_? = '\x01';
+  }
+  if (handler != (IUIStack *)0x0) {
+    ppIStack_1 = (IUIStack__Class **)0x2;
+    pIStack_2 = handler;
+    pIStack_3 = TypeInfo__UnityEngine__EventSystems__IUIStack;
+    func_?(3);
+    return;
+  }
+  ppIStack_1 = (IUIStack__Class **)&stack0xfffffffc;
+  uVar4 = func_?(&pIStack_3);
+  func_?(uVar4);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
+  return;
+}
+
+
+/* Void <ShowRespawnDialog>b__24_0(IUIStack, BaseEventData) */
+
+void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__ShowRespawnDialog_b__24_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IUIStack;
+    func_?();
+    cRam_? = '\x01';
+  }
+  if (handler != (IUIStack *)0x0) {
+    ppIStack_1 = (IUIStack__Class **)0x2;
+    pIStack_2 = handler;
+    pIStack_3 = TypeInfo__UnityEngine__EventSystems__IUIStack;
+    func_?(3);
+    return;
+  }
+  ppIStack_1 = (IUIStack__Class **)&stack0xfffffffc;
+  uVar4 = func_?(&pIStack_3);
+  func_?(uVar4);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
+  return;
+}
+
+
+/* Void <ShowRewardedAdDialog>b__28_0(IUIStack, BaseEventData) */
+
+void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__ShowRewardedAdDialog_b__28_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IUIStack;
+    func_?();
+    cRam_? = '\x01';
+  }
+  if (handler != (IUIStack *)0x0) {
+    ppIStack_1 = (IUIStack__Class **)0x2;
+    pIStack_2 = handler;
+    pIStack_3 = TypeInfo__UnityEngine__EventSystems__IUIStack;
+    func_?(3);
+    return;
+  }
+  ppIStack_1 = (IUIStack__Class **)&stack0xfffffffc;
+  uVar4 = func_?(&pIStack_3);
+  func_?(uVar4);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
+  return;
+}
+
+
+/* Void <ShowSettingsDialog>b__29_0(IUIStack, BaseEventData) */
+
+void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__ShowSettingsDialog_b__29_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IUIStack;
+    func_?();
+    cRam_? = '\x01';
+  }
+  if (handler != (IUIStack *)0x0) {
+    ppIStack_1 = (IUIStack__Class **)0x2;
+    pIStack_2 = handler;
+    pIStack_3 = TypeInfo__UnityEngine__EventSystems__IUIStack;
+    func_?(3);
+    return;
+  }
+  ppIStack_1 = (IUIStack__Class **)&stack0xfffffffc;
+  uVar4 = func_?(&pIStack_3);
+  func_?(uVar4);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
+  return;
+}
+
+
+/* Void <ShowSoundsDialog>b__30_0(IUIStack, BaseEventData) */
+
+void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__ShowSoundsDialog_b__30_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IUIStack;
+    func_?();
+    cRam_? = '\x01';
+  }
+  if (handler != (IUIStack *)0x0) {
+    ppIStack_1 = (IUIStack__Class **)0x2;
+    pIStack_2 = handler;
+    pIStack_3 = TypeInfo__UnityEngine__EventSystems__IUIStack;
+    func_?(3);
+    return;
+  }
+  ppIStack_1 = (IUIStack__Class **)&stack0xfffffffc;
+  uVar4 = func_?(&pIStack_3);
+  func_?(uVar4);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
+  return;
+}
+
+
+/* Void <ShowStarsDialog>b__20_0(IUIStack, BaseEventData) */
+
+void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__ShowStarsDialog_b__20_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IUIStack;
+    func_?();
+    cRam_? = '\x01';
+  }
+  if (handler != (IUIStack *)0x0) {
+    ppIStack_1 = (IUIStack__Class **)0x2;
+    pIStack_2 = handler;
+    pIStack_3 = TypeInfo__UnityEngine__EventSystems__IUIStack;
+    func_?(3);
+    return;
+  }
+  ppIStack_1 = (IUIStack__Class **)&stack0xfffffffc;
+  uVar4 = func_?(&pIStack_3);
+  func_?(uVar4);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
+  return;
+}
+
+
+/* Void <ShowTeamDialog>b__25_0(IUIStack, BaseEventData) */
+
+void Assembly-CSharp.dll::ContextMenuController+<>c::ContextMenuController_c__ShowTeamDialog_b__25_0(ContextMenuController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {

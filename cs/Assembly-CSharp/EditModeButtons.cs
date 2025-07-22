@@ -9,7 +9,7 @@ using UnityEngine;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
-public class EditModeButtons : TouchButtonsBase
+public class EditModeButtons : MonoBehaviour
 {
 	// Fields
 	[SerializeField]
@@ -21,7 +21,5 @@ public class EditModeButtons : TouchButtonsBase
 	// Methods
 	private void ShowEditUI();
 	private void HideEditUI();
-	public override void ShowEUseIcon(ShowUseOption option);
-	public override void HideEUseIcon();
 }
 

@@ -63,6 +63,9 @@ void Assembly-CSharp.dll::InputMovementPrecisionModifier::InputMovementPrecision
     dVar1 = SQRT(dVar1);
   }
   (this->fields).maxMagnitude = (float)dVar1 * 0.25;
+  if ((TypeInfo__ResolutionManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__ResolutionManager);
+  }
   pUVar2 = TypeInfo__ResolutionManager->static_fields->OnReferenceResolution;
   this_00 = (UnityAction_1_UnityEngine_Vector2_ *)func_?(TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::Vector2>);
   UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Vector2]::UnityAction_1_UnityEngine_Vector2___ctor(this_00,(Object *)this,MethodInfo__InputMovementPrecisionModifier__SetReferenceResolution_UnityEngine__Vector2_,(MethodInfo *)0x0);
@@ -97,11 +100,20 @@ void Assembly-CSharp.dll::InputMovementPrecisionModifier::InputMovementPrecision
     func_?(&TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::Vector2>);
     cRam_? = '\x01';
   }
+  if ((TypeInfo__ResolutionManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__ResolutionManager);
+  }
   if (cRam_? == '\0') {
     func_?(&TypeInfo__ResolutionManager);
     cRam_? = '\x01';
   }
+  if ((TypeInfo__ResolutionManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__ResolutionManager);
+  }
   if (TypeInfo__ResolutionManager->static_fields->_Initialized_k__BackingField == 0) {
+    if ((TypeInfo__ResolutionManager->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__ResolutionManager);
+    }
     pUVar1 = TypeInfo__ResolutionManager->static_fields->OnReferenceResolution;
     pUVar2 = (UnityAction_1_UnityEngine_Vector2_ *)func_?(TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::Vector2>);
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Vector2]::UnityAction_1_UnityEngine_Vector2___ctor(pUVar2,(Object *)this,MethodInfo__InputMovementPrecisionModifier__SetReferenceResolution_UnityEngine__Vector2_,(MethodInfo *)0x0);
@@ -124,6 +136,9 @@ code_?:
     }
   }
   else {
+    if ((TypeInfo__ResolutionManager->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__ResolutionManager);
+    }
     VVar7 = ResolutionManager::ResolutionManager_get_ReferenceResolution((MethodInfo *)0x0);
     if (cRam_? == '\0') {
       func_?(&MethodInfo__InputMovementPrecisionModifier__SetReferenceResolution_UnityEngine__Vector2_);
@@ -146,6 +161,9 @@ code_?:
       dVar8 = SQRT(dVar8);
     }
     (this->fields).maxMagnitude = (float)dVar8 * 0.25;
+    if ((TypeInfo__ResolutionManager->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__ResolutionManager);
+    }
     pUVar1 = TypeInfo__ResolutionManager->static_fields->OnReferenceResolution;
     pUVar2 = (UnityAction_1_UnityEngine_Vector2_ *)func_?(TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::Vector2>);
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Vector2]::UnityAction_1_UnityEngine_Vector2___ctor(pUVar2,(Object *)this,MethodInfo__InputMovementPrecisionModifier__SetReferenceResolution_UnityEngine__Vector2_,(MethodInfo *)0x0);

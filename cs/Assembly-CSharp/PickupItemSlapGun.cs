@@ -31,6 +31,7 @@ public class PickupItemSlapGun : PickupItemWithDelay
 	public override bool FirstPerson { get; }
 	public override bool GunMode { get; }
 	public override int Quantity { get; }
+	public override int MaxAmmo { get; }
 	public override bool CanHolster { get; }
 
 	// Constructors

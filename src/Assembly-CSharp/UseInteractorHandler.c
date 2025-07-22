@@ -20,6 +20,51 @@ void Assembly-CSharp.dll::UseInteractorHandler::UseInteractorHandler_AddUseInter
 }
 
 
+/* Boolean ClosestUseInteractorHasUseIconInVehicle() */
+
+bool Assembly-CSharp.dll::UseInteractorHandler::UseInteractorHandler_ClosestUseInteractorHasUseIconInVehicle(UseInteractorHandler *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_UseInteractor>__get_Count__);
+    func_?(&MethodInfo__System__Collections__Generic__List<UseInteractor>__get_Item_int_);
+    cRam_? = '\x01';
+  }
+  this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_ *)(this->fields).useInteractors;
+  if (this_00 != (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_ *)0x0) {
+    iVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Count(this_00,MethodInfo__System__Collections__Generic__Dictionary<int,_UseInteractor>__get_Count__);
+    if (iVar1 == 0) {
+      return 0;
+    }
+    this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)UseInteractorHandler_SortByDistance(this,(MethodInfo *)0x0);
+    if ((this_01 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) && (RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_01,0,MethodInfo__System__Collections__Generic__List<UseInteractor>__get_Item_int_), RVar2 != (RegexCharClass_SingleRange)0x0)) {
+      if ((*(int *)((int)RVar2 + 0x1c) != 0) && (cVar3 = (**(code **)(*(int *)((int)RVar2 + 0x1c) + 0xc))(), cVar3 == '\0')) {
+        return 0;
+      }
+      if (*(UseInteractorVisualization **)((int)RVar2 + 8) != (UseInteractorVisualization *)0x0) {
+        UVar4 = UseInteractorVisualization::UseInteractorVisualization_EvaluateUsability(*(UseInteractorVisualization **)((int)RVar2 + 8),(MethodInfo *)0x0);
+        if (((byte)UVar4 & 0xf) < 2) {
+          return 0;
+        }
+        if (*(char *)((int)RVar2 + 0x20) == '\0') {
+          return 0;
+        }
+        if (*(char *)((int)RVar2 + 0x21) == '\0') {
+          return 1;
+        }
+        if (*(int *)((int)RVar2 + 8) != 0) {
+          return *(bool *)(*(int *)((int)RVar2 + 8) + 0x34);
+        }
+      }
+    }
+  }
+  func_?();
+  pcVar5 = (code *)swi(3);
+  bVar6 = (*pcVar5)();
+  return bVar6;
+}
+
+
 /* Void Init(Int32, Collider) */
 
 void Assembly-CSharp.dll::UseInteractorHandler::UseInteractorHandler_Init(UseInteractorHandler *this,int32_t ownerWoId,Collider *baseCollider,MethodInfo *method)
@@ -160,7 +205,7 @@ void Assembly-CSharp.dll::UseInteractorHandler::UseInteractorHandler_Update(UseI
       cRam_? = '\x01';
     }
     if (TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField != (IPlayModeUI *)0x0) {
-      cVar3 = func_?(7,TypeInfo__IPlayModeUI);
+      cVar3 = func_?(9,TypeInfo__IPlayModeUI);
       if (cVar3 != '\0') {
         return;
       }
@@ -170,18 +215,18 @@ void Assembly-CSharp.dll::UseInteractorHandler::UseInteractorHandler_Update(UseI
         if (0 < iVar5) {
           this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)UseInteractorHandler_SortByDistance(in_stack_4,(MethodInfo *)0x0);
           if ((this_02 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) || (RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_02,0,MethodInfo__System__Collections__Generic__List<UseInteractor>__get_Item_int_), RVar6 == (RegexCharClass_SingleRange)0x0)) goto code_?;
-          if ((*(int *)((int)RVar6 + 0xc) == 0) || (cVar3 = (**(code **)(*(int *)((int)RVar6 + 0xc) + 0xc))(), cVar3 != '\0')) {
-            if (*(UseInteractorVisualization **)((int)RVar6 + 0x20) == (UseInteractorVisualization *)0x0) goto code_?;
-            UseInteractorVisualization::UseInteractorVisualization_GetShowOptions(*(UseInteractorVisualization **)((int)RVar6 + 0x20),(MethodInfo *)0x0);
-            if (*(UseInteractorVisualization **)((int)RVar6 + 0x20) == (UseInteractorVisualization *)0x0) goto code_?;
-            UVar7 = UseInteractorVisualization::UseInteractorVisualization_EvaluateUsability(*(UseInteractorVisualization **)((int)RVar6 + 0x20),(MethodInfo *)0x0);
+          if ((*(int *)((int)RVar6 + 0x1c) == 0) || (cVar3 = (**(code **)(*(int *)((int)RVar6 + 0x1c) + 0xc))(), cVar3 != '\0')) {
+            if (*(UseInteractorVisualization **)((int)RVar6 + 8) == (UseInteractorVisualization *)0x0) goto code_?;
+            UseInteractorVisualization::UseInteractorVisualization_GetShowOptions(*(UseInteractorVisualization **)((int)RVar6 + 8),(MethodInfo *)0x0);
+            if (*(UseInteractorVisualization **)((int)RVar6 + 8) == (UseInteractorVisualization *)0x0) goto code_?;
+            UVar7 = UseInteractorVisualization::UseInteractorVisualization_EvaluateUsability(*(UseInteractorVisualization **)((int)RVar6 + 8),(MethodInfo *)0x0);
             if (1 < ((byte)UVar7 & 0xf)) {
-              if (*(char *)((int)RVar6 + 0x1c) == '\0') {
+              if ((*(char *)((int)RVar6 + 0x20) == '\0') || (*(char *)((int)RVar6 + 0x21) == '\0')) {
                 bVar8 = false;
               }
               else {
-                if (*(int *)((int)RVar6 + 0x20) == 0) goto code_?;
-                bVar8 = *(char *)(*(int *)((int)RVar6 + 0x20) + 0x34) == '\0';
+                if (*(int *)((int)RVar6 + 8) == 0) goto code_?;
+                bVar8 = *(char *)(*(int *)((int)RVar6 + 8) + 0x34) == '\0';
               }
               if (bVar8) {
                 UseInteractorHandler_Use(in_stack_4,(MethodInfo *)0x0);
@@ -328,14 +373,14 @@ code_?:
             if (pLVar8 != (List_1_System_Int32_ *)0x0) goto code_?;
           }
           else {
-            pOStack_19 = pOStack_17[2].klass;
+            pOStack_19 = (Object_1 *)pOStack_17[2].monitor;
             if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
               func_?(TypeInfo__UnityEngine__Object);
             }
-            bVar14 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality((Object_1 *)pOStack_19,(Object_1 *)0x0,(MethodInfo *)0x0);
+            bVar14 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality(pOStack_19,(Object_1 *)0x0,(MethodInfo *)0x0);
             if (bVar14 != 0) goto code_?;
-            if (pOStack_17[2].klass != (Object__Class *)0x0) {
-              pBVar20 = UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_get_bounds(&BStack_21,(Collider *)pOStack_17[2].klass,(MethodInfo *)0x0);
+            if ((Collider *)pOStack_17[2].monitor != (Collider *)0x0) {
+              pBVar20 = UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_get_bounds(&BStack_21,(Collider *)pOStack_17[2].monitor,(MethodInfo *)0x0);
               DStack_12._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)(pBVar20->m_Center).x;
               DStack_12._version = (int32_t)(pBVar20->m_Center).y;
               DStack_12._index = (int32_t)(pBVar20->m_Center).z;
@@ -393,7 +438,7 @@ void Assembly-CSharp.dll::UseInteractorHandler::UseInteractorHandler_UpdateUseVi
     }
     pIVar3 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
     if (pIVar3 != (IPlayModeUI *)0x0) {
-      cVar4 = func_?(7,TypeInfo__IPlayModeUI,pIVar3);
+      cVar4 = func_?(9,TypeInfo__IPlayModeUI,pIVar3);
       if (cVar4 != '\0') {
         return;
       }
@@ -403,18 +448,18 @@ void Assembly-CSharp.dll::UseInteractorHandler::UseInteractorHandler_UpdateUseVi
         if (0 < iVar5) {
           this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)UseInteractorHandler_SortByDistance(this,(MethodInfo *)0x0);
           if ((this_02 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) || (RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(this_02,0,MethodInfo__System__Collections__Generic__List<UseInteractor>__get_Item_int_), RVar6 == (RegexCharClass_SingleRange)0x0)) goto code_?;
-          if ((*(int *)((int)RVar6 + 0xc) == 0) || (cVar4 = (**(code **)(*(int *)((int)RVar6 + 0xc) + 0xc))(), cVar4 != '\0')) {
-            if (*(UseInteractorVisualization **)((int)RVar6 + 0x20) == (UseInteractorVisualization *)0x0) goto code_?;
-            UseInteractorVisualization::UseInteractorVisualization_GetShowOptions(*(UseInteractorVisualization **)((int)RVar6 + 0x20),(MethodInfo *)0x0);
-            if (*(UseInteractorVisualization **)((int)RVar6 + 0x20) == (UseInteractorVisualization *)0x0) goto code_?;
-            UVar7 = UseInteractorVisualization::UseInteractorVisualization_EvaluateUsability(*(UseInteractorVisualization **)((int)RVar6 + 0x20),(MethodInfo *)0x0);
+          if ((*(int *)((int)RVar6 + 0x1c) == 0) || (cVar4 = (**(code **)(*(int *)((int)RVar6 + 0x1c) + 0xc))(), cVar4 != '\0')) {
+            if (*(UseInteractorVisualization **)((int)RVar6 + 8) == (UseInteractorVisualization *)0x0) goto code_?;
+            UseInteractorVisualization::UseInteractorVisualization_GetShowOptions(*(UseInteractorVisualization **)((int)RVar6 + 8),(MethodInfo *)0x0);
+            if (*(UseInteractorVisualization **)((int)RVar6 + 8) == (UseInteractorVisualization *)0x0) goto code_?;
+            UVar7 = UseInteractorVisualization::UseInteractorVisualization_EvaluateUsability(*(UseInteractorVisualization **)((int)RVar6 + 8),(MethodInfo *)0x0);
             if (1 < ((byte)UVar7 & 0xf)) {
-              if (*(char *)((int)RVar6 + 0x1c) == '\0') {
+              if ((*(char *)((int)RVar6 + 0x20) == '\0') || (*(char *)((int)RVar6 + 0x21) == '\0')) {
                 bVar8 = false;
               }
               else {
-                if (*(int *)((int)RVar6 + 0x20) == 0) goto code_?;
-                bVar8 = *(char *)(*(int *)((int)RVar6 + 0x20) + 0x34) == '\0';
+                if (*(int *)((int)RVar6 + 8) == 0) goto code_?;
+                bVar8 = *(char *)(*(int *)((int)RVar6 + 8) + 0x34) == '\0';
               }
               if (bVar8) {
                 UseInteractorHandler_Use(this,(MethodInfo *)0x0);
@@ -548,7 +593,8 @@ void Assembly-CSharp.dll::UseInteractorHandler::UseInteractorHandler__ctor(UseIn
   (this->fields).removeList = this_01;
   func_?(&(this->fields).removeList,this_01);
   (this->fields).ownerWoId = -1;
-  LobbyStatePlayModeController::LobbyStatePlayModeController__ctor((LobbyStatePlayModeController *)this,(MethodInfo *)0x0);
+  (this->fields)._.findWorldObjectParent = 1;
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

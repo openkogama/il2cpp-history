@@ -1,7 +1,7 @@
 
 /* Void <OnPlayPressed>b__1(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::WinningConditionBriefing+<>c__DisplayClass37_0::WinningConditionBriefing_c_DisplayClass37_0__OnPlayPressed_b__1(WinningConditionBriefing_c_DisplayClass37_0 *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
+void Assembly-CSharp.dll::WinningConditionBriefing+<>c__DisplayClass38_0::WinningConditionBriefing_c_DisplayClass38_0__OnPlayPressed_b__1(WinningConditionBriefing_c_DisplayClass38_0 *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {

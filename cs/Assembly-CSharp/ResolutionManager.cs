@@ -16,6 +16,7 @@ public static class ResolutionManager
 	// Fields
 	public static UnityAction<Vector2> OnReferenceResolution;
 	private static CanvasScaler canvasScaler;
+	private static float dpiScale;
 	[CompilerGenerated]
 	private static bool _Initialized_k__BackingField;
 
@@ -27,9 +28,13 @@ public static class ResolutionManager
 	public static float Scale { get; }
 	public static float InverseScale { get; }
 
+	// Constructors
+	static ResolutionManager();
+
 	// Methods
 	public static void Init(CanvasScaler canvasScaler);
 	public static void Destroy();
 	public static void PostDestroyCleanup();
+	private static float GetScreenDpiScale();
 }
 

@@ -50,6 +50,8 @@ public class WinningConditionBriefing : LobbyFlowMenu
 	private PlayButton DesktopPlayButtonPrefab;
 	[SerializeField]
 	private PlayButtonTouch AndroidPlayButtonPrefab;
+	[SerializeField]
+	private RectTransform TouchPlayButtonContainerTransform;
 	private WinningConditionType winConType;
 	private bool isInitialized;
 	private Action initializeCallback;
@@ -82,31 +84,31 @@ public class WinningConditionBriefing : LobbyFlowMenu
 	{
 		// Fields
 		public static readonly __c __9;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__37_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__38_0;
 
 		// Constructors
 		static __c();
 		public __c();
 
 		// Methods
-		internal void _OnPlayPressed_b__37_0(IUIStack x, BaseEventData y);
+		internal void _OnPlayPressed_b__38_0(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass37_0
+	private sealed class __c__DisplayClass38_0
 	{
 		// Fields
 		public SpawnRoleMenu spawnRoleMenu;
 
 		// Constructors
-		public __c__DisplayClass37_0();
+		public __c__DisplayClass38_0();
 
 		// Methods
 		internal void _OnPlayPressed_b__1(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
-	private sealed class _FixAspectRatioDelay_d__34 : IEnumerator<object>
+	private sealed class _FixAspectRatioDelay_d__35 : IEnumerator<object>
 	{
 		// Fields
 		private int __1__state;
@@ -119,7 +121,7 @@ public class WinningConditionBriefing : LobbyFlowMenu
 
 		// Constructors
 		[DebuggerHidden]
-		public _FixAspectRatioDelay_d__34(int __1__state);
+		public _FixAspectRatioDelay_d__35(int __1__state);
 
 		// Methods
 		[DebuggerHidden]
@@ -138,7 +140,7 @@ public class WinningConditionBriefing : LobbyFlowMenu
 	private void SetupBriefing();
 	private void Update();
 	protected override void OnDestroy();
-	[IteratorStateMachine(typeof(_FixAspectRatioDelay_d__34))]
+	[IteratorStateMachine(typeof(_FixAspectRatioDelay_d__35))]
 	private IEnumerator FixAspectRatioDelay();
 	private int GetHighScore(WinningConditionType winningConditionType);
 	private void CreatePlayButton();

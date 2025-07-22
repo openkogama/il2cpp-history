@@ -11,6 +11,13 @@ void Assembly-CSharp.dll::JumpTouchForwardingButton::JumpTouchForwardingButton_O
     fStack_1 = (eventData->fields)._position_k__BackingField.x - (this->fields).startPos.x;
     fStack_2 = (eventData->fields)._position_k__BackingField.y - (this->fields).startPos.y;
     fVar3 = (float10)func_?(&fStack_1,0);
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__ResolutionManager);
+      cRam_? = '\x01';
+    }
+    if ((TypeInfo__ResolutionManager->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__ResolutionManager);
+    }
     VVar4 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
     fStack_1 = VVar4.x;
     if ((float)fVar3 <= fStack_1 * 10.0) {
@@ -121,6 +128,13 @@ void Assembly-CSharp.dll::JumpTouchForwardingButton::JumpTouchForwardingButton__
 float Assembly-CSharp.dll::JumpTouchForwardingButton::JumpTouchForwardingButton_get_DeadZone(JumpTouchForwardingButton *this,MethodInfo *method)
 
 {
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__ResolutionManager);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__ResolutionManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__ResolutionManager);
+  }
   VVar1 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
   return VVar1.x * 10.0;
 }

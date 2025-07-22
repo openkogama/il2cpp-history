@@ -49,7 +49,7 @@ public class ContextMenu : MonoBehaviour
 	public void Initialize(int woID, Vector3 worldPosition);
 	public void InitializeLink(int linkID, Vector3 worldPosition);
 	private void PopWoDestroyed(object obj, WorldObjectDestroyedEventArgs args);
-	private void Pop();
+	public void Pop();
 	public void AddButton(string buttonText, UnityAction onClickCallback);
 	public void AddLockedButton(string buttonText);
 	private void Update();

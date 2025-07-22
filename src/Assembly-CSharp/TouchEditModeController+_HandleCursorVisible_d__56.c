@@ -1,7 +1,7 @@
 
 /* Boolean MoveNext() */
 
-bool Assembly-CSharp.dll::TouchEditModeController+<HandleCursorVisible>d__55::TouchEditModeController_HandleCursorVisible_d_55_MoveNext(TouchEditModeController_HandleCursorVisible_d_55 *this,MethodInfo *method)
+bool Assembly-CSharp.dll::TouchEditModeController+<HandleCursorVisible>d__56::TouchEditModeController_HandleCursorVisible_d_56_MoveNext(TouchEditModeController_HandleCursorVisible_d_56 *this,MethodInfo *method)
 
 {
   iVar1 = (this->fields).__1__state;
@@ -25,13 +25,13 @@ bool Assembly-CSharp.dll::TouchEditModeController+<HandleCursorVisible>d__55::To
 
 /* Void System.Collections.IEnumerator.Reset() */
 
-void Assembly-CSharp.dll::TouchEditModeController+<HandleCursorVisible>d__55::TouchEditModeController_HandleCursorVisible_d_55_System_Collections_IEnumerator_Reset(TouchEditModeController_HandleCursorVisible_d_55 *this,MethodInfo *method)
+void Assembly-CSharp.dll::TouchEditModeController+<HandleCursorVisible>d__56::TouchEditModeController_HandleCursorVisible_d_56_System_Collections_IEnumerator_Reset(TouchEditModeController_HandleCursorVisible_d_56 *this,MethodInfo *method)
 
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
   this_00 = (NotSupportedException *)func_?(uVar1);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor(this_00,(MethodInfo *)0x0);
-  func_?(&MethodInfo__TouchEditModeController___HandleCursorVisible_d__55__System_Collections_IEnumerator_Reset__);
+  func_?(&MethodInfo__TouchEditModeController___HandleCursorVisible_d__56__System_Collections_IEnumerator_Reset__);
   func_?(this_00);
   pcVar2 = (code *)swi(3);
   (*pcVar2)();

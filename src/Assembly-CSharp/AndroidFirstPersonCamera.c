@@ -90,7 +90,7 @@ void Assembly-CSharp.dll::AndroidFirstPersonCamera::AndroidFirstPersonCamera_Upd
   }
   pIVar1 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
   if (pIVar1 != (IPlayModeUI *)0x0) {
-    cVar2 = func_?(3,TypeInfo__IPlayModeUI,pIVar1);
+    cVar2 = func_?(5,TypeInfo__IPlayModeUI,pIVar1);
     if (cVar2 != '\0') {
       return;
     }

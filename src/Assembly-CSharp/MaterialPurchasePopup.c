@@ -74,7 +74,7 @@ void Assembly-CSharp.dll::MaterialPurchasePopup::MaterialPurchasePopup_Initializ
                           if (pMVar4 != (MaterialDescription__Array *)0x0) {
                             if (pMVar4->max_length <= ((uint)this_03 & 0xff)) goto code_?;
                             if (pMVar4->vector[(uint)this_03 & 0xff] != (MaterialDescription *)0x0) {
-                              (**(code **)(iRam_? + 0x318))(0x1018fb5);
+                              (**(code **)(iRam_? + 0x318))(0x10079d5);
                               return;
                             }
                           }
@@ -398,34 +398,17 @@ void Assembly-CSharp.dll::MaterialPurchasePopup::MaterialPurchasePopup__OnPurcha
     func_?(&StringLiteral_Confirm);
     cRam_? = '\x01';
   }
-  pSVar1 = TM::TM__(StringLiteral_Purchase_Material_,(MethodInfo *)0x0);
+  TM::TM__(StringLiteral_Purchase_Material_,(MethodInfo *)0x0);
   this_00 = (UnityAction_2_System_Int32_System_Int32_ *)func_?(TypeInfo__UnityEngine__Events__UnityAction<bool,_ConfirmationPopup>);
   UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::UnityAction_2_System_Int32_System_Int32___ctor(this_00,(Object *)this,MethodInfo__MaterialPurchasePopup__OnConfirmed_bool__ConfirmationPopup_,(MethodInfo *)0x0);
-  pSVar2 = TM::TM__(StringLiteral_Confirm,(MethodInfo *)0x0);
-  if (x == (IModalPopupCreator *)0x0) {
-    func_?();
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
+  TM::TM__(StringLiteral_Confirm,(MethodInfo *)0x0);
+  if (x != (IModalPopupCreator *)0x0) {
+    func_?(3);
     return;
   }
-  pIVar4 = x->klass;
-  uVar5 = 0;
-  uVar6._0_1_ = (pIVar4->_1).rank;
-  uVar6._1_1_ = (pIVar4->_1).minimumAlignment;
-  if (uVar6 != 0) {
-    do {
-      if (pIVar4->interfaceOffsets[uVar5].interfaceType == (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IModalPopupCreator) {
-        ppMVar7 = &(&(x->klass->vtable).Create_2)[x->klass->interfaceOffsets[uVar5].offset].method;
-        goto code_?;
-      }
-      uVar5 = uVar5 + 1;
-    } while (uVar5 < uVar6);
-  }
-  this_00 = (UnityAction_2_System_Int32_System_Int32_ *)&UNK_?;
-  pSVar2 = (String *)x;
-  ppMVar7 = (MethodInfo **)func_?(x,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
-code_?:
-  (*(code *)*ppMVar7)(x,pSVar1,this_00,pSVar2);
+  func_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

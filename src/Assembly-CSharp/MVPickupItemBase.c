@@ -39,8 +39,8 @@ void Assembly-CSharp.dll::MVPickupItemBase::MVPickupItemBase_Destroy(MVPickupIte
     func_?(&MethodInfo__MVPickupItemBase__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_);
     func_?(&MethodInfo__MVPickupItemBase__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_);
     func_?(&TypeInfo__UpdateController);
-    func_?(&MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_);
-    func_?(&MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_);
+    func_?(&MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_);
+    func_?(&MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_);
     cRam_? = '\x01';
   }
   pMVar1 = (this->fields)._BaseObject_k__BackingField;
@@ -71,7 +71,7 @@ code_?:
             pTVar2 = (pMVar1->fields).triggerBoxEvents;
             pUVar4 = (this->fields).useInteractor;
             pEVar3 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-            mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(pEVar3,(Object *)pUVar4,MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
+            mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(pEVar3,(Object *)pUVar4,MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
             if (pTVar2 != (TriggerBoxEvents *)0x0) {
               TriggerBoxEvents::TriggerBoxEvents_remove_TriggerEnter(pTVar2,(EventHandler_1_TriggerEventArgs_ *)pEVar3,(MethodInfo *)0x0);
               pMVar1 = (this->fields)._BaseObject_k__BackingField;
@@ -79,7 +79,7 @@ code_?:
                 pTVar2 = (pMVar1->fields).triggerBoxEvents;
                 pUVar4 = (this->fields).useInteractor;
                 pEVar3 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-                mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(pEVar3,(Object *)pUVar4,MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
+                mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(pEVar3,(Object *)pUVar4,MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
                 if (pTVar2 != (TriggerBoxEvents *)0x0) {
                   TriggerBoxEvents::TriggerBoxEvents_remove_TriggerExit(pTVar2,(EventHandler_1_TriggerEventArgs_ *)pEVar3,(MethodInfo *)0x0);
                   pUVar4 = (this->fields).useInteractor;
@@ -520,7 +520,7 @@ bool Assembly-CSharp.dll::MVPickupItemBase::MVPickupItemBase_IsSameWeapon(MVPick
 {
   pIStack_1 = (Il2CppMethodPointer)&stack0xfffffffc;
   if (pickupItem != (PickupItem *)0x0) {
-    pIStack_1 = (pickupItem->klass->vtable).CanFire.methodPtr;
+    pIStack_1 = (pickupItem->klass->vtable).__unknown_1.methodPtr;
     pPStack_2 = pickupItem;
     iVar3 = (*(code *)(pickupItem->klass->vtable).__unknown.method)();
     return iVar3 == (this->fields).pickupItemType;
@@ -622,61 +622,61 @@ void Assembly-CSharp.dll::MVPickupItemBase::MVPickupItemBase_SetupUseInteractor(
     func_?(&MethodInfo__MVPickupItemBase__CheckCanUse_int__MVInteractableBase_);
     func_?(&MethodInfo__MVPickupItemBase__DoPickup_int_);
     func_?(&TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement);
+    func_?(&MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_);
+    func_?(&MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_);
     func_?(&TypeInfo__UseInteractor);
-    func_?(&MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_);
-    func_?(&MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_);
     cRam_? = '\x01';
   }
   if ((this->fields)._BaseObject_k__BackingField != (MVPickupItemBaseObject *)0x0) {
     pTVar1 = (((this->fields)._BaseObject_k__BackingField)->fields).triggerBoxEvents;
     if (pTVar1 != (TriggerBoxEvents *)0x0) {
-      triggerCollider = TriggerBoxEvents::TriggerBoxEvents_get_Collider(pTVar1,(MethodInfo *)0x0);
+      TriggerBoxEvents::TriggerBoxEvents_get_Collider(pTVar1,(MethodInfo *)0x0);
       this_00 = (Predicate_1_UInt32_ *)func_?(TypeInfo__System__Func<int,_bool>);
       mscorlib.dll::System::Predicate`1[UInt32]::Predicate_1_UInt32___ctor(this_00,(Object *)this,MethodInfo__MVPickupItemBase__DoPickup_int_,(MethodInfo *)0x0);
       this_01 = (Func_3_Int32_Object_Boolean_ *)func_?(TypeInfo__System__Func<int,_MVInteractableBase,_bool>);
       mscorlib.dll::System::Func`3[Int32,Object,Boolean]::Func_3_Int32_Object_Boolean___ctor(this_01,(Object *)this,MethodInfo__MVPickupItemBase__CheckCanUse_int__MVInteractableBase_,(MethodInfo *)0x0);
       pUVar2 = (UseInteractor *)func_?(TypeInfo__UseInteractor);
-      UseInteractor::UseInteractor__ctor(pUVar2,(MVWorldObjectClient *)0x40200000,(GameObject *)0x0,0,triggerCollider,(Func_2_Int32_Boolean_ *)this_00,(Func_3_Int32_MVInteractableBase_Boolean_ *)this_01,2.5,0,(MethodInfo *)0x0);
-      pURam402000fc = pUVar2;
+      UseInteractor::UseInteractor__ctor(pUVar2,(MVWorldObjectClient *)0x0,(GameObject *)this_00,0,(Collider *)this_00,(Func_2_Int32_Boolean_ *)this_00,(Func_3_Int32_MVInteractableBase_Boolean_ *)this_01,2.5,0,1,(MethodInfo *)0x0);
+      pURam000000fc = pUVar2;
       func_?();
       if (iRam_? != 0) {
         pGVar3 = *(GameObject **)(iRam_? + 0x24);
         this_02 = (GameCoinLogic *)func_?(TypeInfo__GameCoinLogic);
         GameCoinLogic::GameCoinLogic__ctor(this_02,pGVar3,1,(MethodInfo *)0x0);
-        if (pURam402000fc != (UseInteractor *)0x0) {
-          UseInteractor::UseInteractor_AddRequirement(pURam402000fc,(UseRequirement *)this_02,(MethodInfo *)0x0);
+        if (pURam000000fc != (UseInteractor *)0x0) {
+          UseInteractor::UseInteractor_AddRequirement(pURam000000fc,(UseRequirement *)this_02,(MethodInfo *)0x0);
           if (iRam_? != 0) {
             pGVar3 = *(GameObject **)(iRam_? + 0x24);
             this_03 = (LevelBasedUseRequirement *)func_?(TypeInfo__LevelBasedUseRequirement);
             LevelBasedUseRequirement::LevelBasedUseRequirement__ctor(this_03,pGVar3,1,(MethodInfo *)0x0);
-            if (pURam402000fc != (UseInteractor *)0x0) {
-              UseInteractor::UseInteractor_AddRequirement(pURam402000fc,(UseRequirement *)this_03,(MethodInfo *)0x0);
+            if (pURam000000fc != (UseInteractor *)0x0) {
+              UseInteractor::UseInteractor_AddRequirement(pURam000000fc,(UseRequirement *)this_03,(MethodInfo *)0x0);
               if (iRam_? != 0) {
                 pGVar3 = *(GameObject **)(iRam_? + 0x24);
                 this_04 = (GameRankRequirement *)func_?(TypeInfo__GameRankRequirement);
-                GameRankRequirement::GameRankRequirement__ctor(this_04,pGVar3,(MVWorldObjectClient *)0x40200000,0,(MethodInfo *)0x0);
-                if (pURam402000fc != (UseInteractor *)0x0) {
-                  UseInteractor::UseInteractor_AddRequirement(pURam402000fc,(UseRequirement *)this_04,(MethodInfo *)0x0);
+                GameRankRequirement::GameRankRequirement__ctor(this_04,pGVar3,(MVWorldObjectClient *)0x0,0,(MethodInfo *)0x0);
+                if (pURam000000fc != (UseInteractor *)0x0) {
+                  UseInteractor::UseInteractor_AddRequirement(pURam000000fc,(UseRequirement *)this_04,(MethodInfo *)0x0);
                   if (iRam_? != 0) {
                     pGVar3 = *(GameObject **)(iRam_? + 0x24);
                     this_05 = (RewardedAdRequirement *)func_?(TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement);
                     WorldObjectInteractionSystem::UseSystem::RewardedAdRequirement::RewardedAdRequirement__ctor(this_05,pGVar3,(MethodInfo *)0x0);
-                    if (pURam402000fc != (UseInteractor *)0x0) {
-                      UseInteractor::UseInteractor_AddRequirement(pURam402000fc,(UseRequirement *)this_05,(MethodInfo *)0x0);
+                    if (pURam000000fc != (UseInteractor *)0x0) {
+                      UseInteractor::UseInteractor_AddRequirement(pURam000000fc,(UseRequirement *)this_05,(MethodInfo *)0x0);
                       if (iRam_? != 0) {
-                        (**(code **)(iRam_? + 0x398))(0x40200000,*(undefined4 *)(iRam_? + 0x24),pURam402000fc,*(undefined4 *)(iRam_? + 0x39c));
-                        pUVar2 = pURam402000fc;
+                        (**(code **)(iRam_? + 0x398))(0,*(undefined4 *)(iRam_? + 0x24),pURam000000fc,*(undefined4 *)(iRam_? + 0x39c));
+                        pUVar2 = pURam000000fc;
                         if (iRam_? != 0) {
                           pTVar1 = *(TriggerBoxEvents **)(iRam_? + 0x18);
                           pEVar4 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-                          mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(pEVar4,(Object *)pUVar2,MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
+                          mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(pEVar4,(Object *)pUVar2,MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
                           if (pTVar1 != (TriggerBoxEvents *)0x0) {
                             TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter(pTVar1,(EventHandler_1_TriggerEventArgs_ *)pEVar4,(MethodInfo *)0x0);
-                            pUVar2 = pURam402000fc;
+                            pUVar2 = pURam000000fc;
                             if (iRam_? != 0) {
                               pTVar1 = *(TriggerBoxEvents **)(iRam_? + 0x18);
                               pEVar4 = (EventHandler_1_Object_ *)func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-                              mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(pEVar4,(Object *)pUVar2,MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
+                              mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor(pEVar4,(Object *)pUVar2,MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_,(MethodInfo *)0x0);
                               if (pTVar1 != (TriggerBoxEvents *)0x0) {
                                 TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit(pTVar1,(EventHandler_1_TriggerEventArgs_ *)pEVar4,(MethodInfo *)0x0);
                                 return;
@@ -715,7 +715,7 @@ bool Assembly-CSharp.dll::MVPickupItemBase::MVPickupItemBase_ShouldDoAutoPickup(
     cVar4 = (*(code *)(this->klass->vtable).IsSameWeapon.method)(this);
     if (cVar4 == '\0') {
       if ((pPVar3 == (PickupItem *)0x0) || (piVar5 = (int *)(pPVar3->fields).originalPos.y, piVar5 == (int *)0x0)) goto code_?;
-      iVar6 = (**(code **)(*piVar5 + 0x138))();
+      iVar6 = (**(code **)(*piVar5 + 0xe0))();
       bVar7 = iVar6 == 5;
     }
     else {

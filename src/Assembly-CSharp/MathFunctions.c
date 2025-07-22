@@ -1146,6 +1146,38 @@ float Assembly-CSharp.dll::MathFunctions::MathFunctions_SignedYawFromLocalDirect
 }
 
 
+/* Single SmoothInverseLerp(Single, Single, Single) */
+
+float Assembly-CSharp.dll::MathFunctions::MathFunctions_SmoothInverseLerp(float a,float b,float value,MethodInfo *method)
+
+{
+  if ((a == b) || (fVar1 = (value - a) / (b - a), fVar1 < 0.0)) {
+    fVar1 = 0.0;
+  }
+  else if (1.0 < fVar1) {
+    fVar1 = 1.0;
+  }
+  if (fVar1 < 0.0) {
+    fVar1 = 0.0;
+  }
+  else if (1.0 < fVar1) {
+    fVar1 = 1.0;
+  }
+  fVar1 = fVar1 * -2.0 * fVar1 * fVar1 + fVar1 * 3.0 * fVar1;
+  if (a == b) {
+    return 0.0;
+  }
+  fVar1 = (((1.0 - fVar1) * a + fVar1 * b) - a) / (b - a);
+  if (fVar1 < 0.0) {
+    fVar1 = 0.0;
+  }
+  else if (1.0 < fVar1) {
+    return 1.0;
+  }
+  return fVar1;
+}
+
+
 /* Single[] ToFloatArray(Vector3) */
 
 Single__Array * Assembly-CSharp.dll::MathFunctions::MathFunctions_ToFloatArray(Vector3 v,MethodInfo *method)

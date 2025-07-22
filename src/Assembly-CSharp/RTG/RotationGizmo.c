@@ -99,90 +99,82 @@ void Assembly-CSharp.dll::RTG::RotationGizmo::RotationGizmo_OnAttached(RotationG
       GizmoDragSession::GizmoDragSession_AddTargetTransform((GizmoDragSession *)this_00,(pGVar4->fields)._transform,(MethodInfo *)0x0);
       pGStack_1 = (this->fields)._._gizmo;
       iVar5 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::UnsafeUtility_SizeOf_29((MethodInfo *)0x0);
-      pGVar6 = TypeInfo__RTG__GizmoPlaneSlider3D;
-      pGVar7 = (GizmoPlaneSlider3D *)func_?();
-      GizmoPlaneSlider3D::GizmoPlaneSlider3D__ctor(pGVar7,pGStack_1,iVar5,(MethodInfo *)0x0);
-      (this->fields)._xSlider = pGVar7;
+      method_00 = TypeInfo__RTG__GizmoPlaneSlider3D;
+      pGVar6 = (GizmoPlaneSlider3D *)func_?();
+      GizmoPlaneSlider3D::GizmoPlaneSlider3D__ctor(pGVar6,pGStack_1,iVar5,(MethodInfo *)0x0);
+      (this->fields)._xSlider = pGVar6;
       func_?();
-      pGVar7 = (this->fields)._xSlider;
-      if (pGVar7 != (GizmoPlaneSlider3D *)0x0) {
-        GizmoPlaneSlider3D::GizmoPlaneSlider3D_SetDragChannel(pGVar7,GizmoDragChannel__Enum_Rotation,(MethodInfo *)0x0);
-        pGVar7 = (this->fields)._xSlider;
-        QStack_8.z = 0.0;
-        pQVar9 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad(&QStack_8,(Vector3)ZEXT812(0x3fc90fdb00000000),(MethodInfo *)0x0);
-        if (pGVar7 != (GizmoPlaneSlider3D *)0x0) {
-          GizmoPlaneSlider3D::GizmoPlaneSlider3D_set_LocalRotation(pGVar7,*pQVar9,(MethodInfo *)0x0);
-          pGVar7 = (this->fields)._xSlider;
-          if (pGVar7 != (GizmoPlaneSlider3D *)0x0) {
-            pGVar10 = pGVar7->klass;
-            (pGVar7->fields)._._isVisible = 0;
-            (*(code *)(pGVar10->vtable).OnVisibilityStateChanged.method)();
-            pGVar11 = (this->fields)._axesSliders;
-            if (pGVar11 != (GizmoPlaneSlider3DCollection *)0x0) {
-              GizmoPlaneSlider3DCollection::GizmoPlaneSlider3DCollection_Add(pGVar11,(this->fields)._xSlider,(MethodInfo *)0x0);
+      pGVar6 = (this->fields)._xSlider;
+      if (pGVar6 != (GizmoPlaneSlider3D *)0x0) {
+        GizmoPlaneSlider3D::GizmoPlaneSlider3D_SetDragChannel(pGVar6,GizmoDragChannel__Enum_Rotation,(MethodInfo *)0x0);
+        pGVar6 = (this->fields)._xSlider;
+        QStack_7.z = 0.0;
+        pQVar8 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad(&QStack_7,(Vector3)ZEXT812(0x3fc90fdb00000000),(MethodInfo *)0x0);
+        if (pGVar6 != (GizmoPlaneSlider3D *)0x0) {
+          GizmoPlaneSlider3D::GizmoPlaneSlider3D_set_LocalRotation(pGVar6,*pQVar8,(MethodInfo *)0x0);
+          pGVar6 = (this->fields)._xSlider;
+          if (pGVar6 != (GizmoPlaneSlider3D *)0x0) {
+            GizmoSlider::GizmoSlider_SetVisible((GizmoSlider *)pGVar6,0,(MethodInfo *)0x0);
+            pGVar9 = (this->fields)._axesSliders;
+            if (pGVar9 != (GizmoPlaneSlider3DCollection *)0x0) {
+              GizmoPlaneSlider3DCollection::GizmoPlaneSlider3DCollection_Add(pGVar9,(this->fields)._xSlider,(MethodInfo *)0x0);
               pGStack_1 = (this->fields)._._gizmo;
-              EVar2 = System.Core.dll::System::Linq::Expressions::NewArrayBoundsExpression::NewArrayBoundsExpression_get_NodeType((NewArrayBoundsExpression *)0x0,(MethodInfo *)pGVar6);
-              pGVar7 = (GizmoPlaneSlider3D *)func_?();
-              pGVar12 = pGVar7;
-              GizmoPlaneSlider3D::GizmoPlaneSlider3D__ctor(pGVar7,pGStack_1,EVar2,(MethodInfo *)0x0);
-              (this->fields)._ySlider = pGVar7;
+              EVar2 = System.Core.dll::System::Linq::Expressions::NewArrayBoundsExpression::NewArrayBoundsExpression_get_NodeType((NewArrayBoundsExpression *)0x0,(MethodInfo *)method_00);
+              pGVar6 = (GizmoPlaneSlider3D *)func_?();
+              pGVar10 = pGVar6;
+              GizmoPlaneSlider3D::GizmoPlaneSlider3D__ctor(pGVar6,pGStack_1,EVar2,(MethodInfo *)0x0);
+              (this->fields)._ySlider = pGVar6;
               func_?();
-              pGVar7 = (this->fields)._ySlider;
-              if (pGVar7 != (GizmoPlaneSlider3D *)0x0) {
-                GizmoPlaneSlider3D::GizmoPlaneSlider3D_SetDragChannel(pGVar7,GizmoDragChannel__Enum_Rotation,(MethodInfo *)0x0);
-                pGVar7 = (this->fields)._ySlider;
-                QStack_8.z = 0.0;
+              pGVar6 = (this->fields)._ySlider;
+              if (pGVar6 != (GizmoPlaneSlider3D *)0x0) {
+                GizmoPlaneSlider3D::GizmoPlaneSlider3D_SetDragChannel(pGVar6,GizmoDragChannel__Enum_Rotation,(MethodInfo *)0x0);
+                pGVar6 = (this->fields)._ySlider;
+                QStack_7.z = 0.0;
                 euler.y = 0.0;
                 euler.z = 0.0;
-                euler.x = (float)pGVar12;
-                pQVar9 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad((Quaternion *)&stack0xffffffc0,euler,(MethodInfo *)0x0);
-                if (pGVar7 != (GizmoPlaneSlider3D *)0x0) {
-                  GizmoPlaneSlider3D::GizmoPlaneSlider3D_set_LocalRotation(pGVar7,*pQVar9,(MethodInfo *)0x0);
-                  pGVar7 = (this->fields)._ySlider;
-                  if (pGVar7 != (GizmoPlaneSlider3D *)0x0) {
-                    pGVar10 = pGVar7->klass;
-                    (pGVar7->fields)._._isVisible = 0;
-                    (*(code *)(pGVar10->vtable).OnVisibilityStateChanged.method)();
-                    pGVar11 = (this->fields)._axesSliders;
-                    if (pGVar11 != (GizmoPlaneSlider3DCollection *)0x0) {
-                      GizmoPlaneSlider3DCollection::GizmoPlaneSlider3DCollection_Add(pGVar11,(this->fields)._ySlider,(MethodInfo *)0x0);
+                euler.x = (float)pGVar10;
+                pQVar8 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad((Quaternion *)&stack0xffffffc0,euler,(MethodInfo *)0x0);
+                if (pGVar6 != (GizmoPlaneSlider3D *)0x0) {
+                  GizmoPlaneSlider3D::GizmoPlaneSlider3D_set_LocalRotation(pGVar6,*pQVar8,(MethodInfo *)0x0);
+                  pGVar6 = (this->fields)._ySlider;
+                  if (pGVar6 != (GizmoPlaneSlider3D *)0x0) {
+                    GizmoSlider::GizmoSlider_SetVisible((GizmoSlider *)pGVar6,0,(MethodInfo *)0x0);
+                    pGVar9 = (this->fields)._axesSliders;
+                    if (pGVar9 != (GizmoPlaneSlider3DCollection *)0x0) {
+                      GizmoPlaneSlider3DCollection::GizmoPlaneSlider3DCollection_Add(pGVar9,(this->fields)._ySlider,(MethodInfo *)0x0);
                       pGStack_1 = (this->fields)._._gizmo;
-                      handleId = System.Xml.dll::System::Xml::Schema::Datatype_NMTOKEN::Datatype_NMTOKEN_get_TypeCode((Datatype_NMTOKEN *)0x0,(MethodInfo *)pGVar6);
-                      pGVar7 = (GizmoPlaneSlider3D *)func_?();
-                      GizmoPlaneSlider3D::GizmoPlaneSlider3D__ctor(pGVar7,pGStack_1,handleId,(MethodInfo *)0x0);
-                      (this->fields)._zSlider = pGVar7;
+                      handleId = System.Xml.dll::System::Xml::Schema::Datatype_NMTOKEN::Datatype_NMTOKEN_get_TypeCode((Datatype_NMTOKEN *)0x0,(MethodInfo *)method_00);
+                      pGVar6 = (GizmoPlaneSlider3D *)func_?();
+                      GizmoPlaneSlider3D::GizmoPlaneSlider3D__ctor(pGVar6,pGStack_1,handleId,(MethodInfo *)0x0);
+                      (this->fields)._zSlider = pGVar6;
                       func_?();
-                      pGVar7 = (this->fields)._zSlider;
-                      if (pGVar7 != (GizmoPlaneSlider3D *)0x0) {
-                        GizmoPlaneSlider3D::GizmoPlaneSlider3D_SetDragChannel(pGVar7,GizmoDragChannel__Enum_Rotation,(MethodInfo *)0x0);
-                        pGVar7 = (this->fields)._zSlider;
-                        if (pGVar7 != (GizmoPlaneSlider3D *)0x0) {
-                          pGVar6 = pGVar7->klass;
-                          (pGVar7->fields)._._isVisible = 0;
-                          (*(code *)(pGVar6->vtable).OnVisibilityStateChanged.method)();
-                          pGVar11 = (this->fields)._axesSliders;
-                          if (pGVar11 != (GizmoPlaneSlider3DCollection *)0x0) {
-                            GizmoPlaneSlider3DCollection::GizmoPlaneSlider3DCollection_Add(pGVar11,(this->fields)._zSlider,(MethodInfo *)0x0);
+                      pGVar6 = (this->fields)._zSlider;
+                      if (pGVar6 != (GizmoPlaneSlider3D *)0x0) {
+                        GizmoPlaneSlider3D::GizmoPlaneSlider3D_SetDragChannel(pGVar6,GizmoDragChannel__Enum_Rotation,(MethodInfo *)0x0);
+                        pGVar6 = (this->fields)._zSlider;
+                        if (pGVar6 != (GizmoPlaneSlider3D *)0x0) {
+                          GizmoSlider::GizmoSlider_SetVisible((GizmoSlider *)pGVar6,0,(MethodInfo *)0x0);
+                          pGVar9 = (this->fields)._axesSliders;
+                          if (pGVar9 != (GizmoPlaneSlider3DCollection *)0x0) {
+                            GizmoPlaneSlider3DCollection::GizmoPlaneSlider3DCollection_Add(pGVar9,(this->fields)._zSlider,(MethodInfo *)0x0);
                             pGVar3 = (this->fields)._midCap;
-                            pGVar11 = (this->fields)._axesSliders;
+                            pGVar9 = (this->fields)._axesSliders;
                             if (pGVar3 != (GizmoCap3D *)0x0) {
                               priority = Newtonsoft.Json.dll::Newtonsoft::Json::Converters::XDocumentTypeWrapper::XDocumentTypeWrapper_get_InternalSubset((XDocumentTypeWrapper *)pGVar3,(MethodInfo *)0x0);
-                              if (pGVar11 != (GizmoPlaneSlider3DCollection *)0x0) {
-                                GizmoPlaneSlider3DCollection::GizmoPlaneSlider3DCollection_Make3DHoverPriorityHigherThan(pGVar11,(Priority *)priority,(MethodInfo *)0x0);
+                              if (pGVar9 != (GizmoPlaneSlider3DCollection *)0x0) {
+                                GizmoPlaneSlider3DCollection::GizmoPlaneSlider3DCollection_Make3DHoverPriorityHigherThan(pGVar9,(Priority *)priority,(MethodInfo *)0x0);
                                 pGStack_1 = (this->fields)._._gizmo;
                                 iVar5 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::UnsafeUtility_SizeOf_45((MethodInfo *)0x0);
-                                pGVar13 = (GizmoPlaneSlider2D *)func_?();
-                                GizmoPlaneSlider2D::GizmoPlaneSlider2D__ctor(pGVar13,pGStack_1,iVar5,(MethodInfo *)0x0);
-                                (this->fields)._camLookSlider = pGVar13;
+                                pGVar11 = (GizmoPlaneSlider2D *)func_?();
+                                GizmoPlaneSlider2D::GizmoPlaneSlider2D__ctor(pGVar11,pGStack_1,iVar5,(MethodInfo *)0x0);
+                                (this->fields)._camLookSlider = pGVar11;
                                 func_?();
-                                pGVar13 = (this->fields)._camLookSlider;
-                                if (pGVar13 != (GizmoPlaneSlider2D *)0x0) {
-                                  GizmoPlaneSlider2D::GizmoPlaneSlider2D_SetDragChannel(pGVar13,GizmoDragChannel__Enum_Rotation,(MethodInfo *)0x0);
-                                  pGVar13 = (this->fields)._camLookSlider;
-                                  if (pGVar13 != (GizmoPlaneSlider2D *)0x0) {
-                                    pGVar14 = pGVar13->klass;
-                                    (pGVar13->fields)._._isVisible = 0;
-                                    (*(code *)(pGVar14->vtable).OnVisibilityStateChanged.method)();
+                                pGVar11 = (this->fields)._camLookSlider;
+                                if (pGVar11 != (GizmoPlaneSlider2D *)0x0) {
+                                  GizmoPlaneSlider2D::GizmoPlaneSlider2D_SetDragChannel(pGVar11,GizmoDragChannel__Enum_Rotation,(MethodInfo *)0x0);
+                                  pGVar11 = (this->fields)._camLookSlider;
+                                  if (pGVar11 != (GizmoPlaneSlider2D *)0x0) {
+                                    GizmoSlider::GizmoSlider_SetVisible((GizmoSlider *)pGVar11,0,(MethodInfo *)0x0);
                                     RotationGizmo_SetupSharedLookAndFeel(this,(MethodInfo *)0x0);
                                     RotationGizmo_SetupSharedSettings(this,(MethodInfo *)0x0);
                                     return;
@@ -204,8 +196,8 @@ void Assembly-CSharp.dll::RTG::RotationGizmo::RotationGizmo_OnAttached(RotationG
     }
   }
   func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 

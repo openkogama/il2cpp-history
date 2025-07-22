@@ -331,38 +331,38 @@ void Assembly-CSharp.dll::RTG::GizmoSolidMaterial::GizmoSolidMaterial__ctor(Gizm
   }
   UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::UxmlObjectListAttributeDescription`1[System::Object]::UxmlObjectListAttributeDescription_1_System_Object___ctor((UxmlObjectListAttributeDescription_1_System_Object_ *)this,MethodInfo__RTG__Singleton<RTG::GizmoSolidMaterial>__Singleton__);
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&StringLiteral__ZWrite);
     cRam_? = '\x01';
   }
-  pMVar1 = GizmoSolidMaterial_get_Material(in_stack_2,(MethodInfo *)0x0);
+  pMVar1 = GizmoSolidMaterial_get_Material(this,(MethodInfo *)0x0);
   if (pMVar1 != (Material *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetInt(pMVar1,StringLiteral__ZWrite,0,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
-    pMVar1 = GizmoSolidMaterial_get_Material(in_stack_2,(MethodInfo *)0x0);
+    pMVar1 = GizmoSolidMaterial_get_Material(this,(MethodInfo *)0x0);
     if (pMVar1 != (Material *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetInt(pMVar1,StringLiteral__ZTest,8,(MethodInfo *)0x0);
       if (cRam_? == '\0') {
         func_?();
         cRam_? = '\x01';
       }
-      pMVar1 = GizmoSolidMaterial_get_Material(in_stack_2,(MethodInfo *)0x0);
+      pMVar1 = GizmoSolidMaterial_get_Material(this,(MethodInfo *)0x0);
       if (pMVar1 != (Material *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetInt(pMVar1,StringLiteral__CullMode,2,(MethodInfo *)0x0);
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
         }
-        pMVar1 = GizmoSolidMaterial_get_Material(in_stack_2,(MethodInfo *)0x0);
+        pMVar1 = GizmoSolidMaterial_get_Material(this,(MethodInfo *)0x0);
         if (pMVar1 != (Material *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetInt(pMVar1,StringLiteral__IsLit,1,(MethodInfo *)0x0);
           if (cRam_? == '\0') {
             func_?();
             cRam_? = '\x01';
           }
-          pMVar1 = GizmoSolidMaterial_get_Material(in_stack_2,(MethodInfo *)0x0);
+          pMVar1 = GizmoSolidMaterial_get_Material(this,(MethodInfo *)0x0);
           if (pMVar1 != (Material *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetFloat(pMVar1,StringLiteral__LightIntensity,1.23,(MethodInfo *)0x0);
             return;
@@ -372,8 +372,8 @@ void Assembly-CSharp.dll::RTG::GizmoSolidMaterial::GizmoSolidMaterial__ctor(Gizm
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

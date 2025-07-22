@@ -152,7 +152,7 @@ void Assembly-CSharp.dll::TeamMenuButton::TeamMenuButton_ShowTeamMenu(TeamMenuBu
     UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy(root,(BaseEventData *)0x0,callbackFunction_00,UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_);
     pGVar2 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
     if ((pGVar2 != (GameEventManager *)0x0) && (this_00 = (pGVar2->fields).AvatarCommandsPlayMode, this_00 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) {
-      PlayButtonTouch::PlayButtonTouch_OnConfirmPlay((PlayButtonTouch *)this_00,(MethodInfo *)0x0);
+      GameEventManager+AvatarCommandsPlayModeManager::GameEventManager_AvatarCommandsPlayModeManager_RemoveFromGame(this_00,(MethodInfo *)0x0);
       return;
     }
   }

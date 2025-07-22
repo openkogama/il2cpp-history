@@ -1,7 +1,7 @@
 
 /* Boolean <ShowContextMenu>b__2() */
 
-bool Assembly-CSharp.dll::ContextMenuController+<>c__DisplayClass10_0::ContextMenuController_c_DisplayClass10_0__ShowContextMenu_b__2(ContextMenuController_c_DisplayClass10_0 *this,MethodInfo *method)
+bool Assembly-CSharp.dll::ContextMenuController+<>c__DisplayClass12_0::ContextMenuController_c_DisplayClass12_0__ShowContextMenu_b__2(ContextMenuController_c_DisplayClass12_0 *this,MethodInfo *method)
 
 {
   if ((this->fields).isPreview != 0) {
@@ -13,7 +13,7 @@ bool Assembly-CSharp.dll::ContextMenuController+<>c__DisplayClass10_0::ContextMe
 
 /* Void <ShowContextMenu>b__4(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::ContextMenuController+<>c__DisplayClass10_0::ContextMenuController_c_DisplayClass10_0__ShowContextMenu_b__4(ContextMenuController_c_DisplayClass10_0 *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
+void Assembly-CSharp.dll::ContextMenuController+<>c__DisplayClass12_0::ContextMenuController_c_DisplayClass12_0__ShowContextMenu_b__4(ContextMenuController_c_DisplayClass12_0 *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {

@@ -1,7 +1,7 @@
 
-/* Void <Initialize>b__36_0(IUIStack, BaseEventData) */
+/* Void <Initialize>b__35_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::DesktopPlayModeController+<>c::DesktopPlayModeController_c__Initialize_b__36_0(DesktopPlayModeController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
+void Assembly-CSharp.dll::DesktopPlayModeController+<>c::DesktopPlayModeController_c__Initialize_b__35_0(DesktopPlayModeController_c *this,IUIStack *handler,BaseEventData *data,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {

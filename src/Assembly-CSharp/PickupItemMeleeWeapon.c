@@ -150,10 +150,10 @@ IEnumerator * Assembly-CSharp.dll::PickupItemMeleeWeapon::PickupItemMeleeWeapon_
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__PickupItemMeleeWeapon___CheckHitCoroutine_d__28);
+    func_?(&TypeInfo__PickupItemMeleeWeapon___CheckHitCoroutine_d__30);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__PickupItemMeleeWeapon___CheckHitCoroutine_d__28;
+  method_00 = TypeInfo__PickupItemMeleeWeapon___CheckHitCoroutine_d__30;
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
   value[2].klass = (Object__Class *)this;
@@ -652,7 +652,7 @@ code_?:
     func_?();
     cRam_? = '\x01';
   }
-  method_01 = TypeInfo__PickupItemMeleeWeapon___CheckHitCoroutine_d__28;
+  method_01 = TypeInfo__PickupItemMeleeWeapon___CheckHitCoroutine_d__30;
   pOVar6 = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(pOVar6,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
   pOVar6[1].klass = (Object__Class *)0x0;
