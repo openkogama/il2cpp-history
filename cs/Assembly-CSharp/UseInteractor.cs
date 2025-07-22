@@ -13,30 +13,33 @@ using UnityEngine;
 public class UseInteractor
 {
 	// Fields
-	private Func<int, bool> useFunction;
-	private Func<int, MVInteractableBase, bool> checkCanUseFunction;
-	private Collider triggerCollider;
-	private bool reset;
-	private int woOwnerID;
+	private readonly UseInteractorVisualization useInteractorVisuals;
+	private readonly int woOwnerID;
+	private readonly Func<int, bool> useFunction;
+	private readonly Collider triggerCollider;
+	private readonly bool reset;
+	private readonly Func<int, MVInteractableBase, bool> checkCanUseFunction;
 	[CompilerGenerated]
 	private readonly bool _UsedInVehicles_k__BackingField;
-	private UseInteractorVisualization useInteractorVisuals;
+	[CompilerGenerated]
+	private readonly bool _UsedDirectlyInVehicles_k__BackingField;
 
 	// Properties
 	public bool Reset { get; }
 	public Collider TriggerCollider { get; }
 	public int WoOwnerID { get; }
 	public bool UsedInVehicles { [CompilerGenerated] get; }
+	public bool UsedDirectlyInVehicles { [CompilerGenerated] get; }
 
 	// Constructors
-	public UseInteractor(MVWorldObjectClient wo, GameObject owner, bool reset, Collider triggerCollider, Func<int, bool> useFunction, Func<int, MVInteractableBase, bool> checkCanUseFunction = null, float yOffset = 2.5f, bool usedInVehicles = false);
+	public UseInteractor(MVWorldObjectClient wo, GameObject owner, bool reset, Collider triggerCollider, Func<int, bool> useFunction, Func<int, MVInteractableBase, bool> checkCanUseFunction = null, float yOffset = 2.5f, bool usedInVehicles = false, bool usedDirectlyInVehicles = true);
 
 	// Methods
 	public bool GetInteractorCanBeUsed(int woId, MVInteractableBase avatarInteractable);
 	public bool Use(int userWoID);
 	private UseInteractorHandler GetUseInteractorHandler(int woID);
-	public void triggerBoxEvents_TriggerEnter(object sender, TriggerEventArgs e);
-	public void triggerBoxEvents_TriggerExit(object sender, TriggerEventArgs e);
+	public void TriggerBoxEvents_TriggerEnter(object sender, TriggerEventArgs e);
+	public void TriggerBoxEvents_TriggerExit(object sender, TriggerEventArgs e);
 	public void UpdateData(Dictionary<object, object> data);
 	public void AddRequirement(UseRequirement useRequirement);
 	public UseGUIResult EvaluateRequirementsUsability();

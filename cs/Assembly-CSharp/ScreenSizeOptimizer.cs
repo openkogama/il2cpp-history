@@ -16,6 +16,7 @@ public class ScreenSizeOptimizer : MonoBehaviour
 	private Camera cam;
 	private RenderTexture renderTarget;
 	public static Vector2 originalSize;
+	public static bool IsInHalfResolution;
 	public static Action OnHalfResolution;
 	private int minWidthInPixels;
 

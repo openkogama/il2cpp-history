@@ -308,6 +308,7 @@ public class MVAvatarLocal : MVAvatar, ILocalObject, IBulletImpactVisualizer, IC
 		public override void Activate(AvatarRuntimeState fromMode);
 		public override void DeActivate(AvatarRuntimeState toMode);
 		public override void FrameUpdate(InputToInGameAction interactionMap);
+		private void HandleUseInteractionUpdate(InputToInGameAction interactionMap);
 		private void HandlePickupUpdate(InputToInGameAction interactionMap);
 		private void HandleFireItem(InputToInGameAction interactionMap, bool isItemHolstered);
 		private void HandlePointingItem(InputToInGameAction interactionMap, bool isItemHand, bool isItemHolstered);

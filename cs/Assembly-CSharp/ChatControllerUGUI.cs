@@ -48,7 +48,7 @@ public class ChatControllerUGUI : ChatControllerBase
 	public void ChatFocusChanged(bool enterChatMode);
 	public void UpdateFadeTime();
 	private void ScrollbarChanged(Vector2 value);
-	public void OnLobbyStateChange(bool cursorLocked);
+	public void OnInGameMenuStateChange(bool cursorLocked);
 	protected override void AddLine(string text);
 	private void OnEnable();
 	[CompilerGenerated]

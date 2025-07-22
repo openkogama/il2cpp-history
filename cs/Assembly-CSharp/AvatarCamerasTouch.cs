@@ -13,8 +13,6 @@ using UnityEngine;
 public class AvatarCamerasTouch : MonoBehaviour, IAvatarCameraController
 {
 	// Fields
-	private AvatarCamerasWrapper avatarCamerasWrapper;
-	private MVCameraController cameraController;
 	[SerializeField]
 	private AndroidFirstPersonCamera firstPersonMobileCamera;
 	[SerializeField]
@@ -29,6 +27,8 @@ public class AvatarCamerasTouch : MonoBehaviour, IAvatarCameraController
 	private GhostCamera ghostCamera;
 	[SerializeField]
 	private DeadCamera deadCamera;
+	private AvatarCamerasWrapper avatarCamerasWrapper;
+	private MVCameraController cameraController;
 
 	// Constructors
 	public AvatarCamerasTouch();

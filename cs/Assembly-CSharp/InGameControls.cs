@@ -13,11 +13,11 @@ public class InGameControls : MonoBehaviour
 {
 	// Fields
 	[SerializeField]
-	private TouchButtonsBase inGameButtonsPrefab;
+	private InGameButtons inGameButtonsPrefab;
 	[SerializeField]
 	private GameObject avatarJoystickPrefab;
 	[HideInInspector]
-	public TouchButtonsBase InGameButtons;
+	public InGameButtons InGameButtons;
 
 	// Constructors
 	public InGameControls();

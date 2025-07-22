@@ -48,6 +48,7 @@ public class PickupItemCubeGun : PickupItemWithDelay
 	// Properties
 	public override AvatarItemType Type { get; }
 	public override int Quantity { get; }
+	public override int MaxAmmo { get; }
 	protected override bool IsAmmoDepleted { get; }
 
 	// Constructors

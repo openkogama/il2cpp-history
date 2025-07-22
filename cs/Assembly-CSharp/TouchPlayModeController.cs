@@ -15,9 +15,7 @@ using UnityEngine.UI;
 public class TouchPlayModeController : ModeControllerBase, IPlayModeUI, IActivateUIElement, ILeaveEditPlayModeHandler, ICanvasController, IAccessoryPopupHandler
 {
 	// Fields
-	private Action<bool> OnLobbyStateChange;
 	private PlayModeControlsBase playModeControlsBase;
-	private bool inLobbyState;
 	private bool rewardReady;
 	[SerializeField]
 	private UIStack uiStack;
@@ -31,8 +29,6 @@ public class TouchPlayModeController : ModeControllerBase, IPlayModeUI, IActivat
 	private RectTransform lobbyState;
 	[SerializeField]
 	private AndroidInGameMenu inGameMenu;
-	[SerializeField]
-	private RectTransform playerListButton;
 	[SerializeField]
 	private GameObject stackBottom;
 	[SerializeField]
@@ -48,8 +44,6 @@ public class TouchPlayModeController : ModeControllerBase, IPlayModeUI, IActivat
 	[SerializeField]
 	protected DeathPromotionController deathPromotionController;
 	[SerializeField]
-	private WinningConditionBriefing winningConditionBriefingMenu;
-	[SerializeField]
 	private ChatBubbleController chatBubbleController;
 	[SerializeField]
 	private TimeAttackFlagDebriefing timeAttackFlagDebriefing;
@@ -58,9 +52,6 @@ public class TouchPlayModeController : ModeControllerBase, IPlayModeUI, IActivat
 	[SerializeField]
 	private BoostMenuController boosterMenu;
 	public UnityAction OnLeaveEditPlayMode;
-
-	// Properties
-	public override bool IsInPauseMenu { get; set; }
 
 	// Constructors
 	public TouchPlayModeController();
@@ -71,9 +62,9 @@ public class TouchPlayModeController : ModeControllerBase, IPlayModeUI, IActivat
 	public override void Initialize();
 	private void HideUI();
 	private void CreateCanvasGUITemp();
-	private void LobbyStateChange(bool inLobbyState);
-	private void ActivateLobbyState();
-	private void DeActivateLobbyState();
+	private void OnIsPausedStateChange(bool isPaused);
+	private void ActivatePauseMenuState();
+	private void DeActivatePauseMenuState();
 	private void OnShowTimeAttackFlagDebriefing(int captureTime);
 	private void OnShowTimeAttackFlagCountDown();
 	private void OnHideTimeAttackFlagCountDown();

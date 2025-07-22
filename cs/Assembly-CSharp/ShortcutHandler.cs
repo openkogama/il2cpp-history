@@ -22,6 +22,9 @@ public class ShortcutHandler : MonoBehaviour
 	[SerializeField]
 	private Button button;
 
+	// Properties
+	public KogamaControls KogamaControl { get; }
+
 	// Constructors
 	public ShortcutHandler();
 
@@ -30,9 +33,11 @@ public class ShortcutHandler : MonoBehaviour
 	private void Reset();
 	private void Callback();
 	private void OnDestroy();
+	public void RegisterShortcutKey();
+	public void UnRegisterShortcutKey();
 	[CompilerGenerated]
-	private void _Start_b__3_0(IShortcutKeyRegister x, BaseEventData y);
+	private void _RegisterShortcutKey_b__9_0(IShortcutKeyRegister x, BaseEventData y);
 	[CompilerGenerated]
-	private void _OnDestroy_b__6_0(IShortcutKeyUnRegister x, BaseEventData y);
+	private void _UnRegisterShortcutKey_b__10_0(IShortcutKeyUnRegister x, BaseEventData y);
 }
 

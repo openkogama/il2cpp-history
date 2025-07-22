@@ -31,7 +31,7 @@ namespace UGUI.Framework.Scripts.Shared.VehicleUI
 		private float currFade;
 		private bool prevFading;
 		private bool fading;
-		private bool noHiding;
+		private bool isVisible;
 		private MVRigidBody rigidBody;
 		private bool updateSpeed;
 	

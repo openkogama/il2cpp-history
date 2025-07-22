@@ -30,6 +30,7 @@ public class SizeGunBase : PickupItemWithDelay
 
 	// Properties
 	public override int Quantity { get; }
+	public override int MaxAmmo { get; }
 	public override AvatarItemType Type { get; }
 	protected override bool IsAmmoDepleted { get; }
 

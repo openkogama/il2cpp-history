@@ -50,6 +50,7 @@ namespace Assets.Scripts.Pickups
 		public override bool FirstPerson { get; }
 		public override float ChargeState { get; }
 		public override int Quantity { get; }
+		public override int MaxAmmo { get; }
 		protected override string FireSoundEffectName { get; }
 		protected override string HitSoundEffectName { get; }
 		protected override string AttackAnimationName { get; }
@@ -95,7 +96,7 @@ namespace Assets.Scripts.Pickups
 		}
 	
 		[CompilerGenerated]
-		private sealed class _ChargeRoutine_d__68 : IEnumerator<object>
+		private sealed class _ChargeRoutine_d__70 : IEnumerator<object>
 		{
 			// Fields
 			private int __1__state;
@@ -111,7 +112,7 @@ namespace Assets.Scripts.Pickups
 	
 			// Constructors
 			[DebuggerHidden]
-			public _ChargeRoutine_d__68(int __1__state);
+			public _ChargeRoutine_d__70(int __1__state);
 	
 			// Methods
 			[DebuggerHidden]
@@ -122,7 +123,7 @@ namespace Assets.Scripts.Pickups
 		}
 	
 		[CompilerGenerated]
-		private sealed class _FetchFOV_d__52 : IEnumerator<object>
+		private sealed class _FetchFOV_d__54 : IEnumerator<object>
 		{
 			// Fields
 			private int __1__state;
@@ -135,7 +136,7 @@ namespace Assets.Scripts.Pickups
 	
 			// Constructors
 			[DebuggerHidden]
-			public _FetchFOV_d__52(int __1__state);
+			public _FetchFOV_d__54(int __1__state);
 	
 			// Methods
 			[DebuggerHidden]
@@ -160,7 +161,7 @@ namespace Assets.Scripts.Pickups
 		public override void OnEquip();
 		public override void OnStateChanged(Dictionary<object, object> newState);
 		protected override void OnPickupNewEditableItem();
-		[IteratorStateMachine(typeof(_FetchFOV_d__52))]
+		[IteratorStateMachine(typeof(_FetchFOV_d__54))]
 		private IEnumerator FetchFOV();
 		private void SoundStateUpdate();
 		private void MuzzleStateUpdate();
@@ -177,7 +178,7 @@ namespace Assets.Scripts.Pickups
 		protected override void InterruptFire();
 		public override void OnLeaveVehicleWithWeapon();
 		public override void OnEnterVehicleWithWeapon();
-		[IteratorStateMachine(typeof(_ChargeRoutine_d__68))]
+		[IteratorStateMachine(typeof(_ChargeRoutine_d__70))]
 		private IEnumerator ChargeRoutine(int instigatorActorNr);
 	}
 }

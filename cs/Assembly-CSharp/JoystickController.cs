@@ -27,8 +27,6 @@ public class JoystickController : JoystickBase
 	public JoystickController();
 
 	// Methods
-	private void Start();
-	private void ScalePhysicalSize();
 	public override void OnDrag(PointerEventData eventData);
 	public override void OnPointerDown(PointerEventData eventData);
 	public override void OnPointerUp(PointerEventData eventData);

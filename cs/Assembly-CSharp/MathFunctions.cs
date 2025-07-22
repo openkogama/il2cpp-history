@@ -92,6 +92,7 @@ public static class MathFunctions
 	public static float Pow2(float val);
 	public static Matrix4x4 AbsMatrix(Matrix4x4 m);
 	public static Bounds FastAABBTransform(Matrix4x4 m, Bounds b);
+	public static float SmoothInverseLerp(float a, float b, float value);
 
 	// Extension methods
 	public static Vector3 Multiply(this Vector3 a, Vector3 b);

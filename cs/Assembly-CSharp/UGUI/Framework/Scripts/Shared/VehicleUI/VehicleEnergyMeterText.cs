@@ -16,19 +16,17 @@ namespace UGUI.Framework.Scripts.Shared.VehicleUI
 	public class VehicleEnergyMeterText : VehicleMeterBase
 	{
 		// Fields
-		[SerializeField]
-		private CanvasGroup vehicleEnergyMeterTextGroup;
-		[SerializeField]
-		private UnityEngine.UI.Text energyText;
-		private bool updateEnergy;
-		private VehicleEnergyContainer vehicleEnergyContainer;
-		private int currentEnergyStatus;
 		private const int BlinkingLimit = 19;
 		private const int BlinkHeight = 4;
+		private static readonly Color WarningColor;
+		[SerializeField]
+		private UnityEngine.UI.Text energyText;
+		private bool isVisible;
+		private VehicleEnergyContainer vehicleEnergyContainer;
+		private int currentEnergyStatus;
 		private int lastBlink;
 		private Color originalColor;
 		private Vector3 originalTextPos;
-		private static readonly Color WarningColor;
 	
 		// Properties
 		public bool IsVisible { get; }

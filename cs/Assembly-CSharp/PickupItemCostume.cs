@@ -23,6 +23,7 @@ public class PickupItemCostume : PickupItemEditable
 	public override bool FirstPerson { get; }
 	public override bool GunMode { get; }
 	public override bool CanHolster { get; }
+	public override int MaxAmmo { get; }
 	public Color TrailColor { get; }
 	protected new CostumeConfiguration Configuration { get; set; }
 
