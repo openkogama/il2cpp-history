@@ -2014,7 +2014,8 @@ code_?:
       (this->fields)._mainToolbar = this_00;
       func_?(&(this->fields)._mainToolbar);
       this_01 = (GizmoEngineSettings *)func_?(TypeInfo__RTG__GizmoEngineSettings);
-      GizmoEngineSettings::GizmoEngineSettings__ctor(this_01,(MethodInfo *)0x0);
+      (this_01->fields)._enableGizmoSorting = 1;
+      Settings::Settings__ctor((Settings *)this_01,(MethodInfo *)0x0);
       (this->fields)._settings = this_01;
       func_?(&(this->fields)._settings,this_01);
       this_02 = (List_1_RTG_Gizmo_ *)

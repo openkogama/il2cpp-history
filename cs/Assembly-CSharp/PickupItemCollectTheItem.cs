@@ -30,6 +30,7 @@ public class PickupItemCollectTheItem : PickupItem
 	public override AvatarItemType Type { get; }
 	public override bool FirstPerson { get; }
 	public override bool GunMode { get; }
+	public override int MaxAmmo { get; }
 
 	// Constructors
 	public PickupItemCollectTheItem();

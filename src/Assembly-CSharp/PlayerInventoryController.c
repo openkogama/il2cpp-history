@@ -5,17 +5,16 @@ void Assembly-CSharp.dll::PlayerInventoryController::PlayerInventoryController_A
                (PlayerInventoryController *this,UIPushOption__Enum options,MethodInfo *method)
 
 {
-  pIStack_1 = (Il2CppInteropData *)0xffffffff;
-  p_Stack_c = (Il2CppMetadataTypeHandle)&DAT_?;
-  pIStack_2 = (Il2CppGenericClass *)*unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &pIStack_2;
-  pIStack_3 = (Il2CppClass *)&stack0xffffff9c;
-  pIVar4 = (Il2CppClass *)&stack0xffffff9c;
+  uStack_1 = 0xffffffff;
+  puStack_2 = &DAT_?;
+  uStack_3 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Action);
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<int,_TabState>__GetEnumerator__
                    );
+    func_?(&TypeInfo__ESCubeEdit);
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_TabState>__Dispose__
                    );
@@ -27,6 +26,12 @@ void Assembly-CSharp.dll::PlayerInventoryController::PlayerInventoryController_A
                    );
     func_?(&
                     TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                   );
+    func_?(&
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IEditModeController>
+                   );
+    func_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IEditModeController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IEditModeController>_
                    );
     func_?(&
                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
@@ -47,191 +52,201 @@ void Assembly-CSharp.dll::PlayerInventoryController::PlayerInventoryController_A
     func_?(&MethodInfo__PlayerInventoryController__SlotChanged_int__int_);
     func_?(&MethodInfo__PlayerInventoryController__TabSelected_int_);
     func_?(&
-                    MethodInfo__PlayerInventoryController____c___Activate_b__20_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                    MethodInfo__PlayerInventoryController____c___Activate_b__20_1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                    );
     func_?(&
-                    MethodInfo__PlayerInventoryController____c__DisplayClass20_0___Activate_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                    MethodInfo__PlayerInventoryController____c__DisplayClass20_0___Activate_b__0_UnityEngine__EventSystems__IEditModeController__UnityEngine__EventSystems__BaseEventData_
+                   );
+    func_?(&
+                    MethodInfo__PlayerInventoryController____c__DisplayClass20_0___Activate_b__2_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                    );
     func_?(&TypeInfo__PlayerInventoryController____c__DisplayClass20_0);
     func_?(&TypeInfo__PlayerInventoryController____c);
     func_?(&TypeInfo__UnityEngine__Events__UnityAction<int>);
     func_?(&TypeInfo__UnityEngine__Events__UnityAction<int,_int>);
     cRam_? = '\x01';
-    pIVar4 = pIStack_3;
   }
-  pIStack_3 = pIVar4;
-  DStack_5._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
-  DStack_5._version = 0;
-  DStack_5._index = 0;
-  DStack_5._current.key = 0;
-  DStack_5._16_8_ = (Il2CppType)0x0;
   method_00 = TypeInfo__PlayerInventoryController____c__DisplayClass20_0;
-  pIVar4 = (Il2CppClass *)func_?();
-  pIStack_6 = pIVar4;
+  value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)pIVar4,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  pIStack_7 = pIVar4;
-  if (pIVar4 == (Il2CppClass *)0x0) goto code_?;
-  (((ExecuteEvents_EventFunction_1_IUIStack___Fields *)&pIVar4->name)->_)._.method_ptr = this;
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  if (value == (Object *)0x0) goto code_?;
+  value[1].monitor = (MonitorData *)this;
   func_?();
-  pIVar4->namespaze = (char *)options;
-  pIVar8 = (this->fields).inventoryController;
+  value[2].klass = (Object__Class *)options;
+  pIVar4 = (this->fields).inventoryController;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  bVar9 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                    ((Object_1 *)pIVar8,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar9 != 0) goto code_?;
-  method_01 = (MethodInfo *)&UNK_?;
+  bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                    ((Object_1 *)pIVar4,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar5 != 0) goto code_?;
+  value[1].klass = (Object__Class *)0x0;
+  func_?();
+  pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this,(MethodInfo *)0x0);
+  method_01 = 
+  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IEditModeController>
+  ;
+  pEVar7 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+  UnityAction_2_System_Object_System_Object___ctor
+            ((UnityAction_2_System_Object_System_Object_ *)pEVar7,value,
+             MethodInfo__PlayerInventoryController____c__DisplayClass20_0___Activate_b__0_UnityEngine__EventSystems__IEditModeController__UnityEngine__EventSystems__BaseEventData_
+             ,(MethodInfo *)0x0);
+  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+            (pGVar6,(BaseEventData *)0x0,pEVar7,
+             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IEditModeController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IEditModeController>_
+            );
+  if (value[1].klass != (Object__Class *)0x0) {
+    pIVar8 = ((value[1].klass)->_0).image;
+    if (((TypeInfo__ESCubeEdit->_1).naturalAligment <= *(byte *)&pIVar8[4].assembly) &&
+       (*(ESCubeEdit__Class **)
+         ((pIVar8[2].typeCount - 4) + (uint)(TypeInfo__ESCubeEdit->_1).naturalAligment * 4) ==
+        TypeInfo__ESCubeEdit)) goto code_?;
+  }
   PlayerInventoryController_UpdatePageCount(this,(MethodInfo *)0x0);
-  pIVar8 = (this->fields).inventoryControllerPrefab;
+  pIVar4 = (this->fields).inventoryControllerPrefab;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  pIVar8 = (InventoryController *)
+  pIVar4 = (InventoryController *)
            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                     ((Object *)pIVar8,
+                     ((Object *)pIVar4,
                       InventoryController_MethodInfo__UnityEngine__Object__Instantiate<InventoryController>_InventoryController_
                      );
-  (this->fields).inventoryController = pIVar8;
+  (this->fields).inventoryController = pIVar4;
   func_?();
-  pIStack_10 = (Il2CppClass *)(this->fields).inventoryController;
-  if (pIStack_10 == (Il2CppClass *)0x0) goto code_?;
-  pIVar4 = pIStack_10->castClass;
-  pUVar11 = (UnityAction_1_System_Int32Enum_ *)func_?();
+  pIVar4 = (this->fields).inventoryController;
+  if (pIVar4 == (InventoryController *)0x0) goto code_?;
+  pUVar9 = (pIVar4->fields).OnTabSelected;
+  pUVar10 = (UnityAction_1_System_Int32Enum_ *)func_?();
   UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
   UnityAction_1_System_Int32Enum___ctor
-            (pUVar11,(Object *)this,MethodInfo__PlayerInventoryController__TabSelected_int_,
+            (pUVar10,(Object *)this,MethodInfo__PlayerInventoryController__TabSelected_int_,
              (MethodInfo *)0x0);
-  pDVar12 = mscorlib.dll::System::Delegate::Delegate_Combine
-                     ((Delegate *)pIVar4,(Delegate *)pUVar11,(MethodInfo *)0x0);
-  if (pDVar12 == (Delegate *)0x0) {
-    pIStack_10->castClass = (Il2CppClass *)0x0;
+  pDVar11 = mscorlib.dll::System::Delegate::Delegate_Combine
+                     ((Delegate *)pUVar9,(Delegate *)pUVar10,(MethodInfo *)0x0);
+  if (pDVar11 == (Delegate *)0x0) {
+    (pIVar4->fields).OnTabSelected = (UnityAction_1_System_Int32_ *)0x0;
 code_?:
     func_?();
-    pIStack_10 = (Il2CppClass *)(this->fields).inventoryController;
-    if (pIStack_10 == (Il2CppClass *)0x0) goto code_?;
-    pIVar4 = pIStack_10->element_class;
-    pUVar11 = (UnityAction_1_System_Int32Enum_ *)func_?();
+    pIVar4 = (this->fields).inventoryController;
+    if (pIVar4 == (InventoryController *)0x0) goto code_?;
+    pUVar9 = (pIVar4->fields).OnPageTurned;
+    pUVar10 = (UnityAction_1_System_Int32Enum_ *)func_?();
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
     UnityAction_1_System_Int32Enum___ctor
-              (pUVar11,(Object *)this,MethodInfo__PlayerInventoryController__PageTurned_int_,
+              (pUVar10,(Object *)this,MethodInfo__PlayerInventoryController__PageTurned_int_,
                (MethodInfo *)0x0);
-    pDVar12 = mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pIVar4,(Delegate *)pUVar11,(MethodInfo *)0x0);
-    if (pDVar12 == (Delegate *)0x0) {
-      pIStack_10->element_class = (Il2CppClass *)0x0;
+    pDVar11 = mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pUVar9,(Delegate *)pUVar10,(MethodInfo *)0x0);
+    if (pDVar11 == (Delegate *)0x0) {
+      (pIVar4->fields).OnPageTurned = (UnityAction_1_System_Int32_ *)0x0;
     }
     else {
-      pIVar4 = (Il2CppClass *)func_?();
-      if (pIVar4 == (Il2CppClass *)0x0) goto code_?;
-      pIStack_10->element_class = pIVar4;
-      pIStack_10 = (Il2CppClass *)TypeInfo__UnityEngine__Events__UnityAction<int>;
-      iVar13 = func_?();
-      if (iVar13 == 0) goto code_?;
+      pUVar9 = (UnityAction_1_System_Int32_ *)func_?();
+      if (pUVar9 == (UnityAction_1_System_Int32_ *)0x0) goto code_?;
+      (pIVar4->fields).OnPageTurned = pUVar9;
+      iVar12 = func_?();
+      if (iVar12 == 0) goto code_?;
     }
     func_?();
-    pIStack_10 = (Il2CppClass *)(this->fields).inventoryController;
-    if (pIStack_10 == (Il2CppClass *)0x0) goto code_?;
-    pIVar4 = pIStack_10->declaringType;
+    pIVar4 = (this->fields).inventoryController;
+    if (pIVar4 == (InventoryController *)0x0) goto code_?;
+    pUVar13 = (pIVar4->fields).OnSlotChanged;
     this_01 = (UnityAction_2_System_Int32_System_Int32_ *)func_?();
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
     UnityAction_2_System_Int32_System_Int32___ctor
               (this_01,(Object *)this,MethodInfo__PlayerInventoryController__SlotChanged_int__int_,
                (MethodInfo *)0x0);
-    pDVar12 = mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pIVar4,(Delegate *)this_01,(MethodInfo *)0x0);
-    if (pDVar12 == (Delegate *)0x0) {
-      pIStack_10->declaringType = (Il2CppClass *)0x0;
+    pDVar11 = mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pUVar13,(Delegate *)this_01,(MethodInfo *)0x0);
+    if (pDVar11 == (Delegate *)0x0) {
+      (pIVar4->fields).OnSlotChanged = (UnityAction_2_System_Int32_System_Int32_ *)0x0;
     }
     else {
-      pIVar4 = (Il2CppClass *)func_?();
-      if (pIVar4 == (Il2CppClass *)0x0) goto code_?;
-      pIStack_10->declaringType = pIVar4;
-      pIStack_10 = (Il2CppClass *)TypeInfo__UnityEngine__Events__UnityAction<int,_int>;
-      iVar13 = func_?();
-      if (iVar13 == 0) goto code_?;
+      pUVar13 = (UnityAction_2_System_Int32_System_Int32_ *)func_?();
+      if (pUVar13 == (UnityAction_2_System_Int32_System_Int32_ *)0x0) goto code_?;
+      (pIVar4->fields).OnSlotChanged = pUVar13;
+      iVar12 = func_?();
+      if (iVar12 == 0) goto code_?;
     }
     func_?();
-    pIStack_10 = (Il2CppClass *)(this->fields).repository;
-    if (pIStack_10 == (Il2CppClass *)0x0) goto code_?;
-    pDVar12 = (Delegate *)pIStack_10->namespaze;
+    pPVar14 = (this->fields).repository;
+    if (pPVar14 == (PlayerShopInventoryRepository *)0x0) goto code_?;
+    pAVar15 = (pPVar14->fields).OnInventoryChanged;
     this_02 = (NavMesh_OnNavMeshPreUpdate *)func_?();
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
               (this_02,(Object *)this,MethodInfo__PlayerInventoryController__InventoryChanged__,
                (MethodInfo *)0x0);
-    pDVar12 = mscorlib.dll::System::Delegate::Delegate_Combine
-                       (pDVar12,(Delegate *)this_02,(MethodInfo *)0x0);
-    if (pDVar12 == (Delegate *)0x0) {
-      pIStack_10->namespaze = (char *)0x0;
+    pAVar15 = (Action *)
+              mscorlib.dll::System::Delegate::Delegate_Combine
+                        ((Delegate *)pAVar15,(Delegate *)this_02,(MethodInfo *)0x0);
+    if (pAVar15 == (Action *)0x0) {
+      (pPVar14->fields).OnInventoryChanged = (Action *)0x0;
 code_?:
       func_?();
-      pIVar8 = (this->fields).inventoryController;
-      if (pIVar8 != (InventoryController *)0x0) {
+      pIVar4 = (this->fields).inventoryController;
+      if (pIVar4 != (InventoryController *)0x0) {
         InventoryController::InventoryController_Initialize
-                  (pIVar8,(this->fields).numberOfSlotsPrPage,(MethodInfo *)0x0);
+                  (pIVar4,(this->fields).numberOfSlotsPrPage,(MethodInfo *)0x0);
         this_00 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields).tabs;
         if (this_00 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
-          pDVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
-                   Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                             ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                              &stack0xffffffa8,this_00,
-                              MethodInfo__System__Collections__Generic__Dictionary<int,_TabState>__GetEnumerator__
-                             );
-          pIStack_15 = (Il2CppClass *)0x0;
-          DStack_5._dictionary = pDVar14->_dictionary;
-          DStack_5._version = pDVar14->_version;
-          DStack_5._index = pDVar14->_index;
-          DStack_5._current.key = (pDVar14->_current).key;
-          DStack_5._16_8_ = *(undefined8 *)&(pDVar14->_current).value;
-          pIStack_1 = (Il2CppInteropData *)0x1;
-          pIStack_10 = (Il2CppClass *)&DStack_5;
+          pDVar16 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
+                    Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
+                              ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
+                               &stack0xffffffa4,this_00,
+                               MethodInfo__System__Collections__Generic__Dictionary<int,_TabState>__GetEnumerator__
+                              );
+          categoryId = (pDVar16->_current).key;
+          uVar17 = *(undefined8 *)&(pDVar16->_current).value;
+          uStack_1 = 1;
           while( true ) {
-            bVar9 = mscorlib.dll::System::Collections::Generic::
+            bVar5 = mscorlib.dll::System::Collections::Generic::
                     Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
                     Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                              (&DStack_5,
+                              ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
+                               &stack0xffffffbc,
                                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_TabState>__MoveNext__
                               );
-            if (bVar9 == 0) break;
-            pIVar8 = (this->fields).inventoryController;
-            if ((DStack_5._current.value == (void *)0x0) || (pIVar8 == (InventoryController *)0x0))
+            if (bVar5 == 0) break;
+            pIVar4 = (this->fields).inventoryController;
+            if (((Object *)uVar17 == (Object *)0x0) || (pIVar4 == (InventoryController *)0x0))
             goto code_?;
             InventoryController::InventoryController_AddTab
-                      (pIVar8,DStack_5._current.key,
-                       (String *)*(Il2CppClass **)((int)DStack_5._current.value + 0xc),
-                       (MethodInfo *)0x0);
+                      (pIVar4,categoryId,(String *)((Object *)uVar17)[1].monitor,(MethodInfo *)0x0);
           }
-          pIStack_1 = (Il2CppInteropData *)0xffffffff;
+          uStack_1 = 0xffffffff;
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&DStack_5,
+                    ((Object *)&stack0xffffffbc,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_TabState>__Dispose__
-                     ,method_01);
-          pIStack_1 = (Il2CppInteropData *)0xffffffff;
-          pIStack_10 = (Il2CppClass *)
-                       UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                 ((Component *)this,(MethodInfo *)0x0);
+                     ,(MethodInfo *)method_01);
+          uStack_1 = 0xffffffff;
+          pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                             ((Component *)this,(MethodInfo *)0x0);
           if ((TypeInfo__PlayerInventoryController____c->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          pIVar4 = (Il2CppClass *)TypeInfo__PlayerInventoryController____c->static_fields->__9__20_0
-          ;
-          if (pIVar4 == (Il2CppClass *)0x0) {
+          callbackFunction = TypeInfo__PlayerInventoryController____c->static_fields->__9__20_1;
+          if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
             if ((TypeInfo__PlayerInventoryController____c->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
             object = TypeInfo__PlayerInventoryController____c->static_fields->__9;
-            pIVar4 = (Il2CppClass *)func_?();
-            pIStack_7 = pIVar4;
+            callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
             UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
             Object]::UnityAction_2_System_Object_System_Object___ctor
-                      ((UnityAction_2_System_Object_System_Object_ *)pIVar4,(Object *)object,
-                       MethodInfo__PlayerInventoryController____c___Activate_b__20_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                      ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,
+                       (Object *)object,
+                       MethodInfo__PlayerInventoryController____c___Activate_b__20_1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                        ,(MethodInfo *)0x0);
-            TypeInfo__PlayerInventoryController____c->static_fields->__9__20_0 =
-                 (ExecuteEvents_EventFunction_1_IUIStack_ *)pIVar4;
+            TypeInfo__PlayerInventoryController____c->static_fields->__9__20_1 = callbackFunction;
             func_?();
           }
           if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
@@ -240,53 +255,51 @@ code_?:
           }
           UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
           ExecuteEvents_ExecuteHierarchy
-                    ((GameObject *)pIStack_10,(BaseEventData *)0x0,
-                     (ExecuteEvents_EventFunction_1_System_Object_ *)pIVar4,
+                    (pGVar6,(BaseEventData *)0x0,
+                     (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
                      UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                     );
-          root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)this,(MethodInfo *)0x0);
-          callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
+          pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                             ((Component *)this,(MethodInfo *)0x0);
+          pEVar7 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
           Object]::UnityAction_2_System_Object_System_Object___ctor
-                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,
-                     (Object *)pIStack_6,
-                     MethodInfo__PlayerInventoryController____c__DisplayClass20_0___Activate_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                    ((UnityAction_2_System_Object_System_Object_ *)pEVar7,value,
+                     MethodInfo__PlayerInventoryController____c__DisplayClass20_0___Activate_b__2_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                      ,(MethodInfo *)0x0);
           UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
           ExecuteEvents_ExecuteHierarchy
-                    (root,(BaseEventData *)0x0,callbackFunction,
+                    (pGVar6,(BaseEventData *)0x0,pEVar7,
                      UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                     );
           PlayerInventoryController_UpdateContent(this,(MethodInfo *)0x0);
 code_?:
-          *unaff_FS_OFFSET = pIStack_2;
+          *unaff_FS_OFFSET = uStack_3;
           return;
         }
       }
       goto code_?;
     }
-    pDVar16 = (Delegate *)0x0;
-    if ((Action__Class *)pDVar12->klass == TypeInfo__System__Action) {
-      pDVar16 = pDVar12;
+    pAVar18 = (Action *)0x0;
+    if (pAVar15->klass == TypeInfo__System__Action) {
+      pAVar18 = pAVar15;
     }
-    if (pDVar16 != (Delegate *)0x0) {
-      pIStack_10->namespaze = (char *)pDVar16;
-      pDVar16 = (Delegate *)0x0;
-      if ((Action__Class *)pDVar12->klass == TypeInfo__System__Action) {
-        pDVar16 = pDVar12;
+    if (pAVar18 != (Action *)0x0) {
+      (pPVar14->fields).OnInventoryChanged = pAVar18;
+      pAVar18 = (Action *)0x0;
+      if (pAVar15->klass == TypeInfo__System__Action) {
+        pAVar18 = pAVar15;
       }
-      if (pDVar16 != (Delegate *)0x0) goto code_?;
+      if (pAVar18 != (Action *)0x0) goto code_?;
       goto code_?;
     }
   }
   else {
-    pIVar4 = (Il2CppClass *)func_?();
-    if (pIVar4 != (Il2CppClass *)0x0) {
-      pIStack_10->castClass = pIVar4;
-      pIStack_10 = (Il2CppClass *)TypeInfo__UnityEngine__Events__UnityAction<int>;
-      iVar13 = func_?();
-      if (iVar13 == 0) goto code_?;
+    pUVar9 = (UnityAction_1_System_Int32_ *)func_?();
+    if (pUVar9 != (UnityAction_1_System_Int32_ *)0x0) {
+      (pIVar4->fields).OnTabSelected = pUVar9;
+      iVar12 = func_?();
+      if (iVar12 == 0) goto code_?;
       goto code_?;
     }
 code_?:
@@ -300,8 +313,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  pcVar19 = (code *)swi(3);
+  (*pcVar19)();
   return;
 }
 

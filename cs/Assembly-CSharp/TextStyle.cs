@@ -19,6 +19,7 @@ public enum TextStyle
 	TabText = 6,
 	BoldButtonText = 7,
 	BoldHeaderText = 8,
-	HudText = 9
+	HudText = 9,
+	BoldBodyText = 10
 }
 

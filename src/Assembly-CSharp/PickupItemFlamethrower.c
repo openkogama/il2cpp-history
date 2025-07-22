@@ -7,10 +7,10 @@ Assembly-CSharp.dll::PickupItemFlamethrower::PickupItemFlamethrower_DoFlaming
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__PickupItemFlamethrower___DoFlaming_d__16);
+    func_?(&TypeInfo__PickupItemFlamethrower___DoFlaming_d__18);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__PickupItemFlamethrower___DoFlaming_d__16;
+  method_00 = TypeInfo__PickupItemFlamethrower___DoFlaming_d__18;
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
@@ -29,10 +29,10 @@ Assembly-CSharp.dll::PickupItemFlamethrower::PickupItemFlamethrower_DoFuelBurn
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__PickupItemFlamethrower___DoFuelBurn_d__17);
+    func_?(&TypeInfo__PickupItemFlamethrower___DoFuelBurn_d__19);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__PickupItemFlamethrower___DoFuelBurn_d__17;
+  method_00 = TypeInfo__PickupItemFlamethrower___DoFuelBurn_d__19;
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
@@ -69,41 +69,26 @@ void Assembly-CSharp.dll::PickupItemFlamethrower::PickupItemFlamethrower_ResetAm
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
     cRam_? = '\x01';
   }
-  AVar1 = (ACTkByte4)(this->fields).maxFuelTime.currentCryptoKey;
-  AVar2 = (this->fields).maxFuelTime.hiddenValue;
-  pBVar3 = (this->fields).maxFuelTime.hiddenValueOld;
-  fVar4 = (this->fields).maxFuelTime.fakeValue;
+  iVar1 = (*(code *)(this->klass->vtable).get_MaxAmmo.method)
+                    (this,(this->klass->vtable).get_Quantity.methodPtr);
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_finished_or_no_cctor
       == 0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
   }
-  value.hiddenValue = AVar2;
-  value.currentCryptoKey._0_1_ = AVar1.b1;
-  value.currentCryptoKey._1_1_ = AVar1.b2;
-  value.currentCryptoKey._2_1_ = AVar1.b3;
-  value.currentCryptoKey._3_1_ = AVar1.b4;
-  value.hiddenValueOld = pBVar3;
-  value.fakeValue = fVar4;
-  value.inited = (this->fields).maxFuelTime.inited;
-  value._17_3_ = *(undefined3 *)&(this->fields).maxFuelTime.field_0x11;
-  fVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-          ObscuredFloat_op_Implicit_1(value,(MethodInfo *)0x0);
-  iVar5 = (*(code *)(this->klass->vtable).GetAmmoMultiplier.method)
-                    (this,(int)fVar4,(this->klass->vtable).UpdateWithDirection.methodPtr);
-  pOVar6 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-           ObscuredFloat_op_Implicit((ObscuredFloat *)&puStack_7,(float)iVar5,(MethodInfo *)0x0);
-  AVar1 = pOVar6->hiddenValue;
-  pBVar3 = pOVar6->hiddenValueOld;
-  fVar4 = pOVar6->fakeValue;
-  bVar8 = pOVar6->inited;
-  uVar9 = *(undefined3 *)&pOVar6->field_0x11;
-  (this->fields).currentFuel.currentCryptoKey = pOVar6->currentCryptoKey;
-  (this->fields).currentFuel.hiddenValue = AVar1;
-  (this->fields).currentFuel.hiddenValueOld = pBVar3;
-  (this->fields).currentFuel.fakeValue = fVar4;
-  (this->fields).currentFuel.inited = bVar8;
-  *(undefined3 *)&(this->fields).currentFuel.field_0x11 = uVar9;
-  func_?();
+  pOVar2 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+           ObscuredFloat_op_Implicit(&OStack_3,(float)iVar1,(MethodInfo *)0x0);
+  AVar4 = pOVar2->hiddenValue;
+  pBVar5 = pOVar2->hiddenValueOld;
+  fVar6 = pOVar2->fakeValue;
+  bVar7 = pOVar2->inited;
+  uVar8 = *(undefined3 *)&pOVar2->field_0x11;
+  (this->fields).currentFuel.currentCryptoKey = pOVar2->currentCryptoKey;
+  (this->fields).currentFuel.hiddenValue = AVar4;
+  (this->fields).currentFuel.hiddenValueOld = pBVar5;
+  (this->fields).currentFuel.fakeValue = fVar6;
+  (this->fields).currentFuel.inited = bVar7;
+  *(undefined3 *)&(this->fields).currentFuel.field_0x11 = uVar8;
+  func_?(&(this->fields).currentFuel.hiddenValueOld,0);
   return;
 }
 
@@ -141,12 +126,12 @@ code_?:
       if (pMVar4 != (MVPickupOwner *)0x0) {
         if ((pMVar4->fields)._IsLocal_k__BackingField != 0) {
           if (cRam_? == '\0') {
-            instigatorActorNr = (int32_t)&TypeInfo__PickupItemFlamethrower___DoFlaming_d__16;
+            instigatorActorNr = (int32_t)&TypeInfo__PickupItemFlamethrower___DoFlaming_d__18;
             this = (PickupItemFlamethrower *)&UNK_?;
             func_?();
             cRam_? = '\x01';
           }
-          this = (PickupItemFlamethrower *)TypeInfo__PickupItemFlamethrower___DoFlaming_d__16;
+          this = (PickupItemFlamethrower *)TypeInfo__PickupItemFlamethrower___DoFlaming_d__18;
           pOVar5 = (Object *)func_?();
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                     (pOVar5,ExceptionArgument__Enum_obj,(MethodInfo *)this);
@@ -159,7 +144,7 @@ code_?:
             func_?();
             cRam_? = '\x01';
           }
-          method_00 = TypeInfo__PickupItemFlamethrower___DoFuelBurn_d__17;
+          method_00 = TypeInfo__PickupItemFlamethrower___DoFuelBurn_d__19;
           pOVar5 = (Object *)func_?();
           method = (MethodInfo *)&UNK_?;
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
@@ -343,6 +328,29 @@ void Assembly-CSharp.dll::PickupItemFlamethrower::PickupItemFlamethrower__ctor
   UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
             ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
+}
+
+
+/* Int32 get_MaxAmmo() */
+
+int32_t Assembly-CSharp.dll::PickupItemFlamethrower::PickupItemFlamethrower_get_MaxAmmo
+                  (PickupItemFlamethrower *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    cRam_? = '\x01';
+  }
+  value = (this->fields).maxFuelTime;
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_finished_or_no_cctor
+      == 0) {
+    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+  }
+  fVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+          ObscuredFloat_op_Implicit_1(value,(MethodInfo *)0x0);
+  iVar2 = (*(code *)(this->klass->vtable).CalculateMaxAmmo.method)
+                    (this,(int)fVar1,(this->klass->vtable).UpdateWithDirection.methodPtr);
+  return iVar2;
 }
 
 

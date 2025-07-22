@@ -465,32 +465,22 @@ void Assembly-CSharp.dll::PickupItemShotgun::PickupItemShotgun_ResetAmmo
     cRam_? = '\x01';
   }
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  pOVar1 = (ObscuredInt__Class *)(this->fields).maxAmmo.currentCryptoKey;
-  iVar2 = (this->fields).maxAmmo.hiddenValue;
-  iVar3 = (this->fields).maxAmmo.fakeValue;
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  iVar1 = (*(code *)(this->klass->vtable).get_MaxAmmo.method)
+                    (this,(this->klass->vtable).get_Quantity.methodPtr);
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor ==
       0) {
-    pOVar1 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt;
-    func_?();
+    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
   }
-  value.hiddenValue = iVar2;
-  value.currentCryptoKey = (int32_t)pOVar1;
-  value.fakeValue = iVar3;
-  value.inited = (this->fields).maxAmmo.inited;
-  value._13_3_ = *(undefined3 *)&(this->fields).maxAmmo.field_0xd;
-  iVar2 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-          ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
-  iVar2 = (*(code *)(this->klass->vtable).GetAmmoMultiplier.method)(this,iVar2);
-  pOVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-           ObscuredInt_op_Implicit((ObscuredInt *)&stack0xffffffec,iVar2,(MethodInfo *)0x0);
-  iVar2 = pOVar4->hiddenValue;
-  iVar3 = pOVar4->fakeValue;
-  bVar5 = pOVar4->inited;
-  uVar6 = *(undefined3 *)&pOVar4->field_0xd;
-  (this->fields).currentAmmo.currentCryptoKey = pOVar4->currentCryptoKey;
-  (this->fields).currentAmmo.hiddenValue = iVar2;
-  (this->fields).currentAmmo.fakeValue = iVar3;
+  pOVar2 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+           ObscuredInt_op_Implicit(&OStack_3,iVar1,(MethodInfo *)0x0);
+  iVar1 = pOVar2->hiddenValue;
+  iVar4 = pOVar2->fakeValue;
+  bVar5 = pOVar2->inited;
+  uVar6 = *(undefined3 *)&pOVar2->field_0xd;
+  (this->fields).currentAmmo.currentCryptoKey = pOVar2->currentCryptoKey;
+  (this->fields).currentAmmo.hiddenValue = iVar1;
+  (this->fields).currentAmmo.fakeValue = iVar4;
   (this->fields).currentAmmo.inited = bVar5;
   *(undefined3 *)&(this->fields).currentAmmo.field_0xd = uVar6;
   return;
@@ -506,7 +496,7 @@ void Assembly-CSharp.dll::PickupItemShotgun::PickupItemShotgun__cctor(MethodInfo
     func_?(&TypeInfo__MV__WorldObject__InteractionData);
     func_?(&TypeInfo__PickupItemShotgun);
     func_?(&TypeInfo__System__Single);
-    func_?(&_1D938725B43024CD1DE507AE64F4E512BE661FABD0876BE9FF1D6BBCE7A2774A_Field);
+    func_?(&::_1D938725B43024CD1DE507AE64F4E512BE661FABD0876BE9FF1D6BBCE7A2774A_Field);
     func_?(&_6D14F76A35801E92A153C606F99E1BAEAD19C4A687AD608FCD9FADCBB41E3C25_Field);
     cRam_? = '\x01';
   }
@@ -599,6 +589,29 @@ bool Assembly-CSharp.dll::PickupItemShotgun::PickupItemShotgun_get_IsAmmoDeplete
   cVar5 = (*(code *)(this->klass->vtable).get_HasUnlimitedAmmo.method)
                     (this,(this->klass->vtable).get_CanUnequip.methodPtr);
   return cVar5 == '\0';
+}
+
+
+/* Int32 get_MaxAmmo() */
+
+int32_t Assembly-CSharp.dll::PickupItemShotgun::PickupItemShotgun_get_MaxAmmo
+                  (PickupItemShotgun *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+    cRam_? = '\x01';
+  }
+  value = (this->fields).maxAmmo;
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor ==
+      0) {
+    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+  }
+  iVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+          ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
+  iVar1 = (*(code *)(this->klass->vtable).CalculateMaxAmmo.method)
+                    (this,iVar1,(this->klass->vtable).UpdateWithDirection.methodPtr);
+  return iVar1;
 }
 
 

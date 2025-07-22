@@ -435,10 +435,10 @@ void Assembly-CSharp.dll::MVGamePointChest::MVGamePointChest_Destroy
     func_?(&TypeInfo__System__EventHandler<TriggerEventArgs>);
     func_?(&MethodInfo__MVGamePointChest__OnWinningConditionFulfilled_IWinningCondition_);
     func_?(&
-                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                    MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                    );
     func_?(&
-                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                    MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                    );
     cRam_? = '\x01';
   }
@@ -460,7 +460,7 @@ code_?:
                  func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
         mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                   (pEVar5,(Object *)pUVar4,
-                   MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                   MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                    ,(MethodInfo *)0x0);
         if (pTVar3 != (TriggerBoxEvents *)0x0) {
           TriggerBoxEvents::TriggerBoxEvents_remove_TriggerEnter
@@ -473,7 +473,7 @@ code_?:
                      func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
             mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                       (pEVar5,(Object *)pUVar4,
-                       MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                       MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                        ,(MethodInfo *)0x0);
             if (pTVar3 != (TriggerBoxEvents *)0x0) {
               TriggerBoxEvents::TriggerBoxEvents_remove_TriggerExit
@@ -1094,19 +1094,19 @@ void Assembly-CSharp.dll::MVGamePointChest::MVGamePointChest_SetupUseInteractor
     func_?(&TypeInfo__LevelBasedUseRequirement);
     func_?(&MethodInfo__MVGamePointChest__IsUsable_int__MVInteractableBase_);
     func_?(&MethodInfo__MVGamePointChest__OpenChest_int_);
+    func_?(&
+                    MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                   );
+    func_?(&
+                    MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                   );
     func_?(&TypeInfo__UseInteractor);
-    func_?(&
-                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
-                   );
-    func_?(&
-                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
-                   );
     cRam_? = '\x01';
   }
   if ((this->fields).chestObject != (MVGamePointChestObject *)0x0) {
     pTVar1 = (((this->fields).chestObject)->fields).triggerBoxEvents;
     if (pTVar1 != (TriggerBoxEvents *)0x0) {
-      triggerCollider = TriggerBoxEvents::TriggerBoxEvents_get_Collider(pTVar1,(MethodInfo *)0x0);
+      TriggerBoxEvents::TriggerBoxEvents_get_Collider(pTVar1,(MethodInfo *)0x0);
       this_00 = (Predicate_1_UInt32_ *)func_?(TypeInfo__System__Func<int,_bool>);
       mscorlib.dll::System::Predicate`1[UInt32]::Predicate_1_UInt32___ctor
                 (this_00,(Object *)this,MethodInfo__MVGamePointChest__OpenChest_int_,
@@ -1118,38 +1118,38 @@ void Assembly-CSharp.dll::MVGamePointChest::MVGamePointChest_SetupUseInteractor
                  MethodInfo__MVGamePointChest__IsUsable_int__MVInteractableBase_,(MethodInfo *)0x0);
       pUVar2 = (UseInteractor *)func_?(TypeInfo__UseInteractor);
       UseInteractor::UseInteractor__ctor
-                (pUVar2,(MVWorldObjectClient *)0x40200000,(GameObject *)0x0,0,triggerCollider,
+                (pUVar2,(MVWorldObjectClient *)0x0,(GameObject *)this_00,0,(Collider *)this_00,
                  (Func_2_Int32_Boolean_ *)this_00,
-                 (Func_3_Int32_MVInteractableBase_Boolean_ *)this_01,2.5,0,(MethodInfo *)0x0);
-      pURam40200108 = pUVar2;
+                 (Func_3_Int32_MVInteractableBase_Boolean_ *)this_01,2.5,0,1,(MethodInfo *)0x0);
+      pURam00000108 = pUVar2;
       func_?();
       if (iRam_? != 0) {
         root = *(GameObject **)(iRam_? + 0x2c);
         this_02 = (LevelBasedUseRequirement *)func_?(TypeInfo__LevelBasedUseRequirement);
         LevelBasedUseRequirement::LevelBasedUseRequirement__ctor(this_02,root,0,(MethodInfo *)0x0);
-        if (pURam40200108 != (UseInteractor *)0x0) {
+        if (pURam00000108 != (UseInteractor *)0x0) {
           UseInteractor::UseInteractor_AddRequirement
-                    (pURam40200108,(UseRequirement *)this_02,(MethodInfo *)0x0);
-          pUVar2 = pURam40200108;
+                    (pURam00000108,(UseRequirement *)this_02,(MethodInfo *)0x0);
+          pUVar2 = pURam00000108;
           if (iRam_? != 0) {
             pTVar1 = *(TriggerBoxEvents **)(iRam_? + 0x20);
             pEVar3 = (EventHandler_1_Object_ *)
                      func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
             mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                       (pEVar3,(Object *)pUVar2,
-                       MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                       MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                        ,(MethodInfo *)0x0);
             if (pTVar1 != (TriggerBoxEvents *)0x0) {
               TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
                         (pTVar1,(EventHandler_1_TriggerEventArgs_ *)pEVar3,(MethodInfo *)0x0);
-              pUVar2 = pURam40200108;
+              pUVar2 = pURam00000108;
               if (iRam_? != 0) {
                 pTVar1 = *(TriggerBoxEvents **)(iRam_? + 0x20);
                 pEVar3 = (EventHandler_1_Object_ *)
                          func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
                 mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                           (pEVar3,(Object *)pUVar2,
-                           MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                           MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                            ,(MethodInfo *)0x0);
                 if (pTVar1 != (TriggerBoxEvents *)0x0) {
                   TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit

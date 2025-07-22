@@ -115,7 +115,7 @@ bool Assembly-CSharp.dll::RTG::CylinderMath::CylinderMath_ContainsPoint
   fVar9 = (float)uVar7 * (point.x - cylinderAxisPt0.x) +
           (float)uVar8 * (point.y - cylinderAxisPt0.y) + pVVar6->z * (point.z - cylinderAxisPt0.z);
   if (((float)((uint)epsilon._vertEps ^
-              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) <= fVar9) &&
+              __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) <= fVar9) &&
      (fVar9 <= epsilon._vertEps + fStack_5)) {
     uVar10 = pVVar6->x;
     uVar11 = pVVar6->y;
@@ -148,7 +148,7 @@ bool Assembly-CSharp.dll::RTG::CylinderMath::CylinderMath_ContainsPoint_1
   fVar6 = (float)uVar4 * (point.x - cylinderAxisPt0.x) +
           (float)uVar5 * (point.y - cylinderAxisPt0.y) + pVVar2->z * (point.z - cylinderAxisPt0.z);
   if (((float)((uint)epsilon._vertEps ^
-              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) <= fVar6) &&
+              __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) <= fVar6) &&
      (fVar6 <= epsilon._vertEps + cylinderHeight)) {
     uVar7 = pVVar2->x;
     uVar8 = pVVar2->y;
@@ -326,7 +326,7 @@ bool Assembly-CSharp.dll::RTG::CylinderMath::CylinderMath_Raycast_1
                      (MethodInfo *)
                      ((uint)(fVar9 * (float)uStack_7._4_4_ + fVar8 * (float)(undefined4)uStack_7
                             + fVar10 * pVVar3->z) ^
-                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field));
+                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field));
   if (bVar19 != 0) {
     this = &ray;
     uStack_7 = CONCAT44(&UNK_?,(undefined4)uStack_7);

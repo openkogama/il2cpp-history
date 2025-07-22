@@ -51,7 +51,7 @@ void Assembly-CSharp.dll::InGameButtons::InGameButtons_HandleFireVisibility
       goto code_?;
     }
     if (method_00 == (MethodInfo *)0x0) goto code_?;
-    value = 0x39;
+    value = 0x29;
     pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)method_00,(MethodInfo *)0x0);
     if (pGVar4 == (GameObject *)0x0) goto code_?;
@@ -140,14 +140,14 @@ void Assembly-CSharp.dll::InGameButtons::InGameButtons_HandleNotInPlayMode
                (InGameButtons *this,MethodInfo *method)
 
 {
-  pRVar1 = (this->fields).use;
+  pRVar1 = (this->fields).fire;
   if ((pRVar1 != (RectTransform *)0x0) &&
      (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)pRVar1,(MethodInfo *)0x0), pGVar2 != (GameObject *)0x0)) {
     bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
                       (pGVar2,(MethodInfo *)0x0);
     if (bVar3 != 0) {
-      pRVar1 = (this->fields).use;
+      pRVar1 = (this->fields).fire;
       if ((pRVar1 == (RectTransform *)0x0) ||
          (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                              ((Component *)pRVar1,(MethodInfo *)0x0), pGVar2 == (GameObject *)0x0))
@@ -155,14 +155,14 @@ void Assembly-CSharp.dll::InGameButtons::InGameButtons_HandleNotInPlayMode
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 (pGVar2,0,(MethodInfo *)0x0);
     }
-    pRVar1 = (this->fields).fire;
+    pRVar1 = (this->fields).point;
     if ((pRVar1 != (RectTransform *)0x0) &&
        (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)pRVar1,(MethodInfo *)0x0), pGVar2 != (GameObject *)0x0)) {
       bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
                         (pGVar2,(MethodInfo *)0x0);
       if (bVar3 != 0) {
-        pRVar1 = (this->fields).fire;
+        pRVar1 = (this->fields).point;
         if ((pRVar1 == (RectTransform *)0x0) ||
            (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                                ((Component *)pRVar1,(MethodInfo *)0x0), pGVar2 == (GameObject *)0x0)
@@ -170,7 +170,7 @@ void Assembly-CSharp.dll::InGameButtons::InGameButtons_HandleNotInPlayMode
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                   (pGVar2,0,(MethodInfo *)0x0);
       }
-      pRVar1 = (this->fields).point;
+      pRVar1 = (this->fields).dropWeapon;
       if ((pRVar1 != (RectTransform *)0x0) &&
          (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                              ((Component *)pRVar1,(MethodInfo *)0x0), pGVar2 != (GameObject *)0x0))
@@ -178,7 +178,7 @@ void Assembly-CSharp.dll::InGameButtons::InGameButtons_HandleNotInPlayMode
         bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
                           (pGVar2,(MethodInfo *)0x0);
         if (bVar3 != 0) {
-          pRVar1 = (this->fields).point;
+          pRVar1 = (this->fields).dropWeapon;
           if ((pRVar1 == (RectTransform *)0x0) ||
              (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                                  ((Component *)pRVar1,(MethodInfo *)0x0),
@@ -186,7 +186,7 @@ void Assembly-CSharp.dll::InGameButtons::InGameButtons_HandleNotInPlayMode
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                     (pGVar2,0,(MethodInfo *)0x0);
         }
-        pRVar1 = (this->fields).dropWeapon;
+        pRVar1 = (this->fields).leaveVehicle;
         if ((pRVar1 != (RectTransform *)0x0) &&
            (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                                ((Component *)pRVar1,(MethodInfo *)0x0), pGVar2 != (GameObject *)0x0)
@@ -194,7 +194,7 @@ void Assembly-CSharp.dll::InGameButtons::InGameButtons_HandleNotInPlayMode
           bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
                             (pGVar2,(MethodInfo *)0x0);
           if (bVar3 != 0) {
-            pRVar1 = (this->fields).dropWeapon;
+            pRVar1 = (this->fields).leaveVehicle;
             if ((pRVar1 == (RectTransform *)0x0) ||
                (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                          Component_get_gameObject((Component *)pRVar1,(MethodInfo *)0x0),
@@ -202,75 +202,58 @@ void Assembly-CSharp.dll::InGameButtons::InGameButtons_HandleNotInPlayMode
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                       (pGVar2,0,(MethodInfo *)0x0);
           }
-          pRVar1 = (this->fields).leaveVehicle;
-          if ((pRVar1 != (RectTransform *)0x0) &&
-             (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                 ((Component *)pRVar1,(MethodInfo *)0x0),
+          pGVar2 = (this->fields).respawnButton;
+          if ((pGVar2 != (GameObject *)0x0) &&
+             (pGVar2 = (GameObject *)
+                       UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::
+                       UnsafeUtility::UnsafeUtility_AsRef_1((Void *)pGVar2,(MethodInfo *)0x0),
              pGVar2 != (GameObject *)0x0)) {
             bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
                               (pGVar2,(MethodInfo *)0x0);
             if (bVar3 != 0) {
-              pRVar1 = (this->fields).leaveVehicle;
-              if ((pRVar1 == (RectTransform *)0x0) ||
-                 (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                           Component_get_gameObject((Component *)pRVar1,(MethodInfo *)0x0),
+              pGVar2 = (this->fields).respawnButton;
+              if ((pGVar2 == (GameObject *)0x0) ||
+                 (pGVar2 = (GameObject *)
+                           UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::
+                           UnsafeUtility::UnsafeUtility_AsRef_1((Void *)pGVar2,(MethodInfo *)0x0),
                  pGVar2 == (GameObject *)0x0)) goto code_?;
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                         (pGVar2,0,(MethodInfo *)0x0);
             }
-            pGVar2 = (this->fields).respawnButton;
-            if ((pGVar2 != (GameObject *)0x0) &&
-               (pGVar2 = (GameObject *)
-                         UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::
-                         UnsafeUtility::UnsafeUtility_AsRef_1((Void *)pGVar2,(MethodInfo *)0x0),
+            pRVar1 = (this->fields).holsterButton;
+            if ((pRVar1 != (RectTransform *)0x0) &&
+               (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                         Component_get_gameObject((Component *)pRVar1,(MethodInfo *)0x0),
                pGVar2 != (GameObject *)0x0)) {
               bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
                                 (pGVar2,(MethodInfo *)0x0);
               if (bVar3 != 0) {
-                pGVar2 = (this->fields).respawnButton;
-                if ((pGVar2 == (GameObject *)0x0) ||
-                   (pGVar2 = (GameObject *)
-                             UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::
-                             UnsafeUtility::UnsafeUtility_AsRef_1((Void *)pGVar2,(MethodInfo *)0x0),
+                pRVar1 = (this->fields).holsterButton;
+                if ((pRVar1 == (RectTransform *)0x0) ||
+                   (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                             Component_get_gameObject((Component *)pRVar1,(MethodInfo *)0x0),
                    pGVar2 == (GameObject *)0x0)) goto code_?;
                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                           (pGVar2,0,(MethodInfo *)0x0);
               }
-              pRVar1 = (this->fields).holsterButton;
+              pRVar1 = (this->fields).jumpButton;
               if ((pRVar1 != (RectTransform *)0x0) &&
                  (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                            Component_get_gameObject((Component *)pRVar1,(MethodInfo *)0x0),
                  pGVar2 != (GameObject *)0x0)) {
                 bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                         GameObject_get_activeSelf(pGVar2,(MethodInfo *)0x0);
-                if (bVar3 != 0) {
-                  pRVar1 = (this->fields).holsterButton;
-                  if ((pRVar1 == (RectTransform *)0x0) ||
-                     (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                               Component_get_gameObject((Component *)pRVar1,(MethodInfo *)0x0),
-                     pGVar2 == (GameObject *)0x0)) goto code_?;
-                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                            (pGVar2,0,(MethodInfo *)0x0);
+                if (bVar3 == 0) {
+                  return;
                 }
                 pRVar1 = (this->fields).jumpButton;
                 if ((pRVar1 != (RectTransform *)0x0) &&
                    (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                              Component_get_gameObject((Component *)pRVar1,(MethodInfo *)0x0),
                    pGVar2 != (GameObject *)0x0)) {
-                  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                          GameObject_get_activeSelf(pGVar2,(MethodInfo *)0x0);
-                  if (bVar3 == 0) {
-                    return;
-                  }
-                  pRVar1 = (this->fields).jumpButton;
-                  if ((pRVar1 != (RectTransform *)0x0) &&
-                     (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                               Component_get_gameObject((Component *)pRVar1,(MethodInfo *)0x0),
-                     pGVar2 != (GameObject *)0x0)) {
-                    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                              (pGVar2,0,(MethodInfo *)0x0);
-                    return;
-                  }
+                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                            (pGVar2,0,(MethodInfo *)0x0);
+                  return;
                 }
               }
             }
@@ -283,56 +266,6 @@ code_?:
   func_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
-  return;
-}
-
-
-/* Void HideEUseIcon() */
-
-void Assembly-CSharp.dll::InGameButtons::InGameButtons_HideEUseIcon
-               (InGameButtons *this,MethodInfo *method)
-
-{
-  this_00 = (this->fields).use;
-  if (this_00 != (RectTransform *)0x0) {
-    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                        ((Component *)this_00,(MethodInfo *)0x0);
-    if (this_01 != (GameObject *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (this_01,0,(MethodInfo *)0x0);
-      return;
-    }
-  }
-  uVar1 = func_?(&stack0xfffffff8);
-  func_?(uVar1);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
-  return;
-}
-
-
-/* Void ShowEUseIcon(ShowUseOption) */
-
-void Assembly-CSharp.dll::InGameButtons::InGameButtons_ShowEUseIcon
-               (InGameButtons *this,ShowUseOption__Enum option,MethodInfo *method)
-
-{
-  this_00 = (this->fields).use;
-  if (this_00 != (RectTransform *)0x0) {
-    pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)this_00,(MethodInfo *)0x0);
-    if (pGVar1 != (GameObject *)0x0) {
-      if (pcRam_? == (code *)0x0) {
-        pcRam_? = (code *)func_?();
-      }
-      (*pcRam_?)();
-      return;
-    }
-  }
-  uVar2 = func_?(&stack0xfffffff8);
-  func_?(uVar2);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
   return;
 }
 

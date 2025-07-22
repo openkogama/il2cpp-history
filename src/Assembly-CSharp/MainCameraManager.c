@@ -1213,7 +1213,37 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_HandleCameraCubeA
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MainCameraManager);
+    func_?(&
+                    ShortcutHandler__MethodInfo__UnityEngine__Object__FindObjectsOfType<ShortcutHandler>______
+                   );
+    func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
+  }
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__UnityEngine__Object);
+  }
+  pOVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_FindObjectsOfType_2
+                     (
+                     ShortcutHandler__MethodInfo__UnityEngine__Object__FindObjectsOfType<ShortcutHandler>______
+                     );
+  uVar2 = 0;
+  if (pOVar1 == (Object__Array *)0x0) {
+code_?:
+    func_?();
+code_?:
+    func_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  ppOVar4 = pOVar1->vector;
+  for (; this_00 = (ShortcutHandler *)0x0, (int)uVar2 < (int)pOVar1->max_length; uVar2 = uVar2 + 1)
+  {
+    if (pOVar1->max_length <= uVar2) goto code_?;
+    this_00 = (ShortcutHandler *)*ppOVar4;
+    if (this_00 == (ShortcutHandler *)0x0) goto code_?;
+    if ((this_00->fields).kogamaControl == 0x34) break;
+    ppOVar4 = ppOVar4 + 1;
   }
   if (cubeAddedRemoved == 0) {
     ppLayer = (this->fields).postProcessLayer;
@@ -1222,6 +1252,13 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_HandleCameraCubeA
       func_?(TypeInfo__MainCameraManager);
     }
     MainCameraManager_EnablePostProcessing(ppLayer,ppVolume,0,(MethodInfo *)0x0);
+    if (this_00 != (ShortcutHandler *)0x0) {
+      ShortcutHandler::ShortcutHandler_UnRegisterShortcutKey(this_00,(MethodInfo *)0x0);
+      return;
+    }
+  }
+  else if (this_00 != (ShortcutHandler *)0x0) {
+    ShortcutHandler::ShortcutHandler_RegisterShortcutKey(this_00,(MethodInfo *)0x0);
   }
   return;
 }
@@ -1635,7 +1672,7 @@ void Assembly-CSharp.dll::MainCameraManager::MainCameraManager_StartTransitionCa
                       Transform_set_localRotation
                                 (pTVar3,(this_00->fields).prevCameraRotation,(MethodInfo *)0x0);
                       (this_00->fields).time = (float)&UNK_?;
-                      (this_00->fields).superSoft = 0xfa;
+                      (this_00->fields).superSoft = 0x6a;
                       (this_00->fields).transitionPercentage = 0.0;
                       return;
                     }

@@ -190,11 +190,11 @@ Vector3 * Assembly-CSharp.dll::ModelingDynamicBoxConstraint::
     fVar12 = (VStack_11.y - (float)uStack_30._4_4_) * _UNK_?;
     VStack_11.z = (VStack_11.z - (pVVar35->oneVector).z) * _UNK_?;
     fStack_36 = (float)((uint)VStack_11.z ^
-                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                       __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     min.y = (float)((uint)fVar12 ^
-                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                   __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     min.x = (float)((uint)fVar21 ^
-                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                   __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     min.z = fStack_36;
     max.y = fVar12;
     max.x = fVar21;
@@ -374,7 +374,7 @@ code_?:
             pVVar3 = (Vector3 *)&stack0xffffff8c;
             uVar34 = (undefined2)uVar33;
             uVar35 = (undefined2)((uint)uVar33 >> 0x10);
-            uVar12 = 0x777b;
+            uVar12 = 0x58bb;
             uVar30 = 0x1046;
             fVar25 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
                                (pVVar3,index,(MethodInfo *)0x0);
@@ -571,16 +571,16 @@ void Assembly-CSharp.dll::ModelingDynamicBoxConstraint::ModelingDynamicBoxConstr
   uVar1 = SUB42(in_stack_2,2);
   uVar3 = (undefined2)((uint)unaff_EDI >> 0x10);
   if (cRam_? == '\0') {
-    func_?(0x37f4);
+    func_?(0x6914);
     in_stack_4 = 0x11b5;
-    func_?(0xa02c);
+    func_?(0xd0f4);
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(0xa180);
+    func_?(0xd2a0);
     in_stack_4 = 0x11b5;
-    func_?(0xa330);
-    func_?(0xa08c);
+    func_?(0xd434);
+    func_?(0xd1f4);
     cRam_? = '\x01';
   }
   if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {

@@ -84,33 +84,11 @@ void Assembly-CSharp.dll::RTG::RTUndoRedo::RTUndoRedo_RecordAction
                  (MethodInfo *)0x0);
     }
     pLVar1 = (this->fields)._actionGroupStack;
-    value = (Object *)func_?();
-    if (cRam_? == '\0') {
-      func_?();
-      func_?(&MethodInfo__System__Collections__Generic__List<RTG::IUndoRedoAction>__List__)
-      ;
-      func_?(&TypeInfo__System__Collections__Generic__List<RTG::IUndoRedoAction>);
-      cRam_? = '\x01';
-    }
-    this_00 = (Object__Class *)
-              func_?(TypeInfo__System__Collections__Generic__List<RTG::IUndoRedoAction>);
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
-    __Il2CppFullySharedGenericType]::
-    LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-              ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
-               MethodInfo__System__Collections__Generic__List<RTG::IUndoRedoAction>__List__);
-    value[1].klass = this_00;
-    func_?(value + 1,this_00);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (value,ExceptionArgument__Enum_obj,in_stack_2);
-    if ((value[1].klass != (Object__Class *)0x0) &&
-       (mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-        List_1_System_Object__Add
-                  ((List_1_System_Object_ *)value[1].klass,(Object *)action,
-                   MethodInfo__System__Collections__Generic__List<RTG::IUndoRedoAction>__Add_RTG__IUndoRedoAction_
-                  ), pLVar1 != (List_1_RTG_RTUndoRedo_ActionGroup_ *)0x0)) {
+    this_00 = (RTUndoRedo_ActionGroup *)func_?(TypeInfo__RTG__RTUndoRedo__ActionGroup);
+    RTUndoRedo+ActionGroup::RTUndoRedo_ActionGroup__ctor(this_00,action,(MethodInfo *)0x0);
+    if (pLVar1 != (List_1_RTG_RTUndoRedo_ActionGroup_ *)0x0) {
       mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-                ((List_1_System_Object_ *)pLVar1,value,
+                ((List_1_System_Object_ *)pLVar1,(Object *)this_00,
                  MethodInfo__System__Collections__Generic__List<RTG::RTUndoRedo::ActionGroup>__Add_RTG__RTUndoRedo__ActionGroup_
                 );
       pLVar1 = (this->fields)._actionGroupStack;
@@ -127,8 +105,8 @@ void Assembly-CSharp.dll::RTG::RTUndoRedo::RTUndoRedo_RecordAction
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

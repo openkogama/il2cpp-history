@@ -5,7 +5,7 @@ void Assembly-CSharp.dll::RTG::XZGridLookAndFeel::XZGridLookAndFeel__ctor
                (XZGridLookAndFeel *this,MethodInfo *method)
 
 {
-  pCVar1 = ColorEx::ColorEx_FromByteValues(&CStack_2,0x80,0x80,0x80,0x66,(MethodInfo *)0x0);
+  pCVar1 = RTSystemValues::RTSystemValues_get_GridLineColor(&CStack_2,(MethodInfo *)0x0);
   fVar3 = pCVar1->g;
   fVar4 = pCVar1->b;
   fVar5 = pCVar1->a;

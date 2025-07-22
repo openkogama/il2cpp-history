@@ -556,18 +556,18 @@ void Assembly-CSharp.dll::PickupItemBazooka::PickupItemBazooka_OnHitMaxRangeLoca
     voxelHit._0_68_ =
          ZEXT2068(CONCAT416((MethodInfo *)
                             ((uint)lineOfFire.m_Direction.z ^
-                            __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                            __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                             ),CONCAT412((uint)lineOfFire.m_Direction.y ^
-                                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                        __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                                         ,CONCAT48((uint)lineOfFire.m_Direction.x ^
-                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                                                   ,CONCAT44(lineOfFire.m_Origin.z +
                                                             lineOfFire.m_Direction.z * fVar1,
                                                             lineOfFire.m_Direction.x)))));
     auVar4 = lineOfFire._4_20_;
     lineOfFire_00.m_Direction.z =
          (float)((uint)lineOfFire.m_Direction.y ^
-                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     auVar5 = auVar4._0_12_;
     lineOfFire_00.m_Origin.x = (float)auVar5._0_4_;
     lineOfFire_00.m_Origin.y = (float)auVar5._4_4_;
@@ -578,7 +578,7 @@ void Assembly-CSharp.dll::PickupItemBazooka::PickupItemBazooka_OnHitMaxRangeLoca
               (this,voxelHit,lineOfFire_00,
                (MethodInfo *)
                ((uint)lineOfFire.m_Direction.z ^
-               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field));
+               __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field));
     fStack6 = lineOfFire.m_Direction.y;
     if (cRam_? == '\0') {
       func_?();
@@ -640,32 +640,20 @@ void Assembly-CSharp.dll::PickupItemBazooka::PickupItemBazooka_ResetAmmo
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
     cRam_? = '\x01';
   }
-  OStack_1.currentCryptoKey = (this->fields).maxAmmo.currentCryptoKey;
-  OStack_1.hiddenValue = (this->fields).maxAmmo.hiddenValue;
-  OStack_1.fakeValue = (this->fields).maxAmmo.fakeValue;
-  OStack_1.inited = (this->fields).maxAmmo.inited;
-  OStack_1._13_3_ = *(undefined3 *)&(this->fields).maxAmmo.field_0xd;
+  iVar1 = (*(code *)(this->klass->vtable).get_MaxAmmo.method)
+                    (this,(this->klass->vtable).get_Quantity.methodPtr);
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor ==
       0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
   }
-  value.hiddenValue = OStack_1.hiddenValue;
-  value.currentCryptoKey = OStack_1.currentCryptoKey;
-  value.fakeValue = OStack_1.fakeValue;
-  value.inited = OStack_1.inited;
-  value._13_3_ = OStack_1._13_3_;
-  iVar2 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-          ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
-  iVar2 = (*(code *)(this->klass->vtable).GetAmmoMultiplier.method)
-                    (this,iVar2,(this->klass->vtable).UpdateWithDirection.methodPtr);
-  pOVar3 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-           ObscuredInt_op_Implicit(&OStack_1,iVar2,(MethodInfo *)0x0);
-  iVar2 = pOVar3->hiddenValue;
-  iVar4 = pOVar3->fakeValue;
-  bVar5 = pOVar3->inited;
-  uVar6 = *(undefined3 *)&pOVar3->field_0xd;
-  (this->fields).currentAmmo.currentCryptoKey = pOVar3->currentCryptoKey;
-  (this->fields).currentAmmo.hiddenValue = iVar2;
+  pOVar2 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+           ObscuredInt_op_Implicit(&OStack_3,iVar1,(MethodInfo *)0x0);
+  iVar1 = pOVar2->hiddenValue;
+  iVar4 = pOVar2->fakeValue;
+  bVar5 = pOVar2->inited;
+  uVar6 = *(undefined3 *)&pOVar2->field_0xd;
+  (this->fields).currentAmmo.currentCryptoKey = pOVar2->currentCryptoKey;
+  (this->fields).currentAmmo.hiddenValue = iVar1;
   (this->fields).currentAmmo.fakeValue = iVar4;
   (this->fields).currentAmmo.inited = bVar5;
   *(undefined3 *)&(this->fields).currentAmmo.field_0xd = uVar6;
@@ -756,6 +744,29 @@ bool Assembly-CSharp.dll::PickupItemBazooka::PickupItemBazooka_get_IsAmmoDeplete
   cVar5 = (*(code *)(this->klass->vtable).get_HasUnlimitedAmmo.method)
                     (this,(this->klass->vtable).get_CanUnequip.methodPtr);
   return cVar5 == '\0';
+}
+
+
+/* Int32 get_MaxAmmo() */
+
+int32_t Assembly-CSharp.dll::PickupItemBazooka::PickupItemBazooka_get_MaxAmmo
+                  (PickupItemBazooka *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+    cRam_? = '\x01';
+  }
+  value = (this->fields).maxAmmo;
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor ==
+      0) {
+    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+  }
+  iVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+          ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
+  iVar1 = (*(code *)(this->klass->vtable).CalculateMaxAmmo.method)
+                    (this,iVar1,(this->klass->vtable).UpdateWithDirection.methodPtr);
+  return iVar1;
 }
 
 

@@ -142,11 +142,11 @@ void Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_Initialize
     }
   }
 code_?:
-  (*(code *)(this->klass->vtable).__unknown_4.method)
+  (*(code *)(this->klass->vtable).__unknown_5.method)
             (this,(this->klass->vtable).Initialize.methodPtr);
   pPVar6 = (PickupItemEditable_EditableItemConfiguration *)
-           (*(code *)(this->klass->vtable).__unknown_3.method)
-                     (this,(this->klass->vtable).__unknown_4.methodPtr);
+           (*(code *)(this->klass->vtable).__unknown_4.method)
+                     (this,(this->klass->vtable).__unknown_5.methodPtr);
   (this->fields)._Configuration_k__BackingField = pPVar6;
   func_?(&(this->fields)._Configuration_k__BackingField,pPVar6);
   (*(code *)(this->klass->vtable).SetValuesBasedOnConfiguration.method)
@@ -213,7 +213,7 @@ bool Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_IsSamePickupIte
   if (IVar4 != IVar5) {
     return 0;
   }
-  bVar3 = (*(code *)(this->klass->vtable).__unknown_1.method)(this);
+  bVar3 = (*(code *)(this->klass->vtable).__unknown_2.method)(this);
   return bVar3;
 }
 
@@ -424,17 +424,17 @@ void Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_OnStateChanged
                        int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_
                       );
     if (IVar2 == IVar3) {
-      uStack4 = *(undefined4 *)(*unaff_ESI + 0x1ec);
-      cVar5 = (**(code **)(*unaff_ESI + 0x1e8))();
+      uStack4 = *(undefined4 *)(*unaff_ESI + 500);
+      cVar5 = (**(code **)(*unaff_ESI + 0x1f0))();
       if (cVar5 != '\0') {
         return;
       }
     }
-    uStack4 = *(undefined4 *)(*unaff_ESI + 0x234);
-    (**(code **)(*unaff_ESI + 0x230))();
-    (**(code **)(*unaff_ESI + 0x1f0))();
-    (**(code **)(*unaff_ESI + 0x210))();
+    uStack4 = *(undefined4 *)(*unaff_ESI + 0x23c);
+    (**(code **)(*unaff_ESI + 0x238))();
+    (**(code **)(*unaff_ESI + 0x1f8))();
     (**(code **)(*unaff_ESI + 0x218))();
+    (**(code **)(*unaff_ESI + 0x220))();
   }
   return;
 }
@@ -466,7 +466,7 @@ void Assembly-CSharp.dll::PickupItemEditable::PickupItemEditable_PlayAnimation
     pAVar1 = (this->fields).animator;
     stateName = (String *)
                 (*(code *)(this->klass->vtable).get_AttackAnimationName.method)
-                          (this,(this->klass->vtable).__unknown_1.methodPtr);
+                          (this,(this->klass->vtable).__unknown_2.methodPtr);
     if (pAVar1 != (Animator *)0x0) {
       UnityEngine.AnimationModule.dll::UnityEngine::Animator::Animator_Play
                 (pAVar1,stateName,0,0.0,(MethodInfo *)0x0);

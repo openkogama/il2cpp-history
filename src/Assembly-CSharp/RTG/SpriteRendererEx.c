@@ -17,26 +17,18 @@ AABB * Assembly-CSharp.dll::RTG::SpriteRendererEx::SpriteRendererEx_GetModelSpac
     this = UnityEngine.CoreModule.dll::UnityEngine::SpriteRenderer::SpriteRenderer_get_sprite
                      (spriteRenderer,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      AStack_1._size.x = (float)TypeInfo__UnityEngine__Object;
-      func_?();
+      func_?(TypeInfo__UnityEngine__Object);
     }
-    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                       ((Object_1 *)this,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      pAVar3 = AABB::AABB_GetInvalid(&AStack_1,(MethodInfo *)0x0);
-      fVar4 = (pAVar3->_size).y;
-      fVar5 = (pAVar3->_size).z;
-      fVar6 = (pAVar3->_center).x;
-      (__return_storage_ptr__->_size).x = (pAVar3->_size).x;
-      (__return_storage_ptr__->_size).y = fVar4;
-      (__return_storage_ptr__->_size).z = fVar5;
-      (__return_storage_ptr__->_center).x = fVar6;
-      fVar4 = (pAVar3->_center).z;
-      (__return_storage_ptr__->_center).y = (pAVar3->_center).y;
-      (__return_storage_ptr__->_center).z = fVar4;
-      uVar7 = *(undefined3 *)&pAVar3->field_0x19;
-      __return_storage_ptr__->_isValid = pAVar3->_isValid;
-      *(undefined3 *)&__return_storage_ptr__->field_0x19 = uVar7;
+    if (bVar1 != 0) {
+      (__return_storage_ptr__->_size).x = 0.0;
+      (__return_storage_ptr__->_size).y = 0.0;
+      (__return_storage_ptr__->_size).z = 0.0;
+      (__return_storage_ptr__->_center).x = 0.0;
+      (__return_storage_ptr__->_center).y = 0.0;
+      (__return_storage_ptr__->_center).z = 0.0;
+      *(undefined4 *)&__return_storage_ptr__->_isValid = 0;
       return __return_storage_ptr__;
     }
     if (this != (Sprite *)0x0) {
@@ -62,8 +54,8 @@ AABB * Assembly-CSharp.dll::RTG::SpriteRendererEx::SpriteRendererEx_GetModelSpac
     }
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  pAVar3 = (AABB *)(*pcVar8)();
+  pcVar2 = (code *)swi(3);
+  pAVar3 = (AABB *)(*pcVar2)();
   return pAVar3;
 }
 
@@ -127,127 +119,126 @@ bool Assembly-CSharp.dll::RTG::SpriteRendererEx::SpriteRendererEx_IsPixelFullyTr
                (SpriteRenderer *spriteRenderer,Vector3 worldPos,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff6c;
-  puVar5 = &stack0xffffff6c;
+  puStack_1 = &stack0xfffffffc;
+  uStack_2 = 0xffffffff;
+  puStack_3 = &DAT_?;
+  uStack_4 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_4;
+  puStack_5 = &stack0xffffff30;
+  puVar6 = &stack0xfffffffc;
+  puVar7 = &stack0xffffff30;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
-    puVar5 = puStack_4;
+    puVar6 = puStack_1;
+    puVar7 = puStack_5;
   }
-  puStack_4 = puVar5;
-  AStack_6._center.y = 0.0;
-  AStack_6._center.z = 0.0;
-  AStack_6._isValid = 0;
-  AStack_6._25_3_ = 0;
-  AStack_6._size.x = 0.0;
-  AStack_6._size.y = 0.0;
-  AStack_6._size.z = 0.0;
-  AStack_6._center.x = 0.0;
+  puStack_5 = puVar7;
+  puStack_1 = puVar6;
   if (spriteRenderer != (SpriteRenderer *)0x0) {
     this = UnityEngine.CoreModule.dll::UnityEngine::SpriteRenderer::SpriteRenderer_get_sprite
                      (spriteRenderer,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                       ((Object_1 *)this,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar7 != 0) {
+    bVar8 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                      ((Object_1 *)this,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar8 != 0) {
 code_?:
-      *unaff_FS_OFFSET = uStack_3;
+      *unaff_FS_OFFSET = uStack_4;
       return 1;
     }
     if (this != (Sprite *)0x0) {
-      pTStack_8 = UnityEngine.CoreModule.dll::UnityEngine::Sprite::Sprite_get_texture
+      pTStack_9 = UnityEngine.CoreModule.dll::UnityEngine::Sprite::Sprite_get_texture
                              (this,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
-      bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                         ((Object_1 *)pTStack_8,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar7 != 0) goto code_?;
+      bVar8 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                        ((Object_1 *)pTStack_9,(Object_1 *)0x0,(MethodInfo *)0x0);
+      if (bVar8 != 0) goto code_?;
       this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                           ((Component *)spriteRenderer,(MethodInfo *)0x0);
       if (this_00 != (Transform *)0x0) {
-        pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                  Transform_InverseTransformPoint(&VStack_10,this_00,worldPos,(MethodInfo *)0x0);
-        uVar11 = pVVar9->x;
-        uVar12 = pVVar9->y;
-        fStack_13 = pVVar9->z;
-        fStack_14 = (float)uVar11;
+        pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_InverseTransformPoint
+                           (&VStack_11,this_00,worldPos,(MethodInfo *)0x0);
+        uVar12 = pVVar10->x;
+        uVar13 = pVVar10->y;
+        fStack_14 = pVVar10->z;
         fStack_15 = (float)uVar12;
+        fStack_16 = (float)uVar13;
         if (cRam_? == '\0') {
           func_?(&TypeInfo__UnityEngine__Vector3);
           cRam_? = '\x01';
         }
-        pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                            (&VStack_10,TypeInfo__UnityEngine__Vector3->static_fields->forwardVector
-                             ,(MethodInfo *)0x0);
-        CStack_16.r = pVVar9->x;
-        CStack_16.g = pVVar9->y;
-        CStack_16.b = pVVar9->z;
-        fVar17 = CStack_16.b * fStack_13 + CStack_16.g * fStack_15 + CStack_16.r * fStack_14 + 0.0;
-        fVar18 = fStack_15 - CStack_16.g * fVar17;
-        fStack_19 = fStack_14 - CStack_16.r * fVar17;
-        VStack_10.z = fStack_13 - CStack_16.b * fVar17;
-        pAVar20 = SpriteRendererEx_GetModelSpaceAABB(&AStack_21,spriteRenderer,(MethodInfo *)0x0);
-        fStack_13 = 1.0;
-        AStack_6._size.x = (pAVar20->_size).x;
-        AStack_6._size.y = (pAVar20->_size).y;
-        AStack_6._center.y = (pAVar20->_center).y;
-        AStack_6._center.z = (pAVar20->_center).z;
-        AStack_6._isValid = pAVar20->_isValid;
-        AStack_6._25_3_ = *(undefined3 *)&pAVar20->field_0x19;
-        AStack_6._center.x = (float)((ulonglong)*(undefined8 *)&(pAVar20->_size).z >> 0x20);
-        AStack_6._size.z = 1.0;
-        point.y = fVar18;
-        point.x = fStack_19;
-        point.z = VStack_10.z;
-        bVar7 = AABB::AABB_ContainsPoint(&AStack_6,point,(MethodInfo *)0x0);
-        if (bVar7 == 0) goto code_?;
-        pVVar9 = AABB::AABB_get_Min(&VStack_10,&AStack_6,(MethodInfo *)0x0);
-        uVar22 = pVVar9->x;
-        uVar23 = pVVar9->y;
-        fStack_13 = pVVar9->z;
-        fVar17 = CStack_16.b * fStack_13 + CStack_16.g * (float)uVar23 + CStack_16.r * (float)uVar22 +
-                 0.0;
-        uVar24 = pVVar9->x;
-        uVar25 = pVVar9->y;
-        fVar26 = CStack_16.g * fVar17;
-        fStack_19 = fStack_19 - ((float)uVar24 - CStack_16.r * fVar17);
-        fStack_14 = (float)uVar24;
-        fStack_15 = (float)uVar25;
-        fStack_13 = UnityEngine.CoreModule.dll::UnityEngine::Sprite::Sprite_get_pixelsPerUnit
+        pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                           (&VStack_11,TypeInfo__UnityEngine__Vector3->static_fields->forwardVector,
+                            (MethodInfo *)0x0);
+        uStack_17._0_4_ = pVVar10->x;
+        uStack_17._4_4_ = pVVar10->y;
+        fStack_18 = pVVar10->z;
+        fVar19 = fStack_16 * uStack_17._4_4_ + fStack_15 * (float)uStack_17 + fStack_14 * fStack_18
+                 + 0.0;
+        fStack_20 = fStack_16 - uStack_17._4_4_ * fVar19;
+        fStack_21 = fStack_15 - (float)uStack_17 * fVar19;
+        VStack_11.z = fStack_14 - fStack_18 * fVar19;
+        pAVar22 = SpriteRendererEx_GetModelSpaceAABB(&AStack_23,spriteRenderer,(MethodInfo *)0x0);
+        fStack_14 = 1.0;
+        CStack_24.r = (pAVar22->_size).x;
+        AStack_23._size.x = (pAVar22->_size).y;
+        CStack_24.b = (pAVar22->_size).z;
+        CStack_24.a = (pAVar22->_center).x;
+        AStack_25._center.y = (pAVar22->_center).y;
+        AStack_25._center.z = (pAVar22->_center).z;
+        AStack_25._isValid = pAVar22->_isValid;
+        AStack_25._25_3_ = *(undefined3 *)&pAVar22->field_0x19;
+        AStack_25._size.z = 1.0;
+        point.y = fStack_20;
+        point.x = fStack_21;
+        point.z = VStack_11.z;
+        AStack_23._size.y = AStack_23._size.x;
+        AStack_23._size.z = AStack_23._size.x;
+        AStack_23._center.x = AStack_23._size.x;
+        CStack_24.g = AStack_23._size.x;
+        AStack_25._size.x = CStack_24.r;
+        AStack_25._size.y = AStack_23._size.x;
+        AStack_25._center.x = CStack_24.a;
+        bVar8 = AABB::AABB_ContainsPoint(&AStack_25,point,(MethodInfo *)0x0);
+        if (bVar8 == 0) goto code_?;
+        fVar26 = AStack_25._center.y - AStack_23._size.x * _UNK_?;
+        fVar19 = AStack_25._center.x - CStack_24.r * _UNK_?;
+        fVar27 = fStack_18 * (AStack_25._center.z - _UNK_?) +
+                 uStack_17._4_4_ * fVar26 + fVar19 * (float)uStack_17 + 0.0;
+        fStack_20 = fStack_20 - (fVar26 - uStack_17._4_4_ * fVar27);
+        fStack_21 = fStack_21 - (fVar19 - (float)uStack_17 * fVar27);
+        fStack_14 = UnityEngine.CoreModule.dll::UnityEngine::Sprite::Sprite_get_pixelsPerUnit
                               (this,(MethodInfo *)0x0);
-        fStack_27 = UnityEngine.CoreModule.dll::UnityEngine::Sprite::Sprite_get_pixelsPerUnit
+        fStack_28 = UnityEngine.CoreModule.dll::UnityEngine::Sprite::Sprite_get_pixelsPerUnit
                               (this,(MethodInfo *)0x0);
-        fVar17 = (fVar18 - ((float)uVar25 - fVar26)) * fStack_27;
-        fStack_19 = fStack_19 * fStack_13;
-        VVar28 = UnityEngine.CoreModule.dll::UnityEngine::Sprite::Sprite_get_textureRectOffset
+        fStack_20 = fStack_20 * fStack_28;
+        fStack_21 = fStack_21 * fStack_14;
+        VVar29 = UnityEngine.CoreModule.dll::UnityEngine::Sprite::Sprite_get_textureRectOffset
                            (this,(MethodInfo *)0x0);
-        fVar18 = fStack_19 + fStack_15;
-        fStack_15 = VVar28.x;
-        fStack_13 = VVar28.y;
-        uStack_1 = 0;
-        if (pTStack_8 != (Texture2D *)0x0) {
-          pCVar29 = UnityEngine.CoreModule.dll::UnityEngine::Texture2D::Texture2D_GetPixel
-                              (&CStack_16,pTStack_8,(int)(fVar18 + _UNK_?),
-                               (int)(fVar17 + fStack_13 + _UNK_?),(MethodInfo *)0x0);
-          bVar30 = pCVar29->a <= _UNK_?;
-          *unaff_FS_OFFSET = uStack_3;
-          return bVar30;
+        fVar19 = fStack_21 + fStack_16;
+        fStack_16 = VVar29.x;
+        fStack_14 = VVar29.y;
+        uStack_2 = 0;
+        if (pTStack_9 != (Texture2D *)0x0) {
+          pCVar30 = UnityEngine.CoreModule.dll::UnityEngine::Texture2D::Texture2D_GetPixel
+                              (&CStack_24,pTStack_9,(int)(fVar19 + _UNK_?),
+                               (int)(fStack_20 + fStack_14 + _UNK_?),(MethodInfo *)0x0);
+          bVar31 = pCVar30->a <= _UNK_?;
+          *unaff_FS_OFFSET = uStack_4;
+          return bVar31;
         }
       }
     }
   }
   func_?();
-  pSStack_31 = spriteRenderer->klass;
-  func_?(&pSStack_31,&UNK_?);
-  pcVar32 = (code *)swi(3);
-  bVar7 = (*pcVar32)();
-  return bVar7;
+  pSStack_32 = spriteRenderer->klass;
+  func_?(&pSStack_32,&UNK_?);
+  pcVar33 = (code *)swi(3);
+  bVar8 = (*pcVar33)();
+  return bVar8;
 }
 

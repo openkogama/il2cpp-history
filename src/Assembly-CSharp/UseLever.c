@@ -9,10 +9,10 @@ void Assembly-CSharp.dll::UseLever::UseLever_Destroy(UseLever *this,MethodInfo *
     func_?(&TypeInfo__System__EventHandler<TriggerEventArgs>);
     func_?(&TypeInfo__IEditModeUI);
     func_?(&
-                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                    MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                    );
     func_?(&
-                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                    MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                    );
     func_?(&MethodInfo__UseLever__OnEditModeChange_EditModeChangeArgs_);
     cRam_? = '\x01';
@@ -32,7 +32,7 @@ code_?:
                func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
       mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                 (pEVar4,(Object *)pUVar3,
-                 MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                 MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                  ,(MethodInfo *)0x0);
       if (pTVar2 != (TriggerBoxEvents *)0x0) {
         TriggerBoxEvents::TriggerBoxEvents_remove_TriggerEnter
@@ -45,7 +45,7 @@ code_?:
                    func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
           mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                     (pEVar4,(Object *)pUVar3,
-                     MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                     MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                      ,(MethodInfo *)0x0);
           if (pTVar2 != (TriggerBoxEvents *)0x0) {
             TriggerBoxEvents::TriggerBoxEvents_remove_TriggerExit
@@ -419,10 +419,10 @@ void Assembly-CSharp.dll::UseLever::UseLever_OnUpdate(UseLever *this,MethodInfo 
         fVar8 = fVar8 * fVar7;
         pUVar1 = (this->fields).useLeverObject;
         if ((float)((uint)fVar6 ^
-                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) <=
+                   __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) <=
             fVar8) {
           fVar8 = (float)((uint)fVar6 ^
-                          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                          __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
         }
         if ((pUVar1 != (UseLeverObject *)0x0) &&
            (pTVar2 = (pUVar1->fields).plateButtonTransform, pTVar2 != (Transform *)0x0)) {
@@ -633,13 +633,13 @@ void Assembly-CSharp.dll::UseLever::UseLever__ctor
     func_?(&TypeInfo__LevelBasedUseRequirement);
     func_?(&TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement);
     func_?(&TypeInfo__StarRequirement);
+    func_?(&
+                    MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                   );
+    func_?(&
+                    MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                   );
     func_?(&TypeInfo__UseInteractor);
-    func_?(&
-                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
-                   );
-    func_?(&
-                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
-                   );
     func_?(&TypeInfo__UseLeverObject);
     func_?(&MethodInfo__UseLever__Use_int_);
     cRam_? = '\x01';
@@ -692,7 +692,7 @@ void Assembly-CSharp.dll::UseLever::UseLever__ctor
       UseInteractor::UseInteractor__ctor
                 (pUVar6,(MVWorldObjectClient *)this,pGVar5,0,triggerCollider,
                  (Func_2_Int32_Boolean_ *)this_00,(Func_3_Int32_MVInteractableBase_Boolean_ *)0x0,
-                 2.5,0,(MethodInfo *)0x0);
+                 2.5,1,0,(MethodInfo *)0x0);
       (pUVar3->fields).useInteractor = pUVar6;
       func_?(&(pUVar3->fields).useInteractor,pUVar6);
       pUVar3 = (this->fields).useLeverObject;
@@ -704,7 +704,7 @@ void Assembly-CSharp.dll::UseLever::UseLever__ctor
                  func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
         mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                   (pEVar8,(Object *)pUVar6,
-                   MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                   MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                    ,(MethodInfo *)0x0);
         if (pTVar7 != (TriggerBoxEvents *)0x0) {
           TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
@@ -717,7 +717,7 @@ void Assembly-CSharp.dll::UseLever::UseLever__ctor
                      func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
             mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                       (pEVar8,(Object *)pUVar6,
-                       MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                       MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                        ,(MethodInfo *)0x0);
             if (pTVar7 != (TriggerBoxEvents *)0x0) {
               TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit

@@ -121,36 +121,123 @@ void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarPointingHandlerRemote::
 
 {
   if ((this->fields)._.pointState == 2) {
-    AvatarLimbManager+AvatarPointingHandler::
-    AvatarLimbManager_AvatarPointingHandler_HandleWeaponPointing
-              ((AvatarLimbManager_AvatarPointingHandler *)this,(this->fields).remoteYawRotation,
-               (this->fields).remotePitchRotation,(MethodInfo *)0x0);
-  }
-  else if ((this->fields)._.pointState == 1) {
-    AvatarLimbManager+AvatarPointingHandler::AvatarLimbManager_AvatarPointingHandler_HandlePointing
-              ((AvatarLimbManager_AvatarPointingHandler *)this,(this->fields).remoteYawRotation,
-               (this->fields).remotePitchRotation,(MethodInfo *)0x0);
+    pAVar1 = (this->fields)._.limbRotator;
+    if (pAVar1 == (AvatarLimbManager_LimbRotator *)0x0) goto code_?;
+    duration = (undefined1 *)(this->fields)._.elapsedPointingTime;
+    method_00 = (MethodInfo *)0x0;
+    fVar2 = (this->fields).remotePitchRotation.x;
+    fVar3 = (this->fields).remotePitchRotation.y;
+    puStack_4 = (undefined *)(this->fields).remotePitchRotation.z;
+    puVar5 = (undefined1 *)(this->fields).remotePitchRotation.w;
+    fVar6 = (this->fields).remoteYawRotation.x;
+    fVar7 = (this->fields).remoteYawRotation.y;
+    fVar8 = (this->fields).remoteYawRotation.z;
+    fVar9 = (this->fields).remoteYawRotation.w;
+code_?:
+    QVar10.y = fVar7;
+    QVar10.x = fVar6;
+    QVar10.z = fVar8;
+    QVar10.w = fVar9;
+    limbPitchRotation_00.y = fVar3;
+    limbPitchRotation_00.x = fVar2;
+    limbPitchRotation_00.z = (float)puStack_4;
+    limbPitchRotation_00.w = (float)puVar5;
+    AvatarLimbManager+LimbRotator::AvatarLimbManager_LimbRotator_SetLimbRotation
+              (pAVar1,BodyData_PartIndex__Enum_RArm,QVar10,limbPitchRotation_00,(float)duration,
+               method_00);
   }
   else {
-    AvatarLimbManager+AvatarPointingHandler::AvatarLimbManager_AvatarPointingHandler_StopPointing
-              ((AvatarLimbManager_AvatarPointingHandler *)this,(MethodInfo *)0x0);
+    if ((this->fields)._.pointState == 1) {
+      pQVar11 = &(this->fields).remotePitchRotation;
+      fVar2 = pQVar11->x;
+      fVar3 = (this->fields).remotePitchRotation.y;
+      uVar12 = pQVar11->x;
+      uVar13 = pQVar11->y;
+      limbPitchRotation.y = (float)uVar13;
+      limbPitchRotation.x = (float)uVar12;
+      puStack_4 = (undefined *)(this->fields).remotePitchRotation.z;
+      puVar5 = (undefined1 *)(this->fields).remotePitchRotation.w;
+      method_00 = (MethodInfo *)0x0;
+      duration = &stack0xffffffe0;
+      pQVar11 = &(this->fields).remoteYawRotation;
+      fVar6 = pQVar11->x;
+      fVar7 = (this->fields).remoteYawRotation.y;
+      fVar8 = (this->fields).remoteYawRotation.z;
+      fVar9 = (this->fields).remoteYawRotation.w;
+      QVar10 = *pQVar11;
+      iVar14 = func_?(&stack0xfffffff0);
+      if (_UNK_? < *(float *)(iVar14 + 4) || _UNK_? == *(float *)(iVar14 + 4)) {
+        puVar5 = &stack0xfffffff0;
+        iVar14 = func_?();
+        if (*(float *)(iVar14 + 4) <= _UNK_?) {
+          pAVar1 = (this->fields)._.limbRotator;
+          if (pAVar1 == (AvatarLimbManager_LimbRotator *)0x0) goto code_?;
+          limbPitchRotation.z = (float)&UNK_?;
+          limbPitchRotation.w = (float)puVar5;
+          AvatarLimbManager+LimbRotator::AvatarLimbManager_LimbRotator_SetLimbRotation
+                    (pAVar1,BodyData_PartIndex__Enum_LArm,QVar10,limbPitchRotation,
+                     (this->fields)._.elapsedPointingTime,(MethodInfo *)0x0);
+          pAVar1 = (this->fields)._.limbRotator;
+          if (pAVar1 == (AvatarLimbManager_LimbRotator *)0x0) goto code_?;
+          AvatarLimbManager+LimbRotator::AvatarLimbManager_LimbRotator_StopLimbRotation
+                    (pAVar1,BodyData_PartIndex__Enum_RArm,(MethodInfo *)0x0);
+          goto code_?;
+        }
+      }
+      pAVar1 = (this->fields)._.limbRotator;
+      if (pAVar1 == (AvatarLimbManager_LimbRotator *)0x0) goto code_?;
+      goto code_?;
+    }
+    pAVar1 = (this->fields)._.limbRotator;
+    if (pAVar1 == (AvatarLimbManager_LimbRotator *)0x0) goto code_?;
+    if (cRam_? == '\0') {
+      func_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary<BodyData::PartIndex,_LimbController>__get_Item_BodyData__PartIndex_
+                     );
+      cRam_? = '\x01';
+    }
+    pDVar15 = (pAVar1->fields).limbControllers;
+    if ((pDVar15 == (Dictionary_2_BodyData_PartIndex_LimbController_ *)0x0) ||
+       (pOVar16 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+                 Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                           ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar15,2,
+                            MethodInfo__System__Collections__Generic__Dictionary<BodyData::PartIndex,_LimbController>__get_Item_BodyData__PartIndex_
+                           ), pOVar16 == (Object *)0x0)) goto code_?;
+    if (*(char *)&pOVar16[0x11].klass == '\0') {
+      *(undefined1 *)&pOVar16[0xf].klass = 0;
+    }
   }
-  AvatarLimbManager+AvatarPointingHandler::AvatarLimbManager_AvatarPointingHandler_UpdatePointing
-            ((AvatarLimbManager_AvatarPointingHandler *)this,localLookDirection,(MethodInfo *)0x0);
-  return;
-}
-
-
-/* AvatarLimbManagerRemote+AvatarPointingHandlerRemote() */
-
-void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarPointingHandlerRemote::
-     AvatarLimbManagerRemote_AvatarPointingHandlerRemote__ctor
-               (AvatarLimbManagerRemote_AvatarPointingHandlerRemote *this,MethodInfo *method)
-
-{
-  (this->fields)._.pointingDuration = 0.8;
-  (this->fields)._.pointState = 1;
-  (this->fields)._.isActive = 1;
+  pAVar1 = (this->fields)._.limbRotator;
+  if (pAVar1 != (AvatarLimbManager_LimbRotator *)0x0) {
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    pDVar15 = (pAVar1->fields).limbControllers;
+    if ((pDVar15 != (Dictionary_2_BodyData_PartIndex_LimbController_ *)0x0) &&
+       (pOVar16 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+                 Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                           ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar15,3,
+                            MethodInfo__System__Collections__Generic__Dictionary<BodyData::PartIndex,_LimbController>__get_Item_BodyData__PartIndex_
+                           ), pOVar16 != (Object *)0x0)) {
+      if (*(char *)&pOVar16[0x11].klass == '\0') {
+        *(undefined1 *)&pOVar16[0xf].klass = 0;
+      }
+code_?:
+      fVar2 = (this->fields)._.elapsedPointingTime;
+      fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
+                         ((MethodInfo *)0x0);
+      (this->fields)._.prevLookDirection.x = localLookDirection.x;
+      (this->fields)._.prevLookDirection.y = localLookDirection.y;
+      (this->fields)._.elapsedPointingTime = fVar2 - fVar3;
+      (this->fields)._.prevLookDirection.z = localLookDirection.z;
+      return;
+    }
+  }
+code_?:
+  func_?();
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
   return;
 }
 

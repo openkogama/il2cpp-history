@@ -66,7 +66,7 @@ bool Assembly-CSharp.dll::RemoveCubes+RemoveOneCube::RemoveCubes_RemoveOneCube_H
   if (cRam_? == '\0') {
     func_?();
     func_?(&TypeInfo__MV__WorldObject__ICubeModel);
-    uVar1 = 0x1036;
+    uVar1 = 0x1038;
     func_?(&TypeInfo__MoveCubeFromCoarseToFine);
     cRam_? = '\x01';
   }
@@ -169,7 +169,7 @@ bool Assembly-CSharp.dll::RemoveCubes+RemoveOneCube::
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__CubeBase);
     func_?(&TypeInfo__MV__WorldObject__ICubeModel);
-    uVar1 = 0x1036;
+    uVar1 = 0x1038;
     func_?(&TypeInfo__MoveCubeFromCoarseToFine);
     cRam_? = '\x01';
   }

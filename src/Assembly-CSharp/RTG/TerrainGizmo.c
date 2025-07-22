@@ -481,7 +481,7 @@ code_?:
                         pTVar12 = (this->fields)._targetTerrain;
                         if (pTVar12 == (Terrain *)0x0) goto code_?;
                         worldPosition_00.y = (float)uVar8 + (float)this_05;
-                        worldPosition_00.x = (float)uVar4 + 4.3045985e-29;
+                        worldPosition_00.x = (float)uVar4 + 4.308017e-29;
                         worldPosition_00.z = (float)method_00;
                         fVar25 = UnityEngine.TerrainModule.dll::UnityEngine::Terrain::
                                  Terrain_SampleHeight(pTVar12,worldPosition_00,(MethodInfo *)0x0);
@@ -489,7 +489,7 @@ code_?:
                                   GameObject_get_transform((GameObject *)this_04,(MethodInfo *)0x0);
                         if (pTVar19 == (Transform *)0x0) goto code_?;
                         value_00.y = fVar25 + fVar30 + ((float)uVar8 - fVar24);
-                        value_00.x = (float)uVar4 + 4.3045985e-29;
+                        value_00.x = (float)uVar4 + 4.308017e-29;
                         value_00.z = (float)method_00;
                         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                                   (pTVar19,value_00,(MethodInfo *)0x0);
@@ -1162,14 +1162,14 @@ void Assembly-CSharp.dll::RTG::TerrainGizmo::TerrainGizmo_OnAttached
             uVar9 = (pVVar8->rightVector).x;
             uVar10 = (pVVar8->rightVector).y;
             uVar11 = uVar10 ^ 
-                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
             fVar12 = (float)((uint)(pVVar8->rightVector).z ^
-                            __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                            __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                             );
             if (pTVar7 != (TerrainGizmo_RadiusTick *)0x0) {
               (pTVar7->fields).DragAxis.x =
                    (float)(uVar9 ^ 
-                          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                          __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
               (pTVar7->fields).DragAxis.y = (float)uVar11;
               (pTVar7->fields).DragAxis.z = fVar12;
               pTVar7 = (this->fields)._leftRadiusTick;
@@ -1237,15 +1237,15 @@ void Assembly-CSharp.dll::RTG::TerrainGizmo::TerrainGizmo_OnAttached
                         uVar15 = (pVVar8->forwardVector).x;
                         uVar16 = (pVVar8->forwardVector).y;
                         uVar11 = uVar16 ^ 
-                                 __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                 __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                         ;
                         fVar12 = (float)((uint)(pVVar8->forwardVector).z ^
-                                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                        __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                                         );
                         if (pTVar7 != (TerrainGizmo_RadiusTick *)0x0) {
                           (pTVar7->fields).DragAxis.x =
                                (float)(uVar15 ^ 
-                                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                      __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                                       );
                           (pTVar7->fields).DragAxis.y = (float)uVar11;
                           (pTVar7->fields).DragAxis.z = fVar12;
@@ -2479,11 +2479,11 @@ void Assembly-CSharp.dll::RTG::TerrainGizmo::TerrainGizmo_OnGizmoRender
   if ((TypeInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>);
   }
-  this_02 = (RTGizmosEngine *)
+  this_01 = (RTGizmosEngine *)
             MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
                       (MethodInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>__get_Get__);
-  if (this_02 == (RTGizmosEngine *)0x0) goto code_?;
-  iVar2 = RTGizmosEngine::RTGizmosEngine_get_NumRenderCameras(this_02,(MethodInfo *)0x0);
+  if (this_01 == (RTGizmosEngine *)0x0) goto code_?;
+  iVar2 = RTGizmosEngine::RTGizmosEngine_get_NumRenderCameras(this_01,(MethodInfo *)0x0);
   if (1 < iVar2) {
     TerrainGizmo_UpdateTicks(this,(MethodInfo *)0x0);
   }
@@ -2491,128 +2491,110 @@ void Assembly-CSharp.dll::RTG::TerrainGizmo::TerrainGizmo_OnGizmoRender
     if ((TypeInfo__RTG__Singleton<RTG::GizmoLineMaterial>->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pMVar3 = MethodInfo__RTG__Singleton<RTG::GizmoLineMaterial>__get_Get__;
-    pIVar4 = MethodInfo__RTG__Singleton<RTG::GizmoLineMaterial>__get_Get__->klass;
-    if (((uint)pIVar4->vtable[0].methodPtr & 0x100) == 0) {
-      pIVar4 = (Il2CppClass *)func_?();
-    }
-    pIVar4 = pIVar4->rgctx_data[2].klass;
-    if (((uint)pIVar4->vtable[0].methodPtr & 0x100) == 0) {
-      pIVar4 = (Il2CppClass *)func_?();
-    }
-    if (pIVar4->cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    pIVar4 = pMVar3->klass;
-    if (((uint)pIVar4->vtable[0].methodPtr & 0x100) == 0) {
-      pIVar4 = (Il2CppClass *)func_?();
-    }
-    pIVar4 = pIVar4->rgctx_data[2].klass;
-    if (((uint)pIVar4->vtable[0].methodPtr & 0x100) == 0) {
-      pIVar4 = (Il2CppClass *)func_?();
-    }
-    this_00 = *(GizmoLineMaterial **)pIVar4->static_fields;
-    if (this_00 == (GizmoLineMaterial *)0x0) goto code_?;
-    GizmoLineMaterial::GizmoLineMaterial_ResetValuesToSensibleDefaults(this_00,(MethodInfo *)0x0);
+    this_02 = (GizmoLineMaterial *)
+              Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
+                        (MethodInfo__RTG__Singleton<RTG::GizmoLineMaterial>__get_Get__);
+    if (this_02 == (GizmoLineMaterial *)0x0) goto code_?;
+    GizmoLineMaterial::GizmoLineMaterial_ResetValuesToSensibleDefaults(this_02,(MethodInfo *)0x0);
     if ((this->fields)._sharedLookAndFeel == (TerrainGizmoLookAndFeel *)0x0) {
-      pTVar5 = (this->fields)._lookAndFeel;
-      if (pTVar5 == (TerrainGizmoLookAndFeel *)0x0) goto code_?;
+      pTVar3 = (this->fields)._lookAndFeel;
+      if (pTVar3 == (TerrainGizmoLookAndFeel *)0x0) goto code_?;
     }
     else {
-      pTVar5 = (this->fields)._sharedLookAndFeel;
+      pTVar3 = (this->fields)._sharedLookAndFeel;
     }
     GizmoLineMaterial::GizmoLineMaterial_SetColor
-              (this_00,(pTVar5->fields)._radiusCircleColor,(MethodInfo *)0x0);
-    GizmoLineMaterial::GizmoLineMaterial_SetPass(this_00,0,(MethodInfo *)0x0);
-    pTVar6 = (this->fields)._targetTerrain;
-    if ((pTVar6 == (Terrain *)0x0) ||
+              (this_02,(pTVar3->fields)._radiusCircleColor,(MethodInfo *)0x0);
+    GizmoLineMaterial::GizmoLineMaterial_SetPass(this_02,0,(MethodInfo *)0x0);
+    pTVar4 = (this->fields)._targetTerrain;
+    if ((pTVar4 == (Terrain *)0x0) ||
        (this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                            ((Component *)pTVar6,(MethodInfo *)0x0), this_03 == (Transform *)0x0))
+                            ((Component *)pTVar4,(MethodInfo *)0x0), this_03 == (Transform *)0x0))
     goto code_?;
-    pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
                         ((Vector3 *)&stack0xffffffd0,this_03,(MethodInfo *)0x0);
-    pMVar3 = (MethodInfo *)pVVar7->y;
-    pGVar8 = (this->fields)._._gizmo;
-    if ((pGVar8 == (Gizmo *)0x0) ||
-       (pGVar9 = (pGVar8->fields)._transform, pGVar9 == (GizmoTransform *)0x0))
+    pMVar6 = (MethodInfo *)pVVar5->y;
+    pGVar7 = (this->fields)._._gizmo;
+    if ((pGVar7 == (Gizmo *)0x0) ||
+       (pGVar8 = (pGVar7->fields)._transform, pGVar8 == (GizmoTransform *)0x0))
     goto code_?;
-    uVar10._0_4_ = (pGVar9->fields)._position3D.x;
-    uVar10._4_4_ = (pGVar9->fields)._position3D.y;
-    fVar11 = (pGVar9->fields)._position3D.z;
-    pLVar12 = (this->fields)._modelRadiusCirclePoints;
-    if (pLVar12 == (List_1_UnityEngine_Vector3_ *)0x0) goto code_?;
+    uVar9._0_4_ = (pGVar8->fields)._position3D.x;
+    uVar9._4_4_ = (pGVar8->fields)._position3D.y;
+    fVar10 = (pGVar8->fields)._position3D.z;
+    pLVar11 = (this->fields)._modelRadiusCirclePoints;
+    if (pLVar11 == (List_1_UnityEngine_Vector3_ *)0x0) goto code_?;
     index = 0;
-    if (0 < (pLVar12->fields)._size) {
+    if (0 < (pLVar11->fields)._size) {
       do {
-        fVar13 = (float)uVar10;
-        pLVar14 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
+        fVar12 = (float)uVar9;
+        pLVar13 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
                  (this->fields)._modelRadiusCirclePoints;
-        if (pLVar14 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0)
+        if (pLVar13 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0)
         goto code_?;
-        pVVar15 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+        pVVar14 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
                   VisualTreeAsset+UsingEntry]::
                   List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                            ((VisualTreeAsset_UsingEntry *)&stack0xffffffc4,pLVar14,index,
+                            ((VisualTreeAsset_UsingEntry *)&stack0xffffffc4,pLVar13,index,
                              MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                             );
-        uVar16 = pVVar15->alias;
-        fVar13 = fVar13 + (float)uVar16 * (this->fields)._radius;
-        fVar17 = fVar11 + (float)pVVar15->asset * (this->fields)._radius;
-        pLVar14 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
+        uVar15 = pVVar14->alias;
+        fVar12 = fVar12 + (float)uVar15 * (this->fields)._radius;
+        fVar16 = fVar10 + (float)pVVar14->asset * (this->fields)._radius;
+        pLVar13 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
                  (this->fields)._radiusCirclePoints;
-        pTVar6 = (this->fields)._targetTerrain;
-        if ((pLVar14 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) ||
-           (pVVar15 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+        pTVar4 = (this->fields)._targetTerrain;
+        if ((pLVar13 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) ||
+           (pVVar14 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
                       VisualTreeAsset+UsingEntry]::
                       List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                                ((VisualTreeAsset_UsingEntry *)&stack0xffffffb8,pLVar14,index,
+                                ((VisualTreeAsset_UsingEntry *)&stack0xffffffb8,pLVar13,index,
                                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                                ), pTVar6 == (Terrain *)0x0)) goto code_?;
-        fVar11 = (float)pVVar15->alias;
-        uVar10._4_4_ = (float)pTVar6;
-        uVar10._0_4_ = (float)&UNK_?;
-        fVar18 = UnityEngine.TerrainModule.dll::UnityEngine::Terrain::Terrain_SampleHeight
-                           (pTVar6,(Vector3)*pVVar15,(MethodInfo *)0x0);
-        this_01 = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)(this->fields)._radiusCirclePoints;
-        if (this_01 == (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0) goto code_?;
-        value.FirstAxisSign = (int32_t)(fVar18 + (float)pMVar3);
-        value.Quadrant = (int32_t)fVar13;
-        value.SecondAxisSign = (int32_t)fVar17;
-        pMVar3 = 
+                                ), pTVar4 == (Terrain *)0x0)) goto code_?;
+        fVar10 = (float)pVVar14->alias;
+        uVar9._4_4_ = (float)pTVar4;
+        uVar9._0_4_ = (float)&UNK_?;
+        fVar17 = UnityEngine.TerrainModule.dll::UnityEngine::Terrain::Terrain_SampleHeight
+                           (pTVar4,(Vector3)*pVVar14,(MethodInfo *)0x0);
+        this_00 = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)(this->fields)._radiusCirclePoints;
+        if (this_00 == (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0) goto code_?;
+        value.FirstAxisSign = (int32_t)(fVar17 + (float)pMVar6);
+        value.Quadrant = (int32_t)fVar12;
+        value.SecondAxisSign = (int32_t)fVar16;
+        pMVar6 = 
         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
         ;
         mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
         List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__set_Item
-                  (this_01,index,value,
+                  (this_00,index,value,
                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__set_Item_int__UnityEngine__Vector3_
                   );
         index = index + 1;
-      } while (index < (int)fVar17);
+      } while (index < (int)fVar16);
     }
     GLRenderer::GLRenderer_DrawLines3D((this->fields)._radiusCirclePoints,(MethodInfo *)0x0);
   }
-  pGVar19 = (this->fields)._axisSlider;
-  if (pGVar19 != (GizmoLineSlider3D *)0x0) {
-    (*(code *)(pGVar19->klass->vtable).Render_1.method)();
-    pGVar20 = (this->fields)._midCap;
-    if (pGVar20 != (GizmoCap3D *)0x0) {
-      (*(code *)(pGVar20->klass->vtable).Render_1.method)();
-      pTVar21 = (this->fields)._leftRadiusTick;
-      if ((pTVar21 != (TerrainGizmo_RadiusTick *)0x0) &&
-         (pGVar22 = (pTVar21->fields).Tick, pGVar22 != (GizmoCap2D *)0x0)) {
-        (*(code *)(pGVar22->klass->vtable).Render_1.method)();
-        pTVar21 = (this->fields)._rightRadiusTick;
-        if ((pTVar21 != (TerrainGizmo_RadiusTick *)0x0) &&
-           (pGVar22 = (pTVar21->fields).Tick, pGVar22 != (GizmoCap2D *)0x0)) {
-          (*(code *)(pGVar22->klass->vtable).Render_1.method)();
-          pTVar21 = (this->fields)._backRadiusTick;
-          if ((pTVar21 != (TerrainGizmo_RadiusTick *)0x0) &&
-             (pGVar22 = (pTVar21->fields).Tick, pGVar22 != (GizmoCap2D *)0x0)) {
-            (*(code *)(pGVar22->klass->vtable).Render_1.method)();
-            pTVar21 = (this->fields)._forwardRadiusTick;
-            if ((pTVar21 != (TerrainGizmo_RadiusTick *)0x0) &&
-               (pGVar22 = (pTVar21->fields).Tick, pGVar22 != (GizmoCap2D *)0x0)) {
-              (*(code *)(pGVar22->klass->vtable).Render_1.method)();
+  pGVar18 = (this->fields)._axisSlider;
+  if (pGVar18 != (GizmoLineSlider3D *)0x0) {
+    (*(code *)(pGVar18->klass->vtable).Render_1.method)();
+    pGVar19 = (this->fields)._midCap;
+    if (pGVar19 != (GizmoCap3D *)0x0) {
+      (*(code *)(pGVar19->klass->vtable).Render_1.method)();
+      pTVar20 = (this->fields)._leftRadiusTick;
+      if ((pTVar20 != (TerrainGizmo_RadiusTick *)0x0) &&
+         (pGVar21 = (pTVar20->fields).Tick, pGVar21 != (GizmoCap2D *)0x0)) {
+        (*(code *)(pGVar21->klass->vtable).Render_1.method)();
+        pTVar20 = (this->fields)._rightRadiusTick;
+        if ((pTVar20 != (TerrainGizmo_RadiusTick *)0x0) &&
+           (pGVar21 = (pTVar20->fields).Tick, pGVar21 != (GizmoCap2D *)0x0)) {
+          (*(code *)(pGVar21->klass->vtable).Render_1.method)();
+          pTVar20 = (this->fields)._backRadiusTick;
+          if ((pTVar20 != (TerrainGizmo_RadiusTick *)0x0) &&
+             (pGVar21 = (pTVar20->fields).Tick, pGVar21 != (GizmoCap2D *)0x0)) {
+            (*(code *)(pGVar21->klass->vtable).Render_1.method)();
+            pTVar20 = (this->fields)._forwardRadiusTick;
+            if ((pTVar20 != (TerrainGizmo_RadiusTick *)0x0) &&
+               (pGVar21 = (pTVar20->fields).Tick, pGVar21 != (GizmoCap2D *)0x0)) {
+              (*(code *)(pGVar21->klass->vtable).Render_1.method)();
               return;
             }
           }
@@ -2622,8 +2604,8 @@ void Assembly-CSharp.dll::RTG::TerrainGizmo::TerrainGizmo_OnGizmoRender
   }
 code_?:
   func_?();
-  pcVar23 = (code *)swi(3);
-  (*pcVar23)();
+  pcVar22 = (code *)swi(3);
+  (*pcVar22)();
   return;
 }
 

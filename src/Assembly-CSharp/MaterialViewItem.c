@@ -10,54 +10,67 @@ void Assembly-CSharp.dll::MaterialViewItem::MaterialViewItem_Initialize
     func_?(&TypeInfo__MaterialDescription);
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).toolTip;
+  object = (this->fields).toolTip;
   if ((TypeInfo__MaterialDescription->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MaterialDescription);
   }
   pMVar1 = TypeInfo__MaterialDescription->static_fields->materialDescriptions;
   if (pMVar1 != (MaterialDescription__Array *)0x0) {
     if (pMVar1->max_length <= (uint)id) goto code_?;
-    if ((pMVar1->vector[id] != (MaterialDescription *)0x0) && (this_00 != (ToolTip *)0x0)) {
-      ToolTip::ToolTip_SetText
-                (this_00,(pMVar1->vector[id]->fields)._Name_k__BackingField,(MethodInfo *)0x0);
-      (this->fields).isAvailable = isAvailable;
+    if ((pMVar1->vector[id] != (MaterialDescription *)0x0) &&
+       (pSVar2 = (pMVar1->vector[id]->fields)._Name_k__BackingField, object != (ToolTip *)0x0)) {
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__System__Action);
+        func_?(&MethodInfo__ToolTip__LanguageLoadedCallback__);
+        cRam_? = '\x01';
+      }
+      pSVar2 = TM::TM__(pSVar2,(MethodInfo *)0x0);
+      (object->fields).toolTipText = pSVar2;
+      func_?(&(object->fields).toolTipText,pSVar2);
+      this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+      NavMesh_OnNavMeshPreUpdate__ctor
+                (this_01,(Object *)object,MethodInfo__ToolTip__LanguageLoadedCallback__,
+                 (MethodInfo *)0x0);
+      TM::TM_LanguageChanged((Action *)this_01,(MethodInfo *)0x0);
       (this->fields).id = id;
+      (this->fields).isAvailable = isAvailable;
       (this->fields).locked = locked;
       if (locked != 0) {
         this_02 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
         if (((this_02 == (MVNetworkGame *)0x0) ||
-            (pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_02,(MethodInfo *)0x0),
-            pMVar2 == (MVLocalPlayer *)0x0)) ||
-           (this_01 = (pMVar2->fields)._._SubscriptionRules_k__BackingField,
-           this_01 == (SubscriptionRulesWrapper *)0x0)) goto code_?;
-        bVar3 = MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrapper::
+            (pMVar3 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_02,(MethodInfo *)0x0),
+            pMVar3 == (MVLocalPlayer *)0x0)) ||
+           (this_00 = (pMVar3->fields)._._SubscriptionRules_k__BackingField,
+           this_00 == (SubscriptionRulesWrapper *)0x0)) goto code_?;
+        bVar4 = MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrapper::
                 SubscriptionRulesWrapper_HasBenefit
-                          (this_01,SubscriptionBenefit__Enum_FreeBuildingMaterials,(MethodInfo *)0x0
+                          (this_00,SubscriptionBenefit__Enum_FreeBuildingMaterials,(MethodInfo *)0x0
                           );
-        if (bVar3 != 0) {
+        if (bVar4 != 0) {
           (this->fields).locked = 0;
         }
       }
-      pIVar4 = (this->fields).lockedImage;
-      if ((pIVar4 != (Image *)0x0) &&
-         (pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                             ((Component *)pIVar4,(MethodInfo *)0x0), pGVar5 != (GameObject *)0x0))
+      pIVar5 = (this->fields).lockedImage;
+      if ((pIVar5 != (Image *)0x0) &&
+         (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                             ((Component *)pIVar5,(MethodInfo *)0x0), pGVar6 != (GameObject *)0x0))
       {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar5,(this->fields).locked,(MethodInfo *)0x0);
-        pRVar6 = (this->fields).buttonImage;
-        if (pRVar6 != (RawImage *)0x0) {
+                  (pGVar6,(this->fields).locked,(MethodInfo *)0x0);
+        pRVar7 = (this->fields).buttonImage;
+        if (pRVar7 != (RawImage *)0x0) {
           UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
-                    (pRVar6,(Texture *)texture2D,(MethodInfo *)0x0);
+                    (pRVar7,(Texture *)texture2D,(MethodInfo *)0x0);
           if (isAvailable == 0) {
-            pRVar6 = (this->fields).buttonImage;
-            if (pRVar6 != (RawImage *)0x0) {
-              puVar7 = (undefined4 *)(*(code *)(pRVar6->klass->vtable).get_color.method)();
-              pRVar6 = (this->fields).buttonImage;
-              if (pRVar6 != (RawImage *)0x0) {
-                (*(code *)(pRVar6->klass->vtable).set_color.method)
-                          (pRVar6,*puVar7,puVar7[1],puVar7[2],(this->fields).unavailableAlpha,
-                           (pRVar6->klass->vtable).get_raycastTarget.methodPtr);
+            pRVar7 = (this->fields).buttonImage;
+            if (pRVar7 != (RawImage *)0x0) {
+              puVar8 = (undefined4 *)(*(code *)(pRVar7->klass->vtable).get_color.method)();
+              pRVar7 = (this->fields).buttonImage;
+              if (pRVar7 != (RawImage *)0x0) {
+                (*(code *)(pRVar7->klass->vtable).set_color.method)
+                          (pRVar7,*puVar8,puVar8[1],puVar8[2],(this->fields).unavailableAlpha,
+                           (pRVar7->klass->vtable).get_raycastTarget.methodPtr);
                 goto code_?;
               }
             }
@@ -67,13 +80,13 @@ code_?:
             if (isSelected == 0) {
               return;
             }
-            pIVar4 = (this->fields).selectedBackground;
-            if ((pIVar4 != (Image *)0x0) &&
-               (pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                         Component_get_gameObject((Component *)pIVar4,(MethodInfo *)0x0),
-               pGVar5 != (GameObject *)0x0)) {
+            pIVar5 = (this->fields).selectedBackground;
+            if ((pIVar5 != (Image *)0x0) &&
+               (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                         Component_get_gameObject((Component *)pIVar5,(MethodInfo *)0x0),
+               pGVar6 != (GameObject *)0x0)) {
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                        (pGVar5,1,(MethodInfo *)0x0);
+                        (pGVar6,1,(MethodInfo *)0x0);
               return;
             }
           }
@@ -85,8 +98,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

@@ -56,7 +56,7 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour::AdvancedGhostBehaviour_DoRespa
     pOStack_5 = (ObscuredFloat__Class *)
                  WaitForTicks::WaitForTicks_GetEnvironmentTick
                            ((int)((float)((uint)fVar3 ^
-                                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                         __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                                          ) * _UNK_?),(MethodInfo *)0x0);
     pAVar6 = (pAVar2->fields).ghostBehaviour;
     if (pAVar6 != (AdvancedGhostBehaviour *)0x0) {
@@ -459,43 +459,72 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour::AdvancedGhostBehaviour_Init
                        (pTVar1,(MethodInfo *)0x0);
     (this->fields).transformParent = pTVar1;
     func_?(&(this->fields).transformParent,pTVar1);
-    value = (AdvancedGhostBehaviour_AdvancedGhostPerception *)
-            func_?(TypeInfo__AdvancedGhostBehaviour__AdvancedGhostPerception);
-    pAVar2 = value;
+    value = (Object *)func_?(TypeInfo__AdvancedGhostBehaviour__AdvancedGhostPerception);
     if (cRam_? == '\0') {
       func_?();
       func_?(&TypeInfo__OptimizedPerception);
       cRam_? = '\x01';
     }
-    (value->fields).alliedTeam = 4;
-    (value->fields).currentWoID = -1;
-    (value->fields).perceptionIntervalMilliseconds = 1000;
+    value[1].klass = (Object__Class *)0x4;
+    value[2].monitor = (MonitorData *)0xffffffff;
+    value[3].klass = (Object__Class *)0x3e8;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)value,ExceptionArgument__Enum_obj,in_stack_3);
-    (value->fields).ghostBehaviour = this;
-    func_?(&(value->fields).ghostBehaviour);
-    this_00 = (OptimizedPerception *)func_?(TypeInfo__OptimizedPerception);
-    OptimizedPerception::OptimizedPerception__ctor(this_00,(MethodInfo *)0x0);
-    (value->fields).perception = this_00;
-    func_?(&(value->fields).perception,this_00);
-    range = (value->fields).perceptionIntervalMilliseconds;
-    this_01 = (DeterministicSyncedInterval *)func_?(TypeInfo__DeterministicSyncedInterval);
-    DeterministicSyncedInterval::DeterministicSyncedInterval__ctor
-              (this_01,woID,range,(MethodInfo *)0x0);
-    (pAVar2->fields).syncedInterval = this_01;
-    func_?(&(pAVar2->fields).syncedInterval,this_01);
-    (this->fields).perception = pAVar2;
+              (value,ExceptionArgument__Enum_obj,in_stack_2);
+    value[1].monitor = (MonitorData *)this;
+    func_?(&value[1].monitor);
+    pOVar3 = (Object__Class *)func_?(TypeInfo__OptimizedPerception);
+    if (cRam_? == '\0') {
+      func_?();
+      func_?();
+      func_?();
+      func_?(&TypeInfo__System__Collections__Generic__List<WorldObjectClientRef>);
+      cRam_? = '\x01';
+    }
+    pHVar4 = (HashSet_1_System_Int32_ *)func_?();
+    System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
+    HashSet_1_System_Int32___ctor
+              (pHVar4,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+    (pOVar3->_0).this_arg.data.typeHandle = (Il2CppMetadataTypeHandle)pHVar4;
     func_?();
-    this_02 = (AdvancedGhostBehaviour_NetworkedValues *)func_?();
+    pHVar4 = (HashSet_1_System_Int32_ *)
+              func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
+    System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
+    HashSet_1_System_Int32___ctor
+              (pHVar4,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+    *(HashSet_1_System_Int32_ **)&(pOVar3->_0).this_arg.attrs = pHVar4;
+    func_?(&(pOVar3->_0).this_arg.attrs,pHVar4);
+    this_00 = (Il2CppClass *)
+              func_?(TypeInfo__System__Collections__Generic__List<WorldObjectClientRef>);
+    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
+    MultiColumnCollectionHeader+ViewState+ColumnState]::
+    List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
+              ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+                *)this_00,0x10,
+               MethodInfo__System__Collections__Generic__List<WorldObjectClientRef>__List_int_);
+    (pOVar3->_0).element_class = this_00;
+    func_?(&(pOVar3->_0).element_class,this_00);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+              ((Object *)pOVar3,ExceptionArgument__Enum_obj,(MethodInfo *)advancedGhostMotor);
+    value[2].klass = pOVar3;
+    func_?();
+    pOVar3 = value[3].klass;
+    this_01 = (DeterministicSyncedInterval *)func_?();
+    DeterministicSyncedInterval::DeterministicSyncedInterval__ctor
+              (this_01,woID,(int32_t)pOVar3,(MethodInfo *)0x0);
+    (((AdvancedGhostBehaviour_AdvancedGhostPerception *)woID)->fields).syncedInterval = this_01;
+    func_?();
+    (this->fields).perception = (AdvancedGhostBehaviour_AdvancedGhostPerception *)woID;
+    func_?();
+    this_02 = (AdvancedGhostMotor *)func_?();
     if (cRam_? == '\0') {
       func_?();
       func_?();
       cRam_? = '\x01';
     }
-    (this_02->fields).minLookDeltaOffset = 0.1;
+    (this_02->fields)._._.worldObjectParent = (MVWorldObjectClient *)0x3dcccccd;
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)this_02,ExceptionArgument__Enum_obj,(MethodInfo *)advancedGhostMotor);
-    (this_02->fields).ghostBehaviour = this;
+              ((Object *)this_02,ExceptionArgument__Enum_obj,in_stack_5);
+    (this_02->fields)._.groundState = (MVGroundState *)this;
     func_?();
     this_03 = (Func_5_Int32_Single_Single_Object_UnityEngine_Vector3_ *)func_?();
     mscorlib.dll::System::Func`5[Int32,Single,Single,Object,UnityEngine::Vector3]::
@@ -503,30 +532,32 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour::AdvancedGhostBehaviour_Init
               (this_03,(Object *)this_02,
                MethodInfo__AdvancedGhostBehaviour__NetworkedValues__EaseInEaseOutBackAndForward_int__float__float__UnityEngine__Transform_
                ,(MethodInfo *)0x0);
-    (this_02->fields).patrolPattern =
-         (Func_5_Int32_Single_Single_UnityEngine_Transform_UnityEngine_Vector3_ *)this_03;
+    ppFVar6 = (Func_5_Int32_Single_Single_UnityEngine_Transform_UnityEngine_Vector3_ **)
+              &(this_02->fields)._.impulseVectors;
+    (this_02->fields)._.impulseVectors = (List_1_UnityEngine_Vector3_ *)this_03;
     func_?();
     AdvancedGhostBehaviour+NetworkedValues::AdvancedGhostBehaviour_NetworkedValues_Update
-              (this_02,(MethodInfo *)0x0);
-    (this->fields).networkedValues = this_02;
+              ((AdvancedGhostBehaviour_NetworkedValues *)this_02,(MethodInfo *)0x0);
+    (this->fields).networkedValues = (AdvancedGhostBehaviour_NetworkedValues *)this_02;
     func_?();
-    pAVar4 = (this->fields).networkedValues;
-    if (pAVar4 != (AdvancedGhostBehaviour_NetworkedValues *)0x0) {
-      fVar5 = (pAVar4->fields).nextPosition.y;
-      fVar6 = (pAVar4->fields).nextPosition.z;
-      (this->fields).nextPosition.x = (pAVar4->fields).nextPosition.x;
-      (this->fields).nextPosition.y = fVar5;
-      (this->fields).nextPosition.z = fVar6;
+    pAVar7 = (this->fields).networkedValues;
+    if (pAVar7 != (AdvancedGhostBehaviour_NetworkedValues *)0x0) {
+      fVar8 = (pAVar7->fields).nextPosition.y;
+      fVar9 = (pAVar7->fields).nextPosition.z;
+      (this->fields).nextPosition.x = (pAVar7->fields).nextPosition.x;
+      (this->fields).nextPosition.y = fVar8;
+      (this->fields).nextPosition.z = fVar9;
       pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                          ((Component *)this,(MethodInfo *)0x0);
       if (pTVar1 != (Transform *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                   (pTVar1,(this->fields).nextPosition,(MethodInfo *)0x0);
-        (this->fields).advancedGhostMotor = advancedGhostMotor;
-        func_?(&(this->fields).advancedGhostMotor,advancedGhostMotor);
-        (this->fields).deathCheckFunc = deathCheckFunc;
-        func_?(&(this->fields).deathCheckFunc,deathCheckFunc);
-        AdvancedGhostBehaviour_InitBody(this,(MVCubeModelBase *)this,(MethodInfo *)0x0);
+        (this->fields).advancedGhostMotor = this_02;
+        func_?(&(this->fields).advancedGhostMotor,this_02);
+        (this->fields).deathCheckFunc = (Func_1_Boolean_ *)ppFVar6;
+        func_?(&(this->fields).deathCheckFunc,ppFVar6);
+        AdvancedGhostBehaviour_InitBody
+                  (this,(MVCubeModelBase *)&(this->fields).networkedValues,(MethodInfo *)0x0);
         AdvancedGhostBehaviour_SetInitialState(this,(MethodInfo *)0x0);
         if (cRam_? == '\0') {
           func_?(&
@@ -541,34 +572,31 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour::AdvancedGhostBehaviour_Init
         pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                            ((Component *)this,(MethodInfo *)0x0);
         if (pTVar1 != (Transform *)0x0) {
-          pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                             ((Vector3 *)&stack0xffffffe8,pTVar1,(MethodInfo *)0x0);
-          uVar8 = pVVar7->x;
-          uVar9 = pVVar7->y;
-          fVar6 = pVVar7->z;
+          pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                              ((Vector3 *)&stack0xffffffe4,pTVar1,(MethodInfo *)0x0);
+          uVar11 = pVVar10->x;
+          uVar12 = pVVar10->y;
+          fVar9 = pVVar10->z;
           this_04 = (UnityAction_1_UnityEngine_Vector2_ *)
                     func_?(
                                    TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>
                                    );
           UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Vector2]::
           UnityAction_1_UnityEngine_Vector2___ctor
-                    (this_04,(Object *)&(this_02->fields).ghostBehaviour,
+                    (this_04,(Object *)&UNK_?,
                      MethodInfo__AdvancedGhostBehaviour__OnStateChange_UnityEngine__CullingGroupEvent_
                      ,(MethodInfo *)0x0);
-          pFVar10 = (Func_5_Int32_Single_Single_UnityEngine_Transform_UnityEngine_Vector3_ *)
-                   func_?(TypeInfo__CullingSubscriberBase);
-          position.y = (float)uVar9;
-          position.x = (float)uVar8;
-          position.z = fVar6;
+          this_05 = (CullingSubscriberBase *)func_?(TypeInfo__CullingSubscriberBase);
+          position.y = (float)uVar12;
+          position.x = (float)uVar11;
+          position.z = fVar9;
           CullingSubscriberBase::CullingSubscriberBase__ctor_2
-                    ((CullingSubscriberBase *)pFVar10,4.0,position,
-                     (UnityAction_1_UnityEngine_CullingGroupEvent_ *)this_04,(MethodInfo *)0x0);
-          (this_02->fields).patrolPattern = pFVar10;
+                    (this_05,4.0,position,(UnityAction_1_UnityEngine_CullingGroupEvent_ *)this_04,
+                     (MethodInfo *)0x0);
+          _UNK_? = this_05;
           func_?();
-          pFVar10 = (this_02->fields).patrolPattern;
-          if (pFVar10 != (Func_5_Int32_Single_Single_UnityEngine_Transform_UnityEngine_Vector3_ *)0x0
-             ) {
-            (pFVar10->fields)._._.invoke_impl = (void *)0x3;
+          if (_UNK_? != (CullingSubscriberBase *)0x0) {
+            (_UNK_?->fields)._DistanceBandIndex_k__BackingField = 3;
             return;
           }
         }
@@ -576,8 +604,8 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour::AdvancedGhostBehaviour_Init
     }
   }
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -1071,59 +1099,61 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour::AdvancedGhostBehaviour_Update
                (AdvancedGhostBehaviour *this,MethodInfo *method)
 
 {
-  pAVar1 = this;
   if ((this->fields).perception == (AdvancedGhostBehaviour_AdvancedGhostPerception *)0x0) {
     return;
   }
-  pAVar2 = (this->fields).perception;
-  this_00 = (pAVar2->fields).syncedInterval;
+  pAVar1 = (this->fields).perception;
+  this_00 = (pAVar1->fields).syncedInterval;
   if (this_00 == (DeterministicSyncedInterval *)0x0) goto code_?;
-  bVar3 = DeterministicSyncedInterval::DeterministicSyncedInterval_Update
+  bVar2 = DeterministicSyncedInterval::DeterministicSyncedInterval_Update
                      (this_00,(MethodInfo *)0x0);
-  if (bVar3 != 0) {
-    pAVar4 = (pAVar2->fields).ghostBehaviour;
-    if ((pAVar4 == (AdvancedGhostBehaviour *)0x0) ||
-       (pAVar5 = (pAVar4->fields).networkedValues,
-       pAVar5 == (AdvancedGhostBehaviour_NetworkedValues *)0x0)) goto code_?;
-    this_01 = (pAVar2->fields).perception;
+  if (bVar2 != 0) {
+    pAVar3 = (pAVar1->fields).ghostBehaviour;
+    if ((pAVar3 == (AdvancedGhostBehaviour *)0x0) ||
+       (pAVar4 = (pAVar3->fields).networkedValues,
+       pAVar4 == (AdvancedGhostBehaviour_NetworkedValues *)0x0)) goto code_?;
+    fVar5 = (pAVar4->fields).nextPosition.y;
+    fVar6 = (pAVar4->fields).nextPosition.z;
+    fVar7 = (((pAVar1->fields).ghostBehaviour)->fields).perceptionRadius;
+    this_01 = (pAVar1->fields).perception;
     if (this_01 == (OptimizedPerception *)0x0) goto code_?;
-    OptimizedPerception::OptimizedPerception_Update
-              (this_01,(pAVar5->fields).nextPosition,
-               (((pAVar2->fields).ghostBehaviour)->fields).perceptionRadius,(MethodInfo *)0x0);
+    (this_01->fields).position.x = (pAVar4->fields).nextPosition.x;
+    (this_01->fields).position.y = fVar5;
+    (this_01->fields).position.z = fVar6;
+    (this_01->fields).radius = fVar7;
+    OptimizedPerception::OptimizedPerception_UpdatePotentialTargets(this_01,(MethodInfo *)0x0);
   }
-  pAVar5 = (this->fields).networkedValues;
-  if (pAVar5 != (AdvancedGhostBehaviour_NetworkedValues *)0x0) {
+  pAVar4 = (this->fields).networkedValues;
+  if (pAVar4 != (AdvancedGhostBehaviour_NetworkedValues *)0x0) {
     AdvancedGhostBehaviour+NetworkedValues::AdvancedGhostBehaviour_NetworkedValues_Update
-              (pAVar5,(MethodInfo *)0x0);
+              (pAVar4,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
-      func_?();
-      this = (AdvancedGhostBehaviour *)&TypeInfo__System__Type;
-      func_?();
+      func_?(&TypeInfo__AdvancedGhostBehaviour__IGhostBehaviourState);
+      func_?(&TypeInfo__System__Type);
       cRam_? = '\x01';
     }
-    pAVar6 = (pAVar1->fields).currentState;
-    if (pAVar6 != (AdvancedGhostBehaviour_IGhostBehaviourState *)0x0) {
-      pAVar7 = pAVar6->klass;
-      uVar8 = 0;
-      uVar9._0_1_ = (pAVar7->_1).rank;
-      uVar9._1_1_ = (pAVar7->_1).minimumAlignment;
-      if (uVar9 != 0) {
+    pAVar8 = (this->fields).currentState;
+    if (pAVar8 != (AdvancedGhostBehaviour_IGhostBehaviourState *)0x0) {
+      pAVar9 = pAVar8->klass;
+      uVar10 = 0;
+      uVar11._0_1_ = (pAVar9->_1).rank;
+      uVar11._1_1_ = (pAVar9->_1).minimumAlignment;
+      if (uVar11 != 0) {
         do {
-          if (pAVar7->interfaceOffsets[uVar8].interfaceType ==
+          if (pAVar9->interfaceOffsets[uVar10].interfaceType ==
               (Il2CppClass *)TypeInfo__AdvancedGhostBehaviour__IGhostBehaviourState) {
-            ppMVar10 = &(&(pAVar6->klass->vtable).Update)
-                        [pAVar6->klass->interfaceOffsets[uVar8].offset].method;
+            ppMVar12 = &(&(pAVar8->klass->vtable).Update)
+                        [pAVar8->klass->interfaceOffsets[uVar10].offset].method;
             goto code_?;
           }
-          uVar8 = uVar8 + 1;
-          pAVar1 = this;
-        } while (uVar8 < uVar9);
+          uVar10 = uVar10 + 1;
+        } while (uVar10 < uVar11);
       }
-      this = pAVar1;
-      ppMVar10 = (MethodInfo **)
-                 func_?(pAVar6,TypeInfo__AdvancedGhostBehaviour__IGhostBehaviourState);
+      ppMVar12 = (MethodInfo **)
+                 func_?(pAVar8,TypeInfo__AdvancedGhostBehaviour__IGhostBehaviourState,1,
+                                 pAVar9,0);
 code_?:
-      right = (XNamespace *)(*(code *)*ppMVar10)(pAVar6,this);
+      right = (XNamespace *)(*(code *)*ppMVar12)(pAVar8,this,ppMVar12[1]);
       this_02 = (Object *)(this->fields).currentState;
       if (this_02 != (Object *)0x0) {
         left = (XNamespace *)mscorlib.dll::System::Object::Object_GetType(this_02,(MethodInfo *)0x0)
@@ -1131,14 +1161,14 @@ code_?:
         if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__System__Type);
         }
-        bVar3 = System.Xml.Linq.dll::System::Xml::Linq::XNamespace::XNamespace_op_Inequality
+        bVar2 = System.Xml.Linq.dll::System::Xml::Linq::XNamespace::XNamespace_op_Inequality
                            (left,right,(MethodInfo *)0x0);
-        if (bVar3 != 0) {
+        if (bVar2 != 0) {
           AdvancedGhostBehaviour_SetCurrentState(this,(Type *)right,(MethodInfo *)0x0);
         }
-        pAVar11 = (this->fields).advancedGhostMotor;
-        if ((pAVar11 != (AdvancedGhostMotor *)0x0) &&
-           (this_03 = (pAVar11->fields).smoothPhysicsMovement,
+        pAVar13 = (this->fields).advancedGhostMotor;
+        if ((pAVar13 != (AdvancedGhostMotor *)0x0) &&
+           (this_03 = (pAVar13->fields).smoothPhysicsMovement,
            this_03 != (SmoothPhysicsMovement *)0x0)) {
           SmoothPhysicsMovement::SmoothPhysicsMovement_SmoothMove(this_03,(MethodInfo *)0x0);
           if ((this->fields).respawn == 0) {
@@ -1152,8 +1182,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 

@@ -78,57 +78,10 @@ void Assembly-CSharp.dll::RTG::SegmentShape3D::SegmentShape3D_SetEndPtFromStart
 {
   uVar1 = (this->fields)._startPoint.x;
   uVar2 = (this->fields)._startPoint.y;
-  fVar3 = (float)uVar1 + dirDromStart.x * offset;
-  fVar4 = (float)uVar2 + dirDromStart.y * offset;
-  fVar5 = (this->fields)._startPoint.z + dirDromStart.z * offset;
-  (this->fields)._endPoint.x = fVar3;
-  (this->fields)._endPoint.y = fVar4;
-  uVar6 = (this->fields)._startPoint.x;
-  uVar7 = (this->fields)._startPoint.y;
-  (this->fields)._endPoint.z = fVar5;
-  fVar8 = (this->fields)._startPoint.z;
-  (this->fields)._direction.x = fVar3 - (float)uVar6;
-  (this->fields)._direction.y = fVar4 - (float)uVar7;
-  (this->fields)._direction.z = fVar5 - fVar8;
-  fVar9 = (float10)func_?(&(this->fields)._direction,0);
-  (this->fields)._length = (float)fVar9;
-  uVar10 = (this->fields)._direction.x;
-  uVar11 = (this->fields)._direction.y;
-  fVar8 = (this->fields)._direction.z;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Math);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__Math);
-  }
-  dVar12 = (double)((float)uVar11 * (float)uVar11 + (float)uVar10 * (float)uVar10 + fVar8 * fVar8);
-  if (dVar12 < 0.0) {
-    func_?();
-  }
-  else {
-    dVar12 = SQRT(dVar12);
-  }
-  fVar8 = (float)dVar12;
-  if (fVar8 <= _UNK_?) {
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Vector3);
-      cRam_? = '\x01';
-    }
-    pVVar13 = TypeInfo__UnityEngine__Vector3->static_fields;
-    fVar5 = (pVVar13->zeroVector).y;
-    fVar8 = (pVVar13->zeroVector).z;
-    (this->fields)._direction.x = (pVVar13->zeroVector).x;
-    (this->fields)._direction.y = fVar5;
-    (this->fields)._direction.z = fVar8;
-    return;
-  }
-  uVar14 = (this->fields)._direction.x;
-  uVar15 = (this->fields)._direction.y;
-  fVar5 = (this->fields)._direction.z;
-  (this->fields)._direction.x = (float)uVar14 / fVar8;
-  (this->fields)._direction.y = (float)uVar15 / fVar8;
-  (this->fields)._direction.z = fVar5 / fVar8;
+  value.y = (float)uVar2 + dirDromStart.y * offset;
+  value.x = (float)uVar1 + dirDromStart.x * offset;
+  value.z = (this->fields)._startPoint.z + dirDromStart.z * offset;
+  SegmentShape3D_set_EndPoint(this,value,(MethodInfo *)0x0);
   return;
 }
 
@@ -242,10 +195,26 @@ void Assembly-CSharp.dll::RTG::SegmentShape3D::SegmentShape3D_set_EndPoint
   (this->fields)._direction.x = value.x - (float)uVar1;
   (this->fields)._direction.y = value.y - (float)uVar2;
   (this->fields)._direction.z = value.z - fVar3;
-  fVar4 = (float10)func_?(&(this->fields)._direction,0);
-  (this->fields)._length = (float)fVar4;
-  uVar5 = (this->fields)._direction.x;
-  uVar6 = (this->fields)._direction.y;
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Math);
+    cRam_? = '\x01';
+  }
+  fVar3 = (this->fields)._direction.x;
+  fVar4 = (this->fields)._direction.y;
+  fVar5 = (this->fields)._direction.z;
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Math);
+  }
+  dVar6 = (double)(fVar4 * fVar4 + fVar3 * fVar3 + fVar5 * fVar5);
+  if (dVar6 < 0.0) {
+    func_?();
+  }
+  else {
+    dVar6 = SQRT(dVar6);
+  }
+  (this->fields)._length = (float)dVar6;
+  uVar7 = (this->fields)._direction.x;
+  uVar8 = (this->fields)._direction.y;
   fVar3 = (this->fields)._direction.z;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Math);
@@ -254,33 +223,33 @@ void Assembly-CSharp.dll::RTG::SegmentShape3D::SegmentShape3D_set_EndPoint
   if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__System__Math);
   }
-  dVar7 = (double)((float)uVar6 * (float)uVar6 + (float)uVar5 * (float)uVar5 + fVar3 * fVar3);
-  if (dVar7 < 0.0) {
+  dVar6 = (double)((float)uVar8 * (float)uVar8 + (float)uVar7 * (float)uVar7 + fVar3 * fVar3);
+  if (dVar6 < 0.0) {
     func_?();
   }
   else {
-    dVar7 = SQRT(dVar7);
+    dVar6 = SQRT(dVar6);
   }
-  fVar3 = (float)dVar7;
+  fVar3 = (float)dVar6;
   if (fVar3 <= _UNK_?) {
     if (cRam_? == '\0') {
       func_?(&TypeInfo__UnityEngine__Vector3);
       cRam_? = '\x01';
     }
-    pVVar8 = TypeInfo__UnityEngine__Vector3->static_fields;
-    fVar9 = (pVVar8->zeroVector).y;
-    fVar3 = (pVVar8->zeroVector).z;
-    (this->fields)._direction.x = (pVVar8->zeroVector).x;
-    (this->fields)._direction.y = fVar9;
+    pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
+    fVar4 = (pVVar9->zeroVector).y;
+    fVar3 = (pVVar9->zeroVector).z;
+    (this->fields)._direction.x = (pVVar9->zeroVector).x;
+    (this->fields)._direction.y = fVar4;
     (this->fields)._direction.z = fVar3;
     return;
   }
   uVar10 = (this->fields)._direction.x;
   uVar11 = (this->fields)._direction.y;
-  fVar9 = (this->fields)._direction.z;
+  fVar4 = (this->fields)._direction.z;
   (this->fields)._direction.x = (float)uVar10 / fVar3;
   (this->fields)._direction.y = (float)uVar11 / fVar3;
-  (this->fields)._direction.z = fVar9 / fVar3;
+  (this->fields)._direction.z = fVar4 / fVar3;
   return;
 }
 

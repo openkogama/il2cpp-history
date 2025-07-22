@@ -360,7 +360,6 @@ void Assembly-CSharp.dll::ItemDataController::ItemDataController_Start
     cRam_? = '\x01';
   }
   pIVar1 = (this->fields).inventoryController;
-  iVar2 = (this->fields).numberOfSlots;
   if (pIVar1 == (InventoryController *)0x0) {
 code_?:
     func_?();
@@ -370,77 +369,39 @@ code_?:
     func_?();
   }
   else {
-    (pIVar1->fields).numberOfSlots = iVar2;
-    this_00 = (pIVar1->fields).inventorySlots;
-    if (this_00 == (InventorySlots *)0x0) goto code_?;
-    if (cRam_? == '\0') {
-      func_?(&
-                      MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__Add_int__InventorySlot_
-                     );
-      func_?(&
-                      InventorySlot_MethodInfo__UnityEngine__Object__Instantiate<InventorySlot>_InventorySlot__UnityEngine__Transform__bool_
-                     );
-      func_?(&TypeInfo__UnityEngine__Object);
-      cRam_? = '\x01';
-    }
-    key = 0;
-    (this_00->fields)._SlotCountPerPage_k__BackingField = iVar2;
-    if (0 < iVar2) {
-      do {
-        original = (this_00->fields).inventorySlotPrefab;
-        parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                           ((Component *)this_00,(MethodInfo *)0x0);
-        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__UnityEngine__Object);
-        }
-        value = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
-                          ((Object *)original,parent,0,
-                           InventorySlot_MethodInfo__UnityEngine__Object__Instantiate<InventorySlot>_InventorySlot__UnityEngine__Transform__bool_
-                          );
-        this_01 = (this_00->fields).inventorySlots;
-        if (this_01 == (Dictionary_2_System_Int32_InventorySlot_ *)0x0) goto code_?;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-        Dictionary_2_System_Int32_System_Object__Add
-                  ((Dictionary_2_System_Int32_System_Object_ *)this_01,key,value,
-                   MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__Add_int__InventorySlot_
-                  );
-        key = key + 1;
-      } while (key < iVar2);
-    }
+    InventoryController::InventoryController_Initialize
+              (pIVar1,(this->fields).numberOfSlots,(MethodInfo *)0x0);
     pIVar1 = (this->fields).inventoryController;
     if (pIVar1 == (InventoryController *)0x0) goto code_?;
-    pUVar3 = (pIVar1->fields).OnPageTurned;
-    pUVar4 = (UnityAction_1_System_Int32Enum_ *)
+    pUVar2 = (pIVar1->fields).OnPageTurned;
+    pUVar3 = (UnityAction_1_System_Int32Enum_ *)
              func_?(TypeInfo__UnityEngine__Events__UnityAction<int>);
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
     UnityAction_1_System_Int32Enum___ctor
-              (pUVar4,(Object *)this,MethodInfo__ItemDataController__PageTurned_int_,
+              (pUVar3,(Object *)this,MethodInfo__ItemDataController__PageTurned_int_,
                (MethodInfo *)0x0);
-    pDVar5 = mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pUVar3,(Delegate *)pUVar4,(MethodInfo *)0x0);
-    pUVar6 = TypeInfo__UnityEngine__Events__UnityAction<int>;
-    if (pDVar5 == (Delegate *)0x0) {
+    pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pUVar2,(Delegate *)pUVar3,(MethodInfo *)0x0);
+    if (pDVar4 == (Delegate *)0x0) {
       (pIVar1->fields).OnPageTurned = (UnityAction_1_System_Int32_ *)0x0;
 code_?:
       func_?();
       pIVar1 = (this->fields).inventoryController;
       if (pIVar1 == (InventoryController *)0x0) goto code_?;
-      pUVar3 = (pIVar1->fields).OnTabSelected;
-      pUVar4 = (UnityAction_1_System_Int32Enum_ *)
-               func_?(TypeInfo__UnityEngine__Events__UnityAction<int>);
+      pUVar2 = (pIVar1->fields).OnTabSelected;
+      pUVar3 = (UnityAction_1_System_Int32Enum_ *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
       UnityAction_1_System_Int32Enum___ctor
-                (pUVar4,(Object *)this,MethodInfo__ItemDataController__TabSelected_int_,
+                (pUVar3,(Object *)this,MethodInfo__ItemDataController__TabSelected_int_,
                  (MethodInfo *)0x0);
-      pDVar5 = mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)pUVar3,(Delegate *)pUVar4,(MethodInfo *)0x0);
-      pUVar6 = TypeInfo__UnityEngine__Events__UnityAction<int>;
-      if (pDVar5 != (Delegate *)0x0) {
-        pIVar7 = (Il2CppClass *)func_?();
-        if (pIVar7 == (Il2CppClass *)0x0) goto code_?;
-        (pUVar6->_0).castClass = pIVar7;
-        iVar2 = func_?();
-        if (iVar2 != 0) goto code_?;
+      pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
+                         ((Delegate *)pUVar2,(Delegate *)pUVar3,(MethodInfo *)0x0);
+      if (pDVar4 != (Delegate *)0x0) {
+        pUVar2 = (UnityAction_1_System_Int32_ *)func_?();
+        if (pUVar2 == (UnityAction_1_System_Int32_ *)0x0) goto code_?;
+        (pIVar1->fields).OnTabSelected = pUVar2;
+        iVar5 = func_?();
+        if (iVar5 != 0) goto code_?;
         goto code_?;
       }
       (pIVar1->fields).OnTabSelected = (UnityAction_1_System_Int32_ *)0x0;
@@ -448,48 +409,46 @@ code_?:
       func_?();
       pIVar1 = (this->fields).inventoryController;
       if (pIVar1 == (InventoryController *)0x0) goto code_?;
-      a = (pIVar1->fields).OnSlotChanged;
-      this_02 = (UnityAction_2_System_Int32_System_Int32_ *)
-                func_?(TypeInfo__UnityEngine__Events__UnityAction<int,_int>);
+      pUVar6 = (pIVar1->fields).OnSlotChanged;
+      this_00 = (UnityAction_2_System_Int32_System_Int32_ *)func_?();
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
       UnityAction_2_System_Int32_System_Int32___ctor
-                (this_02,(Object *)this,MethodInfo__ItemDataController__SlotChanged_int__int_,
+                (this_00,(Object *)this,MethodInfo__ItemDataController__SlotChanged_int__int_,
                  (MethodInfo *)0x0);
-      pDVar5 = mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)a,(Delegate *)this_02,(MethodInfo *)0x0);
-      pUVar8 = TypeInfo__UnityEngine__Events__UnityAction<int,_int>;
-      if (pDVar5 == (Delegate *)0x0) {
+      pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
+                         ((Delegate *)pUVar6,(Delegate *)this_00,(MethodInfo *)0x0);
+      if (pDVar4 == (Delegate *)0x0) {
         (pIVar1->fields).OnSlotChanged = (UnityAction_2_System_Int32_System_Int32_ *)0x0;
 code_?:
         func_?();
         ItemDataController_InitializeTestData(this,(MethodInfo *)0x0);
-        iVar2 = (this->fields).defaultCategoryID;
-        if (iVar2 != (this->fields).currentTab) {
-          (this->fields).currentTab = iVar2;
+        iVar5 = (this->fields).defaultCategoryID;
+        if (iVar5 != (this->fields).currentTab) {
+          (this->fields).currentTab = iVar5;
           ItemDataController_UpdateContent(this,(MethodInfo *)0x0);
         }
         return;
       }
-      pIVar7 = (Il2CppClass *)func_?();
-      if (pIVar7 != (Il2CppClass *)0x0) {
-        (pUVar8->_0).declaringType = pIVar7;
-        iVar2 = func_?();
-        if (iVar2 != 0) goto code_?;
+      pUVar6 = (UnityAction_2_System_Int32_System_Int32_ *)func_?();
+      if (pUVar6 != (UnityAction_2_System_Int32_System_Int32_ *)0x0) {
+        (pIVar1->fields).OnSlotChanged = pUVar6;
+        iVar5 = func_?();
+        if (iVar5 != 0) goto code_?;
         goto code_?;
       }
       goto code_?;
     }
-    pIVar7 = (Il2CppClass *)func_?();
-    if (pIVar7 == (Il2CppClass *)0x0) goto code_?;
-    (pUVar6->_0).element_class = pIVar7;
-    iVar2 = func_?();
-    if (iVar2 != 0) goto code_?;
+    pUVar2 = (UnityAction_1_System_Int32_ *)func_?();
+    if (pUVar2 == (UnityAction_1_System_Int32_ *)0x0) goto code_?;
+    (pIVar1->fields).OnPageTurned = pUVar2;
+    iVar5 = func_?();
+    if (iVar5 != 0) goto code_?;
   }
   func_?();
 code_?:
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

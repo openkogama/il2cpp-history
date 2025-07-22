@@ -1,9 +1,9 @@
 
-/* Void <DeleteWoid>b__0(IModalPopupCreator, BaseEventData) */
+/* Void <Delete>b__0(IModalPopupCreator, BaseEventData) */
 
-void Assembly-CSharp.dll::DesktopEditModeController+<>c__DisplayClass75_0::
-     DesktopEditModeController_c_DisplayClass75_0__DeleteWoid_b__0
-               (DesktopEditModeController_c_DisplayClass75_0 *this,IModalPopupCreator *x,
+void Assembly-CSharp.dll::ContextMenuController+<>c__DisplayClass43_0::
+     ContextMenuController_c_DisplayClass43_0__Delete_b__0
+               (ContextMenuController_c_DisplayClass43_0 *this,IModalPopupCreator *x,
                BaseEventData *y,MethodInfo *method)
 
 {

@@ -46,13 +46,13 @@ void Assembly-CSharp.dll::AvatarLimbManager+LimbRotator::
                MethodInfo__System__Collections__Generic__List<System::String>__List__);
     if (cancelAnimations == (MethodInfo *)0x0) goto code_?;
     func_?();
-    p_Var7 = (_union_86 *)
+    p_Var8 = (_union_86 *)
              MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_get_WorldRotation
                        ((Quaternion *)&stack0xffffffd0,(MVWorldObject *)0x0,in_stack_2);
-    _Var20 = (_union_86)p_Var7->dummy;
-    pMVar3 = p_Var7[1].dummy;
-    uStack_4 = *(undefined8 *)(p_Var7 + 2);
-    p_Var7 = (_union_86 *)
+    _Var18 = (_union_86)p_Var8->dummy;
+    pMVar3 = p_Var8[1].dummy;
+    uStack_4 = *(undefined8 *)(p_Var8 + 2);
+    p_Var8 = (_union_86 *)
              MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_get_WorldRotation
                        ((Quaternion *)&_Stack_20,(MVWorldObject *)0x0,in_stack_5);
     maxPitch = 45.0;
@@ -81,23 +81,23 @@ void Assembly-CSharp.dll::AvatarLimbManager+LimbRotator::
                MethodInfo__System__Collections__Generic__List<System::String>__List__);
     if (cancelAnimations == (MethodInfo *)0x0) goto code_?;
     func_?();
-    p_Var7 = (_union_86 *)
+    p_Var8 = (_union_86 *)
              MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_get_WorldRotation
                        ((Quaternion *)&stack0xffffffd0,(MVWorldObject *)0x0,in_stack_2);
-    _Var20 = (_union_86)p_Var7->dummy;
-    pMVar3 = p_Var7[1].dummy;
-    uStack_4 = *(undefined8 *)(p_Var7 + 2);
-    p_Var7 = (_union_86 *)
+    _Var18 = (_union_86)p_Var8->dummy;
+    pMVar3 = p_Var8[1].dummy;
+    uStack_4 = *(undefined8 *)(p_Var8 + 2);
+    p_Var8 = (_union_86 *)
              MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_get_WorldRotation
                        ((Quaternion *)&_Stack_20,(MVWorldObject *)0x0,in_stack_5);
     maxPitch = 20.0;
     maxYaw = 90.0;
 code_?:
-    _Var15 = (_union_86)p_Var7->dummy;
-    pIVar6 = p_Var7[1].dummy;
-    ppIVar7 = p_Var7[2].dummy;
-    _Var18 = (_union_154)p_Var7[3].dummy;
-    _Var13 = _Stack_24;
+    _Var13 = (_union_86)p_Var8->dummy;
+    pIVar6 = p_Var8[1].dummy;
+    ppIVar7 = p_Var8[2].dummy;
+    _Var16 = (_union_154)p_Var8[3].dummy;
+    _Var12 = _Stack_24;
     break;
   case BodyData_PartIndex__Enum_RArm:
     pLVar1 = TypeInfo__LimbController;
@@ -132,7 +132,7 @@ code_?:
     _Stack_20.dummy = (void *)0x0;
     pMVar3 = (MethodInfo *)&stack0xffffffd0;
     func_?();
-    _Var20.dummy = (_union_86 *)0x0;
+    _Var18.dummy = (_union_86 *)0x0;
     MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_get_WorldRotation
               ((Quaternion *)&_Stack_20,(MVWorldObject *)0x0,pMVar3);
     uStack_8._0_2_ = 0;
@@ -145,11 +145,11 @@ code_?:
     func_?();
     maxPitch = 90.0;
     maxYaw = 120.0;
-    _Var13.rgctx_data = (Il2CppRGCTXData *)&UNK_?;
-    _Var15 = _Stack_20;
+    _Var12.rgctx_data = (Il2CppRGCTXData *)&UNK_?;
+    _Var13 = _Stack_20;
     pIVar6 = (Il2CppType *)(MethodInfo *)uStack_9;
     ppIVar7 = uStack_9._4_4_;
-    _Var18 = _Stack_14;
+    _Var16 = _Stack_14;
     break;
   case BodyData_PartIndex__Enum_LArm:
     pLVar1 = TypeInfo__LimbController;
@@ -183,16 +183,16 @@ code_?:
     uStack_9._4_4_ = (Il2CppType **)pQVar11->z;
     _Stack_14 = (_union_154)pQVar11->w;
     _Stack_20.dummy = (void *)0x0;
-    p_Var7 = &_Stack_20;
+    p_Var8 = &_Stack_20;
     func_?();
-    p_Var7 = (_union_86 *)
+    p_Var8 = (_union_86 *)
              MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_get_WorldRotation
-                       ((Quaternion *)&stack0xffffffd0,(MVWorldObject *)0x0,(MethodInfo *)p_Var7);
+                       ((Quaternion *)&stack0xffffffd0,(MVWorldObject *)0x0,(MethodInfo *)p_Var8);
     uStack_8._0_2_ = 0x6666;
     uStack_8._2_2_ = 0x4298;
-    _Var15 = (_union_86)p_Var7->dummy;
-    pIVar6 = p_Var7[1].dummy;
-    ppIVar7 = p_Var7[2].dummy;
+    _Var13 = (_union_86)p_Var8->dummy;
+    pIVar6 = p_Var8[1].dummy;
+    ppIVar7 = p_Var8[2].dummy;
     _Stack_10.genericMethod = (Il2CppGenericMethod *)0x0;
     uStack_9._4_4_ = _UNK_?;
     uStack_9._0_4_ = (MethodInfo *)_UNK_?;
@@ -202,23 +202,23 @@ code_?:
     _Stack_24.rgctx_data = (Il2CppRGCTXData *)&UNK_?;
     maxPitch = 90.0;
     maxYaw = 120.0;
-    _Var20 = _Stack_20;
+    _Var18 = _Stack_20;
     pMVar3 = (MethodInfo *)uStack_9;
     ppIVar10 = uStack_9._4_4_;
-    _Var13 = _Stack_14;
-    _Var18.rgctx_data = _Stack_24.rgctx_data;
+    _Var12 = _Stack_14;
+    _Var16.rgctx_data = _Stack_24.rgctx_data;
     break;
   default:
     goto code_?;
   }
   modelRotationOffset.y = (float)pMVar3;
-  modelRotationOffset.x = (float)_Var20.dummy;
+  modelRotationOffset.x = (float)_Var18.dummy;
   modelRotationOffset.z = (float)ppIVar10;
-  modelRotationOffset.w = (float)_Var13.rgctx_data;
+  modelRotationOffset.w = (float)_Var12.rgctx_data;
   originalRotation.y = (float)pIVar6;
-  originalRotation.x = (float)_Var15.dummy;
+  originalRotation.x = (float)_Var13.dummy;
   originalRotation.z = (float)ppIVar7;
-  originalRotation.w = (float)_Var18.rgctx_data;
+  originalRotation.w = (float)_Var16.rgctx_data;
   LimbController::LimbController_Initialize
             (this_01,limbManager,avatarWO,body,key,modelRotationOffset,originalRotation,
              (List_1_System_String_ *)partIndex,(List_1_System_String_ *)cancelAnimations,maxYaw,
@@ -228,22 +228,17 @@ code_?:
 code_?:
     bVar12 = 0;
     uVar13 = func_?();
-    in_AF = 9 < (extraout_CL & 0xf) | in_AF;
-    bVar12 = 0x99 < extraout_CL | bVar12;
-    bVar14 = extraout_CL + in_AF * -6 + bVar12 * -0x60;
-    pbVar15 = (byte *)((int)&cancelAnimations[-3].field8_0x20 + 2);
-    bVar16 = *pbVar15;
-    bVar17 = (byte)((uint6)uVar13 >> 0x20);
-    bVar18 = *pbVar15;
-    *pbVar15 = bVar18 + bVar17 + bVar12;
-    bVar19 = 0x99 < bVar14 || (CARRY1(bVar16,bVar17) || CARRY1(bVar18 + bVar17,bVar12));
-    bVar16 = bVar14 + (9 < (bVar14 & 0xf) | in_AF) * -6 + bVar19 * -0x60;
-    bVar18 = (byte)((uint)cancelAnimations >> 8);
-    *(char *)uVar13 =
-         *(char *)uVar13 + (char)((uint6)uVar13 >> 0x28) +
-         (0x99 < bVar17 || (CARRY1(bVar16,bVar18) || CARRY1(bVar16 + bVar18,bVar19)));
-    pcVar20 = (code *)swi(3);
-    (*pcVar20)();
+    puVar14 = &cancelAnimations[0x12b00fc].slot;
+    uVar15 = *puVar14;
+    bVar16 = (char)*puVar14 + (byte)extraout_DX;
+    *(byte *)puVar14 = bVar16 + bVar12;
+    pOVar17 = (Object__Class *)in(extraout_DX);
+    this_01->klass = (LimbController__Class *)pOVar17;
+    *(char *)(extraout_ECX + 0x6e) =
+         *(char *)(extraout_ECX + 0x6e) + (char)((ushort)uVar13 >> 8) +
+         (0x99 < (byte)uVar13 || (CARRY1((byte)uVar15,(byte)extraout_DX) || CARRY1(bVar16,bVar12)));
+    pcVar18 = (code *)swi(3);
+    (*pcVar18)();
     return;
   }
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::

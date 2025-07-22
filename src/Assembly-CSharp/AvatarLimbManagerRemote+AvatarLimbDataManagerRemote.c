@@ -462,9 +462,8 @@ void Assembly-CSharp.dll::AvatarLimbManagerRemote+AvatarLimbDataManagerRemote::
     this_00 = (pAVar1->fields).headRotationHandler;
     if (this_00 != (AvatarLimbManagerRemote_AvatarHeadRotationHandlerRemote *)0x0) {
       AvatarLimbManager+AvatarHeadRotationHandler::
-      AvatarLimbManager_AvatarHeadRotationHandler_ResetIdleTimer_1
-                ((AvatarLimbManager_AvatarHeadRotationHandler *)this_00,EmoteTypes__Enum_None,
-                 unaff_ESI);
+      AvatarLimbManager_AvatarHeadRotationHandler_ResetIdleTimer
+                ((AvatarLimbManager_AvatarHeadRotationHandler *)this_00,(MethodInfo *)0x0);
       auVar3._4_8_ = 0;
       auVar3._0_4_ = fVar2 * _UNK_?;
       pQVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad

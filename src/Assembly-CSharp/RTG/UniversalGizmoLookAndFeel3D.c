@@ -313,29 +313,29 @@ UniversalGizmoLookAndFeel3D_GetAllowedMvVertSnapCapTypes
     func_?(&TypeInfo__System__Collections__Generic__List<System::Enum>);
     cRam_? = '\x01';
   }
-  pLVar1 = (List_1_System_Enum_ *)
-           func_?(TypeInfo__System__Collections__Generic__List<System::Enum>);
+  this_00 = (List_1_System_Object_ *)
+            func_?(TypeInfo__System__Collections__Generic__List<System::Enum>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar1,
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<System::Enum>__List__);
-  uStack_2 = 1;
-  uVar3 = func_?(TypeInfo__RTG__GizmoCap2DType,&uStack_2);
-  if (pLVar1 != (List_1_System_Enum_ *)0x0) {
-    pMStack_4 = MethodInfo__System__Collections__Generic__List<System::Enum>__Add_System__Enum_;
-    func_?(pLVar1,uVar3);
-    pMStack_4 = (MethodInfo *)0x0;
-    uVar3 = func_?(TypeInfo__RTG__GizmoCap2DType,&pMStack_4);
-    func_?(pLVar1,uVar3,
-                    MethodInfo__System__Collections__Generic__List<System::Enum>__Add_System__Enum_)
-    ;
-    return pLVar1;
+  uStack_1 = 1;
+  pOVar2 = (Object *)func_?(TypeInfo__RTG__GizmoCap2DType,&uStack_1);
+  if (this_00 != (List_1_System_Object_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+              (this_00,pOVar2,
+               MethodInfo__System__Collections__Generic__List<System::Enum>__Add_System__Enum_);
+    pOVar2 = (Object *)func_?(TypeInfo__RTG__GizmoCap2DType);
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+              (this_00,pOVar2,
+               MethodInfo__System__Collections__Generic__List<System::Enum>__Add_System__Enum_);
+    return (List_1_System_Enum_ *)this_00;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  pLVar1 = (List_1_System_Enum_ *)(*pcVar5)();
-  return pLVar1;
+  pcVar3 = (code *)swi(3);
+  pLVar4 = (List_1_System_Enum_ *)(*pcVar3)();
+  return pLVar4;
 }
 
 
@@ -355,29 +355,29 @@ UniversalGizmoLookAndFeel3D_GetAllowedScMidCapTypes
     func_?(&TypeInfo__System__Collections__Generic__List<System::Enum>);
     cRam_? = '\x01';
   }
-  pLVar1 = (List_1_System_Enum_ *)
-           func_?(TypeInfo__System__Collections__Generic__List<System::Enum>);
+  this_00 = (List_1_System_Object_ *)
+            func_?(TypeInfo__System__Collections__Generic__List<System::Enum>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar1,
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<System::Enum>__List__);
-  uStack_2 = 2;
-  uVar3 = func_?(TypeInfo__RTG__GizmoCap3DType,&uStack_2);
-  if (pLVar1 != (List_1_System_Enum_ *)0x0) {
-    pMStack_4 = MethodInfo__System__Collections__Generic__List<System::Enum>__Add_System__Enum_;
-    func_?(pLVar1,uVar3);
-    pMStack_4 = (MethodInfo *)0x3;
-    uVar3 = func_?(TypeInfo__RTG__GizmoCap3DType,&pMStack_4);
-    func_?(pLVar1,uVar3,
-                    MethodInfo__System__Collections__Generic__List<System::Enum>__Add_System__Enum_)
-    ;
-    return pLVar1;
+  uStack_1 = 2;
+  pOVar2 = (Object *)func_?(TypeInfo__RTG__GizmoCap3DType,&uStack_1);
+  if (this_00 != (List_1_System_Object_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+              (this_00,pOVar2,
+               MethodInfo__System__Collections__Generic__List<System::Enum>__Add_System__Enum_);
+    pOVar2 = (Object *)func_?(TypeInfo__RTG__GizmoCap3DType);
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+              (this_00,pOVar2,
+               MethodInfo__System__Collections__Generic__List<System::Enum>__Add_System__Enum_);
+    return (List_1_System_Enum_ *)this_00;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  pLVar1 = (List_1_System_Enum_ *)(*pcVar5)();
-  return pLVar1;
+  pcVar3 = (code *)swi(3);
+  pLVar4 = (List_1_System_Enum_ *)(*pcVar3)();
+  return pLVar4;
 }
 
 
@@ -1448,532 +1448,689 @@ void Assembly-CSharp.dll::RTG::UniversalGizmoLookAndFeel3D::UniversalGizmoLookAn
                MethodInfo *method)
 
 {
-  if (lookAndFeel != (RotationGizmoLookAndFeel3D *)0x0) {
-    pCVar1 = RotationGizmoLookAndFeel3D::RotationGizmoLookAndFeel3D_get_XBorderColor
-                        ((Color *)&stack0xffffffdc,lookAndFeel,(MethodInfo *)0x0);
-    pGVar2 = (this->fields)._rtAxesLookAndFeel;
-    if (pGVar2 != (GizmoPlaneSlider3DLookAndFeel__Array *)0x0) {
-      if (pGVar2->max_length == 0) goto code_?;
-      pGVar3 = pGVar2->vector[0];
-      fVar4 = pCVar1->g;
-      fVar5 = pCVar1->b;
-      fVar6 = pCVar1->a;
-      if (pGVar3 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-        (pGVar3->fields)._borderColor.r = pCVar1->r;
-        (pGVar3->fields)._borderColor.g = fVar4;
-        (pGVar3->fields)._borderColor.b = fVar5;
-        (pGVar3->fields)._borderColor.a = fVar6;
-        pCVar1 = RotationGizmoLookAndFeel3D::RotationGizmoLookAndFeel3D_get_YBorderColor
-                            ((Color *)&stack0xffffffdc,lookAndFeel,(MethodInfo *)0x0);
-        pGVar2 = (this->fields)._rtAxesLookAndFeel;
-        if (pGVar2 != (GizmoPlaneSlider3DLookAndFeel__Array *)0x0) {
-          if (pGVar2->max_length < 2) goto code_?;
-          pGVar3 = pGVar2->vector[1];
-          fVar4 = pCVar1->g;
-          fVar5 = pCVar1->b;
-          fVar6 = pCVar1->a;
-          if (pGVar3 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-            (pGVar3->fields)._borderColor.r = pCVar1->r;
-            (pGVar3->fields)._borderColor.g = fVar4;
-            (pGVar3->fields)._borderColor.b = fVar5;
-            (pGVar3->fields)._borderColor.a = fVar6;
-            pCVar1 = RotationGizmoLookAndFeel3D::RotationGizmoLookAndFeel3D_get_ZBorderColor
-                                ((Color *)&stack0xffffffdc,lookAndFeel,(MethodInfo *)0x0);
-            pGVar2 = (this->fields)._rtAxesLookAndFeel;
-            if (pGVar2 != (GizmoPlaneSlider3DLookAndFeel__Array *)0x0) {
-              if (pGVar2->max_length < 3) goto code_?;
-              pGVar3 = pGVar2->vector[2];
-              fVar4 = pCVar1->g;
-              fVar5 = pCVar1->b;
-              fVar6 = pCVar1->a;
+  if ((lookAndFeel != (RotationGizmoLookAndFeel3D *)0x0) &&
+     (pGVar1 = (lookAndFeel->fields)._axesLookAndFeel,
+     pGVar1 != (GizmoPlaneSlider3DLookAndFeel__Array *)0x0)) {
+    if (pGVar1->max_length == 0) goto code_?;
+    pGVar2 = pGVar1->vector[0];
+    if (pGVar2 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+      pGVar1 = (this->fields)._rtAxesLookAndFeel;
+      if (pGVar1 != (GizmoPlaneSlider3DLookAndFeel__Array *)0x0) {
+        if (pGVar1->max_length == 0) goto code_?;
+        pGVar3 = pGVar1->vector[0];
+        fVar4 = (pGVar2->fields)._borderColor.g;
+        fVar5 = (pGVar2->fields)._borderColor.b;
+        fVar6 = (pGVar2->fields)._borderColor.a;
+        if (pGVar3 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+          (pGVar3->fields)._borderColor.r = (pGVar2->fields)._borderColor.r;
+          (pGVar3->fields)._borderColor.g = fVar4;
+          (pGVar3->fields)._borderColor.b = fVar5;
+          (pGVar3->fields)._borderColor.a = fVar6;
+          pGVar1 = (lookAndFeel->fields)._axesLookAndFeel;
+          if (pGVar1 != (GizmoPlaneSlider3DLookAndFeel__Array *)0x0) {
+            if (pGVar1->max_length < 2) goto code_?;
+            pGVar2 = pGVar1->vector[1];
+            if ((pGVar2 != (GizmoPlaneSlider3DLookAndFeel *)0x0) &&
+               (pGVar1 = (this->fields)._rtAxesLookAndFeel,
+               pGVar1 != (GizmoPlaneSlider3DLookAndFeel__Array *)0x0)) {
+              if (pGVar1->max_length < 2) goto code_?;
+              pGVar3 = pGVar1->vector[1];
+              fVar4 = (pGVar2->fields)._borderColor.g;
+              fVar5 = (pGVar2->fields)._borderColor.b;
+              fVar6 = (pGVar2->fields)._borderColor.a;
               if (pGVar3 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-                (pGVar3->fields)._borderColor.r = pCVar1->r;
+                (pGVar3->fields)._borderColor.r = (pGVar2->fields)._borderColor.r;
                 (pGVar3->fields)._borderColor.g = fVar4;
                 (pGVar3->fields)._borderColor.b = fVar5;
                 (pGVar3->fields)._borderColor.a = fVar6;
-                pGVar3 = (GizmoPlaneSlider3DLookAndFeel *)
-                          RotationGizmoLookAndFeel3D::
-                          RotationGizmoLookAndFeel3D_get_AxisCullAlphaScale
-                                    (lookAndFeel,(MethodInfo *)0x0);
-                pGVar2 = (this->fields)._rtAxesLookAndFeel;
-                uVar7 = 0;
-                if (pGVar2 != (GizmoPlaneSlider3DLookAndFeel__Array *)0x0) {
-                  ppGVar8 = pGVar2->vector;
-                  while( true ) {
-                    if ((int)pGVar2->max_length <= (int)uVar7) break;
-                    if (pGVar2->max_length <= uVar7) goto code_?;
-                    pGVar9 = *ppGVar8;
-                    if (pGVar9 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-                    pGVar2 = (GizmoPlaneSlider3DLookAndFeel__Array *)&UNK_?;
-                    GizmoPlaneSlider3DLookAndFeel::
-                    GizmoPlaneSlider3DLookAndFeel_set_BorderCircleCullAlphaScale
-                              (pGVar9,(float)pGVar3,(MethodInfo *)0x0);
-                    uVar7 = uVar7 + 1;
-                    ppGVar8 = (GizmoPlaneSlider3DLookAndFeel **)&pGVar3->monitor;
-                    pGVar3 = pGVar9;
-                  }
-                  GVar10 = RotationGizmoLookAndFeel3D::
-                           RotationGizmoLookAndFeel3D_get_AxisBorderFillMode
-                                     (lookAndFeel,(MethodInfo *)0x0);
-                  pGVar2 = (this->fields)._rtAxesLookAndFeel;
-                  uVar7 = 0;
-                  if (pGVar2 != (GizmoPlaneSlider3DLookAndFeel__Array *)0x0) {
-                    ppGVar8 = pGVar2->vector;
-                    for (; (int)uVar7 < (int)pGVar2->max_length; uVar7 = uVar7 + 1) {
-                      if (pGVar2->max_length <= uVar7) goto code_?;
-                      if (*ppGVar8 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-                      ((*ppGVar8)->fields)._borderFillMode = GVar10;
-                      ppGVar8 = ppGVar8 + 1;
-                    }
-                    GVar11 = RotationGizmoLookAndFeel3D::
-                             RotationGizmoLookAndFeel3D_get_AxisBorderType
-                                       (lookAndFeel,(MethodInfo *)0x0);
-                    pGVar2 = (this->fields)._rtAxesLookAndFeel;
-                    uVar7 = 0;
-                    if (pGVar2 != (GizmoPlaneSlider3DLookAndFeel__Array *)0x0) {
-                      ppGVar8 = pGVar2->vector;
-                      for (; (int)uVar7 < (int)pGVar2->max_length; uVar7 = uVar7 + 1) {
-                        if (pGVar2->max_length <= uVar7) goto code_?;
-                        if (*ppGVar8 == (GizmoPlaneSlider3DLookAndFeel *)0x0)
-                        goto code_?;
-                        ((*ppGVar8)->fields)._circleBorderType = GVar11;
-                        ppGVar8 = ppGVar8 + 1;
-                      }
-                      puVar12 = (undefined *)
-                                RotationGizmoLookAndFeel3D::
-                                RotationGizmoLookAndFeel3D_get_AxisCylTorusHeight
-                                          (lookAndFeel,(MethodInfo *)0x0);
-                      pGVar3 = (GizmoPlaneSlider3DLookAndFeel *)(this->fields)._rtAxesLookAndFeel;
-                      fVar4 = 0.0;
-                      if (pGVar3 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-                        pbVar13 = &(pGVar3->fields)._useZoomFactor;
-                        for (; (int)fVar4 < (int)(pGVar3->fields)._scale;
-                            fVar4 = (float)((int)fVar4 + 1)) {
-                          if ((uint)(pGVar3->fields)._scale <= (uint)fVar4) goto code_?;
-                          pGVar3 = *(GizmoPlaneSlider3DLookAndFeel **)pbVar13;
-                          if (pGVar3 == (GizmoPlaneSlider3DLookAndFeel *)0x0)
-                          goto code_?;
-                          puVar14 = &UNK_?;
-                          GizmoPlaneSlider3DLookAndFeel::
-                          GizmoPlaneSlider3DLookAndFeel_set_BorderCylTorusHeight
-                                    (pGVar3,(float)puVar12,(MethodInfo *)0x0);
-                          pbVar13 = puVar12 + 4;
-                          puVar12 = puVar14;
-                        }
-                        puVar12 = (undefined *)
-                                  RotationGizmoLookAndFeel3D::
-                                  RotationGizmoLookAndFeel3D_get_AxisCylTorusWidth
-                                            (lookAndFeel,(MethodInfo *)0x0);
-                        pGVar3 = (GizmoPlaneSlider3DLookAndFeel *)(this->fields)._rtAxesLookAndFeel
-                        ;
-                        fVar4 = 0.0;
-                        if (pGVar3 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-                          pbVar13 = &(pGVar3->fields)._useZoomFactor;
-                          for (; (int)fVar4 < (int)(pGVar3->fields)._scale;
-                              fVar4 = (float)((int)fVar4 + 1)) {
-                            if ((uint)(pGVar3->fields)._scale <= (uint)fVar4)
-                            goto code_?;
-                            pGVar3 = *(GizmoPlaneSlider3DLookAndFeel **)pbVar13;
-                            if (pGVar3 == (GizmoPlaneSlider3DLookAndFeel *)0x0)
-                            goto code_?;
-                            puVar14 = &UNK_?;
-                            GizmoPlaneSlider3DLookAndFeel::
-                            GizmoPlaneSlider3DLookAndFeel_set_BorderCylTorusWidth
-                                      (pGVar3,(float)puVar12,(MethodInfo *)0x0);
-                            pbVar13 = puVar12 + 4;
-                            puVar12 = puVar14;
-                          }
-                          puVar12 = (undefined *)
-                                    RotationGizmoLookAndFeel3D::
-                                    RotationGizmoLookAndFeel3D_get_AxisTorusThickness
-                                              (lookAndFeel,(MethodInfo *)0x0);
-                          pGVar3 = (GizmoPlaneSlider3DLookAndFeel *)
-                                    (this->fields)._rtAxesLookAndFeel;
-                          fVar4 = 0.0;
-                          if (pGVar3 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-                            pbVar13 = &(pGVar3->fields)._useZoomFactor;
-                            while( true ) {
-                              if ((int)(pGVar3->fields)._scale <= (int)fVar4) break;
-                              if ((uint)(pGVar3->fields)._scale <= (uint)fVar4)
+                pGVar1 = (lookAndFeel->fields)._axesLookAndFeel;
+                if (pGVar1 != (GizmoPlaneSlider3DLookAndFeel__Array *)0x0) {
+                  if (pGVar1->max_length < 3) goto code_?;
+                  pGVar2 = pGVar1->vector[2];
+                  if ((pGVar2 != (GizmoPlaneSlider3DLookAndFeel *)0x0) &&
+                     (pGVar1 = (this->fields)._rtAxesLookAndFeel,
+                     pGVar1 != (GizmoPlaneSlider3DLookAndFeel__Array *)0x0)) {
+                    if (pGVar1->max_length < 3) goto code_?;
+                    pGVar3 = pGVar1->vector[2];
+                    fVar4 = (pGVar2->fields)._borderColor.g;
+                    fVar5 = (pGVar2->fields)._borderColor.b;
+                    fVar6 = (pGVar2->fields)._borderColor.a;
+                    if (pGVar3 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+                      (pGVar3->fields)._borderColor.r = (pGVar2->fields)._borderColor.r;
+                      (pGVar3->fields)._borderColor.g = fVar4;
+                      (pGVar3->fields)._borderColor.b = fVar5;
+                      (pGVar3->fields)._borderColor.a = fVar6;
+                      pGVar1 = (lookAndFeel->fields)._axesLookAndFeel;
+                      if (pGVar1 != (GizmoPlaneSlider3DLookAndFeel__Array *)0x0) {
+                        if (pGVar1->max_length == 0) goto code_?;
+                        if (pGVar1->vector[0] != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+                          fVar4 = (pGVar1->vector[0]->fields)._borderCircleCullAlphaScale;
+                          uVar7 = 0;
+                          pGVar1 = (this->fields)._rtAxesLookAndFeel;
+                          if (pGVar1 != (GizmoPlaneSlider3DLookAndFeel__Array *)0x0) {
+                            ppGVar8 = pGVar1->vector;
+                            for (; (int)uVar7 < (int)pGVar1->max_length; uVar7 = uVar7 + 1) {
+                              if (pGVar1->max_length <= uVar7) goto code_?;
+                              if (*ppGVar8 == (GizmoPlaneSlider3DLookAndFeel *)0x0)
                               goto code_?;
-                              pGVar3 = *(GizmoPlaneSlider3DLookAndFeel **)pbVar13;
-                              if (pGVar3 == (GizmoPlaneSlider3DLookAndFeel *)0x0)
-                              goto code_?;
-                              puVar14 = &UNK_?;
                               GizmoPlaneSlider3DLookAndFeel::
-                              GizmoPlaneSlider3DLookAndFeel_set_BorderTorusThickness
-                                        (pGVar3,(float)puVar12,(MethodInfo *)0x0);
-                              fVar4 = (float)((int)fVar4 + 1);
-                              pbVar13 = puVar12 + 4;
-                              puVar12 = puVar14;
+                              GizmoPlaneSlider3DLookAndFeel_set_BorderCircleCullAlphaScale
+                                        (*ppGVar8,fVar4,(MethodInfo *)0x0);
+                              ppGVar8 = ppGVar8 + 1;
                             }
-                            bVar15 = UniversalGizmoLookAndFeel3D_IsMvPositiveSliderVisible
-                                              ((UniversalGizmoLookAndFeel3D *)lookAndFeel,0,
-                                               (MethodInfo *)0x0);
-                            pBVar16 = (this->fields)._rtAxesVis;
-                            if (pBVar16 != (Boolean__Array *)0x0) {
-                              if (pBVar16->max_length == 0) goto code_?;
-                              pBVar16->vector[0] = bVar15;
-                              bVar15 = UniversalGizmoLookAndFeel3D_IsMvPositiveSliderVisible
-                                                ((UniversalGizmoLookAndFeel3D *)lookAndFeel,1,
-                                                 (MethodInfo *)0x0);
-                              pBVar16 = (this->fields)._rtAxesVis;
-                              if (pBVar16 != (Boolean__Array *)0x0) {
-                                if (pBVar16->max_length < 2) goto code_?;
-                                pBVar16->vector[1] = bVar15;
-                                bVar15 = UniversalGizmoLookAndFeel3D_IsMvPositiveSliderVisible
-                                                  ((UniversalGizmoLookAndFeel3D *)lookAndFeel,2,
-                                                   (MethodInfo *)0x0);
-                                pBVar16 = (this->fields)._rtAxesVis;
-                                if (pBVar16 != (Boolean__Array *)0x0) {
-                                  if (pBVar16->max_length < 3) goto code_?;
-                                  pBVar16->vector[2] = bVar15;
-                                  pCVar1 = RotationGizmoLookAndFeel3D::
-                                            RotationGizmoLookAndFeel3D_get_CamLookSliderBorderColor
-                                                      ((Color *)&stack0xffffffdc,lookAndFeel,
-                                                       (MethodInfo *)0x0);
-                                  pGVar17 = (this->fields)._rtCamLookSliderLookAndFeel;
-                                  fVar4 = pCVar1->g;
-                                  fVar5 = pCVar1->b;
-                                  fVar6 = pCVar1->a;
-                                  if (pGVar17 != (GizmoPlaneSlider2DLookAndFeel *)0x0) {
-                                    (pGVar17->fields)._borderColor.r = pCVar1->r;
-                                    (pGVar17->fields)._borderColor.g = fVar4;
-                                    (pGVar17->fields)._borderColor.b = fVar5;
-                                    (pGVar17->fields)._borderColor.a = fVar6;
-                                    pCVar1 = RotationGizmoLookAndFeel3D::
-                                              RotationGizmoLookAndFeel3D_get_CamLookSliderHoveredBorderColor
-                                                        ((Color *)&stack0xffffffdc,lookAndFeel,
-                                                         (MethodInfo *)0x0);
-                                    pGVar17 = (this->fields)._rtCamLookSliderLookAndFeel;
-                                    fVar4 = pCVar1->g;
-                                    fVar5 = pCVar1->b;
-                                    fVar6 = pCVar1->a;
-                                    if (pGVar17 != (GizmoPlaneSlider2DLookAndFeel *)0x0) {
-                                      (pGVar17->fields)._hoveredBorderColor.r = pCVar1->r;
-                                      (pGVar17->fields)._hoveredBorderColor.g = fVar4;
-                                      (pGVar17->fields)._hoveredBorderColor.b = fVar5;
-                                      (pGVar17->fields)._hoveredBorderColor.a = fVar6;
-                                      fVar4 = RotationGizmoLookAndFeel3D::
-                                               RotationGizmoLookAndFeel3D_get_CamLookSliderPolyBorderThickness
-                                                         (lookAndFeel,(MethodInfo *)0x0);
-                                      pGVar17 = (this->fields)._rtCamLookSliderLookAndFeel;
-                                      if (pGVar17 != (GizmoPlaneSlider2DLookAndFeel *)0x0) {
-                                        GizmoPlaneSlider2DLookAndFeel::
-                                        GizmoPlaneSlider2DLookAndFeel_set_BorderPolyThickness
-                                                  (pGVar17,fVar4,(MethodInfo *)0x0);
-                                        GVar18 = RotationGizmoLookAndFeel3D::
-                                                 RotationGizmoLookAndFeel3D_get_CamLookSliderPolyBorderType
-                                                           (lookAndFeel,(MethodInfo *)0x0);
-                                        pGVar17 = (this->fields)._rtCamLookSliderLookAndFeel;
-                                        if (pGVar17 != (GizmoPlaneSlider2DLookAndFeel *)0x0) {
-                                          (pGVar17->fields)._polygonBorderType = GVar18;
-                                          fVar4 = (lookAndFeel->fields)._camLookSliderRadiusOffset;
-                                          fVar5 = 0.0;
-                                          if (0.0 <= fVar4) {
-                                            fVar5 = fVar4;
-                                          }
-                                          (this->fields)._rtCamLookSliderRadiusOffset = fVar5;
-                                          (this->fields)._isRtCamLookSliderVisible =
-                                               (lookAndFeel->fields)._isCamLookSliderVisible;
-                                          pCVar1 = RotationGizmoLookAndFeel3D::
-                                                    RotationGizmoLookAndFeel3D_get_HoveredColor
-                                                              ((Color *)&stack0xffffffdc,lookAndFeel
-                                                               ,(MethodInfo *)0x0);
-                                          UniversalGizmoLookAndFeel3D_SetRtHoveredColor
-                                                    (this,*pCVar1,(MethodInfo *)0x0);
-                                          pCVar1 = RotationGizmoLookAndFeel3D::
+                            pGVar1 = (lookAndFeel->fields)._axesLookAndFeel;
+                            if (pGVar1 != (GizmoPlaneSlider3DLookAndFeel__Array *)0x0) {
+                              if (pGVar1->max_length == 0) goto code_?;
+                              if (pGVar1->vector[0] != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+                                iVar9 = (pGVar1->vector[0]->fields)._borderFillMode;
+                                uVar7 = 0;
+                                pGVar1 = (this->fields)._rtAxesLookAndFeel;
+                                if (pGVar1 != (GizmoPlaneSlider3DLookAndFeel__Array *)0x0) {
+                                  ppGVar8 = pGVar1->vector;
+                                  for (; (int)uVar7 < (int)pGVar1->max_length; uVar7 = uVar7 + 1)
+                                  {
+                                    if (pGVar1->max_length <= uVar7) goto code_?;
+                                    if (*ppGVar8 == (GizmoPlaneSlider3DLookAndFeel *)0x0)
+                                    goto code_?;
+                                    ((*ppGVar8)->fields)._borderFillMode = iVar9;
+                                    ppGVar8 = ppGVar8 + 1;
+                                  }
+                                  pGVar1 = (lookAndFeel->fields)._axesLookAndFeel;
+                                  if (pGVar1 != (GizmoPlaneSlider3DLookAndFeel__Array *)0x0) {
+                                    if (pGVar1->max_length == 0) goto code_?;
+                                    if (pGVar1->vector[0] != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+                                      iVar9 = (pGVar1->vector[0]->fields)._circleBorderType;
+                                      uVar7 = 0;
+                                      pGVar1 = (this->fields)._rtAxesLookAndFeel;
+                                      if (pGVar1 != (GizmoPlaneSlider3DLookAndFeel__Array *)0x0) {
+                                        ppGVar8 = pGVar1->vector;
+                                        for (; (int)uVar7 < (int)pGVar1->max_length;
+                                            uVar7 = uVar7 + 1) {
+                                          if (pGVar1->max_length <= uVar7) goto code_?;
+                                          if (*ppGVar8 == (GizmoPlaneSlider3DLookAndFeel *)0x0)
+                                          goto code_?;
+                                          ((*ppGVar8)->fields)._circleBorderType = iVar9;
+                                          ppGVar8 = ppGVar8 + 1;
+                                        }
+                                        pGVar1 = (lookAndFeel->fields)._axesLookAndFeel;
+                                        if (pGVar1 != (GizmoPlaneSlider3DLookAndFeel__Array *)0x0) {
+                                          if (pGVar1->max_length == 0) goto code_?;
+                                          if (pGVar1->vector[0] !=
+                                              (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+                                            fVar4 = (pGVar1->vector[0]->fields).
+                                                    _borderCylTorusHeight;
+                                            uVar7 = 0;
+                                            pGVar1 = (this->fields)._rtAxesLookAndFeel;
+                                            if (pGVar1 != (GizmoPlaneSlider3DLookAndFeel__Array *)
+                                                          0x0) {
+                                              ppGVar8 = pGVar1->vector;
+                                              for (; (int)uVar7 < (int)pGVar1->max_length;
+                                                  uVar7 = uVar7 + 1) {
+                                                if (pGVar1->max_length <= uVar7)
+                                                goto code_?;
+                                                if (*ppGVar8 ==
+                                                    (GizmoPlaneSlider3DLookAndFeel *)0x0)
+                                                goto code_?;
+                                                GizmoPlaneSlider3DLookAndFeel::
+                                                GizmoPlaneSlider3DLookAndFeel_set_BorderCylTorusHeight
+                                                          (*ppGVar8,fVar4,(MethodInfo *)0x0);
+                                                ppGVar8 = ppGVar8 + 1;
+                                              }
+                                              pGVar1 = (lookAndFeel->fields)._axesLookAndFeel;
+                                              if (pGVar1 != (GizmoPlaneSlider3DLookAndFeel__Array *)
+                                                            0x0) {
+                                                if (pGVar1->max_length == 0) goto code_?;
+                                                if (pGVar1->vector[0] !=
+                                                    (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+                                                  fVar4 = (pGVar1->vector[0]->fields).
+                                                          _borderCylTorusWidth;
+                                                  uVar7 = 0;
+                                                  pGVar1 = (this->fields)._rtAxesLookAndFeel;
+                                                  if (pGVar1 != (
+                                                  GizmoPlaneSlider3DLookAndFeel__Array *)0x0) {
+                                                    ppGVar8 = pGVar1->vector;
+                                                    for (; (int)uVar7 < (int)pGVar1->max_length;
+                                                        uVar7 = uVar7 + 1) {
+                                                      if (pGVar1->max_length <= uVar7)
+                                                      goto code_?;
+                                                      if (*ppGVar8 ==
+                                                          (GizmoPlaneSlider3DLookAndFeel *)0x0)
+                                                      goto code_?;
+                                                      GizmoPlaneSlider3DLookAndFeel::
+                                                                                                            
+                                                  GizmoPlaneSlider3DLookAndFeel_set_BorderCylTorusWidth
+                                                            (*ppGVar8,fVar4,(MethodInfo *)0x0);
+                                                  ppGVar8 = ppGVar8 + 1;
+                                                  }
+                                                  pGVar1 = (lookAndFeel->fields)._axesLookAndFeel;
+                                                  if (pGVar1 != (
+                                                  GizmoPlaneSlider3DLookAndFeel__Array *)0x0) {
+                                                    if (pGVar1->max_length == 0)
+                                                    goto code_?;
+                                                    if (pGVar1->vector[0] !=
+                                                        (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+                                                      fVar4 = (pGVar1->vector[0]->fields).
+                                                              _borderTorusThickness;
+                                                      uVar7 = 0;
+                                                      pGVar1 = (this->fields)._rtAxesLookAndFeel;
+                                                      if (pGVar1 != (
+                                                  GizmoPlaneSlider3DLookAndFeel__Array *)0x0) {
+                                                    ppGVar8 = pGVar1->vector;
+                                                    for (; (int)uVar7 < (int)pGVar1->max_length;
+                                                        uVar7 = uVar7 + 1) {
+                                                      if (pGVar1->max_length <= uVar7)
+                                                      goto code_?;
+                                                      if (*ppGVar8 ==
+                                                          (GizmoPlaneSlider3DLookAndFeel *)0x0)
+                                                      goto code_?;
+                                                      GizmoPlaneSlider3DLookAndFeel::
+                                                                                                            
+                                                  GizmoPlaneSlider3DLookAndFeel_set_BorderTorusThickness
+                                                            (*ppGVar8,fVar4,(MethodInfo *)0x0);
+                                                  ppGVar8 = ppGVar8 + 1;
+                                                  }
+                                                  pBVar10 = (lookAndFeel->fields)._axesVis;
+                                                  if (pBVar10 != (Boolean__Array *)0x0) {
+                                                    if (pBVar10->max_length == 0)
+                                                    goto code_?;
+                                                    pBVar11 = (this->fields)._rtAxesVis;
+                                                    if (pBVar11 != (Boolean__Array *)0x0) {
+                                                      if (pBVar11->max_length == 0)
+                                                      goto code_?;
+                                                      pBVar11->vector[0] = pBVar10->vector[0] != 0;
+                                                      pBVar10 = (lookAndFeel->fields)._axesVis;
+                                                      if (pBVar10 != (Boolean__Array *)0x0) {
+                                                        if (pBVar10->max_length < 2)
+                                                        goto code_?;
+                                                        pBVar11 = (this->fields)._rtAxesVis;
+                                                        if (pBVar11 != (Boolean__Array *)0x0) {
+                                                          if (pBVar11->max_length < 2)
+                                                          goto code_?;
+                                                          pBVar11->vector[1] = pBVar10->vector[1] != 0
+                                                          ;
+                                                          pBVar10 = (lookAndFeel->fields)._axesVis;
+                                                          if (pBVar10 != (Boolean__Array *)0x0) {
+                                                            if (pBVar10->max_length < 3)
+                                                            goto code_?;
+                                                            pBVar11 = (this->fields)._rtAxesVis;
+                                                            if (pBVar11 != (Boolean__Array *)0x0) {
+                                                              if (pBVar11->max_length < 3)
+                                                              goto code_?;
+                                                              pBVar11->vector[2] =
+                                                                   pBVar10->vector[2] != 0;
+                                                              pGVar12 = (lookAndFeel->fields).
+                                                                       _camLookSliderLookAndFeel;
+                                                              if (pGVar12 != (
+                                                  GizmoPlaneSlider2DLookAndFeel *)0x0) {
+                                                    pGVar13 = (this->fields).
+                                                              _rtCamLookSliderLookAndFeel;
+                                                    fVar4 = (pGVar12->fields)._borderColor.g;
+                                                    fVar5 = (pGVar12->fields)._borderColor.b;
+                                                    fVar6 = (pGVar12->fields)._borderColor.a;
+                                                    if (pGVar13 !=
+                                                        (GizmoPlaneSlider2DLookAndFeel *)0x0) {
+                                                      (pGVar13->fields)._borderColor.r =
+                                                           (pGVar12->fields)._borderColor.r;
+                                                      (pGVar13->fields)._borderColor.g = fVar4;
+                                                      (pGVar13->fields)._borderColor.b = fVar5;
+                                                      (pGVar13->fields)._borderColor.a = fVar6;
+                                                      pGVar12 = (lookAndFeel->fields).
+                                                               _camLookSliderLookAndFeel;
+                                                      if (pGVar12 != (GizmoPlaneSlider2DLookAndFeel *
+                                                                    )0x0) {
+                                                        pGVar13 = (this->fields).
+                                                                  _rtCamLookSliderLookAndFeel;
+                                                        fVar4 = (pGVar12->fields)._hoveredBorderColor
+                                                                .g;
+                                                        fVar5 = (pGVar12->fields).
+                                                                 _hoveredBorderColor.b;
+                                                        fVar6 = (pGVar12->fields).
+                                                                 _hoveredBorderColor.a;
+                                                        if (pGVar13 !=
+                                                            (GizmoPlaneSlider2DLookAndFeel *)0x0) {
+                                                          (pGVar13->fields)._hoveredBorderColor.r =
+                                                               (pGVar12->fields)._hoveredBorderColor.
+                                                               r;
+                                                          (pGVar13->fields)._hoveredBorderColor.g =
+                                                               fVar4;
+                                                          (pGVar13->fields)._hoveredBorderColor.b =
+                                                               fVar5;
+                                                          (pGVar13->fields)._hoveredBorderColor.a =
+                                                               fVar6;
+                                                          pGVar12 = (lookAndFeel->fields).
+                                                                   _camLookSliderLookAndFeel;
+                                                          if ((pGVar12 != (
+                                                  GizmoPlaneSlider2DLookAndFeel *)0x0) &&
+                                                  (pGVar13 = (this->fields).
+                                                             _rtCamLookSliderLookAndFeel,
+                                                  pGVar13 != (GizmoPlaneSlider2DLookAndFeel *)0x0))
+                                                  {
+                                                    GizmoPlaneSlider2DLookAndFeel::
                                                                                                         
-                                                  RotationGizmoLookAndFeel3D_get_HoveredMidCapColor
-                                                            ((Color *)&stack0xffffffdc,lookAndFeel,
+                                                  GizmoPlaneSlider2DLookAndFeel_set_BorderPolyThickness
+                                                            (pGVar13,(pGVar12->fields).
+                                                                     _borderPolyThickness,
                                                              (MethodInfo *)0x0);
-                                          pGVar19 = (this->fields)._rtMidCapLookAndFeel;
-                                          fVar4 = pCVar1->g;
-                                          fVar5 = pCVar1->b;
-                                          fVar6 = pCVar1->a;
-                                          if (pGVar19 != (GizmoCap3DLookAndFeel *)0x0) {
-                                            (pGVar19->fields)._hoveredColor.r = pCVar1->r;
-                                            (pGVar19->fields)._hoveredColor.g = fVar4;
-                                            (pGVar19->fields)._hoveredColor.b = fVar5;
-                                            (pGVar19->fields)._hoveredColor.a = fVar6;
-                                            pCVar1 = RotationGizmoLookAndFeel3D::
+                                                  pGVar12 = (lookAndFeel->fields).
+                                                           _camLookSliderLookAndFeel;
+                                                  if ((pGVar12 != (GizmoPlaneSlider2DLookAndFeel *)
+                                                                 0x0) &&
+                                                     (pGVar13 = (this->fields).
+                                                                _rtCamLookSliderLookAndFeel,
+                                                     pGVar13 != (GizmoPlaneSlider2DLookAndFeel *)0x0
+                                                     )) {
+                                                    (pGVar13->fields)._polygonBorderType =
+                                                         (pGVar12->fields)._polygonBorderType;
+                                                    fVar4 = (lookAndFeel->fields).
+                                                            _camLookSliderRadiusOffset;
+                                                    fVar5 = 0.0;
+                                                    if (0.0 <= fVar4) {
+                                                      fVar5 = fVar4;
+                                                    }
+                                                    (this->fields)._rtCamLookSliderRadiusOffset =
+                                                         fVar5;
+                                                    (this->fields)._isRtCamLookSliderVisible =
+                                                         (lookAndFeel->fields).
+                                                         _isCamLookSliderVisible;
+                                                    pGVar1 = (lookAndFeel->fields)._axesLookAndFeel;
+                                                    if (pGVar1 != (
+                                                  GizmoPlaneSlider3DLookAndFeel__Array *)0x0) {
+                                                    if (pGVar1->max_length == 0)
+                                                    goto code_?;
+                                                    if (pGVar1->vector[0] !=
+                                                        (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+                                                      UniversalGizmoLookAndFeel3D_SetRtHoveredColor
+                                                                (this,(pGVar1->vector[0]->fields).
+                                                                      _hoveredColor,
+                                                                 (MethodInfo *)0x0);
+                                                      pGVar14 = (lookAndFeel->fields).
+                                                                _midCapLookAndFeel;
+                                                      if (pGVar14 != (GizmoCap3DLookAndFeel *)0x0) {
+                                                        pGVar15 = (this->fields).
+                                                                  _rtMidCapLookAndFeel;
+                                                        fVar4 = (pGVar14->fields)._hoveredColor.g;
+                                                        fVar5 = (pGVar14->fields)._hoveredColor.b;
+                                                        fVar6 = (pGVar14->fields)._hoveredColor.a;
+                                                        if (pGVar15 != (GizmoCap3DLookAndFeel *)0x0)
+                                                        {
+                                                          (pGVar15->fields)._hoveredColor.r =
+                                                               (pGVar14->fields)._hoveredColor.r;
+                                                          (pGVar15->fields)._hoveredColor.g = fVar4;
+                                                          (pGVar15->fields)._hoveredColor.b = fVar5
+                                                          ;
+                                                          (pGVar15->fields)._hoveredColor.a = fVar6
+                                                          ;
+                                                          pGVar14 = (lookAndFeel->fields).
+                                                                    _midCapLookAndFeel;
+                                                          if (pGVar14 !=
+                                                              (GizmoCap3DLookAndFeel *)0x0) {
+                                                            pGVar15 = (this->fields).
+                                                                      _rtMidCapLookAndFeel;
+                                                            fVar4 = (pGVar14->fields).
+                                                                    _sphereBorderColor.g;
+                                                            fVar5 = (pGVar14->fields).
+                                                                     _sphereBorderColor.b;
+                                                            fVar6 = (pGVar14->fields).
+                                                                     _sphereBorderColor.a;
+                                                            if (pGVar15 !=
+                                                                (GizmoCap3DLookAndFeel *)0x0) {
+                                                              (pGVar15->fields)._sphereBorderColor.r
+                                                                   = (pGVar14->fields).
+                                                                     _sphereBorderColor.r;
+                                                              (pGVar15->fields)._sphereBorderColor.g
+                                                                   = fVar4;
+                                                              (pGVar15->fields)._sphereBorderColor.b
+                                                                   = fVar5;
+                                                              (pGVar15->fields)._sphereBorderColor.a
+                                                                   = fVar6;
+                                                              pGVar14 = (lookAndFeel->fields).
+                                                                        _midCapLookAndFeel;
+                                                              if ((pGVar14 !=
+                                                                   (GizmoCap3DLookAndFeel *)0x0) &&
+                                                                 (pGVar15 = (this->fields).
+                                                                            _rtMidCapLookAndFeel,
+                                                                 pGVar15 !=
+                                                                 (GizmoCap3DLookAndFeel *)0x0)) {
+                                                                (pGVar15->fields).
+                                                                _isSphereBorderVisible =
+                                                                     (pGVar14->fields).
+                                                                     _isSphereBorderVisible;
+                                                                pGVar14 = (lookAndFeel->fields).
+                                                                          _midCapLookAndFeel;
+                                                                if (pGVar14 !=
+                                                                    (GizmoCap3DLookAndFeel *)0x0) {
+                                                                  pGVar15 = (this->fields).
+                                                                            _rtMidCapLookAndFeel;
+                                                                  fVar4 = (pGVar14->fields)._color.g
+                                                                  ;
+                                                                  fVar5 = (pGVar14->fields)._color.
+                                                                           b;
+                                                                  fVar6 = (pGVar14->fields)._color.
+                                                                           a;
+                                                                  if (pGVar15 !=
+                                                                      (GizmoCap3DLookAndFeel *)0x0)
+                                                                  {
+                                                                    (pGVar15->fields)._color.r =
+                                                                         (pGVar14->fields)._color.r;
+                                                                    (pGVar15->fields)._color.g =
+                                                                         fVar4;
+                                                                    (pGVar15->fields)._color.b =
+                                                                         fVar5;
+                                                                    (pGVar15->fields)._color.a =
+                                                                         fVar6;
+                                                                    (this->fields).
+                                                                    _isRtMidCapVisible =
+                                                                         (lookAndFeel->fields).
+                                                                         _isMidCapVisible;
+                                                                    pGVar1 = (lookAndFeel->fields).
+                                                                             _axesLookAndFeel;
+                                                                    if (pGVar1 != (
+                                                  GizmoPlaneSlider3DLookAndFeel__Array *)0x0) {
+                                                    if (pGVar1->max_length == 0)
+                                                    goto code_?;
+                                                    if (pGVar1->vector[0] !=
+                                                        (GizmoPlaneSlider3DLookAndFeel *)0x0) {
                                                                                                             
-                                                  RotationGizmoLookAndFeel3D_get_MidCapBorderColor
-                                                            ((Color *)&stack0xffffffdc,lookAndFeel,
-                                                             (MethodInfo *)0x0);
-                                            pGVar19 = (this->fields)._rtMidCapLookAndFeel;
-                                            fVar4 = pCVar1->g;
-                                            fVar5 = pCVar1->b;
-                                            fVar6 = pCVar1->a;
-                                            if (pGVar19 != (GizmoCap3DLookAndFeel *)0x0) {
-                                              (pGVar19->fields)._sphereBorderColor.r = pCVar1->r;
-                                              (pGVar19->fields)._sphereBorderColor.g = fVar4;
-                                              (pGVar19->fields)._sphereBorderColor.b = fVar5;
-                                              (pGVar19->fields)._sphereBorderColor.a = fVar6;
-                                              bVar15 = RotationGizmoLookAndFeel3D::
-                                                                                                            
-                                                  RotationGizmoLookAndFeel3D_get_IsMidCapBorderVisible
-                                                            (lookAndFeel,(MethodInfo *)0x0);
-                                              pGVar19 = (this->fields)._rtMidCapLookAndFeel;
-                                              if (pGVar19 != (GizmoCap3DLookAndFeel *)0x0) {
-                                                (pGVar19->fields)._isSphereBorderVisible = bVar15;
-                                                pCVar1 = RotationGizmoLookAndFeel3D::
-                                                          RotationGizmoLookAndFeel3D_get_MidCapColor
-                                                                    ((Color *)&stack0xffffffdc,
-                                                                     lookAndFeel,(MethodInfo *)0x0);
-                                                pGVar19 = (this->fields)._rtMidCapLookAndFeel;
-                                                fVar4 = pCVar1->g;
-                                                fVar5 = pCVar1->b;
-                                                fVar6 = pCVar1->a;
-                                                if (pGVar19 != (GizmoCap3DLookAndFeel *)0x0) {
-                                                  (pGVar19->fields)._color.r = pCVar1->r;
-                                                  (pGVar19->fields)._color.g = fVar4;
-                                                  (pGVar19->fields)._color.b = fVar5;
-                                                  (pGVar19->fields)._color.a = fVar6;
-                                                  (this->fields)._isRtMidCapVisible =
-                                                       (lookAndFeel->fields)._isMidCapVisible;
-                                                  numSlices = RotationGizmoLookAndFeel3D::
-                                                                                                                            
-                                                  RotationGizmoLookAndFeel3D_get_NumAxisTorusWireAxialSlices
-                                                            (lookAndFeel,(MethodInfo *)0x0);
                                                   UniversalGizmoLookAndFeel3D_SetRtNumAxisTorusWireAxialSlices
-                                                            (this,numSlices,(MethodInfo *)0x0);
-                                                  fVar4 = RotationGizmoLookAndFeel3D::
-                                                           RotationGizmoLookAndFeel3D_get_Radius
-                                                                     (lookAndFeel,(MethodInfo *)0x0)
+                                                            (this,(pGVar1->vector[0]->fields).
+                                                                  _numBorderTorusWireAxialSlices,
+                                                             (MethodInfo *)0x0);
+                                                  pGVar14 = (lookAndFeel->fields)._midCapLookAndFeel
                                                   ;
-                                                  UniversalGizmoLookAndFeel3D_SetRtRadius
-                                                            (this,fVar4,(MethodInfo *)0x0);
-                                                  pCVar1 = RotationGizmoLookAndFeel3D::
-                                                                                                                        
-                                                  RotationGizmoLookAndFeel3D_get_RotationArcBorderColor
-                                                            ((Color *)&stack0xffffffdc,lookAndFeel,
-                                                             (MethodInfo *)0x0);
-                                                  pGVar2 = (this->fields)._rtAxesLookAndFeel;
-                                                  uVar7 = 0;
-                                                  fVar4 = pCVar1->r;
-                                                  fVar5 = pCVar1->g;
-                                                  fVar6 = pCVar1->b;
-                                                  fVar20 = pCVar1->a;
-                                                  if (pGVar2 !=
-                                                      (GizmoPlaneSlider3DLookAndFeel__Array *)0x0) {
-                                                    ppGVar8 = pGVar2->vector;
-                                                    for (; (int)uVar7 < (int)pGVar2->max_length;
+                                                  if (pGVar14 != (GizmoCap3DLookAndFeel *)0x0) {
+                                                    UniversalGizmoLookAndFeel3D_SetRtRadius
+                                                              (this,(pGVar14->fields)._sphereRadius,
+                                                               (MethodInfo *)0x0);
+                                                    pGVar1 = (lookAndFeel->fields)._axesLookAndFeel;
+                                                    if (pGVar1 != (
+                                                  GizmoPlaneSlider3DLookAndFeel__Array *)0x0) {
+                                                    if (pGVar1->max_length == 0)
+                                                    goto code_?;
+                                                    if ((pGVar1->vector[0] !=
+                                                         (GizmoPlaneSlider3DLookAndFeel *)0x0) &&
+                                                       (pGVar16 = (pGVar1->vector[0]->fields).
+                                                                  _rotationArcLookAndFeel,
+                                                       pGVar16 !=
+                                                       (GizmoRotationArc3DLookAndFeel *)0x0)) {
+                                                      fVar4 = (pGVar16->fields)._borderColor.r;
+                                                      fVar5 = (pGVar16->fields)._borderColor.g;
+                                                      fVar6 = (pGVar16->fields)._borderColor.b;
+                                                      fVar17 = (pGVar16->fields)._borderColor.a;
+                                                      pGVar1 = (this->fields)._rtAxesLookAndFeel;
+                                                      uVar7 = 0;
+                                                      if (pGVar1 != (
+                                                  GizmoPlaneSlider3DLookAndFeel__Array *)0x0) {
+                                                    ppGVar8 = pGVar1->vector;
+                                                    for (; (int)uVar7 < (int)pGVar1->max_length;
                                                         uVar7 = uVar7 + 1) {
-                                                      if (pGVar2->max_length <= uVar7)
+                                                      if (pGVar1->max_length <= uVar7)
                                                       goto code_?;
                                                       if ((*ppGVar8 ==
                                                            (GizmoPlaneSlider3DLookAndFeel *)0x0) ||
-                                                         (pGVar21 = ((*ppGVar8)->fields).
-                                                                   _rotationArcLookAndFeel,
-                                                         pGVar21 == (GizmoRotationArc3DLookAndFeel *)
-                                                                   0x0)) goto code_?;
+                                                         (pGVar16 = ((*ppGVar8)->fields).
+                                                                    _rotationArcLookAndFeel,
+                                                         pGVar16 ==
+                                                         (GizmoRotationArc3DLookAndFeel *)0x0))
+                                                      goto code_?;
                                                       ppGVar8 = ppGVar8 + 1;
-                                                      (pGVar21->fields)._borderColor.r = fVar4;
-                                                      (pGVar21->fields)._borderColor.g = fVar5;
-                                                      (pGVar21->fields)._borderColor.b = fVar6;
-                                                      (pGVar21->fields)._borderColor.a = fVar20;
+                                                      (pGVar16->fields)._borderColor.r = fVar4;
+                                                      (pGVar16->fields)._borderColor.g = fVar5;
+                                                      (pGVar16->fields)._borderColor.b = fVar6;
+                                                      (pGVar16->fields)._borderColor.a = fVar17;
                                                     }
-                                                    pGVar17 = (this->fields).
+                                                    pGVar12 = (this->fields).
                                                              _rtCamLookSliderLookAndFeel;
-                                                    if ((pGVar17 != (GizmoPlaneSlider2DLookAndFeel *)
+                                                    if ((pGVar12 != (GizmoPlaneSlider2DLookAndFeel *)
                                                                    0x0) &&
-                                                       (pGVar22 = (pGVar17->fields).
-                                                                 _rotationArcLookAndFeel,
-                                                       pGVar22 != (GizmoRotationArc2DLookAndFeel *)
-                                                                 0x0)) {
-                                                      (pGVar22->fields)._borderColor.r = fVar4;
-                                                      (pGVar22->fields)._borderColor.g = fVar5;
-                                                      (pGVar22->fields)._borderColor.b = fVar6;
-                                                      (pGVar22->fields)._borderColor.a = fVar20;
-                                                      pCVar1 = RotationGizmoLookAndFeel3D::
-                                                                                                                                
-                                                  RotationGizmoLookAndFeel3D_get_RotationArcColor
-                                                            ((Color *)&stack0xffffffdc,lookAndFeel,
-                                                             (MethodInfo *)0x0);
-                                                  pGVar2 = (this->fields)._rtAxesLookAndFeel;
-                                                  uVar7 = 0;
-                                                  fVar4 = pCVar1->r;
-                                                  fVar5 = pCVar1->g;
-                                                  fVar6 = pCVar1->b;
-                                                  fVar20 = pCVar1->a;
-                                                  if (pGVar2 !=
-                                                      (GizmoPlaneSlider3DLookAndFeel__Array *)0x0) {
-                                                    ppGVar8 = pGVar2->vector;
-                                                    for (; (int)uVar7 < (int)pGVar2->max_length;
+                                                       (pGVar18 = (pGVar12->fields).
+                                                                  _rotationArcLookAndFeel,
+                                                       pGVar18 !=
+                                                       (GizmoRotationArc2DLookAndFeel *)0x0)) {
+                                                      (pGVar18->fields)._borderColor.r = fVar4;
+                                                      (pGVar18->fields)._borderColor.g = fVar5;
+                                                      (pGVar18->fields)._borderColor.b = fVar6;
+                                                      (pGVar18->fields)._borderColor.a = fVar17;
+                                                      pGVar1 = (lookAndFeel->fields).
+                                                               _axesLookAndFeel;
+                                                      if (pGVar1 != (
+                                                  GizmoPlaneSlider3DLookAndFeel__Array *)0x0) {
+                                                    if (pGVar1->max_length == 0)
+                                                    goto code_?;
+                                                    if ((pGVar1->vector[0] !=
+                                                         (GizmoPlaneSlider3DLookAndFeel *)0x0) &&
+                                                       (pGVar16 = (pGVar1->vector[0]->fields).
+                                                                  _rotationArcLookAndFeel,
+                                                       pGVar16 !=
+                                                       (GizmoRotationArc3DLookAndFeel *)0x0)) {
+                                                      fVar4 = (pGVar16->fields)._color.r;
+                                                      fVar5 = (pGVar16->fields)._color.g;
+                                                      fVar6 = (pGVar16->fields)._color.b;
+                                                      fVar17 = (pGVar16->fields)._color.a;
+                                                      pGVar1 = (this->fields)._rtAxesLookAndFeel;
+                                                      uVar7 = 0;
+                                                      if (pGVar1 != (
+                                                  GizmoPlaneSlider3DLookAndFeel__Array *)0x0) {
+                                                    ppGVar8 = pGVar1->vector;
+                                                    for (; (int)uVar7 < (int)pGVar1->max_length;
                                                         uVar7 = uVar7 + 1) {
-                                                      if (pGVar2->max_length <= uVar7)
+                                                      if (pGVar1->max_length <= uVar7)
                                                       goto code_?;
                                                       if ((*ppGVar8 ==
                                                            (GizmoPlaneSlider3DLookAndFeel *)0x0) ||
-                                                         (pGVar21 = ((*ppGVar8)->fields).
-                                                                   _rotationArcLookAndFeel,
-                                                         pGVar21 == (GizmoRotationArc3DLookAndFeel *)
-                                                                   0x0)) goto code_?;
+                                                         (pGVar16 = ((*ppGVar8)->fields).
+                                                                    _rotationArcLookAndFeel,
+                                                         pGVar16 ==
+                                                         (GizmoRotationArc3DLookAndFeel *)0x0))
+                                                      goto code_?;
                                                       ppGVar8 = ppGVar8 + 1;
-                                                      (pGVar21->fields)._color.r = fVar4;
-                                                      (pGVar21->fields)._color.g = fVar5;
-                                                      (pGVar21->fields)._color.b = fVar6;
-                                                      (pGVar21->fields)._color.a = fVar20;
+                                                      (pGVar16->fields)._color.r = fVar4;
+                                                      (pGVar16->fields)._color.g = fVar5;
+                                                      (pGVar16->fields)._color.b = fVar6;
+                                                      (pGVar16->fields)._color.a = fVar17;
                                                     }
-                                                    pGVar17 = (this->fields).
+                                                    pGVar12 = (this->fields).
                                                              _rtCamLookSliderLookAndFeel;
-                                                    if ((pGVar17 != (GizmoPlaneSlider2DLookAndFeel *)
+                                                    if ((pGVar12 != (GizmoPlaneSlider2DLookAndFeel *)
                                                                    0x0) &&
-                                                       (pGVar22 = (pGVar17->fields).
-                                                                 _rotationArcLookAndFeel,
-                                                       pGVar22 != (GizmoRotationArc2DLookAndFeel *)
-                                                                 0x0)) {
-                                                      (pGVar22->fields)._color.r = fVar4;
-                                                      (pGVar22->fields)._color.g = fVar5;
-                                                      (pGVar22->fields)._color.b = fVar6;
-                                                      (pGVar22->fields)._color.a = fVar20;
-                                                      bVar15 = RotationGizmoLookAndFeel3D::
-                                                                                                                            
-                                                  RotationGizmoLookAndFeel3D_get_IsRotationArcVisible
-                                                            (lookAndFeel,(MethodInfo *)0x0);
-                                                  pGVar2 = (this->fields)._rtAxesLookAndFeel;
-                                                  uVar7 = 0;
-                                                  if (pGVar2 !=
-                                                      (GizmoPlaneSlider3DLookAndFeel__Array *)0x0) {
-                                                    ppGVar8 = pGVar2->vector;
-                                                    for (; (int)uVar7 < (int)pGVar2->max_length;
+                                                       (pGVar18 = (pGVar12->fields).
+                                                                  _rotationArcLookAndFeel,
+                                                       pGVar18 !=
+                                                       (GizmoRotationArc2DLookAndFeel *)0x0)) {
+                                                      (pGVar18->fields)._color.r = fVar4;
+                                                      (pGVar18->fields)._color.g = fVar5;
+                                                      (pGVar18->fields)._color.b = fVar6;
+                                                      (pGVar18->fields)._color.a = fVar17;
+                                                      pGVar1 = (lookAndFeel->fields).
+                                                               _axesLookAndFeel;
+                                                      if (pGVar1 != (
+                                                  GizmoPlaneSlider3DLookAndFeel__Array *)0x0) {
+                                                    if (pGVar1->max_length == 0)
+                                                    goto code_?;
+                                                    if (pGVar1->vector[0] !=
+                                                        (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+                                                      bVar19 = (pGVar1->vector[0]->fields).
+                                                              _isRotationArcVisible;
+                                                      uVar7 = 0;
+                                                      pGVar1 = (this->fields)._rtAxesLookAndFeel;
+                                                      if (pGVar1 != (
+                                                  GizmoPlaneSlider3DLookAndFeel__Array *)0x0) {
+                                                    ppGVar8 = pGVar1->vector;
+                                                    for (; (int)uVar7 < (int)pGVar1->max_length;
                                                         uVar7 = uVar7 + 1) {
-                                                      if (pGVar2->max_length <= uVar7)
+                                                      if (pGVar1->max_length <= uVar7)
                                                       goto code_?;
                                                       if (*ppGVar8 ==
                                                           (GizmoPlaneSlider3DLookAndFeel *)0x0)
                                                       goto code_?;
                                                       ((*ppGVar8)->fields)._isRotationArcVisible =
-                                                           bVar15;
+                                                           bVar19;
                                                       ppGVar8 = ppGVar8 + 1;
+                                                      lookAndFeel = (RotationGizmoLookAndFeel3D *)
+                                                                    this;
                                                     }
-                                                    pGVar17 = (this->fields).
+                                                    pGVar12 = (this->fields).
                                                              _rtCamLookSliderLookAndFeel;
-                                                    if (pGVar17 != (GizmoPlaneSlider2DLookAndFeel *)
+                                                    if (pGVar12 != (GizmoPlaneSlider2DLookAndFeel *)
                                                                   0x0) {
-                                                      (pGVar17->fields)._isRotationArcVisible = bVar15
+                                                      (pGVar12->fields)._isRotationArcVisible = bVar19
                                                       ;
-                                                      pGVar3 = (GizmoPlaneSlider3DLookAndFeel *)
-                                                                UniversalGizmoSettings2D::
-                                                                                                                                
-                                                  UniversalGizmoSettings2D_get_MvXSnapStep
-                                                            ((UniversalGizmoSettings2D *)lookAndFeel
-                                                             ,(MethodInfo *)0x0);
-                                                  pGVar2 = (this->fields)._rtAxesLookAndFeel;
-                                                  uVar7 = 0;
-                                                  if (pGVar2 !=
-                                                      (GizmoPlaneSlider3DLookAndFeel__Array *)0x0) {
-                                                    ppGVar8 = pGVar2->vector;
-                                                    for (; (int)uVar7 < (int)pGVar2->max_length;
+                                                      pGVar20 = (((UniversalGizmoLookAndFeel3D *)
+                                                                 lookAndFeel)->fields).
+                                                                _mvVertSnapCapLookAndFeel;
+                                                      if (pGVar20 != (GizmoCap2DLookAndFeel *)0x0) {
+                                                        fVar4 = (pGVar20->fields)._circleRadius;
+                                                        uVar7 = 0;
+                                                        pGVar1 = (this->fields)._rtAxesLookAndFeel;
+                                                        if (pGVar1 != (
+                                                  GizmoPlaneSlider3DLookAndFeel__Array *)0x0) {
+                                                    ppGVar8 = pGVar1->vector;
+                                                    for (; (int)uVar7 < (int)pGVar1->max_length;
                                                         uVar7 = uVar7 + 1) {
-                                                      if (pGVar2->max_length <= uVar7)
-                                                      goto code_?;
-                                                      pGVar9 = *ppGVar8;
-                                                      if (pGVar9 ==
-                                                          (GizmoPlaneSlider3DLookAndFeel *)0x0)
-                                                      goto code_?;
-                                                      pGVar2 = (
-                                                  GizmoPlaneSlider3DLookAndFeel__Array *)
-                                                  &UNK_?;
-                                                  Sphere::Sphere_set_Radius
-                                                            ((Sphere *)pGVar9,(float)pGVar3,
-                                                             (MethodInfo *)0x0);
-                                                  ppGVar8 = (GizmoPlaneSlider3DLookAndFeel **)
-                                                             &pGVar3->monitor;
-                                                  pGVar3 = pGVar9;
-                                                  }
-                                                  pGVar19 = (this->fields)._rtMidCapLookAndFeel;
-                                                  if (pGVar19 != (GizmoCap3DLookAndFeel *)0x0) {
-                                                    GizmoPlaneSlider3DSettings::
-                                                    GizmoPlaneSlider3DSettings_set_BorderBoxHoverEps
-                                                              ((GizmoPlaneSlider3DSettings *)pGVar19,
-                                                               (float)pGVar3,(MethodInfo *)0x0);
-                                                    pSVar23 = System.Xml.dll::System::Xml::
-                                                              XsdCachingReader::
-                                                              XsdCachingReader_get_Prefix
-                                                                        ((XsdCachingReader *)
-                                                                         lookAndFeel,
-                                                                         (MethodInfo *)0x0);
-                                                    pGVar2 = (this->fields)._rtAxesLookAndFeel;
-                                                    uVar7 = 0;
-                                                    if (pGVar2 !=
-                                                        (GizmoPlaneSlider3DLookAndFeel__Array *)0x0)
-                                                    {
-                                                      ppGVar8 = pGVar2->vector;
-                                                      for (; (int)uVar7 < (int)pGVar2->max_length;
-                                                          uVar7 = uVar7 + 1) {
-                                                        if (pGVar2->max_length <= uVar7)
-                                                        goto code_?;
-                                                        pGVar3 = *ppGVar8;
-                                                        if (pGVar3 ==
-                                                            (GizmoPlaneSlider3DLookAndFeel *)0x0)
-                                                        goto code_?;
-                                                        (pGVar3->fields)._shadeMode =
-                                                             (int32_t)pSVar23;
-                                                        ppGVar8 = ppGVar8 + 1;
-                                                        (pGVar3->fields)._borderShadeMode =
-                                                             (int32_t)pSVar23;
-                                                      }
-                                                      pGVar19 = (this->fields)._rtMidCapLookAndFeel;
-                                                      if (pGVar19 != (GizmoCap3DLookAndFeel *)0x0) {
-                                                        (pGVar19->fields)._shadeMode =
-                                                             (int32_t)pSVar23;
-                                                        bVar15 = RotationGizmoLookAndFeel3D::
-                                                                                                                                
-                                                  RotationGizmoLookAndFeel3D_get_UseShortestRotationArc
-                                                            (lookAndFeel,(MethodInfo *)0x0);
-                                                  pGVar2 = (this->fields)._rtAxesLookAndFeel;
-                                                  uVar7 = 0;
-                                                  if (pGVar2 !=
-                                                      (GizmoPlaneSlider3DLookAndFeel__Array *)0x0) {
-                                                    ppGVar8 = pGVar2->vector;
-                                                    for (; (int)uVar7 < (int)pGVar2->max_length;
-                                                        uVar7 = uVar7 + 1) {
-                                                      if (pGVar2->max_length <= uVar7)
-                                                      goto code_?;
-                                                      if ((*ppGVar8 ==
-                                                           (GizmoPlaneSlider3DLookAndFeel *)0x0) ||
-                                                         (pGVar21 = ((*ppGVar8)->fields).
-                                                                   _rotationArcLookAndFeel,
-                                                         pGVar21 == (GizmoRotationArc3DLookAndFeel *)
-                                                                   0x0)) goto code_?;
-                                                      (pGVar21->fields)._useShortestRotation = bVar15;
-                                                      ppGVar8 = ppGVar8 + 1;
-                                                    }
-                                                    pGVar17 = (this->fields).
-                                                             _rtCamLookSliderLookAndFeel;
-                                                    if ((pGVar17 != (GizmoPlaneSlider2DLookAndFeel *)
-                                                                   0x0) &&
-                                                       (pGVar22 = (pGVar17->fields).
-                                                                 _rotationArcLookAndFeel,
-                                                       pGVar22 != (GizmoRotationArc2DLookAndFeel *)
-                                                                 0x0)) {
-                                                      (pGVar22->fields)._useShortestRotation = bVar15;
-                                                      bVar15 = RotationGizmoLookAndFeel3D::
-                                                                                                                            
-                                                  RotationGizmoLookAndFeel3D_get_UseZoomFactor
-                                                            (lookAndFeel,(MethodInfo *)0x0);
-                                                  pGVar2 = (this->fields)._rtAxesLookAndFeel;
-                                                  uVar7 = 0;
-                                                  if (pGVar2 !=
-                                                      (GizmoPlaneSlider3DLookAndFeel__Array *)0x0) {
-                                                    ppGVar8 = pGVar2->vector;
-                                                    for (; (int)uVar7 < (int)pGVar2->max_length;
-                                                        uVar7 = uVar7 + 1) {
-                                                      if (pGVar2->max_length <= uVar7)
+                                                      if (pGVar1->max_length <= uVar7)
                                                       goto code_?;
                                                       if (*ppGVar8 ==
                                                           (GizmoPlaneSlider3DLookAndFeel *)0x0)
                                                       goto code_?;
-                                                      ((*ppGVar8)->fields)._useZoomFactor = bVar15;
+                                                      Sphere::Sphere_set_Radius
+                                                                ((Sphere *)*ppGVar8,fVar4,
+                                                                 (MethodInfo *)0x0);
                                                       ppGVar8 = ppGVar8 + 1;
                                                     }
-                                                    pGVar19 = (this->fields)._rtMidCapLookAndFeel;
-                                                    if (pGVar19 != (GizmoCap3DLookAndFeel *)0x0) {
-                                                      (pGVar19->fields)._useZoomFactor = bVar15;
+                                                    pGVar14 = (this->fields)._rtMidCapLookAndFeel;
+                                                    if (pGVar14 != (GizmoCap3DLookAndFeel *)0x0) {
+                                                      GizmoPlaneSlider3DSettings::
+                                                                                                            
+                                                  GizmoPlaneSlider3DSettings_set_BorderBoxHoverEps
+                                                            ((GizmoPlaneSlider3DSettings *)pGVar14,
+                                                             fVar4,(MethodInfo *)0x0);
+                                                  pGVar20 = (this->fields)._mvVertSnapCapLookAndFeel
+                                                  ;
+                                                  if (pGVar20 != (GizmoCap2DLookAndFeel *)0x0) {
+                                                    fVar4 = (pGVar20->fields)._scale;
+                                                    uVar7 = 0;
+                                                    pGVar1 = (this->fields)._rtAxesLookAndFeel;
+                                                    if (pGVar1 != (
+                                                  GizmoPlaneSlider3DLookAndFeel__Array *)0x0) {
+                                                    ppGVar8 = pGVar1->vector;
+                                                    for (; (int)uVar7 < (int)pGVar1->max_length;
+                                                        uVar7 = uVar7 + 1) {
+                                                      if (pGVar1->max_length <= uVar7)
+                                                      goto code_?;
+                                                      pGVar2 = *ppGVar8;
+                                                      if (pGVar2 == (GizmoPlaneSlider3DLookAndFeel *
+                                                                    )0x0) goto code_?;
+                                                      (pGVar2->fields)._shadeMode = (int32_t)fVar4;
+                                                      ppGVar8 = ppGVar8 + 1;
+                                                      (pGVar2->fields)._borderShadeMode =
+                                                           (int32_t)fVar4;
+                                                    }
+                                                    pGVar14 = (this->fields)._rtMidCapLookAndFeel;
+                                                    if (pGVar14 != (GizmoCap3DLookAndFeel *)0x0) {
+                                                      (pGVar14->fields)._shadeMode = (int32_t)fVar4;
+                                                      pBVar10 = (this->fields)._mvSglSliderCapVis;
+                                                      if (pBVar10 != (Boolean__Array *)0x0) {
+                                                        if (pBVar10->max_length == 0)
+                                                        goto code_?;
+                                                        if ((*(int *)pBVar10->vector != 0) &&
+                                                           (iVar21 = *(int *)(*(int *)pBVar10->vector
+                                                                             + 0xa0), iVar21 != 0))
+                                                        {
+                                                          bVar19 = *(bool *)(iVar21 + 8);
+                                                          uVar7 = 0;
+                                                          pGVar1 = (this->fields)._rtAxesLookAndFeel
+                                                          ;
+                                                          if (pGVar1 != (
+                                                  GizmoPlaneSlider3DLookAndFeel__Array *)0x0) {
+                                                    ppGVar8 = pGVar1->vector;
+                                                    for (; (int)uVar7 < (int)pGVar1->max_length;
+                                                        uVar7 = uVar7 + 1) {
+                                                      if (pGVar1->max_length <= uVar7)
+                                                      goto code_?;
+                                                      if ((*ppGVar8 ==
+                                                           (GizmoPlaneSlider3DLookAndFeel *)0x0) ||
+                                                         (pGVar16 = ((*ppGVar8)->fields).
+                                                                    _rotationArcLookAndFeel,
+                                                         pGVar16 ==
+                                                         (GizmoRotationArc3DLookAndFeel *)0x0))
+                                                      goto code_?;
+                                                      (pGVar16->fields)._useShortestRotation = bVar19
+                                                      ;
+                                                      ppGVar8 = ppGVar8 + 1;
+                                                    }
+                                                    pGVar12 = (this->fields).
+                                                             _rtCamLookSliderLookAndFeel;
+                                                    if ((pGVar12 != (GizmoPlaneSlider2DLookAndFeel *)
+                                                                   0x0) &&
+                                                       (pGVar18 = (pGVar12->fields).
+                                                                  _rotationArcLookAndFeel,
+                                                       pGVar18 !=
+                                                       (GizmoRotationArc2DLookAndFeel *)0x0)) {
+                                                      (pGVar18->fields)._useShortestRotation = bVar19
+                                                      ;
+                                                      pGVar20 = (this->fields).
+                                                                _mvVertSnapCapLookAndFeel;
+                                                      if (pGVar20 != (GizmoCap2DLookAndFeel *)0x0) {
+                                                        pGVar1 = (this->fields)._rtAxesLookAndFeel;
+                                                        bVar19 = *(bool *)&(pGVar20->fields).
+                                                                          _quadWidth;
+                                                        uVar7 = 0;
+                                                        if (pGVar1 != (
+                                                  GizmoPlaneSlider3DLookAndFeel__Array *)0x0) {
+                                                    ppGVar8 = pGVar1->vector;
+                                                    for (; (int)uVar7 < (int)pGVar1->max_length;
+                                                        uVar7 = uVar7 + 1) {
+                                                      if (pGVar1->max_length <= uVar7)
+                                                      goto code_?;
+                                                      if (*ppGVar8 ==
+                                                          (GizmoPlaneSlider3DLookAndFeel *)0x0)
+                                                      goto code_?;
+                                                      ((*ppGVar8)->fields)._useZoomFactor = bVar19;
+                                                      ppGVar8 = ppGVar8 + 1;
+                                                    }
+                                                    pGVar14 = (this->fields)._rtMidCapLookAndFeel;
+                                                    if (pGVar14 != (GizmoCap3DLookAndFeel *)0x0) {
+                                                      (pGVar14->fields)._useZoomFactor = bVar19;
                                                       return;
                                                     }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
                                                   }
                                                   }
                                                   }
@@ -2015,8 +2172,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar24 = (code *)swi(3);
-  (*pcVar24)();
+  pcVar22 = (code *)swi(3);
+  (*pcVar22)();
   return;
 }
 

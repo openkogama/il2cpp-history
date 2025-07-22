@@ -14,10 +14,7 @@ void Assembly-CSharp.dll::BriefingPlayButtonTouch::BriefingPlayButtonTouch_OnCon
     pMVar5 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
     if (pMVar5 != (MVLocalPlayer *)0x0) {
       if ((iVar3 != 2) && ((pMVar5->fields).respawnTime <= fVar4)) {
-        if ((this->fields)._.OnPlayButtonPressed != (Action *)0x0) {
-          pAVar6 = (this->fields)._.OnPlayButtonPressed;
-          (*(pAVar6->fields)._._.invoke_impl)((pAVar6->fields)._._.method_code);
-        }
+        PlayButtonTouch::PlayButtonTouch_OnConfirmPlay((PlayButtonTouch *)this,(MethodInfo *)0x0);
         return;
       }
       this_00 = (this->fields)._.button;
@@ -29,8 +26,20 @@ void Assembly-CSharp.dll::BriefingPlayButtonTouch::BriefingPlayButtonTouch_OnCon
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
+  return;
+}
+
+
+/* Void OnCountdownEnd() */
+
+void Assembly-CSharp.dll::BriefingPlayButtonTouch::BriefingPlayButtonTouch_OnCountdownEnd
+               (BriefingPlayButtonTouch *this,MethodInfo *method)
+
+{
+  (*(code *)(this->klass->vtable).StartPlaying.method)
+            (this,(this->klass->vtable).OnCountdownEnd.methodPtr);
   return;
 }
 
@@ -65,7 +74,7 @@ void Assembly-CSharp.dll::BriefingPlayButtonTouch::BriefingPlayButtonTouch_Start
   }
   pIVar1 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
   if (pIVar1 != (IPlayModeUI *)0x0) {
-    func_?(4,TypeInfo__IPlayModeUI,pIVar1,0);
+    func_?(6,TypeInfo__IPlayModeUI,pIVar1,0);
     pMVar2 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
     if ((pMVar2 != (MVLocalPlayer *)0x0) &&
        (pSVar3 = (pMVar2->fields).spawnRoleDataMediator, pSVar3 != (SpawnRoleDataMediator *)0x0)) {

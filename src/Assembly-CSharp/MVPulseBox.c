@@ -146,42 +146,41 @@ code_?:
 void Assembly-CSharp.dll::MVPulseBox::MVPulseBox_Reset(MVPulseBox *this,MethodInfo *method)
 
 {
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
   if ((pMVar1 != (MVNetworkGame *)0x0) &&
      (pLVar2 = (pMVar1->fields)._LogicObjectManager_k__BackingField,
      pLVar2 != (LogicObjectManagerClient *)0x0)) {
     iVar3 = (pLVar2->fields)._._TimeStamp_k__BackingField;
     if (cRam_? == '\0') {
-      func_?(&
-                      void_MethodInfo__Extensions__SetObscuredType<CodeStage::AntiCheat::ObscuredTypes::ObscuredInt>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt_
-                     );
+      func_?();
       func_?(&TypeInfo__Extensions);
       func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
       func_?(&StringLiteral_currentStartTime);
       cRam_? = '\x01';
     }
     hashtable = (Dictionary_2_System_Object_System_Object_ *)
-                (*(code *)(this->klass->vtable).get_RunTimeData.method)
-                          (this,(this->klass->vtable).set_RunTimeData.methodPtr);
+                (*(code *)(this->klass->vtable).get_RunTimeData.method)(this);
     if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor
         == 0) {
-      func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+      func_?();
     }
     pOVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
              ObscuredInt_op_Implicit((ObscuredInt *)&stack0xffffffec,iVar3,(MethodInfo *)0x0);
-    puVar5 = (undefined *)pOVar4->currentCryptoKey;
-    pEVar6 = (Extensions__Class *)pOVar4->hiddenValue;
-    iVar3 = pOVar4->fakeValue;
+    iVar3 = pOVar4->currentCryptoKey;
+    iVar5 = pOVar4->hiddenValue;
+    puVar6 = (undefined *)pOVar4->fakeValue;
+    pEVar7 = *(Extensions__Class **)&pOVar4->inited;
     if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
-      puVar5 = &UNK_?;
-      pEVar6 = TypeInfo__Extensions;
+      puVar6 = &UNK_?;
+      pEVar7 = TypeInfo__Extensions;
       func_?();
     }
-    value.hiddenValue = (int32_t)pEVar6;
-    value.currentCryptoKey = (int32_t)puVar5;
-    value.fakeValue = iVar3;
-    value.inited = pOVar4->inited;
-    value._13_3_ = *(undefined3 *)&pOVar4->field_0xd;
+    value.hiddenValue = iVar5;
+    value.currentCryptoKey = iVar3;
+    value.fakeValue = (int32_t)puVar6;
+    value._12_4_ = pEVar7;
     Extensions::Extensions_SetObscuredType_2
               (hashtable,StringLiteral_currentStartTime,value,
                void_MethodInfo__Extensions__SetObscuredType<CodeStage::AntiCheat::ObscuredTypes::ObscuredInt>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt_
@@ -189,8 +188,8 @@ void Assembly-CSharp.dll::MVPulseBox::MVPulseBox_Reset(MVPulseBox *this,MethodIn
     return;
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

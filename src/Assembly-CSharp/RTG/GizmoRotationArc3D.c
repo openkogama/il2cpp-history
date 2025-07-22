@@ -75,18 +75,52 @@ void Assembly-CSharp.dll::RTG::GizmoRotationArc3D::GizmoRotationArc3D_SetArcData
                float radius,MethodInfo *method)
 
 {
-  UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-            ((Vector3 *)&stack0xfffffff0,rotationAxis,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__Math);
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__System__Math);
+  }
+  dVar1 = (double)(rotationAxis.y * rotationAxis.y + rotationAxis.x * rotationAxis.x +
+                  rotationAxis.z * rotationAxis.z);
+  if (dVar1 < 0.0) {
+    func_?();
+  }
+  else {
+    dVar1 = SQRT(dVar1);
+  }
+  fVar2 = (float)dVar1;
+  if (_UNK_? < fVar2) {
+    fVar3 = rotationAxis.z / fVar2;
+    uVar4 = CONCAT44(rotationAxis.y / fVar2,rotationAxis.x / fVar2);
+  }
+  else {
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__UnityEngine__Vector3);
+      cRam_? = '\x01';
+    }
+    pVVar5 = TypeInfo__UnityEngine__Vector3->static_fields;
+    uVar4._0_4_ = (pVVar5->zeroVector).x;
+    uVar4._4_4_ = (pVVar5->zeroVector).y;
+    fVar3 = (pVVar5->zeroVector).z;
+  }
+  fStack_6 = (float)((ulonglong)uVar4 >> 0x20);
+  fStack_7 = (float)uVar4;
   this_00 = (this->fields)._arc;
   if (this_00 != (ArcShape3D *)0x0) {
-    plane.m_Distance = radius;
-    plane.m_Normal = arcStart;
+    plane.m_Normal.z = fVar3;
+    plane.m_Normal.x = (float)(int)uVar4;
+    plane.m_Normal.y = (float)(int)((ulonglong)uVar4 >> 0x20);
+    plane.m_Distance =
+         (float)((uint)(arcOrigin.y * fStack_6 + arcOrigin.x * fStack_7 + arcOrigin.z * fVar3) ^
+                __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     ArcShape3D::ArcShape3D_SetArcData(this_00,plane,arcOrigin,arcStart,radius,(MethodInfo *)0x0);
     return;
   }
   func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

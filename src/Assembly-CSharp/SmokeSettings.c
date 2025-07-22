@@ -24,7 +24,7 @@ void Assembly-CSharp.dll::SmokeSettings::SmokeSettings_Initialize
                    );
     func_?(&TypeInfo__System__Single);
     func_?(&TypeInfo__System__Single);
-    func_?(&::_1DC5C8E021C663CD8F7ECF1FB0C6D4112BC8D7F3C9E0095CD26BD7AF7B8D7F13_Field);
+    func_?(&_1DC5C8E021C663CD8F7ECF1FB0C6D4112BC8D7F3C9E0095CD26BD7AF7B8D7F13_Field);
     func_?(&E47C56787A2D4D1A0F11D726D19241867452F74BA55E5B2B9CC270DCEBB4C727_Field);
     func_?(&StringLiteral_alpha);
     func_?(&StringLiteral_colorB);

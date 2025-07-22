@@ -12,7 +12,7 @@ void Assembly-CSharp.dll::PickupItemWithDelay::PickupItemWithDelay_Fire
     cRam_? = '\x01';
   }
   cVar1 = (*(code *)(this->klass->vtable).get_IsAmmoDepleted.method)
-                    (this,(this->klass->vtable).__unknown.methodPtr);
+                    (this,(this->klass->vtable).CanFire.methodPtr);
   if (cVar1 == '\0') {
     fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
     fVar3 = (this->fields).lastFireTime;
@@ -44,7 +44,7 @@ void Assembly-CSharp.dll::PickupItemWithDelay::PickupItemWithDelay_Fire
     }
   }
   cVar1 = (*(code *)(this->klass->vtable).get_IsAmmoDepleted.method)
-                    (this,(this->klass->vtable).__unknown.methodPtr);
+                    (this,(this->klass->vtable).CanFire.methodPtr);
   if (cVar1 != '\0') {
     pMVar8 = (this->fields)._.owner;
     if (((pMVar8 == (MVPickupOwner *)0x0) ||
@@ -254,7 +254,7 @@ void Assembly-CSharp.dll::PickupItemWithDelay::PickupItemWithDelay_UpdateControl
       cRam_? = '\x01';
     }
     cVar1 = (*(code *)(this->klass->vtable).get_IsAmmoDepleted.method)
-                      (this,(this->klass->vtable).__unknown.methodPtr);
+                      (this,(this->klass->vtable).CanFire.methodPtr);
     if (cVar1 == '\0') {
       fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
       fVar3 = (this->fields).lastFireTime;
@@ -286,7 +286,7 @@ void Assembly-CSharp.dll::PickupItemWithDelay::PickupItemWithDelay_UpdateControl
       }
     }
     cVar1 = (*(code *)(this->klass->vtable).get_IsAmmoDepleted.method)
-                      (this,(this->klass->vtable).__unknown.methodPtr);
+                      (this,(this->klass->vtable).CanFire.methodPtr);
     if (cVar1 != '\0') {
       pMVar8 = (this->fields)._.owner;
       if (((pMVar8 == (MVPickupOwner *)0x0) ||

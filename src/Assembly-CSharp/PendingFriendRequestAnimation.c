@@ -66,7 +66,7 @@ void Assembly-CSharp.dll::PendingFriendRequestAnimation::PendingFriendRequestAni
     PendingFriendRequestAnimation_MoveAnimation
               (this,(float)(this->fields).dotAmount *
                     (float)((uint)fVar1 ^
-                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
+                           __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field)
                ,(MethodInfo *)0x0);
     (this->fields).currentDot = 0;
     fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);

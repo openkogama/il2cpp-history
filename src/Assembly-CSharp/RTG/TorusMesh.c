@@ -164,12 +164,12 @@ Mesh * Assembly-CSharp.dll::RTG::TorusMesh::TorusMesh_CreateCylindricalTorus
     pVVar18 = TypeInfo__UnityEngine__Vector3->static_fields;
     uVar33 = (pVVar18->upVector).x;
     uVar34 = (pVVar18->upVector).y;
-    uVar35 = uVar34 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+    uVar35 = uVar34 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
     fVar16 = (float)((uint)(pVVar18->upVector).z ^
-                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     if (value_01->max_length <= uVar26) goto code_?;
     value_01->vector[uVar5 + 4].x =
-         (float)(uVar33 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+         (float)(uVar33 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     value_01->vector[uVar5 + 4].y = (float)uVar35;
     value_01->vector[uVar5 + 4].z = fVar16;
     if (value_02->max_length <= uVar22) goto code_?;
@@ -195,12 +195,12 @@ Mesh * Assembly-CSharp.dll::RTG::TorusMesh::TorusMesh_CreateCylindricalTorus
     pVVar18 = TypeInfo__UnityEngine__Vector3->static_fields;
     uVar38 = (pVVar18->upVector).x;
     uVar39 = (pVVar18->upVector).y;
-    uVar35 = uVar39 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+    uVar35 = uVar39 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
     fVar16 = (float)((uint)(pVVar18->upVector).z ^
-                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     if (value_01->max_length <= uVar22) goto code_?;
     value_01->vector[uVar5 + 5].x =
-         (float)(uVar38 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+         (float)(uVar38 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     value_01->vector[uVar5 + 5].y = (float)uVar35;
     value_01->vector[uVar5 + 5].z = fVar16;
     if (value_02->max_length <= uVar26) goto code_?;
@@ -210,14 +210,14 @@ Mesh * Assembly-CSharp.dll::RTG::TorusMesh::TorusMesh_CreateCylindricalTorus
       func_?(&TypeInfo__UnityEngine__Vector3);
       cRam_? = '\x01';
     }
-    uVar22 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+    uVar22 = __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
     pVVar18 = TypeInfo__UnityEngine__Vector3->static_fields;
     uVar40 = (pVVar18->upVector).x;
     uVar41 = (pVVar18->upVector).y;
     fVar16 = (pVVar18->upVector).z;
     if (value_00->max_length <= uVar26) goto code_?;
     uVar35 = uVar5 + 7;
-    uVar42 = uVar11 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+    uVar42 = uVar11 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
     pVStack_2[6].x = (fVar13 - (float)uVar40 * tubeVertRadius) - (float)uVar11 * tubeHrzRadius;
     pVStack_2[6].y = (fVar14 - (float)uVar41 * tubeVertRadius) - (float)uVar12 * tubeHrzRadius;
     pVStack_2[6].z = (fVar15 - fVar16 * tubeVertRadius) - fVar6 * tubeHrzRadius;
@@ -231,7 +231,7 @@ Mesh * Assembly-CSharp.dll::RTG::TorusMesh::TorusMesh_CreateCylindricalTorus
     if (cRam_? == '\0') {
       func_?(&TypeInfo__UnityEngine__Vector3);
       cRam_? = '\x01';
-      uVar22 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+      uVar22 = __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
     }
     pVVar18 = TypeInfo__UnityEngine__Vector3->static_fields;
     uVar43 = (pVVar18->upVector).x;

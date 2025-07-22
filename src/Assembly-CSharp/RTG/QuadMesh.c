@@ -27,12 +27,12 @@ Mesh * Assembly-CSharp.dll::RTG::QuadMesh::QuadMesh_CreateQuadXY
   pVVar4 = TypeInfo__UnityEngine__Vector3->static_fields;
   uVar5 = (pVVar4->rightVector).x;
   uVar6 = (pVVar4->rightVector).y;
-  fVar7 = (float)(uVar5 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
+  fVar7 = (float)(uVar5 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field)
            * fVar1;
-  fVar8 = (float)(uVar6 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+  fVar8 = (float)(uVar6 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                   ) * fVar1;
   fVar9 = (float)((uint)(pVVar4->rightVector).z ^
-                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) * fVar1
+                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) * fVar1
   ;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Vector3);
@@ -55,13 +55,13 @@ Mesh * Assembly-CSharp.dll::RTG::QuadMesh::QuadMesh_CreateQuadXY
     uVar13 = (pVVar4->rightVector).x;
     uVar14 = (pVVar4->rightVector).y;
     fVar7 = (float)(uVar13 ^ 
-                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) *
+                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) *
              fVar1;
     fVar8 = (float)(uVar14 ^ 
-                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) *
+                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) *
              fVar1;
     fVar9 = (float)((uint)(pVVar4->rightVector).z ^
-                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) *
+                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) *
              fVar1;
     if (cRam_? == '\0') {
       func_?(&TypeInfo__UnityEngine__Vector3);
@@ -123,25 +123,25 @@ Mesh * Assembly-CSharp.dll::RTG::QuadMesh::QuadMesh_CreateQuadXY
             func_?(&TypeInfo__UnityEngine__Vector3);
             cRam_? = '\x01';
           }
-          uVar25 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+          uVar25 = __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
           pVVar4 = TypeInfo__UnityEngine__Vector3->static_fields;
           uVar26 = (pVVar4->forwardVector).x;
           uVar27 = (pVVar4->forwardVector).y;
-          uVar28 = uVar27 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+          uVar28 = uVar27 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
           ;
           fVar1 = (float)((uint)(pVVar4->forwardVector).z ^
-                          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                          __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
           if (pVVar3 == (Vector3__Array *)0x0) goto code_?;
           if (pVVar3->max_length != 0) {
             pVVar3->vector[0].x =
                  (float)(uVar26 ^ 
-                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                        __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
             pVVar3->vector[0].y = (float)uVar28;
             pVVar3->vector[0].z = fVar1;
             if (cRam_? == '\0') {
               func_?(&TypeInfo__UnityEngine__Vector3);
               cRam_? = '\x01';
-              uVar25 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+              uVar25 = __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
             }
             pVVar4 = TypeInfo__UnityEngine__Vector3->static_fields;
             uVar29 = (pVVar4->forwardVector).x;
@@ -154,7 +154,7 @@ Mesh * Assembly-CSharp.dll::RTG::QuadMesh::QuadMesh_CreateQuadXY
               if (cRam_? == '\0') {
                 func_?(&TypeInfo__UnityEngine__Vector3);
                 cRam_? = '\x01';
-                uVar25 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+                uVar25 = __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
               }
               pVVar4 = TypeInfo__UnityEngine__Vector3->static_fields;
               uVar31 = (pVVar4->forwardVector).x;
@@ -167,7 +167,7 @@ Mesh * Assembly-CSharp.dll::RTG::QuadMesh::QuadMesh_CreateQuadXY
                 if (cRam_? == '\0') {
                   func_?(&TypeInfo__UnityEngine__Vector3);
                   cRam_? = '\x01';
-                  uVar25 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+                  uVar25 = __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
                 }
                 pVVar4 = TypeInfo__UnityEngine__Vector3->static_fields;
                 uVar33 = (pVVar4->forwardVector).x;
@@ -274,12 +274,12 @@ Mesh * Assembly-CSharp.dll::RTG::QuadMesh::QuadMesh_CreateQuadXZ
   pVVar4 = TypeInfo__UnityEngine__Vector3->static_fields;
   uVar5 = (pVVar4->rightVector).x;
   uVar6 = (pVVar4->rightVector).y;
-  fVar7 = (float)(uVar5 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
+  fVar7 = (float)(uVar5 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field)
            * fVar1;
-  fVar8 = (float)(uVar6 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
+  fVar8 = (float)(uVar6 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field)
            * fVar1;
   fVar9 = (float)((uint)(pVVar4->rightVector).z ^
-                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) * fVar1
+                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) * fVar1
   ;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Vector3);
@@ -302,13 +302,13 @@ Mesh * Assembly-CSharp.dll::RTG::QuadMesh::QuadMesh_CreateQuadXZ
     uVar13 = (pVVar4->rightVector).x;
     uVar14 = (pVVar4->rightVector).y;
     fVar7 = (float)(uVar13 ^ 
-                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) *
+                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) *
              fVar1;
     fVar8 = (float)(uVar14 ^ 
-                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) *
+                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) *
              fVar1;
     fVar9 = (float)((uint)(pVVar4->rightVector).z ^
-                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) *
+                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) *
              fVar1;
     if (cRam_? == '\0') {
       func_?(&TypeInfo__UnityEngine__Vector3);

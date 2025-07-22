@@ -1678,11 +1678,11 @@ ObscuredVector3_op_UnaryNegation
   uStack_3._0_4_ = pVVar1->x;
   uStack_3._4_4_ = pVVar1->y;
   fStack_4 = (float)((uint)pVVar1->z ^
-                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
   value.y = (float)(uStack_3._4_4_ ^
-                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                   __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
   value.x = (float)((undefined4)uStack_3 ^
-                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                   __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
   value.z = fStack_4;
   pOVar5 = ObscuredVector3_op_Implicit((ObscuredVector3 *)&stack0xffffffc4,value,(MethodInfo *)0x0);
   iVar6 = (pOVar5->hiddenValue).x;

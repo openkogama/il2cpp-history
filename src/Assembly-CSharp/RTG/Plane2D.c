@@ -21,7 +21,7 @@ bool Assembly-CSharp.dll::RTG::Plane2D::Plane2D_Raycast
   if (_UNK_? <= (float)((uint)fVar1 & _UNK_?)) {
     fVar1 = (float)((uint)(((this->fields)._normal.x * rayOrigin.x +
                            (this->fields)._normal.y * rayOrigin.y) - (this->fields)._distance) ^
-                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) / fVar1
+                   __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) / fVar1
     ;
     *t = fVar1;
     return 0.0 <= fVar1;

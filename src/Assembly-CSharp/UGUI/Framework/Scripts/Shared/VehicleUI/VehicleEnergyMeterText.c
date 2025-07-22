@@ -84,21 +84,20 @@ code_?:
     bVar6 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                       ((Object_1 *)pVVar7,(Object_1 *)0x0,(MethodInfo *)0x0);
     if (bVar6 == 0) {
-      (this->fields).updateEnergy = 0;
+      (this->fields).isVisible = 0;
 code_?:
-      this_00 = (this->fields).vehicleEnergyMeterTextGroup;
-      fVar5 = _UNK_?;
-      if ((this->fields).updateEnergy == 0) {
-        fVar5 = 0.0;
-      }
-      if (this_00 != (CanvasGroup *)0x0) {
-        UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-                  (this_00,fVar5,(MethodInfo *)0x0);
+      this_00 = (this->fields)._.rectTransform;
+      if ((this_00 != (RectTransform *)0x0) &&
+         (this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                              ((Component *)this_00,(MethodInfo *)0x0), this_02 != (GameObject *)0x0
+         )) {
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                  (this_02,(this->fields).isVisible,(MethodInfo *)0x0);
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
         }
-        if ((this->fields).updateEnergy == 0) {
+        if ((this->fields).isVisible == 0) {
           return;
         }
         pVVar7 = (this->fields).vehicleEnergyContainer;
@@ -185,7 +184,7 @@ code_?:
     }
     pVVar7 = (this->fields).vehicleEnergyContainer;
     if (pVVar7 == (VehicleEnergyContainer *)0x0) goto code_?;
-    (this->fields).updateEnergy = (pVVar7->fields)._UsingEnergy_k__BackingField;
+    (this->fields).isVisible = (pVVar7->fields)._UsingEnergy_k__BackingField;
     pVVar7 = (this->fields).vehicleEnergyContainer;
     if (pVVar7 == (VehicleEnergyContainer *)0x0) goto code_?;
     pAVar11 = (pVVar7->fields).OnRefill;
@@ -235,7 +234,7 @@ void Assembly-CSharp.dll::UGUI::Framework::Scripts::Shared::VehicleUI::VehicleEn
     func_?(&::StringLiteral__);
     cRam_? = '\x01';
   }
-  if ((this->fields).updateEnergy == 0) {
+  if ((this->fields).isVisible == 0) {
     return;
   }
   this_00 = (this->fields).vehicleEnergyContainer;
@@ -306,7 +305,7 @@ void Assembly-CSharp.dll::UGUI::Framework::Scripts::Shared::VehicleUI::VehicleEn
                                    ((Component *)pTVar5,(MethodInfo *)0x0);
                 auStack_8._0_4_ = (this->fields).originalTextPos.x;
                 fStack_12 = (this->fields).originalTextPos.z;
-                unique0x100002f4 = (double)CONCAT44(fStack_12,fVar1);
+                unique0x100002dc = (double)CONCAT44(fStack_12,fVar1);
                 if (pTVar10 != (Transform *)0x0) {
                   value.y = fVar1;
                   value.x = (float)auStack_8._0_4_;
@@ -471,25 +470,5 @@ void Assembly-CSharp.dll::UGUI::Framework::Scripts::Shared::VehicleUI::VehicleEn
     func_?(TypeInfo__UnityEngine__Object);
   }
   return;
-}
-
-
-/* Boolean get_IsVisible() */
-
-bool Assembly-CSharp.dll::UGUI::Framework::Scripts::Shared::VehicleUI::VehicleEnergyMeterText::
-     VehicleEnergyMeterText_get_IsVisible(VehicleEnergyMeterText *this,MethodInfo *method)
-
-{
-  this_00 = (this->fields).vehicleEnergyMeterTextGroup;
-  if (this_00 != (CanvasGroup *)0x0) {
-    fVar1 = UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_get_alpha
-                      (this_00,(MethodInfo *)0x0);
-    return _UNK_? < fVar1;
-  }
-  uVar2 = func_?(&puStack_3);
-  func_?(uVar2);
-  pcVar4 = (code *)swi(3);
-  bVar5 = (*pcVar4)();
-  return bVar5;
 }
 

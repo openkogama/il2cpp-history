@@ -11,7 +11,6 @@ using System.Runtime.CompilerServices;
 public interface ILockCursorManager
 {
 	// Properties
-	Action<bool> OnCursorLockChanged { get; set; }
 	bool CursorLock { get; set; }
 	bool CursorLockWithoutCallback { set; }
 }

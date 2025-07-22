@@ -4,7 +4,9 @@
 void Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner_Awake(MVPickupOwner *this,MethodInfo *method)
 
 {
-  MVComponent::MVComponent_Awake((MVComponent *)this,(MethodInfo *)0x0);
+  if ((this->fields)._.findWorldObjectParent != 0) {
+    MVComponent::MVComponent_FindWorldObjectParent((MVComponent *)this,(MethodInfo *)0x0);
+  }
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
   (this->fields).prevUpdateLineOfFireTime = fVar1;
   return;
@@ -919,7 +921,7 @@ code_?:
       }
       pPVar8 = (this->fields).currentItem;
       if (pPVar8 != (PickupItem *)0x0) {
-        pIStack_1 = (Int32__Class *)(pPVar8->klass->vtable).CanFire.methodPtr;
+        pIStack_1 = (Int32__Class *)(pPVar8->klass->vtable).__unknown_1.methodPtr;
         iVar9 = (*(code *)(pPVar8->klass->vtable).__unknown.method)(pPVar8);
         if (iVar5 != iVar9) {
           return 1;
@@ -1195,8 +1197,9 @@ void Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner__ctor(MVPickupOwner *this
   (this->fields).lookDirection.x = (pVVar1->oneVector).x;
   (this->fields).lookDirection.y = fVar2;
   (this->fields).lookDirection.z = fVar3;
-  LobbyStatePlayModeController::LobbyStatePlayModeController__ctor
-            ((LobbyStatePlayModeController *)this,(MethodInfo *)0x0);
+  (this->fields)._.findWorldObjectParent = 1;
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 
@@ -1352,7 +1355,7 @@ bool Assembly-CSharp.dll::MVPickupOwner::MVPickupOwner_get_PickupItemIsInHand
   if ((pPStack_2->fields)._IsHolstered_k__BackingField != 0) {
     return 0;
   }
-  pIStack_1 = (pPStack_2->klass->vtable).CanFire.methodPtr;
+  pIStack_1 = (pPStack_2->klass->vtable).__unknown_1.methodPtr;
   iVar7 = (*(code *)(pPStack_2->klass->vtable).__unknown.method)();
   return iVar7 != 5;
 }

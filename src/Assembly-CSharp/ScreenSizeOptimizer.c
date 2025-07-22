@@ -28,8 +28,9 @@ void Assembly-CSharp.dll::ScreenSizeOptimizer::ScreenSizeOptimizer_Awake
   str1 = (String *)func_?(&uStack_2,0);
   mscorlib.dll::System::String::String_Concat_3
             (StringLiteral_ScreenSizeOptimizer_UpdateOrigin,str1,(MethodInfo *)0x0);
-  if (TypeInfo__ScreenSizeOptimizer->static_fields->OnHalfResolution != (Action *)0x0) {
-    (*(TypeInfo__ScreenSizeOptimizer->static_fields->OnHalfResolution->fields)._._.invoke_impl)();
+  pAVar5 = TypeInfo__ScreenSizeOptimizer->static_fields->OnHalfResolution;
+  if (pAVar5 != (Action *)0x0) {
+    (*(pAVar5->fields)._._.invoke_impl)();
   }
   ScreenSizeOptimizer_HalfResolution((ScreenSizeOptimizer *)0x0,(MethodInfo *)0x0);
   return;
@@ -43,77 +44,77 @@ void Assembly-CSharp.dll::ScreenSizeOptimizer::ScreenSizeOptimizer_HalfResolutio
 
 {
   if (cRam_? == '\0') {
+    func_?(&TypeInfo__ScreenSizeOptimizer);
     func_?(&StringLiteral_ScreenSizeOptimizer_HalfResoluti);
     func_?(&StringLiteral__newHeight_);
     cRam_? = '\x01';
   }
   iVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_get_touchCount
                     ((MethodInfo *)0x0);
-  if (iVar1 < 1) {
+  if ((iVar1 < 1) &&
+     (iVar1 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_width((MethodInfo *)0x0),
+     (this->fields).minWidthInPixels <= iVar1)) {
+    TypeInfo__ScreenSizeOptimizer->static_fields->IsInHalfResolution = 1;
     iVar1 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_width((MethodInfo *)0x0);
-    iVar2 = iVar1 / 2;
-    iVar1 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_width((MethodInfo *)0x0);
-    if ((this->fields).minWidthInPixels <= iVar1) {
-      if (iVar2 < (this->fields).minWidthInPixels) {
-        iVar2 = (this->fields).minWidthInPixels;
-      }
-      iVar1 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height((MethodInfo *)0x0);
-      iVar3 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_width((MethodInfo *)0x0);
-      IStack_4.m_value = (int32_t)((float)iVar2 * ((float)iVar1 / (float)iVar3));
-      pSVar5 = mscorlib.dll::System::Single::Single_ToString
-                         ((Single *)&stack0xffffffec,(MethodInfo *)0x0);
-      pSVar6 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_4,(MethodInfo *)0x0);
-      mscorlib.dll::System::String::String_Concat_5
-                (StringLiteral_ScreenSizeOptimizer_HalfResoluti,pSVar5,StringLiteral__newHeight_,
-                 pSVar6,(MethodInfo *)0x0);
-      IStack_7.m_value = IStack_4.m_value;
-      IStack_8.m_value = iVar2;
-      if (cRam_? == '\0') {
-        func_?();
-        func_?();
-        func_?();
-        func_?();
-        cRam_? = '\x01';
-      }
-      pSVar5 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_8,(MethodInfo *)0x0);
-      pSVar6 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_7,(MethodInfo *)0x0);
-      mscorlib.dll::System::String::String_Concat_5
-                (StringLiteral_ScreenSizeOptimizer_SetResolutio,pSVar5,StringLiteral__h_,pSVar6,
-                 (MethodInfo *)0x0);
-      pRVar9 = (this->fields).renderTarget;
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                        ((Object_1 *)pRVar9,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar10 != 0) {
-        UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_ReleaseTemporary
-                  ((this->fields).renderTarget,(MethodInfo *)0x0);
-      }
-      pRVar9 = UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_GetTemporary_4
-                         (IStack_8.m_value,IStack_7.m_value,0x18,RenderTextureFormat__Enum_ARGB32,
-                          RenderTextureReadWrite__Enum_Default,1,(MethodInfo *)0x0);
-      (this->fields).renderTarget = pRVar9;
-      func_?();
-      pRVar9 = (this->fields).renderTarget;
-      if (pRVar9 == (RenderTexture *)0x0) {
-        func_?();
-        pcVar11 = (code *)swi(3);
-        (*pcVar11)();
-        return;
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_anisoLevel
-                ((Texture *)pRVar9,1,(MethodInfo *)0x0);
-      width.m_value = IStack_8.m_value;
-      height.m_value = IStack_7.m_value;
-      if ((TypeInfo__FullScreenController->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_SetResolution_2
-                (width.m_value,height.m_value,
-                 TypeInfo__FullScreenController->static_fields->fullscreenSupported,
-                 (MethodInfo *)0x0);
+    IStack_2.m_value = iVar1 / 2;
+    if (IStack_2.m_value < (this->fields).minWidthInPixels) {
+      IStack_2.m_value = (this->fields).minWidthInPixels;
     }
+    iVar1 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height((MethodInfo *)0x0);
+    iVar3 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_width((MethodInfo *)0x0);
+    IStack_4.m_value = (int32_t)((float)IStack_2.m_value * ((float)iVar1 / (float)iVar3));
+    pSVar5 = mscorlib.dll::System::Single::Single_ToString
+                       ((Single *)&stack0xffffffec,(MethodInfo *)0x0);
+    pSVar6 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_4,(MethodInfo *)0x0);
+    mscorlib.dll::System::String::String_Concat_5
+              (StringLiteral_ScreenSizeOptimizer_HalfResoluti,pSVar5,StringLiteral__newHeight_,
+               pSVar6,(MethodInfo *)0x0);
+    IStack_7.m_value = IStack_4.m_value;
+    if (cRam_? == '\0') {
+      func_?();
+      func_?();
+      func_?();
+      func_?();
+      cRam_? = '\x01';
+    }
+    pSVar5 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_2,(MethodInfo *)0x0);
+    pSVar6 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_7,(MethodInfo *)0x0);
+    mscorlib.dll::System::String::String_Concat_5
+              (StringLiteral_ScreenSizeOptimizer_SetResolutio,pSVar5,StringLiteral__h_,pSVar6,
+               (MethodInfo *)0x0);
+    pRVar8 = (this->fields).renderTarget;
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    bVar9 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      ((Object_1 *)pRVar8,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar9 != 0) {
+      UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_ReleaseTemporary
+                ((this->fields).renderTarget,(MethodInfo *)0x0);
+    }
+    pRVar8 = UnityEngine.CoreModule.dll::UnityEngine::RenderTexture::RenderTexture_GetTemporary_4
+                       (IStack_2.m_value,IStack_7.m_value,0x18,RenderTextureFormat__Enum_ARGB32,
+                        RenderTextureReadWrite__Enum_Default,1,(MethodInfo *)0x0);
+    (this->fields).renderTarget = pRVar8;
+    func_?();
+    pRVar8 = (this->fields).renderTarget;
+    if (pRVar8 == (RenderTexture *)0x0) {
+      func_?();
+      pcVar10 = (code *)swi(3);
+      (*pcVar10)();
+      return;
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_anisoLevel
+              ((Texture *)pRVar8,1,(MethodInfo *)0x0);
+    width.m_value = IStack_2.m_value;
+    height.m_value = IStack_7.m_value;
+    if ((TypeInfo__FullScreenController->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_SetResolution_2
+              (width.m_value,height.m_value,
+               TypeInfo__FullScreenController->static_fields->fullscreenSupported,(MethodInfo *)0x0)
+    ;
   }
   return;
 }

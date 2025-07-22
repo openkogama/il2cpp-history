@@ -87,20 +87,28 @@ void Assembly-CSharp.dll::RTG::GizmoPolygonPlaneSlider2DController::
 {
   pGVar1 = (this->fields)._._data;
   if (pGVar1 != (GizmoPlaneSlider2DControllerData *)0x0) {
-    this_00 = (pGVar1->fields).Slider;
-    this_01 = (pGVar1->fields).Polygon;
-    if (this_00 != (GizmoPlaneSlider2D *)0x0) {
-      pGVar2 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_get_Settings(this_00,(MethodInfo *)0x0);
-      if ((pGVar2 != (GizmoPlaneSlider2DSettings *)0x0) && (this_01 != (PolygonShape2D *)0x0)) {
+    this_00 = (pGVar1->fields).Polygon;
+    pGVar2 = (((this->fields)._._data)->fields).Slider;
+    if (pGVar2 != (GizmoPlaneSlider2D *)0x0) {
+      if ((pGVar2->fields)._sharedSettings == (GizmoPlaneSlider2DSettings *)0x0) {
+        pGVar3 = (pGVar2->fields)._settings;
+        if (pGVar3 == (GizmoPlaneSlider2DSettings *)0x0) goto code_?;
+      }
+      else {
+        pGVar3 = (pGVar2->fields)._sharedSettings;
+      }
+      if (this_00 != (PolygonShape2D *)0x0) {
         SphereShape3D::SphereShape3D_set_RadiusEps
-                  ((SphereShape3D *)this_01,(pGVar2->fields)._areaHoverEps,(MethodInfo *)0x0);
+                  ((SphereShape3D *)this_00,(pGVar3->fields)._areaHoverEps,(MethodInfo *)0x0);
         return;
       }
     }
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+code_?:
+  uVar4 = func_?(&stack0xfffffff0);
+  func_?(uVar4);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -168,32 +176,47 @@ void Assembly-CSharp.dll::RTG::GizmoPolygonPlaneSlider2DController::
   if ((pGVar1 != (GizmoPlaneSlider2DControllerData *)0x0) &&
      (pGVar2 = (pGVar1->fields).PolygonBorder, pGVar2 != (GizmoPolygon2DBorder *)0x0)) {
     if (cRam_? == '\0') {
+      pIStack_3 = (IGizmoPolygon2DBorderController *)&TypeInfo__RTG__IGizmoPolygon2DBorderController
+      ;
       func_?();
       cRam_? = '\x01';
     }
-    pIVar3 = (pGVar2->fields)._controllers;
-    this_00 = (pGVar2->fields)._planeSlider;
-    if (((this_00 != (GizmoPlaneSlider2D *)0x0) &&
-        (pGVar4 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_get_LookAndFeel(this_00,(MethodInfo *)0x0),
-        pGVar4 != (GizmoPlaneSlider2DLookAndFeel *)0x0)) &&
-       (pIVar3 != (IGizmoPolygon2DBorderController__Array *)0x0)) {
-      uVar5 = (pGVar4->fields)._polygonBorderType;
-      if (pIVar3->max_length <= uVar5) {
-        func_?();
-        pcVar6 = (code *)swi(3);
-        (*pcVar6)();
-        return;
+    pIVar4 = (pGVar2->fields)._controllers;
+    pGVar5 = (pGVar2->fields)._planeSlider;
+    if (pGVar5 != (GizmoPlaneSlider2D *)0x0) {
+      if ((pGVar5->fields)._sharedLookAndFeel == (GizmoPlaneSlider2DLookAndFeel *)0x0) {
+        pGVar6 = (pGVar5->fields)._lookAndFeel;
+        if (pGVar6 == (GizmoPlaneSlider2DLookAndFeel *)0x0) goto code_?;
       }
-      if (pIVar3->vector[uVar5] != (IGizmoPolygon2DBorderController *)0x0) {
-        func_?();
-        return;
+      else {
+        pGVar6 = (pGVar5->fields)._sharedLookAndFeel;
+      }
+      if (pIVar4 != (IGizmoPolygon2DBorderController__Array *)0x0) {
+        uVar7 = (pGVar6->fields)._polygonBorderType;
+        if (pIVar4->max_length <= uVar7) {
+          pIStack_3 = (IGizmoPolygon2DBorderController *)0x0;
+          pIStack_8 = (IGizmoPolygon2DBorderController__Class *)func_?();
+          func_?();
+          pcVar9 = (code *)swi(3);
+          (*pcVar9)();
+          return;
+        }
+        pIStack_3 = pIVar4->vector[uVar7];
+        if (pIStack_3 != (IGizmoPolygon2DBorderController *)0x0) {
+          pIStack_8 = TypeInfo__RTG__IGizmoPolygon2DBorderController;
+          puStack_10 = (undefined *)0x2;
+          func_?();
+          return;
+        }
       }
     }
   }
-  uVar7 = func_?(&stack0xfffffff0);
-  func_?(uVar7);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+code_?:
+  pIStack_3 = (IGizmoPolygon2DBorderController *)&stack0xfffffffc;
+  uVar11 = func_?(&puStack_10);
+  func_?(uVar11);
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

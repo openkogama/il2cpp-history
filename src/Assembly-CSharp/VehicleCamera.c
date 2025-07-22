@@ -271,10 +271,10 @@ void Assembly-CSharp.dll::VehicleCamera::VehicleCamera_UpdateCamera
         value.y = (float)uVar12 + (float)uVar32;
         ProtectedTransform::ProtectedTransform_set_position
                   (in_stack_33,value,(MethodInfo *)0x0);
-        value_00.y = (fVar3 * fVar24 + fVar22 * 3.244787e-29 + fVar23 * fVar2) - fVar4 * fVar21;
-        value_00.x = (fVar24 * fVar2 + fVar21 * 3.244787e-29 + fVar22 * fVar4) - fVar23 * fVar3;
-        value_00.z = (fVar4 * fVar24 + fVar23 * 3.244787e-29 + fVar3 * fVar21) - fVar22 * fVar2;
-        value_00.w = ((fVar24 * 3.244787e-29 - fVar2 * fVar21) - fVar3 * fVar22) - fVar23 * fVar4
+        value_00.y = (fVar3 * fVar24 + fVar22 * 3.244888e-29 + fVar23 * fVar2) - fVar4 * fVar21;
+        value_00.x = (fVar24 * fVar2 + fVar21 * 3.244888e-29 + fVar22 * fVar4) - fVar23 * fVar3;
+        value_00.z = (fVar4 * fVar24 + fVar23 * 3.244888e-29 + fVar3 * fVar21) - fVar22 * fVar2;
+        value_00.w = ((fVar24 * 3.244888e-29 - fVar2 * fVar21) - fVar3 * fVar22) - fVar23 * fVar4
         ;
         ProtectedTransform::ProtectedTransform_set_rotation
                   (in_stack_33,value_00,(MethodInfo *)0x0);
@@ -314,7 +314,7 @@ void Assembly-CSharp.dll::VehicleCamera::VehicleCamera_UpdateTargetRotation
     uStack_3._4_4_ = (pTVar2->fields).eulerAngles.y;
     fStack_4 = (pTVar2->fields).eulerAngles.z;
     fStack_5 = (float)((uint)(float)uStack_3 ^
-                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                      __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     this = (VehicleCamera *)uStack_3._4_4_;
     if (cRam_? == '\0') {
       func_?(&TypeInfo__MVGameControllerBase);
@@ -322,7 +322,7 @@ void Assembly-CSharp.dll::VehicleCamera::VehicleCamera_UpdateTargetRotation
     }
     pIVar6 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
     if (pIVar6 != (IPlayModeUI *)0x0) {
-      bVar7 = func_?(3,TypeInfo__IPlayModeUI,pIVar6);
+      bVar7 = func_?(5,TypeInfo__IPlayModeUI,pIVar6);
       (pVVar1->fields)._.autoRotate = bVar7 ^ 1;
       fVar8 = fStack_5;
       if (((bVar7 ^ 1) != 0) && (((pVVar1->fields)._._._.ignoreInputTypes & 1) == 0)) {
@@ -389,7 +389,7 @@ void Assembly-CSharp.dll::VehicleCamera::VehicleCamera_UpdateTargetRotation
       if (pTVar2 != (TargetRotation *)0x0) {
         TargetRotation::TargetRotation_SetTargetRotation_1
                   (pTVar2,(float)((uint)fVar8 ^
-                                 __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                 __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                                  ),(float)this,(MethodInfo *)0x0);
         return;
       }

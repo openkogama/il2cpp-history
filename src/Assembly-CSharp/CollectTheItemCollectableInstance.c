@@ -170,10 +170,10 @@ bool Assembly-CSharp.dll::CollectTheItemCollectableInstance::
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__EventHandler<TriggerEventArgs>);
     func_?(&
-                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                    MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                    );
     func_?(&
-                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                    MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                    );
     cRam_? = '\x01';
   }
@@ -191,7 +191,7 @@ bool Assembly-CSharp.dll::CollectTheItemCollectableInstance::
                  func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
         mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                   (pEVar6,(Object *)pUVar4,
-                   MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                   MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                    ,(MethodInfo *)0x0);
         if (pTVar3 != (TriggerBoxEvents *)0x0) {
           TriggerBoxEvents::TriggerBoxEvents_remove_TriggerEnter
@@ -204,7 +204,7 @@ bool Assembly-CSharp.dll::CollectTheItemCollectableInstance::
                      func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
             mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                       (pEVar6,(Object *)pUVar4,
-                       MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                       MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                        ,(MethodInfo *)0x0);
             if (pTVar3 != (TriggerBoxEvents *)0x0) {
               TriggerBoxEvents::TriggerBoxEvents_remove_TriggerExit
@@ -1579,13 +1579,13 @@ void Assembly-CSharp.dll::CollectTheItemCollectableInstance::
     func_?(&TypeInfo__System__EventHandler<TriggerEventArgs>);
     func_?(&TypeInfo__System__Func<int,_bool>);
     func_?(&TypeInfo__System__Func<int,_MVInteractableBase,_bool>);
+    func_?(&
+                    MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                   );
+    func_?(&
+                    MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                   );
     func_?(&TypeInfo__UseInteractor);
-    func_?(&
-                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
-                   );
-    func_?(&
-                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
-                   );
     cRam_? = '\x01';
   }
   pCVar1 = (this->fields).collectTheItemObject;
@@ -1596,21 +1596,21 @@ void Assembly-CSharp.dll::CollectTheItemCollectableInstance::
     if ((pCVar1 != (CollectTheItemObject *)0x0) &&
        (pTVar2 = (pCVar1->fields).triggerBoxEvents, pTVar2 != (TriggerBoxEvents *)0x0)) {
       triggerCollider = TriggerBoxEvents::TriggerBoxEvents_get_Collider(pTVar2,(MethodInfo *)0x0);
-      wo = (MVWorldObjectClient *)func_?(TypeInfo__System__Func<int,_bool>);
+      this_00 = (Predicate_1_UInt32_ *)func_?(TypeInfo__System__Func<int,_bool>);
       mscorlib.dll::System::Predicate`1[UInt32]::Predicate_1_UInt32___ctor
-                ((Predicate_1_UInt32_ *)wo,(Object *)this,
+                (this_00,(Object *)this,
                  MethodInfo__CollectTheItemCollectableInstance__SendEnterEvent_int_,
                  (MethodInfo *)0x0);
-      this_00 = (Func_3_Int32_Object_Boolean_ *)
-                func_?(TypeInfo__System__Func<int,_MVInteractableBase,_bool>);
+      wo = (MVWorldObjectClient *)
+           func_?(TypeInfo__System__Func<int,_MVInteractableBase,_bool>);
       mscorlib.dll::System::Func`3[Int32,Object,Boolean]::Func_3_Int32_Object_Boolean___ctor
-                (this_00,(Object *)this,
+                ((Func_3_Int32_Object_Boolean_ *)wo,(Object *)this,
                  MethodInfo__CollectTheItemCollectableInstance__CheckCanUse_int__MVInteractableBase_
                  ,(MethodInfo *)0x0);
       this_01 = (UseInteractor *)func_?(TypeInfo__UseInteractor);
       UseInteractor::UseInteractor__ctor
-                (this_01,wo,owner,0,triggerCollider,(Func_2_Int32_Boolean_ *)wo,
-                 (Func_3_Int32_MVInteractableBase_Boolean_ *)this_00,2.5,0,(MethodInfo *)0x0);
+                (this_01,wo,owner,0,triggerCollider,(Func_2_Int32_Boolean_ *)this_00,
+                 (Func_3_Int32_MVInteractableBase_Boolean_ *)wo,2.5,0,1,(MethodInfo *)0x0);
       wo[1].fields._.objectLinkRefs = (List_1_MV_WorldObject_ObjectLink_ *)this_01;
       func_?();
       pLVar3 = wo[1].fields._.outputLinkRefs;
@@ -1621,7 +1621,7 @@ void Assembly-CSharp.dll::CollectTheItemCollectableInstance::
                  func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
         mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                   (pEVar5,(Object *)pLVar4,
-                   MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                   MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                    ,(MethodInfo *)0x0);
         if (pTVar2 != (TriggerBoxEvents *)0x0) {
           TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
@@ -1634,7 +1634,7 @@ void Assembly-CSharp.dll::CollectTheItemCollectableInstance::
                      func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
             mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                       (pEVar5,(Object *)pLVar4,
-                       MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                       MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                        ,(MethodInfo *)0x0);
             if (pTVar2 != (TriggerBoxEvents *)0x0) {
               TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit

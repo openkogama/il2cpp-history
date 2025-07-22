@@ -176,15 +176,15 @@ code_?:
   uVar20 = (this->fields)._plane.m_Normal.x;
   uVar21 = (this->fields)._plane.m_Normal.y;
   uStack_22 = (uint)fVar14 ^
-              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+              __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
   VStack_23.x = (float)((uint)(fVar14 * (float)uVar21 + *pfVar11 * (float)uVar20 + pfVar11[2] * fVar18
                               ) ^
-                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) -
+                       __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) -
                 (this->fields)._plane.m_Distance;
   VStack_23.z = (float)((uint)fVar14 ^
-                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                       __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
   VStack_23.y = (float)((uint)fVar14 ^
-                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                       __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
   fStack_24 = fStack_15;
   fStack_25 = fStack_15;
   uStack_19 = uVar13;

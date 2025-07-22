@@ -7,7 +7,7 @@ void Assembly-CSharp.dll::SpawnRoleSkillSelectionMenu::
                KogamaSettingWrapperBase *skillSetting,MethodInfo *method)
 
 {
-  skillSetting_00 = skillSetting;
+  pSVar1 = this;
   if (cRam_? == '\0') {
     func_?(&
                     TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
@@ -25,67 +25,46 @@ void Assembly-CSharp.dll::SpawnRoleSkillSelectionMenu::
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  this_00 = (KogamaSettingWrapperBase__Class *)
+  this_00 = (IAttributeSetting__Class *)
             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                       ((Object *)original,
                        SpawnRoleSkillSelectionElement_MethodInfo__UnityEngine__Object__Instantiate<SpawnRoleSkillSelectionElement>_SpawnRoleSkillSelectionElement_
                       );
-  pKVar1 = (KogamaSettingWrapperBase__Class *)
-           TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
+  pIVar2 = 
+  TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
   ;
   skillDataManager = (this->fields).skillDataManager;
   if (skillSetting == (KogamaSettingWrapperBase *)0x0) goto code_?;
-  iVar2 = func_?(skillSetting,
+  iVar3 = func_?(skillSetting,
                           TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
                          );
-  pIVar3 = 
+  pIVar4 = 
   TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
   ;
-  if ((iVar2 == 0) ||
-     (piVar4 = (int *)func_?(skillSetting,
-                                      TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-                                     ),
-     pIVar5 = 
-     TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-     , pKVar1 = (KogamaSettingWrapperBase__Class *)pIVar3, piVar4 == (int *)0x0))
-  goto code_?;
-  iVar2 = *piVar4;
-  uVar6 = 0;
-  if (*(ushort *)(iVar2 + 0xb6) != 0) {
-    do {
-      if (*(IAttributeSetting__Class **)(*(int *)(iVar2 + 0x58) + (uint)uVar6 * 8) ==
-          TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-         ) {
-        puVar7 = (undefined4 *)
-                 (iVar2 + (*(int *)(*(int *)(iVar2 + 0x58) + 4 + (uint)uVar6 * 8) + 0x18) * 8);
-        goto code_?;
-      }
-      uVar6 = uVar6 + 1;
-    } while (uVar6 < *(ushort *)(iVar2 + 0xb6));
-  }
-  puVar7 = (undefined4 *)
-           func_?(piVar4,
-                           TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-                           ,0);
-code_?:
-  skillCost = (*(code *)*puVar7)(piVar4,puVar7[1]);
-  skillSetting = (KogamaSettingWrapperBase *)
-                 CONCAT31(skillSetting._1_3_,(this->fields).spawnRoleTier);
-  pKVar1 = (KogamaSettingWrapperBase__Class *)pIVar5;
-  if (this_00 == (KogamaSettingWrapperBase__Class *)0x0) {
+  if (iVar3 == 0) goto code_?;
+  iVar3 = func_?(skillSetting,
+                          TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
+                         );
+  pIVar2 = pIVar4;
+  if (iVar3 == 0) goto code_?;
+  skillCost = func_?(0,
+                              TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
+                              ,iVar3);
+  this = (SpawnRoleSkillSelectionMenu *)CONCAT31(this._1_3_,(this->fields).spawnRoleTier);
+  pIVar2 = this_00;
+  if (this_00 == (IAttributeSetting__Class *)0x0) {
 code_?:
     func_?();
-    pKVar8 = extraout_EDX;
+    pKVar5 = extraout_EDX;
   }
   else {
-    pKVar1 = skillSetting_00->klass;
-    pKVar8 = 
+    pKVar5 = 
     TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
     ;
     if (((
          TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
-         ->_1).naturalAligment <= (pKVar1->_1).naturalAligment) &&
-       ((pKVar1->_1).typeHierarchy
+         ->_1).naturalAligment <= (skillSetting->klass->_1).naturalAligment) &&
+       ((skillSetting->klass->_1).typeHierarchy
         [(
          TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
          ->_1).naturalAligment - 1] ==
@@ -94,25 +73,24 @@ code_?:
        )) {
       SpawnRoleSkillSelectionElement::SpawnRoleSkillSelectionElement_Initialize
                 ((SpawnRoleSkillSelectionElement *)this_00,skillKey,skillDataManager,skillCost,
-                 (this->fields).spawnRoleCost,(GamePassTier__Enum)skillSetting,
-                 (KogamaSettingValueWrapperBase *)skillSetting_00,(this->fields).addSkillCallback,
-                 (this->fields).cantAddSkillCallback,(MethodInfo *)0x0);
+                 (pSVar1->fields).spawnRoleCost,(GamePassTier__Enum)this,
+                 (KogamaSettingValueWrapperBase *)skillSetting,(pSVar1->fields).addSkillCallback,
+                 (pSVar1->fields).cantAddSkillCallback,(MethodInfo *)0x0);
       this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                           ((Component *)this_00,(MethodInfo *)0x0);
-      pKVar1 = this_00;
       if (this_01 != (Transform *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                  (this_01,(this->fields).skillSelectionElementContainer,0,(MethodInfo *)0x0);
+                  (this_01,(pSVar1->fields).skillSelectionElementContainer,0,(MethodInfo *)0x0);
         return;
       }
       goto code_?;
     }
   }
-  func_?(skillSetting_00,pKVar8);
+  func_?(skillSetting,pKVar5);
 code_?:
-  func_?(skillSetting_00,pKVar1);
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  func_?(skillSetting,pIVar2);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

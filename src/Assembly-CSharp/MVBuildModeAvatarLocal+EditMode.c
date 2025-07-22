@@ -342,12 +342,12 @@ code_?:
   func_?(data,pMVar1);
   pAVar17 = extraout_EDX_00;
 code_?:
-  func_?(unaff_EDI,pAVar17);
-  pbVar21 = pbRam29103059;
-  *pbRam29103059 = *pbRam29103059 ^ extraout_DL;
-  pcVar22 = (char *)(*(int *)(extraout_ECX + 0x30) + -0x61efcfa7);
-  *pcVar22 = *pcVar22 + (char)extraout_ECX;
+  pbVar21 = (byte *)func_?(unaff_EDI,pAVar17);
+  pppIVar22 = &(unaff_EDI + -0x5b85c0)[1]._0.implementedInterfaces;
+  *pppIVar22 = (Il2CppClass **)((uint)*pppIVar22 >> 1);
   *pbVar21 = *pbVar21 ^ extraout_DL;
+  *pbVar21 = *pbVar21 ^ extraout_DL;
+  swi(4);
   pcVar23 = (code *)swi(3);
   (*pcVar23)();
   return;
@@ -1421,7 +1421,7 @@ code_?:
   fVar12 = (this->fields)._XZMovementSpeedScale_k__BackingField;
   __return_storage_ptr__->x = fStack_20 * fVar18 * fVar10 * fVar12;
   __return_storage_ptr__->y = fStack_21 * fVar18 * fVar10 * fVar12;
-  __return_storage_ptr__->z = fVar18 * 3.4799532e-29 * fVar10 * fVar12;
+  __return_storage_ptr__->z = fVar18 * 3.4865928e-29 * fVar10 * fVar12;
   return __return_storage_ptr__;
 }
 
@@ -1529,85 +1529,93 @@ void Assembly-CSharp.dll::MVBuildModeAvatarLocal+EditMode::
   if ((this->fields).moveConstraintSet == 0) {
 code_?:
     fStack_1 = moveDelta.x;
-    fStack_2 = moveDelta.z;
-    fStack_3 = moveDelta.y;
+    uStack_2 = 0;
+    uStack_3 = 0;
+    fStack_4 = 0.0;
+    fStack_5 = moveDelta.z;
   }
   else {
-    pMVar4 = (this->fields)._.buildModeAvatar;
-    if (((pMVar4 == (MVBuildModeAvatarLocal *)0x0) ||
-        (this_00 = (pMVar4->fields)._._._.gameObject, this_00 == (GameObject *)0x0)) ||
+    pMVar6 = (this->fields)._.buildModeAvatar;
+    if (((pMVar6 == (MVBuildModeAvatarLocal *)0x0) ||
+        (this_00 = (pMVar6->fields)._._._.gameObject, this_00 == (GameObject *)0x0)) ||
        (this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                             (this_00,(MethodInfo *)0x0), this_01 == (Transform *)0x0))
     goto code_?;
-    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                       (&VStack_6,this_01,(MethodInfo *)0x0);
-    fStack_1 = moveDelta.x;
-    uVar7 = pVVar5->x;
-    uVar8 = pVVar5->y;
-    fStack_3 = moveDelta.y;
-    fStack_2 = moveDelta.z;
-    fStack_9 = moveDelta.z + pVVar5->z;
-    uStack_10._0_4_ = (this->fields).moveConstraintCenter.x;
-    uStack_10._4_4_ = (this->fields).moveConstraintCenter.y;
-    uVar11 = pVVar5->x;
-    uVar12 = pVVar5->y;
-    fStack_13 = (this->fields).moveConstraintCenter.z - pVVar5->z;
-    uStack_14 = CONCAT44(moveDelta.y + (float)uVar8,moveDelta.x + (float)uVar7);
-    uStack_15 = CONCAT44(uStack_10._4_4_ - (float)uVar12,(float)uStack_10 - (float)uVar11);
-    fStack_16 = fStack_13;
-    puVar17 = (undefined8 *)func_?();
-    uStack_15 = *puVar17;
-    fStack_13 = *(float *)(puVar17 + 1);
-    puVar17 = (undefined8 *)func_?();
-    uVar18 = *puVar17;
-    fStack_16 = *(float *)(puVar17 + 1);
-    uStack_10._0_4_ = (float)uVar18;
-    fVar19 = (float)uStack_15 * (float)uStack_10;
-    uStack_10._4_4_ = (float)((ulonglong)uVar18 >> 0x20);
-    fVar20 = uStack_15._4_4_ * uStack_10._4_4_;
-    uStack_10 = uVar18;
-    if (fVar20 + fVar19 + fStack_13 * fStack_16 <= _UNK_?) {
-      uVar18._0_4_ = (this->fields).moveConstraintCenter.x;
-      uVar18._4_4_ = (this->fields).moveConstraintCenter.y;
-      fVar21 = (float10)func_?(uVar18,(this->fields).moveConstraintCenter.z,uStack_14,
-                                        fStack_9,0);
-      fVar19 = (this->fields).moveConstraintRadius * _UNK_?;
-      fStack_22 = (float)fVar21;
-      if (fVar19 < fStack_22) {
-        fVar19 = fStack_22 - fVar19;
-        fVar23 = (this->fields).moveConstraintRadius * _UNK_?;
-        fVar20 = 0.0;
-        if (fVar19 < fVar23) {
-          fVar20 = _UNK_? - fVar19 / fVar23;
+    pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                       ((Vector3 *)(auStack_8 + 4),this_01,(MethodInfo *)0x0);
+    fVar9 = moveDelta.z;
+    fVar10 = moveDelta.y;
+    fStack_4 = moveDelta.x;
+    uStack_11 = 0;
+    uVar12 = (this->fields).moveConstraintCenter.x;
+    uVar13 = (this->fields).moveConstraintCenter.y;
+    uVar14 = pVVar7->x;
+    uVar15 = pVVar7->y;
+    fVar16 = (this->fields).moveConstraintCenter.z - pVVar7->z;
+    puVar17 = auStack_8;
+    uVar18 = 0;
+    puVar19 = auStack_20;
+    auStack_8 = (undefined1  [8])CONCAT44((float)uVar13 - (float)uVar15,(float)uVar12 - (float)uVar14);
+    fStack_21 = fVar16;
+    puVar22 = (undefined8 *)func_?();
+    auStack_8 = (undefined1  [8])*puVar22;
+    fStack_21 = *(float *)(puVar22 + 1);
+    puVar22 = (undefined8 *)func_?(auStack_20,&moveDelta,0,puVar19,puVar17,uVar18);
+    fStack_23 = (float)*puVar22;
+    fStack_24 = (float)((ulonglong)*puVar22 >> 0x20);
+    if (fVar16 * fStack_24 + (float)uVar13 * fStack_23 + fStack_25 * *(float *)(puVar22 + 1) <=
+        _UNK_?) {
+      uVar26 = (this->fields).moveConstraintCenter.x;
+      uVar27 = (this->fields).moveConstraintCenter.y;
+      fVar16 = (this->fields).moveConstraintCenter.z;
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__System__Math);
+        cRam_? = '\x01';
+      }
+      fVar16 = fVar16 - fVar9;
+      if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__System__Math);
+      }
+      dVar28 = (double)(((float)uVar26 - fStack_29) * ((float)uVar26 - fStack_29) +
+                        ((float)uVar27 - fVar10) * ((float)uVar27 - fVar10) + fVar16 * fVar16);
+      if (dVar28 < 0.0) {
+        func_?();
+      }
+      else {
+        dVar28 = SQRT(dVar28);
+      }
+      fVar10 = (this->fields).moveConstraintRadius * _UNK_?;
+      if (fVar10 < (float)dVar28) {
+        fVar10 = (float)dVar28 - fVar10;
+        fVar16 = (this->fields).moveConstraintRadius * _UNK_?;
+        fVar9 = 0.0;
+        if (fVar10 < fVar16) {
+          fVar9 = _UNK_? - fVar10 / fVar16;
         }
-        fVar20 = fVar20 * fVar20;
-        moveDelta.z = moveDelta.z * fVar20;
-        moveDelta.x = moveDelta.x * fVar20;
-        moveDelta.y = moveDelta.y * fVar20;
-        fStack_9 = moveDelta.z;
+        fVar9 = fVar9 * fVar9;
+        moveDelta.z = moveDelta.z * fVar9;
+        moveDelta.x = fStack_1 * fVar9;
+        moveDelta.y = moveDelta.y * fVar9;
+        fStack_30 = moveDelta.y;
         goto code_?;
       }
     }
   }
-  pMVar4 = (this->fields)._.buildModeAvatar;
-  if (pMVar4 != (MVBuildModeAvatarLocal *)0x0) {
-    puVar17 = (undefined8 *)(*(code *)(pMVar4->klass->vtable).get_WorldPosition_1.method)();
-    uVar18 = *puVar17;
-    fStack_9 = fStack_2 + *(float *)(puVar17 + 1);
-    uStack_14._0_4_ = (float)uVar18;
-    fStack_1 = fStack_1 + (float)uStack_14;
-    uStack_14._4_4_ = (float)((ulonglong)uVar18 >> 0x20);
-    fVar19 = fStack_3 + uStack_14._4_4_;
-    uStack_14 = uVar18;
-    (*(code *)(pMVar4->klass->vtable).set_WorldPosition.method)
-              (pMVar4,CONCAT44(fVar19,fStack_1),fStack_9,
-               (pMVar4->klass->vtable).get_IsTransformDefined.methodPtr);
+  pMVar6 = (this->fields)._.buildModeAvatar;
+  if (pMVar6 != (MVBuildModeAvatarLocal *)0x0) {
+    puVar22 = (undefined8 *)(*(code *)(pMVar6->klass->vtable).get_WorldPosition_1.method)();
+    fStack_31 = (float)*puVar22;
+    fStack_32 = (float)((ulonglong)*puVar22 >> 0x20);
+    (*(code *)(pMVar6->klass->vtable).set_WorldPosition.method)
+              (pMVar6,CONCAT44(fStack_30 + fStack_32,fStack_1 + fStack_31),
+               fStack_5 + *(float *)(puVar22 + 1),
+               (pMVar6->klass->vtable).get_IsTransformDefined.methodPtr);
     return;
   }
 code_?:
   func_?();
-  pcVar24 = (code *)swi(3);
-  (*pcVar24)();
+  pcVar33 = (code *)swi(3);
+  (*pcVar33)();
   return;
 }
 

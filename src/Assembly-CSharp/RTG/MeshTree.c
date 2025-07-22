@@ -478,8 +478,8 @@ Assembly-CSharp.dll::RTG::MeshTree::MeshTree_RaycastClosest
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xfffffeb0;
-  puVar5 = &stack0xfffffeb0;
+  puStack_4 = &stack0xfffffec8;
+  puVar5 = &stack0xfffffec8;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::SphereTreeNodeRayHit<RTG::MeshTriangle>_>__Dispose__
@@ -515,12 +515,6 @@ Assembly-CSharp.dll::RTG::MeshTree::MeshTree_RaycastClosest
   if ((this->fields)._isBuilt == 0) {
     MeshTree_Build(this,(MethodInfo *)0x0);
   }
-  ray_00.m_Direction.z = ray.m_Direction.z;
-  ray_00.m_Direction.y = ray.m_Direction.y;
-  ray_00.m_Origin.y = ray.m_Origin.y;
-  ray_00.m_Origin.x = ray.m_Origin.x;
-  ray_00.m_Origin.z = ray.m_Origin.z;
-  ray_00.m_Direction.x = ray.m_Direction.x;
   transformMatrix.m10 = meshTransform.m10;
   transformMatrix.m00 = meshTransform.m00;
   transformMatrix.m20 = meshTransform.m20;
@@ -538,7 +532,7 @@ Assembly-CSharp.dll::RTG::MeshTree::MeshTree_RaycastClosest
   transformMatrix.m23 = meshTransform.m23;
   transformMatrix.m33 = meshTransform.m33;
   pRVar8 = RayEx::RayEx_InverseTransform
-                      ((Ray *)&stack0xffffff14,ray_00,transformMatrix,(MethodInfo *)0x0);
+                      ((Ray *)&stack0xffffff14,ray,transformMatrix,(MethodInfo *)0x0);
   this_00 = (this->fields)._tree;
   RStack_7.m_Origin.x = (pRVar8->m_Origin).x;
   RStack_7.m_Origin.y = (pRVar8->m_Origin).y;
@@ -551,16 +545,16 @@ Assembly-CSharp.dll::RTG::MeshTree::MeshTree_RaycastClosest
     uVar10 = (pRVar8->m_Origin).x;
     uVar11 = (pRVar8->m_Origin).y;
     uVar12 = (pRVar8->m_Origin).z;
-    ray_01.m_Origin.z = (float)uVar12;
-    ray_01.m_Origin.y = (float)uVar11;
-    ray_01.m_Origin.x = (float)uVar10;
+    ray_00.m_Origin.z = (float)uVar12;
+    ray_00.m_Origin.y = (float)uVar11;
+    ray_00.m_Origin.x = (float)uVar10;
     uVar13 = (pRVar8->m_Direction).x;
     uVar14 = (pRVar8->m_Direction).y;
-    ray_01.m_Direction.y = (float)uVar14;
-    ray_01.m_Direction.x = (float)uVar13;
-    ray_01.m_Direction.z = (float)uVar9;
+    ray_00.m_Direction.y = (float)uVar14;
+    ray_00.m_Direction.x = (float)uVar13;
+    ray_00.m_Direction.z = (float)uVar9;
     bVar15 = SphereTree`1[System::Object]::SphereTree_1_System_Object__RaycastAll
-                       ((SphereTree_1_System_Object_ *)this_00,ray_01,
+                       ((SphereTree_1_System_Object_ *)this_00,ray_00,
                         (List_1_RTG_SphereTreeNodeRayHit_1_System_Object_ *)
                         (this->fields)._nodeHitBuffer,
                         MethodInfo__RTG__SphereTree<RTG::MeshTriangle>__RaycastAll_UnityEngine__Ray__System__Collections__Generic__List<RTG::SphereTreeNodeRayHit<RTG::MeshTriangle>_>_
@@ -571,22 +565,22 @@ code_?:
       return (MeshRayHit *)0x0;
     }
     bVar16 = false;
-    this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+    pLVar17 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
               (this->fields)._nodeHitBuffer;
-    fStack_17 = _UNK_?;
-    fStack_18 = 0.0;
-    if (this_01 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-      pLVar19 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+    fStack_18 = _UNK_?;
+    iStack_19 = 0;
+    if (pLVar17 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+      pLVar20 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                 ::RegexCharClass+SingleRange]::
                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                           ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                            *)&stack0xffffff1c,this_01,
+                            *)&stack0xffffff1c,pLVar17,
                            MethodInfo__System__Collections__Generic__List<RTG::SphereTreeNodeRayHit<RTG::MeshTriangle>_>__GetEnumerator__
                           );
-      uStack_20 = 0;
-      RVar21 = pLVar19->_current;
+      uStack_21 = 0;
+      RVar22 = pLVar20->_current;
       uStack_1 = 1;
-      pOStack_22 = (Object *)&stack0xffffff8c;
+      pOStack_23 = (Object *)&stack0xffffff8c;
       while( true ) {
         bVar15 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
                  List_1_T_Enumerator_System_Object__MoveNext
@@ -594,13 +588,13 @@ code_?:
                             MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::SphereTreeNodeRayHit<RTG::MeshTriangle>_>__MoveNext__
                            );
         if (bVar15 == 0) break;
-        if ((RVar21 == (RegexCharClass_SingleRange)0x0) ||
-           (iVar23 = *(int *)((int)RVar21 + 8), iVar23 == 0)) goto code_?;
-        iVar23 = *(int *)(iVar23 + 0x20);
-        VStack_24.y = RStack_7.m_Direction.y;
-        VStack_24.z = RStack_7.m_Direction.z;
-        if ((iVar23 == 0) || (iVar25 = *(int *)(iVar23 + 8), iVar25 == 0)) goto code_?;
-        if (*(int *)(iVar25 + 0xc) == 0) {
+        if ((RVar22 == (RegexCharClass_SingleRange)0x0) ||
+           (iVar24 = *(int *)((int)RVar22 + 8), iVar24 == 0)) goto code_?;
+        iVar24 = *(int *)(iVar24 + 0x20);
+        VStack_25.y = RStack_7.m_Direction.y;
+        VStack_25.z = RStack_7.m_Direction.z;
+        if ((iVar24 == 0) || (iVar26 = *(int *)(iVar24 + 8), iVar26 == 0)) goto code_?;
+        if (*(int *)(iVar26 + 0xc) == 0) {
           func_?();
 code_?:
           func_?();
@@ -608,51 +602,59 @@ code_?:
           func_?();
           goto code_?;
         }
-        _puStack_90 = *(undefined8 *)(iVar25 + 0x10);
-        fStack_26 = *(float *)(iVar25 + 0x18);
-        iVar25 = *(int *)(iVar23 + 8);
-        if (iVar25 == 0) goto code_?;
-        if (*(uint *)(iVar25 + 0xc) < 2) goto code_?;
-        uVar27 = *(undefined8 *)(iVar25 + 0x1c);
-        fStack_28 = *(float *)(iVar25 + 0x24);
-        iVar25 = *(int *)(iVar23 + 8);
-        uVar29 = (undefined4)uVar27;
-        uVar30 = (undefined4)((ulonglong)uVar27 >> 0x20);
-        if (iVar25 == 0) goto code_?;
-        if (*(uint *)(iVar25 + 0xc) < 3) goto code_?;
-        uVar31 = *(undefined8 *)(iVar25 + 0x28);
-        fStack_32 = *(float *)(iVar25 + 0x30);
-        fVar33 = RStack_7.m_Origin.z;
+        fStack_27 = *(float *)(iVar26 + 0x18);
+        iVar28 = *(int *)(iVar24 + 8);
+        fVar29 = (float)*(undefined8 *)(iVar26 + 0x10);
+        fVar30 = (float)((ulonglong)*(undefined8 *)(iVar26 + 0x10) >> 0x20);
+        if (iVar28 == 0) goto code_?;
+        if (*(uint *)(iVar28 + 0xc) < 2) goto code_?;
+        uVar31 = *(undefined8 *)(iVar28 + 0x1c);
+        pMStack_32 = *(MeshRayHit **)(iVar28 + 0x24);
+        iVar26 = *(int *)(iVar24 + 8);
+        uVar33 = (undefined4)uVar31;
+        uVar34 = (undefined4)((ulonglong)uVar31 >> 0x20);
+        if (iVar26 == 0) goto code_?;
+        if (*(uint *)(iVar26 + 0xc) < 3) goto code_?;
+        uVar35 = *(undefined8 *)(iVar26 + 0x28);
+        fStack_36 = *(float *)(iVar26 + 0x30);
+        uVar37 = (undefined4)uVar35;
+        uVar38 = (undefined4)((ulonglong)uVar35 >> 0x20);
+        pLVar17 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                  RStack_7.m_Origin.x;
+        fVar39 = RStack_7.m_Origin.y;
+        fVar40 = RStack_7.m_Origin.z;
+        RVar41 = (RegexCharClass_SingleRange)RStack_7.m_Direction.x;
         if ((TypeInfo__RTG__TriangleMath->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
-          uVar27 = CONCAT44(uVar30,uVar29);
+          uVar31 = CONCAT44(uVar34,uVar33);
+          uVar35 = CONCAT44(uVar38,uVar37);
         }
-        ray_02.m_Origin.z = fVar33;
-        ray_02.m_Origin.x = (float)puStack_34;
-        ray_02.m_Origin.y = stack0xffffff74;
-        ray_02.m_Direction.x = (float)SUB84(uVar27,0);
-        ray_02.m_Direction.y = VStack_24.y;
-        ray_02.m_Direction.z = VStack_24.z;
-        p0.z = fStack_26;
-        p0.x = (float)puStack_34;
-        p0.y = stack0xffffff74;
-        p1.z = fStack_28;
-        p1.x = (float)(int)uVar27;
-        p1.y = (float)(int)((ulonglong)uVar27 >> 0x20);
-        p2.z = fStack_32;
-        p2.x = (float)(int)uVar31;
-        p2.y = (float)(int)((ulonglong)uVar31 >> 0x20);
+        ray_01.m_Origin.y = fVar39;
+        ray_01.m_Origin.x = (float)pLVar17;
+        ray_01.m_Origin.z = fVar40;
+        ray_01.m_Direction.x = (float)RVar41;
+        ray_01.m_Direction.y = VStack_25.y;
+        ray_01.m_Direction.z = VStack_25.z;
+        p0.y = fVar30;
+        p0.x = fVar29;
+        p0.z = fStack_27;
+        p1.z = (float)pMStack_32;
+        p1.x = (float)(int)uVar31;
+        p1.y = (float)(int)((ulonglong)uVar31 >> 0x20);
+        p2.z = fStack_36;
+        p2.x = (float)(int)uVar35;
+        p2.y = (float)(int)((ulonglong)uVar35 >> 0x20);
         bVar15 = TriangleMath::TriangleMath_Raycast
-                           (ray_02,&fStack_6,p0,p1,p2,(TriangleEpsilon)ZEXT812(0),(MethodInfo *)0x0
+                           (ray_01,&fStack_6,p0,p1,p2,(TriangleEpsilon)ZEXT812(0),(MethodInfo *)0x0
                            );
         if (bVar15 != 0) {
-          VStack_35._0_8_ = *(undefined8 *)(iVar23 + 0xc);
-          VStack_35.z = *(float *)(iVar23 + 0x14);
-          if ((RStack_7.m_Direction.y * VStack_35.y + RStack_7.m_Direction.x * VStack_35.x +
-               RStack_7.m_Direction.z * VStack_35.z < 0.0) && (fStack_6 < fStack_17)) {
+          VStack_42._0_8_ = *(undefined8 *)(iVar24 + 0xc);
+          VStack_42.z = *(float *)(iVar24 + 0x14);
+          if ((RStack_7.m_Direction.y * VStack_42.y + RStack_7.m_Direction.x * VStack_42.x +
+               RStack_7.m_Direction.z * VStack_42.z < 0.0) && (fStack_6 < fStack_18)) {
             bVar16 = true;
-            fStack_17 = fStack_6;
-            fStack_18 = (float)iVar23;
+            iStack_19 = iVar24;
+            fStack_18 = fStack_6;
           }
         }
       }
@@ -661,78 +663,60 @@ code_?:
                 ((Object *)&stack0xffffff8c,
                  (ExceptionArgument__Enum)
                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::SphereTreeNodeRayHit<RTG::MeshTriangle>_>__Dispose__
-                 ,in_stack_36);
+                 ,in_stack_43);
       uStack_1 = 0xffffffff;
       if (!bVar16) goto code_?;
-      pVVar37 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
-                          (&VStack_35,&RStack_7,fStack_17,(MethodInfo *)0x0);
-      pVVar37 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyPoint
-                          (&VStack_24,&meshTransform,*pVVar37,(MethodInfo *)0x0);
-      VStack_35.x = pVVar37->x;
-      VStack_35.y = pVVar37->y;
-      VStack_24.x = ray.m_Origin.x - VStack_35.x;
-      VStack_24.z = ray.m_Origin.z - pVVar37->z;
-      VStack_24.y = ray.m_Origin.y - VStack_35.y;
-      VStack_35.z = VStack_24.z;
-      fVar38 = (float10)func_?();
-      VStack_24.z = ray.m_Direction.z;
-      VStack_24.x = ray.m_Direction.x;
-      VStack_24.y = ray.m_Direction.y;
-      fVar39 = (float10)func_?();
-      fStack_26 = (float)fVar39;
+      pVVar44 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
+                          (&VStack_42,&RStack_7,fStack_18,(MethodInfo *)0x0);
+      pVVar44 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyPoint
+                          (&VStack_25,&meshTransform,*pVVar44,(MethodInfo *)0x0);
+      VStack_42.x = pVVar44->x;
+      VStack_42.y = pVVar44->y;
+      VStack_25.x = ray.m_Origin.x - VStack_42.x;
+      VStack_25.z = ray.m_Origin.z - pVVar44->z;
+      VStack_25.y = ray.m_Origin.y - VStack_42.y;
+      VStack_42.z = VStack_25.z;
+      fVar45 = (float10)func_?();
+      VStack_25.z = ray.m_Direction.z;
+      VStack_25.x = ray.m_Direction.x;
+      VStack_25.y = ray.m_Direction.y;
+      fVar46 = (float10)func_?();
+      fStack_27 = (float)fVar46;
       UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_inverse
-                ((Matrix4x4 *)&stack0xfffffebc,&meshTransform,(MethodInfo *)0x0);
+                ((Matrix4x4 *)&stack0xfffffed4,&meshTransform,(MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_transpose
-                ((Matrix4x4 *)&stack0xfffffebc,(Matrix4x4 *)&stack0xffffff2c,(MethodInfo *)0x0);
-      fVar33 = fStack_18;
-      if (fStack_18 != 0.0) {
-        pVVar37 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyVector
-                            (&VStack_35,(Matrix4x4 *)&stack0xffffff2c,
-                             *(Vector3 *)((int)fStack_18 + 0xc),(MethodInfo *)0x0);
-        pVVar37 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                            (&VStack_35,*pVVar37,(MethodInfo *)0x0);
-        uVar40 = pVVar37->x;
-        uVar41 = pVVar37->y;
-        fStack_18 = (float)fVar38 / fStack_26;
-        fVar42 = pVVar37->z;
-        iVar43 = *(int32_t *)((int)fVar33 + 0x18);
-        method_00 = TypeInfo__RTG__MeshRayHit;
-        VStack_24.y = (float)uVar40;
-        VStack_24.z = (float)uVar41;
-        pMVar44 = (MeshRayHit *)func_?();
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)pMVar44,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-        (pMVar44->fields)._hitTriangleIndex = iVar43;
-        stack0xffffff74 = (float)&ray.m_Direction;
-        pVVar37 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
-                            (&ray.m_Direction,(Ray *)&stack0xfffffefc,fStack_18,(MethodInfo *)0x0);
-        fVar45 = pVVar37->y;
-        fVar33 = pVVar37->z;
-        (pMVar44->fields)._hitPoint.x = pVVar37->x;
-        (pMVar44->fields)._hitPoint.y = fVar45;
-        (pMVar44->fields)._hitPoint.z = fVar33;
-        (pMVar44->fields)._hitEnter = fStack_18;
-        value.y = VStack_24.z;
-        value.x = VStack_24.y;
-        value.z = fVar42;
-        pVVar37 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                            ((Vector3 *)&stack0xffffff6c,value,(MethodInfo *)0x0);
-        fVar33 = pVVar37->y;
-        unique0x00017200 = pVVar37->z;
-        (pMVar44->fields)._hitNormal.x = pVVar37->x;
-        (pMVar44->fields)._hitNormal.y = fVar33;
-        (pMVar44->fields)._hitNormal.z = unique0x00017200;
+                ((Matrix4x4 *)&stack0xfffffed4,(Matrix4x4 *)&stack0xffffff2c,(MethodInfo *)0x0);
+      iVar24 = iStack_19;
+      if (iStack_19 != 0) {
+        pVVar44 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyVector
+                            (&VStack_42,(Matrix4x4 *)&stack0xffffff2c,*(Vector3 *)(iStack_19 + 0xc),
+                             (MethodInfo *)0x0);
+        pVVar44 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                            ((Vector3 *)&stack0xffffff6c,*pVVar44,(MethodInfo *)0x0);
+        uVar47 = pVVar44->x;
+        uVar48 = pVVar44->y;
+        hitTriangleIndex = *(int32_t *)(iVar24 + 0x18);
+        fVar29 = pVVar44->z;
+        VStack_25.y = (float)uVar47;
+        VStack_25.z = (float)uVar48;
+        pMStack_32 = (MeshRayHit *)func_?();
+        hitNormal.y = VStack_25.z;
+        hitNormal.x = VStack_25.y;
+        hitNormal.z = fVar29;
+        MeshRayHit::MeshRayHit__ctor
+                  (pMStack_32,ray,hitTriangleIndex,(float)fVar45 / fStack_27,hitNormal,
+                   (MethodInfo *)0x0);
         *unaff_FS_OFFSET = uStack_3;
-        return pMVar44;
+        return pMStack_32;
       }
     }
   }
 code_?:
   func_?();
   func_?();
-  pcVar46 = (code *)swi(3);
-  pMVar44 = (MeshRayHit *)(*pcVar46)();
-  return pMVar44;
+  pcVar49 = (code *)swi(3);
+  pMVar50 = (MeshRayHit *)(*pcVar49)();
+  return pMVar50;
 }
 
 

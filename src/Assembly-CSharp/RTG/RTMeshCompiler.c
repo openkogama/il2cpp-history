@@ -12,39 +12,29 @@ void Assembly-CSharp.dll::RTG::RTMeshCompiler::RTMeshCompiler_CompileEntireScene
   if ((TypeInfo__RTG__MonoSingleton<RTG::RTScene>->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__RTG__MonoSingleton<RTG::RTScene>);
   }
-  pOVar1 = MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
-                     (MethodInfo__RTG__MonoSingleton<RTG::RTScene>__get_Get__);
-  if (pOVar1 != (Object *)0x0) {
-    if (cRam_? == '\0') {
-      func_?();
-      func_?(&TypeInfo__UnityEngine__Object);
-      cRam_? = '\x01';
-    }
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    pOVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_FindObjectsOfType_2
-                       (
-                       UnityEngine__GameObject__MethodInfo__UnityEngine__Object__FindObjectsOfType<UnityEngine::GameObject>______
-                       );
-    uVar3 = 0;
-    if (pOVar2 != (Object__Array *)0x0) {
-      ppOVar4 = pOVar2->vector;
+  this = (RTScene *)
+         MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
+                   (MethodInfo__RTG__MonoSingleton<RTG::RTScene>__get_Get__);
+  if (this != (RTScene *)0x0) {
+    pGVar1 = RTScene::RTScene_GetSceneObjects(this,(MethodInfo *)0x0);
+    uVar2 = 0;
+    if (pGVar1 != (GameObject__Array *)0x0) {
+      ppGVar3 = pGVar1->vector;
       while( true ) {
-        if ((int)pOVar2->max_length <= (int)uVar3) {
+        if ((int)pGVar1->max_length <= (int)uVar2) {
           return;
         }
-        if (pOVar2->max_length <= uVar3) break;
-        RTMeshCompiler_CompileForObject((GameObject *)*ppOVar4,(MethodInfo *)0x0);
-        uVar3 = uVar3 + 1;
-        ppOVar4 = ppOVar4 + 1;
+        if (pGVar1->max_length <= uVar2) break;
+        RTMeshCompiler_CompileForObject(*ppGVar3,(MethodInfo *)0x0);
+        uVar2 = uVar2 + 1;
+        ppGVar3 = ppGVar3 + 1;
       }
       func_?();
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

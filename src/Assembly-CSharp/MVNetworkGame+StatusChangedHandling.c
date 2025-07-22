@@ -252,29 +252,29 @@ code_?:
   }
 code_?:
   uVar6 = func_?();
-  pcVar7 = (char *)uVar6;
-  ((Dictionary_2_System_Byte_System_Object_ *)returnCode)->klass =
-       (Dictionary_2_System_Byte_System_Object___Class *)
-       ((MVNetworkGame_OperationRequests *)this)->klass;
-  pDVar8 = &((Dictionary_2_System_Byte_System_Object_ *)(returnCode + -0x60))->fields;
-  bVar9 = *(byte *)&pDVar8->_buckets;
-  bVar10 = (byte)((uint)unaff_EBX >> 8);
-  *(byte *)&pDVar8->_buckets = *(char *)&pDVar8->_buckets + bVar10;
-  pcVar11 = (char *)((int)((ulonglong)uVar6 >> 0x20) + -0x5ef995b);
-  *pcVar11 = *pcVar11 + (char)((ulonglong)uVar6 >> 0x28) + CARRY1(bVar9,bVar10);
-  cVar12 = (char)uVar6;
-  *pcVar7 = *pcVar7 + cVar12 +
-            (*(byte *)&((MVNetworkGame_OperationRequests *)this)->monitor <
-            *(byte *)&((Dictionary_2_System_Byte_System_Object_ *)returnCode)->monitor);
-  *extraout_ECX = *extraout_ECX + cVar12;
-  piVar13 = (int *)(CONCAT31((int3)((ulonglong)uVar6 >> 8),cVar12 + *pcVar7) + *unaff_EBX);
-  pcVar11 = (char *)((int)piVar13 + *unaff_EBX + *unaff_EBX + *unaff_EBX + *unaff_EBX + *piVar13);
-  cVar12 = (char)pcVar11;
-  *pcVar11 = *pcVar11 + cVar12;
-  *pcVar11 = *pcVar11 + cVar12;
-  *pcVar11 = *pcVar11 + cVar12;
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar7 = (char *)((int)uVar6 + -1);
+  bVar8 = (byte)pcVar7;
+  bVar9 = (byte)extraout_ECX;
+  bVar10 = (char)((uint)unaff_EBX >> 8) + bVar9 + (bVar8 < 0x67);
+  bVar11 = CARRY1(bVar10,*(byte *)&((Dictionary_2_System_Byte_System_Object_ *)returnCode)->klass);
+  sVar12 = CONCAT11(bVar10 + *(char *)&((Dictionary_2_System_Byte_System_Object_ *)returnCode)->
+                                       klass,(char)unaff_EBX);
+  piVar13 = (int *)CONCAT22((short)((uint)unaff_EBX >> 0x10),sVar12);
+  pbVar14 = (byte *)((int)((ulonglong)uVar6 >> 0x20) + 0x3d);
+  bVar10 = *pbVar14;
+  bVar15 = *pbVar14;
+  *pbVar14 = bVar15 + bVar9 + bVar11;
+  pcVar16 = (char *)segment(in_DS,sVar12 + (short)this);
+  *pcVar16 = *pcVar16 + bVar8 + (CARRY1(bVar10,bVar9) || CARRY1(bVar15 + bVar9,bVar11));
+  *extraout_ECX = *extraout_ECX + bVar8;
+  piVar17 = (int *)(CONCAT31((int3)((uint)pcVar7 >> 8),bVar8 + *pcVar7) + *piVar13);
+  pcVar16 = (char *)((int)piVar17 + *piVar13 + *piVar13 + *piVar13 + *piVar13 + *piVar17);
+  cVar18 = (char)pcVar16;
+  *pcVar16 = *pcVar16 + cVar18;
+  *pcVar16 = *pcVar16 + cVar18;
+  *pcVar16 = *pcVar16 + cVar18;
+  pcVar19 = (code *)swi(3);
+  (*pcVar19)();
   return;
 }
 

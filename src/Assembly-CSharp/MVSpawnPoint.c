@@ -179,7 +179,7 @@ void Assembly-CSharp.dll::MVSpawnPoint::MVSpawnPoint_Initialize
         }
         if (TVar5.m_Index != 0) {
           pIVar6 = (TypeInfo__System__Boolean->_0).element_class;
-          cVar7 = SBORROW4((int)*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20),(int)pIVar6);
+          bVar7 = *(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) < pIVar6;
           if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) != pIVar6) goto code_?;
           method = (MethodInfo *)&UNK_?;
           piVar8 = (int8_t *)func_?();
@@ -220,20 +220,20 @@ void Assembly-CSharp.dll::MVSpawnPoint::MVSpawnPoint_Initialize
     }
   }
 code_?:
-  cVar7 = '\0';
+  bVar7 = 0;
   func_?();
   TVar4.m_Index = (int32_t)extraout_EDX;
 code_?:
   this = (MVSpawnPoint *)&UNK_?;
   method = (MethodInfo *)TVar4.m_Index;
-  func_?();
-  pcVar10 = (code *)swi(4);
-  uVar11 = extraout_DX;
-  if (cVar7 == '\x01') {
-    (*pcVar10)();
-    uVar11 = extraout_DX_00;
-  }
-  in(uVar11);
+  cVar10 = func_?();
+  bVar11 = (byte)((ushort)extraout_DX >> 8);
+  bVar12 = CARRY1(bRam_?,bVar11);
+  bVar11 = bRam_? + bVar11;
+  bRam_? = bVar11 + bVar7;
+  *(char *)(unaff_EBX + -0x3c) =
+       *(char *)(unaff_EBX + -0x3c) + cVar10 + (bVar12 || CARRY1(bVar11,bVar7));
+  in(extraout_DX);
   switch(this) {
   case (MVSpawnPoint *)0x27:
     return;

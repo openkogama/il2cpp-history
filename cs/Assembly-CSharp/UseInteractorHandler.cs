@@ -50,6 +50,7 @@ public class UseInteractorHandler : MVComponent
 	private void UpdateUseVisuals();
 	private List<UseInteractor> SortByDistance();
 	public bool Use();
+	public bool ClosestUseInteractorHasUseIconInVehicle();
 	public void Reset();
 }
 

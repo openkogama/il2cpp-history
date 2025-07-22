@@ -361,32 +361,20 @@ void Assembly-CSharp.dll::PickupItemCenterGun::PickupItemCenterGun_ResetAmmo
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
     cRam_? = '\x01';
   }
-  OStack_1.currentCryptoKey = (this->fields).maxAmmo.currentCryptoKey;
-  OStack_1.hiddenValue = (this->fields).maxAmmo.hiddenValue;
-  OStack_1.fakeValue = (this->fields).maxAmmo.fakeValue;
-  OStack_1.inited = (this->fields).maxAmmo.inited;
-  OStack_1._13_3_ = *(undefined3 *)&(this->fields).maxAmmo.field_0xd;
+  iVar1 = (*(code *)(this->klass->vtable).get_MaxAmmo.method)
+                    (this,(this->klass->vtable).get_Quantity.methodPtr);
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor ==
       0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
   }
-  value.hiddenValue = OStack_1.hiddenValue;
-  value.currentCryptoKey = OStack_1.currentCryptoKey;
-  value.fakeValue = OStack_1.fakeValue;
-  value.inited = OStack_1.inited;
-  value._13_3_ = OStack_1._13_3_;
-  iVar2 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-          ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
-  iVar2 = (*(code *)(this->klass->vtable).GetAmmoMultiplier.method)
-                    (this,iVar2,(this->klass->vtable).UpdateWithDirection.methodPtr);
-  pOVar3 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-           ObscuredInt_op_Implicit(&OStack_1,iVar2,(MethodInfo *)0x0);
-  iVar2 = pOVar3->hiddenValue;
-  iVar4 = pOVar3->fakeValue;
-  bVar5 = pOVar3->inited;
-  uVar6 = *(undefined3 *)&pOVar3->field_0xd;
-  (this->fields).currentAmmo.currentCryptoKey = pOVar3->currentCryptoKey;
-  (this->fields).currentAmmo.hiddenValue = iVar2;
+  pOVar2 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+           ObscuredInt_op_Implicit(&OStack_3,iVar1,(MethodInfo *)0x0);
+  iVar1 = pOVar2->hiddenValue;
+  iVar4 = pOVar2->fakeValue;
+  bVar5 = pOVar2->inited;
+  uVar6 = *(undefined3 *)&pOVar2->field_0xd;
+  (this->fields).currentAmmo.currentCryptoKey = pOVar2->currentCryptoKey;
+  (this->fields).currentAmmo.hiddenValue = iVar1;
   (this->fields).currentAmmo.fakeValue = iVar4;
   (this->fields).currentAmmo.inited = bVar5;
   *(undefined3 *)&(this->fields).currentAmmo.field_0xd = uVar6;
@@ -519,6 +507,29 @@ bool Assembly-CSharp.dll::PickupItemCenterGun::PickupItemCenterGun_get_IsAmmoDep
   cVar5 = (*(code *)(this->klass->vtable).get_HasUnlimitedAmmo.method)
                     (this,(this->klass->vtable).get_CanUnequip.methodPtr);
   return cVar5 == '\0';
+}
+
+
+/* Int32 get_MaxAmmo() */
+
+int32_t Assembly-CSharp.dll::PickupItemCenterGun::PickupItemCenterGun_get_MaxAmmo
+                  (PickupItemCenterGun *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+    cRam_? = '\x01';
+  }
+  value = (this->fields).maxAmmo;
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor ==
+      0) {
+    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+  }
+  iVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+          ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
+  iVar1 = (*(code *)(this->klass->vtable).CalculateMaxAmmo.method)
+                    (this,iVar1,(this->klass->vtable).UpdateWithDirection.methodPtr);
+  return iVar1;
 }
 
 

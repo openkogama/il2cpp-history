@@ -193,51 +193,47 @@ void Assembly-CSharp.dll::WinningConditionBase::WinningConditionBase_RoundEndRes
     (*pcVar2)();
     return;
   }
-  uStack3 = 0;
   if (cRam_? == '\0') {
     func_?();
     func_?();
     cRam_? = '\x01';
   }
-  if (*(int *)(in_stack_4 + 0x1c) == 0) {
+  if (*(int *)(in_stack_3 + 0x1c) == 0) {
     return;
   }
   bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
           List_1_System_Int32__Contains
-                    (*(List_1_System_Int32_ **)(in_stack_4 + 0x1c),10,
+                    (*(List_1_System_Int32_ **)(in_stack_3 + 0x1c),10,
                      MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
   if (bVar1 == 0) {
-    if (*(int *)(in_stack_4 + 0x1c) == 0) goto code_?;
+    if (*(int *)(in_stack_3 + 0x1c) == 0) goto code_?;
     func_?();
   }
-  if (*(List_1_System_Int32_ **)(in_stack_4 + 0x1c) != (List_1_System_Int32_ *)0x0) {
+  if (*(List_1_System_Int32_ **)(in_stack_3 + 0x1c) != (List_1_System_Int32_ *)0x0) {
     bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
             List_1_System_Int32__Contains
-                      (*(List_1_System_Int32_ **)(in_stack_4 + 0x1c),0x1e,
+                      (*(List_1_System_Int32_ **)(in_stack_3 + 0x1c),0x1e,
                        MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
     if (bVar1 == 0) {
-      if (*(int *)(in_stack_4 + 0x1c) == 0) goto code_?;
-      uStack3 = 0x1e;
+      if (*(int *)(in_stack_3 + 0x1c) == 0) goto code_?;
       func_?();
     }
-    if (*(List_1_System_Int32_ **)(in_stack_4 + 0x1c) != (List_1_System_Int32_ *)0x0) {
+    if (*(List_1_System_Int32_ **)(in_stack_3 + 0x1c) != (List_1_System_Int32_ *)0x0) {
       bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
               List_1_System_Int32__Contains
-                        (*(List_1_System_Int32_ **)(in_stack_4 + 0x1c),0x3c,
+                        (*(List_1_System_Int32_ **)(in_stack_3 + 0x1c),0x3c,
                          MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
       if (bVar1 == 0) {
-        if (*(int *)(in_stack_4 + 0x1c) == 0) goto code_?;
-        uStack3 = 0x3c;
+        if (*(int *)(in_stack_3 + 0x1c) == 0) goto code_?;
         func_?();
       }
-      if (*(List_1_System_Int32_ **)(in_stack_4 + 0x1c) != (List_1_System_Int32_ *)0x0) {
+      if (*(List_1_System_Int32_ **)(in_stack_3 + 0x1c) != (List_1_System_Int32_ *)0x0) {
         bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
                 List_1_System_Int32__Contains
-                          (*(List_1_System_Int32_ **)(in_stack_4 + 0x1c),300,
+                          (*(List_1_System_Int32_ **)(in_stack_3 + 0x1c),300,
                            MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
         if (bVar1 == 0) {
-          if (*(int *)(in_stack_4 + 0x1c) == 0) goto code_?;
-          uStack3 = 300;
+          if (*(int *)(in_stack_3 + 0x1c) == 0) goto code_?;
           func_?();
         }
         return;

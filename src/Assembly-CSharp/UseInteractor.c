@@ -431,6 +431,95 @@ void Assembly-CSharp.dll::UseInteractor::UseInteractor_PayUseCost
 }
 
 
+/* Void TriggerBoxEvents_TriggerEnter(Object, TriggerEventArgs) */
+
+void Assembly-CSharp.dll::UseInteractor::UseInteractor_TriggerBoxEvents_TriggerEnter
+               (UseInteractor *this,Object *sender,TriggerEventArgs *e,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Object);
+    cRam_? = '\x01';
+  }
+  if (e != (TriggerEventArgs *)0x0) {
+    x = UseInteractor_GetUseInteractorHandler(this,(e->fields).instigatorWOID,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Object);
+    }
+    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar1 == 0) {
+      return;
+    }
+    if (x != (UseInteractorHandler *)0x0) {
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      if ((this != (UseInteractor *)0x0) &&
+         (this_00 = (x->fields).useInteractors,
+         this_00 != (Dictionary_2_System_Int32_UseInteractor_ *)0x0)) {
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+        Dictionary_2_System_Int32_System_Object__Add
+                  ((Dictionary_2_System_Int32_System_Object_ *)this_00,(this->fields).woOwnerID,
+                   (Object *)this,
+                   MethodInfo__System__Collections__Generic__Dictionary<int,_UseInteractor>__Add_int__UseInteractor_
+                  );
+        return;
+      }
+    }
+  }
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
+  return;
+}
+
+
+/* Void TriggerBoxEvents_TriggerExit(Object, TriggerEventArgs) */
+
+void Assembly-CSharp.dll::UseInteractor::UseInteractor_TriggerBoxEvents_TriggerExit
+               (UseInteractor *this,Object *sender,TriggerEventArgs *e,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__UnityEngine__Object);
+    cRam_? = '\x01';
+  }
+  if (e != (TriggerEventArgs *)0x0) {
+    x = UseInteractor_GetUseInteractorHandler(this,(e->fields).instigatorWOID,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Object);
+    }
+    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar1 == 0) {
+      return;
+    }
+    if (x != (UseInteractorHandler *)0x0) {
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      if ((this != (UseInteractor *)0x0) &&
+         (this_00 = (x->fields).useInteractors,
+         this_00 != (Dictionary_2_System_Int32_UseInteractor_ *)0x0)) {
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+        Dictionary_2_System_Int32_System_Object__Remove
+                  ((Dictionary_2_System_Int32_System_Object_ *)this_00,(this->fields).woOwnerID,
+                   MethodInfo__System__Collections__Generic__Dictionary<int,_UseInteractor>__Remove_int_
+                  );
+        return;
+      }
+    }
+  }
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
+  return;
+}
+
+
 /* Void UpdateData(Dictionary`2[System.Object,System.Object]) */
 
 void Assembly-CSharp.dll::UseInteractor::UseInteractor_UpdateData
@@ -583,13 +672,13 @@ code_?:
 
 
 /* UseInteractor(MVWorldObjectClient, GameObject, Boolean, Collider, Func`2[Int32,Boolean],
-   Func`3[Int32,MVInteractableBase,Boolean], Single, Boolean) */
+   Func`3[Int32,MVInteractableBase,Boolean], Single, Boolean, Boolean) */
 
 void Assembly-CSharp.dll::UseInteractor::UseInteractor__ctor
                (UseInteractor *this,MVWorldObjectClient *wo,GameObject *owner,bool reset,
                Collider *triggerCollider,Func_2_Int32_Boolean_ *useFunction,
                Func_3_Int32_MVInteractableBase_Boolean_ *checkCanUseFunction,float yOffset,
-               bool usedInVehicles,MethodInfo *method)
+               bool usedInVehicles,bool usedDirectlyInVehicles,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -607,7 +696,7 @@ void Assembly-CSharp.dll::UseInteractor::UseInteractor__ctor
                         UseInteractorVisualization_MethodInfo__UnityEngine__GameObject__AddComponent<UseInteractorVisualization>__
                        );
     (this->fields).useInteractorVisuals = pUVar1;
-    func_?(&(this->fields).useInteractorVisuals,pUVar1);
+    func_?(&this->fields,pUVar1);
     pUVar1 = (this->fields).useInteractorVisuals;
     if (pUVar1 != (UseInteractorVisualization *)0x0) {
       (pUVar1->fields).wo = wo;
@@ -642,11 +731,12 @@ void Assembly-CSharp.dll::UseInteractor::UseInteractor__ctor
       if (wo != (MVWorldObjectClient *)0x0) {
         (this->fields).woOwnerID = (wo->fields)._.id;
         (this->fields).useFunction = useFunction;
-        func_?(&this->fields,useFunction);
+        func_?(&(this->fields).useFunction,useFunction);
         (this->fields).triggerCollider = triggerCollider;
         func_?(&(this->fields).triggerCollider,triggerCollider);
         (this->fields).reset = reset;
         (this->fields)._UsedInVehicles_k__BackingField = usedInVehicles;
+        (this->fields)._UsedDirectlyInVehicles_k__BackingField = usedDirectlyInVehicles;
         (this->fields).checkCanUseFunction = checkCanUseFunction;
         func_?(&(this->fields).checkCanUseFunction,checkCanUseFunction);
         return;
@@ -656,95 +746,6 @@ void Assembly-CSharp.dll::UseInteractor::UseInteractor__ctor
   func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
-  return;
-}
-
-
-/* Void triggerBoxEvents_TriggerEnter(Object, TriggerEventArgs) */
-
-void Assembly-CSharp.dll::UseInteractor::UseInteractor_triggerBoxEvents_TriggerEnter
-               (UseInteractor *this,Object *sender,TriggerEventArgs *e,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
-    cRam_? = '\x01';
-  }
-  if (e != (TriggerEventArgs *)0x0) {
-    x = UseInteractor_GetUseInteractorHandler(this,(e->fields).instigatorWOID,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar1 == 0) {
-      return;
-    }
-    if (x != (UseInteractorHandler *)0x0) {
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
-      if ((this != (UseInteractor *)0x0) &&
-         (this_00 = (x->fields).useInteractors,
-         this_00 != (Dictionary_2_System_Int32_UseInteractor_ *)0x0)) {
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-        Dictionary_2_System_Int32_System_Object__Add
-                  ((Dictionary_2_System_Int32_System_Object_ *)this_00,(this->fields).woOwnerID,
-                   (Object *)this,
-                   MethodInfo__System__Collections__Generic__Dictionary<int,_UseInteractor>__Add_int__UseInteractor_
-                  );
-        return;
-      }
-    }
-  }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
-  return;
-}
-
-
-/* Void triggerBoxEvents_TriggerExit(Object, TriggerEventArgs) */
-
-void Assembly-CSharp.dll::UseInteractor::UseInteractor_triggerBoxEvents_TriggerExit
-               (UseInteractor *this,Object *sender,TriggerEventArgs *e,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
-    cRam_? = '\x01';
-  }
-  if (e != (TriggerEventArgs *)0x0) {
-    x = UseInteractor_GetUseInteractorHandler(this,(e->fields).instigatorWOID,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar1 == 0) {
-      return;
-    }
-    if (x != (UseInteractorHandler *)0x0) {
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
-      if ((this != (UseInteractor *)0x0) &&
-         (this_00 = (x->fields).useInteractors,
-         this_00 != (Dictionary_2_System_Int32_UseInteractor_ *)0x0)) {
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-        Dictionary_2_System_Int32_System_Object__Remove
-                  ((Dictionary_2_System_Int32_System_Object_ *)this_00,(this->fields).woOwnerID,
-                   MethodInfo__System__Collections__Generic__Dictionary<int,_UseInteractor>__Remove_int_
-                  );
-        return;
-      }
-    }
-  }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
   return;
 }
 

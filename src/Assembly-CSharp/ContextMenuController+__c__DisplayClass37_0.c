@@ -1,9 +1,9 @@
 
 /* Void <CloneRoot>b__1(ICloneHandler, BaseEventData) */
 
-void Assembly-CSharp.dll::ContextMenuController+<>c__DisplayClass35_0::
-     ContextMenuController_c_DisplayClass35_0__CloneRoot_b__1
-               (ContextMenuController_c_DisplayClass35_0 *this,ICloneHandler *handler,
+void Assembly-CSharp.dll::ContextMenuController+<>c__DisplayClass37_0::
+     ContextMenuController_c_DisplayClass37_0__CloneRoot_b__1
+               (ContextMenuController_c_DisplayClass37_0 *this,ICloneHandler *handler,
                BaseEventData *data,MethodInfo *method)
 
 {

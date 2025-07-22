@@ -631,7 +631,7 @@ bool Assembly-CSharp.dll::LocationIndicator::LocationIndicator_SetIndicatorPosit
     screenPoint.x = (float)this;
     VVar7 = LocationIndicator_get_Max(this,(MethodInfo *)0x0);
     puVar8 = &UNK_?;
-    if (VVar7.y < 3.7141463e-29) {
+    if (VVar7.y < 3.7159807e-29) {
       iVar1 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height((MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height((MethodInfo *)0x0);
       screenPoint.z = (float)&UNK_?;
@@ -707,9 +707,12 @@ void Assembly-CSharp.dll::LocationIndicator::LocationIndicator_SetOwnership
     return;
   }
   func_?();
-  cRam_? = cRam_? + in_stack_3;
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  uVar3 = in(extraout_DX);
+  *unaff_EDI = uVar3;
+  pcVar4 = (char *)((int)&stack0xfffffffc * 3 + -0x3333efc4);
+  *pcVar4 = *pcVar4 + unaff_BH + (in_stack_5 - 0x10U & 1);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

@@ -1,8 +1,39 @@
 
-/* Void <Activate>b__1(IUIStack, BaseEventData) */
+/* Void <Activate>b__0(IEditModeController, BaseEventData) */
 
 void Assembly-CSharp.dll::PlayerInventoryController+<>c__DisplayClass20_0::
-     PlayerInventoryController_c_DisplayClass20_0__Activate_b__1
+     PlayerInventoryController_c_DisplayClass20_0__Activate_b__0
+               (PlayerInventoryController_c_DisplayClass20_0 *this,IEditModeController *x,
+               BaseEventData *y,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    pIStack_1 = (IEditModeController *)&TypeInfo__UnityEngine__EventSystems__IEditModeController;
+    func_?();
+    cRam_? = '\x01';
+  }
+  if (x != (IEditModeController *)0x0) {
+    pIStack_1 = x;
+    pIStack_2 = TypeInfo__UnityEngine__EventSystems__IEditModeController;
+    uStack_3 = 4;
+    pIVar4 = (IState *)func_?();
+    (this->fields).currentState = pIVar4;
+    func_?(&this->fields,pIVar4);
+    return;
+  }
+  pIStack_1 = (IEditModeController *)&stack0xfffffffc;
+  uVar5 = func_?(&uStack_3);
+  func_?(uVar5);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
+  return;
+}
+
+
+/* Void <Activate>b__2(IUIStack, BaseEventData) */
+
+void Assembly-CSharp.dll::PlayerInventoryController+<>c__DisplayClass20_0::
+     PlayerInventoryController_c_DisplayClass20_0__Activate_b__2
                (PlayerInventoryController_c_DisplayClass20_0 *this,IUIStack *x,BaseEventData *y,
                MethodInfo *method)
 

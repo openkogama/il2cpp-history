@@ -191,8 +191,8 @@ void Assembly-CSharp.dll::FirstTimeActivatablePopupParentToGameobject::
   (this->fields)._._.onShowSound = 3;
   (this->fields)._._.prerequisiteEvent = -1;
   (this->fields)._._.checkForStackBlocking = 1;
-  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
-            ((MonoBehaviour *)this,(MethodInfo *)0x0);
+  Borodar::FarlandSkies::CloudyCrownPro::Helpers::Singleton`1[System::Object]::
+  Singleton_1_System_Object___ctor((Singleton_1_System_Object_ *)this,(MethodInfo *)0x0);
   return;
 }
 

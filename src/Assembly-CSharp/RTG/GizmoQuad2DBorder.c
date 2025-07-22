@@ -209,8 +209,24 @@ void Assembly-CSharp.dll::RTG::GizmoQuad2DBorder::GizmoQuad2DBorder_SetVisible
         if (pIVar1->max_length <= uVar4) goto code_?;
         if (pIVar1->vector[uVar4] != (IGizmoQuad2DBorderController *)0x0) {
           func_?(1,TypeInfo__RTG__IGizmoQuad2DBorderController,pIVar1->vector[uVar4]);
-          GizmoQuad2DBorder_OnQuadShapeChanged(this,(MethodInfo *)0x0);
-          return;
+          if (cRam_? == '\0') {
+            func_?(&TypeInfo__RTG__IGizmoQuad2DBorderController);
+            cRam_? = '\x01';
+          }
+          pGVar2 = (this->fields)._planeSlider;
+          pIVar1 = (this->fields)._controllers;
+          if (((pGVar2 != (GizmoPlaneSlider2D *)0x0) &&
+              (pGVar3 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_get_LookAndFeel
+                                  (pGVar2,(MethodInfo *)0x0),
+              pGVar3 != (GizmoPlaneSlider2DLookAndFeel *)0x0)) &&
+             (pIVar1 != (IGizmoQuad2DBorderController__Array *)0x0)) {
+            uVar4 = (pGVar3->fields)._quadBorderType;
+            if (pIVar1->max_length <= uVar4) goto code_?;
+            if (pIVar1->vector[uVar4] != (IGizmoQuad2DBorderController *)0x0) {
+              func_?(2,TypeInfo__RTG__IGizmoQuad2DBorderController,pIVar1->vector[uVar4]);
+              return;
+            }
+          }
         }
       }
     }

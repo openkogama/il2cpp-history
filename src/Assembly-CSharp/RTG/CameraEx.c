@@ -814,7 +814,7 @@ Plane * Assembly-CSharp.dll::RTG::CameraEx::CameraEx_GetNearPlaneForward
       (__return_storage_ptr__->m_Normal).z = fVar6;
       __return_storage_ptr__->m_Distance =
            (float)((uint)((float)uVar11 * fVar10 + (float)uVar12 * fVar7 + fVar6 * fVar8) ^
-                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
       return __return_storage_ptr__;
     }
   }
@@ -1372,7 +1372,7 @@ bool Assembly-CSharp.dll::RTG::CameraEx::CameraEx_IsPointInFrontNearPlane
              (float)uVar14 * position.x + (float)uVar15 * position.y + pVVar1->z * position.z +
              (float)((uint)((float)uVar14 * (fVar5 + fVar11) + (float)uVar15 * fStack_12 +
                            pVVar1->z * fStack_13) ^
-                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     }
   }
   func_?();

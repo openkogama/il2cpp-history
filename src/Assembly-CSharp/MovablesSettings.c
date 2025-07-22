@@ -20,28 +20,26 @@ void Assembly-CSharp.dll::MovablesSettings::MovablesSettings_Initialize
                (MethodInfo *)0x0);
     if (woID == -1) {
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+        func_?(TypeInfo__UnityEngine__Debug);
       }
-      uStack_1 = CONCAT44(&UNK_?,(undefined4)uStack_1);
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                 ((Object *)StringLiteral_Wo_not_found,(MethodInfo *)0x0);
       return;
     }
     this_03 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
     if (this_03 != (MVWorldObjectClientManager *)0x0) {
-      uStack_1 = CONCAT44(&UNK_?,(undefined4)uStack_1);
-      pMVar2 = (MVMovingPlatformGroup *)
+      pMVar1 = (MVMovingPlatformGroup *)
                MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
                          (this_03,woID,(MethodInfo *)0x0);
-      if (pMVar2 == (MVMovingPlatformGroup *)0x0) {
+      if (pMVar1 == (MVMovingPlatformGroup *)0x0) {
         (this->fields).platformGroup = (MVMovingPlatformGroup *)0x0;
-        root = (GameObject *)pMVar2;
+        pMVar2 = pMVar1;
       }
       else {
-        if (((pMVar2->klass->_1).naturalAligment <
+        if (((pMVar1->klass->_1).naturalAligment <
              (TypeInfo__MVMovingPlatformGroup->_1).naturalAligment) ||
            ((MVMovingPlatformGroup__Class *)
-            (pMVar2->klass->_1).typeHierarchy
+            (pMVar1->klass->_1).typeHierarchy
             [(TypeInfo__MVMovingPlatformGroup->_1).naturalAligment - 1] !=
             TypeInfo__MVMovingPlatformGroup)) {
           bVar3 = false;
@@ -49,15 +47,15 @@ void Assembly-CSharp.dll::MovablesSettings::MovablesSettings_Initialize
         else {
           bVar3 = true;
         }
-        pMVar4 = (MVMovingPlatformGroup *)0x0;
+        pMVar2 = (MVMovingPlatformGroup *)0x0;
         if (bVar3) {
-          pMVar4 = pMVar2;
+          pMVar2 = pMVar1;
         }
-        (this->fields).platformGroup = pMVar4;
-        if (((pMVar2->klass->_1).naturalAligment <
+        (this->fields).platformGroup = pMVar2;
+        if (((pMVar1->klass->_1).naturalAligment <
              (TypeInfo__MVMovingPlatformGroup->_1).naturalAligment) ||
            ((MVMovingPlatformGroup__Class *)
-            (pMVar2->klass->_1).typeHierarchy
+            (pMVar1->klass->_1).typeHierarchy
             [(TypeInfo__MVMovingPlatformGroup->_1).naturalAligment - 1] !=
             TypeInfo__MVMovingPlatformGroup)) {
           bVar3 = false;
@@ -65,42 +63,56 @@ void Assembly-CSharp.dll::MovablesSettings::MovablesSettings_Initialize
         else {
           bVar3 = true;
         }
-        root = (GameObject *)(MVMovingPlatformGroup *)0x0;
+        pMVar2 = (MVMovingPlatformGroup *)0x0;
         if (bVar3) {
-          root = (GameObject *)pMVar2;
+          pMVar2 = pMVar1;
         }
       }
-      woID = (int32_t)&(this->fields).platformGroup;
-      func_?();
+      func_?(&(this->fields).platformGroup,pMVar2);
       if ((this->fields).platformGroup == (MVMovingPlatformGroup *)0x0) {
-        pSVar5 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&woID,(MethodInfo *)0x0);
-        pSVar5 = mscorlib.dll::System::String::String_Concat_3
-                           (StringLiteral_MVMovingPlatformGroup_not_found_,pSVar5,(MethodInfo *)0x0)
+        pSVar4 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&woID,(MethodInfo *)0x0);
+        pSVar4 = mscorlib.dll::System::String::String_Concat_3
+                           (StringLiteral_MVMovingPlatformGroup_not_found_,pSVar4,(MethodInfo *)0x0)
         ;
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
+          func_?(TypeInfo__UnityEngine__Debug);
         }
-        uStack_1 = CONCAT44(&UNK_?,(undefined4)uStack_1);
         UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                  ((Object *)pSVar5,(MethodInfo *)0x0);
+                  ((Object *)pSVar4,(MethodInfo *)0x0);
         return;
       }
-      pMVar2 = (this->fields).platformGroup;
+      pMVar1 = (this->fields).platformGroup;
       (this->fields).successfullyInitialized = 1;
-      if ((pMVar2 != (MVMovingPlatformGroup *)0x0) &&
-         (pMVar6 = (pMVar2->fields).platform, pMVar6 != (MVMovingPlatform *)0x0)) {
-        uStack_1._0_4_ = (pMVar6->fields)._.velocity.x;
-        uStack_1._4_4_ = (pMVar6->fields)._.velocity.y;
-        fVar7 = (float10)func_?(&uStack_1,0);
+      if ((pMVar1 != (MVMovingPlatformGroup *)0x0) &&
+         (pMVar5 = (pMVar1->fields).platform, pMVar5 != (MVMovingPlatform *)0x0)) {
+        uVar6 = (pMVar5->fields)._.velocity.x;
+        uVar7 = (pMVar5->fields)._.velocity.y;
+        fVar8 = (pMVar5->fields)._.velocity.z;
+        if (cRam_? == '\0') {
+          func_?(&TypeInfo__System__Math);
+          cRam_? = '\x01';
+        }
+        if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__System__Math);
+        }
+        dVar9 = (double)((float)uVar7 * (float)uVar7 + (float)uVar6 * (float)uVar6 + fVar8 * fVar8
+                        );
+        if (dVar9 < 0.0) {
+          func_?();
+        }
+        else {
+          dVar9 = SQRT(dVar9);
+        }
         this_01 = (this->fields).slider;
         if (this_01 != (SettingsSlider *)0x0) {
           SettingsSlider::SettingsSlider_Initialize
-                    (this_01,StringLiteral_BlueprintData_Velocity,(float)fVar7,0.3,3.0,
+                    (this_01,StringLiteral_BlueprintData_Velocity,(float)dVar9,0.3,3.0,
                      (MethodInfo *)0x0);
           this_02 = (this->fields).inputField;
           if (this_02 != (SettingsInputFieldSlider *)0x0) {
             SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
-                      (this_02,StringLiteral_BlueprintData_Velocity,(float)fVar7,(MethodInfo *)0x0);
+                      (this_02,StringLiteral_BlueprintData_Velocity,unaff_retaddr,(MethodInfo *)0x0)
+            ;
             return;
           }
         }
@@ -108,8 +120,8 @@ void Assembly-CSharp.dll::MovablesSettings::MovablesSettings_Initialize
     }
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

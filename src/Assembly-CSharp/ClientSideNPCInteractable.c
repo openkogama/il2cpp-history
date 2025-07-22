@@ -289,15 +289,19 @@ bool Assembly-CSharp.dll::ClientSideNPCInteractable::ClientSideNPCInteractable_I
     }
     if (unaff_ESI != (Object *)0x0) {
       pOVar3 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt;
-      if ((unaff_ESI->klass->_0).element_class ==
-          (TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_0).element_class) {
-        pOVar4 = (ObscuredInt *)func_?(unaff_ESI);
-        iVar5 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-                ObscuredInt_op_Implicit_1(*pOVar4,(MethodInfo *)0x0);
-        iVar5 = WaitForTicks::WaitForTicks_Diff(iVar5,(MethodInfo *)0x0);
-        return iVar5 < iVar2;
-      }
+      if ((unaff_ESI->klass->_0).element_class !=
+          (TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_0).element_class)
       goto code_?;
+      pOVar4 = (ObscuredInt *)func_?(unaff_ESI);
+      unaff_ESI = (Object *)
+                  Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+                  ObscuredInt_op_Implicit_1(*pOVar4,(MethodInfo *)0x0);
+      this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if (this_00 != (MVNetworkGame *)0x0) {
+        iVar5 = MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds(this_00,(MethodInfo *)0x0)
+        ;
+        return iVar5 - (int)unaff_ESI < iVar2;
+      }
     }
   }
   func_?();
@@ -388,32 +392,37 @@ void Assembly-CSharp.dll::ClientSideNPCInteractable::ClientSideNPCInteractable_R
           hashtable = (Dictionary_2_System_Object_System_Object_ *)
                       (*(code *)(pMVar1->klass->vtable).get_RunTimeData.method)
                                 (pMVar1,(pMVar1->klass->vtable).set_RunTimeData.methodPtr);
-          iVar3 = WaitForTicks::WaitForTicks_GetEnvironmentTick
-                            (-(this->fields).respawnInterval,(MethodInfo *)0x0);
-          if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).
-              cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+          iVar3 = (this->fields).respawnInterval;
+          this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if (this_00 != (MVNetworkGame *)0x0) {
+            iVar4 = MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds
+                              (this_00,(MethodInfo *)0x0);
+            if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).
+                cctor_finished_or_no_cctor == 0) {
+              func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+            }
+            pOVar5 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt
+                     ::ObscuredInt_op_Implicit
+                               ((ObscuredInt *)&stack0xffffffec,iVar4 - iVar3,(MethodInfo *)0x0);
+            puVar6 = (undefined *)pOVar5->currentCryptoKey;
+            pEVar7 = (Extensions__Class *)pOVar5->hiddenValue;
+            iVar4 = pOVar5->fakeValue;
+            if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
+              puVar6 = &UNK_?;
+              pEVar7 = TypeInfo__Extensions;
+              func_?();
+            }
+            value.hiddenValue = (int32_t)pEVar7;
+            value.currentCryptoKey = (int32_t)puVar6;
+            value.fakeValue = iVar4;
+            value.inited = pOVar5->inited;
+            value._13_3_ = *(undefined3 *)&pOVar5->field_0xd;
+            Extensions::Extensions_SetObscuredType_2
+                      (hashtable,StringLiteral_deathTime,value,
+                       void_MethodInfo__Extensions__SetObscuredType<CodeStage::AntiCheat::ObscuredTypes::ObscuredInt>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt_
+                      );
+            return;
           }
-          pOVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-                   ObscuredInt_op_Implicit((ObscuredInt *)&stack0xffffffec,iVar3,(MethodInfo *)0x0);
-          puVar5 = (undefined *)pOVar4->currentCryptoKey;
-          pEVar6 = (Extensions__Class *)pOVar4->hiddenValue;
-          iVar3 = pOVar4->fakeValue;
-          if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
-            puVar5 = &UNK_?;
-            pEVar6 = TypeInfo__Extensions;
-            func_?();
-          }
-          value.hiddenValue = (int32_t)pEVar6;
-          value.currentCryptoKey = (int32_t)puVar5;
-          value.fakeValue = iVar3;
-          value.inited = pOVar4->inited;
-          value._13_3_ = *(undefined3 *)&pOVar4->field_0xd;
-          Extensions::Extensions_SetObscuredType_2
-                    (hashtable,StringLiteral_deathTime,value,
-                     void_MethodInfo__Extensions__SetObscuredType<CodeStage::AntiCheat::ObscuredTypes::ObscuredInt>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt_
-                    );
-          return;
         }
       }
     }
@@ -422,8 +431,8 @@ void Assembly-CSharp.dll::ClientSideNPCInteractable::ClientSideNPCInteractable_R
   pDVar2 = extraout_EDX;
 code_?:
   func_?(unaff_ESI,pDVar2);
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -569,35 +578,39 @@ code_?:
         pDVar4 = (Dictionary_2_System_Object_System_Object_ *)
                  (*(code *)(pMVar2->klass->vtable).get_RunTimeData.method)
                            (pMVar2,(pMVar2->klass->vtable).set_RunTimeData.methodPtr);
-        unaff_ESI = (Dictionary_2_System_Object_System_Object_ *)
-                    WaitForTicks::WaitForTicks_GetEnvironmentTick(0,(MethodInfo *)0x0);
-        if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).
-            cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+        this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if (this_01 != (MVNetworkGame *)0x0) {
+          unaff_ESI = (Dictionary_2_System_Object_System_Object_ *)
+                      MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds
+                                (this_01,(MethodInfo *)0x0);
+          if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).
+              cctor_finished_or_no_cctor == 0) {
+            func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+          }
+          pOVar16 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+                   ObscuredInt_op_Implicit
+                             ((ObscuredInt *)(auStack_9 + 4),(int32_t)unaff_ESI,(MethodInfo *)0x0);
+          auStack_9._4_4_ = pOVar16->currentCryptoKey;
+          AStack_11 = (ACTkByte4)pOVar16->hiddenValue;
+          pBStack_12 = (Byte__Array *)pOVar16->fakeValue;
+          fStack_13._0_1_ = pOVar16->inited;
+          fStack_13._1_3_ = *(undefined3 *)&pOVar16->field_0xd;
+          if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
+            func_?(TypeInfo__Extensions);
+          }
+          value.hiddenValue._0_1_ = AStack_11.b1;
+          value.hiddenValue._1_1_ = AStack_11.b2;
+          value.hiddenValue._2_1_ = AStack_11.b3;
+          value.hiddenValue._3_1_ = AStack_11.b4;
+          value.currentCryptoKey = auStack_9._4_4_;
+          value.fakeValue = (int32_t)pBStack_12;
+          value._12_4_ = fStack_13;
+          Extensions::Extensions_SetObscuredType_2
+                    (pDVar4,StringLiteral_deathTime,value,
+                     void_MethodInfo__Extensions__SetObscuredType<CodeStage::AntiCheat::ObscuredTypes::ObscuredInt>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt_
+                    );
+          goto code_?;
         }
-        pOVar16 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-                 ObscuredInt_op_Implicit
-                           ((ObscuredInt *)(auStack_9 + 4),(int32_t)unaff_ESI,(MethodInfo *)0x0);
-        auStack_9._4_4_ = pOVar16->currentCryptoKey;
-        AStack_11 = (ACTkByte4)pOVar16->hiddenValue;
-        pBStack_12 = (Byte__Array *)pOVar16->fakeValue;
-        fStack_13._0_1_ = pOVar16->inited;
-        fStack_13._1_3_ = *(undefined3 *)&pOVar16->field_0xd;
-        if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__Extensions);
-        }
-        value.hiddenValue._0_1_ = AStack_11.b1;
-        value.hiddenValue._1_1_ = AStack_11.b2;
-        value.hiddenValue._2_1_ = AStack_11.b3;
-        value.hiddenValue._3_1_ = AStack_11.b4;
-        value.currentCryptoKey = auStack_9._4_4_;
-        value.fakeValue = (int32_t)pBStack_12;
-        value._12_4_ = fStack_13;
-        Extensions::Extensions_SetObscuredType_2
-                  (pDVar4,StringLiteral_deathTime,value,
-                   void_MethodInfo__Extensions__SetObscuredType<CodeStage::AntiCheat::ObscuredTypes::ObscuredInt>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt_
-                  );
-        goto code_?;
       }
       goto code_?;
     }

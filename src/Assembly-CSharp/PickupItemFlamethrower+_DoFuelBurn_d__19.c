@@ -1,9 +1,9 @@
 
 /* Boolean MoveNext() */
 
-bool Assembly-CSharp.dll::PickupItemFlamethrower+<DoFuelBurn>d__17::
-     PickupItemFlamethrower_DoFuelBurn_d_17_MoveNext
-               (PickupItemFlamethrower_DoFuelBurn_d_17 *this,MethodInfo *method)
+bool Assembly-CSharp.dll::PickupItemFlamethrower+<DoFuelBurn>d__19::
+     PickupItemFlamethrower_DoFuelBurn_d_19_MoveNext
+               (PickupItemFlamethrower_DoFuelBurn_d_19 *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -140,7 +140,7 @@ bool Assembly-CSharp.dll::PickupItemFlamethrower+<DoFuelBurn>d__17::
                 fVar4 = VStack_16.y;
               }
               impulse.y = (float)((uint)fVar4 ^
-                                 __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                 __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                                  );
               impulse.x = (float)OStack_9.currentCryptoKey;
               impulse.z = 0.0;
@@ -148,7 +148,7 @@ bool Assembly-CSharp.dll::PickupItemFlamethrower+<DoFuelBurn>d__17::
             }
           }
           cVar19 = (*(code *)(pPVar2->klass->vtable).get_IsAmmoDepleted.method)
-                             (pPVar2,(pPVar2->klass->vtable).get_Type.methodPtr);
+                             (pPVar2,(pPVar2->klass->vtable).CanFire.methodPtr);
           if (cVar19 == '\0') {
             fStack_21 = 0.0;
             pOVar24 = (Object *)func_?(TypeInfo__System__Int32,&fStack_21);
@@ -191,9 +191,9 @@ code_?:
 
 /* Void System.Collections.IEnumerator.Reset() */
 
-void Assembly-CSharp.dll::PickupItemFlamethrower+<DoFuelBurn>d__17::
-     PickupItemFlamethrower_DoFuelBurn_d_17_System_Collections_IEnumerator_Reset
-               (PickupItemFlamethrower_DoFuelBurn_d_17 *this,MethodInfo *method)
+void Assembly-CSharp.dll::PickupItemFlamethrower+<DoFuelBurn>d__19::
+     PickupItemFlamethrower_DoFuelBurn_d_19_System_Collections_IEnumerator_Reset
+               (PickupItemFlamethrower_DoFuelBurn_d_19 *this,MethodInfo *method)
 
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
@@ -201,7 +201,7 @@ void Assembly-CSharp.dll::PickupItemFlamethrower+<DoFuelBurn>d__17::
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
   func_?(&
-                  MethodInfo__PickupItemFlamethrower___DoFuelBurn_d__17__System_Collections_IEnumerator_Reset__
+                  MethodInfo__PickupItemFlamethrower___DoFuelBurn_d__19__System_Collections_IEnumerator_Reset__
                  );
   func_?(this_00);
   pcVar2 = (code *)swi(3);

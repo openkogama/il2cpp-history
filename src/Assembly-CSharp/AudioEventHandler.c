@@ -244,7 +244,7 @@ void Assembly-CSharp.dll::AudioEventHandler::AudioEventHandler_PlaySound
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__AudioEventHandler);
-    func_?(0x4f18);
+    func_?(0x7fb8);
     cRam_? = '\x01';
   }
   if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
@@ -261,24 +261,14 @@ void Assembly-CSharp.dll::AudioEventHandler::AudioEventHandler_PlaySound
     this = TypeInfo__AudioEventHandler->static_fields->audioBuild;
     if (this == (AudioBuild *)0x0) {
 code_?:
-      bVar2 = 0;
-      uVar3 = func_?();
-      puVar4 = (ushort *)((ulonglong)uVar3 >> 0x20);
-      *puVar4 = *puVar4 + (ushort)(0 < (short)-(*puVar4 & 3)) * -(*puVar4 & 3);
-      pbVar5 = (byte *)(unaff_EBX + -0x1defdd9d);
-      bVar6 = *pbVar5;
-      bVar7 = *pbVar5 + (byte)unaff_EBX;
-      *pbVar5 = bVar7 + bVar2;
-      *puVar4 = *puVar4 + (ushort)(0 < (short)-(*puVar4 & 3)) * -(*puVar4 & 3);
-      *extraout_ECX =
-           *extraout_ECX + (char)((uint)extraout_ECX >> 8) +
-           (CARRY1(bVar6,(byte)unaff_EBX) || CARRY1(bVar7,bVar2));
-      uVar8 = in((short)CONCAT31((int3)((ulonglong)uVar3 >> 0x28),
-                                 (byte)((ulonglong)uVar3 >> 0x20) &
-                                 *(byte *)(unaff_FS_OFFSET + (int)uVar3)));
-      *unaff_EDI = uVar8;
-      pcVar9 = (code *)swi(3);
-      (*pcVar9)();
+      uVar2 = func_?();
+      puVar3 = (ushort *)
+               (CONCAT31((int3)((ulonglong)uVar2 >> 0x28),*(undefined1 *)((uint)uVar2 & 0xffffff63))
+               & 0xffffff63);
+      *puVar3 = *puVar3 + (ushort)(0 < (short)-(*puVar3 & 3)) * -(*puVar3 & 3);
+      cRam_? = cRam_? + (char)((uint)unaff_EBX >> 8) + '\x01';
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
       return;
     }
     randMax = 1.1;

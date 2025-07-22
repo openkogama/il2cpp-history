@@ -14,7 +14,7 @@ public enum ScenesForMode
 	PlayModeTourist = 2,
 	EditMode = 3,
 	AvatarEditMode = 4,
-	PlayMode2 = 5,
-	PlayMode2Tourist = 6
+	PlayModeTouch = 5,
+	PlayModeTouristTouch = 6
 }
 

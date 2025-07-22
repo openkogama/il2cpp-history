@@ -1607,43 +1607,88 @@ void Assembly-CSharp.dll::MVMovingPlatformGroup::MVMovingPlatformGroup__ctor
   (this->fields).woIdToNodeIdMap = (Dictionary_2_System_Int32_System_Int32_ *)pDVar1;
   func_?(&(this->fields).woIdToNodeIdMap,pDVar1);
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__PrefabPool);
     cRam_? = '\x01';
   }
   pPVar2 = TypeInfo__PrefabPool->static_fields->instance;
   if (pPVar2 != (PrefabPool *)0x0) {
-    MVBlueprintBase::MVBlueprintBase__ctor_2
-              ((MVBlueprintBase *)this,data,(pPVar2->fields).mvMovingPlatformGroupPrefab,
-               worldObjects,(MethodInfo *)0x0);
+    pGVar3 = (pPVar2->fields).mvMovingPlatformGroupPrefab;
+    if (cRam_? == '\0') {
+      func_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                     );
+      func_?(&
+                      TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                     );
+      cRam_? = '\x01';
+    }
+    this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+               *)func_?(
+                                TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                                );
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements
+    ::StyleComplexSelector+PseudoStateData]::
+    Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+              (this_01,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+              );
+    (this->fields)._.idChildMap = (Dictionary_2_System_Object_System_Object_ *)this_01;
+    func_?(&(this->fields)._.idChildMap,this_01);
+    if (cRam_? == '\0') {
+      func_?();
+      func_?();
+      func_?(&TypeInfo__MVWorldObjectClient);
+      cRam_? = '\x01';
+    }
+    pDVar1 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_
+              *)func_?();
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::
+    Text::TextResourceManager+FontAssetRef]::
+    Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
+              (pDVar1,
+               MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__Dictionary__
+              );
+    (this->fields)._._.children = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)pDVar1;
+    func_?(&(this->fields)._._.children);
+    if ((TypeInfo__MVWorldObjectClient->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__MVWorldObjectClient);
+    }
+    MVWorldObjectClient::MVWorldObjectClient__ctor
+              ((MVWorldObjectClient *)this,data,pGVar3,worldObjects,(MethodInfo *)0x0);
+    uVar4 = *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4);
+    piVar5 = &(this->fields)._._._.interactionFlags;
+    *(uint *)piVar5 = (uint)*piVar5 | 0x82101;
+    *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4) = uVar4;
+    MVBlueprintBase::MVBlueprintBase_MapDataToFields((MVBlueprintBase *)this,(MethodInfo *)0x0);
     this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
               (this->fields)._.blueprintData;
     if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-      TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+      TVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
               UIElements::TextureId]::
               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
                         (this_00,(Object *)StringLiteral_NextNodeMap,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                         );
-      if (TVar3.m_Index == 0) {
+      if (TVar6.m_Index == 0) {
         (this->fields).nextNodeMap = (Dictionary_2_System_Object_System_Object_ *)0x0;
       }
       else {
-        if ((*(byte *)(*(int *)TVar3.m_Index + 0xb8) <
+        if ((*(byte *)(*(int *)TVar6.m_Index + 0xb8) <
              (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1
              ).naturalAligment) ||
            (*(Dictionary_2_System_Object_System_Object___Class **)
-             (*(int *)(*(int *)TVar3.m_Index + 100) + -4 +
+             (*(int *)(*(int *)TVar6.m_Index + 100) + -4 +
              (uint)(
                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
                    ->_1).naturalAligment * 4) !=
             TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
         goto code_?;
-        (this->fields).nextNodeMap = (Dictionary_2_System_Object_System_Object_ *)TVar3.m_Index;
-        if ((*(byte *)(*(int *)TVar3.m_Index + 0xb8) <
+        (this->fields).nextNodeMap = (Dictionary_2_System_Object_System_Object_ *)TVar6.m_Index;
+        if ((*(byte *)(*(int *)TVar6.m_Index + 0xb8) <
              (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1
              ).naturalAligment) ||
            (*(Dictionary_2_System_Object_System_Object___Class **)
-             (*(int *)(*(int *)TVar3.m_Index + 100) + -4 +
+             (*(int *)(*(int *)TVar6.m_Index + 100) + -4 +
              (uint)(
                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
                    ->_1).naturalAligment * 4) !=
@@ -1651,22 +1696,22 @@ void Assembly-CSharp.dll::MVMovingPlatformGroup::MVMovingPlatformGroup__ctor
         goto code_?;
       }
       func_?();
-      this_01 = (this->fields)._._._.gameObject;
-      if (this_01 != (GameObject *)0x0) {
-        pLVar4 = (LineRenderer *)
+      pGVar3 = (this->fields)._._._.gameObject;
+      if (pGVar3 != (GameObject *)0x0) {
+        pLVar7 = (LineRenderer *)
                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                  GameObject_GetComponentInChildren_1
-                           (this_01,
+                           (pGVar3,
                             UnityEngine__LineRenderer_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::LineRenderer>__
                            );
-        (this->fields).lineRenderer = pLVar4;
-        func_?(&(this->fields).lineRenderer);
+        (this->fields).lineRenderer = pLVar7;
+        func_?(&(this->fields).lineRenderer,pLVar7);
         piVar5 = &(this->fields)._._._.interactionFlags;
         *(uint *)piVar5 = (uint)*piVar5 | 0x9000;
-        uVar6 = *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4);
-        piVar7 = &(this->fields)._._._.previewLayerMask;
-        *piVar7 = *piVar7 | 0x800;
-        *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4) = uVar6;
+        uVar4 = *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4);
+        piVar8 = &(this->fields)._._._.previewLayerMask;
+        *piVar8 = *piVar8 | 0x800;
+        *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4) = uVar4;
         return;
       }
     }
@@ -1674,8 +1719,8 @@ void Assembly-CSharp.dll::MVMovingPlatformGroup::MVMovingPlatformGroup__ctor
   func_?();
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

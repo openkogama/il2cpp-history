@@ -1,8 +1,8 @@
 
-/* Void <DeleteWoid>b__75_1(IUIStack, BaseEventData) */
+/* Void <DeleteWoid>b__76_1(IUIStack, BaseEventData) */
 
 void Assembly-CSharp.dll::DesktopEditModeController+<>c::
-     DesktopEditModeController_c__DeleteWoid_b__75_1
+     DesktopEditModeController_c__DeleteWoid_b__76_1
                (DesktopEditModeController_c *this,IUIStack *handler,BaseEventData *data,
                MethodInfo *method)
 

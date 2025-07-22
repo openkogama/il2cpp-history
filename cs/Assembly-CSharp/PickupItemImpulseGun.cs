@@ -43,6 +43,7 @@ public class PickupItemImpulseGun : PickupItem
 	protected override bool IsAmmoDepleted { get; }
 	public override AvatarItemType Type { get; }
 	public override int Quantity { get; }
+	public override int MaxAmmo { get; }
 	public override float ChargeState { get; }
 
 	// Constructors

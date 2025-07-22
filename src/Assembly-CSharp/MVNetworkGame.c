@@ -1499,13 +1499,8 @@ void Assembly-CSharp.dll::MVNetworkGame::MVNetworkGame_LoadModeGui
     }
     return;
   }
-  if (bVar2 == 0) {
-    LevelLoader::LevelLoader_LoadScenes_1
-              (this_00,ScenesForMode__Enum_PlayMode,(Action *)this_01,(MethodInfo *)0x0);
-    return;
-  }
-  LevelLoader::LevelLoader_LoadScenes_1
-            (this_00,ScenesForMode__Enum_PlayModeTourist,(Action *)this_01,(MethodInfo *)0x0);
+  LevelLoader::LevelLoader_LoadScenes_1(this_00,(uint)bVar2 * 2,(Action *)this_01,(MethodInfo *)0x0)
+  ;
   return;
 }
 
@@ -4128,12 +4123,7 @@ code_?:
           }
           else {
             if (MVar31 == MVGameMode__Enum_Play) {
-              if (bVar10 == 0) {
-                mode = ScenesForMode__Enum_PlayMode;
-              }
-              else {
-                mode = ScenesForMode__Enum_PlayModeTourist;
-              }
+              mode = (uint)bVar10 * 2;
               goto code_?;
             }
             if (MVar31 == MVGameMode__Enum_CharacterEditor) {

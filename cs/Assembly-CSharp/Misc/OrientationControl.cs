@@ -14,15 +14,17 @@ namespace Misc
 	public class OrientationControl : MonoBehaviour
 	{
 		// Fields
+		private const bool Debugging = false;
 		[SerializeField]
 		private GameObject orientationWarningOverlay;
+		[SerializeField]
+		private RotateOrientationWarning orientationWarningScript;
 		[SerializeField]
 		private bool printOrientation;
 		[SerializeField]
 		private bool toggleShowWarning;
 		private bool takeAction;
 		private MVOrientation desiredOrientation;
-		private static bool debugging;
 	
 		// Properties
 		public static MVOrientation CurrentOrientation { get; }

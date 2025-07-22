@@ -170,14 +170,27 @@ void Assembly-CSharp.dll::MVRoundCube::MVRoundCube_Initialize(MVRoundCube *this,
     }
     func_?();
     pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    pMVar6 = System__Object__MethodInfo__System__Array__Empty<System::Object>______;
     if (pMVar5 != (MVNetworkGame *)0x0) {
       this_00 = (pMVar5->fields)._WinningConditionManager_k__BackingField;
-      args = (Object__Array *)
-             func_?(System__Object__MethodInfo__System__Array__Empty<System::Object>______)
-      ;
+      if ((System__Object__MethodInfo__System__Array__Empty<System::Object>______->field7_0x1c).
+          rgctx_data == (Il2CppRGCTXData *)0x0) {
+        func_?(System__Object__MethodInfo__System__Array__Empty<System::Object>______);
+      }
+      pIVar7 = (pMVar6->field7_0x1c).rgctx_data[2].klass;
+      if (((uint)pIVar7->vtable[0].methodPtr & 0x100) == 0) {
+        pIVar7 = (Il2CppClass *)func_?(pIVar7);
+      }
+      if (pIVar7->cctor_finished_or_no_cctor == 0) {
+        func_?(pIVar7);
+      }
+      pIVar7 = (pMVar6->field7_0x1c).rgctx_data[2].klass;
+      if (((uint)pIVar7->vtable[0].methodPtr & 0x100) == 0) {
+        pIVar7 = (Il2CppClass *)func_?(pIVar7);
+      }
       if (this_00 != (WinningConditionManager *)0x0) {
         MVWorldObject.dll::WinningConditionManager::WinningConditionManager_CreateWinnerCondition
-                  (this_00,args,
+                  (this_00,*(Object__Array **)pIVar7->static_fields,
                    TimeLimitClient_MethodInfo__WinningConditionManager__CreateWinnerCondition<TimeLimitClient>_System__Object____
                   );
         lodGameObject = (this->fields)._._.gameObject;
@@ -191,8 +204,8 @@ void Assembly-CSharp.dll::MVRoundCube::MVRoundCube_Initialize(MVRoundCube *this,
   func_?();
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

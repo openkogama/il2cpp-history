@@ -388,7 +388,7 @@ void Assembly-CSharp.dll::ResetAvatarHandler::ResetAvatarHandler_OnDrag
   fVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Internal::InputUnsafeUtility::
           InputUnsafeUtility_GetAxis(StringLiteral_Mouse_X,(MethodInfo *)0x0);
   fVar1 = (float)((uint)fVar1 ^
-                 __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                 __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
   (this->fields).isDown = 1;
   (this->fields).currentRotationSpeed = fVar1 * (this->fields).rotationSensitivity;
   return;

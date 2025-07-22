@@ -366,8 +366,9 @@ void Assembly-CSharp.dll::RTG::CharacterControllerGizmo3D::CharacterControllerGi
   GizmoCap2D::GizmoCap2D__ctor(pGVar3,pGVar1,XVar2,(MethodInfo *)0x0);
   (this->fields)._leftTick = pGVar3;
   func_?(&(this->fields)._leftTick,pGVar3);
-  pGVar4 = (GizmoCap3D *)(this->fields)._leftTick;
-  if (pGVar4 == (GizmoCap3D *)0x0) {
+  pGVar3 = (this->fields)._leftTick;
+  if ((pGVar3 == (GizmoCap2D *)0x0) ||
+     (pGVar4 = (pGVar3->fields)._._handle, pGVar4 == (GizmoHandle *)0x0)) {
 code_?:
     func_?();
 code_?:
@@ -387,248 +388,273 @@ code_?:
     func_?(uVar5);
   }
   else {
-    GizmoCap3D::GizmoCap3D_set_DragSession
-              (pGVar4,(IGizmoDragSession *)(this->fields)._offsetDrag,(MethodInfo *)0x0);
+    pGVar6 = (this->fields)._offsetDrag;
+    (pGVar4->fields)._DragSession_k__BackingField = (IGizmoDragSession *)pGVar6;
+    pMVar7 = (MethodInfo *)&(pGVar4->fields)._DragSession_k__BackingField;
+    func_?(pMVar7,pGVar6);
     pGVar1 = (this->fields)._._gizmo;
     XVar2 = System.Xml.dll::System::Xml::Schema::Datatype_hexBinary::
-             Datatype_hexBinary_get_TypeCode((Datatype_hexBinary *)0x0,in_stack_6);
+             Datatype_hexBinary_get_TypeCode((Datatype_hexBinary *)0x0,pMVar7);
     pGVar3 = (GizmoCap2D *)func_?(TypeInfo__RTG__GizmoCap2D);
     GizmoCap2D::GizmoCap2D__ctor(pGVar3,pGVar1,XVar2,(MethodInfo *)0x0);
     (this->fields)._rightTick = pGVar3;
     func_?(&(this->fields)._rightTick,pGVar3);
-    pGVar4 = (GizmoCap3D *)(this->fields)._rightTick;
-    if (pGVar4 == (GizmoCap3D *)0x0) goto code_?;
-    GizmoCap3D::GizmoCap3D_set_DragSession
-              (pGVar4,(IGizmoDragSession *)(this->fields)._offsetDrag,(MethodInfo *)0x0);
+    pGVar3 = (this->fields)._rightTick;
+    if ((pGVar3 == (GizmoCap2D *)0x0) ||
+       (pGVar4 = (pGVar3->fields)._._handle, pGVar4 == (GizmoHandle *)0x0)) goto code_?;
+    pGVar6 = (this->fields)._offsetDrag;
+    (pGVar4->fields)._DragSession_k__BackingField = (IGizmoDragSession *)pGVar6;
+    pMVar7 = (MethodInfo *)&(pGVar4->fields)._DragSession_k__BackingField;
+    func_?(pMVar7,pGVar6);
     pGVar1 = (this->fields)._._gizmo;
     XVar2 = System.Xml.dll::System::Xml::Schema::Datatype_base64Binary::
-             Datatype_base64Binary_get_TypeCode((Datatype_base64Binary *)0x0,in_stack_6);
+             Datatype_base64Binary_get_TypeCode((Datatype_base64Binary *)0x0,pMVar7);
     pGVar3 = (GizmoCap2D *)func_?(TypeInfo__RTG__GizmoCap2D);
     GizmoCap2D::GizmoCap2D__ctor(pGVar3,pGVar1,XVar2,(MethodInfo *)0x0);
     (this->fields)._topTick = pGVar3;
     func_?(&(this->fields)._topTick,pGVar3);
-    pGVar4 = (GizmoCap3D *)(this->fields)._topTick;
-    if (pGVar4 == (GizmoCap3D *)0x0) goto code_?;
-    GizmoCap3D::GizmoCap3D_set_DragSession
-              (pGVar4,(IGizmoDragSession *)(this->fields)._offsetDrag,(MethodInfo *)0x0);
+    pGVar3 = (this->fields)._topTick;
+    if ((pGVar3 == (GizmoCap2D *)0x0) ||
+       (pGVar4 = (pGVar3->fields)._._handle, pGVar4 == (GizmoHandle *)0x0)) goto code_?;
+    pGVar6 = (this->fields)._offsetDrag;
+    (pGVar4->fields)._DragSession_k__BackingField = (IGizmoDragSession *)pGVar6;
+    pMVar7 = (MethodInfo *)&(pGVar4->fields)._DragSession_k__BackingField;
+    func_?(pMVar7,pGVar6);
     pGVar1 = (this->fields)._._gizmo;
     XVar2 = System.Xml.dll::System::Xml::Schema::Datatype_NOTATION::Datatype_NOTATION_get_TypeCode
-                       ((Datatype_NOTATION *)0x0,in_stack_6);
+                       ((Datatype_NOTATION *)0x0,pMVar7);
     pGVar3 = (GizmoCap2D *)func_?(TypeInfo__RTG__GizmoCap2D);
     GizmoCap2D::GizmoCap2D__ctor(pGVar3,pGVar1,XVar2,(MethodInfo *)0x0);
     (this->fields)._bottomTick = pGVar3;
     func_?(&(this->fields)._bottomTick,pGVar3);
-    pGVar4 = (GizmoCap3D *)(this->fields)._bottomTick;
-    if (pGVar4 == (GizmoCap3D *)0x0) goto code_?;
-    GizmoCap3D::GizmoCap3D_set_DragSession
-              (pGVar4,(IGizmoDragSession *)(this->fields)._offsetDrag,(MethodInfo *)0x0);
+    pGVar3 = (this->fields)._bottomTick;
+    if ((pGVar3 == (GizmoCap2D *)0x0) ||
+       (pGVar4 = (pGVar3->fields)._._handle, pGVar4 == (GizmoHandle *)0x0)) goto code_?;
+    pGVar6 = (this->fields)._offsetDrag;
+    (pGVar4->fields)._DragSession_k__BackingField = (IGizmoDragSession *)pGVar6;
+    pMVar7 = (MethodInfo *)&(pGVar4->fields)._DragSession_k__BackingField;
+    func_?(pMVar7,pGVar6);
     pGVar1 = (this->fields)._._gizmo;
     XVar2 = System.Xml.dll::System::Xml::Schema::Datatype_normalizedStringV1Compat::
              Datatype_normalizedStringV1Compat_get_TypeCode
-                       ((Datatype_normalizedStringV1Compat *)0x0,in_stack_6);
+                       ((Datatype_normalizedStringV1Compat *)0x0,pMVar7);
     pGVar3 = (GizmoCap2D *)func_?(TypeInfo__RTG__GizmoCap2D);
-    method_00 = (MethodInfo *)&UNK_?;
     GizmoCap2D::GizmoCap2D__ctor(pGVar3,pGVar1,XVar2,(MethodInfo *)0x0);
     (this->fields)._backTick = pGVar3;
     func_?(&(this->fields)._backTick,pGVar3);
-    pGVar4 = (GizmoCap3D *)(this->fields)._backTick;
-    if (pGVar4 == (GizmoCap3D *)0x0) goto code_?;
-    GizmoCap3D::GizmoCap3D_set_DragSession
-              (pGVar4,(IGizmoDragSession *)(this->fields)._offsetDrag,(MethodInfo *)0x0);
+    pGVar3 = (this->fields)._backTick;
+    if ((pGVar3 == (GizmoCap2D *)0x0) ||
+       (pGVar4 = (pGVar3->fields)._._handle, pGVar4 == (GizmoHandle *)0x0)) goto code_?;
+    pGVar6 = (this->fields)._offsetDrag;
+    (pGVar4->fields)._DragSession_k__BackingField = (IGizmoDragSession *)pGVar6;
+    func_?(&(pGVar4->fields)._DragSession_k__BackingField,pGVar6);
     pGVar1 = (this->fields)._._gizmo;
     handleId = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
                UnsafeUtility_SizeOf_31((MethodInfo *)0x0);
     pGVar3 = (GizmoCap2D *)func_?(TypeInfo__RTG__GizmoCap2D);
-    method_01 = (MethodInfo *)&UNK_?;
     GizmoCap2D::GizmoCap2D__ctor(pGVar3,pGVar1,handleId,(MethodInfo *)0x0);
     (this->fields)._frontTick = pGVar3;
     func_?(&(this->fields)._frontTick,pGVar3);
-    pGVar4 = (GizmoCap3D *)(this->fields)._frontTick;
-    if (pGVar4 == (GizmoCap3D *)0x0) goto code_?;
-    GizmoCap3D::GizmoCap3D_set_DragSession
-              (pGVar4,(IGizmoDragSession *)(this->fields)._offsetDrag,(MethodInfo *)0x0);
-    pCVar7 = (this->fields)._extentTicks;
-    pCVar8 = (CharacterControllerGizmo3D_ExtentTick *)
-              func_?(TypeInfo__RTG__CharacterControllerGizmo3D__ExtentTick);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)pCVar8,ExceptionArgument__Enum_obj,method_00);
-    if (pCVar7 == (CharacterControllerGizmo3D_ExtentTick__Array *)0x0) goto code_?;
-    if ((pCVar8 != (CharacterControllerGizmo3D_ExtentTick *)0x0) &&
-       (iVar9 = func_?(pCVar8,(pCVar7->klass->_0).element_class), iVar9 == 0))
-    goto code_?;
-    if (pCVar7->max_length < 3) goto code_?;
-    pCVar7->vector[2] = pCVar8;
-    func_?(pCVar7->vector + 2,pCVar8);
-    pCVar7 = (this->fields)._extentTicks;
-    if (pCVar7 == (CharacterControllerGizmo3D_ExtentTick__Array *)0x0) goto code_?;
-    if (pCVar7->max_length < 3) goto code_?;
-    pCVar8 = pCVar7->vector[2];
-    pGVar3 = (this->fields)._leftTick;
-    if (pCVar8 == (CharacterControllerGizmo3D_ExtentTick *)0x0) goto code_?;
-    (pCVar8->fields).Tick = pGVar3;
-    func_?(&(pCVar8->fields).Tick,pGVar3);
-    pCVar7 = (this->fields)._extentTicks;
-    pCVar8 = (CharacterControllerGizmo3D_ExtentTick *)
-              func_?(TypeInfo__RTG__CharacterControllerGizmo3D__ExtentTick);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)pCVar8,ExceptionArgument__Enum_obj,method_01);
-    if (pCVar7 == (CharacterControllerGizmo3D_ExtentTick__Array *)0x0) goto code_?;
-    if ((pCVar8 != (CharacterControllerGizmo3D_ExtentTick *)0x0) &&
-       (iVar9 = func_?(pCVar8,(pCVar7->klass->_0).element_class), iVar9 == 0))
-    goto code_?;
-    if (pCVar7->max_length < 4) goto code_?;
-    pCVar7->vector[3] = pCVar8;
-    func_?(pCVar7->vector + 3,pCVar8);
-    pCVar7 = (this->fields)._extentTicks;
-    if (pCVar7 == (CharacterControllerGizmo3D_ExtentTick__Array *)0x0) goto code_?;
-    if (pCVar7->max_length < 4) goto code_?;
-    pCVar8 = pCVar7->vector[3];
-    pGVar3 = (this->fields)._rightTick;
-    if (pCVar8 == (CharacterControllerGizmo3D_ExtentTick *)0x0) goto code_?;
-    (pCVar8->fields).Tick = pGVar3;
-    func_?(&(pCVar8->fields).Tick,pGVar3);
-    pCVar7 = (this->fields)._extentTicks;
-    pCVar8 = (CharacterControllerGizmo3D_ExtentTick *)
-              func_?(TypeInfo__RTG__CharacterControllerGizmo3D__ExtentTick);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)pCVar8,ExceptionArgument__Enum_obj,method_01);
-    if (pCVar7 == (CharacterControllerGizmo3D_ExtentTick__Array *)0x0) goto code_?;
-    if ((pCVar8 != (CharacterControllerGizmo3D_ExtentTick *)0x0) &&
-       (iVar9 = func_?(pCVar8,(pCVar7->klass->_0).element_class), iVar9 == 0))
-    goto code_?;
-    if (pCVar7->max_length < 6) goto code_?;
-    pCVar7->vector[5] = pCVar8;
-    func_?(pCVar7->vector + 5,pCVar8);
-    pCVar7 = (this->fields)._extentTicks;
-    if (pCVar7 == (CharacterControllerGizmo3D_ExtentTick__Array *)0x0) goto code_?;
-    if (pCVar7->max_length < 6) goto code_?;
-    pCVar8 = pCVar7->vector[5];
-    pGVar3 = (this->fields)._topTick;
-    if (pCVar8 == (CharacterControllerGizmo3D_ExtentTick *)0x0) goto code_?;
-    (pCVar8->fields).Tick = pGVar3;
-    func_?(&(pCVar8->fields).Tick,pGVar3);
-    pCVar7 = (this->fields)._extentTicks;
-    pCVar8 = (CharacterControllerGizmo3D_ExtentTick *)
-              func_?(TypeInfo__RTG__CharacterControllerGizmo3D__ExtentTick);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)pCVar8,ExceptionArgument__Enum_obj,method_01);
-    if (pCVar7 == (CharacterControllerGizmo3D_ExtentTick__Array *)0x0) goto code_?;
-    if ((pCVar8 != (CharacterControllerGizmo3D_ExtentTick *)0x0) &&
-       (iVar9 = func_?(pCVar8,(pCVar7->klass->_0).element_class), iVar9 == 0))
-    goto code_?;
-    if (pCVar7->max_length < 5) goto code_?;
-    pCVar7->vector[4] = pCVar8;
-    func_?(pCVar7->vector + 4,pCVar8);
-    pCVar7 = (this->fields)._extentTicks;
-    if (pCVar7 == (CharacterControllerGizmo3D_ExtentTick__Array *)0x0) goto code_?;
-    if (pCVar7->max_length < 5) goto code_?;
-    pCVar8 = pCVar7->vector[4];
-    pGVar3 = (this->fields)._bottomTick;
-    if (pCVar8 == (CharacterControllerGizmo3D_ExtentTick *)0x0) goto code_?;
-    (pCVar8->fields).Tick = pGVar3;
-    func_?(&(pCVar8->fields).Tick,pGVar3);
-    pCVar7 = (this->fields)._extentTicks;
-    pCVar8 = (CharacterControllerGizmo3D_ExtentTick *)
-              func_?(TypeInfo__RTG__CharacterControllerGizmo3D__ExtentTick);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)pCVar8,ExceptionArgument__Enum_obj,method_01);
-    if (pCVar7 == (CharacterControllerGizmo3D_ExtentTick__Array *)0x0) goto code_?;
-    if ((pCVar8 != (CharacterControllerGizmo3D_ExtentTick *)0x0) &&
-       (iVar9 = func_?(pCVar8,(pCVar7->klass->_0).element_class), iVar9 == 0))
-    goto code_?;
-    if (pCVar7->max_length == 0) goto code_?;
-    pCVar7->vector[0] = pCVar8;
-    func_?(pCVar7->vector,pCVar8);
-    pCVar7 = (this->fields)._extentTicks;
-    if (pCVar7 == (CharacterControllerGizmo3D_ExtentTick__Array *)0x0) goto code_?;
-    if (pCVar7->max_length == 0) goto code_?;
-    pCVar8 = pCVar7->vector[0];
     pGVar3 = (this->fields)._frontTick;
-    if (pCVar8 == (CharacterControllerGizmo3D_ExtentTick *)0x0) goto code_?;
-    (pCVar8->fields).Tick = pGVar3;
-    func_?(&(pCVar8->fields).Tick,pGVar3);
-    pCVar7 = (this->fields)._extentTicks;
-    pCVar8 = (CharacterControllerGizmo3D_ExtentTick *)
+    if ((pGVar3 == (GizmoCap2D *)0x0) ||
+       (pGVar4 = (pGVar3->fields)._._handle, pGVar4 == (GizmoHandle *)0x0)) goto code_?;
+    pGVar6 = (this->fields)._offsetDrag;
+    (pGVar4->fields)._DragSession_k__BackingField = (IGizmoDragSession *)pGVar6;
+    func_?(&(pGVar4->fields)._DragSession_k__BackingField,pGVar6);
+    pCVar8 = (this->fields)._extentTicks;
+    pCVar9 = (CharacterControllerGizmo3D_ExtentTick *)
               func_?(TypeInfo__RTG__CharacterControllerGizmo3D__ExtentTick);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)pCVar8,ExceptionArgument__Enum_obj,method_01);
-    if (pCVar7 == (CharacterControllerGizmo3D_ExtentTick__Array *)0x0) goto code_?;
-    if ((pCVar8 == (CharacterControllerGizmo3D_ExtentTick *)0x0) ||
-       (iVar9 = func_?(pCVar8,(pCVar7->klass->_0).element_class), iVar9 != 0)) {
-      if (pCVar7->max_length < 2) goto code_?;
-      pCVar7->vector[1] = pCVar8;
-      func_?(pCVar7->vector + 1,pCVar8);
-      pCVar7 = (this->fields)._extentTicks;
-      if (pCVar7 != (CharacterControllerGizmo3D_ExtentTick__Array *)0x0) {
-        if (pCVar7->max_length < 2) goto code_?;
-        pCVar8 = pCVar7->vector[1];
+    UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+    UxmlObjectListAttributeDescription`1[System::Object]::
+    UxmlObjectListAttributeDescription_1_System_Object___ctor
+              ((UxmlObjectListAttributeDescription_1_System_Object_ *)pCVar9,(MethodInfo *)0x0);
+    if (pCVar8 == (CharacterControllerGizmo3D_ExtentTick__Array *)0x0) goto code_?;
+    if ((pCVar9 != (CharacterControllerGizmo3D_ExtentTick *)0x0) &&
+       (iVar10 = func_?(pCVar9,(pCVar8->klass->_0).element_class), iVar10 == 0))
+    goto code_?;
+    if (pCVar8->max_length < 3) goto code_?;
+    pCVar8->vector[2] = pCVar9;
+    func_?(pCVar8->vector + 2,pCVar9);
+    pCVar8 = (this->fields)._extentTicks;
+    if (pCVar8 == (CharacterControllerGizmo3D_ExtentTick__Array *)0x0) goto code_?;
+    if (pCVar8->max_length < 3) goto code_?;
+    pCVar9 = pCVar8->vector[2];
+    pGVar3 = (this->fields)._leftTick;
+    if (pCVar9 == (CharacterControllerGizmo3D_ExtentTick *)0x0) goto code_?;
+    (pCVar9->fields).Tick = pGVar3;
+    func_?(&(pCVar9->fields).Tick,pGVar3);
+    pCVar8 = (this->fields)._extentTicks;
+    pCVar9 = (CharacterControllerGizmo3D_ExtentTick *)
+              func_?(TypeInfo__RTG__CharacterControllerGizmo3D__ExtentTick);
+    UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+    UxmlObjectListAttributeDescription`1[System::Object]::
+    UxmlObjectListAttributeDescription_1_System_Object___ctor
+              ((UxmlObjectListAttributeDescription_1_System_Object_ *)pCVar9,(MethodInfo *)0x0);
+    if (pCVar8 == (CharacterControllerGizmo3D_ExtentTick__Array *)0x0) goto code_?;
+    if ((pCVar9 != (CharacterControllerGizmo3D_ExtentTick *)0x0) &&
+       (iVar10 = func_?(pCVar9,(pCVar8->klass->_0).element_class), iVar10 == 0))
+    goto code_?;
+    if (pCVar8->max_length < 4) goto code_?;
+    pCVar8->vector[3] = pCVar9;
+    func_?(pCVar8->vector + 3,pCVar9);
+    pCVar8 = (this->fields)._extentTicks;
+    if (pCVar8 == (CharacterControllerGizmo3D_ExtentTick__Array *)0x0) goto code_?;
+    if (pCVar8->max_length < 4) goto code_?;
+    pCVar9 = pCVar8->vector[3];
+    pGVar3 = (this->fields)._rightTick;
+    if (pCVar9 == (CharacterControllerGizmo3D_ExtentTick *)0x0) goto code_?;
+    (pCVar9->fields).Tick = pGVar3;
+    func_?(&(pCVar9->fields).Tick,pGVar3);
+    pCVar8 = (this->fields)._extentTicks;
+    pCVar9 = (CharacterControllerGizmo3D_ExtentTick *)
+              func_?(TypeInfo__RTG__CharacterControllerGizmo3D__ExtentTick);
+    UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+    UxmlObjectListAttributeDescription`1[System::Object]::
+    UxmlObjectListAttributeDescription_1_System_Object___ctor
+              ((UxmlObjectListAttributeDescription_1_System_Object_ *)pCVar9,(MethodInfo *)0x0);
+    if (pCVar8 == (CharacterControllerGizmo3D_ExtentTick__Array *)0x0) goto code_?;
+    if ((pCVar9 != (CharacterControllerGizmo3D_ExtentTick *)0x0) &&
+       (iVar10 = func_?(pCVar9,(pCVar8->klass->_0).element_class), iVar10 == 0))
+    goto code_?;
+    if (pCVar8->max_length < 6) goto code_?;
+    pCVar8->vector[5] = pCVar9;
+    func_?(pCVar8->vector + 5,pCVar9);
+    pCVar8 = (this->fields)._extentTicks;
+    if (pCVar8 == (CharacterControllerGizmo3D_ExtentTick__Array *)0x0) goto code_?;
+    if (pCVar8->max_length < 6) goto code_?;
+    pCVar9 = pCVar8->vector[5];
+    pGVar3 = (this->fields)._topTick;
+    if (pCVar9 == (CharacterControllerGizmo3D_ExtentTick *)0x0) goto code_?;
+    (pCVar9->fields).Tick = pGVar3;
+    func_?(&(pCVar9->fields).Tick,pGVar3);
+    pCVar8 = (this->fields)._extentTicks;
+    pCVar9 = (CharacterControllerGizmo3D_ExtentTick *)
+              func_?(TypeInfo__RTG__CharacterControllerGizmo3D__ExtentTick);
+    UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+    UxmlObjectListAttributeDescription`1[System::Object]::
+    UxmlObjectListAttributeDescription_1_System_Object___ctor
+              ((UxmlObjectListAttributeDescription_1_System_Object_ *)pCVar9,(MethodInfo *)0x0);
+    if (pCVar8 == (CharacterControllerGizmo3D_ExtentTick__Array *)0x0) goto code_?;
+    if ((pCVar9 != (CharacterControllerGizmo3D_ExtentTick *)0x0) &&
+       (iVar10 = func_?(pCVar9,(pCVar8->klass->_0).element_class), iVar10 == 0))
+    goto code_?;
+    if (pCVar8->max_length < 5) goto code_?;
+    pCVar8->vector[4] = pCVar9;
+    func_?(pCVar8->vector + 4,pCVar9);
+    pCVar8 = (this->fields)._extentTicks;
+    if (pCVar8 == (CharacterControllerGizmo3D_ExtentTick__Array *)0x0) goto code_?;
+    if (pCVar8->max_length < 5) goto code_?;
+    pCVar9 = pCVar8->vector[4];
+    pGVar3 = (this->fields)._bottomTick;
+    if (pCVar9 == (CharacterControllerGizmo3D_ExtentTick *)0x0) goto code_?;
+    (pCVar9->fields).Tick = pGVar3;
+    func_?(&(pCVar9->fields).Tick,pGVar3);
+    pCVar8 = (this->fields)._extentTicks;
+    pCVar9 = (CharacterControllerGizmo3D_ExtentTick *)
+              func_?(TypeInfo__RTG__CharacterControllerGizmo3D__ExtentTick);
+    UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+    UxmlObjectListAttributeDescription`1[System::Object]::
+    UxmlObjectListAttributeDescription_1_System_Object___ctor
+              ((UxmlObjectListAttributeDescription_1_System_Object_ *)pCVar9,(MethodInfo *)0x0);
+    if (pCVar8 == (CharacterControllerGizmo3D_ExtentTick__Array *)0x0) goto code_?;
+    if ((pCVar9 != (CharacterControllerGizmo3D_ExtentTick *)0x0) &&
+       (iVar10 = func_?(pCVar9,(pCVar8->klass->_0).element_class), iVar10 == 0))
+    goto code_?;
+    if (pCVar8->max_length == 0) goto code_?;
+    pCVar8->vector[0] = pCVar9;
+    func_?(pCVar8->vector,pCVar9);
+    pCVar8 = (this->fields)._extentTicks;
+    if (pCVar8 == (CharacterControllerGizmo3D_ExtentTick__Array *)0x0) goto code_?;
+    if (pCVar8->max_length == 0) goto code_?;
+    pCVar9 = pCVar8->vector[0];
+    pGVar3 = (this->fields)._frontTick;
+    if (pCVar9 == (CharacterControllerGizmo3D_ExtentTick *)0x0) goto code_?;
+    (pCVar9->fields).Tick = pGVar3;
+    func_?(&(pCVar9->fields).Tick,pGVar3);
+    pCVar8 = (this->fields)._extentTicks;
+    pCVar9 = (CharacterControllerGizmo3D_ExtentTick *)
+              func_?(TypeInfo__RTG__CharacterControllerGizmo3D__ExtentTick);
+    UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+    UxmlObjectListAttributeDescription`1[System::Object]::
+    UxmlObjectListAttributeDescription_1_System_Object___ctor
+              ((UxmlObjectListAttributeDescription_1_System_Object_ *)pCVar9,(MethodInfo *)0x0);
+    if (pCVar8 == (CharacterControllerGizmo3D_ExtentTick__Array *)0x0) goto code_?;
+    if ((pCVar9 == (CharacterControllerGizmo3D_ExtentTick *)0x0) ||
+       (iVar10 = func_?(pCVar9,(pCVar8->klass->_0).element_class), iVar10 != 0)) {
+      if (pCVar8->max_length < 2) goto code_?;
+      pCVar8->vector[1] = pCVar9;
+      func_?(pCVar8->vector + 1,pCVar9);
+      pCVar8 = (this->fields)._extentTicks;
+      if (pCVar8 != (CharacterControllerGizmo3D_ExtentTick__Array *)0x0) {
+        if (pCVar8->max_length < 2) goto code_?;
+        pCVar9 = pCVar8->vector[1];
         pGVar3 = (this->fields)._backTick;
-        if (pCVar8 != (CharacterControllerGizmo3D_ExtentTick *)0x0) {
-          (pCVar8->fields).Tick = pGVar3;
-          func_?(&(pCVar8->fields).Tick,pGVar3);
+        if (pCVar9 != (CharacterControllerGizmo3D_ExtentTick *)0x0) {
+          (pCVar9->fields).Tick = pGVar3;
+          func_?(&(pCVar9->fields).Tick,pGVar3);
           if (cRam_? == '\0') {
             func_?(&TypeInfo__UnityEngine__Vector3);
             cRam_? = '\x01';
           }
-          pVVar10 = TypeInfo__UnityEngine__Vector3->static_fields;
-          uVar5 = (pVVar10->zeroVector).x;
-          uVar11 = (pVVar10->zeroVector).y;
-          fVar12 = (pVVar10->zeroVector).z;
+          pVVar11 = TypeInfo__UnityEngine__Vector3->static_fields;
+          uVar5 = (pVVar11->zeroVector).x;
+          uVar12 = (pVVar11->zeroVector).y;
+          fVar13 = (pVVar11->zeroVector).z;
           if (cRam_? == '\0') {
             func_?(&TypeInfo__UnityEngine__Vector3);
             cRam_? = '\x01';
           }
-          uVar13 = (TypeInfo__UnityEngine__Vector3->static_fields->rightVector).y;
-          uVar14 = uVar13 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
-          uVar15 = (uint)(TypeInfo__UnityEngine__Vector3->static_fields->rightVector).z ^
-                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+          uVar14 = (TypeInfo__UnityEngine__Vector3->static_fields->rightVector).y;
+          uVar15 = uVar14 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+          uVar16 = (uint)(TypeInfo__UnityEngine__Vector3->static_fields->rightVector).z ^
+                   __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
           if (cRam_? == '\0') {
             func_?(&TypeInfo__UnityEngine__Vector3);
             cRam_? = '\x01';
           }
-          pVVar16 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+          pVVar17 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
                               ((Vector3 *)&stack0xffffffdc,
                                TypeInfo__UnityEngine__Vector3->static_fields->forwardVector,
                                (MethodInfo *)0x0);
-          VVar17.y = (float)uVar11;
-          VVar17.x = (float)uVar5;
-          VVar17.z = fVar12;
-          auVar18._4_4_ = uVar15;
-          auVar18._0_4_ = uVar14;
-          auVar18._8_4_ = 0;
+          VVar18.y = (float)uVar12;
+          VVar18.x = (float)uVar5;
+          VVar18.z = fVar13;
+          auVar19._4_4_ = uVar16;
+          auVar19._0_4_ = uVar15;
+          auVar19._8_4_ = 0;
           arcPlane.m_Distance = 0.0;
-          arcPlane.m_Normal = *pVVar16;
-          pLVar19 = PrimitiveFactory::PrimitiveFactory_Generate3DArcBorderPoints
-                              (VVar17,(Vector3)(auVar18 << 0x20),arcPlane,-180.0,0,100,
+          arcPlane.m_Normal = *pVVar17;
+          pLVar20 = PrimitiveFactory::PrimitiveFactory_Generate3DArcBorderPoints
+                              (VVar18,(Vector3)(auVar19 << 0x20),arcPlane,-180.0,0,100,
                                (MethodInfo *)0x0);
-          (this->fields)._semiCirclePts = pLVar19;
+          (this->fields)._semiCirclePts = pLVar20;
           func_?();
           if (cRam_? == '\0') {
             func_?();
             cRam_? = '\x01';
           }
-          VVar17 = TypeInfo__UnityEngine__Vector3->static_fields->zeroVector;
+          VVar18 = TypeInfo__UnityEngine__Vector3->static_fields->zeroVector;
           if (cRam_? == '\0') {
             func_?();
             cRam_? = '\x01';
           }
-          pVVar10 = TypeInfo__UnityEngine__Vector3->static_fields;
-          uVar20 = (pVVar10->rightVector).x;
-          uVar21 = (pVVar10->rightVector).y;
-          fVar12 = (pVVar10->rightVector).z;
+          pVVar11 = TypeInfo__UnityEngine__Vector3->static_fields;
+          uVar21 = (pVVar11->rightVector).x;
+          uVar22 = (pVVar11->rightVector).y;
+          fVar13 = (pVVar11->rightVector).z;
           if (cRam_? == '\0') {
             func_?();
             cRam_? = '\x01';
           }
-          circleRight.y = (float)uVar21;
-          circleRight.x = (float)uVar20;
-          circleRight.z = fVar12;
-          fStack22 = fVar12;
-          pLVar19 = PrimitiveFactory::PrimitiveFactory_Generate3DCircleBorderPoints
-                              (VVar17,1.0,circleRight,
+          circleRight.y = (float)uVar22;
+          circleRight.x = (float)uVar21;
+          circleRight.z = fVar13;
+          fStack23 = fVar13;
+          pLVar20 = PrimitiveFactory::PrimitiveFactory_Generate3DCircleBorderPoints
+                              (VVar18,1.0,circleRight,
                                TypeInfo__UnityEngine__Vector3->static_fields->upVector,100,
                                (MethodInfo *)0x0);
-          (this->fields)._circlePts = pLVar19;
+          (this->fields)._circlePts = pLVar20;
           func_?();
           CharacterControllerGizmo3D_SetupSharedLookAndFeel(this,(MethodInfo *)0x0);
           return;
@@ -641,8 +667,8 @@ code_?:
   func_?(uVar5);
 code_?:
   func_?();
-  pcVar23 = (code *)swi(3);
-  (*pcVar23)();
+  pcVar24 = (code *)swi(3);
+  (*pcVar24)();
   return;
 }
 
@@ -750,11 +776,11 @@ code_?:
 code_?:
       uVar11 = pVVar5->x;
       uVar12 = pVVar5->y;
-      uVar13 = uVar12 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+      uVar13 = uVar12 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
       fVar3 = (float)((uint)pVVar5->z ^
-                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                      __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
       (this->fields)._offsetDragWorkData.Axis.x =
-           (float)(uVar11 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
+           (float)(uVar11 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field)
       ;
       (this->fields)._offsetDragWorkData.Axis.y = (float)uVar13;
       goto code_?;
@@ -1245,251 +1271,251 @@ void Assembly-CSharp.dll::RTG::CharacterControllerGizmo3D::CharacterControllerGi
     }
     pVVar3 = CharacterControllerGizmo3D_CalcWorldCenter
                         ((Vector3 *)&QStack_4,this,(MethodInfo *)0x0);
-    fVar5 = pVVar3->x;
-    uVar6 = pVVar3->y;
-    fVar7 = pVVar3->z;
-    pCVar8 = (this->fields)._targetController;
-    if (pCVar8 != (CharacterController *)0x0) {
-      fStack_9 = UnityEngine.PhysicsModule.dll::UnityEngine::CharacterController::
-                  CharacterController_get_radius(pCVar8,(MethodInfo *)0x0);
-      fVar10 = CharacterControllerGizmo3D_CalcRadiusScale(this,(MethodInfo *)0x0);
-      fStack_9 = fVar10 * fStack_9;
-      fStack_9 = CharacterControllerGizmo3D_CalcWorldHeight(this,(MethodInfo *)0x0);
+    uStack_5._0_4_ = pVVar3->x;
+    uStack_5._4_4_ = pVVar3->y;
+    fVar6 = pVVar3->z;
+    pCVar7 = (this->fields)._targetController;
+    if (pCVar7 != (CharacterController *)0x0) {
+      fStack_8 = UnityEngine.PhysicsModule.dll::UnityEngine::CharacterController::
+                  CharacterController_get_radius(pCVar7,(MethodInfo *)0x0);
+      fVar9 = CharacterControllerGizmo3D_CalcRadiusScale(this,(MethodInfo *)0x0);
+      fStack_8 = fVar9 * fStack_8;
+      fStack_8 = CharacterControllerGizmo3D_CalcWorldHeight(this,(MethodInfo *)0x0);
       if (cRam_? == '\0') {
         func_?();
         cRam_? = '\x01';
       }
-      pQVar11 = TypeInfo__UnityEngine__Quaternion->static_fields;
-      fVar10 = (pQVar11->identityQuaternion).x;
-      fVar12 = (pQVar11->identityQuaternion).y;
-      fVar13 = (pQVar11->identityQuaternion).z;
-      fVar14 = (pQVar11->identityQuaternion).w;
-      fStack_15 = (pQVar11->identityQuaternion).x;
-      puStack_16 = (undefined *)(pQVar11->identityQuaternion).y;
-      fVar17 = (pQVar11->identityQuaternion).z;
-      fVar18 = (pQVar11->identityQuaternion).w;
-      pCVar8 = (this->fields)._targetController;
-      if ((pCVar8 != (CharacterController *)0x0) &&
-         (pTVar19 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                              ((Component *)pCVar8,(MethodInfo *)0x0), pTVar19 != (Transform *)0x0))
+      pQVar10 = TypeInfo__UnityEngine__Quaternion->static_fields;
+      fVar9 = (pQVar10->identityQuaternion).x;
+      fVar11 = (pQVar10->identityQuaternion).y;
+      fVar12 = (pQVar10->identityQuaternion).z;
+      fVar13 = (pQVar10->identityQuaternion).w;
+      fStack_14 = (pQVar10->identityQuaternion).x;
+      puStack_15 = (undefined *)(pQVar10->identityQuaternion).y;
+      fVar16 = (pQVar10->identityQuaternion).z;
+      fVar17 = (pQVar10->identityQuaternion).w;
+      pCVar7 = (this->fields)._targetController;
+      if ((pCVar7 != (CharacterController *)0x0) &&
+         (pTVar18 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                              ((Component *)pCVar7,(MethodInfo *)0x0), pTVar18 != (Transform *)0x0))
       {
         pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
-                            ((Vector3 *)&QStack_4,pTVar19,(MethodInfo *)0x0);
-        rotation.y = (float)puStack_16;
-        rotation.x = fStack_15;
-        rotation.z = fVar17;
-        rotation.w = fVar18;
+                            ((Vector3 *)&QStack_4,pTVar18,(MethodInfo *)0x0);
+        rotation.y = (float)puStack_15;
+        rotation.x = fStack_14;
+        rotation.z = fVar16;
+        rotation.w = fVar17;
         pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
                             ((Vector3 *)&QStack_4,rotation,*pVVar3,(MethodInfo *)0x0);
-        uVar20 = pVVar3->x;
-        uVar21 = pVVar3->y;
-        fVar17 = pVVar3->z;
-        pCVar8 = (this->fields)._targetController;
-        if ((pCVar8 != (CharacterController *)0x0) &&
-           (pTVar19 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                ((Component *)pCVar8,(MethodInfo *)0x0), pTVar19 != (Transform *)0x0
+        uVar19 = pVVar3->x;
+        uVar20 = pVVar3->y;
+        fVar16 = pVVar3->z;
+        pCVar7 = (this->fields)._targetController;
+        if ((pCVar7 != (CharacterController *)0x0) &&
+           (pTVar18 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                ((Component *)pCVar7,(MethodInfo *)0x0), pTVar18 != (Transform *)0x0
            )) {
           pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
-                              ((Vector3 *)&QStack_4,pTVar19,(MethodInfo *)0x0);
-          rotation_00.y = fVar12;
-          rotation_00.x = fVar10;
-          rotation_00.z = fVar13;
-          rotation_00.w = fVar14;
+                              ((Vector3 *)&QStack_4,pTVar18,(MethodInfo *)0x0);
+          rotation_00.y = fVar11;
+          rotation_00.x = fVar9;
+          rotation_00.z = fVar12;
+          rotation_00.w = fVar13;
           pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
                               ((Vector3 *)&QStack_4,rotation_00,*pVVar3,(MethodInfo *)0x0);
-          uStack_22._0_4_ = pVVar3->x;
-          uStack_22._4_4_ = pVVar3->y;
-          fStack_23 = pVVar3->z;
-          pCVar8 = (this->fields)._targetController;
-          if ((pCVar8 != (CharacterController *)0x0) &&
-             (pTVar19 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                  ((Component *)pCVar8,(MethodInfo *)0x0),
-             pTVar19 != (Transform *)0x0)) {
+          uStack_21._0_4_ = pVVar3->x;
+          uStack_21._4_4_ = pVVar3->y;
+          fStack_22 = pVVar3->z;
+          pCVar7 = (this->fields)._targetController;
+          if ((pCVar7 != (CharacterController *)0x0) &&
+             (pTVar18 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                  ((Component *)pCVar7,(MethodInfo *)0x0),
+             pTVar18 != (Transform *)0x0)) {
             pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
-                                ((Vector3 *)&QStack_4,pTVar19,(MethodInfo *)0x0);
-            puVar24 = (undefined *)pVVar3->x;
-            fVar10 = pVVar3->y;
-            fVar13 = pVVar3->z;
-            QStack_25.w = (float)&UNK_?;
-            rotation_01.y = (float)puVar24;
-            rotation_01.x = (float)pTVar19;
-            rotation_01.z = fVar10;
-            rotation_01.w = fVar14;
+                                ((Vector3 *)&QStack_4,pTVar18,(MethodInfo *)0x0);
+            puVar23 = (undefined *)pVVar3->x;
+            fVar9 = pVVar3->y;
+            fVar12 = pVVar3->z;
+            QStack_24.w = (float)&UNK_?;
+            rotation_01.y = (float)puVar23;
+            rotation_01.x = (float)pTVar18;
+            rotation_01.z = fVar9;
+            rotation_01.w = fVar13;
             pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
                                 ((Vector3 *)&QStack_4,rotation_01,*pVVar3,(MethodInfo *)0x0);
-            uStack_26._0_4_ = pVVar3->x;
-            uStack_26._4_4_ = pVVar3->y;
-            fStack_27 = pVVar3->z;
+            uVar25 = pVVar3->x;
+            uVar26 = pVVar3->y;
+            fVar17 = pVVar3->z;
             if ((TypeInfo__RTG__Singleton<RTG::GizmoLineMaterial>->_1).cctor_finished_or_no_cctor ==
                 0) {
-              QStack_28.y = (float)TypeInfo__RTG__Singleton<RTG::GizmoLineMaterial>;
-              QStack_28.x = (float)&UNK_?;
+              uStack_5 = CONCAT44(uStack_5._4_4_,TypeInfo__RTG__Singleton<RTG::GizmoLineMaterial>)
+              ;
               func_?();
             }
-            QStack_28.y = (float)MethodInfo__RTG__Singleton<RTG::GizmoLineMaterial>__get_Get__;
-            QStack_28.x = (float)&UNK_?;
-            this_01 = (GizmoLineMaterial *)func_?();
+            this_01 = (GizmoLineMaterial *)
+                      Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
+                                (MethodInfo__RTG__Singleton<RTG::GizmoLineMaterial>__get_Get__);
             if (this_01 != (GizmoLineMaterial *)0x0) {
               GizmoLineMaterial::GizmoLineMaterial_ResetValuesToSensibleDefaults
                         (this_01,(MethodInfo *)0x0);
               if ((this->fields)._sharedLookAndFeel == (CharacterControllerGizmo3DLookAndFeel *)0x0)
               {
-                pCVar29 = (this->fields)._lookAndFeel;
-                if (pCVar29 == (CharacterControllerGizmo3DLookAndFeel *)0x0) goto code_?;
+                pCVar27 = (this->fields)._lookAndFeel;
+                if (pCVar27 == (CharacterControllerGizmo3DLookAndFeel *)0x0) goto code_?;
               }
               else {
-                pCVar29 = (this->fields)._sharedLookAndFeel;
+                pCVar27 = (this->fields)._sharedLookAndFeel;
               }
               GizmoLineMaterial::GizmoLineMaterial_SetColor
-                        (this_01,(pCVar29->fields)._wireColor,(MethodInfo *)0x0);
+                        (this_01,(pCVar27->fields)._wireColor,(MethodInfo *)0x0);
               GizmoLineMaterial::GizmoLineMaterial_SetPass(this_01,0,(MethodInfo *)0x0);
-              fVar18 = 0.0;
+              fVar28 = 0.0;
+              fVar29 = 0.0;
               fVar30 = 0.0;
               fVar31 = 0.0;
-              fVar32 = 0.0;
-              fStack_33 = fStack_9 - (fVar12 + fVar12);
-              if (0.0 < fStack_33) {
-                QStack_28.x = (float)uVar20;
-                QStack_28.y = 0.0;
-                QStack_28.z = 0.0;
-                QStack_28.w = 0.0;
-                QStack_4.z = (fVar7 - fVar17 * fVar12) - fStack_23 * fStack_33 * _UNK_?;
-                endPoint.y = ((float)uVar6 - (float)uVar21 * fVar12) +
-                             uStack_22._4_4_ * fStack_33 * _UNK_?;
-                endPoint.x = (fVar5 - (float)uVar20 * fVar12) +
-                             (float)uStack_22 * fStack_33 * _UNK_?;
-                startPoint.y = ((float)uVar6 - (float)uVar21 * fVar12) -
-                               uStack_22._4_4_ * fStack_33 * _UNK_?;
-                startPoint.x = (fVar5 - (float)uVar20 * fVar12) -
-                               (float)uStack_22 * fStack_33 * _UNK_?;
+              fStack_32 = fStack_8 - (fVar11 + fVar11);
+              if (0.0 < fStack_32) {
+                QStack_33.x = (float)uVar19;
+                QStack_33.y = 0.0;
+                QStack_33.z = 0.0;
+                QStack_33.w = 0.0;
+                QStack_4.z = (fVar6 - fVar16 * fVar11) - fStack_22 * fStack_32 * _UNK_?;
+                endPoint.y = (uStack_5._4_4_ - (float)uVar20 * fVar11) +
+                             uStack_21._4_4_ * fStack_32 * _UNK_?;
+                endPoint.x = ((float)uStack_5 - (float)uVar19 * fVar11) +
+                             (float)uStack_21 * fStack_32 * _UNK_?;
+                startPoint.y = (uStack_5._4_4_ - (float)uVar20 * fVar11) -
+                               uStack_21._4_4_ * fStack_32 * _UNK_?;
+                startPoint.x = ((float)uStack_5 - (float)uVar19 * fVar11) -
+                               (float)uStack_21 * fStack_32 * _UNK_?;
                 startPoint.z = QStack_4.z;
-                endPoint.z = (fVar7 - fVar17 * fVar12) + fStack_23 * fStack_33 * _UNK_?;
+                endPoint.z = (fVar6 - fVar16 * fVar11) + fStack_22 * fStack_32 * _UNK_?;
                 GLRenderer::GLRenderer_DrawLine3D(startPoint,endPoint,(MethodInfo *)0x0);
-                QStack_4.z = fVar17 * fVar12 + fVar7 + fStack_23 * fStack_33 * _UNK_?;
+                QStack_4.z = fVar16 * fVar11 + fVar6 + fStack_22 * fStack_32 * _UNK_?;
                 endPoint_00.y =
-                     (float)uVar21 * fVar12 + (float)uVar6 +
-                     uStack_22._4_4_ * fStack_33 * _UNK_?;
+                     (float)uVar20 * fVar11 + uStack_5._4_4_ +
+                     uStack_21._4_4_ * fStack_32 * _UNK_?;
                 endPoint_00.x =
-                     QStack_28.x * fVar12 + fVar5 + (float)uStack_22 * fStack_33 * _UNK_?;
+                     QStack_33.x * fVar11 + (float)uStack_5 +
+                     (float)uStack_21 * fStack_32 * _UNK_?;
                 startPoint_00.y =
-                     ((float)uVar6 + (float)uVar21 * fVar12) -
-                     uStack_22._4_4_ * fStack_33 * _UNK_?;
+                     (uStack_5._4_4_ + (float)uVar20 * fVar11) -
+                     uStack_21._4_4_ * fStack_32 * _UNK_?;
                 startPoint_00.x =
-                     (fVar5 + QStack_28.x * fVar12) - (float)uStack_22 * fStack_33 * _UNK_?;
-                startPoint_00.z = (fVar7 + fVar17 * fVar12) - fStack_23 * fStack_33 * _UNK_?
+                     ((float)uStack_5 + QStack_33.x * fVar11) -
+                     (float)uStack_21 * fStack_32 * _UNK_?;
+                startPoint_00.z = (fVar6 + fVar16 * fVar11) - fStack_22 * fStack_32 * _UNK_?
                 ;
                 endPoint_00.z = QStack_4.z;
                 GLRenderer::GLRenderer_DrawLine3D(startPoint_00,endPoint_00,(MethodInfo *)0x0);
-                QStack_4.z = (fVar7 - fStack_27 * fVar12) + fStack_23 * fStack_33 * _UNK_?;
+                QStack_4.z = (fVar6 - fVar17 * fVar11) + fStack_22 * fStack_32 * _UNK_?;
                 endPoint_01.y =
-                     ((float)uVar6 - uStack_26._4_4_ * fVar12) +
-                     uStack_22._4_4_ * fStack_33 * _UNK_?;
+                     (uStack_5._4_4_ - (float)uVar26 * fVar11) +
+                     uStack_21._4_4_ * fStack_32 * _UNK_?;
                 endPoint_01.x =
-                     (fVar5 - (float)uStack_26 * fVar12) +
-                     (float)uStack_22 * fStack_33 * _UNK_?;
+                     ((float)uStack_5 - (float)uVar25 * fVar11) +
+                     (float)uStack_21 * fStack_32 * _UNK_?;
                 startPoint_01.y =
-                     ((float)uVar6 - uStack_26._4_4_ * fVar12) -
-                     uStack_22._4_4_ * fStack_33 * _UNK_?;
+                     (uStack_5._4_4_ - (float)uVar26 * fVar11) -
+                     uStack_21._4_4_ * fStack_32 * _UNK_?;
                 startPoint_01.x =
-                     (fVar5 - (float)uStack_26 * fVar12) -
-                     (float)uStack_22 * fStack_33 * _UNK_?;
-                startPoint_01.z =
-                     (fVar7 - fStack_27 * fVar12) - fStack_23 * fStack_33 * _UNK_?;
+                     ((float)uStack_5 - (float)uVar25 * fVar11) -
+                     (float)uStack_21 * fStack_32 * _UNK_?;
+                startPoint_01.z = (fVar6 - fVar17 * fVar11) - fStack_22 * fStack_32 * _UNK_?
+                ;
                 endPoint_01.z = QStack_4.z;
                 GLRenderer::GLRenderer_DrawLine3D(startPoint_01,endPoint_01,(MethodInfo *)0x0);
-                QStack_4.z = fVar7 + fStack_27 * fVar12 + fStack_23 * fStack_33 * _UNK_?;
+                QStack_4.z = fVar6 + fVar17 * fVar11 + fStack_22 * fStack_32 * _UNK_?;
                 startPoint_02.y =
-                     ((float)uVar6 + uStack_26._4_4_ * fVar12) -
-                     uStack_22._4_4_ * fStack_33 * _UNK_?;
+                     (uStack_5._4_4_ + (float)uVar26 * fVar11) -
+                     uStack_21._4_4_ * fStack_32 * _UNK_?;
                 startPoint_02.x =
-                     (fVar5 + (float)uStack_26 * fVar12) -
-                     (float)uStack_22 * fStack_33 * _UNK_?;
-                startPoint_02.z =
-                     (fVar7 + fStack_27 * fVar12) - fStack_23 * fStack_33 * _UNK_?;
+                     ((float)uStack_5 + (float)uVar25 * fVar11) -
+                     (float)uStack_21 * fStack_32 * _UNK_?;
+                startPoint_02.z = (fVar6 + fVar17 * fVar11) - fStack_22 * fStack_32 * _UNK_?
+                ;
                 endPoint_02.y =
-                     (float)uVar6 + uStack_26._4_4_ * fVar12 +
-                     uStack_22._4_4_ * fStack_33 * _UNK_?;
+                     uStack_5._4_4_ + (float)uVar26 * fVar11 +
+                     uStack_21._4_4_ * fStack_32 * _UNK_?;
                 endPoint_02.x =
-                     fVar5 + (float)uStack_26 * fVar12 +
-                     (float)uStack_22 * fStack_33 * _UNK_?;
+                     (float)uStack_5 + (float)uVar25 * fVar11 +
+                     (float)uStack_21 * fStack_32 * _UNK_?;
                 endPoint_02.z = QStack_4.z;
-                fVar18 = fVar31;
-                fVar30 = fVar32;
+                fVar28 = fVar30;
+                fVar29 = fVar31;
                 GLRenderer::GLRenderer_DrawLine3D(startPoint_02,endPoint_02,(MethodInfo *)0x0);
               }
               QStack_4.w = 1.0;
-              fVar17 = fStack_9 * _UNK_? - fVar12;
-              QStack_28.x = fVar5 + (float)uStack_22 * fVar17;
-              QStack_28.w = 0.0;
-              fStack_33 = (float)uVar6 + uStack_22._4_4_ * fVar17;
-              fVar34 = fVar7 + fStack_23 * fVar17;
-              QStack_28.y = fVar18;
-              QStack_28.z = fVar30;
+              fVar16 = fStack_8 * _UNK_? - fVar11;
+              QStack_33.x = (float)uStack_5 + (float)uStack_21 * fVar16;
+              QStack_33.w = 0.0;
+              fStack_32 = uStack_5._4_4_ + uStack_21._4_4_ * fVar16;
+              fVar34 = fVar6 + fStack_22 * fVar16;
+              QStack_33.y = fVar28;
+              QStack_33.z = fVar29;
               UnityEngine.CoreModule.dll::UnityEngine::GL::GL_PushMatrix((MethodInfo *)0x0);
-              fVar32 = QStack_4.w;
-              QStack_28.z = QStack_28.y;
-              QStack_28.y = fStack_33;
-              QStack_28.w = 0.0;
-              pos.y = fStack_33;
-              pos.x = QStack_28.x;
+              fVar30 = QStack_4.w;
+              QStack_33.z = QStack_33.y;
+              QStack_33.y = fStack_32;
+              QStack_33.w = 0.0;
+              pos.y = fStack_32;
+              pos.x = QStack_33.x;
               pos.z = fVar34;
-              q.y = (float)puVar24;
-              q.x = fVar14;
-              q.z = fVar10;
-              q.w = fVar13;
-              s.y = fVar12;
-              s.x = fVar12;
+              q.y = (float)puVar23;
+              q.x = fVar13;
+              q.z = fVar9;
+              q.w = fVar12;
+              s.y = fVar11;
+              s.x = fVar11;
               s.z = QStack_4.w;
-              fVar35 = fVar12;
-              fVar36 = fVar12;
-              pMVar37 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
+              fVar31 = fVar11;
+              fVar35 = fVar11;
+              pMVar36 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
                                   ((Matrix4x4 *)&stack0xfffffed0,pos,q,s,(MethodInfo *)0x0);
-              UnityEngine.CoreModule.dll::UnityEngine::GL::GL_MultMatrix(*pMVar37,(MethodInfo *)0x0)
+              UnityEngine.CoreModule.dll::UnityEngine::GL::GL_MultMatrix(*pMVar36,(MethodInfo *)0x0)
               ;
               GLRenderer::GLRenderer_DrawLines3D((this->fields)._semiCirclePts,(MethodInfo *)0x0);
               UnityEngine.CoreModule.dll::UnityEngine::GL::GL_PopMatrix((MethodInfo *)0x0);
               UnityEngine.CoreModule.dll::UnityEngine::GL::GL_PushMatrix((MethodInfo *)0x0);
-              fStack_15 = _UNK_?;
-              puStack_16 = (undefined *)0x0;
+              fStack_14 = _UNK_?;
+              puStack_15 = (undefined *)0x0;
               QStack_4.z = 0.0;
-              auVar38._4_8_ = 0;
-              auVar38._0_4_ = _UNK_?;
-              QStack_25.x = (float)puVar24;
-              pQVar39 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
+              auVar37._4_8_ = 0;
+              auVar37._0_4_ = _UNK_?;
+              QStack_24.x = (float)puVar23;
+              pQVar38 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
                         Quaternion_Internal_FromEulerRad
-                                  (&QStack_25,(Vector3)(auVar38 << 0x20),(MethodInfo *)0x0);
-              fVar17 = pQVar39->x;
-              fVar18 = pQVar39->y;
-              fVar30 = pQVar39->z;
-              fVar31 = pQVar39->w;
-              uStack_26 = CONCAT44(fVar10,fVar10);
-              QStack_4.x = (fVar17 * fVar13 + fVar31 * fVar14 + fVar18 * fVar10) -
-                            fVar30 * QStack_25.x;
-              QStack_4.y = (fVar31 * QStack_25.x + fVar18 * fVar13 + fVar30 * fVar14) -
-                            fVar17 * fVar10;
-              QStack_4.z = (fVar30 * fVar13 + fVar31 * fVar10 + fVar17 * QStack_25.x) -
-                            fVar18 * fVar14;
-              QStack_4.w = ((fVar31 * fVar13 - fVar17 * fVar14) - fVar18 * QStack_25.x) -
-                            fVar30 * fVar10;
-              pos_00.y = QStack_28.y;
-              pos_00.x = QStack_28.x;
+                                  (&QStack_24,(Vector3)(auVar37 << 0x20),(MethodInfo *)0x0);
+              fVar16 = pQVar38->x;
+              fVar17 = pQVar38->y;
+              fVar28 = pQVar38->z;
+              fVar29 = pQVar38->w;
+              QStack_4.x = (fVar12 * fVar16 + fVar13 * fVar29 + fVar9 * fVar17) -
+                            QStack_24.x * fVar28;
+              QStack_4.y = (fVar12 * fVar17 + QStack_24.x * fVar29 + fVar13 * fVar28) -
+                            fVar9 * fVar16;
+              QStack_4.z = (fVar12 * fVar28 + fVar9 * fVar29 + QStack_24.x * fVar16) -
+                            fVar13 * fVar17;
+              QStack_4.w = ((fVar12 * fVar29 - fVar13 * fVar16) - QStack_24.x * fVar17) -
+                            fVar9 * fVar28;
+              pos_00.y = QStack_33.y;
+              pos_00.x = QStack_33.x;
               pos_00.z = fVar34;
               q_00.y = QStack_4.y;
               q_00.x = QStack_4.x;
               q_00.z = QStack_4.z;
               q_00.w = QStack_4.w;
-              s_00.y = fVar12;
-              s_00.x = fVar35;
-              s_00.z = fVar32;
-              QStack_25.y = QStack_25.x;
-              QStack_25.z = QStack_25.x;
-              QStack_25.w = QStack_25.x;
-              fStack_40 = fVar10;
-              fStack_27 = fVar10;
-              pMVar37 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
+              s_00.y = fVar11;
+              s_00.x = fVar31;
+              s_00.z = fVar30;
+              QStack_24.y = QStack_24.x;
+              QStack_24.z = QStack_24.x;
+              QStack_24.w = QStack_24.x;
+              fStack_32 = QStack_4.x;
+              pMVar36 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
                                   ((Matrix4x4 *)&stack0xfffffed0,pos_00,q_00,s_00,(MethodInfo *)0x0)
               ;
-              UnityEngine.CoreModule.dll::UnityEngine::GL::GL_MultMatrix(*pMVar37,(MethodInfo *)0x0)
+              UnityEngine.CoreModule.dll::UnityEngine::GL::GL_MultMatrix(*pMVar36,(MethodInfo *)0x0)
               ;
               GLRenderer::GLRenderer_DrawLines3D((this->fields)._semiCirclePts,(MethodInfo *)0x0);
               UnityEngine.CoreModule.dll::UnityEngine::GL::GL_PopMatrix((MethodInfo *)0x0);
@@ -1497,128 +1523,127 @@ void Assembly-CSharp.dll::RTG::CharacterControllerGizmo3D::CharacterControllerGi
               QStack_4.z = 0.0;
               euler.y = 0.0;
               euler.z = 0.0;
-              euler.x = fStack_15;
-              pQVar39 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
+              euler.x = fStack_14;
+              pQVar38 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
                         Quaternion_Internal_FromEulerRad(&QStack_4,euler,(MethodInfo *)0x0);
-              fVar10 = pQVar39->x;
-              fVar17 = pQVar39->y;
-              fVar18 = pQVar39->z;
-              fVar30 = pQVar39->w;
-              pos_01.y = QStack_28.y;
-              pos_01.x = QStack_28.x;
+              fVar16 = pQVar38->x;
+              fVar17 = pQVar38->y;
+              fVar28 = pQVar38->z;
+              fVar29 = pQVar38->w;
+              fStack_32 = (fVar12 * fVar16 + fVar13 * fVar29 + fVar9 * fVar17) -
+                          QStack_24.x * fVar28;
+              pos_01.y = QStack_33.y;
+              pos_01.x = QStack_33.x;
               pos_01.z = fVar34;
-              q_01.y = (fVar30 * QStack_25.x + fVar17 * fVar13 + fVar18 * fVar14) -
-                       fVar10 * fStack_40;
-              q_01.x = (fVar10 * fVar13 + fVar30 * fVar14 + fVar17 * fStack_40) -
-                       fVar18 * QStack_25.x;
-              q_01.z = (fVar18 * fVar13 + fVar30 * fStack_40 + fVar10 * QStack_25.x) -
-                       fVar17 * fVar14;
-              q_01.w = ((fVar30 * fVar13 - fVar10 * fVar14) - fVar17 * QStack_25.x) -
-                       fVar18 * fStack_40;
-              s_01.y = fVar36;
-              s_01.x = fVar36;
-              s_01.z = fVar36;
-              QStack_4.w = fVar36;
-              pMVar37 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
+              q_01.y = (fVar12 * fVar17 + QStack_24.x * fVar29 + fVar13 * fVar28) - fVar9 * fVar16;
+              q_01.x = fStack_32;
+              q_01.z = (fVar12 * fVar28 + fVar9 * fVar29 + QStack_24.x * fVar16) - fVar13 * fVar17;
+              q_01.w = ((fVar12 * fVar29 - fVar13 * fVar16) - QStack_24.x * fVar17) - fVar9 * fVar28
+              ;
+              s_01.y = fVar35;
+              s_01.x = fVar35;
+              s_01.z = fVar35;
+              QStack_4.w = fVar35;
+              pMVar36 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
                                   ((Matrix4x4 *)&stack0xfffffed0,pos_01,q_01,s_01,(MethodInfo *)0x0)
               ;
-              UnityEngine.CoreModule.dll::UnityEngine::GL::GL_MultMatrix(*pMVar37,(MethodInfo *)0x0)
+              UnityEngine.CoreModule.dll::UnityEngine::GL::GL_MultMatrix(*pMVar36,(MethodInfo *)0x0)
               ;
               GLRenderer::GLRenderer_DrawLines3D((this->fields)._circlePts,(MethodInfo *)0x0);
               UnityEngine.CoreModule.dll::UnityEngine::GL::GL_PopMatrix((MethodInfo *)0x0);
-              fVar10 = fStack_9 * _UNK_? - fVar36;
-              fVar5 = fVar5 - (float)uStack_22 * fVar10;
-              fStack_9 = (float)uVar6 - uStack_22._4_4_ * fVar10;
-              fVar7 = fVar7 - fStack_23 * fVar10;
+              fVar16 = fStack_8 * _UNK_? - fVar35;
+              uStack_5._0_4_ = (float)uStack_5 - (float)uStack_21 * fVar16;
+              fStack_32 = uStack_5._4_4_ - uStack_21._4_4_ * fVar16;
+              fVar6 = fVar6 - fStack_22 * fVar16;
               UnityEngine.CoreModule.dll::UnityEngine::GL::GL_PushMatrix((MethodInfo *)0x0);
               QStack_4.z = 3.1415927;
-              pQVar39 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
+              pQVar38 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
                         Quaternion_Internal_FromEulerRad
-                                  (&QStack_28,(Vector3)(ZEXT412(0x40490fdb) << 0x40),
+                                  (&QStack_33,(Vector3)(ZEXT412(0x40490fdb) << 0x40),
                                    (MethodInfo *)0x0);
-              fVar10 = pQVar39->x;
-              fVar17 = pQVar39->y;
-              fVar18 = pQVar39->z;
-              fVar30 = pQVar39->w;
-              QStack_28.x = (fVar10 * fVar13 + fVar30 * fVar14 + fVar17 * fStack_40) -
-                            fVar18 * QStack_25.x;
-              QStack_28.y = (fVar30 * QStack_25.x + fVar17 * fVar13 + fVar18 * fVar14) -
-                            fVar10 * fStack_40;
-              QStack_28.z = (fVar18 * fVar13 + fVar30 * fStack_40 + fVar10 * QStack_25.x) -
-                            fVar17 * fVar14;
-              QStack_28.w = ((fVar30 * fVar13 - fVar10 * fVar14) - fVar17 * QStack_25.x) -
-                            fVar18 * fStack_40;
-              pos_02.y = fStack_9;
-              pos_02.x = fVar5;
-              pos_02.z = fVar7;
-              q_02.y = QStack_28.y;
-              q_02.x = QStack_28.x;
-              q_02.z = QStack_28.z;
-              q_02.w = QStack_28.w;
-              s_02.y = fVar12;
-              s_02.x = fVar35;
-              s_02.z = fVar32;
-              fVar30 = fStack_9;
-              pMVar37 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
+              fVar16 = pQVar38->x;
+              fVar17 = pQVar38->y;
+              fVar28 = pQVar38->z;
+              fVar29 = pQVar38->w;
+              QStack_33.x = (fVar12 * fVar16 + fVar13 * fVar29 + fVar9 * fVar17) -
+                            QStack_24.x * fVar28;
+              QStack_33.y = (fVar12 * fVar17 + QStack_24.x * fVar29 + fVar13 * fVar28) -
+                            fVar9 * fVar16;
+              QStack_33.z = (fVar12 * fVar28 + fVar9 * fVar29 + QStack_24.x * fVar16) -
+                            fVar13 * fVar17;
+              QStack_33.w = ((fVar12 * fVar29 - fVar13 * fVar16) - QStack_24.x * fVar17) -
+                            fVar9 * fVar28;
+              pos_02.y = fStack_32;
+              pos_02.x = (float)uStack_5;
+              pos_02.z = fVar6;
+              q_02.y = QStack_33.y;
+              q_02.x = QStack_33.x;
+              q_02.z = QStack_33.z;
+              q_02.w = QStack_33.w;
+              s_02.y = fVar11;
+              s_02.x = fVar31;
+              s_02.z = fVar30;
+              fVar29 = fStack_32;
+              fStack_8 = QStack_33.x;
+              pMVar36 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
                                   ((Matrix4x4 *)&stack0xfffffed0,pos_02,q_02,s_02,(MethodInfo *)0x0)
               ;
-              UnityEngine.CoreModule.dll::UnityEngine::GL::GL_MultMatrix(*pMVar37,(MethodInfo *)0x0)
+              UnityEngine.CoreModule.dll::UnityEngine::GL::GL_MultMatrix(*pMVar36,(MethodInfo *)0x0)
               ;
               GLRenderer::GLRenderer_DrawLines3D((this->fields)._semiCirclePts,(MethodInfo *)0x0);
               UnityEngine.CoreModule.dll::UnityEngine::GL::GL_PopMatrix((MethodInfo *)0x0);
               UnityEngine.CoreModule.dll::UnityEngine::GL::GL_PushMatrix((MethodInfo *)0x0);
               QStack_4.z = 0.0;
-              auVar41._4_8_ = 0;
-              auVar41._0_4_ = fStack_15;
-              pQVar39 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
+              auVar39._4_8_ = 0;
+              auVar39._0_4_ = fStack_14;
+              pQVar38 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
                         Quaternion_Internal_FromEulerRad
-                                  (&QStack_28,(Vector3)(auVar41 << 0x20),(MethodInfo *)0x0);
-              QStack_28.x = pQVar39->x;
-              QStack_28.y = pQVar39->y;
-              QStack_28.z = pQVar39->z;
-              QStack_28.w = pQVar39->w;
+                                  (&QStack_33,(Vector3)(auVar39 << 0x20),(MethodInfo *)0x0);
+              QStack_33.x = pQVar38->x;
+              QStack_33.y = pQVar38->y;
+              QStack_33.z = pQVar38->z;
+              QStack_33.w = pQVar38->w;
               QStack_4.z = 3.1415927;
-              pQVar39 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
+              pQVar38 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
                         Quaternion_Internal_FromEulerRad
                                   (&QStack_4,(Vector3)(ZEXT412(0x40490fdb) << 0x40),
                                    (MethodInfo *)0x0);
-              fVar10 = pQVar39->x;
-              fVar17 = pQVar39->y;
-              fVar18 = pQVar39->z;
-              QStack_4.y = pQVar39->w;
-              fStack_9 = (QStack_4.y * QStack_28.x + fVar10 * QStack_28.w + fVar18 * QStack_28.y) -
-                          fVar17 * QStack_28.z;
-              fStack_33 = (QStack_28.y * QStack_4.y + fVar17 * QStack_28.w + QStack_28.z * fVar10) -
-                          fVar18 * QStack_28.x;
-              fVar31 = (QStack_28.z * QStack_4.y + fVar18 * QStack_28.w + fVar17 * QStack_28.x) -
-                       QStack_28.y * fVar10;
-              QStack_4.x = QStack_4.y * QStack_28.w;
-              fVar10 = ((QStack_4.x - QStack_28.x * fVar10) - fVar17 * QStack_28.y) -
-                      QStack_28.z * fVar18;
-              QStack_28.x = (fStack_9 * fVar13 + fVar10 * fVar14 + fStack_33 * fStack_40) -
-                            fVar31 * QStack_25.x;
-              QStack_28.y = (fStack_33 * fVar13 + fVar10 * QStack_25.x + fVar31 * fVar14) -
-                            fStack_9 * fStack_40;
-              QStack_28.z = (fVar31 * fVar13 + fVar10 * fStack_40 + fStack_9 * QStack_25.x) -
-                            fStack_33 * fVar14;
-              QStack_28.w = ((fVar10 * fVar13 - fStack_9 * fVar14) - fStack_33 * QStack_25.x) -
-                            fVar31 * fStack_40;
-              pos_03.y = fVar30;
-              pos_03.x = fVar5;
-              pos_03.z = fVar7;
-              q_03.y = QStack_28.y;
-              q_03.x = QStack_28.x;
-              q_03.z = QStack_28.z;
-              q_03.w = QStack_28.w;
-              s_03.y = fVar12;
-              s_03.x = fVar35;
-              s_03.z = fVar32;
+              fVar16 = pQVar38->x;
+              fVar17 = pQVar38->y;
+              fVar28 = pQVar38->z;
+              QStack_4.y = pQVar38->w;
+              fStack_8 = (QStack_4.y * QStack_33.x + fVar16 * QStack_33.w + fVar28 * QStack_33.y)
+                          - fVar17 * QStack_33.z;
+              fStack_32 = (QStack_33.y * QStack_4.y + fVar17 * QStack_33.w + QStack_33.z * fVar16)
+                          - fVar28 * QStack_33.x;
+              fVar34 = (QStack_33.z * QStack_4.y + fVar28 * QStack_33.w + fVar17 * QStack_33.x) -
+                       QStack_33.y * fVar16;
+              QStack_4.x = ((QStack_4.y * QStack_33.w - QStack_33.x * fVar16) -
+                            fVar17 * QStack_33.y) - QStack_33.z * fVar28;
+              QStack_33.x = (fVar12 * fStack_8 + fVar13 * QStack_4.x + fVar9 * fStack_32) -
+                            QStack_24.x * fVar34;
+              QStack_33.y = (fVar12 * fStack_32 + QStack_24.x * QStack_4.x + fVar13 * fVar34) -
+                            fVar9 * fStack_8;
+              QStack_33.z = (fVar12 * fVar34 + fVar9 * QStack_4.x + QStack_24.x * fStack_8) -
+                            fVar13 * fStack_32;
+              QStack_33.w = ((fVar12 * QStack_4.x - fVar13 * fStack_8) - QStack_24.x * fStack_32)
+                            - fVar9 * fVar34;
+              pos_03.y = fVar29;
+              pos_03.x = (float)uStack_5;
+              pos_03.z = fVar6;
+              q_03.y = QStack_33.y;
+              q_03.x = QStack_33.x;
+              q_03.z = QStack_33.z;
+              q_03.w = QStack_33.w;
+              s_03.y = fVar11;
+              s_03.x = fVar31;
+              s_03.z = fVar30;
               QStack_4.z = QStack_4.y;
               QStack_4.w = QStack_4.y;
-              pMVar37 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
+              pMVar36 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
                                   ((Matrix4x4 *)&stack0xfffffed0,pos_03,q_03,s_03,(MethodInfo *)0x0)
               ;
-              UnityEngine.CoreModule.dll::UnityEngine::GL::GL_MultMatrix(*pMVar37,(MethodInfo *)0x0)
+              UnityEngine.CoreModule.dll::UnityEngine::GL::GL_MultMatrix(*pMVar36,(MethodInfo *)0x0)
               ;
               GLRenderer::GLRenderer_DrawLines3D((this->fields)._semiCirclePts,(MethodInfo *)0x0);
               UnityEngine.CoreModule.dll::UnityEngine::GL::GL_PopMatrix((MethodInfo *)0x0);
@@ -1626,59 +1651,59 @@ void Assembly-CSharp.dll::RTG::CharacterControllerGizmo3D::CharacterControllerGi
               QStack_4.z = 0.0;
               euler_00.y = 0.0;
               euler_00.z = 0.0;
-              euler_00.x = fStack_15;
-              pQVar39 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
+              euler_00.x = fStack_14;
+              pQVar38 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
                         Quaternion_Internal_FromEulerRad
-                                  ((Quaternion *)&fStack_15,euler_00,(MethodInfo *)0x0);
-              fVar10 = pQVar39->x;
-              fVar12 = pQVar39->y;
-              fVar17 = pQVar39->z;
-              fVar18 = pQVar39->w;
-              QStack_28.x = (fVar10 * fVar13 + fVar18 * fVar14 + fVar12 * fStack_40) -
-                            fVar17 * QStack_25.x;
-              QStack_28.y = (fVar18 * QStack_25.x + fVar12 * fVar13 + fVar17 * fVar14) -
-                            fVar10 * fStack_40;
-              QStack_28.z = (fVar17 * fVar13 + fVar18 * fStack_40 + fVar10 * QStack_25.x) -
-                            fVar12 * fVar14;
-              QStack_28.w = ((fVar18 * fVar13 - fVar10 * fVar14) - fVar12 * QStack_25.x) -
-                            fVar17 * fStack_40;
-              pos_04.y = fVar30;
-              pos_04.x = fVar5;
-              pos_04.z = fVar7;
-              q_04.y = QStack_28.y;
-              q_04.x = QStack_28.x;
-              q_04.z = QStack_28.z;
-              q_04.w = QStack_28.w;
-              s_04.y = fVar36;
-              s_04.x = fVar36;
-              s_04.z = fVar36;
-              QStack_4.w = fVar36;
-              pMVar37 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
+                                  ((Quaternion *)&fStack_14,euler_00,(MethodInfo *)0x0);
+              fVar11 = pQVar38->x;
+              fVar16 = pQVar38->y;
+              fVar17 = pQVar38->z;
+              fVar28 = pQVar38->w;
+              QStack_33.x = (fVar12 * fVar11 + fVar13 * fVar28 + fVar9 * fVar16) -
+                            QStack_24.x * fVar17;
+              QStack_33.y = (fVar12 * fVar16 + QStack_24.x * fVar28 + fVar13 * fVar17) -
+                            fVar9 * fVar11;
+              QStack_33.z = (fVar12 * fVar17 + fVar9 * fVar28 + QStack_24.x * fVar11) -
+                            fVar13 * fVar16;
+              QStack_33.w = ((fVar12 * fVar28 - fVar13 * fVar11) - QStack_24.x * fVar16) -
+                            fVar9 * fVar17;
+              pos_04.y = fVar29;
+              pos_04.x = (float)uStack_5;
+              pos_04.z = fVar6;
+              q_04.y = QStack_33.y;
+              q_04.x = QStack_33.x;
+              q_04.z = QStack_33.z;
+              q_04.w = QStack_33.w;
+              s_04.y = fVar35;
+              s_04.x = fVar35;
+              s_04.z = fVar35;
+              QStack_4.w = fVar35;
+              pMVar36 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
                                   ((Matrix4x4 *)&stack0xfffffed0,pos_04,q_04,s_04,(MethodInfo *)0x0)
               ;
-              UnityEngine.CoreModule.dll::UnityEngine::GL::GL_MultMatrix(*pMVar37,(MethodInfo *)0x0)
+              UnityEngine.CoreModule.dll::UnityEngine::GL::GL_MultMatrix(*pMVar36,(MethodInfo *)0x0)
               ;
               GLRenderer::GLRenderer_DrawLines3D((this->fields)._circlePts,(MethodInfo *)0x0);
               UnityEngine.CoreModule.dll::UnityEngine::GL::GL_PopMatrix((MethodInfo *)0x0);
               CharacterControllerGizmo3D_UpdateTickColors(this,camera,(MethodInfo *)0x0);
-              pGVar42 = (this->fields)._leftTick;
-              if (pGVar42 != (GizmoCap2D *)0x0) {
-                (*(code *)(pGVar42->klass->vtable).Render_1.method)();
-                pGVar42 = (this->fields)._rightTick;
-                if (pGVar42 != (GizmoCap2D *)0x0) {
-                  (*(code *)(pGVar42->klass->vtable).Render_1.method)();
-                  pGVar42 = (this->fields)._topTick;
-                  if (pGVar42 != (GizmoCap2D *)0x0) {
-                    (*(code *)(pGVar42->klass->vtable).Render_1.method)();
-                    pGVar42 = (this->fields)._bottomTick;
-                    if (pGVar42 != (GizmoCap2D *)0x0) {
-                      (*(code *)(pGVar42->klass->vtable).Render_1.method)();
-                      pGVar42 = (this->fields)._frontTick;
-                      if (pGVar42 != (GizmoCap2D *)0x0) {
-                        (*(code *)(pGVar42->klass->vtable).Render_1.method)();
-                        pGVar42 = (this->fields)._backTick;
-                        if (pGVar42 != (GizmoCap2D *)0x0) {
-                          (*(code *)(pGVar42->klass->vtable).Render_1.method)();
+              pGVar40 = (this->fields)._leftTick;
+              if (pGVar40 != (GizmoCap2D *)0x0) {
+                (*(code *)(pGVar40->klass->vtable).Render_1.method)();
+                pGVar40 = (this->fields)._rightTick;
+                if (pGVar40 != (GizmoCap2D *)0x0) {
+                  (*(code *)(pGVar40->klass->vtable).Render_1.method)();
+                  pGVar40 = (this->fields)._topTick;
+                  if (pGVar40 != (GizmoCap2D *)0x0) {
+                    (*(code *)(pGVar40->klass->vtable).Render_1.method)();
+                    pGVar40 = (this->fields)._bottomTick;
+                    if (pGVar40 != (GizmoCap2D *)0x0) {
+                      (*(code *)(pGVar40->klass->vtable).Render_1.method)();
+                      pGVar40 = (this->fields)._frontTick;
+                      if (pGVar40 != (GizmoCap2D *)0x0) {
+                        (*(code *)(pGVar40->klass->vtable).Render_1.method)();
+                        pGVar40 = (this->fields)._backTick;
+                        if (pGVar40 != (GizmoCap2D *)0x0) {
+                          (*(code *)(pGVar40->klass->vtable).Render_1.method)();
                           return;
                         }
                       }
@@ -1694,8 +1719,8 @@ void Assembly-CSharp.dll::RTG::CharacterControllerGizmo3D::CharacterControllerGi
   }
 code_?:
   func_?();
-  pcVar43 = (code *)swi(3);
-  (*pcVar43)();
+  pcVar41 = (code *)swi(3);
+  (*pcVar41)();
   return;
 }
 
@@ -1797,32 +1822,65 @@ void Assembly-CSharp.dll::RTG::CharacterControllerGizmo3D::
 
 {
   if ((this->fields)._sharedLookAndFeel == (CharacterControllerGizmo3DLookAndFeel *)0x0) {
-    pCVar1 = (this->fields)._lookAndFeel;
-    if (pCVar1 == (CharacterControllerGizmo3DLookAndFeel *)0x0) goto code_?;
+    pPVar1 = (PointLightGizmo3DLookAndFeel *)(this->fields)._lookAndFeel;
+    if (pPVar1 == (PointLightGizmo3DLookAndFeel *)0x0) goto code_?;
   }
   else {
-    pCVar1 = (this->fields)._sharedLookAndFeel;
+    pPVar1 = (PointLightGizmo3DLookAndFeel *)(this->fields)._sharedLookAndFeel;
   }
-  pGVar2 = (pCVar1->fields)._tickLookAndFeel;
-  pGVar3 = (this->fields)._rightTick;
-  if (pGVar2 != (GizmoCap2DLookAndFeel__Array *)0x0) {
-    if (pGVar2->max_length == 0) {
-      func_?();
-    }
-    else {
-      pGVar4 = pGVar2->vector[0];
-      if (pGVar3 != (GizmoCap2D *)0x0) {
-        (pGVar3->fields)._sharedLookAndFeel = pGVar4;
-        ppGVar5 = &(pGVar3->fields)._sharedLookAndFeel;
-        func_?(ppGVar5,&stack0xfffffffc,&UNK_?,ppGVar5,pGVar4);
-        return;
-      }
-    }
+  PointLightGizmo3DLookAndFeel::PointLightGizmo3DLookAndFeel_ConnectTickLookAndFeel
+            (pPVar1,(this->fields)._rightTick,0,AxisSign__Enum_Positive,(MethodInfo *)0x0);
+  if ((this->fields)._sharedLookAndFeel == (CharacterControllerGizmo3DLookAndFeel *)0x0) {
+    pPVar1 = (PointLightGizmo3DLookAndFeel *)(this->fields)._lookAndFeel;
+    if (pPVar1 == (PointLightGizmo3DLookAndFeel *)0x0) goto code_?;
   }
+  else {
+    pPVar1 = (PointLightGizmo3DLookAndFeel *)(this->fields)._sharedLookAndFeel;
+  }
+  PointLightGizmo3DLookAndFeel::PointLightGizmo3DLookAndFeel_ConnectTickLookAndFeel
+            (pPVar1,(this->fields)._topTick,1,AxisSign__Enum_Positive,(MethodInfo *)0x0);
+  if ((this->fields)._sharedLookAndFeel == (CharacterControllerGizmo3DLookAndFeel *)0x0) {
+    pPVar1 = (PointLightGizmo3DLookAndFeel *)(this->fields)._lookAndFeel;
+    if (pPVar1 == (PointLightGizmo3DLookAndFeel *)0x0) goto code_?;
+  }
+  else {
+    pPVar1 = (PointLightGizmo3DLookAndFeel *)(this->fields)._sharedLookAndFeel;
+  }
+  PointLightGizmo3DLookAndFeel::PointLightGizmo3DLookAndFeel_ConnectTickLookAndFeel
+            (pPVar1,(this->fields)._backTick,2,AxisSign__Enum_Positive,(MethodInfo *)0x0);
+  if ((this->fields)._sharedLookAndFeel == (CharacterControllerGizmo3DLookAndFeel *)0x0) {
+    pPVar1 = (PointLightGizmo3DLookAndFeel *)(this->fields)._lookAndFeel;
+    if (pPVar1 == (PointLightGizmo3DLookAndFeel *)0x0) goto code_?;
+  }
+  else {
+    pPVar1 = (PointLightGizmo3DLookAndFeel *)(this->fields)._sharedLookAndFeel;
+  }
+  PointLightGizmo3DLookAndFeel::PointLightGizmo3DLookAndFeel_ConnectTickLookAndFeel
+            (pPVar1,(this->fields)._leftTick,0,AxisSign__Enum_Negative,(MethodInfo *)0x0);
+  if ((this->fields)._sharedLookAndFeel == (CharacterControllerGizmo3DLookAndFeel *)0x0) {
+    pPVar1 = (PointLightGizmo3DLookAndFeel *)(this->fields)._lookAndFeel;
+    if (pPVar1 == (PointLightGizmo3DLookAndFeel *)0x0) goto code_?;
+  }
+  else {
+    pPVar1 = (PointLightGizmo3DLookAndFeel *)(this->fields)._sharedLookAndFeel;
+  }
+  PointLightGizmo3DLookAndFeel::PointLightGizmo3DLookAndFeel_ConnectTickLookAndFeel
+            (pPVar1,(this->fields)._bottomTick,1,AxisSign__Enum_Negative,(MethodInfo *)0x0);
+  if ((this->fields)._sharedLookAndFeel == (CharacterControllerGizmo3DLookAndFeel *)0x0) {
+    pPVar1 = (PointLightGizmo3DLookAndFeel *)(this->fields)._lookAndFeel;
+    if (pPVar1 == (PointLightGizmo3DLookAndFeel *)0x0) {
 code_?:
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+      func_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+  }
+  else {
+    pPVar1 = (PointLightGizmo3DLookAndFeel *)(this->fields)._sharedLookAndFeel;
+  }
+  PointLightGizmo3DLookAndFeel::PointLightGizmo3DLookAndFeel_ConnectTickLookAndFeel
+            (pPVar1,(this->fields)._frontTick,2,AxisSign__Enum_Negative,(MethodInfo *)0x0);
   return;
 }
 
@@ -1834,393 +1892,452 @@ void Assembly-CSharp.dll::RTG::CharacterControllerGizmo3D::CharacterControllerGi
 
 {
   this_00 = (this->fields)._._gizmo;
+  fVar1 = VStack_2.z;
+  fVar3 = VStack_4.z;
   if (this_00 != (Gizmo *)0x0) {
-    pCVar1 = Gizmo::Gizmo_GetWorkCamera(this_00,(MethodInfo *)0x0);
+    pCVar5 = Gizmo::Gizmo_GetWorkCamera(this_00,(MethodInfo *)0x0);
     CharacterControllerGizmo3D_CalcWorldCenter((Vector3 *)&stack0xffffffe0,this,(MethodInfo *)0x0);
-    pCVar2 = (this->fields)._targetController;
-    if (pCVar2 != (CharacterController *)0x0) {
-      fVar3 = UnityEngine.PhysicsModule.dll::UnityEngine::CharacterController::
-               CharacterController_get_radius(pCVar2,(MethodInfo *)0x0);
-      fVar4 = CharacterControllerGizmo3D_CalcRadiusScale(this,(MethodInfo *)0x0);
-      fVar4 = fVar4 * fVar3;
-      pCVar2 = (this->fields)._targetController;
-      if (pCVar2 != (CharacterController *)0x0) {
-        UnityEngine.PhysicsModule.dll::UnityEngine::CharacterController::
-        CharacterController_get_height(pCVar2,(MethodInfo *)0x0);
-        pCVar2 = (this->fields)._targetController;
-        if (pCVar2 != (CharacterController *)0x0) {
-          pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                              ((Component *)pCVar2,(MethodInfo *)0x0);
-          if (pTVar5 != (Transform *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale
-                      ((Vector3 *)&stack0xffffffe0,pTVar5,(MethodInfo *)0x0);
+    pCVar6 = (this->fields)._targetController;
+    fVar1 = VStack_2.z;
+    fVar3 = VStack_4.z;
+    if (pCVar6 != (CharacterController *)0x0) {
+      UnityEngine.PhysicsModule.dll::UnityEngine::CharacterController::
+      CharacterController_get_radius(pCVar6,(MethodInfo *)0x0);
+      CharacterControllerGizmo3D_CalcRadiusScale(this,(MethodInfo *)0x0);
+      pCVar6 = (this->fields)._targetController;
+      fVar1 = VStack_2.z;
+      fVar3 = VStack_4.z;
+      if (pCVar6 != (CharacterController *)0x0) {
+        fVar7 = UnityEngine.PhysicsModule.dll::UnityEngine::CharacterController::
+                 CharacterController_get_height(pCVar6,(MethodInfo *)0x0);
+        pCVar6 = (this->fields)._targetController;
+        fVar1 = VStack_2.z;
+        fVar3 = VStack_4.z;
+        if (pCVar6 != (CharacterController *)0x0) {
+          pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                              ((Component *)pCVar6,(MethodInfo *)0x0);
+          fVar1 = VStack_2.z;
+          fVar3 = VStack_4.z;
+          if (pTVar8 != (Transform *)0x0) {
+            pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale
+                                ((Vector3 *)&stack0xffffffe0,pTVar8,(MethodInfo *)0x0);
+            fVar7 = (float)((uint)pVVar9->y & _UNK_?) * fVar7;
             if (cRam_? == '\0') {
               func_?(&TypeInfo__UnityEngine__Quaternion);
               cRam_? = '\x01';
             }
-            fVar3 = (TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion).w;
-            pCVar2 = (this->fields)._targetController;
-            if (pCVar2 != (CharacterController *)0x0) {
-              pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                  ((Component *)pCVar2,(MethodInfo *)0x0);
-              if (pTVar5 != (Transform *)0x0) {
-                pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
-                                    ((Vector3 *)&stack0xffffffe0,pTVar5,(MethodInfo *)0x0);
-                fVar7 = pVVar6->x;
-                uVar8 = pVVar6->y;
-                fVar9 = pVVar6->z;
-                rotation.y = fVar7;
-                rotation.x = (float)pTVar5;
-                rotation.z = (float)uVar8;
-                rotation.w = fVar3;
-                pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
+            pQVar10 = TypeInfo__UnityEngine__Quaternion->static_fields;
+            VStack_2.x = (pQVar10->identityQuaternion).x;
+            VStack_2.y = (pQVar10->identityQuaternion).y;
+            VStack_2.z = (pQVar10->identityQuaternion).z;
+            puStack_11 = (undefined *)(pQVar10->identityQuaternion).w;
+            pCVar6 = (this->fields)._targetController;
+            fVar1 = VStack_2.z;
+            fVar3 = VStack_4.z;
+            if (pCVar6 != (CharacterController *)0x0) {
+              pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                  ((Component *)pCVar6,(MethodInfo *)0x0);
+              fVar1 = VStack_2.z;
+              fVar3 = VStack_4.z;
+              if (pTVar8 != (Transform *)0x0) {
+                pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
+                                    ((Vector3 *)&stack0xffffffe0,pTVar8,(MethodInfo *)0x0);
+                rotation.y = VStack_2.y;
+                rotation.x = VStack_2.x;
+                rotation.z = VStack_2.z;
+                rotation.w = (float)puStack_11;
+                pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
                           Quaternion_op_Multiply_1
-                                    ((Vector3 *)&stack0xffffffe0,rotation,*pVVar6,(MethodInfo *)0x0
+                                    ((Vector3 *)&stack0xffffffe0,rotation,*pVVar9,(MethodInfo *)0x0
                                     );
-                fVar10 = pVVar6->x;
-                fVar11 = pVVar6->y;
-                fVar12 = pVVar6->z;
-                pCVar2 = (this->fields)._targetController;
-                if (pCVar2 != (CharacterController *)0x0) {
-                  pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                            Component_get_transform((Component *)pCVar2,(MethodInfo *)0x0);
-                  if (pTVar5 != (Transform *)0x0) {
-                    pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
-                                        ((Vector3 *)&stack0xffffffe0,pTVar5,(MethodInfo *)0x0);
-                    fVar13 = pVVar6->x;
-                    fVar14 = pVVar6->y;
-                    fVar15 = pVVar6->z;
-                    this_01 = (Camera *)0x0;
-                    rotation_00.y = fVar7;
-                    rotation_00.x = fVar3;
-                    rotation_00.z = (float)uVar8;
-                    rotation_00.w = fVar9;
-                    pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
+                uVar12._0_4_ = pVVar9->x;
+                uVar12._4_4_ = pVVar9->y;
+                fVar13 = pVVar9->z;
+                pCVar6 = (this->fields)._targetController;
+                fVar1 = VStack_2.z;
+                VStack_4._0_8_ = uVar12;
+                fVar3 = fVar13;
+                if (pCVar6 != (CharacterController *)0x0) {
+                  VStack_4.z = fVar13;
+                  pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                            Component_get_transform((Component *)pCVar6,(MethodInfo *)0x0);
+                  fVar1 = VStack_2.z;
+                  fVar3 = VStack_4.z;
+                  if (pTVar8 != (Transform *)0x0) {
+                    pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
+                                        ((Vector3 *)&stack0xffffffe0,pTVar8,(MethodInfo *)0x0);
+                    puVar14 = puStack_11;
+                    fVar15 = pVVar9->x;
+                    rotation_00.y = VStack_2.y;
+                    rotation_00.x = VStack_2.x;
+                    rotation_00.z = VStack_2.z;
+                    rotation_00.w = (float)puVar14;
+                    fVar16 = VStack_2.x;
+                    pCVar17 = (Camera *)VStack_2.y;
+                    fVar18 = VStack_2.z;
+                    pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
                               Quaternion_op_Multiply_1
-                                        ((Vector3 *)&stack0xffffffe0,rotation_00,*pVVar6,
+                                        ((Vector3 *)&stack0xffffffe0,rotation_00,*pVVar9,
                                          (MethodInfo *)0x0);
-                    uVar16._0_4_ = pVVar6->x;
-                    uVar16._4_4_ = pVVar6->y;
-                    fVar17 = pVVar6->z;
-                    pCVar2 = (this->fields)._targetController;
-                    if (pCVar2 != (CharacterController *)0x0) {
-                      uVar18 = uVar16;
-                      pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                                Component_get_transform((Component *)pCVar2,(MethodInfo *)0x0);
-                      if (pTVar5 != (Transform *)0x0) {
-                        pVVar19 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                    uVar19._0_4_ = pVVar9->x;
+                    uStack_20 = pVVar9->y;
+                    fVar21 = pVVar9->z;
+                    pCVar6 = (this->fields)._targetController;
+                    fVar1 = VStack_2.z;
+                    fVar3 = VStack_4.z;
+                    if (pCVar6 != (CharacterController *)0x0) {
+                      fVar22 = (float)(undefined4)uVar19;
+                      fVar23 = (float)uStack_20;
+                      fVar24 = fVar21;
+                      pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                                Component_get_transform((Component *)pCVar6,(MethodInfo *)0x0);
+                      fVar1 = VStack_2.z;
+                      fVar3 = VStack_4.z;
+                      if (pTVar8 != (Transform *)0x0) {
+                        pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                                   Transform_get_forward
-                                            ((Vector3 *)&stack0xffffffe0,pTVar5,(MethodInfo *)0x0);
-                        pVVar6 = (Vector3 *)&stack0xffffffe0;
-                        rotation_01.y = fVar7;
-                        rotation_01.x = fVar3;
-                        rotation_01.z = (float)uVar8;
-                        rotation_01.w = fVar9;
-                        pVVar19 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
+                                            ((Vector3 *)&stack0xffffffe0,pTVar8,(MethodInfo *)0x0);
+                        rotation_01.y = VStack_2.y;
+                        rotation_01.x = VStack_2.x;
+                        rotation_01.z = VStack_2.z;
+                        rotation_01.w = (float)puStack_11;
+                        pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
                                   Quaternion_op_Multiply_1
-                                            (pVVar6,rotation_01,*pVVar19,(MethodInfo *)0x0);
-                        uVar20 = pVVar19->x;
-                        uVar21 = pVVar19->y;
-                        fVar9 = pVVar19->z;
-                        fVar22 = fVar13 - (float)pVVar6 * fVar4;
-                        fVar23 = fVar14 - fVar3 * fVar4;
-                        fVar24 = fVar15 - fVar7 * fVar4;
-                        pGVar25 = (this->fields)._leftTick;
-                        if (pCVar1 != (Camera *)0x0) {
-                          position_04.y = fVar23;
-                          position_04.x = fVar22;
-                          position_04.z = fVar24;
-                          fVar26 = (float)uVar20;
-                          fVar27 = (float)uVar21;
-                          fVar28 = fVar9;
-                          pVVar19 = UnityEngine.CoreModule.dll::UnityEngine::Camera::
+                                            ((Vector3 *)&stack0xffffffe0,rotation_01,*pVVar9,
+                                             (MethodInfo *)0x0);
+                        uVar25 = pVVar9->x;
+                        uVar26 = pVVar9->y;
+                        puVar27 = (undefined *)pVVar9->z;
+                        fVar28 = fVar18 - VStack_4.x * fVar16;
+                        fVar29 = (float)puVar14 - VStack_4.y * fVar16;
+                        fVar30 = fVar15 - VStack_4.z * fVar16;
+                        pGVar31 = (this->fields)._leftTick;
+                        VStack_2.y = (float)uVar25;
+                        fVar1 = (float)uVar26;
+                        puStack_11 = puVar27;
+                        fVar3 = VStack_4.z;
+                        if (pCVar5 != (Camera *)0x0) {
+                          position.y = fVar29;
+                          position.x = fVar28;
+                          position.z = fVar30;
+                          VStack_2.z = (float)uVar26;
+                          pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Camera::
                                     Camera_WorldToScreenPoint_1
-                                              ((Vector3 *)&stack0xffffffd0,this_01,position_04,
+                                              ((Vector3 *)&stack0xffffffd0,pCVar17,position,
                                                (MethodInfo *)0x0);
-                          value.x = pVVar19->x;
-                          value.y = pVVar19->y;
-                          if (pGVar25 != (GizmoCap2D *)0x0) {
-                            GizmoCap2D::GizmoCap2D_set_Position(pGVar25,value,(MethodInfo *)0x0);
-                            pCVar29 = (this->fields)._extentTicks;
-                            if (pCVar29 != (CharacterControllerGizmo3D_ExtentTick__Array *)0x0) {
-                              if (pCVar29->max_length < 3) goto code_?;
-                              pCVar30 = pCVar29->vector[2];
-                              if (pCVar30 != (CharacterControllerGizmo3D_ExtentTick *)0x0) {
-                                (pCVar30->fields).Position.x = fVar22;
-                                (pCVar30->fields).Position.y = fVar23;
-                                (pCVar30->fields).Position.z = fVar24;
-                                pCVar29 = (this->fields)._extentTicks;
-                                if (pCVar29 != (CharacterControllerGizmo3D_ExtentTick__Array *)0x0)
-                                {
-                                  if (pCVar29->max_length < 3) goto code_?;
-                                  pCVar30 = pCVar29->vector[2];
-                                  uVar31 = (uint)fVar3 ^
-                                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
-                                  ;
-                                  fVar24 = (float)((uint)fVar7 ^
-                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                          value.x = pVVar9->x;
+                          value.y = pVVar9->y;
+                          fVar1 = VStack_2.z;
+                          fVar3 = VStack_4.z;
+                          if ((pGVar31 != (GizmoCap2D *)0x0) &&
+                             (pGVar32 = (pGVar31->fields)._transform, pGVar32 != (GizmoTransform *)0x0
+                             )) {
+                            GizmoTransform::GizmoTransform_set_Position2D
+                                      (pGVar32,value,(MethodInfo *)0x0);
+                            pCVar33 = (this->fields)._extentTicks;
+                            fVar1 = VStack_2.z;
+                            fVar3 = VStack_4.z;
+                            if (pCVar33 != (CharacterControllerGizmo3D_ExtentTick__Array *)0x0) {
+                              if (pCVar33->max_length < 3) goto code_?;
+                              pCVar34 = pCVar33->vector[2];
+                              if (pCVar34 != (CharacterControllerGizmo3D_ExtentTick *)0x0) {
+                                (pCVar34->fields).Position.x = fVar28;
+                                (pCVar34->fields).Position.y = fVar29;
+                                (pCVar34->fields).Position.z = fVar30;
+                                pCVar33 = (this->fields)._extentTicks;
+                                if (pCVar33 != (CharacterControllerGizmo3D_ExtentTick__Array *)0x0) {
+                                  if (pCVar33->max_length < 3) goto code_?;
+                                  fVar30 = VStack_4.x;
+                                  fVar29 = VStack_4.y;
+                                  pCVar34 = pCVar33->vector[2];
+                                  VStack_4.x = (float)((uint)VStack_4.x ^
+                                                                                                              
+                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                                                   );
-                                  if (pCVar30 != (CharacterControllerGizmo3D_ExtentTick *)0x0) {
-                                    (pCVar30->fields).Normal.x =
-                                         (float)((uint)pVVar6 ^
-                                                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
-                                                );
-                                    (pCVar30->fields).Normal.y = (float)uVar31;
-                                    (pCVar30->fields).Normal.z = fVar24;
-                                    fVar23 = fVar13 + (float)pVVar6 * fVar4;
-                                    fVar24 = fVar14 + fVar3 * fVar4;
-                                    fVar3 = fVar15 + fVar7 * fVar4;
-                                    pGVar25 = (this->fields)._rightTick;
-                                    position.y = fVar24;
-                                    position.x = fVar23;
-                                    position.z = fVar3;
-                                    pCVar1 = this_01;
-                                    pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Camera::
+                                  VStack_4.y = (float)((uint)VStack_4.y ^
+                                                                                                              
+                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  );
+                                  fVar3 = (float)((uint)VStack_4.z ^
+                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  );
+                                  if (pCVar34 != (CharacterControllerGizmo3D_ExtentTick *)0x0) {
+                                    (pCVar34->fields).Normal.x = VStack_4.x;
+                                    (pCVar34->fields).Normal.y = VStack_4.y;
+                                    (pCVar34->fields).Normal.z = fVar3;
+                                    fVar28 = fVar18 + fVar30 * fVar16;
+                                    fVar29 = (float)puVar14 + fVar29 * fVar16;
+                                    fVar30 = fVar15 + VStack_4.z * fVar16;
+                                    pGVar31 = (this->fields)._rightTick;
+                                    position_00.y = fVar29;
+                                    position_00.x = fVar28;
+                                    position_00.z = fVar30;
+                                    VStack_4.z = fVar3;
+                                    pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Camera::
                                               Camera_WorldToScreenPoint_1
-                                                        ((Vector3 *)&stack0xffffffc0,this_01,
-                                                         position,(MethodInfo *)0x0);
-                                    value_00.x = pVVar6->x;
-                                    value_00.y = pVVar6->y;
-                                    if (pGVar25 != (GizmoCap2D *)0x0) {
-                                      GizmoCap2D::GizmoCap2D_set_Position
-                                                (pGVar25,value_00,(MethodInfo *)0x0);
-                                      pCVar29 = (this->fields)._extentTicks;
-                                      if (pCVar29 !=
-                                          (CharacterControllerGizmo3D_ExtentTick__Array *)0x0) {
-                                        if (pCVar29->max_length < 4) goto code_?;
-                                        pCVar30 = pCVar29->vector[3];
-                                        if (pCVar30 != (CharacterControllerGizmo3D_ExtentTick *)0x0)
-                                        {
-                                          (pCVar30->fields).Position.x = fVar23;
-                                          (pCVar30->fields).Position.y = fVar24;
-                                          (pCVar30->fields).Position.z = fVar3;
-                                          pCVar29 = (this->fields)._extentTicks;
-                                          if (pCVar29 !=
-                                              (CharacterControllerGizmo3D_ExtentTick__Array *)0x0) {
-                                            if (pCVar29->max_length < 4) goto code_?;
-                                            pCVar30 = pCVar29->vector[3];
-                                            if (pCVar30 !=
-                                                (CharacterControllerGizmo3D_ExtentTick *)0x0) {
-                                              (pCVar30->fields).Normal.x = fVar10;
-                                              (pCVar30->fields).Normal.y = fVar11;
-                                              (pCVar30->fields).Normal.z = fVar12;
-                                              fVar12 = fVar13 + (float)(undefined4)uVar16 *
-                                                               4.1706497e-29 * _UNK_?;
-                                              fVar7 = fVar14 + (float)uVar16._4_4_ * 4.1706497e-29 *
-                                                              _UNK_?;
-                                              fVar3 = fVar15 + fVar17 * 4.1706497e-29 *
-                                                                _UNK_?;
-                                              pGVar25 = (this->fields)._topTick;
-                                              position_00.y = fVar7;
-                                              position_00.x = fVar12;
-                                              position_00.z = fVar3;
-                                              pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::
-                                                        Camera::Camera_WorldToScreenPoint_1
-                                                                  ((Vector3 *)&stack0xffffffc0,
-                                                                   this_01,position_00,
-                                                                   (MethodInfo *)0x0);
-                                              value_01.x = pVVar6->x;
-                                              value_01.y = pVVar6->y;
-                                              if (pGVar25 != (GizmoCap2D *)0x0) {
-                                                GizmoCap2D::GizmoCap2D_set_Position
-                                                          (pGVar25,value_01,(MethodInfo *)0x0);
-                                                pCVar29 = (this->fields)._extentTicks;
-                                                if (pCVar29 !=
-                                                    (CharacterControllerGizmo3D_ExtentTick__Array *)
+                                                        (&VStack_4,pCVar17,position_00,
+                                                         (MethodInfo *)0x0);
+                                    value_00.x = pVVar9->x;
+                                    value_00.y = pVVar9->y;
+                                    fVar1 = VStack_2.z;
+                                    fVar3 = VStack_4.z;
+                                    if ((pGVar31 != (GizmoCap2D *)0x0) &&
+                                       (pGVar32 = (pGVar31->fields)._transform,
+                                       pGVar32 != (GizmoTransform *)0x0)) {
+                                      GizmoTransform::GizmoTransform_set_Position2D
+                                                (pGVar32,value_00,(MethodInfo *)0x0);
+                                      pCVar33 = (this->fields)._extentTicks;
+                                      fVar1 = VStack_2.z;
+                                      fVar3 = VStack_4.z;
+                                      if (pCVar33 != (CharacterControllerGizmo3D_ExtentTick__Array *)
                                                     0x0) {
-                                                  if (pCVar29->max_length < 6)
-                                                  goto code_?;
-                                                  pCVar30 = pCVar29->vector[5];
-                                                  if (pCVar30 !=
-                                                      (CharacterControllerGizmo3D_ExtentTick *)0x0)
-                                                  {
-                                                    (pCVar30->fields).Position.x = fVar12;
-                                                    (pCVar30->fields).Position.y = fVar7;
-                                                    (pCVar30->fields).Position.z = fVar3;
-                                                    pCVar29 = (this->fields)._extentTicks;
-                                                    if (pCVar29 !=
-                                                        (
+                                        if (pCVar33->max_length < 4) goto code_?;
+                                        pCVar34 = pCVar33->vector[3];
+                                        if (pCVar34 != (CharacterControllerGizmo3D_ExtentTick *)0x0)
+                                        {
+                                          (pCVar34->fields).Position.x = fVar28;
+                                          (pCVar34->fields).Position.y = fVar29;
+                                          (pCVar34->fields).Position.z = fVar30;
+                                          pCVar33 = (this->fields)._extentTicks;
+                                          if (pCVar33 != (
+                                                  CharacterControllerGizmo3D_ExtentTick__Array *)0x0
+                                             ) {
+                                            if (pCVar33->max_length < 4) goto code_?;
+                                            pCVar34 = pCVar33->vector[3];
+                                            if (pCVar34 != (CharacterControllerGizmo3D_ExtentTick *)
+                                                          0x0) {
+                                              (pCVar34->fields).Normal.x = (float)uVar12;
+                                              (pCVar34->fields).Normal.y = uVar12._4_4_;
+                                              (pCVar34->fields).Normal.z = fVar13;
+                                              fVar29 = (float)puVar14 +
+                                                       fVar23 * fVar7 * _UNK_?;
+                                              fVar30 = fVar18 + fVar22 * fVar7 * _UNK_?;
+                                              fVar13 = fVar15 + fVar21 * fVar7 * _UNK_?;
+                                              pGVar31 = (this->fields)._topTick;
+                                              position_01.y = fVar29;
+                                              position_01.x = fVar30;
+                                              position_01.z = fVar13;
+                                              pCVar5 = pCVar17;
+                                              pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::
+                                                        Camera::Camera_WorldToScreenPoint_1
+                                                                  (&VStack_4,pCVar17,position_01,
+                                                                   (MethodInfo *)0x0);
+                                              value_01.x = pVVar9->x;
+                                              value_01.y = pVVar9->y;
+                                              fVar1 = VStack_2.z;
+                                              fVar3 = VStack_4.z;
+                                              if ((pGVar31 != (GizmoCap2D *)0x0) &&
+                                                 (pGVar32 = (pGVar31->fields)._transform,
+                                                 pGVar32 != (GizmoTransform *)0x0)) {
+                                                GizmoTransform::GizmoTransform_set_Position2D
+                                                          (pGVar32,value_01,(MethodInfo *)0x0);
+                                                pCVar33 = (this->fields)._extentTicks;
+                                                fVar1 = VStack_2.z;
+                                                fVar3 = VStack_4.z;
+                                                if (pCVar33 != (
                                                   CharacterControllerGizmo3D_ExtentTick__Array *)0x0
                                                   ) {
-                                                    if (pCVar29->max_length < 6)
-                                                    goto code_?;
-                                                    pCVar30 = pCVar29->vector[5];
-                                                    if (pCVar30 !=
-                                                        (CharacterControllerGizmo3D_ExtentTick *)0x0
-                                                       ) {
-                                                      uStack_32 = (undefined4)
-                                                                  ((ulonglong)uVar18 >> 0x20);
-                                                      (pCVar30->fields).Normal.x = (float)uVar33;
-                                                      (pCVar30->fields).Normal.y = (float)uStack_32;
-                                                      (pCVar30->fields).Normal.z = fVar17;
-                                                      fVar12 = fVar13 - (float)(undefined4)uVar16 *
-                                                                       4.1706497e-29 * _UNK_?
-                                                      ;
-                                                      fVar7 = fVar14 - (float)uVar16._4_4_ *
-                                                                      4.1706497e-29 * _UNK_?;
-                                                      fVar3 = fVar15 - fVar17 * 4.1706497e-29 *
-                                                                        _UNK_?;
-                                                      pGVar25 = (this->fields)._bottomTick;
-                                                      position_01.y = fVar7;
-                                                      position_01.x = fVar12;
-                                                      position_01.z = fVar3;
-                                                      pVVar6 = UnityEngine.CoreModule.dll::
-                                                                UnityEngine::Camera::
-                                                                Camera_WorldToScreenPoint_1
-                                                                          ((Vector3 *)
-                                                                           &stack0xffffffc0,this_01,
-                                                                           position_01,
-                                                                           (MethodInfo *)0x0);
-                                                      value_02.x = pVVar6->x;
-                                                      value_02.y = pVVar6->y;
-                                                      if (pGVar25 != (GizmoCap2D *)0x0) {
-                                                        GizmoCap2D::GizmoCap2D_set_Position
-                                                                  (pGVar25,value_02,(MethodInfo *)0x0
-                                                                  );
-                                                        pCVar29 = (this->fields)._extentTicks;
-                                                        if (pCVar29 !=
-                                                            (
+                                                  if (pCVar33->max_length < 6) goto code_?;
+                                                  pCVar34 = pCVar33->vector[5];
+                                                  if (pCVar34 != (
+                                                  CharacterControllerGizmo3D_ExtentTick *)0x0) {
+                                                    (pCVar34->fields).Position.x = fVar30;
+                                                    (pCVar34->fields).Position.y = fVar29;
+                                                    (pCVar34->fields).Position.z = fVar13;
+                                                    pCVar33 = (this->fields)._extentTicks;
+                                                    if (pCVar33 != (
                                                   CharacterControllerGizmo3D_ExtentTick__Array *)0x0
                                                   ) {
-                                                    if (pCVar29->max_length < 5)
+                                                    if (pCVar33->max_length < 6)
                                                     goto code_?;
-                                                    pCVar30 = pCVar29->vector[4];
-                                                    if (pCVar30 !=
-                                                        (CharacterControllerGizmo3D_ExtentTick *)0x0
-                                                       ) {
-                                                      (pCVar30->fields).Position.x = fVar12;
-                                                      (pCVar30->fields).Position.y = fVar7;
-                                                      (pCVar30->fields).Position.z = fVar3;
-                                                      pCVar29 = (this->fields)._extentTicks;
-                                                      if (pCVar29 !=
-                                                          (
+                                                    pCVar34 = pCVar33->vector[5];
+                                                    if (pCVar34 != (
+                                                  CharacterControllerGizmo3D_ExtentTick *)0x0) {
+                                                    uStack_20 = (undefined4)
+                                                                ((ulonglong)uVar19 >> 0x20);
+                                                    (pCVar34->fields).Normal.x =
+                                                         (float)(undefined4)uVar19;
+                                                    (pCVar34->fields).Normal.y = (float)uStack_20;
+                                                    (pCVar34->fields).Normal.z = fVar24;
+                                                    fVar24 = fVar18 - fVar22 * fVar7 *
+                                                                      _UNK_?;
+                                                    fVar13 = (float)puVar14 -
+                                                             fVar23 * fVar7 * _UNK_?;
+                                                    fVar7 = fVar15 - fVar21 * fVar7 * _UNK_?
+                                                    ;
+                                                    pGVar31 = (this->fields)._bottomTick;
+                                                    position_02.y = fVar13;
+                                                    position_02.x = fVar24;
+                                                    position_02.z = fVar7;
+                                                    pVVar9 = UnityEngine.CoreModule.dll::
+                                                              UnityEngine::Camera::
+                                                              Camera_WorldToScreenPoint_1
+                                                                        (&VStack_4,pCVar17,
+                                                                         position_02,
+                                                                         (MethodInfo *)0x0);
+                                                    value_02.x = pVVar9->x;
+                                                    value_02.y = pVVar9->y;
+                                                    fVar1 = VStack_2.z;
+                                                    fVar3 = VStack_4.z;
+                                                    if ((pGVar31 != (GizmoCap2D *)0x0) &&
+                                                       (pGVar32 = (pGVar31->fields)._transform,
+                                                       pGVar32 != (GizmoTransform *)0x0)) {
+                                                      GizmoTransform::GizmoTransform_set_Position2D
+                                                                (pGVar32,value_02,(MethodInfo *)0x0);
+                                                      pCVar33 = (this->fields)._extentTicks;
+                                                      fVar1 = VStack_2.z;
+                                                      fVar3 = VStack_4.z;
+                                                      if (pCVar33 != (
                                                   CharacterControllerGizmo3D_ExtentTick__Array *)0x0
                                                   ) {
-                                                    if (pCVar29->max_length < 5)
+                                                    if (pCVar33->max_length < 5)
                                                     goto code_?;
-                                                    uVar31 = uVar16._4_4_ ^
-                                                                                                                          
-                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
-                                                  ;
-                                                  pCVar30 = pCVar29->vector[4];
-                                                  fVar17 = (float)((uint)fVar17 ^
-                                                                                                                                    
-                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                                    pCVar34 = pCVar33->vector[4];
+                                                    if (pCVar34 != (
+                                                  CharacterControllerGizmo3D_ExtentTick *)0x0) {
+                                                    (pCVar34->fields).Position.x = fVar24;
+                                                    (pCVar34->fields).Position.y = fVar13;
+                                                    (pCVar34->fields).Position.z = fVar7;
+                                                    pCVar33 = (this->fields)._extentTicks;
+                                                    if (pCVar33 != (
+                                                  CharacterControllerGizmo3D_ExtentTick__Array *)0x0
+                                                  ) {
+                                                    if (pCVar33->max_length < 5)
+                                                    goto code_?;
+                                                    VStack_4.y = (float)((uint)fVar23 ^
+                                                                                                                                                  
+                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                                                   );
-                                                  if (pCVar30 !=
-                                                      (CharacterControllerGizmo3D_ExtentTick *)0x0)
-                                                  {
-                                                    (pCVar30->fields).Normal.x =
-                                                         (float)((undefined4)uVar16 ^
+                                                  pCVar34 = pCVar33->vector[4];
+                                                  VStack_4.z = (float)((uint)fVar21 ^
+                                                                                                                                              
+                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  );
+                                                  VStack_4.x = (float)((uint)fVar22 ^
+                                                                                                                                              
+                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  );
+                                                  fVar3 = VStack_4.z;
+                                                  if (pCVar34 != (
+                                                  CharacterControllerGizmo3D_ExtentTick *)0x0) {
+                                                    (pCVar34->fields).Normal.x =
+                                                         (float)((uint)fVar22 ^
                                                                                                                                 
-                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                                                   );
-                                                  (pCVar30->fields).Normal.y = (float)uVar31;
-                                                  (pCVar30->fields).Normal.z = fVar17;
-                                                  fVar12 = fVar13 - fVar26 * fVar4;
-                                                  fVar7 = fVar14 - fVar27 * fVar4;
-                                                  fVar3 = fVar15 - fVar28 * fVar4;
-                                                  pGVar25 = (this->fields)._frontTick;
-                                                  position_02.y = fVar7;
-                                                  position_02.x = fVar12;
-                                                  position_02.z = fVar3;
-                                                  pVVar6 = UnityEngine.CoreModule.dll::UnityEngine
-                                                            ::Camera::Camera_WorldToScreenPoint_1
-                                                                      ((Vector3 *)&stack0xffffffc0,
-                                                                       pCVar1,position_02,
-                                                                       (MethodInfo *)0x0);
-                                                  value_03.x = pVVar6->x;
-                                                  value_03.y = pVVar6->y;
-                                                  if (pGVar25 != (GizmoCap2D *)0x0) {
-                                                    GizmoCap2D::GizmoCap2D_set_Position
-                                                              (pGVar25,value_03,(MethodInfo *)0x0);
-                                                    pCVar29 = (this->fields)._extentTicks;
-                                                    if (pCVar29 !=
-                                                        (
-                                                  CharacterControllerGizmo3D_ExtentTick__Array *)0x0
-                                                  ) {
-                                                    if (pCVar29->max_length == 0)
-                                                    goto code_?;
-                                                    pCVar30 = pCVar29->vector[0];
-                                                    if (pCVar30 !=
-                                                        (CharacterControllerGizmo3D_ExtentTick *)0x0
-                                                       ) {
-                                                      (pCVar30->fields).Position.x = fVar12;
-                                                      (pCVar30->fields).Position.y = fVar7;
-                                                      (pCVar30->fields).Position.z = fVar3;
-                                                      pCVar29 = (this->fields)._extentTicks;
-                                                      if (pCVar29 !=
-                                                          (
-                                                  CharacterControllerGizmo3D_ExtentTick__Array *)0x0
-                                                  ) {
-                                                    if (pCVar29->max_length == 0)
-                                                    goto code_?;
-                                                    pCVar30 = pCVar29->vector[0];
-                                                    uVar31 = (uint)fVar27 ^
-                                                                                                                          
-                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
-                                                  ;
-                                                  fVar3 = (float)((uint)fVar28 ^
-                                                                                                                                    
-                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
-                                                  );
-                                                  if (pCVar30 !=
-                                                      (CharacterControllerGizmo3D_ExtentTick *)0x0)
-                                                  {
-                                                    (pCVar30->fields).Normal.x =
-                                                         (float)((uint)fVar26 ^
-                                                                                                                                
-                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
-                                                  );
-                                                  (pCVar30->fields).Normal.y = (float)uVar31;
-                                                  (pCVar30->fields).Normal.z = fVar3;
-                                                  fVar13 = fVar13 + fVar26 * fVar4;
-                                                  fVar14 = fVar14 + fVar27 * fVar4;
-                                                  fVar15 = fVar15 + fVar28 * fVar4;
-                                                  pGVar25 = (this->fields)._backTick;
-                                                  position_03.y = fVar14;
+                                                  (pCVar34->fields).Normal.y = VStack_4.y;
+                                                  (pCVar34->fields).Normal.z = VStack_4.z;
+                                                  fVar21 = (float)puVar14 - VStack_2.z * fVar16;
+                                                  fVar13 = fVar18 - VStack_2.y * fVar16;
+                                                  fVar7 = fVar15 - (float)puStack_11 * fVar16;
+                                                  pGVar31 = (this->fields)._frontTick;
+                                                  position_03.y = fVar21;
                                                   position_03.x = fVar13;
-                                                  position_03.z = fVar15;
-                                                  pVVar6 = UnityEngine.CoreModule.dll::UnityEngine
+                                                  position_03.z = fVar7;
+                                                  pCVar17 = (Camera *)VStack_2.y;
+                                                  pVVar9 = UnityEngine.CoreModule.dll::UnityEngine
                                                             ::Camera::Camera_WorldToScreenPoint_1
-                                                                      ((Vector3 *)&stack0xffffff88,
-                                                                       pCVar1,position_03,
-                                                                       (MethodInfo *)0x0);
-                                                  value_04.x = pVVar6->x;
-                                                  value_04.y = pVVar6->y;
-                                                  if (pGVar25 != (GizmoCap2D *)0x0) {
-                                                    GizmoCap2D::GizmoCap2D_set_Position
-                                                              (pGVar25,value_04,(MethodInfo *)0x0);
-                                                    pCVar29 = (this->fields)._extentTicks;
-                                                    if (pCVar29 !=
-                                                        (
+                                                                      (&VStack_4,pCVar5,
+                                                                       position_03,(MethodInfo *)0x0
+                                                                      );
+                                                  value_03.x = pVVar9->x;
+                                                  value_03.y = pVVar9->y;
+                                                  fVar1 = VStack_2.z;
+                                                  fVar3 = VStack_4.z;
+                                                  if ((pGVar31 != (GizmoCap2D *)0x0) &&
+                                                     (pGVar32 = (pGVar31->fields)._transform,
+                                                     pGVar32 != (GizmoTransform *)0x0)) {
+                                                    GizmoTransform::GizmoTransform_set_Position2D
+                                                              (pGVar32,value_03,(MethodInfo *)0x0);
+                                                    pCVar33 = (this->fields)._extentTicks;
+                                                    fVar1 = VStack_2.z;
+                                                    fVar3 = VStack_4.z;
+                                                    if (pCVar33 != (
                                                   CharacterControllerGizmo3D_ExtentTick__Array *)0x0
                                                   ) {
-                                                    if (pCVar29->max_length < 2)
+                                                    if (pCVar33->max_length == 0)
                                                     goto code_?;
-                                                    pCVar30 = pCVar29->vector[1];
-                                                    if (pCVar30 !=
-                                                        (CharacterControllerGizmo3D_ExtentTick *)0x0
-                                                       ) {
-                                                      (pCVar30->fields).Position.x = fVar13;
-                                                      (pCVar30->fields).Position.y = fVar14;
-                                                      (pCVar30->fields).Position.z = fVar15;
-                                                      pCVar29 = (this->fields)._extentTicks;
-                                                      if (pCVar29 !=
-                                                          (
+                                                    pCVar34 = pCVar33->vector[0];
+                                                    if (pCVar34 != (
+                                                  CharacterControllerGizmo3D_ExtentTick *)0x0) {
+                                                    (pCVar34->fields).Position.x = fVar13;
+                                                    (pCVar34->fields).Position.y = fVar21;
+                                                    (pCVar34->fields).Position.z = fVar7;
+                                                    pCVar33 = (this->fields)._extentTicks;
+                                                    if (pCVar33 != (
                                                   CharacterControllerGizmo3D_ExtentTick__Array *)0x0
                                                   ) {
-                                                    if (pCVar29->max_length < 2)
+                                                    if (pCVar33->max_length == 0)
                                                     goto code_?;
-                                                    pCVar30 = pCVar29->vector[1];
-                                                    if (pCVar30 !=
-                                                        (CharacterControllerGizmo3D_ExtentTick *)0x0
-                                                       ) {
-                                                      (pCVar30->fields).Normal.x = (float)uVar20;
-                                                      (pCVar30->fields).Normal.y = (float)uVar21;
-                                                      (pCVar30->fields).Normal.z = fVar9;
-                                                      return;
-                                                    }
+                                                    pCVar34 = pCVar33->vector[0];
+                                                    VStack_2.x = (float)((uint)pCVar17 ^
+                                                                                                                                                  
+                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  );
+                                                  VStack_2.y = (float)((uint)VStack_2.z ^
+                                                                                                                                              
+                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  );
+                                                  fVar1 = (float)((uint)puStack_11 ^
+                                                                                                                                    
+                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                                                  );
+                                                  if (pCVar34 != (
+                                                  CharacterControllerGizmo3D_ExtentTick *)0x0) {
+                                                    (pCVar34->fields).Normal.x = VStack_2.x;
+                                                    (pCVar34->fields).Normal.y = VStack_2.y;
+                                                    (pCVar34->fields).Normal.z = fVar1;
+                                                    fVar18 = (float)pCVar17 * fVar16 + fVar18;
+                                                    fVar7 = VStack_2.z * fVar16 + (float)puVar14;
+                                                    fVar15 = (float)puStack_11 * fVar16 + fVar15;
+                                                    pGVar31 = (this->fields)._backTick;
+                                                    position_04.y = fVar7;
+                                                    position_04.x = fVar18;
+                                                    position_04.z = fVar15;
+                                                    VStack_2.z = fVar1;
+                                                    pVVar9 = UnityEngine.CoreModule.dll::
+                                                              UnityEngine::Camera::
+                                                              Camera_WorldToScreenPoint_1
+                                                                        (&VStack_2,pCVar5,
+                                                                         position_04,
+                                                                         (MethodInfo *)0x0);
+                                                    value_04.x = pVVar9->x;
+                                                    value_04.y = pVVar9->y;
+                                                    fVar1 = VStack_2.z;
+                                                    fVar3 = VStack_4.z;
+                                                    if ((pGVar31 != (GizmoCap2D *)0x0) &&
+                                                       (pGVar32 = (pGVar31->fields)._transform,
+                                                       pGVar32 != (GizmoTransform *)0x0)) {
+                                                      GizmoTransform::GizmoTransform_set_Position2D
+                                                                (pGVar32,value_04,(MethodInfo *)0x0);
+                                                      pCVar33 = (this->fields)._extentTicks;
+                                                      fVar1 = VStack_2.z;
+                                                      fVar3 = VStack_4.z;
+                                                      if (pCVar33 != (
+                                                  CharacterControllerGizmo3D_ExtentTick__Array *)0x0
+                                                  ) {
+                                                    if (pCVar33->max_length < 2)
+                                                    goto code_?;
+                                                    pCVar34 = pCVar33->vector[1];
+                                                    if (pCVar34 != (
+                                                  CharacterControllerGizmo3D_ExtentTick *)0x0) {
+                                                    (pCVar34->fields).Position.x = fVar18;
+                                                    (pCVar34->fields).Position.y = fVar7;
+                                                    (pCVar34->fields).Position.z = fVar15;
+                                                    pCVar33 = (this->fields)._extentTicks;
+                                                    if (pCVar33 != (
+                                                  CharacterControllerGizmo3D_ExtentTick__Array *)0x0
+                                                  ) {
+                                                    if (pCVar33->max_length < 2)
+                                                    goto code_?;
+                                                    pCVar34 = pCVar33->vector[1];
+                                                    if (pCVar34 != (
+                                                  CharacterControllerGizmo3D_ExtentTick *)0x0) {
+                                                    (pCVar34->fields).Normal.x = (float)uVar25;
+                                                    (pCVar34->fields).Normal.y = (float)uVar26;
+                                                    (pCVar34->fields).Normal.z = (float)puVar27;
+                                                    return;
+                                                  }
                                                   }
                                                   }
                                                   }
@@ -2262,11 +2379,13 @@ void Assembly-CSharp.dll::RTG::CharacterControllerGizmo3D::CharacterControllerGi
       }
     }
   }
+  VStack_4.z = fVar3;
+  VStack_2.z = fVar1;
   func_?();
 code_?:
   func_?();
-  pcVar34 = (code *)swi(3);
-  (*pcVar34)();
+  pcVar35 = (code *)swi(3);
+  (*pcVar35)();
   return;
 }
 
@@ -2505,7 +2624,7 @@ void Assembly-CSharp.dll::RTG::CharacterControllerGizmo3D::
       uStack_4 = CONCAT44(pCVar14,(undefined4)uStack_4);
       fStack_15 = (float)((uint)(fStack_10 * (float)uVar12 + fStack_9 * (float)uVar11 +
                                 fStack_8 * fVar5) ^
-                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                         __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
       fStack_16 = (float)uVar11;
       fStack_17 = (float)uVar12;
       fStack_18 = fVar5;
@@ -2704,50 +2823,19 @@ void Assembly-CSharp.dll::RTG::CharacterControllerGizmo3D::CharacterControllerGi
             (this_01,(MethodInfo *)0x0);
   (this->fields)._lookAndFeel = this_01;
   func_?(&(this->fields)._lookAndFeel,this_01);
-  method_00 = TypeInfo__RTG__CharacterControllerGizmo3DSettings;
-  value = (CharacterControllerGizmo3DSettings *)func_?();
-  (value->fields)._radiusSnapStep = 0.1;
-  (value->fields)._heightSnapStep = 0.1;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  (this->fields)._settings = value;
+  pCStack5 = TypeInfo__RTG__CharacterControllerGizmo3DSettings;
+  this_02 = (CharacterControllerGizmo3DSettings *)func_?();
+  SpotLightGizmo3DSettings::SpotLightGizmo3DSettings__ctor
+            ((SpotLightGizmo3DSettings *)this_02,(MethodInfo *)0x0);
+  (this->fields)._settings = this_02;
   func_?();
-  pCStack5 = TypeInfo__RTG__CharacterControllerGizmo3DHotkeys;
-  value_00 = (CharacterControllerGizmo3DHotkeys *)func_?();
-  if (cRam_? == '\0') {
-    func_?();
-    func_?();
-    func_?();
-    cRam_? = '\x01';
-  }
-  pHVar6 = (Hotkeys *)func_?();
-  Hotkeys::Hotkeys__ctor_1
-            (pHVar6,StringLiteral_Enable_snapping,(HotkeysStaticData)0x0,(MethodInfo *)0x0);
-  if (pHVar6 != (Hotkeys *)0x0) {
-    Hotkeys::Hotkeys_set_Key(pHVar6,KeyCode__Enum_None,(MethodInfo *)0x0);
-    (pHVar6->fields)._lCtrl = 1;
-    (value_00->fields)._enableSnapping = pHVar6;
-    func_?();
-    pHVar6 = (Hotkeys *)func_?();
-    Hotkeys::Hotkeys__ctor_1
-              (pHVar6,StringLiteral_Scale_from_Center,(HotkeysStaticData)0x0,(MethodInfo *)0x0);
-    if (pHVar6 != (Hotkeys *)0x0) {
-      Hotkeys::Hotkeys_set_Key(pHVar6,KeyCode__Enum_None,(MethodInfo *)0x0);
-      (pHVar6->fields)._lShift = 1;
-      (value_00->fields)._scaleFromCenter = pHVar6;
-      func_?();
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                ((Object *)value_00,ExceptionArgument__Enum_obj,
-                 (MethodInfo *)&(value_00->fields)._scaleFromCenter);
-      (this->fields)._hotkeys = value_00;
-      func_?();
-      GizmoBehaviour::GizmoBehaviour__ctor((GizmoBehaviour *)this,(MethodInfo *)0x0);
-      return;
-    }
-  }
+  pCStack6 = TypeInfo__RTG__CharacterControllerGizmo3DHotkeys;
+  this_03 = (CharacterControllerGizmo3DHotkeys *)func_?();
+  CharacterControllerGizmo3DHotkeys::CharacterControllerGizmo3DHotkeys__ctor
+            (this_03,(MethodInfo *)0x0);
+  (this->fields)._hotkeys = this_03;
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  GizmoBehaviour::GizmoBehaviour__ctor((GizmoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

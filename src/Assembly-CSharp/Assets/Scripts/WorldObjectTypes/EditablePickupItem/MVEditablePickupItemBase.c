@@ -89,7 +89,7 @@ bool Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::EditablePickupItem:
   }
   if (pickupItem == (PickupItem *)0x0) goto code_?;
   iVar1 = (*(code *)(pickupItem->klass->vtable).__unknown.method)
-                    (pickupItem,(pickupItem->klass->vtable).CanFire.methodPtr);
+                    (pickupItem,(pickupItem->klass->vtable).__unknown_1.methodPtr);
   if (iVar1 != (this->fields)._.pickupItemType) {
     return 0;
   }
@@ -424,13 +424,13 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::EditablePickupItem:
     func_?(&MethodInfo__MVPickupItemBase__CheckCanUse_int__MVInteractableBase_);
     func_?(&MethodInfo__MVPickupItemBase__DoPickup_int_);
     func_?(&TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement);
+    func_?(&
+                    MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                   );
+    func_?(&
+                    MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                   );
     func_?(&TypeInfo__UseInteractor);
-    func_?(&
-                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
-                   );
-    func_?(&
-                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
-                   );
     cRam_? = '\x01';
   }
   if ((this->fields)._.useInteractor != (UseInteractor *)0x0) {
@@ -442,7 +442,7 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::EditablePickupItem:
              func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
     mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
               (pEVar4,(Object *)pUVar3,
-               MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+               MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                ,(MethodInfo *)0x0);
     if (pTVar2 == (TriggerBoxEvents *)0x0) goto code_?;
     TriggerBoxEvents::TriggerBoxEvents_remove_TriggerEnter
@@ -455,7 +455,7 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::EditablePickupItem:
              func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
     mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
               (pEVar4,(Object *)pUVar3,
-               MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+               MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                ,(MethodInfo *)0x0);
     if (pTVar2 == (TriggerBoxEvents *)0x0) goto code_?;
     TriggerBoxEvents::TriggerBoxEvents_remove_TriggerExit
@@ -466,10 +466,8 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::EditablePickupItem:
     (this->fields)._.useInteractor = (UseInteractor *)0x0;
     func_?(&(this->fields)._.useInteractor,0);
   }
-  wo = (this->fields).blueprint;
   pMVar1 = MVEditablePickupItemBase_get_BaseObject(this,(MethodInfo *)0x0);
   if (pMVar1 != (MVEditablePickupItemBaseObject *)0x0) {
-    pGVar5 = (pMVar1->fields)._.useInteractionRotator;
     pMVar1 = MVEditablePickupItemBase_get_BaseObject(this,(MethodInfo *)0x0);
     if ((pMVar1 != (MVEditablePickupItemBaseObject *)0x0) &&
        (pTVar2 = (pMVar1->fields)._.triggerBoxEvents, pTVar2 != (TriggerBoxEvents *)0x0)) {
@@ -478,50 +476,51 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::EditablePickupItem:
       mscorlib.dll::System::Predicate`1[UInt32]::Predicate_1_UInt32___ctor
                 (this_00,(Object *)this,MethodInfo__MVPickupItemBase__DoPickup_int_,
                  (MethodInfo *)0x0);
-      this_01 = (MVEditablePickupItemBase *)
+      this_01 = (Func_3_Int32_Object_Boolean_ *)
                 func_?(TypeInfo__System__Func<int,_MVInteractableBase,_bool>);
       mscorlib.dll::System::Func`3[Int32,Object,Boolean]::Func_3_Int32_Object_Boolean___ctor
-                ((Func_3_Int32_Object_Boolean_ *)this_01,(Object *)this,
+                (this_01,(Object *)this,
                  MethodInfo__MVPickupItemBase__CheckCanUse_int__MVInteractableBase_,
                  (MethodInfo *)0x0);
       pUVar3 = (UseInteractor *)func_?(TypeInfo__UseInteractor);
       UseInteractor::UseInteractor__ctor
-                (pUVar3,(MVWorldObjectClient *)wo,pGVar5,0,triggerCollider,
+                (pUVar3,(MVWorldObjectClient *)0x0,(GameObject *)0x0,0,triggerCollider,
                  (Func_2_Int32_Boolean_ *)this_00,
-                 (Func_3_Int32_MVInteractableBase_Boolean_ *)this_01,2.5,0,(MethodInfo *)0x0);
-      (this_01->fields)._.useInteractor = pUVar3;
+                 (Func_3_Int32_MVInteractableBase_Boolean_ *)this_01,2.5,0,1,(MethodInfo *)0x0);
+      pURam402000fc = pUVar3;
       func_?();
-      pMVar1 = MVEditablePickupItemBase_get_BaseObject(this_01,(MethodInfo *)0x0);
+      pMVar1 = MVEditablePickupItemBase_get_BaseObject
+                         ((MVEditablePickupItemBase *)0x40200000,(MethodInfo *)0x0);
       if (pMVar1 != (MVEditablePickupItemBaseObject *)0x0) {
         pGVar5 = (pMVar1->fields)._.useInteractionRotator;
         this_02 = (GameCoinLogic *)func_?(TypeInfo__GameCoinLogic);
         GameCoinLogic::GameCoinLogic__ctor(this_02,pGVar5,1,(MethodInfo *)0x0);
-        pUVar3 = (this_01->fields)._.useInteractor;
-        if (pUVar3 != (UseInteractor *)0x0) {
+        if (pURam402000fc != (UseInteractor *)0x0) {
           UseInteractor::UseInteractor_AddRequirement
-                    (pUVar3,(UseRequirement *)this_02,(MethodInfo *)0x0);
-          pMVar1 = MVEditablePickupItemBase_get_BaseObject(this_01,(MethodInfo *)0x0);
+                    (pURam402000fc,(UseRequirement *)this_02,(MethodInfo *)0x0);
+          pMVar1 = MVEditablePickupItemBase_get_BaseObject
+                             ((MVEditablePickupItemBase *)0x40200000,(MethodInfo *)0x0);
           if (pMVar1 != (MVEditablePickupItemBaseObject *)0x0) {
             pGVar5 = (pMVar1->fields)._.useInteractionRotator;
             this_03 = (LevelBasedUseRequirement *)
                       func_?(TypeInfo__LevelBasedUseRequirement);
             LevelBasedUseRequirement::LevelBasedUseRequirement__ctor
                       (this_03,pGVar5,1,(MethodInfo *)0x0);
-            pUVar3 = (this_01->fields)._.useInteractor;
-            if (pUVar3 != (UseInteractor *)0x0) {
+            if (pURam402000fc != (UseInteractor *)0x0) {
               UseInteractor::UseInteractor_AddRequirement
-                        (pUVar3,(UseRequirement *)this_03,(MethodInfo *)0x0);
-              pMVar1 = MVEditablePickupItemBase_get_BaseObject(this_01,(MethodInfo *)0x0);
+                        (pURam402000fc,(UseRequirement *)this_03,(MethodInfo *)0x0);
+              pMVar1 = MVEditablePickupItemBase_get_BaseObject
+                                 ((MVEditablePickupItemBase *)0x40200000,(MethodInfo *)0x0);
               if (pMVar1 != (MVEditablePickupItemBaseObject *)0x0) {
                 pGVar5 = (pMVar1->fields)._.useInteractionRotator;
                 this_04 = (GameRankRequirement *)func_?(TypeInfo__GameRankRequirement);
                 GameRankRequirement::GameRankRequirement__ctor
-                          (this_04,pGVar5,(MVWorldObjectClient *)this_01,0,(MethodInfo *)0x0);
-                pUVar3 = (this_01->fields)._.useInteractor;
-                if (pUVar3 != (UseInteractor *)0x0) {
+                          (this_04,pGVar5,(MVWorldObjectClient *)0x40200000,0,(MethodInfo *)0x0);
+                if (pURam402000fc != (UseInteractor *)0x0) {
                   UseInteractor::UseInteractor_AddRequirement
-                            (pUVar3,(UseRequirement *)this_04,(MethodInfo *)0x0);
-                  pMVar1 = MVEditablePickupItemBase_get_BaseObject(this_01,(MethodInfo *)0x0);
+                            (pURam402000fc,(UseRequirement *)this_04,(MethodInfo *)0x0);
+                  pMVar1 = MVEditablePickupItemBase_get_BaseObject
+                                     ((MVEditablePickupItemBase *)0x40200000,(MethodInfo *)0x0);
                   if (pMVar1 != (MVEditablePickupItemBaseObject *)0x0) {
                     pGVar5 = (pMVar1->fields)._.useInteractionRotator;
                     this_05 = (RewardedAdRequirement *)
@@ -530,36 +529,37 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::EditablePickupItem:
                                              );
                     WorldObjectInteractionSystem::UseSystem::RewardedAdRequirement::
                     RewardedAdRequirement__ctor(this_05,pGVar5,(MethodInfo *)0x0);
-                    pUVar3 = (this_01->fields)._.useInteractor;
-                    if (pUVar3 != (UseInteractor *)0x0) {
+                    if (pURam402000fc != (UseInteractor *)0x0) {
                       UseInteractor::UseInteractor_AddRequirement
-                                (pUVar3,(UseRequirement *)this_05,(MethodInfo *)0x0);
-                      pMVar1 = MVEditablePickupItemBase_get_BaseObject(this_01,(MethodInfo *)0x0);
+                                (pURam402000fc,(UseRequirement *)this_05,(MethodInfo *)0x0);
+                      pMVar1 = MVEditablePickupItemBase_get_BaseObject
+                                         ((MVEditablePickupItemBase *)0x40200000,(MethodInfo *)0x0);
+                      pUVar3 = pURam402000fc;
                       if (pMVar1 != (MVEditablePickupItemBaseObject *)0x0) {
                         pTVar2 = (pMVar1->fields)._.triggerBoxEvents;
-                        pUVar3 = (this_01->fields)._.useInteractor;
                         pEVar4 = (EventHandler_1_Object_ *)
                                  func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
                         mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                                   (pEVar4,(Object *)pUVar3,
-                                   MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                                   MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                                    ,(MethodInfo *)0x0);
                         if (pTVar2 != (TriggerBoxEvents *)0x0) {
                           TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
                                     (pTVar2,(EventHandler_1_TriggerEventArgs_ *)pEVar4,
                                      (MethodInfo *)0x0);
                           pMVar1 = MVEditablePickupItemBase_get_BaseObject
-                                             (this_01,(MethodInfo *)0x0);
+                                             ((MVEditablePickupItemBase *)0x40200000,
+                                              (MethodInfo *)0x0);
+                          pUVar3 = pURam402000fc;
                           if (pMVar1 != (MVEditablePickupItemBaseObject *)0x0) {
                             pTVar2 = (pMVar1->fields)._.triggerBoxEvents;
-                            pUVar3 = (this_01->fields)._.useInteractor;
                             pEVar4 = (EventHandler_1_Object_ *)
                                      func_?(
                                                   TypeInfo__System__EventHandler<TriggerEventArgs>);
                             mscorlib.dll::System::EventHandler`1[Object]::
                             EventHandler_1_Object___ctor
                                       (pEVar4,(Object *)pUVar3,
-                                       MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                                       MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                                        ,(MethodInfo *)0x0);
                             if (pTVar2 != (TriggerBoxEvents *)0x0) {
                               TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit

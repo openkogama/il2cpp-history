@@ -134,12 +134,11 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarHeadRotationHandler::
 }
 
 
-/* Void ResetIdleTimer(EmoteTypes) */
+/* Void ResetIdleTimer() */
 
 void Assembly-CSharp.dll::AvatarLimbManager+AvatarHeadRotationHandler::
-     AvatarLimbManager_AvatarHeadRotationHandler_ResetIdleTimer_1
-               (AvatarLimbManager_AvatarHeadRotationHandler *this,EmoteTypes__Enum emoteType,
-               MethodInfo *method)
+     AvatarLimbManager_AvatarHeadRotationHandler_ResetIdleTimer
+               (AvatarLimbManager_AvatarHeadRotationHandler *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -210,6 +209,19 @@ void Assembly-CSharp.dll::AvatarLimbManager+AvatarHeadRotationHandler::
   func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
+  return;
+}
+
+
+/* Void ResetIdleTimer(EmoteTypes) */
+
+void Assembly-CSharp.dll::AvatarLimbManager+AvatarHeadRotationHandler::
+     AvatarLimbManager_AvatarHeadRotationHandler_ResetIdleTimer_1
+               (AvatarLimbManager_AvatarHeadRotationHandler *this,EmoteTypes__Enum emoteType,
+               MethodInfo *method)
+
+{
+  AvatarLimbManager_AvatarHeadRotationHandler_ResetIdleTimer(this,(MethodInfo *)0x0);
   return;
 }
 

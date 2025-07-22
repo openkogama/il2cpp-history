@@ -1,9 +1,9 @@
 
 /* Boolean MoveNext() */
 
-bool Assembly-CSharp.dll::PickupItemMeleeWeapon+<CheckHitCoroutine>d__28::
-     PickupItemMeleeWeapon_CheckHitCoroutine_d_28_MoveNext
-               (PickupItemMeleeWeapon_CheckHitCoroutine_d_28 *this,MethodInfo *method)
+bool Assembly-CSharp.dll::PickupItemMeleeWeapon+<CheckHitCoroutine>d__30::
+     PickupItemMeleeWeapon_CheckHitCoroutine_d_30_MoveNext
+               (PickupItemMeleeWeapon_CheckHitCoroutine_d_30 *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -51,9 +51,9 @@ code_?:
 
 /* Void System.Collections.IEnumerator.Reset() */
 
-void Assembly-CSharp.dll::PickupItemMeleeWeapon+<CheckHitCoroutine>d__28::
-     PickupItemMeleeWeapon_CheckHitCoroutine_d_28_System_Collections_IEnumerator_Reset
-               (PickupItemMeleeWeapon_CheckHitCoroutine_d_28 *this,MethodInfo *method)
+void Assembly-CSharp.dll::PickupItemMeleeWeapon+<CheckHitCoroutine>d__30::
+     PickupItemMeleeWeapon_CheckHitCoroutine_d_30_System_Collections_IEnumerator_Reset
+               (PickupItemMeleeWeapon_CheckHitCoroutine_d_30 *this,MethodInfo *method)
 
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
@@ -61,7 +61,7 @@ void Assembly-CSharp.dll::PickupItemMeleeWeapon+<CheckHitCoroutine>d__28::
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
   func_?(&
-                  MethodInfo__PickupItemMeleeWeapon___CheckHitCoroutine_d__28__System_Collections_IEnumerator_Reset__
+                  MethodInfo__PickupItemMeleeWeapon___CheckHitCoroutine_d__30__System_Collections_IEnumerator_Reset__
                  );
   func_?(this_00);
   pcVar2 = (code *)swi(3);

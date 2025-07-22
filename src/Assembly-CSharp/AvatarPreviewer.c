@@ -320,7 +320,7 @@ code_?:
                                                              (float)((uint)(this->fields).
                                                                            previewCamDist ^
                                                                                                                                         
-                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                                                   )) * fVar9;
                                                 UnityEngine.CoreModule.dll::UnityEngine::Transform::
                                                 Transform_set_position

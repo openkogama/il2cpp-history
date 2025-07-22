@@ -137,22 +137,22 @@ code_?:
 }
 
 
-/* Void OnDestroy() */
+/* Void RegisterShortcutKey() */
 
-void Assembly-CSharp.dll::ShortcutHandler::ShortcutHandler_OnDestroy
+void Assembly-CSharp.dll::ShortcutHandler::ShortcutHandler_RegisterShortcutKey
                (ShortcutHandler *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
     func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyUnRegister>
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyRegister>
                    );
     func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IShortcutKeyUnRegister>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyUnRegister>_
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IShortcutKeyRegister>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyRegister>_
                    );
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
     func_?(&
-                    MethodInfo__ShortcutHandler___OnDestroy_b__6_0_UnityEngine__EventSystems__IShortcutKeyUnRegister__UnityEngine__EventSystems__BaseEventData_
+                    MethodInfo__ShortcutHandler___RegisterShortcutKey_b__9_0_UnityEngine__EventSystems__IShortcutKeyRegister__UnityEngine__EventSystems__BaseEventData_
                    );
     cRam_? = '\x01';
   }
@@ -161,19 +161,19 @@ void Assembly-CSharp.dll::ShortcutHandler::ShortcutHandler_OnDestroy
   callbackFunction =
        (ExecuteEvents_EventFunction_1_System_Object_ *)
        func_?(
-                      TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyUnRegister>
+                      TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyRegister>
                       );
   UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
   UnityAction_2_System_Object_System_Object___ctor
             ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
-             MethodInfo__ShortcutHandler___OnDestroy_b__6_0_UnityEngine__EventSystems__IShortcutKeyUnRegister__UnityEngine__EventSystems__BaseEventData_
+             MethodInfo__ShortcutHandler___RegisterShortcutKey_b__9_0_UnityEngine__EventSystems__IShortcutKeyRegister__UnityEngine__EventSystems__BaseEventData_
              ,(MethodInfo *)0x0);
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
   UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
             (root,(BaseEventData *)0x0,callbackFunction,
-             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IShortcutKeyUnRegister>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyUnRegister>_
+             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IShortcutKeyRegister>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyRegister>_
             );
   return;
 }
@@ -202,22 +202,22 @@ void Assembly-CSharp.dll::ShortcutHandler::ShortcutHandler_Reset
 }
 
 
-/* Void Start() */
+/* Void UnRegisterShortcutKey() */
 
-void Assembly-CSharp.dll::ShortcutHandler::ShortcutHandler_Start
+void Assembly-CSharp.dll::ShortcutHandler::ShortcutHandler_UnRegisterShortcutKey
                (ShortcutHandler *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
     func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyRegister>
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyUnRegister>
                    );
     func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IShortcutKeyRegister>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyRegister>_
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IShortcutKeyUnRegister>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyUnRegister>_
                    );
     func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
     func_?(&
-                    MethodInfo__ShortcutHandler___Start_b__3_0_UnityEngine__EventSystems__IShortcutKeyRegister__UnityEngine__EventSystems__BaseEventData_
+                    MethodInfo__ShortcutHandler___UnRegisterShortcutKey_b__10_0_UnityEngine__EventSystems__IShortcutKeyUnRegister__UnityEngine__EventSystems__BaseEventData_
                    );
     cRam_? = '\x01';
   }
@@ -226,54 +226,27 @@ void Assembly-CSharp.dll::ShortcutHandler::ShortcutHandler_Start
   callbackFunction =
        (ExecuteEvents_EventFunction_1_System_Object_ *)
        func_?(
-                      TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyRegister>
+                      TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyUnRegister>
                       );
   UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
   UnityAction_2_System_Object_System_Object___ctor
             ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
-             MethodInfo__ShortcutHandler___Start_b__3_0_UnityEngine__EventSystems__IShortcutKeyRegister__UnityEngine__EventSystems__BaseEventData_
+             MethodInfo__ShortcutHandler___UnRegisterShortcutKey_b__10_0_UnityEngine__EventSystems__IShortcutKeyUnRegister__UnityEngine__EventSystems__BaseEventData_
              ,(MethodInfo *)0x0);
   if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
   UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
             (root,(BaseEventData *)0x0,callbackFunction,
-             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IShortcutKeyRegister>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyRegister>_
+             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IShortcutKeyUnRegister>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyUnRegister>_
             );
   return;
 }
 
 
-/* Void <OnDestroy>b__6_0(IShortcutKeyUnRegister, BaseEventData) */
+/* Void <RegisterShortcutKey>b__9_0(IShortcutKeyRegister, BaseEventData) */
 
-void Assembly-CSharp.dll::ShortcutHandler::ShortcutHandler__OnDestroy_b__6_0
-               (ShortcutHandler *this,IShortcutKeyUnRegister *x,BaseEventData *y,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IShortcutKeyUnRegister;
-    func_?();
-    cRam_? = '\x01';
-  }
-  if (x != (IShortcutKeyUnRegister *)0x0) {
-    ppIStack_1 = (IShortcutKeyUnRegister__Class **)(this->fields).keyState;
-    puStack_2 = (undefined *)(this->fields).kogamaControl;
-    pIStack_3 = x;
-    func_?(0,TypeInfo__UnityEngine__EventSystems__IShortcutKeyUnRegister);
-    return;
-  }
-  ppIStack_1 = (IShortcutKeyUnRegister__Class **)&stack0xfffffffc;
-  uVar4 = func_?(&pIStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
-  return;
-}
-
-
-/* Void <Start>b__3_0(IShortcutKeyRegister, BaseEventData) */
-
-void Assembly-CSharp.dll::ShortcutHandler::ShortcutHandler__Start_b__3_0
+void Assembly-CSharp.dll::ShortcutHandler::ShortcutHandler__RegisterShortcutKey_b__9_0
                (ShortcutHandler *this,IShortcutKeyRegister *x,BaseEventData *y,MethodInfo *method)
 
 {
@@ -298,6 +271,33 @@ void Assembly-CSharp.dll::ShortcutHandler::ShortcutHandler__Start_b__3_0
   func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
+  return;
+}
+
+
+/* Void <UnRegisterShortcutKey>b__10_0(IShortcutKeyUnRegister, BaseEventData) */
+
+void Assembly-CSharp.dll::ShortcutHandler::ShortcutHandler__UnRegisterShortcutKey_b__10_0
+               (ShortcutHandler *this,IShortcutKeyUnRegister *x,BaseEventData *y,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IShortcutKeyUnRegister;
+    func_?();
+    cRam_? = '\x01';
+  }
+  if (x != (IShortcutKeyUnRegister *)0x0) {
+    ppIStack_1 = (IShortcutKeyUnRegister__Class **)(this->fields).keyState;
+    puStack_2 = (undefined *)(this->fields).kogamaControl;
+    pIStack_3 = x;
+    func_?(0,TypeInfo__UnityEngine__EventSystems__IShortcutKeyUnRegister);
+    return;
+  }
+  ppIStack_1 = (IShortcutKeyUnRegister__Class **)&stack0xfffffffc;
+  uVar4 = func_?(&pIStack_3);
+  func_?(uVar4);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

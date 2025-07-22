@@ -36,10 +36,11 @@ public class PickupItemFlamethrower : PickupItem
 	// Properties
 	public override AvatarItemType Type { get; }
 	public override int Quantity { get; }
+	public override int MaxAmmo { get; }
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _DoFlaming_d__16 : IEnumerator<object>
+	private sealed class _DoFlaming_d__18 : IEnumerator<object>
 	{
 		// Fields
 		private int __1__state;
@@ -52,7 +53,7 @@ public class PickupItemFlamethrower : PickupItem
 
 		// Constructors
 		[DebuggerHidden]
-		public _DoFlaming_d__16(int __1__state);
+		public _DoFlaming_d__18(int __1__state);
 
 		// Methods
 		[DebuggerHidden]
@@ -63,7 +64,7 @@ public class PickupItemFlamethrower : PickupItem
 	}
 
 	[CompilerGenerated]
-	private sealed class _DoFuelBurn_d__17 : IEnumerator<object>
+	private sealed class _DoFuelBurn_d__19 : IEnumerator<object>
 	{
 		// Fields
 		private int __1__state;
@@ -76,7 +77,7 @@ public class PickupItemFlamethrower : PickupItem
 
 		// Constructors
 		[DebuggerHidden]
-		public _DoFuelBurn_d__17(int __1__state);
+		public _DoFuelBurn_d__19(int __1__state);
 
 		// Methods
 		[DebuggerHidden]
@@ -93,9 +94,9 @@ public class PickupItemFlamethrower : PickupItem
 	private bool IsStillFlaming();
 	private void Awake();
 	public override void ResetAmmo();
-	[IteratorStateMachine(typeof(_DoFlaming_d__16))]
+	[IteratorStateMachine(typeof(_DoFlaming_d__18))]
 	private IEnumerator DoFlaming();
-	[IteratorStateMachine(typeof(_DoFuelBurn_d__17))]
+	[IteratorStateMachine(typeof(_DoFuelBurn_d__19))]
 	private IEnumerator DoFuelBurn();
 	public override void TriggerBegin(int instigatorActorNr);
 	public override void TriggerEnd();

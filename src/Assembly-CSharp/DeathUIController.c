@@ -749,7 +749,7 @@ void Assembly-CSharp.dll::DeathUIController::DeathUIController_OnFadeFinished
         }
         pIVar4 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
         if (pIVar4 != (IPlayModeUI *)0x0) {
-          cVar5 = func_?(3,TypeInfo__IPlayModeUI,pIVar4);
+          cVar5 = func_?(5,TypeInfo__IPlayModeUI,pIVar4);
           if (cVar5 == '\0') {
             if (cRam_? == '\0') {
               func_?(&TypeInfo__GamePassesManager);

@@ -20,14 +20,13 @@ void Assembly-CSharp.dll::RTG::GizmoCap2DCollection::GizmoCap2DCollection_Add
                    );
     cRam_? = '\x01';
   }
-  pDVar1 = (this->fields)._handleIdToCap;
-  if ((cap != (GizmoCap2D *)0x0) &&
-     (pvVar2 = UnityEngine.AndroidJNIModule.dll::UnityEngine::AndroidJavaObject::
-               AndroidJavaObject__GetRawClass((AndroidJavaObject *)cap,(MethodInfo *)0x0),
-     pDVar1 != (Dictionary_2_System_Int32_RTG_GizmoCap2D_ *)0x0)) {
+  if (((cap != (GizmoCap2D *)0x0) &&
+      (pGVar1 = (cap->fields)._._handle, pGVar1 != (GizmoHandle *)0x0)) &&
+     (pDVar2 = (this->fields)._handleIdToCap,
+     pDVar2 != (Dictionary_2_System_Int32_RTG_GizmoCap2D_ *)0x0)) {
     bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::
             Dictionary_2_System_Int32_System_Single__ContainsKey
-                      ((Dictionary_2_System_Int32_System_Single_ *)pDVar1,(int32_t)pvVar2,
+                      ((Dictionary_2_System_Int32_System_Single_ *)pDVar2,(pGVar1->fields)._id,
                        MethodInfo__System__Collections__Generic__Dictionary<int,_RTG::GizmoCap2D>__ContainsKey_int_
                       );
     if (bVar3 != 0) {
@@ -39,13 +38,14 @@ void Assembly-CSharp.dll::RTG::GizmoCap2DCollection::GizmoCap2DCollection_Add
                 ((List_1_System_Object_ *)this_00,(Object *)cap,
                  MethodInfo__System__Collections__Generic__List<RTG::GizmoCap2D>__Add_RTG__GizmoCap2D_
                 );
-      pDVar1 = (this->fields)._handleIdToCap;
-      pvVar2 = UnityEngine.AndroidJNIModule.dll::UnityEngine::AndroidJavaObject::
-               AndroidJavaObject__GetRawClass((AndroidJavaObject *)cap,(MethodInfo *)0x0);
-      if (pDVar1 != (Dictionary_2_System_Int32_RTG_GizmoCap2D_ *)0x0) {
+      pGVar1 = (cap->fields)._._handle;
+      if ((pGVar1 != (GizmoHandle *)0x0) &&
+         (pDVar2 = (this->fields)._handleIdToCap,
+         pDVar2 != (Dictionary_2_System_Int32_RTG_GizmoCap2D_ *)0x0)) {
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
         Dictionary_2_System_Int32_System_Object__Add
-                  ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,(int32_t)pvVar2,(Object *)cap,
+                  ((Dictionary_2_System_Int32_System_Object_ *)pDVar2,(pGVar1->fields)._id,
+                   (Object *)cap,
                    MethodInfo__System__Collections__Generic__Dictionary<int,_RTG::GizmoCap2D>__Add_int__RTG__GizmoCap2D_
                   );
         return;
@@ -66,28 +66,26 @@ bool Assembly-CSharp.dll::RTG::GizmoCap2DCollection::GizmoCap2DCollection_Contai
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_RTG::GizmoCap2D>__ContainsKey_int_
-                   );
+    func_?();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields)._handleIdToCap;
-  if (cap != (GizmoCap2D *)0x0) {
-    key = UnityEngine.AndroidJNIModule.dll::UnityEngine::AndroidJavaObject::
-          AndroidJavaObject__GetRawClass((AndroidJavaObject *)cap,(MethodInfo *)0x0);
+  if ((cap != (GizmoCap2D *)0x0) && (pGVar1 = (cap->fields)._._handle, pGVar1 != (GizmoHandle *)0x0)
+     ) {
+    this_00 = (this->fields)._handleIdToCap;
     if (this_00 != (Dictionary_2_System_Int32_RTG_GizmoCap2D_ *)0x0) {
-      bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]
+      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]
               ::Dictionary_2_System_Int32_System_Single__ContainsKey
-                        ((Dictionary_2_System_Int32_System_Single_ *)this_00,(int32_t)key,
+                        ((Dictionary_2_System_Int32_System_Single_ *)this_00,(pGVar1->fields)._id,
                          MethodInfo__System__Collections__Generic__Dictionary<int,_RTG::GizmoCap2D>__ContainsKey_int_
                         );
-      return bVar1;
+      return bVar2;
     }
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  bVar1 = (*pcVar2)();
-  return bVar1;
+  uVar3 = func_?(&stack0xfffffff0);
+  func_?(uVar3);
+  pcVar4 = (code *)swi(3);
+  bVar2 = (*pcVar4)();
+  return bVar2;
 }
 
 
@@ -152,14 +150,13 @@ void Assembly-CSharp.dll::RTG::GizmoCap2DCollection::
   LStack_6._index = 0;
   LStack_6._version = 0;
   LStack_6._current = (Object *)0x0;
-  method_00 = (MethodInfo *)(this->fields)._caps;
-  if (method_00 != (MethodInfo *)0x0) {
+  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            (this->fields)._caps;
+  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
     pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
              RegexCharClass+SingleRange]::
              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       (&LStack_8,
-                        (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                        method_00,
+                       (&LStack_8,this_00,
                         MethodInfo__System__Collections__Generic__List<RTG::GizmoCap2D>__GetEnumerator__
                        );
     LStack_6._list = (List_1_System_Object_ *)pLVar7->_list;
@@ -181,17 +178,15 @@ void Assembly-CSharp.dll::RTG::GizmoCap2DCollection::
                   ((Object *)&LStack_6,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoCap2D>__Dispose__
-                   ,method_00);
+                   ,unaff_EDI);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) break;
-      this_00 = Newtonsoft.Json.dll::Newtonsoft::Json::Converters::XDocumentTypeWrapper::
-                XDocumentTypeWrapper_get_System
-                          ((XDocumentTypeWrapper *)LStack_6._current,(MethodInfo *)0x0);
-      if (this_00 == (String *)0x0) break;
-      method_00 = (MethodInfo *)priority;
-      Priority::Priority_MakeHigherThan((Priority *)this_00,priority,(MethodInfo *)0x0);
+      if ((((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) ||
+          (*(int *)((int)LStack_6._current + 0xc) == 0)) ||
+         (this_01 = *(Priority **)(*(int *)((int)LStack_6._current + 0xc) + 0x1c),
+         this_01 == (Priority *)0x0)) break;
+      Priority::Priority_MakeHigherThan(this_01,priority,(MethodInfo *)0x0);
     }
   }
   func_?();
@@ -235,14 +230,13 @@ void Assembly-CSharp.dll::RTG::GizmoCap2DCollection::
   LStack_6._index = 0;
   LStack_6._version = 0;
   LStack_6._current = (Object *)0x0;
-  method_00 = (MethodInfo *)(this->fields)._caps;
-  if (method_00 != (MethodInfo *)0x0) {
+  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            (this->fields)._caps;
+  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
     pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
              RegexCharClass+SingleRange]::
              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       (&LStack_8,
-                        (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                        method_00,
+                       (&LStack_8,this_00,
                         MethodInfo__System__Collections__Generic__List<RTG::GizmoCap2D>__GetEnumerator__
                        );
     LStack_6._list = (List_1_System_Object_ *)pLVar7->_list;
@@ -264,17 +258,15 @@ void Assembly-CSharp.dll::RTG::GizmoCap2DCollection::
                   ((Object *)&LStack_6,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoCap2D>__Dispose__
-                   ,method_00);
+                   ,unaff_EDI);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) break;
-      this_00 = Newtonsoft.Json.dll::Newtonsoft::Json::Converters::XDocumentTypeWrapper::
-                XDocumentTypeWrapper_get_System
-                          ((XDocumentTypeWrapper *)LStack_6._current,(MethodInfo *)0x0);
-      if (this_00 == (String *)0x0) break;
-      method_00 = (MethodInfo *)priority;
-      Priority::Priority_MakeLowerThan((Priority *)this_00,priority,(MethodInfo *)0x0);
+      if ((((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) ||
+          (*(int *)((int)LStack_6._current + 0xc) == 0)) ||
+         (this_01 = *(Priority **)(*(int *)((int)LStack_6._current + 0xc) + 0x1c),
+         this_01 == (Priority *)0x0)) break;
+      Priority::Priority_MakeLowerThan(this_01,priority,(MethodInfo *)0x0);
     }
   }
   func_?();
@@ -305,14 +297,13 @@ void Assembly-CSharp.dll::RTG::GizmoCap2DCollection::GizmoCap2DCollection_Remove
                    );
     cRam_? = '\x01';
   }
-  pDVar1 = (this->fields)._handleIdToCap;
-  if ((cap != (GizmoCap2D *)0x0) &&
-     (pvVar2 = UnityEngine.AndroidJNIModule.dll::UnityEngine::AndroidJavaObject::
-               AndroidJavaObject__GetRawClass((AndroidJavaObject *)cap,(MethodInfo *)0x0),
-     pDVar1 != (Dictionary_2_System_Int32_RTG_GizmoCap2D_ *)0x0)) {
+  if (((cap != (GizmoCap2D *)0x0) &&
+      (pGVar1 = (cap->fields)._._handle, pGVar1 != (GizmoHandle *)0x0)) &&
+     (pDVar2 = (this->fields)._handleIdToCap,
+     pDVar2 != (Dictionary_2_System_Int32_RTG_GizmoCap2D_ *)0x0)) {
     bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::
             Dictionary_2_System_Int32_System_Single__ContainsKey
-                      ((Dictionary_2_System_Int32_System_Single_ *)pDVar1,(int32_t)pvVar2,
+                      ((Dictionary_2_System_Int32_System_Single_ *)pDVar2,(pGVar1->fields)._id,
                        MethodInfo__System__Collections__Generic__Dictionary<int,_RTG::GizmoCap2D>__ContainsKey_int_
                       );
     if (bVar3 == 0) {
@@ -325,13 +316,13 @@ void Assembly-CSharp.dll::RTG::GizmoCap2DCollection::GizmoCap2DCollection_Remove
                 ((List_1_System_Object_ *)this_00,(Object *)cap,
                  MethodInfo__System__Collections__Generic__List<RTG::GizmoCap2D>__Remove_RTG__GizmoCap2D_
                 );
-      pDVar1 = (this->fields)._handleIdToCap;
-      pvVar2 = UnityEngine.AndroidJNIModule.dll::UnityEngine::AndroidJavaObject::
-               AndroidJavaObject__GetRawClass((AndroidJavaObject *)cap,(MethodInfo *)0x0);
-      if (pDVar1 != (Dictionary_2_System_Int32_RTG_GizmoCap2D_ *)0x0) {
+      pGVar1 = (cap->fields)._._handle;
+      if ((pGVar1 != (GizmoHandle *)0x0) &&
+         (pDVar2 = (this->fields)._handleIdToCap,
+         pDVar2 != (Dictionary_2_System_Int32_RTG_GizmoCap2D_ *)0x0)) {
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
         Dictionary_2_System_Int32_System_Object__Remove
-                  ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,(int32_t)pvVar2,
+                  ((Dictionary_2_System_Int32_System_Object_ *)pDVar2,(pGVar1->fields)._id,
                    MethodInfo__System__Collections__Generic__Dictionary<int,_RTG::GizmoCap2D>__Remove_int_
                   );
         return;
@@ -566,7 +557,11 @@ void Assembly-CSharp.dll::RTG::GizmoCap2DCollection::GizmoCap2DCollection_SetHov
         return;
       }
       if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) break;
-      GizmoCap::GizmoCap_SetHoverable((GizmoCap *)LStack_6._current,hoverable,(MethodInfo *)0x0);
+      if (*(bool *)((int)LStack_6._current + 0x11) != hoverable) {
+        *(bool *)((int)LStack_6._current + 0x11) = hoverable;
+        (**(code **)(*(int *)LStack_6._current + 0x130))
+                  (LStack_6._current,*(undefined4 *)(*(int *)LStack_6._current + 0x134));
+      }
     }
   }
   func_?();
@@ -642,7 +637,11 @@ void Assembly-CSharp.dll::RTG::GizmoCap2DCollection::GizmoCap2DCollection_SetVis
         return;
       }
       if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) break;
-      GizmoCap::GizmoCap_SetVisible((GizmoCap *)LStack_6._current,visible,(MethodInfo *)0x0);
+      if (*(bool *)((int)LStack_6._current + 0x10) != visible) {
+        *(bool *)((int)LStack_6._current + 0x10) = visible;
+        (**(code **)(*(int *)LStack_6._current + 0x128))
+                  (LStack_6._current,*(undefined4 *)(*(int *)LStack_6._current + 300));
+      }
     }
   }
   func_?();

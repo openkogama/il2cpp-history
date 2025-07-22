@@ -437,7 +437,7 @@ void Assembly-CSharp.dll::ESRotating::ESRotating_Execute
               MVWorldObjectClient::MVWorldObjectClient_RotateAround
                         (pMStack_23,pivot_02,*pVVar9,
                          (float)((uint)fStack_24 ^
-                                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                                 ) * (this->fields).rotationSpeed - uStack_22._4_4_,(MethodInfo *)0x0
                         );
               cStack_19 = '\x01';
@@ -456,7 +456,7 @@ void Assembly-CSharp.dll::ESRotating::ESRotating_Execute
               MVWorldObjectClient::MVWorldObjectClient_RotateAround
                         (pMStack_23,pivot,*pVVar9,
                          (float)((uint)fStack_24 ^
-                                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                                 ) * (this->fields).rotationSpeed - uStack_22._4_4_,(MethodInfo *)0x0
                         );
               cStack_20 = '\x01';
@@ -479,7 +479,7 @@ void Assembly-CSharp.dll::ESRotating::ESRotating_Execute
               MVWorldObjectClient::MVWorldObjectClient_RotateAround
                         (pMStack_23,pivot_01,*pVVar9,
                          (float)((uint)fStack_24 ^
-                                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                                 ) * (this->fields).rotationSpeed - uStack_22._4_4_,(MethodInfo *)0x0
                         );
               bVar15 = true;
@@ -529,7 +529,7 @@ void Assembly-CSharp.dll::ESRotating::ESRotating_Execute
             MVWorldObjectClient::MVWorldObjectClient_RotateAround
                       (pMVar16,pivot_00,*pVVar9,
                        (float)((uint)fStack_24 ^
-                              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                              __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                               ) * (this->fields).rotationSpeed - uStack_22._4_4_,(MethodInfo *)0x0);
             MVWorldObjectClient::MVWorldObjectClient_get_SyncRot
                       ((Quaternion *)&stack0xffffff34,pMVar16,(MethodInfo *)0x0);

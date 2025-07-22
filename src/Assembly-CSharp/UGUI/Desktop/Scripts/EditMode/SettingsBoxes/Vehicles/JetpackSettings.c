@@ -204,6 +204,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
                (JetpackSettings *this,String *key,Object *value,MethodInfo *method)
 
 {
+  a = key;
   if (cRam_? == '\0') {
     func_?(&
                     TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__VehicleEnergyForVehicleSettings
@@ -211,38 +212,119 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
     cRam_? = '\x01';
   }
   bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty(key,(MethodInfo *)0x0);
-  if (bVar1 == 0) {
-    if ((
-        TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__VehicleEnergyForVehicleSettings
-        ->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(
-                     TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__VehicleEnergyForVehicleSettings
-                     );
-    }
-    bVar1 = VehicleEnergyForVehicleSettings::VehicleEnergyForVehicleSettings_IsKey
-                      (key,(MethodInfo *)0x0);
-    if (bVar1 == 0) {
-      this_00 = (this->fields)._.settingsBase;
-      if (this_00 == (SettingsBase *)0x0) goto code_?;
-      SettingsBase::SettingsBase_OnSettingChanged(this_00,key,value,(MethodInfo *)0x0);
-    }
-    else {
-      this_01 = (this->fields)._.vehicleEnergyForVehicleSettings;
-      if (this_01 == (VehicleEnergyForVehicleSettings *)0x0) goto code_?;
-      value = VehicleEnergyForVehicleSettings::VehicleEnergyForVehicleSettings_ValueToSend
-                        (this_01,key,value,(MethodInfo *)0x0);
-    }
-    this_02 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
-    if (this_02 == (MVNetworkGame_OperationRequests *)0x0) {
-code_?:
-      func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
-    }
-    MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_UpdateWorldObjectDataPartial
-              (this_02,(this->fields)._.vehicleWoID,key,value,(MethodInfo *)0x0);
+  if (bVar1 != 0) {
+    return;
   }
+  if ((
+      TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__VehicleEnergyForVehicleSettings
+      ->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(
+                   TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__VehicleEnergyForVehicleSettings
+                   );
+  }
+  if (cRam_? == '\0') {
+    func_?(&StringLiteral_vehicleEnergyConsumption);
+    func_?(&StringLiteral_vehicleEnergyUse);
+    func_?(&StringLiteral_vehicleEnergyStorage);
+    cRam_? = '\x01';
+  }
+  pSVar2 = StringLiteral_vehicleEnergyUse;
+  if (cRam_? == '\0') {
+    func_?(&StringLiteral_BlueprintData_);
+    cRam_? = '\x01';
+  }
+  pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                     (StringLiteral_BlueprintData_,pSVar2,(MethodInfo *)0x0);
+  bVar1 = mscorlib.dll::System::String::String_op_Equality(key,pSVar2,(MethodInfo *)0x0);
+  pSVar2 = StringLiteral_vehicleEnergyStorage;
+  if (bVar1 == 0) {
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    this = (JetpackSettings *)
+           mscorlib.dll::System::String::String_Concat_3
+                     (StringLiteral_BlueprintData_,pSVar2,(MethodInfo *)0x0);
+    bVar1 = mscorlib.dll::System::String::String_op_Equality(key,(String *)this,(MethodInfo *)0x0);
+    pSVar2 = StringLiteral_vehicleEnergyConsumption;
+    if (bVar1 != 0) goto code_?;
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                       (StringLiteral_BlueprintData_,pSVar2,(MethodInfo *)0x0);
+    bVar1 = mscorlib.dll::System::String::String_op_Equality(key,pSVar2,(MethodInfo *)0x0);
+    if (bVar1 != 0) goto code_?;
+    this_00 = (this->fields)._.settingsBase;
+    if (this_00 == (SettingsBase *)0x0) goto code_?;
+    SettingsBase::SettingsBase_OnSettingChanged(this_00,key,value,(MethodInfo *)0x0);
+  }
+  else {
+code_?:
+    if ((this->fields)._.vehicleEnergyForVehicleSettings == (VehicleEnergyForVehicleSettings *)0x0)
+    goto code_?;
+    if (cRam_? == '\0') {
+      func_?();
+      func_?();
+      func_?();
+      func_?();
+      func_?();
+      cRam_? = '\x01';
+    }
+    key = StringLiteral_vehicleEnergyUse;
+    if (cRam_? == '\0') {
+      key = (String *)&StringLiteral_BlueprintData_;
+      func_?();
+      cRam_? = '\x01';
+    }
+    pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                       (StringLiteral_BlueprintData_,key,(MethodInfo *)0x0);
+    bVar1 = mscorlib.dll::System::String::String_op_Equality(a,pSVar2,(MethodInfo *)0x0);
+    pSVar2 = StringLiteral_vehicleEnergyStorage;
+    if (bVar1 == 0) {
+      if (cRam_? == '\0') {
+        func_?();
+        cRam_? = '\x01';
+      }
+      pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                         (StringLiteral_BlueprintData_,pSVar2,(MethodInfo *)0x0);
+      bVar1 = mscorlib.dll::System::String::String_op_Equality(a,pSVar2,(MethodInfo *)0x0);
+      pSVar2 = StringLiteral_vehicleEnergyConsumption;
+      if (bVar1 == 0) {
+        if (cRam_? == '\0') {
+          func_?();
+          cRam_? = '\x01';
+        }
+        pSVar2 = mscorlib.dll::System::String::String_Concat_3
+                           (StringLiteral_BlueprintData_,pSVar2,(MethodInfo *)0x0);
+        bVar1 = mscorlib.dll::System::String::String_op_Equality(a,pSVar2,(MethodInfo *)0x0);
+        if (bVar1 == 0) goto code_?;
+        if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        mscorlib.dll::System::Convert::Convert_ToInt32(value,(MethodInfo *)0x0);
+      }
+      else {
+        if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        mscorlib.dll::System::Convert::Convert_ToInt32(value,(MethodInfo *)0x0);
+      }
+      value = (Object *)func_?();
+    }
+  }
+code_?:
+  this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
+  if (this_01 != (MVNetworkGame_OperationRequests *)0x0) {
+    MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_UpdateWorldObjectDataPartial
+              (this_01,(this->fields)._.vehicleWoID,a,value,(MethodInfo *)0x0);
+    return;
+  }
+code_?:
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

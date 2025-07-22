@@ -3081,7 +3081,7 @@ void Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu_StartPlaying
     }
     if (TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField !=
         (IPlayModeUI *)0x0) {
-      func_?(4);
+      func_?(6);
       pSVar5 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                          ((MethodInfo *)0x0);
       if ((pSVar5 != (SpawnRoleDataMediator *)0x0) &&

@@ -38,25 +38,18 @@ void Assembly-CSharp.dll::PlayerTipNotification::PlayerTipNotification_Initializ
       (*(code *)(pTVar2->klass->vtable).set_text.method)
                 (pTVar2,TVar5.m_Index,
                  (pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-      pNVar6 = (pPVar1->fields).fader;
-      if (pNVar6 != (NotificationFade *)0x0) {
-        (pNVar6->fields).pauseAt = (pNVar6->fields).duration;
-        this_00 = (pNVar6->fields).group;
-        (pNVar6->fields).playing = 1;
-        if (this_00 != (CanvasGroup *)0x0) {
-          UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-                    (this_00,0.0,(MethodInfo *)0x0);
-          (pNVar6->fields).currentTime = 0.0;
-          return;
-        }
+      this_00 = (pPVar1->fields).fader;
+      if (this_00 != (NotificationFade *)0x0) {
+        NotificationFade::NotificationFade_Activate(this_00,(MethodInfo *)0x0);
+        return;
       }
     }
   }
   uVar4 = func_?();
 code_?:
   func_?(uVar4);
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

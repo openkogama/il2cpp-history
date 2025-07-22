@@ -197,7 +197,7 @@ void Assembly-CSharp.dll::RTG::GizmoSglAxisRotationDrag3D::GizmoSglAxisRotationD
           uVar10 = (this->fields)._rotationPlane.m_Normal.y;
           fVar11 = (float)((uint)(pfVar2[1] * (float)uVar10 + *pfVar2 * (float)uVar9 +
                                  pfVar2[2] * VStack_5.z) ^
-                          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
+                          __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field)
                    - (this->fields)._rotationPlane.m_Distance;
           VStack_5.x = (float)uVar9;
           VStack_5.y = (float)uVar10;
@@ -240,7 +240,7 @@ void Assembly-CSharp.dll::RTG::GizmoSglAxisRotationDrag3D::GizmoSglAxisRotationD
               VStack_5.z = (float)uVar23 - VStack_5.y;
               VStack_5.y = (float)uVar22 - VStack_5.x;
               uVar24 = func_?();
-              uVar25 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+              uVar25 = __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
               VStack_5.y = (float)uVar24;
               (this->fields)._screenDragCircleTangent.x = (float)(int)uVar24;
               (this->fields)._screenDragCircleTangent.y = (float)(int)((ulonglong)uVar24 >> 0x20);
@@ -253,7 +253,7 @@ void Assembly-CSharp.dll::RTG::GizmoSglAxisRotationDrag3D::GizmoSglAxisRotationD
               if (cRam_? == '\0') {
                 func_?();
                 cRam_? = '\x01';
-                uVar25 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+                uVar25 = __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
               }
               fStack_27 = (this->fields)._screenDragCircleTangent.z;
               uStack_28._0_4_ = (this->fields)._screenDragCircleTangent.x;
@@ -273,7 +273,7 @@ void Assembly-CSharp.dll::RTG::GizmoSglAxisRotationDrag3D::GizmoSglAxisRotationD
                 uStack_28._0_4_ = (this->fields)._screenDragCircleTangent.x;
                 uStack_28._4_4_ = (this->fields)._screenDragCircleTangent.y;
                 fStack_27 = (this->fields)._screenDragCircleTangent.z;
-                uVar25 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+                uVar25 = __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
               }
               (this->fields)._screenDragCircleTangent.x = (float)((uint)(float)uStack_28 ^ uVar25);
               (this->fields)._screenDragCircleTangent.y = (float)((uint)uStack_28._4_4_ ^ uVar25);
@@ -415,7 +415,7 @@ void Assembly-CSharp.dll::RTG::GizmoSglAxisRotationDrag3D::GizmoSglAxisRotationD
     fVar8 = pVVar4->z;
     fVar9 = (float)((uint)(uStack_3._4_4_ * (float)uVar7 + (float)uStack_3 * (float)uVar6 +
                           fStack_2 * fVar8) ^
-                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                   __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     (this->fields)._rotationPlane.m_Normal.x = (float)uVar6;
     (this->fields)._rotationPlane.m_Normal.y = (float)uVar7;
     (this->fields)._rotationPlane.m_Normal.z = fVar8;

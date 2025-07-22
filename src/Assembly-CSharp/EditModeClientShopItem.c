@@ -436,17 +436,46 @@ void Assembly-CSharp.dll::EditModeClientShopItem::EditModeClientShopItem_Update
                (EditModeClientShopItem *this,MethodInfo *method)
 
 {
-  if ((this->fields).initialized != 0) {
-    this_00 = (this->fields).objectPreviewer;
-    if (this_00 == (InventoryItemPreviewer *)0x0) {
-      uVar1 = func_?(&stack0xfffffff0);
-      func_?(uVar1);
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
+  if ((this->fields).initialized == 0) {
+    return;
+  }
+  pIVar1 = (this->fields).objectPreviewer;
+  if (pIVar1 != (InventoryItemPreviewer *)0x0) {
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__UnityEngine__Object);
+      cRam_? = '\x01';
+    }
+    pGVar2 = (pIVar1->fields)._PreviewGameObject_k__BackingField;
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Object);
+    }
+    bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                      ((Object_1 *)pGVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
+    if (bVar3 == 0) {
       return;
     }
-    InventoryItemPreviewer::InventoryItemPreviewer_UpdateRotation(this_00,0.0,(MethodInfo *)0x0);
+    pGVar2 = (pIVar1->fields)._PreviewGameObject_k__BackingField;
+    if (pGVar2 != (GameObject *)0x0) {
+      this_00 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                          (pGVar2,(MethodInfo *)0x0);
+      point = (pIVar1->fields).pivotPoint;
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__UnityEngine__Vector3);
+        cRam_? = '\x01';
+      }
+      axis = TypeInfo__UnityEngine__Vector3->static_fields->upVector;
+      fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0)
+      ;
+      if (this_00 != (Transform *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_RotateAround
+                  (this_00,point,axis,fVar4 * _UNK_?,(MethodInfo *)0x0);
+        return;
+      }
+    }
   }
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

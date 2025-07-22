@@ -208,8 +208,8 @@ void Assembly-CSharp.dll::PMOWalkMode::PMOWalkMode_Enter
              (this_00 = (pGVar4->fields).AvatarCommandsPlayMode,
              this_00 == (GameEventManager_AvatarCommandsPlayModeManager *)0x0))
           goto code_?;
-          PlayButtonTouch::PlayButtonTouch_OnConfirmPlay
-                    ((PlayButtonTouch *)this_00,(MethodInfo *)0x0);
+          GameEventManager+AvatarCommandsPlayModeManager::
+          GameEventManager_AvatarCommandsPlayModeManager_RemoveFromGame(this_00,(MethodInfo *)0x0);
           MVGameControllerDesktop::MVGameControllerDesktop_CursorLock(0,0,(MethodInfo *)0x0);
         }
 code_?:
@@ -373,7 +373,8 @@ void Assembly-CSharp.dll::PMOWalkMode::PMOWalkMode_HandleEnterPlayInObserveMode
   if ((pGVar2 != (GameEventManager *)0x0) &&
      (this_00 = (pGVar2->fields).AvatarCommandsPlayMode,
      this_00 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) {
-    PlayButtonTouch::PlayButtonTouch_OnConfirmPlay((PlayButtonTouch *)this_00,(MethodInfo *)0x0);
+    GameEventManager+AvatarCommandsPlayModeManager::
+    GameEventManager_AvatarCommandsPlayModeManager_RemoveFromGame(this_00,(MethodInfo *)0x0);
     MVGameControllerDesktop::MVGameControllerDesktop_CursorLock(0,0,(MethodInfo *)0x0);
     return;
   }
@@ -412,7 +413,8 @@ void Assembly-CSharp.dll::PMOWalkMode::PMOWalkMode_HandleEnterState
     if ((pGVar1 == (GameEventManager *)0x0) ||
        (this_00 = (pGVar1->fields).AvatarCommandsPlayMode,
        this_00 == (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) goto code_?;
-    PlayButtonTouch::PlayButtonTouch_OnConfirmPlay((PlayButtonTouch *)this_00,(MethodInfo *)0x0);
+    GameEventManager+AvatarCommandsPlayModeManager::
+    GameEventManager_AvatarCommandsPlayModeManager_RemoveFromGame(this_00,(MethodInfo *)0x0);
   }
   if (cRam_? == '\0') {
     func_?();
@@ -434,7 +436,7 @@ code_?:
       return;
     }
     pIStack_6 = TypeInfo__ILockCursorManager;
-    func_?(3);
+    func_?(1);
   }
   return;
 }
@@ -455,7 +457,8 @@ void Assembly-CSharp.dll::PMOWalkMode::PMOWalkMode_HandleSelectTeamOrSpawnRole
     if ((pGVar1 != (GameEventManager *)0x0) &&
        (this_00 = (pGVar1->fields).AvatarCommandsPlayMode,
        this_00 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) {
-      PlayButtonTouch::PlayButtonTouch_OnConfirmPlay((PlayButtonTouch *)this_00,(MethodInfo *)0x0);
+      GameEventManager+AvatarCommandsPlayModeManager::
+      GameEventManager_AvatarCommandsPlayModeManager_RemoveFromGame(this_00,(MethodInfo *)0x0);
       MVGameControllerDesktop::MVGameControllerDesktop_CursorLock(0,0,(MethodInfo *)0x0);
       return;
     }
@@ -527,7 +530,8 @@ void Assembly-CSharp.dll::PMOWalkMode::PMOWalkMode_SetToHiddenMode
   if ((pGVar1 != (GameEventManager *)0x0) &&
      (this_00 = (pGVar1->fields).AvatarCommandsPlayMode,
      this_00 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) {
-    PlayButtonTouch::PlayButtonTouch_OnConfirmPlay((PlayButtonTouch *)this_00,(MethodInfo *)0x0);
+    GameEventManager+AvatarCommandsPlayModeManager::
+    GameEventManager_AvatarCommandsPlayModeManager_RemoveFromGame(this_00,(MethodInfo *)0x0);
     MVGameControllerDesktop::MVGameControllerDesktop_CursorLock(0,0,(MethodInfo *)0x0);
     return;
   }

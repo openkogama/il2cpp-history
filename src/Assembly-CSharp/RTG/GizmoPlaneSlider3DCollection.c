@@ -595,24 +595,36 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DCollection::
                         (&LStack_6,
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoPlaneSlider3D>__MoveNext__
                         );
+      pOVar10 = LStack_6._current;
       if (bVar9 == 0) {
         uStack_1 = 0xffffffff;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                   ((Object *)&LStack_6,
                    (ExceptionArgument__Enum)
                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoPlaneSlider3D>__Dispose__
-                   ,unaff_EDI);
+                   ,in_stack_11);
         *unaff_FS_OFFSET = uStack_3;
         return;
       }
       if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) break;
-      GizmoPlaneSlider3D::GizmoPlaneSlider3D_SetBorderHoverable
-                ((GizmoPlaneSlider3D *)LStack_6._current,isHoverable,(MethodInfo *)0x0);
+      *(bool *)((int)LStack_6._current + 0x38) = isHoverable;
+      if (*(GizmoQuad3DBorder **)((int)LStack_6._current + 0x2c) == (GizmoQuad3DBorder *)0x0)
+      break;
+      GizmoQuad3DBorder::GizmoQuad3DBorder_SetHoverable
+                (*(GizmoQuad3DBorder **)((int)LStack_6._current + 0x2c),isHoverable,
+                 (MethodInfo *)0x0);
+      in_stack_11 = *(MethodInfo **)((int)pOVar10 + 0x30);
+      if (in_stack_11 == (MethodInfo *)0x0) break;
+      GizmoRATriangle3DBorder::GizmoRATriangle3DBorder_SetHoverable
+                ((GizmoRATriangle3DBorder *)in_stack_11,isHoverable,(MethodInfo *)0x0);
+      this_01 = *(GizmoCircle3DBorder **)((int)pOVar10 + 0x34);
+      if (this_01 == (GizmoCircle3DBorder *)0x0) break;
+      GizmoCircle3DBorder::GizmoCircle3DBorder_SetHoverable(this_01,isHoverable,(MethodInfo *)0x0);
     }
   }
   func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -807,15 +819,25 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DCollection::
                           (&LStack_6,
                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoPlaneSlider3D>__MoveNext__
                           );
-        this_00 = (RegexCharClass_SingleRange)LStack_6._current;
+        pOVar11 = LStack_6._current;
         if (bVar10 == 0) break;
         if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0)
         goto code_?;
         GizmoSlider::GizmoSlider_SetHoverable
                   ((GizmoSlider *)LStack_6._current,isHoverable,(MethodInfo *)0x0);
-        GizmoPlaneSlider3D::GizmoPlaneSlider3D_SetBorderHoverable
-                  ((GizmoPlaneSlider3D *)this_00,isHoverable,(MethodInfo *)0x0);
-        unaff_EDI = this_00;
+        *(bool *)((int)pOVar11 + 0x38) = isHoverable;
+        if (*(GizmoQuad3DBorder **)((int)pOVar11 + 0x2c) == (GizmoQuad3DBorder *)0x0)
+        goto code_?;
+        GizmoQuad3DBorder::GizmoQuad3DBorder_SetHoverable
+                  (*(GizmoQuad3DBorder **)((int)pOVar11 + 0x2c),isHoverable,(MethodInfo *)0x0);
+        if (*(GizmoRATriangle3DBorder **)((int)pOVar11 + 0x30) == (GizmoRATriangle3DBorder *)0x0)
+        goto code_?;
+        GizmoRATriangle3DBorder::GizmoRATriangle3DBorder_SetHoverable
+                  (*(GizmoRATriangle3DBorder **)((int)pOVar11 + 0x30),isHoverable,(MethodInfo *)0x0);
+        if (*(GizmoCircle3DBorder **)((int)pOVar11 + 0x34) == (GizmoCircle3DBorder *)0x0)
+        goto code_?;
+        GizmoCircle3DBorder::GizmoCircle3DBorder_SetHoverable
+                  (*(GizmoCircle3DBorder **)((int)pOVar11 + 0x34),isHoverable,(MethodInfo *)0x0);
       }
 code_?:
       uStack_1 = 0xffffffff;
@@ -823,16 +845,16 @@ code_?:
                 ((Object *)&LStack_6,
                  (ExceptionArgument__Enum)
                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoPlaneSlider3D>__Dispose__
-                 ,(MethodInfo *)unaff_EDI);
+                 ,unaff_EDI);
       *unaff_FS_OFFSET = uStack_3;
       return;
     }
   }
 code_?:
-  uVar11 = func_?();
-  func_?(uVar11);
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  uVar12 = func_?();
+  func_?(uVar12);
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

@@ -37,7 +37,7 @@ Assembly-CSharp.dll::GhostEye+LookAtTarget::GhostEye_LookAtTarget_GetClampedPitc
   fVar3 = (float10)func_?(uVar2,(pVVar1->upVector).z);
   pGVar4 = (GhostEye_LookAtTarget *)
            ((uint)(this->fields).maxPitch ^
-           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+           __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
   pGVar5 = (GhostEye_LookAtTarget *)(float)(fVar3 - (float10)_UNK_?);
   if (((float)pGVar5 < (float)pGVar4) ||
      (pGVar4 = (GhostEye_LookAtTarget *)(this->fields).maxPitch, this = pGVar5,
@@ -95,10 +95,10 @@ Assembly-CSharp.dll::GhostEye+LookAtTarget::GhostEye_LookAtTarget_GetClampedYawR
       fStack_4 * fStack_1 < 0.0) {
     localTargetDirection.z =
          (float)((uint)localTargetDirection.z ^
-                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
   }
   fVar9 = (float)((uint)(this->fields).maxYaw ^
-                 __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                 __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
   if ((localTargetDirection.z < fVar9) ||
      (fVar9 = (this->fields).maxYaw, fVar9 < localTargetDirection.z)) {
     localTargetDirection.z = fVar9;
@@ -171,7 +171,7 @@ float Assembly-CSharp.dll::GhostEye+LookAtTarget::GhostEye_LookAtTarget_GetSigne
   if (fVar9 + localTargetPosition.y * (float)uVar7 + fVar3 * (pVVar4->rightVector).z < 0.0) {
     localTargetPosition.z =
          (float)((uint)(float)fVar6 ^
-                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
   }
   return localTargetPosition.z;
 }

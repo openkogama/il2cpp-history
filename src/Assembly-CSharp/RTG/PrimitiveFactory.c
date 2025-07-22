@@ -271,7 +271,7 @@ code_?:
       VStack_9.y = VVar8.y;
       VStack_10.y = VStack_9.x - VStack_7.x;
       VStack_10.x = (float)((uint)(VStack_9.y - VStack_7.y) ^
-                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
+                           __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field)
       ;
       VStack_9 = VVar8;
       uVar11 = func_?(&VStack_10);
@@ -314,7 +314,7 @@ code_?:
             VStack_16.y = VVar8.y;
             pMStack_17 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)
                          ((uint)(VStack_16.y - VStack_9.y) ^
-                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                         __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
             ppMVar18 = &pMStack_17;
             uVar19 = 0;
             VStack_16 = VVar8;
@@ -346,7 +346,7 @@ code_?:
                (fVar27 = (fStack_20 * (VStack_14.x - uStack_21._4_4_) +
                          VStack_6.y * (VStack_14.y - (float)pMStack_22)) /
                          (float)((uint)fVar27 ^
-                                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                                 ), 0.0 <= fVar27)) {
               VStack_10.x = VStack_14.x + fVar3 * fVar27;
               VStack_10.y = VStack_14.y + fVar26 * fVar27;
@@ -440,7 +440,7 @@ code_?:
          (fVar26 = ((fVar34 - (float)pMStack_22) * uStack_21._4_4_ +
                    (fVar27 - VStack_7.y) * (float)uStack_21) /
                    (float)((uint)fVar26 ^
-                          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field),
+                          __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field),
          fVar26 < 0.0)) {
         if ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
              *)VStack_6.y !=
@@ -524,7 +524,7 @@ code_?:
                  (fVar34 = ((VStack_6.y - fStack_24) * uStack_2._4_4_ +
                            (VStack_6.x - fStack_20) * (float)uStack_2) /
                            (float)((uint)fVar34 ^
-                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                                   ), 0.0 <= fVar34)) {
                 VStack_14.y = fVar26 * fVar34 + VStack_6.y;
                 VStack_14.x = fVar27 * fVar34 + VStack_6.x;
@@ -927,98 +927,110 @@ Assembly-CSharp.dll::RTG::PrimitiveFactory::PrimitiveFactory_Generate3DArcBorder
              MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List_int_);
   fVar1 = (float10)func_?();
   degreesFromStart = (float)fVar1;
-  pVVar2 = PlaneEx::PlaneEx_ProjectPoint
-                     ((Vector3 *)&puStack_3,arcPlane,arcOrigin,(MethodInfo *)0x0);
-  fVar4 = pVVar2->z;
-  pVVar2 = PlaneEx::PlaneEx_ProjectPoint
-                     ((Vector3 *)&puStack_3,arcPlane,arcStartPoint,(MethodInfo *)0x0);
-  fVar5 = pVVar2->z;
-  fVar6 = arcPlane.m_Normal.z;
+  fVar2 = arcPlane.m_Normal.y * arcOrigin.y + arcPlane.m_Normal.x * arcOrigin.x +
+           arcPlane.m_Normal.z * arcOrigin.z + arcPlane.m_Distance;
+  fVar3 = arcOrigin.x - arcPlane.m_Normal.x * fVar2;
+  fVar4 = arcOrigin.y - arcPlane.m_Normal.y * fVar2;
+  pLVar5 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
+             *)(arcOrigin.z - arcPlane.m_Normal.z * fVar2);
+  fVar2 = arcPlane.m_Normal.y * arcStartPoint.y + arcPlane.m_Normal.x * arcStartPoint.x +
+           arcPlane.m_Normal.z * arcStartPoint.z + arcPlane.m_Distance;
+  fVar6 = arcStartPoint.x - arcPlane.m_Normal.x * fVar2;
+  fVar7 = arcStartPoint.y - arcPlane.m_Normal.y * fVar2;
+  fVar8 = arcStartPoint.z - arcPlane.m_Normal.z * fVar2;
+  fVar9 = fVar8 - (float)pLVar5;
+  uVar10._4_4_ = fVar7 - fVar4;
+  uVar10._0_4_ = fVar6 - fVar3;
+  pLVar11 = pLVar5;
+  fVar2 = fVar3;
+  fVar12 = fVar4;
   UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
-            ((Quaternion *)&stack0xffffff9c,degreesFromStart,arcPlane.m_Normal,(MethodInfo *)0x0);
-  puVar7 = &stack0xffffffc4;
-  fVar1 = (float10)func_?();
-  pVVar2 = (Vector3 *)&stack0xffffffc4;
-  fVar8 = 0.0;
-  fVar9 = (float)fVar1;
-  UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1(pVVar2,(MethodInfo *)0x0);
+            (&QStack_13,degreesFromStart,arcPlane.m_Normal,(MethodInfo *)0x0);
+  func_?(&stack0xffffffa0,0);
+  UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize_1
+            ((Vector3 *)&stack0xffffffa0,(MethodInfo *)0x0);
   if (forceShortestArc != 0) {
-    fVar6 = 0.0;
-    uVar10 = arcPlane.m_Normal._0_8_;
-    pVVar2 = (Vector3 *)&UNK_?;
-    arcOrigin_00.z = fVar4;
-    arcOrigin_00.x = (float)(int)uVar10;
-    arcOrigin_00.y = (float)(int)((ulonglong)uVar10 >> 0x20);
-    arcStartPoint_00.z = fVar5;
-    arcStartPoint_00.x = (float)(int)uVar10;
-    arcStartPoint_00.y = (float)(int)((ulonglong)uVar10 >> 0x20);
-    fVar8 = arcPlane.m_Normal.x;
-    puVar7 = (undefined1 *)arcPlane.m_Normal.y;
-    fVar9 = degreesFromStart;
+    arcPlaneNormal.y = arcPlane.m_Normal.y;
+    arcPlaneNormal.x = arcPlane.m_Normal.x;
+    arcStartPoint_00.y = fVar7;
+    arcStartPoint_00.x = fVar6;
+    arcOrigin_00.y = fVar12;
+    arcOrigin_00.x = fVar2;
+    arcOrigin_00.z = (float)pLVar5;
+    arcStartPoint_00.z = fVar8;
+    arcPlaneNormal.z = arcPlane.m_Normal.z;
     degreesFromStart =
          ArcMath::ArcMath_ConvertToSh3DArcAngle
-                   (arcOrigin_00,arcStartPoint_00,arcPlane.m_Normal,degreesFromStart,
-                    (MethodInfo *)0x0);
+                   (arcOrigin_00,arcStartPoint_00,arcPlaneNormal,degreesFromStart,(MethodInfo *)0x0)
+    ;
   }
-  iVar11 = 0;
+  iVar14 = 0;
+  puVar15 = (undefined *)(degreesFromStart / (float)(numPoints + -1));
   while( true ) {
-    fVar4 = (float)iVar11 * (degreesFromStart / (float)(numPoints + -1));
+    __return_storage_ptr__ = (Quaternion *)&stack0xffffff50;
+    fVar2 = (float)iVar14 * (float)puVar15;
+    QStack_13.w = (float)&UNK_?;
     axis.y = arcPlane.m_Normal.y;
     axis.x = arcPlane.m_Normal.x;
-    axis.z = fVar6;
-    pQVar12 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
-                        ((Quaternion *)&stack0xffffff8c,fVar4,axis,(MethodInfo *)0x0);
-    arcPlane.m_Normal.x = pQVar12->y;
-    arcPlane.m_Normal.y = pQVar12->z;
-    point.y = fVar8;
-    point.x = (float)pVVar2;
-    point.z = (float)puVar7;
-    pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                        ((Vector3 *)&stack0xffffffac,*pQVar12,point,(MethodInfo *)0x0);
-    pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                        ((Vector3 *)&stack0xffffffa0,*pVVar13,(MethodInfo *)0x0);
-    pMVar14 = 
+    axis.z = arcPlane.m_Normal.z;
+    pQVar16 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
+                       (__return_storage_ptr__,fVar2,axis,(MethodInfo *)0x0);
+    fVar7 = 0.0;
+    point.z = fVar9;
+    point.x = (float)uVar10;
+    point.y = SUB84(uVar10,4);
+    pVVar17 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                       ((Vector3 *)&stack0xffffff60,*pQVar16,point,(MethodInfo *)0x0);
+    puVar15 = (undefined *)0x0;
+    pVVar17 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                       ((Vector3 *)&QStack_13,*pVVar17,(MethodInfo *)0x0);
+    pMVar18 = 
     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_;
-    uVar15 = pVVar13->x;
-    uVar16 = pVVar13->y;
-    puVar17 = (undefined *)((float)uVar15 * fVar9 + 4.3855396e-29);
-    fVar5 = (float)&stack0xffffff8c + (float)uVar16 * fVar9;
-    fVar4 = fVar4 + pVVar13->z * fVar9;
+    uVar19 = pVVar17->x;
+    uVar20 = pVVar17->y;
+    fVar12 = (float)uVar19 * fVar7 + fVar3;
+    fVar8 = (float)uVar20 * fVar7 + fVar4;
+    fVar7 = pVVar17->z * fVar7 + (float)pLVar11;
     if (this == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
                  *)0x0) break;
-    piVar18 = &(this->fields)._version;
-    *piVar18 = *piVar18 + 1;
-    pMVar19 = (this->fields)._items;
-    if (pMVar19 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0) break;
-    uVar20 = (this->fields)._size;
-    if (uVar20 < pMVar19->max_length) {
-      (this->fields)._size = uVar20 + 1;
-      puStack_3 = puVar17;
-      if (pMVar19->max_length <= uVar20) {
+    piVar21 = &(this->fields)._version;
+    *piVar21 = *piVar21 + 1;
+    pMVar22 = (this->fields)._items;
+    if (pMVar22 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0) break;
+    uVar23 = (this->fields)._size;
+    if (uVar23 < pMVar22->max_length) {
+      (this->fields)._size = uVar23 + 1;
+      if (pMVar22->max_length <= uVar23) {
         func_?();
         break;
       }
-      *(ulonglong *)(&pMVar19->vector[0].index + uVar20 * 3) = CONCAT44(fVar5,puVar17);
-      (&pMVar19->vector[0].actualWidth)[uVar20 * 3] = fVar4;
+      *(ulonglong *)(&pMVar22->vector[0].index + uVar23 * 3) = CONCAT44(fVar8,fVar12);
+      (&pMVar22->vector[0].actualWidth)[uVar23 * 3] = fVar7;
     }
     else {
-      item.FirstAxisSign = (int32_t)fVar5;
-      item.Quadrant = (int32_t)puVar17;
-      item.SecondAxisSign = (int32_t)fVar4;
+      puVar15 = &UNK_?;
+      item.FirstAxisSign = (int32_t)fVar8;
+      item.Quadrant = (int32_t)fVar12;
+      item.SecondAxisSign = (int32_t)fVar7;
+      pLVar11 = this;
       mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
       List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__AddWithResize
                 ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this,item,
-                 pMVar14->klass->rgctx_data[0xe].method);
+                 pMVar18->klass->rgctx_data[0xe].method);
+      fVar4 = fVar12;
+      fVar3 = fVar8;
     }
-    iVar11 = iVar11 + 1;
-    if (-1 < iVar11) {
+    iVar14 = iVar14 + 1;
+    arcPlane.m_Normal.x = (float)__return_storage_ptr__;
+    arcPlane.m_Normal.y = fVar2;
+    if (numPoints <= iVar14) {
       return (List_1_UnityEngine_Vector3_ *)this;
     }
   }
   func_?();
-  pcVar21 = (code *)swi(3);
-  pLVar22 = (List_1_UnityEngine_Vector3_ *)(*pcVar21)();
-  return pLVar22;
+  pcVar24 = (code *)swi(3);
+  pLVar25 = (List_1_UnityEngine_Vector3_ *)(*pcVar24)();
+  return pLVar25;
 }
 
 
@@ -1149,7 +1161,7 @@ Assembly-CSharp.dll::RTG::PrimitiveFactory::PrimitiveFactory_GenerateSphereBorde
       fStack_8 = pVVar1->z;
       uStack_3 = CONCAT44((uint)(uStack_5._4_4_ * uStack_7._4_4_ +
                                   (float)uStack_5 * (float)uStack_7 + fStack_6 * fStack_8) ^
-                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field,
+                           __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field,
                            (undefined4)uStack_3);
       uStack_9 = uStack_7;
       fStack_10 = fStack_8;

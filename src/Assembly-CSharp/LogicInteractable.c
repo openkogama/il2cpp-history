@@ -14,7 +14,7 @@ void Assembly-CSharp.dll::LogicInteractable::LogicInteractable_Heal
     this_00 = (TakeDamageEventArgs *)func_?(TypeInfo__TakeDamageEventArgs);
     TakeDamageEventArgs::TakeDamageEventArgs__ctor
               (this_00,(float)((uint)amount ^
-                              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                              __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                               ),healer,PlayerKilledByType__Enum_None,(MethodInfo *)0x0);
     (*(pEVar1->fields)._._.invoke_impl)
               ((pEVar1->fields)._._.method_code,this,this_00,(pEVar1->fields)._._.method);

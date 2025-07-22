@@ -40,13 +40,31 @@ void Assembly-CSharp.dll::DeathPromotionController::DeathPromotionController_Try
     cVar1 = func_?(2,TypeInfo__IPromotionController,(this->fields).adController);
     if (cVar1 != '\0') {
       pIVar2 = (this->fields).adController;
-      if (pIVar2 != (IPromotionController *)0x0) {
-        func_?(3,TypeInfo__IPromotionController,pIVar2,onPromotionPopped);
+      if (pIVar2 == (IPromotionController *)0x0) {
+        func_?();
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
-      func_?();
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
+      pIVar4 = pIVar2->klass;
+      uVar5 = 0;
+      uVar6._0_1_ = (pIVar4->_1).rank;
+      uVar6._1_1_ = (pIVar4->_1).minimumAlignment;
+      if (uVar6 != 0) {
+        do {
+          if (pIVar4->interfaceOffsets[uVar5].interfaceType ==
+              (Il2CppClass *)TypeInfo__IPromotionController) {
+            pIVar4 = pIVar2->klass;
+            iVar7 = pIVar4->interfaceOffsets[uVar5].offset;
+            (*(code *)(&(pIVar4->vtable).ShowPromotion)[iVar7].method)
+                      (pIVar2,onPromotionPopped,(&pIVar4[1]._0.image)[iVar7 * 2]);
+            return;
+          }
+          uVar5 = uVar5 + 1;
+        } while (uVar5 < uVar6);
+      }
+      puVar8 = (undefined4 *)func_?(pIVar2,TypeInfo__IPromotionController,3);
+      (*(code *)*puVar8)(pIVar2,onPromotionPopped,puVar8[1]);
       return;
     }
   }

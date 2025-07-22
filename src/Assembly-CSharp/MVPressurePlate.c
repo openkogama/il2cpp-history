@@ -35,10 +35,10 @@ void Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate_Destroy
                     MethodInfo__MVPressurePlate__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                    );
     func_?(&
-                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                    MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                    );
     func_?(&
-                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                    MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                    );
     cRam_? = '\x01';
   }
@@ -74,7 +74,7 @@ void Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate_Destroy
                      func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
             mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                       (pEVar3,(Object *)pUVar4,
-                       MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                       MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                        ,(MethodInfo *)0x0);
             if (pTVar2 != (TriggerBoxEvents *)0x0) {
               TriggerBoxEvents::TriggerBoxEvents_remove_TriggerEnter
@@ -87,7 +87,7 @@ void Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate_Destroy
                          func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
                 mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                           (pEVar3,(Object *)pUVar4,
-                           MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                           MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                            ,(MethodInfo *)0x0);
                 if (pTVar2 != (TriggerBoxEvents *)0x0) {
                   TriggerBoxEvents::TriggerBoxEvents_remove_TriggerExit
@@ -478,9 +478,9 @@ void Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate_OnUpdate
                       ((MethodInfo *)0x0);
     fVar8 = fVar8 * fVar7;
     if ((float)((uint)fVar5 ^
-               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) <= fVar8) {
+               __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) <= fVar8) {
       fVar8 = (float)((uint)fVar5 ^
-                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     }
     fVar8 = fVar8 + fVar5;
   }
@@ -579,21 +579,15 @@ void Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate_SetupTierInventory
 {
   pMVar1 = (this->fields).plateObject;
   if ((pMVar1 != (MVPressurePlateObject *)0x0) &&
-     (pGVar2 = (pMVar1->fields).plateLogicModel, pGVar2 != (GameObject *)0x0)) {
+     (this_00 = (pMVar1->fields).plateLogicModel, this_00 != (GameObject *)0x0)) {
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (pGVar2,0,(MethodInfo *)0x0);
-    MVWorldObjectClient::MVWorldObjectClient_SetupTierInventory
-              ((MVWorldObjectClient *)this,(MethodInfo *)0x0);
-    pGVar2 = (this->fields)._.lodGameObject;
-    if (pGVar2 != (GameObject *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar2,1,(MethodInfo *)0x0);
-      return;
-    }
+              (this_00,0,(MethodInfo *)0x0);
+    MVLogicObject::MVLogicObject_SetupTierInventory((MVLogicObject *)this,(MethodInfo *)0x0);
+    return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -644,13 +638,13 @@ void Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate__ctor
                    );
     func_?(&TypeInfo__StarRequirement);
     func_?(&TypeInfo__TeamRequirement);
+    func_?(&
+                    MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                   );
+    func_?(&
+                    MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                   );
     func_?(&TypeInfo__UseInteractor);
-    func_?(&
-                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
-                   );
-    func_?(&
-                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
-                   );
     cRam_? = '\x01';
   }
   (this->fields).minY = -0.249;
@@ -726,7 +720,8 @@ void Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate__ctor
                 UseInteractor::UseInteractor__ctor
                           (pUVar7,(MVWorldObjectClient *)0x0,pGVar6,0,triggerCollider,
                            (Func_2_Int32_Boolean_ *)this_00,
-                           (Func_3_Int32_MVInteractableBase_Boolean_ *)0x0,2.5,0,(MethodInfo *)0x0);
+                           (Func_3_Int32_MVInteractableBase_Boolean_ *)0x0,2.5,0,1,(MethodInfo *)0x0
+                          );
                 pURam00000108 = pUVar7;
                 func_?();
                 pUVar7 = pURam00000108;
@@ -736,7 +731,7 @@ void Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate__ctor
                            func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
                   mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                             (pEVar5,(Object *)pUVar7,
-                             MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                             MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                              ,(MethodInfo *)0x0);
                   if (pTVar4 != (TriggerBoxEvents *)0x0) {
                     TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
@@ -748,7 +743,7 @@ void Assembly-CSharp.dll::MVPressurePlate::MVPressurePlate__ctor
                                func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
                       mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                                 (pEVar5,(Object *)pUVar7,
-                                 MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                                 MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                                  ,(MethodInfo *)0x0);
                       if (pTVar4 != (TriggerBoxEvents *)0x0) {
                         TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit

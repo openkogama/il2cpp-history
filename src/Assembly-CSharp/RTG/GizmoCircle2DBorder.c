@@ -6,28 +6,45 @@ void Assembly-CSharp.dll::RTG::GizmoCircle2DBorder::GizmoCircle2DBorder_OnCircle
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__IGizmoCircle2DBorderController);
+    pIStack_1 = (IGizmoCircle2DBorderController *)&TypeInfo__RTG__IGizmoCircle2DBorderController;
+    func_?();
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._controllers;
-  this_00 = (this->fields)._planeSlider;
-  if (this_00 != (GizmoPlaneSlider2D *)0x0) {
-    pGVar2 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_get_LookAndFeel(this_00,(MethodInfo *)0x0);
-    if ((pGVar2 != (GizmoPlaneSlider2DLookAndFeel *)0x0) &&
-       (pIVar1 != (IGizmoCircle2DBorderController__Array *)0x0)) {
-      uVar3 = (pGVar2->fields)._circleBorderType;
-      if (pIVar1->max_length <= uVar3) goto code_?;
-      if (pIVar1->vector[uVar3] != (IGizmoCircle2DBorderController *)0x0) {
-        func_?(2,TypeInfo__RTG__IGizmoCircle2DBorderController,pIVar1->vector[uVar3]);
+  pIVar2 = (this->fields)._controllers;
+  pGVar3 = (this->fields)._planeSlider;
+  if (pGVar3 != (GizmoPlaneSlider2D *)0x0) {
+    if ((pGVar3->fields)._sharedLookAndFeel == (GizmoPlaneSlider2DLookAndFeel *)0x0) {
+      pGVar4 = (pGVar3->fields)._lookAndFeel;
+      if (pGVar4 == (GizmoPlaneSlider2DLookAndFeel *)0x0) goto code_?;
+    }
+    else {
+      pGVar4 = (pGVar3->fields)._sharedLookAndFeel;
+    }
+    if (pIVar2 != (IGizmoCircle2DBorderController__Array *)0x0) {
+      uVar5 = (pGVar4->fields)._circleBorderType;
+      if (pIVar2->max_length <= uVar5) {
+        pIStack_1 = (IGizmoCircle2DBorderController *)0x0;
+        pIStack_6 = (IGizmoCircle2DBorderController__Class *)func_?();
+        func_?();
+        pcVar7 = (code *)swi(3);
+        (*pcVar7)();
+        return;
+      }
+      pIStack_1 = pIVar2->vector[uVar5];
+      if (pIStack_1 != (IGizmoCircle2DBorderController *)0x0) {
+        pIStack_6 = TypeInfo__RTG__IGizmoCircle2DBorderController;
+        puStack_8 = (undefined *)0x2;
+        func_?();
         return;
       }
     }
   }
-  func_?();
 code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pIStack_1 = (IGizmoCircle2DBorderController *)&stack0xfffffffc;
+  uVar9 = func_?(&puStack_8);
+  func_?(uVar9);
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -45,9 +62,14 @@ void Assembly-CSharp.dll::RTG::GizmoCircle2DBorder::GizmoCircle2DBorder_OnGizmoP
   pGVar1 = (this->fields)._planeSlider;
   pIVar2 = (this->fields)._controllers;
   if (pGVar1 != (GizmoPlaneSlider2D *)0x0) {
-    pGVar3 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_get_LookAndFeel(pGVar1,(MethodInfo *)0x0);
-    if ((pGVar3 != (GizmoPlaneSlider2DLookAndFeel *)0x0) &&
-       (pIVar2 != (IGizmoCircle2DBorderController__Array *)0x0)) {
+    if ((pGVar1->fields)._sharedLookAndFeel == (GizmoPlaneSlider2DLookAndFeel *)0x0) {
+      pGVar3 = (pGVar1->fields)._lookAndFeel;
+      if (pGVar3 == (GizmoPlaneSlider2DLookAndFeel *)0x0) goto code_?;
+    }
+    else {
+      pGVar3 = (pGVar1->fields)._sharedLookAndFeel;
+    }
+    if (pIVar2 != (IGizmoCircle2DBorderController__Array *)0x0) {
       uVar4 = (pGVar3->fields)._circleBorderType;
       if (pIVar2->max_length <= uVar4) goto code_?;
       if (pIVar2->vector[uVar4] != (IGizmoCircle2DBorderController *)0x0) {
@@ -55,13 +77,19 @@ void Assembly-CSharp.dll::RTG::GizmoCircle2DBorder::GizmoCircle2DBorder_OnGizmoP
         pGVar1 = (this->fields)._planeSlider;
         pIVar2 = (this->fields)._controllers;
         if (pGVar1 != (GizmoPlaneSlider2D *)0x0) {
-          pGVar3 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_get_LookAndFeel(pGVar1,(MethodInfo *)0x0);
-          if ((pGVar3 != (GizmoPlaneSlider2DLookAndFeel *)0x0) &&
-             (pIVar2 != (IGizmoCircle2DBorderController__Array *)0x0)) {
+          if ((pGVar1->fields)._sharedLookAndFeel == (GizmoPlaneSlider2DLookAndFeel *)0x0) {
+            pGVar3 = (pGVar1->fields)._lookAndFeel;
+            if (pGVar3 == (GizmoPlaneSlider2DLookAndFeel *)0x0) goto code_?;
+          }
+          else {
+            pGVar3 = (pGVar1->fields)._sharedLookAndFeel;
+          }
+          if (pIVar2 != (IGizmoCircle2DBorderController__Array *)0x0) {
             uVar4 = (pGVar3->fields)._circleBorderType;
             if (pIVar2->max_length <= uVar4) goto code_?;
             if (pIVar2->vector[uVar4] != (IGizmoCircle2DBorderController *)0x0) {
-              func_?(1,TypeInfo__RTG__IGizmoCircle2DBorderController);
+              func_?(1,TypeInfo__RTG__IGizmoCircle2DBorderController,pIVar2->vector[uVar4])
+              ;
               return;
             }
           }
@@ -69,6 +97,7 @@ void Assembly-CSharp.dll::RTG::GizmoCircle2DBorder::GizmoCircle2DBorder_OnGizmoP
       }
     }
   }
+code_?:
   func_?();
 code_?:
   func_?();
@@ -93,11 +122,16 @@ void Assembly-CSharp.dll::RTG::GizmoCircle2DBorder::GizmoCircle2DBorder_Render
     return;
   }
   pGVar1 = (this->fields)._planeSlider;
-  if ((pGVar1 != (GizmoPlaneSlider2D *)0x0) &&
-     (pGVar2 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_get_LookAndFeel(pGVar1,(MethodInfo *)0x0),
-     pGVar2 != (GizmoPlaneSlider2DLookAndFeel *)0x0)) {
-    fVar3 = (pGVar2->fields)._borderColor.r;
-    fVar4 = (pGVar2->fields)._borderColor.g;
+  if (pGVar1 != (GizmoPlaneSlider2D *)0x0) {
+    if ((pGVar1->fields)._sharedLookAndFeel == (GizmoPlaneSlider2DLookAndFeel *)0x0) {
+      pGVar2 = (pGVar1->fields)._lookAndFeel;
+      if (pGVar2 == (GizmoPlaneSlider2DLookAndFeel *)0x0) goto code_?;
+    }
+    else {
+      pGVar2 = (pGVar1->fields)._sharedLookAndFeel;
+    }
+    fStack_3 = (pGVar2->fields)._borderColor.r;
+    fStack_4 = (pGVar2->fields)._borderColor.g;
     fStack_5 = (pGVar2->fields)._borderColor.b;
     fStack_6 = (pGVar2->fields)._borderColor.a;
     pGVar7 = (this->fields)._targetHandle;
@@ -111,12 +145,16 @@ void Assembly-CSharp.dll::RTG::GizmoCircle2DBorder::GizmoCircle2DBorder_Render
       if (pGVar7 != (GizmoHandle *)0x0) {
         if (iVar8 == (pGVar7->fields)._id) {
           pGVar1 = (this->fields)._planeSlider;
-          if ((pGVar1 == (GizmoPlaneSlider2D *)0x0) ||
-             (pGVar2 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_get_LookAndFeel
-                                 (pGVar1,(MethodInfo *)0x0),
-             pGVar2 == (GizmoPlaneSlider2DLookAndFeel *)0x0)) goto code_?;
-          fVar3 = (pGVar2->fields)._hoveredBorderColor.r;
-          fVar4 = (pGVar2->fields)._hoveredBorderColor.g;
+          if (pGVar1 == (GizmoPlaneSlider2D *)0x0) goto code_?;
+          if ((pGVar1->fields)._sharedLookAndFeel == (GizmoPlaneSlider2DLookAndFeel *)0x0) {
+            pGVar2 = (pGVar1->fields)._lookAndFeel;
+            if (pGVar2 == (GizmoPlaneSlider2DLookAndFeel *)0x0) goto code_?;
+          }
+          else {
+            pGVar2 = (pGVar1->fields)._sharedLookAndFeel;
+          }
+          fStack_3 = (pGVar2->fields)._hoveredBorderColor.r;
+          fStack_4 = (pGVar2->fields)._hoveredBorderColor.g;
           fStack_5 = (pGVar2->fields)._hoveredBorderColor.b;
           fStack_6 = (pGVar2->fields)._hoveredBorderColor.a;
         }
@@ -130,8 +168,8 @@ void Assembly-CSharp.dll::RTG::GizmoCircle2DBorder::GizmoCircle2DBorder_Render
         if (this_01 != (GizmoLineMaterial *)0x0) {
           GizmoLineMaterial::GizmoLineMaterial_ResetValuesToSensibleDefaults
                     (this_01,(MethodInfo *)0x0);
-          color.g = fVar4;
-          color.r = fVar3;
+          color.g = fStack_4;
+          color.r = fStack_3;
           color.b = fStack_5;
           color.a = fStack_6;
           GizmoLineMaterial::GizmoLineMaterial_SetColor(this_01,color,(MethodInfo *)0x0);
@@ -167,43 +205,39 @@ void Assembly-CSharp.dll::RTG::GizmoCircle2DBorder::GizmoCircle2DBorder_SetVisib
   pIVar1 = (this->fields)._controllers;
   (this->fields)._isVisible = isVisible;
   pGVar2 = (this->fields)._planeSlider;
-  if (((pGVar2 != (GizmoPlaneSlider2D *)0x0) &&
-      (pGVar3 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_get_LookAndFeel(pGVar2,(MethodInfo *)0x0),
-      pGVar3 != (GizmoPlaneSlider2DLookAndFeel *)0x0)) &&
-     (pIVar1 != (IGizmoCircle2DBorderController__Array *)0x0)) {
-    uVar4 = (pGVar3->fields)._circleBorderType;
-    if (pIVar1->max_length <= uVar4) goto code_?;
-    if (pIVar1->vector[uVar4] != (IGizmoCircle2DBorderController *)0x0) {
-      func_?(0,TypeInfo__RTG__IGizmoCircle2DBorderController,pIVar1->vector[uVar4]);
-      if ((this->fields)._isVisible == 0) {
-        return;
-      }
-      pGVar2 = (this->fields)._planeSlider;
-      pIVar1 = (this->fields)._controllers;
-      if (((pGVar2 != (GizmoPlaneSlider2D *)0x0) &&
-          (pGVar3 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_get_LookAndFeel(pGVar2,(MethodInfo *)0x0)
-          , pGVar3 != (GizmoPlaneSlider2DLookAndFeel *)0x0)) &&
-         (pIVar1 != (IGizmoCircle2DBorderController__Array *)0x0)) {
-        uVar4 = (pGVar3->fields)._circleBorderType;
-        if (pIVar1->max_length <= uVar4) goto code_?;
-        if (pIVar1->vector[uVar4] != (IGizmoCircle2DBorderController *)0x0) {
-          func_?(1,TypeInfo__RTG__IGizmoCircle2DBorderController,pIVar1->vector[uVar4]);
-          if (cRam_? == '\0') {
-            func_?(&TypeInfo__RTG__IGizmoCircle2DBorderController);
-            cRam_? = '\x01';
+  if (pGVar2 != (GizmoPlaneSlider2D *)0x0) {
+    if ((pGVar2->fields)._sharedLookAndFeel == (GizmoPlaneSlider2DLookAndFeel *)0x0) {
+      pGVar3 = (pGVar2->fields)._lookAndFeel;
+      if (pGVar3 == (GizmoPlaneSlider2DLookAndFeel *)0x0) goto code_?;
+    }
+    else {
+      pGVar3 = (pGVar2->fields)._sharedLookAndFeel;
+    }
+    if (pIVar1 != (IGizmoCircle2DBorderController__Array *)0x0) {
+      uVar4 = (pGVar3->fields)._circleBorderType;
+      if (pIVar1->max_length <= uVar4) goto code_?;
+      if (pIVar1->vector[uVar4] != (IGizmoCircle2DBorderController *)0x0) {
+        func_?(0,TypeInfo__RTG__IGizmoCircle2DBorderController,pIVar1->vector[uVar4]);
+        if ((this->fields)._isVisible == 0) {
+          return;
+        }
+        pGVar2 = (this->fields)._planeSlider;
+        pIVar1 = (this->fields)._controllers;
+        if (pGVar2 != (GizmoPlaneSlider2D *)0x0) {
+          if ((pGVar2->fields)._sharedLookAndFeel == (GizmoPlaneSlider2DLookAndFeel *)0x0) {
+            pGVar3 = (pGVar2->fields)._lookAndFeel;
+            if (pGVar3 == (GizmoPlaneSlider2DLookAndFeel *)0x0) goto code_?;
           }
-          pGVar2 = (this->fields)._planeSlider;
-          pIVar1 = (this->fields)._controllers;
-          if (((pGVar2 != (GizmoPlaneSlider2D *)0x0) &&
-              (pGVar3 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_get_LookAndFeel
-                                  (pGVar2,(MethodInfo *)0x0),
-              pGVar3 != (GizmoPlaneSlider2DLookAndFeel *)0x0)) &&
-             (pIVar1 != (IGizmoCircle2DBorderController__Array *)0x0)) {
+          else {
+            pGVar3 = (pGVar2->fields)._sharedLookAndFeel;
+          }
+          if (pIVar1 != (IGizmoCircle2DBorderController__Array *)0x0) {
             uVar4 = (pGVar3->fields)._circleBorderType;
             if (pIVar1->max_length <= uVar4) goto code_?;
             if (pIVar1->vector[uVar4] != (IGizmoCircle2DBorderController *)0x0) {
-              func_?(2,TypeInfo__RTG__IGizmoCircle2DBorderController,pIVar1->vector[uVar4])
+              func_?(1,TypeInfo__RTG__IGizmoCircle2DBorderController,pIVar1->vector[uVar4])
               ;
+              GizmoCircle2DBorder_OnCircleShapeChanged(this,(MethodInfo *)0x0);
               return;
             }
           }
@@ -211,6 +245,7 @@ void Assembly-CSharp.dll::RTG::GizmoCircle2DBorder::GizmoCircle2DBorder_SetVisib
       }
     }
   }
+code_?:
   func_?();
 code_?:
   func_?();

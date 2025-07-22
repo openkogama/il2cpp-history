@@ -52,41 +52,41 @@ void Assembly-CSharp.dll::LethalModifier::LethalModifier_OnActivated
 {
   this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                       ((Component *)this,(MethodInfo *)0x0);
-  if ((((target != (Avatar *)0x0) && (pMVar1 = (target->fields).mvAvatar, pMVar1 != (MVAvatar *)0x0)
-       ) && (pMVar2 = (pMVar1->fields).body, pMVar2 != (MVBody *)0x0)) &&
-     ((pBVar3 = MVBody::MVBody_get_BodyData(pMVar2,(MethodInfo *)0x0), pBVar3 != (BodyData *)0x0 &&
-      (pTVar4 = (pBVar3->fields).PartBones, pTVar4 != (Transform__Array *)0x0)))) {
-    if (pTVar4->max_length == 0) goto code_?;
-    if (this_01 != (Transform *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                (this_01,pTVar4->vector[0],0,(MethodInfo *)0x0);
-      pMVar1 = (target->fields).mvAvatar;
-      if ((pMVar1 != (MVAvatar *)0x0) && (pMVar2 = (pMVar1->fields).body, pMVar2 != (MVBody *)0x0))
-      {
-        MVBody::MVBody_StartBlinking(pMVar2,BlinkType__Enum_Lethal,INFINITY,(MethodInfo *)0x0);
-        this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                            ((Component *)this,(MethodInfo *)0x0);
-        if (this_02 != (GameObject *)0x0) {
-          bVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                  GameObject_get_activeInHierarchy(this_02,(MethodInfo *)0x0);
-          if (bVar5 != 0) {
-            return;
-          }
-          this_00 = (this->fields).lethalParticles;
-          if (this_00 != (ParticleSystem *)0x0) {
-            UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Stop_2
-                      (this_00,(MethodInfo *)0x0);
+  if (((target != (Avatar *)0x0) && (pMVar1 = (target->fields).mvAvatar, pMVar1 != (MVAvatar *)0x0))
+     && (pMVar2 = (pMVar1->fields).body, pMVar2 != (MVBody *)0x0)) {
+    this_02 = (MethodCall *)MVBody::MVBody_get_BodyData(pMVar2,(MethodInfo *)0x0);
+    if (this_02 != (MethodCall *)0x0) {
+      parent = (Transform *)
+               mscorlib.dll::System::Runtime::Remoting::Messaging::MethodCall::MethodCall_GetArg
+                         (this_02,0,(MethodInfo *)0x0);
+      if (this_01 != (Transform *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
+                  (this_01,parent,0,(MethodInfo *)0x0);
+        pMVar1 = (target->fields).mvAvatar;
+        if ((pMVar1 != (MVAvatar *)0x0) && (pMVar2 = (pMVar1->fields).body, pMVar2 != (MVBody *)0x0)
+           ) {
+          MVBody::MVBody_StartBlinking(pMVar2,BlinkType__Enum_Lethal,INFINITY,(MethodInfo *)0x0);
+          this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                              ((Component *)this,(MethodInfo *)0x0);
+          if (this_03 != (GameObject *)0x0) {
+            bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                    GameObject_get_activeInHierarchy(this_03,(MethodInfo *)0x0);
+            if (bVar3 == 0) {
+              this_00 = (this->fields).lethalParticles;
+              if (this_00 == (ParticleSystem *)0x0) goto code_?;
+              UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+              ParticleSystem_Stop_2(this_00,(MethodInfo *)0x0);
+            }
             return;
           }
         }
       }
     }
   }
-  func_?();
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

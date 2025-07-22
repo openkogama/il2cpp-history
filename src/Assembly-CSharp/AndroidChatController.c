@@ -27,16 +27,16 @@ void Assembly-CSharp.dll::AndroidChatController::AndroidChatController_Initializ
     cRam_? = '\x01';
   }
   pMVar1 = TypeInfo__MVGameControllerBase->static_fields->OnReceivedGameMsg;
-  this_00 = (UnityAction_2_System_Int32_System_Int32_ *)
+  this_02 = (UnityAction_2_System_Int32_System_Int32_ *)
             func_?(TypeInfo__MVGameControllerBase__OnReceivedGameMsgDelegate);
   UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
   UnityAction_2_System_Int32_System_Int32___ctor
-            (this_00,(Object *)this,
+            (this_02,(Object *)this,
              MethodInfo__ChatControllerBase__ReceiveMessage_MV__Common__MVGameMsgType__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
              ,(MethodInfo *)0x0);
   pMVar1 = (MVGameControllerBase_OnReceivedGameMsgDelegate *)
            mscorlib.dll::System::Delegate::Delegate_Combine
-                     ((Delegate *)pMVar1,(Delegate *)this_00,(MethodInfo *)0x0);
+                     ((Delegate *)pMVar1,(Delegate *)this_02,(MethodInfo *)0x0);
   if (pMVar1 != (MVGameControllerBase_OnReceivedGameMsgDelegate *)0x0) {
     pMVar2 = (MVGameControllerBase_OnReceivedGameMsgDelegate *)0x0;
     if (pMVar1->klass == TypeInfo__MVGameControllerBase__OnReceivedGameMsgDelegate) {
@@ -61,28 +61,28 @@ code_?:
   pCVar3 = (this->fields)._._EnterChatButton_k__BackingField;
   if (pCVar3 != (ConsoleDragAndTapHandler *)0x0) {
     a = (pCVar3->fields).OnClick;
-    this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+    this_03 = (NavMesh_OnNavMeshPreUpdate *)func_?();
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
-              (this_01,(Object *)this,MethodInfo__AndroidChatController__OnChatModeTapped__,
+              (this_03,(Object *)this,MethodInfo__AndroidChatController__OnChatModeTapped__,
                (MethodInfo *)0x0);
     pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)a,(Delegate *)this_01,(MethodInfo *)0x0);
+                       ((Delegate *)a,(Delegate *)this_03,(MethodInfo *)0x0);
     if (pDVar4 == (Delegate *)0x0) {
       (a->fields)._._.m_target = (Object *)0x0;
 code_?:
       func_?();
       pAVar5 = TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageHeard;
-      this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+      this_04 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
                  *)func_?();
       DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
       __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
       DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                (this_02,(Object *)this,
+                (this_04,(Object *)this,
                  MethodInfo__ChatControllerBase__OnSayChatMessageHeard_System__Collections__Generic__Dictionary<System::Object,_System::Object>_
                  ,(MethodInfo *)0x0);
       pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)pAVar5,(Delegate *)this_02,(MethodInfo *)0x0);
+                         ((Delegate *)pAVar5,(Delegate *)this_04,(MethodInfo *)0x0);
       if (pDVar4 == (Delegate *)0x0) {
         TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageHeard =
              (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)0x0;
@@ -115,9 +115,27 @@ code_?:
                         (pCVar6,ChatConsoleMode__Enum_ChatLobbyMode,&(this->fields).rectTransform,
                          (MethodInfo *)0x0);
               (*(code *)(this->klass->vtable).UpdateLockedState.method)();
-              AndroidChatController_SetMode
-                        (this,ChatConsoleMode__Enum_ChatLobbyMode,(MethodInfo *)0x0);
-              return;
+              this_00 = (this->fields).rectTransform;
+              if (this_00 != (RectTransform *)0x0) {
+                this_05 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                          Component_get_gameObject((Component *)this_00,(MethodInfo *)0x0);
+                if (this_05 != (GameObject *)0x0) {
+                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                            (this_05,0,(MethodInfo *)0x0);
+                  pCVar6 = (this->fields).chatConsoleModes;
+                  if (pCVar6 != (ChatConsoleModes *)0x0) {
+                    ChatConsoleModes::ChatConsoleModes_Set
+                              (pCVar6,ChatConsoleMode__Enum_ChatLobbyMode,
+                               &(this->fields).rectTransform,(MethodInfo *)0x0);
+                    this_01 = (this->fields)._._ScrollRect_k__BackingField;
+                    if (this_01 != (ScrollRect *)0x0) {
+                      UnityEngine.UI.dll::UnityEngine::UI::ScrollRect::
+                      ScrollRect_SetVerticalNormalizedPosition(this_01,0.0,(MethodInfo *)0x0);
+                      return;
+                    }
+                  }
+                }
+              }
             }
           }
         }
@@ -170,120 +188,60 @@ void Assembly-CSharp.dll::AndroidChatController::AndroidChatController_OnChatMod
 
 {
   pCVar1 = (this->fields).chatConsoleModes;
-  if (pCVar1 != (ChatConsoleModes *)0x0) {
-    if ((pCVar1->fields).chatConsoleMode != 1) {
-      if ((pCVar1->fields).chatConsoleMode == 2) {
-        AndroidChatController_SetMode(this,ChatConsoleMode__Enum_ChatPlayMode,(MethodInfo *)0x0);
-      }
-      return;
-    }
-    pCVar2 = (this->fields)._._EnterChatButton_k__BackingField;
-    if (pCVar2 != (ConsoleDragAndTapHandler *)0x0) {
-      (pCVar2->fields).scrollingEnabled = 0;
-      pRVar3 = (this->fields)._._InputAreaRoot_k__BackingField;
-      if (pRVar3 != (RectTransform *)0x0) {
-        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)pRVar3,(MethodInfo *)0x0);
-        if (pGVar4 != (GameObject *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar4,0,(MethodInfo *)0x0);
-          pRVar3 = (this->fields).minimizeChat;
-          if (pRVar3 != (RectTransform *)0x0) {
-            pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                               ((Component *)pRVar3,(MethodInfo *)0x0);
-            if (pGVar4 != (GameObject *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                        (pGVar4,0,(MethodInfo *)0x0);
-              pRVar3 = (this->fields).expandChat;
-              if (pRVar3 != (RectTransform *)0x0) {
-                pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                         Component_get_gameObject((Component *)pRVar3,(MethodInfo *)0x0);
-                if (pGVar4 != (GameObject *)0x0) {
-                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                            (pGVar4,1,(MethodInfo *)0x0);
-                  pCVar1 = (this->fields).chatConsoleModes;
-                  if (pCVar1 != (ChatConsoleModes *)0x0) {
-                    ChatConsoleModes::ChatConsoleModes_Set
-                              (pCVar1,ChatConsoleMode__Enum_PlayMode,&(this->fields).rectTransform,
-                               (MethodInfo *)0x0);
-                    this_00 = (this->fields)._._ScrollRect_k__BackingField;
-                    if (this_00 != (ScrollRect *)0x0) {
-                      UnityEngine.UI.dll::UnityEngine::UI::ScrollRect::
-                      ScrollRect_SetVerticalNormalizedPosition(this_00,0.0,(MethodInfo *)0x0);
-                      return;
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
+  if (pCVar1 == (ChatConsoleModes *)0x0) {
+    uVar2 = func_?(&stack0xfffffff0);
+    func_?(uVar2);
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  if ((pCVar1->fields).chatConsoleMode != 1) {
+    if ((pCVar1->fields).chatConsoleMode == 2) {
+      AndroidChatController_SetMode(this,ChatConsoleMode__Enum_ChatPlayMode,(MethodInfo *)0x0);
+    }
+    return;
+  }
+  AndroidChatController_SetMode(this,ChatConsoleMode__Enum_PlayMode,(MethodInfo *)0x0);
   return;
 }
 
 
-/* Void OnLobbyStateChange(Boolean) */
+/* Void OnIsPausedStateChange(Boolean) */
 
-void Assembly-CSharp.dll::AndroidChatController::AndroidChatController_OnLobbyStateChange
+void Assembly-CSharp.dll::AndroidChatController::AndroidChatController_OnIsPausedStateChange
                (AndroidChatController *this,bool inLobbyState,MethodInfo *method)
 
 {
   pCVar1 = (this->fields).chatConsoleModes;
   if (pCVar1 != (ChatConsoleModes *)0x0) {
-    if (((pCVar1->fields).chatConsoleMode != 0) || (inLobbyState != 0)) {
-      AndroidChatController_SetMode(this,ChatConsoleMode__Enum_ChatLobbyMode,(MethodInfo *)0x0);
+    if (((pCVar1->fields).chatConsoleMode == 0) && (inLobbyState == 0)) {
+      AndroidChatController_SetMode(this,ChatConsoleMode__Enum_PlayMode,(MethodInfo *)0x0);
       return;
     }
-    pCVar2 = (this->fields)._._EnterChatButton_k__BackingField;
-    if (pCVar2 != (ConsoleDragAndTapHandler *)0x0) {
-      (pCVar2->fields).scrollingEnabled = 0;
-      pRVar3 = (this->fields)._._InputAreaRoot_k__BackingField;
-      if ((pRVar3 != (RectTransform *)0x0) &&
-         (pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                             ((Component *)pRVar3,(MethodInfo *)0x0), pGVar4 != (GameObject *)0x0))
-      {
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar4,0,(MethodInfo *)0x0);
-        pRVar3 = (this->fields).minimizeChat;
-        if ((pRVar3 != (RectTransform *)0x0) &&
-           (pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                               ((Component *)pRVar3,(MethodInfo *)0x0), pGVar4 != (GameObject *)0x0)
-           ) {
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar4,0,(MethodInfo *)0x0);
-          pRVar3 = (this->fields).expandChat;
-          if ((pRVar3 != (RectTransform *)0x0) &&
-             (pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                 ((Component *)pRVar3,(MethodInfo *)0x0),
-             pGVar4 != (GameObject *)0x0)) {
-            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                      (pGVar4,1,(MethodInfo *)0x0);
-            pCVar1 = (this->fields).chatConsoleModes;
-            if (pCVar1 != (ChatConsoleModes *)0x0) {
-              ChatConsoleModes::ChatConsoleModes_Set
-                        (pCVar1,ChatConsoleMode__Enum_PlayMode,&(this->fields).rectTransform,
-                         (MethodInfo *)0x0);
-              this_00 = (this->fields)._._ScrollRect_k__BackingField;
-              if (this_00 != (ScrollRect *)0x0) {
-                UnityEngine.UI.dll::UnityEngine::UI::ScrollRect::
-                ScrollRect_SetVerticalNormalizedPosition(this_00,0.0,(MethodInfo *)0x0);
-                return;
-              }
-            }
-          }
+    this_00 = (this->fields).rectTransform;
+    if ((this_00 != (RectTransform *)0x0) &&
+       (this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                            ((Component *)this_00,(MethodInfo *)0x0), this_02 != (GameObject *)0x0))
+    {
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                (this_02,0,(MethodInfo *)0x0);
+      pCVar1 = (this->fields).chatConsoleModes;
+      if (pCVar1 != (ChatConsoleModes *)0x0) {
+        ChatConsoleModes::ChatConsoleModes_Set
+                  (pCVar1,ChatConsoleMode__Enum_ChatLobbyMode,&(this->fields).rectTransform,
+                   (MethodInfo *)0x0);
+        this_01 = (this->fields)._._ScrollRect_k__BackingField;
+        if (this_01 != (ScrollRect *)0x0) {
+          UnityEngine.UI.dll::UnityEngine::UI::ScrollRect::ScrollRect_SetVerticalNormalizedPosition
+                    (this_01,0.0,(MethodInfo *)0x0);
+          return;
         }
       }
     }
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -295,81 +253,82 @@ void Assembly-CSharp.dll::AndroidChatController::AndroidChatController_SetMode
                )
 
 {
+  pAVar1 = this;
   if (chatConsoleMode == ChatConsoleMode__Enum_ChatLobbyMode) {
-    pCVar1 = (this->fields)._._EnterChatButton_k__BackingField;
-    if (pCVar1 == (ConsoleDragAndTapHandler *)0x0) goto code_?;
-    (pCVar1->fields).scrollingEnabled = 1;
-    pRVar2 = (this->fields)._._InputAreaRoot_k__BackingField;
+    pRVar2 = (this->fields).rectTransform;
+code_?:
     if ((pRVar2 == (RectTransform *)0x0) ||
        (pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)pRVar2,(MethodInfo *)0x0), pGVar3 == (GameObject *)0x0))
     goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (pGVar3,(this->fields)._.chatLocked == 0,(MethodInfo *)0x0);
-    pRVar2 = (this->fields).minimizeChat;
-    if (pRVar2 == (RectTransform *)0x0) goto code_?;
-    chatConsoleMode = ChatConsoleMode__Enum_ChatLobbyMode;
-    pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)pRVar2,(MethodInfo *)0x0);
-joined_?:
-    if (pGVar3 == (GameObject *)0x0) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (pGVar3,in_stack_4,in_stack_5);
-    pRVar2 = (this->fields).expandChat;
-    if ((pRVar2 == (RectTransform *)0x0) ||
-       (pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)pRVar2,(MethodInfo *)0x0), pGVar3 == (GameObject *)0x0))
-    goto code_?;
-    method_00 = (MethodInfo *)0x0;
+    this = (AndroidChatController *)0x0;
     value = 0;
 code_?:
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (pGVar3,value,method_00);
+              (pGVar3,value,(MethodInfo *)this);
   }
   else {
     if (chatConsoleMode == ChatConsoleMode__Enum_ChatPlayMode) {
-      pCVar1 = (this->fields)._._EnterChatButton_k__BackingField;
-      if (pCVar1 == (ConsoleDragAndTapHandler *)0x0) goto code_?;
-      (pCVar1->fields).scrollingEnabled = 1;
-      ChatControllerBase::ChatControllerBase_PromptRegisterForChatIfApplicable
-                ((ChatControllerBase *)this,(MethodInfo *)0x0);
-      pRVar2 = (this->fields)._._InputAreaRoot_k__BackingField;
+      pRVar2 = (this->fields).rectTransform;
       if ((pRVar2 == (RectTransform *)0x0) ||
          (pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                              ((Component *)pRVar2,(MethodInfo *)0x0), pGVar3 == (GameObject *)0x0))
       goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar3,(this->fields)._.chatLocked == 0,(MethodInfo *)0x0);
-      pRVar2 = (this->fields).minimizeChat;
+                (pGVar3,1,(MethodInfo *)0x0);
+      pCVar4 = (this->fields)._._EnterChatButton_k__BackingField;
+      if (pCVar4 == (ConsoleDragAndTapHandler *)0x0) goto code_?;
+      (pCVar4->fields).scrollingEnabled = 1;
+      ChatControllerBase::ChatControllerBase_PromptRegisterForChatIfApplicable
+                ((ChatControllerBase *)this,(MethodInfo *)0x0);
+      pRVar2 = (this->fields)._._InputAreaRoot_k__BackingField;
       if (pRVar2 == (RectTransform *)0x0) goto code_?;
       chatConsoleMode = (ChatConsoleMode__Enum)&UNK_?;
       pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)pRVar2,(MethodInfo *)0x0);
-      goto joined_?;
-    }
-    if (chatConsoleMode == ChatConsoleMode__Enum_PlayMode) {
-      pCVar1 = (this->fields)._._EnterChatButton_k__BackingField;
-      if (pCVar1 == (ConsoleDragAndTapHandler *)0x0) goto code_?;
-      (pCVar1->fields).scrollingEnabled = 0;
-      pRVar2 = (this->fields)._._InputAreaRoot_k__BackingField;
+      if (pGVar3 == (GameObject *)0x0) goto code_?;
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                (pGVar3,(this->fields)._.chatLocked == 0,(MethodInfo *)0x0);
+      pRVar2 = (this->fields).minimizeChat;
       if ((pRVar2 == (RectTransform *)0x0) ||
          (pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                              ((Component *)pRVar2,(MethodInfo *)0x0), pGVar3 == (GameObject *)0x0))
       goto code_?;
-      method_00 = (MethodInfo *)0x0;
-      value = 0;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar3,0,(MethodInfo *)0x0);
-      pRVar2 = (this->fields).minimizeChat;
+                (pGVar3,1,(MethodInfo *)0x0);
+      pRVar2 = (this->fields).expandChat;
+      goto code_?;
+    }
+    if (chatConsoleMode == ChatConsoleMode__Enum_PlayMode) {
+      pRVar2 = (this->fields).rectTransform;
       if ((pRVar2 == (RectTransform *)0x0) ||
-         (chatConsoleMode =
-               (ChatConsoleMode__Enum)
-               UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)pRVar2,(MethodInfo *)0x0),
-         (GameObject *)chatConsoleMode == (GameObject *)0x0)) goto code_?;
+         (pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                             ((Component *)pRVar2,(MethodInfo *)0x0), pGVar3 == (GameObject *)0x0))
+      goto code_?;
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                (pGVar3,1,(MethodInfo *)0x0);
+      pCVar4 = (this->fields)._._EnterChatButton_k__BackingField;
+      if (pCVar4 == (ConsoleDragAndTapHandler *)0x0) goto code_?;
+      (pCVar4->fields).scrollingEnabled = 0;
+      pRVar2 = (this->fields)._._InputAreaRoot_k__BackingField;
+      if (pRVar2 == (RectTransform *)0x0) goto code_?;
+      value = 0x35;
+      chatConsoleMode =
+           (ChatConsoleMode__Enum)
+           UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)pRVar2,(MethodInfo *)0x0);
+      if ((GameObject *)chatConsoleMode == (GameObject *)0x0) goto code_?;
+      this = (AndroidChatController *)&UNK_?;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 ((GameObject *)chatConsoleMode,0,(MethodInfo *)0x0);
-      pRVar2 = (this->fields).expandChat;
+      pRVar2 = (pAVar1->fields).minimizeChat;
+      if ((pRVar2 == (RectTransform *)0x0) ||
+         (pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                             ((Component *)pRVar2,(MethodInfo *)0x0), pGVar3 == (GameObject *)0x0))
+      goto code_?;
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                (pGVar3,0,(MethodInfo *)0x0);
+      pRVar2 = (pAVar1->fields).expandChat;
       if ((pRVar2 == (RectTransform *)0x0) ||
          (pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                              ((Component *)pRVar2,(MethodInfo *)0x0), pGVar3 == (GameObject *)0x0))
@@ -377,11 +336,11 @@ code_?:
       goto code_?;
     }
   }
-  this_00 = (this->fields).chatConsoleModes;
+  this_00 = (pAVar1->fields).chatConsoleModes;
   if (this_00 != (ChatConsoleModes *)0x0) {
     ChatConsoleModes::ChatConsoleModes_Set
-              (this_00,chatConsoleMode,&(this->fields).rectTransform,(MethodInfo *)0x0);
-    this_01 = (this->fields)._._ScrollRect_k__BackingField;
+              (this_00,chatConsoleMode,&(pAVar1->fields).rectTransform,(MethodInfo *)0x0);
+    this_01 = (pAVar1->fields)._._ScrollRect_k__BackingField;
     if (this_01 != (ScrollRect *)0x0) {
       UnityEngine.UI.dll::UnityEngine::UI::ScrollRect::ScrollRect_SetVerticalNormalizedPosition
                 (this_01,0.0,(MethodInfo *)0x0);
@@ -390,8 +349,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

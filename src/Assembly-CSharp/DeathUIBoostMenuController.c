@@ -653,7 +653,7 @@ void Assembly-CSharp.dll::DeathUIBoostMenuController::DeathUIBoostMenuController
           uVar6 = uVar6 + 1;
         } while (uVar6 < uVar7);
       }
-      ppMStack3 = (MVGameControllerBase__Class **)0x4;
+      ppMStack3 = (MVGameControllerBase__Class **)0x6;
       puVar10 = (undefined4 *)func_?();
       ppMStack3 = (MVGameControllerBase__Class **)puVar10[1];
       pIStack8 = pIVar4;

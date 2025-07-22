@@ -7,33 +7,29 @@ float Assembly-CSharp.dll::RTG::GizmoCylindricalTorusCircle3DBorderController::
                 MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._._data;
-  if (((pGVar2 != (GizmoCircle3DBorderControllerData *)0x0) &&
-      (pGVar3 = (pGVar2->fields).Border, pGVar3 != (GizmoCircle3DBorder *)0x0)) &&
-     (pGVar4 = (pGVar3->fields)._planeSlider, pGVar4 != (GizmoPlaneSlider3D *)0x0)) {
-    if ((pGVar4->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-      pGVar5 = (pGVar4->fields)._lookAndFeel;
-      if (pGVar5 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-      fVar6 = (pGVar5->fields)._borderCylTorusWidth;
-      pGVar5 = (((pGVar3->fields)._planeSlider)->fields)._lookAndFeel;
-    }
-    else {
-      fVar6 = (((pGVar4->fields)._sharedLookAndFeel)->fields)._borderCylTorusWidth;
-      pGVar5 = (((pGVar3->fields)._planeSlider)->fields)._sharedLookAndFeel;
-    }
-    pCVar7 = (((this->fields)._._data)->fields).TargetCircle;
-    if (pCVar7 != (CircleShape3D *)0x0) {
-      return (pCVar7->fields)._radius - fVar6 * zoomFactor * (pGVar5->fields)._scale * _UNK_?
-      ;
+  pGVar1 = (this->fields)._._data;
+  if (((pGVar1 != (GizmoCircle3DBorderControllerData *)0x0) &&
+      (pGVar2 = (pGVar1->fields).Border, pGVar2 != (GizmoCircle3DBorder *)0x0)) &&
+     (pGVar3 = (pGVar2->fields)._planeSlider, pGVar3 != (GizmoPlaneSlider3D *)0x0)) {
+    pGVar4 = GizmoPlaneSlider3D::GizmoPlaneSlider3D_get_LookAndFeel(pGVar3,(MethodInfo *)0x0);
+    if (pGVar4 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+      fVar5 = (pGVar4->fields)._borderCylTorusWidth;
+      pGVar3 = (pGVar2->fields)._planeSlider;
+      if (pGVar3 != (GizmoPlaneSlider3D *)0x0) {
+        pGVar4 = GizmoPlaneSlider3D::GizmoPlaneSlider3D_get_LookAndFeel(pGVar3,(MethodInfo *)0x0);
+        if (((pGVar4 != (GizmoPlaneSlider3DLookAndFeel *)0x0) &&
+            (pGVar1 = (this->fields)._._data, pGVar1 != (GizmoCircle3DBorderControllerData *)0x0))
+           && (pCVar6 = (pGVar1->fields).TargetCircle, pCVar6 != (CircleShape3D *)0x0)) {
+          return (pCVar6->fields)._radius -
+                 fVar5 * zoomFactor * (pGVar4->fields)._scale * _UNK_?;
+        }
+      }
     }
   }
-code_?:
-  uVar8 = func_?(auStack_9);
-  func_?(uVar8);
-  pcVar10 = (code *)swi(3);
-  fVar11 = (float10)(*pcVar10)();
-  return (float)fVar11;
+  func_?();
+  pcVar7 = (code *)swi(3);
+  fVar8 = (float10)(*pcVar7)();
+  return (float)fVar8;
 }
 
 
@@ -48,34 +44,27 @@ void Assembly-CSharp.dll::RTG::GizmoCylindricalTorusCircle3DBorderController::
   pGVar1 = (this->fields)._._data;
   if (pGVar1 != (GizmoCircle3DBorderControllerData *)0x0) {
     this_00 = (pGVar1->fields).BorderCylTorus;
-    pGVar2 = (pGVar1->fields).PlaneSlider;
-    if (pGVar2 != (GizmoPlaneSlider3D *)0x0) {
-      if ((pGVar2->fields)._sharedSettings == (GizmoPlaneSlider3DSettings *)0x0) {
-        pGVar3 = (pGVar2->fields)._settings;
-        if (pGVar3 == (GizmoPlaneSlider3DSettings *)0x0) goto code_?;
-      }
-      else {
-        pGVar3 = (pGVar2->fields)._sharedSettings;
-      }
-      if (this_00 != (CylTorusShape3D *)0x0) {
+    this_01 = (pGVar1->fields).PlaneSlider;
+    if (this_01 != (GizmoPlaneSlider3D *)0x0) {
+      pGVar2 = GizmoPlaneSlider3D::GizmoPlaneSlider3D_get_Settings(this_01,(MethodInfo *)0x0);
+      if ((pGVar2 != (GizmoPlaneSlider3DSettings *)0x0) && (this_00 != (CylTorusShape3D *)0x0)) {
         CylTorusShape3D::CylTorusShape3D_set_CylHrzRadiusEps
-                  (this_00,zoomFactor * (pGVar3->fields)._borderTorusHoverEps,(MethodInfo *)0x0);
+                  (this_00,zoomFactor * (pGVar2->fields)._borderTorusHoverEps,(MethodInfo *)0x0);
         pGVar1 = (this->fields)._._data;
         if ((pGVar1 != (GizmoCircle3DBorderControllerData *)0x0) &&
-           (this_01 = (Touch *)(pGVar1->fields).BorderCylTorus, this_01 != (Touch *)0x0)) {
+           (this_02 = (Touch *)(pGVar1->fields).BorderCylTorus, this_02 != (Touch *)0x0)) {
           value = UnityEngine.InputLegacyModule.dll::UnityEngine::Touch::Touch_get_radius
-                            (this_01,(MethodInfo *)0x0);
+                            (this_02,(MethodInfo *)0x0);
           CylTorusShape3D::CylTorusShape3D_set_CylVertRadiusEps
-                    ((CylTorusShape3D *)this_01,value,(MethodInfo *)0x0);
+                    ((CylTorusShape3D *)this_02,value,(MethodInfo *)0x0);
           return;
         }
       }
     }
   }
-code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -158,64 +147,51 @@ void Assembly-CSharp.dll::RTG::GizmoCylindricalTorusCircle3DBorderController::
         (this_00->fields)._center.x = (pCVar2->fields)._center.x;
         (this_00->fields)._center.y = fVar13;
         (this_00->fields)._center.z = fVar12;
+        fVar12 = GizmoCylindricalTorusCircle3DBorderController_GetTorusCoreRadius
+                           (this,zoomFactor,(MethodInfo *)0x0);
+        TorusShape3D::TorusShape3D_set_CoreRadius((TorusShape3D *)this_00,fVar12,(MethodInfo *)0x0);
         pGVar1 = (this->fields)._._data;
-        if (((pGVar1 != (GizmoCircle3DBorderControllerData *)0x0) &&
-            (pGVar14 = (pGVar1->fields).Border, pGVar14 != (GizmoCircle3DBorder *)0x0)) &&
-           (pGVar15 = (pGVar14->fields)._planeSlider, pGVar15 != (GizmoPlaneSlider3D *)0x0)) {
-          if ((pGVar15->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-            pGVar16 = (pGVar15->fields)._lookAndFeel;
-            if (pGVar16 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-            fVar12 = (pGVar16->fields)._borderCylTorusWidth;
-            pGVar16 = (((pGVar14->fields)._planeSlider)->fields)._lookAndFeel;
-          }
-          else {
-            fVar12 = (((pGVar15->fields)._sharedLookAndFeel)->fields)._borderCylTorusWidth;
-            pGVar16 = (((pGVar14->fields)._planeSlider)->fields)._sharedLookAndFeel;
-          }
-          pCVar2 = (((this->fields)._._data)->fields).TargetCircle;
-          if (pCVar2 != (CircleShape3D *)0x0) {
-            TorusShape3D::TorusShape3D_set_CoreRadius
-                      ((TorusShape3D *)this_00,
-                       (pCVar2->fields)._radius -
-                       fVar12 * zoomFactor * (pGVar16->fields)._scale * _UNK_?,
-                       (MethodInfo *)0x0);
-            pGVar1 = (this->fields)._._data;
-            if (((pGVar1 != (GizmoCircle3DBorderControllerData *)0x0) &&
-                (pGVar14 = (pGVar1->fields).Border, pGVar14 != (GizmoCircle3DBorder *)0x0)) &&
-               (pGVar15 = (pGVar14->fields)._planeSlider, pGVar15 != (GizmoPlaneSlider3D *)0x0)) {
-              if ((pGVar15->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-                pGVar16 = (pGVar15->fields)._lookAndFeel;
-                if (pGVar16 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-                fVar12 = (pGVar16->fields)._borderCylTorusWidth;
-                pGVar16 = (((pGVar14->fields)._planeSlider)->fields)._lookAndFeel;
-              }
-              else {
-                fVar12 = (((pGVar15->fields)._sharedLookAndFeel)->fields)._borderCylTorusWidth;
-                pGVar16 = (((pGVar14->fields)._planeSlider)->fields)._sharedLookAndFeel;
-              }
-              TorusShape3D::TorusShape3D_set_TubeRadius
-                        ((TorusShape3D *)this_00,
-                         fVar12 * zoomFactor * (pGVar16->fields)._scale * _UNK_?,
-                         (MethodInfo *)0x0);
-              pGVar1 = (this->fields)._._data;
-              if (((pGVar1 != (GizmoCircle3DBorderControllerData *)0x0) &&
-                  (pGVar14 = (pGVar1->fields).Border, pGVar14 != (GizmoCircle3DBorder *)0x0)) &&
-                 (pGVar15 = (pGVar14->fields)._planeSlider, pGVar15 != (GizmoPlaneSlider3D *)0x0)) {
-                if ((pGVar15->fields)._sharedLookAndFeel == (GizmoPlaneSlider3DLookAndFeel *)0x0) {
-                  pGVar16 = (pGVar15->fields)._lookAndFeel;
-                  if (pGVar16 == (GizmoPlaneSlider3DLookAndFeel *)0x0) goto code_?;
-                  fVar12 = (pGVar16->fields)._borderCylTorusHeight;
-                  pGVar16 = (((pGVar14->fields)._planeSlider)->fields)._lookAndFeel;
+        if (pGVar1 != (GizmoCircle3DBorderControllerData *)0x0) {
+          pGVar14 = (pGVar1->fields).Border;
+          if ((pGVar14 != (GizmoCircle3DBorder *)0x0) &&
+             (pGVar15 = (pGVar14->fields)._planeSlider, pGVar15 != (GizmoPlaneSlider3D *)0x0)) {
+            pGVar16 = GizmoPlaneSlider3D::GizmoPlaneSlider3D_get_LookAndFeel
+                                (pGVar15,(MethodInfo *)0x0);
+            if (pGVar16 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+              fVar12 = (pGVar16->fields)._borderCylTorusWidth;
+              pGVar15 = (pGVar14->fields)._planeSlider;
+              if (pGVar15 != (GizmoPlaneSlider3D *)0x0) {
+                pGVar16 = GizmoPlaneSlider3D::GizmoPlaneSlider3D_get_LookAndFeel
+                                    (pGVar15,(MethodInfo *)0x0);
+                if (pGVar16 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+                  TorusShape3D::TorusShape3D_set_TubeRadius
+                            ((TorusShape3D *)this_00,
+                             fVar12 * zoomFactor * (pGVar16->fields)._scale * _UNK_?,
+                             (MethodInfo *)0x0);
+                  pGVar1 = (this->fields)._._data;
+                  if (((pGVar1 != (GizmoCircle3DBorderControllerData *)0x0) &&
+                      (pGVar14 = (pGVar1->fields).Border, pGVar14 != (GizmoCircle3DBorder *)0x0)) &&
+                     (pGVar15 = (pGVar14->fields)._planeSlider, pGVar15 != (GizmoPlaneSlider3D *)0x0))
+                  {
+                    pGVar16 = GizmoPlaneSlider3D::GizmoPlaneSlider3D_get_LookAndFeel
+                                        (pGVar15,(MethodInfo *)0x0);
+                    if (pGVar16 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+                      fVar12 = (pGVar16->fields)._borderCylTorusHeight;
+                      pGVar15 = (pGVar14->fields)._planeSlider;
+                      if (pGVar15 != (GizmoPlaneSlider3D *)0x0) {
+                        pGVar16 = GizmoPlaneSlider3D::GizmoPlaneSlider3D_get_LookAndFeel
+                                            (pGVar15,(MethodInfo *)0x0);
+                        if (pGVar16 != (GizmoPlaneSlider3DLookAndFeel *)0x0) {
+                          RightAngTriangle2D::RightAngTriangle2D_set_XLength
+                                    ((RightAngTriangle2D *)this_00,
+                                     fVar12 * zoomFactor * (pGVar16->fields)._scale * _UNK_?,
+                                     (MethodInfo *)0x0);
+                          return;
+                        }
+                      }
+                    }
+                  }
                 }
-                else {
-                  fVar12 = (((pGVar15->fields)._sharedLookAndFeel)->fields)._borderCylTorusHeight;
-                  pGVar16 = (((pGVar14->fields)._planeSlider)->fields)._sharedLookAndFeel;
-                }
-                RightAngTriangle2D::RightAngTriangle2D_set_XLength
-                          ((RightAngTriangle2D *)this_00,
-                           fVar12 * zoomFactor * (pGVar16->fields)._scale * _UNK_?,
-                           (MethodInfo *)0x0);
-                return;
               }
             }
           }
@@ -223,7 +199,6 @@ void Assembly-CSharp.dll::RTG::GizmoCylindricalTorusCircle3DBorderController::
       }
     }
   }
-code_?:
   func_?();
   pcVar17 = (code *)swi(3);
   (*pcVar17)();

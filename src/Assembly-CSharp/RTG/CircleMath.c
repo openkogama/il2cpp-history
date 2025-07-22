@@ -282,30 +282,25 @@ bool Assembly-CSharp.dll::RTG::CircleMath::CircleMath_Contains3DPoint
 
 {
   pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                     ((Vector3 *)&stack0xfffffff0,circleNormal,(MethodInfo *)0x0);
-  fVar2 = pVVar1->x;
-  fVar3 = pVVar1->y;
-  fVar4 = pVVar1->z;
-  fVar5 = (float)((uint)(circleCenter.x * fVar2 + circleCenter.y * fVar3 + circleCenter.z * fVar4) ^
-                 __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-  if (checkOnPlane != 0) {
-    plane.m_Distance = fVar5;
-    plane.m_Normal = *pVVar1;
-    fVar2 = point.x;
-    fVar3 = point.y;
-    fVar4 = point.z;
-    fVar5 = 0.0;
-    fVar6 = PlaneEx::PlaneEx_GetAbsDistanceToPoint(plane,point,(MethodInfo *)0x0);
-    if (epsilon._extrudeEps < fVar6) {
-      return 0;
-    }
+                     (&VStack_2,circleNormal,(MethodInfo *)0x0);
+  uVar3 = pVVar1->x;
+  uVar4 = pVVar1->y;
+  fVar5 = pVVar1->z;
+  fVar6 = (float)((uint)(circleCenter.x * (float)uVar3 + circleCenter.y * (float)uVar4 +
+                        circleCenter.z * fVar5) ^
+                 __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+  if ((checkOnPlane != 0) &&
+     (epsilon._extrudeEps <
+      (float)((uint)((float)uVar3 * point.x + (float)uVar4 * point.y + fVar5 * point.z + fVar6) &
+             _UNK_?))) {
+    return 0;
   }
-  plane_00.m_Normal.y = fVar3;
-  plane_00.m_Normal.x = fVar2;
-  plane_00.m_Normal.z = fVar4;
-  plane_00.m_Distance = fVar5;
-  PlaneEx::PlaneEx_ProjectPoint((Vector3 *)&stack0xfffffff0,plane_00,point,(MethodInfo *)0x0);
-  fVar7 = (float10)func_?();
+  fVar6 = (float)uVar3 * point.x + (float)uVar4 * point.y + fVar5 * point.z + fVar6;
+  circleCenter.z = (point.z - fVar5 * fVar6) - circleCenter.z;
+  circleCenter.x = (point.x - (float)uVar3 * fVar6) - circleCenter.x;
+  circleCenter.y = (point.y - (float)uVar4 * fVar6) - circleCenter.y;
+  VStack_2.x = 0.0;
+  fVar7 = (float10)func_?(&circleCenter);
   return (float)fVar7 <= epsilon._radiusEps + circleRadius;
 }
 
@@ -351,7 +346,7 @@ bool Assembly-CSharp.dll::RTG::CircleMath::CircleMath_Raycast
   PStack_1.m_Distance =
        (float)((uint)(circleCenter.y * PStack_1.m_Normal.y + circleCenter.x * PStack_1.m_Normal.x
                      + circleCenter.z * PStack_1.m_Normal.z) ^
-              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+              __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
   ray_00.m_Origin.y = ray.m_Origin.y;
   ray_00.m_Origin.x = ray.m_Origin.x;
   ray_00.m_Origin.z = ray.m_Origin.z;

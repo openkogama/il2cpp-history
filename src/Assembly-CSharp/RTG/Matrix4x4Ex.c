@@ -30,7 +30,7 @@ Assembly-CSharp.dll::RTG::Matrix4x4Ex::Matrix4x4Ex_GetInverse
                (mtx.m33 * mtx.m01 - mtx.m31 * mtx.m03) * mtx.m20) +
               (mtx.m23 * mtx.m01 - mtx.m21 * mtx.m03) * mtx.m30) *
               (float)((uint)fVar1 ^
-                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     mtx.m22 = (((mtx.m33 * mtx.m11 - mtx.m13 * mtx.m31) * mtx.m00 -
                (mtx.m33 * mtx.m01 - mtx.m31 * mtx.m03) * mtx.m10) +
               (mtx.m13 * mtx.m01 - mtx.m03 * mtx.m11) * mtx.m30) * fVar1;
@@ -38,12 +38,12 @@ Assembly-CSharp.dll::RTG::Matrix4x4Ex::Matrix4x4Ex_GetInverse
                (mtx.m23 * mtx.m01 - mtx.m03 * mtx.m21) * mtx.m10) +
               (mtx.m13 * mtx.m01 - mtx.m03 * mtx.m11) * mtx.m20) *
               (float)((uint)fVar1 ^
-                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     mtx.m30 = (((mtx.m32 * mtx.m21 - mtx.m32 * mtx.m12) * mtx.m10 -
                (mtx.m32 * mtx.m11 - mtx.m31 * mtx.m12) * mtx.m20) +
               (mtx.m22 * mtx.m11 - mtx.m12 * mtx.m21) * mtx.m30) *
               (float)((uint)fVar1 ^
-                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     mtx.m31 = (((mtx.m32 * mtx.m21 - mtx.m31 * mtx.m12) * mtx.m00 -
                (mtx.m32 * mtx.m01 - mtx.m31 * mtx.m02) * mtx.m20) +
               (mtx.m22 * mtx.m01 - mtx.m02 * mtx.m21) * mtx.m30) * fVar1;
@@ -51,7 +51,7 @@ Assembly-CSharp.dll::RTG::Matrix4x4Ex::Matrix4x4Ex_GetInverse
                (mtx.m32 * mtx.m01 - mtx.m02 * mtx.m31) * mtx.m10) +
               (mtx.m12 * mtx.m01 - mtx.m02 * mtx.m11) * mtx.m30) *
               (float)((uint)fVar1 ^
-                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     mtx.m33 = (((mtx.m22 * mtx.m11 - mtx.m12 * mtx.m21) * mtx.m00 -
                (mtx.m22 * mtx.m01 - mtx.m02 * mtx.m21) * mtx.m10) +
               (mtx.m12 * mtx.m01 - mtx.m02 * mtx.m11) * mtx.m20) * fVar1;
@@ -62,12 +62,12 @@ Assembly-CSharp.dll::RTG::Matrix4x4Ex::Matrix4x4Ex_GetInverse
                (mtx.m12 * mtx.m33 - mtx.m13 * mtx.m32) * mtx.m20) +
               (mtx.m23 * mtx.m12 - mtx.m22 * mtx.m13) * mtx.m30) *
               (float)((uint)fVar1 ^
-                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     mtx.m01 = (((mtx.m22 * mtx.m33 - mtx.m23 * mtx.m32) * mtx.m01 -
                (mtx.m02 * mtx.m33 - mtx.m03 * mtx.m32) * mtx.m21) +
               (mtx.m23 * mtx.m02 - mtx.m03 * mtx.m32) * mtx.m31) *
               (float)((uint)fVar1 ^
-                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     mtx.m11 = (((mtx.m22 * mtx.m33 - mtx.m23 * mtx.m32) * mtx.m00 -
                (mtx.m33 * mtx.m02 - mtx.m32 * mtx.m03) * mtx.m20) +
               (mtx.m23 * mtx.m02 - mtx.m22 * mtx.m03) * mtx.m30) * fVar1;
@@ -78,12 +78,12 @@ Assembly-CSharp.dll::RTG::Matrix4x4Ex::Matrix4x4Ex_GetInverse
                (mtx.m33 * mtx.m02 - mtx.m32 * mtx.m03) * mtx.m10) +
               (mtx.m13 * mtx.m02 - mtx.m12 * mtx.m03) * mtx.m30) *
               (float)((uint)fVar1 ^
-                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     mtx.m03 = (((mtx.m23 * mtx.m12 - mtx.m22 * mtx.m13) * mtx.m01 -
                (mtx.m23 * mtx.m02 - mtx.m22 * mtx.m03) * mtx.m11) +
               (mtx.m13 * mtx.m02 - mtx.m12 * mtx.m03) * mtx.m21) *
               (float)((uint)fVar1 ^
-                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
   }
   __return_storage_ptr__->m00 = mtx.m00;
   __return_storage_ptr__->m10 = mtx.m10;
@@ -387,7 +387,7 @@ Assembly-CSharp.dll::RTG::Matrix4x4Ex::Matrix4x4Ex_RotationMatrixFromRightUp
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
             (__return_storage_ptr__,6,up.z,(MethodInfo *)0x0);
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
-            (__return_storage_ptr__,8,4.348923e-29,(MethodInfo *)0x0);
+            (__return_storage_ptr__,8,4.3571372e-29,(MethodInfo *)0x0);
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1
             (__return_storage_ptr__,9,(float)__return_storage_ptr__,(MethodInfo *)0x0);
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1

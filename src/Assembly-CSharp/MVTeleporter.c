@@ -30,10 +30,10 @@ void Assembly-CSharp.dll::MVTeleporter::MVTeleporter_Destroy(MVTeleporter *this,
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__EventHandler<TriggerEventArgs>);
     func_?(&
-                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                    MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                    );
     func_?(&
-                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                    MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                    );
     cRam_? = '\x01';
   }
@@ -53,7 +53,7 @@ code_?:
                func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
       mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                 (pEVar5,(Object *)pUVar4,
-                 MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                 MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                  ,(MethodInfo *)0x0);
       if (pTVar3 == (TriggerBoxEvents *)0x0) goto code_?;
       TriggerBoxEvents::TriggerBoxEvents_remove_TriggerEnter
@@ -66,7 +66,7 @@ code_?:
                func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
       mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                 (pEVar5,(Object *)pUVar4,
-                 MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                 MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                  ,(MethodInfo *)0x0);
       if (pTVar3 == (TriggerBoxEvents *)0x0) goto code_?;
       TriggerBoxEvents::TriggerBoxEvents_remove_TriggerExit
@@ -318,13 +318,13 @@ void Assembly-CSharp.dll::MVTeleporter::MVTeleporter_SetupUseInteractor
     func_?(&TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement);
     func_?(&TypeInfo__StarRequirement);
     func_?(&TypeInfo__TeamRequirement);
+    func_?(&
+                    MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                   );
+    func_?(&
+                    MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                   );
     func_?(&TypeInfo__UseInteractor);
-    func_?(&
-                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
-                   );
-    func_?(&
-                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
-                   );
     cRam_? = '\x01';
   }
   pMVar1 = (this->fields).teleportObject;
@@ -341,7 +341,7 @@ void Assembly-CSharp.dll::MVTeleporter::MVTeleporter_SetupUseInteractor
       UseInteractor::UseInteractor__ctor
                 (pUVar4,(MVWorldObjectClient *)this,pGVar2,0,triggerCollider,
                  (Func_2_Int32_Boolean_ *)this_00,(Func_3_Int32_MVInteractableBase_Boolean_ *)0x0,
-                 2.5,0,(MethodInfo *)0x0);
+                 2.5,0,1,(MethodInfo *)0x0);
       (this->fields).useInteractor = pUVar4;
       func_?(&(this->fields).useInteractor,pUVar4);
       pMVar1 = (this->fields).teleportObject;
@@ -420,7 +420,7 @@ void Assembly-CSharp.dll::MVTeleporter::MVTeleporter_SetupUseInteractor
                                   mscorlib.dll::System::EventHandler`1[Object]::
                                   EventHandler_1_Object___ctor
                                             (pEVar5,(Object *)pUVar4,
-                                             MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                                             MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                                              ,(MethodInfo *)0x0);
                                   if (pTVar3 != (TriggerBoxEvents *)0x0) {
                                     TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
@@ -436,7 +436,7 @@ void Assembly-CSharp.dll::MVTeleporter::MVTeleporter_SetupUseInteractor
                                       mscorlib.dll::System::EventHandler`1[Object]::
                                       EventHandler_1_Object___ctor
                                                 (pEVar5,(Object *)pUVar4,
-                                                 MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                                                 MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                                                  ,(MethodInfo *)0x0);
                                       if (pTVar3 != (TriggerBoxEvents *)0x0) {
                                         TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit

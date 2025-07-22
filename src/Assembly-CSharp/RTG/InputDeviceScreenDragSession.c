@@ -104,35 +104,18 @@ bool Assembly-CSharp.dll::RTG::InputDeviceScreenDragSession::
     }
     pIVar1 = (this->fields)._inputDevice;
     if (pIVar1 != (IInputDevice *)0x0) {
-      pIVar3 = pIVar1->klass;
-      uVar4 = 0;
-      uVar5._0_1_ = (pIVar3->_1).rank;
-      uVar5._1_1_ = (pIVar3->_1).minimumAlignment;
-      if (uVar5 != 0) {
-        do {
-          if (pIVar3->interfaceOffsets[uVar4].interfaceType ==
-              (Il2CppClass *)TypeInfo__RTG__IInputDevice) {
-            ppMVar6 = &(&(pIVar1->klass->vtable).GetPositionYAxisUp)
-                       [pIVar1->klass->interfaceOffsets[uVar4].offset].method;
-            goto code_?;
-          }
-          uVar4 = uVar4 + 1;
-        } while (uVar4 < uVar5);
-      }
-      ppMVar6 = (MethodInfo **)func_?(pIVar1,TypeInfo__RTG__IInputDevice,7);
-code_?:
-      puVar7 = (undefined8 *)(*(code *)*ppMVar6)(&stack0xffffffd8,pIVar1,ppMVar6[1]);
-      uVar8 = *puVar7;
-      fStack_9 = (float)uVar8;
-      (this->fields)._dragPoint.x = fStack_9;
-      fStack_10 = (float)((ulonglong)uVar8 >> 0x20);
-      (this->fields)._dragPoint.y = fStack_10;
+      puVar3 = (undefined8 *)func_?(auStack_4,7,TypeInfo__RTG__IInputDevice,pIVar1);
+      uVar5 = *puVar3;
+      fStack_6 = (float)uVar5;
+      (this->fields)._dragPoint.x = fStack_6;
+      fStack_7 = (float)((ulonglong)uVar5 >> 0x20);
+      (this->fields)._dragPoint.y = fStack_7;
       return 1;
     }
   }
   func_?();
-  pcVar11 = (code *)swi(3);
-  bVar12 = (*pcVar11)();
-  return bVar12;
+  pcVar8 = (code *)swi(3);
+  bVar9 = (*pcVar8)();
+  return bVar9;
 }
 

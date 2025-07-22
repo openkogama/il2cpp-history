@@ -48,9 +48,9 @@ void Assembly-CSharp.dll::RTG::GizmoTransformAxisMap2D::GizmoTransformAxisMap2D_
               WebCompletionSource_1_T_Result_System_Object__get_Success(this_00,(MethodInfo *)0x0);
       if (bVar6 != 0) {
         fVar4 = (float)((uint)fVar4 ^
-                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                       __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
         fVar5 = (float)((uint)fVar5 ^
-                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                       __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
       }
       VVar1.y = fVar5;
       VVar1.x = fVar4;
@@ -100,9 +100,9 @@ void Assembly-CSharp.dll::RTG::GizmoTransformAxisMap2D::GizmoTransformAxisMap2D_
               WebCompletionSource_1_T_Result_System_Object__get_Success(this_00,(MethodInfo *)0x0);
       if (bVar5 != 0) {
         fVar3 = (float)((uint)fVar3 ^
-                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                       __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
         fVar4 = (float)((uint)fVar4 ^
-                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                       __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
       }
       from.y = fVar4;
       from.x = fVar3;
@@ -198,9 +198,9 @@ code_?:
               WebCompletionSource_1_T_Result_System_Object__get_Success(this_00,(MethodInfo *)0x0);
       if (bVar7 != 0) {
         VVar8.y = (float)((uint)fStack_2 ^
-                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                         __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
         VVar8.x = (float)((uint)fStack_1 ^
-                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                         __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
         return VVar8;
       }
       goto code_?;

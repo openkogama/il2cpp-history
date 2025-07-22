@@ -69,153 +69,99 @@ void Assembly-CSharp.dll::MVSimpleOneSeatVehicle::MVSimpleOneSeatVehicle_Initial
     func_?(&StringLiteral_overrideHealth);
     cRam_? = '\x01';
   }
-  pOStack_1 = (Object *)0x0;
-  if (cRam_? == '\0') {
-    func_?(&
-                    VehicleSeatManager_MethodInfo__UnityEngine__GameObject__GetComponent<VehicleSeatManager>__
-                   );
-    func_?(&TypeInfo__MVWorldObjectSpawnerVehicle);
-    func_?(&StringLiteral_Default);
-    func_?(&StringLiteral_isDead);
-    func_?(&StringLiteral_Player);
-    cRam_? = '\x01';
+  MVVehicleBase::MVVehicleBase_Initialize((MVVehicleBase *)this,(MethodInfo *)0x0);
+  worldObjectType = (this->fields)._._._._._.type;
+  if ((TypeInfo__MV__WorldObject__RuntimeVariablesRepository->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__MV__WorldObject__RuntimeVariablesRepository);
   }
-  MVBlueprintBase::MVBlueprintBase_Initialize((MVBlueprintBase *)this,(MethodInfo *)0x0);
-  pMVar2 = (this->fields)._._._._.runtimeDataVariables;
-  if (pMVar2 == (MVRuntimeDataVariables *)0x0) {
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+            MVWorldObject.dll::MV::WorldObject::RuntimeVariablesRepository::
+            RuntimeVariablesRepository_GetRuntimeVariables(worldObjectType,(MethodInfo *)0x0);
+  if (this_00 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
 code_?:
     func_?();
-    pOVar3 = extraout_ECX;
-    pSVar4 = extraout_EDX;
   }
   else {
-    pMVar5 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
-                        (pMVar2,StringLiteral_isDead,0.0,1,(MethodInfo *)0x0);
-    (this->fields)._.IsVehicleDead = pMVar5;
-    func_?(&(this->fields)._.IsVehicleDead,pMVar5);
-    pGVar6 = (this->fields)._._._._.gameObject;
-    if (pGVar6 == (GameObject *)0x0) goto code_?;
-    pVVar7 = (VehicleSeatManager *)
-              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
-                        (pGVar6,
-                         VehicleSeatManager_MethodInfo__UnityEngine__GameObject__GetComponent<VehicleSeatManager>__
-                        );
-    (this->fields)._.seatManager = pVVar7;
-    func_?(&(this->fields)._.seatManager,pVVar7);
-    pVVar7 = (this->fields)._.seatManager;
-    if (pVVar7 == (VehicleSeatManager *)0x0) goto code_?;
-    VehicleSeatManager::VehicleSeatManager_Init
-              (pVVar7,(MVVehicleBase *)this,(this->fields)._.IsVehicleDead,(MethodInfo *)0x0);
-    pMVar8 = (this->fields)._._._._.group;
-    if (pMVar8 != (MVGroup *)0x0) {
-      pMVar9 = pMVar8->klass;
-      if (((TypeInfo__MVWorldObjectSpawnerVehicle->_1).naturalAligment <=
-           (pMVar9->_1).naturalAligment) &&
-         ((MVWorldObjectSpawnerVehicle__Class *)
-          (pMVar9->_1).typeHierarchy
-          [(TypeInfo__MVWorldObjectSpawnerVehicle->_1).naturalAligment - 1] ==
-          TypeInfo__MVWorldObjectSpawnerVehicle)) {
-        (this->fields)._._IsInSpawner_k__BackingField = 1;
-      }
-    }
-    LayerUtil::LayerUtil_SetLayerRecursively_3
-              ((this->fields)._._._._.transform,StringLiteral_Default,StringLiteral_Player,
-               (MethodInfo *)0x0);
-    iVar10 = (this->fields)._._._._.interactionFlags;
-    worldObjectType = (this->fields)._._._._._.type;
-    *(undefined4 *)((int)&(this->fields)._._._._.interactionFlags + 4) =
-         *(undefined4 *)((int)&(this->fields)._._._._.interactionFlags + 4);
-    puVar11 = (uint *)((int)&(this->fields)._._._._.interactionFlags + 4);
-    *puVar11 = *puVar11 | 2;
-    *(uint *)&(this->fields)._._._._.interactionFlags = (uint)iVar10 | 0xADDR;
-    if ((TypeInfo__MV__WorldObject__RuntimeVariablesRepository->_1).cctor_finished_or_no_cctor == 0)
-    {
-      func_?(TypeInfo__MV__WorldObject__RuntimeVariablesRepository);
-    }
-    this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-              MVWorldObject.dll::MV::WorldObject::RuntimeVariablesRepository::
-              RuntimeVariablesRepository_GetRuntimeVariables(worldObjectType,(MethodInfo *)0x0);
-    if (this_00 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
-    goto code_?;
-    TVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-             UIElements::TextureId]::
-             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                       (this_00,(Object *)StringLiteral_health,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    uVar13 = CONCAT44(TypeInfo__System__Single,TVar12.m_Index);
-    if (TVar12.m_Index == 0) goto code_?;
-    if (*(Il2CppClass **)(*(int *)TVar12.m_Index + 0x20) !=
+    pMVar1 = 
+    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+    ;
+    TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::TextureId]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+                      (this_00,(Object *)StringLiteral_health,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+    if (TVar2.m_Index == 0) goto code_?;
+    if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
         (TypeInfo__System__Single->_0).element_class) goto code_?;
-    pfVar14 = (float *)func_?(TVar12.m_Index);
-    pDVar15 = (this->fields)._._.blueprintData;
-    (this->fields).maxHealth = *pfVar14;
-    if (pDVar15 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    pfVar3 = (float *)func_?();
+    pDVar4 = (this->fields)._._.blueprintData;
+    (this->fields).maxHealth = *pfVar3;
+    if (pDVar4 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
 code_?:
       (this->fields).previousHealth = (this->fields).maxHealth;
-      pMVar2 = (this->fields)._._._._.runtimeDataVariables;
-      if (pMVar2 != (MVRuntimeDataVariables *)0x0) {
-        pMVar16 = MVRuntimeDataVariables::MVRuntimeDataVariables_NewClampedFloat
-                            (pMVar2,StringLiteral_health,0.2,0,0.0,(this->fields).maxHealth,
-                             (MethodInfo *)0x0);
-        (this->fields).Health = pMVar16;
-        func_?(&(this->fields).Health,pMVar16);
-        pMVar16 = (this->fields).Health;
-        if (pMVar16 != (MVRuntimeDataVariableClampedFloat *)0x0) {
-          (*(code *)(pMVar16->klass->vtable).set_Value.method)
-                    (pMVar16,(this->fields).maxHealth,pMVar16->klass[1]._0.image);
-          pMVar2 = (this->fields)._._._._.runtimeDataVariables;
-          if (pMVar2 != (MVRuntimeDataVariables *)0x0) {
-            pMVar16 = MVRuntimeDataVariables::MVRuntimeDataVariables_NewClampedFloat
-                                (pMVar2,StringLiteral_shield,0.2,0,0.0,(this->fields).maxHealth,
-                                 (MethodInfo *)0x0);
-            (this->fields).shield = pMVar16;
-            func_?(&(this->fields).shield,pMVar16);
-            pMVar2 = (this->fields)._._._._.runtimeDataVariables;
-            if (pMVar2 != (MVRuntimeDataVariables *)0x0) {
-              pMVar5 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
-                                  (pMVar2,StringLiteral_currentItem,0.0,1,(MethodInfo *)0x0);
-              (this->fields).CurrentItem = pMVar5;
-              func_?(&(this->fields).CurrentItem,pMVar5);
-              pMVar2 = (this->fields)._._._._.runtimeDataVariables;
-              if (pMVar2 != (MVRuntimeDataVariables *)0x0) {
-                pMVar5 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
-                                    (pMVar2,StringLiteral_isFiring,0.0,0,(MethodInfo *)0x0);
-                (this->fields).IsFiring = pMVar5;
-                func_?(&(this->fields).IsFiring,pMVar5);
-                pMVar2 = (this->fields)._._._._.runtimeDataVariables;
-                if (pMVar2 != (MVRuntimeDataVariables *)0x0) {
-                  pMVar5 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
-                                      (pMVar2,StringLiteral_modifiers,1.0,0,(MethodInfo *)0x0);
-                  (this->fields).Modifiers = pMVar5;
-                  func_?(&(this->fields).Modifiers,pMVar5);
-                  pGVar6 = (this->fields)._._._._.gameObject;
-                  if (pGVar6 != (GameObject *)0x0) {
+      pMVar5 = (this->fields)._._._._.runtimeDataVariables;
+      if (pMVar5 != (MVRuntimeDataVariables *)0x0) {
+        pMVar6 = MVRuntimeDataVariables::MVRuntimeDataVariables_NewClampedFloat
+                           (pMVar5,StringLiteral_health,0.2,0,0.0,(this->fields).maxHealth,
+                            (MethodInfo *)0x0);
+        (this->fields).Health = pMVar6;
+        func_?();
+        pMVar6 = (this->fields).Health;
+        if (pMVar6 != (MVRuntimeDataVariableClampedFloat *)0x0) {
+          (*(code *)(pMVar6->klass->vtable).set_Value.method)();
+          pMVar5 = (this->fields)._._._._.runtimeDataVariables;
+          if (pMVar5 != (MVRuntimeDataVariables *)0x0) {
+            pMVar6 = MVRuntimeDataVariables::MVRuntimeDataVariables_NewClampedFloat
+                               (pMVar5,StringLiteral_shield,0.2,0,0.0,(this->fields).maxHealth,
+                                (MethodInfo *)0x0);
+            (this->fields).shield = pMVar6;
+            func_?();
+            pMVar5 = (this->fields)._._._._.runtimeDataVariables;
+            if (pMVar5 != (MVRuntimeDataVariables *)0x0) {
+              pMVar7 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
+                                  (pMVar5,StringLiteral_currentItem,0.0,1,(MethodInfo *)0x0);
+              (this->fields).CurrentItem = pMVar7;
+              func_?();
+              pMVar5 = (this->fields)._._._._.runtimeDataVariables;
+              if (pMVar5 != (MVRuntimeDataVariables *)0x0) {
+                pMVar7 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
+                                    (pMVar5,StringLiteral_isFiring,0.0,0,(MethodInfo *)0x0);
+                (this->fields).IsFiring = pMVar7;
+                func_?();
+                pMVar5 = (this->fields)._._._._.runtimeDataVariables;
+                if (pMVar5 != (MVRuntimeDataVariables *)0x0) {
+                  pMVar7 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
+                                      (pMVar5,StringLiteral_modifiers,1.0,0,(MethodInfo *)0x0);
+                  (this->fields).Modifiers = pMVar7;
+                  func_?();
+                  pGVar8 = (this->fields)._._._._.gameObject;
+                  if (pGVar8 != (GameObject *)0x0) {
                     this_01 = (MVPickupOwner *)
                               UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                               GameObject_AddComponent_1
-                                        (pGVar6,
+                                        (pGVar8,
                                          VehiclePickupOwner_MethodInfo__UnityEngine__GameObject__AddComponent<VehiclePickupOwner>__
                                         );
-                    pGVar6 = (this->fields)._._._._.gameObject;
-                    if (pGVar6 != (GameObject *)0x0) {
+                    pGVar8 = (this->fields)._._._._.gameObject;
+                    if (pGVar8 != (GameObject *)0x0) {
                       this_02 = (Component *)
                                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::
                                 GameObject_GetComponentInChildren_1
-                                          (pGVar6,
+                                          (pGVar8,
                                            MVPickupMountPoint_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<MVPickupMountPoint>__
                                           );
-                      pMVar5 = (this->fields).IsFiring;
-                      currentItemRuntimeVariable = (this->fields).CurrentItem;
+                      pMVar7 = (this->fields).CurrentItem;
                       if (this_02 != (Component *)0x0) {
-                        pMVar17 = (MVPickupOwner__Class *)
+                        pMVar9 = (MVPickupOwner__Class *)
                                   UnityEngine.CoreModule.dll::UnityEngine::Component::
                                   Component_get_transform(this_02,(MethodInfo *)0x0);
                         if (this_01 != (MVPickupOwner *)0x0) {
                           MVPickupOwner::MVPickupOwner_Init
-                                    (this_01,currentItemRuntimeVariable,pMVar5,(MethodInfo *)0x0);
-                          this_01[1].klass = pMVar17;
-                          func_?(this_01 + 1,pMVar17);
+                                    (this_01,pMVar7,(MVRuntimeDataVariable *)0x0,(MethodInfo *)0x0)
+                          ;
+                          this_01[1].klass = pMVar9;
+                          func_?();
                           return;
                         }
                       }
@@ -229,31 +175,30 @@ code_?:
       }
       goto code_?;
     }
-    bVar18 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+    bVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
             ::Dictionary_2_System_Object_System_Object__TryGetValue
                       ((this->fields)._._.blueprintData,(Object *)StringLiteral_overrideHealth,
-                       &pOStack_1,
+                       (Object **)&stack0xfffffff8,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
                       );
-    if ((bVar18 == 0) || (pOStack_1 == (Object *)0x0)) goto code_?;
-    pOVar3 = (Object *)0x0;
-    if ((Single__Class *)pOStack_1->klass == TypeInfo__System__Single) {
-      pOVar3 = pOStack_1;
+    if ((bVar10 == 0) || (pMVar1 == (MethodInfo *)0x0)) goto code_?;
+    pMVar11 = (MethodInfo *)0x0;
+    if ((Single__Class *)pMVar1->methodPointer == TypeInfo__System__Single) {
+      pMVar11 = pMVar1;
     }
-    if (pOVar3 == (Object *)0x0) goto code_?;
-    pOVar3 = pOStack_1;
-    pSVar4 = TypeInfo__System__Single;
-    if ((pOStack_1->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
-      pfVar14 = (float *)func_?(pOStack_1);
-      (this->fields).maxHealth = *pfVar14;
+    if (pMVar11 == (MethodInfo *)0x0) goto code_?;
+    if (*(Il2CppClass **)(pMVar1->methodPointer + 0x20) ==
+        (TypeInfo__System__Single->_0).element_class) {
+      pfVar3 = (float *)func_?();
+      (this->fields).maxHealth = *pfVar3;
       goto code_?;
     }
   }
-  uVar13 = func_?(pOVar3,pSVar4);
+  func_?();
 code_?:
-  func_?(uVar13);
-  pcVar19 = (code *)swi(3);
-  (*pcVar19)();
+  func_?();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 

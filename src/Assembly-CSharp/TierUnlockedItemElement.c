@@ -606,29 +606,15 @@ code_?:
     return;
   }
 code_?:
+  cVar9 = '\0';
   CStack_7.g = (float)&UNK_?;
-  uVar9 = func_?();
-  bVar10 = (byte)uVar9;
-  bVar11 = bVar10 + 0x55;
-  pbVar12 = (byte *)(unaff_EBX + 0x47 + (int)&stack0xfffffffc * 4);
-  bVar13 = *pbVar12 + (byte)extraout_ECX;
-  bVar14 = CARRY1(*pbVar12,(byte)extraout_ECX) || CARRY1(bVar13,bVar10 < 0xab);
-  *pbVar12 = bVar13 + (bVar10 < 0xab);
-  pbVar12 = (byte *)(extraout_ECX + -0x55);
-  bVar10 = (byte)((uint)extraout_ECX >> 8);
-  bVar13 = *pbVar12 + bVar10;
-  bVar15 = CARRY1(*pbVar12,bVar10) || CARRY1(bVar13,bVar14);
-  *pbVar12 = bVar13 + bVar14;
-  pbVar12 = (byte *)(team + 0xbc1047ab);
-  bVar13 = *pbVar12;
-  bVar10 = *pbVar12;
-  *pbVar12 = bVar10 + bVar11 + bVar15;
-  *(uint *)((int)&this->klass + 2) = CONCAT31((int3)((uint)uVar9 >> 8),bVar11);
-  *(char *)(unaff_EBX + -0x33efb855) =
-       *(char *)(unaff_EBX + -0x33efb855) + (char)((uint)uVar9 >> 8) +
-       (CARRY1(bVar13,bVar11) || CARRY1(bVar10 + bVar11,bVar15));
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  func_?();
+  uVar10 = in(extraout_DX);
+  *(undefined1 *)&this->klass = uVar10;
+  *(char *)(extraout_ECX + -0x39efb860) =
+       *(char *)(extraout_ECX + -0x39efb860) + (char)((uint)extraout_ECX >> 8) + cVar9;
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 

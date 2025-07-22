@@ -193,40 +193,53 @@ Assembly-CSharp.dll::MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_ElipsoidOver
   if (transform != (Transform *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
               ((Vector3 *)&stack0xffffffd8,transform,(MethodInfo *)0x0);
+    position_00.z = localBounds.m_Center.z;
+    position_00.x = localBounds.m_Center.x;
+    position_00.y = localBounds.m_Center.y;
     pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_TransformPoint
-                       ((Vector3 *)&stack0xffffffd8,transform,localBounds.m_Center,(MethodInfo *)0x0
-                       );
-    uVar2 = pVVar1->x;
-    uVar3 = pVVar1->y;
+                       (&localBounds.m_Extents,transform,position_00,(MethodInfo *)0x0);
+    fVar2 = pVVar1->x;
+    fVar3 = pVVar1->y;
     fVar4 = pVVar1->z;
-    pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                       ((Vector3 *)&stack0xffffffcc,transform,(MethodInfo *)0x0);
+    pVVar1 = MathFunctions::MathFunctions_MultiplyVector
+                       ((Vector3 *)&stack0xffffffd8,(Vector3 *)&stack0xffffffcc,
+                        (Vector3 *)&stack0xfffffff0,(MethodInfo *)0x0);
     uVar5 = pVVar1->x;
     uVar6 = pVVar1->y;
-    fVar7 = position.x + ((float)uVar2 - (float)uVar5);
-    fVar8 = position.y + ((float)uVar3 - (float)uVar6);
-    fVar9 = position.z + (fVar4 - pVVar1->z);
-    pQVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                       ((Quaternion *)&stack0xffffffc8,transform,(MethodInfo *)0x0);
-    fVar4 = pQVar10->x;
-    fVar11 = pQVar10->y;
-    fVar12 = pQVar10->z;
-    fVar13 = pQVar10->w;
+    fVar7 = pVVar1->z;
+    localBounds.m_Extents.y = (float)uVar5;
+    localBounds.m_Extents.z = (float)uVar6;
+    pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                       (&VStack_8,transform,(MethodInfo *)0x0);
+    uVar9 = pVVar1->x;
+    uVar10 = pVVar1->y;
+    fVar11 = position.x + (fVar2 - (float)uVar9);
+    fVar12 = position.y + (fVar3 - (float)uVar10);
+    fVar4 = position.z + (fVar4 - pVVar1->z);
+    pQVar13 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+                        ((Quaternion *)&stack0xffffffbc,transform,(MethodInfo *)0x0);
+    fVar2 = pQVar13->x;
+    VStack_8.x = pQVar13->y;
+    VStack_8.y = pQVar13->z;
+    VStack_8.z = pQVar13->w;
+    fVar3 = VStack_8.z;
     if ((TypeInfo__MVElipsoidOverlapCheck->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
+      fVar3 = VStack_8.z;
     }
-    radius.y = fVar8;
-    radius.x = fVar7;
-    radius.z = fVar9;
-    position_00.y = fVar8;
-    position_00.x = fVar7;
-    position_00.z = fVar9;
-    rotation.y = fVar11;
-    rotation.x = fVar4;
-    rotation.z = fVar12;
-    rotation.w = fVar13;
+    VStack_8.z = (float)&UNK_?;
+    radius.y = localBounds.m_Extents.z;
+    radius.x = localBounds.m_Extents.y;
+    radius.z = fVar7;
+    position_01.y = fVar12;
+    position_01.x = fVar11;
+    position_01.z = fVar4;
+    rotation.y = VStack_8.x;
+    rotation.x = fVar2;
+    rotation.z = VStack_8.y;
+    rotation.w = fVar3;
     pLVar14 = MVElipsoidOverlapCheck_ElipsoidOverlapCheck_1
-                       (radius,position_00,rotation,ignoreWoIds,layerMask,(MethodInfo *)0x0);
+                        (radius,position_01,rotation,ignoreWoIds,layerMask,(MethodInfo *)0x0);
     return pLVar14;
   }
   func_?();
@@ -353,455 +366,463 @@ bool Assembly-CSharp.dll::MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_Elipsoi
     func_?(&TypeInfo__MVElipsoidOverlapCheck);
     cRam_? = '\x01';
   }
+  puStack_1 = (undefined *)0x0;
+  stack0xffffff48 = 0.0;
   elipsoidOverlapResult->woId = 0;
   elipsoidOverlapResult->localCubePos = (IntVector__Array *)0x0;
-  iVar1 = func_?(wo,TypeInfo__ICubeModelCollider);
-  pIVar2 = TypeInfo__ICubeModelCollider;
-  if (iVar1 == 0) {
+  iVar2 = func_?(wo,TypeInfo__ICubeModelCollider);
+  pIVar3 = TypeInfo__ICubeModelCollider;
+  if (iVar2 == 0) {
     return 0;
   }
   if (wo == (MVWorldObjectClient *)0x0) {
     cmb = (ICubeModelCollider *)0x0;
 code_?:
     if ((chunk == (BoxCollider *)0x0) ||
-       (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                            ((Component *)chunk,(MethodInfo *)0x0), pTVar3 == (Transform *)0x0))
+       (pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                            ((Component *)chunk,(MethodInfo *)0x0), pTVar4 == (Transform *)0x0))
     goto code_?;
-    pMVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localToWorldMatrix
-                        ((Matrix4x4 *)&stack0xfffffef0,pTVar3,(MethodInfo *)0x0);
-    fStack_5 = pMVar4->m00;
-    puStack_6 = (undefined *)pMVar4->m10;
-    fVar7 = pMVar4->m20;
-    fVar8 = pMVar4->m30;
-    fVar9 = pMVar4->m01;
-    fVar10 = pMVar4->m11;
-    fVar11 = pMVar4->m21;
-    fVar12 = pMVar4->m31;
-    fVar13 = pMVar4->m02;
-    fVar14 = pMVar4->m12;
-    fVar15 = pMVar4->m22;
-    fVar16 = pMVar4->m32;
-    fVar17 = pMVar4->m03;
-    fVar18 = pMVar4->m13;
-    fVar19 = pMVar4->m23;
-    fVar20 = pMVar4->m33;
+    pMVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localToWorldMatrix
+                        ((Matrix4x4 *)&stack0xfffffed0,pTVar4,(MethodInfo *)0x0);
+    fVar6 = pMVar5->m00;
+    fVar7 = pMVar5->m10;
+    fVar8 = pMVar5->m20;
+    fVar9 = pMVar5->m30;
+    fVar10 = pMVar5->m01;
+    fVar11 = pMVar5->m11;
+    fVar12 = pMVar5->m21;
+    fVar13 = pMVar5->m31;
+    fVar14 = pMVar5->m02;
+    fVar15 = pMVar5->m12;
+    fVar16 = pMVar5->m22;
+    fVar17 = pMVar5->m32;
+    fVar18 = pMVar5->m03;
+    fVar19 = pMVar5->m13;
+    fVar20 = pMVar5->m23;
+    fVar21 = pMVar5->m33;
     if ((TypeInfo__MVElipsoidOverlapCheck->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pMVar21 = TypeInfo__MVElipsoidOverlapCheck->static_fields;
-    (pMVar21->localToWorld).m00 = fStack_5;
-    (pMVar21->localToWorld).m10 = (float)puStack_6;
-    (pMVar21->localToWorld).m20 = fVar7;
-    (pMVar21->localToWorld).m30 = fVar8;
-    (pMVar21->localToWorld).m01 = fVar9;
-    (pMVar21->localToWorld).m11 = fVar10;
-    (pMVar21->localToWorld).m21 = fVar11;
-    (pMVar21->localToWorld).m31 = fVar12;
-    (pMVar21->localToWorld).m02 = fVar13;
-    (pMVar21->localToWorld).m12 = fVar14;
-    (pMVar21->localToWorld).m22 = fVar15;
-    (pMVar21->localToWorld).m32 = fVar16;
-    (pMVar21->localToWorld).m03 = fVar17;
-    (pMVar21->localToWorld).m13 = fVar18;
-    (pMVar21->localToWorld).m23 = fVar19;
-    (pMVar21->localToWorld).m33 = fVar20;
-    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+    pMVar22 = TypeInfo__MVElipsoidOverlapCheck->static_fields;
+    (pMVar22->localToWorld).m00 = fVar6;
+    (pMVar22->localToWorld).m10 = fVar7;
+    (pMVar22->localToWorld).m20 = fVar8;
+    (pMVar22->localToWorld).m30 = fVar9;
+    (pMVar22->localToWorld).m01 = fVar10;
+    (pMVar22->localToWorld).m11 = fVar11;
+    (pMVar22->localToWorld).m21 = fVar12;
+    (pMVar22->localToWorld).m31 = fVar13;
+    (pMVar22->localToWorld).m02 = fVar14;
+    (pMVar22->localToWorld).m12 = fVar15;
+    (pMVar22->localToWorld).m22 = fVar16;
+    (pMVar22->localToWorld).m32 = fVar17;
+    (pMVar22->localToWorld).m03 = fVar18;
+    (pMVar22->localToWorld).m13 = fVar19;
+    (pMVar22->localToWorld).m23 = fVar20;
+    (pMVar22->localToWorld).m33 = fVar21;
+    pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                         ((Component *)chunk,(MethodInfo *)0x0);
-    if (pTVar3 == (Transform *)0x0) goto code_?;
-    pMVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_worldToLocalMatrix
-                        ((Matrix4x4 *)&stack0xfffffef0,pTVar3,(MethodInfo *)0x0);
-    fVar13 = pMVar4->m10;
-    fVar14 = pMVar4->m20;
-    fVar15 = pMVar4->m30;
-    fVar16 = pMVar4->m01;
-    fVar17 = pMVar4->m11;
-    fVar18 = pMVar4->m21;
-    fVar19 = pMVar4->m31;
-    fVar20 = pMVar4->m02;
-    fVar7 = pMVar4->m12;
-    fVar8 = pMVar4->m22;
-    fVar9 = pMVar4->m32;
-    fVar10 = pMVar4->m03;
-    fVar11 = pMVar4->m13;
-    fVar12 = pMVar4->m23;
-    fVar22 = pMVar4->m33;
-    pMVar21 = TypeInfo__MVElipsoidOverlapCheck->static_fields;
-    (pMVar21->worldToLocal).m00 = pMVar4->m00;
-    (pMVar21->worldToLocal).m10 = fVar13;
-    (pMVar21->worldToLocal).m20 = fVar14;
-    (pMVar21->worldToLocal).m30 = fVar15;
-    (pMVar21->worldToLocal).m01 = fVar16;
-    (pMVar21->worldToLocal).m11 = fVar17;
-    (pMVar21->worldToLocal).m21 = fVar18;
-    (pMVar21->worldToLocal).m31 = fVar19;
-    (pMVar21->worldToLocal).m02 = fVar20;
-    (pMVar21->worldToLocal).m12 = fVar7;
-    (pMVar21->worldToLocal).m22 = fVar8;
-    (pMVar21->worldToLocal).m32 = fVar9;
-    (pMVar21->worldToLocal).m03 = fVar10;
-    (pMVar21->worldToLocal).m13 = fVar11;
-    (pMVar21->worldToLocal).m23 = fVar12;
-    (pMVar21->worldToLocal).m33 = fVar22;
-    pMVar4 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
-                        ((Matrix4x4 *)&stack0xfffffef0,position,rotation,radius,(MethodInfo *)0x0);
-    fVar13 = pMVar4->m10;
-    fVar14 = pMVar4->m20;
-    fVar15 = pMVar4->m30;
-    fVar16 = pMVar4->m01;
-    fVar17 = pMVar4->m11;
-    fVar18 = pMVar4->m21;
-    fVar19 = pMVar4->m31;
-    fVar20 = pMVar4->m02;
-    fVar7 = pMVar4->m12;
-    fVar8 = pMVar4->m22;
-    fVar9 = pMVar4->m32;
-    fVar10 = pMVar4->m03;
-    fVar11 = pMVar4->m13;
-    fVar12 = pMVar4->m23;
-    fVar22 = pMVar4->m33;
-    pMVar21 = TypeInfo__MVElipsoidOverlapCheck->static_fields;
-    (pMVar21->elipsoidSpaceToWorld).m00 = pMVar4->m00;
-    (pMVar21->elipsoidSpaceToWorld).m10 = fVar13;
-    (pMVar21->elipsoidSpaceToWorld).m20 = fVar14;
-    (pMVar21->elipsoidSpaceToWorld).m30 = fVar15;
-    (pMVar21->elipsoidSpaceToWorld).m01 = fVar16;
-    (pMVar21->elipsoidSpaceToWorld).m11 = fVar17;
-    (pMVar21->elipsoidSpaceToWorld).m21 = fVar18;
-    (pMVar21->elipsoidSpaceToWorld).m31 = fVar19;
-    (pMVar21->elipsoidSpaceToWorld).m02 = fVar20;
-    (pMVar21->elipsoidSpaceToWorld).m12 = fVar7;
-    (pMVar21->elipsoidSpaceToWorld).m22 = fVar8;
-    (pMVar21->elipsoidSpaceToWorld).m32 = fVar9;
-    (pMVar21->elipsoidSpaceToWorld).m03 = fVar10;
-    (pMVar21->elipsoidSpaceToWorld).m13 = fVar11;
-    (pMVar21->elipsoidSpaceToWorld).m23 = fVar12;
-    (pMVar21->elipsoidSpaceToWorld).m33 = fVar22;
-    pMVar4 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_inverse
-                        ((Matrix4x4 *)&stack0xfffffef0,
+    if (pTVar4 == (Transform *)0x0) goto code_?;
+    pMVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_worldToLocalMatrix
+                        ((Matrix4x4 *)&stack0xfffffed0,pTVar4,(MethodInfo *)0x0);
+    fVar14 = pMVar5->m10;
+    fVar15 = pMVar5->m20;
+    fVar16 = pMVar5->m30;
+    fVar17 = pMVar5->m01;
+    fVar18 = pMVar5->m11;
+    fVar19 = pMVar5->m21;
+    fVar20 = pMVar5->m31;
+    fVar21 = pMVar5->m02;
+    fVar6 = pMVar5->m12;
+    fVar7 = pMVar5->m22;
+    fVar8 = pMVar5->m32;
+    fVar9 = pMVar5->m03;
+    fVar10 = pMVar5->m13;
+    fVar11 = pMVar5->m23;
+    fVar12 = pMVar5->m33;
+    pMVar22 = TypeInfo__MVElipsoidOverlapCheck->static_fields;
+    (pMVar22->worldToLocal).m00 = pMVar5->m00;
+    (pMVar22->worldToLocal).m10 = fVar14;
+    (pMVar22->worldToLocal).m20 = fVar15;
+    (pMVar22->worldToLocal).m30 = fVar16;
+    (pMVar22->worldToLocal).m01 = fVar17;
+    (pMVar22->worldToLocal).m11 = fVar18;
+    (pMVar22->worldToLocal).m21 = fVar19;
+    (pMVar22->worldToLocal).m31 = fVar20;
+    (pMVar22->worldToLocal).m02 = fVar21;
+    (pMVar22->worldToLocal).m12 = fVar6;
+    (pMVar22->worldToLocal).m22 = fVar7;
+    (pMVar22->worldToLocal).m32 = fVar8;
+    (pMVar22->worldToLocal).m03 = fVar9;
+    (pMVar22->worldToLocal).m13 = fVar10;
+    (pMVar22->worldToLocal).m23 = fVar11;
+    (pMVar22->worldToLocal).m33 = fVar12;
+    pMVar5 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
+                        ((Matrix4x4 *)&stack0xfffffed0,position,rotation,radius,(MethodInfo *)0x0);
+    fVar14 = pMVar5->m10;
+    fVar15 = pMVar5->m20;
+    fVar16 = pMVar5->m30;
+    fVar17 = pMVar5->m01;
+    fVar18 = pMVar5->m11;
+    fVar19 = pMVar5->m21;
+    fVar20 = pMVar5->m31;
+    fVar21 = pMVar5->m02;
+    fVar6 = pMVar5->m12;
+    fVar7 = pMVar5->m22;
+    fVar8 = pMVar5->m32;
+    fVar9 = pMVar5->m03;
+    fVar10 = pMVar5->m13;
+    fVar11 = pMVar5->m23;
+    fVar12 = pMVar5->m33;
+    pMVar22 = TypeInfo__MVElipsoidOverlapCheck->static_fields;
+    (pMVar22->elipsoidSpaceToWorld).m00 = pMVar5->m00;
+    (pMVar22->elipsoidSpaceToWorld).m10 = fVar14;
+    (pMVar22->elipsoidSpaceToWorld).m20 = fVar15;
+    (pMVar22->elipsoidSpaceToWorld).m30 = fVar16;
+    (pMVar22->elipsoidSpaceToWorld).m01 = fVar17;
+    (pMVar22->elipsoidSpaceToWorld).m11 = fVar18;
+    (pMVar22->elipsoidSpaceToWorld).m21 = fVar19;
+    (pMVar22->elipsoidSpaceToWorld).m31 = fVar20;
+    (pMVar22->elipsoidSpaceToWorld).m02 = fVar21;
+    (pMVar22->elipsoidSpaceToWorld).m12 = fVar6;
+    (pMVar22->elipsoidSpaceToWorld).m22 = fVar7;
+    (pMVar22->elipsoidSpaceToWorld).m32 = fVar8;
+    (pMVar22->elipsoidSpaceToWorld).m03 = fVar9;
+    (pMVar22->elipsoidSpaceToWorld).m13 = fVar10;
+    (pMVar22->elipsoidSpaceToWorld).m23 = fVar11;
+    (pMVar22->elipsoidSpaceToWorld).m33 = fVar12;
+    pMVar5 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_inverse
+                        ((Matrix4x4 *)&stack0xfffffed0,
                          &TypeInfo__MVElipsoidOverlapCheck->static_fields->elipsoidSpaceToWorld,
                          (MethodInfo *)0x0);
-    fVar13 = pMVar4->m10;
-    fVar14 = pMVar4->m20;
-    fVar15 = pMVar4->m30;
-    fVar16 = pMVar4->m01;
-    fVar17 = pMVar4->m11;
-    fVar18 = pMVar4->m21;
-    fVar19 = pMVar4->m31;
-    fVar20 = pMVar4->m02;
-    fVar7 = pMVar4->m12;
-    fVar8 = pMVar4->m22;
-    fVar9 = pMVar4->m32;
-    fVar10 = pMVar4->m03;
-    fVar11 = pMVar4->m13;
-    fVar12 = pMVar4->m23;
-    fVar22 = pMVar4->m33;
-    pMVar21 = TypeInfo__MVElipsoidOverlapCheck->static_fields;
-    (pMVar21->worldToElipsoidSpace).m00 = pMVar4->m00;
-    (pMVar21->worldToElipsoidSpace).m10 = fVar13;
-    (pMVar21->worldToElipsoidSpace).m20 = fVar14;
-    (pMVar21->worldToElipsoidSpace).m30 = fVar15;
-    (pMVar21->worldToElipsoidSpace).m01 = fVar16;
-    (pMVar21->worldToElipsoidSpace).m11 = fVar17;
-    (pMVar21->worldToElipsoidSpace).m21 = fVar18;
-    (pMVar21->worldToElipsoidSpace).m31 = fVar19;
-    (pMVar21->worldToElipsoidSpace).m02 = fVar20;
-    (pMVar21->worldToElipsoidSpace).m12 = fVar7;
-    (pMVar21->worldToElipsoidSpace).m22 = fVar8;
-    (pMVar21->worldToElipsoidSpace).m32 = fVar9;
-    (pMVar21->worldToElipsoidSpace).m03 = fVar10;
-    (pMVar21->worldToElipsoidSpace).m13 = fVar11;
-    (pMVar21->worldToElipsoidSpace).m23 = fVar12;
-    (pMVar21->worldToElipsoidSpace).m33 = fVar22;
-    pMVar4 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_op_Multiply
-                        ((Matrix4x4 *)&stack0xfffffef0,
+    fVar14 = pMVar5->m10;
+    fVar15 = pMVar5->m20;
+    fVar16 = pMVar5->m30;
+    fVar17 = pMVar5->m01;
+    fVar18 = pMVar5->m11;
+    fVar19 = pMVar5->m21;
+    fVar20 = pMVar5->m31;
+    fVar21 = pMVar5->m02;
+    fVar6 = pMVar5->m12;
+    fVar7 = pMVar5->m22;
+    fVar8 = pMVar5->m32;
+    fVar9 = pMVar5->m03;
+    fVar10 = pMVar5->m13;
+    fVar11 = pMVar5->m23;
+    fVar12 = pMVar5->m33;
+    pMVar22 = TypeInfo__MVElipsoidOverlapCheck->static_fields;
+    (pMVar22->worldToElipsoidSpace).m00 = pMVar5->m00;
+    (pMVar22->worldToElipsoidSpace).m10 = fVar14;
+    (pMVar22->worldToElipsoidSpace).m20 = fVar15;
+    (pMVar22->worldToElipsoidSpace).m30 = fVar16;
+    (pMVar22->worldToElipsoidSpace).m01 = fVar17;
+    (pMVar22->worldToElipsoidSpace).m11 = fVar18;
+    (pMVar22->worldToElipsoidSpace).m21 = fVar19;
+    (pMVar22->worldToElipsoidSpace).m31 = fVar20;
+    (pMVar22->worldToElipsoidSpace).m02 = fVar21;
+    (pMVar22->worldToElipsoidSpace).m12 = fVar6;
+    (pMVar22->worldToElipsoidSpace).m22 = fVar7;
+    (pMVar22->worldToElipsoidSpace).m32 = fVar8;
+    (pMVar22->worldToElipsoidSpace).m03 = fVar9;
+    (pMVar22->worldToElipsoidSpace).m13 = fVar10;
+    (pMVar22->worldToElipsoidSpace).m23 = fVar11;
+    (pMVar22->worldToElipsoidSpace).m33 = fVar12;
+    pMVar5 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_op_Multiply
+                        ((Matrix4x4 *)&stack0xfffffed0,
                          TypeInfo__MVElipsoidOverlapCheck->static_fields->worldToElipsoidSpace,
                          TypeInfo__MVElipsoidOverlapCheck->static_fields->localToWorld,
                          (MethodInfo *)0x0);
-    fVar13 = pMVar4->m10;
-    fVar14 = pMVar4->m20;
-    fVar15 = pMVar4->m30;
-    fVar16 = pMVar4->m01;
-    fVar17 = pMVar4->m11;
-    fVar18 = pMVar4->m21;
-    fVar19 = pMVar4->m31;
-    fVar20 = pMVar4->m02;
-    fVar7 = pMVar4->m12;
-    fVar8 = pMVar4->m22;
-    fVar9 = pMVar4->m32;
-    fVar10 = pMVar4->m03;
-    fVar11 = pMVar4->m13;
-    fVar12 = pMVar4->m23;
-    fVar22 = pMVar4->m33;
-    pMVar21 = TypeInfo__MVElipsoidOverlapCheck->static_fields;
-    (pMVar21->localToElipsoidSpace).m00 = pMVar4->m00;
-    (pMVar21->localToElipsoidSpace).m10 = fVar13;
-    (pMVar21->localToElipsoidSpace).m20 = fVar14;
-    (pMVar21->localToElipsoidSpace).m30 = fVar15;
-    (pMVar21->localToElipsoidSpace).m01 = fVar16;
-    (pMVar21->localToElipsoidSpace).m11 = fVar17;
-    (pMVar21->localToElipsoidSpace).m21 = fVar18;
-    (pMVar21->localToElipsoidSpace).m31 = fVar19;
-    (pMVar21->localToElipsoidSpace).m02 = fVar20;
-    (pMVar21->localToElipsoidSpace).m12 = fVar7;
-    (pMVar21->localToElipsoidSpace).m22 = fVar8;
-    (pMVar21->localToElipsoidSpace).m32 = fVar9;
-    (pMVar21->localToElipsoidSpace).m03 = fVar10;
-    (pMVar21->localToElipsoidSpace).m13 = fVar11;
-    (pMVar21->localToElipsoidSpace).m23 = fVar12;
-    (pMVar21->localToElipsoidSpace).m33 = fVar22;
+    fVar14 = pMVar5->m10;
+    fVar15 = pMVar5->m20;
+    fVar16 = pMVar5->m30;
+    fVar17 = pMVar5->m01;
+    fVar18 = pMVar5->m11;
+    fVar19 = pMVar5->m21;
+    fVar20 = pMVar5->m31;
+    fVar21 = pMVar5->m02;
+    fVar6 = pMVar5->m12;
+    fVar7 = pMVar5->m22;
+    fVar8 = pMVar5->m32;
+    fVar9 = pMVar5->m03;
+    fVar10 = pMVar5->m13;
+    fVar11 = pMVar5->m23;
+    fVar12 = pMVar5->m33;
+    pMVar22 = TypeInfo__MVElipsoidOverlapCheck->static_fields;
+    (pMVar22->localToElipsoidSpace).m00 = pMVar5->m00;
+    (pMVar22->localToElipsoidSpace).m10 = fVar14;
+    (pMVar22->localToElipsoidSpace).m20 = fVar15;
+    (pMVar22->localToElipsoidSpace).m30 = fVar16;
+    (pMVar22->localToElipsoidSpace).m01 = fVar17;
+    (pMVar22->localToElipsoidSpace).m11 = fVar18;
+    (pMVar22->localToElipsoidSpace).m21 = fVar19;
+    (pMVar22->localToElipsoidSpace).m31 = fVar20;
+    (pMVar22->localToElipsoidSpace).m02 = fVar21;
+    (pMVar22->localToElipsoidSpace).m12 = fVar6;
+    (pMVar22->localToElipsoidSpace).m22 = fVar7;
+    (pMVar22->localToElipsoidSpace).m32 = fVar8;
+    (pMVar22->localToElipsoidSpace).m03 = fVar9;
+    (pMVar22->localToElipsoidSpace).m13 = fVar10;
+    (pMVar22->localToElipsoidSpace).m23 = fVar11;
+    (pMVar22->localToElipsoidSpace).m33 = fVar12;
     pVVar23 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyPoint
-                        ((Vector3 *)&stack0xffffffb8,
+                        ((Vector3 *)&stack0xffffffa8,
                          &TypeInfo__MVElipsoidOverlapCheck->static_fields->worldToLocal,position,
                          (MethodInfo *)0x0);
-    fVar14 = pVVar23->y;
-    fVar13 = pVVar23->z;
-    pMVar21 = TypeInfo__MVElipsoidOverlapCheck->static_fields;
-    (pMVar21->localElipsoidPosition).x = pVVar23->x;
-    (pMVar21->localElipsoidPosition).y = fVar14;
-    (pMVar21->localElipsoidPosition).z = fVar13;
+    fVar15 = pVVar23->y;
+    fVar14 = pVVar23->z;
+    pMVar22 = TypeInfo__MVElipsoidOverlapCheck->static_fields;
+    (pMVar22->localElipsoidPosition).x = pVVar23->x;
+    (pMVar22->localElipsoidPosition).y = fVar15;
+    (pMVar22->localElipsoidPosition).z = fVar14;
+    VStack_24.x = 0.8660254;
+    VStack_24.y = 0.8660254;
+    VStack_24.z = 0.8660254;
     if (wo == (MVWorldObjectClient *)0x0) goto code_?;
-    puVar24 = (undefined8 *)
+    puVar25 = (undefined8 *)
               (*(code *)(wo->klass->vtable).get_Scale.method)
-                        (&stack0xffffffb8,wo,(wo->klass->vtable).set_Scale.methodPtr);
-    fStack_5 = radius.x;
-    puStack_6 = (undefined *)0x0;
-    fVar25 = (float)*puVar24 * _UNK_?;
-    fVar26 = *(float *)(puVar24 + 1) * _UNK_?;
-    fVar27 = (float)((ulonglong)*puVar24 >> 0x20) * _UNK_?;
-    s.y = radius.y + fVar27;
-    s.x = radius.x + fVar25;
-    s.z = radius.z + fVar26;
-    pMVar4 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
-                        ((Matrix4x4 *)&stack0xfffffef0,position,rotation,s,(MethodInfo *)0x0);
-    fVar13 = pMVar4->m10;
-    fVar14 = pMVar4->m20;
-    fVar15 = pMVar4->m30;
-    fVar16 = pMVar4->m01;
-    fVar17 = pMVar4->m11;
-    fVar18 = pMVar4->m21;
-    fVar19 = pMVar4->m31;
-    fVar20 = pMVar4->m02;
-    fVar7 = pMVar4->m12;
-    fVar8 = pMVar4->m22;
-    fVar9 = pMVar4->m32;
-    fVar10 = pMVar4->m03;
-    fVar11 = pMVar4->m13;
-    fVar12 = pMVar4->m23;
-    fVar22 = pMVar4->m33;
-    pMVar21 = TypeInfo__MVElipsoidOverlapCheck->static_fields;
-    (pMVar21->radiusExtendedElipsoidSpaceToWorld).m00 = pMVar4->m00;
-    (pMVar21->radiusExtendedElipsoidSpaceToWorld).m10 = fVar13;
-    (pMVar21->radiusExtendedElipsoidSpaceToWorld).m20 = fVar14;
-    (pMVar21->radiusExtendedElipsoidSpaceToWorld).m30 = fVar15;
-    (pMVar21->radiusExtendedElipsoidSpaceToWorld).m01 = fVar16;
-    (pMVar21->radiusExtendedElipsoidSpaceToWorld).m11 = fVar17;
-    (pMVar21->radiusExtendedElipsoidSpaceToWorld).m21 = fVar18;
-    (pMVar21->radiusExtendedElipsoidSpaceToWorld).m31 = fVar19;
-    (pMVar21->radiusExtendedElipsoidSpaceToWorld).m02 = fVar20;
-    (pMVar21->radiusExtendedElipsoidSpaceToWorld).m12 = fVar7;
-    (pMVar21->radiusExtendedElipsoidSpaceToWorld).m22 = fVar8;
-    (pMVar21->radiusExtendedElipsoidSpaceToWorld).m32 = fVar9;
-    (pMVar21->radiusExtendedElipsoidSpaceToWorld).m03 = fVar10;
-    (pMVar21->radiusExtendedElipsoidSpaceToWorld).m13 = fVar11;
-    (pMVar21->radiusExtendedElipsoidSpaceToWorld).m23 = fVar12;
-    (pMVar21->radiusExtendedElipsoidSpaceToWorld).m33 = fVar22;
-    pMVar4 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_inverse
-                        ((Matrix4x4 *)&stack0xfffffef0,
+                        (&stack0xffffffa8,wo,(wo->klass->vtable).set_Scale.methodPtr);
+    _puStack_bc = *puVar25;
+    pVVar23 = MathFunctions::MathFunctions_MultiplyVector
+                        ((Vector3 *)&stack0xffffffa8,&VStack_24,(Vector3 *)&puStack_1,
+                         (MethodInfo *)0x0);
+    fVar14 = pVVar23->z;
+    uVar26 = pVVar23->x;
+    uVar27 = pVVar23->y;
+    VVar28.y = radius.y + (float)uVar27;
+    VVar28.x = radius.x + (float)uVar26;
+    VVar28.z = radius.z + fVar14;
+    pMVar5 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
+                        ((Matrix4x4 *)&stack0xfffffed0,position,rotation,VVar28,(MethodInfo *)0x0);
+    fVar15 = pMVar5->m10;
+    fVar16 = pMVar5->m20;
+    fVar17 = pMVar5->m30;
+    fVar18 = pMVar5->m01;
+    fVar19 = pMVar5->m11;
+    fVar20 = pMVar5->m21;
+    fVar21 = pMVar5->m31;
+    fVar6 = pMVar5->m02;
+    fVar7 = pMVar5->m12;
+    fVar8 = pMVar5->m22;
+    fVar9 = pMVar5->m32;
+    fVar10 = pMVar5->m03;
+    fVar11 = pMVar5->m13;
+    fVar12 = pMVar5->m23;
+    fVar13 = pMVar5->m33;
+    pMVar22 = TypeInfo__MVElipsoidOverlapCheck->static_fields;
+    (pMVar22->radiusExtendedElipsoidSpaceToWorld).m00 = pMVar5->m00;
+    (pMVar22->radiusExtendedElipsoidSpaceToWorld).m10 = fVar15;
+    (pMVar22->radiusExtendedElipsoidSpaceToWorld).m20 = fVar16;
+    (pMVar22->radiusExtendedElipsoidSpaceToWorld).m30 = fVar17;
+    (pMVar22->radiusExtendedElipsoidSpaceToWorld).m01 = fVar18;
+    (pMVar22->radiusExtendedElipsoidSpaceToWorld).m11 = fVar19;
+    (pMVar22->radiusExtendedElipsoidSpaceToWorld).m21 = fVar20;
+    (pMVar22->radiusExtendedElipsoidSpaceToWorld).m31 = fVar21;
+    (pMVar22->radiusExtendedElipsoidSpaceToWorld).m02 = fVar6;
+    (pMVar22->radiusExtendedElipsoidSpaceToWorld).m12 = fVar7;
+    (pMVar22->radiusExtendedElipsoidSpaceToWorld).m22 = fVar8;
+    (pMVar22->radiusExtendedElipsoidSpaceToWorld).m32 = fVar9;
+    (pMVar22->radiusExtendedElipsoidSpaceToWorld).m03 = fVar10;
+    (pMVar22->radiusExtendedElipsoidSpaceToWorld).m13 = fVar11;
+    (pMVar22->radiusExtendedElipsoidSpaceToWorld).m23 = fVar12;
+    (pMVar22->radiusExtendedElipsoidSpaceToWorld).m33 = fVar13;
+    pMVar5 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_inverse
+                        ((Matrix4x4 *)&stack0xfffffed0,
                          &TypeInfo__MVElipsoidOverlapCheck->static_fields->
                           radiusExtendedElipsoidSpaceToWorld,(MethodInfo *)0x0);
-    fVar13 = pMVar4->m10;
-    fVar14 = pMVar4->m20;
-    fVar15 = pMVar4->m30;
-    fVar16 = pMVar4->m01;
-    fVar17 = pMVar4->m11;
-    fVar18 = pMVar4->m21;
-    fVar19 = pMVar4->m31;
-    fVar20 = pMVar4->m02;
-    fVar7 = pMVar4->m12;
-    fVar8 = pMVar4->m22;
-    fVar9 = pMVar4->m32;
-    fVar10 = pMVar4->m03;
-    fVar11 = pMVar4->m13;
-    fVar12 = pMVar4->m23;
-    fVar22 = pMVar4->m33;
-    pMVar21 = TypeInfo__MVElipsoidOverlapCheck->static_fields;
-    (pMVar21->worldToRadiusExtendedElipsoidSpace).m00 = pMVar4->m00;
-    (pMVar21->worldToRadiusExtendedElipsoidSpace).m10 = fVar13;
-    (pMVar21->worldToRadiusExtendedElipsoidSpace).m20 = fVar14;
-    (pMVar21->worldToRadiusExtendedElipsoidSpace).m30 = fVar15;
-    (pMVar21->worldToRadiusExtendedElipsoidSpace).m01 = fVar16;
-    (pMVar21->worldToRadiusExtendedElipsoidSpace).m11 = fVar17;
-    (pMVar21->worldToRadiusExtendedElipsoidSpace).m21 = fVar18;
-    (pMVar21->worldToRadiusExtendedElipsoidSpace).m31 = fVar19;
-    (pMVar21->worldToRadiusExtendedElipsoidSpace).m02 = fVar20;
-    (pMVar21->worldToRadiusExtendedElipsoidSpace).m12 = fVar7;
-    (pMVar21->worldToRadiusExtendedElipsoidSpace).m22 = fVar8;
-    (pMVar21->worldToRadiusExtendedElipsoidSpace).m32 = fVar9;
-    (pMVar21->worldToRadiusExtendedElipsoidSpace).m03 = fVar10;
-    (pMVar21->worldToRadiusExtendedElipsoidSpace).m13 = fVar11;
-    (pMVar21->worldToRadiusExtendedElipsoidSpace).m23 = fVar12;
-    (pMVar21->worldToRadiusExtendedElipsoidSpace).m33 = fVar22;
-    pMVar4 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_op_Multiply
-                        ((Matrix4x4 *)&stack0xfffffef0,
+    fVar15 = pMVar5->m10;
+    fVar16 = pMVar5->m20;
+    fVar17 = pMVar5->m30;
+    fVar18 = pMVar5->m01;
+    fVar19 = pMVar5->m11;
+    fVar20 = pMVar5->m21;
+    fVar21 = pMVar5->m31;
+    fVar6 = pMVar5->m02;
+    fVar7 = pMVar5->m12;
+    fVar8 = pMVar5->m22;
+    fVar9 = pMVar5->m32;
+    fVar10 = pMVar5->m03;
+    fVar11 = pMVar5->m13;
+    fVar12 = pMVar5->m23;
+    fVar13 = pMVar5->m33;
+    pMVar22 = TypeInfo__MVElipsoidOverlapCheck->static_fields;
+    (pMVar22->worldToRadiusExtendedElipsoidSpace).m00 = pMVar5->m00;
+    (pMVar22->worldToRadiusExtendedElipsoidSpace).m10 = fVar15;
+    (pMVar22->worldToRadiusExtendedElipsoidSpace).m20 = fVar16;
+    (pMVar22->worldToRadiusExtendedElipsoidSpace).m30 = fVar17;
+    (pMVar22->worldToRadiusExtendedElipsoidSpace).m01 = fVar18;
+    (pMVar22->worldToRadiusExtendedElipsoidSpace).m11 = fVar19;
+    (pMVar22->worldToRadiusExtendedElipsoidSpace).m21 = fVar20;
+    (pMVar22->worldToRadiusExtendedElipsoidSpace).m31 = fVar21;
+    (pMVar22->worldToRadiusExtendedElipsoidSpace).m02 = fVar6;
+    (pMVar22->worldToRadiusExtendedElipsoidSpace).m12 = fVar7;
+    (pMVar22->worldToRadiusExtendedElipsoidSpace).m22 = fVar8;
+    (pMVar22->worldToRadiusExtendedElipsoidSpace).m32 = fVar9;
+    (pMVar22->worldToRadiusExtendedElipsoidSpace).m03 = fVar10;
+    (pMVar22->worldToRadiusExtendedElipsoidSpace).m13 = fVar11;
+    (pMVar22->worldToRadiusExtendedElipsoidSpace).m23 = fVar12;
+    (pMVar22->worldToRadiusExtendedElipsoidSpace).m33 = fVar13;
+    pMVar5 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_op_Multiply
+                        ((Matrix4x4 *)&stack0xfffffed0,
                          TypeInfo__MVElipsoidOverlapCheck->static_fields->
                          worldToRadiusExtendedElipsoidSpace,
                          TypeInfo__MVElipsoidOverlapCheck->static_fields->localToWorld,
                          (MethodInfo *)0x0);
-    fVar13 = pMVar4->m10;
-    fVar14 = pMVar4->m20;
-    fVar15 = pMVar4->m30;
-    fVar16 = pMVar4->m01;
-    fVar17 = pMVar4->m11;
-    fVar18 = pMVar4->m21;
-    fVar19 = pMVar4->m31;
-    fVar20 = pMVar4->m02;
-    fVar7 = pMVar4->m12;
-    fVar8 = pMVar4->m22;
-    fVar9 = pMVar4->m32;
-    fVar10 = pMVar4->m03;
-    fVar11 = pMVar4->m13;
-    fVar12 = pMVar4->m23;
-    fVar22 = pMVar4->m33;
-    pMVar21 = TypeInfo__MVElipsoidOverlapCheck->static_fields;
-    (pMVar21->localToRadiusExtendedElipsoidSpace).m00 = pMVar4->m00;
-    (pMVar21->localToRadiusExtendedElipsoidSpace).m10 = fVar13;
-    (pMVar21->localToRadiusExtendedElipsoidSpace).m20 = fVar14;
-    (pMVar21->localToRadiusExtendedElipsoidSpace).m30 = fVar15;
-    (pMVar21->localToRadiusExtendedElipsoidSpace).m01 = fVar16;
-    (pMVar21->localToRadiusExtendedElipsoidSpace).m11 = fVar17;
-    (pMVar21->localToRadiusExtendedElipsoidSpace).m21 = fVar18;
-    (pMVar21->localToRadiusExtendedElipsoidSpace).m31 = fVar19;
-    (pMVar21->localToRadiusExtendedElipsoidSpace).m02 = fVar20;
-    (pMVar21->localToRadiusExtendedElipsoidSpace).m12 = fVar7;
-    (pMVar21->localToRadiusExtendedElipsoidSpace).m22 = fVar8;
-    (pMVar21->localToRadiusExtendedElipsoidSpace).m32 = fVar9;
-    (pMVar21->localToRadiusExtendedElipsoidSpace).m03 = fVar10;
-    (pMVar21->localToRadiusExtendedElipsoidSpace).m13 = fVar11;
-    (pMVar21->localToRadiusExtendedElipsoidSpace).m23 = fVar12;
-    (pMVar21->localToRadiusExtendedElipsoidSpace).m33 = fVar22;
-    if (((fStack_5 - fVar25 <= 0.0) || (radius.y - fVar27 <= 0.0)) || (radius.z - fVar26 <= 0.0)) {
+    fVar15 = pMVar5->m10;
+    fVar16 = pMVar5->m20;
+    fVar17 = pMVar5->m30;
+    fVar18 = pMVar5->m01;
+    fVar19 = pMVar5->m11;
+    fVar20 = pMVar5->m21;
+    fVar21 = pMVar5->m31;
+    fVar6 = pMVar5->m02;
+    fVar7 = pMVar5->m12;
+    fVar8 = pMVar5->m22;
+    fVar9 = pMVar5->m32;
+    fVar10 = pMVar5->m03;
+    fVar11 = pMVar5->m13;
+    fVar12 = pMVar5->m23;
+    fVar13 = pMVar5->m33;
+    pMVar22 = TypeInfo__MVElipsoidOverlapCheck->static_fields;
+    (pMVar22->localToRadiusExtendedElipsoidSpace).m00 = pMVar5->m00;
+    (pMVar22->localToRadiusExtendedElipsoidSpace).m10 = fVar15;
+    (pMVar22->localToRadiusExtendedElipsoidSpace).m20 = fVar16;
+    (pMVar22->localToRadiusExtendedElipsoidSpace).m30 = fVar17;
+    (pMVar22->localToRadiusExtendedElipsoidSpace).m01 = fVar18;
+    (pMVar22->localToRadiusExtendedElipsoidSpace).m11 = fVar19;
+    (pMVar22->localToRadiusExtendedElipsoidSpace).m21 = fVar20;
+    (pMVar22->localToRadiusExtendedElipsoidSpace).m31 = fVar21;
+    (pMVar22->localToRadiusExtendedElipsoidSpace).m02 = fVar6;
+    (pMVar22->localToRadiusExtendedElipsoidSpace).m12 = fVar7;
+    (pMVar22->localToRadiusExtendedElipsoidSpace).m22 = fVar8;
+    (pMVar22->localToRadiusExtendedElipsoidSpace).m32 = fVar9;
+    (pMVar22->localToRadiusExtendedElipsoidSpace).m03 = fVar10;
+    (pMVar22->localToRadiusExtendedElipsoidSpace).m13 = fVar11;
+    (pMVar22->localToRadiusExtendedElipsoidSpace).m23 = fVar12;
+    (pMVar22->localToRadiusExtendedElipsoidSpace).m33 = fVar13;
+    if (((radius.x - (float)uVar26 <= 0.0) || (radius.y - (float)uVar27 <= 0.0)) ||
+       (radius.z - fVar14 <= 0.0)) {
       if ((TypeInfo__MVElipsoidOverlapCheck->_1).cctor_finished_or_no_cctor == 0) {
-        cmb = (ICubeModelCollider *)&UNK_?;
         func_?();
       }
       TypeInfo__MVElipsoidOverlapCheck->static_fields->reducedElipsoidSpaceExists = 0;
     }
     else {
-      s_00.y = radius.y - fVar27;
-      s_00.x = fStack_5 - fVar25;
-      s_00.z = radius.z - fVar26;
-      pMVar4 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
-                          ((Matrix4x4 *)&stack0xfffffef0,position,rotation,s_00,(MethodInfo *)0x0);
-      fStack_5 = pMVar4->m00;
-      puStack_6 = (undefined *)pMVar4->m10;
-      fVar7 = pMVar4->m20;
-      fVar8 = pMVar4->m30;
-      fVar9 = pMVar4->m01;
-      fVar10 = pMVar4->m11;
-      fVar11 = pMVar4->m21;
-      fVar12 = pMVar4->m31;
-      fVar13 = pMVar4->m02;
-      fVar14 = pMVar4->m12;
-      fVar15 = pMVar4->m22;
-      fVar16 = pMVar4->m32;
-      fVar17 = pMVar4->m03;
-      fVar18 = pMVar4->m13;
-      fVar19 = pMVar4->m23;
-      fVar20 = pMVar4->m33;
+      VVar29.y = radius.y - (float)uVar27;
+      VVar29.x = radius.x - (float)uVar26;
+      VVar29.z = radius.z - fVar14;
+      pMVar5 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
+                          ((Matrix4x4 *)&stack0xfffffed0,position,rotation,VVar29,(MethodInfo *)0x0)
+      ;
+      fVar6 = pMVar5->m00;
+      fVar7 = pMVar5->m10;
+      fVar8 = pMVar5->m20;
+      fVar9 = pMVar5->m30;
+      fVar10 = pMVar5->m01;
+      fVar11 = pMVar5->m11;
+      fVar12 = pMVar5->m21;
+      fVar13 = pMVar5->m31;
+      fVar14 = pMVar5->m02;
+      fVar15 = pMVar5->m12;
+      fVar16 = pMVar5->m22;
+      fVar17 = pMVar5->m32;
+      fVar18 = pMVar5->m03;
+      fVar19 = pMVar5->m13;
+      fVar20 = pMVar5->m23;
+      fVar21 = pMVar5->m33;
       if ((TypeInfo__MVElipsoidOverlapCheck->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
-      pMVar21 = TypeInfo__MVElipsoidOverlapCheck->static_fields;
-      (pMVar21->radiusReducedElipsoidSpaceToWorld).m00 = fStack_5;
-      (pMVar21->radiusReducedElipsoidSpaceToWorld).m10 = (float)puStack_6;
-      (pMVar21->radiusReducedElipsoidSpaceToWorld).m20 = fVar7;
-      (pMVar21->radiusReducedElipsoidSpaceToWorld).m30 = fVar8;
-      (pMVar21->radiusReducedElipsoidSpaceToWorld).m01 = fVar9;
-      (pMVar21->radiusReducedElipsoidSpaceToWorld).m11 = fVar10;
-      (pMVar21->radiusReducedElipsoidSpaceToWorld).m21 = fVar11;
-      (pMVar21->radiusReducedElipsoidSpaceToWorld).m31 = fVar12;
-      (pMVar21->radiusReducedElipsoidSpaceToWorld).m02 = fVar13;
-      (pMVar21->radiusReducedElipsoidSpaceToWorld).m12 = fVar14;
-      (pMVar21->radiusReducedElipsoidSpaceToWorld).m22 = fVar15;
-      (pMVar21->radiusReducedElipsoidSpaceToWorld).m32 = fVar16;
-      (pMVar21->radiusReducedElipsoidSpaceToWorld).m03 = fVar17;
-      (pMVar21->radiusReducedElipsoidSpaceToWorld).m13 = fVar18;
-      (pMVar21->radiusReducedElipsoidSpaceToWorld).m23 = fVar19;
-      (pMVar21->radiusReducedElipsoidSpaceToWorld).m33 = fVar20;
-      pMVar4 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_inverse
-                          ((Matrix4x4 *)&stack0xfffffef0,
+      pMVar22 = TypeInfo__MVElipsoidOverlapCheck->static_fields;
+      (pMVar22->radiusReducedElipsoidSpaceToWorld).m00 = fVar6;
+      (pMVar22->radiusReducedElipsoidSpaceToWorld).m10 = fVar7;
+      (pMVar22->radiusReducedElipsoidSpaceToWorld).m20 = fVar8;
+      (pMVar22->radiusReducedElipsoidSpaceToWorld).m30 = fVar9;
+      (pMVar22->radiusReducedElipsoidSpaceToWorld).m01 = fVar10;
+      (pMVar22->radiusReducedElipsoidSpaceToWorld).m11 = fVar11;
+      (pMVar22->radiusReducedElipsoidSpaceToWorld).m21 = fVar12;
+      (pMVar22->radiusReducedElipsoidSpaceToWorld).m31 = fVar13;
+      (pMVar22->radiusReducedElipsoidSpaceToWorld).m02 = fVar14;
+      (pMVar22->radiusReducedElipsoidSpaceToWorld).m12 = fVar15;
+      (pMVar22->radiusReducedElipsoidSpaceToWorld).m22 = fVar16;
+      (pMVar22->radiusReducedElipsoidSpaceToWorld).m32 = fVar17;
+      (pMVar22->radiusReducedElipsoidSpaceToWorld).m03 = fVar18;
+      (pMVar22->radiusReducedElipsoidSpaceToWorld).m13 = fVar19;
+      (pMVar22->radiusReducedElipsoidSpaceToWorld).m23 = fVar20;
+      (pMVar22->radiusReducedElipsoidSpaceToWorld).m33 = fVar21;
+      pMVar5 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_inverse
+                          ((Matrix4x4 *)&stack0xfffffed0,
                            &TypeInfo__MVElipsoidOverlapCheck->static_fields->
                             radiusReducedElipsoidSpaceToWorld,(MethodInfo *)0x0);
-      fVar13 = pMVar4->m10;
-      fVar14 = pMVar4->m20;
-      fVar15 = pMVar4->m30;
-      fVar16 = pMVar4->m01;
-      fVar17 = pMVar4->m11;
-      fVar18 = pMVar4->m21;
-      fVar19 = pMVar4->m31;
-      fVar20 = pMVar4->m02;
-      fVar7 = pMVar4->m12;
-      fVar8 = pMVar4->m22;
-      fVar9 = pMVar4->m32;
-      fVar10 = pMVar4->m03;
-      fVar11 = pMVar4->m13;
-      fVar12 = pMVar4->m23;
-      fVar22 = pMVar4->m33;
-      pMVar21 = TypeInfo__MVElipsoidOverlapCheck->static_fields;
-      (pMVar21->worldToRadiusReducedElipsoidSpace).m00 = pMVar4->m00;
-      (pMVar21->worldToRadiusReducedElipsoidSpace).m10 = fVar13;
-      (pMVar21->worldToRadiusReducedElipsoidSpace).m20 = fVar14;
-      (pMVar21->worldToRadiusReducedElipsoidSpace).m30 = fVar15;
-      (pMVar21->worldToRadiusReducedElipsoidSpace).m01 = fVar16;
-      (pMVar21->worldToRadiusReducedElipsoidSpace).m11 = fVar17;
-      (pMVar21->worldToRadiusReducedElipsoidSpace).m21 = fVar18;
-      (pMVar21->worldToRadiusReducedElipsoidSpace).m31 = fVar19;
-      (pMVar21->worldToRadiusReducedElipsoidSpace).m02 = fVar20;
-      (pMVar21->worldToRadiusReducedElipsoidSpace).m12 = fVar7;
-      (pMVar21->worldToRadiusReducedElipsoidSpace).m22 = fVar8;
-      (pMVar21->worldToRadiusReducedElipsoidSpace).m32 = fVar9;
-      (pMVar21->worldToRadiusReducedElipsoidSpace).m03 = fVar10;
-      (pMVar21->worldToRadiusReducedElipsoidSpace).m13 = fVar11;
-      (pMVar21->worldToRadiusReducedElipsoidSpace).m23 = fVar12;
-      (pMVar21->worldToRadiusReducedElipsoidSpace).m33 = fVar22;
-      pMVar4 = &TypeInfo__MVElipsoidOverlapCheck->static_fields->localToWorld;
-      cmb = (ICubeModelCollider *)pMVar4->m00;
-      pMVar4 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_op_Multiply
-                          ((Matrix4x4 *)&stack0xfffffef0,
-                           TypeInfo__MVElipsoidOverlapCheck->static_fields->
-                           worldToRadiusReducedElipsoidSpace,*pMVar4,(MethodInfo *)0x0);
-      fVar13 = pMVar4->m10;
-      fVar14 = pMVar4->m20;
-      fVar15 = pMVar4->m30;
-      fVar16 = pMVar4->m01;
-      fVar17 = pMVar4->m11;
-      fVar18 = pMVar4->m21;
-      fVar19 = pMVar4->m31;
-      fVar20 = pMVar4->m02;
-      fVar7 = pMVar4->m12;
-      fVar8 = pMVar4->m22;
-      fVar9 = pMVar4->m32;
-      fVar10 = pMVar4->m03;
-      fVar11 = pMVar4->m13;
-      fVar12 = pMVar4->m23;
-      fVar22 = pMVar4->m33;
-      pMVar21 = TypeInfo__MVElipsoidOverlapCheck->static_fields;
-      (pMVar21->localToRadiusReducedElipsoidSpace).m00 = pMVar4->m00;
-      (pMVar21->localToRadiusReducedElipsoidSpace).m10 = fVar13;
-      (pMVar21->localToRadiusReducedElipsoidSpace).m20 = fVar14;
-      (pMVar21->localToRadiusReducedElipsoidSpace).m30 = fVar15;
-      (pMVar21->localToRadiusReducedElipsoidSpace).m01 = fVar16;
-      (pMVar21->localToRadiusReducedElipsoidSpace).m11 = fVar17;
-      (pMVar21->localToRadiusReducedElipsoidSpace).m21 = fVar18;
-      (pMVar21->localToRadiusReducedElipsoidSpace).m31 = fVar19;
-      (pMVar21->localToRadiusReducedElipsoidSpace).m02 = fVar20;
-      (pMVar21->localToRadiusReducedElipsoidSpace).m12 = fVar7;
-      (pMVar21->localToRadiusReducedElipsoidSpace).m22 = fVar8;
-      (pMVar21->localToRadiusReducedElipsoidSpace).m32 = fVar9;
-      (pMVar21->localToRadiusReducedElipsoidSpace).m03 = fVar10;
-      (pMVar21->localToRadiusReducedElipsoidSpace).m13 = fVar11;
-      (pMVar21->localToRadiusReducedElipsoidSpace).m23 = fVar12;
-      (pMVar21->localToRadiusReducedElipsoidSpace).m33 = fVar22;
+      unique0x1000187d = pMVar5->m10;
+      fVar14 = pMVar5->m20;
+      fVar15 = pMVar5->m30;
+      fVar16 = pMVar5->m01;
+      fVar17 = pMVar5->m11;
+      fVar18 = pMVar5->m21;
+      fVar19 = pMVar5->m31;
+      fVar20 = pMVar5->m02;
+      fVar21 = pMVar5->m12;
+      fVar6 = pMVar5->m22;
+      fVar7 = pMVar5->m32;
+      fVar8 = pMVar5->m03;
+      fVar9 = pMVar5->m13;
+      fVar10 = pMVar5->m23;
+      fVar11 = pMVar5->m33;
+      pMVar22 = TypeInfo__MVElipsoidOverlapCheck->static_fields;
+      (pMVar22->worldToRadiusReducedElipsoidSpace).m00 = pMVar5->m00;
+      (pMVar22->worldToRadiusReducedElipsoidSpace).m10 = unique0x1000187d;
+      (pMVar22->worldToRadiusReducedElipsoidSpace).m20 = fVar14;
+      (pMVar22->worldToRadiusReducedElipsoidSpace).m30 = fVar15;
+      (pMVar22->worldToRadiusReducedElipsoidSpace).m01 = fVar16;
+      (pMVar22->worldToRadiusReducedElipsoidSpace).m11 = fVar17;
+      (pMVar22->worldToRadiusReducedElipsoidSpace).m21 = fVar18;
+      (pMVar22->worldToRadiusReducedElipsoidSpace).m31 = fVar19;
+      (pMVar22->worldToRadiusReducedElipsoidSpace).m02 = fVar20;
+      (pMVar22->worldToRadiusReducedElipsoidSpace).m12 = fVar21;
+      (pMVar22->worldToRadiusReducedElipsoidSpace).m22 = fVar6;
+      (pMVar22->worldToRadiusReducedElipsoidSpace).m32 = fVar7;
+      (pMVar22->worldToRadiusReducedElipsoidSpace).m03 = fVar8;
+      (pMVar22->worldToRadiusReducedElipsoidSpace).m13 = fVar9;
+      (pMVar22->worldToRadiusReducedElipsoidSpace).m23 = fVar10;
+      (pMVar22->worldToRadiusReducedElipsoidSpace).m33 = fVar11;
+      pMVar22 = TypeInfo__MVElipsoidOverlapCheck->static_fields;
+      cmb = (ICubeModelCollider *)(pMVar22->localToWorld).m01;
+      stack0xffffff48 = (float)&stack0xfffffed0;
+      pMVar5 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_op_Multiply
+                          ((Matrix4x4 *)&stack0xfffffed0,pMVar22->worldToRadiusReducedElipsoidSpace,
+                           pMVar22->localToWorld,(MethodInfo *)0x0);
+      fVar14 = pMVar5->m10;
+      fVar15 = pMVar5->m20;
+      fVar16 = pMVar5->m30;
+      fVar17 = pMVar5->m01;
+      fVar18 = pMVar5->m11;
+      fVar19 = pMVar5->m21;
+      fVar20 = pMVar5->m31;
+      fVar21 = pMVar5->m02;
+      fVar6 = pMVar5->m12;
+      fVar7 = pMVar5->m22;
+      fVar8 = pMVar5->m32;
+      fVar9 = pMVar5->m03;
+      fVar10 = pMVar5->m13;
+      fVar11 = pMVar5->m23;
+      fVar12 = pMVar5->m33;
+      pMVar22 = TypeInfo__MVElipsoidOverlapCheck->static_fields;
+      (pMVar22->localToRadiusReducedElipsoidSpace).m00 = pMVar5->m00;
+      (pMVar22->localToRadiusReducedElipsoidSpace).m10 = fVar14;
+      (pMVar22->localToRadiusReducedElipsoidSpace).m20 = fVar15;
+      (pMVar22->localToRadiusReducedElipsoidSpace).m30 = fVar16;
+      (pMVar22->localToRadiusReducedElipsoidSpace).m01 = fVar17;
+      (pMVar22->localToRadiusReducedElipsoidSpace).m11 = fVar18;
+      (pMVar22->localToRadiusReducedElipsoidSpace).m21 = fVar19;
+      (pMVar22->localToRadiusReducedElipsoidSpace).m31 = fVar20;
+      (pMVar22->localToRadiusReducedElipsoidSpace).m02 = fVar21;
+      (pMVar22->localToRadiusReducedElipsoidSpace).m12 = fVar6;
+      (pMVar22->localToRadiusReducedElipsoidSpace).m22 = fVar7;
+      (pMVar22->localToRadiusReducedElipsoidSpace).m32 = fVar8;
+      (pMVar22->localToRadiusReducedElipsoidSpace).m03 = fVar9;
+      (pMVar22->localToRadiusReducedElipsoidSpace).m13 = fVar10;
+      (pMVar22->localToRadiusReducedElipsoidSpace).m23 = fVar11;
+      (pMVar22->localToRadiusReducedElipsoidSpace).m33 = fVar12;
       TypeInfo__MVElipsoidOverlapCheck->static_fields->reducedElipsoidSpaceExists = 1;
     }
     if ((TypeInfo__MVElipsoidOverlapCheck->_1).cctor_finished_or_no_cctor == 0) {
@@ -820,21 +841,10 @@ code_?:
       cRam_? = '\x01';
     }
     pVVar23 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyVector
-                        ((Vector3 *)&stack0xffffffb8,
+                        ((Vector3 *)&stack0xffffffa8,
                          &TypeInfo__MVElipsoidOverlapCheck->static_fields->localToWorld,
                          TypeInfo__UnityEngine__Vector3->static_fields->rightVector,
                          (MethodInfo *)0x0);
-    uVar28 = pVVar23->x;
-    uVar29 = pVVar23->y;
-    fVar13 = pVVar23->z;
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    pVVar23 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyVector
-                        ((Vector3 *)&stack0xffffffb8,
-                         &TypeInfo__MVElipsoidOverlapCheck->static_fields->localToWorld,
-                         TypeInfo__UnityEngine__Vector3->static_fields->upVector,(MethodInfo *)0x0);
     uVar30 = pVVar23->x;
     uVar31 = pVVar23->y;
     fVar14 = pVVar23->z;
@@ -843,53 +853,57 @@ code_?:
       cRam_? = '\x01';
     }
     pVVar23 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyVector
-                        ((Vector3 *)&stack0xffffffb8,
+                        ((Vector3 *)&stack0xffffffa8,
                          &TypeInfo__MVElipsoidOverlapCheck->static_fields->localToWorld,
-                         TypeInfo__UnityEngine__Vector3->static_fields->forwardVector,
-                         (MethodInfo *)0x0);
+                         TypeInfo__UnityEngine__Vector3->static_fields->upVector,(MethodInfo *)0x0);
     uVar32 = pVVar23->x;
     uVar33 = pVVar23->y;
     fVar15 = pVVar23->z;
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    pVVar23 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyVector
+                        ((Vector3 *)&stack0xffffffa8,
+                         &TypeInfo__MVElipsoidOverlapCheck->static_fields->localToWorld,
+                         TypeInfo__UnityEngine__Vector3->static_fields->forwardVector,
+                         (MethodInfo *)0x0);
+    VVar29 = *pVVar23;
+    VVar28 = *pVVar23;
     iVar34 = func_?();
-    tangent0.y = (float)uVar29;
-    tangent0.x = (float)uVar28;
-    tangent0.z = fVar13;
-    tangent1.y = (float)uVar33;
-    tangent1.x = (float)uVar32;
-    tangent1.z = fVar15;
-    iVar1 = iVar34;
+    tangent0.y = (float)uVar31;
+    tangent0.x = (float)uVar30;
+    tangent0.z = fVar14;
+    iVar2 = iVar34;
     pVVar23 = MVElipsoidOverlapCheck_GetTangentNormal
-                        ((Vector3 *)&stack0xffffffb8,tangent0,tangent1,(MethodInfo *)0x0);
+                        ((Vector3 *)&stack0xffffffa8,tangent0,VVar28,(MethodInfo *)0x0);
     if (iVar34 == 0) goto code_?;
     fVar16 = pVVar23->z;
     if (*(int *)(iVar34 + 0xc) != 0) {
       *(undefined8 *)(iVar34 + 0x10) = *(undefined8 *)pVVar23;
       *(float *)(iVar34 + 0x18) = fVar16;
-      tangent0_00.y = (float)uVar31;
-      tangent0_00.x = (float)uVar30;
-      tangent0_00.z = fVar14;
-      tangent1_00.y = (float)uVar33;
-      tangent1_00.x = (float)uVar32;
-      tangent1_00.z = fVar15;
+      tangent0_00.y = (float)uVar33;
+      tangent0_00.x = (float)uVar32;
+      tangent0_00.z = fVar15;
       pVVar23 = MVElipsoidOverlapCheck_GetTangentNormal
-                          ((Vector3 *)&stack0xffffffb8,tangent0_00,tangent1_00,(MethodInfo *)0x0);
-      fVar15 = pVVar23->z;
+                          ((Vector3 *)&stack0xffffffa8,tangent0_00,VVar29,(MethodInfo *)0x0);
+      fVar16 = pVVar23->z;
       if (1 < *(uint *)(iVar34 + 0xc)) {
         *(undefined8 *)(iVar34 + 0x1c) = *(undefined8 *)pVVar23;
-        *(float *)(iVar34 + 0x24) = fVar15;
-        tangent0_01.y = (float)uVar31;
-        tangent0_01.x = (float)uVar30;
-        tangent0_01.z = fVar14;
-        tangent1_01.y = (float)uVar29;
-        tangent1_01.x = (float)uVar28;
-        tangent1_01.z = fVar13;
+        *(float *)(iVar34 + 0x24) = fVar16;
+        tangent0_01.y = (float)uVar33;
+        tangent0_01.x = (float)uVar32;
+        tangent0_01.z = fVar15;
+        tangent1.y = (float)uVar31;
+        tangent1.x = (float)uVar30;
+        tangent1.z = fVar14;
         pVVar23 = MVElipsoidOverlapCheck_GetTangentNormal
-                            ((Vector3 *)&stack0xffffffb8,tangent0_01,tangent1_01,(MethodInfo *)0x0);
-        fVar13 = pVVar23->z;
+                            ((Vector3 *)&stack0xffffffa8,tangent0_01,tangent1,(MethodInfo *)0x0);
+        fVar14 = pVVar23->z;
         if (2 < *(uint *)(iVar34 + 0xc)) {
           bVar35 = cRam_? == '\0';
           *(undefined8 *)(iVar34 + 0x28) = *(undefined8 *)pVVar23;
-          *(float *)(iVar34 + 0x30) = fVar13;
+          *(float *)(iVar34 + 0x30) = fVar14;
           if (bVar35) {
             func_?();
             cRam_? = '\x01';
@@ -901,15 +915,15 @@ code_?:
             }
             if (*(uint *)(iVar34 + 0xc) <= uVar36) goto code_?;
             pVVar37 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyVector
-                                ((Vector3 *)&fStack_5,
+                                ((Vector3 *)&stack0xffffff50,
                                  &TypeInfo__MVElipsoidOverlapCheck->static_fields->worldToLocal,
                                  *pVVar23,(MethodInfo *)0x0);
-            fVar14 = pVVar37->y;
-            fVar13 = pVVar37->z;
+            fVar15 = pVVar37->y;
+            fVar14 = pVVar37->z;
             if (*(uint *)(iVar34 + 0xc) <= uVar36) goto code_?;
             pVVar23->x = pVVar37->x;
-            pVVar23->y = fVar14;
-            pVVar23->z = fVar13;
+            pVVar23->y = fVar15;
+            pVVar23->z = fVar14;
             pVVar23 = pVVar23 + 1;
           }
           if ((TypeInfo__MVElipsoidOverlapCheck->_1).cctor_finished_or_no_cctor == 0) {
@@ -919,46 +933,46 @@ code_?:
           fStack_39 = 0.0;
           uVar36 = 0;
           fStack_40 = 0.0;
-          fVar13 = 0.0;
           fStack_41 = 0.0;
+          fStack_42 = 0.0;
           while( true ) {
             if (*(int *)(iVar34 + 0xc) <= (int)uVar36) {
               pVVar23 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyPoint
-                                  ((Vector3 *)&fStack_5,
+                                  ((Vector3 *)&stack0xffffff50,
                                    &TypeInfo__MVElipsoidOverlapCheck->static_fields->worldToLocal,
                                    position,(MethodInfo *)0x0);
               localElipsoidBounds.m_Extents.x = fStack_40;
               localElipsoidBounds.m_Center = *pVVar23;
               localElipsoidBounds.m_Extents.y = fStack_38;
               localElipsoidBounds.m_Extents.z = fStack_39;
-              bVar42 = MVElipsoidOverlapCheck_ScanElipsoidBounds
+              bVar43 = MVElipsoidOverlapCheck_ScanElipsoidBounds
                                  (localElipsoidBounds,chunk,cmb,elipsoidOverlapResult,
                                   (MethodInfo *)0x0);
-              return bVar42;
+              return bVar43;
             }
             if (*(uint *)(iVar34 + 0xc) <= uVar36) break;
             index = 0;
-            iVar34 = iVar1;
+            iVar34 = iVar2;
             do {
               fVar14 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
-                                 ((Vector3 *)&stack0xffffffbc,index,(MethodInfo *)0x0);
+                                 ((Vector3 *)&stack0xffffffac,index,(MethodInfo *)0x0);
               fVar15 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
                                  ((Vector3 *)&stack0xffffff64,index,(MethodInfo *)0x0);
               if (fVar14 < (float)((uint)fVar15 & _UNK_?)) {
                 fVar14 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
                                    ((Vector3 *)&stack0xffffff64,index,(MethodInfo *)0x0);
-                fStack_40 = fVar13;
-                fStack_38 = fStack_41;
+                fStack_40 = fStack_41;
+                fStack_38 = fStack_42;
                 UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_set_Item
                           ((Vector3 *)&stack0xffffff84,index,(float)((uint)fVar14 & _UNK_?),
                            (MethodInfo *)0x0);
-                fVar13 = fStack_40;
-                fStack_41 = fStack_38;
+                fStack_41 = fStack_40;
+                fStack_42 = fStack_38;
               }
               index = index + 1;
             } while (index < 3);
             uVar36 = uVar36 + 1;
-            iVar1 = iVar34;
+            iVar2 = iVar34;
           }
         }
       }
@@ -967,15 +981,15 @@ code_?:
   else {
     cmb = (ICubeModelCollider *)func_?(wo,TypeInfo__ICubeModelCollider);
     if (cmb != (ICubeModelCollider *)0x0) goto code_?;
-    func_?(wo,pIVar2);
+    func_?(wo,pIVar3);
   }
 code_?:
   func_?();
 code_?:
   func_?();
-  pcVar43 = (code *)swi(3);
-  bVar42 = (*pcVar43)();
-  return bVar42;
+  pcVar44 = (code *)swi(3);
+  bVar43 = (*pcVar44)();
+  return bVar43;
 }
 
 
@@ -1049,112 +1063,136 @@ Assembly-CSharp.dll::MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_ElipsoidOver
     func_?();
     cRam_? = '\x01';
   }
-  pLVar3 = (List_1_MVOverlapResult_ *)
+  uStack_3 = 0;
+  pLVar4 = (List_1_MVOverlapResult_ *)
            func_?(TypeInfo__System__Collections__Generic__List<MVOverlapResult>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar3,
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar4,
              MethodInfo__System__Collections__Generic__List<MVOverlapResult>__List__);
-  pcVar4 = (char *)0x0;
-  pMStack_5 = (MVWorldObjectClient *)0x0;
+  puVar5 = (undefined *)0x0;
+  puStack_6 = (undefined *)0x0;
   index = 0;
   do {
-    fVar6 = radius.x;
-    if (((index != 0) && (fVar6 = radius.y, index != 1)) && (fVar6 = radius.z, index != 2))
+    fVar7 = radius.x;
+    if (((index != 0) && (fVar7 = radius.y, index != 1)) && (fVar7 = radius.z, index != 2))
     goto code_?;
-    if ((float)pcVar4 < fVar6) {
-      pcVar4 = (char *)UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
-                                 (&radius,index,(MethodInfo *)0x0);
-      pMStack_5 = (MVWorldObjectClient *)pcVar4;
+    if ((float)puVar5 < fVar7) {
+      puVar5 = (undefined *)
+               UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
+                         (&radius,index,(MethodInfo *)0x0);
+      puStack_6 = puVar5;
     }
     index = index + 1;
   } while (index < 3);
   if ((TypeInfo__CollisionDetectionGlobalBuffers->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__CollisionDetectionGlobalBuffers);
   }
-  pCVar7 = TypeInfo__CollisionDetectionGlobalBuffers->static_fields->colliderBuffer;
+  pCVar8 = TypeInfo__CollisionDetectionGlobalBuffers->static_fields->colliderBuffer;
   if ((TypeInfo__UnityEngine__Physics->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Physics);
   }
-  pMVar8 = (MethodInfo *)&UNK_?;
-  iVar9 = UnityEngine.PhysicsModule.dll::UnityEngine::Physics::Physics_OverlapSphereNonAlloc_1
-                    (position,(float)pMStack_5,pCVar7,layerMask,(MethodInfo *)0x0);
-  uVar10 = 0;
-  if (iVar9 < 1) {
-    return pLVar3;
+  pMVar9 = (MethodInfo *)&UNK_?;
+  pLStack_10 = (List_1_MVOverlapResult_ *)
+               UnityEngine.PhysicsModule.dll::UnityEngine::Physics::Physics_OverlapSphereNonAlloc_1
+                         (position,(float)puStack_6,pCVar8,layerMask,(MethodInfo *)0x0);
+  uVar11 = 0;
+  if ((int)pLStack_10 < 1) {
+    return pLVar4;
   }
-  pMStack_5 = (MVWorldObjectClient *)0x10;
+  puStack_6 = (undefined *)0x10;
   while( true ) {
     if ((TypeInfo__CollisionDetectionGlobalBuffers->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    pCVar7 = TypeInfo__CollisionDetectionGlobalBuffers->static_fields->colliderBuffer;
-    if (pCVar7 == (Collider__Array *)0x0) break;
-    if (pCVar7->max_length <= uVar10) goto code_?;
-    if (*(Component **)((int)pMStack_5 + (int)pCVar7) == (Component *)0x0) break;
-    t.typeHandle = (Il2CppMetadataTypeHandle)
-                   UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                             (*(Component **)((int)pMStack_5 + (int)pCVar7),(MethodInfo *)0x0);
-    wo = MVWorldObjectClientManager::MVWorldObjectClientManager_GetMVObject
-                   ((Transform *)t.typeHandle,(MethodInfo *)0x0);
+    pCVar8 = TypeInfo__CollisionDetectionGlobalBuffers->static_fields->colliderBuffer;
+    if (pCVar8 == (Collider__Array *)0x0) break;
+    if (pCVar8->max_length <= uVar11) goto code_?;
+    this = *(Component **)((int)pCVar8->vector + (int)(puStack_6 + -0x10));
+    if (this == (Component *)0x0) break;
+    pLVar4 = (List_1_MVOverlapResult_ *)
+             UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       (this,(MethodInfo *)0x0);
+    pMVar12 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetMVObject
+                       ((Transform *)pLVar4,(MethodInfo *)0x0);
     if ((TypeInfo__SharedCollisionFunctions->_1).cctor_finished_or_no_cctor == 0) {
       radius.z = (float)TypeInfo__SharedCollisionFunctions;
       radius.y = (float)&UNK_?;
       func_?();
     }
-    _Var11.dummy = (BoxCollider__Class *)0x0;
-    bVar11 = SharedCollisionFunctions::SharedCollisionFunctions_IgnoreCollision
-                      (wo,ignoreWoIds,(MethodInfo *)0x0);
-    if (bVar11 == 0) {
+    if (cRam_? == '\0') {
+      radius.z = (float)&MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_;
+      radius.y = (float)&UNK_?;
+      func_?();
+      cRam_? = '\x01';
+    }
+    if (pMVar12 != (MVWorldObjectClient *)0x0) {
+      if (ignoreWoIds != (HashSet_1_System_Int32_ *)0x0) {
+        radius.z = (float)MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_;
+        radius.y = (float)(pMVar12->fields)._.id;
+        radius.x = (float)ignoreWoIds;
+        bVar13 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
+                HashSet_1_System_UInt32__Contains
+                          ((HashSet_1_System_UInt32_ *)ignoreWoIds,(uint32_t)radius.y,
+                           MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
+        if (bVar13 != 0) goto code_?;
+      }
       if ((TypeInfo__MVElipsoidOverlapCheck->_1).cctor_finished_or_no_cctor == 0) {
+        radius.z = (float)TypeInfo__MVElipsoidOverlapCheck;
+        radius.y = (float)&UNK_?;
         func_?();
       }
-      t.dummy = &stack0xffffffe8;
-      _Var11 = (_union_86)TypeInfo__UnityEngine__BoxCollider;
+      radius.z = 0.0;
+      radius.y = (float)&uStack_3;
+      pLVar4 = (List_1_MVOverlapResult_ *)&UNK_?;
+      radius.x = (float)pMVar12;
       chunk = (BoxCollider *)func_?();
       radius_00.y = radius.y;
       radius_00.x = radius.x;
       radius_00.z = radius.z;
-      bVar11 = MVElipsoidOverlapCheck_ElipsoidOverlapCheckOnWo
+      bVar13 = MVElipsoidOverlapCheck_ElipsoidOverlapCheckOnWo
                         (radius_00,position,rotation,chunk,(MVWorldObjectClient *)in_stack_2,
-                         (MVOverlapResult *)in_stack_1,pMVar8);
-      pMStack_5 = wo;
-      if (bVar11 != 0) {
-        if ((wo == (MVWorldObjectClient *)0x0) ||
-           (pMStack_5 = (MVWorldObjectClient *)(wo->fields)._.id,
-           t.dummy == (BoxCollider__Class *)0x0)) break;
-        _Var11 = t;
+                         (MVOverlapResult *)in_stack_1,pMVar9);
+      if (bVar13 != 0) {
+        puVar5 = (undefined *)(pMVar12->fields)._.id;
+        uStack_3 = CONCAT44(uStack_3._4_4_,puVar5);
+        if (pLVar4 == (List_1_MVOverlapResult_ *)0x0) break;
+        uStack_3 = CONCAT44(&UNK_?,puVar5);
+        pLStack_10 = pLVar4;
+        puStack_6 = puVar5;
         func_?();
         if ((TypeInfo__MVElipsoidOverlapCheck->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
         if (TypeInfo__MVElipsoidOverlapCheck->static_fields->checkType == 0) {
-          return t.dummy;
+          return pLVar4;
         }
       }
     }
-    uVar10 = uVar10 + 1;
-    pMStack_5 = (MVWorldObjectClient *)&pMStack_5->monitor;
-    if (_Var11.__klassIndex <= (int)uVar10) {
-      return t.dummy;
+code_?:
+    uVar11 = uVar11 + 1;
+    puStack_6 = puStack_6 + 4;
+    if ((int)pLStack_10 <= (int)uVar11) {
+      return pLVar4;
     }
   }
   func_?();
 code_?:
-  uVar12 = func_?(&TypeInfo__System__IndexOutOfRangeException);
-  this = (IndexOutOfRangeException *)func_?(uVar12);
-  pMVar8 = (MethodInfo *)0x0;
+  uVar14 = func_?(&TypeInfo__System__IndexOutOfRangeException);
+  this_00 = (IndexOutOfRangeException *)func_?(uVar14);
+  pMVar9 = (MethodInfo *)0x0;
   message = (String *)func_?(&StringLiteral_Invalid_Vector3_index_);
   mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor_1
-            (this,message,pMVar8);
-  func_?(&MethodInfo__UnityEngine__Vector3__get_Item_int_);
+            (this_00,message,pMVar9);
+  uVar14 = func_?(&MethodInfo__UnityEngine__Vector3__get_Item_int_);
+  uStack_3 = CONCAT44(uVar14,this_00);
   func_?();
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  pLVar3 = (List_1_MVOverlapResult_ *)(*pcVar13)();
-  return pLVar3;
+  pcVar15 = (code *)swi(3);
+  pLVar4 = (List_1_MVOverlapResult_ *)(*pcVar15)();
+  return pLVar4;
 }
 
 
@@ -1492,7 +1530,7 @@ bool Assembly-CSharp.dll::MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_HandleC
 
 {
   if (cRam_? == '\0') {
-    func_?(0x7a84);
+    func_?(0xaba4);
     func_?(&TypeInfo__ICubeModelCollider);
     func_?(&TypeInfo__MVElipsoidOverlapCheck);
     cRam_? = '\x01';
@@ -1670,7 +1708,10 @@ bool Assembly-CSharp.dll::MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_IsCente
     func_?(&TypeInfo__MVElipsoidOverlapCheck);
     cRam_? = '\x01';
   }
-  iStack_1 = 0;
+  VStack_1.x = 0.0;
+  VStack_1.y = 0.0;
+  VStack_1.z = 0.0;
+  iStack_2 = 0;
   if ((TypeInfo__MVElipsoidOverlapCheck->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVElipsoidOverlapCheck);
   }
@@ -1680,18 +1721,15 @@ bool Assembly-CSharp.dll::MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_IsCente
   MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_GetCorners
             ((CubeBase *)cube,&TypeInfo__MVElipsoidOverlapCheck->static_fields->cachedCorners,
              (MethodInfo *)0x0);
-  uVar2 = 0;
-  iVar3 = 0;
+  uVar3 = 0;
+  iVar4 = 0;
   while( true ) {
     if ((TypeInfo__MVElipsoidOverlapCheck->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__MVElipsoidOverlapCheck);
     }
-    pVVar4 = TypeInfo__MVElipsoidOverlapCheck->static_fields->cachedCorners;
-    if (pVVar4 == (Vector3__Array *)0x0) goto code_?;
-    if ((int)pVVar4->max_length <= (int)uVar2) {
-      VStack_5.x = 0.0;
-      VStack_5.y = 0.0;
-      VStack_5.z = 0.0;
+    pVVar5 = TypeInfo__MVElipsoidOverlapCheck->static_fields->cachedCorners;
+    if (pVVar5 == (Vector3__Array *)0x0) goto code_?;
+    if ((int)pVVar5->max_length <= (int)uVar3) {
       if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__MV__WorldObject__CubeBase);
       }
@@ -1702,33 +1740,33 @@ bool Assembly-CSharp.dll::MVElipsoidOverlapCheck::MVElipsoidOverlapCheck_IsCente
       if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__MV__WorldObject__CubeBase);
       }
-      uVar2 = 0;
+      uVar3 = 0;
       pFVar6 = TypeInfo__MV__WorldObject__CubeBase->static_fields->faceFlagsArray;
       if (pFVar6 == (FaceFlags__Enum__Array *)0x0) goto code_?;
-      iVar3 = 0;
-      iVar7 = iStack_1;
+      iVar4 = 0;
+      iVar7 = iStack_2;
       goto code_?;
     }
     if ((TypeInfo__MVElipsoidOverlapCheck->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__MVElipsoidOverlapCheck);
     }
-    pVVar4 = TypeInfo__MVElipsoidOverlapCheck->static_fields->cachedCorners;
-    if (pVVar4 == (Vector3__Array *)0x0) goto code_?;
-    if (pVVar4->max_length <= uVar2) break;
-    *(float *)((int)&pVVar4->vector[0].x + iVar3) =
-         localPos.x + *(float *)((int)&pVVar4->vector[0].x + iVar3);
-    pVVar4 = TypeInfo__MVElipsoidOverlapCheck->static_fields->cachedCorners;
-    if (pVVar4 == (Vector3__Array *)0x0) goto code_?;
-    if (pVVar4->max_length <= uVar2) break;
-    *(float *)((int)&pVVar4->vector[0].y + iVar3) =
-         localPos.y + *(float *)((int)&pVVar4->vector[0].y + iVar3);
-    pVVar4 = TypeInfo__MVElipsoidOverlapCheck->static_fields->cachedCorners;
-    if (pVVar4 == (Vector3__Array *)0x0) goto code_?;
-    if (pVVar4->max_length <= uVar2) break;
-    uVar2 = uVar2 + 1;
-    *(float *)((int)&pVVar4->vector[0].z + iVar3) =
-         localPos.z + *(float *)((int)&pVVar4->vector[0].z + iVar3);
-    iVar3 = iVar3 + 0xc;
+    pVVar5 = TypeInfo__MVElipsoidOverlapCheck->static_fields->cachedCorners;
+    if (pVVar5 == (Vector3__Array *)0x0) goto code_?;
+    if (pVVar5->max_length <= uVar3) break;
+    *(float *)((int)&pVVar5->vector[0].x + iVar4) =
+         localPos.x + *(float *)((int)&pVVar5->vector[0].x + iVar4);
+    pVVar5 = TypeInfo__MVElipsoidOverlapCheck->static_fields->cachedCorners;
+    if (pVVar5 == (Vector3__Array *)0x0) goto code_?;
+    if (pVVar5->max_length <= uVar3) break;
+    *(float *)((int)&pVVar5->vector[0].y + iVar4) =
+         localPos.y + *(float *)((int)&pVVar5->vector[0].y + iVar4);
+    pVVar5 = TypeInfo__MVElipsoidOverlapCheck->static_fields->cachedCorners;
+    if (pVVar5 == (Vector3__Array *)0x0) goto code_?;
+    if (pVVar5->max_length <= uVar3) break;
+    uVar3 = uVar3 + 1;
+    *(float *)((int)&pVVar5->vector[0].z + iVar4) =
+         localPos.z + *(float *)((int)&pVVar5->vector[0].z + iVar4);
+    iVar4 = iVar4 + 0xc;
   }
 code_?:
   func_?();
@@ -1736,12 +1774,12 @@ code_?:
   bVar9 = (*pcVar8)();
   return bVar9;
 code_?:
-  iStack_1 = iVar7;
-  if ((int)pFVar6->max_length <= (int)uVar2) {
-    return (byte)iVar3 & 1;
+  iStack_2 = iVar7;
+  if ((int)pFVar6->max_length <= (int)uVar3) {
+    return (byte)iVar4 & 1;
   }
-  if (pFVar6->max_length <= uVar2) goto code_?;
-  cube = (Cube *)CONCAT31(cube._1_3_,*(undefined1 *)((int)pFVar6->vector + uVar2));
+  if (pFVar6->max_length <= uVar3) goto code_?;
+  cube = (Cube *)CONCAT31(cube._1_3_,*(undefined1 *)((int)pFVar6->vector + uVar3));
   if ((TypeInfo__MVElipsoidOverlapCheck->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVElipsoidOverlapCheck);
   }
@@ -1755,22 +1793,22 @@ code_?:
              &TypeInfo__MVElipsoidOverlapCheck->static_fields->cachedFace,face,(MethodInfo *)0x0);
   pMStack_10 = TypeInfo__MVElipsoidOverlapCheck->static_fields;
   fStack_11 = (pMStack_10->localElipsoidPosition).x + _UNK_?;
-  pVVar4 = pMStack_10->cachedFace;
+  pVVar5 = pMStack_10->cachedFace;
   fStack_12 = (pMStack_10->localElipsoidPosition).y;
   fStack_13 = (pMStack_10->localElipsoidPosition).z;
-  if (pVVar4 == (Vector3__Array *)0x0) goto code_?;
-  if ((pVVar4->max_length == 0) || (pVVar4->max_length < 4)) goto code_?;
+  if (pVVar5 == (Vector3__Array *)0x0) goto code_?;
+  if ((pVVar5->max_length == 0) || (pVVar5->max_length < 4)) goto code_?;
   p2_00.y = fStack_12;
   p2_00.x = fStack_11;
   p2_00.z = fStack_13;
   bVar9 = MathFunctions::MathFunctions_LineFacet
-                    (pMStack_10->localElipsoidPosition,p2_00,pVVar4->vector[0],pVVar4->vector[3],
-                     pVVar4->vector[2],&VStack_5,(MethodInfo *)0x0);
-  iVar3 = iStack_1 + 1;
+                    (pMStack_10->localElipsoidPosition,p2_00,pVVar5->vector[0],pVVar5->vector[3],
+                     pVVar5->vector[2],&VStack_1,(MethodInfo *)0x0);
+  iVar4 = iStack_2 + 1;
   if (bVar9 == 0) {
-    iVar3 = iStack_1;
+    iVar4 = iStack_2;
   }
-  iStack_1 = iVar3;
+  iStack_2 = iVar4;
   if ((TypeInfo__MVElipsoidOverlapCheck->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__MVElipsoidOverlapCheck);
   }
@@ -1785,7 +1823,7 @@ code_?:
      TypeInfo__MVElipsoidOverlapCheck->static_fields->cachedFace == (Vector3__Array *)0x0))
   goto code_?;
   func_?(&uStack_18,0);
-  uVar2 = uVar2 + 1;
+  uVar3 = uVar3 + 1;
   p2.y = fStack_12;
   p2.x = fStack_11;
   p1.z = (float)pMStack_10;
@@ -1801,12 +1839,12 @@ code_?:
   pc.z = fStack_21;
   pc.x = (float)(undefined4)uStack_18;
   pc.y = (float)uStack_18._4_4_;
-  bVar9 = MathFunctions::MathFunctions_LineFacet(p1,p2,pa,pb,pc,&VStack_5,(MethodInfo *)0x0);
-  iVar3 = iStack_1 + 1;
-  iVar7 = iStack_1 + 1;
+  bVar9 = MathFunctions::MathFunctions_LineFacet(p1,p2,pa,pb,pc,&VStack_1,(MethodInfo *)0x0);
+  iVar4 = iStack_2 + 1;
+  iVar7 = iStack_2 + 1;
   if (bVar9 == 0) {
-    iVar3 = iStack_1;
-    iVar7 = iStack_1;
+    iVar4 = iStack_2;
+    iVar7 = iStack_2;
   }
   goto code_?;
 code_?:

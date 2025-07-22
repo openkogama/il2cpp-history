@@ -298,96 +298,98 @@ void Assembly-CSharp.dll::Avatar::Avatar_UpdateModifiers
   DStack_7._current.key = (Object *)0x0;
   DStack_7._current.value = (Object *)0x0;
   DStack_7._getEnumeratorRetType = 0;
-  pAVar8 = (AvatarModifierPackage_AvatarModifier__Array *)
-           func_?(TypeInfo__System__Collections__Generic__List<AvatarModifierPackageType>);
-  pAStack_9 = pAVar8;
+  this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+            func_?(TypeInfo__System__Collections__Generic__List<AvatarModifierPackageType>)
+  ;
+  pLStack_8 = this_02;
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pAVar8,
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_02,
              MethodInfo__System__Collections__Generic__List<AvatarModifierPackageType>__List__);
   this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
              *)(this->fields).modifiers;
-  pAStack_10 = pAVar8;
+  pLStack_9 = this_02;
   if ((this_00 !=
        (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
         *)0x0) &&
-     (this_02 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+     (this_03 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
                 StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
                 Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Keys
                           (this_00,
                            MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifier>__get_Keys__
                           ),
-     this_02 !=
+     this_03 !=
      (Dictionary_2_TKey_TValue_KeyCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
       *)0x0)) {
-    pDVar11 = mscorlib.dll::System::Collections::Generic::
-              Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
-              StyleSheetCache+SheetHandleKey,System::Object]::
-              Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
-                        ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                          *)&stack0xffffff38,
-                         (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                          *)this_02,
-                         MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___KeyCollection<AvatarModifierPackageType,_AvatarModifier>__GetEnumerator__
-                        );
-    uStack_12 = 0;
-    auStack_6._0_4_ = pDVar11->_dictionary;
-    auStack_6._4_4_ = pDVar11->_index;
-    auStack_6._8_4_ = pDVar11->_version;
-    auStack_6._12_4_ = pDVar11->_currentValue;
+    pDVar10 = mscorlib.dll::System::Collections::Generic::
+             Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
+             StyleSheetCache+SheetHandleKey,System::Object]::
+             Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
+                       ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                         *)&stack0xffffff38,
+                        (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                         *)this_03,
+                        MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___KeyCollection<AvatarModifierPackageType,_AvatarModifier>__GetEnumerator__
+                       );
+    uStack_11 = 0;
+    auStack_6._0_4_ = pDVar10->_dictionary;
+    auStack_6._4_4_ = pDVar10->_index;
+    auStack_6._8_4_ = pDVar10->_version;
+    auStack_6._12_4_ = pDVar10->_currentValue;
     uStack_1 = 1;
-    pBStack_13 = (Byte__Array *)auStack_6;
-    while (bVar14 = mscorlib.dll::System::Collections::Generic::
+    pBStack_12 = (Byte__Array *)auStack_6;
+    while (bVar13 = mscorlib.dll::System::Collections::Generic::
                    Dictionary`2[TKey,TValue]+KeyCollection[TKey,TValue]+Enumerator[System::
                    UInt32,System::Object]::
                    Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
                              ((Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
                                *)auStack_6,
                               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<AvatarModifierPackageType,_AvatarModifier>__MoveNext__
-                             ), bVar14 != 0) {
-      EStack_15.klass = (Enum__Class *)TypeInfo__AvatarModifierPackageType;
-      pDStack_16 = (Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
+                             ), bVar13 != 0) {
+      EStack_14.klass = (Enum__Class *)TypeInfo__AvatarModifierPackageType;
+      pDStack_15 = (Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
                    auStack_6._12_4_;
-      EStack_15.monitor = (MonitorData *)0xffffffff;
-      in_stack_17 =
+      EStack_14.monitor = (MonitorData *)0xffffffff;
+      in_stack_16 =
            (AvatarModifierPackage_AvatarModifier__Array *)
-           mscorlib.dll::System::Enum::Enum_ToString(&EStack_15,(MethodInfo *)0x0);
-      pSStack_18 = mscorlib.dll::System::String::String_Concat_3
-                             (::StringLiteral__,(String *)in_stack_17,(MethodInfo *)0x0);
+           mscorlib.dll::System::Enum::Enum_ToString(&EStack_14,(MethodInfo *)0x0);
+      pSStack_17 = mscorlib.dll::System::String::String_Concat_3
+                             (::StringLiteral__,(String *)in_stack_16,(MethodInfo *)0x0);
       if (newModifiers == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-      in_stack_19 =
+      in_stack_18 =
            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
       ;
-      bVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+      bVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
               UIElements::TextureId]::
               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
                         ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                         newModifiers,(Object *)pSStack_18,
+                         newModifiers,(Object *)pSStack_17,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                         );
-      pIVar20 = TypeRef__AvatarModifierPackageType;
-      if (bVar14 == 0) {
+      pIVar19 = TypeRef__AvatarModifierPackageType;
+      if (bVar13 == 0) {
         if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        pBStack_21 = (Byte__Array *)
+        pBStack_20 = (Byte__Array *)
                      mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                               ((RuntimeTypeHandle)pIVar20,(MethodInfo *)0x0);
-        if (pSStack_18 == (String *)0x0) goto code_?;
-        value = mscorlib.dll::System::String::String_TrimStart(pSStack_18,0x5f,(MethodInfo *)0x0);
+                               ((RuntimeTypeHandle)pIVar19,(MethodInfo *)0x0);
+        if (pSStack_17 == (String *)0x0) goto code_?;
+        value = mscorlib.dll::System::String::String_TrimStart(pSStack_17,0x5f,(MethodInfo *)0x0);
         if ((TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        pOVar22 = mscorlib.dll::System::Enum::Enum_Parse((Type *)pBStack_21,value,(MethodInfo *)0x0)
+        pOVar21 = mscorlib.dll::System::Enum::Enum_Parse((Type *)pBStack_20,value,(MethodInfo *)0x0)
         ;
-        if (pOVar22 == (Object *)0x0) goto code_?;
-        if ((pOVar22->klass->_0).element_class !=
+        if (pOVar21 == (Object *)0x0) goto code_?;
+        if ((pOVar21->klass->_0).element_class !=
             (TypeInfo__AvatarModifierPackageType->_0).element_class) goto code_?;
-        puVar23 = (undefined4 *)func_?();
-        pAVar8 = pAStack_10;
-        if (pAStack_10 == (AvatarModifierPackage_AvatarModifier__Array *)0x0) goto code_?;
-        in_stack_17 = (AvatarModifierPackage_AvatarModifier__Array *)*puVar23;
+        puVar22 = (undefined4 *)func_?();
+        this_02 = pLStack_9;
+        if (pLStack_9 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
+        goto code_?;
+        in_stack_16 = (AvatarModifierPackage_AvatarModifier__Array *)*puVar22;
         func_?();
       }
     }
@@ -396,38 +398,36 @@ void Assembly-CSharp.dll::Avatar::Avatar_UpdateModifiers
               ((Object *)auStack_6,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<AvatarModifierPackageType,_AvatarModifier>__Dispose__
-               ,(MethodInfo *)in_stack_17);
+               ,(MethodInfo *)in_stack_16);
     uStack_1 = 0xffffffff;
-    pSStack_18 = (String *)0x0;
-    if (pAVar8 != (AvatarModifierPackage_AvatarModifier__Array *)0x0) {
-      for (; (int)pSStack_18 < (int)pAStack_9->max_length;
-          pSStack_18 = (String *)((int)&pSStack_18->klass + 1)) {
+    pSStack_17 = (String *)0x0;
+    if (this_02 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+      for (; (int)pSStack_17 < (pLStack_8->fields)._size;
+          pSStack_17 = (String *)((int)&pSStack_17->klass + 1)) {
         key = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
               RegexCharClass+SingleRange]::
               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                        ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                         pAStack_10,(int32_t)pSStack_18,
+                        (pLStack_9,(int32_t)pSStack_17,
                          MethodInfo__System__Collections__Generic__List<AvatarModifierPackageType>__get_Item_int_
                         );
-        pDVar24 = (this->fields).modifiers;
-        if ((pDVar24 == (Dictionary_2_AvatarModifierPackageType_AvatarModifier_ *)0x0) ||
-           (pOVar22 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                      Int32Enum,System::Object]::
-                      Dictionary_2_System_Int32Enum_System_Object__get_Item
-                                ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar24,
-                                 (Int32Enum__Enum)key,
-                                 MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifier>__get_Item_AvatarModifierPackageType_
-                                ), pOVar22 == (Object *)0x0)) goto code_?;
-        pOVar25 = pOVar22->klass;
-        *(undefined1 *)&pOVar22[2].monitor = 0;
-        in_stack_19 = (MethodInfo *)&UNK_?;
-        (*(code *)pOVar25[1]._0.castClass)();
-        pDVar24 = (this->fields).modifiers;
-        if (pDVar24 == (Dictionary_2_AvatarModifierPackageType_AvatarModifier_ *)0x0)
+        pDVar23 = (this->fields).modifiers;
+        if (pDVar23 == (Dictionary_2_AvatarModifierPackageType_AvatarModifier_ *)0x0)
         goto code_?;
+        pAStack_24 = (AvatarModifierPackage_AvatarModifier__Array *)
+                     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                     Int32Enum,System::Object]::
+                     Dictionary_2_System_Int32Enum_System_Object__get_Item
+                               ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar23,
+                                (Int32Enum__Enum)key,
+                                MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifier>__get_Item_AvatarModifierPackageType_
+                               );
+        pDVar23 = (this->fields).modifiers;
+        if (pDVar23 == (Dictionary_2_AvatarModifierPackageType_AvatarModifier_ *)0x0)
+        goto code_?;
+        in_stack_18 = (MethodInfo *)&UNK_?;
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
         Dictionary_2_System_Int32Enum_System_Object__Remove
-                  ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar24,(Int32Enum__Enum)key,
+                  ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar23,(Int32Enum__Enum)key,
                    MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifier>__Remove_AvatarModifierPackageType_
                   );
         this_01 = (Dictionary_2_System_Int32Enum_System_Single_ *)
@@ -441,21 +441,24 @@ void Assembly-CSharp.dll::Avatar::Avatar_UpdateModifiers
         if ((TypeInfo__AvatarModifierPackageFactory->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        pAVar26 = AvatarModifierPackageFactory::AvatarModifierPackageFactory_GetPackage
+        pAVar25 = AvatarModifierPackageFactory::AvatarModifierPackageFactory_GetPackage
                             ((AvatarModifierPackage *)&stack0xfffffeec,
                              (AvatarModifierPackageType__Enum)key,(MethodInfo *)0x0);
-        iVar27 = 0;
-        pAVar8 = pAVar26->avatarModifiers;
+        iVar26 = 0;
+        pAVar27 = pAVar25->avatarModifiers;
         while( true ) {
-          if (pAVar8 == (AvatarModifierPackage_AvatarModifier__Array *)0x0) goto code_?;
-          if ((int)pAVar8->max_length <= iVar27) break;
-          pBStack_21 = (this->fields).modifierEffectCount;
+          if (pAVar27 == (AvatarModifierPackage_AvatarModifier__Array *)0x0) goto code_?;
+          if ((int)pAVar27->max_length <= iVar26) break;
+          pBStack_20 = (this->fields).modifierEffectCount;
           func_?();
-          if (pBStack_21 == (Byte__Array *)0x0) goto code_?;
+          if (pBStack_20 == (Byte__Array *)0x0) goto code_?;
           pcVar28 = (char *)func_?();
           *pcVar28 = *pcVar28 + -1;
-          iVar27 = iVar27 + 1;
+          iVar26 = iVar26 + 1;
         }
+        if (pAStack_24 == (AvatarModifierPackage_AvatarModifier__Array *)0x0) goto code_?;
+        AvatarModifier::AvatarModifier_Deactivate
+                  ((AvatarModifier *)pAStack_24,this,(MethodInfo *)0x0);
       }
       if (newModifiers != (Dictionary_2_System_Object_System_Object_ *)0x0) {
         pDVar29 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
@@ -465,90 +468,99 @@ void Assembly-CSharp.dll::Avatar::Avatar_UpdateModifiers
                              (Dictionary_2_System_UInt32_System_Object_ *)newModifiers,
                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__GetEnumerator__
                             );
-        EStack_15.monitor = (MonitorData *)0x0;
+        EStack_14.monitor = (MonitorData *)0x0;
         DStack_7._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar29->_dictionary;
         DStack_7._version = pDVar29->_version;
         DStack_7._index = pDVar29->_index;
         DStack_7._current.key = (Object *)(pDVar29->_current).key;
         DStack_7._16_8_ = *(undefined8 *)&(pDVar29->_current).value;
         uStack_1 = 4;
-        pDStack_16 = &DStack_7;
+        pDStack_15 = &DStack_7;
         do {
-          bVar14 = mscorlib.dll::System::Collections::Generic::
+          bVar13 = mscorlib.dll::System::Collections::Generic::
                   Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Object]::
                   Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
                             (&DStack_7,
                              MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__MoveNext__
                             );
-          pIVar20 = TypeRef__AvatarModifierPackageType;
-          if (bVar14 == 0) {
+          pIVar19 = TypeRef__AvatarModifierPackageType;
+          if (bVar13 == 0) {
             uStack_1 = 0xffffffff;
             mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                       ((Object *)&DStack_7,
                        (ExceptionArgument__Enum)
                        MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__Dispose__
-                       ,in_stack_19);
+                       ,in_stack_18);
             *unaff_FS_OFFSET = uStack_3;
             return;
           }
-          pSStack_18 = (String *)DStack_7._current.value;
-          if ((AvatarModifierPackage_AvatarModifier__Array *)DStack_7._current.key ==
-              (AvatarModifierPackage_AvatarModifier__Array *)0x0) {
-            pAStack_10 = (AvatarModifierPackage_AvatarModifier__Array *)DStack_7._current.key;
+          pSStack_17 = (String *)DStack_7._current.value;
+          if ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              DStack_7._current.key ==
+              (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+            pLStack_9 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                         DStack_7._current.key;
           }
           else {
-            pAStack_10 = (AvatarModifierPackage_AvatarModifier__Array *)0x0;
-            if ((String__Class *)(DStack_7._current.key)->klass == TypeInfo__System__String) {
-              pAStack_10 = (AvatarModifierPackage_AvatarModifier__Array *)DStack_7._current.key;
+            pLStack_9 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0;
+            if ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange___Class *)
+                (DStack_7._current.key)->klass ==
+                (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange___Class *)
+                TypeInfo__System__String) {
+              pLStack_9 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                           DStack_7._current.key;
             }
-            if (pAStack_10 == (AvatarModifierPackage_AvatarModifier__Array *)0x0)
+            if (pLStack_9 ==
+                (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
             goto code_?;
           }
           if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          pAStack_9 = (AvatarModifierPackage_AvatarModifier__Array *)
+          pAStack_24 = (AvatarModifierPackage_AvatarModifier__Array *)
                        mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                                 ((RuntimeTypeHandle)pIVar20,(MethodInfo *)0x0);
-          if (pAStack_10 == (AvatarModifierPackage_AvatarModifier__Array *)0x0) break;
-          in_stack_19 = (MethodInfo *)0x5f;
+                                 ((RuntimeTypeHandle)pIVar19,(MethodInfo *)0x0);
+          if (pLStack_9 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0
+             ) break;
+          in_stack_18 = (MethodInfo *)0x5f;
           method_00 = (MethodInfo *)
                       mscorlib.dll::System::String::String_TrimStart
-                                ((String *)pAStack_10,0x5f,(MethodInfo *)0x0);
+                                ((String *)pLStack_9,0x5f,(MethodInfo *)0x0);
           if ((TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          pOVar22 = mscorlib.dll::System::Enum::Enum_Parse
-                              ((Type *)pAStack_9,(String *)method_00,(MethodInfo *)0x0);
-          if (pOVar22 == (Object *)0x0) break;
-          if ((pOVar22->klass->_0).element_class !=
+          pOVar21 = mscorlib.dll::System::Enum::Enum_Parse
+                              ((Type *)pAStack_24,(String *)method_00,(MethodInfo *)0x0);
+          if (pOVar21 == (Object *)0x0) break;
+          if ((pOVar21->klass->_0).element_class !=
               (TypeInfo__AvatarModifierPackageType->_0).element_class) goto code_?;
           pIVar30 = (Int32Enum__Enum *)func_?();
-          pAStack_10 = (AvatarModifierPackage_AvatarModifier__Array *)*pIVar30;
-          pDVar24 = (this->fields).modifiers;
-          if (pDVar24 == (Dictionary_2_AvatarModifierPackageType_AvatarModifier_ *)0x0) break;
-          bVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System
+          pLStack_9 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)*pIVar30
+          ;
+          pDVar23 = (this->fields).modifiers;
+          if (pDVar23 == (Dictionary_2_AvatarModifierPackageType_AvatarModifier_ *)0x0) break;
+          bVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System
                   ::Single]::Dictionary_2_System_Int32Enum_System_Single__ContainsKey
-                            ((Dictionary_2_System_Int32Enum_System_Single_ *)pDVar24,
-                             (Int32Enum__Enum)pAStack_10,
+                            ((Dictionary_2_System_Int32Enum_System_Single_ *)pDVar23,
+                             (Int32Enum__Enum)pLStack_9,
                              MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifier>__ContainsKey_AvatarModifierPackageType_
                             );
-          if (bVar14 == 0) {
-            pBStack_21 = (Byte__Array *)
+          if (bVar13 == 0) {
+            pBStack_20 = (Byte__Array *)
                          AvatarModifier::AvatarModifier_CreateFromType
-                                   ((AvatarModifierPackageType__Enum)pAStack_10,this,
+                                   ((AvatarModifierPackageType__Enum)pLStack_9,this,
                                     (MethodInfo *)0x0);
             if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
-            bVar14 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                              ((Object_1 *)pBStack_21,(Object_1 *)0x0,(MethodInfo *)0x0);
-            if (bVar14 != 0) {
-              if (pBStack_21 == (Byte__Array *)0x0) break;
+            bVar13 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                              ((Object_1 *)pBStack_20,(Object_1 *)0x0,(MethodInfo *)0x0);
+            if (bVar13 != 0) {
+              if (pBStack_20 == (Byte__Array *)0x0) break;
               cVar31 = func_?();
               if (cVar31 == '\0') {
                 obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                ((Component *)pBStack_21,(MethodInfo *)0x0);
+                                ((Component *)pBStack_20,(MethodInfo *)0x0);
                 if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
                   func_?();
                 }
@@ -556,61 +568,61 @@ void Assembly-CSharp.dll::Avatar::Avatar_UpdateModifiers
                           ((Object_1 *)obj,(MethodInfo *)0x0);
               }
               else {
-                pAStack_9 = (AvatarModifierPackage_AvatarModifier__Array *)
+                pAStack_24 = (AvatarModifierPackage_AvatarModifier__Array *)
                              UnityEngine.CoreModule.dll::UnityEngine::Component::
-                             Component_get_transform((Component *)pBStack_21,(MethodInfo *)0x0);
+                             Component_get_transform((Component *)pBStack_20,(MethodInfo *)0x0);
                 value_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                            Component_get_transform((Component *)this,(MethodInfo *)0x0);
-                if (pAStack_9 == (AvatarModifierPackage_AvatarModifier__Array *)0x0) break;
+                if (pAStack_24 == (AvatarModifierPackage_AvatarModifier__Array *)0x0) break;
                 UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
-                          ((Transform *)pAStack_9,value_00,(MethodInfo *)0x0);
-                pAStack_9 = (AvatarModifierPackage_AvatarModifier__Array *)
+                          ((Transform *)pAStack_24,value_00,(MethodInfo *)0x0);
+                pAStack_24 = (AvatarModifierPackage_AvatarModifier__Array *)
                              UnityEngine.CoreModule.dll::UnityEngine::Component::
-                             Component_get_transform((Component *)pBStack_21,(MethodInfo *)0x0);
+                             Component_get_transform((Component *)pBStack_20,(MethodInfo *)0x0);
                 pVVar32 = MVWorldObject.dll::MV::WorldObject::MVWorldObject::
                           MVWorldObject_get_WorldPosition
                                     ((Vector3 *)&stack0xffffff3c,(MVWorldObject *)0x0,method_00);
-                if (pAStack_9 == (AvatarModifierPackage_AvatarModifier__Array *)0x0) break;
-                in_stack_19 = (MethodInfo *)&UNK_?;
+                if (pAStack_24 == (AvatarModifierPackage_AvatarModifier__Array *)0x0) break;
+                in_stack_18 = (MethodInfo *)&UNK_?;
                 UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                          ((Transform *)pAStack_9,*pVVar32,(MethodInfo *)0x0);
-                pDVar24 = (this->fields).modifiers;
-                if (pDVar24 == (Dictionary_2_AvatarModifierPackageType_AvatarModifier_ *)0x0) break;
+                          ((Transform *)pAStack_24,*pVVar32,(MethodInfo *)0x0);
+                pDVar23 = (this->fields).modifiers;
+                if (pDVar23 == (Dictionary_2_AvatarModifierPackageType_AvatarModifier_ *)0x0) break;
                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
                 Object]::Dictionary_2_System_Int32Enum_System_Object__Add
-                          ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar24,
-                           (Int32Enum__Enum)pAStack_10,(Object *)pBStack_21,
+                          ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar23,
+                           (Int32Enum__Enum)pLStack_9,(Object *)pBStack_20,
                            MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifier>__Add_AvatarModifierPackageType__AvatarModifier_
                           );
-                pBStack_13 = (Byte__Array *)(this->fields).currentModifierByteState;
-                if ((pBStack_13 == (Byte__Array *)0x0) ||
-                   (pAStack_9 = (AvatarModifierPackage_AvatarModifier__Array *)
+                pBStack_12 = (Byte__Array *)(this->fields).currentModifierByteState;
+                if ((pBStack_12 == (Byte__Array *)0x0) ||
+                   (pAStack_24 = (AvatarModifierPackage_AvatarModifier__Array *)
                                  MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_unsigned_char>__Add_AvatarModifierPackageType__unsigned_char_
-                   , pSStack_18 == (String *)0x0)) break;
-                if ((pSStack_18->klass->_0).element_class !=
+                   , pSStack_17 == (String *)0x0)) break;
+                if ((pSStack_17->klass->_0).element_class !=
                     (TypeInfo__System__Byte->_0).element_class) goto code_?;
                 puVar33 = (uint8_t *)func_?();
                 uStack_34 = *puVar33;
                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
                 Byte]::Dictionary_2_System_Int32Enum_System_Byte__Add
-                          ((Dictionary_2_System_Int32Enum_System_Byte_ *)pBStack_13,
-                           (Int32Enum__Enum)pAStack_10,*puVar33,(MethodInfo *)pAStack_9);
+                          ((Dictionary_2_System_Int32Enum_System_Byte_ *)pBStack_12,
+                           (Int32Enum__Enum)pLStack_9,*puVar33,(MethodInfo *)pAStack_24);
                 AvatarModifier::AvatarModifier_Activate
-                          ((AvatarModifier *)pBStack_21,this,(MethodInfo *)0x0);
+                          ((AvatarModifier *)pBStack_20,this,(MethodInfo *)0x0);
                 packageType = func_?();
                 if ((TypeInfo__AvatarModifierPackageFactory->_1).cctor_finished_or_no_cctor == 0) {
                   func_?();
                 }
-                pAVar26 = AvatarModifierPackageFactory::AvatarModifierPackageFactory_GetPackage
+                pAVar25 = AvatarModifierPackageFactory::AvatarModifierPackageFactory_GetPackage
                                     ((AvatarModifierPackage *)&stack0xfffffeec,packageType,
                                      (MethodInfo *)0x0);
-                pAStack_9 = pAVar26->avatarModifiers;
-                iVar27 = 0;
-                if (pAStack_9 == (AvatarModifierPackage_AvatarModifier__Array *)0x0) break;
-                for (; iVar27 < (int)pAStack_9->max_length; iVar27 = iVar27 + 1) {
-                  pBStack_13 = (this->fields).modifierEffectCount;
+                pAStack_24 = pAVar25->avatarModifiers;
+                iVar26 = 0;
+                if (pAStack_24 == (AvatarModifierPackage_AvatarModifier__Array *)0x0) break;
+                for (; iVar26 < (int)pAStack_24->max_length; iVar26 = iVar26 + 1) {
+                  pBStack_12 = (this->fields).modifierEffectCount;
                   func_?();
-                  if (pBStack_13 == (Byte__Array *)0x0) goto code_?;
+                  if (pBStack_12 == (Byte__Array *)0x0) goto code_?;
                   pcVar28 = (char *)func_?();
                   *pcVar28 = *pcVar28 + '\x01';
                 }
@@ -624,36 +636,37 @@ void Assembly-CSharp.dll::Avatar::Avatar_UpdateModifiers
                             Int32Enum,System::Byte]::
                             Dictionary_2_System_Int32Enum_System_Byte__get_Item
                                       ((Dictionary_2_System_Int32Enum_System_Byte_ *)pDVar35,
-                                       (Int32Enum__Enum)pAStack_10,
+                                       (Int32Enum__Enum)pLStack_9,
                                        MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_unsigned_char>__get_Item_AvatarModifierPackageType_
-                                      ), pSStack_18 == (String *)0x0)) break;
-            if ((pSStack_18->klass->_0).element_class != (TypeInfo__System__Byte->_0).element_class)
+                                      ), pSStack_17 == (String *)0x0)) break;
+            if ((pSStack_17->klass->_0).element_class != (TypeInfo__System__Byte->_0).element_class)
             goto code_?;
             puVar33 = (uint8_t *)func_?();
             if (*puVar33 != uStack_36) {
-              pDVar24 = (this->fields).modifiers;
-              if ((pDVar24 == (Dictionary_2_AvatarModifierPackageType_AvatarModifier_ *)0x0) ||
-                 (pOVar22 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+              pDVar23 = (this->fields).modifiers;
+              if ((pDVar23 == (Dictionary_2_AvatarModifierPackageType_AvatarModifier_ *)0x0) ||
+                 (pOVar21 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                             Int32Enum,System::Object]::
                             Dictionary_2_System_Int32Enum_System_Object__get_Item
-                                      ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar24,
-                                       (Int32Enum__Enum)pAStack_10,
+                                      ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar23,
+                                       (Int32Enum__Enum)pLStack_9,
                                        MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_AvatarModifier>__get_Item_AvatarModifierPackageType_
-                                      ), pOVar22 == (Object *)0x0)) break;
+                                      ), pOVar21 == (Object *)0x0)) break;
               func_?();
               pDVar35 = (this->fields).currentModifierByteState;
               if (pDVar35 == (Dictionary_2_AvatarModifierPackageType_System_Byte_ *)0x0) break;
-              pAStack_9 = (AvatarModifierPackage_AvatarModifier__Array *)
+              pAStack_24 = (AvatarModifierPackage_AvatarModifier__Array *)
                            MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_unsigned_char>__set_Item_AvatarModifierPackageType__unsigned_char_
               ;
-              if ((pSStack_18->klass->_0).element_class !=
+              if ((pSStack_17->klass->_0).element_class !=
                   (TypeInfo__System__Byte->_0).element_class) goto code_?;
               puVar33 = (uint8_t *)func_?();
-              uStack_37 = *puVar33;
+              pLStack_8 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                           CONCAT31(pLStack_8._1_3_,*puVar33);
               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
               Byte]::Dictionary_2_System_Int32Enum_System_Byte__set_Item
                         ((Dictionary_2_System_Int32Enum_System_Byte_ *)pDVar35,
-                         (Int32Enum__Enum)pAStack_10,*puVar33,(MethodInfo *)pAStack_9);
+                         (Int32Enum__Enum)pLStack_9,*puVar33,(MethodInfo *)pAStack_24);
             }
           }
         } while( true );
@@ -669,8 +682,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar38 = (code *)swi(3);
-  (*pcVar38)();
+  pcVar37 = (code *)swi(3);
+  (*pcVar37)();
   return;
 }
 

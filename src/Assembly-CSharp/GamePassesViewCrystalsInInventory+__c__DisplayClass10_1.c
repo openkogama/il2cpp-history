@@ -17,16 +17,34 @@ void Assembly-CSharp.dll::GamePassesViewCrystalsInInventory+<>c__DisplayClass10_
     if (pSVar1 != (ShopItem *)0x0) {
       s = mscorlib.dll::System::Int32::Int32_ToString
                     ((Int32 *)&(pSVar1->fields).priceGold,(MethodInfo *)0x0);
-      mscorlib.dll::System::Int32::Int32_Parse(s,(MethodInfo *)0x0);
+      iVar2 = mscorlib.dll::System::Int32::Int32_Parse(s,(MethodInfo *)0x0);
       if (x != (IModalPopupCreator *)0x0) {
-        func_?(0,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,x);
+        pIVar3 = x->klass;
+        uVar4 = 0;
+        uVar5._0_1_ = (pIVar3->_1).rank;
+        uVar5._1_1_ = (pIVar3->_1).minimumAlignment;
+        if (uVar5 != 0) {
+          do {
+            if (pIVar3->interfaceOffsets[uVar4].interfaceType ==
+                (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IModalPopupCreator) {
+              ppMVar6 = &(&(x->klass->vtable).Create)[x->klass->interfaceOffsets[uVar4].offset].
+                         method;
+              goto code_?;
+            }
+            uVar4 = uVar4 + 1;
+          } while (uVar4 < uVar5);
+        }
+        ppMVar6 = (MethodInfo **)
+                  func_?(x,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,0);
+code_?:
+        (*(code *)*ppMVar6)(x,ppMVar6[1],iVar2);
         return;
       }
     }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

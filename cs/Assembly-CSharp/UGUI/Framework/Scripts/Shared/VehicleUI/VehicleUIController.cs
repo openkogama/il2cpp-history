@@ -6,6 +6,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.UI;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
@@ -15,22 +16,19 @@ namespace UGUI.Framework.Scripts.Shared.VehicleUI
 	{
 		// Fields
 		[SerializeField]
-		private CanvasGroup vehicleUIGroup;
-		[SerializeField]
 		private RectTransform rectTransform;
+		[SerializeField]
+		private LayoutElement layoutElement;
 		[SerializeField]
 		private SpeedOMeter speedOMeter;
 		[SerializeField]
 		private VehicleEnergyMeterText vehicleEnergyMeter;
-		private static readonly Vector2 SizeOnlySpeed;
 		private bool insideVehicle;
 		private MVRigidBody rigidBody;
 		private bool hasRigidBody;
-		private Vector2 originalSize;
 	
 		// Constructors
 		public VehicleUIController();
-		static VehicleUIController();
 	
 		// Methods
 		private void Awake();

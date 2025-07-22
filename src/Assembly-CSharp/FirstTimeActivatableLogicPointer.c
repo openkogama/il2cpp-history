@@ -163,7 +163,7 @@ void Assembly-CSharp.dll::FirstTimeActivatableLogicPointer::FirstTimeActivatable
                       DesktopEditModeController_MethodInfo__UnityEngine__Component__GetComponentInParent<DesktopEditModeController>__
                      );
   if (pOVar1 != (Object *)0x0) {
-    (this->fields).editorStateMachine = (EditorStateMachine *)pOVar1[0x12].monitor;
+    (this->fields).editorStateMachine = (EditorStateMachine *)pOVar1[0x13].monitor;
     func_?();
     return;
   }
@@ -523,8 +523,8 @@ void Assembly-CSharp.dll::FirstTimeActivatableLogicPointer::FirstTimeActivatable
   (this->fields).bubbleLifetimeWhileShown = 3.4028235e+38;
   (this->fields).bubbleWorldSpaceOffset.z = 0.0;
   (this->fields).skipAllowed = 1;
-  FirstTimeActivatableMessage::FirstTimeActivatableMessage__ctor
-            ((FirstTimeActivatableMessage *)this,(MethodInfo *)0x0);
+  FirstTimeActivatableSetEventOnShow::FirstTimeActivatableSetEventOnShow__ctor
+            ((FirstTimeActivatableSetEventOnShow *)this,(MethodInfo *)0x0);
   return;
 }
 

@@ -1,7 +1,7 @@
 
-/* Void <DeleteWoid>b__64_1(IUIStack, BaseEventData) */
+/* Void <DeleteWoid>b__65_1(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::TouchEditModeController+<>c::TouchEditModeController_c__DeleteWoid_b__64_1
+void Assembly-CSharp.dll::TouchEditModeController+<>c::TouchEditModeController_c__DeleteWoid_b__65_1
                (TouchEditModeController_c *this,IUIStack *handler,BaseEventData *data,
                MethodInfo *method)
 

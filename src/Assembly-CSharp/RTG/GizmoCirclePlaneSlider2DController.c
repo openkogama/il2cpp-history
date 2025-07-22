@@ -153,51 +153,61 @@ void Assembly-CSharp.dll::RTG::GizmoCirclePlaneSlider2DController::
 
 {
   pGVar1 = (this->fields)._._data;
-  if (((pGVar1 == (GizmoPlaneSlider2DControllerData *)0x0) ||
-      (this_00 = (pGVar1->fields).Slider, this_00 == (GizmoPlaneSlider2D *)0x0)) ||
-     (pGVar2 = (this_00->fields)._transform, pGVar2 == (GizmoTransform *)0x0)) {
-code_?:
-    func_?();
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
-    return;
-  }
-  this_01 = (pGVar1->fields).Circle;
-  fVar4 = (pGVar2->fields)._position2D.y;
-  if (this_01 == (CircleShape2D *)0x0) goto code_?;
-  (this_01->fields)._center.x = (pGVar2->fields)._position2D.x;
-  (this_01->fields)._center.y = fVar4;
-  pGVar2 = (this_00->fields)._transform;
-  if (pGVar2 == (GizmoTransform *)0x0) goto code_?;
-  (this_01->fields)._rotationDegrees = (pGVar2->fields)._rotation2DDegrees;
-  fVar4 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_GetRealCircleRadius(this_00,(MethodInfo *)0x0);
-  RightAngTriangle2D::RightAngTriangle2D_set_XLength
-            ((RightAngTriangle2D *)this_01,fVar4,(MethodInfo *)0x0);
-  pGVar1 = (this->fields)._._data;
-  if ((pGVar1 == (GizmoPlaneSlider2DControllerData *)0x0) ||
-     ((pGVar1->fields).CircleBorder == (GizmoCircle2DBorder *)0x0)) goto code_?;
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  iVar5 = *(int *)(in_stack_6 + 0x24);
-  if (*(GizmoPlaneSlider2D **)(in_stack_6 + 8) != (GizmoPlaneSlider2D *)0x0) {
-    pGVar7 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_get_LookAndFeel
-                       (*(GizmoPlaneSlider2D **)(in_stack_6 + 8),(MethodInfo *)0x0);
-    if ((pGVar7 != (GizmoPlaneSlider2DLookAndFeel *)0x0) && (iVar5 != 0)) {
-      uVar8 = (pGVar7->fields)._circleBorderType;
-      if (*(uint *)(iVar5 + 0xc) <= uVar8) goto code_?;
-      if (*(int *)(iVar5 + 0x10 + uVar8 * 4) != 0) {
-        func_?();
-        return;
+  if (((pGVar1 != (GizmoPlaneSlider2DControllerData *)0x0) &&
+      (this_00 = (pGVar1->fields).Slider, this_00 != (GizmoPlaneSlider2D *)0x0)) &&
+     (pGVar2 = (this_00->fields)._transform, pGVar2 != (GizmoTransform *)0x0)) {
+    this_01 = (pGVar1->fields).Circle;
+    fVar3 = (pGVar2->fields)._position2D.y;
+    if (this_01 != (CircleShape2D *)0x0) {
+      (this_01->fields)._center.x = (pGVar2->fields)._position2D.x;
+      (this_01->fields)._center.y = fVar3;
+      pGVar2 = (this_00->fields)._transform;
+      if (pGVar2 != (GizmoTransform *)0x0) {
+        (this_01->fields)._rotationDegrees = (pGVar2->fields)._rotation2DDegrees;
+        fVar3 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_GetRealCircleRadius
+                          (this_00,(MethodInfo *)0x0);
+        RightAngTriangle2D::RightAngTriangle2D_set_XLength
+                  ((RightAngTriangle2D *)this_01,fVar3,(MethodInfo *)0x0);
+        pGVar1 = (this->fields)._._data;
+        if ((pGVar1 != (GizmoPlaneSlider2DControllerData *)0x0) &&
+           ((pGVar1->fields).CircleBorder != (GizmoCircle2DBorder *)0x0)) {
+          if (cRam_? == '\0') {
+            func_?();
+            cRam_? = '\x01';
+          }
+          iVar4 = *(int *)(in_stack_5 + 0x24);
+          iVar6 = *(int *)(in_stack_5 + 8);
+          if (iVar6 != 0) {
+            if (*(int *)(iVar6 + 0xa4) == 0) {
+              iVar6 = *(int *)(iVar6 + 0xa0);
+              if (iVar6 == 0) goto code_?;
+            }
+            else {
+              iVar6 = *(int *)(iVar6 + 0xa4);
+            }
+            if (iVar4 != 0) {
+              if (*(uint *)(iVar4 + 0xc) <= *(uint *)(iVar6 + 0x6c)) {
+                func_?();
+                func_?();
+                pcVar7 = (code *)swi(3);
+                (*pcVar7)();
+                return;
+              }
+              if (*(int *)(iVar4 + 0x10 + *(uint *)(iVar6 + 0x6c) * 4) != 0) {
+                func_?();
+                return;
+              }
+            }
+          }
+        }
       }
     }
   }
-  func_?();
 code_?:
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  func_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

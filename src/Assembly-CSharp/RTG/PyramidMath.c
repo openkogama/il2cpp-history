@@ -127,10 +127,10 @@ bool Assembly-CSharp.dll::RTG::PyramidMath::PyramidMath_ContainsPoint
   pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
   uVar10 = (pVVar9->upVector).x;
   uVar11 = (pVVar9->upVector).y;
-  uVar12 = uVar10 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
-  uVar13 = uVar11 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+  uVar12 = uVar10 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
+  uVar13 = uVar11 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
   fVar14 = (float)((uint)(pVVar9->upVector).z ^
-                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
@@ -151,7 +151,7 @@ bool Assembly-CSharp.dll::RTG::PyramidMath::PyramidMath_ContainsPoint
   if ((float)uVar7 * (float)uVar21 + (float)uVar6 * (float)uVar20 + fVar8 * pVVar4->z +
       (float)((uint)((float)uVar16 * (float)uVar19 + (float)uVar15 * (float)uVar18 +
                     fVar17 * pVVar4->z) ^
-             __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) <=
+             __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) <=
       epsilon._ptContainEps) {
     fVar14 = baseWidth * _UNK_?;
     fVar17 = baseDepth * _UNK_?;
@@ -284,13 +284,13 @@ bool Assembly-CSharp.dll::RTG::PyramidMath::PyramidMath_ContainsPoint
         VStack_5.y = pVVar4->y;
         VStack_5.z = pVVar4->z;
         fVar34 = (float)((uint)VStack_5.x ^
-                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) *
+                        __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) *
                  fVar14;
         fStack_30 = (float)((uint)VStack_5.y ^
-                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
+                           __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field)
                     * fVar14;
         fStack_31 = (float)((uint)VStack_5.z ^
-                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
+                           __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field)
                     * fVar14;
         pVVar4 = TriangPrismShape3D::TriangPrismShape3D_get_ModelLook(&VStack_29,(MethodInfo *)0x0)
         ;
@@ -325,13 +325,13 @@ bool Assembly-CSharp.dll::RTG::PyramidMath::PyramidMath_ContainsPoint
           VStack_5.y = pVVar4->y;
           VStack_5.z = pVVar4->z;
           fVar33 = (float)((uint)VStack_5.x ^
-                          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
+                          __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field)
                    * fVar14;
           fStack_30 = (float)((uint)VStack_5.y ^
-                             __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                             __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                              ) * fVar14;
           fStack_31 = (float)((uint)VStack_5.z ^
-                             __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                             __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                              ) * fVar14;
           pVVar4 = TriangPrismShape3D::TriangPrismShape3D_get_ModelLook
                               (&VStack_29,(MethodInfo *)0x0);
@@ -756,12 +756,12 @@ bool Assembly-CSharp.dll::RTG::PyramidMath::PyramidMath_Raycast
   pVVar12 = TypeInfo__UnityEngine__Vector3->static_fields;
   uVar57 = (pVVar12->rightVector).x;
   uVar58 = (pVVar12->rightVector).y;
-  fVar1 = (float)(uVar57 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
+  fVar1 = (float)(uVar57 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field)
           * (float)pfVar38;
-  fVar3 = (float)(uVar58 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
+  fVar3 = (float)(uVar58 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field)
           * (float)pfVar38;
   fVar2 = (float)((uint)(pVVar12->rightVector).z ^
-                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) *
+                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) *
            (float)pfVar38;
   if (cRam_? == '\0') {
     func_?();
@@ -863,12 +863,12 @@ bool Assembly-CSharp.dll::RTG::PyramidMath::PyramidMath_Raycast
   pVVar12 = TypeInfo__UnityEngine__Vector3->static_fields;
   uVar64 = (pVVar12->rightVector).x;
   uVar65 = (pVVar12->rightVector).y;
-  fVar1 = (float)(uVar64 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
+  fVar1 = (float)(uVar64 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field)
           * (float)pfVar38;
-  fVar3 = (float)(uVar65 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
+  fVar3 = (float)(uVar65 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field)
           * (float)pfVar38;
   fVar2 = (float)((uint)(pVVar12->rightVector).z ^
-                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) *
+                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) *
            (float)pfVar38;
   if (cRam_? == '\0') {
     func_?();

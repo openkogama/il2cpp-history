@@ -316,10 +316,10 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVWorldObjectSpawnerV
     func_?(&
                     MethodInfo__WorldObjectTypes__VehicleEnergy__MVWorldObjectSpawnerVehicleEnergy__OnEnterTriggerBox_System__Object__TriggerEventArgs_
                    );
-    func_?(&TypeInfo__UseInteractor);
     func_?(&
-                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                    MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                    );
+    func_?(&TypeInfo__UseInteractor);
     func_?(&StringLiteral_Could_not_get_spawnPoint_child_s);
     func_?(&StringLiteral_spawnWorldObjectID);
     cRam_? = '\x01';
@@ -374,7 +374,7 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVWorldObjectSpawnerV
       UseInteractor::UseInteractor__ctor
                 (pUVar3,(MVWorldObjectClient *)this_02,(GameObject *)this,1,triggerCollider,
                  (Func_2_Int32_Boolean_ *)this_03,
-                 (Func_3_Int32_MVInteractableBase_Boolean_ *)this_04,3.5,1,(MethodInfo *)0x0);
+                 (Func_3_Int32_MVInteractableBase_Boolean_ *)this_04,3.5,1,1,(MethodInfo *)0x0);
       (this_02->vtable).GetMethodImpl.methodPtr = (Il2CppMethodPointer)pUVar3;
       func_?();
       pMVar4 = (this_02->vtable).GetObjectData_1.method;
@@ -392,7 +392,7 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVWorldObjectSpawnerV
         pEVar5 = (EventHandler_1_Object_ *)func_?();
         mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                   (pEVar5,object,
-                   MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                   MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                    ,(MethodInfo *)0x0);
         if (pMVar4 != (MethodInfo *)0x0) {
           TriggerBoxEvents::TriggerBoxEvents_add_TriggerExitOverride
@@ -683,7 +683,7 @@ void Assembly-CSharp.dll::WorldObjectTypes::VehicleEnergy::MVWorldObjectSpawnerV
     else {
       this_00 = (this->fields)._.useInteractor;
       if (this_00 != (UseInteractor *)0x0) {
-        UseInteractor::UseInteractor_triggerBoxEvents_TriggerEnter
+        UseInteractor::UseInteractor_TriggerBoxEvents_TriggerEnter
                   (this_00,sender,e,(MethodInfo *)0x0);
         return;
       }

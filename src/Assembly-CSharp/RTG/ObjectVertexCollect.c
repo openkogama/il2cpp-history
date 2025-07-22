@@ -80,8 +80,8 @@ Assembly-CSharp.dll::RTG::ObjectVertexCollect::ObjectVertexCollect_CollectHierar
     boxCenter = *pVVar11;
     VVar14 = *pVVar11;
     pQVar15 = &pOVar6->_rotation;
-    fVar16 = pQVar15->x;
-    fVar17 = (pOVar6->_rotation).y;
+    pMVar16 = (MethodInfo *)pQVar15->x;
+    pOVar17 = (ObjectVertexCollect__Class *)(pOVar6->_rotation).y;
     fVar18 = (pOVar6->_rotation).z;
     fVar19 = (pOVar6->_rotation).w;
     uVar20 = pQVar15->x;
@@ -111,56 +111,55 @@ code_?:
       func_?();
     }
     fVar27 = (float)BoxMath::BoxMath_GetFaceAxisIndex(collectFace,(MethodInfo *)0x0);
-    method_00 = (MethodInfo *)&UNK_?;
+    pMVar28 = (MethodInfo *)&UNK_?;
     boxRotation.w = fVar19;
-    method_01 = RVar9;
+    method_00 = RVar9;
     pVVar11 = BoxMath::BoxMath_CalcBoxFaceCenter
                         ((Vector3 *)&stack0xffffffb8,VVar14,VVar10,boxRotation,collectFace,
                          (MethodInfo *)0x0);
-    uVar28 = pVVar11->x;
+    uVar29 = pVVar11->x;
     boxRotation_00.w = fVar19;
-    fVar29 = fVar7;
     pVVar11 = BoxMath::BoxMath_CalcBoxFaceNormal
                         ((Vector3 *)&stack0xffffffb8,boxCenter,boxSize,boxRotation_00,collectFace,
                          (MethodInfo *)0x0);
-    fVar30 = pVVar11->z;
-    fVar31 = collectEps + collectEps;
-    fVar32 = fVar27;
-    puStack_33 = (undefined *)fVar7;
-    fVar7 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
+    fVar30 = pVVar11->y;
+    fVar31 = pVVar11->z;
+    fVar32 = collectEps + collectEps;
+    fVar33 = fVar27;
+    fVar34 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
                        ((Vector3 *)&stack0xffffffb8,(int32_t)fVar27,(MethodInfo *)0x0);
     UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_set_Item
-              ((Vector3 *)&puStack_33,(int32_t)fVar27,fVar7 * collectBoxScale + fVar31,
+              ((Vector3 *)&stack0xffffffcc,(int32_t)fVar27,fVar34 * collectBoxScale + fVar32,
                (MethodInfo *)0x0);
-    iVar34 = ((int)fVar27 + 1) % 3;
-    fVar7 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
-                       ((Vector3 *)&puStack_33,iVar34,(MethodInfo *)0x0);
+    iVar35 = ((int)fVar27 + 1) % 3;
+    fVar34 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
+                       ((Vector3 *)&stack0xffffffcc,iVar35,(MethodInfo *)0x0);
     UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_set_Item
-              ((Vector3 *)&puStack_33,iVar34,fVar7 + fVar31,(MethodInfo *)0x0);
-    iVar34 = ((int)fVar27 + 2) % 3;
-    puVar35 = &UNK_?;
-    fVar7 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
-                       ((Vector3 *)&puStack_33,iVar34,(MethodInfo *)0x0);
-    UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_set_Item
-              ((Vector3 *)&puStack_33,iVar34,fVar7 + fVar31,(MethodInfo *)0x0);
-    pVVar11 = (Vector3 *)&puStack_33;
-    fVar31 = 0.0;
+              ((Vector3 *)&stack0xffffffcc,iVar35,fVar34 + fVar32,(MethodInfo *)0x0);
+    iVar35 = ((int)fVar27 + 2) % 3;
     puVar36 = &UNK_?;
-    fVar7 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
+    fVar34 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
+                       ((Vector3 *)&stack0xffffffcc,iVar35,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_set_Item
+              ((Vector3 *)&stack0xffffffcc,iVar35,fVar34 + fVar32,(MethodInfo *)0x0);
+    fVar34 = 0.0;
+    pVVar11 = (Vector3 *)&stack0xffffffcc;
+    puVar37 = &UNK_?;
+    fVar32 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
                        (pVVar11,(int32_t)fVar27,(MethodInfo *)0x0);
-    fVar7 = (float)((uint)fVar7 ^
-                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) *
+    fVar32 = (float)((uint)fVar32 ^
+                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) *
              _UNK_? + collectEps;
-    pLVar37 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-              ((float)puVar35 + fVar30 * fVar7);
-    VVar14.y = fVar31 * fVar7 + 4.473274e-29;
-    VVar14.x = (float)uVar28 + fVar27 * fVar7;
-    VVar14.z = (float)pLVar37;
-    VVar10.y = (float)puVar36;
-    VVar10.x = (float)puStack_33;
-    VVar10.z = (float)pVVar11;
+    pLVar38 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+              ((float)puVar36 + fVar31 * fVar32);
+    VVar14.y = fVar30 * fVar32 + 4.4838764e-29;
+    VVar14.x = (float)uVar29 + fVar34 * fVar32;
+    VVar14.z = (float)pLVar38;
+    VVar10.y = (float)pVVar11;
+    VVar10.x = (float)puVar37;
+    VVar10.z = fVar27;
     OBB::OBB__ctor((OBB *)&stack0xffffff34,VVar14,VVar10,(MethodInfo *)0x0);
-    puVar35 = &UNK_?;
+    puVar36 = &UNK_?;
     this = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
             *)func_?();
     mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
@@ -168,107 +167,87 @@ code_?:
     List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
               (this,0x50,
                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List_int_);
-    pLVar38 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
+    pLVar39 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
               RegexCharClass+SingleRange]::
               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                         ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                          *)&stack0xffffffb4,pLVar37,
+                          *)&stack0xffffffb4,pLVar38,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
                         );
-    RVar39 = pLVar38->_current;
+    RVar40 = pLVar39->_current;
     while( true ) {
-      RVar40 = RVar39;
-      bVar41 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+      RVar41 = RVar40;
+      bVar42 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
                List_1_T_Enumerator_System_Object__MoveNext
                          ((List_1_T_Enumerator_System_Object_ *)&stack0xffffff94,
                           MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
                          );
-      if (bVar41 == 0) break;
-      fVar7 = fVar29;
-      fVar30 = fVar8;
-      RVar42 = RVar9;
-      fVar27 = fVar16;
-      RVar39 = RVar40;
+      if (bVar42 == 0) break;
+      fVar30 = fVar7;
+      fVar31 = fVar8;
+      RVar43 = RVar9;
+      pMVar44 = pMVar16;
+      RVar40 = RVar41;
       if ((TypeInfo__RTG__GameObjectEx->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__RTG__GameObjectEx);
-        fVar7 = fVar29;
-        fVar30 = fVar8;
-        RVar42 = RVar9;
-        fVar27 = fVar16;
+        fVar30 = fVar7;
+        fVar31 = fVar8;
+        RVar43 = RVar9;
+        pMVar44 = pMVar16;
       }
-      unityMesh = GameObjectEx::GameObjectEx_GetMesh((GameObject *)RVar40,(MethodInfo *)0x0);
+      unityMesh = GameObjectEx::GameObjectEx_GetMesh((GameObject *)RVar41,(MethodInfo *)0x0);
       if ((TypeInfo__RTG__Singleton<RTG::RTMeshDb>->_1).cctor_finished_or_no_cctor == 0) {
-        method_00 = (MethodInfo *)&UNK_?;
         func_?();
       }
-      pIVar43 = MethodInfo__RTG__Singleton<RTG::RTMeshDb>__get_Get__->klass;
-      pMVar44 = MethodInfo__RTG__Singleton<RTG::RTMeshDb>__get_Get__;
-      if (((uint)pIVar43->vtable[0].methodPtr & 0x100) == 0) {
-        method_00 = (MethodInfo *)&UNK_?;
-        pIVar43 = (Il2CppClass *)func_?();
-      }
-      pIVar43 = pIVar43->rgctx_data[2].klass;
-      if (((uint)pIVar43->vtable[0].methodPtr & 0x100) == 0) {
-        method_00 = (MethodInfo *)&UNK_?;
-        pIVar43 = (Il2CppClass *)func_?();
-      }
-      if (pIVar43->cctor_finished_or_no_cctor == 0) {
-        method_00 = (MethodInfo *)&UNK_?;
-        func_?();
-      }
-      pIVar43 = pMVar44->klass;
-      if (((uint)pIVar43->vtable[0].methodPtr & 0x100) == 0) {
-        method_00 = (MethodInfo *)&UNK_?;
-        pIVar43 = (Il2CppClass *)func_?();
-      }
-      pIVar43 = pIVar43->rgctx_data[2].klass;
-      if (((uint)pIVar43->vtable[0].methodPtr & 0x100) == 0) {
-        method_00 = (MethodInfo *)&UNK_?;
-        pIVar43 = (Il2CppClass *)func_?();
-      }
-      if (*(RTMeshDb **)pIVar43->static_fields == (RTMeshDb *)0x0) goto code_?;
-      this_00 = RTMeshDb::RTMeshDb_GetRTMesh
-                          (*(RTMeshDb **)pIVar43->static_fields,unityMesh,(MethodInfo *)0x0);
-      fVar29 = fVar7;
-      fVar8 = fVar30;
-      RVar9 = RVar42;
-      fVar16 = fVar27;
+      pMVar28 = (MethodInfo *)
+                Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
+                          (MethodInfo__RTG__Singleton<RTG::RTMeshDb>__get_Get__);
+      if (pMVar28 == (MethodInfo *)0x0) goto code_?;
+      this_00 = RTMeshDb::RTMeshDb_GetRTMesh((RTMeshDb *)pMVar28,unityMesh,(MethodInfo *)0x0);
+      fVar7 = fVar30;
+      fVar8 = fVar31;
+      RVar9 = RVar43;
+      pMVar16 = pMVar44;
       if (this_00 != (RTMesh *)0x0) {
-        if (RVar40 == (RegexCharClass_SingleRange)0x0) goto code_?;
-        method_01.First = 0;
-        method_01.Last = 0;
-        fVar31 = fVar17;
-        pLVar37 = pLVar5;
-        fVar45 = fVar18;
-        fVar46 = fVar19;
-        fVar47 = fVar32;
-        fVar48 = fVar12;
-        fVar49 = fVar13;
-        pTVar50 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                            ((GameObject *)RVar40,(MethodInfo *)0x0);
+        if (RVar41 == (RegexCharClass_SingleRange)0x0) goto code_?;
+        pOVar45 = pOVar17;
+        pLVar38 = pLVar5;
+        fVar27 = fVar18;
+        fVar32 = fVar19;
+        fVar34 = fVar33;
+        fVar46 = fVar12;
+        fVar47 = fVar13;
+        pTVar48 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                            ((GameObject *)RVar41,(MethodInfo *)0x0);
         if ((TypeInfo__RTG__ObjectVertexCollect->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }
-        obb._size.y = fVar48;
-        obb._size.x = (float)pLVar37;
-        obb._size.z = fVar49;
-        obb._center.x = fVar7;
-        obb._center.y = fVar30;
-        obb._center.z = (float)RVar42;
-        obb._rotation.x = fVar27;
-        obb._rotation.y = fVar31;
-        obb._rotation.z = fVar45;
-        obb._rotation.w = fVar46;
-        obb._40_4_ = fVar47;
+        method_00.First = 0;
+        method_00.Last = 0;
+        obb._size.y = fVar46;
+        obb._size.x = (float)pLVar38;
+        obb._size.z = fVar47;
+        obb._center.x = fVar30;
+        obb._center.y = fVar31;
+        obb._center.z = (float)RVar43;
+        obb._rotation.x = (float)pMVar44;
+        obb._rotation.y = (float)pOVar45;
+        obb._rotation.z = fVar27;
+        obb._rotation.w = fVar32;
+        obb._40_4_ = fVar34;
         RTMesh::RTMesh_OverlapVerts
-                  (this_00,obb,pTVar50,
+                  (this_00,obb,pTVar48,
                    TypeInfo__RTG__ObjectVertexCollect->static_fields->_hierarchyVertsCollectBuffer,
                    (MethodInfo *)0x0);
         pLVar26 = TypeInfo__RTG__ObjectVertexCollect->static_fields->_hierarchyVertsCollectBuffer;
         if (pLVar26 == (List_1_UnityEngine_Vector3_ *)0x0) goto code_?;
+        pMVar28 = pMVar44;
         if ((pLVar26->fields)._size != 0) {
           if ((TypeInfo__RTG__ObjectVertexCollect->_1).cctor_finished_or_no_cctor == 0) {
+            pMVar16 = (MethodInfo *)&UNK_?;
+            pOVar17 = TypeInfo__RTG__ObjectVertexCollect;
             func_?();
+            pMVar28 = pMVar44;
           }
           if (this == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
                        *)0x0) goto code_?;
@@ -287,87 +266,87 @@ code_?:
               ((Object *)&stack0xffffff94,
                (ExceptionArgument__Enum)
                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
-               ,method_00);
+               ,pMVar28);
     if (pLVar3 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-      pLVar38 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
+      pLVar39 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
                 ::RegexCharClass+SingleRange]::
                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
                           ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
                             *)&stack0xffffffb4,pLVar3,
                            MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
                           );
-      RVar39 = pLVar38->_current;
+      RVar40 = pLVar39->_current;
       while( true ) {
-        bVar41 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+        bVar42 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
                  List_1_T_Enumerator_System_Object__MoveNext
                            ((List_1_T_Enumerator_System_Object_ *)&stack0xffffff94,
                             MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
                            );
-        if (bVar41 == 0) {
+        if (bVar42 == 0) {
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                     ((Object *)&stack0xffffff94,
                      (ExceptionArgument__Enum)
                      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
-                     ,(MethodInfo *)method_01);
-          *unaff_FS_OFFSET = puVar35;
+                     ,(MethodInfo *)method_00);
+          *unaff_FS_OFFSET = puVar36;
           return (List_1_UnityEngine_Vector3_ *)this;
         }
         pLVar3 = pLVar5;
-        fVar7 = fVar12;
-        fVar30 = fVar13;
-        fVar27 = fVar29;
-        fVar31 = fVar8;
-        RVar40 = RVar9;
-        fVar45 = fVar16;
-        fVar46 = fVar17;
-        fVar47 = fVar32;
-        RVar42 = RVar39;
+        fVar30 = fVar12;
+        fVar31 = fVar13;
+        fVar27 = fVar7;
+        fVar32 = fVar8;
+        RVar41 = RVar9;
+        pMVar28 = pMVar16;
+        pOVar45 = pOVar17;
+        fVar34 = fVar33;
+        RVar43 = RVar40;
         if ((TypeInfo__RTG__GameObjectEx->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
           pLVar3 = pLVar5;
-          fVar7 = fVar12;
-          fVar30 = fVar13;
-          fVar27 = fVar29;
-          fVar31 = fVar8;
-          RVar40 = RVar9;
-          fVar45 = fVar16;
-          fVar46 = fVar17;
-          fVar47 = fVar32;
+          fVar30 = fVar12;
+          fVar31 = fVar13;
+          fVar27 = fVar7;
+          fVar32 = fVar8;
+          RVar41 = RVar9;
+          pMVar28 = pMVar16;
+          pOVar45 = pOVar17;
+          fVar34 = fVar33;
         }
-        sprite = GameObjectEx::GameObjectEx_GetSprite((GameObject *)RVar39,(MethodInfo *)0x0);
-        if (RVar39 == (RegexCharClass_SingleRange)0x0) break;
-        pTVar50 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                            ((GameObject *)RVar39,(MethodInfo *)0x0);
-        method_01 = RVar39;
+        sprite = GameObjectEx::GameObjectEx_GetSprite((GameObject *)RVar40,(MethodInfo *)0x0);
+        if (RVar40 == (RegexCharClass_SingleRange)0x0) break;
+        pTVar48 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                            ((GameObject *)RVar40,(MethodInfo *)0x0);
+        method_00 = RVar40;
         pLVar5 = pLVar3;
-        fVar12 = fVar7;
-        fVar13 = fVar30;
-        fVar29 = fVar27;
-        fVar8 = fVar31;
-        RVar9 = RVar40;
-        fVar16 = fVar45;
-        fVar17 = fVar46;
-        fVar32 = fVar47;
-        fVar48 = fVar18;
-        fVar49 = fVar19;
+        fVar12 = fVar30;
+        fVar13 = fVar31;
+        fVar7 = fVar27;
+        fVar8 = fVar32;
+        RVar9 = RVar41;
+        pMVar16 = pMVar28;
+        pOVar17 = pOVar45;
+        fVar33 = fVar34;
+        fVar46 = fVar18;
+        fVar47 = fVar19;
         if ((TypeInfo__RTG__ObjectVertexCollect->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
-          method_01 = RVar39;
+          method_00 = RVar40;
         }
-        RVar39 = RVar42;
-        collectOBB._size.y = fVar7;
+        RVar40 = RVar43;
+        collectOBB._size.y = fVar30;
         collectOBB._size.x = (float)pLVar3;
-        collectOBB._size.z = fVar30;
+        collectOBB._size.z = fVar31;
         collectOBB._center.x = fVar27;
-        collectOBB._center.y = fVar31;
-        collectOBB._center.z = (float)RVar40;
-        collectOBB._rotation.x = fVar45;
-        collectOBB._rotation.y = fVar46;
-        collectOBB._rotation.z = fVar48;
-        collectOBB._rotation.w = fVar49;
-        collectOBB._40_4_ = fVar47;
+        collectOBB._center.y = fVar32;
+        collectOBB._center.z = (float)RVar41;
+        collectOBB._rotation.x = (float)pMVar28;
+        collectOBB._rotation.y = (float)pOVar45;
+        collectOBB._rotation.z = fVar46;
+        collectOBB._rotation.w = fVar47;
+        collectOBB._40_4_ = fVar34;
         pLVar26 = ObjectVertexCollect_CollectWorldSpriteVerts
-                            (sprite,pTVar50,collectOBB,(MethodInfo *)0x0);
+                            (sprite,pTVar48,collectOBB,(MethodInfo *)0x0);
         if (pLVar26 == (List_1_UnityEngine_Vector3_ *)0x0) break;
         if ((pLVar26->fields)._size != 0) {
           if (this == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
@@ -386,8 +365,8 @@ code_?:
   func_?();
   func_?();
   func_?();
-  pcVar51 = (code *)swi(3);
-  pLVar26 = (List_1_UnityEngine_Vector3_ *)(*pcVar51)();
+  pcVar49 = (code *)swi(3);
+  pLVar26 = (List_1_UnityEngine_Vector3_ *)(*pcVar49)();
   return pLVar26;
 }
 

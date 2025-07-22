@@ -77,8 +77,8 @@ void Assembly-CSharp.dll::ThemeSelection::ThemeSelection_CreateThemeButtons
   pTVar1 = (this->fields).themeRepo;
   if (pTVar1 == (ThemeRepository *)0x0) goto code_?;
   method_00 = (Component__Class *)0x0;
-  bVar2 = ThemeRepository::ThemeRepository_get_ThemeIsActive(pTVar1,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
+  pTVar2 = ThemeRepository::ThemeRepository_get_CurrentTheme(pTVar1,(MethodInfo *)0x0);
+  if (pTVar2 != (ThemeWorldObject *)0x0) {
     original = (this->fields).themeRemovalButtonPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
@@ -140,14 +140,22 @@ void Assembly-CSharp.dll::ThemeSelection::ThemeSelection_CreateThemeButtons
                  (MethodInfo *)0x0);
       pTVar1 = (selectionMenu->fields).themeRepo;
       if (pTVar1 == (ThemeRepository *)0x0) goto code_?;
-      a = ThemeRepository::ThemeRepository_get_CurrentThemeIdentifier(pTVar1,(MethodInfo *)0x0);
+      pTVar2 = ThemeRepository::ThemeRepository_get_CurrentTheme(pTVar1,(MethodInfo *)0x0);
+      if (pTVar2 == (ThemeWorldObject *)0x0) {
+        a = (String *)0x0;
+      }
+      else {
+        pTVar2 = ThemeRepository::ThemeRepository_get_CurrentTheme(pTVar1,(MethodInfo *)0x0);
+        if (pTVar2 == (ThemeWorldObject *)0x0) goto code_?;
+        a = ThemeWorldObject::ThemeWorldObject_get_Identifier(pTVar2,(MethodInfo *)0x0);
+      }
       if (pOVar7 == (Object__Class *)0x0) goto code_?;
-      bVar2 = mscorlib.dll::System::String::String_op_Equality
+      bVar9 = mscorlib.dll::System::String::String_op_Equality
                         (a,(String *)(pOVar7->_0).namespaze,(MethodInfo *)0x0);
-      if (bVar2 == 0) {
-        pUVar9 = (UnityAction__Class *)(pOVar7->_0).namespaze;
-        value[1].monitor = (MonitorData *)pUVar9;
-        ppMVar10 = &value[1].monitor;
+      if (bVar9 == 0) {
+        pUVar10 = (UnityAction__Class *)(pOVar7->_0).namespaze;
+        value[1].monitor = (MonitorData *)pUVar10;
+        ppMVar11 = &value[1].monitor;
         func_?();
         value[2].klass = pOVar7;
         func_?(value + 2,pOVar7);
@@ -167,8 +175,8 @@ void Assembly-CSharp.dll::ThemeSelection::ThemeSelection_CreateThemeButtons
         this._0_1_ = 0;
       }
       else {
-        ppMVar10 = (MonitorData **)&UNK_?;
-        pUVar9 = TypeInfo__UnityEngine__Events__UnityAction;
+        ppMVar11 = (MonitorData **)&UNK_?;
+        pUVar10 = TypeInfo__UnityEngine__Events__UnityAction;
         pNVar4 = (NavMesh_OnNavMeshPreUpdate *)func_?();
         UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
         NavMesh_OnNavMeshPreUpdate__ctor
@@ -187,15 +195,15 @@ void Assembly-CSharp.dll::ThemeSelection::ThemeSelection_CreateThemeButtons
                 ((ThemeSelectionButton *)pOVar8,selectionMenu,themePrefab,(UnityAction *)pNVar4,
                  (pOVar7->_0).byval_arg.data.__klassIndex,(int32_t)method_00,(bool)this,
                  (MethodInfo *)0x0);
-      puVar5 = (undefined1 *)((int)&(pUVar9->_0).image + 1);
-      ppTVar6 = (ThemeData **)(ppMVar10 + 1);
+      puVar5 = (undefined1 *)((int)&(pUVar10->_0).image + 1);
+      ppTVar6 = (ThemeData **)(ppMVar11 + 1);
     }
     func_?();
   }
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -243,42 +251,145 @@ void Assembly-CSharp.dll::ThemeSelection::ThemeSelection_LoadTheme
 {
   this_00 = (this->fields).themeRepo;
   if (this_00 != (ThemeRepository *)0x0) {
-    pTVar1 = ThemeRepository::ThemeRepository_CreateTemporaryThemeVisualization
-                       (this_00,identifier,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
+      func_?(&TypeInfo__UnityEngine__Debug);
+      func_?(&Theme_MethodInfo__UnityEngine__Object__Instantiate<Theme>_Theme_);
       func_?(&TypeInfo__UnityEngine__Object);
+      func_?(&StringLiteral_Preview_theme_created);
       cRam_? = '\x01';
     }
-    pTVar2 = (this->fields).previewTheme;
+    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Debug);
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+              ((Object *)StringLiteral_Preview_theme_created,(MethodInfo *)0x0);
+    pTVar1 = ThemeRepository::ThemeRepository_get_CurrentTheme(this_00,(MethodInfo *)0x0);
+    if (pTVar1 == (ThemeWorldObject *)0x0) {
+      pTVar2 = (Theme *)0x0;
+    }
+    else {
+      pTVar2 = (pTVar1->fields)._Visualization_k__BackingField;
+    }
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
     bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
                       ((Object_1 *)pTVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
     if (bVar3 != 0) {
-      pTVar2 = (this->fields).previewTheme;
-      if (pTVar2 == (Theme *)0x0) goto code_?;
-      obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                      ((Component *)pTVar2,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                ((Object_1 *)obj,(MethodInfo *)0x0);
+      pTVar1 = ThemeRepository::ThemeRepository_get_CurrentTheme(this_00,(MethodInfo *)0x0);
+      if ((pTVar1 == (ThemeWorldObject *)0x0) ||
+         (pTVar2 = (pTVar1->fields)._Visualization_k__BackingField, pTVar2 == (Theme *)0x0))
+      goto code_?;
+      Theme::Theme_Deactivate(pTVar2,(MethodInfo *)0x0);
     }
-    (this->fields).previewTheme = pTVar1;
-    func_?();
-    this_01 = (this->fields).menuController;
-    if (this_01 != (ThemeMenuController *)0x0) {
-      ThemeMenuController::ThemeMenuController_OpenSettingsForPreview
-                (this_01,(this->fields).previewTheme,(ThemeData *)&UNK_?,(MethodInfo *)0x0);
-      return;
+    pTVar2 = ThemeRepository::ThemeRepository_GetThemePrefab(this_00,identifier,(MethodInfo *)0x0);
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Object);
+    }
+    pTVar2 = (Theme *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                                ((Object *)pTVar2,
+                                 Theme_MethodInfo__UnityEngine__Object__Instantiate<Theme>_Theme_);
+    if (pTVar2 != (Theme *)0x0) {
+      Theme::Theme_InitializeForPreview(pTVar2,(MethodInfo *)0x0);
+      Theme::Theme_Activate(pTVar2,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__UnityEngine__Object);
+        cRam_? = '\x01';
+      }
+      pTVar4 = (this->fields).previewTheme;
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__UnityEngine__Object);
+      }
+      bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                        ((Object_1 *)pTVar4,(Object_1 *)0x0,(MethodInfo *)0x0);
+      if (bVar3 != 0) {
+        pTVar4 = (this->fields).previewTheme;
+        if (pTVar4 == (Theme *)0x0) goto code_?;
+        pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)pTVar4,(MethodInfo *)0x0);
+        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__UnityEngine__Object);
+        }
+        UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
+                  ((Object_1 *)pGVar5,(MethodInfo *)0x0);
+      }
+      (this->fields).previewTheme = pTVar2;
+      method_00 = (ExecuteEvents__Class **)&UNK_?;
+      func_?(&(this->fields).previewTheme,pTVar2);
+      menuController = (this->fields).menuController;
+      pTVar2 = (this->fields).previewTheme;
+      if (menuController != (ThemeMenuController *)0x0) {
+        if (cRam_? == '\0') {
+          func_?(&
+                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                         );
+          func_?(&
+                          UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                         );
+          method_00 = &TypeInfo__UnityEngine__EventSystems__ExecuteEvents;
+          func_?();
+          func_?(&
+                          ThemePreviewSettingsMenu_MethodInfo__UnityEngine__Object__Instantiate<ThemePreviewSettingsMenu>_ThemePreviewSettingsMenu_
+                         );
+          func_?(&TypeInfo__UnityEngine__Object);
+          func_?(&
+                          MethodInfo__ThemeMenuController____c__DisplayClass6_0___OpenSettingsForPreview_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                         );
+          func_?(&TypeInfo__ThemeMenuController____c__DisplayClass6_0);
+          cRam_? = '\x01';
+        }
+        value = (Object *)func_?(TypeInfo__ThemeMenuController____c__DisplayClass6_0);
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                  (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+        if (value != (Object *)0x0) {
+          value[1].monitor = (MonitorData *)pTVar2;
+          func_?(&value[1].monitor,pTVar2);
+          original = (menuController->fields).previewSettingsPrefab;
+          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+            func_?(TypeInfo__UnityEngine__Object);
+          }
+          pOVar6 = (Object__Class *)
+                   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                             ((Object *)original,
+                              ThemePreviewSettingsMenu_MethodInfo__UnityEngine__Object__Instantiate<ThemePreviewSettingsMenu>_ThemePreviewSettingsMenu_
+                             );
+          value[1].klass = pOVar6;
+          func_?(value + 1,pOVar6);
+          if (value[1].klass != (Object__Class *)0x0) {
+            ThemePreviewSettingsMenu::ThemePreviewSettingsMenu_Initialize
+                      ((ThemePreviewSettingsMenu *)value[1].klass,(Theme *)value[1].monitor,data,
+                       menuController,(MethodInfo *)0x0);
+            pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                               ((Component *)menuController,(MethodInfo *)0x0);
+            callbackFunction =
+                 (ExecuteEvents_EventFunction_1_System_Object_ *)
+                 func_?(
+                                TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                                );
+            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+            Object]::UnityAction_2_System_Object_System_Object___ctor
+                      ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+                       MethodInfo__ThemeMenuController____c__DisplayClass6_0___OpenSettingsForPreview_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                       ,(MethodInfo *)0x0);
+            if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor
+                == 0) {
+              func_?();
+            }
+            UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+            ExecuteEvents_ExecuteHierarchy
+                      (pGVar5,(BaseEventData *)0x0,callbackFunction,
+                       UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                      );
+            return;
+          }
+        }
+      }
     }
   }
 code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -375,13 +486,24 @@ void Assembly-CSharp.dll::ThemeSelection::ThemeSelection_OnThemeRemovalWarningRe
               );
     this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__ThemeRepository);
+      func_?();
       cRam_? = '\x01';
     }
-    this_00 = TypeInfo__ThemeRepository->static_fields->_Instance_k__BackingField;
-    if (this_00 == (ThemeRepository *)0x0) goto code_?;
-    worldObjectID = ThemeRepository::ThemeRepository_get_CurrentThemeWoid(this_00,(MethodInfo *)0x0)
-    ;
+    this_00 = (ConfirmationPopup *)
+              TypeInfo__ThemeRepository->static_fields->_Instance_k__BackingField;
+    if (this_00 == (ConfirmationPopup *)0x0) goto code_?;
+    pTVar1 = ThemeRepository::ThemeRepository_get_CurrentTheme
+                       ((ThemeRepository *)this_00,(MethodInfo *)0x0);
+    if (pTVar1 == (ThemeWorldObject *)0x0) {
+      worldObjectID = -1;
+    }
+    else {
+      pTVar1 = ThemeRepository::ThemeRepository_get_CurrentTheme
+                         ((ThemeRepository *)this_00,(MethodInfo *)0x0);
+      if (pTVar1 == (ThemeWorldObject *)0x0) goto code_?;
+      worldObjectID = (pTVar1->fields)._._.id;
+      popup = this_00;
+    }
     if (this_01 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
     MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_UnregisterWorldObject
               (this_01,worldObjectID,(MethodInfo *)0x0);
@@ -392,8 +514,8 @@ void Assembly-CSharp.dll::ThemeSelection::ThemeSelection_OnThemeRemovalWarningRe
   }
 code_?:
   func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

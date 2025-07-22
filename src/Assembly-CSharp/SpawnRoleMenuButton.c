@@ -192,8 +192,8 @@ void Assembly-CSharp.dll::SpawnRoleMenuButton::SpawnRoleMenuButton_ShowSpawnRole
       if ((pGVar4 != (GameEventManager *)0x0) &&
          (this_00 = (pGVar4->fields).AvatarCommandsPlayMode,
          this_00 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) {
-        PlayButtonTouch::PlayButtonTouch_OnConfirmPlay((PlayButtonTouch *)this_00,(MethodInfo *)0x0)
-        ;
+        GameEventManager+AvatarCommandsPlayModeManager::
+        GameEventManager_AvatarCommandsPlayModeManager_RemoveFromGame(this_00,(MethodInfo *)0x0);
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
           func_?();
         }

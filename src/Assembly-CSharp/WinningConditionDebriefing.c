@@ -521,7 +521,7 @@ void Assembly-CSharp.dll::WinningConditionDebriefing::
   if (bVar1 == 0) {
     return;
   }
-  winningCondition = (IWinningCondition *)&UNK_?;
+  winningCondition = (IWinningCondition *)0x0;
   MVar2 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
   if (MVar2 == MVGameMode__Enum_Play) {
 code_?:
@@ -530,15 +530,15 @@ code_?:
       pSVar3 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                          ((MethodInfo *)0x0);
       if (((pSVar3 == (SpawnRoleDataMediator *)0x0) ||
-          (winningCondition = (IWinningCondition *)(pSVar3->fields).reviveState,
-          (WebCompletionSource_1_System_Object_ *)winningCondition ==
-          (WebCompletionSource_1_System_Object_ *)0x0)) ||
-         (this_00 = System.dll::System::Net::WebCompletionSource`1[System::Object]::
+          (this_00 = (WebCompletionSource_1_System_Object_ *)(pSVar3->fields).reviveState,
+          this_00 == (WebCompletionSource_1_System_Object_ *)0x0)) ||
+         (this_01 = System.dll::System::Net::WebCompletionSource`1[System::Object]::
                     WebCompletionSource_1_System_Object__get_Task
-                              ((WebCompletionSource_1_System_Object_ *)winningCondition,
+                              (this_00,
                                MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<ReviveState>__get_Value__
-                              ), this_00 == (Task *)0x0)) goto code_?;
-      ReviveState::ReviveState_ResetSafePostions((ReviveState *)this_00,(MethodInfo *)0x0);
+                              ), this_01 == (Task *)0x0)) goto code_?;
+      winningCondition = (IWinningCondition *)&UNK_?;
+      ReviveState::ReviveState_ResetSafePostions((ReviveState *)this_01,(MethodInfo *)0x0);
     }
     if (cRam_? == '\0') {
       func_?();
@@ -560,15 +560,16 @@ code_?:
               if (*(IWinningConditionBriefing__Class **)
                    (*(int *)(*piVar5 + 0x58) + (uint)uVar6 * 8) ==
                   TypeInfo__IWinningConditionBriefing) {
-                (**(code **)(*piVar5 +
-                            (*(int *)(*(int *)(*piVar5 + 0x58) + 4 + (uint)uVar6 * 8) + 0x19) * 8)
-                )();
-                return;
+                puVar8 = (undefined4 *)
+                         (*piVar5 +
+                         (*(int *)(*(int *)(*piVar5 + 0x58) + 4 + (uint)uVar6 * 8) + 0x19) * 8);
+                goto code_?;
               }
               uVar6 = uVar6 + 1;
             } while (uVar6 < uVar7);
           }
           puVar8 = (undefined4 *)func_?();
+code_?:
           (*(code *)*puVar8)();
           return;
         }
@@ -586,28 +587,11 @@ code_?:
       func_?();
       cRam_? = '\x01';
     }
-    pIVar9 = TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
-    if (pIVar9 != (IEditModeUI *)0x0) {
-      pIVar10 = pIVar9->klass;
-      uVar6 = 0;
-      uVar7._0_1_ = (pIVar10->_1).rank;
-      uVar7._1_1_ = (pIVar10->_1).minimumAlignment;
-      if (uVar7 != 0) {
-        do {
-          if (pIVar10->interfaceOffsets[uVar6].interfaceType == (Il2CppClass *)TypeInfo__IEditModeUI
-             ) {
-            ppMVar11 = &(&(pIVar9->klass->vtable).get_IsInPlayInEditMode)
-                       [pIVar9->klass->interfaceOffsets[uVar6].offset].method;
-            goto code_?;
-          }
-          uVar6 = uVar6 + 1;
-        } while (uVar6 < uVar7);
-      }
-      winningCondition = (IWinningCondition *)&UNK_?;
-      ppMVar11 = (MethodInfo **)func_?();
-code_?:
-      cVar12 = (*(code *)*ppMVar11)();
-      if (cVar12 == '\0') {
+    if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField !=
+        (IEditModeUI *)0x0) {
+      winningCondition = (IWinningCondition *)0x1;
+      cVar9 = func_?();
+      if (cVar9 == '\0') {
         return;
       }
       goto code_?;
@@ -617,8 +601,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -969,70 +953,106 @@ void Assembly-CSharp.dll::WinningConditionDebriefing::
   func_?();
   pAVar1 = (this->fields).captureCamera;
   if (pAVar1 != (AvatarCapture *)0x0) {
-    AvatarCapture::AvatarCapture_CaptureAllPlayersInGame(pAVar1,(MethodInfo *)0x0);
-    this_00 = (this->fields).group;
-    pDVar4 = (this->fields).noWinnerPrefab;
-    if (this_00 != (CanvasGroup *)0x0) {
-      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)this_00,(MethodInfo *)0x0);
-      if (pGVar3 != (GameObject *)0x0) {
-        parent = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                           (pGVar3,(MethodInfo *)0x0);
-        pDVar4 = (DebriefingWinnerGUI *)
-                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
-                           ((Object *)pDVar4,parent,0,
-                            DebriefingWinnerGUI_MethodInfo__UnityEngine__Object__Instantiate<DebriefingWinnerGUI>_DebriefingWinnerGUI__UnityEngine__Transform__bool_
-                           );
-        (this->fields).debriefing = pDVar4;
-        func_?();
-        pDVar4 = (this->fields).debriefing;
-        TM::TM__(StringLiteral_Time_s_Up_,(MethodInfo *)0x0);
-        if ((pDVar4 != (DebriefingWinnerGUI *)0x0) &&
-           (pTVar5 = (pDVar4->fields).winnerName, pTVar5 != (Text *)0x0)) {
-          (*(code *)(pTVar5->klass->vtable).set_text.method)();
-          pDVar4 = (this->fields).debriefing;
-          if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__Styles);
-          }
-          pCVar6 = Styles::Styles_GetColor
-                             ((Color *)&stack0xffffffec,ColorStyle__Enum_DarkNavyBlue,
-                              (MethodInfo *)0x0);
-          fVar7 = pCVar6->r;
-          fVar8 = pCVar6->g;
-          fVar9 = pCVar6->b;
-          fVar10 = pCVar6->a;
-          pAVar1 = (this->fields).captureCamera;
-          if ((pAVar1 != (AvatarCapture *)0x0) &&
-             (this_01 = (pAVar1->fields).renderCam, this_01 != (Camera *)0x0)) {
-            image = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_targetTexture
-                              (this_01,(MethodInfo *)0x0);
-            if (pDVar4 != (DebriefingWinnerGUI *)0x0) {
-              startColor.g = fVar8;
-              startColor.r = fVar7;
-              startColor.b = fVar9;
-              startColor.a = fVar10;
-              DebriefingWinnerGUI::DebriefingWinnerGUI_SetWinnerImage
-                        (pDVar4,startColor,image,(MethodInfo *)0x0);
-              pDVar4 = (this->fields).debriefing;
-              if (pDVar4 != (DebriefingWinnerGUI *)0x0) {
-                DebriefingWinnerGUI::DebriefingWinnerGUI_ActivateScoreImage
-                          (pDVar4,WinningConditionType__Enum_None,(MethodInfo *)0x0);
-                if (cRam_? == '\0') {
-                  func_?();
-                  cRam_? = '\x01';
+    if (cRam_? == '\0') {
+      func_?();
+      func_?();
+      func_?(&
+                      MethodInfo__System__Collections__Generic__List<System::Collections::Generic::List<MVPlayer>_>__List__
+                     );
+      func_?(&
+                      TypeInfo__System__Collections__Generic__List<System::Collections::Generic::List<MVPlayer>_>
+                     );
+      cRam_? = '\x01';
+    }
+    AvatarCapture::AvatarCapture_InitializeCamera(pAVar1,(MethodInfo *)0x0);
+    sortedList = (List_1_List_1_MVPlayer_ *)func_?();
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType]::
+    LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)sortedList,
+               MethodInfo__System__Collections__Generic__List<System::Collections::Generic::List<MVPlayer>_>__List__
+              );
+    pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if ((pMVar4 != (MVNetworkGame *)0x0) &&
+       (this_00 = (pMVar4->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) {
+      source = MVPlayerContainer::MVPlayerContainer_get_ActivePlayers(this_00,(MethodInfo *)0x0);
+      item = System.Core.dll::System::Linq::Enumerable::Enumerable_ToList_8
+                       ((IEnumerable_1_System_Object_ *)source,
+                        System__Collections__Generic__List<MVPlayer>_MethodInfo__System__Linq__Enumerable__ToList<MVPlayer>_System__Collections__Generic__IEnumerable<MVPlayer>_
+                       );
+      if (sortedList != (List_1_List_1_MVPlayer_ *)0x0) {
+        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+        List_1_System_Object__Add
+                  ((List_1_System_Object_ *)sortedList,(Object *)item,
+                   MethodInfo__System__Collections__Generic__List<System::Collections::Generic::List<MVPlayer>_>__Add_System__Collections__Generic__List<MVPlayer>_
+                  );
+        AvatarCapture::AvatarCapture_CapturePlayerGroup(pAVar1,sortedList,(MethodInfo *)0x0);
+        this_01 = (this->fields).group;
+        pDVar5 = (this->fields).noWinnerPrefab;
+        if (this_01 != (CanvasGroup *)0x0) {
+          pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                             ((Component *)this_01,(MethodInfo *)0x0);
+          if (pGVar3 != (GameObject *)0x0) {
+            parent = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                               (pGVar3,(MethodInfo *)0x0);
+            pDVar5 = (DebriefingWinnerGUI *)
+                     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
+                               ((Object *)pDVar5,parent,0,
+                                DebriefingWinnerGUI_MethodInfo__UnityEngine__Object__Instantiate<DebriefingWinnerGUI>_DebriefingWinnerGUI__UnityEngine__Transform__bool_
+                               );
+            (this->fields).debriefing = pDVar5;
+            func_?();
+            pDVar5 = (this->fields).debriefing;
+            TM::TM__(StringLiteral_Time_s_Up_,(MethodInfo *)0x0);
+            if ((pDVar5 != (DebriefingWinnerGUI *)0x0) &&
+               (pTVar6 = (pDVar5->fields).winnerName, pTVar6 != (Text *)0x0)) {
+              (*(code *)(pTVar6->klass->vtable).set_text.method)(pTVar6);
+              pDVar5 = (this->fields).debriefing;
+              if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
+                func_?(TypeInfo__Styles);
+              }
+              pCVar7 = Styles::Styles_GetColor
+                                 ((Color *)&stack0xffffffec,ColorStyle__Enum_DarkNavyBlue,
+                                  (MethodInfo *)0x0);
+              fVar8 = pCVar7->r;
+              fVar9 = pCVar7->g;
+              fVar10 = pCVar7->b;
+              fVar11 = pCVar7->a;
+              pAVar1 = (this->fields).captureCamera;
+              if ((pAVar1 != (AvatarCapture *)0x0) &&
+                 (this_02 = (pAVar1->fields).renderCam, this_02 != (Camera *)0x0)) {
+                image = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_targetTexture
+                                  (this_02,(MethodInfo *)0x0);
+                if (pDVar5 != (DebriefingWinnerGUI *)0x0) {
+                  startColor.g = fVar9;
+                  startColor.r = fVar8;
+                  startColor.b = fVar10;
+                  startColor.a = fVar11;
+                  DebriefingWinnerGUI::DebriefingWinnerGUI_SetWinnerImage
+                            (pDVar5,startColor,image,(MethodInfo *)0x0);
+                  pDVar5 = (this->fields).debriefing;
+                  if (pDVar5 != (DebriefingWinnerGUI *)0x0) {
+                    DebriefingWinnerGUI::DebriefingWinnerGUI_ActivateScoreImage
+                              (pDVar5,WinningConditionType__Enum_None,(MethodInfo *)0x0);
+                    if (cRam_? == '\0') {
+                      func_?();
+                      cRam_? = '\x01';
+                    }
+                    method_00 = TypeInfo__WinningConditionDebriefing___ShowDebriefingCoroutine_d__16
+                    ;
+                    value = (Object *)func_?();
+                    mscorlib.dll::System::ThrowHelper::
+                    ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                              (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+                    value[1].klass = (Object__Class *)0x0;
+                    value[2].klass = (Object__Class *)this;
+                    func_?();
+                    UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
+                    MonoBehaviour_StartCoroutine_Auto
+                              ((MonoBehaviour *)this,(IEnumerator *)value,(MethodInfo *)0x0);
+                    return;
+                  }
                 }
-                method_00 = TypeInfo__WinningConditionDebriefing___ShowDebriefingCoroutine_d__16;
-                value = (Object *)func_?();
-                mscorlib.dll::System::ThrowHelper::
-                ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                          (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-                value[1].klass = (Object__Class *)0x0;
-                value[2].klass = (Object__Class *)this;
-                func_?();
-                UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
-                MonoBehaviour_StartCoroutine_Auto
-                          ((MonoBehaviour *)this,(IEnumerator *)value,(MethodInfo *)0x0);
-                return;
               }
             }
           }
@@ -1042,8 +1062,8 @@ void Assembly-CSharp.dll::WinningConditionDebriefing::
   }
 code_?:
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 

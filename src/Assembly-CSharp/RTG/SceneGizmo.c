@@ -25,10 +25,9 @@ void Assembly-CSharp.dll::RTG::SceneGizmo::SceneGizmo_OnAttached
   if ((TypeInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>);
   }
-  pMVar1 = (MethodInfo *)
-           MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
+  pOVar1 = MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
                      (MethodInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>__get_Get__);
-  pMVar2 = pMVar1;
+  pOVar2 = pOVar1;
   if ((TypeInfo__RTG__MonoSingleton<RTG::RTFocusCamera>->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__RTG__MonoSingleton<RTG::RTFocusCamera>);
   }
@@ -54,14 +53,14 @@ code_?:
     func_?(uVar4);
   }
   else {
-    value_01 = (Camera *)pOVar3[4].monitor;
-    method_02 = TypeInfo__RTG__SceneGizmoCamViewportUpdater;
+    value_03 = (Camera *)pOVar3[4].monitor;
+    method_00 = TypeInfo__RTG__SceneGizmoCamViewportUpdater;
     pOVar3 = (Object *)func_?();
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar3,ExceptionArgument__Enum_obj,(MethodInfo *)method_02);
+              (pOVar3,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
     pOVar3[1].klass = (Object__Class *)this;
     func_?(pOVar3 + 1,this);
-    if (pMVar1 == (MethodInfo *)0x0) goto code_?;
+    if (pOVar1 == (Object *)0x0) goto code_?;
     if (cRam_? == '\0') {
       func_?(&
                       RTG__RTSceneGizmoCamera_MethodInfo__UnityEngine__GameObject__AddComponent<RTG::RTSceneGizmoCamera>__
@@ -112,42 +111,37 @@ code_?:
     if (pRVar6 == (RTSceneGizmoCamera *)0x0) goto code_?;
     (pRVar6->fields)._viewportUpdater = (ISceneGizmoCamViewportUpdater *)pOVar3;
     func_?(&(pRVar6->fields)._viewportUpdater,pOVar3);
-    pMVar1 = (MethodInfo *)0x0;
-    RTSceneGizmoCamera::RTSceneGizmoCamera_set_SceneCamera(pRVar6,value_01,(MethodInfo *)0x0);
-    if ((List_1_System_Object_ *)pMVar2[1].field7_0x1c.methodMetadataHandle ==
-        (List_1_System_Object_ *)0x0) goto code_?;
+    RTSceneGizmoCamera::RTSceneGizmoCamera_set_SceneCamera(pRVar6,value_03,(MethodInfo *)0x0);
+    if ((List_1_System_Object_ *)pOVar2[9].monitor == (List_1_System_Object_ *)0x0)
+    goto code_?;
     mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-              ((List_1_System_Object_ *)pMVar2[1].field7_0x1c.methodMetadataHandle,
-               (Object *)pRVar6,
+              ((List_1_System_Object_ *)pOVar2[9].monitor,(Object *)pRVar6,
                MethodInfo__System__Collections__Generic__List<RTG::RTSceneGizmoCamera>__Add_RTG__RTSceneGizmoCamera_
               );
     (this->fields)._sceneGizmoCamera = pRVar6;
     func_?(&(this->fields)._sceneGizmoCamera,pRVar6);
-    pOVar3 = (Object *)func_?(TypeInfo__RTG__SceneGizmoMidCap);
+    value_00 = (MethodInfo *)func_?(TypeInfo__RTG__SceneGizmoMidCap);
+    method_01 = value_00;
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__RTG__GizmoPreHandlePickedHandler,this_01,pOVar3);
+      func_?(&TypeInfo__RTG__GizmoPreHandlePickedHandler);
       func_?(&TypeInfo__RTG__GizmoPreUpdateBeginHandler);
       func_?(&MethodInfo__RTG__SceneGizmoMidCap__OnGizmoHandlePicked_RTG__Gizmo__int_);
       func_?(&MethodInfo__RTG__SceneGizmoMidCap__OnGizmoPreUpdateBegin_RTG__Gizmo_);
       cRam_? = '\x01';
     }
-    UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
-    UnsafeUtility_SizeOf_26((MethodInfo *)0x0);
     if (cRam_? == '\0') {
       func_?(&TypeInfo__RTG__GizmoCap3D);
       cRam_? = '\x01';
     }
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar3,ExceptionArgument__Enum_obj,pMVar2);
-    handleId = pOVar3 + 1;
-    pOVar3[1].klass = (Object__Class *)this;
-    pSVar7 = this;
-    func_?();
-    pGVar8 = (this->fields)._._gizmo;
-    this_03 = (GizmoCap3D *)func_?(TypeInfo__RTG__GizmoCap3D);
-    GizmoCap3D::GizmoCap3D__ctor(this_03,pGVar8,(int32_t)handleId,(MethodInfo *)0x0);
-    *(GizmoCap3D **)&(pSVar7->fields)._._isEnabled = this_03;
-    func_?(&(pSVar7->fields)._._isEnabled,this_03);
+              ((Object *)value_00,ExceptionArgument__Enum_obj,method_01);
+    value_00->invoker_method = (InvokerMethod)this;
+    func_?(&value_00->invoker_method,this);
+    pGVar7 = (this->fields)._._gizmo;
+    pGVar8 = (GizmoCap3D *)func_?(TypeInfo__RTG__GizmoCap3D);
+    GizmoCap3D::GizmoCap3D__ctor(pGVar8,pGVar7,1,(MethodInfo *)0x0);
+    method_01->name = (char *)pGVar8;
+    func_?(&method_01->name,pGVar8);
     if ((this->fields)._sharedLookAndFeel == (SceneGizmoLookAndFeel *)0x0) {
       pSVar9 = (this->fields)._lookAndFeel;
       if (pSVar9 == (SceneGizmoLookAndFeel *)0x0) goto code_?;
@@ -155,258 +149,162 @@ code_?:
     else {
       pSVar9 = (this->fields)._sharedLookAndFeel;
     }
-    iVar10 = *(int *)&(pSVar7->fields)._._isEnabled;
-    if (iVar10 == 0) goto code_?;
-    pGVar11 = (pSVar9->fields)._midCapLookAndFeel;
-    *(GizmoCap3DLookAndFeel **)(iVar10 + 0x50) = pGVar11;
-    func_?(iVar10 + 0x50,pGVar11);
-    pGVar8 = (this->fields)._._gizmo;
-    pGVar12 = (GizmoPreHandlePickedHandler *)
-              func_?(TypeInfo__RTG__GizmoPreHandlePickedHandler);
+    pGVar8 = (GizmoCap3D *)method_01->name;
+    if (pGVar8 == (GizmoCap3D *)0x0) goto code_?;
+    pGVar10 = (pSVar9->fields)._midCapLookAndFeel;
+    (pGVar8->fields)._sharedLookAndFeel = pGVar10;
+    func_?(&(pGVar8->fields)._sharedLookAndFeel,pGVar10);
+    pGVar7 = (this->fields)._._gizmo;
+    value_01 = (GizmoPreHandlePickedHandler *)
+               func_?(TypeInfo__RTG__GizmoPreHandlePickedHandler);
     mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-              ((EventHandler_1_Object_ *)pGVar12,(Object *)pSVar7,
+              ((EventHandler_1_Object_ *)value_01,(Object *)method_01,
                MethodInfo__RTG__SceneGizmoMidCap__OnGizmoHandlePicked_RTG__Gizmo__int_,
                (MethodInfo *)0x0);
-    if (pGVar8 == (Gizmo *)0x0) goto code_?;
-    Gizmo::Gizmo_add_PreHandlePicked(pGVar8,pGVar12,(MethodInfo *)0x0);
-    pGVar8 = (this->fields)._._gizmo;
-    pGVar13 = (GizmoPreUpdateBeginHandler *)
-              func_?(TypeInfo__RTG__GizmoPreUpdateBeginHandler);
+    if (pGVar7 == (Gizmo *)0x0) goto code_?;
+    Gizmo::Gizmo_add_PreHandlePicked(pGVar7,value_01,(MethodInfo *)0x0);
+    pGVar7 = (this->fields)._._gizmo;
+    value_02 = (GizmoPreUpdateBeginHandler *)
+               func_?(TypeInfo__RTG__GizmoPreUpdateBeginHandler);
     UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
     VideoCapture+OnVideoCaptureResourceCreatedCallback::
     VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
-              ((VideoCapture_OnVideoCaptureResourceCreatedCallback *)pGVar13,(Object *)pSVar7,
+              ((VideoCapture_OnVideoCaptureResourceCreatedCallback *)value_02,(Object *)method_01,
                MethodInfo__RTG__SceneGizmoMidCap__OnGizmoPreUpdateBegin_RTG__Gizmo_,
                (MethodInfo *)0x0);
-    if (pGVar8 == (Gizmo *)0x0) goto code_?;
-    Gizmo::Gizmo_add_PreUpdateBegin(pGVar8,pGVar13,(MethodInfo *)0x0);
-    (this->fields)._midAxisHandle = (SceneGizmoMidCap *)pSVar7;
-    func_?(&(this->fields)._midAxisHandle,pSVar7);
-    pLVar14 = (this->fields)._renderSortedHandles;
-    if (pLVar14 == (List_1_RTG_SceneGizmoCap_ *)0x0) goto code_?;
+    if (pGVar7 == (Gizmo *)0x0) goto code_?;
+    Gizmo::Gizmo_add_PreUpdateBegin(pGVar7,value_02,(MethodInfo *)0x0);
+    (this->fields)._midAxisHandle = (SceneGizmoMidCap *)method_01;
+    func_?(&(this->fields)._midAxisHandle,method_01);
+    pLVar11 = (this->fields)._renderSortedHandles;
+    if (pLVar11 == (List_1_RTG_SceneGizmoCap_ *)0x0) goto code_?;
     mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-              ((List_1_System_Object_ *)pLVar14,(Object *)(this->fields)._midAxisHandle,
+              ((List_1_System_Object_ *)pLVar11,(Object *)(this->fields)._midAxisHandle,
                MethodInfo__System__Collections__Generic__List<RTG::SceneGizmoCap>__Add_RTG__SceneGizmoCap_
               );
-    piVar15 = (int *)func_?(TypeInfo__RTG__AxisDescriptor,6);
-    pAVar16 = (AxisDescriptor *)func_?(TypeInfo__RTG__AxisDescriptor);
-    AxisDescriptor::AxisDescriptor__ctor(pAVar16,0,AxisSign__Enum_Positive,(MethodInfo *)0x0);
-    if (piVar15 == (int *)0x0) goto code_?;
-    if ((pAVar16 != (AxisDescriptor *)0x0) &&
-       (iVar10 = func_?(pAVar16,*(undefined4 *)(*piVar15 + 0x20)), iVar10 == 0))
+    piVar12 = (int *)func_?(TypeInfo__RTG__AxisDescriptor,6);
+    pAVar13 = (AxisDescriptor *)func_?(TypeInfo__RTG__AxisDescriptor);
+    AxisDescriptor::AxisDescriptor__ctor(pAVar13,0,AxisSign__Enum_Positive,(MethodInfo *)0x0);
+    if (piVar12 == (int *)0x0) goto code_?;
+    if ((pAVar13 != (AxisDescriptor *)0x0) &&
+       (iVar14 = func_?(pAVar13,*(undefined4 *)(*piVar12 + 0x20)), iVar14 == 0))
     goto code_?;
-    if (piVar15[3] == 0) goto code_?;
-    piVar15[4] = (int)pAVar16;
-    func_?(piVar15 + 4,pAVar16);
-    pAVar16 = (AxisDescriptor *)func_?(TypeInfo__RTG__AxisDescriptor);
-    AxisDescriptor::AxisDescriptor__ctor(pAVar16,1,AxisSign__Enum_Positive,(MethodInfo *)0x0);
-    if ((pAVar16 != (AxisDescriptor *)0x0) &&
-       (iVar10 = func_?(pAVar16,*(undefined4 *)(*piVar15 + 0x20)), iVar10 == 0))
+    if (piVar12[3] == 0) goto code_?;
+    piVar12[4] = (int)pAVar13;
+    func_?(piVar12 + 4,pAVar13);
+    pAVar13 = (AxisDescriptor *)func_?(TypeInfo__RTG__AxisDescriptor);
+    AxisDescriptor::AxisDescriptor__ctor(pAVar13,1,AxisSign__Enum_Positive,(MethodInfo *)0x0);
+    if ((pAVar13 != (AxisDescriptor *)0x0) &&
+       (iVar14 = func_?(pAVar13,*(undefined4 *)(*piVar12 + 0x20)), iVar14 == 0))
     goto code_?;
-    if ((uint)piVar15[3] < 2) goto code_?;
-    piVar15[5] = (int)pAVar16;
-    func_?(piVar15 + 5,pAVar16);
-    pAVar16 = (AxisDescriptor *)func_?(TypeInfo__RTG__AxisDescriptor);
-    AxisDescriptor::AxisDescriptor__ctor(pAVar16,2,AxisSign__Enum_Positive,(MethodInfo *)0x0);
-    if ((pAVar16 != (AxisDescriptor *)0x0) &&
-       (iVar10 = func_?(pAVar16,*(undefined4 *)(*piVar15 + 0x20)), iVar10 == 0))
+    if ((uint)piVar12[3] < 2) goto code_?;
+    piVar12[5] = (int)pAVar13;
+    func_?(piVar12 + 5,pAVar13);
+    pAVar13 = (AxisDescriptor *)func_?(TypeInfo__RTG__AxisDescriptor);
+    AxisDescriptor::AxisDescriptor__ctor(pAVar13,2,AxisSign__Enum_Positive,(MethodInfo *)0x0);
+    if ((pAVar13 != (AxisDescriptor *)0x0) &&
+       (iVar14 = func_?(pAVar13,*(undefined4 *)(*piVar12 + 0x20)), iVar14 == 0))
     goto code_?;
-    if ((uint)piVar15[3] < 3) goto code_?;
-    piVar15[6] = (int)pAVar16;
-    func_?(piVar15 + 6,pAVar16);
-    pAVar16 = (AxisDescriptor *)func_?(TypeInfo__RTG__AxisDescriptor);
-    AxisDescriptor::AxisDescriptor__ctor(pAVar16,0,AxisSign__Enum_Negative,(MethodInfo *)0x0);
-    if ((pAVar16 != (AxisDescriptor *)0x0) &&
-       (iVar10 = func_?(pAVar16,*(undefined4 *)(*piVar15 + 0x20)), iVar10 == 0))
+    if ((uint)piVar12[3] < 3) goto code_?;
+    piVar12[6] = (int)pAVar13;
+    func_?(piVar12 + 6,pAVar13);
+    pAVar13 = (AxisDescriptor *)func_?(TypeInfo__RTG__AxisDescriptor);
+    AxisDescriptor::AxisDescriptor__ctor(pAVar13,0,AxisSign__Enum_Negative,(MethodInfo *)0x0);
+    if ((pAVar13 != (AxisDescriptor *)0x0) &&
+       (iVar14 = func_?(pAVar13,*(undefined4 *)(*piVar12 + 0x20)), iVar14 == 0))
     goto code_?;
-    if ((uint)piVar15[3] < 4) goto code_?;
-    piVar15[7] = (int)pAVar16;
-    func_?(piVar15 + 7,pAVar16);
-    pAVar16 = (AxisDescriptor *)func_?(TypeInfo__RTG__AxisDescriptor);
-    AxisDescriptor::AxisDescriptor__ctor(pAVar16,1,AxisSign__Enum_Negative,(MethodInfo *)0x0);
-    if ((pAVar16 != (AxisDescriptor *)0x0) &&
-       (iVar10 = func_?(pAVar16,*(undefined4 *)(*piVar15 + 0x20)), iVar10 == 0))
+    if ((uint)piVar12[3] < 4) goto code_?;
+    piVar12[7] = (int)pAVar13;
+    func_?(piVar12 + 7,pAVar13);
+    pAVar13 = (AxisDescriptor *)func_?(TypeInfo__RTG__AxisDescriptor);
+    AxisDescriptor::AxisDescriptor__ctor(pAVar13,1,AxisSign__Enum_Negative,(MethodInfo *)0x0);
+    if ((pAVar13 != (AxisDescriptor *)0x0) &&
+       (iVar14 = func_?(pAVar13,*(undefined4 *)(*piVar12 + 0x20)), iVar14 == 0))
     goto code_?;
-    if ((uint)piVar15[3] < 5) goto code_?;
-    piVar15[8] = (int)pAVar16;
-    func_?(piVar15 + 8,pAVar16);
-    pAVar16 = (AxisDescriptor *)func_?(TypeInfo__RTG__AxisDescriptor);
-    pMVar2 = (MethodInfo *)0x2;
-    AxisDescriptor::AxisDescriptor__ctor(pAVar16,2,AxisSign__Enum_Negative,(MethodInfo *)0x0);
-    if ((pAVar16 == (AxisDescriptor *)0x0) ||
-       (iVar10 = func_?(pAVar16,*(undefined4 *)(*piVar15 + 0x20)), iVar10 != 0)) {
-      if ((uint)piVar15[3] < 6) goto code_?;
-      method_01 = (MethodInfo *)(piVar15 + 9);
-      piVar15[9] = (int)pAVar16;
-      func_?(method_01,pAVar16);
-      method_00 = TypeInfo__System__Int32;
-      iVar17 = func_?(TypeInfo__System__Int32,6);
-      iVar10 = iVar17;
-      iVar18 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
-               UnsafeUtility_SizeOf_46((MethodInfo *)0x0);
-      if (iVar17 != 0) {
-        if (*(int *)(iVar17 + 0xc) == 0) goto code_?;
-        *(int32_t *)(iVar17 + 0x10) = iVar18;
-        iVar18 = mscorlib.dll::System::ValueTuple`3[Unity::IL2CPP::Metadata::
-                 __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
-                 __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
-                 __Il2CppFullySharedGenericType]::
-                 ValueTuple_3_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__System_Runtime_CompilerServices_ITuple_get_Length
-                           ((ValueTuple_3_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                             *)0x0,pMVar2);
-        if (*(uint *)(iVar17 + 0xc) < 2) goto code_?;
-        *(int32_t *)(iVar17 + 0x14) = iVar18;
-        iVar18 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
-                 UnsafeUtility_SizeOf_36((MethodInfo *)0x0);
-        if (*(uint *)(iVar17 + 0xc) < 3) goto code_?;
-        *(int32_t *)(iVar17 + 0x18) = iVar18;
-        iVar18 = mscorlib.dll::System::ValueTuple`5[Unity::IL2CPP::Metadata::
-                 __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
-                 __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
-                 __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
-                 __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
-                 __Il2CppFullySharedGenericType]::
-                 ValueTuple_5_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__System_Runtime_CompilerServices_ITuple_get_Length
-                           ((ValueTuple_5_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                             *)0x0,pMVar1);
-        if (*(uint *)(iVar17 + 0xc) < 4) goto code_?;
-        *(int32_t *)(iVar17 + 0x1c) = iVar18;
-        EVar19 = System.Core.dll::System::Linq::Expressions::MethodCallExpression::
-                 MethodCallExpression_get_NodeType
-                           ((MethodCallExpression *)0x0,(MethodInfo *)method_00);
-        if (*(uint *)(iVar17 + 0xc) < 5) goto code_?;
-        *(ExpressionType__Enum_1 *)(iVar17 + 0x20) = EVar19;
-        XVar20 = System.Xml.Linq.dll::System::Xml::Linq::XProcessingInstruction::
-                 XProcessingInstruction_get_NodeType((XProcessingInstruction *)0x0,method_01);
-        if (*(uint *)(iVar17 + 0xc) < 6) goto code_?;
-        *(XmlNodeType__Enum *)(iVar17 + 0x24) = XVar20;
-        iVar17 = 0x10;
-        for (uVar21 = 0; (int)uVar21 < piVar15[3]; uVar21 = uVar21 + 1) {
-          pSVar22 = (this->fields)._axesHandles;
-          if ((*(uint *)(iVar10 + 0xc) <= uVar21) ||
-             (iVar18 = *(int32_t *)(iVar17 + iVar10), (uint)piVar15[3] <= uVar21))
+    if ((uint)piVar12[3] < 5) goto code_?;
+    piVar12[8] = (int)pAVar13;
+    func_?(piVar12 + 8,pAVar13);
+    pAVar13 = (AxisDescriptor *)func_?(TypeInfo__RTG__AxisDescriptor);
+    AxisDescriptor::AxisDescriptor__ctor(pAVar13,2,AxisSign__Enum_Negative,(MethodInfo *)0x0);
+    if ((pAVar13 == (AxisDescriptor *)0x0) ||
+       (iVar14 = func_?(pAVar13,*(undefined4 *)(*piVar12 + 0x20)), iVar14 != 0)) {
+      if ((uint)piVar12[3] < 6) goto code_?;
+      piVar12[9] = (int)pAVar13;
+      func_?(piVar12 + 9,pAVar13);
+      iVar14 = func_?(TypeInfo__System__Int32,6);
+      if (iVar14 != 0) {
+        if (((((*(int *)(iVar14 + 0xc) == 0) ||
+              (*(undefined4 *)(iVar14 + 0x10) = 2, *(uint *)(iVar14 + 0xc) < 2)) ||
+             (*(undefined4 *)(iVar14 + 0x14) = 3, *(uint *)(iVar14 + 0xc) < 3)) ||
+            ((*(undefined4 *)(iVar14 + 0x18) = 4, *(uint *)(iVar14 + 0xc) < 4 ||
+             (*(undefined4 *)(iVar14 + 0x1c) = 5, *(uint *)(iVar14 + 0xc) < 5)))) ||
+           (*(undefined4 *)(iVar14 + 0x20) = 6, *(uint *)(iVar14 + 0xc) < 6)) goto code_?;
+        *(undefined4 *)(iVar14 + 0x24) = 7;
+        iVar15 = 0x10;
+        for (uVar16 = 0; (int)uVar16 < piVar12[3]; uVar16 = uVar16 + 1) {
+          pSVar17 = (this->fields)._axesHandles;
+          if ((*(uint *)(iVar14 + 0xc) <= uVar16) ||
+             (id = *(int32_t *)(iVar15 + iVar14), (uint)piVar12[3] <= uVar16))
           goto code_?;
-          pAVar16 = *(AxisDescriptor **)(iVar17 + (int)piVar15);
-          this_04 = (SceneGizmoAxisCap *)func_?(TypeInfo__RTG__SceneGizmoAxisCap);
-          SceneGizmoAxisCap::SceneGizmoAxisCap__ctor(this_04,this,iVar18,pAVar16,(MethodInfo *)0x0);
-          if (pSVar22 == (SceneGizmoAxisCap__Array *)0x0) goto code_?;
-          if ((this_04 != (SceneGizmoAxisCap *)0x0) &&
-             (iVar23 = func_?(this_04,(pSVar22->klass->_0).element_class), iVar23 == 0))
+          pAVar13 = *(AxisDescriptor **)(iVar15 + (int)piVar12);
+          this_03 = (SceneGizmoAxisCap *)func_?(TypeInfo__RTG__SceneGizmoAxisCap);
+          SceneGizmoAxisCap::SceneGizmoAxisCap__ctor(this_03,this,id,pAVar13,(MethodInfo *)0x0);
+          if (pSVar17 == (SceneGizmoAxisCap__Array *)0x0) goto code_?;
+          if ((this_03 != (SceneGizmoAxisCap *)0x0) &&
+             (iVar18 = func_?(this_03,(pSVar17->klass->_0).element_class), iVar18 == 0))
           goto code_?;
-          if (pSVar22->max_length <= uVar21) goto code_?;
-          *(SceneGizmoAxisCap **)((int)pSVar22->vector + iVar17 + -0x10) = this_04;
-          func_?((int)pSVar22->vector + iVar17 + -0x10,this_04);
-          pSVar22 = (this->fields)._axesHandles;
-          if (pSVar22 == (SceneGizmoAxisCap__Array *)0x0) goto code_?;
-          if (pSVar22->max_length <= uVar21) goto code_?;
-          pLVar14 = (this->fields)._renderSortedHandles;
-          if (pLVar14 == (List_1_RTG_SceneGizmoCap_ *)0x0) goto code_?;
+          if (pSVar17->max_length <= uVar16) goto code_?;
+          *(SceneGizmoAxisCap **)((int)pSVar17->vector + iVar15 + -0x10) = this_03;
+          func_?((int)pSVar17->vector + iVar15 + -0x10,this_03);
+          pSVar17 = (this->fields)._axesHandles;
+          if (pSVar17 == (SceneGizmoAxisCap__Array *)0x0) goto code_?;
+          if (pSVar17->max_length <= uVar16) goto code_?;
+          pLVar11 = (this->fields)._renderSortedHandles;
+          if (pLVar11 == (List_1_RTG_SceneGizmoCap_ *)0x0) goto code_?;
           mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
           List_1_System_Object__Add
-                    ((List_1_System_Object_ *)pLVar14,
-                     *(Object **)((int)pSVar22->vector + iVar17 + -0x10),
+                    ((List_1_System_Object_ *)pLVar11,
+                     *(Object **)((int)pSVar17->vector + iVar15 + -0x10),
                      MethodInfo__System__Collections__Generic__List<RTG::SceneGizmoCap>__Add_RTG__SceneGizmoCap_
                     );
-          iVar17 = iVar17 + 4;
+          iVar15 = iVar15 + 4;
         }
-        value_00 = (SceneGizmoCamPrjSwitchLabel *)
-                   func_?(TypeInfo__RTG__SceneGizmoCamPrjSwitchLabel);
-        if (cRam_? == '\0') {
-          func_?(&TypeInfo__RTG__GizmoPreHandlePickedHandler);
-          func_?(&TypeInfo__RTG__GizmoPreUpdateBeginHandler);
-          func_?(&TypeInfo__RTG__QuadShape2D);
-          func_?(&
-                          MethodInfo__RTG__SceneGizmoCamPrjSwitchLabel__OnGizmoHandlePicked_RTG__Gizmo__int_
-                         );
-          func_?(&
-                          MethodInfo__RTG__SceneGizmoCamPrjSwitchLabel__OnGizmoPreUpdateBegin_RTG__Gizmo_
-                         );
-          cRam_? = '\x01';
-        }
-        this_05 = (QuadShape2D *)func_?(TypeInfo__RTG__QuadShape2D);
-        QuadShape2D::QuadShape2D__ctor(this_05,(MethodInfo *)0x0);
-        pMVar2 = (MethodInfo *)&(value_00->fields)._labelQuad;
-        (value_00->fields)._labelQuad = this_05;
-        func_?(pMVar2,this_05);
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)value_00,ExceptionArgument__Enum_obj,pMVar2);
-        (value_00->fields)._sceneGizmo = this;
-        func_?(&value_00->fields,this);
-        pSVar7 = (value_00->fields)._sceneGizmo;
-        if (pSVar7 != (SceneGizmo *)0x0) {
-          pGVar8 = (pSVar7->fields)._._gizmo;
-          iVar18 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
-                   UnsafeUtility_SizeOf_10((MethodInfo *)0x0);
-          if (pGVar8 != (Gizmo *)0x0) {
-            pGVar24 = Gizmo::Gizmo_CreateHandle(pGVar8,iVar18,(MethodInfo *)0x0);
-            (value_00->fields)._handle = pGVar24;
-            func_?(&(value_00->fields)._handle,pGVar24);
-            pGVar24 = (value_00->fields)._handle;
-            if (pGVar24 != (GizmoHandle *)0x0) {
-              GizmoHandle::GizmoHandle_Add2DShape
-                        (pGVar24,(Shape2D *)(value_00->fields)._labelQuad,(MethodInfo *)0x0);
-              pGVar8 = (this->fields)._._gizmo;
-              pGVar13 = (GizmoPreUpdateBeginHandler *)
-                        func_?(TypeInfo__RTG__GizmoPreUpdateBeginHandler);
-              UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
-              VideoCapture+OnVideoCaptureResourceCreatedCallback::
-              VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
-                        ((VideoCapture_OnVideoCaptureResourceCreatedCallback *)pGVar13,
-                         (Object *)value_00,
-                         MethodInfo__RTG__SceneGizmoCamPrjSwitchLabel__OnGizmoPreUpdateBegin_RTG__Gizmo_
+        this_04 = (SceneGizmoCamPrjSwitchLabel *)
+                  func_?(TypeInfo__RTG__SceneGizmoCamPrjSwitchLabel);
+        SceneGizmoCamPrjSwitchLabel::SceneGizmoCamPrjSwitchLabel__ctor
+                  (this_04,this,(MethodInfo *)0x0);
+        (this->fields)._camPrjSwitchLabel = this_04;
+        func_?(&(this->fields)._camPrjSwitchLabel,this_04);
+        pGVar7 = (this->fields)._._gizmo;
+        if (((pGVar7 != (Gizmo *)0x0) &&
+            (pRVar6 = (this->fields)._sceneGizmoCamera, pRVar6 != (RTSceneGizmoCamera *)0x0)) &&
+           (pGVar19 = (pGVar7->fields)._transform, pGVar19 != (GizmoTransform *)0x0)) {
+          GizmoTransform::GizmoTransform_set_Position3D
+                    (pGVar19,(pRVar6->fields)._lookAtPoint,(MethodInfo *)0x0);
+          pGVar7 = (this->fields)._._gizmo;
+          if (pGVar7 != (Gizmo *)0x0) {
+            pGVar19 = (pGVar7->fields)._transform;
+            if (cRam_? == '\0') {
+              func_?(&TypeInfo__UnityEngine__Quaternion);
+              cRam_? = '\x01';
+            }
+            if (pGVar19 != (GizmoTransform *)0x0) {
+              GizmoTransform::GizmoTransform_set_Rotation3D
+                        (pGVar19,TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion
                          ,(MethodInfo *)0x0);
-              if (pGVar8 != (Gizmo *)0x0) {
-                Gizmo::Gizmo_add_PreUpdateBegin(pGVar8,pGVar13,(MethodInfo *)0x0);
-                pGVar8 = (this->fields)._._gizmo;
-                pGVar12 = (GizmoPreHandlePickedHandler *)
-                          func_?(TypeInfo__RTG__GizmoPreHandlePickedHandler);
-                mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-                          ((EventHandler_1_Object_ *)pGVar12,(Object *)value_00,
-                           MethodInfo__RTG__SceneGizmoCamPrjSwitchLabel__OnGizmoHandlePicked_RTG__Gizmo__int_
-                           ,(MethodInfo *)0x0);
-                if (pGVar8 != (Gizmo *)0x0) {
-                  Gizmo::Gizmo_add_PreHandlePicked(pGVar8,pGVar12,(MethodInfo *)0x0);
-                  (this->fields)._camPrjSwitchLabel = value_00;
-                  func_?(&(this->fields)._camPrjSwitchLabel,value_00);
-                  pGVar8 = (this->fields)._._gizmo;
-                  if (((pGVar8 != (Gizmo *)0x0) &&
-                      (pRVar6 = (this->fields)._sceneGizmoCamera,
-                      pRVar6 != (RTSceneGizmoCamera *)0x0)) &&
-                     (pGVar25 = (pGVar8->fields)._transform, pGVar25 != (GizmoTransform *)0x0)) {
-                    GizmoTransform::GizmoTransform_set_Position3D
-                              (pGVar25,(pRVar6->fields)._lookAtPoint,(MethodInfo *)0x0);
-                    pGVar8 = (this->fields)._._gizmo;
-                    if (pGVar8 != (Gizmo *)0x0) {
-                      pGVar25 = (pGVar8->fields)._transform;
-                      if (cRam_? == '\0') {
-                        func_?(&TypeInfo__UnityEngine__Quaternion);
-                        cRam_? = '\x01';
-                      }
-                      if (pGVar25 != (GizmoTransform *)0x0) {
-                        GizmoTransform::GizmoTransform_set_Rotation3D
-                                  (pGVar25,TypeInfo__UnityEngine__Quaternion->static_fields->
-                                          identityQuaternion,(MethodInfo *)0x0);
-                        pGVar8 = (this->fields)._._gizmo;
-                        if ((pGVar8 != (Gizmo *)0x0) &&
-                           (pPVar26 = (pGVar8->fields)._genericHoverPriority,
-                           pPVar26 != (Priority *)0x0)) {
-                          Priority::Priority_MakeHighest(pPVar26,(MethodInfo *)0x0);
-                          pGVar8 = (this->fields)._._gizmo;
-                          if ((pGVar8 != (Gizmo *)0x0) &&
-                             (pPVar26 = (pGVar8->fields)._hoverPriority2D, pPVar26 != (Priority *)0x0)
-                             ) {
-                            Priority::Priority_MakeHighest(pPVar26,(MethodInfo *)0x0);
-                            pGVar8 = (this->fields)._._gizmo;
-                            if ((pGVar8 != (Gizmo *)0x0) &&
-                               (pPVar26 = (pGVar8->fields)._hoverPriority3D,
-                               pPVar26 != (Priority *)0x0)) {
-                              Priority::Priority_MakeHighest(pPVar26,(MethodInfo *)0x0);
-                              return;
-                            }
-                          }
-                        }
-                      }
-                    }
+              pGVar7 = (this->fields)._._gizmo;
+              if ((pGVar7 != (Gizmo *)0x0) &&
+                 (pPVar20 = (pGVar7->fields)._genericHoverPriority, pPVar20 != (Priority *)0x0)) {
+                Priority::Priority_MakeHighest(pPVar20,(MethodInfo *)0x0);
+                pGVar7 = (this->fields)._._gizmo;
+                if ((pGVar7 != (Gizmo *)0x0) &&
+                   (pPVar20 = (pGVar7->fields)._hoverPriority2D, pPVar20 != (Priority *)0x0)) {
+                  Priority::Priority_MakeHighest(pPVar20,(MethodInfo *)0x0);
+                  pGVar7 = (this->fields)._._gizmo;
+                  if ((pGVar7 != (Gizmo *)0x0) &&
+                     (pPVar20 = (pGVar7->fields)._hoverPriority3D, pPVar20 != (Priority *)0x0)) {
+                    Priority::Priority_MakeHighest(pPVar20,(MethodInfo *)0x0);
+                    return;
                   }
                 }
               }
@@ -421,8 +319,8 @@ code_?:
   func_?(uVar4);
 code_?:
   func_?();
-  pcVar27 = (code *)swi(3);
-  (*pcVar27)();
+  pcVar21 = (code *)swi(3);
+  (*pcVar21)();
   return;
 }
 

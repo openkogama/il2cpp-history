@@ -194,7 +194,7 @@ OBB * Assembly-CSharp.dll::RTG::ArcMath::ArcMath_CalcSh3DArcOBB
   uVar17 = pVVar5->y;
   fVar2 = epsilon._extrudeEps * _UNK_?;
   fVar3 = (float)((uint)((float)uVar16 * (float)puVar15 + (float)uVar17 * angle +
-                        pVVar5->z * 4.3663796e-29) & _UNK_?) +
+                        pVVar5->z * 4.3747333e-29) & _UNK_?) +
           (float)((uint)(fVar12 * fVar11 + fVar10 * fVar8 + fVar7 * fVar3) & _UNK_?) + fVar13;
   fVar18 = (float10)func_?();
   (__return_storage_ptr__->_size).x = fVar3;
@@ -307,79 +307,74 @@ bool Assembly-CSharp.dll::RTG::ArcMath::ArcMath_Is3DPointOnLgArcWire
   fVar2 = arcStartPoint.x - arcOrigin.x;
   fVar3 = arcStartPoint.y - arcOrigin.y;
   fVar4 = arcStartPoint.z - arcOrigin.z;
-  fVar5 = point.x - arcOrigin.x;
-  fVar6 = point.y - arcOrigin.y;
   func_?(&stack0xffffffcc);
   func_?(&stack0xffffffcc,0);
-  pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+  pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
                      ((Vector3 *)&stack0xffffffa8,arcPlaneNormal,(MethodInfo *)0x0);
-  uVar8 = pVVar7->x;
-  uVar9 = pVVar7->y;
-  if (checkOnPlane != 0) {
-    fVar5 = 0.0;
-    plane.m_Distance =
-         (float)((uint)(arcOrigin.y * (float)uVar9 + arcOrigin.x * (float)uVar8 +
-                       arcOrigin.z * pVVar7->z) ^
-                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-    plane.m_Normal = *pVVar7;
-    fVar10 = PlaneEx::PlaneEx_GetAbsDistanceToPoint(plane,point,(MethodInfo *)0x0);
-    if (epsilon._extrudeEps < fVar10) {
-      return 0;
+  uVar6 = pVVar5->x;
+  uVar7 = pVVar5->y;
+  if ((checkOnPlane == 0) ||
+     ((float)((uint)((float)uVar7 * point.y + (float)uVar6 * point.x + pVVar5->z * point.z +
+                    (float)((uint)(arcOrigin.y * (float)uVar7 + arcOrigin.x * (float)uVar6 +
+                                  arcOrigin.z * pVVar5->z) ^
+                           __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field)
+                    ) & _UNK_?) <= epsilon._extrudeEps)) {
+    pQVar8 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
+                       ((Quaternion *)&stack0xffffff80,degreesFromStart,arcPlaneNormal,
+                        (MethodInfo *)0x0);
+    fVar9 = pQVar8->y;
+    fVar10 = pQVar8->z;
+    point_00.y = fVar3;
+    point_00.x = fVar2;
+    point_00.z = fVar4;
+    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                       ((Vector3 *)&stack0xffffffa8,*pQVar8,point_00,(MethodInfo *)0x0);
+    uVar11 = pVVar5->x;
+    uVar12 = pVVar5->y;
+    fVar2 = arcOrigin.x + (float)uVar11;
+    fVar3 = arcOrigin.y + (float)uVar12;
+    fVar13 = arcOrigin.z + pVVar5->z;
+    point0.y = arcOrigin.y;
+    point0.x = arcOrigin.x;
+    point0.z = arcOrigin.z;
+    fVar4 = point.z;
+    fVar14 = Vector3Ex::Vector3Ex_GetDistanceToSegment(point,point0,arcStartPoint,(MethodInfo *)0x0)
+    ;
+    if ((fVar14 <= epsilon._wireEps) ||
+       (point0_00.y = arcOrigin.x, point0_00.x = fVar4, point0_00.z = arcOrigin.z, point1.y = fVar3,
+       point1.x = fVar2, point1.z = fVar13, fVar3 = arcOrigin.x,
+       fVar2 = Vector3Ex::Vector3Ex_GetDistanceToSegment(point,point0_00,point1,(MethodInfo *)0x0),
+       fVar2 <= epsilon._wireEps)) {
+      return 1;
     }
-  }
-  pQVar11 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
-                     ((Quaternion *)&stack0xffffff80,degreesFromStart,arcPlaneNormal,
-                      (MethodInfo *)0x0);
-  fVar10 = pQVar11->y;
-  point_00.y = fVar3;
-  point_00.x = fVar2;
-  point_00.z = fVar4;
-  pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                     ((Vector3 *)&stack0xffffffa8,*pQVar11,point_00,(MethodInfo *)0x0);
-  uVar12 = pVVar7->x;
-  uVar13 = pVVar7->y;
-  method_00 = (MethodInfo *)(fVar10 + (float)uVar12);
-  fVar3 = arcOrigin.y + (float)uVar13;
-  fVar2 = arcOrigin.z + pVVar7->z;
-  point0.y = arcOrigin.y;
-  point0.x = fVar10;
-  point0.z = arcOrigin.z;
-  fVar4 = arcStartPoint.x;
-  fVar14 = Vector3Ex::Vector3Ex_GetDistanceToSegment(point,point0,arcStartPoint,method_00);
-  if ((epsilon._wireEps < fVar14) &&
-     (point0_00.y = arcOrigin.y, point0_00.x = fVar10, point0_00.z = arcOrigin.z, point1.y = fVar3,
-     point1.x = (float)method_00, point1.z = fVar2, fVar3 = fVar10, fVar2 = arcOrigin.y,
-     fVar14 = arcOrigin.z,
-     fVar15 = Vector3Ex::Vector3Ex_GetDistanceToSegment(point,point0_00,point1,(MethodInfo *)0x0),
-     epsilon._wireEps < fVar15)) {
-    arcOrigin_00.y = arcOrigin.y;
-    arcOrigin_00.x = fVar10;
+    arcOrigin_00.y = arcOrigin.x;
+    arcOrigin_00.x = fVar4;
     arcOrigin_00.z = arcOrigin.z;
-    ArcMath_ConvertToSh3DArcAngle
-              (arcOrigin_00,arcStartPoint,arcPlaneNormal,degreesFromStart,(MethodInfo *)0x0);
-    from.y = fVar3;
-    from.x = point.z;
-    from.z = fVar2;
-    to.y = fVar6;
-    to.x = fVar5;
-    to.z = fVar4;
-    fVar6 = Vector3Ex::Vector3Ex_SignedAngle(from,to,arcPlaneNormal,(MethodInfo *)0x0);
-    fVar3 = _UNK_?;
-    if (0.0 <= fVar6) {
-      fVar3 = _UNK_?;
+    fVar2 = ArcMath_ConvertToSh3DArcAngle
+                       (arcOrigin_00,arcStartPoint,arcPlaneNormal,degreesFromStart,(MethodInfo *)0x0
+                       );
+    from.y = arcOrigin.z;
+    from.x = arcOrigin.x;
+    from.z = arcStartPoint.x;
+    to.y = fVar10;
+    to.x = fVar9;
+    to.z = fVar3;
+    fVar3 = Vector3Ex::Vector3Ex_SignedAngle(from,to,arcPlaneNormal,(MethodInfo *)0x0);
+    fVar4 = _UNK_?;
+    if (0.0 <= fVar3) {
+      fVar4 = _UNK_?;
     }
-    fVar2 = _UNK_?;
-    if (fVar4 < 0.0) {
-      fVar2 = _UNK_?;
+    fVar9 = _UNK_?;
+    if (fVar2 < 0.0) {
+      fVar9 = _UNK_?;
     }
-    if (((fVar3 != fVar2) ||
-        ((float)((uint)fVar4 & _UNK_?) < (float)((uint)fVar6 & _UNK_?))) &&
-       ((float)method_00 - arcPlaneNormal.z <= fVar14)) {
-      return fVar14 <= arcPlaneNormal.z + (float)method_00;
+    if (((fVar4 != fVar9) ||
+        ((float)((uint)fVar2 & _UNK_?) < (float)((uint)fVar3 & _UNK_?))) &&
+       (arcStartPoint.z - epsilon._wireEps <= arcStartPoint.y)) {
+      return arcStartPoint.y <= epsilon._wireEps + arcStartPoint.z;
     }
-    return 0;
   }
-  return 1;
+  return 0;
 }
 
 
@@ -393,73 +388,65 @@ bool Assembly-CSharp.dll::RTG::ArcMath::ArcMath_Is3DPointOnShArcWire
   fVar1 = arcStartPoint.x - arcOrigin.x;
   fVar2 = arcStartPoint.y - arcOrigin.y;
   fVar3 = arcStartPoint.z - arcOrigin.z;
-  fVar4 = point.x - arcOrigin.x;
-  fVar5 = point.y - arcOrigin.y;
-  fVar6 = (float10)func_?(&stack0xffffffcc,0);
-  fVar7 = (float)fVar6;
-  fVar6 = (float10)func_?(&stack0xffffffcc,0);
-  fVar8 = (float)fVar6;
-  pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+  fVar4 = (float10)func_?(&stack0xffffffcc,0);
+  fVar5 = (float)fVar4;
+  fVar4 = (float10)func_?(&stack0xffffffcc,0);
+  fVar6 = (float)fVar4;
+  pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
                      ((Vector3 *)&stack0xffffffb8,arcPlaneNormal,(MethodInfo *)0x0);
-  uVar10 = pVVar9->x;
-  uVar11 = pVVar9->y;
-  if (checkOnPlane != 0) {
-    fVar4 = 0.0;
-    plane.m_Distance =
-         (float)((uint)(arcOrigin.y * (float)uVar11 + arcOrigin.x * (float)uVar10 +
-                       arcOrigin.z * pVVar9->z) ^
-                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-    plane.m_Normal = *pVVar9;
-    fVar12 = PlaneEx::PlaneEx_GetAbsDistanceToPoint(plane,point,(MethodInfo *)0x0);
-    if (epsilon._extrudeEps < fVar12) {
-      return 0;
-    }
+  uVar8 = pVVar7->x;
+  uVar9 = pVVar7->y;
+  if ((checkOnPlane != 0) &&
+     (epsilon._extrudeEps <
+      (float)((uint)((float)uVar9 * point.y + (float)uVar8 * point.x + pVVar7->z * point.z +
+                    (float)((uint)(arcOrigin.y * (float)uVar9 + arcOrigin.x * (float)uVar8 +
+                                  arcOrigin.z * pVVar7->z) ^
+                           __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field)
+                    ) & _UNK_?))) {
+    return 0;
   }
-  fVar12 = 0.0;
   from.y = fVar2;
   from.x = fVar1;
   from.z = fVar3;
-  to.y = fVar5;
-  to.x = fVar4;
-  to.z = point.z - arcOrigin.z;
-  fVar4 = Vector3Ex::Vector3Ex_SignedAngle(from,to,arcPlaneNormal,(MethodInfo *)0x0);
-  fVar5 = _UNK_?;
-  if (0.0 <= fVar4) {
-    fVar5 = _UNK_?;
+  auVar10._4_4_ = point.z - arcOrigin.z;
+  auVar10._0_4_ = point.y - arcOrigin.y;
+  auVar10._8_4_ = 0;
+  fVar11 = Vector3Ex::Vector3Ex_SignedAngle
+                     (from,(Vector3)(auVar10 << 0x20),arcPlaneNormal,(MethodInfo *)0x0);
+  fVar12 = _UNK_?;
+  if (0.0 <= fVar11) {
+    fVar12 = _UNK_?;
   }
   fVar13 = _UNK_?;
   if (degreesFromStart < 0.0) {
     fVar13 = _UNK_?;
   }
-  if ((((fVar5 != fVar13) ||
-       ((float)((uint)degreesFromStart & _UNK_?) < (float)((uint)fVar4 & _UNK_?))) ||
-      (fVar7 < fVar8 - epsilon._wireEps)) || (epsilon._wireEps + fVar8 < fVar7)) {
+  if ((((fVar12 != fVar13) ||
+       ((float)((uint)degreesFromStart & _UNK_?) < (float)((uint)fVar11 & _UNK_?))) ||
+      (fVar5 < fVar6 - epsilon._wireEps)) || (epsilon._wireEps + fVar6 < fVar5)) {
     pQVar14 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
                        ((Quaternion *)&stack0xffffff80,degreesFromStart,arcPlaneNormal,
                         (MethodInfo *)0x0);
     point_00.y = fVar2;
     point_00.x = fVar1;
+    pVVar7 = (Vector3 *)&stack0xffffffb8;
     point_00.z = fVar3;
-    pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                       ((Vector3 *)&stack0xffffffb8,*pQVar14,point_00,(MethodInfo *)0x0);
-    uVar15 = pVVar9->x;
-    uVar16 = pVVar9->y;
-    fVar8 = fVar12 + (float)uVar15;
-    fVar7 = arcOrigin.y + (float)uVar16;
-    fVar3 = arcOrigin.z + pVVar9->z;
-    auVar17._8_4_ = 0;
-    auVar17._0_8_ = point._4_8_;
-    point0_00.y = arcOrigin.y;
-    point0_00.x = fVar12;
-    point0_00.z = arcOrigin.z;
-    fVar2 = Vector3Ex::Vector3Ex_GetDistanceToSegment
-                       ((Vector3)(auVar17 << 0x20),point0_00,arcStartPoint,(MethodInfo *)0x0);
-    if ((epsilon._wireEps < fVar2) &&
-       (auVar18._8_4_ = 0, auVar18._0_8_ = point._4_8_, point0.y = arcOrigin.y, point0.x = fVar12,
-       point0.z = arcOrigin.z, point1.y = fVar7, point1.x = fVar8, point1.z = fVar3,
-       fVar7 = Vector3Ex::Vector3Ex_GetDistanceToSegment
-                          ((Vector3)(auVar18 << 0x20),point0,point1,(MethodInfo *)0x0),
-       epsilon._wireEps < fVar7)) {
+    UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+              (pVVar7,*pQVar14,point_00,(MethodInfo *)0x0);
+    point0.y = arcOrigin.y;
+    point0.x = (float)pVVar7;
+    point0.z = arcOrigin.z;
+    pVVar15 = pVVar7;
+    fVar5 = arcOrigin.y;
+    fVar6 = arcOrigin.z;
+    fVar3 = Vector3Ex::Vector3Ex_GetDistanceToSegment(point,point0,arcStartPoint,(MethodInfo *)0x0);
+    if ((epsilon._wireEps < fVar3) &&
+       (point_01.y = fVar6, point_01.x = fVar5, point_01.z = point.z, point0_00.y = arcOrigin.y,
+       point0_00.x = (float)pVVar7, point0_00.z = arcOrigin.z, point1.y = fVar5,
+       point1.x = (float)pVVar15, point1.z = fVar6,
+       fVar5 = Vector3Ex::Vector3Ex_GetDistanceToSegment
+                          (point_01,point0_00,point1,(MethodInfo *)0x0), epsilon._wireEps < fVar5))
+    {
       return 0;
     }
   }
@@ -1000,79 +987,75 @@ bool Assembly-CSharp.dll::RTG::ArcMath::ArcMath_ShArcContains3DPoint
   fVar1 = arcStartPoint.x - arcOrigin.x;
   fVar2 = arcStartPoint.y - arcOrigin.y;
   fVar3 = arcStartPoint.z - arcOrigin.z;
-  fVar4 = point.z - arcOrigin.z;
-  fVar5 = point.x - arcOrigin.x;
-  fVar6 = point.y - arcOrigin.y;
-  fVar7 = (float10)func_?(&stack0xffffffd0,0);
-  fVar8 = epsilon._areaEps + (float)fVar7;
-  fVar7 = (float10)func_?(&stack0xffffffc4,0);
-  if ((float)fVar7 <= fVar8) {
-    pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                       ((Vector3 *)&puStack_10,arcPlaneNormal,(MethodInfo *)0x0);
-    uVar11 = pVVar9->x;
-    uVar12 = pVVar9->y;
-    if (checkOnPlane != 0) {
-      fVar5 = 0.0;
-      plane.m_Distance =
-           (float)((uint)(arcOrigin.y * (float)uVar12 + arcOrigin.x * (float)uVar11 +
-                         arcOrigin.z * pVVar9->z) ^
-                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-      plane.m_Normal = *pVVar9;
-      fVar8 = PlaneEx::PlaneEx_GetAbsDistanceToPoint(plane,point,(MethodInfo *)0x0);
-      if (epsilon._extrudeEps < fVar8) {
-        return 0;
-      }
-    }
-    VVar13.y = fVar2;
-    VVar13.x = fVar1;
-    VVar13.z = fVar3;
-    to.y = fVar6;
-    to.x = fVar5;
-    to.z = fVar4;
-    fVar6 = Vector3Ex::Vector3Ex_SignedAngle(VVar13,to,arcPlaneNormal,(MethodInfo *)0x0);
-    fVar8 = _UNK_?;
-    if (0.0 <= fVar6) {
-      fVar8 = _UNK_?;
-    }
-    fVar5 = _UNK_?;
-    if (degreesFromStart < 0.0) {
+  fVar4 = (float10)func_?(&stack0xffffffc8,0);
+  fVar5 = epsilon._areaEps + (float)fVar4;
+  fVar4 = (float10)func_?(&stack0xffffffbc,0);
+  if ((float)fVar4 <= fVar5) {
+    pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                       ((Vector3 *)&stack0xffffffa8,arcPlaneNormal,(MethodInfo *)0x0);
+    uVar7 = pVVar6->x;
+    uVar8 = pVVar6->y;
+    if ((checkOnPlane == 0) ||
+       ((float)((uint)((float)uVar8 * point.y + (float)uVar7 * point.x + pVVar6->z * point.z +
+                      (float)((uint)(arcOrigin.y * (float)uVar8 + arcOrigin.x * (float)uVar7 +
+                                    arcOrigin.z * pVVar6->z) ^
+                             __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
+                             )) & _UNK_?) <= epsilon._extrudeEps)) {
+      from.y = fVar2;
+      from.x = fVar1;
+      from.z = fVar3;
+      auVar9._4_4_ = point.z - arcOrigin.z;
+      auVar9._0_4_ = point.y - arcOrigin.y;
+      auVar9._8_4_ = 0;
+      fVar10 = Vector3Ex::Vector3Ex_SignedAngle
+                         (from,(Vector3)(auVar9 << 0x20),arcPlaneNormal,(MethodInfo *)0x0);
       fVar5 = _UNK_?;
-    }
-    if ((fVar8 == fVar5) &&
-       ((float)((uint)fVar6 & _UNK_?) <= (float)((uint)degreesFromStart & _UNK_?))) {
-      return 1;
-    }
-    if (epsilon._areaEps != 0.0) {
-      pQVar14 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
-                         ((Quaternion *)&stack0xffffff70,degreesFromStart,arcPlaneNormal,
-                          (MethodInfo *)0x0);
-      point_00.y = fVar2;
-      point_00.x = fVar1;
-      point_00.z = fVar3;
-      UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                ((Vector3 *)&puStack_10,*pQVar14,point_00,(MethodInfo *)0x0);
-      point0_00.y = arcOrigin.y;
-      point0_00.x = fVar4;
-      point0_00.z = arcOrigin.z;
-      fVar3 = point.z;
-      fVar8 = Vector3Ex::Vector3Ex_GetDistanceToSegment
-                        (point,point0_00,arcStartPoint,(MethodInfo *)0x0);
-      if (fVar8 <= epsilon._areaEps) {
+      if (0.0 <= fVar10) {
+        fVar5 = _UNK_?;
+      }
+      fVar11 = _UNK_?;
+      if (degreesFromStart < 0.0) {
+        fVar11 = _UNK_?;
+      }
+      if ((fVar5 == fVar11) &&
+         ((float)((uint)fVar10 & _UNK_?) <= (float)((uint)degreesFromStart & _UNK_?)))
+      {
         return 1;
       }
-      stack0xfffffffc = arcOrigin.y;
-      fStack_15 = fVar4;
-      VVar13.z = point.z;
-      VVar13 = (Vector3)CONCAT48(VVar13.z,uVar16);
-      point0.y = arcOrigin.y;
-      point0.x = fVar4;
-      point0.z = arcOrigin.z;
-      point1.y = point.y;
-      point1.x = point.x;
-      point1.z = fVar3;
-      fVar3 = Vector3Ex::Vector3Ex_GetDistanceToSegment(VVar13,point0,point1,(MethodInfo *)0x0);
-      if (fVar3 <= epsilon._areaEps) {
-        return 1;
+      if (epsilon._areaEps != 0.0) {
+        pQVar12 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
+                           ((Quaternion *)&stack0xffffff80,degreesFromStart,arcPlaneNormal,
+                            (MethodInfo *)0x0);
+        point_00.y = fVar2;
+        point_00.x = fVar1;
+        point_00.z = fVar3;
+        UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
+                  ((Vector3 *)&stack0xffffffa8,*pQVar12,point_00,(MethodInfo *)0x0);
+        puVar13 = &UNK_?;
+        point0.y = arcOrigin.y;
+        point0.x = (float)&UNK_?;
+        point0.z = arcOrigin.z;
+        fVar3 = point.z;
+        fVar5 = arcOrigin.y;
+        fVar2 = Vector3Ex::Vector3Ex_GetDistanceToSegment
+                           (point,point0,arcStartPoint,(MethodInfo *)0x0);
+        if (fVar2 <= epsilon._areaEps) {
+          return 1;
+        }
+        point_01.y = fVar5;
+        point_01.x = (float)puVar13;
+        point_01.z = point.z;
+        point0_00.y = arcOrigin.y;
+        point0_00.x = (float)&UNK_?;
+        point0_00.z = arcOrigin.z;
+        point1.y = (float)puVar13;
+        point1.x = fVar3;
+        point1.z = fVar5;
+        fVar3 = Vector3Ex::Vector3Ex_GetDistanceToSegment
+                          (point_01,point0_00,point1,(MethodInfo *)0x0);
+        if (fVar3 <= epsilon._areaEps) {
+          return 1;
+        }
       }
     }
   }

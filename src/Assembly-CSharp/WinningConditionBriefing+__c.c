@@ -1,8 +1,8 @@
 
-/* Void <OnPlayPressed>b__37_0(IUIStack, BaseEventData) */
+/* Void <OnPlayPressed>b__38_0(IUIStack, BaseEventData) */
 
 void Assembly-CSharp.dll::WinningConditionBriefing+<>c::
-     WinningConditionBriefing_c__OnPlayPressed_b__37_0
+     WinningConditionBriefing_c__OnPlayPressed_b__38_0
                (WinningConditionBriefing_c *this,IUIStack *x,BaseEventData *y,MethodInfo *method)
 
 {

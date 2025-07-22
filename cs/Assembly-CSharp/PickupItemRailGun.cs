@@ -50,6 +50,7 @@ public class PickupItemRailGun : PickupItemWithDelay
 	public override AvatarItemType Type { get; }
 	protected override bool IsAmmoDepleted { get; }
 	public override int Quantity { get; }
+	public override int MaxAmmo { get; }
 	public override float ChargeState { get; }
 	public override Color CrossHairColor { get; }
 

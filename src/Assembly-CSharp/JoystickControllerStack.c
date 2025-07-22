@@ -108,42 +108,6 @@ code_?:
 }
 
 
-/* Void HideEUseIcon() */
-
-void Assembly-CSharp.dll::JoystickControllerStack::JoystickControllerStack_HideEUseIcon
-               (JoystickControllerStack *this,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?();
-    func_?();
-    cRam_? = '\x01';
-  }
-  pLVar1 = (this->fields).controls;
-  if (pLVar1 != (List_1_InGameControls_ *)0x0) {
-    if ((pLVar1->fields)._size != 0) {
-      RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-              RegexCharClass+SingleRange]::
-              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                        ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                         (this->fields).controls,(pLVar1->fields)._size + -1,
-                         MethodInfo__System__Collections__Generic__List<InGameControls>__get_Item_int_
-                        );
-      if ((RVar2 == (RegexCharClass_SingleRange)0x0) || (*(int **)((int)RVar2 + 0x18) == (int *)0x0)
-         ) goto code_?;
-      (**(code **)(**(int **)((int)RVar2 + 0x18) + 0xe8))();
-    }
-    return;
-  }
-code_?:
-  uVar3 = func_?(&stack0xfffffff0);
-  func_?(uVar3);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
-  return;
-}
-
-
 /* Void Pop() */
 
 void Assembly-CSharp.dll::JoystickControllerStack::JoystickControllerStack_Pop
@@ -246,42 +210,6 @@ void Assembly-CSharp.dll::JoystickControllerStack::JoystickControllerStack_PushJ
   }
   JoystickControllerStack_CreateJoystickFromPrefab
             (this,(this->fields).jetPackControls,(MethodInfo *)0x0);
-  return;
-}
-
-
-/* Void ShowEUseIcon(ShowUseOption) */
-
-void Assembly-CSharp.dll::JoystickControllerStack::JoystickControllerStack_ShowEUseIcon
-               (JoystickControllerStack *this,ShowUseOption__Enum option,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?();
-    func_?();
-    cRam_? = '\x01';
-  }
-  pLVar1 = (this->fields).controls;
-  if (pLVar1 != (List_1_InGameControls_ *)0x0) {
-    if ((pLVar1->fields)._size != 0) {
-      RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-              RegexCharClass+SingleRange]::
-              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                        ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                         (this->fields).controls,(pLVar1->fields)._size + -1,
-                         MethodInfo__System__Collections__Generic__List<InGameControls>__get_Item_int_
-                        );
-      if ((RVar2 == (RegexCharClass_SingleRange)0x0) || (*(int **)((int)RVar2 + 0x18) == (int *)0x0)
-         ) goto code_?;
-      (**(code **)(**(int **)((int)RVar2 + 0x18) + 0xe0))();
-    }
-    return;
-  }
-code_?:
-  uVar3 = func_?(&stack0xfffffff0);
-  func_?(uVar3);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
   return;
 }
 

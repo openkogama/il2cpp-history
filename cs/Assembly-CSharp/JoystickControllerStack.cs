@@ -26,8 +26,6 @@ public class JoystickControllerStack : MonoBehaviour
 
 	// Methods
 	private void Awake();
-	public void ShowEUseIcon(ShowUseOption option);
-	public void HideEUseIcon();
 	public void PushJoystick(ControlType joystickType);
 	public void Pop();
 	private void CreateJoystickFromPrefab(InGameControls prefab);

@@ -695,110 +695,106 @@ void Assembly-CSharp.dll::FirstTimeElementActivator::FirstTimeElementActivator_S
     func_?(&TypeInfo__FirstTimeElementActivator____c);
     cRam_? = '\x01';
   }
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__FirstTimeEventManager);
-    cRam_? = '\x01';
-  }
-  this_00 = TypeInfo__FirstTimeEventManager->static_fields->firstTimeState;
-  if (this_00 != (FirstTimeState *)0x0) {
-    method_00 = (MethodInfo *)0x0;
-    bVar1 = MVWorldObject.dll::MV::WorldObject::MetaData::FirstTimeState::
-            FirstTimeState_HasFirstTimeEventOccured
-                      (this_00,FirstTimeEvent__Enum_SkipEvent,(MethodInfo *)0x0);
-    if (bVar1 == 0) {
-      value = (Object *)func_?(TypeInfo__FirstTimeElementActivator____c__DisplayClass15_0);
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                (value,ExceptionArgument__Enum_obj,method_00);
-      original = (this->fields).firstTimeSkipPopup;
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Object);
-      }
-      pOVar2 = (Object__Class *)
-               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                         ((Object *)original,
-                          FirstTimeEventSkipPopup_MethodInfo__UnityEngine__Object__Instantiate<FirstTimeEventSkipPopup>_FirstTimeEventSkipPopup_
-                         );
-      if (value != (Object *)0x0) {
-        value[1].klass = pOVar2;
-        func_?(value + 1,pOVar2);
-        pOVar2 = value[1].klass;
-        if (pOVar2 != (Object__Class *)0x0) {
-          (pOVar2->_0).byval_arg.attrs = (undefined2)firstTimeEvent;
-          (pOVar2->_0).byval_arg.type = firstTimeEvent._2_1_;
-          (pOVar2->_0).byval_arg.field_0x7 = firstTimeEvent._3_1_;
-          (pOVar2->_0).byval_arg.data.typeHandle = (Il2CppMetadataTypeHandle)firstTimeActivatable;
-          func_?(&(pOVar2->_0).byval_arg,firstTimeActivatable);
-          pUVar3 = (this->fields).uiStack;
-          if (pUVar3 != (UIStack *)0x0) {
-            pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                               ((Component *)pUVar3,(MethodInfo *)0x0);
-            callbackFunction =
-                 (ExecuteEvents_EventFunction_1_System_Object_ *)
-                 func_?(
-                                TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                                );
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-            Object]::UnityAction_2_System_Object_System_Object___ctor
-                      ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
-                       MethodInfo__FirstTimeElementActivator____c__DisplayClass15_0___SkipFirstTimeEvent_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                       ,(MethodInfo *)0x0);
-            if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor
-                == 0) {
-              func_?();
-            }
-            UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-            ExecuteEvents_ExecuteHierarchy
-                      (pGVar4,(BaseEventData *)0x0,callbackFunction,
-                       UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                      );
-            return;
+  bVar1 = FirstTimeEventManager::FirstTimeEventManager_HasFirstTimeEventOccured
+                    (FirstTimeEvent__Enum_SkipEvent,(MethodInfo *)0x0);
+  if (bVar1 == 0) {
+    this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
+              func_?(TypeInfo__FirstTimeElementActivator____c__DisplayClass15_0);
+    UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+    UxmlObjectListAttributeDescription`1[System::Object]::
+    UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
+    original = (this->fields).firstTimeSkipPopup;
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?(TypeInfo__UnityEngine__Object);
+    }
+    pLVar2 = (List_1_System_Object_ *)
+             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                       ((Object *)original,
+                        FirstTimeEventSkipPopup_MethodInfo__UnityEngine__Object__Instantiate<FirstTimeEventSkipPopup>_FirstTimeEventSkipPopup_
+                       );
+    if (this_00 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
+      (this_00->fields)._._defaultValue_k__BackingField = pLVar2;
+      func_?(&this_00->fields,pLVar2);
+      pLVar2 = (this_00->fields)._._defaultValue_k__BackingField;
+      if (pLVar2 != (List_1_System_Object_ *)0x0) {
+        FirstTimeEventSkipPopup::FirstTimeEventSkipPopup_Initialize
+                  ((FirstTimeEventSkipPopup *)pLVar2,firstTimeEvent,firstTimeActivatable,
+                   (MethodInfo *)0x0);
+        pUVar3 = (this->fields).uiStack;
+        if (pUVar3 != (UIStack *)0x0) {
+          pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                             ((Component *)pUVar3,(MethodInfo *)0x0);
+          callbackFunction =
+               (ExecuteEvents_EventFunction_1_System_Object_ *)
+               func_?(
+                              TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                              );
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+          Object]::UnityAction_2_System_Object_System_Object___ctor
+                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,
+                     (Object *)this_00,
+                     MethodInfo__FirstTimeElementActivator____c__DisplayClass15_0___SkipFirstTimeEvent_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                     ,(MethodInfo *)0x0);
+          if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
+              0) {
+            func_?();
           }
+          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+          ExecuteEvents_ExecuteHierarchy
+                    (pGVar4,(BaseEventData *)0x0,callbackFunction,
+                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                    );
+          return;
         }
       }
     }
-    else {
-      pUVar3 = (this->fields).uiStack;
-      if (pUVar3 != (UIStack *)0x0) {
-        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)pUVar3,(MethodInfo *)0x0);
-        if ((TypeInfo__FirstTimeElementActivator____c->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        callbackFunction_00 = TypeInfo__FirstTimeElementActivator____c->static_fields->__9__15_0;
-        if (callbackFunction_00 == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-          if ((TypeInfo__FirstTimeElementActivator____c->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          object = TypeInfo__FirstTimeElementActivator____c->static_fields->__9;
-          callbackFunction_00 = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
-                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,
-                     (Object *)object,
-                     MethodInfo__FirstTimeElementActivator____c___SkipFirstTimeEvent_b__15_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                     ,(MethodInfo *)0x0);
-          TypeInfo__FirstTimeElementActivator____c->static_fields->__9__15_0 = callbackFunction_00;
-          func_?(&TypeInfo__FirstTimeElementActivator____c->static_fields->__9__15_0,
-                          callbackFunction_00);
-        }
-        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
-           ) {
-          func_?();
-        }
-        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                  (pGVar4,(BaseEventData *)0x0,
-                   (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction_00,
-                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                  );
-        FirstTimeEventManager::FirstTimeEventManager_SetFirstTimeEvent
-                  (firstTimeEvent,(MethodInfo *)0x0);
-        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                  ((Object_1 *)firstTimeActivatable,(MethodInfo *)0x0);
-        return;
+  }
+  else {
+    pUVar3 = (this->fields).uiStack;
+    if (pUVar3 != (UIStack *)0x0) {
+      pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)pUVar3,(MethodInfo *)0x0);
+      if ((TypeInfo__FirstTimeElementActivator____c->_1).cctor_finished_or_no_cctor == 0) {
+        func_?(TypeInfo__FirstTimeElementActivator____c);
       }
+      callbackFunction_00 = TypeInfo__FirstTimeElementActivator____c->static_fields->__9__15_0;
+      if (callbackFunction_00 == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+        if ((TypeInfo__FirstTimeElementActivator____c->_1).cctor_finished_or_no_cctor == 0) {
+          func_?(TypeInfo__FirstTimeElementActivator____c);
+        }
+        object = TypeInfo__FirstTimeElementActivator____c->static_fields->__9;
+        callbackFunction_00 =
+             (ExecuteEvents_EventFunction_1_IUIStack_ *)
+             func_?(
+                            TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                            );
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,
+                   (Object *)object,
+                   MethodInfo__FirstTimeElementActivator____c___SkipFirstTimeEvent_b__15_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   ,(MethodInfo *)0x0);
+        TypeInfo__FirstTimeElementActivator____c->static_fields->__9__15_0 = callbackFunction_00;
+        func_?(&TypeInfo__FirstTimeElementActivator____c->static_fields->__9__15_0,
+                        callbackFunction_00);
+      }
+      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
+      {
+        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+      }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (pGVar4,(BaseEventData *)0x0,
+                 (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction_00,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                );
+      FirstTimeEventManager::FirstTimeEventManager_SetFirstTimeEvent
+                (firstTimeEvent,(MethodInfo *)0x0);
+      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
+                ((Object_1 *)firstTimeActivatable,(MethodInfo *)0x0);
+      return;
     }
   }
   func_?();

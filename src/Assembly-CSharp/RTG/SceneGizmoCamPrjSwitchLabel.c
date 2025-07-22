@@ -470,48 +470,114 @@ void Assembly-CSharp.dll::RTG::SceneGizmoCamPrjSwitchLabel::SceneGizmoCamPrjSwit
   (this->fields)._sceneGizmo = sceneGizmo;
   func_?(&this->fields,sceneGizmo);
   pSVar1 = (this->fields)._sceneGizmo;
-  if (pSVar1 != (SceneGizmo *)0x0) {
-    pGVar2 = (pSVar1->fields)._._gizmo;
-    id = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
-         UnsafeUtility_SizeOf_10((MethodInfo *)0x0);
-    if (pGVar2 != (Gizmo *)0x0) {
-      pGVar3 = Gizmo::Gizmo_CreateHandle(pGVar2,id,(MethodInfo *)0x0);
-      (this->fields)._handle = pGVar3;
-      func_?();
-      pGVar3 = (this->fields)._handle;
-      if (pGVar3 != (GizmoHandle *)0x0) {
-        GizmoHandle::GizmoHandle_Add2DShape
-                  (pGVar3,(Shape2D *)(this->fields)._labelQuad,(MethodInfo *)0x0);
-        if (sceneGizmo != (SceneGizmo *)0x0) {
-          pGVar2 = (sceneGizmo->fields)._._gizmo;
-          this_01 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)func_?();
-          UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
-          VideoCapture+OnVideoCaptureResourceCreatedCallback::
-          VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
-                    (this_01,(Object *)this,
-                     MethodInfo__RTG__SceneGizmoCamPrjSwitchLabel__OnGizmoPreUpdateBegin_RTG__Gizmo_
-                     ,(MethodInfo *)0x0);
-          if (pGVar2 != (Gizmo *)0x0) {
-            Gizmo::Gizmo_add_PreUpdateBegin
-                      (pGVar2,(GizmoPreUpdateBeginHandler *)0x0,(MethodInfo *)0x0);
-            pGVar2 = (sceneGizmo->fields)._._gizmo;
-            value = (GizmoPreHandlePickedHandler *)func_?();
-            mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-                      ((EventHandler_1_Object_ *)value,(Object *)this,
-                       MethodInfo__RTG__SceneGizmoCamPrjSwitchLabel__OnGizmoHandlePicked_RTG__Gizmo__int_
-                       ,(MethodInfo *)0x0);
-            if (pGVar2 != (Gizmo *)0x0) {
-              Gizmo::Gizmo_add_PreHandlePicked(pGVar2,value,(MethodInfo *)0x0);
-              return;
+  if ((pSVar1 != (SceneGizmo *)0x0) && (pGVar2 = (pSVar1->fields)._._gizmo, pGVar2 != (Gizmo *)0x0))
+  {
+    pGVar3 = Gizmo::Gizmo_CreateHandle(pGVar2,8,(MethodInfo *)0x0);
+    (this->fields)._handle = pGVar3;
+    method_01 = (Predicate_1_RTG_GizmoHandleShape2D___Class **)&UNK_?;
+    func_?(&(this->fields)._handle,pGVar3);
+    pGVar3 = (this->fields)._handle;
+    pOVar4 = (Object__Class *)(this->fields)._labelQuad;
+    if (pGVar3 != (GizmoHandle *)0x0) {
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__RTG__GizmoHandleShape2D);
+        func_?(&
+                        MethodInfo__System__Collections__Generic__List<RTG::GizmoHandleShape2D>__Add_RTG__GizmoHandleShape2D_
+                       );
+        ppMVar5 = &
+                  MethodInfo__System__Collections__Generic__List<RTG::GizmoHandleShape2D>__get_Count__
+        ;
+        func_?();
+        cRam_? = '\x01';
+        method_01 = (Predicate_1_RTG_GizmoHandleShape2D___Class **)ppMVar5;
+      }
+      if (cRam_? == '\0') {
+        func_?(&
+                        MethodInfo__System__Collections__Generic__List<RTG::GizmoHandleShape2D>__FindAll_System__Predicate<RTG::GizmoHandleShape2D>_
+                       );
+        func_?(&
+                        MethodInfo__System__Collections__Generic__List<RTG::GizmoHandleShape2D>__get_Count__
+                       );
+        method_01 = &TypeInfo__System__Predicate<RTG::GizmoHandleShape2D>;
+        func_?();
+        func_?(&
+                        MethodInfo__RTG__GizmoHandle____c__DisplayClass63_0___Contains2DShape_b__0_RTG__GizmoHandleShape2D_
+                       );
+        func_?(&TypeInfo__RTG__GizmoHandle____c__DisplayClass63_0);
+        cRam_? = '\x01';
+      }
+      pOVar6 = (Object *)func_?(TypeInfo__RTG__GizmoHandle____c__DisplayClass63_0);
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                (pOVar6,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
+      if (pOVar6 != (Object *)0x0) {
+        pOVar6[1].klass = pOVar4;
+        func_?(pOVar6 + 1,pOVar4);
+        pLVar7 = (pGVar3->fields)._2DShapes;
+        this_01 = (Predicate_1_Object_ *)
+                  func_?(TypeInfo__System__Predicate<RTG::GizmoHandleShape2D>);
+        mscorlib.dll::System::Predicate`1[Object]::Predicate_1_Object___ctor
+                  (this_01,pOVar6,
+                   MethodInfo__RTG__GizmoHandle____c__DisplayClass63_0___Contains2DShape_b__0_RTG__GizmoHandleShape2D_
+                   ,(MethodInfo *)0x0);
+        if (pLVar7 != (List_1_RTG_GizmoHandleShape2D_ *)0x0) {
+          pLVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+                   List_1_System_Object__FindAll
+                             ((List_1_System_Object_ *)pLVar7,this_01,
+                              MethodInfo__System__Collections__Generic__List<RTG::GizmoHandleShape2D>__FindAll_System__Predicate<RTG::GizmoHandleShape2D>_
+                             );
+          if (pLVar8 != (List_1_System_Object_ *)0x0) {
+            if ((pLVar8->fields)._size == 0) {
+              method_02 = TypeInfo__RTG__GizmoHandleShape2D;
+              pOVar6 = (Object *)func_?();
+              *(undefined2 *)&pOVar6[1].klass = 0x101;
+              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                        (pOVar6,ExceptionArgument__Enum_obj,(MethodInfo *)method_02);
+              pOVar6[1].monitor = (MonitorData *)pOVar4;
+              func_?(&pOVar6[1].monitor,pOVar4);
+              pLVar7 = (pGVar3->fields)._2DShapes;
+              if (pLVar7 == (List_1_RTG_GizmoHandleShape2D_ *)0x0) goto code_?;
+              mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+              List_1_System_Object__Add
+                        ((List_1_System_Object_ *)pLVar7,pOVar6,
+                         MethodInfo__System__Collections__Generic__List<RTG::GizmoHandleShape2D>__Add_RTG__GizmoHandleShape2D_
+                        );
+              if ((pGVar3->fields)._2DShapes == (List_1_RTG_GizmoHandleShape2D_ *)0x0)
+              goto code_?;
+            }
+            if (sceneGizmo != (SceneGizmo *)0x0) {
+              pGVar2 = (sceneGizmo->fields)._._gizmo;
+              value = (GizmoPreUpdateBeginHandler *)
+                      func_?(TypeInfo__RTG__GizmoPreUpdateBeginHandler);
+              UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
+              VideoCapture+OnVideoCaptureResourceCreatedCallback::
+              VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
+                        ((VideoCapture_OnVideoCaptureResourceCreatedCallback *)value,(Object *)this,
+                         MethodInfo__RTG__SceneGizmoCamPrjSwitchLabel__OnGizmoPreUpdateBegin_RTG__Gizmo_
+                         ,(MethodInfo *)0x0);
+              if (pGVar2 != (Gizmo *)0x0) {
+                Gizmo::Gizmo_add_PreUpdateBegin(pGVar2,value,(MethodInfo *)0x0);
+                pGVar2 = (sceneGizmo->fields)._._gizmo;
+                value_00 = (GizmoPreHandlePickedHandler *)
+                           func_?(TypeInfo__RTG__GizmoPreHandlePickedHandler);
+                mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                          ((EventHandler_1_Object_ *)value_00,(Object *)this,
+                           MethodInfo__RTG__SceneGizmoCamPrjSwitchLabel__OnGizmoHandlePicked_RTG__Gizmo__int_
+                           ,(MethodInfo *)0x0);
+                if (pGVar2 != (Gizmo *)0x0) {
+                  Gizmo::Gizmo_add_PreHandlePicked(pGVar2,value_00,(MethodInfo *)0x0);
+                  return;
+                }
+              }
             }
           }
         }
       }
     }
   }
+code_?:
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

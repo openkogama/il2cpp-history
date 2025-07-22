@@ -196,22 +196,22 @@ void Assembly-CSharp.dll::DesktopCubeModelingToolsController::
   if (this_00 != (Button *)0x0) {
     pIVar1 = UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_get_image
                        ((Selectable *)this_00,(MethodInfo *)0x0);
-    pIStack_2 = (Image *)(this->fields).enabledAlpha;
+    pIVar2 = (Image *)(this->fields).enabledAlpha;
     if (pIVar1 != (Image *)0x0) {
-      pIStack_3 = (pIVar1->klass->vtable).set_color.methodPtr;
-      pIStack_4 = pIVar1;
-      puVar5 = (undefined4 *)(*(code *)(pIVar1->klass->vtable).get_color.method)(&pIStack_4);
-      pIStack_3 = (Il2CppMethodPointer)puVar5[1];
-      uStack_6 = puVar5[2];
-      pIStack_4 = pIStack_2;
-      (*(code *)(pIVar1->klass->vtable).set_color.method)(pIVar1,*puVar5,pIStack_3,uStack_6);
+      pIStack_3 = pIVar1;
+      puVar4 = (undefined4 *)(*(code *)(pIVar1->klass->vtable).get_color.method)(&pIStack_3);
+      pIStack_3 = pIVar2;
+      (*(code *)(pIVar1->klass->vtable).set_color.method)(pIVar1,*puVar4,puVar4[1],puVar4[2]);
 code_?:
       return;
     }
   }
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  uVar5 = func_?();
+  uVar6 = (undefined2)((uint6)uVar5 >> 0x20);
+  out(uVar6,(uint)uVar5);
+  uVar7 = (uint)uVar5 ^ 0x10;
+  out(uVar6,uVar7);
+  out(uVar6,CONCAT31((int3)((uint6)uVar5 >> 8),(char)uVar7) ^ 0x10);
   return;
 }
 

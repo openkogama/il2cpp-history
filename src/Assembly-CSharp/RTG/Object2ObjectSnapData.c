@@ -596,7 +596,9 @@ code_?:
     if ((TypeInfo__RTG__Singleton<RTG::RTMeshDb>->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    this_01 = (RTMeshDb *)func_?();
+    this_01 = (RTMeshDb *)
+              Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
+                        (MethodInfo__RTG__Singleton<RTG::RTMeshDb>__get_Get__);
     if (this_01 == (RTMeshDb *)0x0) goto code_?;
     this_03 = RTMeshDb::RTMeshDb_GetRTMesh(this_01,unityMesh,(MethodInfo *)0x0);
     if (this_03 == (RTMesh *)0x0) goto code_?;

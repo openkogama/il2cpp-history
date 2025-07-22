@@ -407,6 +407,7 @@ void Assembly-CSharp.dll::MVTriggerHandler::MVTriggerHandler_Update
                (MVTriggerHandler *this,MethodInfo *method)
 
 {
+  this_01 = this;
   if (cRam_? == '\0') {
     func_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<int,_TriggerBoxEvents>__Add_int__TriggerBoxEvents_
@@ -442,7 +443,7 @@ void Assembly-CSharp.dll::MVTriggerHandler::MVTriggerHandler_Update
                      (pDVar1,
                       MethodInfo__System__Collections__Generic__Dictionary<int,_TriggerBoxEvents>__get_Keys__
                      );
-    this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+    this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
               MVTriggerHandler_GetMissingKeysInDictionary
                         (this,(Dictionary_2_TKey_TValue_KeyCollection_System_Int32_TriggerBoxEvents_
                                *)keys,(this->fields).newTriggerBoxEvents,(MethodInfo *)0x0);
@@ -457,42 +458,41 @@ void Assembly-CSharp.dll::MVTriggerHandler::MVTriggerHandler_Update
                           (pDVar1,
                            MethodInfo__System__Collections__Generic__Dictionary<int,_TriggerBoxEvents>__get_Keys__
                           );
-      this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+      this_03 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                 MVTriggerHandler_GetMissingKeysInDictionary
                           (this,(Dictionary_2_TKey_TValue_KeyCollection_System_Int32_TriggerBoxEvents_
                                  *)keys_00,(this->fields).triggerBoxEvents,(MethodInfo *)0x0);
-      iVar2 = 0;
-      if (this_01 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-        for (; iVar2 < (this_01->fields)._size; iVar2 = iVar2 + 1) {
-          RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+      index = 0;
+      if (this_02 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+        for (; index < (this_02->fields)._size; index = index + 1) {
+          RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                   RegularExpressions::RegexCharClass+SingleRange]::
                   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            (this_01,iVar2,
+                            (this_02,index,
                              MethodInfo__System__Collections__Generic__List<int>__get_Item_int_);
-          pDVar4 = (this->fields).triggerBoxEvents;
-          if (pDVar4 == (Dictionary_2_System_Int32_TriggerBoxEvents_ *)0x0) goto code_?;
-          pTVar5 = (TriggerBoxEvents *)
+          pDVar3 = (this->fields).triggerBoxEvents;
+          if (pDVar3 == (Dictionary_2_System_Int32_TriggerBoxEvents_ *)0x0) goto code_?;
+          pTVar4 = (TriggerBoxEvents *)
                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
                    Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                             ((Dictionary_2_System_Int32_System_Object_ *)pDVar4,(int32_t)RVar3,
+                             ((Dictionary_2_System_Int32_System_Object_ *)pDVar3,(int32_t)RVar2,
                               MethodInfo__System__Collections__Generic__Dictionary<int,_TriggerBoxEvents>__get_Item_int_
                              );
-          this_01 = keys_00;
+          this_02 = keys_00;
           if (cRam_? == '\0') {
             func_?();
             func_?();
             cRam_? = '\x01';
-            this_01 = keys_00;
+            this_02 = keys_00;
           }
-          pCVar6 = (this->fields).triggingCollider;
           if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+          this_03 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                     &UNK_?;
-          bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                            ((Object_1 *)pCVar6,(Object_1 *)0x0,(MethodInfo *)0x0);
-          if (bVar7 != 0) {
+          bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+                            ((Object_1 *)0x0,(Object_1 *)0x0,(MethodInfo *)0x0);
+          if (bVar5 != 0) {
             pCVar6 = (Collider *)
                      UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
                                ((Component *)this,
@@ -501,47 +501,48 @@ void Assembly-CSharp.dll::MVTriggerHandler::MVTriggerHandler_Update
             (this->fields).triggingCollider = pCVar6;
             func_?();
           }
-          if (pTVar5 == (TriggerBoxEvents *)0x0) goto code_?;
+          if (pTVar4 == (TriggerBoxEvents *)0x0) goto code_?;
           TriggerBoxEvents::TriggerBoxEvents_OnMVTriggerExit
-                    (pTVar5,(this->fields).triggingCollider,(MethodInfo *)0x0);
-          pDVar4 = (this->fields).triggerBoxEvents;
-          if (pDVar4 == (Dictionary_2_System_Int32_TriggerBoxEvents_ *)0x0) goto code_?;
+                    (pTVar4,(this->fields).triggingCollider,(MethodInfo *)0x0);
+          pDVar3 = (this->fields).triggerBoxEvents;
+          if (pDVar3 == (Dictionary_2_System_Int32_TriggerBoxEvents_ *)0x0) goto code_?;
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
           Dictionary_2_System_Int32_System_Object__Remove
-                    ((Dictionary_2_System_Int32_System_Object_ *)pDVar4,(int32_t)RVar3,
+                    ((Dictionary_2_System_Int32_System_Object_ *)pDVar3,(int32_t)RVar2,
                      MethodInfo__System__Collections__Generic__Dictionary<int,_TriggerBoxEvents>__Remove_int_
                     );
-          keys_00 = this_01;
+          keys_00 = this_02;
         }
-        iVar2 = 0;
-        if (this_02 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-          while (iVar2 < (this_02->fields)._size) {
-            RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
+        this = (MVTriggerHandler *)0x0;
+        if (this_03 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+          for (; (int)this < (this_03->fields)._size;
+              this = (MVTriggerHandler *)((int)&this->klass + 1)) {
+            RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
                     RegularExpressions::RegexCharClass+SingleRange]::
                     List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                              (this_02,iVar2,
+                              (this_03,(int32_t)this,
                                MethodInfo__System__Collections__Generic__List<int>__get_Item_int_);
-            pDVar4 = (this->fields).triggerBoxEvents;
-            this_00 = (this->fields).newTriggerBoxEvents;
+            pDVar3 = (this_01->fields).triggerBoxEvents;
+            this_00 = (this_01->fields).newTriggerBoxEvents;
             if ((this_00 == (Dictionary_2_System_Int32_TriggerBoxEvents_ *)0x0) ||
                (value = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                         Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item
                                   ((Dictionary_2_System_Int32_System_Object_ *)this_00,
-                                   (int32_t)RVar3,
+                                   (int32_t)RVar2,
                                    MethodInfo__System__Collections__Generic__Dictionary<int,_TriggerBoxEvents>__get_Item_int_
-                                  ), pDVar4 == (Dictionary_2_System_Int32_TriggerBoxEvents_ *)0x0))
+                                  ), pDVar3 == (Dictionary_2_System_Int32_TriggerBoxEvents_ *)0x0))
             goto code_?;
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
             Dictionary_2_System_Int32_System_Object__Add
-                      ((Dictionary_2_System_Int32_System_Object_ *)pDVar4,(int32_t)RVar3,value,
+                      ((Dictionary_2_System_Int32_System_Object_ *)pDVar3,(int32_t)RVar2,value,
                        MethodInfo__System__Collections__Generic__Dictionary<int,_TriggerBoxEvents>__Add_int__TriggerBoxEvents_
                       );
-            pDVar4 = (this->fields).triggerBoxEvents;
-            if (pDVar4 == (Dictionary_2_System_Int32_TriggerBoxEvents_ *)0x0) goto code_?;
-            pTVar5 = (TriggerBoxEvents *)
+            pDVar3 = (this_01->fields).triggerBoxEvents;
+            if (pDVar3 == (Dictionary_2_System_Int32_TriggerBoxEvents_ *)0x0) goto code_?;
+            pTVar4 = (TriggerBoxEvents *)
                      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
                      Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                               ((Dictionary_2_System_Int32_System_Object_ *)pDVar4,(int32_t)RVar3,
+                               ((Dictionary_2_System_Int32_System_Object_ *)pDVar3,(int32_t)RVar2,
                                 MethodInfo__System__Collections__Generic__Dictionary<int,_TriggerBoxEvents>__get_Item_int_
                                );
             if (cRam_? == '\0') {
@@ -549,70 +550,68 @@ void Assembly-CSharp.dll::MVTriggerHandler::MVTriggerHandler_Update
               func_?();
               cRam_? = '\x01';
             }
-            pCVar6 = (this->fields).triggingCollider;
+            pCVar6 = (this_01->fields).triggingCollider;
             if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
-            bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
+            bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
                               ((Object_1 *)pCVar6,(Object_1 *)0x0,(MethodInfo *)0x0);
-            if (bVar7 != 0) {
+            if (bVar5 != 0) {
               pCVar6 = (Collider *)
                        UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
-                                 ((Component *)this,
+                                 ((Component *)this_01,
                                   UnityEngine__Collider_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Collider>__
                                  );
-              (this->fields).triggingCollider = pCVar6;
+              (this_01->fields).triggingCollider = pCVar6;
               func_?();
             }
-            this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                      (this->fields).triggingCollider;
-            if (pTVar5 == (TriggerBoxEvents *)0x0) goto code_?;
+            this_03 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                      (this_01->fields).triggingCollider;
+            if (pTVar4 == (TriggerBoxEvents *)0x0) goto code_?;
             if (cRam_? == '\0') {
               func_?();
               cRam_? = '\x01';
             }
-            woid_00 = (void *)0x0;
-            puVar8 = &UNK_?;
-            pMVar9 = TriggerBoxEvents::TriggerBoxEvents_GetValidWorldObject
-                               (pTVar5,(Collider *)this_02,(MethodInfo *)0x0);
-            if (pMVar9 != (MVWorldObjectClient *)0x0) {
-              pMVar10 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-              if ((pMVar10 == (MVNetworkGame *)0x0) ||
-                 (pMVar11 = (pMVar10->fields)._NetworkGameStateListener_k__BackingField,
-                 pMVar11 == (MVNetworkGameStateListener *)0x0)) goto code_?;
-              if ((pMVar11->fields).currentGameState == 1) {
-                (pTVar5->fields).isInTrigger = 1;
-                if ((pTVar5->fields).TriggerEnterOverride == (EventHandler_1_TriggerEventArgs_ *)0x0
+            pMVar7 = TriggerBoxEvents::TriggerBoxEvents_GetValidWorldObject
+                                (pTVar4,(Collider *)this_03,(MethodInfo *)0x0);
+            if (pMVar7 != (MVWorldObjectClient *)0x0) {
+              this = (MVTriggerHandler *)&UNK_?;
+              pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+              if ((pMVar8 == (MVNetworkGame *)0x0) ||
+                 (pMVar9 = (pMVar8->fields)._NetworkGameStateListener_k__BackingField,
+                 pMVar9 == (MVNetworkGameStateListener *)0x0)) goto code_?;
+              if ((pMVar9->fields).currentGameState == 1) {
+                (pTVar4->fields).isInTrigger = 1;
+                if ((pTVar4->fields).TriggerEnterOverride == (EventHandler_1_TriggerEventArgs_ *)0x0
                    ) {
-                  if ((pTVar5->fields).TriggerEnter != (EventHandler_1_TriggerEventArgs_ *)0x0) {
-                    pEVar12 = (pTVar5->fields).TriggerEnter;
-                    woid = (pMVar9->fields)._.id;
-                    this_03 = (TriggerEventArgs *)func_?();
-                    TriggerEventArgs::TriggerEventArgs__ctor(this_03,woid,(MethodInfo *)0x0);
-                    this = (pEVar12->fields)._._.method;
-                    woid_00 = (pEVar12->fields)._._.method_code;
-                    this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                  pEVar10 = (pTVar4->fields).TriggerEnter;
+                  if (pEVar10 != (EventHandler_1_TriggerEventArgs_ *)0x0) {
+                    iVar11 = (pMVar7->fields)._.id;
+                    this = (MVTriggerHandler *)func_?();
+                    TriggerEventArgs::TriggerEventArgs__ctor
+                              ((TriggerEventArgs *)this,iVar11,(MethodInfo *)0x0);
+                    this_03 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                               &UNK_?;
-                    (*(pEVar12->fields)._._.invoke_impl)(woid_00,puVar8);
+                    (*(pEVar10->fields)._._.invoke_impl)((pEVar10->fields)._._.method_code);
                   }
                 }
                 else {
-                  pEVar12 = (pTVar5->fields).TriggerEnterOverride;
-                  woid_00 = (void *)(pMVar9->fields)._.id;
-                  this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                  pEVar10 = (pTVar4->fields).TriggerEnterOverride;
+                  iVar11 = (pMVar7->fields)._.id;
+                  this_03 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
                             func_?();
                   TriggerEventArgs::TriggerEventArgs__ctor
-                            ((TriggerEventArgs *)this_02,(int32_t)woid_00,(MethodInfo *)0x0);
-                  if (pEVar12 == (EventHandler_1_TriggerEventArgs_ *)0x0) goto code_?;
-                  (*(pEVar12->fields)._._.invoke_impl)();
+                            ((TriggerEventArgs *)this_03,iVar11,(MethodInfo *)0x0);
+                  if (pEVar10 == (EventHandler_1_TriggerEventArgs_ *)0x0) goto code_?;
+                  this = (pEVar10->fields)._._.method_code;
+                  (*(pEVar10->fields)._._.invoke_impl)();
                 }
               }
             }
-            if ((this->fields).wasResetThisFrame != 0) break;
-            iVar2 = (int)woid_00 + 1;
+            if ((this_01->fields).wasResetThisFrame != 0) break;
           }
           pDVar1 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                    *)(this->fields).newTriggerBoxEvents;
+                    *)(this_01->fields).newTriggerBoxEvents;
           if (pDVar1 != (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                          *)0x0) {
             mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
@@ -629,8 +628,8 @@ void Assembly-CSharp.dll::MVTriggerHandler::MVTriggerHandler_Update
   }
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 

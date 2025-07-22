@@ -22,7 +22,7 @@ code_?:
     (*pcVar2)();
     return;
   }
-  cVar3 = func_?(3,TypeInfo__IPlayModeUI,pIVar1);
+  cVar3 = func_?(5,TypeInfo__IPlayModeUI,pIVar1);
   if (cVar3 == '\0') {
     (this->fields).movementMapState = 0;
     if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
@@ -113,7 +113,7 @@ code_?:
       }
       pIVar1 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
       if (pIVar1 == (IPlayModeUI *)0x0) goto code_?;
-      cVar3 = func_?(3,TypeInfo__IPlayModeUI,pIVar1);
+      cVar3 = func_?(5,TypeInfo__IPlayModeUI,pIVar1);
       if (cVar3 == '\0') {
         uVar6 = (this->fields).frameUpdateMovementMapState;
         if (fromFrameUpdate != 0) {

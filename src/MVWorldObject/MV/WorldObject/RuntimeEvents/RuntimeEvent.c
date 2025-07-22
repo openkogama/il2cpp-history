@@ -8,7 +8,7 @@ MVWorldObject.dll::MV::WorldObject::RuntimeEvents::RuntimeEvent::RuntimeEvent_Cr
 {
   if (bytePacker == (BytePacker *)0x0) {
     uVar1 = func_?();
-    out(0x81,uVar1);
+    out(0xb1,uVar1);
     pcVar2 = (code *)swi(1);
     pRVar3 = (RuntimeEvent *)(*pcVar2)();
     return pRVar3;
@@ -127,19 +127,18 @@ MVWorldObject.dll::MV::WorldObject::RuntimeEvents::RuntimeEvent::RuntimeEvent_Cr
   if (bytePacker == (BytePacker *)0x0) {
 code_?:
     func_?();
-    pcVar4 = (code *)swi(1);
-    pRVar5 = (RuntimeEvent *)(*pcVar4)();
-    return pRVar5;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+    halt_baddata();
   }
 code_?:
+  uVar4 = BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
+  uVar5 = BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
   uVar6 = BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
-  uVar7 = BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
-  uVar8 = BytePacker::BytePacker_ReadInt16(bytePacker,(MethodInfo *)0x0);
-  uVar9._0_2_ = 0;
-  uVar9._2_2_ = 0;
+  uVar7._0_2_ = 0;
+  uVar7._2_2_ = 0;
   IntVector::IntVector__ctor_1
-            ((IntVector *)&stack0xfffffff4,(uint)uVar6,(uint)uVar7,(uint)uVar8,(MethodInfo *)0x0);
-  *(undefined4 *)(runtimeEventType + RuntimeEventType__Enum_AvatarImpact75) = uVar9;
+            ((IntVector *)&stack0xfffffff4,(uint)uVar4,(uint)uVar5,(uint)uVar6,(MethodInfo *)0x0);
+  *(undefined4 *)(runtimeEventType + RuntimeEventType__Enum_AvatarImpact75) = uVar7;
   *(undefined2 *)
    (runtimeEventType + (RuntimeEventType__Enum_AvatarImpact75|RuntimeEventType__Enum_AvatarImpact25)
    ) = 0;

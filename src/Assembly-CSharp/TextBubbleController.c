@@ -351,12 +351,12 @@ int32_t Assembly-CSharp.dll::TextBubbleController::TextBubbleController_ShowBubb
         cRam_? = '\x01';
       }
       if (pTVar7 == (Transform *)0x0) goto code_?;
-      this_02 = (List_1_System_Object_ *)0x0;
+      this_01 = (List_1_System_Object_ *)0x0;
       pGVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                           ((Component *)pTVar7,(MethodInfo *)0x0);
-      if (this_02 == (List_1_System_Object_ *)0x0) goto code_?;
+      if (this_01 == (List_1_System_Object_ *)0x0) goto code_?;
       mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-                (this_02,(Object *)pGVar8,
+                (this_01,(Object *)pGVar8,
                  MethodInfo__System__Collections__Generic__List<UnityEngine::Object>__Add_UnityEngine__Object_
                 );
       parent = (Transform *)TextBubble::TextBubble_get_BubbleTransform(pTVar5,(MethodInfo *)0x0);
@@ -447,24 +447,22 @@ int32_t Assembly-CSharp.dll::TextBubbleController::TextBubbleController_ShowBubb
                               (pTVar5,(MethodInfo *)0x0);
                     pDVar16 = (this->fields).textBubbles;
                     key_00.m_value = key.m_value;
-                    this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
-                              func_?();
-                    UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-                    UxmlObjectListAttributeDescription`1[System::Object]::
-                    UxmlObjectListAttributeDescription_1_System_Object___ctor
-                              (this_00,(MethodInfo *)0x0);
+                    pOVar17 = (Object *)func_?();
+                    mscorlib.dll::System::ThrowHelper::
+                    ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                              (pOVar17,ExceptionArgument__Enum_obj,in_stack_18);
                     if (pDVar16 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)
                                   0x0) {
                       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System
                       ::Object]::Dictionary_2_System_Int32_System_Object__Add
                                 ((Dictionary_2_System_Int32_System_Object_ *)pDVar16,key.m_value,
-                                 (Object *)this_00,
+                                 pOVar17,
                                  MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__Add_int__TextBubbleController__BubbleTracker_
                                 );
                       pDVar16 = (this->fields).textBubbles;
                       if (pDVar16 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *
                                     )0x0) {
-                        this_01 = (TextBubbleController_BubbleTracker *)
+                        this_00 = (TextBubbleController_BubbleTracker *)
                                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                                   Int32,System::Object]::
                                   Dictionary_2_System_Int32_System_Object__get_Item
@@ -472,10 +470,10 @@ int32_t Assembly-CSharp.dll::TextBubbleController::TextBubbleController_ShowBubb
                                              key_00.m_value,
                                              MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__get_Item_int_
                                             );
-                        if (this_01 != (TextBubbleController_BubbleTracker *)0x0) {
+                        if (this_00 != (TextBubbleController_BubbleTracker *)0x0) {
                           TextBubbleController+BubbleTracker::
                           TextBubbleController_BubbleTracker_set_Bubble
-                                    (this_01,pTVar5,(MethodInfo *)0x0);
+                                    (this_00,pTVar5,(MethodInfo *)0x0);
                           pDVar16 = (this->fields).textBubbles;
                           if (pDVar16 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_
                                          *)0x0) {
@@ -520,9 +518,9 @@ int32_t Assembly-CSharp.dll::TextBubbleController::TextBubbleController_ShowBubb
   }
 code_?:
   func_?();
-  pcVar18 = (code *)swi(3);
-  iVar19 = (*pcVar18)();
-  return iVar19;
+  pcVar19 = (code *)swi(3);
+  iVar20 = (*pcVar19)();
+  return iVar20;
 }
 
 
@@ -580,42 +578,16 @@ int32_t Assembly-CSharp.dll::TextBubbleController::TextBubbleController_ShowBubb
         func_?(&TypeInfo__UnityEngine__Vector2);
         cRam_? = '\x01';
       }
-      fVar1 = (TypeInfo__UnityEngine__Vector2->static_fields->oneVector).x * _UNK_?;
-      fVar2 = (TypeInfo__UnityEngine__Vector2->static_fields->oneVector).y * _UNK_?;
-      pCVar3 = (this->fields).mainCamera;
-      if (pCVar3 != (Camera *)0x0) {
-        pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1
-                           ((Vector3 *)&stack0xffffffe4,pCVar3,worldPosition,(MethodInfo *)0x0);
-        fVar5 = pVVar4->x;
-        offset.y = fVar2;
-        offset.x = fVar1;
-        pVVar4 = TextBubbleController_CalculateOffSet
-                           ((Vector3 *)&puStack_6,this,offset,*pVVar4,(MethodInfo *)0x0);
-        uVar7 = pVVar4->x;
-        uVar8 = pVVar4->y;
-        fVar2 = (float)uVar7 + fVar2;
-        pCVar3 = (this->fields).mainCamera;
-        if (pCVar3 != (Camera *)0x0) {
-          pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1
-                             ((Vector3 *)&puStack_6,pCVar3,worldPosition,(MethodInfo *)0x0);
-          uVar9 = pVVar4->x;
-          uVar10 = pVVar4->y;
-          anchoredPosition.y = (float)uVar8 + fVar5;
-          anchoredPosition.x = fVar2;
-          targetCenterPoint.y = (float)uVar10 * _UNK_?;
-          targetCenterPoint.x = (float)uVar9 * _UNK_?;
-          iVar11 = TextBubbleController_ShowBubble2D
-                            (this,anchoredPosition,targetCenterPoint,lifeTime,content,
-                             parentTransform,(MethodInfo *)0x0);
-          return iVar11;
-        }
-      }
+      iVar1 = TextBubbleController_ShowBubble3D_1
+                        (this,worldPosition,lifeTime,content,parentTransform,(Vector2)0x0,
+                         (MethodInfo *)0x0);
+      return iVar1;
     }
   }
   func_?();
-  pcVar12 = (code *)swi(3);
-  iVar11 = (*pcVar12)();
-  return iVar11;
+  pcVar2 = (code *)swi(3);
+  iVar1 = (*pcVar2)();
+  return iVar1;
 }
 
 

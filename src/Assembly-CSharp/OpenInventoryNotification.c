@@ -61,17 +61,10 @@ void Assembly-CSharp.dll::OpenInventoryNotification::OpenInventoryNotification_I
               (TypeInfo__System__Int32->_0).element_class) goto code_?;
           piVar5 = (int32_t *)func_?(TVar3.m_Index);
           (pOVar1->fields).slot = *piVar5;
-          pNVar6 = (pOVar1->fields).fader;
-          if (pNVar6 != (NotificationFade *)0x0) {
-            (pNVar6->fields).pauseAt = (pNVar6->fields).duration;
-            this_00 = (pNVar6->fields).group;
-            (pNVar6->fields).playing = 1;
-            if (this_00 != (CanvasGroup *)0x0) {
-              UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-                        (this_00,0.0,(MethodInfo *)0x0);
-              (pNVar6->fields).currentTime = 0.0;
-              return;
-            }
+          this_00 = (pOVar1->fields).fader;
+          if (this_00 != (NotificationFade *)0x0) {
+            NotificationFade::NotificationFade_Activate(this_00,(MethodInfo *)0x0);
+            return;
           }
         }
       }
@@ -80,8 +73,8 @@ void Assembly-CSharp.dll::OpenInventoryNotification::OpenInventoryNotification_I
   uVar4 = func_?();
 code_?:
   func_?(uVar4);
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

@@ -10,10 +10,10 @@ void Assembly-CSharp.dll::MVCheckpoint::MVCheckpoint_Destroy(MVCheckpoint *this,
                     MethodInfo__MVCheckpoint__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                    );
     func_?(&
-                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                    MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                    );
     func_?(&
-                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                    MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                    );
     cRam_? = '\x01';
   }
@@ -42,7 +42,7 @@ code_?:
                  func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
         mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                   (pEVar3,(Object *)pUVar4,
-                   MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                   MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                    ,(MethodInfo *)0x0);
         if (pTVar2 != (TriggerBoxEvents *)0x0) {
           TriggerBoxEvents::TriggerBoxEvents_remove_TriggerEnter
@@ -55,7 +55,7 @@ code_?:
                      func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
             mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                       (pEVar3,(Object *)pUVar4,
-                       MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                       MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                        ,(MethodInfo *)0x0);
             if (pTVar2 != (TriggerBoxEvents *)0x0) {
               TriggerBoxEvents::TriggerBoxEvents_remove_TriggerExit
@@ -365,13 +365,13 @@ void Assembly-CSharp.dll::MVCheckpoint::MVCheckpoint_SetupUseInteractor
     func_?(&TypeInfo__LevelBasedUseRequirement);
     func_?(&MethodInfo__MVCheckpoint__DoReachCheckpoint_int_);
     func_?(&TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement);
+    func_?(&
+                    MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                   );
+    func_?(&
+                    MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                   );
     func_?(&TypeInfo__UseInteractor);
-    func_?(&
-                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
-                   );
-    func_?(&
-                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
-                   );
     cRam_? = '\x01';
   }
   if ((this->fields).checkpointObject != (MVCheckpointObject *)0x0) {
@@ -384,9 +384,9 @@ void Assembly-CSharp.dll::MVCheckpoint::MVCheckpoint_SetupUseInteractor
                  (MethodInfo *)0x0);
       pUVar2 = (UseInteractor *)func_?(TypeInfo__UseInteractor);
       UseInteractor::UseInteractor__ctor
-                (pUVar2,(MVWorldObjectClient *)this,(GameObject *)0x40200000,0,triggerCollider,
+                (pUVar2,(MVWorldObjectClient *)this,(GameObject *)0x0,0,triggerCollider,
                  (Func_2_Int32_Boolean_ *)this_00,(Func_3_Int32_MVInteractableBase_Boolean_ *)0x0,
-                 2.5,0,(MethodInfo *)0x0);
+                 2.5,0,1,(MethodInfo *)0x0);
       (this->fields).useInteractor = pUVar2;
       func_?(&(this->fields).useInteractor);
       pMVar3 = (this->fields).checkpointObject;
@@ -397,7 +397,7 @@ void Assembly-CSharp.dll::MVCheckpoint::MVCheckpoint_SetupUseInteractor
                  func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
         mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                   (pEVar4,(Object *)pUVar2,
-                   MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                   MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                    ,(MethodInfo *)0x0);
         if (pTVar1 != (TriggerBoxEvents *)0x0) {
           TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
@@ -410,7 +410,7 @@ void Assembly-CSharp.dll::MVCheckpoint::MVCheckpoint_SetupUseInteractor
                      func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
             mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                       (pEVar4,(Object *)pUVar2,
-                       MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                       MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                        ,(MethodInfo *)0x0);
             if (pTVar1 != (TriggerBoxEvents *)0x0) {
               TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit

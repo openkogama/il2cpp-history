@@ -1633,7 +1633,10 @@ void Assembly-CSharp.dll::GUILoginHandler::GUILoginHandler__ctor
     func_?(&StringLiteral_Dev_profileId);
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_String_GUILoginHandler_PlanetData_ *)
+  this_00 = this;
+  (this->fields).playerPrefKey = StringLiteral_Dev_profileId;
+  func_?(&(this->fields).playerPrefKey,StringLiteral_Dev_profileId);
+  this_01 = (Dictionary_2_System_String_GUILoginHandler_PlanetData_ *)
             func_?(
                            TypeInfo__System__Collections__Generic__Dictionary<System::String,_GUILoginHandler::PlanetData>
                            );
@@ -1641,114 +1644,113 @@ void Assembly-CSharp.dll::GUILoginHandler::GUILoginHandler__ctor
   StyleComplexSelector+PseudoStateData]::
   Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
             ((Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-              *)this_00,
+              *)this_01,
              MethodInfo__System__Collections__Generic__Dictionary<System::String,_GUILoginHandler::PlanetData>__Dictionary__
             );
-  if (this_00 != (Dictionary_2_System_String_GUILoginHandler_PlanetData_ *)0x0) {
+  if (this_01 != (Dictionary_2_System_String_GUILoginHandler_PlanetData_ *)0x0) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
     Object,GUILoginHandler+PlanetData]::Dictionary_2_System_Object_GUILoginHandler_PlanetData__Add
-              ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)this_00,
+              ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)this_01,
                (Object *)StringLiteral_WOTest,(GUILoginHandler_PlanetData)0x10000bef7,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_GUILoginHandler::PlanetData>__Add_System__String__GUILoginHandler__PlanetData_
               );
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
     Object,GUILoginHandler+PlanetData]::Dictionary_2_System_Object_GUILoginHandler_PlanetData__Add
-              ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)this_00,
+              ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)this_01,
                (Object *)StringLiteral_Default,(GUILoginHandler_PlanetData)0xd0000bef8,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_GUILoginHandler::PlanetData>__Add_System__String__GUILoginHandler__PlanetData_
               );
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
     Object,GUILoginHandler+PlanetData]::Dictionary_2_System_Object_GUILoginHandler_PlanetData__Add
-              ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)this_00,
+              ((Dictionary_2_System_Object_GUILoginHandler_PlanetData_ *)this_01,
                (Object *)StringLiteral_MaterialsTest,(GUILoginHandler_PlanetData)0xb30000bff1,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_GUILoginHandler::PlanetData>__Add_System__String__GUILoginHandler__PlanetData_
               );
-    (this->fields).defaultPlanetData = this_00;
-    func_?(&(this->fields).defaultPlanetData,this_00);
-    this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-               *)func_?();
+    (this_00->fields).defaultPlanetData = this_01;
+    func_?(&(this_00->fields).defaultPlanetData,this_01);
+    this_02 = (GUILoginHandler *)func_?();
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements
     ::StyleComplexSelector+PseudoStateData]::
     Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
-              (this_01,
+              ((Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                *)this_02,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Dictionary__
               );
-    if (this_01 !=
-        (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
-        0x0) {
+    if (this_02 != (GUILoginHandler *)0x0) {
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                ((Dictionary_2_System_Object_System_Object_ *)this_01,
+                ((Dictionary_2_System_Object_System_Object_ *)this_02,
                  (Object *)StringLiteral_newToken,(Object *)StringLiteral_clientDefinedNewToken_,
                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
                 );
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                ((Dictionary_2_System_Object_System_Object_ *)this_01,
+                ((Dictionary_2_System_Object_System_Object_ *)this_02,
                  (Object *)StringLiteral_newPlanetName,(Object *)StringLiteral_game_server_test,
                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
                 );
-      uStack_1 = 0;
-      pOVar2 = (Object *)func_?(TypeInfo__System__Boolean,&uStack_1);
+      this = (GUILoginHandler *)((uint)this & 0xffffff);
+      pOVar1 = (Object *)func_?(TypeInfo__System__Boolean,(int)&this + 3);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                ((Dictionary_2_System_Object_System_Object_ *)this_01,
-                 (Object *)StringLiteral_isSoftLaunch,pOVar2,
+                ((Dictionary_2_System_Object_System_Object_ *)this_02,
+                 (Object *)StringLiteral_isSoftLaunch,pOVar1,
+                 MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
+                );
+      uStack_2 = 0;
+      pOVar1 = (Object *)func_?(TypeInfo__System__Boolean,&uStack_2);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+      Dictionary_2_System_Object_System_Object__Add
+                ((Dictionary_2_System_Object_System_Object_ *)this_02,
+                 (Object *)StringLiteral_embedded,pOVar1,
                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
                 );
       uStack_3 = 0;
-      pOVar2 = (Object *)func_?(TypeInfo__System__Boolean,&uStack_3);
+      pOVar1 = (Object *)func_?();
+      method = (MethodInfo *)&UNK_?;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                ((Dictionary_2_System_Object_System_Object_ *)this_01,
-                 (Object *)StringLiteral_embedded,pOVar2,
+                ((Dictionary_2_System_Object_System_Object_ *)this_02,
+                 (Object *)StringLiteral_playButtonAdsEnabledDefault,pOVar1,
                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
                 );
       uStack_4 = 0;
-      pOVar2 = (Object *)func_?();
+      pOVar1 = (Object *)func_?();
+      method = (MethodInfo *)StringLiteral_boostersEnabledDefault;
+      this = this_02;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                ((Dictionary_2_System_Object_System_Object_ *)this_01,
-                 (Object *)StringLiteral_playButtonAdsEnabledDefault,pOVar2,
+                ((Dictionary_2_System_Object_System_Object_ *)this_02,
+                 (Object *)StringLiteral_boostersEnabledDefault,pOVar1,
                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
                 );
       uStack_5 = 0;
-      pOVar2 = (Object *)func_?();
+      puStack6 = &uStack_5;
+      pBStack7 = TypeInfo__System__Boolean;
+      pOVar1 = (Object *)func_?();
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                ((Dictionary_2_System_Object_System_Object_ *)this_01,
-                 (Object *)StringLiteral_boostersEnabledDefault,pOVar2,
+                ((Dictionary_2_System_Object_System_Object_ *)this_02,
+                 (Object *)StringLiteral_interstitialsAdsEnabledDefault,pOVar1,
                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
                 );
-      uStack_6 = 0;
-      puStack7 = &uStack_6;
-      pBStack8 = TypeInfo__System__Boolean;
-      pOVar2 = (Object *)func_?();
+      pOVar1 = (Object *)func_?();
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
       Dictionary_2_System_Object_System_Object__Add
-                ((Dictionary_2_System_Object_System_Object_ *)this_01,
-                 (Object *)StringLiteral_interstitialsAdsEnabledDefault,pOVar2,
+                ((Dictionary_2_System_Object_System_Object_ *)this_02,
+                 (Object *)StringLiteral_rewardedAdsEnabledDefault,pOVar1,
                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
                 );
-      pOVar2 = (Object *)func_?();
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__Add
-                ((Dictionary_2_System_Object_System_Object_ *)this_01,
-                 (Object *)StringLiteral_rewardedAdsEnabledDefault,pOVar2,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__Add_System__String__System__Object_
-                );
-      (this->fields).gameSessionData = (Dictionary_2_System_String_System_Object_ *)this_01;
-      func_?();
-      (this->fields).playerPrefKey = StringLiteral_Dev_profileId;
+      (this_00->fields).gameSessionData = (Dictionary_2_System_String_System_Object_ *)this_02;
       func_?();
       UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
-                ((MonoBehaviour *)this,(MethodInfo *)0x0);
+                ((MonoBehaviour *)this_00,(MethodInfo *)0x0);
       return;
     }
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

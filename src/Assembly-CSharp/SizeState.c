@@ -374,7 +374,7 @@ void Assembly-CSharp.dll::SizeState::SizeState_MoveOutOfScalingCollision
                                           (float)uVar20 * (fVar16 - hitData.positionTouchingHit.x) +
                                          pVVar3->z *
                                          ((fVar14 + fVar13) - hitData.positionTouchingHit.y)) ^
-                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                                   );
                   fVar6 = hitData.slopeNormal.x * fVar9;
                   fVar9 = hitData.slopeNormal.y * fVar9;
@@ -393,10 +393,10 @@ void Assembly-CSharp.dll::SizeState::SizeState_MoveOutOfScalingCollision
                         uVar22 = pVVar3->x;
                         uVar23 = pVVar3->y;
                         stack0xffffffd4 = (float)uVar23 + fVar6;
-                        puStack_4 = (undefined *)((float)uVar22 + 3.3385102e-29);
+                        puStack_4 = (undefined *)((float)uVar22 + 3.341635e-29);
                         if (pTVar2 != (Transform *)0x0) {
                           value.y = (float)uVar23 + fVar6;
-                          value.x = (float)uVar22 + 3.3385102e-29;
+                          value.x = (float)uVar22 + 3.341635e-29;
                           value.z = pVVar3->z + fVar9;
                           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                                     (pTVar2,value,(MethodInfo *)0x0);
@@ -577,7 +577,7 @@ code_?:
     if ((pSVar1->fields).CameraScaleEvent != (EventHandler_1_ScaleArgs_ *)0x0) {
       pEVar15 = (pSVar1->fields).CameraScaleEvent;
       this_01 = (SizeState *)func_?();
-      ScaleArgs::ScaleArgs__ctor((ScaleArgs *)this_01,3.338748e-29,(MethodInfo *)0x0);
+      ScaleArgs::ScaleArgs__ctor((ScaleArgs *)this_01,3.3418727e-29,(MethodInfo *)0x0);
       (*(pEVar15->fields)._._.invoke_impl)();
     }
     (pSVar1->fields).currentSize = (float)this_01;

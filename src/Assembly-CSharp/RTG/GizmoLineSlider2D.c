@@ -1156,9 +1156,9 @@ code_?:
         pGVar11 = (this->fields)._._gizmo;
         if (pGVar11 == (Gizmo *)0x0) goto code_?;
         iVar12 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-                 PointerCaptureEventBase`1[System::Object]::
-                 PointerCaptureEventBase_1_System_Object__get_pointerId
-                           ((PointerCaptureEventBase_1_System_Object_ *)pGVar11,(MethodInfo *)0x0);
+                PointerCaptureEventBase`1[System::Object]::
+                PointerCaptureEventBase_1_System_Object__get_pointerId
+                          ((PointerCaptureEventBase_1_System_Object_ *)pGVar11,(MethodInfo *)0x0);
         iVar13 = mscorlib.dll::System::Threading::SparselyPopulatedArrayFragment`1[System::Object]::
                  SparselyPopulatedArrayFragment_1_System_Object__get_Length
                            ((SparselyPopulatedArrayFragment_1_System_Object_ *)this,
@@ -1198,13 +1198,10 @@ code_?:
       color_00.b = fVar9;
       color_00.a = fStack_10;
       GizmoSolidMaterial::GizmoSolidMaterial_SetColor(this_00,color_00,(MethodInfo *)0x0);
-      pMVar14 = GizmoSolidMaterial::GizmoSolidMaterial_get_Material(this_00,(MethodInfo *)0x0);
-      if (pMVar14 == (Material *)0x0) goto code_?;
-      UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetPass
-                (pMVar14,0,(MethodInfo *)0x0);
-      pGVar15 = (this->fields)._._handle;
-      if (pGVar15 == (GizmoHandle *)0x0) goto code_?;
-      GizmoHandle::GizmoHandle_Render2DSolid(pGVar15,camera,(MethodInfo *)0x0);
+      GizmoSolidMaterial::GizmoSolidMaterial_SetPass(this_00,0,(MethodInfo *)0x0);
+      pGVar14 = (this->fields)._._handle;
+      if (pGVar14 == (GizmoHandle *)0x0) goto code_?;
+      GizmoHandle::GizmoHandle_Render2DSolid(pGVar14,camera,(MethodInfo *)0x0);
     }
     else {
       if ((this->fields)._sharedLookAndFeel == (GizmoLineSlider2DLookAndFeel *)0x0) {
@@ -1266,9 +1263,9 @@ code_?:
         pGVar11 = (this->fields)._._gizmo;
         if (pGVar11 == (Gizmo *)0x0) goto code_?;
         iVar12 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-                 PointerCaptureEventBase`1[System::Object]::
-                 PointerCaptureEventBase_1_System_Object__get_pointerId
-                           ((PointerCaptureEventBase_1_System_Object_ *)pGVar11,(MethodInfo *)0x0);
+                PointerCaptureEventBase`1[System::Object]::
+                PointerCaptureEventBase_1_System_Object__get_pointerId
+                          ((PointerCaptureEventBase_1_System_Object_ *)pGVar11,(MethodInfo *)0x0);
         iVar13 = mscorlib.dll::System::Threading::SparselyPopulatedArrayFragment`1[System::Object]::
                  SparselyPopulatedArrayFragment_1_System_Object__get_Length
                            ((SparselyPopulatedArrayFragment_1_System_Object_ *)this,
@@ -1308,13 +1305,10 @@ code_?:
       color.b = fVar9;
       color.a = fStack_10;
       GizmoLineMaterial::GizmoLineMaterial_SetColor(this_01,color,(MethodInfo *)0x0);
-      pMVar14 = GizmoLineMaterial::GizmoLineMaterial_get_Material(this_01,(MethodInfo *)0x0);
-      if (pMVar14 == (Material *)0x0) goto code_?;
-      UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetPass
-                (pMVar14,0,(MethodInfo *)0x0);
-      pGVar15 = (this->fields)._._handle;
-      if (pGVar15 == (GizmoHandle *)0x0) goto code_?;
-      GizmoHandle::GizmoHandle_Render2DWire(pGVar15,camera,(MethodInfo *)0x0);
+      GizmoLineMaterial::GizmoLineMaterial_SetPass(this_01,0,(MethodInfo *)0x0);
+      pGVar14 = (this->fields)._._handle;
+      if (pGVar14 == (GizmoHandle *)0x0) goto code_?;
+      GizmoHandle::GizmoHandle_Render2DWire(pGVar14,camera,(MethodInfo *)0x0);
     }
   }
 code_?:
@@ -1326,8 +1320,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -1991,9 +1985,9 @@ Vector2 Assembly-CSharp.dll::RTG::GizmoLineSlider2D::GizmoLineSlider2D_get_Direc
               WebCompletionSource_1_T_Result_System_Object__get_Success(this_00,(MethodInfo *)0x0);
       if (bVar11 != 0) {
         VVar8.y = (float)((uint)puStack_10 ^
-                          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                          __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
         VVar8.x = (float)((uint)fVar9 ^
-                          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                          __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
         return VVar8;
       }
     }

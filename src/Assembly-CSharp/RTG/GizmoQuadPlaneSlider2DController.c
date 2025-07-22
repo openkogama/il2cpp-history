@@ -74,22 +74,27 @@ void Assembly-CSharp.dll::RTG::GizmoQuadPlaneSlider2DController::
 {
   pGVar1 = (this->fields)._._data;
   if (pGVar1 != (GizmoPlaneSlider2DControllerData *)0x0) {
-    this_00 = (pGVar1->fields).Slider;
-    this_01 = (pGVar1->fields).Quad;
-    if (this_00 != (GizmoPlaneSlider2D *)0x0) {
-      pGVar2 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_get_Settings(this_00,(MethodInfo *)0x0);
-      if (pGVar2 != (GizmoPlaneSlider2DSettings *)0x0) {
-        value = Vector2Ex::Vector2Ex_FromValue((pGVar2->fields)._areaHoverEps,(MethodInfo *)0x0);
-        if (this_01 != (QuadShape2D *)0x0) {
-          QuadShape2D::QuadShape2D_set_SizeEps(this_01,value,(MethodInfo *)0x0);
-          return;
-        }
+    pGVar2 = (pGVar1->fields).Slider;
+    this_00 = (pGVar1->fields).Quad;
+    if (pGVar2 != (GizmoPlaneSlider2D *)0x0) {
+      if ((pGVar2->fields)._sharedSettings == (GizmoPlaneSlider2DSettings *)0x0) {
+        pGVar3 = (pGVar2->fields)._settings;
+        if (pGVar3 == (GizmoPlaneSlider2DSettings *)0x0) goto code_?;
+      }
+      else {
+        pGVar3 = (pGVar2->fields)._sharedSettings;
+      }
+      value = Vector2Ex::Vector2Ex_FromValue((pGVar3->fields)._areaHoverEps,(MethodInfo *)0x0);
+      if (this_00 != (QuadShape2D *)0x0) {
+        QuadShape2D::QuadShape2D_set_SizeEps(this_00,value,(MethodInfo *)0x0);
+        return;
       }
     }
   }
+code_?:
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -154,20 +159,23 @@ void Assembly-CSharp.dll::RTG::GizmoQuadPlaneSlider2DController::
 
 {
   pGVar1 = (this->fields)._._data;
-  if (pGVar1 != (GizmoPlaneSlider2DControllerData *)0x0) {
-    this_00 = (pGVar1->fields).Slider;
+  if (((pGVar1 != (GizmoPlaneSlider2DControllerData *)0x0) &&
+      (this_00 = (pGVar1->fields).Slider, this_00 != (GizmoPlaneSlider2D *)0x0)) &&
+     (pGVar2 = (this_00->fields)._transform, pGVar2 != (GizmoTransform *)0x0)) {
     this_01 = (pGVar1->fields).Quad;
-    if (this_00 != (GizmoPlaneSlider2D *)0x0) {
-      VVar2 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_get_Position(this_00,(MethodInfo *)0x0);
-      if (this_01 != (QuadShape2D *)0x0) {
-        (this_01->fields)._center.x = VVar2.x;
-        fStack_3 = VVar2.y;
-        (this_01->fields)._center.y = fStack_3;
-        value = GizmoPlaneSlider2D::GizmoPlaneSlider2D_get_RotationDegrees
-                          (this_00,(MethodInfo *)0x0);
-        QuadShape2D::QuadShape2D_set_RotationDegrees(this_01,value,(MethodInfo *)0x0);
-        VVar2 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_GetRealQuadSize(this_00,(MethodInfo *)0x0);
-        QuadShape2D::QuadShape2D_set_Size(this_01,VVar2,(MethodInfo *)0x0);
+    fVar3 = (pGVar2->fields)._position2D.y;
+    if (this_01 != (QuadShape2D *)0x0) {
+      (this_01->fields)._center.x = (pGVar2->fields)._position2D.x;
+      (this_01->fields)._center.y = fVar3;
+      pGVar2 = (this_00->fields)._transform;
+      if (pGVar2 != (GizmoTransform *)0x0) {
+        QuadShape2D::QuadShape2D_set_RotationDegrees
+                  (this_01,(pGVar2->fields)._rotation2DDegrees,(MethodInfo *)0x0);
+        fVar3 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_GetRealQuadWidth(this_00,(MethodInfo *)0x0);
+        fVar4 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_GetRealQuadHeight(this_00,(MethodInfo *)0x0);
+        value.y = fVar4;
+        value.x = fVar3;
+        QuadShape2D::QuadShape2D_set_Size(this_01,value,(MethodInfo *)0x0);
         pGVar1 = (this->fields)._._data;
         if ((pGVar1 != (GizmoPlaneSlider2DControllerData *)0x0) &&
            (this_02 = (pGVar1->fields).QuadBorder, this_02 != (GizmoQuad2DBorder *)0x0)) {
@@ -178,8 +186,8 @@ void Assembly-CSharp.dll::RTG::GizmoQuadPlaneSlider2DController::
     }
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

@@ -258,7 +258,7 @@ Vector2 Assembly-CSharp.dll::RTG::RTFocusCamera::RTFocusCamera_CalculateLookArou
       fVar2 = (pCVar1->fields)._smoothLookAroundSensitivity;
     }
     fVar2 = (float)((uint)deviceAxisY ^
-                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) * fVar2
+                   __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) * fVar2
     ;
     pCVar3 = (this->fields)._lookAroundSettings;
     if ((pCVar1->fields)._invertY != 0) {
@@ -304,7 +304,7 @@ Vector2 Assembly-CSharp.dll::RTG::RTFocusCamera::RTFocusCamera_CalculateOrbitRot
       fVar2 = (pCVar1->fields)._standardOrbitSensitivity;
     }
     fVar2 = (float)((uint)deviceAxisY ^
-                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) * fVar2
+                   __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) * fVar2
     ;
     pCVar3 = (this->fields)._orbitSettings;
     if ((pCVar1->fields)._invertY != 0) {
@@ -354,7 +354,7 @@ Vector2 Assembly-CSharp.dll::RTG::RTFocusCamera::RTFocusCamera_CalculatePanAmoun
       fVar2 = (pCVar1->fields)._smoothPanSensitivity;
     }
     fVar2 = (float)((uint)deviceAxisX ^
-                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) * fVar2
+                   __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) * fVar2
     ;
     pCVar3 = (this->fields)._panSettings;
     if ((pCVar1->fields)._invertX != 0) {
@@ -367,7 +367,7 @@ Vector2 Assembly-CSharp.dll::RTG::RTFocusCamera::RTFocusCamera_CalculatePanAmoun
       fVar4 = (pCVar3->fields)._smoothPanSensitivity;
     }
     deviceAxisY = (float)((uint)deviceAxisY ^
-                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) *
+                         __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) *
                   fVar4;
     if ((((this->fields)._panSettings)->fields)._invertY != 0) {
       deviceAxisY = deviceAxisY * _UNK_?;
@@ -1085,7 +1085,7 @@ void Assembly-CSharp.dll::RTG::RTFocusCamera::RTFocusCamera_HandleMouseAndKeyboa
                     pCVar2 = (CameraPrjSwitchTransition *)0x0;
                     if (pBVar5->vector[5] != 0) {
                       fVar12 = (float)((uint)fVar4 ^
-                                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                      __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                                       );
                       goto code_?;
                     }
@@ -1992,7 +1992,7 @@ void Assembly-CSharp.dll::RTG::RTFocusCamera::RTFocusCamera_PerformRotationSwitc
                 uVar7 = pVVar5->y;
                 fVar8 = (this->fields)._focusPointOffset;
                 value.y = (float)&stack0xffffffd8 - (float)uVar7 * fVar8;
-                value.x = 4.3552694e-29 - (float)uVar6 * fVar8;
+                value.x = 4.3620824e-29 - (float)uVar6 * fVar8;
                 value.z = (float)pTVar4 - pVVar5->z * fVar8;
                 UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
                           (pTVar3,value,(MethodInfo *)0x0);

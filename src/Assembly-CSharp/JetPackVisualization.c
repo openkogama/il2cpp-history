@@ -395,7 +395,7 @@ void Assembly-CSharp.dll::JetPackVisualization::JetPackVisualization_JetPackPitc
     }
     fVar17 = fVar16 * _UNK_? * fVar16 * fVar16 + fVar16 * _UNK_? * fVar16;
     fVar16 = (float)((uint)(this->fields).pitchMax ^
-                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     pTVar1 = (this->fields).JetPackRoot;
     fStack_11 = (_UNK_? - fVar17) * fStack_10 +
                fVar17 * (VStack_7.y * fStack_15 + VStack_7.x * fStack_14 + VStack_7.z * fVar4) *
@@ -477,13 +477,13 @@ void Assembly-CSharp.dll::JetPackVisualization::JetPackVisualization_JetPackRoll
          (_UNK_? - fVar4) * fStack_11 +
          fVar4 * (float)((uint)(VStack_7.y * fStack_16 + VStack_7.z * fStack_15 +
                                fStack_9 * fVar3) ^
-                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) *
+                        __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) *
                  fStack_12 * fStack_13;
     if (pTVar1 != (Transform *)0x0) {
       pQVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localRotation
                          ((Quaternion *)&stack0xffffffb0,pTVar1,(MethodInfo *)0x0);
       fVar3 = (float)((uint)(this->fields).pitchMax ^
-                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
       fVar4 = pQVar2->x;
       fVar5 = pQVar2->y;
       fVar6 = pQVar2->z;

@@ -190,10 +190,10 @@ Assembly-CSharp.dll::PickupItemMeleeWeapon::PickupItemMeleeWeapon_CheckHitCorout
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__PickupItemMeleeWeapon___CheckHitCoroutine_d__28);
+    func_?(&TypeInfo__PickupItemMeleeWeapon___CheckHitCoroutine_d__30);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__PickupItemMeleeWeapon___CheckHitCoroutine_d__28;
+  method_00 = TypeInfo__PickupItemMeleeWeapon___CheckHitCoroutine_d__30;
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
@@ -801,7 +801,7 @@ code_?:
     func_?();
     cRam_? = '\x01';
   }
-  method_01 = TypeInfo__PickupItemMeleeWeapon___CheckHitCoroutine_d__28;
+  method_01 = TypeInfo__PickupItemMeleeWeapon___CheckHitCoroutine_d__30;
   pOVar6 = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (pOVar6,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
@@ -1283,13 +1283,13 @@ void Assembly-CSharp.dll::PickupItemMeleeWeapon::PickupItemMeleeWeapon_OnLocalHi
                       voxelHit.interactionFlags._0_4_ =
                            (MVPickupOwner *)
                            ((uint)fVar7 ^
-                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
+                           __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field)
                       ;
                       fVar11 = (float)((uint)fVar11 ^
-                                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                      __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                                       );
                       fVar9 = (float)((uint)fVar9 ^
-                                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                      __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                                       );
                       voxelHit._60_4_ = 0;
                       voxelHit.collider = (Collider *)&UNK_?;

@@ -26,15 +26,15 @@ void Assembly-CSharp.dll::RTG::SceneGizmoAxisCap::SceneGizmoAxisCap_OnGizmoHandl
       uVar6 = pVVar4->x;
       uVar7 = pVVar4->y;
       fStack_8 = (float)((uint)pVVar4->z ^
-                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                        __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
       uStack_9 = CONCAT44(uVar7 ^ 
-                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field,
+                           __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field,
                            uVar6 ^ 
-                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
+                           __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field)
       ;
       if (cRam_? == '\0') {
         uStack_9 = CONCAT44(uVar7 ^ 
-                             __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                             __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                              ,&TypeInfo__UnityEngine__Vector3);
         VStack_5.z = (float)&UNK_?;
         func_?();

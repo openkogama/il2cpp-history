@@ -14,7 +14,7 @@ void Assembly-CSharp.dll::RotationAnimator::RotationAnimator_Update
     this_01 = (Transform *)(this->fields).rotateTarget;
     auVar2._4_8_ = 0;
     auVar2._0_4_ = (float)((uint)fVar1 ^
-                          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
+                          __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field)
                    * _UNK_? * _UNK_?;
     pQVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
                        ((Quaternion *)&stack0xffffffec,(Vector3)(auVar2 << 0x40),(MethodInfo *)0x0);

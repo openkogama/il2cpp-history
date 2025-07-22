@@ -291,8 +291,9 @@ void Assembly-CSharp.dll::RTG::BoxColliderGizmo3D::BoxColliderGizmo3D_OnAttached
   GizmoCap2D::GizmoCap2D__ctor(pGVar3,pGVar1,XVar2,(MethodInfo *)0x0);
   (this->fields)._leftTick = pGVar3;
   func_?(&(this->fields)._leftTick,pGVar3);
-  pGVar4 = (GizmoCap3D *)(this->fields)._leftTick;
-  if (pGVar4 == (GizmoCap3D *)0x0) {
+  pGVar3 = (this->fields)._leftTick;
+  if ((pGVar3 == (GizmoCap2D *)0x0) ||
+     (pGVar4 = (pGVar3->fields)._._handle, pGVar4 == (GizmoHandle *)0x0)) {
 code_?:
     func_?();
 code_?:
@@ -312,217 +313,230 @@ code_?:
     func_?(uVar5);
   }
   else {
-    GizmoCap3D::GizmoCap3D_set_DragSession
-              (pGVar4,(IGizmoDragSession *)(this->fields)._offsetDrag,(MethodInfo *)0x0);
+    (pGVar4->fields)._DragSession_k__BackingField = (IGizmoDragSession *)(this->fields)._offsetDrag;
+    pMVar6 = (MethodInfo *)&(pGVar4->fields)._DragSession_k__BackingField;
+    func_?();
     pGVar1 = (this->fields)._._gizmo;
     XVar2 = System.Xml.dll::System::Xml::Schema::Datatype_hexBinary::Datatype_hexBinary_get_TypeCode
-                      ((Datatype_hexBinary *)0x0,(MethodInfo *)this);
-    pGVar3 = (GizmoCap2D *)func_?();
+                      ((Datatype_hexBinary *)0x0,pMVar6);
+    pGVar3 = (GizmoCap2D *)func_?(TypeInfo__RTG__GizmoCap2D);
     GizmoCap2D::GizmoCap2D__ctor(pGVar3,pGVar1,XVar2,(MethodInfo *)0x0);
     (this->fields)._rightTick = pGVar3;
     func_?(&(this->fields)._rightTick,pGVar3);
-    pGVar4 = (GizmoCap3D *)(this->fields)._rightTick;
-    if (pGVar4 == (GizmoCap3D *)0x0) goto code_?;
-    GizmoCap3D::GizmoCap3D_set_DragSession
-              (pGVar4,(IGizmoDragSession *)(this->fields)._offsetDrag,(MethodInfo *)0x0);
+    pGVar3 = (this->fields)._rightTick;
+    if ((pGVar3 == (GizmoCap2D *)0x0) ||
+       (pGVar4 = (pGVar3->fields)._._handle, pGVar4 == (GizmoHandle *)0x0)) goto code_?;
+    (pGVar4->fields)._DragSession_k__BackingField = (IGizmoDragSession *)(this->fields)._offsetDrag;
+    pMVar6 = (MethodInfo *)&(pGVar4->fields)._DragSession_k__BackingField;
+    func_?();
     pGVar1 = (this->fields)._._gizmo;
     XVar2 = System.Xml.dll::System::Xml::Schema::Datatype_base64Binary::
-            Datatype_base64Binary_get_TypeCode((Datatype_base64Binary *)0x0,(MethodInfo *)this);
-    pGVar3 = (GizmoCap2D *)func_?();
+            Datatype_base64Binary_get_TypeCode((Datatype_base64Binary *)0x0,pMVar6);
+    pGVar3 = (GizmoCap2D *)func_?(TypeInfo__RTG__GizmoCap2D);
     GizmoCap2D::GizmoCap2D__ctor(pGVar3,pGVar1,XVar2,(MethodInfo *)0x0);
     (this->fields)._topTick = pGVar3;
     func_?(&(this->fields)._topTick,pGVar3);
-    pGVar4 = (GizmoCap3D *)(this->fields)._topTick;
-    if (pGVar4 == (GizmoCap3D *)0x0) goto code_?;
-    GizmoCap3D::GizmoCap3D_set_DragSession
-              (pGVar4,(IGizmoDragSession *)(this->fields)._offsetDrag,(MethodInfo *)0x0);
+    pGVar3 = (this->fields)._topTick;
+    if ((pGVar3 == (GizmoCap2D *)0x0) ||
+       (pGVar4 = (pGVar3->fields)._._handle, pGVar4 == (GizmoHandle *)0x0)) goto code_?;
+    (pGVar4->fields)._DragSession_k__BackingField = (IGizmoDragSession *)(this->fields)._offsetDrag;
+    pMVar6 = (MethodInfo *)&(pGVar4->fields)._DragSession_k__BackingField;
+    func_?();
     pGVar1 = (this->fields)._._gizmo;
     XVar2 = System.Xml.dll::System::Xml::Schema::Datatype_NOTATION::Datatype_NOTATION_get_TypeCode
-                      ((Datatype_NOTATION *)0x0,(MethodInfo *)this);
-    pGVar3 = (GizmoCap2D *)func_?();
+                      ((Datatype_NOTATION *)0x0,pMVar6);
+    pGVar3 = (GizmoCap2D *)func_?(TypeInfo__RTG__GizmoCap2D);
     GizmoCap2D::GizmoCap2D__ctor(pGVar3,pGVar1,XVar2,(MethodInfo *)0x0);
     (this->fields)._bottomTick = pGVar3;
     func_?(&(this->fields)._bottomTick,pGVar3);
-    pGVar4 = (GizmoCap3D *)(this->fields)._bottomTick;
-    if (pGVar4 == (GizmoCap3D *)0x0) goto code_?;
-    GizmoCap3D::GizmoCap3D_set_DragSession
-              (pGVar4,(IGizmoDragSession *)(this->fields)._offsetDrag,(MethodInfo *)0x0);
+    pGVar3 = (this->fields)._bottomTick;
+    if ((pGVar3 == (GizmoCap2D *)0x0) ||
+       (pGVar4 = (pGVar3->fields)._._handle, pGVar4 == (GizmoHandle *)0x0)) goto code_?;
+    (pGVar4->fields)._DragSession_k__BackingField = (IGizmoDragSession *)(this->fields)._offsetDrag;
+    pMVar6 = (MethodInfo *)&(pGVar4->fields)._DragSession_k__BackingField;
+    func_?();
     pGVar1 = (this->fields)._._gizmo;
     XVar2 = System.Xml.dll::System::Xml::Schema::Datatype_normalizedStringV1Compat::
             Datatype_normalizedStringV1Compat_get_TypeCode
-                      ((Datatype_normalizedStringV1Compat *)0x0,(MethodInfo *)this);
-    pGVar3 = (GizmoCap2D *)func_?();
-    method_00 = (MethodInfo *)&UNK_?;
+                      ((Datatype_normalizedStringV1Compat *)0x0,pMVar6);
+    pGVar3 = (GizmoCap2D *)func_?(TypeInfo__RTG__GizmoCap2D);
     GizmoCap2D::GizmoCap2D__ctor(pGVar3,pGVar1,XVar2,(MethodInfo *)0x0);
     (this->fields)._backTick = pGVar3;
     func_?(&(this->fields)._backTick,pGVar3);
-    pGVar4 = (GizmoCap3D *)(this->fields)._backTick;
-    if (pGVar4 == (GizmoCap3D *)0x0) goto code_?;
-    GizmoCap3D::GizmoCap3D_set_DragSession
-              (pGVar4,(IGizmoDragSession *)(this->fields)._offsetDrag,(MethodInfo *)0x0);
+    pGVar3 = (this->fields)._backTick;
+    if ((pGVar3 == (GizmoCap2D *)0x0) ||
+       (pGVar4 = (pGVar3->fields)._._handle, pGVar4 == (GizmoHandle *)0x0)) goto code_?;
+    (pGVar4->fields)._DragSession_k__BackingField = (IGizmoDragSession *)(this->fields)._offsetDrag;
+    func_?(&(pGVar4->fields)._DragSession_k__BackingField);
     pGVar1 = (this->fields)._._gizmo;
-    iVar6 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
+    iVar7 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
             UnsafeUtility_SizeOf_31((MethodInfo *)0x0);
-    this_00 = TypeInfo__RTG__GizmoCap2D;
-    pIVar7 = (Il2CppClass *)func_?();
-    method_01 = (MethodInfo *)&UNK_?;
-    GizmoCap2D::GizmoCap2D__ctor((GizmoCap2D *)pIVar7,pGVar1,iVar6,(MethodInfo *)0x0);
-    (this_00->_0).parent = pIVar7;
-    func_?(&(this_00->_0).parent);
-    pIVar7 = (this_00->_0).parent;
-    if (pIVar7 == (Il2CppClass *)0x0) goto code_?;
-    GizmoCap3D::GizmoCap3D_set_DragSession
-              ((GizmoCap3D *)pIVar7,(IGizmoDragSession *)this_00->static_fields,(MethodInfo *)0x0);
-    pIVar8 = (this_00->_0).generic_class;
-    pOVar9 = (Object *)func_?();
+    pGVar3 = (GizmoCap2D *)func_?(TypeInfo__RTG__GizmoCap2D);
+    GizmoCap2D::GizmoCap2D__ctor(pGVar3,pGVar1,iVar7,(MethodInfo *)0x0);
+    (this->fields)._frontTick = pGVar3;
+    pMVar6 = (MethodInfo *)&UNK_?;
+    func_?(&(this->fields)._frontTick,pGVar3);
+    pGVar3 = (this->fields)._frontTick;
+    if ((pGVar3 == (GizmoCap2D *)0x0) ||
+       (pGVar4 = (pGVar3->fields)._._handle, pGVar4 == (GizmoHandle *)0x0)) goto code_?;
+    (pGVar4->fields)._DragSession_k__BackingField = (IGizmoDragSession *)(this->fields)._offsetDrag;
+    func_?(&(pGVar4->fields)._DragSession_k__BackingField);
+    pBVar8 = (this->fields)._faceTicks;
+    pBVar9 = (BoxColliderGizmo3D_FaceTick *)
+             func_?(TypeInfo__RTG__BoxColliderGizmo3D__FaceTick);
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,method_00);
-    if (pIVar8 == (Il2CppGenericClass *)0x0) goto code_?;
-    if (pOVar9 != (Object *)0x0) {
-      iVar10 = func_?(pOVar9);
+              ((Object *)pBVar9,ExceptionArgument__Enum_obj,pMVar6);
+    if (pBVar8 == (BoxColliderGizmo3D_FaceTick__Array *)0x0) goto code_?;
+    if (pBVar9 != (BoxColliderGizmo3D_FaceTick *)0x0) {
+      iVar10 = func_?(pBVar9);
       if (iVar10 != 0) goto code_?;
       goto code_?;
     }
 code_?:
-    if (pIVar8->cached_class < (Il2CppClass *)0x3) goto code_?;
-    pIVar8[1].context.method_inst = (Il2CppGenericInst *)pOVar9;
-    func_?(&pIVar8[1].context.method_inst);
-    pIVar8 = (this_00->_0).generic_class;
-    if (pIVar8 == (Il2CppGenericClass *)0x0) goto code_?;
-    if (pIVar8->cached_class < (Il2CppClass *)0x3) goto code_?;
-    pIVar11 = pIVar8[1].context.method_inst;
-    if (pIVar11 == (Il2CppGenericInst *)0x0) goto code_?;
-    pIVar11[4].type_argc = (uint32_t)(this_00->_0).castClass;
-    func_?(pIVar11 + 4);
-    pIVar8 = (this_00->_0).generic_class;
-    pIVar7 = (Il2CppClass *)func_?(TypeInfo__RTG__BoxColliderGizmo3D__FaceTick);
+    if (pBVar8->max_length < 3) goto code_?;
+    pBVar8->vector[2] = pBVar9;
+    func_?(pBVar8->vector + 2);
+    pBVar8 = (this->fields)._faceTicks;
+    if (pBVar8 == (BoxColliderGizmo3D_FaceTick__Array *)0x0) goto code_?;
+    if (pBVar8->max_length < 3) goto code_?;
+    pBVar9 = pBVar8->vector[2];
+    if (pBVar9 == (BoxColliderGizmo3D_FaceTick *)0x0) goto code_?;
+    (pBVar9->fields).Tick = (this->fields)._leftTick;
+    func_?(&(pBVar9->fields).Tick);
+    pBVar8 = (this->fields)._faceTicks;
+    pBVar9 = (BoxColliderGizmo3D_FaceTick *)
+             func_?(TypeInfo__RTG__BoxColliderGizmo3D__FaceTick);
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)pIVar7,ExceptionArgument__Enum_obj,method_01);
-    if (pIVar8 == (Il2CppGenericClass *)0x0) goto code_?;
-    if (pIVar7 != (Il2CppClass *)0x0) {
-      iVar10 = func_?(pIVar7);
+              ((Object *)pBVar9,ExceptionArgument__Enum_obj,pMVar6);
+    if (pBVar8 == (BoxColliderGizmo3D_FaceTick__Array *)0x0) goto code_?;
+    if (pBVar9 != (BoxColliderGizmo3D_FaceTick *)0x0) {
+      iVar10 = func_?(pBVar9);
       if (iVar10 != 0) goto code_?;
       goto code_?;
     }
 code_?:
-    if (pIVar8->cached_class < (Il2CppClass *)0x4) goto code_?;
-    pIVar8[1].cached_class = pIVar7;
-    func_?(&pIVar8[1].cached_class);
-    pIVar8 = (this_00->_0).generic_class;
-    if (pIVar8 == (Il2CppGenericClass *)0x0) goto code_?;
-    if (pIVar8->cached_class < (Il2CppClass *)0x4) goto code_?;
-    pIVar7 = pIVar8[1].cached_class;
-    if (pIVar7 == (Il2CppClass *)0x0) goto code_?;
-    pIVar7->element_class = (Il2CppClass *)(this_00->_0).this_arg.data;
-    func_?(&pIVar7->element_class);
-    pIVar8 = (this_00->_0).generic_class;
-    pOVar9 = (Object *)func_?(TypeInfo__RTG__BoxColliderGizmo3D__FaceTick);
+    if (pBVar8->max_length < 4) goto code_?;
+    pBVar8->vector[3] = pBVar9;
+    func_?(pBVar8->vector + 3);
+    pBVar8 = (this->fields)._faceTicks;
+    if (pBVar8 == (BoxColliderGizmo3D_FaceTick__Array *)0x0) goto code_?;
+    if (pBVar8->max_length < 4) goto code_?;
+    pBVar9 = pBVar8->vector[3];
+    if (pBVar9 == (BoxColliderGizmo3D_FaceTick *)0x0) goto code_?;
+    (pBVar9->fields).Tick = (this->fields)._rightTick;
+    func_?(&(pBVar9->fields).Tick);
+    pBVar8 = (this->fields)._faceTicks;
+    pBVar9 = (BoxColliderGizmo3D_FaceTick *)
+             func_?(TypeInfo__RTG__BoxColliderGizmo3D__FaceTick);
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,method_01);
-    if (pIVar8 == (Il2CppGenericClass *)0x0) goto code_?;
-    if (pOVar9 != (Object *)0x0) {
-      iVar10 = func_?(pOVar9);
+              ((Object *)pBVar9,ExceptionArgument__Enum_obj,pMVar6);
+    if (pBVar8 == (BoxColliderGizmo3D_FaceTick__Array *)0x0) goto code_?;
+    if (pBVar9 != (BoxColliderGizmo3D_FaceTick *)0x0) {
+      iVar10 = func_?(pBVar9);
       if (iVar10 != 0) goto code_?;
       goto code_?;
     }
 code_?:
-    if (pIVar8->cached_class < (Il2CppClass *)0x6) goto code_?;
-    pIVar8[2].context.class_inst = (Il2CppGenericInst *)pOVar9;
-    func_?(&pIVar8[2].context);
-    pIVar8 = (this_00->_0).generic_class;
-    if (pIVar8 == (Il2CppGenericClass *)0x0) goto code_?;
-    if (pIVar8->cached_class < (Il2CppClass *)0x6) goto code_?;
-    pIVar11 = pIVar8[2].context.class_inst;
-    if (pIVar11 == (Il2CppGenericInst *)0x0) goto code_?;
-    pIVar11[4].type_argc = *(uint32_t *)&(this_00->_0).this_arg.attrs;
-    func_?(pIVar11 + 4);
-    pIVar8 = (this_00->_0).generic_class;
-    pIVar12 = (Il2CppType *)func_?(TypeInfo__RTG__BoxColliderGizmo3D__FaceTick);
+    if (pBVar8->max_length < 6) goto code_?;
+    pBVar8->vector[5] = pBVar9;
+    func_?(pBVar8->vector + 5);
+    pBVar8 = (this->fields)._faceTicks;
+    if (pBVar8 == (BoxColliderGizmo3D_FaceTick__Array *)0x0) goto code_?;
+    if (pBVar8->max_length < 6) goto code_?;
+    pBVar9 = pBVar8->vector[5];
+    if (pBVar9 == (BoxColliderGizmo3D_FaceTick *)0x0) goto code_?;
+    (pBVar9->fields).Tick = (this->fields)._topTick;
+    func_?(&(pBVar9->fields).Tick);
+    pBVar8 = (this->fields)._faceTicks;
+    pBVar9 = (BoxColliderGizmo3D_FaceTick *)
+             func_?(TypeInfo__RTG__BoxColliderGizmo3D__FaceTick);
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)pIVar12,ExceptionArgument__Enum_obj,method_01);
-    if (pIVar8 == (Il2CppGenericClass *)0x0) goto code_?;
-    if (pIVar12 != (Il2CppType *)0x0) {
-      iVar10 = func_?(pIVar12);
+              ((Object *)pBVar9,ExceptionArgument__Enum_obj,pMVar6);
+    if (pBVar8 == (BoxColliderGizmo3D_FaceTick__Array *)0x0) goto code_?;
+    if (pBVar9 != (BoxColliderGizmo3D_FaceTick *)0x0) {
+      iVar10 = func_?(pBVar9);
       if (iVar10 != 0) goto code_?;
       goto code_?;
     }
 code_?:
-    if (pIVar8->cached_class < (Il2CppClass *)0x5) goto code_?;
-    pIVar8[2].type = pIVar12;
-    func_?(pIVar8 + 2);
-    pIVar8 = (this_00->_0).generic_class;
-    if (pIVar8 == (Il2CppGenericClass *)0x0) goto code_?;
-    if (pIVar8->cached_class < (Il2CppClass *)0x5) goto code_?;
-    pIVar12 = pIVar8[2].type;
-    if (pIVar12 == (Il2CppType *)0x0) goto code_?;
-    pIVar12[4].data = (_union_86)(this_00->_0).declaringType;
-    func_?(pIVar12 + 4);
-    pIVar8 = (this_00->_0).generic_class;
-    pIVar12 = (Il2CppType *)func_?(TypeInfo__RTG__BoxColliderGizmo3D__FaceTick);
+    if (pBVar8->max_length < 5) goto code_?;
+    pBVar8->vector[4] = pBVar9;
+    func_?(pBVar8->vector + 4);
+    pBVar8 = (this->fields)._faceTicks;
+    if (pBVar8 == (BoxColliderGizmo3D_FaceTick__Array *)0x0) goto code_?;
+    if (pBVar8->max_length < 5) goto code_?;
+    pBVar9 = pBVar8->vector[4];
+    if (pBVar9 == (BoxColliderGizmo3D_FaceTick *)0x0) goto code_?;
+    (pBVar9->fields).Tick = (this->fields)._bottomTick;
+    func_?(&(pBVar9->fields).Tick);
+    pBVar8 = (this->fields)._faceTicks;
+    pBVar9 = (BoxColliderGizmo3D_FaceTick *)
+             func_?(TypeInfo__RTG__BoxColliderGizmo3D__FaceTick);
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)pIVar12,ExceptionArgument__Enum_obj,method_01);
-    if (pIVar8 == (Il2CppGenericClass *)0x0) goto code_?;
-    if (pIVar12 != (Il2CppType *)0x0) {
-      iVar10 = func_?(pIVar12);
+              ((Object *)pBVar9,ExceptionArgument__Enum_obj,pMVar6);
+    if (pBVar8 == (BoxColliderGizmo3D_FaceTick__Array *)0x0) goto code_?;
+    if (pBVar9 != (BoxColliderGizmo3D_FaceTick *)0x0) {
+      iVar10 = func_?(pBVar9);
       if (iVar10 != 0) goto code_?;
       goto code_?;
     }
 code_?:
-    if (pIVar8->cached_class == (Il2CppClass *)0x0) goto code_?;
-    pIVar8[1].type = pIVar12;
-    func_?(pIVar8 + 1);
-    pIVar8 = (this_00->_0).generic_class;
-    if (pIVar8 == (Il2CppGenericClass *)0x0) goto code_?;
-    if (pIVar8->cached_class == (Il2CppClass *)0x0) goto code_?;
-    pIVar12 = pIVar8[1].type;
-    if (pIVar12 == (Il2CppType *)0x0) goto code_?;
-    pIVar12[4].data = (_union_86)(this_00->_0).parent;
-    func_?(pIVar12 + 4);
-    pIVar8 = (this_00->_0).generic_class;
-    pOVar9 = (Object *)func_?(TypeInfo__RTG__BoxColliderGizmo3D__FaceTick);
+    if (pBVar8->max_length == 0) goto code_?;
+    pBVar8->vector[0] = pBVar9;
+    func_?(pBVar8->vector);
+    pBVar8 = (this->fields)._faceTicks;
+    if (pBVar8 == (BoxColliderGizmo3D_FaceTick__Array *)0x0) goto code_?;
+    if (pBVar8->max_length == 0) goto code_?;
+    pBVar9 = pBVar8->vector[0];
+    if (pBVar9 == (BoxColliderGizmo3D_FaceTick *)0x0) goto code_?;
+    (pBVar9->fields).Tick = (this->fields)._frontTick;
+    func_?(&(pBVar9->fields).Tick);
+    pBVar8 = (this->fields)._faceTicks;
+    pBVar9 = (BoxColliderGizmo3D_FaceTick *)
+             func_?(TypeInfo__RTG__BoxColliderGizmo3D__FaceTick);
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,method_01);
-    if (pIVar8 == (Il2CppGenericClass *)0x0) goto code_?;
-    if (pOVar9 == (Object *)0x0) {
+              ((Object *)pBVar9,ExceptionArgument__Enum_obj,pMVar6);
+    if (pBVar8 == (BoxColliderGizmo3D_FaceTick__Array *)0x0) goto code_?;
+    if (pBVar9 == (BoxColliderGizmo3D_FaceTick *)0x0) {
 code_?:
-      if (pIVar8->cached_class < (Il2CppClass *)0x2) goto code_?;
-      pIVar8[1].context.class_inst = (Il2CppGenericInst *)pOVar9;
-      func_?(&pIVar8[1].context);
-      pIVar8 = (this_00->_0).generic_class;
-      if (pIVar8 != (Il2CppGenericClass *)0x0) {
-        if (pIVar8->cached_class < (Il2CppClass *)0x2) goto code_?;
-        pIVar11 = pIVar8[1].context.class_inst;
-        if (pIVar11 != (Il2CppGenericInst *)0x0) {
-          pIVar11[4].type_argc = (uint32_t)(this_00->_0).element_class;
-          func_?(pIVar11 + 4);
-          pGVar1 = (Gizmo *)(this_00->_0).name;
-          iVar6 = GizmoHandleId::GizmoHandleId_get_MidScaleCap((MethodInfo *)0x0);
-          pGVar4 = (GizmoCap3D *)func_?(TypeInfo__RTG__GizmoCap3D);
-          GizmoCap3D::GizmoCap3D__ctor(pGVar4,pGVar1,iVar6,(MethodInfo *)0x0);
-          (this_00->_0).typeMetadataHandle = (Il2CppMetadataTypeHandle)pGVar4;
-          func_?(&(this_00->_0).typeMetadataHandle,pGVar4);
-          pGVar4 = (GizmoCap3D *)(this_00->_0).typeMetadataHandle;
-          if (pGVar4 != (GizmoCap3D *)0x0) {
-            GizmoCap3D::GizmoCap3D_set_DragSession
-                      (pGVar4,(IGizmoDragSession *)(this_00->_1).thread_static_fields_offset,
-                       (MethodInfo *)0x0);
-            BoxColliderGizmo3D_SetupSharedLookAndFeel
-                      ((BoxColliderGizmo3D *)this_00,(MethodInfo *)0x0);
+      if (pBVar8->max_length < 2) goto code_?;
+      pBVar8->vector[1] = pBVar9;
+      func_?(pBVar8->vector + 1);
+      pBVar8 = (this->fields)._faceTicks;
+      if (pBVar8 != (BoxColliderGizmo3D_FaceTick__Array *)0x0) {
+        if (pBVar8->max_length < 2) goto code_?;
+        pBVar9 = pBVar8->vector[1];
+        if (pBVar9 != (BoxColliderGizmo3D_FaceTick *)0x0) {
+          (pBVar9->fields).Tick = (this->fields)._backTick;
+          func_?(&(pBVar9->fields).Tick);
+          pGVar1 = (this->fields)._._gizmo;
+          iVar7 = GizmoHandleId::GizmoHandleId_get_MidScaleCap((MethodInfo *)0x0);
+          pGVar11 = (GizmoCap3D *)func_?(TypeInfo__RTG__GizmoCap3D);
+          GizmoCap3D::GizmoCap3D__ctor(pGVar11,pGVar1,iVar7,(MethodInfo *)0x0);
+          (this->fields)._midCap = pGVar11;
+          func_?(&(this->fields)._midCap,pGVar11);
+          pGVar11 = (this->fields)._midCap;
+          if ((pGVar11 != (GizmoCap3D *)0x0) &&
+             (pGVar4 = (pGVar11->fields)._._handle, pGVar4 != (GizmoHandle *)0x0)) {
+            (pGVar4->fields)._DragSession_k__BackingField =
+                 (IGizmoDragSession *)(this->fields)._uniScaleDrag;
+            func_?(&(pGVar4->fields)._DragSession_k__BackingField);
+            BoxColliderGizmo3D_SetupSharedLookAndFeel(this,(MethodInfo *)0x0);
             return;
           }
         }
       }
       goto code_?;
     }
-    iVar10 = func_?(pOVar9);
+    iVar10 = func_?(pBVar9);
     if (iVar10 != 0) goto code_?;
   }
   uVar5 = func_?();
   func_?(uVar5);
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -647,11 +661,11 @@ void Assembly-CSharp.dll::RTG::BoxColliderGizmo3D::BoxColliderGizmo3D_OnGizmoAtt
                         ((Vector3 *)&stack0xffffffe4,pTVar6,(MethodInfo *)0x0);
     uVar22 = pVVar7->x;
     uVar23 = pVVar7->y;
-    uVar24 = uVar23 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+    uVar24 = uVar23 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
     fVar9 = (float)((uint)pVVar7->z ^
-                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     (this->fields)._offsetDragWorkData.Axis.x =
-         (float)(uVar22 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+         (float)(uVar22 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     (this->fields)._offsetDragWorkData.Axis.y = (float)uVar24;
 code_?:
     (this->fields)._offsetDragWorkData.Axis.z = fVar9;
@@ -727,12 +741,12 @@ code_?:
                             ((Vector3 *)&stack0xffffffe4,pTVar6,(MethodInfo *)0x0);
         uVar25 = pVVar7->x;
         uVar26 = pVVar7->y;
-        uVar24 = uVar26 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+        uVar24 = uVar26 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
         fVar9 = (float)((uint)pVVar7->z ^
-                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                        __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
         (this->fields)._offsetDragWorkData.Axis.x =
              (float)(uVar25 ^ 
-                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
         (this->fields)._offsetDragWorkData.Axis.y = (float)uVar24;
         goto code_?;
       }
@@ -750,12 +764,12 @@ code_?:
                             ((Vector3 *)&stack0xffffffe4,pTVar6,(MethodInfo *)0x0);
         uVar27 = pVVar7->x;
         uVar28 = pVVar7->y;
-        uVar24 = uVar28 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+        uVar24 = uVar28 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
         fVar9 = (float)((uint)pVVar7->z ^
-                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                        __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
         (this->fields)._offsetDragWorkData.Axis.x =
              (float)(uVar27 ^ 
-                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
         (this->fields)._offsetDragWorkData.Axis.y = (float)uVar24;
 code_?:
         (this->fields)._offsetDragWorkData.Axis.z = fVar9;
@@ -1143,7 +1157,8 @@ void Assembly-CSharp.dll::RTG::BoxColliderGizmo3D::BoxColliderGizmo3D_OnGizmoRen
     func_?(TypeInfo__RTG__Singleton<RTG::GizmoLineMaterial>);
   }
   this_01 = (GizmoLineMaterial *)
-            func_?(MethodInfo__RTG__Singleton<RTG::GizmoLineMaterial>__get_Get__);
+            Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
+                      (MethodInfo__RTG__Singleton<RTG::GizmoLineMaterial>__get_Get__);
   if (this_01 != (GizmoLineMaterial *)0x0) {
     GizmoLineMaterial::GizmoLineMaterial_ResetValuesToSensibleDefaults(this_01,(MethodInfo *)0x0);
     if ((this->fields)._sharedLookAndFeel == (BoxColliderGizmo3DLookAndFeel *)0x0) {
@@ -1159,41 +1174,46 @@ void Assembly-CSharp.dll::RTG::BoxColliderGizmo3D::BoxColliderGizmo3D_OnGizmoRen
     pVVar3 = BoxColliderGizmo3D_CalcWorldCenter((Vector3 *)&stack0xfffffff0,this,(MethodInfo *)0x0);
     fVar4 = 0.0;
     fVar5 = pVVar3->z;
+    pBVar6 = this;
     pVVar3 = BoxColliderGizmo3D_CalcWorldSize((Vector3 *)&stack0xffffffdc,this,(MethodInfo *)0x0);
-    size = *pVVar3;
+    uVar7 = pVVar3->y;
+    fVar8 = pVVar3->z;
     this_00 = (this->fields)._targetCollider;
     if ((this_00 != (BoxCollider *)0x0) &&
        (this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                             ((Component *)this_00,(MethodInfo *)0x0), this_02 != (Transform *)0x0))
     {
-      pQVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+      pQVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
                          ((Quaternion *)&stack0xffffffd8,this_02,(MethodInfo *)0x0);
-      fVar7 = pQVar6->x;
-      fVar8 = pQVar6->y;
-      fVar9 = pQVar6->z;
-      uVar10 = ZEXT48(&stack0xffffffac);
-      puVar11 = &UNK_?;
+      size.y = (float)uVar7;
+      size.x = 6.16571e-44;
+      fVar10 = pQVar9->x;
+      fVar11 = pQVar9->y;
+      fVar12 = pQVar9->z;
+      fVar13 = pQVar9->w;
+      uVar14 = CONCAT44(&stack0xffffffac,&UNK_?);
       func_?();
       center.z = fVar5;
-      center.x = (float)(int)uVar10;
-      center.y = (float)(int)(uVar10 >> 0x20);
-      rotation.y = fVar8;
-      rotation.x = fVar7;
-      rotation.z = fVar9;
-      rotation.w = (float)puVar11;
+      center.x = (float)(int)uVar14;
+      center.y = (float)(int)((ulonglong)uVar14 >> 0x20);
+      size.z = fVar8;
+      rotation.y = fVar11;
+      rotation.x = fVar10;
+      rotation.z = fVar12;
+      rotation.w = fVar13;
       OBB::OBB__ctor_1((OBB *)&stack0xffffffac,center,size,rotation,(MethodInfo *)0x0);
-      box._size.y = fStack_12;
-      box._size.x = fVar4;
-      box._size.z = fStack_13;
-      box._center.x = fStack_14;
-      box._center.y = fStack_15;
-      box._center.z = fStack_16;
-      box._rotation.x = fStack_17;
-      box._rotation.y = fStack_18;
-      box._rotation.z = fStack_19;
-      box._rotation.w = in_stack_20;
-      box._isValid = (bool)in_stack_21;
-      box._41_3_ = SUB43(in_stack_21,1);
+      box._size.y = fVar4;
+      box._size.x = (float)pBVar6;
+      box._size.z = fStack_15;
+      box._center.x = fStack_16;
+      box._center.y = fStack_17;
+      box._center.z = fStack_18;
+      box._rotation.x = fStack_19;
+      box._rotation.y = fStack_20;
+      box._rotation.z = fStack_21;
+      box._rotation.w = fStack_22;
+      box._isValid = (bool)in_stack_23;
+      box._41_3_ = SUB43(in_stack_23,1);
       GraphicsEx::GraphicsEx_DrawWireBox_1(box,(MethodInfo *)0x0);
       if ((TypeInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
@@ -1202,32 +1222,32 @@ void Assembly-CSharp.dll::RTG::BoxColliderGizmo3D::BoxColliderGizmo3D_OnGizmoRen
                 MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
                           (MethodInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>__get_Get__);
       if (this_03 != (RTGizmosEngine *)0x0) {
-        iVar22 = RTGizmosEngine::RTGizmosEngine_get_NumRenderCameras(this_03,(MethodInfo *)0x0);
-        if (1 < iVar22) {
+        iVar24 = RTGizmosEngine::RTGizmosEngine_get_NumRenderCameras(this_03,(MethodInfo *)0x0);
+        if (1 < iVar24) {
           BoxColliderGizmo3D_UpdateTicks(this,(MethodInfo *)0x0);
         }
         BoxColliderGizmo3D_UpdateTickColors(this,camera,(MethodInfo *)0x0);
-        pGVar23 = (this->fields)._leftTick;
-        if (pGVar23 != (GizmoCap2D *)0x0) {
-          (*(code *)(pGVar23->klass->vtable).Render_1.method)();
-          pGVar23 = (this->fields)._rightTick;
-          if (pGVar23 != (GizmoCap2D *)0x0) {
-            (*(code *)(pGVar23->klass->vtable).Render_1.method)();
-            pGVar23 = (this->fields)._topTick;
-            if (pGVar23 != (GizmoCap2D *)0x0) {
-              (*(code *)(pGVar23->klass->vtable).Render_1.method)();
-              pGVar23 = (this->fields)._bottomTick;
-              if (pGVar23 != (GizmoCap2D *)0x0) {
-                (*(code *)(pGVar23->klass->vtable).Render_1.method)();
-                pGVar23 = (this->fields)._frontTick;
-                if (pGVar23 != (GizmoCap2D *)0x0) {
-                  (*(code *)(pGVar23->klass->vtable).Render_1.method)();
-                  pGVar23 = (this->fields)._backTick;
-                  if (pGVar23 != (GizmoCap2D *)0x0) {
-                    (*(code *)(pGVar23->klass->vtable).Render_1.method)();
-                    pGVar24 = (this->fields)._midCap;
-                    if (pGVar24 != (GizmoCap3D *)0x0) {
-                      (*(code *)(pGVar24->klass->vtable).Render_1.method)();
+        pGVar25 = (this->fields)._leftTick;
+        if (pGVar25 != (GizmoCap2D *)0x0) {
+          (*(code *)(pGVar25->klass->vtable).Render_1.method)();
+          pGVar25 = (this->fields)._rightTick;
+          if (pGVar25 != (GizmoCap2D *)0x0) {
+            (*(code *)(pGVar25->klass->vtable).Render_1.method)();
+            pGVar25 = (this->fields)._topTick;
+            if (pGVar25 != (GizmoCap2D *)0x0) {
+              (*(code *)(pGVar25->klass->vtable).Render_1.method)();
+              pGVar25 = (this->fields)._bottomTick;
+              if (pGVar25 != (GizmoCap2D *)0x0) {
+                (*(code *)(pGVar25->klass->vtable).Render_1.method)();
+                pGVar25 = (this->fields)._frontTick;
+                if (pGVar25 != (GizmoCap2D *)0x0) {
+                  (*(code *)(pGVar25->klass->vtable).Render_1.method)();
+                  pGVar25 = (this->fields)._backTick;
+                  if (pGVar25 != (GizmoCap2D *)0x0) {
+                    (*(code *)(pGVar25->klass->vtable).Render_1.method)();
+                    pGVar26 = (this->fields)._midCap;
+                    if (pGVar26 != (GizmoCap3D *)0x0) {
+                      (*(code *)(pGVar26->klass->vtable).Render_1.method)();
                       return;
                     }
                   }
@@ -1241,8 +1261,8 @@ void Assembly-CSharp.dll::RTG::BoxColliderGizmo3D::BoxColliderGizmo3D_OnGizmoRen
   }
 code_?:
   func_?();
-  pcVar25 = (code *)swi(3);
-  (*pcVar25)();
+  pcVar27 = (code *)swi(3);
+  (*pcVar27)();
   return;
 }
 
@@ -1269,32 +1289,33 @@ void Assembly-CSharp.dll::RTG::BoxColliderGizmo3D::BoxColliderGizmo3D_OnGizmoUpd
         camera = Gizmo::Gizmo_GetWorkCamera(pGVar2,(MethodInfo *)0x0);
         BoxColliderGizmo3D_UpdateHoverPriorities(this,camera,(MethodInfo *)0x0);
         pGVar2 = (this->fields)._._gizmo;
-        if (((pGVar2 != (Gizmo *)0x0) &&
-            (pGVar3 = (pGVar2->fields)._transform, pGVar3 != (GizmoTransform *)0x0)) &&
-           (this_00 = (this->fields)._midCap, this_00 != (GizmoCap3D *)0x0)) {
-          GizmoCap3D::GizmoCap3D_set_Position
+        if ((((pGVar2 != (Gizmo *)0x0) &&
+             (pGVar3 = (pGVar2->fields)._transform, pGVar3 != (GizmoTransform *)0x0)) &&
+            (pGVar5 = (this->fields)._midCap, pGVar5 != (GizmoCap3D *)0x0)) &&
+           (this_00 = (pGVar5->fields)._transform, this_00 != (GizmoTransform *)0x0)) {
+          GizmoTransform::GizmoTransform_set_Position3D
                     (this_00,(pGVar3->fields)._position3D,(MethodInfo *)0x0);
-          pGStack5 = (this->fields)._midCap;
+          pGStack6 = (this->fields)._midCap;
           if ((this->fields)._sharedLookAndFeel == (BoxColliderGizmo3DLookAndFeel *)0x0) {
-            pBVar6 = (this->fields)._lookAndFeel;
-            if (pBVar6 == (BoxColliderGizmo3DLookAndFeel *)0x0) goto code_?;
+            pBVar7 = (this->fields)._lookAndFeel;
+            if (pBVar7 == (BoxColliderGizmo3DLookAndFeel *)0x0) goto code_?;
           }
           else {
-            pBVar6 = (this->fields)._sharedLookAndFeel;
+            pBVar7 = (this->fields)._sharedLookAndFeel;
           }
-          if ((pBVar6->fields)._isMidCapVisible == 0) {
+          if ((pBVar7->fields)._isMidCapVisible == 0) {
             bVar1 = 0;
           }
           else {
             bVar1 = (this->fields)._isMidCapVisible;
           }
-          if (pGStack5 != (GizmoCap3D *)0x0) {
-            if ((bool)(pGStack5->fields)._._isVisible == (bVar1 != 0)) {
+          if (pGStack6 != (GizmoCap3D *)0x0) {
+            if ((bool)(pGStack6->fields)._._isVisible == (bVar1 != 0)) {
               return;
             }
-            (pGStack5->fields)._._isVisible = bVar1 != 0;
-            pIStack7 = (pGStack5->klass->vtable).OnHoverableStateChanged.methodPtr;
-            (*(code *)(pGStack5->klass->vtable).OnVisibilityStateChanged.method)();
+            (pGStack6->fields)._._isVisible = bVar1 != 0;
+            pIStack8 = (pGStack6->klass->vtable).OnHoverableStateChanged.methodPtr;
+            (*(code *)(pGStack6->klass->vtable).OnVisibilityStateChanged.method)();
             return;
           }
         }
@@ -1303,8 +1324,8 @@ void Assembly-CSharp.dll::RTG::BoxColliderGizmo3D::BoxColliderGizmo3D_OnGizmoUpd
   }
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -1719,7 +1740,7 @@ void Assembly-CSharp.dll::RTG::BoxColliderGizmo3D::BoxColliderGizmo3D_UpdateTick
       uStack_4 = CONCAT44(pBVar14,(undefined4)uStack_4);
       fStack_15 = (float)((uint)(fStack_10 * (float)uVar12 + fStack_9 * (float)uVar11 +
                                 fStack_8 * fVar5) ^
-                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                         __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
       fStack_16 = (float)uVar11;
       fStack_17 = (float)uVar12;
       fStack_18 = fVar5;
@@ -1930,20 +1951,21 @@ void Assembly-CSharp.dll::RTG::BoxColliderGizmo3D::BoxColliderGizmo3D_UpdateTick
           value.y = pVVar2->y;
           VStack_20.y = value.x;
           VStack_20.z = value.y;
-          if (pGVar16 != (GizmoCap2D *)0x0) {
-            GizmoCap2D::GizmoCap2D_set_Position(pGVar16,value,(MethodInfo *)0x0);
-            pBVar21 = (this->fields)._faceTicks;
-            if (pBVar21 != (BoxColliderGizmo3D_FaceTick__Array *)0x0) {
-              if (pBVar21->max_length < 3) goto code_?;
-              pBVar22 = pBVar21->vector[2];
-              if (pBVar22 != (BoxColliderGizmo3D_FaceTick *)0x0) {
-                (pBVar22->fields).FaceCenter.x = (float)uVar17;
-                (pBVar22->fields).FaceCenter.y = (float)uVar18;
-                (pBVar22->fields).FaceCenter.z = fStack_19;
-                pBVar21 = (this->fields)._faceTicks;
-                if (pBVar21 != (BoxColliderGizmo3D_FaceTick__Array *)0x0) {
-                  if (pBVar21->max_length < 3) goto code_?;
-                  pBVar22 = pBVar21->vector[2];
+          if ((pGVar16 != (GizmoCap2D *)0x0) &&
+             (pGVar21 = (pGVar16->fields)._transform, pGVar21 != (GizmoTransform *)0x0)) {
+            GizmoTransform::GizmoTransform_set_Position2D(pGVar21,value,(MethodInfo *)0x0);
+            pBVar22 = (this->fields)._faceTicks;
+            if (pBVar22 != (BoxColliderGizmo3D_FaceTick__Array *)0x0) {
+              if (pBVar22->max_length < 3) goto code_?;
+              pBVar23 = pBVar22->vector[2];
+              if (pBVar23 != (BoxColliderGizmo3D_FaceTick *)0x0) {
+                (pBVar23->fields).FaceCenter.x = (float)uVar17;
+                (pBVar23->fields).FaceCenter.y = (float)uVar18;
+                (pBVar23->fields).FaceCenter.z = fStack_19;
+                pBVar22 = (this->fields)._faceTicks;
+                if (pBVar22 != (BoxColliderGizmo3D_FaceTick__Array *)0x0) {
+                  if (pBVar22->max_length < 3) goto code_?;
+                  pBVar23 = pBVar22->vector[2];
                   pBVar8 = (this->fields)._targetCollider;
                   if (pBVar8 != (BoxCollider *)0x0) {
                     pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::
@@ -1952,21 +1974,21 @@ void Assembly-CSharp.dll::RTG::BoxColliderGizmo3D::BoxColliderGizmo3D_UpdateTick
                       pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                                 Transform_get_right((Vector3 *)&stack0xffffffbc,pTVar9,
                                                     (MethodInfo *)0x0);
-                      uVar23 = pVVar2->x;
-                      uVar24 = pVVar2->y;
-                      uVar25 = uVar24 ^ 
-                               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                      uVar24 = pVVar2->x;
+                      uVar25 = pVVar2->y;
+                      uVar26 = uVar25 ^ 
+                               __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                       ;
                       fVar4 = (float)((uint)pVVar2->z ^
-                                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                      __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                                       );
-                      if (pBVar22 != (BoxColliderGizmo3D_FaceTick *)0x0) {
-                        (pBVar22->fields).FaceNormal.x =
-                             (float)(uVar23 ^ 
-                                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                      if (pBVar23 != (BoxColliderGizmo3D_FaceTick *)0x0) {
+                        (pBVar23->fields).FaceNormal.x =
+                             (float)(uVar24 ^ 
+                                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                                     );
-                        (pBVar22->fields).FaceNormal.y = (float)uVar25;
-                        (pBVar22->fields).FaceNormal.z = fVar4;
+                        (pBVar23->fields).FaceNormal.y = (float)uVar26;
+                        (pBVar23->fields).FaceNormal.z = fVar4;
                         boxCenter_00.z = fStack_5;
                         boxCenter_00.x = (float)(undefined4)uStack_3;
                         boxCenter_00.y = (float)uStack_3._4_4_;
@@ -1987,20 +2009,23 @@ void Assembly-CSharp.dll::RTG::BoxColliderGizmo3D::BoxColliderGizmo3D_UpdateTick
                         value_00.y = pVVar2->y;
                         VStack_20.y = value_00.x;
                         VStack_20.z = value_00.y;
-                        if (pGVar16 != (GizmoCap2D *)0x0) {
-                          GizmoCap2D::GizmoCap2D_set_Position(pGVar16,value_00,(MethodInfo *)0x0);
-                          pBVar21 = (this->fields)._faceTicks;
-                          if (pBVar21 != (BoxColliderGizmo3D_FaceTick__Array *)0x0) {
-                            if (pBVar21->max_length < 4) goto code_?;
-                            pBVar22 = pBVar21->vector[3];
-                            if (pBVar22 != (BoxColliderGizmo3D_FaceTick *)0x0) {
-                              (pBVar22->fields).FaceCenter.x = fVar4;
-                              (pBVar22->fields).FaceCenter.y = fVar11;
-                              (pBVar22->fields).FaceCenter.z = fStack_19;
-                              pBVar21 = (this->fields)._faceTicks;
-                              if (pBVar21 != (BoxColliderGizmo3D_FaceTick__Array *)0x0) {
-                                if (pBVar21->max_length < 4) goto code_?;
-                                pBVar22 = pBVar21->vector[3];
+                        if ((pGVar16 != (GizmoCap2D *)0x0) &&
+                           (pGVar21 = (pGVar16->fields)._transform, pGVar21 != (GizmoTransform *)0x0
+                           )) {
+                          GizmoTransform::GizmoTransform_set_Position2D
+                                    (pGVar21,value_00,(MethodInfo *)0x0);
+                          pBVar22 = (this->fields)._faceTicks;
+                          if (pBVar22 != (BoxColliderGizmo3D_FaceTick__Array *)0x0) {
+                            if (pBVar22->max_length < 4) goto code_?;
+                            pBVar23 = pBVar22->vector[3];
+                            if (pBVar23 != (BoxColliderGizmo3D_FaceTick *)0x0) {
+                              (pBVar23->fields).FaceCenter.x = fVar4;
+                              (pBVar23->fields).FaceCenter.y = fVar11;
+                              (pBVar23->fields).FaceCenter.z = fStack_19;
+                              pBVar22 = (this->fields)._faceTicks;
+                              if (pBVar22 != (BoxColliderGizmo3D_FaceTick__Array *)0x0) {
+                                if (pBVar22->max_length < 4) goto code_?;
+                                pBVar23 = pBVar22->vector[3];
                                 pBVar8 = (this->fields)._targetCollider;
                                 if (pBVar8 != (BoxCollider *)0x0) {
                                   pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::
@@ -2012,10 +2037,10 @@ void Assembly-CSharp.dll::RTG::BoxColliderGizmo3D::BoxColliderGizmo3D_UpdateTick
                                                                   pTVar9,(MethodInfo *)0x0);
                                     fVar11 = pVVar2->y;
                                     fVar4 = pVVar2->z;
-                                    if (pBVar22 != (BoxColliderGizmo3D_FaceTick *)0x0) {
-                                      (pBVar22->fields).FaceNormal.x = pVVar2->x;
-                                      (pBVar22->fields).FaceNormal.y = fVar11;
-                                      (pBVar22->fields).FaceNormal.z = fVar4;
+                                    if (pBVar23 != (BoxColliderGizmo3D_FaceTick *)0x0) {
+                                      (pBVar23->fields).FaceNormal.x = pVVar2->x;
+                                      (pBVar23->fields).FaceNormal.y = fVar11;
+                                      (pBVar23->fields).FaceNormal.z = fVar4;
                                       boxCenter_01.z = fStack_5;
                                       boxCenter_01.x = (float)(undefined4)uStack_3;
                                       boxCenter_01.y = (float)uStack_3._4_4_;
@@ -2038,22 +2063,24 @@ void Assembly-CSharp.dll::RTG::BoxColliderGizmo3D::BoxColliderGizmo3D_UpdateTick
                                       value_01.y = pVVar2->y;
                                       VStack_20.y = value_01.x;
                                       VStack_20.z = value_01.y;
-                                      if (pGVar16 != (GizmoCap2D *)0x0) {
-                                        GizmoCap2D::GizmoCap2D_set_Position
-                                                  (pGVar16,value_01,(MethodInfo *)0x0);
-                                        pBVar21 = (this->fields)._faceTicks;
-                                        if (pBVar21 != (BoxColliderGizmo3D_FaceTick__Array *)0x0) {
-                                          if (pBVar21->max_length < 6) goto code_?;
-                                          pBVar22 = pBVar21->vector[5];
-                                          if (pBVar22 != (BoxColliderGizmo3D_FaceTick *)0x0) {
-                                            (pBVar22->fields).FaceCenter.x = fVar4;
-                                            (pBVar22->fields).FaceCenter.y = fVar11;
-                                            (pBVar22->fields).FaceCenter.z = fStack_19;
-                                            pBVar21 = (this->fields)._faceTicks;
-                                            if (pBVar21 != (BoxColliderGizmo3D_FaceTick__Array *)0x0
+                                      if ((pGVar16 != (GizmoCap2D *)0x0) &&
+                                         (pGVar21 = (pGVar16->fields)._transform,
+                                         pGVar21 != (GizmoTransform *)0x0)) {
+                                        GizmoTransform::GizmoTransform_set_Position2D
+                                                  (pGVar21,value_01,(MethodInfo *)0x0);
+                                        pBVar22 = (this->fields)._faceTicks;
+                                        if (pBVar22 != (BoxColliderGizmo3D_FaceTick__Array *)0x0) {
+                                          if (pBVar22->max_length < 6) goto code_?;
+                                          pBVar23 = pBVar22->vector[5];
+                                          if (pBVar23 != (BoxColliderGizmo3D_FaceTick *)0x0) {
+                                            (pBVar23->fields).FaceCenter.x = fVar4;
+                                            (pBVar23->fields).FaceCenter.y = fVar11;
+                                            (pBVar23->fields).FaceCenter.z = fStack_19;
+                                            pBVar22 = (this->fields)._faceTicks;
+                                            if (pBVar22 != (BoxColliderGizmo3D_FaceTick__Array *)0x0
                                                ) {
-                                              if (pBVar21->max_length < 6) goto code_?;
-                                              pBVar22 = pBVar21->vector[5];
+                                              if (pBVar22->max_length < 6) goto code_?;
+                                              pBVar23 = pBVar22->vector[5];
                                               pBVar8 = (this->fields)._targetCollider;
                                               if (pBVar8 != (BoxCollider *)0x0) {
                                                 pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::
@@ -2067,11 +2094,11 @@ void Assembly-CSharp.dll::RTG::BoxColliderGizmo3D::BoxColliderGizmo3D_UpdateTick
                                                                        pTVar9,(MethodInfo *)0x0);
                                                   fVar11 = pVVar2->y;
                                                   fVar4 = pVVar2->z;
-                                                  if (pBVar22 != (BoxColliderGizmo3D_FaceTick *)0x0)
+                                                  if (pBVar23 != (BoxColliderGizmo3D_FaceTick *)0x0)
                                                   {
-                                                    (pBVar22->fields).FaceNormal.x = pVVar2->x;
-                                                    (pBVar22->fields).FaceNormal.y = fVar11;
-                                                    (pBVar22->fields).FaceNormal.z = fVar4;
+                                                    (pBVar23->fields).FaceNormal.x = pVVar2->x;
+                                                    (pBVar23->fields).FaceNormal.y = fVar11;
+                                                    (pBVar23->fields).FaceNormal.z = fVar4;
                                                     boxCenter_02.z = fStack_5;
                                                     boxCenter_02.x = (float)(undefined4)uStack_3;
                                                     boxCenter_02.y = (float)uStack_3._4_4_;
@@ -2098,30 +2125,32 @@ void Assembly-CSharp.dll::RTG::BoxColliderGizmo3D::BoxColliderGizmo3D_UpdateTick
                                                     value_02.y = pVVar2->y;
                                                     VStack_20.y = value_02.x;
                                                     VStack_20.z = value_02.y;
-                                                    if (pGVar16 != (GizmoCap2D *)0x0) {
-                                                      GizmoCap2D::GizmoCap2D_set_Position
-                                                                (pGVar16,value_02,(MethodInfo *)0x0)
+                                                    if ((pGVar16 != (GizmoCap2D *)0x0) &&
+                                                       (pGVar21 = (pGVar16->fields)._transform,
+                                                       pGVar21 != (GizmoTransform *)0x0)) {
+                                                      GizmoTransform::GizmoTransform_set_Position2D
+                                                                (pGVar21,value_02,(MethodInfo *)0x0)
                                                       ;
-                                                      pBVar21 = (this->fields)._faceTicks;
-                                                      if (pBVar21 !=
+                                                      pBVar22 = (this->fields)._faceTicks;
+                                                      if (pBVar22 !=
                                                           (BoxColliderGizmo3D_FaceTick__Array *)0x0)
                                                       {
-                                                        if (pBVar21->max_length < 5)
+                                                        if (pBVar22->max_length < 5)
                                                         goto code_?;
-                                                        pBVar22 = pBVar21->vector[4];
-                                                        if (pBVar22 !=
+                                                        pBVar23 = pBVar22->vector[4];
+                                                        if (pBVar23 !=
                                                             (BoxColliderGizmo3D_FaceTick *)0x0) {
-                                                          (pBVar22->fields).FaceCenter.x = fVar4;
-                                                          (pBVar22->fields).FaceCenter.y = fVar11;
-                                                          (pBVar22->fields).FaceCenter.z = fStack_19
+                                                          (pBVar23->fields).FaceCenter.x = fVar4;
+                                                          (pBVar23->fields).FaceCenter.y = fVar11;
+                                                          (pBVar23->fields).FaceCenter.z = fStack_19
                                                           ;
-                                                          pBVar21 = (this->fields)._faceTicks;
-                                                          if (pBVar21 !=
+                                                          pBVar22 = (this->fields)._faceTicks;
+                                                          if (pBVar22 !=
                                                               (BoxColliderGizmo3D_FaceTick__Array *)
                                                               0x0) {
-                                                            if (pBVar21->max_length < 5)
+                                                            if (pBVar22->max_length < 5)
                                                             goto code_?;
-                                                            pBVar22 = pBVar21->vector[4];
+                                                            pBVar23 = pBVar22->vector[4];
                                                             pBVar8 = (this->fields)._targetCollider
                                                             ;
                                                             if (pBVar8 != (BoxCollider *)0x0) {
@@ -2138,23 +2167,23 @@ void Assembly-CSharp.dll::RTG::BoxColliderGizmo3D::BoxColliderGizmo3D_UpdateTick
                                                                                &stack0xffffffbc,
                                                                                pTVar9,(MethodInfo *
                                                                                        )0x0);
-                                                    uVar26 = pVVar2->x;
-                                                    uVar27 = pVVar2->y;
-                                                    uVar25 = uVar27 ^ 
-                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                                    uVar27 = pVVar2->x;
+                                                    uVar28 = pVVar2->y;
+                                                    uVar26 = uVar28 ^ 
+                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                                                   ;
                                                   fVar4 = (float)((uint)pVVar2->z ^
                                                                                                                                     
-                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                                                   );
-                                                  if (pBVar22 != (BoxColliderGizmo3D_FaceTick *)0x0)
+                                                  if (pBVar23 != (BoxColliderGizmo3D_FaceTick *)0x0)
                                                   {
-                                                    (pBVar22->fields).FaceNormal.x =
-                                                         (float)(uVar26 ^ 
-                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                                    (pBVar23->fields).FaceNormal.x =
+                                                         (float)(uVar27 ^ 
+                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                                                   );
-                                                  (pBVar22->fields).FaceNormal.y = (float)uVar25;
-                                                  (pBVar22->fields).FaceNormal.z = fVar4;
+                                                  (pBVar23->fields).FaceNormal.y = (float)uVar26;
+                                                  (pBVar23->fields).FaceNormal.z = fVar4;
                                                   boxCenter_03.z = fStack_5;
                                                   boxCenter_03.x = (float)(undefined4)uStack_3;
                                                   boxCenter_03.y = (float)uStack_3._4_4_;
@@ -2179,27 +2208,29 @@ void Assembly-CSharp.dll::RTG::BoxColliderGizmo3D::BoxColliderGizmo3D_UpdateTick
                                                   value_03.y = pVVar2->y;
                                                   VStack_20.y = value_03.x;
                                                   VStack_20.z = value_03.y;
-                                                  if (pGVar16 != (GizmoCap2D *)0x0) {
-                                                    GizmoCap2D::GizmoCap2D_set_Position
-                                                              (pGVar16,value_03,(MethodInfo *)0x0);
-                                                    pBVar21 = (this->fields)._faceTicks;
-                                                    if (pBVar21 !=
+                                                  if ((pGVar16 != (GizmoCap2D *)0x0) &&
+                                                     (pGVar21 = (pGVar16->fields)._transform,
+                                                     pGVar21 != (GizmoTransform *)0x0)) {
+                                                    GizmoTransform::GizmoTransform_set_Position2D
+                                                              (pGVar21,value_03,(MethodInfo *)0x0);
+                                                    pBVar22 = (this->fields)._faceTicks;
+                                                    if (pBVar22 !=
                                                         (BoxColliderGizmo3D_FaceTick__Array *)0x0) {
-                                                      if (pBVar21->max_length == 0)
+                                                      if (pBVar22->max_length == 0)
                                                       goto code_?;
-                                                      pBVar22 = pBVar21->vector[0];
-                                                      if (pBVar22 !=
+                                                      pBVar23 = pBVar22->vector[0];
+                                                      if (pBVar23 !=
                                                           (BoxColliderGizmo3D_FaceTick *)0x0) {
-                                                        (pBVar22->fields).FaceCenter.x = fVar4;
-                                                        (pBVar22->fields).FaceCenter.y = fVar11;
-                                                        (pBVar22->fields).FaceCenter.z = fStack_19;
-                                                        pBVar21 = (this->fields)._faceTicks;
-                                                        if (pBVar21 !=
+                                                        (pBVar23->fields).FaceCenter.x = fVar4;
+                                                        (pBVar23->fields).FaceCenter.y = fVar11;
+                                                        (pBVar23->fields).FaceCenter.z = fStack_19;
+                                                        pBVar22 = (this->fields)._faceTicks;
+                                                        if (pBVar22 !=
                                                             (BoxColliderGizmo3D_FaceTick__Array *)
                                                             0x0) {
-                                                          if (pBVar21->max_length == 0)
+                                                          if (pBVar22->max_length == 0)
                                                           goto code_?;
-                                                          pBVar22 = pBVar21->vector[0];
+                                                          pBVar23 = pBVar22->vector[0];
                                                           pBVar8 = (this->fields)._targetCollider;
                                                           if (pBVar8 != (BoxCollider *)0x0) {
                                                             pTVar9 = UnityEngine.CoreModule.dll::
@@ -2216,23 +2247,23 @@ void Assembly-CSharp.dll::RTG::BoxColliderGizmo3D::BoxColliderGizmo3D_UpdateTick
                                                                                    &stack0xffffffbc,
                                                                                    pTVar9,(
                                                   MethodInfo *)0x0);
-                                                  uVar28 = pVVar2->x;
-                                                  uVar29 = pVVar2->y;
-                                                  uVar25 = uVar29 ^ 
-                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                                  uVar29 = pVVar2->x;
+                                                  uVar30 = pVVar2->y;
+                                                  uVar26 = uVar30 ^ 
+                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                                                   ;
                                                   fVar4 = (float)((uint)pVVar2->z ^
                                                                                                                                     
-                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                                                   );
-                                                  if (pBVar22 != (BoxColliderGizmo3D_FaceTick *)0x0)
+                                                  if (pBVar23 != (BoxColliderGizmo3D_FaceTick *)0x0)
                                                   {
-                                                    (pBVar22->fields).FaceNormal.x =
-                                                         (float)(uVar28 ^ 
-                                                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                                    (pBVar23->fields).FaceNormal.x =
+                                                         (float)(uVar29 ^ 
+                                                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                                                   );
-                                                  (pBVar22->fields).FaceNormal.y = (float)uVar25;
-                                                  (pBVar22->fields).FaceNormal.z = fVar4;
+                                                  (pBVar23->fields).FaceNormal.y = (float)uVar26;
+                                                  (pBVar23->fields).FaceNormal.z = fVar4;
                                                   boxCenter_04.z = fStack_5;
                                                   boxCenter_04.x = (float)(undefined4)uStack_3;
                                                   boxCenter_04.y = (float)uStack_3._4_4_;
@@ -2257,27 +2288,29 @@ void Assembly-CSharp.dll::RTG::BoxColliderGizmo3D::BoxColliderGizmo3D_UpdateTick
                                                   value_04.y = pVVar2->y;
                                                   VStack_20.y = value_04.x;
                                                   VStack_20.z = value_04.y;
-                                                  if (pGVar16 != (GizmoCap2D *)0x0) {
-                                                    GizmoCap2D::GizmoCap2D_set_Position
-                                                              (pGVar16,value_04,(MethodInfo *)0x0);
-                                                    pBVar21 = (this->fields)._faceTicks;
-                                                    if (pBVar21 !=
+                                                  if ((pGVar16 != (GizmoCap2D *)0x0) &&
+                                                     (pGVar21 = (pGVar16->fields)._transform,
+                                                     pGVar21 != (GizmoTransform *)0x0)) {
+                                                    GizmoTransform::GizmoTransform_set_Position2D
+                                                              (pGVar21,value_04,(MethodInfo *)0x0);
+                                                    pBVar22 = (this->fields)._faceTicks;
+                                                    if (pBVar22 !=
                                                         (BoxColliderGizmo3D_FaceTick__Array *)0x0) {
-                                                      if (pBVar21->max_length < 2)
+                                                      if (pBVar22->max_length < 2)
                                                       goto code_?;
-                                                      pBVar22 = pBVar21->vector[1];
-                                                      if (pBVar22 !=
+                                                      pBVar23 = pBVar22->vector[1];
+                                                      if (pBVar23 !=
                                                           (BoxColliderGizmo3D_FaceTick *)0x0) {
-                                                        (pBVar22->fields).FaceCenter.x = fVar7;
-                                                        (pBVar22->fields).FaceCenter.y = fVar11;
-                                                        (pBVar22->fields).FaceCenter.z = fVar4;
-                                                        pBVar21 = (this->fields)._faceTicks;
-                                                        if (pBVar21 !=
+                                                        (pBVar23->fields).FaceCenter.x = fVar7;
+                                                        (pBVar23->fields).FaceCenter.y = fVar11;
+                                                        (pBVar23->fields).FaceCenter.z = fVar4;
+                                                        pBVar22 = (this->fields)._faceTicks;
+                                                        if (pBVar22 !=
                                                             (BoxColliderGizmo3D_FaceTick__Array *)
                                                             0x0) {
-                                                          if (pBVar21->max_length < 2)
+                                                          if (pBVar22->max_length < 2)
                                                           goto code_?;
-                                                          pBVar22 = pBVar21->vector[1];
+                                                          pBVar23 = pBVar22->vector[1];
                                                           pBVar8 = (this->fields)._targetCollider;
                                                           if (pBVar8 != (BoxCollider *)0x0) {
                                                             pTVar9 = UnityEngine.CoreModule.dll::
@@ -2296,11 +2329,11 @@ void Assembly-CSharp.dll::RTG::BoxColliderGizmo3D::BoxColliderGizmo3D_UpdateTick
                                                   MethodInfo *)0x0);
                                                   fVar7 = pVVar2->y;
                                                   fVar4 = pVVar2->z;
-                                                  if (pBVar22 != (BoxColliderGizmo3D_FaceTick *)0x0)
+                                                  if (pBVar23 != (BoxColliderGizmo3D_FaceTick *)0x0)
                                                   {
-                                                    (pBVar22->fields).FaceNormal.x = pVVar2->x;
-                                                    (pBVar22->fields).FaceNormal.y = fVar7;
-                                                    (pBVar22->fields).FaceNormal.z = fVar4;
+                                                    (pBVar23->fields).FaceNormal.x = pVVar2->x;
+                                                    (pBVar23->fields).FaceNormal.y = fVar7;
+                                                    (pBVar23->fields).FaceNormal.z = fVar4;
                                                     return;
                                                   }
                                                   }
@@ -2351,8 +2384,8 @@ void Assembly-CSharp.dll::RTG::BoxColliderGizmo3D::BoxColliderGizmo3D_UpdateTick
   func_?();
 code_?:
   func_?();
-  pcVar30 = (code *)swi(3);
-  (*pcVar30)();
+  pcVar31 = (code *)swi(3);
+  (*pcVar31)();
   return;
 }
 

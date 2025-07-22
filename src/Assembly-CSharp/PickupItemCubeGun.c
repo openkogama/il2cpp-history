@@ -518,8 +518,8 @@ code_?:
                    (piVar24 = (int *)func_?(), piVar24 == (int *)0x0)) goto code_?;
                 if (*(Il2CppClass **)(*piVar24 + 0x20) != (TypeInfo__Edge->_0).element_class)
                 goto code_?;
-                uVar26 = 0xd2c4;
-                uStack_27 = 0x1068;
+                uVar26 = 0x6a44;
+                uStack_27 = 0x1069;
                 pfVar28 = (float *)func_?();
                 face = *pfVar28;
                 if (face != 0.0) {
@@ -696,7 +696,7 @@ void Assembly-CSharp.dll::PickupItemCubeGun::PickupItemCubeGun_HandleCursors
 
 {
   if (cRam_? == '\0') {
-    func_?(0xa330);
+    func_?(0xd434);
     func_?(&TypeInfo__MVCubeModelFineGrainedTerrain);
     func_?(&
                     MVCubeModelFineGrainedTerrain_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVCubeModelFineGrainedTerrain>__
@@ -967,7 +967,7 @@ void Assembly-CSharp.dll::PickupItemCubeGun::PickupItemCubeGun_OnFire
   func_?(&fStack_2,0,0x48);
   if ((((this->fields).hasLeftVehicle == 0) && ((this->fields).fireSecondary == 0)) &&
      (cVar3 = (*(code *)(this->klass->vtable).get_IsAmmoDepleted.method)
-                        (this,(this->klass->vtable).get_Type.methodPtr), cVar3 == '\0')) {
+                        (this,(this->klass->vtable).CanFire.methodPtr), cVar3 == '\0')) {
     bVar4 = PickupItemCubeGun_DoLineOfFireCheck(this,(VoxelHit *)&fStack_2,(MethodInfo *)0x0);
     if (bVar4 != 0) {
       voxelHit.point.y = fStack_2;
@@ -1339,38 +1339,23 @@ void Assembly-CSharp.dll::PickupItemCubeGun::PickupItemCubeGun_ResetAmmo
     func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
     cRam_? = '\x01';
   }
-  iVar1 = (this->fields).maxAmmo.currentCryptoKey;
-  iVar2 = (this->fields).maxAmmo.hiddenValue;
-  iVar3 = (this->fields).maxAmmo.fakeValue;
+  iVar1 = (*(code *)(this->klass->vtable).get_MaxAmmo.method)
+                    (this,(this->klass->vtable).get_Quantity.methodPtr);
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor ==
       0) {
     func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
   }
-  value.hiddenValue = iVar2;
-  value.currentCryptoKey = iVar1;
-  value.fakeValue = iVar3;
-  value.inited = (this->fields).maxAmmo.inited;
-  value._13_3_ = *(undefined3 *)&(this->fields).maxAmmo.field_0xd;
-  iVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-          ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
-  iVar4 = (*(code *)(this->klass->vtable).GetAmmoMultiplier.method)
-                    (this,iVar1,(this->klass->vtable).UpdateWithDirection.methodPtr);
-  iVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-          ObscuredInt_op_Implicit_1((this->fields).currentAmmo,(MethodInfo *)0x0);
-  if (iVar1 < iVar4) {
-    iVar1 = iVar4;
-  }
-  pOVar5 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-           ObscuredInt_op_Implicit((ObscuredInt *)&stack0xffffffec,iVar1,(MethodInfo *)0x0);
-  iVar1 = pOVar5->hiddenValue;
-  iVar2 = pOVar5->fakeValue;
-  bVar6 = pOVar5->inited;
-  uVar7 = *(undefined3 *)&pOVar5->field_0xd;
-  (this->fields).currentAmmo.currentCryptoKey = pOVar5->currentCryptoKey;
+  pOVar2 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+           ObscuredInt_op_Implicit(&OStack_3,iVar1,(MethodInfo *)0x0);
+  iVar1 = pOVar2->hiddenValue;
+  iVar4 = pOVar2->fakeValue;
+  bVar5 = pOVar2->inited;
+  uVar6 = *(undefined3 *)&pOVar2->field_0xd;
+  (this->fields).currentAmmo.currentCryptoKey = pOVar2->currentCryptoKey;
   (this->fields).currentAmmo.hiddenValue = iVar1;
-  (this->fields).currentAmmo.fakeValue = iVar2;
-  (this->fields).currentAmmo.inited = bVar6;
-  *(undefined3 *)&(this->fields).currentAmmo.field_0xd = uVar7;
+  (this->fields).currentAmmo.fakeValue = iVar4;
+  (this->fields).currentAmmo.inited = bVar5;
+  *(undefined3 *)&(this->fields).currentAmmo.field_0xd = uVar6;
   return;
 }
 
@@ -1698,7 +1683,7 @@ void Assembly-CSharp.dll::PickupItemCubeGun::PickupItemCubeGun_Update
     PickupItemCubeGun_HandleCursors(this,(MethodInfo *)0x0);
   }
   cVar1 = (*(code *)(this->klass->vtable).get_IsAmmoDepleted.method)
-                    (this,(this->klass->vtable).get_Type.methodPtr);
+                    (this,(this->klass->vtable).CanFire.methodPtr);
   if (cVar1 != '\0') {
     pCVar2 = (this->fields).cubeBullet;
     if ((pCVar2 == (CubeBullet *)0x0) ||
@@ -1897,6 +1882,41 @@ bool Assembly-CSharp.dll::PickupItemCubeGun::PickupItemCubeGun_get_IsAmmoDeplete
   cVar5 = (*(code *)(this->klass->vtable).get_HasUnlimitedAmmo.method)
                     (this,(this->klass->vtable).get_CanUnequip.methodPtr);
   return cVar5 == '\0';
+}
+
+
+/* Int32 get_MaxAmmo() */
+
+int32_t Assembly-CSharp.dll::PickupItemCubeGun::PickupItemCubeGun_get_MaxAmmo
+                  (PickupItemCubeGun *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+    cRam_? = '\x01';
+  }
+  iVar1 = (this->fields).maxAmmo.currentCryptoKey;
+  iVar2 = (this->fields).maxAmmo.hiddenValue;
+  iVar3 = (this->fields).maxAmmo.fakeValue;
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor ==
+      0) {
+    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+  }
+  value.hiddenValue = iVar2;
+  value.currentCryptoKey = iVar1;
+  value.fakeValue = iVar3;
+  value.inited = (this->fields).maxAmmo.inited;
+  value._13_3_ = *(undefined3 *)&(this->fields).maxAmmo.field_0xd;
+  iVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+          ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
+  iVar4 = (*(code *)(this->klass->vtable).CalculateMaxAmmo.method)
+                    (this,iVar1,(this->klass->vtable).UpdateWithDirection.methodPtr);
+  iVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+          ObscuredInt_op_Implicit_1((this->fields).currentAmmo,(MethodInfo *)0x0);
+  if (iVar1 < iVar4) {
+    iVar1 = iVar4;
+  }
+  return iVar1;
 }
 
 

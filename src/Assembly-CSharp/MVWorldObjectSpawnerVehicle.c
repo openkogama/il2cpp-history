@@ -279,13 +279,13 @@ void Assembly-CSharp.dll::MVWorldObjectSpawnerVehicle::MVWorldObjectSpawnerVehic
     func_?(&TypeInfo__LevelBasedUseRequirement);
     func_?(&TypeInfo__MVVehicleBase);
     func_?(&TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement);
+    func_?(&
+                    MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                   );
+    func_?(&
+                    MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                   );
     func_?(&TypeInfo__UseInteractor);
-    func_?(&
-                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
-                   );
-    func_?(&
-                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
-                   );
     func_?(&StringLiteral_spawnWorldObjectID);
     func_?(&StringLiteral_Could_not_get_spawnPoint_child_s);
     cRam_? = '\x01';
@@ -319,7 +319,7 @@ void Assembly-CSharp.dll::MVWorldObjectSpawnerVehicle::MVWorldObjectSpawnerVehic
         UseInteractor::UseInteractor__ctor
                   (pUVar3,(MVWorldObjectClient *)this,(GameObject *)owner,1,triggerCollider,
                    (Func_2_Int32_Boolean_ *)this_01,
-                   (Func_3_Int32_MVInteractableBase_Boolean_ *)this_02,3.5,0,(MethodInfo *)0x0);
+                   (Func_3_Int32_MVInteractableBase_Boolean_ *)this_02,3.5,0,1,(MethodInfo *)0x0);
         (this->fields)._.useInteractor = pUVar3;
         func_?();
         pTVar2 = (this->fields)._.triggerBoxEvents;
@@ -327,7 +327,7 @@ void Assembly-CSharp.dll::MVWorldObjectSpawnerVehicle::MVWorldObjectSpawnerVehic
         pEVar4 = (EventHandler_1_Object_ *)func_?();
         mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                   (pEVar4,(Object *)pUVar3,
-                   MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                   MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
                    ,(MethodInfo *)0x0);
         if (pTVar2 != (TriggerBoxEvents *)0x0) {
           TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnterOverride
@@ -337,7 +337,7 @@ void Assembly-CSharp.dll::MVWorldObjectSpawnerVehicle::MVWorldObjectSpawnerVehic
           pEVar4 = (EventHandler_1_Object_ *)func_?();
           mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
                     (pEVar4,(Object *)pUVar3,
-                     MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                     MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
                      ,(MethodInfo *)0x0);
           if (this_00 != (TriggerBoxEvents *)0x0) {
             TriggerBoxEvents::TriggerBoxEvents_add_TriggerExitOverride
@@ -546,7 +546,7 @@ void Assembly-CSharp.dll::MVWorldObjectSpawnerVehicle::MVWorldObjectSpawnerVehic
                                    (&stack0xffffffa8,pMVar1,1);
                 uStack_14 = (uint)*(undefined8 *)(iVar13 + 0x10);
                 fVar15 = (float)(uStack_14 ^
-                                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                                 );
                 if (pTVar5 != (Transform *)0x0) {
                   VVar4.y = (float)uVar8 + (float)uVar11 * fVar15 * _UNK_?;
@@ -683,7 +683,7 @@ void Assembly-CSharp.dll::MVWorldObjectSpawnerVehicle::
                                    (&stack0xffffffb0,pMVar1,1);
                 uStack_17 = (uint)*(undefined8 *)(iVar16 + 0x10);
                 fVar18 = (float)(uStack_17 ^
-                                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                                 );
                 if (pTVar10 != (Transform *)0x0) {
                   value.y = (float)uVar12 + fVar14 * fVar18 * _UNK_?;

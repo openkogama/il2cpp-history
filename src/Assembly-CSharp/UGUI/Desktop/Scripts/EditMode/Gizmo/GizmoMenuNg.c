@@ -1319,7 +1319,7 @@ code_?:
                                                   pMVar6 = (unaff_EBX->fields).worldObjectClient;
                                                   if (pMVar6 != (MVWorldObjectClient *)0x0) {
                                                     bVar17 = (byte)((uint)pMVar6 >> 8);
-                                                    bVar18 = 0x24;
+                                                    bVar18 = 0x73;
                                                     bVar9 = MVWorldObjectClient::
                                                             MVWorldObjectClient_HasInteractionFlag
                                                                       (pMVar6,
@@ -1608,55 +1608,64 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::Gizmo::GizmoMenuNg::
   }
   pMVar1 = (this->fields).worldObjectClient;
   if (pMVar1 != (MVWorldObjectClient *)0x0) {
-    puVar2 = (undefined4 *)
+    pQVar2 = (Quaternion *)
              (*(code *)(pMVar1->klass->vtable).get_Rotation.method)
-                       (auStack_3,pMVar1,(pMVar1->klass->vtable).set_Rotation.methodPtr);
-    uStack_4 = *puVar2;
-    uStack_5 = *(undefined8 *)(puVar2 + 1);
-    uStack_6 = puVar2[3];
-    puVar7 = (undefined8 *)func_?(auStack_8,&uStack_4,0);
-    pTVar9 = (this->fields).xRotationText;
-    uStack_5 = *puVar7;
-    uStack_6 = *(undefined4 *)(puVar7 + 1);
-    IStack_10.m_value = func_?((undefined4)uStack_5,0);
-    pSVar11 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_10,(MethodInfo *)0x0);
-    pSVar12 = ::StringLiteral__;
-    if (pSVar11 != (String *)0x0) {
-      pSVar12 = pSVar11;
+                       (&stack0xffffffd0,pMVar1,(pMVar1->klass->vtable).set_Rotation.methodPtr);
+    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_ToEulerRad
+                       (&VStack_4,*pQVar2,(MethodInfo *)0x0);
+    uStack_5._0_4_ = pVVar3->x;
+    uStack_5._4_4_ = pVVar3->y;
+    fStack_6 = pVVar3->z * _UNK_?;
+    euler.y = (float)uStack_5._4_4_ * _UNK_?;
+    euler.x = (float)(undefined4)uStack_5 * _UNK_?;
+    euler.z = fStack_6;
+    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_MakePositive
+                       ((Vector3 *)&stack0xffffffd4,euler,(MethodInfo *)0x0);
+    uVar7._0_4_ = pVVar3->x;
+    uVar7._4_4_ = pVVar3->y;
+    fStack_6 = pVVar3->z;
+    pTVar8 = (this->fields).xRotationText;
+    uStack_5 = uVar7 & 0xffffffff;
+    VStack_4.z = (float)&UNK_?;
+    IStack_9.m_value = func_?();
+    pSVar10 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_9,(MethodInfo *)0x0);
+    pSVar11 = ::StringLiteral__;
+    if (pSVar10 != (String *)0x0) {
+      pSVar11 = pSVar10;
     }
-    if (pTVar9 != (Text *)0x0) {
-      (*(code *)(pTVar9->klass->vtable).set_text.method)
-                (pTVar9,pSVar12,(pTVar9->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-      pTVar9 = (this->fields).yRotationText;
-      IStack_10.m_value = func_?(uStack_5._4_4_,0);
-      pSVar11 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_10,(MethodInfo *)0x0);
-      pSVar12 = ::StringLiteral__;
-      if (pSVar11 != (String *)0x0) {
-        pSVar12 = pSVar11;
+    if (pTVar8 != (Text *)0x0) {
+      (*(code *)(pTVar8->klass->vtable).set_text.method)
+                (pTVar8,pSVar11,(pTVar8->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+      pTVar8 = (this->fields).yRotationText;
+      IStack_9.m_value = func_?(uStack_5._4_4_,0);
+      pSVar10 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_9,(MethodInfo *)0x0);
+      pSVar11 = ::StringLiteral__;
+      if (pSVar10 != (String *)0x0) {
+        pSVar11 = pSVar10;
       }
-      if (pTVar9 != (Text *)0x0) {
-        (*(code *)(pTVar9->klass->vtable).set_text.method)
-                  (pTVar9,pSVar12,(pTVar9->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr)
+      if (pTVar8 != (Text *)0x0) {
+        (*(code *)(pTVar8->klass->vtable).set_text.method)
+                  (pTVar8,pSVar11,(pTVar8->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr)
         ;
-        pTVar9 = (this->fields).zRotationText;
-        IStack_10.m_value = func_?(uStack_6,0);
-        pSVar11 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_10,(MethodInfo *)0x0);
-        pSVar12 = ::StringLiteral__;
-        if (pSVar11 != (String *)0x0) {
-          pSVar12 = pSVar11;
+        pTVar8 = (this->fields).zRotationText;
+        IStack_9.m_value = func_?(fStack_6,0);
+        pSVar10 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_9,(MethodInfo *)0x0);
+        pSVar11 = ::StringLiteral__;
+        if (pSVar10 != (String *)0x0) {
+          pSVar11 = pSVar10;
         }
-        if (pTVar9 != (Text *)0x0) {
-          (*(code *)(pTVar9->klass->vtable).set_text.method)
-                    (pTVar9,pSVar12,
-                     (pTVar9->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+        if (pTVar8 != (Text *)0x0) {
+          (*(code *)(pTVar8->klass->vtable).set_text.method)
+                    (pTVar8,pSVar11,
+                     (pTVar8->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
           return;
         }
       }
     }
   }
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 

@@ -336,9 +336,9 @@ void Assembly-CSharp.dll::HackingToolDetector::HackingToolDetector_TemporaryRepo
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&TypeInfo__HackingToolDetector);
-    func_?(&TypeInfo__HackingToolDetector__ReportCategory);
+    func_?();
+    func_?();
+    func_?();
     func_?(&TypeInfo__StatHatWrapper);
     func_?(&TypeInfo__System__String);
     func_?(&StringLiteral_Application_quit_);
@@ -353,53 +353,53 @@ void Assembly-CSharp.dll::HackingToolDetector::HackingToolDetector_TemporaryRepo
     cRam_? = '\x01';
   }
   pSVar1 = StringLiteral_Report_default_label_have_been_h;
-  index = 2;
+  iVar2 = 2;
   if (a == (HackingToolDetector_HackingToolReport *)0x0) goto code_?;
   switch((a->fields).kind) {
   case 0:
-    index = 0;
-    values = (String__Array *)func_?(TypeInfo__System__String,5);
-    if (values == (String__Array *)0x0) goto code_?;
+    iVar2 = 0;
+    unaff_EBX = (String__Array *)func_?(TypeInfo__System__String,5);
+    if (unaff_EBX == (String__Array *)0x0) goto code_?;
     func_?(0,StringLiteral_Running_process__);
-    pAVar2 = (a->fields).app;
-    if (pAVar2 == (ApplicationDesc *)0x0) goto code_?;
-    pSVar1 = (pAVar2->fields)._ExeCertSubjectName_k__BackingField;
+    pAVar3 = (a->fields).app;
+    if (pAVar3 == (ApplicationDesc *)0x0) goto code_?;
+    pSVar1 = (pAVar3->fields)._ExeCertSubjectName_k__BackingField;
     break;
   case 1:
-    index = 0;
-    values = (String__Array *)func_?(TypeInfo__System__String,7);
-    if (values == (String__Array *)0x0) goto code_?;
+    iVar2 = 0;
+    unaff_EBX = (String__Array *)func_?(TypeInfo__System__String,7);
+    if (unaff_EBX == (String__Array *)0x0) goto code_?;
     func_?(0,StringLiteral_Running_process__);
-    pAVar2 = (a->fields).app;
-    if (pAVar2 == (ApplicationDesc *)0x0) goto code_?;
-    pSVar1 = (pAVar2->fields)._ExeCertSubjectName_k__BackingField;
+    pAVar3 = (a->fields).app;
+    if (pAVar3 == (ApplicationDesc *)0x0) goto code_?;
+    pSVar1 = (pAVar3->fields)._ExeCertSubjectName_k__BackingField;
     goto code_?;
   case 2:
-    index = 1;
-    values = (String__Array *)func_?(TypeInfo__System__String,5);
-    if (values == (String__Array *)0x0) goto code_?;
+    iVar2 = 1;
+    unaff_EBX = (String__Array *)func_?(TypeInfo__System__String,5);
+    if (unaff_EBX == (String__Array *)0x0) goto code_?;
     func_?(0,StringLiteral_Registry_key__);
-    pAVar3 = (a->fields).foundKey;
-    if (pAVar3 == (ApplicationDesc_RegistryKey *)0x0) goto code_?;
-    pSVar1 = (pAVar3->fields).name;
+    pAVar4 = (a->fields).foundKey;
+    if (pAVar4 == (ApplicationDesc_RegistryKey *)0x0) goto code_?;
+    pSVar1 = (pAVar4->fields).name;
     break;
   case 3:
-    index = 1;
-    values = (String__Array *)func_?(TypeInfo__System__String,7);
-    if (values == (String__Array *)0x0) goto code_?;
+    iVar2 = 1;
+    unaff_EBX = (String__Array *)func_?(TypeInfo__System__String,7);
+    if (unaff_EBX == (String__Array *)0x0) goto code_?;
     func_?(0,StringLiteral_Registry_key__);
-    pAVar3 = (a->fields).foundKey;
-    if (pAVar3 == (ApplicationDesc_RegistryKey *)0x0) goto code_?;
-    pSVar1 = (pAVar3->fields).name;
+    pAVar4 = (a->fields).foundKey;
+    if (pAVar4 == (ApplicationDesc_RegistryKey *)0x0) goto code_?;
+    pSVar1 = (pAVar4->fields).name;
 code_?:
     func_?(1,pSVar1);
     func_?(2,StringLiteral___associated_with__);
-    pAVar2 = (a->fields).app;
-    if (pAVar2 == (ApplicationDesc *)0x0) goto code_?;
-    func_?(3,(pAVar2->fields).programName);
+    pAVar3 = (a->fields).app;
+    if (pAVar3 == (ApplicationDesc *)0x0) goto code_?;
+    func_?(3,(pAVar3->fields).programName);
     func_?(4,StringLiteral___detected_as__);
     func_?(5,(a->fields).exactFind);
-    uVar4 = 6;
+    uVar5 = 6;
     pSVar1 = ::StringLiteral__;
     goto code_?;
   case 4:
@@ -414,43 +414,44 @@ code_?:
   }
   func_?(1,pSVar1);
   func_?(2,StringLiteral___associated_with__);
-  pAVar2 = (a->fields).app;
-  if (pAVar2 != (ApplicationDesc *)0x0) {
-    func_?(3,(pAVar2->fields).programName);
-    uVar4 = 4;
+  pAVar3 = (a->fields).app;
+  if (pAVar3 != (ApplicationDesc *)0x0) {
+    func_?(3,(pAVar3->fields).programName);
+    uVar5 = 4;
     pSVar1 = StringLiteral___detected_;
 code_?:
-    func_?(uVar4,pSVar1);
-    pSVar1 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
+    func_?(uVar5,pSVar1);
+    pSVar1 = mscorlib.dll::System::String::String_Concat_6(unaff_EBX,(MethodInfo *)0x0);
 code_?:
     if ((TypeInfo__HackingToolDetector->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__HackingToolDetector);
     }
-    pBVar5 = (this->fields).alreadyReported;
-    if (pBVar5 != (BitArray *)0x0) {
-      bVar6 = mscorlib.dll::System::Collections::BitArray::BitArray_get_Item
-                        (pBVar5,index,(MethodInfo *)0x0);
-      if (bVar6 == 0) {
+    pBVar6 = (this->fields).alreadyReported;
+    unaff_EBX = (String__Array *)this;
+    if (pBVar6 != (BitArray *)0x0) {
+      bVar7 = mscorlib.dll::System::Collections::BitArray::BitArray_get_Item
+                        (pBVar6,iVar2,(MethodInfo *)0x0);
+      if (bVar7 == 0) {
         if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__UnityEngine__Debug);
+          func_?();
         }
         UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                   ((Object *)pSVar1,(MethodInfo *)0x0);
-        EStack_7.klass = (Enum__Class *)TypeInfo__HackingToolDetector__ReportCategory;
-        EStack_7.monitor = (MonitorData *)0xffffffff;
-        iStack_8 = index;
-        pSVar1 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_7,(MethodInfo *)0x0);
+        EStack_8.klass = (Enum__Class *)TypeInfo__HackingToolDetector__ReportCategory;
+        EStack_8.monitor = (MonitorData *)0xffffffff;
+        iStack_9 = iVar2;
+        pSVar1 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_8,(MethodInfo *)0x0);
         pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                            (StringLiteral_cheatDetected_ReportCategory_,pSVar1,(MethodInfo *)0x0);
+                           (StringLiteral_cheatDetected_ReportCategory_,pSVar1,(MethodInfo *)0x0);
         if ((TypeInfo__StatHatWrapper->_1).cctor_finished_or_no_cctor == 0) {
           func_?(TypeInfo__StatHatWrapper);
         }
         StatHatWrapper::StatHatWrapper_Count(pSVar1,1,(MethodInfo *)0x0);
-        pBVar5 = (this->fields).alreadyReported;
-        if (pBVar5 == (BitArray *)0x0) goto code_?;
+        pBVar6 = (this->fields).alreadyReported;
+        if (pBVar6 == (BitArray *)0x0) goto code_?;
         mscorlib.dll::System::Collections::BitArray::BitArray_set_Item
-                  (pBVar5,index,1,(MethodInfo *)0x0);
-        if (index == 0) {
+                  (pBVar6,iVar2,1,(MethodInfo *)0x0);
+        if (iVar2 == 0) {
           if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__UnityEngine__Debug);
           }
@@ -469,17 +470,22 @@ code_?:
     }
   }
 code_?:
-  bVar9 = 0;
-  bVar10 = func_?();
-  bVar11 = (byte)extraout_ECX & 0x1f;
-  cVar12 = *extraout_EDX;
-  *extraout_EDX = *extraout_EDX << bVar11;
-  bVar13 = (extraout_ECX & 0x1f) == 0;
-  pcVar14 = (char *)((int)extraout_EDX * 9 + -0x2cbcefde);
-  *pcVar14 = *pcVar14 + (char)((uint)extraout_EDX >> 8) +
-            (bVar13 * (0x99 < bVar10 | bVar9) | !bVar13 * ((char)(cVar12 << bVar11 - 1) < '\0'));
-                    /* WARNING: Bad instruction - Truncating control flow here */
-  halt_baddata();
+  func_?();
+  uVar10 = (*extraout_ECX)();
+  pbVar11 = (byte *)uVar10;
+  iVar2 = (int)unaff_EBX->vector +
+           CONCAT31((int3)((ulonglong)uVar10 >> 0x28),
+                    (byte)((ulonglong)uVar10 >> 0x20) & *pbVar11 & *pbVar11) + -0x10;
+  piVar12 = (int *)CONCAT31((int3)((uint)iVar2 >> 8),(byte)iVar2 & *pbVar11);
+  bVar13 = (byte)extraout_ECX_00 & 0x1f;
+  iVar2 = *piVar12;
+  *piVar12 = *piVar12 << bVar13;
+  *(char *)(extraout_ECX_00 + 0xcc1022d4) =
+       *(char *)(extraout_ECX_00 + 0xcc1022d4) + (char)((uint)unaff_EBX >> 8) +
+       ((extraout_ECX_00 & 0x1f) != 0) * (iVar2 << bVar13 - 1 < 0);
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
+  return;
 }
 
 

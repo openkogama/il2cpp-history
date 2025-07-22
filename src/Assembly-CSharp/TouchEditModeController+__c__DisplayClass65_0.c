@@ -1,9 +1,9 @@
 
 /* Void <DeleteWoid>b__0(IModalPopupCreator, BaseEventData) */
 
-void Assembly-CSharp.dll::TouchEditModeController+<>c__DisplayClass64_0::
-     TouchEditModeController_c_DisplayClass64_0__DeleteWoid_b__0
-               (TouchEditModeController_c_DisplayClass64_0 *this,IModalPopupCreator *x,
+void Assembly-CSharp.dll::TouchEditModeController+<>c__DisplayClass65_0::
+     TouchEditModeController_c_DisplayClass65_0__DeleteWoid_b__0
+               (TouchEditModeController_c_DisplayClass65_0 *this,IModalPopupCreator *x,
                BaseEventData *y,MethodInfo *method)
 
 {

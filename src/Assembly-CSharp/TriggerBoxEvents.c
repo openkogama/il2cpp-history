@@ -94,8 +94,8 @@ code_?:
         }
         goto code_?;
       }
-      if ((this->fields).TriggerEnter != (EventHandler_1_TriggerEventArgs_ *)0x0) {
-        pEVar5 = (this->fields).TriggerEnter;
+      pEVar5 = (this->fields).TriggerEnter;
+      if (pEVar5 != (EventHandler_1_TriggerEventArgs_ *)0x0) {
         iVar6 = (pMVar1->fields)._.id;
         pTVar7 = (TriggerEventArgs *)func_?(TypeInfo__TriggerEventArgs);
         TriggerEventArgs::TriggerEventArgs__ctor(pTVar7,iVar6,(MethodInfo *)0x0);
@@ -135,8 +135,8 @@ void Assembly-CSharp.dll::TriggerBoxEvents::TriggerBoxEvents_OnMVTriggerExit
       (*(pEVar2->fields)._._.invoke_impl)((pEVar2->fields)._._.method_code,this);
       return;
     }
-    if ((this->fields).TriggerExit != (EventHandler_1_TriggerEventArgs_ *)0x0) {
-      pEVar2 = (this->fields).TriggerExit;
+    pEVar2 = (this->fields).TriggerExit;
+    if (pEVar2 != (EventHandler_1_TriggerEventArgs_ *)0x0) {
       iVar3 = (pMVar1->fields)._.id;
       pTVar4 = (TriggerEventArgs *)func_?(TypeInfo__TriggerEventArgs);
       TriggerEventArgs::TriggerEventArgs__ctor(pTVar4,iVar3,(MethodInfo *)0x0);

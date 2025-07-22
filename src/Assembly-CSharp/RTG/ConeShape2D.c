@@ -81,7 +81,7 @@ Rect * Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_GetEncapsulatingRect
       MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
       ;
       fVar2 = VVar3.y * (this->fields)._height + (float)pMVar4;
-      puVar10 = (undefined *)(fVar1 + (this->fields)._height * 4.437386e-29);
+      puVar10 = (undefined *)(fVar1 + (this->fields)._height * 4.445316e-29);
       piVar6 = &(this_00->fields)._version;
       *piVar6 = *piVar6 + 1;
       pVVar7 = (this_00->fields)._items;
@@ -106,7 +106,7 @@ Rect * Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_GetEncapsulatingRect
         pMVar4 = 
         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
         ;
-        fVar2 = (float)puStack_5 * (this->fields)._baseRadius + 4.4374347e-29;
+        fVar2 = (float)puStack_5 * (this->fields)._baseRadius + 4.4453647e-29;
         fVar1 = VVar3.y * (this->fields)._baseRadius + fVar1;
         piVar6 = &(this_00->fields)._version;
         *piVar6 = *piVar6 + 1;
@@ -215,7 +215,7 @@ void Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_RenderArea
       ;
       fStack_4 = VVar3.y;
       fVar1 = (float)method_00 * (this->fields)._baseRadius + fVar1;
-      fVar7 = fStack_4 * (this->fields)._baseRadius + 4.437596e-29;
+      fVar7 = fStack_4 * (this->fields)._baseRadius + 4.445526e-29;
       piVar10 = &(this_00->fields)._version;
       *piVar10 = *piVar10 + 1;
       pVVar11 = (this_00->fields)._items;
@@ -306,7 +306,7 @@ void Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_RenderBorder
       MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
       ;
       fStack_5 = VVar3.y;
-      fVar2 = fStack_5 * (this->fields)._height + 4.4377326e-29;
+      fVar2 = fStack_5 * (this->fields)._height + 4.4456626e-29;
       fVar1 = fVar1 + (float)pMVar6 * (this->fields)._height;
       piVar8 = &(this_00->fields)._version;
       *piVar8 = *piVar8 + 1;

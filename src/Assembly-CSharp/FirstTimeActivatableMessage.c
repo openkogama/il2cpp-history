@@ -200,26 +200,6 @@ void Assembly-CSharp.dll::FirstTimeActivatableMessage::FirstTimeActivatableMessa
 }
 
 
-/* FirstTimeActivatableMessage() */
-
-void Assembly-CSharp.dll::FirstTimeActivatableMessage::FirstTimeActivatableMessage__ctor
-               (FirstTimeActivatableMessage *this,MethodInfo *method)
-
-{
-  (this->fields)._.onShowSound = 3;
-  (this->fields)._.prerequisiteEvent = -1;
-  (this->fields)._.checkForStackBlocking = 1;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
-  }
-  return;
-}
-
-
 /* Boolean get_CanShow() */
 
 bool Assembly-CSharp.dll::FirstTimeActivatableMessage::FirstTimeActivatableMessage_get_CanShow

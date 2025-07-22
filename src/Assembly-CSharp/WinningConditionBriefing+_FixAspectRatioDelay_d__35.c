@@ -1,9 +1,9 @@
 
 /* Boolean MoveNext() */
 
-bool Assembly-CSharp.dll::WinningConditionBriefing+<FixAspectRatioDelay>d__34::
-     WinningConditionBriefing_FixAspectRatioDelay_d_34_MoveNext
-               (WinningConditionBriefing_FixAspectRatioDelay_d_34 *this,MethodInfo *method)
+bool Assembly-CSharp.dll::WinningConditionBriefing+<FixAspectRatioDelay>d__35::
+     WinningConditionBriefing_FixAspectRatioDelay_d_35_MoveNext
+               (WinningConditionBriefing_FixAspectRatioDelay_d_35 *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -63,9 +63,9 @@ bool Assembly-CSharp.dll::WinningConditionBriefing+<FixAspectRatioDelay>d__34::
 
 /* Void System.Collections.IEnumerator.Reset() */
 
-void Assembly-CSharp.dll::WinningConditionBriefing+<FixAspectRatioDelay>d__34::
-     WinningConditionBriefing_FixAspectRatioDelay_d_34_System_Collections_IEnumerator_Reset
-               (WinningConditionBriefing_FixAspectRatioDelay_d_34 *this,MethodInfo *method)
+void Assembly-CSharp.dll::WinningConditionBriefing+<FixAspectRatioDelay>d__35::
+     WinningConditionBriefing_FixAspectRatioDelay_d_35_System_Collections_IEnumerator_Reset
+               (WinningConditionBriefing_FixAspectRatioDelay_d_35 *this,MethodInfo *method)
 
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
@@ -73,7 +73,7 @@ void Assembly-CSharp.dll::WinningConditionBriefing+<FixAspectRatioDelay>d__34::
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
   func_?(&
-                  MethodInfo__WinningConditionBriefing___FixAspectRatioDelay_d__34__System_Collections_IEnumerator_Reset__
+                  MethodInfo__WinningConditionBriefing___FixAspectRatioDelay_d__35__System_Collections_IEnumerator_Reset__
                  );
   func_?(this_00);
   pcVar2 = (code *)swi(3);

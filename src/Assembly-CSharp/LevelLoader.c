@@ -11,11 +11,14 @@ void Assembly-CSharp.dll::LevelLoader::LevelLoader_LoadScenes
   }
   else {
     if (gameMode == MVGameMode__Enum_Play) {
-      if (tourist == 0) {
-        LevelLoader_LoadScenes_1(this,ScenesForMode__Enum_PlayMode,callback,(MethodInfo *)0x0);
+      if (this != (LevelLoader *)0x0) {
+        LevelLoader_LoadScenes_1(this,(uint)tourist * 2,callback,(MethodInfo *)0x0);
         return;
       }
-      LevelLoader_LoadScenes_1(this,ScenesForMode__Enum_PlayModeTourist,callback,(MethodInfo *)0x0);
+      uVar1 = func_?(&stack0xfffffff0);
+      func_?(uVar1);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
       return;
     }
     if (gameMode == MVGameMode__Enum_CharacterEditor) {

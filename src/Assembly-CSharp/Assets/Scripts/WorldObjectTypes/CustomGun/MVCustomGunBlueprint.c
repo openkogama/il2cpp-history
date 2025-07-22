@@ -697,12 +697,12 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::CustomGun::MVCustom
         uVar4 = pVVar3->x;
         uVar5 = pVVar3->y;
         value.y = (float)((uint)((float)__return_storage_ptr__ * (float)uVar5) ^
-                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) *
+                         __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) *
                   _UNK_?;
         value.x = (float)((uint)((float)puVar2 * (float)uVar4) ^
-                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                         __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
         value.z = (float)((uint)((float)this_01 * pVVar3->z) ^
-                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) *
+                         __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) *
                   _UNK_?;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
                   (this_00,value,(MethodInfo *)0x0);

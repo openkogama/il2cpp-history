@@ -1,9 +1,9 @@
 
 /* Boolean MoveNext() */
 
-bool Assembly-CSharp.dll::PickupItemFlamethrower+<DoFlaming>d__16::
-     PickupItemFlamethrower_DoFlaming_d_16_MoveNext
-               (PickupItemFlamethrower_DoFlaming_d_16 *this,MethodInfo *method)
+bool Assembly-CSharp.dll::PickupItemFlamethrower+<DoFlaming>d__18::
+     PickupItemFlamethrower_DoFlaming_d_18_MoveNext
+               (PickupItemFlamethrower_DoFlaming_d_18 *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -209,9 +209,9 @@ code_?:
 
 /* Void System.Collections.IEnumerator.Reset() */
 
-void Assembly-CSharp.dll::PickupItemFlamethrower+<DoFlaming>d__16::
-     PickupItemFlamethrower_DoFlaming_d_16_System_Collections_IEnumerator_Reset
-               (PickupItemFlamethrower_DoFlaming_d_16 *this,MethodInfo *method)
+void Assembly-CSharp.dll::PickupItemFlamethrower+<DoFlaming>d__18::
+     PickupItemFlamethrower_DoFlaming_d_18_System_Collections_IEnumerator_Reset
+               (PickupItemFlamethrower_DoFlaming_d_18 *this,MethodInfo *method)
 
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
@@ -219,7 +219,7 @@ void Assembly-CSharp.dll::PickupItemFlamethrower+<DoFlaming>d__16::
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
   func_?(&
-                  MethodInfo__PickupItemFlamethrower___DoFlaming_d__16__System_Collections_IEnumerator_Reset__
+                  MethodInfo__PickupItemFlamethrower___DoFlaming_d__18__System_Collections_IEnumerator_Reset__
                  );
   func_?(this_00);
   pcVar2 = (code *)swi(3);

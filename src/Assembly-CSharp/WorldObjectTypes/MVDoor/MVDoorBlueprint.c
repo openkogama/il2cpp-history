@@ -252,149 +252,223 @@ void Assembly-CSharp.dll::WorldObjectTypes::MVDoor::MVDoorBlueprint::MVDoorBluep
 {
   MVBlueprintBase::MVBlueprintBase_OnDataUpdate((MVBlueprintBase *)this,(MethodInfo *)0x0);
   pMVar1 = (this->fields).doorLogic;
-  if (pMVar1 == (MVDoor *)0x0) {
+  if (pMVar1 != (MVDoor *)0x0) {
+    pDVar2 = (this->fields)._._._._.data;
+    (pMVar1->fields).useInteractorData = pDVar2;
+    func_?(&(pMVar1->fields).useInteractorData,pDVar2);
+    if ((this->fields).doorLogic != (MVDoor *)0x0) {
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__System__EventHandler<TriggerEventArgs>);
+        func_?(&TypeInfo__System__Func<int,_bool>);
+        func_?(&TypeInfo__GameCoinLogic);
+        func_?(&TypeInfo__GameRankRequirement);
+        func_?(&TypeInfo__LevelBasedUseRequirement);
+        func_?(&MethodInfo__WorldObjectTypes__MVDoor__MVDoor__CheckIfOpen__);
+        func_?(&MethodInfo__WorldObjectTypes__MVDoor__MVDoor__Use_int_);
+        func_?(&TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement);
+        func_?(&TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedCheckNoCost);
+        func_?(&TypeInfo__StarRequirement);
+        func_?(&
+                        MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                       );
+        func_?(&
+                        MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                       );
+        func_?(&TypeInfo__UseInteractor);
+        cRam_? = '\x01';
+      }
+      if (((bRam_? & pURam00000108 == (UseInteractor *)0x0) != 0) &&
+         (pMRam00000100 != (MVWorldObjectClient *)0x0)) {
+        if (iRam_? != 0) {
+          pGVar3 = *(GameObject **)(iRam_? + 0x1c);
+          triggerCollider = *(Collider **)(iRam_? + 0x24);
+          wo = pMRam00000100;
+          this_00 = (Predicate_1_UInt32_ *)func_?(TypeInfo__System__Func<int,_bool>);
+          mscorlib.dll::System::Predicate`1[UInt32]::Predicate_1_UInt32___ctor
+                    (this_00,(Object *)0x0,MethodInfo__WorldObjectTypes__MVDoor__MVDoor__Use_int_,
+                     (MethodInfo *)0x0);
+          pUVar4 = (UseInteractor *)func_?(TypeInfo__UseInteractor);
+          UseInteractor::UseInteractor__ctor
+                    (pUVar4,wo,pGVar3,0,triggerCollider,(Func_2_Int32_Boolean_ *)this_00,
+                     (Func_3_Int32_MVInteractableBase_Boolean_ *)0x0,2.5,1,0,(MethodInfo *)0x0);
+          pDVar2 = (Dictionary_2_System_Object_System_Object_ *)0x108;
+          pURam00000108 = pUVar4;
+          func_?(0x108,pUVar4);
+          pUVar4 = pURam00000108;
+          if (iRam_? != 0) {
+            pTVar5 = *(TriggerBoxEvents **)(iRam_? + 0x2c);
+            pEVar6 = (EventHandler_1_Object_ *)
+                      func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+            mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                      (pEVar6,(Object *)pUVar4,
+                       MethodInfo__UseInteractor__TriggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
+                       ,(MethodInfo *)0x0);
+            if ((pTVar5 != (TriggerBoxEvents *)0x0) &&
+               (TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
+                          (pTVar5,(EventHandler_1_TriggerEventArgs_ *)pEVar6,(MethodInfo *)0x0),
+               pUVar4 = pURam00000108, iRam_? != 0)) {
+              pTVar5 = *(TriggerBoxEvents **)(iRam_? + 0x2c);
+              pEVar6 = (EventHandler_1_Object_ *)
+                        func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
+              mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+                        (pEVar6,(Object *)pUVar4,
+                         MethodInfo__UseInteractor__TriggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
+                         ,(MethodInfo *)0x0);
+              if ((pTVar5 != (TriggerBoxEvents *)0x0) &&
+                 (TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
+                            (pTVar5,(EventHandler_1_TriggerEventArgs_ *)pEVar6,(MethodInfo *)0x0),
+                 iRam_? != 0)) {
+                pGVar3 = *(GameObject **)(iRam_? + 0x1c);
+                this_01 = (GameCoinLogic *)func_?(TypeInfo__GameCoinLogic);
+                GameCoinLogic::GameCoinLogic__ctor(this_01,pGVar3,1,(MethodInfo *)0x0);
+                if ((pURam00000108 != (UseInteractor *)0x0) &&
+                   (UseInteractor::UseInteractor_AddRequirement
+                              (pURam00000108,(UseRequirement *)this_01,(MethodInfo *)0x0),
+                   iRam_? != 0)) {
+                  pGVar3 = *(GameObject **)(iRam_? + 0x1c);
+                  this_02 = (LevelBasedUseRequirement *)
+                            func_?(TypeInfo__LevelBasedUseRequirement);
+                  LevelBasedUseRequirement::LevelBasedUseRequirement__ctor
+                            (this_02,pGVar3,1,(MethodInfo *)0x0);
+                  if ((pURam00000108 != (UseInteractor *)0x0) &&
+                     (UseInteractor::UseInteractor_AddRequirement
+                                (pURam00000108,(UseRequirement *)this_02,(MethodInfo *)0x0),
+                     iRam_? != 0)) {
+                    pGVar3 = *(GameObject **)(iRam_? + 0x1c);
+                    this_03 = (StarRequirement *)func_?(TypeInfo__StarRequirement);
+                    StarRequirement::StarRequirement__ctor(this_03,pGVar3,1,(MethodInfo *)0x0);
+                    if ((pURam00000108 != (UseInteractor *)0x0) &&
+                       (UseInteractor::UseInteractor_AddRequirement
+                                  (pURam00000108,(UseRequirement *)this_03,(MethodInfo *)0x0),
+                       iRam_? != 0)) {
+                      pGVar3 = *(GameObject **)(iRam_? + 0x1c);
+                      this_04 = (GameRankRequirement *)
+                                func_?(TypeInfo__GameRankRequirement);
+                      GameRankRequirement::GameRankRequirement__ctor
+                                (this_04,pGVar3,(MVWorldObjectClient *)0x0,1,(MethodInfo *)0x0);
+                      if ((pURam00000108 != (UseInteractor *)0x0) &&
+                         (UseInteractor::UseInteractor_AddRequirement
+                                    (pURam00000108,(UseRequirement *)this_04,(MethodInfo *)0x0),
+                         iRam_? != 0)) {
+                        pUVar7 = *(UseRequirement__Class **)(iRam_? + 0x1c);
+                        iVar8 = func_?(
+                                                TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedCheckNoCost
+                                                );
+                        pMVar9 = MethodInfo__WorldObjectTypes__MVDoor__MVDoor__CheckIfOpen__;
+                        *(Il2CppMethodPointer *)(iVar8 + 8) =
+                             MethodInfo__WorldObjectTypes__MVDoor__MVDoor__CheckIfOpen__->
+                             virtualMethodPointer;
+                        *(MethodInfo **)(iVar8 + 0x14) = pMVar9;
+                        *(undefined4 *)(iVar8 + 0x10) = 0;
+                        func_?(iVar8 + 0x10,0);
+                        uVar10 = pMVar9->parameters_count;
+                        *(int *)(iVar8 + 0x20) = iVar8;
+                        cVar11 = func_?(pMVar9);
+                        if ((cVar11 == '\0') || (uVar10 != 0)) {
+                          *(undefined4 *)(iVar8 + 0x20) = *(undefined4 *)(iVar8 + 0x10);
+                          puVar12 = *(undefined **)(iVar8 + 8);
+                        }
+                        else {
+                          puVar12 = &UNK_?;
+                        }
+                        *(undefined **)(iVar8 + 0xc) = puVar12;
+                        *(undefined **)(iVar8 + 0x1c) = &UNK_?;
+                        useRequirement =
+                             (UseRequirement *)
+                             func_?(
+                                            TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement
+                                            );
+                        if (cRam_? == '\0') {
+                          func_?(&
+                                          TypeInfo__System__Action<int,_int,_MV::Common::PlayerKilledByType>
+                                         );
+                          func_?(&
+                                          MethodInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement__OnLocalPlayerKilled_int__int__MV__Common__PlayerKilledByType_
+                                         );
+                          cRam_? = '\x01';
+                        }
+                        useRequirement[1].klass = (UseRequirement__Class *)0x0;
+                        useRequirement[1].monitor = (MonitorData *)0x0;
+                        *(undefined4 *)&useRequirement[1].fields = 0;
+                        useRequirement[2].klass = (UseRequirement__Class *)0xffffffff;
+                        UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+                        UxmlObjectListAttributeDescription`1[System::Object]::
+                        UxmlObjectListAttributeDescription_1_System_Object___ctor
+                                  ((UxmlObjectListAttributeDescription_1_System_Object_ *)
+                                   useRequirement,(MethodInfo *)0x0);
+                        useRequirement[3].klass = pUVar7;
+                        func_?(useRequirement + 3,pUVar7);
+                        *(int *)&useRequirement[3].fields = iVar8;
+                        func_?(&useRequirement[3].fields,iVar8);
+                        *(bool *)&useRequirement[4].klass = *(int *)&useRequirement[3].fields != 0;
+                        this_05 = MVGameControllerBase::
+                                  MVGameControllerBase_get_SpawnRoleDataMediatorLocal
+                                            ((MethodInfo *)0x0);
+                        this_06 = (Action_3_Int32_Int32_ByteEnum_ *)
+                                  func_?(
+                                                 TypeInfo__System__Action<int,_int,_MV::Common::PlayerKilledByType>
+                                                 );
+                        mscorlib.dll::System::Action`3[Int32,Int32,ByteEnum]::
+                        Action_3_Int32_Int32_ByteEnum___ctor
+                                  (this_06,(Object *)useRequirement,
+                                   MethodInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement__OnLocalPlayerKilled_int__int__MV__Common__PlayerKilledByType_
+                                   ,(MethodInfo *)0x0);
+                        if (this_05 != (SpawnRoleDataMediator *)0x0) {
+                          Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::Mediator::
+                          SpawnRoleDataMediator::SpawnRoleDataMediator_add_OnKilled
+                                    (this_05,(Action_3_Int32_Int32_MV_Common_PlayerKilledByType_ *)
+                                             this_06,(MethodInfo *)0x0);
+                          uVar13 = useRequirement[1].klass;
+                          uVar14 = useRequirement[1].monitor;
+                          fVar15 = (float)uVar14 + _UNK_?;
+                          useRequirement[1].klass = (UseRequirement__Class *)((float)uVar13 + 0.0);
+                          useRequirement[1].monitor = (MonitorData *)fVar15;
+                          *(float *)&useRequirement[1].fields =
+                               *(float *)&useRequirement[1].fields + 0.0;
+                          if ((pURam00000108 != (UseInteractor *)0x0) &&
+                             (UseInteractor::UseInteractor_AddRequirement
+                                        (pURam00000108,useRequirement,(MethodInfo *)0x0),
+                             pURam00000108 != (UseInteractor *)0x0)) {
+                            UseInteractor::UseInteractor_UpdateData
+                                      (pURam00000108,pDRam00000128,(MethodInfo *)0x0);
+                            return;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
 code_?:
-    func_?();
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
-  }
-  pDVar3 = (this->fields)._._._._.data;
-  (pMVar1->fields).useInteractorData = pDVar3;
-  func_?(&(pMVar1->fields).useInteractorData,pDVar3);
-  if ((this->fields).doorLogic == (MVDoor *)0x0) goto code_?;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__EventHandler<TriggerEventArgs>);
-    func_?(&TypeInfo__System__Func<int,_bool>);
-    func_?(&TypeInfo__GameCoinLogic);
-    func_?(&TypeInfo__GameRankRequirement);
-    func_?(&TypeInfo__LevelBasedUseRequirement);
-    func_?(&MethodInfo__WorldObjectTypes__MVDoor__MVDoor__CheckIfOpen__);
-    func_?(&MethodInfo__WorldObjectTypes__MVDoor__MVDoor__Use_int_);
-    func_?(&TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement);
-    func_?(&TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedCheckNoCost);
-    func_?(&TypeInfo__StarRequirement);
-    func_?(&TypeInfo__UseInteractor);
-    func_?(&
-                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
-                   );
-    func_?(&
-                    MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
-                   );
-    cRam_? = '\x01';
-  }
-  wo = pMRam00000100;
-  if (((bRam_? & pURam00000108 == (UseInteractor *)0x0) == 0) ||
-     (pMRam00000100 == (MVWorldObjectClient *)0x0)) {
-    if (bRam_? == 0) {
-code_?:
+        func_?(pDVar2);
+        pcVar16 = (code *)swi(3);
+        (*pcVar16)();
+        return;
+      }
+      if (bRam_? != 0) {
+        if (pURam00000108 != (UseInteractor *)0x0) {
+          if (pURam00000108 != (UseInteractor *)0x0) {
+            UseInteractor::UseInteractor_UpdateData(pURam00000108,pDRam00000128,(MethodInfo *)0x0);
+            return;
+          }
+          goto code_?;
+        }
+        if (bRam_? != 0) {
+          return;
+        }
+      }
       if (pURam00000108 != (UseInteractor *)0x0) {
         MVDoor::MVDoor_DestroyUseInteractor((MVDoor *)0x0,(MethodInfo *)0x0);
       }
       return;
     }
-    if (pURam00000108 == (UseInteractor *)0x0) {
-      if (bRam_? != 0) {
-        return;
-      }
-      goto code_?;
-    }
   }
-  else {
-    if (iRam_? == 0) goto code_?;
-    pGVar4 = *(GameObject **)(iRam_? + 0x1c);
-    triggerCollider = *(Collider **)(iRam_? + 0x24);
-    this_00 = (Predicate_1_UInt32_ *)func_?(TypeInfo__System__Func<int,_bool>);
-    mscorlib.dll::System::Predicate`1[UInt32]::Predicate_1_UInt32___ctor
-              (this_00,(Object *)0x0,MethodInfo__WorldObjectTypes__MVDoor__MVDoor__Use_int_,
-               (MethodInfo *)0x0);
-    pUVar5 = (UseInteractor *)func_?(TypeInfo__UseInteractor);
-    UseInteractor::UseInteractor__ctor
-              (pUVar5,wo,pGVar4,0,triggerCollider,(Func_2_Int32_Boolean_ *)this_00,
-               (Func_3_Int32_MVInteractableBase_Boolean_ *)0x0,2.5,0,(MethodInfo *)0x0);
-    pURam00000108 = pUVar5;
-    func_?(0x108,pUVar5);
-    pUVar5 = pURam00000108;
-    if (iRam_? == 0) goto code_?;
-    pTVar6 = *(TriggerBoxEvents **)(iRam_? + 0x2c);
-    pEVar7 = (EventHandler_1_Object_ *)
-             func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-              (pEVar7,(Object *)pUVar5,
-               MethodInfo__UseInteractor__triggerBoxEvents_TriggerEnter_System__Object__TriggerEventArgs_
-               ,(MethodInfo *)0x0);
-    if ((pTVar6 == (TriggerBoxEvents *)0x0) ||
-       (TriggerBoxEvents::TriggerBoxEvents_add_TriggerEnter
-                  (pTVar6,(EventHandler_1_TriggerEventArgs_ *)pEVar7,(MethodInfo *)0x0),
-       pUVar5 = pURam00000108, iRam_? == 0)) goto code_?;
-    pTVar6 = *(TriggerBoxEvents **)(iRam_? + 0x2c);
-    pEVar7 = (EventHandler_1_Object_ *)
-             func_?(TypeInfo__System__EventHandler<TriggerEventArgs>);
-    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-              (pEVar7,(Object *)pUVar5,
-               MethodInfo__UseInteractor__triggerBoxEvents_TriggerExit_System__Object__TriggerEventArgs_
-               ,(MethodInfo *)0x0);
-    if ((pTVar6 == (TriggerBoxEvents *)0x0) ||
-       (TriggerBoxEvents::TriggerBoxEvents_add_TriggerExit
-                  (pTVar6,(EventHandler_1_TriggerEventArgs_ *)pEVar7,(MethodInfo *)0x0),
-       iRam_? == 0)) goto code_?;
-    pGVar4 = *(GameObject **)(iRam_? + 0x1c);
-    this_01 = (GameCoinLogic *)func_?(TypeInfo__GameCoinLogic);
-    GameCoinLogic::GameCoinLogic__ctor(this_01,pGVar4,1,(MethodInfo *)0x0);
-    if ((pURam00000108 == (UseInteractor *)0x0) ||
-       (UseInteractor::UseInteractor_AddRequirement
-                  (pURam00000108,(UseRequirement *)this_01,(MethodInfo *)0x0), iRam_? == 0))
-    goto code_?;
-    pGVar4 = *(GameObject **)(iRam_? + 0x1c);
-    this_02 = (LevelBasedUseRequirement *)func_?(TypeInfo__LevelBasedUseRequirement);
-    LevelBasedUseRequirement::LevelBasedUseRequirement__ctor(this_02,pGVar4,1,(MethodInfo *)0x0);
-    if ((pURam00000108 == (UseInteractor *)0x0) ||
-       (UseInteractor::UseInteractor_AddRequirement
-                  (pURam00000108,(UseRequirement *)this_02,(MethodInfo *)0x0), iRam_? == 0))
-    goto code_?;
-    pGVar4 = *(GameObject **)(iRam_? + 0x1c);
-    this_03 = (StarRequirement *)func_?(TypeInfo__StarRequirement);
-    StarRequirement::StarRequirement__ctor(this_03,pGVar4,1,(MethodInfo *)0x0);
-    if ((pURam00000108 == (UseInteractor *)0x0) ||
-       (UseInteractor::UseInteractor_AddRequirement
-                  (pURam00000108,(UseRequirement *)this_03,(MethodInfo *)0x0), iRam_? == 0))
-    goto code_?;
-    pGVar4 = *(GameObject **)(iRam_? + 0x1c);
-    this_04 = (GameRankRequirement *)func_?(TypeInfo__GameRankRequirement);
-    GameRankRequirement::GameRankRequirement__ctor
-              (this_04,pGVar4,(MVWorldObjectClient *)0x0,1,(MethodInfo *)0x0);
-    if ((pURam00000108 == (UseInteractor *)0x0) ||
-       (UseInteractor::UseInteractor_AddRequirement
-                  (pURam00000108,(UseRequirement *)this_04,(MethodInfo *)0x0), iRam_? == 0))
-    goto code_?;
-    pGVar4 = *(GameObject **)(iRam_? + 0x1c);
-    action = (RewardedCheckNoCost *)
-             func_?(TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedCheckNoCost)
-    ;
-    mscorlib.dll::System::Func`1[System::Threading::Tasks::VoidTaskResult]::
-    Func_1_System_Threading_Tasks_VoidTaskResult___ctor
-              ((Func_1_System_Threading_Tasks_VoidTaskResult_ *)action,(Object *)0x0,
-               MethodInfo__WorldObjectTypes__MVDoor__MVDoor__CheckIfOpen__,(MethodInfo *)0x0);
-    this_05 = (RewardedAdRequirement *)
-              func_?(
-                             TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement
-                             );
-    auVar8._4_8_ = 0;
-    auVar8._0_4_ = _UNK_?;
-    WorldObjectInteractionSystem::UseSystem::RewardedAdRequirement::RewardedAdRequirement__ctor_3
-              (this_05,pGVar4,action,(Vector3)(auVar8 << 0x20),(MethodInfo *)0x0);
-    if (pURam00000108 == (UseInteractor *)0x0) goto code_?;
-    UseInteractor::UseInteractor_AddRequirement
-              (pURam00000108,(UseRequirement *)this_05,(MethodInfo *)0x0);
-  }
-  if (pURam00000108 != (UseInteractor *)0x0) {
-    UseInteractor::UseInteractor_UpdateData(pURam00000108,pDRam00000128,(MethodInfo *)0x0);
-    return;
-  }
-code_?:
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 

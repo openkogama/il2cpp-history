@@ -8,20 +8,28 @@ void Assembly-CSharp.dll::RTG::GizmoThinCircle2DBorderController::
 {
   pGVar1 = (this->fields)._._data;
   if (pGVar1 != (GizmoCircle2DBorderControllerData *)0x0) {
-    this_00 = (pGVar1->fields).PlaneSlider;
-    this_01 = (pGVar1->fields).BorderCircle;
-    if (this_00 != (GizmoPlaneSlider2D *)0x0) {
-      pGVar2 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_get_Settings(this_00,(MethodInfo *)0x0);
-      if ((pGVar2 != (GizmoPlaneSlider2DSettings *)0x0) && (this_01 != (CircleShape2D *)0x0)) {
+    this_00 = (pGVar1->fields).BorderCircle;
+    pGVar2 = (((this->fields)._._data)->fields).PlaneSlider;
+    if (pGVar2 != (GizmoPlaneSlider2D *)0x0) {
+      if ((pGVar2->fields)._sharedSettings == (GizmoPlaneSlider2DSettings *)0x0) {
+        pGVar3 = (pGVar2->fields)._settings;
+        if (pGVar3 == (GizmoPlaneSlider2DSettings *)0x0) goto code_?;
+      }
+      else {
+        pGVar3 = (pGVar2->fields)._sharedSettings;
+      }
+      if (this_00 != (CircleShape2D *)0x0) {
         CircleShape2D::CircleShape2D_set_WireEps
-                  (this_01,(pGVar2->fields)._borderLineHoverEps,(MethodInfo *)0x0);
+                  (this_00,(pGVar3->fields)._borderLineHoverEps,(MethodInfo *)0x0);
         return;
       }
     }
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+code_?:
+  uVar4 = func_?(&stack0xfffffff0);
+  func_?(uVar4);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

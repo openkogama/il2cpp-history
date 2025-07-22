@@ -13,14 +13,14 @@ using UnityEngine.Events;
 public static class FullScreenController
 {
 	// Fields
+	private const bool Debugging = false;
+	public static bool fullscreenSupported;
 	private static int screenWidthBeforeFullscreen;
 	private static int screenHeightBeforeFullscreen;
 	private static bool fullScreen;
 	private static bool fullscreenStatCollected;
-	public static bool fullscreenSupported;
 	private static bool fakeFullscreen;
 	private static bool initialized;
-	private static bool debugging;
 	public static UnityAction<bool> OnFullScreenChange;
 	[CompilerGenerated]
 	private static bool _WaitingForFullscreenChange_k__BackingField;
@@ -34,8 +34,8 @@ public static class FullScreenController
 	static FullScreenController();
 
 	// Methods
-	private static void PrintLog(string s);
 	public static void Init(int width, int height, bool init);
+	private static void PrintLog(string s);
 	public static void InitSupports(bool fsSupport, bool fake);
 	private static void UpdateFullscreenIfApplicable();
 	public static Tuple<int, int> GetWidthHeight(MVOrientation orientation, int widthInput, int heightInput);

@@ -158,31 +158,83 @@ code_?:
                                         TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::RaycastHit>
                                         ,0);
 code_?:
-        pfVar21 = (float *)(*(code *)*piVar19)(auStack_22,piStack_13,piVar19[1]);
-        fStack_23 = *pfVar21;
-        fStack_24 = pfVar21[1];
-        fStack_25 = pfVar21[2];
-        fStack_26 = pfVar21[3];
-        uStack_27 = *(undefined8 *)(pfVar21 + 4);
-        pOStack_28 = (Object__Class *)pfVar21[6];
-        pMStack_29 = (MonitorData *)pfVar21[7];
-        VStack_30 = *(Vector2 *)(pfVar21 + 8);
-        pOStack_16 = (Object__Class *)pfVar21[10];
-        this_00 = (GameObjectRayHit *)func_?(TypeInfo__RTG__GameObjectRayHit);
-        hit3D.m_Point.y = fStack_24;
-        hit3D.m_Point.x = fStack_23;
-        hit3D.m_Point.z = fStack_25;
-        hit3D.m_Normal.x = fStack_26;
-        hit3D.m_Normal.y = (float)uStack_27;
-        hit3D.m_Normal.z = uStack_27._4_4_;
-        hit3D.m_FaceID = (uint32_t)pOStack_28;
-        hit3D.m_Distance = (float)pMStack_29;
-        hit3D.m_UV = VStack_30;
-        hit3D.m_Collider = (int32_t)pOStack_16;
-        GameObjectRayHit__ctor(this_00,hitRay,hit3D,(MethodInfo *)0x0);
+        pMVar21 = (MethodInfo *)&UNK_?;
+        pfVar22 = (float *)(*(code *)*piVar19)(auStack_23,piStack_13,piVar19[1]);
+        pTStack_24 = (Tuple_3_Object_Memory_1_Byte_Object___Class *)*pfVar22;
+        pSStack_25 = (String *)pfVar22[1];
+        pSStack_26 = (SphereTreeNodeRayHit_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___Class
+                      *)pfVar22[2];
+        pSStack_27 = (SphereTreeNode_1_System_Object_ *)pfVar22[3];
+        uStack_28 = *(undefined8 *)(pfVar22 + 4);
+        pTStack_29 = (Tuple_3_Object_Memory_1_Byte_Object___Class *)pfVar22[6];
+        pSStack_30 = (String *)pfVar22[7];
+        VStack_31 = *(Vector2 *)(pfVar22 + 8);
+        pOStack_16 = (Object__Class *)pfVar22[10];
+        pOVar32 = (Object *)func_?(TypeInfo__RTG__GameObjectRayHit);
+        auStack_23._0_4_ = pTStack_24;
+        auStack_23._4_4_ = pSStack_25;
+        auStack_33._0_4_ = pSStack_26;
+        auStack_33._4_4_ = pSStack_27;
+        pOStack_34 = pOStack_16;
+        auStack_33._8_4_ = (Tuple_3_Object_Memory_1_Byte_Object___Class *)uStack_28;
+        auStack_33._12_4_ = uStack_28._4_4_;
+        auStack_33._16_4_ = pTStack_29;
+        auStack_33._20_4_ = pSStack_30;
+        stack0xffffff70 = VStack_31;
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                  (pOVar32,ExceptionArgument__Enum_obj,pMVar21);
+        this_00 = UnityEngine.PhysicsModule.dll::UnityEngine::RaycastHit::RaycastHit_get_collider
+                            ((RaycastHit *)auStack_23,(MethodInfo *)0x0);
+        if (this_00 == (Collider *)0x0) break;
+        pOVar35 = (Object__Class *)
+                  UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                            ((Component *)this_00,(MethodInfo *)0x0);
+        pOVar32[1].klass = pOVar35;
+        func_?();
+        pRVar36 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Text::
+                  RegularExpressions::Regex+CachedCodeEntryKey,System::Object]::
+                  KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object__get_Key
+                            (&RStack_37,
+                             (KeyValuePair_2_System_Text_RegularExpressions_Regex_CachedCodeEntryKey_System_Object_
+                              *)auStack_23,(MethodInfo *)0x0);
+        pSVar38 = pRVar36->_pattern;
+        *(undefined8 *)&pOVar32[1].monitor = *(undefined8 *)pRVar36;
+        pOVar32[2].monitor = (MonitorData *)pSVar38;
+        pOStack_16 = (Object__Class *)
+                     SphereTreeNode`1[System::Object]::SphereTreeNode_1_System_Object__get_Radius
+                               ((SphereTreeNode_1_System_Object_ *)auStack_23,(MethodInfo *)0x0);
+        pOVar32[3].klass = pOStack_16;
+        pMVar39 = mscorlib.dll::System::Tuple`3[Object,Memory`1[Byte],Object]::
+                  Tuple_3_Object_Memory_1_Byte_Object__get_Item2
+                            (&MStack_40,(Tuple_3_Object_Memory_1_Byte_Object_ *)auStack_23,
+                             (MethodInfo *)0x0);
+        uStack_41 = *(undefined8 *)&pOVar32[1].monitor;
+        uStack_28 = 0;
+        pTStack_29 = (Tuple_3_Object_Memory_1_Byte_Object___Class *)0x0;
+        pSStack_30 = (String *)0x0;
+        pMVar42 = (MonitorData *)pMVar39->_length;
+        value_00 = *pMVar39;
+        pTStack_43 = (Tuple_3_Object_Memory_1_Byte_Object___Class *)pOVar32[2].monitor;
+        *(undefined8 *)&pOVar32[3].monitor = *(undefined8 *)pMVar39;
+        pOVar32[4].monitor = pMVar42;
+        pVVar44 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                            (aVStack_45,(Vector3)value_00,(MethodInfo *)0x0);
+        uStack_46._0_4_ = pVVar44->x;
+        uStack_46._4_4_ = pVVar44->y;
+        pTStack_47 = (Tuple_3_Object_Memory_1_Byte_Object___Class *)pVVar44->z;
+        pSStack_30 = (String *)
+                     ((uint)(uStack_41._4_4_ * uStack_46._4_4_ + (float)uStack_41 * (float)uStack_46
+                            + (float)pTStack_43 * (float)pTStack_47) ^
+                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+        pOVar32[5].klass = (Object__Class *)(float)uStack_46;
+        pOVar32[5].monitor = (MonitorData *)uStack_46._4_4_;
+        pOVar32[6].klass = (Object__Class *)pTStack_47;
+        pOVar32[6].monitor = (MonitorData *)pSStack_30;
+        uStack_28 = uStack_46;
+        pTStack_29 = pTStack_47;
         mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
         List_1_System_Object__Add
-                  ((List_1_System_Object_ *)hits,(Object *)this_00,
+                  ((List_1_System_Object_ *)hits,pOVar32,
                    MethodInfo__System__Collections__Generic__List<RTG::GameObjectRayHit>__Add_RTG__GameObjectRayHit_
                   );
       }
@@ -226,93 +278,93 @@ code_?:
                                         TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::RaycastHit2D>
                                         ,0);
 code_?:
-        method_00 = (MethodInfo *)&UNK_?;
-        puVar31 = (undefined8 *)(*(code *)*piVar19)(&RStack_32,piStack_14,piVar19[1]);
-        uStack_27 = *puVar31;
-        pOStack_28 = *(Object__Class **)(puVar31 + 1);
-        pMStack_29 = *(MonitorData **)((int)puVar31 + 0xc);
-        fStack_23 = *(float *)(puVar31 + 2);
-        fStack_24 = *(float *)((int)puVar31 + 0x14);
-        fStack_25 = *(float *)(puVar31 + 3);
-        fStack_26 = *(float *)((int)puVar31 + 0x1c);
-        pOStack_16 = *(Object__Class **)(puVar31 + 4);
-        value_00 = (Object *)func_?(TypeInfo__RTG__GameObjectRayHit);
-        RStack_32.m_Centroid.x = (float)uStack_27;
-        RStack_32.m_Centroid.y = uStack_27._4_4_;
-        RStack_32.m_Point.x = (float)pOStack_28;
-        RStack_32.m_Point.y = (float)pMStack_29;
-        RStack_32.m_Collider = (int32_t)pOStack_16;
-        RStack_32.m_Normal.x = fStack_23;
-        RStack_32.m_Normal.y = fStack_24;
-        RStack_32.m_Distance = fStack_25;
-        RStack_32.m_Fraction = fStack_26;
+        pMVar21 = (MethodInfo *)&UNK_?;
+        puVar48 = (undefined8 *)(*(code *)*piVar19)(auStack_33,piStack_14,piVar19[1]);
+        uStack_28 = *puVar48;
+        pTStack_29 = *(Tuple_3_Object_Memory_1_Byte_Object___Class **)(puVar48 + 1);
+        pSStack_30 = *(String **)((int)puVar48 + 0xc);
+        pTStack_24 = *(Tuple_3_Object_Memory_1_Byte_Object___Class **)(puVar48 + 2);
+        pSStack_25 = *(String **)((int)puVar48 + 0x14);
+        pSStack_26 = *(SphereTreeNodeRayHit_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___Class
+                       **)(puVar48 + 3);
+        pSStack_27 = *(SphereTreeNode_1_System_Object_ **)((int)puVar48 + 0x1c);
+        pOStack_16 = *(Object__Class **)(puVar48 + 4);
+        pOVar32 = (Object *)func_?(TypeInfo__RTG__GameObjectRayHit);
+        auStack_33._0_4_ = (Tuple_3_Object_Memory_1_Byte_Object___Class *)uStack_28;
+        auStack_33._4_4_ = uStack_28._4_4_;
+        auStack_33._8_4_ = pTStack_29;
+        auStack_33._12_4_ = pSStack_30;
+        pOStack_34 = pOStack_16;
+        auStack_33._16_4_ = pTStack_24;
+        auStack_33._20_4_ = pSStack_25;
+        pSStack_49 = pSStack_27;
+        auStack_33._24_4_ = pSStack_26;
         mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  (value_00,ExceptionArgument__Enum_obj,method_00);
+                  (pOVar32,ExceptionArgument__Enum_obj,pMVar21);
         this = UnityEngine.Physics2DModule.dll::UnityEngine::RaycastHit2D::RaycastHit2D_get_collider
-                         (&RStack_32,(MethodInfo *)0x0);
+                         ((RaycastHit2D *)auStack_33,(MethodInfo *)0x0);
         if (this == (Collider2D *)0x0) break;
-        pOVar33 = (Object__Class *)
-                 UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)this,(MethodInfo *)0x0);
-        value_00[1].klass = pOVar33;
+        pOVar35 = (Object__Class *)
+                  UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                            ((Component *)this,(MethodInfo *)0x0);
+        pOVar32[1].klass = pOVar35;
         func_?();
-        VVar34 = UnityEngine.Physics2DModule.dll::UnityEngine::RaycastHit2D::RaycastHit2D_get_point
-                           (&RStack_32,(MethodInfo *)0x0);
-        VStack_35.y = VVar34.y;
-        uStack_36 = 0;
-        *(ulonglong *)&value_00[1].monitor = CONCAT44(VStack_35.y,VStack_35.x);
-        value_00[2].monitor = (MonitorData *)0x0;
-        VStack_35 = VVar34;
+        VVar50 = UnityEngine.Physics2DModule.dll::UnityEngine::RaycastHit2D::RaycastHit2D_get_point
+                           ((RaycastHit2D *)auStack_33,(MethodInfo *)0x0);
+        VStack_51.y = VVar50.y;
+        aVStack_45[0].z = 0.0;
+        *(ulonglong *)&pOVar32[1].monitor = CONCAT44(VStack_51.y,VStack_51.x);
+        pOVar32[2].monitor = (MonitorData *)0x0;
+        VStack_51 = VVar50;
         pOStack_16 = (Object__Class *)
                      SphereTreeNodeRayHit`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]
                      ::
                      SphereTreeNodeRayHit_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__get_HitEnter
                                ((SphereTreeNodeRayHit_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                                 *)&RStack_32,(MethodInfo *)0x0);
-        value_00[3].klass = pOStack_16;
-        VVar34 = UnityEngine.Physics2DModule.dll::UnityEngine::RaycastHit2D::RaycastHit2D_get_normal
-                           (&RStack_32,(MethodInfo *)0x0);
-        VStack_30.y = VVar34.y;
-        uStack_37 = 0;
-        pMStack_38 = value_00[2].monitor;
-        uStack_39 = *(undefined8 *)&value_00[1].monitor;
-        *(ulonglong *)&value_00[3].monitor = CONCAT44(VStack_30.y,VStack_30.x);
-        value_00[4].monitor = (MonitorData *)0x0;
-        uStack_27 = 0;
-        pOStack_28 = (Object__Class *)0x0;
-        pMStack_29 = (MonitorData *)0x0;
-        value.y = VStack_30.y;
-        value.x = VStack_30.x;
+                                 *)auStack_33,(MethodInfo *)0x0);
+        pOVar32[3].klass = pOStack_16;
+        VVar50 = UnityEngine.Physics2DModule.dll::UnityEngine::RaycastHit2D::RaycastHit2D_get_normal
+                           ((RaycastHit2D *)auStack_33,(MethodInfo *)0x0);
+        VStack_31.y = VVar50.y;
+        MStack_40._length = 0;
+        pTStack_47 = (Tuple_3_Object_Memory_1_Byte_Object___Class *)pOVar32[2].monitor;
+        uStack_46 = *(undefined8 *)&pOVar32[1].monitor;
+        *(ulonglong *)&pOVar32[3].monitor = CONCAT44(VStack_31.y,VStack_31.x);
+        pOVar32[4].monitor = (MonitorData *)0x0;
+        uStack_28 = 0;
+        pTStack_29 = (Tuple_3_Object_Memory_1_Byte_Object___Class *)0x0;
+        pSStack_30 = (String *)0x0;
+        value.y = VStack_31.y;
+        value.x = VStack_31.x;
         value.z = 0.0;
-        VStack_30 = VVar34;
-        pVVar40 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                            (aVStack_41,value,(MethodInfo *)0x0);
-        uStack_42._0_4_ = pVVar40->x;
-        uStack_42._4_4_ = pVVar40->y;
-        pOStack_43 = (Object__Class *)pVVar40->z;
-        pMStack_29 = (MonitorData *)
-                     ((uint)(uStack_39._4_4_ * (float)uStack_42._4_4_ +
-                             (float)uStack_39 * (float)(undefined4)uStack_42 +
-                            (float)pMStack_38 * (float)pOStack_43) ^
-                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-        value_00[5].klass = (Object__Class *)(undefined4)uStack_42;
-        value_00[5].monitor = (MonitorData *)uStack_42._4_4_;
-        value_00[6].klass = pOStack_43;
-        value_00[6].monitor = pMStack_29;
-        uStack_27 = uStack_42;
-        pOStack_28 = pOStack_43;
+        VStack_31 = VVar50;
+        pVVar44 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                            ((Vector3 *)&RStack_37,value,(MethodInfo *)0x0);
+        uStack_41._0_4_ = pVVar44->x;
+        uStack_41._4_4_ = pVVar44->y;
+        pTStack_43 = (Tuple_3_Object_Memory_1_Byte_Object___Class *)pVVar44->z;
+        pSStack_30 = (String *)
+                     ((uint)(uStack_46._4_4_ * uStack_41._4_4_ + (float)uStack_46 * (float)uStack_41
+                            + (float)pTStack_47 * (float)pTStack_43) ^
+                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+        pOVar32[5].klass = (Object__Class *)(float)uStack_41;
+        pOVar32[5].monitor = (MonitorData *)uStack_41._4_4_;
+        pOVar32[6].klass = (Object__Class *)pTStack_43;
+        pOVar32[6].monitor = (MonitorData *)pSStack_30;
+        uStack_28 = uStack_41;
+        pTStack_29 = pTStack_43;
         mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
         List_1_System_Object__Add
-                  ((List_1_System_Object_ *)hits,value_00,
+                  ((List_1_System_Object_ *)hits,pOVar32,
                    MethodInfo__System__Collections__Generic__List<RTG::GameObjectRayHit>__Add_RTG__GameObjectRayHit_
                   );
       }
     }
   }
-  uVar44 = func_?();
-  func_?(uVar44);
-  pcVar45 = (code *)swi(3);
-  (*pcVar45)();
+  uVar52 = func_?();
+  func_?(uVar52);
+  pcVar53 = (code *)swi(3);
+  (*pcVar53)();
   return;
 }
 
@@ -365,7 +417,7 @@ void Assembly-CSharp.dll::RTG::GameObjectRayHit::GameObjectRayHit__ctor
     uVar13 = pVVar11->y;
     fVar14 = pVVar11->z;
     fVar6 = (float)((uint)(fVar8 * (float)uVar13 + fVar6 * (float)uVar12 + (float)method_00 * fVar14)
-                   ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                   ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     (this->fields)._hitPlane.m_Normal.x = (float)uVar12;
     (this->fields)._hitPlane.m_Normal.y = (float)uVar13;
     (this->fields)._hitPlane.m_Normal.z = fVar14;
@@ -426,7 +478,7 @@ void Assembly-CSharp.dll::RTG::GameObjectRayHit::GameObjectRayHit__ctor_1
     fVar10 = pVVar7->z;
     fVar1 = (float)((uint)((float)uVar6 * (float)uVar9 + (float)method_00 * (float)uVar8 +
                           fVar1 * fVar10) ^
-                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                   __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     (this->fields)._hitPlane.m_Normal.x = (float)uVar8;
     (this->fields)._hitPlane.m_Normal.y = (float)uVar9;
     (this->fields)._hitPlane.m_Normal.z = fVar10;
@@ -469,7 +521,7 @@ void Assembly-CSharp.dll::RTG::GameObjectRayHit::GameObjectRayHit__ctor_2
   uVar6 = pVVar1->y;
   fVar7 = pVVar1->z;
   fVar4 = (float)((uint)((float)uVar3 * (float)uVar6 + (float)uVar2 * (float)uVar5 + fVar4 * fVar7)
-                 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
   (this->fields)._hitPlane.m_Normal.x = (float)uVar5;
   (this->fields)._hitPlane.m_Normal.y = (float)uVar6;
   (this->fields)._hitPlane.m_Normal.z = fVar7;
@@ -512,7 +564,7 @@ void Assembly-CSharp.dll::RTG::GameObjectRayHit::GameObjectRayHit__ctor_3
     (this->fields)._meshRayHit = meshRayHit;
     fVar5 = (float)((uint)(uStack_1._4_4_ * (float)uStack_7._4_4_ +
                            (float)uStack_1 * (float)(undefined4)uStack_7 + fStack_2 * fStack_8) ^
-                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                   __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     (this->fields)._hitPlane.m_Normal.x = (float)(undefined4)uStack_7;
     (this->fields)._hitPlane.m_Normal.y = (float)uStack_7._4_4_;
     (this->fields)._hitPlane.m_Normal.z = fStack_8;

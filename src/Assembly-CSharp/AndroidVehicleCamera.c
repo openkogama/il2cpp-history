@@ -213,15 +213,15 @@ void Assembly-CSharp.dll::AndroidVehicleCamera::AndroidVehicleCamera_HandlePos
     VStack_8.x = (pVVar7->forwardVector).x;
     VStack_8.y = (pVVar7->forwardVector).y;
     VStack_8.z = (float)((uint)(pVVar7->forwardVector).z ^
-                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                         __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     rotation.y = (float)puVar4;
     rotation.x = fVar3;
     rotation.z = (float)ppVVar5;
     rotation.w = fVar6;
     point.y = (float)((uint)VStack_8.y ^
-                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     point.x = (float)((uint)VStack_8.x ^
-                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     point.z = VStack_8.z;
     pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
                         ((Vector3 *)&stack0xffffffd8,rotation,point,(MethodInfo *)0x0);
@@ -293,11 +293,11 @@ void Assembly-CSharp.dll::AndroidVehicleCamera::AndroidVehicleCamera_UpdateCamer
     rotation.z = fVar5;
     rotation.w = fVar6;
     point.y = (float)(uVar9 ^ 
-                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     point.x = (float)(uVar8 ^ 
-                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     point.z = (float)((uint)(pVVar7->forwardVector).z ^
-                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
                         ((Vector3 *)&stack0xffffffd0,rotation,point,(MethodInfo *)0x0);
     fVar4 = pVVar10->x;

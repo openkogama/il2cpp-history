@@ -21,8 +21,8 @@ public class NotificationsManager : MonoBehaviour
 	private static bool _Initialized_k__BackingField;
 
 	// Properties
-	public static NotificationsManager ActiveInstance { get; private set; }
 	public static bool Initialized { [CompilerGenerated] get; [CompilerGenerated] private set; }
+	public static NotificationsManager ActiveInstance { get; private set; }
 
 	// Constructors
 	public NotificationsManager();

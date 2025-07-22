@@ -219,11 +219,10 @@ void Assembly-CSharp.dll::MVAvatarLocal+ReviveMode::MVAvatarLocal_ReviveMode_Fra
                       ((Behaviour *)pAVar2,(MethodInfo *)0x0);
     if (bVar3 != 0) {
       pMVar1 = (this->fields)._.mvAvatar;
-      if (((pMVar1 == (MVAvatarLocal *)0x0) ||
-          (pAVar2 = (pMVar1->fields).avatarMotor, pAVar2 == (AvatarMotor *)0x0)) ||
-         (this_00 = (pAVar2->fields).smoothCharacterController,
-         this_00 == (SmoothCharacterController *)0x0)) goto code_?;
-      SmoothCharacterController::SmoothCharacterController_SmoothMove(this_00,(MethodInfo *)0x0);
+      if ((pMVar1 == (MVAvatarLocal *)0x0) ||
+         (pAVar2 = (pMVar1->fields).avatarMotor, pAVar2 == (AvatarMotor *)0x0))
+      goto code_?;
+      AvatarMotor::AvatarMotor_UpdateFunction(pAVar2,(MethodInfo *)0x0);
     }
     if (((this->fields).reviveElapsed == 0) &&
        (fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0),
@@ -273,7 +272,7 @@ void Assembly-CSharp.dll::MVAvatarLocal+ReviveMode::MVAvatarLocal_ReviveMode_OnE
   if (pIVar1 != (IPlayModeUI *)0x0) {
     pIStack_2 = TypeInfo__IPlayModeUI;
     pIStack_3 = pIVar1;
-    func_?(4);
+    func_?(6);
     return;
   }
   uVar4 = func_?(&pIStack_2);

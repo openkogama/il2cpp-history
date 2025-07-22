@@ -8,8 +8,21 @@ void Assembly-CSharp.dll::SpawnRoleTierEditorMenu::SpawnRoleTierEditorMenu_Initi
 {
   (this->fields).ChangeTierRequirement = ChangeTierRequirement;
   func_?(&(this->fields).ChangeTierRequirement,ChangeTierRequirement);
+  pTVar1 = (this->fields).currentTierNumberText;
   (this->fields).spawnRoleCost = newspawnRoleCost;
-  SpawnRoleTierEditorMenu_UpdateTier(this,newTier,(MethodInfo *)0x0);
+  (this->fields).currentTier = (undefined1)newTier;
+  newTier = newTier & 0xff;
+  pSVar2 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&newTier,(MethodInfo *)0x0);
+  if (pTVar1 != (Text *)0x0) {
+    (*(code *)(pTVar1->klass->vtable).set_text.method)
+              (pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+    SpawnRoleTierEditorMenu_UpdateSpawnRoleCost(this,(this->fields).spawnRoleCost,(MethodInfo *)0x0)
+    ;
+    return;
+  }
+  func_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -20,15 +33,26 @@ void Assembly-CSharp.dll::SpawnRoleTierEditorMenu::SpawnRoleTierEditorMenu_OnTie
                (SpawnRoleTierEditorMenu *this,GamePassTier__Enum newTier,MethodInfo *method)
 
 {
-  SpawnRoleTierEditorMenu_UpdateTier(this,newTier,(MethodInfo *)0x0);
-  pUVar1 = (this->fields).ChangeTierRequirement;
-  if (pUVar1 != (UnityAction_1_MV_Common_GamePassTier_ *)0x0) {
-    (*(pUVar1->fields)._._.invoke_impl)((pUVar1->fields)._._.method_code);
-    return;
+  GVar1 = newTier;
+  pTVar2 = (this->fields).currentTierNumberText;
+  (this->fields).currentTier = (uint8_t)newTier;
+  newTier = newTier & 0xff;
+  pSVar3 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&newTier,(MethodInfo *)0x0);
+  if (pTVar2 != (Text *)0x0) {
+    (*(code *)(pTVar2->klass->vtable).set_text.method)
+              (pTVar2,pSVar3,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+    SpawnRoleTierEditorMenu_UpdateSpawnRoleCost(this,(this->fields).spawnRoleCost,(MethodInfo *)0x0)
+    ;
+    pUVar4 = (this->fields).ChangeTierRequirement;
+    if (pUVar4 != (UnityAction_1_MV_Common_GamePassTier_ *)0x0) {
+      (*(pUVar4->fields)._._.invoke_impl)
+                ((pUVar4->fields)._._.method_code,GVar1,(pUVar4->fields)._._.method);
+      return;
+    }
   }
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -209,60 +233,20 @@ void Assembly-CSharp.dll::SpawnRoleTierEditorMenu::SpawnRoleTierEditorMenu_Updat
                (SpawnRoleTierEditorMenu *this,GamePassTier__Enum newTier,MethodInfo *method)
 
 {
-  pSVar1 = this;
-  pTVar2 = (this->fields).currentTierNumberText;
+  pTVar1 = (this->fields).currentTierNumberText;
   (this->fields).currentTier = (undefined1)newTier;
-  this = (SpawnRoleTierEditorMenu *)(newTier & 0xff);
-  pSVar3 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&this,(MethodInfo *)0x0);
-  if (pTVar2 != (Text *)0x0) {
-    (*(code *)(pTVar2->klass->vtable).set_text.method)
-              (pTVar2,pSVar3,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-    iVar4 = (pSVar1->fields).spawnRoleCost;
-    if (cRam_? == '\0') {
-      func_?(&::StringLiteral__);
-      cRam_? = '\x01';
-    }
-    this_00 = (ProgressBarAndroid *)(pSVar1->fields).progressBar;
-    (pSVar1->fields).spawnRoleCost = iVar4;
-    newTier = 100;
-    if ((pSVar1->fields).currentTier == 0) {
-      if (this_00 != (ProgressBarAndroid *)0x0) {
-        ProgressBarAndroid::ProgressBarAndroid_set_Progress
-                  (this_00,(float)iVar4 / _UNK_?,(MethodInfo *)0x0);
-        pTVar2 = (pSVar1->fields).progressBarText;
-        pSVar3 = mscorlib.dll::System::Int32::Int32_ToString
-                           ((Int32 *)&(pSVar1->fields).spawnRoleCost,(MethodInfo *)0x0);
-        str2 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&newTier,(MethodInfo *)0x0);
-        pSStack5 =
-             mscorlib.dll::System::String::String_Concat_4
-                       (pSVar3,::StringLiteral__,str2,(MethodInfo *)0x0);
-        if (pTVar2 != (Text *)0x0) {
-          pIStack6 = (pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
-          pTStack7 = pTVar2;
-          (*(code *)(pTVar2->klass->vtable).set_text.method)();
-          (pSVar1->fields).canSelectTier0 = (pSVar1->fields).spawnRoleCost <= (int)newTier;
-          return;
-        }
-      }
-    }
-    else if (this_00 != (ProgressBarAndroid *)0x0) {
-      ProgressBarAndroid::ProgressBarAndroid_set_Progress(this_00,1.0,(MethodInfo *)0x0);
-      pTVar2 = (pSVar1->fields).progressBarText;
-      pSVar3 = mscorlib.dll::System::Int32::Int32_ToString
-                         ((Int32 *)&(pSVar1->fields).spawnRoleCost,(MethodInfo *)0x0);
-      if (pTVar2 != (Text *)0x0) {
-        method = (MethodInfo *)(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
-        this = (SpawnRoleTierEditorMenu *)pTVar2;
-        newTier = (GamePassTier__Enum)pSVar3;
-        (*(code *)(pTVar2->klass->vtable).set_text.method)();
-        (pSVar1->fields).canSelectTier0 = (pSVar1->fields).spawnRoleCost <= (int)newTier;
-        return;
-      }
-    }
+  newTier = newTier & 0xff;
+  pSVar2 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&newTier,(MethodInfo *)0x0);
+  if (pTVar1 != (Text *)0x0) {
+    (*(code *)(pTVar1->klass->vtable).set_text.method)
+              (pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+    SpawnRoleTierEditorMenu_UpdateSpawnRoleCost(this,(this->fields).spawnRoleCost,(MethodInfo *)0x0)
+    ;
+    return;
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

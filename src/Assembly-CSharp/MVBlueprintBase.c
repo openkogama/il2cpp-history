@@ -808,76 +808,52 @@ Assembly-CSharp.dll::MVBlueprintBase::MVBlueprintBase_GetChild
     func_?(&StringLiteral_Child_with_name__0__not_found_in);
     cRam_? = '\x01';
   }
-  key_00 = child;
-  pMVar1 = this;
-  pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields).childIdMap
+  pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields).childIdMap
   ;
-  if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-    bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+  if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
             UIElements::TextureId]::
             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                      (pDVar2,(Object *)child,
+                      (pDVar1,(Object *)child,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
                       );
-    if (bVar3 == 0) {
-      pMVar1 = (MVBlueprintBase *)
-               mscorlib.dll::System::String::String_Format_1
-                         (StringLiteral_Child_with_name__0__not_found_in,(Object *)key_00,
-                          (Object *)pMVar1,(MethodInfo *)0x0);
+    if (bVar2 == 0) {
+      message = mscorlib.dll::System::String::String_Format_1
+                          (StringLiteral_Child_with_name__0__not_found_in,(Object *)child,
+                           (Object *)this,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        child = (String *)TypeInfo__UnityEngine__Debug;
-        this = (MVBlueprintBase *)&UNK_?;
         func_?();
       }
-      child = (String *)0x0;
-      this = pMVar1;
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                ((Object *)pMVar1,(MethodInfo *)0x0);
+                ((Object *)message,(MethodInfo *)0x0);
       return (MVWorldObjectClient *)0x0;
     }
-    pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-             (pMVar1->fields).childIdMap;
-    if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-      TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+    pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
+             (this->fields).childIdMap;
+    if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+      TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
               UIElements::TextureId]::
               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                        (pDVar2,(Object *)key_00,
+                        (pDVar1,(Object *)child,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                         );
-      if (TVar4.m_Index != 0) {
-        if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) ==
+      if (TVar3.m_Index != 0) {
+        if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) ==
             (TypeInfo__System__Int32->_0).element_class) {
-          this = (MVBlueprintBase *)TVar4;
-          piVar5 = (int32_t *)func_?();
-          key = *piVar5;
-          if (cRam_? == '\0') {
-            func_?(&
-                            MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
-                           );
-            cRam_? = '\x01';
-          }
-          this_00 = (pMVar1->fields)._.children;
-          this = (MVBlueprintBase *)0x0;
-          if (this_00 != (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) {
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-            Dictionary_2_System_Int32_System_Object__TryGetValue
-                      ((Dictionary_2_System_Int32_System_Object_ *)this_00,key,(Object **)&this,
-                       MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__
-                      );
-            return (MVWorldObjectClient *)this;
-          }
+          piVar4 = (int32_t *)func_?();
+          pMVar5 = MVGroup::MVGroup_GetChild((MVGroup *)this,*piVar4,(MethodInfo *)0x0);
+          return pMVar5;
         }
-        else {
-          this = (MVBlueprintBase *)TypeInfo__System__Int32;
-          func_?();
-        }
+        goto code_?;
       }
     }
   }
   func_?();
+code_?:
+  func_?();
   pcVar6 = (code *)swi(3);
-  pMVar7 = (MVWorldObjectClient *)(*pcVar6)();
-  return pMVar7;
+  pMVar5 = (MVWorldObjectClient *)(*pcVar6)();
+  return pMVar5;
 }
 
 

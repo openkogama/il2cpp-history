@@ -10,39 +10,40 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_Activate
     func_?(&MethodInfo__AvatarUIHandlerRemote__OnXRayBoostChanged__);
     cRam_? = '\x01';
   }
-  pSVar1 = (this->fields).sayChatBubbleHandler;
-  if (pSVar1 != (SayChatBubbleHandler *)0x0) {
-    (pSVar1->fields).isActive = 1;
-    this_00 = (this->fields).teamIconRenderer;
-    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar2 != (MVNetworkGame *)0x0) {
-      pMVar3 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar2,(MethodInfo *)0x0);
-      if ((pMVar3 != (MVLocalPlayer *)0x0) &&
-         (pBVar4 = (pMVar3->fields).boostController, pBVar4 != (BoostController *)0x0)) {
-        bVar5 = BoostController::BoostController_IsBoostActive
-                          (pBVar4,BoostType__Enum_XRayVision,(MethodInfo *)0x0);
-        if (bVar5 == 0) {
+  this_00 = (InputSignalReceiverBase *)(this->fields).sayChatBubbleHandler;
+  if (this_00 != (InputSignalReceiverBase *)0x0) {
+    MVWorldObject.dll::InputSignalReceiverBase::InputSignalReceiverBase_Reset
+              (this_00,(MethodInfo *)0x0);
+    this_01 = (this->fields).teamIconRenderer;
+    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (pMVar1 != (MVNetworkGame *)0x0) {
+      pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
+      if ((pMVar2 != (MVLocalPlayer *)0x0) &&
+         (pBVar3 = (pMVar2->fields).boostController, pBVar3 != (BoostController *)0x0)) {
+        bVar4 = BoostController::BoostController_IsBoostActive
+                          (pBVar3,BoostType__Enum_XRayVision,(MethodInfo *)0x0);
+        if (bVar4 == 0) {
           value = (this->fields).enemyIconMaterial;
         }
         else {
           value = (this->fields).enemyIconMaterialVisibleThroughWalls;
         }
-        if (this_00 != (Renderer *)0x0) {
+        if (this_01 != (Renderer *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
-                    (this_00,value,(MethodInfo *)0x0);
-          pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-          if (pMVar2 != (MVNetworkGame *)0x0) {
-            pMVar3 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar2,(MethodInfo *)0x0);
-            if (pMVar3 != (MVLocalPlayer *)0x0) {
-              pBVar4 = (pMVar3->fields).boostController;
-              this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+                    (this_01,value,(MethodInfo *)0x0);
+          pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if (pMVar1 != (MVNetworkGame *)0x0) {
+            pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
+            if (pMVar2 != (MVLocalPlayer *)0x0) {
+              pBVar3 = (pMVar2->fields).boostController;
+              this_02 = (NavMesh_OnNavMeshPreUpdate *)func_?();
               UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
               NavMesh_OnNavMeshPreUpdate__ctor
-                        (this_01,(Object *)this,
+                        (this_02,(Object *)this,
                          MethodInfo__AvatarUIHandlerRemote__OnXRayBoostChanged__,(MethodInfo *)0x0);
-              if (pBVar4 != (BoostController *)0x0) {
+              if (pBVar3 != (BoostController *)0x0) {
                 BoostController::BoostController_SubscribeToBoostChanged
-                          (pBVar4,BoostType__Enum_XRayVision,(Action *)this_01,(MethodInfo *)0x0);
+                          (pBVar3,BoostType__Enum_XRayVision,(Action *)this_02,(MethodInfo *)0x0);
                 return;
               }
             }
@@ -52,8 +53,8 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_Activate
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -69,40 +70,30 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_Deactivat
     func_?(&MethodInfo__AvatarUIHandlerRemote__OnXRayBoostChanged__);
     cRam_? = '\x01';
   }
-  pSVar1 = (this->fields).sayChatBubbleHandler;
-  if (pSVar1 != (SayChatBubbleHandler *)0x0) {
-    this_00 = (pSVar1->fields).sayChatBubble;
-    (pSVar1->fields).isActive = 0;
-    if (this_00 != (MeshRenderer *)0x0) {
-      this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                          ((Component *)this_00,(MethodInfo *)0x0);
-      if (this_02 != (GameObject *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (this_02,0,(MethodInfo *)0x0);
-        (pSVar1->fields).isIndicatorActive = 0;
-        this_03 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (this_03 != (MVNetworkGame *)0x0) {
-          pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_03,(MethodInfo *)0x0);
-          if (pMVar2 != (MVLocalPlayer *)0x0) {
-            this_01 = (pMVar2->fields).boostController;
-            this_04 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-            UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-            NavMesh_OnNavMeshPreUpdate__ctor
-                      (this_04,(Object *)this,
-                       MethodInfo__AvatarUIHandlerRemote__OnXRayBoostChanged__,(MethodInfo *)0x0);
-            if (this_01 != (BoostController *)0x0) {
-              BoostController::BoostController_UnSubscribeToBoostChanged
-                        (this_01,BoostType__Enum_XRayVision,(Action *)this_04,(MethodInfo *)0x0);
-              return;
-            }
-          }
+  this_00 = (this->fields).sayChatBubbleHandler;
+  if (this_00 != (SayChatBubbleHandler *)0x0) {
+    SayChatBubbleHandler::SayChatBubbleHandler_Deactivate(this_00,(MethodInfo *)0x0);
+    this_02 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (this_02 != (MVNetworkGame *)0x0) {
+      pMVar1 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_02,(MethodInfo *)0x0);
+      if (pMVar1 != (MVLocalPlayer *)0x0) {
+        this_01 = (pMVar1->fields).boostController;
+        this_03 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+        NavMesh_OnNavMeshPreUpdate__ctor
+                  (this_03,(Object *)this,MethodInfo__AvatarUIHandlerRemote__OnXRayBoostChanged__,
+                   (MethodInfo *)0x0);
+        if (this_01 != (BoostController *)0x0) {
+          BoostController::BoostController_UnSubscribeToBoostChanged
+                    (this_01,BoostType__Enum_XRayVision,(Action *)this_03,(MethodInfo *)0x0);
+          return;
         }
       }
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -582,95 +573,62 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_SetShould
                (AvatarUIHandlerRemote *this,bool shouldShow,MethodInfo *method)
 
 {
-  pAVar1 = this;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
   }
-  pAVar2 = (this->fields).avatarBadge;
-  value_00 = 0;
+  pAVar1 = (this->fields).avatarBadge;
+  value = 0;
   if ((this->fields).forceHideUI == 0) {
-    value_00 = shouldShow;
+    value = shouldShow;
   }
-  (this->fields)._.shouldShowUI = value_00;
+  (this->fields)._.shouldShowUI = value;
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                    ((Object_1 *)pAVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar3 != 0) {
-    pAVar2 = (this->fields).avatarBadge;
-    if (pAVar2 == (AvatarBadge *)0x0) goto code_?;
-    pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)pAVar2,(MethodInfo *)0x0);
-    if (pGVar4 == (GameObject *)0x0) goto code_?;
+  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
+                    ((Object_1 *)pAVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
+  if (bVar2 != 0) {
+    pAVar1 = (this->fields).avatarBadge;
+    if (pAVar1 == (AvatarBadge *)0x0) goto code_?;
+    pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)pAVar1,(MethodInfo *)0x0);
+    if (pGVar3 == (GameObject *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (pGVar4,value_00,(MethodInfo *)0x0);
+              (pGVar3,value,(MethodInfo *)0x0);
   }
   this_00 = (this->fields).healthBar;
   if (this_00 != (HealthBar *)0x0) {
-    pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+    pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this_00,(MethodInfo *)0x0);
-    if (pGVar4 != (GameObject *)0x0) {
+    if (pGVar3 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar4,value_00,(MethodInfo *)0x0);
+                (pGVar3,value,(MethodInfo *)0x0);
       this_01 = (this->fields).shieldBar;
       if (this_01 != (ShieldBar *)0x0) {
-        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+        pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)this_01,(MethodInfo *)0x0);
-        if (pGVar4 != (GameObject *)0x0) {
+        if (pGVar3 != (GameObject *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar4,value_00,(MethodInfo *)0x0);
+                    (pGVar3,value,(MethodInfo *)0x0);
           if ((this->fields).shouldShowMobileIcon != 0) {
             this_02 = (this->fields).mobileIcon;
             if (this_02 == (MeshRenderer *)0x0) goto code_?;
-            pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+            pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                                ((Component *)this_02,(MethodInfo *)0x0);
-            if (pGVar4 == (GameObject *)0x0) goto code_?;
+            if (pGVar3 == (GameObject *)0x0) goto code_?;
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                      (pGVar4,value_00,(MethodInfo *)0x0);
+                      (pGVar3,value,(MethodInfo *)0x0);
           }
-          if (cRam_? == '\0') {
-            func_?();
-            cRam_? = '\x01';
-          }
-          bVar3 = 0;
-          if ((this->fields).forceHideUI == 0) {
-            bVar3 = value_00;
-          }
-          this_03 = (AvatarUIHandlerRemote *)(this->fields).nameTagLabel;
-          (this->fields).nameTagLabelVisible = bVar3;
-          if (this_03 != (AvatarUIHandlerRemote *)0x0) {
-            pOVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                     Component_GetComponentsInChildren_2
-                               ((Component *)this_03,1,
-                                UnityEngine__Renderer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::Renderer>_bool_____
-                               );
-            uVar6 = 0;
-            if (pOVar5 != (Object__Array *)0x0) {
-              ppOVar7 = pOVar5->vector;
-              this = this_03;
-              while( true ) {
-                if ((int)pOVar5->max_length <= (int)uVar6) break;
-                if (pOVar5->max_length <= uVar6) goto code_?;
-                this = (AvatarUIHandlerRemote *)*ppOVar7;
-                if (this == (AvatarUIHandlerRemote *)0x0) goto code_?;
-                value = (pAVar1->fields).nameTagLabelVisible;
-                UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
-                          ((Renderer *)this,value,(MethodInfo *)0x0);
-                uVar6 = uVar6 + 1;
-                ppOVar7 = (Object **)(value + 4);
-              }
-              this_04 = (pAVar1->fields).teamIcon;
-              if (this_04 != (TeamIconScaleWithDistance *)0x0) {
-                pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                         Component_get_gameObject((Component *)this_04,(MethodInfo *)0x0);
-                if (pGVar4 != (GameObject *)0x0) {
-                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                            (pGVar4,(bool)this,(MethodInfo *)0x0);
-                  return;
-                }
-              }
+          AvatarUIHandlerRemote_set_NameTagLabelVisible(this,value,(MethodInfo *)0x0);
+          this_03 = (this->fields).teamIcon;
+          if (this_03 != (TeamIconScaleWithDistance *)0x0) {
+            pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                               ((Component *)this_03,(MethodInfo *)0x0);
+            if (pGVar3 != (GameObject *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                        (pGVar3,value,(MethodInfo *)0x0);
+              return;
             }
           }
         }
@@ -679,10 +637,8 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_SetShould
   }
 code_?:
   func_?();
-code_?:
-  func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -766,8 +722,6 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_UpdateHea
 }
 
 
-/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
-    */
 /* Void UpdateNameTag() */
 
 void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_UpdateNameTag
@@ -786,7 +740,7 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_UpdateNam
     if ((((pMVar1 != (MVNetworkGame *)0x0) &&
          (pMVar2 = (pMVar1->fields).playerContainer, pMVar2 != (MVPlayerContainer *)0x0)) &&
         (pMVar4 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe
-                            (pMVar2,(this->fields)._.ownerActorNr,(MethodInfo *)0x0),
+                             (pMVar2,(this->fields)._.ownerActorNr,(MethodInfo *)0x0),
         pMVar4 != (MVPlayer *)0x0)) &&
        ((pUVar5 = (pMVar4->fields)._UserProfileData_k__BackingField,
         pUVar5 != (UserProfileData *)0x0 &&
@@ -800,7 +754,7 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_UpdateNam
       pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
       if ((pMVar1 != (MVNetworkGame *)0x0) &&
          (this_01 = (pMVar1->fields).teamManager, this_01 != (MVTeamManager *)0x0)) {
-        puStack10 = (undefined1 *)fVar9;
+        fStack10 = fVar9;
         iVar11 = MVTeamManager::MVTeamManager_TeamCount(this_01,(MethodInfo *)0x0);
         if (1 < iVar11) {
           switch((pMVar4->fields)._Team_k__BackingField) {
@@ -826,8 +780,7 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_UpdateNam
           value.g = (float)uVar7;
           value.r = (float)uVar6;
           value.b = (float)uVar8;
-          value.a = (float)puStack10;
-                    /* WARNING: Bad instruction - Truncating control flow here */
+          value.a = fStack10;
           UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color
                     (this_02,value,(MethodInfo *)0x0);
           return;
@@ -835,11 +788,28 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_UpdateNam
       }
     }
   }
-  puStack10 = &stack0xfffffffc;
-  func_?();
-  func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  bVar12 = 0;
+  uVar13 = func_?();
+  bVar14 = (byte)uVar13;
+  in_AF = 9 < (bVar14 & 0xf) | in_AF;
+  bVar12 = 0x99 < bVar14 | bVar12;
+  bVar15 = bVar14 + in_AF * -6 + bVar12 * -0x60;
+  pbVar16 = (byte *)(extraout_ECX + 8);
+  bVar14 = *pbVar16;
+  bVar17 = *pbVar16;
+  *pbVar16 = bVar17 + extraout_DL + bVar12;
+  bVar18 = 0x99 < bVar15 || (CARRY1(bVar14,extraout_DL) || CARRY1(bVar17 + extraout_DL,bVar12));
+  pbVar16 = (byte *)(extraout_ECX + 8);
+  bVar14 = *pbVar16;
+  bVar12 = (byte)((ushort)uVar13 >> 8);
+  bVar17 = *pbVar16 + bVar12;
+  *pbVar16 = bVar17 + bVar18;
+  *(char *)(extraout_ECX + 8) =
+       *(char *)(extraout_ECX + 8) + extraout_DH +
+       (0x99 < (byte)(bVar15 + (9 < (bVar15 & 0xf) | in_AF) * -6 + bVar18 * -0x60) ||
+       (CARRY1(bVar14,bVar12) || CARRY1(bVar17,bVar18)));
+  pcVar19 = (code *)swi(3);
+  (*pcVar19)();
   return;
 }
 
@@ -869,6 +839,16 @@ Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_get_EnemyIconM
   pcVar5 = (code *)swi(3);
   pMVar6 = (Material *)(*pcVar5)();
   return pMVar6;
+}
+
+
+/* Boolean get_ForceHideUI() */
+
+bool Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_get_ForceHideUI
+               (AvatarUIHandlerRemote *this,MethodInfo *method)
+
+{
+  return (this->fields).forceHideUI;
 }
 
 

@@ -42,20 +42,21 @@ public class PlayerInventoryController : MonoBehaviour, IPlayerInventory
 	{
 		// Fields
 		public static readonly __c __9;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__20_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__20_1;
 
 		// Constructors
 		static __c();
 		public __c();
 
 		// Methods
-		internal void _Activate_b__20_0(IUIStack handler, BaseEventData data);
+		internal void _Activate_b__20_1(IUIStack handler, BaseEventData data);
 	}
 
 	[CompilerGenerated]
 	private sealed class __c__DisplayClass20_0
 	{
 		// Fields
+		public IState currentState;
 		public PlayerInventoryController __4__this;
 		public UIPushOption options;
 
@@ -63,7 +64,8 @@ public class PlayerInventoryController : MonoBehaviour, IPlayerInventory
 		public __c__DisplayClass20_0();
 
 		// Methods
-		internal void _Activate_b__1(IUIStack x, BaseEventData y);
+		internal void _Activate_b__0(IEditModeController x, BaseEventData y);
+		internal void _Activate_b__2(IUIStack x, BaseEventData y);
 	}
 
 	// Constructors

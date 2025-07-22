@@ -1,4 +1,128 @@
 
+/* Void ActivateCameraController() */
+
+void Assembly-CSharp.dll::AvatarCamerasTouch::AvatarCamerasTouch_ActivateCameraController
+               (AvatarCamerasTouch *this,MethodInfo *method)
+
+{
+  this_00 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+  if (this_00 != (MainCameraManager *)0x0) {
+    MainCameraManager::MainCameraManager_SetCameraController
+              (this_00,(this->fields).cameraController,(MethodInfo *)0x0);
+    return;
+  }
+  uVar1 = func_?(&stack0xfffffff4);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
+  return;
+}
+
+
+/* List`1[MVCameraBase] GetCameraBases() */
+
+List_1_MVCameraBase_ *
+Assembly-CSharp.dll::AvatarCamerasTouch::AvatarCamerasTouch_GetCameraBases
+          (AvatarCamerasTouch *this,MethodInfo *method)
+
+{
+  pAVar1 = (this->fields).avatarCamerasWrapper;
+  if (pAVar1 != (AvatarCamerasWrapper *)0x0) {
+    *unaff_FS_OFFSET = &stack0xfffffff0;
+    if (cRam_? == '\0') {
+      func_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary<CameraType,_MVCameraBase>__get_Values__
+                     );
+      func_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<CameraType,_MVCameraBase>__Dispose__
+                     );
+      func_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<CameraType,_MVCameraBase>__MoveNext__
+                     );
+      func_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<CameraType,_MVCameraBase>__get_Current__
+                     );
+      func_?(&
+                      MethodInfo__System__Collections__Generic__List<MVCameraBase>__Add_MVCameraBase_
+                     );
+      func_?(&MethodInfo__System__Collections__Generic__List<MVCameraBase>__List__);
+      func_?(&TypeInfo__System__Collections__Generic__List<MVCameraBase>);
+      func_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<CameraType,_MVCameraBase>__GetEnumerator__
+                     );
+      cRam_? = '\x01';
+    }
+    OStack_2.klass = (Object__Class *)0x0;
+    OStack_2.monitor = (MonitorData *)0x0;
+    puStack_3 = (undefined *)0x0;
+    pLVar4 = (List_1_MVCameraBase_ *)
+             func_?(TypeInfo__System__Collections__Generic__List<MVCameraBase>);
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType]::
+    LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar4,
+               MethodInfo__System__Collections__Generic__List<MVCameraBase>__List__);
+    this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+               *)(pAVar1->fields).avatarCameras;
+    if ((this_00 !=
+         (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+          *)0x0) &&
+       (this_01 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+                  StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
+                  Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Values
+                            (this_00,
+                             MethodInfo__System__Collections__Generic__Dictionary<CameraType,_MVCameraBase>__get_Values__
+                            ),
+       this_01 !=
+       (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+        *)0x0)) {
+      pDVar5 = mscorlib.dll::System::Collections::Generic::
+               Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
+               StyleSheetCache+SheetHandleKey,System::Object]::
+               Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
+                         ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                           *)&stack0xffffffd4,this_01,
+                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<CameraType,_MVCameraBase>__GetEnumerator__
+                         );
+      OStack_2.klass = (Object__Class *)pDVar5->_dictionary;
+      OStack_2.monitor = (MonitorData *)pDVar5->_index;
+      puStack_3 = (undefined *)pDVar5->_version;
+      item = pDVar5->_currentValue;
+      while( true ) {
+        this_02 = (Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
+                   *)&OStack_2;
+        bVar6 = mscorlib.dll::System::Collections::Generic::
+                Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
+                UInt32,System::Object]::
+                Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                          (this_02,
+                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<CameraType,_MVCameraBase>__MoveNext__
+                          );
+        if (bVar6 == 0) {
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                    (&OStack_2,
+                     (ExceptionArgument__Enum)
+                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<CameraType,_MVCameraBase>__Dispose__
+                     ,unaff_retaddr);
+          *unaff_FS_OFFSET = this_02;
+          return pLVar4;
+        }
+        if (pLVar4 == (List_1_MVCameraBase_ *)0x0) break;
+        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+        List_1_System_Object__Add
+                  ((List_1_System_Object_ *)pLVar4,item,
+                   MethodInfo__System__Collections__Generic__List<MVCameraBase>__Add_MVCameraBase_);
+      }
+    }
+  }
+  func_?();
+  func_?();
+  pcVar7 = (code *)swi(3);
+  pLVar4 = (List_1_MVCameraBase_ *)(*pcVar7)();
+  return pLVar4;
+}
+
+
 /* Void Initialize(MVAvatarLocal) */
 
 void Assembly-CSharp.dll::AvatarCamerasTouch::AvatarCamerasTouch_Initialize
@@ -263,6 +387,177 @@ code_?:
   func_?();
   pcVar12 = (code *)swi(3);
   (*pcVar12)();
+  return;
+}
+
+
+/* Void PushCamera(CameraType) */
+
+void Assembly-CSharp.dll::AvatarCamerasTouch::AvatarCamerasTouch_PushCamera
+               (AvatarCamerasTouch *this,CameraType__Enum cameraType,MethodInfo *method)
+
+{
+  cameraController = (this->fields).cameraController;
+  if ((cameraController != (MVCameraController *)0x0) &&
+     (this_00 = (cameraController->fields).cameraStack,
+     this_00 != (MVCameraController_CameraStack *)0x0)) {
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    this_01 = (this_00->fields).cameras;
+    if (this_01 != (Dictionary_2_CameraType_MVCameraBase_ *)0x0) {
+      cameraBase = (MVCameraBase *)
+                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System
+                   ::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                             ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,cameraType,
+                              MethodInfo__System__Collections__Generic__Dictionary<CameraType,_MVCameraBase>__get_Item_CameraType_
+                             );
+      MVCameraController+CameraStack::MVCameraController_CameraStack_PushCamera_1
+                (this_00,cameraBase,cameraController,(MethodInfo *)0x0);
+      return;
+    }
+  }
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
+  return;
+}
+
+
+/* Void PushCamera(MVCameraBase) */
+
+void Assembly-CSharp.dll::AvatarCamerasTouch::AvatarCamerasTouch_PushCamera_1
+               (AvatarCamerasTouch *this,MVCameraBase *cameraBase,MethodInfo *method)
+
+{
+  cameraController = (this->fields).cameraController;
+  if ((cameraController != (MVCameraController *)0x0) &&
+     (this_00 = (cameraController->fields).cameraStack,
+     this_00 != (MVCameraController_CameraStack *)0x0)) {
+    MVCameraController+CameraStack::MVCameraController_CameraStack_PushCamera_1
+              (this_00,cameraBase,cameraController,(MethodInfo *)0x0);
+    return;
+  }
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
+  return;
+}
+
+
+/* Void RemoveCamera(CameraType) */
+
+void Assembly-CSharp.dll::AvatarCamerasTouch::AvatarCamerasTouch_RemoveCamera
+               (AvatarCamerasTouch *this,CameraType__Enum cameraType,MethodInfo *method)
+
+{
+  cameraController = (this->fields).cameraController;
+  if ((cameraController != (MVCameraController *)0x0) &&
+     (this_00 = (cameraController->fields).cameraStack,
+     this_00 != (MVCameraController_CameraStack *)0x0)) {
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    this_01 = (this_00->fields).cameras;
+    if (this_01 != (Dictionary_2_CameraType_MVCameraBase_ *)0x0) {
+      cameraBase = (MVCameraBase *)
+                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System
+                   ::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                             ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,cameraType,
+                              MethodInfo__System__Collections__Generic__Dictionary<CameraType,_MVCameraBase>__get_Item_CameraType_
+                             );
+      MVCameraController+CameraStack::MVCameraController_CameraStack_RemoveCamera_1
+                (this_00,cameraBase,cameraController,(MethodInfo *)0x0);
+      return;
+    }
+  }
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
+  return;
+}
+
+
+/* Void RemoveCamera(MVCameraBase) */
+
+void Assembly-CSharp.dll::AvatarCamerasTouch::AvatarCamerasTouch_RemoveCamera_1
+               (AvatarCamerasTouch *this,MVCameraBase *cameraBase,MethodInfo *method)
+
+{
+  cameraController = (this->fields).cameraController;
+  if ((cameraController != (MVCameraController *)0x0) &&
+     (this_00 = (cameraController->fields).cameraStack,
+     this_00 != (MVCameraController_CameraStack *)0x0)) {
+    MVCameraController+CameraStack::MVCameraController_CameraStack_RemoveCamera_1
+              (this_00,cameraBase,cameraController,(MethodInfo *)0x0);
+    return;
+  }
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
+  return;
+}
+
+
+/* Void SetCamera(CameraType) */
+
+void Assembly-CSharp.dll::AvatarCamerasTouch::AvatarCamerasTouch_SetCamera
+               (AvatarCamerasTouch *this,CameraType__Enum cameraType,MethodInfo *method)
+
+{
+  cameraController = (this->fields).cameraController;
+  if ((cameraController != (MVCameraController *)0x0) &&
+     (this_00 = (cameraController->fields).cameraStack,
+     this_00 != (MVCameraController_CameraStack *)0x0)) {
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    this_01 = (this_00->fields).cameras;
+    if (this_01 != (Dictionary_2_CameraType_MVCameraBase_ *)0x0) {
+      newCamera = (MVCameraBase *)
+                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System
+                  ::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                            ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,cameraType,
+                             MethodInfo__System__Collections__Generic__Dictionary<CameraType,_MVCameraBase>__get_Item_CameraType_
+                            );
+      MVCameraController+CameraStack::MVCameraController_CameraStack_EnterCamera
+                (this_00,newCamera,cameraController,(MethodInfo *)0x0);
+      return;
+    }
+  }
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
+  return;
+}
+
+
+/* Void SetCamera(MVCameraBase) */
+
+void Assembly-CSharp.dll::AvatarCamerasTouch::AvatarCamerasTouch_SetCamera_1
+               (AvatarCamerasTouch *this,MVCameraBase *cameraBase,MethodInfo *method)
+
+{
+  cameraController = (this->fields).cameraController;
+  if ((cameraController != (MVCameraController *)0x0) &&
+     (this_00 = (cameraController->fields).cameraStack,
+     this_00 != (MVCameraController_CameraStack *)0x0)) {
+    MVCameraController+CameraStack::MVCameraController_CameraStack_EnterCamera
+              (this_00,cameraBase,cameraController,(MethodInfo *)0x0);
+    return;
+  }
+  uVar1 = func_?(&stack0xfffffff0);
+  func_?(uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

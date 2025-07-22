@@ -5,7 +5,14 @@ void Assembly-CSharp.dll::JoystickForwardingButton::JoystickForwardingButton_OnD
                (JoystickForwardingButton *this,PointerEventData *eventData,MethodInfo *method)
 
 {
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__ResolutionManager);
+    cRam_? = '\x01';
+  }
   fVar1 = (this->fields).deadZoneBase;
+  if ((TypeInfo__ResolutionManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__ResolutionManager);
+  }
   VVar2 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
   fVar1 = VStack_3.x * fVar1;
   VStack_3 = VVar2;
@@ -34,10 +41,9 @@ void Assembly-CSharp.dll::JoystickForwardingButton::JoystickForwardingButton_OnD
     VStack_3.y = (eventData->fields)._position_k__BackingField.y - (this->fields).startPosition.y;
     VStack_3.x = (eventData->fields)._position_k__BackingField.x - (this->fields).startPosition.x;
     fVar8 = (float10)func_?(&VStack_3,0);
-    fVar1 = (this->fields).deadZoneBase;
-    VStack_3.y = (float)fVar8;
-    VVar2 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
-    if (VVar2.x * fVar1 <= VStack_3.y) {
+    fVar1 = JoystickForwardingButton_get_DeadZone(this,(MethodInfo *)0x0);
+    VStack_3.y = fVar1;
+    if (fVar1 <= (float)fVar8) {
       pJVar7 = (this->fields).joystickBase;
       (this->fields).isDragging = 1;
       if (pJVar7 == (JoystickBase *)0x0) goto code_?;
@@ -60,7 +66,14 @@ void Assembly-CSharp.dll::JoystickForwardingButton::JoystickForwardingButton_OnP
                (JoystickForwardingButton *this,PointerEventData *eventData,MethodInfo *method)
 
 {
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__ResolutionManager);
+    cRam_? = '\x01';
+  }
   fVar1 = (this->fields).deadZoneBase;
+  if ((TypeInfo__ResolutionManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__ResolutionManager);
+  }
   VVar2 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
   fVar1 = VVar2.x * fVar1;
   if (cRam_? == '\0') {
@@ -148,7 +161,14 @@ float Assembly-CSharp.dll::JoystickForwardingButton::JoystickForwardingButton_ge
                 (JoystickForwardingButton *this,MethodInfo *method)
 
 {
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__ResolutionManager);
+    cRam_? = '\x01';
+  }
   fVar1 = (this->fields).deadZoneBase;
+  if ((TypeInfo__ResolutionManager->_1).cctor_finished_or_no_cctor == 0) {
+    func_?(TypeInfo__ResolutionManager);
+  }
   VVar2 = ResolutionManager::ResolutionManager_get_PixelsToPhysicalDistance((MethodInfo *)0x0);
   return VVar2.x * fVar1;
 }

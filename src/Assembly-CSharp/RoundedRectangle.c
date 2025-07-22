@@ -1,27 +1,72 @@
 
-/* Void Awake() */
+/* IEnumerator GetMaterialFromPrefabPool() */
 
-void Assembly-CSharp.dll::RoundedRectangle::RoundedRectangle_Awake
-               (RoundedRectangle *this,MethodInfo *method)
+IEnumerator *
+Assembly-CSharp.dll::RoundedRectangle::RoundedRectangle_GetMaterialFromPrefabPool
+          (RoundedRectangle *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__PrefabPool);
+    func_?(&TypeInfo__RoundedRectangle___GetMaterialFromPrefabPool_d__2);
     cRam_? = '\x01';
   }
-  pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
-  if (pPVar1 != (PrefabPool *)0x0) {
-    method_00 = this;
-    (*(code *)(this->klass->vtable).set_material.method)
-              (this,(pPVar1->fields).roundedRectangleMaterial,
-               (this->klass->vtable).get_materialForRendering.methodPtr);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)this,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-    return;
+  method_00 = TypeInfo__RoundedRectangle___GetMaterialFromPrefabPool_d__2;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
+  func_?(value + 2,this);
+  return (IEnumerator *)value;
+}
+
+
+/* Void OnDestroy() */
+
+void Assembly-CSharp.dll::RoundedRectangle::RoundedRectangle_OnDestroy
+               (RoundedRectangle *this,MethodInfo *method)
+
+{
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StopAllCoroutines
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    func_?();
+    func_?(&TypeInfo__UnityEngine__UI__GraphicRegistry);
+    func_?(&TypeInfo__UnityEngine__Object);
+    cRam_? = '\x01';
   }
+  c = UnityEngine.UI.dll::UnityEngine::UI::Graphic::Graphic_get_canvas
+                (in_stack_1,(MethodInfo *)0x0);
+  if ((TypeInfo__UnityEngine__UI__GraphicRegistry->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  UnityEngine.UI.dll::UnityEngine::UI::GraphicRegistry::GraphicRegistry_UnregisterGraphicForCanvas
+            (c,in_stack_1,(MethodInfo *)0x0);
+  if ((TypeInfo__UnityEngine__UI__CanvasUpdateRegistry->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  UnityEngine.UI.dll::UnityEngine::UI::CanvasUpdateRegistry::
+  CanvasUpdateRegistry_UnRegisterCanvasElementForRebuild
+            ((ICanvasElement *)in_stack_1,(MethodInfo *)0x0);
+  pMVar2 = (in_stack_1->fields).m_CachedMesh;
+  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit
+                    ((Object_1 *)pMVar2,(MethodInfo *)0x0);
+  if (bVar3 != 0) {
+    pMVar2 = (in_stack_1->fields).m_CachedMesh;
+    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
+              ((Object_1 *)pMVar2,(MethodInfo *)0x0);
+  }
+  method_00 = (MethodInfo *)&(in_stack_1->fields).m_CachedMesh;
+  (in_stack_1->fields).m_CachedMesh = (Mesh *)0x0;
   func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+            ((Object *)in_stack_1,ExceptionArgument__Enum_obj,method_00);
   return;
 }
 
@@ -265,6 +310,32 @@ code_?:
   func_?();
   pcVar48 = (code *)swi(3);
   (*pcVar48)();
+  return;
+}
+
+
+/* Void Start() */
+
+void Assembly-CSharp.dll::RoundedRectangle::RoundedRectangle_Start
+               (RoundedRectangle *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__RoundedRectangle___GetMaterialFromPrefabPool_d__2);
+    cRam_? = '\x01';
+  }
+  method_01 = TypeInfo__RoundedRectangle___GetMaterialFromPrefabPool_d__2;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
+  method_00 = (MethodInfo *)(value + 2);
+  value[1].klass = (Object__Class *)0x0;
+  value[2].klass = (Object__Class *)this;
+  func_?(method_00,this);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
+            ((MonoBehaviour *)this,(IEnumerator *)value,(MethodInfo *)0x0);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
 

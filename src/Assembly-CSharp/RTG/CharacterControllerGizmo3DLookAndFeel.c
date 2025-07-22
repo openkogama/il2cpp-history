@@ -15,29 +15,29 @@ CharacterControllerGizmo3DLookAndFeel_GetAllowedTickTypes
     func_?(&TypeInfo__System__Collections__Generic__List<System::Enum>);
     cRam_? = '\x01';
   }
-  pLVar1 = (List_1_System_Enum_ *)
-           func_?(TypeInfo__System__Collections__Generic__List<System::Enum>);
+  this_00 = (List_1_System_Object_ *)
+            func_?(TypeInfo__System__Collections__Generic__List<System::Enum>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar1,
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<System::Enum>__List__);
-  uStack_2 = 1;
-  uVar3 = func_?(TypeInfo__RTG__GizmoCap2DType,&uStack_2);
-  if (pLVar1 != (List_1_System_Enum_ *)0x0) {
-    pMStack_4 = MethodInfo__System__Collections__Generic__List<System::Enum>__Add_System__Enum_;
-    func_?(pLVar1,uVar3);
-    pMStack_4 = (MethodInfo *)0x0;
-    uVar3 = func_?(TypeInfo__RTG__GizmoCap2DType,&pMStack_4);
-    func_?(pLVar1,uVar3,
-                    MethodInfo__System__Collections__Generic__List<System::Enum>__Add_System__Enum_)
-    ;
-    return pLVar1;
+  uStack_1 = 1;
+  pOVar2 = (Object *)func_?(TypeInfo__RTG__GizmoCap2DType,&uStack_1);
+  if (this_00 != (List_1_System_Object_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+              (this_00,pOVar2,
+               MethodInfo__System__Collections__Generic__List<System::Enum>__Add_System__Enum_);
+    pOVar2 = (Object *)func_?(TypeInfo__RTG__GizmoCap2DType);
+    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
+              (this_00,pOVar2,
+               MethodInfo__System__Collections__Generic__List<System::Enum>__Add_System__Enum_);
+    return (List_1_System_Enum_ *)this_00;
   }
   func_?();
-  pcVar5 = (code *)swi(3);
-  pLVar1 = (List_1_System_Enum_ *)(*pcVar5)();
-  return pLVar1;
+  pcVar3 = (code *)swi(3);
+  pLVar4 = (List_1_System_Enum_ *)(*pcVar3)();
+  return pLVar4;
 }
 
 

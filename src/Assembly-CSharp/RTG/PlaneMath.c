@@ -12,7 +12,7 @@ bool Assembly-CSharp.dll::RTG::PlaneMath::PlaneMath_Raycast2D
     fVar1 = ((rayOrigin.y - ptOnPlane.y) * planeNormal.y +
             planeNormal.x * (rayOrigin.x - ptOnPlane.x)) /
             (float)((uint)fVar1 ^
-                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                   __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     *t = fVar1;
     return 0.0 <= fVar1;
   }

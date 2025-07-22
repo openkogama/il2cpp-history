@@ -1,4 +1,65 @@
 
+/* Boolean Delete(MVWorldObjectClientManager, String ByRef) */
+
+bool Assembly-CSharp.dll::MVGlobalSoundEmitter::MVGlobalSoundEmitter_Delete
+               (MVGlobalSoundEmitter *this,MVWorldObjectClientManager *worldObjectClientManager,
+               String **errorText,MethodInfo *method)
+
+{
+  this_00 = (this->fields).soundLoader;
+  if (this_00 != (SoundLoader *)0x0) {
+    SoundLoader::SoundLoader_StopAndDestroySound(this_00,(MethodInfo *)0x0);
+    bVar1 = MVWorldObjectClient::MVWorldObjectClient_Delete
+                      ((MVWorldObjectClient *)this,worldObjectClientManager,errorText,
+                       (MethodInfo *)0x0);
+    return bVar1;
+  }
+  func_?();
+  pcVar2 = (code *)swi(3);
+  bVar1 = (*pcVar2)();
+  return bVar1;
+}
+
+
+/* Void Destroy() */
+
+void Assembly-CSharp.dll::MVGlobalSoundEmitter::MVGlobalSoundEmitter_Destroy
+               (MVGlobalSoundEmitter *this,MethodInfo *method)
+
+{
+  MVLogicObject::MVLogicObject_Destroy((MVLogicObject *)this,(MethodInfo *)0x0);
+  if ((this->fields).soundLoader != (SoundLoader *)0x0) {
+    if (cRam_? == '\0') {
+      func_?();
+      func_?(&TypeInfo__AsyncWWWManager);
+      func_?(&
+                      MethodInfo__SoundLoader__OnDownloadFinished_UnityEngine__Networking__UnityWebRequest_
+                     );
+      cRam_? = '\x01';
+    }
+    this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
+               *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>)
+    ;
+    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
+    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              (this_00,in_stack_1,
+               MethodInfo__SoundLoader__OnDownloadFinished_UnityEngine__Networking__UnityWebRequest_
+               ,(MethodInfo *)0x0);
+    if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
+      func_?();
+    }
+    AsyncWWWManager::AsyncWWWManager_UnsubscribeWWWRequest
+              ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,(MethodInfo *)0x0);
+    return;
+  }
+  func_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
+  return;
+}
+
+
 /* Void Initialize() */
 
 void Assembly-CSharp.dll::MVGlobalSoundEmitter::MVGlobalSoundEmitter_Initialize

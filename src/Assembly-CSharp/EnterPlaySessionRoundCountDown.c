@@ -82,7 +82,7 @@ void Assembly-CSharp.dll::EnterPlaySessionRoundCountDown::EnterPlaySessionRoundC
         }
         pIVar5 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
         if (pIVar5 != (IPlayModeUI *)0x0) {
-          func_?(4,TypeInfo__IPlayModeUI,pIVar5,0);
+          func_?(6,TypeInfo__IPlayModeUI,pIVar5,0);
           pSVar6 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                              ((MethodInfo *)0x0);
           if ((pSVar6 != (SpawnRoleDataMediator *)0x0) &&

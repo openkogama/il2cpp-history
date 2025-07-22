@@ -7,33 +7,22 @@ void Assembly-CSharp.dll::TimeAttackFlagReachedClient::TimeAttackFlagReachedClie
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__IBriefing);
+    ppIStack_1 = &TypeInfo__IBriefing;
+    func_?();
     cRam_? = '\x01';
   }
   if (winningConditionBriefingView != (IBriefing *)0x0) {
-    pIVar1 = winningConditionBriefingView->klass;
-    uVar2 = 0;
-    uVar3._0_1_ = (pIVar1->_1).rank;
-    uVar3._1_1_ = (pIVar1->_1).minimumAlignment;
-    if (uVar3 != 0) {
-      do {
-        if (pIVar1->interfaceOffsets[uVar2].interfaceType == (Il2CppClass *)TypeInfo__IBriefing) {
-          pIVar1 = winningConditionBriefingView->klass;
-          iVar4 = pIVar1->interfaceOffsets[uVar2].offset;
-          (*(code *)(&(pIVar1->vtable).AddBriefing_1)[iVar4].method)
-                    (winningConditionBriefingView,5,(&pIVar1[1]._0.image)[iVar4 * 2]);
-          return;
-        }
-        uVar2 = uVar2 + 1;
-      } while (uVar2 < uVar3);
-    }
-    puVar5 = (undefined4 *)func_?(winningConditionBriefingView,TypeInfo__IBriefing,1);
-    (*(code *)*puVar5)(winningConditionBriefingView,5,puVar5[1]);
+    ppIStack_1 = (IBriefing__Class **)0x5;
+    pIStack_2 = winningConditionBriefingView;
+    pIStack_3 = TypeInfo__IBriefing;
+    func_?(1);
     return;
   }
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  ppIStack_1 = (IBriefing__Class **)&stack0xfffffffc;
+  uVar4 = func_?(&pIStack_3);
+  func_?(uVar4);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

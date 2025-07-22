@@ -267,13 +267,13 @@ code_?:
                           fVar7 = (this->fields).recoilImpact;
                           if (this_03 != (MVRigidBody *)0x0) {
                             impulse.y = (float)(uVar25 ^ 
-                                               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                               __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                                                ) * fVar7;
                             impulse.x = (float)(uVar24 ^ 
-                                               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                               __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                                                ) * fVar7;
                             impulse.z = (float)((uint)pVVar2->z ^
-                                               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                               __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                                                ) * fVar7;
                             MVRigidBody::MVRigidBody_AddImpulse_1
                                       (this_03,impulse,0,(MethodInfo *)0x0);
@@ -467,32 +467,22 @@ void Assembly-CSharp.dll::PickupItemSixShooter::PickupItemSixShooter_ResetAmmo
     cRam_? = '\x01';
   }
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  pOVar1 = (ObscuredInt__Class *)(this->fields).maxAmmo.currentCryptoKey;
-  iVar2 = (this->fields).maxAmmo.hiddenValue;
-  iVar3 = (this->fields).maxAmmo.fakeValue;
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  iVar1 = (*(code *)(this->klass->vtable).get_MaxAmmo.method)
+                    (this,(this->klass->vtable).get_Quantity.methodPtr);
   if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor ==
       0) {
-    pOVar1 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt;
-    func_?();
+    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
   }
-  value.hiddenValue = iVar2;
-  value.currentCryptoKey = (int32_t)pOVar1;
-  value.fakeValue = iVar3;
-  value.inited = (this->fields).maxAmmo.inited;
-  value._13_3_ = *(undefined3 *)&(this->fields).maxAmmo.field_0xd;
-  iVar2 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-          ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
-  iVar2 = (*(code *)(this->klass->vtable).GetAmmoMultiplier.method)(this,iVar2);
-  pOVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-           ObscuredInt_op_Implicit((ObscuredInt *)&stack0xffffffec,iVar2,(MethodInfo *)0x0);
-  iVar2 = pOVar4->hiddenValue;
-  iVar3 = pOVar4->fakeValue;
-  bVar5 = pOVar4->inited;
-  uVar6 = *(undefined3 *)&pOVar4->field_0xd;
-  (this->fields).currentAmmo.currentCryptoKey = pOVar4->currentCryptoKey;
-  (this->fields).currentAmmo.hiddenValue = iVar2;
-  (this->fields).currentAmmo.fakeValue = iVar3;
+  pOVar2 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+           ObscuredInt_op_Implicit(&OStack_3,iVar1,(MethodInfo *)0x0);
+  iVar1 = pOVar2->hiddenValue;
+  iVar4 = pOVar2->fakeValue;
+  bVar5 = pOVar2->inited;
+  uVar6 = *(undefined3 *)&pOVar2->field_0xd;
+  (this->fields).currentAmmo.currentCryptoKey = pOVar2->currentCryptoKey;
+  (this->fields).currentAmmo.hiddenValue = iVar1;
+  (this->fields).currentAmmo.fakeValue = iVar4;
   (this->fields).currentAmmo.inited = bVar5;
   *(undefined3 *)&(this->fields).currentAmmo.field_0xd = uVar6;
   return;
@@ -614,6 +604,29 @@ bool Assembly-CSharp.dll::PickupItemSixShooter::PickupItemSixShooter_get_IsAmmoD
   cVar5 = (*(code *)(this->klass->vtable).get_HasUnlimitedAmmo.method)
                     (this,(this->klass->vtable).get_CanUnequip.methodPtr);
   return cVar5 == '\0';
+}
+
+
+/* Int32 get_MaxAmmo() */
+
+int32_t Assembly-CSharp.dll::PickupItemSixShooter::PickupItemSixShooter_get_MaxAmmo
+                  (PickupItemSixShooter *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+    cRam_? = '\x01';
+  }
+  value = (this->fields).maxAmmo;
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor ==
+      0) {
+    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+  }
+  iVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+          ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
+  iVar1 = (*(code *)(this->klass->vtable).CalculateMaxAmmo.method)
+                    (this,iVar1,(this->klass->vtable).UpdateWithDirection.methodPtr);
+  return iVar1;
 }
 
 

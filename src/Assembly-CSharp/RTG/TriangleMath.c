@@ -627,21 +627,21 @@ bool Assembly-CSharp.dll::RTG::TriangleMath::TriangleMath_Contains3DPoint
   fVar8 = p0.x - p2.x;
   fVar9 = p0.z - p2.z;
   value.y = fVar3 * (float)((uint)fVar8 ^
-                            __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                            __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                             ) -
             fVar1 * (float)((uint)fVar9 ^
-                            __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                            __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                             );
   value.x = (float)((uint)fVar9 ^
-                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) *
+                   __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) *
             fVar2 - fVar3 * (float)((uint)fVar7 ^
-                                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                                      );
   value.z = fVar1 * (float)((uint)fVar7 ^
-                            __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                            __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                             ) -
             (float)((uint)fVar8 ^
-                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) *
+                   __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) *
             fVar2;
   pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
                      ((Vector3 *)&stack0xffffffa8,value,(MethodInfo *)0x0);
@@ -900,8 +900,8 @@ code_?:
       v2.y = ray.m_Direction.x;
       v2.x = ray.m_Origin.z;
       v2.z = fVar6;
-      fVar4 = ray.m_Direction.x;
-      fVar5 = ray.m_Origin.z;
+      fVar4 = ray.m_Origin.z;
+      fVar5 = ray.m_Direction.x;
       ray.m_Direction.y = fVar6;
       fVar8 = Vector3Ex::Vector3Ex_AbsDot(v1,v2,(MethodInfo *)0x0);
       ray.m_Direction.z = 0.0;
@@ -917,13 +917,13 @@ code_?:
         ray.m_Origin.z = epsilon._extrudeEps;
         ray.m_Direction.x = epsilon._wireEps;
         ray.m_Origin.x = fVar6;
-        fVar10 = fVar4;
-        VVar2.x = fVar5;
+        fVar10 = fVar5;
+        VVar2.x = fVar4;
         VVar2 = (Vector3)CONCAT84(VVar2._0_8_,VVar2.x);
         auVar11._8_4_ = 0;
         auVar11._0_8_ = p2._4_8_;
-        normal.y = fVar4;
-        normal.x = fVar5;
+        normal.y = fVar5;
+        normal.x = fVar4;
         normal.z = fVar6;
         pOVar12 = TriangleMath_Calc3DTriangleOBB
                             ((OBB *)&stack0xffffff64,VVar2,(Vector3)epsilon,

@@ -470,19 +470,11 @@ OBB * Assembly-CSharp.dll::RTG::QuadMath::QuadMath_Calc3DQuadOBB
 
 {
   fVar1 = epsilon._extrudeEps * _UNK_?;
-  *(undefined2 *)&__return_storage_ptr__->field_0x29 = 0;
-  __return_storage_ptr__->field_0x2b = 0;
-  (__return_storage_ptr__->_center).x = quadCenter.x;
-  (__return_storage_ptr__->_center).y = quadCenter.y;
-  (__return_storage_ptr__->_center).z = quadCenter.z;
-  (__return_storage_ptr__->_size).x = quadSize.x + epsilon._sizeEps.x;
-  (__return_storage_ptr__->_size).y = quadSize.y + epsilon._sizeEps.y;
-  (__return_storage_ptr__->_size).z = fVar1;
-  (__return_storage_ptr__->_rotation).x = quadRotation.x;
-  (__return_storage_ptr__->_rotation).y = quadRotation.y;
-  (__return_storage_ptr__->_rotation).z = quadRotation.z;
-  (__return_storage_ptr__->_rotation).w = quadRotation.w;
-  __return_storage_ptr__->_isValid = 1;
+  func_?(__return_storage_ptr__,0,0x2c);
+  size.y = quadSize.y + epsilon._sizeEps.y;
+  size.x = quadSize.x + epsilon._sizeEps.x;
+  size.z = fVar1;
+  OBB::OBB__ctor_1(__return_storage_ptr__,quadCenter,size,quadRotation,(MethodInfo *)0x0);
   return __return_storage_ptr__;
 }
 
@@ -499,11 +491,23 @@ bool Assembly-CSharp.dll::RTG::QuadMath::QuadMath_Contains2DPoint
   VStack_2.x = 0.0;
   VStack_2.y = 0.0;
   QuadMath_Calc2DQuadRightUp(degreeRotation,&VStack_1,&VStack_2,(MethodInfo *)0x0);
-  if ((float)((uint)(VStack_1.x * (point.x - quadCenter.x) + VStack_1.y * (point.y - quadCenter.y))
-             & _UNK_?) <= (epsilon._sizeEps.x + quadWidth) * _UNK_?) {
-    return (float)((uint)(VStack_2.x * (point.x - quadCenter.x) +
-                         VStack_2.y * (point.y - quadCenter.y)) & _UNK_?) <=
-           (epsilon._sizeEps.y + quadHeight) * _UNK_?;
+  fStack_3 = epsilon._sizeEps.x;
+  fStack_4 = epsilon._sizeEps.y;
+  fStack_5 = epsilon._extrudeEps;
+  fStack_6 = epsilon._wireEps;
+  fVar7 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Single,System::Single]
+          ::KeyValuePair_2_System_Single_System_Single__get_Key
+                    ((KeyValuePair_2_System_Single_System_Single_ *)&fStack_3,(MethodInfo *)0x0);
+  fVar8 = mscorlib.dll::System::Nullable`1[Single]::Nullable_1_Single__GetValueOrDefault
+                    ((Nullable_1_Single_ *)&fStack_3,(MethodInfo *)0x0);
+  v1.y = point.y - quadCenter.y;
+  v1.x = point.x - quadCenter.x;
+  fVar9 = Vector2Ex::Vector2Ex_AbsDot(v1,VStack_1,(MethodInfo *)0x0);
+  v1_00.y = point.y - quadCenter.y;
+  v1_00.x = point.x - quadCenter.x;
+  fVar10 = Vector2Ex::Vector2Ex_AbsDot(v1_00,VStack_2,(MethodInfo *)0x0);
+  if (fVar9 <= (fVar7 + quadWidth) * _UNK_?) {
+    return fVar10 <= (fVar8 + quadHeight) * _UNK_?;
   }
   return 0;
 }
@@ -516,11 +520,19 @@ bool Assembly-CSharp.dll::RTG::QuadMath::QuadMath_Contains2DPoint_1
                Vector2 quadUp,QuadEpsilon epsilon,MethodInfo *method)
 
 {
-  if (((float)((uint)(quadRight.x * (point.x - quadCenter.x) +
-                     quadRight.y * (point.y - quadCenter.y)) & _UNK_?) <=
-       (epsilon._sizeEps.x + quadWidth) * _UNK_?) &&
-     ((float)((uint)(quadUp.x * (point.x - quadCenter.x) + quadUp.y * (point.y - quadCenter.y)) &
-             _UNK_?) <= (epsilon._sizeEps.y + quadHeight) * _UNK_?)) {
+  fVar1 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Single,System::Single]
+          ::KeyValuePair_2_System_Single_System_Single__get_Key
+                    ((KeyValuePair_2_System_Single_System_Single_ *)&epsilon,(MethodInfo *)0x0);
+  fVar2 = mscorlib.dll::System::Nullable`1[Single]::Nullable_1_Single__GetValueOrDefault
+                    ((Nullable_1_Single_ *)&epsilon,(MethodInfo *)0x0);
+  v1.y = point.y - quadCenter.y;
+  v1.x = point.x - quadCenter.x;
+  fVar3 = Vector2Ex::Vector2Ex_AbsDot(v1,quadRight,(MethodInfo *)0x0);
+  v1_00.y = point.y - quadCenter.y;
+  v1_00.x = point.x - quadCenter.x;
+  fVar4 = Vector2Ex::Vector2Ex_AbsDot(v1_00,quadUp,(MethodInfo *)0x0);
+  if ((fVar3 <= (fVar1 + quadWidth) * _UNK_?) &&
+     (fVar4 <= (fVar2 + quadHeight) * _UNK_?)) {
     return 1;
   }
   return 0;
@@ -535,32 +547,45 @@ bool Assembly-CSharp.dll::RTG::QuadMath::QuadMath_Contains3DPoint
                Vector3 quadRight,Vector3 quadUp,QuadEpsilon epsilon,MethodInfo *method)
 
 {
-  value.y = quadUp.x * quadRight.z - quadRight.x * quadUp.z;
-  value.x = quadRight.y * quadUp.z - quadRight.z * quadUp.y;
-  value.z = quadRight.x * quadUp.y - quadUp.x * quadRight.y;
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                     ((Vector3 *)&stack0xfffffff0,value,(MethodInfo *)0x0);
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                     ((Vector3 *)&stack0xffffffe4,*pVVar1,(MethodInfo *)0x0);
-  uVar2 = pVVar1->x;
-  uVar3 = pVVar1->y;
+  VStack_1.z = quadRight.x * quadUp.y - quadUp.x * quadRight.y;
+  VVar2.y = quadUp.x * quadRight.z - quadRight.x * quadUp.z;
+  VVar2.x = quadRight.y * quadUp.z - quadRight.z * quadUp.y;
+  VVar2.z = VStack_1.z;
+  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                     (&VStack_1,VVar2,(MethodInfo *)0x0);
+  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                     ((Vector3 *)&stack0xffffffc0,*pVVar3,(MethodInfo *)0x0);
+  VStack_1.x = pVVar3->x;
+  VStack_1.y = pVVar3->y;
+  VStack_1.z = pVVar3->z;
   if ((checkOnPlane != 0) &&
-     (plane.m_Distance =
-           (float)((uint)(quadCenter.y * (float)uVar3 + quadCenter.x * (float)uVar2 +
-                         quadCenter.z * pVVar1->z) ^
-                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field),
-     plane.m_Normal = *pVVar1,
+     (plane.m_Normal.z = point.x, plane.m_Normal.x = VStack_1.x, plane.m_Normal.y = VStack_1.y,
+     plane.m_Distance = point.y,
      fVar4 = PlaneEx::PlaneEx_GetAbsDistanceToPoint(plane,point,(MethodInfo *)0x0),
      epsilon._extrudeEps < fVar4)) {
     return 0;
   }
-  if (((float)((uint)((point.x - quadCenter.x) * quadRight.x +
-                      (point.y - quadCenter.y) * quadRight.y +
-                     (point.z - quadCenter.z) * quadRight.z) & _UNK_?) <=
-       (epsilon._sizeEps.x + quadWidth) * _UNK_?) &&
-     ((float)((uint)((point.x - quadCenter.x) * quadUp.x + (point.y - quadCenter.y) * quadUp.y +
-                    (point.z - quadCenter.z) * quadUp.z) & _UNK_?) <=
-      (epsilon._sizeEps.y + quadHeight) * _UNK_?)) {
+  mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Single,System::Single]::
+  KeyValuePair_2_System_Single_System_Single__get_Key
+            ((KeyValuePair_2_System_Single_System_Single_ *)&epsilon,(MethodInfo *)0x0);
+  mscorlib.dll::System::Nullable`1[Single]::Nullable_1_Single__GetValueOrDefault
+            ((Nullable_1_Single_ *)&epsilon,(MethodInfo *)0x0);
+  fVar5 = point.z - quadCenter.z;
+  fVar6 = point.x - quadCenter.x;
+  fVar7 = point.y - quadCenter.y;
+  VStack_1.z = (float)&UNK_?;
+  v1.y = fVar7;
+  v1.x = fVar6;
+  v1.z = fVar5;
+  fVar4 = fVar5;
+  fVar8 = Vector3Ex::Vector3Ex_AbsDot(v1,quadRight,(MethodInfo *)0x0);
+  stack0xfffffffc = fVar7;
+  fStack_9 = fVar6;
+  VVar2.z = fVar5;
+  VVar2 = (Vector3)CONCAT48(VVar2.z,uVar10);
+  fVar5 = Vector3Ex::Vector3Ex_AbsDot(VVar2,quadUp,(MethodInfo *)0x0);
+  if ((fVar8 <= (quadRight.y + quadWidth) * _UNK_?) &&
+     (fVar5 <= (fVar4 + quadHeight) * _UNK_?)) {
     return 1;
   }
   return 0;
@@ -574,58 +599,52 @@ bool Assembly-CSharp.dll::RTG::QuadMath::QuadMath_Is2DPointOnBorder
                float degreeRotation,QuadEpsilon epsilon,MethodInfo *method)
 
 {
-  fVar1 = 0.0;
-  QuadMath_Calc2DQuadRightUp
-            (degreeRotation,(Vector2 *)&stack0xffffffec,(Vector2 *)&stack0xfffffff4,
-             (MethodInfo *)0x0);
+  VStack_1.x = 0.0;
+  VStack_1.y = 0.0;
+  QuadMath_Calc2DQuadRightUp(degreeRotation,(Vector2 *)&stack0xffffffec,&VStack_1,(MethodInfo *)0x0)
+  ;
   if (cRam_? == '\0') {
     func_?();
     func_?();
     cRam_? = '\x01';
   }
-  puVar2 = (undefined *)((uint)epsilon._wireEps & _UNK_?);
-  fVar3 = 0.0;
-  VVar4.y = quadHeight;
-  VVar4.x = quadWidth;
-  VVar5.y = 0.0;
-  VVar5.x = fVar1;
-  up.y = fVar1;
-  up.x = (float)puVar2;
-  this = QuadMath_Calc2DQuadCornerPoints_1(quadCenter,VVar4,VVar5,up,(MethodInfo *)0x0);
-  degreeRotation = 0.0;
-  if (this == (List_1_UnityEngine_Vector2_ *)0x0) {
-    func_?();
-    pcVar6 = (code *)swi(3);
-    bVar7 = (*pcVar6)();
-    return bVar7;
-  }
-  while( true ) {
-    if ((this->fields)._size <= (int)degreeRotation) {
-      return 0;
+  uVar2 = 0;
+  TorusEpsilon::TorusEpsilon_set_CylHrzRadius
+            ((TorusEpsilon *)&stack0xffffffe4,epsilon._wireEps,(MethodInfo *)0x0);
+  uVar2 = uVar2 & 0xffffffff00000000;
+  VVar3.y = quadHeight;
+  VVar3.x = quadWidth;
+  VVar4.y = unaff_EBX;
+  VVar4.x = unaff_ESI;
+  this = QuadMath_Calc2DQuadCornerPoints_1(quadCenter,VVar3,VVar4,VStack_1,(MethodInfo *)0x0);
+  index = 0;
+  if (this != (List_1_UnityEngine_Vector2_ *)0x0) {
+    while( true ) {
+      if ((this->fields)._size <= index) {
+        return 0;
+      }
+      VVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+              List_1_UnityEngine_Vector2__get_Item
+                        (this,index,
+                         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                        );
+      VVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+              List_1_UnityEngine_Vector2__get_Item
+                        (this,(index + 1) % (this->fields)._size,
+                         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                        );
+      method_00 = (MethodInfo *)(uVar2 >> 0x20);
+      VStack_1.y = (float)&UNK_?;
+      fVar5 = Vector2Ex::Vector2Ex_GetDistanceToSegment(VVar3,VVar3,VVar4,method_00);
+      if (fVar5 <= (float)method_00) break;
+      index = index + 1;
     }
-    VVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-            List_1_UnityEngine_Vector2__get_Item
-                      (this,(int32_t)degreeRotation,
-                       MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                      );
-    VVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-            List_1_UnityEngine_Vector2__get_Item
-                      (unaff_ESI,((int)degreeRotation + 1) % (unaff_ESI->fields)._size,
-                       MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                      );
-    puVar8 = &UNK_?;
-    point_00.y = (float)puVar2;
-    point_00.x = fVar3;
-    epsilon_00._ptOnSegmentEps = (float)puVar2;
-    epsilon_00._raycastEps = fVar3;
-    bVar7 = SegmentMath::SegmentMath_Is2DPointOnSegment
-                      (point_00,VVar4,VVar5,epsilon_00,(MethodInfo *)0x0);
-    if (bVar7 != 0) break;
-    degreeRotation = (float)((int)degreeRotation + 1);
-    this = unaff_ESI;
-    puVar2 = puVar8;
+    return 1;
   }
-  return 1;
+  func_?();
+  pcVar6 = (code *)swi(3);
+  bVar7 = (*pcVar6)();
+  return bVar7;
 }
 
 
@@ -645,40 +664,41 @@ bool Assembly-CSharp.dll::RTG::QuadMath::QuadMath_Is2DPointOnBorder_1
                    );
     cRam_? = '\x01';
   }
-  epsilon_00 = (SegmentEpsilon)((ulonglong)((uint)epsilon._wireEps & _UNK_?) << 0x20);
-  VVar1.y = quadHeight;
-  VVar1.x = quadWidth;
-  this = QuadMath_Calc2DQuadCornerPoints_1(quadCenter,VVar1,quadRight,quadUp,(MethodInfo *)0x0);
-  quadWidth = 0.0;
-  if (this == (List_1_UnityEngine_Vector2_ *)0x0) {
-    func_?();
-    pcVar2 = (code *)swi(3);
-    bVar3 = (*pcVar2)();
-    return bVar3;
-  }
-  while( true ) {
-    if ((this->fields)._size <= (int)quadWidth) {
-      return 0;
-    }
-    startPoint = (SegmentEpsilon)
-                 mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+  uStack_1._0_4_ = 0.0;
+  uStack_1._4_4_ = 0.0;
+  TorusEpsilon::TorusEpsilon_set_CylHrzRadius
+            ((TorusEpsilon *)&uStack_1,epsilon._wireEps,(MethodInfo *)0x0);
+  VVar2.y = quadHeight;
+  VVar2.x = quadWidth;
+  this = QuadMath_Calc2DQuadCornerPoints_1(quadCenter,VVar2,quadRight,quadUp,(MethodInfo *)0x0);
+  index = 0;
+  if (this != (List_1_UnityEngine_Vector2_ *)0x0) {
+    while( true ) {
+      if ((this->fields)._size <= index) {
+        return 0;
+      }
+      VVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
+              List_1_UnityEngine_Vector2__get_Item
+                        (this,index,
+                         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                        );
+      point_00 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
                  List_1_UnityEngine_Vector2__get_Item
-                           (this,(int32_t)quadWidth,
+                           (this,(index + 1) % (this->fields)._size,
                             MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
                            );
-    VVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-            List_1_UnityEngine_Vector2__get_Item
-                      (this,((int)quadWidth + 1) % (this->fields)._size,
-                       MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                      );
-    bVar3 = SegmentMath::SegmentMath_Is2DPointOnSegment
-                      ((Vector2)((ulonglong)unaff_EDI << 0x20),(Vector2)startPoint,VVar1,epsilon_00,
-                       (MethodInfo *)0x0);
-    if (bVar3 != 0) break;
-    quadWidth = (float)((int)quadWidth + 1);
-    epsilon_00 = startPoint;
+      fVar3 = uStack_1._4_4_;
+      uStack_1._4_4_ = (float)&UNK_?;
+      fVar4 = Vector2Ex::Vector2Ex_GetDistanceToSegment(point_00,VVar2,point_00,(MethodInfo *)0x0);
+      if (fVar4 <= fVar3) break;
+      index = index + 1;
+    }
+    return 1;
   }
-  return 1;
+  func_?();
+  pcVar5 = (code *)swi(3);
+  bVar6 = (*pcVar5)();
+  return bVar6;
 }
 
 
@@ -693,113 +713,119 @@ bool Assembly-CSharp.dll::RTG::QuadMath::QuadMath_Raycast
     func_?(&TypeInfo__RTG__BoxMath);
     cRam_? = '\x01';
   }
-  pfVar1 = t;
-  fStack_2 = 0.0;
+  fVar1 = 0.0;
   *t = 0.0;
-  value.y = quadUp.x * quadRight.z - quadRight.x * quadUp.z;
-  value.x = quadRight.y * quadUp.z - quadRight.z * quadUp.y;
-  value.z = quadRight.x * quadUp.y - quadUp.x * quadRight.y;
-  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                     ((Vector3 *)&stack0xffffffe4,value,(MethodInfo *)0x0);
-  t = (float *)pVVar3->z;
-  uVar4 = pVVar3->x;
-  uVar5 = pVVar3->y;
-  forward.y = (float)uVar5;
-  forward.x = (float)uVar4;
-  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                     ((Vector3 *)&stack0xffffffd8,*pVVar3,(MethodInfo *)0x0);
-  fVar6 = pVVar3->x;
-  fVar7 = pVVar3->y;
-  fVar8 = pVVar3->z;
+  QStack_2.x = 0.0;
+  QStack_2.y = 0.0;
+  QStack_2.z = 0.0;
+  QStack_2.w = 0.0;
+  VVar3.y = quadUp.x * quadRight.z - quadRight.x * quadUp.z;
+  VVar3.x = quadRight.y * quadUp.z - quadRight.z * quadUp.y;
+  VVar3.z = quadRight.x * quadUp.y - quadUp.x * quadRight.y;
+  pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                      ((Vector3 *)&stack0xffffffec,VVar3,(MethodInfo *)0x0);
+  puStack_5 = (undefined *)pVVar4->z;
+  uVar6 = pVVar4->x;
+  uVar7 = pVVar4->y;
+  forward.y = (float)uVar7;
+  forward.x = (float)uVar6;
+  pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                      ((Vector3 *)&stack0xffffff90,*pVVar4,(MethodInfo *)0x0);
+  QStack_2.x = pVVar4->x;
+  QStack_2.y = pVVar4->y;
+  QStack_2.z = pVVar4->z;
+  VVar3 = *pVVar4;
+  QStack_2.w = (float)((uint)(quadCenter.y * QStack_2.y + quadCenter.x * QStack_2.x +
+                              quadCenter.z * QStack_2.z) ^
+                       __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
   ray_01.m_Origin.y = ray.m_Origin.y;
   ray_01.m_Origin.x = ray.m_Origin.x;
   ray_01.m_Origin.z = ray.m_Origin.z;
   ray_01.m_Direction.x = ray.m_Direction.x;
   ray_01.m_Direction.y = ray.m_Direction.y;
   ray_01.m_Direction.z = ray.m_Direction.z;
-  bVar9 = UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane_Raycast
-                    ((Plane *)&stack0xffffffc4,ray_01,&fStack_2,(MethodInfo *)0x0);
-  fVar10 = quadCenter.z;
-  if (bVar9 != 0) {
-    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
-                       ((Vector3 *)&stack0xffffffd8,&ray,fStack_2,(MethodInfo *)0x0);
-    quadCenter_00.y = quadCenter.y;
-    quadCenter_00.x = quadCenter.x;
-    quadCenter_00.z = fVar10;
-    fVar8 = quadUp.x;
-    bVar9 = QuadMath_Contains3DPoint
-                      (*pVVar3,0,quadCenter_00,quadWidth,quadHeight,quadRight,quadUp,epsilon,
+  bVar8 = UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane_Raycast
+                    ((Plane *)&QStack_2,ray_01,(float *)&stack0xfffffff8,(MethodInfo *)0x0);
+  if (bVar8 != 0) {
+    pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
+                        ((Vector3 *)&stack0xffffff90,&ray,fVar1,(MethodInfo *)0x0);
+    bVar8 = QuadMath_Contains3DPoint
+                      (*pVVar4,0,quadCenter,quadWidth,quadHeight,quadRight,quadUp,epsilon,
                        (MethodInfo *)0x0);
-    fVar6 = quadRight.y;
-    fVar7 = quadRight.z;
-    if (bVar9 != 0) {
-      *pfVar1 = fStack_2;
+    if (bVar8 != 0) {
+      *t = fVar1;
       return 1;
     }
   }
-  if ((epsilon._extrudeEps != 0.0) &&
-     ((float)((uint)(ray.m_Direction.x * fVar6 + ray.m_Direction.y * fVar7 +
-                    ray.m_Direction.z * fVar8) & _UNK_?) < _UNK_?)) {
-    quadCenter.z = (float)t;
-    ray.m_Direction.z = (float)&UNK_?;
-    forward.z = (float)t;
-    t = (float *)&stack0xffffffc4;
-    quadCenter.x = (float)uVar4;
-    quadCenter.y = (float)uVar5;
-    pQVar11 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation
-                       ((Quaternion *)&stack0xffffffc4,forward,quadUp,(MethodInfo *)0x0);
-    fVar12 = epsilon._sizeEps.x + quadUp.x;
-    fVar13 = epsilon._sizeEps.y + quadUp.y;
-    fVar14 = epsilon._extrudeEps * _UNK_?;
-    fVar6 = pQVar11->x;
-    fVar7 = pQVar11->y;
-    fVar8 = pQVar11->z;
-    pfVar1 = (float *)pQVar11->w;
-    fVar15 = ray.m_Origin.x;
-    fVar16 = ray.m_Origin.y;
-    fVar17 = ray.m_Origin.z;
-    fVar18 = ray.m_Direction.x;
-    if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+  if (epsilon._extrudeEps != 0.0) {
+    ray.m_Origin.x = 0.0;
+    v1.y = ray.m_Direction.y;
+    v1.x = ray.m_Direction.x;
+    v1.z = ray.m_Direction.z;
+    fVar1 = Vector3Ex::Vector3Ex_AbsDot(v1,VVar3,(MethodInfo *)0x0);
+    ray.m_Origin.x = 0.0;
+    fVar9 = ExtrudeEpsThreshold::ExtrudeEpsThreshold_get_Get((MethodInfo *)0x0);
+    if (fVar1 < fVar9) {
+      ray.m_Direction.y = (float)puStack_5;
+      ray.m_Origin.y = (float)&QStack_2;
+      ray.m_Origin.x = (float)&UNK_?;
+      forward.z = (float)puStack_5;
+      ray.m_Origin.z = (float)uVar6;
+      ray.m_Direction.x = (float)uVar7;
+      ray.m_Direction.z = quadUp.x;
+      pQVar10 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation
+                          ((Quaternion *)ray.m_Origin.y,forward,quadUp,(MethodInfo *)0x0);
+      ray.m_Direction.y = pQVar10->x;
+      ray.m_Direction.z = pQVar10->y;
+      ray.m_Direction.x = epsilon._extrudeEps;
+      ray.m_Origin.z = (float)&stack0xffffff64;
+      ray.m_Origin.y = (float)&UNK_?;
+      quadCenter_00.y = ray.m_Direction.y;
+      quadCenter_00.x = epsilon._extrudeEps;
+      quadCenter_00.z = ray.m_Direction.z;
+      pOVar11 = QuadMath_Calc3DQuadOBB
+                          ((OBB *)ray.m_Origin.z,quadCenter_00,epsilon._4_8_,*pQVar10,epsilon,
+                           (MethodInfo *)0x0);
+      fVar12 = ray.m_Direction.z;
+      fVar13 = ray.m_Direction.y;
+      fVar1 = (pOVar11->_size).x;
+      fVar9 = (pOVar11->_size).y;
+      fStack14 = (pOVar11->_size).z;
+      fVar15 = (pOVar11->_center).x;
+      fVar16 = (pOVar11->_center).y;
+      fVar17 = (pOVar11->_center).z;
+      fVar18 = (pOVar11->_rotation).x;
+      fVar19 = (pOVar11->_rotation).y;
+      uVar20 = (pOVar11->_rotation).z;
+      uVar21 = (pOVar11->_rotation).w;
+      QStack_2.x = ray.m_Origin.x;
+      QStack_2.y = ray.m_Origin.y;
+      QStack_2.z = ray.m_Origin.z;
+      QStack_2.w = ray.m_Direction.x;
+      if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
+        func_?();
+      }
+      ray_00.m_Origin.y = QStack_2.y;
+      ray_00.m_Origin.x = QStack_2.x;
+      ray_00.m_Origin.z = QStack_2.z;
+      ray_00.m_Direction.x = QStack_2.w;
+      ray_00.m_Direction.y = fVar13;
+      ray_00.m_Direction.z = fVar12;
+      boxCenter.y = fVar16;
+      boxCenter.x = fVar15;
+      boxCenter.z = fVar17;
+      boxSize.y = fVar9;
+      boxSize.x = fVar1;
+      boxSize.z = fStack14;
+      boxRotation.y = fVar19;
+      boxRotation.x = fVar18;
+      boxRotation.z = (float)uVar20;
+      boxRotation.w = (float)uVar21;
+      bVar8 = BoxMath::BoxMath_Raycast
+                        (ray_00,boxCenter,boxSize,boxRotation,(BoxEpsilon)ZEXT812(0),
+                         (MethodInfo *)0x0);
+      return bVar8;
     }
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    t = (float *)0x0;
-    if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    ray.m_Direction.y = fVar18;
-    ray.m_Direction.x = fVar17;
-    ray.m_Origin.z = fVar16;
-    ray.m_Origin.y = fVar15;
-    t = pfVar1;
-    ray.m_Direction.z = fVar8;
-    quadCenter.z = quadCenter.y;
-    quadCenter.y = quadCenter.x;
-    ray.m_Origin.x = (float)&UNK_?;
-    ray_00.m_Origin.y = ray.m_Origin.z;
-    ray_00.m_Origin.x = ray.m_Origin.y;
-    ray_00.m_Origin.z = ray.m_Direction.x;
-    ray_00.m_Direction.x = ray.m_Direction.y;
-    ray_00.m_Direction.y = ray.m_Direction.z;
-    ray_00.m_Direction.z = (float)t;
-    boxCenter.y = quadCenter.z;
-    boxCenter.x = quadCenter.x;
-    boxCenter.z = fVar10;
-    boxSize.y = fVar13;
-    boxSize.x = fVar12;
-    boxSize.z = fVar14;
-    boxRotation.y = fVar7;
-    boxRotation.x = fVar6;
-    boxRotation.z = ray.m_Direction.z;
-    boxRotation.w = (float)t;
-    quadCenter.x = (float)&t;
-    bVar9 = BoxMath::BoxMath_Raycast_1
-                      (ray_00,(float *)&t,boxCenter,boxSize,boxRotation,(BoxEpsilon)ZEXT812(0),
-                       (MethodInfo *)0x0);
-    return bVar9;
   }
   return 0;
 }
@@ -819,239 +845,270 @@ bool Assembly-CSharp.dll::RTG::QuadMath::QuadMath_RaycastWire
                    );
     cRam_? = '\x01';
   }
-  puStack_1 = (undefined *)0x0;
+  fVar1 = 0.0;
   *t = 0.0;
-  VVar2.y = quadUp.x * quadRight.z - quadRight.x * quadUp.z;
-  VVar2.x = quadRight.y * quadUp.z - quadRight.z * quadUp.y;
-  VVar2.z = quadRight.x * quadUp.y - quadUp.x * quadRight.y;
-  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                      (&VStack_4,VVar2,(MethodInfo *)0x0);
-  puVar5 = (undefined *)pVVar3->x;
-  fVar6 = pVVar3->y;
-  pVVar7 = (VisualTreeAsset_UsingEntry *)pVVar3->z;
-  pVVar8 = pVVar7;
-  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                      ((Vector3 *)&stack0xffffffa8,*pVVar3,(MethodInfo *)0x0);
-  uVar9._0_4_ = pVVar3->x;
-  uVar9._4_4_ = pVVar3->y;
-  fVar10 = pVVar3->z;
-  forward.y = fVar6;
-  forward.x = (float)puVar5;
-  forward.z = (float)pVVar7;
+  value.y = quadUp.x * quadRight.z - quadRight.x * quadUp.z;
+  value.x = quadRight.y * quadUp.z - quadRight.z * quadUp.y;
+  value.z = quadRight.x * quadUp.y - quadUp.x * quadRight.y;
+  pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                      ((Vector3 *)&stack0xffffff90,value,(MethodInfo *)0x0);
+  puVar3 = (undefined *)pVVar2->x;
+  pVVar4 = (VisualTreeAsset_UsingEntry *)pVVar2->y;
+  pfVar5 = (float *)pVVar2->z;
+  pfVar6 = pfVar5;
+  pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                      ((Vector3 *)&stack0xffffffa0,*pVVar2,(MethodInfo *)0x0);
+  fVar7 = pVVar2->x;
+  fVar8 = pVVar2->y;
+  pfVar9 = (float *)pVVar2->z;
+  forward.y = (float)pVVar4;
+  forward.x = (float)puVar3;
+  forward.z = (float)pfVar5;
   upwards.y = quadUp.y;
   upwards.x = quadUp.x;
   upwards.z = quadUp.z;
-  VStack_4._0_8_ = uVar9;
-  VStack_4.z = fVar10;
-  pQVar11 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation
-                      ((Quaternion *)&stack0xffffffb8,forward,upwards,(MethodInfo *)0x0);
-  pSVar12 = (String *)pQVar11->x;
-  pSVar13 = (String *)pQVar11->y;
-  pVVar14 = (VisualTreeAsset *)pQVar11->z;
-  fVar15 = pQVar11->w;
+  pQVar10 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation
+                      ((Quaternion *)&stack0xffffff70,forward,upwards,(MethodInfo *)0x0);
+  fVar11 = pQVar10->x;
+  fVar12 = pQVar10->y;
+  fVar13 = pQVar10->z;
+  fVar14 = pQVar10->w;
   ray_00.m_Origin.y = ray.m_Origin.y;
   ray_00.m_Origin.x = ray.m_Origin.x;
   ray_00.m_Origin.z = ray.m_Origin.z;
   ray_00.m_Direction.x = ray.m_Direction.x;
   ray_00.m_Direction.y = ray.m_Direction.y;
   ray_00.m_Direction.z = ray.m_Direction.z;
-  bVar16 = UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane_Raycast
-                     ((Plane *)&stack0xffffff84,ray_00,(float *)&puStack_1,(MethodInfo *)0x0);
-  if (bVar16 == 0) {
+  bVar15 = UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane_Raycast
+                     ((Plane *)&stack0xffffffb0,ray_00,(float *)&stack0xffffffd8,(MethodInfo *)0x0);
+  if (bVar15 == 0) {
 code_?:
-    if ((epsilon._extrudeEps != 0.0) &&
-       ((float)((uint)(ray.m_Direction.x * (float)uVar9 + ray.m_Direction.y * uVar9._4_4_ +
-                      ray.m_Direction.z * fVar10) & _UNK_?) < _UNK_?)) {
-      forward_00.y = fVar6;
-      forward_00.x = (float)puVar5;
-      forward_00.z = (float)pVVar8;
-      upwards_00.y = quadUp.y;
-      upwards_00.x = quadUp.x;
-      upwards_00.z = quadUp.z;
-      pQVar11 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation
-                          ((Quaternion *)&stack0xffffff70,forward_00,upwards_00,(MethodInfo *)0x0);
-      quadCenter_00.y = quadCenter.y;
-      quadCenter_00.x = quadCenter.x;
-      quadCenter_00.z = quadCenter.z;
-      quadSize_00.y = quadHeight;
-      quadSize_00.x = quadWidth;
-      epsilon_00._sizeEps.y = epsilon._sizeEps.y;
-      epsilon_00._sizeEps.x = epsilon._sizeEps.x;
-      epsilon_00._extrudeEps = epsilon._extrudeEps;
-      epsilon_00._wireEps = epsilon._wireEps;
-      pOVar17 = QuadMath_Calc3DQuadOBB
-                          ((OBB *)&stack0xffffff10,quadCenter_00,quadSize_00,*pQVar11,epsilon_00,
-                           (MethodInfo *)0x0);
-      uVar9._0_4_ = (pOVar17->_size).x;
-      fVar6 = (pOVar17->_size).y;
-      uVar9._4_4_ = (pOVar17->_size).z;
-      fVar15 = (pOVar17->_center).x;
-      fVar18 = (pOVar17->_center).y;
-      fVar19 = (pOVar17->_center).z;
-      fVar20 = (pOVar17->_rotation).x;
-      fVar21 = (pOVar17->_rotation).y;
-      uVar22 = (pOVar17->_rotation).z;
-      fVar10 = (pOVar17->_rotation).w;
-      fVar23 = ray.m_Origin.x;
-      fVar24 = ray.m_Origin.y;
-      fVar25 = ray.m_Origin.z;
-      fVar26 = ray.m_Direction.x;
-      if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+    if (epsilon._extrudeEps != 0.0) {
+      v1.y = ray.m_Direction.y;
+      v1.x = ray.m_Direction.x;
+      v1.z = ray.m_Direction.z;
+      v2.y = fVar8;
+      v2.x = fVar7;
+      v2.z = (float)pfVar9;
+      fVar7 = Vector3Ex::Vector3Ex_AbsDot(v1,v2,(MethodInfo *)0x0);
+      fVar8 = ExtrudeEpsThreshold::ExtrudeEpsThreshold_get_Get((MethodInfo *)0x0);
+      if (fVar7 < fVar8) {
+        forward_00.y = (float)pVVar4;
+        forward_00.x = (float)puVar3;
+        forward_00.z = (float)pfVar6;
+        upwards_00.y = quadUp.y;
+        upwards_00.x = quadUp.x;
+        upwards_00.z = quadUp.z;
+        pQVar10 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation
+                            ((Quaternion *)&stack0xffffff70,forward_00,upwards_00,(MethodInfo *)0x0)
+        ;
+        quadCenter_00.y = quadCenter.y;
+        quadCenter_00.x = quadCenter.x;
+        quadCenter_00.z = quadCenter.z;
+        quadSize_00.y = quadHeight;
+        quadSize_00.x = quadWidth;
+        epsilon_00._sizeEps.y = epsilon._sizeEps.y;
+        epsilon_00._sizeEps.x = epsilon._sizeEps.x;
+        epsilon_00._extrudeEps = epsilon._extrudeEps;
+        epsilon_00._wireEps = epsilon._wireEps;
+        pOVar16 = QuadMath_Calc3DQuadOBB
+                            ((OBB *)&stack0xffffff00,quadCenter_00,quadSize_00,*pQVar10,epsilon_00,
+                             (MethodInfo *)0x0);
+        fVar7 = (pOVar16->_size).x;
+        fVar8 = (pOVar16->_size).y;
+        fVar11 = (pOVar16->_size).z;
+        fVar12 = (pOVar16->_center).x;
+        fVar13 = (pOVar16->_center).y;
+        fVar1 = (pOVar16->_center).z;
+        fVar17 = (pOVar16->_rotation).x;
+        fVar18 = (pOVar16->_rotation).y;
+        uVar19 = (pOVar16->_rotation).z;
+        fVar14 = (pOVar16->_rotation).w;
+        fVar20 = ray.m_Origin.x;
+        fVar21 = ray.m_Origin.y;
+        fVar22 = ray.m_Origin.z;
+        fVar23 = ray.m_Direction.x;
+        if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
+          func_?();
+        }
+        ray_01.m_Origin.y = fVar21;
+        ray_01.m_Origin.x = fVar20;
+        ray_01.m_Origin.z = fVar22;
+        ray_01.m_Direction.x = fVar23;
+        ray_01.m_Direction.y = fVar22;
+        ray_01.m_Direction.z = fVar23;
+        boxCenter.y = fVar13;
+        boxCenter.x = fVar12;
+        boxCenter.z = fVar1;
+        boxSize.y = fVar8;
+        boxSize.x = fVar7;
+        boxSize.z = fVar11;
+        boxRotation.y = fVar18;
+        boxRotation.x = fVar17;
+        boxRotation.z = (float)uVar19;
+        boxRotation.w = fVar14;
+        bVar15 = BoxMath::BoxMath_Raycast
+                           (ray_01,boxCenter,boxSize,boxRotation,(BoxEpsilon)ZEXT812(0),
+                            (MethodInfo *)0x0);
+        return bVar15;
       }
-      ray_01.m_Origin.y = fVar24;
-      ray_01.m_Origin.x = fVar23;
-      ray_01.m_Origin.z = fVar25;
-      ray_01.m_Direction.x = fVar26;
-      ray_01.m_Direction.y = fVar19;
-      ray_01.m_Direction.z = (float)uVar9;
-      boxCenter.y = fVar18;
-      boxCenter.x = fVar15;
-      boxCenter.z = fVar19;
-      boxSize.y = fVar6;
-      boxSize.x = (float)uVar9;
-      boxSize.z = uVar9._4_4_;
-      boxRotation.y = fVar21;
-      boxRotation.x = fVar20;
-      boxRotation.z = (float)uVar22;
-      boxRotation.w = fVar10;
-      bVar16 = BoxMath::BoxMath_Raycast
-                         (ray_01,boxCenter,boxSize,boxRotation,(BoxEpsilon)ZEXT812(0),
-                          (MethodInfo *)0x0);
-      return bVar16;
     }
     return 0;
   }
-  quadUp.x = (float)pVVar14;
-  quadUp.y = fVar15;
-  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
-                      ((Vector3 *)&stack0xffffffe0,&ray,(float)puStack_1,(MethodInfo *)0x0);
-  VStack_4.x = pVVar3->x;
-  VStack_4.y = pVVar3->y;
-  fVar15 = pVVar3->z;
+  quadUp.x = fVar13;
+  quadUp.y = fVar14;
+  pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
+                      ((Vector3 *)&stack0xffffffe0,&ray,fVar1,(MethodInfo *)0x0);
+  pfVar6 = (float *)pVVar2->x;
+  fVar13 = pVVar2->y;
+  fVar8 = pVVar2->z;
   quadSize.y = quadHeight;
   quadSize.x = quadWidth;
-  quadRotation.y = (float)pSVar13;
-  quadRotation.x = (float)pSVar12;
+  quadRotation.y = fVar12;
+  quadRotation.x = fVar11;
   quadRotation.z = quadUp.x;
   quadRotation.w = quadUp.y;
-  this_00 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
-            QuadMath_Calc3DQuadCornerPoints(quadCenter,quadSize,quadRotation,(MethodInfo *)0x0);
-  if (this_00 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
+  epsilon._sizeEps.y =
+       (float)QuadMath_Calc3DQuadCornerPoints(quadCenter,quadSize,quadRotation,(MethodInfo *)0x0);
+  if ((List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)epsilon._sizeEps.y ==
+      (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
     func_?();
-    pcVar27 = (code *)swi(3);
-    bVar16 = (*pcVar27)();
-    return bVar16;
+    pcVar24 = (code *)swi(3);
+    bVar15 = (*pcVar24)();
+    return bVar15;
   }
-  pVVar8 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+  pVVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+           VisualTreeAsset+UsingEntry]::
+           List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
+                     ((VisualTreeAsset_UsingEntry *)&stack0xffffffb0,
+                      (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
+                      epsilon._sizeEps.y,0,
+                      MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
+                     );
+  uVar25._0_4_ = (float)pVVar4->alias;
+  uVar25._4_4_ = (float)pVVar4->path;
+  pVVar26 = pVVar4->asset;
+  pVVar4 = (VisualTreeAsset_UsingEntry *)&stack0xffffffb0;
+  puVar3 = &UNK_?;
+  fVar7 = fVar13;
+  pVVar27 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
             VisualTreeAsset+UsingEntry]::
             List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                      ((VisualTreeAsset_UsingEntry *)&stack0xffffffb8,this_00,0,
+                      (pVVar4,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
+                              epsilon._sizeEps.y,1,
                        MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                       );
-  fVar18 = (float)pVVar8->alias;
-  uVar28 = pVVar8->path;
-  quadHeight = (float)pVVar8->asset;
-  pVVar8 = (VisualTreeAsset_UsingEntry *)&stack0xffffffb8;
-  quadWidth = (float)uVar28;
-  pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-            VisualTreeAsset+UsingEntry]::
-            List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                      (pVVar8,this_00,1,
-                       MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                      );
-  fVar6 = VStack_4.x;
-  puVar5 = &UNK_?;
-  point_01.z = fVar15;
-  point_01.x = VStack_4.x;
-  point_01.y = VStack_4.y;
-  point0_01.y = quadWidth;
-  point0_01.x = fVar18;
-  point0_01.z = quadHeight;
-  fVar15 = Vector3Ex::Vector3Ex_GetDistanceToSegment
-                    (point_01,point0_01,(Vector3)*pVVar7,(MethodInfo *)0x0);
-  if (epsilon._wireEps < fVar15) {
-    pVVar7 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+  fVar11 = (float)pVVar27->alias;
+  fVar12 = (float)pVVar27->path;
+  point_01.y = fVar7;
+  point_01.x = (float)pfVar6;
+  point_01.z = fVar8;
+  point0_01.z = (float)pVVar26;
+  point0_01.x = (float)uVar25;
+  point0_01.y = SUB84(uVar25,4);
+  pfVar5 = pfVar6;
+  quadCenter.x = fVar7;
+  quadCenter.y = fVar8;
+  fVar13 = Vector3Ex::Vector3Ex_GetDistanceToSegment
+                    (point_01,point0_01,(Vector3)*pVVar27,(MethodInfo *)0x0);
+  if (epsilon._wireEps < fVar13) {
+    pVVar27 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                        ((VisualTreeAsset_UsingEntry *)&stack0xffffffb8,this_00,1,
+                        ((VisualTreeAsset_UsingEntry *)&stack0xffffffb0,
+                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
+                         epsilon._sizeEps.y,1,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
-    this = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)pVVar7->alias;
-    fVar15 = (float)pVVar7->path;
-    pVVar14 = pVVar7->asset;
-    pVVar7 = (VisualTreeAsset_UsingEntry *)&stack0xffffffb8;
-    pVVar29 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+    uVar28._0_4_ = (float)pVVar27->alias;
+    uVar28._4_4_ = (float)pVVar27->path;
+    pVVar26 = pVVar27->asset;
+    pVVar27 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
               VisualTreeAsset+UsingEntry]::
               List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                        (pVVar7,this,(int32_t)fVar15,
+                        ((VisualTreeAsset_UsingEntry *)&stack0xffffffb0,
+                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
+                         epsilon._sizeEps.y,2,
                          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                         );
-    uVar30 = pVVar29->alias;
-    uVar31 = pVVar29->path;
-    ray.m_Origin.x = (float)pVVar29->asset;
-    ray.m_Origin.y = 0.0;
-    point_02.z = (float)pVVar7;
-    point_02.x = VStack_4.x;
-    point_02.y = VStack_4.y;
-    point0_02.y = fVar15;
-    point0_02.x = (float)this;
-    point0_02.z = (float)pVVar14;
-    fVar32 = (float)uVar31;
-    VVar2.x = (float)uVar30;
-    VVar2 = (Vector3)CONCAT84(VVar2._0_8_,VVar2.x);
-    fVar15 = Vector3Ex::Vector3Ex_GetDistanceToSegment(point_02,point0_02,VVar2,(MethodInfo *)0x0);
-    if (epsilon._wireEps < fVar15) {
-      pVVar29 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+    point_02.y = quadCenter.x;
+    point_02.x = (float)pfVar5;
+    point_02.z = quadCenter.y;
+    point0_02.z = (float)pVVar26;
+    point0_02.x = (float)uVar28;
+    point0_02.y = SUB84(uVar28,4);
+    pfVar9 = pfVar5;
+    fVar1 = quadCenter.x;
+    fVar13 = Vector3Ex::Vector3Ex_GetDistanceToSegment
+                      (point_02,point0_02,(Vector3)*pVVar27,(MethodInfo *)0x0);
+    if (epsilon._wireEps < fVar13) {
+      ray.m_Direction.y = (float)&stack0xffffffb0;
+      ray.m_Direction.x = (float)&UNK_?;
+      ray.m_Direction.z = epsilon._sizeEps.y;
+      pVVar27 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
                 VisualTreeAsset+UsingEntry]::
                 List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                          ((VisualTreeAsset_UsingEntry *)&stack0xffffffb8,this_00,2,
+                          ((VisualTreeAsset_UsingEntry *)ray.m_Direction.y,
+                           (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
+                           epsilon._sizeEps.y,2,
                            MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                           );
-      fVar19 = (float)pVVar29->alias;
-      fVar20 = (float)pVVar29->path;
-      pVVar14 = pVVar29->asset;
-      quadCenter.y = (float)&stack0xffffffb8;
-      quadCenter.x = (float)&UNK_?;
-      pVVar29 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
+      uVar29._0_4_ = (float)pVVar27->alias;
+      uVar29._4_4_ = (float)pVVar27->path;
+      pVVar26 = pVVar27->asset;
+      ray.m_Direction.y = (float)&stack0xffffffb0;
+      ray.m_Direction.x = (float)&UNK_?;
+      ray.m_Direction.z = epsilon._sizeEps.y;
+      t = pfVar5;
+      pVVar27 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
                 VisualTreeAsset+UsingEntry]::
                 List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                          ((VisualTreeAsset_UsingEntry *)quadCenter.y,this_00,3,
+                          ((VisualTreeAsset_UsingEntry *)ray.m_Direction.y,
+                           (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
+                           epsilon._sizeEps.y,3,
                            MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
                           );
-      uVar33 = pVVar29->path;
-      epsilon._sizeEps.x = (float)pVVar29->asset;
-      epsilon._sizeEps.y = 0.0;
-      quadCenter.z = (float)&UNK_?;
-      point.z = (float)pVVar7;
-      point.x = VStack_4.x;
-      point.y = VStack_4.y;
-      point0.y = fVar20;
-      point0.x = fVar19;
-      point0.z = (float)pVVar14;
-      fVar15 = Vector3Ex::Vector3Ex_GetDistanceToSegment
-                        (point,point0,(Vector3)*pVVar29,(MethodInfo *)0x0);
-      if (epsilon._wireEps < fVar15) {
-        puVar34 = (undefined8 *)func_?();
-        fVar15 = *(float *)(puVar34 + 1);
-        fVar18 = (float)*puVar34;
-        fVar19 = (float)((ulonglong)*puVar34 >> 0x20);
-        epsilon._wireEps = (float)&UNK_?;
-        pVVar3 = (Vector3 *)func_?();
-        point_00.z = (float)pVVar7;
-        point_00.x = VStack_4.x;
-        point_00.y = VStack_4.y;
-        point0_00.y = fVar19;
-        point0_00.x = fVar18;
-        point0_00.z = fVar15;
-        fVar15 = Vector3Ex::Vector3Ex_GetDistanceToSegment
-                          (point_00,point0_00,*pVVar3,(MethodInfo *)0x0);
-        quadUp.z = (float)uVar33;
-        if (4.392945e-29 < fVar15) goto code_?;
+      quadCenter.z = (float)uVar29;
+      ray.m_Direction.z = (float)&UNK_?;
+      point.y = quadCenter.x;
+      point.x = (float)t;
+      point.z = quadCenter.y;
+      point0.z = (float)pVVar26;
+      point0.x = (float)uVar29;
+      point0.y = SUB84(uVar29,4);
+      pfVar5 = t;
+      fVar13 = quadCenter.x;
+      fVar14 = quadCenter.y;
+      fVar17 = Vector3Ex::Vector3Ex_GetDistanceToSegment
+                         (point,point0,(Vector3)*pVVar27,(MethodInfo *)0x0);
+      if (epsilon._wireEps < fVar17) {
+        puVar30 = (undefined8 *)func_?();
+        pMVar31 = 
+        MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_;
+        epsilon._wireEps =
+             (float)
+             MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_;
+        epsilon._extrudeEps = 0.0;
+        uVar25 = *puVar30;
+        fVar17 = *(float *)(puVar30 + 1);
+        epsilon._sizeEps.x = (float)&stack0xffffffb0;
+        quadUp.z = (float)&UNK_?;
+        pVVar2 = (Vector3 *)func_?();
+        point_00.y = fVar13;
+        point_00.x = (float)pfVar5;
+        point_00.z = fVar14;
+        point0_00.z = fVar17;
+        point0_00.x = (float)uVar25;
+        point0_00.y = SUB84(uVar25,4);
+        fVar13 = Vector3Ex::Vector3Ex_GetDistanceToSegment
+                          (point_00,point0_00,*pVVar2,(MethodInfo *)0x0);
+        quadWidth = fVar11;
+        quadHeight = fVar12;
+        if ((float)pMVar31 < fVar13) goto code_?;
       }
     }
   }
-  *t = (float)puStack_1;
+  *t = fVar1;
   return 1;
 }
 

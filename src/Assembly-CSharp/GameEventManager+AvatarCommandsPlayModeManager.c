@@ -32,6 +32,22 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::
 }
 
 
+/* Void RemoveFromGame() */
+
+void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::
+     GameEventManager_AvatarCommandsPlayModeManager_RemoveFromGame
+               (GameEventManager_AvatarCommandsPlayModeManager *this,MethodInfo *method)
+
+{
+  if ((this->fields).OnRemoveFromGame != (Action *)0x0) {
+    pAVar1 = (this->fields).OnRemoveFromGame;
+    (*(pAVar1->fields)._._.invoke_impl)
+              ((pAVar1->fields)._._.method_code,(pAVar1->fields)._._.method);
+  }
+  return;
+}
+
+
 /* Void Respawn() */
 
 void Assembly-CSharp.dll::GameEventManager+AvatarCommandsPlayModeManager::

@@ -1142,7 +1142,7 @@ void Assembly-CSharp.dll::MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator__ct
               UseInteractor::UseInteractor__ctor
                         (pUVar9,(MVWorldObjectClient *)this,pGVar8,0,(Collider *)0x0,
                          (Func_2_Int32_Boolean_ *)0x0,
-                         (Func_3_Int32_MVInteractableBase_Boolean_ *)0x0,2.5,0,(MethodInfo *)0x0);
+                         (Func_3_Int32_MVInteractableBase_Boolean_ *)0x0,2.5,0,1,(MethodInfo *)0x0);
               (this->fields).useInteractor = pUVar9;
               func_?(&(this->fields).useInteractor,pUVar9);
               pMVar5 = (this->fields).spawnRoleCreatorObject;

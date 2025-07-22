@@ -202,28 +202,17 @@ void Assembly-CSharp.dll::MVMovingPlatform::MVMovingPlatform_OnStateChanged
 {
   this_00 = (this->fields)._._CubeModel_k__BackingField;
   if (this_00 != (MVCubeModelInstance *)0x0) {
-    bVar1 = MVCubeModelInstance::MVCubeModelInstance_IsLodVisible
-                      (this_00,cullingGroupEvent,(MethodInfo *)0x0);
+    newVisible = MVCubeModelInstance::MVCubeModelInstance_IsLodVisible
+                           (this_00,cullingGroupEvent,(MethodInfo *)0x0);
     this_01 = (this->fields)._.movableVisualization;
     if (this_01 != (MovableVisualization *)0x0) {
-      bVar2 = (this_01->fields).isVisible;
-      if (bVar1 == 0) {
-        if (bVar2 != 0) {
-          MovableVisualization::MovableVisualization_SetMeshRenderers
-                    (this_01,0,(this_01->fields).cmbClone,(MethodInfo *)0x0);
-        }
-      }
-      else if ((bVar2 == 0) && ((this_01->fields).canBeVisible != 0)) {
-        MovableVisualization::MovableVisualization_SetMeshRenderers
-                  (this_01,1,(this_01->fields).cmbClone,(MethodInfo *)0x0);
-        return;
-      }
+      MovableVisualization::MovableVisualization_ChangeLOD(this_01,newVisible,(MethodInfo *)0x0);
       return;
     }
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -410,21 +399,68 @@ void Assembly-CSharp.dll::MVMovingPlatform::MVMovingPlatform__ctor
     func_?(&TypeInfo__UnityEngine__Vector3,unaff_EBP);
     cRam_? = '\x01';
   }
-  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
-  fVar2 = (pVVar1->zeroVector).y;
-  fVar3 = (pVVar1->zeroVector).z;
-  (this->fields)._.localPos.x = (pVVar1->zeroVector).x;
-  (this->fields)._.localPos.y = fVar2;
-  (this->fields)._.localPos.z = fVar3;
+  bVar1 = cRam_? == '\0';
+  pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar3 = (pVVar2->zeroVector).y;
+  fVar4 = (pVVar2->zeroVector).z;
+  (this->fields)._.localPos.x = (pVVar2->zeroVector).x;
+  (this->fields)._.localPos.y = fVar3;
+  (this->fields)._.localPos.z = fVar4;
   (this->fields)._.distance = 5.0;
   (this->fields)._.parentMoverID = -1;
   (this->fields)._.isVisible = 1;
-  MVBlueprintBase::MVBlueprintBase__ctor
-            ((MVBlueprintBase *)this,data,worldObjects,(MethodInfo *)0x0);
-  uVar4 = *(undefined4 *)((int)&(this->fields)._._._._.interactionFlags + 4);
-  piVar5 = &(this->fields)._._._._.interactionFlags;
-  *(uint *)piVar5 = (uint)*piVar5 | 0x2000;
-  *(undefined4 *)((int)&(this->fields)._._._._.interactionFlags + 4) = uVar4;
+  if (bVar1) {
+    func_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                   );
+    func_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                   );
+    cRam_? = '\x01';
+  }
+  this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+             *)func_?(
+                              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                              );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
+  StyleComplexSelector+PseudoStateData]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+            (this_01,
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+            );
+  (this->fields)._._.idChildMap = (Dictionary_2_System_Object_System_Object_ *)this_01;
+  func_?(&(this->fields)._._.idChildMap,this_01);
+  if (cRam_? == '\0') {
+    func_?();
+    func_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>);
+    func_?(&TypeInfo__MVWorldObjectClient);
+    cRam_? = '\x01';
+  }
+  this_02 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *
+            )func_?();
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text
+  ::TextResourceManager+FontAssetRef]::
+  Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
+            (this_02,
+             MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__Dictionary__
+            );
+  (this->fields)._._._.children = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)this_02;
+  func_?(&(this->fields)._._._.children,this_02);
+  if ((TypeInfo__MVWorldObjectClient->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  MVWorldObjectClient::MVWorldObjectClient__ctor_2
+            ((MVWorldObjectClient *)this,(Dictionary_2_System_Object_System_Object_ *)0x0,
+             worldObjects,(MethodInfo *)0x0);
+  uVar5 = *(undefined4 *)((int)&(this->fields)._._._._.interactionFlags + 4);
+  piVar6 = &(this->fields)._._._._.interactionFlags;
+  *(uint *)piVar6 = (uint)*piVar6 | 0x82101;
+  *(undefined4 *)((int)&(this->fields)._._._._.interactionFlags + 4) = uVar5;
+  MVBlueprintBase::MVBlueprintBase_MapDataToFields((MVBlueprintBase *)this,(MethodInfo *)0x0);
+  uVar5 = *(undefined4 *)((int)&(this->fields)._._._._.interactionFlags + 4);
+  piVar6 = &(this->fields)._._._._.interactionFlags;
+  *(uint *)piVar6 = (uint)*piVar6 | 0x2000;
+  *(undefined4 *)((int)&(this->fields)._._._._.interactionFlags + 4) = uVar5;
   return;
 }
 

@@ -28,7 +28,7 @@ void Assembly-CSharp.dll::ChunkInstances::ChunkInstances_Add
       uStack2 = (undefined2)((uint)this_01 >> 0x10);
       ChunkInstancesChanged::ChunkInstancesChanged__ctor
                 (this_01,ChunkInstancesChanged_ChangeType__Enum_Added,intVector,(MethodInfo *)0x0);
-      uStack2 = 0x102f;
+      uStack2 = 0x1030;
       (*(pEVar1->fields)._._.invoke_impl)();
     }
     return;
@@ -309,7 +309,7 @@ void Assembly-CSharp.dll::ChunkInstances::ChunkInstances_Remove
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__ChunkInstancesChanged);
-    func_?(0xe0d0);
+    func_?(0x11dc);
     cRam_? = '\x01';
   }
   pEVar1 = (this->fields).Changed;

@@ -1,9 +1,9 @@
 
 /* Boolean MoveNext() */
 
-bool Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun+<FetchFOV>d__52::
-     PickupItemCustomGun_FetchFOV_d_52_MoveNext
-               (PickupItemCustomGun_FetchFOV_d_52 *this,MethodInfo *method)
+bool Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun+<FetchFOV>d__54::
+     PickupItemCustomGun_FetchFOV_d_54_MoveNext
+               (PickupItemCustomGun_FetchFOV_d_54 *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -67,9 +67,9 @@ bool Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun+<FetchFO
 
 /* Void System.Collections.IEnumerator.Reset() */
 
-void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun+<FetchFOV>d__52::
-     PickupItemCustomGun_FetchFOV_d_52_System_Collections_IEnumerator_Reset
-               (PickupItemCustomGun_FetchFOV_d_52 *this,MethodInfo *method)
+void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun+<FetchFOV>d__54::
+     PickupItemCustomGun_FetchFOV_d_54_System_Collections_IEnumerator_Reset
+               (PickupItemCustomGun_FetchFOV_d_54 *this,MethodInfo *method)
 
 {
   uVar1 = func_?(&TypeInfo__System__NotSupportedException);
@@ -77,7 +77,7 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun+<FetchFO
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
   func_?(&
-                  MethodInfo__Assets__Scripts__Pickups__PickupItemCustomGun___FetchFOV_d__52__System_Collections_IEnumerator_Reset__
+                  MethodInfo__Assets__Scripts__Pickups__PickupItemCustomGun___FetchFOV_d__54__System_Collections_IEnumerator_Reset__
                  );
   func_?(this_00);
   pcVar2 = (code *)swi(3);

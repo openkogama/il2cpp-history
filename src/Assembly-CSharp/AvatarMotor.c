@@ -54,89 +54,126 @@ Vector3 * Assembly-CSharp.dll::AvatarMotor::AvatarMotor_ApplyInputVelocityChange
                     Vector3 inputDirection,MethodInfo *method)
 
 {
-  pMStack_1 = (MethodInfo *)
-               AvatarMotor_GetSpeed(this,(this->fields).speed,inputDirection,(MethodInfo *)0x0);
-  iVar2 = func_?();
-  dVar3 = (double)*(float *)(iVar2 + 4);
-  func_?();
+  method_00 = this;
+  AvatarMotor_GetSpeed(this,(this->fields).speed,inputDirection,(MethodInfo *)0x0);
+  VStack_1.x = (this->fields).velocityPrevFrame.x;
+  VStack_1.y = (this->fields).velocityPrevFrame.y;
+  VStack_1.z = (this->fields).velocityPrevFrame.z;
+  VStack_2._0_8_ = VStack_1._0_8_;
+  VStack_2.z = VStack_1.z;
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  dVar3 = (double)(VStack_1.y * VStack_1.y + VStack_1.x * VStack_1.x +
+                   VStack_1.z * VStack_1.z);
+  if (dVar3 < 0.0) {
+    func_?();
+  }
+  else {
+    dVar3 = SQRT(dVar3);
+  }
+  fVar4 = (float)dVar3;
+  if (_UNK_? < fVar4) {
+    VStack_2.z = VStack_2.z / fVar4;
+    VStack_2.y = VStack_2.y / fVar4;
+    VStack_2.x = VStack_2.x / fVar4;
+    VStack_1.z = VStack_2.z;
+  }
+  else {
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    pVVar5 = TypeInfo__UnityEngine__Vector3->static_fields;
+    VStack_2.x = (pVVar5->zeroVector).x;
+    VStack_2.y = (pVVar5->zeroVector).y;
+    VStack_2.z = (pVVar5->zeroVector).z;
+  }
   this_00 = (this->fields).slopeSpeedMultiplier;
   if (this_00 != (AnimationCurve *)0x0) {
+    dVar3 = (double)VStack_2.y;
+    func_?();
     fVar4 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                       (this_00,(float)dVar3 * _UNK_?,(MethodInfo *)0x0);
-    pMStack_1 = (MethodInfo *)(fVar4 * (float)pMStack_1);
-    fStack_5 = inputDirection.z * (float)pMStack_1;
-    (this->fields).speed = (float)pMStack_1;
-    uStack_6 = CONCAT44(inputDirection.y * (float)pMStack_1,inputDirection.x * (float)pMStack_1);
-    pMVar7 = (this->fields)._.groundState;
-    if (pMVar7 != (MVGroundState *)0x0) {
-      hVelocity.y = inputDirection.y * (float)pMStack_1;
-      hVelocity.x = inputDirection.x * (float)pMStack_1;
-      hVelocity.z = fStack_5;
-      pVVar8 = MVRigidBody::MVRigidBody_AdjustGroundVelocityToNormal
-                         (&VStack_9,hVelocity,(pMVar7->fields).groundNormal,(MethodInfo *)0x0);
-      uStack_10._0_4_ = pVVar8->x;
-      uStack_10._4_4_ = pVVar8->y;
-      fStack_11 = pVVar8->z;
-      fStack_12 = (float)(undefined4)uStack_10 - velocity.x;
-      VStack_9.x = velocity.x;
-      VStack_9.y = 0.0;
-      VStack_9.z = 0.0;
-      uStack_13 = 0;
-      fStack_14 = (float)uStack_10._4_4_ - velocity.y;
-      pMStack_15 = (MethodInfo *)(fStack_11 - velocity.z);
-      pMVar7 = (this->fields)._.groundState;
-      pAVar16 = (this->fields).interactableLocal;
-      uStack_6 = uStack_10;
-      fStack_5 = fStack_11;
-      if ((pMVar7 != (MVGroundState *)0x0) && ((pMVar7->fields).groundMaterial != (MVMaterial *)0x0)
-         ) {
-        if (pAVar16 != (AvatarInteractable *)0x0) {
-          pAVar17 = pAVar16->klass;
-          VStack_9.x = (float)(pAVar17->vtable).ClearModifiers.methodPtr;
-          pMStack_1 = (pAVar17->vtable).HandleModifierEffect.method;
-          fVar18 = (float10)(*(code *)pMStack_1)();
-          pMStack_1 = (MethodInfo *)(float)fVar18;
-          pMStack_1 = (MethodInfo *)
-                       UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::Experimental::
-                       Easing::Easing_InQuad((float)pMStack_1,(MethodInfo *)0x0);
-          fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
+                       (this_00,(float)dVar3 * _UNK_?,(MethodInfo *)method_00);
+    fVar4 = fVar4 * unaff_ESI;
+    (this->fields).speed = fVar4;
+    pMVar6 = (this->fields)._.groundState;
+    if (pMVar6 != (MVGroundState *)0x0) {
+      hVelocity.y = inputDirection.y * fVar4;
+      hVelocity.x = inputDirection.x * fVar4;
+      hVelocity.z = inputDirection.z * fVar4;
+      pVVar7 = MVRigidBody::MVRigidBody_AdjustGroundVelocityToNormal
+                         (&VStack_1,hVelocity,(pMVar6->fields).groundNormal,(MethodInfo *)0x0);
+      VStack_1.x = pVVar7->x;
+      VStack_1.y = pVVar7->y;
+      VStack_1.z = pVVar7->z;
+      fVar8 = VStack_1.x - velocity.x;
+      fStack_9 = velocity.x;
+      fStack_10 = 0.0;
+      uStack_11 = 0;
+      fStack_12 = 0.0;
+      fVar4 = VStack_1.y - velocity.y;
+      fVar13 = VStack_1.z - velocity.z;
+      pMVar6 = (this->fields)._.groundState;
+      pAVar14 = (this->fields).interactableLocal;
+      VStack_2._0_8_ = VStack_1._0_8_;
+      VStack_2.z = VStack_1.z;
+      if ((pMVar6 != (MVGroundState *)0x0) &&
+         (pMVar15 = (pMVar6->fields).groundMaterial, VStack_2.z = VStack_1.z,
+         pMVar15 != (MVMaterial *)0x0)) {
+        fStack_16 = (pMVar15->fields)._PhysicalProperties_k__BackingField.friction;
+        fStack_17 = (pMVar15->fields)._PhysicalProperties_k__BackingField.bouncyness;
+        fStack_18 = (pMVar15->fields)._PhysicalProperties_k__BackingField.softness;
+        fStack_19 = (pMVar15->fields)._PhysicalProperties_k__BackingField.staticFriction;
+        VStack_2.z = VStack_1.z;
+        if (pAVar14 != (AvatarInteractable *)0x0) {
+          pMVar20 = (pAVar14->klass->vtable).HandleModifierEffect.method;
+          VStack_2.z = VStack_1.z;
+          fVar21 = (float10)(*(code *)pMVar20)();
+          UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::Experimental::Easing::
+          Easing_InQuad((float)fVar21,(MethodInfo *)0x0);
+          fVar22 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
                              ((MethodInfo *)0x0);
-          pMStack_1 = (MethodInfo *)((fVar4 * (float)pMStack_1) / _UNK_?);
-          fVar4 = VStack_9.x + fStack_12 * (float)pMStack_1;
-          fVar19 = velocity.y + fStack_14 * (float)pMStack_1;
-          fVar20 = velocity.z + (float)pMStack_15 * (float)pMStack_1;
-          pMVar7 = (this->fields)._.groundState;
-          pAVar16 = (this->fields).interactableLocal;
-          VStack_9.x = fVar4;
-          fStack_11 = fVar20;
-          fStack_21 = fVar19;
-          if ((pMVar7 != (MVGroundState *)0x0) &&
-             ((pMVar7->fields).groundMaterial != (MVMaterial *)0x0)) {
-            if (pAVar16 != (AvatarInteractable *)0x0) {
-              pMStack_15 = (pAVar16->klass->vtable).HandleModifierEffect.method;
-              fVar18 = (float10)(*(code *)pMStack_15)();
-              pMStack_15 = (MethodInfo *)(float)fVar18;
-              pMStack_15 = (MethodInfo *)
-                           UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::Experimental::
-                           Easing::Easing_InQuad((float)pMStack_15,(MethodInfo *)0x0);
-              if ((float)pMStack_15 < _UNK_?) {
-                fVar18 = (float10)func_?();
-                pMStack_15 = (MethodInfo *)(float)fVar18;
-                if ((float)pMStack_15 != _UNK_?) {
-                  fStack_14 = (float)uStack_6 * _UNK_?;
-                  fStack_12 = uStack_6._4_4_ * _UNK_?;
-                  pMStack_1 = (MethodInfo *)(fStack_5 * _UNK_?);
-                  fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
+          fVar22 = (fVar22 * (float)pMVar20) / _UNK_?;
+          fStack_9 = fStack_9 + fVar8 * fVar22;
+          fStack_17 = velocity.y + fVar4 * fVar22;
+          fVar4 = velocity.z + fVar13 * fVar22;
+          pMVar6 = (this->fields)._.groundState;
+          pAVar14 = (this->fields).interactableLocal;
+          fStack_18 = fStack_10;
+          fStack_19 = 0.0;
+          VStack_2.z = fVar4;
+          fStack_16 = fStack_9;
+          if ((pMVar6 != (MVGroundState *)0x0) &&
+             (pMVar15 = (pMVar6->fields).groundMaterial, pMVar15 != (MVMaterial *)0x0)) {
+            fStack_23 = (pMVar15->fields)._PhysicalProperties_k__BackingField.friction;
+            fStack_24 = (pMVar15->fields)._PhysicalProperties_k__BackingField.bouncyness;
+            if (pAVar14 != (AvatarInteractable *)0x0) {
+              fVar21 = (float10)(*(code *)(pAVar14->klass->vtable).HandleModifierEffect.method)();
+              fVar13 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::Experimental::
+                      Easing::Easing_InQuad((float)fVar21,(MethodInfo *)0x0);
+              if (fVar13 < _UNK_?) {
+                VStack_1.x = fVar13;
+                fVar21 = (float10)func_?();
+                VStack_1.x = (float)fVar21;
+                if ((float)fVar21 != _UNK_?) {
+                  fVar4 = VStack_1.z * _UNK_?;
+                  fVar13 = fStack_25 * _UNK_?;
+                  fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
                                      ((MethodInfo *)0x0);
-                  __return_storage_ptr__->x = VStack_9.x + fStack_14 * fVar4;
-                  __return_storage_ptr__->y = fStack_21 + fStack_12 * fVar4;
-                  __return_storage_ptr__->z = fStack_11 + (float)pMStack_1 * fVar4;
+                  __return_storage_ptr__->x = fStack_12 + VStack_1.x * fVar8;
+                  __return_storage_ptr__->y = VStack_1.z + fVar4 * fVar8;
+                  __return_storage_ptr__->z = fStack_10 + fVar13 * fVar8;
                   return __return_storage_ptr__;
                 }
               }
-              __return_storage_ptr__->x = fVar4;
-              __return_storage_ptr__->y = fVar19;
-              __return_storage_ptr__->z = fVar20;
+              __return_storage_ptr__->x = fStack_18;
+              __return_storage_ptr__->y = fStack_19;
+              __return_storage_ptr__->z = fVar4;
               return __return_storage_ptr__;
             }
           }
@@ -145,9 +182,9 @@ Vector3 * Assembly-CSharp.dll::AvatarMotor::AvatarMotor_ApplyInputVelocityChange
     }
   }
   func_?();
-  pcVar22 = (code *)swi(3);
-  pVVar8 = (Vector3 *)(*pcVar22)();
-  return pVVar8;
+  pcVar26 = (code *)swi(3);
+  pVVar7 = (Vector3 *)(*pcVar26)();
+  return pVVar7;
 }
 
 
@@ -183,144 +220,165 @@ void Assembly-CSharp.dll::AvatarMotor::AvatarMotor_FixedUpdateFunction
                (AvatarMotor *this,IMotorAPI *motorApi,MethodInfo *method)
 
 {
-  pAVar1 = this;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__IMotorAPI);
     cRam_? = '\x01';
   }
-  uVar2 = 0;
-  cVar3 = (*(code *)(this->klass->vtable).get_IsMovementLocked.method)
+  uVar1 = 0;
+  cVar2 = (*(code *)(this->klass->vtable).get_IsMovementLocked.method)
                      (this,(this->klass->vtable).set_IsMovementLocked.methodPtr);
-  if (cVar3 != '\0') {
+  if (cVar2 != '\0') {
     return;
   }
-  pSVar4 = (this->fields).smoothCharacterController;
-  if (((pSVar4 != (SmoothCharacterController *)0x0) &&
-      (pMVar5 = (pSVar4->fields).controller, pMVar5 != (MvCharacterController *)0x0)) &&
-     (pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                          ((Component *)pMVar5,(MethodInfo *)0x0), motorApi != (IMotorAPI *)0x0)) {
-    pIVar7 = motorApi->klass;
-    uVar8 = 0;
-    uVar9._0_1_ = (pIVar7->_1).rank;
-    uVar9._1_1_ = (pIVar7->_1).minimumAlignment;
-    if (uVar9 != 0) {
+  pSVar3 = (this->fields).smoothCharacterController;
+  if (((pSVar3 != (SmoothCharacterController *)0x0) &&
+      (pMVar4 = (pSVar3->fields).controller, pMVar4 != (MvCharacterController *)0x0)) &&
+     (pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                          ((Component *)pMVar4,(MethodInfo *)0x0), motorApi != (IMotorAPI *)0x0)) {
+    pIVar6 = motorApi->klass;
+    uVar7 = 0;
+    uVar8._0_1_ = (pIVar6->_1).rank;
+    uVar8._1_1_ = (pIVar6->_1).minimumAlignment;
+    if (uVar8 != 0) {
       do {
-        if (pIVar7->interfaceOffsets[uVar8].interfaceType == (Il2CppClass *)TypeInfo__IMotorAPI) {
-          ppMVar10 = &(&(motorApi->klass->vtable).get_Rotation)
-                      [motorApi->klass->interfaceOffsets[uVar8].offset].method;
+        if (pIVar6->interfaceOffsets[uVar7].interfaceType == (Il2CppClass *)TypeInfo__IMotorAPI) {
+          ppMVar9 = &(&(motorApi->klass->vtable).get_Rotation)
+                      [motorApi->klass->interfaceOffsets[uVar7].offset].method;
           goto code_?;
         }
-        uVar8 = uVar8 + 1;
-      } while (uVar8 < uVar9);
+        uVar7 = uVar7 + 1;
+      } while (uVar7 < uVar8);
     }
-    ppMVar10 = (MethodInfo **)func_?(motorApi,TypeInfo__IMotorAPI,2);
+    ppMVar9 = (MethodInfo **)func_?(motorApi,TypeInfo__IMotorAPI,2);
 code_?:
-    pQVar11 = (Quaternion *)(*(code *)*ppMVar10)(&stack0xffffffb4,motorApi,ppMVar10[1]);
-    if (pTVar6 != (Transform *)0x0) {
+    pQVar10 = (Quaternion *)(*(code *)*ppMVar9)(&stack0xffffffac,motorApi,ppMVar9[1]);
+    if (pTVar5 != (Transform *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
-                (pTVar6,*pQVar11,(MethodInfo *)0x0);
-      pVVar12 = &(this->fields).velocityPrevFrame;
-      prevVelocity = *pVVar12;
-      VVar13 = *pVVar12;
+                (pTVar5,*pQVar10,(MethodInfo *)0x0);
+      pVVar11 = &(this->fields).velocityPrevFrame;
+      uVar12 = pVVar11->y;
+      fVar13 = (this->fields).velocityPrevFrame.z;
+      VVar14 = *pVVar11;
       this_00 = (this->fields).movableMotorState;
-      VVar14 = (this->fields).velocityPrevFrame;
-      pSVar4 = (this->fields).smoothCharacterController;
-      if (pSVar4 != (SmoothCharacterController *)0x0) {
-        pMVar5 = (pSVar4->fields).controller;
+      VVar15 = (this->fields).velocityPrevFrame;
+      pSVar3 = (this->fields).smoothCharacterController;
+      if (pSVar3 != (SmoothCharacterController *)0x0) {
+        pMVar4 = (pSVar3->fields).controller;
         this_01 = (((this->fields).smoothCharacterController)->fields).controller;
         if ((this_01 != (MvCharacterController *)0x0) &&
-           (fVar15 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
+           (fVar16 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
                      TypedUxmlAttributeDescription`1[System::Single]::
                      TypedUxmlAttributeDescription_1_System_Single__get_defaultValue
                                ((TypedUxmlAttributeDescription_1_System_Single_ *)this_01,
                                 (MethodInfo *)0x0), this_00 != (MVMovableMotorState *)0x0)) {
-          bVar16 = MVMovableMotorState::MVMovableMotorState_Move
-                             (this_00,VVar14,pMVar5,fVar15,(this->fields)._.groundState,
-                              (Vector3 *)&stack0xffffffc4,(MethodInfo *)0x0);
-          uVar17 = uVar2;
+          bStack_17 = MVMovableMotorState::MVMovableMotorState_Move
+                               (this_00,VVar15,pMVar4,fVar16,(this->fields)._.groundState,
+                                (Vector3 *)&stack0xffffffbc,(MethodInfo *)0x0);
           inputJump = func_?(4,TypeInfo__IMotorAPI,motorApi);
-          pVVar12 = (Vector3 *)func_?(&stack0xffffffb8,0,TypeInfo__IMotorAPI,motorApi);
-          VVar14.z = 0.0;
-          VVar14.x = (float)(int)uVar2;
-          VVar14.y = (float)(int)(uVar2 >> 0x20);
-          pVVar12 = AvatarMotor_GetVelocity
-                              ((Vector3 *)&stack0xffffffb8,this,VVar13,VVar14,inputJump,*pVVar12,
+          pIVar6 = motorApi->klass;
+          uVar8 = 0;
+          sVar18._0_1_ = (pIVar6->_1).rank;
+          sVar18._1_1_ = (pIVar6->_1).minimumAlignment;
+          if (sVar18 != 0) {
+            do {
+              if (pIVar6->interfaceOffsets[uVar8].interfaceType ==
+                  (Il2CppClass *)TypeInfo__IMotorAPI) {
+                ppMVar9 = &(&(motorApi->klass->vtable).get_Direction)
+                            [motorApi->klass->interfaceOffsets[uVar8].offset].method;
+                goto code_?;
+              }
+              uVar8 = uVar8 + 1;
+              uVar7._0_1_ = (motorApi->klass->_1).rank;
+              uVar7._1_1_ = (motorApi->klass->_1).minimumAlignment;
+            } while (uVar8 < uVar7);
+          }
+          ppMVar9 = (MethodInfo **)func_?();
+code_?:
+          uVar19 = ppMVar9[1];
+          uVar20._4_4_ = (float)&stack0xffffffb0;
+          uVar20._0_4_ = (float)&UNK_?;
+          pVVar11 = (Vector3 *)(*(code *)*ppMVar9)();
+          VVar15.z = 0.0;
+          VVar15.x = (float)(int)uVar1;
+          VVar15.y = (float)(int)(uVar1 >> 0x20);
+          pVVar11 = AvatarMotor_GetVelocity
+                              ((Vector3 *)&stack0xffffffb0,this,VVar14,VVar15,inputJump,*pVVar11,
                                (MethodInfo *)0x0);
-          if (bVar16 == 0) {
-            VVar13.z = 0.0;
-            VVar13.x = (float)(int)uVar17;
-            VVar13.y = (float)(int)(uVar17 >> 0x20);
-            AvatarMotor_Move(this,*pVVar12,VVar13,(MethodInfo *)0x0);
-            this._3_1_ = 0;
+          if (bStack_17 == 0) {
+            VVar14.z = (float)motorApi;
+            VVar14.x = (float)uVar20;
+            VVar14.y = SUB84(uVar20,4);
+            AvatarMotor_Move(this,*pVVar11,VVar14,(MethodInfo *)0x0);
+            bStack_17 = 0;
           }
           else {
-            VVar14 = *pVVar12;
+            VVar15 = *pVVar11;
             if (cRam_? == '\0') {
               func_?(&TypeInfo__UnityEngine__Vector3);
               cRam_? = '\x01';
             }
-            AvatarMotor_Move(this,VVar14,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
+            AvatarMotor_Move(this,VVar15,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
                              (MethodInfo *)0x0);
-            this._3_1_ = bVar16;
           }
-          pSVar4 = (pAVar1->fields).smoothCharacterController;
-          if ((pSVar4 != (SmoothCharacterController *)0x0) &&
-             (pMVar5 = (pSVar4->fields).controller, pMVar5 != (MvCharacterController *)0x0)) {
-            uVar18 = (pMVar5->fields)._Velocity_k__BackingField.x;
-            uVar19 = (pMVar5->fields)._Velocity_k__BackingField.y;
-            fVar15 = (pMVar5->fields)._Velocity_k__BackingField.z;
-            fVar20 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
+          pSVar3 = (this->fields).smoothCharacterController;
+          if ((pSVar3 != (SmoothCharacterController *)0x0) &&
+             (pMVar4 = (pSVar3->fields).controller, pMVar4 != (MvCharacterController *)0x0)) {
+            uVar21 = (pMVar4->fields)._Velocity_k__BackingField.x;
+            uVar22 = (pMVar4->fields)._Velocity_k__BackingField.y;
+            fVar16 = (pMVar4->fields)._Velocity_k__BackingField.z;
+            fVar23 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime
                                ((MethodInfo *)0x0);
-            fVar15 = fVar15 / fVar20;
-            (pAVar1->fields).velocityPrevFrame.x = (float)uVar18 / fVar20;
-            (pAVar1->fields).velocityPrevFrame.y = (float)uVar19 / fVar20;
-            (pAVar1->fields).velocityPrevFrame.z = fVar15;
-            if (this._3_1_ == 0) {
-              (pAVar1->fields).velocityPrevFrame.x = (float)uVar18 / fVar20 - (float)uVar17;
-              (pAVar1->fields).velocityPrevFrame.y =
-                   (float)uVar19 / fVar20 - (float)(uVar17 >> 0x20);
-              (pAVar1->fields).velocityPrevFrame.z = fVar15 - 0.0;
+            fVar16 = fVar16 / fVar23;
+            (this->fields).velocityPrevFrame.x = (float)uVar21 / fVar23;
+            (this->fields).velocityPrevFrame.y = (float)uVar22 / fVar23;
+            (this->fields).velocityPrevFrame.z = fVar16;
+            if (bStack_17 == 0) {
+              (this->fields).velocityPrevFrame.x = (float)uVar21 / fVar23 - (float)uVar20;
+              (this->fields).velocityPrevFrame.y = (float)uVar22 / fVar23 - SUB84(uVar20,4);
+              (this->fields).velocityPrevFrame.z = fVar16 - (float)motorApi;
             }
-            this_02 = (pAVar1->fields).impactState;
+            this_02 = (this->fields).impactState;
             if (this_02 != (ImpactState *)0x0) {
-              fVar15 = ImpactState::ImpactState_UpdateImpactState
-                                 (this_02,(pAVar1->fields).velocityPrevFrame,prevVelocity,
-                                  (MVInteractableBase *)(pAVar1->fields).interactableLocal,
+              prevVelocity.y = (float)uVar12;
+              prevVelocity.x = (float)uVar19;
+              prevVelocity.z = fVar13;
+              fVar13 = ImpactState::ImpactState_UpdateImpactState
+                                 (this_02,(this->fields).velocityPrevFrame,prevVelocity,
+                                  (MVInteractableBase *)(this->fields).interactableLocal,
                                   (MethodInfo *)0x0);
-              if (fVar15 != _UNK_?) {
-                pAVar21 = (pAVar1->fields).interactableLocal;
-                if (pAVar21 == (AvatarInteractable *)0x0) goto code_?;
-                (*(code *)(pAVar21->klass->vtable).TakeDamage.method)
-                          (pAVar21,fVar15,0,5,(pAVar21->klass->vtable).TakeDamageOverTime.methodPtr);
+              if (fVar13 != _UNK_?) {
+                pAVar24 = (this->fields).interactableLocal;
+                if (pAVar24 == (AvatarInteractable *)0x0) goto code_?;
+                (*(code *)(pAVar24->klass->vtable).TakeDamage.method)
+                          (pAVar24,fVar13,0,5,(pAVar24->klass->vtable).TakeDamageOverTime.methodPtr);
               }
-              bVar22 = func_?(4,TypeInfo__IMotorAPI,motorApi);
-              pBVar23 = (pAVar1->fields).bounceState;
-              if (pBVar23 != (BounceState *)0x0) {
-                if ((((pBVar23->fields).bounced & bVar22) != 0) &&
-                   ((pAVar1->fields).OnActiveBounce != (AvatarMotor_OnActiveBounceDelegate *)0x0))
-                {
-                  pAVar24 = (pAVar1->fields).OnActiveBounce;
-                  (*(pAVar24->fields)._._.invoke_impl)
-                            ((pAVar24->fields)._._.method_code,(pAVar24->fields)._._.method);
+              bVar25 = func_?(4,TypeInfo__IMotorAPI,motorApi);
+              pBVar26 = (this->fields).bounceState;
+              if (pBVar26 != (BounceState *)0x0) {
+                if ((((pBVar26->fields).bounced & bVar25) != 0) &&
+                   ((this->fields).OnActiveBounce != (AvatarMotor_OnActiveBounceDelegate *)0x0)) {
+                  pAVar27 = (this->fields).OnActiveBounce;
+                  (*(pAVar27->fields)._._.invoke_impl)
+                            ((pAVar27->fields)._._.method_code,(pAVar27->fields)._._.method);
                 }
-                this_03 = (pAVar1->fields)._GetSizeState_k__BackingField;
+                this_03 = (this->fields)._GetSizeState_k__BackingField;
                 if (this_03 != (SizeState *)0x0) {
                   SizeState::SizeState_UpdateScale(this_03,(MethodInfo *)0x0);
-                  pSVar4 = (pAVar1->fields).smoothCharacterController;
-                  this_04 = (pAVar1->fields).waterState;
-                  if ((((pSVar4 != (SmoothCharacterController *)0x0) &&
-                       (pMVar5 = (pSVar4->fields).controller, pMVar5 != (MvCharacterController *)0x0
-                       )) && (pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                  pSVar3 = (this->fields).smoothCharacterController;
+                  this_04 = (this->fields).waterState;
+                  if ((((pSVar3 != (SmoothCharacterController *)0x0) &&
+                       (pMVar4 = (pSVar3->fields).controller, pMVar4 != (MvCharacterController *)0x0
+                       )) && (pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::
                                         Component_get_transform
-                                                  ((Component *)pMVar5,(MethodInfo *)0x0),
-                             pTVar6 != (Transform *)0x0)) &&
-                     (pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                                                  ((Component *)pMVar4,(MethodInfo *)0x0),
+                             pTVar5 != (Transform *)0x0)) &&
+                     (pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                                 Transform_get_position
-                                          ((Vector3 *)&stack0xffffffb8,pTVar6,(MethodInfo *)0x0),
+                                          ((Vector3 *)&stack0xffffffb0,pTVar5,(MethodInfo *)0x0),
                      this_04 != (WaterState *)0x0)) {
                     WaterState::WaterState_Update
-                              (this_04,*pVVar12,
-                               (MVInteractableBase *)(pAVar1->fields).interactableLocal,
+                              (this_04,*pVVar11,
+                               (MVInteractableBase *)(this->fields).interactableLocal,
                                (MethodInfo *)0x0);
                     return;
                   }
@@ -334,8 +392,8 @@ code_?:
   }
 code_?:
   func_?();
-  pcVar25 = (code *)swi(3);
-  (*pcVar25)();
+  pcVar28 = (code *)swi(3);
+  (*pcVar28)();
   return;
 }
 
@@ -383,21 +441,49 @@ float Assembly-CSharp.dll::AvatarMotor::AvatarMotor_GetSpeedGrounded
                 (AvatarMotor *this,float currentSpeed,Vector3 inputDirection,MethodInfo *method)
 
 {
+  pAVar1 = this;
   AvatarMotor_GetSpeed(this,currentSpeed,inputDirection,(MethodInfo *)0x0);
-  iVar1 = func_?();
-  dVar2 = (double)*(float *)(iVar1 + 4);
-  func_?();
-  this_00 = (this->fields).slopeSpeedMultiplier;
+  uVar2 = (this->fields).velocityPrevFrame.x;
+  uVar3 = (this->fields).velocityPrevFrame.y;
+  fVar4 = (this->fields).velocityPrevFrame.z;
+  if (cRam_? == '\0') {
+    func_?();
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  dVar5 = (double)((float)uVar3 * (float)uVar3 + (float)uVar2 * (float)uVar2 + fVar4 * fVar4);
+  if (dVar5 < 0.0) {
+    func_?();
+  }
+  else {
+    dVar5 = SQRT(dVar5);
+  }
+  if (_UNK_? < (float)dVar5) {
+    this = (AvatarMotor *)((float)uVar3 / (float)dVar5);
+  }
+  else {
+    if (cRam_? == '\0') {
+      func_?();
+      cRam_? = '\x01';
+    }
+    uVar6 = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).y;
+    this = (AvatarMotor *)uVar6;
+  }
+  this_00 = (pAVar1->fields).slopeSpeedMultiplier;
   if (this_00 != (AnimationCurve *)0x0) {
-    time = (float)dVar2 * _UNK_?;
-    fVar3 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                      (this_00,time,(MethodInfo *)0x0);
-    return fVar3 * time;
+    dVar5 = (double)(float)this;
+    method_00 = (MethodInfo *)0x0;
+    func_?();
+    fVar7 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
+                      (this_00,(float)dVar5 * _UNK_?,method_00);
+    return fVar7 * fVar4;
   }
   func_?();
-  pcVar4 = (code *)swi(3);
-  fVar5 = (float10)(*pcVar4)();
-  return (float)fVar5;
+  pcVar8 = (code *)swi(3);
+  fVar9 = (float10)(*pcVar8)();
+  return (float)fVar9;
 }
 
 
@@ -489,7 +575,7 @@ Vector3 * Assembly-CSharp.dll::AvatarMotor::AvatarMotor_GetVelocity
                 velocity_01.z = fVar6;
                 pVVar3 = JumpState::JumpState_ApplyJumping
                                    ((Vector3 *)&stack0xffffffc8,this_01,
-                                    (MVInteractableBase *)interactableLocal,pMVar1,fVar5,fVar7,0xb5
+                                    (MVInteractableBase *)interactableLocal,pMVar1,fVar5,fVar7,0xe5
                                     ,velocity_01,movableVelocity,(MethodInfo *)0x0);
                 pVVar3 = MVRigidBody::MVRigidBody_GetImpulse
                                    ((Vector3 *)&stack0xffffffc8,(MVRigidBody *)this,*pVVar3,
@@ -551,7 +637,7 @@ void Assembly-CSharp.dll::AvatarMotor::AvatarMotor_HandleMovementBoost
             (TypeInfo__System__Int32->_0).element_class) {
           piVar5 = (int *)func_?();
           (this->fields).walkSpeed =
-               ((float)*piVar5 / _UNK_? + _UNK_?) * 3.3928265e-29;
+               ((float)*piVar5 / _UNK_? + _UNK_?) * 3.4223462e-29;
           return;
         }
         goto code_?;
@@ -635,9 +721,14 @@ void Assembly-CSharp.dll::AvatarMotor::AvatarMotor_Init
     func_?(&StringLiteral_SuperSpeed);
     cRam_? = '\x01';
   }
+  this_09 = (JumpState_OnWallJumpDelegate__Class *)skillDataManager;
   if (skillDataManager == (WorldObjectSkillDataManager *)0x0) {
 code_?:
     func_?();
+    pJVar1 = this_09;
+code_?:
+    func_?();
+    this_09 = pJVar1;
 code_?:
     func_?();
 code_?:
@@ -645,93 +736,93 @@ code_?:
 code_?:
     func_?();
 code_?:
-    func_?();
-code_?:
-    func_?();
+    pJVar2 = (JumpState_OnWallJumpDelegate *)func_?();
   }
   else {
-    bVar1 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill
+    bVar3 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill
                       (skillDataManager,StringLiteral_SuperSpeed,(MethodInfo *)0x0);
-    if (bVar1 != 0) {
-      iVar2 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_GetSkillIntValue
+    if (bVar3 != 0) {
+      iVar4 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_GetSkillIntValue
                         (skillDataManager,StringLiteral_SuperSpeed,(MethodInfo *)0x0);
-      (this->fields).speedBoostSetting = (float)iVar2 / _UNK_?;
+      (this->fields).speedBoostSetting = (float)iVar4 / _UNK_?;
     }
-    bVar1 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill
+    bVar3 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill
                       (skillDataManager,StringLiteral_SlowFall,(MethodInfo *)0x0);
-    fVar3 = _UNK_?;
-    if (bVar1 != 0) {
-      iVar2 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_GetSkillIntValue
+    fVar5 = _UNK_?;
+    if (bVar3 != 0) {
+      iVar4 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_GetSkillIntValue
                         (skillDataManager,StringLiteral_SlowFall,(MethodInfo *)0x0);
-      fVar3 = (float)(100 - iVar2) / _UNK_?;
+      fVar5 = (float)(100 - iVar4) / _UNK_?;
     }
     if (this == (AvatarMotor *)0x0) goto code_?;
-    (this->fields).slowFallVelocityMultiplier = fVar3;
-    bVar1 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill
+    (this->fields).slowFallVelocityMultiplier = fVar5;
+    bVar3 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill
                       (skillDataManager,StringLiteral_FrictionMultiplier,(MethodInfo *)0x0);
-    fVar3 = _UNK_?;
-    if (bVar1 != 0) {
-      iVar2 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_GetSkillIntValue
+    fVar5 = _UNK_?;
+    if (bVar3 != 0) {
+      iVar4 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_GetSkillIntValue
                         (skillDataManager,StringLiteral_FrictionMultiplier,(MethodInfo *)0x0);
-      fVar3 = (float)(100 - iVar2) / _UNK_?;
+      fVar5 = (float)(100 - iVar4) / _UNK_?;
     }
-    (this->fields).frictionMultiplier = fVar3;
-    pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+    (this->fields).frictionMultiplier = fVar5;
+    pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
-    if (pGVar4 == (GameObject *)0x0) goto code_?;
-    pSVar5 = (SmoothCharacterController *)
-             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
-                       (pGVar4,
-                        SmoothCharacterController_MethodInfo__UnityEngine__GameObject__AddComponent<SmoothCharacterController>__
-                       );
-    (this->fields).smoothCharacterController = pSVar5;
-    func_?(&(this->fields).smoothCharacterController,pSVar5);
-    pSVar5 = (this->fields).smoothCharacterController;
-    pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+    if (pGVar6 == (GameObject *)0x0) goto code_?;
+    pSVar7 = (SmoothCharacterController *)
+              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
+                        (pGVar6,
+                         SmoothCharacterController_MethodInfo__UnityEngine__GameObject__AddComponent<SmoothCharacterController>__
+                        );
+    (this->fields).smoothCharacterController = pSVar7;
+    func_?(&(this->fields).smoothCharacterController,pSVar7);
+    this_09 = (JumpState_OnWallJumpDelegate__Class *)(this->fields).smoothCharacterController;
+    pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
-    if (pSVar5 == (SmoothCharacterController *)0x0) goto code_?;
+    if (this_09 == (JumpState_OnWallJumpDelegate__Class *)0x0) goto code_?;
     SmoothCharacterController::SmoothCharacterController_Init
-              (pSVar5,pGVar4,(CullingSubscriberBase *)0x0,worldObjectOwner,(MethodInfo *)0x0);
-    pSVar5 = (this->fields).smoothCharacterController;
-    if ((pSVar5 == (SmoothCharacterController *)0x0) ||
-       (pMVar6 = (pSVar5->fields).controller, pMVar6 == (MvCharacterController *)0x0))
+              ((SmoothCharacterController *)this_09,pGVar6,(CullingSubscriberBase *)0x0,
+               worldObjectOwner,(MethodInfo *)0x0);
+    pSVar7 = (this->fields).smoothCharacterController;
+    if ((pSVar7 == (SmoothCharacterController *)0x0) ||
+       (pMVar8 = (pSVar7->fields).controller, pMVar8 == (MvCharacterController *)0x0))
     goto code_?;
     MvCharacterController::MvCharacterController_Init
-              (pMVar6,0.45,1.9,centerOffset,(MethodInfo *)0x0);
-    this_02 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if ((this_02 == (MVNetworkGame *)0x0) ||
-       (pMVar7 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_02,(MethodInfo *)0x0),
-       pMVar7 == (MVLocalPlayer *)0x0)) goto code_?;
-    this_00 = (pMVar7->fields).boostController;
-    pNVar8 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+              (pMVar8,0.45,1.9,centerOffset,(MethodInfo *)0x0);
+    this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if ((this_01 == (MVNetworkGame *)0x0) ||
+       (pMVar9 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0),
+       pMVar9 == (MVLocalPlayer *)0x0)) goto code_?;
+    this_09 = (JumpState_OnWallJumpDelegate__Class *)(pMVar9->fields).boostController;
+    this_02 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
-              (pNVar8,(Object *)this,MethodInfo__AvatarMotor__HandleMovementBoost__,
+              (this_02,(Object *)this,MethodInfo__AvatarMotor__HandleMovementBoost__,
                (MethodInfo *)0x0);
-    if (this_00 == (BoostController *)0x0) goto code_?;
+    if (this_09 == (JumpState_OnWallJumpDelegate__Class *)0x0) goto code_?;
     BoostController::BoostController_SubscribeToBoostChanged
-              (this_00,BoostType__Enum_MovementSpeedFloatMultiplier,(Action *)pNVar8,
-               (MethodInfo *)0x0);
+              ((BoostController *)this_09,BoostType__Enum_MovementSpeedFloatMultiplier,
+               (Action *)this_02,(MethodInfo *)0x0);
     AvatarMotor_HandleMovementBoost(this,(MethodInfo *)0x0);
-    this_01 = (this->fields)._._.worldObjectParent;
-    if (this_01 == (MVWorldObjectClient *)0x0) goto code_?;
-    pHVar9 = MVWorldObjectClient::MVWorldObjectClient_get_WorldIDsRecursive
-                        (this_01,(MethodInfo *)0x0);
-    pSVar5 = (this->fields).smoothCharacterController;
-    if ((pSVar5 == (SmoothCharacterController *)0x0) ||
-       (pMVar6 = (pSVar5->fields).controller, pMVar6 == (MvCharacterController *)0x0))
+    this_00 = (this->fields)._._.worldObjectParent;
+    if (this_00 == (MVWorldObjectClient *)0x0) goto code_?;
+    pHVar10 = MVWorldObjectClient::MVWorldObjectClient_get_WorldIDsRecursive
+                        (this_00,(MethodInfo *)0x0);
+    pSVar7 = (this->fields).smoothCharacterController;
+    if ((pSVar7 == (SmoothCharacterController *)0x0) ||
+       (pMVar8 = (pSVar7->fields).controller, pMVar8 == (MvCharacterController *)0x0))
     goto code_?;
-    (pMVar6->fields).IgnoreWoIds = pHVar9;
-    func_?(&(pMVar6->fields).IgnoreWoIds,pHVar9);
-    pSVar5 = (this->fields).smoothCharacterController;
-    if (pSVar5 == (SmoothCharacterController *)0x0) goto code_?;
-    pMVar6 = (pSVar5->fields).controller;
+    (pMVar8->fields).IgnoreWoIds = pHVar10;
+    func_?(&(pMVar8->fields).IgnoreWoIds,pHVar10);
+    pSVar7 = (this->fields).smoothCharacterController;
+    this_09 = (JumpState_OnWallJumpDelegate__Class *)0x0;
+    if (pSVar7 == (SmoothCharacterController *)0x0) goto code_?;
+    pMVar8 = (pSVar7->fields).controller;
     this_03 = (Func_1_Object_ *)
               func_?(
                              TypeInfo__System__Func<System::Collections::Generic::List<MVOverlapResult>_>
                              );
     mscorlib.dll::System::Func`1[Object]::Func_1_Object___ctor
-              (this_03,(Object *)pMVar6,MethodInfo__MvCharacterController__GetOverlappingObjects__,
+              (this_03,(Object *)pMVar8,MethodInfo__MvCharacterController__GetOverlappingObjects__,
                (MethodInfo *)0x0);
     this_04 = (MVRigidBody_StuckEvaluator *)func_?(TypeInfo__MVRigidBody__StuckEvaluator);
     MVRigidBody+StuckEvaluator::MVRigidBody_StuckEvaluator__ctor
@@ -748,170 +839,207 @@ code_?:
     func_?(&(this->fields).movableMotorState,this_05);
     (this->fields).interactableLocal = interactableLocal;
     func_?();
+    interactable = TypeInfo__BounceState;
     this_06 = (BounceState *)func_?();
     BounceState::BounceState__ctor(this_06,(MVInteractable *)interactableLocal,(MethodInfo *)0x0);
     (this->fields).bounceState = this_06;
     func_?();
-    this_07 = (WaterState *)func_?();
+    this_07 = (WaterState *)func_?(TypeInfo__WaterState);
     WaterState::WaterState__ctor(this_07,skillDataManager,(MethodInfo *)0x0);
     (this->fields).waterState = this_07;
-    func_?(&(this->fields).waterState);
-    pSVar5 = (this->fields).smoothCharacterController;
-    if (pSVar5 == (SmoothCharacterController *)0x0) goto code_?;
-    pMVar6 = (pSVar5->fields).controller;
+    func_?(&(this->fields).waterState,this_07);
+    pSVar7 = (this->fields).smoothCharacterController;
+    this_09 = (JumpState_OnWallJumpDelegate__Class *)0x0;
+    if (pSVar7 == (SmoothCharacterController *)0x0) goto code_?;
+    pMVar8 = (pSVar7->fields).controller;
     this_08 = (SizeState *)func_?(TypeInfo__SizeState);
-    SizeState::SizeState__ctor
-              (this_08,(MVInteractable *)&(this->fields).bounceState,pMVar6,(MethodInfo *)0x0);
+    SizeState::SizeState__ctor(this_08,(MVInteractable *)interactable,pMVar8,(MethodInfo *)0x0);
     (this->fields)._GetSizeState_k__BackingField = this_08;
     func_?(&(this->fields)._GetSizeState_k__BackingField,this_08);
-    this_09 = (JumpState *)func_?(TypeInfo__JumpState);
-    JumpState::JumpState__ctor(this_09,0.2,skillDataManager,(MethodInfo *)0x0);
-    (this->fields).jumpState = this_09;
-    func_?();
-    pJVar10 = (this->fields).jumpState;
-    if (pJVar10 == (JumpState *)0x0) goto code_?;
-    pJVar11 = (pJVar10->fields).OnWallJump;
-    pNVar8 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__JumpState__OnWallJumpDelegate)
-    ;
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (pNVar8,(Object *)this,MethodInfo__AvatarMotor___Init_b__43_0__,(MethodInfo *)0x0);
-    pJVar11 = (JumpState_OnWallJumpDelegate *)
+    this_09 = (JumpState_OnWallJumpDelegate__Class *)func_?(TypeInfo__JumpState);
+    JumpState::JumpState__ctor((JumpState *)this_09,0.2,skillDataManager,(MethodInfo *)0x0);
+    (this->fields).jumpState = (JumpState *)this_09;
+    func_?(&(this->fields).jumpState,this_09);
+    pJVar11 = (this->fields).jumpState;
+    if (pJVar11 == (JumpState *)0x0) goto code_?;
+    pJVar12 = (pJVar11->fields).OnWallJump;
+    pDVar13 = (Delegate *)func_?(TypeInfo__JumpState__OnWallJumpDelegate);
+    this_09 = (JumpState_OnWallJumpDelegate__Class *)MethodInfo__AvatarMotor___Init_b__43_0__;
+    (pDVar13->fields).method_ptr = MethodInfo__AvatarMotor___Init_b__43_0__->virtualMethodPointer;
+    (pDVar13->fields).method = this_09;
+    (pDVar13->fields).m_target = (Object *)this;
+    func_?(&(pDVar13->fields).m_target,this);
+    uVar14 = ((MethodInfo *)this_09)->parameters_count;
+    (pDVar13->fields).method_code = pDVar13;
+    cVar15 = func_?(this_09);
+    if ((cVar15 == '\0') || (uVar14 != 0)) {
+      (pDVar13->fields).method_code = (pDVar13->fields).m_target;
+      puVar16 = (pDVar13->fields).method_ptr;
+    }
+    else {
+      puVar16 = &UNK_?;
+    }
+    (pDVar13->fields).invoke_impl = puVar16;
+    (pDVar13->fields).extra_arg = &UNK_?;
+    pJVar2 = (JumpState_OnWallJumpDelegate *)
               mscorlib.dll::System::Delegate::Delegate_Combine
-                        ((Delegate *)pJVar11,(Delegate *)pNVar8,(MethodInfo *)0x0);
-    if (pJVar11 == (JumpState_OnWallJumpDelegate *)0x0) {
-      (pJVar10->fields).OnWallJump = (JumpState_OnWallJumpDelegate *)0x0;
+                        ((Delegate *)pJVar12,pDVar13,(MethodInfo *)0x0);
+    uVar17 = CONCAT44(TypeInfo__JumpState__OnWallJumpDelegate,pJVar2);
+    pJVar12 = (JumpState_OnWallJumpDelegate *)0x0;
+    if (pJVar2 == (JumpState_OnWallJumpDelegate *)0x0) {
+      (pJVar11->fields).OnWallJump = (JumpState_OnWallJumpDelegate *)0x0;
 code_?:
-      func_?();
-      pMVar12 = (this->fields)._.groundState;
-      if (pMVar12 == (MVGroundState *)0x0) goto code_?;
-      pAVar13 = (pMVar12->fields).OnGroundChange;
-      pOVar14 = (Object *)(this_09->fields).lastButtonDownTime;
+      func_?(&(pJVar11->fields).OnWallJump,pJVar12);
+      pMVar18 = (this->fields)._.groundState;
+      if (pMVar18 == (MVGroundState *)0x0) goto code_?;
+      pAVar19 = (pMVar18->fields).OnGroundChange;
+      pOVar20 = (Object *)this_06[2].fields.bounceVelocity.z;
       this_10 = (UnityAction_1_System_Int32Enum_ *)
                 func_?(TypeInfo__System__Action<GroundChange>);
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
       UnityAction_1_System_Int32Enum___ctor
-                (this_10,pOVar14,MethodInfo__JumpState__UpdateJumpState_GroundChange_,
+                (this_10,pOVar20,MethodInfo__JumpState__UpdateJumpState_GroundChange_,
                  (MethodInfo *)0x0);
-      pDVar15 = mscorlib.dll::System::Delegate::Delegate_Combine
-                          ((Delegate *)pAVar13,(Delegate *)this_10,(MethodInfo *)0x0);
-      if (pDVar15 == (Delegate *)0x0) {
-        (pMVar12->fields).OnGroundChange = (Action_1_GroundChange_ *)0x0;
+      this_09 = (JumpState_OnWallJumpDelegate__Class *)
+                mscorlib.dll::System::Delegate::Delegate_Combine
+                          ((Delegate *)pAVar19,(Delegate *)this_10,(MethodInfo *)0x0);
+      if (this_09 == (JumpState_OnWallJumpDelegate__Class *)0x0) {
+        (pMVar18->fields).OnGroundChange = (Action_1_GroundChange_ *)0x0;
 code_?:
         func_?();
-        fVar3 = (this_09->fields).jumpDir.y;
-        if ((fVar3 == 0.0) || (iVar16 = *(int *)((int)fVar3 + 0x10), iVar16 == 0))
-        goto code_?;
-        pDVar15 = *(Delegate **)(iVar16 + 100);
-        object = (this_09->fields).wallJumpHits;
-        pAVar17 = (Action_1_MVControllerColliderHit_ *)
+        fVar5 = pMVar18[2].fields.groundNormal.x;
+        if ((fVar5 == 0.0) ||
+           (pJVar1 = *(JumpState_OnWallJumpDelegate__Class **)((int)fVar5 + 0x10),
+           pJVar1 == (JumpState_OnWallJumpDelegate__Class *)0x0)) goto code_?;
+        pDVar13 = (Delegate *)(pJVar1->_1).typeHierarchy;
+        object = pMVar18[3].klass;
+        pAVar21 = (Action_1_MVControllerColliderHit_ *)
                   func_?(TypeInfo__System__Action<MVControllerColliderHit>);
         mscorlib.dll::System::Action`1[MVControllerColliderHit]::
         Action_1_MVControllerColliderHit___ctor
-                  (pAVar17,(Object *)object,
+                  (pAVar21,(Object *)object,
                    MethodInfo__SizeState__OnScalingWhileColliding_MVControllerColliderHit_,
                    (MethodInfo *)0x0);
-        pDVar15 = mscorlib.dll::System::Delegate::Delegate_Combine
-                            (pDVar15,(Delegate *)pAVar17,(MethodInfo *)0x0);
-        if (pDVar15 != (Delegate *)0x0) {
-          iVar18 = func_?();
-          if (iVar18 != 0) {
-            *(int *)(iVar16 + 100) = iVar18;
-            iVar16 = func_?();
-            if (iVar16 != 0) goto code_?;
+        pDVar13 = mscorlib.dll::System::Delegate::Delegate_Combine
+                            (pDVar13,(Delegate *)pAVar21,(MethodInfo *)0x0);
+        this_09 = (JumpState_OnWallJumpDelegate__Class *)
+                  TypeInfo__System__Action<MVControllerColliderHit>;
+        if (pDVar13 != (Delegate *)0x0) {
+          ppIVar22 = (Il2CppClass **)func_?();
+          if (ppIVar22 != (Il2CppClass **)0x0) {
+            (pJVar1->_1).typeHierarchy = ppIVar22;
+            pOVar20 = (Object *)func_?();
+            if (pOVar20 != (Object *)0x0) goto code_?;
             goto code_?;
           }
           goto code_?;
         }
-        *(undefined4 *)(iVar16 + 100) = 0;
+        (pJVar1->_1).typeHierarchy = (Il2CppClass **)0x0;
+        pOVar20 = (Object *)0x0;
 code_?:
+        this_09 = (JumpState_OnWallJumpDelegate__Class *)&pJVar1->_1;
         func_?();
-        fVar3 = (this_09->fields).jumpDir.y;
-        if ((fVar3 == 0.0) || (iVar16 = *(int *)((int)fVar3 + 0x10), iVar16 == 0))
-        goto code_?;
-        pDVar15 = *(Delegate **)(iVar16 + 100);
-        pAVar17 = (Action_1_MVControllerColliderHit_ *)
+        iVar23 = *(int *)&(pJVar1->_1).naturalAligment;
+        if ((iVar23 == 0) || (iVar23 = *(int *)(iVar23 + 0x10), iVar23 == 0)) goto code_?;
+        pDVar13 = *(Delegate **)(iVar23 + 100);
+        pAVar21 = (Action_1_MVControllerColliderHit_ *)
                   func_?(TypeInfo__System__Action<MVControllerColliderHit>);
+        if (pOVar20 == (Object *)0x0) goto code_?;
         mscorlib.dll::System::Action`1[MVControllerColliderHit]::
         Action_1_MVControllerColliderHit___ctor
-                  (pAVar17,(Object *)&UNK_?,*(void **)(_UNK_? + 0x154),
-                   (MethodInfo *)0x0);
-        pDVar15 = mscorlib.dll::System::Delegate::Delegate_Combine
-                            (pDVar15,(Delegate *)pAVar17,(MethodInfo *)0x0);
-        if (pDVar15 == (Delegate *)0x0) {
-          *(undefined4 *)(iVar16 + 100) = 0;
+                  (pAVar21,pOVar20,(void *)pOVar20->klass[1]._1.cctor_thread,(MethodInfo *)0x0);
+        pDVar13 = mscorlib.dll::System::Delegate::Delegate_Combine
+                            (pDVar13,(Delegate *)pAVar21,(MethodInfo *)0x0);
+        if (pDVar13 == (Delegate *)0x0) {
+          *(undefined4 *)(iVar23 + 100) = 0;
 code_?:
           func_?();
-          fVar3 = (this_09->fields).jumpDir.y;
-          if ((fVar3 != 0.0) && (iVar16 = *(int *)((int)fVar3 + 0x10), iVar16 != 0)) {
-            pDVar15 = *(Delegate **)(iVar16 + 100);
-            pOVar14 = (Object *)(this_09->fields).lastButtonDownTime;
-            pAVar17 = (Action_1_MVControllerColliderHit_ *)
+          iVar23 = *(int *)&(pJVar1->_1).naturalAligment;
+          if ((iVar23 != 0) &&
+             (pJVar24 = *(JumpState_OnWallJumpDelegate__Class **)(iVar23 + 0x10),
+             pJVar24 != (JumpState_OnWallJumpDelegate__Class *)0x0)) {
+            pDVar13 = (Delegate *)(pJVar24->_1).typeHierarchy;
+            pOVar20 = *(Object **)&(pJVar1->_1).nested_type_count;
+            pAVar21 = (Action_1_MVControllerColliderHit_ *)
                       func_?(TypeInfo__System__Action<MVControllerColliderHit>);
             mscorlib.dll::System::Action`1[MVControllerColliderHit]::
             Action_1_MVControllerColliderHit___ctor
-                      (pAVar17,pOVar14,MethodInfo__JumpState__HandleMoveHit_MVControllerColliderHit_,
-                       (MethodInfo *)0x0);
-            pDVar15 = mscorlib.dll::System::Delegate::Delegate_Combine
-                                (pDVar15,(Delegate *)pAVar17,(MethodInfo *)0x0);
-            if (pDVar15 == (Delegate *)0x0) {
-              *(undefined4 *)(iVar16 + 100) = 0;
+                      (pAVar21,pOVar20,MethodInfo__JumpState__HandleMoveHit_MVControllerColliderHit_
+                       ,(MethodInfo *)0x0);
+            pDVar13 = mscorlib.dll::System::Delegate::Delegate_Combine
+                                (pDVar13,(Delegate *)pAVar21,(MethodInfo *)0x0);
+            this_09 = (JumpState_OnWallJumpDelegate__Class *)
+                      TypeInfo__System__Action<MVControllerColliderHit>;
+            if (pDVar13 == (Delegate *)0x0) {
+              (pJVar24->_1).typeHierarchy = (Il2CppClass **)0x0;
             }
             else {
-              iVar18 = func_?();
-              if (iVar18 == 0) goto code_?;
-              *(int *)(iVar16 + 100) = iVar18;
-              iVar16 = func_?();
-              if (iVar16 == 0) goto code_?;
+              ppIVar22 = (Il2CppClass **)func_?();
+              if (ppIVar22 == (Il2CppClass **)0x0) goto code_?;
+              (pJVar24->_1).typeHierarchy = ppIVar22;
+              iVar23 = func_?();
+              pJVar1 = pJVar24;
+              if (iVar23 == 0) goto code_?;
             }
             func_?();
-            fVar3 = (this_09->fields).jumpDir.y;
-            if ((fVar3 != 0.0) && (iVar16 = *(int *)((int)fVar3 + 0x10), iVar16 != 0)) {
-              pDVar15 = *(Delegate **)(iVar16 + 100);
-              pOVar14 = (Object *)(this_09->fields).jumpTimeOut;
-              pAVar17 = (Action_1_MVControllerColliderHit_ *)
+            iVar23 = *(int *)&(pJVar24->_1).naturalAligment;
+            this_09 = pJVar24;
+            if ((iVar23 != 0) &&
+               (pJVar1 = *(JumpState_OnWallJumpDelegate__Class **)(iVar23 + 0x10),
+               pJVar1 != (JumpState_OnWallJumpDelegate__Class *)0x0)) {
+              pDVar13 = (Delegate *)(pJVar1->_1).typeHierarchy;
+              pOVar20 = *(Object **)&(pJVar24->_1).interfaces_count;
+              pAVar21 = (Action_1_MVControllerColliderHit_ *)
                         func_?(TypeInfo__System__Action<MVControllerColliderHit>);
               mscorlib.dll::System::Action`1[MVControllerColliderHit]::
               Action_1_MVControllerColliderHit___ctor
-                        (pAVar17,pOVar14,
+                        (pAVar21,pOVar20,
                          MethodInfo__BounceState__HandleMoveHit_MVControllerColliderHit_,
                          (MethodInfo *)0x0);
-              pDVar15 = mscorlib.dll::System::Delegate::Delegate_Combine
-                                  (pDVar15,(Delegate *)pAVar17,(MethodInfo *)0x0);
-              if (pDVar15 == (Delegate *)0x0) {
-                *(undefined4 *)(iVar16 + 100) = 0;
+              pDVar13 = mscorlib.dll::System::Delegate::Delegate_Combine
+                                  (pDVar13,(Delegate *)pAVar21,(MethodInfo *)0x0);
+              this_09 = (JumpState_OnWallJumpDelegate__Class *)
+                        TypeInfo__System__Action<MVControllerColliderHit>;
+              if (pDVar13 == (Delegate *)0x0) {
+                (pJVar1->_1).typeHierarchy = (Il2CppClass **)0x0;
               }
               else {
-                iVar18 = func_?();
-                if (iVar18 == 0) goto code_?;
-                *(int *)(iVar16 + 100) = iVar18;
-                iVar16 = func_?();
-                if (iVar16 == 0) goto code_?;
+                ppIVar22 = (Il2CppClass **)func_?();
+                if (ppIVar22 == (Il2CppClass **)0x0) goto code_?;
+                (pJVar1->_1).typeHierarchy = ppIVar22;
+                iVar23 = func_?();
+                if (iVar23 == 0) goto code_?;
               }
               func_?();
-              fVar3 = (this_09->fields).jumpDir.y;
-              if ((fVar3 != 0.0) && (iVar16 = *(int *)((int)fVar3 + 0x10), iVar16 != 0)) {
-                pDVar15 = *(Delegate **)(iVar16 + 100);
-                pOVar14 = (Object *)(this_09->fields).jumpDir.z;
-                pAVar17 = (Action_1_MVControllerColliderHit_ *)
+              iVar23 = *(int *)&(pJVar1->_1).naturalAligment;
+              this_09 = pJVar1;
+              if ((iVar23 != 0) &&
+                 (pJVar24 = *(JumpState_OnWallJumpDelegate__Class **)(iVar23 + 0x10),
+                 pJVar24 != (JumpState_OnWallJumpDelegate__Class *)0x0)) {
+                pDVar13 = (Delegate *)(pJVar24->_1).typeHierarchy;
+                pOVar20 = (Object *)(pJVar1->vtable).Equals.methodPtr;
+                pAVar21 = (Action_1_MVControllerColliderHit_ *)
                           func_?(TypeInfo__System__Action<MVControllerColliderHit>);
                 mscorlib.dll::System::Action`1[MVControllerColliderHit]::
                 Action_1_MVControllerColliderHit___ctor
-                          (pAVar17,pOVar14,
+                          (pAVar21,pOVar20,
                            MethodInfo__ImpactState__HandleMoveHit_MVControllerColliderHit_,
                            (MethodInfo *)0x0);
-                pDVar15 = mscorlib.dll::System::Delegate::Delegate_Combine
-                                    (pDVar15,(Delegate *)pAVar17,(MethodInfo *)0x0);
-                if (pDVar15 == (Delegate *)0x0) {
-                  *(undefined4 *)(iVar16 + 100) = 0;
+                pDVar13 = mscorlib.dll::System::Delegate::Delegate_Combine
+                                    (pDVar13,(Delegate *)pAVar21,(MethodInfo *)0x0);
+                this_09 = (JumpState_OnWallJumpDelegate__Class *)
+                          TypeInfo__System__Action<MVControllerColliderHit>;
+                if (pDVar13 == (Delegate *)0x0) {
+                  (pJVar24->_1).typeHierarchy = (Il2CppClass **)0x0;
                   func_?();
                   return;
                 }
-                iVar18 = func_?();
-                if (iVar18 != 0) {
-                  *(int *)(iVar16 + 100) = iVar18;
-                  iVar16 = func_?();
-                  if (iVar16 != 0) {
+                ppIVar22 = (Il2CppClass **)func_?();
+                if (ppIVar22 != (Il2CppClass **)0x0) {
+                  (pJVar24->_1).typeHierarchy = ppIVar22;
+                  iVar23 = func_?();
+                  pJVar1 = pJVar24;
+                  if (iVar23 != 0) {
                     func_?();
                     return;
                   }
@@ -923,40 +1051,40 @@ code_?:
           }
           goto code_?;
         }
-        iVar18 = func_?();
-        if (iVar18 != 0) {
-          *(int *)(iVar16 + 100) = iVar18;
-          iVar16 = func_?();
-          if (iVar16 != 0) goto code_?;
+        iVar25 = func_?();
+        if (iVar25 != 0) {
+          *(int *)(iVar23 + 100) = iVar25;
+          iVar23 = func_?();
+          if (iVar23 != 0) goto code_?;
         }
         goto code_?;
       }
-      pAVar13 = (Action_1_GroundChange_ *)func_?();
-      if (pAVar13 != (Action_1_GroundChange_ *)0x0) {
-        (pMVar12->fields).OnGroundChange = pAVar13;
-        iVar16 = func_?();
-        if (iVar16 != 0) goto code_?;
+      pAVar19 = (Action_1_GroundChange_ *)func_?();
+      if (pAVar19 != (Action_1_GroundChange_ *)0x0) {
+        (pMVar18->fields).OnGroundChange = pAVar19;
+        iVar23 = func_?();
+        if (iVar23 != 0) goto code_?;
         goto code_?;
       }
       goto code_?;
     }
-    pJVar19 = (JumpState_OnWallJumpDelegate *)0x0;
-    if (pJVar11->klass == TypeInfo__JumpState__OnWallJumpDelegate) {
-      pJVar19 = pJVar11;
+    if (pJVar2->klass == TypeInfo__JumpState__OnWallJumpDelegate) {
+      pJVar12 = pJVar2;
     }
-    if (pJVar19 == (JumpState_OnWallJumpDelegate *)0x0) goto code_?;
-    (pJVar10->fields).OnWallJump = pJVar19;
-    pJVar19 = (JumpState_OnWallJumpDelegate *)0x0;
-    if (pJVar11->klass == TypeInfo__JumpState__OnWallJumpDelegate) {
-      pJVar19 = pJVar11;
+    if (pJVar12 == (JumpState_OnWallJumpDelegate *)0x0) goto code_?;
+    (pJVar11->fields).OnWallJump = pJVar12;
+    pJVar12 = (JumpState_OnWallJumpDelegate *)0x0;
+    if (pJVar2->klass == TypeInfo__JumpState__OnWallJumpDelegate) {
+      pJVar12 = pJVar2;
     }
-    if (pJVar19 != (JumpState_OnWallJumpDelegate *)0x0) goto code_?;
+    this_09 = TypeInfo__JumpState__OnWallJumpDelegate;
+    if (pJVar12 != (JumpState_OnWallJumpDelegate *)0x0) goto code_?;
   }
-  func_?();
+  uVar17 = func_?(pJVar2,this_09);
 code_?:
-  func_?();
-  pcVar20 = (code *)swi(3);
-  (*pcVar20)();
+  func_?(uVar17);
+  pcVar26 = (code *)swi(3);
+  (*pcVar26)();
   return;
 }
 
@@ -1482,35 +1610,57 @@ void Assembly-CSharp.dll::AvatarMotor::AvatarMotor_OnDestroy(AvatarMotor *this,M
   this_00 = (this->fields).waterState;
   if (this_00 != (WaterState *)0x0) {
     WaterState::WaterState_Destroy(this_00,(MethodInfo *)0x0);
-    this_01 = (this->fields).jumpState;
-    if (this_01 != (JumpState *)0x0) {
-      JumpState::JumpState_Destroy(this_01,(MethodInfo *)0x0);
+    object = (this->fields).jumpState;
+    if (object != (JumpState *)0x0) {
+      if (cRam_? == '\0') {
+        func_?(&TypeInfo__System__Action);
+        func_?(&MethodInfo__JumpState__HandleJumpBoost__);
+        cRam_? = '\x01';
+      }
+      bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsAlive((MethodInfo *)0x0);
+      if (bVar1 != 0) {
+        pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if ((pMVar2 == (MVNetworkGame *)0x0) ||
+           (pMVar3 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar2,(MethodInfo *)0x0),
+           pMVar3 == (MVLocalPlayer *)0x0)) goto code_?;
+        pBVar4 = (pMVar3->fields).boostController;
+        pNVar5 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+        NavMesh_OnNavMeshPreUpdate__ctor
+                  (pNVar5,(Object *)object,MethodInfo__JumpState__HandleJumpBoost__,
+                   (MethodInfo *)0x0);
+        if (pBVar4 == (BoostController *)0x0) goto code_?;
+        BoostController::BoostController_UnSubscribeToBoostChanged
+                  (pBVar4,BoostType__Enum_JumpPowerFloatMultiplier,(Action *)pNVar5,
+                   (MethodInfo *)0x0);
+      }
       bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsAlive((MethodInfo *)0x0);
       if (bVar1 == 0) {
         return;
       }
-      this_03 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((this_03 != (MVNetworkGame *)0x0) &&
-         (pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_03,(MethodInfo *)0x0),
-         pMVar2 != (MVLocalPlayer *)0x0)) {
-        this_02 = (pMVar2->fields).boostController;
-        this_04 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+      pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if ((pMVar2 != (MVNetworkGame *)0x0) &&
+         (pMVar3 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar2,(MethodInfo *)0x0),
+         pMVar3 != (MVLocalPlayer *)0x0)) {
+        pBVar4 = (pMVar3->fields).boostController;
+        pNVar5 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
         UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
         NavMesh_OnNavMeshPreUpdate__ctor
-                  (this_04,(Object *)this,MethodInfo__AvatarMotor__HandleMovementBoost__,
+                  (pNVar5,(Object *)this,MethodInfo__AvatarMotor__HandleMovementBoost__,
                    (MethodInfo *)0x0);
-        if (this_02 != (BoostController *)0x0) {
+        if (pBVar4 != (BoostController *)0x0) {
           BoostController::BoostController_UnSubscribeToBoostChanged
-                    (this_02,BoostType__Enum_MovementSpeedFloatMultiplier,(Action *)this_04,
+                    (pBVar4,BoostType__Enum_MovementSpeedFloatMultiplier,(Action *)pNVar5,
                      (MethodInfo *)0x0);
           return;
         }
       }
     }
   }
+code_?:
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -1546,7 +1696,7 @@ void Assembly-CSharp.dll::AvatarMotor::AvatarMotor_Reset(AvatarMotor *this,Metho
     if ((this->fields).smoothCharacterController != (SmoothCharacterController *)0x0) {
       iVar5 = *(int *)(in_stack_6 + 0x10);
       if (cRam_? == '\0') {
-        func_?(&TypeInfo__UnityEngine__Vector3,unaff_EBP,unaff_retaddr);
+        func_?();
         cRam_? = '\x01';
       }
       fVar4 = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).z;
@@ -1556,6 +1706,7 @@ void Assembly-CSharp.dll::AvatarMotor::AvatarMotor_Reset(AvatarMotor *this,Metho
         *(float *)(iVar5 + 0x5c) = fVar4;
         this_00 = *(Component **)(in_stack_6 + 0x14);
         if (this_00 != (Component *)0x0) {
+          uStack7 = 0;
           if (cRam_? == '\0') {
             func_?(&
                             MethodInfo__System__Collections__Generic__Queue<SmoothPhysicsMovement::Package>__Clear__
@@ -1576,42 +1727,46 @@ void Assembly-CSharp.dll::AvatarMotor::AvatarMotor_Reset(AvatarMotor *this,Metho
             func_?(&this_00[2].fields,0);
             this_00[2].monitor = (MonitorData *)0x0;
             func_?(&this_00[2].monitor,0);
-            pCVar7 = this_00[3].klass;
-            pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+            pCVar8 = this_00[3].klass;
+            pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                                (this_00,(MethodInfo *)0x0);
-            if (pTVar8 != (Transform *)0x0) {
-              pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                                 ((Vector3 *)&stack0xfffffff8,pTVar8,(MethodInfo *)0x0);
-              if (pCVar7 != (Component__Class *)0x0) {
+            if (pTVar9 != (Transform *)0x0) {
+              pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
+                                 ((Vector3 *)&stack0xfffffff8,pTVar9,(MethodInfo *)0x0);
+              if (pCVar8 != (Component__Class *)0x0) {
                 UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                          ((Transform *)pCVar7,*pVVar9,(MethodInfo *)0x0);
-                pCVar7 = this_00[3].klass;
-                pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                          ((Transform *)pCVar8,*pVVar10,(MethodInfo *)0x0);
+                pCVar8 = this_00[3].klass;
+                pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                                    (this_00,(MethodInfo *)0x0);
-                if (pTVar8 != (Transform *)0x0) {
-                  pQVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                if (pTVar9 != (Transform *)0x0) {
+                  pQVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
                             Transform_get_rotation
-                                      ((Quaternion *)&stack0xfffffff4,pTVar8,(MethodInfo *)0x0);
-                  if (pCVar7 != (Component__Class *)0x0) {
+                                      ((Quaternion *)&stack0xfffffff4,pTVar9,(MethodInfo *)0x0);
+                  if (pCVar8 != (Component__Class *)0x0) {
                     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
-                              ((Transform *)pCVar7,*pQVar10,(MethodInfo *)0x0);
+                              ((Transform *)pCVar8,*pQVar11,(MethodInfo *)0x0);
                     return;
                   }
                 }
               }
             }
           }
+          func_?();
+          pcVar12 = (code *)swi(3);
+          (*pcVar12)();
+          return;
         }
       }
       func_?();
-      pcVar11 = (code *)swi(3);
-      (*pcVar11)();
+      pcVar12 = (code *)swi(3);
+      (*pcVar12)();
       return;
     }
   }
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 

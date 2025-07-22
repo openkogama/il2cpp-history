@@ -209,7 +209,8 @@ void Assembly-CSharp.dll::TeamMenuButton::TeamMenuButton_ShowTeamMenu
     if ((pGVar2 != (GameEventManager *)0x0) &&
        (this_00 = (pGVar2->fields).AvatarCommandsPlayMode,
        this_00 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) {
-      PlayButtonTouch::PlayButtonTouch_OnConfirmPlay((PlayButtonTouch *)this_00,(MethodInfo *)0x0);
+      GameEventManager+AvatarCommandsPlayModeManager::
+      GameEventManager_AvatarCommandsPlayModeManager_RemoveFromGame(this_00,(MethodInfo *)0x0);
       return;
     }
   }

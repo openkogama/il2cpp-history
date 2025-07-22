@@ -56,31 +56,12 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DLookAndFeel::GizmoPlaneSlider3D
   (this->fields)._hoveredBorderColor.g = fVar3;
   (this->fields)._hoveredBorderColor.b = fVar2;
   (this->fields)._hoveredBorderColor.a = fVar1;
-  method_01 = TypeInfo__RTG__GizmoRotationArc3DLookAndFeel;
-  value = (GizmoRotationArc3DLookAndFeel *)func_?();
-  (value->fields)._useShortestRotation = 1;
-  (value->fields)._fillFlags = 3;
-  pCVar5 = RTSystemValues::RTSystemValues_get_GuideFillColor(&CStack_6,(MethodInfo *)0x0);
-  fVar4 = pCVar5->g;
-  fVar3 = pCVar5->b;
-  fVar2 = pCVar5->a;
-  (value->fields)._color.r = pCVar5->r;
-  (value->fields)._color.g = fVar4;
-  (value->fields)._color.b = fVar3;
-  (value->fields)._color.a = fVar2;
-  pCVar5 = RTSystemValues::RTSystemValues_get_GuideBorderColor(&CStack_6,(MethodInfo *)0x0);
-  fVar4 = pCVar5->g;
-  fVar3 = pCVar5->b;
-  fVar2 = pCVar5->a;
-  (value->fields)._borderColor.r = pCVar5->r;
-  (value->fields)._borderColor.g = fVar4;
-  (value->fields)._borderColor.b = fVar3;
-  (value->fields)._borderColor.a = fVar2;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
+  this_00 = (GizmoRotationArc3DLookAndFeel *)
+            func_?(TypeInfo__RTG__GizmoRotationArc3DLookAndFeel);
+  GizmoRotationArc3DLookAndFeel::GizmoRotationArc3DLookAndFeel__ctor(this_00,(MethodInfo *)0x0);
   method_00 = (MethodInfo *)&(this->fields)._rotationArcLookAndFeel;
-  (this->fields)._rotationArcLookAndFeel = value;
-  func_?(method_00,value);
+  (this->fields)._rotationArcLookAndFeel = this_00;
+  func_?(method_00,this_00);
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;

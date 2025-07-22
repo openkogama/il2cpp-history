@@ -32,7 +32,7 @@ bool Assembly-CSharp.dll::ModeControllerBase::ModeControllerBase_CannotLeaveEdit
       }
       if (TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField !=
           (IPlayModeUI *)0x0) {
-        puStack_5 = (undefined *)0x7;
+        puStack_5 = (undefined *)0x9;
         bVar4 = func_?();
         return bVar4;
       }
@@ -224,6 +224,24 @@ void Assembly-CSharp.dll::ModeControllerBase::ModeControllerBase_TogglePlayerInd
   func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
+  return;
+}
+
+
+/* Void set_IsInPauseMenu(Boolean) */
+
+void Assembly-CSharp.dll::ModeControllerBase::ModeControllerBase_set_IsInPauseMenu
+               (ModeControllerBase *this,bool value,MethodInfo *method)
+
+{
+  if (value != (this->fields).isInPauseMenu) {
+    (this->fields).isInPauseMenu = value;
+    pAVar1 = (this->fields)._IsPausedStateChange_k__BackingField;
+    if (pAVar1 != (Action_1_Boolean_ *)0x0) {
+      (*(pAVar1->fields)._._.invoke_impl)
+                ((pAVar1->fields)._._.method_code,_value,(pAVar1->fields)._._.method);
+    }
+  }
   return;
 }
 

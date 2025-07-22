@@ -19,57 +19,69 @@ Plane * Assembly-CSharp.dll::RTG::PlaneEx::PlaneEx_GetCameraFacingAxisSlicePlane
 {
   if (camera != (Camera *)0x0) {
     pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                       ((Component *)camera,(MethodInfo *)0x0);
+                        ((Component *)camera,(MethodInfo *)0x0);
     if (pTVar1 != (Transform *)0x0) {
       pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
-                         ((Vector3 *)auStack_3,pTVar1,(MethodInfo *)0x0);
-      puStack_4 = (undefined *)pVVar2->z;
-      auStack_3._12_4_ = pVVar2->x;
-      fStack_5 = pVVar2->y;
-      bVar6 = Vector3Ex::Vector3Ex_IsAligned(*pVVar2,axis,0,(MethodInfo *)0x0);
-      if (bVar6 != 0) {
+                          ((Vector3 *)&stack0xffffffd4,pTVar1,(MethodInfo *)0x0);
+      fVar3 = pVVar2->x;
+      fVar4 = pVVar2->y;
+      fVar5 = pVVar2->z;
+      if ((float)((uint)((float)((uint)(axis.y * fVar4 + axis.x * fVar3 + axis.z * fVar5) &
+                                _UNK_?) - _UNK_?) & _UNK_?) < _UNK_?) {
         pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                           ((Component *)camera,(MethodInfo *)0x0);
+                            ((Component *)camera,(MethodInfo *)0x0);
         if (pTVar1 == (Transform *)0x0) goto code_?;
         pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
-                           ((Vector3 *)auStack_3,pTVar1,(MethodInfo *)0x0);
-        auStack_3._12_4_ = pVVar2->x;
-        fStack_5 = pVVar2->y;
-        puStack_4 = (undefined *)pVVar2->z;
+                            ((Vector3 *)&stack0xffffffd4,pTVar1,(MethodInfo *)0x0);
+        uVar6 = pVVar2->x;
+        uVar7 = pVVar2->y;
+        fVar5 = pVVar2->z;
+        fVar3 = (float)uVar6;
+        fVar4 = (float)uVar7;
       }
-      fVar7 = (float)puStack_4 * axis.y;
-      fVar8 = axis.x * (float)puStack_4;
-      puStack_4 = (undefined *)((float)auStack_3._12_4_ * axis.y - axis.x * fStack_5);
-      value.y = fVar8 - (float)auStack_3._12_4_ * axis.z;
-      value.x = fStack_5 * axis.z - fVar7;
-      value.z = (float)puStack_4;
+      VVar8.y = fVar5 * axis.x - fVar3 * axis.z;
+      VVar8.x = fVar4 * axis.z - fVar5 * axis.y;
+      VVar8.z = fVar3 * axis.y - fVar4 * axis.x;
       pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                         ((Vector3 *)auStack_3,value,(MethodInfo *)0x0);
-      auStack_3._12_4_ = pVVar2->x;
-      fStack_5 = pVVar2->y;
-      puStack_4 = (undefined *)pVVar2->z;
-      fVar9 = (float10)func_?();
-      if (_UNK_? <= (float)fVar9) {
-        fVar7 = (float)puStack_4 * axis.y;
-        fVar8 = (float)puStack_4 * 0.0;
-        puStack_4 = (undefined *)((float)auStack_3._12_4_ * axis.y - fStack_5 * 0.0);
-        value_00.y = fVar8 - (float)auStack_3._12_4_ * axis.z;
-        value_00.x = fStack_5 * axis.z - fVar7;
-        value_00.z = (float)puStack_4;
+                          ((Vector3 *)&stack0xffffffd4,VVar8,(MethodInfo *)0x0);
+      fVar5 = pVVar2->x;
+      fVar9 = pVVar2->y;
+      fVar3 = pVVar2->z;
+      fVar10 = (float10)func_?();
+      if (_UNK_? <= (float)fVar10) {
+        __return_storage_ptr__ = (Plane *)(fVar5 * axis.y - fVar9 * axis.x);
+        fVar11 = fVar3 * axis.x - fVar5 * axis.z;
+        VVar8.x = fVar9 * axis.z - fVar3 * axis.y;
+        VVar8 = (Vector3)CONCAT84(uVar12,VVar8.x);
         pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                           ((Vector3 *)auStack_3,value_00,(MethodInfo *)0x0);
-        UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                  ((Vector3 *)auStack_3,*pVVar2,(MethodInfo *)0x0);
-        return (Plane *)auStack_3;
+                            ((Vector3 *)&stack0xffffffd4,VVar8,(MethodInfo *)0x0);
+        uVar13 = pVVar2->x;
+        pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
+                            ((Vector3 *)&stack0xffffffd4,*pVVar2,(MethodInfo *)0x0);
+        uVar14 = pVVar2->x;
+        uVar15 = pVVar2->y;
+        fVar3 = pVVar2->z;
+        fVar4 = (float)((uint)((float)&stack0xffffffd4 * (float)uVar15 + (float)uVar14 * 4.390226e-29
+                              + (float)uVar13 * fVar3) ^
+                       __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
+        (__return_storage_ptr__->m_Normal).x = (float)uVar14;
+        (__return_storage_ptr__->m_Normal).y = (float)uVar15;
+        (__return_storage_ptr__->m_Normal).z = fVar3;
+        __return_storage_ptr__->m_Distance = fVar4;
+        return __return_storage_ptr__;
       }
-      return (Plane *)auStack_3;
+      (__return_storage_ptr__->m_Normal).x = 0.0;
+      (__return_storage_ptr__->m_Normal).y = 0.0;
+      (__return_storage_ptr__->m_Normal).z = 0.0;
+      __return_storage_ptr__->m_Distance = 0.0;
+      return __return_storage_ptr__;
     }
   }
 code_?:
   func_?();
-  pcVar10 = (code *)swi(3);
-  pPVar11 = (Plane *)(*pcVar10)();
-  return pPVar11;
+  pcVar16 = (code *)swi(3);
+  pPVar17 = (Plane *)(*pcVar16)();
+  return pPVar17;
 }
 
 
@@ -273,11 +285,11 @@ Plane * Assembly-CSharp.dll::RTG::PlaneEx::PlaneEx_InvertNormal
 
 {
   uVar1 = (uint)plane.m_Normal.x ^
-          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+          __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
   uVar2 = (uint)plane.m_Normal.y ^
-          __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+          __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
   VStack_3.z = (float)((uint)plane.m_Normal.z ^
-                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                       __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
   (__return_storage_ptr__->m_Normal).x = 0.0;
   (__return_storage_ptr__->m_Normal).y = 0.0;
   (__return_storage_ptr__->m_Normal).z = 0.0;
@@ -292,7 +304,7 @@ Plane * Assembly-CSharp.dll::RTG::PlaneEx::PlaneEx_InvertNormal
   (__return_storage_ptr__->m_Normal).x = pVVar4->x;
   (__return_storage_ptr__->m_Normal).y = fVar5;
   fVar5 = (float)((uint)plane.m_Distance ^
-                 __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                 __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
   (__return_storage_ptr__->m_Normal).z = fVar6;
   __return_storage_ptr__->m_Distance = fVar5;
   return __return_storage_ptr__;

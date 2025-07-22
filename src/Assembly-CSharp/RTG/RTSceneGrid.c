@@ -120,17 +120,17 @@ Assembly-CSharp.dll::RTG::RTSceneGrid::RTSceneGrid_GetSceneHitForGridSnap
     func_?(TypeInfo__RTG__MonoSingleton<RTG::RTInputDevice>);
   }
   pOVar1 = MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
-                      (MethodInfo__RTG__MonoSingleton<RTG::RTInputDevice>__get_Get__);
+                     (MethodInfo__RTG__MonoSingleton<RTG::RTInputDevice>__get_Get__);
   if (pOVar1 != (Object *)0x0) {
     pOVar2 = pOVar1[2].klass;
     if ((TypeInfo__RTG__MonoSingleton<RTG::RTFocusCamera>->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__RTG__MonoSingleton<RTG::RTFocusCamera>);
     }
     pOVar1 = MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
-                        (MethodInfo__RTG__MonoSingleton<RTG::RTFocusCamera>__get_Get__);
+                       (MethodInfo__RTG__MonoSingleton<RTG::RTFocusCamera>__get_Get__);
     if ((pOVar1 != (Object *)0x0) &&
-       (uStack_3 = CONCAT44(pOVar1[4].monitor,(undefined4)uStack_3), pOVar2 != (Object__Class *)0x0
-       )) {
+       (uStack_3 = CONCAT44(pOVar1[4].monitor,(undefined4)uStack_3), pOVar2 != (Object__Class *)0x0)
+       ) {
       pIVar4 = (pOVar2->_0).image;
       uVar5 = 0;
       uVar6 = *(ushort *)((int)&pIVar4[4].nameNoExt + 2);
@@ -156,117 +156,49 @@ code_?:
       uStack_12 = puVar8[2];
       uStack_13 = puVar8[3];
       uStack_3 = *(undefined8 *)(puVar8 + 4);
-      this_00 = (SceneRaycastFilter *)func_?(TypeInfo__RTG__SceneRaycastFilter);
-      SceneRaycastFilter::SceneRaycastFilter__ctor(this_00,(MethodInfo *)0x0);
+      this_01 = (SceneRaycastFilter *)func_?(TypeInfo__RTG__SceneRaycastFilter);
+      SceneRaycastFilter::SceneRaycastFilter__ctor(this_01,(MethodInfo *)0x0);
       pMVar14 = 
       MethodInfo__System__Collections__Generic__List<RTG::GameObjectType>__Add_RTG__GameObjectType_;
-      if ((this_00 != (SceneRaycastFilter *)0x0) &&
-         (pLVar15 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                   (this_00->fields)._allowedObjectTypes,
-         pLVar15 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)) {
-        piVar16 = &(pLVar15->fields)._version;
-        *piVar16 = *piVar16 + 1;
-        pRVar17 = (pLVar15->fields)._items;
-        if (pRVar17 != (RegexCharClass_SingleRange__Array *)0x0) {
-          uVar18 = (pLVar15->fields)._size;
-          if (uVar18 < pRVar17->max_length) {
-            (pLVar15->fields)._size = uVar18 + 1;
-            if (pRVar17->max_length <= uVar18) goto code_?;
-            pRVar17->vector[uVar18].First = 1;
-            pRVar17->vector[uVar18].Last = 0;
+      if ((this_01 != (SceneRaycastFilter *)0x0) &&
+         (this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                    (this_01->fields)._allowedObjectTypes,
+         this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)) {
+        piVar15 = &(this_00->fields)._version;
+        *piVar15 = *piVar15 + 1;
+        pRVar16 = (this_00->fields)._items;
+        if (pRVar16 != (RegexCharClass_SingleRange__Array *)0x0) {
+          uVar17 = (this_00->fields)._size;
+          if (uVar17 < pRVar16->max_length) {
+            (this_00->fields)._size = uVar17 + 1;
+            if (pRVar16->max_length <= uVar17) goto code_?;
+            pRVar16->vector[uVar17].First = 1;
+            pRVar16->vector[uVar17].Last = 0;
           }
           else {
             mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
             RegexCharClass+SingleRange]::
             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__AddWithResize
-                      (pLVar15,(RegexCharClass_SingleRange)0x1,pMVar14->klass->rgctx_data[0xe].method
+                      (this_00,(RegexCharClass_SingleRange)0x1,pMVar14->klass->rgctx_data[0xe].method
                       );
           }
           if ((TypeInfo__RTG__MonoSingleton<RTG::RTScene>->_1).cctor_finished_or_no_cctor == 0) {
             func_?(TypeInfo__RTG__MonoSingleton<RTG::RTScene>);
           }
-          this_01 = (RTScene *)
+          this_02 = (RTScene *)
                     MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
                               (MethodInfo__RTG__MonoSingleton<RTG::RTScene>__get_Get__);
-          if (this_01 != (RTScene *)0x0) {
-            if (cRam_? == '\0') {
-              func_?(&
-                              MethodInfo__System__Collections__Generic__List<RTG::GameObjectRayHit>__get_Count__
-                             );
-              func_?(&
-                              MethodInfo__System__Collections__Generic__List<RTG::GameObjectRayHit>__get_Item_int_
-                             );
-              func_?(&TypeInfo__RTG__SceneRaycastHit);
-              cRam_? = '\x01';
-            }
-            hits = (this_01->fields)._objectHitBuffer;
-            if (cRam_? == '\0') {
-              func_?(&
-                              MethodInfo__System__Collections__Generic__List<RTG::GameObjectRayHit>__Clear__
-                             );
-              func_?(&
-                              MethodInfo__System__Collections__Generic__List<RTG::GameObjectRayHit>__get_Count__
-                             );
-              func_?(&
-                              MethodInfo__System__Collections__Generic__List<RTG::GameObjectType>__get_Count__
-                             );
-              cRam_? = '\x01';
-            }
-            if (hits != (List_1_RTG_GameObjectRayHit_ *)0x0) {
-              length = (hits->fields)._size;
-              piVar16 = &(hits->fields)._version;
-              *piVar16 = *piVar16 + 1;
-              (hits->fields)._size = 0;
-              if (0 < length) {
-                mscorlib.dll::System::Array::Array_Clear
-                          ((Array *)(hits->fields)._items,0,length,(MethodInfo *)0x0);
-              }
-              pLVar19 = (this_00->fields)._allowedObjectTypes;
-              if (pLVar19 != (List_1_RTG_GameObjectType_ *)0x0) {
-                if ((pLVar19->fields)._size != 0) {
-                  ray.m_Origin.y = (float)uStack_11;
-                  ray.m_Origin.x = (float)uStack_10;
-                  ray.m_Origin.z = (float)uStack_12;
-                  ray.m_Direction.x = (float)uStack_13;
-                  ray.m_Direction.y = (float)(int)uStack_3;
-                  ray.m_Direction.z = (float)((ulonglong)uStack_3 >> 0x20);
-                  RTScene::RTScene_RaycastAllObjectsSorted
-                            (this_01,ray,SceneRaycastPrecision__Enum_BestFit,hits,(MethodInfo *)0x0)
-                  ;
-                  SceneRaycastFilter::SceneRaycastFilter_FilterHits(this_00,hits,(MethodInfo *)0x0);
-                }
-                pLVar15 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                         (this_01->fields)._objectHitBuffer;
-                if (pLVar15 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                              0x0) {
-                  if ((pLVar15->fields)._size == 0) {
-                    item1.First = 0;
-                    item1.Last = 0;
-                  }
-                  else {
-                    item1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                            RegularExpressions::RegexCharClass+SingleRange]::
-                            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                      (pLVar15,0,
-                                       MethodInfo__System__Collections__Generic__List<RTG::GameObjectRayHit>__get_Item_int_
-                                      );
-                  }
-                  ray_00.m_Origin.y = (float)uStack_11;
-                  ray_00.m_Origin.x = (float)uStack_10;
-                  ray_00.m_Origin.z = (float)uStack_12;
-                  ray_00.m_Direction.x = (float)uStack_13;
-                  ray_00.m_Direction.y = (float)(int)uStack_3;
-                  ray_00.m_Direction.z = (float)((ulonglong)uStack_3 >> 0x20);
-                  item2 = RTScene::RTScene_RaycastSceneGridIfVisible
-                                    (this_01,ray_00,(MethodInfo *)0x0);
-                  this_02 = (Tuple_2_Object_Object_ *)
-                            func_?(TypeInfo__RTG__SceneRaycastHit);
-                  mscorlib.dll::System::Tuple`2[Object,Object]::Tuple_2_Object_Object___ctor
-                            (this_02,(Object *)item1,(Object *)item2,(MethodInfo *)0x0);
-                  return (SceneRaycastHit *)this_02;
-                }
-              }
-            }
+          if (this_02 != (RTScene *)0x0) {
+            ray.m_Origin.y = (float)uStack_11;
+            ray.m_Origin.x = (float)uStack_10;
+            ray.m_Origin.z = (float)uStack_12;
+            ray.m_Direction.x = (float)uStack_13;
+            ray.m_Direction.y = (float)(int)uStack_3;
+            ray.m_Direction.z = (float)((ulonglong)uStack_3 >> 0x20);
+            pSVar18 = RTScene::RTScene_Raycast
+                                (this_02,ray,SceneRaycastPrecision__Enum_BestFit,this_01,
+                                 (MethodInfo *)0x0);
+            return pSVar18;
           }
         }
       }
@@ -275,9 +207,9 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar20 = (code *)swi(3);
-  pSVar21 = (SceneRaycastHit *)(*pcVar20)();
-  return pSVar21;
+  pcVar19 = (code *)swi(3);
+  pSVar18 = (SceneRaycastHit *)(*pcVar19)();
+  return pSVar18;
 }
 
 
@@ -978,7 +910,7 @@ void Assembly-CSharp.dll::RTG::RTSceneGrid::RTSceneGrid_SnapToObjectHitPoint
     fStack_10 = pVVar3->z;
     fVar5 = (float)((uint)(VStack_7.y * uStack_9._4_4_ + VStack_7.x * (float)uStack_9 +
                            VStack_7.z * fStack_10) ^
-                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     uStack_11 = uStack_9;
     fStack_12 = fStack_10;
     if (objectHit != (GameObjectRayHit *)0x0) {
@@ -1036,7 +968,7 @@ void Assembly-CSharp.dll::RTG::RTSceneGrid::RTSceneGrid_SnapToObjectHitPoint
       fStack_10 = 0.0;
       fStack_16 = 0.0;
       fStack_2 = (float)((uint)(fVar14 * VStack_1.y + fVar5 * VStack_1.x + fVar19 * VStack_1.z)
-                         ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
+                         ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field)
       ;
       fStack_15 = fStack_2;
       uStack_9 = uVar18;
@@ -1101,7 +1033,7 @@ void Assembly-CSharp.dll::RTG::RTSceneGrid::RTSceneGrid_SnapToObjectHitPoint
       fStack_15 = pVVar3->z;
       fVar5 = (float)((uint)(VStack_7.y * (float)uStack_4._4_4_ +
                               VStack_7.x * (float)(undefined4)uStack_4 + VStack_7.z * fStack_15)
-                      ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                      ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
       pXVar13 = (this->fields)._settings;
       uStack_9 = uStack_4;
       fStack_10 = fStack_15;
@@ -1249,94 +1181,33 @@ void Assembly-CSharp.dll::RTG::RTSceneGrid::RTSceneGrid__ctor(RTSceneGrid *this,
     cRam_? = '\x01';
   }
   this_00 = (SceneGridHotkeys *)func_?(TypeInfo__RTG__SceneGridHotkeys);
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__Hotkeys);
-    func_?(&StringLiteral_Grid_down);
-    func_?(&StringLiteral_Grid_up);
-    func_?(&StringLiteral_Snap_to_cursor_pick_point);
-    cRam_? = '\x01';
-  }
-  pHVar1 = (Hotkeys *)func_?(TypeInfo__RTG__Hotkeys);
-  Hotkeys::Hotkeys__ctor_1(pHVar1,StringLiteral_Grid_up,(HotkeysStaticData)0x0,(MethodInfo *)0x0);
-  if (pHVar1 != (Hotkeys *)0x0) {
-    Hotkeys::Hotkeys_set_Key(pHVar1,KeyCode__Enum_RightBracket,(MethodInfo *)0x0);
-    (this_00->fields)._gridUp = pHVar1;
-    func_?();
-    pHVar1 = (Hotkeys *)func_?(TypeInfo__RTG__Hotkeys);
-    Hotkeys::Hotkeys__ctor_1
-              (pHVar1,StringLiteral_Grid_down,(HotkeysStaticData)0x0,(MethodInfo *)0x0);
-    if (pHVar1 != (Hotkeys *)0x0) {
-      Hotkeys::Hotkeys_set_Key(pHVar1,KeyCode__Enum_LeftBracket,(MethodInfo *)0x0);
-      (this_00->fields)._gridDown = pHVar1;
-      func_?();
-      pHVar1 = (Hotkeys *)func_?(TypeInfo__RTG__Hotkeys);
-      Hotkeys::Hotkeys__ctor_1
-                (pHVar1,StringLiteral_Snap_to_cursor_pick_point,(HotkeysStaticData)0x0,
-                 (MethodInfo *)0x0);
-      if (pHVar1 != (Hotkeys *)0x0) {
-        (pHVar1->fields)._lAlt = 1;
-        (this_00->fields)._snapToCursorPickPoint = pHVar1;
-        func_?();
-        Settings::Settings__ctor((Settings *)this_00,(MethodInfo *)0x0);
-        (this->fields)._hotkeys = this_00;
-        func_?(&(this->fields)._hotkeys,this_00);
-        this_01 = (XZGridSettings *)func_?(TypeInfo__RTG__XZGridSettings);
-        (this_01->fields)._isVisible = 1;
-        (this_01->fields)._cellSizeX = 1.0;
-        (this_01->fields)._cellSizeZ = 1.0;
-        if (cRam_? == '\0') {
-          func_?();
-          cRam_? = '\x01';
-        }
-        pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
-        fVar3 = (pVVar2->zeroVector).y;
-        fVar4 = (pVVar2->zeroVector).z;
-        (this_01->fields)._rotationAngles.x = (pVVar2->zeroVector).x;
-        (this_01->fields)._rotationAngles.y = fVar3;
-        (this_01->fields)._rotationAngles.z = fVar4;
-        (this_01->fields)._upDownStep = 1.0;
-        Settings::Settings__ctor((Settings *)this_01,(MethodInfo *)0x0);
-        (this->fields)._settings = this_01;
-        func_?();
-        this_02 = (XZGridLookAndFeel *)func_?();
-        pCVar5 = ColorEx::ColorEx_FromByteValues
-                           ((Color *)&stack0xffffffe8,0x80,0x80,0x80,0x66,(MethodInfo *)0x0);
-        fVar4 = pCVar5->r;
-        fVar3 = pCVar5->g;
-        fVar6 = pCVar5->b;
-        fVar7 = pCVar5->a;
-        (this_02->fields)._useCellFading = 1;
-        (this_02->fields)._lineColor.r = fVar4;
-        (this_02->fields)._lineColor.g = fVar3;
-        (this_02->fields)._lineColor.b = fVar6;
-        (this_02->fields)._lineColor.a = fVar7;
-        Settings::Settings__ctor((Settings *)this_02,(MethodInfo *)0x0);
-        (this->fields)._lookAndFeel = this_02;
-        func_?(&(this->fields)._lookAndFeel);
-        this_03 = (List_1_UnityEngine_Camera_ *)
-                  func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Camera>)
-        ;
-        mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
-        __Il2CppFullySharedGenericType]::
-        LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                  ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_03,
-                   MethodInfo__System__Collections__Generic__List<UnityEngine::Camera>__List__);
-        (this->fields)._renderIgnoreCameras = this_03;
-        func_?();
-        if ((TypeInfo__RTG__MonoSingleton<RTG::RTSceneGrid>->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        Borodar::FarlandSkies::CloudyCrownPro::Helpers::Singleton`1[System::Object]::
-        Singleton_1_System_Object___ctor
-                  ((Singleton_1_System_Object_ *)this,
-                   MethodInfo__RTG__MonoSingleton<RTG::RTSceneGrid>__MonoSingleton__);
-        return;
-      }
-    }
-  }
+  SceneGridHotkeys::SceneGridHotkeys__ctor(this_00,(MethodInfo *)0x0);
+  (this->fields)._hotkeys = this_00;
+  func_?(&(this->fields)._hotkeys,this_00);
+  this_01 = (XZGridSettings *)func_?(TypeInfo__RTG__XZGridSettings);
+  XZGridSettings::XZGridSettings__ctor(this_01,(MethodInfo *)0x0);
+  (this->fields)._settings = this_01;
+  func_?(&(this->fields)._settings,this_01);
+  this_02 = (XZGridLookAndFeel *)func_?(TypeInfo__RTG__XZGridLookAndFeel);
+  XZGridLookAndFeel::XZGridLookAndFeel__ctor(this_02,(MethodInfo *)0x0);
+  (this->fields)._lookAndFeel = this_02;
+  func_?(&(this->fields)._lookAndFeel,this_02);
+  this_03 = (List_1_UnityEngine_Camera_ *)
+            func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Camera>);
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_03,
+             MethodInfo__System__Collections__Generic__List<UnityEngine::Camera>__List__);
+  (this->fields)._renderIgnoreCameras = this_03;
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  if ((TypeInfo__RTG__MonoSingleton<RTG::RTSceneGrid>->_1).cctor_finished_or_no_cctor == 0) {
+    func_?();
+  }
+  Borodar::FarlandSkies::CloudyCrownPro::Helpers::Singleton`1[System::Object]::
+  Singleton_1_System_Object___ctor
+            ((Singleton_1_System_Object_ *)this,
+             MethodInfo__RTG__MonoSingleton<RTG::RTSceneGrid>__MonoSingleton__);
   return;
 }
 
@@ -1619,7 +1490,7 @@ Plane * Assembly-CSharp.dll::RTG::RTSceneGrid::RTSceneGrid_get_WorldPlane
     __return_storage_ptr__->m_Distance =
          (float)((uint)((float)uVar7 * (float)uVar2 * fVar6 + (float)uVar8 * (float)uVar3 * fVar6 +
                        fVar9 * fVar4 * fVar6) ^
-                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     return __return_storage_ptr__;
   }
   func_?();

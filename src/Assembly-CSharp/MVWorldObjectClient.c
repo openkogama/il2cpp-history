@@ -702,9 +702,9 @@ Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_CreateBox
             uVar4 = (pVVar3->oneVector).x;
             uVar5 = (pVVar3->oneVector).y;
             if (pTVar2 != (Transform *)0x0) {
-              value.y = (float)uVar5 * 4.5301953e-29;
-              value.x = (float)uVar4 * 4.5301953e-29;
-              value.z = (pVVar3->oneVector).z * 4.5301953e-29;
+              value.y = (float)uVar5 * 4.54177e-29;
+              value.x = (float)uVar4 * 4.54177e-29;
+              value.z = (pVVar3->oneVector).z * 4.54177e-29;
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
                         (pTVar2,value,(MethodInfo *)0x0);
               return pGVar1;
@@ -1482,17 +1482,21 @@ code_?:
   }
   this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
   if ((this_00 == (MVWorldObjectClientManager *)0x0) ||
-     (pMVar2 = (MVWorldObjectClient *)
-               MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                         (this_00,(this->fields)._.groupId,(MethodInfo *)0x0),
-     pMVar2 == (MVWorldObjectClient *)0x0)) {
-    func_?();
-    return this;
+     (this = (MVWorldObjectClient *)
+             MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+                       (this_00,(this->fields)._.groupId,(MethodInfo *)0x0),
+     this == (MVWorldObjectClient *)0x0)) {
+    cVar2 = '\0';
+    uVar3 = func_?();
+    pcVar4 = (char *)(CONCAT31((int3)((uint)uVar3 >> 8),-cVar2) + -0x5aef99a7);
+    *pcVar4 = *pcVar4 + (char)((uint)uVar3 >> 8) + cVar2;
+    pcVar5 = (code *)swi(3);
+    pMVar6 = (MVWorldObjectClient *)(*pcVar5)();
+    return pMVar6;
   }
   method = (MethodInfo *)0x0;
-  unaff_EBP = in_stack_3;
+  unaff_EBP = in_stack_7;
   unaff_ESI = pMVar1;
-  this = pMVar2;
   goto code_?;
 }
 

@@ -164,18 +164,25 @@ void Assembly-CSharp.dll::FlagWinningCondition::FlagWinningCondition_RoundEndRes
 
 {
   pTVar1 = (this->fields).score;
-  pSVar2 = WinningConditionControl::WinningConditionControl_MakeIntoScoreText
-                     (0,GameStatCounterType__Enum_Flag,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    func_?(&TypeInfo__System__String);
+    func_?(&::StringLiteral__);
+    func_?(&StringLiteral______);
+    func_?(&::StringLiteral__);
+    func_?(&StringLiteral__0);
+    cRam_? = '\x01';
+  }
   if (pTVar1 != (Text *)0x0) {
     (*(code *)(pTVar1->klass->vtable).set_text.method)
-              (pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+              (pTVar1,StringLiteral______,
+               (pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
     WinningConditionBase::WinningConditionBase_RoundEndReset
               ((WinningConditionBase *)this,(MethodInfo *)0x0);
     return;
   }
   func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

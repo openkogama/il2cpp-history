@@ -25,7 +25,7 @@ void Assembly-CSharp.dll::InputToPlayerMovementAndroid::
     (*pcVar2)();
     return;
   }
-  cVar3 = func_?(3,TypeInfo__IPlayModeUI,pIVar1);
+  cVar3 = func_?(5,TypeInfo__IPlayModeUI,pIVar1);
   if (cVar3 == '\0') {
     if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__MVInputWrapper);

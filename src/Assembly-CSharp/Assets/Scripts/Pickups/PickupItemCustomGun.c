@@ -8,24 +8,17 @@ PickupItemCustomGun_ChargeRoutine
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__Assets__Scripts__Pickups__PickupItemCustomGun___ChargeRoutine_d__68);
+    func_?(&TypeInfo__Assets__Scripts__Pickups__PickupItemCustomGun___ChargeRoutine_d__70);
     cRam_? = '\x01';
   }
-  this_00 = (SubscribableVariable_1_System_Int32Enum_ *)
-            func_?(
-                           TypeInfo__Assets__Scripts__Pickups__PickupItemCustomGun___ChargeRoutine_d__68
-                           );
-  SubscribableVariable`1[System::Int32Enum]::SubscribableVariable_1_System_Int32Enum___ctor
-            (this_00,0,(MethodInfo *)0x0);
-  if (this_00 != (SubscribableVariable_1_System_Int32Enum_ *)0x0) {
-    this_00[1].klass = (SubscribableVariable_1_System_Int32Enum___Class *)this;
-    func_?(this_00 + 1);
-    return (IEnumerator *)this_00;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  pIVar2 = (IEnumerator *)(*pcVar1)();
-  return pIVar2;
+  method_00 = TypeInfo__Assets__Scripts__Pickups__PickupItemCustomGun___ChargeRoutine_d__70;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
+  func_?(value + 2,this);
+  return (IEnumerator *)value;
 }
 
 
@@ -37,23 +30,17 @@ Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::PickupItemCu
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__Assets__Scripts__Pickups__PickupItemCustomGun___FetchFOV_d__52);
+    func_?(&TypeInfo__Assets__Scripts__Pickups__PickupItemCustomGun___FetchFOV_d__54);
     cRam_? = '\x01';
   }
-  this_00 = (SubscribableVariable_1_System_Int32Enum_ *)
-            func_?(TypeInfo__Assets__Scripts__Pickups__PickupItemCustomGun___FetchFOV_d__52
-                           );
-  SubscribableVariable`1[System::Int32Enum]::SubscribableVariable_1_System_Int32Enum___ctor
-            (this_00,0,(MethodInfo *)0x0);
-  if (this_00 != (SubscribableVariable_1_System_Int32Enum_ *)0x0) {
-    this_00[1].klass = (SubscribableVariable_1_System_Int32Enum___Class *)this;
-    func_?(this_00 + 1);
-    return (IEnumerator *)this_00;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  pIVar2 = (IEnumerator *)(*pcVar1)();
-  return pIVar2;
+  method_00 = TypeInfo__Assets__Scripts__Pickups__PickupItemCustomGun___FetchFOV_d__54;
+  value = (Object *)func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  value[2].klass = (Object__Class *)this;
+  value[1].klass = (Object__Class *)0x0;
+  func_?(value + 2,this);
+  return (IEnumerator *)value;
 }
 
 
@@ -309,12 +296,12 @@ PickupItemCustomGun_GetDefaultConfiguration(PickupItemCustomGun *this,MethodInfo
     func_?(&StringLiteral_ChargeEnabled);
     cRam_? = '\x01';
   }
-  this_00 = (PickupItemCustomGun_CustomGunConfiguration *)
+  this_00 = (PickupItemMeleeWeapon_MeleeWeaponConfiguration *)
             func_?(
                            TypeInfo__Assets__Scripts__Pickups__PickupItemCustomGun__CustomGunConfiguration
                            );
-  PickupItemCustomGun+CustomGunConfiguration::PickupItemCustomGun_CustomGunConfiguration__ctor
-            (this_00,(MethodInfo *)0x0);
+  PickupItemMeleeWeapon+MeleeWeaponConfiguration::
+  PickupItemMeleeWeapon_MeleeWeaponConfiguration__ctor(this_00,(MethodInfo *)0x0);
   if ((TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->_1).
       cctor_finished_or_no_cctor == 0) {
     func_?();
@@ -322,7 +309,7 @@ PickupItemCustomGun_GetDefaultConfiguration(PickupItemCustomGun *this,MethodInfo
   pSVar1 = (String *)
            WorldObjectTypes::CustomGun::CustomGunData::CustomGunData_DefaultValue
                      (StringLiteral_Name,(MethodInfo *)0x0);
-  if (this_00 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
+  if (this_00 != (PickupItemMeleeWeapon_MeleeWeaponConfiguration *)0x0) {
     if (pSVar1 == (String *)0x0) {
       (this_00->fields)._.name = (String *)0x0;
     }
@@ -427,7 +414,7 @@ PickupItemCustomGun_GetDefaultConfiguration(PickupItemCustomGun *this,MethodInfo
                             if ((pOVar3->klass->_0).element_class !=
                                 (TypeInfo__System__Single->_0).element_class) goto code_?;
                             pfVar4 = (float *)func_?();
-                            (this_00->fields).movementSpeedWhileHeld = *pfVar4;
+                            (this_00->fields).trailColor.r = *pfVar4;
                             pOVar3 = WorldObjectTypes::CustomGun::CustomGunData::
                                      CustomGunData_DefaultValue
                                                (StringLiteral_FireMode,(MethodInfo *)0x0);
@@ -435,26 +422,26 @@ PickupItemCustomGun_GetDefaultConfiguration(PickupItemCustomGun *this,MethodInfo
                               if ((pOVar3->klass->_0).element_class !=
                                   (TypeInfo__System__Int32->_0).element_class)
                               goto code_?;
-                              piVar5 = (int32_t *)func_?();
-                              (this_00->fields).fireMode = *piVar5;
+                              pfVar4 = (float *)func_?();
+                              (this_00->fields).trailColor.g = *pfVar4;
                               pVVar6 = WorldObjectTypes::CustomGun::CustomGunData::
                                        CustomGunData_DefaultVector3
                                                  ((Vector3 *)&stack0xfffffff0,
                                                   StringLiteral_MuzzlePosition,(MethodInfo *)0x0);
                               fVar7 = pVVar6->y;
                               fVar8 = pVVar6->z;
-                              (this_00->fields).muzzlePosition.x = pVVar6->x;
-                              (this_00->fields).muzzlePosition.y = fVar7;
-                              (this_00->fields).muzzlePosition.z = fVar8;
+                              (this_00->fields).trailColor.b = pVVar6->x;
+                              (this_00->fields).trailColor.a = fVar7;
+                              (this_00->fields).hitEffectColor.r = fVar8;
                               pVVar6 = WorldObjectTypes::CustomGun::CustomGunData::
                                        CustomGunData_DefaultVector3
                                                  ((Vector3 *)&stack0xfffffff0,
                                                   StringLiteral_MuzzleDirection,(MethodInfo *)0x0);
                               fVar7 = pVVar6->y;
                               fVar8 = pVVar6->z;
-                              (this_00->fields).muzzleDirection.x = pVVar6->x;
-                              (this_00->fields).muzzleDirection.y = fVar7;
-                              (this_00->fields).muzzleDirection.z = fVar8;
+                              (this_00->fields).hitEffectColor.g = pVVar6->x;
+                              (this_00->fields).hitEffectColor.b = fVar7;
+                              (this_00->fields).hitEffectColor.a = fVar8;
                               pOVar3 = WorldObjectTypes::CustomGun::CustomGunData::
                                        CustomGunData_DefaultValue
                                                  (StringLiteral_MuzzleFlareOnFire,(MethodInfo *)0x0)
@@ -463,8 +450,8 @@ PickupItemCustomGun_GetDefaultConfiguration(PickupItemCustomGun *this,MethodInfo
                                 if ((pOVar3->klass->_0).element_class !=
                                     (TypeInfo__System__Boolean->_0).element_class)
                                 goto code_?;
-                                pbVar9 = (bool *)func_?();
-                                (this_00->fields).muzzleFlareOnFire = *pbVar9;
+                                puVar9 = (undefined1 *)func_?();
+                                *(undefined1 *)&this_00[1].klass = *puVar9;
                                 pOVar3 = WorldObjectTypes::CustomGun::CustomGunData::
                                          CustomGunData_DefaultValue
                                                    (StringLiteral_MuzzleFlareSize,(MethodInfo *)0x0)
@@ -473,20 +460,20 @@ PickupItemCustomGun_GetDefaultConfiguration(PickupItemCustomGun *this,MethodInfo
                                   if ((pOVar3->klass->_0).element_class !=
                                       (TypeInfo__System__Single->_0).element_class)
                                   goto code_?;
-                                  pfVar4 = (float *)func_?();
-                                  (this_00->fields).muzzleFlareSize = *pfVar4;
-                                  pCVar10 = WorldObjectTypes::CustomGun::CustomGunData::
+                                  puVar10 = (undefined4 *)func_?();
+                                  this_00[1].monitor = (MonitorData *)*puVar10;
+                                  pCVar11 = WorldObjectTypes::CustomGun::CustomGunData::
                                             CustomGunData_DefaultColor
                                                       ((Color *)&stack0xffffffec,
                                                        StringLiteral_MuzzleFlareColor,
                                                        (MethodInfo *)0x0);
-                                  fVar8 = pCVar10->g;
-                                  fVar7 = pCVar10->b;
-                                  fVar11 = pCVar10->a;
-                                  (this_00->fields).muzzleFlareColor.r = pCVar10->r;
-                                  (this_00->fields).muzzleFlareColor.g = fVar8;
-                                  (this_00->fields).muzzleFlareColor.b = fVar7;
-                                  (this_00->fields).muzzleFlareColor.a = fVar11;
+                                  fVar8 = pCVar11->g;
+                                  fVar7 = pCVar11->b;
+                                  fVar12 = pCVar11->a;
+                                  this_00[1].fields._.name = (String *)pCVar11->r;
+                                  this_00[1].fields._.cubeModelId = (int32_t)fVar8;
+                                  this_00[1].fields._.maxAmmo = fVar7;
+                                  this_00[1].fields._.damage = fVar12;
                                   pOVar3 = WorldObjectTypes::CustomGun::CustomGunData::
                                            CustomGunData_DefaultValue
                                                      (StringLiteral_ThirdPersonCamera,
@@ -495,8 +482,8 @@ PickupItemCustomGun_GetDefaultConfiguration(PickupItemCustomGun *this,MethodInfo
                                     if ((pOVar3->klass->_0).element_class !=
                                         (TypeInfo__System__Boolean->_0).element_class)
                                     goto code_?;
-                                    pbVar9 = (bool *)func_?();
-                                    (this_00->fields).thirdPersonCamera = *pbVar9;
+                                    puVar9 = (undefined1 *)func_?();
+                                    *(undefined1 *)&this_00[1].fields._.impulseStrength = *puVar9;
                                     pOVar3 = WorldObjectTypes::CustomGun::CustomGunData::
                                              CustomGunData_DefaultValue
                                                        (StringLiteral_SmokeOnFire,(MethodInfo *)0x0)
@@ -505,8 +492,9 @@ PickupItemCustomGun_GetDefaultConfiguration(PickupItemCustomGun *this,MethodInfo
                                       if ((pOVar3->klass->_0).element_class !=
                                           (TypeInfo__System__Boolean->_0).element_class)
                                       goto code_?;
-                                      pbVar9 = (bool *)func_?();
-                                      (this_00->fields).smokeOnFire = *pbVar9;
+                                      puVar9 = (undefined1 *)func_?();
+                                      *(undefined1 *)((int)&this_00[1].fields._.impulseStrength + 1)
+                                           = *puVar9;
                                       pOVar3 = WorldObjectTypes::CustomGun::CustomGunData::
                                                CustomGunData_DefaultValue
                                                          (StringLiteral_ShotsPerBurst,
@@ -516,7 +504,7 @@ PickupItemCustomGun_GetDefaultConfiguration(PickupItemCustomGun *this,MethodInfo
                                             (TypeInfo__System__Single->_0).element_class)
                                         goto code_?;
                                         pfVar4 = (float *)func_?();
-                                        (this_00->fields).shotsPerBurst = *pfVar4;
+                                        this_00[1].fields._.recoilStrength = *pfVar4;
                                         pOVar3 = WorldObjectTypes::CustomGun::CustomGunData::
                                                  CustomGunData_DefaultValue
                                                            (StringLiteral_BurstCooldownBetweenShots,
@@ -526,7 +514,7 @@ PickupItemCustomGun_GetDefaultConfiguration(PickupItemCustomGun *this,MethodInfo
                                               (TypeInfo__System__Single->_0).element_class)
                                           goto code_?;
                                           pfVar4 = (float *)func_?();
-                                          (this_00->fields).burstCooldownBetweenShots = *pfVar4;
+                                          this_00[1].fields._.fireAnimationTime = *pfVar4;
                                           pOVar3 = WorldObjectTypes::CustomGun::CustomGunData::
                                                    CustomGunData_DefaultValue
                                                              (StringLiteral_ProjectilesPerShot,
@@ -536,7 +524,7 @@ PickupItemCustomGun_GetDefaultConfiguration(PickupItemCustomGun *this,MethodInfo
                                                 (TypeInfo__System__Single->_0).element_class)
                                             goto code_?;
                                             pfVar4 = (float *)func_?();
-                                            (this_00->fields).projectilesPerShot = *pfVar4;
+                                            this_00[1].fields._.attackCooldown = *pfVar4;
                                             pOVar3 = WorldObjectTypes::CustomGun::CustomGunData::
                                                      CustomGunData_DefaultValue
                                                                (StringLiteral_ChargeEnabled,
@@ -545,8 +533,8 @@ PickupItemCustomGun_GetDefaultConfiguration(PickupItemCustomGun *this,MethodInfo
                                               if ((pOVar3->klass->_0).element_class !=
                                                   (TypeInfo__System__Boolean->_0).element_class)
                                               goto code_?;
-                                              pbVar9 = (bool *)func_?();
-                                              (this_00->fields).chargeEnabled = *pbVar9;
+                                              puVar9 = (undefined1 *)func_?();
+                                              *(undefined1 *)&this_00[1].fields._.range = *puVar9;
                                               pOVar3 = WorldObjectTypes::CustomGun::CustomGunData::
                                                        CustomGunData_DefaultValue
                                                                  (StringLiteral_ChargeTime,
@@ -556,7 +544,7 @@ PickupItemCustomGun_GetDefaultConfiguration(PickupItemCustomGun *this,MethodInfo
                                                     (TypeInfo__System__Single->_0).element_class)
                                                 goto code_?;
                                                 pfVar4 = (float *)func_?();
-                                                (this_00->fields).chargeTime = *pfVar4;
+                                                this_00[1].fields._.radius = *pfVar4;
                                                 pOVar3 = WorldObjectTypes::CustomGun::CustomGunData
                                                          ::CustomGunData_DefaultValue
                                                                    (StringLiteral_ChargeSoundEffect,
@@ -566,7 +554,7 @@ PickupItemCustomGun_GetDefaultConfiguration(PickupItemCustomGun *this,MethodInfo
                                                       (TypeInfo__System__Int32->_0).element_class)
                                                   goto code_?;
                                                   piVar5 = (int32_t *)func_?();
-                                                  (this_00->fields).chargeSoundEffect = *piVar5;
+                                                  this_00[1].fields._.fireSoundEffect = *piVar5;
                                                   pOVar3 = WorldObjectTypes::CustomGun::
                                                            CustomGunData::CustomGunData_DefaultValue
                                                                      (
@@ -577,7 +565,7 @@ PickupItemCustomGun_GetDefaultConfiguration(PickupItemCustomGun *this,MethodInfo
                                                         (TypeInfo__System__Single->_0).element_class
                                                        ) goto code_?;
                                                     pfVar4 = (float *)func_?();
-                                                    (this_00->fields).chargeSoundEffectVolume =
+                                                    this_00[1].fields._.fireSoundEffectVolume =
                                                          *pfVar4;
                                                     pOVar3 = WorldObjectTypes::CustomGun::
                                                              CustomGunData::
@@ -589,9 +577,9 @@ PickupItemCustomGun_GetDefaultConfiguration(PickupItemCustomGun *this,MethodInfo
                                                     if ((pOVar3->klass->_0).element_class !=
                                                         (TypeInfo__System__Boolean->_0).
                                                         element_class) goto code_?;
-                                                    pbVar9 = (bool *)func_?();
-                                                    (this_00->fields).chargeParticlesEnabled =
-                                                         *pbVar9;
+                                                    puVar9 = (undefined1 *)func_?();
+                                                    *(undefined1 *)
+                                                     &this_00[1].fields._.hitSoundEffect = *puVar9;
                                                     pOVar3 = WorldObjectTypes::CustomGun::
                                                              CustomGunData::
                                                              CustomGunData_DefaultValue
@@ -603,22 +591,22 @@ PickupItemCustomGun_GetDefaultConfiguration(PickupItemCustomGun *this,MethodInfo
                                                         (TypeInfo__System__Single->_0).element_class
                                                        ) goto code_?;
                                                     pfVar4 = (float *)func_?();
-                                                    (this_00->fields).chargeParticlesSize = *pfVar4;
-                                                    pCVar10 = WorldObjectTypes::CustomGun::
+                                                    this_00[1].fields._.hitSoundEffectVolume =
+                                                         *pfVar4;
+                                                    pCVar11 = WorldObjectTypes::CustomGun::
                                                               CustomGunData::
                                                               CustomGunData_DefaultColor
                                                                         ((Color *)&stack0xffffffec,
                                                                                                                                                   
                                                   StringLiteral_ChargeParticlesColor,
                                                   (MethodInfo *)0x0);
-                                                  fVar8 = pCVar10->g;
-                                                  fVar7 = pCVar10->b;
-                                                  fVar11 = pCVar10->a;
-                                                  (this_00->fields).chargeParticlesColor.r =
-                                                       pCVar10->r;
-                                                  (this_00->fields).chargeParticlesColor.g = fVar8;
-                                                  (this_00->fields).chargeParticlesColor.b = fVar7;
-                                                  (this_00->fields).chargeParticlesColor.a = fVar11;
+                                                  fVar8 = pCVar11->g;
+                                                  fVar7 = pCVar11->b;
+                                                  fVar12 = pCVar11->a;
+                                                  this_00[1].fields.trailColor.r = pCVar11->r;
+                                                  this_00[1].fields.trailColor.g = fVar8;
+                                                  this_00[1].fields.trailColor.b = fVar7;
+                                                  this_00[1].fields.trailColor.a = fVar12;
                                                   pOVar3 = WorldObjectTypes::CustomGun::
                                                            CustomGunData::CustomGunData_DefaultValue
                                                                      (
@@ -628,8 +616,9 @@ PickupItemCustomGun_GetDefaultConfiguration(PickupItemCustomGun *this,MethodInfo
                                                     if ((pOVar3->klass->_0).element_class !=
                                                         (TypeInfo__System__Boolean->_0).
                                                         element_class) goto code_?;
-                                                    pbVar9 = (bool *)func_?();
-                                                    (this_00->fields).chargeZoomEnabled = *pbVar9;
+                                                    puVar9 = (undefined1 *)func_?();
+                                                    *(undefined1 *)
+                                                     &this_00[1].fields.hitEffectColor.r = *puVar9;
                                                     pOVar3 = WorldObjectTypes::CustomGun::
                                                              CustomGunData::
                                                              CustomGunData_DefaultValue
@@ -641,7 +630,7 @@ PickupItemCustomGun_GetDefaultConfiguration(PickupItemCustomGun *this,MethodInfo
                                                         (TypeInfo__System__Single->_0).element_class
                                                        ) goto code_?;
                                                     pfVar4 = (float *)func_?();
-                                                    (this_00->fields).chargeZoomAmmount = *pfVar4;
+                                                    this_00[1].fields.hitEffectColor.g = *pfVar4;
                                                     pOVar3 = WorldObjectTypes::CustomGun::
                                                              CustomGunData::
                                                              CustomGunData_DefaultValue
@@ -652,7 +641,7 @@ PickupItemCustomGun_GetDefaultConfiguration(PickupItemCustomGun *this,MethodInfo
                                                           (TypeInfo__System__Single->_0).
                                                           element_class) goto code_?;
                                                       pfVar4 = (float *)func_?();
-                                                      (this_00->fields).chargeZoomTime = *pfVar4;
+                                                      this_00[1].fields.hitEffectColor.b = *pfVar4;
                                                       pOVar3 = WorldObjectTypes::CustomGun::
                                                                CustomGunData::
                                                                CustomGunData_DefaultValue
@@ -674,7 +663,7 @@ PickupItemCustomGun_GetDefaultConfiguration(PickupItemCustomGun *this,MethodInfo
                                                         (TypeInfo__System__Single->_0).element_class
                                                        ) goto code_?;
                                                     pfVar4 = (float *)func_?();
-                                                    (this_00->fields).projectileSpeed = *pfVar4;
+                                                    this_00[1].fields.hitEffectColor.a = *pfVar4;
                                                     pOVar3 = WorldObjectTypes::CustomGun::
                                                              CustomGunData::
                                                              CustomGunData_DefaultValue
@@ -684,36 +673,38 @@ PickupItemCustomGun_GetDefaultConfiguration(PickupItemCustomGun *this,MethodInfo
                                                       if ((pOVar3->klass->_0).element_class !=
                                                           (TypeInfo__System__Single->_0).
                                                           element_class) goto code_?;
-                                                      pfVar4 = (float *)func_?();
-                                                      (this_00->fields).projectileSize = *pfVar4;
-                                                      pCVar10 = WorldObjectTypes::CustomGun::
-                                                                CustomGunData::
-                                                                CustomGunData_DefaultColor
-                                                                          ((Color *)&stack0xffffffec
-                                                                           ,
-                                                  StringLiteral_ProjectileColor,(MethodInfo *)0x0);
-                                                  fVar8 = pCVar10->g;
-                                                  fVar7 = pCVar10->b;
-                                                  fVar11 = pCVar10->a;
-                                                  (this_00->fields).projectileColor.r = pCVar10->r;
-                                                  (this_00->fields).projectileColor.g = fVar8;
-                                                  (this_00->fields).projectileColor.b = fVar7;
-                                                  (this_00->fields).projectileColor.a = fVar11;
-                                                  pCVar10 = WorldObjectTypes::CustomGun::
+                                                      puVar10 = (undefined4 *)func_?();
+                                                      this_00[2].klass =
+                                                           (
+                                                  PickupItemMeleeWeapon_MeleeWeaponConfiguration__Class
+                                                  *)*puVar10;
+                                                  pCVar11 = WorldObjectTypes::CustomGun::
+                                                            CustomGunData::
+                                                            CustomGunData_DefaultColor
+                                                                      ((Color *)&stack0xffffffec,
+                                                                       StringLiteral_ProjectileColor
+                                                                       ,(MethodInfo *)0x0);
+                                                  pSVar1 = (String *)pCVar11->g;
+                                                  fVar8 = pCVar11->b;
+                                                  fVar7 = pCVar11->a;
+                                                  this_00[2].monitor = (MonitorData *)pCVar11->r;
+                                                  this_00[2].fields._.name = pSVar1;
+                                                  this_00[2].fields._.cubeModelId = (int32_t)fVar8;
+                                                  this_00[2].fields._.maxAmmo = fVar7;
+                                                  pCVar11 = WorldObjectTypes::CustomGun::
                                                             CustomGunData::
                                                             CustomGunData_DefaultColor
                                                                       ((Color *)&stack0xffffffec,
                                                                                                                                               
                                                   StringLiteral_ProjectileTrailColor,
                                                   (MethodInfo *)0x0);
-                                                  fVar8 = pCVar10->g;
-                                                  fVar7 = pCVar10->b;
-                                                  fVar11 = pCVar10->a;
-                                                  (this_00->fields).projectileTrailColor.r =
-                                                       pCVar10->r;
-                                                  (this_00->fields).projectileTrailColor.g = fVar8;
-                                                  (this_00->fields).projectileTrailColor.b = fVar7;
-                                                  (this_00->fields).projectileTrailColor.a = fVar11;
+                                                  fVar8 = pCVar11->g;
+                                                  fVar7 = pCVar11->b;
+                                                  fVar12 = pCVar11->a;
+                                                  this_00[2].fields._.damage = pCVar11->r;
+                                                  this_00[2].fields._.impulseStrength = fVar8;
+                                                  this_00[2].fields._.recoilStrength = fVar7;
+                                                  this_00[2].fields._.fireAnimationTime = fVar12;
                                                   pOVar3 = WorldObjectTypes::CustomGun::
                                                            CustomGunData::CustomGunData_DefaultValue
                                                                      (StringLiteral_SparksOnHit,
@@ -722,8 +713,9 @@ PickupItemCustomGun_GetDefaultConfiguration(PickupItemCustomGun *this,MethodInfo
                                                     if ((pOVar3->klass->_0).element_class !=
                                                         (TypeInfo__System__Boolean->_0).
                                                         element_class) goto code_?;
-                                                    pbVar9 = (bool *)func_?();
-                                                    (this_00->fields).sparksOnHit = *pbVar9;
+                                                    puVar9 = (undefined1 *)func_?();
+                                                    *(undefined1 *)
+                                                     &this_00[2].fields._.attackCooldown = *puVar9;
                                                     pOVar3 = WorldObjectTypes::CustomGun::
                                                              CustomGunData::
                                                              CustomGunData_DefaultValue
@@ -734,20 +726,22 @@ PickupItemCustomGun_GetDefaultConfiguration(PickupItemCustomGun *this,MethodInfo
                                                           (TypeInfo__System__Single->_0).
                                                           element_class) {
                                                         pfVar4 = (float *)func_?();
-                                                        (this_00->fields).sparksSize = *pfVar4;
-                                                        pCVar10 = WorldObjectTypes::CustomGun::
+                                                        this_00[2].fields._.range = *pfVar4;
+                                                        pCVar11 = WorldObjectTypes::CustomGun::
                                                                   CustomGunData::
                                                                   CustomGunData_DefaultColor
                                                                             ((Color *)&
                                                   stack0xffffffec,StringLiteral_SparksColor,
                                                   (MethodInfo *)0x0);
-                                                  fVar8 = pCVar10->g;
-                                                  fVar7 = pCVar10->b;
-                                                  fVar11 = pCVar10->a;
-                                                  (this_00->fields).sparksColor.r = pCVar10->r;
-                                                  (this_00->fields).sparksColor.g = fVar8;
-                                                  (this_00->fields).sparksColor.b = fVar7;
-                                                  (this_00->fields).sparksColor.a = fVar11;
+                                                  fVar8 = pCVar11->g;
+                                                  fVar7 = pCVar11->b;
+                                                  fVar12 = pCVar11->a;
+                                                  this_00[2].fields._.radius = pCVar11->r;
+                                                  this_00[2].fields._.fireSoundEffect =
+                                                       (int32_t)fVar8;
+                                                  this_00[2].fields._.fireSoundEffectVolume = fVar7;
+                                                  this_00[2].fields._.hitSoundEffect =
+                                                       (int32_t)fVar12;
                                                   return (
                                                   PickupItemEditable_EditableItemConfiguration *)
                                                   this_00;
@@ -791,9 +785,9 @@ PickupItemCustomGun_GetDefaultConfiguration(PickupItemCustomGun *this,MethodInfo
   func_?();
 code_?:
   func_?();
-  pcVar12 = (code *)swi(3);
-  pPVar13 = (PickupItemEditable_EditableItemConfiguration *)(*pcVar12)();
-  return pPVar13;
+  pcVar13 = (code *)swi(3);
+  pPVar14 = (PickupItemEditable_EditableItemConfiguration *)(*pcVar13)();
+  return pPVar14;
 }
 
 
@@ -1600,11 +1594,11 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
         return;
       }
       fVar3 = (float)((uint)direction.x ^
-                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
       fVar4 = (float)((uint)direction.y ^
-                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
       fVar5 = (float)((uint)direction.z ^
-                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
       pPVar2 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
       if (pPVar2 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
         fVar6 = (pPVar2->fields)._.recoilStrength;
@@ -3053,11 +3047,11 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::PickupI
     if (pPVar5 == (PickupItemCustomGun_CustomGunConfiguration *)0x0) goto code_?;
     if (TypeInfo__UnityEngine__Mathf->static_fields->Epsilon < (pPVar5->fields)._.recoilStrength) {
       fVar6 = (float)((uint)uStack_2 ^
-                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
       fVar7 = (float)(uStack_2._4_4_ ^
-                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
       fVar3 = (float)((uint)fVar3 ^
-                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                     __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
       pPVar5 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
       if (pPVar5 == (PickupItemCustomGun_CustomGunConfiguration *)0x0) goto code_?;
       fVar8 = (pPVar5->fields)._.recoilStrength;
@@ -3447,15 +3441,15 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
             func_?();
             cRam_? = '\x01';
           }
-          this_00 = (SubscribableVariable_1_System_Int32Enum_ *)func_?();
-          SubscribableVariable`1[System::Int32Enum]::SubscribableVariable_1_System_Int32Enum___ctor
-                    (this_00,0,(MethodInfo *)0x0);
-          if (this_00 != (SubscribableVariable_1_System_Int32Enum_ *)0x0) {
-            this_00[1].klass = (SubscribableVariable_1_System_Int32Enum___Class *)this;
-            func_?(this_00 + 1,this);
-            Coroutines::Coroutines_Start((IEnumerator *)this_00,(MethodInfo *)0x0);
-            return;
-          }
+          method_00 = TypeInfo__Assets__Scripts__Pickups__PickupItemCustomGun___FetchFOV_d__54;
+          value = (Object *)func_?();
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                    (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+          value[1].klass = (Object__Class *)0x0;
+          value[2].klass = (Object__Class *)this;
+          func_?();
+          Coroutines::Coroutines_Start((IEnumerator *)value,(MethodInfo *)0x0);
+          return;
         }
       }
     }
@@ -3632,48 +3626,42 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
     cRam_? = '\x01';
   }
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  pPVar1 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
-  if (pPVar1 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
-    iVar2 = (*(code *)(this->klass->vtable).GetAmmoMultiplier.method)(this);
-    if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor
-        == 0) {
-      func_?();
-    }
-    pOVar3 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-              ObscuredInt_op_Implicit((ObscuredInt *)&stack0xffffffec,iVar2,(MethodInfo *)0x0);
-    iVar2 = pOVar3->hiddenValue;
-    iVar4 = pOVar3->fakeValue;
-    bVar5 = pOVar3->inited;
-    uVar6 = *(undefined3 *)&pOVar3->field_0xd;
-    (this->fields).currentAmmo.currentCryptoKey = pOVar3->currentCryptoKey;
-    (this->fields).currentAmmo.hiddenValue = iVar2;
-    (this->fields).currentAmmo.fakeValue = iVar4;
-    (this->fields).currentAmmo.inited = bVar5;
-    *(undefined3 *)&(this->fields).currentAmmo.field_0xd = uVar6;
-    if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).
-        cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    pOVar7 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-              ObscuredFloat_op_Implicit((ObscuredFloat *)&stack0xffffffe8,0.0,(MethodInfo *)0x0);
-    AVar8 = pOVar7->hiddenValue;
-    pBVar9 = pOVar7->hiddenValueOld;
-    fVar10 = pOVar7->fakeValue;
-    bVar5 = pOVar7->inited;
-    uVar6 = *(undefined3 *)&pOVar7->field_0x11;
-    (this->fields).currentCharge.currentCryptoKey = pOVar7->currentCryptoKey;
-    (this->fields).currentCharge.hiddenValue = AVar8;
-    (this->fields).currentCharge.hiddenValueOld = pBVar9;
-    (this->fields).currentCharge.fakeValue = fVar10;
-    (this->fields).currentCharge.inited = bVar5;
-    *(undefined3 *)&(this->fields).currentCharge.field_0x11 = uVar6;
-    func_?();
-    return;
+            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  iVar1 = (*(code *)(this->klass->vtable).get_MaxAmmo.method)
+                    (this,(this->klass->vtable).get_Quantity.methodPtr);
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor ==
+      0) {
+    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
   }
+  pOVar2 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+           ObscuredInt_op_Implicit((ObscuredInt *)&stack0xffffffec,iVar1,(MethodInfo *)0x0);
+  iVar1 = pOVar2->hiddenValue;
+  iVar3 = pOVar2->fakeValue;
+  bVar4 = pOVar2->inited;
+  uVar5 = *(undefined3 *)&pOVar2->field_0xd;
+  (this->fields).currentAmmo.currentCryptoKey = pOVar2->currentCryptoKey;
+  (this->fields).currentAmmo.hiddenValue = iVar1;
+  (this->fields).currentAmmo.fakeValue = iVar3;
+  (this->fields).currentAmmo.inited = bVar4;
+  *(undefined3 *)&(this->fields).currentAmmo.field_0xd = uVar5;
+  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_finished_or_no_cctor
+      == 0) {
+    func_?();
+  }
+  pOVar6 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+           ObscuredFloat_op_Implicit((ObscuredFloat *)&stack0xffffffe8,0.0,(MethodInfo *)0x0);
+  AVar7 = pOVar6->hiddenValue;
+  pBVar8 = pOVar6->hiddenValueOld;
+  fVar9 = pOVar6->fakeValue;
+  bVar4 = pOVar6->inited;
+  uVar5 = *(undefined3 *)&pOVar6->field_0x11;
+  (this->fields).currentCharge.currentCryptoKey = pOVar6->currentCryptoKey;
+  (this->fields).currentCharge.hiddenValue = AVar7;
+  (this->fields).currentCharge.hiddenValueOld = pBVar8;
+  (this->fields).currentCharge.fakeValue = fVar9;
+  (this->fields).currentCharge.inited = bVar4;
+  *(undefined3 *)&(this->fields).currentCharge.field_0x11 = uVar5;
   func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
   return;
 }
 
@@ -4627,43 +4615,41 @@ void Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
   pPVar1 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
   if (pPVar1 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
     iVar2 = (pPVar1->fields).fireMode;
-    if ((iVar2 == 2) && ((this->fields)._._.isFiring != 0)) {
-      return;
-    }
-    pPVar1 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
-    if (pPVar1 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
-      if ((pPVar1->fields).chargeEnabled == 0) {
-        if (iVar2 == 0) {
-          PickupItemWithDelay::PickupItemWithDelay_TriggerBegin
-                    ((PickupItemWithDelay *)this,instigatorActorNr,(MethodInfo *)0x0);
-          return;
+    if ((iVar2 != 2) || ((this->fields)._._.isFiring == 0)) {
+      pPVar1 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+      if (pPVar1 == (PickupItemCustomGun_CustomGunConfiguration *)0x0) goto code_?;
+      if ((pPVar1->fields).chargeEnabled != 0) {
+        if ((this->fields).chargeRoutine != (IEnumerator *)0x0) {
+          Coroutines::Coroutines_Stop((this->fields).chargeRoutine,(MethodInfo *)0x0);
         }
-        if ((iVar2 != 1) && (iVar2 != 2)) {
-          return;
+        if (cRam_? == '\0') {
+          func_?();
+          cRam_? = '\x01';
         }
-        (this->fields)._._.isFiring = 1;
-        return;
-      }
-      if ((this->fields).chargeRoutine != (IEnumerator *)0x0) {
-        Coroutines::Coroutines_Stop((this->fields).chargeRoutine,(MethodInfo *)0x0);
-      }
-      if (cRam_? == '\0') {
+        method_00 = TypeInfo__Assets__Scripts__Pickups__PickupItemCustomGun___ChargeRoutine_d__70;
+        value = (Object *)func_?();
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+                  (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+        value[1].klass = (Object__Class *)0x0;
+        value[2].klass = (Object__Class *)this;
         func_?();
-        cRam_? = '\x01';
-      }
-      this_00 = (SubscribableVariable_1_System_Int32Enum_ *)func_?();
-      SubscribableVariable`1[System::Int32Enum]::SubscribableVariable_1_System_Int32Enum___ctor
-                (this_00,0,(MethodInfo *)0x0);
-      if (this_00 != (SubscribableVariable_1_System_Int32Enum_ *)0x0) {
-        this_00[1].klass = (SubscribableVariable_1_System_Int32Enum___Class *)this;
-        func_?(this_00 + 1);
-        (this->fields).chargeRoutine = (IEnumerator *)this_00;
-        func_?(&(this->fields).chargeRoutine,this_00);
+        (this->fields).chargeRoutine = (IEnumerator *)value;
+        func_?(&(this->fields).chargeRoutine,value);
         Coroutines::Coroutines_Start((this->fields).chargeRoutine,(MethodInfo *)0x0);
         return;
       }
+      if (iVar2 == 0) {
+        PickupItemWithDelay::PickupItemWithDelay_TriggerBegin
+                  ((PickupItemWithDelay *)this,instigatorActorNr,(MethodInfo *)0x0);
+        return;
+      }
+      if ((iVar2 == 1) || (iVar2 == 2)) {
+        (this->fields)._._.isFiring = 1;
+      }
     }
+    return;
   }
+code_?:
   func_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
@@ -5132,6 +5118,29 @@ bool Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
   cVar5 = (*(code *)(this->klass->vtable).get_HasUnlimitedAmmo.method)
                     (this,(this->klass->vtable).get_CanUnequip.methodPtr);
   return cVar5 == '\0';
+}
+
+
+/* Int32 get_MaxAmmo() */
+
+int32_t Assembly-CSharp.dll::Assets::Scripts::Pickups::PickupItemCustomGun::
+        PickupItemCustomGun_get_MaxAmmo(PickupItemCustomGun *this,MethodInfo *method)
+
+{
+  pPVar1 = PickupItemCustomGun_get_Configuration(this,(MethodInfo *)0x0);
+  if (pPVar1 != (PickupItemCustomGun_CustomGunConfiguration *)0x0) {
+    iVar2 = (int)(pPVar1->fields)._.maxAmmo;
+    if (iVar2 < 1) {
+      iVar2 = 0;
+    }
+    iVar3 = (*(code *)(this->klass->vtable).CalculateMaxAmmo.method)
+                      (this,iVar2,(this->klass->vtable).UpdateWithDirection.methodPtr);
+    return iVar3;
+  }
+  func_?();
+  pcVar4 = (code *)swi(3);
+  iVar3 = (*pcVar4)();
+  return iVar3;
 }
 
 

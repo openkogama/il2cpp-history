@@ -11,6 +11,7 @@ using System.Runtime.CompilerServices;
 public interface IPlayModeUI
 {
 	// Properties
+	Action<bool> IsPausedStateChange { get; set; }
 	bool IsInPauseMenu { get; set; }
 	bool IsInLobby { get; set; }
 	bool IsDying { get; set; }

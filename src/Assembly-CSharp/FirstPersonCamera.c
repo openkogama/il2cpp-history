@@ -40,7 +40,7 @@ code_?:
                 MVAvatar::MVAvatar_get_CurrentPickup((MVAvatar *)pMVar1,(MethodInfo *)0x0);
     if (unaff_ESI == (MVAvatarLocal *)0x0) goto code_?;
     pIVar5 = ((Il2CppClass_0 *)&unaff_ESI->klass)->image;
-    cVar6 = (*(code *)pIVar5[5].nameToClassHashTable)(unaff_ESI,pIVar5[5].codeGenModule);
+    cVar6 = (*(code *)pIVar5[6].name)(unaff_ESI,pIVar5[6].nameNoExt);
     if (cVar6 != '\0') {
       PickupItem::PickupItem_EnterFirstPersonView
                 ((PickupItem *)unaff_ESI,(MVCameraBase *)this,(MethodInfo *)0x0);

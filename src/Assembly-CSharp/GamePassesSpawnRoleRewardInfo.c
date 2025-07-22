@@ -287,7 +287,7 @@ void Assembly-CSharp.dll::GamePassesSpawnRoleRewardInfo::
         pGVar1 = (this->fields).backgroundTier2;
         if (pGVar1 == (GameObject *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar1,0xf2,(MethodInfo *)0x0);
+                  (pGVar1,0xd2,(MethodInfo *)0x0);
       }
       pGVar1 = (this->fields).backgroundTier3;
       if (pGVar1 != (GameObject *)0x0) {
@@ -2390,12 +2390,12 @@ void Assembly-CSharp.dll::GamePassesSpawnRoleRewardInfo::GamePassesSpawnRoleRewa
 
 {
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
+    func_?(&TypeInfo__IEditModeUI);
+    func_?(&TypeInfo__IPlayModeUI);
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__MVGameControllerBase);
     cRam_? = '\x01';
   }
   if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
@@ -2408,7 +2408,7 @@ void Assembly-CSharp.dll::GamePassesSpawnRoleRewardInfo::GamePassesSpawnRoleRewa
     if (pGVar1 != (GameSessionData *)0x0) {
       if ((pGVar1->fields).gameMode == 0) {
         if (cRam_? == '\0') {
-          func_?();
+          func_?(&TypeInfo__MVGameControllerBase);
           cRam_? = '\x01';
         }
         pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
@@ -2417,60 +2417,77 @@ void Assembly-CSharp.dll::GamePassesSpawnRoleRewardInfo::GamePassesSpawnRoleRewa
           return;
         }
         if (cRam_? == '\0') {
-          func_?();
+          func_?(&TypeInfo__MVGameControllerBase);
           cRam_? = '\x01';
         }
-        if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField ==
-            (IEditModeUI *)0x0) goto code_?;
-        cVar2 = func_?();
-        if (cVar2 == '\0') {
+        pIVar2 = TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField;
+        if (pIVar2 == (IEditModeUI *)0x0) goto code_?;
+        cVar3 = func_?(1,TypeInfo__IEditModeUI,pIVar2);
+        if (cVar3 == '\0') {
           return;
         }
       }
-      pGVar3 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-      if ((pGVar3 != (GameEventManager *)0x0) &&
-         (pGVar4 = (pGVar3->fields).AvatarCommandsPlayMode,
-         pGVar4 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) {
+      pGVar4 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
+      if ((pGVar4 != (GameEventManager *)0x0) &&
+         (pGVar5 = (pGVar4->fields).AvatarCommandsPlayMode,
+         pGVar5 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) {
         GoogleMobileAds.dll::GoogleMobileAds::Api::RewardedAd::RewardedAd__RegisterAdEvents_m__8
-                  ((RewardedAd *)pGVar4,(MethodInfo *)0x0);
+                  ((RewardedAd *)pGVar5,(MethodInfo *)0x0);
         return;
       }
     }
   }
   else {
     if (cRam_? == '\0') {
-      func_?();
+      func_?(&TypeInfo__MVGameControllerBase);
       cRam_? = '\x01';
     }
-    if (TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField !=
-        (IPlayModeUI *)0x0) {
-      func_?(4);
-      pSVar5 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
-                         ((MethodInfo *)0x0);
-      if ((pSVar5 != (SpawnRoleDataMediator *)0x0) &&
-         (this_00 = (pSVar5->fields).SpawnRoleModeTypeWrapper,
+    pIVar6 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
+    if (pIVar6 != (IPlayModeUI *)0x0) {
+      pIVar7 = pIVar6->klass;
+      uVar8 = 0;
+      uVar9._0_1_ = (pIVar7->_1).rank;
+      uVar9._1_1_ = (pIVar7->_1).minimumAlignment;
+      if (uVar9 != 0) {
+        do {
+          if (pIVar7->interfaceOffsets[uVar8].interfaceType == (Il2CppClass *)TypeInfo__IPlayModeUI
+             ) {
+            ppMVar10 = &(&(pIVar6->klass->vtable).set_IsInPauseMenu)
+                        [pIVar6->klass->interfaceOffsets[uVar8].offset].method;
+            goto code_?;
+          }
+          uVar8 = uVar8 + 1;
+        } while (uVar8 < uVar9);
+      }
+      ppMVar10 = (MethodInfo **)func_?(pIVar6,TypeInfo__IPlayModeUI,6);
+code_?:
+      (*(code *)*ppMVar10)(pIVar6,0,ppMVar10[1]);
+      pSVar11 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
+                          ((MethodInfo *)0x0);
+      if ((pSVar11 != (SpawnRoleDataMediator *)0x0) &&
+         (this_00 = (pSVar11->fields).SpawnRoleModeTypeWrapper,
          this_00 != (SpawnRoleModeTypeWrapper *)0x0)) {
-        bVar6 = SpawnRoleModeTypeWrapper::SpawnRoleModeTypeWrapper_IsInMode
+        bVar12 = SpawnRoleModeTypeWrapper::SpawnRoleModeTypeWrapper_IsInMode
                           (this_00,SpawnRoleModeType__Enum_Hidden,(MethodInfo *)0x0);
-        if (bVar6 == 0) {
+        if (bVar12 == 0) {
           return;
         }
-        pGVar3 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-        if ((pGVar3 != (GameEventManager *)0x0) &&
-           (pGVar4 = (pGVar3->fields).AvatarCommandsPlayMode,
-           pGVar4 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) {
+        pGVar4 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0)
+        ;
+        if ((pGVar4 != (GameEventManager *)0x0) &&
+           (pGVar5 = (pGVar4->fields).AvatarCommandsPlayMode,
+           pGVar5 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) {
           GoogleMobileAds.dll::GoogleMobileAds::Api::RewardedAd::RewardedAd__RegisterAdEvents_m__9
-                    ((RewardedAd *)pGVar4,(MethodInfo *)0x0);
+                    ((RewardedAd *)pGVar5,(MethodInfo *)0x0);
           return;
         }
       }
     }
   }
 code_?:
-  uVar7 = func_?(&stack0xfffffff4);
-  func_?(uVar7);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  func_?();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

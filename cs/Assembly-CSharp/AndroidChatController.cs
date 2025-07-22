@@ -27,7 +27,7 @@ public class AndroidChatController : ChatControllerBase
 	// Methods
 	public void Initialize();
 	public void OnChatModeTapped();
-	public void OnLobbyStateChange(bool inLobbyState);
+	public void OnIsPausedStateChange(bool inLobbyState);
 	private void SetMode(ChatConsoleMode chatConsoleMode);
 }
 

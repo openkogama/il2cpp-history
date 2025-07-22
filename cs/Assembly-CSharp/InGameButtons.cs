@@ -9,12 +9,9 @@ using UnityEngine;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
-public class InGameButtons : TouchButtonsBase
+public class InGameButtons : MonoBehaviour
 {
 	// Fields
-	private PickupGUIFlags showingEquipableUI;
-	[SerializeField]
-	private RectTransform use;
 	[SerializeField]
 	private RectTransform fire;
 	[SerializeField]
@@ -29,6 +26,7 @@ public class InGameButtons : TouchButtonsBase
 	private RectTransform holsterButton;
 	[SerializeField]
 	private RectTransform jumpButton;
+	private PickupGUIFlags showingEquipableUI;
 
 	// Constructors
 	public InGameButtons();
@@ -36,8 +34,6 @@ public class InGameButtons : TouchButtonsBase
 	// Methods
 	private void Update();
 	private void HandleFireVisibility();
-	public override void ShowEUseIcon(ShowUseOption option);
-	public override void HideEUseIcon();
 	private void HandleInPlayMode();
 	private void HandleNotInPlayMode();
 }

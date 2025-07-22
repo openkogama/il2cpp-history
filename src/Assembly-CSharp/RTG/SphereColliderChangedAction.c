@@ -123,16 +123,44 @@ void Assembly-CSharp.dll::RTG::SphereColliderChangedAction::SphereColliderChange
   }
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-  pSVar1 = (SphereColliderSnapshot *)func_?(TypeInfo__RTG__SphereColliderSnapshot);
-  SphereColliderSnapshot::SphereColliderSnapshot__ctor_1(pSVar1,preChangeSnapshot,(MethodInfo *)0x0)
-  ;
-  (this->fields)._preChangeSnapshot = pSVar1;
-  func_?(&this->fields,pSVar1);
-  pSVar1 = (SphereColliderSnapshot *)func_?(TypeInfo__RTG__SphereColliderSnapshot);
-  SphereColliderSnapshot::SphereColliderSnapshot__ctor_1
-            (pSVar1,postChangeSnapshot,(MethodInfo *)0x0);
-  (this->fields)._postChangeSnapshot = pSVar1;
-  func_?(&(this->fields)._postChangeSnapshot,pSVar1);
+  method_01 = TypeInfo__RTG__SphereColliderSnapshot;
+  value = (MethodInfo *)func_?();
+  method_00 = value;
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
+  if (preChangeSnapshot != (SphereColliderSnapshot *)0x0) {
+    pSVar1 = (preChangeSnapshot->fields)._sphereCollider;
+    ((SphereColliderSnapshot__Fields *)&value->invoker_method)->_sphereCollider = pSVar1;
+    func_?((SphereColliderSnapshot__Fields *)&value->invoker_method,pSVar1);
+    fVar2 = (preChangeSnapshot->fields)._localCenter.y;
+    pIVar3 = (Il2CppType *)(preChangeSnapshot->fields)._localCenter.z;
+    value->name = (char *)(preChangeSnapshot->fields)._localCenter.x;
+    value->klass = (Il2CppClass *)fVar2;
+    value->return_type = pIVar3;
+    value->parameters = (Il2CppType **)(preChangeSnapshot->fields)._localRadius;
+    (this->fields)._preChangeSnapshot = (SphereColliderSnapshot *)value;
+    func_?(&this->fields,value);
+    value_00 = (SphereColliderSnapshot *)func_?(TypeInfo__RTG__SphereColliderSnapshot);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+              ((Object *)value_00,ExceptionArgument__Enum_obj,method_00);
+    if (postChangeSnapshot != (SphereColliderSnapshot *)0x0) {
+      pSVar1 = (postChangeSnapshot->fields)._sphereCollider;
+      (value_00->fields)._sphereCollider = pSVar1;
+      func_?(&value_00->fields,pSVar1);
+      fVar4 = (postChangeSnapshot->fields)._localCenter.y;
+      fVar2 = (postChangeSnapshot->fields)._localCenter.z;
+      (value_00->fields)._localCenter.x = (postChangeSnapshot->fields)._localCenter.x;
+      (value_00->fields)._localCenter.y = fVar4;
+      (value_00->fields)._localCenter.z = fVar2;
+      (value_00->fields)._localRadius = (postChangeSnapshot->fields)._localRadius;
+      (this->fields)._postChangeSnapshot = value_00;
+      func_?(&(this->fields)._postChangeSnapshot,value_00);
+      return;
+    }
+  }
+  func_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

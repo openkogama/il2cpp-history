@@ -45,9 +45,9 @@ public class GUILoginHandler : MonoBehaviour
 	private string serverip;
 	private string planetId;
 	private string embeddedSite;
+	private string playerPrefKey;
 	private readonly Dictionary<string, PlanetData> defaultPlanetData;
 	private readonly Dictionary<string, object> gameSessionData;
-	private string playerPrefKey;
 
 	// Nested types
 	private struct PlanetData
@@ -60,7 +60,7 @@ public class GUILoginHandler : MonoBehaviour
 		public PlanetData(int planet, int profile);
 	}
 
-	private enum DevServerTarget
+	public enum DevServerTarget
 	{
 		Dev = 0,
 		Test = 1,

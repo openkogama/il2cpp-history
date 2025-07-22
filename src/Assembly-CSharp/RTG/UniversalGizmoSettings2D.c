@@ -351,7 +351,17 @@ void Assembly-CSharp.dll::RTG::UniversalGizmoSettings2D::UniversalGizmoSettings2
            func_?(TypeInfo__RTG__GizmoLineSlider2DSettings,4);
   (this->fields)._mvSglSliderSettings = pGVar2;
   func_?(&(this->fields)._mvSglSliderSettings,pGVar2);
-  Settings::Settings__ctor((Settings *)this,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    func_?(&StringLiteral_Settings);
+    cRam_? = '\x01';
+  }
+  (this->fields)._._canBeDisplayed = 1;
+  (this->fields)._._isExpanded = 1;
+  (this->fields)._._foldoutLabel = StringLiteral_Settings;
+  method_00 = (MethodInfo *)&(this->fields)._._foldoutLabel;
+  func_?(method_00,StringLiteral_Settings);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
+            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   pGVar2 = (this->fields)._mvSglSliderSettings;
   uVar3 = 0;
   do {

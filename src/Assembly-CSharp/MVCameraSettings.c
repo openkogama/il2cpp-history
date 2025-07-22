@@ -40,28 +40,11 @@ code_?:
       if (pMVar1 != (MVNetworkGame *)0x0) {
         MVar2 = (pMVar1->fields)._GameType_k__BackingField;
         if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__MainCameraManager);
+          func_?();
         }
         pIVar5 = MainCameraManager::MainCameraManager_GetSettings(MVar2,(MethodInfo *)0x0);
         if (pIVar5 != (ICameraSettings *)0x0) {
-          pIVar6 = pIVar5->klass;
-          uVar7 = 0;
-          uVar8._0_1_ = (pIVar6->_1).rank;
-          uVar8._1_1_ = (pIVar6->_1).minimumAlignment;
-          if (uVar8 != 0) {
-            do {
-              if (pIVar6->interfaceOffsets[uVar7].interfaceType ==
-                  (Il2CppClass *)TypeInfo__ICameraSettings) {
-                ppMVar9 = &(&(pIVar5->klass->vtable).SetDefaultSettings)
-                           [pIVar5->klass->interfaceOffsets[uVar7].offset].method;
-                goto code_?;
-              }
-              uVar7 = uVar7 + 1;
-            } while (uVar7 < uVar8);
-          }
-          ppMVar9 = (MethodInfo **)func_?(pIVar5,TypeInfo__ICameraSettings,1);
-code_?:
-          (*(code *)*ppMVar9)(pIVar5,ppMVar9[1]);
+          func_?(1,TypeInfo__ICameraSettings,pIVar5);
           goto code_?;
         }
       }
@@ -70,42 +53,42 @@ code_?:
     func_?();
 code_?:
     func_?();
-    pcVar10 = (code *)swi(3);
-    (*pcVar10)();
+    pcVar6 = (code *)swi(3);
+    (*pcVar6)();
     return;
   }
 code_?:
   if ((this->fields).needToUnsubscribeToSettingsCallback == 0) goto code_?;
   if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MainCameraManager);
+    func_?();
   }
-  pAVar11 = TypeInfo__MainCameraManager->static_fields->OnCameraSettingAdded;
-  this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+  pAVar7 = TypeInfo__MainCameraManager->static_fields->OnCameraSettingAdded;
+  this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?();
   UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
   NavMesh_OnNavMeshPreUpdate__ctor
             (this_00,(Object *)this,MethodInfo__MVCameraSettings__OnCameraSettingAdded__,
              (MethodInfo *)0x0);
-  pAVar11 = (Action *)
-            mscorlib.dll::System::Delegate::Delegate_Remove
-                      ((Delegate *)pAVar11,(Delegate *)this_00,(MethodInfo *)0x0);
-  if (pAVar11 == (Action *)0x0) {
+  pAVar7 = (Action *)
+           mscorlib.dll::System::Delegate::Delegate_Remove
+                     ((Delegate *)pAVar7,(Delegate *)this_00,(MethodInfo *)0x0);
+  if (pAVar7 == (Action *)0x0) {
     TypeInfo__MainCameraManager->static_fields->OnCameraSettingAdded = (Action *)0x0;
   }
   else {
-    pAVar12 = (Action *)0x0;
-    if (pAVar11->klass == TypeInfo__System__Action) {
-      pAVar12 = pAVar11;
+    pAVar8 = (Action *)0x0;
+    if (pAVar7->klass == TypeInfo__System__Action) {
+      pAVar8 = pAVar7;
     }
-    if (pAVar12 == (Action *)0x0) {
+    if (pAVar8 == (Action *)0x0) {
       func_?();
       goto code_?;
     }
-    TypeInfo__MainCameraManager->static_fields->OnCameraSettingAdded = pAVar12;
-    pAVar12 = (Action *)0x0;
-    if (pAVar11->klass == TypeInfo__System__Action) {
-      pAVar12 = pAVar11;
+    TypeInfo__MainCameraManager->static_fields->OnCameraSettingAdded = pAVar8;
+    pAVar8 = (Action *)0x0;
+    if (pAVar7->klass == TypeInfo__System__Action) {
+      pAVar8 = pAVar7;
     }
-    if (pAVar12 == (Action *)0x0) goto code_?;
+    if (pAVar8 == (Action *)0x0) goto code_?;
   }
   func_?();
 code_?:

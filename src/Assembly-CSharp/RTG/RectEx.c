@@ -110,75 +110,76 @@ Rect * Assembly-CSharp.dll::RTG::RectEx::RectEx_FromPoints
     func_?(&TypeInfo__System__Collections__IEnumerator);
     cRam_? = '\x01';
   }
+  fStack_4 = _UNK_?;
+  fStack_5 = _UNK_?;
+  fStack_6 = _UNK_?;
   __return_storage_ptr__->m_XMin = 0.0;
   __return_storage_ptr__->m_YMin = 0.0;
   __return_storage_ptr__->m_Width = 0.0;
   __return_storage_ptr__->m_Height = 0.0;
-  VVar4 = Vector2Ex::Vector2Ex_FromValue(3.4028235e+38,(MethodInfo *)0x0);
-  fStack_5 = VVar4.y;
-  fStack_6 = fStack_7;
-  fStack_8 = fStack_5;
-  VVar9 = Vector2Ex::Vector2Ex_FromValue(-3.4028235e+38,(MethodInfo *)0x0);
-  fStack_7 = VVar4.x;
-  fStack_5 = VVar9.y;
-  fStack_10 = fStack_7;
-  fStack_11 = fStack_5;
+  fStack_7 = fStack_4;
   if (points != (IEnumerable_1_UnityEngine_Vector2_ *)0x0) {
-    piVar12 = (int *)func_?();
+    piVar8 = (int *)func_?(0,
+                                    TypeInfo__System__Collections__Generic__IEnumerable<UnityEngine::Vector2>
+                                    ,points);
     uStack_1 = 1;
-    while (piVar12 != (int *)0x0) {
-      cVar13 = func_?();
-      if (cVar13 == '\0') {
+    while (piVar8 != (int *)0x0) {
+      cVar9 = func_?(0,TypeInfo__System__Collections__IEnumerator,piVar8);
+      if (cVar9 == '\0') {
         uStack_1 = 0xffffffff;
-        if (piVar12 != (int *)0x0) {
-          func_?();
+        if (piVar8 != (int *)0x0) {
+          func_?(0,TypeInfo__System__IDisposable,piVar8);
         }
         __return_storage_ptr__->m_XMin = fStack_6;
-        __return_storage_ptr__->m_YMin = fStack_8;
-        __return_storage_ptr__->m_Width = fStack_10 - fStack_6;
-        __return_storage_ptr__->m_Height = fStack_11 - fStack_8;
+        __return_storage_ptr__->m_YMin = fStack_5;
+        __return_storage_ptr__->m_Width = fStack_4 - fStack_6;
+        __return_storage_ptr__->m_Height = fStack_7 - fStack_5;
         *unaff_FS_OFFSET = uStack_3;
         return __return_storage_ptr__;
       }
-      if (piVar12 == (int *)0x0) break;
-      iVar14 = *piVar12;
-      uVar15 = 0;
-      if (*(ushort *)(iVar14 + 0xb6) != 0) {
+      if (piVar8 == (int *)0x0) break;
+      uVar10 = 0;
+      uVar11 = *(ushort *)(*piVar8 + 0xb6);
+      if (uVar11 != 0) {
         do {
           if (*(IEnumerator_1_UnityEngine_Vector2___Class **)
-               (*(int *)(iVar14 + 0x58) + (uint)uVar15 * 8) ==
+               (*(int *)(*piVar8 + 0x58) + (uint)uVar10 * 8) ==
               TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::Vector2>) {
-            puVar16 = (undefined4 *)
-                     (iVar14 + (*(int *)(*(int *)(iVar14 + 0x58) + 4 + (uint)uVar15 * 8) + 0x18) * 8);
+            puVar12 = (undefined4 *)
+                     (*piVar8 +
+                     (*(int *)(*(int *)(*piVar8 + 0x58) + 4 + (uint)uVar10 * 8) + 0x18) * 8);
             goto code_?;
           }
-          uVar15 = uVar15 + 1;
-        } while (uVar15 < *(ushort *)(iVar14 + 0xb6));
+          uVar10 = uVar10 + 1;
+        } while (uVar10 < uVar11);
       }
-      puVar16 = (undefined4 *)func_?();
+      puVar12 = (undefined4 *)
+               func_?(piVar8,
+                               TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::Vector2>
+                               ,0);
 code_?:
-      uVar17 = (*(code *)*puVar16)();
-      fVar18 = (float)((ulonglong)uVar17 >> 0x20);
-      fVar19 = (float)uVar17;
-      if (fVar19 < fStack_6) {
-        fStack_6 = fVar19;
+      uVar13 = (*(code *)*puVar12)(piVar8,puVar12[1]);
+      fVar14 = (float)((ulonglong)uVar13 >> 0x20);
+      fVar15 = (float)uVar13;
+      if (fVar15 < fStack_6) {
+        fStack_6 = fVar15;
       }
-      if (fVar18 < fStack_8) {
-        fStack_8 = fVar18;
+      if (fVar14 < fStack_5) {
+        fStack_5 = fVar14;
       }
-      if (fStack_10 < fVar19) {
-        fStack_10 = fVar19;
+      if (fStack_4 < fVar15) {
+        fStack_4 = fVar15;
       }
-      if (fStack_11 < fVar18) {
-        fStack_11 = fVar18;
+      if (fStack_7 < fVar14) {
+        fStack_7 = fVar14;
       }
     }
   }
-  func_?();
-  func_?();
-  pcVar20 = (code *)swi(3);
-  pRVar21 = (Rect *)(*pcVar20)();
-  return pRVar21;
+  uVar16 = func_?();
+  func_?(uVar16);
+  pcVar17 = (code *)swi(3);
+  pRVar18 = (Rect *)(*pcVar17)();
+  return pRVar18;
 }
 
 

@@ -32,14 +32,19 @@ Assembly-CSharp.dll::LevelRewardAnimation::LevelRewardAnimation_DisplayAndFadeNe
     func_?(&TypeInfo__LevelRewardAnimation___DisplayAndFadeNextBadge_d__29);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__LevelRewardAnimation___DisplayAndFadeNextBadge_d__29;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[2].klass = (Object__Class *)this;
-  value[1].klass = (Object__Class *)0x0;
-  func_?(value + 2,this);
-  return (IEnumerator *)value;
+  this_00 = (SubscribableVariable_1_System_Int32Enum_ *)
+            func_?(TypeInfo__LevelRewardAnimation___DisplayAndFadeNextBadge_d__29);
+  SubscribableVariable`1[System::Int32Enum]::SubscribableVariable_1_System_Int32Enum___ctor
+            (this_00,0,(MethodInfo *)0x0);
+  if (this_00 != (SubscribableVariable_1_System_Int32Enum_ *)0x0) {
+    this_00[1].klass = (SubscribableVariable_1_System_Int32Enum___Class *)this;
+    func_?(this_00 + 1);
+    return (IEnumerator *)this_00;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  pIVar2 = (IEnumerator *)(*pcVar1)();
+  return pIVar2;
 }
 
 
@@ -54,14 +59,19 @@ Assembly-CSharp.dll::LevelRewardAnimation::LevelRewardAnimation_DisplayAndFadePr
     func_?(&TypeInfo__LevelRewardAnimation___DisplayAndFadePrevBadge_d__28);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__LevelRewardAnimation___DisplayAndFadePrevBadge_d__28;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[2].klass = (Object__Class *)this;
-  value[1].klass = (Object__Class *)0x0;
-  func_?(value + 2,this);
-  return (IEnumerator *)value;
+  this_00 = (SubscribableVariable_1_System_Int32Enum_ *)
+            func_?(TypeInfo__LevelRewardAnimation___DisplayAndFadePrevBadge_d__28);
+  SubscribableVariable`1[System::Int32Enum]::SubscribableVariable_1_System_Int32Enum___ctor
+            (this_00,0,(MethodInfo *)0x0);
+  if (this_00 != (SubscribableVariable_1_System_Int32Enum_ *)0x0) {
+    this_00[1].klass = (SubscribableVariable_1_System_Int32Enum___Class *)this;
+    func_?(this_00 + 1);
+    return (IEnumerator *)this_00;
+  }
+  func_?();
+  pcVar1 = (code *)swi(3);
+  pIVar2 = (IEnumerator *)(*pcVar1)();
+  return pIVar2;
 }
 
 
@@ -534,30 +544,30 @@ void Assembly-CSharp.dll::LevelRewardAnimation::LevelRewardAnimation_OnShow
       pSVar6 = TM::TM__(StringLiteral_GOLD_,(MethodInfo *)0x0);
       pSVar6 = mscorlib.dll::System::String::String_Concat_3
                          (StringLiteral__0__,pSVar6,(MethodInfo *)0x0);
-      pOVar7 = (Object *)func_?();
-      pSVar6 = mscorlib.dll::System::String::String_Format(pSVar6,pOVar7,(MethodInfo *)0x0);
+      arg0 = (Object *)func_?();
+      pSVar6 = mscorlib.dll::System::String::String_Format(pSVar6,arg0,(MethodInfo *)0x0);
       if (pTVar5 != (Text *)0x0) {
         (*(code *)(pTVar5->klass->vtable).set_text.method)(pTVar5,pSVar6);
         if (cRam_? == '\0') {
           func_?();
           cRam_? = '\x01';
         }
-        method_00 = TypeInfo__LevelRewardAnimation___DisplayAndFadePrevBadge_d__28;
-        pOVar7 = (Object *)func_?();
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  (pOVar7,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-        pOVar7[1].klass = (Object__Class *)0x0;
-        pOVar7[2].klass = (Object__Class *)this;
-        func_?(pOVar7 + 2,this);
-        UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
-                  ((MonoBehaviour *)this,(IEnumerator *)pOVar7,(MethodInfo *)0x0);
-        return;
+        this_00 = (SubscribableVariable_1_System_Int32Enum_ *)func_?();
+        SubscribableVariable`1[System::Int32Enum]::SubscribableVariable_1_System_Int32Enum___ctor
+                  (this_00,0,(MethodInfo *)0x0);
+        if (this_00 != (SubscribableVariable_1_System_Int32Enum_ *)0x0) {
+          this_00[1].klass = (SubscribableVariable_1_System_Int32Enum___Class *)this;
+          func_?(this_00 + 1);
+          UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
+                    ((MonoBehaviour *)this,(IEnumerator *)this_00,(MethodInfo *)0x0);
+          return;
+        }
       }
     }
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

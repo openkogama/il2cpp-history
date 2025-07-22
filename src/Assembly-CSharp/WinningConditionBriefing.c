@@ -13,6 +13,7 @@ void Assembly-CSharp.dll::WinningConditionBriefing::WinningConditionBriefing_Cre
     func_?(&PlayButton_MethodInfo__UnityEngine__Object__Instantiate<PlayButton>_PlayButton_
                    );
     func_?(&TypeInfo__UnityEngine__Object);
+    func_?(&TypeInfo__UnityEngine__RectTransform);
     func_?(&MethodInfo__WinningConditionBriefing__OnPlayPressed__);
     cRam_? = '\x01';
   }
@@ -48,35 +49,53 @@ void Assembly-CSharp.dll::WinningConditionBriefing::WinningConditionBriefing_Cre
 code_?:
       func_?();
       pPVar1 = (this->fields).desktopPlayButton;
+      if (pPVar1 != (PlayButton *)0x0) {
+        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)pPVar1,(MethodInfo *)0x0);
+        (this->fields).playButton = pGVar4;
+        func_?(&(this->fields).playButton,pGVar4);
+        pGVar4 = (this->fields).playButton;
+        if (pGVar4 != (GameObject *)0x0) {
+          pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                             (pGVar4,(MethodInfo *)0x0);
+          pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                             ((Component *)this,(MethodInfo *)0x0);
+          if (pTVar5 != (Transform *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
+                      (pTVar5,pTVar6,0,(MethodInfo *)0x0);
+            return;
+          }
+        }
+      }
       goto code_?;
     }
-    pAVar4 = (Action *)0x0;
+    pAVar7 = (Action *)0x0;
     if (pAVar2->klass == TypeInfo__System__Action) {
-      pAVar4 = pAVar2;
+      pAVar7 = pAVar2;
     }
-    if (pAVar4 == (Action *)0x0) goto code_?;
-    (pPVar1->fields).OnPlayButtonPressed = pAVar4;
-    pAVar4 = (Action *)0x0;
+    if (pAVar7 == (Action *)0x0) goto code_?;
+    (pPVar1->fields).OnPlayButtonPressed = pAVar7;
+    pAVar7 = (Action *)0x0;
     if (pAVar2->klass == TypeInfo__System__Action) {
-      pAVar4 = pAVar2;
+      pAVar7 = pAVar2;
     }
-    if (pAVar4 != (Action *)0x0) goto code_?;
+    if (pAVar7 != (Action *)0x0) goto code_?;
   }
   else {
-    pPVar5 = (this->fields).AndroidPlayButtonPrefab;
+    pPVar8 = (this->fields).AndroidPlayButtonPrefab;
     if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Object);
     }
-    pPVar5 = (PlayButtonTouch *)
+    pPVar8 = (PlayButtonTouch *)
              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                       ((Object *)pPVar5,
+                       ((Object *)pPVar8,
                         PlayButtonTouch_MethodInfo__UnityEngine__Object__Instantiate<PlayButtonTouch>_PlayButtonTouch_
                        );
-    (this->fields).androidPlayButton = pPVar5;
-    func_?(&(this->fields).androidPlayButton,pPVar5);
-    pPVar5 = (this->fields).androidPlayButton;
-    if (pPVar5 != (PlayButtonTouch *)0x0) {
-      pAVar2 = (pPVar5->fields).OnPlayButtonPressed;
+    (this->fields).androidPlayButton = pPVar8;
+    func_?(&(this->fields).androidPlayButton,pPVar8);
+    pPVar8 = (this->fields).androidPlayButton;
+    if (pPVar8 != (PlayButtonTouch *)0x0) {
+      pAVar2 = (pPVar8->fields).OnPlayButtonPressed;
       pNVar3 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
       NavMesh_OnNavMeshPreUpdate__ctor
@@ -86,39 +105,45 @@ code_?:
                mscorlib.dll::System::Delegate::Delegate_Combine
                          ((Delegate *)pAVar2,(Delegate *)pNVar3,(MethodInfo *)0x0);
       if (pAVar2 == (Action *)0x0) {
-        (pPVar5->fields).OnPlayButtonPressed = (Action *)0x0;
+        (pPVar8->fields).OnPlayButtonPressed = (Action *)0x0;
       }
       else {
-        pAVar4 = (Action *)0x0;
+        pAVar7 = (Action *)0x0;
         if (pAVar2->klass == TypeInfo__System__Action) {
-          pAVar4 = pAVar2;
+          pAVar7 = pAVar2;
         }
-        if (pAVar4 == (Action *)0x0) goto code_?;
-        (pPVar5->fields).OnPlayButtonPressed = pAVar4;
-        pAVar4 = (Action *)0x0;
+        if (pAVar7 == (Action *)0x0) goto code_?;
+        (pPVar8->fields).OnPlayButtonPressed = pAVar7;
+        pAVar7 = (Action *)0x0;
         if (pAVar2->klass == TypeInfo__System__Action) {
-          pAVar4 = pAVar2;
+          pAVar7 = pAVar2;
         }
-        if (pAVar4 == (Action *)0x0) goto code_?;
+        if (pAVar7 == (Action *)0x0) goto code_?;
       }
       func_?();
-      pPVar1 = (PlayButton *)(this->fields).androidPlayButton;
-code_?:
-      if (pPVar1 != (PlayButton *)0x0) {
-        pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)pPVar1,(MethodInfo *)0x0);
-        (this->fields).playButton = pGVar6;
-        func_?(&(this->fields).playButton,pGVar6);
-        pGVar6 = (this->fields).playButton;
-        if (pGVar6 != (GameObject *)0x0) {
-          this_00 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                              (pGVar6,(MethodInfo *)0x0);
-          parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                             ((Component *)this,(MethodInfo *)0x0);
-          if (this_00 != (Transform *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                      (this_00,parent,0,(MethodInfo *)0x0);
-            return;
+      pPVar8 = (this->fields).androidPlayButton;
+      if (pPVar8 != (PlayButtonTouch *)0x0) {
+        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)pPVar8,(MethodInfo *)0x0);
+        (this->fields).playButton = pGVar4;
+        func_?(&(this->fields).playButton,pGVar4);
+        pGVar4 = (this->fields).playButton;
+        if (pGVar4 != (GameObject *)0x0) {
+          pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                             (pGVar4,(MethodInfo *)0x0);
+          if (pTVar5 != (Transform *)0x0) {
+            pTVar6 = (Transform *)0x0;
+            if (pTVar5->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {
+              pTVar6 = pTVar5;
+            }
+            if (pTVar6 != (Transform *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
+                        (pTVar6,(Transform *)(this->fields).TouchPlayButtonContainerTransform,0,
+                         (MethodInfo *)0x0);
+              UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetAsFirstSibling
+                        (pTVar6,(MethodInfo *)0x0);
+              return;
+            }
           }
         }
       }
@@ -130,8 +155,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -144,10 +169,10 @@ Assembly-CSharp.dll::WinningConditionBriefing::WinningConditionBriefing_FixAspec
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__WinningConditionBriefing___FixAspectRatioDelay_d__34);
+    func_?(&TypeInfo__WinningConditionBriefing___FixAspectRatioDelay_d__35);
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__WinningConditionBriefing___FixAspectRatioDelay_d__34;
+  method_00 = TypeInfo__WinningConditionBriefing___FixAspectRatioDelay_d__35;
   value = (Object *)func_?();
   mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
             (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
@@ -345,12 +370,12 @@ void Assembly-CSharp.dll::WinningConditionBriefing::WinningConditionBriefing_OnP
                    );
     func_?(&TypeInfo__UnityEngine__Object);
     func_?(&
-                    MethodInfo__WinningConditionBriefing____c___OnPlayPressed_b__37_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                    MethodInfo__WinningConditionBriefing____c___OnPlayPressed_b__38_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                    );
     func_?(&
-                    MethodInfo__WinningConditionBriefing____c__DisplayClass37_0___OnPlayPressed_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                    MethodInfo__WinningConditionBriefing____c__DisplayClass38_0___OnPlayPressed_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                    );
-    func_?(&TypeInfo__WinningConditionBriefing____c__DisplayClass37_0);
+    func_?(&TypeInfo__WinningConditionBriefing____c__DisplayClass38_0);
     func_?(&TypeInfo__WinningConditionBriefing____c);
     cRam_? = '\x01';
   }
@@ -385,7 +410,7 @@ void Assembly-CSharp.dll::WinningConditionBriefing::WinningConditionBriefing_OnP
       return;
     }
     method_00 = (MethodInfo *)&UNK_?;
-    value = (Object *)func_?(TypeInfo__WinningConditionBriefing____c__DisplayClass37_0);
+    value = (Object *)func_?(TypeInfo__WinningConditionBriefing____c__DisplayClass38_0);
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
               (value,ExceptionArgument__Enum_obj,method_00);
     pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -393,7 +418,7 @@ void Assembly-CSharp.dll::WinningConditionBriefing::WinningConditionBriefing_OnP
     if ((TypeInfo__WinningConditionBriefing____c->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
-    callbackFunction = TypeInfo__WinningConditionBriefing____c->static_fields->__9__37_0;
+    callbackFunction = TypeInfo__WinningConditionBriefing____c->static_fields->__9__38_0;
     if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
       if ((TypeInfo__WinningConditionBriefing____c->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
@@ -404,9 +429,9 @@ void Assembly-CSharp.dll::WinningConditionBriefing::WinningConditionBriefing_OnP
       ::UnityAction_2_System_Object_System_Object___ctor
                 ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
                  callbackFunction,(MethodInfo *)0x0);
-      TypeInfo__WinningConditionBriefing____c->static_fields->__9__37_0 = callbackFunction;
+      TypeInfo__WinningConditionBriefing____c->static_fields->__9__38_0 = callbackFunction;
       pGVar5 = (GameObject *)&UNK_?;
-      func_?(&TypeInfo__WinningConditionBriefing____c->static_fields->__9__37_0,
+      func_?(&TypeInfo__WinningConditionBriefing____c->static_fields->__9__38_0,
                       callbackFunction);
     }
     if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
@@ -438,7 +463,7 @@ void Assembly-CSharp.dll::WinningConditionBriefing::WinningConditionBriefing_OnP
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
         Object]::UnityAction_2_System_Object_System_Object___ctor
                   ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,
-                   MethodInfo__WinningConditionBriefing____c__DisplayClass37_0___OnPlayPressed_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   MethodInfo__WinningConditionBriefing____c__DisplayClass38_0___OnPlayPressed_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                    ,(MethodInfo *)0x0);
         UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
                   (pGVar5,(BaseEventData *)0x0,callbackFunction_00,
@@ -913,7 +938,7 @@ void Assembly-CSharp.dll::WinningConditionBriefing::WinningConditionBriefing_Upd
       func_?();
       cRam_? = '\x01';
     }
-    method_00 = TypeInfo__WinningConditionBriefing___FixAspectRatioDelay_d__34;
+    method_00 = TypeInfo__WinningConditionBriefing___FixAspectRatioDelay_d__35;
     value = (Object *)func_?();
     mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
               (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);

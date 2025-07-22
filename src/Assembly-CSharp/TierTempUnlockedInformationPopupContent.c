@@ -50,8 +50,8 @@ void Assembly-CSharp.dll::TierTempUnlockedInformationPopupContent::
   (this->fields).tempUnlockInformation = StringLiteral_Game_Tier__0__is_now_available_u;
   func_?(&(this->fields).tempUnlockInformation,
                   StringLiteral_Game_Tier__0__is_now_available_u);
-  Borodar::FarlandSkies::CloudyCrownPro::Helpers::Singleton`1[System::Object]::
-  Singleton_1_System_Object___ctor((Singleton_1_System_Object_ *)this,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
+            ((MonoBehaviour *)this,(MethodInfo *)0x0);
   return;
 }
 

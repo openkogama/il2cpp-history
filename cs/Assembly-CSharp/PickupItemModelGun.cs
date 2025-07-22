@@ -17,7 +17,7 @@ public class PickupItemModelGun : PickupItemWithDelay
 {
 	// Fields
 	public float minDistanceToCubeFire;
-	public int ammo;
+	public int maxAmmo;
 	public RailRay railGunRayPrefab;
 	public float speed;
 	public float range;
@@ -42,11 +42,12 @@ public class PickupItemModelGun : PickupItemWithDelay
 	// Properties
 	public override AvatarItemType Type { get; }
 	public override int Quantity { get; }
+	public override int MaxAmmo { get; }
 	protected override bool IsAmmoDepleted { get; }
 
 	// Nested types
 	[CompilerGenerated]
-	private sealed class _DoAutoFire_d__39 : IEnumerator<object>
+	private sealed class _DoAutoFire_d__41 : IEnumerator<object>
 	{
 		// Fields
 		private int __1__state;
@@ -59,7 +60,7 @@ public class PickupItemModelGun : PickupItemWithDelay
 
 		// Constructors
 		[DebuggerHidden]
-		public _DoAutoFire_d__39(int __1__state);
+		public _DoAutoFire_d__41(int __1__state);
 
 		// Methods
 		[DebuggerHidden]
@@ -84,7 +85,7 @@ public class PickupItemModelGun : PickupItemWithDelay
 	protected void OnFireSecondary(bool isLocal);
 	public override void TriggerBegin(int instigatorActorNr);
 	private bool ShowCursors();
-	[IteratorStateMachine(typeof(_DoAutoFire_d__39))]
+	[IteratorStateMachine(typeof(_DoAutoFire_d__41))]
 	private IEnumerator DoAutoFire();
 	private bool GetCubePosFromFineGrainedTerrain(VoxelHit voxelHit, float maxDistanceToEdge, ref IntVector pos);
 	private static int GetEdgeVertexMatchCount(MVWorldObjectClient wo, VoxelHit voxelHit, Face face, Edge edge, Vector3[] edgeVerticesCubeHit);

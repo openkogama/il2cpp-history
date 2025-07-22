@@ -240,7 +240,7 @@ code_?:
   i2.x = in_stack_8;
   i2.z = (int16_t)(undefined4)uStack_10;
   IVar12 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Addition
-                     (IVar12,i2,(MethodInfo *)CONCAT22(uVar1,uStack_10._4_2_));
+                    (IVar12,i2,(MethodInfo *)CONCAT22(uVar1,uStack_10._4_2_));
   pIVar15 = IVar12._0_4_;
   uStack_10._0_2_ = pIVar15->x;
   uStack_10._2_2_ = pIVar15->y;
@@ -272,14 +272,9 @@ code_?:
     }
   }
 code_?:
-  cVar16 = '\0';
-  uVar17 = func_?();
-  *(undefined1 *)&this->klass = uVar17;
-  *(char *)(extraout_ECX + -0x49efb953) =
-       *(char *)(extraout_ECX + -0x49efb953) + extraout_DH + cVar16;
-  pcVar18 = (code *)swi(3);
-  (*pcVar18)();
-  return;
+  func_?();
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 

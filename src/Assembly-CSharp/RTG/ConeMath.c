@@ -145,7 +145,7 @@ bool Assembly-CSharp.dll::RTG::ConeMath::ConeMath_ContainsPoint
   coneBaseCenter.z = (pVVar8->upVector).z;
   fVar7 = (float)uVar5 * (float)uVar9 + (float)uVar6 * (float)uVar10 + fVar7 * coneBaseCenter.z;
   if (((float)((uint)epsilon._vertEps ^
-              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) <= fVar7)
+              __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) <= fVar7)
      && (fVar7 <= epsilon._vertEps + coneHeight)) {
     coneBaseCenter.x = (float)uVar9;
     if (cRam_? == '\0') {
@@ -266,9 +266,9 @@ bool Assembly-CSharp.dll::RTG::ConeMath::ConeMath_Raycast
     }
     uVar25 = (TypeInfo__UnityEngine__Vector3->static_fields->upVector).x;
     coneBaseCenter.x =
-         (float)(uVar25 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+         (float)(uVar25 ^ __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     fVar21 = (float)((uint)(TypeInfo__UnityEngine__Vector3->static_fields->upVector).z ^
-                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     if (cRam_? == '\0') {
       coneBaseCenter.x = (float)&UNK_?;
       func_?();
@@ -309,7 +309,7 @@ bool Assembly-CSharp.dll::RTG::ConeMath::ConeMath_Raycast
       *t = fStack_2;
       fVar7 = fVar7 + (float)uVar10 * fStack_2;
       if (((float)((uint)fVar9 ^
-                  __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) <=
+                  __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field) <=
            fVar7) && (fVar7 <= fVar9 + (float)uVar11)) {
         return 1;
       }

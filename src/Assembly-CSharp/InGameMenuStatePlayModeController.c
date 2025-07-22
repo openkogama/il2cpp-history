@@ -1,16 +1,16 @@
 
-/* Void ActivateLobbyState() */
+/* Void ActivateInGameMenuState() */
 
-void Assembly-CSharp.dll::LobbyStatePlayModeController::
-     LobbyStatePlayModeController_ActivateLobbyState
-               (LobbyStatePlayModeController *this,MethodInfo *method)
+void Assembly-CSharp.dll::InGameMenuStatePlayModeController::
+     InGameMenuStatePlayModeController_ActivateInGameMenuState
+               (InGameMenuStatePlayModeController *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__IPlayModeUI);
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).lobbyState;
+  this_00 = (this->fields).lobbyMenu;
   if (this_00 != (RectTransform *)0x0) {
     pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this_00,(MethodInfo *)0x0);
@@ -20,7 +20,7 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::
     }
     pIVar2 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
     if (pIVar2 != (IPlayModeUI *)0x0) {
-      value = func_?(5,TypeInfo__IPlayModeUI,pIVar2);
+      value = func_?(7,TypeInfo__IPlayModeUI,pIVar2);
       if (pGVar1 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                   (pGVar1,value,(MethodInfo *)0x0);
@@ -34,7 +34,7 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::
           }
           pIVar2 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
           if (pIVar2 != (IPlayModeUI *)0x0) {
-            bVar3 = func_?(5,TypeInfo__IPlayModeUI,pIVar2);
+            bVar3 = func_?(7,TypeInfo__IPlayModeUI,pIVar2);
             if (pGVar1 != (GameObject *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                         (pGVar1,bVar3 ^ 1,(MethodInfo *)0x0);
@@ -47,7 +47,7 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::
                             (pGVar1,0,(MethodInfo *)0x0);
                   this_03 = (this->fields).chatController;
                   if (this_03 != (ChatControllerUGUI *)0x0) {
-                    ChatControllerUGUI::ChatControllerUGUI_OnLobbyStateChange
+                    ChatControllerUGUI::ChatControllerUGUI_OnInGameMenuStateChange
                               (this_03,0,(MethodInfo *)0x0);
                     return;
                   }
@@ -66,18 +66,18 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::
 }
 
 
-/* Void DeactivateLobbyState() */
+/* Void DeactivateInGameMenuState() */
 
-void Assembly-CSharp.dll::LobbyStatePlayModeController::
-     LobbyStatePlayModeController_DeactivateLobbyState
-               (LobbyStatePlayModeController *this,MethodInfo *method)
+void Assembly-CSharp.dll::InGameMenuStatePlayModeController::
+     InGameMenuStatePlayModeController_DeactivateInGameMenuState
+               (InGameMenuStatePlayModeController *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__IPlayModeUI);
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).lobbyState;
+  this_00 = (this->fields).lobbyMenu;
   if (this_00 != (RectTransform *)0x0) {
     pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this_00,(MethodInfo *)0x0);
@@ -100,7 +100,7 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::
                         (pGVar1,1,(MethodInfo *)0x0);
               this_03 = (this->fields).chatController;
               if (this_03 != (ChatControllerUGUI *)0x0) {
-                ChatControllerUGUI::ChatControllerUGUI_OnLobbyStateChange
+                ChatControllerUGUI::ChatControllerUGUI_OnInGameMenuStateChange
                           (this_03,1,(MethodInfo *)0x0);
                 if (cRam_? == '\0') {
                   ppMStack2 = &TypeInfo__MVGameControllerBase;
@@ -130,9 +130,9 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::
 
 /* Void DisableLobbyState() */
 
-void Assembly-CSharp.dll::LobbyStatePlayModeController::
-     LobbyStatePlayModeController_DisableLobbyState
-               (LobbyStatePlayModeController *this,MethodInfo *method)
+void Assembly-CSharp.dll::InGameMenuStatePlayModeController::
+     InGameMenuStatePlayModeController_DisableLobbyState
+               (InGameMenuStatePlayModeController *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
@@ -145,8 +145,8 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::
   }
   pIVar1 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
   if (pIVar1 != (IPlayModeUI *)0x0) {
-    func_?(6,TypeInfo__IPlayModeUI,pIVar1,0);
-    pRVar2 = (this->fields).lobbyState;
+    func_?(8,TypeInfo__IPlayModeUI,pIVar1,0);
+    pRVar2 = (this->fields).lobbyMenu;
     if ((pRVar2 != (RectTransform *)0x0) &&
        (pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)pRVar2,(MethodInfo *)0x0), pGVar3 != (GameObject *)0x0)) {
@@ -155,7 +155,7 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::
       if (bVar4 == 0) {
         return;
       }
-      pRVar2 = (this->fields).lobbyState;
+      pRVar2 = (this->fields).lobbyMenu;
       if ((pRVar2 != (RectTransform *)0x0) &&
          (pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                              ((Component *)pRVar2,(MethodInfo *)0x0), pGVar3 != (GameObject *)0x0))
@@ -183,16 +183,16 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::
 
 /* Void EnableLobbyState() */
 
-void Assembly-CSharp.dll::LobbyStatePlayModeController::
-     LobbyStatePlayModeController_EnableLobbyState
-               (LobbyStatePlayModeController *this,MethodInfo *method)
+void Assembly-CSharp.dll::InGameMenuStatePlayModeController::
+     InGameMenuStatePlayModeController_EnableLobbyState
+               (InGameMenuStatePlayModeController *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).lobbyState;
+  this_00 = (this->fields).lobbyMenu;
   if (this_00 != (RectTransform *)0x0) {
     this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                         ((Component *)this_00,(MethodInfo *)0x0);
@@ -207,7 +207,7 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::
         if (TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField ==
             (IPlayModeUI *)0x0) goto code_?;
         pIStack_2 = TypeInfo__IPlayModeUI;
-        func_?(6);
+        func_?(8);
       }
       return;
     }
@@ -223,185 +223,179 @@ code_?:
 
 /* Void Initialize(DesktopInGameGUIController, RectTransform, InGameMenu, ChatControllerUGUI) */
 
-void Assembly-CSharp.dll::LobbyStatePlayModeController::LobbyStatePlayModeController_Initialize
-               (LobbyStatePlayModeController *this,DesktopInGameGUIController *inGameController,
-               RectTransform *lobbyState,InGameMenu *inGameMenu,ChatControllerUGUI *chatController,
-               MethodInfo *method)
+void Assembly-CSharp.dll::InGameMenuStatePlayModeController::
+     InGameMenuStatePlayModeController_Initialize
+               (InGameMenuStatePlayModeController *this,DesktopInGameGUIController *inGameController
+               ,RectTransform *lobbyMenuTransform,InGameMenu *inGameMenu,
+               ChatControllerUGUI *chatController,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__System__Action<bool>);
     func_?(&TypeInfo__System__Action);
-    func_?(&TypeInfo__ILockCursorManager);
-    func_?(&MethodInfo__LobbyStatePlayModeController__DisableLobbyState__);
-    func_?(&MethodInfo__LobbyStatePlayModeController__EnableLobbyState__);
-    func_?(&MethodInfo__LobbyStatePlayModeController__OnCursorLockChanged_bool_);
+    func_?(&TypeInfo__IPlayModeUI);
+    func_?(&MethodInfo__InGameMenuStatePlayModeController__DisableLobbyState__);
+    func_?(&MethodInfo__InGameMenuStatePlayModeController__EnableLobbyState__);
+    func_?(&MethodInfo__InGameMenuStatePlayModeController__UpdateInGameMenuState_bool_);
     cRam_? = '\x01';
   }
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVGameControllerBase);
-    cRam_? = '\x01';
-  }
-  if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
-    pIVar1 = MVGameControllerDesktop::MVGameControllerDesktop_get_LockCursorManager
-                       ((MethodInfo *)0x0);
-    if (pIVar1 == (ILockCursorManager *)0x0) goto code_?;
-    pIVar2 = pIVar1->klass;
-    uVar3 = 0;
-    uVar4._0_1_ = (pIVar2->_1).rank;
-    uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
-    if (uVar4 != 0) {
-      do {
-        if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
-            (Il2CppClass *)TypeInfo__ILockCursorManager) {
-          ppMVar5 = &(&(pIVar1->klass->vtable).get_OnCursorLockChanged)
-                     [pIVar1->klass->interfaceOffsets[uVar3].offset].method;
-          goto code_?;
-        }
-        uVar3 = uVar3 + 1;
-      } while (uVar3 < uVar4);
-    }
-    ppMVar5 = (MethodInfo **)func_?(pIVar1,TypeInfo__ILockCursorManager,0);
-code_?:
-    pDVar6 = (Delegate *)(*(code *)*ppMVar5)(pIVar1,ppMVar5[1]);
-    this_00 = (UnityAction_1_System_Int32Enum_ *)func_?(TypeInfo__System__Action<bool>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-    UnityAction_1_System_Int32Enum___ctor
-              (this_00,(Object *)this,
-               MethodInfo__LobbyStatePlayModeController__OnCursorLockChanged_bool_,(MethodInfo *)0x0
-              );
-    pDVar6 = mscorlib.dll::System::Delegate::Delegate_Combine
-                       (pDVar6,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pDVar6 == (Delegate *)0x0) {
-      this = (LobbyStatePlayModeController *)0x0;
-code_?:
-      pIVar2 = pIVar1->klass;
-      uVar4 = 0;
-      uVar3._0_1_ = (pIVar2->_1).rank;
-      uVar3._1_1_ = (pIVar2->_1).minimumAlignment;
-      if (uVar3 != 0) {
-        do {
-          if (pIVar2->interfaceOffsets[uVar4].interfaceType ==
-              (Il2CppClass *)TypeInfo__ILockCursorManager) {
-            ppMVar5 = &(&(pIVar1->klass->vtable).set_OnCursorLockChanged)
-                       [pIVar1->klass->interfaceOffsets[uVar4].offset].method;
-            goto code_?;
-          }
-          uVar4 = uVar4 + 1;
-        } while (uVar4 < uVar3);
-      }
-      ppMVar5 = (MethodInfo **)func_?();
-code_?:
-      (*(code *)*ppMVar5)();
-      goto code_?;
-    }
-    this = (LobbyStatePlayModeController *)func_?();
-    if (this != (LobbyStatePlayModeController *)0x0) goto code_?;
-  }
-  else {
-code_?:
-    pGVar7 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-    if ((pGVar7 != (GameEventManager *)0x0) &&
-       (pGVar8 = (pGVar7->fields).GameState, pGVar8 != (GameEventManager_GameStateManager *)0x0)) {
-      pAVar9 = (pGVar8->fields).OnEnableLobbyState;
-      pNVar10 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-      NavMesh_OnNavMeshPreUpdate__ctor
-                (pNVar10,(Object *)this,MethodInfo__LobbyStatePlayModeController__EnableLobbyState__,
-                 (MethodInfo *)0x0);
-      pAVar9 = (Action *)
-                mscorlib.dll::System::Delegate::Delegate_Combine
-                          ((Delegate *)pAVar9,(Delegate *)pNVar10,(MethodInfo *)0x0);
-      if (pAVar9 == (Action *)0x0) {
-        (pGVar8->fields).OnEnableLobbyState = (Action *)0x0;
-      }
-      else {
-        pAVar11 = (Action *)0x0;
-        if (pAVar9->klass == TypeInfo__System__Action) {
-          pAVar11 = pAVar9;
-        }
-        if (pAVar11 == (Action *)0x0) goto code_?;
-        (pGVar8->fields).OnEnableLobbyState = pAVar11;
-        pAVar11 = (Action *)0x0;
-        if (pAVar9->klass == TypeInfo__System__Action) {
-          pAVar11 = pAVar9;
-        }
-        if (pAVar11 == (Action *)0x0) goto code_?;
-      }
-      func_?();
-      pGVar7 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-      if ((pGVar7 != (GameEventManager *)0x0) &&
-         (pGVar12 = (pGVar7->fields).GameState, pGVar12 != (GameEventManager_GameStateManager *)0x0))
-      {
-        pAVar9 = (pGVar12->fields).OnDisableLobbyState;
-        pNVar10 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-        NavMesh_OnNavMeshPreUpdate__ctor
-                  (pNVar10,(Object *)&pGVar8->fields,
-                   MethodInfo__LobbyStatePlayModeController__DisableLobbyState__,(MethodInfo *)0x0);
-        pAVar11 = (Action *)
-                  mscorlib.dll::System::Delegate::Delegate_Combine
-                            ((Delegate *)pAVar9,(Delegate *)pNVar10,(MethodInfo *)0x0);
-        pAVar9 = (Action *)0x0;
-        if (pAVar11 == (Action *)0x0) {
-          (pGVar12->fields).OnDisableLobbyState = (Action *)0x0;
-code_?:
-          func_?();
-          pGVar12[1].fields.OnDisableLobbyState = pAVar9;
-          func_?(&pGVar12[1].fields.OnDisableLobbyState);
-          pGVar12[1].fields.gameStateType =
-               (GameEventManager_GameEventSubscribableVariable_1_MV_Common_MVGameStateType_ *)
-               lobbyState;
-          func_?(&pGVar12[1].fields.gameStateType,lobbyState);
-          pGVar12[2].klass = (GameEventManager_GameStateManager__Class *)inGameMenu;
-          func_?(pGVar12 + 2,inGameMenu);
-          pGVar12[2].monitor = (MonitorData *)chatController;
-          func_?(&pGVar12[2].monitor,chatController);
-          LobbyStatePlayModeController_SetObjectToLobbyState
-                    ((LobbyStatePlayModeController *)&(pGVar12->fields).OnDisableLobbyState,
-                     *(bool *)&pGVar12[1].fields.OnEnableLobbyState,(MethodInfo *)0x0);
-          return;
-        }
-        if (pAVar11->klass == TypeInfo__System__Action) {
-          pAVar9 = pAVar11;
-        }
-        if (pAVar9 != (Action *)0x0) {
-          (pGVar12->fields).OnDisableLobbyState = pAVar9;
-          pAVar9 = (Action *)0x0;
-          if (pAVar11->klass == TypeInfo__System__Action) {
-            pAVar9 = pAVar11;
-          }
-          if (pAVar9 != (Action *)0x0) goto code_?;
-        }
-        goto code_?;
-      }
-    }
+  pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
+  if (pGVar1 == (GameEventManager *)0x0) {
 code_?:
     func_?();
   }
+  else {
+    pGVar2 = (pGVar1->fields).GameState;
+    if (pGVar2 == (GameEventManager_GameStateManager *)0x0) goto code_?;
+    pAVar3 = (pGVar2->fields).OnEnableLobbyState;
+    pNVar4 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (pNVar4,(Object *)this,
+               MethodInfo__InGameMenuStatePlayModeController__EnableLobbyState__,(MethodInfo *)0x0);
+    pAVar3 = (Action *)
+             mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pAVar3,(Delegate *)pNVar4,(MethodInfo *)0x0);
+    if (pAVar3 == (Action *)0x0) {
+      (pGVar2->fields).OnEnableLobbyState = (Action *)0x0;
+    }
+    else {
+      pAVar5 = (Action *)0x0;
+      if (pAVar3->klass == TypeInfo__System__Action) {
+        pAVar5 = pAVar3;
+      }
+      if (pAVar5 == (Action *)0x0) goto code_?;
+      (pGVar2->fields).OnEnableLobbyState = pAVar5;
+      pAVar5 = (Action *)0x0;
+      if (pAVar3->klass == TypeInfo__System__Action) {
+        pAVar5 = pAVar3;
+      }
+      if (pAVar5 == (Action *)0x0) goto code_?;
+    }
+    func_?();
+    pGVar1 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
+    if ((pGVar1 == (GameEventManager *)0x0) ||
+       (pGVar6 = (pGVar1->fields).GameState, pGVar6 == (GameEventManager_GameStateManager *)0x0))
+    goto code_?;
+    pAVar3 = (pGVar6->fields).OnDisableLobbyState;
+    pNVar4 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (pNVar4,(Object *)&pGVar2->fields,
+               MethodInfo__InGameMenuStatePlayModeController__DisableLobbyState__,(MethodInfo *)0x0)
+    ;
+    pAVar3 = (Action *)
+             mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pAVar3,(Delegate *)pNVar4,(MethodInfo *)0x0);
+    if (pAVar3 == (Action *)0x0) {
+      (pGVar6->fields).OnDisableLobbyState = (Action *)0x0;
+    }
+    else {
+      pAVar5 = (Action *)0x0;
+      if (pAVar3->klass == TypeInfo__System__Action) {
+        pAVar5 = pAVar3;
+      }
+      if (pAVar5 == (Action *)0x0) goto code_?;
+      (pGVar6->fields).OnDisableLobbyState = pAVar5;
+      pAVar5 = (Action *)0x0;
+      if (pAVar3->klass == TypeInfo__System__Action) {
+        pAVar5 = pAVar3;
+      }
+      if (pAVar5 == (Action *)0x0) goto code_?;
+    }
+    func_?();
+    if (cRam_? == '\0') {
+      func_?(&TypeInfo__MVGameControllerBase);
+      cRam_? = '\x01';
+    }
+    pIVar7 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
+    if (pIVar7 == (IPlayModeUI *)0x0) goto code_?;
+    pIVar8 = pIVar7->klass;
+    uVar9 = 0;
+    uVar10._0_1_ = (pIVar8->_1).rank;
+    uVar10._1_1_ = (pIVar8->_1).minimumAlignment;
+    if (uVar10 != 0) {
+      do {
+        if (pIVar8->interfaceOffsets[uVar9].interfaceType == (Il2CppClass *)TypeInfo__IPlayModeUI)
+        {
+          ppMVar11 = &(&(pIVar7->klass->vtable).get_IsPausedStateChange)
+                      [pIVar7->klass->interfaceOffsets[uVar9].offset].method;
+          goto code_?;
+        }
+        uVar9 = uVar9 + 1;
+      } while (uVar9 < uVar10);
+    }
+    ppMVar11 = (MethodInfo **)func_?(pIVar7,TypeInfo__IPlayModeUI,3);
+code_?:
+    pDVar12 = (Delegate *)(*(code *)*ppMVar11)(pIVar7,ppMVar11[1]);
+    this_00 = (UnityAction_1_System_Int32Enum_ *)func_?(TypeInfo__System__Action<bool>);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+    UnityAction_1_System_Int32Enum___ctor
+              (this_00,(Object *)&(pGVar6->fields).OnDisableLobbyState,
+               MethodInfo__InGameMenuStatePlayModeController__UpdateInGameMenuState_bool_,
+               (MethodInfo *)0x0);
+    pDVar12 = mscorlib.dll::System::Delegate::Delegate_Combine
+                        (pDVar12,(Delegate *)this_00,(MethodInfo *)0x0);
+    if (pDVar12 == (Delegate *)0x0) {
+      this_01 = (InGameMenuStatePlayModeController *)0x0;
+code_?:
+      pIVar8 = pIVar7->klass;
+      uVar10 = 0;
+      uVar9._0_1_ = (pIVar8->_1).rank;
+      uVar9._1_1_ = (pIVar8->_1).minimumAlignment;
+      if (uVar9 != 0) {
+        do {
+          if (pIVar8->interfaceOffsets[uVar10].interfaceType == (Il2CppClass *)TypeInfo__IPlayModeUI
+             ) {
+            ppMVar11 = &(&(pIVar7->klass->vtable).set_IsPausedStateChange)
+                        [pIVar7->klass->interfaceOffsets[uVar10].offset].method;
+            goto code_?;
+          }
+          uVar10 = uVar10 + 1;
+        } while (uVar10 < uVar9);
+      }
+      ppMVar11 = (MethodInfo **)func_?();
+code_?:
+      pDVar13 = (DesktopInGameGUIController *)ppMVar11[1];
+      (*(code *)*ppMVar11)();
+      (this_01->fields).inGameController = pDVar13;
+      func_?(&(this_01->fields).inGameController,pDVar13);
+      (this_01->fields).lobbyMenu = lobbyMenuTransform;
+      func_?(&(this_01->fields).lobbyMenu,lobbyMenuTransform);
+      (this_01->fields).inGameMenu = inGameMenu;
+      func_?(&(this_01->fields).inGameMenu,inGameMenu);
+      (this_01->fields).chatController = chatController;
+      func_?(&(this_01->fields).chatController,chatController);
+      InGameMenuStatePlayModeController_SetObjectToInGameMenuState
+                (this_01,(this_01->fields).isInMenu,(MethodInfo *)0x0);
+      return;
+    }
+    this_01 = (InGameMenuStatePlayModeController *)func_?();
+    if (this_01 != (InGameMenuStatePlayModeController *)0x0) goto code_?;
+  }
   func_?();
 code_?:
   func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
 
-/* Void SetObjectToLobbyState(Boolean) */
+/* Void SetObjectToInGameMenuState(Boolean) */
 
-void Assembly-CSharp.dll::LobbyStatePlayModeController::
-     LobbyStatePlayModeController_SetObjectToLobbyState
-               (LobbyStatePlayModeController *this,bool isInLobbyState,MethodInfo *method)
+void Assembly-CSharp.dll::InGameMenuStatePlayModeController::
+     InGameMenuStatePlayModeController_SetObjectToInGameMenuState
+               (InGameMenuStatePlayModeController *this,bool isInMenu,MethodInfo *method)
 
 {
-  (this->fields).isInLobbyState = isInLobbyState;
-  if (isInLobbyState == 0) {
+  (this->fields).isInMenu = isInMenu;
+  if (isInMenu == 0) {
     if (cRam_? == '\0') {
       func_?(&TypeInfo__IPlayModeUI);
       cRam_? = '\x01';
     }
-    pRVar1 = (this->fields).lobbyState;
+    pRVar1 = (this->fields).lobbyMenu;
     if ((pRVar1 != (RectTransform *)0x0) &&
        (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)pRVar1,(MethodInfo *)0x0), pGVar2 != (GameObject *)0x0)) {
@@ -423,14 +417,15 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::
                     (pGVar2,1,(MethodInfo *)0x0);
           pCVar5 = (this->fields).chatController;
           if (pCVar5 != (ChatControllerUGUI *)0x0) {
-            ChatControllerUGUI::ChatControllerUGUI_OnLobbyStateChange(pCVar5,1,(MethodInfo *)0x0);
+            ChatControllerUGUI::ChatControllerUGUI_OnInGameMenuStateChange
+                      (pCVar5,1,(MethodInfo *)0x0);
             if (cRam_? == '\0') {
               func_?();
               cRam_? = '\x01';
             }
             pIVar6 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
             if (pIVar6 != (IPlayModeUI *)0x0) {
-              func_?(6,TypeInfo__IPlayModeUI,pIVar6,0);
+              func_?(8,TypeInfo__IPlayModeUI,pIVar6,0);
               return;
             }
           }
@@ -443,7 +438,7 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::
       func_?(&TypeInfo__IPlayModeUI);
       cRam_? = '\x01';
     }
-    pRVar1 = (this->fields).lobbyState;
+    pRVar1 = (this->fields).lobbyMenu;
     if (pRVar1 != (RectTransform *)0x0) {
       pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                          ((Component *)pRVar1,(MethodInfo *)0x0);
@@ -453,7 +448,7 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::
       }
       pIVar6 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
       if ((pIVar6 != (IPlayModeUI *)0x0) &&
-         (bVar7 = func_?(5,TypeInfo__IPlayModeUI,pIVar6), pGVar2 != (GameObject *)0x0)) {
+         (bVar7 = func_?(7,TypeInfo__IPlayModeUI,pIVar6), pGVar2 != (GameObject *)0x0)) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                   (pGVar2,bVar7,(MethodInfo *)0x0);
         pIVar3 = (this->fields).inGameMenu;
@@ -466,7 +461,7 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::
           }
           pIVar6 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
           if ((pIVar6 != (IPlayModeUI *)0x0) &&
-             (bVar8 = func_?(5,TypeInfo__IPlayModeUI,pIVar6), pGVar2 != (GameObject *)0x0))
+             (bVar8 = func_?(7,TypeInfo__IPlayModeUI,pIVar6), pGVar2 != (GameObject *)0x0))
           {
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                       (pGVar2,bVar8 ^ 1,(MethodInfo *)0x0);
@@ -528,101 +523,57 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::
 }
 
 
-/* Void Update() */
+/* Void UpdateInGameMenuState(Boolean) */
 
-void Assembly-CSharp.dll::LobbyStatePlayModeController::LobbyStatePlayModeController_Update
-               (LobbyStatePlayModeController *this,MethodInfo *method)
+void Assembly-CSharp.dll::InGameMenuStatePlayModeController::
+     InGameMenuStatePlayModeController_UpdateInGameMenuState
+               (InGameMenuStatePlayModeController *this,bool isEnteringMenu,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&TypeInfo__IPlayModeUI);
-    func_?(&
-                    MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__op_Equality_MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__MV__Common__SpawnRoleModeType_
-                   );
-    func_?(&StringLiteral_Bad_state);
-    func_?(&StringLiteral_This_happens_when_playmode_avata);
-    cRam_? = '\x01';
-  }
-  bVar1 = (this->fields).isInLobbyState;
-  if ((this->fields).wantsToEnterPlayState == 0) {
-    if (bVar1 == 0) {
-      MVGameControllerDesktop::MVGameControllerDesktop_CursorLock(0,0,(MethodInfo *)0x0);
-      LobbyStatePlayModeController_SetObjectToLobbyState(this,1,(MethodInfo *)0x0);
-    }
-  }
-  else if (bVar1 != 0) {
-    LobbyStatePlayModeController_SetObjectToLobbyState(this,0,(MethodInfo *)0x0);
-    pSVar2 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
-                       ((MethodInfo *)0x0);
-    if ((pSVar2 == (SpawnRoleDataMediator *)0x0) ||
-       (this_00 = (pSVar2->fields).SpawnRoleModeTypeWrapper,
-       this_00 == (SpawnRoleModeTypeWrapper *)0x0)) goto code_?;
-    bVar1 = SpawnRoleModeTypeWrapper::SpawnRoleModeTypeWrapper_IsInMode
-                      (this_00,SpawnRoleModeType__Enum_Hidden,(MethodInfo *)0x0);
+  bVar1 = (this->fields).isInMenu;
+  if (isEnteringMenu == 0) {
     if (bVar1 != 0) {
-      pGVar3 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-      if ((pGVar3 == (GameEventManager *)0x0) ||
-         (this_01 = (pGVar3->fields).AvatarCommandsPlayMode,
-         this_01 == (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) goto code_?;
-      GoogleMobileAds.dll::GoogleMobileAds::Api::RewardedAd::RewardedAd__RegisterAdEvents_m__9
-                ((RewardedAd *)this_01,(MethodInfo *)0x0);
+      InGameMenuStatePlayModeController_SetObjectToInGameMenuState(this,0,(MethodInfo *)0x0);
+      pSVar2 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
+                         ((MethodInfo *)0x0);
+      if ((pSVar2 != (SpawnRoleDataMediator *)0x0) &&
+         (this_00 = (pSVar2->fields).SpawnRoleModeTypeWrapper,
+         this_00 != (SpawnRoleModeTypeWrapper *)0x0)) {
+        bVar1 = SpawnRoleModeTypeWrapper::SpawnRoleModeTypeWrapper_IsInMode
+                          (this_00,SpawnRoleModeType__Enum_Hidden,(MethodInfo *)0x0);
+        if (bVar1 == 0) {
+          return;
+        }
+        pGVar3 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
+        if ((pGVar3 != (GameEventManager *)0x0) &&
+           (this_01 = (pGVar3->fields).AvatarCommandsPlayMode,
+           this_01 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0)) {
+          GoogleMobileAds.dll::GoogleMobileAds::Api::RewardedAd::RewardedAd__RegisterAdEvents_m__9
+                    ((RewardedAd *)this_01,(MethodInfo *)0x0);
+          return;
+        }
+      }
+      func_?();
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
     }
   }
-  pSVar2 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
-                     ((MethodInfo *)0x0);
-  if (pSVar2 == (SpawnRoleDataMediator *)0x0) goto code_?;
-  bVar1 = Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-          SpawnRoleVariable`1[System::Int32Enum]::
-          SpawnRoleVariable_1_System_Int32Enum__op_Equality_1
-                    ((SpawnRoleVariable_1_System_Int32Enum_ *)(pSVar2->fields).spawnRoleMode,1,
-                     MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__op_Equality_MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__MV__Common__SpawnRoleModeType_
-                    );
-  if (bVar1 != 0) {
-    bVar1 = MVGameControllerDesktop::MVGameControllerDesktop_get_IsCursorLock((MethodInfo *)0x0);
-    if (bVar1 == 0) {
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
-      if (TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField ==
-          (IPlayModeUI *)0x0) {
-code_?:
-        func_?();
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
-        return;
-      }
-      cVar5 = func_?();
-      if (cVar5 == '\0') {
-        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__UnityEngine__Debug);
-        }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                  ((Object *)StringLiteral_This_happens_when_playmode_avata,(MethodInfo *)0x0);
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                  ((Object *)StringLiteral_Bad_state,(MethodInfo *)0x0);
-        if (cRam_? == '\0') {
-          func_?();
-          cRam_? = '\x01';
-        }
-        if (TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField ==
-            (IPlayModeUI *)0x0) goto code_?;
-        func_?(4);
-      }
-    }
+  else if (bVar1 == 0) {
+    MVGameControllerDesktop::MVGameControllerDesktop_CursorLock(0,0,(MethodInfo *)0x0);
+    InGameMenuStatePlayModeController_SetObjectToInGameMenuState(this,1,(MethodInfo *)0x0);
   }
   return;
 }
 
 
-/* LobbyStatePlayModeController() */
+/* InGameMenuStatePlayModeController() */
 
-void Assembly-CSharp.dll::LobbyStatePlayModeController::LobbyStatePlayModeController__ctor
-               (LobbyStatePlayModeController *this,MethodInfo *method)
+void Assembly-CSharp.dll::InGameMenuStatePlayModeController::InGameMenuStatePlayModeController__ctor
+               (InGameMenuStatePlayModeController *this,MethodInfo *method)
 
 {
-  (this->fields).isInLobbyState = 1;
+  (this->fields).isInMenu = 1;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Object);
     cRam_? = '\x01';
@@ -630,19 +581,6 @@ void Assembly-CSharp.dll::LobbyStatePlayModeController::LobbyStatePlayModeContro
   if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__UnityEngine__Object);
   }
-  return;
-}
-
-
-/* Void set_IsInLobbyState(Boolean) */
-
-void Assembly-CSharp.dll::LobbyStatePlayModeController::
-     LobbyStatePlayModeController_set_IsInLobbyState
-               (LobbyStatePlayModeController *this,bool value,MethodInfo *method)
-
-{
-  (this->fields).wantsToEnterPlayState = value ^ 1;
-  LobbyStatePlayModeController_Update(this,(MethodInfo *)0x0);
   return;
 }
 

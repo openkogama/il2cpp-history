@@ -27,10 +27,10 @@ public class CrossHairAndroid : MonoBehaviour, IGUICrossHair
 	private AnimationCurve fadeCurve;
 	[SerializeField]
 	private float toggleInterval;
-	private float timeSinceLastToggle;
-	private bool isFillOn;
 	[SerializeField]
 	protected Color alphaBase;
+	private float timeSinceLastToggle;
+	private bool isFillOn;
 	private float timer;
 	private bool hitEffectActive;
 
@@ -45,6 +45,7 @@ public class CrossHairAndroid : MonoBehaviour, IGUICrossHair
 	private void Update();
 	public void HolsterStateChanged(bool isHolstered);
 	public virtual void UpdateCrossHair(PickupItem pickupItem);
+	private string GenerateAmmoText(PickupItem pickupItem);
 	protected void SetAlphaBaseToColor(Color color);
 }
 

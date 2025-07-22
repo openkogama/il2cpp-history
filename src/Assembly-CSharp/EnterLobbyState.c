@@ -17,7 +17,7 @@ void Assembly-CSharp.dll::EnterLobbyState::EnterLobbyState_LobbyState
   if (pIVar1 != (IPlayModeUI *)0x0) {
     pIStack_2 = TypeInfo__IPlayModeUI;
     pIStack_3 = pIVar1;
-    func_?(4);
+    func_?(6);
     return;
   }
   uVar4 = func_?(&pIStack_2);

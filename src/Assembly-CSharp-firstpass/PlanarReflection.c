@@ -174,7 +174,7 @@ Vector4 * Assembly-CSharp-firstpass.dll::PlanarReflection::PlanarReflection_Came
     __return_storage_ptr__->w =
          (float)((uint)((float)uVar6 * normal.x * sideSign + (float)uVar7 * normal.y * sideSign +
                        fVar2 * fVar9 * sideSign) ^
-                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+                __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field);
     return __return_storage_ptr__;
   }
   func_?();
@@ -744,7 +744,7 @@ code_?:
         auVar29._0_20_ = auVar28._0_20_;
         auVar29._20_4_ =
              (uint)auVar28._4_4_ ^
-             __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
+             __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field;
         auVar29._24_4_ = auVar28._8_4_;
         auVar30._32_28_ = auVar28._32_28_;
         auVar30._28_4_ = auVar28._12_4_;
@@ -823,7 +823,7 @@ code_?:
                   auVar46._36_4_ =
                        (float)((uint)(auVar41._40_4_ * (float)puStack_43 + auVar41._4_4_ * fStack_42
                                      + auVar41._12_4_ * fVar44) ^
-                              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                              __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                               ) - (this->fields).clipPlaneOffset;
                   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_zero
                             ((Matrix4x4 *)&stack0xfffffeb8,(MethodInfo *)0x0);
@@ -937,7 +937,7 @@ code_?:
                     fVar57 = (float)((ulonglong)*puVar77 >> 0x20);
                     fVar54 = (float)((uint)(fVar51 * auVar75._20_4_ + fVar57 * auVar75._24_4_ +
                                            fVar44 * auVar75._28_4_) ^
-                                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                                    __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                                     );
                     pMVar66 = UnityEngine.CoreModule.dll::UnityEngine::Camera::
                               Camera_get_projectionMatrix
@@ -995,7 +995,7 @@ code_?:
                         auVar82._0_20_ = auVar81._0_20_;
                         auVar82._20_4_ =
                              (uint)auVar81._4_4_ ^
-                             __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
+                             __074CDE7ED9B4DD51ACEEEE1729962EC36F0ADC004BF728B1521333CB241590DE_Field
                         ;
                         auVar82._24_4_ = auVar81._8_4_;
                         if (pTVar15 != (Transform *)0x0) {

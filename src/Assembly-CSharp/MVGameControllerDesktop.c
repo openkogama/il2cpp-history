@@ -108,14 +108,14 @@ void Assembly-CSharp.dll::MVGameControllerDesktop::MVGameControllerDesktop_Curso
     if ((pMVar1 != (MVGameControllerDesktop *)0x0) &&
        ((pMVar1->fields).lockCursorManager != (ILockCursorManager *)0x0)) {
       pIStack_2 = TypeInfo__ILockCursorManager;
-      func_?(3);
+      func_?(1);
       return;
     }
   }
   else if ((pMVar1 != (MVGameControllerDesktop *)0x0) &&
           ((pMVar1->fields).lockCursorManager != (ILockCursorManager *)0x0)) {
     pIStack_2 = TypeInfo__ILockCursorManager;
-    func_?(4);
+    func_?(2);
     return;
   }
   uVar3 = func_?(&pIStack_2);
@@ -600,7 +600,7 @@ bool Assembly-CSharp.dll::MVGameControllerDesktop::MVGameControllerDesktop_get_I
   pMVar1 = MVGameControllerDesktop_get_Instance((MethodInfo *)0x0);
   if ((pMVar1 != (MVGameControllerDesktop *)0x0) &&
      ((pMVar1->fields).lockCursorManager != (ILockCursorManager *)0x0)) {
-    puStack_2 = (undefined *)0x2;
+    puStack_2 = (undefined *)0x0;
     bVar3 = func_?();
     return bVar3;
   }

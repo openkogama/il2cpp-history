@@ -246,72 +246,72 @@ void MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_GetFace
   switch(face) {
   case Face__Enum_Top:
     pVVar1 = *faceVertices;
-    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
-    goto code_?;
+    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0)
+       ) goto code_?;
     func_?(0,uStack_2,uStack_3);
     pVVar1 = *faceVertices;
-    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
-    goto code_?;
+    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0)
+       ) goto code_?;
     func_?(1,uStack_2,uStack_3);
     pVVar4 = *corners;
     pVVar1 = *faceVertices;
     goto joined_?;
   case Face__Enum_Bottom:
     pVVar1 = *faceVertices;
-    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
-    goto code_?;
+    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0)
+       ) goto code_?;
     func_?(0,uStack_2,uStack_3);
     pVVar1 = *faceVertices;
-    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
-    goto code_?;
+    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0)
+       ) goto code_?;
     func_?(1,uStack_2,uStack_3);
     pVVar1 = *faceVertices;
-    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
-    goto code_?;
+    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0)
+       ) goto code_?;
     func_?(2,uStack_2,uStack_3);
-    pVVar4 = *corners;
-    pVVar1 = *faceVertices;
+    pVVar5 = *corners;
+    pVVar4 = *faceVertices;
     break;
   case Face__Enum_Front:
     pVVar1 = *faceVertices;
-    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
-    goto code_?;
+    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0)
+       ) goto code_?;
     func_?(0,uStack_2,uStack_3);
     pVVar1 = *faceVertices;
-    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
-    goto code_?;
+    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0)
+       ) goto code_?;
     func_?(1,uStack_2,uStack_3);
     pVVar1 = *faceVertices;
-    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
-    goto code_?;
+    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0)
+       ) goto code_?;
     func_?(2,uStack_2,uStack_3);
-    pVVar4 = *corners;
-    pVVar1 = *faceVertices;
+    pVVar5 = *corners;
+    pVVar4 = *faceVertices;
     break;
   case Face__Enum_Back:
     pVVar1 = *faceVertices;
-    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
-    goto code_?;
+    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0)
+       ) goto code_?;
     func_?(0,uStack_2,uStack_3);
     pVVar1 = *faceVertices;
-    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
-    goto code_?;
+    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0)
+       ) goto code_?;
     func_?(1,uStack_2,uStack_3);
     pVVar1 = *faceVertices;
-    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
-    goto code_?;
+    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0)
+       ) goto code_?;
     func_?(2,uStack_2,uStack_3);
-    pVVar4 = *corners;
-    pVVar1 = *faceVertices;
+    pVVar5 = *corners;
+    pVVar4 = *faceVertices;
     break;
   case Face__Enum_Left:
     pVVar1 = *faceVertices;
-    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
-    goto code_?;
+    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0)
+       ) goto code_?;
     func_?(0,uStack_2,uStack_3);
     pVVar1 = *faceVertices;
-    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
-    goto code_?;
+    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0)
+       ) goto code_?;
     func_?(1,uStack_2,uStack_3);
     pVVar4 = *corners;
     pVVar1 = *faceVertices;
@@ -319,57 +319,62 @@ joined_?:
     if ((pVVar4 == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
     goto code_?;
     func_?(2,uStack_2,uStack_3);
-    pVVar1 = *faceVertices;
+    pVVar4 = *faceVertices;
     if (*corners == (Vector3__Array *)0x0) goto code_?;
     goto code_?;
   case Face__Enum_Right:
     pVVar1 = *faceVertices;
-    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
-    goto code_?;
+    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0)
+       ) goto code_?;
     func_?(0,uStack_2,uStack_3);
     pVVar1 = *faceVertices;
-    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
-    goto code_?;
+    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0)
+       ) goto code_?;
     func_?(1,uStack_2,uStack_3);
     pVVar1 = *faceVertices;
-    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0))
-    goto code_?;
+    if ((*corners == (Vector3__Array *)0x0) || (func_?(), pVVar1 == (Vector3__Array *)0x0)
+       ) goto code_?;
     func_?(2,uStack_2,uStack_3);
-    pVVar4 = *corners;
-    pVVar1 = *faceVertices;
+    pVVar5 = *corners;
+    pVVar4 = *faceVertices;
     break;
   default:
     goto code_?;
   }
-  if (pVVar4 != (Vector3__Array *)0x0) {
+  if (pVVar5 != (Vector3__Array *)0x0) {
 code_?:
     func_?();
-    if (pVVar1 != (Vector3__Array *)0x0) {
+    if (pVVar4 != (Vector3__Array *)0x0) {
       func_?(3,uStack_2,uStack_3);
 code_?:
       return;
     }
   }
 code_?:
-  uVar5 = func_?();
-  out((short)((uint6)uVar5 >> 0x20),(uint)uVar5 | 0x60);
-  bVar6 = *extraout_ECX;
-  *extraout_ECX = *extraout_ECX + (byte)extraout_ECX;
-  out((undefined2)uStack_3,unaff_retaddr);
-  bVar7 = (byte)((uint)uStack_3 >> 8);
-  bVar8 = CARRY1(bVar7,(byte)uStack_3) ||
-          CARRY1(bVar7 + (byte)uStack_3,CARRY1(bVar6,(byte)extraout_ECX));
-  out(in_stack_9,in_stack_10);
-  pbVar11 = (byte *)(in_stack_12 + 0x7010ef62);
-  bVar6 = *pbVar11;
-  bVar13 = (byte)((uint)in_stack_10 >> 8);
-  bVar7 = *pbVar11 + bVar13;
-  *pbVar11 = bVar7 + bVar8;
-  *in_stack_14 =
-       *in_stack_14 + (char)in_stack_10 + (CARRY1(bVar6,bVar13) || CARRY1(bVar7,bVar8));
-  out(in_stack_9,in_stack_10);
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  uVar6 = func_?();
+  uVar7 = (undefined2)((uint6)uVar6 >> 0x20);
+  uVar8 = (uint)uVar6 | 0x90;
+  out(uVar7,uVar8);
+  bVar9 = *extraout_ECX;
+  bVar10 = (byte)extraout_ECX;
+  *extraout_ECX = *extraout_ECX + bVar10;
+  out(uVar7,extraout_ECX);
+  bVar11 = (byte)((uint6)uVar6 >> 0x20);
+  bVar12 = (byte)((uint6)uVar6 >> 0x28);
+  bVar13 = bVar12 + bVar11;
+  bVar14 = CARRY1(bVar12,bVar11) || CARRY1(bVar13,CARRY1(bVar9,bVar10));
+  uVar7 = CONCAT11(bVar13 + CARRY1(bVar9,bVar10),bVar11);
+  out(uVar7,uVar8);
+  pbVar15 = (byte *)((int)&pVVar1[0x47b8eb].vector[6].z + 2);
+  bVar9 = *pbVar15;
+  bVar10 = (byte)((uint6)uVar6 >> 8);
+  bVar13 = *pbVar15 + bVar10;
+  *pbVar15 = bVar13 + bVar14;
+  out(uVar7,pVVar1);
+  *extraout_ECX = *extraout_ECX + (char)pVVar1 + (CARRY1(bVar9,bVar10) || CARRY1(bVar13,bVar14));
+  out(uVar7,&stack0xffffffe4);
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 

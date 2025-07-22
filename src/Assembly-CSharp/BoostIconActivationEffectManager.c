@@ -227,144 +227,131 @@ void Assembly-CSharp.dll::BoostIconActivationEffectManager::BoostIconActivationE
                 (this_00,value,
                  MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__add_OnChange_Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>_
                 );
-      this_03 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if (this_03 != (MVNetworkGame *)0x0) {
-        pMVar4 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_03,(MethodInfo *)0x0);
+      this_04 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if (this_04 != (MVNetworkGame *)0x0) {
+        pMVar4 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_04,(MethodInfo *)0x0);
         if ((pMVar4 != (MVLocalPlayer *)0x0) &&
            (this_01 = (pMVar4->fields).boostController, this_01 != (BoostController *)0x0)) {
-          this_04 = (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+          this_05 = (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                      *)BoostController::BoostController_GetAllBoosts(this_01,(MethodInfo *)0x0);
-          if (this_04 !=
+          if (this_05 !=
               (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
                *)0x0) {
             pDVar6 = mscorlib.dll::System::Collections::Generic::
-                      Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets
-                      ::StyleSheetCache+SheetHandleKey,System::Object]::
-                      Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
-                                ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                                  *)&stack0xffffffa0,this_04,
-                                 MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__GetEnumerator__
-                                );
-            pBVar7 = (BoostIconActivationEffectController *)pDVar6->_version;
-            pOVar8 = pDVar6->_currentValue;
+                     Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets
+                     ::StyleSheetCache+SheetHandleKey,System::Object]::
+                     Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
+                               ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+                                 *)&stack0xffffffa0,this_05,
+                                MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__GetEnumerator__
+                               );
+            method_00 = (MethodInfo *)pDVar6->_version;
+            pOVar7 = pDVar6->_currentValue;
             uStack_1 = 1;
             while( true ) {
-              bVar9 = mscorlib.dll::System::Collections::Generic::
-                       Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
-                       UInt32,System::Object]::
-                       Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                                 ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
-                                   *)&stack0xffffff90,
-                                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BoostType,_Boost>__MoveNext__
-                                 );
-              if (bVar9 == 0) {
+              bVar8 = mscorlib.dll::System::Collections::Generic::
+                      Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
+                      UInt32,System::Object]::
+                      Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                                ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
+                                  *)&stack0xffffff90,
+                                 MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BoostType,_Boost>__MoveNext__
+                                );
+              if (bVar8 == 0) {
                 uStack_1 = 0xffffffff;
                 mscorlib.dll::System::ThrowHelper::
                 ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
                           ((Object *)&stack0xffffff90,
                            (ExceptionArgument__Enum)
                            MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BoostType,_Boost>__Dispose__
-                           ,(MethodInfo *)pBVar7);
+                           ,method_00);
                 *unaff_FS_OFFSET = uStack_3;
                 return;
               }
-              pBVar7 = (this->fields).boostIconEffectPrefab;
+              original = (this->fields).boostIconEffectPrefab;
               if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
                 func_?();
               }
-              this_05 = (BoostIconActivationEffectController *)
+              this_06 = (MethodInfo *)
                         UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                                  ((Object *)pBVar7,
+                                  ((Object *)original,
                                    BoostIconActivationEffectController_MethodInfo__UnityEngine__Object__Instantiate<BoostIconActivationEffectController>_BoostIconActivationEffectController_
                                   );
-              if (this_05 == (BoostIconActivationEffectController *)0x0) break;
-              pBVar7 = this_05;
-              pTVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                  ((Component *)this_05,(MethodInfo *)0x0);
+              if (this_06 == (MethodInfo *)0x0) break;
+              method_00 = this_06;
+              pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                 ((Component *)this_06,(MethodInfo *)0x0);
               parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                                  ((Component *)this,(MethodInfo *)0x0);
-              if (pTVar10 == (Transform *)0x0) break;
-              pOVar11 = (Object *)&UNK_?;
+              if (pTVar9 == (Transform *)0x0) break;
+              pOVar10 = (Object *)&UNK_?;
               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                        (pTVar10,parent,0,(MethodInfo *)0x0);
-              if (pOVar8 == (Object *)0x0) break;
-              pOVar12 = pOVar8[1].klass;
-              this_06 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+                        (pTVar9,parent,0,(MethodInfo *)0x0);
+              if (pOVar7 == (Object *)0x0) break;
+              pOVar11 = pOVar7[1].klass;
+              this_07 = (Il2CppClass *)func_?();
               UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
               NavMesh_OnNavMeshPreUpdate__ctor
-                        (this_06,(Object *)this,
+                        ((NavMesh_OnNavMeshPreUpdate *)this_07,(Object *)this,
                          MethodInfo__BoostIconActivationEffectManager__StartBoostIconEffect__,
                          (MethodInfo *)0x0);
-              pOVar8 = pOVar11;
+              pOVar7 = pOVar10;
               if (cRam_? == '\0') {
                 func_?();
                 func_?();
                 cRam_? = '\x01';
-                pOVar8 = pOVar11;
+                pOVar7 = pOVar10;
               }
               index = 0;
               while( true ) {
-                pLVar13 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
-                         (this_05->fields).boosterIcons;
-                if (pLVar13 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *
-                              )0x0) goto code_?;
-                if ((pLVar13->fields)._size <= index) break;
-                XVar14 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
+                this_02 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+                          this_06->parameters;
+                if (this_02 ==
+                    (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
+                goto code_?;
+                if ((this_02->fields)._size <= index) break;
+                XVar12 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
                          XmlSchemaObjectTable+XmlSchemaObjectEntry]::
                          List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
-                                   (pLVar13,index,
+                                   (this_02,index,
                                     MethodInfo__System__Collections__Generic__List<BoostIconActivationEffectController::BoosterIcons>__get_Item_int_
                                    );
-                pLVar13 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
-                         (this_05->fields).boosterIcons;
-                if (pLVar13 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *
-                              )0x0) goto code_?;
-                XVar15 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
+                if ((List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+                    this_06->parameters ==
+                    (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
+                goto code_?;
+                XVar13 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
                          XmlSchemaObjectTable+XmlSchemaObjectEntry]::
                          List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
-                                   (pLVar13,index,
+                                   ((List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_
+                                     *)this_06->parameters,index,
                                     MethodInfo__System__Collections__Generic__List<BoostIconActivationEffectController::BoosterIcons>__get_Item_int_
                                    );
-                if (XVar15.xso == (XmlSchemaObject *)0x0) goto code_?;
-                pBVar7 = (BoostIconActivationEffectController *)0x0;
+                if (XVar13.xso == (XmlSchemaObject *)0x0) goto code_?;
+                method_00 = (MethodInfo *)0x0;
                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                          ((GameObject *)XVar15.xso,(Object__Class *)XVar14.qname == pOVar12,
+                          ((GameObject *)XVar13.xso,(Object__Class *)XVar12.qname == pOVar11,
                            (MethodInfo *)0x0);
                 index = index + 1;
               }
-              pTVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                  ((Component *)this_05,(MethodInfo *)0x0);
-              if (pTVar10 == (Transform *)0x0) break;
-              pVVar16 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                        Transform_get_localPosition
-                                  ((Vector3 *)&stack0xffffffa0,pTVar10,(MethodInfo *)0x0);
-              fVar17 = pVVar16->y;
-              (this_05->fields).boostType = (int32_t)pOVar12;
-              (this_05->fields).startNewEffect = (UnityAction *)this_06;
-              (this_05->fields).originalYPosition = fVar17;
+              pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                 ((Component *)this_06,(MethodInfo *)0x0);
+              if (pTVar9 == (Transform *)0x0) break;
+              pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                       Transform_get_localPosition
+                                 ((Vector3 *)&stack0xffffffa0,pTVar9,(MethodInfo *)0x0);
+              pMVar15 = (MonitorData *)pVVar14->y;
+              this_06[1].name = (char *)pOVar11;
+              this_06[1].klass = this_07;
+              this_06[1].virtualMethodPointer = (Il2CppMethodPointer)pMVar15;
               func_?();
-              pMVar18 = 
-              MethodInfo__System__Collections__Generic__List<BoostIconActivationEffectController>__Add_BoostIconActivationEffectController_
-              ;
-              this_02 = (this->fields).boostIconEffects;
-              if (this_02 == (List_1_BoostIconActivationEffectController_ *)0x0) break;
-              piVar19 = &(this_02->fields)._version;
-              *piVar19 = *piVar19 + 1;
-              uVar20 = (this_02->fields)._size;
-              pBVar21 = (this_02->fields)._items;
-              if (pBVar21 == (BoostIconActivationEffectController__Array *)0x0) break;
-              if (uVar20 < pBVar21->max_length) {
-                (this_02->fields)._size = uVar20 + 1;
-                if (pBVar21->max_length <= uVar20) goto code_?;
-                pBVar21->vector[uVar20] = this_05;
-                func_?(pBVar21->vector + uVar20);
-              }
-              else {
-                mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-                List_1_System_Object__AddWithResize
-                          ((List_1_System_Object_ *)this_02,(Object *)this_05,
-                           pMVar18->klass->rgctx_data[0xe].method);
-              }
+              this_03 = (this->fields).boostIconEffects;
+              if (this_03 == (List_1_BoostIconActivationEffectController_ *)0x0) break;
+              mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+              List_1_System_Object__Add
+                        ((List_1_System_Object_ *)this_03,(Object *)this_06,
+                         MethodInfo__System__Collections__Generic__List<BoostIconActivationEffectController>__Add_BoostIconActivationEffectController_
+                        );
             }
           }
         }
@@ -373,10 +360,8 @@ void Assembly-CSharp.dll::BoostIconActivationEffectManager::BoostIconActivationE
   }
 code_?:
   func_?();
-code_?:
-  func_?();
-  pcVar22 = (code *)swi(3);
-  (*pcVar22)();
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 
