@@ -225,7 +225,6 @@ code_?:
         goto code_?;
       }
 code_?:
-      if (this == (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) goto code_?;
       iVar1 = (*(method->klass->rgctx_data[6].method)->methodPointer)(this,method->klass->rgctx_data[6].rgctxDataDummy);
       fVar3 = 1.0 / (float)iVar1;
       fStack_17 = fStack_12 * fVar3;

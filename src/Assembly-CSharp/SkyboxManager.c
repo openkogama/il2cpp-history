@@ -217,9 +217,9 @@ code_?:
       if (this_01 == (MVSkybox *)0x0) break;
       pCVar20 = MVSkybox::MVSkybox_get_SkyboxColor((Color *)&stack0xffffff98,this_01,(MethodInfo *)0x0);
       fVar8 = (float)iVar6;
-      fStack_12 = fStack_12 + pCVar20->r / fVar8;
-      fStack_14 = fStack_14 + pCVar20->b / fVar8;
-      fStack_13 = fStack_13 + pCVar20->g / fVar8;
+      fStack_12 = pCVar20->r / fVar8 + fStack_12;
+      fStack_13 = pCVar20->g / fVar8 + fStack_13;
+      fStack_14 = pCVar20->b / fVar8 + fStack_14;
     }
   }
   func_?();
@@ -452,7 +452,7 @@ void Assembly-CSharp.dll::SkyboxManager::SkyboxManager_SetColor(SkyboxManager *t
   (this->fields).currentColor.b = color.b;
   (this->fields).currentColor.a = color.a;
   (this->fields).currentFogDensity = fogDensity;
-  fVar2 = color.r * 0.299 + color.g * 0.587 + color.b * 0.114;
+  fVar2 = color.g * 0.587 + color.r * 0.299 + color.b * 0.114;
   if (fVar2 < 0.0) {
     fVar3 = 0.0;
   }

@@ -108,10 +108,11 @@ code_?:
             pAVar9 = (this_00->fields).rotateUIYAxisOut;
             if (pAVar9 != (AnimationCurve *)0x0) {
               fVar10 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate(pAVar9,(fVar12 + fVar10) / (this_00->fields).rotateUIYAxisTime,(MethodInfo *)0x0);
+              fVar10 = fVar10 * 90.0;
               pRVar2 = (this_00->fields).prevLevelBadge;
               if (pRVar2 != (RawImage *)0x0) {
                 pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pRVar2,(MethodInfo *)0x0);
-                euler_00.y = fVar10 * 90.0 * 0.017453292;
+                euler_00.y = fVar10 * 0.017453292;
                 euler_00.x = fVar1;
                 euler_00.z = 0.0;
                 pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad((Quaternion *)&stack0xffffffb0,euler_00,(MethodInfo *)0x0);
@@ -153,14 +154,14 @@ code_?:
     }
   }
 code_?:
-  uVar13 = func_?();
-  bVar14 = (byte)uVar13;
-  bVar15 = (byte)((uint)uVar13 >> 8);
-  pcVar16 = (char *)(CONCAT31((int3)((uint)uVar13 >> 8),0x41) + 0x4e1041b2);
-  *pcVar16 = *pcVar16 + 'A' + (CARRY1(bVar14,bVar15) || CARRY1(bVar14 + bVar15,bVar14 < *(byte *)&this->klass));
-  pcVar17 = (code *)swi(3);
-  bVar18 = (*pcVar17)();
-  return bVar18;
+  bVar13 = 0;
+  uVar14 = func_?();
+  bVar15 = (byte)uVar14 - extraout_CH;
+  cVar16 = bVar15 - bVar13;
+  pcVar17 = (char *)CONCAT31((int3)((uint)uVar14 >> 8),cVar16);
+  *pcVar17 = *pcVar17 + cVar16 + ((byte)uVar14 < extraout_CH || bVar15 < bVar13);
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
 }
 
 

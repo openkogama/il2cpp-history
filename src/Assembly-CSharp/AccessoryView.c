@@ -613,7 +613,7 @@ void Assembly-CSharp.dll::AccessoryView::AccessoryView_HandlePrices(AccessoryVie
                       if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
                         func_?();
                       }
-                      dStack_2 = (double)((float)IVar8.m_value * ((float)IVar7.m_value / 100.0));
+                      dStack_2 = (double)(((float)IVar7.m_value / 100.0) * (float)IVar8.m_value);
                       fVar12 = (float10)func_?(dStack_2);
                       pTVar6 = (this->fields).originalPriceText;
                       in_stack_3 = SUB84((double)fVar12,0);

@@ -59,7 +59,7 @@ code_?:
     euler.y = (float)uVar10 * 57.29578;
     euler.x = (float)uVar9 * 57.29578;
     euler.z = pVVar6->z * 57.29578;
-    pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_MakePositive((Vector3 *)&stack0xfffffff0,euler,(MethodInfo *)0x0);
+    pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_MakePositive((Vector3 *)&stack0xffffffe4,euler,(MethodInfo *)0x0);
     pSVar7 = MathFunctions::MathFunctions_ToFloatArray(*pVVar6,(MethodInfo *)0x0);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__set_Item(this_03,(Object *)StringLiteral_MuzzleDirection,(Object *)pSVar7,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_);
     this_02.m_Index = func_?();

@@ -287,11 +287,12 @@ void Assembly-CSharp.dll::LevelBasedUseRequirement::LevelBasedUseRequirement_OnD
           func_?(TypeInfo__UnityEngine__Object);
         }
         bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality((Object_1 *)0x75007478,(Object_1 *)0x0,(MethodInfo *)0x0);
-        if (bVar1 == 0) {
-          return;
+        if (bVar1 != 0) {
+          LevelBasedUseRequirement_CreateDisplayObject((LevelBasedUseRequirement *)&UNK_?,(MethodInfo *)0x0);
         }
-        LevelBasedUseRequirement_CreateDisplayObject((LevelBasedUseRequirement *)&UNK_?,(MethodInfo *)0x0);
+        LevelDisplayCube::LevelDisplayCube_SetAmount((LevelDisplayCube *)0x75007478,0x3ca10c46,(MethodInfo *)0x0);
         return;
+                    /* WARNING: Read-only address (ram,0xADDR) is written */
       }
       goto code_?;
     }

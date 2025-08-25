@@ -115,7 +115,7 @@ void Assembly-CSharp.dll::ObjectiveArrow::ObjectiveArrow_OnPositionChanged(Objec
     if (this_00 != (Transform *)0x0) {
       value.y = (float)uVar2 + (float)uVar4;
       value.x = (float)uVar3 + (float)uVar1;
-      value.z = (this->fields).arrowOffset.z + (args->fields).NewPos.z;
+      value.z = (args->fields).NewPos.z + (this->fields).arrowOffset.z;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position(this_00,value,(MethodInfo *)0x0);
       return;
     }
@@ -140,7 +140,7 @@ void Assembly-CSharp.dll::ObjectiveArrow::ObjectiveArrow_SetArrowBobbing(Objecti
     fVar5 = pVVar2->z;
     this_00 = (this->fields).bobbleCurve;
     if (this_00 != (AnimationCurve *)0x0) {
-      fVar6 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate(this_00,(this->fields).animationSpeed * (this->fields).animationTimer,(MethodInfo *)0x0);
+      fVar6 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate(this_00,(this->fields).animationTimer * (this->fields).animationSpeed,(MethodInfo *)0x0);
       fVar7 = dist * (this->fields).distanceScale;
       if (fVar7 <= 1.0) {
         fVar7 = 1.0;

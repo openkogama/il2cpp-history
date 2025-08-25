@@ -500,19 +500,6 @@ void Assembly-CSharp.dll::Bullet::Bullet_Fire(Bullet *this,float speed,float ran
                     /* WARNING: Read-only address (ram,0xADDR) is written */
     func_?();
     uRam_? = 5;
-    if ((iRam_? != 0) || (iRam_? != 0)) {
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
-      method_00 = TypeInfo__Bullet___MakeVisibleOverTime_d__48;
-      value = (Object *)func_?();
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-      value[1].klass = (Object__Class *)0x0;
-      value[2].klass = (Object__Class *)&UNK_?;
-      func_?();
-      Coroutines::Coroutines_Start((IEnumerator *)value,(MethodInfo *)0x0);
-    }
   }
   return;
 }
@@ -965,7 +952,7 @@ Bullet_CollisionBullet_State__Enum Assembly-CSharp.dll::Bullet::Bullet_UpdateBul
     ray.m_Direction.x = fVar12;
     ray.m_Direction.y = (float)uVar15;
     ray.m_Direction.z = fVar5;
-    bVar16 = Bullet+CollisionBullet::Bullet_CollisionBullet_DoBulletCollision(ray,&(this->fields).voxelHit,fVar13 * fVar4,(pBVar2->fields).ignoreWoIDs,(MethodInfo *)0x0);
+    bVar16 = Bullet+CollisionBullet::Bullet_CollisionBullet_DoBulletCollision(ray,&(this->fields).voxelHit,fVar4 * fVar13,(pBVar2->fields).ignoreWoIDs,(MethodInfo *)0x0);
     if (bVar16 != 0) {
       BVar1 = Bullet_CollisionBullet_State__Enum_Hit;
     }

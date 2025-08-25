@@ -128,7 +128,7 @@ void Assembly-CSharp.dll::BoneAnimation::BoneAnimation_ComputeAnimation(BoneAnim
     if (pAVar2 == (AnimationData *)0x0) goto code_?;
     iVar4 = (pAVar2->fields).timeStamp;
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__TransformNetworkManager);
+      func_?();
       cRam_? = '\x01';
     }
     if (iVar4 < TypeInfo__TransformNetworkManager->static_fields->_DelayedTime_k__BackingField) {
@@ -148,16 +148,15 @@ code_?:
       iVar6 = (pAVar2->fields).timeStamp;
       pAVar3 = (this->fields).avatarAnimation;
       if ((pAVar3 == (Animation *)0x0) || (pAVar7 = UnityEngine.AnimationModule.dll::UnityEngine::Animation::Animation_GetState(pAVar3,(pAVar2->fields).state,(MethodInfo *)0x0), pAVar7 == (AnimationState *)0x0)) goto code_?;
-      UnityEngine.AnimationModule.dll::UnityEngine::AnimationState::AnimationState_get_length(pAVar7,(MethodInfo *)0x0);
+      fVar8 = UnityEngine.AnimationModule.dll::UnityEngine::AnimationState::AnimationState_get_length(pAVar7,(MethodInfo *)0x0);
       pAVar2 = (this->fields).currentAnim;
       if ((pAVar2 == (AnimationData *)0x0) || ((pAVar3 = (this->fields).avatarAnimation, pAVar3 == (Animation *)0x0 || (pAVar7 = UnityEngine.AnimationModule.dll::UnityEngine::Animation::Animation_GetState(pAVar3,(pAVar2->fields).state,(MethodInfo *)0x0), pAVar7 == (AnimationState *)0x0)))) goto code_?;
-      UnityEngine.AnimationModule.dll::UnityEngine::AnimationState::AnimationState_set_time(pAVar7,((float)(iVar4 - iVar6) * 0.001) / 3.454684e-29,(MethodInfo *)0x0);
+      UnityEngine.AnimationModule.dll::UnityEngine::AnimationState::AnimationState_set_time(pAVar7,((float)(iVar4 - iVar6) * 0.001) / fVar8,(MethodInfo *)0x0);
     }
-    pAStack8 = (this->fields).currentAnim;
-    (this->fields).prevAnim = pAStack8;
-    ppAStack9 = &(this->fields).prevAnim;
+    pAStack9 = (this->fields).currentAnim;
+    (this->fields).prevAnim = pAStack9;
+    ppAStack10 = &(this->fields).prevAnim;
     func_?();
-    ppAStack10 = &(this->fields).currentAnim;
     (this->fields).currentAnim = (AnimationData *)0x0;
     puStack11 = (undefined *)0x0;
     func_?();
@@ -617,18 +616,18 @@ code_?:
           pAVar1 = BoneAnimation_get_AudioSource(this,(MethodInfo *)0x0);
           pCVar13 = (this->fields).mainCamera;
           if ((pCVar13 != (Camera *)0x0) && (pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pCVar13,(MethodInfo *)0x0), pTVar5 != (Transform *)0x0)) {
-            pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xfffffff0,pTVar5,(MethodInfo *)0x0);
-            fStack_7 = pVVar6->x;
-            puStack_14 = (undefined *)pVVar6->y;
+            pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&fStack_7,pTVar5,(MethodInfo *)0x0);
+            uVar14._0_4_ = pVVar6->x;
+            uVar14._4_4_ = pVVar6->y;
             fVar2 = pVVar6->z;
             pCVar13 = (this->fields).mainCamera;
             if ((pCVar13 != (Camera *)0x0) && (pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pCVar13,(MethodInfo *)0x0), pTVar5 != (Transform *)0x0)) {
               pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward((Vector3 *)&stack0xffffffd8,pTVar5,(MethodInfo *)0x0);
               uVar15 = pVVar6->x;
               uVar16 = pVVar6->y;
-              fVar2 = pVVar6->z + fVar2;
-              puStack_14 = (undefined *)((float)puStack_14 + (float)uVar16);
-              fStack_7 = (float)uVar15 + fStack_7;
+              fVar2 = fVar2 + pVVar6->z;
+              puStack_17 = (undefined *)((float)((ulonglong)uVar14 >> 0x20) + (float)uVar16);
+              fStack_7 = (float)uVar15 + (float)uVar14;
               uVar8 = _fStack_1c;
               if (this_00 != (MVAvatarLocal *)0x0) goto code_?;
             }
@@ -641,8 +640,8 @@ code_?:
   pMVar9 = extraout_EDX;
 code_?:
   func_?(this_00,pMVar9);
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 

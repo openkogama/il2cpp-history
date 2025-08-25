@@ -57,7 +57,7 @@ bool Assembly-CSharp.dll::RTG::SegmentMath::SegmentMath_Raycast(Ray ray,float *t
     startPoint.y = 0.0;
     t = (float *)&t;
     fVar6 = ray.m_Direction.x * fVar3 + ray.m_Direction.y * fVar4 + ray.m_Direction.z * fVar5;
-    a = ray.m_Direction.y * ray.m_Direction.y + ray.m_Direction.x * ray.m_Direction.x + ray.m_Direction.z * ray.m_Direction.z;
+    a = ray.m_Direction.x * ray.m_Direction.x + ray.m_Direction.y * ray.m_Direction.y + ray.m_Direction.z * ray.m_Direction.z;
     bVar1 = MathEx::MathEx_SolveQuadratic(a,fVar6 + fVar6,(fVar3 * fVar3 + fVar4 * fVar4 + fVar5 * fVar5) - (epsilon._raycastEps + 0.0) * (epsilon._raycastEps + 0.0),t,(float *)startPoint.x,(MethodInfo *)0x0);
     if ((bVar1 == 0) || (((float)t < 0.0 && (t = pfStack_2, (float)pfStack_2 < 0.0)))) {
       startPoint.z = endPoint.x;

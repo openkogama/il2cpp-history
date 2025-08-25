@@ -47,7 +47,7 @@ int32_t Assembly-CSharp.dll::RTG::GizmoQuad3DBorder+<>c__DisplayClass39_0::Gizmo
             fVar15 = (float)pSVar4[3].monitor - (float)uVar13;
             fVar16 = (float)pSVar4[4].klass - (this->fields).camPos.z;
             SStack_17.m_value = fVar14 * fVar14 + fVar15 * fVar15 + fVar16 * fVar16;
-            iVar18 = mscorlib.dll::System::Single::Single_CompareTo_1(&SStack_17,((float)pSStack_8 - (float)uVar6) * ((float)pSStack_8 - (float)uVar6) + ((float)pMStack_9 - (float)uVar7) * ((float)pMStack_9 - (float)uVar7) + fVar10 * fVar10,(MethodInfo *)0x0);
+            iVar18 = mscorlib.dll::System::Single::Single_CompareTo_1(&SStack_17,((float)pMStack_9 - (float)uVar7) * ((float)pMStack_9 - (float)uVar7) + ((float)pSStack_8 - (float)uVar6) * ((float)pSStack_8 - (float)uVar6) + fVar10 * fVar10,(MethodInfo *)0x0);
             return iVar18;
           }
         }

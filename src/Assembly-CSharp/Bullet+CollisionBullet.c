@@ -142,7 +142,7 @@ Bullet_CollisionBullet_State__Enum Assembly-CSharp.dll::Bullet+CollisionBullet::
   ray = (this->fields).ray;
   fVar2 = (this->fields).speed;
   fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-  bVar12 = Bullet_CollisionBullet_DoBulletCollision(ray,voxelHit,fVar3 * fVar2,(this->fields).ignoreWoIDs,(MethodInfo *)0x0);
+  bVar12 = Bullet_CollisionBullet_DoBulletCollision(ray,voxelHit,fVar2 * fVar3,(this->fields).ignoreWoIDs,(MethodInfo *)0x0);
   if (bVar12 != 0) {
     BVar1 = Bullet_CollisionBullet_State__Enum_Hit;
   }

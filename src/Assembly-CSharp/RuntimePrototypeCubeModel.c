@@ -10,7 +10,7 @@ void Assembly-CSharp.dll::RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_A
   *unaff_FS_OFFSET = &puStack_3;
   if (cRam_? == '\0') {
     func_?(&MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__Dispose__);
-    func_?(0x51f4);
+    func_?(0xedb0);
     func_?(&MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__get_Current__);
     func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__GetEnumerator__);
     func_?(&TypeInfo__MVCubeModelBase);
@@ -61,12 +61,11 @@ code_?:
 bool Assembly-CSharp.dll::RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_AddCube(RuntimePrototypeCubeModel *this,IntVector pos,Cube *cube,MethodInfo *method)
 
 {
-  this_02 = this;
   uVar1 = (undefined2)((uint)in_stack_2 >> 0x10);
   if (cRam_? == '\0') {
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__ContainsKey_MV__WorldObject__IntVector_);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__get_Item_MV__WorldObject__IntVector_);
-    uVar1 = 0x11b4;
+    uVar1 = 0x11b5;
     func_?(&TypeInfo__SharedCubeFunctions);
     cRam_? = '\x01';
   }
@@ -76,35 +75,34 @@ bool Assembly-CSharp.dll::RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_A
   }
   iStack_3 = pos.y;
   IVar4.z = pos.x;
-  IVar4._0_4_ = &stack0xfffffff4;
+  IVar4._0_4_ = &stack0xfffffff0;
   IVar4 = SharedCubeFunctions::SharedCubeFunctions_CubePosToChunk(IVar4,CONCAT22(uVar1,pos.z),method_00);
   pIVar5 = IVar4._0_4_;
-  uVar6 = pIVar5->x;
-  uVar7 = pIVar5->y;
-  iStack8 = uVar7;
-  if ((this->fields).chunks == (Dictionary_2_MV_WorldObject_IntVector_CubeModelChunk_ *)0x0) goto code_?;
-  bVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::IntVector,System::Object]::Dictionary_2_MV_WorldObject_IntVector_System_Object__ContainsKey((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)(this->fields).chunks,*pIVar5,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__ContainsKey_MV__WorldObject__IntVector_);
+  uVar6._0_2_ = pIVar5->x;
+  uVar6._2_2_ = pIVar5->y;
+  iStack7 = pIVar5->z;
+  pDVar8 = (this->fields).chunks;
+  if (pDVar8 == (Dictionary_2_MV_WorldObject_IntVector_CubeModelChunk_ *)0x0) goto code_?;
+  bVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::IntVector,System::Object]::Dictionary_2_MV_WorldObject_IntVector_System_Object__ContainsKey((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)pDVar8,*pIVar5,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__ContainsKey_MV__WorldObject__IntVector_);
   if (bVar9 != 0) {
-    this_00 = (this->fields).chunks;
-    if (this_00 == (Dictionary_2_MV_WorldObject_IntVector_CubeModelChunk_ *)0x0) goto code_?;
-    key.y = iStack8;
-    key.x = uVar6;
-    this._2_2_ = (int16_t)((uint)MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__get_Item_MV__WorldObject__IntVector_ >> 0x10);
-    key.z = this._2_2_;
-    this_03 = (CubeModelChunk *)mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::IntVector,System::Object]::Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)this_00,key,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__get_Item_MV__WorldObject__IntVector_);
-    if (this_03 == (CubeModelChunk *)0x0) goto code_?;
-    cube._0_2_ = pos.z;
-    iStack8 = iStack_3;
-    bVar9 = CubeModelChunk::CubeModelChunk_ContainsCube(this_03,pos,(MethodInfo *)0x0);
+    pDVar8 = (this->fields).chunks;
+    if (pDVar8 == (Dictionary_2_MV_WorldObject_IntVector_CubeModelChunk_ *)0x0) goto code_?;
+    key.z = iStack7;
+    key.x = (short)uVar6;
+    key.y = (short)((uint)uVar6 >> 0x10);
+    this_01 = (CubeModelChunk *)mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::IntVector,System::Object]::Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)pDVar8,key,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__get_Item_MV__WorldObject__IntVector_);
+    if (this_01 == (CubeModelChunk *)0x0) goto code_?;
+    cube = (Cube *)0x0;
+    bVar9 = CubeModelChunk::CubeModelChunk_ContainsCube(this_01,pos,(MethodInfo *)0x0);
     if (bVar9 != 0) {
       return 0;
     }
   }
-  iStack8 = (int16_t)((uint)this_02 >> 0x10);
-  RuntimePrototypeCubeModel_AddToChunk(this_02,pos,(Cube *)CONCAT22(cube._2_2_,(int16_t)cube),MeshGeneratePriority__Enum_HighGenerateAllDirty,1,(MethodInfo *)0x0);
-  this_01 = (this_02->fields).deltaCubes;
-  if (this_01 != (DeltaCubes *)0x0) {
-    DeltaCubes::DeltaCubes_Enqueue(this_01,pos,CubeAction__Enum_Added,(MethodInfo *)0x0);
+  iStack7 = iStack_3;
+  RuntimePrototypeCubeModel_AddToChunk(this,pos,cube,MeshGeneratePriority__Enum_HighGenerateAllDirty,1,(MethodInfo *)0x0);
+  this_00 = (this->fields).deltaCubes;
+  if (this_00 != (DeltaCubes *)0x0) {
+    DeltaCubes::DeltaCubes_Enqueue(this_00,pos,CubeAction__Enum_Added,(MethodInfo *)0x0);
     return 1;
   }
 code_?:
@@ -219,9 +217,9 @@ void Assembly-CSharp.dll::RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_A
   if (cRam_? == '\0') {
     func_?(&TypeInfo__CubeModelChunk);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__Add_MV__WorldObject__IntVector__CubeModelChunk_);
-    uVar1 = 0x11b6;
+    uVar1 = 0x11b4;
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__ContainsKey_MV__WorldObject__IntVector_);
-    func_?(0xeb0);
+    func_?(0x1780);
     func_?(&TypeInfo__SharedCubeFunctions);
     cRam_? = '\x01';
   }
@@ -233,36 +231,37 @@ void Assembly-CSharp.dll::RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_A
   IVar3._0_4_ = &stack0xfffffff4;
   IVar3 = SharedCubeFunctions::SharedCubeFunctions_CubePosToChunk(IVar3,CONCAT22(uVar1,iVector.z),method_00);
   pIVar4 = IVar3._0_4_;
+  pDVar5 = (this->fields).chunks;
   key = *pIVar4;
   chunkPos_00 = *pIVar4;
   chunkPos = *pIVar4;
-  IVar5 = *pIVar4;
+  IVar6 = *pIVar4;
   IVar3 = *pIVar4;
-  if ((this->fields).chunks != (Dictionary_2_MV_WorldObject_IntVector_CubeModelChunk_ *)0x0) {
-    bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::IntVector,System::Object]::Dictionary_2_MV_WorldObject_IntVector_System_Object__ContainsKey((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)(this->fields).chunks,*pIVar4,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__ContainsKey_MV__WorldObject__IntVector_);
-    if (bVar6 == 0) {
-      pCVar7 = (CubeModelChunk *)func_?();
-      CubeModelChunk::CubeModelChunk__ctor(pCVar7,IVar3,(MethodInfo *)0x0);
-      pDVar8 = (this->fields).chunks;
-      if (pDVar8 == (Dictionary_2_MV_WorldObject_IntVector_CubeModelChunk_ *)0x0) goto code_?;
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::IntVector,System::Object]::Dictionary_2_MV_WorldObject_IntVector_System_Object__Add((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)pDVar8,IVar5,(Object *)MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__Add_MV__WorldObject__IntVector__CubeModelChunk_,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__Add_MV__WorldObject__IntVector__CubeModelChunk_);
+  if (pDVar5 != (Dictionary_2_MV_WorldObject_IntVector_CubeModelChunk_ *)0x0) {
+    bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::IntVector,System::Object]::Dictionary_2_MV_WorldObject_IntVector_System_Object__ContainsKey((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)pDVar5,*pIVar4,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__ContainsKey_MV__WorldObject__IntVector_);
+    if (bVar7 == 0) {
+      pCVar8 = (CubeModelChunk *)func_?();
+      CubeModelChunk::CubeModelChunk__ctor(pCVar8,IVar3,(MethodInfo *)0x0);
+      pDVar5 = (this->fields).chunks;
+      if (pDVar5 == (Dictionary_2_MV_WorldObject_IntVector_CubeModelChunk_ *)0x0) goto code_?;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::IntVector,System::Object]::Dictionary_2_MV_WorldObject_IntVector_System_Object__Add((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)pDVar5,IVar6,(Object *)MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__Add_MV__WorldObject__IntVector__CubeModelChunk_,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__Add_MV__WorldObject__IntVector__CubeModelChunk_);
       _setVisibility = (Cube *)0x0;
       in_stack_9 = (undefined2)((uint)this >> 0x10);
-      iVector.x = 0x2112;
+      iVector.x = 0x6666;
       iVector.y = 0x1026;
       RuntimePrototypeCubeModel_AddChunk(this,chunkPos,(MethodInfo *)0x0);
     }
-    pDVar8 = (this->fields).chunks;
-    if (pDVar8 != (Dictionary_2_MV_WorldObject_IntVector_CubeModelChunk_ *)0x0) {
-      pCVar7 = (CubeModelChunk *)mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::IntVector,System::Object]::Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)pDVar8,key,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__get_Item_MV__WorldObject__IntVector_);
-      if (pCVar7 != (CubeModelChunk *)0x0) {
-        IVar5.y = iVector.y;
-        IVar5.x = iVector.x;
+    pDVar5 = (this->fields).chunks;
+    if (pDVar5 != (Dictionary_2_MV_WorldObject_IntVector_CubeModelChunk_ *)0x0) {
+      pCVar8 = (CubeModelChunk *)mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::IntVector,System::Object]::Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)pDVar5,key,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__get_Item_MV__WorldObject__IntVector_);
+      if (pCVar8 != (CubeModelChunk *)0x0) {
         iVector.z = (int16_t)_setVisibility;
         in_stack_9 = (undefined2)((uint)_setVisibility >> 0x10);
-        IVar5.z = iVector.z;
+        IVar6.y = iVector.y;
+        IVar6.x = iVector.x;
+        IVar6.z = iVector.z;
         cube._0_1_ = (bool)_setVisibility;
-        CubeModelChunk::CubeModelChunk_AddToChunk(pCVar7,IVar5,_setVisibility,(bool)cube,(MethodInfo *)0x0);
+        CubeModelChunk::CubeModelChunk_AddToChunk(pCVar8,IVar6,_setVisibility,(bool)cube,(MethodInfo *)0x0);
         RuntimePrototypeCubeModel_AddToDirtyChunks(this,chunkPos_00,MeshGeneratePriority__Enum_None,(MethodInfo *)0x0);
         return;
       }
@@ -695,7 +694,7 @@ void Assembly-CSharp.dll::RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_C
     in_stack_6 = &MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_CubeModelChunk>__get_Current__;
     func_?();
     func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
-    func_?(0x82b8);
+    func_?(0x1e74);
     func_?(&TypeInfo__System__Collections__IEnumerable);
     func_?(&TypeInfo__System__Collections__IEnumerator);
     func_?(&MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_CubeModelChunk>__get_Key__);
@@ -751,7 +750,7 @@ void Assembly-CSharp.dll::RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_C
           uVar18 = SUB42(pDVar10,0);
           uVar19 = (undefined2)((uint)pDVar10 >> 0x10);
           pLVar20 = mscorlib.dll::System::Collections::Generic::List`1[MV::WorldObject::IntVector]::List_1_MV_WorldObject_IntVector__GetEnumerator((List_1_T_Enumerator_MV_WorldObject_IntVector_ *)(auStack_21 + 8),(List_1_MV_WorldObject_IntVector_ *)pDVar10,MethodInfo__System__Collections__Generic__List<MV::WorldObject::IntVector>__GetEnumerator__);
-          uStack_22 = 0;
+          OStack_13.monitor = (MonitorData *)0x0;
           DStack_8._dictionary = (Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)pLVar20->_list;
           DStack_8._version = pLVar20->_index;
           DStack_8._index = pLVar20->_version;
@@ -764,67 +763,66 @@ void Assembly-CSharp.dll::RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_C
         }
         break;
       }
-      pOStack_23 = OStack_13.klass;
+      pOStack_22 = OStack_13.klass;
       if (OStack_13.klass == (Object__Class *)0x0) break;
-      pIStack_24 = ((OStack_13.klass)->_0).image;
-      uVar25 = 0;
-      OStack_13.monitor = (MonitorData *)0x0;
-      uVar26 = *(ushort *)((int)&pIStack_24[4].nameNoExt + 2);
+      uStack_23 = ((OStack_13.klass)->_0).image;
+      uVar24 = 0;
+      uStack_25 = 0;
+      uVar26 = *(ushort *)((int)&uStack_23[4].nameNoExt + 2);
       DStack_8._getEnumeratorRetType = (int32_t)uVar26;
       if (uVar26 != 0) {
         do {
           pDVar10 = pDStack_11;
-          if (*(IEnumerator__Class **)(pIStack_24[2].name + (uint)uVar25 * 8) == TypeInfo__System__Collections__IEnumerator) {
-            pIVar27 = ((OStack_13.klass)->_0).image;
-            pp_Var13 = &pIVar27[4].metadataHandle + *(int *)(pIVar27[2].name + (uint)uVar25 * 8 + 4) * 2;
+          if (*(IEnumerator__Class **)(uStack_23[2].name + (uint)uVar24 * 8) == TypeInfo__System__Collections__IEnumerator) {
+            pp_Var12 = &uStack_23[4].metadataHandle + *(int *)(uStack_23[2].name + (uint)uVar24 * 8 + 4) * 2;
             goto code_?;
           }
-          uVar25 = uVar25 + 1;
-        } while (uVar25 < uVar26);
+          uVar24 = uVar24 + 1;
+        } while (uVar24 < uVar26);
       }
-      pp_Var13 = (Il2CppMetadataImageHandle *)func_?(OStack_13.klass);
+      pp_Var12 = (Il2CppMetadataImageHandle *)func_?(OStack_13.klass);
 code_?:
-      piVar28 = (int *)(*(code *)*pp_Var13)();
-      if (piVar28 == (int *)0x0) break;
-      if (*(Il2CppClass **)(*piVar28 + 0x20) != (TypeInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>->_0).element_class) goto code_?;
-      puVar29 = (undefined4 *)func_?();
-      iVar30 = (int16_t)puVar29[1];
-      uVar18 = (undefined2)*puVar29;
-      uStack_31 = (undefined2)((uint)*puVar29 >> 0x10);
-      obj = (Object_1 *)puVar29[6];
+      piVar27 = (int *)(*(code *)*pp_Var12)();
+      if (piVar27 == (int *)0x0) break;
+      if (*(Il2CppClass **)(*piVar27 + 0x20) != (TypeInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>->_0).element_class) goto code_?;
+      puVar28 = (undefined4 *)func_?();
+      iVar29 = (int16_t)puVar28[1];
+      uVar18 = (undefined2)*puVar28;
+      uStack_30 = (undefined2)((uint)*puVar28 >> 0x10);
+      obj = (Object_1 *)puVar28[6];
       if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
         func_?(TypeInfo__UnityEngine__Object);
       }
       UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1(obj,(MethodInfo *)0x0);
-      pMVar32 = MethodInfo__System__Collections__Generic__List<MV::WorldObject::IntVector>__Add_MV__WorldObject__IntVector_;
+      pMVar31 = MethodInfo__System__Collections__Generic__List<MV::WorldObject::IntVector>__Add_MV__WorldObject__IntVector_;
       if (pDVar10 == (Dictionary_2_TKey_TValue_Enumerator_MV_WorldObject_IntVector_System_Object_ *)0x0) break;
-      piVar33 = &(pDVar10->_current).key.z;
-      *(int *)piVar33 = *(int *)piVar33 + 1;
-      iVar34 = pDVar10->_index;
-      uVar35 = *(uint *)&(pDVar10->_current).key;
-      if (iVar34 == 0) break;
-      if (uVar35 < *(uint *)(iVar34 + 0xc)) {
-        *(uint *)&(pDVar10->_current).key = uVar35 + 1;
-        if (*(uint *)(iVar34 + 0xc) <= uVar35) {
+      piVar32 = &(pDVar10->_current).key.z;
+      *(int *)piVar32 = *(int *)piVar32 + 1;
+      iVar33 = pDVar10->_index;
+      uVar34 = *(uint *)&(pDVar10->_current).key;
+      if (iVar33 == 0) break;
+      if (uVar34 < *(uint *)(iVar33 + 0xc)) {
+        *(uint *)&(pDVar10->_current).key = uVar34 + 1;
+        if (*(uint *)(iVar33 + 0xc) <= uVar34) {
           func_?();
           break;
         }
-        iVar34 = iVar34 + uVar35 * 6;
-        *(uint *)(iVar34 + 0x10) = CONCAT22(uStack_31,uVar18);
-        *(int16_t *)(iVar34 + 0x14) = iVar30;
+        iVar33 = iVar33 + uVar34 * 6;
+        *(uint *)(iVar33 + 0x10) = CONCAT22(uStack_30,uVar18);
+        *(int16_t *)(iVar33 + 0x14) = iVar29;
       }
       else {
-        item.y = uStack_31;
+        item.y = uStack_30;
         item.x = uVar18;
-        item.z = iVar30;
-        mscorlib.dll::System::Collections::Generic::List`1[MV::WorldObject::IntVector]::List_1_MV_WorldObject_IntVector__AddWithResize((List_1_MV_WorldObject_IntVector_ *)pDVar10,item,pMVar32->klass->rgctx_data[0xe].method);
+        item.z = iVar29;
+        mscorlib.dll::System::Collections::Generic::List`1[MV::WorldObject::IntVector]::List_1_MV_WorldObject_IntVector__AddWithResize((List_1_MV_WorldObject_IntVector_ *)pDVar10,item,pMVar31->klass->rgctx_data[0xe].method);
       }
     }
   }
   goto code_?;
 code_?:
-  bVar36 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[MV::WorldObject::IntVector]::List_1_T_Enumerator_MV_WorldObject_IntVector__MoveNext((List_1_T_Enumerator_MV_WorldObject_IntVector_ *)&DStack_8,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::IntVector>__MoveNext__);
-  if (bVar36 == 0) goto code_?;
+  bVar35 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[MV::WorldObject::IntVector]::List_1_T_Enumerator_MV_WorldObject_IntVector__MoveNext((List_1_T_Enumerator_MV_WorldObject_IntVector_ *)&DStack_8,MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::IntVector>__MoveNext__);
+  if (bVar35 == 0) goto code_?;
   this_00 = (cm->fields).chunkInstances;
   if (this_00 == (ChunkInstances *)0x0) goto code_?;
   intVector.z = DStack_8._current.key.z;
@@ -838,35 +836,35 @@ code_?:
   uStack_1 = 0xffffffff;
   this_01 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_ *)(this->fields).chunks;
   if (this_01 != (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_ *)0x0) {
-    pDVar37 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator((Dictionary_2_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_ *)auStack_21,this_01,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__GetEnumerator__);
-    uStack_22 = 0;
-    DStack_9._dictionary = (Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)pDVar37->_dictionary;
-    DStack_9._version = pDVar37->_version;
-    DStack_9._index = pDVar37->_index;
-    DStack_9._current.key._0_4_ = (pDVar37->_current).key.sheetInstanceID;
-    DStack_9._current._4_8_ = *(undefined8 *)&(pDVar37->_current).key.index;
-    DStack_9._getEnumeratorRetType = pDVar37->_getEnumeratorRetType;
+    pDVar36 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator((Dictionary_2_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_ *)auStack_21,this_01,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__GetEnumerator__);
+    OStack_13.monitor = (MonitorData *)0x0;
+    DStack_9._dictionary = (Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)pDVar36->_dictionary;
+    DStack_9._version = pDVar36->_version;
+    DStack_9._index = pDVar36->_index;
+    DStack_9._current.key._0_4_ = (pDVar36->_current).key.sheetInstanceID;
+    DStack_9._current._4_8_ = *(undefined8 *)&(pDVar36->_current).key.index;
+    DStack_9._getEnumeratorRetType = pDVar36->_getEnumeratorRetType;
     uStack_1 = 7;
     pDStack_12 = &DStack_9;
-    while (bVar36 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[MV::WorldObject::IntVector,System::Object]::Dictionary_2_TKey_TValue_Enumerator_MV_WorldObject_IntVector_System_Object__MoveNext(&DStack_9,MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_CubeModelChunk>__MoveNext__), uVar38 = DStack_9._current.key._0_4_, bVar36 != 0) {
-      OStack_13.monitor = (MonitorData *)CONCAT22(DStack_9._current.key.z,OStack_13.monitor._0_2_);
-      iVar30 = DStack_9._current.key.z;
+    while (bVar35 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[MV::WorldObject::IntVector,System::Object]::Dictionary_2_TKey_TValue_Enumerator_MV_WorldObject_IntVector_System_Object__MoveNext(&DStack_9,MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_CubeModelChunk>__MoveNext__), uVar37 = DStack_9._current.key._0_4_, bVar35 != 0) {
+      uStack_23 = (Il2CppImage *)CONCAT22(DStack_9._current.key.z,(undefined2)uStack_23);
+      iVar29 = DStack_9._current.key.z;
       if (cRam_? == '\0') {
         func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__get_Item_MV__WorldObject__IntVector_);
         cRam_? = '\x01';
-        iVar30 = OStack_13.monitor._2_2_;
+        iVar29 = uStack_23._2_2_;
       }
-      uVar39 = DStack_9._current.key._0_4_;
+      uVar38 = DStack_9._current.key._0_4_;
       this_02 = (this->fields).chunks;
-      if ((this_02 == (Dictionary_2_MV_WorldObject_IntVector_CubeModelChunk_ *)0x0) || (key.z = iVar30, DStack_9._current.key.x = (int16_t)uVar38, DStack_9._current.key.y = SUB42(uVar38,2), key.x = DStack_9._current.key.x, key.y = DStack_9._current.key.y, DStack_9._current.key._0_4_ = uVar39, this_04 = (CubeModelChunk *)mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::IntVector,System::Object]::Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)this_02,key,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__get_Item_MV__WorldObject__IntVector_), uVar39 = DStack_9._current.key._0_4_, this_04 == (CubeModelChunk *)0x0)) goto code_?;
-      uVar18 = 0x3045;
+      if ((this_02 == (Dictionary_2_MV_WorldObject_IntVector_CubeModelChunk_ *)0x0) || (key.z = iVar29, DStack_9._current.key.x = (int16_t)uVar37, DStack_9._current.key.y = SUB42(uVar37,2), key.x = DStack_9._current.key.x, key.y = DStack_9._current.key.y, DStack_9._current.key._0_4_ = uVar38, this_04 = (CubeModelChunk *)mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::IntVector,System::Object]::Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)this_02,key,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__get_Item_MV__WorldObject__IntVector_), uVar38 = DStack_9._current.key._0_4_, this_04 == (CubeModelChunk *)0x0)) goto code_?;
+      uVar18 = 0x7587;
       uVar19 = 0x1026;
-      chunkPos.z = OStack_13.monitor._2_2_;
-      DStack_9._current.key.x = (int16_t)uVar38;
-      DStack_9._current.key.y = SUB42(uVar38,2);
+      chunkPos.z = uStack_23._2_2_;
+      DStack_9._current.key.x = (int16_t)uVar37;
+      DStack_9._current.key.y = SUB42(uVar37,2);
       chunkPos.x = DStack_9._current.key.x;
       chunkPos.y = DStack_9._current.key.y;
-      DStack_9._current.key._0_4_ = uVar39;
+      DStack_9._current.key._0_4_ = uVar38;
       CubeModelChunk::CubeModelChunk_SetInstanceDataRef(this_04,chunkPos,cm,(MethodInfo *)0x0);
     }
     uStack_1 = 0xffffffff;
@@ -882,10 +880,10 @@ code_?:
 code_?:
   func_?();
 code_?:
-  uVar38 = func_?();
-  func_?(uVar38);
-  pcVar40 = (code *)swi(3);
-  (*pcVar40)();
+  uVar37 = func_?();
+  func_?(uVar37);
+  pcVar39 = (code *)swi(3);
+  (*pcVar39)();
   return;
 }
 
@@ -1348,8 +1346,8 @@ Vector3 * Assembly-CSharp.dll::RuntimePrototypeCubeModel::RuntimePrototypeCubeMo
       pMVar1 = (MethodInfo *)UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_RandomRangeInt(0,(index->fields)._size,(MethodInfo *)0x0);
       IVar2 = mscorlib.dll::System::Collections::Generic::List`1[MV::WorldObject::IntVector]::List_1_MV_WorldObject_IntVector__get_Item((List_1_MV_WorldObject_IntVector_ *)&stack0xfffffff4,(int32_t)index,pMVar1);
       pMVar1 = MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__get_Item_MV__WorldObject__IntVector_;
+      pVVar3 = *(Vector3 **)IVar2._0_4_;
       if (this_01 != (Dictionary_2_MV_WorldObject_IntVector_CubeModelChunk_ *)0x0) {
-        pVVar3 = *(Vector3 **)IVar2._0_4_;
         method_00 = (MethodInfo *)mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::IntVector,System::Object]::Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)this_01,*IVar2._0_4_,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__get_Item_MV__WorldObject__IntVector_);
         if (method_00 != (MethodInfo *)0x0) {
           IVar2 = CubeModelChunk::CubeModelChunk_GetFirstSolidCubePos((CubeModelChunk *)&stack0xfffffff4,method_00);
@@ -1778,7 +1776,7 @@ void Assembly-CSharp.dll::RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_R
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(0xdc8);
+    func_?(0x1698);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__get_Item_MV__WorldObject__IntVector_);
     func_?(&StringLiteral_Chunk_not_contained_);
     cRam_? = '\x01';
@@ -1949,14 +1947,14 @@ void Assembly-CSharp.dll::RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_R
   puVar5 = &stack0xffffffa8;
   if (cRam_? == '\0') {
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__Remove_MV__WorldObject__IntVector_);
-    func_?(0xeb0);
+    func_?(0x1780);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__get_Keys__);
     func_?(&System__Collections__Generic__List<MV::WorldObject::IntVector>_MethodInfo__System__Linq__Enumerable__ToList<MV::WorldObject::IntVector>_System__Collections__Generic__IEnumerable<MV::WorldObject::IntVector>_);
     func_?(&MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::IntVector>__Dispose__);
     in_stack_6 = &MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::IntVector>__MoveNext__;
     func_?();
     func_?(&MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::IntVector>__get_Current__);
-    func_?(0xe1f8);
+    func_?(0x7db4);
     cRam_? = '\x01';
     puVar5 = puStack_4;
   }
@@ -2042,7 +2040,7 @@ void Assembly-CSharp.dll::RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_R
   puVar5 = &stack0xffffff74;
   if (cRam_? == '\0') {
     func_?(&MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__Dispose__);
-    func_?(0x51f4);
+    func_?(0xedb0);
     func_?(&MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__get_Current__);
     func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__GetEnumerator__);
     func_?(&TypeInfo__MVCubeModelBase);
@@ -2107,12 +2105,11 @@ code_?:
 bool Assembly-CSharp.dll::RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_RemoveCube(RuntimePrototypeCubeModel *this,IntVector iVector,MethodInfo *method)
 
 {
-  this_02 = this;
   uVar1 = (undefined2)((uint)in_stack_2 >> 0x10);
   if (cRam_? == '\0') {
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__ContainsKey_MV__WorldObject__IntVector_);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__get_Item_MV__WorldObject__IntVector_);
-    uVar1 = 0x11b4;
+    uVar1 = 0x11b5;
     func_?(&TypeInfo__SharedCubeFunctions);
     cRam_? = '\x01';
   }
@@ -2120,45 +2117,38 @@ bool Assembly-CSharp.dll::RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_R
   if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
     func_?(TypeInfo__SharedCubeFunctions);
   }
-  iStack_3 = iVector.y;
-  IVar4.z = iVector.x;
-  IVar4._0_4_ = &stack0xfffffff4;
-  IVar4 = SharedCubeFunctions::SharedCubeFunctions_CubePosToChunk(IVar4,CONCAT22(uVar1,iVector.z),method_00);
-  pIVar5 = IVar4._0_4_;
-  uVar6 = pIVar5->x;
-  uVar7 = pIVar5->y;
-  iStack8 = uVar7;
-  if ((this->fields).chunks != (Dictionary_2_MV_WorldObject_IntVector_CubeModelChunk_ *)0x0) {
-    bVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::IntVector,System::Object]::Dictionary_2_MV_WorldObject_IntVector_System_Object__ContainsKey((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)(this->fields).chunks,*pIVar5,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__ContainsKey_MV__WorldObject__IntVector_);
-    if (bVar9 == 0) {
+  IVar3.z = iVector.x;
+  IVar3._0_4_ = &stack0xfffffff0;
+  IVar3 = SharedCubeFunctions::SharedCubeFunctions_CubePosToChunk(IVar3,CONCAT22(uVar1,iVector.z),method_00);
+  pIVar4 = IVar3._0_4_;
+  uVar5._0_2_ = pIVar4->x;
+  uVar5._2_2_ = pIVar4->y;
+  iStack6 = pIVar4->z;
+  pDVar7 = (this->fields).chunks;
+  if (pDVar7 != (Dictionary_2_MV_WorldObject_IntVector_CubeModelChunk_ *)0x0) {
+    bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::IntVector,System::Object]::Dictionary_2_MV_WorldObject_IntVector_System_Object__ContainsKey((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)pDVar7,*pIVar4,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__ContainsKey_MV__WorldObject__IntVector_);
+    if (bVar8 == 0) {
       return 0;
     }
-    this_00 = (this->fields).chunks;
-    if (this_00 != (Dictionary_2_MV_WorldObject_IntVector_CubeModelChunk_ *)0x0) {
-      key.y = iStack8;
-      key.x = uVar6;
-      this._2_2_ = (int16_t)((uint)MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__get_Item_MV__WorldObject__IntVector_ >> 0x10);
-      key.z = this._2_2_;
-      this_03 = (CubeModelChunk *)mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::IntVector,System::Object]::Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)this_00,key,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__get_Item_MV__WorldObject__IntVector_);
-      if (this_03 != (CubeModelChunk *)0x0) {
-        iStack8 = iStack_3;
-        bVar9 = CubeModelChunk::CubeModelChunk_ContainsCube(this_03,iVector,(MethodInfo *)0x0);
-        if (bVar9 == 0) {
-          return 0;
-        }
-        RuntimePrototypeCubeModel_RemoveFromChunk(this_02,iVector,MeshGeneratePriority__Enum_HighGenerateAllDirty,(MethodInfo *)0x0);
-        this_01 = (this_02->fields).deltaCubes;
-        if (this_01 != (DeltaCubes *)0x0) {
-          DeltaCubes::DeltaCubes_Enqueue(this_01,iVector,CubeAction__Enum_Deleted,(MethodInfo *)0x0);
-          return 1;
-        }
+    pDVar7 = (this->fields).chunks;
+    if ((pDVar7 != (Dictionary_2_MV_WorldObject_IntVector_CubeModelChunk_ *)0x0) && (key.z = iStack6, key.x = (short)uVar5, key.y = (short)((uint)uVar5 >> 0x10), this_01 = (CubeModelChunk *)mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::IntVector,System::Object]::Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)pDVar7,key,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__get_Item_MV__WorldObject__IntVector_), this_01 != (CubeModelChunk *)0x0)) {
+      bVar8 = CubeModelChunk::CubeModelChunk_ContainsCube(this_01,iVector,(MethodInfo *)0x0);
+      if (bVar8 == 0) {
+        return 0;
+      }
+      iStack6 = 0x1026;
+      RuntimePrototypeCubeModel_RemoveFromChunk(this,iVector,MeshGeneratePriority__Enum_HighGenerateAllDirty,(MethodInfo *)0x0);
+      this_00 = (this->fields).deltaCubes;
+      if (this_00 != (DeltaCubes *)0x0) {
+        DeltaCubes::DeltaCubes_Enqueue(this_00,iVector,CubeAction__Enum_Deleted,(MethodInfo *)0x0);
+        return 1;
       }
     }
   }
   func_?();
-  pcVar10 = (code *)swi(3);
-  bVar9 = (*pcVar10)();
-  return bVar9;
+  pcVar9 = (code *)swi(3);
+  bVar8 = (*pcVar9)();
+  return bVar8;
 }
 
 
@@ -2181,9 +2171,9 @@ void Assembly-CSharp.dll::RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_R
   if (cRam_? == '\0') {
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__ContainsKey_MV__WorldObject__IntVector_);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__Remove_MV__WorldObject__IntVector_);
-    uVar1 = 0x11b6;
+    uVar1 = 0x11b4;
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__get_Item_MV__WorldObject__IntVector_);
-    func_?(0x7fb8);
+    func_?(0x1b74);
     cRam_? = '\x01';
   }
   method_00 = (MethodInfo *)(this->fields).chunkSize;
@@ -2196,37 +2186,38 @@ void Assembly-CSharp.dll::RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_R
   IVar5._0_4_ = &stack0xfffffff4;
   IVar5 = SharedCubeFunctions::SharedCubeFunctions_CubePosToChunk(IVar5,CONCAT22(uVar1,iVector.z),method_00);
   pIVar6 = IVar5._0_4_;
+  pDVar7 = (this->fields).chunks;
   chunkPos_00 = *pIVar6;
   key_01 = *pIVar6;
   key_00 = *pIVar6;
   chunkPos = *pIVar6;
   key = *pIVar6;
   IVar5 = *pIVar6;
-  if ((this->fields).chunks != (Dictionary_2_MV_WorldObject_IntVector_CubeModelChunk_ *)0x0) {
-    bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::IntVector,System::Object]::Dictionary_2_MV_WorldObject_IntVector_System_Object__ContainsKey((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)(this->fields).chunks,*pIVar6,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__ContainsKey_MV__WorldObject__IntVector_);
-    if (bVar7 == 0) {
+  if (pDVar7 != (Dictionary_2_MV_WorldObject_IntVector_CubeModelChunk_ *)0x0) {
+    bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::IntVector,System::Object]::Dictionary_2_MV_WorldObject_IntVector_System_Object__ContainsKey((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)pDVar7,*pIVar6,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__ContainsKey_MV__WorldObject__IntVector_);
+    if (bVar8 == 0) {
       return;
     }
-    pDVar8 = (this->fields).chunks;
-    if ((pDVar8 != (Dictionary_2_MV_WorldObject_IntVector_CubeModelChunk_ *)0x0) && (pCVar9 = (CubeModelChunk *)mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::IntVector,System::Object]::Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)pDVar8,IVar5,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__get_Item_MV__WorldObject__IntVector_), pCVar9 != (CubeModelChunk *)0x0)) {
+    pDVar7 = (this->fields).chunks;
+    if ((pDVar7 != (Dictionary_2_MV_WorldObject_IntVector_CubeModelChunk_ *)0x0) && (pCVar9 = (CubeModelChunk *)mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::IntVector,System::Object]::Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)pDVar7,IVar5,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__get_Item_MV__WorldObject__IntVector_), pCVar9 != (CubeModelChunk *)0x0)) {
       iVector_00.z = iVar3;
       iVector_00.x = iVector.x;
       iVector_00.y = iVector.y;
       in_stack_10 = iStack_4;
       CubeModelChunk::CubeModelChunk_RemoveFromChunk(pCVar9,iVector_00,(MethodInfo *)0x0);
-      pDVar8 = (this->fields).chunks;
-      if ((pDVar8 != (Dictionary_2_MV_WorldObject_IntVector_CubeModelChunk_ *)0x0) && (pOVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::IntVector,System::Object]::Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)pDVar8,key,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__get_Item_MV__WorldObject__IntVector_), pOVar11 != (Object *)0x0)) {
+      pDVar7 = (this->fields).chunks;
+      if ((pDVar7 != (Dictionary_2_MV_WorldObject_IntVector_CubeModelChunk_ *)0x0) && (pOVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::IntVector,System::Object]::Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)pDVar7,key,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__get_Item_MV__WorldObject__IntVector_), pOVar11 != (Object *)0x0)) {
         if (pOVar11[7].klass != (Object__Class *)0x0) {
           uStack12 = 0x1026;
           RuntimePrototypeCubeModel_AddToDirtyChunks(this,chunkPos,CONCAT22(meshGeneratePriority._2_2_,iVar3),(MethodInfo *)0x0);
           return;
         }
-        pDVar8 = (this->fields).chunks;
-        if ((pDVar8 != (Dictionary_2_MV_WorldObject_IntVector_CubeModelChunk_ *)0x0) && (pCVar9 = (CubeModelChunk *)mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::IntVector,System::Object]::Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)pDVar8,key_00,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__get_Item_MV__WorldObject__IntVector_), pCVar9 != (CubeModelChunk *)0x0)) {
+        pDVar7 = (this->fields).chunks;
+        if ((pDVar7 != (Dictionary_2_MV_WorldObject_IntVector_CubeModelChunk_ *)0x0) && (pCVar9 = (CubeModelChunk *)mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::IntVector,System::Object]::Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)pDVar7,key_00,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__get_Item_MV__WorldObject__IntVector_), pCVar9 != (CubeModelChunk *)0x0)) {
           CubeModelChunk::CubeModelChunk_Destroy(pCVar9,(MethodInfo *)0x0);
-          pDVar8 = (this->fields).chunks;
-          if (pDVar8 != (Dictionary_2_MV_WorldObject_IntVector_CubeModelChunk_ *)0x0) {
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::IntVector,System::Object]::Dictionary_2_MV_WorldObject_IntVector_System_Object__Remove((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)pDVar8,key_01,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__Remove_MV__WorldObject__IntVector_);
+          pDVar7 = (this->fields).chunks;
+          if (pDVar7 != (Dictionary_2_MV_WorldObject_IntVector_CubeModelChunk_ *)0x0) {
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::IntVector,System::Object]::Dictionary_2_MV_WorldObject_IntVector_System_Object__Remove((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)pDVar7,key_01,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CubeModelChunk>__Remove_MV__WorldObject__IntVector_);
             RuntimePrototypeCubeModel_RemoveChunk(this,chunkPos_00,(MethodInfo *)0x0);
             return;
           }
@@ -2363,7 +2354,7 @@ void Assembly-CSharp.dll::RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_R
   *unaff_FS_OFFSET = &stack0xfffffff0;
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__CubeBase);
-    func_?(0xab24);
+    func_?(0x46e0);
     func_?(&TypeInfo__System__Enum);
     func_?(&TypeRef__MV__WorldObject__Face);
     func_?(&TypeInfo__MV__WorldObject__Face);
@@ -2568,7 +2559,7 @@ void Assembly-CSharp.dll::RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_S
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__MV__WorldObject__CubeBase);
-    func_?(0xab24);
+    func_?(0x46e0);
     cRam_? = '\x01';
   }
   cube = RuntimePrototypeCubeModel_GetCube(this,iVector,(MethodInfo *)0x0);
@@ -2710,7 +2701,7 @@ void Assembly-CSharp.dll::RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_U
   if (cRam_? == '\0') {
     func_?(&MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__Dispose__);
     func_?(&MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<int>__MoveNext__);
-    func_?(0x5234);
+    func_?(0xedf0);
     func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__GetEnumerator__);
     cRam_? = '\x01';
     puVar5 = puStack_4;

@@ -112,7 +112,7 @@ code_?:
     fVar32 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item(pVVar11,(int32_t)fVar27,(MethodInfo *)0x0);
     fVar32 = -fVar32 * 0.5 + collectEps;
     pLVar38 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)((float)puVar36 + fVar31 * fVar32);
-    VVar14.y = fVar30 * fVar32 + 4.4838764e-29;
+    VVar14.y = fVar30 * fVar32 + 4.4870858e-29;
     VVar14.x = (float)uVar29 + fVar34 * fVar32;
     VVar14.z = (float)pLVar38;
     VVar10.y = (float)pVVar11;

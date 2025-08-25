@@ -9,7 +9,7 @@ bool Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_ContainsPoint(ConeShape2
     cRam_? = '\x01';
   }
   ConeShape2D_get_Right(this,(MethodInfo *)0x0);
-  ConeShape2D_get_CentralAxis(this,(MethodInfo *)0x0);
+  ConeShape2D_get_Up(this,(MethodInfo *)0x0);
   fVar1 = (this->fields)._baseCenter.y;
   VVar2 = ConeShape2D_get_Right(this,(MethodInfo *)0x0);
   fStack_3 = VVar2.y;
@@ -62,10 +62,10 @@ Rect * Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_GetEncapsulatingRect(R
       }
       fVar1 = (this->fields)._baseCenter.x;
       pMVar4 = (MethodInfo *)(this->fields)._baseCenter.y;
-      VVar3 = ConeShape2D_get_CentralAxis(this,pMVar4);
+      VVar3 = ConeShape2D_get_Up(this,pMVar4);
       pMVar9 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_;
-      fVar2 = VVar3.y * (this->fields)._height + (float)pMVar4;
-      puVar10 = (undefined *)(fVar1 + (this->fields)._height * 4.445316e-29);
+      puVar10 = (undefined *)((this->fields)._height * 4.4486622e-29 + fVar1);
+      fVar1 = VVar3.y * (this->fields)._height + (float)pMVar4;
       piVar6 = &(this_00->fields)._version;
       *piVar6 = *piVar6 + 1;
       pVVar7 = (this_00->fields)._items;
@@ -75,18 +75,18 @@ Rect * Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_GetEncapsulatingRect(R
           (this_00->fields)._size = uVar8 + 1;
           if (pVVar7->max_length <= uVar8) goto code_?;
           pVVar7->vector[uVar8].x = (float)puVar10;
-          pVVar7->vector[uVar8].y = fVar2;
+          pVVar7->vector[uVar8].y = fVar1;
           puStack_5 = puVar10;
         }
         else {
-          item_00.y = fVar2;
+          item_00.y = fVar1;
           item_00.x = (float)puVar10;
           mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__AddWithResize(this_00,item_00,pMVar9->klass->rgctx_data[0xe].method);
         }
         fVar1 = (this->fields)._baseCenter.y;
         VVar3 = ConeShape2D_get_Right(this,(MethodInfo *)0x0);
         pMVar4 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_;
-        fVar2 = (float)puStack_5 * (this->fields)._baseRadius + 4.4453647e-29;
+        fVar2 = (float)puStack_5 * (this->fields)._baseRadius + 4.4487098e-29;
         fVar1 = VVar3.y * (this->fields)._baseRadius + fVar1;
         piVar6 = &(this_00->fields)._version;
         *piVar6 = *piVar6 + 1;
@@ -149,7 +149,7 @@ void Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_RenderArea(ConeShape2D *
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List__);
   fVar1 = (this->fields)._baseCenter.x;
   fVar7 = (this->fields)._baseCenter.y;
-  VVar8 = ConeShape2D_get_CentralAxis(this,(MethodInfo *)0x0);
+  VVar8 = ConeShape2D_get_Up(this,(MethodInfo *)0x0);
   pMVar9 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_;
   fStack_4 = VVar8.y;
   method_00 = (MethodInfo *)(VVar3.x * (this->fields)._height + fVar1);
@@ -179,7 +179,7 @@ void Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_RenderArea(ConeShape2D *
       pMVar9 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_;
       fStack_4 = VVar3.y;
       fVar1 = (float)method_00 * (this->fields)._baseRadius + fVar1;
-      fVar7 = fStack_4 * (this->fields)._baseRadius + 4.445526e-29;
+      fVar7 = fStack_4 * (this->fields)._baseRadius + 4.4488723e-29;
       piVar10 = &(this_00->fields)._version;
       *piVar10 = *piVar10 + 1;
       pVVar11 = (this_00->fields)._items;
@@ -254,11 +254,11 @@ void Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_RenderBorder(ConeShape2D
         mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__AddWithResize(this_00,VVar3,pMVar6);
       }
       fVar1 = (this->fields)._baseCenter.x;
-      VVar3 = ConeShape2D_get_CentralAxis(this,(MethodInfo *)0x0);
+      VVar3 = ConeShape2D_get_Up(this,(MethodInfo *)0x0);
       pMVar4 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_;
       fStack_5 = VVar3.y;
-      fVar2 = fStack_5 * (this->fields)._height + 4.4456626e-29;
-      fVar1 = fVar1 + (float)pMVar6 * (this->fields)._height;
+      fVar1 = (float)pMVar6 * (this->fields)._height + fVar1;
+      fVar2 = fStack_5 * (this->fields)._height + 4.449009e-29;
       piVar8 = &(this_00->fields)._version;
       *piVar8 = *piVar8 + 1;
       pVVar9 = (this_00->fields)._items;
@@ -364,39 +364,6 @@ Vector2 Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_get_BaseRight(ConeSha
 }
 
 
-/* Vector2 get_CentralAxis() */
-
-Vector2 Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_get_CentralAxis(ConeShape2D *this,MethodInfo *method)
-
-{
-  fVar1 = (this->fields)._rotationDegrees;
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  pQVar2 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis((Quaternion *)&stack0xffffffd0,fVar1,TypeInfo__UnityEngine__Vector3->static_fields->forwardVector,(MethodInfo *)0x0);
-  fVar1 = pQVar2->x;
-  VStack_3.x = pQVar2->y;
-  VStack_3.y = pQVar2->z;
-  VStack_3.z = pQVar2->w;
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  rotation.y = VStack_3.x;
-  rotation.x = fVar1;
-  rotation.z = VStack_3.y;
-  rotation.w = VStack_3.z;
-  point.z = 0.0;
-  point.x = (TypeInfo__UnityEngine__Vector2->static_fields->upVector).x;
-  point.y = (TypeInfo__UnityEngine__Vector2->static_fields->upVector).y;
-  pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1(&VStack_3,rotation,point,(MethodInfo *)0x0);
-  VVar5.x = pVVar4->x;
-  VVar5.y = pVVar4->y;
-  return VVar5;
-}
-
-
 /* Vector2 get_Right() */
 
 Vector2 Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_get_Right(ConeShape2D *this,MethodInfo *method)
@@ -459,7 +426,7 @@ Vector2 Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_get_Tip(ConeShape2D *
 {
   fVar1 = (this->fields)._baseCenter.x;
   fVar2 = (this->fields)._baseCenter.y;
-  VVar3 = ConeShape2D_get_CentralAxis(this,(MethodInfo *)0x0);
+  VVar3 = ConeShape2D_get_Up(this,(MethodInfo *)0x0);
   VStack_4.y = VVar3.y;
   VStack_4.y = VStack_4.y * (this->fields)._height + fVar2;
   VStack_4.x = fVar1 + VStack_4.x * (this->fields)._height;
@@ -544,7 +511,7 @@ void Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_set_RotationDegrees(Cone
 void Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_set_Tip(ConeShape2D *this,Vector2 value,MethodInfo *method)
 
 {
-  VVar1 = ConeShape2D_get_CentralAxis(this,(MethodInfo *)0x0);
+  VVar1 = ConeShape2D_get_Up(this,(MethodInfo *)0x0);
   fStack_2 = VVar1.y;
   fVar3 = (this->fields)._height;
   (this->fields)._baseCenter.x = value.x - fStack_4 * (this->fields)._height;

@@ -150,9 +150,9 @@ code_?:
                 pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up((Vector3 *)&stack0xffffffa0,this_00,(MethodInfo *)0x0);
                 uVar28 = pVVar1->x;
                 uVar29 = pVVar1->y;
-                VStack_7.x = fVar16 + (float)uVar28 * fVar4;
-                VStack_7.y = fVar14 + (float)uVar29 * fVar4;
-                VStack_7.z = fVar5 + pVVar1->z * fVar4;
+                VStack_7.x = (float)uVar28 * fVar4 + fVar16;
+                VStack_7.y = (float)uVar29 * fVar4 + fVar14;
+                VStack_7.z = pVVar1->z * fVar4 + fVar5;
                 if (pVVar26 != (Vector3__Array *)0x0) {
                   if (pVVar26->max_length == 0) goto code_?;
                   pVVar26->vector[0].x = VStack_7.x;
@@ -163,16 +163,16 @@ code_?:
                   VStack_7.x = pVVar1->x;
                   VStack_7.y = pVVar1->y;
                   VStack_7.z = pVVar1->z;
-                  fVar14 = (float)pTVar27 + VStack_7.x * fVar3;
-                  fVar4 = fVar13 + VStack_7.y * fVar3;
-                  fVar5 = fVar15 + VStack_7.z * fVar3;
+                  fVar14 = VStack_7.x * fVar3 + (float)pTVar27;
+                  fVar5 = VStack_7.y * fVar3 + fVar13;
+                  fVar4 = VStack_7.z * fVar3 + fVar15;
                   puVar8 = &UNK_?;
                   pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up((Vector3 *)&stack0xffffffa0,this_00,(MethodInfo *)0x0);
                   uVar30 = pVVar1->x;
                   uVar31 = pVVar1->y;
                   VStack_7.x = fVar14 + (float)uVar30 * (float)puVar8;
-                  VStack_7.y = fVar4 + (float)uVar31 * (float)puVar8;
-                  VStack_7.z = fVar5 + pVVar1->z * (float)puVar8;
+                  VStack_7.y = fVar5 + (float)uVar31 * (float)puVar8;
+                  VStack_7.z = fVar4 + pVVar1->z * (float)puVar8;
                   if (pVVar26 != (Vector3__Array *)0x0) {
                     if (pVVar26->max_length < 2) goto code_?;
                     pVVar26->vector[1].x = VStack_7.x;
@@ -315,17 +315,17 @@ code_?:
                 VStack_7.x = pVVar1->x;
                 VStack_7.y = pVVar1->y;
                 VStack_7.z = pVVar1->z;
-                fVar15 = VStack_7.x * fVar3 + (float)pTVar27;
-                fVar13 = VStack_7.y * fVar3 + fVar14;
-                fVar5 = VStack_7.z * fVar3 + fVar4;
+                fVar15 = (float)pTVar27 + VStack_7.x * fVar3;
+                fVar5 = fVar14 + VStack_7.y * fVar3;
+                fVar13 = fVar4 + VStack_7.z * fVar3;
                 pVVar1 = (Vector3 *)&stack0xffffffb8;
                 puVar8 = &UNK_?;
                 pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up(pVVar1,this_00,(MethodInfo *)0x0);
                 uVar41 = pVVar6->x;
                 uVar42 = pVVar6->y;
                 VStack_7.x = fVar15 + (float)uVar41 * (float)puVar8;
-                VStack_7.y = fVar13 + (float)uVar42 * (float)puVar8;
-                VStack_7.z = fVar5 + pVVar6->z * (float)puVar8;
+                VStack_7.y = fVar5 + (float)uVar42 * (float)puVar8;
+                VStack_7.z = fVar13 + pVVar6->z * (float)puVar8;
                 if (pVVar26 != (Vector3__Array *)0x0) {
                   if (pVVar26->max_length < 6) goto code_?;
                   pVVar26->vector[5].x = VStack_7.x;
@@ -480,7 +480,7 @@ bool Assembly-CSharp.dll::RTG::CameraViewVolume::CameraViewVolume_CheckAABB_1(Ca
     fStack_4 = pMVar1->m12;
     fStack_5 = pMVar1->m22;
     fStack_6 = pMVar1->m32;
-    unique0x10000cb3 = pMVar1->m03;
+    unique0x10000ef3 = pMVar1->m03;
     aabb._size.x = pMVar1->m33;
     BStack_17.m_Extents.z = (float)&UNK_?;
     planes = UnityEngine.CoreModule.dll::UnityEngine::GeometryUtility::GeometryUtility_CalculateFrustumPlanes(*pMVar1,(MethodInfo *)0x0);

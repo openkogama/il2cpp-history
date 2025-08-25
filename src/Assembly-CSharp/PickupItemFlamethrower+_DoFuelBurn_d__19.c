@@ -41,8 +41,9 @@ bool Assembly-CSharp.dll::PickupItemFlamethrower+<DoFuelBurn>d__19::PickupItemFl
     value_00.fakeValue = fStack_7;
     value_00._16_4_ = pTStack_5;
     pTStack_5 = (Transform *)Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::ObscuredFloat_op_Implicit_1(value_00,(MethodInfo *)0x0);
-    pMStack_3 = (MVRigidBody *)UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    pOVar8 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::ObscuredFloat_op_Implicit(&OStack_9,(float)pTStack_5 - (float)pMStack_3,(MethodInfo *)0x0);
+    fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+    pTStack_5 = (Transform *)((float)pTStack_5 - fVar4);
+    pOVar8 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::ObscuredFloat_op_Implicit(&OStack_9,(float)pTStack_5,(MethodInfo *)0x0);
     AVar10 = pOVar8->hiddenValue;
     pBVar11 = pOVar8->hiddenValueOld;
     fVar4 = pOVar8->fakeValue;

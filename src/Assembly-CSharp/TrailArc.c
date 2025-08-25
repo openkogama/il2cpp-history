@@ -421,17 +421,17 @@ code_?:
           pfVar23 = &(this->fields).averageInsertionTime;
           (this->fields).elapsedInsertionTime = fVar19;
           if (*pfVar23 <= fVar19 && fVar19 != *pfVar23) {
-            fVar19 = (this->fields).averageInsertionTime;
+            fVar18 = (this->fields).averageInsertionTime;
             iVar20 = (this->fields).displayCnt;
             do {
-              fVar18 = (this->fields).elapsedInsertionTime - fVar19;
+              fVar19 = fVar19 - fVar18;
               iVar41 = iVar20 + 1;
               if ((this->fields).pointCnt <= iVar20) {
                 iVar41 = iVar20;
               }
-              (this->fields).elapsedInsertionTime = fVar18;
               iVar20 = iVar41;
-            } while (fVar19 < fVar18);
+            } while (fVar18 < fVar19);
+            (this->fields).elapsedInsertionTime = fVar19;
             (this->fields).displayCnt = iVar41;
           }
         }
@@ -645,9 +645,10 @@ code_?:
                       fVar75 = fStack_76 * (float)pCStack_65 * 0.5;
                     }
                     else {
-                      uStack_66 = (double)CONCAT44((this->fields).time,(float)uStack_66);
-                      fStack_68 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-                      (this->fields).time = (float)uStack_66._4_4_ + fStack_68;
+                      fStack_68 = (this->fields).time;
+                      fVar18 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+                      uStack_66 = (double)CONCAT44(fVar18,(float)uStack_66);
+                      (this->fields).time = fVar18 + fStack_68;
                       pVVar9 = (this->fields).points;
                       if (puVar48 == (undefined1 *)((int)pSStack_43[-1].vector + 0x7f)) {
                         if (pVVar9 == (Vector3__Array *)0x0) goto code_?;
@@ -1022,11 +1023,11 @@ void Assembly-CSharp.dll::TrailArc::TrailArc_findCoordinates(TrailArc *this,int3
               fVar28 = fVar25 * 3.0 - (fVar26 + fVar26);
               fVar29 = (fVar26 - (fVar25 + fVar25)) + fVar24;
               fVar26 = fVar26 - fVar25;
-              uStack_30 = CONCAT44(fVar26 * ((float)uVar15 - (float)uVar18) * 0.5 + ((float)uVar9 - (float)uVar12) * 0.5 * fVar29 + (float)uVar3 * fVar27 + (float)uVar6 * fVar28,fVar26 * ((float)uVar14 - (float)uVar17) * 0.5 + ((float)uVar8 - (float)uVar11) * 0.5 * fVar29 + (float)uVar2 * fVar27 + (float)uVar5 * fVar28);
+              uStack_30 = CONCAT44(((float)uVar15 - (float)uVar18) * 0.5 * fVar26 + ((float)uVar9 - (float)uVar12) * 0.5 * fVar29 + (float)uVar6 * fVar28 + (float)uVar3 * fVar27,((float)uVar14 - (float)uVar17) * 0.5 * fVar26 + ((float)uVar8 - (float)uVar11) * 0.5 * fVar29 + (float)uVar5 * fVar28 + (float)uVar2 * fVar27);
               if (pVVar1 == (Vector3__Array *)0x0) goto code_?;
               if (pVVar1->max_length <= uVar23) goto code_?;
               *(undefined8 *)((int)pVVar1 + uVar23 * 0xc + 0x10) = uStack_30;
-              *(float *)((int)pVVar1 + uVar23 * 0xc + 0x18) = fVar26 * (fVar16 - fVar19) * 0.5 + (fVar10 - fVar13) * 0.5 * fVar29 + fVar4 * fVar27 + fVar7 * fVar28;
+              *(float *)((int)pVVar1 + uVar23 * 0xc + 0x18) = (fVar16 - fVar19) * 0.5 * fVar26 + (fVar10 - fVar13) * 0.5 * fVar29 + fVar7 * fVar28 + fVar4 * fVar27;
               pVVar1 = (this->fields).savedUp;
               pVVar31 = (this->fields).pointsUp;
               if (pVVar1 == (Vector3__Array *)0x0) goto code_?;
@@ -1036,7 +1037,7 @@ void Assembly-CSharp.dll::TrailArc::TrailArc_findCoordinates(TrailArc *this,int3
               fVar27 = pVVar1->vector[index + 1].z;
               uVar34 = pVVar1->vector[index].x;
               uVar35 = pVVar1->vector[index].y;
-              fVar29 = pVVar1->vector[index].z;
+              fVar28 = pVVar1->vector[index].z;
               if (fVar24 < 0.0) {
                 fVar24 = 0.0;
               }
@@ -1046,7 +1047,7 @@ void Assembly-CSharp.dll::TrailArc::TrailArc_findCoordinates(TrailArc *this,int3
               if (pVVar31 == (Vector3__Array *)0x0) goto code_?;
               if (pVVar31->max_length <= uVar23) goto code_?;
               *(ulonglong *)((int)pVVar31 + uVar23 * 0xc + 0x10) = CONCAT44(((float)uVar33 - (float)uVar35) * fVar24 + (float)uVar35,((float)uVar32 - (float)uVar34) * fVar24 + (float)uVar34);
-              *(float *)((int)pVVar31 + uVar23 * 0xc + 0x18) = (fVar27 - fVar29) * fVar24 + fVar29;
+              *(float *)((int)pVVar31 + uVar23 * 0xc + 0x18) = (fVar27 - fVar28) * fVar24 + fVar28;
               iVar22 = iVar22 + 1;
               iStack_21 = iStack_21 + 1;
             } while (iVar22 < (this->fields).segmentsPerPoint + iVar20);

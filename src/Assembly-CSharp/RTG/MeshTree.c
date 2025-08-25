@@ -239,12 +239,12 @@ bool Assembly-CSharp.dll::RTG::MeshTree::MeshTree_OverlapVerts(MeshTree *this,OB
       fStack_12 = (pOVar10->_size).y;
       fStack_13 = (pOVar10->_size).z;
       fStack_14 = (pOVar10->_center).x;
+      method_00 = (MethodInfo *)(pOVar10->_center).y;
       fStack_15 = (pOVar10->_center).y;
       fStack_16 = (pOVar10->_center).z;
       fStack_17 = (pOVar10->_rotation).x;
       puStack_18 = (undefined *)(pOVar10->_rotation).y;
       if (this_00 != (SphereTree_1_MeshTriangle_ *)0x0) {
-        method_00 = (MethodInfo *)(pOVar10->_center).y;
         bVar19 = SphereTree`1[System::Object]::SphereTree_1_System_Object__OverlapBox((SphereTree_1_System_Object_ *)this_00,*pOVar10,(List_1_RTG_SphereTreeNode_1_System_Object_ *)(this->fields)._nodeBuffer,MethodInfo__RTG__SphereTree<RTG::MeshTriangle>__OverlapBox_RTG__OBB__System__Collections__Generic__List<RTG::SphereTreeNode<RTG::MeshTriangle>_>_);
         if (bVar19 == 0) {
           *unaff_FS_OFFSET = uStack_3;
@@ -399,18 +399,18 @@ MeshRayHit * Assembly-CSharp.dll::RTG::MeshTree::MeshTree_RaycastClosest(MeshTre
   RStack_7.m_Direction.x = (pRVar8->m_Direction).x;
   RStack_7.m_Direction.y = (pRVar8->m_Direction).y;
   RStack_7.m_Direction.z = (pRVar8->m_Direction).z;
+  uVar9 = (pRVar8->m_Direction).z;
+  uVar10 = (pRVar8->m_Origin).x;
+  uVar11 = (pRVar8->m_Origin).y;
+  uVar12 = (pRVar8->m_Origin).z;
+  ray_00.m_Origin.z = (float)uVar12;
+  ray_00.m_Origin.y = (float)uVar11;
+  ray_00.m_Origin.x = (float)uVar10;
+  uVar13 = (pRVar8->m_Direction).x;
+  uVar14 = (pRVar8->m_Direction).y;
+  ray_00.m_Direction.y = (float)uVar14;
+  ray_00.m_Direction.x = (float)uVar13;
   if (this_00 != (SphereTree_1_MeshTriangle_ *)0x0) {
-    uVar9 = (pRVar8->m_Direction).z;
-    uVar10 = (pRVar8->m_Origin).x;
-    uVar11 = (pRVar8->m_Origin).y;
-    uVar12 = (pRVar8->m_Origin).z;
-    ray_00.m_Origin.z = (float)uVar12;
-    ray_00.m_Origin.y = (float)uVar11;
-    ray_00.m_Origin.x = (float)uVar10;
-    uVar13 = (pRVar8->m_Direction).x;
-    uVar14 = (pRVar8->m_Direction).y;
-    ray_00.m_Direction.y = (float)uVar14;
-    ray_00.m_Direction.x = (float)uVar13;
     ray_00.m_Direction.z = (float)uVar9;
     bVar15 = SphereTree`1[System::Object]::SphereTree_1_System_Object__RaycastAll((SphereTree_1_System_Object_ *)this_00,ray_00,(List_1_RTG_SphereTreeNodeRayHit_1_System_Object_ *)(this->fields)._nodeHitBuffer,MethodInfo__RTG__SphereTree<RTG::MeshTriangle>__RaycastAll_UnityEngine__Ray__System__Collections__Generic__List<RTG::SphereTreeNodeRayHit<RTG::MeshTriangle>_>_);
     if (bVar15 == 0) {

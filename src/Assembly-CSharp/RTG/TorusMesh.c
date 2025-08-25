@@ -35,9 +35,9 @@ Mesh * Assembly-CSharp.dll::RTG::TorusMesh::TorusMesh_CreateCylindricalTorus(Vec
     uVar10._0_4_ = pVVar8->x;
     uVar10._4_4_ = pVVar8->y;
     fVar5 = pVVar8->z;
-    fVar11 = center.x + (float)(undefined4)uVar10 * coreRadius;
-    fVar12 = center.y + (float)uVar10._4_4_ * coreRadius;
-    fVar13 = center.z + fVar5 * coreRadius;
+    fVar11 = (float)(undefined4)uVar10 * coreRadius + center.x;
+    fVar12 = (float)uVar10._4_4_ * coreRadius + center.y;
+    fVar13 = fVar5 * coreRadius + center.z;
     if (value_02 == (Vector2__Array *)0x0) goto code_?;
     if (value_02->max_length <= uVar4) goto code_?;
     pVVar3->x = (float)(undefined4)uVar10;
@@ -57,7 +57,7 @@ Mesh * Assembly-CSharp.dll::RTG::TorusMesh::TorusMesh_CreateCylindricalTorus(Vec
     uVar20 = uVar4 + 1;
     pVStack_2->x = (fVar11 + (float)uVar17 * tubeVertRadius) - (float)(undefined4)uVar10 * tubeHrzRadius;
     pVStack_2->y = (fVar12 + (float)uVar18 * tubeVertRadius) - (float)uVar10._4_4_ * tubeHrzRadius;
-    pVStack_2->z = (fVar13 + fVar19 * tubeVertRadius) - fVar5 * tubeHrzRadius;
+    pVStack_2->z = (fVar19 * tubeVertRadius + fVar13) - fVar5 * tubeHrzRadius;
     if (cRam_? == '\0') {
       func_?(&TypeInfo__UnityEngine__Vector3);
       cRam_? = '\x01';
@@ -83,9 +83,9 @@ Mesh * Assembly-CSharp.dll::RTG::TorusMesh::TorusMesh_CreateCylindricalTorus(Vec
     fVar19 = (pVVar16->upVector).z;
     if (value_00->max_length <= uVar20) goto code_?;
     uVar24 = uVar4 + 2;
-    pVStack_2[1].x = fVar11 + (float)uVar22 * tubeVertRadius + (float)(undefined4)uVar10 * tubeHrzRadius;
-    pVStack_2[1].y = fVar12 + (float)uVar23 * tubeVertRadius + (float)uVar10._4_4_ * tubeHrzRadius;
-    pVStack_2[1].z = fVar13 + fVar19 * tubeVertRadius + fVar5 * tubeHrzRadius;
+    pVStack_2[1].x = (float)(undefined4)uVar10 * tubeHrzRadius + (float)uVar22 * tubeVertRadius + fVar11;
+    pVStack_2[1].y = (float)uVar10._4_4_ * tubeHrzRadius + (float)uVar23 * tubeVertRadius + fVar12;
+    pVStack_2[1].z = fVar5 * tubeHrzRadius + fVar19 * tubeVertRadius + fVar13;
     if (cRam_? == '\0') {
       func_?(&TypeInfo__UnityEngine__Vector3);
       cRam_? = '\x01';
@@ -109,9 +109,9 @@ Mesh * Assembly-CSharp.dll::RTG::TorusMesh::TorusMesh_CreateCylindricalTorus(Vec
     uVar26 = (pVVar16->upVector).y;
     fVar19 = (pVVar16->upVector).z;
     if (value_00->max_length <= uVar24) goto code_?;
-    pVStack_2[2].x = fVar11 + (float)uVar25 * tubeVertRadius + (float)(undefined4)uVar10 * tubeHrzRadius;
-    pVStack_2[2].y = fVar12 + (float)uVar26 * tubeVertRadius + (float)uVar10._4_4_ * tubeHrzRadius;
-    pVStack_2[2].z = fVar13 + fVar19 * tubeVertRadius + fVar5 * tubeHrzRadius;
+    pVStack_2[2].x = (float)(undefined4)uVar10 * tubeHrzRadius + fVar11 + (float)uVar25 * tubeVertRadius;
+    pVStack_2[2].y = (float)uVar10._4_4_ * tubeHrzRadius + fVar12 + (float)uVar26 * tubeVertRadius;
+    pVStack_2[2].z = fVar5 * tubeHrzRadius + fVar19 * tubeVertRadius + fVar13;
     uVar20 = uVar4 + 3;
     if (value_01->max_length <= uVar24) goto code_?;
     value_01->vector[uVar4 + 2].x = fVar14;
@@ -129,9 +129,9 @@ Mesh * Assembly-CSharp.dll::RTG::TorusMesh::TorusMesh_CreateCylindricalTorus(Vec
     uVar28 = (pVVar16->upVector).y;
     fVar19 = (pVVar16->upVector).z;
     if (value_00->max_length <= uVar20) goto code_?;
-    pVStack_2[3].x = (fVar11 - (float)uVar27 * tubeVertRadius) + (float)(undefined4)uVar10 * tubeHrzRadius;
-    pVStack_2[3].y = (fVar12 - (float)uVar28 * tubeVertRadius) + (float)uVar10._4_4_ * tubeHrzRadius;
-    pVStack_2[3].z = (fVar13 - fVar19 * tubeVertRadius) + fVar5 * tubeHrzRadius;
+    pVStack_2[3].x = (float)(undefined4)uVar10 * tubeHrzRadius + (fVar11 - (float)uVar27 * tubeVertRadius);
+    pVStack_2[3].y = (float)uVar10._4_4_ * tubeHrzRadius + (fVar12 - (float)uVar28 * tubeVertRadius);
+    pVStack_2[3].z = fVar5 * tubeHrzRadius + (fVar13 - fVar19 * tubeVertRadius);
     uVar24 = uVar4 + 4;
     if (value_01->max_length <= uVar20) goto code_?;
     value_01->vector[uVar4 + 3].x = fVar14;
@@ -227,8 +227,8 @@ Mesh * Assembly-CSharp.dll::RTG::TorusMesh::TorusMesh_CreateCylindricalTorus(Vec
     if (value_00->max_length <= uVar20) goto code_?;
     pVVar3 = pVVar3 + 8;
     pVStack_2[7].x = (fVar11 + (float)uVar37 * tubeVertRadius) - (float)(undefined4)uVar10 * tubeHrzRadius;
-    pVStack_2[7].y = (fVar12 + (float)uVar38 * tubeVertRadius) - (float)uVar10._4_4_ * tubeHrzRadius;
-    pVStack_2[7].z = (fVar13 + fVar14 * tubeVertRadius) - fVar5 * tubeHrzRadius;
+    pVStack_2[7].y = ((float)uVar38 * tubeVertRadius + fVar12) - (float)uVar10._4_4_ * tubeHrzRadius;
+    pVStack_2[7].z = (fVar14 * tubeVertRadius + fVar13) - fVar5 * tubeHrzRadius;
     pVStack_2 = pVStack_2 + 8;
     if (value_01->max_length <= uVar20) goto code_?;
     value_01->vector[uVar4 + 7].x = (float)(int)(uVar10 ^ 0x8000000080000000);
@@ -334,105 +334,101 @@ Mesh * Assembly-CSharp.dll::RTG::TorusMesh::TorusMesh_CreateTorus(Vector3 center
   if ((((coreRadius < 0.0001) || (tubeRadius < 0.0001)) || (numTubeSlices < 3)) || (numSlices < 3)) {
     return (Mesh *)0x0;
   }
-  iVar1 = numSlices + 1;
-  iVar2 = (numTubeSlices + 1) * iVar1;
+  iStack_1 = numSlices + 1;
+  iVar2 = (numTubeSlices + 1) * iStack_1;
   iVar3 = iVar2;
   iStack_4 = iVar2;
-  iStack_5 = iVar1;
-  pVVar6 = TypeInfo__UnityEngine__Vector3;
-  pVStack_7 = (Vector3__Array *)func_?();
-  pVStack_8 = (Vector3__Array *)func_?(TypeInfo__UnityEngine__Vector3,iVar2,pVVar6,iVar3);
+  pVVar5 = TypeInfo__UnityEngine__Vector3;
+  pVStack_6 = (Vector3__Array *)func_?();
+  pVStack_7 = (Vector3__Array *)func_?(TypeInfo__UnityEngine__Vector3,iVar2,pVVar5,iVar3);
   iVar3 = 0;
+  iStack_8 = 0;
   fStack_9 = 360.0 / (float)(numSlices + -1);
-  iStack_10 = 0;
-  fStack_11 = 360.0 / (float)(numTubeSlices + -1);
+  fStack_10 = 360.0 / (float)(numTubeSlices + -1);
   do {
-    fStack_12 = (float)iStack_10 * fStack_11 * 0.017453292;
-    dVar13 = (double)fStack_12;
+    fStack_11 = (float)iStack_8 * fStack_10 * 0.017453292;
+    dVar12 = (double)fStack_11;
     func_?();
-    fStack_14 = (float)dVar13;
-    dVar13 = (double)fStack_12;
+    fStack_13 = (float)dVar12;
+    dVar12 = (double)fStack_11;
     func_?();
-    fStack_15 = (float)dVar13;
+    fStack_14 = (float)dVar12;
     iVar2 = 0;
-    fStack_16 = fStack_15 * coreRadius;
-    fStack_17 = fStack_14 * coreRadius;
+    fStack_15 = fStack_14 * coreRadius;
+    fStack_16 = fStack_13 * coreRadius;
     do {
-      fStack_18 = (float)iVar2 * fStack_9 * 0.017453292;
-      dVar13 = (double)fStack_18;
+      fStack_17 = (float)iVar2 * fStack_9 * 0.017453292;
+      dVar12 = (double)fStack_17;
       func_?();
-      fStack_19 = (float)dVar13;
-      fStack_12 = fStack_19 * fStack_15 * tubeRadius + fStack_16;
-      dVar13 = (double)fStack_18;
+      fStack_18 = (float)dVar12;
+      fStack_11 = fStack_18 * fStack_14 * tubeRadius + fStack_15;
+      dVar12 = (double)fStack_17;
       func_?();
-      fStack_18 = (float)dVar13 * tubeRadius + 0.0;
-      fStack_19 = fStack_19 * fStack_14 * tubeRadius + fStack_17;
-      fStack_20 = fStack_19 - fStack_17;
-      uStack_21 = CONCAT44(fStack_18 - 0.0,fStack_12 - fStack_16);
-      puVar22 = (undefined8 *)func_?(&stack0xffffff94,&uStack_21,0);
-      if (pVStack_8 == (Vector3__Array *)0x0) goto code_?;
-      func_?(iVar3,*puVar22,*(undefined4 *)(puVar22 + 1));
-      fStack_23 = center.x + fStack_12;
-      fStack_24 = center.y + fStack_18;
-      fStack_25 = center.z + fStack_19;
+      fStack_17 = (float)dVar12 * tubeRadius + 0.0;
+      fStack_18 = fStack_18 * fStack_13 * tubeRadius + fStack_16;
+      fStack_19 = fStack_18 - fStack_16;
+      uStack_20 = CONCAT44(fStack_17 - 0.0,fStack_11 - fStack_15);
+      puVar21 = (undefined8 *)func_?(&stack0xffffff94,&uStack_20,0);
       if (pVStack_7 == (Vector3__Array *)0x0) goto code_?;
-      func_?(iVar3,CONCAT44(fStack_24,fStack_23),fStack_25);
+      func_?(iVar3,*puVar21,*(undefined4 *)(puVar21 + 1));
+      fStack_22 = center.x + fStack_11;
+      fStack_23 = center.y + fStack_17;
+      fStack_24 = center.z + fStack_18;
+      if (pVStack_6 == (Vector3__Array *)0x0) goto code_?;
+      func_?(iVar3,CONCAT44(fStack_23,fStack_22),fStack_24);
       iVar2 = iVar2 + 1;
       iVar3 = iVar3 + 1;
     } while (iVar2 <= numSlices);
-    iStack_10 = iStack_10 + 1;
-  } while (iStack_10 <= numTubeSlices);
-  uVar26 = 0;
+    iStack_8 = iStack_8 + 1;
+  } while (iStack_8 <= numTubeSlices);
   indices = (Int32__Array *)func_?();
   coreRadius = 0.0;
-  iStack_10 = 1;
+  iStack_8 = 1;
+  uVar25 = 0;
   do {
     iVar2 = 0;
-    iVar3 = iStack_10;
-    uVar27 = uVar26;
+    iVar3 = iStack_8;
     if (indices == (Int32__Array *)0x0) goto code_?;
     do {
-      if (indices->max_length <= uVar27) {
+      if (indices->max_length <= uVar25) {
 code_?:
         func_?();
         goto code_?;
       }
-      indices->vector[uVar27] = iVar3 + -1;
-      if (indices->max_length <= uVar27 + 1) goto code_?;
-      indices->vector[uVar27 + 1] = iVar3;
-      if (indices->max_length <= uVar27 + 2) goto code_?;
-      indices->vector[uVar27 + 2] = iVar3 + -1 + iVar1;
-      if (indices->max_length <= uVar27 + 3) goto code_?;
-      indices->vector[uVar27 + 3] = iVar3;
-      if (indices->max_length <= uVar27 + 4) goto code_?;
-      indices->vector[uVar27 + 4] = iVar3 + iVar1;
-      uVar26 = uVar27 + 6;
-      if (indices->max_length <= uVar27 + 5) goto code_?;
+      indices->vector[uVar25] = iVar3 + -1;
+      if (indices->max_length <= uVar25 + 1) goto code_?;
+      indices->vector[uVar25 + 1] = iVar3;
+      if (indices->max_length <= uVar25 + 2) goto code_?;
+      indices->vector[uVar25 + 2] = iVar3 + -1 + iStack_1;
+      if (indices->max_length <= uVar25 + 3) goto code_?;
+      indices->vector[uVar25 + 3] = iVar3;
+      if (indices->max_length <= uVar25 + 4) goto code_?;
+      indices->vector[uVar25 + 4] = iVar3 + iStack_1;
+      uVar26 = uVar25 + 6;
+      if (indices->max_length <= uVar25 + 5) goto code_?;
       iVar2 = iVar2 + 1;
-      iVar1 = numSlices + iVar3;
+      indices->vector[uVar25 + 5] = iStack_1 + -1 + iVar3;
       iVar3 = iVar3 + 1;
-      indices->vector[uVar27 + 5] = iVar1;
-      uVar27 = uVar26;
-      iVar1 = iStack_5;
+      uVar25 = uVar26;
     } while (iVar2 < numSlices);
     coreRadius = (float)((int)coreRadius + 1);
-    iStack_10 = iStack_10 + iStack_5;
+    iStack_8 = iStack_8 + iStack_1;
   } while ((int)coreRadius < numTubeSlices);
-  pMVar28 = (Mesh *)func_?(TypeInfo__UnityEngine__Mesh);
-  UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh__ctor(pMVar28,(MethodInfo *)0x0);
-  if (pMVar28 != (Mesh *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_vertices(pMVar28,pVStack_7,(MethodInfo *)0x0);
-    UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_normals(pMVar28,pVStack_8,(MethodInfo *)0x0);
+  pMVar27 = (Mesh *)func_?(TypeInfo__UnityEngine__Mesh);
+  UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh__ctor(pMVar27,(MethodInfo *)0x0);
+  if (pMVar27 != (Mesh *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_vertices(pMVar27,pVStack_6,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_normals(pMVar27,pVStack_7,(MethodInfo *)0x0);
     value = ColorEx::ColorEx_GetFilledColorArray(iStack_4,color,(MethodInfo *)0x0);
-    UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_colors(pMVar28,value,(MethodInfo *)0x0);
-    UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_SetIndices(pMVar28,indices,MeshTopology__Enum_Triangles,0,(MethodInfo *)0x0);
-    UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_UploadMeshData(pMVar28,0,(MethodInfo *)0x0);
-    return pMVar28;
+    UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_colors(pMVar27,value,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_SetIndices(pMVar27,indices,MeshTopology__Enum_Triangles,0,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_UploadMeshData(pMVar27,0,(MethodInfo *)0x0);
+    return pMVar27;
   }
 code_?:
   func_?();
-  pcVar29 = (code *)swi(3);
-  pMVar28 = (Mesh *)(*pcVar29)();
-  return pMVar28;
+  pcVar28 = (code *)swi(3);
+  pMVar27 = (Mesh *)(*pcVar28)();
+  return pMVar27;
 }
 

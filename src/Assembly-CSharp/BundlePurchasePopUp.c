@@ -93,7 +93,7 @@ void Assembly-CSharp.dll::BundlePurchasePopUp::BundlePurchasePopUp_HandlePrices(
           if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          fVar7 = (float10)func_?((double)((float)iVar6 * ((float)IVar4.m_value / 100.0)));
+          fVar7 = (float10)func_?((double)(((float)IVar4.m_value / 100.0) * (float)iVar6));
           pTVar2 = (this->fields).originalPriceText;
           this_00.m_value = (this->fields).originalPrice - (int)fVar7;
           pSVar5 = mscorlib.dll::System::Int32::Int32_ToString_1((Int32 *)&(this->fields).originalPrice,StringLiteral_N0,(MethodInfo *)0x0);

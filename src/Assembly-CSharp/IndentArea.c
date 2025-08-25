@@ -45,24 +45,28 @@ bool Assembly-CSharp.dll::IndentArea::IndentArea_IsColliding(IndentArea *this,Me
               RStack_4.m_Direction.y = fVar7 + (float)uVar10 * 5000.0;
               RStack_4.m_Direction.z = fVar9;
               if (iVar12 != 0) {
-                if ((*(int *)(iVar12 + 0xc) != 0) && (3 < *(uint *)(iVar12 + 0xc))) {
-                  p2.y = RStack_4.m_Direction.y;
-                  p2.x = RStack_4.m_Direction.x;
-                  p1.y = fVar7;
-                  p1.x = fVar6;
-                  p1.z = fVar8;
-                  p2.z = fVar9;
-                  bVar17 = MathFunctions::MathFunctions_LineFacet(p1,p2,*(Vector3 *)(iVar12 + 0x10),*(Vector3 *)(iVar12 + 0x34),*(Vector3 *)(iVar12 + 0x28),&VStack_1,(MethodInfo *)0x0);
-                  if (2 < *(uint *)(iVar12 + 0xc)) {
-                    uVar18 = ((Vector3 *)(iVar12 + 0x10))->y;
-                    p1_00.y = (float)*(undefined4 *)(iVar12 + 0x18);
-                    p1_00.x = (float)uVar18;
-                    p1_00.z = fVar8;
-                    p2_00.y = RStack_4.m_Direction.y;
-                    p2_00.x = RStack_4.m_Direction.x;
-                    p2_00.z = fVar9;
-                    bVar19 = MathFunctions::MathFunctions_LineFacet(p1_00,p2_00,*(Vector3 *)(iVar12 + 0x28),*(Vector3 *)(iVar12 + 0x1c),*(Vector3 *)(iVar12 + 0x10),&VStack_1,(MethodInfo *)0x0);
-                    return bVar19 != 0 || bVar17 != 0;
+                if (*(int *)(iVar12 + 0xc) != 0) {
+                  if (3 < *(uint *)(iVar12 + 0xc)) {
+                    p2.y = RStack_4.m_Direction.y;
+                    p2.x = RStack_4.m_Direction.x;
+                    p1.y = fVar7;
+                    p1.x = fVar6;
+                    p1.z = fVar8;
+                    p2.z = fVar9;
+                    bVar17 = MathFunctions::MathFunctions_LineFacet(p1,p2,*(Vector3 *)(iVar12 + 0x10),*(Vector3 *)(iVar12 + 0x34),*(Vector3 *)(iVar12 + 0x28),&VStack_1,(MethodInfo *)0x0);
+                    if (2 < *(uint *)(iVar12 + 0xc)) {
+                      if (*(int *)(iVar12 + 0xc) != 0) {
+                        uVar18 = ((Vector3 *)(iVar12 + 0x10))->y;
+                        p1_00.y = (float)*(undefined4 *)(iVar12 + 0x18);
+                        p1_00.x = (float)uVar18;
+                        p1_00.z = (float)&VStack_1;
+                        p2_00.y = RStack_4.m_Direction.y;
+                        p2_00.x = RStack_4.m_Direction.x;
+                        p2_00.z = fVar9;
+                        bVar19 = MathFunctions::MathFunctions_LineFacet(p1_00,p2_00,*(Vector3 *)(iVar12 + 0x28),*(Vector3 *)(iVar12 + 0x1c),*(Vector3 *)(iVar12 + 0x10),&VStack_1,(MethodInfo *)0x0);
+                        return bVar19 != 0 || bVar17 != 0;
+                      }
+                    }
                   }
                 }
                 goto code_?;
@@ -218,7 +222,7 @@ void Assembly-CSharp.dll::IndentArea::IndentArea_UpdateIndentArea(IndentArea *th
 {
   if (cRam_? == '\0') {
     func_?(&TypeInfo__Cube);
-    func_?(0x86ec);
+    func_?(0x22a8);
     func_?(&MethodInfo__System__Collections__Generic__List<int>__Add_int_);
     func_?(&MethodInfo__System__Collections__Generic__List<int>__ToArray__);
     func_?(&MethodInfo__System__Collections__Generic__List<int>__List__);
@@ -398,9 +402,9 @@ void Assembly-CSharp.dll::IndentArea::IndentArea_UpdateIndentArea(IndentArea *th
                                               uVar29 = pVVar22->y;
                                               uVar30 = (info->fields).normal.x;
                                               uVar31 = (info->fields).normal.y;
-                                              value.y = (float)uVar29 + (float)uVar31 * 0.0015 + (fVar18 - fVar27);
-                                              value.x = (float)uVar28 + (float)uVar30 * 0.0015 + (((float)uVar12 + ((float)uVar11 - (float)uVar10) * 0.5) - fVar26);
-                                              value.z = pVVar22->z + (info->fields).normal.z * 0.0015 + ((float)pVVar19 - (fVar14 + (fVar25 - fVar14) * 0.5));
+                                              value.y = (float)uVar31 * 0.0015 + (fVar18 - fVar27) + (float)uVar29;
+                                              value.x = (float)uVar30 * 0.0015 + (((float)uVar12 + ((float)uVar11 - (float)uVar10) * 0.5) - fVar26) + (float)uVar28;
+                                              value.z = (info->fields).normal.z * 0.0015 + ((float)pVVar19 - (fVar14 + (fVar25 - fVar14) * 0.5)) + pVVar22->z;
                                               UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position(pTVar13,value,(MethodInfo *)0x0);
                                               return;
                                             }

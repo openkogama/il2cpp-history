@@ -62,16 +62,19 @@ void Assembly-CSharp.dll::GhostEye+IdleBase::GhostEye_IdleBase_UpdateWrappedTime
 {
   fVar1 = deltaTime * (this->fields).direction * (this->fields).rotatationPrSecond * 6.2831855 + (this->fields).wrappedTime;
   (this->fields).wrappedTime = fVar1;
-  while (6.2831855 <= fVar1) {
-    fVar1 = (this->fields).wrappedTime - 6.2831855;
+  if (6.2831855 <= fVar1) {
+    do {
+      fVar1 = fVar1 - 6.2831855;
+    } while (6.2831855 <= fVar1);
     (this->fields).wrappedTime = fVar1;
   }
   pfVar2 = &(this->fields).wrappedTime;
   if (*pfVar2 <= -6.2831855 && *pfVar2 != -6.2831855) {
+    fVar1 = (this->fields).wrappedTime;
     do {
-      fVar1 = (this->fields).wrappedTime + 6.2831855;
-      (this->fields).wrappedTime = fVar1;
+      fVar1 = fVar1 + 6.2831855;
     } while (fVar1 < -6.2831855);
+    (this->fields).wrappedTime = fVar1;
   }
   return;
 }

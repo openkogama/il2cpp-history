@@ -7,16 +7,19 @@ Quaternion * Assembly-CSharp.dll::GhostEye+SneakySideToSide::GhostEye_SneakySide
   fStack_1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
   fVar2 = fStack_1 * (this->fields)._.direction * (this->fields)._.rotatationPrSecond * 6.2831855 + (this->fields)._.wrappedTime;
   (this->fields)._.wrappedTime = fVar2;
-  while (6.2831855 <= fVar2) {
-    fVar2 = (this->fields)._.wrappedTime - 6.2831855;
+  if (6.2831855 <= fVar2) {
+    do {
+      fVar2 = fVar2 - 6.2831855;
+    } while (6.2831855 <= fVar2);
     (this->fields)._.wrappedTime = fVar2;
   }
   pfVar3 = &(this->fields)._.wrappedTime;
   if (*pfVar3 <= -6.2831855 && *pfVar3 != -6.2831855) {
+    fVar2 = (this->fields)._.wrappedTime;
     do {
-      fVar2 = (this->fields)._.wrappedTime + 6.2831855;
-      (this->fields)._.wrappedTime = fVar2;
+      fVar2 = fVar2 + 6.2831855;
     } while (fVar2 < -6.2831855);
+    (this->fields)._.wrappedTime = fVar2;
   }
   dVar4 = (double)(this->fields)._.wrappedTime;
   func_?();

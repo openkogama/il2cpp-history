@@ -177,7 +177,7 @@ code_?:
         uStack_46._0_4_ = pVVar44->x;
         uStack_46._4_4_ = pVVar44->y;
         pTStack_47 = (Tuple_3_Object_Memory_1_Byte_Object___Class *)pVVar44->z;
-        pSStack_30 = (String *)-(uStack_41._4_4_ * uStack_46._4_4_ + (float)uStack_41 * (float)uStack_46 + (float)pTStack_43 * (float)pTStack_47);
+        pSStack_30 = (String *)-((float)pTStack_43 * (float)pTStack_47 + uStack_41._4_4_ * uStack_46._4_4_ + (float)uStack_41 * (float)uStack_46);
         pOVar32[5].klass = (Object__Class *)(float)uStack_46;
         pOVar32[5].monitor = (MonitorData *)uStack_46._4_4_;
         pOVar32[6].klass = (Object__Class *)pTStack_47;

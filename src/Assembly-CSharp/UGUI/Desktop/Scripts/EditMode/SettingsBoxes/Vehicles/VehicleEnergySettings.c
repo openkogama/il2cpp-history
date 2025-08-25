@@ -36,11 +36,23 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
   }
   else {
     pMVar5 = (pVVar1->fields).vehicleEnergySpawner;
-    if ((pMVar5 != (MVWorldObjectSpawnerVehicleEnergy *)0x0) && (this_00 = (pMVar5->fields)._._._._._.data, this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0)) {
-      bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__TryGetValue(this_00,(Object *)StringLiteral_BlueprintData,(Object **)&stack0xfffffff8,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__);
-      if (((bVar6 != 0) && (((pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0 && ((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).naturalAligment <= (pDVar2->klass->_1).naturalAligment)) && ((Dictionary_2_System_Object_System_Object___Class *)(pDVar2->klass->_1).typeHierarchy[(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).naturalAligment - 1] == TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)))) && (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0)) {
-        (pVVar1->fields).spawnerBpData = pDVar2;
-        func_?(&(pVVar1->fields).spawnerBpData);
+    if ((pMVar5 != (MVWorldObjectSpawnerVehicleEnergy *)0x0) && (pDVar6 = (pMVar5->fields)._._._._._.data, pDVar6 != (Dictionary_2_System_Object_System_Object_ *)0x0)) {
+      bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__TryGetValue(pDVar6,(Object *)StringLiteral_BlueprintData,(Object **)&stack0xfffffff8,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__);
+      if ((bVar7 != 0) && (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0)) {
+        if (((pDVar2->klass->_1).naturalAligment < (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).naturalAligment) || ((Dictionary_2_System_Object_System_Object___Class *)(pDVar2->klass->_1).typeHierarchy[(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).naturalAligment - 1] != TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
+          bVar8 = false;
+        }
+        else {
+          bVar8 = true;
+        }
+        pDVar6 = (Dictionary_2_System_Object_System_Object_ *)0x0;
+        if (bVar8) {
+          pDVar6 = pDVar2;
+        }
+        if (pDVar6 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+          (pVVar1->fields).spawnerBpData = pDVar6;
+          func_?();
+        }
       }
       if ((pVVar1->fields).spawnerBpData == (Dictionary_2_System_Object_System_Object_ *)0x0) {
         pDVar3 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)func_?();
@@ -48,20 +60,20 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
         (pVVar1->fields).spawnerBpData = (Dictionary_2_System_Object_System_Object_ *)pDVar3;
         func_?(&(pVVar1->fields).spawnerBpData);
       }
-      pDVar7 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pVVar1->fields).spawnerBpData;
-      if (pDVar7 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-        bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey(pDVar7,(Object *)StringLiteral_RespawnCount,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_);
-        if (bVar6 == 0) {
+      pDVar9 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pVVar1->fields).spawnerBpData;
+      if (pDVar9 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+        bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey(pDVar9,(Object *)StringLiteral_RespawnCount,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_);
+        if (bVar7 == 0) {
           pDVar2 = (pVVar1->fields).spawnerBpData;
           this = (VehicleEnergySettings *)0xa;
           pOVar4 = (Object *)func_?();
           if (pDVar2 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add(pDVar2,(Object *)StringLiteral_RespawnCount,pOVar4,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_);
         }
-        pDVar7 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pVVar1->fields).spawnerBpData;
-        if (pDVar7 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-          bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey(pDVar7,(Object *)StringLiteral_RespawnInterval,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_);
-          if (bVar6 != 0) {
+        pDVar9 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pVVar1->fields).spawnerBpData;
+        if (pDVar9 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+          bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey(pDVar9,(Object *)StringLiteral_RespawnInterval,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_);
+          if (bVar7 != 0) {
             return;
           }
           pDVar2 = (pVVar1->fields).spawnerBpData;
@@ -77,8 +89,8 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
   }
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -120,11 +132,23 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
   }
   else {
     pMVar5 = (pVVar1->fields).vehicleEnergySpawnObject;
-    if ((pMVar5 != (MVVehicleEnergy *)0x0) && (this_00 = (pMVar5->fields)._._._._.data, this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0)) {
-      bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__TryGetValue(this_00,(Object *)StringLiteral_BlueprintData,(Object **)&stack0xfffffff8,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__);
-      if (((bVar6 != 0) && (((pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0 && ((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).naturalAligment <= (pDVar2->klass->_1).naturalAligment)) && ((Dictionary_2_System_Object_System_Object___Class *)(pDVar2->klass->_1).typeHierarchy[(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).naturalAligment - 1] == TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)))) && (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0)) {
-        (pVVar1->fields).vehicleEnergyBpData = pDVar2;
-        func_?(&(pVVar1->fields).vehicleEnergyBpData);
+    if ((pMVar5 != (MVVehicleEnergy *)0x0) && (pDVar6 = (pMVar5->fields)._._._._.data, pDVar6 != (Dictionary_2_System_Object_System_Object_ *)0x0)) {
+      bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__TryGetValue(pDVar6,(Object *)StringLiteral_BlueprintData,(Object **)&stack0xfffffff8,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__);
+      if ((bVar7 != 0) && (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0)) {
+        if (((pDVar2->klass->_1).naturalAligment < (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).naturalAligment) || ((Dictionary_2_System_Object_System_Object___Class *)(pDVar2->klass->_1).typeHierarchy[(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).naturalAligment - 1] != TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
+          bVar8 = false;
+        }
+        else {
+          bVar8 = true;
+        }
+        pDVar6 = (Dictionary_2_System_Object_System_Object_ *)0x0;
+        if (bVar8) {
+          pDVar6 = pDVar2;
+        }
+        if (pDVar6 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+          (pVVar1->fields).vehicleEnergyBpData = pDVar6;
+          func_?();
+        }
       }
       if ((pVVar1->fields).vehicleEnergyBpData == (Dictionary_2_System_Object_System_Object_ *)0x0) {
         pDVar3 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)func_?();
@@ -132,20 +156,20 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
         (pVVar1->fields).vehicleEnergyBpData = (Dictionary_2_System_Object_System_Object_ *)pDVar3;
         func_?(&(pVVar1->fields).vehicleEnergyBpData);
       }
-      pDVar7 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pVVar1->fields).vehicleEnergyBpData;
-      if (pDVar7 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-        bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey(pDVar7,(Object *)StringLiteral_VehicleEnergyName,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_);
-        if (bVar6 == 0) {
+      pDVar9 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pVVar1->fields).vehicleEnergyBpData;
+      if (pDVar9 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+        bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey(pDVar9,(Object *)StringLiteral_VehicleEnergyName,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_);
+        if (bVar7 == 0) {
           pDVar2 = (pVVar1->fields).vehicleEnergyBpData;
           if (pDVar2 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
           method = MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_;
           this = (VehicleEnergySettings *)StringLiteral_Vehicle_Energy;
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__Add(pDVar2,(Object *)StringLiteral_VehicleEnergyName,(Object *)StringLiteral_Vehicle_Energy,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_);
         }
-        pDVar7 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pVVar1->fields).vehicleEnergyBpData;
-        if (pDVar7 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-          bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey(pDVar7,(Object *)StringLiteral_VehicleEnergyAmount,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_);
-          if (bVar6 != 0) {
+        pDVar9 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pVVar1->fields).vehicleEnergyBpData;
+        if (pDVar9 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
+          bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey(pDVar9,(Object *)StringLiteral_VehicleEnergyAmount,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_);
+          if (bVar7 != 0) {
             return;
           }
           pDVar2 = (pVVar1->fields).vehicleEnergyBpData;
@@ -162,8 +186,8 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
   }
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

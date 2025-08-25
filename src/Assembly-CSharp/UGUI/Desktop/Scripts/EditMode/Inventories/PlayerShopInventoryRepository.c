@@ -330,6 +330,7 @@ List_1_InventoryItem_ * Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::I
         puVar6 = &UNK_?;
         collection = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)this_01,(int32_t)key,MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::List<InventoryItem>_>__get_Item_int_);
         pLVar7 = (List_1_InventoryItem_ *)func_?();
+        DStack_2._getEnumeratorRetType = (int32_t)&UNK_?;
         mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object___ctor_1((List_1_System_Object_ *)pLVar7,(IEnumerable_1_System_Object_ *)collection,MethodInfo__System__Collections__Generic__List<InventoryItem>__List_System__Collections__Generic__IEnumerable<InventoryItem>_);
         if (pLVar7 != (List_1_InventoryItem_ *)0x0) {
           mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Reverse((List_1_System_Object_ *)pLVar7,MethodInfo__System__Collections__Generic__List<InventoryItem>__Reverse__);
@@ -511,6 +512,7 @@ List_1_ShopItem_ * Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::Invent
         puVar6 = &UNK_?;
         collection = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)this_01,(int32_t)key,MethodInfo__System__Collections__Generic__Dictionary<int,_System::Collections::Generic::List<ShopItem>_>__get_Item_int_);
         pLVar7 = (List_1_ShopItem_ *)func_?();
+        DStack_2._getEnumeratorRetType = (int32_t)&UNK_?;
         mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object___ctor_1((List_1_System_Object_ *)pLVar7,(IEnumerable_1_System_Object_ *)collection,MethodInfo__System__Collections__Generic__List<ShopItem>__List_System__Collections__Generic__IEnumerable<ShopItem>_);
         if (pLVar7 != (List_1_ShopItem_ *)0x0) {
           mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Reverse((List_1_System_Object_ *)pLVar7,MethodInfo__System__Collections__Generic__List<ShopItem>__Reverse__);

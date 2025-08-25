@@ -69,7 +69,7 @@ void Assembly-CSharp.dll::RTG::BoxShape3D::BoxShape3D_AlignHeight(BoxShape3D *th
   fVar11 = pQVar6->z;
   fVar12 = pQVar6->w;
   VStack_2.x = (fVar9 * pQVar6->x + fVar12 * fVar5 + fVar8 * fVar10) - fVar7 * fVar11;
-  VStack_2.y = (fVar7 * fVar12 + fVar10 * fVar9 + fVar11 * fVar5) - fVar8 * pQVar6->x;
+  VStack_2.y = (fVar10 * fVar9 + fVar7 * fVar12 + fVar11 * fVar5) - fVar8 * pQVar6->x;
   VStack_2.z = (float)&UNK_?;
   quat.y = VStack_2.y;
   quat.x = VStack_2.x;
@@ -109,7 +109,7 @@ void Assembly-CSharp.dll::RTG::BoxShape3D::BoxShape3D_AlignWidth(BoxShape3D *thi
   fVar11 = pQVar6->z;
   fVar12 = pQVar6->w;
   VStack_2.x = (fVar9 * pQVar6->x + fVar12 * fVar5 + fVar8 * fVar10) - fVar7 * fVar11;
-  VStack_2.y = (fVar7 * fVar12 + fVar10 * fVar9 + fVar11 * fVar5) - fVar8 * pQVar6->x;
+  VStack_2.y = (fVar10 * fVar9 + fVar7 * fVar12 + fVar11 * fVar5) - fVar8 * pQVar6->x;
   VStack_2.z = (float)&UNK_?;
   quat.y = VStack_2.y;
   quat.x = VStack_2.x;
@@ -575,7 +575,7 @@ Vector3 * Assembly-CSharp.dll::RTG::BoxShape3D::BoxShape3D_get_Max(Vector3 *__re
   fVar6 = (this->fields)._size.z;
   __return_storage_ptr__->x = (float)uVar1 + (float)uVar4 * 0.5;
   __return_storage_ptr__->y = (float)uVar2 + (float)uVar5 * 0.5;
-  __return_storage_ptr__->z = fVar3 + fVar6 * 0.5;
+  __return_storage_ptr__->z = fVar6 * 0.5 + fVar3;
   return __return_storage_ptr__;
 }
 

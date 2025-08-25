@@ -527,14 +527,14 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::SpeedHackDe
       iVar10 = *piVar5;
       (this->fields).prevTicks = uStack_2;
       iVar11 = *(int *)((int)&(this->fields).prevIntervalTicks + 4);
-      dVar12 = (double)((this->fields).interval * 1e+07);
+      fVar12 = SUB84((double)((this->fields).interval * 1e+07),0);
       lVar13 = func_?();
       if (lVar13 <= CONCAT44((uVar3 - iVar11) - (uint)(uVar4 < (uint)iVar9),uVar4 - (int)iVar10)) {
         mscorlib.dll::System::Environment::Environment_get_TickCount((MethodInfo *)0x0);
         uVar14 = (this->fields).currentFalsePositives;
         uVar15 = (undefined4)uStack_2;
         func_?();
-        if (5e+06 < ABS((float)dVar12)) {
+        if (5e+06 < ABS(fVar12)) {
           bVar16 = uVar14 + 1;
           (this->fields).currentFalsePositives = bVar16;
           if (bVar16 <= (this->fields).maxFalsePositives) {

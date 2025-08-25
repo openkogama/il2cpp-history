@@ -65,7 +65,7 @@ Vector3 * Assembly-CSharp.dll::HamsterWheelBounceState::HamsterWheelBounceState_
     func_?(&TypeInfo__UnityEngine__Mathf,fVar7,0,0,0);
     cRam_? = '\x01';
   }
-  fVar12 = fVar7 * fVar7 + fVar8 * fVar8 + fVar6 * fVar6;
+  fVar12 = fVar8 * fVar8 + fVar7 * fVar7 + fVar6 * fVar6;
   if (fVar12 < TypeInfo__UnityEngine__Mathf->static_fields->Epsilon) {
     if (cRam_? == '\0') {
       func_?(&TypeInfo__UnityEngine__Vector3,fVar7,uVar9,uVar10,uVar11);
@@ -77,7 +77,7 @@ Vector3 * Assembly-CSharp.dll::HamsterWheelBounceState::HamsterWheelBounceState_
     fVar6 = (pVVar13->zeroVector).z;
   }
   else {
-    fVar15 = fVar1 * fVar7 + fVar2 * fVar8 + fVar3 * fVar6;
+    fVar15 = fVar2 * fVar8 + fVar1 * fVar7 + fVar3 * fVar6;
     fVar6 = (fVar6 * fVar15) / fVar12;
     uStack_14 = CONCAT44((fVar8 * fVar15) / fVar12,(fVar7 * fVar15) / fVar12);
   }

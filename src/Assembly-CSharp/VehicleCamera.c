@@ -110,7 +110,7 @@ void Assembly-CSharp.dll::VehicleCamera::VehicleCamera_Reset(VehicleCamera *this
         TargetRotation::TargetRotation_SetTargetRotation_2(this_00,q,(MethodInfo *)0x0);
         pTVar1 = (this->fields)._.lookAtTransform;
         if (pTVar1 != (Transform *)0x0) {
-          pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xfffffff0,pTVar1,(MethodInfo *)0x0);
+          pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffe4,pTVar1,(MethodInfo *)0x0);
           uVar9 = pVVar8->x;
           uVar10 = pVVar8->y;
           fVar3 = pVVar8->z;
@@ -120,7 +120,7 @@ void Assembly-CSharp.dll::VehicleCamera::VehicleCamera_Reset(VehicleCamera *this
           pPVar13 = (this->fields)._.smoothLookAt;
           (this->fields)._.currentLookAt.x = (float)uVar11 + (float)uVar9;
           (this->fields)._.currentLookAt.y = (float)uVar10 + (float)uVar12;
-          (this->fields)._.currentLookAt.z = fVar4 + fVar3;
+          (this->fields)._.currentLookAt.z = fVar3 + fVar4;
           if (pPVar13 != (PlaymodeCamera_SmoothLookAt *)0x0) {
             if (cRam_? == '\0') {
               func_?();
@@ -217,7 +217,7 @@ void Assembly-CSharp.dll::VehicleCamera::VehicleCamera_UpdateCamera(VehicleCamer
       b.x = fVar21;
       b.z = fVar23;
       b.w = fVar24;
-      pQVar1 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Slerp((Quaternion *)&stack0xffffffb8,a,b,(float)targetTransform[9].monitor * fVar30 * fVar9 * fVar9,(MethodInfo *)0x0);
+      pQVar1 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Slerp((Quaternion *)&stack0xffffffb8,a,b,fVar30 * (float)targetTransform[9].monitor * fVar9 * fVar9,(MethodInfo *)0x0);
       fVar21 = pQVar1->x;
       fVar22 = pQVar1->y;
       fVar23 = pQVar1->z;
@@ -229,10 +229,10 @@ void Assembly-CSharp.dll::VehicleCamera::VehicleCamera_UpdateCamera(VehicleCamer
         value.x = (float)uVar11 + (float)uVar31;
         value.y = (float)uVar12 + (float)uVar32;
         ProtectedTransform::ProtectedTransform_set_position(in_stack_33,value,(MethodInfo *)0x0);
-        value_00.y = (fVar3 * fVar24 + fVar22 * 3.244888e-29 + fVar23 * fVar2) - fVar4 * fVar21;
-        value_00.x = (fVar24 * fVar2 + fVar21 * 3.244888e-29 + fVar22 * fVar4) - fVar23 * fVar3;
-        value_00.z = (fVar4 * fVar24 + fVar23 * 3.244888e-29 + fVar3 * fVar21) - fVar22 * fVar2;
-        value_00.w = ((fVar24 * 3.244888e-29 - fVar2 * fVar21) - fVar3 * fVar22) - fVar23 * fVar4;
+        value_00.y = (fVar3 * fVar24 + fVar22 * 3.2502373e-29 + fVar23 * fVar2) - fVar4 * fVar21;
+        value_00.x = (fVar24 * fVar2 + fVar21 * 3.2502373e-29 + fVar22 * fVar4) - fVar23 * fVar3;
+        value_00.z = (fVar4 * fVar24 + fVar23 * 3.2502373e-29 + fVar3 * fVar21) - fVar22 * fVar2;
+        value_00.w = ((fVar24 * 3.2502373e-29 - fVar2 * fVar21) - fVar3 * fVar22) - fVar23 * fVar4;
         ProtectedTransform::ProtectedTransform_set_rotation(in_stack_33,value_00,(MethodInfo *)0x0);
         this_00 = (AvatarCameraDistTransparency *)targetTransform[8].fields.transform;
         if (this_00 != (AvatarCameraDistTransparency *)0x0) {

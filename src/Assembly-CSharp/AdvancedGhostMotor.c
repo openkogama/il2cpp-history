@@ -147,23 +147,23 @@ void Assembly-CSharp.dll::AdvancedGhostMotor::AdvancedGhostMotor_FixedUpdateRota
         pTVar1 = (this->fields).targetTransform;
         if (pTVar1 == (Transform *)0x0) goto code_?;
         pQVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localRotation((Quaternion *)&stack0xffffffc8,pTVar1,(MethodInfo *)0x0);
-        fVar9 = pQVar11->w;
+        fVar5 = pQVar11->w;
         pQVar11 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation_1((Quaternion *)&stack0xffffffc8,forward,(MethodInfo *)0x0);
         method_00 = (MethodInfo *)pQVar11->x;
-        fVar5 = pQVar11->y;
-        fVar8 = pQVar11->z;
-        fVar12 = pQVar11->w;
-        fVar13 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime(method_00);
-        fVar13 = (fVar13 / 0.02) * 0.1;
-        a.y = fVar13;
-        a.x = fVar12;
+        fVar8 = pQVar11->y;
+        fVar12 = pQVar11->z;
+        fVar13 = pQVar11->w;
+        fVar9 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime(method_00);
+        fVar9 = (fVar9 / 0.02) * 0.1;
+        a.y = fVar9;
+        a.x = fVar13;
         a.z = 0.0;
-        a.w = fVar9;
-        b.y = fVar5;
+        a.w = fVar5;
+        b.y = fVar8;
         b.x = (float)method_00;
-        b.z = fVar8;
-        b.w = fVar12;
-        pQVar11 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Slerp((Quaternion *)&stack0xffffffc8,a,b,fVar13,(MethodInfo *)0x0);
+        b.z = fVar12;
+        b.w = fVar13;
+        pQVar11 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Slerp((Quaternion *)&stack0xffffffc8,a,b,fVar9,(MethodInfo *)0x0);
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation(pTVar1,*pQVar11,(MethodInfo *)0x0);
       }
     }
@@ -412,7 +412,7 @@ void Assembly-CSharp.dll::AdvancedGhostMotor::AdvancedGhostMotor_Move(AdvancedGh
     pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffdc,this_00,(MethodInfo *)0x0);
     uVar3 = pVVar2->x;
     uVar4 = pVVar2->y;
-    value.y = (float)uVar4 + velocity.y * fVar1;
+    value.y = velocity.y * fVar1 + (float)uVar4;
     value.x = (float)uVar3 + velocity.x * fVar1;
     value.z = pVVar2->z + velocity.z * fVar1;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position(this_00,value,(MethodInfo *)0x0);

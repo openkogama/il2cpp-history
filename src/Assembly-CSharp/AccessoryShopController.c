@@ -427,8 +427,8 @@ void Assembly-CSharp.dll::AccessoryShopController::AccessoryShopController_Displ
   puStack_2 = &DAT_?;
   uStack_3 = *unaff_FS_OFFSET;
   *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff8c;
-  puVar5 = &stack0xffffff8c;
+  puStack_4 = &stack0xffffff90;
+  puVar5 = &stack0xffffff90;
   if (cRam_? == '\0') {
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_TabState>__Add_int__TabState_);
     func_?(&MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AccessoryCategory,_System::Collections::Generic::List<AccessoryDataClient>_>__GetEnumerator__);
@@ -450,7 +450,7 @@ void Assembly-CSharp.dll::AccessoryShopController::AccessoryShopController_Displ
   DStack_6._getEnumeratorRetType = 0;
   this_01 = (Dictionary_2_System_UInt32_System_Object_ *)AccessoryDataManager::AccessoryDataManager_GetAccessoriesCategoryMap((MethodInfo *)0x0);
   if (this_01 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
-    pDVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)&stack0xffffff98,this_01,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AccessoryCategory,_System::Collections::Generic::List<AccessoryDataClient>_>__GetEnumerator__);
+    pDVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)&stack0xffffff9c,this_01,MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AccessoryCategory,_System::Collections::Generic::List<AccessoryDataClient>_>__GetEnumerator__);
     uStack_8 = 0;
     DStack_6._dictionary = pDVar7->_dictionary;
     DStack_6._version = pDVar7->_version;
@@ -469,7 +469,7 @@ void Assembly-CSharp.dll::AccessoryShopController::AccessoryShopController_Displ
       }
       ppIStack_12 = (Il2CppType **)DStack_6._current.key;
       pLStack_13 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)DStack_6._current.value;
-      pIStack_14 = (Il2CppClass *)LocalizedEnums::LocalizedEnums___3(DStack_6._current.key,(MethodInfo *)0x0);
+      pDStack_14 = (Dictionary_2_System_UInt32_System_Object_ *)LocalizedEnums::LocalizedEnums___3(DStack_6._current.key,(MethodInfo *)0x0);
       pIStack_15 = (Il2CppClass *)(this->fields).numberOfSlotsPrPage;
       value = (MethodInfo *)func_?();
       value->return_type = (Il2CppType *)0x1;
@@ -478,8 +478,8 @@ void Assembly-CSharp.dll::AccessoryShopController::AccessoryShopController_Displ
       mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57((Object *)value,ExceptionArgument__Enum_obj,in_stack_17);
       value->parameters = ppIStack_12;
       value->invoker_method = (InvokerMethod)pIStack_15;
-      DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)pIStack_14;
-      value->name = (char *)pIStack_14;
+      DStack_6._dictionary = pDStack_14;
+      value->name = (char *)pDStack_14;
       in_stack_17 = (MethodInfo *)&value->name;
       func_?();
       if (cRam_? == '\0') {
@@ -489,19 +489,19 @@ void Assembly-CSharp.dll::AccessoryShopController::AccessoryShopController_Displ
       }
       index = 0;
       pIStack_15 = (Il2CppClass *)0x0;
-      pIStack_14 = (Il2CppClass *)0x0;
+      pIVar18 = pIStack_15;
       if (pLStack_13 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) break;
-      while (pIStack_15 = pIStack_14, index < (pLStack_13->fields)._size) {
-        RVar18 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(pLStack_13,index,MethodInfo__System__Collections__Generic__List<AccessoryDataClient>__get_Item_int_);
-        if (RVar18 == (RegexCharClass_SingleRange)0x0) goto code_?;
+      while (pIStack_15 = pIVar18, index < (pLStack_13->fields)._size) {
+        RVar19 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(pLStack_13,index,MethodInfo__System__Collections__Generic__List<AccessoryDataClient>__get_Item_int_);
+        if (RVar19 == (RegexCharClass_SingleRange)0x0) goto code_?;
         index = index + 1;
-        pIStack_14 = (Il2CppClass *)((int)&pIStack_14->image + 1);
-        if (*(char *)((int)RVar18 + 0x30) == '\0') {
-          pIStack_14 = pIStack_15;
+        pIVar18 = (Il2CppClass *)((int)&pIStack_15->image + 1);
+        if (*(char *)((int)RVar19 + 0x30) == '\0') {
+          pIVar18 = pIStack_15;
         }
       }
       if (pMStack_16 == (MethodInfo *)0x0) break;
-      pMStack_16->klass = pIStack_14;
+      pMStack_16->klass = pIStack_15;
       this_00 = (this->fields).tabs;
       if (this_00 == (Dictionary_2_System_Int32_TabState_ *)0x0) break;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__Add((Dictionary_2_System_Int32_System_Object_ *)this_00,(int32_t)ppIStack_12,(Object *)pMStack_16,MethodInfo__System__Collections__Generic__Dictionary<int,_TabState>__Add_int__TabState_);
@@ -509,8 +509,8 @@ void Assembly-CSharp.dll::AccessoryShopController::AccessoryShopController_Displ
   }
 code_?:
   func_?();
-  pcVar19 = (code *)swi(3);
-  (*pcVar19)();
+  pcVar20 = (code *)swi(3);
+  (*pcVar20)();
   return;
 }
 
@@ -1712,7 +1712,7 @@ void Assembly-CSharp.dll::AccessoryShopController::AccessoryShopController_Updat
     if (iVar2 != 0) {
       if (*(int *)(iVar2 + 0xc) != 0) {
         *(int *)(iVar2 + 0x10) = (int)(pOVar5[2].monitor + -1) * (int)pOVar5[1].klass;
-        if ((1 < *(uint *)(iVar2 + 0xc)) && (*(int *)(iVar2 + 0x14) = (int)pOVar5[1].klass * (int)pOVar5[2].monitor, *(int *)(iVar2 + 0xc) != 0)) {
+        if ((1 < *(uint *)(iVar2 + 0xc)) && (*(int *)(iVar2 + 0x14) = (int)pOVar5[2].monitor * (int)pOVar5[1].klass, *(int *)(iVar2 + 0xc) != 0)) {
           index = *(AccessoryShopController **)(iVar2 + 0x10);
           this = index;
           if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {

@@ -142,8 +142,8 @@ code_?:
     pAVar1 = (Action_2_Boolean_Boolean___Class *)(this->fields).laserPointer;
     if (pAVar1 == (Action_2_Boolean_Boolean___Class *)0x0) goto code_?;
     source = *(Delegate **)&(pAVar1->_1).method_count;
-    this_01 = (UnityAction_2_System_Int32_System_Int32_ *)func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::UnityAction_2_System_Int32_System_Int32___ctor(this_01,(Object *)this,MethodInfo__MVBuildModeAvatarRemote__HandleLaserActive_bool__bool_,(MethodInfo *)0x0);
+    this_01 = (UnityAction_2_System_Boolean_System_Boolean_ *)func_?();
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Boolean,System::Boolean]::UnityAction_2_System_Boolean_System_Boolean___ctor(this_01,(Object *)this,MethodInfo__MVBuildModeAvatarRemote__HandleLaserActive_bool__bool_,(MethodInfo *)0x0);
     unaff_EDI = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)mscorlib.dll::System::Delegate::Delegate_Remove(source,(Delegate *)this_01,(MethodInfo *)0x0);
     pAVar4 = TypeInfo__System__Action<bool,_bool>;
     if (unaff_EDI == (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
@@ -365,8 +365,8 @@ void Assembly-CSharp.dll::MVBuildModeAvatarRemote::MVBuildModeAvatarRemote_Initi
     pLVar2 = (this->fields).laserPointer;
     if (pLVar2 != (LaserPointer *)0x0) {
       pAVar3 = (pLVar2->fields).OnLaserActive;
-      this_00 = (UnityAction_2_System_Int32_System_Int32_ *)func_?(TypeInfo__System__Action<bool,_bool>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::UnityAction_2_System_Int32_System_Int32___ctor(this_00,(Object *)this,MethodInfo__MVBuildModeAvatarRemote__HandleLaserActive_bool__bool_,(MethodInfo *)0x0);
+      this_00 = (UnityAction_2_System_Boolean_System_Boolean_ *)func_?(TypeInfo__System__Action<bool,_bool>);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Boolean,System::Boolean]::UnityAction_2_System_Boolean_System_Boolean___ctor(this_00,(Object *)this,MethodInfo__MVBuildModeAvatarRemote__HandleLaserActive_bool__bool_,(MethodInfo *)0x0);
       unaff_ESI = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)pAVar3,(Delegate *)this_00,(MethodInfo *)0x0);
       unaff_EDI = TypeInfo__System__Action<bool,_bool>;
       if (unaff_ESI == (Delegate *)0x0) {
@@ -481,8 +481,8 @@ code_?:
     pAVar6 = (Action_2_Boolean_Boolean___Class *)(this->fields).laserPointer;
     if (pAVar6 == (Action_2_Boolean_Boolean___Class *)0x0) goto code_?;
     a = *(Delegate **)&(pAVar6->_1).method_count;
-    this_01 = (UnityAction_2_System_Int32_System_Int32_ *)func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::UnityAction_2_System_Int32_System_Int32___ctor(this_01,(Object *)this,MethodInfo__MVBuildModeAvatarRemote__HandleLaserActive_bool__bool_,(MethodInfo *)0x0);
+    this_01 = (UnityAction_2_System_Boolean_System_Boolean_ *)func_?();
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Boolean,System::Boolean]::UnityAction_2_System_Boolean_System_Boolean___ctor(this_01,(Object *)this,MethodInfo__MVBuildModeAvatarRemote__HandleLaserActive_bool__bool_,(MethodInfo *)0x0);
     unaff_ESI = pAVar6;
     unaff_EDI = mscorlib.dll::System::Delegate::Delegate_Combine(a,(Delegate *)this_01,(MethodInfo *)0x0);
     pAVar6 = TypeInfo__System__Action<bool,_bool>;

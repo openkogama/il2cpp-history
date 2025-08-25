@@ -499,9 +499,7 @@ void Assembly-CSharp.dll::ESInsert::ESInsert_Execute(ESInsert *this,EditorStateM
     func_?(&TypeInfo__MVInputWrapper);
     cRam_? = '\x01';
   }
-  if (e == (EditorStateMachine *)0x0) goto code_?;
-  pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
-  if ((pMVar1 == (MVWorldObjectClient *)0x0) || (this_00 = (pMVar1->fields).gameObject, this_00 == (GameObject *)0x0)) goto code_?;
+  if (((e == (EditorStateMachine *)0x0) || (pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0), pMVar1 == (MVWorldObjectClient *)0x0)) || (this_00 = (pMVar1->fields).gameObject, this_00 == (GameObject *)0x0)) goto code_?;
   pMVar2 = (MeshFilter__Array *)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentsInChildren(this_00,UnityEngine__MeshFilter__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshFilter>______);
   (this->fields).previewMeshes = pMVar2;
   func_?(&(this->fields).previewMeshes,pMVar2);
@@ -527,247 +525,196 @@ void Assembly-CSharp.dll::ESInsert::ESInsert_Execute(ESInsert *this,EditorStateM
     cRam_? = '\x01';
   }
   pVVar3 = TypeInfo__UnityEngine__Vector3->static_fields;
-  VStack_6.x = (pVVar3->upVector).x;
-  VStack_6.y = (pVVar3->upVector).y;
-  VStack_6.z = (pVVar3->upVector).z;
+  IStack_6.klass = (InsertCursor__Class *)(pVVar3->upVector).x;
+  IStack_6.monitor = (MonitorData *)(pVVar3->upVector).y;
+  IStack_6.fields._._._._.m_CachedPtr = (Component__Fields)(pVVar3->upVector).z;
   pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
-  bVar7 = ESInsert_DrawPlanePick(this,pMVar1,&VStack_4,&VStack_5,&VStack_6,(MethodInfo *)0x0);
+  bVar7 = ESInsert_DrawPlanePick(this,pMVar1,&VStack_4,&VStack_5,(Vector3 *)&IStack_6,(MethodInfo *)0x0);
   if (bVar7 == 0) {
-    pMStack_8 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
-    method_00 = (MethodInfo *)&UNK_?;
-    func_?(&stack0xffffff00,0,0x48);
-    bVar7 = EditModeObjectPicker::EditModeObjectPicker_Pick((VoxelHit *)&stack0xffffff00,(this->fields).woIgnoreList,-0x40005,(MethodInfo *)0x0);
+    pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
+    method_00 = (MethodInfo *)0x0;
+    pIVar8 = &IStack_6;
+    bVar7 = ESInsert_WorldPick(this,pMVar1,&VStack_4,&VStack_5,(Vector3 *)pIVar8,(MethodInfo *)0x0);
+    this_01 = (this->fields).insertCursor;
     if (bVar7 != 0) {
-      QStack_9._4_8_ = CONCAT44(fStack_10,QStack_9.y) ^ 0x8000000000000000;
-      surfaceNormal.z = QStack_9.z;
-      surfaceNormal.x = (float)(int)(uStack_11 ^ 0x8000000080000000);
-      surfaceNormal.y = (float)(int)((uStack_11 ^ 0x8000000080000000) >> 0x20);
-      pVVar12 = ESInsert_ComputeObjectOffset((Vector3 *)&RStack_13.m_Origin.z,this,pMStack_8,surfaceNormal,(MethodInfo *)0x0);
-      VStack_5.x = (this->fields).insertOffset.x;
-      VStack_5.y = (this->fields).insertOffset.y;
-      VStack_5.z = (this->fields).insertOffset.z;
-      VStack_4.x = pVVar12->x;
-      VStack_4.y = pVVar12->y;
-      VStack_4.z = pVVar12->z;
-      fVar14 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-      pMStack_8 = (MVWorldObjectClient *)(fVar14 * 10.0);
-      if ((float)pMStack_8 < 0.0) {
-        pMVar1 = (MVWorldObjectClient *)0x0;
-      }
-      else {
-        pMVar1 = pMStack_8;
-        if (1.0 < (float)pMStack_8) {
-          pMVar1 = (MVWorldObjectClient *)0x3f800000;
-        }
-      }
-      fVar15 = (VStack_4.z - VStack_5.z) * (float)pMVar1 + VStack_5.z;
-      fVar14 = (VStack_4.x - VStack_5.x) * (float)pMVar1 + VStack_5.x;
-      fVar16 = (VStack_4.y - VStack_5.y) * (float)pMVar1 + VStack_5.y;
-      QStack_9.z = fVar15;
-      RStack_13.m_Origin.y = in_stack_17;
-      RStack_13.m_Origin.x = in_stack_18;
-      (this->fields).insertOffset.x = fVar14;
-      (this->fields).insertOffset.y = fVar16;
-      QStack_9.w = (float)in_stack_19 - fVar15;
-      (this->fields).insertOffset.z = fVar15;
-      (this->fields).insertPosition.x = in_stack_18 - fVar14;
-      (this->fields).insertPosition.y = in_stack_17 - fVar16;
-      (this->fields).insertPosition.z = QStack_9.w;
-      pIVar20 = (this->fields).insertCursor;
-      pMStack_21 = in_stack_19;
-      if (pIVar20 == (InsertCursor *)0x0) goto code_?;
-      pTVar22 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pIVar20,(MethodInfo *)0x0);
-      if (pTVar22 == (Transform *)0x0) goto code_?;
-      value.z = (float)in_stack_19;
-      value.x = RStack_13.m_Origin.x;
-      value.y = RStack_13.m_Origin.y;
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position(pTVar22,value,(MethodInfo *)0x0);
-      pIVar20 = (this->fields).insertCursor;
-      if (pIVar20 == (InsertCursor *)0x0) goto code_?;
-      pMStack_8 = (MVWorldObjectClient *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pIVar20,(MethodInfo *)0x0);
-      fVar14 = (float)uStack_11;
-      fVar15 = (float)(uStack_11 >> 0x20);
+      (this->fields).insertPosition.x = VStack_4.x;
+      (this->fields).insertPosition.y = VStack_4.y;
+      (this->fields).insertPosition.z = VStack_4.z;
+      if (this_01 == (InsertCursor *)0x0) goto code_?;
       goto code_?;
     }
-    pIVar20 = (this->fields).insertCursor;
-    if (pIVar20 == (InsertCursor *)0x0) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled((Behaviour *)pIVar20,0,(MethodInfo *)0x0);
-    VStack_4.x = (this->fields).insertOffset.x;
-    VStack_4.y = (this->fields).insertOffset.y;
-    VStack_4.z = (this->fields).insertOffset.z;
+    if (this_01 == (InsertCursor *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled((Behaviour *)this_01,0,(MethodInfo *)0x0);
+    VStack_5.x = (this->fields).insertOffset.x;
+    VStack_5.y = (this->fields).insertOffset.y;
+    VStack_5.z = (this->fields).insertOffset.z;
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Vector3);
+      func_?();
       cRam_? = '\x01';
     }
     pVVar3 = TypeInfo__UnityEngine__Vector3->static_fields;
-    VStack_5.x = (pVVar3->zeroVector).x;
-    VStack_5.y = (pVVar3->zeroVector).y;
-    VStack_5.z = (pVVar3->zeroVector).z;
-    fVar14 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    fVar14 = fVar14 * 10.0;
-    if (fVar14 < 0.0) {
-      fVar14 = 0.0;
+    IStack_6.klass = (InsertCursor__Class *)(pVVar3->zeroVector).x;
+    IStack_6.monitor = (MonitorData *)(pVVar3->zeroVector).y;
+    IStack_6.fields._._._._.m_CachedPtr = (Component__Fields)(pVVar3->zeroVector).z;
+    fVar9 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+    fVar9 = fVar9 * 10.0;
+    if (fVar9 < 0.0) {
+      fVar9 = 0.0;
     }
-    else if (1.0 < fVar14) {
-      fVar14 = 1.0;
+    else if (1.0 < fVar9) {
+      fVar9 = 1.0;
     }
-    QStack_9.z = (VStack_5.z - VStack_4.z) * fVar14 + VStack_4.z;
-    (this->fields).insertOffset.x = (VStack_5.x - VStack_4.x) * fVar14 + VStack_4.x;
-    (this->fields).insertOffset.y = (VStack_5.y - VStack_4.y) * fVar14 + VStack_4.y;
-    (this->fields).insertOffset.z = QStack_9.z;
-    pMStack_8 = (MVWorldObjectClient *)(this->fields).mainCamera;
+    QStack_10.z = ((float)IStack_6.fields._._._._.m_CachedPtr - VStack_5.z) * fVar9 + VStack_5.z;
+    (this->fields).insertOffset.x = ((float)IStack_6.klass - VStack_5.x) * fVar9 + VStack_5.x;
+    (this->fields).insertOffset.y = ((float)IStack_6.monitor - VStack_5.y) * fVar9 + VStack_5.y;
+    (this->fields).insertOffset.z = QStack_10.z;
+    IStack_6.fields.renderers = (MeshRenderer__Array *)(this->fields).mainCamera;
     if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__MVInputWrapper);
+      func_?();
     }
-    pVVar12 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::DefaultEventSystem+Input::DefaultEventSystem_Input_get_mousePosition((Vector3 *)&QStack_9,(DefaultEventSystem_Input *)0x0,method_00);
-    VStack_4.x = pVVar12->x;
-    pVVar12 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::DefaultEventSystem+Input::DefaultEventSystem_Input_get_mousePosition((Vector3 *)&QStack_9,(DefaultEventSystem_Input *)0x0,method_00);
-    VStack_4.z = 0.0;
-    VStack_4.y = pVVar12->y;
-    if (pMStack_8 == (MVWorldObjectClient *)0x0) goto code_?;
-    pos.y = pVVar12->y;
-    pos.x = VStack_4.x;
+    pVVar11 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::DefaultEventSystem+Input::DefaultEventSystem_Input_get_mousePosition((Vector3 *)&QStack_10,(DefaultEventSystem_Input *)0x0,in_stack_12);
+    IStack_6.klass = (InsertCursor__Class *)pVVar11->x;
+    pVVar11 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::DefaultEventSystem+Input::DefaultEventSystem_Input_get_mousePosition((Vector3 *)&QStack_10,(DefaultEventSystem_Input *)0x0,in_stack_12);
+    IStack_6.fields._._._._.m_CachedPtr = (Component__Fields)(Object_1__Fields)0x0;
+    IStack_6.monitor = (MonitorData *)pVVar11->y;
+    if (IStack_6.fields.renderers == (MeshRenderer__Array *)0x0) goto code_?;
+    pos.y = pVVar11->y;
+    pos.x = (float)IStack_6.klass;
     pos.z = 0.0;
-    pRVar23 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenPointToRay_2(&RStack_13,(Camera *)pMStack_8,pos,(MethodInfo *)0x0);
-    fVar14 = (pRVar23->m_Origin).x;
-    fVar15 = (pRVar23->m_Origin).y;
-    pMVar24 = (MVWorldObjectClient__Class *)(pRVar23->m_Origin).z;
+    pRVar13 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenPointToRay_2((Ray *)&stack0xffffff60,(Camera *)IStack_6.fields.renderers,pos,(MethodInfo *)0x0);
+    fVar9 = (pRVar13->m_Origin).x;
     pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
-    pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint((Vector3 *)&QStack_9,(Ray *)&stack0xffffff48,(this->fields).distanceInFreeSpace,(MethodInfo *)0x0);
-    VStack_5.x = pVVar12->x;
-    VStack_5.y = pVVar12->y;
-    VStack_5.z = pVVar12->z;
-    VStack_4.x = (this->fields).pivotToOrigin.x;
-    VStack_4.y = (this->fields).pivotToOrigin.y;
-    VStack_4.z = (this->fields).pivotToOrigin.z;
-    QStack_9.z = VStack_4.z + VStack_5.z;
-    originalPos.y = VStack_4.y + VStack_5.y;
-    originalPos.x = VStack_4.x + VStack_5.x;
-    originalPos.z = VStack_4.z + VStack_5.z;
-    pVVar12 = ESInsert_ComputeSnapPosition((Vector3 *)&QStack_9,this,pMVar1,originalPos,(MethodInfo *)0x0);
-    uVar25 = pVVar12->x;
-    uVar26 = pVVar12->y;
-    uVar27 = (this->fields).insertPosition.x;
-    uVar28 = (this->fields).insertPosition.y;
-    VStack_4.z = (this->fields).insertPosition.z;
-    QStack_9.w = VStack_4.z - (float)pMVar24;
-    VStack_5.y = fVar15;
-    VStack_5.x = fVar14;
-    QStack_9.z = (float)uVar28 - fVar15;
-    QStack_9.y = (float)uVar27 - fVar14;
-    VStack_6.z = pVVar12->z - (float)pMVar24;
-    VStack_4.y = VStack_6.z;
-    VStack_4.x = (float)uVar27;
-    VStack_6.y = (float)uVar26 - fVar15;
-    VStack_6.x = (float)uVar25 - fVar14;
-    VStack_5.z = (float)pMVar24;
-    puVar29 = (undefined8 *)func_?(&RStack_13.m_Origin.z,&VStack_6);
-    VStack_4._0_8_ = *puVar29;
-    VStack_4.z = *(float *)(puVar29 + 1);
-    fVar30 = (float10)func_?(&QStack_9.y,0);
-    pMStack_21 = (MVWorldObjectClient__Class *)(float)fVar30;
-    fVar30 = (float10)func_?(&VStack_6,0);
-    pCStack_31 = (CancellationTokenSource *)(float)fVar30;
-    fVar14 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    pMStack_8 = (MVWorldObjectClient *)(fVar14 * 5.0);
-    if ((float)pMStack_8 < 0.0) {
-      pMVar1 = (MVWorldObjectClient *)0x0;
+    uVar14._4_4_ = (float)&UNK_?;
+    uVar14._0_4_ = fVar9;
+    pVVar11 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint((Vector3 *)&QStack_10,(Ray *)&stack0xffffff48,(this->fields).distanceInFreeSpace,(MethodInfo *)0x0);
+    VStack_5.x = pVVar11->x;
+    VStack_5.y = pVVar11->y;
+    VStack_5.z = pVVar11->z;
+    IStack_6.klass = (InsertCursor__Class *)(this->fields).pivotToOrigin.x;
+    IStack_6.monitor = (MonitorData *)(this->fields).pivotToOrigin.y;
+    IStack_6.fields._._._._.m_CachedPtr = (Component__Fields)(this->fields).pivotToOrigin.z;
+    QStack_10.z = (float)IStack_6.fields._._._._.m_CachedPtr + VStack_5.z;
+    pTVar15 = (Transform__Class *)&UNK_?;
+    originalPos.y = (float)IStack_6.monitor + VStack_5.y;
+    originalPos.x = (float)IStack_6.klass + VStack_5.x;
+    originalPos.z = (float)IStack_6.fields._._._._.m_CachedPtr + VStack_5.z;
+    pVVar11 = ESInsert_ComputeSnapPosition((Vector3 *)&QStack_10,this,pMVar1,originalPos,(MethodInfo *)0x0);
+    uVar16 = pVVar11->x;
+    uVar17 = pVVar11->y;
+    uVar18 = (this->fields).insertPosition.x;
+    uVar19 = (this->fields).insertPosition.y;
+    IStack_6.fields._._._._.m_CachedPtr = (Component__Fields)(this->fields).insertPosition.z;
+    QStack_10.w = (float)IStack_6.fields._._._._.m_CachedPtr - (float)pTVar15;
+    QStack_10.z = (float)uVar19 - SUB84(uVar14,4);
+    QStack_10.y = (float)uVar18 - (float)uVar14;
+    VStack_4.z = pVVar11->z - (float)pTVar15;
+    IStack_6.monitor = (MonitorData *)VStack_4.z;
+    IStack_6.klass = (InsertCursor__Class *)uVar18;
+    VStack_4.y = (float)uVar17 - SUB84(uVar14,4);
+    VStack_4.x = (float)uVar16 - (float)uVar14;
+    VStack_5._0_8_ = uVar14;
+    VStack_5.z = (float)pTVar15;
+    puVar20 = (undefined8 *)func_?();
+    IStack_6._0_8_ = *puVar20;
+    IStack_6.fields._._._._.m_CachedPtr = (Component__Fields)((Object_1__Fields *)(puVar20 + 1))->m_CachedPtr;
+    fVar21 = (float10)func_?();
+    pTStack_22 = (Transform__Class *)(float)fVar21;
+    fVar21 = (float10)func_?();
+    pCStack_23 = (CancellationTokenSource *)(float)fVar21;
+    fVar9 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+    IStack_6.fields.renderers = (MeshRenderer__Array *)(fVar9 * 5.0);
+    if ((float)IStack_6.fields.renderers < 0.0) {
+      pMVar24 = (MeshRenderer__Array *)0x0;
     }
     else {
-      pMVar1 = pMStack_8;
-      if (1.0 < (float)pMStack_8) {
-        pMVar1 = (MVWorldObjectClient *)0x3f800000;
+      pMVar24 = IStack_6.fields.renderers;
+      if (1.0 < (float)IStack_6.fields.renderers) {
+        pMVar24 = (MeshRenderer__Array *)0x3f800000;
       }
     }
-    fVar14 = ((float)pCStack_31 - (float)pMStack_21) * (float)pMVar1 + (float)pMStack_21;
-    fVar15 = VStack_5.y + VStack_4.y * fVar14;
-    fVar16 = VStack_5.x + VStack_4.x * fVar14;
-    fVar14 = VStack_5.z + VStack_4.z * fVar14;
-    (this->fields).insertPosition.x = fVar16;
-    (this->fields).insertPosition.y = fVar15;
-    VStack_4.x = (this->fields).pivotToOrigin.x;
-    VStack_4.y = (this->fields).pivotToOrigin.y;
-    (this->fields).insertPosition.z = fVar14;
-    VStack_4.z = (this->fields).pivotToOrigin.z;
-    pMStack_21 = (MVWorldObjectClient__Class *)(fVar14 - VStack_4.z);
-    QStack_9.z = (float)pMStack_21;
-    RStack_13.m_Origin.y = fVar15 - VStack_4.y;
-    RStack_13.m_Origin.x = fVar16 - VStack_4.x;
-    RStack_13.m_Origin.z = 0.0;
-    RStack_13.m_Direction.x = 0.0;
+    fVar25 = ((float)pCStack_23 - (float)pTStack_22) * (float)pMVar24 + (float)pTStack_22;
+    fVar26 = VStack_5.y + (float)IStack_6.monitor * fVar25;
+    fVar9 = VStack_5.x + (float)IStack_6.klass * fVar25;
+    fVar25 = VStack_5.z + (float)IStack_6.fields._._._._.m_CachedPtr * fVar25;
+    (this->fields).insertPosition.x = fVar9;
+    (this->fields).insertPosition.y = fVar26;
+    IStack_6.klass = (InsertCursor__Class *)(this->fields).pivotToOrigin.x;
+    IStack_6.monitor = (MonitorData *)(this->fields).pivotToOrigin.y;
+    (this->fields).insertPosition.z = fVar25;
+    IStack_6.fields._._._._.m_CachedPtr = (Component__Fields)(this->fields).pivotToOrigin.z;
+    pTStack_22 = (Transform__Class *)(fVar25 - (float)IStack_6.fields._._._._.m_CachedPtr);
+    fVar9 = fVar9 - (float)IStack_6.klass;
+    fVar26 = fVar26 - (float)IStack_6.monitor;
+    QStack_10.z = (float)pTStack_22;
   }
   else {
     (this->fields).insertPosition.x = VStack_4.x;
     (this->fields).insertPosition.y = VStack_4.y;
     (this->fields).insertPosition.z = VStack_4.z;
-    pIVar20 = (this->fields).insertCursor;
-    if (pIVar20 == (InsertCursor *)0x0) goto code_?;
-    pTVar22 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pIVar20,(MethodInfo *)0x0);
-    if (pTVar22 == (Transform *)0x0) goto code_?;
-    RStack_13.m_Origin.x = VStack_5.x;
-    RStack_13.m_Origin.y = VStack_5.y;
-    RStack_13.m_Origin.z = 0.0;
-    RStack_13.m_Direction.x = 0.0;
-    pMStack_21 = (MVWorldObjectClient__Class *)VStack_5.z;
-    value_00.z = VStack_5.z;
-    value_00.x = VStack_5.x;
-    value_00.y = VStack_5.y;
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position(pTVar22,value_00,(MethodInfo *)0x0);
-    pIVar20 = (this->fields).insertCursor;
-    if (pIVar20 == (InsertCursor *)0x0) goto code_?;
-    pMStack_8 = (MVWorldObjectClient *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pIVar20,(MethodInfo *)0x0);
-    fVar14 = VStack_6.x;
-    fVar15 = VStack_6.y;
-    fStack_10 = VStack_6.z;
+    pIVar8 = (this->fields).insertCursor;
+    if (pIVar8 == (InsertCursor *)0x0) goto code_?;
+    method_00 = (MethodInfo *)0x0;
 code_?:
-    forward.y = fVar15;
-    forward.x = fVar14;
-    forward.z = fStack_10;
-    pQVar32 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation_1(&QStack_9,forward,(MethodInfo *)0x0);
-    if (pMStack_8 == (MVWorldObjectClient *)0x0) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation((Transform *)pMStack_8,*pQVar32,(MethodInfo *)0x0);
-    pIVar20 = (this->fields).insertCursor;
-    if (pIVar20 == (InsertCursor *)0x0) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled((Behaviour *)pIVar20,1,(MethodInfo *)0x0);
+    pTVar27 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pIVar8,method_00);
+    if (pTVar27 == (Transform *)0x0) goto code_?;
+    fVar9 = VStack_5.x;
+    fVar26 = VStack_5.y;
+    pTStack_22 = (Transform__Class *)VStack_5.z;
+    value.z = VStack_5.z;
+    value.x = VStack_5.x;
+    value.y = VStack_5.y;
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position(pTVar27,value,(MethodInfo *)0x0);
+    pIVar8 = (this->fields).insertCursor;
+    if (pIVar8 == (InsertCursor *)0x0) goto code_?;
+    IStack_6.fields.renderers = (MeshRenderer__Array *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pIVar8,(MethodInfo *)0x0);
+    forward.z = (float)IStack_6.fields._._._._.m_CachedPtr;
+    forward.x = (float)IStack_6.klass;
+    forward.y = (float)IStack_6.monitor;
+    pQVar28 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation_1(&QStack_10,forward,(MethodInfo *)0x0);
+    if (IStack_6.fields.renderers == (MeshRenderer__Array *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation((Transform *)IStack_6.fields.renderers,*pQVar28,(MethodInfo *)0x0);
+    pIVar8 = (this->fields).insertCursor;
+    if (pIVar8 == (InsertCursor *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled((Behaviour *)pIVar8,1,(MethodInfo *)0x0);
   }
-  pGVar33 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-  if (((pGVar33 != (GameEventManager *)0x0) && (pGVar34 = (pGVar33->fields).AvatarCommandsBuildMode, pGVar34 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) && (this_01 = (pGVar34->fields).LaserCommands, this_01 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
-    to.z = (float)pMStack_21;
-    to.x = RStack_13.m_Origin.x;
-    to.y = RStack_13.m_Origin.y;
-    GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_UpdatePosition(this_01,to,(MethodInfo *)0x0);
+  pGVar29 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
+  if (((pGVar29 != (GameEventManager *)0x0) && (pGVar30 = (pGVar29->fields).AvatarCommandsBuildMode, pGVar30 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) && (this_02 = (pGVar30->fields).LaserCommands, this_02 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)) {
+    to.y = fVar26;
+    to.x = fVar9;
+    to.z = (float)pTStack_22;
+    GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_UpdatePosition(this_02,to,(MethodInfo *)0x0);
     pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
-    pVVar12 = ESInsert_ComputeSnapPosition((Vector3 *)&RStack_13.m_Origin.z,this,pMVar1,(this->fields).insertPosition,(MethodInfo *)0x0);
-    VStack_6.x = pVVar12->x;
-    VStack_6.y = pVVar12->y;
-    VStack_6.z = pVVar12->z;
-    pMStack_21 = (MVWorldObjectClient__Class *)EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
+    pVVar11 = ESInsert_ComputeSnapPosition((Vector3 *)&stack0xffffff68,this,pMVar1,(this->fields).insertPosition,(MethodInfo *)0x0);
+    IStack_6.klass = (InsertCursor__Class *)pVVar11->x;
+    IStack_6.monitor = (MonitorData *)pVVar11->y;
+    IStack_6.fields._._._._.m_CachedPtr = (Component__Fields)pVVar11->z;
+    pTStack_22 = (Transform__Class *)EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
     pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
     if (pMVar1 != (MVWorldObjectClient *)0x0) {
-      pIStack_35 = (pMVar1->klass->vtable).set_WorldPosition.methodPtr;
-      RStack_13.m_Direction.y = (float)&RStack_13.m_Origin.z;
-      RStack_13.m_Direction.x = (float)&UNK_?;
-      RStack_13.m_Direction.z = (float)pMVar1;
-      puVar29 = (undefined8 *)(*(code *)(pMVar1->klass->vtable).get_WorldPosition_1.method)();
-      VStack_4._0_8_ = *puVar29;
-      VStack_4.z = *(float *)(puVar29 + 1);
-      fVar14 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-      pMStack_8 = (MVWorldObjectClient *)(fVar14 * 20.0);
-      if ((float)pMStack_8 < 0.0) {
-        pMVar1 = (MVWorldObjectClient *)0x0;
+      pMStack_31 = (Mesh *)(pMVar1->klass->vtable).set_WorldPosition.methodPtr;
+      VStack_4.y = (float)&stack0xffffff68;
+      VStack_4.x = (float)&UNK_?;
+      VStack_4.z = (float)pMVar1;
+      puVar20 = (undefined8 *)(*(code *)(pMVar1->klass->vtable).get_WorldPosition_1.method)();
+      VStack_5._0_8_ = *puVar20;
+      VStack_5.z = *(float *)(puVar20 + 1);
+      fVar9 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+      IStack_6.fields.renderers = (MeshRenderer__Array *)(fVar9 * 20.0);
+      if ((float)IStack_6.fields.renderers < 0.0) {
+        pMVar24 = (MeshRenderer__Array *)0x0;
       }
       else {
-        pMVar1 = pMStack_8;
-        if (1.0 < (float)pMStack_8) {
-          pMVar1 = (MVWorldObjectClient *)0x3f800000;
+        pMVar24 = IStack_6.fields.renderers;
+        if (1.0 < (float)IStack_6.fields.renderers) {
+          pMVar24 = (MeshRenderer__Array *)0x3f800000;
         }
       }
-      fStack_36 = (VStack_6.x - VStack_4.x) * (float)pMVar1 + VStack_4.x;
-      VStack_6.x = (VStack_6.y - VStack_4.y) * (float)pMVar1 + VStack_4.y;
-      VStack_6.y = (VStack_6.z - VStack_4.z) * (float)pMVar1 + VStack_4.z;
-      if (pMStack_21 != (MVWorldObjectClient__Class *)0x0) {
-        pMVar24 = (MVWorldObjectClient__Class *)(pMStack_21->_0).image;
-        (*(code *)(pMVar24->vtable).set_SyncPos.method)(pMStack_21,fStack_36,VStack_6.x,VStack_6.y,(pMVar24->vtable).get_SyncRot.methodPtr);
+      fStack_32 = ((float)IStack_6.klass - VStack_5.x) * (float)pMVar24 + VStack_5.x;
+      IStack_6.klass = (InsertCursor__Class *)(((float)IStack_6.monitor - VStack_5.y) * (float)pMVar24 + VStack_5.y);
+      IStack_6.monitor = (MonitorData *)(((float)IStack_6.fields._._._._.m_CachedPtr - VStack_5.z) * (float)pMVar24 + VStack_5.z);
+      if (pTStack_22 != (Transform__Class *)0x0) {
+        pMVar33 = (MVWorldObjectClient__Class *)(pTStack_22->_0).image;
+        (*(code *)(pMVar33->vtable).set_SyncPos.method)(pTStack_22,fStack_32,IStack_6.klass,IStack_6.monitor,(pMVar33->vtable).get_SyncRot.methodPtr);
         pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
         if (pMVar1 != (MVWorldObjectClient *)0x0) {
           if (cRam_? == '\0') {
@@ -775,66 +722,66 @@ code_?:
             func_?(&StringLiteral_Default);
             cRam_? = '\x01';
           }
-          pMStack_37 = (this->fields).previewMeshes;
-          pCStack_31 = (CancellationTokenSource *)0x0;
-          if (pMStack_37 != (MeshFilter__Array *)0x0) {
-            pMStack_8 = (MVWorldObjectClient *)pMStack_37->vector;
-            for (; (int)pCStack_31 < (int)pMStack_37->max_length; pCStack_31 = (CancellationTokenSource *)((int)&pCStack_31->klass + 1)) {
-              if ((CancellationTokenSource *)pMStack_37->max_length <= pCStack_31) goto code_?;
-              pMStack_21 = pMStack_8->klass;
+          pMStack_34 = (this->fields).previewMeshes;
+          pCStack_23 = (CancellationTokenSource *)0x0;
+          if (pMStack_34 != (MeshFilter__Array *)0x0) {
+            IStack_6.fields.renderers = (MeshRenderer__Array *)pMStack_34->vector;
+            for (; (int)pCStack_23 < (int)pMStack_34->max_length; pCStack_23 = (CancellationTokenSource *)((int)&pCStack_23->klass + 1)) {
+              if ((CancellationTokenSource *)pMStack_34->max_length <= pCStack_23) goto code_?;
+              pTStack_22 = (Transform__Class *)(IStack_6.fields.renderers)->klass;
               submeshIndex = 0;
-              if (pMStack_21 == (MVWorldObjectClient__Class *)0x0) goto code_?;
+              if (pTStack_22 == (Transform__Class *)0x0) goto code_?;
               while( true ) {
-                this_02 = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::MeshFilter_get_sharedMesh((MeshFilter *)pMStack_21,(MethodInfo *)0x0);
-                if (this_02 == (Mesh *)0x0) goto code_?;
-                iVar38 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_subMeshCount(this_02,(MethodInfo *)0x0);
-                if (iVar38 <= submeshIndex) break;
-                pMStack_39 = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::MeshFilter_get_sharedMesh((MeshFilter *)pMStack_21,(MethodInfo *)0x0);
-                pTVar22 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pMStack_21,(MethodInfo *)0x0);
-                if (pTVar22 == (Transform *)0x0) goto code_?;
-                pMVar40 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localToWorldMatrix((Matrix4x4 *)&stack0xffffff08,pTVar22,(MethodInfo *)0x0);
-                RStack_13.m_Origin.z = pMVar40->m00;
-                RStack_13.m_Direction.x = pMVar40->m10;
-                RStack_13.m_Direction.y = pMVar40->m20;
-                RStack_13.m_Direction.z = pMVar40->m30;
-                QStack_9.x = pMVar40->m01;
-                QStack_9.y = pMVar40->m11;
-                QStack_9.z = pMVar40->m21;
-                QStack_9.w = pMVar40->m31;
-                fStack_36 = pMVar40->m02;
-                VStack_6.x = pMVar40->m12;
-                VStack_6.y = pMVar40->m22;
-                VStack_6.z = pMVar40->m32;
-                fStack_41 = pMVar40->m03;
-                VStack_4.x = pMVar40->m13;
-                VStack_4.y = pMVar40->m23;
-                VStack_4.z = pMVar40->m33;
-                pMStack_42 = (this->fields).previewMaterial;
-                iStack_43 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer(StringLiteral_Default,(MethodInfo *)0x0);
-                pCStack_44 = (this->fields).mainCamera;
+                this_03 = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::MeshFilter_get_sharedMesh((MeshFilter *)pTStack_22,(MethodInfo *)0x0);
+                if (this_03 == (Mesh *)0x0) goto code_?;
+                iVar35 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_subMeshCount(this_03,(MethodInfo *)0x0);
+                if (iVar35 <= submeshIndex) break;
+                pMStack_31 = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::MeshFilter_get_sharedMesh((MeshFilter *)pTStack_22,(MethodInfo *)0x0);
+                pTVar27 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pTStack_22,(MethodInfo *)0x0);
+                if (pTVar27 == (Transform *)0x0) goto code_?;
+                pMVar36 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localToWorldMatrix((Matrix4x4 *)&stack0xffffff08,pTVar27,(MethodInfo *)0x0);
+                fVar9 = pMVar36->m00;
+                fVar26 = pMVar36->m10;
+                fVar25 = pMVar36->m20;
+                fVar37 = pMVar36->m30;
+                QStack_10.x = pMVar36->m01;
+                QStack_10.y = pMVar36->m11;
+                QStack_10.z = pMVar36->m21;
+                QStack_10.w = pMVar36->m31;
+                fStack_32 = pMVar36->m02;
+                IStack_6.klass = (InsertCursor__Class *)pMVar36->m12;
+                IStack_6.monitor = (MonitorData *)pMVar36->m22;
+                IStack_6.fields._._._._.m_CachedPtr = (Component__Fields)pMVar36->m32;
+                fStack_38 = pMVar36->m03;
+                VStack_5.x = pMVar36->m13;
+                VStack_5.y = pMVar36->m23;
+                VStack_5.z = pMVar36->m33;
+                material = (this->fields).previewMaterial;
+                iVar35 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer(StringLiteral_Default,(MethodInfo *)0x0);
+                camera = (this->fields).mainCamera;
                 if ((TypeInfo__UnityEngine__Graphics->_1).cctor_finished_or_no_cctor == 0) {
                   func_?();
                 }
-                matrix.m10 = RStack_13.m_Direction.x;
-                matrix.m00 = RStack_13.m_Origin.z;
-                matrix.m20 = RStack_13.m_Direction.y;
-                matrix.m30 = RStack_13.m_Direction.z;
-                matrix.m01 = QStack_9.x;
-                matrix.m11 = QStack_9.y;
-                matrix.m21 = QStack_9.z;
-                matrix.m31 = QStack_9.w;
-                matrix.m02 = fStack_36;
-                matrix.m12 = VStack_6.x;
-                matrix.m22 = VStack_6.y;
-                matrix.m32 = VStack_6.z;
-                matrix.m03 = fStack_41;
-                matrix.m13 = VStack_4.x;
-                matrix.m23 = VStack_4.y;
-                matrix.m33 = VStack_4.z;
-                UnityEngine.CoreModule.dll::UnityEngine::Graphics::Graphics_DrawMesh_3(pMStack_39,matrix,pMStack_42,iStack_43,pCStack_44,submeshIndex,(MethodInfo *)0x0);
+                matrix.m10 = fVar26;
+                matrix.m00 = fVar9;
+                matrix.m20 = fVar25;
+                matrix.m30 = fVar37;
+                matrix.m01 = QStack_10.x;
+                matrix.m11 = QStack_10.y;
+                matrix.m21 = QStack_10.z;
+                matrix.m31 = QStack_10.w;
+                matrix.m02 = fStack_32;
+                matrix.m12 = (float)IStack_6.klass;
+                matrix.m22 = (float)IStack_6.monitor;
+                matrix.m32 = (float)IStack_6.fields._._._._.m_CachedPtr;
+                matrix.m03 = fStack_38;
+                matrix.m13 = VStack_5.x;
+                matrix.m23 = VStack_5.y;
+                matrix.m33 = VStack_5.z;
+                UnityEngine.CoreModule.dll::UnityEngine::Graphics::Graphics_DrawMesh_3(pMStack_31,matrix,material,iVar35,camera,submeshIndex,(MethodInfo *)0x0);
                 submeshIndex = submeshIndex + 1;
               }
-              pMStack_8 = (MVWorldObjectClient *)&pMStack_8->monitor;
+              IStack_6.fields.renderers = (MeshRenderer__Array *)&(IStack_6.fields.renderers)->monitor;
             }
             if ((this->fields).pointerWasUp == 0) {
               if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
@@ -843,24 +790,24 @@ code_?:
               bVar7 = MVInputWrapper::MVInputWrapper_GetBooleanControlUp(KogamaControls__Enum_PointerSelect,(MethodInfo *)0x0);
               if (bVar7 != 0) {
                 if ((this->fields).isNewPrototype != 0) {
-                  this_03 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-                  if (this_03 != (MainCameraManager *)0x0) {
-                    pMStack_37 = (MeshFilter__Array *)MainCameraManager::MainCameraManager_get_CurrentCamera(this_03,(MethodInfo *)0x0);
+                  this_04 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+                  if (this_04 != (MainCameraManager *)0x0) {
+                    pMStack_34 = (MeshFilter__Array *)MainCameraManager::MainCameraManager_get_CurrentCamera(this_04,(MethodInfo *)0x0);
                     pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
-                    if (pMStack_37 != (MeshFilter__Array *)0x0) {
-                      func_?(0xe,pMStack_37,pMVar1,0x40000000,0,0,0,0,0,0);
-                      pMStack_39 = (Mesh *)0x0;
-                      pOVar45 = (Object *)func_?(TypeInfo__EditorEvent,&pMStack_39);
-                      FSMEntity::FSMEntity_set_Event((FSMEntity *)e,pOVar45,(MethodInfo *)0x0);
+                    if (pMStack_34 != (MeshFilter__Array *)0x0) {
+                      func_?(0xe,pMStack_34,pMVar1,0x40000000,0,0,0,0,0,0);
+                      pMStack_31 = (Mesh *)0x0;
+                      pOVar39 = (Object *)func_?(TypeInfo__EditorEvent,&pMStack_31);
+                      FSMEntity::FSMEntity_set_Event((FSMEntity *)e,pOVar39,(MethodInfo *)0x0);
                       (this->fields).pointerWasUp = 0;
                       return;
                     }
                   }
                   goto code_?;
                 }
-                pMStack_37 = (MeshFilter__Array *)0x2f;
-                pOVar45 = (Object *)func_?(TypeInfo__EditorEvent,&pMStack_37);
-                FSMEntity::FSMEntity_set_Event((FSMEntity *)e,pOVar45,(MethodInfo *)0x0);
+                pMStack_34 = (MeshFilter__Array *)0x2f;
+                pOVar39 = (Object *)func_?(TypeInfo__EditorEvent,&pMStack_34);
+                FSMEntity::FSMEntity_set_Event((FSMEntity *)e,pOVar39,(MethodInfo *)0x0);
               }
             }
             (this->fields).pointerWasUp = 0;
@@ -874,8 +821,8 @@ code_?:
   func_?();
 code_?:
   func_?();
-  pcVar46 = (code *)swi(3);
-  (*pcVar46)();
+  pcVar40 = (code *)swi(3);
+  (*pcVar40)();
   return;
 }
 

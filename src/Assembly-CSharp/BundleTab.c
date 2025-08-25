@@ -445,7 +445,6 @@ void Assembly-CSharp.dll::BundleTab::BundleTab_SetAsSelected(BundleTab *this,Met
         this_00 = (this->fields).rectTransform;
         if (this_00 != (RectTransform *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect((Rect *)&stack0xffffffec,this_00,(MethodInfo *)0x0);
-          fVar7 = (this->fields).offsetX;
           if (cRam_? == '\0') {
             func_?();
             cRam_? = '\x01';
@@ -453,10 +452,11 @@ void Assembly-CSharp.dll::BundleTab::BundleTab_SetAsSelected(BundleTab *this,Met
           method_00 = TypeInfo__BundleTab___LerpToSize_d__20;
           value = (Object *)func_?();
           mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57(value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+          pOVar7 = value + 2;
           value[1].klass = (Object__Class *)0x0;
           value[2].klass = (Object__Class *)this;
           func_?();
-          value[2].monitor = (MonitorData *)((float)method_00 + fVar7);
+          value[2].monitor = (MonitorData *)pOVar7;
           UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto((MonoBehaviour *)this,(IEnumerator *)value,(MethodInfo *)0x0);
           pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
           if ((TypeInfo__BundleTab____c->_1).cctor_finished_or_no_cctor == 0) {

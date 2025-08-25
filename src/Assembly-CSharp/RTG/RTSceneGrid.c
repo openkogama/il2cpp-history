@@ -837,7 +837,7 @@ void Assembly-CSharp.dll::RTG::RTSceneGrid::RTSceneGrid_SnapToObjectHitPoint(RTS
       VStack_7.x = (objectHit->fields)._hitPoint.x;
       VStack_7.y = (objectHit->fields)._hitPoint.y;
       VStack_7.z = (objectHit->fields)._hitPoint.z;
-      if (0.0 <= VStack_1.x * VStack_7.x + VStack_1.y * VStack_7.y + VStack_1.z * VStack_7.z + fStack_15) {
+      if (0.0 <= VStack_1.y * VStack_7.y + VStack_1.x * VStack_7.x + VStack_1.z * VStack_7.z + fStack_15) {
         plane_00.m_Normal.z = VStack_1.z;
         plane_00.m_Normal.x = VStack_1.x;
         plane_00.m_Normal.y = VStack_1.y;

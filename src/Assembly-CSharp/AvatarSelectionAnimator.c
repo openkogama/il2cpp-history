@@ -268,7 +268,7 @@ void Assembly-CSharp.dll::AvatarSelectionAnimator::AvatarSelectionAnimator_Updat
               uVar15 = (this_00->fields).distance.x;
               uVar16 = (this_00->fields).distance.x;
               if (RVar10 != (RegexCharClass_SingleRange)0x0) {
-                (**(code **)(*(int *)RVar10 + 400))(RVar10,((float)uVar14 + (float)uVar15 * (float)this * (this_00->fields).time) - (float)uVar16 * (float)this);
+                (**(code **)(*(int *)RVar10 + 400))(RVar10,((float)uVar14 + (this_00->fields).time * (float)uVar15 * (float)this) - (float)uVar16 * (float)this);
                 pLVar9 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this_00->fields).Bodies;
                 if (pLVar9 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
                   RVar10 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item(pLVar9,index,MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_);

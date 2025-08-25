@@ -733,7 +733,10 @@ MVAvatarLocal * Assembly-CSharp.dll::MVLocalPlayer::MVLocalPlayer_get_AvatarLoca
     this = (MVLocalPlayer *)0x0;
     if (this_00 != (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) {
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__TryGetValue((Dictionary_2_System_Int32_System_Object_ *)this_00,key,(Object **)&this,MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__TryGetValue_int__MVWorldObjectClient__);
-      if (((this != (MVLocalPlayer *)0x0) && ((TypeInfo__MVAvatarLocal->_1).naturalAligment <= (this->klass->_1).naturalAligment)) && ((MVAvatarLocal__Class *)(this->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] == TypeInfo__MVAvatarLocal)) {
+      if (this == (MVLocalPlayer *)0x0) {
+        return (MVAvatarLocal *)0x0;
+      }
+      if (((TypeInfo__MVAvatarLocal->_1).naturalAligment <= (this->klass->_1).naturalAligment) && ((MVAvatarLocal__Class *)(this->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] == TypeInfo__MVAvatarLocal)) {
         return (MVAvatarLocal *)this;
       }
       return (MVAvatarLocal *)0x0;

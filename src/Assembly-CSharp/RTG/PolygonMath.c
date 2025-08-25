@@ -31,7 +31,7 @@ code_?:
       VStack_9 = VVar4;
       VVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::List_1_UnityEngine_Vector2__get_Item(polyPoints,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_);
       VStack_10.y = VVar4.y;
-      if (epsilon._areaEps < VStack_9.x * (point.x - VStack_10.x) + VStack_9.y * (point.y - VStack_10.y)) {
+      if (epsilon._areaEps < VStack_9.y * (point.y - VStack_10.y) + VStack_9.x * (point.x - VStack_10.x)) {
         return 0;
       }
       VStack_10 = VVar4;
@@ -85,7 +85,7 @@ bool Assembly-CSharp.dll::RTG::PolygonMath::PolygonMath_Contains3DPoint(Vector3 
     if (checkOnPlane != 0) {
       uVar8 = pVVar5->x;
       uVar9 = pVVar5->y;
-      if (epsilon._extrudeEps < ABS(point.y * (float)uVar9 + point.x * (float)uVar8 + point.z * pVVar5->z + -((float)uVar3 * (float)uVar7 + (float)uVar2 * (float)uVar6 + (float)pVVar4 * pVVar5->z))) {
+      if (epsilon._extrudeEps < ABS(point.x * (float)uVar8 + point.y * (float)uVar9 + point.z * pVVar5->z + -((float)uVar3 * (float)uVar7 + (float)uVar2 * (float)uVar6 + (float)pVVar4 * pVVar5->z))) {
         return 0;
       }
     }
@@ -112,7 +112,7 @@ bool Assembly-CSharp.dll::RTG::PolygonMath::PolygonMath_Contains3DPoint(Vector3 
         pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffff90,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cwPolyPoints,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
         uVar20 = pVVar1->alias;
         uVar21 = pVVar1->path;
-        if (epsilon._areaEps < (float)uVar18 * (point.x - (float)uVar20) + (float)uVar19 * (point.y - (float)uVar21) + fVar16 * (point.z - (float)pVVar1->asset)) {
+        if (epsilon._areaEps < (float)uVar19 * (point.y - (float)uVar21) + (float)uVar18 * (point.x - (float)uVar20) + fVar16 * (point.z - (float)pVVar1->asset)) {
           return 0;
         }
       }
@@ -138,7 +138,7 @@ bool Assembly-CSharp.dll::RTG::PolygonMath::PolygonMath_Contains3DPoint(Vector3 
         pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&pSStack_11,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cwPolyPoints,index,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
         uVar28 = pVVar1->alias;
         uVar29 = pVVar1->path;
-        if (epsilon._areaEps < (float)uVar26 * (point.x - (float)uVar28) + (float)uVar27 * (point.y - (float)uVar29) + fVar16 * (point.z - (float)pVVar1->asset)) {
+        if (epsilon._areaEps < (float)uVar27 * (point.y - (float)uVar29) + (float)uVar26 * (point.x - (float)uVar28) + fVar16 * (point.z - (float)pVVar1->asset)) {
           return 0;
         }
       }
@@ -434,29 +434,24 @@ bool Assembly-CSharp.dll::RTG::PolygonMath::PolygonMath_Raycast(Ray ray,float *t
   *t = 0.0;
   if (cwPolyPoints != (List_1_UnityEngine_Vector3_ *)0x0) {
     if ((int)(isClosed + 3) <= (cwPolyPoints->fields)._size) {
-      pVVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe0,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cwPolyPoints,0,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
-      uVar3._0_4_ = pVVar2->alias;
-      uVar3._4_4_ = pVVar2->path;
-      pVVar4 = pVVar2->asset;
-      pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize((Vector3 *)&stack0xffffffd4,polyNormal,(MethodInfo *)0x0);
-      uVar6 = pVVar5->x;
-      uVar7 = pVVar5->y;
+      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item((VisualTreeAsset_UsingEntry *)&stack0xffffffe0,(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)cwPolyPoints,0,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_);
+      UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize((Vector3 *)&stack0xffffffd4,polyNormal,(MethodInfo *)0x0);
       ray_00.m_Origin.y = ray.m_Origin.y;
       ray_00.m_Origin.x = ray.m_Origin.x;
       ray_00.m_Origin.z = ray.m_Origin.z;
       ray_00.m_Direction.x = ray.m_Direction.x;
-      ray_00.m_Direction.y = -((float)((ulonglong)uVar3 >> 0x20) * (float)uVar7 + (float)uVar3 * (float)uVar6 + (float)pVVar4 * pVVar5->z);
+      ray_00.m_Direction.y = ray.m_Direction.y;
       ray_00.m_Direction.z = ray.m_Direction.z;
-      bVar8 = UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane_Raycast((Plane *)&stack0xffffffc4,ray_00,(float *)&stack0xfffffff8,(MethodInfo *)0x0);
-      if (bVar8 != 0) {
-        pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint((Vector3 *)&stack0xffffffd4,&ray,fVar1,(MethodInfo *)0x0);
+      bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane_Raycast((Plane *)&stack0xffffffc4,ray_00,(float *)&stack0xfffffff8,(MethodInfo *)0x0);
+      if (bVar2 != 0) {
+        pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint((Vector3 *)&stack0xffffffd4,&ray,fVar1,(MethodInfo *)0x0);
         ray.m_Direction.x = 0.0;
         ray.m_Origin.x = epsilon._extrudeEps;
         ray.m_Origin.y = epsilon._wireEps;
         ray.m_Origin.z = epsilon._thickWireEps;
         fVar1 = polyNormal.y;
-        bVar8 = PolygonMath_Contains3DPoint(*pVVar5,0,cwPolyPoints,isClosed,polyNormal,epsilon,(MethodInfo *)0x0);
-        if (bVar8 != 0) {
+        bVar2 = PolygonMath_Contains3DPoint(*pVVar3,0,cwPolyPoints,isClosed,polyNormal,epsilon,(MethodInfo *)0x0);
+        if (bVar2 != 0) {
           *t = fVar1;
           return 1;
         }
@@ -465,8 +460,8 @@ bool Assembly-CSharp.dll::RTG::PolygonMath::PolygonMath_Raycast(Ray ray,float *t
     return 0;
   }
   func_?();
-  pcVar9 = (code *)swi(3);
-  bVar8 = (*pcVar9)();
-  return bVar8;
+  pcVar4 = (code *)swi(3);
+  bVar2 = (*pcVar4)();
+  return bVar2;
 }
 

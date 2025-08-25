@@ -103,7 +103,7 @@ bool Assembly-CSharp.dll::RTG::RTFocusCamera+<DoConstantFocus>d__135::RTFocusCam
               pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position((Vector3 *)&stack0xffffffc0,pTVar7,(MethodInfo *)0x0);
               uVar24 = pVVar8->x;
               uVar25 = pVVar8->y;
-              if (0.0 < (float)uVar21 * ((float)uVar23 - (float)uVar24) + (float)uVar22 * ((float)((ulonglong)uVar23 >> 0x20) - (float)uVar25) + fVar4 * (fVar5 - pVVar8->z)) {
+              if (0.0 < (float)uVar22 * ((float)((ulonglong)uVar23 >> 0x20) - (float)uVar25) + (float)uVar21 * ((float)uVar23 - (float)uVar24) + fVar4 * (fVar5 - pVVar8->z)) {
                 (this->fields).__2__current = (Object *)0x0;
                 func_?(&(this->fields).__2__current,0);
                 (this->fields).__1__state = 1;

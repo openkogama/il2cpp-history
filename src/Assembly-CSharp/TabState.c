@@ -128,7 +128,7 @@ Int32__Array * Assembly-CSharp.dll::TabState::TabState_get_SlotRange(TabState *t
     if (pIVar3->max_length != 0) {
       pIVar3->vector[0] = ((this->fields).currentPage + -1) * (this->fields).slotsPrPage;
       if (1 < pIVar3->max_length) {
-        pIVar3->vector[1] = (this->fields).slotsPrPage * (this->fields).currentPage;
+        pIVar3->vector[1] = (this->fields).currentPage * (this->fields).slotsPrPage;
         return pIVar3;
       }
     }

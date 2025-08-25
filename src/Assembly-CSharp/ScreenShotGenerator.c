@@ -79,17 +79,17 @@ void Assembly-CSharp.dll::ScreenShotGenerator::ScreenShotGenerator_Generate(Game
       func_?();
       cRam_? = '\x01';
     }
-    pSVar9 = StringLiteral_Already_generating_a_screenshot_;
-    pSVar10 = StringLiteral_Start_generate_screenshot_of_;
+    pSVar9 = StringLiteral_Start_generate_screenshot_of_;
+    pSVar10 = StringLiteral_Already_generating_a_screenshot_;
     if ((this->fields).generating != 0) {
       pGVar11 = (this->fields).targetObject;
       if (pGVar11 == (GameObject *)0x0) {
-        pSVar10 = (String *)0x0;
+        pSVar9 = (String *)0x0;
       }
       else {
-        pSVar10 = (String *)(*(code *)(pGVar11->klass->vtable).ToString.method)();
+        pSVar9 = (String *)(*(code *)(pGVar11->klass->vtable).ToString.method)();
       }
-      pSVar10 = mscorlib.dll::System::String::String_Concat_3(pSVar9,pSVar10,(MethodInfo *)0x0);
+      pSVar10 = mscorlib.dll::System::String::String_Concat_3(pSVar10,pSVar9,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
@@ -97,12 +97,12 @@ void Assembly-CSharp.dll::ScreenShotGenerator::ScreenShotGenerator_Generate(Game
       return;
     }
     if (obj == (GameObject *)0x0) {
-      pSVar9 = (String *)0x0;
+      pSVar10 = (String *)0x0;
     }
     else {
-      pSVar9 = (String *)(*(code *)(obj->klass->vtable).ToString.method)();
+      pSVar10 = (String *)(*(code *)(obj->klass->vtable).ToString.method)();
     }
-    message = mscorlib.dll::System::String::String_Concat_3(pSVar10,pSVar9,(MethodInfo *)0x0);
+    message = mscorlib.dll::System::String::String_Concat_3(pSVar9,pSVar10,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
@@ -110,8 +110,8 @@ void Assembly-CSharp.dll::ScreenShotGenerator::ScreenShotGenerator_Generate(Game
     (this->fields).clonedObject = cloneObject;
     (this->fields).targetObject = obj;
     func_?();
-    (this->fields).cameraOffset.x = (float)pSVar10;
-    (this->fields).cameraOffset.y = (float)pSVar9;
+    (this->fields).cameraOffset.x = (float)pSVar9;
+    (this->fields).cameraOffset.y = (float)pSVar10;
     (this->fields).cameraOffset.z = 0.0;
     (this->fields).lookAtOffset.x = (float)&UNK_?;
     (this->fields).lookAtOffset.y = (float)&(this->fields).targetObject;
@@ -283,17 +283,17 @@ void Assembly-CSharp.dll::ScreenShotGenerator::ScreenShotGenerator_Generate_1(Ga
       func_?();
       cRam_? = '\x01';
     }
-    pSVar9 = StringLiteral_Already_generating_a_screenshot_;
-    pSVar10 = StringLiteral_Start_generate_screenshot_of_;
+    pSVar9 = StringLiteral_Start_generate_screenshot_of_;
+    pSVar10 = StringLiteral_Already_generating_a_screenshot_;
     if ((this->fields).generating != 0) {
       pGVar11 = (this->fields).targetObject;
       if (pGVar11 == (GameObject *)0x0) {
-        pSVar10 = (String *)0x0;
+        pSVar9 = (String *)0x0;
       }
       else {
-        pSVar10 = (String *)(*(code *)(pGVar11->klass->vtable).ToString.method)();
+        pSVar9 = (String *)(*(code *)(pGVar11->klass->vtable).ToString.method)();
       }
-      pSVar10 = mscorlib.dll::System::String::String_Concat_3(pSVar9,pSVar10,(MethodInfo *)0x0);
+      pSVar10 = mscorlib.dll::System::String::String_Concat_3(pSVar10,pSVar9,(MethodInfo *)0x0);
       if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
         func_?();
       }
@@ -301,12 +301,12 @@ void Assembly-CSharp.dll::ScreenShotGenerator::ScreenShotGenerator_Generate_1(Ga
       return;
     }
     if (obj == (GameObject *)0x0) {
-      pSVar9 = (String *)0x0;
+      pSVar10 = (String *)0x0;
     }
     else {
-      pSVar9 = (String *)(*(code *)(obj->klass->vtable).ToString.method)();
+      pSVar10 = (String *)(*(code *)(obj->klass->vtable).ToString.method)();
     }
-    message = mscorlib.dll::System::String::String_Concat_3(pSVar10,pSVar9,(MethodInfo *)0x0);
+    message = mscorlib.dll::System::String::String_Concat_3(pSVar9,pSVar10,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?();
     }
@@ -314,8 +314,8 @@ void Assembly-CSharp.dll::ScreenShotGenerator::ScreenShotGenerator_Generate_1(Ga
     (this->fields).clonedObject = cloneObject;
     (this->fields).targetObject = obj;
     func_?();
-    (this->fields).cameraOffset.x = (float)pSVar10;
-    (this->fields).cameraOffset.y = (float)pSVar9;
+    (this->fields).cameraOffset.x = (float)pSVar9;
+    (this->fields).cameraOffset.y = (float)pSVar10;
     (this->fields).cameraOffset.z = 0.0;
     (this->fields).lookAtOffset.x = (float)&UNK_?;
     (this->fields).lookAtOffset.y = (float)&(this->fields).targetObject;
@@ -461,16 +461,16 @@ void Assembly-CSharp.dll::ScreenShotGenerator::ScreenShotGenerator_StartGenerate
     func_?(&StringLiteral_Already_generating_a_screenshot_);
     cRam_? = '\x01';
   }
-  pSVar1 = StringLiteral_Already_generating_a_screenshot_;
-  pSVar2 = StringLiteral_Start_generate_screenshot_of_;
+  pSVar1 = StringLiteral_Start_generate_screenshot_of_;
+  pSVar2 = StringLiteral_Already_generating_a_screenshot_;
   if ((this->fields).generating == 0) {
     if (obj == (GameObject *)0x0) {
-      pSVar1 = (String *)0x0;
+      pSVar2 = (String *)0x0;
     }
     else {
-      pSVar1 = (String *)(*(code *)(obj->klass->vtable).ToString.method)(obj,obj->klass[1]._0.image);
+      pSVar2 = (String *)(*(code *)(obj->klass->vtable).ToString.method)(obj,obj->klass[1]._0.image);
     }
-    pSVar2 = mscorlib.dll::System::String::String_Concat_3(pSVar2,pSVar1,(MethodInfo *)0x0);
+    pSVar2 = mscorlib.dll::System::String::String_Concat_3(pSVar1,pSVar2,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
@@ -492,12 +492,12 @@ void Assembly-CSharp.dll::ScreenShotGenerator::ScreenShotGenerator_StartGenerate
   }
   pGVar3 = (this->fields).targetObject;
   if (pGVar3 == (GameObject *)0x0) {
-    pSVar2 = (String *)0x0;
+    pSVar1 = (String *)0x0;
   }
   else {
-    pSVar2 = (String *)(*(code *)(pGVar3->klass->vtable).ToString.method)(pGVar3,pGVar3->klass[1]._0.image);
+    pSVar1 = (String *)(*(code *)(pGVar3->klass->vtable).ToString.method)(pGVar3,pGVar3->klass[1]._0.image);
   }
-  pSVar2 = mscorlib.dll::System::String::String_Concat_3(pSVar1,pSVar2,(MethodInfo *)0x0);
+  pSVar2 = mscorlib.dll::System::String::String_Concat_3(pSVar2,pSVar1,(MethodInfo *)0x0);
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
@@ -517,16 +517,16 @@ void Assembly-CSharp.dll::ScreenShotGenerator::ScreenShotGenerator_StartGenerate
     func_?(&StringLiteral_Already_generating_a_screenshot_);
     cRam_? = '\x01';
   }
-  pSVar1 = StringLiteral_Already_generating_a_screenshot_;
-  pSVar2 = StringLiteral_Start_generate_screenshot_of_;
+  pSVar1 = StringLiteral_Start_generate_screenshot_of_;
+  pSVar2 = StringLiteral_Already_generating_a_screenshot_;
   if ((this->fields).generating == 0) {
     if (obj == (GameObject *)0x0) {
-      pSVar1 = (String *)0x0;
+      pSVar2 = (String *)0x0;
     }
     else {
-      pSVar1 = (String *)(*(code *)(obj->klass->vtable).ToString.method)(obj,obj->klass[1]._0.image);
+      pSVar2 = (String *)(*(code *)(obj->klass->vtable).ToString.method)(obj,obj->klass[1]._0.image);
     }
-    pSVar2 = mscorlib.dll::System::String::String_Concat_3(pSVar2,pSVar1,(MethodInfo *)0x0);
+    pSVar2 = mscorlib.dll::System::String::String_Concat_3(pSVar1,pSVar2,(MethodInfo *)0x0);
     if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
       func_?(TypeInfo__UnityEngine__Debug);
     }
@@ -548,12 +548,12 @@ void Assembly-CSharp.dll::ScreenShotGenerator::ScreenShotGenerator_StartGenerate
   }
   pGVar3 = (this->fields).targetObject;
   if (pGVar3 == (GameObject *)0x0) {
-    pSVar2 = (String *)0x0;
+    pSVar1 = (String *)0x0;
   }
   else {
-    pSVar2 = (String *)(*(code *)(pGVar3->klass->vtable).ToString.method)(pGVar3,pGVar3->klass[1]._0.image);
+    pSVar1 = (String *)(*(code *)(pGVar3->klass->vtable).ToString.method)(pGVar3,pGVar3->klass[1]._0.image);
   }
-  pSVar2 = mscorlib.dll::System::String::String_Concat_3(pSVar1,pSVar2,(MethodInfo *)0x0);
+  pSVar2 = mscorlib.dll::System::String::String_Concat_3(pSVar2,pSVar1,(MethodInfo *)0x0);
   if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
@@ -572,23 +572,23 @@ Vector3 * Assembly-CSharp.dll::ScreenShotGenerator::ScreenShotGenerator_Translat
     uStack_3._0_4_ = pVVar1->x;
     uStack_3._4_4_ = pVVar1->y;
     fStack_4 = pVVar1->z;
-    fVar5 = (float)(undefined4)uStack_3 * translation.x;
+    fStack_5 = (float)(undefined4)uStack_3 * translation.x;
     fStack_6 = (float)uStack_3._4_4_ * translation.x;
     fStack_7 = fStack_4 * translation.x;
     pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward(&VStack_2,relativeTo,(MethodInfo *)0x0);
     uStack_3._0_4_ = pVVar1->x;
     uStack_3._4_4_ = pVVar1->y;
     fStack_4 = pVVar1->z;
-    fStack_8 = (float)(undefined4)uStack_3 * translation.z;
+    fVar8 = (float)(undefined4)uStack_3 * translation.z;
     fStack_9 = (float)uStack_3._4_4_ * translation.z;
     fStack_10 = fStack_4 * translation.z;
     pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up(&VStack_2,relativeTo,(MethodInfo *)0x0);
     uVar11 = pVVar1->x;
     uVar12 = pVVar1->y;
     fVar13 = pVVar1->z;
-    __return_storage_ptr__->x = (float)uVar11 * translation.y + fStack_8 + pos.x + fVar5;
-    __return_storage_ptr__->y = fStack_9 + pos.y + fStack_6 + (float)uVar12 * translation.y;
-    __return_storage_ptr__->z = fStack_10 + pos.z + fStack_7 + fVar13 * translation.y;
+    __return_storage_ptr__->x = fVar8 + pos.x + fStack_5 + (float)uVar11 * translation.y;
+    __return_storage_ptr__->y = pos.y + fStack_6 + fStack_9 + (float)uVar12 * translation.y;
+    __return_storage_ptr__->z = pos.z + fStack_7 + fStack_10 + fVar13 * translation.y;
     return __return_storage_ptr__;
   }
   func_?();

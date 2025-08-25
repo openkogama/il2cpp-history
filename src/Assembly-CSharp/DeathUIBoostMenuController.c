@@ -672,8 +672,8 @@ void Assembly-CSharp.dll::DeathUIBoostMenuController::DeathUIBoostMenuController
     func_?(&TypeInfo__UnityEngine__Events__UnityAction<bool,_bool>);
     cRam_? = '\x01';
   }
-  this_00 = (UnityAction_2_System_Int32_System_Int32_ *)func_?(TypeInfo__UnityEngine__Events__UnityAction<bool,_bool>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::UnityAction_2_System_Int32_System_Int32___ctor(this_00,(Object *)this,MethodInfo__DeathUIBoostMenuController__ReadyToSpawn_bool__bool_,(MethodInfo *)0x0);
+  this_00 = (UnityAction_2_System_Boolean_System_Boolean_ *)func_?(TypeInfo__UnityEngine__Events__UnityAction<bool,_bool>);
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Boolean,System::Boolean]::UnityAction_2_System_Boolean_System_Boolean___ctor(this_00,(Object *)this,MethodInfo__DeathUIBoostMenuController__ReadyToSpawn_bool__bool_,(MethodInfo *)0x0);
   if (x == (IDeathPromotionSelector *)0x0) {
     func_?();
     pcVar1 = (code *)swi(3);

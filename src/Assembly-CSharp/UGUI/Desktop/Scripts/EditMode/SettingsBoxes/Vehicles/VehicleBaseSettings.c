@@ -88,9 +88,21 @@ code_?:
               pMVar4 = (this->fields).vehicleBase;
               if ((pMVar4 != (MVVehicleBase *)0x0) && (pDVar5 = (pMVar4->fields)._._._._.data, pDVar5 != (Dictionary_2_System_Object_System_Object_ *)0x0)) {
                 bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__TryGetValue(pDVar5,(Object *)StringLiteral_BlueprintData,(Object **)&stack0xfffffff8,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__);
-                if (((bVar7 != 0) && (((pMVar2 != (MVWorldObjectSpawnerVehicle *)0x0 && ((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).naturalAligment <= (pMVar2->klass->_1).naturalAligment)) && ((Dictionary_2_System_Object_System_Object___Class *)(pMVar2->klass->_1).typeHierarchy[(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).naturalAligment - 1] == TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)))) && (pMVar2 != (MVWorldObjectSpawnerVehicle *)0x0)) {
-                  (this->fields).bluePrintData = (Dictionary_2_System_Object_System_Object_ *)pMVar2;
-                  func_?();
+                if ((bVar7 != 0) && (pMVar2 != (MVWorldObjectSpawnerVehicle *)0x0)) {
+                  if (((pMVar2->klass->_1).naturalAligment < (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).naturalAligment) || ((Dictionary_2_System_Object_System_Object___Class *)(pMVar2->klass->_1).typeHierarchy[(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).naturalAligment - 1] != TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
+                    bVar8 = false;
+                  }
+                  else {
+                    bVar8 = true;
+                  }
+                  pMVar3 = (MVWorldObjectSpawnerVehicle *)0x0;
+                  if (bVar8) {
+                    pMVar3 = pMVar2;
+                  }
+                  if (pMVar3 != (MVWorldObjectSpawnerVehicle *)0x0) {
+                    (this->fields).bluePrintData = (Dictionary_2_System_Object_System_Object_ *)pMVar3;
+                    func_?();
+                  }
                 }
                 if ((this->fields).bluePrintData == (Dictionary_2_System_Object_System_Object_ *)0x0) {
                   this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)func_?();
@@ -111,8 +123,8 @@ code_?:
   pMVar2 = extraout_EDX;
 code_?:
   func_?(pMVar2);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

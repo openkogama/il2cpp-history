@@ -289,10 +289,6 @@ void Assembly-CSharp.dll::RTG::ConeShape3D::ConeShape3D_RenderWire(ConeShape3D *
         cRam_? = '\x01';
       }
       pQVar16 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis((Quaternion *)&stack0xffffff50,90.0,TypeInfo__UnityEngine__Vector3->static_fields->rightVector,(MethodInfo *)0x0);
-      VStack_14.alias = (String *)pQVar16->x;
-      VStack_14.path = (String *)pQVar16->y;
-      VStack_14.asset = (VisualTreeAsset *)pQVar16->z;
-      fStack_15 = pQVar16->w;
       pCVar9 = (this->fields)._wireRenderDesc;
       if (pCVar9 != (ConeShape3D_WireRenderDescriptor *)0x0) {
         iVar30 = 0;
@@ -304,6 +300,10 @@ void Assembly-CSharp.dll::RTG::ConeShape3D::ConeShape3D_RenderWire(ConeShape3D *
           fVar17 = fVar6;
         }
         pLStack_28 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)((this->fields)._height / fVar17);
+        VStack_14.alias = (String *)pQVar16->x;
+        VStack_14.path = (String *)pQVar16->y;
+        VStack_14.asset = (VisualTreeAsset *)pQVar16->z;
+        fStack_15 = pQVar16->w;
         do {
           if ((pCVar31->fields)._numDetailAxialRings <= iVar30) {
             pCVar9 = (this->fields)._wireRenderDesc;
@@ -352,11 +352,11 @@ void Assembly-CSharp.dll::RTG::ConeShape3D::ConeShape3D_RenderWire(ConeShape3D *
           fVar17 = pMVar23->m11;
           fVar20 = pMVar23->m21;
           fVar24 = pMVar23->m31;
-          fVar25 = pMVar23->m02;
-          fVar35 = pMVar23->m12;
-          fVar36 = pMVar23->m22;
-          fVar37 = pMVar23->m32;
-          fVar38 = pMVar23->m03;
+          fVar35 = pMVar23->m02;
+          fVar36 = pMVar23->m12;
+          fVar37 = pMVar23->m22;
+          fVar38 = pMVar23->m32;
+          fVar25 = pMVar23->m03;
           fVar39 = pMVar23->m13;
           fVar40 = pMVar23->m23;
           fVar41 = pMVar23->m33;
@@ -371,11 +371,11 @@ void Assembly-CSharp.dll::RTG::ConeShape3D::ConeShape3D_RenderWire(ConeShape3D *
           matrix.m11 = fVar17;
           matrix.m21 = fVar20;
           matrix.m31 = fVar24;
-          matrix.m02 = fVar25;
-          matrix.m12 = fVar35;
-          matrix.m22 = fVar36;
-          matrix.m32 = fVar37;
-          matrix.m03 = fVar38;
+          matrix.m02 = fVar35;
+          matrix.m12 = fVar36;
+          matrix.m22 = fVar37;
+          matrix.m32 = fVar38;
+          matrix.m03 = fVar25;
           matrix.m13 = fVar39;
           matrix.m23 = fVar40;
           matrix.m33 = fVar41;

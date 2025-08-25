@@ -105,7 +105,7 @@ Quaternion * Assembly-CSharp.dll::MoveableController::MoveableController_GetRota
                   fVar11 = (float10)func_?();
                   UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_fixedDeltaTime((MethodInfo *)0x0);
                   pVVar12 = (Vector3 *)func_?();
-                  pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis((Quaternion *)&stack0xffffffcc,(float)fVar11 * 57.29578 * 3.558311e-29,*pVVar12,(MethodInfo *)0x0);
+                  pQVar7 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis((Quaternion *)&stack0xffffffcc,(float)fVar11 * 57.29578 * 3.562986e-29,*pVVar12,(MethodInfo *)0x0);
                   fVar4 = pQVar7->x;
                   fVar5 = pQVar7->y;
                   fVar6 = pQVar7->z;
@@ -489,20 +489,20 @@ code_?:
         return;
       }
       if (piVar11 == (int *)0x0) break;
-      uVar8 = 0;
-      uVar9 = *(ushort *)(*piVar11 + 0xb6);
-      if (uVar9 != 0) {
+      iVar13 = *piVar11;
+      uVar9 = 0;
+      if (*(ushort *)(iVar13 + 0xb6) != 0) {
         do {
-          if (*(IEnumerator_1_KeyValuePair_2_System_Int32_MVMovable___Class **)(*(int *)(*piVar11 + 0x58) + (uint)uVar8 * 8) == TypeInfo__System__Collections__Generic__IEnumerator<System::Collections::Generic::KeyValuePair<int,_MVMovable>_>) {
-            puVar13 = (undefined4 *)(*piVar11 + (*(int *)(*(int *)(*piVar11 + 0x58) + 4 + (uint)uVar8 * 8) + 0x18) * 8);
+          if (*(IEnumerator_1_KeyValuePair_2_System_Int32_MVMovable___Class **)(*(int *)(iVar13 + 0x58) + (uint)uVar9 * 8) == TypeInfo__System__Collections__Generic__IEnumerator<System::Collections::Generic::KeyValuePair<int,_MVMovable>_>) {
+            puVar14 = (undefined4 *)(iVar13 + (*(int *)(*(int *)(iVar13 + 0x58) + 4 + (uint)uVar9 * 8) + 0x18) * 8);
             goto code_?;
           }
-          uVar8 = uVar8 + 1;
-        } while (uVar8 < uVar9);
+          uVar9 = uVar9 + 1;
+        } while (uVar9 < *(ushort *)(iVar13 + 0xb6));
       }
-      puVar13 = (undefined4 *)func_?();
+      puVar14 = (undefined4 *)func_?();
 code_?:
-      (*(code *)*puVar13)();
+      (*(code *)*puVar14)();
       if (this_02 == (MVMovable *)0x0) break;
       if ((this_02->fields).parentMover == (MVMovable *)0x0) {
         MVMovable::MVMovable_Move(this_02,directionFactor,0,(MethodInfo *)0x0);
@@ -515,8 +515,8 @@ code_?:
     }
   }
   func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 

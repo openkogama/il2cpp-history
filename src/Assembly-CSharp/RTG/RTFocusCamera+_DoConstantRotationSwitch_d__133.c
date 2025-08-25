@@ -46,7 +46,7 @@ code_?:
         pTVar2 = (this_00->fields)._targetTransform;
         if (pTVar2 != (Transform *)0x0) {
           pQVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation((Quaternion *)&stack0xffffffd4,pTVar2,(MethodInfo *)0x0);
-          fVar4 = ABS((this->fields).targetRotation.x * pQVar3->x + (this->fields).targetRotation.y * pQVar3->y + (this->fields).targetRotation.z * pQVar3->z + (this->fields).targetRotation.w * pQVar3->w);
+          fVar4 = ABS((this->fields).targetRotation.y * pQVar3->y + (this->fields).targetRotation.x * pQVar3->x + (this->fields).targetRotation.z * pQVar3->z + (this->fields).targetRotation.w * pQVar3->w);
           if (1.0 <= fVar4) {
             fVar4 = 1.0;
           }

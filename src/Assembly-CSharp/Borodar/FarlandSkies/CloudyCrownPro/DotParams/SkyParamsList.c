@@ -62,13 +62,13 @@ SkyParam * Assembly-CSharp.dll::Borodar::FarlandSkies::CloudyCrownPro::DotParams
           fVar15 = *(float *)(iVar9 + 0x20);
           fVar16 = *(float *)(iVar9 + 0x24);
           fVar17 = *(float *)(iVar9 + 0x28);
-          pDVar2 = (this->fields)._.SortedParams;
-          if (pDVar2 != (DotParamsList_1_SkyParam_ *)0x0) {
+          pSVar3 = (SortedList_2_System_Single_System_Object_ *)(this->fields)._.SortedParams;
+          if (pSVar3 != (SortedList_2_System_Single_System_Object_ *)0x0) {
             iVar9 = 0;
-            if (iVar4 < (pDVar2->fields)._._size) {
+            if (iVar4 < (pSVar3->fields)._size) {
               iVar9 = iVar4;
             }
-            pIVar5 = System.dll::System::Collections::Generic::SortedList`2[System::Single,System::Object]::SortedList_2_System_Single_System_Object__get_Keys((SortedList_2_System_Single_System_Object_ *)(this->fields)._.SortedParams,MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__get_Keys__);
+            pIVar5 = System.dll::System::Collections::Generic::SortedList`2[System::Single,System::Object]::SortedList_2_System_Single_System_Object__get_Keys(pSVar3,MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__get_Keys__);
             if (pIVar5 != (IList_1_System_Single_ *)0x0) {
               fVar6 = (float10)func_?(0,TypeInfo__System__Collections__Generic__IList<float>,pIVar5,iVar9);
               pSVar3 = (SortedList_2_System_Single_System_Object_ *)(this->fields)._.SortedParams;

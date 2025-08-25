@@ -55,6 +55,7 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeGoldIcon>d__30::Le
   default:
     return 0;
   }
+  in_AF = 0;
   if (1.0 <= (pLVar1->fields)._currentTime_5__2 / (pLVar2->fields).rotateUIYAxisTime) {
     pIVar4 = (pLVar2->fields).goldImage;
     if (pIVar4 != (Image *)0x0) {
@@ -83,6 +84,7 @@ bool Assembly-CSharp.dll::LevelRewardAnimation+<DisplayAndFadeGoldIcon>d__30::Le
                   UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha(pCVar13,0.0,(MethodInfo *)0x0);
                   (pLVar1->fields)._currentTime_5__2 = 0.0;
 code_?:
+                  in_AF = 0;
                   if (1.0 <= (pLVar1->fields)._currentTime_5__2 / (pLVar2->fields).goldImageDisplayTime) {
                     pAVar5 = (pLVar2->fields).goldBounceEffect;
                     if (pAVar5 != (AnimationCurve *)0x0) {
@@ -152,9 +154,10 @@ code_?:
     if (pAVar5 != (AnimationCurve *)0x0) {
       fVar6 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate(pAVar5,(fVar15 + fVar6) / (pLVar2->fields).rotateUIYAxisTime,(MethodInfo *)0x0);
       pIVar4 = (pLVar2->fields).goldImage;
+      fVar6 = fVar6 * 90.0 - 90.0;
       if (pIVar4 != (Image *)0x0) {
         pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)pIVar4,(MethodInfo *)0x0);
-        euler_00.y = (fVar6 * 90.0 - 90.0) * 0.017453292;
+        euler_00.y = fVar6 * 0.017453292;
         euler_00.x = fVar3;
         euler_00.z = 0.0;
         pQVar10 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad((Quaternion *)&stack0xffffffc0,euler_00,(MethodInfo *)0x0);
@@ -170,10 +173,10 @@ code_?:
     }
   }
 code_?:
-  cVar16 = '\0';
-  iVar17 = func_?();
-  uRam_? = (undefined1)iVar17;
-  *(char *)(iVar17 + 0xb) = *(char *)(iVar17 + 0xb) + (char)((uint)(iVar17 + 1) >> 8) + cVar16;
+  uVar16 = func_?();
+  in_AF = 9 < ((byte)uVar16 & 0xf) | in_AF;
+  ppLVar17 = &pLVar1[0x6b5802].fields.__4__this;
+  *(byte *)ppLVar17 = *(char *)ppLVar17 + (char)((CONCAT11((char)((ushort)uVar16 >> 8) - in_AF,(byte)uVar16 + in_AF * -6) & 0xff0f) + 1 >> 8) + in_AF;
   pcVar18 = (code *)swi(3);
   bVar19 = (*pcVar18)();
   return bVar19;

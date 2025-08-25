@@ -18,14 +18,8 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_Activate(
       pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
       if ((pMVar2 != (MVLocalPlayer *)0x0) && (pBVar3 = (pMVar2->fields).boostController, pBVar3 != (BoostController *)0x0)) {
         bVar4 = BoostController::BoostController_IsBoostActive(pBVar3,BoostType__Enum_XRayVision,(MethodInfo *)0x0);
-        if (bVar4 == 0) {
-          value = (this->fields).enemyIconMaterial;
-        }
-        else {
-          value = (this->fields).enemyIconMaterialVisibleThroughWalls;
-        }
         if (this_01 != (Renderer *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial(this_01,value,(MethodInfo *)0x0);
+          UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial(this_01,(&(this->fields).enemyIconMaterial)[bVar4],(MethodInfo *)0x0);
           pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
           if (pMVar1 != (MVNetworkGame *)0x0) {
             pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
@@ -159,7 +153,7 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_Initializ
       this_06 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)0x161,(MethodInfo *)0x0);
       if (this_06 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive(this_06,1,(MethodInfo *)0x0);
-        pRVar1 = (Renderer *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1((Component *)0x8b0112de,UnityEngine__Renderer_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Renderer>__);
+        pRVar1 = (Renderer *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1((Component *)0x8b01125c,UnityEngine__Renderer_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Renderer>__);
         if (pRVar1 != (Renderer *)0x0) {
           _UNK_? = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material(pRVar1,(MethodInfo *)0x0);
                     /* WARNING: Read-only address (ram,0xADDR) is written */
@@ -170,7 +164,7 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_Initializ
           _UNK_? = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material((Renderer *)0xfc0850c,(MethodInfo *)0x0);
                     /* WARNING: Read-only address (ram,0xADDR) is written */
           func_?();
-          SayChatBubbleHandler::SayChatBubbleHandler_Initialize((SayChatBubbleHandler *)0xe52b93e8,ownerActorNr,chatBubbleAnchor,(MethodInfo *)0x0);
+          SayChatBubbleHandler::SayChatBubbleHandler_Initialize((SayChatBubbleHandler *)0xe4ed03e8,ownerActorNr,chatBubbleAnchor,(MethodInfo *)0x0);
           pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
           if ((pMVar5 != (MVNetworkGame *)0x0) && (this_01 = (pMVar5->fields).playerContainer, this_01 != (MVPlayerContainer *)0x0)) {
             pMVar6 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe(this_01,ownerActorNr,(MethodInfo *)0x0);
@@ -367,14 +361,8 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_OnXRayBoo
     pMVar1 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_02,(MethodInfo *)0x0);
     if ((pMVar1 != (MVLocalPlayer *)0x0) && (this_01 = (pMVar1->fields).boostController, this_01 != (BoostController *)0x0)) {
       bVar2 = BoostController::BoostController_IsBoostActive(this_01,BoostType__Enum_XRayVision,(MethodInfo *)0x0);
-      if (bVar2 == 0) {
-        value = (this->fields).enemyIconMaterial;
-      }
-      else {
-        value = (this->fields).enemyIconMaterialVisibleThroughWalls;
-      }
       if (this_00 != (Renderer *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial(this_00,value,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial(this_00,(&(this->fields).enemyIconMaterial)[bVar2],(MethodInfo *)0x0);
         return;
       }
     }
@@ -641,25 +629,11 @@ void Assembly-CSharp.dll::AvatarUIHandlerRemote::AvatarUIHandlerRemote_UpdateNam
       }
     }
   }
-  bVar12 = 0;
-  uVar13 = func_?();
-  bVar14 = (byte)uVar13;
-  in_AF = 9 < (bVar14 & 0xf) | in_AF;
-  bVar12 = 0x99 < bVar14 | bVar12;
-  bVar15 = bVar14 + in_AF * -6 + bVar12 * -0x60;
-  pbVar16 = (byte *)(extraout_ECX + 8);
-  bVar14 = *pbVar16;
-  bVar17 = *pbVar16;
-  *pbVar16 = bVar17 + extraout_DL + bVar12;
-  bVar18 = 0x99 < bVar15 || (CARRY1(bVar14,extraout_DL) || CARRY1(bVar17 + extraout_DL,bVar12));
-  pbVar16 = (byte *)(extraout_ECX + 8);
-  bVar14 = *pbVar16;
-  bVar12 = (byte)((ushort)uVar13 >> 8);
-  bVar17 = *pbVar16 + bVar12;
-  *pbVar16 = bVar17 + bVar18;
-  *(char *)(extraout_ECX + 8) = *(char *)(extraout_ECX + 8) + extraout_DH + (0x99 < (byte)(bVar15 + (9 < (bVar15 & 0xf) | in_AF) * -6 + bVar18 * -0x60) || (CARRY1(bVar14,bVar12) || CARRY1(bVar17,bVar18)));
-  pcVar19 = (code *)swi(3);
-  (*pcVar19)();
+  iVar12 = func_?();
+  *(uint *)(iVar12 + 0x2f) = *(uint *)(iVar12 + 0x2f) | 0x2f489110;
+  *(char *)(extraout_ECX + -0x4eefd0b8) = *(char *)(extraout_ECX + -0x4eefd0b8) + (char)((uint)iVar12 >> 8);
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

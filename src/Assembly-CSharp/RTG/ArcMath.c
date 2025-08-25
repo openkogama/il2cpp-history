@@ -164,7 +164,7 @@ OBB * Assembly-CSharp.dll::RTG::ArcMath::ArcMath_CalcSh3DArcOBB(OBB *__return_st
   pVVar5 = SphereShape3D::SphereShape3D_get_Right((Vector3 *)&stack0xffffff98,(SphereShape3D *)__return_storage_ptr__,(MethodInfo *)0x0);
   uVar16 = pVVar5->x;
   uVar17 = pVVar5->y;
-  fVar3 = ABS((float)uVar16 * (float)puVar15 + (float)uVar17 * angle + pVVar5->z * 4.3747333e-29) + ABS(fVar12 * fVar11 + fVar10 * fVar8 + fVar7 * fVar3) + fVar13;
+  fVar3 = ABS((float)uVar17 * (float)puVar15 + (float)uVar16 * angle + pVVar5->z * 4.3781952e-29) + ABS(fVar12 * fVar11 + fVar10 * fVar8 + fVar7 * fVar3) + fVar13;
   fVar18 = (float10)func_?();
   (__return_storage_ptr__->_size).x = fVar3;
   (__return_storage_ptr__->_size).y = epsilon._extrudeEps * 2.0;
@@ -465,9 +465,9 @@ bool Assembly-CSharp.dll::RTG::ArcMath::ArcMath_LgArcContains3DPoint(Vector3 poi
     return 1;
   }
   fVar1 = (float10)func_?();
-  fVar2 = (float)fVar1;
+  fVar2 = (float)(fVar1 + (float10)epsilon._areaEps);
   fVar1 = (float10)func_?();
-  return (float)fVar1 <= epsilon._areaEps + fVar2;
+  return (float)fVar1 <= fVar2;
 }
 
 

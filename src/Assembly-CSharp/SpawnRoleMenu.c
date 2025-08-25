@@ -499,32 +499,32 @@ void Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu_HideElements(SpawnRoleMen
     func_?(&MethodInfo__System__Collections__Generic__List<DefaultSpawnRoleSelectionElement>__get_Item_int_);
     cRam_? = '\x01';
   }
-  iVar1 = amountOfElements + previousStartElement;
-  do {
-    if (iVar1 <= previousStartElement) {
-      return;
-    }
-    if (cRam_? == '\0') {
-      func_?(&MethodInfo__System__Collections__Generic__List<DefaultSpawnRoleSelectionElement>__get_Count__);
-      cRam_? = '\x01';
-    }
-    if (-1 < previousStartElement) {
-      pLVar2 = (this->fields).SelectionElementsList;
-      if (pLVar2 == (List_1_DefaultSpawnRoleSelectionElement_ *)0x0) {
+  if (previousStartElement < previousStartElement + amountOfElements) {
+    iVar1 = previousStartElement + amountOfElements;
+    do {
+      if (cRam_? == '\0') {
+        func_?(&MethodInfo__System__Collections__Generic__List<DefaultSpawnRoleSelectionElement>__get_Count__);
+        cRam_? = '\x01';
+      }
+      if (-1 < previousStartElement) {
+        pLVar2 = (this->fields).SelectionElementsList;
+        if (pLVar2 == (List_1_DefaultSpawnRoleSelectionElement_ *)0x0) {
 code_?:
-        func_?();
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
-        return;
+          func_?();
+          pcVar3 = (code *)swi(3);
+          (*pcVar3)();
+          return;
+        }
+        if ((previousStartElement < (pLVar2->fields)._size) && ((previousStartElement < newStartElement || ((this->fields).maxSelectionElementsOnScreen + newStartElement < previousStartElement)))) {
+          this_00 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).SelectionElementsList,previousStartElement,MethodInfo__System__Collections__Generic__List<DefaultSpawnRoleSelectionElement>__get_Item_int_);
+          if (this_00 == (RegexCharClass_SingleRange)0x0) goto code_?;
+          DefaultSpawnRoleSelectionElement::DefaultSpawnRoleSelectionElement_Deactivate((DefaultSpawnRoleSelectionElement *)this_00,(MethodInfo *)0x0);
+        }
       }
-      if ((previousStartElement < (pLVar2->fields)._size) && ((previousStartElement < newStartElement || ((this->fields).maxSelectionElementsOnScreen + newStartElement < previousStartElement)))) {
-        this_00 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)(this->fields).SelectionElementsList,previousStartElement,MethodInfo__System__Collections__Generic__List<DefaultSpawnRoleSelectionElement>__get_Item_int_);
-        if (this_00 == (RegexCharClass_SingleRange)0x0) goto code_?;
-        DefaultSpawnRoleSelectionElement::DefaultSpawnRoleSelectionElement_Deactivate((DefaultSpawnRoleSelectionElement *)this_00,(MethodInfo *)0x0);
-      }
-    }
-    previousStartElement = previousStartElement + 1;
-  } while( true );
+      previousStartElement = previousStartElement + 1;
+    } while (previousStartElement < iVar1);
+  }
+  return;
 }
 
 
@@ -1220,23 +1220,22 @@ void Assembly-CSharp.dll::SpawnRoleMenu::SpawnRoleMenu_OnScrollValueChange(Spawn
         if (pLVar4 != (List_1_DefaultSpawnRoleSelectionElement_ *)0x0) {
           iVar5 = (pLVar4->fields)._size;
           if (cRam_? == '\0') {
-            func_?(&TypeInfo__System__Math);
+            func_?();
             cRam_? = '\x01';
           }
           if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__System__Math);
+            func_?();
           }
           cVar6 = cRam_?;
-          fVar7 = (float10)func_?((double)((float)iVar5 * unaff_EBX));
-          iVar5 = (this->fields).maxSelectionElementsOnScreen;
+          func_?(SUB84((double)((float)iVar5 * unaff_EBX),0));
           if (cVar6 == '\0') {
-            func_?(&TypeInfo__System__Math);
+            func_?();
             cRam_? = '\x01';
           }
           if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__System__Math);
+            func_?();
           }
-          fVar7 = (float10)func_?((double)((float)(int)fVar7 - (float)iVar5 * 0.5));
+          fVar7 = (float10)func_?(SUB84((double)unaff_EDI,0));
           pLVar4 = (this->fields).SelectionElementsList;
           if (pLVar4 != (List_1_DefaultSpawnRoleSelectionElement_ *)0x0) {
             SpawnRoleMenu_HideElements(this,(this->fields).currentSelectionStartIndex,(pLVar4->fields)._size,(int)fVar7,(MethodInfo *)0x0);

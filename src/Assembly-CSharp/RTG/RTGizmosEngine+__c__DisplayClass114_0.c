@@ -34,7 +34,7 @@ int32_t Assembly-CSharp.dll::RTG::RTGizmosEngine+<>c__DisplayClass114_0::RTGizmo
                   uVar16 = (h1->fields)._hoverPoint.y;
                   SStack_17.m_value = ((float)uVar8 - (float)uVar10) * ((float)uVar8 - (float)uVar10) + ((float)uVar9 - (float)uVar11) * ((float)uVar9 - (float)uVar11) + fVar12 * fVar12;
                   fVar12 = (this->fields).screenRayOrigin.z - (h1->fields)._hoverPoint.z;
-                  iVar18 = mscorlib.dll::System::Single::Single_CompareTo_1(&SStack_17,((float)uVar13 - (float)uVar15) * ((float)uVar13 - (float)uVar15) + ((float)uVar14 - (float)uVar16) * ((float)uVar14 - (float)uVar16) + fVar12 * fVar12,(MethodInfo *)0x0);
+                  iVar18 = mscorlib.dll::System::Single::Single_CompareTo_1(&SStack_17,((float)uVar14 - (float)uVar16) * ((float)uVar14 - (float)uVar16) + ((float)uVar13 - (float)uVar15) * ((float)uVar13 - (float)uVar15) + fVar12 * fVar12,(MethodInfo *)0x0);
                   return iVar18;
                 }
                 pPVar5 = (Priority *)func_?(5,TypeInfo__RTG__IGizmoHandle,pIVar2);

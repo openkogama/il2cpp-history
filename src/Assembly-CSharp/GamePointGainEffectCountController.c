@@ -46,7 +46,7 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::GamePointGainEffec
   fVar1 = (this->fields).originalXPosition;
   fVar4 = (this->fields).slideMoveAmount;
   if (pTVar2 != (Transform *)0x0) {
-    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xffffffdc,pTVar2,(MethodInfo *)0x0);
+    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xffffffe0,pTVar2,(MethodInfo *)0x0);
     uVar6 = pVVar5->x;
     uVar7 = pVVar5->y;
     fVar8 = 0.0;
@@ -56,7 +56,7 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::GamePointGainEffec
     pTVar2 = (this->fields).transformToSlide;
     if (pTVar2 != (Transform *)0x0) {
       value.y = (float)uVar7;
-      value.x = ((fVar4 + fVar1) - (float)uVar6) * fVar8 + (float)uVar6;
+      value.x = ((fVar1 + fVar4) - (float)uVar6) * fVar8 + (float)uVar6;
       value.z = pVVar5->z;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition(pTVar2,value,(MethodInfo *)0x0);
       if (1.0 < fVar3) {
@@ -94,7 +94,7 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::GamePointGainEffec
     fVar4 = (fVar1 - (this->fields).slideStartTime) / (this->fields).slideDuration;
     fVar1 = (this->fields).originalXPosition;
     if (pTVar3 != (Transform *)0x0) {
-      pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xffffffdc,pTVar3,(MethodInfo *)0x0);
+      pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xffffffe0,pTVar3,(MethodInfo *)0x0);
       uVar6 = pVVar5->x;
       uVar7 = pVVar5->y;
       fVar8 = 0.0;
@@ -122,7 +122,7 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::GamePointGainEffec
     fVar1 = (this->fields).originalXPosition;
     fVar4 = (this->fields).slideMoveAmount;
     if (pTVar3 != (Transform *)0x0) {
-      pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xffffffdc,pTVar3,(MethodInfo *)0x0);
+      pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition((Vector3 *)&stack0xffffffe0,pTVar3,(MethodInfo *)0x0);
       uVar9 = pVVar5->x;
       uVar10 = pVVar5->y;
       fVar11 = 0.0;
@@ -132,7 +132,7 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::GamePointGainEffec
       pTVar3 = (this->fields).transformToSlide;
       if (pTVar3 != (Transform *)0x0) {
         value_00.y = (float)uVar10;
-        value_00.x = ((fVar4 + fVar1) - (float)uVar9) * fVar11 + (float)uVar9;
+        value_00.x = ((fVar1 + fVar4) - (float)uVar9) * fVar11 + (float)uVar9;
         value_00.z = pVVar5->z;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition(pTVar3,value_00,(MethodInfo *)0x0);
         if (fVar8 <= 1.0) {
@@ -144,8 +144,6 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::GamePointGainEffec
     }
   }
   func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
   return;
 }
 
@@ -186,10 +184,11 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::GamePointGainEffec
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
   iVar2 = (this->fields).gainEffectTotalAmount;
   iVar3 = (this->fields).gainEffectAmountReached + 1;
-  iVar4 = (this->fields).startValue;
-  iVar5 = (this->fields).endValue;
   (this->fields).gainEffectAmountReached = iVar3;
+  iVar4 = (this->fields).endValue;
+  iVar5 = (this->fields).startValue;
   (this->fields).textEffectStartTime = fVar1;
+  iVar6 = (this->fields).startValue;
   if (cRam_? == '\0') {
     func_?();
     cRam_? = '\x01';
@@ -197,18 +196,18 @@ void Assembly-CSharp.dll::GamePointGainEffectCountController::GamePointGainEffec
   if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  func_?((double)((float)(iVar5 - iVar4) * ((float)iVar3 / (float)iVar2) + (float)iVar4));
-  iVar6 = func_?();
-  pTVar7 = (this->fields).gamePointAmount;
-  (this->fields).currentGamePointAmountDisplayed = iVar6;
+  func_?((double)(((float)iVar3 / (float)iVar2) * (float)(iVar4 - iVar5) + (float)iVar6));
+  iVar7 = func_?();
+  pTVar8 = (this->fields).gamePointAmount;
+  (this->fields).currentGamePointAmountDisplayed = iVar7;
   mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&(this->fields).currentGamePointAmountDisplayed,(MethodInfo *)0x0);
-  if (pTVar7 != (Text *)0x0) {
-    (*(code *)(pTVar7->klass->vtable).set_text.method)();
+  if (pTVar8 != (Text *)0x0) {
+    (*(code *)(pTVar8->klass->vtable).set_text.method)();
     return;
   }
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

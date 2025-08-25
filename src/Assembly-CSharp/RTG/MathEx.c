@@ -23,8 +23,7 @@ int32_t Assembly-CSharp.dll::RTG::MathEx::MathEx_GetNumDigits(int32_t number,Met
   if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  auVar1._0_8_ = (double)((number ^ number >> 0x1f) - (number >> 0x1f));
-  auVar1._8_8_ = 0;
+  dVar1 = (double)((number ^ number >> 0x1f) - (number >> 0x1f));
   func_?();
   if (cRam_? == '\0') {
     func_?();
@@ -33,7 +32,7 @@ int32_t Assembly-CSharp.dll::RTG::MathEx::MathEx_GetNumDigits(int32_t number,Met
   if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
     func_?();
   }
-  fVar2 = (float10)func_?((double)((float)auVar1._0_8_ + 1.0));
+  fVar2 = (float10)func_?((double)((float)dVar1 + 1.0));
   return (int)fVar2;
 }
 

@@ -199,7 +199,7 @@ void Assembly-CSharp.dll::GameMeterTimeAttackFlag::GameMeterTimeAttackFlag_Updat
   if (pFVar2 != (FlagDebriefingControl *)0x0) {
     fVar3 = (pFVar2->fields).RunStartTime;
     if (cRam_? == '\0') {
-      func_?();
+      func_?(&TypeInfo__System__Math);
       cRam_? = '\x01';
     }
     if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {

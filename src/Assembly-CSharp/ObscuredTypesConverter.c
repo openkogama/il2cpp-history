@@ -74,7 +74,7 @@ Object * Assembly-CSharp.dll::ObscuredTypesConverter::ObscuredTypesConverter_Cre
   }
 code_?:
   iVar16 = func_?(this_00,TypeInfo__System__Int32);
-  message = TypeInfo__System__Int32;
+  message = (Boolean__Array__Class *)TypeInfo__System__Int32;
   pIVar17 = (Il2CppArrayType *)this_00;
   if (iVar16 != 0) {
     if (this_00 != (Exception *)0x0) {
@@ -139,12 +139,12 @@ code_?:
     }
   }
   iVar16 = func_?(this_00,TypeInfo__System__Single);
-  message = (Int32__Array__Class *)TypeInfo__System__Single;
+  message = (Boolean__Array__Class *)TypeInfo__System__Single;
   if (iVar16 == 0) {
     if (this_00 == (Exception *)0x0) {
 code_?:
       iVar16 = func_?(this_00,TypeInfo__System__Boolean);
-      message = (Int32__Array__Class *)TypeInfo__System__Boolean;
+      message = TypeInfo__System__Boolean;
       if (iVar16 != 0) {
         if (this_00 == (Exception *)0x0) goto code_?;
         pIVar17 = (Il2CppArrayType *)func_?(this_00,TypeInfo__System__Boolean);
@@ -159,7 +159,7 @@ code_?:
               return _Stack_18.dummy;
             }
             if ((Il2CppClass *)pIVar17->lobounds <= pIVar18) break;
-            value = (Object *)CONCAT13(*(uint8_t *)((int)&(pIVar17 + 1)[-1].etype + (int)&(pIVar18->byval_arg).data),value._0_3_);
+            value = (Object *)CONCAT13(*(uint8_t *)((int)&pIVar17->etype + (int)&(pIVar18->byval_arg).data),value._0_3_);
             if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool->_1).cctor_finished_or_no_cctor == 0) {
               func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredBool);
             }
@@ -253,7 +253,7 @@ code_?:
       }
 code_?:
       iVar16 = func_?(this_00,TypeInfo__System__Int64);
-      message = (Int32__Array__Class *)TypeInfo__System__Int64;
+      message = (Boolean__Array__Class *)TypeInfo__System__Int64;
       if (iVar16 != 0) {
         if (this_00 != (Exception *)0x0) {
           _Stack_1c.dummy = (void *)func_?(this_00,TypeInfo__System__Int64);
@@ -390,7 +390,7 @@ code_?:
     }
     method_00 = (MethodInfo *)0x0;
     pSVar35 = (String *)func_?(&StringLiteral_Trying_to_write___0___of_unsuppo);
-    message = (Int32__Array__Class *)mscorlib.dll::System::String::String_Format_1(pSVar35,(Object *)this_00,pOVar7,method_00);
+    message = (Boolean__Array__Class *)mscorlib.dll::System::String::String_Format_1(pSVar35,(Object *)this_00,pOVar7,method_00);
     func_?();
     this_00 = (Exception *)func_?();
     mscorlib.dll::System::Exception::Exception__ctor_1(this_00,(String *)message,(MethodInfo *)0x0);

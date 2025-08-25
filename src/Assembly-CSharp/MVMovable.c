@@ -415,15 +415,15 @@ void Assembly-CSharp.dll::MVMovable::MVMovable_Move(MVMovable *this,float direct
     }
     if ((this_02->fields).pausedMovement == 0) {
       pMVar17 = (this_02->fields)._CubeModel_k__BackingField;
-      fVar11 = ((fStack_19 * VStack_27.z - fStack_37 * fStack_38) - (float)uStack_18 * VStack_27.x) - VStack_27.y * uStack_18._4_4_;
-      fVar39 = (fStack_38 * VStack_27.x + VStack_27.z * uStack_18._4_4_ + fStack_19 * VStack_27.y) - fStack_37 * (float)uStack_18;
-      fVar34 = VStack_27.x * uStack_18._4_4_;
-      VStack_27.x = (fStack_37 * uStack_18._4_4_ + VStack_27.z * (float)uStack_18 + fStack_19 * VStack_27.x) - fStack_38 * VStack_27.y;
-      fStack_37 = ((float)uStack_18 * VStack_27.y + VStack_27.z * fStack_38 + fStack_19 * fStack_37) - fVar34;
+      fVar11 = ((VStack_27.z * fStack_19 - fStack_37 * fStack_38) - (float)uStack_18 * VStack_27.x) - VStack_27.y * uStack_18._4_4_;
+      fVar39 = (fStack_38 * VStack_27.x + VStack_27.z * uStack_18._4_4_ + VStack_27.y * fStack_19) - fStack_37 * (float)uStack_18;
+      fVar34 = (fStack_37 * uStack_18._4_4_ + VStack_27.z * (float)uStack_18 + VStack_27.x * fStack_19) - fStack_38 * VStack_27.y;
+      fStack_37 = ((float)uStack_18 * VStack_27.y + VStack_27.z * fStack_38 + fStack_37 * fStack_19) - VStack_27.x * uStack_18._4_4_;
+      VStack_27.x = fVar34;
       VStack_27.y = fVar39;
       VStack_27.z = fVar11;
       if (pMVar17 == (MVCubeModelInstance *)0x0) goto code_?;
-      value.y = VStack_27.x;
+      value.y = fVar34;
       value.x = fStack_37;
       value.z = fVar39;
       value.w = fVar11;
@@ -829,7 +829,7 @@ code_?:
           pSVar41 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_9,(MethodInfo *)0x0);
           method_00.m_Index = 3;
           func_?(3,pSVar41);
-          uVar25 = 0x4103402f7;
+          uVar25 = 0x410343fa7;
           pSVar41 = StringLiteral__to_move__If_this_is_a_new_movab;
           func_?();
           pMStack_20 = (MVMovable *)mscorlib.dll::System::String::String_Concat_6(pSStack_21,(MethodInfo *)0x0);
@@ -1066,42 +1066,44 @@ void Assembly-CSharp.dll::MVMovable::MVMovable_SetOrgRotation(MVMovable *this,Qu
   euler.y = (float)uVar3 * 57.29578;
   euler.x = (float)uVar2 * 57.29578;
   euler.z = pVVar1->z * 57.29578;
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_MakePositive((Vector3 *)&stack0xffffffd8,euler,(MethodInfo *)0x0);
+  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_MakePositive((Vector3 *)&stack0xffffffe4,euler,(MethodInfo *)0x0);
   uVar4._0_4_ = pVVar1->x;
   uVar4._4_4_ = pVVar1->y;
   fVar5 = pVVar1->z;
   if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
+    puVar6 = &UNK_?;
     func_?();
+    uVar4 = CONCAT44(puVar6,(undefined4)uVar4);
   }
   vec.z = fVar5;
   vec.x = (float)(int)uVar4;
   vec.y = (float)(int)((ulonglong)uVar4 >> 0x20);
-  pSVar6 = Extensions::Extensions_ToSerializeString(vec,(MethodInfo *)0x0);
+  pSVar7 = Extensions::Extensions_ToSerializeString(vec,(MethodInfo *)0x0);
   if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__set_Item(this_00,(Object *)StringLiteral_Rotation,(Object *)pSVar6,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::Dictionary_2_System_Object_System_Object__set_Item(this_00,(Object *)StringLiteral_Rotation,(Object *)pSVar7,MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_);
     if (syncServer == 0) {
       return;
     }
     this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
-    pSVar6 = StringLiteral_Rotation;
+    pSVar7 = StringLiteral_Rotation;
     worldObjectID = (this->fields)._._._._.id;
     if (cRam_? == '\0') {
       func_?();
       cRam_? = '\x01';
     }
-    if (pSVar6 != (String *)0x0) {
-      pSVar6 = (String *)(*(code *)(pSVar6->klass->vtable).ToString.method)();
-      pSVar6 = mscorlib.dll::System::String::String_Concat_3(StringLiteral_BlueprintData_,pSVar6,(MethodInfo *)0x0);
+    if (pSVar7 != (String *)0x0) {
+      pSVar7 = (String *)(*(code *)(pSVar7->klass->vtable).ToString.method)();
+      pSVar7 = mscorlib.dll::System::String::String_Concat_3(StringLiteral_BlueprintData_,pSVar7,(MethodInfo *)0x0);
       value = (Object *)func_?();
       if (this_01 != (MVNetworkGame_OperationRequests *)0x0) {
-        MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_UpdateWorldObjectDataPartial(this_01,worldObjectID,pSVar6,value,(MethodInfo *)0x0);
+        MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_UpdateWorldObjectDataPartial(this_01,worldObjectID,pSVar7,value,(MethodInfo *)0x0);
         return;
       }
     }
   }
   func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

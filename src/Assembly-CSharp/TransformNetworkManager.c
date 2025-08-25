@@ -100,23 +100,33 @@ void Assembly-CSharp.dll::TransformNetworkManager::TransformNetworkManager_AddTr
         if (pDVar3 != (Dictionary_2_System_Int32_MVNetworkObject_ *)0x0) {
           pMVar5 = (MVNetworkListener *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item((Dictionary_2_System_Int32_System_Object_ *)pDVar3,woID,MethodInfo__System__Collections__Generic__Dictionary<int,_MVNetworkObject>__get_Item_int_);
           if (pMVar5 != (MVNetworkListener *)0x0) {
-            if (((TypeInfo__MVNetworkListener->_1).naturalAligment <= (pMVar5->klass->_1).naturalAligment) && ((pMVar5->klass->_1).typeHierarchy[(TypeInfo__MVNetworkListener->_1).naturalAligment - 1] == (Il2CppClass *)TypeInfo__MVNetworkListener)) {
-              MVNetworkListener::MVNetworkListener_AddTransformPackage(pMVar5,p,(MethodInfo *)0x0);
+            if (((pMVar5->klass->_1).naturalAligment < (TypeInfo__MVNetworkListener->_1).naturalAligment) || ((pMVar5->klass->_1).typeHierarchy[(TypeInfo__MVNetworkListener->_1).naturalAligment - 1] != (Il2CppClass *)TypeInfo__MVNetworkListener)) {
+              bVar6 = false;
+            }
+            else {
+              bVar6 = true;
+            }
+            this_01 = (MVNetworkListener *)0x0;
+            if (bVar6) {
+              this_01 = pMVar5;
+            }
+            if (this_01 != (MVNetworkListener *)0x0) {
+              MVNetworkListener::MVNetworkListener_AddTransformPackage(this_01,p,(MethodInfo *)0x0);
               return;
             }
-            pTVar6 = mscorlib.dll::System::Object::Object_GetType((Object *)pMVar5,(MethodInfo *)0x0);
-            pSVar7 = StringLiteral_worldObjectClientManager_WorldOb;
-            if (pTVar6 == (Type *)0x0) {
+            pTVar7 = mscorlib.dll::System::Object::Object_GetType((Object *)pMVar5,(MethodInfo *)0x0);
+            pSVar8 = StringLiteral_worldObjectClientManager_WorldOb;
+            if (pTVar7 == (Type *)0x0) {
               str1 = (String *)0x0;
             }
             else {
-              str1 = (String *)(*(code *)(pTVar6->klass->vtable).ToString.method)();
+              str1 = (String *)(*(code *)(pTVar7->klass->vtable).ToString.method)();
             }
-            pSVar7 = mscorlib.dll::System::String::String_Concat_4(pSVar7,str1,StringLiteral__this_is_probably_due_to_ownersh,(MethodInfo *)0x0);
+            pSVar8 = mscorlib.dll::System::String::String_Concat_4(pSVar8,str1,StringLiteral__this_is_probably_due_to_ownersh,(MethodInfo *)0x0);
             if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
               func_?();
             }
-            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning((Object *)pSVar7,(MethodInfo *)0x0);
+            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning((Object *)pSVar8,(MethodInfo *)0x0);
           }
           return;
         }
@@ -125,8 +135,8 @@ void Assembly-CSharp.dll::TransformNetworkManager::TransformNetworkManager_AddTr
   }
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

@@ -4,9 +4,8 @@
 bool Assembly-CSharp.dll::RotateOrientationWarning+<RotationAnimationCoroutine>d__8::RotateOrientationWarning_RotationAnimationCoroutine_d_8_MoveNext(RotateOrientationWarning_RotationAnimationCoroutine_d_8 *this,MethodInfo *method)
 
 {
-  puVar1 = (undefined4 *)&stack0xfffffff0;
   if (cRam_? == '\0') {
-    func_?();
+    func_?(&TypeInfo__UnityEngine__WaitForSeconds);
     cRam_? = '\x01';
   }
   this_00 = (this->fields).__4__this;
@@ -18,31 +17,31 @@ bool Assembly-CSharp.dll::RotateOrientationWarning+<RotationAnimationCoroutine>d
     (this->fields).__1__state = -1;
     if (this_00 != (RotateOrientationWarning *)0x0) {
       if ((this_00->fields).targetRotationTime < (this->fields)._rotationTime_5__2) {
-        fVar2 = (this_00->fields).targetPauseTime;
-        pSVar3 = (SubscribableVariable_1_System_Single_ *)func_?();
-        SubscribableVariable`1[System::Single]::SubscribableVariable_1_System_Single___ctor(pSVar3,fVar2,(MethodInfo *)0x0);
-        (this->fields).__2__current = (Object *)pSVar3;
-        func_?(&(this->fields).__2__current);
+        fVar1 = (this_00->fields).targetPauseTime;
+        pSVar2 = (SubscribableVariable_1_System_Single_ *)func_?(TypeInfo__UnityEngine__WaitForSeconds);
+        SubscribableVariable`1[System::Single]::SubscribableVariable_1_System_Single___ctor(pSVar2,fVar1,(MethodInfo *)0x0);
+        (this->fields).__2__current = (Object *)pSVar2;
+        func_?(&(this->fields).__2__current,pSVar2);
         (this->fields).__1__state = 2;
         return 1;
       }
-      fVar2 = (this->fields)._rotationTime_5__2;
-      fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-      fVar4 = fVar4 + fVar2;
-      (this->fields)._rotationTime_5__2 = fVar4;
-      fStack_5 = MathFunctions::MathFunctions_SmoothInverseLerp(0.0,(this_00->fields).targetRotationTime,fVar4,(MethodInfo *)0x0);
-      fVar2 = (this_00->fields).startRotationAngle;
-      fVar4 = (this_00->fields).targetRotationAngle;
-      fVar6 = 0.0;
-      if ((fStack_5 < 0.0) || (fVar6 = 1.0, 1.0 < fStack_5)) {
-        fStack_5 = fVar6;
+      fVar1 = (this->fields)._rotationTime_5__2;
+      fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+      fVar3 = fVar3 + fVar1;
+      (this->fields)._rotationTime_5__2 = fVar3;
+      fStack_4 = MathFunctions::MathFunctions_SmoothInverseLerp(0.0,(this_00->fields).targetRotationTime,fVar3,(MethodInfo *)0x0);
+      fVar1 = (this_00->fields).startRotationAngle;
+      fVar3 = (this_00->fields).targetRotationAngle;
+      fVar5 = 0.0;
+      if ((fStack_4 < 0.0) || (fVar5 = 1.0, 1.0 < fStack_4)) {
+        fStack_4 = fVar5;
       }
-      pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this_00,(MethodInfo *)0x0);
-      auVar8._4_8_ = 0;
-      auVar8._0_4_ = ((fVar4 - fVar2) * fStack_5 + fVar2) * 0.017453292;
-      pQVar9 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad((Quaternion *)&stack0xffffffa0,(Vector3)(auVar8 << 0x40),(MethodInfo *)0x0);
-      if (pTVar7 != (Transform *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation(pTVar7,*pQVar9,(MethodInfo *)0x0);
+      pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this_00,(MethodInfo *)0x0);
+      auVar7._4_8_ = 0;
+      auVar7._0_4_ = ((fVar3 - fVar1) * fStack_4 + fVar1) * 0.017453292;
+      pQVar8 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad((Quaternion *)&stack0xffffffa0,(Vector3)(auVar7 << 0x40),(MethodInfo *)0x0);
+      if (pTVar6 != (Transform *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation(pTVar6,*pQVar8,(MethodInfo *)0x0);
         (this->fields).__2__current = (Object *)0x0;
         func_?();
         (this->fields).__1__state = 1;
@@ -56,40 +55,44 @@ bool Assembly-CSharp.dll::RotateOrientationWarning+<RotationAnimationCoroutine>d
     (this->fields).__1__state = -1;
     if (this_00 != (RotateOrientationWarning *)0x0) {
       if ((this_00->fields).targetFadeTime < (this->fields)._fadeTime_5__3) {
-        pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this_00,(MethodInfo *)0x0);
-        auVar10._4_8_ = 0;
-        auVar10._0_4_ = (this_00->fields).startRotationAngle * 0.017453292;
-        pQVar9 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad((Quaternion *)&stack0xffffffb0,(Vector3)(auVar10 << 0x40),(MethodInfo *)0x0);
-        if (pTVar7 != (Transform *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation(pTVar7,*pQVar9,(MethodInfo *)0x0);
+        pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform((Component *)this_00,(MethodInfo *)0x0);
+        auVar9._4_8_ = 0;
+        auVar9._0_4_ = (this_00->fields).startRotationAngle * 0.017453292;
+        pQVar8 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad((Quaternion *)&stack0xffffffb0,(Vector3)(auVar9 << 0x40),(MethodInfo *)0x0);
+        if (pTVar6 != (Transform *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation(pTVar6,*pQVar8,(MethodInfo *)0x0);
           (this->fields)._fadeTime_5__3 = 0.0;
 code_?:
           if ((this_00->fields).targetFadeTime < (this->fields)._fadeTime_5__3) {
-            fVar2 = (this_00->fields).targetPauseTime;
-            pSVar3 = (SubscribableVariable_1_System_Single_ *)func_?();
-            SubscribableVariable`1[System::Single]::SubscribableVariable_1_System_Single___ctor(pSVar3,fVar2 * 0.5,(MethodInfo *)0x0);
-            (this->fields).__2__current = (Object *)pSVar3;
-            func_?(&(this->fields).__2__current);
+            fVar1 = (this_00->fields).targetPauseTime;
+            pSVar2 = (SubscribableVariable_1_System_Single_ *)func_?(TypeInfo__UnityEngine__WaitForSeconds);
+            SubscribableVariable`1[System::Single]::SubscribableVariable_1_System_Single___ctor(pSVar2,fVar1 * 0.5,(MethodInfo *)0x0);
+            (this->fields).__2__current = (Object *)pSVar2;
+            func_?(&(this->fields).__2__current,pSVar2);
             (this->fields).__1__state = 5;
             return 1;
           }
-          fVar2 = (this->fields)._fadeTime_5__3;
-          fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-          fVar4 = fVar4 + fVar2;
-          (this->fields)._fadeTime_5__3 = fVar4;
-          MathFunctions::MathFunctions_SmoothInverseLerp(0.0,(this_00->fields).targetFadeTime,fVar4,(MethodInfo *)0x0);
-          pIVar11 = (this_00->fields).image;
-          if (pIVar11 != (Image *)0x0) {
-            puVar12 = (undefined4 *)(*(code *)(pIVar11->klass->vtable).get_color.method)();
-            pIVar13 = (this_00->fields).image;
-            uVar14 = *puVar12;
-            if (pIVar13 != (Image *)0x0) {
-              iVar15 = (*(code *)(pIVar13->klass->vtable).get_color.method)(&stack0xffffffb0,pIVar13);
-              pIVar13 = (this_00->fields).image;
-              fVar2 = *(float *)(iVar15 + 4);
-              if (pIVar13 != (Image *)0x0) {
-                iVar15 = (*(code *)(pIVar13->klass->vtable).get_color.method)(&stack0xffffffa0,pIVar13);
-                func_?(0x17,pIVar11,uVar14,fVar2,*(undefined4 *)(iVar15 + 8));
+          fVar1 = (this->fields)._fadeTime_5__3;
+          fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+          fVar3 = fVar3 + fVar1;
+          (this->fields)._fadeTime_5__3 = fVar3;
+          fStack_4 = MathFunctions::MathFunctions_SmoothInverseLerp(0.0,(this_00->fields).targetFadeTime,fVar3,(MethodInfo *)0x0);
+          fVar1 = 0.0;
+          if ((fStack_4 < 0.0) || (fVar1 = 1.0, 1.0 < fStack_4)) {
+            fStack_4 = fVar1;
+          }
+          pIVar10 = (this_00->fields).image;
+          if (pIVar10 != (Image *)0x0) {
+            puVar11 = (undefined4 *)(*(code *)(pIVar10->klass->vtable).get_color.method)(&stack0xffffffb0,pIVar10);
+            pIVar12 = (this_00->fields).image;
+            uVar13 = *puVar11;
+            if (pIVar12 != (Image *)0x0) {
+              iVar14 = (*(code *)(pIVar12->klass->vtable).get_color.method)(&stack0xffffffb0,pIVar12,(pIVar12->klass->vtable).set_color.methodPtr);
+              pIVar12 = (this_00->fields).image;
+              fVar1 = *(float *)(iVar14 + 4);
+              if (pIVar12 != (Image *)0x0) {
+                iVar14 = (*(code *)(pIVar12->klass->vtable).get_color.method)(&stack0xffffffa0,pIVar12,(pIVar12->klass->vtable).set_color.methodPtr);
+                func_?(0x17,pIVar10,uVar13,fVar1,*(undefined4 *)(iVar14 + 8),fStack_4 + 0.0);
                 (this->fields).__2__current = (Object *)0x0;
                 func_?(&(this->fields).__2__current,0);
                 (this->fields).__1__state = 4;
@@ -100,23 +103,27 @@ code_?:
         }
       }
       else {
-        fVar2 = (this->fields)._fadeTime_5__3;
-        fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-        fVar4 = fVar4 + fVar2;
-        (this->fields)._fadeTime_5__3 = fVar4;
-        MathFunctions::MathFunctions_SmoothInverseLerp(0.0,(this_00->fields).targetFadeTime,fVar4,(MethodInfo *)0x0);
-        pIVar11 = (this_00->fields).image;
-        if (pIVar11 != (Image *)0x0) {
-          puVar12 = (undefined4 *)(*(code *)(pIVar11->klass->vtable).get_color.method)();
-          pIVar13 = (this_00->fields).image;
-          uVar14 = *puVar12;
-          if (pIVar13 != (Image *)0x0) {
-            iVar15 = (*(code *)(pIVar13->klass->vtable).get_color.method)(&stack0xffffffb0,pIVar13);
-            pIVar13 = (this_00->fields).image;
-            uVar16 = *(undefined4 *)(iVar15 + 4);
-            if (pIVar13 != (Image *)0x0) {
-              iVar15 = (*(code *)(pIVar13->klass->vtable).get_color.method)(&stack0xffffffb0,pIVar13);
-              func_?(0x17,pIVar11,uVar14,uVar16,*(undefined4 *)(iVar15 + 8));
+        fVar1 = (this->fields)._fadeTime_5__3;
+        fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+        fVar3 = fVar3 + fVar1;
+        (this->fields)._fadeTime_5__3 = fVar3;
+        fVar1 = MathFunctions::MathFunctions_SmoothInverseLerp(0.0,(this_00->fields).targetFadeTime,fVar3,(MethodInfo *)0x0);
+        fStack_4 = 0.0;
+        if ((0.0 <= fVar1) && (fStack_4 = fVar1, 1.0 < fVar1)) {
+          fStack_4 = 1.0;
+        }
+        pIVar10 = (this_00->fields).image;
+        if (pIVar10 != (Image *)0x0) {
+          puVar11 = (undefined4 *)(*(code *)(pIVar10->klass->vtable).get_color.method)(&stack0xffffffb0,pIVar10);
+          pIVar12 = (this_00->fields).image;
+          uVar13 = *puVar11;
+          if (pIVar12 != (Image *)0x0) {
+            iVar14 = (*(code *)(pIVar12->klass->vtable).get_color.method)(&stack0xffffffb0,pIVar12,(pIVar12->klass->vtable).set_color.methodPtr);
+            pIVar12 = (this_00->fields).image;
+            uVar15 = *(undefined4 *)(iVar14 + 4);
+            if (pIVar12 != (Image *)0x0) {
+              iVar14 = (*(code *)(pIVar12->klass->vtable).get_color.method)(&stack0xffffffb0,pIVar12,(pIVar12->klass->vtable).set_color.methodPtr);
+              func_?(0x17,pIVar10,uVar13,uVar15,*(undefined4 *)(iVar14 + 8),fStack_4 * -1.0 + 1.0);
               (this->fields).__2__current = (Object *)0x0;
               func_?(&(this->fields).__2__current,0);
               (this->fields).__1__state = 3;
@@ -134,15 +141,10 @@ code_?:
   default:
     return 0;
   }
-  bVar17 = func_?();
-  puVar12 = (undefined4 *)&stack0xffffff8c;
-  cVar18 = '\x0f';
-  do {
-    puVar1 = puVar1 + -1;
-    puVar12 = puVar12 + -1;
-    *puVar12 = *puVar1;
-    cVar18 = cVar18 + -1;
-  } while ('\0' < cVar18);
+  func_?();
+  func_?();
+  pcVar16 = (code *)swi(1);
+  bVar17 = (*pcVar16)();
   return bVar17;
 }
 

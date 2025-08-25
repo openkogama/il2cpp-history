@@ -94,17 +94,21 @@ bool Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::Fir
       (this->fields)._._.isRegistered = 1;
     }
     FirstTimeActivatableElementBase::FirstTimeActivatableElementBase_get_IsBlocked((FirstTimeActivatableElementBase *)this,(MethodInfo *)0x0);
-    bVar3 = 0;
+    cVar3 = '\0';
     pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
     if (pGVar2 != (GameObject *)0x0) {
       bVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy(pGVar2,(MethodInfo *)0x0);
       bVar5 = MVGameControllerBase::MVGameControllerBase_IsInCorrectInventory((this->fields).inventoryButton,(MethodInfo *)0x0);
-      return bVar5 & (bVar3 ^ 1) & bVar4 & bVar1;
+      bVar6 = 0;
+      if (cVar3 == '\0') {
+        bVar6 = bVar4;
+      }
+      return bVar5 & bVar6 & bVar1;
     }
   }
   func_?();
-  pcVar6 = (code *)swi(3);
-  bVar1 = (*pcVar6)();
+  pcVar7 = (code *)swi(3);
+  bVar1 = (*pcVar7)();
   return bVar1;
 }
 

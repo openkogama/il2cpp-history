@@ -465,8 +465,8 @@ void Assembly-CSharp.dll::RTG::SceneGizmoLookAndFeel::SceneGizmoLookAndFeel__cto
   }
   fVar3 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
   (this->fields)._screenOffset.x = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).x;
-  (this->fields)._screenOffset.y = fVar3;
   (this->fields)._screenSize = 90.0;
+  (this->fields)._screenOffset.y = fVar3;
   (this->fields)._axesLabelTint.r = 1.0;
   (this->fields)._axesLabelTint.g = 1.0;
   (this->fields)._axesLabelTint.b = 1.0;

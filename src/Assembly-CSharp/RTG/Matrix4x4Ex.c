@@ -54,7 +54,7 @@ Vector3__Array * Assembly-CSharp.dll::RTG::Matrix4x4Ex::Matrix4x4Ex_GetNormalize
     cRam_? = '\x01';
   }
   pVVar1 = (Vector3__Array *)func_?(TypeInfo__UnityEngine__Vector3,3);
-  pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_GetColumn((Vector4 *)&stack0xffffffe0,(Matrix4x4 *)&stack0xffffffa0,0,(MethodInfo *)0x0);
+  pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_GetColumn((Vector4 *)&stack0xffffffec,(Matrix4x4 *)&stack0xffffffac,0,(MethodInfo *)0x0);
   value.x = pVVar2->x;
   value.y = pVVar2->y;
   value.z = pVVar2->z;
@@ -69,7 +69,7 @@ Vector3__Array * Assembly-CSharp.dll::RTG::Matrix4x4Ex::Matrix4x4Ex_GetNormalize
       pVVar1->vector[0].x = pVVar3->x;
       pVVar1->vector[0].y = fVar4;
       pVVar1->vector[0].z = fVar5;
-      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_GetColumn((Vector4 *)&stack0xffffffe0,(Matrix4x4 *)matrix.m11,(int32_t)matrix.m21,(MethodInfo *)matrix.m31);
+      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_GetColumn((Vector4 *)&stack0xffffffec,(Matrix4x4 *)matrix.m11,(int32_t)matrix.m21,(MethodInfo *)matrix.m31);
       value_00.x = pVVar2->x;
       value_00.y = pVVar2->y;
       value_00.z = pVVar2->z;
@@ -97,7 +97,7 @@ Vector3__Array * Assembly-CSharp.dll::RTG::Matrix4x4Ex::Matrix4x4Ex_GetNormalize
       }
     }
   }
-  matrix.m00 = (float)&UNK_?;
+  matrix.m30 = (float)&UNK_?;
   func_?();
   pcVar6 = (code *)swi(3);
   pVVar1 = (Vector3__Array *)(*pcVar6)();
@@ -290,7 +290,7 @@ Matrix4x4 * Assembly-CSharp.dll::RTG::Matrix4x4Ex::Matrix4x4Ex_RotationMatrixFro
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1(__return_storage_ptr__,4,up.x,(MethodInfo *)0x0);
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1(__return_storage_ptr__,5,up.y,(MethodInfo *)0x0);
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1(__return_storage_ptr__,6,up.z,(MethodInfo *)0x0);
-  UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1(__return_storage_ptr__,8,4.3571372e-29,(MethodInfo *)0x0);
+  UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1(__return_storage_ptr__,8,4.3605895e-29,(MethodInfo *)0x0);
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1(__return_storage_ptr__,9,(float)__return_storage_ptr__,(MethodInfo *)0x0);
   UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_set_Item_1(__return_storage_ptr__,10,fVar3,(MethodInfo *)0x0);
   return __return_storage_ptr__;

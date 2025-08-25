@@ -105,7 +105,7 @@ MVWorldObjectClient * Assembly-CSharp.dll::MVGroup::MVGroup_Clone(MVGroup *this,
     }
     if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
       mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Sort_1((List_1_System_Object_ *)this_00,(Comparison_1_Object_ *)this_01,MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__Sort_System__Comparison<MVWorldObjectClient>_);
-      pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)&stack0xffffffd8,this_00,MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__GetEnumerator__);
+      pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::RegexCharClass+SingleRange]::List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)&stack0xffffffdc,this_00,MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__GetEnumerator__);
       pOStack_4 = (Object__Class *)pLVar6->_list;
       uStack_1 = 1;
       while( true ) {
@@ -167,7 +167,7 @@ Bounds * Assembly-CSharp.dll::MVGroup::MVGroup_ComputeBoundsForWOs(Bounds *__ret
         UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds_Encapsulate(&BStack_4,point,(MethodInfo *)0x0);
         point_00.y = BStack_3.m_Extents.y + fVar8;
         point_00.x = fVar7 + (pBVar2->m_Center).x;
-        point_00.z = BStack_3.m_Extents.z + 3.5451242e-29;
+        point_00.z = BStack_3.m_Extents.z + 3.549785e-29;
         UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds_Encapsulate(&BStack_4,point_00,(MethodInfo *)0x0);
       }
       (__return_storage_ptr__->m_Center).x = BStack_4.m_Center.x;
@@ -380,9 +380,9 @@ int32_t Assembly-CSharp.dll::MVGroup::MVGroup_GetGroupAbove(int32_t currentParen
       if (returnParentIfHasFlags != InteractionFlags__Enum_CanChangeScale || method != (MethodInfo *)0x0) {
         pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
         if ((pMVar1 == (MVWorldObjectClientManager *)0x0) || (this = (MVWorldObjectClient *)MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject(pMVar1,id,(MethodInfo *)0x0), this == (MVWorldObjectClient *)0x0)) break;
-        returnParentIfHasFlags = InteractionFlags__Enum_CanChangeScale;
-        currentParent = 0;
-        bVar3 = MVWorldObjectClient::MVWorldObjectClient_HasInteractionFlag(this,InteractionFlags__Enum_CanChangeScale,method);
+        leaf = (int32_t)method;
+        currentParent = returnParentIfHasFlags;
+        bVar3 = MVWorldObjectClient::MVWorldObjectClient_HasInteractionFlag(this,returnParentIfHasFlags,method);
         if (bVar3 != 0) {
           return id;
         }
@@ -443,12 +443,11 @@ HashSet_1_System_Int32_ * Assembly-CSharp.dll::MVGroup::MVGroup_GetHierarchyWorl
           return (HashSet_1_System_Int32_ *)this_00;
         }
         if (RVar6 == (RegexCharClass_SingleRange)0x0) break;
-        if ((*(byte *)(*(int *)RVar6 + 0xb8) < (TypeInfo__MVGroup->_1).naturalAligment) || (*(MVGroup__Class **)(*(int *)(*(int *)RVar6 + 100) + -4 + (uint)(TypeInfo__MVGroup->_1).naturalAligment * 4) != TypeInfo__MVGroup)) {
+        if (((*(byte *)(*(int *)RVar6 + 0xb8) < (TypeInfo__MVGroup->_1).naturalAligment) || (*(MVGroup__Class **)(*(int *)(*(int *)RVar6 + 100) + -4 + (uint)(TypeInfo__MVGroup->_1).naturalAligment * 4) != TypeInfo__MVGroup)) || (RVar6 == (RegexCharClass_SingleRange)0x0)) {
           if (RVar6 == (RegexCharClass_SingleRange)0x0) break;
           System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::HashSet_1_System_Int32__System_Collections_Generic_ICollection_T__Add((HashSet_1_System_Int32_ *)this_00,(int32_t)*(InvokerMethod *)((int)RVar6 + 8),MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
         }
         else {
-          if (RVar6 == (RegexCharClass_SingleRange)0x0) break;
           iVar8 = func_?();
           if (iVar8 == 0) break;
           this_02 = (MVGroup *)func_?();

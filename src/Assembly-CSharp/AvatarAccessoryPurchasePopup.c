@@ -159,7 +159,7 @@ void Assembly-CSharp.dll::AvatarAccessoryPurchasePopup::AvatarAccessoryPurchaseP
           }
           if (pTVar2 == (Text *)0x0) goto code_?;
           (*(code *)(pTVar2->klass->vtable).set_text.method)(pTVar2,pSVar6,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-          IVar4.m_value = IVar5.m_value;
+          fVar7 = (float)IVar5.m_value;
           if (cRam_? == '\0') {
             func_?();
             cRam_? = '\x01';
@@ -167,9 +167,9 @@ void Assembly-CSharp.dll::AvatarAccessoryPurchasePopup::AvatarAccessoryPurchaseP
           if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
             func_?();
           }
-          fVar7 = (float10)func_?((double)((float)IVar5.m_value * ((float)str1.m_value / 100.0)));
+          fVar8 = (float10)func_?((double)(((float)str1.m_value / 100.0) * fVar7));
           pTVar2 = (this->fields).originalPriceText;
-          IVar4.m_value = IVar4.m_value - (int)fVar7;
+          IVar4.m_value = IVar5.m_value - (int)fVar8;
           pSVar6 = mscorlib.dll::System::Int32::Int32_ToString_1((Int32 *)&stack0xffffffec,StringLiteral_N0,(MethodInfo *)0x0);
           if ((pSVar6 == (String *)0x0) || (pSVar6 = mscorlib.dll::System::String::String_Replace_1(pSVar6,::StringLiteral__,::StringLiteral__,(MethodInfo *)0x0), pTVar2 == (Text *)0x0)) goto code_?;
           (*(code *)(pTVar2->klass->vtable).set_text.method)(pTVar2,pSVar6);
@@ -200,8 +200,8 @@ void Assembly-CSharp.dll::AvatarAccessoryPurchasePopup::AvatarAccessoryPurchaseP
   }
 code_?:
   func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

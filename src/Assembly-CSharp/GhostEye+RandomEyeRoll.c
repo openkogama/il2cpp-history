@@ -7,16 +7,19 @@ Quaternion * Assembly-CSharp.dll::GhostEye+RandomEyeRoll::GhostEye_RandomEyeRoll
   fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
   fVar1 = fVar1 * (this->fields)._.direction * (this->fields)._.rotatationPrSecond * 6.2831855 + (this->fields)._.wrappedTime;
   (this->fields)._.wrappedTime = fVar1;
-  while (6.2831855 <= fVar1) {
-    fVar1 = (this->fields)._.wrappedTime - 6.2831855;
+  if (6.2831855 <= fVar1) {
+    do {
+      fVar1 = fVar1 - 6.2831855;
+    } while (6.2831855 <= fVar1);
     (this->fields)._.wrappedTime = fVar1;
   }
   pfVar2 = &(this->fields)._.wrappedTime;
   if (*pfVar2 <= -6.2831855 && *pfVar2 != -6.2831855) {
+    fVar1 = (this->fields)._.wrappedTime;
     do {
-      fVar1 = (this->fields)._.wrappedTime + 6.2831855;
-      (this->fields)._.wrappedTime = fVar1;
+      fVar1 = fVar1 + 6.2831855;
     } while (fVar1 < -6.2831855);
+    (this->fields)._.wrappedTime = fVar1;
   }
   dVar3 = (double)(this->fields)._.wrappedTime;
   func_?();

@@ -4,7 +4,7 @@
 float Assembly-CSharp.dll::RTG::PlaneEx::PlaneEx_GetAbsDistanceToPoint(Plane plane,Vector3 point,MethodInfo *method)
 
 {
-  return ABS(plane.m_Normal.x * point.x + plane.m_Normal.y * point.y + point.z * plane.m_Normal.z + plane.m_Distance);
+  return ABS(plane.m_Normal.x * point.x + plane.m_Normal.y * point.y + plane.m_Normal.z * point.z + plane.m_Distance);
 }
 
 
@@ -52,7 +52,7 @@ Plane * Assembly-CSharp.dll::RTG::PlaneEx::PlaneEx_GetCameraFacingAxisSlicePlane
         (__return_storage_ptr__->m_Normal).x = (float)uVar14;
         (__return_storage_ptr__->m_Normal).y = (float)uVar15;
         (__return_storage_ptr__->m_Normal).z = fVar3;
-        __return_storage_ptr__->m_Distance = -((float)&stack0xffffffd4 * (float)uVar15 + (float)uVar14 * 4.390226e-29 + (float)uVar13 * fVar3);
+        __return_storage_ptr__->m_Distance = -((float)&stack0xffffffd4 * (float)uVar15 + (float)uVar14 * 4.3936204e-29 + (float)uVar13 * fVar3);
         return __return_storage_ptr__;
       }
       (__return_storage_ptr__->m_Normal).x = 0.0;
